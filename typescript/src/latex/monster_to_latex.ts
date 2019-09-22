@@ -1,7 +1,8 @@
-import { CalculatedAttack } from "@src/calculate";
+import { CalculatedAttack, calculateStrike } from "@src/calculate";
 import { resistanceTypes } from "@src/data";
 import * as format from "@src/latex/format";
 import { MonsterBase } from "@src/monsters";
+import { Weapon } from "@src/weapons";
 import { titleCase } from "change-case";
 import { standardAttackEffect } from "./standard_attack_effect";
 
@@ -65,6 +66,7 @@ function getMainContent(monster: MonsterBase) {
         \\pari \\textbf{Accuracy} ${monster.accuracy};
           \\textbf{Mundane} ${monster.mundanePower};
           \\textbf{Magical} ${monster.magicalPower}
+        ${getStrikes(monster)}
       \\end{spelltargetinginfo}
     \\end{spellcontent}
   `;
@@ -97,5 +99,22 @@ function formatAttack(attack: CalculatedAttack) {
       \\target{${attack.target}}
       ${standardAttackEffect(attack)}
     \end{freeability}
+  `;
+}
+
+function getStrikes(monster: MonsterBase) {
+  if (monster.weapons.length === 0) {
+    return "";
+  }
+  return `
+    \\pari \\textbf{${monster.weapons.length === 1 ? "Strike" : "Strikes"}:}
+      ${monster.weapons.map((w) => formatStrike(monster, w)).join("; ")}
+  `;
+}
+
+function formatStrike(monster: MonsterBase, weapon: Weapon) {
+  const strike = calculateStrike(monster, weapon);
+  return `
+    ${weapon.name} \\plus${strike.accuracy} (${format.damageDice(strike.power)})
   `;
 }
