@@ -1,9 +1,11 @@
+import { ActiveAbility, ActiveAbilityInput, parseActiveAbility } from "@src/active_abilities";
 import { Armor } from "@src/armor";
+import { Attack, AttackInput, parseAttack } from "@src/attacks";
 import {
-  Attack,
   attributesAtLevel,
   calculateAccuracy,
-  calculateAttacks,
+  calculateAttack,
+  CalculatedAttack,
   calculateDefenses,
   calculateHitPoints,
   calculateMagicalPower,
@@ -29,6 +31,8 @@ import { parseWeaponInput, Weapon, WeaponInput } from "@src/weapons";
 
 export interface MonsterInput {
   accuracyBonus?: number;
+  attackInputs?: AttackInput[];
+  activeAbilityInputs?: ActiveAbilityInput[];
   armor?: Armor[];
   challengeRating?: number;
   defenseBonuses?: Partial<Record<DefenseType, number>>;
@@ -47,8 +51,10 @@ export interface MonsterInput {
 
 interface MonsterCalculatedValues {
   accuracy: number;
+  activeAbilities: ActiveAbility[];
   attacks: Attack[];
   attributes: Creature.Attributes;
+  calculatedAttacks: CalculatedAttack[];
   defenses: Record<DefenseType, number>;
   defenseBonuses: Record<DefenseType, number>;
   hitPoints: number;
@@ -87,6 +93,8 @@ const monsterDefaults: Required<
   weapons: Weapon[];
 } = {
   accuracyBonus: 0,
+  attackInputs: [],
+  activeAbilityInputs: [],
   armor: [],
   challengeRating: 1,
   defenseBonuses: fromPairs(defenseTypes.map((d) => [d, 0])),
@@ -145,11 +153,17 @@ export function reformatMonsterInput(monsterInput: MonsterInput): MonsterBase {
   const accuracy = calculateAccuracy({ ...monster, attributes: attributeModifiers });
   const magicalPower = calculateMagicalPower({ ...monster, attributes: attributeModifiers });
   const mundanePower = calculateMundanePower({ ...monster, attributes: attributeModifiers });
+  const activeAbilities = monster.activeAbilityInputs.map(parseActiveAbility);
   const weapons = monster.weaponInput.map(parseWeaponInput);
+  const attacks = monster.attackInputs.map(parseAttack);
   return {
     accuracy,
+    activeAbilities,
+    attacks,
     attributes: attributeModifiers,
-    attacks: calculateAttacks({ accuracy, magicalPower, mundanePower, weapons }),
+    calculatedAttacks: attacks.map((a) => {
+      return calculateAttack(a, { ...monster, accuracy, magicalPower, mundanePower });
+    }),
     defenses: calculateDefenses(monster),
     hitPoints: calculateHitPoints(monster),
     magicalPower,

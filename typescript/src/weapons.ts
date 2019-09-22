@@ -7,9 +7,7 @@ interface StandardWeaponInput {
 interface CustomWeaponInput {
   accuracyBonus?: number;
   damageTypes: DamageType[];
-  effect?: string | null;
   name: string;
-  source?: "magical" | "mundane";
   powerBonus?: number;
 }
 
@@ -21,9 +19,7 @@ export function parseWeaponInput(input: WeaponInput): Weapon {
   return {
     accuracyBonus: 0,
     damageTypes: [],
-    effect: null,
     powerBonus: 0,
-    source: "mundane",
     ...(isStandardWeaponName(input.name) && standardWeapons[input.name]),
     ...input,
   };
@@ -32,15 +28,26 @@ export function parseWeaponInput(input: WeaponInput): Weapon {
 // This is somewhat cumbersome to write, but it ensure that we specify a damage type for any
 // intentionally custom weapons. For the foreseeable future, it's likely that any "custom" weapon is
 // actually just a missing standard weapon, so it's worth the duplication.
-type StandardWeaponName = "bite" | "greataxe" | "greatsword" | "longsword" | "short sword";
+export type StandardWeaponName =
+  | "bite"
+  | "club"
+  | "greataxe"
+  | "greatsword"
+  | "longsword"
+  | "short sword";
 
-function isStandardWeaponName(name: StandardWeaponName | string): name is StandardWeaponName {
+export function isStandardWeaponName(
+  name: StandardWeaponName | string,
+): name is StandardWeaponName {
   return Boolean(standardWeapons[name as StandardWeaponName]);
 }
 
-const standardWeapons: Record<StandardWeaponName, Omit<CustomWeaponInput, "name">> = {
+export const standardWeapons: Record<StandardWeaponName, Omit<CustomWeaponInput, "name">> = {
   "bite": {
     damageTypes: ["bludgeoning", "slashing"],
+  },
+  "club": {
+    damageTypes: ["bludgeoning"],
   },
   "greataxe": {
     powerBonus: 2,
@@ -54,6 +61,7 @@ const standardWeapons: Record<StandardWeaponName, Omit<CustomWeaponInput, "name"
     damageTypes: ["slashing"],
   },
   "short sword": {
+    // TODO: note that this is finessable
     powerBonus: -2,
     damageTypes: ["slashing"],
   },
