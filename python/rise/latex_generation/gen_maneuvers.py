@@ -640,13 +640,13 @@ def generate_maneuvers():
         name='Focused Strike',
         short_description='You concentrate to strike a critical blow.',
         effect_text="""
-            Make a melee \\glossterm<strike>.
+            Make a melee \\glossterm<strike> with a \\minus1d penalty to damage.
             The attack roll \\glossterm<explodes> regardless of what you roll.
         """,
         rank_upgrades={
-            '3': 'You also gain a +1d bonus to damage with the \\glossterm<strike>.',
-            '5': 'The damage bonus increaseses to +2d.',
-            '7': 'The damage bonus increases to +3d.',
+            '3': 'You also gain a \\plus1 bonus to \\glossterm<accuracy> with the strike.',
+            '5': 'You reduce your \\glossterm<focus penalties> with this ability by 1.',
+            '7': 'The accuracy bonus increases to \\plus3.',
         },
         tags=['Focus'],
         lists=['Esoteric', 'Martial'],
