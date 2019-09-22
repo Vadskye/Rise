@@ -1,8 +1,9 @@
-import { Attack } from "@src/calculate";
+import { CalculatedAttack } from "@src/calculate";
 import { resistanceTypes } from "@src/data";
 import * as format from "@src/latex/format";
 import { MonsterBase } from "@src/monsters";
 import { titleCase } from "change-case";
+import { standardAttackEffect } from "./standard_attack_effect";
 
 export function monsterToLatex(monster: MonsterBase): string {
   return `
@@ -12,7 +13,7 @@ export function monsterToLatex(monster: MonsterBase): string {
     ${getFooter(monster)}
   \\end{monsection}
   \\subsubsection{${monster.name} Abilities}
-    ${getAbilities(monster)}
+    ${getAttacks(monster)}
   `;
 }
 
@@ -83,19 +84,18 @@ function getFooter(monster: MonsterBase) {
   `;
 }
 
-function getAbilities(monster: MonsterBase) {
-  return monster.attacks.map((a) => formatAttack(a, monster)).join("\n");
+function getAttacks(monster: MonsterBase) {
+  // TODO: fix
+  return monster.calculatedAttacks.map(formatAttack).join("\n");
 }
 
-function formatAttack(attack: Attack, monster: MonsterBase) {
-  // TODO: use the correct defense
+function formatAttack(attack: CalculatedAttack) {
   // TODO: add attack tags
   const tagText = "";
   return `
-    \\begin{freeability}{${attack.name}}${tagText}
-      The ${monster.name} makes a ${format.modifier(attack.accuracy)} attack vs Armor.
-      \\hit The target takes ${format.damageDice(attack.power)}
-        ${format.damageTypes(attack.damageTypes)} damage.
-    \\end{freeability}
+    \\begin{freeability}{${titleCase(attack.name)}}${tagText}
+      \\target{${attack.target}}
+      ${standardAttackEffect(attack)}
+    \end{freeability}
   `;
 }
