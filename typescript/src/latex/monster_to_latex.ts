@@ -10,13 +10,11 @@ import { standardAttackEffect } from "./standard_attack_effect";
 export function monsterToLatex(monster: MonsterBase): string {
   return `
   \\begin{monsection}${getMonsectionArgs(monster)}
-    ${getTitleAndTypeHeader(monster)}
-    ${getMainContent(monster)}
-    ${getFooter(monster)}
+    ${getTitleAndTypeHeader(monster).trim()}
+    ${getMainContent(monster).trim()}
+    ${getFooter(monster).trim()}
   \\end{monsection}
-  \\subsubsection{${monster.name} Abilities}
-    ${getAttacks(monster)}
-    ${getAbilities(monster)}
+  ${getAbilities(monster).trim()}
   `;
 }
 
@@ -25,7 +23,7 @@ function getMonsectionArgs(monster: MonsterBase) {
 }
 
 function getTitleAndTypeHeader(monster: MonsterBase) {
-  return `\\vspace{-1em}\\spelltwocol{${titleCase(monster.size)} ${
+  return `\\vspace{-1em}\\spelltwocol{}{${titleCase(monster.size)} ${
     monster.monsterType
   }}\\vspace{-1em}`;
 }
@@ -88,6 +86,18 @@ function getFooter(monster: MonsterBase) {
   `;
 }
 
+function getAbilities(monster: MonsterBase) {
+  if (monster.attacks.length > 0 || monster.passiveAbilities.length > 0) {
+    return `
+      \\subsubsection{${monster.name} abilities}
+        ${getAttacks(monster)}
+        ${getPassiveAbilities(monster)}
+    `;
+  } else {
+    return "";
+  }
+}
+
 function getAttacks(monster: MonsterBase) {
   // TODO: fix
   return monster.calculatedAttacks.map(formatAttack).join("\n");
@@ -100,7 +110,7 @@ function formatAttack(attack: CalculatedAttack) {
     \\begin{freeability}{${titleCase(attack.name)}}${tagText}
       \\target{${attack.target}}
       ${standardAttackEffect(attack)}
-    \end{freeability}
+    \\end{freeability}
   `;
 }
 
@@ -118,7 +128,7 @@ function formatStrike(monster: MonsterBase, weapon: Weapon) {
   return `${name} \\plus${strike.accuracy} (${format.damageDice(strike.power)})`;
 }
 
-function getAbilities(monster: MonsterBase) {
+function getPassiveAbilities(monster: MonsterBase) {
   return monster.passiveAbilities.map(formatPassiveAbility).join("\n    ");
 }
 

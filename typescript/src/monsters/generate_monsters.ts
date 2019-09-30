@@ -1,12 +1,13 @@
 import { MonsterBase, reformatMonsterInput } from "@src/monsters/reformat_monster_input";
-import { aberrations, animals, humanoids } from "@src/monsters/types";
+import { monsterInputsByType, MonsterType, monsterTypes } from "@src/monsters/types";
+import { fromPairs } from "@src/util/from_pairs";
 import _ from "lodash";
 
-export function generateMonsters(): MonsterBase[] {
-  const monsterInputs = _.sortBy(
-    [...aberrations, ...animals, ...humanoids],
-    (m) => m.monsterType + m.name,
+export function generateMonsters(): Record<MonsterType, MonsterBase[]> {
+  return fromPairs(
+    monsterTypes.map((t) => [
+      t,
+      _.sortBy(monsterInputsByType[t], (m) => m.name).map(reformatMonsterInput),
+    ]),
   );
-
-  return monsterInputs.map(reformatMonsterInput);
 }
