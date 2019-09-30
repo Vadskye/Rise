@@ -4,7 +4,6 @@ const aberrationInput: TypelessMonsterInput[] = [];
 
 const abolethLevel = 12;
 aberrationInput.push({
-  // TODO: add psionic barrier that increases energy resistance
   // TODO: add ritual casting
   armorInputs: [{ name: "tough hide" }],
   attackInputs: [
