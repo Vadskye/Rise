@@ -4,8 +4,10 @@ import { MonsterBase } from "@src/monsters";
 
 export interface CalculatedAttack {
   accuracy: number;
+  crit: string | null;
   damageTypes: DamageType[];
   defense: string;
+  hit: string | null;
   monsterName: string;
   name: string;
   power: number;
@@ -19,8 +21,10 @@ export function calculateAttack(
   const monsterPower = attack.source === "magical" ? monster.magicalPower : monster.mundanePower;
   return {
     accuracy: attack.accuracyBonus + monster.accuracy,
+    crit: attack.crit,
     damageTypes: attack.damageTypes,
     defense: attack.defense,
+    hit: attack.hit,
     monsterName: monster.name,
     name: attack.name,
     power: monsterPower + attack.powerBonus,
