@@ -1,4 +1,5 @@
+export * from "./aberrations";
 export * from "./animals";
 export * from "./humanoids";
 
-export type MonsterType = "animal" | "humanoid";
+export type MonsterType = "aberration" | "animal" | "humanoid";

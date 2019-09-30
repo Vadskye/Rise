@@ -1,5 +1,5 @@
 import { ActiveAbility, ActiveAbilityInput, parseActiveAbility } from "@src/active_abilities";
-import { Armor } from "@src/armor";
+import { Armor, ArmorInput, parseArmorInput } from "@src/armor";
 import { Attack, AttackInput, parseAttack } from "@src/attacks";
 import {
   attributesAtLevel,
@@ -28,12 +28,13 @@ import {
 import { MonsterType } from "@src/monsters/types";
 import { fromPairs } from "@src/util/from_pairs";
 import { parseWeaponInput, Weapon, WeaponInput } from "@src/weapons";
+import _ from "lodash";
 
 export interface MonsterInput {
   accuracyBonus?: number;
   attackInputs?: AttackInput[];
   activeAbilityInputs?: ActiveAbilityInput[];
-  armor?: Armor[];
+  armorInputs?: ArmorInput[];
   challengeRating?: number;
   defenseBonuses?: Partial<Record<DefenseType, number>>;
   level: number;
@@ -52,6 +53,7 @@ export interface MonsterInput {
 interface MonsterCalculatedValues {
   accuracy: number;
   activeAbilities: ActiveAbility[];
+  armors: Armor[];
   attacks: Attack[];
   attributes: Creature.Attributes;
   calculatedAttacks: CalculatedAttack[];
@@ -86,6 +88,7 @@ const monsterDefaults: Required<
     | keyof MonsterCalculatedValues
   >
 > & {
+  armors: Armor[];
   defenseBonuses: Record<DefenseType, number>;
   resistanceBonuses: Record<ResistanceType, number>;
   skillPoints: Creature.Skills;
@@ -93,9 +96,10 @@ const monsterDefaults: Required<
   weapons: Weapon[];
 } = {
   accuracyBonus: 0,
-  attackInputs: [],
   activeAbilityInputs: [],
-  armor: [],
+  attackInputs: [],
+  armorInputs: [],
+  armors: [],
   challengeRating: 1,
   defenseBonuses: fromPairs(defenseTypes.map((d) => [d, 0])),
   resistanceBonuses: fromPairs(resistanceTypes.map((d) => [d, 0])),
@@ -149,6 +153,16 @@ export function reformatMonsterInput(monsterInput: MonsterInput): MonsterBase {
     skillPoints,
   };
 
+  const armors = monster.armorInputs.map(parseArmorInput);
+  for (const armor of armors) {
+    for (const [defenseType, bonus] of _.entries(armor.defenseBonuses)) {
+      monster.defenseBonuses[defenseType as DefenseType] += bonus;
+    }
+    for (const [resistanceType, bonus] of _.entries(armor.resistanceBonuses)) {
+      monster.resistanceBonuses[resistanceType as ResistanceType] += bonus;
+    }
+  }
+
   const attributeModifiers = attributesAtLevel({ level: monster.level, startingAttributes });
   const accuracy = calculateAccuracy({ ...monster, attributes: attributeModifiers });
   const magicalPower = calculateMagicalPower({ ...monster, attributes: attributeModifiers });
@@ -157,8 +171,10 @@ export function reformatMonsterInput(monsterInput: MonsterInput): MonsterBase {
   const weapons = monster.weaponInput.map(parseWeaponInput);
   const attacks = monster.attackInputs.map(parseAttack);
   return {
+    ...monster,
     accuracy,
     activeAbilities,
+    armors,
     attacks,
     attributes: attributeModifiers,
     calculatedAttacks: attacks.map((a) => {
@@ -174,6 +190,5 @@ export function reformatMonsterInput(monsterInput: MonsterInput): MonsterBase {
     speed: speedBySize(monster.size),
     skills: calculateSkills(attributeModifiers, skillPoints, monster),
     weapons,
-    ...monster,
   };
 }

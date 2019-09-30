@@ -34,7 +34,8 @@ export type StandardWeaponName =
   | "greataxe"
   | "greatsword"
   | "longsword"
-  | "short sword";
+  | "short sword"
+  | "tentacle";
 
 export function isStandardWeaponName(
   name: StandardWeaponName | string,
@@ -64,5 +65,8 @@ export const standardWeapons: Record<StandardWeaponName, Omit<CustomWeaponInput,
     // TODO: note that this is finessable
     powerBonus: -2,
     damageTypes: ["slashing"],
+  },
+  "tentacle": {
+    damageTypes: ["bludgeoning"],
   },
 };

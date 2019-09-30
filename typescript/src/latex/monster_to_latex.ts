@@ -113,8 +113,7 @@ function getStrikes(monster: MonsterBase) {
 }
 
 function formatStrike(monster: MonsterBase, weapon: Weapon) {
+  const name = titleCase(weapon.name);
   const strike = calculateStrike(monster, weapon);
-  return `
-    ${weapon.name} \\plus${strike.accuracy} (${format.damageDice(strike.power)})
-  `;
+  return `${name} \\plus${strike.accuracy} (${format.damageDice(strike.power)})`;
 }
