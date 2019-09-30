@@ -11,7 +11,6 @@ interface StandardAttackInput {
 interface WeaponAttackInput {
   accuracyBonus?: number;
   defense?: DefenseType;
-  effect?: string;
   name: string;
   source?: "magical" | "mundane";
   target?: string;
@@ -20,9 +19,10 @@ interface WeaponAttackInput {
 
 interface CustomAttackInput {
   accuracyBonus?: number;
+  crit?: string | null;
   damageTypes: DamageType[];
   defense: DefenseType;
-  effect: string;
+  hit?: string | null;
   name: string;
   powerBonus?: number;
   source?: "magical" | "mundane";
@@ -46,21 +46,27 @@ function hasStandardAttackName(input: AttackInput): input is StandardAttackInput
 
 const standardAttacks: Record<
   StandardAttackName,
-  Pick<CustomAttackInput, "damageTypes" | "defense" | "effect" | "source" | "target">
+  Pick<CustomAttackInput, "crit" | "damageTypes" | "defense" | "hit" | "source" | "target">
 > = {
   fireball: {
+    crit: null,
     damageTypes: ["fire"],
     defense: "armor",
-    effect: "TODO",
+    hit: "Each target takes <standard damage>.",
     source: "magical",
     target: "Everything in a \\areasmall radius within \\rngclose range",
   },
 };
 
 export function parseAttack(input: AttackInput): Attack {
-  const defaults: Pick<Attack, "accuracyBonus" | "damageTypes" | "powerBonus" | "source"> = {
+  const defaults: Pick<
+    Attack,
+    "accuracyBonus" | "crit" | "damageTypes" | "hit" | "powerBonus" | "source"
+  > = {
     accuracyBonus: 0,
+    crit: null,
     damageTypes: [],
+    hit: null,
     powerBonus: 0,
     source: "mundane",
   };
@@ -69,7 +75,7 @@ export function parseAttack(input: AttackInput): Attack {
     return {
       ...defaults,
       defense: "armor",
-      effect: "TODO",
+      hit: "The target takes <standard damage>.",
       target: "strike",
       ...standardWeapons[input.weaponName],
       ...input,

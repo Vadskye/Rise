@@ -22,7 +22,7 @@ export const humanoidInput: TypelessMonsterInput[] = [
         // TODO: Should this be explicitly marked as 'untyped'?
         damageTypes: [],
         defense: "fortitude",
-        effect: "TODO",
+        hit: "The target takes <damage>.",
         name: "Inflict Wounds",
         powerBonus: 2,
         source: "magical",
