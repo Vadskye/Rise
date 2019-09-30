@@ -2,6 +2,7 @@ import { CalculatedAttack, calculateStrike } from "@src/calculate";
 import { resistanceTypes } from "@src/data";
 import * as format from "@src/latex/format";
 import { MonsterBase } from "@src/monsters";
+import { PassiveAbility } from "@src/monsters/reformat_monster_input";
 import { Weapon } from "@src/weapons";
 import { titleCase } from "change-case";
 import { standardAttackEffect } from "./standard_attack_effect";
@@ -15,6 +16,7 @@ export function monsterToLatex(monster: MonsterBase): string {
   \\end{monsection}
   \\subsubsection{${monster.name} Abilities}
     ${getAttacks(monster)}
+    ${getAbilities(monster)}
   `;
 }
 
@@ -106,14 +108,20 @@ function getStrikes(monster: MonsterBase) {
   if (monster.weapons.length === 0) {
     return "";
   }
-  return `
-    \\pari \\textbf{${monster.weapons.length === 1 ? "Strike" : "Strikes"}:}
-      ${monster.weapons.map((w) => formatStrike(monster, w)).join("; ")}
-  `;
+  return `\\pari \\textbf{${monster.weapons.length === 1 ? "Strike" : "Strikes"}:}
+            ${monster.weapons.map((w) => formatStrike(monster, w)).join("; ")}`;
 }
 
 function formatStrike(monster: MonsterBase, weapon: Weapon) {
   const name = titleCase(weapon.name);
   const strike = calculateStrike(monster, weapon);
   return `${name} \\plus${strike.accuracy} (${format.damageDice(strike.power)})`;
+}
+
+function getAbilities(monster: MonsterBase) {
+  return monster.passiveAbilities.map(formatPassiveAbility).join("\n    ");
+}
+
+function formatPassiveAbility(ability: PassiveAbility) {
+  return `\\parhead{${ability.name}} ${ability.description}`;
 }
