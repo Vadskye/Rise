@@ -30,7 +30,7 @@ import { fromPairs } from "@src/util/from_pairs";
 import { parseWeaponInput, Weapon, WeaponInput } from "@src/weapons";
 import _ from "lodash";
 
-interface PassiveAbility {
+export interface PassiveAbility {
   description: string;
   name: string;
 }
