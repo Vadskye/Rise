@@ -30,6 +30,11 @@ import { fromPairs } from "@src/util/from_pairs";
 import { parseWeaponInput, Weapon, WeaponInput } from "@src/weapons";
 import _ from "lodash";
 
+interface PassiveAbility {
+  description: string;
+  name: string;
+}
+
 export interface MonsterInput {
   accuracyBonus?: number;
   attackInputs?: AttackInput[];
@@ -40,6 +45,7 @@ export interface MonsterInput {
   level: number;
   monsterType: MonsterType;
   name: string;
+  passiveAbilities?: PassiveAbility[];
   reach?: number;
   resistanceBonuses?: Partial<Record<ResistanceType, number>>;
   size?: Creature.Size;
@@ -62,6 +68,7 @@ interface MonsterCalculatedValues {
   hitPoints: number;
   magicalPower: number;
   mundanePower: number;
+  passiveAbilities: PassiveAbility[];
   reach: number;
   resistanceBonuses: Record<ResistanceType, number>;
   resistances: Resistances;
@@ -91,6 +98,7 @@ const monsterDefaults: Required<
   armors: Armor[];
   defenseBonuses: Record<DefenseType, number>;
   resistanceBonuses: Record<ResistanceType, number>;
+  passiveAbilities: PassiveAbility[];
   skillPoints: Creature.Skills;
   startingAttributes: Creature.Attributes;
   weapons: Weapon[];
@@ -102,6 +110,7 @@ const monsterDefaults: Required<
   armors: [],
   challengeRating: 1,
   defenseBonuses: fromPairs(defenseTypes.map((d) => [d, 0])),
+  passiveAbilities: [],
   resistanceBonuses: fromPairs(resistanceTypes.map((d) => [d, 0])),
   size: "medium",
   skillPoints: fromPairs(skills.map((s) => [s, 0])),
