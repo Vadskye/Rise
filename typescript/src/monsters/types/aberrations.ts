@@ -42,12 +42,28 @@ aberrationInput.push({
       description: "The aboleth can learn and perform arcane rituals of up to 5th level.",
       name: "Rituals",
     },
+    {
+      // TODO: this was originally a disease, but disease trigger times are less well defined
+      description: `
+        Whenever a creature takes damage from the aboleth's tentacle,
+          the damaged creature becomes \\glossterm{poisoned}.
+        The poison's primary effect makes the target \\glossterm{nauseated},
+          and the terminal effect inflicts a \\glossterm{vital wound} with a special effect.
+
+        Instead of making a \\glossterm{wound roll} for the \\glossterm{vital wound},
+          the target's skin is transformed into a clear, slimy membrane.
+        An afflicted creature must remain moistened with cool, fresh water every 10 minutes
+          or it will lose a \\glossterm{hit point}.
+        This effect lasts until the \\glossterm{vital wound} is removed.
+      `,
+      name: "Slime",
+    },
   ],
   resistanceBonuses: {
     energy: abolethLevel,
   },
   size: "huge",
-  startingAttributes: { str: 4, dex: -1, con: 3, int: 4, per: 2, wil: 4 },
+  startingAttributes: { str: 4, dex: -1, con: 4, int: 3, per: 1, wil: 4 },
   weaponInput: [{ name: "tentacle" }],
 });
 
