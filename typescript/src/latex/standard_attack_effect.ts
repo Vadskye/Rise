@@ -13,17 +13,27 @@ export function standardAttackEffect(attack: CalculatedAttack) {
   );
 }
 
+function primaryMonsterName(name: string) {
+  const splitName = name.split(", ");
+  if (splitName.length === 2) {
+    return splitName[0];
+  } else {
+    return name;
+  }
+}
+
 function accuracyText(attack: CalculatedAttack): string {
-  if (/strike/.test(attack.target)) {
+  const monsterName = primaryMonsterName(attack.monsterName).toLowerCase();
+  const targetWord = attack.target.toLowerCase().startsWith("one") ? "the" : "each";
+  if (attack.weaponName) {
     return `
-      The ${attack.monsterName} makes a ${format.modifier(
-      attack.accuracy,
-    )} \\glossterm{strike} vs. ${titleCase(attack.defense)}.
+      The ${monsterName} makes a ${format.modifier(attack.accuracy)}
+        \\glossterm{strike} vs. ${titleCase(attack.defense)}
+        with its ${attack.weaponName} against ${targetWord} target.
     `;
   } else {
-    const targetWord = attack.target.toLowerCase().startsWith("one") ? "the" : "each";
     return `
-      The ${attack.monsterName} makes a ${format.modifier(attack.accuracy)} attack
+      The ${monsterName} makes a ${format.modifier(attack.accuracy)} attack
         vs. ${titleCase(attack.defense)} against ${targetWord} target.
     `;
   }

@@ -49,7 +49,9 @@ export type StandardArmorName =
   | "tough hide"
   | "scales"
   | "thick skin"
-  | "fur";
+  | "fur"
+  | "feathers"
+  | "carapace";
 
 export function isStandardArmorInput(input: ArmorInput): input is StandardArmorInput {
   return Boolean(standardArmors[(input as StandardArmorInput).name]);
@@ -83,5 +85,13 @@ export const standardArmors: Record<StandardArmorName, Omit<CustomArmorInput, "n
   "thick skin": {
     defenseBonuses: { armor: 2 },
     resistanceBonuses: { physical: 2 },
+  },
+  "feathers": {
+    defenseBonuses: { armor: 1 },
+    resistanceBonuses: {},
+  },
+  "carapace": {
+    defenseBonuses: { armor: 3 },
+    resistanceBonuses: { physical: 4 },
   },
 };

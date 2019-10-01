@@ -11,7 +11,7 @@ export const humanoidInput: TypelessMonsterInput[] = [
       },
     ],
     level: 8,
-    name: "Orc elite",
+    name: "Orc, Elite",
     resistanceBonuses: { physical: 3 },
     startingAttributes: { str: 3 },
     weaponInput: [{ name: "greataxe" }],

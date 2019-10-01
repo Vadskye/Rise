@@ -19,7 +19,7 @@ export function monsterToLatex(monster: MonsterBase): string {
 }
 
 function getMonsectionArgs(monster: MonsterBase) {
-  return `${getName(monster)}{${monster.level}}[${monster.challengeRating}]`;
+  return `${getMonsterName(monster)}{${monster.level}}[${monster.challengeRating}]`;
 }
 
 function getTitleAndTypeHeader(monster: MonsterBase) {
@@ -28,12 +28,12 @@ function getTitleAndTypeHeader(monster: MonsterBase) {
   }}\\vspace{-1em}`;
 }
 
-function getName({ name }: MonsterBase): string {
+function getMonsterName({ name }: MonsterBase): string {
   const splitName = name.split(", ");
   if (splitName.length === 2) {
-    return `{${splitName[0]}}[${splitName[1]}]`;
+    return `{${titleCase(splitName[0])}}[${titleCase(splitName[1])}]`;
   } else if (splitName.length === 1) {
-    return `{${name}}`;
+    return `{${titleCase(name)}}`;
   } else {
     throw new Error(`Name '${name}' has too many suffixes`);
   }
@@ -63,9 +63,6 @@ function getMainContent(monster: MonsterBase) {
         \\pari \\textbf{WR} ${monster.resistances.wound.global}${
     extraWoundResistances.length > 0 ? "; " + extraWoundResistances.join("; ") : ""
   }
-        \\pari \\textbf{Accuracy} ${monster.accuracy};
-          \\textbf{Mundane} ${monster.mundanePower};
-          \\textbf{Magical} ${monster.magicalPower}
         ${getStrikes(monster)}
       \\end{spelltargetinginfo}
     \\end{spellcontent}
@@ -75,23 +72,35 @@ function getMainContent(monster: MonsterBase) {
 function getFooter(monster: MonsterBase) {
   return `
     \\begin{monsterfooter}
-      \\pari \\textbf{Awareness} ${monster.skills.awareness}
       \\pari \\textbf{Speed} ${format.feet(monster.speed)};
         \\textbf{Space} ${format.feet(monster.space)};
         \\textbf{Reach} ${format.feet(monster.reach)}
+      \\pari \\textbf{Awareness} ${format.modifier(monster.skills.awareness)}
       \\pari \\textbf{Attributes}:
         Str ${monster.attributes.str}, Dex ${monster.attributes.dex}, Con ${monster.attributes.con},
         Int ${monster.attributes.int}, Per ${monster.attributes.per}, Wil ${monster.attributes.wil}
+      \\pari \\textbf{Accuracy} ${monster.accuracy};
+        ${getPower(monster).trim()}
     \\end{monsterfooter}
   `;
+}
+
+function getPower(monster: MonsterBase) {
+  if (monster.mundanePower === monster.magicalPower) {
+    return `\\textbf{Power} ${monster.mundanePower}`;
+  } else {
+    return `
+      \\textbf{Mundane Power} ${monster.mundanePower};
+      \\textbf{Magical Power} ${monster.magicalPower}
+    `;
+  }
 }
 
 function getAbilities(monster: MonsterBase) {
   if (monster.attacks.length > 0 || monster.passiveAbilities.length > 0) {
     return `
-      \\subsubsection{${monster.name} abilities}
-        ${getAttacks(monster)}
-        ${getPassiveAbilities(monster)}
+      ${getAttacks(monster)}
+      ${getPassiveAbilities(monster)}
     `;
   } else {
     return "";
@@ -106,9 +115,10 @@ function getAttacks(monster: MonsterBase) {
 function formatAttack(attack: CalculatedAttack) {
   // TODO: add attack tags
   const tagText = "";
+  const targetTag = attack.target.toLowerCase().startsWith("one") ? "target" : "targets";
   return `
     \\begin{freeability}{${titleCase(attack.name)}}${tagText}
-      \\target{${attack.target}}
+      \\${targetTag}{${attack.target}}
       ${standardAttackEffect(attack)}
     \\end{freeability}
   `;

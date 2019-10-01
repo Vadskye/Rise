@@ -35,6 +35,9 @@ export type StandardWeaponName =
   | "greatsword"
   | "longsword"
   | "short sword"
+  | "slam"
+  | "stinger"
+  | "talon"
   | "tentacle";
 
 export function isStandardWeaponName(
@@ -66,7 +69,17 @@ export const standardWeapons: Record<StandardWeaponName, Omit<CustomWeaponInput,
     powerBonus: -2,
     damageTypes: ["slashing"],
   },
+  "slam": {
+    damageTypes: ["bludgeoning"],
+  },
   "tentacle": {
     damageTypes: ["bludgeoning"],
+  },
+  "talon": {
+    damageTypes: ["piercing", "slashing"],
+  },
+  "stinger": {
+    damageTypes: ["piercing"],
+    powerBonus: 2,
   },
 };
