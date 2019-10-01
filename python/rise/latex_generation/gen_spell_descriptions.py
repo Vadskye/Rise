@@ -185,8 +185,8 @@ def generate_mystic_spheres():
         schools=['Conjuration'],
         lists=['Nature'],
         spells=[
-            Spell('Constraining Bubble', 3, 'One creature within \\rngmed range', """
-                Make an attack vs. Fortitude against the target.
+            Spell('Constraining Bubble', 3, 'One Large or smaller creature within \\rngmed range', """
+                Make an attack vs. Reflex against the target.
                 \\hit As a \\glossterm<condition>, the majority of the target's body is surrounded by a layer of water.
                 This does not impede the target's ability to breathe, but it takes penalties as if it was fighting underwater (see \\pcref<Underwater Combat>).
             """, tags=['Manifestation']),
