@@ -263,12 +263,12 @@ This choice determines a great deal about your character's abilities.
             \tb{Rank} & \tb{Divine Spellcasting} & \tb{Divine Spell Mastery}   & \tb{Domain Influence}  & \tb{Healer} \tableheaderrule
             1 & Spellcasting    & Battle prayer               & Domains, domain gift  & Divine healing         \\
             2 & Mystic sphere   & Mystic knowledge            & Domain gift           & Vital healer           \\
-            3 & Spell level (2) & Wellspring of power         & Domain aspect         & Divine cleanse         \\
-            4 & Spell level (3) & Mystic knowledge            & Domain aspect         & Greater divine healing \\
-            5 & Spell level (4) & Greater battle prayer       & Domain essence        & Greater vital healer   \\
-            6 & Spell level (5) & Mystic knowledge            & Domain essence        & Greater divine cleanse \\
-            7 & Spell level (6) & Greater wellspring of power & Miracle               & Supreme divine healing \\
-            8 & Spell level (7) &                             & Domain masteries     \\
+            3 & Spell rank (3) & Wellspring of power         & Domain aspect         & Divine cleanse         \\
+            4 & Spell rank (4) & Mystic knowledge            & Domain aspect         & Greater divine healing \\
+            5 & Spell rank (5) & Greater battle prayer       & Domain essence        & Greater vital healer   \\
+            6 & Spell rank (6) & Mystic knowledge            & Domain essence        & Greater divine cleanse \\
+            7 & Spell rank (7) & Greater wellspring of power & Miracle               & Supreme divine healing \\
+            8 & Spell rank (8) &                             & Domain masteries     \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -339,13 +339,13 @@ This choice determines a great deal about your character's abilities.
         Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
 
         You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
-        In addition, you learn one 1st level \glossterm{spell} from your chosen \glossterm{mystic sphere}.
+        In addition, you learn one rank 1 \glossterm{spell} from your chosen \glossterm{mystic sphere}.
         You can also spend \glossterm{insight points} to learn one additional divine spell per \glossterm{insight point}.
         Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
 
-        When you gain access to a new \glossterm{mystic sphere} or spell level,
+        When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
             you can exchange any number of spells you know for other spells,
-            including spells of the higher level.
+            including spells of the higher rank.
 
         Divine spells require \glossterm{verbal components} to cast (see \pcref{Casting Components}).
         For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
@@ -353,17 +353,17 @@ This choice determines a great deal about your character's abilities.
         \cf{Clr}[2]{Mystic Sphere} You gain access to an additional divine \glossterm{mystic sphere}, including all \glossterm{cantrips} from that sphere.
         In addition, you learn an additional divine \glossterm{spell}.
 
-        \cf{Clr}[3]{Spell Level}[Magical] You gain the ability to cast 2nd level divine spells.
+        \cf{Clr}[3]{Spell Rank}[Magical] You gain the ability to cast rank 3 divine spells.
 
-        \cf*{Clr}[4]{Spell Level}[Magical] You gain the ability to cast 3rd level divine spells.
+        \cf*{Clr}[4]{Spell Rank}[Magical] You gain the ability to cast rank 4 divine spells.
 
-        \cf*{Clr}[5]{Spell Level}[Magical] You gain the ability to cast 4th level divine spells.
+        \cf*{Clr}[5]{Spell Rank}[Magical] You gain the ability to cast rank 5 divine spells.
 
-        \cf*{Clr}[6]{Spell Level}[Magical] You gain the ability to cast 5th level divine spells.
+        \cf*{Clr}[6]{Spell Rank}[Magical] You gain the ability to cast rank 6 divine spells.
 
-        \cf*{Clr}[7]{Spell Level}[Magical] You gain the ability to cast 6th level divine spells.
+        \cf*{Clr}[7]{Spell Rank}[Magical] You gain the ability to cast rank 7 divine spells.
 
-        \cf*{Clr}[8]{Spell Level}[Magical] You gain the ability to cast 7th level divine spells.
+        \cf*{Clr}[8]{Spell Rank}[Magical] You gain the ability to cast rank 8 divine spells.
 
     \subsection{Divine Spell Mastery}
         This archetype improves the divine spells you cast.
@@ -380,7 +380,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Mystic Sphere Access} You gain access to an additional divine \glossterm{mystic sphere} (see \pcref{Divine Mystic Spheres}).
                 You cannot choose this ability multiple times.
             \parhead{Rituals} You gain the ability to perform divine rituals to create unique magical effects (see \pcref{Rituals}).
-                The maximum level of divine ritual you can learn or perform is equal to the maximum level of divine spell that you can cast.
+                The maximum \glossterm{rank} of divine ritual you can learn or perform is equal to the maximum \glossterm{rank} of divine spell that you can cast.
                 You cannot choose this ability multiple times.
         }
 
@@ -692,7 +692,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Aspect} You learn an additional \glossterm{spell} for a divine \glossterm{mystic sphere} you have access to.
             \parhead{Essence} You learn an \glossterm{augment} (see \pcref{Augments}).
             You can apply augments to spells to change their effects.
-            When you gain access to a new divine spell level, you may change which augments you know.
+            When you gain access to a new divine spell \glossterm{rank}, you may change which augments you know.
             \parhead{Mastery} You learn an additional \glossterm{augment} (see \pcref{Augments}).
             In addition, the power bonus from this domain's gift increases to \plus2.
 
@@ -748,7 +748,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Aspect} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{mundane} abilities.
             \parhead{Essence} You learn one of the Legion, Selective, or Widened \glossterm{augments} (see \pcref{Augments}).
             You can apply augments to spells to change their effects.
-            When you gain access to a new arcane spell level, you may change which augments you know, though this augment can only be one of the three listed.
+            When you gain access to a new arcane spell \glossterm{rank}, you may change which augments you know, though this augment can only be one of the three listed.
             \parhead{Mastery} You gain a \plus2 bonus to \glossterm{power} with \glossterm{mundane} abilities.
 
         \subsubsection{Water}
@@ -802,12 +802,12 @@ This choice determines a great deal about your character's abilities.
             \tb{Rank} & \tb{Beastmaster}    & \tb{Nature Spellcasting} & \tb{Nature Spell Mastery}   & \tb{Shifter} \tableheaderrule
             1 & Animal speech       & Spellcasting    & Natural spells              & Wild aspects               \\
             2 & Animal companion    & Mystic sphere   & Mystic knowledge            & Shifting defense           \\
-            3 & Beast lore          & Spell level (2) & Wellspring of power         & Shift body                 \\
-            4 & Greater wild speech & Spell level (3) & Mystic knowledge            & Wild aspect                \\
-            5 & Beast companion     & Spell level (4) & Greater natural spells      & Greater shifting defense   \\
-            6 & Beast tamer         & Spell level (5) & Mystic knowledge            & Greater shift body         \\
-            7 & Supreme wild speech & Spell level (6) & Greater wellspring of power & Triple aspect, wild aspect \\
-            8 & True companion      & Spell level (7) &                             & Avatar of nature           \\
+            3 & Beast lore          & Spell rank (3) & Wellspring of power         & Shift body                 \\
+            4 & Greater wild speech & Spell rank (4) & Mystic knowledge            & Wild aspect                \\
+            5 & Beast companion     & Spell rank (5) & Greater natural spells      & Greater shifting defense   \\
+            6 & Beast tamer         & Spell rank (6) & Mystic knowledge            & Greater shift body         \\
+            7 & Supreme wild speech & Spell rank (7) & Greater wellspring of power & Triple aspect, wild aspect \\
+            8 & True companion      & Spell rank (8) &                             & Avatar of nature           \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -907,13 +907,13 @@ This choice determines a great deal about your character's abilities.
         Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
 
         You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
-        In addition, you learn one 1st level \glossterm{spell} from your chosen \glossterm{mystic sphere}.
+        In addition, you learn one rank 1 \glossterm{spell} from your chosen \glossterm{mystic sphere}.
         You can also spend \glossterm{insight points} to learn one additional nature spell per \glossterm{insight point}.
         Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
 
-        When you gain access to a new \glossterm{mystic sphere} or spell level,
+        When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
             you can exchange any number of spells you know for other spells,
-            including spells of the higher level.
+            including spells of the higher rank.
 
         Nature spells require \glossterm{verbal components} to cast (see \pcref{Casting Components}).
         For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
@@ -921,17 +921,17 @@ This choice determines a great deal about your character's abilities.
         \cf{Drd}[2]{Mystic Sphere} You gain access to an additional nature \glossterm{mystic sphere}, including all \glossterm{cantrips} from that sphere.
         In addition, you learn an additional nature \glossterm{spell}.
 
-        \cf{Drd}[3]{Spell Level}[Magical] You gain the ability to cast 2nd level nature spells.
+        \cf{Drd}[3]{Spell Rank}[Magical] You gain the ability to cast rank 3 nature spells.
 
-        \cf*{Drd}[4]{Spell Level}[Magical] You gain the ability to cast 3rd level nature spells.
+        \cf*{Drd}[4]{Spell Rank}[Magical] You gain the ability to cast rank 4 nature spells.
 
-        \cf*{Drd}[5]{Spell Level}[Magical] You gain the ability to cast 4th level nature spells.
+        \cf*{Drd}[5]{Spell Rank}[Magical] You gain the ability to cast rank 5 nature spells.
 
-        \cf*{Drd}[6]{Spell Level}[Magical] You gain the ability to cast 5th level nature spells.
+        \cf*{Drd}[6]{Spell Rank}[Magical] You gain the ability to cast rank 6 nature spells.
 
-        \cf*{Drd}[7]{Spell Level}[Magical] You gain the ability to cast 6th level nature spells.
+        \cf*{Drd}[7]{Spell Rank}[Magical] You gain the ability to cast rank 7 nature spells.
 
-        \cf*{Drd}[8]{Spell Level}[Magical] You gain the ability to cast 7th level nature spells.
+        \cf*{Drd}[8]{Spell Rank}[Magical] You gain the ability to cast rank 8 nature spells.
 
     \subsection{Nature Spell Mastery}
         This archetype improves the nature spells you cast.
@@ -948,7 +948,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Mystic Sphere Access} You gain access to an additional nature \glossterm{mystic sphere}.
                 You cannot choose this ability multiple times.
             \parhead{Rituals} You gain the ability to perform nature rituals to create unique magical effects (see \pcref{Rituals}).
-                The maximum level of nature ritual you can learn or perform is equal to the maximum level of divine spell that you can cast.
+                The maximum \glossterm{rank} of nature ritual you can learn or perform is equal to the maximum rank of divine spell that you can cast.
                 You cannot choose this ability multiple times.
         }
 
@@ -1555,12 +1555,12 @@ This choice determines a great deal about your character's abilities.
             \tb{Rank} & \tb{Arcane Spellcasting} & \tb{Arcane Spell Mastery}   & \tb{Arcane Scholar}   & \tb{Innate Arcanist} \tableheaderrule
             1 & Mystic spheres         & Mage armor                  & Scholastic lore       & Nonverbal caster     \\
             2 & Spells                 & Mystic knowledge            & Rituals               & Innate magic         \\
-            3 & Spell level (2)        & Wellspring of power         & Scholastic insight    & Augment              \\
-            4 & Spell level (3), spell & Mystic knowledge            & Ritual expertise      & Stilled caster       \\
-            5 & Spell level (4)        & Greater mage armor          & Contingency           & Greater innate magic \\
-            6 & Spell level (5)        & Mystic knowledge            & Scholastic insight    & Augment              \\
-            7 & Spell level (6), spell & Greater wellspring of power & Malleable contingency & Spell absorption     \\
-            8 & Spell level (7)        &                             &                       &                      \\
+            3 & Spell rank (3)        & Wellspring of power         & Scholastic insight    & Augment              \\
+            4 & Spell rank (4), spell & Mystic knowledge            & Ritual expertise      & Stilled caster       \\
+            5 & Spell rank (5)        & Greater mage armor          & Contingency           & Greater innate magic \\
+            6 & Spell rank (6)        & Mystic knowledge            & Scholastic insight    & Augment              \\
+            7 & Spell rank (7), spell & Greater wellspring of power & Malleable contingency & Spell absorption     \\
+            8 & Spell rank (8)        &                             &                       &                      \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -1610,13 +1610,13 @@ This choice determines a great deal about your character's abilities.
         Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
 
         You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
-        In addition, you learn one 1st level \glossterm{spell} from your chosen \glossterm{mystic sphere}.
+        In addition, you learn one rank 1 \glossterm{spell} from your chosen \glossterm{mystic sphere}.
         You can also spend \glossterm{insight points} to learn one additional arcane spell per \glossterm{insight point}.
         Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
 
-        When you gain access to a new \glossterm{mystic sphere} or spell level,
+        When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
             you can exchange any number of spells you know for other spells,
-            including spells of the higher level.
+            including spells of the higher rank.
 
         Arcane spells require both \glossterm{verbal components} and \glossterm{somatic components} to cast (see \pcref{Casting Components}).
         For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
@@ -1624,21 +1624,21 @@ This choice determines a great deal about your character's abilities.
         \cf{Mge}[2]{Mystic Sphere} You gain access to an additional arcane \glossterm{mystic sphere}, including all \glossterm{cantrips} from that sphere.
         In addition, you learn an additional arcane \glossterm{spell}.
 
-        \cf{Mge}[3]{Spell Level}[Magical] You gain the ability to cast 2nd level arcane spells.
+        \cf{Mge}[3]{Spell Rank}[Magical] You gain the ability to cast rank 3 arcane spells.
 
-        \cf*{Mge}[4]{Spell Level}[Magical] You gain the ability to cast 3rd level arcane spells.
+        \cf*{Mge}[4]{Spell Rank}[Magical] You gain the ability to cast rank 4 arcane spells.
 
         \cf{Mge}[4]{Spell} You gain an additional \glossterm{spell} for any arcane \glossterm{mystic sphere} you know.
 
-        \cf*{Mge}[5]{Spell Level}[Magical] You gain the ability to cast 4th level arcane spells.
+        \cf*{Mge}[5]{Spell Rank}[Magical] You gain the ability to cast rank 5 arcane spells.
 
-        \cf*{Mge}[6]{Spell Level}[Magical] You gain the ability to cast 5th level arcane spells.
+        \cf*{Mge}[6]{Spell Rank}[Magical] You gain the ability to cast rank 6 arcane spells.
 
-        \cf*{Mge}[7]{Spell Level}[Magical] You gain the ability to cast 6th level arcane spells.
+        \cf*{Mge}[7]{Spell Rank}[Magical] You gain the ability to cast rank 7 arcane spells.
 
         \cf*{Mge}[7]{Spell} You gain an additional \glossterm{spell} for any arcane \glossterm{mystic sphere} you know.
 
-        \cf*{Mge}[8]{Spell Level}[Magical] You gain the ability to cast 7th level arcane spells.
+        \cf*{Mge}[8]{Spell Rank}[Magical] You gain the ability to cast rank 8 arcane spells.
 
     \subsection{Arcane Spell Mastery}
         This archetype improves the arcane spells you cast.
@@ -1653,7 +1653,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Mystic Sphere Access} You gain access to an additional arcane \glossterm{mystic sphere}.
                 You cannot choose this ability multiple times.
             \parhead{Rituals} You can only choose this mystic knowledge if you are a wizard.
-                The maximum level of arcane ritual you can learn or perform is equal to the maximum arcane level of arcane spell that you can cast.
+                The maximum \glossterm{rank} of arcane ritual you can learn or perform is equal to the maximum rank of arcane spell that you can cast.
                 You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
                 You cannot choose this ability multiple times.
             \parhead{Spell Knowledge} You learn an additional arcane \glossterm{spell} (see \pcref{Arcane Mystic Spheres}).
@@ -1696,7 +1696,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Mge}[1]{Scholastic Lore} You gain a \plus2 bonus to the Spellcraft skill and all Knowledge skills.
 
         \cf{Mge}[2]{Rituals} You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
-        The maximum level of arcane ritual you can learn or perform is equal to the maximum level of arcane spell that you can cast.
+        The maximum \glossterm{rank} of arcane ritual you can learn or perform is equal to the maximum rank of arcane spell that you can cast.
 
         \cf{Mge}[3]{Arcane Insight}[Magical]
         You gain one of the following insights.
@@ -1720,7 +1720,7 @@ This choice determines a great deal about your character's abilities.
             You must exchange all spells you know from that \glossterm{mystic sphere} with spells from other \glossterm{mystic spheres} you have access to.
             \par You cannot choose this insight multiple times.
 
-            \parhead{Memorized Sphere} % TODO: clarify you need to be high enough level?
+            \parhead{Memorized Sphere} % TODO: clarify you need to be high enough rank?
             Choose a \glossterm{mystic sphere} you have access to.
             You can perform rituals from that \glossterm{mystic sphere} without having them written in your ritual book.
             If you lead a ritual from that \glossterm{mystic sphere}, it requires half the normal amount of time to perform and costs half the normal number of \glossterm{action points} (minimum 1).
@@ -1730,8 +1730,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Mge}[4]{Greater Scholastic Lore} The bonuses from your \textit{scholastic lore} ability increase to \plus4.
 
         \cf{Mge}[5]{Contingency}  You learn the Contingency \glossterm{augment}, allowing you to prepare a spell so it takes effect automatically if specific circumstances arise.
-        The Contingency \glossterm{augment} adds two levels to a spell's level.
-        You can apply this augment to any arcane spell.
+        Applying the Contingency \glossterm{augment} increases the \glossterm{rank} of the spell and all its upgrades by 2.
         % If any spells take more than one standard action, they would need to be excluded from Contingency, but none exist
         % You can apply this augment to any arcane spell that can be cast as a \glossterm{standard action} or \glossterm{minor action}.
 
@@ -1769,7 +1768,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Mge}[3]{Augment} You learn one \glossterm{augment} (see \pcref{Augments}).
         You can apply augments to spells to change their effects.
-        When you gain access to a new arcane spell level, you may change which augments you know.
+        When you gain access to a new arcane spell \glossterm{rank}, you may change which augments you know.
 
         \cf{Mge}[4]{Stilled Caster} When you cast a spell, you can omit that spell's \glossterm{somatic components}.
 
@@ -2092,12 +2091,12 @@ This choice determines a great deal about your character's abilities.
             \tb{Rank} & \tb{Devoted Paragon}  & \tb{Divine Spellcasting} & \tb{Stalwart Guardian}      & \tb{Zealous Warrior}       \tableheaderrule
             1         & Aligned aura          & Spellcasting             & Lay on hands                & Smite                      \\
             2         & Aligned immunity      & Mystic spheres           & Stalwart champion           & Zealous conviction         \\
-            3         & Paragon power         & Spell level (2)          & Stalwart resilience         & Zealous power              \\
-            4         & Greater aligned aura  & Spell level (3)          & Greater lay on hands        & Greater smite              \\
-            5         & Devoted mind          & Spell level (4)          & Greater stalwart champion   & Greater zealous conviction \\
-            6         & Greater paragon power & Spell level (5)          & Greater stalwart resilience & Greater zealous power      \\
-            7         & Supreme aligned aura  & Spell level (6)          & Supreme lay on hands        & Supreme smite              \\
-            8         & Aligned soul          & Spell level (7)          &                             &                            \\
+            3         & Paragon power         & Spell rank (3)          & Stalwart resilience         & Zealous power              \\
+            4         & Greater aligned aura  & Spell rank (4)          & Greater lay on hands        & Greater smite              \\
+            5         & Devoted mind          & Spell rank (5)          & Greater stalwart champion   & Greater zealous conviction \\
+            6         & Greater paragon power & Spell rank (6)          & Greater stalwart resilience & Greater zealous power      \\
+            7         & Supreme aligned aura  & Spell rank (7)          & Supreme lay on hands        & Supreme smite              \\
+            8         & Aligned soul          & Spell rank (8)          &                             &                            \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -2201,30 +2200,30 @@ This choice determines a great deal about your character's abilities.
         Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
 
         You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
-        In addition, you learn one 1st level \glossterm{spell} from your chosen \glossterm{mystic sphere}.
+        In addition, you learn one rank 1 \glossterm{spell} from your chosen \glossterm{mystic sphere}.
         You can also spend \glossterm{insight points} to learn one additional divine spell per \glossterm{insight point}.
         Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
 
-        When you gain access to a new \glossterm{mystic sphere} or spell level,
+        When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
             you can exchange any number of spells you know for other spells,
-            including spells of the higher level.
+            including spells of the higher rank.
 
         Divine spells require \glossterm{verbal components} to cast (see \pcref{Casting Components}).
         For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
 
         \cf{Pal}[2]{Battle Prayer} Your divine spells do not have the \glossterm{Focus} ability tag, allowing you to cast them without lowering your guard in combat.
 
-        \cf{Pal}[3]{Spell Level}[Magical] You gain the ability to cast 2nd level divine spells.
+        \cf{Pal}[3]{Spell Rank}[Magical] You gain the ability to cast rank 3 divine spells.
 
-        \cf*{Pal}[4]{Spell Level}[Magical] You gain the ability to cast 3rd level divine spells.
+        \cf*{Pal}[4]{Spell Rank}[Magical] You gain the ability to cast rank 4 divine spells.
 
-        \cf*{Pal}[5]{Spell Level}[Magical] You gain the ability to cast 4th level divine spells.
+        \cf*{Pal}[5]{Spell Rank}[Magical] You gain the ability to cast rank 5 divine spells.
 
-        \cf*{Pal}[6]{Spell Level}[Magical] You gain the ability to cast 5th level divine spells.
+        \cf*{Pal}[6]{Spell Rank}[Magical] You gain the ability to cast rank 6 divine spells.
 
-        \cf*{Pal}[7]{Spell Level}[Magical] You gain the ability to cast 6th level divine spells.
+        \cf*{Pal}[7]{Spell Rank}[Magical] You gain the ability to cast rank 7 divine spells.
 
-        \cf*{Pal}[8]{Spell Level}[Magical] You gain the ability to cast 7th level divine spells.
+        \cf*{Pal}[8]{Spell Rank}[Magical] You gain the ability to cast rank 8 divine spells.
 
         \cf*{Pal}[8]{Spell} You gain an additional \glossterm{spell} for any divine \glossterm{mystic sphere} you know.
 
@@ -2818,12 +2817,12 @@ This choice determines a great deal about your character's abilities.
             \tb{Rank} & \tb{Blessings of the Abyss}  & \tb{Pact Spellcasting} & \tb{Pact Spell Mastery}     & \tb{Soulkeeper's Chosen} \tableheaderrule
             1 & Eldritch blast               & Spellcasting           & Armor tolerance             & Possession                  \\
             2 & Fiendish resistance          & Mystic sphere          & Spell knowledge             & Empowering whispers         \\
-            3 & Abyssal jaunt                & Spell level (2)        & Wellspring of power         & Influence possession        \\
-            4 & Abyssal substitution         & Spell level (3), spell & Spell knowledge             & Exchange soul fragment      \\
-            5 & Greater fiendish resistance  & Spell level (4)        & Greater armor tolerance     & Powerful possession         \\
-            6 & Abyssal curse                & Spell level (5)        & Spell knowledge             & Greater empowering whispers \\
-            7 & Greater abyssal substitution & Spell level (6), spell & Greater wellspring of power & Control possession          \\
-            8 &                              & Spell level (7)        &                             &                             \\
+            3 & Abyssal jaunt                & Spell rank (3)        & Wellspring of power         & Influence possession        \\
+            4 & Abyssal substitution         & Spell rank (4), spell & Spell knowledge             & Exchange soul fragment      \\
+            5 & Greater fiendish resistance  & Spell rank (5)        & Greater armor tolerance     & Powerful possession         \\
+            6 & Abyssal curse                & Spell rank (6)        & Spell knowledge             & Greater empowering whispers \\
+            7 & Greater abyssal substitution & Spell rank (7), spell & Greater wellspring of power & Control possession          \\
+            8 &                              & Spell rank (8)        &                             &                             \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -2943,34 +2942,34 @@ This choice determines a great deal about your character's abilities.
         You may spend \glossterm{insight points} to learn one additional \glossterm{mystic sphere} per two \glossterm{insight points}.
 
         You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
-        In addition, you learn one 1st level \glossterm{spell} from your chosen \glossterm{mystic sphere}.
+        In addition, you learn one rank 1 \glossterm{spell} from your chosen \glossterm{mystic sphere}.
         You can also spend \glossterm{insight points} to learn one additional pact spell per \glossterm{insight point}.
         Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
 
-        When you gain access to a new \glossterm{mystic sphere} or spell level,
+        When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
             you can exchange any number of spells you know for other spells,
-            including spells of the higher level.
+            including spells of the higher rank.
 
         Pact spells require require both \glossterm{verbal components} and \glossterm{somatic components} to cast (see \pcref{Casting Components}).
         For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
 
         \cf{War}[2]{Soulbound Focus} Your pact spells do not have the \glossterm{Focus} ability tag, allowing you to cast them without lowering your guard in combat.
 
-        \cf{War}[3]{Spell Level}[Magical] You gain the ability to cast 2nd level pact spells.
+        \cf{War}[3]{Spell Rank}[Magical] You gain the ability to cast rank 3 pact spells.
 
-        \cf*{War}[4]{Spell Level}[Magical] You gain the ability to cast 3rd level pact spells.
+        \cf*{War}[4]{Spell Rank}[Magical] You gain the ability to cast rank 4 pact spells.
 
         \cf{War}[4]{Spell} You gain an additional \glossterm{spell} for any pact \glossterm{mystic sphere} you know.
 
-        \cf*{War}[5]{Spell Level}[Magical] You gain the ability to cast 4th level pact spells.
+        \cf*{War}[5]{Spell Rank}[Magical] You gain the ability to cast rank 5 pact spells.
 
-        \cf*{War}[6]{Spell Level}[Magical] You gain the ability to cast 5th level pact spells.
+        \cf*{War}[6]{Spell Rank}[Magical] You gain the ability to cast rank 6 pact spells.
 
-        \cf*{War}[7]{Spell Level}[Magical] You gain the ability to cast 6th level pact spells.
+        \cf*{War}[7]{Spell Rank}[Magical] You gain the ability to cast rank 7 pact spells.
 
         \cf*{War}[7]{Spell} You gain an additional \glossterm{spell} for any pact \glossterm{mystic sphere} you know.
 
-        \cf*{War}[8]{Spell Level}[Magical] You gain the ability to cast 7th level pact spells.
+        \cf*{War}[8]{Spell Rank}[Magical] You gain the ability to cast rank 8 pact spells.
 
         % {
         %     \augment{0}{Infernal Focus} You gain a \plus10 bonus to \glossterm{concentration} checks to cast the spell (see \pcref{Concentration}).
@@ -3038,7 +3037,7 @@ This choice determines a great deal about your character's abilities.
         {
             \parhead{Mystic Sphere Access} You gain access to an additional pact \glossterm{mystic sphere}.
                 You cannot choose this ability multiple times.
-            \parhead{Rituals} The maximum level of pact ritual you can learn or perform is equal to the maximum pact level of pact spell that you can cast.
+            \parhead{Rituals} The maximum \glossterm{rank} of pact ritual you can learn or perform is equal to the maximum rank of pact spell that you can cast.
                 You gain the ability to perform pact rituals to create unique magical effects (see \pcref{Rituals}).
                 You cannot choose this ability multiple times.
             \parhead{Spell Knowledge} You learn an additional pact \glossterm{spell} (see \pcref{Pact Mystic Spheres}).
