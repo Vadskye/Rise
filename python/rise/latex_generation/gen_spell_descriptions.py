@@ -28,9 +28,19 @@ def generate_mystic_spheres():
         cantrips=[
             Effects('Airborne Leap', 'Yourself', """
                 You gain a +4 bonus to the Jump skill until the end of the next round.
+
+                \\rankline
+                \\rank<3> The bonus increases to +6.
+                \\rank<5> The bonus increases to +8.
+                \\rank<7> The bonus increases to +10.
             """, tags=[]),
             Effects('Soften Landing', 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-                Until the end of the round, the target treats all falls as if they were 5 feet shorter per \\glossterm<power> for the purpose of determining \\glossterm<falling damage>.
+                Until the end of the round, the target treats all falls as if they were 20 feet shorter for the purpose of determining \\glossterm<falling damage>.
+
+                \\rankline
+                \\rank<3> The distance reduction increases to 50 feet.
+                \\rank<5> The distance reduction increases to 100 feet.
+                \\rank<7> The target is immune to \\glossterm<falling damage>.
             """, tags=[]),
         ],
         schools=['Transmutation'],
@@ -42,6 +52,11 @@ def generate_mystic_spheres():
                 You move the target up to 50 feet in any direction.
                 You cannot change the direction of the movement partway through.
                 Moving the target upwards costs twice the normal movement cost.
+
+                \\rankline
+                \\rank<3> The distance increases to 100 feet.
+                \\rank<5> The target gains a +2 bonus to Armor defense during the current phase.
+                \\rank<7> The distance increases to 300 feet.
             """, tags=['Swift']),
             Spell('Wind Screen', 1, 'Yourself', """
                 You gain a +1 \\glossterm<magic bonus> to Armor defense.
@@ -49,47 +64,62 @@ def generate_mystic_spheres():
 
                 You can cast this spell as a \\glossterm<minor action>.
                 Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.
-            """, tags=['Attune (target)']),
-            Spell('Greater Wind Screen', 5, 'Yourself', """
-                This spell functions like the \\spell<wind screen> spell, except that the Armor defense bonus increases to +2 and the defense bonus against ranged attacks increases to +8.
+
+                \\rankline
+                \\rank<3> The bonus against ranged attacks increases to +6.
+                \\rank<5> The bonus to Armor defense increases to +2.
+                \\rank<7> The bonus against ranged attacks increases to +8.
             """, tags=['Attune (target)']),
             Spell('Windstrike', 1, 'One creature or object within \\rnglong range', """
                 Make an attack vs. Armor against the target.
                 \\hit The target takes bludgeoning \\glossterm<standard damage>.
+
+                \\rankline
+                \\rank<3> The attack gains a +1d bonus to damage.
+                \\rank<5> The damage bonus increases to +2d.
+                \\rank<7> The damage bonus increases to +3d.
             """, tags=[]),
-            Spell('Distant Windstrike', 4, 'One creature or object within 2,000 foot range', """
-                This spell functions like the \\spell<windstrike> spell, except that it can affect a more distant target.
+            Spell('Windsnipe', 4, 'One creature or object within 2,000 foot range', """
+                Make an attack vs. Armor against the target.
+                \\hit The target takes bludgeoning \\glossterm<standard damage>.
+
+                \\rankline
+                \\rank<6> The attack gains a +1d bonus to damage.
+                \\rank<8> The damage bonus increases to +2d.
             """, tags=[]),
-            Spell('Forceful Windstrike', 5, 'One creature or object within \\rnglong range', """
-                This spell functions like the \\spell<windstrike> spell, except that you gain a +1d bonus to damage.
-                In addition, if your attack result beats the target's Fortitude defense, you move it up to 30 feet in any direction.
+            Spell('Buffeting Blast', 3, 'One creature or object within \\rnglong range', """
+                Make an attack vs. Fortitude against the target.
+                \\hit The target takes bludgeoning \\glossterm<standard damage> and is \\glossterm<pushed> up to 30 feet in any direction.
                 Moving the target upwards cost twice the normal movement cost.
+                \\crit The target takes double damage and the distance you can push the target is doubled.
+
+                \\rankline
+                \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<7> The accuracy bonus increases to +2.
             """, tags=[]),
-            Spell('Greater Propulsion', 3, 'Yourself or one Large or smaller \\glossterm<ally> in \\rngclose range', """
-                This spell functions like the \\spell<propulsion> spell, except that the distance you can move the target is increased to 100 feet.
-                In addition, the target gains a +1 bonus to Armor defense during the current phase.
-            """, tags=['Swift']),
-            Spell('Supreme Propulsion', 5, 'Yourself or one Large or smaller \\glossterm<ally> in \\rngclose range', """
-                This spell functions like the \\spell<propulsion> spell, except that the distance you can move the target is increased to 300 feet.
-                In addition, the target gains a +2 bonus to Armor defense during the current phase.
-            """, tags=['Swift']),
             Spell('Gentle Descent', 3, 'Yourself', """
                 You gain a 30 foot \\glossterm<glide speed> (see \\pcref<Gliding>).
-            """, tags=['Attune (target)']),
+
+                \\rankline
+                \\rank<5> You are immune to \\glossterm<falling damage> even if you do not glide.
+                \\rank<7> You can reduce your \\glossterm<glide speed> to 20 feet or increase it to 60 feet during each phase that you glide.
+            """, tags=['Attune (self)']),
             Spell('Flight', 5, 'Yourself', """
                 You gain a 30 foot \\glossterm<fly speed> as long as you are no more than 100 feet above solid ground (see \\pcref<Flying>).
-            """, tags=['Attune (target)']),
-            Spell('Greater Flight', 8, 'Yourself', """
-                You gain a 30 foot \\glossterm<fly speed> with good \\glossterm<maneuverability> (see \\pcref<Flying>).
-            """, tags=['Attune (target)']),
-            Spell('Buffeting Gale', 3, 'Everything in a \\arealarge, 10 ft. wide line from you', """
+
+                \\rankline
+                \\rank<7> The maximum distance above the ground increases to 300 feet.
+            """, tags=['Attune (self)']),
+            Spell('Gust of Wind', 3, 'Everything in a \\arealarge, 10 ft. wide line from you', """
                 Make an attack vs. Fortitude against each target.
+                \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
+
+                \\rankline
                 % TODO: wording
-                \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d and is moved 20 feet in the direction the line points away from you.
-                Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
-            """, tags=[]),
-            Spell('Greater Buffeting Gale', 5, 'Everything in a \\areahuge, 10 ft. wide line from you', """
-                This spell functions like the \\spell<buffeting gale> spell, except that it affects more targets and targets are moved 50 feet instead of 20 feet.
+                \\rank<3> Each struck target is \\glossterm<pushed> 20 feet in the direction the line points away from you.
+                    Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
+                \\rank<5> The area increases to a \\areahuge, 10 ft. wide line from you.
+                \\rank<7> Each struck target is pushed 50 feet instead of 20 feet.
             """, tags=[]),
             Spell('Windblade', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 Melee weapons wielded by the target gain +5 foot \\glossterm<magic bonus> to \\glossterm<reach>.
@@ -97,70 +127,79 @@ def generate_mystic_spheres():
                 This has no effect on ranged attacks the target makes.
 
                 You can cast this spell as a \\glossterm<minor action>.
+
+                \\rankline
+                \\rank<5> The target also gains a +2 \\glossterm<magic bonus> to \\glossterm<power> with melee weapons.
+                \\rank<7> The bonus to \\glossterm<reach> increases to +10 feet.
             """, tags=['Attune (target)']),
-            Spell('Greater Windblade', 6, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                This spell functions like the \\textit<windblade> spell, except that the bonus to \\glossterm<reach> increases to +10 feet.
-            """, tags=['Attune (target)']),
-            Spell('Stormlord', 4, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                This spell functions like the \\spell<wind screen> spell, except that the air also retaliates against creatures that attack the target.
-                When a creature within \\rngclose range of the target attacks it, make an attack vs. Armor against the attacking creature.
-                A hit deals bludgeoning \\glossterm<standard damage> -1d.
+            Spell('Stormlord', 3, 'Yourself', """
+                At the end of each phase, make an attack vs. Armor against each creature within \\rngclose range that attacked you during that phase.
+                \\hit Each struck target takes bludgeoning \\glossterm<standard damage> -1d.
                 Any individual creature can only be dealt damage in this way once per round.
 
                 Any effect which increases this spell's range increases the range of this retaliation by the same amount.
+
+                \\rankline
+                \\rank<5> The attack gains a +1d bonus to damage.
+                \\rank<7> The damage bonus increases to +2d.
+            """, tags=['Attune (self)']),
+            Spell('Air Walk', 6, 'Yourself', """
+                You can walk on air as if it were solid ground as long as you are no more than 50 feet above solid ground.
+                The magic only affects your's legs and feet.
+                By choosing when to treat the air as solid, you can traverse the air with ease.
+
+                \\rankline
+                \\rank<8> The maximum distance above solid ground increases to 300 feet.
             """, tags=['Attune (target)']),
-            Spell('Greater Stormlord', 7, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                This spell functions like the \\spell<stormlord> spell, except that the damage increases to \\glossterm<standard damage> +1d.
-            """, tags=['Attune (target)']),
-            Spell('Air Walk', 6, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
-                The target can walk on air as if it were solid ground as long as it is no more than 50 feet above solid ground.
-                The magic only affects the target's legs and feet.
-                By choosing when to treat the air as solid, it can traverse the air with ease.
-            """, tags=['Attune (target)']),
-            Spell('Control Weather', 5, None, """
+            Spell('Control Weather', 4, None, """
                 When you cast this spell, you choose a new weather pattern.
-                You can only choose weather which would be possible in the climate and season of the area you are in.
+                You can only choose weather which would be reasonably probable in the climate and season of the area you are in.
                 For example, you can normally create a thunderstorm, but not if you are in a desert.
 
                 When you complete the spell, the weather begins to take effect in a two mile radius cylinder-shaped \\glossterm<zone> from your location.
                 After five minutes, your chosen weather pattern fully takes effect.
+                % TODO: define weather intensities
+                You cannot change the intensity of the weather beyond what would be possible without magic during this time frame.
+                For example, you can change a clear sky into a light thunderstorm, but you cannot create a hurricane or tornado from untroubled air.
 
                 You can control the general tendencies of the weather, such as the direction and intensity of the wind.
-                You cannot control specific applications of the weather -- where lightning strikes, for example, or the exact path of a tornado.
+                You cannot control specific applications of the weather, such as the location of lightning strikes.
                 Contradictory weather conditions are not possible simultaneously.
 
                 After the spell's effect ends, the weather continues on its natural course, which may cause your chosen weather pattern to end.
                 % TODO: This should be redundant with generic spell mechanics
                 If another ability would magically manipulate the weather in the same area, the most recently used ability takes precedence.
+
+                \\rankline
+                \\rank<6> You can shape the weather for up to fifteen minutes before it takes effect, increasing the intensity of the changes you can make.
+                \\rank<8> You can cause weather changes that are inappropriate for the climate and season of the area you are in.
+                Making a weather change that is inappropriate for the local environment takes twice as long as making an appropriate change.
             """, tags=['Attune (self)']),
             Spell('Cyclone', 3, 'Everything in a \\areasmall radius within \\rngclose range', """
-                Make an attack vs. Fortitude against each target.
+                Make an attack vs. Armor against each target.
                 \\hit Each target takes bludgeoning \\glossterm<standard damage>.
+
+                \\rankline
+                \\rank<5> The attack gains a +1d bonus to damage.
+                \\rank<7> The damage bonus increases to +2d.
             """, tags=[]),
-            Spell('Greater Cyclone', 6, 'Everything in a \\areamed radius within \\rngmed range', """
-                Make an attack vs. Fortitude against each target.
-                \\hit Each target takes bludgeoning \\glossterm<standard damage>.
-            """, tags=[]),
-            Spell('Hurricane', 5, 'Enemies in a \\arealarge radius from you', """
+            Spell('Buffeting Hurricane', 4, 'Enemies in a \\arealarge radius from you', """
                 Make an attack vs. Fortitude against each target.
                 \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d and is moved 20 feet clockwise around you.
                 Each target's final position should be the same distance from you as its starting position.
+
+                \\rankline
+                \\rank<6> The attack gains a +1d bonus to damage and each target is moved 50 feet instead of 20 feet.
+                \\rank<6> The area increases to a \\areahuge radius.
             """, tags=[]),
-            Spell('Greater Hurricane', 7, 'Enemies in a \\arealarge radius from you', """
-                This spell functions like the \\spell<hurricane> spell, except that it deals \\glossterm<standard damage> and targets are moved 50 feet instead of 20 feet.
-            """, tags=[]),
-            Spell('Stripping Windstrike', 3, 'One creature or object within \\rnglong range', """
-                This spell functions like the \\spell<windstrike> spell, except that the attack result is also compared to the target's Reflex defense.
-                % Clarify: this can hit even if the damaging effect misses
+            Spell('Windtheft', 1, 'One creature or object within \\rngmed range', """
+                Make an attack vs. Reflex against the target.
                 \\hit The target drops all items it is holding that are not well secured (such as a ring) or held in two hands.
-            """, tags=[]),
-            Spell('Stripping Gale', 4, 'Everything in a \\arealarge, 10 ft. wide line from you', """
-                This spell functions like the \\spell<buffeting gale> spell, except that the attack result is also compared to each target's Reflex defense.
-                \\hit Each target drops all items it is holding that are not well secured (such as a ring) or held in two hands.
-            """, tags=[]),
-            Spell('Stripping Cyclone', 4, 'Everything in a \\areasmall radius within \\rngclose range', """
-                This spell functions like the \\spell<cyclone> spell, except that the attack result is also compared to each target's Reflex defense.
-                \\hit Each target drops all items it is holding that are not well secured (such as a ring) or held in two hands.
+
+                \\rankline
+                \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<5> The accuracy bonus increases to +2.
+                \\rank<7> The accuracy bonus increases to +3.
             """, tags=[]),
         ],
         category='buff, defense',
@@ -175,11 +214,21 @@ def generate_mystic_spheres():
         short_description="Command water to crush and drown foes",
         cantrips=[
             Effects('Create Water', 'Any number of locations within \\rngclose range', """
-                You create up to one gallon per \\glossterm<power> of wholesome, drinkable water at the target locations, allowing you to fill multiple small water containers.
+                You create two gallons of wholesome, drinkable water at the target locations, allowing you to fill multiple small water containers.
                 You must create a minimum of one ounce of water in each location.
+
+                \\rankline
+                \\rank<3> The volume created increases to five gallons.
+                \\rank<5> The volume created increases to ten gallons.
+                \\rank<7> The volume created increases to twenty gallons.
             """, tags=['Creation']),
-            Effects('Slippery Escape', 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                The target gains a +4 bonus to the Escape Artist skill until the end of the next round.
+            Effects('Slippery Escape', 'Yourself', """
+                You gain a +4 bonus to the Escape Artist skill until the end of the next round.
+
+                \\rankline
+                \\rank<3> The bonus increases to +6.
+                \\rank<5> The bonus increases to +8.
+                \\rank<7> The bonus increases to +10.
             """, tags=['Manifestation']),
         ],
         schools=['Conjuration'],
@@ -189,28 +238,40 @@ def generate_mystic_spheres():
                 Make an attack vs. Reflex against the target.
                 \\hit As a \\glossterm<condition>, the majority of the target's body is surrounded by a layer of water.
                 This does not impede the target's ability to breathe, but it takes penalties as if it was fighting underwater (see \\pcref<Underwater Combat>).
+
+                \\rankline
+                \\rank<6> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<8> The accuracy bonus increases to +2.
             """, tags=['Manifestation']),
             Spell('Crushing Wave', 1, 'Everything in a \\areamed, 10 ft.\\ wide line from you', """
                 Make an attack vs. Fortitude against each target.
                 \\hit Each target takes bludgeoning \\glossterm<standard damage>.
+
+                \\rankline
+                \\rank<3> The area increases to a \\arealarge, 10 ft.\\ wide line from you.
+                \\rank<5> The attack gains a +1d bonus to damage.
+                \\rank<7> The damage bonus increases to +2d.
             """, tags=['Manifestation']),
-            Spell('Greater Crushing Wave', 4, 'Everything in a \\arealarge, 15 ft.\\ wide line from you', """
-                This spell functions like the \\spell<crushing wave> spell, except that it affects more targets.
-            """, tags=['Manifestation']),
-            Spell('Great Flood', 7, 'Everything in a 200 ft.\\ long, 30 ft.\\ wide line from you', """
+            Spell('Great Flood', 7, 'Everything in a \\areaext, 30 ft.\\ wide line from you', """
                 Make an attack vs. Fortitude against each target.
                 \\hit Each target takes bludgeoning \\glossterm<standard damage>.
             """, tags=['Manifestation']),
             Spell('Water Jet', 1, 'One creature within \\rngmed range', """
                 Make an attack vs. Armor against the target.
                 \\hit The target takes bludgeoning \\glossterm<standard damage> +1d.
+
+                \\rankline
+                \\rank<3> The attack gains a +1d bonus to damage.
+                \\rank<5> The damage bonus increases to +2d.
+                \\rank<7> The damage bonus increases to +3d.
             """, tags=['Manifestation']),
             Spell('Fountain', 3, '\\glossterm<Enemies> within a \\areamed radius from you', """
                 Make an attack vs. Armor against each target.
                 \\hit Each target takes bludgeoning \\glossterm<standard damage>.
-            """, tags=['Manifestation']),
-            Spell('Greater Fountain', 5, '\\glossterm<Enemies> within a \\arealarge radius from you', """
-                This spell functions like the \\spell<fountain> spell, except that it affects more targets.
+
+                \\rankline
+                \\rank<5> The attack gains a +1d bonus to damage.
+                \\rank<7> The damage bonus increases to +2d.
             """, tags=['Manifestation']),
             Spell('Wall of Water', 4, None, """
                 You create a wall of water in a 20 ft.\\ high, \\arealarge line within \\rngmed range.
@@ -220,62 +281,74 @@ def generate_mystic_spheres():
                 Creatures can pass through the wall unharmed, though it costs five extra feet of movement to move through the wall.
 
                 Each five-foot square of wall has a \\glossterm<wound resistance> equal to three times your \\glossterm<power> and all of its defenses are 0.
+
+                \\rankline
+                \\rank<6> The area of the wall increases to a \\areahuge line.
+                \\rank<8> The area of the wall increases to a \\areaext line.
             """, tags=['Sustain (minor)', 'Manifestation']),
             Spell('Underwater Freedom', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 The target suffers no penalties for acting underwater, except for those relating to using ranged weapons.
 
                 You can cast this spell as a \\glossterm<minor action>.
+
+                \\rankline
+                \\rank<3> The target can also breathe water as if it was air.
+                \\rank<5> The target also gains a swim speed equal to half its \\glossterm<base speed>.
+                \\rank<7> The swim speed increases to be equal to the target's \\glossterm<base speed>.
             """, tags=['Attune (target)']),
-            Spell('Greater Underwater Freedom', 4, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                This spell functions like the \\spell<underwater freedom> spell, except that the target can also breathe water as if it was air.
-            """, tags=['Attune (target)']),
-            Spell('Raging River', 4, 'Everything in a \\areamed, 10 ft.\\ wide line from you (see text)', """
-                This spell functions like the \\spell<crushing wave> spell, except that it gains the \\glossterm<Sustain> (standard) tag.
-                The area affected by the spell becomes a \\glossterm<zone> that is continuously filled with rushing water.
-                Each struck target in the area suffers penalties appropriate for fighting underwater, and may be unable to breathe.
-                In addition, at the end of each \\glossterm<action phase> in subsequent rounds, the attack is repeated in that area.
-            """, tags=['Manifestation']),
-            Spell('Greater Raging River', 6, 'Everything in a \\areamed, 10 ft.\\ wide line from you (see text)', f"""
-                This spell functions like the \\spell<raging river> spell, except that the spell gains the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Sustain> (standard) tag.
-            """, tags=['Manifestation']),
+            Spell('Raging River', 1, 'Everything in a \\arealarge, 10 ft. wide line from you', """
+                Make an attack vs. Fortitude against each target.
+                \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
+
+                \\rankline
+                % TODO: wording
+                \\rank<3> Each struck target is \\glossterm<pushed> 20 feet in the direction the line points away from you.
+                    Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
+                \\rank<5> The area increases to a \\areahuge, 10 ft. wide line from you.
+                \\rank<7> Each struck target is pushed 50 feet instead of 20 feet.
+            """, tags=[]),
             Spell('Geyser', 3, 'Everything in a \\arealarge, 5 ft.\\ wide vertical line within \\rngmed range', """
                 Make an attack vs. Armor against each target.
                 If this spell has its area increased, such as with the Widened \\glossterm<augment>, only the length of the line increases.
                 \\hit Each target takes takes bludgeoning \\glossterm<standard damage> +1d.
-            """, tags=['Manifestation']),
-            Spell('Greater Geyser', 5, 'Everything in a \\areahuge, 10 ft.\\ wide vertical line within \\rngmed range', """
-                This spell functions like the \\spell<geyser> spell, except that it affects more targets.
+
+                \\rankline
+                \\rank<5> The attack gains a +1d bonus to damage.
+                \\rank<7> The damage bonus increases to +2d.
             """, tags=['Manifestation']),
             Spell('Rainstorm', 3, 'Everything in the area (see text)', f"""
                 Torrential rain begins falling out of thin air within a \\arealarge radius \\glossterm<zone> from your location.
                 The rain extinguishes minor fires such as campfires and torches on contact.
                 Everything in the area gain a bonus equal to your \\glossterm<power> to \\glossterm<resistances> against fire damage.
-                \\glossterm<Water> abilities gain a +1 bonus to \\glossterm<accuracy> against targets in the area.
+
+                \\rankline
+                \\rank<5> The area increases to a \\areahuge radius \\glossterm<zone>.
+                \\rank<7> The area increases to a \\areaext radius \\glossterm<zone>.
             """, tags=['Manifestation', 'Sustain (minor)']),
-            Spell('Overpowering Wave', 3, 'Everything in a \\areamed, 10 ft.\\ wide line from you', """
-                This spell functions like the \\spell<crushing wave> spell, except that it attacks Reflex defense instead of Fortitude defense.
-                In addition, it only affects creatures of Large size or smaller.
-            """, tags=['Manifestation']),
             Spell('Obscuring Mist', 1, None, """
                 Fog fills the air within a \\areamed radius \\glossterm<zone> from your location.
                 The fog partially obstructs sight, granting \\glossterm<concealment> to anything seen through the fog (see \\pcref<Concealment>).
+
+                \\rankline
+                \\rank<3> The area increases to a \\arealarge radius \\glossterm<zone>.
+                \\rank<5> You can exclude an inner radius of any size from the area, allowing you to create fog that surrounds you without blocking sight to things adjacent to you.
+                \\rank<7> The area increases to a \\areahuge radius \\glossterm<zone>.
             """, tags=['Sustain (minor)']),
-            Spell('Greater Obscuring Mist', 4, None, """
-                This spell functions like the \\spell<obscuring mist> spell, except that the area increases to an \\arealarge radius \\glossterm<zone> from your location.
-            """, tags=['Sustain (minor)']),
-            Spell('Misty Shroud', 5, None, """
-                This spell functions like the \\spell<obscuring mist> spell, except that the area becomes an \\glossterm<emanation> from you.
+            Spell('Misty Shroud', 4, None, """
+                Fog fills the air within a \\areamed radius \\glossterm<emanation> from your location.
+                The fog partially obstructs sight, granting \\glossterm<concealment> to anything seen through the fog (see \\pcref<Concealment>).
+
+                \\rank<6> You can exclude an inner radius of any size from the area, allowing you to create fog that surrounds you without blocking sight to things adjacent to you.
+                \\rank<8> The area increases to a \\arealarge radius \\glossterm<zone>.
             """, tags=['Attune (self)']),
             Spell('Aqueous Tentacles', 3, 'Yourself', """
                 Each of your arms with a \\glossterm<free hand> is covered with watery tentacles that you can attack with.
                 Each tentacle is a slam \\glossterm<natural weapon> (see \\tref<Natural Weapons>).
                 The tentacles have a \\glossterm<reach> of 10 feet, and any strikes with them are \\glossterm<magical strikes>.
-            """, tags=['Attune (self)']),
-            Spell('Greater Aqueous Tentacles', 5, 'Yourself', """
-                This spell functions like the \\spell<aqueous tentacles> spell, except that the tentacles have a \\glossterm<reach> of 20 feet.
-            """, tags=['Attune (self)']),
-            Spell('Supreme Aqueous Tentacles', 7, 'Yourself', """
-                This spell functions like the \\spell<aqueous tentacles> spell, except that the tentacles have a \\glossterm<reach> of 50 feet.
+
+                \\rankline
+                \\rank<5> You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> on attacks using the tentacles.
+                \\rank<7> Your \\glossterm<reach> with the tentacles increases to 20 feet.
             """, tags=['Attune (self)']),
         ],
         rituals=[
@@ -304,78 +377,127 @@ def generate_mystic_spheres():
             Effects('Minor Translocation', 'Tiny or smaller unattended object within \\rngclose range', """
                 The target teleports into an unoccupied location on a stable surface within range that can support the weight of the target.
                 If the destination is invalid, the ability fails without effect.
+
+                \\rankline
+                \\rank<3> The range increases to \\rngmed.
+                \\rank<5> The maximum size of the target increases to Small.
+                \\rank<7> The range increases to \\rnglong.
             """, tags=[]),
         ],
         schools=['Conjuration'],
         lists=['Arcane', 'Pact'],
         spells=[
             Spell('Dimensional Jaunt', 1, 'One creature within \\rngmed range', """
+                You partially teleport the target into the Astral Plane.
                 Make an attack vs. Mental against the target.
-                \\hit The target takes \\glossterm<standard damage>.
+                \\hit The target takes energy \\glossterm<standard damage>.
+
+                \\rankline
+                \\rank<3> The attack gains a +1d bonus to damage.
+                \\rank<5> The damage bonus increases to +2d.
+                \\rank<7> The damage bonus increases to +3d.
             """, tags=[]),
             # TODO: target wording is awkward
             Spell('Teleport', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
                 The target teleports into an unoccupied destination within range.
                 If the destination is invalid, this spell is \\glossterm<miscast>.
-            """, tags=[]),
-            Spell('Greater Teleport', 3,'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
-                This spell functions like the \\spell<teleport> spell, except that the range is increased to \\rnglong.
+
+                \\rankline
+                \\rank<3> The range increases to \\rngmed.
+                \\rank<5> The range increases to \\rnglong.
+                \\rank<7> The range increases to \\rngext.
             """, tags=[]),
             Spell('Banishment', 3, 'One creature within \\rngmed range', """
-                This spell functions like the \\spell<dimensional jaunt> spell, except that it gains a +2 bonus to \\glossterm<accuracy> against \\glossterm<outsiders> not on their home planes and creatures created by \\glossterm<Manifestation> abilities.
+                Make an attack vs. Mental against the target.
+                You gain a +2 bonus to \\glossterm<accuracy> against \\glossterm<outsiders> not on their home planes and creatures created by \\glossterm<Manifestation> abilities.
+                \\hit The target takes \\glossterm<standard damage>.
                 \\crit The target takes double damage.
                 In addition, if it is an outsider not on its home plane, it is teleported to a random location on its home plane.
                 If it is a creature created by a \\glossterm<Manifestation> ability, it immediately disappears.
+
+                \\rankline
+                \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>
+                \\rank<7> The accuracy bonus increases to +2.
             """, tags=[]),
             Spell('Dimension Door', 4, 'Yourself', """
                 You teleport to a location within \\rngext range of you.
                 You must clearly visualize the destination's appearance, but you do not need \\glossterm<line of sight> or \\glossterm<line of effect> to your destination.
+
+                \\rankline
+                \\rank<6> The range increases to 3,000 feet.
+                \\rank<8> The range increases to 10,000 feet.
             """, tags=[]),
             Spell('Dimensional Jaunt -- Plane of Earth', 3, 'One creature within \\rngmed range', """
-                This spell functions like the \\spell<dimensional jaunt> spell, except that the target is partially teleported into the Plane of Earth.
-                The damage dealt changes to bludgeoning \\glossterm<standard damage> -1d, and a struck target is \\glossterm<slowed> as a \\glossterm<condition>.
+                You partially teleport the target into the Plane of Earth.
+                Make an attack vs. Mental against the target.
+                \\hit The target takes bludgeoning \\glossterm<standard damage> -1d and is \\glossterm<slowed> as a \\glossterm<condition>.
+
+                \\rankline
+                \\rank<5> The attack gains a +1d bonus to damage.
+                \\rank<7> The damage bonus increases to +2d.
             """, tags=[]),
             Spell('Dimensional Jaunt -- Plane of Fire', 4,  'One creature within \\rngmed range', """
-                This spell functions like the \\spell<dimensional jaunt> spell, except that the target is partially teleported into the Plane of Fire.
-                The damage dealt changes to fire \\glossterm<standard damage>.
-                In addition, a struck target is \\glossterm<ignited> until it puts out the fire.
+                You partially teleport the target into the Plane of Fire.
+                Make an attack vs. Mental against the target.
+                \\hit The target takes fire \\glossterm<standard damage> and is \\glossterm<ignited> as a \\glossterm<condition>.
                 This condition can also be removed if the target makes a \\glossterm<DR> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
                 Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
+
+                \\rankline
+                \\rank<5> The attack gains a +1d bonus to damage.
+                \\rank<7> The damage bonus increases to +2d.
             """, tags=[]),
             Spell('Dimensional Jitter', 5, 'Yourself', """
-                At the end of each \\glossterm<action phase>, you may teleport 10 feet in any direction.
+                At the end of each \\glossterm<phase>, you may choose to teleport 10 feet in a random direction.
                 If your \\glossterm<line of effect> to your destination is blocked, or if this teleportation would somehow place you inside a solid object, your teleportation is cancelled and you remain where you are.
-            """, tags=['Attune (self)']),
-            Spell('Greater Dimensional Jitter', 8, 'Yourself', """
-                This spell functions like the \\spell<dimensional jitter> spell, except that the distance you can teleport is increased to 30 feet.
+
+                \\rankline
+                \\rank<7> You can choose the direction of the teleportation.
             """, tags=['Attune (self)']),
             Spell('Dimensional Jaunt -- Myriad', 6, 'One creature within \\rngmed range', """
-                This spell functions like the \\spell<dimensional jaunt> spell, except that the target is partially teleported through a number of planes in sequence.
-                The damage dealt increases to \\glossterm<standard damage> +3d and becomes the type of damage the target is most vulnerable to.
+                You partially teleport the target through a number of planes in sequence.
+                Make an attack vs. Mental against the target.
+                \\hit The target takes \\glossterm<standard damage> +3d of all damage types.
+
+                \\rankline
+                \\rank<8> The attack gains a +1d bonus to damage.
             """, tags=[]),
             Spell('Dimensional Jaunt -- Deep Astral Plane', 8, 'One creature within \\rngmed range', """
-                This spell functions like the \\spell<dimensional jaunt> spell, except that the target is partially teleported into the deep Astral Plane.
-                A struck target is \\glossterm<confused> as a \\glossterm<condition>.
+                You partially teleport the target into the Deep Astral Plane.
+                Make an attack vs. Mental against the target.
+                \\hit The target takes energy \\glossterm<standard damage> and is \\glossterm<confused> as a \\glossterm<condition>.
             """, tags=[]),
             # TODO: target wording
             Spell('Dimensional Shuffle', 3, 'Up to five targets within \\rngmed range from among you and your \\glossterm<allies>', """
                 Each target teleports into the location of a different target.
+
+                \\rankline
+                \\rank<5> The range increases to \\rnglong.
+                \\rank<7> The range increases to \\rngext.
             """, tags=[]),
             Spell('Dimension Walk', 4, 'Yourself', """
                 You can teleport horizontally instead of moving normally.
                 Teleporting a given distance costs movement equal to that distance.
                 If your \\glossterm<line of effect> to your destination is blocked, or if this teleportation would somehow place you inside a solid object, your teleportation is cancelled and you remain where you are that phase.
+                You must be able to move to teleport in this way, so effects like being \\glossterm<immobilized> prevent this movement.
+
+                \\rankline
+                \\rank<6> You can also teleport vertically or diagonally in addition to horizontally.
+                \\rank<8> You can teleport in this way even if you are unable to move, such as if you are \\glossterm<immobilized> or \\glossterm<paralyzed>.
             """, tags=['Attune (self)']),
-            Spell('Blink', 4, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                The target randomly blinks between its current plane and the Astral Plane.
-                This blinking stops if the target takes actions on its current plane.
-                In any phase where it does not take any actions, \\glossterm<targeted> attacks against the target have a 50\\% miss chance.
-                It is still affected normally by abilities that affect an area.
-            """, tags=['Attune (target)']),
-            Spell('Greater Blink', 7, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                This spell functions like the \\spell<blink> spell, except that the target also has a 20\% chance to completely ignore any effect that targets it directly during phases where it takes an action.
-            """, tags=['Attune (target)']),
+            Spell('Blink', 4, 'Yourself', """
+                You randomly blink between your current plane and the Astral Plane.
+                This blinking stops when you take actions on your current plane.
+                In any phase where you do not take any actions, \\glossterm<targeted> \\glossterm<strikes> against you have a 50\\% miss chance.
+                You are still affected normally by abilities that affect an area.
+
+                \\rankline
+                \\rank<6> This protects you against any \\glossterm<targeted> attacks instead of only from \\glossterm<strikes>.
+                    You are still affected normally by abilities that affect an area.
+                \\rank<8> \\glossterm<Targeted> attacks against you still have a 20\% miss chance in phases when you take actions.
+            """, tags=['Attune (self)']),
         ],
+
         rituals=[
             Spell('Gate', 8, 'Special', """
                 Choose a plane that connects to your current plane, and a location within that plane.
