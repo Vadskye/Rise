@@ -46,9 +46,8 @@ export type StandardArmorName =
   | "breastplate"
   | "full plate"
   | "heavy shield"
-  | "tough hide"
+  | "hide"
   | "scales"
-  | "thick skin"
   | "fur"
   | "feathers"
   | "carapace";
@@ -57,6 +56,8 @@ export function isStandardArmorInput(input: ArmorInput): input is StandardArmorI
   return Boolean(standardArmors[(input as StandardArmorInput).name]);
 }
 
+// Monster-type armors give higher bonuses than seemingly equivalent body armor because monsters
+// don't generally have access to shields
 export const standardArmors: Record<StandardArmorName, Omit<CustomArmorInput, "name">> = {
   "full plate": {
     defenseBonuses: { armor: 4 },
@@ -70,28 +71,24 @@ export const standardArmors: Record<StandardArmorName, Omit<CustomArmorInput, "n
     defenseBonuses: { armor: 3 },
     resistanceBonuses: { physical: 4 },
   },
-  "tough hide": {
-    defenseBonuses: { armor: 3 },
-    resistanceBonuses: { physical: 4 },
-  },
   "fur": {
-    defenseBonuses: { armor: 2 },
-    resistanceBonuses: { physical: 2 },
+    defenseBonuses: { armor: 3 },
+    resistanceBonuses: { energy: 3, physical: 3 },
   },
   "scales": {
-    defenseBonuses: { armor: 3 },
-    resistanceBonuses: { physical: 2 },
+    defenseBonuses: { armor: 4 },
+    resistanceBonuses: { energy: 2, physical: 4 },
   },
-  "thick skin": {
-    defenseBonuses: { armor: 2 },
-    resistanceBonuses: { physical: 2 },
+  "hide": {
+    defenseBonuses: { armor: 3 },
+    resistanceBonuses: { physical: 1 },
   },
   "feathers": {
-    defenseBonuses: { armor: 1 },
+    defenseBonuses: { armor: 3 },
     resistanceBonuses: {},
   },
   "carapace": {
-    defenseBonuses: { armor: 3 },
-    resistanceBonuses: { physical: 4 },
+    defenseBonuses: { armor: 4 },
+    resistanceBonuses: { energy: 3, physical: 6 },
   },
 };

@@ -26,19 +26,19 @@ const animalInput: TypelessMonsterInput[] = [
     weaponInput: [{ name: "bite" }],
   },
   {
-    armorInputs: [{ name: "thick skin" }],
+    armorInputs: [{ name: "hide" }],
     level: 2,
     name: "Pony",
     startingAttributes: { str: 1, con: 3, int: -7, wil: -1 },
     weaponInput: [{ powerBonus: -2, name: "bite" }],
   },
   {
-    armorInputs: [{ name: "thick skin" }],
+    armorInputs: [{ name: "feathers" }],
     challengeRating: 4,
     level: 9,
     name: "Roc",
     size: "gargantuan",
-    startingAttributes: { str: 4, con: 3, int: -7, wil: -1 },
+    startingAttributes: { str: 4, dex: 2, con: 3, int: -7, wil: -1 },
     weaponInput: [{ name: "bite" }],
   },
   {
