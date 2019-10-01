@@ -5,7 +5,7 @@ const aberrationInput: TypelessMonsterInput[] = [];
 const abolethLevel = 12;
 aberrationInput.push({
   // TODO: add ritual casting
-  armorInputs: [{ name: "tough hide" }],
+  armorInputs: [{ name: "carapace" }],
   attackInputs: [
     {
       crit: `
