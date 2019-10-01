@@ -81,7 +81,8 @@
 {
     \begin{thesamepage}
     \spelltwocol{
-        \IfValueTF{#1}{#1~--~}{}\textit{#2}
+        \textit{#2}
+        \IfValueTF{#1}{~--~#1}{}
     }{
         \IfValueTF{#3}{#3}{}
     }
@@ -107,9 +108,11 @@
 \DeclareDocumentEnvironment{apability}{o m o}
 {
     \begin{thesamepage}
-        \spelltwocol{\IfValueTF{#1}{#1~--~}{}\textit{#2}}{
-        \IfValueTF{#3}{\glossterm{AP},~#3}{\glossterm{AP}}
-    }
+        \spelltwocol{
+            \textit{#2}\IfValueTF{#1}{~--~#1}{}
+        }{
+            \IfValueTF{#3}{\glossterm{AP},~#3}{\glossterm{AP}}
+        }
 }
 {
     \end{thesamepage}
@@ -132,7 +135,7 @@
 \DeclareDocumentEnvironment{attuneability}{o m o}
 {
     \begin{thesamepage}
-        \spelltwocol{\IfValueTF{#1}{#1~--~}{}\textit{#2}}{#3}
+        \spelltwocol{\textit{#2}\IfValueTF{#1}{~--~#1}{}}{#3}
 }
 {
     \end{thesamepage}

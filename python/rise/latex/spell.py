@@ -53,7 +53,7 @@ class Spell(object):
 
         return f"""
             \\lowercase<\\hypertarget<spell:{self.name}><>>\\label<spell:{self.name}>
-            \\begin<{ability_type}>[\\nth<{self.level}>]<\\hypertarget<spell:{self.name}><{self.name}>>{tag_text}
+            \\begin<{ability_type}>[Rank {self.level}]<\\hypertarget<spell:{self.name}><{self.name}>>{tag_text}
                 {target_text}
                 {self.effect_text.strip()}
             \\end<{ability_type}>
