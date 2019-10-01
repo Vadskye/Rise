@@ -12,6 +12,7 @@ interface WeaponAttackInput {
   accuracyBonus?: number;
   defense?: DefenseType;
   name: string;
+  powerBonus?: number;
   source?: "magical" | "mundane";
   target?: string;
   weaponName: StandardWeaponName;
@@ -32,7 +33,7 @@ interface CustomAttackInput {
 export type AttackInput = StandardAttackInput | WeaponAttackInput | CustomAttackInput;
 
 // TODO: add ability tags
-export type Attack = Required<CustomAttackInput>;
+export type Attack = Required<CustomAttackInput> & { weaponName?: string };
 
 type StandardAttackName = "fireball";
 
@@ -52,7 +53,7 @@ const standardAttacks: Record<
     crit: null,
     damageTypes: ["fire"],
     defense: "armor",
-    hit: "Each target takes <standard damage>.",
+    hit: "Each target takes <damage>.",
     source: "magical",
     target: "Everything in a \\areasmall radius within \\rngclose range",
   },
@@ -72,13 +73,15 @@ export function parseAttack(input: AttackInput): Attack {
   };
 
   if (hasStandardWeaponName(input)) {
+    const weapon = standardWeapons[input.weaponName];
     return {
       ...defaults,
       defense: "armor",
-      hit: "The target takes <standard damage>.",
-      target: "strike",
-      ...standardWeapons[input.weaponName],
+      hit: "The target takes <damage>.",
+      target: "One creature or object within \\glossterm{reach}",
       ...input,
+      accuracyBonus: (weapon.accuracyBonus || 0) + (input.accuracyBonus || 0),
+      powerBonus: (weapon.powerBonus || 0) + (input.powerBonus || 0),
     };
   } else if (hasStandardAttackName(input)) {
     return {

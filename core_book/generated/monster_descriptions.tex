@@ -5,37 +5,34 @@
     \vspace{-1em}\spelltwocol{}{Huge aberration}\vspace{-1em}
     \begin{spellcontent}
       \begin{spelltargetinginfo}
-        \pari \textbf{HP} 9;
+        \pari \textbf{HP} 10;
           \textbf{AD} 19;
-          \textbf{Fort} 24;
+          \textbf{Fort} 25;
           \textbf{Ref} 19;
           \textbf{Ment} 26
         \pari \textbf{DR} 14; Physical 18; Energy 26
         \pari \textbf{WR} 48; Physical 52; Energy 60
-        \pari \textbf{Accuracy} 18;
-          \textbf{Mundane} 18;
-          \textbf{Magical} 18
         \pari \textbf{Strike:}
-            Tentacle \plus18 (6d10)
+            Tentacle \plus17 (6d10)
       \end{spelltargetinginfo}
     \end{spellcontent}
     \begin{monsterfooter}
-      \pari \textbf{Awareness} 6
       \pari \textbf{Speed} 50 ft.;
         \textbf{Space} 15 ft.;
         \textbf{Reach} 15 ft.
+      \pari \textbf{Awareness} \plus3
       \pari \textbf{Attributes}:
-        Str 15, Dex -1, Con 14,
-        Int 15, Per 13, Wil 15
+        Str 15, Dex -1, Con 15,
+        Int 14, Per 7, Wil 15
+      \pari \textbf{Accuracy} 17;
+        \textbf{Power} 18
     \end{monsterfooter}
   \end{monsection}
-  \subsubsection{Aboleth abilities}
-        
-    \begin{freeability}{Mind Crush}
+  \begin{freeability}{Mind Crush}
       \target{One creature within \rnglong range}
       
     
-      The Aboleth makes a \plus18 attack
+      The aboleth makes a \plus17 attack
         vs. Mental against the target.
     
     \hit The target takes 8d10  damage and is \glossterm{confused} as a \glossterm{condition}.
@@ -49,10 +46,10 @@
   
 
     \begin{freeability}{Psionic Blast}
-      \target{Each enemy in a \arealarge cone from the aboleth}
+      \targets{Each enemy in a \arealarge cone from the aboleth}
       
     
-      The Aboleth makes a \plus18 attack
+      The aboleth makes a \plus17 attack
         vs. Mental against each target.
     
     \hit Each target takes 6d10  damage and is \glossterm{dazed} as a \glossterm{condition}.
@@ -60,12 +57,23 @@
   
     \end{freeability}
   
-        \parhead{Psionic Barrier} The aboleth gains a bonus equal to its level to \glossterm{resistances} against \glossterm{energy damage}.
+      \parhead{Psionic Barrier} The aboleth gains a bonus equal to its level to \glossterm{resistances} against \glossterm{energy damage}.
     \parhead{Rituals} The aboleth can learn and perform arcane rituals of up to 5th level.
+    \parhead{Slime} 
+        Whenever a creature takes damage from the aboleth's tentacle,
+          the damaged creature becomes \glossterm{poisoned}.
+        The poison's primary effect makes the target \glossterm{nauseated},
+          and the terminal effect inflicts a \glossterm{vital wound} with a special effect.
+
+        Instead of making a \glossterm{wound roll} for the \glossterm{vital wound},
+          the target's skin is transformed into a clear, slimy membrane.
+        An afflicted creature must remain moistened with cool, fresh water every 10 minutes
+          or it will lose a \glossterm{hit point}.
+        This effect lasts until the \glossterm{vital wound} is removed.
   
         \section{Animals}
       
-  \begin{monsection}{Black bear}{3}[2]
+  \begin{monsection}{Black Bear}{3}[2]
     \vspace{-1em}\spelltwocol{}{Medium animal}\vspace{-1em}
     \begin{spellcontent}
       \begin{spelltargetinginfo}
@@ -76,26 +84,26 @@
           \textbf{Ment} 6
         \pari \textbf{DR} 1; Physical 3
         \pari \textbf{WR} 16; Physical 18
-        \pari \textbf{Accuracy} 4;
-          \textbf{Mundane} 6;
-          \textbf{Magical} 4
         \pari \textbf{Strike:}
             Bite \plus4 (2d8)
       \end{spelltargetinginfo}
     \end{spellcontent}
     \begin{monsterfooter}
-      \pari \textbf{Awareness} 0
       \pari \textbf{Speed} 30 ft.;
         \textbf{Space} 5 ft.;
         \textbf{Reach} 5 ft.
+      \pari \textbf{Awareness} \plus0
       \pari \textbf{Attributes}:
         Str 5, Dex 0, Con 5,
         Int -8, Per 0, Wil -1
+      \pari \textbf{Accuracy} 4;
+        \textbf{Mundane Power} 6;
+      \textbf{Magical Power} 4
     \end{monsterfooter}
   \end{monsection}
   
   
-  \begin{monsection}{Brown bear}{5}[2]
+  \begin{monsection}{Brown Bear}{5}[2]
     \vspace{-1em}\spelltwocol{}{Large animal}\vspace{-1em}
     \begin{spellcontent}
       \begin{spelltargetinginfo}
@@ -106,21 +114,232 @@
           \textbf{Ment} 9
         \pari \textbf{DR} 3; Physical 5
         \pari \textbf{WR} 21; Physical 23
-        \pari \textbf{Accuracy} 7;
-          \textbf{Mundane} 9;
-          \textbf{Magical} 6
         \pari \textbf{Strike:}
             Bite \plus7 (2d10)
       \end{spelltargetinginfo}
     \end{spellcontent}
     \begin{monsterfooter}
-      \pari \textbf{Awareness} 0
       \pari \textbf{Speed} 40 ft.;
         \textbf{Space} 10 ft.;
         \textbf{Reach} 10 ft.
+      \pari \textbf{Awareness} \plus0
       \pari \textbf{Attributes}:
         Str 8, Dex 0, Con 8,
         Int -8, Per 0, Wil -1
+      \pari \textbf{Accuracy} 7;
+        \textbf{Mundane Power} 9;
+      \textbf{Magical Power} 6
+    \end{monsterfooter}
+  \end{monsection}
+  
+  
+  \begin{monsection}{Colossal Centipede}{13}[4]
+    \vspace{-1em}\spelltwocol{}{Colossal animal}\vspace{-1em}
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 11;
+          \textbf{AD} 20;
+          \textbf{Fort} 28;
+          \textbf{Ref} 21;
+          \textbf{Ment} 21
+        \pari \textbf{DR} 16; Physical 20
+        \pari \textbf{WR} 54; Physical 58
+        \pari \textbf{Strike:}
+            Bite \plus18 (7d10)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 70 ft.;
+        \textbf{Space} 30 ft.;
+        \textbf{Reach} 30 ft.
+      \pari \textbf{Awareness} \plus0
+      \pari \textbf{Attributes}:
+        Str 17, Dex -1, Con 17,
+        Int -9, Per 0, Wil 0
+      \pari \textbf{Accuracy} 18;
+        \textbf{Mundane Power} 20;
+      \textbf{Magical Power} 16
+    \end{monsterfooter}
+  \end{monsection}
+  
+  
+  \begin{monsection}{Dire Beetle}{7}[2]
+    \vspace{-1em}\spelltwocol{}{Large animal}\vspace{-1em}
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 10;
+          \textbf{AD} 11;
+          \textbf{Fort} 18;
+          \textbf{Ref} 12;
+          \textbf{Ment} 12
+        \pari \textbf{DR} 5; Physical 9
+        \pari \textbf{WR} 27; Physical 31
+        \pari \textbf{Strike:}
+            Bite \plus9 (4d6)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 40 ft.;
+        \textbf{Space} 10 ft.;
+        \textbf{Reach} 10 ft.
+      \pari \textbf{Awareness} \plus0
+      \pari \textbf{Attributes}:
+        Str 10, Dex -1, Con 10,
+        Int -9, Per 0, Wil 0
+      \pari \textbf{Accuracy} 9;
+        \textbf{Mundane Power} 11;
+      \textbf{Magical Power} 8
+    \end{monsterfooter}
+  \end{monsection}
+  
+  
+  \begin{monsection}{Dire Wolf}{5}[2]
+    \vspace{-1em}\spelltwocol{}{Large animal}\vspace{-1em}
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 8;
+          \textbf{AD} 12;
+          \textbf{Fort} 14;
+          \textbf{Ref} 14;
+          \textbf{Ment} 10
+        \pari \textbf{DR} 3; Physical 5
+        \pari \textbf{WR} 21; Physical 23
+        \pari \textbf{Strike:}
+            Bite \plus8 (2d10)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 40 ft.;
+        \textbf{Space} 10 ft.;
+        \textbf{Reach} 10 ft.
+      \pari \textbf{Awareness} \plus3
+      \pari \textbf{Attributes}:
+        Str 8, Dex 7, Con 6,
+        Int -7, Per 6, Wil 0
+      \pari \textbf{Accuracy} 8;
+        \textbf{Mundane Power} 9;
+      \textbf{Magical Power} 6
+    \end{monsterfooter}
+  \end{monsection}
+  
+  
+  \begin{monsection}{Gargantuan Centipede}{10}[4]
+    \vspace{-1em}\spelltwocol{}{Gargantuan animal}\vspace{-1em}
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 10;
+          \textbf{AD} 16;
+          \textbf{Fort} 23;
+          \textbf{Ref} 17;
+          \textbf{Ment} 17
+        \pari \textbf{DR} 10; Physical 14
+        \pari \textbf{WR} 38; Physical 42
+        \pari \textbf{Strike:}
+            Bite \plus14 (5d10)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 60 ft.;
+        \textbf{Space} 20 ft.;
+        \textbf{Reach} 20 ft.
+      \pari \textbf{Awareness} \plus0
+      \pari \textbf{Attributes}:
+        Str 13, Dex -1, Con 13,
+        Int -9, Per 0, Wil 0
+      \pari \textbf{Accuracy} 14;
+        \textbf{Mundane Power} 16;
+      \textbf{Magical Power} 13
+    \end{monsterfooter}
+  \end{monsection}
+  
+  
+  \begin{monsection}{Giant Wasp}{6}[2]
+    \vspace{-1em}\spelltwocol{}{Large animal}\vspace{-1em}
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 7;
+          \textbf{AD} 15;
+          \textbf{Fort} 14;
+          \textbf{Ref} 16;
+          \textbf{Ment} 9
+        \pari \textbf{DR} 4; Physical 8
+        \pari \textbf{WR} 24; Physical 28
+        \pari \textbf{Strike:}
+            Stinger \plus9 (2d10)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 40 ft.;
+        \textbf{Space} 10 ft.;
+        \textbf{Reach} 10 ft.
+      \pari \textbf{Awareness} \plus3
+      \pari \textbf{Attributes}:
+        Str 4, Dex 9, Con 4,
+        Int -8, Per 7, Wil -2
+      \pari \textbf{Accuracy} 9;
+        \textbf{Power} 7
+    \end{monsterfooter}
+  \end{monsection}
+  \parhead{Poison Sting} 
+        Whenever a creature takes damage from the giant wasp's stinger, the damaged creature becomes \glossterm{poisoned}.
+        The poison's primary effect makes the target \glossterm{sickened}, and the terminal effect makes it \glossterm{paralyzed}.
+  
+  \begin{monsection}{Huge Centipede}{7}[4]
+    \vspace{-1em}\spelltwocol{}{Huge animal}\vspace{-1em}
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 9;
+          \textbf{AD} 13;
+          \textbf{Fort} 19;
+          \textbf{Ref} 14;
+          \textbf{Ment} 14
+        \pari \textbf{DR} 5; Physical 9
+        \pari \textbf{WR} 27; Physical 31
+        \pari \textbf{Strike:}
+            Bite \plus11 (4d8)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 50 ft.;
+        \textbf{Space} 15 ft.;
+        \textbf{Reach} 15 ft.
+      \pari \textbf{Awareness} \plus0
+      \pari \textbf{Attributes}:
+        Str 9, Dex -1, Con 9,
+        Int -9, Per 0, Wil 0
+      \pari \textbf{Accuracy} 11;
+        \textbf{Mundane Power} 12;
+      \textbf{Magical Power} 10
+    \end{monsterfooter}
+  \end{monsection}
+  
+  
+  \begin{monsection}{Large Centipede}{4}[4]
+    \vspace{-1em}\spelltwocol{}{Large animal}\vspace{-1em}
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 8;
+          \textbf{AD} 9;
+          \textbf{Fort} 14;
+          \textbf{Ref} 10;
+          \textbf{Ment} 10
+        \pari \textbf{DR} 2; Physical 6
+        \pari \textbf{WR} 18; Physical 22
+        \pari \textbf{Strike:}
+            Bite \plus7 (2d10)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 40 ft.;
+        \textbf{Space} 10 ft.;
+        \textbf{Reach} 10 ft.
+      \pari \textbf{Awareness} \plus0
+      \pari \textbf{Attributes}:
+        Str 5, Dex -1, Con 5,
+        Int -9, Per 0, Wil 0
+      \pari \textbf{Accuracy} 7;
+        \textbf{Mundane Power} 8;
+      \textbf{Magical Power} 7
     \end{monsterfooter}
   \end{monsection}
   
@@ -136,21 +355,20 @@
           \textbf{Ment} 4
         \pari \textbf{DR} 0; Physical 2
         \pari \textbf{WR} 14; Physical 16
-        \pari \textbf{Accuracy} 2;
-          \textbf{Mundane} 2;
-          \textbf{Magical} 2
         \pari \textbf{Strike:}
             Bite \plus2 (1d10)
       \end{spelltargetinginfo}
     \end{spellcontent}
     \begin{monsterfooter}
-      \pari \textbf{Awareness} 0
       \pari \textbf{Speed} 30 ft.;
         \textbf{Space} 5 ft.;
         \textbf{Reach} 5 ft.
+      \pari \textbf{Awareness} \plus0
       \pari \textbf{Attributes}:
         Str 2, Dex 0, Con 4,
         Int -7, Per 0, Wil -1
+      \pari \textbf{Accuracy} 2;
+        \textbf{Power} 2
     \end{monsterfooter}
   \end{monsection}
   
@@ -166,24 +384,159 @@
           \textbf{Ment} 15
         \pari \textbf{DR} 8; Physical 10
         \pari \textbf{WR} 34; Physical 36
-        \pari \textbf{Accuracy} 13;
-          \textbf{Mundane} 15;
-          \textbf{Magical} 12
         \pari \textbf{Strike:}
             Bite \plus13 (4d10)
       \end{spelltargetinginfo}
     \end{spellcontent}
     \begin{monsterfooter}
-      \pari \textbf{Awareness} 0
       \pari \textbf{Speed} 60 ft.;
         \textbf{Space} 20 ft.;
         \textbf{Reach} 20 ft.
+      \pari \textbf{Awareness} \plus0
       \pari \textbf{Attributes}:
         Str 12, Dex 0, Con 11,
         Int -7, Per 0, Wil -1
+      \pari \textbf{Accuracy} 13;
+        \textbf{Mundane Power} 15;
+      \textbf{Magical Power} 12
     \end{monsterfooter}
   \end{monsection}
   
+  
+  \begin{monsection}{Spider}[Colossal]{12}[4]
+    \vspace{-1em}\spelltwocol{}{Colossal animal}\vspace{-1em}
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 6;
+          \textbf{AD} 24;
+          \textbf{Fort} 22;
+          \textbf{Ref} 25;
+          \textbf{Ment} 20
+        \pari \textbf{DR} 14; Physical 18
+        \pari \textbf{WR} 48; Physical 52
+        \pari \textbf{Strike:}
+            Bite \plus20 (6d10)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 70 ft.;
+        \textbf{Space} 30 ft.;
+        \textbf{Reach} 30 ft.
+      \pari \textbf{Awareness} \plus7
+      \pari \textbf{Attributes}:
+        Str 15, Dex 15, Con 0,
+        Int -9, Per 15, Wil 0
+      \pari \textbf{Accuracy} 20;
+        \textbf{Mundane Power} 18;
+      \textbf{Magical Power} 15
+    \end{monsterfooter}
+  \end{monsection}
+  \parhead{Poison Sting} 
+        Whenever a creature takes damage from the spider's bite,
+          the damaged creature becomes \glossterm{poisoned}.
+        The poison's primary effect makes the target \glossterm{sickened},
+          and the terminal effect makes it \glossterm{paralyzed}.
+  
+  \begin{monsection}{Spider}[Gargantuan]{9}[4]
+    \vspace{-1em}\spelltwocol{}{Gargantuan animal}\vspace{-1em}
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 6;
+          \textbf{AD} 20;
+          \textbf{Fort} 18;
+          \textbf{Ref} 21;
+          \textbf{Ment} 16
+        \pari \textbf{DR} 8; Physical 12
+        \pari \textbf{WR} 34; Physical 38
+        \pari \textbf{Strike:}
+            Bite \plus15 (4d10)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 60 ft.;
+        \textbf{Space} 20 ft.;
+        \textbf{Reach} 20 ft.
+      \pari \textbf{Awareness} \plus5
+      \pari \textbf{Attributes}:
+        Str 11, Dex 12, Con 0,
+        Int -9, Per 11, Wil 0
+      \pari \textbf{Accuracy} 15;
+        \textbf{Mundane Power} 14;
+      \textbf{Magical Power} 12
+    \end{monsterfooter}
+  \end{monsection}
+  \parhead{Poison Sting} 
+        Whenever a creature takes damage from the spider's bite,
+          the damaged creature becomes \glossterm{poisoned}.
+        The poison's primary effect makes the target \glossterm{sickened},
+          and the terminal effect makes it \glossterm{paralyzed}.
+  
+  \begin{monsection}{Spider}[Huge]{6}[4]
+    \vspace{-1em}\spelltwocol{}{Huge animal}\vspace{-1em}
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 6;
+          \textbf{AD} 16;
+          \textbf{Fort} 15;
+          \textbf{Ref} 17;
+          \textbf{Ment} 13
+        \pari \textbf{DR} 4; Physical 8
+        \pari \textbf{WR} 24; Physical 28
+        \pari \textbf{Strike:}
+            Bite \plus12 (4d6)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 50 ft.;
+        \textbf{Space} 15 ft.;
+        \textbf{Reach} 15 ft.
+      \pari \textbf{Awareness} \plus4
+      \pari \textbf{Attributes}:
+        Str 7, Dex 8, Con 0,
+        Int -9, Per 8, Wil 0
+      \pari \textbf{Accuracy} 12;
+        \textbf{Mundane Power} 10;
+      \textbf{Magical Power} 9
+    \end{monsterfooter}
+  \end{monsection}
+  \parhead{Poison Sting} 
+        Whenever a creature takes damage from the spider's bite,
+          the damaged creature becomes \glossterm{poisoned}.
+        The poison's primary effect makes the target \glossterm{sickened},
+          and the terminal effect makes it \glossterm{paralyzed}.
+  
+  \begin{monsection}{Spider}[Large]{3}[4]
+    \vspace{-1em}\spelltwocol{}{Large animal}\vspace{-1em}
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 6;
+          \textbf{AD} 12;
+          \textbf{Fort} 11;
+          \textbf{Ref} 13;
+          \textbf{Ment} 9
+        \pari \textbf{DR} 1; Physical 5
+        \pari \textbf{WR} 16; Physical 20
+        \pari \textbf{Strike:}
+            Bite \plus7 (2d8)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 40 ft.;
+        \textbf{Space} 10 ft.;
+        \textbf{Reach} 10 ft.
+      \pari \textbf{Awareness} \plus2
+      \pari \textbf{Attributes}:
+        Str 2, Dex 5, Con 0,
+        Int -9, Per 4, Wil 0
+      \pari \textbf{Accuracy} 7;
+        \textbf{Power} 6
+    \end{monsterfooter}
+  \end{monsection}
+  \parhead{Poison Sting} 
+        Whenever a creature takes damage from the spider's bite,
+          the damaged creature becomes \glossterm{poisoned}.
+        The poison's primary effect makes the target \glossterm{sickened},
+          and the terminal effect makes it \glossterm{paralyzed}.
   
   \begin{monsection}{Vampire Eel}{6}[2]
     \vspace{-1em}\spelltwocol{}{Large animal}\vspace{-1em}
@@ -196,20 +549,20 @@
           \textbf{Ment} 10
         \pari \textbf{DR} 4; Physical 6
         \pari \textbf{WR} 24; Physical 26
-        \pari \textbf{Accuracy} 8;
-          \textbf{Mundane} 9;
-          \textbf{Magical} 7
         
       \end{spelltargetinginfo}
     \end{spellcontent}
     \begin{monsterfooter}
-      \pari \textbf{Awareness} 0
       \pari \textbf{Speed} 40 ft.;
         \textbf{Space} 10 ft.;
         \textbf{Reach} 10 ft.
+      \pari \textbf{Awareness} \plus0
       \pari \textbf{Attributes}:
         Str 8, Dex 8, Con 7,
         Int -8, Per 0, Wil -1
+      \pari \textbf{Accuracy} 8;
+        \textbf{Mundane Power} 9;
+      \textbf{Magical Power} 7
     \end{monsterfooter}
   \end{monsection}
   
@@ -225,24 +578,174 @@
           \textbf{Ment} 4
         \pari \textbf{DR} 0; Physical 2
         \pari \textbf{WR} 14; Physical 16
-        \pari \textbf{Accuracy} 2;
-          \textbf{Mundane} 2;
-          \textbf{Magical} 2
         \pari \textbf{Strike:}
             Bite \plus2 (1d10)
       \end{spelltargetinginfo}
     \end{spellcontent}
     \begin{monsterfooter}
-      \pari \textbf{Awareness} 0
       \pari \textbf{Speed} 30 ft.;
         \textbf{Space} 5 ft.;
         \textbf{Reach} 5 ft.
+      \pari \textbf{Awareness} \plus0
       \pari \textbf{Attributes}:
         Str 2, Dex 3, Con 2,
         Int -7, Per 0, Wil -1
+      \pari \textbf{Accuracy} 2;
+        \textbf{Power} 2
     \end{monsterfooter}
   \end{monsection}
   
+  
+  \begin{monsection}{Raven}{1}[1]
+    \vspace{-1em}\spelltwocol{}{Tiny animal}\vspace{-1em}
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 2;
+          \textbf{AD} 5;
+          \textbf{Fort} 2;
+          \textbf{Ref} 8;
+          \textbf{Ment} 4
+        \pari \textbf{DR} 0
+        \pari \textbf{WR} 13
+        \pari \textbf{Strike:}
+            Talon \plus2 (1d8)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 20 ft.;
+        \textbf{Space} 2-1/2 ft.;
+        \textbf{Reach} 0 ft.
+      \pari \textbf{Awareness} \plus1
+      \pari \textbf{Attributes}:
+        Str -8, Dex 3, Con -4,
+        Int -6, Per 2, Wil 0
+      \pari \textbf{Accuracy} 2;
+        \textbf{Power} 1
+    \end{monsterfooter}
+  \end{monsection}
+  
+  
+        \section{Animates}
+      
+  \begin{monsection}{Air Elemental}[Elder]{11}[4]
+    \vspace{-1em}\spelltwocol{}{Huge animate}\vspace{-1em}
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 7;
+          \textbf{AD} 23;
+          \textbf{Fort} 21;
+          \textbf{Ref} 25;
+          \textbf{Ment} 20
+        \pari \textbf{DR} 12; Physical 14
+        \pari \textbf{WR} 43; Physical 45
+        \pari \textbf{Strike:}
+            Slam \plus18 (4d10)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 50 ft.;
+        \textbf{Space} 15 ft.;
+        \textbf{Reach} 15 ft.
+      \pari \textbf{Awareness} \plus6
+      \pari \textbf{Attributes}:
+        Str 6, Dex 15, Con 6,
+        Int 0, Per 13, Wil 0
+      \pari \textbf{Accuracy} 18;
+        \textbf{Power} 14
+    \end{monsterfooter}
+  \end{monsection}
+  \begin{freeability}{Whirlwind}
+      \targets{Each \glossterm{enemy} within reach}
+      
+    
+      The air elemental makes a \plus18
+        \glossterm{strike} vs. Armor
+        with its slam against each target.
+    
+    \hit Each target takes 4d10  damage.
+    
+  
+    \end{freeability}
+  
+  \begin{monsection}{Air Elemental}[Huge]{8}[2]
+    \vspace{-1em}\spelltwocol{}{Huge animate}\vspace{-1em}
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 7;
+          \textbf{AD} 16;
+          \textbf{Fort} 15;
+          \textbf{Ref} 18;
+          \textbf{Ment} 14
+        \pari \textbf{DR} 6; Physical 8
+        \pari \textbf{WR} 30; Physical 32
+        \pari \textbf{Strike:}
+            Slam \plus11 (2d10)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 50 ft.;
+        \textbf{Space} 15 ft.;
+        \textbf{Reach} 15 ft.
+      \pari \textbf{Awareness} \plus4
+      \pari \textbf{Attributes}:
+        Str 5, Dex 11, Con 5,
+        Int -2, Per 9, Wil 0
+      \pari \textbf{Accuracy} 11;
+        \textbf{Power} 9
+    \end{monsterfooter}
+  \end{monsection}
+  \begin{freeability}{Whirlwind}
+      \targets{Each \glossterm{enemy} within reach}
+      
+    
+      The air elemental makes a \plus11
+        \glossterm{strike} vs. Armor
+        with its slam against each target.
+    
+    \hit Each target takes 2d10  damage.
+    
+  
+    \end{freeability}
+  
+  \begin{monsection}{Air Elemental}[Large]{5}[2]
+    \vspace{-1em}\spelltwocol{}{Large animate}\vspace{-1em}
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 7;
+          \textbf{AD} 13;
+          \textbf{Fort} 12;
+          \textbf{Ref} 15;
+          \textbf{Ment} 11
+        \pari \textbf{DR} 3; Physical 5
+        \pari \textbf{WR} 21; Physical 23
+        \pari \textbf{Strike:}
+            Slam \plus8 (2d8)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 40 ft.;
+        \textbf{Space} 10 ft.;
+        \textbf{Reach} 10 ft.
+      \pari \textbf{Awareness} \plus3
+      \pari \textbf{Attributes}:
+        Str 3, Dex 8, Con 3,
+        Int -2, Per 6, Wil 0
+      \pari \textbf{Accuracy} 8;
+        \textbf{Power} 6
+    \end{monsterfooter}
+  \end{monsection}
+  \begin{freeability}{Whirlwind}
+      \targets{Each \glossterm{enemy} within reach}
+      
+    
+      The air elemental makes a \plus8
+        \glossterm{strike} vs. Armor
+        with its slam against each target.
+    
+    \hit Each target takes 2d8  damage.
+    
+  
+    \end{freeability}
   
         \section{Humanoids}
       
@@ -257,30 +760,28 @@
           \textbf{Ment} 8
         \pari \textbf{DR} 0
         \pari \textbf{WR} 14
-        \pari \textbf{Accuracy} 2;
-          \textbf{Mundane} 2;
-          \textbf{Magical} 3
         \pari \textbf{Strike:}
             Club \plus2 (1d10)
       \end{spelltargetinginfo}
     \end{spellcontent}
     \begin{monsterfooter}
-      \pari \textbf{Awareness} 0
       \pari \textbf{Speed} 30 ft.;
         \textbf{Space} 5 ft.;
         \textbf{Reach} 5 ft.
+      \pari \textbf{Awareness} \plus0
       \pari \textbf{Attributes}:
         Str -1, Dex 0, Con 0,
         Int -1, Per 0, Wil 3
+      \pari \textbf{Accuracy} 2;
+        \textbf{Mundane Power} 2;
+      \textbf{Magical Power} 3
     \end{monsterfooter}
   \end{monsection}
-  \subsubsection{Cultist abilities}
-        
-    \begin{freeability}{Inflict Wounds}
+  \begin{freeability}{Inflict Wounds}
       \target{One creature within \rngmed range}
       
     
-      The Cultist makes a \plus2 attack
+      The cultist makes a \plus2 attack
         vs. Fortitude against the target.
     
     \hit The target takes 2d6  damage.
@@ -288,7 +789,7 @@
   
     \end{freeability}
   
-  \begin{monsection}{Orc elite}{8}[1]
+  \begin{monsection}{Orc}[Elite]{8}[1]
     \vspace{-1em}\spelltwocol{}{Medium humanoid}\vspace{-1em}
     \begin{spellcontent}
       \begin{spelltargetinginfo}
@@ -299,32 +800,32 @@
           \textbf{Ment} 13
         \pari \textbf{DR} 6; Physical 9
         \pari \textbf{WR} 30; Physical 33
-        \pari \textbf{Accuracy} 9;
-          \textbf{Mundane} 10;
-          \textbf{Magical} 8
         \pari \textbf{Strike:}
             Greataxe \plus9 (4d8)
       \end{spelltargetinginfo}
     \end{spellcontent}
     \begin{monsterfooter}
-      \pari \textbf{Awareness} 0
       \pari \textbf{Speed} 30 ft.;
         \textbf{Space} 5 ft.;
         \textbf{Reach} 5 ft.
+      \pari \textbf{Awareness} \plus0
       \pari \textbf{Attributes}:
         Str 10, Dex 0, Con 0,
         Int 0, Per 0, Wil 0
+      \pari \textbf{Accuracy} 9;
+        \textbf{Mundane Power} 10;
+      \textbf{Magical Power} 8
     \end{monsterfooter}
   \end{monsection}
-  \subsubsection{Orc elite abilities}
-        
-    \begin{freeability}{Power Smash}
-      \target{strike}
+  \begin{freeability}{Power Smash}
+      \target{One creature or object within \glossterm{reach}}
       
     
-      The Orc elite makes a \plus7 \glossterm{strike} vs. Armor.
+      The orc makes a \plus7
+        \glossterm{strike} vs. Armor
+        with its greataxe against the target.
     
-    \hit The target takes <standard damage>.
+    \hit The target takes 5d10  damage.
     
   
     \end{freeability}
@@ -340,33 +841,31 @@
           \textbf{Ment} 8
         \pari \textbf{DR} 0
         \pari \textbf{WR} 14
-        \pari \textbf{Accuracy} 2;
-          \textbf{Mundane} 2;
-          \textbf{Magical} 3
         \pari \textbf{Strike:}
             Club \plus2 (1d10)
       \end{spelltargetinginfo}
     \end{spellcontent}
     \begin{monsterfooter}
-      \pari \textbf{Awareness} 0
       \pari \textbf{Speed} 30 ft.;
         \textbf{Space} 5 ft.;
         \textbf{Reach} 5 ft.
+      \pari \textbf{Awareness} \plus0
       \pari \textbf{Attributes}:
         Str -1, Dex 0, Con 2,
         Int -1, Per 0, Wil 3
+      \pari \textbf{Accuracy} 2;
+        \textbf{Mundane Power} 2;
+      \textbf{Magical Power} 3
     \end{monsterfooter}
   \end{monsection}
-  \subsubsection{Pyromancer abilities}
-        
-    \begin{freeability}{Fireball}
-      \target{Everything in a \areasmall radius within \rngclose range}
+  \begin{freeability}{Fireball}
+      \targets{Everything in a \areasmall radius within \rngclose range}
       
     
-      The Pyromancer makes a \plus2 attack
+      The pyromancer makes a \plus2 attack
         vs. Armor against each target.
     
-    \hit Each target takes <standard damage>.
+    \hit Each target takes 1d10 fire damage.
     
   
     \end{freeability}
