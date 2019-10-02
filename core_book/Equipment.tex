@@ -769,13 +769,13 @@
         \begin{dtable*}
             \lcaption{Typical Poisons}\pdfbookmark[3]{Typical Poisons}{}
             \begin{dtabularx}{\textwidth}{l l l l l X l}
-                \tb{Poison}         & \tb{Transmission} & \tb{Form} & \tb{Potency} & \tb{Primary Effect}            & \tb{Terminal Effect}                              & \tb{Type} \\
-                Nitharit            & Contact   & Powder & 3  & Sickened                       & Nauseated for 1 round                                                        & Plant      \\
-                Sassone leaf        & Contact   & Powder & 6  & 1d6 damage per round           & \glossterm{standard damage} \minus1d                                         & Plant      \\
-                Dragon bile         & Contact   & Liquid & 10 & Sickened, 1d8 damage per round & \glossterm{standard damage}, \glossterm{nauseated} as a \glossterm{condition} & Venom      \\
-                Black lotus extract & Contact   & Liquid & 15 & 1d10 damage per round          & \glossterm{standard damage} \plus1d                                          & Plant      \\
-                Arsenic             & Ingestion & Powder & 5  & 1d6 damage per round           & \glossterm{standard damage} \minus1d                                         & Plant      \\
-                Insanity mist       & Ingestion & Gas    & 10 & Disoriented                    & \glossterm{confused} as a \glossterm{condition}                              & Alchemical \\
+                \tb{Poison}         & \tb{Transmission} & \tb{Form} & \tb{Potency} & \tb{Primary Effect}            & \tb{Secondary Effect}                              & \tb{Type} \\
+                Nitharit            & Contact   & Powder & 3  & Sickened                     & Nauseated as a \glossterm{condition}, poison ends & Plant      \\
+                Sassone leaf        & Contact   & Powder & 6  & Lose a hit point             & Lose two hit points, poison ends                  & Plant      \\
+                Dragon bile         & Contact   & Liquid & 10 & Sickened, lose a hit point   & Nauseated                                         & Venom      \\
+                Black lotus extract & Contact   & Liquid & 15 & Lose a hit point every round & Gain a \glossterm{vital wound}, poison ends       & Plant      \\
+                Arsenic             & Ingestion & Powder & 5  & Lose a hit point             & Gain a \glossterm{vital wound}, poison ends       & Plant      \\
+                Insanity mist       & Ingestion & Gas    & 10 & Disoriented                  & Confused                                          & Alchemical \\
             \end{dtabularx}
         \end{dtable*}
 
@@ -815,8 +815,8 @@
             All poisons have a potency.
             Unless otherwise noted, a poison's accuracy is equal to its potency.
             At the end of each \glossterm{action phase}, the poison makes an attack roll against the Fortitude defense of the poisoned creature.
-            Success means the creature suffers the effect of the poison, and gets closer to the poison's terminal effect (see Terminal Effects, below).
-            For every 10 points by which the attack succeeds, it counts as an additional successful attack for the purpose of reaching the poison's terminal effect.
+            Success means the creature suffers the effect of the poison, and gets closer to the poison's secondary effect (see Secondary Effects, below).
+            For every 10 points by which the attack succeeds, it counts as an additional successful attack for the purpose of reaching the poison's secondary effect.
             If the attack fails, the creature does not suffect the effect of the poison that round, and gets closer to resisting the poison (see Resisting Poisons, below).
             For every 10 points by which the attack fails, it counts as an additional failed attack for the purpose of resisting the poison.
 
@@ -827,15 +827,14 @@
             \parhead{Primary Effects}
             Most poisons have primary effects.
             If the poison successfully attacks a poisoned creature, the creature suffers the poison's primary effect as long as the creature remains poisoned.
-            Repeated primary effects, such as damage per round, occur at the end of each \glossterm{action phase}.
+            Repeated primary effects, such as damage per round, occur at the end of each round.
             This includes the round in which the creature is initially affected, but not the round it stops being poisoned.
 
-            \parhead{Terminal Effects}
-            Most poisons have a terminal effect based on the type of the poison.
-            If the poison successfully attacks a poisoned creature three times, the creature suffers the poison's terminal effect.
-            Unless otherwise noted, the terminal effect occurs in addition to the poison's normal effect that round.
-            Once a creature suffers a poison's terminal effect, it stops being poisoned.
-            This does not remove any lingering effects from the poison, but prevents the creature's condition from worsening.
+            \parhead{Secondary Effects}
+            Most poisons have a secondary effect based on the type of the poison.
+            If the poison successfully attacks a poisoned creature three times, the creature suffers the poison's secondary effect in addition to its primary effect.
+            Some poisons end after the secondary effect is applied.
+            Unless otherwise noted, a creature continues to be poisoned until it resists the poison three times or until the poison is removed by other means.
 
             \parhead{Multiple Doses}
             A creature can be affected by multiple doses of the same poison.
