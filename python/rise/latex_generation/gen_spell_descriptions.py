@@ -68,34 +68,35 @@ def generate_mystic_spheres():
                 \\rankline
                 \\rank<3> The bonus against ranged attacks increases to +6.
                 \\rank<5> The bonus to Armor defense increases to +2.
-                \\rank<7> The bonus against ranged attacks increases to +8.
+                \\rank<7> The bonus against ranged attacks increases to +6.
             """, tags=['Attune (target)']),
-            Spell('Windstrike', 1, 'One creature or object within \\rnglong range', """
+            Spell('Windstrike', 1, 'One creature or object within \\rngmed range', """
                 Make an attack vs. Armor against the target.
-                \\hit The target takes bludgeoning \\glossterm<standard damage>.
+                \\hit The target takes bludgeoning \\glossterm<standard damage> +1d.
 
                 \\rankline
-                \\rank<3> The attack gains a +1d bonus to damage.
-                \\rank<5> The damage bonus increases to +2d.
-                \\rank<7> The damage bonus increases to +3d.
+                \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
+                \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
             """, tags=[]),
-            Spell('Windsnipe', 4, 'One creature or object within 2,000 foot range', """
+            Spell('Windsnipe', 3, 'One creature or object within \\rnglong range', """
                 Make an attack vs. Armor against the target.
-                \\hit The target takes bludgeoning \\glossterm<standard damage>.
+                \\hit The target takes bludgeoning \\glossterm<standard damage> +1d.
 
                 \\rankline
-                \\rank<6> The attack gains a +1d bonus to damage.
-                \\rank<8> The damage bonus increases to +2d.
+                \\rank<5> The range increases to \\rngext.
+                \\rank<7> The range increases to 3,000 feet.
             """, tags=[]),
-            Spell('Buffeting Blast', 3, 'One creature or object within \\rnglong range', """
+            Spell('Buffeting Blast', 1, 'One creature or object within \\rngmed range', """
                 Make an attack vs. Fortitude against the target.
-                \\hit The target takes bludgeoning \\glossterm<standard damage> and is \\glossterm<pushed> up to 30 feet in any direction.
-                Moving the target upwards cost twice the normal movement cost.
+                \\hit The target takes bludgeoning \\glossterm<standard damage> -1d and is \\glossterm<pushed> up to 30 feet in any direction.
+                Moving the target upwards costs twice the normal movement cost.
                 \\crit The target takes double damage and the distance you can push the target is doubled.
 
                 \\rankline
-                \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
-                \\rank<7> The accuracy bonus increases to +2.
+                \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<5> The accuracy bonus increases to +2.
+                \\rank<7> The accuracy bonus increases to +3.
             """, tags=[]),
             Spell('Gentle Descent', 3, 'Yourself', """
                 You gain a 30 foot \\glossterm<glide speed> (see \\pcref<Gliding>).
@@ -140,8 +141,8 @@ def generate_mystic_spheres():
                 Any effect which increases this spell's range increases the range of this retaliation by the same amount.
 
                 \\rankline
-                \\rank<5> The attack gains a +1d bonus to damage.
-                \\rank<7> The damage bonus increases to +2d.
+                \\rank<5> The damage increases to \\glossterm<standard damage>.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
             """, tags=['Attune (self)']),
             Spell('Air Walk', 6, 'Yourself', """
                 You can walk on air as if it were solid ground as long as you are no more than 50 feet above solid ground.
@@ -151,6 +152,7 @@ def generate_mystic_spheres():
                 \\rankline
                 \\rank<8> The maximum distance above solid ground increases to 300 feet.
             """, tags=['Attune (target)']),
+            # Should this be a ritual?
             Spell('Control Weather', 4, None, """
                 When you cast this spell, you choose a new weather pattern.
                 You can only choose weather which would be reasonably probable in the climate and season of the area you are in.
@@ -180,17 +182,17 @@ def generate_mystic_spheres():
                 \\hit Each target takes bludgeoning \\glossterm<standard damage>.
 
                 \\rankline
-                \\rank<5> The attack gains a +1d bonus to damage.
-                \\rank<7> The damage bonus increases to +2d.
+                \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
             """, tags=[]),
-            Spell('Buffeting Hurricane', 4, 'Enemies in a \\arealarge radius from you', """
+            Spell('Buffeting Hurricane', 3, 'Enemies in a \\areamed radius from you', """
                 Make an attack vs. Fortitude against each target.
                 \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d and is moved 20 feet clockwise around you.
                 Each target's final position should be the same distance from you as its starting position.
 
                 \\rankline
-                \\rank<6> The attack gains a +1d bonus to damage and each target is moved 50 feet instead of 20 feet.
-                \\rank<6> The area increases to a \\areahuge radius.
+                \\rank<5> The area increases to a \\arealarge radius.
+                \\rank<7> The area increases to a \\areahuge radius.
             """, tags=[]),
             Spell('Windtheft', 1, 'One creature or object within \\rngmed range', """
                 Make an attack vs. Reflex against the target.
@@ -234,44 +236,49 @@ def generate_mystic_spheres():
         schools=['Conjuration'],
         lists=['Nature'],
         spells=[
-            Spell('Constraining Bubble', 4, 'One Large or smaller creature within \\rngmed range', """
+            Spell('Constraining Bubble', 3, 'One Large or smaller creature within \\rngmed range', """
                 Make an attack vs. Reflex against the target.
                 \\hit As a \\glossterm<condition>, the majority of the target's body is surrounded by a layer of water.
                 This does not impede the target's ability to breathe, but it takes penalties as if it was fighting underwater (see \\pcref<Underwater Combat>).
 
                 \\rankline
-                \\rank<6> The attack gains a +1 bonus to \\glossterm<accuracy>.
-                \\rank<8> The accuracy bonus increases to +2.
+                \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<7> The accuracy bonus increases to +2.
             """, tags=['Manifestation']),
             Spell('Crushing Wave', 1, 'Everything in a \\areamed, 10 ft.\\ wide line from you', """
                 Make an attack vs. Fortitude against each target.
                 \\hit Each target takes bludgeoning \\glossterm<standard damage>.
 
                 \\rankline
-                \\rank<3> The area increases to a \\arealarge, 10 ft.\\ wide line from you.
-                \\rank<5> The attack gains a +1d bonus to damage.
-                \\rank<7> The damage bonus increases to +2d.
+                \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
+                \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
             """, tags=['Manifestation']),
-            Spell('Great Flood', 7, 'Everything in a \\areaext, 30 ft.\\ wide line from you', """
+            Spell('Great Flood', 3, 'Everything in a \\arealarge, 15 ft.\\ wide line from you', """
                 Make an attack vs. Fortitude against each target.
                 \\hit Each target takes bludgeoning \\glossterm<standard damage>.
+
+                \\rankline
+                \\rank<5> The area increases to a \\areahuge, 20 ft.\\ wide line from you.
+                \\rank<7> The area increases to a \\areaext, 30 ft.\\ wide line from you.
             """, tags=['Manifestation']),
             Spell('Water Jet', 1, 'One creature within \\rngmed range', """
                 Make an attack vs. Armor against the target.
                 \\hit The target takes bludgeoning \\glossterm<standard damage> +1d.
 
                 \\rankline
-                \\rank<3> The attack gains a +1d bonus to damage.
-                \\rank<5> The damage bonus increases to +2d.
-                \\rank<7> The damage bonus increases to +3d.
+                \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
+                \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
             """, tags=['Manifestation']),
-            Spell('Fountain', 3, '\\glossterm<Enemies> within a \\areamed radius from you', """
+            Spell('Fountain', 1, '\\glossterm<Enemies> within a \\areasmall radius from you', """
                 Make an attack vs. Armor against each target.
                 \\hit Each target takes bludgeoning \\glossterm<standard damage>.
 
                 \\rankline
-                \\rank<5> The attack gains a +1d bonus to damage.
-                \\rank<7> The damage bonus increases to +2d.
+                \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
+                \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
             """, tags=['Manifestation']),
             Spell('Wall of Water', 4, None, """
                 You create a wall of water in a 20 ft.\\ high, \\arealarge line within \\rngmed range.
@@ -296,15 +303,14 @@ def generate_mystic_spheres():
                 \\rank<5> The target also gains a swim speed equal to half its \\glossterm<base speed>.
                 \\rank<7> The swim speed increases to be equal to the target's \\glossterm<base speed>.
             """, tags=['Attune (target)']),
-            Spell('Raging River', 1, 'Everything in a \\arealarge, 10 ft. wide line from you', """
+            Spell('Raging River', 3, 'Everything in a \\arealarge, 15 ft. wide line from you', """
                 Make an attack vs. Fortitude against each target.
-                \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
+                \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d and is \\glossterm<pushed> 20 feet in the direction the line points away from you.
+                Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
 
                 \\rankline
                 % TODO: wording
-                \\rank<3> Each struck target is \\glossterm<pushed> 20 feet in the direction the line points away from you.
-                    Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
-                \\rank<5> The area increases to a \\areahuge, 10 ft. wide line from you.
+                \\rank<5> The area increases to a \\areahuge, 20 ft. wide line from you.
                 \\rank<7> Each struck target is pushed 50 feet instead of 20 feet.
             """, tags=[]),
             Spell('Geyser', 3, 'Everything in a \\arealarge, 5 ft.\\ wide vertical line within \\rngmed range', """
@@ -313,8 +319,8 @@ def generate_mystic_spheres():
                 \\hit Each target takes takes bludgeoning \\glossterm<standard damage> +1d.
 
                 \\rankline
-                \\rank<5> The attack gains a +1d bonus to damage.
-                \\rank<7> The damage bonus increases to +2d.
+                \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
             """, tags=['Manifestation']),
             Spell('Rainstorm', 3, 'Everything in the area (see text)', f"""
                 Torrential rain begins falling out of thin air within a \\arealarge radius \\glossterm<zone> from your location.
@@ -390,12 +396,12 @@ def generate_mystic_spheres():
             Spell('Dimensional Jaunt', 1, 'One creature within \\rngmed range', """
                 You partially teleport the target into the Astral Plane.
                 Make an attack vs. Mental against the target.
-                \\hit The target takes energy \\glossterm<standard damage>.
+                \\hit The target takes energy \\glossterm<standard damage> +1d.
 
                 \\rankline
-                \\rank<3> The attack gains a +1d bonus to damage.
-                \\rank<5> The damage bonus increases to +2d.
-                \\rank<7> The damage bonus increases to +3d.
+                \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
+                \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
             """, tags=[]),
             # TODO: target wording is awkward
             Spell('Teleport', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
@@ -416,16 +422,16 @@ def generate_mystic_spheres():
                 If it is a creature created by a \\glossterm<Manifestation> ability, it immediately disappears.
 
                 \\rankline
-                \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>
+                \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
                 \\rank<7> The accuracy bonus increases to +2.
             """, tags=[]),
             Spell('Dimension Door', 4, 'Yourself', """
-                You teleport to a location within \\rngext range of you.
+                You teleport to a location within \\rnglong range of you.
                 You must clearly visualize the destination's appearance, but you do not need \\glossterm<line of sight> or \\glossterm<line of effect> to your destination.
 
                 \\rankline
-                \\rank<6> The range increases to 3,000 feet.
-                \\rank<8> The range increases to 10,000 feet.
+                \\rank<6> The range increases to \\rngext feet.
+                \\rank<8> The range increases to 3,000 feet.
             """, tags=[]),
             Spell('Dimensional Jaunt -- Plane of Earth', 3, 'One creature within \\rngmed range', """
                 You partially teleport the target into the Plane of Earth.
@@ -433,19 +439,20 @@ def generate_mystic_spheres():
                 \\hit The target takes bludgeoning \\glossterm<standard damage> -1d and is \\glossterm<slowed> as a \\glossterm<condition>.
 
                 \\rankline
-                \\rank<5> The attack gains a +1d bonus to damage.
-                \\rank<7> The damage bonus increases to +2d.
+                \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<7> The accuracy bonus increases to +2.
             """, tags=[]),
             Spell('Dimensional Jaunt -- Plane of Fire', 4,  'One creature within \\rngmed range', """
                 You partially teleport the target into the Plane of Fire.
                 Make an attack vs. Mental against the target.
-                \\hit The target takes fire \\glossterm<standard damage> and is \\glossterm<ignited> as a \\glossterm<condition>.
+                \\hit The target takes fire \\glossterm<standard damage> -1d and is \\glossterm<ignited> as a \\glossterm<condition>.
                 This condition can also be removed if the target makes a \\glossterm<DR> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
                 Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
+                \\crit As above, except that the target takes double damage and the condition cannot be removed with a \\glossterm<move action>.
 
                 \\rankline
-                \\rank<5> The attack gains a +1d bonus to damage.
-                \\rank<7> The damage bonus increases to +2d.
+                \\rank<6> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<8> The accuracy bonus increases to +2.
             """, tags=[]),
             Spell('Dimensional Jitter', 5, 'Yourself', """
                 At the end of each \\glossterm<phase>, you may choose to teleport 10 feet in a random direction.
@@ -454,13 +461,13 @@ def generate_mystic_spheres():
                 \\rankline
                 \\rank<7> You can choose the direction of the teleportation.
             """, tags=['Attune (self)']),
-            Spell('Dimensional Jaunt -- Myriad', 6, 'One creature within \\rngmed range', """
+            Spell('Dimensional Jaunt -- Myriad', 5, 'One creature within \\rngmed range', """
                 You partially teleport the target through a number of planes in sequence.
                 Make an attack vs. Mental against the target.
                 \\hit The target takes \\glossterm<standard damage> +3d of all damage types.
 
                 \\rankline
-                \\rank<8> The attack gains a +1d bonus to damage.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
             """, tags=[]),
             Spell('Dimensional Jaunt -- Deep Astral Plane', 8, 'One creature within \\rngmed range', """
                 You partially teleport the target into the Deep Astral Plane.
@@ -578,45 +585,63 @@ def generate_mystic_spheres():
                 You create a wall of magical energy in a 10 ft.\\ high, \\areamed line within \\rngmed range.
                 The wall is visible as a shimmering magical membrane that does not block sight.
                 Nothing can pass through the wall until it is destroyed.
-                Each 5-ft.\\ square of wall has hit points equal to your \\glossterm<power>.
+                Each 5-ft.\\ square of wall has a \\glossterm<wound resistance> equal to twice your \\glossterm<power>.
+
+                \\rankline
+                \\rank<3> The \\glossterm<wound resistance> of each 5-ft.\\ square increases to be equal to three times your \\glossterm<power>.
+                \\rank<5> The area increases to a \\arealarge line.
+                \\rank<7> The \\glossterm<wound resistance> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
             """, tags=['Sustain (minor)']),
-            Spell('Fortified Mystic Barrier', 4, None, """
-                This spell functions like the \\spell<mystic barrier> spell, except that each 5-ft.\\ square of wall has hit points equal to four times your \\glossterm<power>.
-            """, tags=['Sustain (minor)']),
-            Spell('Expanded Mystic Barrier', 3, None, """
-                This spell functions like the \\spell<mystic barrier> spell, except that the wall fills a 10 ft.\\ high, \\arealarge line.
-            """, tags=['Sustain (minor)']),
-            Spell('Impervious Mystic Barrier', 6, None, """
-                This spell functions like the \\spell<mystic barrier> spell, except that the wall is immune to \\glossterm<physical damage>.
+            Spell('Invulnerable Mystic Barrier', 6, None, """
+                You create a wall of magical energy in a 10 ft.\\ high, \\areamed line within \\rngmed range.
+                The wall is visible as a shimmering magical membrane that does not block sight.
+                Nothing can pass through the wall until it is destroyed.
+                Each 5-ft.\\ square of wall has a \\glossterm<wound resistance> equal to twice your \\glossterm<power>.
+                The wall is immune to \\glossterm<physical damage>.
+
+                \\rankline
+                \\rank<8> The area increases to a \\arealarge line.
             """, tags=['Sustain (minor)']),
             Spell('Wall of Energy Impedance', 3, None, """
                 You create a wall of magical energy in a 10 ft.\\ high, \\areamed line within \\rngmed range.
                 The wall is visible as a shimmering magical membrane that does not block sight.
                 It does not impede passage for objects or creatures, but any ability that deals \\glossterm<energy damage> treats the wall as an impassable barrier.
+
+                \\rankline
+                \\rank<5> The area increases to a \\arealarge line.
+                \\rank<7> The height increases to 20 ft.\\ high.
             """, tags=['Sustain (minor)']),
             Spell('Wall of Magic Impedance', 5, None, """
                 You create a wall of magical energy in a 10 ft.\\ high, \\areamed line within \\rngmed range.
                 The wall is visible as a shimmering magical membrane that does not block sight.
                 It does not impede passage for objects or creatures, but any \\glossterm<magical> ability treats the wall as an impassable barrier.
+
+                \\rankline
+                \\rank<7> The area increases to a \\arealarge line.
             """, tags=['Sustain (minor)']),
             Spell('Kinetic Shield', 4, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
                 The target gains a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical> damage.
 
                 You can cast this spell as a \\glossterm<minor action>.
-            """, tags=['Attune (target)']),
-            Spell('Greater Kinetic Shield', 7, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
-                This spell functions like the \\spell<kinetic shield> spell, except that the bonus increases to be equal to your \\glossterm<power>.
+
+                \\rankline
+                \\rank<6> The target also gains a +1 \\glossterm<magic bonus> to \\glossterm<wound rolls> on \\glossterm<vital wounds> from \\glossterm<physical> damage.
+                \\rank<8> The bonus increases to be equal to your \\glossterm<power>.
             """, tags=['Attune (target)']),
             Spell('Resist Energy', 4, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
-                The target gains a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<energy damage>.
+                The target gains a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<energy> damage.
 
                 You can cast this spell as a \\glossterm<minor action>.
+
+                \\rankline
+                \\rank<6> The target also gains a +1 \\glossterm<magic bonus> to \\glossterm<wound rolls> on \\glossterm<vital wounds> from \\glossterm<energy> damage.
+                \\rank<8> The bonus increases to be equal to your \\glossterm<power>.
             """, tags=['Attune (target)']),
-            Spell('Greater Resist Energy', 7, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
-                This spell functions like the \\spell<resist energy> spell, except that the bonus is equal to your \\glossterm<power>.
-            """, tags=['Attune (target)']),
-            Spell('Complete Shield', 6, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
-                This spell functions like the \\spell<kinetic shield> spell, except that the bonus applies against all damage.
+            Spell('Universal Shield', 6, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
+                The target gains a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against all damage.
+
+                \\rankline
+                \\rank<8> The target also gains a +1 \\glossterm<magic bonus> to \\glossterm<wound rolls>.
             """, tags=['Attune (target)']),
             Spell('Repulsion Field', 3, 'All \\glossterm<enemies> that enter the area (see text)', """
                 This spell creates a repulsive field in a \\areamed radius \\glossterm<zone> from your location.
@@ -625,29 +650,51 @@ def generate_mystic_spheres():
                 The rest of its movement in the current phase is cancelled.
 
                 Creatures in the area at the time that the spell is cast are unaffected by the spell.
+
+                \\rankline
+                \\rank<5> The area increases to a \\arealarge radius.
+                \\rank<7> The area increases to a \\areahuge radius.
             """, tags=['Sustain (minor)']),
             Spell('Energetic Immunity', 5, 'Yourself', """
                 Choose a subtype of \\glossterm<energy damage>: cold, electricity, or fire.
                 You become immune to damage of the chosen type.
                 Attacks that deal damage of multiple types still inflict damage normally unless you are immune to all types of damage dealt.
+
+                \\rankline
+                \\rank<7> You may attune to this spell any number of times, choosing a different subtype of energy damage each time.
             """, tags=['Attune (self)']),
             Spell('Retributive Shield', 6, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
-                This spell functions like the \\spell<kinetic shield> spell, except the target also reflects damage.
+                The target gains a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical> damage.
                 Whenever an attack that deals \\glossterm<physical damage> fails to beat the target's \\glossterm<damage resistance>, the attacker takes that damage.
                 If the attacker is beyond \\rngclose range of the target, this reflection fails.
-
                 Any effect which increases this spell's range increases the range of this effect by the same amount.
-            """, tags=['Attune (target)']),
-            Spell('Deflective Shield', 1, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
-                The target gains a +1 \\glossterm<magic bonus> to Armor defense.
 
                 You can cast this spell as a \\glossterm<minor action>.
+
+                \\rankline
+                \\rank<8> The range of the spell and the range of the reflection increase to \\rngmed.
             """, tags=['Attune (target)']),
-            Spell('Greater Deflective Shield', 5, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
-                This spell functions like the \\spell<deflective shield> spell, except that the bonus is increased to +2.
+            Spell('Deflective Shield', 1, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
+                The target gains a +1 \\glossterm<magic bonus> to Armor defense and Reflex defense.
+
+                You can cast this spell as a \\glossterm<minor action>.
+
+                \\rankline
+                \\rank<3> The bonus to Reflex defense increases to +2.
+                \\rank<5> The bonus to Armor defense increases to +2.
+                \\rank<7> The bonus to Reflex dfense increases to +3.
             """, tags=['Attune (target)']),
             Spell('Antilife Shell', 6, 'All \\glossterm<enemies> that enter the area (see text)', """
-                This effect functions like the \\spell<repulsion field> spell, except that you gain a +10 bonus to accuracy with the attack against living creatures.
+                This spell creates a repulsive field in a \\areamed radius \\glossterm<zone> from your location.
+                When an enemy makes physical contact with the spell's area for the first time, you make an attack vs. Mental against it.
+                You gain a +10 bonus to \\glossterm<accuracy> against living creatures.
+                \\hit The target is unable to enter the spell's area with any part of its body.
+                The rest of its movement in the current phase is cancelled.
+
+                Creatures in the area at the time that the spell is cast are unaffected by the spell.
+
+                \\rankline
+                \\rank<8> The area increases to a \\arealarge radius.
             """, tags=['Sustain (minor)']),
         ],
         rituals=[
@@ -722,59 +769,61 @@ def generate_mystic_spheres():
                 The target gains a +1 \\glossterm<magic bonus> to Armor defense and Mental defense.
 
                 You can cast this spell as a \\glossterm<minor action>.
-            """, tags=['Attune (target)']),
-            Spell('Greater Blessing of Protection', 5, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                This spell functions like the \\spell<blessing of protection> spell, except that bonus increases to +2.
-            """, tags=['Attune (target)']),
-            Spell('Supreme Blessing of Protection', 8, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                This spell functions like the \\spell<blessing of protection> spell, except that bonus increases to +3.
+
+                \\rankline
+                \\rank<3> The bonus to Mental defense increases to +2.
+                \\rank<5> The bonus to Armor defense increases to +2.
+                \\rank<7> The bonus to Mental defense increases to +3.
             """, tags=['Attune (target)']),
             Spell('Battle Blessing', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 The target gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with all attacks.
 
                 You can cast this spell as a \\glossterm<minor action>.
+
+                \\rankline
+                \\rank<5> The target also gains a +2 \\glossterm<magic bonus> to \\glossterm<power>.
+                \\rank<7> The accuracy increases to +2.
             """, tags=['Attune (target)']),
-            Spell('Greater Battle Blessing', 6, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                This spell functions like the \\spell<battle blessing> spell, except that the bonus increases to +2.
-            """, tags=['Attune (target)']),
-            Spell('Blessing of Resilience', 4, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+            Spell('Blessing of Resilience', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 Whenever the target gains a \\glossterm<condition>, it can choose to negate that condition.
                 After negating a condition in this way, this spell ends.
 
                 You can cast this spell as a \\glossterm<minor action>.
-            """, tags=['Attune (target)']),
-            Spell('Greater Blessing of Resilience', 7,  'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                This spell functions like the \\spell<blessing of resilience> spell, except that the spell does not end until it resists two \\glossterm<conditions>.
-            """, tags=['Attune (target)']),
-            Spell('Blessing of Supremacy', 4, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                The target gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> and a +2 \\glossterm<magic bonus> to \\glossterm<power>.
 
-                You can cast this spell as a \\glossterm<minor action>.
-            """, tags=['Attune (target)']),
-            Spell('Greater Blessing of Supremacy', 8, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                The target gains a +2 \\glossterm<magic bonus> to \\glossterm<accuracy> and a +4 \\glossterm<magic bonus> to \\glossterm<power>.
-
-                You can cast this spell as a \\glossterm<minor action>.
+                \\rankline
+                \\rank<5> The spell can negate two conditions before ending.
+                \\rank<7> The spell can negate three conditions before ending.
             """, tags=['Attune (target)']),
             Spell('Cleansing Blessing', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 The target can remove a \\glossterm<condition>.
-            """, tags=[]),
-            Spell('Greater Cleansing Blessing', 6, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                This spell functions like the \\spell<cleansing blessing> spell, except that the target can remove two conditions instead of one.
+
+                \\rankline
+                \\rank<5> The target can remove two conditions.
+                \\rank<7> The target can remove three conditions.
             """, tags=[]),
             Spell('Cleansing Benediction', 5, 'You and each of your \\glossterm<allies> within a \\areamed radius from you', """
                 Each target can remove one \\glossterm<condition>.
-            """, tags=[]),
-            Spell('Greater Benediction', 8, 'You and each of your \\glossterm<allies> within a \\areamed radius from you', """
-                This spell functions like the \\spell<cleansing benediction> spell, except that each target can remove two conditions instead of one.
+
+                \\rankline
+                \\rank<7> The area increases to a \\arealarge radius.
             """, tags=[]),
             Spell('Blessing of Might', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                The target gains a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities.
+                The target gains a +4 \\glossterm<magic bonus> to Strength for the purpose of determining its \\glossterm<carrying capacity>.
 
                 You can cast this spell as a \\glossterm<minor action>.
+
+                \\rankline
+                \\rank<5> The bonus increases to +6.
+                \\rank<7> The bonus increases to +8.
             """, tags=['Attune (target)']),
-            Spell('Greater Blessing of Might', 6, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                This spell functions like the \\spell<blessing of might> spell, except that the power bonus increases to +4.
+            Spell('Blessing of Endurance', 1, 'Yourself or an \\glossterm<ally> wihtin \\rngclose range', """
+                The target increases its maximum \\glossterm<hit points> by one and regains one \\glossterm<hit point>.
+                When this ability ends, the target loses \\glossterm<hit points> equal to the number of hit points it regained this way and its maximum \\glossterm<hit points> are restored to normal.
+
+                \\rankline
+                \\rank<3> The number of additional hit points increases to two.
+                \\rank<5> The number of additional hit points increases to three.
+                \\rank<7> The number of additional hit points increases to four.
             """, tags=['Attune (target)']),
         ],
         rituals=[
@@ -841,9 +890,15 @@ def generate_mystic_spheres():
             Effects('Testament', 'Yourself', """
                 The magical essence of your deity or alignment is overlayed on your body as an aura.
                 This channels your deity if you are a cleric, or your alignment if you are a paladin.
-                In either case, you gain the ability to see the auras of other creatures using this spell.
+                In either case, you gain the ability to see the auras of other creatures using this spell if they are within \\rngclose range.
                 If you see another creature with the same aura as you, this spell grants you the unerring knowledge of that similarity.
                 This can allow you to identify other followers of your deity or alignment with certainty.
+
+                \\rankline
+                \\rank<3> The range increases to \\rngmed.
+                \\rank<5> If you are a cleric, you can also unerringly see an aura around creatures who worship your deity.
+                    If you are a paladin, you can also unerringly see an aura around creatures who share your devoted alignment.
+                \\rank<7> The range increases to \\rngext.
             """, tags=['Sustain (free)']),
         ],
         schools=['Channeling'],
@@ -851,34 +906,38 @@ def generate_mystic_spheres():
         spells=[
             Spell('Divine Judgment', 1, 'One creature within \\rngmed range', """
                 Make an attack vs. Mental against the target.
-                \\hit The target takes \\glossterm<standard damage>.
+                \\hit The target takes energy \\glossterm<standard damage> +1d.
+
+                \\rankline
+                \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
+                \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
             """, tags=[]),
-            Spell('Greater Divine Judgment', 5, 'One creature within \\rngmed range', """
-                This spell functions like the \\spell<divine judgment> spell, except that that damage increases to \\glossterm<standard damage> +2d.
-            """, tags=[]),
-            Spell('Supreme Divine Judgment', 8, 'One creature within \\rngmed range', """
-                This spell functions like the \\spell<divine judgment> spell, except that the damage increases to \\glossterm<standard damage> +4d.
-            """, tags=[]),
-            Spell('Word of Faith', 3, '\\glossterm<Enemies> in a \\areamed radius from you', """
+            Spell('Word of Faith', 1, '\\glossterm<Enemies> in a \\areasmall radius from you', """
                 Make an attack vs. Mental against each target.
-                \\hit Each target takes \\glossterm<standard damage> -1d.
+                \\hit Each target takes energy \\glossterm<standard damage>.
+
+                \\rankline
+                \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
+                \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
             """, tags=[]),
-            Spell('Greater Word of Faith', 6, '\\glossterm<Enemies> in a \\arealarge radius from you', """
-                This spell functions like the \\spell<word of faith> spell, except that it affects more targets and the damage increases to \\glossterm<standard damage> +1d.
+            Spell('Proclamation', 3, '\\glossterm<Enemies> in a \\areamed radius from you', """
+                Make an attack vs. Mental against each target.
+                \\hit Each target takes energy \\glossterm<standard damage>.
+
+                \\rankline
+                \\rank<5> The area increases to a \\arealarge radius.
+                \\rank<7> The area increases to a \\areahuge radius.
             """, tags=[]),
             Spell('Mantle of Faith', 4, 'Yourself', """
                 You gain a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical> damage.
 
                 You can cast this spell as a \\glossterm<minor action>.
-            """, tags=['Attune (self)']),
-            Spell('Greater Mantle of Faith', 7, 'Yourself', """
-                This spell functions like the \\spell<mantle of faith> spell, except that the bonus is equal to your \\glossterm<power>.
-            """, tags=['Attune (self)']),
-            Spell('Complete Mantle of Faith', 6, 'Yourself', """
-                This spell functions like the \\spell<mantle of faith> spell, except that the bonus applies against all damage.
-            """, tags=['Attune (target)']),
-            Spell('Greater Complete Mantle of Faith', 7, 'Yourself', """
-                This spell functions like the \\spell<complete mantle of faith> spell, except that the bonus is equal to your \\glossterm<power>.
+
+                \\rankline
+                \\rank<6> The bonus also applies against \\glossterm<energy> damage.
+                \\rank<8> The bonus increases to be equal to your \\glossterm<power>.
             """, tags=['Attune (self)']),
             Spell('Divine Might', 4, 'Yourself', """
                 You increase your size by one \\glossterm<size category>.
@@ -886,13 +945,10 @@ def generate_mystic_spheres():
                 However, your physical form is not altered fully to match its new size, and your Strength and Dexterity are unchanged.
 
                 You can cast this spell as a \\glossterm<minor action>.
-            """, tags=['Attune (self)']),
-            Spell('Divine Might, Greater', 6, 'Yourself', """
-                This spell functions like the \\spell<divine might> spell, except that you also gain a +2 \\glossterm<magic bonus> to Strength.
-            """, tags=['Attune (self)']),
-            Spell('Divine Might, Supreme', 8, 'Yourself', """
-                This spell functions like the \\spell<divine might> spell, except that your size is increased by two size categories.
-                You gain a +2 \\glossterm<magic bonus> to Strength to partially match your new size.
+
+                \\rankline
+                \\rank<6> You also gain a +2 \\glossterm<magic bonus> to Strength.
+                \\rank<8> You can increase your size by two size categories instead of one.
             """, tags=['Attune (self)']),
         ],
         rituals=[
@@ -930,12 +986,22 @@ def generate_mystic_spheres():
         short_description="Manipulate the passage of time to inhibit foes and aid allies",
         cantrips=[
             Effects('Accelerated Reading', 'Yourself', """
-                You can read at five times your normal speed.
+                You can read at twice your normal speed.
                 However, the mental effort imposes a -4 penalty to Mental defense.
+
+                \\rankline
+                \\rank<3> You can read at four times your normal speed.
+                \\rank<5> You can read at six times your normal speed.
+                \\rank<7> You can read at ten times your normal speed.
             """, tags=['Sustain (free)']),
             Effects('Accelerated Search', 'Yourself', """
                 Make an Awareness check to notice things in a single 10-ft.\\ squrae within 10 feet of you.
-                You gain a +5 bonus to this check.
+                You gain a +4 bonus to this check.
+
+                \\rankline
+                \\rank<3> The bonus increases to +6.
+                \\rank<5> The bonus increases to +8.
+                \\rank<7> The bonus increases to +10.
             """, tags=[]),
         ],
         schools=['Transmutation'],
@@ -945,31 +1011,44 @@ def generate_mystic_spheres():
                 Make an attack vs. Mental against the target.
                 \\hit The target is \\glossterm<slowed> as a \\glossterm<condition>.
                 \\crit The target is also \\glossterm<decelerated> as a separate \\glossterm<condition>.
+
+                \\rankline
+                \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<5> The accuracy bonus increases to +2.
+                \\rank<7> The accuracy bonus increases to +3.
             """, tags=[]),
             Spell('Decelerate', 3, 'One creature within \\rngmed range', """
                 Make an attack vs. Mental against the target.
                 \\hit The target is \\glossterm<decelerated> as a \\glossterm<condition>.
+
+                \\rankline
+                \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<7> The accuracy bonus increases to +2.
             """, tags=[]),
             Spell('Mental Lag', 4, 'One creature within \\rngmed range', """
                 Make an attack vs. Mental against the target.
                 \\hit The target is \\glossterm<immobilized> and \\glossterm<dazed> as a single \\glossterm<condition>.
+
+                \\rankline
+                \\rank<6> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<8> The accuracy bonus increases to +2.
             """, tags=[]),
             Spell('Haste', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
                 The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<base speed>, up to a maximum of double its \\glossterm<base speed>.
 
                 You can cast this spell as a \\glossterm<minor action>.
-            """, tags=['Attune (target)']),
-            Spell('Greater Haste', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-                This spell functions like the \\textit<haste> spell, except that the speed bonus increases to +20 feet.
-            """, tags=['Attune (target)']),
-            Spell('Supreme Haste', 6, 'Yourself or an \\glossterm<ally> with in \\rngmed range', """
-                This spell functions like the \\textit<haste> spell, except that the speed bonus increases to +30 feet.
+
+                \\rankline
+                \\rank<3> The speed bonus increases to +15 feet.
+                \\rank<5> The speed bonus increases to +20 feet.
+                \\rank<7> The speed bonus increases to +30 feet.
             """, tags=['Attune (target)']),
             Spell('Accelerated Strike', 4, 'Yourself', """
                 As a \\glossterm<minor action>, you can make a \\glossterm<strike> with a -2 penalty to \\glossterm<accuracy> and a -2d penalty to damage.
-            """, tags=['Attune (self)']),
-            Spell('Greater Accelerated Strike', 7, 'Yourself', """
-                This spell functions like the \\spell<accelerated strike> spell, except that the accuracy penalty is reduced to -1 and the damage penalty is reduced to -1d.
+
+                \\rankline
+                \\rank<6> The damage penalty is reduced to -1d.
+                \\rank<8> The accuracy penalty is reduced to -1.
             """, tags=['Attune (self)']),
             Spell('Temporal Duplicate', 5, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
                 You reach into a possible future and create a duplicate of the target.
@@ -984,11 +1063,9 @@ def generate_mystic_spheres():
                 If this would reduce any of the target's resources below 0, it takes \\glossterm<standard damage> +4d from the paradox and becomes \\glossterm<stunned> as a \\glossterm<condition>.
 
                 You can cast this spell as a \\glossterm<minor action>.
-            """, tags=[]),
-            Spell('Greater Temporal Duplicate', 8, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-                This spell functions like the \\spell<temporal duplicate> spell, except that you can reach up to five minutes into the future to summon the duplicate.
-                When you cast the spell, you choose the length of time before the target disappears.
-                The duplicate still only exists for a single round.
+
+                \\rankline
+                \\rank<7> The range increases to \\rnglong.
             """, tags=[]),
             Spell('Time Hop', 3, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngmed range', """
                 You send the target into the future, causing it to temporarily cease to exist.
@@ -1000,6 +1077,10 @@ def generate_mystic_spheres():
                 For example, if the location is occupied by a creature that walked into the area, the creature is relocated to the closest unoccupied space along the path it took to reach the target.
 
                 You can cast this spell as a \\glossterm<minor action>.
+
+                \\rankline
+                \\rank<5> The maximum size of the target increases to Large.
+                \\rank<7> The maximum size of the target increases to Huge.
             """, tags=[]),
             Spell('Temporal Stasis', 4, 'Yourself or one Medium or smaller \\glossterm<ally> within \\rngmed range', """
                 The target is placed into stasis, rendering it unconscious.
@@ -1010,15 +1091,11 @@ def generate_mystic_spheres():
                 If you use this ability on yourself, it instead lasts for a number of rounds you choose when you cast the spell, up to a maximum of five rounds.
 
                 You can cast this spell as a \\glossterm<minor action>.
-            """, tags=['Attune (self)']),
-            Spell('Delay Damage', 4, 'Yourself', """
-                When you take damage, half of the damage (rounded down) is not dealt to you immediately.
-                This damage is tracked separately.
-                When the ends, you take all of the delayed damage at once.
-                This damage has no type, and ignores all effects that reduce or negate damage.
 
-                You can cast this spell as a \\glossterm<minor action>.
-            """, tags=['Sustain (minor)']),
+                \\rankline
+                \\rank<6> The maximum size of the target increases to Large.
+                \\rank<8> The maximum size of the target increases to Huge.
+            """, tags=['Attune (self)']),
             Spell('Time Lock', 5, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
                 You lock the state of the target's body in time.
                 Note the target's \\glossterm<hit points>, \\glossterm<vital wounds> (including \\glossterm<wound roll> results), and \\glossterm<conditions>.
@@ -1030,12 +1107,12 @@ def generate_mystic_spheres():
                 After you restore the target's state in this way, the spell ends.
 
                 You can cast this spell as a \\glossterm<minor action>.
-            """, tags=['Sustain (minor)']),
-            Spell('Greater Time Lock', 8, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-                This spell functions like the \\spell<time lock> spell, except that the effect is not ended if the target dies, and restoring the target's state can also restore it to life.
+
+                \\rankline
+                \\rank<7> The effect is not ended if the target dies, and restoring the target's state can also restore it to life.
                 If the target is restored to life in this way, all of its properties not locked by this spell, such as any resources expended, are identical to what they were when the target died.
-                In addition, this spell has the \\glossterm<Attune> (self) tag instead of the \\glossterm<Sustain> (minor) tag.
-            """, tags=['Attune (self)']),
+                You cannot restore yourself to life in this way since you cannot take the action to restore your own state while dead.
+            """, tags=['Sustain (minor)']),
             Spell('Time Stop', 8, 'Yourself', """
                 You can take two full rounds of actions immediately.
                 During this time, all other creatures and objects are fixed in time, and cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
@@ -1081,21 +1158,40 @@ def generate_mystic_spheres():
                 At the end of each round, if the target did not dance during that round, it takes a -2 penalty to \\glossterm<accuracy> and Mental defense as the compulsion intensifies.
                 This penalty stacks each round until the target dances, which resets the penalties to 0.
                 \\crit As above, except that the target must dance as a \\glossterm<standard action> to reset the penalties, instead of as a move action.
+
+                \\rankline
+                \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<5> The accuracy bonus increases to +2.
+                \\rank<7> The accuracy bonus increases to +3.
             """, tags=['Compulsion']),
             Spell('Collapse', 1, '\\glossterm<Enemies> in a \\areamed radius from you', """
                 Make an attack vs. Mental against each target.
                 \\hit Each target falls \\glossterm<prone>.
                 \\crit As above, and as a \\glossterm<condition>, each target is unable to stand up.
                 If a target is somehow brought into a standing position, it will immediately fall and become prone again.
+
+                \\rankline
+                \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<5> The accuracy bonus increases to +2.
+                \\rank<7> The accuracy bonus increases to +3.
             """, tags=['Compulsion']),
             Spell('Stay', 1, 'One creature within \\rngmed range', """
                 Make an attack vs. Mental against the target.
                 \\hit The target falls \\glossterm<prone> immediately. In addition, it is \\glossterm<slowed> as a \\glossterm<condition>.
                 \\crit The target falls prone immediately. In addition, it is \\glossterm<decelerated> as a \\glossterm<condition>.
+
+                \\rankline
+                \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<5> The accuracy bonus increases to +2.
+                \\rank<7> The accuracy bonus increases to +3.
             """, tags=['Compulsion']),
             Spell('Confusion', 4, 'One creature within \\rngmed range', """
                 Make an attack vs. Mental against the target.
                 \\hit The target is \\confused as a \\glossterm<condition>.
+
+                \\rankline
+                \\rank<6> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<8> The accuracy bonus increases to +2.
             """, tags=['Compulsion']),
             Spell('Sleep', 4, 'One creature within \\rngclose range', """
                 Make an attack vs. Mental against the target.
@@ -1106,13 +1202,17 @@ def generate_mystic_spheres():
                 % Awkward to sustain without the Sustain tag
                 This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                 However, it is a \\glossterm<condition>, and can be removed by effects which remove conditions.
+
+                \\rankline
+                \\rank<6> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<8> The accuracy bonus increases to +2.
             """, tags=['Compulsion']),
             Spell('Discordant Song', 6, '\\glossterm<Enemies> in a \\areamed radius from you', """
                 Make an attack vs. Mental against each target.
                 \\hit Each target is \\disoriented as a \\glossterm<condition>.
-            """, tags=['Compulsion']),
-            Spell('Irresistible Dance', 7, 'One creature within \\rngmed range', """
-                This spell functions like the \\spell<dance> spell, except that you gain a +4 bonus to accuracy on the attack.
+
+                \\rankline
+                \\rank<8> The area increases to a \\arealarge radius.
             """, tags=['Compulsion']),
             Spell('Dominate', 5, 'One creature within \\rngmed range', """
                 Make an attack vs. Mental against the target.
@@ -1120,7 +1220,10 @@ def generate_mystic_spheres():
                 \\crit The target is \\glossterm<stunned> as a \\glossterm<condition>.
                 As a standard action, you can make an additional attack vs. Mental against the target as long as it remains stunned in this way and is within \\rngmed range of you.
                 On a hit, the target becomes stunned in the same way as an additional condition, continuing the effect even if the target removed the original condition in the same phase.
-                On a critical hit, the target becomes \\glossterm<dominated> by you as long as you \\glossterm<attune> to this ability.
+                On a critical hit, if the target is humanoid, it becomes \\glossterm<dominated> by you as long as you \\glossterm<attune> to this ability.
+
+                \\rankline
+                \\rank<7> You can dominate the target even if it is not humanoid.
             """, tags=['Compulsion']),
         ],
         category='debuff, combat',
@@ -1136,50 +1239,107 @@ def generate_mystic_spheres():
         schools=['Vivimancy'],
         lists=['Arcane', 'Divine', 'Nature', 'Pact'],
         spells=[
+            Spell('Malaise', 1, 'One living creature within \\rngclose range', """
+                Make an attack vs. Fortitude against the target.
+                \\hit The target is \\glossterm<sickened> as a \\glossterm<condition>.
+                \\crit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
+
+                \\rankline
+                \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<5> The accuracy bonus increases to +2.
+                \\rank<7> The accuracy bonus increases to +3.
+            """, tags=[]),
+            Spell('Curse of Malaise', 3, 'One living creature within \\rngclose range', """
+                Make an attack vs. Mental against the target.
+                \\hit The target is \\glossterm<sickened> until it takes a \\glossterm<short rest>.
+                \\crit As above, except that the effect lasts until this curse is removed.
+            """, tags=['Curse']),
             Spell('Decay', 1, 'One living creature within \\rngclose range', """
                 Make an attack vs. Fortitude against the target.
-                \\hit The target decays as a \\glossterm<condition>.
-                At the end of each \\glossterm<phase>, it takes \\glossterm<standard damage> -3d if it took a \\glossterm<standard action> during that phase.
-                It can only take damage in this way once per round.
+                \\hit As a \\glossterm<condition>, the target becomes more vulnerable to injury.
+                Whenever it loses a \\glossterm<hit point>, it reduces its maximum \\glossterm<hit points> by 1.
+                When this condition is removed, the target's maximum \\glossterm<hit points> are restored.
+                \\crit As above, except that the target also takes a -2 penalty to \\glossterm<wound rolls>.
+
+                \\rankline
+                \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<5> The accuracy bonus increases to +2.
+                \\rank<7> The accuracy bonus increases to +3.
             """, tags=[]),
-            Spell('Corruption of Blood and Bone', 4, 'One living creature within \\rngclose range', """
-                This spell functions like the \\spell<decay> spell, except that the damage increases to \\glossterm<standard damage> -2d.
-                In addition, damage from the spell reduces the target's maximum hit points by the same amount.
-                This hit point reduction is part of the same \\glossterm<condition> as the spell's other effects.
-                When the condition is removed, the target's maximum hit points are restored.
-            """, tags=[]),
-            Spell('Curse of Decay', 5, 'One living creature within \\rngclose range', """
-                This spell functions like the \\spell<decay> spell, except that the attack is made against Mental defense instead of Fortitude defense.
-                In addition, if the attack critically hits, the spell's effect becomes a permanent curse.
-                It is no longer a \\glossterm<condition>, and cannot be removed by abilities that remove conditions.
-                It can be removed by abilities that can remove curses.
+            Spell('Curse of Decay', 3, 'One living creature within \\rngclose range', """
+                Make an attack vs. Mental against the target.
+                \\hit The target becomes more vulnerable to injury until it takes a short rest.
+                Whenever it loses a \\glossterm<hit point>, it reduces its maximum \\glossterm<hit points> by 1.
+                This cannot reduce the target's maximum \\glossterm<hit points> below 1.
+                When this effect is removed, the target's maximum \\glossterm<hit points> are restored.
+                \\crit As above, except that the effect lasts until this curse is removed.
+
+                \\rankline
+                \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<7> The accuracy bonus increases to +2.
             """, tags=['Curse']),
             Spell('Miasma', 3, '\\glossterm<Enemies> within an \\areamed radius from you', """
-                Make an attack vs. Fortitude against living each target.
+                Make an attack vs. Fortitude against each target.
                 \\hit Each target is \\glossterm<sickened> as a \\glossterm<condition>.
-            """, tags=[]),
-            Spell('Pernicious Sickness', 3, 'One living creature within \\rngclose range', """
-                Make an attack vs. Fortitude with a +2 bonus to \\glossterm<accuracy> against the target.
-                \\hit The target is \\glossterm<sickened> as a \\glossterm<condition>.
-            """, tags=[]),
-            Spell('Greater Pernicious Sickness', 6, 'One living creature within \\rngclose range', """
-                This spell functions like the \\spell<pernicious sickness> spell, except that the accuracy bonus is increased to +4.
+
+                \\rankline
+                \\rank<5> The area increases to a \\arealarge radius.
+                \\rank<7> The area increases to a \\areahuge radius.
             """, tags=[]),
             Spell('Greater Miasma', 6, '\\glossterm<Enemies> within an \\areamed radius from you', """
                 Make an attack vs. Fortitude against living each target.
                 \\hit Each target is \\glossterm<nauseated> as a \\glossterm<condition>.
+
+                \\rankline
+                \\rank<8> the area increases to a \\arealarge radius.
             """, tags=[]),
             Spell('Eyebite', 4, 'One living creature within \\rngclose range', """
                 Make an attack vs. Fortitude against the target.
                 \\hit The target is \\glossterm<blinded> as a \\glossterm<condition>.
+
+                \\rankline
+                \\rank<6> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<8> The accuracy bonus increases to +2.
             """, tags=[]),
-            Spell('Bleed', 5, 'One living creature within \\rngclose range', """
-                This spell functions like the \\spell<decay> spell, except that a struck target also begins bleeding as an additional \\glossterm<condition>.
-                At the end of every \\glossterm<action phase> in subsequent rounds, the target takes \\glossterm<standard damage> -3d.
+            Spell('Eyebite Curse', 7, 'One living creature within \\rngclose range', """
+                Make an attack vs. Mental against the target.
+                \\hit The target is \\glossterm<blinded> until it takes a \\glossterm<short rest>.
+                \\crit As above, except that the effect lasts until this curse is removed.
+            """, tags=['Curse']),
+            Spell('Bleed', 3, 'One living creature within \\rngclose range', """
+                Make an attack vs. Fortitude against the target.
+                \\hit As a \\glossterm<condition>, the target begins bleeding.
+                At the end of each round, it takes physical \\glossterm<standard damage> -1d.
+                This damage cannot inflict a \\glossterm<vital wound>, even if the target has no \\glossterm<hit points> remaining.
+                \\crit As above, except that the damage can inflict a \\glossterm<vital wound>.
+
+                \\rankline
+                \\rank<5> The damage increases to \\glossterm<standard damage>.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +1.
             """, tags=[]),
-            Spell('Crippling Decay', 6, 'One living creature within \\rngclose range', """
-                This spell functions like the \\spell<decay> spell, except that a struck target is also \\glossterm<immobilized> as an additional \\glossterm<condition>.
+            Spell('Curse of Blood', 5, 'One living creature within \\rngclose range', """
+                Make an attack vs. Mental against the target.
+                \\hit The target begins bleeding until it takes a \\glossterm<short rest>.
+                At the end of each round, it takes physical \\glossterm<standard damage> -1d.
+                This damage cannot inflict a \\glossterm<vital wound>, even if the target has no \\glossterm<hit points> remaining.
+                \\crit As above, except that the effect lasts until this curse is removed.
+
+                \\rankline
+                \\rank<7> The damage increases to \\glossterm<standard damage>.
+            """, tags=['Curse']),
+            Spell('Cripple', 5, 'One living creature within \\rngclose range', """
+                Make an attack vs. Fortitude against the target.
+                \\hit The target is \\glossterm<immobilized> as a \\glossterm<condition>.
+                \\crit The target is \\glossterm<paralyzed> as a \\glossterm<condition>.
+
+                \\rankline
+                \\rank<7> The attack gains a +1 bonus to \\glossterm<accuracy>.
             """, tags=[]),
+            Spell('Crippling Curse', 7, 'One living creature within \\rngclose range', """
+                Make an attack vs. Mental against the target.
+                \\hit The target is \\glossterm<immobilized> until it takes a \\glossterm<short rest>.
+                \\crit As above, except that the effect lasts until this curse is removed.
+            """, tags=['Curse']),
         ],
         rituals=[
             Spell('Animate Dead', 3, 'Any number of corpses within \\rngclose range', """
@@ -1211,41 +1371,54 @@ def generate_mystic_spheres():
             Spell('Cone of Cold', 1, 'Everything in a \\areamed cone from you', """
                 Make an attack vs. Fortitude against each target.
                 \\hit Each target takes cold \\glossterm<standard damage>.
+
+                \\rankline
+                \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
+                \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
             """, tags=[]),
-            Spell('Greater Cone of Cold', 4, 'Everything in a \\areamed cone from you', """
-                This spell functions like the \\spell<cone of cold> spell, except it affects everything in a \\arealarge cone from you.
-            """, tags=[]),
-            Spell('Supreme Cone of Cold', 6, 'Everything in a \\areamed cone from you', """
-                This spell functions like the \\spell<cone of cold> spell, except it affects everything in a \\areahuge cone from you.
+            Spell('Winterwave', 3, 'Everything in a \\arealarge cone from you', """
+                Make an attack vs. Fortitude against each target.
+                \\hit Each target takes cold \\glossterm<standard damage>.
+
+                \\rankline
+                \\rank<5> The area increases to a \\areahuge cone.
+                \\rank<7> The area increases to a \\areaext cone.
             """, tags=[]),
             Spell('Frostbite', 1, 'One creature or object within \\rngmed range', """
                 Make an attack vs. Fortitude against the target.
                 \\hit The target takes cold \\glossterm<standard damage> -2d and is \\glossterm<slowed> as a \\glossterm<condition>.
+
+                \\rankline
+                \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<5> The accuracy bonus increases to +2.
+                \\rank<7> The accuracy bonus increases to +3.
             """, tags=[]),
-            Spell('Greater Frostbite', 6, 'One creature or object within \\rngmed range', """
-                This spell functions like the \\spell<frostbite> spell, except that the target is \\glossterm<decelerated> instead of \\glossterm<slowed>.
+            Spell('Hailstorm', 4, 'Everything in a \\areasmall radius within \\rngclose range', """
+                Make an attack vs. Armor against each target.
+                \\hit Each target takes cold and bludgeoning \\glossterm<standard damage>.
+
+                \\rankline
+                \\rank<6> The damage increases to \\glossterm<standard damage> +1d.
+                \\rank<8> The damage increases to \\glossterm<standard damage> +2d.
             """, tags=[]),
-            Spell('Cold Snap', 3, 'Everything in a \\areamed cone from you (see text)', """
-                This spell functions like the \\spell<cone of cold> spell, except that it gains the \\glossterm<Sustain> (standard) tag.
-                The area affected by the spell becomes a \\glossterm<zone> that is supernaturally cold.
-                At the end of each \\glossterm<action phase> in subsequent rounds, the attack is repeated in that area.
-            """, tags=[]),
-            Spell('Greater Cold Snap', 4, 'Everything in a \\areamed cone from you (see text)', f"""
-                This spell functions like the \\spell<cold snap> spell, except that the spell gains the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Sustain> (standard) tag.
-            """, tags=[]),
-            Spell('Freezing Cone', 5, 'Everything in a \\areamed cone from you', """
-                This spell functions like the \\spell<cone of cold> spell, except that each struck target is also \\glossterm<slowed> as a \\glossterm<condition>.
-            """, tags=[]),
-            Spell('Blizzard', 3, '\\glossterm<Enemies> and objects in a \\areasmall radius within \\rngclose range', """
+            Spell('Blizzard', 1, '\\glossterm<Enemies> and objects in a \\areasmall radius from you', """
                 Make an attack vs. Fortitude against each target.
                 \\hit Each target takes cold \\glossterm<standard damage>.
+
+                \\rankline
+                \\rank<3> The area increases to a \\areamed radius.
+                \\rank<5> The area increases to a \\arealarge radius.
+                \\rank<7> The area increases to a \\areahuge radius.
             """, tags=[]),
-            Spell('Greater Blizzard', 6, '\\glossterm<Enemies> and objects in a \\areamed radius within \\rngmed range', """
-                This spell functions like the \\spell<blizzard> spell, except that it affects more targets.
-            """, tags=[]),
-            Spell('Deep Freeze', 4, 'Everything in a \\areamed cone from you', """
-                This spell functions like the \\spell<cone of cold> spell, except that it attacks Reflex defense instead of Fortitude defense.
-                In addition, it only affects creatures of Large size or smaller.
+            Spell('Ray of Frost', 1, 'One creature or object within \\rngclose range', """
+                Make an attack vs. Reflex against the target.
+                \\hit The target takes cold \\glossterm<standard damage> +1d.
+
+                \\rankline
+                \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
+                \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
             """, tags=[]),
             Spell('Icecraft', 1, 'One pool of unattended, nonmagical water within \\rngclose range.', """
                 This spell creates an icy weapon or a suit of icy armor from the target pool of water.
@@ -1258,15 +1431,15 @@ def generate_mystic_spheres():
                 When a creature wearing armor created in this way takes physical damage, cold damage, or fire damage, that damage is also dealt to the armor.
                 Likewise, when a creature wielding a weapon created in this way deals damage with the weapon, that damage is also dealt to the weapon.
                 If the item becomes \\glossterm<broken>, this effect is \\glossterm<dismissed>.
-            """, tags=['Attune (self)']),
-            Spell('Sturdy Icecraft', 3, 'One pool of unattended, nonmagical water within \\rngclose range.', """
-                This spell functions like the \\spell<icecraft> spell, except that the item created has hit points equal to four times your \\glossterm<power>.
-                In addition, you can create heavy body armor.
-            """, tags=['Attune (self)']),
-            Spell('Enhanced Icecraft', 5, 'One pool of unattended, nonmagical water within \\rngclose range.', """
-                This spell functions like the \\spell<sturdy icecraft> spell, except that the item created is magically enhanced.
-                A weapon gains a +1d \\glossterm<magic bonus> to damage with \\glossterm<strikes>, and armor grants a +1 \\glossterm<magic bonus> to the defenses it improves.
-            """, tags=['Attune (self)']),
+
+                \\rankline
+                \\rank<3> The \\glossterm<wound resistance> of the item increases to three times your power.
+                    In addition, you can also create heavy body armor.
+                \\rank<5> The item created is magically enhanced.
+                    A weapon grants a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities,
+                        and armor grants a +1 \\glossterm<magic bonus> to Armor defense.
+                \\rank<7> The \\glossterm<wound resistance> of the item increases to four times your power.
+            """, tags=['Sustain (minor)']),
         ],
         category='damage',
     ))
@@ -1281,6 +1454,11 @@ def generate_mystic_spheres():
         cantrips=[
             Effects('Cheer', 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 The target's mood improves and it feels more cheerful.
+
+                \\rankline
+                \\rank<3> The range increases to \\rngmed.
+                \\rank<5> You may target an additional ally within range.
+                \\rank<7> The range increases to \\rnglong.
             """, tags=['Emotion', 'Sustain (free)']),
         ],
         schools=['Enchantment'],
@@ -1289,21 +1467,28 @@ def generate_mystic_spheres():
             Spell('Terror', 1, 'One creature within \\rngclose range', """
                 Make an attack vs. Mental against the target.
                 \\hit The target is \\frightened by you as a \\glossterm<condition>.
+
+                \\rankline
+                \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<5> The accuracy bonus increases to +2.
+                \\rank<7> The accuracy bonus increases to +3.
             """, tags=['Emotion']),
-            Spell('Greater Terror', 6, 'One creature within \\rngclose range', """
-                This spell functions like the \\spell<terror> spell, except that the target is \\glossterm<panicked> instead of \\glossterm<frightened>.
+            Spell('Panic', 5, 'One creature within \\rngclose range', """
+                Make an attack vs. Mental against the target.
+                \\hit The target is \\panicked by you as a \\glossterm<condition>.
+
+                \\rankline
+                \\rank<7> The attack gains a +1 bonus to \\glossterm<accuracy>.
             """, tags=['Emotion']),
             Spell('Fearsome Aura', 3, 'All \\glossterm<enemies> in the area (see text)', """
                 You radiate an aura of fear in a \\areamed radius \\glossterm<emanation> from you.
                 When you attune to this spell, and at the end of each \\glossterm<action phase> in subsequent rounds, make an attack vs. Mental against each target.
                 You cannot make this attack more than once against any individual target during this spell's duration.
                 \\hit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
-            """, tags=['Attune (self)', 'Emotion']),
-            Spell('Greater Fearsome Aura', 5, 'All creatures within a \\areamed radius \\glossterm<emanation> from you', """
-                This spell functions like the \\spell<fearsome aura> spell, except that a struck target is \\glossterm<frightened> instead of \\glossterm<shaken>.
-            """, tags=['Attune (self)', 'Emotion']),
-            Spell('Supreme Fearsome Aura', 7, 'All creatures within a \\arealarge radius \\glossterm<emanation> from you', """
-                This spell functions like the \\spell<greater fearsome aura> spell, except that it affects more targets.
+
+                \\rankline
+                \\rank<5> The area increases to a \\arealarge radius \\glossterm<emanation>.
+                \\rank<7> The area increases to a \\areahuge radius \\glossterm<emanation>.
             """, tags=['Attune (self)', 'Emotion']),
             # Math: at 1st level, power is probably ~2, so standard damage is probably 2d6.
             # Casting this spell and then two standard damage spells deals 4d6+2d8 = 23 damage
@@ -1322,39 +1507,62 @@ def generate_mystic_spheres():
                 In addition, at the end of each \\glossterm<round>, if the target took damage that round, it takes \\glossterm<standard damage> -3d.
                 This damage is of all damage types that the target was damaged by during that round.
             """, tags=['Emotion']),
-            Spell('Redirected Terror', 3, 'One creature within \\rngclose range', """
-                This spell functions like the \\spell<terror> spell, except that you also choose an \\glossterm<ally> within the spell's range.
-                The target is afraid of the chosen ally instead of being afraid of you.
+            Spell('Redirected Terror', 3, 'One creature within \\rngmed range', """
+                Make an attack vs. Mental against the target.
+                \\hit The target is \\frightened by an \\glossterm<ally> of your choice within range as a \\glossterm<condition>.
+
+                \\rankline
+                \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<7> The accuracy bonus increases to +2.
             """, tags=['Emotion']),
-            Spell('Charm', 3, 'One creature within \\rnglong range', """
+            Spell('Charm', 3, 'One creature within \\rngmed range', """
                 Make an attack vs. Mental against the target.
                 \\hit The target is \\charmed by you.
                 Any act by you or by creatures that appear to be your allies that threatens or damages the \\spell<charmed> person breaks the effect.
-                This effect is automatically \\glossterm<dismissed> after one hour.
-                \\crit As above, except that the effect is not automatically dismissed after one hour.
-            """, tags=['Attune (self)', 'Emotion', 'Subtle']),
-            Spell('Amnesiac Charm', 6, 'One creature within \\rnglong range', """
-                This spell functions like the \\spell<charm> spell, except that when the spell ends, an affected target forgets all events that transpired during the spell's duration.
+
+                \\rankline
+                \\rank<5> You may target two creature within range.
+                \\rank<7> You may target three creatures within range.
+            """, tags=['Sustain (minor)', 'Emotion', 'Subtle']),
+            Spell('Amnesiac Charm', 6, 'One creature within \\rngmed range', """
+                Make an attack vs. Mental against the target.
+                \\hit The target is \\charmed by you.
+                Any act by you or by creatures that appear to be your allies that threatens or damages the \\spell<charmed> person breaks the effect.
+                When this effect ends, the target forgets all events that transpired during the spell's duration.
                 It becomes aware of its surroundings as if waking up from a daydream.
                 The target is not directly aware of any magical influence on its mind, though unusually paranoid or perceptive creatures may deduce that their minds were affected.
-            """, tags=['Attune (self)', 'Emotion', 'Subtle']),
-            Spell('Calm Emotions', 4, 'All creatures within a \\arealarge radius from you', """
+
+                \\rankline
+                \\rank<8> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            """, tags=['Sustain (minor)', 'Emotion', 'Subtle']),
+            Spell('Calm Emotions', 3, 'All creatures within a \\arealarge radius from you', """
                 Make an attack vs. Mental against each target.
                 \\hit Each target has its emotions calmed.
                 The effects of all other \\glossterm<Emotion> abilities on that target are \\glossterm<suppressed>.
                 It cannot take violent actions (although it can defend itself) or do anything destructive.
                 If the target takes damage or feels that it is in danger, this effect is \\glossterm<dismissed>.
+
+                \\rankline
+                \\rank<5> The area increases to a \\areahuge radius.
+                \\rank<7> The area increases to a \\areaext radius.
             """, tags=['Emotion', 'Sustain (standard)']),
             Spell('Enrage', 1, 'One creature within \\rngmed range', """
                 Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against the target.
                 \\hit As a \\glossterm<condition>, the target is unable to take any \\glossterm<standard actions> that do not cause it to make an attack.
                 For example, it could make a \\glossterm<strike> or cast an offensive spell, but it could not heal itself or summon a creature.
+
+                \\rankline
+                \\rank<3> The accuracy bonus increases to +3.
+                \\rank<5> The accuracy bonus increases to +4.
+                \\rank<7> The accuracy bonus increases to +5.
             """, tags=['Emotion']),
             Spell('Mass Enrage', 6, 'All \\glossterm<enemies> in a \\areamed radius within \\rngmed range', """
-                This spell functions like the \\spell<enrage> spell, except that it affects multiple enemies.
-            """, tags=['Emotion']),
-            Spell('Inevitable Doom', 5, 'One creature within \\rngclose range', """
-                This spell functions like the \\spell<terror> spell, except that you gain a +2 bonus to \\glossterm<accuracy>.
+                Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against each target.
+                \\hit As a \\glossterm<condition>, each target is unable to take any \\glossterm<standard actions> that do not cause it to make an attack.
+                For example, it could make a \\glossterm<strike> or cast an offensive spell, but it could not heal itself or summon a creature.
+
+                \\rankline
+                \\rank<8> The range increases to \\rnglong.
             """, tags=['Emotion']),
         ],
         category='debuff, combat',
@@ -1371,63 +1579,100 @@ def generate_mystic_spheres():
         schools=['Evocation'],
         lists=['Arcane', 'Nature', 'Pact'],
         spells=[
-            Spell('Lightning Bolt', 1, 'Everything in a \\areamed, 10 ft.\\ wide line from you', """
-                Make an attack vs. Fortitude against each target.
+            Spell('Lightning Bolt', 1, 'Everything in a \\arealarge, 5 ft.\\ wide line from you', """
+                Make an attack vs. Reflex against each target.
                 \\hit Each target takes electricity \\glossterm<standard damage>.
+
+                \\rankline
+                \\rank<3> The area increases to a \\areahuge, 10 ft.\\ wide line from you
+                \\rank<5> The area increases to a \\areaext, 15 ft.\\ wide line.
+                \\rank<7> The area increases to a 200 ft.\\ long, 20 ft.\\ wide line.
             """, tags=[]),
-            Spell('Greater Lightning Bolt', 4, 'Everything in a \\arealarge, 15 ft.\\ wide line from you', """
-                This spell functions like the \\spell<lightning bolt> spell, except that it affects more targets.
-            """, tags=[]),
-            # A little weird that "Shocking" Grasp doesn't daze
-            Spell('Shocking Grasp', 1, 'One creature or object you \\glossterm<threaten>', """
+            Spell('Lightning Grasp', 1, 'One creature or object you \\glossterm<threaten>', """
                 This spell does not have the \\glossterm<Focus> tag.
 
-                Make an attack vs. Fortitude against the target.
+                Make an attack vs. Reflex against the target.
                 \\hit The target takes electricity \\glossterm<standard damage> +1d.
+
+                \\rankline
+                \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
+                \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
             """, tags=[], focus=False),
-            Spell('Discharge', 3, '\\glossterm<Enemies> and objects in a \\areamed radius from you', """
-                Make an attack vs. Fortitude against each target.
+            Spell('Discharge', 1, '\\glossterm<Enemies> and objects in a \\areasmall radius from you', """
+                Make an attack vs. Reflex against each target.
                 \\hit Each target takes electricity \\glossterm<standard damage>.
+
+                \\rankline
+                \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
+                \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
             """, tags=[]),
-            Spell('Magnetic Bolt', 4, 'Everything in a \\areamed, 10 ft.\\ wide line from you', """
-                This spell functions like the \\spell<lightning bolt> spell, except that you gain a +2 bonus to accuracy against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
+            Spell('Lightning Storm', 3, '\\glossterm<Enemies> and objects in a \\areamed radius from you', """
+                Make an attack vs. Reflex against each target.
+                \\hit Each target takes electricity \\glossterm<standard damage>.
+
+                \\rankline
+                \\rank<5> The area increases to a \\arealarge radius.
+                \\rank<7> The area increases to a \\areahuge radius.
             """, tags=[]),
-            Spell('Magnetic Blade', 4, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                Metal weapons wielded by the target gain a +2 \\glossterm<magic bonus> to \\glossterm<accuracy> against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
+            Spell('Electromagnetic Bolt', 3, 'Everything in a \\arealarge, 5 ft.\\ wide line from you', """
+                Make an attack vs. Reflex against each target.
+                You gain a +2 bonus to accuracy against each target that is wearing metal armor or otherwise carrying or composed of a significant amount of metal.
+                \\hit Each target takes electricity \\glossterm<standard damage>.
+
+                \\rankline
+                \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
+            """, tags=[]),
+            Spell('Magnetic Blade', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+                Metal weapons wielded by the target gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
 
                 You can cast this spell as a \\glossterm<minor action>.
+
+                \\rankline
+                \\rank<5> The accuracy bonus increases to +2.
+                \\rank<7> The accuracy bonus increases to +3.
             """, tags=['Attune (target)']),
-            Spell('Greater Magnetic Blade', 7, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                This spell functions like the \\spell<magnetic blade> spell, except that the bonus is increased to +3.
-            """, tags=['Attune (self)']),
-            Spell('Dynamo', 3, 'Everything in a \\areamed, 10 ft.\\ wide line from you (see text)', """
-                This spell functions like the \\spell<lightning bolt> spell, except that it gains the \\glossterm<Sustain> (standard) tag.
-                The area affected by the spell becomes a \\glossterm<zone> that is continuously filled with electrical pulses.
-                At the end of each \\glossterm<action phase> in subsequent rounds, the attack is repeated in that area.
-            """, tags=[]),
-            Spell('Greater Dynamo', 4, 'Everything in a \\areamed, 10 ft.\\ wide line from you (see text)', f"""
-                This spell functions like the \\spell<dynamo> spell, except that the spell gains the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Sustain> (standard) tag.
-            """, tags=[]),
-            Spell('Chain Lightning', 5, 'One creature or object within \\rngmed range', """
+            Spell('Chain Lightning', 5,
+                  ['One creature or object within \\rngmed range', '\\glossterm<Enemies> within a \\areasmall radius from the primary target'], """
                 Make an attack vs. Fortitude against the target.
-                \\hit The target takes electricity \\glossterm<standard damage> +2d.
-                In addition, make an additional attack vs. Fortitude against any number of creatures in a \\areasmall radius from the struck target.
+                \\hit The primary target takes electricity \\glossterm<standard damage> +2d.
+
+                In addition, regardless of whether you hit the primary target, make an attack vs. Reflex against each secondary target.
                 \\hit Each secondary target takes electricity \\glossterm<standard damage>.
             """, tags=[]),
-            Spell('Forked Lightning',3, 'Everything in a \\areamed, 10 ft.\\ wide line from you', """
-                This spell functions like the \\spell<lightning bolt> spell, except that you gain a +1d bonus to damage.
-                In addition, you create two separate line-shaped areas instead of one.
-                The two areas can overlap, but targets in the overlapping area are only affected once.
-            """, tags=[]),
-            Spell('Shocking Bolt', 5, 'Everything in a \\areamed, 10 ft.\\ wide line from you', """
-                This spell functions like the \\spell<lightning bolt> spell, except that each struck target is also \\glossterm<dazed> as a \\glossterm<condition>.
+            Spell('Electroshock', 1, 'One creature or object within \\rngmed range', """
+                Make an attack vs. Fortitude against the target.
+
+                \\hit The target takes electricity \\glossterm<standard damage> -2d and is \\glossterm<dazed> as a \\glossterm<condition>.
+
+                \\rankline
+                \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<5> The accuracy bonus increases to +2.
+                \\rank<7> The accuracy bonus increases to +3.
             """, tags=[]),
             Spell('Call Lightning', 3, 'Everything in a \\arealarge, 5 ft.\\ wide vertical line within \\rngmed range', """
-                Make an attack vs. Fortitude against each target.
+                Make an attack vs. Reflex against each target.
                 If you are outdoors in cloudy or stormy weather, you gain a +2 bonus to \\glossterm<accuracy> with the attack.
                 If this spell has its area increased, such as with the Widened \\glossterm<augment>, only the length of the line increases.
                 \\hit Each target takes takes electricity \\glossterm<standard damage> +1d.
+
+
+                \\rankline
+                \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
             """, tags=[]),
+            Spell('Energize', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+                The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<base speed>, up to a maximum of double its \\glossterm<base speed>.
+                When this effect ends, the target becomes \\glossterm<fatigued> as a \\glossterm<condition>.
+                You can cast this spell as a \\glossterm<minor action>.
+
+                \\rankline
+                \\rank<3> The speed bonus increases to +15 feet.
+                \\rank<5> The speed bonus increases to +20 feet.
+                \\rank<7> The speed bonus increases to +30 feet.
+            """, tags=['Attune (target)']),
         ],
         category='damage',
     ))
@@ -1449,6 +1694,11 @@ def generate_mystic_spheres():
                 You make a Craft check to create an object of Tiny size or smaller.
                 The object appears in your hand or at your feet.
                 It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as wood or cloth.
+
+                \\rankline
+                \\rank<3> The maximum size of the object increases to Small.
+                \\rank<5> The maximum size of the object increases to Medium.
+                \\rank<7> The maximum size of the object increases to Large.
             """, tags=['Attune (self)', 'Manifestation']),
         ],
         schools=['Conjuration'],
@@ -1457,59 +1707,97 @@ def generate_mystic_spheres():
             Spell('Acid Orb', 1, 'One creature or object within \\rngmed range', """
                 Make an attack vs. Armor against the target.
                 \\hit The target takes acid \\glossterm<standard damage> +1d.
+
+                \\rankline
+                \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
+                \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
+            """, tags=['Manifestation']),
+            Spell('Corrosive Orb', 3, 'One creature or object within \\rngmed range', """
+                Make an attack vs. Reflex against the target.
+                \\hit The target takes acid \\glossterm<standard damage> +1d.
+                This attack deals double damage to objects.
+
+                \\rankline
+                \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
             """, tags=['Manifestation']),
             Spell('Forge', 1, 'One unoccupied square within \\rngclose range', """
-                Choose a type of weapon or shield that you are proficient with.
+                Choose a type of body armor, weapon, or shield that you are proficient with.
+                You cannot create heavy body armor.
                 You create a normal item of that type at the target location.
 
                 The item cannot be constructed of any magical or extraordinary material.
                 % This should allow the Giant augment; is this worded to allow that?
                 It is sized appropriately for you, up to a maximum of a Medium size item.
+
+                \\rankline
+                \\rank<3> You can also create heavy body armor.
+                \\rank<5> The item created is magically enhanced.
+                    A weapon grants a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities,
+                        and armor grants a +1 \\glossterm<magic bonus> to Armor defense.
+                \\rank<7> You can cast this spell with the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Attune> (self) tag.
             """, tags=['Attune (self)']),
-            Spell('Greater Forge', 3, 'One unoccupied square within \\rngclose range', """
-                This spell functions like the \\spell<forge> spell, except that you can also create any type of body armor you are proficient with.
-                If you create body armor, you can create it already equipped to an \\glossterm<ally> within range.
-            """, tags=['Attune (self)']),
-            Spell('Corrosive Orb', 4, 'One creature or object within \\rngmed range', """
-                This spell functions like the \\spell<acid orb> spell, except that the damage increases to \\glossterm<standard damage> +2d and it deals double damage to objects.
-            """, tags=['Manifestation']),
             Spell('Meteor', 4, 'Special', """
-                You create a meteor in midair within \\rngmed range that falls to the ground, crushing foes in its path.
+                You create a meteor in midair within \\rngclose range that falls to the ground, crushing foes in its path.
                 The meteor takes up a \\areasmall radius, and must be created in unoccupied space.
                 After being summoned, it falls up to 100 feet before disappearing.
                 Make an attack vs. Armor against everything in its path.
                 \\hit Each target takes bludgeoning and fire \\glossterm<standard damage>.
+
+                \\rankline
+                \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
+                \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
             """, tags=['Manifestation']),
-            Spell('Meteor Storm', 7, 'Special', f"""
-                This spell functions like the \\spell<meteor> spell, except that you can create up to five different meteors within \\rnglong range.
+            Spell('Meteor Storm', 8, 'Special', f"""
+                You create up to five meteors in midair within \\rnglong range that each fall to the ground, crushing foes in their paths.
+                Each meteor takes up a \\areasmall radius, and must be created in unoccupied space.
                 The areas affected by two different meteors cannot overlap.
                 If one of the meteors is created in an invalid area, that meteor is not created, but the others are created and dealt their damage normally.
-            """, tags=['Manifestation']),
-            Spell('Lingering Acid Orb', 4, 'One creature or object within \\rngmed range', f"""
-                This spell functions like the \\spell<acid orb> spell, except that the acid lingers on a struck target.
-                At the end of each \\glossterm<action phase> in subsequent rounds, the target takes acid \\glossterm<standard damage> -1d.
-                This is a \\glossterm<condition>, and lasts until removed.
+
+                After being summoned, each meteor falls up to 100 feet before disappearing.
+                Make an attack vs. Armor against everything in the path of any meteor.
+                \\hit Each target takes bludgeoning and fire \\glossterm<standard damage>.
             """, tags=['Manifestation']),
             Spell('Web', 3, 'All Large or smaller creatures in the area (see text)', """
                 You fill a \\areasmall radius \\glossterm<zone> within \\rngclose range with webs.
                 The webs make the area \\glossterm<difficult terrain>.
-                Each 5-ft.\\ square of webbing has a \\glossterm<wound resistance> equal to your \\glossterm<power> and is \\glossterm<vulnerable> to fire.
+                Each 5-ft.\\ square of webbing has a \\glossterm<wound resistance> equal to twice your \\glossterm<power> and is \\glossterm<vulnerable> to fire damage.
 
                 In addition, make an attack vs. Reflex against each target.
                 \\hit Each secondary target is \\glossterm<immobilized> as long as it has webbing from this ability in its space.
+
+                \\rankline
+                \\rank<5> The webs are no longer \\glossterm<vulnerable> to fire damage.
+                \\rank<7> The wound resistance of each 5-ft.\\ square of webs increases to three times your \\glossterm<power>.
             """, tags=['Manifestation', 'Sustain (minor)']),
-            Spell('Reinforced Webbing', 4, 'All Large or smaller creatures in the area (see text)', f"""
-                This spell functions like the \\spell<web> spell, except that each 5-ft.\\ square of webbing gains a bonus to \\glossterm<wound resistance> equal to your \\glossterm<power>.
-                In addition, the webs are no longer \\glossterm<vulnerable> to fire damage.
-            """, tags=['Manifestation', 'Sustain (minor)']),
-            Spell('Poison', 3, 'One creature within \\rngmed range', """
+            Spell('Poison -- Nitharit', 3, 'One creature within \\rngmed range', """
                 Make an attack vs. Fortitude against the target.
 
-                \\hit The target takes \\glossterm<standard damage> -1d and is poisoned as a \\glossterm<condition>.
-                If the target is poisoned, repeat this attack at the end of each \\glossterm<action phase> after the first round.
-                On the second hit, the target takes \\glossterm<standard damage> -1d and becomes \\glossterm<sickened>.
-                On the third hit, the target takes \\glossterm<standard damage> +2d and becomes \\glossterm<nauseated> instead of sickened.
-                After the third hit, no further attacks are made, but the target remains nauseated until the condition is removed.
+                \\hit The target becomes \\glossterm<poisoned> with nitharit.
+                The primary effect causes the target to become \\glossterm<sickened>.
+                The secondary effect causes the target to become \\glossterm<nauseated>.
+
+                \\rankline
+                \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<7> The accuracy bonus increases to +2.
+            """, tags=['Manifestation']),
+            Spell('Poison -- Dragon Bile', 5, 'One creature within \\rngmed range', """
+                Make an attack vs. Fortitude against the target.
+
+                \\hit The target becomes \\glossterm<poisoned> with nitharit.
+                The primary effect causes the target to become \\glossterm<sickened> and lose a \\glossterm<hit point>.
+                The secondary effect causes the target to become \\glossterm<nauseated> and lose two \\glossterm<hit points>.
+
+                \\rankline
+                \\rank<7> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            """, tags=[]),
+            Spell('Poison -- Black Lotus', 7, 'One creature within \\rngmed range', """
+                Make an attack vs. Fortitude against the target.
+
+                \\hit The target becomes \\glossterm<poisoned> with black lotus extract.
+                The primary effect causes the target to become lose a \\glossterm<hit point> from each successful poison attack, including this attack.
+                The secondary effect causes the target to gain a \\glossterm<vital wound>.
             """, tags=['Manifestation']),
         ],
         rituals=[

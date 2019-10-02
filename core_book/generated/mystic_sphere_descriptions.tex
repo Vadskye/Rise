@@ -40,6 +40,23 @@ Until the end of the round, the target treats all falls as if they were 20 feet 
 \subsubsection{Spells}
 
 
+\lowercase{\hypertarget{spell:Buffeting Blast}{}}\label{spell:Buffeting Blast}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Buffeting Blast}{Buffeting Blast}}[\glossterm{Focus}]
+\target{One creature or object within \rngmed range}
+Make an attack vs. Fortitude against the target.
+\hit The target takes bludgeoning \glossterm{standard damage} \minus1d and is \glossterm{pushed} up to 30 feet in any direction.
+Moving the target upwards costs twice the normal movement cost.
+\crit The target takes double damage and the distance you can push the target is doubled.
+
+\rankline
+\rank{3} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Propulsion}{}}\label{spell:Propulsion}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Propulsion}{Propulsion}}[\glossterm{Focus}, \glossterm{Swift}]
 \target{Yourself or one Large or smaller \glossterm{ally} in \rngclose range}
@@ -68,7 +85,7 @@ Any effect which increases the size of creature this spell can affect also incre
 \rankline
 \rank{3} The bonus against ranged attacks increases to \plus6.
 \rank{5} The bonus to Armor defense increases to \plus2.
-\rank{7} The bonus against ranged attacks increases to \plus8.
+\rank{7} The bonus against ranged attacks increases to \plus6.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -76,14 +93,14 @@ Any effect which increases the size of creature this spell can affect also incre
 
 \lowercase{\hypertarget{spell:Windstrike}{}}\label{spell:Windstrike}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Windstrike}{Windstrike}}[\glossterm{Focus}]
-\target{One creature or object within \rnglong range}
+\target{One creature or object within \rngmed range}
 Make an attack vs. Armor against the target.
-\hit The target takes bludgeoning \glossterm{standard damage}.
+\hit The target takes bludgeoning \glossterm{standard damage} \plus1d.
 
 \rankline
-\rank{3} The attack gains a \plus1d bonus to damage.
-\rank{5} The damage bonus increases to \plus2d.
-\rank{7} The damage bonus increases to \plus3d.
+\rank{3} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{5} The damage increases to \glossterm{standard damage} \plus3d.
+\rank{7} The damage increases to \glossterm{standard damage} \plus4d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -104,17 +121,16 @@ Make an attack vs. Reflex against the target.
 
 
 
-\lowercase{\hypertarget{spell:Buffeting Blast}{}}\label{spell:Buffeting Blast}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Buffeting Blast}{Buffeting Blast}}[\glossterm{Focus}]
-\target{One creature or object within \rnglong range}
-Make an attack vs. Fortitude against the target.
-\hit The target takes bludgeoning \glossterm{standard damage} and is \glossterm{pushed} up to 30 feet in any direction.
-Moving the target upwards cost twice the normal movement cost.
-\crit The target takes double damage and the distance you can push the target is doubled.
+\lowercase{\hypertarget{spell:Buffeting Hurricane}{}}\label{spell:Buffeting Hurricane}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Buffeting Hurricane}{Buffeting Hurricane}}[\glossterm{Focus}]
+\targets{Enemies in a \areamed radius from you}
+Make an attack vs. Fortitude against each target.
+\hit Each target takes bludgeoning \glossterm{standard damage} \minus1d and is moved 20 feet clockwise around you.
+Each target's final position should be the same distance from you as its starting position.
 
 \rankline
-\rank{5} The attack gains a \plus1 bonus to \glossterm{accuracy}.
-\rank{7} The accuracy bonus increases to \plus2.
+\rank{5} The area increases to a \arealarge radius.
+\rank{7} The area increases to a \areahuge radius.
 \end{freeability}
 \vspace{0.25em}
 
@@ -127,8 +143,8 @@ Make an attack vs. Armor against each target.
 \hit Each target takes bludgeoning \glossterm{standard damage}.
 
 \rankline
-\rank{5} The attack gains a \plus1d bonus to damage.
-\rank{7} The damage bonus increases to \plus2d.
+\rank{5} The damage increases to \glossterm{standard damage} \plus1d.
+\rank{7} The damage increases to \glossterm{standard damage} \plus2d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -174,8 +190,8 @@ Any individual creature can only be dealt damage in this way once per round.
 Any effect which increases this spell's range increases the range of this retaliation by the same amount.
 
 \rankline
-\rank{5} The attack gains a \plus1d bonus to damage.
-\rank{7} The damage bonus increases to \plus2d.
+\rank{5} The damage increases to \glossterm{standard damage}.
+\rank{7} The damage increases to \glossterm{standard damage} \plus1d.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -198,16 +214,15 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 
-\lowercase{\hypertarget{spell:Buffeting Hurricane}{}}\label{spell:Buffeting Hurricane}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Buffeting Hurricane}{Buffeting Hurricane}}[\glossterm{Focus}]
-\targets{Enemies in a \arealarge radius from you}
-Make an attack vs. Fortitude against each target.
-\hit Each target takes bludgeoning \glossterm{standard damage} \minus1d and is moved 20 feet clockwise around you.
-Each target's final position should be the same distance from you as its starting position.
+\lowercase{\hypertarget{spell:Windsnipe}{}}\label{spell:Windsnipe}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Windsnipe}{Windsnipe}}[\glossterm{Focus}]
+\target{One creature or object within \rnglong range}
+Make an attack vs. Armor against the target.
+\hit The target takes bludgeoning \glossterm{standard damage} \plus1d.
 
 \rankline
-\rank{6} The attack gains a \plus1d bonus to damage and each target is moved 50 feet instead of 20 feet.
-\rank{6} The area increases to a \areahuge radius.
+\rank{5} The range increases to \rngext.
+\rank{7} The range increases to 3,000 feet.
 \end{freeability}
 \vspace{0.25em}
 
@@ -215,7 +230,7 @@ Each target's final position should be the same distance from you as its startin
 
 \lowercase{\hypertarget{spell:Control Weather}{}}\label{spell:Control Weather}
 \begin{attuneability}[Rank 4]{\hypertarget{spell:Control Weather}{Control Weather}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\targetrule
+\rankline
 When you cast this spell, you choose a new weather pattern.
 You can only choose weather which would be reasonably probable in the climate and season of the area you are in.
 For example, you can normally create a thunderstorm, but not if you are in a desert.
@@ -239,20 +254,6 @@ If another ability would magically manipulate the weather in the same area, the 
 \rank{8} You can cause weather changes that are inappropriate for the climate and season of the area you are in.
 Making a weather change that is inappropriate for the local environment takes twice as long as making an appropriate change.
 \end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Windsnipe}{}}\label{spell:Windsnipe}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Windsnipe}{Windsnipe}}[\glossterm{Focus}]
-\target{One creature or object within 2,000 foot range}
-Make an attack vs. Armor against the target.
-\hit The target takes bludgeoning \glossterm{standard damage}.
-
-\rankline
-\rank{6} The attack gains a \plus1d bonus to damage.
-\rank{8} The damage bonus increases to \plus2d.
-\end{freeability}
 \vspace{0.25em}
 
 
@@ -332,9 +333,24 @@ Make an attack vs. Fortitude against each target.
 \hit Each target takes bludgeoning \glossterm{standard damage}.
 
 \rankline
-\rank{3} The area increases to a \arealarge, 10 ft.\ wide line from you.
-\rank{5} The attack gains a \plus1d bonus to damage.
-\rank{7} The damage bonus increases to \plus2d.
+\rank{3} The damage increases to \glossterm{standard damage} \plus1d.
+\rank{5} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{7} The damage increases to \glossterm{standard damage} \plus3d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Fountain}{}}\label{spell:Fountain}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Fountain}{Fountain}}[\glossterm{Focus}, \glossterm{Manifestation}]
+\targets{\glossterm{Enemies} within a \areasmall radius from you}
+Make an attack vs. Armor against each target.
+\hit Each target takes bludgeoning \glossterm{standard damage}.
+
+\rankline
+\rank{3} The damage increases to \glossterm{standard damage} \plus1d.
+\rank{5} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{7} The damage increases to \glossterm{standard damage} \plus3d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -342,7 +358,7 @@ Make an attack vs. Fortitude against each target.
 
 \lowercase{\hypertarget{spell:Obscuring Mist}{}}\label{spell:Obscuring Mist}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Obscuring Mist}{Obscuring Mist}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
-\targetrule
+\rankline
 Fog fills the air within a \areamed radius \glossterm{zone} from your location.
 The fog partially obstructs sight, granting \glossterm{concealment} to anything seen through the fog (see \pcref{Concealment}).
 
@@ -350,23 +366,6 @@ The fog partially obstructs sight, granting \glossterm{concealment} to anything 
 \rank{3} The area increases to a \arealarge radius \glossterm{zone}.
 \rank{5} You can exclude an inner radius of any size from the area, allowing you to create fog that surrounds you without blocking sight to things adjacent to you.
 \rank{7} The area increases to a \areahuge radius \glossterm{zone}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Raging River}{}}\label{spell:Raging River}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Raging River}{Raging River}}[\glossterm{Focus}]
-\targets{Everything in a \arealarge, 10 ft. wide line from you}
-Make an attack vs. Fortitude against each target.
-\hit Each target takes bludgeoning \glossterm{standard damage} \minus1d.
-
-\rankline
-% TODO: wording
-\rank{3} Each struck target is \glossterm{pushed} 20 feet in the direction the line points away from you.
-Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
-\rank{5} The area increases to a \areahuge, 10 ft. wide line from you.
-\rank{7} Each struck target is pushed 50 feet instead of 20 feet.
 \end{freeability}
 \vspace{0.25em}
 
@@ -395,9 +394,9 @@ Make an attack vs. Armor against the target.
 \hit The target takes bludgeoning \glossterm{standard damage} \plus1d.
 
 \rankline
-\rank{3} The attack gains a \plus1d bonus to damage.
-\rank{5} The damage bonus increases to \plus2d.
-\rank{7} The damage bonus increases to \plus3d.
+\rank{3} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{5} The damage increases to \glossterm{standard damage} \plus3d.
+\rank{7} The damage increases to \glossterm{standard damage} \plus4d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -418,15 +417,16 @@ The tentacles have a \glossterm{reach} of 10 feet, and any strikes with them are
 
 
 
-\lowercase{\hypertarget{spell:Fountain}{}}\label{spell:Fountain}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Fountain}{Fountain}}[\glossterm{Focus}, \glossterm{Manifestation}]
-\targets{\glossterm{Enemies} within a \areamed radius from you}
-Make an attack vs. Armor against each target.
-\hit Each target takes bludgeoning \glossterm{standard damage}.
+\lowercase{\hypertarget{spell:Constraining Bubble}{}}\label{spell:Constraining Bubble}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Constraining Bubble}{Constraining Bubble}}[\glossterm{Focus}, \glossterm{Manifestation}]
+\target{One Large or smaller creature within \rngmed range}
+Make an attack vs. Reflex against the target.
+\hit As a \glossterm{condition}, the majority of the target's body is surrounded by a layer of water.
+This does not impede the target's ability to breathe, but it takes penalties as if it was fighting underwater (see \pcref{Underwater Combat}).
 
 \rankline
-\rank{5} The attack gains a \plus1d bonus to damage.
-\rank{7} The damage bonus increases to \plus2d.
+\rank{5} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{7} The accuracy bonus increases to \plus2.
 \end{freeability}
 \vspace{0.25em}
 
@@ -440,8 +440,38 @@ If this spell has its area increased, such as with the Widened \glossterm{augmen
 \hit Each target takes takes bludgeoning \glossterm{standard damage} \plus1d.
 
 \rankline
-\rank{5} The attack gains a \plus1d bonus to damage.
-\rank{7} The damage bonus increases to \plus2d.
+\rank{5} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{7} The damage increases to \glossterm{standard damage} \plus3d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Great Flood}{}}\label{spell:Great Flood}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Great Flood}{Great Flood}}[\glossterm{Focus}, \glossterm{Manifestation}]
+\targets{Everything in a \arealarge, 15 ft.\ wide line from you}
+Make an attack vs. Fortitude against each target.
+\hit Each target takes bludgeoning \glossterm{standard damage}.
+
+\rankline
+\rank{5} The area increases to a \areahuge, 20 ft.\ wide line from you.
+\rank{7} The area increases to a \areaext, 30 ft.\ wide line from you.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Raging River}{}}\label{spell:Raging River}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Raging River}{Raging River}}[\glossterm{Focus}]
+\targets{Everything in a \arealarge, 15 ft. wide line from you}
+Make an attack vs. Fortitude against each target.
+\hit Each target takes bludgeoning \glossterm{standard damage} \minus1d and is \glossterm{pushed} 20 feet in the direction the line points away from you.
+Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
+
+\rankline
+% TODO: wording
+\rank{5} The area increases to a \areahuge, 20 ft. wide line from you.
+\rank{7} Each struck target is pushed 50 feet instead of 20 feet.
 \end{freeability}
 \vspace{0.25em}
 
@@ -462,24 +492,9 @@ Everything in the area gain a bonus equal to your \glossterm{power} to \glosster
 
 
 
-\lowercase{\hypertarget{spell:Constraining Bubble}{}}\label{spell:Constraining Bubble}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Constraining Bubble}{Constraining Bubble}}[\glossterm{Focus}, \glossterm{Manifestation}]
-\target{One Large or smaller creature within \rngmed range}
-Make an attack vs. Reflex against the target.
-\hit As a \glossterm{condition}, the majority of the target's body is surrounded by a layer of water.
-This does not impede the target's ability to breathe, but it takes penalties as if it was fighting underwater (see \pcref{Underwater Combat}).
-
-\rankline
-\rank{6} The attack gains a \plus1 bonus to \glossterm{accuracy}.
-\rank{8} The accuracy bonus increases to \plus2.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Misty Shroud}{}}\label{spell:Misty Shroud}
 \begin{attuneability}[Rank 4]{\hypertarget{spell:Misty Shroud}{Misty Shroud}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\targetrule
+\rankline
 Fog fills the air within a \areamed radius \glossterm{emanation} from your location.
 The fog partially obstructs sight, granting \glossterm{concealment} to anything seen through the fog (see \pcref{Concealment}).
 
@@ -492,7 +507,7 @@ The fog partially obstructs sight, granting \glossterm{concealment} to anything 
 
 \lowercase{\hypertarget{spell:Wall of Water}{}}\label{spell:Wall of Water}
 \begin{freeability}[Rank 4]{\hypertarget{spell:Wall of Water}{Wall of Water}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
-\targetrule
+\rankline
 You create a wall of water in a 20 ft.\ high, \arealarge line within \rngmed range.
 The wall is four inches thick, and blocks \glossterm{line of effect} for abilities.
 Sight through the wall is possible, though distorted.
@@ -504,16 +519,6 @@ Each five-foot square of wall has a \glossterm{wound resistance} equal to three 
 \rankline
 \rank{6} The area of the wall increases to a \areahuge line.
 \rank{8} The area of the wall increases to a \areaext line.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Great Flood}{}}\label{spell:Great Flood}
-\begin{freeability}[Rank 7]{\hypertarget{spell:Great Flood}{Great Flood}}[\glossterm{Focus}, \glossterm{Manifestation}]
-\targets{Everything in a \areaext, 30 ft.\ wide line from you}
-Make an attack vs. Fortitude against each target.
-\hit Each target takes bludgeoning \glossterm{standard damage}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -580,12 +585,12 @@ If the destination is invalid, the ability fails without effect.
 \target{One creature within \rngmed range}
 You partially teleport the target into the Astral Plane.
 Make an attack vs. Mental against the target.
-\hit The target takes energy \glossterm{standard damage}.
+\hit The target takes energy \glossterm{standard damage} \plus1d.
 
 \rankline
-\rank{3} The attack gains a \plus1d bonus to damage.
-\rank{5} The damage bonus increases to \plus2d.
-\rank{7} The damage bonus increases to \plus3d.
+\rank{3} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{5} The damage increases to \glossterm{standard damage} \plus3d.
+\rank{7} The damage increases to \glossterm{standard damage} \plus4d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -617,7 +622,7 @@ In addition, if it is an outsider not on its home plane, it is teleported to a r
 If it is a creature created by a \glossterm{Manifestation} ability, it immediately disappears.
 
 \rankline
-\rank{5} The attack gains a \plus1 bonus to \glossterm{accuracy}
+\rank{5} The attack gains a \plus1 bonus to \glossterm{accuracy}.
 \rank{7} The accuracy bonus increases to \plus2.
 \end{freeability}
 \vspace{0.25em}
@@ -632,8 +637,8 @@ Make an attack vs. Mental against the target.
 \hit The target takes bludgeoning \glossterm{standard damage} \minus1d and is \glossterm{slowed} as a \glossterm{condition}.
 
 \rankline
-\rank{5} The attack gains a \plus1d bonus to damage.
-\rank{7} The damage bonus increases to \plus2d.
+\rank{5} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{7} The accuracy bonus increases to \plus2.
 \end{freeability}
 \vspace{0.25em}
 
@@ -672,12 +677,12 @@ You are still affected normally by abilities that affect an area.
 \lowercase{\hypertarget{spell:Dimension Door}{}}\label{spell:Dimension Door}
 \begin{freeability}[Rank 4]{\hypertarget{spell:Dimension Door}{Dimension Door}}[\glossterm{Focus}]
 \target{Yourself}
-You teleport to a location within \rngext range of you.
+You teleport to a location within \rnglong range of you.
 You must clearly visualize the destination's appearance, but you do not need \glossterm{line of sight} or \glossterm{line of effect} to your destination.
 
 \rankline
-\rank{6} The range increases to 3,000 feet.
-\rank{8} The range increases to 10,000 feet.
+\rank{6} The range increases to \rngext feet.
+\rank{8} The range increases to 3,000 feet.
 \end{freeability}
 \vspace{0.25em}
 
@@ -704,13 +709,28 @@ You must be able to move to teleport in this way, so effects like being \glosste
 \target{One creature within \rngmed range}
 You partially teleport the target into the Plane of Fire.
 Make an attack vs. Mental against the target.
-\hit The target takes fire \glossterm{standard damage} and is \glossterm{ignited} as a \glossterm{condition}.
+\hit The target takes fire \glossterm{standard damage} \minus1d and is \glossterm{ignited} as a \glossterm{condition}.
 This condition can also be removed if the target makes a \glossterm{DR} 10 Dexterity check as a \glossterm{move action} to put out the flames.
 Dropping \glossterm{prone} as part of this action gives a \plus5 bonus to this check.
+\crit As above, except that the target takes double damage and the condition cannot be removed with a \glossterm{move action}.
 
 \rankline
-\rank{5} The attack gains a \plus1d bonus to damage.
-\rank{7} The damage bonus increases to \plus2d.
+\rank{6} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{8} The accuracy bonus increases to \plus2.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Dimensional Jaunt -- Myriad}{}}\label{spell:Dimensional Jaunt -- Myriad}
+\begin{freeability}[Rank 5]{\hypertarget{spell:Dimensional Jaunt -- Myriad}{Dimensional Jaunt -- Myriad}}[\glossterm{Focus}]
+\target{One creature within \rngmed range}
+You partially teleport the target through a number of planes in sequence.
+Make an attack vs. Mental against the target.
+\hit The target takes \glossterm{standard damage} \plus3d of all damage types.
+
+\rankline
+\rank{7} The damage increases to \glossterm{standard damage} \plus4d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -725,20 +745,6 @@ If your \glossterm{line of effect} to your destination is blocked, or if this te
 \rankline
 \rank{7} You can choose the direction of the teleportation.
 \end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Dimensional Jaunt -- Myriad}{}}\label{spell:Dimensional Jaunt -- Myriad}
-\begin{freeability}[Rank 6]{\hypertarget{spell:Dimensional Jaunt -- Myriad}{Dimensional Jaunt -- Myriad}}[\glossterm{Focus}]
-\target{One creature within \rngmed range}
-You partially teleport the target through a number of planes in sequence.
-Make an attack vs. Mental against the target.
-\hit The target takes \glossterm{standard damage} \plus3d of all damage types.
-
-\rankline
-\rank{8} The attack gains a \plus1d bonus to damage.
-\end{freeability}
 \vspace{0.25em}
 
 
@@ -880,9 +886,14 @@ This ritual takes one week to perform, and requires 98 action points from its pa
 \lowercase{\hypertarget{spell:Deflective Shield}{}}\label{spell:Deflective Shield}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Deflective Shield}{Deflective Shield}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself or an \glossterm{ally} in \rngclose range}
-The target gains a \plus1 \glossterm{magic bonus} to Armor defense.
+The target gains a \plus1 \glossterm{magic bonus} to Armor defense and Reflex defense.
 
 You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{3} The bonus to Reflex defense increases to \plus2.
+\rank{5} The bonus to Armor defense increases to \plus2.
+\rank{7} The bonus to Reflex dfense increases to \plus3.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -890,20 +901,16 @@ You can cast this spell as a \glossterm{minor action}.
 
 \lowercase{\hypertarget{spell:Mystic Barrier}{}}\label{spell:Mystic Barrier}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Mystic Barrier}{Mystic Barrier}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
-\targetrule
+\rankline
 You create a wall of magical energy in a 10 ft.\ high, \areamed line within \rngmed range.
 The wall is visible as a shimmering magical membrane that does not block sight.
 Nothing can pass through the wall until it is destroyed.
-Each 5-ft.\ square of wall has hit points equal to your \glossterm{power}.
-\end{freeability}
-\vspace{0.25em}
+Each 5-ft.\ square of wall has a \glossterm{wound resistance} equal to twice your \glossterm{power}.
 
-
-
-\lowercase{\hypertarget{spell:Expanded Mystic Barrier}{}}\label{spell:Expanded Mystic Barrier}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Expanded Mystic Barrier}{Expanded Mystic Barrier}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
-\targetrule
-This spell functions like the \spell{mystic barrier} spell, except that the wall fills a 10 ft.\ high, \arealarge line.
+\rankline
+\rank{3} The \glossterm{wound resistance} of each 5-ft.\ square increases to be equal to three times your \glossterm{power}.
+\rank{5} The area increases to a \arealarge line.
+\rank{7} The \glossterm{wound resistance} of each 5-ft.\ square increases to be equal to four times your \glossterm{power}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -918,6 +925,10 @@ When an enemy makes physical contact with the spell's area for the first time, y
 The rest of its movement in the current phase is cancelled.
 
 Creatures in the area at the time that the spell is cast are unaffected by the spell.
+
+\rankline
+\rank{5} The area increases to a \arealarge radius.
+\rank{7} The area increases to a \areahuge radius.
 \end{freeability}
 \vspace{0.25em}
 
@@ -925,19 +936,14 @@ Creatures in the area at the time that the spell is cast are unaffected by the s
 
 \lowercase{\hypertarget{spell:Wall of Energy Impedance}{}}\label{spell:Wall of Energy Impedance}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Wall of Energy Impedance}{Wall of Energy Impedance}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
-\targetrule
+\rankline
 You create a wall of magical energy in a 10 ft.\ high, \areamed line within \rngmed range.
 The wall is visible as a shimmering magical membrane that does not block sight.
 It does not impede passage for objects or creatures, but any ability that deals \glossterm{energy damage} treats the wall as an impassable barrier.
-\end{freeability}
-\vspace{0.25em}
 
-
-
-\lowercase{\hypertarget{spell:Fortified Mystic Barrier}{}}\label{spell:Fortified Mystic Barrier}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Fortified Mystic Barrier}{Fortified Mystic Barrier}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
-\targetrule
-This spell functions like the \spell{mystic barrier} spell, except that each 5-ft.\ square of wall has hit points equal to four times your \glossterm{power}.
+\rankline
+\rank{5} The area increases to a \arealarge line.
+\rank{7} The height increases to 20 ft.\ high.
 \end{freeability}
 \vspace{0.25em}
 
@@ -949,6 +955,10 @@ This spell functions like the \spell{mystic barrier} spell, except that each 5-f
 The target gains a \glossterm{magic bonus} equal to half your \glossterm{power} to \glossterm{resistances} against \glossterm{physical} damage.
 
 You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{6} The target also gains a \plus1 \glossterm{magic bonus} to \glossterm{wound rolls} on \glossterm{vital wounds} from \glossterm{physical} damage.
+\rank{8} The bonus increases to be equal to your \glossterm{power}.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -957,9 +967,13 @@ You can cast this spell as a \glossterm{minor action}.
 \lowercase{\hypertarget{spell:Resist Energy}{}}\label{spell:Resist Energy}
 \begin{attuneability}[Rank 4]{\hypertarget{spell:Resist Energy}{Resist Energy}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself or an \glossterm{ally} in \rngclose range}
-The target gains a \glossterm{magic bonus} equal to half your \glossterm{power} to \glossterm{resistances} against \glossterm{energy damage}.
+The target gains a \glossterm{magic bonus} equal to half your \glossterm{power} to \glossterm{resistances} against \glossterm{energy} damage.
 
 You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{6} The target also gains a \plus1 \glossterm{magic bonus} to \glossterm{wound rolls} on \glossterm{vital wounds} from \glossterm{energy} damage.
+\rank{8} The bonus increases to be equal to your \glossterm{power}.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -971,15 +985,9 @@ You can cast this spell as a \glossterm{minor action}.
 Choose a subtype of \glossterm{energy damage}: cold, electricity, or fire.
 You become immune to damage of the chosen type.
 Attacks that deal damage of multiple types still inflict damage normally unless you are immune to all types of damage dealt.
-\end{attuneability}
-\vspace{0.25em}
 
-
-
-\lowercase{\hypertarget{spell:Greater Deflective Shield}{}}\label{spell:Greater Deflective Shield}
-\begin{attuneability}[Rank 5]{\hypertarget{spell:Greater Deflective Shield}{Greater Deflective Shield}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} in \rngclose range}
-This spell functions like the \spell{deflective shield} spell, except that the bonus is increased to \plus2.
+\rankline
+\rank{7} You may attune to this spell any number of times, choosing a different subtype of energy damage each time.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -987,10 +995,13 @@ This spell functions like the \spell{deflective shield} spell, except that the b
 
 \lowercase{\hypertarget{spell:Wall of Magic Impedance}{}}\label{spell:Wall of Magic Impedance}
 \begin{freeability}[Rank 5]{\hypertarget{spell:Wall of Magic Impedance}{Wall of Magic Impedance}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
-\targetrule
+\rankline
 You create a wall of magical energy in a 10 ft.\ high, \areamed line within \rngmed range.
 The wall is visible as a shimmering magical membrane that does not block sight.
 It does not impede passage for objects or creatures, but any \glossterm{magical} ability treats the wall as an impassable barrier.
+
+\rankline
+\rank{7} The area increases to a \arealarge line.
 \end{freeability}
 \vspace{0.25em}
 
@@ -999,25 +1010,32 @@ It does not impede passage for objects or creatures, but any \glossterm{magical}
 \lowercase{\hypertarget{spell:Antilife Shell}{}}\label{spell:Antilife Shell}
 \begin{freeability}[Rank 6]{\hypertarget{spell:Antilife Shell}{Antilife Shell}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
 \targets{All \glossterm{enemies} that enter the area (see text)}
-This effect functions like the \spell{repulsion field} spell, except that you gain a \plus10 bonus to accuracy with the attack against living creatures.
+This spell creates a repulsive field in a \areamed radius \glossterm{zone} from your location.
+When an enemy makes physical contact with the spell's area for the first time, you make an attack vs. Mental against it.
+You gain a \plus10 bonus to \glossterm{accuracy} against living creatures.
+\hit The target is unable to enter the spell's area with any part of its body.
+The rest of its movement in the current phase is cancelled.
+
+Creatures in the area at the time that the spell is cast are unaffected by the spell.
+
+\rankline
+\rank{8} The area increases to a \arealarge radius.
 \end{freeability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Complete Shield}{}}\label{spell:Complete Shield}
-\begin{attuneability}[Rank 6]{\hypertarget{spell:Complete Shield}{Complete Shield}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} in \rngclose range}
-This spell functions like the \spell{kinetic shield} spell, except that the bonus applies against all damage.
-\end{attuneability}
-\vspace{0.25em}
+\lowercase{\hypertarget{spell:Invulnerable Mystic Barrier}{}}\label{spell:Invulnerable Mystic Barrier}
+\begin{freeability}[Rank 6]{\hypertarget{spell:Invulnerable Mystic Barrier}{Invulnerable Mystic Barrier}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
+\rankline
+You create a wall of magical energy in a 10 ft.\ high, \areamed line within \rngmed range.
+The wall is visible as a shimmering magical membrane that does not block sight.
+Nothing can pass through the wall until it is destroyed.
+Each 5-ft.\ square of wall has a \glossterm{wound resistance} equal to twice your \glossterm{power}.
+The wall is immune to \glossterm{physical damage}.
 
-
-
-\lowercase{\hypertarget{spell:Impervious Mystic Barrier}{}}\label{spell:Impervious Mystic Barrier}
-\begin{freeability}[Rank 6]{\hypertarget{spell:Impervious Mystic Barrier}{Impervious Mystic Barrier}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
-\targetrule
-This spell functions like the \spell{mystic barrier} spell, except that the wall is immune to \glossterm{physical damage}.
+\rankline
+\rank{8} The area increases to a \arealarge line.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1026,29 +1044,27 @@ This spell functions like the \spell{mystic barrier} spell, except that the wall
 \lowercase{\hypertarget{spell:Retributive Shield}{}}\label{spell:Retributive Shield}
 \begin{attuneability}[Rank 6]{\hypertarget{spell:Retributive Shield}{Retributive Shield}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself or an \glossterm{ally} in \rngclose range}
-This spell functions like the \spell{kinetic shield} spell, except the target also reflects damage.
+The target gains a \glossterm{magic bonus} equal to half your \glossterm{power} to \glossterm{resistances} against \glossterm{physical} damage.
 Whenever an attack that deals \glossterm{physical damage} fails to beat the target's \glossterm{damage resistance}, the attacker takes that damage.
 If the attacker is beyond \rngclose range of the target, this reflection fails.
-
 Any effect which increases this spell's range increases the range of this effect by the same amount.
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{8} The range of the spell and the range of the reflection increase to \rngmed.
 \end{attuneability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Greater Kinetic Shield}{}}\label{spell:Greater Kinetic Shield}
-\begin{attuneability}[Rank 7]{\hypertarget{spell:Greater Kinetic Shield}{Greater Kinetic Shield}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\lowercase{\hypertarget{spell:Universal Shield}{}}\label{spell:Universal Shield}
+\begin{attuneability}[Rank 6]{\hypertarget{spell:Universal Shield}{Universal Shield}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself or an \glossterm{ally} in \rngclose range}
-This spell functions like the \spell{kinetic shield} spell, except that the bonus increases to be equal to your \glossterm{power}.
-\end{attuneability}
-\vspace{0.25em}
+The target gains a \glossterm{magic bonus} equal to half your \glossterm{power} to \glossterm{resistances} against all damage.
 
-
-
-\lowercase{\hypertarget{spell:Greater Resist Energy}{}}\label{spell:Greater Resist Energy}
-\begin{attuneability}[Rank 7]{\hypertarget{spell:Greater Resist Energy}{Greater Resist Energy}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} in \rngclose range}
-This spell functions like the \spell{resist energy} spell, except that the bonus is equal to your \glossterm{power}.
+\rankline
+\rank{8} The target also gains a \plus1 \glossterm{magic bonus} to \glossterm{wound rolls}.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -1090,7 +1106,7 @@ This ritual takes one minute to perform.
 
 \lowercase{\hypertarget{spell:Scryward}{}}\label{spell:Scryward}
 \begin{apability}[Rank 3]{\hypertarget{spell:Scryward}{Scryward}}[\glossterm{Focus}]
-\targetrule
+\rankline
 This ritual creates a ward against scrying in a \arealarge radius \glossterm{zone} centered on your location.
 All \glossterm{Scrying} effects fail to function in the area.
 This effect is permanent.
@@ -1122,7 +1138,7 @@ This ritual takes one hour to perform.
 
 \lowercase{\hypertarget{spell:Private Sanctum}{}}\label{spell:Private Sanctum}
 \begin{apability}[Rank 5]{\hypertarget{spell:Private Sanctum}{Private Sanctum}}[\glossterm{Focus}]
-\targetrule
+\rankline
 This ritual creates a ward against any external perception in a \arealarge radius \glossterm{zone} centered on your location.
 This effect is permanent.
 Everything in the area is completely imperceptible from outside the area.
@@ -1166,12 +1182,32 @@ In addition, the DR to break it open increases by 20 instead of by 10.
 \subsubsection{Spells}
 
 
+\lowercase{\hypertarget{spell:Blessing of Endurance}{}}\label{spell:Blessing of Endurance}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Blessing of Endurance}{Blessing of Endurance}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself or an \glossterm{ally} wihtin \rngclose range}
+The target increases its maximum \glossterm{hit points} by one and regains one \glossterm{hit point}.
+When this ability ends, the target loses \glossterm{hit points} equal to the number of hit points it regained this way and its maximum \glossterm{hit points} are restored to normal.
+
+\rankline
+\rank{3} The number of additional hit points increases to two.
+\rank{5} The number of additional hit points increases to three.
+\rank{7} The number of additional hit points increases to four.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Blessing of Protection}{}}\label{spell:Blessing of Protection}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Blessing of Protection}{Blessing of Protection}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself or an \glossterm{ally} within \rngclose range}
 The target gains a \plus1 \glossterm{magic bonus} to Armor defense and Mental defense.
 
 You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{3} The bonus to Mental defense increases to \plus2.
+\rank{5} The bonus to Armor defense increases to \plus2.
+\rank{7} The bonus to Mental defense increases to \plus3.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -1183,6 +1219,10 @@ You can cast this spell as a \glossterm{minor action}.
 The target gains a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} with all attacks.
 
 You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{5} The target also gains a \plus2 \glossterm{magic bonus} to \glossterm{power}.
+\rank{7} The accuracy increases to \plus2.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -1191,9 +1231,29 @@ You can cast this spell as a \glossterm{minor action}.
 \lowercase{\hypertarget{spell:Blessing of Might}{}}\label{spell:Blessing of Might}
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Blessing of Might}{Blessing of Might}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself or an \glossterm{ally} within \rngclose range}
-The target gains a \plus2 \glossterm{magic bonus} to \glossterm{power} with \glossterm{mundane} abilities.
+The target gains a \plus4 \glossterm{magic bonus} to Strength for the purpose of determining its \glossterm{carrying capacity}.
 
 You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{5} The bonus increases to \plus6.
+\rank{7} The bonus increases to \plus8.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Blessing of Resilience}{}}\label{spell:Blessing of Resilience}
+\begin{attuneability}[Rank 3]{\hypertarget{spell:Blessing of Resilience}{Blessing of Resilience}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself or an \glossterm{ally} within \rngclose range}
+Whenever the target gains a \glossterm{condition}, it can choose to negate that condition.
+After negating a condition in this way, this spell ends.
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{5} The spell can negate two conditions before ending.
+\rank{7} The spell can negate three conditions before ending.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -1203,30 +1263,11 @@ You can cast this spell as a \glossterm{minor action}.
 \begin{freeability}[Rank 3]{\hypertarget{spell:Cleansing Blessing}{Cleansing Blessing}}[\glossterm{Focus}]
 \target{Yourself or an \glossterm{ally} within \rngclose range}
 The target can remove a \glossterm{condition}.
+
+\rankline
+\rank{5} The target can remove two conditions.
+\rank{7} The target can remove three conditions.
 \end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Blessing of Resilience}{}}\label{spell:Blessing of Resilience}
-\begin{attuneability}[Rank 4]{\hypertarget{spell:Blessing of Resilience}{Blessing of Resilience}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngclose range}
-Whenever the target gains a \glossterm{condition}, it can choose to negate that condition.
-After negating a condition in this way, this spell ends.
-
-You can cast this spell as a \glossterm{minor action}.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Blessing of Supremacy}{}}\label{spell:Blessing of Supremacy}
-\begin{attuneability}[Rank 4]{\hypertarget{spell:Blessing of Supremacy}{Blessing of Supremacy}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngclose range}
-The target gains a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} and a \plus2 \glossterm{magic bonus} to \glossterm{power}.
-
-You can cast this spell as a \glossterm{minor action}.
-\end{attuneability}
 \vspace{0.25em}
 
 
@@ -1235,81 +1276,10 @@ You can cast this spell as a \glossterm{minor action}.
 \begin{freeability}[Rank 5]{\hypertarget{spell:Cleansing Benediction}{Cleansing Benediction}}[\glossterm{Focus}]
 \targets{You and each of your \glossterm{allies} within a \areamed radius from you}
 Each target can remove one \glossterm{condition}.
+
+\rankline
+\rank{7} The area increases to a \arealarge radius.
 \end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Blessing of Protection}{}}\label{spell:Greater Blessing of Protection}
-\begin{attuneability}[Rank 5]{\hypertarget{spell:Greater Blessing of Protection}{Greater Blessing of Protection}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngclose range}
-This spell functions like the \spell{blessing of protection} spell, except that bonus increases to \plus2.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Battle Blessing}{}}\label{spell:Greater Battle Blessing}
-\begin{attuneability}[Rank 6]{\hypertarget{spell:Greater Battle Blessing}{Greater Battle Blessing}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngclose range}
-This spell functions like the \spell{battle blessing} spell, except that the bonus increases to \plus2.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Blessing of Might}{}}\label{spell:Greater Blessing of Might}
-\begin{attuneability}[Rank 6]{\hypertarget{spell:Greater Blessing of Might}{Greater Blessing of Might}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngclose range}
-This spell functions like the \spell{blessing of might} spell, except that the power bonus increases to \plus4.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Cleansing Blessing}{}}\label{spell:Greater Cleansing Blessing}
-\begin{freeability}[Rank 6]{\hypertarget{spell:Greater Cleansing Blessing}{Greater Cleansing Blessing}}[\glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngclose range}
-This spell functions like the \spell{cleansing blessing} spell, except that the target can remove two conditions instead of one.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Blessing of Resilience}{}}\label{spell:Greater Blessing of Resilience}
-\begin{attuneability}[Rank 7]{\hypertarget{spell:Greater Blessing of Resilience}{Greater Blessing of Resilience}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngclose range}
-This spell functions like the \spell{blessing of resilience} spell, except that the spell does not end until it resists two \glossterm{conditions}.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Benediction}{}}\label{spell:Greater Benediction}
-\begin{freeability}[Rank 8]{\hypertarget{spell:Greater Benediction}{Greater Benediction}}[\glossterm{Focus}]
-\targets{You and each of your \glossterm{allies} within a \areamed radius from you}
-This spell functions like the \spell{cleansing benediction} spell, except that each target can remove two conditions instead of one.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Blessing of Supremacy}{}}\label{spell:Greater Blessing of Supremacy}
-\begin{attuneability}[Rank 8]{\hypertarget{spell:Greater Blessing of Supremacy}{Greater Blessing of Supremacy}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngclose range}
-The target gains a \plus2 \glossterm{magic bonus} to \glossterm{accuracy} and a \plus4 \glossterm{magic bonus} to \glossterm{power}.
-
-You can cast this spell as a \glossterm{minor action}.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Supreme Blessing of Protection}{}}\label{spell:Supreme Blessing of Protection}
-\begin{attuneability}[Rank 8]{\hypertarget{spell:Supreme Blessing of Protection}{Supreme Blessing of Protection}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngclose range}
-This spell functions like the \spell{blessing of protection} spell, except that bonus increases to \plus3.
-\end{attuneability}
 \vspace{0.25em}
 
 
@@ -1444,9 +1414,15 @@ This ritual functions like the \spell{blessing of fortification} ritual, except 
 \target{Yourself}
 The magical essence of your deity or alignment is overlayed on your body as an aura.
 This channels your deity if you are a cleric, or your alignment if you are a paladin.
-In either case, you gain the ability to see the auras of other creatures using this spell.
+In either case, you gain the ability to see the auras of other creatures using this spell if they are within \rngclose range.
 If you see another creature with the same aura as you, this spell grants you the unerring knowledge of that similarity.
 This can allow you to identify other followers of your deity or alignment with certainty.
+
+\rankline
+\rank{3} The range increases to \rngmed.
+\rank{5} If you are a cleric, you can also unerringly see an aura around creatures who worship your deity.
+If you are a paladin, you can also unerringly see an aura around creatures who share your devoted alignment.
+\rank{7} The range increases to \rngext.
 \end{freeability}
 
 \end{spellsection}
@@ -1459,17 +1435,41 @@ This can allow you to identify other followers of your deity or alignment with c
 \begin{freeability}[Rank 1]{\hypertarget{spell:Divine Judgment}{Divine Judgment}}[\glossterm{Focus}]
 \target{One creature within \rngmed range}
 Make an attack vs. Mental against the target.
-\hit The target takes \glossterm{standard damage}.
+\hit The target takes energy \glossterm{standard damage} \plus1d.
+
+\rankline
+\rank{3} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{5} The damage increases to \glossterm{standard damage} \plus3d.
+\rank{7} The damage increases to \glossterm{standard damage} \plus4d.
 \end{freeability}
 \vspace{0.25em}
 
 
 
 \lowercase{\hypertarget{spell:Word of Faith}{}}\label{spell:Word of Faith}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Word of Faith}{Word of Faith}}[\glossterm{Focus}]
+\begin{freeability}[Rank 1]{\hypertarget{spell:Word of Faith}{Word of Faith}}[\glossterm{Focus}]
+\targets{\glossterm{Enemies} in a \areasmall radius from you}
+Make an attack vs. Mental against each target.
+\hit Each target takes energy \glossterm{standard damage}.
+
+\rankline
+\rank{3} The damage increases to \glossterm{standard damage} \plus1d.
+\rank{5} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{7} The damage increases to \glossterm{standard damage} \plus3d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Proclamation}{}}\label{spell:Proclamation}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Proclamation}{Proclamation}}[\glossterm{Focus}]
 \targets{\glossterm{Enemies} in a \areamed radius from you}
 Make an attack vs. Mental against each target.
-\hit Each target takes \glossterm{standard damage} \minus1d.
+\hit Each target takes energy \glossterm{standard damage}.
+
+\rankline
+\rank{5} The area increases to a \arealarge radius.
+\rank{7} The area increases to a \areahuge radius.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1483,6 +1483,10 @@ This increases your \glossterm{overwhelm value} and \glossterm{overwhelm resista
 However, your physical form is not altered fully to match its new size, and your Strength and Dexterity are unchanged.
 
 You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{6} You also gain a \plus2 \glossterm{magic bonus} to Strength.
+\rank{8} You can increase your size by two size categories instead of one.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -1494,80 +1498,11 @@ You can cast this spell as a \glossterm{minor action}.
 You gain a \glossterm{magic bonus} equal to half your \glossterm{power} to \glossterm{resistances} against \glossterm{physical} damage.
 
 You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{6} The bonus also applies against \glossterm{energy} damage.
+\rank{8} The bonus increases to be equal to your \glossterm{power}.
 \end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Divine Judgment}{}}\label{spell:Greater Divine Judgment}
-\begin{freeability}[Rank 5]{\hypertarget{spell:Greater Divine Judgment}{Greater Divine Judgment}}[\glossterm{Focus}]
-\target{One creature within \rngmed range}
-This spell functions like the \spell{divine judgment} spell, except that that damage increases to \glossterm{standard damage} \plus2d.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Complete Mantle of Faith}{}}\label{spell:Complete Mantle of Faith}
-\begin{attuneability}[Rank 6]{\hypertarget{spell:Complete Mantle of Faith}{Complete Mantle of Faith}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself}
-This spell functions like the \spell{mantle of faith} spell, except that the bonus applies against all damage.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Divine Might, Greater}{}}\label{spell:Divine Might, Greater}
-\begin{attuneability}[Rank 6]{\hypertarget{spell:Divine Might, Greater}{Divine Might, Greater}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\target{Yourself}
-This spell functions like the \spell{divine might} spell, except that you also gain a \plus2 \glossterm{magic bonus} to Strength.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Word of Faith}{}}\label{spell:Greater Word of Faith}
-\begin{freeability}[Rank 6]{\hypertarget{spell:Greater Word of Faith}{Greater Word of Faith}}[\glossterm{Focus}]
-\targets{\glossterm{Enemies} in a \arealarge radius from you}
-This spell functions like the \spell{word of faith} spell, except that it affects more targets and the damage increases to \glossterm{standard damage} \plus1d.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Complete Mantle of Faith}{}}\label{spell:Greater Complete Mantle of Faith}
-\begin{attuneability}[Rank 7]{\hypertarget{spell:Greater Complete Mantle of Faith}{Greater Complete Mantle of Faith}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\target{Yourself}
-This spell functions like the \spell{complete mantle of faith} spell, except that the bonus is equal to your \glossterm{power}.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Mantle of Faith}{}}\label{spell:Greater Mantle of Faith}
-\begin{attuneability}[Rank 7]{\hypertarget{spell:Greater Mantle of Faith}{Greater Mantle of Faith}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\target{Yourself}
-This spell functions like the \spell{mantle of faith} spell, except that the bonus is equal to your \glossterm{power}.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Divine Might, Supreme}{}}\label{spell:Divine Might, Supreme}
-\begin{attuneability}[Rank 8]{\hypertarget{spell:Divine Might, Supreme}{Divine Might, Supreme}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\target{Yourself}
-This spell functions like the \spell{divine might} spell, except that your size is increased by two size categories.
-You gain a \plus2 \glossterm{magic bonus} to Strength to partially match your new size.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Supreme Divine Judgment}{}}\label{spell:Supreme Divine Judgment}
-\begin{freeability}[Rank 8]{\hypertarget{spell:Supreme Divine Judgment}{Supreme Divine Judgment}}[\glossterm{Focus}]
-\target{One creature within \rngmed range}
-This spell functions like the \spell{divine judgment} spell, except that the damage increases to \glossterm{standard damage} \plus4d.
-\end{freeability}
 \vspace{0.25em}
 
 
@@ -1577,7 +1512,7 @@ This spell functions like the \spell{divine judgment} spell, except that the dam
 
 \lowercase{\hypertarget{spell:Consecrate}{}}\label{spell:Consecrate}
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Consecrate}{Consecrate}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\targetrule
+\rankline
 The area within an \arealarge radius \glossterm{zone} from your location becomes sacred to your deity.
 % TODO: what cares about consecration?
 This has no tangible effects by itself, but some special abilities and monsters behave differently in consecrated areas.
@@ -1624,15 +1559,25 @@ It is from the Conjuration school in addition to the Channeling school.
 
 \begin{freeability}{Accelerated Reading}[\glossterm{Sustain} (free)]
 \target{Yourself}
-You can read at five times your normal speed.
+You can read at twice your normal speed.
 However, the mental effort imposes a \minus4 penalty to Mental defense.
+
+\rankline
+\rank{3} You can read at four times your normal speed.
+\rank{5} You can read at six times your normal speed.
+\rank{7} You can read at ten times your normal speed.
 \end{freeability}
 
 
 \begin{freeability}{Accelerated Search}
 \target{Yourself}
 Make an Awareness check to notice things in a single 10-ft.\ squrae within 10 feet of you.
-You gain a \plus5 bonus to this check.
+You gain a \plus4 bonus to this check.
+
+\rankline
+\rank{3} The bonus increases to \plus6.
+\rank{5} The bonus increases to \plus8.
+\rank{7} The bonus increases to \plus10.
 \end{freeability}
 
 \end{spellsection}
@@ -1647,6 +1592,11 @@ You gain a \plus5 bonus to this check.
 The target gains a \plus10 foot \glossterm{magic bonus} to its \glossterm{base speed}, up to a maximum of double its \glossterm{base speed}.
 
 You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{3} The speed bonus increases to \plus15 feet.
+\rank{5} The speed bonus increases to \plus20 feet.
+\rank{7} The speed bonus increases to \plus30 feet.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -1658,6 +1608,11 @@ You can cast this spell as a \glossterm{minor action}.
 Make an attack vs. Mental against the target.
 \hit The target is \glossterm{slowed} as a \glossterm{condition}.
 \crit The target is also \glossterm{decelerated} as a separate \glossterm{condition}.
+
+\rankline
+\rank{3} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1668,6 +1623,10 @@ Make an attack vs. Mental against the target.
 \target{One creature within \rngmed range}
 Make an attack vs. Mental against the target.
 \hit The target is \glossterm{decelerated} as a \glossterm{condition}.
+
+\rankline
+\rank{5} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{7} The accuracy bonus increases to \plus2.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1685,6 +1644,10 @@ When the target reappears, all of its surroundings are adjusted as if the object
 For example, if the location is occupied by a creature that walked into the area, the creature is relocated to the closest unoccupied space along the path it took to reach the target.
 
 You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{5} The maximum size of the target increases to Large.
+\rank{7} The maximum size of the target increases to Huge.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1694,29 +1657,10 @@ You can cast this spell as a \glossterm{minor action}.
 \begin{attuneability}[Rank 4]{\hypertarget{spell:Accelerated Strike}{Accelerated Strike}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \target{Yourself}
 As a \glossterm{minor action}, you can make a \glossterm{strike} with a \minus2 penalty to \glossterm{accuracy} and a \minus2d penalty to damage.
-\end{attuneability}
-\vspace{0.25em}
 
-
-
-\lowercase{\hypertarget{spell:Delay Damage}{}}\label{spell:Delay Damage}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Delay Damage}{Delay Damage}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
-\target{Yourself}
-When you take damage, half of the damage (rounded down) is not dealt to you immediately.
-This damage is tracked separately.
-When the ends, you take all of the delayed damage at once.
-This damage has no type, and ignores all effects that reduce or negate damage.
-
-You can cast this spell as a \glossterm{minor action}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Haste}{}}\label{spell:Greater Haste}
-\begin{attuneability}[Rank 4]{\hypertarget{spell:Greater Haste}{Greater Haste}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
-This spell functions like the \textit{haste} spell, except that the speed bonus increases to \plus20 feet.
+\rankline
+\rank{6} The damage penalty is reduced to \minus1d.
+\rank{8} The accuracy penalty is reduced to -1.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -1727,6 +1671,10 @@ This spell functions like the \textit{haste} spell, except that the speed bonus 
 \target{One creature within \rngmed range}
 Make an attack vs. Mental against the target.
 \hit The target is \glossterm{immobilized} and \glossterm{dazed} as a single \glossterm{condition}.
+
+\rankline
+\rank{6} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{8} The accuracy bonus increases to \plus2.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1743,6 +1691,10 @@ This effect normally lasts as long as you \glossterm{attune} to it, and until th
 If you use this ability on yourself, it instead lasts for a number of rounds you choose when you cast the spell, up to a maximum of five rounds.
 
 You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{6} The maximum size of the target increases to Large.
+\rank{8} The maximum size of the target increases to Huge.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -1763,6 +1715,9 @@ Its \glossterm{hit points}, conditions, and all other statistics are unaffected,
 If this would reduce any of the target's resources below 0, it takes \glossterm{standard damage} \plus4d from the paradox and becomes \glossterm{stunned} as a \glossterm{condition}.
 
 You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{7} The range increases to \rnglong.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1781,47 +1736,12 @@ This does not affect any other properties of the target, such as any resources e
 After you restore the target's state in this way, the spell ends.
 
 You can cast this spell as a \glossterm{minor action}.
-\end{freeability}
-\vspace{0.25em}
 
-
-
-\lowercase{\hypertarget{spell:Supreme Haste}{}}\label{spell:Supreme Haste}
-\begin{attuneability}[Rank 6]{\hypertarget{spell:Supreme Haste}{Supreme Haste}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} with in \rngmed range}
-This spell functions like the \textit{haste} spell, except that the speed bonus increases to \plus30 feet.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Accelerated Strike}{}}\label{spell:Greater Accelerated Strike}
-\begin{attuneability}[Rank 7]{\hypertarget{spell:Greater Accelerated Strike}{Greater Accelerated Strike}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\target{Yourself}
-This spell functions like the \spell{accelerated strike} spell, except that the accuracy penalty is reduced to \minus1 and the damage penalty is reduced to \minus1d.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Temporal Duplicate}{}}\label{spell:Greater Temporal Duplicate}
-\begin{freeability}[Rank 8]{\hypertarget{spell:Greater Temporal Duplicate}{Greater Temporal Duplicate}}[\glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
-This spell functions like the \spell{temporal duplicate} spell, except that you can reach up to five minutes into the future to summon the duplicate.
-When you cast the spell, you choose the length of time before the target disappears.
-The duplicate still only exists for a single round.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Time Lock}{}}\label{spell:Greater Time Lock}
-\begin{attuneability}[Rank 8]{\hypertarget{spell:Greater Time Lock}{Greater Time Lock}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
-This spell functions like the \spell{time lock} spell, except that the effect is not ended if the target dies, and restoring the target's state can also restore it to life.
+\rankline
+\rank{7} The effect is not ended if the target dies, and restoring the target's state can also restore it to life.
 If the target is restored to life in this way, all of its properties not locked by this spell, such as any resources expended, are identical to what they were when the target died.
-In addition, this spell has the \glossterm{Attune} (self) tag instead of the \glossterm{Sustain} (minor) tag.
-\end{attuneability}
+You cannot restore yourself to life in this way since you cannot take the action to restore your own state while dead.
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -1889,6 +1809,11 @@ Make an attack vs. Mental against each target.
 \hit Each target falls \glossterm{prone}.
 \crit As above, and as a \glossterm{condition}, each target is unable to stand up.
 If a target is somehow brought into a standing position, it will immediately fall and become prone again.
+
+\rankline
+\rank{3} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1903,6 +1828,11 @@ It can spend a \glossterm{move action} to dance, if it is physically capable of 
 At the end of each round, if the target did not dance during that round, it takes a \minus2 penalty to \glossterm{accuracy} and Mental defense as the compulsion intensifies.
 This penalty stacks each round until the target dances, which resets the penalties to 0.
 \crit As above, except that the target must dance as a \glossterm{standard action} to reset the penalties, instead of as a move action.
+
+\rankline
+\rank{3} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1914,6 +1844,11 @@ This penalty stacks each round until the target dances, which resets the penalti
 Make an attack vs. Mental against the target.
 \hit The target falls \glossterm{prone} immediately. In addition, it is \glossterm{slowed} as a \glossterm{condition}.
 \crit The target falls prone immediately. In addition, it is \glossterm{decelerated} as a \glossterm{condition}.
+
+\rankline
+\rank{3} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1924,6 +1859,10 @@ Make an attack vs. Mental against the target.
 \target{One creature within \rngmed range}
 Make an attack vs. Mental against the target.
 \hit The target is \confused as a \glossterm{condition}.
+
+\rankline
+\rank{6} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{8} The accuracy bonus increases to \plus2.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1940,6 +1879,10 @@ After that time, it can wake up normally, though it continues to sleep until it 
 % Awkward to sustain without the Sustain tag
 This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
 However, it is a \glossterm{condition}, and can be removed by effects which remove conditions.
+
+\rankline
+\rank{6} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{8} The accuracy bonus increases to \plus2.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1953,7 +1896,10 @@ Make an attack vs. Mental against the target.
 \crit The target is \glossterm{stunned} as a \glossterm{condition}.
 As a standard action, you can make an additional attack vs. Mental against the target as long as it remains stunned in this way and is within \rngmed range of you.
 On a hit, the target becomes stunned in the same way as an additional condition, continuing the effect even if the target removed the original condition in the same phase.
-On a critical hit, the target becomes \glossterm{dominated} by you as long as you \glossterm{attune} to this ability.
+On a critical hit, if the target is humanoid, it becomes \glossterm{dominated} by you as long as you \glossterm{attune} to this ability.
+
+\rankline
+\rank{7} You can dominate the target even if it is not humanoid.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1964,15 +1910,9 @@ On a critical hit, the target becomes \glossterm{dominated} by you as long as yo
 \targets{\glossterm{Enemies} in a \areamed radius from you}
 Make an attack vs. Mental against each target.
 \hit Each target is \disoriented as a \glossterm{condition}.
-\end{freeability}
-\vspace{0.25em}
 
-
-
-\lowercase{\hypertarget{spell:Irresistible Dance}{}}\label{spell:Irresistible Dance}
-\begin{freeability}[Rank 7]{\hypertarget{spell:Irresistible Dance}{Irresistible Dance}}[\glossterm{Compulsion}, \glossterm{Focus}]
-\target{One creature within \rngmed range}
-This spell functions like the \spell{dance} spell, except that you gain a \plus4 bonus to accuracy on the attack.
+\rankline
+\rank{8} The area increases to a \arealarge radius.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2002,9 +1942,77 @@ This spell functions like the \spell{dance} spell, except that you gain a \plus4
 \begin{freeability}[Rank 1]{\hypertarget{spell:Decay}{Decay}}[\glossterm{Focus}]
 \target{One living creature within \rngclose range}
 Make an attack vs. Fortitude against the target.
-\hit The target decays as a \glossterm{condition}.
-At the end of each \glossterm{phase}, it takes \glossterm{standard damage} \minus3d if it took a \glossterm{standard action} during that phase.
-It can only take damage in this way once per round.
+\hit As a \glossterm{condition}, the target becomes more vulnerable to injury.
+Whenever it loses a \glossterm{hit point}, it reduces its maximum \glossterm{hit points} by 1.
+When this condition is removed, the target's maximum \glossterm{hit points} are restored.
+\crit As above, except that the target also takes a \minus2 penalty to \glossterm{wound rolls}.
+
+\rankline
+\rank{3} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Malaise}{}}\label{spell:Malaise}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Malaise}{Malaise}}[\glossterm{Focus}]
+\target{One living creature within \rngclose range}
+Make an attack vs. Fortitude against the target.
+\hit The target is \glossterm{sickened} as a \glossterm{condition}.
+\crit The target is \glossterm{nauseated} as a \glossterm{condition}.
+
+\rankline
+\rank{3} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Bleed}{}}\label{spell:Bleed}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Bleed}{Bleed}}[\glossterm{Focus}]
+\target{One living creature within \rngclose range}
+Make an attack vs. Fortitude against the target.
+\hit As a \glossterm{condition}, the target begins bleeding.
+At the end of each round, it takes physical \glossterm{standard damage} \minus1d.
+This damage cannot inflict a \glossterm{vital wound}, even if the target has no \glossterm{hit points} remaining.
+\crit As above, except that the damage can inflict a \glossterm{vital wound}.
+
+\rankline
+\rank{5} The damage increases to \glossterm{standard damage}.
+\rank{7} The damage increases to \glossterm{standard damage} \plus1.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Curse of Decay}{}}\label{spell:Curse of Decay}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Curse of Decay}{Curse of Decay}}[\glossterm{Curse}, \glossterm{Focus}]
+\target{One living creature within \rngclose range}
+Make an attack vs. Mental against the target.
+\hit The target becomes more vulnerable to injury until it takes a short rest.
+Whenever it loses a \glossterm{hit point}, it reduces its maximum \glossterm{hit points} by 1.
+This cannot reduce the target's maximum \glossterm{hit points} below 1.
+When this effect is removed, the target's maximum \glossterm{hit points} are restored.
+\crit As above, except that the effect lasts until this curse is removed.
+
+\rankline
+\rank{5} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{7} The accuracy bonus increases to \plus2.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Curse of Malaise}{}}\label{spell:Curse of Malaise}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Curse of Malaise}{Curse of Malaise}}[\glossterm{Curse}, \glossterm{Focus}]
+\target{One living creature within \rngclose range}
+Make an attack vs. Mental against the target.
+\hit The target is \glossterm{sickened} until it takes a \glossterm{short rest}.
+\crit As above, except that the effect lasts until this curse is removed.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2013,30 +2021,12 @@ It can only take damage in this way once per round.
 \lowercase{\hypertarget{spell:Miasma}{}}\label{spell:Miasma}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Miasma}{Miasma}}[\glossterm{Focus}]
 \targets{\glossterm{Enemies} within an \areamed radius from you}
-Make an attack vs. Fortitude against living each target.
+Make an attack vs. Fortitude against each target.
 \hit Each target is \glossterm{sickened} as a \glossterm{condition}.
-\end{freeability}
-\vspace{0.25em}
 
-
-
-\lowercase{\hypertarget{spell:Pernicious Sickness}{}}\label{spell:Pernicious Sickness}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Pernicious Sickness}{Pernicious Sickness}}[\glossterm{Focus}]
-\target{One living creature within \rngclose range}
-Make an attack vs. Fortitude with a \plus2 bonus to \glossterm{accuracy} against the target.
-\hit The target is \glossterm{sickened} as a \glossterm{condition}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Corruption of Blood and Bone}{}}\label{spell:Corruption of Blood and Bone}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Corruption of Blood and Bone}{Corruption of Blood and Bone}}[\glossterm{Focus}]
-\target{One living creature within \rngclose range}
-This spell functions like the \spell{decay} spell, except that the damage increases to \glossterm{standard damage} \minus2d.
-In addition, damage from the spell reduces the target's maximum hit points by the same amount.
-This hit point reduction is part of the same \glossterm{condition} as the spell's other effects.
-When the condition is removed, the target's maximum hit points are restored.
+\rankline
+\rank{5} The area increases to a \arealarge radius.
+\rank{7} The area increases to a \areahuge radius.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2047,37 +2037,40 @@ When the condition is removed, the target's maximum hit points are restored.
 \target{One living creature within \rngclose range}
 Make an attack vs. Fortitude against the target.
 \hit The target is \glossterm{blinded} as a \glossterm{condition}.
+
+\rankline
+\rank{6} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{8} The accuracy bonus increases to \plus2.
 \end{freeability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Bleed}{}}\label{spell:Bleed}
-\begin{freeability}[Rank 5]{\hypertarget{spell:Bleed}{Bleed}}[\glossterm{Focus}]
+\lowercase{\hypertarget{spell:Cripple}{}}\label{spell:Cripple}
+\begin{freeability}[Rank 5]{\hypertarget{spell:Cripple}{Cripple}}[\glossterm{Focus}]
 \target{One living creature within \rngclose range}
-This spell functions like the \spell{decay} spell, except that a struck target also begins bleeding as an additional \glossterm{condition}.
-At the end of every \glossterm{action phase} in subsequent rounds, the target takes \glossterm{standard damage} \minus3d.
+Make an attack vs. Fortitude against the target.
+\hit The target is \glossterm{immobilized} as a \glossterm{condition}.
+\crit The target is \glossterm{paralyzed} as a \glossterm{condition}.
+
+\rankline
+\rank{7} The attack gains a \plus1 bonus to \glossterm{accuracy}.
 \end{freeability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Curse of Decay}{}}\label{spell:Curse of Decay}
-\begin{freeability}[Rank 5]{\hypertarget{spell:Curse of Decay}{Curse of Decay}}[\glossterm{Curse}, \glossterm{Focus}]
+\lowercase{\hypertarget{spell:Curse of Blood}{}}\label{spell:Curse of Blood}
+\begin{freeability}[Rank 5]{\hypertarget{spell:Curse of Blood}{Curse of Blood}}[\glossterm{Curse}, \glossterm{Focus}]
 \target{One living creature within \rngclose range}
-This spell functions like the \spell{decay} spell, except that the attack is made against Mental defense instead of Fortitude defense.
-In addition, if the attack critically hits, the spell's effect becomes a permanent curse.
-It is no longer a \glossterm{condition}, and cannot be removed by abilities that remove conditions.
-It can be removed by abilities that can remove curses.
-\end{freeability}
-\vspace{0.25em}
+Make an attack vs. Mental against the target.
+\hit The target begins bleeding until it takes a \glossterm{short rest}.
+At the end of each round, it takes physical \glossterm{standard damage} \minus1d.
+This damage cannot inflict a \glossterm{vital wound}, even if the target has no \glossterm{hit points} remaining.
+\crit As above, except that the effect lasts until this curse is removed.
 
-
-
-\lowercase{\hypertarget{spell:Crippling Decay}{}}\label{spell:Crippling Decay}
-\begin{freeability}[Rank 6]{\hypertarget{spell:Crippling Decay}{Crippling Decay}}[\glossterm{Focus}]
-\target{One living creature within \rngclose range}
-This spell functions like the \spell{decay} spell, except that a struck target is also \glossterm{immobilized} as an additional \glossterm{condition}.
+\rankline
+\rank{7} The damage increases to \glossterm{standard damage}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2088,15 +2081,31 @@ This spell functions like the \spell{decay} spell, except that a struck target i
 \targets{\glossterm{Enemies} within an \areamed radius from you}
 Make an attack vs. Fortitude against living each target.
 \hit Each target is \glossterm{nauseated} as a \glossterm{condition}.
+
+\rankline
+\rank{8} the area increases to a \arealarge radius.
 \end{freeability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Greater Pernicious Sickness}{}}\label{spell:Greater Pernicious Sickness}
-\begin{freeability}[Rank 6]{\hypertarget{spell:Greater Pernicious Sickness}{Greater Pernicious Sickness}}[\glossterm{Focus}]
+\lowercase{\hypertarget{spell:Crippling Curse}{}}\label{spell:Crippling Curse}
+\begin{freeability}[Rank 7]{\hypertarget{spell:Crippling Curse}{Crippling Curse}}[\glossterm{Curse}, \glossterm{Focus}]
 \target{One living creature within \rngclose range}
-This spell functions like the \spell{pernicious sickness} spell, except that the accuracy bonus is increased to \plus4.
+Make an attack vs. Mental against the target.
+\hit The target is \glossterm{immobilized} until it takes a \glossterm{short rest}.
+\crit As above, except that the effect lasts until this curse is removed.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Eyebite Curse}{}}\label{spell:Eyebite Curse}
+\begin{freeability}[Rank 7]{\hypertarget{spell:Eyebite Curse}{Eyebite Curse}}[\glossterm{Curse}, \glossterm{Focus}]
+\target{One living creature within \rngclose range}
+Make an attack vs. Mental against the target.
+\hit The target is \glossterm{blinded} until it takes a \glossterm{short rest}.
+\crit As above, except that the effect lasts until this curse is removed.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2141,11 +2150,31 @@ This ritual takes one hour to perform.
 \subsubsection{Spells}
 
 
+\lowercase{\hypertarget{spell:Blizzard}{}}\label{spell:Blizzard}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Blizzard}{Blizzard}}[\glossterm{Focus}]
+\targets{\glossterm{Enemies} and objects in a \areasmall radius from you}
+Make an attack vs. Fortitude against each target.
+\hit Each target takes cold \glossterm{standard damage}.
+
+\rankline
+\rank{3} The area increases to a \areamed radius.
+\rank{5} The area increases to a \arealarge radius.
+\rank{7} The area increases to a \areahuge radius.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Cone of Cold}{}}\label{spell:Cone of Cold}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Cone of Cold}{Cone of Cold}}[\glossterm{Focus}]
 \targets{Everything in a \areamed cone from you}
 Make an attack vs. Fortitude against each target.
 \hit Each target takes cold \glossterm{standard damage}.
+
+\rankline
+\rank{3} The damage increases to \glossterm{standard damage} \plus1d.
+\rank{5} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{7} The damage increases to \glossterm{standard damage} \plus3d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2156,13 +2185,18 @@ Make an attack vs. Fortitude against each target.
 \target{One creature or object within \rngmed range}
 Make an attack vs. Fortitude against the target.
 \hit The target takes cold \glossterm{standard damage} \minus2d and is \glossterm{slowed} as a \glossterm{condition}.
+
+\rankline
+\rank{3} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
 \end{freeability}
 \vspace{0.25em}
 
 
 
 \lowercase{\hypertarget{spell:Icecraft}{}}\label{spell:Icecraft}
-\begin{attuneability}[Rank 1]{\hypertarget{spell:Icecraft}{Icecraft}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\begin{freeability}[Rank 1]{\hypertarget{spell:Icecraft}{Icecraft}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
 \target{One pool of unattended, nonmagical water within \rngclose range.}
 This spell creates an icy weapon or a suit of icy armor from the target pool of water.
 You can create any weapon, shield, or body armor that you are proficient with, and which would normally be made entirely from metal, except for heavy body armor.
@@ -2174,111 +2208,57 @@ Its \glossterm{wound resistance} is equal to twice your \glossterm{power}, and i
 When a creature wearing armor created in this way takes physical damage, cold damage, or fire damage, that damage is also dealt to the armor.
 Likewise, when a creature wielding a weapon created in this way deals damage with the weapon, that damage is also dealt to the weapon.
 If the item becomes \glossterm{broken}, this effect is \glossterm{dismissed}.
-\end{attuneability}
+
+\rankline
+\rank{3} The \glossterm{wound resistance} of the item increases to three times your power.
+In addition, you can also create heavy body armor.
+\rank{5} The item created is magically enhanced.
+A weapon grants a \plus2 \glossterm{magic bonus} to \glossterm{power} with \glossterm{mundane} abilities,
+and armor grants a \plus1 \glossterm{magic bonus} to Armor defense.
+\rank{7} The \glossterm{wound resistance} of the item increases to four times your power.
+\end{freeability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Blizzard}{}}\label{spell:Blizzard}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Blizzard}{Blizzard}}[\glossterm{Focus}]
-\targets{\glossterm{Enemies} and objects in a \areasmall radius within \rngclose range}
+\lowercase{\hypertarget{spell:Ray of Frost}{}}\label{spell:Ray of Frost}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Ray of Frost}{Ray of Frost}}[\glossterm{Focus}]
+\target{One creature or object within \rngclose range}
+Make an attack vs. Reflex against the target.
+\hit The target takes cold \glossterm{standard damage} \plus1d.
+
+\rankline
+\rank{3} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{5} The damage increases to \glossterm{standard damage} \plus3d.
+\rank{7} The damage increases to \glossterm{standard damage} \plus4d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Winterwave}{}}\label{spell:Winterwave}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Winterwave}{Winterwave}}[\glossterm{Focus}]
+\targets{Everything in a \arealarge cone from you}
 Make an attack vs. Fortitude against each target.
 \hit Each target takes cold \glossterm{standard damage}.
+
+\rankline
+\rank{5} The area increases to a \areahuge cone.
+\rank{7} The area increases to a \areaext cone.
 \end{freeability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Cold Snap}{}}\label{spell:Cold Snap}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Cold Snap}{Cold Snap}}[\glossterm{Focus}]
-\targets{Everything in a \areamed cone from you (see text)}
-This spell functions like the \spell{cone of cold} spell, except that it gains the \glossterm{Sustain} (standard) tag.
-The area affected by the spell becomes a \glossterm{zone} that is supernaturally cold.
-At the end of each \glossterm{action phase} in subsequent rounds, the attack is repeated in that area.
-\end{freeability}
-\vspace{0.25em}
+\lowercase{\hypertarget{spell:Hailstorm}{}}\label{spell:Hailstorm}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Hailstorm}{Hailstorm}}[\glossterm{Focus}]
+\targets{Everything in a \areasmall radius within \rngclose range}
+Make an attack vs. Armor against each target.
+\hit Each target takes cold and bludgeoning \glossterm{standard damage}.
 
-
-
-\lowercase{\hypertarget{spell:Sturdy Icecraft}{}}\label{spell:Sturdy Icecraft}
-\begin{attuneability}[Rank 3]{\hypertarget{spell:Sturdy Icecraft}{Sturdy Icecraft}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\target{One pool of unattended, nonmagical water within \rngclose range.}
-This spell functions like the \spell{icecraft} spell, except that the item created has hit points equal to four times your \glossterm{power}.
-In addition, you can create heavy body armor.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Deep Freeze}{}}\label{spell:Deep Freeze}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Deep Freeze}{Deep Freeze}}[\glossterm{Focus}]
-\targets{Everything in a \areamed cone from you}
-This spell functions like the \spell{cone of cold} spell, except that it attacks Reflex defense instead of Fortitude defense.
-In addition, it only affects creatures of Large size or smaller.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Cold Snap}{}}\label{spell:Greater Cold Snap}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Greater Cold Snap}{Greater Cold Snap}}[\glossterm{Focus}]
-\targets{Everything in a \areamed cone from you (see text)}
-This spell functions like the \spell{cold snap} spell, except that the spell gains the \glossterm{Sustain} (minor) tag instead of the \glossterm{Sustain} (standard) tag.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Cone of Cold}{}}\label{spell:Greater Cone of Cold}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Greater Cone of Cold}{Greater Cone of Cold}}[\glossterm{Focus}]
-\targets{Everything in a \areamed cone from you}
-This spell functions like the \spell{cone of cold} spell, except it affects everything in a \arealarge cone from you.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Enhanced Icecraft}{}}\label{spell:Enhanced Icecraft}
-\begin{attuneability}[Rank 5]{\hypertarget{spell:Enhanced Icecraft}{Enhanced Icecraft}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\target{One pool of unattended, nonmagical water within \rngclose range.}
-This spell functions like the \spell{sturdy icecraft} spell, except that the item created is magically enhanced.
-A weapon gains a \plus1d \glossterm{magic bonus} to damage with \glossterm{strikes}, and armor grants a \plus1 \glossterm{magic bonus} to the defenses it improves.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Freezing Cone}{}}\label{spell:Freezing Cone}
-\begin{freeability}[Rank 5]{\hypertarget{spell:Freezing Cone}{Freezing Cone}}[\glossterm{Focus}]
-\targets{Everything in a \areamed cone from you}
-This spell functions like the \spell{cone of cold} spell, except that each struck target is also \glossterm{slowed} as a \glossterm{condition}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Blizzard}{}}\label{spell:Greater Blizzard}
-\begin{freeability}[Rank 6]{\hypertarget{spell:Greater Blizzard}{Greater Blizzard}}[\glossterm{Focus}]
-\targets{\glossterm{Enemies} and objects in a \areamed radius within \rngmed range}
-This spell functions like the \spell{blizzard} spell, except that it affects more targets.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Frostbite}{}}\label{spell:Greater Frostbite}
-\begin{freeability}[Rank 6]{\hypertarget{spell:Greater Frostbite}{Greater Frostbite}}[\glossterm{Focus}]
-\target{One creature or object within \rngmed range}
-This spell functions like the \spell{frostbite} spell, except that the target is \glossterm{decelerated} instead of \glossterm{slowed}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Supreme Cone of Cold}{}}\label{spell:Supreme Cone of Cold}
-\begin{freeability}[Rank 6]{\hypertarget{spell:Supreme Cone of Cold}{Supreme Cone of Cold}}[\glossterm{Focus}]
-\targets{Everything in a \areamed cone from you}
-This spell functions like the \spell{cone of cold} spell, except it affects everything in a \areahuge cone from you.
+\rankline
+\rank{6} The damage increases to \glossterm{standard damage} \plus1d.
+\rank{8} The damage increases to \glossterm{standard damage} \plus2d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2301,6 +2281,11 @@ This spell functions like the \spell{cone of cold} spell, except it affects ever
 \begin{freeability}{Cheer}[\glossterm{Emotion}, \glossterm{Sustain} (free)]
 \target{Yourself or an \glossterm{ally} within \rngclose range}
 The target's mood improves and it feels more cheerful.
+
+\rankline
+\rank{3} The range increases to \rngmed.
+\rank{5} You may target an additional ally within range.
+\rank{7} The range increases to \rnglong.
 \end{freeability}
 
 \end{spellsection}
@@ -2329,6 +2314,11 @@ This damage is of all damage types that the target was damaged by during that ro
 Make an attack vs. Mental with a \plus2 bonus to \glossterm{accuracy} against the target.
 \hit As a \glossterm{condition}, the target is unable to take any \glossterm{standard actions} that do not cause it to make an attack.
 For example, it could make a \glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
+
+\rankline
+\rank{3} The accuracy bonus increases to \plus3.
+\rank{5} The accuracy bonus increases to \plus4.
+\rank{7} The accuracy bonus increases to \plus5.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2339,20 +2329,44 @@ For example, it could make a \glossterm{strike} or cast an offensive spell, but 
 \target{One creature within \rngclose range}
 Make an attack vs. Mental against the target.
 \hit The target is \frightened by you as a \glossterm{condition}.
+
+\rankline
+\rank{3} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Calm Emotions}{}}\label{spell:Calm Emotions}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Calm Emotions}{Calm Emotions}}[\glossterm{Emotion}, \glossterm{Focus}, \glossterm{Sustain} (standard)]
+\targets{All creatures within a \arealarge radius from you}
+Make an attack vs. Mental against each target.
+\hit Each target has its emotions calmed.
+The effects of all other \glossterm{Emotion} abilities on that target are \glossterm{suppressed}.
+It cannot take violent actions (although it can defend itself) or do anything destructive.
+If the target takes damage or feels that it is in danger, this effect is \glossterm{dismissed}.
+
+\rankline
+\rank{5} The area increases to a \areahuge radius.
+\rank{7} The area increases to a \areaext radius.
 \end{freeability}
 \vspace{0.25em}
 
 
 
 \lowercase{\hypertarget{spell:Charm}{}}\label{spell:Charm}
-\begin{attuneability}[Rank 3]{\hypertarget{spell:Charm}{Charm}}[\glossterm{Attune} (self), \glossterm{Emotion}, \glossterm{Focus}, \glossterm{Subtle}]
-\target{One creature within \rnglong range}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Charm}{Charm}}[\glossterm{Emotion}, \glossterm{Focus}, \glossterm{Subtle}, \glossterm{Sustain} (minor)]
+\target{One creature within \rngmed range}
 Make an attack vs. Mental against the target.
 \hit The target is \charmed by you.
 Any act by you or by creatures that appear to be your allies that threatens or damages the \spell{charmed} person breaks the effect.
-This effect is automatically \glossterm{dismissed} after one hour.
-\crit As above, except that the effect is not automatically dismissed after one hour.
-\end{attuneability}
+
+\rankline
+\rank{5} You may target two creature within range.
+\rank{7} You may target three creatures within range.
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -2364,6 +2378,10 @@ You radiate an aura of fear in a \areamed radius \glossterm{emanation} from you.
 When you attune to this spell, and at the end of each \glossterm{action phase} in subsequent rounds, make an attack vs. Mental against each target.
 You cannot make this attack more than once against any individual target during this spell's duration.
 \hit Each target is \glossterm{shaken} by you as a \glossterm{condition}.
+
+\rankline
+\rank{5} The area increases to a \arealarge radius \glossterm{emanation}.
+\rank{7} The area increases to a \areahuge radius \glossterm{emanation}.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -2371,60 +2389,43 @@ You cannot make this attack more than once against any individual target during 
 
 \lowercase{\hypertarget{spell:Redirected Terror}{}}\label{spell:Redirected Terror}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Redirected Terror}{Redirected Terror}}[\glossterm{Emotion}, \glossterm{Focus}]
-\target{One creature within \rngclose range}
-This spell functions like the \spell{terror} spell, except that you also choose an \glossterm{ally} within the spell's range.
-The target is afraid of the chosen ally instead of being afraid of you.
+\target{One creature within \rngmed range}
+Make an attack vs. Mental against the target.
+\hit The target is \frightened by an \glossterm{ally} of your choice within range as a \glossterm{condition}.
+
+\rankline
+\rank{5} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{7} The accuracy bonus increases to \plus2.
 \end{freeability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Calm Emotions}{}}\label{spell:Calm Emotions}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Calm Emotions}{Calm Emotions}}[\glossterm{Emotion}, \glossterm{Focus}, \glossterm{Sustain} (standard)]
-\targets{All creatures within a \arealarge radius from you}
-Make an attack vs. Mental against each target.
-\hit Each target has its emotions calmed.
-The effects of all other \glossterm{Emotion} abilities on that target are \glossterm{suppressed}.
-It cannot take violent actions (although it can defend itself) or do anything destructive.
-If the target takes damage or feels that it is in danger, this effect is \glossterm{dismissed}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Fearsome Aura}{}}\label{spell:Greater Fearsome Aura}
-\begin{attuneability}[Rank 5]{\hypertarget{spell:Greater Fearsome Aura}{Greater Fearsome Aura}}[\glossterm{Attune} (self), \glossterm{Emotion}, \glossterm{Focus}]
-\targets{All creatures within a \areamed radius \glossterm{emanation} from you}
-This spell functions like the \spell{fearsome aura} spell, except that a struck target is \glossterm{frightened} instead of \glossterm{shaken}.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Inevitable Doom}{}}\label{spell:Inevitable Doom}
-\begin{freeability}[Rank 5]{\hypertarget{spell:Inevitable Doom}{Inevitable Doom}}[\glossterm{Emotion}, \glossterm{Focus}]
+\lowercase{\hypertarget{spell:Panic}{}}\label{spell:Panic}
+\begin{freeability}[Rank 5]{\hypertarget{spell:Panic}{Panic}}[\glossterm{Emotion}, \glossterm{Focus}]
 \target{One creature within \rngclose range}
-This spell functions like the \spell{terror} spell, except that you gain a \plus2 bonus to \glossterm{accuracy}.
+Make an attack vs. Mental against the target.
+\hit The target is \panicked by you as a \glossterm{condition}.
+
+\rankline
+\rank{7} The attack gains a \plus1 bonus to \glossterm{accuracy}.
 \end{freeability}
 \vspace{0.25em}
 
 
 
 \lowercase{\hypertarget{spell:Amnesiac Charm}{}}\label{spell:Amnesiac Charm}
-\begin{attuneability}[Rank 6]{\hypertarget{spell:Amnesiac Charm}{Amnesiac Charm}}[\glossterm{Attune} (self), \glossterm{Emotion}, \glossterm{Focus}, \glossterm{Subtle}]
-\target{One creature within \rnglong range}
-This spell functions like the \spell{charm} spell, except that when the spell ends, an affected target forgets all events that transpired during the spell's duration.
+\begin{freeability}[Rank 6]{\hypertarget{spell:Amnesiac Charm}{Amnesiac Charm}}[\glossterm{Emotion}, \glossterm{Focus}, \glossterm{Subtle}, \glossterm{Sustain} (minor)]
+\target{One creature within \rngmed range}
+Make an attack vs. Mental against the target.
+\hit The target is \charmed by you.
+Any act by you or by creatures that appear to be your allies that threatens or damages the \spell{charmed} person breaks the effect.
+When this effect ends, the target forgets all events that transpired during the spell's duration.
 It becomes aware of its surroundings as if waking up from a daydream.
 The target is not directly aware of any magical influence on its mind, though unusually paranoid or perceptive creatures may deduce that their minds were affected.
-\end{attuneability}
-\vspace{0.25em}
 
-
-
-\lowercase{\hypertarget{spell:Greater Terror}{}}\label{spell:Greater Terror}
-\begin{freeability}[Rank 6]{\hypertarget{spell:Greater Terror}{Greater Terror}}[\glossterm{Emotion}, \glossterm{Focus}]
-\target{One creature within \rngclose range}
-This spell functions like the \spell{terror} spell, except that the target is \glossterm{panicked} instead of \glossterm{frightened}.
+\rankline
+\rank{8} The attack gains a \plus1 bonus to \glossterm{accuracy}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2433,17 +2434,13 @@ This spell functions like the \spell{terror} spell, except that the target is \g
 \lowercase{\hypertarget{spell:Mass Enrage}{}}\label{spell:Mass Enrage}
 \begin{freeability}[Rank 6]{\hypertarget{spell:Mass Enrage}{Mass Enrage}}[\glossterm{Emotion}, \glossterm{Focus}]
 \targets{All \glossterm{enemies} in a \areamed radius within \rngmed range}
-This spell functions like the \spell{enrage} spell, except that it affects multiple enemies.
+Make an attack vs. Mental with a \plus2 bonus to \glossterm{accuracy} against each target.
+\hit As a \glossterm{condition}, each target is unable to take any \glossterm{standard actions} that do not cause it to make an attack.
+For example, it could make a \glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
+
+\rankline
+\rank{8} The range increases to \rnglong.
 \end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Supreme Fearsome Aura}{}}\label{spell:Supreme Fearsome Aura}
-\begin{attuneability}[Rank 7]{\hypertarget{spell:Supreme Fearsome Aura}{Supreme Fearsome Aura}}[\glossterm{Attune} (self), \glossterm{Emotion}, \glossterm{Focus}]
-\targets{All creatures within a \arealarge radius \glossterm{emanation} from you}
-This spell functions like the \spell{greater fearsome aura} spell, except that it affects more targets.
-\end{attuneability}
 \vspace{0.25em}
 
 
@@ -2468,23 +2465,80 @@ This spell functions like the \spell{greater fearsome aura} spell, except that i
 \subsubsection{Spells}
 
 
-\lowercase{\hypertarget{spell:Lightning Bolt}{}}\label{spell:Lightning Bolt}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Lightning Bolt}{Lightning Bolt}}[\glossterm{Focus}]
-\targets{Everything in a \areamed, 10 ft.\ wide line from you}
-Make an attack vs. Fortitude against each target.
+\lowercase{\hypertarget{spell:Discharge}{}}\label{spell:Discharge}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Discharge}{Discharge}}[\glossterm{Focus}]
+\targets{\glossterm{Enemies} and objects in a \areasmall radius from you}
+Make an attack vs. Reflex against each target.
 \hit Each target takes electricity \glossterm{standard damage}.
+
+\rankline
+\rank{3} The damage increases to \glossterm{standard damage} \plus1d.
+\rank{5} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{7} The damage increases to \glossterm{standard damage} \plus3d.
 \end{freeability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Shocking Grasp}{}}\label{spell:Shocking Grasp}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Shocking Grasp}{Shocking Grasp}}[]
+\lowercase{\hypertarget{spell:Electroshock}{}}\label{spell:Electroshock}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Electroshock}{Electroshock}}[\glossterm{Focus}]
+\target{One creature or object within \rngmed range}
+Make an attack vs. Fortitude against the target.
+
+\hit The target takes electricity \glossterm{standard damage} \minus2d and is \glossterm{dazed} as a \glossterm{condition}.
+
+\rankline
+\rank{3} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Energize}{}}\label{spell:Energize}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Energize}{Energize}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself or an \glossterm{ally} within \rngclose range}
+The target gains a \plus10 foot \glossterm{magic bonus} to its \glossterm{base speed}, up to a maximum of double its \glossterm{base speed}.
+When this effect ends, the target becomes \glossterm{fatigued} as a \glossterm{condition}.
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{3} The speed bonus increases to \plus15 feet.
+\rank{5} The speed bonus increases to \plus20 feet.
+\rank{7} The speed bonus increases to \plus30 feet.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Lightning Bolt}{}}\label{spell:Lightning Bolt}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Lightning Bolt}{Lightning Bolt}}[\glossterm{Focus}]
+\targets{Everything in a \arealarge, 5 ft.\ wide line from you}
+Make an attack vs. Reflex against each target.
+\hit Each target takes electricity \glossterm{standard damage}.
+
+\rankline
+\rank{3} The area increases to a \areahuge, 10 ft.\ wide line from you
+\rank{5} The area increases to a \areaext, 15 ft.\ wide line.
+\rank{7} The area increases to a 200 ft.\ long, 20 ft.\ wide line.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Lightning Grasp}{}}\label{spell:Lightning Grasp}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Lightning Grasp}{Lightning Grasp}}[]
 \target{One creature or object you \glossterm{threaten}}
 This spell does not have the \glossterm{Focus} tag.
 
-Make an attack vs. Fortitude against the target.
+Make an attack vs. Reflex against the target.
 \hit The target takes electricity \glossterm{standard damage} \plus1d.
+
+\rankline
+\rank{3} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{5} The damage increases to \glossterm{standard damage} \plus3d.
+\rank{7} The damage increases to \glossterm{standard damage} \plus4d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2493,111 +2547,77 @@ Make an attack vs. Fortitude against the target.
 \lowercase{\hypertarget{spell:Call Lightning}{}}\label{spell:Call Lightning}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Call Lightning}{Call Lightning}}[\glossterm{Focus}]
 \targets{Everything in a \arealarge, 5 ft.\ wide vertical line within \rngmed range}
-Make an attack vs. Fortitude against each target.
+Make an attack vs. Reflex against each target.
 If you are outdoors in cloudy or stormy weather, you gain a \plus2 bonus to \glossterm{accuracy} with the attack.
 If this spell has its area increased, such as with the Widened \glossterm{augment}, only the length of the line increases.
 \hit Each target takes takes electricity \glossterm{standard damage} \plus1d.
+
+
+\rankline
+\rank{5} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{7} The damage increases to \glossterm{standard damage} \plus3d.
 \end{freeability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Discharge}{}}\label{spell:Discharge}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Discharge}{Discharge}}[\glossterm{Focus}]
-\targets{\glossterm{Enemies} and objects in a \areamed radius from you}
-Make an attack vs. Fortitude against each target.
+\lowercase{\hypertarget{spell:Electromagnetic Bolt}{}}\label{spell:Electromagnetic Bolt}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Electromagnetic Bolt}{Electromagnetic Bolt}}[\glossterm{Focus}]
+\targets{Everything in a \arealarge, 5 ft.\ wide line from you}
+Make an attack vs. Reflex against each target.
+You gain a \plus2 bonus to accuracy against each target that is wearing metal armor or otherwise carrying or composed of a significant amount of metal.
 \hit Each target takes electricity \glossterm{standard damage}.
+
+\rankline
+\rank{5} The damage increases to \glossterm{standard damage} \plus1d.
+\rank{7} The damage increases to \glossterm{standard damage} \plus2d.
 \end{freeability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Dynamo}{}}\label{spell:Dynamo}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Dynamo}{Dynamo}}[\glossterm{Focus}]
-\targets{Everything in a \areamed, 10 ft.\ wide line from you (see text)}
-This spell functions like the \spell{lightning bolt} spell, except that it gains the \glossterm{Sustain} (standard) tag.
-The area affected by the spell becomes a \glossterm{zone} that is continuously filled with electrical pulses.
-At the end of each \glossterm{action phase} in subsequent rounds, the attack is repeated in that area.
-\end{freeability}
-\vspace{0.25em}
+\lowercase{\hypertarget{spell:Lightning Storm}{}}\label{spell:Lightning Storm}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Lightning Storm}{Lightning Storm}}[\glossterm{Focus}]
+\targets{\glossterm{Enemies} and objects in a \areamed radius from you}
+Make an attack vs. Reflex against each target.
+\hit Each target takes electricity \glossterm{standard damage}.
 
-
-
-\lowercase{\hypertarget{spell:Forked Lightning}{}}\label{spell:Forked Lightning}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Forked Lightning}{Forked Lightning}}[\glossterm{Focus}]
-\targets{Everything in a \areamed, 10 ft.\ wide line from you}
-This spell functions like the \spell{lightning bolt} spell, except that you gain a \plus1d bonus to damage.
-In addition, you create two separate line-shaped areas instead of one.
-The two areas can overlap, but targets in the overlapping area are only affected once.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Dynamo}{}}\label{spell:Greater Dynamo}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Greater Dynamo}{Greater Dynamo}}[\glossterm{Focus}]
-\targets{Everything in a \areamed, 10 ft.\ wide line from you (see text)}
-This spell functions like the \spell{dynamo} spell, except that the spell gains the \glossterm{Sustain} (minor) tag instead of the \glossterm{Sustain} (standard) tag.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Lightning Bolt}{}}\label{spell:Greater Lightning Bolt}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Greater Lightning Bolt}{Greater Lightning Bolt}}[\glossterm{Focus}]
-\targets{Everything in a \arealarge, 15 ft.\ wide line from you}
-This spell functions like the \spell{lightning bolt} spell, except that it affects more targets.
+\rankline
+\rank{5} The area increases to a \arealarge radius.
+\rank{7} The area increases to a \areahuge radius.
 \end{freeability}
 \vspace{0.25em}
 
 
 
 \lowercase{\hypertarget{spell:Magnetic Blade}{}}\label{spell:Magnetic Blade}
-\begin{attuneability}[Rank 4]{\hypertarget{spell:Magnetic Blade}{Magnetic Blade}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\begin{attuneability}[Rank 3]{\hypertarget{spell:Magnetic Blade}{Magnetic Blade}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself or an \glossterm{ally} within \rngclose range}
-Metal weapons wielded by the target gain a \plus2 \glossterm{magic bonus} to \glossterm{accuracy} against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
+Metal weapons wielded by the target gain a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
 
 You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
 \end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Magnetic Bolt}{}}\label{spell:Magnetic Bolt}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Magnetic Bolt}{Magnetic Bolt}}[\glossterm{Focus}]
-\targets{Everything in a \areamed, 10 ft.\ wide line from you}
-This spell functions like the \spell{lightning bolt} spell, except that you gain a \plus2 bonus to accuracy against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
-\end{freeability}
 \vspace{0.25em}
 
 
 
 \lowercase{\hypertarget{spell:Chain Lightning}{}}\label{spell:Chain Lightning}
 \begin{freeability}[Rank 5]{\hypertarget{spell:Chain Lightning}{Chain Lightning}}[\glossterm{Focus}]
-\target{One creature or object within \rngmed range}
+
+Primary target: One creature or object within \rngmed range
+\par\noindent
+Secondary targets: \glossterm{Enemies} within a \areasmall radius from the primary target
+
 Make an attack vs. Fortitude against the target.
-\hit The target takes electricity \glossterm{standard damage} \plus2d.
-In addition, make an additional attack vs. Fortitude against any number of creatures in a \areasmall radius from the struck target.
+\hit The primary target takes electricity \glossterm{standard damage} \plus2d.
+
+In addition, regardless of whether you hit the primary target, make an attack vs. Reflex against each secondary target.
 \hit Each secondary target takes electricity \glossterm{standard damage}.
 \end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Shocking Bolt}{}}\label{spell:Shocking Bolt}
-\begin{freeability}[Rank 5]{\hypertarget{spell:Shocking Bolt}{Shocking Bolt}}[\glossterm{Focus}]
-\targets{Everything in a \areamed, 10 ft.\ wide line from you}
-This spell functions like the \spell{lightning bolt} spell, except that each struck target is also \glossterm{dazed} as a \glossterm{condition}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Magnetic Blade}{}}\label{spell:Greater Magnetic Blade}
-\begin{attuneability}[Rank 7]{\hypertarget{spell:Greater Magnetic Blade}{Greater Magnetic Blade}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngclose range}
-This spell functions like the \spell{magnetic blade} spell, except that the bonus is increased to \plus3.
-\end{attuneability}
 \vspace{0.25em}
 
 
@@ -2621,6 +2641,11 @@ This spell functions like the \spell{magnetic blade} spell, except that the bonu
 You make a Craft check to create an object of Tiny size or smaller.
 The object appears in your hand or at your feet.
 It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as wood or cloth.
+
+\rankline
+\rank{3} The maximum size of the object increases to Small.
+\rank{5} The maximum size of the object increases to Medium.
+\rank{7} The maximum size of the object increases to Large.
 \end{attuneability}
 
 \end{spellsection}
@@ -2634,6 +2659,11 @@ It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as 
 \target{One creature or object within \rngmed range}
 Make an attack vs. Armor against the target.
 \hit The target takes acid \glossterm{standard damage} \plus1d.
+
+\rankline
+\rank{3} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{5} The damage increases to \glossterm{standard damage} \plus3d.
+\rank{7} The damage increases to \glossterm{standard damage} \plus4d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2642,37 +2672,52 @@ Make an attack vs. Armor against the target.
 \lowercase{\hypertarget{spell:Forge}{}}\label{spell:Forge}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Forge}{Forge}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \target{One unoccupied square within \rngclose range}
-Choose a type of weapon or shield that you are proficient with.
+Choose a type of body armor, weapon, or shield that you are proficient with.
+You cannot create heavy body armor.
 You create a normal item of that type at the target location.
 
 The item cannot be constructed of any magical or extraordinary material.
 % This should allow the Giant augment; is this worded to allow that?
 It is sized appropriately for you, up to a maximum of a Medium size item.
+
+\rankline
+\rank{3} You can also create heavy body armor.
+\rank{5} The item created is magically enhanced.
+A weapon grants a \plus2 \glossterm{magic bonus} to \glossterm{power} with \glossterm{mundane} abilities,
+and armor grants a \plus1 \glossterm{magic bonus} to Armor defense.
+\rank{7} You can cast this spell with the \glossterm{Sustain} (minor) tag instead of the \glossterm{Attune} (self) tag.
 \end{attuneability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Greater Forge}{}}\label{spell:Greater Forge}
-\begin{attuneability}[Rank 3]{\hypertarget{spell:Greater Forge}{Greater Forge}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\target{One unoccupied square within \rngclose range}
-This spell functions like the \spell{forge} spell, except that you can also create any type of body armor you are proficient with.
-If you create body armor, you can create it already equipped to an \glossterm{ally} within range.
-\end{attuneability}
+\lowercase{\hypertarget{spell:Corrosive Orb}{}}\label{spell:Corrosive Orb}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Corrosive Orb}{Corrosive Orb}}[\glossterm{Focus}, \glossterm{Manifestation}]
+\target{One creature or object within \rngmed range}
+Make an attack vs. Reflex against the target.
+\hit The target takes acid \glossterm{standard damage} \plus1d.
+This attack deals double damage to objects.
+
+\rankline
+\rank{5} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{7} The damage increases to \glossterm{standard damage} \plus3d.
+\end{freeability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Poison}{}}\label{spell:Poison}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Poison}{Poison}}[\glossterm{Focus}, \glossterm{Manifestation}]
+\lowercase{\hypertarget{spell:Poison -- Nitharit}{}}\label{spell:Poison -- Nitharit}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Poison -- Nitharit}{Poison -- Nitharit}}[\glossterm{Focus}, \glossterm{Manifestation}]
 \target{One creature within \rngmed range}
 Make an attack vs. Fortitude against the target.
 
-\hit The target takes \glossterm{standard damage} \minus1d and is poisoned as a \glossterm{condition}.
-If the target is poisoned, repeat this attack at the end of each \glossterm{action phase} after the first round.
-On the second hit, the target takes \glossterm{standard damage} \minus1d and becomes \glossterm{sickened}.
-On the third hit, the target takes \glossterm{standard damage} \plus2d and becomes \glossterm{nauseated} instead of sickened.
-After the third hit, no further attacks are made, but the target remains nauseated until the condition is removed.
+\hit The target becomes \glossterm{poisoned} with nitharit.
+The primary effect causes the target to become \glossterm{sickened}.
+The secondary effect causes the target to become \glossterm{nauseated}.
+
+\rankline
+\rank{5} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{7} The accuracy bonus increases to \plus2.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2683,30 +2728,14 @@ After the third hit, no further attacks are made, but the target remains nauseat
 \targets{All Large or smaller creatures in the area (see text)}
 You fill a \areasmall radius \glossterm{zone} within \rngclose range with webs.
 The webs make the area \glossterm{difficult terrain}.
-Each 5-ft.\ square of webbing has a \glossterm{wound resistance} equal to your \glossterm{power} and is \glossterm{vulnerable} to fire.
+Each 5-ft.\ square of webbing has a \glossterm{wound resistance} equal to twice your \glossterm{power} and is \glossterm{vulnerable} to fire damage.
 
 In addition, make an attack vs. Reflex against each target.
 \hit Each secondary target is \glossterm{immobilized} as long as it has webbing from this ability in its space.
-\end{freeability}
-\vspace{0.25em}
 
-
-
-\lowercase{\hypertarget{spell:Corrosive Orb}{}}\label{spell:Corrosive Orb}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Corrosive Orb}{Corrosive Orb}}[\glossterm{Focus}, \glossterm{Manifestation}]
-\target{One creature or object within \rngmed range}
-This spell functions like the \spell{acid orb} spell, except that the damage increases to \glossterm{standard damage} \plus2d and it deals double damage to objects.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Lingering Acid Orb}{}}\label{spell:Lingering Acid Orb}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Lingering Acid Orb}{Lingering Acid Orb}}[\glossterm{Focus}, \glossterm{Manifestation}]
-\target{One creature or object within \rngmed range}
-This spell functions like the \spell{acid orb} spell, except that the acid lingers on a struck target.
-At the end of each \glossterm{action phase} in subsequent rounds, the target takes acid \glossterm{standard damage} \minus1d.
-This is a \glossterm{condition}, and lasts until removed.
+\rankline
+\rank{5} The webs are no longer \glossterm{vulnerable} to fire damage.
+\rank{7} The wound resistance of each 5-ft.\ square of webs increases to three times your \glossterm{power}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2715,32 +2744,60 @@ This is a \glossterm{condition}, and lasts until removed.
 \lowercase{\hypertarget{spell:Meteor}{}}\label{spell:Meteor}
 \begin{freeability}[Rank 4]{\hypertarget{spell:Meteor}{Meteor}}[\glossterm{Focus}, \glossterm{Manifestation}]
 \targets{Special}
-You create a meteor in midair within \rngmed range that falls to the ground, crushing foes in its path.
+You create a meteor in midair within \rngclose range that falls to the ground, crushing foes in its path.
 The meteor takes up a \areasmall radius, and must be created in unoccupied space.
 After being summoned, it falls up to 100 feet before disappearing.
 Make an attack vs. Armor against everything in its path.
 \hit Each target takes bludgeoning and fire \glossterm{standard damage}.
+
+\rankline
+\rank{3} The damage increases to \glossterm{standard damage} \plus1d.
+\rank{5} The damage increases to \glossterm{standard damage} \plus2d.
 \end{freeability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Reinforced Webbing}{}}\label{spell:Reinforced Webbing}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Reinforced Webbing}{Reinforced Webbing}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
-\targets{All Large or smaller creatures in the area (see text)}
-This spell functions like the \spell{web} spell, except that each 5-ft.\ square of webbing gains a bonus to \glossterm{wound resistance} equal to your \glossterm{power}.
-In addition, the webs are no longer \glossterm{vulnerable} to fire damage.
+\lowercase{\hypertarget{spell:Poison -- Dragon Bile}{}}\label{spell:Poison -- Dragon Bile}
+\begin{freeability}[Rank 5]{\hypertarget{spell:Poison -- Dragon Bile}{Poison -- Dragon Bile}}[\glossterm{Focus}]
+\target{One creature within \rngmed range}
+Make an attack vs. Fortitude against the target.
+
+\hit The target becomes \glossterm{poisoned} with nitharit.
+The primary effect causes the target to become \glossterm{sickened} and lose a \glossterm{hit point}.
+The secondary effect causes the target to become \glossterm{nauseated} and lose two \glossterm{hit points}.
+
+\rankline
+\rank{7} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Poison -- Black Lotus}{}}\label{spell:Poison -- Black Lotus}
+\begin{freeability}[Rank 7]{\hypertarget{spell:Poison -- Black Lotus}{Poison -- Black Lotus}}[\glossterm{Focus}, \glossterm{Manifestation}]
+\target{One creature within \rngmed range}
+Make an attack vs. Fortitude against the target.
+
+\hit The target becomes \glossterm{poisoned} with black lotus extract.
+The primary effect causes the target to become lose a \glossterm{hit point} from each successful poison attack, including this attack.
+The secondary effect causes the target to gain a \glossterm{vital wound}.
 \end{freeability}
 \vspace{0.25em}
 
 
 
 \lowercase{\hypertarget{spell:Meteor Storm}{}}\label{spell:Meteor Storm}
-\begin{freeability}[Rank 7]{\hypertarget{spell:Meteor Storm}{Meteor Storm}}[\glossterm{Focus}, \glossterm{Manifestation}]
+\begin{freeability}[Rank 8]{\hypertarget{spell:Meteor Storm}{Meteor Storm}}[\glossterm{Focus}, \glossterm{Manifestation}]
 \targets{Special}
-This spell functions like the \spell{meteor} spell, except that you can create up to five different meteors within \rnglong range.
+You create up to five meteors in midair within \rnglong range that each fall to the ground, crushing foes in their paths.
+Each meteor takes up a \areasmall radius, and must be created in unoccupied space.
 The areas affected by two different meteors cannot overlap.
 If one of the meteors is created in an invalid area, that meteor is not created, but the others are created and dealt their damage normally.
+
+After being summoned, each meteor falls up to 100 feet before disappearing.
+Make an attack vs. Armor against everything in the path of any meteor.
+\hit Each target takes bludgeoning and fire \glossterm{standard damage}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -4448,7 +4505,7 @@ During the movement phase, you can move the target up to ten feet in any directi
 
 \lowercase{\hypertarget{spell:Wall of Force}{}}\label{spell:Wall of Force}
 \begin{attuneability}[Rank 5]{\hypertarget{spell:Wall of Force}{Wall of Force}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\targetrule
+\rankline
 You create a wall of telekinetic force in a 10 ft.\ high, \arealarge line within \rngmed range.
 The wall is transparent, but blocks physical passage and \glossterm{line of effect}.
 Each five-foot square of wall has a \glossterm{wound resistance} equal to four times your \glossterm{power} and all of its defenses are 0.
@@ -4478,7 +4535,7 @@ Make an attack vs. Armor against the target.
 
 \lowercase{\hypertarget{spell:Forcecage}{}}\label{spell:Forcecage}
 \begin{attuneability}[Rank 8]{\hypertarget{spell:Forcecage}{Forcecage}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\targetrule
+\rankline
 You create a 10 ft.\ cube of telekinetic force within \rngmed range.
 You can create the cube around a sufficiently small creature to trap it inside.
 Each wall is transparent, but blocks physical passage and \glossterm{line of effect}.
@@ -4602,7 +4659,7 @@ In addition, you can create heavy body armor.
 
 \lowercase{\hypertarget{spell:Earthen Fortification}{}}\label{spell:Earthen Fortification}
 \begin{attuneability}[Rank 4]{\hypertarget{spell:Earthen Fortification}{Earthen Fortification}}[\glossterm{Attune} (self), \glossterm{Focus}, \glossterm{Manifestation}]
-\targetrule
+\rankline
 You construct a fortification made of packed earth within \rngmed range.
 This takes the form of up to ten contiguous 5-foot squares, each of which is four inches thick.
 The squares can be placed at any angle and used to form any structure as long as that structure is stable.
@@ -4834,7 +4891,7 @@ Make an attack vs. Mental against the secondary target.
 
 \lowercase{\hypertarget{spell:Dimensional Lock}{}}\label{spell:Dimensional Lock}
 \begin{attuneability}[Rank 5]{\hypertarget{spell:Dimensional Lock}{Dimensional Lock}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\targetrule
+\rankline
 This spell creates a dimensional lock in a \arealarge radius \glossterm{zone} from your location.
 Extraplanar travel into or out of the area is impossible.
 This prevents all \glossterm{Manifestation} effects and effects teleport targets or move them between planes.
@@ -5038,7 +5095,7 @@ This spell functions like the \spell{plant growth} spell, except that it affects
 
 \lowercase{\hypertarget{spell:Fertility}{}}\label{spell:Fertility}
 \begin{apability}[Rank 3]{\hypertarget{spell:Fertility}{Fertility}}[\glossterm{Focus}]
-\targetrule
+\rankline
 This ritual creates an area of bountiful growth in a one mile radius \glossterm{zone} from your location.
 Normal plants within the area become twice as productive as normal for the next year.
 This ritual does not stack with itself.
@@ -5052,7 +5109,7 @@ This ritual takes 24 hours to perform, and requires 8 action points from its par
 
 \lowercase{\hypertarget{spell:Infertility}{}}\label{spell:Infertility}
 \begin{apability}[Rank 3]{\hypertarget{spell:Infertility}{Infertility}}[\glossterm{Focus}]
-\targetrule
+\rankline
 This ritual creates an area of death and decay in a one mile radius \glossterm{zone} from your location.
 Normal plants within the area become half as productive as normal for the next year.
 This ritual does not stack with itself.
