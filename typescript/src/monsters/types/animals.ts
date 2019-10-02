@@ -77,7 +77,9 @@ const animalInput: TypelessMonsterInput[] = [
     passiveAbilities: [
       {
         description: `
-        Whenever a creature takes damage from the giant wasp's stinger, the damaged creature becomes \\glossterm{poisoned}.
+        Whenever a creature takes damage from the giant wasp's stinger,
+          if the attack result beat the target's Fortitude defense,
+          the damaged creature becomes \\glossterm{poisoned}.
         The poison's primary effect makes the target \\glossterm{sickened}, and the terminal effect makes it \\glossterm{paralyzed}.
       `,
         name: "Poison Sting",
@@ -136,6 +138,7 @@ const spiderBase = {
     {
       description: `
         Whenever a creature takes damage from the spider's bite,
+          if the attack result beat the target's Fortitude defense,
           the damaged creature becomes \\glossterm{poisoned}.
         The poison's primary effect makes the target \\glossterm{sickened},
           and the terminal effect makes it \\glossterm{paralyzed}.
