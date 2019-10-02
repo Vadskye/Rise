@@ -116,25 +116,14 @@
 
         \subsubsection{Augment Descriptions}\label{Augment Descriptions}
 
-            \augment{1}{Cryptic} The spell's visual effects and magical aura changes to mimic a different spell of your choice.
+            \augment{2}{Accelerated} The ritual takes half the normal amount of time to perform.
+            \par This augment can be applied to any ritual.
+
+            \augment{2}{Cryptic} The spell's visual effects and magical aura changes to mimic a different spell of your choice.
             You may choose any combination of spells you know, along with any other augments, that result in a spell of the same \glossterm{rank} or lower as the spell you are casting.
             This affects inspection of the spell itself by any means, such as with the Spellcraft skill (see \pcref{Spellcraft}).
             However, it does not alter the mechanical effects of the spell in any way.
             If the spell's effects depend on visual components, the spell may fail to work if you alter the spell's visuals too much. 
-
-            \augment{1}{Selective} You may freely exclude any areas from the spell's effect.
-            However, all squares in the final area of the spell must be contiguous.
-            You cannot create split a spell's area into multiple completely separate areas.
-            \par This augment can be applied to any spell or ritual that affects an area.
-
-            \augment{1}{Silent} You do not need to use \glossterm{verbal components} to cast the spell.
-            \par This augment can be applied to any spell.
-
-            \augment{1}{Stilled} You do not need to use \glossterm{somatic components} to cast the spell.
-            \par This augment can be applied to any spell.
-
-            \augment{2}{Accelerated} The ritual takes half the normal amount of time to perform.
-            \par This augment can be applied to any ritual.
 
             \augment{2}{Empowered} The ability's \glossterm{power} increases by 2.
             This augment can be applied multiple times.
@@ -174,6 +163,17 @@
             % Are there other edge cases that could cause problems?
             \par This augment can be applied to any spell that does not create an \glossterm{emanation}.
 
+            \augment{2}{Selective} You may freely exclude any areas from the spell's effect.
+            However, all squares in the final area of the spell must be contiguous.
+            You cannot create split a spell's area into multiple completely separate areas.
+            \par This augment can be applied to any spell or ritual that affects an area.
+
+            \augment{2}{Silent} You do not need to use \glossterm{verbal components} to cast the spell.
+            \par This augment can be applied to any spell.
+
+            \augment{2}{Stilled} You do not need to use \glossterm{somatic components} to cast the spell.
+            \par This augment can be applied to any spell.
+
             \augment{2}{Widened} The ability's area increases by one step, to a maximum of \areahuge.
             The steps are, in order: \areasmall, \areamed, \arealarge, and \areahuge.
             If you widen a line-shaped area, the line also increases in width by 5 feet.
@@ -182,20 +182,6 @@
             Each time, the ability's area increases by an additional step.
             \par This augment can be applied to any spell or ritual with an area that is one of the above areas.
 
-            % too weak at 3?
-            \augment{3}{Phasing} When determining whether you have \glossterm{line of sight} and \glossterm{line of effect} to a particular location with the spell, you can ignore a single solid obstacle up to five feet thick.
-            This can allow you to cast spells through solid walls, though it does not grant you the ability to see through the wall.
-            \par This augment can be applied to any spell with a range.
-
-            \augment{3}{Simplified} The spell does not have the \glossterm{Focus} tag.
-
-            % \augment{4}{Dual} The spell targets an additional creature within range.
-            % This augment can be applied multiple times.
-            % Its effects stack.
-            % \par This augment can be applied to any spell that has a range and affects a single target of the caster's choice.
-            % It cannot be applied to spells that affect a single specific target, such as the caster.
-            % In addition, it cannot be applied to \glossterm{Attune} spells.
-
             % too weak at 4?
             \augment{4}{Echoing} During the \glossterm{delayed action phase} of the next round, the spell's effect occurs again.
             All choices you made for the original casting of the spell are made identically for the repeat casting.
@@ -203,6 +189,20 @@
 
             If the spell is now invalid, such as if all of its targets are out of range, the additional casting has no effect.
             \par This augment can be applied to any spell that does not have the \glossterm{Attune} tag.
+
+            % too weak at 4?
+            \augment{4}{Phasing} When determining whether you have \glossterm{line of sight} and \glossterm{line of effect} to a particular location with the spell, you can ignore a single solid obstacle up to five feet thick.
+            This can allow you to cast spells through solid walls, though it does not grant you the ability to see through the wall.
+            \par This augment can be applied to any spell with a range.
+
+            \augment{4}{Simplified} The spell does not have the \glossterm{Focus} tag.
+
+            % \augment{4}{Dual} The spell targets an additional creature within range.
+            % This augment can be applied multiple times.
+            % Its effects stack.
+            % \par This augment can be applied to any spell that has a range and affects a single target of the caster's choice.
+            % It cannot be applied to spells that affect a single specific target, such as the caster.
+            % In addition, it cannot be applied to \glossterm{Attune} spells.
 
     \subsection{Dismissal}
         As a \glossterm{minor action}, you can dismiss any spells or rituals you used that have lasting effects.
