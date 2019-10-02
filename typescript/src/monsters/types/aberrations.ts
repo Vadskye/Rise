@@ -46,9 +46,10 @@ aberrationInput.push({
       // TODO: this was originally a disease, but disease trigger times are less well defined
       description: `
         Whenever a creature takes damage from the aboleth's tentacle,
+          if the attack result beat the target's Fortitude defense,
           the damaged creature becomes \\glossterm{poisoned}.
         The poison's primary effect makes the target \\glossterm{nauseated},
-          and the terminal effect inflicts a \\glossterm{vital wound} with a special effect.
+          and the secondary effect inflicts a \\glossterm{vital wound} with a special effect and ends the poison.
 
         Instead of making a \\glossterm{wound roll} for the \\glossterm{vital wound},
           the target's skin is transformed into a clear, slimy membrane.
