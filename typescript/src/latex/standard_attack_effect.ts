@@ -2,7 +2,7 @@ import { CalculatedAttack } from "@src/calculate";
 import * as format from "@src/latex/format";
 import { titleCase } from "change-case";
 
-export function standardAttackEffect(attack: CalculatedAttack) {
+export function standardAttackEffect(attack: CalculatedAttack): string {
   return `
     ${accuracyText(attack)}
     ${attack.hit ? `\\hit ${attack.hit}` : ""}
