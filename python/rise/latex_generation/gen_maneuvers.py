@@ -30,8 +30,8 @@ def generate_maneuvers():
         name='Brace for Impact',
         short_description='Take half damage',
         effect_text="""
-                You take half damage from all attacks this round.
-                This halving is applied before \\glossterm<resistances> and similar abilities.
+            You take half damage from all attacks this round.
+            This halving is applied before \\glossterm<resistances> and similar abilities.
         """,
         rank_upgrades={
             # Alternate idea: bonuses against attackers
@@ -47,7 +47,7 @@ def generate_maneuvers():
         name='Certain Strike',
         short_description='Make a strike with +1 accuracy',
         effect_text="""
-                Make a \\glossterm<strike> with a +1 bonus to accuracy.
+            Make a \\glossterm<strike> with a +1 bonus to accuracy.
         """,
         rank_upgrades={
             '3': 'The accuracy bonus increases to +2.',
@@ -62,8 +62,8 @@ def generate_maneuvers():
         name='Counterattack',
         short_description='Make a strike with bonuses if attacked',
         effect_text="""
-                Make a \\glossterm<strike>.
-                If the target attacked you earlier in the current round, you gain a +1 bonus to \\glossterm<accuracy> and a +1d bonus to damage with the strike.
+            Make a \\glossterm<strike>.
+            If the target attacked you earlier in the current round, you gain a +1 bonus to \\glossterm<accuracy> and a +1d bonus to damage with the strike.
         """,
         rank_upgrades={
             '3': 'The damage bonus increases to +2d.',
@@ -78,9 +78,9 @@ def generate_maneuvers():
         name='Daunting Blow',
         short_description='Make a strike that inflicts fear',
         effect_text="""
-                Make a \\glossterm<strike> with a -2d penalty to damage.
-                If the attack result hits the target's Mental defense,
-                    it is \\glossterm<shaken> by you as a \\glossterm<condition>.
+            Make a \\glossterm<strike> with a -2d penalty to damage.
+            If the attack result hits the target's Mental defense,
+                it is \\glossterm<shaken> by you as a \\glossterm<condition>.
         """,
         rank_upgrades={
             '3': 'On a \\glossterm<critical hit>, the target is \\glossterm<panicked> instead of shaken.',
@@ -95,8 +95,8 @@ def generate_maneuvers():
         name='Demoralizing Shout',
         short_description='Inflict fear on nearby enemies',
         effect_text="""
-                Make an attack vs. Mental against all enemies within a \\areasmall radius from you.
-                \\hit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
+            Make an attack vs. Mental against all enemies within a \\areasmall radius from you.
+            \\hit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
         """,
         rank_upgrades={
             '3': 'The area increases to a \\areamed radius from you.',
@@ -129,8 +129,8 @@ def generate_maneuvers():
         name='Leaping Strike',
         short_description='Jump and make a strike',
         effect_text="""
-                You make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to your \\glossterm<base speed> (see \\pcref<Leap>).
-                You can make a melee \\glossterm<strike> from any location you occupy during the leap.
+            You make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to your \\glossterm<base speed> (see \\pcref<Leap>).
+            You can make a melee \\glossterm<strike> from any location you occupy during the leap.
         """,
         rank_upgrades={
             '3': "You gain a +1d bonus to damage with the strike if you attack while above the target's space.",
@@ -162,7 +162,7 @@ def generate_maneuvers():
         name='Power Attack',
         short_description='Make a strike with +1d damage',
         effect_text="""
-                Make a \\glossterm<strike> with a +1d bonus to damage.
+            Make a \\glossterm<strike> with a +1d bonus to damage.
         """,
         rank_upgrades={
             '3': 'The damage bonus increases to +2d.',
@@ -177,8 +177,8 @@ def generate_maneuvers():
         name='Pulverizing Smash',
         short_description='Make a strike against Fortitude defense',
         effect_text="""
-                Make a \\glossterm<strike>.
-                The attack is made against the target's Fortitude defense instead of its Armor defense.
+            Make a \\glossterm<strike>.
+            The attack is made against the target's Fortitude defense instead of its Armor defense.
         """,
         rank_upgrades={
             '3': 'You gain a +1d bonus to damage with the strike.',
@@ -193,8 +193,8 @@ def generate_maneuvers():
         name='Rapid Assault',
         short_description='Make two strikes',
         effect_text="""
-                Make two \\glossterm<strikes> divided as you choose among up to two targets.
-                You take a -2 penalty to accuracy and a -2d penalty to damage on both strikes.
+            Make two \\glossterm<strikes> divided as you choose among up to two targets.
+            You take a -2 penalty to accuracy and a -2d penalty to damage on both strikes.
         """,
         rank_upgrades={
             '3': 'The accuracy penalty is reduced to -1.',
@@ -209,10 +209,10 @@ def generate_maneuvers():
         name='Reaping Charge',
         short_description='Make strikes while moving in a line',
         effect_text="""
-                Move up to your movement speed in a straight line.
-                You can make a melee \\glossterm<strike> with a slashing or bludgeoning weapon.
-                The strike targets any number of creatures and objects that you \\glossterm<threaten> at any point during your movement, except for the space you start in and the space you end in.
-                You take a -1 penalty to \\glossterm<accuracy> on the strike.
+            Move up to your movement speed in a straight line.
+            You can make a melee \\glossterm<strike> with a slashing or bludgeoning weapon.
+            The strike targets any number of creatures and objects that you \\glossterm<threaten> at any point during your movement, except for the space you start in and the space you end in.
+            You take a -1 penalty to \\glossterm<accuracy> on the strike.
         """,
         rank_upgrades={
             '3': 'You gain a +1d bonus to damage with the strike.',
@@ -243,8 +243,8 @@ def generate_maneuvers():
         name='Sweeping Strike',
         short_description='Make strikes against three foes',
         effect_text="""
-                Make a melee \\glossterm<strike> with a slashing or bludgeoning weapon.
-                The strike targets each of up to two creatures or objects you \\glossterm<threaten>.
+            Make a melee \\glossterm<strike> with a slashing or bludgeoning weapon.
+            The strike targets each of up to two creatures or objects you \\glossterm<threaten>.
         """,
         rank_upgrades={
             '3': 'You gain a +1d bonus to damage with the strike.',
@@ -276,9 +276,9 @@ def generate_maneuvers():
         name='Whirlwind Spin',
         short_description='Make strikes against all threatened foes',
         effect_text="""
-                Make a melee \\glossterm<strike> with a slashing weapon.
-                The strike targets any number of creatures you \\glossterm<threaten>.
-                You take a -1 penalty to \\glossterm<accuracy> with the strike.
+            Make a melee \\glossterm<strike> with a slashing weapon.
+            The strike targets any number of creatures you \\glossterm<threaten>.
+            You take a -1 penalty to \\glossterm<accuracy> with the strike.
         """,
         rank_upgrades={
             '3': 'You gain a +1d bonus to damage with the strike.',
