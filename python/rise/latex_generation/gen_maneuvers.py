@@ -12,14 +12,15 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Battle Cry',
         short_description='Inspire allies',
+        target="All \\glossterm<allies> that can hear you",
         effect_text="""
-            Each \\glossterm<ally> that can hear you gains a +1 bonus to \\glossterm<accuracy> with \\glossterm<physical attacks> until the end of the next round.
+            Each target gains a +1 bonus to \\glossterm<accuracy> until the end of the next round.
             This does not affect attacks during the current phase.
         """,
         rank_upgrades={
-            '3': 'The ability also affects you.',
-            '5': 'Each target also gains a +2 bonus to Mental defense.',
-            '7': 'The accuracy bonus increases to +2.',
+            '3': 'Each target also gains a +1 bonus to Mental defense.',
+            '5': 'The accuracy bonus increases to +2.',
+            '7': 'The Mental defense bonus increases to +2.',
         },
         tags=[],
         lists=['Primal'],
@@ -107,18 +108,18 @@ def generate_maneuvers():
     ))
 
     maneuvers.append(Maneuver(
-        name='Ground Pound',
+        name='Ground Stomp',
         short_description='Knock foes prone and make a strike',
+        target='All Large or smaller creatures in a \\areasmall radius from you that are standing on earth or unworked stone',
         effect_text="""
-                You can only use this ability while standing on solid ground.
-                Make an attack vs. Reflex against all enemies within a \\areasmall radius from you who are no more than one size category larger than you and standing on solid ground.
-                If you use this ability during the \\glossterm<action phase>, you can also make a \\glossterm<strike> during the \\glossterm<delayed action phase>.
-                \\hit Each target is knocked \\prone.
+            Make an attack vs. Reflex against each target.
+            If you use this ability during the \\glossterm<action phase>, you can also make a \\glossterm<strike> during the \\glossterm<delayed action phase>.
+            \\hit Each target is knocked \\prone.
         """,
+        rank=3,
         rank_upgrades={
-            '3': 'You gain a +1d bonus to damage with the strike.',
-            '5': 'The area increases to a \\arealarge radius from you.',
-            '7': 'The damage bonus increases to +3d.',
+            '5': 'The area increases to a \\areamed radius.',
+            '7': 'The area increases to a \\arealarge radius.',
         },
         tags=[],
         lists=['Primal'],
