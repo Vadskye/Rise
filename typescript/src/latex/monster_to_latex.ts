@@ -119,7 +119,7 @@ function formatAttack(attack: CalculatedAttack) {
   return `
     \\begin{freeability}{${titleCase(attack.name)}}${tagText}
       \\${targetTag}{${attack.target}}
-      ${standardAttackEffect(attack)}
+      ${standardAttackEffect(attack).trim()}
     \\end{freeability}
   `;
 }
