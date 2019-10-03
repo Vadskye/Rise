@@ -40,9 +40,9 @@ class Maneuver(object):
                 {self.effect_text.strip()}
 
                 \\rankline
-                \\rank<4> {self.rank_upgrades['3'].strip()}
-                \\rank<6> {self.rank_upgrades['5'].strip()}
-                \\rank<8> {self.rank_upgrades['7'].strip()}
+                \\rank<3> {self.rank_upgrades['3'].strip()}
+                \\rank<5> {self.rank_upgrades['5'].strip()}
+                \\rank<7> {self.rank_upgrades['7'].strip()}
                 \\parhead<Lists> {', '.join(sorted(self.lists))}
             \\end<{ability_type}>
             \\vspace<0.25em>
