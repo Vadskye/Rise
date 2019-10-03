@@ -50,13 +50,13 @@ In general, +1 accuracy = +1 damage. However, there are exceptions:
   * List: dazed, fatigued, ignited (move action to remove), sickened, slowed
 * Rank 2
   * Generally give -4 to a category (accuracy/defenses)
-  * List: decelerated, exhausted, frightened, nauseated, generic -2 to all
+  * List: exhausted, frightened, nauseated, generic -2 to all
 * Rank 3
   * Generally cause partial action denial
-  * List: confused, blinded, disoriented, ignited, immobilized
+  * List: decelerated, confused, blinded, disoriented, ignited, immobilized, panicked
 * Rank 4
   * Generally cause complete action denial
-  * List: paralyzed, panicked, stunned
+  * List: paralyzed, stunned
 
 ## Damage type modifiers
 
@@ -80,7 +80,6 @@ condition".
     * Deal conditional std +2d/+2a in std range
     * Heal std +1d in std range
     * r1 condition with r3 crit-only condition in std range
-    * r2 condition in close range
   * AOE:
     * Heal std damage -2d to all within Med radius from you
 * Spells only:
@@ -89,6 +88,7 @@ condition".
   * AOE:
     * Deal std to all within Med/10 line from you
     * Deal std to all within Med cone from you
+    * Deal std to enemies within Small radius from you
 * Maneuvers only:
   * AOE:
     * Deal std to 2 in reach
@@ -96,62 +96,77 @@ condition".
     * Deal std -1a to any number in reach
     * Deal std -1a/-1d to all within Med cone or Med/10 line
 
-2nd level spell / rank 3 maneuver / level 4 feat ability:
+Rank 2 spell or maneuver / level 4 feat ability:
 * Special notes
-  * The gap between 1st level spells / rank 1 maneuvers and 2nd level spells / rank 3 maneuvers
-    works differently than the gaps between other levels
-    * For spells, 1st level spells are farther apart from 2nd level spells than 2nd is from 3rd, so
-      they should generally be a slightly larger upgrade than normal; in general, this doesn't
-      require any specific effort, because this follows naturally from how linear progression works
-    * For maneuvers, 1st rank maneuvers are closer to 3rd rank maneuvers than 3rd rank maneuvers are
-      to 5th rank maneuvers, so the first upgrade should be smaller than the other two; this
-      requires thought to make the upgrade weaker than the normal +2 spell level bump
+  * No actual rank 2 spells or maneuvers should exist, because they are insufficiently different
+    from rank 1 abilities. This is more of an abstract concept that guides leveling.
 * Shared:
   * Single-target:
     * Remove condition in close range
-    * r2 condition in std range
+    * r2 condition in close range
 * Spells only:
   * Single-target:
     * Deal std +2d to 1 in melee range
   * AOE:
     * Deal std to all within Large/10 line from you
-    * Deal std to all within Small radius in Close range
-    * Deal std to enemies within Med radius from you
     * Deal std to all within Med/5 line entirely within Med range
 
-3rd level spell:
+Rank 3 spell or maneuver:
 * Spells only:
   * Single-target:
-    * Deal std damage and r1 condition
+    * Deal std damage -1d and r1 condition in std range
+    * Deal std in extreme range
+    * r2 condition in std range
   * AOE:
     * Deal std to all within Large/15 line from you
     * Deal std to all within Large cone from you
-    * Deal std to all within Small radius in Med range
+    * Deal std to all within Small radius in Close range
+    * Deal std to enemies within Med radius from you
 
-4th level spell / rank 5 maneuver / level 10 feat ability:
+Rank 4 spell or maneuver / level 10 feat ability:
 * Shared:
   * Single-target:
-    * r3 condition in std range
+    * Deal std damage -1d and r1 condition with r3 crit-only condition in std range
+    * r2 condition with r4 crit-only condition in std range
   * AOE:
     * Remove condition from non-self in Med radius from you
     * Deal std to all within Huge/15 line from you
-    * Deal std to enemies within Large radius from you
     * Deal std to all within Large/10 line entirely within Med range
-    * Deal std to all within Med radius in Med range
+    * Deal std to all within Small radius in Med range
 * Maneuvers only:
   * AOE: see 3rd level spell AOE
 
-5th level spell / level 13 feat ability:
+Rank 5 spell or maneuver / level 13 feat ability:
 * Spells only:
+  * Single-target:
+    * Deal std damage and r1 condition in std range
+    * r3 condition in close range
   * AOE:
     * Deal std to all within Huge/20 line from you
     * Deal std to all within Huge cone from you
-    * Deal std to all within Med radius in Med range
+    * Deal std to enemies within Large radius from you
 
-6th level spell / rank 7 maneuver / level 16 feat ability:
+Rank 6 spell or maneuver / level 16 feat ability:
 * Shared:
+  * Single-target:
+    * Deal std damage -1d and r2 condition in std range
+    * r3 condition in std range
   * AOE:
     * Deal std to all within Huge radius from you
+    * Deal std to all within Med radius in Med range
+    * Deal std to all within Extreme/20 line from you
+
+Rank 7 spell or maneuver / level 19 feat ability:
+* Shared:
+  * Single-target:
+  * AOE:
+    * Deal std to all within Extreme/30 line from you
+
+Rank 8 spell or maneuver / level 19 feat ability:
+* Shared:
+  * Single-target:
+    * r4 condition in close range
+    * Deal std and r2 condition in std range
 
 ## Standard level modifiers
 
