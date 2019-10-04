@@ -89,14 +89,13 @@ def generate_mystic_spheres():
             """, tags=[]),
             Spell('Buffeting Blast', 1, 'One creature or object within \\rngmed range', """
                 Make an attack vs. Fortitude against the target.
-                \\hit The target takes bludgeoning \\glossterm<standard damage> -1d and is \\glossterm<pushed> up to 30 feet in any direction.
+                \\hit The target takes bludgeoning \\glossterm<standard damage> -2d and is \\glossterm<pushed> up to 30 feet in any direction.
                 Moving the target upwards costs twice the normal movement cost.
-                \\crit The target takes double damage and the distance you can push the target is doubled.
 
                 \\rankline
-                \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
-                \\rank<5> The accuracy bonus increases to +2.
-                \\rank<7> The accuracy bonus increases to +3.
+                \\rank<3> On a \\glossterm<critical hit>, the target takes double damage and the distance you can push the target is doubled.
+                \\rank<5> The distance you can push the target increases to 60 feet.
+                \\rank<7> The distance you can push the target increases to 100 feet.
             """, tags=[]),
             Spell('Gentle Descent', 3, 'Yourself', """
                 You gain a 30 foot \\glossterm<glide speed> (see \\pcref<Gliding>).
@@ -196,12 +195,13 @@ def generate_mystic_spheres():
             """, tags=[]),
             Spell('Windtheft', 1, 'One creature or object within \\rngmed range', """
                 Make an attack vs. Reflex against the target.
-                \\hit The target drops all items it is holding that are not well secured (such as a ring) or held in two hands.
+                \\hit The target drops all items it is holding that are not well secured (such as a ring) or held in a hand.
+                \\crit As above, except that the target also drops items that are held a hand.
 
                 \\rankline
-                \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
-                \\rank<5> The accuracy bonus increases to +2.
-                \\rank<7> The accuracy bonus increases to +3.
+                \\rank<3> Each dropped item is scattered 30 feet in a random horizontal direction.
+                \\rank<5> You can choose for the dropped items to fly towards you instead of being scattered randomly.
+                \\rank<7> The distance each dropped item flies increases to 100 feet.
             """, tags=[]),
         ],
         category='buff, defense',
@@ -242,8 +242,8 @@ def generate_mystic_spheres():
                 This does not impede the target's ability to breathe, but it takes penalties as if it was fighting underwater (see \\pcref<Underwater Combat>).
 
                 \\rankline
-                \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
-                \\rank<7> The accuracy bonus increases to +2.
+                \\rank<5> The maximum size increases to Huge.
+                \\rank<7> The maximum size increases to Gargantuan.
             """, tags=['Manifestation']),
             Spell('Crushing Wave', 1, 'Everything in a \\areamed, 10 ft.\\ wide line from you', """
                 Make an attack vs. Fortitude against each target.
@@ -422,8 +422,8 @@ def generate_mystic_spheres():
                 If it is a creature created by a \\glossterm<Manifestation> ability, it immediately disappears.
 
                 \\rankline
-                \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
-                \\rank<7> The accuracy bonus increases to +2.
+                \\rank<5> The selective accuracy bonus increases to +4.
+                \\rank<7> The selective accuracy bonus increases to +6.
             """, tags=[]),
             Spell('Dimension Door', 4, 'Yourself', """
                 You teleport to a location within \\rnglong range of you.
@@ -436,23 +436,23 @@ def generate_mystic_spheres():
             Spell('Dimensional Jaunt -- Plane of Earth', 3, 'One creature within \\rngmed range', """
                 You partially teleport the target into the Plane of Earth.
                 Make an attack vs. Mental against the target.
-                \\hit The target takes bludgeoning \\glossterm<standard damage> -1d and is \\glossterm<slowed> as a \\glossterm<condition>.
+                \\hit The target takes bludgeoning \\glossterm<standard damage> -2d and is \\glossterm<slowed> as a \\glossterm<condition>.
 
                 \\rankline
-                \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
-                \\rank<7> The accuracy bonus increases to +2.
+                \\rank<5> The damage increases to \\glossterm<standard damage> -1d.
+                \\rank<7> The damage increases to \\glossterm<standard damage>.
             """, tags=[]),
             Spell('Dimensional Jaunt -- Plane of Fire', 4,  'One creature within \\rngmed range', """
                 You partially teleport the target into the Plane of Fire.
                 Make an attack vs. Mental against the target.
-                \\hit The target takes fire \\glossterm<standard damage> -1d and is \\glossterm<ignited> as a \\glossterm<condition>.
+                \\hit The target takes fire \\glossterm<standard damage> -2d and is \\glossterm<ignited> as a \\glossterm<condition>.
                 This condition can also be removed if the target makes a \\glossterm<DR> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
                 Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
                 \\crit As above, except that the target takes double damage and the condition cannot be removed with a \\glossterm<move action>.
 
                 \\rankline
-                \\rank<6> The attack gains a +1 bonus to \\glossterm<accuracy>.
-                \\rank<8> The accuracy bonus increases to +2.
+                \\rank<6> The damage increases to \\glossterm<standard damage> -1d.
+                \\rank<8> The damage increases to \\glossterm<standard damage>.
             """, tags=[]),
             Spell('Dimensional Jitter', 5, 'Yourself', """
                 At the end of each \\glossterm<phase>, you may choose to teleport 10 feet in a random direction.
@@ -472,7 +472,7 @@ def generate_mystic_spheres():
             Spell('Dimensional Jaunt -- Deep Astral Plane', 8, 'One creature within \\rngmed range', """
                 You partially teleport the target into the Deep Astral Plane.
                 Make an attack vs. Mental against the target.
-                \\hit The target takes energy \\glossterm<standard damage> -1d and is \\glossterm<confused> as a \\glossterm<condition>.
+                \\hit The target takes energy \\glossterm<standard damage> -2d and is \\glossterm<confused> as a \\glossterm<condition>.
             """, tags=[]),
             # TODO: target wording
             Spell('Dimensional Shuffle', 3, 'Up to five targets within \\rngmed range from among you and your \\glossterm<allies>', """
@@ -1025,8 +1025,8 @@ def generate_mystic_spheres():
                 \\hit The target is \\glossterm<slowed> and \\glossterm<dazed> as a single \\glossterm<condition>.
 
                 \\rankline
-                \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
-                \\rank<7> The accuracy bonus increases to +2.
+                \\rank<5> On a \\glossterm<critical hit>, the target is \\glossterm<decelerated> and \\glossterm<stunned> instead of \\glossterm<slowed> and \\glossterm<dazed>.
+                \\rank<7> On a hit, the target is decelerated and stunned instead of slowed and dazed.
             """, tags=[]),
             Spell('Haste', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
                 The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<base speed>, up to a maximum of double its \\glossterm<base speed>.
@@ -1166,9 +1166,9 @@ def generate_mystic_spheres():
                 If a target is somehow brought into a standing position, it will immediately fall and become prone again.
 
                 \\rankline
-                \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
-                \\rank<5> The accuracy bonus increases to +2.
-                \\rank<7> The accuracy bonus increases to +3.
+                \\rank<3> The area increases to a \\arealarge radius.
+                \\rank<5> The area increases to a \\areahuge radius.
+                \\rank<7> The area increases to a \\areaext radius.
             """, tags=['Compulsion']),
             Spell('Stop', 1, 'One creature within \\rngmed range', """
                 Make an attack vs. Mental against the target.
@@ -1192,22 +1192,19 @@ def generate_mystic_spheres():
                 Make an attack vs. Mental against the target.
                 \\hit The target is \\blinded as a \\glossterm<condition>.
                 \\crit As above, and the target falls asleep as a \\glossterm<condition>.
-                It cannot be awakened by any means while the condition lasts.
-                After that time, it can wake up normally, though it continues to sleep until it would wake up naturally.
-
-                \\rankline
-                \\rank<8> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                It cannot be awakened while the condition lasts unless it takes a \\glossterm<vital wound>, which causes it to wake up and ends the condition.
+                After the condition ends, the target can wake up normally, though it continues to sleep until it would wake up naturally.
             """, tags=['Compulsion']),
             Spell('Discordant Song', 7, '\\glossterm<Enemies> in a \\areasmall radius from you', """
                 Make an attack vs. Mental against each target.
                 \\hit Each target is \\disoriented as a \\glossterm<condition>.
             """, tags=['Compulsion']),
-            Spell('Dominate', 6, 'One creature within \\rngclose range', """
+            Spell('Dominate', 5, 'One creature within \\rngmed range', """
                 Make an attack vs. Mental against the target.
-                \\hit The target is \\glossterm<confused> as a \\glossterm<condition>.
-                \\crit The target is \\glossterm<stunned> as a \\glossterm<condition>.
-                As a standard action, you can make an additional attack vs. Mental against the target as long as it remains stunned in this way and is within \\rngmed range of you.
-                On a hit, the target becomes stunned in the same way as an additional condition, continuing the effect even if the target removed the original condition in the same phase.
+                \\hit The target is \\glossterm<stunned> as a \\glossterm<condition>.
+                \\crit The target is \\glossterm<stunned> and \\glossterm<confused> as a single \\glossterm<condition>.
+                As a standard action, you can make an additional attack vs. Mental against the target as long as it remains affected by this condition is within \\rngmed range of you.
+                On a hit, the target becomes stunned and confused in the same way as an additional condition, continuing the effect even if the target removed the original condition in the same phase.
                 On a critical hit, if the target is humanoid, it becomes \\glossterm<dominated> by you as long as you \\glossterm<attune> to this ability.
 
                 \\rankline
@@ -1227,7 +1224,7 @@ def generate_mystic_spheres():
         schools=['Vivimancy'],
         lists=['Arcane', 'Divine', 'Nature', 'Pact'],
         spells=[
-            Spell('Malaise', 1, 'One living creature within \\rngclose range', """
+            Spell('Malaise', 1, 'One living creature within \\rngmed range', """
                 Make an attack vs. Fortitude against the target.
                 \\hit The target is \\glossterm<sickened> as a \\glossterm<condition>.
                 \\crit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
@@ -1237,12 +1234,16 @@ def generate_mystic_spheres():
                 \\rank<5> The accuracy bonus increases to +2.
                 \\rank<7> The accuracy bonus increases to +3.
             """, tags=[]),
-            Spell('Curse of Malaise', 3, 'One living creature within \\rngclose range', """
+            Spell('Curse of Malaise', 3, 'One living creature within \\rngmed range', """
                 Make an attack vs. Mental against the target.
                 \\hit The target is \\glossterm<sickened> until it takes a \\glossterm<short rest>.
                 \\crit As above, except that the effect lasts until this curse is removed.
+
+                \\rankline
+                \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<7> The accuracy bonus increases to +2.
             """, tags=['Curse']),
-            Spell('Decay', 1, 'One living creature within \\rngclose range', """
+            Spell('Decay', 1, 'One living creature within \\rngmed range', """
                 Make an attack vs. Fortitude against the target.
                 \\hit As a \\glossterm<condition>, the target becomes more vulnerable to injury.
                 Whenever it loses a \\glossterm<hit point>, it reduces its maximum \\glossterm<hit points> by 1.
@@ -1254,7 +1255,7 @@ def generate_mystic_spheres():
                 \\rank<5> The accuracy bonus increases to +2.
                 \\rank<7> The accuracy bonus increases to +3.
             """, tags=[]),
-            Spell('Curse of Decay', 3, 'One living creature within \\rngclose range', """
+            Spell('Curse of Decay', 3, 'One living creature within \\rngmed range', """
                 Make an attack vs. Mental against the target.
                 \\hit The target becomes more vulnerable to injury until it takes a short rest.
                 Whenever it loses a \\glossterm<hit point>, it reduces its maximum \\glossterm<hit points> by 1.
@@ -1308,15 +1309,15 @@ def generate_mystic_spheres():
                 \\rankline
                 \\rank<8> The damage increases to \\glossterm<standard damage>.
             """, tags=['Curse']),
-            Spell('Cripple', 5, 'One living creature within \\rngclose range', """
+            Spell('Cripple', 6, 'One living creature within \\rngclose range', """
                 Make an attack vs. Fortitude against the target.
                 \\hit The target is \\glossterm<immobilized> as a \\glossterm<condition>.
                 \\crit The target is \\glossterm<paralyzed> as a \\glossterm<condition>.
 
                 \\rankline
-                \\rank<7> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<8> The attack gains a +1 bonus to \\glossterm<accuracy>.
             """, tags=[]),
-            Spell('Crippling Curse', 7, 'One living creature within \\rngclose range', """
+            Spell('Crippling Curse', 8, 'One living creature within \\rngclose range', """
                 Make an attack vs. Mental against the target.
                 \\hit The target is \\glossterm<immobilized> until it takes a \\glossterm<short rest>.
                 \\crit As above, except that the effect lasts until this curse is removed.
@@ -1366,14 +1367,13 @@ def generate_mystic_spheres():
                 \\rank<5> The area increases to a \\areahuge cone.
                 \\rank<7> The area increases to a \\areaext cone.
             """, tags=[]),
-            Spell('Frostbite', 1, 'One creature or object within \\rngmed range', """
+            Spell('Frostbite', 3, 'One creature or object within \\rngmed range', """
                 Make an attack vs. Fortitude against the target.
                 \\hit The target takes cold \\glossterm<standard damage> -2d and is \\glossterm<slowed> as a \\glossterm<condition>.
 
                 \\rankline
-                \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
-                \\rank<5> The accuracy bonus increases to +2.
-                \\rank<7> The accuracy bonus increases to +3.
+                \\rank<5> The damage increases to \\glossterm<standard damage> -1d.
+                \\rank<7> The damage increases to \\glossterm<standard damage>.
             """, tags=[]),
             Spell('Hailstorm', 4, 'Everything in a \\areasmall radius within \\rngclose range', """
                 Make an attack vs. Armor against each target.
@@ -1625,15 +1625,14 @@ def generate_mystic_spheres():
                 In addition, regardless of whether you hit the primary target, make an attack vs. Reflex against each secondary target.
                 \\hit Each secondary target takes electricity \\glossterm<standard damage>.
             """, tags=[]),
-            Spell('Electroshock', 1, 'One creature or object within \\rngmed range', """
+            Spell('Electroshock', 3, 'One creature or object within \\rngmed range', """
                 Make an attack vs. Fortitude against the target.
 
                 \\hit The target takes electricity \\glossterm<standard damage> -2d and is \\glossterm<dazed> as a \\glossterm<condition>.
 
                 \\rankline
-                \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
-                \\rank<5> The accuracy bonus increases to +2.
-                \\rank<7> The accuracy bonus increases to +3.
+                \\rank<5> The damage increases to \\glossterm<standard damage> -1d.
+                \\rank<7> The damage increases to \\glossterm<standard damage>.
             """, tags=[]),
             Spell('Call Lightning', 3, 'Everything in a \\arealarge, 5 ft.\\ wide vertical line within \\rngmed range', """
                 Make an attack vs. Reflex against each target.
@@ -2398,6 +2397,15 @@ def generate_mystic_spheres():
         name="Revelation",
         short_description="Share visions of the present and future, granting insight or combat prowess",
         cantrips=[
+            Effects('Reveal Sensation', 'Yourself', """
+                Choose a sense, such as vision or hearing.
+                You gain a +4 bonus to Awareness checks using that sense until the end of the next round.
+
+                \\rankline
+                \\rank<3> The bonus increases to +6.
+                \\rank<5> The bonus increases to +8.
+                \\rank<7> The bonus increases to +10.
+            """, tags=[]),
             Effects('Reveal Truth', 'Yourself', """
                 You may reroll one Knowledge check you made last round.
                 You can only cast this spell once per hour.
@@ -2492,12 +2500,12 @@ def generate_mystic_spheres():
                 Make an attack vs. Mental against the target.
                 \\hit The target's physical weaknesses are highlighted, and openings in its defenses are revealed to attackers moments before they exist.
                 It suffers a -2 penalty to Armor defense as a \\glossterm<condition>.
-                \\crit As above, except that the penalty increases to -5.
+                \\crit As above, except that the penalty is doubled.
 
                 \\rankline
-                \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
-                \\rank<5> The accuracy bonus increases to +2.
-                \\rank<7> The accuracy bonus increases to +3.
+                \\rank<3> The penalty increases to -3.
+                \\rank<5> The penalty increases to -4.
+                \\rank<7> The penalty increases to -5.
             """, tags=[]),
             Spell('Reveal Vulnerability', 6, 'One creature within \\rngmed range', """
                 Make an attack vs. Mental against the target.
@@ -2511,18 +2519,25 @@ def generate_mystic_spheres():
                 Make an attack vs. Mental against the target.
                 \\hit The target sees visions of possible futures that confuse its ability to determine reality.
                 It is \\glossterm<dazzled> as a \\glossterm<condition>.
+                \\crit The target is \\glossterm<blinded> as a \\glossterm<condition>.
 
                 \\rankline
                 \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
                 \\rank<5> The accuracy bonus increases to +2.
                 \\rank<7> The accuracy bonus increases to +3.
             """, tags=[]),
-            Spell('One Truth', 8, 'One creature within \\rngclose range', """
+            Spell('Stunning Truth', 5, 'One creature within \\rngmed range', """
                 Choose a fact that you know and make an attack vs. Mental against the target.
-                If the fact is true and the target does not already know that fact, you gain a +2 bonus to \\glossterm<accuracy>.
+                If the target does not already know that fact to be true or false,
+                    and the target has sufficient cognitive ability to understand the fact,
+                    you gain a +2 bonus to \\glossterm<accuracy>.
                 Otherwise, you take a -2 penalty to accuracy.
+                The fact does not have to be true to gain this bonus.
                 \\hit The target's mind is overwhelmed by a total awareness of your chosen fact.
                 It is \\glossterm<stunned> as a \\glossterm<condition>.
+
+                \\rankline
+                \\rank<7> The accuracy bonus increases to +3.
             """, tags=[]),
             Spell('Alarm', 1, 'One unoccupied square within \\rngmed range', """
                 A \\glossterm<scrying sensor> appears floating in the air in the target location.
@@ -2881,9 +2896,9 @@ def generate_mystic_spheres():
                     Moving the target upwards costs twice the normal movement cost.
 
                 \\rankline
-                \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
-                \\rank<5> The accuracy bonus increases to +2.
-                \\rank<7> The accuracy bonus increases to +3.
+                \\rank<3> The distance increases to 60 feet.
+                \\rank<5> The distance increases to 100 feet.
+                \\rank<7> The distance increases to 200 feet.
             """, tags=[]),
             Spell('Telekinetic Lift', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
                 The target is reduced to half of its normal weight.
@@ -2924,6 +2939,12 @@ def generate_mystic_spheres():
     # Secondary: utility
     # Tertiary: debuff
     # None: buff
+    # Many terramany effects are limited by the requirement that either you or
+    # your target must be near earth.
+    # Requiring the caster to be near earth is an easily mitigatable downside,
+    # so those spells gain no special bonus.
+    # Requiring the target to be near earth is a more significant downside,
+    # so those spells gain a bonus - generally increased area or range.
     mystic_spheres.append(MysticSphere(
         name="Terramancy",
         short_description="Manipulate earth to crush foes",
@@ -2970,25 +2991,24 @@ def generate_mystic_spheres():
                         and armor grants a +1 \\glossterm<magic bonus> to Armor defense.
                 \\rank<7> The item's weight is no greater than a normal item of its type.
             """, tags=['Attune (self)']),
-            Spell('Earthspike', 1, 'One creature or object within \\rngmed range', """
+            Spell('Earthspike', 3, 'One creature or object within \\rnglong range', """
                 You create a spike of earth from the ground.
                 Make an attack vs. Armor against the target.
                 The target must be within 5 feet of a Small or larger body of earth or stone.
                 \\hit The target takes piercing \\glossterm<standard damage> -2d and is \\glossterm<slowed> as a \\glossterm<condition>.
 
                 \\rankline
-                \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
-                \\rank<5> The accuracy bonus increases to +2.
-                \\rank<7> The accuracy bonus increases to +3.
+                \\rank<5> The damage increases to \\glossterm<standard damage> -1d.
+                \\rank<7> The damage increases to \\glossterm<standard damage>.
             """, tags=[]),
-            Spell('Impaling Earthspike', 7, 'One creature or object within \\rngmed range', """
-                You create a spike of earth from the ground.
-                Make an attack vs. Armor against the target.
+            Spell('Earthcage', 6, 'One Large or smaller creature or object within \\rnglong range', """
+                You create a cage of solid arth from the ground.
+                Make an attack vs. Reflex against the target.
                 The target must be within 5 feet of a Small or larger body of earth or stone.
-                \\hit The target takes piercing \\glossterm<standard damage> -2d and is \\glossterm<immobilized> as a \\glossterm<condition>.
+                \\hit The target is is \\glossterm<immobilized> as a \\glossterm<condition>.
 
                 \\rankline
-                \\rank<8> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<8> The maximum size increases to Huge.
             """, tags=[]),
             Spell('Meld into Stone', 3, 'One stone object you can touch that is at least as large as your body', """
                 You and up to 100 pounds of nonliving equipment meld into the stone.
@@ -3004,17 +3024,17 @@ def generate_mystic_spheres():
                 When you are forcibly expelled from the stone, you take 4d10 bludgeoning damage and become \\glossterm<nauseated> as a \\glossterm<condition>.
             """, tags=['Attune (self)']),
             # TODO: make tremor/fissure/earthquake targeting consistent
-            Spell('Tremor', 1, 'All Large or smaller creatures in a \\areasmall radius within \\rngmed range that are standing on earth or unworked stone', """
+            Spell('Tremor', 1, 'All Large or smaller creatures in a \\areamed radius within \\rngmed range that are standing on earth or unworked stone', """
                 You create an highly localized tremor that rips through the ground.
                 Make an attack vs. Reflex against each target.
                 \\hit Each target is knocked \\glossterm<prone>.
 
                 \\rankline
-                \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
-                \\rank<5> The accuracy bonus increases to +2.
-                \\rank<7> The accuracy bonus increases to +3.
+                \\rank<3> The maximum size is increased to Huge.
+                \\rank<5> The maximum size is increased to Gargantuan.
+                \\rank<7> The maximum size is removed.
             """, tags=[]),
-            Spell('Fissure', 5, 'Everything in a \\areasmall radius within \\rngmed range that is standing on earth or unworked stone', """
+            Spell('Fissure', 5, 'Everything in a \\areamed radius within \\rngmed range that is standing on earth or unworked stone', """
                 You create an intense but highly localized tremor that rips through the ground.
                 Make an attack vs. Reflex against each target.
                 \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
@@ -3032,7 +3052,7 @@ def generate_mystic_spheres():
                 \\rank<5> The area increases to a \\arealarge radius.
                 \\rank<7> The area increases to a \\areahuge radius.
             """, tags=[]),
-            Spell('Swallowed by Earth', 6, 'One Large or smaller creature within \\rngmed range that is standing on earth or unworked stone', """
+            Spell('Swallowed by Earth', 6, 'One Large or smaller creature within \\rnglong range that is standing on earth or unworked stone', """
                 You open up a rift in the ground that swallows and traps a foe.
                 Make an attack vs. Reflex against the target.
                 \\hit The target is \\glossterm<immobilized>.
@@ -3043,9 +3063,9 @@ def generate_mystic_spheres():
                 Special movement abilities such as teleportation can also remove the target from the fissure.
 
                 \\rankline
-                \\rank<8> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<8> The maximum size increases to Huge.
             """, tags=[]),
-            Spell('Earthbind', 3, 'One creature within \\rngmed range that is within 100 feet of the ground', """
+            Spell('Earthbind', 3, 'One creature within \\rnglong range that is within 100 feet of the ground', """
                 Make an attack vs. Fortitude against the target.
                 \\hit As a \\glossterm<condition>, the target is pulled towards the ground with great force, approximately quadrupling the gravity it experiences.
                 This imposes a -2 penalty to \\glossterm<accuracy>, physical \\glossterm<checks>, and \\glossterm<defenses>.
@@ -3055,7 +3075,7 @@ def generate_mystic_spheres():
                 \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
                 \\rank<7> The accuracy bonus increases to +2.
             """, tags=[]),
-            Spell('Quagmire', 4, 'All earth and unworked stone in a \\areamed radius within \\rngmed range', """
+            Spell('Quagmire', 4, 'All earth and unworked stone in a \\areamed radius within \\rnglong range', """
                 % TODO: wording to allow it to affect smaller parts of larger objects
                 % TODO: define maximum resistance
                 The targets are softened into a thick sludge, creating a quagmire that is difficult to move through.
@@ -3064,8 +3084,8 @@ def generate_mystic_spheres():
 
                 \\rankline
                 \\rank<5> The area increases to a \\arealarge radius.
-                \\rank<7> The range increases to \\rnglong.
-            """, tags=['Attune (self)']),
+                \\rank<7> The area increases to a \\areahuge radius.
+            """, tags=['Sustain (minor)']),
             Spell('Earthen Fortification', 4, None, """
                 You construct a fortification made of packed earth within \\rngmed range.
                 This takes the form of up to ten contiguous 5-foot squares, each of which is four inches thick.
@@ -3098,6 +3118,11 @@ def generate_mystic_spheres():
         cantrips=[
             Effects('Sense Magic', 'Yourself', """
                 You gain a +4 bonus to the Spellcraft skill until the end of the next round.
+
+                \\rankline
+                \\rank<3> The bonus increases to +6.
+                \\rank<5> The bonus increases to +8.
+                \\rank<7> The bonus increases to +10.
             """, tags=[]),
         ],
         schools=['Abjuration'],

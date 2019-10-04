@@ -44,14 +44,13 @@ Until the end of the round, the target treats all falls as if they were 20 feet 
 \begin{freeability}[Rank 1]{\hypertarget{spell:Buffeting Blast}{Buffeting Blast}}[\glossterm{Focus}]
 \target{One creature or object within \rngmed range}
 Make an attack vs. Fortitude against the target.
-\hit The target takes bludgeoning \glossterm{standard damage} \minus1d and is \glossterm{pushed} up to 30 feet in any direction.
+\hit The target takes bludgeoning \glossterm{standard damage} \minus2d and is \glossterm{pushed} up to 30 feet in any direction.
 Moving the target upwards costs twice the normal movement cost.
-\crit The target takes double damage and the distance you can push the target is doubled.
 
 \rankline
-\rank{3} The attack gains a \plus1 bonus to \glossterm{accuracy}.
-\rank{5} The accuracy bonus increases to \plus2.
-\rank{7} The accuracy bonus increases to \plus3.
+\rank{3} On a \glossterm{critical hit}, the target takes double damage and the distance you can push the target is doubled.
+\rank{5} The distance you can push the target increases to 60 feet.
+\rank{7} The distance you can push the target increases to 100 feet.
 \end{freeability}
 \vspace{0.25em}
 
@@ -110,12 +109,13 @@ Make an attack vs. Armor against the target.
 \begin{freeability}[Rank 1]{\hypertarget{spell:Windtheft}{Windtheft}}[\glossterm{Focus}]
 \target{One creature or object within \rngmed range}
 Make an attack vs. Reflex against the target.
-\hit The target drops all items it is holding that are not well secured (such as a ring) or held in two hands.
+\hit The target drops all items it is holding that are not well secured (such as a ring) or held in a hand.
+\crit As above, except that the target also drops items that are held a hand.
 
 \rankline
-\rank{3} The attack gains a \plus1 bonus to \glossterm{accuracy}.
-\rank{5} The accuracy bonus increases to \plus2.
-\rank{7} The accuracy bonus increases to \plus3.
+\rank{3} Each dropped item is scattered 30 feet in a random horizontal direction.
+\rank{5} You can choose for the dropped items to fly towards you instead of being scattered randomly.
+\rank{7} The distance each dropped item flies increases to 100 feet.
 \end{freeability}
 \vspace{0.25em}
 
@@ -425,8 +425,8 @@ Make an attack vs. Reflex against the target.
 This does not impede the target's ability to breathe, but it takes penalties as if it was fighting underwater (see \pcref{Underwater Combat}).
 
 \rankline
-\rank{5} The attack gains a \plus1 bonus to \glossterm{accuracy}.
-\rank{7} The accuracy bonus increases to \plus2.
+\rank{5} The maximum size increases to Huge.
+\rank{7} The maximum size increases to Gargantuan.
 \end{freeability}
 \vspace{0.25em}
 
@@ -622,8 +622,8 @@ In addition, if it is an outsider not on its home plane, it is teleported to a r
 If it is a creature created by a \glossterm{Manifestation} ability, it immediately disappears.
 
 \rankline
-\rank{5} The attack gains a \plus1 bonus to \glossterm{accuracy}.
-\rank{7} The accuracy bonus increases to \plus2.
+\rank{5} The selective accuracy bonus increases to \plus4.
+\rank{7} The selective accuracy bonus increases to \plus6.
 \end{freeability}
 \vspace{0.25em}
 
@@ -634,11 +634,11 @@ If it is a creature created by a \glossterm{Manifestation} ability, it immediate
 \target{One creature within \rngmed range}
 You partially teleport the target into the Plane of Earth.
 Make an attack vs. Mental against the target.
-\hit The target takes bludgeoning \glossterm{standard damage} \minus1d and is \glossterm{slowed} as a \glossterm{condition}.
+\hit The target takes bludgeoning \glossterm{standard damage} \minus2d and is \glossterm{slowed} as a \glossterm{condition}.
 
 \rankline
-\rank{5} The attack gains a \plus1 bonus to \glossterm{accuracy}.
-\rank{7} The accuracy bonus increases to \plus2.
+\rank{5} The damage increases to \glossterm{standard damage} \minus1d.
+\rank{7} The damage increases to \glossterm{standard damage}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -709,14 +709,14 @@ You must be able to move to teleport in this way, so effects like being \glosste
 \target{One creature within \rngmed range}
 You partially teleport the target into the Plane of Fire.
 Make an attack vs. Mental against the target.
-\hit The target takes fire \glossterm{standard damage} \minus1d and is \glossterm{ignited} as a \glossterm{condition}.
+\hit The target takes fire \glossterm{standard damage} \minus2d and is \glossterm{ignited} as a \glossterm{condition}.
 This condition can also be removed if the target makes a \glossterm{DR} 10 Dexterity check as a \glossterm{move action} to put out the flames.
 Dropping \glossterm{prone} as part of this action gives a \plus5 bonus to this check.
 \crit As above, except that the target takes double damage and the condition cannot be removed with a \glossterm{move action}.
 
 \rankline
-\rank{6} The attack gains a \plus1 bonus to \glossterm{accuracy}.
-\rank{8} The accuracy bonus increases to \plus2.
+\rank{6} The damage increases to \glossterm{standard damage} \minus1d.
+\rank{8} The damage increases to \glossterm{standard damage}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -754,7 +754,7 @@ If your \glossterm{line of effect} to your destination is blocked, or if this te
 \target{One creature within \rngmed range}
 You partially teleport the target into the Deep Astral Plane.
 Make an attack vs. Mental against the target.
-\hit The target takes energy \glossterm{standard damage} \minus1d and is \glossterm{confused} as a \glossterm{condition}.
+\hit The target takes energy \glossterm{standard damage} \minus2d and is \glossterm{confused} as a \glossterm{condition}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1634,8 +1634,8 @@ Make an attack vs. Mental against the target.
 \hit The target is \glossterm{slowed} and \glossterm{dazed} as a single \glossterm{condition}.
 
 \rankline
-\rank{5} The attack gains a \plus1 bonus to \glossterm{accuracy}.
-\rank{7} The accuracy bonus increases to \plus2.
+\rank{5} On a \glossterm{critical hit}, the target is \glossterm{decelerated} and \glossterm{stunned} instead of \glossterm{slowed} and \glossterm{dazed}.
+\rank{7} On a hit, the target is decelerated and stunned instead of slowed and dazed.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1806,9 +1806,9 @@ Make an attack vs. Mental against each target.
 If a target is somehow brought into a standing position, it will immediately fall and become prone again.
 
 \rankline
-\rank{3} The attack gains a \plus1 bonus to \glossterm{accuracy}.
-\rank{5} The accuracy bonus increases to \plus2.
-\rank{7} The accuracy bonus increases to \plus3.
+\rank{3} The area increases to a \arealarge radius.
+\rank{5} The area increases to a \areahuge radius.
+\rank{7} The area increases to a \areaext radius.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1864,13 +1864,13 @@ Make an attack vs. Mental against the target.
 
 
 \lowercase{\hypertarget{spell:Dominate}{}}\label{spell:Dominate}
-\begin{freeability}[Rank 6]{\hypertarget{spell:Dominate}{Dominate}}[\glossterm{Compulsion}, \glossterm{Focus}]
-\target{One creature within \rngclose range}
+\begin{freeability}[Rank 5]{\hypertarget{spell:Dominate}{Dominate}}[\glossterm{Compulsion}, \glossterm{Focus}]
+\target{One creature within \rngmed range}
 Make an attack vs. Mental against the target.
-\hit The target is \glossterm{confused} as a \glossterm{condition}.
-\crit The target is \glossterm{stunned} as a \glossterm{condition}.
-As a standard action, you can make an additional attack vs. Mental against the target as long as it remains stunned in this way and is within \rngmed range of you.
-On a hit, the target becomes stunned in the same way as an additional condition, continuing the effect even if the target removed the original condition in the same phase.
+\hit The target is \glossterm{stunned} as a \glossterm{condition}.
+\crit The target is \glossterm{stunned} and \glossterm{confused} as a single \glossterm{condition}.
+As a standard action, you can make an additional attack vs. Mental against the target as long as it remains affected by this condition is within \rngmed range of you.
+On a hit, the target becomes stunned and confused in the same way as an additional condition, continuing the effect even if the target removed the original condition in the same phase.
 On a critical hit, if the target is humanoid, it becomes \glossterm{dominated} by you as long as you \glossterm{attune} to this ability.
 
 \rankline
@@ -1896,11 +1896,8 @@ Make an attack vs. Mental against each target.
 Make an attack vs. Mental against the target.
 \hit The target is \blinded as a \glossterm{condition}.
 \crit As above, and the target falls asleep as a \glossterm{condition}.
-It cannot be awakened by any means while the condition lasts.
-After that time, it can wake up normally, though it continues to sleep until it would wake up naturally.
-
-\rankline
-\rank{8} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+It cannot be awakened while the condition lasts unless it takes a \glossterm{vital wound}, which causes it to wake up and ends the condition.
+After the condition ends, the target can wake up normally, though it continues to sleep until it would wake up naturally.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1928,7 +1925,7 @@ After that time, it can wake up normally, though it continues to sleep until it 
 
 \lowercase{\hypertarget{spell:Decay}{}}\label{spell:Decay}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Decay}{Decay}}[\glossterm{Focus}]
-\target{One living creature within \rngclose range}
+\target{One living creature within \rngmed range}
 Make an attack vs. Fortitude against the target.
 \hit As a \glossterm{condition}, the target becomes more vulnerable to injury.
 Whenever it loses a \glossterm{hit point}, it reduces its maximum \glossterm{hit points} by 1.
@@ -1946,7 +1943,7 @@ When this condition is removed, the target's maximum \glossterm{hit points} are 
 
 \lowercase{\hypertarget{spell:Malaise}{}}\label{spell:Malaise}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Malaise}{Malaise}}[\glossterm{Focus}]
-\target{One living creature within \rngclose range}
+\target{One living creature within \rngmed range}
 Make an attack vs. Fortitude against the target.
 \hit The target is \glossterm{sickened} as a \glossterm{condition}.
 \crit The target is \glossterm{nauseated} as a \glossterm{condition}.
@@ -1962,7 +1959,7 @@ Make an attack vs. Fortitude against the target.
 
 \lowercase{\hypertarget{spell:Curse of Decay}{}}\label{spell:Curse of Decay}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Curse of Decay}{Curse of Decay}}[\glossterm{Curse}, \glossterm{Focus}]
-\target{One living creature within \rngclose range}
+\target{One living creature within \rngmed range}
 Make an attack vs. Mental against the target.
 \hit The target becomes more vulnerable to injury until it takes a short rest.
 Whenever it loses a \glossterm{hit point}, it reduces its maximum \glossterm{hit points} by 1.
@@ -1980,10 +1977,14 @@ When this effect is removed, the target's maximum \glossterm{hit points} are res
 
 \lowercase{\hypertarget{spell:Curse of Malaise}{}}\label{spell:Curse of Malaise}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Curse of Malaise}{Curse of Malaise}}[\glossterm{Curse}, \glossterm{Focus}]
-\target{One living creature within \rngclose range}
+\target{One living creature within \rngmed range}
 Make an attack vs. Mental against the target.
 \hit The target is \glossterm{sickened} until it takes a \glossterm{short rest}.
 \crit As above, except that the effect lasts until this curse is removed.
+
+\rankline
+\rank{5} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{7} The accuracy bonus increases to \plus2.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2020,20 +2021,6 @@ This damage cannot inflict a \glossterm{vital wound}, even if the target has no 
 
 
 
-\lowercase{\hypertarget{spell:Cripple}{}}\label{spell:Cripple}
-\begin{freeability}[Rank 5]{\hypertarget{spell:Cripple}{Cripple}}[\glossterm{Focus}]
-\target{One living creature within \rngclose range}
-Make an attack vs. Fortitude against the target.
-\hit The target is \glossterm{immobilized} as a \glossterm{condition}.
-\crit The target is \glossterm{paralyzed} as a \glossterm{condition}.
-
-\rankline
-\rank{7} The attack gains a \plus1 bonus to \glossterm{accuracy}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Eyebite}{}}\label{spell:Eyebite}
 \begin{freeability}[Rank 5]{\hypertarget{spell:Eyebite}{Eyebite}}[\glossterm{Focus}]
 \target{One living creature within \rngclose range}
@@ -2043,6 +2030,20 @@ Make an attack vs. Fortitude against the target.
 \rankline
 \rank{6} The attack gains a \plus1 bonus to \glossterm{accuracy}.
 \rank{8} The accuracy bonus increases to \plus2.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Cripple}{}}\label{spell:Cripple}
+\begin{freeability}[Rank 6]{\hypertarget{spell:Cripple}{Cripple}}[\glossterm{Focus}]
+\target{One living creature within \rngclose range}
+Make an attack vs. Fortitude against the target.
+\hit The target is \glossterm{immobilized} as a \glossterm{condition}.
+\crit The target is \glossterm{paralyzed} as a \glossterm{condition}.
+
+\rankline
+\rank{8} The attack gains a \plus1 bonus to \glossterm{accuracy}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2065,7 +2066,7 @@ This damage cannot inflict a \glossterm{vital wound}, even if the target has no 
 
 
 \lowercase{\hypertarget{spell:Crippling Curse}{}}\label{spell:Crippling Curse}
-\begin{freeability}[Rank 7]{\hypertarget{spell:Crippling Curse}{Crippling Curse}}[\glossterm{Curse}, \glossterm{Focus}]
+\begin{freeability}[Rank 8]{\hypertarget{spell:Crippling Curse}{Crippling Curse}}[\glossterm{Curse}, \glossterm{Focus}]
 \target{One living creature within \rngclose range}
 Make an attack vs. Mental against the target.
 \hit The target is \glossterm{immobilized} until it takes a \glossterm{short rest}.
@@ -2155,21 +2156,6 @@ Make an attack vs. Fortitude against each target.
 
 
 
-\lowercase{\hypertarget{spell:Frostbite}{}}\label{spell:Frostbite}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Frostbite}{Frostbite}}[\glossterm{Focus}]
-\target{One creature or object within \rngmed range}
-Make an attack vs. Fortitude against the target.
-\hit The target takes cold \glossterm{standard damage} \minus2d and is \glossterm{slowed} as a \glossterm{condition}.
-
-\rankline
-\rank{3} The attack gains a \plus1 bonus to \glossterm{accuracy}.
-\rank{5} The accuracy bonus increases to \plus2.
-\rank{7} The accuracy bonus increases to \plus3.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Icecraft}{}}\label{spell:Icecraft}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Icecraft}{Icecraft}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
 \target{One pool of unattended, nonmagical water within \rngclose range.}
@@ -2206,6 +2192,20 @@ Make an attack vs. Reflex against the target.
 \rank{3} The damage increases to \glossterm{standard damage} \plus2d.
 \rank{5} The damage increases to \glossterm{standard damage} \plus3d.
 \rank{7} The damage increases to \glossterm{standard damage} \plus4d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Frostbite}{}}\label{spell:Frostbite}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Frostbite}{Frostbite}}[\glossterm{Focus}]
+\target{One creature or object within \rngmed range}
+Make an attack vs. Fortitude against the target.
+\hit The target takes cold \glossterm{standard damage} \minus2d and is \glossterm{slowed} as a \glossterm{condition}.
+
+\rankline
+\rank{5} The damage increases to \glossterm{standard damage} \minus1d.
+\rank{7} The damage increases to \glossterm{standard damage}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2457,22 +2457,6 @@ Make an attack vs. Reflex against each target.
 
 
 
-\lowercase{\hypertarget{spell:Electroshock}{}}\label{spell:Electroshock}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Electroshock}{Electroshock}}[\glossterm{Focus}]
-\target{One creature or object within \rngmed range}
-Make an attack vs. Fortitude against the target.
-
-\hit The target takes electricity \glossterm{standard damage} \minus2d and is \glossterm{dazed} as a \glossterm{condition}.
-
-\rankline
-\rank{3} The attack gains a \plus1 bonus to \glossterm{accuracy}.
-\rank{5} The accuracy bonus increases to \plus2.
-\rank{7} The accuracy bonus increases to \plus3.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Energize}{}}\label{spell:Energize}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Energize}{Energize}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself or an \glossterm{ally} within \rngclose range}
@@ -2548,6 +2532,21 @@ You gain a \plus2 bonus to accuracy against each target that is wearing metal ar
 \rankline
 \rank{5} The damage increases to \glossterm{standard damage} \plus1d.
 \rank{7} The damage increases to \glossterm{standard damage} \plus2d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Electroshock}{}}\label{spell:Electroshock}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Electroshock}{Electroshock}}[\glossterm{Focus}]
+\target{One creature or object within \rngmed range}
+Make an attack vs. Fortitude against the target.
+
+\hit The target takes electricity \glossterm{standard damage} \minus2d and is \glossterm{dazed} as a \glossterm{condition}.
+
+\rankline
+\rank{5} The damage increases to \glossterm{standard damage} \minus1d.
+\rank{7} The damage increases to \glossterm{standard damage}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3756,6 +3755,18 @@ Make an attack vs. Fortitude against the target.
 \subsubsection{Cantrips}
 
 
+\begin{freeability}{Reveal Sensation}
+\target{Yourself}
+Choose a sense, such as vision or hearing.
+You gain a \plus4 bonus to Awareness checks using that sense until the end of the next round.
+
+\rankline
+\rank{3} The bonus increases to \plus6.
+\rank{5} The bonus increases to \plus8.
+\rank{7} The bonus increases to \plus10.
+\end{freeability}
+
+
 \begin{freeability}{Reveal Truth}
 \target{Yourself}
 You may reroll one Knowledge check you made last round.
@@ -3821,6 +3832,7 @@ At the end of each round, if the sensor is does not have \glossterm{line of effe
 Make an attack vs. Mental against the target.
 \hit The target sees visions of possible futures that confuse its ability to determine reality.
 It is \glossterm{dazzled} as a \glossterm{condition}.
+\crit The target is \glossterm{blinded} as a \glossterm{condition}.
 
 \rankline
 \rank{3} The attack gains a \plus1 bonus to \glossterm{accuracy}.
@@ -3851,12 +3863,12 @@ The target gains a \plus1 \glossterm{magic bonus} to Armor defense and Reflex de
 Make an attack vs. Mental against the target.
 \hit The target's physical weaknesses are highlighted, and openings in its defenses are revealed to attackers moments before they exist.
 It suffers a \minus2 penalty to Armor defense as a \glossterm{condition}.
-\crit As above, except that the penalty increases to -5.
+\crit As above, except that the penalty is doubled.
 
 \rankline
-\rank{3} The attack gains a \plus1 bonus to \glossterm{accuracy}.
-\rank{5} The accuracy bonus increases to \plus2.
-\rank{7} The accuracy bonus increases to \plus3.
+\rank{3} The penalty increases to -3.
+\rank{5} The penalty increases to -4.
+\rank{7} The penalty increases to -5.
 \end{freeability}
 \vspace{0.25em}
 
@@ -4012,6 +4024,25 @@ If undisturbed, the sensor floats in the air in its position.
 
 
 
+\lowercase{\hypertarget{spell:Stunning Truth}{}}\label{spell:Stunning Truth}
+\begin{freeability}[Rank 5]{\hypertarget{spell:Stunning Truth}{Stunning Truth}}[\glossterm{Focus}]
+\target{One creature within \rngmed range}
+Choose a fact that you know and make an attack vs. Mental against the target.
+If the target does not already know that fact to be true or false,
+and the target has sufficient cognitive ability to understand the fact,
+you gain a \plus2 bonus to \glossterm{accuracy}.
+Otherwise, you take a \minus2 penalty to accuracy.
+The fact does not have to be true to gain this bonus.
+\hit The target's mind is overwhelmed by a total awareness of your chosen fact.
+It is \glossterm{stunned} as a \glossterm{condition}.
+
+\rankline
+\rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Reveal Vulnerability}{}}\label{spell:Reveal Vulnerability}
 \begin{freeability}[Rank 6]{\hypertarget{spell:Reveal Vulnerability}{Reveal Vulnerability}}[\glossterm{Focus}]
 \target{One creature within \rngmed range}
@@ -4021,19 +4052,6 @@ Its \glossterm{resistances} are halved as a \glossterm{condition}.
 
 \rankline
 \rank{8} The attack gains a \plus1 bonus to \glossterm{accuracy}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:One Truth}{}}\label{spell:One Truth}
-\begin{freeability}[Rank 8]{\hypertarget{spell:One Truth}{One Truth}}[\glossterm{Focus}]
-\target{One creature within \rngclose range}
-Choose a fact that you know and make an attack vs. Mental against the target.
-If the fact is true and the target does not already know that fact, you gain a \plus2 bonus to \glossterm{accuracy}.
-Otherwise, you take a \minus2 penalty to accuracy.
-\hit The target's mind is overwhelmed by a total awareness of your chosen fact.
-It is \glossterm{stunned} as a \glossterm{condition}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -4508,9 +4526,9 @@ You can change direction partway through the movement.
 Moving the target upwards costs twice the normal movement cost.
 
 \rankline
-\rank{3} The attack gains a \plus1 bonus to \glossterm{accuracy}.
-\rank{5} The accuracy bonus increases to \plus2.
-\rank{7} The accuracy bonus increases to \plus3.
+\rank{3} The distance increases to 60 feet.
+\rank{5} The distance increases to 100 feet.
+\rank{7} The distance increases to 200 feet.
 \end{freeability}
 \vspace{0.25em}
 
@@ -4614,23 +4632,6 @@ and armor grants a \plus1 \glossterm{magic bonus} to Armor defense.
 
 
 
-\lowercase{\hypertarget{spell:Earthspike}{}}\label{spell:Earthspike}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Earthspike}{Earthspike}}[\glossterm{Focus}]
-\target{One creature or object within \rngmed range}
-You create a spike of earth from the ground.
-Make an attack vs. Armor against the target.
-The target must be within 5 feet of a Small or larger body of earth or stone.
-\hit The target takes piercing \glossterm{standard damage} \minus2d and is \glossterm{slowed} as a \glossterm{condition}.
-
-\rankline
-\rank{3} The attack gains a \plus1 bonus to \glossterm{accuracy}.
-\rank{5} The accuracy bonus increases to \plus2.
-\rank{7} The accuracy bonus increases to \plus3.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Rock Throw}{}}\label{spell:Rock Throw}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Rock Throw}{Rock Throw}}[\glossterm{Focus}, \glossterm{Manifestation}]
 \target{One creature or object within \rngmed range}
@@ -4668,15 +4669,15 @@ Otherwise, make an attack vs. Armor against each target.
 
 \lowercase{\hypertarget{spell:Tremor}{}}\label{spell:Tremor}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Tremor}{Tremor}}[\glossterm{Focus}]
-\targets{All Large or smaller creatures in a \areasmall radius within \rngmed range that are standing on earth or unworked stone}
+\targets{All Large or smaller creatures in a \areamed radius within \rngmed range that are standing on earth or unworked stone}
 You create an highly localized tremor that rips through the ground.
 Make an attack vs. Reflex against each target.
 \hit Each target is knocked \glossterm{prone}.
 
 \rankline
-\rank{3} The attack gains a \plus1 bonus to \glossterm{accuracy}.
-\rank{5} The accuracy bonus increases to \plus2.
-\rank{7} The accuracy bonus increases to \plus3.
+\rank{3} The maximum size is increased to Huge.
+\rank{5} The maximum size is increased to Gargantuan.
+\rank{7} The maximum size is removed.
 \end{freeability}
 \vspace{0.25em}
 
@@ -4684,7 +4685,7 @@ Make an attack vs. Reflex against each target.
 
 \lowercase{\hypertarget{spell:Earthbind}{}}\label{spell:Earthbind}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Earthbind}{Earthbind}}[\glossterm{Focus}]
-\target{One creature within \rngmed range that is within 100 feet of the ground}
+\target{One creature within \rnglong range that is within 100 feet of the ground}
 Make an attack vs. Fortitude against the target.
 \hit As a \glossterm{condition}, the target is pulled towards the ground with great force, approximately quadrupling the gravity it experiences.
 This imposes a \minus2 penalty to \glossterm{accuracy}, physical \glossterm{checks}, and \glossterm{defenses}.
@@ -4708,6 +4709,22 @@ Ecah Large or smaller target is also knocked \glossterm{prone}.
 \rankline
 \rank{5} The area increases to a \arealarge radius.
 \rank{7} The area increases to a \areahuge radius.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Earthspike}{}}\label{spell:Earthspike}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Earthspike}{Earthspike}}[\glossterm{Focus}]
+\target{One creature or object within \rnglong range}
+You create a spike of earth from the ground.
+Make an attack vs. Armor against the target.
+The target must be within 5 feet of a Small or larger body of earth or stone.
+\hit The target takes piercing \glossterm{standard damage} \minus2d and is \glossterm{slowed} as a \glossterm{condition}.
+
+\rankline
+\rank{5} The damage increases to \glossterm{standard damage} \minus1d.
+\rank{7} The damage increases to \glossterm{standard damage}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -4756,8 +4773,8 @@ This makes them more resistant to attack and allows the construction of more com
 
 
 \lowercase{\hypertarget{spell:Quagmire}{}}\label{spell:Quagmire}
-\begin{attuneability}[Rank 4]{\hypertarget{spell:Quagmire}{Quagmire}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\targets{All earth and unworked stone in a \areamed radius within \rngmed range}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Quagmire}{Quagmire}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
+\targets{All earth and unworked stone in a \areamed radius within \rnglong range}
 % TODO: wording to allow it to affect smaller parts of larger objects
 % TODO: define maximum resistance
 The targets are softened into a thick sludge, creating a quagmire that is difficult to move through.
@@ -4766,15 +4783,15 @@ This does not affect objects under significant structural stress, such as walls 
 
 \rankline
 \rank{5} The area increases to a \arealarge radius.
-\rank{7} The range increases to \rnglong.
-\end{attuneability}
+\rank{7} The area increases to a \areahuge radius.
+\end{freeability}
 \vspace{0.25em}
 
 
 
 \lowercase{\hypertarget{spell:Fissure}{}}\label{spell:Fissure}
 \begin{freeability}[Rank 5]{\hypertarget{spell:Fissure}{Fissure}}[\glossterm{Focus}]
-\targets{Everything in a \areasmall radius within \rngmed range that is standing on earth or unworked stone}
+\targets{Everything in a \areamed radius within \rngmed range that is standing on earth or unworked stone}
 You create an intense but highly localized tremor that rips through the ground.
 Make an attack vs. Reflex against each target.
 \hit Each target takes bludgeoning \glossterm{standard damage} \minus1d.
@@ -4787,9 +4804,24 @@ Ecah Large or smaller target is also knocked \glossterm{prone}.
 
 
 
+\lowercase{\hypertarget{spell:Earthcage}{}}\label{spell:Earthcage}
+\begin{freeability}[Rank 6]{\hypertarget{spell:Earthcage}{Earthcage}}[\glossterm{Focus}]
+\target{One Large or smaller creature or object within \rnglong range}
+You create a cage of solid arth from the ground.
+Make an attack vs. Reflex against the target.
+The target must be within 5 feet of a Small or larger body of earth or stone.
+\hit The target is is \glossterm{immobilized} as a \glossterm{condition}.
+
+\rankline
+\rank{8} The maximum size increases to Huge.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Swallowed by Earth}{}}\label{spell:Swallowed by Earth}
 \begin{freeability}[Rank 6]{\hypertarget{spell:Swallowed by Earth}{Swallowed by Earth}}[\glossterm{Focus}]
-\target{One Large or smaller creature within \rngmed range that is standing on earth or unworked stone}
+\target{One Large or smaller creature within \rnglong range that is standing on earth or unworked stone}
 You open up a rift in the ground that swallows and traps a foe.
 Make an attack vs. Reflex against the target.
 \hit The target is \glossterm{immobilized}.
@@ -4800,22 +4832,7 @@ Alternately, any creature that can reach the target can make a Strength check ag
 Special movement abilities such as teleportation can also remove the target from the fissure.
 
 \rankline
-\rank{8} The attack gains a \plus1 bonus to \glossterm{accuracy}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Impaling Earthspike}{}}\label{spell:Impaling Earthspike}
-\begin{freeability}[Rank 7]{\hypertarget{spell:Impaling Earthspike}{Impaling Earthspike}}[\glossterm{Focus}]
-\target{One creature or object within \rngmed range}
-You create a spike of earth from the ground.
-Make an attack vs. Armor against the target.
-The target must be within 5 feet of a Small or larger body of earth or stone.
-\hit The target takes piercing \glossterm{standard damage} \minus2d and is \glossterm{immobilized} as a \glossterm{condition}.
-
-\rankline
-\rank{8} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{8} The maximum size increases to Huge.
 \end{freeability}
 \vspace{0.25em}
 
@@ -4838,6 +4855,11 @@ The target must be within 5 feet of a Small or larger body of earth or stone.
 \begin{freeability}{Sense Magic}
 \target{Yourself}
 You gain a \plus4 bonus to the Spellcraft skill until the end of the next round.
+
+\rankline
+\rank{3} The bonus increases to \plus6.
+\rank{5} The bonus increases to \plus8.
+\rank{7} The bonus increases to \plus10.
 \end{freeability}
 
 \end{spellsection}
