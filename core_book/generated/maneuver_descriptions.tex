@@ -38,13 +38,13 @@ This does not affect attacks during the current phase.
 \hypertarget{maneuver:Brace for Impact}{}
 \begin{freeability}[Rank 1]{Brace for Impact}[\glossterm{Swift}]
 
-You take half damage from all attacks this round.
+You take half damage from \glossterm{physical} damage this round.
 This halving is applied before \glossterm{resistances} and similar abilities.
 
 \rankline
-\rank{3} You can also negate a condition that would be applied to you while this ability lasts.
-\rank{5} This ability lasts until the end of the next round.
-\rank{7} You are also immune to conditions while this ability lastss.
+\rank{3} You also gain a \plus1 bonus to all defenses.
+\rank{5} You also take half damage from \glossterm{energy} damage this round.
+\rank{7} The defense bonus increases to \plus2.
 \parhead{Lists} Esoteric, Martial, Primal, Wild
 \end{freeability}
 \vspace{0.25em}
@@ -59,7 +59,7 @@ Make a \glossterm{strike} with a \plus1 bonus to accuracy.
 
 \rankline
 \rank{3} The accuracy bonus increases to \plus2.
-\rank{5} You also reroll any \glossterm{miss chances}, such as when attacking \glossterm{invisible} creatures, and take the better result.
+\rank{5} The accuracy bonus increases to \plus3.
 \rank{7} The accuracy bonus increases to \plus4.
 \parhead{Lists} Esoteric, Martial, Primal, Trick, Wild
 \end{freeability}
@@ -94,27 +94,9 @@ If the target attacked you earlier in the current round, you gain a \plus1 bonus
 
 \rankline
 \rank{3} The damage bonus increases to \plus2d.
-\rank{5} You also gain the bonuses if the target attacked you in the previous round.
-\rank{7} The damage bonus increases to \plus4d.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The damage bonus increases to \plus3d.
 \parhead{Lists} Martial, Primal, Trick
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{maneuver:Daunting Blow}{}}\label{maneuver:Daunting Blow}
-\hypertarget{maneuver:Daunting Blow}{}
-\begin{freeability}[Rank 1]{Daunting Blow}[\glossterm{Emotion}]
-
-Make a \glossterm{strike} with a \minus2d penalty to damage.
-If the attack result hits the target's Mental defense,
-it is \glossterm{shaken} by you as a \glossterm{condition}.
-
-\rankline
-\rank{3} On a \glossterm{critical hit}, the target is \glossterm{panicked} instead of shaken.
-\rank{5} The target is \glossterm{frightened} instead of shaken.
-\rank{7} The target is panicked instead of frightened.
-\parhead{Lists} Esoteric, Martial, Primal, Trick
 \end{freeability}
 \vspace{0.25em}
 
@@ -167,9 +149,9 @@ Make an attack vs. Mental against all enemies within a \areasmall radius from yo
 \hit Each target is \glossterm{shaken} by you as a \glossterm{condition}.
 
 \rankline
-\rank{3} The area increases to a \areamed radius from you.
-\rank{5} Each target is \glossterm{frightened} instead of shaken.
-\rank{7} The area increases to a \areahuge radius from you.
+\rank{3} The area increases to a \areamed radius.
+\rank{5} The area increases to a \arealarge radius.
+\rank{7} The area increases to a \areahuge radius.
 \parhead{Lists} Primal
 \end{freeability}
 \vspace{0.25em}
@@ -205,6 +187,23 @@ If the target is using a \glossterm{Focus} ability, the strike deals double dama
 \rank{5} The damage penalty is removed.
 \rank{7} The accuracy bonus increases to \plus3.
 \parhead{Lists} Esoteric, Martial, Primal, Trick, Wild
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{maneuver:Fearsome Blow}{}}\label{maneuver:Fearsome Blow}
+\hypertarget{maneuver:Fearsome Blow}{}
+\begin{freeability}[Rank 3]{Fearsome Blow}[\glossterm{Emotion}]
+
+Make a \glossterm{strike} with a \minus2d penalty to damage.
+If the attack result hits the target's Mental defense,
+it is \glossterm{shaken} by you as a \glossterm{condition}.
+
+\rankline
+\rank{5} On a \glossterm{critical hit}, the target is \glossterm{panicked} instead of shaken.
+\rank{7} On a hit, the target is \glossterm{frightened} instead of shaken.
+\parhead{Lists} Esoteric, Martial, Primal, Trick
 \end{freeability}
 \vspace{0.25em}
 
@@ -263,16 +262,15 @@ If you use this ability during the \glossterm{action phase}, you can also make a
 
 \lowercase{\hypertarget{maneuver:Hamstring}{}}\label{maneuver:Hamstring}
 \hypertarget{maneuver:Hamstring}{}
-\begin{freeability}[Rank 1]{Hamstring}[]
+\begin{freeability}[Rank 3]{Hamstring}[]
 
 Make a \glossterm{strike} with a \minus2d penalty to damage.
 If the attack result hits the target's Fortitude defense,
 it is \glossterm{slowed} as a \glossterm{condition}.
 
 \rankline
-\rank{3} The target is \glossterm{decelerated} instead of slowed.
-\rank{5} The target is \glossterm{immobilized} instead of decelerated.
-\rank{7} The damage penalty is removed.
+\rank{5} On a \glossterm{critical hit}, the target is \glossterm{decelerated} instead of slowed.
+\rank{7} This condition cannot be removed until the target takes a \glossterm{short rest}.
 \parhead{Lists} Esoteric, Trick, Wild
 \end{freeability}
 \vspace{0.25em}
@@ -281,16 +279,15 @@ it is \glossterm{slowed} as a \glossterm{condition}.
 
 \lowercase{\hypertarget{maneuver:Head Shot}{}}\label{maneuver:Head Shot}
 \hypertarget{maneuver:Head Shot}{}
-\begin{freeability}[Rank 1]{Head Shot}[\glossterm{Emotion}]
+\begin{freeability}[Rank 3]{Head Shot}[\glossterm{Emotion}]
 
 Make a \glossterm{strike} with a \minus2d penalty to damage.
 If the attack result hits the target's Mental defense,
 it is \glossterm{dazed} as a \glossterm{condition}.
 
 \rankline
-\rank{3} On a \glossterm{critical hit}, the target is also \glossterm{confused}.
-\rank{5} The target is \glossterm{confused} and dazed as part of the same condition.
-\rank{7} The target is \glossterm{stunned} instead of dazed and confused.
+\rank{5} On a \glossterm{critical hit}, the target is also \glossterm{confused} as part of the same condition.
+\rank{7} On a hit, the target is \glossterm{stunned} instead of dazed.
 \parhead{Lists} Esoteric, Trick
 \end{freeability}
 \vspace{0.25em}
@@ -344,7 +341,7 @@ You can make a melee \glossterm{strike} from any location you occupy during the 
 
 \rankline
 \rank{3} You gain a \plus1d bonus to damage with the strike if you attack while above the target's space.
-\rank{5} If you hit another creature with the strike that is of your size category or larger, you take no falling damage from the leap.
+\rank{5} The damage bonus increases to \plus2d.
 \rank{7} The damage bonus increases to \plus3d.
 \parhead{Lists} Esoteric, Primal, Wild
 \end{freeability}
@@ -354,16 +351,15 @@ You can make a melee \glossterm{strike} from any location you occupy during the 
 
 \lowercase{\hypertarget{maneuver:Liver Shot}{}}\label{maneuver:Liver Shot}
 \hypertarget{maneuver:Liver Shot}{}
-\begin{freeability}[Rank 1]{Liver Shot}[]
+\begin{freeability}[Rank 3]{Liver Shot}[]
 
 Make a \glossterm{strike} with a \minus2d penalty to damage.
 If the attack result hits the target's Fortitude defense,
 it is \glossterm{sickened} as a \glossterm{condition}.
 
 \rankline
-\rank{3} On a \glossterm{critical hit}, the target is is \glossterm{paralyzed} instead of sickened.
-\rank{5} The target is \glossterm{nauseated} instead of sickened.
-\rank{7} The target is \glossterm{paralyzed} instead of nauseated.
+\rank{5} On a \glossterm{critical hit}, the target is is \glossterm{paralyzed} instead of sickened.
+\rank{7} On a hit, the target is \glossterm{nauseated} instead of sickened.
 \parhead{Lists} Esoteric, Martial, Primal, Trick, Wild
 \end{freeability}
 \vspace{0.25em}
@@ -382,6 +378,22 @@ The attack is made against the target's Reflex defense instead of its Armor defe
 \rank{5} If you deal damage with the strike, the target takes a \minus2 penalty to Armor defense as a \glossterm{condition}.
 \rank{7} The damage bonus increases to \plus3d.
 \parhead{Lists} Esoteric, Martial, Trick, Wild
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{maneuver:Plunging Strike}{}}\label{maneuver:Plunging Strike}
+\hypertarget{maneuver:Plunging Strike}{}
+\begin{freeability}[Rank 1]{Plunging Strike}[]
+
+Make a \glossterm{strike}
+
+\rankline
+\rank{3} rank
+\rank{5} rank
+\rank{7} rank
+\parhead{Lists}
 \end{freeability}
 \vspace{0.25em}
 
@@ -546,16 +558,15 @@ You can only use this ability once between \glossterm{short rests}.
 
 \lowercase{\hypertarget{maneuver:Shield Slam}{}}\label{maneuver:Shield Slam}
 \hypertarget{maneuver:Shield Slam}{}
-\begin{freeability}[Rank 1]{Shield Slam}[]
+\begin{freeability}[Rank 3]{Shield Slam}[]
 
 Make a strike using a shield.
 If the attack result hits the target's Fortitude defense,
 it is \glossterm{dazed} as a \glossterm{condition}.
 
 \rankline
-\rank{3} On a \glossterm{critical hit}, the target is also \glossterm{confused}.
-\rank{5} The target is \glossterm{confused} and dazed as part of the same condition.
-\rank{7} The target is \glossterm{stunned} instead of dazed and confused.
+\rank{5} On a \glossterm{critical hit}, the target is also \glossterm{confused} as part of the same \glossterm{condition}.
+\rank{7} On a hit, the target is \glossterm{stunned} instead of dazed.
 \parhead{Lists} Martial
 \end{freeability}
 \vspace{0.25em}
@@ -627,6 +638,22 @@ You take a \minus1 penalty to \glossterm{accuracy} with the attack.
 \rank{5} The area increases to \arealarge.
 \rank{7} The damage bonus increases to \plus3d.
 \parhead{Lists} Primal
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{maneuver:Unerring Strike}{}}\label{maneuver:Unerring Strike}
+\hypertarget{maneuver:Unerring Strike}{}
+\begin{freeability}[Rank 3]{Unerring Strike}[]
+
+Make a \glossterm{strike}.
+You can reroll any \glossterm{miss chances}, such as when attacking \glossterm{invisible} creatures, and take the better result.
+
+\rankline
+\rank{5} You ignore any 20\% miss chance effects with the strike.
+\rank{7} You ignore all miss chance effects with the strike.
+\parhead{Lists} Esoteric, Martial
 \end{freeability}
 \vspace{0.25em}
 

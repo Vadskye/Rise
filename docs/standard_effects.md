@@ -41,6 +41,7 @@ In general, +1 accuracy = +1 damage. However, there are exceptions:
   * Damage/condition effects should generally have accuracy bonuses instead of damage bonuses
 
 ## Condition ranks
+Note: This is duplicated in the Metacaster feat.
 
 * Rank 0
   * Generally do relatively little
@@ -56,7 +57,7 @@ In general, +1 accuracy = +1 damage. However, there are exceptions:
   * List: decelerated, confused, blinded, disoriented, ignited, immobilized, panicked
 * Rank 4
   * Generally cause complete action denial
-  * List: paralyzed, stunned
+  * List: Asleep, paralyzed
 
 ## Damage type modifiers
 
@@ -76,7 +77,6 @@ condition".
     * Take half damage
   * Single-target:
     * Deal std +1d/+1a in std range
-    * Deal std -2d in std range and apply r1 condition
     * Deal conditional std +2d/+2a in std range
     * Heal std +1d in std range
     * r1 condition with r3 crit-only condition in std range
@@ -114,7 +114,7 @@ Rank 2 spell or maneuver / level 4 feat ability:
 Rank 3 spell or maneuver:
 * Spells only:
   * Single-target:
-    * Deal std damage -1d and r1 condition in std range
+    * Deal std -2d in std range and apply r1 condition
     * Deal std in extreme range
     * r2 condition in std range
   * AOE:
@@ -139,7 +139,7 @@ Rank 4 spell or maneuver / level 10 feat ability:
 Rank 5 spell or maneuver / level 13 feat ability:
 * Spells only:
   * Single-target:
-    * Deal std damage and r1 condition in std range
+    * Deal std -1d in std range and apply r1 condition
     * r3 condition in close range
   * AOE:
     * Deal std to all within Huge/20 line from you
@@ -159,6 +159,7 @@ Rank 6 spell or maneuver / level 16 feat ability:
 Rank 7 spell or maneuver / level 19 feat ability:
 * Shared:
   * Single-target:
+    * Deal std in std range and apply r1 condition
   * AOE:
     * Deal std to all within Extreme/30 line from you
 

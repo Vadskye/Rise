@@ -28,16 +28,16 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Brace for Impact',
-        short_description='Take half damage',
+        short_description='Take half physical damage',
         effect_text="""
-            You take half damage from all attacks this round.
+            You take half damage from \\glossterm<physical> damage this round.
             This halving is applied before \\glossterm<resistances> and similar abilities.
         """,
         rank_upgrades={
-            # Alternate idea: bonuses against attackers
-            '3': 'You can also negate a condition that would be applied to you while this ability lasts.',
-            '5': 'This ability lasts until the end of the next round.',
-            '7': 'You are also immune to conditions while this ability lastss.',
+            # Alternate idea: bonuses against attackers or ignore conditions
+            '3': 'You also gain a +1 bonus to all defenses.',
+            '5': 'You also take half damage from \\glossterm<energy> damage this round.',
+            '7': 'The defense bonus increases to +2.',
         },
         tags=['Swift'],
         lists=['Martial', 'Primal', 'Wild', 'Esoteric'],
@@ -51,11 +51,27 @@ def generate_maneuvers():
         """,
         rank_upgrades={
             '3': 'The accuracy bonus increases to +2.',
-            '5': 'You also reroll any \\glossterm<miss chances>, such as when attacking \\glossterm<invisible> creatures, and take the better result.',
+            '5': 'The accuracy bonus increases to +3.',
             '7': 'The accuracy bonus increases to +4.',
         },
         tags=[],
         lists=['Martial', 'Primal', 'Trick', 'Wild', 'Esoteric'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Unerring Strike',
+        short_description='Make a strike that mitigates miss chances',
+        effect_text="""
+            Make a \\glossterm<strike>.
+            You can reroll any \\glossterm<miss chances>, such as when attacking \\glossterm<invisible> creatures, and take the better result.
+        """,
+        rank=3,
+        rank_upgrades={
+            '5': 'You ignore any 20\% miss chance effects with the strike.',
+            '7': 'You ignore all miss chance effects with the strike.',
+        },
+        tags=[],
+        lists=['Martial', 'Esoteric'],
     ))
 
     maneuvers.append(Maneuver(
@@ -67,25 +83,25 @@ def generate_maneuvers():
         """,
         rank_upgrades={
             '3': 'The damage bonus increases to +2d.',
-            '5': 'You also gain the bonuses if the target attacked you in the previous round.',
-            '7': 'The damage bonus increases to +4d.',
+            '5': 'The accuracy bonus increases to +2.',
+            '7': 'The damage bonus increases to +3d.',
         },
         tags=[],
         lists=['Primal', 'Martial', 'Trick'],
     ))
 
     maneuvers.append(Maneuver(
-        name='Daunting Blow',
+        name='Fearsome Blow',
         short_description='Make a strike that inflicts fear',
         effect_text="""
             Make a \\glossterm<strike> with a -2d penalty to damage.
             If the attack result hits the target's Mental defense,
                 it is \\glossterm<shaken> by you as a \\glossterm<condition>.
         """,
+        rank=3,
         rank_upgrades={
-            '3': 'On a \\glossterm<critical hit>, the target is \\glossterm<panicked> instead of shaken.',
-            '5': 'The target is \\glossterm<frightened> instead of shaken.',
-            '7': 'The target is panicked instead of frightened.',
+            '5': 'On a \\glossterm<critical hit>, the target is \\glossterm<panicked> instead of shaken.',
+            '7': 'On a hit, the target is \\glossterm<frightened> instead of shaken.',
         },
         tags=['Emotion'],
         lists=['Primal', 'Martial', 'Trick', 'Esoteric'],
@@ -99,9 +115,9 @@ def generate_maneuvers():
             \\hit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
         """,
         rank_upgrades={
-            '3': 'The area increases to a \\areamed radius from you.',
-            '5': 'Each target is \\glossterm<frightened> instead of shaken.',
-            '7': 'The area increases to a \\areahuge radius from you.',
+            '3': 'The area increases to a \\areamed radius.',
+            '5': 'The area increases to a \\arealarge radius.',
+            '7': 'The area increases to a \\areahuge radius.',
         },
         tags=['Emotion'],
         lists=['Primal'],
@@ -134,11 +150,26 @@ def generate_maneuvers():
         """,
         rank_upgrades={
             '3': "You gain a +1d bonus to damage with the strike if you attack while above the target's space.",
-            '5': 'If you hit another creature with the strike that is of your size category or larger, you take no falling damage from the leap.',
+            '5': 'The damage bonus increases to +2d.',
             '7': 'The damage bonus increases to +3d.',
         },
         tags=[],
         lists=['Primal', 'Wild', 'Esoteric'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Plunging Strike',
+        short_description='Fall on a target for massive damage',
+        effect_text="""
+            Make a \\glossterm<strike>
+        """,
+        rank_upgrades={
+            '3': 'rank',
+            '5': 'rank',
+            '7': 'rank',
+        },
+        tags=[],
+        lists=[],
     ))
 
     maneuvers.append(Maneuver(
@@ -149,10 +180,10 @@ def generate_maneuvers():
             If the attack result hits the target's Fortitude defense,
                 it is \\glossterm<sickened> as a \\glossterm<condition>.
         """,
+        rank=3,
         rank_upgrades={
-            '3': 'On a \\glossterm<critical hit>, the target is is \\glossterm<paralyzed> instead of sickened.',
-            '5': 'The target is \\glossterm<nauseated> instead of sickened.',
-            '7': 'The target is \\glossterm<paralyzed> instead of nauseated.',
+            '5': 'On a \\glossterm<critical hit>, the target is is \\glossterm<paralyzed> instead of sickened.',
+            '7': 'On a hit, the target is \\glossterm<nauseated> instead of sickened.',
         },
         tags=[],
         lists=['Primal', 'Martial', 'Wild', 'Trick', 'Esoteric'],
@@ -349,10 +380,10 @@ def generate_maneuvers():
             If the attack result hits the target's Fortitude defense,
                 it is \\glossterm<slowed> as a \\glossterm<condition>.
         """,
+        rank=3,
         rank_upgrades={
-            '3': 'The target is \\glossterm<decelerated> instead of slowed.',
-            '5': 'The target is \\glossterm<immobilized> instead of decelerated.',
-            '7': 'The damage penalty is removed.',
+            '5': 'On a \\glossterm<critical hit>, the target is \\glossterm<decelerated> instead of slowed.',
+            '7': 'This condition cannot be removed until the target takes a \\glossterm<short rest>.',
         },
         tags=[],
         lists=['Wild', 'Trick', 'Esoteric'],
@@ -384,10 +415,10 @@ def generate_maneuvers():
             If the attack result hits the target's Mental defense,
                 it is \\glossterm<dazed> as a \\glossterm<condition>.
         """,
+        rank=3,
         rank_upgrades={
-            '3': 'On a \\glossterm<critical hit>, the target is also \\glossterm<confused>.',
-            '5': 'The target is \\glossterm<confused> and dazed as part of the same condition.',
-            '7': 'The target is \\glossterm<stunned> instead of dazed and confused.',
+            '5': 'On a \\glossterm<critical hit>, the target is also \\glossterm<confused> as part of the same condition.',
+            '7': 'On a hit, the target is \\glossterm<stunned> instead of dazed.',
         },
         tags=['Emotion'],
         lists=['Trick', 'Esoteric'],
@@ -505,10 +536,10 @@ def generate_maneuvers():
             If the attack result hits the target's Fortitude defense,
                 it is \\glossterm<dazed> as a \\glossterm<condition>.
         """,
+        rank=3,
         rank_upgrades={
-            '3': 'On a \\glossterm<critical hit>, the target is also \\glossterm<confused>.',
-            '5': 'The target is \\glossterm<confused> and dazed as part of the same condition.',
-            '7': 'The target is \\glossterm<stunned> instead of dazed and confused.',
+            '5': 'On a \\glossterm<critical hit>, the target is also \\glossterm<confused> as part of the same \\glossterm<condition>.',
+            '7': 'On a hit, the target is \\glossterm<stunned> instead of dazed.',
         },
         tags=[],
         lists=['Martial'],
