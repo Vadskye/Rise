@@ -324,6 +324,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Challenging Strike',
         short_description='Make a strike and draw attention',
+        target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a melee \\glossterm<strike> with a -2d penalty to damage.
             If the strike beats the target's Mental defense, it takes a -2 penalty to \\glossterm<accuracy> against creatures other than you as a \\glossterm<condition>.
@@ -341,6 +342,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Penetrating Strike',
         short_description='Make a strike against Reflex defense',
+        target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a \\glossterm<strike> with a piercing weapon.
             The attack is made against the target's Reflex defense instead of its Armor defense.
@@ -356,9 +358,10 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Rally the Troops',
-        short_description='Suppress conditions on allies',
+        short_description='Suppress and prevent conditions on allies',
+        target="You and your \\glossterm<allies> within a \\areamed radius from you",
         effect_text="""
-            You and your \\glossterm<allies> within a \\areamed radius from you are immune to \\glossterm<conditions> this round.
+            Each target is immune to \\glossterm<conditions> this round.
             In addition, each target can ignore any effects from one \\glossterm<condition> it is already affected by this round.
         """,
         rank_upgrades={
@@ -373,6 +376,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Hamstring',
         short_description='Make a strike that slows',
+        target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a \\glossterm<strike> with a -2d penalty to damage.
             If the attack result hits the target's Fortitude defense,
@@ -390,6 +394,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Hunting Strike',
         short_description='Make a strike and gain an accuracy bonus against the target',
+        target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a \\glossterm<strike> against a creature.
             After making the strike, you gain a +1 bonus to \\glossterm<accuracy> against the target with all attacks.
@@ -408,6 +413,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Head Shot',
         short_description='Make a strike that dazes',
+        target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a \\glossterm<strike> with a -2d penalty to damage.
             If the attack result hits the target's Mental defense,
@@ -425,6 +431,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Second Wind',
         short_description='Recover hit points',
+        target='Yourself',
         effect_text="""
             You regain a \\glossterm<hit point>.
             You can only use this ability once between \\glossterm<short rests>.
@@ -441,6 +448,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Distant Shot',
         short_description='Make a long-ranged strike',
+        target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a ranged \\glossterm<strike>.
             You reduce your penalties for \\glossterm<range increments> with the strike by 2.
@@ -457,6 +465,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Agonizing Strike',
         short_description='Make a strike that sickens with pain',
+        target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a \\glossterm<strike> with a -2d penalty to damage.
             If the attack result hits the target's Mental defense,
@@ -474,6 +483,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Deattunement Strike',
         short_description="Make a strike to break a target's \\glossterm<attunement>",
+        target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a \\glossterm<strike> with a -2d penalty to damage.
             If the attack result hits the target's Mental defense,
@@ -493,6 +503,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Spring Attack',
         short_description='Make a strike and continue moving',
+        target="As chosen \\glossterm<strike> (see text)",
         effect_text="""
             Move up to half your movement speed and make a melee \\glossterm<strike> with a -2d penalty to damage.
             If you use this ability during the \\glossterm<action phase>, you may use the other half of your movement during the \\glossterm<delayed action phase>.',
@@ -513,6 +524,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name="Wanderer's Strike",
         short_description='Make a strike and move',
+        target="As chosen \\glossterm<strike> (see text)",
         effect_text="""
             You can either move up to half your speed or make a \\glossterm<strike>.
             %TODO: wording
@@ -530,6 +542,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Shield Slam',
         short_description='Make a dazing strike with a shield',
+        target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a strike using a shield.
             If the attack result hits the target's Fortitude defense,
@@ -547,6 +560,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Quivering Palm',
         short_description='Make a nauseating strike with an unarmed attack',
+        target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a strike using an \\glossterm<unarmed attack>.
             If the attack result hits the target's Fortitude defense,
@@ -564,6 +578,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Feint',
         short_description='Make a weak attack to take an opponent off guard',
+        target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a melee \\glossterm<strike> with a -2d penalty to damage.
             If you hit, the target takes a -2 penalty to Armor defense until the end of the next round.
@@ -580,6 +595,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Reckless Strike',
         short_description='Lower defenses to make a powerful strike',
+        target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a melee \\glossterm<strike> with a +1 bonus to \\glossterm<accuracy> and a +1d bonus to damage.
             Until the end of the next round, you take a -2 penalty to all defenses.
@@ -596,6 +612,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Knockdown',
         short_description='Knock a foe prone with brute force',
+        target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a melee \\glossterm<strike> using a bludgeoning weapon with a -2d penalty to damage.
             If the attack result hits the target's Fortitude defense,
@@ -616,6 +633,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Defensive Strike',
         short_description='Make a careful strike without lowering your defenses',
+        target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a melee \\glossterm<strike> with a -2d penalty to damage.
             In addition, you gain a +2 bonus to Armor defense until the end of the round.
@@ -633,6 +651,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Quickdraw',
         short_description='Rapidly draw a new weapon and attack with it',
+        target="As chosen \\glossterm<strike>",
         effect_text="""
             You draw a weapon into a single free hand and make a \\glossterm<strike> with the weapon.
         """,
@@ -649,6 +668,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Spellbane Strike',
         short_description='Attack vulnerabilities in focusing foes',
+        target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a melee \\glossterm<strike> with a -1d penalty to damage.
             If the target is using a \\glossterm<Focus> ability during the current phase, the strike deals double damage.
@@ -665,6 +685,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Focused Strike',
         short_description='You concentrate to strike a critical blow.',
+        target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a melee \\glossterm<strike> with a \\minus1d penalty to damage.
             The attack roll \\glossterm<explodes> regardless of what you roll.
