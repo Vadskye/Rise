@@ -383,13 +383,13 @@ def generate_weapons():
         description="""
             This weapon is transluscent and has no physical presence for anyone except you.
             It has no effect on objects or constructs, and creatures do not feel any pain or even notice attacks from it.
-            Attacks with this weapon deal \\glossterm<untyped damage> and ignore \\glossterm<resistances>, but the damage is delayed instead of being dealt immediately.
+            Attacks with this weapon deal \\glossterm<energy> damage and ignore \\glossterm<resistances>, but the damage is delayed instead of being dealt immediately.
             Damage that would be dealt by the weapon can be delayed indefinitely.
             While the damage is delayed, it cannot be removed by any means short of the destruction of this weapon or the creature's death.
 
             As a \\glossterm<standard action>, you can cut yourself with this weapon to activate it.
             This deals no damage to you.
-            When you do, each creature hit with the weapon takes \\glossterm<untyped damage> equal to the delayed damage built up by the weapon for that target.
+            When you do, each creature hit with the weapon takes \\glossterm<energy> damage equal to the total delayed damage built up by the weapon for that target.
             The target applies its \\glossterm<resistances> as normal against this damage.
             Creatures farther than one mile away from the weapon are unaffected by this damage.
             This ability expends all delayed damage built up by the weapon for all targets, including targets farther than one mile from the weapon.
