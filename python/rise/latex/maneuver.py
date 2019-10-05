@@ -11,7 +11,7 @@ class Maneuver(object):
             rank_upgrades,
             short_description,
             tags,
-            target=None,
+            target,
             extra_text=None,
             rank=None,
     ):
