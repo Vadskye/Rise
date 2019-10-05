@@ -40,6 +40,23 @@ In general, +1 accuracy = +1 damage. However, there are exceptions:
   * Damage/condition effects should generally have damage penalties instead of accuracy penalties
   * Damage/condition effects should generally have accuracy bonuses instead of damage bonuses
 
+## Focus spells vs maneuvers
+
+Maneuvers pay a two-rank penalty in their effects to make up for the fact that they don't have the
+Focus tag.
+Spells cost +4 levels to remove the Focus tag, because if they were able to remove the Focus tag at
+no relative level cost then there would be no reason to have maneuvers.
+
+## Non-choice effects
+
+Non-choice effects gain a two-rank bonus to their effects relative to choice-based effects like
+spells and maneuvers.
+This represents the increased power granted to highly specialized characters; a character with a
+"Healer" archetype should have access to more powerful healing effects than a spellcaster who
+invests an insight point or two into healing spells.
+Non-choice effects should generally not have the Focus tag, because the total +4 level difference
+could give access to powerful abilities dangerously early for dedicated characters.
+
 ## Condition ranks
 Note: This is duplicated in the Metacaster feat.
 
@@ -65,133 +82,136 @@ Note: This is duplicated in the Metacaster feat.
 * Energy damage: +0d
 * Untyped damage: -1d
 
-## Stock spell effects
+## Stock effects
 
-For spell effects that only deal damage, "deal standard damage" can be replaced with "inflict r1
+For effects that only deal damage, "deal standard damage" can be replaced with "inflict r1
 condition".
 
-1st level spell / rank 1 maneuver / level 1 feat ability:
-* Shared:
-  * Self-only:
-    * Remove condition
-    * Take half damage
-  * Single-target:
-    * Deal std +1d/+1a in std range
-    * Deal conditional std +2d/+2a in std range
-    * Heal std +1d in std range
-    * r1 condition with r3 crit-only condition in std range
-  * AOE:
-    * Heal std damage -2d to all within Med radius from you
-* Spells only:
-  * Single-target:
-    * Deal std in long range
-  * AOE:
-    * Deal std to all within Med/10 line from you
-    * Deal std to all within Med cone from you
-    * Deal std to enemies within Small radius from you
-* Maneuvers only:
-  * AOE:
-    * Deal std to 2 in reach
-    * Deal std to all within Med/5 line
-    * Deal std -1a to any number in reach
-    * Deal std -1a/-1d to all within Med cone or Med/10 line
+Rank 1 non-Focus:
+* AOE:
+  * Deal std to all in Small cone
+  * Deal std to all within Small/5 line
+  * Deal std to 2 in reach
+  * Deal std -1a to any number in reach
+  * Deal std -1a/-1d to all within Med cone or Med/10 line
 
-Rank 2 spell or maneuver / level 4 feat ability:
+Rank 2 non-Focus:
+* AOE:
+  * Deal std to all within Med/5 line
+  * Deal std to all within Small radius from you?
+
+Rank 1 Focus/non-choice; Rank 3 non-Focus:
+* Self-only:
+  * Remove condition
+  * Take half damage
+* Single-target:
+  * Deal std +1d/+1a in std range
+  * Deal conditional std +2d/+2a in std range
+  * Heal std +1d in std range
+  * r1 condition with r3 crit-only condition in std range
+  * Deal std in long range
+* AOE:
+  * Heal std damage -2d to all within Med radius from you
+  * Deal std to all within Med/10 line from you
+  * Deal std to all within Med cone from you
+  * Deal std to enemies within Small radius from you
+
+Rank 1 Focus/non-choice; Rank 3 non-Focus:
 * Special notes
-  * No actual rank 2 spells or maneuvers should exist, because they are insufficiently different
-    from rank 1 abilities. This is more of an abstract concept that guides leveling.
+* No actual rank 2 spells or maneuvers should exist, because they are insufficiently different
+  from rank 1 abilities. This is more of an abstract concept that guides leveling.
 * Shared:
-  * Single-target:
-    * Remove condition in close range
-    * r2 condition in close range
+* Single-target:
+  * Remove condition in close range
+  * r2 condition in close range
 * Spells only:
-  * Single-target:
-    * Deal std +2d to 1 in melee range
-  * AOE:
-    * Deal std to all within Large/10 line from you
-    * Deal std to all within Med/5 line entirely within Med range
+* Single-target:
+  * Deal std +2d to 1 in melee range
+* AOE:
+  * Deal std to all within Large/10 line from you
+  * Deal std to all within Med/5 line entirely within Med range
 
-Rank 3 spell or maneuver:
+Rank 3 Focus/non-choice; Rank 5 non-Focus:
 * Spells only:
-  * Single-target:
-    * Deal std -2d in std range and apply r1 condition
-    * Deal std in extreme range
-    * r2 condition in std range
-  * AOE:
-    * Deal std to all within Large/15 line from you
-    * Deal std to all within Large cone from you
-    * Deal std to all within Small radius in Close range
-    * Deal std to enemies within Med radius from you
+* Single-target:
+  * Deal std -2d in std range and apply r1 condition
+  * Deal std in extreme range
+  * r2 condition in std range
+* AOE:
+  * Deal std to all within Large/15 line from you
+  * Deal std to all within Large cone from you
+  * Deal std to all within Small radius in Close range
+  * Deal std to enemies within Med radius from you
 
-Rank 4 spell or maneuver / level 10 feat ability:
+Rank 4 Focus/non-choice; Rank 6 non-Focus:
 * Shared:
-  * Single-target:
-    * Deal std damage -1d and r1 condition with r3 crit-only condition in std range
-    * r2 condition with r4 crit-only condition in std range
-  * AOE:
-    * Remove condition from non-self in Med radius from you
-    * Deal std to all within Huge/15 line from you
-    * Deal std to all within Large/10 line entirely within Med range
-    * Deal std to all within Small radius in Med range
+* Single-target:
+  * Deal std damage -1d and r1 condition with r3 crit-only condition in std range
+  * r2 condition with r4 crit-only condition in std range
+* AOE:
+  * Remove condition from non-self in Med radius from you
+  * Deal std to all within Huge/15 line from you
+  * Deal std to all within Large/10 line entirely within Med range
+  * Deal std to all within Small radius in Med range
 * Maneuvers only:
-  * AOE: see 3rd level spell AOE
+* AOE: see 3rd level spell AOE
 
-Rank 5 spell or maneuver / level 13 feat ability:
+Rank 5 Focus/non-choice; Rank 7 non-Focus:
 * Spells only:
-  * Single-target:
-    * Deal std -1d in std range and apply r1 condition
-    * r3 condition in close range
-  * AOE:
-    * Deal std to all within Huge/20 line from you
-    * Deal std to all within Huge cone from you
-    * Deal std to enemies within Large radius from you
+* Single-target:
+  * Deal std -1d in std range and apply r1 condition
+  * r3 condition in close range
+* AOE:
+  * Deal std to all within Huge/20 line from you
+  * Deal std to all within Huge cone from you
+  * Deal std to enemies within Large radius from you
 
-Rank 6 spell or maneuver / level 16 feat ability:
+Rank 6 Focus/non-choice; Rank 8 non-Focus:
 * Shared:
-  * Single-target:
-    * Deal std damage -1d and r2 condition in std range
-    * r3 condition in std range
-  * AOE:
-    * Deal std to all within Huge radius from you
-    * Deal std to all within Med radius in Med range
-    * Deal std to all within Extreme/20 line from you
+* Single-target:
+  * Deal std damage -1d and r2 condition in std range
+  * r3 condition in std range
+* AOE:
+  * Deal std to all within Huge radius from you
+  * Deal std to all within Med radius in Med range
+  * Deal std to all within Extreme/20 line from you
 
-Rank 7 spell or maneuver / level 19 feat ability:
+Rank 7 Focus:
 * Shared:
-  * Single-target:
-    * Deal std in std range and apply r1 condition
-  * AOE:
-    * Deal std to all within Extreme/30 line from you
+* Single-target:
+  * Deal std in std range and apply r1 condition
+* AOE:
+  * Deal std to all within Extreme/30 line from you
 
-Rank 8 spell or maneuver / level 19 feat ability:
+Rank 8 Focus:
 * Shared:
-  * Single-target:
-    * r4 condition in close range
-    * Deal std and r2 condition in std range
+* Single-target:
+  * r4 condition in close range
+  * Deal std and r2 condition in std range
 
 ## Standard level modifiers
 
 * Real costs
-  * +1.5 levels: +1a/+1d
+* +1.5 levels: +1a/+1d
 * Shared:
-  * +0 levels: trade -1a/-1d for minor benefit
-  * +2 levels: +1a/+1d with other minor buff
-  * +2 levels: +1 area size
-  * +2 levels: +1 rank to condition
-  * +2 level: Add additional +0r condition removed at the same time as existing condition
+* +0 levels: trade -1a/-1d for minor benefit
+* +2 levels: +1a/+1d with other minor buff
+* +2 levels: +1 area size
+* +2 levels: +1 rank to condition
+* +2 level: Add additional +0r condition removed at the same time as existing condition
 * Spells only:
-  * +1 level: Add crit-only +2r condition that replaces existing condition
-  * +1 level: Add crit-only +1r condition in addition to existing condition
-  * +1 level: selective targets instead of all targets
-  * +1 level: remove -1 accuracy or damage penalty
-  * +1 level: +1 range increment
-  * +1 level: Increase line width by 5'
-  * +1 level: Add additional -1r condition removed at the same time as existing condition
-  * +1 level: Add Sustain (standard) to instant damaging effect
-  * +2 levels: Add Sustain (minor) to instant damaging effect
-  * +3 levels: +2a/+2d
-  * +3 levels: Add r1 condition to damaging effect
+* +1 level: Add crit-only +2r condition that replaces existing condition
+* +1 level: Add crit-only +1r condition in addition to existing condition
+* +1 level: selective targets instead of all targets
+* +1 level: remove -1 accuracy or damage penalty
+* +1 level: +1 range increment
+* +1 level: Increase line width by 5'
+* +1 level: Add additional -1r condition removed at the same time as existing condition
+* +1 level: Add Sustain (standard) to instant damaging effect
+* +2 levels: Add Sustain (minor) to instant damaging effect
+* +3 levels: +2a/+2d
+* +3 levels: Add r1 condition to damaging effect
 * Maneuvers only:
-  * Assuming unrelated ability at +2 ranks:
-    * +4 ranks: +2a/+2d
-    * +4 ranks: Add r1 condition to damaging effect
+* Assuming unrelated ability at +2 ranks:
+  * +4 ranks: +2a/+2d
+  * +4 ranks: Add r1 condition to damaging effect
