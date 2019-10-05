@@ -76,12 +76,6 @@ Note: This is duplicated in the Metacaster feat.
   * Generally cause complete action denial
   * List: Asleep, paralyzed
 
-## Damage type modifiers
-
-* Physical damage: +0d
-* Energy damage: +0d
-* Untyped damage: -1d
-
 ## Stock effects
 
 For effects that only deal damage, "deal standard damage" can be replaced with "inflict r1
