@@ -6,7 +6,7 @@
 
     \subsection{Weapon Groups}\label{Weapon Groups}
 
-        Weapons are organized into thematically related categories called weapon groups. They are described in \trefnp{Weapon Groups}. For example, all axes belong to the ``axes'' weapon group. Some weapons can be found in multiple weapon groups. For example, a dagger is a simple weapon, a light blade, and a thrown weapon.
+        Weapons are organized into thematically related categories called weapon groups. They are described in \trefnp{Weapon Groups}. For example, all axes belong to the ``axes'' weapon group. Some weapons can be found in multiple weapon groups. For example, a dagger is a simple weapon, a blade, and a thrown weapon.
 
         \parhead{Exotic Weapons}\label{Exotic Weapons} Some weapons are rare and have unusual fighting styles.
         These weapons are called exotic weapons.
@@ -16,21 +16,20 @@
         \begin{dtable!*}
             \lcaption{Weapon Groups}
             \begin{dtabularx}{\textwidth}{l >{\lcol}X >{\lcol}X}
-                \tb{Group} & \tb{Weapons} & \tb{Exotic Weapons} \tableheaderrule
-                Armor weapons     & Standard shield (and spiked), spiked armor                           &                            \\
-                Axes              & Battleaxe, greataxe, handaxe, throwing axe                           & Double axe, dwarven waraxe \\
-                Blades, heavy     & Falchion, greatsword, longsword, scimitar                            & Katana, two-bladed sword   \\
-                Blades, light     & Dagger, rapier, short sword                                          & Kukri                      \\
-                Bows              & Longbow, shortbow                                                    &                            \\
-                Club-like weapons & Club, greatclub, mace, morningstar, sap                              &                            \\
-                Crossbows         & Hand crossbow, heavy crossbow, light crossbow                        & Repeating crossbows        \\
-                Flexible Weapons  & Flail, heavy flail, whip                                             &                            \\
-                Headed weapons    & Greathammer, Heavy pick, light hammer, light pick, sickle, warhammer &                            \\
-                Monk weapons      & Kama, nunchaku, quarterstaff, sai, shuriken, siangham                &                            \\
-                Polearms          & Glaive, guisarme, halberd, ranseur, scythe                           &                            \\
-                Simple weapons    & Club, dagger, light crossbow, quarterstaff, unarmed strike           &                            \\
-                Spears            & Javelin, lance, longspear, shortspear, spear                         & Greatspear, pike           \\
-                Thrown weapons    & Dagger, dart, handaxe, javelin, light hammer, shuriken, sling        & Bolas, net                 \\
+                \tb{Group}        & \tb{Weapons}                                                         & \tb{Exotic Weapons} \tableheaderrule
+                Armor weapons     & Standard shield (and spiked), spiked armor                           &                                 \\
+                Axes              & Battleaxe, greataxe, handaxe, throwing axe                           & Double axe, dwarven waraxe      \\
+                Blades            & Greatsword, longsword, rapier, short sword, dagger                   & Katana, kukri, two-bladed sword \\
+                Bows              & Longbow, shortbow                                                    &                                 \\
+                Club-like weapons & Club, greatclub, mace, morningstar, sap                              &                                 \\
+                Crossbows         & Hand crossbow, heavy crossbow, light crossbow                        & Repeating crossbows             \\
+                Flexible Weapons  & Flail, heavy flail, whip                                             &                                 \\
+                Headed weapons    & Greathammer, Heavy pick, light hammer, light pick, sickle, warhammer &                                 \\
+                Monk weapons      & Kama, nunchaku, quarterstaff, sai, shuriken, siangham                &                                 \\
+                Polearms          & Glaive, guisarme, halberd, ranseur, scythe                           &                                 \\
+                Simple weapons    & Club, dagger, light crossbow, quarterstaff, unarmed strike           &                                 \\
+                Spears            & Javelin, lance, longspear, shortspear, spear                         & Greatspear, pike                \\
+                Thrown weapons    & Dagger, dart, handaxe, javelin, light hammer, shuriken, sling        & Bolas, net                      \\
             \end{dtabularx}
         \end{dtable!*}
 
@@ -126,105 +125,101 @@
         \begin{longtabuwrapper}
             \begin{longtabu}{p{12em} c c >{\ccol}p{10em} c c >{\ccol}X}
                 \lcaption{Weapons}\\
-                \tb{Name}                              & \tb{Usage Class} & \tb{Damage\fn{1}} & \tb{Damage Type\fn{2}}   & \tb{Cost} & \tb{Weight\fn{3}} & \tb{Special}                 \\
-                Armor weapons\label{Armor Weapons}     &                  &                   &                          &           &                   &                              \\
-                \tind Shield, standard\fn{4}           & Medium           & \minus2d          & Bludgeoning              & special   & special           & Forceful                     \\
-                \tind Spiked armor\fn{4}               & Medium           & \minus1d          & Piercing                 & special   & special           & Grappling                    \\
-                \tind Spiked shield, standard\fn{4}    & Medium           & \minus1d          & Piercing                 & special   & special           & Forceful                     \\
+                \tb{Name}                              & \tb{Usage Class} & \tb{Accuracy} & \tb{Damage\fn{1}} & \tb{Damage Type\fn{2}}   & \tb{Cost} & \tb{Weight\fn{3}} & \tb{Special}                 \\
+                Armor weapons\label{Armor Weapons}     &                 &         &                   &                          &         &         &                              \\
+                \tind Shield, standard\fn{4}           & Medium          & \plus0  & \minus2d          & Bludgeoning              & special & special & Forceful                     \\
+                \tind Spiked armor\fn{4}               & Medium          & \plus0  & \minus1d          & Piercing                 & special & special & Grappling                    \\
+                \tind Spiked shield, standard\fn{4}    & Medium          & \plus0  & \minus1d          & Piercing                 & special & special & Forceful                     \\
 
-                Axes                                   &                  &                   &                          &           &                   &                              \\
-                \tind Axe, throwing                    & Light            & \minus1d          & Slashing                 & 8 gp      & 2 lb.             & Throwing (10 ft.)            \\
-                \tind Battleaxe                        & Medium           & \plus0d           & Slashing                 & 10 gp     & 6 lb.             & \tdash                       \\
-                \tind Greataxe                         & Heavy            & \plus1d           & Slashing                 & 20 gp     & 12 lb.            & \tdash                       \\
-                \tind Handaxe                          & Light            & \minus1d          & Slashing                 & 6 gp      & 3 lb.             & \tdash                       \\
+                Axes                                   &                 &         &                   &                          &         &         &                              \\
+                \tind Battleaxe                        & Medium          & \plus0  & \plus0d           & Slashing                 & 10 gp   & 6 lb.   & \tdash                       \\
+                \tind Greataxe                         & Heavy           & \plus0  & \plus1d           & Slashing                 & 20 gp   & 12 lb.  & \tdash                       \\
+                \tind Handaxe                          & Light           & \plus1  & \minus1d          & Slashing                 & 8 gp    & 2 lb.   & Throwing (10 ft.)            \\
 
-                Blades, heavy                          &                  &                   &                          &           &                   &                              \\
-                \tind Falchion                         & Heavy            & \plus1d           & Slashing                 & 50 gp     & 8 lb.             & \tdash                       \\
-                \tind Greatsword                       & Heavy            & \plus1d           & Slashing                 & 25 gp     & 8 lb.             & \tdash                       \\
-                \tind Longsword                        & Medium           & \plus0d           & Slashing                 & 15 gp     & 4 lb.             & \tdash                       \\
-                \tind Scimitar                         & Medium           & \plus0d           & Slashing                 & 15 gp     & 4 lb.             & \tdash                       \\
+                Blades                                 &                 &         &                   &                          &         &         &                              \\
+                \tind Greatsword                       & Heavy           & \plus0  & \plus1d           & Slashing                 & 25 gp   & 8 lb.   & \tdash                       \\
+                \tind Longsword                        & Medium          & \plus0  & \plus0d           & Slashing                 & 15 gp   & 4 lb.   & \tdash                       \\
+                \tind Dagger                           & Light           & \plus2  & \minus2d          & Piercing or slashing     & 2 gp    & 1 lb.   & Compact, Throwing (10 ft.)   \\
+                \tind Rapier                           & Medium          & \plus1  & \minus1d          & Piercing                 & 20 gp   & 2 lb.   & Disarming                    \\
+                \tind Short sword                      & Light           & \plus1  & \minus1d          & Piercing or slashing     & 10 gp   & 2 lb.   & \tdash                       \\
 
-                Blades, light                          &                  &                   &                          &           &                   &                              \\
-                \tind Dagger                           & Light            & \minus2d          & Piercing or slashing     & 2 gp      & 1 lb.             & Compact, Throwing (10 ft.)   \\
-                \tind Rapier\fn{4}                     & Light            & \minus1d          & Piercing                 & 20 gp     & 2 lb.             & Disarming                    \\
-                \tind Sword, short                     & Light            & \minus1d          & Piercing or slashing     & 10 gp     & 2 lb.             & \tdash                       \\
+                Bows                                   &                 &         &                   &                          &         &         &                              \\
+                \tind Longbow\fn{4}                    & Heavy (Ranged)  & \plus0  & \plus0            & \tdash                   & 40 gp   & 3 lb.   & Projectile (100 ft.)         \\
+                \tind Shortbow\fn{4}                   & Medium (Ranged) & \plus0  & \plus0            & \tdash                   & 30 gp   & 2 lb.   & Projectile (50 ft.)          \\
+                \tind Arrows (20)                      & \tdash          & \plus0  & \plus0            & Piercing                 & 1 gp    & 3 lb.   & Ammunition                   \\
+                \tind Blunted arrows (20)              & \tdash          & \plus0  & \minus1d          & Bludgeoning              & 5 gp    & 3 lb.   & Ammunition, Subdual          \\
+                \tind Fire arrows (20)\fn{4}           & \tdash          & \minus1 & 0                 & Piercing and fire        & 100 gp  & 3 lb.   & Ammunition                   \\
 
-                Bows                                   &                  &                   &                          &           &                   &                              \\
-                \tind Longbow\fn{4}                    & Heavy (Ranged)   & \plus0d           & Piercing                 & 40 gp     & 3 lb.             & Projectile (100 ft.)         \\
-                \tind Shortbow\fn{4}                   & Medium (Ranged)  & \plus0d           & Piercing                 & 30 gp     & 2 lb.             & Projectile (50 ft.)          \\
-                \tind Arrows (20)                      & \tdash           & \tdash            & \tdash                   & 1 gp      & 3 lb.             & Ammunition                   \\
+                Club-like weapons                      &                 &         &                   &                          &         &         &                              \\
+                \tind Club                             & Medium          & \minus1 & \plus0d           & Bludgeoning              & \tdash  & 3 lb.   & \tdash                       \\
+                \tind Greatclub                        & Heavy           & \minus1 & \plus1d           & Bludgeoning              & 5 gp    & 8 lb.   & \tdash                       \\
+                \tind Mace                             & Light           & \plus1  & \minus1d          & Bludgeoning              & 12 gp   & 4 lb.   & \tdash                       \\
+                \tind Morningstar                      & Medium          & \plus0  & \plus0d           & Bludgeoning and piercing & 8 gp    & 6 lb.   & \tdash                       \\
+                \tind Sap                              & Light           & \plus1  & \minus1d          & Bludgeoning              & 1 gp    & 2 lb.   & Subdual                      \\
 
-                Club-like weapons                      &                  &                   &                          &           &                   &                              \\
-                \tind Club                             & Medium           & \minus1d          & Bludgeoning              & \tdash    & 3 lb.             & \tdash                       \\
-                \tind Greatclub                        & Heavy            & \plus1d           & Bludgeoning              & 5 gp      & 8 lb.             & \tdash                       \\
-                \tind Mace                             & Light            & \minus1d          & Bludgeoning              & 12 gp     & 4 lb.             & \tdash                       \\
-                \tind Morningstar                      & Medium           & \plus0d           & Bludgeoning and piercing & 8 gp      & 6 lb.             & \tdash                       \\
-                \tind Sap                              & Light            & \minus1d          & Bludgeoning              & 1 gp      & 2 lb.             & Subdual                      \\
+                Crossbows                              &                 &         &                   &                          &         &         &                              \\
+                \tind Hand crossbow\fn{4}             & Light (Ranged)  & \plus0  & \minus1d          & Piercing                 & 100 gp  & 2 lb.   & Projectile (50 ft.)          \\
+                \tind Heavy crossbow\fn{4}            & Heavy (Ranged)  & \plus0  & \plus1d           & Piercing                 & 50 gp   & 8 lb.   & Projectile (100 ft.)         \\
+                \tind Light crossbow\fn{4}            & Medium (Ranged) & \plus0  & \plus0d           & Piercing                 & 40 gp   & 4 lb.   & Projectile (50 ft.)          \\
+                \tind Crossbow bolts (10)             & \tdash          & \plus0  & \plus0            & \tdash                   & 1 gp    & 1 lb.   & Ammunition                   \\
+                \tind Hand crossbow bolts (10)        & \tdash          & \plus0  & \plus0            & \tdash                   & 2 gp    & 1/2 lb. & Ammunition                   \\
 
-                Crossbows                              &                  &                   &                          &           &                   &                              \\
-                \tind Crossbow, hand\fn{4}             & Light (Ranged)   & \minus1d          & Piercing                 & 100 gp    & 2 lb.             & Projectile (50 ft.)          \\
-                \tind Crossbow, heavy\fn{4}            & Heavy (Ranged)   & \plus1d           & Piercing                 & 50 gp     & 8 lb.             & Projectile (100 ft.)         \\
-                \tind Crossbow, light\fn{4}            & Medium (Ranged)  & \plus0d           & Piercing                 & 40 gp     & 4 lb.             & Projectile (50 ft.)          \\
-                \tind Bolts, crossbow (10)             & \tdash           & \tdash            & \tdash                   & 1 gp      & 1 lb.             & Ammunition                   \\
-                \tind Bolts, hand (10)                 & \tdash           & \tdash            & \tdash                   & 1 gp      & 1/2 lb.           & Ammunition                   \\
+                Flexible weapons                       &                 &         &                   &                          &         &         &                              \\
+                \tind Flail                            & Medium          & \minus1 & \plus0d           & Bludgeoning              & 8 gp    & 5 lb.   & Tripping                     \\
+                \tind Heavy flail                      & Heavy           & \minus1 & \plus1d           & Bludgeoning              & 15 gp   & 10 lb.  & Tripping                     \\
+                \tind Whip\fn{4}                       & Light           & \plus1  & \minus3d          & Slashing                 & 1 gp    & 2 lb.   & Disarming, Subdual, Tripping \\
 
-                Flexible weapons                       &                  &                   &                          &           &                   &                              \\
-                \tind Flail                            & Medium           & \plus0d           & Bludgeoning              & 8 gp      & 5 lb.             & Tripping                     \\
-                \tind Flail, heavy                     & Heavy            & \plus1d           & Bludgeoning              & 15 gp     & 10 lb.            & Tripping                     \\
-                \tind Whip\fn{4}                       & Light            & \minus3d          & Slashing                 & 1 gp      & 2 lb.             & Disarming, Subdual, Tripping \\
+                Headed weapons                         &                 &         &                   &                          &         &         &                              \\
+                \tind Greathammer                      & Heavy           & \plus0  & \plus1d           & Bludgeoning              & 12 gp   & 5 lb.   & \tdash                       \\
+                \tind Light hammer                     & Light           & \plus1  & \minus2d          & Bludgeoning              & 1 gp    & 2 lb.   & Throwing (20 ft.)            \\
+                \tind Pickaxe                          & Heavy           & \minus2 & \plus2d           & Piercing                 & 8 gp    & 6 lb.   & \tdash                       \\
+                \tind Sickle                           & Light           & \plus1  & \minus1d          & Slashing                 & 6 gp    & 2 lb.   & Tripping                     \\
+                \tind Warhammer                        & Medium          & \plus0  & \plus0d           & Bludgeoning              & 12 gp   & 5 lb.   & \tdash                       \\
 
-                Headed weapons                         &                  &                   &                          &           &                   &                              \\
-                \tind Greathammer                      & Heavy            & \plus1d           & Bludgeoning              & 12 gp     & 5 lb.             & \tdash                       \\
-                \tind Hammer, light                    & Light            & \minus2d          & Bludgeoning              & 1 gp      & 2 lb.             & Throwing (20 ft.)            \\
-                \tind Pick, heavy                      & Medium           & \plus0d           & Piercing                 & 8 gp      & 6 lb.             & \tdash                       \\
-                \tind Pick, light                      & Light            & \minus1d          & Piercing                 & 4 gp      & 3 lb.             & \tdash                       \\
-                \tind Sickle                           & Light            & \minus2d          & Slashing                 & 6 gp      & 2 lb.             & Tripping                     \\
-                \tind Warhammer                        & Medium           & \plus0d           & Bludgeoning              & 12 gp     & 5 lb.             & \tdash                       \\
+                Monk weapons                           &                 &         &                   &                          &         &         &                              \\
+                \tind Kama                             & Light           & \plus1  & \minus1d          & Slashing                 & 2 gp    & 2 lb.   & Tripping                     \\
+                \tind Nunchaku                         & Light           & \plus1  & \minus1d          & Bludgeoning              & 2 gp    & 2 lb.   & Disarming                    \\
+                \tind Quarterstaff                     & Heavy           & \plus0  & \minus1d/\minus1d & Bludgeoning              & \tdash  & 4 lb.   & Double                       \\
+                \tind Sai                              & Light           & \plus1  & \minus2d          & Piercing or bludgeoning  & 1 gp    & 1 lb.   & Disarming                    \\
+                \tind Shuriken (5)                     & Light (Ranged)  & \plus1  & \minus2d          & Piercing and slashing    & 1 gp    & 1/2 lb. & Ammunition, Thrown (10 ft.)  \\
+                \tind Siangham                         & Light           & \plus1  & \minus1d          & Piercing                 & 3 gp    & 1 lb.   & \tdash                       \\
 
-                Monk weapons                           &                  &                   &                          &           &                   &                              \\
-                \tind Kama                             & Light            & \minus1d          & Slashing                 & 2 gp      & 2 lb.             & Tripping                     \\
-                \tind Nunchaku                         & Light            & \minus1d          & Bludgeoning              & 2 gp      & 2 lb.             & Disarming                    \\
-                \tind Quarterstaff                     & Heavy            & \minus1d/\minus1d & Bludgeoning              & \tdash    & 4 lb.             & Double                       \\
-                \tind Sai                              & Light            & \minus2d          & Piercing or bludgeoning  & 1 gp      & 1 lb.             & Disarming                    \\
-                \tind Shuriken (5)                     & Light (Ranged)   & \minus2d          & Piercing and slashing    & 1 gp      & 1/2 lb.           & Ammunition, Thrown (10 ft.)  \\
-                \tind Siangham                         & Light            & \minus1d          & Piercing                 & 3 gp      & 1 lb.             & \tdash                       \\
+                Polearms                               &                 &         &                   &                          &         &         &                              \\
+                \tind Glaive                           & Heavy           & \plus0  & \plus1d           & Slashing                 & 8 gp    & 10 lb.  & Reach                        \\
+                \tind Guisarme                         & Heavy           & \plus0  & \plus1d           & Slashing                 & 9 gp    & 12 lb.  & Reach, Tripping              \\
+                \tind Halberd                          & Heavy           & \plus0  & \plus1d           & Piercing or slashing     & 10 gp   & 12 lb.  & Reach                        \\
+                \tind Quarterstaff                     & Heavy           & \plus0  & \minus1d/\minus1d & Bludgeoning              & \tdash  & 4 lb.   & Double                       \\
+                \tind Ranseur                          & Heavy           & \plus0  & \plus1d           & Piercing                 & 10 gp   & 12 lb.  & Disarming, Reach             \\
+                \tind Scythe                           & Heavy           & \plus0  & \plus1d           & Slashing                 & 18 gp   & 10 lb.  & \tdash                       \\
 
-                Polearms                               &                  &                   &                          &           &                   &                              \\
-                \tind Glaive                           & Heavy            & \plus1d           & Slashing                 & 8 gp      & 10 lb.            & Reach                        \\
-                \tind Guisarme                         & Heavy            & \plus1d           & Slashing                 & 9 gp      & 12 lb.            & Reach, Tripping              \\
-                \tind Halberd                          & Heavy            & \plus1d           & Piercing or slashing     & 10 gp     & 12 lb.            & Reach                        \\
-                \tind Quarterstaff                     & Heavy            & \minus1d/\minus1d & Bludgeoning              & \tdash    & 4 lb.             & Double                       \\
-                \tind Ranseur                          & Heavy            & \plus1d           & Piercing                 & 10 gp     & 12 lb.            & Disarming, Reach             \\
-                \tind Scythe                           & Heavy            & \plus1d           & Slashing                 & 18 gp     & 10 lb.            & \tdash                       \\
+                Simple weapons                         &                 &         &                   &                          &         &         &                              \\
+                \tind Club                             & Medium          & \plus0  & \minus1d          & Bludgeoning              & \tdash  & 3 lb.   & \tdash                       \\
+                \tind Dagger                           & Light           & \plus2  & \minus2d          & Piercing or slashing     & 2 gp    & 1 lb.   & Compact, Thrown (10 ft.)     \\
+                \tind Light crossbow\fn{4}            & Medium (Ranged) & \plus0  & \plus0d           & Piercing                 & 40 gp   & 4 lb.   & Projectile (50 ft.)          \\
+                \tind Quarterstaff                     & Heavy           & \plus0  & \minus1d/\minus1d & Bludgeoning              & \tdash  & 4 lb.   & Double                       \\
+                \tind Unarmed strike                   & Light           & \plus0  & \minus3d          & Bludgeoning              & \tdash  & \tdash  & Subdual, Unarmed             \\
 
-                Simple weapons                         &                  &                   &                          &           &                   &                              \\
-                \tind Club                             & Medium           & \minus1d          & Bludgeoning              & \tdash    & 3 lb.             & \tdash                       \\
-                \tind Crossbow, light\fn{4}            & Medium (Ranged)  & \plus0d           & Piercing                 & 40 gp     & 4 lb.             & Projectile (50 ft.)          \\
-                \tind Dagger                           & Light            & \minus2d          & Piercing or slashing     & 2 gp      & 1 lb.             & Compact, Thrown (10 ft.)     \\
-                \tind Quarterstaff                     & Heavy            & \minus1d/\minus1d & Bludgeoning              & \tdash    & 4 lb.             & Double                       \\
-                \tind Unarmed strike                   & Light            & \minus3d          & Bludgeoning              & \tdash    & \tdash            & Subdual, Unarmed             \\
+                Spears                                 &                 &         &                   &                          &         &         &                              \\
+                \tind Javelin                          & Medium (Ranged) & \plus0  & \minus1d          & Piercing                 & 1 gp    & 2 lb.   & Thrown (30 ft.)              \\
+                \tind Lance                            & Heavy           & \plus0  & \plus0d           & Piercing                 & 10 gp   & 10 lb.  & Mounted, Reach               \\
+                \tind Longspear                        & Heavy           & \plus0  & \plus0d           & Piercing                 & 5 gp    & 9 lb.   & Bracing, Reach               \\
+                \tind Spear                            & Medium          & \plus0  & \minus1d          & Piercing                 & 2 gp    & 6 lb.   & Bracing, Thrown (10 ft.)     \\
 
-                Spears                                 &                  &                   &                          &           &                   &                              \\
-                \tind Javelin                          & Medium (Ranged)  & \minus1d          & Piercing                 & 1 gp      & 2 lb.             & Thrown (30 ft.)              \\
-                \tind Lance                            & Heavy            & \plus0d           & Piercing                 & 10 gp     & 10 lb.            & Mounted, Reach               \\
-                \tind Longspear                        & Heavy            & \plus0d           & Piercing                 & 5 gp      & 9 lb.             & Bracing, Reach               \\
-                \tind Spear                            & Medium           & \minus1d          & Piercing                 & 2 gp      & 6 lb.             & Bracing, Thrown (10 ft.)     \\
+                Thrown weapons                         &                 &         &                   &                          &         &         &                              \\
+                \tind Dagger                           & Light           & \plus2  & \minus2d          & Piercing or slashing     & 2 gp    & 1 lb.   & Compact, Thrown (10 ft.)     \\
+                \tind Dart (5)                         & Light (Ranged)  & \plus1  & \minus2d          & Piercing                 & 1 gp    & 1/2 lb. & Ammunition, Thrown (20 ft.)  \\
+                \tind Handaxe                          & Light           & \plus1  & \minus1d          & Slashing                 & 8 gp    & 2 lb.   & Thrown (10 ft.)              \\
+                \tind Light hammer                     & Light           & \plus1  & \minus2d          & Bludgeoning              & 1 gp    & 2 lb.   & Thrown (20 ft.)              \\
+                \tind Javelin                          & Medium (Ranged) & \plus0  & \minus1d          & Piercing                 & 1 gp    & 2 lb.   & Thrown (30 ft.)              \\
+                \tind Shuriken\fn{4} (5)               & Light (Ranged)  & \plus2  & \minus2d          & Piercing and slashing    & 1 gp    & 1/2 lb. & Ammunition, Thrown (10 ft.)  \\
+                \tind Sling\fn{4}                      & Light (Ranged)  & \plus0  & \minus1d          & Bludgeoning              & 2 gp    & 0 lb.   & Projectile (50 ft.)          \\
+                \tind Bullets, sling (20)              & \tdash          & \tdash  & \tdash            & \tdash                   & 1 gp    & 5 lb.   & Ammunition                   \\
 
-                Thrown weapons                         &                  &                   &                          &           &                   &                              \\
-                \tind Axe, throwing                    & Light            & \minus1d          & Slashing                 & 8 gp      & 2 lb.             & Thrown (10 ft.)              \\
-                \tind Dagger                           & Light            & \minus2d          & Piercing or slashing     & 2 gp      & 1 lb.             & Compact, Thrown (10 ft.)     \\
-                \tind Dart (5)                         & Light (Ranged)   & \minus2d          & Piercing                 & 1 gp      & 1/2 lb.           & Ammunition, Thrown (20 ft.)  \\
-                \tind Hammer, light                    & Light            & \minus2d          & Bludgeoning              & 1 gp      & 2 lb.             & Thrown (20 ft.)              \\
-                \tind Javelin                          & Medium (Ranged)  & \minus1d          & Piercing                 & 1 gp      & 2 lb.             & Thrown (30 ft.)              \\
-                \tind Shuriken (5)                     & Light (Ranged)   & \minus2d          & Piercing and slashing    & 1 gp      & 1/2 lb.           & Ammunition, Thrown (10 ft.)  \\
-                \tind Sling\fn{4}                      & Light (Ranged)   & \minus1d          & Bludgeoning              & 2 gp      & 0 lb.             & Projectile (50 ft.)          \\
-                \tind Bullets, sling (20)              & \tdash           & \tdash            & \tdash                   & 1 gp      & 5 lb.             & Ammunition                   \\
-
-                Unarmed weapons\label{Unarmed Weapons} &                  &                   &                          &           &                   &                              \\
-                \tind Claw Sheath\fn{4}                & \tdash           & \tdash            & \tdash                   & 50 gp     & 3 lb.             & Special                      \\
-                \tind Gauntlet                         & Light            & \minus3d          & Bludgeoning              & 2 gp      & 1 lb.             & Unarmed                      \\
-                \tind Gauntlet, spiked                 & Light            & \minus2d          & Piercing                 & 5 gp      & 1 lb.             & Unarmed                      \\
-                \tind Unarmed strike                   & Light            & \minus3d          & Bludgeoning              & \tdash    & \tdash            & Subdual, Unarmed             \\
+                Unarmed weapons\label{Unarmed Weapons} &                 &         &                   &                          &         &         &                              \\
+                \tind Claw Sheath\fn{4}                & \tdash          & \tdash  & \tdash            & \tdash                   & 50 gp   & 3 lb.   & Special                      \\
+                \tind Gauntlet                         & Light           & \plus0  & \minus3d          & Bludgeoning              & 2 gp    & 1 lb.   & Unarmed                      \\
+                \tind Gauntlet, spiked                 & Light           & \plus0  & \minus2d          & Piercing                 & 5 gp    & 1 lb.   & Unarmed                      \\
+                \tind Unarmed strike                   & Light           & \plus0  & \minus3d          & Bludgeoning              & \tdash  & \tdash  & Subdual, Unarmed             \\
             \end{longtabu}
             1 Applies as a modifier to your damage with \glossterm{strikes} using the weapon. \\
             2 When two types are given, the weapon is both types if the entry specifies ``and,'' or either type (attacker's choice) if the entry specifies ``or.'' \\
@@ -237,19 +232,18 @@
                 \tb{Exotic Weapons} & \tb{Usage Class} & \tb{Damage\fn{1}} & \tb{Damage Type\fn{2}} & \tb{Cost} & \tb{Weight\fn{3}} & \tb{Special} \tableheaderrule
                 Armor &&&&&& \\
                 Axes &&&&&& \\
-                \tind Axe, orc double & Heavy & \plus0d/\plus0d & Slashing & 60 gp & 15 lb. & Double \\
-                \tind Waraxe, dwarven & Medium & \plus0d & Slashing & 75 gp & 8 lb. & Thrown (20 ft.) \\
-                Blades, heavy &&&&&& \\
+                \tind Dwarven waraxe & Medium & \plus0d & Slashing & 75 gp & 8 lb. & Thrown (20 ft.) \\
+                \tind Orc double axe & Heavy & \plus0d/\plus0d & Slashing & 60 gp & 15 lb. & Double \\
+                Blades &&&&&& \\
                 \tind Katana & Medium & \plus0d & Slashing & 75 gp & 6 lb. & Finesse \\
-                \tind Sword, two-bladed & Heavy & \plus0d/\plus0d & Slashing & 100 gp & 10 lb. & Double \\
-                Blades, light &&&&&& \\
                 \tind Kukri & Light & \plus0d & Slashing & 8 gp & 2 lb. & \\
+                \tind Two-bladed sword & Heavy & \plus0d/\plus0d & Slashing & 100 gp & 10 lb. & Double \\
                 Bows &&&&&& \\
                 Club-like weapons &&&&&& \\
                 Crossbows &&&&&& \\
-                \tind Crossbow, repeating heavy\fn{4} & Heavy (Ranged) & \plus1d & Piercing & 400 gp & 12 lb. & Projectile (100 ft.) \\
-                \tind Crossbow, repeating light\fn{4} & Medium (Ranged) & \plus0d & Piercing & 250 gp & 6 lb. & Projectile (50 ft.) \\
-                \tind Bolts, repeating (5) & \tdash & \tdash & \tdash & 1 gp & 1 lb. & Ammunition \\
+                \tind Repeating heavy crossbow\fn{4} & Heavy (Ranged) & \plus1d & Piercing & 400 gp & 12 lb. & Projectile (100 ft.) \\
+                \tind Repeating light crossbow\fn{4} & Medium (Ranged) & \plus0d & Piercing & 250 gp & 6 lb. & Projectile (50 ft.) \\
+                \tind Repeating bolts (5) & \tdash & \tdash & \tdash & 1 gp & 1 lb. & Ammunition \\
                 Flexible weapons &&&&&& \\
                 Headed weapons &&&&&& \\
                 Monk weapons &&&&&& \\
@@ -309,6 +303,7 @@
         Reach weapons can held using a different grip to strike nearby foes. This is called ``short hafting''. While short hafting a Reach weapon, you ignore the weapon's Reach property, but you take a \minus2 penalty to accuracy with it.
         \parhead{Subdual} This weapon deals \glossterm{subdual damage} (see \pcref{Subdual Damage}).
         \parhead{Throwing} This weapon is designed to be thrown. Throwing weapons have a range increment listed in their description, which indicates the distance they can be easily thrown. See \pcref{Thrown Weapons}.
+        Unless otherwise noted in a weapon's description, a throwing weapon can be used to attack in melee without penalty.
         \parhead{Tripping} When you use the \textit{trip} ability, you can attack with this weapon instead of with a free hand (see \pcref{Trip}).
         If you do, you gain a \plus2 bonus to accuracy on the attack.
         \parhead{Unarmed} This weapon is used as part of an \glossterm{unarmed attack}.
@@ -326,6 +321,11 @@
         \par You can fire a crossbow while \prone without penalty.
         \parhead{Crossbow, Repeating} The repeating crossbow (whether heavy or light) holds 5 crossbow bolts. As long as it holds bolts, you can reload it as a \glossterm{free action} by pulling the reloading lever. Loading a new case of 5 bolts is a \glossterm{standard action} that requires both hands.
         \par You can fire a crossbow while \prone without penalty.
+        \parhead{Fire Arrows} These arrows are treated with alchemist's fire so they can be ignited before being shot.
+        The process requires thickening the arrow shaft, reducing the precision of the arrow.
+        It takes a \glossterm{move action} to ignite a fire arrow assuming you have access to an active flame the size of a torch or larger.
+        In addition, fire arrows lose their flame quickly.
+        If the target is farther than two \glossterm{range increments} away, the fire goes out, and the damage dealt by the hit is not fire damage.
         \parhead{Hammer, Gnome Hooked} This weapon has a hammer head which deals \plus0d damage, and a hook which deals \minus1d damage. The hook is a tripping weapon.
         \parhead{Longbow} You need both hands to fire a bow, regardless of its size. One hand is free when not firing the bow. Loading a bow is a free action that requires both hands. A longbow is too unwieldy to use while you are mounted.
         \par When attacking with a bow, you take a \minus4 penalty to accuracy against creatures that threaten you.
@@ -335,7 +335,6 @@
         \par A net must be folded to be thrown effectively. The first time you throw your net in a fight, you make a normal ranged touch attack roll. After the net is unfolded, you take a \minus4 penalty to accuracy with it. It takes 2 standard actions for a proficient user to fold a net and twice that many for a nonproficient one to do so.
         \parhead{Pike} A pike can be used to atttack at up to triple your natural reach (so 15 feet for a typical Small or Medium creature).
         However, it cannot be short hafted (see \pcref{Reach Weapon}).
-        \parhead{Rapier} A rapier is treated as a medium weapon if it is used as a secondary weapon when making dual strikes (see \pcref{Two-Weapon Strikes}).
         \parhead{Shield, Standard} You can bash with a shield in addition to defending with it. See Armor for details.
         \parhead{Shortbow} You need both hands to fire a bow, regardless of its size. One hand is free when not firing the bow. Loading a bow is a free action that requires both hands.
         \par When attacking with a bow, you take a \minus4 penalty to accuracy against creatures that threaten you.
