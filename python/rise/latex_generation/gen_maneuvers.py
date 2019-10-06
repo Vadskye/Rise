@@ -203,7 +203,7 @@ def generate_maneuvers():
         short_description='Make a strike against Fortitude defense',
         target="As chosen \\glossterm<strike>",
         effect_text="""
-            Make a \\glossterm<strike>.
+            Make a \\glossterm<strike> using weapons that deal bludgeoning damage.
             The attack is made against the target's Fortitude defense instead of its Armor defense.
         """,
         rank_upgrades={
@@ -218,9 +218,9 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Rapid Assault',
         short_description='Make two strikes',
-        target="One or two creatures or objects you \\glossterm<threaten>",
+        target="As chosen \\glossterm<strikes> (see text)",
         effect_text="""
-            Make two melee \\glossterm<strikes> divided as you choose among the targets.
+            Make two melee \\glossterm<strikes>.
             You take a -2 penalty to accuracy and a -2d penalty to damage on both strikes.
         """,
         rank_upgrades={
@@ -344,7 +344,7 @@ def generate_maneuvers():
         short_description='Make a strike against Reflex defense',
         target="As chosen \\glossterm<strike>",
         effect_text="""
-            Make a \\glossterm<strike> with a piercing weapon.
+            Make a \\glossterm<strike> using weapons that deal piercing damage.
             The attack is made against the target's Reflex defense instead of its Armor defense.
         """,
         rank_upgrades={
@@ -697,6 +697,141 @@ def generate_maneuvers():
         },
         tags=['Focus'],
         lists=['Esoteric', 'Martial'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Superior Strike',
+        short_description='Make a strike with bonuses to accuracy and damage',
+        target="As chosen \\glossterm<strike>",
+        effect_text="""
+            Make a \\glossterm<strike> with a +1 bonus to \\glossterm<accuracy> and a +1d bonus to damage.
+        """,
+        rank=4,
+        rank_upgrades={
+            '6': 'The damage bonus increases to +2d.',
+            '8': 'The accuracy bonus increases to +2.',
+        },
+        tags=[],
+        lists=['Esoteric', 'Martial', 'Wild'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Leap Slam',
+        short_description='Jump and slam into the ground',
+        target="Everything within a \\areasmall radius from you that is on earth or unworked stone (see text)",
+        rank=3,
+        effect_text="""
+            You make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to your \\glossterm<base speed> (see \\pcref<Leap>).
+            When you land, if the vertical distance in feet between the highest point of your leap and your landing point was at least ten feet, make an attack vs. Reflex against each target.
+            \\hit Each target takes bludgeoning \\glossterm<standard damage> -2d.
+        """,
+        rank_upgrades={
+            '5': 'The damage increases to \\glossterm<standard damage> -1d.',
+            '7': 'The damage increases to \\glossterm<standard damage>.',
+        },
+        tags=[],
+        lists=['Primal'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Frenzied Strike',
+        short_description='Make a melee strike that becomes stronger when repeated',
+        target="As chosen \\glossterm<strike>",
+        effect_text="""
+            Make a melee \\glossterm<strike>.
+            For each previous consecutive round that you used this ability, you gain a +1d bonus to damage with the strike, up to a maximum of +4d.
+        """,
+        rank_upgrades={
+            '3': 'You gain a +1d bonus to damage with the strike.',
+            '5': 'The automatic damage bonus increases to +2d.',
+            '7': 'The automatic damage bonus increases to +3d.',
+        },
+        tags=[],
+        lists=['Primal'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Retreating Strike',
+        short_description='Make a strike and back away from your target',
+        target="As chosen \\glossterm<strike>",
+        effect_text="""
+            Make a \\glossterm<strike> and move up to half your movement speed in a straight line away from the target.
+        """,
+        rank_upgrades={
+            '3': 'The distance you can move increases to be equal to your movement speed.',
+            '5': 'You also gain a +1 bonus to Armor and Reflex defenses during the current phase. This is a \\glossterm<Swift> effect.',
+            '7': 'The defense bonuses increase to +2.',
+        },
+        tags=[],
+        lists=['Esoteric', 'Martial', 'Trick', 'Wild'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Barrage',
+        short_description='Make rapid ranged strikes while staying in place',
+        target="As chosen \\glossterm<strikes> (see text)",
+        effect_text="""
+            Make two ranged \\glossterm<strikes>.
+            You take a -4 penalty to accuracy on both strikes.
+            For each previous round that you used this ability without moving, you reduce the accuracy penalty by 1.
+        """,
+        rank=3,
+        rank_upgrades={
+            '5': 'You gain a +1 bonus to accuracy with both strikes.',
+            '7': 'The accuracy bonus increases to +2.',
+        },
+        tags=[],
+        lists=['Martial', 'Wild', 'Trick', 'Esoteric'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Point Blank Shot',
+        short_description='Make a projectile strike in melee range',
+        target="As chosen \\glossterm<strike>",
+        effect_text="""
+            Make a ranged \\glossterm<strike> with a +1d bonus to damage using a \\glossterm<projectile> weapon against a creature adjacent to you.
+            You are not \\glossterm<defenseless> against that creature during the current phase.
+        """,
+        rank=3,
+        rank_upgrades={
+            '5': 'The damage bonus increases to +2d.',
+            '7': 'The damage bonus increases to +3d.',
+        },
+        tags=[],
+        lists=['Martial', 'Wild'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Ricochet',
+        short_description='Make a thrown strike that hits multiple targets',
+        target="Up to three creatures or objects in a \\areasmall radius within \\rngclose range (see text)",
+        effect_text="""
+            Make a thrown \\glossterm<strike> using a single weapon that deals slashing or bludgeoning damage against each target.
+            If you choose yourself as one of the targets, you can catch the weapon instead of taking damage from it.
+        """,
+        rank=5,
+        rank_upgrades={
+            '7': 'You gain a +1d bonus to damage with the strike.',
+        },
+        tags=[],
+        lists=['Martial', 'Primal'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Deathblow',
+        short_description='Make a powerful strike that cannot inflict minor damage',
+        target="As chosen \\glossterm<strike>",
+        effect_text="""
+            Make a \\glossterm<strike> with a +3d bonus to damage.
+            If the strike's damage does not beat the target's \\glossterm<wound resistance>, it has no effect.
+        """,
+        rank=4,
+        rank_upgrades={
+            '6': 'The damage bonus increases to +4d.',
+            '8': 'The damage bonus increases to +5d.',
+        },
+        tags=[],
+        lists=['Esoteric', 'Martial', 'Primal'],
     ))
 
     return maneuvers
