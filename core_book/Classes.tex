@@ -524,7 +524,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Aspect} You gain a \glossterm{glide speed} equal to your \glossterm{base speed} (see \pcref{Gliding}).
             \parhead{Essence} You can use the \textit{speak with air} ability as a standard action.
             \begin{attuneability}{Speak with Air}[\glossterm{Attune} (self)]
-                You can speak with and command air within a \areahuge zone from your location.
+                You can speak with and command air within a \areahuge \glossterm{zone} from your location.
                 You can ask the air simple questions and understand its responses.
                 If you command the air to perform a task, it will do so do the best of its ability until this effect ends.
                 You cannot compel the air to move faster than 50 mph.
@@ -590,7 +590,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Aspect} You gain an additional \glossterm{hit point}.
             \parhead{Essence} You can use the \textit{speak with earth} ability as a standard action.
             \begin{attuneability}{Speak with Earth}[\glossterm{Attune} (self)]
-                You can speak with earth within a \areahuge zone from your location.
+                You can speak with earth within a \areahuge \glossterm{zone} from your location.
                 You can ask the earth simple questions and understand its responses.
 
                 After you use this ability on a particular area of earth, you cannot use it again on that same area for 24 hours.
@@ -622,7 +622,7 @@ This choice determines a great deal about your character's abilities.
             Dropping \glossterm{prone} as part of this action gives a \plus5 bonus to this check.
             \parhead{Essence} You can use the \textit{speak with fire} ability as a standard action.
             \begin{attuneability}{Speak with Fire}[\glossterm{Attune} (self)]
-                You can speak with and command fire within a \areahuge radius zone from your location.
+                You can speak with and command fire within a \areahuge radius \glossterm{zone} from your location.
                 You can ask the fire simple questions and understand its responses.
                 If you command the fire to perform a task, it will do so do the best of its ability until this effect ends.
                 You cannot compel the fire to move farther than 30 feet in a single round.
@@ -760,7 +760,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Aspect} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
             \parhead{Essence} You can use the \textit{speak with water} ability as a standard action.
             \begin{attuneability}{Speak with Water}[\glossterm{Attune} (self)]
-                You can speak with and command water within a \areahuge zone from your location.
+                You can speak with and command water within a \areahuge \glossterm{zone} from your location.
                 You can ask the water simple questions and understand its responses.
                 If you command the water to perform a task, it will do so do the best of its ability until this effect ends.
                 You cannot compel the water to move faster than 30 feet per round.
@@ -799,15 +799,15 @@ This choice determines a great deal about your character's abilities.
     \begin{dtable!*}
         \lcaption{Druid Progression}
         \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Beastmaster}    & \tb{Nature Spellcasting} & \tb{Nature Spell Mastery}   & \tb{Shifter} \tableheaderrule
-            1 & Animal speech       & Spellcasting    & Natural spells              & Wild aspects               \\
-            2 & Animal companion    & Mystic sphere   & Mystic knowledge            & Shifting defense           \\
-            3 & Beast lore          & Spell rank (3) & Wellspring of power         & Shift body                 \\
-            4 & Greater wild speech & Spell rank (4) & Mystic knowledge            & Wild aspect                \\
-            5 & Beast companion     & Spell rank (5) & Greater natural spells      & Greater shifting defense   \\
-            6 & Beast tamer         & Spell rank (6) & Mystic knowledge            & Greater shift body         \\
-            7 & Supreme wild speech & Spell rank (7) & Greater wellspring of power & Triple aspect, wild aspect \\
-            8 & True companion      & Spell rank (8) &                             & Avatar of nature           \\
+            \tb{Rank} & \tb{Elementalist}         & \tb{Nature Spellcasting} & \tb{Nature Spell Mastery}   & \tb{Shifter} \tableheaderrule
+            1         & Elemental balance         & Spellcasting             & Natural spells              & Wild aspects               \\
+            2         & Elemental sphere          & Mystic sphere            & Mystic knowledge            & Shifting defense           \\
+            3         & Elemental influence       & Spell rank (3)           & Wellspring of power         & Shift body                 \\
+            4         & Greater elemental balance & Spell rank (4)           & Mystic knowledge            & Wild aspect                \\
+            5         & Elemental sphere          & Spell rank (5)           & Greater natural spells      & Greater shifting defense   \\
+            6         & Elemental control         & Spell rank (6)           & Mystic knowledge            & Greater shift body         \\
+            7         & Supreme elemental balance & Spell rank (7)           & Greater wellspring of power & Triple aspect, wild aspect \\
+            8         & True companion            & Spell rank (8)           &                             & Avatar of nature           \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -848,53 +848,73 @@ This choice determines a great deal about your character's abilities.
         You can avoid this penalty by using armor made of wood altered with the \ritual{ironwood} ritual.
         Such wood is as strong as steel.
 
-    \subsection{Beastmaster}
-        This archetype improves your connection to animals, allowing you to control and command them in battle.
+    \subsection{Elementalist}\label{Wildspeaker}
+        This archetype grants you influence over four elements that define the natural world: air, earth, fire, and water.
 
-        \cf{Drd}[1]{Animal Companion}
-        You can use the \textit{animal companion} ability.
-        This ability requires 8 hours of training and attunement which the target must actively parcipate in.
-        You can compel a wild animal to undergo this training by sustaining the \textit{command} ability from the Creature Handling skill (see \pcref{Command}).
-        \begin{attuneability}{Animal Companion}[\glossterm{Attune} (self), \glossterm{Emotion}, \glossterm{Magical}]
-            Choose an animal \glossterm{ally} within your \glossterm{reach} with a level no higher than your level and a \glossterm{challenge rating} no higher than 1.
-            The target serves as a loyal companion to you.
-            It follows your directions to the best of its ability.
-            Animals are unable to understand complex concepts, so their ability to obey convoluted instructions is limited.
+        \cf{Drd}[1]{Elemental Balance} You gain a small benefit from each of the four elements.
+        \begin{itemize*}
+            \item Air: You gain a \plus2 bonus to the Jump skill.
+            \item Earth: You gain a \plus1 bonus to Fortitude defense.
+            \item Fire: You gain a bonus to \glossterm{resistances} against fire damage equal to half your \glossterm{power}.
+            \item Water: You gain a \plus2 bonus to the Swim skill.
+        \end{itemize*}
 
-            Your magical connection to the animal improves its resilience and strength in combat.
-            If any of its statistics are higher than the normal values below, the animal uses its own statistics instead.
-            All other aspects of the animal, such as its speed and natural weapons, are unchanged.
-            \begin{itemize}
-                \item Its \glossterm{damage resistance} and \glossterm{wound resistance} are equal to the base values for your level (see \pcref{Character Advancement}).
-                \item Its \glossterm{hit points} are equal to 6.
-                \item Each of its \glossterm{defenses} is normally equal to 4 \add your level.
-                \item Its \glossterm{accuracy} is normally equal to the higher of your level and Perception.
-                \item Its \glossterm{power} with its attacks is normally equal to your \glossterm{power}.
-                \item It can heal \glossterm{vital damage} using your level in place of its level.
-            \end{itemize}
-        \end{attuneability}
+        \cf{Drd}[2]{Elemental Sphere} Choose one of the \glossterm{mystic spheres} associated with the four elements: \sphere{aeromancy}, \sphere{aquamancy}, \sphere{pyromancy}, or \sphere{terramancy}.
+        You gain access to that mystic sphere, including all \glossterm{cantrips} from that sphere.
+        In addition, you learn an additional nature \glossterm{spell}.
 
-        \cf{Drd}[2]{Wild Speech}[Magical] You can use the \textit{wild speech} ability as a standard action.
-        \begin{attuneability}{Wild Speech}[\glossterm{Attune} (self)]
-            Choose an animal within \rnglong range.
-            You can speak to and understand the speech of the target animal, and any other animals of the same species.
+        \cf{Drd}[3]{Elemental Influence} You can use the \textit{elemental influence} ability as a standard action.
+        \begin{freeability}{Elemental Influence}[\glossterm{Sustain} (standard)]
+            You can speak with air, earth, fire, and water within a \areahuge \glossterm{zone} from your location.
+            You can ask the elements simple questions and understand their responses.
+            Each element is only able to give information based on what it touched, not any more subtle characteristics.
+            For example, air and water could tell you the size category and general shape (such as bipedal or four-legged) of a creature that passed through them recently, but not any details about color or subjective appearance.
+            Each element has different limitations on its memory and awareness, as described below.
 
-            This ability does not make the target any more friendly or cooperative than normal.
-            Wary and cunning animals are likely to be terse and evasive, while stupid ones tend to make inane comments and are unlikely to say or understand anything of use.
-        \end{attuneability}
+            \begin{itemize*}
+                \item Air: Air can remember events up to an hour ago on a very calm day or only a few minutes ago on a windy day.
+                    Moving air is aware of events near where it blew through, not necessarily in your current location.
+                \item Earth: Earth can remember events up to a year ago, but its awareness is extremely limited.
+                    It can only remember very large events, such as giant creatures tearing up the terrain, earthquakes, or major construction.
+                    Earth can tell you whether there exist underground tunnels within the area, but any sort of detailed mapping is beyond its ability to communicate.
+                \item Fire: Fire can remember everything it touched and consumed since it started burning.
+                    Individual pieces of a very large fire, such as a particular burning tree in a forest fire, are not aware of the behavior of the entirety of the fire.
+                    However, the fire on burning tree could tell you how it got to the tree and everything it burned along the way, including the event that started the forest fire.
+                \item Water: Water can remember events up to a day ago in a very calm pool or only a few minutes ago in a rushing river.
+                    Moving water is aware of events near where it moved through, not necessarily in your current location.
+            \end{itemize*}
+        \end{freeability}
 
-        \cf{Drd}[3]{Beast Tamer} You gain a \plus4 bonus to the Creature Handling skill (see \pcref{Creature Handling}).
+        \cf{Drd}[4]{Greater Elemental Balance} The bonuses from your \textit{elemental balance} ability improve.
+        \begin{itemize*}
+            \item Air: You gain a \glossterm{glide speed} equal to your \glossterm{base speed}.
+            \item Earth: The bonus to Fortitude defense increases to \plus2.
+            \item Fire: The bonus to \glossterm{resistances} increases to be equal to your \glossterm{power}.
+            \item Water: You gain a \glossterm{swim speed} equal to your \glossterm{base speed}.
+        \end{itemize*}
 
-        \cf{Drd}[4]{Beast Companion} When you use your \textit{animal companion} ability,
-        you can target a \glossterm{magical beast} \glossterm{ally} with an Intelligence of \minus6 or lower instead of an animal.
+        \cf*{Drd}[5]{Elemental Sphere} Choose one of the \glossterm{mystic spheres} associated with the four elements: \sphere{aeromancy}, \sphere{aquamancy}, \sphere{pyromancy}, or \sphere{terramancy}.
+        You gain access to that mystic sphere, including all \glossterm{cantrips} from that sphere.
+        In addition, you learn an additional nature \glossterm{spell}.
 
-        \cf{Drd}[5]{Greater Wild Speech} When you use your \textit{wild speech} ability, you do not have to target an animal.
-        Instead, you understand the speech of animals of any species.
+        \cf{Drd}[6]{Elemental Control} When you use your \textit{elemental influence} ability, you can also command the elements to move as you desire.
+        Each element has different limitations on its ability to move, as described below.
+        \begin{itemize*}
+            \item Air: You can change the wind speed of air by up to 50 miles per hour.
+                If you reduce the air's speed to 0 and then increase it again, you can change the direction the air blows.
+            \item Earth: You can reshape earth or unworked stone at a rate of up to one foot per round.
+            \item Fire: You can make fire leap up to 30 feet between combustable materials, suppress fire so it smolders without being extinguished, or snuff out fire entirely.
+            \item Water: You can change the speed of water by up to 30 feet per round.
+                If you reduce the water's speed to 0 and then increase it again, you can change the direction the water flows.
+        \end{itemize*}
 
-        \cf{Drd}[6]{Greater Beast Tamer} The bonus from your \textit{beast tamer} ability increaeses to \plus8.
-
-        \cf{Drd}[7]{True Companion} The maximum \glossterm{challenge rating} of creatures you can affect with your \textit{animal companion} increases to 2.
-        In addition, the creature affected by your \textit{animal companion} ability has its \glossterm{challenge rating} increased to 2 if it was lower.
+        \cf{Drd}[7]{Supreme Elemental Balance} The bonuses from your \textit{elemental balance} ability improve.
+        \begin{itemize*}
+            \item Air: You gain a \glossterm{fly speed} equal to your \glossterm{base speed} while you are within 100 feet of the ground.
+            \item Earth: The bonus to Fortitude defense increases to \plus3.
+            \item Fire: The bonus to \glossterm{resistances} increases to be equal to your \glossterm{power}.
+            \item Water: You suffer no penalties for fighting underwater, and you can breathe water as if it was air.
+        \end{itemize*}
 
     \subsection{Nature Spellcasting}
         This archetype grants you the ability to cast nature spells.
@@ -1183,7 +1203,6 @@ This choice determines a great deal about your character's abilities.
 
         While you are an avatar of nature, you do not age and you cannot die of old age.
         You can continue to exist in this form indefinitely.
-
 
         % \subcf{15th -- Air Mantle}
         % You are surrounded by a mantle of air.
@@ -2326,15 +2345,15 @@ This choice determines a great deal about your character's abilities.
     \begin{dtable!*}
         \lcaption{Ranger Progression}
         \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X > {\lcol}X}
-            \tb{Rank} & \tb{Huntmaster}     & \tb{Keen Senses}    & \tb{Monster Slayer}    & \tb{Wilderness Warrior} \tableheaderrule
-            1 & Quarry              & Keen vision         & Favored enemy          & Wild maneuvers          \\
-            2 & Hunting style       & Learned perception  & Exotic weaponry        & Woodland stride         \\
-            3 & Tracker             & Blindsense          & Slayer's power         & Wild reaction           \\
-            4 & Wary hunter         & Greater keen vision & Favored enemy          & Wild maneuver           \\
-            5 & Hunting style       & Perceive weakness   & Monster familiarity    & Greater woodland stride \\
-            6 & Greater tracker     & Blindsight          & Greater slayer's power & Greater wild reaction   \\
-            7 & Greater wary hunter & Supreme keen vision & Greater favored enemy  & Wild maneuver           \\
-            8 & Dual quarry         &                     &                        &                         \\
+            \tb{Rank} & \tb{Beastmaster}    & \tb{Huntmaster}     & \tb{Keen Senses}    & \tb{Wilderness Warrior} \tableheaderrule
+            1 & Animal speech       & Quarry          & Keen vision         & Wild maneuvers          \\
+            2 & Animal companion    & Hunting style   & Learned perception  & Woodland stride         \\
+            3 & Beast lore          & Hunter's power  & Blindsense          & Wild reaction           \\
+            4 & Greater wild speech & Tracker         & Greater keen vision & Wild maneuver           \\
+            5 & Beast companion     & Hunting style   & Perceive weakness   & Greater woodland stride \\
+            6 & Beast tamer         & Hunter's power  & Blindsight          & Greater wild reaction   \\
+            7 & Supreme wild speech & Greater tracker & Supreme keen vision & Wild maneuver           \\
+            8 & True companion      & Dual quarry     &                     &                         \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -2361,6 +2380,54 @@ This choice determines a great deal about your character's abilities.
         \cf{Rgr}{Weapon and Armor Proficiencies}
         A ranger is proficient with simple weapons, any two other weapon groups, light and medium armor, and shields.
         You are also proficient with your choice of bows, crossbows, or thrown weapons.
+
+    \subsection{Beastmaster}
+        This archetype improves your connection to animals, allowing you to control and command them in battle.
+
+        \cf{Rgr}[1]{Animal Companion}
+        You can use the \textit{animal companion} ability.
+        This ability requires 8 hours of training and attunement which the target must actively parcipate in.
+        You can compel a wild animal to undergo this training by sustaining the \textit{command} ability from the Creature Handling skill (see \pcref{Command}).
+        \begin{attuneability}{Animal Companion}[\glossterm{Attune} (self), \glossterm{Emotion}, \glossterm{Magical}]
+            Choose an animal \glossterm{ally} within your \glossterm{reach} with a level no higher than your level and a \glossterm{challenge rating} no higher than 1.
+            The target serves as a loyal companion to you.
+            It follows your directions to the best of its ability.
+            Animals are unable to understand complex concepts, so their ability to obey convoluted instructions is limited.
+
+            Your magical connection to the animal improves its resilience and strength in combat.
+            If any of its statistics are higher than the normal values below, the animal uses its own statistics instead.
+            All other aspects of the animal, such as its speed and natural weapons, are unchanged.
+            \begin{itemize}
+                \item Its \glossterm{damage resistance} and \glossterm{wound resistance} are equal to the base values for your level (see \pcref{Character Advancement}).
+                \item Its \glossterm{hit points} are equal to 6.
+                \item Each of its \glossterm{defenses} is normally equal to 4 \add your level.
+                \item Its \glossterm{accuracy} is normally equal to the higher of your level and Perception.
+                \item Its \glossterm{power} with its attacks is normally equal to your \glossterm{power}.
+                \item It can heal \glossterm{vital damage} using your level in place of its level.
+            \end{itemize}
+        \end{attuneability}
+
+        \cf{Rgr}[2]{Wild Speech}[Magical] You can use the \textit{wild speech} ability as a standard action.
+        \begin{attuneability}{Wild Speech}[\glossterm{Attune} (self)]
+            Choose an animal within \rnglong range.
+            You can speak to and understand the speech of the target animal, and any other animals of the same species.
+
+            This ability does not make the target any more friendly or cooperative than normal.
+            Wary and cunning animals are likely to be terse and evasive, while stupid ones tend to make inane comments and are unlikely to say or understand anything of use.
+        \end{attuneability}
+
+        \cf{Rgr}[3]{Beast Tamer} You gain a \plus4 bonus to the Creature Handling skill (see \pcref{Creature Handling}).
+
+        \cf{Rgr}[4]{Beast Companion} When you use your \textit{animal companion} ability,
+        you can target a \glossterm{magical beast} \glossterm{ally} with an Intelligence of \minus6 or lower instead of an animal.
+
+        \cf{Rgr}[5]{Greater Wild Speech} When you use your \textit{wild speech} ability, you do not have to target an animal.
+        Instead, you understand the speech of animals of any species.
+
+        \cf{Rgr}[6]{Greater Beast Tamer} The bonus from your \textit{beast tamer} ability increaeses to \plus8.
+
+        \cf{Rgr}[7]{True Companion} The maximum \glossterm{challenge rating} of creatures you can affect with your \textit{animal companion} increases to 2.
+        In addition, the creature affected by your \textit{animal companion} ability has its \glossterm{challenge rating} increased to 2 if it was lower.
 
     \subsection{Keen Senses}
         This archetype improves your senses.
@@ -2527,41 +2594,22 @@ This choice determines a great deal about your character's abilities.
             \end{freeability}
         }
 
-        \cf{Rgr}[3]{Tracker} You gain a \plus2 bonus to the Survival skill for the purpose of following tracks.
-        In addition, you gain two additional skill points.
+        \cf{Rgr}[3]{Hunter's Power} You gain a \plus1 bonus to \glossterm{power} with \glossterm{mundane} abilities.
 
-        \cf{Rgr}[4]{Wary Hunter} You gain a \plus1 bonus to all \glossterm{defenses} against your quarry.
+        \cf{Rgr}[4]{Tracker} You gain a \plus4 bonus to the Survival skill for the purpose of following tracks.
+        In addition, you gain two additional skill points.
 
         \cf*{Rgr}[5]{Hunting Style}
         You learn an additional \textit{hunting style}.
 
-        \cf{Rgr}[6]{Greater Tracker} The bonus from your \textit{tracker} ability increases to \plus4.
-        In addition, you can move at full speed while following tracks at no penalty.
+        \cf{Rgr}[6]{Greater Hunter's Power}
+        The bonus from your \textit{hunter's power} ability increases to \plus2.
 
-        \cf{Rgr}[7]{Greater Wary Hunter}
-        The bonus from your \textit{wary hunter} ability increases to \plus2.
+        \cf{Rgr}[7]{Greater Tracker} The bonus from your \textit{tracker} ability increases to \plus6.
+        In addition, you can move at full speed while following tracks at no penalty.
 
         \cf{Rgr}[8]{Dual Quarry} You can attune to two separate uses of your \textit{quarry} ability simultaneously.
         You can use different \textit{hunting style} abilities with each \textit{quarry}.
-
-    \subsection{Monster Slayer}
-        This archetype grants you abilities improving your ability to slay fearsome monsters.
-
-        \cf{Rgr}[1]{Favored Enemy} Choose one of the following creature types: aberration, animate, animal, magical beast, monstrous humanoid, outsider, or undead.
-        You can also spend \glossterm{insight points} to choose one additional creature type per \glossterm{insight point}.
-        You gain a \plus1 bonus to \glossterm{accuracy} and \glossterm{defenses} against creatures of any type you chose.
-
-        \cf{Rgr}[2]{Exotic Weaponry} You gain proficiency with \glossterm{exotic weapons} from all weapon groups that you are proficient with.
-
-        \cf{Rgr}[3]{Slayer's Power} You gain a \plus1 bonus to \glossterm{power} with \glossterm{mundane} abilities.
-
-        \cf*{Rgr}[4]{Favored Enemy} You choose an additional creature type for your \textit{favored enemy} ability.
-
-        \cf{Rgr}[5]{Monster Familiarity} You gain a \plus4 bonus to Knowledge checks to identify monsters.
-
-        \cf{Rgr}[6]{Greater Slayer's Power} The bonus from your \textit{slayer's power} ability increases to \plus2.
-
-        \cf{Rgr}[7]{Greater Favored Enemy} The bonus from your \textit{favored enemy} ability increases to \plus2.
 
     % Would be nice to call this ``Hunter'' and the maneuvers ``Hunting'' maneuvers,
     % but that conflicts with the naming for Huntmaster
