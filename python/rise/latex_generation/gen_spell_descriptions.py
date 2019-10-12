@@ -68,7 +68,7 @@ def generate_mystic_spheres():
                 \\rankline
                 \\rank<3> The bonus against ranged attacks increases to +6.
                 \\rank<5> The bonus to Armor defense increases to +2.
-                \\rank<7> The bonus against ranged attacks increases to +6.
+                \\rank<7> The bonus against ranged attacks increases to +8.
             """, tags=['Attune (target)']),
             Spell('Windstrike', 1, 'One creature or object within \\rngmed range', """
                 Make an attack vs. Armor against the target.
@@ -3083,8 +3083,8 @@ def generate_mystic_spheres():
                 This does not affect objects under significant structural stress, such as walls and support columns.
 
                 \\rankline
-                \\rank<5> The area increases to a \\arealarge radius.
-                \\rank<7> The area increases to a \\areahuge radius.
+                \\rank<6> The area increases to a \\arealarge radius.
+                \\rank<8> The area increases to a \\areahuge radius.
             """, tags=['Sustain (minor)']),
             Spell('Earthen Fortification', 4, None, """
                 You construct a fortification made of packed earth within \\rngmed range.
