@@ -2179,7 +2179,7 @@ def generate_mystic_spheres():
                 You transform your body to have dangerous spikes.
                 As a \\glossterm<minor action>, you can extend the spikes to make an attack vs. Armor against each creature adjacent to you.
                 At the end of each round, make an attack vs. Armor against each creature adjacent to you.
-                \\Hit Each secondary target takes piercing \\glossterm<standard damage> -2d.
+                \\hit Each secondary target takes piercing \\glossterm<standard damage> -2d.
 
                 You can cast this spell as a \\glossterm<minor action>.
 
