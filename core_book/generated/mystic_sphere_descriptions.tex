@@ -121,21 +121,6 @@ Make an attack vs. Reflex against the target.
 
 
 
-\lowercase{\hypertarget{spell:Buffeting Hurricane}{}}\label{spell:Buffeting Hurricane}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Buffeting Hurricane}{Buffeting Hurricane}}[\glossterm{Focus}]
-\targets{Enemies in a \areamed radius from you}
-Make an attack vs. Fortitude against each target.
-\hit Each target takes bludgeoning \glossterm{standard damage} \minus1d and is moved 20 feet clockwise around you.
-Each target's final position should be the same distance from you as its starting position.
-
-\rankline
-\rank{5} The area increases to a \arealarge radius.
-\rank{7} The area increases to a \areahuge radius.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Cyclone}{}}\label{spell:Cyclone}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Cyclone}{Cyclone}}[\glossterm{Focus}]
 \targets{Everything in a \areasmall radius within \rngclose range}
@@ -228,6 +213,21 @@ Make an attack vs. Armor against the target.
 
 
 
+\lowercase{\hypertarget{spell:Buffeting Hurricane}{}}\label{spell:Buffeting Hurricane}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Buffeting Hurricane}{Buffeting Hurricane}}[\glossterm{Focus}]
+\targets{\glossterm{Enemies} in a \areamed radius from you}
+Make an attack vs. Fortitude against each target.
+\hit Each target takes bludgeoning \glossterm{standard damage} and is moved 20 feet clockwise around you.
+Each target's final position should be the same distance from you as its starting position.
+
+\rankline
+\rank{6} The area increases to a \arealarge radius.
+\rank{8} The area increases to a \areahuge radius.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Control Weather}{}}\label{spell:Control Weather}
 \begin{attuneability}[Rank 4]{\hypertarget{spell:Control Weather}{Control Weather}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \targetrule
@@ -258,6 +258,23 @@ Making a weather change that is inappropriate for the local environment takes tw
 
 
 
+\lowercase{\hypertarget{spell:Windseal}{}}\label{spell:Windseal}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Windseal}{Windseal}}[\glossterm{Focus}]
+\target{One Large or smaller creature within \rngmed range}
+Make an attack vs. Fortitude against the target.
+\hit As a \glossterm{condition}, the target is \glossterm{slowed} by incredibly fast winds that inhibit movement.
+At the end of each phase, if it moved during that phase, it takes bludgeoning \glossterm{standard damage} \minus2d.
+\crit As a \glossterm{condition}, the target is \glossterm{immobilized} by incredibly fast winds that inhibit movement.
+At the end of each phase, if it moved during that phase, it takes bludgeoning \glossterm{standard damage} \plus1d.
+
+\rankline
+\rank{6} The maximum size increases to Huge.
+\rank{8} The maximum size increases to Gargantuan.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Flight}{}}\label{spell:Flight}
 \begin{attuneability}[Rank 5]{\hypertarget{spell:Flight}{Flight}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \target{Yourself}
@@ -279,6 +296,19 @@ By choosing when to treat the air as solid, you can traverse the air with ease.
 
 \rankline
 \rank{8} The maximum distance above solid ground increases to 300 feet.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\subsubsection{Rituals}
+
+
+\lowercase{\hypertarget{spell:Air Bubble}{}}\label{spell:Air Bubble}
+\begin{attuneability}[Rank 3]{\hypertarget{spell:Air Bubble}{Air Bubble}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself or one \glossterm{ally} within \rngclose range}
+The target can breathe clear, clean air regardless of its surroundings.
+This can allow it to breathe underwater and avoid air-based poisons.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -492,6 +522,20 @@ Everything in the area gain a bonus equal to your \glossterm{power} to \glosster
 
 
 
+\lowercase{\hypertarget{spell:Dessicate}{}}\label{spell:Dessicate}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Dessicate}{Dessicate}}[\glossterm{Focus}]
+\target{One creature within \rngclose range}
+Make an attack vs. Fortitude against the target.
+\hit The target takes physical \glossterm{standard damage} and is \glossterm{sickened} as a \glossterm{condition}.
+
+\rankline
+\rank{6} The damage increases to \glossterm{standard damage} \plus1d.
+\rank{8} The damage increases to \glossterm{standard damage} \plus2d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Misty Shroud}{}}\label{spell:Misty Shroud}
 \begin{attuneability}[Rank 4]{\hypertarget{spell:Misty Shroud}{Misty Shroud}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \targetrule
@@ -652,6 +696,20 @@ Each target teleports into the location of a different target.
 \rankline
 \rank{5} The range increases to \rnglong.
 \rank{7} The range increases to \rngext.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Transposition}{}}\label{spell:Transposition}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Transposition}{Transposition}}[\glossterm{Focus}]
+\target{Two Large or smaller creatures within \rngmed range}
+Make an attack vs. Mental against each target.
+If you hit both targets, they each teleport into each other's locations.
+
+\rankline
+\rank{5} The maximum size increases to Huge.
+\rank{7} The maximum size increases to Gargantuan.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1675,6 +1733,19 @@ As a \glossterm{minor action}, you can make a \glossterm{strike} with a \minus2 
 
 
 
+\lowercase{\hypertarget{spell:Evasion}{}}\label{spell:Evasion}
+\begin{attuneability}[Rank 4]{\hypertarget{spell:Evasion}{Evasion}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{Yourself}
+When you are attacked by an ability that affects an area, you can use your Reflex defense in place of any other defenses against that attack.
+
+\rankline
+\rank{6} You also gain a \plus1 \glossterm{magic bonus} to Reflex defense.
+\rank{8} The defense bonus increases to \plus2.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Temporal Stasis}{}}\label{spell:Temporal Stasis}
 \begin{attuneability}[Rank 4]{\hypertarget{spell:Temporal Stasis}{Temporal Stasis}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \target{Yourself or one Medium or smaller \glossterm{ally} within \rngmed range}
@@ -2225,6 +2296,39 @@ Make an attack vs. Fortitude against each target.
 
 
 
+\lowercase{\hypertarget{spell:Frost Breath}{}}\label{spell:Frost Breath}
+\begin{attuneability}[Rank 4]{\hypertarget{spell:Frost Breath}{Frost Breath}}[\glossterm{Attune} (self), \glossterm{Focus}]
+
+Primary target: Yourself
+\par\noindent
+Secondary targets: Everything within a \arealarge cone
+
+As a standard action, you can breathe cold like a dragon.
+When you do, make an attack vs Armor against each secondary target.
+\hit Each secondary target takes cold \glossterm{standard damage} \plus1d.
+
+\rankline
+\rank{6} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{8} The damage increases to \glossterm{standard damage} \plus3d.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Frostfall}{}}\label{spell:Frostfall}
+\begin{attuneability}[Rank 4]{\hypertarget{spell:Frostfall}{Frostfall}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\targetrule
+The temperature in a two mile radius cylinder-shaped \glossterm{zone} from your location decreases rapidly.
+After one minute, the temperature decreases by 50 degrees Fahrenheit, to a minimum of \minus50 degrees.
+
+\rankline
+\rank{6} The temperature decreases by 100 degrees, to a minimum of \minus70 degrees.
+\rank{8} The temperature decreases by 150 degrees, to a minimum of \minus90 degrees.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Hailstorm}{}}\label{spell:Hailstorm}
 \begin{freeability}[Rank 4]{\hypertarget{spell:Hailstorm}{Hailstorm}}[\glossterm{Focus}]
 \targets{Everything in a \areasmall radius within \rngclose range}
@@ -2234,6 +2338,19 @@ Make an attack vs. Armor against each target.
 \rankline
 \rank{6} The damage increases to \glossterm{standard damage} \plus1d.
 \rank{8} The damage increases to \glossterm{standard damage} \plus2d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Frostburn}{}}\label{spell:Frostburn}
+\begin{freeability}[Rank 6]{\hypertarget{spell:Frostburn}{Frostburn}}[\glossterm{Focus}]
+\target{One creature within \rngmed range}
+Make an attack vs. Fortitude against the target.
+\hit As a \glossterm{condition}, the target is seared by painful cold.
+At the end of each round, it takes cold \glossterm{standard damage} \minus1d per round since it became affectd by this condition.
+
+\rank{8} The attack gains a \plus1 bonus to \glossterm{accuracy}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2581,6 +2698,25 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 
+\lowercase{\hypertarget{spell:Lightning Breath}{}}\label{spell:Lightning Breath}
+\begin{attuneability}[Rank 4]{\hypertarget{spell:Lightning Breath}{Lightning Breath}}[\glossterm{Attune} (self), \glossterm{Focus}]
+
+Primary target: Yourself
+\par\noindent
+Secondary targets: Everything within a \arealarge cone
+
+As a standard action, you can breathe electricity like a dragon.
+When you do, make an attack vs Armor against each secondary target.
+\hit Each secondary target takes electricity \glossterm{standard damage} \plus1d.
+
+\rankline
+\rank{6} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{8} The damage increases to \glossterm{standard damage} \plus3d.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Chain Lightning}{}}\label{spell:Chain Lightning}
 \begin{freeability}[Rank 5]{\hypertarget{spell:Chain Lightning}{Chain Lightning}}[\glossterm{Focus}]
 
@@ -2640,6 +2776,21 @@ Make an attack vs. Armor against the target.
 \rank{3} The damage increases to \glossterm{standard damage} \plus2d.
 \rank{5} The damage increases to \glossterm{standard damage} \plus3d.
 \rank{7} The damage increases to \glossterm{standard damage} \plus4d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Cone of Acid}{}}\label{spell:Cone of Acid}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Cone of Acid}{Cone of Acid}}[\glossterm{Focus}, \glossterm{Manifestation}]
+\targets{Everything in a \areamed cone from you}
+Make an attack vs. Armor against each target.
+\hit Each target takes acid \glossterm{standard damage}.
+
+\rankline
+\rank{3} The damage increases to \glossterm{standard damage} \plus1d.
+\rank{5} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{7} The damage increases to \glossterm{standard damage} \plus3d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2717,6 +2868,41 @@ In addition, make an attack vs. Reflex against each target.
 
 
 
+\lowercase{\hypertarget{spell:Acid Breath}{}}\label{spell:Acid Breath}
+\begin{attuneability}[Rank 4]{\hypertarget{spell:Acid Breath}{Acid Breath}}[\glossterm{Attune} (self), \glossterm{Focus}]
+
+Primary target: Yourself
+\par\noindent
+Secondary targets: Everything within a \arealarge cone
+
+As a standard action, you can breathe acid like a dragon.
+When you do, make an attack vs Armor against each secondary target.
+\hit Each secondary target takes acid \glossterm{standard damage} \plus1d.
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{6} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{8} The damage increases to \glossterm{standard damage} \plus3d.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Acid Rain}{}}\label{spell:Acid Rain}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Acid Rain}{Acid Rain}}[\glossterm{Focus}, \glossterm{Manifestation}]
+\targets{Everything in a \areasmall radius within \rngmed range}
+Make an attack vs. Armor against each target.
+\hit Each target takes acid \glossterm{standard damage}.
+
+\rankline
+\rank{6} The damage increases to \glossterm{standard damage} \plus1d.
+\rank{8} The damage increases to \glossterm{standard damage} \plus2d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Meteor}{}}\label{spell:Meteor}
 \begin{freeability}[Rank 4]{\hypertarget{spell:Meteor}{Meteor}}[\glossterm{Focus}, \glossterm{Manifestation}]
 \targets{Special}
@@ -2780,6 +2966,21 @@ Make an attack vs. Armor against everything in the path of any meteor.
 
 
 \subsubsection{Rituals}
+
+
+\lowercase{\hypertarget{spell:Copy Writing}{}}\label{spell:Copy Writing}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Copy Writing}{Copy Writing}}[\glossterm{Focus}, \glossterm{Sustain} (standard)]
+
+Primary targets: One Small or smaller written work within \rngclose range
+\par\noindent
+Secondary targets: One Small or smaller set of blank pages within \rngclose range
+
+You copy the writing from the primary target onto the secondary target.
+The secondary target must have enough room for the writing.
+Copying the writing takes a tenth the time required to copy it by hand and requires no writing materials.
+\end{freeability}
+\vspace{0.25em}
+
 
 
 \lowercase{\hypertarget{spell:Create Sustenance}{}}\label{spell:Create Sustenance}
@@ -3056,7 +3257,7 @@ This effect lasts until you use it again or until you \glossterm{dismiss} it as 
 
 \lowercase{\hypertarget{spell:Faerie Fire}{}}\label{spell:Faerie Fire}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Faerie Fire}{Faerie Fire}}[\glossterm{Focus}, \glossterm{Sensation}, \glossterm{Visual}]
-\targets{One \areasmall radius within \rngmed range of you, and all creatures in the area}
+\targets{All creatures in a \areasmall radius within \rngmed range of you}
 Make an attack vs. Mental with a \plus2 bonus to \glossterm{accuracy} against each target.
 \hit As a \glossterm{condition}, each target radiates bright light in a 5 foot radius, as a candle.
 The lights impose a \minus10 penalty to the Stealth skill.
@@ -3102,6 +3303,20 @@ In addition, make an attack vs. Reflex against the target.
 \rank{3} The attack gains a \plus1 bonus to \glossterm{accuracy}.
 \rank{5} The accuracy bonus increases to \plus2.
 \rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Darkness}{}}\label{spell:Darkness}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Darkness}{Darkness}}[\glossterm{Focus}, \glossterm{Sensation}, \glossterm{Visual}]
+\targetrule
+All light is suppressed within a \areamed \glossterm{zone} within \rngmed range.
+Abilities that work without light, such as \glossterm{darkvision}, still function normally in the area.
+
+\rankline
+\rank{6} The area increases to a \arealarge radius.
+\rank{8} The area increases to a \areahuge radius.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3166,6 +3381,22 @@ In addition, make an attack vs. Fortitude against the target.
 
 \rankline
 \rank{8} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Sunburst}{}}\label{spell:Sunburst}
+\begin{freeability}[Rank 6]{\hypertarget{spell:Sunburst}{Sunburst}}[\glossterm{Focus}, \glossterm{Sensation}, \glossterm{Visual}]
+\targets{All creatures in the area (see text)}
+A burst of light light fills a \areamed radius \glossterm{zone} within \rngmed range of you.
+Bright light illuminates a 100 foot radius around the area until the end of the round.
+In addition, make an attack vs. Fortitude against each target creature.
+\hit Each target is \dazzled as a \glossterm{condition}.
+In addition, each target is affected as if it had entered natural sunlight.
+
+\rankline
+\rank{8} The area increases to a \arealarge radius.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3316,6 +3547,19 @@ However, this effect is unable to alter the target's clothes or equipment in any
 
 
 
+\lowercase{\hypertarget{spell:Scent}{}}\label{spell:Scent}
+\begin{attuneability}[Rank 3]{\hypertarget{spell:Scent}{Scent}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{Yourself}
+You gain the \glossterm{scent} ability, giving you a \plus10 bonus to scent-based Awareness checks (see \pcref{Senses}).
+
+\rankline
+\rank{5} The bonus increases to \plus15.
+\rank{7} The bonus increases to \plus20.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Craft Object}{}}\label{spell:Craft Object}
 \begin{freeability}[Rank 4]{\hypertarget{spell:Craft Object}{Craft Object}}[\glossterm{Focus}]
 \targets{Any number of unattended, nonmagical objects within \rngclose range}
@@ -3363,6 +3607,42 @@ You can cast this spell as a \glossterm{minor action}.
 \rankline
 \rank{6} The target also gains a \plus2 \glossterm{magic bonus} to Strength.
 \rank{8} You may increase the target by two size categories instead of one.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Malleable Body}{}}\label{spell:Malleable Body}
+\begin{attuneability}[Rank 4]{\hypertarget{spell:Malleable Body}{Malleable Body}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself or one \glossterm{ally} within \rngclose range}
+The target's body and equipment becomes highly flexible and malleable, allowing it to compress its body or contort itself into odd shapes.
+It gains a \plus8 \glossterm{magic bonus} to the Escape Artist skill, and it is immune to \glossterm{critical hits} from \glossterm{strikes}.
+
+\rankline
+\rank{6} The skill bonus increases to \plus12.
+\rank{8} The skill bonus increases to \plus16.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Spikeform}{}}\label{spell:Spikeform}
+\begin{attuneability}[Rank 4]{\hypertarget{spell:Spikeform}{Spikeform}}[\glossterm{Attune} (self), \glossterm{Focus}]
+
+Primary target: Yourself
+\par\noindent
+Secondary targets: \glossterm{Enemies} adjacent to you (see text)
+
+You transform your body to have dangerous spikes.
+As a \glossterm{minor action}, you can extend the spikes to make an attack vs. Armor against each creature adjacent to you.
+At the end of each round, make an attack vs. Armor against each creature adjacent to you.
+\Hit Each secondary target takes piercing \glossterm{standard damage} \minus2d.
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{6} The damage increases to \glossterm{standard damage} \minus1d.
+\rank{8} The damage increases to \glossterm{standard damage}.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -3657,6 +3937,27 @@ Make an attack vs. Armor against each target.
 
 
 
+\lowercase{\hypertarget{spell:Flame Aura}{}}\label{spell:Flame Aura}
+\begin{attuneability}[Rank 4]{\hypertarget{spell:Flame Aura}{Flame Aura}}[\glossterm{Attune} (self), \glossterm{Focus}]
+
+Primary target: Yourself
+\par\noindent
+Secondary targets: Everything in a \areasmall radius from you (see text)
+
+Heat constantly radiates in a \areasmall radius emanation from you.
+As a \glossterm{minor action}, you can intensify the flames to make an attack vs. Armor against everything in the area.
+\hit Each secondary target takes fire \glossterm{standard damage} \minus2d.
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{6} The damage increases to \glossterm{standard damage} \minus1d.
+\rank{8} The damage increases to \glossterm{standard damage}.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Flame Blade}{}}\label{spell:Flame Blade}
 \begin{attuneability}[Rank 4]{\hypertarget{spell:Flame Blade}{Flame Blade}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself or an \glossterm{ally} within \rngclose range}
@@ -3668,6 +3969,25 @@ You can cast this spell as a \glossterm{minor action}.
 \rank{6} The target also gains a \plus2 \glossterm{magic bonus} to \glossterm{power} with \glossterm{strikes}.
 % May be too strong
 \rank{8} The power bonus increases to \plus4.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Flame Breath}{}}\label{spell:Flame Breath}
+\begin{attuneability}[Rank 4]{\hypertarget{spell:Flame Breath}{Flame Breath}}[\glossterm{Attune} (self), \glossterm{Focus}]
+
+Primary target: Yourself
+\par\noindent
+Secondary targets: Everything within a \arealarge cone
+
+As a standard action, you can breathe fire like a dragon.
+When you do, make an attack vs Armor against each secondary target.
+\hit Each secondary target takes fire \glossterm{standard damage} \plus1d.
+
+\rankline
+\rank{6} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{8} The damage increases to \glossterm{standard damage} \plus3d.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -3689,6 +4009,20 @@ The condition can be removed if the target stops touching or being composed of m
 
 
 
+\lowercase{\hypertarget{spell:Heat Wave}{}}\label{spell:Heat Wave}
+\begin{attuneability}[Rank 4]{\hypertarget{spell:Heat Wave}{Heat Wave}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\targetrule
+The temperature in a two mile radius cylinder-shaped \glossterm{zone} from your location decreases rapidly.
+After one minute, the temperature increases by 50 degrees Fahrenheit, to a maximum of 140 degrees.
+
+\rankline
+\rank{6} The temperature increases by 100 degrees, to a maximum of 160 degrees.
+\rank{8} The temperature increases by 150 degrees, to a maximum of 180 degrees.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Wall of Fire}{}}\label{spell:Wall of Fire}
 \begin{freeability}[Rank 4]{\hypertarget{spell:Wall of Fire}{Wall of Fire}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
 \target{Each creature that moves through the area (see text)}
@@ -3705,26 +4039,6 @@ It is immune to most forms of attack, but it can be destroyed by \glossterm{cold
 \rank{6} The damage increases to \glossterm{standard damage} \plus1d.
 \rank{8} The damage increases to \glossterm{standard damage} \plus2d.
 \end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Flame Aura}{}}\label{spell:Flame Aura}
-\begin{attuneability}[Rank 5]{\hypertarget{spell:Flame Aura}{Flame Aura}}[\glossterm{Attune} (self), \glossterm{Focus}]
-
-Primary target: Yourself
-\par\noindent
-Secondary targets: Everything in the area (see text)
-
-Heat constantly radiates in a \areasmall radius emanation from you.
-At the end of round, make an attack vs. Armor against each secondary target.
-\hit Each secondary target takes fire \glossterm{standard damage} \minus2d.
-
-You can cast this spell as a \glossterm{minor action}.
-
-\rankline
-\rank{7} The damage increases to \glossterm{standard damage} \minus1d.
-\end{attuneability}
 \vspace{0.25em}
 
 
@@ -3983,6 +4297,26 @@ In addition, once per hour you may reroll one Knowledge check you make and take 
 \rank{6} The bonus increases to \plus6.
 \rank{8} The bonus increases to \plus8.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Sensory Chain}{}}\label{spell:Sensory Chain}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Sensory Chain}{Sensory Chain}}[\glossterm{Focus}, \glossterm{Sustain} (standard)]
+\target{One creature within \rngmed range (see text)}
+Make an attack vs. Mental against the target.
+Whenever you attack a creature with this spell, any additional attacks from this spell automatically fail until the spell ends.
+\hit As a \glossterm{condition}, you can see and hear out of the target's eyes and ears instead of your own.
+If the target stops being within 1 mile from you, regardless of intervening barriers
+Whenever the target touches another creature, you can make an attack against the new creature.
+On a hit, the touched creature becomes the new target of this spell and the condition is transferred to it.
+On a miss, the condition remains on the previous creature.
+
+
+\rankline
+\rank{6} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{8} The accuracy bonus increases to \plus2.
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -4789,6 +5123,19 @@ This does not affect objects under significant structural stress, such as walls 
 
 
 
+\lowercase{\hypertarget{spell:Earthglide}{}}\label{spell:Earthglide}
+\begin{attuneability}[Rank 5]{\hypertarget{spell:Earthglide}{Earthglide}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{Yourself}
+You can move through earth and unworked stone at a rate of 5 feet per round.
+This does not allow you to breathe while inside the earth or stone, so your ability to traverse long distances may be limited.
+
+\rankline
+\rank{7} Your speed increases to be equal to half your \glossterm{base speed}.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Fissure}{}}\label{spell:Fissure}
 \begin{freeability}[Rank 5]{\hypertarget{spell:Fissure}{Fissure}}[\glossterm{Focus}]
 \targets{Everything in a \areamed radius within \rngmed range that is standing on earth or unworked stone}
@@ -4837,6 +5184,18 @@ Special movement abilities such as teleportation can also remove the target from
 \vspace{0.25em}
 
 
+
+\lowercase{\hypertarget{spell:Entomb}{}}\label{spell:Entomb}
+\begin{freeability}[Rank 8]{\hypertarget{spell:Entomb}{Entomb}}[\glossterm{Focus}, \glossterm{Manifestation}]
+\target{One Large or smaller creature within \rngmed range that is standing on unworked earth or stone}
+Make an attack vs. Fortitude against the target.
+\hit The earth rises up and encases the target in six inches of stone.
+The stone blocks both air and \glossterm{line of effect} to the target unless it is destroyed.
+In addition, the target is \glossterm{paralyzed} as a \glossterm{condition}.
+\end{freeability}
+\vspace{0.25em}
+
+
 \newpage
 \begin{spellsection}{Thaumaturgy}
 
@@ -4881,6 +5240,23 @@ In addition, you can decrease the \glossterm{power} of the aura by up to half yo
 \rank{5} The accuracy bonus increases to \plus2.
 \rank{7} The accuracy bonus increases to \plus3.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Deattunement}{}}\label{spell:Deattunement}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Deattunement}{Deattunement}}[\glossterm{Focus}]
+\target{One creature within \rngmed range}
+Make an attack vs. Mental against the target.
+\hit The target stops being \glossterm{attuned} to one ability of its choice that it is currently attuned to.
+This ability does not affect attunement to magic items.
+\crit The target breaks its attunement to all abilities that it is attuned to other than \glossterm{magic items}.
+
+\rankline
+\rank{3} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -5008,6 +5384,46 @@ Make an attack vs. Mental against the secondary target.
 
 
 
+\lowercase{\hypertarget{spell:Disrupt Casting}{}}\label{spell:Disrupt Casting}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Disrupt Casting}{Disrupt Casting}}[\glossterm{Focus}]
+\target{One creature within \rngmed range}
+Make an attack vs. Mental against the target.
+\hit As a \glossterm{condition}, the target has a 50\% chance to \glossterm{miscast} any spell it casts.
+\crit As a \glossterm{condition}, the target automatically \glossterm{miscasts} any spell it casts.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Teleportation Ward}{}}\label{spell:Teleportation Ward}
+\begin{attuneability}[Rank 4]{\hypertarget{spell:Teleportation Ward}{Teleportation Ward}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\targets{Everything in a \arealarge radius \glossterm{emanation} from you (see text)}
+Teleportation into and out of the area is impossible.
+Any abilities which would cause creatures to teleport within the area have no effect.
+
+\rankline
+\rank{6} The area increases to a \areahuge radius \glossterm{emanation}.
+\rank{8} The area increases to a \areaext radius \glossterm{emanation}.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Augmented Spells}{}}\label{spell:Augmented Spells}
+\begin{attuneability}[Rank 5]{\hypertarget{spell:Augmented Spells}{Augmented Spells}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{Yourself}
+Choose one \glossterm{augment} you know with a rank modifier of up to \plus2.
+You can apply the augment once to spells you cast without increasing the minimum rank of those spells.
+If the augment can be applied multiple times, you can apply it again to the same spell, increasing the spell's minimum rank normally.
+
+\rankline
+\rank{7} You can choose an additional \glossterm{augment} you know with a rank modifier of up to \plus2.
+Whenever you cast a spell, you can choose which augment to apply for free.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Dimensional Lock}{}}\label{spell:Dimensional Lock}
 \begin{attuneability}[Rank 6]{\hypertarget{spell:Dimensional Lock}{Dimensional Lock}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \targetrule
@@ -5035,6 +5451,18 @@ Make an attack vs. Mental against the secondary target.
 
 \rank{8} The attack gains a \plus1 bonus to \glossterm{accuracy}.
 \end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Spell Absoption}{}}\label{spell:Spell Absoption}
+\begin{attuneability}[Rank 7]{\hypertarget{spell:Spell Absoption}{Spell Absoption}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{Yourself}
+Whenever you are targeted by a spell cast by another creature, before determining if it hits you, you absorb the spell.
+It has no effect on you.
+You cannot voluntarily allow spells to affect you while this effect lasts.
+After you absorb three spells in this way, this effect ends.
+\end{attuneability}
 \vspace{0.25em}
 
 
@@ -5134,6 +5562,20 @@ The target can make this check as a \glossterm{move action}, while other creatur
 
 
 
+\lowercase{\hypertarget{spell:Natural Camouflage}{}}\label{spell:Natural Camouflage}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Natural Camouflage}{Natural Camouflage}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
+\target{Yourself}
+You gain a \plus4 \glossterm{magic bonus} to the Stealth skill while you have \glossterm{cover} or \glossterm{concealment} from plants.
+
+\rankline
+\rank{3} The bonus increases to \plus6.
+\rank{5} The bonus increases to \plus8.
+\rank{7} The bonus increases to \plus10.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Plant Growth}{}}\label{spell:Plant Growth}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Plant Growth}{Plant Growth}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
 \targets{All plants and arable earth in a \areamed radius within \rngmed range}
@@ -5150,6 +5592,22 @@ When this spell's duration ends, the plants return to their natural size.
 \rank{5} The range increases to \rnglong.
 \rank{7} The area increases to a \areahuge radius.
 \end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Shillelagh}{}}\label{spell:Shillelagh}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Shillelagh}{Shillelagh}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{One nonmagical stick of wood}
+You transform the target into a club, greatclub, or quarterstaff, as you choose (see \pcref{Weapons}).
+You cannot change the target's size by more than one size category.
+You gain a \plus2 \glossterm{magic bonus} to \glossterm{power} on attacks with it.
+
+\rankline
+\rank{3} You also gain \plus1 \glossterm{magic bonus} to \glossterm{accuracy} with the weapon.
+\rank{5} The power bonus increases to \plus4.
+\rank{7} The accuracy bonus increases to \plus2.
+\end{attuneability}
 \vspace{0.25em}
 
 
@@ -5629,6 +6087,34 @@ Make an attack vs. Armor against the target.
 
 
 
+\lowercase{\hypertarget{spell:Proficiency}{}}\label{spell:Proficiency}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Proficiency}{Proficiency}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{One weapon within \rngmed range}
+You gain \glossterm{proficiency} with one weapon group the target belongs to.
+
+\rankline
+\rank{3} You also gain a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} with the chosen weapon group.
+\rank{5} You also gain \glossterm{exotic proficiency} with the chosen weapon group.
+\rank{7} The accuracy bonus increases to \plus2.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Shieldbearer}{}}\label{spell:Shieldbearer}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Shieldbearer}{Shieldbearer}}[\glossterm{Attune} (self), \glossterm{Focus}, \glossterm{Manifestation}]
+\target{Yourself}
+You gain a \plus1 \glossterm{magic bonus} to Armor defense.
+
+\rankline
+\rank{3} You are not considered \glossterm{defenseless} as long as you are not \glossterm{unaware}, even if you are not wielding a weapon or shield.
+\rank{5} The bonus increases to \plus2.
+\rank{7} You are not considered \glossterm{defenseless} even if you are \glossterm{unaware}.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Summon Weapon}{}}\label{spell:Summon Weapon}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Summon Weapon}{Summon Weapon}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
 \target{One unoccupied square within \rngmed range}
@@ -5755,6 +6241,20 @@ It aims the cone to hit as many creatures as possible.
 \rankline
 \rank{6} The damage dealt by the weapon increases to \glossterm{standard damage}.
 \rank{8} The damage dealt by the weapon increases to \glossterm{standard damage} \plus1d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Missile Storm}{}}\label{spell:Missile Storm}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Missile Storm}{Missile Storm}}[\glossterm{Focus}, \glossterm{Manifestation}]
+\targets{Everything in a \areasmall radius within \rngmed range}
+Make an attack vs. Armor against each target.
+\hit Each target takes piercing \glossterm{standard damage}.
+
+\rankline
+\rank{6} The damage increases to \glossterm{standard damage} \plus1d.
+\rank{8} The damage increases to \glossterm{standard damage} \plus2d.
 \end{freeability}
 \vspace{0.25em}
 
