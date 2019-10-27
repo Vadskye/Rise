@@ -972,7 +972,8 @@ def generate_mystic_spheres():
             """, tags=['Attune (self)']),
             Spell('Divine Might', 4, 'Yourself', """
                 You increase your size by one \\glossterm<size category>.
-                This increases your \\glossterm<overwhelm value> and \\glossterm<overwhelm resistance>, and usually increases your \\glossterm<reach> (see \\pcref<Size in Combat>).
+                This increases your \\glossterm<base speed> and reduces your \\glossterm<Stealth> skill.
+                It may also increase your \\glossterm<reach>, \\glossterm<overwhelm value>, and \\glossterm<overwhelm resistance> (see \\pcref<Size in Combat>).
                 However, your physical form is not altered fully to match its new size, and your Strength and Dexterity are unchanged.
 
                 You can cast this spell as a \\glossterm<minor action>.
@@ -2078,9 +2079,10 @@ def generate_mystic_spheres():
                 \\rank<5> The accuracy bonus increases to +2.
                 \\rank<7> The accuracy bonus increases to +3.
             """, tags=[]),
-            Spell('Shrink', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                The target's size decreases by one size category, to a minimum of Tiny.
-                This increases its Stealth and usually decreases its \\glossterm<overwhelm value>, \\glossterm<overwhelm resistance>, and \\glossterm<reach> (see \\pcref<Size in Combat>).
+            Spell('Shrink', 1, 'Yourself or one Small or larger \\glossterm<ally> within \\rngclose range', """
+                The target's size decreases by one \\glossterm<size category>.
+                This decreases its \\glossterm<base speed> and improves its \\glossterm<Stealth> skill.
+                It may also decrease the target's \\glossterm<reach>, \\glossterm<overwhelm value>, and \\glossterm<overwhelm resistance> (see \\pcref<Size in Combat>).
                 However, its physical form is not altered fully to match its new size, and its Strength and Dexterity are unchanged.
 
                 You can cast this spell as a \\glossterm<minor action>.
@@ -2118,8 +2120,9 @@ def generate_mystic_spheres():
                 \\rank<7> The bonus increases to +4.
             """, tags=['Attune (target)']),
             Spell('Enlarge', 4, 'Yourself or one Large or smaller \\glossterm<ally> within \\rngclose range', """
-                The target's size increases by one size category.
-                This increases its \\glossterm<overwhelm value>, \\glossterm<overwhelm resistance>, and usually increases its \\glossterm<reach> (see \\pcref<Size in Combat>).
+                The target's size increases by one \\glossterm<size category>.
+                This increases its \\glossterm<base speed> and reduces its \\glossterm<Stealth> skill.
+                It may also increase the target's \\glossterm<reach>, \\glossterm<overwhelm value>, and \\glossterm<overwhelm resistance> (see \\pcref<Size in Combat>).
                 However, its physical form is not altered fully to match its new size, and its Strength and Dexterity are unchanged.
 
                 You can cast this spell as a \\glossterm<minor action>.
@@ -2160,14 +2163,15 @@ def generate_mystic_spheres():
                 \\rank<6> The damage increases to \\glossterm<standard damage> +3d.
                 \\rank<8> The damage increases to \\glossterm<standard damage> +4d.
             """, tags=[]),
-            Spell('Malleable Body', 4, 'Yourself or one \\glossterm<ally> within \\rngclose range', """
-                The target's body and equipment becomes highly flexible and malleable, allowing it to compress its body or contort itself into odd shapes.
-                It gains a +8 \\glossterm<magic bonus> to the Escape Artist skill, and it is immune to \\glossterm<critical hits> from \\glossterm<strikes>.
+            Spell('Malleable Body', 4, 'Yourself', """
+                Your body and equipment becomes highly flexible and malleable, allowing you to compress your body or contort yourself into odd shapes.
+                You gain a +8 \\glossterm<magic bonus> to the Escape Artist skill, and are immune to \\glossterm<critical hits> from \\glossterm<strikes>.
+                However, you are \\glossterm<vulnerable> to \\glossterm<physical> damage.
 
                 \\rankline
                 \\rank<6> The skill bonus increases to +12.
                 \\rank<8> The skill bonus increases to +16.
-            """, tags=['Attune (target)']),
+            """, tags=['Attune (self)']),
             Spell('Scent', 3, 'Yourself', """
                 You gain the \\glossterm<scent> ability, giving you a +10 bonus to scent-based Awareness checks (see \\pcref<Senses>).
 
@@ -2888,10 +2892,10 @@ def generate_mystic_spheres():
 
                 \\begin<itemize>
                     \\item Its \\glossterm<damage resistance> and \\glossterm<wound resistance> are equal to the base values for your level (see \\pcref<Character Advancement>).
-                    \\item Its \\glossterm<hit points> are equal to 6.
+                    \\item Its \\glossterm<hit points> are equal to 3.
                     \\item Each of its \\glossterm<defenses> is equal to 4 \\add your level.
                     \\item Its \\glossterm<accuracy> is equal to the higher of your level and Perception.
-                    \\item Its \\glossterm<power> with its attacks is equal to your \\glossterm<power>.
+                    \\item Its \\glossterm<power> with its attacks is equal to your \\glossterm<power> \\sub 4.
                     \\item Its \\glossterm<land speed> is 30 feet.
                     \\item It has no \\glossterm<action points>.
                 \\end<itemize>
@@ -2900,7 +2904,7 @@ def generate_mystic_spheres():
                 There are only two actions it can take.
                 As a \\glossterm<move action>, it can move as you direct.
                 As a standard action, it can make a melee \\glossterm{strike} against a creature it threatens.
-                If it hits, it deals physical \\glossterm<standard damage> -2d.
+                If it hits, it deals physical \\glossterm<standard damage>.
                 The subtypes of damage dealt by this attack depend on the creature's appearance.
                 Most animals bite or claw their foes, which deals bludgeoning and slashing damage.
 
@@ -3925,22 +3929,20 @@ def generate_mystic_spheres():
                 The weapon floats about three feet off the ground, and is sized appropriately for a creature of your size.
                 The specific weapon you choose affects the type of damage it deals.
                 Regardless of the appearance and size chosen, the creature's statistics use the values below.
+                If a summoned weapon gains a \\glossterm<vital wound> or has no hit points remaining at the end of a phase, it disappears.
                 \\begin<itemize>
                     \\item Its \\glossterm<damage resistance> and \\glossterm<wound resistance> are equal to the base values for your level (see \\pcref<Character Advancement>).
-                    \\item Its \\glossterm<hit points> are equal to 6.
+                    \\item Its \\glossterm<hit points> are equal to 3.
                     \\item Each of its \\glossterm<defenses> is equal to 4 \\add your level.
                     \\item Its \\glossterm<accuracy> is equal to the higher of your level and Perception.
-                    \\item Its \\glossterm<power> with its attacks is equal to your \\glossterm<power>.
+                    \\item Its \\glossterm<power> with its attacks is equal to your \\glossterm<power> \\sub 2.
                     \\item Its \\glossterm<fly speed> is 30 feet, with good \\glossterm<maneuverability>.
                     \\item It has no \\glossterm<action points>.
                 \\end<itemize>
 
-                If the weapon has no hit points remaining at the end of a phase, it disappears.
-
                 Each round, the weapon automatically moves towards the creature closest to it during the \\glossterm<movement phase>.
                 During the \\glossterm<action phase>, it makes a melee \\glossterm<strike> against a random creature adjacent to it.
-                Its accuracy is equal to your \\glossterm<accuracy>.
-                If it hits, it deals \\glossterm<standard damage> -1d.
+                If it hits, it deals \\glossterm<standard damage>.
 
                 \\rankline
                 \\rank<3> The damage dealt by the weapon increases to \\glossterm<standard damage>.
