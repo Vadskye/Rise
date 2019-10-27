@@ -798,22 +798,22 @@ This choice determines a great deal about your character's abilities.
 \section{Druid}\label{Druid}
     \begin{dtable!*}
         \lcaption{Druid Progression}
-        \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Elementalist}         & \tb{Nature Spellcasting} & \tb{Nature Spell Mastery}   & \tb{Shifter} \tableheaderrule
-            1         & Elemental balance         & Spellcasting             & Natural spells              & Wild aspects               \\
-            2         & Elemental sphere          & Natural focus            & Mystic knowledge            & Shifting defense           \\
-            3         & Elemental influence       & Spell rank (3)           & Wellspring of power         & Shift body                 \\
-            4         & Greater elemental balance & Spell rank (4)           & Mystic knowledge            & Wild aspect                \\
-            5         & Elemental sphere          & Spell rank (5)           & Greater natural spells      & Greater shifting defense   \\
-            6         & Elemental control         & Spell rank (6)           & Mystic knowledge            & Greater shift body         \\
-            7         & Supreme elemental balance & Spell rank (7)           & Greater wellspring of power & Triple aspect, wild aspect \\
-            8         & True companion            & Spell rank (8)           &                             & Avatar of nature           \\
+        \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+            \tb{Rank} & \tb{Elementalist}         & \tb{Nature Spellcasting} & \tb{Nature Spell Mastery}   & \tb{Shifter}               & \tb{Wildspeaker}         \tableheaderrule
+            1         & Elemental balance         & Spellcasting             & Natural spells              & Wild aspects               & Natural servant         \\
+            2         & Elemental sphere          & Natural focus            & Mystic knowledge            & Shifting defense           & Animal speech           \\
+            3         & Elemental influence       & Spell rank (3)           & Wellspring of power         & Shift body                 & Wild guardian           \\
+            4         & Greater elemental balance & Spell rank (4)           & Mystic knowledge            & Wild aspect                & Greater natural servant \\
+            5         & Elemental sphere          & Spell rank (5)           & Greater natural spells      & Greater shifting defense   & Plant speech            \\
+            6         & Elemental control         & Spell rank (6)           & Mystic knowledge            & Greater shift body         & Greater wild guardian   \\
+            7         & Supreme elemental balance & Spell rank (7)           & Greater wellspring of power & Triple aspect, wild aspect & Supreme natural servant \\
+            8         &                           & Spell rank (8)           &                             & Avatar of nature           &                         \\
         \end{dtabularx}
     \end{dtable!*}
 
     \classbasics{Alignment} Neutral good, lawful neutral, neutral, chaotic neutral, or neutral evil.
 
-    \classbasics{Archetypes} Druids have the Beastmaster, Nature Spellcasting, Nature Spell Mastery, and Shifter \glossterm{archetypes}.
+    \classbasics{Archetypes} Druids have the Elementalist, Nature Spellcasting, Nature Spell Mastery, Shifter, and Wildspeaker \glossterm{archetypes}.
 
     \subsection{Basic Class Abilities}
         If you are a druid, you gain the following abilities.
@@ -848,7 +848,7 @@ This choice determines a great deal about your character's abilities.
         You can avoid this penalty by using armor made of wood altered with the \ritual{ironwood} ritual.
         Such wood is as strong as steel.
 
-    \subsection{Elementalist}\label{Wildspeaker}
+    \subsection{Elementalist}\label{Elementalist}
         This archetype grants you influence over four elements that define the natural world: air, earth, fire, and water.
 
         \cf{Drd}[1]{Elemental Balance} You gain a small benefit from each of the four elements.
@@ -1199,6 +1199,103 @@ This choice determines a great deal about your character's abilities.
 
         While you are an avatar of nature, you do not age and you cannot die of old age.
         You can continue to exist in this form indefinitely.
+
+    \subsection{Wildspeaker}\label{Wildspeaker}
+
+        \cf{Drd}[1]{Natural Servant}[Magical]
+        You can use the \textit{natural servant} ability.
+        This ability requires spending 8 hours performing rituals in a natural area.
+        \begin{attuneability}{Natural Servant}[\glossterm{Attune} (self), \glossterm{Magical}]
+            An animal native to the local environment appears to help you.
+            It follows your directions to the best of its ability as long as you remain in its natural environment.
+            Animals are unable to understand complex concepts, so their ability to obey convoluted instructions is limited.
+            If you leave the animal's natural habitat, it remains behind and this effect ends.
+            If the animal gains a \\glossterm<vital wound> or has no hit points remaining at the end of a phase, this effect ends.
+
+            Your magical connection to the animal improves its resilience and strength in combat.
+            The animal's statistics use the values below, except that each animal also gains a special ability based on the environment you are in.
+            \begin{itemize}
+                \item Its \glossterm{damage resistance} and \glossterm{wound resistance} are equal to the base values for your level (see \pcref{Character Advancement}).
+                \item Its \glossterm{hit points} are equal to 6.
+                \item Each of its \glossterm{defenses} is equal to 4 \add your level.
+                \item Its \glossterm{accuracy} is equal to the higher of your level and Perception.
+                \item Its \glossterm{power} with its attacks is equal to your \glossterm{power}.
+                \item Its \glossterm{base speed} is the normal base speed for its size.
+                \item It has no \glossterm{action points}.
+            \end{itemize}
+        \end{attuneability}
+
+        The special ability of the animal that appears depends on your environment, as described below.
+        You may choose a different animal native to that environment that is similar in size and type, but that does not change the animal's statistics.
+        For example, your \textit{natural servant} in an aquatic environment may be a fish or seal instead of a shark.
+        Unusual environments may have different animals than the standard animals listed below.
+        \begin{itemize}
+            \item Aquatic: A Medium shark appears that has a 40 foot \glossterm{swim speed} and no land speed.
+                It has a bite \glossterm{natural weapon}.
+            \item Arctic: An Small arctic fox appears that has no penalties for being in cold environments.
+                It has a bite \glossterm{natural weapon}.
+            \item Desert: A Medium hyena appears that has no penalties for being in hot environments.
+                It has a bite \glossterm{natural weapon}.
+            \item Mountain: A Medium goat appears that can move up or down steep slopes without slowing its movement.
+                It has a bite \glossterm{natural weapon}.
+            \item Forest: A Medium bear appears that has one additional \glossterm{hit point}.
+                It has a bite \glossterm{natural weapon} and two claw \glossterm{natural weapons}.
+            \item Plains: A Medium lion appears that has a 40 foot \glossterm{land speed}.
+                It has a bite \glossterm{natural weapon}.
+            % TODO: define shallow water
+            \item Swamp: A Medium crocodile appears that has a 20 foot \glossterm{land speed} and a 30 foot \glossterm{swim speed}.
+                It has a bite \glossterm{natural weapon}.
+            \item Underground: A Small dire rat appears that has low-light vision.
+                It has a bite \glossterm{natural weapon}.
+        \end{itemize}
+
+        \cf{Drd}[2]{Animal Speech}[Magical] You can use the \textit{animal speech} ability as a standard action.
+        \begin{attuneability}{Animal Speech}[\glossterm{Sustain} (minor)]
+            Choose an animal within \rnglong range.
+            You can speak to and understand the speech of the target animal, and any other animals of the same species.
+
+            This ability does not make the target any more friendly or cooperative than normal.
+            Wary and cunning animals are likely to be terse and evasive, while stupid ones tend to make inane comments and are unlikely to say or understand anything of use.
+        \end{attuneability}
+
+        \cf{Drd}[3]{Wild Guardian}[Magical] Wild animals and plants will not willingly attack you.
+        They can be compelled to attack you with a Creature Handling check with a \glossterm{difficulty rating} equal to 10 \add your \glossterm{power}.
+        If you attack an animal or plant, this ability no longer provides protection against it and its \glossterm{allies}.
+        This effect does not protect your allies from attack.
+
+        \cf{Drd}[4]{Greater Natural Servant}[Magical] Your \textit{natural servant} gains an \glossterm{action point}.
+        In addition, you can summon an alternate \textit{natural servant} based on your local environment, as described below.
+        \begin{itemize}
+            \item Aquatic: A Large shark appears that has a 50 foot \glossterm{swim speed} and no land speed.
+                It has a bite \glossterm{natural weapon}.
+            \item Arctic: An Large polar bear appears that has a bonus to \glossterm{resistances} against cold damage equal to your \glossterm{power}.
+                It has a bite \glossterm{natural weapon} and two claw \glossterm{natural weapons}.
+            \item Desert: A Large camel appears that has no penalties for being in hot environments.
+                It has a bite \glossterm{natural weapon}.
+            \item Mountain: A Large goat appears that can move up or down steep slopes without slowing its movement.
+                It has a ram \glossterm{natural weapon}.
+            \item Forest: A Large bear appears that has two additional \glossterm{hit points}.
+                It has a bite \glossterm{natural weapon} and two claw \glossterm{natural weapons}.
+            \item Plains: A Large lion appears that has a 50 foot \glossterm{land speed}.
+                It has a bite \glossterm{natural weapon}.
+            % TODO: define shallow water
+            \item Swamp: A Large crocodile appears that has a 30 foot \glossterm{land speed} and a 40 foot \glossterm{swim speed}.
+                It has a bite \glossterm{natural weapon}.
+            \item Underground: A Medium dire rat appears that has low-light vision and darkvision.
+                It has a bite \glossterm{natural weapon}.
+        \end{itemize}
+
+        \cf{Drd}[5]{Plant Speech}[Magical] When you use your \textit{wild speech} ability, you can target a plant instead of an animal.
+        When you do, you can speak to and understand the speech of the target plant, and any other plants of the same species.
+
+        \cf{Drd}[6]{Greater Wild Guardian}[Magical] Your \glossterm{allies} within a \arealarge radius \glossterm{emanation} from you also gain the benefit of your \textit{wild guardian} ability.
+        The protection ends if any target attacks an animal or plant instead of only if you attack.
+        In addition, the \glossterm{difficulty rating} of the Creature Handling check increases to 20 \add your \glossterm{power}.
+
+        \cf{Drd}[7]{Supreme Natural Servant}[Magical] Your \textit{natural servant} gains an additional \glossterm{action point}.
+        In addition, you can increase or decrease the size of the animal you summon with your \textit{natural servant} ability by one size category.
+        Changing the animal's size affects its \glossterm{base speed} and \glossterm{Stealth} skill.
+        It may also affect the animal's \glossterm{reach}, \glossterm{overwhelm value}, and \glossterm{overwhelm resistance} (see \pcref{Size in Combat}).
 
         % \subcf{15th -- Air Mantle}
         % You are surrounded by a mantle of air.
@@ -1847,9 +1944,8 @@ This choice determines a great deal about your character's abilities.
         You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
         As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
 
-        \cf{Mnk}[1]{Unarmed Warrior}
-        You are \glossterm{proficient} with your \glossterm{unarmed attack}.
-        In addition, you gain a \plus2d bonus to damage with your unarmed attack.
+        \cf{Mnk}[1]{Unarmed Warrior} You become \glossterm{proficient} with the unarmed weapons \glossterm{weapon group} (see \pcref{Unarmed Weapons}).
+        In addition, you gain a \plus1d bonus to damage with unarmed weapons.
         For details about how to fight while unarmed, see \pcref{Unarmed Combat}.
 
         \cf{Mnk}[2]{Unarmed Expertise}
@@ -1864,13 +1960,13 @@ This choice determines a great deal about your character's abilities.
         % \cf{Mnk}[6]{Intuitive Reaction}
         % You gain a \plus2 bonus to Reflex defense and \glossterm{initiative}.
 
-        \cf*{Mnk}[3]{Greater Unarmed Warrior} The damage bonus from your \textit{unarmed warrior} ability increases to \plus3d.
+        \cf*{Mnk}[3]{Greater Unarmed Warrior} The damage bonus from your \textit{unarmed warrior} ability increases to \plus2d.
 
         \cf{Mnk}[4]{Esoteric Maneuver} You learn an additional esoteric \glossterm{maneuver} (see \pcref{Esoteric Maneuvers}).
 
         \cf{Mnk}[5]{Greater Unarmed Expertise} The bonus from your \textit{unarmed expertise} ability increases to \plus2.
 
-        \cf{Mnk}[6]{Supreme Unarmed Warrior} The damage bonus from your \textit{unarmed warrior} ability increases to \plus4d.
+        \cf{Mnk}[6]{Supreme Unarmed Warrior} The damage bonus from your \textit{unarmed warrior} ability increases to \plus3d.
 
         \cf*{Mnk}[7]{Esoteric Maneuver} You learn an additional esoteric \glossterm{maneuver} (see \pcref{Esoteric Maneuvers}).
 
@@ -2341,21 +2437,21 @@ This choice determines a great deal about your character's abilities.
     \begin{dtable!*}
         \lcaption{Ranger Progression}
         \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X > {\lcol}X}
-            \tb{Rank} & \tb{Beastmaster}    & \tb{Huntmaster}     & \tb{Keen Senses}    & \tb{Wilderness Warrior} \tableheaderrule
-            1 & Animal speech       & Quarry          & Keen vision         & Wild maneuvers          \\
-            2 & Animal companion    & Hunting style   & Learned perception  & Woodland stride         \\
-            3 & Beast lore          & Hunter's power  & Blindsense          & Wild reaction           \\
-            4 & Greater wild speech & Tracker         & Greater keen vision & Wild maneuver           \\
-            5 & Beast companion     & Hunting style   & Perceive weakness   & Greater woodland stride \\
-            6 & Beast tamer         & Hunter's power  & Blindsight          & Greater wild reaction   \\
-            7 & Supreme wild speech & Greater tracker & Supreme keen vision & Wild maneuver           \\
-            8 & True companion      & Dual quarry     &                     &                         \\
+            \tb{Rank} & \tb{Beastmaster}      & \tb{Huntmaster} & \tb{Keen Senses}    & \tb{Wilderness Warrior} \tableheaderrule
+            1         & Animal companion      & Quarry          & Keen vision         & Wild maneuvers          \\
+            2         & Handling lore         & Hunting style   & Learned perception  & Woodland stride         \\
+            3         & Pack tactics          & Hunter's power  & Blindsense          & Wild reaction           \\
+            4         & Beast companion       & Tracker         & Greater keen vision & Wild maneuver           \\
+            5         & Greater handling lore & Hunting style   & Perceive weakness   & Greater woodland stride \\
+            6         & Greater pack tactics  & Hunter's power  & Blindsight          & Greater wild reaction   \\
+            7         & True companion        & Greater tracker & Supreme keen vision & Wild maneuver           \\
+            8         &                       & Dual quarry     &                     &                         \\
         \end{dtabularx}
     \end{dtable!*}
 
     \classbasics{Alignment} Any.
 
-    \classbasics{Archetypes} Rangers have the Keen Senses, Wilderness Warrior, Huntmaster, and Monster Slayer \glossterm{archetypes}.
+    \classbasics{Archetypes} Rangers have the Beastmaster, Huntmaster, Keen Senses, and Wilderness Warrior \glossterm{archetypes}.
 
     \subsection{Basic Class Abilities}
         If you are a ranger, you gain the following abilities.
@@ -2398,32 +2494,25 @@ This choice determines a great deal about your character's abilities.
                 \item Its \glossterm{hit points} are equal to 6.
                 \item Each of its \glossterm{defenses} is normally equal to 4 \add your level.
                 \item Its \glossterm{accuracy} is normally equal to the higher of your level and Perception.
-                \item Its \glossterm{power} with its attacks is normally equal to your \glossterm{power}.
-                \item It can heal \glossterm{vital damage} using your level in place of its level.
+                \item Its \glossterm{power} with its attacks is normally equal to your \glossterm{power} \sub 2.
             \end{itemize}
         \end{attuneability}
 
-        \cf{Rgr}[2]{Wild Speech}[Magical] You can use the \textit{wild speech} ability as a standard action.
-        \begin{attuneability}{Wild Speech}[\glossterm{Attune} (self)]
-            Choose an animal within \rnglong range.
-            You can speak to and understand the speech of the target animal, and any other animals of the same species.
+        \cf{Rgr}[2]{Handling Lore} You gain two additional \glossterm{skill points}.
+        In addition, you gain a \plus2 bonus to the Creature Handling skill (see \pcref{Creature Handling}).
 
-            This ability does not make the target any more friendly or cooperative than normal.
-            Wary and cunning animals are likely to be terse and evasive, while stupid ones tend to make inane comments and are unlikely to say or understand anything of use.
-        \end{attuneability}
+        \cf{Rgr}[3]{Pack Tactics} You gain a \plus1 bonus to \glossterm{defenses} against creatures that are \glossterm{overwhelmed}.
 
-        \cf{Rgr}[3]{Beast Tamer} You gain a \plus4 bonus to the Creature Handling skill (see \pcref{Creature Handling}).
+        \cf{Rgr}[4]{Beast Companion} Your \textit{animal companion} gains an \glossterm{action point}.
+        In addition, when  you use your \textit{animal companion} ability,
+            you can target a \glossterm{magical beast} \glossterm{ally} with an Intelligence of \minus6 or lower instead of an animal.
 
-        \cf{Rgr}[4]{Beast Companion} When you use your \textit{animal companion} ability,
-        you can target a \glossterm{magical beast} \glossterm{ally} with an Intelligence of \minus6 or lower instead of an animal.
+        \cf{Rgr}[5]{Greater Handling Lore} The bonus from your \textit{handling lore} ability increases to \plus6.
 
-        \cf{Rgr}[5]{Greater Wild Speech} When you use your \textit{wild speech} ability, you do not have to target an animal.
-        Instead, you understand the speech of animals of any species.
+        \cf{Rgr}[6]{Greater Pack Tactics} You gain a \plus1 bonus to \glossterm{accuracy} against creatures that are \glossterm{overwhelmed}.
 
-        \cf{Rgr}[6]{Greater Beast Tamer} The bonus from your \textit{beast tamer} ability increaeses to \plus8.
-
-        \cf{Rgr}[7]{True Companion} The maximum \glossterm{challenge rating} of creatures you can affect with your \textit{animal companion} increases to 2.
-        In addition, the creature affected by your \textit{animal companion} ability has its \glossterm{challenge rating} increased to 2 if it was lower.
+        \cf{Rgr}[7]{True Companion} Your \textit{animal companion} gains an additional \glossterm{action point}.
+        In addition, it gains a \plus1 bonus to \glossterm{accuracy}, \glossterm{defenses}, and \glossterm{wound rolls}.
 
     \subsection{Keen Senses}
         This archetype improves your senses.
@@ -2592,8 +2681,8 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rgr}[3]{Hunter's Power} You gain a \plus1 bonus to \glossterm{power} with \glossterm{mundane} abilities.
 
-        \cf{Rgr}[4]{Tracker} You gain a \plus4 bonus to the Survival skill for the purpose of following tracks.
-        In addition, you gain two additional skill points.
+        \cf{Rgr}[4]{Tracker} You gain two additional skill points.
+        In addition, you gain a \plus2 bonus to the Survival skill.
 
         \cf*{Rgr}[5]{Hunting Style}
         You learn an additional \textit{hunting style}.
@@ -2739,7 +2828,8 @@ This choice determines a great deal about your character's abilities.
         You can also spend \glossterm{insight points} to learn one additional trick \glossterm{maneuver} per \glossterm{insight point}.
         As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
 
-        \cf{Rog}[2]{Trick Lore} You gain two additional skill points.
+        \cf{Rog}[2]{Trick Lore} You gain two additional \glossterm{skill points}.
+        In addition, you gain a \plus2 bonus to the Sleight of Hand skill.
 
         \cf{Rog}[3]{Combat Trickster} You gain a \plus1 bonus to \glossterm{accuracy} with the \textit{dirty trick}, \textit{disarm}, \textit{grapple}, \textit{overrun}, \textit{shove}, and \textit{trip} abilities (see \pcref{Special Combat Abilities}).
         In addition, you gain a \plus1 bonus to \glossterm{accuracy} with grapple actions (see \pcref{Grapple Actions}).
@@ -2789,7 +2879,8 @@ This choice determines a great deal about your character's abilities.
             \rank{7} The target is \glossterm{confused} in addition to being \glossterm{dazed} as part of the same condition.
         \end{freeability}
 
-        \cf{Rog}[2]{Glibness} You gain a \plus2 bonus to the Bluff, Intimidate, and Persuasion skills.
+        \cf{Rog}[2]{Glibness} You gain two additional \glossterm{skill points}.
+        In addition, you gain a \plus2 bonus to the Bluff, Intimidate, and Persuasion skills.
 
         \cf{Rog}[3]{Distract} You can use the \textit{distract} ability as a standard action.
         \begin{freeability}{Distract}[\glossterm{Compulsion}, \glossterm{Speech}, \glossterm{Subtle}]
@@ -2803,7 +2894,7 @@ This choice determines a great deal about your character's abilities.
             \rank{7} The target is also distracted by the creature or object as a \glossterm{condition}.
         \end{freeability}
 
-        \cf{Rog}[4]{Suave Lore} You gain two additional \glossterm{skill points}.
+        \cf{Rog}[4]{Slippery Mind} You gain a \plus2 bonus to Mental defense.
 
         \cf{Rog}[5]{Greater Glibness} The bonus from your \textit{glibness} ability increases to \plus4.
 
@@ -2822,7 +2913,7 @@ This choice determines a great deal about your character's abilities.
             \rank{8} The first time the condition would be removed, it instead remains.
         \end{freeability}
 
-        \cf{Rog}[7]{Slippery Mind} You gain a \plus3 bonus to Mental defense.
+        \cf{Rog}[7]{Slippery Mind} The bonus from your \textit{slippery mind} ability increases to \plus4.
 
     % \subsection{Bard}
     %     This archetype grants you the ability to inspire your allies and impair your foes with magical performances.
