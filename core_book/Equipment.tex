@@ -220,10 +220,10 @@
                 \tind Bullets, sling (20)              & \tdash          & \tdash  & \tdash            & \tdash                   & 1 gp    & 5 lb.   & Ammunition                   \\
 
                 Unarmed weapons\label{Unarmed Weapons} &                 &         &                   &                          &         &         &                              \\
-                \tind Claw Sheath\fn{4}                & \tdash          & \tdash  & \tdash            & \tdash                   & 50 gp   & 3 lb.   & Special                      \\
-                \tind Gauntlet                         & Light           & \plus0  & \minus3d          & Bludgeoning              & 2 gp    & 1 lb.   & Unarmed                      \\
-                \tind Gauntlet, spiked                 & Light           & \plus0  & \minus2d          & Piercing                 & 5 gp    & 1 lb.   & Unarmed                      \\
-                \tind Unarmed strike                   & Light           & \plus0  & \minus3d          & Bludgeoning              & \tdash  & \tdash  & Subdual, Unarmed             \\
+                \tind Claw sheath\fn{4}                & \tdash          & \tdash  & \tdash            & \tdash                   & 50 gp   & 3 lb.   & Special                      \\
+                \tind Gauntlet                         & Light           & \plus2  & \minus3d          & Bludgeoning              & 2 gp    & 1 lb.   & Unarmed                      \\
+                \tind Gauntlet, spiked                 & Light           & \plus2  & \minus3d          & Piercing                 & 5 gp    & 1 lb.   & Unarmed                      \\
+                \tind Unarmed strike                   & Light           & \plus2  & \minus3d          & Bludgeoning              & \tdash  & \tdash  & Subdual, Unarmed             \\
             \end{longtabu}
             1 Applies as a modifier to your damage with \glossterm{strikes} using the weapon. \\
             2 When two types are given, the weapon is both types if the entry specifies ``and,'' or either type (attacker's choice) if the entry specifies ``or.'' \\
@@ -271,15 +271,15 @@
 
         \begin{dtable!*}
             \lcaption{Natural Weapons}
-            \begin{dtabularx}{\textwidth}{p{12em} c c >{\ccol}p{15em} >{\ccol}X}
-                \tb{Natural Weapons} & \tb{Usage Class} & \tb{Damage} & \tb{Damage Type\fn{2}} & \tb{Special} \tableheaderrule
-                Bite            & Medium & \plus0d  & Piercing and bludgeoning & \tdash    \\
-                Claw            & Light  & \plus0d  & Slashing and piercing    & \tdash    \\
-                Constrict\fn{2} & Heavy  & \plus1d  & Bludgeoning              & Grappling \\
-                Gore            & Heavy  & \plus0d  & Piercing                 & Forceful  \\
-                Slam            & Medium & \plus0d  & Bludgeoning              & \tdash    \\
-                Talon           & Light  & \minus1d & Piercing                 & \tdash    \\
-                Unarmed Strike  & Light  & \minus3d & Bludgeoning              & Unarmed   \\
+            \begin{dtabularx}{\textwidth}{p{12em} c c c >{\ccol}p{15em} >{\ccol}X}
+                \tb{Natural Weapons} & \tb{Usage Class} & \tb{Accuracy} & \tb{Damage} & \tb{Damage Type\fn{2}} & \tb{Special} \tableheaderrule
+                Bite            & Medium & \plus0 & \plus0d  & Piercing and bludgeoning & \tdash    \\
+                Claw            & Light  & \plus1 & \plus0d  & Slashing and piercing    & \tdash    \\
+                Constrict\fn{2} & Heavy  & \plus0 & \plus1d  & Bludgeoning              & Grappling \\
+                Ram             & Heavy  & \plus0 & \plus0d  & Bludgeoning              & Forceful  \\
+                Slam            & Medium & \plus0 & \plus0d  & Bludgeoning              & \tdash    \\
+                Talon           & Light  & \plus1 & \minus1d & Piercing                 & \tdash    \\
+                Unarmed Strike  & Light  & \plus2 & \minus3d & Bludgeoning              & \tdash    \\
             \end{dtabularx}
             1 When two types are given, the weapon is both types if the entry specifies ``and,'' or either type (attacker's choice) if the entry specifies ``or''. \\
             2 This attack can only be used against a foe you are grappling with. \\
@@ -310,9 +310,6 @@
         Unless otherwise noted in a weapon's description, a throwing weapon can be used to attack in melee without penalty.
         \parhead{Tripping} When you use the \textit{trip} ability, you can attack with this weapon instead of with a free hand (see \pcref{Trip}).
         If you do, you gain a \plus2 bonus to accuracy on the attack.
-        \parhead{Unarmed} This weapon is used as part of an \glossterm{unarmed attack}.
-        It cannot be disarmed.
-        Unless you are \glossterm{proficient} with your \glossterm{unarmed attack}, you can't defend yourself with this weapon, which usually makes you \defenseless.
 
     \subsection{Weapon Descriptions}
         Some weapons in \trefnp{Weapons} have additional abilities which are described below.
