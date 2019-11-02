@@ -652,31 +652,29 @@ It defines how attributes work and explains how to make attacks in combat.
     Many effects can grant bonuses or penalties to actions you take.
 
     \subsection{Size in Combat}\label{Size in Combat}
-        Your size affects your \glossterm{space} and \glossterm{reach} in combat, your Strength, your Reflex defense, and how easily you overwhelm creatures and are overwhelmed yourself.
+        Your size affects your \glossterm{space} and \glossterm{reach} in combat, your \glossterm{base speed}, your starting attributes, and how easily you are \glossterm{overwhelmed} (see \pcref{Overwhelm}).
         These effects are shown on \trefnp{Size in Combat}.
 
         \begin{dtable*}
             \lcaption{Size in Combat}
-            \begin{dtabularx}{\textwidth}{l l l l p{4.5em} p{4.5em} p{5em} p{5em} X}
-                \tb{Size} & \tb{Space}\fn{1} & \tb{Reach}\fn{1} & \tb{Base Speed} & \tb{Strength Modifier}\fn{2} & \tb{Dexterity Modifier}\fn{2} & \tb{Overwhelm Value}\fn{3} & \tb{Overwhelm Resistance}\fn{4} & \tb{Example Creature} \tableheaderrule
-                Fine              & 1/2 ft.    & 0          & 10 ft. & \minus4 & \plus4  & 1/4 & \tdash & Fly                      \\
-                Diminutive        & 1 ft.      & 0          & 15 ft. & \minus3 & \plus3  & 1/2 & \tdash & Toad                     \\
-                Tiny              & 2-1/2 ft.  & 0          & 20 ft. & \minus2 & \plus2  & 1/2 & \tdash & Cat                      \\
-                Small             & 5 ft.      & 5 ft.      & 25 ft. & \minus1 & \plus1  & 1   & \tdash & Halfling                 \\
-                Medium            & 5 ft.      & 5 ft.      & 30 ft. & \tdash  & \tdash  & 1   & \tdash & Human                    \\
-                Large (tall)      & 10 ft.     & 10 ft.     & 40 ft. & \plus1  & \minus1 & 2   & 1      & Ogre                     \\
-                Large (long)      & 10 ft.     & 5 ft.      & 40 ft. & \plus1  & \minus1 & 2   & 1      & Horse                    \\
-                Huge (tall)       & 15 ft.     & 15 ft.     & 50 ft. & \plus2  & \minus2 & 3   & 2      & Cloud giant              \\
-                Huge (long)       & 15 ft.     & 10 ft.     & 50 ft. & \plus2  & \minus2 & 3   & 2      & Bulette                  \\
-                Gargantuan (tall) & 20 ft.     & 20 ft.     & 60 ft. & \plus3  & \minus3 & 4   & 3      & 50-ft.\ animated statue  \\
-                Gargantuan (long) & 20 ft.     & 15 ft.     & 60 ft. & \plus3  & \minus3 & 4   & 3      & Kraken                   \\
-                Colossal (tall)   & 25\add ft. & 25\add ft. & 70 ft. & \plus4  & \minus4 & 5   & 4      & Colossal animated object \\
-                Colossal (long)   & 25\add ft. & 25\add ft. & 70 ft. & \plus4  & \minus4 & 5   & 4      & Great wyrm red dragon    \\
+            \begin{dtabularx}{\textwidth}{l l l l p{4.5em} p{5em} X}
+                \tb{Size}         & \tb{Space}\fn{1} & \tb{Reach}\fn{1} & \tb{Base Speed} & \tb{Strength Modifier}\fn{2} & \tb{Dexterity Modifier}\fn{2} & \tb{Example Creature} \tableheaderrule
+                Fine              & 1/2 ft.          & 0                & 10 ft.          & \minus4                      & \plus4                        & Fly                      \\
+                Diminutive        & 1 ft.            & 0                & 15 ft.          & \minus3                      & \plus3                        & Toad                     \\
+                Tiny              & 2-1/2 ft.        & 0                & 20 ft.          & \minus2                      & \plus2                        & Cat                      \\
+                Small             & 5 ft.            & 5 ft.            & 25 ft.          & \minus1                      & \plus1                        & Halfling                 \\
+                Medium            & 5 ft.            & 5 ft.            & 30 ft.          & \tdash                       & \tdash                        & Human                    \\
+                Large (tall)      & 10 ft.           & 10 ft.           & 40 ft.          & \plus1                       & \minus1                       & Ogre                     \\
+                Large (long)      & 10 ft.           & 5 ft.            & 40 ft.          & \plus1                       & \minus1                       & Horse                    \\
+                Huge (tall)       & 15 ft.           & 15 ft.           & 50 ft.          & \plus2                       & \minus2                       & Cloud giant              \\
+                Huge (long)       & 15 ft.           & 10 ft.           & 50 ft.          & \plus2                       & \minus2                       & Bulette                  \\
+                Gargantuan (tall) & 20 ft.           & 20 ft.           & 60 ft.          & \plus3                       & \minus3                       & 50-ft.\ animated statue  \\
+                Gargantuan (long) & 20 ft.           & 15 ft.           & 60 ft.          & \plus3                       & \minus3                       & Kraken                   \\
+                Colossal (tall)   & 25\add ft.       & 25\add ft.       & 70 ft.          & \plus4                       & \minus4                       & Colossal animated object \\
+                Colossal (long)   & 25\add ft.       & 25\add ft.       & 70 ft.          & \plus4                       & \minus4                       & Great wyrm red dragon    \\
             \end{dtabularx}
             1 Creatures can vary in space and reach.  These are simply typical values.  \\
             2. Applies to starting attribute value. These modifiers only apply to creature that naturally have the given size, without any temporary modifiers. \\
-            3. See \pcref{Overwhelm Value}. \\
-            4. See \pcref{Overwhelm Resistance}. \\
         \end{dtable*}
 
         \subsubsection{Space}\label{Space}
@@ -724,7 +722,7 @@ It defines how attributes work and explains how to make attacks in combat.
             \parhead{Movement} Creatures three size categories larger than you are not considered obstacles and do not hinder your movement.
 
             % Should this be two size categories larger, or be more dependent on creature anatomy?
-            \parhead{Immunities} Creatures at least three size categories larger than you are difficult to fight. You cannot get a \glossterm{critical hit} with melee \glossterm{strikes} or contribute to overwhelm penalties against such creatures. If you can reach a vulnerable point on the creature, such as by flying or by using ranged weapons, you can get critical hits and contribute to overwhelm penalties normally.
+            \parhead{Immunities} Creatures at least three size categories larger than you are difficult to fight. You cannot get a \glossterm{critical hit} with melee \glossterm{strikes} against such creatures. If you can reach a vulnerable point on the creature, such as by flying or by using ranged weapons, you can get critical hits normally.
 
     \subsection{Arbitrary Modifiers}
 
@@ -739,39 +737,15 @@ It defines how attributes work and explains how to make attacks in combat.
 
     \subsection{Overwhelm}\label{Overwhelm}
         When you are being attacked by multiple foes at once, or by a massive foe that can attack from many directions, you are less able to defend yourself.
-        You take penalties to your Armor defense equal to half the combined \glossterm{overwhelm value} of all creatures threatening you, rounded down.
-        Among equal sized creatures, this usually means you take a penalty equal to half the number of creatures threatening you.
+        If there are at least two creatures threatening you, you take penalties to your Armor and Reflex defenses equal to the number of creatures threatening you.
         These penalties are called \glossterm{overwhelm penalties}.
         If you are suffering at least a \minus1 overwhelm penalty, you are \glossterm{overwhelmed}.
 
-        \parhead{Overwhelm Value}\label{Overwhelm Value} Your \glossterm{overwhelm value} affects how much of a penalty you impose on creatures you threaten, as described above.
-        For example, Medium creatures have an overwhelm value of 1, and larger creatures have a higher overwhelm value (see \pcref{Size in Combat}).
-        Some abilities can affect your overwhelm value.
-
-        Some creatures have fractional overwhelm values.
-        For example, a Tiny creature has an overwhelm value of 1/2.
-        Fractional overwhelm values are not rounded down until after being added with the overwhelm values from other threatening creatures.
-        For example, if five Tiny creatures were threatening a single creature, their combined overwhelm value would be 2 and 1/2.
-        That value is rounded down to 2 when determining whether the creature is overwhelmed, and how large that creature's overwhelm penalties are.
-
-        If your \glossterm{overwhelm value} would be reduced below 1, special rules apply.
-        The first -1 penalty reduces your overwhelm value to 1/2.
-        An additional -1 penalty reduces your overwhelm value to 1/4.
-        Your overwhelm value cannot be reduced below 1/4.
-
-        \parhead{Overwhelm Resistance}\label{Overwhelm Resistance} Some abilities grant \glossterm{overwhelm resistance}.
-        For example, Large and larger creatures automatically gain overwhelm resistance (see \pcref{Size in Combat}).
-        A creature with overwhelm resistance treats creatures threating it as if their \glossterm{overwhelm value} was reduced by amount equal to the creatures overwhelm resistance.
-        Some abilities can increase or decrease overwhelm resistance, such as the \spell{boon of many eyes} spell.
-        A creature without overwhelm resistance is considered to have an overwhelm resistance of 0.
-
-        For example, Felix the fighter has an \glossterm{overwhelm resistance} of 1.
-        If he was \glossterm{threatened} by a giant with an \glossterm{overwhelm value} of 2, he would reduce the giant's overwhelm value to 1.
-        As a result, Felix would not be overwhelmed.
-
-        \parhead{Ignoring Attackers} At the start of each phase, you can choose to ignore up to one creature threatening you.
-        If you do, you are treated as being \unaware against that creature.
-        In exchange, it does not contribute to the number of creatures overwhelming you.
+        \subsubsection{Size Differences}
+            Small creatures are less overwhelming in combat.
+            Creatures one \glossterm{size category} smaller than you only count as half a creature for the purpose of determining your \glossterm{overwhelm penalties}.
+            Creatures two \glossterm{size categories} smaller than you count as one quarter of a creature.
+            Creatures three or more \glossterm{size categories} smaller than you do not contribute to your \glossterm{overwhelm penalties} at all.
 
     \subsection{Range Increments}\label{Range Increments}
         Most physical ranged attacks are less accurate against distant targets.
