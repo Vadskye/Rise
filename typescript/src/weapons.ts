@@ -36,6 +36,7 @@ export type StandardWeaponName =
   | "longsword"
   | "short sword"
   | "slam"
+  | "spear"
   | "stinger"
   | "talon"
   | "tentacle";
@@ -71,6 +72,9 @@ export const standardWeapons: Record<StandardWeaponName, Omit<CustomWeaponInput,
   },
   "slam": {
     damageTypes: ["bludgeoning"],
+  },
+  "spear": {
+    damageTypes: ["piercing"],
   },
   "tentacle": {
     damageTypes: ["bludgeoning"],
