@@ -195,7 +195,7 @@ def generate_maneuvers():
             '7': 'The damage bonus increases to +5d.',
         },
         tags=[],
-        lists=['Primal', 'Martial', 'Wild'],
+        lists=['Esoteric', 'Primal', 'Martial', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
