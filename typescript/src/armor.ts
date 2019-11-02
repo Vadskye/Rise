@@ -1,4 +1,4 @@
-import { DefenseType, defenseTypes, ResistanceType, resistanceTypes } from "@src/data";
+import { DamageType, damageTypes, DefenseType, defenseTypes } from "@src/data";
 import { fromPairs } from "@src/util/from_pairs";
 
 interface StandardArmorInput {
@@ -7,7 +7,7 @@ interface StandardArmorInput {
 
 interface CustomArmorInput {
   defenseBonuses: Partial<Record<DefenseType, number>>;
-  resistanceBonuses: Partial<Record<ResistanceType, number>>;
+  resistanceBonuses: Partial<Record<DamageType, number>>;
   name: string;
 }
 
@@ -16,7 +16,7 @@ export type ArmorInput = StandardArmorInput | CustomArmorInput;
 export interface Armor {
   defenseBonuses: Record<DefenseType, number>;
   name: string;
-  resistanceBonuses: Record<ResistanceType, number>;
+  resistanceBonuses: Record<DamageType, number>;
 }
 
 export function parseArmorInput(input: ArmorInput): Armor {
@@ -25,9 +25,9 @@ export function parseArmorInput(input: ArmorInput): Armor {
     fromPairs(defenseTypes.map((d) => [d, 0])),
     isStandardArmorInput(input) ? standardArmors[input.name].defenseBonuses : input.defenseBonuses,
   );
-  const armorResistanceBonuses: Record<ResistanceType, number> = Object.assign(
+  const armorResistanceBonuses: Record<DamageType, number> = Object.assign(
     {},
-    fromPairs(resistanceTypes.map((r) => [r, 0])),
+    fromPairs(damageTypes.map((r) => [r, 0])),
     isStandardArmorInput(input)
       ? standardArmors[input.name].resistanceBonuses
       : input.resistanceBonuses,
