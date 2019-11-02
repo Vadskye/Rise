@@ -17,14 +17,7 @@ import {
   spaceBySize,
   speedBySize,
 } from "@src/calculate";
-import {
-  attributes,
-  DefenseType,
-  defenseTypes,
-  ResistanceType,
-  resistanceTypes,
-  skills,
-} from "@src/data";
+import { attributes, DamageType, damageTypes, DefenseType, defenseTypes, skills } from "@src/data";
 import { MonsterType } from "@src/monsters/types";
 import { fromPairs } from "@src/util/from_pairs";
 import { parseWeaponInput, Weapon, WeaponInput } from "@src/weapons";
@@ -47,7 +40,7 @@ export interface MonsterInput {
   name: string;
   passiveAbilities?: PassiveAbility[];
   reach?: number;
-  resistanceBonuses?: Partial<Record<ResistanceType, number>>;
+  resistanceBonuses?: Partial<Record<DamageType, number>>;
   size?: Creature.Size;
   skillPoints?: Partial<Creature.Skills>;
   space?: number;
@@ -70,7 +63,7 @@ interface MonsterCalculatedValues {
   mundanePower: number;
   passiveAbilities: PassiveAbility[];
   reach: number;
-  resistanceBonuses: Record<ResistanceType, number>;
+  resistanceBonuses: Record<DamageType, number>;
   resistances: Resistances;
   skills: Creature.Skills;
   skillPoints: Creature.Skills;
@@ -97,7 +90,7 @@ const monsterDefaults: Required<
 > & {
   armors: Armor[];
   defenseBonuses: Record<DefenseType, number>;
-  resistanceBonuses: Record<ResistanceType, number>;
+  resistanceBonuses: Record<DamageType, number>;
   passiveAbilities: PassiveAbility[];
   skillPoints: Creature.Skills;
   startingAttributes: Creature.Attributes;
@@ -111,7 +104,7 @@ const monsterDefaults: Required<
   challengeRating: 1,
   defenseBonuses: fromPairs(defenseTypes.map((d) => [d, 0])),
   passiveAbilities: [],
-  resistanceBonuses: fromPairs(resistanceTypes.map((d) => [d, 0])),
+  resistanceBonuses: fromPairs(damageTypes.map((d) => [d, 0])),
   size: "medium",
   skillPoints: fromPairs(skills.map((s) => [s, 0])),
   startingAttributes: fromPairs(attributes.map((a) => [a, 0])),
@@ -167,8 +160,8 @@ export function reformatMonsterInput(monsterInput: MonsterInput): MonsterBase {
     for (const [defenseType, bonus] of _.entries(armor.defenseBonuses)) {
       monster.defenseBonuses[defenseType as DefenseType] += bonus;
     }
-    for (const [resistanceType, bonus] of _.entries(armor.resistanceBonuses)) {
-      monster.resistanceBonuses[resistanceType as ResistanceType] += bonus;
+    for (const [damageType, bonus] of _.entries(armor.resistanceBonuses)) {
+      monster.resistanceBonuses[damageType as DamageType] += bonus;
     }
   }
 

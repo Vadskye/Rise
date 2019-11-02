@@ -1,5 +1,5 @@
 import { CalculatedAttack, calculateStrike } from "@src/calculate";
-import { resistanceTypes } from "@src/data";
+import { DamageType, damageTypes } from "@src/data";
 import * as format from "@src/latex/format";
 import { MonsterBase } from "@src/monsters";
 import { PassiveAbility } from "@src/monsters/reformat_monster_input";
@@ -40,15 +40,17 @@ function getMonsterName({ name }: MonsterBase): string {
 }
 
 function getMainContent(monster: MonsterBase) {
-  const extraDamageResistances = [];
-  const extraWoundResistances = [];
-  for (const resistanceType of resistanceTypes) {
-    if (monster.resistanceBonuses[resistanceType]) {
-      const title = titleCase(resistanceType);
-      extraDamageResistances.push(`${title} ${monster.resistances.damage[resistanceType]}`);
-      extraWoundResistances.push(`${title} ${monster.resistances.wound[resistanceType]}`);
+  const extraDamageTypes = new Set<DamageType>();
+  for (const damageType of damageTypes) {
+    if (!["physical", "energy"].includes(damageType) && monster.resistanceBonuses[damageType]) {
+      extraDamageTypes.add(damageType);
     }
   }
+  if (monster.resistanceBonuses.physical !== monster.resistanceBonuses.energy) {
+    extraDamageTypes.add("physical");
+    extraDamageTypes.add("energy");
+  }
+
   return `
     \\begin{spellcontent}
       \\begin{spelltargetinginfo}
@@ -57,12 +59,20 @@ function getMainContent(monster: MonsterBase) {
           \\textbf{Fort} ${monster.defenses.fortitude};
           \\textbf{Ref} ${monster.defenses.reflex};
           \\textbf{Ment} ${monster.defenses.mental}
-        \\pari \\textbf{DR} ${monster.resistances.damage.global}${
-    extraDamageResistances.length > 0 ? "; " + extraDamageResistances.join("; ") : ""
-  }
-        \\pari \\textbf{WR} ${monster.resistances.wound.global}${
-    extraWoundResistances.length > 0 ? "; " + extraWoundResistances.join("; ") : ""
-  }
+        \\pari \\textbf{DR} ${
+          extraDamageTypes.size > 0
+            ? Array.from(extraDamageTypes)
+                .map((t: DamageType) => `${titleCase(t)} ${monster.resistances.damage[t]}`)
+                .join("; ")
+            : monster.resistances.damage.physical
+        }
+        \\pari \\textbf{WR} ${
+          extraDamageTypes.size > 0
+            ? Array.from(extraDamageTypes)
+                .map((t) => `${titleCase(t)} ${monster.resistances.wound[t]}`)
+                .join("; ")
+            : monster.resistances.wound.physical
+        }
         ${getStrikes(monster)}
       \\end{spelltargetinginfo}
     \\end{spellcontent}

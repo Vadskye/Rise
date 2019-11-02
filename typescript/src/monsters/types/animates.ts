@@ -5,7 +5,7 @@ const animateInput: TypelessMonsterInput[] = [];
 const baseAirElemental = {
   // TODO: add fly speed
   // TODO: add whirlwind
-  armorInputs: [{ name: "thick skin" as const }],
+  armorInputs: [{ name: "hide" as const }],
   attackInputs: [
     {
       hit: "Each target takes <damage>.",

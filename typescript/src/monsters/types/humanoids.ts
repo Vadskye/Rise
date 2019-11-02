@@ -54,6 +54,21 @@ export const humanoidInput: TypelessMonsterInput[] = [
     startingAttributes: { str: -1, con: 1, int: -1, wil: 2 },
     weaponInput: [{ name: "club" }],
   },
+  {
+    resistanceBonuses: { physical: 4 },
+    level: 10,
+    name: "Lizardfolk, Grunt",
+    startingAttributes: { str: 2, con: 2 },
+    weaponInput: [{ name: "spear" }],
+  },
+  {
+    challengeRating: 2,
+    resistanceBonuses: { physical: 4 },
+    level: 10,
+    name: "Lizardfolk, Elite",
+    startingAttributes: { str: 3, con: 2 },
+    weaponInput: [{ damageTypes: ["electricity", "piercing"], name: "spear" }],
+  },
 ];
 
 export const humanoids = addType("humanoid", humanoidInput);
