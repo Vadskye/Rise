@@ -1127,7 +1127,7 @@ This choice determines a great deal about your character's abilities.
 
                 \rankline
                 \rank{3} You gain a \plus2 bonus to \glossterm{power} with \glossterm{natural weapons}.
-                \rank{5} You gain a \plus1 bonus to your \glossterm{overwhelm value}.
+                \rank{5} You are treated as one \glossterm{size category} larger for the purpose of determining \glossterm{overwhelm penalties} you inflict on other creatures.
                 \rank{7} The bonus to \glossterm{power} increases to \plus4.
             \end{freeability}
 
@@ -1230,22 +1230,21 @@ This choice determines a great deal about your character's abilities.
         For example, your \textit{natural servant} in an aquatic environment may be a fish or seal instead of a shark.
         Unusual environments may have different animals than the standard animals listed below.
         \begin{itemize}
-            \item Aquatic: A Medium shark appears that has a 40 foot \glossterm{swim speed} and no land speed.
+            \item Aquatic: A Small shark appears that has a 30 foot \glossterm{swim speed} and no land speed.
                 It has a bite \glossterm{natural weapon}.
             \item Arctic: An Small arctic fox appears that has no penalties for being in cold environments.
                 It has a bite \glossterm{natural weapon}.
-            \item Desert: A Medium hyena appears that has no penalties for being in hot environments.
+            \item Desert: A Small hyena appears that has no penalties for being in hot environments.
                 It has a bite \glossterm{natural weapon}.
-            \item Mountain: A Medium goat appears that can move up or down steep slopes without slowing its movement.
+            \item Mountain: A Small goat appears that can move up or down steep slopes without slowing its movement.
+                It has a ram \glossterm{natural weapon}.
+            \item Forest: A Small wolverine appears that has one additional \glossterm{hit point}.
                 It has a bite \glossterm{natural weapon}.
-            \item Forest: A Medium bear appears that has one additional \glossterm{hit point}.
-                It has a bite \glossterm{natural weapon} and two claw \glossterm{natural weapons}.
-            \item Plains: A Medium lion appears that has a 40 foot \glossterm{land speed}.
+            \item Plains: A Small wolf appears that has the \glossterm{scent} ability.
                 It has a bite \glossterm{natural weapon}.
-            % TODO: define shallow water
-            \item Swamp: A Medium crocodile appears that has a 20 foot \glossterm{land speed} and a 30 foot \glossterm{swim speed}.
+            \item Swamp: A Small crocodile appears that has a 15 foot \glossterm{land speed} and a 25 foot \glossterm{swim speed}.
                 It has a bite \glossterm{natural weapon}.
-            \item Underground: A Small dire rat appears that has low-light vision.
+            \item Underground: A Small dire rat appears that has \glossterm{low-light vision}.
                 It has a bite \glossterm{natural weapon}.
         \end{itemize}
 
@@ -1266,22 +1265,22 @@ This choice determines a great deal about your character's abilities.
         \cf{Drd}[4]{Greater Natural Servant}[Magical] Your \textit{natural servant} gains an \glossterm{action point}.
         In addition, you can summon an alternate \textit{natural servant} based on your local environment, as described below.
         \begin{itemize}
-            \item Aquatic: A Large shark appears that has a 50 foot \glossterm{swim speed} and no land speed.
+            \item Aquatic: A Medium shark appears that has a 40 foot \glossterm{swim speed} and no land speed.
                 It has a bite \glossterm{natural weapon}.
-            \item Arctic: An Large polar bear appears that has a bonus to \glossterm{resistances} against cold damage equal to your \glossterm{power}.
+            \item Arctic: An Medium polar bear appears that has a bonus to \glossterm{resistances} against cold damage equal to your \glossterm{power}.
                 It has a bite \glossterm{natural weapon} and two claw \glossterm{natural weapons}.
-            \item Desert: A Large camel appears that has no penalties for being in hot environments.
+            \item Desert: A Medium camel appears that has no penalties for being in hot environments.
                 It has a bite \glossterm{natural weapon}.
-            \item Mountain: A Large goat appears that can move up or down steep slopes without slowing its movement.
+            \item Mountain: A Medium goat appears that can move up or down steep slopes without slowing its movement.
                 It has a ram \glossterm{natural weapon}.
-            \item Forest: A Large bear appears that has two additional \glossterm{hit points}.
+            \item Forest: A Medium bear appears that has two additional \glossterm{hit points}.
                 It has a bite \glossterm{natural weapon} and two claw \glossterm{natural weapons}.
-            \item Plains: A Large lion appears that has a 50 foot \glossterm{land speed}.
+            \item Plains: A Medium lion appears that has a 40 foot \glossterm{land speed}.
                 It has a bite \glossterm{natural weapon}.
             % TODO: define shallow water
-            \item Swamp: A Large crocodile appears that has a 30 foot \glossterm{land speed} and a 40 foot \glossterm{swim speed}.
+            \item Swamp: A Medium crocodile appears that has a 20 foot \glossterm{land speed} and a 30 foot \glossterm{swim speed}.
                 It has a bite \glossterm{natural weapon}.
-            \item Underground: A Medium dire rat appears that has low-light vision and darkvision.
+            \item Underground: A Medium dire rat appears that has \glossterm{low-light vision} and \glossterm{darkvision}.
                 It has a bite \glossterm{natural weapon}.
         \end{itemize}
 
@@ -1295,7 +1294,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Drd}[7]{Supreme Natural Servant}[Magical] Your \textit{natural servant} gains an additional \glossterm{action point}.
         In addition, you can increase or decrease the size of the animal you summon with your \textit{natural servant} ability by one size category.
         Changing the animal's size affects its \glossterm{base speed} and \glossterm{Stealth} skill.
-        It may also affect the animal's \glossterm{reach}, \glossterm{overwhelm value}, and \glossterm{overwhelm resistance} (see \pcref{Size in Combat}).
+        It may also affect the animal's \glossterm{reach} (see \pcref{Size in Combat}).
 
         % \subcf{15th -- Air Mantle}
         % You are surrounded by a mantle of air.
@@ -1648,7 +1647,7 @@ This choice determines a great deal about your character's abilities.
             \rank{8} The accuracy bonus increases to \plus3.
         \end{freeability}
 
-        \cf{Ftr}[3]{Tactical Coordination} You gain a \plus1 bonus to \glossterm{overwhelm value} while you have a \textit{battle tactics} ability active.
+        \cf{Ftr}[3]{Tactical Coordination} You gain a \plus1 bonus to \glossterm{accuracy} against \glossterm{overwhelmed} creatures.
 
         \cf{Ftr}[4]{Battle Tactic} You learn an additional \textit{battle tactic}.
 
@@ -2481,7 +2480,7 @@ This choice determines a great deal about your character's abilities.
         This ability requires 8 hours of training and attunement which the target must actively parcipate in.
         You can compel a wild animal to undergo this training by sustaining the \textit{command} ability from the Creature Handling skill (see \pcref{Command}).
         \begin{attuneability}{Animal Companion}[\glossterm{Attune} (self), \glossterm{Emotion}, \glossterm{Magical}]
-            Choose an animal \glossterm{ally} within your \glossterm{reach} with a level no higher than your level and a \glossterm{challenge rating} no higher than 1.
+            Choose a Medium or smaller animal \glossterm{ally} within your \glossterm{reach} with a level no higher than your level and a \glossterm{challenge rating} no higher than 1.
             The target serves as a loyal companion to you.
             It follows your directions to the best of its ability.
             Animals are unable to understand complex concepts, so their ability to obey convoluted instructions is limited.
@@ -2503,16 +2502,15 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rgr}[3]{Pack Tactics} You gain a \plus1 bonus to \glossterm{defenses} against creatures that are \glossterm{overwhelmed}.
 
-        \cf{Rgr}[4]{Beast Companion} Your \textit{animal companion} gains an \glossterm{action point}.
-        In addition, when  you use your \textit{animal companion} ability,
-            you can target a \glossterm{magical beast} \glossterm{ally} with an Intelligence of \minus6 or lower instead of an animal.
+        \cf{Rgr}[4]{Greater Animal Companion} Your \textit{animal companion} gains an \glossterm{action point}.
+        In addition, it gains a \plus1 bonus to \glossterm{accuracy}, \glossterm{defenses}, and \glossterm{wound rolls}.
 
         \cf{Rgr}[5]{Greater Handling Lore} The bonus from your \textit{handling lore} ability increases to \plus6.
 
-        \cf{Rgr}[6]{Greater Pack Tactics} You gain a \plus1 bonus to \glossterm{accuracy} against creatures that are \glossterm{overwhelmed}.
+        \cf{Rgr}[6]{Greater Pack Tactics} You gain a \plus1 bonus to \glossterm{accuracy} against \glossterm{overwhelmed} creatures.
 
-        \cf{Rgr}[7]{True Companion} Your \textit{animal companion} gains an additional \glossterm{action point}.
-        In addition, it gains a \plus1 bonus to \glossterm{accuracy}, \glossterm{defenses}, and \glossterm{wound rolls}.
+        \cf{Rgr}[7]{Supreme Animal Companion} Your \textit{animal companion} gains an additional \glossterm{action point}.
+        In addition, the bonuses from your \textit{greater animal companion} ability increase to \plus2.
 
     \subsection{Keen Senses}
         This archetype improves your senses.
@@ -2664,9 +2662,9 @@ This choice determines a great deal about your character's abilities.
                 When you use your \textit{quarry} ability, you can target any number of creatures to be your quarry.
 
                 \rankline
-                \rank{4} You gain a \plus1 bonus to \glossterm{overwhelm resistance}.
-                \rank{6} The bonus to overwhelm resistance applies to all members of your hunting party.
-                \rank{8} The bonus to \glossterm{overwhelm resistance} increases to \plus2.
+                \rank{4} You reduce your \glossterm{overwhelm penalties} by 1.
+                \rank{6} The penalty reduction applies to all members of your hunting party.
+                \rank{8} The penalty reduction increases to 2.
             \end{freeability}
 
             \begin{freeability}{Wolfpack}

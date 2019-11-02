@@ -973,7 +973,7 @@ def generate_mystic_spheres():
             Spell('Divine Might', 4, 'Yourself', """
                 You increase your size by one \\glossterm<size category>.
                 This increases your \\glossterm<base speed> and reduces your \\glossterm<Stealth> skill.
-                It may also increase your \\glossterm<reach>, \\glossterm<overwhelm value>, and \\glossterm<overwhelm resistance> (see \\pcref<Size in Combat>).
+                It may also increase your \\glossterm<reach> (see \\pcref<Size in Combat>).
                 However, your physical form is not altered fully to match its new size, and your Strength and Dexterity are unchanged.
 
                 You can cast this spell as a \\glossterm<minor action>.
@@ -2082,7 +2082,7 @@ def generate_mystic_spheres():
             Spell('Shrink', 1, 'Yourself or one Small or larger \\glossterm<ally> within \\rngclose range', """
                 The target's size decreases by one \\glossterm<size category>.
                 This decreases its \\glossterm<base speed> and improves its \\glossterm<Stealth> skill.
-                It may also decrease the target's \\glossterm<reach>, \\glossterm<overwhelm value>, and \\glossterm<overwhelm resistance> (see \\pcref<Size in Combat>).
+                It may also decrease the target's \\glossterm<reach> (see \\pcref<Size in Combat>).
                 However, its physical form is not altered fully to match its new size, and its Strength and Dexterity are unchanged.
 
                 You can cast this spell as a \\glossterm<minor action>.
@@ -2122,7 +2122,7 @@ def generate_mystic_spheres():
             Spell('Enlarge', 4, 'Yourself or one Large or smaller \\glossterm<ally> within \\rngclose range', """
                 The target's size increases by one \\glossterm<size category>.
                 This increases its \\glossterm<base speed> and reduces its \\glossterm<Stealth> skill.
-                It may also increase the target's \\glossterm<reach>, \\glossterm<overwhelm value>, and \\glossterm<overwhelm resistance> (see \\pcref<Size in Combat>).
+                It may also increase the target's \\glossterm<reach> (see \\pcref<Size in Combat>).
                 However, its physical form is not altered fully to match its new size, and its Strength and Dexterity are unchanged.
 
                 You can cast this spell as a \\glossterm<minor action>.
@@ -2644,12 +2644,12 @@ def generate_mystic_spheres():
                 \\rank<5> The bonus increases to +3.
                 \\rank<7> The bonus increases to +4.
             """, tags=['Attune (self)']),
-            Spell('Boon of Many Eyes', 3, 'Yourself', """
-                You gain a +1 \\glossterm<magic bonus> to \\glossterm<overwhelm resistance>.
+            Spell('Boon of Many Eyes', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+                The target reduces its \\glossterm<overwhelm penalties> by 2.
 
                 \\rankline
-                \\rank<5> The bonus increases to +2.
-                \\rank<7> The bonus increases to +3.
+                \\rank<5> The penalty reduction increases to 3.
+                \\rank<7> The penalty reduction increases to 4.
             """, tags=['Attune (self)']),
             Spell('Boon of Knowledge', 4, 'Yourself', """
                 You gain a +4 \\glossterm<magic bonus> to all Knowledge skills (see \\pcref<Knowledge>).
