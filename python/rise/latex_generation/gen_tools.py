@@ -8,75 +8,96 @@ def generate_tools():
     tools = []
 
     tools.append(MagicItem(
-        name="Potion (1st)",
-        level=0.5,
+        name="Cleansing Potion",
+        level=11,
         material_type='Potion',
         tags=[],
         description="""
-            This potion contains the power of a 1st level \\glossterm<targeted> spell that does not have the \\glossterm<Attune> or \\glossterm<Sustain> tags.
-            As a \\glossterm<standard action>, you can spend an \\glossterm<action point> to drink this potion.
-            When you do, if your \\glossterm<power> is at least as high as this item's \\glossterm<power>, the spell takes effect on you.
-            You are the only target of the spell.
-            If your \\glossterm<power> is less than the item's \\glossterm<power>, the overwhelming magical energy instead deals \\glossterm<standard damage> -1d to you.
-
-            After this potion has been used, its magic is expended.
+            When you drink this \\glossterm<potion>, you remove your most recent \\glossterm<condition>.
+            This cannot remove a condition applied during the current round.
         """,
-        short_description="Casts a 1st level spell on you",
+        short_description="Removes a condition",
     ))
 
     tools.append(MagicItem(
-        name="Potion (2nd)",
+        name="Cleansing Potion, Greater",
+        level=17,
+        material_type='Potion',
+        tags=[],
+        description="""
+            When you drink this \\glossterm<potion>, you remove your two most recent \\glossterm<conditions>.
+            This cannot remove a condition applied during the current round.
+        """,
+        short_description="Removes two conditions",
+    ))
+
+    tools.append(MagicItem(
+        name="Potion of Wound Closure",
         level=1,
         material_type='Potion',
         tags=[],
         description="""
-            This item functions like a 1st level potion, except that it contains a 2nd level spell.
+            When you drink this \\glossterm<potion>, you gain a +1 bonus to the \\glossterm<wound roll> of your most recent \\glossterm<vital wound>.
+            The \\glossterm<wound roll> for that \\glossterm<vital wound> cannot be modified again.
         """,
-        short_description="Casts a 2nd level spell on you",
+        short_description="Grants +1 bonus to a \\glossterm<wound roll>",
     ))
 
     tools.append(MagicItem(
-        name="Potion (3rd)",
-        level=4,
-        material_type='Potion',
-        tags=[],
-        description="""
-            This item functions like a 1st level potion, except that it contains a 3rd level spell.
-        """,
-        short_description="Casts a 3rd level spell on you",
-    ))
-
-    tools.append(MagicItem(
-        name="Potion (4th)",
+        name="Potion of Wound Closure, Greater",
         level=7,
         material_type='Potion',
         tags=[],
         description="""
-            This item functions like a 1st level potion, except that it contains a 4th level spell.
+            When you drink this \\glossterm<potion>, you gain a +2 bonus to the \\glossterm<wound roll> of your most recent \\glossterm<vital wound>.
+            The \\glossterm<wound roll> for that \\glossterm<vital wound> cannot be modified again.
         """,
-        short_description="Casts a 4th level spell on you",
+        short_description="Grants +2 bonus to a \\glossterm<wound roll>",
     ))
 
     tools.append(MagicItem(
-        name="Potion (5th)",
-        level=10,
-        material_type='Potion',
-        tags=[],
-        description="""
-            This item functions like a 1st level potion, except that it contains a 5th level spell.
-        """,
-        short_description="Casts a 5th level spell on you",
-    ))
-
-    tools.append(MagicItem(
-        name="Potion (6th)",
+        name="Potion of Wound Closure, Supreme",
         level=13,
         material_type='Potion',
         tags=[],
         description="""
-            This item functions like a 1st level potion, except that it contains a 6th level spell.
+            When you drink this \\glossterm<potion>, you gain a +3 bonus to the \\glossterm<wound roll> of your most recent \\glossterm<vital wound>.
+            The \\glossterm<wound roll> for that \\glossterm<vital wound> cannot be modified again.
         """,
-        short_description="Casts a 6th level spell on you",
+        short_description="Grants +3 bonus to a \\glossterm<wound roll>",
+    ))
+
+    tools.append(MagicItem(
+        name="Potion of Healing",
+        level=3,
+        material_type='Potion',
+        tags=[],
+        description="""
+            When you drink this \\glossterm<potion>, you heal one \\glossterm<hit point>.
+        """,
+        short_description="Restores one hit point",
+    ))
+
+    tools.append(MagicItem(
+        name="Potion of Healing, Greater",
+        level=9,
+        material_type='Potion',
+        tags=[],
+        description="""
+            When you drink this \\glossterm<potion>, you heal two \\glossterm<hit points>.
+        """,
+        short_description="Restores two hit points",
+    ))
+
+    tools.append(MagicItem(
+        name="Potion of Healing, Supreme",
+        level=15,
+        material_type='Potion',
+        tags=[],
+        description="""
+            When you drink this \\glossterm<potion>, you heal three \\glossterm<hit point>.
+        """,
+        short_description="Restores three hit points",
     ))
 
     return tools
