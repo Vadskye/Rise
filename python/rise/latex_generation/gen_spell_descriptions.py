@@ -827,6 +827,7 @@ def generate_mystic_spheres():
             """, tags=['Attune (target)']),
             Spell('Cleansing Blessing', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 The target can remove its most recent \\glossterm<condition>.
+                This cannot remove a condition applied during the current round.
 
                 \\rankline
                 \\rank<5> The target can remove two conditions.
@@ -834,6 +835,7 @@ def generate_mystic_spheres():
             """, tags=[]),
             Spell('Cleansing Benediction', 5, 'You and each of your \\glossterm<allies> within a \\areamed radius from you', """
                 Each target can remove its most recent \\glossterm<condition>.
+                This cannot remove a condition applied during the current round.
 
                 \\rankline
                 \\rank<7> The area increases to a \\arealarge radius.
