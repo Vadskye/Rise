@@ -5,5 +5,5 @@ export function calculateHitPoints({
   startingAttributes,
 }: Pick<MonsterBase, "challengeRating" | "startingAttributes">): number {
   const crMult = challengeRating <= 1 ? 0.5 : 1;
-  return (6 + startingAttributes.con) * crMult;
+  return Math.floor((6 + startingAttributes.con) * crMult);
 }
