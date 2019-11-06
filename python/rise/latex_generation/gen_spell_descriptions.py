@@ -826,14 +826,14 @@ def generate_mystic_spheres():
                 \\rank<7> The spell can negate three conditions before ending.
             """, tags=['Attune (target)']),
             Spell('Cleansing Blessing', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                The target can remove a \\glossterm<condition>.
+                The target can remove its most recent \\glossterm<condition>.
 
                 \\rankline
                 \\rank<5> The target can remove two conditions.
                 \\rank<7> The target can remove three conditions.
             """, tags=[]),
             Spell('Cleansing Benediction', 5, 'You and each of your \\glossterm<allies> within a \\areamed radius from you', """
-                Each target can remove one \\glossterm<condition>.
+                Each target can remove its most recent \\glossterm<condition>.
 
                 \\rankline
                 \\rank<7> The area increases to a \\arealarge radius.
