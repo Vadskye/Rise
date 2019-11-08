@@ -8,6 +8,7 @@ defenses = [
 mystic_sphere_sources = [
     'Arcane',
     'Divine',
+    'Hedge',
     'Nature',
     'Pact',
 ]
