@@ -262,13 +262,13 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Cleric Progression}
         \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Divine Magic} & \tb{Divine Spell Mastery}   & \tb{Domain Influence}  & \tb{Healer} \tableheaderrule
-            1 & Spellcasting   & Battle prayer               & Domains, domain gift  & Divine healing         \\
-            2 & Mystic sphere  & Mystic knowledge            & Domain gift           & Vital healer           \\
+            1 & Spellcasting   & Mystic knowledge            & Domains, domain gift  & Divine healing         \\
+            2 & Mystic sphere  & Battle priest               & Domain gift           & Vital healer           \\
             3 & Spell rank (3) & Wellspring of power         & Domain aspect         & Divine cleanse         \\
             4 & Spell rank (4) & Mystic knowledge            & Domain aspect         & Greater divine healing \\
-            5 & Spell rank (5) & Greater battle prayer       & Domain essence        & Greater vital healer   \\
-            6 & Spell rank (6) & Mystic knowledge            & Domain essence        & Greater divine cleanse \\
-            7 & Spell rank (7) & Greater wellspring of power & Miracle               & Supreme divine healing \\
+            5 & Spell rank (5) & Greater battle priest       & Domain essence        & Greater vital healer   \\
+            6 & Spell rank (6) & Greater wellspring of power & Domain essence        & Greater divine cleanse \\
+            7 & Spell rank (7) & Mystic knowledge            & Miracle               & Supreme divine healing \\
             8 & Spell rank (8) &                             & Domain masteries     \\
         \end{dtabularx}
     \end{dtable!*}
@@ -800,13 +800,13 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Druid Progression}
         \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Elementalist}         & \tb{Nature Magic} & \tb{Nature Spell Mastery}   & \tb{Shifter}               & \tb{Wildspeaker}         \tableheaderrule
-            1 & Elemental balance         & Spellcasting   & Natural spells              & Wild aspects               & Natural servant         \\
-            2 & Elemental sphere          & Natural focus  & Mystic knowledge            & Shifting defense           & Animal speech           \\
+            1 & Elemental balance         & Spellcasting   & Mystic knowledge            & Wild aspects               & Natural servant         \\
+            2 & Elemental sphere          & Natural focus  & Natural spells              & Shifting defense           & Animal speech           \\
             3 & Elemental influence       & Spell rank (3) & Wellspring of power         & Shift body                 & Wild guardian           \\
             4 & Greater elemental balance & Spell rank (4) & Mystic knowledge            & Wild aspect                & Greater natural servant \\
             5 & Elemental sphere          & Spell rank (5) & Greater natural spells      & Greater shifting defense   & Plant speech            \\
-            6 & Elemental control         & Spell rank (6) & Mystic knowledge            & Greater shift body         & Greater wild guardian   \\
-            7 & Supreme elemental balance & Spell rank (7) & Greater wellspring of power & Triple aspect, wild aspect & Supreme natural servant \\
+            6 & Elemental control         & Spell rank (6) & Greater wellspring of power & Greater shift body         & Greater wild guardian   \\
+            7 & Supreme elemental balance & Spell rank (7) & Mystic knowledge            & Triple aspect, wild aspect & Supreme natural servant \\
             8 &                           & Spell rank (8) &                             & Avatar of nature           &                         \\
         \end{dtabularx}
     \end{dtable!*}
@@ -1653,241 +1653,6 @@ This choice determines a great deal about your character's abilities.
         \cf{Ftr}[6]{Greater Tactical Coordination} The bonus from your \textit{tactical coordination} ability increases to \plus2.
 
         \cf*{Ftr}[7]{Battle Tactic} You learn an additional \textit{battle tactic}.
-
-\newpage
-\section{Mage}\label{Mage}
-    \begin{dtable!*}
-        \lcaption{Mage Progression}
-        \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Arcane Magic} & \tb{Arcane Spell Mastery}   & \tb{Arcane Scholar}   & \tb{Innate Arcanist} \tableheaderrule
-            1 & Mystic spheres        & Mage armor                  & Scholastic lore       & Nonverbal caster     \\
-            2 & Spells                & Mystic knowledge            & Rituals               & Innate magic         \\
-            3 & Spell rank (3)        & Wellspring of power         & Scholastic insight    & Augment              \\
-            4 & Spell rank (4), spell & Mystic knowledge            & Ritual expertise      & Stilled caster       \\
-            5 & Spell rank (5)        & Greater mage armor          & Contingency           & Greater innate magic \\
-            6 & Spell rank (6)        & Mystic knowledge            & Scholastic insight    & Augment              \\
-            7 & Spell rank (7), spell & Greater wellspring of power & Malleable contingency & Spell absorption     \\
-            8 & Spell rank (8)        &                             &                       &                      \\
-        \end{dtabularx}
-    \end{dtable!*}
-
-    \classbasics{Alignment} Any.
-
-    \classbasics{Archetypes} Mages have the Arcane Magic, Arcane Spell Mastery, Arcane Scholar, and Innate Arcanist \glossterm{archetypes}.
-
-    \subsection{Basic Class Abilities}
-        If you are a mage, you gain the following abilities.
-
-        \cf{Mge}{Defenses}
-        You gain the following bonuses to your \glossterm{defenses}: \plus3 Fortitude, \plus4 Reflex, \plus5 Mental.
-
-        \cf{Mge}{Skills}
-        You have the following \glossterm{class skills}:
-        \begin{itemize}
-            \item \subparhead{Intelligence} Craft, Deduction, Knowledge (all kinds, taken individually), Linguistics.
-            \item \subparhead{Perception} Awareness, Spellcraft.
-            \item \subparhead{Other} Bluff, Intimidate, Persuasion, Profession.
-        \end{itemize}
-
-        \cf{Mge}{Weapon and Armor Proficiencies}
-        You are proficient with simple weapons and one other weapon group.
-        You are proficient with shields, but not with any type of armor.
-        Encumbrance from armor interferes with the gestures you make to cast spells, which can cause your spells with somatic components to fail (see \pcref{Somatic Component Failure}).
-
-        \cf{Mge}{Arcane Essence}
-        All mages have access to great arcane power.
-        However, not all mages acquired this power in the same way.
-        You choose an arcane essence.
-        Many mage abilities have special effects based on whether you are a sorcerer or a wizard.
-        \parhead{Sorcerer} Sorcerers have an intuitive connection to magic that allows them to cast spells without preparation or training.
-        They cast spells with their Willpower.
-        \parhead{Wizard} Wizards study arcane mysteries for years to learn the secret ways of magic.
-        They cast spells with their Intelligence.
-
-    \subsection{Arcane Magic}
-        This archetype grants you the ability to cast arcane spells.
-        % TODO: less boring attribute integration?
-        If you are a wizard, you must have an starting Intelligence of at least 1 to gain this archetype.
-
-        \cf{Mge}[1]{Spellcasting}[Magical]
-        You have the ability to use arcane magic.
-        You gain access to one arcane \glossterm{mystic sphere} (see \pcref{Arcane Mystic Spheres}).
-        You may spend \glossterm{insight points} to learn one additional \glossterm{mystic sphere} per two \glossterm{insight points}.
-        Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
-
-        You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
-        In addition, you learn one rank 1 \glossterm{spell} from your chosen \glossterm{mystic sphere}.
-        You can also spend \glossterm{insight points} to learn one additional arcane spell per \glossterm{insight point}.
-        Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
-
-        When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
-            you can exchange any number of spells you know for other spells,
-            including spells of the higher rank.
-
-        Arcane spells require both \glossterm{verbal components} and \glossterm{somatic components} to cast (see \pcref{Casting Components}).
-        For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
-
-        \cf{Mge}[2]{Mystic Sphere} You gain access to an additional arcane \glossterm{mystic sphere}, including all \glossterm{cantrips} from that sphere.
-        In addition, you learn an additional arcane \glossterm{spell}.
-
-        \cf{Mge}[3]{Spell Rank}[Magical] You gain the ability to cast rank 3 arcane spells.
-
-        \cf*{Mge}[4]{Spell Rank}[Magical] You gain the ability to cast rank 4 arcane spells.
-
-        \cf{Mge}[4]{Spell} You gain an additional \glossterm{spell} for any arcane \glossterm{mystic sphere} you know.
-
-        \cf*{Mge}[5]{Spell Rank}[Magical] You gain the ability to cast rank 5 arcane spells.
-
-        \cf*{Mge}[6]{Spell Rank}[Magical] You gain the ability to cast rank 6 arcane spells.
-
-        \cf*{Mge}[7]{Spell Rank}[Magical] You gain the ability to cast rank 7 arcane spells.
-
-        \cf*{Mge}[7]{Spell} You gain an additional \glossterm{spell} for any arcane \glossterm{mystic sphere} you know.
-
-        \cf*{Mge}[8]{Spell Rank}[Magical] You gain the ability to cast rank 8 arcane spells.
-
-    \subsection{Arcane Spell Mastery}
-        This archetype improves the arcane spells you cast.
-        You must have the Arcane Magic archetype to gain the abilities from this archetype.
-
-        \cf{Mge}[1]{Mystic Knowledge}[Magical]
-        You gain your choice of one of the following abilities.
-        {
-            \parhead{Focused Caster} You reduce your \glossterm{focus penalty} by 1.
-                You can choose this ability multiple times.
-                Its effects stack.
-            \parhead{Mystic Sphere Access} You gain access to an additional arcane \glossterm{mystic sphere}.
-                You cannot choose this ability multiple times.
-            \parhead{Rituals} You can only choose this mystic knowledge if you are a wizard.
-                The maximum \glossterm{rank} of arcane ritual you can learn or perform is equal to the maximum rank of arcane spell that you can cast.
-                You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
-                You cannot choose this ability multiple times.
-            \parhead{Spell Knowledge} You learn an additional arcane \glossterm{spell} (see \pcref{Arcane Mystic Spheres}).
-                You can choose this ability multiple times, gaining access to an additional spell each time.
-        }
-
-        \cf{Mge}[2]{Mage Armor}[Magical] You can use the \textit{mage armor} ability as a standard action.
-        \begin{freeability}{Mage Armor}
-            You create a translucent suit of magical armor on your body and over your hands.
-            This functions like body armor that provides a \plus2 bonus to Armor defense and has no \glossterm{encumbrance}.
-            It also provides a bonus to \glossterm{resistances} against \glossterm{energy damage} equal to half your level.
-            The body armor does not appear if you are wearing other body armor of any kind.
-
-            As long as you have a free hand, the barrier also manifests as a shield that provides a \plus1 bonus to Armor defense.
-            This bonus is considered to come from a shield, and does not stack with the benefits of using a physical shield.
-
-            This ability lasts until you \glossterm{dismiss} it as a free action.
-        \end{freeability}
-
-        \cf{Mge}[3]{Wellspring of Power}[Magical]
-        You gain a \plus1 bonus to \glossterm{power} with arcane spells.
-
-        \cf*{Mge}[4]{Mystic Knowledge}[Magical]
-        You gain an additional \textit{mystic knowledge} ability.
-
-        \cf{Mge}[5]{Greater Mage Armor}[Magical]
-        The defense bonus from the body armor created by your \textit{mage armor} ability increases to \plus3.
-        In addition, the bonus to \glossterm{resistances} increases to be equal to your level.
-
-        \cf{Mge}[6]{Greater Wellspring of Power}[Magical]
-        The bonus from your \textit{wellspring of power} ability increases to \plus2.
-
-        \cf*{Mge}[7]{Mystic Knowledge}[Magical]
-        You gain an additional \textit{mystic knowledge} ability.
-
-    \subsection{Arcane Scholar}
-        This archetype deepens your study of arcane magic.
-        You be a wizard and have the Arcane Magic archetype to gain the abilities from this archetype.
-
-        \cf{Mge}[1]{Scholastic Lore} You gain a \plus2 bonus to the Spellcraft skill and all Knowledge skills.
-
-        \cf{Mge}[2]{Rituals} You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
-        The maximum \glossterm{rank} of arcane ritual you can learn or perform is equal to the maximum rank of arcane spell that you can cast.
-
-        \cf{Mge}[3]{Arcane Insight}[Magical]
-        You gain one of the following insights.
-        Some insights can be chosen multiple times, as indicated in their descriptions.
-
-        {
-            \parhead{Expanded Sphere Access} You gain access to a new \glossterm{mystic sphere}.
-            \par You cannot choose this insight multiple times.
-
-            \parhead{Expanded Spell Knowledge} You learn an additional \glossterm{spell}.
-            \par You can choose this insight multiple times, learning an additional spell each time.
-
-            \parhead{Signature Spell} Choose a \glossterm{spell} you know.
-            The spell loses the \glossterm{Focus} tag, allowing you to cast it without lowering your guard in combat.
-            \par If you choose this insight multiple times, you must choose a different \glossterm{spell} each time.
-
-            \parhead{Sphere Specialization} Choose a a \glossterm{mystic sphere} you have access to.
-            You gain a \plus1 bonus to \glossterm{accuracy} with abilities from that \glossterm{mystic sphere}.
-            In addition, you learn an additional \glossterm{spell} from that \glossterm{mystic sphere}.
-            In exchange, you must lose access to another \glossterm{mystic sphere} you have.
-            You must exchange all spells you know from that \glossterm{mystic sphere} with spells from other \glossterm{mystic spheres} you have access to.
-            \par You cannot choose this insight multiple times.
-
-            \parhead{Memorized Sphere} % TODO: clarify you need to be high enough rank?
-            Choose a \glossterm{mystic sphere} you have access to.
-            You can perform rituals from that \glossterm{mystic sphere} without having them written in your ritual book.
-            If you lead a ritual from that \glossterm{mystic sphere}, it requires half the normal amount of time to perform and costs half the normal number of \glossterm{action points} (minimum 1).
-            \par You can choose this insight multiple times, choosing a different \glossterm{mystic sphere} each time.
-        }
-
-        \cf{Mge}[4]{Greater Scholastic Lore} The bonuses from your \textit{scholastic lore} ability increase to \plus4.
-
-        \cf{Mge}[5]{Contingency}  You learn the Contingency \glossterm{augment}, allowing you to prepare a spell so it takes effect automatically if specific circumstances arise.
-        Applying the Contingency \glossterm{augment} increases the \glossterm{rank} of the spell and all its upgrades by 2.
-        % If any spells take more than one standard action, they would need to be excluded from Contingency, but none exist
-        % You can apply this augment to any arcane spell that can be cast as a \glossterm{standard action} or \glossterm{minor action}.
-
-        Casting a spell with the Contingency augment takes 5 minutes.
-        When the casting is complete, the spell has no immediate effect.
-        Instead, it automatically takes effect when some specific circumstances arise.
-        During the time required to cast the spell, you specify what circumstances cause the spell to take effect.
-
-        The spell can be set to trigger in response to any circumstances that a typical human observing you and your situation could detect.
-        For example, you could specify ``when I fall at least 50 feet'' or ``when I take a \glossterm{vital wound}'', but not ``when there is an invisible creature within 50 feet of me'' or ``when I have only one \glossterm{hit point} remaining.''
-        The more specific the required circumstances, the better -- vague requirements, such as ``when I am in danger'', may cause the spell to trigger unexpectedly or fail to trigger at all.
-        If you attempt to specify multiple separate triggering conditions, such as ``when I take damage or when an enemy is adjacent to me'', the spell will randomly ignore all but one of the conditions.
-
-        If the spell needs to be targeted, the trigger condition can specify a simple rule for identifying how to target the spell, such as ``the closest enemy''.
-        If the rule is poorly worded or imprecise, the spell may target incorrectly or fail to activate at all.
-        Any spells which require decisions, such as the \spell{dimension door} spell, must have those decisions made at the time it is cast.
-        You cannot alter those decisions when the contingency takes effect.
-
-        You can have only one spell with this augment active at a time.
-        If you use the augment again with a different spell, the old contingency is removed.
-
-        \cf*{Mge}[6]{Arcane Insight}[Magical]
-        You learn an additional \textit{arcane insight}.
-
-        \cf{Mge}[7]{Malleable Contingency} If you have a \textit{contingency} active, you can change the conditions to trigger your \textit{contingency} as a standard action.
-        This does not allow you to change the spell stored in your \textit{contingency}.
-
-    \subsection{Innate Arcanist}
-        This archetype deepens your innate connection to arcane magic.
-        You be a sorcerer and have the Arcane Magic archetype to gain the abilities from this archetype.
-
-        \cf{Mge}[1]{Nonverbal Caster} When you cast a spell, you can omit that spell's \glossterm{verbal components}.
-
-        \cf{Mge}[2]{Innate Magic} You gain a bonus to \glossterm{resistances} against \glossterm{energy damage} equal to half your level.
-
-        \cf{Mge}[3]{Augment} You learn one \glossterm{augment} (see \pcref{Augments}).
-        You can apply augments to spells to change their effects.
-        When you gain access to a new arcane spell \glossterm{rank}, you may change which augments you know.
-
-        \cf{Mge}[4]{Stilled Caster} When you cast a spell, you can omit that spell's \glossterm{somatic components}.
-
-        \cf{Mge}[5]{Greater Innate Magic} The bonus from your \textit{innate magic} ability increases to be equal to your level.
-
-        \cf*{Mge}[6]{Augment} You learn an additional \glossterm{augment}.
-
-        \cf{Mge}[7]{Spell Absorption} When a spell is used to attack you, if the attack fails to beat your defenses, you gain the ability to cast the spell once.
-        The spell retains its original \glossterm{augments}, if any, and you cannot apply any \glossterm{augments} to it.
-        When you cast the spell, you use your own \glossterm{accuracy}, \glossterm{power}, and abilities to determine the effects of the spell.
-        Once you cast the spell, you expend the absorbed energy, and you cannot cast it again.
-
-        If you resist multiple spells simultaneously, or if you resist another spell before casting the previous spell you resisted, you choose which spell you gain the ability to cast.
 
 \newpage
 \section{Monk}\label{Monk}
@@ -2935,18 +2700,171 @@ This choice determines a great deal about your character's abilities.
     %     }
 
 \newpage
+\section{Sorcerer}\label{Mage}
+    \begin{dtable!*}
+        \lcaption{Sorcerer Progression}
+        \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+            \tb{Rank} & \tb{Arcane Magic}     & \tb{Arcane Spell Mastery}   & \tb{Innate Arcanist} \tableheaderrule
+            1 & Mystic spheres        & Mystic knowledge            & Nonverbal caster     \\
+            2 & Innate focus          & Mage armor                  & Innate magic         \\
+            3 & Spell rank (3)        & Wellspring of power         & Augment              \\
+            4 & Spell rank (4), spell & Mystic knowledge            & Stilled caster       \\
+            5 & Spell rank (5)        & Greater mage armor          & Greater innate magic \\
+            6 & Spell rank (6)        & Greater wellspring of power & Augment              \\
+            7 & Spell rank (7), spell & Mystic knowledge            & Spell absorption     \\
+            8 & Spell rank (8)        &                             &                      \\
+        \end{dtabularx}
+    \end{dtable!*}
+
+    \classbasics{Alignment} Any.
+
+    \classbasics{Archetypes} Sorcerers have the Arcane Magic, Arcane Spell Mastery, and Innate Arcanist \glossterm{archetypes}.
+
+    \subsection{Basic Class Abilities}
+        If you are a sorcerer, you gain the following abilities.
+
+        \cf{Sor}{Defenses}
+        You gain the following bonuses to your \glossterm{defenses}: \plus3 Fortitude, \plus4 Reflex, \plus5 Mental.
+
+        \cf{Sor}{Skills}
+        You have the following \glossterm{class skills}:
+        \begin{itemize}
+            \item \subparhead{Intelligence} Craft, Deduction, Knowledge (all kinds, taken individually), Linguistics.
+            \item \subparhead{Perception} Awareness, Spellcraft.
+            \item \subparhead{Other} Bluff, Intimidate, Persuasion, Profession.
+        \end{itemize}
+
+        \cf{Sor}{Weapon and Armor Proficiencies}
+        You are proficient with simple weapons and one other weapon group.
+        You are proficient with shields, but not with any type of armor.
+        Encumbrance from armor interferes with the gestures you make to cast spells, which can cause your spells with somatic components to fail (see \pcref{Somatic Component Failure}).
+
+    \subsection{Arcane Magic}
+        This archetype grants you the ability to cast arcane spells.
+
+        \cf{Sor}[1]{Spellcasting}[Magical]
+        You have the ability to use arcane magic.
+        You gain access to one arcane \glossterm{mystic sphere} (see \pcref{Arcane Mystic Spheres}).
+        You may spend \glossterm{insight points} to learn one additional \glossterm{mystic sphere} per two \glossterm{insight points}.
+        Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
+
+        You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
+        In addition, you learn one rank 1 \glossterm{spell} from your chosen \glossterm{mystic sphere}.
+        You can also spend \glossterm{insight points} to learn one additional arcane spell per \glossterm{insight point}.
+        Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
+
+        When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
+            you can exchange any number of spells you know for other spells,
+            including spells of the higher rank.
+
+        Arcane spells require both \glossterm{verbal components} and \glossterm{somatic components} to cast (see \pcref{Casting Components}).
+        For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
+
+        \cf{Sor}[2]{Innate Focus} You reduce your \glossterm{focus penalties} by 2.
+
+        \cf{Sor}[3]{Spell Rank}[Magical] You gain the ability to cast rank 3 arcane spells.
+
+        \cf*{Sor}[4]{Spell Rank}[Magical] You gain the ability to cast rank 4 arcane spells.
+
+        \cf{Sor}[4]{Spell} You gain an additional \glossterm{spell} for any arcane \glossterm{mystic sphere} you know.
+
+        \cf*{Sor}[5]{Spell Rank}[Magical] You gain the ability to cast rank 5 arcane spells.
+
+        \cf*{Sor}[6]{Spell Rank}[Magical] You gain the ability to cast rank 6 arcane spells.
+
+        \cf*{Sor}[7]{Spell Rank}[Magical] You gain the ability to cast rank 7 arcane spells.
+
+        \cf*{Sor}[7]{Spell} You gain an additional \glossterm{spell} for any arcane \glossterm{mystic sphere} you know.
+
+        \cf*{Sor}[8]{Spell Rank}[Magical] You gain the ability to cast rank 8 arcane spells.
+
+    \subsection{Arcane Spell Mastery}
+        This archetype improves the arcane spells you cast.
+        You must have the Arcane Magic archetype from the sorcerer class to gain the abilities from this archetype.
+
+        \cf{Sor}[1]{Mystic Knowledge}[Magical]
+        You gain your choice of one of the following abilities.
+        {
+            \parhead{Focused Caster} You reduce your \glossterm{focus penalty} by 1.
+                You can choose this ability multiple times.
+                Its effects stack.
+            \parhead{Mystic Sphere Access} You gain access to an additional arcane \glossterm{mystic sphere}.
+                You cannot choose this ability multiple times.
+            \parhead{Rituals} You can only choose this mystic knowledge if you are a wizard.
+                The maximum \glossterm{rank} of arcane ritual you can learn or perform is equal to the maximum rank of arcane spell that you can cast.
+                You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
+                You cannot choose this ability multiple times.
+            \parhead{Spell Knowledge} You learn an additional arcane \glossterm{spell} (see \pcref{Arcane Mystic Spheres}).
+                You can choose this ability multiple times, gaining access to an additional spell each time.
+        }
+
+        \cf{Sor}[2]{Mage Armor}[Magical] You can use the \textit{mage armor} ability as a standard action.
+        \begin{freeability}{Mage Armor}
+            You create a translucent suit of magical armor on your body and over your hands.
+            This functions like body armor that provides a \plus2 bonus to Armor defense and has no \glossterm{encumbrance}.
+            It also provides a bonus to \glossterm{resistances} against \glossterm{energy damage} equal to half your level.
+            The body armor does not appear if you are wearing other body armor of any kind.
+
+            As long as you have a free hand, the barrier also manifests as a shield that provides a \plus1 bonus to Armor defense.
+            This bonus is considered to come from a shield, and does not stack with the benefits of using a physical shield.
+
+            This ability lasts until you \glossterm{dismiss} it as a free action.
+        \end{freeability}
+
+        \cf{Sor}[3]{Wellspring of Power}[Magical]
+        You gain a \plus1 bonus to \glossterm{power} with arcane spells.
+
+        \cf*{Sor}[4]{Mystic Knowledge}[Magical]
+        You gain an additional \textit{mystic knowledge} ability.
+
+        \cf{Sor}[5]{Greater Mage Armor}[Magical]
+        The defense bonus from the body armor created by your \textit{mage armor} ability increases to \plus3.
+        In addition, the bonus to \glossterm{resistances} increases to be equal to your level.
+
+        \cf{Sor}[6]{Greater Wellspring of Power}[Magical]
+        The bonus from your \textit{wellspring of power} ability increases to \plus2.
+
+        \cf*{Sor}[7]{Mystic Knowledge}[Magical]
+        You gain an additional \textit{mystic knowledge} ability.
+
+    \subsection{Innate Arcanist}
+        This archetype deepens your innate connection to arcane magic.
+        You must have the Arcane Magic archetype from the sorcerer class to gain the abilities from this archetype.
+
+        \cf{Sor}[1]{Nonverbal Caster} When you cast a spell, you can omit that spell's \glossterm{verbal components}.
+
+        \cf{Sor}[2]{Innate Magic} You gain a bonus to \glossterm{resistances} against \glossterm{energy damage} equal to half your level.
+
+        \cf{Sor}[3]{Augment} You learn one \glossterm{augment} (see \pcref{Augments}).
+        You can apply augments to spells to change their effects.
+        When you gain access to a new arcane spell \glossterm{rank}, you may change which augments you know.
+
+        \cf{Sor}[4]{Stilled Caster} When you cast a spell, you can omit that spell's \glossterm{somatic components}.
+
+        \cf{Sor}[5]{Greater Innate Magic} The bonus from your \textit{innate magic} ability increases to be equal to your level.
+
+        \cf*{Sor}[6]{Augment} You learn an additional \glossterm{augment}.
+
+        \cf{Sor}[7]{Spell Absorption} When a spell is used to attack you, if the attack fails to beat your defenses, you gain the ability to cast the spell once.
+        The spell retains its original \glossterm{augments}, if any, and you cannot apply any \glossterm{augments} to it.
+        When you cast the spell, you use your own \glossterm{accuracy}, \glossterm{power}, and abilities to determine the effects of the spell.
+        Once you cast the spell, you expend the absorbed energy, and you cannot cast it again.
+
+        If you resist multiple spells simultaneously, or if you resist another spell before casting the previous spell you resisted, you choose which spell you gain the ability to cast.
+
+\newpage
 \section{Warlock}\label{Warlock}
     \begin{dtable!*}
         \lcaption{Warlock Progression}
         \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Blessings of the Abyss}  & \tb{Pact Magic} & \tb{Pact Spell Mastery}     & \tb{Soulkeeper's Chosen} \tableheaderrule
-            1 & Eldritch blast               & Spellcasting          & Armor tolerance             & Possession                  \\
-            2 & Fiendish resistance          & Soulbound focus       & Spell knowledge             & Empowering whispers         \\
+            1 & Eldritch blast               & Spellcasting          & Mystic knowledge             & Possession                  \\
+            2 & Fiendish resistance          & Soulbound focus       & Armor tolerance             & Empowering whispers         \\
             3 & Abyssal jaunt                & Spell rank (3)        & Wellspring of power         & Influence possession        \\
-            4 & Abyssal substitution         & Spell rank (4), spell & Spell knowledge             & Exchange soul fragment      \\
+            4 & Abyssal substitution         & Spell rank (4), spell & Mystic knowledge             & Exchange soul fragment      \\
             5 & Greater fiendish resistance  & Spell rank (5)        & Greater armor tolerance     & Powerful possession         \\
-            6 & Abyssal curse                & Spell rank (6)        & Spell knowledge             & Greater empowering whispers \\
-            7 & Greater abyssal substitution & Spell rank (7), spell & Greater wellspring of power & Control possession          \\
+            6 & Abyssal curse                & Spell rank (6)        & Greater wellspring of power & Greater empowering whispers \\
+            7 & Greater abyssal substitution & Spell rank (7), spell & Mystic knowledge             & Control possession          \\
             8 &                              & Spell rank (8)        &                             &                             \\
         \end{dtabularx}
     \end{dtable!*}
@@ -3261,20 +3179,20 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Witch Progression}
         \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Brewer}         & \tb{Hedge Magic} & \tb{Hedge Spell Mastery}    \tableheaderrule
-            1         & Witch's brew        & Spellcasting     & Hedge spells                \\
-            2         & Skilled brewer      & Mystic sphere    & Mystic knowledge            \\
-            3         & Tempting concoction & Spell rank (3)   & Wellspring of power         \\
-            4         & Esoteric concoction & Spell rank (4)   & Mystic knowledge            \\
-            5         & Efficient brewer    & Spell rank (5)   & Greater natural spells      \\
-            6         & Poison spell        & Spell rank (6)   & Mystic knowledge            \\
-            7         & Blended concoction  & Spell rank (7)   & Greater wellspring of power \\
-            8         &                     & Spell rank (8)   &                             \\
+            1 & Witch's brew        & Spellcasting   & Mystic knowledge            \\
+            2 & Skilled brewer      & Mystic sphere  & Witch's hex                 \\
+            3 & Tempting concoction & Spell rank (3) & Wellspring of power         \\
+            4 & Esoteric concoction & Spell rank (4) & Mystic knowledge            \\
+            5 & Efficient brewer    & Spell rank (5) & Greater witch's hex         \\
+            6 & Poison spell        & Spell rank (6) & Greater wellspring of power \\
+            7 & Blended concoction  & Spell rank (7) & Mystic knowledge            \\
+            8 &                     & Spell rank (8) &                             \\
         \end{dtabularx}
     \end{dtable!*}
 
     \classbasics{Alignment} Neutral good, lawful neutral, neutral, chaotic neutral, or neutral evil.
 
-    \classbasics{Archetypes} Druids have the Elementalist, Nature Spellcasting, Nature Spell Mastery, Shifter, and Wildspeaker \glossterm{archetypes}.
+    \classbasics{Archetypes} Witches have the Brewer, Hedge Magic, and Hedge Spell Mastery \glossterm{archetypes}.
 
     \subsection{Basic Class Abilities}
         If you are a witch, you gain the following abilities.
@@ -3292,7 +3210,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Wch}{Weapon and Armor Proficiencies}
         You are proficient with simple weapons, any one other weapon group, light armor, and shields.
-        Encumbrance from armor interferes with the gestures you make to cast spells, which can cause your spells with somatic components to fail (see \pcref{Somatic Component Failure}).
+        Encumbrance from armor interferes with the gestures you make to cast spells, which can cause your spells with \glossterm{somatic components} to fail (see \pcref{Somatic Component Failure}).
 
         \cf{Wch}{Spirit Pact} Witches draw power from the pact or pacts they make with natural spirits.
         These spirits are less than gods, but their connection to the natural world allows them to share that power with witches.
@@ -3357,45 +3275,49 @@ This choice determines a great deal about your character's abilities.
         This requires twice the normal time to create a poison, and requires all ingredients required to make both poisons.
         A creature affected by the blended poison suffers the full effects of both poisons.
 
-    \subsection{Nature Spellcasting}
-        This archetype grants you the ability to cast nature spells.
+    \subsection{Hedge Magic}
+        This archetype grants you the ability to cast hedge spells.
 
         \cf{Wch}[1]{Spellcasting}[Magical]
-        Your connection to nature grants you the ability to use nature magic.
-        You gain access to one nature \glossterm{mystic sphere} (see \pcref{Nature Mystic Spheres}).
+        Your pact with natural spirits grants you the ability to use hedge magic.
+        You gain access to one hedge \glossterm{mystic sphere} (see \pcref{Hedge Mystic Spheres}).
         You may spend \glossterm{insight points} to learn one additional \glossterm{mystic sphere} per two \glossterm{insight points}.
         Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
 
         You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
         In addition, you learn one rank 1 \glossterm{spell} from your chosen \glossterm{mystic sphere}.
-        You can also spend \glossterm{insight points} to learn one additional nature spell per \glossterm{insight point}.
+        You can also spend \glossterm{insight points} to learn one additional hedge spell per \glossterm{insight point}.
         Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
 
         When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
             you can exchange any number of spells you know for other spells,
             including spells of the higher rank.
 
-        Nature spells require \glossterm{verbal components} to cast (see \pcref{Casting Components}).
+        Hedge spells require both \glossterm{verbal components} and \glossterm{somatic components }to cast (see \pcref{Casting Components}).
         For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
 
-        \cf{Wch}[2]{Mystic Sphere} You gain access to an additional nature \glossterm{mystic sphere}, including all \glossterm{cantrips} from that sphere.
-        In addition, you learn an additional nature \glossterm{spell}.
+        \cf{Wch}[2]{Mystic Sphere} You gain access to an additional hedge \glossterm{mystic sphere}, including all \glossterm{cantrips} from that sphere.
+        In addition, you learn an additional hedge \glossterm{spell}.
 
-        \cf{Wch}[3]{Spell Rank}[Magical] You gain the ability to cast rank 3 nature spells.
+        \cf{Wch}[3]{Spell Rank}[Magical] You gain the ability to cast rank 3 hedge spells.
 
-        \cf*{Wch}[4]{Spell Rank}[Magical] You gain the ability to cast rank 4 nature spells.
+        \cf{Wch}[3]{Spell} You learn an additional \glossterm{spell} for any hedge \glossterm{mystic sphere} you know.
 
-        \cf*{Wch}[5]{Spell Rank}[Magical] You gain the ability to cast rank 5 nature spells.
+        \cf*{Wch}[4]{Spell Rank}[Magical] You gain the ability to cast rank 4 hedge spells.
 
-        \cf*{Wch}[6]{Spell Rank}[Magical] You gain the ability to cast rank 6 nature spells.
+        \cf*{Wch}[5]{Spell Rank}[Magical] You gain the ability to cast rank 5 hedge spells.
 
-        \cf*{Wch}[7]{Spell Rank}[Magical] You gain the ability to cast rank 7 nature spells.
+        \cf*{Wch}[6]{Spell Rank}[Magical] You gain the ability to cast rank 6 hedge spells.
 
-        \cf*{Wch}[8]{Spell Rank}[Magical] You gain the ability to cast rank 8 nature spells.
+        \cf*{Wch}[6]{Spell} You learn an additional \glossterm{spell} for any hedge \glossterm{mystic sphere} you know.
 
-    \subsection{Nature Spell Mastery}
-        This archetype improves the nature spells you cast.
-        You must be able to cast nature spells to gain the abilities from this archetype.
+        \cf*{Wch}[7]{Spell Rank}[Magical] You gain the ability to cast rank 7 hedge spells.
+
+        \cf*{Wch}[8]{Spell Rank}[Magical] You gain the ability to cast rank 8 hedge spells.
+
+    \subsection{Hedge Spell Mastery}
+        This archetype improves the hedge spells you cast.
+        You must be able to cast hedge spells to gain the abilities from this archetype.
 
         \cf{Wch}[1]{Mystic Knowledge}
         You gain your choice of one of the following abilities.
@@ -3403,12 +3325,12 @@ This choice determines a great deal about your character's abilities.
             \parhead{Focused Caster} You reduce your \glossterm{focus penalty} by 1.
                 You can choose this ability multiple times.
                 Its effects stack.
-            \parhead{Insight} You learn an additional nature \glossterm{spell} (see \pcref{Nature Mystic Spheres}).
+            \parhead{Insight} You learn an additional hedge \glossterm{spell} (see \pcref{Hedge Mystic Spheres}).
                 You can choose this ability multiple times, gaining access to an additional spell each time.
-            \parhead{Mystic Sphere Access} You gain access to an additional nature \glossterm{mystic sphere}.
+            \parhead{Mystic Sphere Access} You gain access to an additional hedge \glossterm{mystic sphere}.
                 You cannot choose this ability multiple times.
-            \parhead{Rituals} You gain the ability to perform nature rituals to create unique magical effects (see \pcref{Rituals}).
-                The maximum \glossterm{rank} of nature ritual you can learn or perform is equal to the maximum rank of divine spell that you can cast.
+            \parhead{Rituals} You gain the ability to perform hedge rituals to create unique magical effects (see \pcref{Rituals}).
+                The maximum \glossterm{rank} of hedge ritual you can learn or perform is equal to the maximum rank of divine spell that you can cast.
                 You cannot choose this ability multiple times.
         }
 
@@ -3427,3 +3349,203 @@ This choice determines a great deal about your character's abilities.
 
         \cf*{Wch}[7]{Mystic Knowledge}[Magical]
         You gain an additional \textit{mystic knowledge} ability.
+
+\newpage
+\section{Wizard}\label{Wizard}
+    \begin{dtable!*}
+        \lcaption{Wizard Progression}
+        \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+            \tb{Rank} & \tb{Arcane Magic}     & \tb{Arcane Spell Mastery}   & \tb{Arcane Scholar}    \tableheaderrule
+            1 & Mystic spheres        & Mage armor                  & Scholastic lore       \\
+            2 & Spells                & Mystic knowledge            & Rituals               \\
+            3 & Spell rank (3)        & Wellspring of power         & Scholastic insight    \\
+            4 & Spell rank (4), spell & Mystic knowledge            & Ritual expertise      \\
+            5 & Spell rank (5)        & Greater mage armor          & Contingency           \\
+            6 & Spell rank (6)        & Mystic knowledge            & Scholastic insight    \\
+            7 & Spell rank (7), spell & Greater wellspring of power & Malleable contingency \\
+            8 & Spell rank (8)        &                             &                       \\
+        \end{dtabularx}
+    \end{dtable!*}
+
+    \classbasics{Alignment} Any.
+
+    \classbasics{Archetypes} Mages have the Arcane Magic, Arcane Spell Mastery, Arcane Scholar, and Innate Arcanist \glossterm{archetypes}.
+
+    \subsection{Basic Class Abilities}
+        If you are a wizard, you gain the following abilities.
+
+        \cf{Wiz}{Defenses}
+        You gain the following bonuses to your \glossterm{defenses}: \plus3 Fortitude, \plus4 Reflex, \plus5 Mental.
+
+        \cf{Wiz}{Skills}
+        You have the following \glossterm{class skills}:
+        \begin{itemize}
+            \item \subparhead{Intelligence} Craft, Deduction, Knowledge (all kinds, taken individually), Linguistics.
+            \item \subparhead{Perception} Awareness, Spellcraft.
+            \item \subparhead{Other} Bluff, Intimidate, Persuasion, Profession.
+        \end{itemize}
+
+        \cf{Wiz}{Weapon and Armor Proficiencies}
+        You are proficient with simple weapons and one other weapon group.
+        You are proficient with shields, but not with any type of armor.
+        Encumbrance from armor interferes with the gestures you make to cast spells, which can cause your spells with somatic components to fail (see \pcref{Somatic Component Failure}).
+
+    \subsection{Arcane Magic}
+        This archetype grants you the ability to cast arcane spells.
+        % TODO: less boring attribute integration?
+        You must have an starting Intelligence of at least 1 to gain this archetype.
+
+        \cf{Wiz}[1]{Spellcasting}[Magical]
+        You have the ability to use arcane magic.
+        You gain access to one arcane \glossterm{mystic sphere} (see \pcref{Arcane Mystic Spheres}).
+        You may spend \glossterm{insight points} to learn one additional \glossterm{mystic sphere} per two \glossterm{insight points}.
+        Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
+
+        You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
+        In addition, you learn one rank 1 \glossterm{spell} from your chosen \glossterm{mystic sphere}.
+        You can also spend \glossterm{insight points} to learn one additional arcane spell per \glossterm{insight point}.
+        Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
+
+        When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
+            you can exchange any number of spells you know for other spells,
+            including spells of the higher rank.
+
+        Arcane spells require both \glossterm{verbal components} and \glossterm{somatic components} to cast (see \pcref{Casting Components}).
+        For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
+
+        \cf{Wiz}[2]{Mystic Sphere} You gain access to an additional arcane \glossterm{mystic sphere}, including all \glossterm{cantrips} from that sphere.
+        In addition, you learn an additional arcane \glossterm{spell}.
+
+        \cf{Wiz}[3]{Spell Rank}[Magical] You gain the ability to cast rank 3 arcane spells.
+
+        \cf*{Wiz}[4]{Spell Rank}[Magical] You gain the ability to cast rank 4 arcane spells.
+
+        \cf{Wiz}[4]{Spell} You gain an additional \glossterm{spell} for any arcane \glossterm{mystic sphere} you know.
+
+        \cf*{Wiz}[5]{Spell Rank}[Magical] You gain the ability to cast rank 5 arcane spells.
+
+        \cf*{Wiz}[6]{Spell Rank}[Magical] You gain the ability to cast rank 6 arcane spells.
+
+        \cf*{Wiz}[7]{Spell Rank}[Magical] You gain the ability to cast rank 7 arcane spells.
+
+        \cf*{Wiz}[7]{Spell} You gain an additional \glossterm{spell} for any arcane \glossterm{mystic sphere} you know.
+
+        \cf*{Wiz}[8]{Spell Rank}[Magical] You gain the ability to cast rank 8 arcane spells.
+
+    \subsection{Arcane Spell Mastery}
+        This archetype improves the arcane spells you cast.
+        You must have the Arcane Magic archetype from the wizard class to gain the abilities from this archetype.
+
+        \cf{Wiz}[1]{Mystic Knowledge}[Magical]
+        You gain your choice of one of the following abilities.
+        {
+            \parhead{Focused Caster} You reduce your \glossterm{focus penalty} by 1.
+                You can choose this ability multiple times.
+                Its effects stack.
+            \parhead{Mystic Sphere Access} You gain access to an additional arcane \glossterm{mystic sphere}.
+                You cannot choose this ability multiple times.
+            \parhead{Rituals} You can only choose this mystic knowledge if you are a wizard.
+                The maximum \glossterm{rank} of arcane ritual you can learn or perform is equal to the maximum rank of arcane spell that you can cast.
+                You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
+                You cannot choose this ability multiple times.
+            \parhead{Spell Knowledge} You learn an additional arcane \glossterm{spell} (see \pcref{Arcane Mystic Spheres}).
+                You can choose this ability multiple times, gaining access to an additional spell each time.
+        }
+
+        \cf{Wiz}[2]{Mage Armor}[Magical] You can use the \textit{mage armor} ability as a standard action.
+        \begin{freeability}{Mage Armor}
+            You create a translucent suit of magical armor on your body and over your hands.
+            This functions like body armor that provides a \plus2 bonus to Armor defense and has no \glossterm{encumbrance}.
+            It also provides a bonus to \glossterm{resistances} against \glossterm{energy damage} equal to half your level.
+            The body armor does not appear if you are wearing other body armor of any kind.
+
+            As long as you have a free hand, the barrier also manifests as a shield that provides a \plus1 bonus to Armor defense.
+            This bonus is considered to come from a shield, and does not stack with the benefits of using a physical shield.
+
+            This ability lasts until you \glossterm{dismiss} it as a free action.
+        \end{freeability}
+
+        \cf{Wiz}[3]{Wellspring of Power}[Magical]
+        You gain a \plus1 bonus to \glossterm{power} with arcane spells.
+
+        \cf*{Wiz}[4]{Mystic Knowledge}[Magical]
+        You gain an additional \textit{mystic knowledge} ability.
+
+        \cf{Wiz}[5]{Greater Mage Armor}[Magical]
+        The defense bonus from the body armor created by your \textit{mage armor} ability increases to \plus3.
+        In addition, the bonus to \glossterm{resistances} increases to be equal to your level.
+
+        \cf{Wiz}[6]{Greater Wellspring of Power}[Magical]
+        The bonus from your \textit{wellspring of power} ability increases to \plus2.
+
+        \cf*{Wiz}[7]{Mystic Knowledge}[Magical]
+        You gain an additional \textit{mystic knowledge} ability.
+
+    \subsection{Arcane Scholar}
+        This archetype deepens your study of arcane magic.
+        You have the Arcane Magic archetype from the wizard class to gain the abilities from this archetype.
+
+        \cf{Wiz}[1]{Scholastic Lore} You gain a \plus2 bonus to the Spellcraft skill and all Knowledge skills.
+
+        \cf{Wiz}[2]{Rituals} You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
+        The maximum \glossterm{rank} of arcane ritual you can learn or perform is equal to the maximum rank of arcane spell that you can cast.
+
+        \cf{Wiz}[3]{Arcane Insight}[Magical]
+        You gain one of the following insights.
+        Some insights can be chosen multiple times, as indicated in their descriptions.
+
+        {
+            \parhead{Expanded Sphere Access} You gain access to a new \glossterm{mystic sphere}.
+            \par You cannot choose this insight multiple times.
+
+            \parhead{Expanded Spell Knowledge} You learn an additional \glossterm{spell}.
+            \par You can choose this insight multiple times, learning an additional spell each time.
+
+            \parhead{Signature Spell} Choose a \glossterm{spell} you know.
+            The spell loses the \glossterm{Focus} tag, allowing you to cast it without lowering your guard in combat.
+            \par If you choose this insight multiple times, you must choose a different \glossterm{spell} each time.
+
+            \parhead{Sphere Specialization} Choose a a \glossterm{mystic sphere} you have access to.
+            You gain a \plus1 bonus to \glossterm{accuracy} with abilities from that \glossterm{mystic sphere}.
+            In addition, you learn an additional \glossterm{spell} from that \glossterm{mystic sphere}.
+            In exchange, you must lose access to another \glossterm{mystic sphere} you have.
+            You must exchange all spells you know from that \glossterm{mystic sphere} with spells from other \glossterm{mystic spheres} you have access to.
+            \par You cannot choose this insight multiple times.
+
+            \parhead{Memorized Sphere} % TODO: clarify you need to be high enough rank?
+            Choose a \glossterm{mystic sphere} you have access to.
+            You can perform rituals from that \glossterm{mystic sphere} without having them written in your ritual book.
+            If you lead a ritual from that \glossterm{mystic sphere}, it requires half the normal amount of time to perform and costs half the normal number of \glossterm{action points} (minimum 1).
+            \par You can choose this insight multiple times, choosing a different \glossterm{mystic sphere} each time.
+        }
+
+        \cf{Wiz}[4]{Greater Scholastic Lore} The bonuses from your \textit{scholastic lore} ability increase to \plus4.
+
+        \cf{Wiz}[5]{Contingency}  You learn the Contingency \glossterm{augment}, allowing you to prepare a spell so it takes effect automatically if specific circumstances arise.
+        Applying the Contingency \glossterm{augment} increases the \glossterm{rank} of the spell and all its upgrades by 2.
+        % If any spells take more than one standard action, they would need to be excluded from Contingency, but none exist
+        % You can apply this augment to any arcane spell that can be cast as a \glossterm{standard action} or \glossterm{minor action}.
+
+        Casting a spell with the Contingency augment takes 5 minutes.
+        When the casting is complete, the spell has no immediate effect.
+        Instead, it automatically takes effect when some specific circumstances arise.
+        During the time required to cast the spell, you specify what circumstances cause the spell to take effect.
+
+        The spell can be set to trigger in response to any circumstances that a typical human observing you and your situation could detect.
+        For example, you could specify ``when I fall at least 50 feet'' or ``when I take a \glossterm{vital wound}'', but not ``when there is an invisible creature within 50 feet of me'' or ``when I have only one \glossterm{hit point} remaining.''
+        The more specific the required circumstances, the better -- vague requirements, such as ``when I am in danger'', may cause the spell to trigger unexpectedly or fail to trigger at all.
+        If you attempt to specify multiple separate triggering conditions, such as ``when I take damage or when an enemy is adjacent to me'', the spell will randomly ignore all but one of the conditions.
+
+        If the spell needs to be targeted, the trigger condition can specify a simple rule for identifying how to target the spell, such as ``the closest enemy''.
+        If the rule is poorly worded or imprecise, the spell may target incorrectly or fail to activate at all.
+        Any spells which require decisions, such as the \spell{dimension door} spell, must have those decisions made at the time it is cast.
+        You cannot alter those decisions when the contingency takes effect.
+
+        You can have only one spell with this augment active at a time.
+        If you use the augment again with a different spell, the old contingency is removed.
+
+        \cf*{Wiz}[6]{Arcane Insight}[Magical]
+        You learn an additional \textit{arcane insight}.
+
+        \cf{Wiz}[7]{Malleable Contingency} If you have a \textit{contingency} active, you can change the conditions to trigger your \textit{contingency} as a standard action.
+        This does not allow you to change the spell stored in your \textit{contingency}.
