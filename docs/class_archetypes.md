@@ -36,7 +36,7 @@ on every rank up and which do not inherently scale with character level.
 ### Rank Pattern
 
 1. Spellcasting ability with one mystic sphere and one spell
-2. Additional mystic sphere and additional spell
+2. Reduce focus penalties OR Additional mystic sphere and additional spell
 3. Spell level
 4. Spell level
 5. Spell level 
