@@ -110,7 +110,7 @@ Rank 1 Focus/non-choice; Rank 3 non-Focus:
   * Deal std to all within Med cone from you
   * Deal std to enemies within Small radius from you
 
-Rank 1 Focus/non-choice; Rank 3 non-Focus:
+Rank 2 Focus/non-choice; Rank 4 non-Focus:
 * Special notes
 * No actual rank 2 spells or maneuvers should exist, because they are insufficiently different
   from rank 1 abilities. This is more of an abstract concept that guides leveling.
