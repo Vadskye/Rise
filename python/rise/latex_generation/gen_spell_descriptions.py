@@ -46,6 +46,16 @@ def generate_mystic_spheres():
         schools=['Transmutation'],
         lists=['Nature'],
         spells=[
+            Spell('Curse of Arrow Attraction', 1, 'One creature within \\rngmed range', """
+                Make an attack vs. Mental agains the target.
+                \\hit The target takes a -2 penalty to defenses against ranged \\glossterm<physical attacks> from weapons or projectiles that are Small or smaller until it takes a \\glossterm<short rest>.
+                \\crit As above, except that the effect lasts until this curse is removed.
+
+                \\rankline
+                \\rank<3> The penalty increases to -3.
+                \\rank<5> The penalty increases to -4.
+                \\rank<7> The penalty increases to -5.
+            """, tags=['Curse']),
             Spell('Propulsion', 1, 'Yourself or one Large or smaller \\glossterm<ally> in \\rngclose range', """
                 You move the target up to 50 feet in any direction.
                 You cannot change the direction of the movement partway through.
@@ -251,6 +261,17 @@ def generate_mystic_spheres():
         schools=['Conjuration'],
         lists=['Nature'],
         spells=[
+            Spell('Dehydrating Curse', 3, 'One creature within \\rngmed range', """
+                Make an attack vs. Mental agains the target.
+                \\hit Until it takes a \\glossterm<short rest>, the target is \\glossterm<sickened>.
+                If the target immerses itself in or drinks a body of water of minimum size equal to two size categories smaller than the target,
+                    it stops being sickened for 10 minutes.
+                \\crit As above, except that the effect lasts until this curse is removed.
+
+                \\rankline
+                \\rank<5> On a \\glossterm<critical hit>, the target is \\glossterm<nauseated> instead of \\glossterm<sickened>.
+                \\rank<7> The target is nauseated instead of sickened.
+            """, tags=['Curse']),
             Spell('Constraining Bubble', 3, 'One Large or smaller creature within \\rngmed range', """
                 Make an attack vs. Reflex against the target.
                 \\hit As a \\glossterm<condition>, the majority of the target's body is surrounded by a layer of water.
@@ -416,6 +437,22 @@ def generate_mystic_spheres():
         schools=['Conjuration'],
         lists=['Arcane', 'Pact'],
         spells=[
+            Spell('Jittering Curse', 6, 'One creature within \\rngmed range', """
+                Make an attack vs. Mental against the target.
+                \\hit At the end of each \\glossterm<movement phase>, the target teleports 10 feet in a random direction.
+                This effect lasts until it takes a \\glossterm<short rest>.
+                \\crit As above, except that the effect lasts until the curse is removed.
+
+                \\rankline
+                \\rank<8> The distance teleported increases to 20 feet.
+            """, tags=['Curse']),
+            Spell('Curse of Stagnancy', 8, 'One creature within \\rngmed range', """
+                Make an attack vs. Mental against the target.
+                \\hit At the end of each round, the target teleports back to the location it was in
+                when this spell was cast.
+                This effect lasts until it takes a \\glossterm<short rest>.
+                \\crit As above, except that the effect lasts until the curse is removed.
+            """, tags=['Curse']),
             Spell('Dimensional Jaunt', 1, 'One creature within \\rngmed range', """
                 You partially teleport the target into the Astral Plane.
                 Make an attack vs. Mental against the target.
@@ -1044,6 +1081,22 @@ def generate_mystic_spheres():
         schools=['Transmutation'],
         lists=['Arcane', 'Pact'],
         spells=[
+            Spell('Slowing Curse', 3, 'One creature within \\rngmed range', """
+                Make an attack vs. Mental against the target.
+                \\hit The target is \\glossterm<slowed> until it takes a \\glossterm<short rest>.
+                \\crit As above, except that the effect lasts until the curse is removed.
+
+                \\rankline
+                \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<7> The accuracy bonus increases to +2.
+            """, tags=['Curse']),
+            Spell('Curse of Temporal Dislocation', 4, 'One creature within \\rngmed range', """
+                Make an attack vs. Mental against the target.
+                \\hit At the end of each round, if the target lost a \\glossterm<hit point> that round, it has a 50\\% chance to be sent forward in time by one round.
+                At the end of the next round, it returns to its original location, or the closest open space if that location is occupied.
+                This effect lasts until the target takes a \\glossterm<short rest>.
+                \\crit As above, except that the effect lasts until the curse is removed.
+            """, tags=['Curse']),
             Spell('Slow', 1, 'One creature within \\rngmed range', """
                 Make an attack vs. Mental against the target.
                 \\hit The target is \\glossterm<slowed> as a \\glossterm<condition>.
@@ -1187,6 +1240,14 @@ def generate_mystic_spheres():
         schools=['Enchantment'],
         lists=['Arcane', 'Divine', 'Hedge', 'Pact'],
         spells=[
+            Spell('Curse of Repetition', 6, 'One creature within \\rngmed range', """
+                Make an attack vs. Mental against the target.
+                \\hit Whenever the target takes a standard action voluntarily, it is compelled to repeat the same action next round.
+                It can choose different targets or otherwise make different decisions about its action, but the action must be the same.
+                If it is unable to take the same action, such as if the action exhausted one of the creature's resources, it cannot take a standard action that round.
+                This effect lasts until it takes a \\glossterm<short rest>.
+                \\crit As above, except that the effect lasts until the curse is removed.
+            """, tags=['Compulsion', 'Curse']),
             Spell('Dance', 1, 'One creature within \\rngmed range', """
                 Make an attack vs. Mental against the target.
                 \\hit As a \\glossterm<condition>, the target is compelled to dance.
