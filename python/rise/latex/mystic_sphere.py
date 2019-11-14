@@ -12,7 +12,6 @@ class MysticSphere(object):
             extra_table=None,
             lists=None,
             name=None,
-            schools=None,
             rituals=None,
             spells=None,
             notes=None,
@@ -25,17 +24,12 @@ class MysticSphere(object):
         self.lists = lists
         self.notes = notes
         self.rituals = rituals or []
-        self.schools = schools
         self.short_description = short_description or 'TODO'
         self.spells = spells or []
 
-        for arg in ['cantrips', 'lists', 'name', 'schools']:
+        for arg in ['cantrips', 'lists', 'name']:
             if getattr(self, arg) is None:
                 logger.warning(f"Warning: {self} is missing required property '{arg}'")
-
-        for school in self.schools:
-            if school not in rise_data.schools:
-                logger.warning(f"{self} has unrecognized school '{school}'")
 
     def cantrip_latex(self):
         return '\n'.join([str(c) for c in self.cantrips])
@@ -61,8 +55,6 @@ class MysticSphere(object):
             f"""
                 \\begin<spellsection><{self.name}>
                     {Header(self.short_description + '.')}
-
-                    \\parhead<Schools> {', '.join(self.schools)}
 
                     \\parhead<Mystic Sphere Lists> {', '.join(self.lists)}
 

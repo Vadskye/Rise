@@ -43,7 +43,6 @@ def generate_mystic_spheres():
                 \\rank<7> The target is immune to \\glossterm<falling damage>.
             """, tags=[]),
         ],
-        schools=['Transmutation'],
         lists=['Nature'],
         spells=[
             Spell('Curse of Arrow Attraction', 1, 'One creature within \\rngmed range', """
@@ -273,7 +272,6 @@ def generate_mystic_spheres():
                 \\rank<7> The bonus increases to +10.
             """, tags=['Manifestation']),
         ],
-        schools=['Conjuration'],
         lists=['Nature'],
         spells=[
             Spell('Dessicating Curse', 3, 'One creature within \\rngmed range', """
@@ -477,7 +475,6 @@ def generate_mystic_spheres():
                 \\rank<7> The range increases to \\rnglong.
             """, tags=[]),
         ],
-        schools=['Conjuration'],
         lists=['Arcane', 'Pact'],
         spells=[
             Spell('Dimensional Grasp', 1, 'One creature or object you \\glossterm<threaten>', """
@@ -702,7 +699,6 @@ def generate_mystic_spheres():
         short_description="Shield allies and areas from hostile forces",
         cantrips=[
         ],
-        schools=['Abjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
         spells=[
             Spell('Mystic Barrier', 1, None, """
@@ -886,7 +882,6 @@ def generate_mystic_spheres():
         short_description="Grant divine blessings to aid allies and improve combat prowess",
         cantrips=[
         ],
-        schools=['Channeling'],
         lists=['Divine'],
         spells=[
             Spell('Blessing of Protection', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
@@ -1039,7 +1034,6 @@ def generate_mystic_spheres():
                 \\rank<7> The range increases to \\rngext.
             """, tags=['Sustain (free)']),
         ],
-        schools=['Channeling'],
         lists=['Divine'],
         spells=[
             Spell('Divine Judgment', 1, 'One creature within \\rngmed range', """
@@ -1162,7 +1156,6 @@ def generate_mystic_spheres():
                 % TODO: does this need more clarity about what teleportation works?
 
                 This ritual takes 24 hours to perform and requires 32 action points from its ritual participants.
-                It is from the Conjuration school in addition to the Channeling school.
             """, tags=['AP']),
         ],
         category='damage',
@@ -1195,7 +1188,6 @@ def generate_mystic_spheres():
                 \\rank<7> The bonus increases to +10.
             """, tags=[]),
         ],
-        schools=['Transmutation'],
         lists=['Arcane', 'Pact'],
         spells=[
             Spell('Slowing Curse', 3, 'One creature within \\rngmed range', """
@@ -1355,7 +1347,6 @@ def generate_mystic_spheres():
         short_description="Bend creatures to your will by controlling their actions",
         cantrips=[
         ],
-        schools=['Enchantment'],
         lists=['Arcane', 'Divine', 'Pact'],
         spells=[
             Spell('Curse of Repetition', 6, 'One creature within \\rngmed range', """
@@ -1441,7 +1432,6 @@ def generate_mystic_spheres():
         name="Corruption",
         short_description="Weaken the life force of foes, reducing their combat prowess",
         cantrips=[],
-        schools=['Vivimancy'],
         lists=['Arcane', 'Divine', 'Nature', 'Pact'],
         spells=[
             Spell('Malaise', 1, 'One living creature within \\rngmed range', """
@@ -1567,7 +1557,6 @@ def generate_mystic_spheres():
         short_description='Drain heat to injure and freeze foes',
         cantrips=[
         ],
-        schools=['Evocation'],
         lists=['Arcane', 'Nature', 'Pact'],
         spells=[
             Spell('Freezing Grasp', 1, 'One creature or object you \\glossterm<threaten>', """
@@ -1698,7 +1687,6 @@ def generate_mystic_spheres():
                 \\rank<7> The range increases to \\rnglong.
             """, tags=['Emotion', 'Sustain (free)']),
         ],
-        schools=['Enchantment'],
         lists=['Arcane', 'Divine', 'Pact'],
         spells=[
             Spell('Terror', 1, 'One creature within \\rngmed range', """
@@ -1815,7 +1803,6 @@ def generate_mystic_spheres():
         name="Electromancy",
         short_description='Create electricity to injure and stun foes',
         cantrips=[],
-        schools=['Evocation'],
         lists=['Arcane', 'Nature', 'Pact'],
         spells=[
             Spell('Spark', 1, 'One creature within \\rngmed range', """
@@ -1957,7 +1944,6 @@ def generate_mystic_spheres():
                 \\rank<7> The maximum size of the object increases to Large.
             """, tags=['Attune (self)', 'Manifestation']),
         ],
-        schools=['Conjuration'],
         lists=['Arcane', 'Pact'],
         spells=[
             Spell('Acid Orb', 1, 'One creature or object within \\rngmed range', """
@@ -2126,7 +2112,6 @@ def generate_mystic_spheres():
                 \\rank<7> The bonus increases to +10.
             """, tags=['Sustain (free)', 'Sensation', 'Visual']),
         ],
-        schools=['Illusion'],
         lists=['Arcane'],
         spells=[
             Spell('Dark Shroud', 1, 'One creature within \\rngmed range', """
@@ -2264,7 +2249,6 @@ def generate_mystic_spheres():
                 Each time you use this ability, you can accomplish work that would take up to five minutes with a normal Craft check.
             """, tags=[]),
         ],
-        schools=['Transmutation'],
         lists=['Arcane', 'Nature', 'Pact'],
         spells=[
             Spell('Piercing Grasp', 1, 'One creature you \\glossterm<threaten>', """
@@ -2495,7 +2479,6 @@ def generate_mystic_spheres():
                 \\rank<7> The maximum radius of bright light increases to 200 feet.
             """, tags=['Sensation', 'Visual']),
         ],
-        schools=['Illusion'],
         lists=['Arcane', 'Divine', 'Nature', 'Pact'],
         spells=[
             Spell('Flash', 1, 'One creature within \\rngmed range', """
@@ -2643,7 +2626,6 @@ def generate_mystic_spheres():
                 \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
             """, tags=[]),
         ],
-        schools=['Evocation'],
         lists=['Arcane', 'Nature', 'Pact'],
         spells=[
             Spell('Burning Grasp', 1, 'One creature or object you \\glossterm<threaten>', """
@@ -2833,7 +2815,6 @@ def generate_mystic_spheres():
             #     In addition, the sensor cannot be moved after it is originally created.
             # """, tags=['Scrying', 'Sustain (minor)']),
         ],
-        schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
         spells=[
             Spell('Purge Invisibility', 3, 'Everything in a \\arealarge radius \\glossterm<emanation> from you', """
@@ -3122,7 +3103,6 @@ def generate_mystic_spheres():
         short_description="Summon creatures to fight with you",
         cantrips=[
         ],
-        schools=['Conjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
         spells=[
             # TODO: this needs more spell
@@ -3266,7 +3246,6 @@ def generate_mystic_spheres():
                 \\rank<7> You can move the target up to thirty feet in any direction.
             """, tags=['Sustain (standard)']),
         ],
-        schools=['Evocation'],
         lists=['Arcane', 'Pact'],
         spells=[
             Spell('Force Slam', 1, 'One creature or object within \\rngmed range', """
@@ -3388,7 +3367,6 @@ def generate_mystic_spheres():
         name="Terramancy",
         short_description="Manipulate earth to crush foes",
         cantrips=[],
-        schools=['Conjuration', 'Transmutation'],
         lists=['Arcane', 'Nature'],
         spells=[
             Spell('Rock Throw', 1, 'One creature or object within \\rngmed range', """
@@ -3577,7 +3555,6 @@ def generate_mystic_spheres():
                 \\rank<7> The bonus increases to +10.
             """, tags=[]),
         ],
-        schools=['Abjuration'],
         lists=['Arcane', 'Divine'],
         spells=[
             Spell('Suppress Magic', 1, 'One creature, object, or magical effect within \\rngmed range', """
@@ -3597,7 +3574,7 @@ def generate_mystic_spheres():
             Spell('Alter Magic Aura', 1, 'One Large or smaller magical object in \\rngmed range', """
                 Make an attack vs. Mental against the target.
                 \\hit One of the target's magic auras is altered (see \pcref{Spellcraft}).
-                You can change the school and descriptors of the aura.
+                You can change the \\glossterm<ability tags> the aura has.
                 In addition, you can decrease the \\glossterm<power> of the aura by up to half your power, or increase the power of the aura up to a maximum of your power.
 
                 \\rankline
@@ -3750,7 +3727,6 @@ def generate_mystic_spheres():
                 When this spell ends, the plant returns to its original state.
             """, tags=['Sustain (minor)']),
         ],
-        schools=['Transmutation'],
         lists=['Nature'],
         spells=[
             Spell('Entangle', 1, 'One Large or smaller creature within \\rngclose range', """
@@ -3883,7 +3859,6 @@ def generate_mystic_spheres():
                 % TODO: does this need more clarity about what teleportation works?
 
                 This ritual takes 24 hours to perform and requires 32 action points from its ritual participants.
-                It is from from the Conjuration school in addition to the Transmutation school.
             """, tags=['AP']),
         ],
     ))
@@ -3900,7 +3875,6 @@ def generate_mystic_spheres():
                 The \\glossterm<wound roll> for that \\glossterm<vital wound> cannot be modified again.
             """, tags=[]),
         ],
-        schools=['Vivimancy'],
         lists=['Divine', 'Nature'],
         spells=[
             Spell('Draining Grasp', 3, 'One creature or object you \\glossterm<threaten>', """
@@ -4022,7 +3996,6 @@ def generate_mystic_spheres():
                 If this would reduce a creature's maximum action points below 0, the creature cannot be resurrected.
 
                 This ritual takes 24 hours to perform, and requires 32 action points from its participants.
-                It is from the Conjuration school in addition to the Vivimancy school.
                 In addition, it can only be learned through the nature \\glossterm<magic source>.
             """, tags=['AP', 'Creation'], extra_text="""
                 \\begin{dtable}
@@ -4043,7 +4016,6 @@ def generate_mystic_spheres():
                 This ritual functions like the \\ritual<reincarnation> ritual, except that the target is reincarnated as its original species instead of as a random species.
 
                 This ritual takes 24 hours to perform, and requires 50 action points from its participants.
-                It is from the Conjuration school in addition to the Vivimancy school.
                 In addition, it can only be learned through the nature \\glossterm<magic source>.
             """, tags=['AP', 'Creation']),
             Spell('Purge Curse', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
@@ -4075,7 +4047,6 @@ def generate_mystic_spheres():
                 If this would reduce a creature's maximum action points below 0, the creature cannot be resurrected.
 
                 This ritual takes 24 hours to perform, and requires 18 action points from its participants.
-                It is from the Conjuration school in addition to the Vivimancy school.
                 In addition, it can only be learned through the divine \\glossterm<magic source>.
             """, tags=['AP']),
             Spell('Complete Resurrection', 6, 'One Diminuitive or larger piece of a humanoid corpse within \\rngclose range', """
@@ -4084,7 +4055,6 @@ def generate_mystic_spheres():
                 The resurrected creature's body is fully restored to its healthy state before dying, including regenerating all missing or damaged body parts.
 
                 This ritual takes 24 hours to perform, and requires 50 action points from its participants.
-                It is from the Conjuration school in addition to the Vivimancy school.
                 In addition, it can only be learned through the divine \\glossterm<magic source>.
             """, tags=['AP', 'Creation']),
             Spell('True Resurrection', 8, 'Special', """
@@ -4093,7 +4063,6 @@ def generate_mystic_spheres():
                 The resurrected creature's body is fully restored to its healthy state before dying, including regenerating all missing or damaged body parts.
 
                 This ritual takes 24 hours to perform, and requires 98 action points from its participants.
-                It is from the Conjuration school in addition to the Vivimancy school.
                 In addition, it can only be learned through the divine \\glossterm<magic source>.
             """, tags=['AP', 'Creation']),
             Spell('Soul Bind', 6, 'One intact corpse within \\rngclose range', """
@@ -4139,7 +4108,6 @@ def generate_mystic_spheres():
                 \\rank<7> The bonus to accuracy increases to +2.
             """, tags=['Manifestation']),
         ],
-        schools=['Conjuration', 'Transmutation'],
         lists=['Arcane', 'Divine', 'Pact'],
         spells=[
             Spell('Proficiency', 1, 'One weapon within \\rngmed range', """
@@ -4315,16 +4283,6 @@ def sanity_check(spells):
                 warn(f"Source {source} has no damage spell against {defense}")
             if not has_debuff[source]:
                 warn(f"Source {source} has no debuff spell against {defense}")
-
-    # Every spell school should have at least two unique categories of
-    # spells
-    categories_in_school = {school: {} for school in rise_data.schools}
-    for spell in spells:
-        for school in spell.schools:
-            categories_in_school[school][spell.category] = True
-    for school in rise_data.schools:
-        if len(categories_in_school[school]) < 2:
-            warn(f"School {school} has only {len(categories_in_school[school])} spell categories")
 
 
 def generate_mystic_sphere_latex(check=False):
