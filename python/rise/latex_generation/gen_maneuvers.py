@@ -203,7 +203,8 @@ def generate_maneuvers():
         short_description='Make a strike against Fortitude defense',
         target="As chosen \\glossterm<strike>",
         effect_text="""
-            Make a \\glossterm<strike> using weapons that deal bludgeoning damage.
+            Make a \\glossterm<strike>.
+            You can only use bludgeoning weapons to make this strike.
             The attack is made against the target's Fortitude defense instead of its Armor defense.
         """,
         rank_upgrades={
@@ -306,7 +307,8 @@ def generate_maneuvers():
         short_description='Make strikes against all threatened foes',
         target="All creatures you \\glossterm<threaten>",
         effect_text="""
-            Make a melee \\glossterm<strike> with a slashing weapon against each target.
+            Make a melee \\glossterm<strike> against each target.
+            You can only use slashing weapons to make this strike.
             You take a -1 penalty to \\glossterm<accuracy> with the strike.
         """,
         rank_upgrades={
@@ -344,7 +346,8 @@ def generate_maneuvers():
         short_description='Make a strike against Reflex defense',
         target="As chosen \\glossterm<strike>",
         effect_text="""
-            Make a \\glossterm<strike> using weapons that deal piercing damage.
+            Make a \\glossterm<strike>.
+            You can only use piercing weapons to make this strike.
             The attack is made against the target's Reflex defense instead of its Armor defense.
         """,
         rank_upgrades={
