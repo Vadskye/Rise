@@ -227,7 +227,7 @@ def generate_mystic_spheres():
                 Make an attack vs. Reflex against the target.
                 \\hit The target is \\glossterm<blinded> as a \\glossterm<condition>.
             """, tags=[]),
-            Spell('Penetrating Windstrike', 1, 'One creature or object within \\rngclose range', """
+            Spell('Piercing Wind', 1, 'One creature or object within \\rngclose range', """
                 A rush of wind flows rapidly through the gaps in your foe's armor to pierce its heart.
                 Make an attack vs. Reflex against the target.
                 \\hit The target takes piercing \\glossterm<standard damage> +1d.
@@ -480,6 +480,19 @@ def generate_mystic_spheres():
         schools=['Conjuration'],
         lists=['Arcane', 'Pact'],
         spells=[
+            Spell('Dimensional Grasp', 1, 'One creature or object you \\glossterm<threaten>', """
+                This spell does not have the \\glossterm<Focus> tag.
+                You must have a \\glossterm<free hand> to cast this spell.
+
+                You partially teleport a touched target into the Astral Plane.
+                Make a \\glossterm<physical attack> vs. Reflex against the target.
+                \\hit The target takes energy \\glossterm<standard damage> +1d.
+
+                \\rankline
+                \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
+                \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
+            """, tags=[], focus=False),
             Spell('Jittering Curse', 6, 'One creature within \\rngmed range', """
                 Make an attack vs. Mental against the target.
                 \\hit At the end of each \\glossterm<movement phase>, the target teleports 10 feet in a random direction.
@@ -895,15 +908,15 @@ def generate_mystic_spheres():
                 \\rank<5> The target also gains a +2 \\glossterm<magic bonus> to \\glossterm<power>.
                 \\rank<7> The accuracy increases to +2.
             """, tags=['Attune (target)']),
-            Spell('Blessing of Resilience', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+            Spell('Blessing of Resilience', 4, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 Whenever the target gains a \\glossterm<condition>, it can choose to negate that condition.
                 After negating a condition in this way, this spell ends.
 
                 You can cast this spell as a \\glossterm<minor action>.
 
                 \\rankline
-                \\rank<5> The spell can negate two conditions before ending.
-                \\rank<7> The spell can negate three conditions before ending.
+                \\rank<6> The spell can negate two conditions before ending.
+                \\rank<8> The spell can negate three conditions before ending.
             """, tags=['Attune (target)']),
             Spell('Cleansing Blessing', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 The target can remove its most recent \\glossterm<condition>.
@@ -913,12 +926,12 @@ def generate_mystic_spheres():
                 \\rank<5> The target can remove two conditions.
                 \\rank<7> The target can remove three conditions.
             """, tags=[]),
-            Spell('Cleansing Benediction', 5, 'You and each of your \\glossterm<allies> within a \\areamed radius from you', """
+            Spell('Cleansing Benediction', 6, 'You and each of your \\glossterm<allies> within a \\areamed radius from you', """
                 Each target can remove its most recent \\glossterm<condition>.
                 This cannot remove a condition applied during the current round.
 
                 \\rankline
-                \\rank<7> The area increases to a \\arealarge radius.
+                \\rank<8> The area increases to a \\arealarge radius.
             """, tags=[]),
             Spell('Blessing of Might', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 The target gains a +4 \\glossterm<magic bonus> to Strength for the purpose of determining its \\glossterm<carrying capacity>.
@@ -940,15 +953,15 @@ def generate_mystic_spheres():
                 \\rank<5> The number of additional hit points increases to three.
                 \\rank<7> The number of additional hit points increases to four.
             """, tags=['Attune (target)']),
-            Spell('Blessing of Persistence', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                The target cannot fall asleep or be knocked unconscious by any nonmagical effect, even \\glossterm<vital wounds>.
+            Spell('Blessing of Persistence', 4, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+                The target cannot fall asleep or be knocked unconscious, even by \\glossterm<vital wounds>.
                 If it is already unconscious for any reason, this spell wakes it up before it decides whether to attune to this spell.
 
                 % This spell intentionally can't be cast as a minor action to avoid making waking creatures too easy
 
                 \\rankline
-                \\rank<5> The target is also immune to being \\glossterm<dazed> or \\glossterm<stunned>.
-                \\rank<7> This spell also protects the target from \\glossterm<magical> effects that would make it fall asleep or be knocked unconscious.
+                \\rank<6> The target is also immune to being \\glossterm<dazed> or \\glossterm<stunned>.
+                \\rank<8> The target is also immune to being \\glossterm<paralyzed>.
             """, tags=['Attune (target)']),
         ],
         rituals=[
@@ -1119,6 +1132,15 @@ def generate_mystic_spheres():
                 \\rank<5> You also gain a +2 \\glossterm<magic bonus> to Fortitude defense.
                 \\rank<7> The bonus to \\glossterm<power> increases to +4.
             """, tags=['Attune (self)']),
+            Spell('Divine Offering', 6, 'Yourself', """
+                When you cast this spell, you gain a \\glossterm<vital wound> that has no wound effect.
+                In exchange, you gain a +4 bonus to \\glossterm<wound rolls> and become immune to \\glossterm<conditions>.
+
+                You can cast this spell as a \\glossterm<minor action>.
+
+                \\rankline
+                \\rank<8> The bonus to \\glossterm<wound rolls> increases to +6.
+            """, tags=['Sustain (free)']),
         ],
         rituals=[
             Spell('Consecrate', 3, None, """
@@ -1242,7 +1264,8 @@ def generate_mystic_spheres():
                 You can cast this spell as a \\glossterm<minor action>.
 
                 \\rankline
-                \\rank<7> The range increases to \\rnglong.
+                \\rank<7> If you cast this spell as a standard action, you can choose to have the duplicate persist for two rounds instead of one.
+                    If you do, the target disappears for two rounds at the same time as the duplicate.
             """, tags=[]),
             Spell('Time Hop', 3, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngmed range', """
                 You send the target into the future, causing it to temporarily cease to exist.
@@ -1273,20 +1296,20 @@ def generate_mystic_spheres():
                 \\rank<6> The maximum size of the target increases to Large.
                 \\rank<8> The maximum size of the target increases to Huge.
             """, tags=['Attune (self)']),
-            Spell('Time Lock', 5, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            Spell('Time Lock', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
                 You lock the state of the target's body in time.
                 Note the target's \\glossterm<hit points>, \\glossterm<vital wounds> (including \\glossterm<wound roll> results), and \\glossterm<conditions>.
                 If the target dies, this effect ends immediately.
 
                 As a \\glossterm<standard action>, you can reach through time to restore the target's state.
-                If you do, the target's \\glossterm<hit points>, \\glossterm<vital wounds>, and \\glossterm<conditions> become identical to what they were when you cast this spell.
+                If you do, the target's \\glossterm<hit points> and \\glossterm<conditions> become identical to what they were when you cast this spell.
+                This effect cannot restore \\glossterm<vital wounds>.
                 This does not affect any other properties of the target, such as any resources expended.
                 After you restore the target's state in this way, the spell ends.
 
-                You can cast this spell as a \\glossterm<minor action>.
-
                 \\rankline
-                \\rank<7> The effect is not ended if the target dies, and restoring the target's state can also restore it to life.
+                \\rank<6> The restoration effect can also remove \\glossterm<vital wounds> gained since the target was locked.
+                \\rank<8> The effect is not ended if the target dies, and restoring the target's state can also restore it to life.
                 If the target is restored to life in this way, all of its properties not locked by this spell, such as any resources expended, are identical to what they were when the target died.
                 You cannot restore yourself to life in this way since you cannot take the action to restore your own state while dead.
             """, tags=['Sustain (minor)']),
@@ -1385,13 +1408,6 @@ def generate_mystic_spheres():
                 \\rank<6> The attack gains a +1 bonus to \\glossterm<accuracy>.
                 \\rank<8> The accuracy bonus increases to +2.
             """, tags=['Compulsion']),
-            Spell('Sleep', 7, 'One creature within \\rngmed range', """
-                Make an attack vs. Mental against the target.
-                \\hit The target is \\blinded as a \\glossterm<condition>.
-                \\crit As above, and the target falls asleep as a \\glossterm<condition>.
-                It cannot be awakened while the condition lasts unless it takes a \\glossterm<vital wound>, which causes it to wake up and ends the condition.
-                After the condition ends, the target can wake up normally, though it continues to sleep until it would wake up naturally.
-            """, tags=['Compulsion']),
             Spell('Discordant Song', 7, '\\glossterm<Enemies> in a \\areasmall radius from you', """
                 Make an attack vs. Mental against each target.
                 \\hit Each target is \\disoriented as a \\glossterm<condition>.
@@ -1406,6 +1422,13 @@ def generate_mystic_spheres():
 
                 \\rankline
                 \\rank<7> You can dominate the target even if it is not humanoid.
+            """, tags=['Compulsion']),
+            Spell('Sleep', 4, 'One creature within \\rngmed range', """
+                Make an attack vs. Mental against the target.
+                \\hit The target is \\glossterm<exhausted> as a \\glossterm<condition>.
+                \\crit The target is \\glossterm<exhausted> and falls asleep as a \\glossterm<condition>.
+                It cannot be awakened while the condition lasts unless it takes a \\glossterm<vital wound>, which causes it to wake up and ends the sleeping part of the condition.
+                After the condition ends, the target can wake up normally, though it continues to sleep until it would wake up naturally.
             """, tags=['Compulsion']),
         ],
         category='debuff, combat',
@@ -1547,6 +1570,18 @@ def generate_mystic_spheres():
         schools=['Evocation'],
         lists=['Arcane', 'Nature', 'Pact'],
         spells=[
+            Spell('Freezing Grasp', 1, 'One creature or object you \\glossterm<threaten>', """
+                This spell does not have the \\glossterm<Focus> tag.
+                You must have a \\glossterm<free hand> to cast this spell.
+
+                Make a \\glossterm<physical attack> vs. Reflex against the target.
+                \\hit The target takes cold \\glossterm<standard damage> +1d.
+
+                \\rankline
+                \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
+                \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
+            """, tags=[], focus=False),
             Spell('Cone of Cold', 1, 'Everything in a \\areamed cone from you', """
                 Make an attack vs. Fortitude against each target.
                 \\hit Each target takes cold \\glossterm<standard damage>.
@@ -1634,7 +1669,7 @@ def generate_mystic_spheres():
                 \\rankline
                 \\rank<6> The temperature decreases by 100 degrees, to a minimum of \\minus70 degrees.
                 \\rank<8> The temperature decreases by 150 degrees, to a minimum of \\minus90 degrees.
-            """, tags=['Attune (self)']),
+            """, tags=['Sustain (minor)']),
             Spell('Frostburn', 6, 'One creature within \\rngmed range', """
                 Make an attack vs. Fortitude against the target.
                 \\hit As a \\glossterm<condition>, the target is seared by painful cold.
@@ -1783,6 +1818,15 @@ def generate_mystic_spheres():
         schools=['Evocation'],
         lists=['Arcane', 'Nature', 'Pact'],
         spells=[
+            Spell('Spark', 1, 'One creature within \\rngmed range', """
+                Make an attack vs. Reflex against the target.
+                \\hit The target takes electricity \\glossterm<standard damage> +1d.
+
+                \\rankline
+                \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
+                \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
+            """, tags=[]),
             Spell('Lightning Bolt', 1, 'Everything in a \\arealarge, 5 ft.\\ wide line from you', """
                 Make an attack vs. Reflex against each target.
                 \\hit Each target takes electricity \\glossterm<standard damage>.
@@ -1792,10 +1836,11 @@ def generate_mystic_spheres():
                 \\rank<5> The area increases to a \\areaext, 15 ft.\\ wide line.
                 \\rank<7> The area increases to a 200 ft.\\ long, 20 ft.\\ wide line.
             """, tags=[]),
-            Spell('Lightning Grasp', 1, 'One creature or object you \\glossterm<threaten>', """
+            Spell('Shocking Grasp', 1, 'One creature or object you \\glossterm<threaten>', """
                 This spell does not have the \\glossterm<Focus> tag.
+                You must have a \\glossterm<free hand> to cast this spell.
 
-                Make an attack vs. Reflex against the target.
+                Make a \\glossterm<physical attack> vs. Reflex against the target.
                 \\hit The target takes electricity \\glossterm<standard damage> +1d.
 
                 \\rankline
@@ -2222,11 +2267,33 @@ def generate_mystic_spheres():
         schools=['Transmutation'],
         lists=['Arcane', 'Nature', 'Pact'],
         spells=[
+            Spell('Piercing Grasp', 1, 'One creature you \\glossterm<threaten>', """
+                This spell does not have the \\glossterm<Focus> tag.
+                You must have a \\glossterm<free hand> to cast this spell.
+
+                You twist your hand into a spike that bends past armor to injure your foe.
+                Make a \\glossterm<physical attack> vs. Reflex against the target.
+                \\hit The target takes piercing \\glossterm<standard damage> +1d.
+
+                \\rankline
+                \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
+                \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
+            """, tags=[], focus=False),
             Spell('Baleful Polymorph', 7, 'One creature within \\rngmed range', """
                 Make an attack vs. Fortitude against the target.
                 \\hit As a \\glossterm<condition>, the target shrinks by two \\glossterm<size categories> and is \\glossterm<confused>.
             """, tags=[]),
             Spell('Twist Flesh', 1, 'One creature within \\rngmed range', """
+                Make an attack vs. Fortitude against the target.
+                \\hit The target takes physical \\glossterm<standard damage> +1d.
+
+                \\rankline
+                \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
+                \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
+            """, tags=[]),
+            Spell('Fleshbite', 1, 'One creature within \\rngmed range', """
                 Make an attack vs. Fortitude against the target.
                 \\hit The target is \\glossterm<sickened> as a \\glossterm<condition>.
                 \\crit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
@@ -2579,6 +2646,18 @@ def generate_mystic_spheres():
         schools=['Evocation'],
         lists=['Arcane', 'Nature', 'Pact'],
         spells=[
+            Spell('Burning Grasp', 1, 'One creature or object you \\glossterm<threaten>', """
+                This spell does not have the \\glossterm<Focus> tag.
+                You must have a \\glossterm<free hand> to cast this spell.
+
+                Make a \\glossterm<physical attack> vs. Reflex against the target.
+                \\hit The target takes fire \\glossterm<standard damage> +1d.
+
+                \\rankline
+                \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
+                \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
+            """, tags=[], focus=False),
             Spell('Fireball', 3, 'Everything in a \\areasmall radius within \\rngclose range', """
                 Make an attack vs. Armor against each target.
                 \\hit Each target takes fire \\glossterm<standard damage>.
@@ -2596,16 +2675,7 @@ def generate_mystic_spheres():
                 \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
                 \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
             """, tags=[]),
-            Spell('Scorching Ray', 1, 'One creature within \\rngclose range', """
-                Make an attack vs. Reflex against the target.
-                \\hit The target takes fire \\glossterm<standard damage> +1d.
-
-                \\rankline
-                \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
-                \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
-                \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
-            """, tags=[]),
-            Spell('Burning Hands', 1, 'Everything in a \\areamed cone from you', f"""
+            Spell('Cone of Fire', 1, 'Everything in a \\areamed cone from you', f"""
                 Make an attack vs. Armor against each target.
                 \\hit Each target takes fire \\glossterm<standard damage>.
 
@@ -2615,7 +2685,7 @@ def generate_mystic_spheres():
                 \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
             """, tags=[]),
             Spell('Ignition', 1, 'One creature within \\rngmed range', f"""
-                Make an attack vs. Fortitude against the target.
+                Make an attack vs. Reflex against the target.
                 \\hit The target is \\glossterm<ignited> as a \\glossterm<condition>.
                 This condition can be removed if the target makes a \\glossterm<DR> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
                 Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
@@ -2623,15 +2693,30 @@ def generate_mystic_spheres():
                 \\crit As above, except that the condition cannot be removed without removing the \\glossterm<condition>.
 
                 \\rankline
-                \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
-                \\rank<5> The accuracy bonus increases to +2.
-                \\rank<7> The accuracy bonus increases to +3.
+                \\rank<3> The \\glossterm<difficulty rating> to remove the condition increases to 15 and it can no longer be removed by drenching the target in water.
+                \\rank<5> The \\glossterm<difficulty rating> to remove the condition increases to 20 and it can no longer be removed by dealing cold damage to the target.
+                \\rank<7> The condition cannot be removed without effects that specifically remove conditions.
             """, tags=[]),
-            Spell('Immolation', 6, 'One creature within \\rngmed range', """
-                Make an attack vs. Fortitude against the target.
-                \\hit The target is \\glossterm<ignited> as a \\glossterm<condition>.
+            Spell('Combustion', 1, 'One creature within \\rngmed range', """
+                You set the target on fire from the inside out.
+                Make an attack vs. Reflex against the target.
+                \\hit The target takes fire \\glossterm<standard damage> +1d.
 
-                \\rank<8> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rankline
+                \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
+                \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
+            """, tags=[]),
+            Spell('Immolate', 4, 'One creature within \\rngmed range', """
+                Make an attack vs. Reflex against the target.
+                \\hit The target takes fire \\glossterm<standard damage> +2d.
+                In addition, if the target has no hit points remaining at the end of the current \\glossterm<phase>, it dies.
+                Its body is completely disintegrated, leaving behind only a pinch of ash.
+                Its equipment is unaffected.
+
+                \\rankline
+                \\rank<6> The damage increases to \\glossterm<standard damage> +3d.
+                \\rank<8> The damage increases to \\glossterm<standard damage> +4d.
             """, tags=[]),
             Spell('Heat Metal', 4, 'One creature within \\rngmed range', """
                 Make an attack vs. Fortitude against the target.
@@ -2713,7 +2798,7 @@ def generate_mystic_spheres():
                 \\rankline
                 \\rank<6> The temperature increases by 100 degrees, to a maximum of 160 degrees.
                 \\rank<8> The temperature increases by 150 degrees, to a maximum of 180 degrees.
-            """, tags=['Attune (self)']),
+            """, tags=['Sustain (minor)']),
         ],
         category='damage',
     ))
@@ -3273,6 +3358,18 @@ def generate_mystic_spheres():
                 Each wall is transparent, but blocks physical passage and \\glossterm<line of effect>.
                 Each five-foot square of wall has hit points equal to twice your \\glossterm<power>, and all of its defenses are 0.
             """, tags=['Attune (self)']),
+            Spell('Steal Item', 1, 'One Small or smaller object within \\rngmed range', """
+                Make an attack vs. Armor against the target.
+                If the target is \\glossterm<attended>, you must also beat the attending creature's Reflex defense.
+                \\hit Unless the target is held in a creature's hand or otherwise well secured (such as an equipped ring or shield), it flies towards you, allowing you to catch it.
+                If you are unable or unwilling to catch it, it falls to the ground in your space.
+                \\crit As above, except that you can also pull objects that are held in the hand of an attending creature, but not objects that are well secured.
+
+                \\rankline
+                \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<5> The accuracy bonus increases to +2.
+                \\rank<7> The accuracy bonus increases to +3.
+            """, tags=[]),
         ],
         category='debuff, combat',
     ))
@@ -3806,6 +3903,17 @@ def generate_mystic_spheres():
         schools=['Vivimancy'],
         lists=['Divine', 'Nature'],
         spells=[
+            Spell('Draining Grasp', 3, 'One creature or object you \\glossterm<threaten>', """
+                This spell does not have the \\glossterm<Focus> tag.
+                You must have a \\glossterm<free hand> to cast this spell.
+
+                Make a \\glossterm<physical attack> vs. Reflex against the target.
+                \\hit The target loses a \\glossterm<hit point>.
+
+                \\rankline
+                \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<7> The accuracy bonus increases to +2.
+            """, tags=[], focus=False),
             Spell('Seal Wound', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 The target gains a +2 bonus to the \\glossterm<wound roll> of its most recent \\glossterm<vital wound>.
                 The \\glossterm<wound roll> for that \\glossterm<vital wound> cannot be modified again.
@@ -3815,13 +3923,16 @@ def generate_mystic_spheres():
                 \\rank<5> The bonus increases to +4.
                 \\rank<7> The bonus increases to +5.
             """, tags=[]),
-            Spell('Lifegift', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                The target increases its maximum \\glossterm<hit points> by 1 and regains that many hit points.
+            Spell('Lifegift', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+                The target increases its maximum \\glossterm<hit points> by one and regains that many hit points.
                 When this spell ends, the target loses hit points equal to the hit points it regained this way.
 
+                You can cast this spell as a \\glossterm<minor action>.
+
                 \\rankline
-                \\rank<5> The number of additional hit points increases to 2.
-                \\rank<7> The number of additional hit points increases to 3.
+                \\rank<3> The number of additional hit points increases to two.
+                \\rank<5> The number of additional hit points increases to three.
+                \\rank<7> The number of additional hit points increases to four.
             """, tags=['Attune (target)']),
             Spell('Cure Serious Wound', 5, 'Yourself or one living \\glossterm<ally> within \\rngclose range', """
                 The target removes one \\glossterm<vital wound>.
@@ -3829,7 +3940,7 @@ def generate_mystic_spheres():
                 \\rankline
                 \\rank<7> The target can remove two \\glossterm<vital wounds>.
             """, tags=['AP']),
-            Spell('Drain Life', 3, 'One living creature within \\rngclose range', """
+            Spell('Drain Life', 3, 'One living creature within \\rngmed range', """
                 Make an attack vs. Fortitude against the target.
                 \\hit The target loses a \\glossterm<hit point>.
 
@@ -3837,7 +3948,7 @@ def generate_mystic_spheres():
                 \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
                 \\rank<7> The accuracy bonus increases to +2.
             """, tags=[]),
-            Spell('Harm', 7, 'One creature within \\rngclose range', """
+            Spell('Harm', 7, 'One creature within \\rngmed range', """
                 Make an attack vs. Fortitude against the target.
                 \\hit The target loses two \\glossterm<hit points>.
                 \\crit As above, and the target gains a \\glossterm<vital wound>.
