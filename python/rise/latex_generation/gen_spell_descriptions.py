@@ -3867,7 +3867,7 @@ def generate_mystic_spheres():
     # Secondary: buff (healing)
     # Tertiary: debuff, utility
     mystic_spheres.append(MysticSphere(
-        name="Vital Surge",
+        name="Vivimancy",
         short_description="Alter life energy to cure or inflict wounds",
         cantrips=[
             Effects('Ablate Wound', 'Yourself or a living \\glossterm<ally> within \\rngclose range', """
