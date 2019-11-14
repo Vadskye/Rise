@@ -57,7 +57,7 @@ def generate_mystic_spheres():
                 \\rank<7> The penalty increases to -5.
             """, tags=['Curse']),
             Spell('Propulsion', 1, 'Yourself or one Large or smaller \\glossterm<ally> in \\rngclose range', """
-                You move the target up to 50 feet in any direction.
+                You \\glossterm<push> the target up to 50 feet in any direction.
                 You cannot change the direction of the movement partway through.
                 Moving the target upwards costs twice the normal movement cost.
 
@@ -222,6 +222,21 @@ def generate_mystic_spheres():
                 \\rank<6> The maximum size increases to Huge.
                 \\rank<8> The maximum size increases to Gargantuan.
             """, tags=[]),
+            Spell('Dustblind', 5, 'One creature within \\rngclose range', """
+                If there is no dirt, dust, or collection of loose objects of similar size within 30 feet of the target's eyes, this spell is \\glossterm<miscast>.
+                Make an attack vs. Reflex against the target.
+                \\hit The target is \\glossterm<blinded> as a \\glossterm<condition>.
+            """, tags=[]),
+            Spell('Penetrating Windstrike', 1, 'One creature or object within \\rngclose range', """
+                A rush of wind flows rapidly through the gaps in your foe's armor to pierce its heart.
+                Make an attack vs. Reflex against the target.
+                \\hit The target takes piercing \\glossterm<standard damage> +1d.
+
+                \\rankline
+                \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
+                \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
+            """, tags=[]),
         ],
         rituals=[
             Spell('Air Bubble', 3, 'Yourself or one \\glossterm<ally> within \\rngclose range', """
@@ -261,7 +276,7 @@ def generate_mystic_spheres():
         schools=['Conjuration'],
         lists=['Nature'],
         spells=[
-            Spell('Dehydrating Curse', 3, 'One creature within \\rngmed range', """
+            Spell('Dessicating Curse', 3, 'One creature within \\rngmed range', """
                 Make an attack vs. Mental agains the target.
                 \\hit Until it takes a \\glossterm<short rest>, the target is \\glossterm<sickened>.
                 If the target immerses itself in or drinks a body of water of minimum size equal to two size categories smaller than the target,
@@ -282,7 +297,7 @@ def generate_mystic_spheres():
                 \\rank<7> The maximum size increases to Gargantuan.
             """, tags=['Manifestation']),
             Spell('Crushing Wave', 1, 'Everything in a \\areamed, 10 ft.\\ wide line from you', """
-                Make an attack vs. Fortitude against each target.
+                Make an attack vs. Reflex against each target.
                 \\hit Each target takes bludgeoning \\glossterm<standard damage>.
 
                 \\rankline
@@ -291,21 +306,23 @@ def generate_mystic_spheres():
                 \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
             """, tags=['Manifestation']),
             Spell('Great Flood', 3, 'Everything in a \\arealarge, 15 ft.\\ wide line from you', """
-                Make an attack vs. Fortitude against each target.
+                Make an attack vs. Reflex against each target.
                 \\hit Each target takes bludgeoning \\glossterm<standard damage>.
 
                 \\rankline
                 \\rank<5> The area increases to a \\areahuge, 20 ft.\\ wide line from you.
                 \\rank<7> The area increases to a \\areaext, 30 ft.\\ wide line from you.
             """, tags=['Manifestation']),
-            Spell('Water Jet', 1, 'One creature within \\rngmed range', """
+            Spell('Water Jet', 1, 'One creature or object within \\rngmed range', """
                 Make an attack vs. Armor against the target.
-                \\hit The target takes bludgeoning \\glossterm<standard damage> +1d.
+                You may move up to 20 feet away from the target as the water propels you backwards.
+                Moving yourself upwards costs twice the normal movement cost.
+                \\hit The target takes bludgeoning \\glossterm<standard damage>.
 
                 \\rankline
-                \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
-                \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
-                \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
+                \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
+                \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
             """, tags=['Manifestation']),
             Spell('Fountain', 1, '\\glossterm<Enemies> within a \\areasmall radius from you', """
                 Make an attack vs. Armor against each target.
@@ -399,6 +416,32 @@ def generate_mystic_spheres():
                 \\rankline
                 \\rank<6> The damage increases to \\glossterm<standard damage> +1d.
                 \\rank<8> The damage increases to \\glossterm<standard damage> +2d.
+            """, tags=[]),
+            Spell('Aqueous Form', 4, 'Yourself', """
+                You transform your body and equipment into water, allowing you to compress your body or contort yourself into odd shapes.
+                This has the following effects:
+                \\begin<itemize>
+                    \\item You gain a \\glossterm<swim speed> equal to your \\glossterm<base speed>
+                    \\item You gain a +8 \\glossterm<magic bonus> to the Escape Artist skill
+                    \\item You are immune to \\glossterm<critical hits> from \\glossterm<strikes>
+                    \\item Your \\glossterm<damage resistance> against \\glossterm<physical damage> is halved.
+                \\end<itemize>
+
+                \\rankline
+                \\rank<6> The skill bonus increases to +12.
+                \\rank<8> The skill bonus increases to +16.
+            """, tags=['Attune (self)']),
+            Spell('Aquatic Propulsion', 1, 'Yourself', """
+                You release a blast of water away from you, throwing you in the other direction.
+                You \\glossterm<push> yourself up to 50 feet in any direction.
+                You cannot change the direction of the movement partway through.
+                Moving yourself upwards costs twice the normal movement cost.
+                This movement is doubled underwater instead of being dramatically slowed like normal for forced movement.
+
+                \\rankline
+                \\rank<3> The distance increases to 100 feet.
+                \\rank<5> You gain a +2 bonus to Armor defense during the current phase.
+                \\rank<7> The distance increases to 300 feet.
             """, tags=[]),
         ],
         rituals=[
@@ -890,10 +933,22 @@ def generate_mystic_spheres():
                 The target increases its maximum \\glossterm<hit points> by one and regains one \\glossterm<hit point>.
                 When this ability ends, the target loses \\glossterm<hit points> equal to the number of hit points it regained this way and its maximum \\glossterm<hit points> are restored to normal.
 
+                You can cast this spell as a \\glossterm<minor action>.
+
                 \\rankline
                 \\rank<3> The number of additional hit points increases to two.
                 \\rank<5> The number of additional hit points increases to three.
                 \\rank<7> The number of additional hit points increases to four.
+            """, tags=['Attune (target)']),
+            Spell('Blessing of Persistence', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+                The target cannot fall asleep or be knocked unconscious by any nonmagical effect, even \\glossterm<vital wounds>.
+                If it is already unconscious for any reason, this spell wakes it up before it decides whether to attune to this spell.
+
+                % This spell intentionally can't be cast as a minor action to avoid making waking creatures too easy
+
+                \\rankline
+                \\rank<5> The target is also immune to being \\glossterm<dazed> or \\glossterm<stunned>.
+                \\rank<7> This spell also protects the target from \\glossterm<magical> effects that would make it fall asleep or be knocked unconscious.
             """, tags=['Attune (target)']),
         ],
         rituals=[
@@ -983,6 +1038,10 @@ def generate_mystic_spheres():
                 \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
                 \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
             """, tags=[]),
+            Spell('Glimpse of Divinity', 5, 'One creature within \\rngclose range', """
+                Make an attack vs. Mental against the target.
+                \\hit The target is \\glossterm<blinded> as a \\glossterm<condition>.
+            """, tags=[]),
             Spell('Word of Faith', 1, '\\glossterm<Enemies> in a \\areasmall radius from you', """
                 Make an attack vs. Mental against each target.
                 \\hit Each target takes energy \\glossterm<standard damage>.
@@ -1021,8 +1080,44 @@ def generate_mystic_spheres():
                 \\rank<6> You also gain a +2 \\glossterm<magic bonus> to Strength.
                 \\rank<8> You can increase your size by two size categories instead of one.
             """, tags=['Attune (self)']),
-            Spell('Holy Blade', 7, 'Yourself', """
-                Whenever you make a \\glossterm<strike> against Armor defense, you can choose to make that strike against Reflex defense instead.
+            Spell('Divine Presence', 3, 'All \\glossterm<enemies> in the area (see text)', """
+                You radiate an aura that invokes a fear of your divine connection in a \\areamed radius \\glossterm<emanation> from you.
+                When you attune to this spell, and at the end of each \\glossterm<action phase> in subsequent rounds, make an attack vs. Mental against each target.
+                You cannot make this attack more than once against any individual target during this spell's duration.
+                \\hit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
+
+                \\rankline
+                \\rank<5> The area increases to a \\arealarge radius \\glossterm<emanation>.
+                \\rank<7> The area increases to a \\areahuge radius \\glossterm<emanation>.
+            """, tags=['Attune (self)', 'Emotion']),
+            Spell('Faithful Endurance', 1, 'Yourself', """
+                The first time you gain a \\glossterm<vital wound> during this effect, you gain a +2 bonus to its \\glossterm<wound roll>.
+                The \\glossterm<wound roll> for that \\glossterm<vital wound> cannot be modified again.
+
+                You can cast this spell as a \\glossterm<minor action>.
+
+                \\rankline
+                \\rank<3> The bonus increases to +3.
+                \\rank<5> The bonus increases to +4.
+                \\rank<7> The bonus increases to +5.
+            """, tags=['Attune (self)']),
+            Spell('Divine Favor', 3, 'Yourself', """
+                You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with all attacks.
+
+                You can cast this spell as a \\glossterm<minor action>.
+
+                \\rankline
+                \\rank<5> You also gain a +2 \\glossterm<magic bonus> to Mental defense.
+                \\rank<7> The bonus to \\glossterm<accuracy> increases to +2.
+            """, tags=['Attune (self)']),
+            Spell('Divine Power', 3, 'Yourself', """
+                You gain a +2 \\glossterm<magic bonus> to \\glossterm<power>.
+
+                You can cast this spell as a \\glossterm<minor action>.
+
+                \\rankline
+                \\rank<5> You also gain a +2 \\glossterm<magic bonus> to Fortitude defense.
+                \\rank<7> The bonus to \\glossterm<power> increases to +4.
             """, tags=['Attune (self)']),
         ],
         rituals=[
@@ -2228,7 +2323,7 @@ def generate_mystic_spheres():
             Spell('Malleable Body', 4, 'Yourself', """
                 Your body and equipment becomes highly flexible and malleable, allowing you to compress your body or contort yourself into odd shapes.
                 You gain a +8 \\glossterm<magic bonus> to the Escape Artist skill, and are immune to \\glossterm<critical hits> from \\glossterm<strikes>.
-                However, you are \\glossterm<vulnerable> to \\glossterm<physical> damage.
+                However, your \\glossterm<damage resistance> against \\glossterm<physical damage> is halved.
 
                 \\rankline
                 \\rank<6> The skill bonus increases to +12.
@@ -3586,9 +3681,9 @@ def generate_mystic_spheres():
                 \\rank<5> The accuracy bonus increases to +2.
                 \\rank<7> The accuracy bonus increases to +3.
             """, tags=[]),
-            Spell('Fire Seed', 3, 'One unattended acorn or similar seed structure you touch', """
+            Spell('Fire Seeds', 3, 'One unattended acorn or similar seed structure you touch', """
                 % Does "seed structure" make sense?
-                You transform an unattended acorn or similar seed structure into a small bomb.
+                You transform up to three unattended acorns or similar seed structures into small bombs.
                 As a standard action, you or another creature can throw the acorn anywhere within \\rngclose range.
                 % More accurate version: the acorn has a range increment of 10 feet to hit its target, but that accuracy roll is completely independent of the explosion.
                 % Doesn't seem worth the complexity, and implicitly gives the fire seed surprisingly long range since objects are easy to hit.
@@ -3596,8 +3691,8 @@ def generate_mystic_spheres():
                 \\hit Each target takes fire \\glossterm<standard damage>.
 
                 \\rankline
-                \\rank<5> The damage increases to \\glossterm<standard damage> +1d. In addition, you can create up to two seed bombs.
-                \\rank<7> The damage increases to \\glossterm<standard damage> +2d. In addition, you can create up to three seed bombs.
+                \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
             """, tags=['Sustain (free)']),
             Spell('Wall of Thorns', 3, 'Each creature that moves through the area (see text)', """
                 You create a wall of thorns in 10 ft.\\ high, \\areamed \\glossterm<wall> within \\rngmed range.
