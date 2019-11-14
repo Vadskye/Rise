@@ -2147,8 +2147,7 @@ def generate_mystic_spheres():
                 You can only cast this spell during the \\glossterm<action phase>.
 
                 The target's weapons become invisible, and its hands are blurred.
-                On the next melee \\glossterm<strike> the target makes,
-                    the attack roll automatically \\glossterm<explodes>,
+                The target gains a +5 bonus to \\glossterm<accuracy> with its next melee \\glossterm<strike>,
                     as if the target was \\glossterm<unaware> of the attack.
                 This effect ends at the end of the current round if the target has not made a strike by that time.
                 % TODO: wording
