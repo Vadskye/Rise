@@ -647,7 +647,7 @@ def generate_mystic_spheres():
         cantrips=[
         ],
         schools=['Abjuration'],
-        lists=['Arcane', 'Divine', 'Hedge', 'Nature'],
+        lists=['Arcane', 'Divine', 'Nature'],
         spells=[
             Spell('Mystic Barrier', 1, None, """
                 You create a wall of magical energy in a 10 ft.\\ high, \\areamed line within \\rngmed range.
@@ -1238,7 +1238,7 @@ def generate_mystic_spheres():
         cantrips=[
         ],
         schools=['Enchantment'],
-        lists=['Arcane', 'Divine', 'Hedge', 'Pact'],
+        lists=['Arcane', 'Divine', 'Pact'],
         spells=[
             Spell('Curse of Repetition', 6, 'One creature within \\rngmed range', """
                 Make an attack vs. Mental against the target.
@@ -1324,7 +1324,7 @@ def generate_mystic_spheres():
         short_description="Weaken the life force of foes, reducing their combat prowess",
         cantrips=[],
         schools=['Vivimancy'],
-        lists=['Arcane', 'Divine', 'Hedge', 'Nature', 'Pact'],
+        lists=['Arcane', 'Divine', 'Nature', 'Pact'],
         spells=[
             Spell('Malaise', 1, 'One living creature within \\rngmed range', """
                 Make an attack vs. Fortitude against the target.
@@ -1569,7 +1569,7 @@ def generate_mystic_spheres():
             """, tags=['Emotion', 'Sustain (free)']),
         ],
         schools=['Enchantment'],
-        lists=['Arcane', 'Divine', 'Hedge', 'Pact'],
+        lists=['Arcane', 'Divine', 'Pact'],
         spells=[
             Spell('Terror', 1, 'One creature within \\rngmed range', """
                 Make an attack vs. Mental against the target.
@@ -1987,7 +1987,7 @@ def generate_mystic_spheres():
             """, tags=['Sustain (free)', 'Sensation', 'Visual']),
         ],
         schools=['Illusion'],
-        lists=['Arcane', 'Hedge'],
+        lists=['Arcane'],
         spells=[
             Spell('Dark Shroud', 1, 'One creature within \\rngmed range', """
                 Make an attack vs. Mental against the target.
@@ -2125,7 +2125,7 @@ def generate_mystic_spheres():
             """, tags=[]),
         ],
         schools=['Transmutation'],
-        lists=['Arcane', 'Hedge', 'Nature', 'Pact'],
+        lists=['Arcane', 'Nature', 'Pact'],
         spells=[
             Spell('Baleful Polymorph', 7, 'One creature within \\rngmed range', """
                 Make an attack vs. Fortitude against the target.
@@ -2654,7 +2654,7 @@ def generate_mystic_spheres():
             # """, tags=['Scrying', 'Sustain (minor)']),
         ],
         schools=['Divination'],
-        lists=['Arcane', 'Divine', 'Hedge', 'Nature'],
+        lists=['Arcane', 'Divine', 'Nature'],
         spells=[
             Spell('Purge Invisibility', 3, 'Everything in a \\arealarge radius \\glossterm<emanation> from you', """
                 All invisibility effects are \\glossterm<suppressed> on all targets in the area.
@@ -3386,7 +3386,7 @@ def generate_mystic_spheres():
             """, tags=[]),
         ],
         schools=['Abjuration'],
-        lists=['Arcane', 'Divine', 'Hedge'],
+        lists=['Arcane', 'Divine'],
         spells=[
             Spell('Suppress Magic', 1, 'One creature, object, or magical effect within \\rngmed range', """
                 Make an attack against the target.
@@ -3559,7 +3559,7 @@ def generate_mystic_spheres():
             """, tags=['Sustain (minor)']),
         ],
         schools=['Transmutation'],
-        lists=['Hedge', 'Nature'],
+        lists=['Nature'],
         spells=[
             Spell('Entangle', 1, 'One Large or smaller creature within \\rngclose range', """
                 You cause plants to grow and trap a foe.
@@ -3709,7 +3709,7 @@ def generate_mystic_spheres():
             """, tags=[]),
         ],
         schools=['Vivimancy'],
-        lists=['Divine', 'Hedge', 'Nature'],
+        lists=['Divine', 'Nature'],
         spells=[
             Spell('Seal Wound', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 The target gains a +2 bonus to the \\glossterm<wound roll> of its most recent \\glossterm<vital wound>.

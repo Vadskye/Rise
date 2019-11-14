@@ -75,7 +75,6 @@ This choice determines a great deal about your character's abilities.
         \item Rogues are exceptionally skillful characters known for their ability to strike at their foe's weak points in combat.
             % \item Spellwarped wield a unique blend of martial skill and narrowly focused magical abilities.
         \item Warlocks are pact spellcasters who draw their power from a dark pact made with infernal creatures.
-        \item Witches are hedge spellcasters who draw their power from a pact made with natural spirits.
     \end{itemize}
 
     \subsection{Class Description Format}
@@ -2947,12 +2946,12 @@ This choice determines a great deal about your character's abilities.
         \cf{War}[1]{Abyssal Blast} You can use the \textit{abyssal blast} ability as a standard action.
         \begin{freeability}{Abyssal Blast}[\glossterm{Magical}]
             Make an attack vs. Armor against one creature or object within \rngclose range.
-            \hit The target takes \glossterm{standard damage}.
+            \hit The target takes fire \glossterm{standard damage} \plus1d.
 
             \rankline
-            \rank{3} You gain a \plus1d bonus to damage with the attack.
-            \rank{5} The damage bonus increases to \plus2d.
-            \rank{7} The damage bonus increases to \plus3d.
+            \rank{3} The damage increases to \glossterm{standard damage} \plus2d.
+            \rank{5} The damage increases to \glossterm{standard damage} \plus3d.
+            \rank{7} The damage increases to \glossterm{standard damage} \plus4d.
         \end{freeability}
 
         \cf{War}[2]{Fiendish Resistance} You gain a bonus equal to half your level to \glossterm{resistances} against \glossterm{energy damage}.
@@ -3188,209 +3187,26 @@ This choice determines a great deal about your character's abilities.
         \cf{War}[7]{Control Possession} During your \textit{possession} ability, you can choose your actions normally.
         Your soulkeeper may still choose to end the ability.
 
-
-\newpage
-\section{Witch}\label{Witch}
-    \begin{dtable!*}
-        \lcaption{Witch Progression}
-        \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Brewer}         & \tb{Hedge Magic}      & \tb{Hedge Spell Mastery}    \tableheaderrule
-            1 & Witch's brew        & Spellcasting          & Mystic knowledge            \\
-            2 & Skilled brewer      & Mystic sphere         & Witch's hex                 \\
-            3 & Tempting concoction & Spell rank (3), spell & Wellspring of power         \\
-            4 & Esoteric concoction & Spell rank (4)        & Mystic knowledge            \\
-            5 & Efficient brewer    & Spell rank (5)        & Greater witch's hex         \\
-            6 & Poison spell        & Spell rank (6), spell & Greater wellspring of power \\
-            7 & Blended concoction  & Spell rank (7)        & Mystic knowledge            \\
-            8 &                     & Spell rank (8)        &                             \\
-        \end{dtabularx}
-    \end{dtable!*}
-
-    \classbasics{Alignment} Neutral good, lawful neutral, neutral, chaotic neutral, or neutral evil.
-
-    \classbasics{Archetypes} Witches have the Brewer, Hedge Magic, and Hedge Spell Mastery \glossterm{archetypes}.
-
-    \subsection{Basic Class Abilities}
-        If you are a witch, you gain the following abilities.
-
-        \cf{Wch}{Defenses}
-        You gain the following bonuses to your \glossterm{defenses}: \plus4 Fortitude, \plus3 Reflex, \plus5 Mental.
-
-        \cf{Wch}{Skills}
-        You have the following \glossterm{class skills}:
-        \begin{itemize}
-            \item \subparhead{Intelligence} Craft, Deduction, Heal, Knowledge (geography, nature), Linguistics.
-            \item \subparhead{Perception} Awareness, Creature Handling, Spellcraft, Survival.
-            \item \subparhead{Other} Bluff, Intimidate, Persuasion, Profession.
-        \end{itemize}
-
-        \cf{Wch}{Weapon and Armor Proficiencies}
-        You are proficient with simple weapons, any one other weapon group, light armor, and shields.
-        Encumbrance from armor interferes with the gestures you make to cast spells, which can cause your spells with \glossterm{somatic components} to fail (see \pcref{Somatic Component Failure}).
-
-        \cf{Wch}{Spirit Pact} Witches draw power from the pact or pacts they make with natural spirits.
-        These spirits are less than gods, but their connection to the natural world allows them to share that power with witches.
-        Most natural spirits have no consistently good or evil inclinations, though many are cruel or vindictive and a rare few are actively benevolent.
-        All natural spirits expect a price for their powers, but the price can vary dramatically depending on the nature of the spirit.
-
-    \subsection{Brewer}
-        This archetype improves your ability to create potions and poisons to aid your allies and harm your foes.
-
-        \cf{Wch}[1]{Witch's Brew} You can use the \textit{witch's brew} ability with an hour of effort brewing liquid in a cauldron or similar receptacle.
-        \begin{freeability}{Witch's Brew}
-            Choose a \glossterm{targeted} spell you know that does not have the \glossterm{Sustain}, \glossterm{Attune} (self), or \glossterm{AP} tags.
-            The spell becomes imbued in one ounce of the liquid that you can remove and place in a receptacle.
-            You gain a \plus1 bonus to \glossterm{accuracy} with the spell.
-            A creature that drinks that liquid becomes affected by the spell as if you had cast it on the creature.
-            The effects of the spell wear off after one hour, even if the spell would normally have a longer duration.
-
-            This ability lasts until you use it again.
-
-            \rankline
-            \rank{3} You can choose up to two spells and imbue up to two one-ounce portions with any spell chosen.
-            \rank{5} The bonus to \glossterm{accuracy} increases to \plus2.
-            \rank{7} You can choose up to four spells and imbue up to four one-ounce portions with any spell chosen.
-        \end{freeability}
-
-        \cf{Wch}[2]{Skilled Brewer} You gain two additional \glossterm{skill points}.
-        In addition, you gain \plus1 bonus to \glossterm{potency} with any poisons you create.
-
-        \cf{Wch}[3]{Tempting Concoction} You can use the \textit{tempting concoction} ability as a \glossterm{standard action}.
-        \begin{attuneability}{Tempting Concoction}[\glossterm{Emotion}, \glossterm{Magical}, \glossterm{Subtle}]
-            \targets{See text}
-            Choose one liquid \glossterm{poison} or \textit{witch's brew} you created, or an object containing one of those liquids, within \rngclose range.
-            Whenever an \glossterm{enemy} notices the chosen object, make an attack vs. Mental against it.
-            If the brew or poison is not concealed inside a less suspicious object, such as an opaque liquid or an apple, you take a \minus4 penalty to \glossterm{accuracy}.
-            You cannot make this attack more than once against any individual target during this ability's duration.
-            \hit The target is filled with the desire to investigate and try to consume the liquid or the object containing the liquid.
-            This effect lasts until it consumes the object or until it takes a \glossterm{short rest}.
-
-            \rankline
-            \rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-            \rank{7} The accuracy bonus increases to \plus2.
-        \end{attuneability}
-
-        \cf{Wch}[4]{Esoteric Concoction} You can use esoteric natural ingredients in place of expensive ingredients when creating poisons.
-        The replacement ingredients must be difficult to acquire in large quantities and impossible to acquire in a normal city.
-        For example, you can use the tail of a blind mouse or the dew from a four-leafed clover, but you could not use dirt or ordinary tree bark.
-        Once you have decided on a replacement ingredient for a particular poison, you cannot use that ingredient as a replacement for an expensive ingredient in any other poison.
-
-        \cf{Wch}[5]{Efficient Brewer} You can create poisons in half the normal time.
-        In addition, the bonus from your \textit{skilled brewer} ability increases to \plus2.
-
-        \cf{Wch}[6]{Poison Spell} You can use the \textit{poison spell} ability when you cast a spell that does not have the \glossterm{Attune} or \glossterm{Sustain} tags.
-        \begin{freeability}{Poison Spell}
-            Choose a poison in your hands.
-            You infuse a dose of the poison into a spell you are casting, consuming the dose.
-            The spell is diluted by the poison, giving you a \minus2 penalty to \glossterm{power} with it.
-            Make an attack vs. Fortitude against each of the spell's targets.
-            \hit If the target takes damage from the spell, it is also \glossterm{poisoned} by the chosen poison.
-        \end{freeability}
-
-        \cf{Wch}[7]{Blended Concoction} You can create poisons that combine two poison effects into a single dose.
-        This requires twice the normal time to create a poison, and requires all ingredients required to make both poisons.
-        A creature affected by the blended poison suffers the full effects of both poisons.
-
-    \subsection{Hedge Magic}
-        This archetype grants you the ability to cast hedge spells.
-
-        \cf{Wch}[1]{Spellcasting}[Magical]
-        Your pact with natural spirits grants you the ability to use hedge magic.
-        You gain access to one hedge \glossterm{mystic sphere} (see \pcref{Hedge Mystic Spheres}).
-        You may spend \glossterm{insight points} to learn one additional \glossterm{mystic sphere} per two \glossterm{insight points}.
-        Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
-
-        You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
-        In addition, you learn one rank 1 \glossterm{spell} from your chosen \glossterm{mystic sphere}.
-        You can also spend \glossterm{insight points} to learn one additional hedge spell per \glossterm{insight point}.
-        Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
-
-        When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
-            you can exchange any number of spells you know for other spells,
-            including spells of the higher rank.
-
-        Hedge spells require both \glossterm{verbal components} and \glossterm{somatic components }to cast (see \pcref{Casting Components}).
-        For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
-
-        \cf{Wch}[2]{Mystic Sphere} You gain access to an additional hedge \glossterm{mystic sphere}, including all \glossterm{cantrips} from that sphere.
-        In addition, you learn an additional hedge \glossterm{spell}.
-
-        \cf{Wch}[3]{Spell Rank}[Magical] You gain the ability to cast rank 3 hedge spells.
-
-        \cf{Wch}[3]{Spell} You learn an additional \glossterm{spell} for any hedge \glossterm{mystic sphere} you know.
-
-        \cf*{Wch}[4]{Spell Rank}[Magical] You gain the ability to cast rank 4 hedge spells.
-
-        \cf*{Wch}[5]{Spell Rank}[Magical] You gain the ability to cast rank 5 hedge spells.
-
-        \cf*{Wch}[6]{Spell Rank}[Magical] You gain the ability to cast rank 6 hedge spells.
-
-        \cf*{Wch}[6]{Spell} You learn an additional \glossterm{spell} for any hedge \glossterm{mystic sphere} you know.
-
-        \cf*{Wch}[7]{Spell Rank}[Magical] You gain the ability to cast rank 7 hedge spells.
-
-        \cf*{Wch}[8]{Spell Rank}[Magical] You gain the ability to cast rank 8 hedge spells.
-
-    \subsection{Hedge Spell Mastery}
-        This archetype improves the hedge spells you cast.
-        You must be able to cast hedge spells to gain the abilities from this archetype.
-
-        \cf{Wch}[1]{Mystic Knowledge}
-        You gain your choice of one of the following abilities.
-        {
-            \parhead{Focused Caster} You reduce your \glossterm{focus penalty} by 1.
-                You cannot choose this ability multiple times.
-            \parhead{Insight} You learn an additional hedge \glossterm{spell} (see \pcref{Hedge Mystic Spheres}).
-                You can choose this ability multiple times, gaining access to an additional spell each time.
-            \parhead{Mystic Sphere Access} You gain access to an additional hedge \glossterm{mystic sphere}.
-                You cannot choose this ability multiple times.
-            \parhead{Rituals} You gain the ability to perform hedge rituals to create unique magical effects (see \pcref{Rituals}).
-                The maximum \glossterm{rank} of hedge ritual you can learn or perform is equal to the maximum rank of divine spell that you can cast.
-                You cannot choose this ability multiple times.
-            \parhead{Spell Power} Choose a hedge \glossterm{spell} you know.
-                You gain a \plus2 bonus to \glossterm{power} with that spell.
-                You can choose this ability multiple times, choosing a different spell each time.
-            \parhead{Spell Precision} Choose a hedge \glossterm{spell} you know.
-                You gain a \plus1 bonus to \glossterm{accuracy} with that spell.
-                You can choose this ability multiple times, choosing a different spell each time.
-        }
-
-        \cf{Wch}[2]{Witch's Hex} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{Curse} abilities.
-
-        \cf{Wch}[3]{Wellspring of Power}[Magical]
-        You gain a \plus1 bonus to \glossterm{power} with \glossterm{magical} abilities.
-
-        \cf*{Wch}[4]{Mystic Knowledge}[Magical]
-        You gain an additional \textit{mystic knowledge} ability.
-
-        \cf{Wch}[5]{Greater Witch's Hex} The bonus from your \textit{witch's hex} ability increases to \plus2.
-
-        \cf{Wch}[6]{Greater Wellspring of Power}[Magical]
-        The bonus from your \textit{wellspring of power} ability increases to \plus2.
-
-        \cf*{Wch}[7]{Mystic Knowledge}[Magical]
-        You gain an additional \textit{mystic knowledge} ability.
-
 \newpage
 \section{Wizard}\label{Wizard}
     \begin{dtable!*}
         \lcaption{Wizard Progression}
         \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Arcane Magic}     & \tb{Arcane Spell Mastery}   & \tb{Arcane Scholar}    \tableheaderrule
-            1 & Mystic spheres        & Mystic knowledge            & Scholastic lore       \\
-            2 & Spells                & Mage armor                  & Ritualist               \\
-            3 & Spell rank (3), spell & Wellspring of power         & Scholastic insight    \\
-            4 & Spell rank (4)        & Mystic knowledge            & Ritual expertise      \\
-            5 & Spell rank (5)        & Greater mage armor          & Contingency           \\
-            6 & Spell rank (6), spell & Greater wellspring of power & Scholastic insight    \\
-            7 & Spell rank (7)        & Mystic knowledge            & Malleable contingency \\
-            8 & Spell rank (8)        &                             &                       \\
+            \tb{Rank} & \tb{Arcane Magic}     & \tb{Arcane Spell Mastery}   & \tb{Arcane Scholar}   & \tb{Brewer}          \tableheaderrule
+            1         & Mystic spheres        & Mystic knowledge            & Scholastic lore       & Arcane brew        \\
+            2         & Spells                & Mage armor                  & Ritualist             & Skilled brewer      \\
+            3         & Spell rank (3), spell & Wellspring of power         & Scholastic insight    & Tempting concoction \\
+            4         & Spell rank (4)        & Mystic knowledge            & Ritual expertise      & Esoteric concoction \\
+            5         & Spell rank (5)        & Greater mage armor          & Contingency           & Efficient brewer    \\
+            6         & Spell rank (6), spell & Greater wellspring of power & Scholastic insight    & Poison spell        \\
+            7         & Spell rank (7)        & Mystic knowledge            & Malleable contingency & Blended concoction  \\
+            8         & Spell rank (8)        &                             &                       &                     \\
         \end{dtabularx}
     \end{dtable!*}
 
     \classbasics{Alignment} Any.
 
-    \classbasics{Archetypes} Mages have the Arcane Magic, Arcane Spell Mastery, Arcane Scholar, and Innate Arcanist \glossterm{archetypes}.
+    \classbasics{Archetypes} Mages have the Arcane Magic, Arcane Spell Mastery, Arcane Scholar, and Brewer \glossterm{archetypes}.
 
     \subsection{Basic Class Abilities}
         If you are a wizard, you gain the following abilities.
@@ -3575,3 +3391,62 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Wiz}[7]{Malleable Contingency} If you have a \textit{contingency} active, you can change the conditions to trigger your \textit{contingency} as a standard action.
         This does not allow you to change the spell stored in your \textit{contingency}.
+
+    \subsection{Brewer}
+        This archetype improves your ability to create unusual concoctions to aid your allies and harm your foes.
+
+        \cf{Wiz}[1]{Arcane Brew} You can use the \textit{arcane brew} ability with an hour of effort brewing liquid in a cauldron or similar receptacle.
+        \begin{freeability}{Arcane Brew}
+            Choose a \glossterm{targeted} arcane spell you know that does not have the \glossterm{Sustain}, \glossterm{Attune} (self), or \glossterm{AP} tags.
+            The spell becomes imbued in one ounce of the liquid that you can remove and place in a receptacle.
+            You gain a \plus1 bonus to \glossterm{accuracy} with the spell.
+            A creature that drinks that liquid becomes affected by the spell as if you had cast it on the creature.
+            The effects of the spell wear off after one hour, even if the spell would normally have a longer duration.
+
+            This ability lasts until you use it again.
+
+            \rankline
+            \rank{3} You can choose up to two spells and imbue up to two one-ounce portions with any spell chosen.
+            \rank{5} The bonus to \glossterm{accuracy} increases to \plus2.
+            \rank{7} You can choose up to four spells and imbue up to four one-ounce portions with any spell chosen.
+        \end{freeability}
+
+        \cf{Wiz}[2]{Skilled Brewer} You gain two additional \glossterm{skill points}.
+        In addition, you gain \plus1 bonus to \glossterm{potency} with any poisons you create.
+
+        \cf{Wiz}[3]{Tempting Concoction} You can use the \textit{tempting concoction} ability as a \glossterm{standard action}.
+        \begin{attuneability}{Tempting Concoction}[\glossterm{Emotion}, \glossterm{Magical}, \glossterm{Subtle}]
+            \targets{See text}
+            Choose one liquid \glossterm{poison} or \textit{arcane brew} you created, or an object containing one of those liquids, within \rngclose range.
+            Whenever an \glossterm{enemy} notices the chosen object, make an attack vs. Mental against it.
+            If the brew or poison is not concealed inside a less suspicious object, such as a tankard of ale or an apple, you take a \minus4 penalty to \glossterm{accuracy}.
+            You cannot make this attack more than once against any individual target during this ability's duration.
+            \hit The target is filled with the desire to investigate and try to consume the liquid or the object containing the liquid.
+            It will not generally interrupt combat or wander into obvious danger to fulfill its desire, but individual creatures may react more or less strongly.
+            This effect lasts until the target consumes the object or until it takes a \glossterm{short rest}.
+
+            \rankline
+            \rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+            \rank{7} The accuracy bonus increases to \plus2.
+        \end{attuneability}
+
+        \cf{Wiz}[4]{Esoteric Concoction} You can use esoteric natural ingredients in place of expensive ingredients when creating poisons.
+        The replacement ingredients must be difficult to acquire in large quantities and impossible to acquire in a normal city.
+        For example, you can use the tail of a blind mouse or the dew from a four-leafed clover, but you could not use dirt or ordinary tree bark.
+        Once you have decided on a replacement ingredient for a particular poison, you cannot use that ingredient as a replacement for an expensive ingredient in any other poison.
+
+        \cf{Wiz}[5]{Efficient Brewer} You can create poisons in half the normal time.
+        In addition, the bonus from your \textit{skilled brewer} ability increases to \plus2.
+
+        \cf{Wiz}[6]{Poison Spell} You can use the \textit{poison spell} ability when you cast a spell that does not have the \glossterm{Attune} or \glossterm{Sustain} tags.
+        \begin{freeability}{Poison Spell}
+            Choose a poison in your hands.
+            You infuse a dose of the poison into a spell you are casting, consuming the dose.
+            The spell is diluted by the poison, giving you a \minus2 penalty to \glossterm{power} with it.
+            Make an attack vs. Fortitude against each of the spell's targets.
+            \hit If the target takes damage from the spell, it is also \glossterm{poisoned} by the chosen poison.
+        \end{freeability}
+
+        \cf{Wiz}[7]{Blended Concoction} You can create poisons that combine two poison effects into a single dose.
+        This requires twice the normal time to create a poison, and requires all ingredients required to make both poisons.
+        A creature affected by the blended poison suffers the full effects of both poisons.
