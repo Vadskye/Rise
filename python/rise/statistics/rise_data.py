@@ -42,18 +42,6 @@ domains = [
     'Wild',
 ]
 
-schools = [
-    'Abjuration',
-    'Channeling',
-    'Conjuration',
-    'Divination',
-    'Enchantment',
-    'Evocation',
-    'Illusion',
-    'Transmutation',
-    'Vivimancy',
-]
-
 attributes = [
     'strength',
     'dexterity',
