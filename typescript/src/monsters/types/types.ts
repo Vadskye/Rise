@@ -4,8 +4,17 @@ import { animals } from "./animals";
 import { animates } from "./animates";
 import { humanoids } from "./humanoids";
 import { monstrousHumanoids } from "./monstrous_humanoids";
+import { outsiders } from "./outsiders";
+import { undead } from "./undead";
 
-export type MonsterType = "aberration" | "animal" | "animate" | "humanoid" | "monstrous humanoid";
+export type MonsterType =
+  | "aberration"
+  | "animal"
+  | "animate"
+  | "humanoid"
+  | "monstrous humanoid"
+  | "outsider"
+  | "undead";
 
 export const monsterTypes: MonsterType[] = [
   "aberration",
@@ -13,6 +22,8 @@ export const monsterTypes: MonsterType[] = [
   "animate",
   "humanoid",
   "monstrous humanoid",
+  "outsider",
+  "undead",
 ];
 
 export const monsterInputsByType: Record<MonsterType, MonsterInput[]> = {
@@ -21,4 +32,6 @@ export const monsterInputsByType: Record<MonsterType, MonsterInput[]> = {
   "animate": animates,
   "humanoid": humanoids,
   "monstrous humanoid": monstrousHumanoids,
+  "outsider": outsiders,
+  "undead": undead,
 };

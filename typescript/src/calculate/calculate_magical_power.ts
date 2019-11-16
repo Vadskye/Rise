@@ -7,5 +7,5 @@ export function calculateMagicalPower({
   level,
 }: Pick<MonsterBase, "attributes" | "challengeRating" | "level">) {
   const crBonus = calculateChallengeRatingBonus(challengeRating);
-  return Math.max(attributes.wil, level) + crBonus;
+  return Math.max(attributes.wil ?? 0, level) + crBonus;
 }
