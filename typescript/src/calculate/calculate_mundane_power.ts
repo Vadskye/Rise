@@ -7,5 +7,5 @@ export function calculateMundanePower({
   level,
 }: Pick<MonsterBase, "attributes" | "challengeRating" | "level">) {
   const crBonus = calculateChallengeRatingBonus(challengeRating);
-  return Math.max(attributes.str, level) + crBonus;
+  return Math.max(attributes.str ?? 0, level) + crBonus;
 }

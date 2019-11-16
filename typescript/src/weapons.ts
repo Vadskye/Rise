@@ -30,6 +30,7 @@ export function parseWeaponInput(input: WeaponInput): Weapon {
 // actually just a missing standard weapon, so it's worth the duplication.
 export type StandardWeaponName =
   | "bite"
+  | "claw"
   | "club"
   | "greataxe"
   | "greatclub"
@@ -50,7 +51,11 @@ export function isStandardWeaponName(
 
 export const standardWeapons: Record<StandardWeaponName, Omit<CustomWeaponInput, "name">> = {
   "bite": {
-    damageTypes: ["bludgeoning", "slashing"],
+    damageTypes: ["bludgeoning", "piercing"],
+  },
+  "claw": {
+    powerBonus: -2,
+    damageTypes: ["slashing", "piercing"],
   },
   "club": {
     damageTypes: ["bludgeoning"],

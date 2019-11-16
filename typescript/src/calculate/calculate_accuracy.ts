@@ -11,10 +11,10 @@ export function calculateAccuracy({
   const crBonus = calculateChallengeRatingBonus(challengeRating);
   const monsterBonus = monsterBonusByLevel(level);
   return (
-    Math.max(level, attributes.per) +
+    Math.max(level, attributes.per ?? 0) +
     accuracyBonus +
     monsterBonus +
     crBonus +
-    Math.min(0, attributes.per)
+    Math.min(0, attributes.per ?? 0)
   );
 }

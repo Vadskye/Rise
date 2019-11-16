@@ -1,8 +1,7 @@
 declare namespace Creature {
-
   type Attribute = "str" | "dex" | "con" | "int" | "per" | "wil";
 
-  type Attributes = Record<Attribute, number>;
+  type Attributes = Record<Attribute, number | null>;
 
   type Skill =
     // Strength
@@ -43,7 +42,9 @@ declare namespace Creature {
     | "perform"
     | "persuasion";
 
-  type Skills = Record<Skill, number>;
+  type Skills = Record<Skill, number | null>;
+
+  type SkillPoints = Record<Skill, number>;
 
   type Size =
     | "fine"

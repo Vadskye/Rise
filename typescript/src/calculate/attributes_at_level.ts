@@ -17,8 +17,10 @@ export function attributesAtLevel({
   };
 }
 
-function attributeAtLevel(startingAttribute: number, level: number) {
-  if (startingAttribute <= 0) {
+function attributeAtLevel(startingAttribute: number | null, level: number): number | null {
+  if (startingAttribute === null) {
+    return null;
+  } else if (startingAttribute <= 0) {
     return startingAttribute;
   } else if (startingAttribute === 1) {
     return startingAttribute + Math.floor(level / 2);
