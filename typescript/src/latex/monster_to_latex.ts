@@ -2,9 +2,10 @@ import { CalculatedAttack, calculateStrike } from "@src/calculate";
 import { DamageType, damageTypes } from "@src/data";
 import * as format from "@src/latex/format";
 import { MonsterBase } from "@src/monsters";
-import { PassiveAbility } from "@src/monsters/reformat_monster_input";
+import { PassiveAbility } from "@src/passive_abilities";
 import { Weapon } from "@src/weapons";
-import { titleCase } from "change-case";
+import { sentenceCase, titleCase } from "change-case";
+import _ from "lodash";
 import { standardAttackEffect } from "./standard_attack_effect";
 
 export function monsterToLatex(monster: MonsterBase): string {
@@ -15,7 +16,7 @@ export function monsterToLatex(monster: MonsterBase): string {
     ${getFooter(monster).trim()}
   \\end{monsection}
   ${getAbilities(monster).trim()}
-  `;
+  `.replace(/\$name/g, monster.name);
 }
 
 function getMonsectionArgs(monster: MonsterBase) {
@@ -87,8 +88,15 @@ function getFooter(monster: MonsterBase) {
         \\textbf{Reach} ${format.feet(monster.reach)}
       \\pari \\textbf{Awareness} ${format.modifier(monster.skills.awareness)}
       \\pari \\textbf{Attributes}:
-        Str ${monster.attributes.str}, Dex ${monster.attributes.dex}, Con ${monster.attributes.con},
-        Int ${monster.attributes.int}, Per ${monster.attributes.per}, Wil ${monster.attributes.wil}
+        Str ${format.attribute(monster.attributes.str)}, Dex ${format.attribute(
+    monster.attributes.dex,
+  )},
+        Con ${format.attribute(monster.attributes.con)}, Int ${format.attribute(
+    monster.attributes.int,
+  )},
+        Per ${format.attribute(monster.attributes.per)}, Wil ${format.attribute(
+    monster.attributes.wil,
+  )}
       \\pari \\textbf{Accuracy} ${monster.accuracy};
         ${getPower(monster).trim()}
     \\end{monsterfooter}
@@ -149,9 +157,11 @@ function formatStrike(monster: MonsterBase, weapon: Weapon) {
 }
 
 function getPassiveAbilities(monster: MonsterBase) {
-  return monster.passiveAbilities.map(formatPassiveAbility).join("\n    ");
+  return _.sortBy(monster.passiveAbilities, "name")
+    .map(formatPassiveAbility)
+    .join("\n    ");
 }
 
 function formatPassiveAbility(ability: PassiveAbility) {
-  return `\\parhead{${ability.name}} ${ability.description}`;
+  return `\\parhead{${sentenceCase(ability.name)}} ${ability.description}`;
 }
