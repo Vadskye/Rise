@@ -33,5 +33,17 @@ export function defenseBonusesByMonsterType(monsterType: MonsterType): Record<De
       reflex: 4,
       mental: 4,
     },
+    "outsider": {
+      armor: 0,
+      fortitude: 4,
+      reflex: 4,
+      mental: 4,
+    },
+    "undead": {
+      armor: 0,
+      fortitude: 3,
+      reflex: 4,
+      mental: 5,
+    },
   }[monsterType];
 }

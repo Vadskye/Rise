@@ -42,7 +42,7 @@ export interface MonsterInput {
   reach?: number;
   resistanceBonuses?: Partial<Record<DamageType, number>>;
   size?: Creature.Size;
-  skillPoints?: Partial<Creature.Skills>;
+  skillPoints?: Partial<Creature.SkillPoints>;
   space?: number;
   speed?: number;
   startingAttributes?: Partial<Creature.Attributes>;
@@ -66,7 +66,7 @@ interface MonsterCalculatedValues {
   resistanceBonuses: Record<DamageType, number>;
   resistances: Resistances;
   skills: Creature.Skills;
-  skillPoints: Creature.Skills;
+  skillPoints: Creature.SkillPoints;
   startingAttributes: Creature.Attributes;
   space: number;
   speed: number;
@@ -114,7 +114,7 @@ const monsterDefaults: Required<
 
 function calculateSkills(
   attributes: Creature.Attributes,
-  skillPoints: Creature.Skills,
+  skillPoints: Creature.SkillPoints,
   monsterInput: MonsterInput,
 ): Creature.Skills {
   const skillModifiers: Partial<Creature.Skills> = {};

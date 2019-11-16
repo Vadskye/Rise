@@ -22,28 +22,28 @@ export function calculateDefenses({
       level +
       defenseBonuses.armor +
       typeBonuses.armor +
-      startingAttributes.dex +
+      (startingAttributes.dex ?? 0) +
       monsterBonus +
       crBonus,
     fortitude:
       level +
       defenseBonuses.fortitude +
       typeBonuses.fortitude +
-      startingAttributes.con +
+      (startingAttributes.con ?? 0) +
       monsterBonus +
       crBonus,
     reflex:
       level +
       defenseBonuses.reflex +
       typeBonuses.reflex +
-      startingAttributes.dex +
+      (startingAttributes.dex ?? 0) +
       monsterBonus +
       crBonus,
     mental:
       level +
       defenseBonuses.mental +
       typeBonuses.mental +
-      startingAttributes.wil +
+      (startingAttributes.wil ?? 0) +
       monsterBonus +
       crBonus,
   };

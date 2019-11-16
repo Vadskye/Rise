@@ -13,7 +13,7 @@ export function skillModifierByName({
   level,
   name,
   skillPoints,
-}: SkillModifierByNameArgs): number {
+}: SkillModifierByNameArgs): number | null {
   const attributeName = skillAttributes[name];
   const attribute = attributeName ? attributes[attributeName] : 0;
 
