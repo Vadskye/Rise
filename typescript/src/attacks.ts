@@ -21,7 +21,7 @@ interface WeaponAttackInput {
 interface CustomAttackInput {
   accuracyBonus?: number;
   crit?: string | null;
-  damageTypes: DamageType[];
+  damageTypes?: DamageType[];
   defense: DefenseType;
   hit?: string | null;
   name: string;
@@ -32,10 +32,10 @@ interface CustomAttackInput {
 
 export type AttackInput = StandardAttackInput | WeaponAttackInput | CustomAttackInput;
 
-// TODO: add ability tags
+// TODO: add ability tags, including Magical sources
 export type Attack = Required<CustomAttackInput> & { weaponName?: string };
 
-type StandardAttackName = "fireball";
+type StandardAttackName = "fireball" | "combustion";
 
 function hasStandardWeaponName(input: AttackInput): input is WeaponAttackInput {
   return isStandardWeaponName((input as WeaponAttackInput).weaponName);
@@ -49,8 +49,14 @@ const standardAttacks: Record<
   StandardAttackName,
   Pick<CustomAttackInput, "crit" | "damageTypes" | "defense" | "hit" | "source" | "target">
 > = {
+  combustion: {
+    damageTypes: ["fire"],
+    defense: "reflex",
+    hit: "The target takes <damage>.",
+    source: "magical",
+    target: "One creature or object within \\rngmed range",
+  },
   fireball: {
-    crit: null,
     damageTypes: ["fire"],
     defense: "armor",
     hit: "Each target takes <damage>.",

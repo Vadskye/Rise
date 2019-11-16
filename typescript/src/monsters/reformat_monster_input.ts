@@ -19,14 +19,10 @@ import {
 } from "@src/calculate";
 import { attributes, DamageType, damageTypes, DefenseType, defenseTypes, skills } from "@src/data";
 import { MonsterType } from "@src/monsters/types";
+import { PassiveAbility } from "@src/passive_abilities";
 import { fromPairs } from "@src/util/from_pairs";
 import { parseWeaponInput, Weapon, WeaponInput } from "@src/weapons";
 import _ from "lodash";
-
-export interface PassiveAbility {
-  description: string;
-  name: string;
-}
 
 export interface MonsterInput {
   accuracyBonus?: number;
