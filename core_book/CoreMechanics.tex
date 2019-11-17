@@ -202,13 +202,176 @@ It defines how attributes work and explains how to make attacks in combat.
             Although the two movements not mutually impossible, the first creature can easily end up out of melee range from all foes at the end of the phase if it doesn't have enough movement to reach its target.
             Treating the movements as conflicting allows the first creature to sprint or change its action if it chooses.
 
+\section{Attributes}\label{Attributes}
+
+    Each character has six \glossterm{attributes}: Strength (Str), Dexterity (Dex), Constitution (Con), Intelligence (Int), Perception (Per), and Willpower (Wil).
+    Each attribute represents a character's raw talent in that area.
+    A 0 in an attribute represents average human capacity.
+    That doesn't mean that every commoner has a 0 in every attribute; not everyone is average, after all.
+
+    \subsection{Attribute Descriptions}
+
+        \parhead{Strength (Str)}\label{Strength}
+        {
+            Strength measures muscle and physical power.
+            It has the following effects:
+            \begin{itemize}
+                \item Strength determines how much you can carry (see \tref{Carrying Capacity by Strength}).
+                \item Strength affects Strength-based \glossterm{skills}: Climb, Jump, and Swim (see \pcref{Skills}).
+                \item You reduce your \textit{encumbrance} for weight or heavy armor by an amount equal to your starting Strength (minimum 0).
+                \item If your Strength is negative, you take a penalty to all Strength-based skills equal to your Strength.
+                    % TODO: wording
+                \item If your Strength is negative, you take a penalty to \glossterm{power} with \glossterm{mundane} abilities equal to your Strength.
+            \end{itemize}
+
+            If you have a high Strength, you can use it to determine your \glossterm{power} with most \glossterm{mundane} abilities, such as \glossterm{strikes} (see \pcref{Power}).
+        }
+
+        \parhead{Dexterity (Dex)}\label{Dexterity}
+        {
+            Dexterity measures hand-eye coordination, agility, and reflexes.
+            It has the following effects:
+            \begin{itemize}
+                \item Dexterity affects Dexterity-based \glossterm{skills}: Acrobatics, Escape Artist, Ride, Sleight of Hand, and Stealth (see \pcref{Skills}).
+                \item You gain a bonus (or penalty) to your Reflex defense equal to your starting Dexterity.
+                \item If your Dexterity is negative, you take a penalty to all Dexterity-based skills equal to your Dexterity.
+            \end{itemize}
+        }
+
+        \parhead{Constitution (Con)}\label{Constitution}
+        {
+            Constitution represents your health and stamina.
+            It has the following efects:
+            \begin{itemize}
+                \item You gain a bonus (or penalty) to your \glossterm{hit points} equal to your starting Constitution.
+                \item You gain a bonus (or penalty) to your Fortitude defense equal to your starting Constitution.
+                \item Your Constitution modifies the number of rounds you can hold your breath (see \pcref{Drowning}).
+            \end{itemize}
+        }
+
+        \parhead{Intelligence (Int)}\label{Intelligence}
+        {
+            Intelligence represents how well you learn and reason.
+            It has the following effects:
+
+            \begin{itemize}
+                \item You gain \glossterm{insight points} equal to your starting Intelligence (see \pcref{Insight Points}).
+                \item You gain bonus languages equal to your starting Intelligence (see \pcref{Languages}).
+                \item You gain a bonus (or penalty) to \glossterm{skill points} equal to twice your starting Intelligence (see \pcref{Skill Points}).
+                \item You gain a bonus (or penalty) to \glossterm{insight points} equal to your starting Intelligence (see \pcref{Insight Points}).
+                \item Your Intelligence affects Intelligence-based \glossterm{skills}: Craft, Deduction, Disguise, Heal, Knowledge, and Linguistics (see \pcref{Skills}).
+                \item If your Intelligence is negative, you take a penalty to all Intelligence-based skills equal to your Intelligence.
+            \end{itemize}
+
+            \par An animal has an Intelligence score of \minus6 or lower.
+            A creature of humanlike intelligence has a score of at least a \minus5 Intelligence.
+        }
+
+        \parhead{Perception (Per)}\label{Perception}
+        {
+            Perception describes your ability to observe and be aware of your surroundings.
+            It has the following effects:
+            \begin{itemize}
+                \item Your Perception affects Perception-based \glossterm{skills}: Awareness, Creature Handling, Sense Motive, Spellcraft, and Survival (see \pcref{Skills}).
+                \item If your Perception is negative, you take a penalty to all Perception-based skills equal to your Perception.
+                \item If your Perception is negative, you take a penalty to accuracy with all attacks equal to half your Perception.
+            \end{itemize}
+
+            If you have a high Perception, you can use it to determine your \glossterm{accuracy} with all attacks (see \pcref{Accuracy}).
+        }
+
+        \parhead{Willpower (Wil)}\label{Willpower}
+        {
+            Willpower represents your ability to endure mental hardships.
+            It has the following effects:
+            \begin{itemize}
+                \item You gain a bonus (or penalty) to your Mental defense equal to your starting Willpower.
+                \item If your Willpower is negative, you take a penalty to \glossterm{power} with \glossterm{magical} abilities equal to your Willpower.
+            \end{itemize}
+
+            If you have a high Willpower, you can use it to determine your \glossterm{power} with most \glossterm{magical} abilities (see \pcref{Power}).
+        }
+
+    \subsection{Increasing Attributes}\label{Increasing Attributes}
+        As your level increases, your attributes increase as well, as shown on \trefnp{Increasing Attributes with Level}.
+
+        \begin{dtable}
+            \lcaption{Increasing Attributes with Level}
+            \begin{dtabularx}{\columnwidth}{X X}
+                \tb{Starting Attribute} & \tb{Bonus}   \\
+                0 or lower              & 0            \\
+                1                       & \plus1 per even level \\
+                2                       & \plus1 per level after 1st \\
+                3                       & \plus1 per level after 1st \\
+            \end{dtabularx}
+        \end{dtable}
+
+    \subsection{Determining Attributes}
+        There are several options for how to determine attribute scores.
+
+        \parhead{Predefined Attribute Scores} This is the simplest method.
+        Simply take the following set of attribute scores and distribute them as you choose among your attributes:
+
+        3, 2, 1, 1, 0, 0
+
+        This set of attribute scores is called the ``elite array''.
+        For more extreme characters, you may use the ``savant array'':
+
+        4, 2, 0, 0, 0, 0.
+
+        Finally, for more well-balanced characters, you may use the ``balanced array'':
+
+        2, 2, 2, 1, 0, 0
+
+        \parhead{Point Buy}
+        {
+            With this method, you can fully control your attribute scores to match what you want to be able to do.
+            All your attribute scores start at 0.
+            You get ten points to distribute among your attributes.
+            Attributes can be bought according to the costs on \trefnp{Attribute Score Point Costs}.
+            The listed cost is the total cost required to gain the listed starting attribute.
+            You are 1st level when you start, which adds appropriately to your total attribute score.
+
+            \parhead{Impaired Attributes}\label{Impaired Attributes}
+            You can start with up to two attributes below 0.
+            If you do, you compensate for your impairment in that area with additional talents in other areas.
+            For each point below 0, you gain an additional \glossterm{skill point}.
+            Decreasing your attributes below 0 does not grant you additional points to spend on other attributes.
+
+            \begin{dtable}
+                \lcaption{Attribute Score Point Costs}
+                \begin{dtabularx}{\columnwidth}{X X l}
+                    \tb{Starting Attribute Score} & \tb{Total Attribute Score} & \tb{Cumulative Point Cost} \tableheaderrule
+                    0                             & 0                          & 0                          \\
+                    1                             & 1 \add half level          & 1                          \\
+                    2                             & 1 \add level               & 3                          \\
+                    3                             & 2 \add level               & 5                          \\
+                    4                             & 3 \add level               & 7                          \\
+                \end{dtabularx}
+            \end{dtable}
+        }
+
+        \subsubsection{Attribute Penalties}
+            Regardless of how you determine your attributes, you can voluntarily take penalties to your attributes.
+            If you reduce an attribute to a total of \minus1, you gain an additional \glossterm{skill point}.
+            If you reduce an attribute to a total of \minus2, you instead gain an additional \glossterm{insight point}.
+            You cannot more than two attributes below 0 in this way.
+
+    \subsection{Extraordinary Attributes}
+        Some abilities can increase your starting attributes above 4.
+        For each point of starting attribute beyond 4, you increase your current attribute by the same amount.
+
+        For example, a 20th level half-orc cleric with the Strength domain who spent 7 points on her starting Strength would have a total starting Strength of 6.
+        Her Strength would be two higher than it would be with a starting attribute of 4, for a total of 25.
+
 \section{Character Statistics}
     This section explains how character statistics, such as how strong you are or how accurate your attacks are, should be calculated.
 
     \subsection{Action Points}\label{Action Points}
         You can use \glossterm{action points} to \glossterm{attune} to effects such as spells or items (see \pcref{Attunement}).
+        Abilities that require attunement \glossterm{Attune} tag (see \pcref{Ability Tags}).
         In addition, you can use some special abilities by spending \glossterm{action points}.
-        Abilities that require action points have the \glossterm{AP} or \glossterm{Attune} tags (see \pcref{Ability Tags}).
+        Abilities that spend action points have the \glossterm{AP} tag.
         The most common abilities that require \glossterm{action points} are the \textit{cleanse} and \textit{desperate exertion} abilities (see \pcref{Cleanse}, and \pcref{Desperate Exertion}).
 
         A 1st level character typically has 4 \glossterm{action points}.
@@ -222,170 +385,6 @@ It defines how attributes work and explains how to make attacks in combat.
             On rare occasions, you can gain action points by performing extraordinary deeds worthy of legends.
             These action points can even allow you to exceed your normal maximum number of action points.
             If you have not spent these action points by the time you take your next \glossterm{long rest}, they are lost.
-
-    \subsection{Attributes}\label{Attributes}
-
-        Each character has six \glossterm{attributes}: Strength (Str), Dexterity (Dex), Constitution (Con), Intelligence (Int), Perception (Per), and Willpower (Wil).
-        Each attribute represents a character's raw talent in that area.
-        A 0 in an attribute represents average human capacity.
-        That doesn't mean that every commoner has a 0 in every attribute; not everyone is average, after all.
-
-        \subsubsection{Attribute Descriptions}
-
-            \parhead{Strength (Str)}\label{Strength}
-            {
-                Strength measures muscle and physical power.
-                It has the following effects:
-                \begin{itemize}
-                    \item Strength determines how much you can carry (see \tref{Carrying Capacity by Strength}).
-                    \item Strength affects Strength-based skills: Climb, Jump, and Swim (see \pcref{Skills}).
-                    \item You reduce your \textit{encumbrance} for weight or heavy armor by an amount equal to your starting Strength (minimum 0).
-                    \item If your Strength is negative, you take a penalty to all Strength-based skills equal to your Strength.
-                        % TODO: wording
-                    \item If your Strength is negative, you take a penalty to \glossterm{power} with \glossterm{mundane} abilities equal to your Strength.
-                \end{itemize}
-
-                If you have a high Strength, you can use it to determine your \glossterm{power} with most \glossterm{mundane} abilities, such as \glossterm{strikes} (see \pcref{Power}).
-            }
-
-            \parhead{Dexterity (Dex)}\label{Dexterity}
-            {
-                Dexterity measures hand-eye coordination, agility, and reflexes.
-                It has the following effects:
-                \begin{itemize}
-                    \item Dexterity affects Dexterity-based skills: Acrobatics, Escape Artist, Ride, Sleight of Hand, and Stealth (see \pcref{Skills}).
-                    \item You gain a bonus (or penalty) to your Reflex defense equal to your starting Dexterity.
-                    \item If your Dexterity is negative, you take a penalty to all Dexterity-based skills equal to your Dexterity.
-                \end{itemize}
-            }
-
-            \parhead{Constitution (Con)}\label{Constitution}
-            {
-                Constitution represents your health and stamina.
-                It has the following efects:
-                \begin{itemize}
-                    \item You gain a bonus (or penalty) to your \glossterm{hit points} equal to your starting Constitution.
-                    \item You gain a bonus (or penalty) to your Fortitude defense equal to your starting Constitution.
-                    \item Your Constitution modifies the number of rounds you can hold your breath (see \pcref{Drowning}).
-                \end{itemize}
-            }
-
-            \parhead{Intelligence (Int)}\label{Intelligence}
-            {
-                Intelligence represents how well you learn and reason.
-                It has the following effects:
-
-                \begin{itemize}
-                    \item You gain \glossterm{insight points} equal to your starting Intelligence (see \pcref{Insight Points}).
-                    \item You gain bonus languages equal to your starting Intelligence (see \pcref{Languages}).
-                    \item You gain a bonus (or penalty) to \glossterm{skill points} equal to twice your starting Intelligence (see \pcref{Skill Points}).
-                    \item You gain a bonus (or penalty) to \glossterm{insight points} equal to your starting Intelligence (see \pcref{Insight Points}).
-                    \item Your Intelligence affects Intelligence-based skills: Craft, Deduction, Disguise, Heal, Knowledge, and Linguistics (see \pcref{Skills}).
-                    \item If your Intelligence is negative, you take a penalty to all Intelligence-based skills equal to your Intelligence.
-                \end{itemize}
-
-                \par An animal has an Intelligence score of \minus6 or lower.
-                A creature of humanlike intelligence has a score of at least a \minus5 Intelligence.
-            }
-
-            \parhead{Perception (Per)}\label{Perception}
-            {
-                Perception describes your ability to observe and be aware of your surroundings.
-                It has the following effects:
-                \begin{itemize}
-                    \item Your Perception affects Perception-based skills: Awareness, Creature Handling, Sense Motive, Spellcraft, and Survival (see \pcref{Skills}).
-                    \item If your Perception is negative, you take a penalty to all Perception-based skills equal to your Perception.
-                    \item If your Perception is negative, you take a penalty to accuracy with all attacks equal to half your Perception.
-                \end{itemize}
-
-                If you have a high Perception, you can use it to determine your \glossterm{accuracy} with all attacks (see \pcref{Accuracy}).
-            }
-
-            \parhead{Willpower (Wil)}\label{Willpower}
-            {
-                Willpower represents your ability to endure mental hardships.
-                It has the following effects:
-                \begin{itemize}
-                    \item You gain a bonus (or penalty) to your Mental defense equal to your starting Willpower.
-                    \item If your Willpower is negative, you take a penalty to \glossterm{power} with \glossterm{magical} abilities equal to your Willpower.
-                \end{itemize}
-
-                If you have a high Willpower, you can use it to determine your \glossterm{power} with most \glossterm{magical} abilities (see \pcref{Power}).
-            }
-
-        \subsubsection{Increasing Attributes}\label{Increasing Attributes}
-            As your level increases, your attributes increase as well, as shown on \trefnp{Increasing Attributes with Level}.
-
-            \begin{dtable}
-                \lcaption{Increasing Attributes with Level}
-                \begin{dtabularx}{\columnwidth}{X X}
-                    \tb{Starting Attribute} & \tb{Bonus}   \\
-                    0 or lower              & 0            \\
-                    1                       & \plus1 per even level \\
-                    2                       & \plus1 per level after 1st \\
-                    3                       & \plus1 per level after 1st \\
-                \end{dtabularx}
-            \end{dtable}
-
-        \subsubsection{Determining Attributes}
-            There are several options for how to determine attribute scores.
-
-            \parhead{Predefined Attribute Scores} This is the simplest method.
-            Simply take the following set of attribute scores and distribute them as you choose among your attributes:
-
-            3, 2, 1, 1, 0, 0
-
-            This set of attribute scores is called the ``elite array''.
-            For more extreme characters, you may use the ``savant array'':
-
-            4, 2, 0, 0, 0, 0.
-
-            Finally, for more well-balanced characters, you may use the ``balanced array'':
-
-            2, 2, 2, 1, 0, 0
-
-            Any of these distributions can be altered by taking penalties to any attributes given as 0.
-            For each penalty you take, you gain two additional \glossterm{skill points} (see \pcref{Skills}).
-
-            \parhead{Point Buy}
-            {
-                With this method, you can fully control your attribute scores to match what you want to be able to do.
-                All your attribute scores start at 0.
-                You get ten points to distribute among your attributes.
-                Attributes can be bought according to the costs on \trefnp{Attribute Score Point Costs}.
-                The listed cost is the total cost required to gain the listed starting attribute.
-                You are 1st level when you start, which adds appropriately to your total attribute score.
-
-                \parhead{Impaired Attributes}\label{Impaired Attributes}
-                You can start with up to two attributes below 0.
-                If you do, you compensate for your impairment in that area with additional talents in other areas.
-                For each point below 0, you gain an additional \glossterm{skill point}.
-                Decreasing your attributes below 0 does not grant you additional points to spend on other attributes.
-
-                \begin{dtable}
-                    \lcaption{Attribute Score Point Costs}
-                    \begin{dtabularx}{\columnwidth}{X X l}
-                        \tb{Starting Attribute Score} & \tb{Total Attribute Score} & \tb{Cumulative Point Cost} \tableheaderrule
-                        \minus2\fn{1}                 & \minus2                    & 0\fn{2}                    \\
-                        \minus1\fn{1}                 & \minus1                    & 0\fn{3}                    \\
-                        0                             & 0                          & 0                          \\
-                        1                             & 1 \add half level          & 1                          \\
-                        2                             & 1 \add level               & 3                          \\
-                        3                             & 2 \add level               & 5                          \\
-                        4                             & 3 \add level               & 7                          \\
-                    \end{dtabularx}
-                    1 You cannot reduce more than two attributes below 0 in this way. \\
-                    2 You gain a total of four \glossterm{skill points}. \\
-                    3 You gain two skill points. \\
-                \end{dtable}
-            }
-
-        \subsubsection{Extraordinary Attributes}
-            Some abilities can increase your starting attributes above 4.
-            For each point of starting attribute beyond 4, you increase your current attribute by the same amount.
-
-            For example, a 20th level half-orc cleric with the Strength domain who spent 7 points on her starting Strength would have a total starting Strength of 6.
-            Her Strength would be two higher than it would be with a starting attribute of 4, for a total of 25.
 
     \subsection{Accuracy}\label{Accuracy}
         Your accuracy with an \glossterm{attack} is the number that you add to the \glossterm{attack roll}.
