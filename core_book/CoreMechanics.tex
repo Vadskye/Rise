@@ -218,7 +218,7 @@ It defines how attributes work and explains how to make attacks in combat.
             \begin{itemize}
                 \item Strength determines how much you can carry (see \tref{Carrying Capacity by Strength}).
                 \item Strength affects Strength-based \glossterm{skills}: Climb, Jump, and Swim (see \pcref{Skills}).
-                \item You reduce your \glossterm{encumbrance} from \glossterm{body armor} by an amount equal to your starting Strength, to a minimum of 0 (see \pcref{Encumbrance}).
+                \item You reduce your \glossterm{encumbrance} from \glossterm{body armor} by an amount equal to your base Strength (see \pcref{Encumbrance}).
                 \item If your Strength is negative, you take a penalty to all Strength-based skills equal to your Strength.
                     % TODO: wording
                 \item If your Strength is negative, you take a penalty to \glossterm{power} with \glossterm{mundane} abilities equal to your Strength.
@@ -233,7 +233,7 @@ It defines how attributes work and explains how to make attacks in combat.
             It has the following effects:
             \begin{itemize}
                 \item Dexterity affects Dexterity-based \glossterm{skills}: Acrobatics, Escape Artist, Ride, Sleight of Hand, and Stealth (see \pcref{Skills}).
-                \item You gain a bonus (or penalty) to your Reflex defense equal to your starting Dexterity.
+                \item You gain a bonus (or penalty) to your Reflex defense equal to your base Dexterity.
                 \item If your Dexterity is negative, you take a penalty to all Dexterity-based skills equal to your Dexterity.
             \end{itemize}
         }
@@ -243,8 +243,8 @@ It defines how attributes work and explains how to make attacks in combat.
             Constitution represents your health and stamina.
             It has the following efects:
             \begin{itemize}
-                \item You gain a bonus (or penalty) to your \glossterm{hit points} equal to your starting Constitution.
-                \item You gain a bonus (or penalty) to your Fortitude defense equal to your starting Constitution.
+                \item You gain a bonus (or penalty) to your \glossterm{hit points} equal to your base Constitution.
+                \item You gain a bonus (or penalty) to your Fortitude defense equal to your base Constitution.
                 \item Your Constitution modifies the number of rounds you can hold your breath (see \pcref{Drowning}).
             \end{itemize}
         }
@@ -255,10 +255,10 @@ It defines how attributes work and explains how to make attacks in combat.
             It has the following effects:
 
             \begin{itemize}
-                \item You gain \glossterm{insight points} equal to your starting Intelligence (see \pcref{Insight Points}).
-                \item You gain bonus languages equal to your starting Intelligence (see \pcref{Languages}).
-                \item You gain a bonus (or penalty) to \glossterm{skill points} equal to twice your starting Intelligence (see \pcref{Skill Points}).
-                \item You gain a bonus (or penalty) to \glossterm{insight points} equal to your starting Intelligence (see \pcref{Insight Points}).
+                \item You gain \glossterm{insight points} equal to your base Intelligence (see \pcref{Insight Points}).
+                \item You gain bonus languages equal to your base Intelligence (see \pcref{Languages}).
+                \item You gain a bonus (or penalty) to \glossterm{skill points} equal to twice your base Intelligence (see \pcref{Skill Points}).
+                \item You gain a bonus (or penalty) to \glossterm{insight points} equal to your base Intelligence (see \pcref{Insight Points}).
                 \item Your Intelligence affects Intelligence-based \glossterm{skills}: Craft, Deduction, Disguise, Heal, Knowledge, and Linguistics (see \pcref{Skills}).
                 \item If your Intelligence is negative, you take a penalty to all Intelligence-based skills equal to your Intelligence.
             \end{itemize}
@@ -285,24 +285,28 @@ It defines how attributes work and explains how to make attacks in combat.
             Willpower represents your ability to endure mental hardships.
             It has the following effects:
             \begin{itemize}
-                \item You gain a bonus (or penalty) to your Mental defense equal to your starting Willpower.
+                \item You gain a bonus (or penalty) to your Mental defense equal to your base Willpower.
                 \item If your Willpower is negative, you take a penalty to \glossterm{power} with \glossterm{magical} abilities equal to your Willpower.
             \end{itemize}
 
             If you have a high Willpower, you can use it to determine your \glossterm{power} with most \glossterm{magical} abilities (see \pcref{Power}).
         }
 
-    \subsection{Increasing Attributes}\label{Increasing Attributes}
-        As your level increases, your attributes increase as well, as shown on \trefnp{Increasing Attributes with Level}.
+    \subsection{Base Attributes}\label{Base Attributes}
+        Some statistics depend on a \glossterm{base attribute}, while others depend on your total value for that attribute.
+        For example, your base Dexterity modifies your Reflex and Armor defenses, but your Dexterity is used to determine your bonus with Dexterity-based skills.
+        Your attributes automatically increase with level as defined in \tref{Increasing Attributes With Level}, but your base attributes do not automatically increase with level.
+
+        A small number of abilities can increase your \glossterm{base attributes} after 1st level.
+        If you change a base attribute, the total value for that attribute changes appropriately.
 
         \begin{dtable}
             \lcaption{Increasing Attributes with Level}
             \begin{dtabularx}{\columnwidth}{X X}
-                \tb{Starting Attribute} & \tb{Bonus}   \\
-                0 or lower              & 0            \\
-                1                       & \plus1 per even level \\
-                2                       & \plus1 per level after 1st \\
-                3                       & \plus1 per level after 1st \\
+                \tb{Base Attribute} & \tb{Bonus}                 \\
+                0 or lower          & 0                          \\
+                1                   & \plus1 per even level      \\
+                2\add               & \plus1 per level after 1st \\
             \end{dtabularx}
         \end{dtable}
 
@@ -329,7 +333,7 @@ It defines how attributes work and explains how to make attacks in combat.
             All your attribute scores start at 0.
             You get ten points to distribute among your attributes.
             Attributes can be bought according to the costs on \trefnp{Attribute Score Point Costs}.
-            The listed cost is the total cost required to gain the listed starting attribute.
+            The listed cost is the total cost required to gain the listed base attribute.
             You are 1st level when you start, which adds appropriately to your total attribute score.
 
             \parhead{Impaired Attributes}\label{Impaired Attributes}
@@ -341,7 +345,7 @@ It defines how attributes work and explains how to make attacks in combat.
             \begin{dtable}
                 \lcaption{Attribute Score Point Costs}
                 \begin{dtabularx}{\columnwidth}{X X l}
-                    \tb{Starting Attribute Score} & \tb{Total Attribute Score} & \tb{Cumulative Point Cost} \tableheaderrule
+                    \tb{Base Attribute Score} & \tb{Total Attribute Score} & \tb{Cumulative Point Cost} \tableheaderrule
                     0                             & 0                          & 0                          \\
                     1                             & 1 \add half level          & 1                          \\
                     2                             & 1 \add level               & 3                          \\
@@ -358,11 +362,11 @@ It defines how attributes work and explains how to make attacks in combat.
             You cannot more than two attributes below 0 in this way.
 
     \subsection{Extraordinary Attributes}
-        Some abilities can increase your starting attributes above 4.
-        For each point of starting attribute beyond 4, you increase your current attribute by the same amount.
+        Some abilities can increase your base attributes above 4.
+        For each point of base attribute beyond 4, you increase your current attribute by the same amount.
 
-        For example, a 20th level half-orc cleric with the Strength domain who spent 7 points on her starting Strength would have a total starting Strength of 6.
-        Her Strength would be two higher than it would be with a starting attribute of 4, for a total of 25.
+        For example, a 20th level half-orc cleric with the Strength domain who spent 7 points on her base Strength would have a total base Strength of 6.
+        Her Strength would be two higher than it would be with a base attribute of 4, for a total of 25.
 
 \section{Character Statistics}
     This section explains how character statistics, such as how strong you are or how accurate your attacks are, should be calculated.
@@ -490,10 +494,10 @@ It defines how attributes work and explains how to make attacks in combat.
 
             Your defenses are calculated in the following way:
             \begin{itemize}
-                \itemhead{Armor}: Level \add starting Dexterity \add defense bonuses from equipped body armor and shield
-                \itemhead{Fortitude}: Level \add starting Constitution \add class defense bonus
-                \itemhead{Reflex}: Level \add starting Dexterity \add class defense bonus
-                \itemhead{Mental}: Level \add starting Willpower \add class defense bonus
+                \itemhead{Armor}: Level \add base Dexterity \add defense bonuses from equipped body armor and shield
+                \itemhead{Fortitude}: Level \add base Constitution \add class defense bonus
+                \itemhead{Reflex}: Level \add base Dexterity \add class defense bonus
+                \itemhead{Mental}: Level \add base Willpower \add class defense bonus
             \end{itemize}
             In addition to the normal calculation, each defense may have additional bonuses or penalties applied by various abilities.
 
@@ -514,7 +518,7 @@ It defines how attributes work and explains how to make attacks in combat.
         When you take damage in excess of your \glossterm{damage resistance}, you lose a \glossterm{hit point} (see \pcref{Damage Resistance}).
         You can't normally exceed your maximum hit points, even with magical healing.
 
-        You normally have a number of \glossterm{hit points} equal to 5 \add your starting Constitution.
+        You normally have a number of \glossterm{hit points} equal to 5 \add your base Constitution.
         Some special abilities can give you additional \glossterm{hit points}.
 
         If you would lose a \glossterm{hit point} while you have no \glossterm{hit points} remaining, you gain a \glossterm{vital wound} instead.
@@ -575,7 +579,7 @@ It defines how attributes work and explains how to make attacks in combat.
 
     \subsection{Insight Points}\label{Insight Points}
         You can spend \glossterm{insight points} to learn new special abilities.
-        You normally have a number of \glossterm{insight points} equal to 2 \add your starting Intelligence.
+        You normally have a number of \glossterm{insight points} equal to 2 \add your base Intelligence.
         Some abilities can also grant insight points.
 
         Any character can spend insight points in any of the following ways.
@@ -647,7 +651,7 @@ It defines how attributes work and explains how to make attacks in combat.
     Many effects can grant bonuses or penalties to actions you take.
 
     \subsection{Size in Combat}\label{Size in Combat}
-        Your size affects your \glossterm{space} and \glossterm{reach} in combat, your \glossterm{base speed}, your starting attributes, and how easily you are \glossterm{overwhelmed} (see \pcref{Overwhelm}).
+        Your size affects your \glossterm{space} and \glossterm{reach} in combat, your \glossterm{base speed}, your base attributes, and how easily you are \glossterm{overwhelmed} (see \pcref{Overwhelm}).
         These effects are shown on \trefnp{Size in Combat}.
 
         \begin{dtable*}
@@ -669,7 +673,7 @@ It defines how attributes work and explains how to make attacks in combat.
                 Colossal (long)   & 25\add ft.       & 25\add ft.       & 70 ft.          & \plus4                       & \minus4                       & Great wyrm red dragon    \\
             \end{dtabularx}
             1 Creatures can vary in space and reach.  These are simply typical values.  \\
-            2. Applies to starting attribute value. These modifiers only apply to creature that naturally have the given size, without any temporary modifiers. \\
+            2. Applies to base attribute value. These modifiers only apply to creature that naturally have the given size, without any temporary modifiers. \\
         \end{dtable*}
 
         \subsubsection{Space}\label{Space}
@@ -1632,7 +1636,7 @@ It defines how attributes work and explains how to make attacks in combat.
         Your encumbrance is a value that represents how much you are burdened by armor and weight.
         You apply your encumbrance as a penalty to all Strength and Dexterity-based checks you make.
         You can increase your encumbrance by wearing armor or by carrying an excessive weight (see \pcref{Carrying Capacity}).
-        In addition, you reduce your encumbrance by amount equal to your starting Strength.
+        In addition, you reduce your encumbrance from \glossterm{body armor} by an amount equal to your base Strength, to a minimum of 0.
 
         Sleeping in armor is difficult.
         If you sleep while you have any encumbrance, only half the time you spend sleeping counts as sleep for the purpose of determining your fatigue (see \pcref{Sleep and Fatigue}).
