@@ -44,7 +44,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \subsection{Prerequisites}
         Some feats have prerequisites.
         Unless you meet all of the prerequisites, you cannot take the feat.
-        Prerequisites can include a minimum starting attribute score, another feat or feats, a minimum level of training in a skill, or some other property of a character.
+        Prerequisites can include a minimum base attribute score, another feat or feats, a minimum level of training in a skill, or some other property of a character.
         A character can gain a feat at the same level at which he or she gains the prerequisite.
 
         A character who no longer meets all prerequisites for a feat loses all abilities from that feat.
@@ -203,7 +203,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \end{feat}
 
     \begin{feat}{Agility}{General}
-        \featpre Starting Dexterity of 1.
+        \featpre Base Dexterity of 1.
 
         \ff[1]{Lightning Reflexes} You gain a \plus2 bonus to Reflex defense and \glossterm{initiative} checks.
 
@@ -320,7 +320,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \end{feat}
 
     \begin{feat}{Blindfighter}{Combat}
-        \featpre Starting Perception 2.
+        \featpre Base Perception 2.
 
         \ff[1]{Blind Precision} When you make an attack with a miss chance caused by being unable to see your opponent, you can roll the miss chance twice and take the better result.
         In addition, you are not \defenseless against foes you cannot see if you know their location.
@@ -422,7 +422,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \end{feat}
 
     \begin{feat}{Brawler}{Combat}
-        \featpre Starting Strength of 1, starting Dexterity of 1.
+        \featpre Base Strength of 1, base Dexterity of 1.
 
         \ff[1]{Unarmed Warrior} You become \glossterm{proficient} with the unarmed weapons \glossterm{weapon group} (see \pcref{Unarmed Weapons}).
         In addition, you gain a \plus1d bonus to damage with unarmed weapons.
@@ -686,7 +686,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \end{dtable}
 
     \begin{feat}{Duelist}{Combat}
-        \featpre Starting Dexterity of 1, starting Intelligence of 1.
+        \featpre Base Dexterity of 1, base Intelligence of 1.
 
         \ff[1]{Duelist Strike} You can use the \textit{duelist strike} ability as a standard action.
         \begin{freeability}{Duelist Strike}
@@ -742,7 +742,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \end{feat}
 
     \begin{feat}{Executioner}{Combat}
-        \featpres Starting Strength of 1, starting Perception of 2.
+        \featpres Base Strength of 1, base Perception of 2.
 
         \ff[1]{Marked for Execution} You consider living creatures that either have a \glossterm{vital wound} or have less than their \glossterm{maximum hit points} to be \textit{marked for execution}.
         Several abilities from this feat affect creatures \textit{marked for execution}.
@@ -779,7 +779,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \end{feat}
 
     \begin{feat}{Guardian}{Combat}
-        \featpre Starting Perception and Willpower of 1.
+        \featpre Base Perception and Willpower of 1.
 
         \ff[1]{Binding Strike} You can use the \textit{binding strike} ability as a standard action.
         \begin{freeability}{Binding Strike}
@@ -869,7 +869,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \end{feat}
 
     \begin{feat}{Iron Will}{General}
-        \featpre Starting Willpower of 1.
+        \featpre Base Willpower of 1.
 
         \ff[1]{Mental Discipline} You gain a \plus2 bonus to Mental defense.
         In addition, you reduce your \glossterm{focus penalty} by 1.
@@ -932,7 +932,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \end{feat}
 
     \begin{feat}{Leadership}{Combat}
-        \featpre Starting Willpower of 2.
+        \featpre Base Willpower of 2.
 
         \ff[1]{Battle Command} You can use the \textit{battle command} ability as a standard action.
         \begin{freeability}{Battle Command}[\glossterm{Swift}]
@@ -1194,7 +1194,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \end{feat}
 
     \begin{feat}{Null}{General}
-        \featpre Starting Willpower of 2.
+        \featpre Base Willpower of 2.
 
         \ff[1]{Nullify Magic} You gain a \plus4 bonus to \glossterm{defenses} against \glossterm{magical} abilities.
         In addition, you are never considered an \glossterm{ally} for a \glossterm{magical} ability, even while \glossterm{unconscious}.
@@ -1345,7 +1345,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \end{feat}
 
     \begin{feat}{Precognition}{General}
-        \featpre Starting Intelligence of 2.
+        \featpre Base Intelligence of 2.
 
         \ff[1]{Precognitive Precision} You can use your Intelligence in place of your Perception to determine your \glossterm{accuracy} with \glossterm{mundane} abilities.
 
@@ -1379,7 +1379,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \end{feat}
 
     \begin{feat}{Regenerator}{General}
-        \featpre Starting Constitution of 2.
+        \featpre Base Constitution of 2.
 
         \ff[1]{Diehard} You gain a \plus2 bonus to \glossterm{wound rolls}.
 
@@ -1388,18 +1388,18 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[7]{Regenerative Recovery} You can use the \textit{regenerative recovery} ability as a standard action.
         \begin{freeability}{Regenerative Recovery}
             You regain a \glossterm{hit point}.
-            After you use this ability a number of times equal to your starting Constitution, you cannot use it again until you take a \glossterm{short rest}.
+            After you use this ability a number of times equal to your base Constitution, you cannot use it again until you take a \glossterm{short rest}.
 
             \rankline
             \featlevel{13} You regain an additional \glossterm{hit point}.
-            \featlevel{19} You may use this ability a number of times equal to twice your starting Constitution.
+            \featlevel{19} You may use this ability a number of times equal to twice your base Constitution.
         \end{freeability}
 
         \ff[10]{Greater Diehard} The bonus from your \textit{diehard} ability increases to \plus4.
 
         \ff[13]{Greater Regenerative Rest} Your \textit{regenerative rest} ability removes an additional \glossterm{vital wound}.
 
-        \ff[16]{Enduring Constitution} You gain a \plus1 bonus to your starting Constitution.
+        \ff[16]{Enduring Constitution} You gain a \plus1 bonus to your base Constitution.
 
         \ff[19]{Supreme Diehard} The bonus from your \textit{diehard} ability increases to \plus6.
     \end{feat}
@@ -1425,7 +1425,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \end{feat}
 
     \begin{feat}{Savage}{Combat}
-        \featpre Starting Strength of 2.
+        \featpre Base Strength of 2.
 
         \ff[1]{Brute Force} You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{shove} and \textit{overrun} abilities (see \pcref{Shove}, and \pcref{Overrun}).
         If you get a \glossterm{critical hit} with the \textit{shove} ability, you can move the target a maximum distance equal to your movement speed.
@@ -1501,7 +1501,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \end{feat}
 
     \begin{feat}{Sniper}{Combat}
-        \featpre Starting Perception of 2.
+        \featpre Base Perception of 2.
 
         \ff[1]{Aim} You can use the \textit{aim} ability as a standard action.
         \begin{freeability}{Aim}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
@@ -1609,7 +1609,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \end{feat}
 
     \begin{feat}{Spellwarped}{General, Magical}
-        \featpre Starting Willpower of 1.
+        \featpre Base Willpower of 1.
 
         \ff[1]{Mystic Sphere} You gain the ability to use arcane magic.
         You gain access to one arcane \glossterm{mystic sphere} (see \pcref{Arcane Mystic Spheres}).
@@ -2277,7 +2277,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \end{feat}
 
     \begin{feat}{Swift}{General}
-        \featpre Starting Dexterity of 1.
+        \featpre Base Dexterity of 1.
 
         \ff[1]{Rapid Movement} You gain a \plus10 foot bonus to your \glossterm{base speed}.
 
@@ -2317,7 +2317,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \end{feat}
 
     \begin{feat}{Toughness}{General}
-        \featpre Starting Constitution of 1.
+        \featpre Base Constitution of 1.
 
         \ff[1]{Fortified Body} You gain a \plus2 bonus to Fortitude defense.
         In addition, you can sleep while you have \glossterm{encumbrance} without penalty (see \pcref{Encumbrance}).
@@ -2341,7 +2341,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \end{feat}
 
     \begin{feat}{Two-Weapon Fighting}{Combat}
-        \featpre Starting Dexterity of 2.
+        \featpre Base Dexterity of 2.
 
         \ff[1]{Rend} You can use the \textit{rend} ability as a standard action.
         \begin{freeability}{Rend}
@@ -2374,7 +2374,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \end{feat}
 
     \begin{feat}{Whirlwind Warrior}{Combat}
-        \featpres Starting Dexterity of 2, starting Perception of 1.
+        \featpres Base Dexterity of 2, base Perception of 1.
 
         % TODO: this would be better if it hit threatened people, but increased weapon range is too common
         \ff[1]{Cyclone} You can use the \textit{cyclone} ability as a standard action.
