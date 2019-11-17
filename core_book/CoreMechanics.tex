@@ -513,60 +513,6 @@ It defines how attributes work and explains how to make attacks in combat.
             \parhead{Lowering Defenses} When you are subject to an attack that you are aware of, you can voluntarily lower your defenses against the attack.
             If you do, your defense is treated as 0 against the attack.
 
-    \subsection{Hit Points}\label{Hit Points}
-        Your \glossterm{hit points} measure how hard you are to kill.
-        When you take damage in excess of your \glossterm{damage resistance}, you lose a \glossterm{hit point} (see \pcref{Damage Resistance}).
-        You can't normally exceed your maximum hit points, even with magical healing.
-
-        You normally have a number of \glossterm{hit points} equal to 5 \add your base Constitution.
-        Some special abilities can give you additional \glossterm{hit points}.
-
-        If you would lose a \glossterm{hit point} while you have no \glossterm{hit points} remaining, you gain a \glossterm{vital wound} instead.
-
-        \parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of the creature being damaged.
-        When lose a single hit point from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight.
-        Instead, you avoided the worst of the blow, but it bruised you through your armor, the effort to dodge the blow fatigued you, or it barely nicked you through sheer luck -- and everyone's luck runs out eventually.
-
-        \subsubsection{Missing Hit Points}\label{Missing Hit Points}
-            Some objects and creatures have no \glossterm{hit points} or \glossterm{damage resistance}.
-            They ignore all damage less than their \glossterm{wound resistance}.
-
-    \subsection{Resistances}\label{Resistances}
-        When you are hit by an attack, you use your \glossterm{resistances} to mitigate the damage from the attack.
-        You have two types of resistances: \glossterm{damage resistance}, which protects you from losing \glossterm{hit points}, and \glossterm{wound resistance}, which protects you from gaining \glossterm{vital wounds}.
-
-    \subsection{Damage Resistance}\label{Damage Resistance}
-        Your \glossterm{damage resistance} measures your ability to shrug off insignificant amounts of damage.
-        When an attack would deal damage to you, if the damage is less than or equal to your \glossterm{damage resistance}, you take no damage from the attack.
-        This prevents you from losing a \glossterm{hit point} or suffering other negative consequences of taking damage.
-
-        Your \glossterm{damage resistance} is based on your level, as defined in \tref{Character Advancement}.
-        Wearing \glossterm{armor} can increase your damage resistance against \glossterm{physical damage}, and some special abilities can also increase it.
-
-        \parhead{Missing Damage Resistance} An object or creature without a listed \glossterm{damage resistance} loses a \glossterm{hit point} if it takes at least 1 damage from a single damage roll.
-        It effectively has a \glossterm{damage resistance} of 0.
-
-    \subsection{Wound Resistance}\label{Wound Resistance}
-        Your \glossterm{wound resistance} measures your ability to avoid gaining \glossterm{vital wounds} from dangerous attacks.
-        When you take damage from an attack, if the damage is greater than your \glossterm{wound resistance}, you gain a \glossterm{vital wound} (see \pcref{Vital Wounds}).
-
-        Your \glossterm{wound resistance} is based on your level, as defined in \tref{Character Advancement}.
-        Some special abilities can increase your \glossterm{wound resistance}.
-
-        \parhead{Missing Wound Resistance} An object or creature without a listed \glossterm{wound resistance} cannot gain \glossterm{vital wounds} from taking damage directly.
-        It can only gain \glossterm{vital wounds} from taking damage while it has no \glossterm{hit points} remaining.
-
-    \subsection{Damage Type Resistances}\label{Damage Type Resistances}
-        Each type of resistance is further divided into what type of damage it protects against.
-        Your \glossterm{damage resistance} and \glossterm{wound resistance} apply against damage of any type.
-        Those are collectively called your \glossterm{resistances}.
-
-        Some effects increase your resistances against either \glossterm{physical damage} or \glossterm{energy damage}.
-        For example, wearing armor gives you a bonus to your \glossterm{resistances} against \glossterm{physical damage}.
-
-        \parhead{Stacking Magic Bonuses} A \glossterm{magic bonus} to a specific type of resistance does not stack with a \glossterm{magic bonus} to a more general resistance if both apply.
-        For example, if you have a \glossterm{magic bonus} to resistances against energy damage and another \glossterm{magic bonus} to resistances against fire damage, you only use the higher of the two when you take fire damage.
-
     \subsection{Initiative}\label{Initiative}
         When multiple creatures take mutually impossible actions simultaneously, such as racing to be the first one to a door, they must roll initiative checks.
         For details, see \pcref{Conflicting Actions}.
@@ -605,6 +551,72 @@ It defines how attributes work and explains how to make attacks in combat.
         \end{itemize}
 
 \section{Taking Damage}\label{Taking Damage}
+
+    When you are hit by an attack, you may take damage.
+    Depending on the amount of damage you take, you may lose a \glossterm{hit point} or even gain a \glossterm{vital wound}.
+
+    \subsection{Resistances}\label{Resistances}
+        When you are hit by an attack, you use your \glossterm{resistances} to mitigate the damage from the attack.
+        You have two types of resistances: \glossterm{damage resistance}, which protects you from losing \glossterm{hit points}, and \glossterm{wound resistance}, which protects you from gaining \glossterm{vital wounds}.
+
+        \subsubsection{Damage Resistance}\label{Damage Resistance}
+            Your \glossterm{damage resistance} measures your ability to shrug off insignificant amounts of damage.
+            When an attack would deal damage to you, if the damage is less than or equal to your \glossterm{damage resistance}, you take no damage from the attack.
+            This prevents you from losing a \glossterm{hit point} or suffering other negative consequences of taking damage.
+
+            Your \glossterm{damage resistance} is based on your level, as defined in \tref{Character Advancement}.
+            Wearing \glossterm{armor} can increase your damage resistance against \glossterm{physical damage}, and some special abilities can also increase it.
+
+            \parhead{Missing Damage Resistance} An object or creature without a listed \glossterm{damage resistance} loses a \glossterm{hit point} if it takes at least 1 damage from a single damage roll.
+            It effectively has a \glossterm{damage resistance} of 0.
+
+        \subsubsection{Wound Resistance}\label{Wound Resistance}
+            Your \glossterm{wound resistance} measures your ability to avoid gaining \glossterm{vital wounds} from dangerous attacks.
+            When you take damage from an attack, if the damage is greater than your \glossterm{wound resistance}, you gain a \glossterm{vital wound} (see \pcref{Vital Wounds}).
+
+            Your \glossterm{wound resistance} is based on your level, as defined in \tref{Character Advancement}.
+            Some special abilities can increase your \glossterm{wound resistance}.
+
+            \parhead{Missing Wound Resistance} An object or creature without a listed \glossterm{wound resistance} cannot gain \glossterm{vital wounds} from taking damage directly.
+            It can only gain \glossterm{vital wounds} from taking damage while it has no \glossterm{hit points} remaining.
+
+        \subsubsection{Damage Type Resistances}\label{Damage Type Resistances}
+            Each type of resistance is further divided into what type of damage it protects against.
+            Your \glossterm{damage resistance} and \glossterm{wound resistance} apply against damage of any type.
+            Those are collectively called your \glossterm{resistances}.
+
+            Some effects increase your resistances against either \glossterm{physical damage} or \glossterm{energy damage}.
+            For example, wearing armor gives you a bonus to your \glossterm{resistances} against \glossterm{physical damage}.
+
+            \parhead{Stacking Magic Bonuses} A \glossterm{magic bonus} to a specific type of resistance does not stack with a \glossterm{magic bonus} to a more general resistance if both apply.
+            For example, if you have a \glossterm{magic bonus} to resistances against energy damage and another \glossterm{magic bonus} to resistances against fire damage, you only use the higher of the two when you take fire damage.
+
+    \subsection{Becoming Fragile}\label{Becoming Fragile}
+        As your hit points get lower, you become more vulnerable to damage.
+        At the end of each round, if you have 3 or fewer \glossterm{hit points} remaining, you become \glossterm{fragile}.
+        Likewise, if you have 4 or more \glossterm{hit points}, you stop being \glossterm{fragile}.
+
+        While you are fragile, your \glossterm{wound resistance} is halved, to a minimum of your \glossterm{damage resistance} for each corresponding type of damage.
+        If your maximum hit points are 3 or fewer, you are always \glossterm{fragile}.
+        Some weak monsters are always \glossterm{fragile} for this reason.
+
+    \subsection{Hit Points}\label{Hit Points}
+        Your \glossterm{hit points} measure how hard you are to kill.
+        When you take damage in excess of your \glossterm{damage resistance}, you lose a \glossterm{hit point} (see \pcref{Damage Resistance}).
+        You can't normally exceed your maximum hit points, even with magical healing.
+
+        You normally have a number of \glossterm{hit points} equal to 5 \add your base Constitution.
+        Some special abilities can give you additional \glossterm{hit points}.
+
+        If you would lose a \glossterm{hit point} while you have no \glossterm{hit points} remaining, you gain a \glossterm{vital wound} instead.
+
+        \parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of the creature being damaged.
+        When lose a single hit point from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight.
+        Instead, you avoided the worst of the blow, but it bruised you through your armor, the effort to dodge the blow fatigued you, or it barely nicked you through sheer luck -- and everyone's luck runs out eventually.
+
+        \subsubsection{Missing Hit Points}\label{Missing Hit Points}
+            Some objects and creatures have no \glossterm{hit points} or \glossterm{damage resistance}.
+            They ignore all damage less than their \glossterm{wound resistance}.
 
     \subsection{Vital Wounds}\label{Vital Wounds}
         A \glossterm{vital wound} represents a serious injury to your body.
@@ -1559,6 +1571,7 @@ It defines how attributes work and explains how to make attacks in combat.
         \parhead{Recover} You can use the \textit{recover} ability as a standard action.
         \begin{apability}{\labeltext{Recover}}[\glossterm{Swift}]
             You regain all of your \glossterm{hit points}.
+            If this restores you to four or more \glossterm{hit points}, you immediately stop being \glossterm{fragile}.
         \end{apability}
 
         \parhead{Shove} As a standard action, you can use the \textit{shove} ability to physically move a creature.
