@@ -41,7 +41,7 @@ def generate_weapons():
             This item functions like a \\mitem<flaming> item, except that you can also kindle the flames as a standard action.
             When you make a \\glossterm<strike> with this weapon, if the weapon is kindled and your attack result beats the target's Reflex defense,
                 it is \\glossterm<ignited> as a \\glossterm<condition> and the weapon stops being kindled.
-            This condition can be removed if the target makes a \\glossterm<DR> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
+            This condition can be removed if the target makes a \\glossterm<difficulty rating> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
             Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
         """,
         short_description="Deals fire damage, can ignite foes",
@@ -55,7 +55,7 @@ def generate_weapons():
         description="""
             This item functions like a \\mitem<flaming> item, except that the flames are constantly kindled.
             When you make a \\glossterm<strike> with this weapon, if your attack result beats the target's Reflex defense, it is \\glossterm<ignited> as a \\glossterm<condition>.
-            This condition can be removed if the target makes a \\glossterm<DR> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
+            This condition can be removed if the target makes a \\glossterm<difficulty rating> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
             Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
         """,
         short_description="Deals fire damage, ignites foes",
