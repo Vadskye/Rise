@@ -122,7 +122,7 @@ Rank 2 Focus/non-choice; Rank 4 non-Focus:
 * Single-target:
   * Deal std +2d to 1 in melee range
 * AOE:
-  * Deal std to all within Large/10 line from you
+  * Deal std to all within Large/5 line from you
   * Deal std to all within Med/5 line entirely within Med range
 
 Rank 3 Focus/non-choice; Rank 5 non-Focus:
@@ -132,7 +132,7 @@ Rank 3 Focus/non-choice; Rank 5 non-Focus:
   * Deal std in extreme range
   * r2 condition in std range
 * AOE:
-  * Deal std to all within Large/15 line from you
+  * Deal std to all within Large/10 line from you
   * Deal std to all within Large cone from you
   * Deal std to all within Small radius in Close range
   * Deal std to enemies within Med radius from you
@@ -144,8 +144,8 @@ Rank 4 Focus/non-choice; Rank 6 non-Focus:
   * r2 condition with r4 crit-only condition in std range
 * AOE:
   * Remove condition from non-self in Med radius from you
-  * Deal std to all within Huge/15 line from you
-  * Deal std to all within Large/10 line entirely within Med range
+  * Deal std to all within Large/15 line from you
+  * Deal std to all within Large/5 line entirely within Med range
   * Deal std to all within Small radius in Med range
 * Maneuvers only:
 * AOE: see 3rd level spell AOE
@@ -156,7 +156,7 @@ Rank 5 Focus/non-choice; Rank 7 non-Focus:
   * Deal std -1d in std range and apply r1 condition
   * r3 condition in close range
 * AOE:
-  * Deal std to all within Huge/20 line from you
+  * Deal std to all within Huge/10 line from you
   * Deal std to all within Huge cone from you
   * Deal std to enemies within Large radius from you
 
@@ -168,14 +168,15 @@ Rank 6 Focus/non-choice; Rank 8 non-Focus:
 * AOE:
   * Deal std to all within Huge radius from you
   * Deal std to all within Med radius in Med range
-  * Deal std to all within Extreme/20 line from you
+  * Deal std to all within Huge/15 line from you
 
 Rank 7 Focus:
 * Shared:
 * Single-target:
   * Deal std in std range and apply r1 condition
 * AOE:
-  * Deal std to all within Extreme/30 line from you
+  * Deal std to all within Huge/20 line from you
+  * Deal std to all within Ext/10 line from you
 
 Rank 8 Focus:
 * Shared:
