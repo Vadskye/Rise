@@ -1087,7 +1087,7 @@ def generate_mystic_spheres():
             """, tags=['Attune (self)']),
             Spell('Divine Presence', 3, 'All \\glossterm<enemies> in the area (see text)', """
                 You radiate an aura that invokes a fear of your divine connection in a \\areamed radius \\glossterm<emanation> from you.
-                When you attune to this spell, and at the end of each \\glossterm<action phase> in subsequent rounds, make an attack vs. Mental against each target.
+                When you attune to this spell, and during each \\glossterm<action phase> in subsequent rounds, make an attack vs. Mental against each target.
                 You cannot make this attack more than once against any individual target during this spell's duration.
                 \\hit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
 
@@ -1706,7 +1706,7 @@ def generate_mystic_spheres():
             """, tags=['Emotion']),
             Spell('Fearsome Aura', 3, 'All \\glossterm<enemies> in the area (see text)', """
                 You radiate an aura of fear in a \\areamed radius \\glossterm<emanation> from you.
-                When you attune to this spell, and at the end of each \\glossterm<action phase> in subsequent rounds, make an attack vs. Mental against each target.
+                When you attune to this spell, and during each \\glossterm<action phase> in subsequent rounds, make an attack vs. Mental against each target.
                 You cannot make this attack more than once against any individual target during this spell's duration.
                 \\hit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
 
@@ -3743,7 +3743,7 @@ def generate_mystic_spheres():
             Spell('Embedded Growth', 1, 'One creature within \\rngclose range', """
                 You throw a seed that embeds itself in a foe and grows painfully.
                 Make an attack vs. Fortitude against the target.
-                \\hit As a \\glossterm<condition>, the target takes physical \\glossterm<standard damage> at the end of each \\glossterm<action phase>.
+                \\hit As a \\glossterm<condition>, the target takes physical \\glossterm<standard damage> during each \\glossterm<action phase> in subsequent rounds.
                 This condition can be removed if the target or a creature that can reach the target makes a \\glossterm<difficulty rating> 5 Heal check as a standard action to remove the seed.
 
                 \\rankline
@@ -3945,7 +3945,7 @@ def generate_mystic_spheres():
                 \\rank<7> The accuracy bonus increases to +3.
             """, tags=[]),
             Spell('Circle of Death', 3, 'Living \\glossterm<enemies> in a \\areasmall radius \\glossterm<zone> from your location', """
-                When this spell resolves, and the end of each \\glossterm<action phase> in subsequent rounds, make an attack vs. Fortitude against each target.
+                When this spell resolves, and during each \\glossterm<action phase> in subsequent rounds, make an attack vs. Fortitude against each target.
                 You cannot make this attack more than once against any individual target during this spell's duration.
                 \\hit As a \\glossterm<condition>, each target is marked for death.
                 It takes a penalty to its \\glossterm<wound resistance> equal to half your \\glossterm<power> against all types of damage.

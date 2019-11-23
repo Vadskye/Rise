@@ -567,7 +567,7 @@ def generate_worn():
             This crown continuously crackles with electricity.
             The constant sparks shed light as a torch.
 
-            At the end of each \\glossterm<action phase>, you make an attack vs. Fortitude against all enemies within a \\areamed radius emanation from you.
+            During each \\glossterm<action phase>, you make an attack vs. Fortitude against all \\glossterm<enemies> within a \\areasmall radius emanation from you.
             A hit deals electricity \\glossterm<standard damage> -3d.
         """,
         short_description="Continuously damages nearby enemies",
@@ -579,7 +579,7 @@ def generate_worn():
         material_type='Crown',
         tags=[],
         description="""
-            At the end of each \\glossterm<action phase>, you make an attack vs. Fortitude against all enemies within a \\areamed radius emanation from you.
+            During each \\glossterm<action phase>, you make an attack vs. Fortitude against all enemies within a \\areasmall radius emanation from you.
             At hit deals cold \\glossterm<standard damage> -2d.
         """,
         short_description="Continuously damages nearby enemies",
