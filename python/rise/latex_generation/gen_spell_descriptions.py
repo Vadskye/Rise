@@ -119,12 +119,10 @@ def generate_mystic_spheres():
             """, tags=['Attune (self)']),
             Spell('Gust of Wind', 3, 'Everything in a \\arealarge, 10 ft. wide line from you', """
                 Make an attack vs. Fortitude against each target.
-                \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
+                \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d and is \\glossterm<pushed> 20 feet in the direction the line points away from you.
+                Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
 
                 \\rankline
-                % TODO: wording
-                \\rank<3> Each struck target is \\glossterm<pushed> 20 feet in the direction the line points away from you.
-                    Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
                 \\rank<5> The area increases to a \\areahuge, 10 ft. wide line from you.
                 \\rank<7> Each struck target is pushed 50 feet instead of 20 feet.
             """, tags=[]),
@@ -303,13 +301,13 @@ def generate_mystic_spheres():
                 \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
                 \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
             """, tags=['Manifestation']),
-            Spell('Great Flood', 3, 'Everything in a \\arealarge, 15 ft.\\ wide line from you', """
+            Spell('Great Flood', 3, 'Everything in a \\arealarge, 10 ft.\\ wide line from you', """
                 Make an attack vs. Reflex against each target.
                 \\hit Each target takes bludgeoning \\glossterm<standard damage>.
 
                 \\rankline
-                \\rank<5> The area increases to a \\areahuge, 20 ft.\\ wide line from you.
-                \\rank<7> The area increases to a \\areaext, 30 ft.\\ wide line from you.
+                \\rank<5> The area increases to a \\areahuge, 10 ft.\\ wide line from you.
+                \\rank<7> The area increases to a \\areahuge, 20 ft.\\ wide line from you.
             """, tags=['Manifestation']),
             Spell('Water Jet', 1, 'One creature or object within \\rngmed range', """
                 Make an attack vs. Armor against the target.
@@ -354,7 +352,7 @@ def generate_mystic_spheres():
                 \\rank<5> The target also gains a swim speed equal to half its \\glossterm<base speed>.
                 \\rank<7> The swim speed increases to be equal to the target's \\glossterm<base speed>.
             """, tags=['Attune (target)']),
-            Spell('Raging River', 3, 'Everything in a \\arealarge, 15 ft. wide line from you', """
+            Spell('Raging River', 3, 'Everything in a \\arealarge, 10 ft. wide line from you', """
                 Make an attack vs. Fortitude against each target.
                 \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d and is \\glossterm<pushed> 20 feet in the direction the line points away from you.
                 Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
@@ -1814,14 +1812,14 @@ def generate_mystic_spheres():
                 \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
                 \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
             """, tags=[]),
-            Spell('Lightning Bolt', 1, 'Everything in a \\arealarge, 5 ft.\\ wide line from you', """
+            Spell('Lightning Bolt', 1, 'Everything in a \\areamed, 10 ft.\\ wide line from you', """
                 Make an attack vs. Reflex against each target.
                 \\hit Each target takes electricity \\glossterm<standard damage>.
 
                 \\rankline
-                \\rank<3> The area increases to a \\areahuge, 10 ft.\\ wide line from you
-                \\rank<5> The area increases to a \\areaext, 15 ft.\\ wide line.
-                \\rank<7> The area increases to a 200 ft.\\ long, 20 ft.\\ wide line.
+                \\rank<3> The area increases to a \\arealarge, 10 ft.\\ wide line from you
+                \\rank<5> The area increases to a \\areahuge, 10 ft.\\ wide line.
+                \\rank<7> The area increases to a \\areaext, 10 ft.\\ wide line.
             """, tags=[]),
             Spell('Shocking Grasp', 1, 'One creature or object you \\glossterm<threaten>', """
                 This spell does not have the \\glossterm<Focus> tag.
@@ -1852,7 +1850,7 @@ def generate_mystic_spheres():
                 \\rank<5> The area increases to a \\arealarge radius.
                 \\rank<7> The area increases to a \\areahuge radius.
             """, tags=[]),
-            Spell('Electromagnetic Bolt', 3, 'Everything in a \\arealarge, 5 ft.\\ wide line from you', """
+            Spell('Electromagnetic Bolt', 4, 'Everything in a \\arealarge, 10 ft.\\ wide line from you', """
                 Make an attack vs. Reflex against each target.
                 You gain a +2 bonus to accuracy against each target that is wearing metal armor or otherwise carrying or composed of a significant amount of metal.
                 \\hit Each target takes electricity \\glossterm<standard damage>.
@@ -2734,7 +2732,7 @@ def generate_mystic_spheres():
                 \\hit Each target takes fire \\glossterm<standard damage>.
 
                 \\rankline
-                \\rank<5> The area increases to a \\arealarge, 10 ft.\\ wide shapeable line.
+                \\rank<5> The area increases to a \\arealarge, 5 ft.\\ wide shapeable line.
                 \\rank<7> The range increases to \\rnglong.
             """, tags=[]),
             Spell('Flame Aura', 4, ['Yourself', 'Everything in a \\areasmall radius from you (see text)'], """
@@ -3256,7 +3254,7 @@ def generate_mystic_spheres():
                 \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
                 \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
             """, tags=[]),
-            Spell('Force Lance', 1, 'Everything in a \\areamed, 5 ft.\\ wide line from you', """
+            Spell('Force Lance', 1, 'Everything in a \\areamed, 10 ft.\\ wide line from you', """
                 Make an attack vs. Armor against each target.
                 \\hit Each target takes piercing \\glossterm<standard damage>.
 
