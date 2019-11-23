@@ -402,8 +402,8 @@ def magical_beasts(sample_monsters):
             active_ability('Petrifying Gaze', f"""
                 The basilisk makes a +{basilisk.accuracy()} vs. Fortitude attack against one creature in Medium range.
                 \\hit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
-                \\crit As above, and as an additional condition, the target takes {basilisk.standard_damage() - 1} physical damage at the end of each action phase.
-                If it takes vital damage in this way, it is petrified permanently.
+                \\crit As above, and as an additional condition, the target takes {basilisk.standard_damage() - 1} physical damage during each \\glossterm<action phase> in subsequent rounds.
+                If this damage inflicts a \\glossterm<vital wound>, the target is petrified permanently.
             """),
         ],
     ))
@@ -451,8 +451,8 @@ def magical_beasts(sample_monsters):
                 The cockatrice makes a bite \\glossterm<strike>.
                 In addition to the strike's normal effects, the cockatrice also makes a +{cockatrice.accuracy()} vs. Fortitude attack against the target.
                 \\hit If the strike also hit, the target is \\glossterm<nauseated> as a \\glossterm<condition>.
-                \\crit As above, and as an additional condition, the target takes {cockatrice.standard_damage() - 1} physical damage at the end of each action phase.
-                If it takes vital damage in this way, it is petrified permanently.
+                \\crit As above, and as an additional condition, the target takes {cockatrice.standard_damage() - 1} physical damage during each \\glossterm<action phase> in subsequent rounds.
+                If this damage inflicts a \\glossterm<vital wound>, the target is petrified permanently.
             """),
         ],
     ))
@@ -659,8 +659,8 @@ def monstrous_humanoids(sample_monsters):
             active_ability('Petrifying Gaze', f"""
                 The medusa makes a +{medusa.accuracy()} vs. Fortitude attack against one creature in Medium range.
                 \\hit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
-                \\crit As above, and as an additional condition, the target takes {medusa.standard_damage() - 1} physical damage at the end of each action phase.
-                If it takes vital damage in this way, it is petrified permanently.
+                \\crit As above, and as an additional condition, the target takes {medusa.standard_damage() - 1} physical damage during each \\glossterm<action phase> in subsequent rounds.
+                If this damage inflicts a \\glossterm<vital wound>, the target is petrified permanently.
             """),
         ],
     ))
@@ -711,7 +711,7 @@ def outsiders(sample_monsters):
             active_ability('Venomous Bite', f"""
                 The bebelith makes a bite strike.
                 If it hits, and the attack result beats the target's Fortitude defense, the target is also poisoned as a condition.
-                If the target is poisoned, it takes {bebelith.standard_damage()} poison damage at the end of each action phase after the first round.
+                If the target is poisoned, it takes {bebelith.standard_damage()} damage during each \\glossterm<action phase> in subsequent rounds.
             """),
         ],
     ))
@@ -734,7 +734,7 @@ def outsiders(sample_monsters):
         active_abilities=[
             active_ability('Flame Aura', f"""
                 The salamander intensifies its natural body heat, creating a burning aura around it.
-                At the end of each action phase, the salamander makes a +{flamebrother_salamander.accuracy()} vs. Armor
+                During each \\glossterm<action phase>, the salamander makes a +{flamebrother_salamander.accuracy()} vs. Armor
                     attack against everything within a Medium radius emanation of it.
                 \\hit Each target takes {flamebrother_salamander.standard_damage()} fire damage.
             """, tags=['Sustain (standard)'], ap_cost=True),
@@ -758,7 +758,7 @@ def outsiders(sample_monsters):
         active_abilities=[
             active_ability('Flame Aura', f"""
                 The salamander intensifies its natural body heat, creating a burning aura around it.
-                At the end of each action phase, the salamander makes a +{flamebrother_salamander.accuracy()} vs. Armor
+                During each \\glossterm<action phase>, the salamander makes a +{flamebrother_salamander.accuracy()} vs. Armor
                     attack against everything within a Medium radius emanation of it.
                 \\hit Each target takes {flamebrother_salamander.standard_damage()} fire damage.
             """, tags=['Sustain (standard)'], ap_cost=True),
