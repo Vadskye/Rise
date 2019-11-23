@@ -272,14 +272,14 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Sweeping Strike',
         short_description='Make strikes against nearby foes',
-        target="Up to two creatures or objects you \\glossterm<threaten>",
+        target="Up to three creatures or objects you \\glossterm<threaten>",
         effect_text="""
             Make a melee \\glossterm<strike> with a slashing or bludgeoning weapon against each target.
         """,
         rank_upgrades={
-            '3': 'You can target up to four creature you \\glossterm<threaten>.',
-            '5': 'You gain a +1d bonus to damage with the strike.',
-            '7': 'The damage bonus increases to +2d.',
+            '3': 'You gain a +1d bonus to damage with the strike.',
+            '5': 'The damage bonus increases to +2d.',
+            '7': 'The damage bonus increases to +3d.',
         },
         tags=[],
         lists=['Primal', 'Martial', 'Wild', 'Esoteric'],
@@ -288,16 +288,16 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Thunderous Shout',
         short_description='Deal damage in a cone',
-        target="Everything in a \\areasmall cone-shaped burst from you",
+        target="Everything in a \\areamed cone from you",
         effect_text="""
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes energy \\glossterm<standard damage>.
         """,
         rank_upgrades={
-            '3': 'The area increases to a \\areamed radius.',
-            '5': 'The area increases to a \\arealarge radius.',
-            '7': 'The area increases to a \\areahuge radius.',
+            '5': 'The damage increases to \\glossterm<standard damage> +1d.',
+            '7': 'The damage increases to \\glossterm<standard damage> +2d.',
         },
+        rank=3,
         tags=[],
         lists=['Primal'],
     ))
@@ -305,7 +305,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Whirlwind',
         short_description='Make strikes against all threatened foes',
-        target="All creatures you \\glossterm<threaten>",
+        target="All \\glossterm<enemies> you \\glossterm<threaten>",
         effect_text="""
             Make a melee \\glossterm<strike> against each target.
             You can only use slashing weapons to make this strike.
@@ -812,8 +812,9 @@ def generate_maneuvers():
             Make a thrown \\glossterm<strike> using a single weapon that deals slashing or bludgeoning damage against each target.
             If you choose yourself as one of the targets, you can catch the weapon instead of taking damage from it.
         """,
-        rank=5,
+        rank=3,
         rank_upgrades={
+            '5': 'You gain a +1d bonus to damage with the strike.',
             '7': 'You gain a +1d bonus to damage with the strike.',
         },
         tags=[],
@@ -855,6 +856,74 @@ def generate_maneuvers():
         },
         tags=[],
         lists=['Primal'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Lunge',
+        short_description='Strike foes in a line',
+        target="\\glossterm<Enemies> in a \\areasmall, 5 ft.\\ wide line from you",
+        effect_text="""
+            Make a \\glossterm<strike> against each target.
+            You can only use piercing weapons to make this strike.
+        """,
+        rank_upgrades={
+            '3': 'You gain a +1d bonus to \\glossterm<damage> with the strike.',
+            '5': 'The damage bonus increases to +2d.',
+            '7': 'The damage bonus increases to +3d.',
+        },
+        tags=[],
+        lists=['Martial', 'Primal', 'Wild', 'Trick', 'Esoteric'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Volley Fire',
+        short_description='Fire a flurry of projectiles to blanket an area',
+        target="Everything in a \\areasmall radius within \\rngmed range.",
+        effect_text="""
+            Make a ranged \\glossterm<strike> against each target.
+            You can only use projectile weapons to make this strike, and it costs five projectiles.
+            You take a -1 penalty to accuracy with the strike.
+        """,
+        rank=4,
+        rank_upgrades={
+            '6': 'You gain a +1d bonus to damage with the strike.',
+            '8': 'The damage bonus increases to +2d.',
+        },
+        tags=[],
+        lists=['Martial', 'Wild'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Arrowstorm',
+        short_description='Fire a flurry of projectiles to blanket a large area',
+        target='Everything in a \\areamed radius within \\rngmed range.',
+        rank=6,
+        effect_text="""
+            Make a ranged \\glossterm<strike> against each target.
+            You can only use projectile weapons to make this strike, and it costs five projectiles.
+            You take a -1 penalty to accuracy with the strike.
+        """,
+        rank_upgrades={
+            '8': 'The range increases to \\rnglong.',
+        },
+        tags=[],
+        lists=['Martial', 'Wild'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Penetrating Shot',
+        short_description='Fire a powerful projectile in a line',
+        target='Everything in a \\arealarge, 5 ft.\\ wide line from you',
+        rank=4,
+        effect_text="""
+            Make a ranged \\glossterm<strike> against each target.
+        """,
+        rank_upgrades={
+            '6': 'You gain a +1d bonus to damage with the strike.',
+            '8': 'The damage bonus increases to +2d.',
+        },
+        tags=[],
+        lists=['Martial', 'Wild'],
     ))
 
     return maneuvers
