@@ -837,6 +837,26 @@ def generate_maneuvers():
         lists=['Esoteric', 'Martial', 'Primal'],
     ))
 
+    maneuvers.append(Maneuver(
+        name='Reckless Strike',
+        short_description='Sacrifice defenses to make a powerful strike',
+        target="As chosen \\glossterm<strike>",
+        effect_text="""
+            When you use this ability, you take a -2 penalty to Armor defense during the current phase.
+            This is a \\glossterm<Swift> effect, though the \\glossterm<strike> this ability makes is not.
+
+            Make a \\glossterm<strike> with a +1d bonus to damage.
+        """,
+        rank=1,
+        rank_upgrades={
+            '3': 'The damage bonus increases to +2d.',
+            '5': 'The damage bonus increases to +3d.',
+            '7': 'The damage bonus increases to +4d.',
+        },
+        tags=[],
+        lists=['Primal'],
+    ))
+
     return maneuvers
 
 def generate_maneuver_latex():
