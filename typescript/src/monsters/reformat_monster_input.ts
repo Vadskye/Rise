@@ -31,6 +31,8 @@ export interface MonsterInput {
   armorInputs?: ArmorInput[];
   challengeRating?: number;
   defenseBonuses?: Partial<Record<DefenseType, number>>;
+  description: string;
+  languages?: string[];
   level: number;
   monsterType: MonsterType;
   name: string;
@@ -75,6 +77,7 @@ const monsterDefaults: Required<
   Omit<
     MonsterInput,
     | "defenseBonuses"
+    | "description"
     | "level"
     | "monsterType"
     | "name"
@@ -99,6 +102,7 @@ const monsterDefaults: Required<
   armors: [],
   challengeRating: 1,
   defenseBonuses: fromPairs(defenseTypes.map((d) => [d, 0])),
+  languages: [],
   passiveAbilities: [],
   resistanceBonuses: fromPairs(damageTypes.map((d) => [d, 0])),
   size: "medium",

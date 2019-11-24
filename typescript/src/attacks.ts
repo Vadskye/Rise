@@ -1,3 +1,4 @@
+import { AbilityTag } from "@src/ability_tags";
 import { DamageType, DefenseType } from "@src/data";
 import { MonsterBase } from "@src/monsters";
 import { isStandardWeaponName, StandardWeaponName, standardWeapons } from "@src/weapons";
@@ -5,7 +6,10 @@ import { isStandardWeaponName, StandardWeaponName, standardWeapons } from "@src/
 export type AttackEffect = (monster: MonsterBase) => string;
 
 interface StandardAttackInput {
+  accuracyBonus?: number;
   name: StandardAttackName;
+  powerBonus?: number;
+  tags?: AbilityTag[];
 }
 
 interface WeaponAttackInput {
@@ -14,6 +18,7 @@ interface WeaponAttackInput {
   name: string;
   powerBonus?: number;
   source?: "magical" | "mundane";
+  tags?: AbilityTag[];
   target?: string;
   weaponName: StandardWeaponName;
 }
@@ -27,6 +32,7 @@ interface CustomAttackInput {
   name: string;
   powerBonus?: number;
   source?: "magical" | "mundane";
+  tags?: AbilityTag[];
   target: string;
 }
 
@@ -35,7 +41,7 @@ export type AttackInput = StandardAttackInput | WeaponAttackInput | CustomAttack
 // TODO: add ability tags, including Magical sources
 export type Attack = Required<CustomAttackInput> & { weaponName?: string };
 
-type StandardAttackName = "fireball" | "combustion";
+type StandardAttackName = "acid breath" | "drain life" | "fireball" | "combustion";
 
 function hasStandardWeaponName(input: AttackInput): input is WeaponAttackInput {
   return isStandardWeaponName((input as WeaponAttackInput).weaponName);
@@ -47,20 +53,49 @@ function hasStandardAttackName(input: AttackInput): input is StandardAttackInput
 
 const standardAttacks: Record<
   StandardAttackName,
-  Pick<CustomAttackInput, "crit" | "damageTypes" | "defense" | "hit" | "source" | "target">
+  Pick<
+    CustomAttackInput,
+    | "accuracyBonus"
+    | "crit"
+    | "damageTypes"
+    | "defense"
+    | "hit"
+    | "powerBonus"
+    | "source"
+    | "tags"
+    | "target"
+  >
 > = {
-  combustion: {
+  "acid breath": {
+    damageTypes: ["acid"],
+    defense: "armor",
+    hit: "Each target takes <damage>.",
+    source: "mundane",
+    target: "Everything in a \\areamed cone",
+  },
+  "combustion": {
     damageTypes: ["fire"],
     defense: "reflex",
     hit: "The target takes <damage>.",
+    powerBonus: 2,
     source: "magical",
+    tags: ["Focus"],
     target: "One creature or object within \\rngmed range",
   },
-  fireball: {
+  "drain life": {
+    damageTypes: [],
+    defense: "fortitude",
+    hit: "The target loses a \\glossterm{hit point}",
+    source: "magical",
+    tags: ["Focus"],
+    target: "One creature within \\rngmed range",
+  },
+  "fireball": {
     damageTypes: ["fire"],
     defense: "armor",
     hit: "Each target takes <damage>.",
     source: "magical",
+    tags: ["Focus"],
     target: "Everything in a \\areasmall radius within \\rngclose range",
   },
 };
@@ -68,7 +103,7 @@ const standardAttacks: Record<
 export function parseAttack(input: AttackInput): Attack {
   const defaults: Pick<
     Attack,
-    "accuracyBonus" | "crit" | "damageTypes" | "hit" | "powerBonus" | "source"
+    "accuracyBonus" | "crit" | "damageTypes" | "hit" | "powerBonus" | "source" | "tags"
   > = {
     accuracyBonus: 0,
     crit: null,
@@ -76,6 +111,7 @@ export function parseAttack(input: AttackInput): Attack {
     hit: null,
     powerBonus: 0,
     source: "mundane",
+    tags: [],
   };
 
   if (hasStandardWeaponName(input)) {
@@ -90,10 +126,13 @@ export function parseAttack(input: AttackInput): Attack {
       powerBonus: (weapon.powerBonus || 0) + (input.powerBonus || 0),
     };
   } else if (hasStandardAttackName(input)) {
+    const standardAttack = standardAttacks[input.name];
     return {
       ...defaults,
+      ...standardAttack,
       name: input.name,
-      ...standardAttacks[input.name],
+      accuracyBonus: (standardAttack.accuracyBonus || 0) + (input.accuracyBonus || 0),
+      powerBonus: (standardAttack.powerBonus || 0) + (input.powerBonus || 0),
     };
   } else {
     return {

@@ -12,15 +12,21 @@ export function monsterToLatex(monster: MonsterBase): string {
   return `
   \\begin{monsection}${getMonsectionArgs(monster)}
     ${getTitleAndTypeHeader(monster).trim()}
+    \\vspace{0em}
+
+    ${monster.description}
+
     ${getMainContent(monster).trim()}
     ${getFooter(monster).trim()}
   \\end{monsection}
   ${getAbilities(monster).trim()}
-  `.replace(/\$name/g, monster.name);
+  `
+    .replace(/\$name/g, getMonsterName(monster).toLowerCase())
+    .replace(/\$Name/g, sentenceCase(getMonsterName(monster)));
 }
 
 function getMonsectionArgs(monster: MonsterBase) {
-  return `${getMonsterName(monster)}{${monster.level}}[${monster.challengeRating}]`;
+  return `${getMonsterNameHeader(monster)}{${monster.level}}[${monster.challengeRating}]`;
 }
 
 function getTitleAndTypeHeader(monster: MonsterBase) {
@@ -30,6 +36,17 @@ function getTitleAndTypeHeader(monster: MonsterBase) {
 }
 
 function getMonsterName({ name }: MonsterBase): string {
+  const splitName = name.split(", ");
+  if (splitName.length === 2) {
+    return `${splitName[1]} ${splitName[0]}`;
+  } else if (splitName.length === 1) {
+    return name;
+  } else {
+    throw new Error(`Name '${name}' has too many suffixes`);
+  }
+}
+
+function getMonsterNameHeader({ name }: MonsterBase): string {
   const splitName = name.split(", ");
   if (splitName.length === 2) {
     return `{${titleCase(splitName[0])}}[${titleCase(splitName[1])}]`;

@@ -14,13 +14,19 @@ export const undeadInput: TypelessMonsterInput[] = [
       },
     ],
     challengeRating: 4,
+    description: `
+      An allip is the spectral remains of someone driven to suicide by a madness that afflicted it in life.
+      It craves only revenge and unrelentingly pursues those who tormented it in life and pushed it over the brink.
+
+      An allip cannot speak intelligibly.
+    `,
     level: 3,
     name: "allip",
     passiveAbilities: [
       passiveAbilities.incorporeal,
       {
         description: `
-          At the end of each round, the allip makes an attack vs. Mental against each creature
+          During each \\glossterm{action phase}, the allip makes an attack vs. Mental against each creature
           within an \\arealarge radius \\glossterm{emanation} from it.
           It cannot make this attack more than once against any individual target between \\glossterm{short rests}.
           \\hit Each target is \\glossterm{confused} as a \\glossterm{condition}.
