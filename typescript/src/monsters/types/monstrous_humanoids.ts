@@ -4,7 +4,14 @@ export const monstrousHumanoidInput: TypelessMonsterInput[] = [
   {
     armorInputs: [{ name: "breastplate" }],
     challengeRating: 2,
+    description: `
+      Giants relish melee combat.
+      They favor massive two-handed weapons and wield them with impressive skill.
+      They have enough cunning to soften up a foe with ranged attacks first, if they can.
+      A giant's favorite ranged weapon is a big rock.
+    `,
     resistanceBonuses: { physical: 4 },
+    languages: ["Giant"],
     level: 11,
     name: "Giant, Hill",
     size: "huge",

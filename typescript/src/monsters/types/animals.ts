@@ -1,9 +1,15 @@
+import { poisonousWeapon } from "@src/passive_abilities";
 import { addType, TypelessMonsterInput } from "./add_type";
 
 const animalInput: TypelessMonsterInput[] = [
   {
     armorInputs: [{ name: "fur" }],
     challengeRating: 2,
+    description: `
+      The black bear is a forest-dwelling omnivore that usually is not dangerous unless an interloper threatens its cubs or food supply.
+
+      Black bears can be pure black, blond, or cinnamon in color and are rarely more than 5 feet long.
+    `,
     level: 3,
     name: "Black bear",
     startingAttributes: { str: 3, con: 3, int: -8, wil: -1 },
@@ -12,6 +18,11 @@ const animalInput: TypelessMonsterInput[] = [
   {
     armorInputs: [{ name: "fur" }],
     challengeRating: 2,
+    description: `
+      These massive omnivores weigh more than 1,800 pounds and stand nearly 9 feet tall when they rear up on their hind legs.
+      They are bad-tempered and territorial.
+      The brown bear’s statistics can be used for almost any big bear, including the grizzly.
+    `,
     level: 5,
     name: "Brown bear",
     size: "large",
@@ -20,6 +31,9 @@ const animalInput: TypelessMonsterInput[] = [
   },
   {
     armorInputs: [{ name: "fur" }],
+    description: `
+      Wolves are pack hunters known for their persistence and cunning.
+    `,
     level: 2,
     name: "Wolf",
     startingAttributes: { str: 1, dex: 2, con: 1, int: -7, wil: -1 },
@@ -27,6 +41,11 @@ const animalInput: TypelessMonsterInput[] = [
   },
   {
     armorInputs: [{ name: "hide" }],
+    description: `
+      The statistics presented here describe a small horse, under 5 feet tall at the shoulder.
+      Ponies are similar to light horses and cannot fight while carrying a rider.
+      A pony's maximum load is 120 pounds, and it can drag up to 800 pounds.
+    `,
     level: 2,
     name: "Pony",
     startingAttributes: { str: 1, con: 3, int: -7, wil: -1 },
@@ -35,6 +54,16 @@ const animalInput: TypelessMonsterInput[] = [
   {
     armorInputs: [{ name: "feathers" }],
     challengeRating: 4,
+    description: `
+      Rocs are massive and incredibly strong birds with the ability to carry off horses.
+      It is typically 30 feet long from the beak to the base of the tail, with a wingspan as wide as 80 feet.
+      A roc weighs about 8,000 pounds.
+      Its plumage is either dark brown or golden from head to tail.
+
+      A roc attacks from the air, swooping earthward to snatch prey in its powerful talons and carry it off for itself and its young to devour.
+      A solitary roc is typically hunting and will attack any Medium or larger creature that appears edible.
+      A mated pair of rocs attack in concert, fighting to the death to defend their nests or hatchlings.
+    `,
     level: 9,
     name: "Roc",
     size: "gargantuan",
@@ -44,6 +73,10 @@ const animalInput: TypelessMonsterInput[] = [
   {
     armorInputs: [{ name: "scales" }],
     challengeRating: 2,
+    description: `
+      Vampire eels are large, slimy snakelike carnivores.
+      They swim through murky water, looking for edible creatures.
+    `,
     level: 6,
     name: "Vampire Eel",
     size: "large",
@@ -52,6 +85,11 @@ const animalInput: TypelessMonsterInput[] = [
   {
     armorInputs: [{ name: "fur" }],
     challengeRating: 2,
+    description: `
+      Dire wolves are efficient pack hunters that will kill anything they can catch.
+
+      Dire wolves are mottled gray or black, about 9 feet long and weighing some 800 pounds.
+    `,
     level: 5,
     name: "Dire Wolf",
     size: "large",
@@ -60,6 +98,10 @@ const animalInput: TypelessMonsterInput[] = [
   },
   {
     armorInputs: [{ name: "feathers" }],
+    description: `
+      These glossy black birds are about 2 feet long and have wingspans of about 4 feet.
+      The statistics presented here can describe most nonpredatory birds of similar size.
+    `,
     level: 1,
     name: "raven",
     size: "tiny",
@@ -69,6 +111,10 @@ const animalInput: TypelessMonsterInput[] = [
   {
     armorInputs: [{ name: "carapace" }],
     challengeRating: 2,
+    description: `
+      Giant wasps attack when hungry or threatened, stinging their prey to death.
+      They take dead or incapacitated opponents back to their lairs as food for their unhatched young.
+    `,
     level: 6,
     name: "Giant Wasp",
     size: "large",
@@ -76,21 +122,21 @@ const animalInput: TypelessMonsterInput[] = [
     weaponInput: [{ name: "stinger" }],
     passiveAbilities: [
       {
-        description: `
-        Whenever a creature takes damage from the giant wasp's stinger,
-          if the attack result beat the target's Fortitude defense,
-          the damaged creature becomes \\glossterm{poisoned}.
-        The poison's primary effect makes the target \\glossterm{sickened}, and the terminal effect makes it \\glossterm{paralyzed}.
-      `,
+        description: poisonousWeapon("stinger", "\\glossterm{sickened}", "\\glossterm{paralyzed}"),
         name: "Poison Sting",
       },
     ],
   },
   {
     armorInputs: [{ name: "carapace" }],
+    attackInputs: [{ name: "acid breath" }],
     challengeRating: 2,
+    description: `
+      These creatures feed primarily on carrion and offal, gathering heaps of the stuff in which to build nests and lay eggs.
+      A giant bombardier beetle is about 6 feet long. Giant bombardier beetles normally attack only to defend themselves, their nests, or their eggs.
+    `,
     level: 7,
-    name: "Dire Beetle",
+    name: "Giant Bombardier Beetle",
     size: "large",
     startingAttributes: { str: 4, dex: -1, con: 4, int: -9 },
     weaponInput: [{ name: "bite" }],
@@ -100,6 +146,19 @@ const animalInput: TypelessMonsterInput[] = [
 const baseCentipede = {
   armorInputs: [{ name: "carapace" as const }],
   challengeRating: 4,
+  description: `
+    Monstrous centipedes tend to attack anything that resembles food, biting with their jaws and injecting their poison.
+  `,
+  passiveAbilities: [
+    {
+      description: poisonousWeapon(
+        "bite",
+        "lose a \\glossterm{hit point}",
+        "lose two \\glossterm{hit points}",
+      ),
+      name: "Poison Sting",
+    },
+  ],
   weaponInput: [{ name: "bite" as const }],
 };
 animalInput.push({
@@ -134,15 +193,12 @@ animalInput.push({
 const spiderBase = {
   armorInputs: [{ name: "carapace" as const }],
   challengeRating: 4,
+  description: `
+    All monstrous spiders are aggressive predators that use their poisonous bites to subdue or kill prey.
+  `,
   passiveAbilities: [
     {
-      description: `
-        Whenever a creature takes damage from the spider's bite,
-          if the attack result beat the target's Fortitude defense,
-          the damaged creature becomes \\glossterm{poisoned}.
-        The poison's primary effect makes the target \\glossterm{sickened},
-          and the terminal effect makes it \\glossterm{paralyzed}.
-      `,
+      description: poisonousWeapon("bite", "\\glossterm{sickened}", "\\glossterm{paralyzed}"),
       name: "Poison Sting",
     },
   ],
