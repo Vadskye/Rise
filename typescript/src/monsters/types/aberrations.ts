@@ -30,6 +30,14 @@ aberrationInput.push({
     },
   ],
   challengeRating: 4,
+  description: `
+    The aboleth is a revolting fishlike amphibian found primarily in subterranean lakes and rivers.
+    It has a pink belly.
+    Four pulsating blueblack orifices line the bottom of its body and secrete gray slime that smells like rancid grease.
+    It uses its tail for propulsion in the water and drags itself along with its tentacles on land.
+    An aboleth weighs about 6,500 pounds.
+  `,
+  languages: ["Aquan", "Undercommon"],
   level: abolethLevel,
   name: "Aboleth",
   passiveAbilities: [

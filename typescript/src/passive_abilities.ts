@@ -3,6 +3,15 @@ export interface PassiveAbility {
   name: string;
 }
 
+export function poisonousWeapon(weaponName: string, primaryEffect: string, terminalEffect: string) {
+  return `
+    Whenever a creature takes damage from the $name's ${weaponName},
+      if the attack result beat the target's Fortitude defense,
+      the damaged creature becomes \\glossterm{poisoned}.
+    The poison's primary effect makes the target ${primaryEffect}, and the terminal effect makes it ${terminalEffect}
+  `;
+}
+
 export const passiveAbilities: Record<string, PassiveAbility> = {
   incorporeal: {
     description: `
