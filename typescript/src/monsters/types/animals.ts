@@ -19,15 +19,16 @@ const animalInput: TypelessMonsterInput[] = [
     armorInputs: [{ name: "fur" }],
     challengeRating: 2,
     description: `
-      These massive omnivores weigh more than 1,800 pounds and stand nearly 9 feet tall when they rear up on their hind legs.
-      They are bad-tempered and territorial.
-      The brown bear’s statistics can be used for almost any big bear, including the grizzly.
+      These massive omnivores are bad-tempered and territorial.
+      The brown bear's statistics can be used for almost any big bear, including the grizzly.
     `,
     level: 5,
+    height: "9 feet",
     name: "Brown bear",
     size: "large",
     startingAttributes: { str: 4, con: 4, int: -8, wil: -1 },
     weaponInput: [{ name: "bite" }],
+    weight: "1,800 pounds",
   },
   {
     armorInputs: [{ name: "fur" }],
@@ -57,7 +58,6 @@ const animalInput: TypelessMonsterInput[] = [
     description: `
       Rocs are massive and incredibly strong birds with the ability to carry off horses.
       It is typically 30 feet long from the beak to the base of the tail, with a wingspan as wide as 80 feet.
-      A roc weighs about 8,000 pounds.
       Its plumage is either dark brown or golden from head to tail.
 
       A roc attacks from the air, swooping earthward to snatch prey in its powerful talons and carry it off for itself and its young to devour.
@@ -69,6 +69,7 @@ const animalInput: TypelessMonsterInput[] = [
     size: "gargantuan",
     startingAttributes: { str: 4, dex: 2, con: 3, int: -7, wil: -1 },
     weaponInput: [{ name: "bite" }],
+    weight: "8,000 pounds",
   },
   {
     armorInputs: [{ name: "scales" }],
@@ -87,14 +88,15 @@ const animalInput: TypelessMonsterInput[] = [
     challengeRating: 2,
     description: `
       Dire wolves are efficient pack hunters that will kill anything they can catch.
-
-      Dire wolves are mottled gray or black, about 9 feet long and weighing some 800 pounds.
+      Their fur is usually mottled gray or black.
     `,
     level: 5,
+    height: "9 feet",
     name: "Dire Wolf",
     size: "large",
     startingAttributes: { str: 4, dex: 3, con: 2, int: -7, per: 2 },
     weaponInput: [{ name: "bite" }],
+    weight: "800 pounds",
   },
   {
     armorInputs: [{ name: "feathers" }],
