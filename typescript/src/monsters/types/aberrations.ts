@@ -22,7 +22,7 @@ aberrationInput.push({
       target: "One creature within \\rnglong range",
     },
     {
-      damageTypes: [],
+      damageTypes: ["energy"],
       defense: "mental",
       name: "Psionic Blast",
       hit: "Each target takes <damage> and is \\glossterm{dazed} as a \\glossterm{condition}.",
@@ -35,7 +35,6 @@ aberrationInput.push({
     It has a pink belly.
     Four pulsating blueblack orifices line the bottom of its body and secrete gray slime that smells like rancid grease.
     It uses its tail for propulsion in the water and drags itself along with its tentacles on land.
-    An aboleth weighs about 6,500 pounds.
   `,
   languages: ["Aquan", "Undercommon"],
   level: abolethLevel,
@@ -74,6 +73,7 @@ aberrationInput.push({
   size: "huge",
   startingAttributes: { str: 4, dex: -1, con: 4, int: 3, per: 1, wil: 4 },
   weaponInput: [{ name: "tentacle" }],
+  weight: "6,500 pounds",
 });
 
 export const aberrations = addType("aberration", aberrationInput);
