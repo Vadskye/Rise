@@ -94,6 +94,6 @@ export const standardArmors: Record<StandardArmorName, Omit<CustomArmorInput, "n
   },
   "outsider skin": {
     defenseBonuses: { armor: 4 },
-    resistanceBonuses: { armor: 4, energy: 4 },
+    resistanceBonuses: { energy: 4, physical: 4 },
   },
 };
