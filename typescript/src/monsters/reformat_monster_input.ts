@@ -32,6 +32,7 @@ export interface MonsterInput {
   challengeRating?: number;
   defenseBonuses?: Partial<Record<DefenseType, number>>;
   description: string;
+  height?: string | null;
   languages?: string[];
   level: number;
   monsterType: MonsterType;
@@ -45,6 +46,7 @@ export interface MonsterInput {
   speed?: number;
   startingAttributes?: Partial<Creature.Attributes>;
   weaponInput?: WeaponInput[];
+  weight?: string | null;
 }
 
 interface MonsterCalculatedValues {
@@ -102,6 +104,7 @@ const monsterDefaults: Required<
   armors: [],
   challengeRating: 1,
   defenseBonuses: fromPairs(defenseTypes.map((d) => [d, 0])),
+  height: null,
   languages: [],
   passiveAbilities: [],
   resistanceBonuses: fromPairs(damageTypes.map((d) => [d, 0])),
@@ -110,6 +113,7 @@ const monsterDefaults: Required<
   startingAttributes: fromPairs(attributes.map((a) => [a, 0])),
   weaponInput: [],
   weapons: [],
+  weight: null,
 };
 
 function calculateSkills(

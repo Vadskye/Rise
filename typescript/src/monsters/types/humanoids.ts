@@ -44,51 +44,55 @@ export const humanoidInput: TypelessMonsterInput[] = [
     startingAttributes: { str: -1, con: 1, int: -1, wil: 2 },
     weaponInput: [{ name: "club" }],
   },
-  {
-    armorInputs: [{ name: "breastplate" }, { name: "hide" }, { name: "heavy shield" }],
-    description: `
-      Lizardfolk are usually 6 to 7 feet tall with green, gray, or brown scales.
-      Their tail is used for balance and is 3 to 4 feet long.
-      They can weigh from 200 to 250 pounds.
-    `,
-    languages: ["Draconic"],
-    resistanceBonuses: { physical: 4 },
-    level: 10,
-    name: "Lizardfolk, Grunt",
-    passiveAbilities: [
-      {
-        description: "A lizardfolk can hold its breath for ten times the normal length of time",
-        name: "Hold Breath",
-      },
-    ],
-    startingAttributes: { str: 2, con: 2 },
-    weaponInput: [{ name: "spear" }],
-  },
-  {
-    armorInputs: [{ name: "breastplate" }, { name: "hide" }, { name: "heavy shield" }],
-    challengeRating: 2,
-    description: `
-      Lizardfolk are usually 6 to 7 feet tall with green, gray, or brown scales.
-      Their tail is used for balance and is 3 to 4 feet long.
-      They can weigh from 200 to 250 pounds.
-
-      Lizardfolk fight as unorganized individuals.
-      They prefer frontal assaults and massed rushes, sometimes trying to force foes into the water, where the lizardfolk have an advantage.
-      If outnumbered or if their territory is being invaded, they set snares, plan ambushes, and make raids to hinder enemy supplies.
-      Advanced tribes use more sophisticated tactics and have better traps and ambushes.
-    `,
-    passiveAbilities: [
-      {
-        description: "A lizardfolk can hold its breath for ten times the normal length of time",
-        name: "Hold Breath",
-      },
-    ],
-    resistanceBonuses: { physical: 4 },
-    level: 10,
-    name: "Lizardfolk, Elite",
-    startingAttributes: { str: 3, con: 2 },
-    weaponInput: [{ damageTypes: ["piercing"], name: "spear" }],
-  },
 ];
+
+const lizardfolkBase = {
+  description: `
+    Lizardfolk are bipedal creatures covered in reptilian scales.
+    Their tail resembles that of a crocodile, and is typically 3 to 4 feet long.
+    They use it for balance on land and to accelerate their swimming while in water.
+    Their scales are typically green, gray, or brown.
+
+    Lizardfolk fight as unorganized individuals.
+    They prefer frontal assaults and massed rushes, sometimes trying to force foes into the water, where the lizardfolk have an advantage.
+    If outnumbered or if their territory is being invaded, they set snares, plan ambushes, and make raids to hinder enemy supplies.
+    Advanced tribes use more sophisticated tactics and have better traps and ambushes.
+  `,
+  height: "6-7 feet",
+  languages: ["Draconic"],
+  weight: "200-250 pounds",
+};
+
+humanoidInput.push({
+  ...lizardfolkBase,
+  armorInputs: [{ name: "breastplate" }, { name: "hide" }, { name: "heavy shield" }],
+  resistanceBonuses: { physical: 4 },
+  level: 10,
+  name: "Lizardfolk, Grunt",
+  passiveAbilities: [
+    {
+      description: "A lizardfolk can hold its breath for ten times the normal length of time.",
+      name: "Hold Breath",
+    },
+  ],
+  startingAttributes: { str: 2, con: 2 },
+  weaponInput: [{ name: "spear" }],
+});
+humanoidInput.push({
+  ...lizardfolkBase,
+  armorInputs: [{ name: "breastplate" }, { name: "hide" }, { name: "heavy shield" }],
+  challengeRating: 2,
+  passiveAbilities: [
+    {
+      description: "A lizardfolk can hold its breath for ten times the normal length of time.",
+      name: "Hold Breath",
+    },
+  ],
+  resistanceBonuses: { physical: 4 },
+  level: 10,
+  name: "Lizardfolk, Elite",
+  startingAttributes: { str: 3, con: 2 },
+  weaponInput: [{ damageTypes: ["piercing"], name: "spear" }],
+});
 
 export const humanoids = addType("humanoid", humanoidInput);
