@@ -180,5 +180,5 @@ function getPassiveAbilities(monster: MonsterBase) {
 }
 
 function formatPassiveAbility(ability: PassiveAbility) {
-  return `\\parhead{${sentenceCase(ability.name)}} ${ability.description}`;
+  return `\\parhead{${titleCase(ability.name)}} ${ability.description}`;
 }
