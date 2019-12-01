@@ -8,7 +8,7 @@ export function standardAttackEffect(attack: CalculatedAttack): string {
     ${attack.hit ? `\\hit ${attack.hit}` : ""}
     ${attack.crit ? `\\crit ${attack.crit}` : ""}
   `.replace(
-    "<damage>",
+    "$damage",
     `${format.damageDice(attack.power)} ${format.damageTypes(attack.damageTypes)} damage`,
   );
 }

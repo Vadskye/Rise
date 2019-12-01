@@ -69,14 +69,14 @@ const standardAttacks: Record<
   "acid breath": {
     damageTypes: ["acid"],
     defense: "armor",
-    hit: "Each target takes <damage>.",
+    hit: "Each target takes $damage.",
     source: "mundane",
     target: "Everything in a \\areamed cone",
   },
   "combustion": {
     damageTypes: ["fire"],
     defense: "reflex",
-    hit: "The target takes <damage>.",
+    hit: "The target takes $damage.",
     powerBonus: 2,
     source: "magical",
     tags: ["Focus"],
@@ -93,7 +93,7 @@ const standardAttacks: Record<
   "fireball": {
     damageTypes: ["fire"],
     defense: "armor",
-    hit: "Each target takes <damage>.",
+    hit: "Each target takes $damage.",
     source: "magical",
     tags: ["Focus"],
     target: "Everything in a \\areasmall radius within \\rngclose range",
@@ -119,7 +119,7 @@ export function parseAttack(input: AttackInput): Attack {
     return {
       ...defaults,
       defense: "armor",
-      hit: "The target takes <damage>.",
+      hit: "The target takes $damage.",
       target: "One creature or object within \\glossterm{reach}",
       ...input,
       accuracyBonus: (weapon.accuracyBonus || 0) + (input.accuracyBonus || 0),
