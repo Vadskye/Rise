@@ -1,6 +1,7 @@
 export * from "./attributes_at_level";
 export * from "./calculate_accuracy";
 export * from "./calculate_attack";
+export * from "./calculate_challenge_rating_bonus";
 export * from "./calculate_defenses";
 export * from "./calculate_hit_points";
 export * from "./calculate_magical_power";
@@ -9,6 +10,7 @@ export * from "./calculate_resistances";
 export * from "./calculate_strike";
 export * from "./damage_resistance_by_level";
 export * from "./monster_bonus_by_level";
+export * from "./monster_power_bonus_by_level";
 export * from "./reach_by_size";
 export * from "./skill_modifier";
 export * from "./skill_modifier_by_name";

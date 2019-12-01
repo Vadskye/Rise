@@ -1,5 +1,5 @@
 import { MonsterBase } from "@src/monsters";
-import { calculateChallengeRatingBonus } from "./calculate_challenge_rating_bonus";
+import { calculateChallengeRatingBonus, monsterPowerBonusByLevel } from ".";
 
 export function calculateMundanePower({
   attributes,
@@ -7,5 +7,6 @@ export function calculateMundanePower({
   level,
 }: Pick<MonsterBase, "attributes" | "challengeRating" | "level">) {
   const crBonus = calculateChallengeRatingBonus(challengeRating);
-  return Math.max(attributes.str ?? 0, level) + crBonus;
+  const monsterBonus = monsterPowerBonusByLevel(level);
+  return Math.max(attributes.str ?? 0, level) + crBonus + monsterBonus;
 }

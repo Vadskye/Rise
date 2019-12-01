@@ -8,7 +8,7 @@ const baseAirElemental = {
   armorInputs: [{ name: "hide" as const }],
   attackInputs: [
     {
-      hit: "Each target takes <damage>.",
+      hit: "Each target takes $damage.",
       name: "Whirlwind",
       target: "Each \\glossterm{enemy} within reach",
       weaponName: "slam" as const,
