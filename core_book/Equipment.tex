@@ -51,16 +51,16 @@
         They cannot be held in two hands.
         Light weapons tend to have higher \glossterm{accuracy} than heavier weapons.
 
-        \parhead{Medium Weapon} A medium weapon can be used in one hand.
+        \parhead{Medium Weapon} A medium weapon can normally be used in one hand.
         You can also hold a medium weapon in two hands.
+        If you have a Strength of \minus1 or lower, you cannot wield a medium weapon in only one hand.
         While you hold a medium weapon in two hands, you gain a \plus1d bonus to damage with the weapon.
         Changing grips to hold it in one hand or two hands can be done as a \glossterm{move action}.
 
-        \parhead{Heavy Weapon} Two hands are required to wield a heavy weapon.
-        You can hold it in one hand, but while doing so you cannot attack or defend yourself with it.
-        This usually causes you to be \defenseless.
-        Changing grips to hold it in one hand or two hands is a move action.
+        \parhead{Heavy Weapon} Two hands are normally required to wield a heavy weapon.
         Heavy weapons tend to have higher damage than lighter weapons.
+        If you have a Strength of 5 or higher, you can wield a heavy weapon in one hand, but you take a \minus1 penalty to \glossterm{accuracy} and a \minus1d penalty to damage with the weapon while doing so.
+        Changing grips to hold it in one hand or two hands can be done as a \glossterm{move action}.
 
         % TODO: explain how double weapons work
 
@@ -78,7 +78,9 @@
 
             \parhead{Throwing Other Weapons} It is possible to throw a weapon that is not designed to be thrown. The range increment is 10 feet. You are treated as being nonproficient with the weapon. If the attack hits, the weapon deals its normal damage.
 
-            \parhead{Heavy Weapons} Heavy thrown weapons require a standard action to throw, rather than an attack action like normal. They are not always physically thrown with two hands, but they require the use of your entire body to propel the weapon, preventing you from using your hands for anything else. This can cause you to be \defenseless.
+            \parhead{Heavy Weapons} Heavy thrown weapons require a standard action to throw, rather than an attack action like normal.
+            They are not always physically thrown with two hands, but they require the use of your entire body to propel the weapon, preventing you from using your hands for anything else.
+            This can cause you to be \defenseless.
 
         \subsubsection{Ranged Weapons in Melee}
 
@@ -149,7 +151,7 @@
                 \tind Broadsword                       & Medium           & \plus0        & \plus0d           & Slashing                 & 15 gp     & 4 lb.       & Sweeping (1)                 \\
                 \tind Dagger                           & Light            & \plus2        & \minus2d          & Piercing or slashing     & 2 gp      & 1 lb.       & Compact, Throwing (10 ft.)   \\
                 \tind Estoc                            & Medium           & \plus0        & \plus0d           & Piercing                 & 20 gp     & 4 lb.       & Long                         \\
-                \tind Greatsword                       & Heavy            & \plus1        & \plus1d           & Slashing                 & 25 gp     & 8 lb.       & Long, Sweeping (1)           \\
+                \tind Greatsword                       & Heavy            & \plus0        & \plus1d           & Slashing                 & 25 gp     & 8 lb.       & Long, Sweeping (2)           \\
                 \tind Rapier                           & Light            & \plus2        & \minus1d          & Piercing                 & 20 gp     & 2 lb.       & Disarming                    \\
                 \tind Sabre                            & Medium           & \plus1        & \plus0d           & Slashing                 & 15 gp     & 4 lb.       & \tdash                       \\
                 \tind Smallsword                       & Light            & \plus2        & \minus1d          & Piercing                 & 10 gp     & 2 lb.       & \tdash                       \\
@@ -185,12 +187,12 @@
                 \tind Whip\fn{3}                       & Light            & \plus1        & \minus2d          & Slashing                 & 1 gp      & 2 lb.       & Disarming, Subdual, Tripping \\
 
                 Headed weapons                         &                  &               &                   &                          &           &             &                              \\
-                \tind Battleaxe                        & Medium           & \plus0        & \plus1d           & Slashing                 & 10 gp     & 6 lb.       & \tdash                       \\
+                \tind Battleaxe                        & Medium           & \plus0        & \plus0d           & Slashing                 & 10 gp     & 6 lb.       & Sweeping (1)                 \\
                 \tind Greataxe                         & Heavy            & \plus0        & \plus2d           & Slashing                 & 20 gp     & 12 lb.      & Sweeping (1)                 \\
                 \tind Handaxe                          & Light            & \plus1        & \minus1d          & Slashing                 & 4 gp      & 2 lb.       & Throwing (20 ft.)            \\
                 \tind Light hammer                     & Light            & \plus1        & \minus1d          & Bludgeoning              & 2 gp      & 2 lb.       & Throwing (20 ft.)            \\
                 \tind Pickaxe                          & Medium           & \minus2       & \plus2d           & Piercing                 & 8 gp      & 6 lb.       & \tdash                       \\
-                \tind Sledgehammer                     & Heavy            & \plus0        & \plus2d           & Bludgeoning              & 12 gp     & 5 lb.       & Sweeping (1)                 \\
+                \tind Sledgehammer                     & Heavy            & \plus0        & \plus2d           & Bludgeoning              & 12 gp     & 5 lb.       & Long                         \\
                 \tind Warhammer                        & Medium           & \plus0        & \plus1d           & Bludgeoning              & 12 gp     & 5 lb.       & \tdash                       \\
 
                 Monk weapons                           &                  &               &                   &                          &           &             &                              \\
@@ -216,7 +218,7 @@
                 \tind Unarmed strike                   & Light            & \plus0        & \minus3d          & Bludgeoning              & \tdash    & \tdash      & Subdual, Unarmed             \\
 
                 Spears                                 &                  &               &                   &                          &           &             &                              \\
-                \tind Greatspear                     & Heavy            & \plus0        & \plus2d           & Piercing               & 15 gp     & 12 lb.      & Long                                \\
+                \tind Greatspear                       & Heavy            & \plus0        & \plus2d           & Piercing                 & 15 gp     & 12 lb.      & Long                         \\
                 \tind Javelin\fn{3}                    & Medium (Ranged)  & \plus1        & \minus1d          & Piercing                 & 1 gp      & 2 lb.       & Thrown (30 ft.)              \\
                 \tind Lance                            & Heavy            & \plus0        & \plus1d           & Piercing                 & 10 gp     & 10 lb.      & Mounted, Reach               \\
                 \tind Longspear                        & Heavy            & \plus0        & \plus2d           & Piercing                 & 5 gp      & 9 lb.       & Reach                        \\
@@ -249,12 +251,10 @@
             \begin{dtabularx}{\textwidth}{p{12em} c c c >{\ccol}p{10em} c c >{\ccol}X}
                 \tb{Exotic Weapons}                  & \tb{Usage Class} & \tb{Accuracy} & \tb{Damage\fn{1}} & \tb{Damage Type\fn{2}} & \tb{Cost} & \tb{Weight} & \tb{Special} \tableheaderrule
                 Armor                                &                  &               &                   &                        &           &             &                                \\
-                Axes                                 &                  &               &                   &                        &           &             &                                \\
-                \tind Dwarven waraxe                 & Medium           & \plus0        & \plus1d           & Slashing               & 75 gp     & 8 lb.       & Thrown (20 ft.)                \\
-                \tind Orc double axe                 & Heavy            & \plus0        & \plus2d/\plus2d   & Slashing               & 60 gp     & 15 lb.      & Double                         \\
                 Blades                               &                  &               &                   &                        &           &             &                                \\
-                \tind Katana                         & Medium           & \plus2        & \plus0d           & Slashing               & 75 gp     & 6 lb.       & \tdash                               \\
-                \tind Kukri                          & Light            & \plus2        & \minus1d          & Slashing               & 8 gp      & 2 lb.       & Sweeping                               \\
+                \tind Falchion                       & Medium           & \plus0        & \plus0d           & Slashing               & 15 gp     & 4 lb.       & Sweeping (2)                   \\
+                \tind Katana                         & Heavy            & \plus2        & \plus1d           & Slashing               & 75 gp     & 6 lb.       & Sweeping (1)                   \\
+                \tind Kukri                          & Light            & \plus2        & \minus1d          & Slashing               & 8 gp      & 2 lb.       & Sweeping (1)                   \\
                 \tind Two-bladed sword               & Heavy            & \plus1        & \plus1d/\plus1d   & Slashing               & 100 gp    & 10 lb.      & Double                         \\
                 Bows                                 &                  &               &                   &                        &           &             &                                \\
                 \tind Flatbow                        & Heavy (Ranged)   & \plus1        & \plus0d           & \tdash                 & 30 gp     & 3 lb.       & Projectile (100 ft.)           \\
@@ -266,11 +266,13 @@
                 \tind Repeating bolts (5)            & \tdash           & \plus0        & \plus0d           & \tdash                 & 1 gp      & 1 lb.       & Ammunition                     \\
                 Flexible weapons                     &                  &               &                   &                        &           &             &                                \\
                 Headed weapons                       &                  &               &                   &                        &           &             &                                \\
+                \tind Dwarven waraxe                 & Medium           & \plus0        & \plus1d           & Slashing               & 75 gp     & 8 lb.       & Thrown (20 ft.)                \\
+                \tind Orc double axe                 & Heavy            & \plus0        & \plus2d/\plus2d   & Slashing               & 60 gp     & 15 lb.      & Double                         \\
                 Monk weapons                         &                  &               &                   &                        &           &             &                                \\
                 Polearms                             &                  &               &                   &                        &           &             &                                \\
                 Simple weapons                       &                  &               &                   &                        &           &             &                                \\
                 Spear                                &                  &               &                   &                        &           &             &                                \\
-                \tind Pike\fn{3}                     & Heavy            & \plus0        & \plus2d           & Piercing               & 15 gp.    & 10 lb.      & Long, Reach                          \\
+                \tind Pike\fn{3}                     & Heavy            & \plus0        & \plus2d           & Piercing               & 15 gp.    & 10 lb.      & Long, Reach                    \\
                 Thrown weapons                       &                  &               &                   &                        &           &             &                                \\
                 \tind Bolas                          & Light (Ranged)   & \plus2        & \minus2d\fn{3}    & Bludgeoning            & 5 gp      & 2 lb.       & Thrown (10 ft.), Tripping      \\
                 \tind Net\fn{3}                      & Medium (Ranged)  & \plus0        & \tdash            & \tdash                 & 20 gp     & 6 lb.       & Thrown (10 ft.)                \\
@@ -323,7 +325,7 @@
         This is called ``short hafting''.
         While short hafting a Reach weapon, you ignore the weapon's Reach property, but you take a \minus2 penalty to accuracy with it.
         You can change your grip as a \glossterm{move action}.
-        \parhead{Sweeping} When you make a \glossterm{strike} with this weapon, you may also target one or more additional creatures or objects you \glossterm{threaten}.
+        \parhead{Sweeping} When you make a \glossterm{strike} with this weapon, you may also target one or more secondary creatures or objects you \glossterm{threaten}.
         Each additional target must be within 5 feet of the primary target.
         The description indicates how many additional secondary targets are affected by the strike.
         \parhead{Subdual} This weapon deals \glossterm{subdual damage} (see \pcref{Subdual Damage}).
