@@ -30,15 +30,14 @@ export function parseWeaponInput(input: WeaponInput): Weapon {
 // actually just a missing standard weapon, so it's worth the duplication.
 export type StandardWeaponName =
   | "bite"
+  | "boulder"
   | "claw"
   | "club"
   | "greataxe"
   | "greatclub"
   | "greatsword"
-  | "heavy mace"
   | "light crossbow"
-  | "longsword"
-  | "short sword"
+  | "smallsword"
   | "slam"
   | "spear"
   | "stinger"
@@ -54,52 +53,55 @@ export function isStandardWeaponName(
 export const standardWeapons: Record<StandardWeaponName, Omit<CustomWeaponInput, "name">> = {
   "bite": {
     damageTypes: ["bludgeoning", "piercing"],
+    powerBonus: 2,
+  },
+  "boulder": {
+    damageTypes: ["bludgeoning"],
+    powerBonus: 2,
   },
   "claw": {
-    powerBonus: -2,
+    accuracyBonus: 1,
     damageTypes: ["slashing", "piercing"],
   },
   "club": {
+    accuracyBonus: -1,
     damageTypes: ["bludgeoning"],
   },
   "greataxe": {
-    powerBonus: 2,
+    powerBonus: 4,
     damageTypes: ["slashing"],
   },
   "greatclub": {
-    powerBonus: 2,
+    powerBonus: 4,
     damageTypes: ["bludgeoning"],
   },
   "greatsword": {
     powerBonus: 2,
     damageTypes: ["slashing"],
   },
-  "heavy mace": {
-    powerBonus: 2,
-    damageTypes: ["bludgeoning"],
-  },
   "light crossbow": {
     damageTypes: ["piercing"],
   },
-  "longsword": {
-    damageTypes: ["slashing"],
-  },
-  "short sword": {
-    // TODO: note that this is finessable
-    powerBonus: -2,
-    damageTypes: ["slashing"],
-  },
   "slam": {
     damageTypes: ["bludgeoning"],
+    powerBonus: 2,
+  },
+  "smallsword": {
+    accuracyBonus: 2,
+    powerBonus: -2,
+    damageTypes: ["slashing"],
   },
   "spear": {
     damageTypes: ["piercing"],
   },
   "tentacle": {
     damageTypes: ["bludgeoning"],
+    powerBonus: 2,
   },
   "talon": {
+    accuracyBonus: 1,
     damageTypes: ["piercing", "slashing"],
+    powerBonus: -2,
   },
   "stinger": {
     damageTypes: ["piercing"],
