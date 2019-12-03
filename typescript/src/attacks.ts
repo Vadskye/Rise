@@ -9,6 +9,7 @@ interface StandardAttackInput {
   accuracyBonus?: number;
   name: StandardAttackName;
   powerBonus?: number;
+  preface?: string;
   tags?: AbilityTag[];
 }
 
@@ -17,6 +18,7 @@ interface WeaponAttackInput {
   defense?: DefenseType;
   name: string;
   powerBonus?: number;
+  preface?: string;
   source?: "magical" | "mundane";
   tags?: AbilityTag[];
   target?: string;
@@ -31,6 +33,7 @@ interface CustomAttackInput {
   hit?: string | null;
   name: string;
   powerBonus?: number;
+  preface?: string;
   source?: "magical" | "mundane";
   tags?: AbilityTag[];
   target: string;
@@ -103,13 +106,14 @@ const standardAttacks: Record<
 export function parseAttack(input: AttackInput): Attack {
   const defaults: Pick<
     Attack,
-    "accuracyBonus" | "crit" | "damageTypes" | "hit" | "powerBonus" | "source" | "tags"
+    "accuracyBonus" | "crit" | "damageTypes" | "hit" | "powerBonus" | "preface" | "source" | "tags"
   > = {
     accuracyBonus: 0,
     crit: null,
     damageTypes: [],
     hit: null,
     powerBonus: 0,
+    preface: "",
     source: "mundane",
     tags: [],
   };
