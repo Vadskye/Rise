@@ -37,6 +37,7 @@ export type StandardWeaponName =
   | "greatclub"
   | "greatsword"
   | "light crossbow"
+  | "mace"
   | "smallsword"
   | "slam"
   | "spear"
@@ -81,6 +82,10 @@ export const standardWeapons: Record<StandardWeaponName, Omit<CustomWeaponInput,
   },
   "light crossbow": {
     damageTypes: ["piercing"],
+  },
+  "mace": {
+    damageTypes: ["bludgeoning"],
+    powerBonus: 2,
   },
   "slam": {
     damageTypes: ["bludgeoning"],

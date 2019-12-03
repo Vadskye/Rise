@@ -10,6 +10,7 @@ export interface CalculatedAttack {
   hit: string | null;
   monsterName: string;
   name: string;
+  preface: string;
   power: number;
   target: string;
   weaponName?: string;
@@ -29,6 +30,7 @@ export function calculateAttack(
     monsterName: monster.name,
     name: attack.name,
     power: monsterPower + attack.powerBonus,
+    preface: attack.preface,
     target: attack.target,
     weaponName: attack.weaponName,
   };

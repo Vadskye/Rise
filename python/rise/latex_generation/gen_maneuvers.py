@@ -150,7 +150,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Leaping Strike',
         short_description='Jump and make a strike',
-        target="One creature or object you \\glossterm<threaten> during movement (see text)",
+        target="One creature or object within \\glossterm<reach> during movement (see text)",
         effect_text="""
             You make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to your \\glossterm<base speed> (see \\pcref<Leap>).
             You can make a melee \\glossterm<strike> with a -1 penalty to \\glossterm<accuracy> from any location you occupy during the leap.
@@ -240,7 +240,7 @@ def generate_maneuvers():
         effect_text="""
             Move up to half your movement speed in a straight line.
             You can make a melee \\glossterm<strike> with a slashing or bludgeoning weapon.
-            The strike targets any number of creatures and objects that you \\glossterm<threaten> at any point during your movement, except for the space you start in and the space you end in.
+            The strike targets any number of creatures and objects within your \\glossterm<reach> at any point during your movement, except for the space you start in and the space you end in.
             You take a -2 penalty to \\glossterm<accuracy> with the strike.
         """,
         rank_upgrades={
@@ -272,7 +272,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Sweeping Strike',
         short_description='Make strikes against nearby foes',
-        target="Up to three creatures or objects you \\glossterm<threaten>",
+        target="Up to three creatures or objects within \\glossterm<reach> (see text)",
         effect_text="""
             Make a melee \\glossterm<strike> with a slashing or bludgeoning weapon against each target.
         """,
@@ -304,8 +304,8 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Whirlwind',
-        short_description='Make strikes against all threatened foes',
-        target="All \\glossterm<enemies> you \\glossterm<threaten>",
+        short_description='Make strikes against all nearby foes',
+        target="All \\glossterm<enemies> within \\glossterm<reach>",
         effect_text="""
             Make a melee \\glossterm<strike> against each target.
             You can only use slashing weapons to make this strike.
@@ -314,7 +314,7 @@ def generate_maneuvers():
         rank_upgrades={
             '3': """
                 You can move up to 5 feet when you use this ability.
-                The strike targets all creatures you threaten at any point in your movement.
+                The strike targets all creatures within your \\glossterm<reach> at any point in your movement.
             """,
             '5': 'The distance you can move increases to be equal to half your movement speed.',
             '7': 'The distance you can move increases to be equal to your movement speed.',

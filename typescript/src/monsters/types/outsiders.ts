@@ -15,7 +15,8 @@ export const outsiderInput: TypelessMonsterInput[] = [
     speed: 40,
     startingAttributes: { str: 3, dex: 2, con: 2, int: 2, per: 2, wil: 3 },
     // TODO: fly speed
-    weaponInput: [{ name: "heavy mace" }],
+    // +2 power for two-handing the mace
+    weaponInput: [{ name: "mace", powerBonus: 2 }],
     weight: "250",
   },
 ];

@@ -154,6 +154,7 @@ function formatAttack(attack: CalculatedAttack) {
   return `
     \\begin{freeability}{${titleCase(attack.name)}}${tagText}
       \\${targetTag}{${attack.target}}
+      ${attack.preface}
       ${standardAttackEffect(attack).trim()}
     \\end{freeability}
   `;

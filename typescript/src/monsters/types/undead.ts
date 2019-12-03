@@ -10,7 +10,7 @@ export const undeadInput: TypelessMonsterInput[] = [
         hit: "The target loses a \\glossterm{hit point}.",
         source: "magical",
         name: "Draining Touch",
-        target: "One creature the allip \\glossterm{threatens}",
+        target: "One creature within \\glossterm{reach}",
       },
     ],
     challengeRating: 4,
