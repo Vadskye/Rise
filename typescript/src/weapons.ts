@@ -9,17 +9,21 @@ interface CustomWeaponInput {
   damageTypes: DamageType[];
   name: string;
   powerBonus?: number;
+  tags?: WeaponTag[];
 }
 
 export type WeaponInput = StandardWeaponInput | CustomWeaponInput;
 
 export type Weapon = Required<CustomWeaponInput>;
 
+export type WeaponTag = "sweeping 1" | "sweeping 2" | "forceful" | "long";
+
 export function parseWeaponInput(input: WeaponInput): Weapon {
   return {
     accuracyBonus: 0,
     damageTypes: [],
     powerBonus: 0,
+    tags: [],
     ...(isStandardWeaponName(input.name) && standardWeapons[input.name]),
     ...input,
   };
@@ -36,8 +40,10 @@ export type StandardWeaponName =
   | "greataxe"
   | "greatclub"
   | "greatsword"
+  | "gore"
   | "light crossbow"
   | "mace"
+  | "ram"
   | "smallsword"
   | "slam"
   | "spear"
@@ -59,6 +65,7 @@ export const standardWeapons: Record<StandardWeaponName, Omit<CustomWeaponInput,
   "boulder": {
     damageTypes: ["bludgeoning"],
     powerBonus: 2,
+    // TODO: define range increment
   },
   "claw": {
     accuracyBonus: 1,
@@ -69,16 +76,22 @@ export const standardWeapons: Record<StandardWeaponName, Omit<CustomWeaponInput,
     damageTypes: ["bludgeoning"],
   },
   "greataxe": {
-    powerBonus: 4,
     damageTypes: ["slashing"],
+    powerBonus: 4,
+    tags: ["sweeping 1"],
   },
   "greatclub": {
     powerBonus: 4,
     damageTypes: ["bludgeoning"],
   },
   "greatsword": {
-    powerBonus: 2,
     damageTypes: ["slashing"],
+    powerBonus: 2,
+    tags: ["long", "sweeping 2"],
+  },
+  "gore": {
+    damageTypes: ["piercing"],
+    powerBonus: 2,
   },
   "light crossbow": {
     damageTypes: ["piercing"],
@@ -86,6 +99,10 @@ export const standardWeapons: Record<StandardWeaponName, Omit<CustomWeaponInput,
   "mace": {
     damageTypes: ["bludgeoning"],
     powerBonus: 2,
+  },
+  "ram": {
+    damageTypes: ["bludgeoning"],
+    tags: ["forceful"],
   },
   "slam": {
     damageTypes: ["bludgeoning"],

@@ -154,8 +154,7 @@ function formatAttack(attack: CalculatedAttack) {
   return `
     \\begin{freeability}{${titleCase(attack.name)}}${tagText}
       \\${targetTag}{${attack.target}}
-      ${attack.preface}
-      ${standardAttackEffect(attack).trim()}
+      ${attack.preface.trim()} ${standardAttackEffect(attack).trim()}
     \\end{freeability}
   `;
 }
@@ -165,13 +164,15 @@ function getStrikes(monster: MonsterBase) {
     return "";
   }
   return `\\pari \\textbf{${monster.weapons.length === 1 ? "Strike" : "Strikes"}:}
-            ${monster.weapons.map((w) => formatStrike(monster, w)).join("; ")}`;
+            ${monster.weapons.map((w) => formatStrike(monster, w)).join(";\n\\par ")}`;
 }
 
 function formatStrike(monster: MonsterBase, weapon: Weapon) {
   const name = titleCase(weapon.name);
   const strike = calculateStrike(monster, weapon);
-  return `${name} \\plus${strike.accuracy} (${format.damageDice(strike.power)})`;
+  const formattedTags = weapon.tags ? weapon.tags.sort().map((t) => sentenceCase(t)) : [];
+  const effectText = [format.damageDice(strike.power), ...formattedTags].join(", ");
+  return `${name} \\plus${strike.accuracy} (${effectText})`;
 }
 
 function getPassiveAbilities(monster: MonsterBase) {
