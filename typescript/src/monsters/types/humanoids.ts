@@ -20,7 +20,7 @@ export const humanoidInput: TypelessMonsterInput[] = [
     name: "Orc, Elite",
     resistanceBonuses: { physical: 3 },
     startingAttributes: { str: 4, con: 2, int: -2, wil: -1 },
-    weaponInput: [{ name: "light crossbow" }, { name: "greataxe" }],
+    weaponInput: [{ name: "greataxe" }, { name: "light crossbow" }],
   },
   {
     attackInputs: [{ name: "drain life" }],

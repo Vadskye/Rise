@@ -51,14 +51,21 @@ export type StandardArmorName =
   | "fur"
   | "feathers"
   | "carapace"
-  | "outsider skin";
+  | "outsider skin"
+  | "thick skin";
 
 export function isStandardArmorInput(input: ArmorInput): input is StandardArmorInput {
   return Boolean(standardArmors[(input as StandardArmorInput).name]);
 }
 
 // Monster-type armors give higher bonuses than seemingly equivalent body armor because monsters
-// don't generally have access to shields
+// don't generally have access to shields.
+// Conventions:
+// * Manufactured armor doesn't provide energy resistances
+// * Natural armor that is part of the body (fur, skin, etc.) provides equal energy/physical resists
+// * Unusual natural armor (carapace) may provide unbalanced energy/physical resists
+// * Natural armor that conflicts with body armor (scales, carapace) have unusually high armor
+// defense bonuses
 export const standardArmors: Record<StandardArmorName, Omit<CustomArmorInput, "name">> = {
   "full plate": {
     defenseBonuses: { armor: 4 },
@@ -72,26 +79,34 @@ export const standardArmors: Record<StandardArmorName, Omit<CustomArmorInput, "n
     defenseBonuses: { armor: 3 },
     resistanceBonuses: { physical: 4 },
   },
+  // Conflicts with body armor
   "fur": {
     defenseBonuses: { armor: 3 },
     resistanceBonuses: { energy: 3, physical: 3 },
   },
+  // Conflicts with body armor
   "scales": {
     defenseBonuses: { armor: 4 },
-    resistanceBonuses: { energy: 2, physical: 4 },
+    resistanceBonuses: { energy: 4, physical: 4 },
   },
   "hide": {
-    defenseBonuses: { armor: 3 },
-    resistanceBonuses: { physical: 1 },
+    defenseBonuses: { armor: 2 },
+    resistanceBonuses: { energy: 3, physical: 3 },
   },
   "feathers": {
     defenseBonuses: { armor: 3 },
-    resistanceBonuses: {},
+    resistanceBonuses: { energy: 1, physical: 1 },
   },
+  // Conflicts with body armor
   "carapace": {
     defenseBonuses: { armor: 4 },
     resistanceBonuses: { energy: 3, physical: 6 },
   },
+  "thick skin": {
+    defenseBonuses: { armor: 1 },
+    resistanceBonuses: { energy: 3, physical: 3 },
+  },
+  // Conflicts with body armor
   "outsider skin": {
     defenseBonuses: { armor: 4 },
     resistanceBonuses: { energy: 4, physical: 4 },
