@@ -75,4 +75,27 @@ aberrationInput.push({
   weight: "6,500 pounds",
 });
 
+aberrationInput.push({
+  armorInputs: [{ name: "carapace" }],
+  attackInputs: [
+    {
+      crit: "Each target is \\glossterm{confused} as a \\glossterm{condition}.",
+      defense: "mental",
+      hit: "Each target is \\glossterm{dazed} as a \\glossterm{condition}.",
+      name: "Confusing Gaze",
+      source: "magical",
+      target: "Each creature within a \\areamed cone",
+    },
+  ],
+  challengeRating: 2,
+  description: `
+    An umber hulk is a massive insectoid creature with bulging compound eyes that it uses to
+    confuse nearby creatures. Umber hulks are simple-minded and easily manipulated.
+  `,
+  level: 12,
+  name: "Umber Hulk",
+  size: "gargantuan",
+  startingAttributes: { str: 4, dex: 0, con: 3, int: -3, per: 0, wil: -3 },
+});
+
 export const aberrations = addType("aberration", aberrationInput);
