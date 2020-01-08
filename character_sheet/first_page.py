@@ -134,11 +134,6 @@ def damage_resistance():
     return flex_col({'class': 'damage-resistances'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Damage Resist')),
         "".join([
-            sidelabel('Global', number_input({
-                'disabled': True,
-                'name': 'global_damage_resistance_display',
-                'value': '@{global_damage_resistance}',
-            })),
             sidelabel('Physical', number_input({
                 'disabled': True,
                 'name': 'physical_damage_resistance_display',
@@ -153,6 +148,10 @@ def damage_resistance():
                 number_input_attributes={'name': 'damage_resistance_freeform'},
                 text_input_attributes={'name': 'damage_resistance_freeform_name'},
             ),
+            freeform_number_input(
+                number_input_attributes={'name': 'damage_resistance_freeform_2'},
+                text_input_attributes={'name': 'damage_resistance_freeform_name_2'},
+            ),
         ]),
     ])
 
@@ -160,11 +159,6 @@ def wound_resistance():
     return flex_col({'class': 'wound-resistances'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Wound Resist')),
         "".join([
-            sidelabel('Global', number_input({
-                'disabled': True,
-                'name': 'global_wound_resistance_display',
-                'value': '@{global_wound_resistance}',
-            })),
             sidelabel('Physical', number_input({
                 'disabled': True,
                 'name': 'physical_wound_resistance_display',
@@ -178,6 +172,10 @@ def wound_resistance():
             freeform_number_input(
                 number_input_attributes={'name': 'wound_resistance_freeform'},
                 text_input_attributes={'name': 'wound_resistance_freeform_name'},
+            ),
+            freeform_number_input(
+                number_input_attributes={'name': 'wound_resistance_freeform_2'},
+                text_input_attributes={'name': 'wound_resistance_freeform_name_2'},
             ),
         ]),
     ])
