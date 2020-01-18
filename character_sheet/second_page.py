@@ -47,13 +47,12 @@ def create_page(destination):
                 calc_magical_power(),
                 calc_mundane_power(),
                 calc_skill_points(),
-                flex_wrapper(div({'class': 'section-header'}, 'Defenses')),
-                calc_defenses(),
                 flex_wrapper(div({'class': 'section-header'}, 'Resistances')),
                 calc_base_resistances(),
-                calc_all_resistance_bonus(),
                 calc_energy_resistance_bonus(),
                 calc_physical_resistance_bonus(),
+                flex_wrapper(div({'class': 'section-header'}, 'Defenses')),
+                calc_defenses(),
             ]),
             flex_wrapper(div({'class': 'section-header skill-modifiers'}, 'Skill Modifiers')),
             flex_row({'class': 'skill-modifier-reminder'}, [
@@ -491,7 +490,7 @@ def calc_encumbrance():
     ])
 
 def calc_defenses():
-    return ''.join([
+    return div({'class': 'defenses'}, [
         calc_armor(),
         calc_fort(),
         calc_ref(),
@@ -643,6 +642,8 @@ def calc_armor():
                     'value': '@{dexterity_starting}',
                 })),
                 plus(),
+                underlabel('Class', number_input({'name': 'armor_defense_class_bonus'})),
+                plus(),
                 underlabel('Body', number_input({'name': 'body_armor_defense_value'})),
                 plus(),
                 underlabel('Shield', number_input({'name': 'shield_defense_value'})),
@@ -676,7 +677,7 @@ def calc_fort():
                 plus(),
                 underlabel('Class', number_input({'name': 'fortitude_class', 'value': '4'})),
                 plus(),
-                equation_misc_repeat('fortitude', 2)
+                equation_misc_repeat('fortitude', 3)
             ],
             result_attributes={
                 'disabled': 'true',
@@ -705,7 +706,7 @@ def calc_ref():
                 plus(),
                 underlabel('Class', number_input({'name': 'reflex_class', 'value': '4'})),
                 plus(),
-                equation_misc_repeat('reflex', 2)
+                equation_misc_repeat('reflex', 3)
             ],
             result_attributes={
                 'disabled': 'true',
@@ -734,7 +735,7 @@ def calc_mental():
                 plus(),
                 underlabel('Class', number_input({'name': 'mental_class', 'value': '4'})),
                 plus(),
-                equation_misc_repeat('mental', 2)
+                equation_misc_repeat('mental', 3)
             ],
             result_attributes={
                 'disabled': 'true',
