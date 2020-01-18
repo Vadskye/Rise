@@ -202,10 +202,10 @@ def level_scaling():
 def armor_defense():
     misc = get_misc_variables('armor_defense', 1)
     return js_wrapper(
-        ['level', 'dexterity_starting', 'body_armor_defense_value', 'shield_defense_value', *misc, 'challenge_rating', 'level_scaling'],
+        ['level', 'dexterity_starting', 'armor_defense_class_bonus', 'body_armor_defense_value', 'shield_defense_value', *misc, 'challenge_rating', 'level_scaling'],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
-            var before_equipment = level + dexterity_starting + cr_mod;
+            var before_equipment = level + dexterity_starting + cr_mod + armor_defense_class_bonus;
             var total = before_equipment + body_armor_defense_value + shield_defense_value + level_scaling + {sum_variables(misc)};
             setAttrs({{
                 armor_defense: total,
@@ -397,26 +397,26 @@ def base_damage_resistance():
         ['level'],
         f"""
             var base_damage_resistance = {{
-                1: 0,
-                2: 0,
-                3: 1,
-                4: 2,
-                5: 3,
-                6: 4,
-                7: 5,
-                8: 6,
-                9: 8,
-                10: 10,
-                11: 12,
-                12: 14,
-                13: 16,
-                14: 18,
-                15: 21,
-                16: 24,
-                17: 27,
-                18: 30,
-                19: 33,
-                20: 36,
+                1: 1,
+                2: 2,
+                3: 3,
+                4: 4,
+                5: 5,
+                6: 6,
+                7: 7,
+                8: 8,
+                9: 10,
+                10: 12,
+                11: 14,
+                12: 16,
+                13: 18,
+                14: 20,
+                15: 23,
+                16: 26,
+                17: 29,
+                18: 32,
+                19: 35,
+                20: 38,
             }}[level];
             setAttrs({{
                 base_damage_resistance,
