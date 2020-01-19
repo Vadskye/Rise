@@ -556,14 +556,14 @@ def generate_mystic_spheres():
             Spell('Dimensional Jaunt -- Plane of Fire', 4,  'One creature within \\rngmed range', """
                 You partially teleport the target into the Plane of Fire.
                 Make an attack vs. Mental against the target.
-                \\hit The target takes fire \\glossterm<standard damage> -2d and is \\glossterm<ignited> as a \\glossterm<condition>.
+                \\hit The target is \\glossterm<ignited>.
                 This condition can also be removed if the target makes a \\glossterm<difficulty rating> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
                 Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
-                \\crit As above, except that the target takes double damage and the condition cannot be removed with a \\glossterm<move action>.
+                \\crit As above, except that the condition cannot be removed with a \\glossterm<move action>.
 
                 \\rankline
-                \\rank<6> The damage increases to \\glossterm<standard damage> -1d.
-                \\rank<8> The damage increases to \\glossterm<standard damage>.
+                \\rank<6> The condition cannot be removed with a \\glossterm<move action>.
+                \\rank<8> The attack gains a +1 bonus to \\glossterm<accuracy>.
             """, tags=[]),
             Spell('Dimensional Jitter', 5, 'Yourself', """
                 At the end of each \\glossterm<phase>, you may choose to teleport 10 feet in a random direction.
@@ -2663,18 +2663,16 @@ def generate_mystic_spheres():
                 \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
                 \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
             """, tags=[]),
-            Spell('Ignition', 1, 'One creature within \\rngmed range', f"""
+            Spell('Ignition', 4, 'One creature within \\rngmed range', f"""
                 Make an attack vs. Reflex against the target.
                 \\hit The target is \\glossterm<ignited> as a \\glossterm<condition>.
                 This condition can be removed if the target makes a \\glossterm<difficulty rating> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
                 Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
-                The flames can also be extinguished if the target is drenched in water, takes at least 5 cold damage, or other similar effects.
-                \\crit As above, except that the condition cannot be removed without removing the \\glossterm<condition>.
+                \\crit As above, except that the condition cannot be removed with a \\glossterm<move action>.
 
                 \\rankline
-                \\rank<3> The \\glossterm<difficulty rating> to remove the condition increases to 15 and it can no longer be removed by drenching the target in water.
-                \\rank<5> The \\glossterm<difficulty rating> to remove the condition increases to 20 and it can no longer be removed by dealing cold damage to the target.
-                \\rank<7> The condition cannot be removed without effects that specifically remove conditions.
+                \\rank<6> The condition cannot be removed with a \\glossterm<move action>.
+                \\rank<8> The attack gains a +1 bonus to \\glossterm<accuracy>.
             """, tags=[]),
             Spell('Combustion', 1, 'One creature within \\rngmed range', """
                 You set the target on fire from the inside out.
@@ -2697,15 +2695,14 @@ def generate_mystic_spheres():
                 \\rank<6> The damage increases to \\glossterm<standard damage> +3d.
                 \\rank<8> The damage increases to \\glossterm<standard damage> +4d.
             """, tags=[]),
-            Spell('Heat Metal', 4, 'One creature within \\rngmed range', """
+            Spell('Heat Metal', 5, 'One creature within \\rngmed range', """
                 Make an attack vs. Fortitude against the target.
                 This attack automatically misses if the target is not wearing metal armor, wielding a metal weapon, or significantly composed of metal.
                 \\hit The target is \\glossterm<ignited> as a \\glossterm<condition>.
                 The condition can be removed if the target stops touching or being composed of metal of any kind.
 
                 \\rankline
-                \\rank<6> The attack gains a +1 bonus to \\glossterm<accuracy>.
-                \\rank<8> The accuracy bonus increases to +2.
+                \\rank<7> The attack gains a +1 bonus to \\glossterm<accuracy>.
             """, tags=[]),
             Spell('Flame Breath', 4, ['Yourself', 'Everything within a \\arealarge cone'], """
                 As a standard action, you can breathe fire like a dragon.
@@ -3160,9 +3157,9 @@ def generate_mystic_spheres():
                 \\rank<6> The creature gains a +1 bonus to \\glossterm<accuracy>.
                 \\rank<8> The accuracy bonus increases to +2.
             """, tags=['Attune (self)', 'Manifestation']),
-            Spell('Summon Fire Elemental', 6, 'One unoccupied square on stable ground within \\rngmed range', """
+            Spell('Summon Fire Elemental', 5, 'One unoccupied square on stable ground within \\rngmed range', """
                 This spell functions like the \\spell<summon monster> spell, except that the summoned creature appears to be a fire elemental and deals fire damage.
-                When it deals fire damage to a creature, that creature is \\glossterm<ignited> as a \\glossterm<condition>.
+                When it deals fire damage to a creature with a \\glossterm<critical hit>, that creature is \\glossterm<ignited> as a \\glossterm<condition>.
                 This condition can be removed if the target makes a \\glossterm<difficulty rating> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
                 Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
                 The flames can also be extinguished if the target is drenched in water, takes at least 5 cold damage, or other similar effects.
@@ -3170,7 +3167,7 @@ def generate_mystic_spheres():
                 In addition, the fire elemental is immune to fire damage.
 
                 \\rankline
-                \\rank<8> The creature gains a +1 bonus to \\glossterm<accuracy>.
+                \\rank<7> The creature gains a +1 bonus to \\glossterm<accuracy>.
             """, tags=['Attune (self)', 'Manifestation']),
             Spell('Summon Bear', 3, 'One unoccupied square on stable ground within \\rngmed range', """
                 This spell functions like the \\spell<summon monster> spell, except that the creature appears to be a Medium bear.
