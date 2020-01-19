@@ -878,14 +878,14 @@ You must be able to move to teleport in this way, so effects like being \glosste
 \target{One creature within \rngmed range}
 You partially teleport the target into the Plane of Fire.
 Make an attack vs. Mental against the target.
-\hit The target takes fire \glossterm{standard damage} \minus2d and is \glossterm{ignited} as a \glossterm{condition}.
+\hit The target is \glossterm{ignited}.
 This condition can also be removed if the target makes a \glossterm{difficulty rating} 10 Dexterity check as a \glossterm{move action} to put out the flames.
 Dropping \glossterm{prone} as part of this action gives a \plus5 bonus to this check.
-\crit As above, except that the target takes double damage and the condition cannot be removed with a \glossterm{move action}.
+\crit As above, except that the condition cannot be removed with a \glossterm{move action}.
 
 \rankline
-\rank{6} The damage increases to \glossterm{standard damage} \minus1d.
-\rank{8} The damage increases to \glossterm{standard damage}.
+\rank{6} The condition cannot be removed with a \glossterm{move action}.
+\rank{8} The attack gains a \plus1 bonus to \glossterm{accuracy}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -4217,25 +4217,6 @@ Make an attack vs. Armor against the target.
 
 
 
-\lowercase{\hypertarget{spell:Ignition}{}}\label{spell:Ignition}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Ignition}{Ignition}}[\glossterm{Focus}]
-\target{One creature within \rngmed range}
-Make an attack vs. Reflex against the target.
-\hit The target is \glossterm{ignited} as a \glossterm{condition}.
-This condition can be removed if the target makes a \glossterm{difficulty rating} 10 Dexterity check as a \glossterm{move action} to put out the flames.
-Dropping \glossterm{prone} as part of this action gives a \plus5 bonus to this check.
-The flames can also be extinguished if the target is drenched in water, takes at least 5 cold damage, or other similar effects.
-\crit As above, except that the condition cannot be removed without removing the \glossterm{condition}.
-
-\rankline
-\rank{3} The \glossterm{difficulty rating} to remove the condition increases to 15 and it can no longer be removed by drenching the target in water.
-\rank{5} The \glossterm{difficulty rating} to remove the condition increases to 20 and it can no longer be removed by dealing cold damage to the target.
-\rank{7} The condition cannot be removed without effects that specifically remove conditions.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Inferno}{}}\label{spell:Inferno}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Inferno}{Inferno}}[\glossterm{Focus}]
 \targets{Everything in a \areamed radius from you}
@@ -4335,22 +4316,6 @@ When you do, make an attack vs Armor against each secondary target.
 
 
 
-\lowercase{\hypertarget{spell:Heat Metal}{}}\label{spell:Heat Metal}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Heat Metal}{Heat Metal}}[\glossterm{Focus}]
-\target{One creature within \rngmed range}
-Make an attack vs. Fortitude against the target.
-This attack automatically misses if the target is not wearing metal armor, wielding a metal weapon, or significantly composed of metal.
-\hit The target is \glossterm{ignited} as a \glossterm{condition}.
-The condition can be removed if the target stops touching or being composed of metal of any kind.
-
-\rankline
-\rank{6} The attack gains a \plus1 bonus to \glossterm{accuracy}.
-\rank{8} The accuracy bonus increases to \plus2.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Heat Wave}{}}\label{spell:Heat Wave}
 \begin{freeability}[Rank 4]{\hypertarget{spell:Heat Wave}{Heat Wave}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
 \targetrule
@@ -4360,6 +4325,23 @@ After one minute, the temperature increases by 50 degrees Fahrenheit, to a maxim
 \rankline
 \rank{6} The temperature increases by 100 degrees, to a maximum of 160 degrees.
 \rank{8} The temperature increases by 150 degrees, to a maximum of 180 degrees.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Ignition}{}}\label{spell:Ignition}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Ignition}{Ignition}}[\glossterm{Focus}]
+\target{One creature within \rngmed range}
+Make an attack vs. Reflex against the target.
+\hit The target is \glossterm{ignited} as a \glossterm{condition}.
+This condition can be removed if the target makes a \glossterm{difficulty rating} 10 Dexterity check as a \glossterm{move action} to put out the flames.
+Dropping \glossterm{prone} as part of this action gives a \plus5 bonus to this check.
+\crit As above, except that the condition cannot be removed with a \glossterm{move action}.
+
+\rankline
+\rank{6} The condition cannot be removed with a \glossterm{move action}.
+\rank{8} The attack gains a \plus1 bonus to \glossterm{accuracy}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -4397,6 +4379,21 @@ It is immune to most forms of attack, but it can be destroyed by \glossterm{cold
 \rankline
 \rank{6} The damage increases to \glossterm{standard damage} \plus1d.
 \rank{8} The damage increases to \glossterm{standard damage} \plus2d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Heat Metal}{}}\label{spell:Heat Metal}
+\begin{freeability}[Rank 5]{\hypertarget{spell:Heat Metal}{Heat Metal}}[\glossterm{Focus}]
+\target{One creature within \rngmed range}
+Make an attack vs. Fortitude against the target.
+This attack automatically misses if the target is not wearing metal armor, wielding a metal weapon, or significantly composed of metal.
+\hit The target is \glossterm{ignited} as a \glossterm{condition}.
+The condition can be removed if the target stops touching or being composed of metal of any kind.
+
+\rankline
+\rank{7} The attack gains a \plus1 bonus to \glossterm{accuracy}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -5022,6 +5019,24 @@ It has two additional \glossterm{hit points}, a bonus to \glossterm{resistances}
 
 
 
+\lowercase{\hypertarget{spell:Summon Fire Elemental}{}}\label{spell:Summon Fire Elemental}
+\begin{attuneability}[Rank 5]{\hypertarget{spell:Summon Fire Elemental}{Summon Fire Elemental}}[\glossterm{Attune} (self), \glossterm{Focus}, \glossterm{Manifestation}]
+\target{One unoccupied square on stable ground within \rngmed range}
+This spell functions like the \spell{summon monster} spell, except that the summoned creature appears to be a fire elemental and deals fire damage.
+When it deals fire damage to a creature with a \glossterm{critical hit}, that creature is \glossterm{ignited} as a \glossterm{condition}.
+This condition can be removed if the target makes a \glossterm{difficulty rating} 10 Dexterity check as a \glossterm{move action} to put out the flames.
+Dropping \glossterm{prone} as part of this action gives a \plus5 bonus to this check.
+The flames can also be extinguished if the target is drenched in water, takes at least 5 cold damage, or other similar effects.
+
+In addition, the fire elemental is immune to fire damage.
+
+\rankline
+\rank{7} The creature gains a \plus1 bonus to \glossterm{accuracy}.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Summon Pegasus}{}}\label{spell:Summon Pegasus}
 \begin{attuneability}[Rank 5]{\hypertarget{spell:Summon Pegasus}{Summon Pegasus}}[\glossterm{Attune} (target), \glossterm{Focus}, \glossterm{Manifestation}]
 \target{One unoccupied location on stable ground within \rngmed range}
@@ -5047,24 +5062,6 @@ Each creature obeys your command to the extent it can.
 
 \rankline
 \rank{7} The creature gains a \plus1 bonus to \glossterm{accuracy}.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Summon Fire Elemental}{}}\label{spell:Summon Fire Elemental}
-\begin{attuneability}[Rank 6]{\hypertarget{spell:Summon Fire Elemental}{Summon Fire Elemental}}[\glossterm{Attune} (self), \glossterm{Focus}, \glossterm{Manifestation}]
-\target{One unoccupied square on stable ground within \rngmed range}
-This spell functions like the \spell{summon monster} spell, except that the summoned creature appears to be a fire elemental and deals fire damage.
-When it deals fire damage to a creature, that creature is \glossterm{ignited} as a \glossterm{condition}.
-This condition can be removed if the target makes a \glossterm{difficulty rating} 10 Dexterity check as a \glossterm{move action} to put out the flames.
-Dropping \glossterm{prone} as part of this action gives a \plus5 bonus to this check.
-The flames can also be extinguished if the target is drenched in water, takes at least 5 cold damage, or other similar effects.
-
-In addition, the fire elemental is immune to fire damage.
-
-\rankline
-\rank{8} The creature gains a \plus1 bonus to \glossterm{accuracy}.
 \end{attuneability}
 \vspace{0.25em}
 
