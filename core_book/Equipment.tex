@@ -54,12 +54,12 @@
         You can also hold a medium weapon in two hands.
         If you have a Strength of \minus1 or lower, you cannot wield a medium weapon in only one hand.
         While you hold a medium weapon in two hands, you gain a \plus1d bonus to damage with the weapon.
-        Changing grips to hold it in one hand or two hands can be done as a \glossterm{move action}.
+        Changing grips to hold it in one hand or two hands can be done as a \glossterm{free action} that requires both hands.
 
         \parhead{Heavy Weapon} Two hands are normally required to wield a heavy weapon.
         Heavy weapons tend to have higher damage than lighter weapons.
         If you have a Strength of 5 or higher, you can wield a heavy weapon in one hand, but you take a \minus1 penalty to \glossterm{accuracy} and a \minus1d penalty to damage with the weapon while doing so.
-        Changing grips to hold it in one hand or two hands can be done as a \glossterm{move action}.
+        Changing grips to hold it in one hand or two hands can be done as a \glossterm{free action} that requires both hands.
 
         % TODO: explain how double weapons work
 
@@ -100,11 +100,10 @@
         To determine the size category and appropriate damage for an improvised weapon, compare its relative size and damage potential to the weapon list to find a reasonable match. An improvised weapon will generally deal damage as if it were one size category smaller than a similar manufactured weapon. An improvised thrown weapon has a range increment of 10 feet.
 
     \subsection{Drawing and Sheathing Weapons}\label{Drawing and Sheathing Weapons}
-        Sheathing any weapon is a move action.
-        The time it takes to draw a weapon depends on how encumbering the weapon is.
-        You can draw a \glossterm{light weapon} as a \glossterm{free action} once per round.
-        You can draw any non-hidden weapon as a \glossterm{move action}.
-        You can draw a hidden weapon as a \glossterm{standard action}.
+        Drawing and sheathing weapons always requires the hand or hands used to hold the weapon.
+        The time it takes to draw and sheathe a weapon depends on how encumbering the weapon is.
+        You can draw or sheathe a \glossterm{light weapon} or \glossterm{medium weapon} as a \glossterm{free action}.
+        You can draw or sheathe a \glossterm{heavy weapon} or \glossterm{hidden weapon} as a \glossterm{standard action}.
 
     \subsection{Natural Weapons}\label{Natural Weapons}
         Every creature can attack with its body using an unarmed strike. Many monsters can attack more effectively with specific parts of their body, such as teeth and claws. These are called natural weapons. You are automatically proficient with any natural weapons you possess. Most humanoids possess no natural weapons. Natural weapons are described on \tref{Natural Weapons}.
@@ -313,7 +312,7 @@
         This is called ``long hafting''.
         While long hafting a Long weapon, you can use it to attack at double your natural \glossterm{reach} (so 10 feet for a typical Small or Medium creature).
         However, you take a \minus2 penalty to \glossterm{accuracy} with the weapon.
-        You can change your grip as a \glossterm{move action}.
+        You can change your grip as a \glossterm{free action} that requires the hand or hands used to hold the weapon.
         \parhead{Mounted}\label{Mounted Weapon} If you are mounted, and mount moves in the same phase that you make a \glossterm{strike} with a Mounted weapon, you gain a \plus1d bonus to damage with the strike.
         You take a \minus1d penalty to damage with Mounted weapons while not mounted.
         \parhead{Projectile} This weapon fires projectiles at range. Projectile weapons have a \glossterm{range increment} listed in their description, which indicates the distance they can be easily fired. Projectile weapons must be reloaded. The time required to reload a projectile weapon is given in the weapon description.
@@ -324,7 +323,7 @@
         Reach weapons can held using a different grip to strike nearby foes.
         This is called ``short hafting''.
         While short hafting a Reach weapon, you ignore the weapon's Reach property, but you take a \minus2 penalty to accuracy with it.
-        You can change your grip as a \glossterm{move action}.
+        You can change your grip as a \glossterm{free action} that requires the hand or hands used to hold the weapon.
         \parhead{Sweeping} When you make a \glossterm{strike} with this weapon, you may also target one or more secondary creatures or objects you \glossterm{threaten}.
         Each additional target must be within 5 feet of the primary target.
         The description indicates how many additional secondary targets are affected by the strike.
@@ -339,11 +338,11 @@
         Some weapons in \trefnp{Weapons} have additional abilities which are described below.
         \parhead{Claw Sheath} A claw sheath is not a weapon in itself, but a covering over a single claw that a creature can use to make claw attacks. Claw sheaths do not grant a creature without claws a claw attack. Normally, a sheath does not improve the claw attack, but magical claw sheaths can be made which grant bonuses to attacks made with the claw. It may be possible to find or craft unusual sheaths for natural weapons other than claws.
         \parhead{Constrict} This \glossterm{natural weapon} can only be used against a foe you are grappling with (see \pcref{Grappling}).
-        \parhead{Crossbow, Hand} You can draw a hand crossbow back by hand. Loading a hand crossbow is a move action that requires one hand (but not the hand wielding the crossbow).
+        \parhead{Crossbow, Hand} You can draw a hand crossbow back by hand. Loading a hand crossbow is a \glossterm{free action} that requires one hand (but not the hand wielding the crossbow).
         \par You can fire a crossbow while \prone without penalty.
         \parhead{Crossbow, Heavy} You draw a heavy crossbow back by turning a small winch. Loading a heavy crossbow is a standard action that requires both hands.
         \par You can fire a crossbow while \prone without penalty.
-        \parhead{Crossbow, Light} You draw a light crossbow back by pulling a lever. Loading a light crossbow is a move action that requires both hands.
+        \parhead{Crossbow, Light} You draw a light crossbow back by pulling a lever. Loading a light crossbow is a \glossterm{free action} that requires both hands.
         \par You can fire a crossbow while \prone without penalty.
         \parhead{Crossbow, Repeating} The repeating crossbow (whether heavy or light) holds 5 crossbow bolts. As long as it holds bolts, you can reload it as a \glossterm{free action} by pulling the reloading lever. Loading a new case of 5 bolts is a \glossterm{standard action} that requires both hands.
         \par You can fire a crossbow while \prone without penalty.
@@ -434,16 +433,16 @@
         \parhead{Weight} This column gives the weight of the armor sized for a Medium wearer. Armor fitted for Small characters weighs half as much, and armor for Large characters weighs twice as much.
 
     \subsection{Getting Into And Out Of Armor}
-        The time required to don armor depends on its type; see \trefnp{Donning Armor}. Donning armor of any kind takes both hands.
-        \parhead{Don} This column tells how long it takes a character to put the armor on. (One minute is 10 rounds.) Readying (strapping on) a shield is only a move action.
+        The time required to don armor depends on its type; see \trefnp{Donning Armor}. Donning and removing body armor and shields takes both hands.
+        \parhead{Don} This column tells how long it takes a character to put the armor on. (One minute is 10 rounds.) Readying (strapping on) a shield is a \glossterm{free action}.
         \parhead{Don Hastily} This column tells how long it takes to put the armor on in a hurry. The \glossterm{encumbrance} and defense bonus for hastily donned armor are each 1 point worse than normal.
-        \parhead{Remove} This column tells how long it takes to get the armor off. Loosing a shield (removing it from the arm and dropping it) is only a move action.
+        \parhead{Remove} This column tells how long it takes to get the armor off. Loosing a shield (removing it from the arm and dropping it) is a \glossterm{free action}.
 
         \begin{dtable}
             \lcaption{Donning Armor}
             \begin{dtabularx}{\columnwidth}{>{\lcol}X c c c}
                 \tb{Armor Type} & \tb{Don} & \tb{Don Hastily} & \tb{Remove} \tableheaderrule
-                Shield (any)      & 1 move action   & n/a             & 1 move action           \\
+                Shield (any)      & 1 free action   & n/a             & 1 free action           \\
                 Light body armor  & 1 minute        & 5 rounds        & 1 minute\fn{1}          \\
                 Medium body armor & 4 minutes\fn{1} & 1 minute        & 1 minute\fn{1}          \\
                 Heavy body armor & 4 minutes\fn{2} & 4 minutes\fn{1} & 1d4\plus1 minutes\fn{1} \\
