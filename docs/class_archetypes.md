@@ -134,7 +134,7 @@ Beastmaster -> Statistic Boost
 Combat Discipline -> Focus Standard Ability
 Equipment Training -> Statistic Boost
 Martial Mastery -> Insight Ability (+power)
-Battle Leader -> Insight Ability
+Tactician -> Insight Ability
 
 ## Mage
 

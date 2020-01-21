@@ -935,7 +935,7 @@ def generate_mystic_spheres():
                 \\rank<5> The bonus increases to +6.
                 \\rank<7> The bonus increases to +8.
             """, tags=['Attune (target)']),
-            Spell('Blessing of Endurance', 1, 'Yourself or an \\glossterm<ally> wihtin \\rngclose range', """
+            Spell('Blessing of Endurance', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 The target increases its maximum \\glossterm<hit points> by one and regains one \\glossterm<hit point>.
                 When this ability ends, the target loses \\glossterm<hit points> equal to the number of hit points it regained this way and its maximum \\glossterm<hit points> are restored to normal.
 

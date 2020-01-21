@@ -687,7 +687,7 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Focused Strike',
-        short_description='You concentrate to strike a critical blow.',
+        short_description='You concentrate to strike a critical blow',
         target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a melee \\glossterm<strike> with a \\minus1d penalty to damage.
