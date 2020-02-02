@@ -9,7 +9,7 @@ This chapter describes each skill, including common uses for those skills.
 
     \subsection{Skill Points}\label{Skill Points}
 
-        At 1st level, you gain ten skill points.
+        At 1st level, you gain eight skill points.
         Skill points can be spent to improve your abilities with particular skills (see Skill Training, below).
         Unless otherwise noted, skill points can be spent to improve any skill.
 
@@ -20,18 +20,18 @@ This chapter describes each skill, including common uses for those skills.
     \subsection{Skill Training}\label{Skill Training}
 
         You can spend skill points to become \glossterm{trained} or \glossterm{mastered} in skills.
-        Your level of training determines your base modifier for attacks and checks using that skill, as described below.
+        Your level of training can grant you a bonus to attacks and checks using that skill, as described below.
         If you are already \glossterm{trained} in a skill, you only pay the difference in skill point costs to become \glossterm{mastered} in that skill.
 
         \begin{itemize}
             \itemhead{Untrained} Becoming untrained in a skill costs no skill points.
                 You are untrained in all skills by default.
-                Your modifier with an untrained skill is equal to half the skill's \glossterm{key attribute}.
-                If the skill does not have a key attribute, your modifier is \plus0.
+                Being untrained in a skill grants no bonus to the skill.
             \itemhead{Trained} Becoming trained in a skill costs one skill point.
-                Your modifier with a trained skill is equal to either the skill's \glossterm{key attribute} (if any) or 1 \add half your level, whichever is higher.
+                In addition, if the base value for one of your attributes is at least 2, you become trained in all skills associated with that attribute.
+                Being trained in a skill gives you a bonus with the skill equal to 2 \add half your level.
             \itemhead{Mastered} Mastering a skill costs three skill points, or two skill points if the skill is a \glossterm{class skill} for you.
-                Your modifier with a mastered skill is equal to either 4 \add the skill's key attribute (if any) or 4 \add your level, whichever is higher.
+                Being mastered in a skill gives you a bonus with the skill equal to 3 \add your level.
         \end{itemize}
 
     \subsection{Skill Modifier}\label{Skill Modifier}
@@ -39,10 +39,15 @@ This chapter describes each skill, including common uses for those skills.
         Your bonus with a skill is calculated as follows:
 
         \begin{figure}[h]
-            \centering Training modifier (see \pcref{Skill Training}) \add other bonuses and penalties
+            \centering Training bonus (see \pcref{Skill Training}) \add base value of \glossterm{key attribute} \add other bonuses and penalties
         \end{figure}
 
         \subparhead{Bonuses and Penalties} Species abilities, class abilities, penalties from \glossterm{encumbrance}, and other effects can increase or decrease your bonus with a skill.
+
+    \subsection{Key Attributes With Skills}\label{Key Attributes With Skills}
+        Most skills have a single \glossterm{key attribute} they are associated with.
+        You gain a bonus or penalty to attacks and checks with each skill equal to your base value with that skill's key attribute.
+        In addition, if your base value for an attribute is at least 2, you are automatically trained in all of that attribute's skills.
 
     \subsection{Class Skills}
 
