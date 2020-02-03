@@ -219,12 +219,9 @@ It defines how attributes work and explains how to make attacks in combat.
                 \item Strength determines how much you can carry (see \tref{Carrying Capacity by Strength}).
                 \item You apply your base Strength as a bonus or penalty to Strength-based \glossterm{skills}: Climb, Jump, and Swim (see \pcref{Skills}).
                 \item If your base Strength is at least 2, you are \glossterm{trained} with Strength-based skills.
+                \item You apply your base Strength as a bonus or penalty to \glossterm{power} with \glossterm{mundane} abilities, such as \glossterm{strikes} (see \pcref{Power}).
                 \item You reduce your \glossterm{encumbrance} from \glossterm{body armor} by an amount equal to your base Strength (see \pcref{Encumbrance}).
-                % TODO: wording
-                \item If your Strength is negative, you take a penalty to \glossterm{power} with \glossterm{mundane} abilities equal to your Strength.
             \end{itemize}
-
-            If you have a high Strength, you can use it to determine your \glossterm{power} with most \glossterm{mundane} abilities, such as \glossterm{strikes} (see \pcref{Power}).
         }
 
         \parhead{Dexterity (Dex)}\label{Dexterity}
@@ -275,9 +272,8 @@ It defines how attributes work and explains how to make attacks in combat.
                 \item You apply your Perception as a bonus or penalty to Perception-based \glossterm{skills}: Awareness, Creature Handling, Sense Motive, Spellcraft, and Survival (see \pcref{Skills}).
                 \item If your base Perception is at least 2, you are automatically \glossterm{trained} with Perception-based skills.
                 \item If your Perception is negative, you take a penalty to accuracy with all attacks equal to half your Perception.
+                \item You apply half your base Perception as a bonus or penalty to \glossterm{accuracy} with all attacks (see \pcref{Accuracy}).
             \end{itemize}
-
-            If you have a high Perception, you can use it to determine your \glossterm{accuracy} with all attacks (see \pcref{Accuracy}).
         }
 
         \parhead{Willpower (Wil)}\label{Willpower}
@@ -286,10 +282,8 @@ It defines how attributes work and explains how to make attacks in combat.
             It has the following effects:
             \begin{itemize}
                 \item You gain a bonus (or penalty) to your Mental defense equal to your base Willpower.
-                \item If your Willpower is negative, you take a penalty to \glossterm{power} with \glossterm{magical} abilities equal to your Willpower.
+                \item You apply your base Willpower as a bonus or penalty to \glossterm{power} with \glossterm{magical} abilities, such as \glossterm{spells} (see \pcref{Power}).
             \end{itemize}
-
-            If you have a high Willpower, you can use it to determine your \glossterm{power} with most \glossterm{magical} abilities (see \pcref{Power}).
         }
 
     \subsection{Base Attributes}\label{Base Attributes}
@@ -401,10 +395,10 @@ It defines how attributes work and explains how to make attacks in combat.
         Unless an ability specifies otherwise, its \glossterm{power} depends on whether it is \glossterm{magical} or \glossterm{mundane}.
 
         \parhead{Magical Abilities}
-        Your power with magical abilities is normally equal to the higher of your level and your Willpower.
+        Your power with magical abilities is normally equal to your level \add your base Willpower.
 
         \parhead{Mundane Abilities}
-        Your power with mundane abilities is normally equal to the higher of your level and your Strength.
+        Your power with mundane abilities is normally equal to your level \add your base Strength.
 
     \subsection{Damage}\label{Damage}
         Many attacks deal damage when they hit.
