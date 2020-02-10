@@ -68,7 +68,7 @@ Note: This is duplicated in the Metacaster feat.
   * List: dazed, fatigued, sickened, slowed
 * Rank 2
   * Generally give -4 to a category (accuracy/defenses)
-  * List: exhausted, frightened, nauseated, generic -2 to all, ignited (move action to remove), 
+  * List: exhausted, frightened, nauseated, generic -2 to all, ignited (move action to remove), stunned
 * Rank 3
   * Generally cause partial action denial
   * List: decelerated, confused, blinded, disoriented, ignited, immobilized, panicked
