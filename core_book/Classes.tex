@@ -2530,14 +2530,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Rogue Progression}
         \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Assassin}               & \tb{Combat Trickster} & \tb{Jack of All Trades} & \tb{Suave Scoundrel} \tableheaderrule
-            1 & Sneak attack                & Tricky manuevers    & Skill lore             & Confound         \\
-            2 & Evasion                     & Trick lore          & Skill exemplar         & Glibness         \\
-            3 & Darkstalker                 & Trick power         & Dabbler                & Distract         \\
-            4 & Hide in plain sight         & Trick manuever      & Skill lore             & Suave lore       \\
-            5 & Greater evasion             & Greater trick lore  & Greater skill exemplar & Greater glibness \\
-            6 & Assassination               & Greater trick power & Greater dabbler        & Compel belief    \\
-            7 & Greater hide in plain sight & Trick maneuver      & Master of masteries    & Slippery mind    \\
-            8 & Greater darkstalker         &                     &                        &                  \\
+            1         & Sneak attack                & Tricky manuevers      & Skill lore              & Confound         \\
+            2         & Evasion                     & Trick lore            & Skill exemplar          & Glibness         \\
+            3         & Darkstalker                 & Trick power           & Dabbler                 & Distract         \\
+            4         & Hide in plain sight         & Trick manuever        & Skill lore              & Suave lore       \\
+            5         & Greater evasion             & Greater trick lore    & Greater skill exemplar  & Greater glibness \\
+            6         & Assassination               & Greater trick power   & Greater dabbler         & Compel belief    \\
+            7         & Greater hide in plain sight & Trick maneuver        & Master of masteries     & Slippery mind    \\
+            8         & Greater darkstalker         &                       &                         &                  \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -2611,6 +2611,164 @@ This choice determines a great deal about your character's abilities.
         \cf{Rog}[7]{Greater Hide in Plain Sight} Creatures observing you while you try to hide gain a \plus5 bonus to checks to notice you instead of a \plus10 bonus.
 
         \cf{Rog}[8]{Greater Darkstalker}[Magical] When you use your \textit{darkstalker} ability, you become undetectable by all of the listed senses, not just one.
+
+    \subsection{Bard}
+        This archetype grants you the ability to inspire your allies and impair your foes with musical performances.
+
+        \cf{Rog}{1}{Bardic Performances}
+        You learn two \textit{bardic performances} from the list below.
+        You can also spend \glossterm{insight points} to learn one additional bardic performance per \glossterm{insight point}.
+        As a \glossterm{standard action}, you can use any bardic performance you know.
+
+        All \textit{bardic performances} have the \glossterm{Auditory} and \glossterm{Sustain} (minor) tags.
+        When you use a \textit{bardic performance} ability, you begin a performance using one of your Perform skills.
+        You must be \glossterm{trained} with a Perform skill capable of making an auditory performance to use a bardic performance ability.
+        If you are \glossterm{mastered} with an appropriate Perform skill, you gain a \plus2 bonus to \glossterm{accuracy} with the ability.
+
+        The names of bardic performances do not have to precisely match your actual performance.
+        Your performance must simply match the tag of the ability.
+        For example, you can use the \textit{palliative poem} ability with a gentle song using Perform (wind instruments) or a distracting joke using Perform (comedy) instead of a poem.
+        {
+            \begin{freeability}{Ballad of Belligerence}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
+                \target{All \glossterm{enemies} in a \areasmall radius from you}
+                Make an attack vs. Mental against the target.
+                \hit Each target is unable to take any \glossterm{standard actions} that do not cause it to make an attack.
+                For example, a target could make a \glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
+
+                \rankline
+                \rank{3} The area increases to a \areamed radius.
+                \rank{5} The area increases to a \arealarge radius.
+                \rank{7} The area increases to a \areahuge radius.
+            \end{freeability}
+
+            \begin{freeability}{Cacaphony}[\glossterm{Auditory}]
+                \targets{All \glossterm{enemies} within a \areasmall radius from you}
+                Make an attack vs. Fortitude against each target.
+                \hit Each target takes energy \glossterm{standard damage} \minus1d.
+
+                \rankline
+                \rank{3} The area increases to a \areamed radius.
+                \rank{5} The area increases to a \arealarge radius.
+                \rank{7} The area increases to a \areahuge radius.
+            \end{freeability}
+
+            \begin{freeability}{Cleansing Counterpoint}[\glossterm{Auditory}]
+                \target{One \glossterm{ally} within \rngmed range}
+                The target can remove its most recent \glossterm{condition}.
+                This can only remove a condition applied during the previous round.
+
+                \rankline
+                \rank{3} The target can remove a condition applied during any previous round, but not during the current round.
+                \rank{5} The target can remove its two most recent conditions.
+                \rank{7} The target can remove its three most recent conditions.
+            \end{freeability}
+
+            \begin{freeability}{Courageous Cadenza}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
+                \target{One \glossterm{ally} within \rngmed range}
+                The target gains a \plus1 \glossterm{magic bonus} to \glossterm{accuracy}.
+
+                \rankline
+                \rank{3} The target also gains a \plus2 \glossterm{magic bonus} to Mental defense.
+                \rank{5} The accuracy bonus increases to \plus2.
+                \rank{7} The bonus to Mental defense increases to \plus4.
+            \end{freeability}
+
+            \begin{freeability}{Dizzying Ditty}[\glossterm{Auditory}, \glossterm{Compulsion}, \glossterm{Sustain} (minor)]
+                \target{One creature within \rngmed range}
+                Make an attack vs. Mental against the target.
+                \hit The target is \glossterm{dazed}.
+
+                \rankline
+                \rank{3} On a \glossterm{critical hit}, the target is \glossterm{stunned}.
+                \rank{5} The target is stunned instead of dazed.
+                \rank{7} On a critical hit, the target is \glossterm{confused}.
+            \end{freeability}
+
+            \begin{freeability}{Dirge of Doom}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
+                \target{One creature within \rngmed range}
+                Make an attack vs. Mental against the target.
+                \hit The target is treated as having two fewer \glossterm{hit points} than normal for the purpose of determining whether it is \glossterm{bloodied}.
+
+                \rankline
+                \rank{3} On a \glossterm{critical hit}, the target is \glossterm{bloodied} regardless of its hit point total.
+                \rank{5} The hit point reduction increases to four.
+                \rank{7} The target is \glossterm{bloodied} regardless of its hit point total.
+            \end{freeability}
+
+            \begin{freeability}{Frightening Fugue}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
+                \target{One creature within \rngmed range}
+                Make an attack vs. Mental against the target.
+                \hit The target is \glossterm{shaken}.
+
+                \rankline
+                \rank{3} On a \glossterm{critical hit}, the target is \glossterm{frightened}.
+                \rank{5} The target is frightened instead of shaken.
+                \rank{7} On a critical hit, the target is \glossterm{panicked}.
+            \end{freeability}
+
+            \begin{freeability}{Heroic Hymn}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
+                \target{One \glossterm{ally} within \rngmed range}
+                The target increases its maximum \glossterm{hit points} by one and regains that many hit points.
+                When this effect ends, the target loses hit points equal to the hit points it regained this way.
+
+                \rankline
+                \rank{3} The number of additional hit points increases to two.
+                \rank{5} The number of additional hit points increases to three.
+                \rank{7} The number of additional hit points increases to four.
+            \end{freeability}
+
+            \begin{freeability}{Mesmerizing Melody}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
+                \targets{All creatures in a \areasmall radius within \rngmed range}
+                Make an attack vs. Mental against each target.
+                \hit Each target is \fascinated by you.
+                Any act by you or your apparent allies that damages a target or that causes it to feel that it is in danger breaks the effect for that creature.
+                An observant target may interpret overt threats to its allies as a threat to itself.
+
+                \rankline
+                \rank{3} The area increases to a \areamed radius.
+                \rank{5} The range increases to \rnglong.
+                \rank{7} The area increases to a \arealarge radius.
+            \end{freeability}
+
+            \begin{freeability}{Palliative Poem}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
+                \targets{All \glossterm{allies} within a \areamed radius from you}
+                Each target is immune to being \glossterm{bloodied}.
+
+                \rankline
+                \rank{3} The area increases to a \arealarge radius.
+                \rank{5} The area increases to a \areahuge radius.
+                \rank{7} The area increases to a \areaext radius.
+            \end{freeability}
+
+            \begin{freeability}{Suggestive Serenade}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
+                \target{One creature within \rngmed range}
+                \hit The target is \glossterm{charmed} by you.
+                Any act by you or by creatures that appear to be your allies that threatens or damages the \glossterm{charmed} person breaks the effect.
+                An observant target may interpret overt threats to its allies as a threat to itself.
+                This ability does not have the \glossterm{Subtle} tag, so an observant target may notice it is being influenced.
+
+                \rankline
+                \rank{3} The ability targets all creatures in a \areasmall radius within \rngmed range.
+                \rank{5} The area increases to a \areamed radius.
+                \rank{7} The area increases to a \arealarge radius.
+            \end{freeability}
+        }
+
+        \cf{Rog}[2]{Bardic Lore} You gain two additional skill points.
+        In addition, you gain a \plus2 bonus to all Knowledge skills and gain all Knowledge skills as \glossterm{class skills}.
+
+        \cf{Rog}[3]{Bardic Combat Training} You gain a \plus1 bonus to Armor defense.
+
+        \cf{Rog}[4]{Bardic Performance}
+        You learn an additional bardic performance.
+
+        \cf{Rog}[5]{Dual Performance}
+        Once per round, you can \glossterm{sustain} two bardic performances as a single \glossterm{minor action}.
+
+        \cf{Rog}[6]{Loremaster} The skill bonus from your \textit{bardic lore} ability increases to \plus5.
+
+        \cf*{Rog}[7]{Bardic Performance}
+        You learn an additional bardic performance.
 
     \subsection{Combat Trickster}
         This archetype grants you abilities to use in combat and improves your combat prowess.
@@ -2706,35 +2864,6 @@ This choice determines a great deal about your character's abilities.
         \end{freeability}
 
         \cf{Rog}[7]{Slippery Mind} The bonus from your \textit{slippery mind} ability increases to \plus4.
-
-    % \subsection{Bard}
-    %     This archetype grants you the ability to inspire your allies and impair your foes with magical performances.
-
-    %     \cf{Rog}{1}{Bardic Performances}
-    %     Choose two \textit{bardic performances} from the list below.
-    %     As a standard action, you can use a \textit{bardic performance}.
-    %     All \textit{bardic performances} have the \glossterm{Sustain} (minor) tag.
-
-    %     When you use a \textit{bardic performance} ability, you begin a performance using one of your Perform skills.
-    %     Depending on the nature of your performance, the ability may have the \glossterm{Auditory} or \glossterm{Visual} tags.
-    %     If a target can neither see nor hear your performance, the effect immediately ends for that target.
-    %     {
-    %         \begin{freeability}{Mesmerizing Performance}[\glossterm{Delusion}, \glossterm{Mind}]
-    %             Make an attack vs. Mental against up to five creatures within \rngmed range.
-    %             \hit Each target is \fascinated by you.
-    %             Any act by you or your apparent allies that damages a target or that causes it to feel that it is in danger breaks the effect for that creature.
-    %             An observant target may interpret overt threats to its allies as a threat to itself.
-
-    %             \rankline
-    %             \rank{3} 
-
-    %         \end{freeability}
-
-    %         \begin{freeability}{Inspiring Performance}[\glossterm{Delusion}, \glossterm{Mind}]
-    %             Choose a willing creature within \rngmed range.
-    %             The target gains a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} and a \plus2 \glossterm{magic bonus} to \glossterm{checks}.
-    %         \end{freeability}
-    %     }
 
 \newpage
 \section{Sorcerer}\label{Mage}
