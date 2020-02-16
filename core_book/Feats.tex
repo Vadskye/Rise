@@ -103,6 +103,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featref{Escape Artist Specialization}     & Mastered Escape Artist     & Improve use of chosen skill        & \tdash  & \featpref{Escape Artist Specialization}     \\
         \featref{Intimidate Specialization}        & Mastered Intimidate        & Improve use of chosen skill        & \tdash  & \featpref{Intimidate Specialization}        \\
         \featref{Heal Specialization}              & Mastered Heal              & Improve use of chosen skill        & \tdash  & \featpref{Heal Specialization}              \\
+        \featref{Herbalist} & Mastered Survival & Mastered Knowledge (nature) & Brew potions with natural ingredients & \tdash & \featpref{Herbalist} \\
         \featref{Jump Specialization}              & Mastered Jump              & Improve use of chosen skill        & \tdash  & \featpref{Jump Specialization}              \\
         \featref{Knowledge Specialization}         & Mastered Knowledge         & Improve use of chosen skill        & \tdash  & \featpref{Knowledge Specialization}         \\
         \featref{Linguistics Specialization}       & Mastered Linguistics       & Improve use of chosen skill        & \tdash  & \featpref{Linguistics Specialization}       \\
@@ -763,6 +764,49 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus9.
 
         \ff[19]{Greater Lifesaver} You can use the \textit{first aid} ability as a \glossterm{free action}.
+    \end{feat}
+
+    \begin{feat}{Herbalist}{Skill}
+        \featpre Knowledge (nature) as a mastered skill.
+
+        \ff[1]{Esoteric Concoction} You can use your Knowledge (nature) skill in place of Craft (alchemy) or Craft (poison) to create poisons and potions.
+        This does not help you create other alchemical items, such as alchemist's fire.
+        When you do, you must use esoteric natural ingredients in place of the normal ingredients.
+        The replacement ingredients must be difficult to acquire in large quantities and impossible to acquire in a normal city.
+        For example, you can use the tail of a blind mouse or the dew from a four-leafed clover, but you could not use dirt or ordinary tree bark.
+        Once you have determined a purpose for a particular replacement ingredient, you cannot use that ingredient as a replacement in any other poison or potion.
+
+        In general, it requires an hour of work and a Knowledge (nature) check equal to 5 \add the level of the item to find ingredients for an item in this way.
+        Each time you find ingredients for an item this way, the time required to find ingredients again increases by an hour and the difficulty rating increases by 5.
+        Whenever you finish a \glossterm{long rest} or enter a different environment with different ingredients, these penalties reset.
+
+        \ff[4]{Potent Poisons} You gain a \plus1 bonus to \glossterm{potency} with any poisons you make.
+
+        \ff[7]{Tempting Concoction} You can use the \textit{tempting concoction} ability as a \glossterm{standard action}.
+        \begin{attuneability}{Tempting Concoction}[\glossterm{Emotion}, \glossterm{Magical}, \glossterm{Subtle}]
+            \targets{See text}
+            Choose one liquid poison or potion you created, or an object containing one of those liquids, within \rngclose range.
+            Whenever an \glossterm{enemy} notices the chosen object, make an attack vs. Mental against it.
+            If the poison or potion is not concealed inside a less suspicious object, such as a tankard of ale or an apple, you take a \minus4 penalty to \glossterm{accuracy}.
+            You cannot make this attack more than once against any individual target during this ability's duration.
+            \hit The target is filled with the desire to investigate and try to consume the liquid or the object containing the liquid.
+            It will not generally interrupt combat or wander into obvious danger to fulfill its desire, but individual creatures may react more or less strongly.
+            This effect lasts until the target consumes the object or until it takes a \glossterm{short rest}.
+
+            \rankline
+            \featlevel{13} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+            \featlevel{19} The accuracy bonus increases to \plus2.
+        \end{attuneability}
+
+        \ff[10]{Efficient Concoction} The time required to find ingredients with your \textit{esoteric concoction} ability is halved.
+
+        \ff[13]{Greater Potent Poisons} The bonus from your \textit{potent concoction} ability increases to \plus2.
+
+        \ff[16]{Poison Tolerance} You gain a \plus2 bonus to Fortitude defense.
+
+        \ff[19]{Blended Poison} You can create poisons that combine two poison effects into a single dose.
+        This requires twice the normal time to create a poison, and requires all ingredients required to make both poisons.
+        A creature affected by the blended poison suffers the full effects of both poisons.
     \end{feat}
 
     \begin{feat}{Intimidate Specialization}{Skill}
