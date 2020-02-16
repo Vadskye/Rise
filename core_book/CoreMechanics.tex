@@ -441,19 +441,19 @@ It defines how attributes work and explains how to make attacks in combat.
                 \lcaption{Standard Damage}
                 \begin{dtabularx}{\columnwidth}{l X}
                     \tb{Power} & \tb{Damage} \\
-                    0--1   & 1d8  \\
-                    2--3   & 1d10 \\
-                    4--5   & 2d6  \\
-                    6--7   & 2d8  \\
-                    8--9   & 2d10 \\
-                    10--11 & 4d6  \\
-                    12--13 & 4d8  \\
-                    14--15 & 4d10 \\
-                    16--17 & 5d10 \\
-                    18--19 & 6d10 \\
-                    20--21 & 7d10 \\
-                    22--23 & 8d10 \\
-                    24--25\fn{1} & 9d10 \\
+                    0--1   & 1d6  \\
+                    2--3   & 1d8 \\
+                    4--5   & 1d10  \\
+                    6--7   & 2d6  \\
+                    8--9   & 2d8 \\
+                    10--11 & 2d10  \\
+                    12--13 & 4d6  \\
+                    14--15 & 4d8 \\
+                    16--17 & 4d10 \\
+                    18--19 & 5d10 \\
+                    20--21 & 6d10 \\
+                    22--23 & 7d10 \\
+                    24--25\fn{1} & 8d10 \\
                 \end{dtabularx}
                 1. For values above 25, increase by 1d10 at every even value.
             \end{dtable}
@@ -1858,26 +1858,26 @@ It defines how attributes work and explains how to make attacks in combat.
         \begin{dtabularx}{\textwidth}{*{4}{>{\lcol}l} *{4}{>{\lcol}X}}
             \tb{Level} & \tb{DR}\fn{1} & \tb{WR}\fn{2} & \tb{XP} & \tb{Max Rank}\fn{3} & \tb{Legacy Item}\fn{4} & \tb{AP}\fn{5} \tableheaderrule
             % Damage doubles every 6 levels; anchor points are 4th, 10th, 16th
-            1st     & 1  & 16  & 0      & 1      & \tdash & 3
-            \\ 2nd  & 2  & 18  & 20     & 2      & \tdash & \tdash
-            \\ 3rd  & 3  & 21  & 50     & \tdash & \tdash & \tdash
-            \\ 4th  & 4  & 24  & 90     & \tdash & \tdash & 4
-            \\ 5th  & 5  & 27  & 150    & 3      & \tdash & \tdash
-            \\ 6th  & 6  & 30  & 230    & \tdash & 1      & \tdash
-            \\ 7th  & 7  & 34  & 350    & \tdash & \tdash & 5
-            \\ 8th  & 8  & 38  & 510    & 4      & \tdash & \tdash
-            \\ 9th  & 10  & 43  & 750    & \tdash & \tdash & \tdash
-            \\ 10th & 12 & 48  & 1,050  & \tdash & \tdash & 6
-            \\ 11th & 14 & 54  & 1,550  & 5      & \tdash & \tdash
-            \\ 12th & 16 & 61  & 2,200  & \tdash & 2      & \tdash
-            \\ 13th & 18 & 69  & 3,150  & \tdash & \tdash & 7
-            \\ 14th & 20 & 77  & 4,450  & 6      & \tdash & \tdash
-            \\ 15th & 23 & 86  & 6,350  & \tdash & \tdash & \tdash
-            \\ 16th & 26 & 96  & 8,900  & \tdash & \tdash & 8
-            \\ 17th & 29 & 108 & 13,000 & 7      & \tdash & \tdash
-            \\ 18th & 32 & 122 & 18,000 & \tdash & 3      & \tdash
-            \\ 19th & 35 & 138 & 25,500 & \tdash & \tdash & 9
-            \\ 20th & 38 & 154 & 36,000 & 8      & \tdash & \tdash
+            1st        & 1             & 14            & 0       & 1                   & \tdash                 & 3      \\
+            2nd        & 2             & 16            & 20      & 2                   & \tdash                 & \tdash \\
+            3rd        & 3             & 18            & 50      & \tdash              & \tdash                 & \tdash \\
+            4th        & 4             & 21            & 90      & \tdash              & \tdash                 & 4      \\
+            5th        & 5             & 24            & 150     & 3                   & \tdash                 & \tdash \\
+            6th        & 6             & 27            & 230     & \tdash              & 1                      & \tdash \\
+            7th        & 7             & 30            & 350     & \tdash              & \tdash                 & 5      \\
+            8th        & 8             & 34            & 510     & 4                   & \tdash                 & \tdash \\
+            9th        & 10            & 38            & 750     & \tdash              & \tdash                 & \tdash \\
+            10th       & 12            & 43            & 1,050   & \tdash              & \tdash                 & 6      \\
+            11th       & 14            & 48            & 1,550   & 5                   & \tdash                 & \tdash \\
+            12th       & 16            & 54            & 2,200   & \tdash              & 2                      & \tdash \\
+            13th       & 18            & 61            & 3,150   & \tdash              & \tdash                 & 7      \\
+            14th       & 20            & 69            & 4,450   & 6                   & \tdash                 & \tdash \\
+            15th       & 23            & 77            & 6,350   & \tdash              & \tdash                 & \tdash \\
+            16th       & 26            & 86            & 8,900   & \tdash              & \tdash                 & 8      \\
+            17th       & 29            & 96            & 13,000  & 7                   & \tdash                 & \tdash \\
+            18th       & 32            & 108           & 18,000  & \tdash              & 3                      & \tdash \\
+            19th       & 35            & 122           & 25,500  & \tdash              & \tdash                 & 9      \\
+            20th       & 38            & 138           & 36,000  & 8                   & \tdash                 & \tdash \\
         \end{dtabularx}
         1. This is your \glossterm{damage resistance} (see \pcref{Damage Resistance}). \\
         2. This is your \glossterm{wound resistance} (see \pcref{Wound Resistance}). \\
