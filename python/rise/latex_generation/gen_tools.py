@@ -8,6 +8,7 @@ def generate_tools():
     tools = []
 
     tools.append(MagicItem(
+        consumable=True,
         name="Cleansing Potion",
         level=11,
         material_type='Potion',
@@ -20,6 +21,7 @@ def generate_tools():
     ))
 
     tools.append(MagicItem(
+        consumable=True,
         name="Cleansing Potion, Greater",
         level=17,
         material_type='Potion',
@@ -32,6 +34,7 @@ def generate_tools():
     ))
 
     tools.append(MagicItem(
+        consumable=True,
         name="Potion of Wound Closure",
         level=1,
         material_type='Potion',
@@ -44,6 +47,7 @@ def generate_tools():
     ))
 
     tools.append(MagicItem(
+        consumable=True,
         name="Potion of Wound Closure, Greater",
         level=7,
         material_type='Potion',
@@ -56,6 +60,7 @@ def generate_tools():
     ))
 
     tools.append(MagicItem(
+        consumable=True,
         name="Potion of Wound Closure, Supreme",
         level=13,
         material_type='Potion',
@@ -68,6 +73,7 @@ def generate_tools():
     ))
 
     tools.append(MagicItem(
+        consumable=True,
         name="Potion of Healing",
         level=3,
         material_type='Potion',
@@ -79,6 +85,7 @@ def generate_tools():
     ))
 
     tools.append(MagicItem(
+        consumable=True,
         name="Potion of Healing, Greater",
         level=9,
         material_type='Potion',
@@ -90,6 +97,7 @@ def generate_tools():
     ))
 
     tools.append(MagicItem(
+        consumable=True,
         name="Potion of Healing, Supreme",
         level=15,
         material_type='Potion',
@@ -104,6 +112,7 @@ def generate_tools():
     # Alchemical items
 
     tools.append(MagicItem(
+        consumable=True,
         name="Alchemist's Fire",
         level=0.5,
         material_type='Alchemy',
@@ -117,6 +126,7 @@ def generate_tools():
     ))
 
     tools.append(MagicItem(
+        consumable=True,
         name="Smokestick",
         level=1,
         material_type='Alchemy',
@@ -131,6 +141,7 @@ def generate_tools():
     ))
 
     tools.append(MagicItem(
+        consumable=True,
         name="Tindertwig",
         level=0.5,
         material_type='Alchemy',
@@ -143,6 +154,7 @@ def generate_tools():
     ))
 
     tools.append(MagicItem(
+        consumable=True,
         name="Flash Powder",
         level=0.5,
         material_type='Alchemy',
@@ -155,6 +167,7 @@ def generate_tools():
     ))
 
     tools.append(MagicItem(
+        consumable=True,
         name="Thunderstone",
         level=3,
         material_type='Alchemy',
@@ -168,6 +181,7 @@ def generate_tools():
     ))
 
     tools.append(MagicItem(
+        consumable=True,
         name="Snowball",
         level=3,
         material_type='Alchemy',
@@ -181,6 +195,7 @@ def generate_tools():
     ))
 
     tools.append(MagicItem(
+        consumable=True,
         name="Antitoxin Elixir",
         level=4,
         material_type='Alchemy',
@@ -194,6 +209,7 @@ def generate_tools():
     ))
 
     tools.append(MagicItem(
+        consumable=True,
         name="Enduring Antitoxin Elixir",
         level=7,
         material_type='Alchemy',
@@ -205,6 +221,7 @@ def generate_tools():
     ))
 
     tools.append(MagicItem(
+        consumable=True,
         name="Sunrod",
         level=3,
         material_type='Alchemy',
@@ -217,6 +234,7 @@ def generate_tools():
     ))
 
     tools.append(MagicItem(
+        consumable=True,
         name="Enduring Sunrod",
         level=6,
         material_type='Alchemy',
@@ -228,6 +246,7 @@ def generate_tools():
     ))
 
     tools.append(MagicItem(
+        consumable=True,
         name="Tanglefoot Bag",
         level=3,
         material_type='Alchemy',
@@ -244,6 +263,7 @@ def generate_tools():
     ))
 
     tools.append(MagicItem(
+        consumable=True,
         name="Everburning Torch",
         level=3,
         material_type='Alchemy',
@@ -256,6 +276,7 @@ def generate_tools():
     ))
 
     tools.append(MagicItem(
+        consumable=True,
         name="Acid Flask",
         level=0.5,
         material_type='Alchemy',
