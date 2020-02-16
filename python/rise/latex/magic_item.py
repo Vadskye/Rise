@@ -1,6 +1,6 @@
 from logging import getLogger, WARNING
 from rise.latex.util import join
-from rise.statistics.rise_data import item_prices
+from rise.statistics.rise_data import consumable_item_prices, item_prices
 from rise.latex.tags import is_valid_tag
 logger = getLogger(__name__)
 
@@ -36,12 +36,14 @@ class MagicItem(object):
             level,
             name,
             short_description,
+            consumable=False,
             effects=None,
             material_type=None,
             materials=None,
             tags=None,
             targeting=None,
     ):
+        self.consumable = consumable
         self.description = description
         self.level = level
         self.name = name
@@ -76,7 +78,10 @@ class MagicItem(object):
         return ', '.join([f"\\glossterm<{tag}>" for tag in sorted(self.tags)]) if self.tags else ""
 
     def price(self):
-        return item_prices[self.level]
+        if self.consumable:
+            return consumable_item_prices[self.level]
+        else:
+            return item_prices[self.level]
 
     def nth_text(self):
         if self.level == 0.5:
