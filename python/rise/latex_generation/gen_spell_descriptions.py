@@ -916,8 +916,8 @@ def generate_mystic_spheres():
                 This cannot remove a condition applied during the current round.
 
                 \\rankline
-                \\rank<5> The target can remove two conditions.
-                \\rank<7> The target can remove three conditions.
+                \\rank<5> The target can remove its two most recent conditions.
+                \\rank<7> The target can remove its three most recent conditions.
             """, tags=[]),
             Spell('Cleansing Benediction', 6, 'You and each of your \\glossterm<allies> within a \\areamed radius from you', """
                 Each target can remove its most recent \\glossterm<condition>.
@@ -1743,7 +1743,8 @@ def generate_mystic_spheres():
             Spell('Charm', 3, 'One creature within \\rngmed range', """
                 Make an attack vs. Mental against the target.
                 \\hit The target is \\charmed by you.
-                Any act by you or by creatures that appear to be your allies that threatens or damages the \\spell<charmed> person breaks the effect.
+                Any act by you or by creatures that appear to be your allies that threatens or damages the charmed person breaks the effect.
+                An observant target may interpret overt threats to its allies as a threat to itself.
 
                 \\rankline
                 \\rank<5> You may target two creature within range.
