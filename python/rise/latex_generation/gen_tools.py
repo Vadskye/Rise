@@ -100,6 +100,174 @@ def generate_tools():
         short_description="Restores three hit points",
     ))
 
+
+    # Alchemical items
+
+    tools.append(MagicItem(
+        name="Alchemist's Fire",
+        level=0.5,
+        material_type='Alchemy',
+        tags=[],
+        description="""
+            As a standard action, you can throw this item at a creature or object within \\rngclose range.
+            When you do, make an attack vs. Armor against the target.
+            On a hit, the target takes fire \\glossterm<standard damage>.
+        """,
+        short_description="Throw to deal fire damage",
+    ))
+
+    tools.append(MagicItem(
+        name="Smokestick",
+        level=1,
+        material_type='Alchemy',
+        tags=[],
+        description="""
+            As a standard action, you can activate this item and optionally throw it anywhere within \\rngclose range.
+            When you do, it immediately creates a cloud of smoke in a \\areasmall radius from its location.
+            Looking through 10 feet of smoke is enough to completely block line of sight.
+            The cloud of smoke dissipates normally after it is created.
+        """,
+        short_description="Creates a cloud of smoke",
+    ))
+
+    tools.append(MagicItem(
+        name="Tindertwig",
+        level=0.5,
+        material_type='Alchemy',
+        tags=[],
+        description="""
+            As a minor action, you can activate this small, wooden stick by striking it against any hard surface.
+            When you do, it bursts into flame, allowing you to light other fires with it.
+        """,
+        short_description="Quickly activated flame",
+    ))
+
+    tools.append(MagicItem(
+        name="Flash Powder",
+        level=0.5,
+        material_type='Alchemy',
+        tags=[],
+        description="""
+            As a standard action, you can throw this powder in the air in your location.
+            When you do, it emits a brief burst of bright light in a 50 foot radius and shadowy light in a 100 foot radius.
+        """,
+        short_description="Emits burst of bright light",
+    ))
+
+    tools.append(MagicItem(
+        name="Thunderstone",
+        level=3,
+        material_type='Alchemy',
+        tags=[],
+        description="""
+            As a standard action, you can throw this item at a creature within \\rngclose range.
+            When you do, make an attack vs. Fortitude against the target.
+            On a hit, the target is \\glossterm<deafened> as a \\glossterm<condition>.
+        """,
+        short_description="Deafens a foe",
+    ))
+
+    tools.append(MagicItem(
+        name="Snowball",
+        level=3,
+        material_type='Alchemy',
+        tags=[],
+        description="""
+            As a standard action, you can throw this item at a creature or object within \\rngclose range.
+            When you do, make an attack vs. Fortitude against the target.
+            On a hit, the target takes cold \\glossterm<standard damage>.
+        """,
+        short_description="Throw to deal cold damage",
+    ))
+
+    tools.append(MagicItem(
+        name="Antitoxin Elixir",
+        level=4,
+        material_type='Alchemy',
+        tags=[],
+        description="""
+            As a standard action, you can drink this elixir.
+            When you do, it imbues your body with a resistance to poisons for 5 minutes.
+            During that time, you may treat your Fortitude defense as if it was equal to 10 \\add this item's power for the purpose of resisting poisons.
+        """,
+        short_description="Resists poisons",
+    ))
+
+    tools.append(MagicItem(
+        name="Enduring Antitoxin Elixir",
+        level=7,
+        material_type='Alchemy',
+        tags=[],
+        description="""
+            This item functions like an \\mitem<antitoxin elixir>, except that the effect lasts for 8 hours.
+        """,
+        short_description="Resists poisons for 8 hours",
+    ))
+
+    tools.append(MagicItem(
+        name="Sunrod",
+        level=3,
+        material_type='Alchemy',
+        tags=[],
+        description="""
+            As a standard action, you can activate this item.
+            When you do, it shines bright light in a 50 foot radius and dim light in a 100 foot radius for 5 minutes.
+        """,
+        short_description="Emits bright light continuously",
+    ))
+
+    tools.append(MagicItem(
+        name="Enduring Sunrod",
+        level=6,
+        material_type='Alchemy',
+        tags=[],
+        description="""
+            This item functions like a \\mitem<sunrod>, except that the effect lasts for 8 hours.
+        """,
+        short_description="Emits bright light continuously",
+    ))
+
+    tools.append(MagicItem(
+        name="Tanglefoot Bag",
+        level=3,
+        material_type='Alchemy',
+        tags=[],
+        description="""
+            As a standard action, you can throw this item at a creature within \\rngclose range.
+            When you do, make an attack vs. Reflex against the target.
+            On a hit, the target is \\glossterm<slowed> as a \\glossterm<condition>.
+
+            Whenever the target takes a \\glossterm<move action>, it can make a Strength check as part of the movement.
+            If it beats a \\glossterm<difficulty rating> equal to 2 \\add this item's power, the condition is removed after the movement is complete.
+        """,
+        short_description="Slows a foe",
+    ))
+
+    tools.append(MagicItem(
+        name="Everburning Torch",
+        level=3,
+        material_type='Alchemy',
+        tags=[],
+        description="""
+            As a standard action, you can activate this item.
+            When you do, it sheds light like a torch for a week.
+        """,
+        short_description="Emits light like a torch for a week",
+    ))
+
+    tools.append(MagicItem(
+        name="Acid Flask",
+        level=0.5,
+        material_type='Alchemy',
+        tags=[],
+        description="""
+            As a standard action, you can throw this item at a creature or object within \\rngclose range.
+            When you do, make an attack vs. Armor against the target.
+            On a hit, the target takes acid \\glossterm<standard damage>.
+        """,
+        short_description="Throw to deal acid damage",
+    ))
+
     return tools
 
 def generate_tool_latex(check=False):
