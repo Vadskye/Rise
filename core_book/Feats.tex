@@ -94,7 +94,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \tb{Skill Feats}\label{Skill Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
         \featref{Acrobatics Specialization}        & Mastered Acrobatics        & Improve use of chosen skill        & \tdash  & \featpref{Acrobatics Specialization}        \\
         \featref{Awareness Specialization}         & Mastered Awareness         & Improve use of chosen skill        & \tdash  & \featpref{Awareness Specialization}         \\
-        \featref{Bardic Exemplar}                  & Perform Specialization     & Gain magical performance abilities & Magical & \featpref{Bardic Exemplar}                  \\
         \featref{Bluff Specialization}             & Mastered Bluff             & Improve use of chosen skill        & \tdash  & \featpref{Bluff Specialization}             \\
         \featref{Climb Specialization}             & Mastered Climb             & Improve use of chosen skill        & \tdash  & \featpref{Climb Specialization}             \\
         \featref{Craft Specialization}             & Mastered Craft             & Improve use of chosen skill        & \tdash  & \featpref{Craft Specialization}             \\
@@ -239,84 +238,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[19]{Supreme Extraordinary Senses} You can choose an additional sense from the list given in your \textit{greater extraordinary senses} ability.
         In addition, the range of all senses gained from this feat is doubled.
-    \end{feat}
-
-    \begin{feat}{Bardic Exemplar}{Magical, Skill}
-        \featpre Perform Specialization feat.
-
-        \ff[1]{Inspire Competence} You can use the \textit{inspire competence} ability as a \glossterm{minor action}.
-        \begin{freeability}{Inspiring Performance}[\glossterm{Emotion}, \glossterm{Sustain} (minor)]
-            You begin a performance using one of your Perform skills.
-            One \glossterm{ally} within \rngmed range gains a \plus2 \glossterm{magic bonus} to \glossterm{checks} and \glossterm{power}.
-
-            At the end of each round, if the target can neither see nor hear your performance, the effect ends.
-            This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
-
-            \rankline
-            \featlevel{13} The bonus to checks increases to \plus3.
-            \featlevel{19} The bonus to \glossterm{power} increases to \plus4.
-        \end{freeability}
-
-        \ff[4]{Inspire Courage} You can use the \textit{inspire courage} ability as a \glossterm{minor action}.
-        \begin{freeability}{Inspire Courage}[\glossterm{Emotion}, \glossterm{Sustain} (minor)]
-            \targets{All \glossterm{allies} within a \arealarge emanation from you}
-            You begin a performance using one of your Perform skills.
-            This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
-            At the end of each round, if a target can neither see nor hear your performance, the effect ends for that target.
-
-            Each target gains a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} and Mental defense.
-
-            \rankline
-            \featlevel{10} The bonus to Mental defense increases to \plus2.
-            \featlevel{16} The bonus to accuracy increases to \plus2.
-        \end{freeability}
-
-        \ff[7]{Hybrid Performance} You can sustain two different \glossterm{magical} abilities from this feat or the Perform Specialization feat as part of the same \glossterm{minor action}.
-        In addition, you can use two different \glossterm{magical} abilities from this feat as part of the same \glossterm{minor action}.
-
-        \ff[10]{Song of Serenity} You can use the \textit{song of serenity} ability as a \glossterm{minor action}.
-        \begin{freeability}{Song of Serenity}[\glossterm{Emotion}, \glossterm{Sustain} (minor)]
-            \target{One \glossterm{ally} wtihin \rngmed range}
-            You begin a performance using one of your Perform skills.
-            This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
-            At the end of each round, if a target can neither see nor hear your performance, the effect ends for that target.
-
-            The target is immune to hostile \glossterm{Emotion} and \glossterm{Compulsion} effects.
-            It immediately removes all \glossterm{conditions} caused by those effects.
-
-            \rankline
-            \featlevel{13} This ability can target up to two \glossterm{allies} within range.
-            \featlevel{19} This ability can target up to five \glossterm{allies} within range.
-        \end{freeability}
-
-        \ff[13]{Song of Freedom} You can use the \textit{song of freedom} ability as a \glossterm{minor action}.
-        \begin{freeability}{Song of Freedom}[\glossterm{Emotion}, \glossterm{Sustain} (minor)]
-            \target{One \glossterm{ally} within \rngmed range}
-            You begin a performance using one of your Perform skills.
-            This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
-            At the end of each round, if a target can neither see nor hear your performance, the effect ends for that target.
-
-            The target suffers no ill effects from \glossterm{conditions} it has.
-            This does not remove any conditions or prevent the application of additional conditions.
-
-            \rankline
-            \featlevel{19} This ability can target up to two \glossterm{allies} within range.
-        \end{freeability}
-
-        \ff[16]{Inspire Greatness} You can use the \textit{inspire greatness} ability as a \glossterm{minor action}.
-        \begin{freeability}{Inspire Greatness}[\glossterm{Emotion}, \glossterm{Sustain} (minor)]
-            \target{One \glossterm{ally} within \rngmed range}
-            You begin a performance using one of your Perform skills.
-            This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
-            At the end of each round, if the target can neither see nor hear your performance, the effect ends for that target.
-
-            The target increases its maximum \glossterm{hit points} by two and regains two \glossterm{hit points}.
-            In addition, it gains a \plus2 \glossterm{magic bonus} to \glossterm{wound rolls}.
-            When this ability ends, it loses two \glossterm{hit points} and its maximum \glossterm{hit points} are restored to normal.
-        \end{freeability}
-
-        \ff[19]{Greater Hybrid Performance} You can sustain three different \glossterm{magical} abilities from this feat or the Perform Specialization feat as part of the same \glossterm{minor action}.
-        In addition, you can use three different \glossterm{magical} abilities from this feat as part of the same \glossterm{minor action}.
     \end{feat}
 
     \begin{feat}{Blindfighter}{Combat}
@@ -1237,61 +1158,32 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[1]{Specialization} You gain a \plus3 bonus to all Perform skills.
 
-        \ff[4]{Vicious Mockery} You can use the \textit{vicious mockery} ability as a standard action.
-        \begin{freeability}{Vicious Mockery}[\glossterm{Emotion}]
-            \targets{\glossterm{Enemies} within a \areamed radius from you}
-            You make a brief performance using one of your Perform skills.
-            This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
+        \ff[4]{Synergistic Performance} You can use your Perform skills in place of other related skills.
+        Each Perform skill has an associated skill that it can be used to replace, as listed below.
+        When you replace a skill in this way, you take a \minus4 penalty to the Perform check since the two skills do not exactly match.
+        \begin{itemize}
+            \item Acting: Bluff
+            \item Comedy: Bluff
+            \item Dance: Acrobatics
+            \item Keyboard instruments: Devices
+            \item Oratory: Persuasion
+            \item Percussion instruments: Creature Handling
+            \item Singing: Persuasion
+            \item String instruments: Devices
+            \item Wind instruments: Creature Handling
+        \end{itemize}
 
-            Make an attack vs. Mental against each target.
-            Your accuracy is equal to the Perform skill used for your performance.
-
-            \hit As a \glossterm{condition}, each target takes a \minus1 penalty to \glossterm{accuracy} and a \minus2 penalty to Mental defense.
-
-            \rankline
-            \featlevel{10} The area increases to a \arealarge radius from you.
-            \featlevel{16} The area increases to a \areahuge radius from you.
-        \end{freeability}
-
-        \ff[7]{Mesmerizing Performance}[Magical] You can use the \textit{mesmerizing performance} ability as a standard action.
-        \begin{freeability}{Mesmerizing Performance}[\glossterm{Emotion}, \glossterm{Sustain} (minor)]
-            \targets{Up to five creatures within \rngmed range}
-            You begin a performance using one of your Perform skills.
-            Make an attack vs. Mental against each target.
-            Your accuracy is equal to the Perform skill used for your performance.
-            \hit Each target is \fascinated by you.
-            Any act by you or by creatures that appear to be your ally that damages a target or that causes it to feel that it is in danger breaks the effect for that creature.
-            An observant target may interpret overt threats to its \glossterm{allies} as a threat to itself.
-
-            At the end of each round, if a target can neither see nor hear your performance, the effect ends for that target.
-            This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
-
-            \rankline
-            \featlevel{13} You may target up to ten creatures within range.
-            \featlevel{19} You may target any number of creatures within range.
-        \end{freeability}
+        \ff[7]{Lingering Performance}[Magical] Whenever you stop performing, the effects of the performance linger until the end of the next round as if you were still performing.
+        This affects both normal peformances and any special abilities that require performances to sustain them, allowing you to sustain those abilities without taking any actions.
 
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \ff[13]{Discordant Cacaphony}[Magical] You can use the \textit{discordant cacaphony} ability as a standard action.
-        \begin{freeability}{Discordant Cacaphony}
-            \targets{\glossterm{Enemies} within a \areamed radius from you}
-            You begin a performance using one of your Perform skills.
-            Make an attack vs. Mental against each target.
-            Your accuracy is equal to the Perform skill used for your performance.
-            \hit If this performance has the \glossterm{Auditory} tag, each target takes energy \glossterm{standard damage}.
-            Otherwise, each target is \glossterm{dazed}.
-            \crit As above.
-
-            This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
-
-            \rankline
-            \featlevel{19} The area increases to a \arealarge radius.
-        \end{freeability}
+        \ff[13]{Greater Synergistic Performance} The penalty from your \textit{synergistic performance} ability is removed.
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus9.
 
-        \ff[19]{todo} 
+        \ff[19]{Endless Performance} You can sustain performances for any length of time.
+        This affects both normal performances and any special abilities that require performances to sustain them, allowing you to sustain those abilities beyond the normal 5 minute limit.
     \end{feat}
 
     \begin{feat}{Persuasion Specialization}{Skill}
