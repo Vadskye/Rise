@@ -9,6 +9,7 @@ class MagicItem(object):
     @classmethod
     def automatic_materials(cls, material_type):
         return {
+            'Alchemy': ['alchemy'],
             'Amulet': ['jewelry'],
             'Belt': ['leather', 'textiles'],
             'Body armor': ['bone', 'metal'],
