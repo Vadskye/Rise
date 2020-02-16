@@ -2668,6 +2668,16 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} The area increases to a \areahuge radius.
             \end{freeability}
 
+            \begin{freeability}{Cadenza of Courage}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
+                \target{One \glossterm{ally} within \rngmed range}
+                The target gains a \plus1 \glossterm{magic bonus} to \glossterm{accuracy}.
+
+                \rankline
+                \rank{3} The target also gains a \plus2 \glossterm{magic bonus} to Mental defense.
+                \rank{5} The accuracy bonus increases to \plus2.
+                \rank{7} The bonus to Mental defense increases to \plus4.
+            \end{freeability}
+
             \begin{freeability}{Cleansing Counterpoint}[\glossterm{Auditory}]
                 \target{One \glossterm{ally} within \rngmed range}
                 The target can remove its most recent \glossterm{condition}.
@@ -2677,16 +2687,6 @@ This choice determines a great deal about your character's abilities.
                 \rank{3} The target can remove a condition applied during any previous round, but not during the current round.
                 \rank{5} The target can remove its two most recent conditions.
                 \rank{7} The target can remove its three most recent conditions.
-            \end{freeability}
-
-            \begin{freeability}{Courageous Cadenza}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
-                \target{One \glossterm{ally} within \rngmed range}
-                The target gains a \plus1 \glossterm{magic bonus} to \glossterm{accuracy}.
-
-                \rankline
-                \rank{3} The target also gains a \plus2 \glossterm{magic bonus} to Mental defense.
-                \rank{5} The accuracy bonus increases to \plus2.
-                \rank{7} The bonus to Mental defense increases to \plus4.
             \end{freeability}
 
             \begin{freeability}{Dizzying Ditty}[\glossterm{Auditory}, \glossterm{Compulsion}, \glossterm{Sustain} (minor)]
@@ -2717,20 +2717,32 @@ This choice determines a great deal about your character's abilities.
                 \hit The target is \glossterm{shaken}.
 
                 \rankline
-                \rank{3} On a \glossterm{critical hit}, the target is \glossterm{frightened}.
+                \rank{3} On a \glossterm{critical hit}, the target is \glossterm{panicked}.
                 \rank{5} The target is frightened instead of shaken.
-                \rank{7} On a critical hit, the target is \glossterm{panicked}.
+                \rank{7} The target is panicked instead of shaken.
             \end{freeability}
 
-            \begin{freeability}{Heroic Hymn}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
-                \target{One \glossterm{ally} within \rngmed range}
-                The target increases its maximum \glossterm{hit points} by one and regains that many hit points.
-                When this effect ends, the target loses hit points equal to the hit points it regained this way.
+            \begin{freeability}{Hypnotic Hymn}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
+                \target{One creature within \rngmed range}
+                \hit The target is \glossterm{charmed} by you.
+                Any act by you or by creatures that appear to be your allies that threatens or damages the \glossterm{charmed} person breaks the effect.
+                An observant target may interpret overt threats to its allies as a threat to itself.
+                This ability does not have the \glossterm{Subtle} tag, so an observant target may notice it is being influenced.
 
                 \rankline
-                \rank{3} The number of additional hit points increases to two.
-                \rank{5} The number of additional hit points increases to three.
-                \rank{7} The number of additional hit points increases to four.
+                \rank{3} The ability targets all creatures in a \areasmall radius within \rngmed range.
+                \rank{5} The area increases to a \areamed radius.
+                \rank{7} The area increases to a \arealarge radius.
+            \end{freeability}
+
+            \begin{freeability}{Inspiring Intonation}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
+                \target{One \glossterm{ally} within \rngmed range}
+                The target gains a \plus2 \glossterm{magic bonus} to \glossterm{checks}.
+
+                \rankline
+                \rank{3} The bonus increases to \plus3.
+                \rank{5} The bonus increases to \plus4.
+                \rank{7} The bonus increases to \plus5.
             \end{freeability}
 
             \begin{freeability}{Mesmerizing Melody}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
@@ -2756,17 +2768,39 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} The area increases to a \areaext radius.
             \end{freeability}
 
-            \begin{freeability}{Suggestive Serenade}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
-                \target{One creature within \rngmed range}
-                \hit The target is \glossterm{charmed} by you.
-                Any act by you or by creatures that appear to be your allies that threatens or damages the \glossterm{charmed} person breaks the effect.
-                An observant target may interpret overt threats to its allies as a threat to itself.
-                This ability does not have the \glossterm{Subtle} tag, so an observant target may notice it is being influenced.
+            \begin{freeability}{Serenade of Serenity}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
+                \targets{All \glossterm{allies} within a \arealarge radius \glossterm{emanation} from you}
+                Each target gains a \plus4 bonus to defenses against hostile \glossterm{Compulsion} and \glossterm{Emotion} effects.
 
                 \rankline
-                \rank{3} The ability targets all creatures in a \areasmall radius within \rngmed range.
-                \rank{5} The area increases to a \areamed radius.
-                \rank{7} The area increases to a \arealarge radius.
+                \rank{3} At the end of each round, each target removes all \glossterm{conditions} caused by Compulsion and Emotion effects that were not applied during that round.
+                \rank{5} The area increases to a \areahuge radius.
+                \rank{7} Each target is immune to hostile Compulsion and Emotion effects.
+            \end{freeability}
+
+            \begin{freeability}{Tranquil Tune}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
+                \targets{All creatures within a \areamed radius from you}
+                Make an attack vs. Mental against each target.
+                \hit Each target has its emotions calmed.
+                The effects of all other \glossterm{Emotion} abilities on that target are \glossterm{suppressed}.
+                It cannot take violent actions (although it can defend itself) or do anything destructive.
+                If the target takes damage or feels that it is in danger, this effect is \glossterm{dismissed}.
+
+                \rankline
+                \rank{3} The area increases to a \arealarge radius.
+                \rank{5} The area increases to a \areahuge radius.
+                \rank{7} The area increases to a \areaext radius.
+            \end{freeability}
+
+            \begin{freeability}{Vigorous Verse}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
+                \target{One \glossterm{ally} within \rngmed range}
+                The target increases its maximum \glossterm{hit points} by one and regains that many hit points.
+                When this effect ends, the target loses hit points equal to the hit points it regained this way.
+
+                \rankline
+                \rank{3} The number of additional hit points increases to two.
+                \rank{5} The number of additional hit points increases to three.
+                \rank{7} The number of additional hit points increases to four.
             \end{freeability}
         }
 
@@ -2965,7 +2999,6 @@ This choice determines a great deal about your character's abilities.
 
         \cf*{Sor}[8]{Spell Rank}[Magical] You become a rank 8 arcane spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 8.
-
 
     \subsection{Arcane Spell Mastery}
         This archetype improves the arcane spells you cast.
