@@ -3411,15 +3411,15 @@ This choice determines a great deal about your character's abilities.
     \begin{dtable!*}
         \lcaption{Wizard Progression}
         \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Arcane Magic}     & \tb{Arcane Spell Mastery}   & \tb{Arcane Scholar}   & \tb{Brewer}          \tableheaderrule
-            1         & Mystic spheres        & Mystic insight            & Scholastic lore       & Arcane brew         \\
-            2         & Spells                & Mage armor                  & Ritualist             & Skilled brewer      \\
-            3         & Spell rank (3), spell & Wellspring of power         & Scholastic insight    & Tempting concoction \\
-            4         & Spell rank (4)        & Mystic insight            & Ritual expertise      & Esoteric concoction \\
-            5         & Spell rank (5)        & Greater mage armor          & Contingency           & Efficient brewer    \\
-            6         & Spell rank (6), spell & Greater wellspring of power & Scholastic insight    & Poison spell        \\
-            7         & Spell rank (7)        & Mystic insight            & Malleable contingency & Blended concoction  \\
-            8         & Spell rank (8)        &                             &                       &                     \\
+            \tb{Rank} & \tb{Alchemist}               & \tb{Arcane Magic}     & \tb{Arcane Spell Mastery}   & \tb{Arcane Scholar}   \tableheaderrule
+            1         & Portable workshop            & Mystic spheres        & Mystic insight              & Scholastic lore       \\
+            2         & Alchemical infusion          & Spells                & Mage armor                  & Ritualist             \\
+            3         & Alchemical discovery         & Spell rank (3), spell & Wellspring of power         & Scholastic insight    \\
+            4         & Alchemical expertise         & Spell rank (4)        & Mystic insight              & Ritual expertise      \\
+            5         & Experienced quaffing         & Spell rank (5)        & Greater mage armor          & Contingency           \\
+            6         & Alchemical discovery         & Spell rank (6), spell & Greater wellspring of power & Scholastic insight    \\
+            7         & Greater alchemical expertise & Spell rank (7)        & Mystic insight              & Malleable contingency \\
+            8         &                              & Spell rank (8)        &                             &                       \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -3617,61 +3617,39 @@ This choice determines a great deal about your character's abilities.
         \cf{Wiz}[7]{Malleable Contingency} If you have a \textit{contingency} active, you can change the conditions to trigger your \textit{contingency} as a standard action.
         This does not allow you to change the spell stored in your \textit{contingency}.
 
-    \subsection{Brewer}
-        This archetype improves your ability to create unusual concoctions to aid your allies and harm your foes.
+    \subsection{Alchemist}
+        This archetype improves your ability to use achemy to create unusual concoctions to aid your allies and harm your foes.
 
-        \cf{Wiz}[1]{Arcane Brew} You can use the \textit{arcane brew} ability with an hour of effort brewing liquid in a cauldron or similar receptacle.
-        \begin{freeability}{Arcane Brew}
-            Choose a \glossterm{targeted} arcane spell you know that does not have the \glossterm{Sustain}, \glossterm{Attune} (self), or \glossterm{AP} tags.
-            The spell becomes imbued in one ounce of the liquid that you can remove and place in a receptacle.
-            You gain a \plus1 bonus to \glossterm{accuracy} with the spell.
-            A creature that drinks that liquid becomes affected by the spell as if you had cast it on the creature.
-            The effects of the spell wear off after one hour, even if the spell would normally have a longer duration.
+        \cf{Wiz}[1]{Portable Workshop} 
+        You carry materials necessary to refine low-grade alchemical items wherever you are.
+        Items created with this ability deteriorate and become useless after 24 hours or after you finish a long rest, whichever comes first.
+        The items are just as effective when used as items created normally.
+        You can use this ability create alchemical items with a item level up to your level.
 
-            This ability lasts until you use it again.
+        Creating an item in this way functions in the same way as crafting alchemical items normally, with the following changes.
+        First, you do not require any raw materials.
+        Seond, the difficulty rating goes up by 5 after each successful craft.
+        Third, if you fail to craft an item in this way, you cannot try again until you destroy all items crafted with this ability and finish a short rest.
 
-            \rankline
-            \rank{3} You can choose up to two spells and imbue up to two one-ounce portions with any spell chosen.
-            \rank{5} The bonus to \glossterm{accuracy} increases to \plus2.
-            \rank{7} You can choose up to four spells and imbue up to four one-ounce portions with any spell chosen.
-        \end{freeability}
+        \cf{Wiz}[2]{Alchemical Infusion} Whenever you create or use an alchemical item, you may use your magical power in place of the item's normal power to determine its effects.
 
-        \cf{Wiz}[2]{Skilled Brewer} You gain two additional \glossterm{skill points}.
-        In addition, you gain \plus1 bonus to \glossterm{potency} with any poisons you create.
+        \cf{Wiz}[3]{Alchemical Discovery} You gain your choice of one of the following benefits.
+        {
+            \parhead{Complex Construction} You can use your portable workshop ability to create items with an item level up to two levels higher than your level.
+            \parhead{Durable Construction} You double the range of alchemical items you create.
+            \parhead{Efficient Crafting} It takes you half the normal time and material components to craft alchemical items.
+            \parhead{Explosive Construction} You double the area affected by alchemical items you create.
+            \parhead{Potent Construction} Alchemical items you create gain a \plus2 bonus to power.
+            \parhead{Repetitive Construction} Whenever you use your portable workshop ability, you can create two copies of the same alchemical item.
+            This only counts as one item for the purpose of determining the increase to your crafting difficulty.
+            \parhead{Safe Construction} Creatures who are not trained in Craft (alchemy) can use alchemical items you create without a mishap chance.
+        }
 
-        \cf{Wiz}[3]{Tempting Concoction} You can use the \textit{tempting concoction} ability as a \glossterm{standard action}.
-        \begin{attuneability}{Tempting Concoction}[\glossterm{Emotion}, \glossterm{Magical}, \glossterm{Subtle}]
-            \targets{See text}
-            Choose one liquid \glossterm{poison} or \textit{arcane brew} you created, or an object containing one of those liquids, within \rngclose range.
-            Whenever an \glossterm{enemy} notices the chosen object, make an attack vs. Mental against it.
-            If the brew or poison is not concealed inside a less suspicious object, such as a tankard of ale or an apple, you take a \minus4 penalty to \glossterm{accuracy}.
-            You cannot make this attack more than once against any individual target during this ability's duration.
-            \hit The target is filled with the desire to investigate and try to consume the liquid or the object containing the liquid.
-            It will not generally interrupt combat or wander into obvious danger to fulfill its desire, but individual creatures may react more or less strongly.
-            This effect lasts until the target consumes the object or until it takes a \glossterm{short rest}.
+        \cf{Wiz}[4]{Alchemical Expertise} You gain a \plus3 bonus to the Craft (alchemy) skill and a \plus1 bonus to accuracy with alchemical items.
 
-            \rankline
-            \rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-            \rank{7} The accuracy bonus increases to \plus2.
-        \end{attuneability}
+        \cf{Wiz}[5]{Experienced Quaffing} You can drink up to two doses of potions, elixirs, and other drinkable alchemical items simultaneously with no mishap risk.
 
-        \cf{Wiz}[4]{Esoteric Concoction} You can use esoteric natural ingredients in place of expensive ingredients when creating poisons.
-        The replacement ingredients must be difficult to acquire in large quantities and impossible to acquire in a normal city.
-        For example, you can use the tail of a blind mouse or the dew from a four-leafed clover, but you could not use dirt or ordinary tree bark.
-        Once you have decided on a replacement ingredient for a particular poison, you cannot use that ingredient as a replacement for an expensive ingredient in any other poison.
+        \cf*{Wiz}[6]{Alchemical Discovery} You gain an additional \textit{alchemical discovery} ability.
 
-        \cf{Wiz}[5]{Efficient Brewer} You can create poisons in half the normal time.
-        In addition, the bonus from your \textit{skilled brewer} ability increases to \plus2.
+        \cf{Wiz}[7]{Greater Alchemical Expertise} The skill bonus from your \textit{alchemical expertise} ability increses to \plus6 and the accuracy bonus increases to \plus2.
 
-        \cf{Wiz}[6]{Poison Spell} You can use the \textit{poison spell} ability when you cast a spell that does not have the \glossterm{Attune} or \glossterm{Sustain} tags.
-        \begin{freeability}{Poison Spell}
-            Choose a poison in your hands.
-            You infuse a dose of the poison into a spell you are casting, consuming the dose.
-            The spell is diluted by the poison, giving you a \minus2 penalty to \glossterm{power} with it.
-            Make an attack vs. Fortitude against each of the spell's targets.
-            \hit If the target takes damage from the spell, it is also \glossterm{poisoned} by the chosen poison.
-        \end{freeability}
-
-        \cf{Wiz}[7]{Blended Concoction} You can create poisons that combine two poison effects into a single dose.
-        This requires twice the normal time to create a poison, and requires all ingredients required to make both poisons.
-        A creature affected by the blended poison suffers the full effects of both poisons.
