@@ -94,7 +94,7 @@ def archetypes():
     return div({'class': 'inventory'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Archetypes')),
         *[
-            text_input({'name': f"archetypes_{i}"}) for i in range(4)
+            text_input({'name': f"archetypes_{i}"}) for i in range(3)
         ]
     ])
 
@@ -102,7 +102,7 @@ def inventory():
     return div({'class': 'inventory'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Inventory')),
         *[
-            text_input({'name': f"inventory_{i}"}) for i in range(9)
+            text_input({'name': f"inventory_{i}"}) for i in range(10)
         ]
     ])
 
