@@ -76,7 +76,7 @@ def set_skill(a, s):
                     pointsModifier = 1;
                 }} else if (v.{s}_points >= 2) {{
                     ranks = level
-                    pointsModifier = 4;
+                    pointsModifier = 3;
                 }}
 
                 setAttrs({{
@@ -90,31 +90,21 @@ def set_skill(a, s):
         include_encumbrance = a in ['strength', 'dexterity']
         subtract_encumbrance = ' - encumbrance' if include_encumbrance else ""
         return js_wrapper(
-            ['level', a, f'{a}_starting', f'{s}_points', *misc, *(['encumbrance'] if include_encumbrance else [])],
+            ['level', f'{a}_starting', f'{s}_points', *misc, *(['encumbrance'] if include_encumbrance else [])],
             f"""
-                var attributeModifier = 0;
                 var pointsModifier = 0;
                 var ranks = 0;
 
-                if (Number(v.{s}_points) === 0) {{
-                    attributeModifier = Math.floor({a} / 2);
-                }} else if ({s}_points === 1) {{
-                    attributeModifier = {a};
+                if ({s}_points === 1) {{
                     ranks = Math.floor(level / 2) + 1;
                 }} else if ({s}_points >= 2) {{
-                    attributeModifier = {a};
                     ranks = level
-                    pointsModifier = 4;
+                    pointsModifier = 3;
                 }}
 
-                var scaling = Math.max(ranks, attributeModifier);
-
-                var negativeModifier = {a} < 0 ? {a} : 0;
-
                 setAttrs({{
-                    {s}_attribute: attributeModifier,
                     {s}_ranks: ranks,
-                    {s}_total: scaling + pointsModifier + negativeModifier + {sum_variables(misc)} {subtract_encumbrance},
+                    {s}_total: ranks + pointsModifier + {a}_starting + {sum_variables(misc)} {subtract_encumbrance},
                 }});
             """
         )
@@ -161,12 +151,11 @@ def abilities_known():
 def accuracy():
     misc = get_misc_variables('accuracy', 3)
     return js_wrapper(
-        ['challenge_rating', 'level', 'perception', 'level_scaling', *misc],
+        ['challenge_rating', 'level', 'perception_starting', 'level_scaling', *misc],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
-            var accuracy_scaling = Math.max(level, perception);
             setAttrs({{
-                accuracy: accuracy_scaling + level_scaling + {sum_variables(misc)} + cr_mod,
+                accuracy: level + Math.floor(perception_starting / 2)  + level_scaling + {sum_variables(misc)} + cr_mod,
                 accuracy_scaling,
             }});
         """
@@ -177,7 +166,7 @@ def action_points():
     return js_wrapper(
         ['level'],
         f"""
-            var action_points = 4 + Math.floor((level + 3) / 6);
+            var action_points = 3 + Math.floor((level - 1) / 3);
             setAttrs({{
                 action_points,
                 action_points_max: action_points,
@@ -294,7 +283,7 @@ def skill_points():
         ['level', 'intelligence_starting', *misc],
         f"""
             setAttrs({{
-                skill_points: 10 + intelligence_starting * 2 + {sum_variables(misc)}
+                skill_points: 8 + intelligence_starting * 2 + {sum_variables(misc)}
             }});
         """
     )
@@ -304,7 +293,7 @@ def hit_points():
     return js_wrapper(
         ['constitution_starting', 'challenge_rating', *misc],
         f"""
-            var hit_points = 6 + constitution_starting + {sum_variables(misc)};
+            var hit_points = 5 + constitution_starting + {sum_variables(misc)};
             var cr_mod = 1;
             if (challenge_rating === 1) {{
                 cr_mod = 0.5;
@@ -333,12 +322,11 @@ def insight_points():
 def magical_power():
     misc = get_misc_variables('magical_power', 3)
     return js_wrapper(
-        ['level', 'willpower', 'challenge_rating', 'level_scaling', *misc],
+        ['level', 'willpower_starting', 'challenge_rating', 'level_scaling', *misc],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
-            var magical_power_scaling = Math.max(level, willpower);
             setAttrs({{
-                magical_power: magical_power_scaling + cr_mod + level_scaling + {sum_variables(misc)},
+                magical_power: level + willpower_starting + cr_mod + level_scaling + {sum_variables(misc)},
                 magical_power_scaling,
             }});
         """
@@ -347,12 +335,11 @@ def magical_power():
 def mundane_power():
     misc = get_misc_variables('mundane_power', 3)
     return js_wrapper(
-        ['level', 'strength', 'challenge_rating', 'level_scaling', *misc],
+        ['level', 'strength_starting', 'challenge_rating', 'level_scaling', *misc],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
-            var mundane_power_scaling = Math.max(level, strength)
             setAttrs({{
-                mundane_power: mundane_power_scaling + cr_mod + level_scaling + {sum_variables(misc)},
+                mundane_power: level + strength_starting + cr_mod + level_scaling + {sum_variables(misc)},
                 mundane_power_scaling,
             }});
         """
@@ -429,26 +416,26 @@ def base_wound_resistance():
         ['level'],
         f"""
             var base_wound_resistance = {{
-                1: 16,
-                2: 18,
-                3: 21,
-                4: 24,
-                5: 27,
-                6: 30,
-                7: 34,
-                8: 38,
-                9: 43,
-                10: 48,
-                11: 54,
-                12: 61,
-                13: 69,
-                14: 77,
-                15: 86,
-                16: 96,
-                17: 108,
-                18: 122,
-                19: 138,
-                20: 154,
+                1: 14,
+                2: 16,
+                3: 18,
+                4: 21,
+                5: 24,
+                6: 27,
+                7: 30,
+                8: 34,
+                9: 38,
+                10: 43,
+                11: 48,
+                12: 54,
+                13: 61,
+                14: 69,
+                15: 77,
+                16: 86,
+                17: 96,
+                18: 108,
+                19: 122,
+                20: 138,
             }}[level];
             setAttrs({{
                 base_wound_resistance,
