@@ -64,9 +64,9 @@ def create_page(destination):
                 ]),
                 flex_col([
                     div({'class': 'skill-modifier-reminder-header'}, 'Modifier'),
-                    div('Half key attribute'),
-                    div('Key attribute or 1 + half level'),
-                    div('4 + key attribute or 4 + level'),
+                    div('Base attribute'),
+                    div('1 + half level + base attribute'),
+                    div('3 + level + base attribute'),
                 ]),
             ])
         ]),
@@ -215,13 +215,19 @@ def calc_accuracy():
         div({'class': 'calc-header'}, 'Accuracy'),
         equation(
             [
-                underlabel('Lvl/Per', number_input({
+                underlabel('Lvl', number_input({
                     'disabled': True,
                     'name': 'accuracy_scaling_display',
-                    'value': '@{accuracy_scaling}',
+                    'value': '@{level}',
                 })),
                 plus(),
-                equation_misc_repeat('accuracy', 3),
+                underlabel('1/2 (Per)', number_input({
+                    'disabled': True,
+                    'name': 'accuracy_perception_display',
+                    'value': '(@{perception_starting} / 2)',
+                })),
+                plus(),
+                equation_misc_repeat('accuracy', 2),
             ],
             result_attributes={
                 'disabled': True,
@@ -316,7 +322,7 @@ def calc_hit_points():
                 underlabel('Base', number_input({
                     'disabled': True,
                     'name': 'hit_points_base',
-                    'value': '6',
+                    'value': '5',
                 })),
                 plus(),
                 underlabel('(Con)', number_input({
@@ -361,13 +367,19 @@ def calc_magical_power():
         div({'class': 'calc-header'}, 'Magical Power'),
         equation(
             [
-                underlabel('Lvl/Wil', number_input({
+                underlabel('Lvl', number_input({
                     'disabled': True,
                     'name': 'magical_power_scaling_display',
-                    'value': '@{magical_power_scaling}',
+                    'value': '@{level}',
                 })),
                 plus(),
-                equation_misc_repeat('magical_power', 3),
+                underlabel('(Wil)', number_input({
+                    'disabled': True,
+                    'name': 'magical_power_willpower_display',
+                    'value': '@{willpower_starting}',
+                })),
+                plus(),
+                equation_misc_repeat('magical_power', 2),
             ],
             result_attributes={
                 'disabled': True,
@@ -382,13 +394,19 @@ def calc_mundane_power():
         div({'class': 'calc-header'}, 'Mundane Power'),
         equation(
             [
-                underlabel('Lvl/Str', number_input({
+                underlabel('Lvl', number_input({
                     'disabled': True,
                     'name': 'mundane_power_scaling_display',
-                    'value': '@{mundane_power_scaling}',
+                    'value': '@{level}',
                 })),
                 plus(),
-                equation_misc_repeat('mundane_power', 3),
+                underlabel('(Str)', number_input({
+                    'disabled': True,
+                    'name': 'magical_power_strength_display',
+                    'value': '@{strength_starting}',
+                })),
+                plus(),
+                equation_misc_repeat('mundane_power', 2),
             ],
             result_attributes={
                 'disabled': True,
@@ -503,7 +521,7 @@ def calc_skill_points():
         equation(
             [
                 underlabel('Base', number_input({
-                    'disabled': True, 'name': 'skill_points_base', 'value': 10,
+                    'disabled': True, 'name': 'skill_points_base', 'value': 8,
                 })),
                 plus(),
                 underlabel('2 * (Int)', number_input({
@@ -766,17 +784,17 @@ def standard_damage():
 
 def standard_damage_at_power(power):
     return {
-        0: '1d8',
-        2: '1d10',
-        4: '2d6',
-        6: '2d8',
-        8: '2d10',
-        10: '4d6',
-        12: '4d8',
-        14: '4d10',
-        16: '5d10',
-        18: '6d10',
-        20: '7d10',
-        22: '8d10',
-        24: '9d10',
+        0: '1d6',
+        2: '1d8',
+        4: '1d10',
+        6: '2d6',
+        8: '2d8',
+        10: '2d10',
+        12: '4d6',
+        14: '4d8',
+        16: '4d10',
+        18: '5d10',
+        20: '6d10',
+        22: '7d10',
+        24: '8d10',
     }[power]
