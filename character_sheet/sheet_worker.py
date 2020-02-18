@@ -149,14 +149,13 @@ def abilities_known():
     ]
 
 def accuracy():
-    misc = get_misc_variables('accuracy', 3)
+    misc = get_misc_variables('accuracy', 2)
     return js_wrapper(
         ['challenge_rating', 'level', 'perception_starting', 'level_scaling', *misc],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             setAttrs({{
                 accuracy: level + Math.floor(perception_starting / 2)  + level_scaling + {sum_variables(misc)} + cr_mod,
-                accuracy_scaling,
             }});
         """
     )
@@ -320,27 +319,25 @@ def insight_points():
     )
 
 def magical_power():
-    misc = get_misc_variables('magical_power', 3)
+    misc = get_misc_variables('magical_power', 2)
     return js_wrapper(
         ['level', 'willpower_starting', 'challenge_rating', 'level_scaling', *misc],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             setAttrs({{
                 magical_power: level + willpower_starting + cr_mod + level_scaling + {sum_variables(misc)},
-                magical_power_scaling,
             }});
         """
     )
 
 def mundane_power():
-    misc = get_misc_variables('mundane_power', 3)
+    misc = get_misc_variables('mundane_power', 2)
     return js_wrapper(
         ['level', 'strength_starting', 'challenge_rating', 'level_scaling', *misc],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             setAttrs({{
                 mundane_power: level + strength_starting + cr_mod + level_scaling + {sum_variables(misc)},
-                mundane_power_scaling,
             }});
         """
     )
