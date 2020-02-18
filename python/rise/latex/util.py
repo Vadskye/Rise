@@ -41,3 +41,13 @@ def tag_if(text, tag, test):
         return f"|{tag}<{text}>"
     else:
         return text
+
+# Using this fuction ensures consistent formatting of item longtables
+def longtablify(text):
+    return latexify(f"""
+        \\begin<longtablewrapper>
+            \\begin<longtable><p<15em> p<3em> p<6em> p<25em> p<3em>>
+                {text}
+            \\end<longtable>
+        \\end<longtablewrapper>
+    """)
