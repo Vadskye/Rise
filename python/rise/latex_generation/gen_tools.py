@@ -1,7 +1,7 @@
 import click
 from rise.latex_generation.book_path import book_path
 from rise.latex.magic_item import MagicItem
-from rise.latex.util import latexify
+from rise.latex.util import latexify, longtablify
 
 
 def generate_tools():
@@ -311,14 +311,10 @@ def generate_tool_table():
     )
     rows = [item.latex_table_row() for item in tools]
     row_text = '\n'.join(rows)
-    return latexify(f"""
-        \\begin<longtabuwrapper>
-            \\begin<longtabu><l l l X l>
-                \\lcaption<Tool Items> \\\\
-                \\tb<Name> & \\tb<Level> & \\tb<Typical Price> & \\tb<Description> & \\tb<Page> \\tableheaderrule
-                {row_text}
-            \\end<longtabu>
-        \\end<longtabuwrapper>
+    return longtablify(f"""
+        \\lcaption<Tool Items> \\\\
+        \\tb<Name> & \\tb<Level> & \\tb<Typical Price> & \\tb<Description> & \\tb<Page> \\tableheaderrule
+        {row_text}
     """)
 
 
