@@ -3111,7 +3111,7 @@ def generate_mystic_spheres():
                     \\item Its \\glossterm<damage resistance> and \\glossterm<wound resistance> are equal to the base values for your level (see \\pcref<Character Advancement>).
                     \\item Its \\glossterm<hit points> are equal to 3.
                     \\item Each of its \\glossterm<defenses> is equal to 4 \\add your level.
-                    \\item Its \\glossterm<accuracy> is equal to the higher of your level and Perception.
+                    \\item Its \\glossterm<accuracy> is equal to your level \\add your base Perception.
                     \\item Its \\glossterm<power> with its attacks is equal to your \\glossterm<power> \\sub 4.
                     \\item Its \\glossterm<land speed> is 30 feet.
                     \\item It has no \\glossterm<action points>.
@@ -3292,14 +3292,14 @@ def generate_mystic_spheres():
             """, tags=[]),
             Spell('Telekinetic Throw', 1, 'One Medium or smaller creature or object within \\rngmed range', """
                 Make an attack vs. Mental against the target.
-                \\hit You move the target up to 30 feet in any direction.
-                    You can change direction partway through the movement.
+                \\hit You move the target up to 5 feet per \\glossterm<power> in a straight line in any direction.
                     Moving the target upwards costs twice the normal movement cost.
+                    If the target impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgeoning \\glossterm<standard damage>.
 
                 \\rankline
-                \\rank<3> The distance increases to 60 feet.
-                \\rank<5> The distance increases to 100 feet.
-                \\rank<7> The distance increases to 200 feet.
+                \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
+                \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
+                \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
             """, tags=[]),
             Spell('Telekinetic Lift', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
                 The target is reduced to half of its normal weight.
@@ -3822,6 +3822,17 @@ def generate_mystic_spheres():
                 \\rank<5> The bonus increases to +8.
                 \\rank<7> The bonus increases to +10.
             """, tags=['Sustain (minor)']),
+            Spell('Flourishing Vines', 4, 'Yourself', """
+                Long, thin vines continuously grow and writhe on your body.
+                At the end of each round, you may choose to cause the vines to extend out onto the ground in a \\areamed radius around you.
+                When you do, that area becomes covered in \\glossterm<light undergrowth>.
+                Whenever you move, the vines retreat back to your body.
+                That prevents the vines from impeding your movement, though they do impede the movement of any other creatures that move simultaneously.
+
+                \\rankline
+                \\rank<6> The area increases to a \\arealarge radius.
+                \\rank<8> The area increases to a \\areahuge radius.
+            """, tags=['Attune (self)']),
         ],
         rituals=[
             Spell('Fertility', 3, None, """
@@ -4165,7 +4176,7 @@ def generate_mystic_spheres():
                     \\item Its \\glossterm<damage resistance> and \\glossterm<wound resistance> are equal to the base values for your level (see \\pcref<Character Advancement>).
                     \\item Its \\glossterm<hit points> are equal to 3.
                     \\item Each of its \\glossterm<defenses> is equal to 4 \\add your level.
-                    \\item Its \\glossterm<accuracy> is equal to the higher of your level and Perception.
+                    \\item Its \\glossterm<accuracy> is equal to your level \\add your base Perception.
                     \\item Its \\glossterm<power> with its attacks is equal to your \\glossterm<power> \\sub 2.
                     \\item Its \\glossterm<fly speed> is 30 feet, with good \\glossterm<maneuverability>.
                     \\item It has no \\glossterm<action points>.
