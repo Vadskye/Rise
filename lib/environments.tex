@@ -30,11 +30,14 @@
 }
 
 % small text for the feats table
-\newenvironment{longtabuwrapper}
+\newenvironment{longtablewrapper}
 {
     \onecolumn
     \small
-    \taburowcolors [2] 2{tbrown .. white}
+    \rowcolors{1}{white}{tbrown}
+    \renewcommand*{\arraystretch}{1.2}
+    \setlength\LTleft{0pt}
+    \setlength\LTright{0pt}
 }
 {\twocolumn}
 

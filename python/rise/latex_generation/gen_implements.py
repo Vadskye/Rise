@@ -3,7 +3,7 @@
 import click
 from rise.latex_generation.book_path import book_path
 from rise.latex.magic_item import MagicItem
-from rise.latex.util import latexify
+from rise.latex.util import latexify, longtablify
 
 def generate_implements():
     implements = []
@@ -158,7 +158,7 @@ def generate_implements():
         description="""
             You reduce your \\glossterm<focus penalty> by 2.
         """,
-        short_description="Reduces \\glossterm<focus penalty> by 2.",
+        short_description="Reduces \\glossterm<focus penalty> by 2",
     ))
 
     implements.append(MagicItem(
@@ -232,14 +232,10 @@ def generate_implement_table():
     )
     rows = [item.latex_table_row() for item in implements]
     row_text = '\n'.join(rows)
-    return latexify(f"""
-        \\begin<longtabuwrapper>
-            \\begin<longtabu><l l l X l>
-                \\lcaption<Implement Items> \\\\
-                \\tb<Name> & \\tb<Level> & \\tb<Typical Price> & \\tb<Description> & \\tb<Page> \\tableheaderrule
-                {row_text}
-            \\end<longtabu>
-        \\end<longtabuwrapper>
+    return longtablify(f"""
+        \\lcaption<Implement Items> \\\\
+        \\tb<Name> & \\tb<Level> & \\tb<Typical Price> & \\tb<Description> & \\tb<Page> \\tableheaderrule
+        {row_text}
     """)
 
 

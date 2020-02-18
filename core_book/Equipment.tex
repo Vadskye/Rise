@@ -136,8 +136,8 @@
         \parhead{Special} Some weapons have special properties. See the weapon
         descriptions for details.
 
-        \begin{longtabuwrapper}
-            \begin{longtabu}{p{12em} c c c >{\ccol}p{8em} c c >{\ccol}X}
+        \begin{longtablewrapper}
+            \begin{longtable}{p{11em} c c c >{\ccol}p{7em} c c >{\ccol}p{8em}}
                 \lcaption{Weapons}                     \\
                 \tb{Name}                              & \tb{Usage Class} & \tb{Accuracy} & \tb{Damage\fn{1}} & \tb{Damage Type\fn{2}}   & \tb{Cost} & \tb{Weight} & \tb{Special}                 \\
                 Armor weapons\label{Armor Weapons}     &                  &               &                   &                          &           &             &                              \\
@@ -237,11 +237,11 @@
                 \tind Gauntlet                         & Light            & \plus2        & \minus3d          & Bludgeoning              & 2 gp      & 1 lb.       & Unarmed                      \\
                 \tind Gauntlet, spiked                 & Light            & \plus2        & \minus3d          & Piercing                 & 5 gp      & 1 lb.       & Unarmed                      \\
                 \tind Unarmed strike                   & Light            & \plus2        & \minus3d          & Bludgeoning              & \tdash    & \tdash      & Subdual, Unarmed             \\
-            \end{longtabu}
+            \end{longtable}
             1 Applies as a modifier to your damage with \glossterm{strikes} using the weapon. \\
             2 When two types are given, the weapon is both types if the entry specifies ``and,'' or either type (attacker's choice) if the entry specifies ``or.'' \\
             3 This weapon has special rules. \\
-        \end{longtabuwrapper}
+        \end{longtablewrapper}
 
         % Exotic weapons should be +3 over normal, with the usual caveat that being Medium is intrinsically a +1 by itself
 

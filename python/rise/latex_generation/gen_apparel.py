@@ -3,7 +3,7 @@
 import click
 from rise.latex_generation.book_path import book_path
 from rise.latex.magic_item import MagicItem
-from rise.latex.util import latexify
+from rise.latex.util import latexify, longtablify
 
 def generate_armor():
     apparel = []
@@ -1296,14 +1296,10 @@ def generate_apparel_table():
     )
     rows = [item.latex_table_row() for item in apparel]
     row_text = '\n'.join(rows)
-    return latexify(f"""
-        \\begin<longtabuwrapper>
-            \\begin<longtabu><l l l X l>
-                \\lcaption<Apparel Items> \\\\
-                \\tb<Name> & \\tb<Level> & \\tb<Typical Price> & \\tb<Description> & \\tb<Page> \\tableheaderrule
-                {row_text}
-            \\end<longtabu>
-        \\end<longtabuwrapper>
+    return longtablify(f"""
+        \\lcaption<Apparel Items> \\\\
+        \\tb<Name> & \\tb<Level> & \\tb<Typical Price> & \\tb<Description> & \\tb<Page> \\tableheaderrule
+        {row_text}
     """)
 
 
