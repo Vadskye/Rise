@@ -134,7 +134,7 @@ def generate_mystic_spheres():
                 You can cast this spell as a \\glossterm<minor action>.
 
                 \\rankline
-                \\rank<5> The target also gains a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes>.
+                \\rank<5> The target also gains a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities.
                 \\rank<7> The bonus to \\glossterm<reach> increases to +10 feet.
             """, tags=['Attune (target)']),
             Spell('Stormlord', 3, 'Yourself', """
@@ -2750,7 +2750,7 @@ def generate_mystic_spheres():
                 You can cast this spell as a \\glossterm<minor action>.
 
                 \\rankline
-                \\rank<6> The target also gains a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes>.
+                \\rank<6> The target also gains a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities.
                 % May be too strong
                 \\rank<8> The power bonus increases to +4.
             """, tags=['Attune (target)']),
@@ -3277,7 +3277,7 @@ def generate_mystic_spheres():
                 You can cast this spell as a \\glossterm<minor action>.
 
                 \\rankline
-                \\rank<5> The target also gains a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes>.
+                \\rank<5> The target also gains a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities.
                 \\rank<7> The bonus to \\glossterm<reach> increases to +10 feet.
             """, tags=['Attune (target)']),
             Spell('Kinetic Impedance', 1, 'One Large or smaller target within \\rngmed range', """
@@ -3649,10 +3649,11 @@ def generate_mystic_spheres():
                 After you absorb three spells in this way, this effect ends.
             """, tags=['Attune (self)']),
             Spell('Enhance Magic', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-                The target gains a +2 \\glossterm<magic bonus> to \\glossterm<power> with spells.
+                The target gains a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<magical> abilities.
+                You can cast this spell as a \\glossterm<minor action>.
 
                 \\rankline
-                \\rank<5> The bonus applies to all \\glossterm<magical> abilities.
+                \\rank<5> The target also reduces its \\glossterm<focus penalties> by 1.
                 \\rank<7> The bonus increases to +4.
             """, tags=['Attune (target)']),
             # Is this worth the complexity it adds to the system?
