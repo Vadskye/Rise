@@ -217,7 +217,7 @@ def movement():
 def abilities(destination):
     return flex_col({'class': 'abilities'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Abilities')),
-        "".join([ability(i) for i in range(11)]) if destination == 'paper' else fieldset(
+        "".join([ability(i) for i in range(13)]) if destination == 'paper' else fieldset(
             {'class': f'repeating_abilities'},
             ability(0),
         )
