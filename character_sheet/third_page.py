@@ -35,11 +35,8 @@ def basic_info():
 
 def feats_summary():
     return flex_col({'class': 'feats-summary'}, [
-        flex_row({'class': 'summary-header'}, [
-            div({'class': 'summary-header-level section-header'}, 'Lvl'),
-            div({'class': 'summary-header-name section-header'}, 'Feats'),
-        ]),
-        "".join([feat_row(i) for i in [1, 3, 6, 9]]),
+        flex_wrapper(div({'class': 'section-header'}, 'Feats')),
+        "".join([feat_row(i) for i in range(4)]),
     ])
 
 def abilities_summary():
@@ -58,14 +55,9 @@ def abilities_summary():
         ],
     ])
 
-def feat_row(level):
+def feat_row(i):
     return flex_row({'class': 'summary-row'}, [
-        div({'class': 'summary-row-level'}, text_input({
-            'disabled': True,
-            'name': f"feat_level_{level}",
-            'value': level,
-        })),
-        div({'class': 'summary-row-name'}, text_input({'name': f"feat_name_{level}"})),
+        div({'class': 'summary-row-name'}, text_input({'name': f"feat_name_{i}"})),
     ])
 
 def proficiencies():
