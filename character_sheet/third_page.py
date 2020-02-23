@@ -9,12 +9,15 @@ def create_page():
             basic_info(),
             archetypes(),
             feats_summary(),
-            inventory(),
+            div({'class': 'section-header goals-and-flaws'}, 'Goals and Flaws'),
+            "".join([div(text_input({'name': f'goals_and_flaws_{i}'})) for i in range(3)]),
+            vital_wound_chart(),
         ]),
         flex_col({'class': 'main-body'}, [
             equipment(),
             abilities_summary(),
             personality(),
+            inventory(),
         ]),
     ])
 
@@ -83,7 +86,7 @@ def equipment():
     ])
 
 def archetypes():
-    return div({'class': 'inventory'}, [
+    return div({'class': 'archetypes'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Archetypes')),
         *[
             text_input({'name': f"archetypes_{i}"}) for i in range(3)
@@ -94,9 +97,44 @@ def inventory():
     return div({'class': 'inventory'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Inventory')),
         *[
-            text_input({'name': f"inventory_{i}"}) for i in range(10)
+            text_input({'name': f"inventory_{i}"}) for i in range(7)
         ]
     ])
+
+def vital_wound_chart():
+    return flex_col({'class': 'vital-wound-effects'}, [
+        div({'class': 'section-header'}, 'Vital Wound Effects'),
+        flex_row({'class': 'vital-wound-chart'}, [
+            flex_col([
+                div({'class': 'header'}, 'Roll'),
+                "".join([div(f"{i}") for i in [*range(-1, 11), '11+']])
+            ]),
+            flex_col([
+                div({'class': 'header'}, 'Effect'),
+                "".join([
+                    div(wound_roll_effect(i))
+                    for i in [*range(-1, 11), '11+']
+                ]),
+            ])
+        ])
+    ])
+
+def wound_roll_effect(roll):
+    return {
+        -1: 'Unconscious, die next round',
+        0: 'Unconscious until short rest',
+        1: 'Unconscious, can be woken',
+        2: 'Move at half speed',
+        3: '-2 accuracy',
+        4: '-2 defenses',
+        5: '-2 wound rolls',
+        6: '-1 max hit points',
+        7: '-2 Fortitude',
+        8: '-2 Mental',
+        9: '-2 Reflex',
+        10: '-1 wound rolls',
+        '11+': 'No effect',
+    }[roll]
 
 def misc_equipment(body_slot, body_slot_html=None):
     if body_slot_html is None:
@@ -110,7 +148,5 @@ def misc_equipment(body_slot, body_slot_html=None):
 def personality():
     return flex_col({'class': 'personality'}, [
         div({'class': 'section-header'}, 'Personality and Background'),
-        "".join([div(text_input({'name': f'personality_and_background_{i}'})) for i in range(5)]),
-        div({'class': 'section-header goals-and-flaws'}, 'Goals and Flaws'),
-        "".join([div(text_input({'name': f'goals_and_flaws_{i}'})) for i in range(2)]),
+        "".join([div(text_input({'name': f'personality_and_background_{i}'})) for i in range(4)]),
     ])
