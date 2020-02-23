@@ -44,9 +44,11 @@ def create_page(destination):
                 calc_hit_points(),
                 calc_initiative(),
                 calc_insight_points(),
+                calc_skill_points(),
+                flex_wrapper(div({'class': 'section-header'}, 'Power')),
                 calc_magical_power(),
                 calc_mundane_power(),
-                calc_skill_points(),
+                *[calc_blank_power(i) for i in range(1)],
                 flex_wrapper(div({'class': 'section-header'}, 'Resistances')),
                 calc_base_resistances(),
                 calc_energy_resistance_bonus(),
@@ -92,7 +94,7 @@ def calc_skills(destination):
     else:
         blank_skill_info = [
             calc_skill('')
-            for i in range(15)
+            for i in range(17)
         ]
 
         return flex_col({'class': 'calc-skills'}, [
@@ -412,6 +414,22 @@ def calc_mundane_power():
                 'disabled': True,
                 'name': 'mundane_power_display',
                 'value': '@{mundane_power}',
+            },
+        ),
+    ])
+
+def calc_blank_power(i):
+    name = f'blank_power_{i}'
+    return flex_row([
+        div({'class': 'calc-header'}, text_input({'name': name})),
+        equation(
+            [
+                equation_misc_repeat(name, 4),
+            ],
+            result_attributes={
+                'disabled': True,
+                'name': f'{name}_display',
+                'value': f'@{{{name}}}',
             },
         ),
     ])
