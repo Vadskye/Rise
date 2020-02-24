@@ -1,6 +1,7 @@
 from cgi_simple import (
     button, div, fieldset, flex_col, flex_row, flex_wrapper, freeform_number_input,
-    labeled_number_input, labeled_text_input, number_input, sidelabel, text_input, underlabel, underlabel_spaced
+    labeled_number_input, labeled_text_input, number_input, sidelabel, span,
+    text_input, underlabel, underlabel_spaced
 )
 from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS
 
@@ -44,26 +45,30 @@ def attributes_and_skills():
         flex_wrapper(div({'class': 'section-header'}, 'Attributes and Skills')),
         ''.join([attribute_section(attribute.lower()) for attribute in ATTRIBUTES]),
         flex_col({'class': 'other-skills attribute-section'}, [
-            div({'class': 'attribute attribute-header'}, 'Other Skills'),
+            flex_row({'class': 'attribute'}, [
+                div({'class': 'attribute-header'}, 'Other Skills'),
+            ]),
             ''.join([skill_box(skill) for skill in ATTRIBUTE_SKILLS['other']]),
             freeform_number_input({'class': 'skill-box'}, {'name': 'other_skill_1_name'}, {'name': 'other_skill_1'}),
             freeform_number_input({'class': 'skill-box'}, {'name': 'other_skill_2_name'}, {'name': 'other_skill_2'}),
-            freeform_number_input({'class': 'skill-box'}, {'name': 'other_skill_3_name'}, {'name': 'other_skill_3'}),
-            freeform_number_input({'class': 'skill-box'}, {'name': 'other_skill_4_name'}, {'name': 'other_skill_4'}),
         ]),
     ])
 
 def attribute_section(attribute):
     return flex_col({'class': f'{attribute} attribute-section'}, [
-        labeled_number_input(
-            attribute.capitalize(),
-            attributes={'class': 'attribute'},
-            input_attributes={
-                'disabled': 'true',
+        flex_row({'class': 'attribute'}, [
+            span({'class': 'attribute-header number-label'}, attribute.capitalize()),
+            underlabel('Base', number_input({
+                'disabled': True,
+                'name': f"{attribute}_base_display",
+                'value': '(@{' + attribute + '_starting})',
+            })),
+            underlabel('Total', number_input({
+                'disabled': True,
                 'name': f"{attribute}_display",
                 'value': '(@{' + attribute + '})',
-            },
-        ),
+            })),
+        ]),
         ''.join([skill_box(skill) for skill in ATTRIBUTE_SKILLS[attribute]])
     ])
 

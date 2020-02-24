@@ -143,7 +143,7 @@ def calc_attribute(attribute_name):
     return ''.join([
         equation(
             [
-                underlabel('(Start)', number_input({
+                underlabel('(Base)', number_input({
                     'name': attribute_name + '_starting',
                 })),
                 plus(),

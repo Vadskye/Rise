@@ -89,12 +89,23 @@
 }
 
 .attribute {
-    align-items: center;
-    font-weight: 600;
-    text-align: center;
+    align-items: end;
+    justify-content: space-between;
+
+    .attribute-header  {
+        font-size: 1.25em;
+        font-weight: 600;
+    }
+
+    .underlabeled {
+        margin-left: 0.5em;
+    }
 }
-.attribute .number-label, .attribute-header {
-    font-size: 1.25em;
+
+.other-skills {
+    .attribute {
+        justify-content: center;
+    }
 }
 
 .active-ability, .attack, .defenses > div, .movement > div, .resources > div, .hit-points > div {
@@ -114,7 +125,7 @@
 }
 
 .attribute-section {
-    margin-bottom: 0.75em;
+    margin-bottom: 0.25em;
 }
 .attribute-section:nth-child(4) {
     margin-bottom: 0.4em;
