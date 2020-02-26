@@ -610,9 +610,8 @@ def generate_mystic_spheres():
                 You are still affected normally by abilities that affect an area.
 
                 \\rankline
-                \\rank<6> This protects you against any \\glossterm<targeted> attacks instead of only from \\glossterm<strikes>.
-                    You are still affected normally by abilities that affect an area.
-                \\rank<8> \\glossterm<Targeted> attacks against you still have a 20\% miss chance in phases when you take actions.
+                \\rank<6> This protects you against \\glossterm<mundane> \\glossterm<targeted> attacks instead of only from \\glossterm<strikes>.
+                \\rank<8> This protects you against all \\glossterm<targeted> attacks.
             """, tags=['Attune (self)']),
             Spell('Transposition', 3, 'Two Large or smaller creatures within \\rngmed range', """
                 Make an attack vs. Mental against each target.
@@ -2222,14 +2221,13 @@ def generate_mystic_spheres():
                 Four illusory duplicates appear around you that mirror your every move.
                 The duplicates shift chaotically in your space, making it difficult to identify your real location.
 
-                % TODO: remove "physical attacks" wording
-                All \\glossterm<targeted> \\glossterm<physical attacks> against you have a 50\\% miss chance.
+                All \\glossterm<targeted> against you have a 50\\% miss chance.
                 When an attack misses in this way, it affects an image, destroying it.
                 This ability provides no defensive benefit against creatures immune to \\glossterm<Visual> abilities.
 
                 \\rankline
-                \\rank<5> At the end of each round, one image destroyed in a previous round reappears, up to a maximum of four images.
-                \\rank<7> The number of initial and maximum images increases to five.
+                \\rank<5> At the end of each round, if no images were destroyed that round, a destroyed image respawns.
+                \\rank<7> At the end of each round, a destroyed image respawns.
             """, tags=['Attune (self)', 'Sensation', 'Visual']),
             Spell('Shadow Mantle', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
                 The target's physical form becomes blurred and shifts in and out of existence.
@@ -2240,12 +2238,11 @@ def generate_mystic_spheres():
                 \\rank<6> The bonus to Armor defense and Stealth increases to +2.
                 \\rank<8> The bonus to all defenses increases to +2.
             """, tags=['Attune (target)']),
-            Spell('Displacement', 7, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-                The target's image appears to be two to three feet from its real location.
-                % TODO: remove "physical attacks" wording
-                \\glossterm<Targeted> \\glossterm<physical attacks> against the target suffer a 50\\% miss chance.
+            Spell('Displacement', 8, 'Yourself', """
+                Your image appears to be two to three feet from its real location.
+                \\glossterm<Mundane> \\glossterm<targeted> attacks against you suffer a 50\\% miss chance.
                 This ability provides no defensive benefit against creatures immune to \\glossterm<Visual> abilities.
-            """, tags=['Attune (target)', 'Sensation', 'Visual']),
+            """, tags=['Sensation', 'Visual']),
         ],
         rituals=[
             Spell('Magic Mouth', 1, 'Yourself or one large or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
@@ -2280,6 +2277,15 @@ def generate_mystic_spheres():
         ],
         lists=['Arcane', 'Nature', 'Pact'],
         spells=[
+            Spell('Natural Weapon', 1, 'Yourself', """
+                You gain your choice of one of the following \\glossterm<natural weapons>: bite, claw, constrict, gore, ram, slam, or talon.
+                For details, see \\tref<Natural Weapons>.
+
+                \\rankline
+                \\rank<3> You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with natural weapons.
+                \\rank<5> You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with natural weapons.
+                \\rank<7> The accuracy bonus increases to +2.
+            """, tags=['Attune (target)']),
             Spell('Piercing Grasp', 1, 'One creature you \\glossterm<threaten>', """
                 This spell does not have the \\glossterm<Focus> tag.
                 You must have a \\glossterm<free hand> to cast this spell.
@@ -4069,7 +4075,7 @@ def generate_mystic_spheres():
             """, tags=['Attune (target)']),
             Spell('Death Knell', 1, 'One creature within \\rngmed range', """
                 Make an attack vs. Fortitude against the target.
-                You gain a +2 bonus to \\glossterm<accuracy> against a creature with 3 or fewer current \\glossterm<hit points>.
+                You gain a +4 bonus to \\glossterm<accuracy> against a \\glossterm<bloodied> creature.
                 \\hit As a \\glossterm<condition>, the target is marked for death.
                 It takes a penalty to its \\glossterm<wound resistance> equal to half your \\glossterm<power> against all types of damage.
 
@@ -4078,23 +4084,23 @@ def generate_mystic_spheres():
                 \\rank<5> The accuracy bonus increases to +2.
                 \\rank<7> The accuracy bonus increases to +3.
             """, tags=[]),
-            Spell('Circle of Death', 3, 'Living \\glossterm<enemies> in a \\areasmall radius \\glossterm<zone> from your location', """
+            Spell('Circle of Death', 3, 'Living \\glossterm<enemies> in a \\areamed radius \\glossterm<zone> from your location', """
                 When this spell resolves, and during each \\glossterm<action phase> in subsequent rounds, make an attack vs. Fortitude against each target.
                 You cannot make this attack more than once against any individual target during this spell's duration.
                 \\hit As a \\glossterm<condition>, each target is marked for death.
                 It takes a penalty to its \\glossterm<wound resistance> equal to half your \\glossterm<power> against all types of damage.
 
                 \\rankline
-                \\rank<5> The area increases to a \\areamed radius \\glossterm<zone>.
-                \\rank<7> The area increases to a \\arealarge radius \\glossterm<zone>.
+                \\rank<5> The area increases to a \\arealarge radius \\glossterm<zone>.
+                \\rank<7> The area increases to a \\areahuge radius \\glossterm<zone>.
             """, tags=['Attune (self)']),
-            Spell('Circle of Life', 3, 'Yourself and each living \\glossterm<ally> in a \\glossterm<areasmall> radius \\glossterm<zone> from your location', """
-                When this spell resolves, and the end of each \\glossterm<action phase> in subsequent rounds, each target gains a +2 bonus to the \\glossterm<wound roll> of its most recent \\glossterm<vital wound>.
+            Spell('Circle of Life', 3, 'Yourself and each living \\glossterm<ally> in a \\glossterm<areamed> radius \\glossterm<zone> from your location', """
+                When this spell resolves, and the end of each subsequent round, each target gains a +2 bonus to the \\glossterm<wound roll> of its most recent \\glossterm<vital wound>.
                 The \\glossterm<wound roll> for each \\glossterm<vital wound> modified this way cannot be modified again.
 
                 \\rankline
-                \\rank<5> The area increases to a \\areamed radius \\glossterm<zone>.
-                \\rank<7> The area increases to a \\arealarge radius \\glossterm<zone>.
+                \\rank<5> The area increases to a \\arealarge radius \\glossterm<zone>.
+                \\rank<7> The area increases to a \\areahuge radius \\glossterm<zone>.
             """, tags=['Attune (self)']),
             Spell('Avasculate', 8, 'One creature within \\rngclose range', """
                 Make an attack vs. Fortitude against the target.
