@@ -243,6 +243,7 @@ It defines how attributes work and explains how to make attacks in combat.
                 \item You gain a bonus (or penalty) to your \glossterm{hit points} equal to your base Constitution.
                 \item You gain a bonus (or penalty) to your Fortitude defense equal to your base Constitution.
                 \item Your Constitution modifies the number of rounds you can hold your breath (see \pcref{Drowning}).
+                \item If you have a high Constitution, it can increase your \glossterm{resistances} (see \pcref{Resistances}).
             \end{itemize}
         }
 
@@ -520,8 +521,8 @@ It defines how attributes work and explains how to make attacks in combat.
         \begin{itemize}
             \item You can spend two \glossterm{insight points} to become a \glossterm{multiclass} character (see \pcref{Multiclass Characters}).
             \item You can spend an \glossterm{insight point} to gain two \glossterm{skill points}.
-            \item You can spend an \glossterm{insight point} to gain proficiency in an additional \glossterm{weapon group}.
             \item You can spend an \glossterm{insight point} to gain proficiency in an additional \glossterm{usage class} of armor (light, medium, heavy, or shield).
+            \item You can spend an \glossterm{insight point} to gain proficiency in an additional \glossterm{weapon group}.
         \end{itemize}
         In addition, every class has at least one way to spend \glossterm{insight points} to learn additional abilities.
         The list of ways to spend \glossterm{insight points} on class abilities is given below.
@@ -543,6 +544,46 @@ It defines how attributes work and explains how to make attacks in combat.
     When you are hit by an attack, you may take damage.
     Depending on the amount of damage you take, you may lose a \glossterm{hit point} or even gain a \glossterm{vital wound}.
 
+    % TODO: this table is awkwardly wide, can it have more information?
+    \begin{dtable}
+        \lcaption{Resistance Values}
+        \begin{dtabularx}{\columnwidth}{l *{2}{>{\ccol}X}}
+            % DR is +1 every level at first, then +2 per level after 10th, with an extra + per level every 6 levels.
+            % TODO: make the above logic make more sense with math
+            % WR doubles every 6 levels; anchor points are 4th, 10th, 16th
+            \tb{Level or Con} & \tb{DR}\fn{1} & \tb{WR}\fn{2} \tableheaderrule
+            1        & 1             & 14  \\
+            2        & 2             & 16  \\
+            3        & 3             & 18  \\
+            4        & 4             & 21  \\
+            5        & 5             & 24  \\
+            6        & 6             & 27  \\
+            7        & 7             & 30  \\
+            8        & 8             & 34  \\
+            9        & 9             & 38  \\
+            10       & 10            & 43  \\
+            11       & 12            & 48  \\
+            12       & 14            & 54  \\
+            13       & 16            & 61  \\
+            14       & 18            & 69  \\
+            15       & 20            & 77  \\
+            16       & 22            & 86  \\
+            17       & 25            & 96  \\
+            18       & 28            & 108 \\
+            19       & 31            & 122 \\
+            20       & 34            & 138 \\
+            21       & 37            & 154 \\
+            22       & 40            & 172 \\
+            23       & 44            & 192 \\
+            24       & 48            & 216 \\
+            25\plus\fn{3}       & \tdash            & \tdash \\
+        \end{dtabularx}
+        1. This is your \glossterm{damage resistance} (see \pcref{Damage Resistance}). \\
+        2. This is your \glossterm{wound resistance} (see \pcref{Wound Resistance}). \\
+        3. To calculate the damage resistance for a creature with an epic Constitution, increase its damage resistance by 4 per point.
+        Its wound resistance is equal to twice the wound resistance it would have if its Constitution was 6 points lower.
+    \end{dtable}
+
     \subsection{Resistances}\label{Resistances}
         When you are hit by an attack, you use your \glossterm{resistances} to mitigate the damage from the attack.
         You have two types of resistances: \glossterm{damage resistance}, which protects you from losing \glossterm{hit points}, and \glossterm{wound resistance}, which protects you from gaining \glossterm{vital wounds}.
@@ -552,7 +593,7 @@ It defines how attributes work and explains how to make attacks in combat.
             When an attack would deal damage to you, if the damage is less than your \glossterm{damage resistance}, you take no damage from the attack.
             This prevents you from losing a \glossterm{hit point} or suffering other negative consequences of taking damage.
 
-            Your \glossterm{damage resistance} is based on your level, as defined in \tref{Character Advancement}.
+            Your \glossterm{damage resistance} is based on the higher of your level and Constitution, as defined in \tref{Resistance Values}.
             Wearing \glossterm{armor} can increase your damage resistance against \glossterm{physical damage}, and some special abilities can also increase it.
 
             \parhead{Missing Damage Resistance} An object or creature without a listed \glossterm{damage resistance} loses a \glossterm{hit point} if it takes at least 1 damage from a single damage roll.
@@ -562,7 +603,7 @@ It defines how attributes work and explains how to make attacks in combat.
             Your \glossterm{wound resistance} measures your ability to avoid gaining \glossterm{vital wounds} from dangerous attacks.
             When you take damage from an attack, if the damage is at least as much as your \glossterm{wound resistance}, you gain a \glossterm{vital wound} (see \pcref{Vital Wounds}).
 
-            Your \glossterm{wound resistance} is based on your level, as defined in \tref{Character Advancement}.
+            Your \glossterm{wound resistance} is based on the higher of your level and Constitution, as defined in \tref{Resistance Values}.
             Wearing \glossterm{armor} can increase your wound resistance against \glossterm{physical damage}, and some special abilities can also increase it.
 
             \parhead{Missing Wound Resistance} An object or creature without a listed \glossterm{wound resistance} cannot gain \glossterm{vital wounds} from taking damage directly.
@@ -1851,38 +1892,35 @@ It defines how attributes work and explains how to make attacks in combat.
         \item At 6th level, and every 6 levels thereafter, you gain a \glossterm{legacy item} upgrade (see \pcref{Legacy Items}).
     \end{itemize}
 
-    \begin{dtable*}
+    \begin{dtable}
         \lcaption{Character Advancement}
-        \begin{dtabularx}{\textwidth}{*{4}{>{\lcol}l} *{4}{>{\lcol}X}}
-            \tb{Level} & \tb{DR}\fn{1} & \tb{WR}\fn{2} & \tb{XP} & \tb{Max Rank}\fn{3} & \tb{Legacy Item}\fn{4} & \tb{AP}\fn{5} \tableheaderrule
-            % Damage doubles every 6 levels; anchor points are 4th, 10th, 16th
-            1st        & 1             & 14            & 0       & 1                   & \tdash                 & 3      \\
-            2nd        & 2             & 16            & 20      & 2                   & \tdash                 & \tdash \\
-            3rd        & 3             & 18            & 50      & \tdash              & \tdash                 & \tdash \\
-            4th        & 4             & 21            & 90      & \tdash              & \tdash                 & 4      \\
-            5th        & 5             & 24            & 150     & 3                   & \tdash                 & \tdash \\
-            6th        & 6             & 27            & 230     & \tdash              & 1                      & \tdash \\
-            7th        & 7             & 30            & 350     & \tdash              & \tdash                 & 5      \\
-            8th        & 8             & 34            & 510     & 4                   & \tdash                 & \tdash \\
-            9th        & 9             & 38            & 750     & \tdash              & \tdash                 & \tdash \\
-            10th       & 10            & 43            & 1,050   & \tdash              & \tdash                 & 6      \\
-            11th       & 12            & 48            & 1,550   & 5                   & \tdash                 & \tdash \\
-            12th       & 14            & 54            & 2,200   & \tdash              & 2                      & \tdash \\
-            13th       & 16            & 61            & 3,150   & \tdash              & \tdash                 & 7      \\
-            14th       & 18            & 69            & 4,450   & 6                   & \tdash                 & \tdash \\
-            15th       & 20            & 77            & 6,350   & \tdash              & \tdash                 & \tdash \\
-            16th       & 23            & 86            & 8,900   & \tdash              & \tdash                 & 8      \\
-            17th       & 26            & 96            & 13,000  & 7                   & \tdash                 & \tdash \\
-            18th       & 29            & 108           & 18,000  & \tdash              & 3                      & \tdash \\
-            19th       & 32            & 122           & 25,500  & \tdash              & \tdash                 & 9      \\
-            20th       & 35            & 138           & 36,000  & 8                   & \tdash                 & \tdash \\
+        \begin{dtabularx}{\columnwidth}{*{2}{>{\lcol}l} *{4}{>{\lcol}X}}
+            \tb{Level} & \tb{XP} & \tb{Max Rank}\fn{1} & \tb{Legacy Item}\fn{2} & \tb{AP}\fn{3} \tableheaderrule
+            1st        & 0       & 1                   & \tdash                 & 3      \\
+            2nd        & 20      & 2                   & \tdash                 & \tdash \\
+            3rd        & 50      & \tdash              & \tdash                 & \tdash \\
+            4th        & 90      & \tdash              & \tdash                 & 4      \\
+            5th        & 150     & 3                   & \tdash                 & \tdash \\
+            6th        & 230     & \tdash              & 1                      & \tdash \\
+            7th        & 350     & \tdash              & \tdash                 & 5      \\
+            8th        & 510     & 4                   & \tdash                 & \tdash \\
+            9th        & 750     & \tdash              & \tdash                 & \tdash \\
+            10th       & 1,050   & \tdash              & \tdash                 & 6      \\
+            11th       & 1,550   & 5                   & \tdash                 & \tdash \\
+            12th       & 2,200   & \tdash              & 2                      & \tdash \\
+            13th       & 3,150   & \tdash              & \tdash                 & 7      \\
+            14th       & 4,450   & 6                   & \tdash                 & \tdash \\
+            15th       & 6,350   & \tdash              & \tdash                 & \tdash \\
+            16th       & 8,900   & \tdash              & \tdash                 & 8      \\
+            17th       & 13,000  & 7                   & \tdash                 & \tdash \\
+            18th       & 18,000  & \tdash              & 3                      & \tdash \\
+            19th       & 25,500  & \tdash              & \tdash                 & 9      \\
+            20th       & 36,000  & 8                   & \tdash                 & \tdash \\
         \end{dtabularx}
-        1. This is your \glossterm{damage resistance} (see \pcref{Damage Resistance}). \\
-        2. This is your \glossterm{wound resistance} (see \pcref{Wound Resistance}). \\
-        3. This is your maximum rank in your class archetypes (see \pcref{Archetype Ranks}). \\
-        4. This is the number of abilities you gain with your \glossterm{legacy item} (see \pcref{Legacy Items}). \\
-        5. This is the number of \glossterm{action points} you have (see \pcref{Action Points}). \\
-    \end{dtable*}
+        1. This is your maximum rank in your class archetypes (see \pcref{Archetype Ranks}). \\
+        2. This is the number of abilities you gain with your \glossterm{legacy item} (see \pcref{Legacy Items}). \\
+        3. This is the number of \glossterm{action points} you have (see \pcref{Action Points}). \\
+    \end{dtable}
 
     \subsection{Leveling Up}
         When you gain a level, the following things happen:
