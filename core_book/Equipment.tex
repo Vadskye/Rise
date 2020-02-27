@@ -391,46 +391,44 @@
 \section{Armor}\label{Armor}
 
     Most characters use armor to protect themselves. There are two kinds of armor: \glossterm{body armor}, such as full plate armor, and \glossterm{shields}.
+    Body armor is worn on your body.
+    You can only benefit from one body armor at a time.
+    If you somehow wear multiple layers of body armor, the penalties stack and the benefits do not stack.
+    A shield requires a free hand instead of being worn on the body.
 
     \subsection{Armor Usage Classes}\label{Armor Usage Classes}
         An armor's \glossterm{usage class} is a measure of how the armor is used, and how much effort is required to use it.
-        It indicates whether armor, when used by a creature the armor is sized for, is considered light armor, medium armor, heavy armor, or a shield.
-        Light armor, medium armor, and heavy armor are all types of \glossterm{body armor}.
-
-        \parhead{Light Armor} Light armor has a low \glossterm{encumbrance} and imposes no special penalties on a creature wearing it.
-
-        \parhead{Medium Armor} A creature wearing medium armor has its \glossterm{base speed} reduced by five feet (to a minimum of five feet).
-
-        \parhead{Heavy Armor} A creature wearing heavy armor has its \glossterm{base speed} reduced by ten feet (to a minimum of five feet).
-        In addition, the creature's current Dexterity is reduced to half its normal value.
-        % TODO: wording
-        The creature's base Dexterity is also reduced to half its normal value for the purpose of calculations that rely on base Dexterity directly, such as Armor and Reflex defenses.
-        If the creature's Dexterity or base Dexterity are negative, they are not halved.
-
-        \parhead{Shield} A shield requires a free hand instead of being worn on the body.
-        Most shields impose no special penalties on a creature wielding them.
-        However, a creature wielding a tower shield increases \glossterm{encumbrance} by 2 and halves the creature's Dexterity, just like heavy armor.
+        It indicates whether armor, when used by a creature the armor is sized for, is considered light armor, medium armor, or heavy armor.
 
         \subsubsection{Armor Proficiency}\label{Armor Proficiency}
             Unlike weapons, proficiency with armor is defined by the armor's usage class.
             If you wear or use armor you are not proficient with, it provides half its normal defense bonus.
-            In addition, you apply that armor's \glossterm{encumbrance} as a penalty to your \glossterm{accuracy} with \glossterm{physical attacks}.
+            In addition, you apply that armor's \glossterm{encumbrance} as a penalty to your \glossterm{accuracy} with \glossterm{mundane} attacks.
             Since standard shields have no \glossterm{encumbrance}, you can use them without penalizing your attacks.
 
     \subsection{Armor Qualities}
         \par Here is the format for armor entries (given as column headings on \trefnp{Armor and Shields}, below).
+
+        \parhead{Defense} This value indicates how much the armor increases your Armor defense.
+
+        \parhead{Resistances} This value indicates how much the armor increases your \glossterm{resistances} against \glossterm{physical damage} (see \pcref{Resistances}).
+
+        \parhead{Encumbrance} This value indicates how much the armor increases your \glossterm{encumbrance}.
+        You apply your encumbrance as a penalty to all Strength and Dexterity-based checks and skills.
+        For details, see \pcref{Encumbrance}.
+
+        \parhead{Speed} Some armor decreases your \glossterm{base speed} by the given value while it is used.
+
+        \parhead{Dex} Some armor halves your current and base Dexterity while being used.
+        If your Dexterity or base Dexterity are negative, they are not halved.
 
         \parhead{Cost} The cost of the armor for Small or Medium humanoid creatures.
         See \trefnp{Armor for Unusual Creatures}, below, for armor prices for other creatures.
         \parhead{Armor/Shield Bonus} Both body armor and shields improve your Armor defense.
         Wearing multiple suits of armor or wielding multiple shields does not improve your defenses any further.
 
-        \parhead{Encumbrance} This value indicates how much the armor increases your \glossterm{encumbrance}.
-        % TODO: awkward that this doesn't affect, say, Climb-based attacks.
-        You apply your encumbrance as a penalty to all Strength and Dexterity-based checks you make.
-        For details, see \pcref{Encumbrance}.
-
-        \parhead{Weight} This column gives the weight of the armor sized for a Medium wearer. Armor fitted for Small characters weighs half as much, and armor for Large characters weighs twice as much.
+        \parhead{Weight} This value indicates the weight of armor sized for a Medium creature.
+        Armor fitted for Small creatures weighs half as much, and armor for Large creatures weighs twice as much.
 
     \subsection{Getting Into And Out Of Armor}
         The time required to don armor depends on its type; see \trefnp{Donning Armor}. Donning and removing body armor and shields takes both hands.
@@ -453,41 +451,36 @@
 
         \begin{dtable!*}
             \lcaption{Armor and Shields}
-            \begin{dtabularx}{\textwidth}{>{\lcol}X c c c c c c}
-                \tb{Armor}             & \tb{Armor Defense} & \tb{Resistances}\fn{1} & \tb{Encumbrance} & \tb{Material}     & \tb{Cost}              & \tb{Weight}\fn{2} \tableheaderrule
-                Light armor            &                    &                        &                  &                   &                        &             \\
-                \tind Leather          & \plus2             & \plus0                 & \plus1           & Leather           & 10 gp                  & 15 lb.      \\
-                \tind Studded leather  & \plus2             & \plus1                 & \plus1           & Leather and metal & 25 gp                  & 20 lb.      \\
-                \tind Chain shirt      & \plus2             & \plus2                 & \plus2           & Metal             & 40 gp                  & 25 lb.      \\
-                Medium armor\fn{3}     &                    &                        &                  &                   &                        &             \\
-                \tind Hide             & \plus3             & \plus2                 & \plus3           & Leather           & 15 gp                  & 25 lb.      \\
-                \tind Scale mail       & \plus3             & \plus3                 & \plus5           & Metal             & 50 gp                  & 30 lb.      \\
-                \tind Breastplate      & \plus3             & \plus4                 & \plus4           & Metal             & 150 gp                 & 30 lb.      \\
-                Heavy armor\fn{4}      &                    &                        &                  &                   &                        &             \\
-                \tind Plated mail      & \plus4             & \plus4                 & \plus5           & Metal             & 250 gp                 & 35 lb.      \\
-                \tind Half-plate       & \plus4             & \plus5                 & \plus7           & Metal             & 500 gp                 & 50 lb.      \\
-                \tind Full plate       & \plus4             & \plus6                 & \plus6           & Metal             & 1000 gp                & 50 lb.      \\
-                Shields                &                    &                        &                  &                   &                        &             \\
-                \tind Buckler          & \plus1             & \tdash                 & \tdash           & Metal or wood     & 15 gp                  & 5 lb.       \\
-                \tind Shield, standard & \plus2             & \tdash                 & \tdash\fn{5}     & Metal or wood     & 15 gp                  & 10 lb.      \\
-                \tind Shield, tower    & \plus3\fn{6}       & \tdash                 & \plus2\fn{5}     & Metal or wood     & 30 gp                  & 45 lb.      \\
-                Extras                 &                    &                        &                  &                   &                        &             \\
-                \tind Armor spikes     & \tdash             & \minus1                & \plus1           & Metal             & \plus50 gp             & \plus10 lb. \\
-                \tind Gauntlet, locked & \tdash             & \tdash                 & Special          & Metal             & 8 gp                   & \plus5 lb.  \\
-                \tind Shield spikes    & \tdash             & \tdash                 & \tdash           & Metal             & \plus10 gp             & \plus5 lb.  \\
-                Special materials      &                    &                        &                  &                   &                        &             \\
-                \tind Adamantine       & \tdash             & \mult2                 & \plus2           & Metal             & \mult10, \plus10000 gp & \mult2      \\
-                \tind Dragonhide       & \tdash             & \plus1, Special        & \tdash           & Leather           & \mult5, \plus5000 gp   & \tdash      \\
-                \tind Dragonscale      & \tdash             & \plus1, Special        & \tdash           & Metal             & \mult5, \plus5000 gp   & \tdash      \\
-                \tind Ironwood         & \tdash             & \tdash                 & \tdash           & Metal             & \mult2, \plus200 gp    & \tdash      \\
-                \tind Mithral          & \tdash             & \tdash                 & \minus2          & Metal             & \mult5, \plus5000 gp   & \mult1/2    \\
+            \begin{dtabularx}{\textwidth}{>{\lcol}X c c c c c c c c}
+                \tb{Armor}             & \tb{Defense} & \tb{Resistances} & \tb{Encumbrance} & \tb{Speed} & \tb{Dex} & \tb{Material}     & \tb{Cost}              & \tb{Weight} \tableheaderrule
+                Light armor           &              &                 &              &              &          &                   &                        &             \\
+                \tind Leather         & \plus2       & \plus0          & \plus1       & \tdash       & \tdash   & Leather           & 10 gp                  & 15 lb.      \\
+                \tind Studded leather & \plus2       & \plus1          & \plus1       & \tdash       & \tdash   & Leather and metal & 25 gp                  & 20 lb.      \\
+                \tind Chain shirt     & \plus2       & \plus2          & \plus2       & \tdash       & \tdash   & Metal             & 40 gp                  & 25 lb.      \\
+                \tind Buckler         & \plus1       & \tdash          & \tdash       & \tdash       & \tdash   & Metal or wood     & 15 gp                  & 5 lb.       \\
+                Medium armor          &              &                 &              &              &          &                   &                        &             \\
+                \tind Hide            & \plus3       & \plus2          & \plus3       & \minus5 ft.  & \tdash   & Leather           & 15 gp                  & 25 lb.      \\
+                \tind Scale mail      & \plus3       & \plus3          & \plus5       & \minus5 ft.  & \tdash   & Metal             & 75 gp                  & 30 lb.      \\
+                \tind Breastplate     & \plus3       & \plus4          & \plus4       & \minus5 ft.  & \tdash   & Metal             & 150 gp                 & 30 lb.      \\
+                \tind Standard shield & \plus2       & \tdash          & \tdash\fn{1} & \tdash       & \tdash   & Metal or wood     & 15 gp                  & 10 lb.      \\
+                Heavy armor           &              &                 &              &              &          &                   &                        &             \\
+                \tind Plated mail     & \plus4       & \plus4          & \plus5       & \minus10 ft. & \mult1/2 & Metal             & 250 gp                 & 35 lb.      \\
+                \tind Half-plate      & \plus4       & \plus5          & \plus7       & \minus10 ft. & \mult1/2 & Metal             & 500 gp                 & 50 lb.      \\
+                \tind Full plate      & \plus4       & \plus6          & \plus6       & \minus10 ft. & \mult1/2 & Metal             & 1000 gp                & 50 lb.      \\
+                \tind Tower shield    & \plus3\fn{2} & \tdash          & \plus2\fn{1} & \tdash       & \tdash   & Metal or wood     & 30 gp                  & 45 lb.      \\
+                Extras                &              &                 &              &              &          &                   &                        &             \\
+                \tind Armor spikes    & \tdash       & \minus1         & \plus1       & \tdash       & \tdash   & Metal             & \plus50 gp             & \plus10 lb. \\
+                \tind Locked gauntlet & \tdash       & \tdash          & Special      & \tdash       & \tdash   & Metal             & 8 gp                   & \plus5 lb.  \\
+                \tind Shield spikes   & \tdash       & \tdash          & \tdash       & \tdash       & \tdash   & Metal             & \plus10 gp             & \plus5 lb.  \\
+                Special materials     &              &                 &              &              &          &                   &                        &             \\
+                \tind Adamantine      & \tdash       & \mult2          & \plus2       & \tdash       & \tdash   & Metal             & \mult10, \plus10000 gp & \mult2      \\
+                \tind Dragonhide      & \tdash       & \plus1, Special & \tdash       & \tdash       & \tdash   & Leather           & \mult5, \plus5000 gp   & \tdash      \\
+                \tind Dragonscale     & \tdash       & \plus1, Special & \tdash       & \tdash       & \tdash   & Metal             & \mult5, \plus5000 gp   & \tdash      \\
+                \tind Ironwood        & \tdash       & \tdash          & \tdash       & \tdash       & \tdash   & Metal             & \mult2, \plus200 gp    & \tdash      \\
+                \tind Mithral         & \tdash       & \tdash          & \minus2      & Special      & \tdash   & Metal             & \mult5, \plus5000 gp   & \mult1/2    \\
             \end{dtabularx}
-            1 This increases your \glossterm{resistances} against \glossterm{physical damage} (see \pcref{Resistances}). \\
-            2 Weight figures are for armor sized to fit Medium characters. Armor fitted for Small characters weighs half as much, and armor fitted for Large characters weighs twice as much. \\
-            3 Speed is reduced by 5 feet (see \pcref{Armor Usage Classes}). \\
-            4 Speed is reduced by 10 feet and Dexterity is halved (see \pcref{Armor Usage Classes}). \\
-            5 The hand holding the shield is not free, which may limit your actions. \\
-            6 Tower shields can grant you cover. See the description. \\
+            1 The hand holding the shield is not free, which may limit your actions. \\
+            2 Tower shields can grant you cover. See the description. \\
         \end{dtable!*}
 
     \subsection{Armor Descriptions}
@@ -556,7 +549,7 @@
         \parhead{Ironwood} The most common special material is ironwood, which is made from wood magically treated using the \spell{ironwood} ritual to be as strong as steel. Ironwood armor functions exactly like  armor of the same type, except that it is made of wood. This allows druids to wear it without penalty.
         It costs twice as much as armor of that type would normally cost, plus an additional 200 gp.
 
-        \parhead{Mithral} Mithral armor weighs half as much and reduces the \glossterm{encumbrance penalty} of the armor by 2.
+        \parhead{Mithral} Mithral armor weighs half as much, reduces the \glossterm{encumbrance penalty} of the armor by 2, and reduces any speed penalties the armor applies by 5 feet.
         It costs five times as much as armor of that type would normally cost, plus an additional 5,000 gp.
 
 \section{Goods And Services}
@@ -664,7 +657,7 @@
         A few of the pieces of adventuring gear found on \trefnp{Goods and Services} are described below, along with any special benefits they confer on the user (``you'').
         \parhead{Caltrops} A caltrop is a four-pronged iron spike crafted so that one prong faces up no matter how the caltrop comes to rest. You scatter caltrops on the ground in the hope that your enemies step on them or are at least forced to slow down to avoid them. One 2- pound bag of caltrops covers an area 5 feet square.
         \par Each time a creature moves into an area covered by caltrops (or spends a round fighting while standing in such an area), it might step on one. The caltrops make an attack roll with an accuracy of \plus0 against the creature's Armor defense. If the caltrops succeed on the attack, the creature has stepped on one. The caltrop deals 1d6 damage. If the creature takes damage this way, it moves at half speed as a \glossterm{condition}. This condition can be removed with a \glossterm{difficulty rating} 10 Heal check. Any creature moving at half speed or slower can pick its way through a bed of caltrops without stepping on any.
-        \par Caltrops may not be effective against unusual opponents.
+        \par Caltrops may not be effective against opponents with an unusual anatomy.
         \parhead{Candle} A candle dimly illuminates a 5 foot radius and burns for 1 hour.
         \parhead{Chain} Chain has \glossterm{damage resistance} of 10 and a \glossterm{wound resistance} of 20. It can be burst with a \glossterm{difficulty rating} 18 Strength check.
         \parhead{Crowbar} A crowbar it grants a \plus2 bonus on Strength checks made for such purposes. If used in combat, treat a crowbar as an improvised weapon equivalent to a club.

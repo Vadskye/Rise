@@ -1621,7 +1621,7 @@ def generate_mystic_spheres():
             """, tags=[]),
             Spell('Icecraft', 1, 'One pool of unattended, nonmagical water within \\rngclose range.', """
                 This spell creates an icy weapon or a suit of icy armor from the target pool of water.
-                You can create any weapon, shield, or body armor that you are proficient with, and which would normally be made entirely from metal, except for heavy body armor.
+                You can create any weapon, shield, or body armor that you are proficient with, and which would normally be made entirely from metal, except for heavy armor.
                 The pool of water targeted must be at least as large as the item you create.
 
                 The item functions like a normal item of its type, except that it is more fragile.
@@ -1633,7 +1633,7 @@ def generate_mystic_spheres():
 
                 \\rankline
                 \\rank<3> The \\glossterm<wound resistance> of the item increases to three times your power.
-                    In addition, you can also create heavy body armor.
+                    In addition, you can also create heavy armor.
                 \\rank<5> The item created is magically enhanced.
                     A weapon grants a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities,
                         and armor grants a +1 \\glossterm<magic bonus> to Armor defense.
@@ -2013,7 +2013,7 @@ def generate_mystic_spheres():
             """, tags=['Manifestation']),
             Spell('Forge', 1, 'One unoccupied square within \\rngclose range', """
                 Choose a type of body armor, weapon, or shield that you are proficient with.
-                You cannot create heavy body armor.
+                You cannot create heavy armor.
                 You create a normal item of that type at the target location.
 
                 The item cannot be constructed of any magical or extraordinary material.
@@ -2021,7 +2021,7 @@ def generate_mystic_spheres():
                 It is sized appropriately for you, up to a maximum of a Medium size item.
 
                 \\rankline
-                \\rank<3> You can also create heavy body armor.
+                \\rank<3> You can also create heavy armor.
                 \\rank<5> The item created is magically enhanced.
                     A weapon grants a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities,
                         and armor grants a +1 \\glossterm<magic bonus> to Armor defense.
@@ -3475,7 +3475,7 @@ def generate_mystic_spheres():
             """, tags=['Manifestation']),
             Spell('Earthcraft', 1, 'One body of earth or unworked stone within 5 feet of you', """
                 You create a weapon or suit of armor from the target.
-                You can create any weapon, shield, or body armor that you are proficient with, and which could normally be made entirely from metal, except for heavy body armor.
+                You can create any weapon, shield, or body armor that you are proficient with, and which could normally be made entirely from metal, except for heavy armor.
                 The body targeted must be at least as large as the item you create.
                 The item appears in your hands.
 
@@ -3483,7 +3483,7 @@ def generate_mystic_spheres():
                 If the item loses all of its hit points, this effect is \\glossterm<dismissed>.
 
                 \\rankline
-                \\rank<3> You can also create heavy body armor.
+                \\rank<3> You can also create heavy armor.
                 \\rank<5> The item created is magically enhanced.
                     A weapon grants a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities,
                         and armor grants a +1 \\glossterm<magic bonus> to Armor defense.
