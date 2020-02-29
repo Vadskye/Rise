@@ -3964,6 +3964,18 @@ def generate_mystic_spheres():
                 \\rank<6> The area increases to a \\arealarge radius.
                 \\rank<8> The area increases to a \\areahuge radius.
             """, tags=['Attune (self)']),
+            Spell('Thornblade', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+                All damage the target deals with \\glossterm<strikes> becomes piercing damage in addition to the attack's normal damage types.
+                Whenever the target deals damage to a creature with a \\glossterm<strike>, thorns from the striking weapon enter the target's body.
+                As a \\glossterm<condition>, the damaged creature takes piercing \\glossterm<standard damage> -2d at the end of each round.
+
+                This condition can be removed by the \\textit<treat condition> ability (see \\pcref<Treat Condition>).
+                The \\glossterm<difficulty rating> of the check is equal to 5 \\add your \\glossterm<power>.
+
+                \\rankline
+                \\rank<5> The damage increases to \\glossterm<standard damage> -1d.
+                \\rank<7> The damage increases to \\glossterm<standard damage>.
+            """, tags=['Attune (target)']),
         ],
         rituals=[
             Spell('Fertility', 3, None, """
