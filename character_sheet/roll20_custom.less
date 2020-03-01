@@ -1,13 +1,16 @@
-.rise-title {
-    height: 1em;
+.first-page, .second-page, .third-page {
+    font-size: 13px;
+    overflow: visible;
+    font-family: Open Sans;
+    margin-bottom: 1em;
+
+    input[type=number] {
+        width: 2.8em
+    }
 }
 
 input {
     font-size: 1em;
-}
-
-.first-page input[type=number], .second-page input[type=number], .third-page  input[type=number] {
-    width: 3em;
 }
 
 .first-page {
@@ -35,13 +38,13 @@ input {
     }
 }
 
-.first-page, .second-page, .third-page {
-    margin-bottom: 1em;
-}
-
 input[type=number]:disabled::-webkit-inner-spin-button,
 input[type=number]:disabled::-webkit-outer-spin-button {
     -webkit-appearance: none;
     display: none;
     margin: 0;
+}
+
+.under-label {
+    font-size: 0.8em;
 }
