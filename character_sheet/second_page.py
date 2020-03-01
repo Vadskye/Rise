@@ -78,18 +78,27 @@ def calc_skills(destination):
     if destination == 'roll20':
         return flex_col({'class': 'calc-skills'}, [
             div({'class': 'section-header'}, 'Skills'),
-            skill_labels('Str'),
+            skill_labels(),
             *[calc_skill(skill_name, 'strength') for skill_name in ATTRIBUTE_SKILLS['strength']],
-            skill_labels('Dex'),
+            skill_labels(),
             *[calc_skill(skill_name, 'dexterity') for skill_name in ATTRIBUTE_SKILLS['dexterity']],
             # *[calc_skill(skill_name) for skill_name in ATTRIBUTE_SKILLS['constitution']],
-            skill_labels('Int'),
+            skill_labels(),
             *[calc_skill(skill_name, 'intelligence') for skill_name in ATTRIBUTE_SKILLS['intelligence']],
-            skill_labels('Per'),
+            skill_labels(),
             *[calc_skill(skill_name, 'perception') for skill_name in ATTRIBUTE_SKILLS['perception']],
             *[calc_skill(skill_name, 'constitution') for skill_name in ATTRIBUTE_SKILLS['willpower']],
-            skill_labels('Other'),
-            *[calc_skill(skill_name) for skill_name in ['Bluff', 'Intimidate', 'Perform ______', 'Persuasion']],
+            skill_labels(),
+            *[calc_skill(skill_name) for skill_name in ['Bluff', 'Intimidate', 'Perform _________', 'Persuasion']],
+            flex_row({'class': 'skill-row'}, [
+                div({'class': 'skill-name'}, 'Points spent'),
+                number_input({
+                    'class': 'skill-points-spent',
+                    'disabled': True,
+                    'name': 'skill_points_spent_display',
+                    'value': '@{skill_points_spent}',
+                }),
+            ]),
         ])
     else:
         blank_skill_info = [
@@ -99,16 +108,15 @@ def calc_skills(destination):
 
         return flex_col({'class': 'calc-skills'}, [
             div({'class': 'section-header'}, 'Skills'),
-            skill_labels(destination),
+            skill_labels(),
             *blank_skill_info
         ])
 
-def skill_labels(destination):
+def skill_labels():
     return flex_row({'class': 'skill-labels'}, [
         div({'class': 'skill-name'}),
         div({'class': 'skill-label'}, 'Points'),
-        div({'class': 'skill-label'}, 'Mod'),
-        *([div({'class': 'skill-label'}, 'Mod')] if destination == 'roll20' else []),
+        div({'class': 'skill-label'}, 'Train'),
         div({'class': 'skill-label misc'}, 'Misc'),
     ])
 
@@ -117,11 +125,11 @@ def calc_skill(skill_name, attribute=None, blank_input=False):
     return flex_row({'class': 'skill-row'}, [
         div({'class': f'skill-name{" blank-input" if blank_input else ""}'}, skill_name),
         number_input({'class': 'skill-points', 'name': skill_parsable + '_points'}),
-        number_input({
-            'class': 'skill-mod',
+        text_input({
+            'class': 'skill-training',
             'disabled': True,
-            'name': skill_parsable + '_total_display',
-            'value': '@{' + skill_parsable + '_total}',
+            'name': skill_parsable + '_training_display',
+            'value': '@{' + skill_parsable + '_training}',
         }),
         number_input({
             'class': 'equation-misc',

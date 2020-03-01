@@ -11,6 +11,7 @@ def generate_script():
         *abilities_known(),
         action_points(),
         level_scaling(),
+        skill_points_spent(),
         '</script>',
         ""
     ])
@@ -70,19 +71,23 @@ def set_skill(a, s):
             f"""
                 var pointsModifier = 0;
                 var ranks = 0;
+                var training = '';
 
                 if ({s}_points === 1) {{
                     ranks = Math.floor(level / 2);
                     pointsModifier = 1;
+                    training = 'T';
                 }} else if (v.{s}_points >= 2) {{
                     ranks = level
                     pointsModifier = 3;
+                    training = 'M';
                 }}
 
                 setAttrs({{
                     {s}_attribute: 0,
                     {s}_ranks: ranks + pointsModifier,
-                    {s}_total: ranks + pointsModifier + {sum_variables(misc)}
+                    {s}_total: ranks + pointsModifier + {sum_variables(misc)},
+                    {s}_training: training,
                 }});
             """
         )
@@ -94,17 +99,25 @@ def set_skill(a, s):
             f"""
                 var pointsModifier = 0;
                 var ranks = 0;
+                var training = '';
+
+                if ({a}_starting >= 2) {{
+                    {s}_points += 1
+                }}
 
                 if ({s}_points === 1) {{
                     ranks = Math.floor(level / 2) + 1;
+                    training = 'T';
                 }} else if ({s}_points >= 2) {{
                     ranks = level
                     pointsModifier = 3;
+                    training = 'M';
                 }}
 
                 setAttrs({{
                     {s}_ranks: ranks,
                     {s}_total: ranks + pointsModifier + {a}_starting + {sum_variables(misc)} {subtract_encumbrance},
+                    {s}_training: training,
                 }});
             """
         )
@@ -498,5 +511,21 @@ def wound_resistances():
                 energy_wound_resistance: Math.floor((global_wound_resistance + energy_resistance_bonus) * resistance_modifier),
                 physical_wound_resistance: Math.floor((global_wound_resistance + physical_resistance_bonus) * resistance_modifier),
             }})
+        """
+    )
+
+def skill_points_spent():
+    skill_names = [skill_name for skills in ATTRIBUTE_SKILLS.values() for skill_name in skills]
+    skill_names = [skill_name.lower().replace(' ', '_') for skill_name in skill_names]
+    skill_points_names = [f"{skill_name}_points" for skill_name in skill_names]
+
+    return js_wrapper(
+        skill_points_names,
+        f"""
+            var skill_points_spent = {' + '.join(skill_points_names)};
+
+            setAttrs({{
+                skill_points_spent,
+            }});
         """
     )
