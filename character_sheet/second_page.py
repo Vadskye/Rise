@@ -31,7 +31,8 @@ def create_page(destination):
             flex_wrapper(div({'class': 'section-header abilities-known-header'}, 'Abilities Known')),
             calc_maneuvers(),
             calc_spells(),
-            *[calc_blank_ability(i) for i in range(2)],
+            calc_spheres(),
+            *[calc_blank_ability(i) for i in range(1)],
             calc_skills(destination),
         ]),
         flex_col({'class': 'main-body'}, [
@@ -609,7 +610,30 @@ def calc_spells():
                 'name': 'spells_known_display',
                 'value': '@{spells_known}',
             },
-        )
+        ),
+    ])
+
+def calc_spheres():
+    return flex_row([
+        div({'class': 'calc-header'}, 'Spheres'),
+        equation(
+            [
+                underlabel('Base', number_input({
+                    'name': 'spheres_known_base',
+                })),
+                plus(),
+                underlabel('1/2 Insight', number_input({
+                    'name': 'spheres_known_insight_points',
+                })),
+                plus(),
+                equation_misc_repeat('spheres_known', 2)
+            ],
+            result_attributes={
+                'disabled': True,
+                'name': 'spheres_known_display',
+                'value': '@{spheres_known}',
+            },
+        ),
     ])
 
 def calc_blank_ability(i):
