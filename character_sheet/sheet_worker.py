@@ -158,7 +158,8 @@ def abilities_known():
     return [
         maneuvers_known(),
         spells_known(),
-        *[blank_ability_known(i) for i in range(2)]
+        spheres_known(),
+        *[blank_ability_known(i) for i in range(1)]
     ]
 
 def accuracy():
@@ -362,6 +363,17 @@ def maneuvers_known():
         f"""
             setAttrs({{
                 maneuvers_known: maneuvers_known_base + maneuvers_known_insight_points + {sum_variables(misc)}
+            }});
+        """
+    )
+
+def spheres_known():
+    misc = get_misc_variables('spheres_known', 2)
+    return js_wrapper(
+        ['spheres_known_base', 'spheres_known_insight_points', *misc],
+        f"""
+            setAttrs({{
+                spheres_known: spheres_known_base + Math.floor(spheres_known_insight_points / 2) + {sum_variables(misc)}
             }});
         """
     )
