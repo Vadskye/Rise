@@ -42,6 +42,7 @@ def create_page(destination):
                 calc_base_speed(),
                 calc_carrying_capacity(),
                 calc_encumbrance(),
+                # TODO: somehow make room for focus penalties
                 calc_hit_points(),
                 calc_initiative(),
                 calc_insight_points(),
