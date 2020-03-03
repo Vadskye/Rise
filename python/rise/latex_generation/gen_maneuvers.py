@@ -49,7 +49,7 @@ def generate_maneuvers():
         short_description='Make a strike that trades damage for accuracy',
         target="As chosen \\glossterm<strike>",
         effect_text="""
-            Make a \\glossterm<strike> with a +2 bonus to accuracy and a -2d penalty to damage.
+            Make a \\glossterm<strike> with a +2 bonus to accuracy and a -1d penalty to damage.
         """,
         rank_upgrades={
             '3': 'The accuracy bonus increases to +3.',
