@@ -163,7 +163,7 @@ def text_input(attributes=None):
     attributes = attributes or dict()
     attributes['type'] = 'text'
     attributes['size'] = attributes.get('size', '1')
-    if DESTINATION == 'paper' and 'value' in attributes and not attributes.get('disabled'):
+    if DESTINATION == 'paper' and 'value' in attributes:
         # Hide "default" attributes from the paper sheet
         attributes['value'] = ""
     return html_tag('input', attributes)
