@@ -3190,7 +3190,7 @@ def generate_mystic_spheres():
                     \\item Its \\glossterm<damage resistance> and \\glossterm<wound resistance> are equal to the base values for your level (see \\pcref<Character Advancement>).
                     \\item Its \\glossterm<hit points> are equal to 3.
                     \\item Each of its \\glossterm<defenses> is equal to 4 \\add your level.
-                    \\item Its \\glossterm<accuracy> is equal to your level \\add your base Perception.
+                    \\item Its \\glossterm<accuracy> is equal to your level \\add half your base Perception.
                     \\item Its \\glossterm<power> with its attacks is equal to your \\glossterm<power> \\sub 4.
                     \\item Its \\glossterm<land speed> is 30 feet.
                     \\item It has no \\glossterm<action points>.
@@ -4333,7 +4333,7 @@ def generate_mystic_spheres():
                     \\item Its \\glossterm<damage resistance> and \\glossterm<wound resistance> are equal to the base values for your level (see \\pcref<Character Advancement>).
                     \\item Its \\glossterm<hit points> are equal to 3.
                     \\item Each of its \\glossterm<defenses> is equal to 4 \\add your level.
-                    \\item Its \\glossterm<accuracy> is equal to your level \\add your base Perception.
+                    \\item Its \\glossterm<accuracy> is equal to your level \\add half your base Perception.
                     \\item Its \\glossterm<power> with its attacks is equal to your \\glossterm<power> \\sub 2.
                     \\item Its \\glossterm<fly speed> is 30 feet, with good \\glossterm<maneuverability>.
                     \\item It has no \\glossterm<action points>.
