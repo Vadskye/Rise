@@ -403,7 +403,7 @@ def blank_ability_known(i):
 
 def base_damage_resistance():
     return js_wrapper(
-        ['level'],
+        ['level', 'constitution'],
         f"""
             var base_damage_resistance = {{
                 1: 1,
@@ -421,12 +421,17 @@ def base_damage_resistance():
                 13: 16,
                 14: 18,
                 15: 20,
-                16: 23,
-                17: 26,
-                18: 29,
-                19: 32,
-                20: 35,
-            }}[level];
+                16: 22,
+                17: 25,
+                18: 28,
+                19: 31,
+                20: 34,
+                21: 37,
+                22: 40,
+                23: 44,
+                24: 48,
+                25: 52,
+            }}[Math.max(level, constitution)];
             setAttrs({{
                 base_damage_resistance,
             }});
@@ -435,7 +440,7 @@ def base_damage_resistance():
 
 def base_wound_resistance():
     return js_wrapper(
-        ['level'],
+        ['level', 'constitution'],
         f"""
             var base_wound_resistance = {{
                 1: 14,
@@ -458,7 +463,12 @@ def base_wound_resistance():
                 18: 108,
                 19: 122,
                 20: 138,
-            }}[level];
+                21: 154,
+                22: 172,
+                23: 192,
+                24: 216,
+                25: 244,
+            }}[Math.max(level, constitution)];
             setAttrs({{
                 base_wound_resistance,
             }});
