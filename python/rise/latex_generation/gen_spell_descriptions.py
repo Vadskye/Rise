@@ -27,9 +27,6 @@ from rise.latex_generation.mystic_spheres.verdamancy import verdamancy
 from rise.latex_generation.mystic_spheres.vivimancy import vivimancy
 from rise.latex_generation.mystic_spheres.weaponcraft import weaponcraft
 from rise.latex_generation.book_path import book_path
-from rise.latex.effects import Effects
-from rise.latex.mystic_sphere import MysticSphere
-from rise.latex.spell import Spell
 from rise.latex.util import latexify
 import rise.statistics.rise_data as rise_data
 from logging import getLogger, WARNING
