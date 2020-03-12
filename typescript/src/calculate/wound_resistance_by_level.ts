@@ -18,9 +18,14 @@ const baseValues: Record<number, number> = {
   17: 96,
   18: 108,
   19: 122,
-  20: 136,
+  20: 138,
+  21: 154,
+  22: 172,
+  23: 192,
+  24: 216,
+  25: 244,
 };
 
-export function woundResistanceByLevel(level: number) {
-  return baseValues[level];
+export function woundResistanceByLevel(level: number, constitution: number | null) {
+  return baseValues[Math.max(level, constitution || 0)];
 }
