@@ -26,6 +26,7 @@ This choice determines a great deal about your character's abilities.
             This gives you the abilities associated with that rank.
 
             Each \glossterm{archetype rank} has a minimum level, as shown on \trefnp{Archetype Ranks by Level}.
+            This minimum level is included in each class table as a reminder.
 
             \begin{dtable}
                 \lcaption{Archetype Ranks by Level}
@@ -113,16 +114,16 @@ This choice determines a great deal about your character's abilities.
 \section{Barbarian}\label{Barbarian}
     \begin{dtable!*}
         \lcaption{Barbarian Progression}
-        \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Battleforged Resilience}   & \tb{Battlerager}       & \tb{Outland Savage}                & \tb{Primal Warrior}    \tableheaderrule
-            1 & Battleforged endurance         & Rage                   & Exotic weaponry          & Primal maneuvers     \\
-            2 & Toughened body                 & Seething anger         & Fast movement            & Primal lore          \\
-            3 & Battle-scarred                 & Painless rage          & Savage precision         & Primal power         \\
-            4 & Greater battleforged endurance & Enduring anger         & Savage instincts         & Primal maneuver      \\
-            5 & Greater toughened body         & Powerful rage          & Greater fast movement    & Greater primal lore  \\
-            6 & Greater battle-scarred         & Greater painless rage  & Greater savage precision & Greater primal power \\
-            7 & Supreme battleforged endurance & Greater seething anger & Greater savage instincts & Primal maneuver      \\
-            8 &                                & Titanic rage           &                          &                      \\
+        \begin{dtabularx}{\textwidth}{l l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+            \tb{Rank} & \tb{Min Level} & \tb{Battleforged Resilience}   & \tb{Battlerager}       & \tb{Outland Savage}      & \tb{Primal Warrior}    \tableheaderrule
+            1 & 1             & Battleforged endurance         & Rage                   & Exotic weaponry          & Primal maneuvers     \\
+            2 & 2             & Toughened body                 & Seething anger         & Fast movement            & Primal lore          \\
+            3 & 5             & Battle-scarred                 & Painless rage          & Savage precision         & Primal power         \\
+            4 & 8             & Greater battleforged endurance & Enduring anger         & Savage instincts         & Primal maneuver      \\
+            5 & 11            & Greater toughened body         & Powerful rage          & Greater fast movement    & Greater primal lore  \\
+            6 & 14            & Greater battle-scarred         & Greater painless rage  & Greater savage precision & Greater primal power \\
+            7 & 17            & Supreme battleforged endurance & Greater seething anger & Greater savage instincts & Primal maneuver      \\
+            8 & 20            &                                & Titanic rage           &                          &                      \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -274,16 +275,16 @@ This choice determines a great deal about your character's abilities.
 \section{Cleric}\label{Cleric}
     \begin{dtable!*}
         \lcaption{Cleric Progression}
-        \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Divine Magic} & \tb{Divine Spell Mastery}   & \tb{Domain Influence}  & \tb{Healer} \tableheaderrule
-            1 & Spellcasting   & Mystic insight            & Domains, domain gift  & Divine healing         \\
-            2 & Mystic sphere  & Battle priest               & Domain gift           & Vital healer           \\
-            3 & Spell rank (3) & Wellspring of power         & Domain aspect         & Divine cleanse         \\
-            4 & Spell rank (4) & Mystic insight            & Domain aspect         & Greater divine healing \\
-            5 & Spell rank (5) & Greater battle priest       & Domain essence        & Greater vital healer   \\
-            6 & Spell rank (6) & Greater wellspring of power & Domain essence        & Greater divine cleanse \\
-            7 & Spell rank (7) & Mystic insight            & Miracle               & Supreme divine healing \\
-            8 & Spell rank (8) &                             & Domain masteries     \\
+        \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+            \tb{Rank} & \tb{Min Level} & \tb{Divine Magic} & \tb{Divine Spell Mastery}   & \tb{Domain Influence}  & \tb{Healer} \tableheaderrule
+            1 & 1             & Spellcasting   & Mystic insight            & Domains, domain gift  & Divine healing         \\
+            2 & 2             & Mystic sphere  & Battle priest               & Domain gift           & Vital healer           \\
+            3 & 5             & Spell rank (3) & Wellspring of power         & Domain aspect         & Divine cleanse         \\
+            4 & 8             & Spell rank (4) & Mystic insight            & Domain aspect         & Greater divine healing \\
+            5 & 11            & Spell rank (5) & Greater battle priest       & Domain essence        & Greater vital healer   \\
+            6 & 14            & Spell rank (6) & Greater wellspring of power & Domain essence        & Greater divine cleanse \\
+            7 & 17            & Spell rank (7) & Mystic insight            & Miracle               & Supreme divine healing \\
+            8 & 20            & Spell rank (8) &                             & Domain masteries     \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -832,16 +833,16 @@ This choice determines a great deal about your character's abilities.
 \section{Druid}\label{Druid}
     \begin{dtable!*}
         \lcaption{Druid Progression}
-        \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Elementalist}         & \tb{Nature Magic} & \tb{Nature Spell Mastery}   & \tb{Shifter}               & \tb{Wildspeaker}         \tableheaderrule
-            1 & Elemental balance         & Spellcasting   & Mystic insight            & Wild aspects               & Natural servant         \\
-            2 & Elemental sphere          & Natural focus  & Natural spells              & Shifting defense           & Animal speech           \\
-            3 & Elemental influence       & Spell rank (3) & Wellspring of power         & Shift body                 & Wild guardian           \\
-            4 & Greater elemental balance & Spell rank (4) & Mystic insight            & Wild aspect                & Greater natural servant \\
-            5 & Elemental sphere          & Spell rank (5) & Greater natural spells      & Greater shifting defense   & Plant speech            \\
-            6 & Elemental control         & Spell rank (6) & Greater wellspring of power & Greater shift body         & Greater wild guardian   \\
-            7 & Supreme elemental balance & Spell rank (7) & Mystic insight            & Triple aspect, wild aspect & Supreme natural servant \\
-            8 &                           & Spell rank (8) &                             & Avatar of nature           &                         \\
+        \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X l >{\lcol}X >{\lcol}X}
+            \tb{Rank} & \tb{Min Level} & \tb{Elementalist}         & \tb{Nature Magic} & \tb{Nature Spell Mastery}   & \tb{Shifter}               & \tb{Wildspeaker}         \tableheaderrule
+            1 & 1             & Elemental balance         & Spellcasting   & Mystic insight            & Wild aspects               & Natural servant         \\
+            2 & 2             & Elemental sphere          & Natural focus  & Natural spells              & Shifting defense           & Animal speech           \\
+            3 & 5             & Elemental influence       & Spell rank (3) & Wellspring of power         & Shift body                 & Wild guardian           \\
+            4 & 8             & Greater elemental balance & Spell rank (4) & Mystic insight            & Wild aspect                & Greater natural servant \\
+            5 & 11            & Elemental sphere          & Spell rank (5) & Greater natural spells      & Greater shifting defense   & Plant speech            \\
+            6 & 14            & Elemental control         & Spell rank (6) & Greater wellspring of power & Greater shift body         & Greater wild guardian   \\
+            7 & 17            & Supreme elemental balance & Spell rank (7) & Mystic insight            & Triple aspect, wild aspect & Supreme natural servant \\
+            8 & 20            &                           & Spell rank (8) &                             & Avatar of nature           &                         \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -1465,16 +1466,16 @@ This choice determines a great deal about your character's abilities.
 \section{Fighter}\label{Fighter}
     \begin{dtable!*}
         \lcaption{Fighter Progression}
-        \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Combat Discipline}       & \tb{Equipment Training}      & \tb{Martial Mastery}   & \tb{Tactician} \tableheaderrule
-            1 & Discipline                   & Armor expertise              & Martial maneuvers      & Battle tactics                \\
-            2 & Enduring discipline          & Weapon training              & Martial lore           & Tactical advice               \\
-            3 & Disciplined stance           & Equipment efficiency         & Martial power          & Tactical coordination         \\
-            4 & Disciplined reaction         & Greater armor expertise      & Martial maneuver       & Battle tactic                 \\
-            5 & Greater enduring discipline  & Weapon expertise             & Greater martial power  & Greater battle tactics        \\
-            6 & Disciplined vitality         & Greater equipment efficiency & Steady expertise       & Greater tactical coordination \\
-            7 & Supreme disciplined reaction & Supreme armor expertise      & Martial maneuver       & Battle tactic                 \\
-            8 &                              &                              &                       \\
+        \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+            \tb{Rank} & \tb{Min Level} & \tb{Combat Discipline}       & \tb{Equipment Training}      & \tb{Martial Mastery}   & \tb{Tactician} \tableheaderrule
+            1 & 1             & Discipline                   & Armor expertise              & Martial maneuvers      & Battle tactics                \\
+            2 & 2             & Enduring discipline          & Weapon training              & Martial lore           & Tactical advice               \\
+            3 & 5             & Disciplined stance           & Equipment efficiency         & Martial power          & Tactical coordination         \\
+            4 & 8             & Disciplined reaction         & Greater armor expertise      & Martial maneuver       & Battle tactic                 \\
+            5 & 11            & Greater enduring discipline  & Weapon expertise             & Greater martial power  & Greater battle tactics        \\
+            6 & 14            & Disciplined vitality         & Greater equipment efficiency & Steady expertise       & Greater tactical coordination \\
+            7 & 17            & Supreme disciplined reaction & Supreme armor expertise      & Martial maneuver       & Battle tactic                 \\
+            8 & 20            &                              &                              &                       \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -1720,16 +1721,16 @@ This choice determines a great deal about your character's abilities.
 \section{Monk}\label{Monk}
     \begin{dtable!*}
         \lcaption{Monk Progression}
-        \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Esoteric Warrior}               & \tb{Ki}                                & \tb{Perfected Form}        & \tb{Transcendent Sage} \tableheaderrule
-            1         & Esoteric maneuvers, unarmed warrior & Ki barrier, ki manifestations          & Fast movement              & Clear the mind        \\
-            2         & Esoteric lore                       & Ki strike                              & Graceful athletics         & Transcend frailty     \\
-            3         & Esoteric precision                  & Ki power                               & Perfect body               & Inner peace           \\
-            4         & Esoteric maneuver                   & Ki manifestation                       & Greater fast movement      & Feel the flow of life \\
-            5         & Greater esoteric lore               & Greater ki barrier                     & Greater graceful athletics & Transcend flesh       \\
-            6         & Greater esoteric precisoin          & Greater ki power                       & Greater perfect body       & Greater inner peace   \\
-            7         & Esoteric maneuver                   & Ki manifestation                       & Supreme fast movement      & See the flow of life  \\
-            8         &                                     & Dual manifestation, supreme ki barrier &                            & Transcend mortality   \\
+        \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+            \tb{Rank} & \tb{Min Level} & \tb{Esoteric Warrior}               & \tb{Ki}                                & \tb{Perfected Form}        & \tb{Transcendent Sage} \tableheaderrule
+            1 & 1             & Esoteric maneuvers, unarmed warrior & Ki barrier, ki manifestations          & Fast movement              & Clear the mind        \\
+            2 & 2             & Esoteric lore                       & Ki strike                              & Graceful athletics         & Transcend frailty     \\
+            3 & 5             & Esoteric precision                  & Ki power                               & Perfect body               & Inner peace           \\
+            4 & 8             & Esoteric maneuver                   & Ki manifestation                       & Greater fast movement      & Feel the flow of life \\
+            5 & 11            & Greater esoteric lore               & Greater ki barrier                     & Greater graceful athletics & Transcend flesh       \\
+            6 & 14            & Greater esoteric precisoin          & Greater ki power                       & Greater perfect body       & Greater inner peace   \\
+            7 & 17            & Esoteric maneuver                   & Ki manifestation                       & Supreme fast movement      & See the flow of life  \\
+            8 & 20            &                                     & Dual manifestation, supreme ki barrier &                            & Transcend mortality   \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -2025,16 +2026,16 @@ This choice determines a great deal about your character's abilities.
 \section{Paladin}\label{Paladin}
     \begin{dtable!*}
         \lcaption{Paladin Progression}
-        \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Devoted Paragon}  & \tb{Divine Magic} & \tb{Stalwart Guardian}      & \tb{Zealous Warrior}       \tableheaderrule
-            1 & Aligned aura          & Spellcasting   & Lay on hands                & Smite                      \\
-            2 & Aligned immunity      & Battle prayer  & Stalwart champion           & Zealous conviction         \\
-            3 & Paragon power         & Spell rank (3) & Stalwart resilience         & Zealous power              \\
-            4 & Greater aligned aura  & Spell rank (4) & Greater lay on hands        & Greater smite              \\
-            5 & Devoted mind          & Spell rank (5) & Greater stalwart champion   & Greater zealous conviction \\
-            6 & Greater paragon power & Spell rank (6) & Greater stalwart resilience & Greater zealous power      \\
-            7 & Supreme aligned aura  & Spell rank (7) & Supreme lay on hands        & Supreme smite              \\
-            8 & Aligned soul          & Spell rank (8) &                             &                            \\
+        \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+            \tb{Rank} & \tb{Min Level} & \tb{Devoted Paragon}  & \tb{Divine Magic} & \tb{Stalwart Guardian}      & \tb{Zealous Warrior}       \tableheaderrule
+            1 & 1             & Aligned aura          & Spellcasting   & Lay on hands                & Smite                      \\
+            2 & 2             & Aligned immunity      & Battle prayer  & Stalwart champion           & Zealous conviction         \\
+            3 & 5             & Paragon power         & Spell rank (3) & Stalwart resilience         & Zealous power              \\
+            4 & 8             & Greater aligned aura  & Spell rank (4) & Greater lay on hands        & Greater smite              \\
+            5 & 11            & Devoted mind          & Spell rank (5) & Greater stalwart champion   & Greater zealous conviction \\
+            6 & 14            & Greater paragon power & Spell rank (6) & Greater stalwart resilience & Greater zealous power      \\
+            7 & 17            & Supreme aligned aura  & Spell rank (7) & Supreme lay on hands        & Supreme smite              \\
+            8 & 20            & Aligned soul          & Spell rank (8) &                             &                            \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -2266,16 +2267,16 @@ This choice determines a great deal about your character's abilities.
 \section{Ranger}\label{Ranger}
     \begin{dtable!*}
         \lcaption{Ranger Progression}
-        \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X > {\lcol}X}
-            \tb{Rank} & \tb{Beastmaster}         & \tb{Huntmaster} & \tb{Keen Senses}    & \tb{Wilderness Warrior} \tableheaderrule
-            1 & Animal companion         & Quarry                     & Keen vision         & Wild maneuvers          \\
-            2 & Handling lore            & Hunting style              & Learned perception  & Wild lore         \\
-            3 & Pack tactics             & Hunter's instincts         & Blindsense          & Wild force           \\
-            4 & Greater animal companion & Tracker                    & Greater keen vision & Wild maneuver           \\
-            5 & Greater handling lore    & Hunting style              & Perceive weakness   & Greater wild lore \\
-            6 & Greater pack tactics     & Greater hunter's instincts & Blindsight          & Greater wild force   \\
-            7 & Supreme animal companion & Greater tracker            & Supreme keen vision & Wild maneuver           \\
-            8 &                          & Dual quarry                &                     &                         \\
+        \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X > {\lcol}X}
+            \tb{Rank} & \tb{Min Level} & \tb{Beastmaster}         & \tb{Huntmaster} & \tb{Keen Senses}    & \tb{Wilderness Warrior} \tableheaderrule
+            1 & 1             & Animal companion         & Quarry                     & Keen vision         & Wild maneuvers          \\
+            2 & 2             & Handling lore            & Hunting style              & Learned perception  & Wild lore         \\
+            3 & 5             & Pack tactics             & Hunter's instincts         & Blindsense          & Wild force           \\
+            4 & 8             & Greater animal companion & Tracker                    & Greater keen vision & Wild maneuver           \\
+            5 & 11            & Greater handling lore    & Hunting style              & Perceive weakness   & Greater wild lore \\
+            6 & 14            & Greater pack tactics     & Greater hunter's instincts & Blindsight          & Greater wild force   \\
+            7 & 17            & Supreme animal companion & Greater tracker            & Supreme keen vision & Wild maneuver           \\
+            8 & 20            &                          & Dual quarry                &                     &                         \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -2566,16 +2567,16 @@ This choice determines a great deal about your character's abilities.
 \section{Rogue}\label{Rogue}
     \begin{dtable!*}
         \lcaption{Rogue Progression}
-        \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Assassin}               & \tb{Bard}              & \tb{Combat Trickster} & \tb{Jack of All Trades} & \tb{Suave Scoundrel} \tableheaderrule
-            1         & Sneak attack                & Bardic performances    & Tricky manuevers      & Skill lore              & Confound         \\
-            2         & Evasion                     & Bardic lore            & Trick lore            & Skill exemplar          & Glibness         \\
-            3         & Darkstalker                 & Bardic combat training & Trick power           & Dabbler                 & Distract         \\
-            4         & Hide in plain sight         & Bardic performance     & Trick manuever        & Skill lore              & Suave lore       \\
-            5         & Greater evasion             & Dual performance       & Greater trick lore    & Greater skill exemplar  & Greater glibness \\
-            6         & Assassination               & Loremaster             & Greater trick power   & Greater dabbler         & Compel belief    \\
-            7         & Greater hide in plain sight & Bardic performance     & Trick maneuver        & Master of masteries     & Slippery mind    \\
-            8         & Greater darkstalker         &                        &                       &                         &                  \\
+        \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+            \tb{Rank} & \tb{Min Level} & \tb{Assassin}               & \tb{Bard}              & \tb{Combat Trickster} & \tb{Jack of All Trades} & \tb{Suave Scoundrel} \tableheaderrule
+            1 & 1             & Sneak attack                & Bardic performances    & Tricky manuevers      & Skill lore              & Confound         \\
+            2 & 2             & Evasion                     & Bardic lore            & Trick lore            & Skill exemplar          & Glibness         \\
+            3 & 5             & Darkstalker                 & Bardic combat training & Trick power           & Dabbler                 & Distract         \\
+            4 & 8             & Hide in plain sight         & Bardic performance     & Trick manuever        & Skill lore              & Suave lore       \\
+            5 & 11            & Greater evasion             & Dual performance       & Greater trick lore    & Greater skill exemplar  & Greater glibness \\
+            6 & 14            & Assassination               & Loremaster             & Greater trick power   & Greater dabbler         & Compel belief    \\
+            7 & 17            & Greater hide in plain sight & Bardic performance     & Trick maneuver        & Master of masteries     & Slippery mind    \\
+            8 & 20            & Greater darkstalker         &                        &                       &                         &                  \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -2941,16 +2942,16 @@ This choice determines a great deal about your character's abilities.
 \section{Sorcerer}\label{Mage}
     \begin{dtable!*}
         \lcaption{Sorcerer Progression}
-        \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Arcane Magic}     & \tb{Arcane Spell Mastery}   & \tb{Draconic Magic}         & \tb{Innate Arcanist} \tableheaderrule
-            1         & Spellcasting          & Mystic insight              & Draconic bloodline          & Nonverbal caster     \\
-            2         & Innate focus          & Mage armor                  & Draconic focus              & Innate magic         \\
-            3         & Spell rank (3), spell & Wellspring of power         & Draconic precision          & Augment              \\
-            4         & Spell rank (4)        & Mystic insight              & Draconic hide               & Stilled caster       \\
-            5         & Spell rank (5)        & Greater mage armor          & Greater draconic focus      & Greater innate magic \\
-            6         & Spell rank (6), spell & Greater wellspring of power & Greater draconic precision  & Augment              \\
-            7         & Spell rank (7)        & Mystic insight              & Greater draconic hide       & Spell absorption     \\
-            8         & Spell rank (8)        &                             &                            \\
+        \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+            \tb{Rank} & \tb{Min Level} & \tb{Arcane Magic}     & \tb{Arcane Spell Mastery}   & \tb{Draconic Magic}         & \tb{Innate Arcanist} \tableheaderrule
+            1 & 1             & Spellcasting          & Mystic insight              & Draconic bloodline          & Nonverbal caster     \\
+            2 & 2             & Innate focus          & Mage armor                  & Draconic focus              & Innate magic         \\
+            3 & 5             & Spell rank (3), spell & Wellspring of power         & Draconic precision          & Augment              \\
+            4 & 8             & Spell rank (4)        & Mystic insight              & Draconic hide               & Stilled caster       \\
+            5 & 11            & Spell rank (5)        & Greater mage armor          & Greater draconic focus      & Greater innate magic \\
+            6 & 14            & Spell rank (6), spell & Greater wellspring of power & Greater draconic precision  & Augment              \\
+            7 & 17            & Spell rank (7)        & Mystic insight              & Greater draconic hide       & Spell absorption     \\
+            8 & 20            & Spell rank (8)        &                             &                            \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -3145,16 +3146,16 @@ This choice determines a great deal about your character's abilities.
 \section{Warlock}\label{Warlock}
     \begin{dtable!*}
         \lcaption{Warlock Progression}
-        \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Blessings of the Abyss}  & \tb{Pact Magic} & \tb{Pact Spell Mastery}     & \tb{Soulkeeper's Chosen} \tableheaderrule
-            1 & Eldritch blast               & Spellcasting          & Mystic insight            & Possession                  \\
-            2 & Fiendish resistance          & Soulbound focus       & Armor tolerance             & Empowering whispers         \\
-            3 & Abyssal jaunt                & Spell rank (3), spell & Wellspring of power         & Influence possession        \\
-            4 & Abyssal substitution         & Spell rank (4)        & Mystic insight            & Exchange soul fragment      \\
-            5 & Greater fiendish resistance  & Spell rank (5)        & Greater armor tolerance     & Powerful possession         \\
-            6 & Abyssal curse                & Spell rank (6), spell & Greater wellspring of power & Greater empowering whispers \\
-            7 & Greater abyssal substitution & Spell rank (7)        & Mystic insight            & Control possession          \\
-            8 &                              & Spell rank (8)        &                             &                             \\
+        \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+            \tb{Rank} & \tb{Min Level} & \tb{Blessings of the Abyss}  & \tb{Pact Magic} & \tb{Pact Spell Mastery}     & \tb{Soulkeeper's Chosen} \tableheaderrule
+            1 & 1             & Eldritch blast               & Spellcasting          & Mystic insight            & Possession                  \\
+            2 & 2             & Fiendish resistance          & Soulbound focus       & Armor tolerance             & Empowering whispers         \\
+            3 & 5             & Abyssal jaunt                & Spell rank (3), spell & Wellspring of power         & Influence possession        \\
+            4 & 8             & Abyssal substitution         & Spell rank (4)        & Mystic insight            & Exchange soul fragment      \\
+            5 & 11            & Greater fiendish resistance  & Spell rank (5)        & Greater armor tolerance     & Powerful possession         \\
+            6 & 14            & Abyssal curse                & Spell rank (6), spell & Greater wellspring of power & Greater empowering whispers \\
+            7 & 17            & Greater abyssal substitution & Spell rank (7)        & Mystic insight            & Control possession          \\
+            8 & 20            &                              & Spell rank (8)        &                             &                             \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -3480,16 +3481,16 @@ This choice determines a great deal about your character's abilities.
 \section{Wizard}\label{Wizard}
     \begin{dtable!*}
         \lcaption{Wizard Progression}
-        \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Alchemist}               & \tb{Arcane Magic}     & \tb{Arcane Spell Mastery}   & \tb{Arcane Scholar}   \tableheaderrule
-            1         & Portable workshop            & Spellcasting          & Mystic insight              & Scholastic lore       \\
-            2         & Alchemical infusion          & Mystic sphere         & Mage armor                  & Ritualist             \\
-            3         & Alchemical discovery         & Spell rank (3), spell & Wellspring of power         & Scholastic insight    \\
-            4         & Alchemical expertise         & Spell rank (4)        & Mystic insight              & Ritual expertise      \\
-            5         & Experienced quaffing         & Spell rank (5)        & Greater mage armor          & Contingency           \\
-            6         & Alchemical discovery         & Spell rank (6), spell & Greater wellspring of power & Scholastic insight    \\
-            7         & Greater alchemical expertise & Spell rank (7)        & Mystic insight              & Malleable contingency \\
-            8         &                              & Spell rank (8)        &                             &                       \\
+        \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+            \tb{Rank} & \tb{Min Level} & \tb{Alchemist}               & \tb{Arcane Magic}     & \tb{Arcane Spell Mastery}   & \tb{Arcane Scholar}   \tableheaderrule
+            1 & 1             & Portable workshop            & Spellcasting          & Mystic insight              & Scholastic lore       \\
+            2 & 2             & Alchemical infusion          & Mystic sphere         & Mage armor                  & Ritualist             \\
+            3 & 5             & Alchemical discovery         & Spell rank (3), spell & Wellspring of power         & Scholastic insight    \\
+            4 & 8             & Alchemical expertise         & Spell rank (4)        & Mystic insight              & Ritual expertise      \\
+            5 & 11            & Experienced quaffing         & Spell rank (5)        & Greater mage armor          & Contingency           \\
+            6 & 14            & Alchemical discovery         & Spell rank (6), spell & Greater wellspring of power & Scholastic insight    \\
+            7 & 17            & Greater alchemical expertise & Spell rank (7)        & Mystic insight              & Malleable contingency \\
+            8 & 20            &                              & Spell rank (8)        &                             &                       \\
         \end{dtabularx}
     \end{dtable!*}
 
