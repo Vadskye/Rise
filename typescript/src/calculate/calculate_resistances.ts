@@ -8,13 +8,16 @@ export interface Resistances {
   wound: Record<DamageType, number>;
 }
 
-export function calculateResistances({
-  challengeRating,
-  level,
-  resistanceBonuses,
-}: Pick<MonsterBase, "challengeRating" | "level" | "resistanceBonuses">): Resistances {
-  const dr = damageResistanceByLevel(level);
-  const wr = woundResistanceByLevel(level);
+export function calculateResistances(
+  {
+    challengeRating,
+    level,
+    resistanceBonuses,
+  }: Pick<MonsterBase, "challengeRating" | "level" | "resistanceBonuses">,
+  attributes: Creature.Attributes,
+): Resistances {
+  const dr = damageResistanceByLevel(level, attributes.con);
+  const wr = woundResistanceByLevel(level, attributes.con);
   const resistances: Resistances = {
     damage: {
       physical: dr + resistanceBonuses.physical,

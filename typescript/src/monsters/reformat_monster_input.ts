@@ -191,7 +191,7 @@ export function reformatMonsterInput(monsterInput: MonsterInput): MonsterBase {
     magicalPower,
     mundanePower,
     reach: reachBySize(monster.size),
-    resistances: calculateResistances(monster),
+    resistances: calculateResistances(monster, attributeModifiers),
     space: spaceBySize(monster.size),
     speed: speedBySize(monster.size),
     skills: calculateSkills(attributeModifiers, skillPoints, monster),
