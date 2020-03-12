@@ -9,13 +9,49 @@ from rise.latex.effects import Effects
 # None: damage, debuff
 barrier=MysticSphere(
     name='Barrier',
-    short_description="Shield allies and areas from hostile forces",
+    short_description="Construct barriers to shield allies and areas from hostile forces",
     cantrips=[
     ],
     lists=['Arcane', 'Divine', 'Nature'],
     spells=[
+        Spell('Mirror Barrier', 4, None, """
+            This spell functions like the \\spell<mystic barrier> spell, except that it reflects \\glossterm<mundane> attacks against it.
+            The barrier's defenses become equal to 5 + your level.
+            Whenever a creature misses the barrier with a \\glossterm<mundane> attack, it makes the same attack against itself, rolling a new attack roll against its own defenses.
+            In addition, the \\glossterm<wound resistance> of each 5-ft.\\ square increases to be equal to three times your \\glossterm<power>.
+
+            \\rank<6> The area increases to a \\arealarge line.
+            \\rank<8> The \\glossterm<wound resistance> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
+        """, tags=['Sustain (minor)']),
+        Spell('Visual Barrier', 3, None, """
+            This spell functions like the \\spell<mystic barrier> spell, except that the barrier is visible as a deep black that completely blocks sight.
+            In addition, the \\glossterm<wound resistance> of each 5-ft.\\ square increases to be equal to three times your \\glossterm<power>.
+
+            \\rank<5> The area increases to a \\arealarge line.
+            \\rank<7> The \\glossterm<wound resistance> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
+        """, tags=['Sustain (minor)']),
+        Spell('Audible Barrier', 3, None, """
+            This spell functions like the \\spell<mystic barrier> spell, except that the barrier allows sound to pass through.
+            Exceptionally strong sounds, such as sonic attacks that deal energy damage, are blocked by the barrier like other damaging effects.
+            In addition, the \\glossterm<wound resistance> of each 5-ft.\\ square increases to be equal to three times your \\glossterm<power>.
+
+            \\rank<5> The area increases to a \\arealarge line.
+            \\rank<7> The \\glossterm<wound resistance> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
+        """, tags=['Sustain (minor)']),
+        Spell('Forceful Barrier', 3, None, """
+            This spell functions like the \\spell<mystic barrier> spell, except that it breaks objects in its area that obstruct its path.
+            Each object in the path of the wall takes energy \\glossterm<standard damage>.
+            Any object destroyed in this way does not block the barrier's area of effect.
+            This does no damage to creatures, who block the path of the barrier like normal.
+            In addition, the \\glossterm<wound resistance> of each 5-ft.\\ square increases to be equal to three times your \\glossterm<power>.
+
+            \\rankline
+            \\rank<5> The area increases to a \\arealarge line.
+            \\rank<7> The \\glossterm<wound resistance> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
+        """, tags=['Sustain (minor)']),
         Spell('Mystic Barrier', 1, None, """
             You create a wall of magical energy in a 20 ft.\\ high, \\areamed line within \\rngmed range.
+            If you create the wall within a space too small to hold it, it fills as much of the space as possible, allowing you to completely block off small tunnels.
             The wall is visible as a shimmering magical membrane that does not block sight.
             Nothing can pass through the wall until it is destroyed.
             Each 5-ft.\\ square of wall has a \\glossterm<wound resistance> equal to twice your \\glossterm<power>.
@@ -25,33 +61,75 @@ barrier=MysticSphere(
             \\rank<5> The area increases to a \\arealarge line.
             \\rank<7> The \\glossterm<wound resistance> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
         """, tags=['Sustain (minor)']),
-        Spell('Invulnerable Mystic Barrier', 6, None, """
-            You create a wall of magical energy in a 20 ft.\\ high, \\areamed line within \\rngmed range.
-            The wall is visible as a shimmering magical membrane that does not block sight.
-            Nothing can pass through the wall until it is destroyed.
-            Each 5-ft.\\ square of wall has a \\glossterm<wound resistance> equal to twice your \\glossterm<power>.
-            The wall is immune to \\glossterm<physical damage>.
+        Spell('Mystic Bridge', 3, None, """
+            You create a horizontal field of magical energy in a \\areamed, 10 ft.\\ wide line within \\rngmed range.
+            If you create the field within a space too small to hold it, it fills as much of the space as possible, allowing you to completely block off small vertical tunnels.
+            The field is visible as a shimmering magical membrane that does not block sight.
+            Nothing can pass through the field until it is destroyed.
+            Each 5-ft.\\ square of the field has a \\glossterm<wound resistance> equal to twice your \\glossterm<power>.
 
             \\rankline
+            \\rank<5> The area increases to a \\arealarge line.
+            \\rank<7> The area increases to be a \\areahuge, 20 ft.\\ wide line.
+        """, tags=['Sustain (minor)']),
+        Spell('Protective Sphere', 1, 'Yourself or one Large or smaller \\glossterm<ally> within \\rngmed range', """
+            You create a sphere of magical energy around the target in its space.
+            The sphere is visible as a shimmering magical membrane that does not block sight.
+            Nothing can pass through the field until it is destroyed.
+            This prevents the target from having \\glossterm<line of effect> to anything outside of the area.
+            Each 5-ft.\\ square of the field has a \\glossterm<wound resistance> equal to twice your \\glossterm<power>.
+
+            If another creature is in the target's space when this spell is cast, this spell fails without effect.
+
+            \\rankline
+            \\rank<3> The \\glossterm<wound resistance> of each 5-ft.\\ square increases to be equal to three times your \\glossterm<power>.
+            \\rank<5> The maximum size of the target increases to Huge.
+            \\rank<7> The \\glossterm<wound resistance> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
+        """, tags=['Sustain (minor)']),
+        Spell('Entrapping Sphere', 4, 'One Large or smaller creature within \\rngmed range', """
+            Make an attack vs. Reflex against the target.
+            \\hit You create a sphere of magical energy around the target in its space.
+            The sphere is visible as a shimmering magical membrane that does not block sight.
+            Nothing can pass through the field until it is destroyed.
+            This prevents the target from having \\glossterm<line of effect> to anything outside of the area.
+            Each 5-ft.\\ square of the field has a \\glossterm<wound resistance> equal to twice your \\glossterm<power>.
+
+            If another creature is in the target's space when this spell is cast, this spell fails without effect.
+
+            \\rankline
+            \\rank<6> The \\glossterm<wound resistance> of each 5-ft.\\ square increases to be equal to three times your \\glossterm<power>.
+            \\rank<8> The maximum size of the target increases to Huge.
+        """, tags=['Sustain (standard)']),
+        Spell('Invulnerable Barrier', 6, None, """
+            This spell functions like the \\spell<mystic barrier> spell, except that each 5-ft.\\ square of wall has a \\glossterm<wound resistance> equal to four times your \\glossterm<power>.
+            In addition, the wall is \\glossterm<resistant> to physical damage.
+
             \\rank<8> The area increases to a \\arealarge line.
         """, tags=['Sustain (minor)']),
         Spell('Wall of Energy Impedance', 3, None, """
             You create a wall of magical energy in a 20 ft.\\ high, \\areamed line within \\rngmed range.
             The wall is visible as a shimmering magical membrane that does not block sight.
             It does not impede passage for objects or creatures, but any ability that deals \\glossterm<energy damage> treats the wall as an impassable barrier.
+            Each 5-ft.\\ square of wall has a \\glossterm<wound resistance> equal to twice your \\glossterm<power>.
 
             \\rankline
             \\rank<5> The area increases to a \\arealarge line.
-            \\rank<7> The height increases to 20 ft.\\ high.
+            \\rank<7> The \\glossterm<wound resistance> of each 5-ft.\\ square increases to be equal to three times your \\glossterm<power>.
         """, tags=['Sustain (minor)']),
         Spell('Wall of Magic Impedance', 5, None, """
             You create a wall of magical energy in a 20 ft.\\ high, \\areamed line within \\rngmed range.
             The wall is visible as a shimmering magical membrane that does not block sight.
             It does not impede passage for objects or creatures, but any \\glossterm<magical> ability treats the wall as an impassable barrier.
+            Each 5-ft.\\ square of wall has a \\glossterm<wound resistance> equal to three times your \\glossterm<power>.
 
             \\rankline
             \\rank<7> The area increases to a \\arealarge line.
         """, tags=['Sustain (minor)']),
+        Spell('One-Way Barrier', 7, None, """
+            This spell functions like the \\spell<mystic barrier> spell, except that you choose one side of the barrier when you cast the spell.
+            Whenever an object, creature, or ability passes through the barrier from the chosen side, the barrier parts to allow it through.
+            If it stops halfway, it can return to its side, but once it passes through fully it treats the barrier as impassable from the other side.
+        """, tags=['Sustain (standard)']),
         Spell('Kinetic Shield', 4, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
             The target gains a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical> damage.
 

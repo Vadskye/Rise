@@ -1062,7 +1062,7 @@ This ritual takes one week to perform, and requires 98 action points from its pa
 \begin{spellsection}{Barrier}
 
 \begin{spellheader}
-\spelldesc{Shield allies and areas from hostile forces.}
+\spelldesc{Construct barriers to shield allies and areas from hostile forces.}
 \end{spellheader}
 
 
@@ -1097,6 +1097,7 @@ You can cast this spell as a \glossterm{minor action}.
 \begin{freeability}[Rank 1]{\hypertarget{spell:Mystic Barrier}{Mystic Barrier}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
 \targetrule
 You create a wall of magical energy in a 20 ft.\ high, \areamed line within \rngmed range.
+If you create the wall within a space too small to hold it, it fills as much of the space as possible, allowing you to completely block off small tunnels.
 The wall is visible as a shimmering magical membrane that does not block sight.
 Nothing can pass through the wall until it is destroyed.
 Each 5-ft.\ square of wall has a \glossterm{wound resistance} equal to twice your \glossterm{power}.
@@ -1105,6 +1106,74 @@ Each 5-ft.\ square of wall has a \glossterm{wound resistance} equal to twice you
 \rank{3} The \glossterm{wound resistance} of each 5-ft.\ square increases to be equal to three times your \glossterm{power}.
 \rank{5} The area increases to a \arealarge line.
 \rank{7} The \glossterm{wound resistance} of each 5-ft.\ square increases to be equal to four times your \glossterm{power}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Protective Sphere}{}}\label{spell:Protective Sphere}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Protective Sphere}{Protective Sphere}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
+\target{Yourself or one Large or smaller \glossterm{ally} within \rngmed range}
+You create a sphere of magical energy around the target in its space.
+The sphere is visible as a shimmering magical membrane that does not block sight.
+Nothing can pass through the field until it is destroyed.
+This prevents the target from having \glossterm{line of effect} to anything outside of the area.
+Each 5-ft.\ square of the field has a \glossterm{wound resistance} equal to twice your \glossterm{power}.
+
+If another creature is in the target's space when this spell is cast, this spell fails without effect.
+
+\rankline
+\rank{3} The \glossterm{wound resistance} of each 5-ft.\ square increases to be equal to three times your \glossterm{power}.
+\rank{5} The maximum size of the target increases to Huge.
+\rank{7} The \glossterm{wound resistance} of each 5-ft.\ square increases to be equal to four times your \glossterm{power}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Audible Barrier}{}}\label{spell:Audible Barrier}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Audible Barrier}{Audible Barrier}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
+\targetrule
+This spell functions like the \spell{mystic barrier} spell, except that the barrier allows sound to pass through.
+Exceptionally strong sounds, such as sonic attacks that deal energy damage, are blocked by the barrier like other damaging effects.
+In addition, the \glossterm{wound resistance} of each 5-ft.\ square increases to be equal to three times your \glossterm{power}.
+
+\rank{5} The area increases to a \arealarge line.
+\rank{7} The \glossterm{wound resistance} of each 5-ft.\ square increases to be equal to four times your \glossterm{power}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Forceful Barrier}{}}\label{spell:Forceful Barrier}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Forceful Barrier}{Forceful Barrier}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
+\targetrule
+This spell functions like the \spell{mystic barrier} spell, except that it breaks objects in its area that obstruct its path.
+Each object in the path of the wall takes energy \glossterm{standard damage}.
+Any object destroyed in this way does not block the barrier's area of effect.
+This does no damage to creatures, who block the path of the barrier like normal.
+In addition, the \glossterm{wound resistance} of each 5-ft.\ square increases to be equal to three times your \glossterm{power}.
+
+\rankline
+\rank{5} The area increases to a \arealarge line.
+\rank{7} The \glossterm{wound resistance} of each 5-ft.\ square increases to be equal to four times your \glossterm{power}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Mystic Bridge}{}}\label{spell:Mystic Bridge}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Mystic Bridge}{Mystic Bridge}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
+\targetrule
+You create a horizontal field of magical energy in a \areamed, 10 ft.\ wide line within \rngmed range.
+If you create the field within a space too small to hold it, it fills as much of the space as possible, allowing you to completely block off small vertical tunnels.
+The field is visible as a shimmering magical membrane that does not block sight.
+Nothing can pass through the field until it is destroyed.
+Each 5-ft.\ square of the field has a \glossterm{wound resistance} equal to twice your \glossterm{power}.
+
+\rankline
+\rank{5} The area increases to a \arealarge line.
+\rank{7} The area increases to be a \areahuge, 20 ft.\ wide line.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1128,16 +1197,50 @@ Creatures in the area at the time that the spell is cast are unaffected by the s
 
 
 
+\lowercase{\hypertarget{spell:Visual Barrier}{}}\label{spell:Visual Barrier}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Visual Barrier}{Visual Barrier}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
+\targetrule
+This spell functions like the \spell{mystic barrier} spell, except that the barrier is visible as a deep black that completely blocks sight.
+In addition, the \glossterm{wound resistance} of each 5-ft.\ square increases to be equal to three times your \glossterm{power}.
+
+\rank{5} The area increases to a \arealarge line.
+\rank{7} The \glossterm{wound resistance} of each 5-ft.\ square increases to be equal to four times your \glossterm{power}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Wall of Energy Impedance}{}}\label{spell:Wall of Energy Impedance}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Wall of Energy Impedance}{Wall of Energy Impedance}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
 \targetrule
 You create a wall of magical energy in a 20 ft.\ high, \areamed line within \rngmed range.
 The wall is visible as a shimmering magical membrane that does not block sight.
 It does not impede passage for objects or creatures, but any ability that deals \glossterm{energy damage} treats the wall as an impassable barrier.
+Each 5-ft.\ square of wall has a \glossterm{wound resistance} equal to twice your \glossterm{power}.
 
 \rankline
 \rank{5} The area increases to a \arealarge line.
-\rank{7} The height increases to 20 ft.\ high.
+\rank{7} The \glossterm{wound resistance} of each 5-ft.\ square increases to be equal to three times your \glossterm{power}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Entrapping Sphere}{}}\label{spell:Entrapping Sphere}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Entrapping Sphere}{Entrapping Sphere}}[\glossterm{Focus}, \glossterm{Sustain} (standard)]
+\target{One Large or smaller creature within \rngmed range}
+Make an attack vs. Reflex against the target.
+\hit You create a sphere of magical energy around the target in its space.
+The sphere is visible as a shimmering magical membrane that does not block sight.
+Nothing can pass through the field until it is destroyed.
+This prevents the target from having \glossterm{line of effect} to anything outside of the area.
+Each 5-ft.\ square of the field has a \glossterm{wound resistance} equal to twice your \glossterm{power}.
+
+If another creature is in the target's space when this spell is cast, this spell fails without effect.
+
+\rankline
+\rank{6} The \glossterm{wound resistance} of each 5-ft.\ square increases to be equal to three times your \glossterm{power}.
+\rank{8} The maximum size of the target increases to Huge.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1154,6 +1257,21 @@ You can cast this spell as a \glossterm{minor action}.
 \rank{6} The target also gains a \plus1 \glossterm{magic bonus} to \glossterm{wound rolls} on \glossterm{vital wounds} from \glossterm{physical} damage.
 \rank{8} The bonus increases to be equal to your \glossterm{power}.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Mirror Barrier}{}}\label{spell:Mirror Barrier}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Mirror Barrier}{Mirror Barrier}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
+\targetrule
+This spell functions like the \spell{mystic barrier} spell, except that it reflects \glossterm{mundane} attacks against it.
+The barrier's defenses become equal to 5 + your level.
+Whenever a creature misses the barrier with a \glossterm{mundane} attack, it makes the same attack against itself, rolling a new attack roll against its own defenses.
+In addition, the \glossterm{wound resistance} of each 5-ft.\ square increases to be equal to three times your \glossterm{power}.
+
+\rank{6} The area increases to a \arealarge line.
+\rank{8} The \glossterm{wound resistance} of each 5-ft.\ square increases to be equal to four times your \glossterm{power}.
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -1193,6 +1311,7 @@ Attacks that deal damage of multiple types still inflict damage normally unless 
 You create a wall of magical energy in a 20 ft.\ high, \areamed line within \rngmed range.
 The wall is visible as a shimmering magical membrane that does not block sight.
 It does not impede passage for objects or creatures, but any \glossterm{magical} ability treats the wall as an impassable barrier.
+Each 5-ft.\ square of wall has a \glossterm{wound resistance} equal to three times your \glossterm{power}.
 
 \rankline
 \rank{7} The area increases to a \arealarge line.
@@ -1219,16 +1338,12 @@ Creatures in the area at the time that the spell is cast are unaffected by the s
 
 
 
-\lowercase{\hypertarget{spell:Invulnerable Mystic Barrier}{}}\label{spell:Invulnerable Mystic Barrier}
-\begin{freeability}[Rank 6]{\hypertarget{spell:Invulnerable Mystic Barrier}{Invulnerable Mystic Barrier}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
+\lowercase{\hypertarget{spell:Invulnerable Barrier}{}}\label{spell:Invulnerable Barrier}
+\begin{freeability}[Rank 6]{\hypertarget{spell:Invulnerable Barrier}{Invulnerable Barrier}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
 \targetrule
-You create a wall of magical energy in a 20 ft.\ high, \areamed line within \rngmed range.
-The wall is visible as a shimmering magical membrane that does not block sight.
-Nothing can pass through the wall until it is destroyed.
-Each 5-ft.\ square of wall has a \glossterm{wound resistance} equal to twice your \glossterm{power}.
-The wall is immune to \glossterm{physical damage}.
+This spell functions like the \spell{mystic barrier} spell, except that each 5-ft.\ square of wall has a \glossterm{wound resistance} equal to four times your \glossterm{power}.
+In addition, the wall is \glossterm{resistant} to physical damage.
 
-\rankline
 \rank{8} The area increases to a \arealarge line.
 \end{freeability}
 \vspace{0.25em}
@@ -1260,6 +1375,17 @@ The target gains a \glossterm{magic bonus} equal to half your \glossterm{power} 
 \rankline
 \rank{8} The target also gains a \plus1 \glossterm{magic bonus} to \glossterm{wound rolls}.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:One-Way Barrier}{}}\label{spell:One-Way Barrier}
+\begin{freeability}[Rank 7]{\hypertarget{spell:One-Way Barrier}{One-Way Barrier}}[\glossterm{Focus}, \glossterm{Sustain} (standard)]
+\targetrule
+This spell functions like the \spell{mystic barrier} spell, except that you choose one side of the barrier when you cast the spell.
+Whenever an object, creature, or ability passes through the barrier from the chosen side, the barrier parts to allow it through.
+If it stops halfway, it can return to its side, but once it passes through fully it treats the barrier as impassable from the other side.
+\end{freeability}
 \vspace{0.25em}
 
 
