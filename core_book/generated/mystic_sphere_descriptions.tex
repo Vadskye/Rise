@@ -2286,6 +2286,18 @@ This penalty stacks each round until the target dances, which resets the penalti
 
 
 
+\lowercase{\hypertarget{spell:Monologue}{}}\label{spell:Monologue}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Monologue}{Monologue}}[\glossterm{Compulsion}, \glossterm{Focus}]
+\target{One creature within \rngmed range}
+Make an attack vs. Mental against the target.
+\hit As a \glossterm{condition}, the target is forced to speak all of its current thoughts out loud.
+This does not control what it thinks about, so a quick-thinking target may be able to avoid revealing anything of great interest.
+In combat, most creatures will think about what they are planning on doing, which can help you predict their actions.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Stop}{}}\label{spell:Stop}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Stop}{Stop}}[\glossterm{Compulsion}, \glossterm{Focus}]
 \target{One creature within \rngmed range}
@@ -2346,6 +2358,17 @@ On a critical hit, if the target is humanoid, it becomes \glossterm{dominated} b
 
 
 
+\lowercase{\hypertarget{spell:Drop}{}}\label{spell:Drop}
+\begin{freeability}[Rank 5]{\hypertarget{spell:Drop}{Drop}}[\glossterm{Compulsion}, \glossterm{Focus}]
+\target{One creature within \rngmed range}
+Make an attack vs. Mental against the target.
+\hit The target drops anything it is holding in its hands.
+\crit As above, and as a \glossterm{condition} the target is unable to pick up the dropped items.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Curse of Repetition}{}}\label{spell:Curse of Repetition}
 \begin{freeability}[Rank 6]{\hypertarget{spell:Curse of Repetition}{Curse of Repetition}}[\glossterm{Compulsion}, \glossterm{Curse}, \glossterm{Focus}]
 \target{One creature within \rngmed range}
@@ -2383,192 +2406,6 @@ Make an attack vs. Mental against each target.
 
 
 \end{spellsection}
-
-
-\subsubsection{Spells}
-
-
-\lowercase{\hypertarget{spell:Decay}{}}\label{spell:Decay}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Decay}{Decay}}[\glossterm{Focus}]
-\target{One living creature within \rngmed range}
-Make an attack vs. Fortitude against the target.
-\hit As a \glossterm{condition}, the target becomes more vulnerable to injury.
-Whenever it loses a \glossterm{hit point}, it reduces its maximum \glossterm{hit points} by 1.
-When this condition is removed, the target's maximum \glossterm{hit points} are restored.
-\crit As above, except that the target also takes a \minus2 penalty to \glossterm{wound rolls}.
-
-\rankline
-\rank{3} The attack gains a \plus1 bonus to \glossterm{accuracy}.
-\rank{5} The accuracy bonus increases to \plus2.
-\rank{7} The accuracy bonus increases to \plus3.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Malaise}{}}\label{spell:Malaise}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Malaise}{Malaise}}[\glossterm{Focus}]
-\target{One living creature within \rngmed range}
-Make an attack vs. Fortitude against the target.
-\hit The target is \glossterm{sickened} as a \glossterm{condition}.
-\crit The target is \glossterm{nauseated} as a \glossterm{condition}.
-
-\rankline
-\rank{3} The attack gains a \plus1 bonus to \glossterm{accuracy}.
-\rank{5} The accuracy bonus increases to \plus2.
-\rank{7} The accuracy bonus increases to \plus3.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Curse of Decay}{}}\label{spell:Curse of Decay}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Curse of Decay}{Curse of Decay}}[\glossterm{Curse}, \glossterm{Focus}]
-\target{One living creature within \rngmed range}
-Make an attack vs. Mental against the target.
-\hit The target becomes more vulnerable to injury until it takes a short rest.
-Whenever it loses a \glossterm{hit point}, it reduces its maximum \glossterm{hit points} by 1.
-This cannot reduce the target's maximum \glossterm{hit points} below 1.
-When this effect is removed, the target's maximum \glossterm{hit points} are restored.
-\crit As above, except that the effect lasts until this curse is removed.
-
-\rankline
-\rank{5} The attack gains a \plus1 bonus to \glossterm{accuracy}.
-\rank{7} The accuracy bonus increases to \plus2.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Curse of Malaise}{}}\label{spell:Curse of Malaise}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Curse of Malaise}{Curse of Malaise}}[\glossterm{Curse}, \glossterm{Focus}]
-\target{One living creature within \rngmed range}
-Make an attack vs. Mental against the target.
-\hit The target is \glossterm{sickened} until it takes a \glossterm{short rest}.
-\crit As above, except that the effect lasts until this curse is removed.
-
-\rankline
-\rank{5} The attack gains a \plus1 bonus to \glossterm{accuracy}.
-\rank{7} The accuracy bonus increases to \plus2.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Miasma}{}}\label{spell:Miasma}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Miasma}{Miasma}}[\glossterm{Focus}]
-\targets{\glossterm{Enemies} within an \areamed radius from you}
-Make an attack vs. Fortitude against each target.
-\hit Each target is \glossterm{sickened} as a \glossterm{condition}.
-
-\rankline
-\rank{5} The area increases to a \arealarge radius.
-\rank{7} The area increases to a \areahuge radius.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Bleed}{}}\label{spell:Bleed}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Bleed}{Bleed}}[\glossterm{Focus}]
-\target{One living creature within \rngclose range}
-Make an attack vs. Fortitude against the target.
-\hit As a \glossterm{condition}, the target begins bleeding.
-At the end of each round, it takes physical \glossterm{standard damage} \minus1d.
-This damage cannot inflict a \glossterm{vital wound}, even if the target has no \glossterm{hit points} remaining.
-\crit As above, except that the damage can inflict a \glossterm{vital wound}.
-
-\rankline
-\rank{6} The damage increases to \glossterm{standard damage}.
-\rank{8} The damage increases to \glossterm{standard damage} \plus1.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Eyebite}{}}\label{spell:Eyebite}
-\begin{freeability}[Rank 5]{\hypertarget{spell:Eyebite}{Eyebite}}[\glossterm{Focus}]
-\target{One living creature within \rngclose range}
-Make an attack vs. Fortitude against the target.
-\hit The target is \glossterm{blinded} as a \glossterm{condition}.
-
-\rankline
-\rank{6} The attack gains a \plus1 bonus to \glossterm{accuracy}.
-\rank{8} The accuracy bonus increases to \plus2.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Cripple}{}}\label{spell:Cripple}
-\begin{freeability}[Rank 6]{\hypertarget{spell:Cripple}{Cripple}}[\glossterm{Focus}]
-\target{One living creature within \rngclose range}
-Make an attack vs. Fortitude against the target.
-\hit The target is \glossterm{immobilized} as a \glossterm{condition}.
-\crit The target is \glossterm{paralyzed} as a \glossterm{condition}.
-
-\rankline
-\rank{8} The attack gains a \plus1 bonus to \glossterm{accuracy}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Curse of Blood}{}}\label{spell:Curse of Blood}
-\begin{freeability}[Rank 6]{\hypertarget{spell:Curse of Blood}{Curse of Blood}}[\glossterm{Curse}, \glossterm{Focus}]
-\target{One living creature within \rngclose range}
-Make an attack vs. Mental against the target.
-\hit The target begins bleeding until it takes a \glossterm{short rest}.
-At the end of each round, it takes physical \glossterm{standard damage} \minus1d.
-This damage cannot inflict a \glossterm{vital wound}, even if the target has no \glossterm{hit points} remaining.
-\crit As above, except that the effect lasts until this curse is removed.
-
-\rankline
-\rank{8} The damage increases to \glossterm{standard damage}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Crippling Curse}{}}\label{spell:Crippling Curse}
-\begin{freeability}[Rank 8]{\hypertarget{spell:Crippling Curse}{Crippling Curse}}[\glossterm{Curse}, \glossterm{Focus}]
-\target{One living creature within \rngclose range}
-Make an attack vs. Mental against the target.
-\hit The target is \glossterm{immobilized} until it takes a \glossterm{short rest}.
-\crit As above, except that the effect lasts until this curse is removed.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Eyebite Curse}{}}\label{spell:Eyebite Curse}
-\begin{freeability}[Rank 8]{\hypertarget{spell:Eyebite Curse}{Eyebite Curse}}[\glossterm{Curse}, \glossterm{Focus}]
-\target{One living creature within \rngclose range}
-Make an attack vs. Mental against the target.
-\hit The target is \glossterm{blinded} until it takes a \glossterm{short rest}.
-\crit As above, except that the effect lasts until this curse is removed.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\subsubsection{Rituals}
-
-
-\lowercase{\hypertarget{spell:Animate Dead}{}}\label{spell:Animate Dead}
-\begin{attuneability}[Rank 3]{\hypertarget{spell:Animate Dead}{Animate Dead}}[\glossterm{Attune} (ritual), \glossterm{Focus}]
-\targets{Any number of corpses within \rngclose range}
-The combined levels of all targets cannot exceed your \glossterm{power}.
-The target becomes an undead creature that obeys your spoken commands.
-You choose whether to create a skeleton or a zombie.
-Creating a zombie require a mostly intact corpse, including most of the flesh.
-Creating a skeleton only requires a mostly intact skeleton.
-If a skeleton is made from an intact corpse, the flesh quickly falls off the animated bones.
-
-This ritual takes one hour to perform.
-\end{attuneability}
-\vspace{0.25em}
-
 
 \newpage
 \begin{spellsection}{Cryomancy}
@@ -2808,6 +2645,22 @@ This damage is of all damage types that the target was damaged by during that ro
 
 
 
+\lowercase{\hypertarget{spell:Demotivate}{}}\label{spell:Demotivate}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Demotivate}{Demotivate}}[\glossterm{Emotion}, \glossterm{Focus}]
+\target{One creature within \rngmed range}
+Make an attack vs Mental with a \plus2 bonus against the target.
+\hit As a \glossterm{condition}, the target takes a \minus2 penalty to Mental defense.
+In addition, it loses an \glossterm{action point} whenever it spends an \glossterm{action point}.
+
+\rankline
+\rank{3} The accuracy bonus increases to \plus3.
+\rank{5} The accuracy bonus increases to \plus4.
+\rank{7} The accuracy bonus increases to \plus5.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Enrage}{}}\label{spell:Enrage}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Enrage}{Enrage}}[\glossterm{Emotion}, \glossterm{Focus}]
 \target{One creature within \rngmed range}
@@ -2820,6 +2673,21 @@ For example, it could make a \glossterm{strike} or cast an offensive spell, but 
 \rank{5} The accuracy bonus increases to \plus4.
 \rank{7} The accuracy bonus increases to \plus5.
 \end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Motivate}{}}\label{spell:Motivate}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Motivate}{Motivate}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself or one \glossterm{ally} within \rngmed range}
+The target gains a \plus2 bonus to Mental defense.
+
+\rankline
+\rank{3} The target also increases its maximum \glossterm{hit points} by one and regains that many hit points.
+When this spell ends, the target loses hit points equal to the hit points it regained this way.
+\rank{5} The bonus to Mental defense increases to \plus4.
+\rank{7} The number of additional hit points increases to two.
+\end{attuneability}
 \vspace{0.25em}
 
 
@@ -6448,7 +6316,7 @@ This ritual takes 24 hours to perform and requires 32 action points from its rit
 \end{spellheader}
 
 
-\parhead{Mystic Sphere Lists} Divine, Nature
+\parhead{Mystic Sphere Lists} Arcane, Divine, Pact
 
 \subsubsection{Cantrips}
 
@@ -6482,6 +6350,24 @@ It takes a penalty to its \glossterm{wound resistance} equal to half your \gloss
 
 
 
+\lowercase{\hypertarget{spell:Decay}{}}\label{spell:Decay}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Decay}{Decay}}[\glossterm{Focus}]
+\target{One living creature within \rngmed range}
+Make an attack vs. Fortitude against the target.
+\hit As a \glossterm{condition}, the target becomes more vulnerable to injury.
+Whenever it loses a \glossterm{hit point}, it reduces its maximum \glossterm{hit points} by 1.
+When this condition is removed, the target's maximum \glossterm{hit points} are restored.
+\crit As above, except that the target also takes a \minus2 penalty to \glossterm{wound rolls}.
+
+\rankline
+\rank{3} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Lifegift}{}}\label{spell:Lifegift}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Lifegift}{Lifegift}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself or an \glossterm{ally} within \rngclose range}
@@ -6491,10 +6377,26 @@ When this spell ends, the target loses hit points equal to the hit points it reg
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{3} The number of additional hit points increases to two.
-\rank{5} The number of additional hit points increases to three.
-\rank{7} The number of additional hit points increases to four.
+\rank{3} The target also gains a \plus2 bonus to Fortitude defense.
+\rank{5} The number of additional hit points increases to two.
+\rank{7} The Fortitude defense bonus increases to \plus4.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Malaise}{}}\label{spell:Malaise}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Malaise}{Malaise}}[\glossterm{Focus}]
+\target{One living creature within \rngmed range}
+Make an attack vs. Fortitude against the target.
+\hit The target is \glossterm{sickened} as a \glossterm{condition}.
+\crit The target is \glossterm{nauseated} as a \glossterm{condition}.
+
+\rankline
+\rank{3} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -6544,6 +6446,39 @@ The \glossterm{wound roll} for each \glossterm{vital wound} modified this way ca
 
 
 
+\lowercase{\hypertarget{spell:Curse of Decay}{}}\label{spell:Curse of Decay}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Curse of Decay}{Curse of Decay}}[\glossterm{Curse}, \glossterm{Focus}]
+\target{One living creature within \rngmed range}
+Make an attack vs. Mental against the target.
+\hit The target becomes more vulnerable to injury until it takes a short rest.
+Whenever it loses a \glossterm{hit point}, it reduces its maximum \glossterm{hit points} by 1.
+This cannot reduce the target's maximum \glossterm{hit points} below 1.
+When this effect is removed, the target's maximum \glossterm{hit points} are restored.
+\crit As above, except that the effect lasts until this curse is removed.
+
+\rankline
+\rank{5} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{7} The accuracy bonus increases to \plus2.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Curse of Malaise}{}}\label{spell:Curse of Malaise}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Curse of Malaise}{Curse of Malaise}}[\glossterm{Curse}, \glossterm{Focus}]
+\target{One living creature within \rngmed range}
+Make an attack vs. Mental against the target.
+\hit The target is \glossterm{sickened} until it takes a \glossterm{short rest}.
+\crit As above, except that the effect lasts until this curse is removed.
+
+\rankline
+\rank{5} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{7} The accuracy bonus increases to \plus2.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Drain Life}{}}\label{spell:Drain Life}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Drain Life}{Drain Life}}[\glossterm{Focus}]
 \target{One living creature within \rngmed range}
@@ -6575,6 +6510,20 @@ Make a \glossterm{physical attack} vs. Reflex against the target.
 
 
 
+\lowercase{\hypertarget{spell:Miasma}{}}\label{spell:Miasma}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Miasma}{Miasma}}[\glossterm{Focus}]
+\targets{\glossterm{Enemies} within an \areamed radius from you}
+Make an attack vs. Fortitude against each target.
+\hit Each target is \glossterm{sickened} as a \glossterm{condition}.
+
+\rankline
+\rank{5} The area increases to a \arealarge radius.
+\rank{7} The area increases to a \areahuge radius.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Vital Persistence}{}}\label{spell:Vital Persistence}
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Vital Persistence}{Vital Persistence}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself or an \glossterm{ally} within \rngclose range}
@@ -6588,6 +6537,38 @@ The target ignores the vital wound effect of its most recent \glossterm{vital wo
 
 
 
+\lowercase{\hypertarget{spell:Bleed}{}}\label{spell:Bleed}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Bleed}{Bleed}}[\glossterm{Focus}]
+\target{One living creature within \rngclose range}
+Make an attack vs. Fortitude against the target.
+\hit As a \glossterm{condition}, the target begins bleeding.
+At the end of each round, it takes physical \glossterm{standard damage} \minus1d.
+This damage cannot inflict a \glossterm{vital wound}, even if the target has no \glossterm{hit points} remaining.
+\crit As above, except that the damage can inflict a \glossterm{vital wound}.
+
+\rankline
+\rank{6} The damage increases to \glossterm{standard damage}.
+\rank{8} The damage increases to \glossterm{standard damage} \plus1.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Lifeseal}{}}\label{spell:Lifeseal}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Lifeseal}{Lifeseal}}[\glossterm{Focus}]
+\target{One creature within \rngmed range}
+Make an attack vs. Fortitude against the target.
+\hit The target loses a \glossterm{hit point}.
+In addition, as a \glossterm{condition}, the target is unable to regain hit points.
+
+\rankline
+\rank{6} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{8} The accuracy bonus increases to \plus2.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Cure Serious Wound}{}}\label{spell:Cure Serious Wound}
 \begin{apability}[Rank 5]{\hypertarget{spell:Cure Serious Wound}{Cure Serious Wound}}[\glossterm{Focus}]
 \target{Yourself or one living \glossterm{ally} within \rngclose range}
@@ -6596,6 +6577,50 @@ The target removes one \glossterm{vital wound}.
 \rankline
 \rank{7} The target can remove two \glossterm{vital wounds}.
 \end{apability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Eyebite}{}}\label{spell:Eyebite}
+\begin{freeability}[Rank 5]{\hypertarget{spell:Eyebite}{Eyebite}}[\glossterm{Focus}]
+\target{One living creature within \rngclose range}
+Make an attack vs. Fortitude against the target.
+\hit The target is \glossterm{blinded} as a \glossterm{condition}.
+
+\rankline
+\rank{6} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{8} The accuracy bonus increases to \plus2.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Cripple}{}}\label{spell:Cripple}
+\begin{freeability}[Rank 6]{\hypertarget{spell:Cripple}{Cripple}}[\glossterm{Focus}]
+\target{One living creature within \rngclose range}
+Make an attack vs. Fortitude against the target.
+\hit The target is \glossterm{immobilized} as a \glossterm{condition}.
+\crit The target is \glossterm{paralyzed} as a \glossterm{condition}.
+
+\rankline
+\rank{8} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Curse of Blood}{}}\label{spell:Curse of Blood}
+\begin{freeability}[Rank 6]{\hypertarget{spell:Curse of Blood}{Curse of Blood}}[\glossterm{Curse}, \glossterm{Focus}]
+\target{One living creature within \rngclose range}
+Make an attack vs. Mental against the target.
+\hit The target begins bleeding until it takes a \glossterm{short rest}.
+At the end of each round, it takes physical \glossterm{standard damage} \minus1d.
+This damage cannot inflict a \glossterm{vital wound}, even if the target has no \glossterm{hit points} remaining.
+\crit As above, except that the effect lasts until this curse is removed.
+
+\rankline
+\rank{8} The damage increases to \glossterm{standard damage}.
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -6622,7 +6647,45 @@ Unlike normal, this hit point loss is rounded up instead of down.
 
 
 
+\lowercase{\hypertarget{spell:Crippling Curse}{}}\label{spell:Crippling Curse}
+\begin{freeability}[Rank 8]{\hypertarget{spell:Crippling Curse}{Crippling Curse}}[\glossterm{Curse}, \glossterm{Focus}]
+\target{One living creature within \rngclose range}
+Make an attack vs. Mental against the target.
+\hit The target is \glossterm{immobilized} until it takes a \glossterm{short rest}.
+\crit As above, except that the effect lasts until this curse is removed.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Eyebite Curse}{}}\label{spell:Eyebite Curse}
+\begin{freeability}[Rank 8]{\hypertarget{spell:Eyebite Curse}{Eyebite Curse}}[\glossterm{Curse}, \glossterm{Focus}]
+\target{One living creature within \rngclose range}
+Make an attack vs. Mental against the target.
+\hit The target is \glossterm{blinded} until it takes a \glossterm{short rest}.
+\crit As above, except that the effect lasts until this curse is removed.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \subsubsection{Rituals}
+
+
+\lowercase{\hypertarget{spell:Animate Dead}{}}\label{spell:Animate Dead}
+\begin{attuneability}[Rank 3]{\hypertarget{spell:Animate Dead}{Animate Dead}}[\glossterm{Attune} (ritual), \glossterm{Focus}]
+\targets{Any number of corpses within \rngclose range}
+The combined levels of all targets cannot exceed your \glossterm{power}.
+The target becomes an undead creature that obeys your spoken commands.
+You choose whether to create a skeleton or a zombie.
+Creating a zombie require a mostly intact corpse, including most of the flesh.
+Creating a skeleton only requires a mostly intact skeleton.
+If a skeleton is made from an intact corpse, the flesh quickly falls off the animated bones.
+
+This ritual takes one hour to perform.
+\end{attuneability}
+\vspace{0.25em}
+
 
 
 \lowercase{\hypertarget{spell:Purge Curse}{}}\label{spell:Purge Curse}

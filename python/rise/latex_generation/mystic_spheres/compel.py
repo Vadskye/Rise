@@ -22,6 +22,17 @@ compel=MysticSphere(
             This effect lasts until it takes a \\glossterm<short rest>.
             \\crit As above, except that the effect lasts until the curse is removed.
         """, tags=['Compulsion', 'Curse']),
+        Spell('Drop', 5, 'One creature within \\rngmed range', """
+            Make an attack vs. Mental against the target.
+            \\hit The target drops anything it is holding in its hands.
+            \\crit As above, and as a \\glossterm<condition> the target is unable to pick up the dropped items.
+        """, tags=['Compulsion']),
+        Spell('Monologue', 1, 'One creature within \\rngmed range', """
+            Make an attack vs. Mental against the target.
+            \\hit As a \\glossterm<condition>, the target is forced to speak all of its current thoughts out loud.
+            This does not control what it thinks about, so a quick-thinking target may be able to avoid revealing anything of great interest.
+            In combat, most creatures will think about what they are planning on doing, which can help you predict their actions.
+        """, tags=['Compulsion']),
         Spell('Dance', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit As a \\glossterm<condition>, the target is compelled to dance.
