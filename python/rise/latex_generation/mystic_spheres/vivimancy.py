@@ -16,8 +16,17 @@ vivimancy=MysticSphere(
             The \\glossterm<wound roll> for that \\glossterm<vital wound> cannot be modified again.
         """, tags=[]),
     ],
-    lists=['Divine', 'Nature'],
+    lists=['Arcane', 'Divine', 'Pact'],
     spells=[
+        Spell('Lifeseal', 4, 'One creature within \\rngmed range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit The target loses a \\glossterm<hit point>.
+            In addition, as a \\glossterm<condition>, the target is unable to regain hit points.
+
+            \\rankline
+            \\rank<6> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<8> The accuracy bonus increases to +2.
+        """, tags=[]),
         Spell('Draining Grasp', 3, 'One creature or object you \\glossterm<threaten>', """
             This spell does not have the \\glossterm<Focus> tag.
             You must have a \\glossterm<free hand> to cast this spell.
@@ -45,9 +54,9 @@ vivimancy=MysticSphere(
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<3> The number of additional hit points increases to two.
-            \\rank<5> The number of additional hit points increases to three.
-            \\rank<7> The number of additional hit points increases to four.
+            \\rank<3> The target also gains a +2 bonus to Fortitude defense.
+            \\rank<5> The number of additional hit points increases to two.
+            \\rank<7> The Fortitude defense bonus increases to +4.
         """, tags=['Attune (target)']),
         Spell('Cure Serious Wound', 5, 'Yourself or one living \\glossterm<ally> within \\rngclose range', """
             The target removes one \\glossterm<vital wound>.
@@ -111,6 +120,104 @@ vivimancy=MysticSphere(
             \\hit The target loses \\glossterm<hit points> equal to half its maximum hit points.
             Unlike normal, this hit point loss is rounded up instead of down.
         """, tags=[]),
+        Spell('Malaise', 1, 'One living creature within \\rngmed range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit The target is \\glossterm<sickened> as a \\glossterm<condition>.
+            \\crit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
+
+            \\rankline
+            \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<5> The accuracy bonus increases to +2.
+            \\rank<7> The accuracy bonus increases to +3.
+        """, tags=[]),
+        Spell('Curse of Malaise', 3, 'One living creature within \\rngmed range', """
+            Make an attack vs. Mental against the target.
+            \\hit The target is \\glossterm<sickened> until it takes a \\glossterm<short rest>.
+            \\crit As above, except that the effect lasts until this curse is removed.
+
+            \\rankline
+            \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<7> The accuracy bonus increases to +2.
+        """, tags=['Curse']),
+        Spell('Decay', 1, 'One living creature within \\rngmed range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit As a \\glossterm<condition>, the target becomes more vulnerable to injury.
+            Whenever it loses a \\glossterm<hit point>, it reduces its maximum \\glossterm<hit points> by 1.
+            When this condition is removed, the target's maximum \\glossterm<hit points> are restored.
+            \\crit As above, except that the target also takes a -2 penalty to \\glossterm<wound rolls>.
+
+            \\rankline
+            \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<5> The accuracy bonus increases to +2.
+            \\rank<7> The accuracy bonus increases to +3.
+        """, tags=[]),
+        Spell('Curse of Decay', 3, 'One living creature within \\rngmed range', """
+            Make an attack vs. Mental against the target.
+            \\hit The target becomes more vulnerable to injury until it takes a short rest.
+            Whenever it loses a \\glossterm<hit point>, it reduces its maximum \\glossterm<hit points> by 1.
+            This cannot reduce the target's maximum \\glossterm<hit points> below 1.
+            When this effect is removed, the target's maximum \\glossterm<hit points> are restored.
+            \\crit As above, except that the effect lasts until this curse is removed.
+
+            \\rankline
+            \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<7> The accuracy bonus increases to +2.
+        """, tags=['Curse']),
+        Spell('Miasma', 3, '\\glossterm<Enemies> within an \\areamed radius from you', """
+            Make an attack vs. Fortitude against each target.
+            \\hit Each target is \\glossterm<sickened> as a \\glossterm<condition>.
+
+            \\rankline
+            \\rank<5> The area increases to a \\arealarge radius.
+            \\rank<7> The area increases to a \\areahuge radius.
+        """, tags=[]),
+        Spell('Eyebite', 5, 'One living creature within \\rngclose range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit The target is \\glossterm<blinded> as a \\glossterm<condition>.
+
+            \\rankline
+            \\rank<6> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<8> The accuracy bonus increases to +2.
+        """, tags=[]),
+        Spell('Eyebite Curse', 8, 'One living creature within \\rngclose range', """
+            Make an attack vs. Mental against the target.
+            \\hit The target is \\glossterm<blinded> until it takes a \\glossterm<short rest>.
+            \\crit As above, except that the effect lasts until this curse is removed.
+        """, tags=['Curse']),
+        Spell('Bleed', 4, 'One living creature within \\rngclose range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit As a \\glossterm<condition>, the target begins bleeding.
+            At the end of each round, it takes physical \\glossterm<standard damage> -1d.
+            This damage cannot inflict a \\glossterm<vital wound>, even if the target has no \\glossterm<hit points> remaining.
+            \\crit As above, except that the damage can inflict a \\glossterm<vital wound>.
+
+            \\rankline
+            \\rank<6> The damage increases to \\glossterm<standard damage>.
+            \\rank<8> The damage increases to \\glossterm<standard damage> +1.
+        """, tags=[]),
+        Spell('Curse of Blood', 6, 'One living creature within \\rngclose range', """
+            Make an attack vs. Mental against the target.
+            \\hit The target begins bleeding until it takes a \\glossterm<short rest>.
+            At the end of each round, it takes physical \\glossterm<standard damage> -1d.
+            This damage cannot inflict a \\glossterm<vital wound>, even if the target has no \\glossterm<hit points> remaining.
+            \\crit As above, except that the effect lasts until this curse is removed.
+
+            \\rankline
+            \\rank<8> The damage increases to \\glossterm<standard damage>.
+        """, tags=['Curse']),
+        Spell('Cripple', 6, 'One living creature within \\rngclose range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit The target is \\glossterm<immobilized> as a \\glossterm<condition>.
+            \\crit The target is \\glossterm<paralyzed> as a \\glossterm<condition>.
+
+            \\rankline
+            \\rank<8> The attack gains a +1 bonus to \\glossterm<accuracy>.
+        """, tags=[]),
+        Spell('Crippling Curse', 8, 'One living creature within \\rngclose range', """
+            Make an attack vs. Mental against the target.
+            \\hit The target is \\glossterm<immobilized> until it takes a \\glossterm<short rest>.
+            \\crit As above, except that the effect lasts until this curse is removed.
+        """, tags=['Curse']),
     ],
     rituals=[
         Spell('Remove Disease', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
@@ -222,6 +329,16 @@ vivimancy=MysticSphere(
 
             This ritual takes one hour to perform.
         """, tags=['AP']),
+        Spell('Animate Dead', 3, 'Any number of corpses within \\rngclose range', """
+            The combined levels of all targets cannot exceed your \\glossterm<power>.
+            The target becomes an undead creature that obeys your spoken commands.
+            You choose whether to create a skeleton or a zombie.
+            Creating a zombie require a mostly intact corpse, including most of the flesh.
+            Creating a skeleton only requires a mostly intact skeleton.
+            If a skeleton is made from an intact corpse, the flesh quickly falls off the animated bones.
+
+            This ritual takes one hour to perform.
+        """, tags=['Attune (ritual)']),
     ],
     category='damage',
 )

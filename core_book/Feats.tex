@@ -132,7 +132,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featref{Sphere Focus: Channel Divinity} & \sphere{Channel Divinity} sphere access & Improve casting with chosen sphere           & Magical & \featpref{Sphere Focus: Channel Divinity} \\
         \featref{Sphere Focus: Chronomancy}      & \sphere{Chronomancy} sphere access      & Improve casting with chosen sphere           & Magical & \featpref{Sphere Focus: Chronomancy}      \\
         \featref{Sphere Focus: Compel}           & \sphere{Compel} sphere access           & Improve casting with chosen sphere           & Magical & \featpref{Sphere Focus: Compel}           \\
-        \featref{Sphere Focus: Corruption}       & \sphere{Corruption} sphere access       & Improve casting with chosen sphere           & Magical & \featpref{Sphere Focus: Corruption}       \\
         \featref{Sphere Focus: Cryomancy}        & \sphere{Cryomancy} sphere access        & Improve casting with chosen sphere           & Magical & \featpref{Sphere Focus: Cryomancy}        \\
         \featref{Sphere Focus: Delusion}         & \sphere{Delusion} sphere access         & Improve casting with chosen sphere           & Magical & \featpref{Sphere Focus: Delusion}         \\
         \featref{Sphere Focus: Electromancy}     & \sphere{Electromancy} sphere access     & Improve casting with chosen sphere           & Magical & \featpref{Sphere Focus: Electromancy}     \\
@@ -262,6 +261,34 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[20]{Supreme Sight} The range of your blindsight improves to 200 feet.
         In addition, the range of your blindsense improves to 1,000 feet.
+    \end{feat}
+
+    \begin{feat}{Blood Magic}{Casting, Magical}
+        \featpre Ability to cast a spell, base Constitution 2.
+
+        \ff[1]{Bloodspell} Whenever you cast a spell, you may use this ability.
+        When you do, you lose a \glossterm{hit point}.
+        In exchange, you gain a \plus2 bonus to \glossterm{power} with the spell, the spell does not require \glossterm{components}, and it loses the \glossterm{Focus} tag (if it had it).
+
+        \ff[4]{Fortified Blood} You increase your maximum \glossterm{hit points} by 1.
+        In addition, you become \glossterm{bloodied} when you have one fewer \glossterm{hit point} remaining than normal.
+
+        \ff[7]{Bloodbind} Whenever you \glossterm{injure} a living creature using a spell, you can choose to bind the target's blood to yours.
+        While the target is bound, you can see it through all forms of \glossterm{concealment} and \glossterm{invisibility} (but not through \glossterm{cover}).
+        In addition, you constantly know the exact direction and distance to the target bound by your \textit{bloodbind} ability.
+        This binding lasts until you bind another creature with this ability.
+
+        \ff[10]{Greater Bloodspell} The bonus to \glossterm{power} from your \textit{bloodspell} ability increases to \plus4.
+        In addition, you also gain a \plus1 bonus to \glossterm{accuracy} with the spell.
+
+        \ff[13]{Greater Fortified Blood} The number of additional \glossterm{hit points} you gain from your \textit{fortified blood} ability increases to 2.
+        In addition, you become \glossterm{bloodied} when you have two fewer hit points remaining than normal instead of one fewer.
+
+        \ff[16]{Greater Bloodbind} You are always considered to have \glossterm{line of effect} to the target bound by your \textit{bloodbind} ability, regardless of intervening obstacles.
+        The target must still be within the normal \glossterm{range} of your spells.
+
+        \ff[19]{Supreme Bloodspell} The bonus to \glossterm{power} from your \textit{bloodspell} ability increases to \plus6.
+        In addition, the accuracy bonus increases to \plus2.
     \end{feat}
 
     \begin{feat}{Bluff Specialization}{Skill}
@@ -1029,7 +1056,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
                 Channel Divinity & Energy \\
                 Chronomancy & \tdash \\
                 Compel & \tdash \\
-                Corruption & \tdash \\
                 Cryomancy & Cold \\
                 Delusion & \tdash \\
                 Electromancy & Electricity \\
@@ -1747,27 +1773,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[19]{Greater Mental Dominance} The bonus from your \textit{mental dominance} ability increases to \plus4.
     \end{feat}
 
-    \begin{feat}{Sphere Focus: Corruption}{Casting, Magical}
-        \featpre Access to the \sphere{Corruption} \glossterm{mystic sphere}.
-
-        \ff[1]{Corruption Focus} You gain a \plus1 bonus to \glossterm{accuracy} with abilities from the \sphere{corruption} \glossterm{mystic sphere}.
-
-        \ff[4]{Corruption Tolerance} You gain a \plus1 bonus to Fortitude defense and are immune to being \glossterm{sickened}.
-
-        \ff[7]{Spell} You learn a spell from the \sphere{corruption} \glossterm{mystic sphere}.
-        When you gain access to a new spell level, you can change which spell you know from that \glossterm{mystic sphere}.
-
-        \ff[10]{Lingering Corruption} When a creature removes a condition imposed by a spell you cast from the \sphere{corruption} \glossterm{mystic sphere}, the effects of the condition last until the end of the next round after the condition is removed.
-
-        \ff[13]{Greater Corruption Tolerance} The bonus from your \textit{corruption tolerance} ability increases to \plus2.
-        In addition, you are immune to being \glossterm{nauseated}.
-
-        \ff[16]{Greater Corruption Focus} The bonus from your \textit{corruption focus} ability increases to \plus2.
-
-        \ff[19]{Supreme Corruption Tolerance} The bonus from your \textit{corruption tolerance} ability increases to \plus3.
-        In addition, you are immune to hostile \glossterm{Life} abilities.
-    \end{feat}
-
     \begin{feat}{Sphere Focus: Cryomancy}{Casting, Magical}
         \featpre Access to the \sphere{Cryomancy} \glossterm{mystic sphere}.
 
@@ -2112,22 +2117,19 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[1]{Vivimancy Focus} You gain a \plus1 bonus to \glossterm{accuracy} with abilities from the \sphere{vivimancy} \glossterm{mystic sphere}.
 
-        \ff[4]{Lifebind} Whenever you deal damage to a living creature using a spell from the \sphere{vivimancy} \glossterm{mystic sphere}, you can choose to bind the target's life force to yours.
-        While the target is bound, you can see it through all forms of \glossterm{concealment} and \glossterm{invisibility} (but not through \glossterm{cover}).
-        In addition, you constantly know the exact direction and distance to the target bound by your \textit{lifebind} ability.
-        This binding lasts until you bind another creature with this ability.
+        \ff[4]{Personal Vitality} You gain a \plus1 bonus to Fortitude defense and are immune to being \glossterm{sickened}.
 
         \ff[7]{Spell} You learn a spell from the \sphere{vivimancy} \glossterm{mystic sphere}.
         When you gain access to new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[10]{Greater Lifebind} You are always considered to have \glossterm{line of effect} to the target bound by your \textit{lifebind} ability, regardless of intervening obstacles.
-        The target must still be within the normal \glossterm{range} of your spells.
+        \ff[10]{Greater Personal Vitality} The bonus to Fortitude defense from your \textit{fortified life} ability increases to \plus2.
+        In addition, you are immune to being \glossterm{nauseated}.
 
-        \ff[13]{Personal Vitality} You gain a \plus2 bonus to Fortitude defense.
+        \ff[13]{Life Suppression} You gain a \plus4 bonus to defenses against abilities that only affect living creatures.
 
         \ff[16]{Greater Vivimancy Focus} The bonus from your \textit{vivimancy focus} ability increases to \plus2.
 
-        \ff[19]{Supreme Lifebind} As long as the target of your \textit{lifebind} ability is on the same plane as you, it is always within the \glossterm{range} of your \glossterm{magical} abilities.
+        \ff[19]{Greater Life Suppression} You are no longer considered a living creature for the purpose of abilities used by your \glossterm{enemies}.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Weaponcraft}{Casting, Magical}
