@@ -159,6 +159,21 @@ polymorph=MysticSphere(
             \\rank<6> The skill bonus increases to +12.
             \\rank<8> The skill bonus increases to +16.
         """, tags=['Attune (self)']),
+        Spell('Enhanced Senses', 1, 'Yourself', """
+            You gain a +3 \\glossterm<magic bonus> to Awareness checks.
+
+            \\rankline
+            \\rank<3> The bonus increases to +5.
+            \\rank<5> The bonus increases to +7.
+            \\rank<7> The bonus increases to +10.
+        """, tags=['Attune (self)']),
+        Spell('Enhanced Muscles', 3, 'Yourself', """
+            You gain a +2 \\glossterm<magic bonus> to your choice of either Strength-based checks or Dexterity-based checks.
+
+            \\rankline
+            \\rank<5> The bonus increases to +3.
+            \\rank<7> The bonus increases to +4.
+        """, tags=['Attune (self)']),
         Spell('Scent', 3, 'Yourself', """
             You gain the \\glossterm<scent> ability, giving you a +10 bonus to scent-based Awareness checks (see \\pcref<Senses>).
 
@@ -202,6 +217,17 @@ polymorph=MysticSphere(
             \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
         """, tags=['Attune (target)']),
+        Spell('Bleed', 4, 'One living creature within \\rngclose range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit As a \\glossterm<condition>, the target begins bleeding.
+            At the end of each round, it takes physical \\glossterm<standard damage> -1d.
+            This damage cannot inflict a \\glossterm<vital wound>, even if the target has no \\glossterm<hit points> remaining.
+            \\crit As above, except that the damage can inflict a \\glossterm<vital wound>.
+
+            \\rankline
+            \\rank<6> The damage increases to \\glossterm<standard damage>.
+            \\rank<8> The damage increases to \\glossterm<standard damage> +1.
+        """, tags=[]),
     ],
     rituals=[
         # Should this also be a spell? Incredibly niche, but golem makers
