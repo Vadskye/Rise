@@ -86,11 +86,20 @@ vivimancy=MysticSphere(
             \\rank<5> You can cast this spell as a \\glossterm<minor action>.
             \\rank<7> The target can ignore the vital wound effect of its two most recent \\glossterm<vital wounds>.
         """, tags=['Attune (target)']),
+        Spell('Curse of Vulnerability', 4, 'One creature within \\rngmed range', """
+            Make an attack vs. Mental against the target.
+            \\hit The target takes a penalty to \\glossterm<resistances> equal to half your \\glossterm<power> until it takes a \\glossterm<short rest>.
+            \\crit As above, except that the effect lasts until this curse is removed.
+
+            \\rankline
+            \\rank<6> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<8> The accuracy bonus increases to +2.
+        """, tags=['Curse']),
         Spell('Death Knell', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             You gain a +4 bonus to \\glossterm<accuracy> against a \\glossterm<bloodied> creature.
             \\hit As a \\glossterm<condition>, the target is marked for death.
-            It takes a penalty to its \\glossterm<wound resistance> equal to half your \\glossterm<power> against all types of damage.
+            It takes a penalty to its \\glossterm<wound resistance> equal to your \\glossterm<power> against all types of damage.
 
             \\rankline
             \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
@@ -183,27 +192,6 @@ vivimancy=MysticSphere(
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<blinded> until it takes a \\glossterm<short rest>.
             \\crit As above, except that the effect lasts until this curse is removed.
-        """, tags=['Curse']),
-        Spell('Bleed', 4, 'One living creature within \\rngclose range', """
-            Make an attack vs. Fortitude against the target.
-            \\hit As a \\glossterm<condition>, the target begins bleeding.
-            At the end of each round, it takes physical \\glossterm<standard damage> -1d.
-            This damage cannot inflict a \\glossterm<vital wound>, even if the target has no \\glossterm<hit points> remaining.
-            \\crit As above, except that the damage can inflict a \\glossterm<vital wound>.
-
-            \\rankline
-            \\rank<6> The damage increases to \\glossterm<standard damage>.
-            \\rank<8> The damage increases to \\glossterm<standard damage> +1.
-        """, tags=[]),
-        Spell('Curse of Blood', 6, 'One living creature within \\rngclose range', """
-            Make an attack vs. Mental against the target.
-            \\hit The target begins bleeding until it takes a \\glossterm<short rest>.
-            At the end of each round, it takes physical \\glossterm<standard damage> -1d.
-            This damage cannot inflict a \\glossterm<vital wound>, even if the target has no \\glossterm<hit points> remaining.
-            \\crit As above, except that the effect lasts until this curse is removed.
-
-            \\rankline
-            \\rank<8> The damage increases to \\glossterm<standard damage>.
         """, tags=['Curse']),
         Spell('Cripple', 6, 'One living creature within \\rngclose range', """
             Make an attack vs. Fortitude against the target.

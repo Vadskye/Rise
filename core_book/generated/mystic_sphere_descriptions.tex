@@ -3842,6 +3842,20 @@ At the end of each phase, if the primary target lost a \glossterm{hit point} dur
 
 
 
+\lowercase{\hypertarget{spell:Enhanced Senses}{}}\label{spell:Enhanced Senses}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Enhanced Senses}{Enhanced Senses}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{Yourself}
+You gain a \plus3 \glossterm{magic bonus} to Awareness checks.
+
+\rankline
+\rank{3} The bonus increases to \plus5.
+\rank{5} The bonus increases to \plus7.
+\rank{7} The bonus increases to \plus10.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Fleshbite}{}}\label{spell:Fleshbite}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Fleshbite}{Fleshbite}}[\glossterm{Focus}]
 \target{One creature within \rngmed range}
@@ -3971,6 +3985,19 @@ However, this effect is unable to alter the target's clothes or equipment in any
 
 
 
+\lowercase{\hypertarget{spell:Enhanced Muscles}{}}\label{spell:Enhanced Muscles}
+\begin{attuneability}[Rank 3]{\hypertarget{spell:Enhanced Muscles}{Enhanced Muscles}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{Yourself}
+You gain a \plus2 \glossterm{magic bonus} to your choice of either Strength-based checks or Dexterity-based checks.
+
+\rankline
+\rank{5} The bonus increases to \plus3.
+\rank{7} The bonus increases to \plus4.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Scent}{}}\label{spell:Scent}
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Scent}{Scent}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \target{Yourself}
@@ -3980,6 +4007,23 @@ You gain the \glossterm{scent} ability, giving you a \plus10 bonus to scent-base
 \rank{5} The bonus increases to \plus15.
 \rank{7} The bonus increases to \plus20.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Bleed}{}}\label{spell:Bleed}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Bleed}{Bleed}}[\glossterm{Focus}]
+\target{One living creature within \rngclose range}
+Make an attack vs. Fortitude against the target.
+\hit As a \glossterm{condition}, the target begins bleeding.
+At the end of each round, it takes physical \glossterm{standard damage} \minus1d.
+This damage cannot inflict a \glossterm{vital wound}, even if the target has no \glossterm{hit points} remaining.
+\crit As above, except that the damage can inflict a \glossterm{vital wound}.
+
+\rankline
+\rank{6} The damage increases to \glossterm{standard damage}.
+\rank{8} The damage increases to \glossterm{standard damage} \plus1.
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -6339,7 +6383,7 @@ The \glossterm{wound roll} for that \glossterm{vital wound} cannot be modified a
 Make an attack vs. Fortitude against the target.
 You gain a \plus4 bonus to \glossterm{accuracy} against a \glossterm{bloodied} creature.
 \hit As a \glossterm{condition}, the target is marked for death.
-It takes a penalty to its \glossterm{wound resistance} equal to half your \glossterm{power} against all types of damage.
+It takes a penalty to its \glossterm{wound resistance} equal to your \glossterm{power} against all types of damage.
 
 \rankline
 \rank{3} The attack gains a \plus1 bonus to \glossterm{accuracy}.
@@ -6537,18 +6581,16 @@ The target ignores the vital wound effect of its most recent \glossterm{vital wo
 
 
 
-\lowercase{\hypertarget{spell:Bleed}{}}\label{spell:Bleed}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Bleed}{Bleed}}[\glossterm{Focus}]
-\target{One living creature within \rngclose range}
-Make an attack vs. Fortitude against the target.
-\hit As a \glossterm{condition}, the target begins bleeding.
-At the end of each round, it takes physical \glossterm{standard damage} \minus1d.
-This damage cannot inflict a \glossterm{vital wound}, even if the target has no \glossterm{hit points} remaining.
-\crit As above, except that the damage can inflict a \glossterm{vital wound}.
+\lowercase{\hypertarget{spell:Curse of Vulnerability}{}}\label{spell:Curse of Vulnerability}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Curse of Vulnerability}{Curse of Vulnerability}}[\glossterm{Curse}, \glossterm{Focus}]
+\target{One creature within \rngmed range}
+Make an attack vs. Mental against the target.
+\hit The target takes a penalty to \glossterm{resistances} equal to half your \glossterm{power} until it takes a \glossterm{short rest}.
+\crit As above, except that the effect lasts until this curse is removed.
 
 \rankline
-\rank{6} The damage increases to \glossterm{standard damage}.
-\rank{8} The damage increases to \glossterm{standard damage} \plus1.
+\rank{6} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{8} The accuracy bonus increases to \plus2.
 \end{freeability}
 \vspace{0.25em}
 
@@ -6604,22 +6646,6 @@ Make an attack vs. Fortitude against the target.
 
 \rankline
 \rank{8} The attack gains a \plus1 bonus to \glossterm{accuracy}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Curse of Blood}{}}\label{spell:Curse of Blood}
-\begin{freeability}[Rank 6]{\hypertarget{spell:Curse of Blood}{Curse of Blood}}[\glossterm{Curse}, \glossterm{Focus}]
-\target{One living creature within \rngclose range}
-Make an attack vs. Mental against the target.
-\hit The target begins bleeding until it takes a \glossterm{short rest}.
-At the end of each round, it takes physical \glossterm{standard damage} \minus1d.
-This damage cannot inflict a \glossterm{vital wound}, even if the target has no \glossterm{hit points} remaining.
-\crit As above, except that the effect lasts until this curse is removed.
-
-\rankline
-\rank{8} The damage increases to \glossterm{standard damage}.
 \end{freeability}
 \vspace{0.25em}
 
