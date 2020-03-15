@@ -933,6 +933,8 @@ def generate_maneuvers():
         effect_text="""
             Make a melee \\glossterm<strike> with a +2d bonus to damage.
             After making the strike, you fall \\glossterm<prone>.
+            % TODO: This is obviously a hack
+            If you use this ability during the \\glossterm<delayed action phase>, you cannot stand up during the \\glossterm<movement phase> of the following round.
         """,
         rank_upgrades={
             '3': 'The damage bonus increases to +3d.',
