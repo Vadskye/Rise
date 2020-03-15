@@ -2942,13 +2942,13 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Sorcerer Progression}
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Min Level} & \tb{Arcane Magic}     & \tb{Arcane Spell Mastery}   & \tb{Draconic Magic}         & \tb{Innate Arcanist} \tableheaderrule
-            1 & 1             & Spellcasting          & Mystic insight              & Draconic bloodline          & Nonverbal caster     \\
-            2 & 2             & Innate focus          & Mage armor                  & Draconic focus              & Innate magic         \\
-            3 & 5             & Spell rank (3), spell & Wellspring of power         & Draconic precision          & Augment              \\
-            4 & 8             & Spell rank (4)        & Mystic insight              & Draconic hide               & Stilled caster       \\
-            5 & 11            & Spell rank (5)        & Greater mage armor          & Greater draconic focus      & Greater innate magic \\
-            6 & 14            & Spell rank (6), spell & Greater wellspring of power & Greater draconic precision  & Augment              \\
-            7 & 17            & Spell rank (7)        & Mystic insight              & Greater draconic hide       & Spell absorption     \\
+            1 & 1             & Spellcasting          & Mystic insight              & Draconic bloodline          & Innate magic \\
+            2 & 2             & Innate focus          & Mage armor                  & Draconic focus              & Mystic tolerance \\
+            3 & 5             & Spell rank (3), spell & Wellspring of power         & Draconic precision          & Augment \\
+            4 & 8             & Spell rank (4)        & Mystic insight              & Draconic hide               & Spell absorption \\
+            5 & 11            & Spell rank (5)        & Greater mage armor          & Greater draconic focus      & Greater mystic tolerance \\
+            6 & 14            & Spell rank (6), spell & Greater wellspring of power & Greater draconic precision  & Augment \\
+            7 & 17            & Spell rank (7)        & Mystic insight              & Greater draconic hide       & Greater spell absorption \\
             8 & 20            & Spell rank (8)        &                             &                            \\
         \end{dtabularx}
     \end{dtable!*}
@@ -3119,26 +3119,28 @@ This choice determines a great deal about your character's abilities.
         This archetype deepens your innate connection to arcane magic.
         You must have the Arcane Magic archetype from the sorcerer class to gain the abilities from this archetype.
 
-        \cf{Sor}[1]{Nonverbal Caster} When you cast a spell, you can omit that spell's \glossterm{verbal components}.
+        \cf{Sor}[1]{Innate Magic} None of your spells have \glossterm{somatic components} or \glossterm{verbal components}.
 
-        \cf{Sor}[2]{Innate Magic} You gain a bonus to \glossterm{resistances} against \glossterm{energy damage} equal to half your level.
+        \cf{Sor}[2]{Mystic Tolerance} You gain a bonus to \glossterm{resistances} against \glossterm{energy damage} equal to half your level.
 
         \cf{Sor}[3]{Augment} You learn one \glossterm{augment} (see \pcref{Augments}).
         You can apply augments to spells to change their effects.
         When you gain access to a new arcane spell \glossterm{rank}, you may change which augments you know.
 
-        \cf{Sor}[4]{Stilled Caster} When you cast a spell, you can omit that spell's \glossterm{somatic components}.
-
-        \cf{Sor}[5]{Greater Innate Magic} The bonus from your \textit{innate magic} ability increases to be equal to your level.
-
-        \cf*{Sor}[6]{Augment} You learn an additional \glossterm{augment}.
-
-        \cf{Sor}[7]{Spell Absorption} When a spell is used to attack you, if the attack fails to beat your defenses, you gain the ability to cast the spell once.
+        \cf{Sor}[4]{Spell Absorption} Whenever another creature uses a spell to attack you, you gain the ability to cast the spell once.
         The spell retains its original \glossterm{augments}, if any, and you cannot apply any \glossterm{augments} to it.
         When you cast the spell, you use your own \glossterm{accuracy}, \glossterm{power}, and abilities to determine the effects of the spell.
         Once you cast the spell, you expend the absorbed energy, and you cannot cast it again.
 
-        If you resist multiple spells simultaneously, or if you resist another spell before casting the previous spell you resisted, you choose which spell you gain the ability to cast.
+        Whenever you are attacked by a new spell, if you already have the ability to cast a spell with this ability, you choose which spell you gain the ability to cast.
+        When you take a \glossterm{long rest}, you lose the ability to cast any spells you have stored with this ability.
+
+        \cf{Sor}[5]{Greater Mystic Tolerance} The bonus from your \textit{mystic tolerance} ability increases to be equal to your level.
+
+        \cf*{Sor}[6]{Augment} You learn an additional \glossterm{augment}.
+
+        \cf{Sor}[7]{Greater Spell Absorption} You can store the ability to cast up to three spells with your \textit{spell absorption} ability.
+        In addition, you can cast each stored spell twice before you lose the ability to cast it instead of only once.
 
 \newpage
 \section{Warlock}\label{Warlock}
