@@ -926,16 +926,47 @@ def generate_maneuvers():
         lists=['Martial', 'Wild'],
     ))
 
+    maneuvers.append(Maneuver(
+        name='Slipstrike',
+        short_description='Make an enthusiastic melee strike and fall prone',
+        target="As chosen \\glossterm<strike>",
+        effect_text="""
+            Make a melee \\glossterm<strike> with a +2d bonus to damage.
+            After making the strike, you fall \\glossterm<prone>.
+        """,
+        rank_upgrades={
+            '3': 'The damage bonus increases to +3d.',
+            '5': 'The damage bonus increases to +4d.',
+            '7': 'The damage bonus increases to +5d.',
+        },
+        tags=[],
+        lists=['Primal', 'Wild'],
+    ))
+
     return maneuvers
 
 def generate_maneuver_latex():
-    maneuvers = sorted(generate_maneuvers(), key=lambda m: m.name)
+    maneuvers_by_rank = {
+        1: [],
+        3: [],
+        4: [],
+        5: [],
+        6: [],
+        7: [],
+        8: [],
+    }
+    for maneuver in generate_maneuvers():
+        maneuvers_by_rank[maneuver.rank].append(maneuver)
+
     maneuver_texts = []
-    for maneuver in maneuvers:
-        try:
-            maneuver_texts.append(maneuver.to_latex())
-        except Exception as e:
-            raise Exception(f"Error converting maneuver '{maneuver.name}' to LaTeX") from e
+    for rank in maneuvers_by_rank.keys():
+        maneuvers = sorted(maneuvers_by_rank[rank], key=lambda m: m.name)
+        maneuver_texts.append(f"\\subsection<Rank {rank} Maneuvers>")
+        for maneuver in maneuvers:
+            try:
+                maneuver_texts.append(maneuver.to_latex())
+            except Exception as e:
+                raise Exception(f"Error converting maneuver '{maneuver.name}' to LaTeX") from e
     return latexify('\n'.join(maneuver_texts))
 
 
