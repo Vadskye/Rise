@@ -2941,21 +2941,21 @@ This choice determines a great deal about your character's abilities.
     \begin{dtable!*}
         \lcaption{Sorcerer Progression}
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Min Level} & \tb{Arcane Magic}     & \tb{Arcane Spell Mastery}   & \tb{Draconic Magic}         & \tb{Innate Arcanist} \tableheaderrule
-            1 & 1  & Spellcasting          & Mystic insight              & Draconic bloodline         & Innate magic             \\
-            2 & 2  & Innate focus          & Mage armor                  & Draconic focus             & Mystic tolerance         \\
-            3 & 5  & Spell rank (3), spell & Wellspring of power         & Draconic precision         & Augment                  \\
-            4 & 8  & Spell rank (4)        & Mystic insight              & Draconic hide              & Spell absorption         \\
-            5 & 11 & Spell rank (5)        & Greater mage armor          & Greater draconic focus     & Greater mystic tolerance \\
-            6 & 14 & Spell rank (6), spell & Greater wellspring of power & Greater draconic precision & Augment                  \\
-            7 & 17 & Spell rank (7)        & Mystic insight              & Greater draconic hide      & Greater spell absorption \\
-            8 & 20 & Spell rank (8)        &                             &                            &                          \\
+            \tb{Rank} & \tb{Min Level} & \tb{Arcane Magic} & \tb{Arcane Spell Mastery} & \tb{Draconic Magic} & \tb{Innate Arcanist} & \tb{Wild Magic} \tableheaderrule
+            1 & 1  & Spellcasting          & Mystic insight              & Draconic bloodline         & Innate magic             & Wildspell \\
+            2 & 2  & Innate focus          & Mage armor                  & Draconic focus             & Mystic tolerance         & Wild power \\
+            3 & 5  & Spell rank (3), spell & Wellspring of power         & Draconic precision         & Augment                  & Chaotic miscast \\
+            4 & 8  & Spell rank (4)        & Mystic insight              & Draconic hide              & Spell absorption         & Controlled chaos \\
+            5 & 11 & Spell rank (5)        & Greater mage armor          & Greater draconic focus     & Greater mystic tolerance & Greater wild power \\
+            6 & 14 & Spell rank (6), spell & Greater wellspring of power & Greater draconic precision & Augment                  & Greater chaotic miscast \\
+            7 & 17 & Spell rank (7)        & Mystic insight              & Greater draconic hide      & Greater spell absorption & Greater controlled chaos\\
+            8 & 20 & Spell rank (8)        &                             &                            &                          & \\
         \end{dtabularx}
     \end{dtable!*}
 
     \classbasics{Alignment} Any.
 
-    \classbasics{Archetypes} Sorcerers have the Arcane Magic, Arcane Spell Mastery, Draconic Magic, and Innate Arcanist \glossterm{archetypes}.
+    \classbasics{Archetypes} Sorcerers have the Arcane Magic, Arcane Spell Mastery, Draconic Magic, Innate Arcanist, and Wild Magic \glossterm{archetypes}.
 
     \subsection{Basic Class Abilities}
         If you are a sorcerer, you gain the following abilities.
@@ -3141,6 +3141,46 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Sor}[7]{Greater Spell Absorption} You can store the ability to cast up to three spells with your \textit{spell absorption} ability.
         In addition, you can cast each stored spell twice before you lose the ability to cast it instead of only once.
+
+    \subsection{Wild Magic}
+        This archetype makes the magic you cast more chaotic, generally increasing its power at the cost of your control over your magic.
+
+        \cf{Sor}[1]{Wildspell} Whenever you cast a spell, you may use this ability.
+        When you do, roll 1d10 and apply the corresponding wild magic effect from \trefnp{Wild Magic Effects}.
+        Some wild magic effects cannot be meaningfully applied to all spells.
+        For example, doubling the number of targets does not meaningfully affect spells that only target yourself.
+        Any wildspell effects that do not make sense for a particular spell should be ignored.
+
+        \begin{dtable}
+            \lcaption{Wild Magic Effects}
+            \begin{dtabularx}{\textwidth}{l X}
+                \tb{Roll} & \tb{Effect} \tableheaderrule
+                1 or lower & You \glossterm{miscast} the spell \\
+                2 & You take a \minus2 penalty to \glossterm{accuracy} and \glossterm{power} with the spell \\
+                3 & The spell targets you in addition to any other targets \\
+                4 & All damage dealt by the spell changes to physical damage \\
+                5 & All damage dealt by the spell changes to energy damage \\
+                6 & The spell's area is doubled \\
+                7 & The spell affects twice as many targets \\
+                8 & You roll damage twice for the spell and take the higher result \\
+                9 & You roll the attack roll twice for the spell and take the higher result \\
+                10 or higher & During the \glossterm{action phase} of the next round, the spell takes effect again with the same choices for all decisions, such as targets \\
+            \end{dtabularx}
+        \end{dtable}
+
+        \cf{Sor}[2]{Wild Power} You gain a \plus1 bonus to \glossterm{power} with \glossterm{magical} abilities.
+
+        \cf{Sor}[3]{Chaotic Miscast} Whenever you \glossterm{miscast} a spell for any reason other a wild magic effect, you may instead roll on the \trefnp{Wild Magic Effects} table to determine the spell's effect.
+        You take a \minus5 penalty to the roll.
+        If the spell's effect is impossible after this roll, such as if all of its targets are invalid, it fails with no effect and is not miscast.
+
+        \cf{Sor}[4]{Controlled Chaos} You gain a \plus1 bonus to all rolls you make to determine wild magic effects.
+
+        \cf{Sor}[5]{Greater Wild Power} The bonus from your \textit{wild power} ability increases to \plus2.
+
+        \cf{Sor}[6]{Greater Chaotic Miscast} The penalty from your \textit{chaotic miscast} ability is reduced to \minus2.
+
+        \cf{Sor}[7]{Greater Controlled Chaos} The bonus from your \textit{controlled chaos} ability increases to \plus2.
 
 \newpage
 \section{Warlock}\label{Warlock}
