@@ -38,7 +38,7 @@ chronomancy=MysticSphere(
             \\crit As above, except that the effect lasts until the curse is removed.
 
             \\rankline
-            \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Curse']),
         Spell('Curse of Temporal Dislocation', 4, 'One creature within \\rngmed range', """
@@ -54,7 +54,7 @@ chronomancy=MysticSphere(
             \\crit The target is \\glossterm<decelerated> as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=[]),

@@ -32,7 +32,7 @@ thaumaturgy=MysticSphere(
             \\hit Each effect is \\glossterm<suppressed>.
 
             \\rankline
-            \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=['Sustain (standard)']),
@@ -43,7 +43,7 @@ thaumaturgy=MysticSphere(
             In addition, you can decrease the \\glossterm<power> of the aura by up to half your power, or increase the power of the aura up to a maximum of your power.
 
             \\rankline
-            \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=['Attune (self)']),
@@ -52,7 +52,7 @@ thaumaturgy=MysticSphere(
             \\hit All magical properties the target has are \\glossterm<suppressed>.
 
             \\rankline
-            \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=['Sustain (minor)']),
@@ -66,7 +66,7 @@ thaumaturgy=MysticSphere(
                 the attuning creature can regain the \\glossterm<action point> spent to attune to the spell when it takes a \\glossterm<short rest>.
 
             \\rankline
-            \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=[]),
         Spell('Deattunement', 1, 'One creature within \\rngmed range', """
@@ -76,7 +76,7 @@ thaumaturgy=MysticSphere(
             \\crit The target breaks its attunement to all abilities that it is attuned to other than \\glossterm<magic items>.
 
             \\rankline
-            \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=[]),
@@ -92,7 +92,7 @@ thaumaturgy=MysticSphere(
                 the attuning creature can regain the \\glossterm<action point> spent to attune to the spell when it takes a \\glossterm<short rest>.
 
             \\rankline
-            \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Sustain (standard)']),
         Spell('Malign Transferance', 3, ['Yourself or an \\glossterm<ally> within \\rngmed range', 'One other creature within that range'], """
@@ -102,7 +102,7 @@ thaumaturgy=MysticSphere(
             \\crit As above, except that you can transfer any number of magical conditions in this way.
 
             \\rankline
-            \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=[]),
         Spell('Malign Confluence', 6, ['Yourself and each \\glossterm<ally> within \\rngmed range', 'One other creature within that range'], """
@@ -110,7 +110,7 @@ thaumaturgy=MysticSphere(
             \\hit One magical condition of your choice is removed from primary target and applied to the secondary target.
             \\crit As above, except that you can transfer any number of magical conditions from each primary target in this way.
 
-            \\rank<8> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=[]),
         Spell('Spell Absoption', 7, 'Yourself', """
             Whenever you are targeted by a spell cast by another creature, before determining if it hits you, you absorb the spell.
@@ -143,7 +143,7 @@ thaumaturgy=MysticSphere(
             This prevents all \\glossterm<Manifestation> effects and effects that teleport the target or move it between planes.
 
             \\rankline
-            \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Swift', 'Sustain (minor)']),
         Spell('Dimensional Lock', 6, None, """
@@ -202,7 +202,7 @@ thaumaturgy=MysticSphere(
             When the target miscasts a spell in this way, this effect ends.
 
             \\rankline
-            \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=[]),
         Spell('Delay Teleportation', 4, 'See text', """

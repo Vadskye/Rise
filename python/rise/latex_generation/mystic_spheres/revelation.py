@@ -84,7 +84,7 @@ revelation=MysticSphere(
             This ability does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.
 
             \\rankline
-            \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Sustain (minor)', 'Detection']),
         Spell('Boon of Mastery', 3, 'Yourself', """
@@ -134,7 +134,7 @@ revelation=MysticSphere(
             Its \\glossterm<resistances> are halved as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<8> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=[]),
         Spell('Myriad Visions', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
@@ -143,7 +143,7 @@ revelation=MysticSphere(
             \\crit The target is \\glossterm<blinded> as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=[]),
@@ -226,7 +226,7 @@ revelation=MysticSphere(
 
 
             \\rankline
-            \\rank<6> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<8> The accuracy bonus increases to +2.
         """, tags=['Sustain (standard)']),
         # spell to cast spells from the eye instead of from your body?

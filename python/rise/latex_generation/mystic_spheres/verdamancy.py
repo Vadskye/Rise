@@ -30,7 +30,7 @@ verdamancy=MysticSphere(
             \\rankline
             \\rank<3> The \\glossterm<difficulty rating> of the Strength check increases to 10.
             \\rank<5> The condition cannot be removed with a check.
-            \\rank<7> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<7> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=[]),
         Spell('Embedded Growth', 1, 'One creature within \\rngclose range', """
             You throw a seed that embeds itself in a foe and grows painfully.
@@ -39,7 +39,7 @@ verdamancy=MysticSphere(
             This condition can be removed if the target or a creature that can reach the target makes a \\glossterm<difficulty rating> 5 Heal check as a standard action to remove the seed.
 
             \\rankline
-            \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=[]),

@@ -42,7 +42,7 @@ compel=MysticSphere(
             \\crit As above, except that the target must dance as a \\glossterm<standard action> to reset the penalties, instead of as a move action.
 
             \\rankline
-            \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=['Compulsion']),
@@ -63,7 +63,7 @@ compel=MysticSphere(
             \\crit The target is \\glossterm<decelerated> as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=['Compulsion']),
@@ -72,7 +72,7 @@ compel=MysticSphere(
             \\hit The target is \\confused as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<6> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<8> The accuracy bonus increases to +2.
         """, tags=['Compulsion']),
         Spell('Discordant Song', 7, '\\glossterm<Enemies> in a \\areasmall radius from you', """

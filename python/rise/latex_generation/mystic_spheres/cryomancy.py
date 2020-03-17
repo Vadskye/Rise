@@ -119,7 +119,7 @@ cryomancy=MysticSphere(
             \\hit As a \\glossterm<condition>, the target is seared by painful cold.
             At the end of each round, it takes cold \\glossterm<standard damage> -1d per round since it became affectd by this condition.
 
-            \\rank<8> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=[]),
     ],
     category='damage',

@@ -83,7 +83,7 @@ pyromancy=MysticSphere(
 
             \\rankline
             \\rank<6> The condition cannot be removed with a \\glossterm<move action>.
-            \\rank<8> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=[]),
         Spell('Combustion', 1, 'One creature within \\rngmed range', """
             You set the target on fire from the inside out.
@@ -113,7 +113,7 @@ pyromancy=MysticSphere(
             The condition can be removed if the target stops touching or being composed of metal of any kind.
 
             \\rankline
-            \\rank<7> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<7> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=[]),
         Spell('Flame Breath', 4, ['Yourself', 'Everything within a \\arealarge cone'], """
             As a standard action, you can breathe fire like a dragon.

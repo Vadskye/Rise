@@ -111,7 +111,7 @@ astromancy=MysticSphere(
 
             \\rankline
             \\rank<6> The condition cannot be removed with a \\glossterm<move action>.
-            \\rank<8> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=[]),
         Spell('Dimensional Jitter', 5, 'Yourself', """
             At the end of each \\glossterm<phase>, you may choose to teleport 10 feet in a random direction.
