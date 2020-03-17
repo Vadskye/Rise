@@ -127,7 +127,7 @@ fabrication=MysticSphere(
             The secondary effect causes the target to become \\glossterm<nauseated>.
 
             \\rankline
-            \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Manifestation']),
         Spell('Poison -- Dragon Bile', 5, 'One creature within \\rngmed range', """
@@ -138,7 +138,7 @@ fabrication=MysticSphere(
             The secondary effect causes the target to become \\glossterm<nauseated> and lose two \\glossterm<hit points>.
 
             \\rankline
-            \\rank<7> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<7> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=[]),
         Spell('Poison -- Black Lotus', 7, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.

@@ -30,7 +30,7 @@ glamer=MysticSphere(
             \\crit The target is \\glossterm<blinded> as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=['Sensation', 'Visual']),
@@ -39,7 +39,7 @@ glamer=MysticSphere(
             \\hit The target is \\glossterm<blinded> as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<8> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=['Sensation', 'Visual']),
         Spell('Blur', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target's physical outline is distorted so it appears blurred, shifting, and wavering.

@@ -28,7 +28,7 @@ delusion=MysticSphere(
             \\crit The target is \\glossterm<panicked> by you as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=['Emotion']),
@@ -37,7 +37,7 @@ delusion=MysticSphere(
             \\hit The target is \\panicked by you as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<8> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=['Emotion']),
         Spell('Fearsome Aura', 3, '\\glossterm<Enemies> in the area (see text)', """
             You radiate an aura of fear in a \\areamed radius \\glossterm<emanation> from you.
@@ -72,7 +72,7 @@ delusion=MysticSphere(
             \\crit As above, except that the target is \\panicked instead of shaken.
 
             \\rankline
-            \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Emotion']),
         Spell('Charm', 3, 'One creature within \\rngmed range', """
@@ -94,7 +94,7 @@ delusion=MysticSphere(
             The target is not directly aware of any magical influence on its mind, though unusually paranoid or perceptive creatures may deduce that their minds were affected.
 
             \\rankline
-            \\rank<8> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=['Sustain (minor)', 'Emotion', 'Subtle']),
         Spell('Calm Emotions', 3, 'All creatures within a \\arealarge radius from you', """
             Make an attack vs. Mental against each target.

@@ -32,7 +32,7 @@ photomancy=MysticSphere(
             \\crit The target is \\glossterm<blinded> as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=['Sensation', 'Visual']),
@@ -45,7 +45,7 @@ photomancy=MysticSphere(
             % This intentionally gives accuracy instead of the more common damage because photomancy isn't supposed to be
             % a high-damage mystic sphere
             \\rankline
-            \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=['Sensation', 'Visual']),
@@ -67,7 +67,7 @@ photomancy=MysticSphere(
             \\hit The target is \\glossterm<blinded> as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<8> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=['Sensation', 'Visual']),
         Spell('Lightburst', 4, 'All creatures in the area (see text)', """
             A burst of light light fills a \\areasmall radius \\glossterm<zone> within \\rngmed range of you.
@@ -76,7 +76,7 @@ photomancy=MysticSphere(
             \\hit Each target is \\dazzled as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<6> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<8> The accuracy bonus increases to +2.
         """, tags=['Sensation', 'Visual']),
         Spell('Sunburst', 6, 'All creatures in the area (see text)', """

@@ -62,7 +62,7 @@ polymorph=MysticSphere(
             \\crit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=[]),
