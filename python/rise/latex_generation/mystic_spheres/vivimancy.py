@@ -24,7 +24,7 @@ vivimancy=MysticSphere(
             In addition, as a \\glossterm<condition>, the target is unable to regain hit points.
 
             \\rankline
-            \\rank<6> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<8> The accuracy bonus increases to +2.
         """, tags=[]),
         Spell('Draining Grasp', 3, 'One creature or object you \\glossterm<threaten>', """
@@ -35,7 +35,7 @@ vivimancy=MysticSphere(
             \\hit The target loses a \\glossterm<hit point>.
 
             \\rankline
-            \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=[], focus=False),
         Spell('Seal Wound', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
@@ -69,7 +69,7 @@ vivimancy=MysticSphere(
             \\hit The target loses a \\glossterm<hit point>.
 
             \\rankline
-            \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=[]),
         Spell('Harm', 7, 'One creature within \\rngmed range', """
@@ -92,7 +92,7 @@ vivimancy=MysticSphere(
             \\crit As above, except that the effect lasts until this curse is removed.
 
             \\rankline
-            \\rank<6> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<8> The accuracy bonus increases to +2.
         """, tags=['Curse']),
         Spell('Death Knell', 1, 'One creature within \\rngmed range', """
@@ -102,7 +102,7 @@ vivimancy=MysticSphere(
             It takes a penalty to its \\glossterm<wound resistance> equal to your \\glossterm<power> against all types of damage.
 
             \\rankline
-            \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=[]),
@@ -135,7 +135,7 @@ vivimancy=MysticSphere(
             \\crit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=[]),
@@ -145,7 +145,7 @@ vivimancy=MysticSphere(
             \\crit As above, except that the effect lasts until this curse is removed.
 
             \\rankline
-            \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Curse']),
         Spell('Decay', 1, 'One living creature within \\rngmed range', """
@@ -156,7 +156,7 @@ vivimancy=MysticSphere(
             \\crit As above, except that the target also takes a -2 penalty to \\glossterm<wound rolls>.
 
             \\rankline
-            \\rank<3> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=[]),
@@ -169,7 +169,7 @@ vivimancy=MysticSphere(
             \\crit As above, except that the effect lasts until this curse is removed.
 
             \\rankline
-            \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Curse']),
         Spell('Miasma', 3, '\\glossterm<Enemies> within an \\areamed radius from you', """
@@ -185,7 +185,7 @@ vivimancy=MysticSphere(
             \\hit The target is \\glossterm<blinded> as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<6> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<8> The accuracy bonus increases to +2.
         """, tags=[]),
         Spell('Eyebite Curse', 8, 'One living creature within \\rngclose range', """
@@ -199,7 +199,7 @@ vivimancy=MysticSphere(
             \\crit The target is \\glossterm<paralyzed> as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<8> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=[]),
         Spell('Crippling Curse', 8, 'One living creature within \\rngclose range', """
             Make an attack vs. Mental against the target.

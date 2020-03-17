@@ -139,7 +139,7 @@ terramancy=MysticSphere(
             In addition, most flying creatures are unable to fly with this increased gravity and crash to the ground.
 
             \\rankline
-            \\rank<5> The attack gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=[]),
         Spell('Quagmire', 4, 'All earth and unworked stone in a \\areamed radius within \\rnglong range', """
