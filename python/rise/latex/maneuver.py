@@ -26,9 +26,10 @@ class Maneuver(object):
 
         self.extra_text = extra_text
 
-        lowest_rank_upgrade = int(sorted(self.rank_upgrades.keys())[0])
-        if lowest_rank_upgrade != self.rank + 2:
-            logger.log(WARNING, f"Maneuver {self.name} with rank {self.rank} has invalid rank upgrades {self.rank_upgrades}")
+        if self.rank < 7:
+            lowest_rank_upgrade = int(sorted(self.rank_upgrades.keys())[0])
+            if lowest_rank_upgrade != self.rank + 2:
+                logger.log(WARNING, f"Maneuver {self.name} with rank {self.rank} has invalid rank upgrades {self.rank_upgrades}")
 
         for tag in self.tags:
             if not is_valid_tag(tag):
