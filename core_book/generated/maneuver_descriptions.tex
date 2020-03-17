@@ -251,13 +251,13 @@ If it is somehow brought into a standing position, it will immediately fall and 
 \begin{freeability}[Rank 1]{Leaping Strike}[]
 \target{One creature or object within \glossterm{reach} during movement (see text)}
 You make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to your \glossterm{base speed} (see \pcref{Leap}).
-You can make a melee \glossterm{strike} with a \minus1 penalty to \glossterm{accuracy} from any location you occupy during the leap.
+You can make a melee \glossterm{strike} with a \minus2 penalty to \glossterm{accuracy} from any location you occupy during the leap.
 
 \rankline
 \rank{3} You gain a \plus1d bonus to damage with the strike if you attack while above the target's space.
 \rank{5} The damage bonus increases to \plus2d.
 \rank{7} The damage bonus increases to \plus3d.
-\parhead{Lists} Esoteric, Primal, Wild
+\parhead{Lists} Esoteric, Primal, Trick, Wild
 \end{freeability}
 \vspace{0.25em}
 
@@ -267,8 +267,7 @@ You can make a melee \glossterm{strike} with a \minus1 penalty to \glossterm{acc
 \hypertarget{maneuver:Lunge}{}
 \begin{freeability}[Rank 1]{Lunge}[]
 \targets{\glossterm{Enemies} in a \areasmall, 5 ft.\ wide line from you}
-Make a \glossterm{strike} against each target.
-You can only use piercing weapons to make this strike.
+Make a \glossterm{strike} against each target with a piercing weapon.
 
 \rankline
 \rank{3} You gain a \plus1d bonus to \glossterm{damage} with the strike.
@@ -284,8 +283,7 @@ You can only use piercing weapons to make this strike.
 \hypertarget{maneuver:Penetrating Strike}{}
 \begin{freeability}[Rank 1]{Penetrating Strike}[]
 \targets{As chosen \glossterm{strike}}
-Make a \glossterm{strike}.
-You can only use piercing weapons to make this strike.
+Make a \glossterm{strike} using a piercing weapon.
 The attack is made against the target's Reflex defense instead of its Armor defense.
 
 \rankline
@@ -318,8 +316,7 @@ Make a \glossterm{strike} with a \minus2 penalty to \glossterm{accuracy} and a \
 \hypertarget{maneuver:Pulverizing Smash}{}
 \begin{freeability}[Rank 1]{Pulverizing Smash}[]
 \targets{As chosen \glossterm{strike}}
-Make a \glossterm{strike}.
-You can only use bludgeoning weapons to make this strike.
+Make a \glossterm{strike} using a bludgeoning weapon.
 The attack is made against the target's Fortitude defense instead of its Armor defense.
 
 \rankline
@@ -525,11 +522,30 @@ Your movement during the \glossterm{delayed action phase}, if any, becomes equal
 
 
 
+\lowercase{\hypertarget{maneuver:Strangle}{}}\label{maneuver:Strangle}
+\hypertarget{maneuver:Strangle}{}
+\begin{freeability}[Rank 1]{Strangle}[]
+\target{One creature within your \glossterm{reach} with a free hand}
+% Flipped defense order because it reads weirdly otherwise
+Make an melee \glossterm{physical attack} with a free hand against the target's Fortitude and Reflex defenses.
+On a hit against both defense, the target takes bludgeoning \glossterm{standard damage} and you and the target are \glossterm{grappled} by each other.
+For details, see \pcref{Grappling}.
+
+\rankline
+\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
+\parhead{Lists} Esoteric, Martial, Primal, Trick, Wild
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{maneuver:Strip the Flesh}{}}\label{maneuver:Strip the Flesh}
 \hypertarget{maneuver:Strip the Flesh}{}
 \begin{freeability}[Rank 1]{Strip the Flesh}[]
 \targets{As chosen \glossterm{strike}}
-Make a \glossterm{strike} using a slashing weapon with a \minus2d penalty to damage.
+Make a \glossterm{strike} with a \minus2d penalty to damage using a slashing weapon.
 If the strike deals damage, the target loses an additional \glossterm{hit point}.
 
 \rankline
@@ -558,12 +574,31 @@ Make a melee \glossterm{strike} with a slashing or bludgeoning weapon against ea
 
 
 
+\lowercase{\hypertarget{maneuver:Vault Over}{}}\label{maneuver:Vault Over}
+\hypertarget{maneuver:Vault Over}{}
+\begin{freeability}[Rank 1]{Vault Over}[]
+\target{One creature adjacent to you no more than one size category larger than you}
+Make a Jump attack against the target's Reflex defense.
+If you hit, you leap up over its body, using its body as a springboard if necessary, and land in any space adjacent to it.
+% TODO: wording
+Your final destination cannot be more distant from your starting location than your \glossterm{land speed}.
+You can make a melee \glossterm{strike} from any location you occupy during the leap.
+
+\rankline
+\rank{3} The maximum size category of the target increases to two size categories larger than you
+\rank{5} The maximum size category of the target increases to three size categories larger than you
+\rank{7} The maximum size category of the target increases to four size categories larger than you
+\parhead{Lists} Esoteric, Primal, Trick, Wild
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{maneuver:Whirlwind}{}}\label{maneuver:Whirlwind}
 \hypertarget{maneuver:Whirlwind}{}
 \begin{freeability}[Rank 1]{Whirlwind}[]
 \targets{All \glossterm{enemies} within \glossterm{reach}}
-Make a melee \glossterm{strike} against each target.
-You can only use slashing weapons to make this strike.
+Make a melee \glossterm{strike} using a slashing weapon against each target.
 You take a \minus1 penalty to \glossterm{accuracy} with the strike.
 
 \rankline
@@ -650,13 +685,12 @@ If you use this ability during the \glossterm{action phase}, you can also make a
 \hypertarget{maneuver:Hamstring}{}
 \begin{freeability}[Rank 3]{Hamstring}[]
 \targets{As chosen \glossterm{strike}}
-Make a \glossterm{strike} with a \minus2d penalty to damage.
-If the attack result hits the target's Fortitude defense,
-it is \glossterm{slowed} as a \glossterm{condition}.
+Make a \glossterm{strike} with a slashing weapon.
+If the strike \glossterm{injures} the target, it is \glossterm{slowed} as a \glossterm{condition}.
 
 \rankline
 \rank{5} On a \glossterm{critical hit}, the target is \glossterm{decelerated} instead of slowed.
-\rank{7} This condition cannot be removed until the target takes a \glossterm{short rest}.
+\rank{7} This condition cannot be removed until the target regains a \glossterm{hit point}
 \parhead{Lists} Esoteric, Trick, Wild
 \end{freeability}
 \vspace{0.25em}
@@ -675,6 +709,22 @@ it is \glossterm{dazed} as a \glossterm{condition}.
 \rank{5} On a \glossterm{critical hit}, the target is also \glossterm{confused} as part of the same condition.
 \rank{7} On a hit, the target is \glossterm{stunned} instead of dazed.
 \parhead{Lists} Esoteric, Trick
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{maneuver:Injection}{}}\label{maneuver:Injection}
+\hypertarget{maneuver:Injection}{}
+\begin{freeability}[Rank 3]{Injection}[]
+\targets{As chosen \glossterm{strike}}
+Make a \glossterm{strike} with a \plus1d bonus to damage using a piercing weapon.
+If this strike \glossterm{injures} the target, you gain a \plus4 bonus to \glossterm{accuracy} with injury-based poisons delivered with the strike.
+
+\rankline
+\rank{5} The accuracy bonus increases to \plus6.
+\rank{7} The accuracy bonus increases to \plus8.
+\parhead{Lists} Trick
 \end{freeability}
 \vspace{0.25em}
 
@@ -796,6 +846,22 @@ Make an attack vs. Fortitude against each target.
 
 
 
+\lowercase{\hypertarget{maneuver:Titanic Slam}{}}\label{maneuver:Titanic Slam}
+\hypertarget{maneuver:Titanic Slam}{}
+\begin{freeability}[Rank 3]{Titanic Slam}[]
+\targets{Everything on the ground in a \areamed, 10 ft. wide line from you}
+Make a melee \glossterm{strike} with a bludgeoning weapon against each target.
+All damage dealt by this attack is bludgeoning damage instead of its normal types.
+
+\rankline
+\rank{5} You gain a \plus1d bonus to damage with the strike.
+\rank{7} The damage bonus increases to \plus2d.
+\parhead{Lists} Martial, Primal
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{maneuver:Unerring Strike}{}}\label{maneuver:Unerring Strike}
 \hypertarget{maneuver:Unerring Strike}{}
 \begin{freeability}[Rank 3]{Unerring Strike}[]
@@ -880,8 +946,8 @@ Make a \glossterm{strike} with a \plus1 bonus to \glossterm{accuracy} and a \plu
 \hypertarget{maneuver:Volley Fire}{}
 \begin{freeability}[Rank 4]{Volley Fire}[]
 \targets{Everything in a \areasmall radius within \rngmed range.}
-Make a ranged \glossterm{strike} against each target.
-You can only use projectile weapons to make this strike, and it costs five projectiles.
+Make a ranged \glossterm{strike} using a projectile weapon against each target.
+This strike costs five projectiles.
 You take a \minus1 penalty to accuracy with the strike.
 
 \rankline
@@ -899,8 +965,8 @@ You take a \minus1 penalty to accuracy with the strike.
 \hypertarget{maneuver:Arrowstorm}{}
 \begin{freeability}[Rank 6]{Arrowstorm}[]
 \targets{Everything in a \areamed radius within \rngmed range.}
-Make a ranged \glossterm{strike} against each target.
-You can only use projectile weapons to make this strike, and it costs five projectiles.
+Make a ranged \glossterm{strike} using a projectile weapon against each target.
+This strike costs five projectiles.
 You take a \minus1 penalty to accuracy with the strike.
 
 \rankline
@@ -912,3 +978,16 @@ You take a \minus1 penalty to accuracy with the strike.
 
 \subsection{Rank 7 Maneuvers}
 \subsection{Rank 8 Maneuvers}
+
+\lowercase{\hypertarget{maneuver:Multistrike}{}}\label{maneuver:Multistrike}
+\hypertarget{maneuver:Multistrike}{}
+\begin{freeability}[Rank 8]{Multistrike}[]
+\targets{As chosen \glossterm{strikes} (see text)}
+Make three melee \glossterm{strikes}.
+You take a \minus2 penalty to accuracy and a \minus2d penalty to damage on all three strikes.
+
+
+\parhead{Lists} Esoteric, Martial
+\end{freeability}
+\vspace{0.25em}
+
