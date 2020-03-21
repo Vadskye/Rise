@@ -216,7 +216,7 @@ def armor_defense():
     )
 
 def fortitude():
-    misc = get_misc_variables('fortitude', 2)
+    misc = get_misc_variables('fortitude', 3)
     return js_wrapper(
         ['level', 'constitution_starting', 'fortitude_class', 'challenge_rating', 'level_scaling', *misc],
         f"""
@@ -228,7 +228,7 @@ def fortitude():
     )
 
 def reflex():
-    misc = get_misc_variables('reflex', 2)
+    misc = get_misc_variables('reflex', 3)
     return js_wrapper(
         ['level', 'dexterity_starting', 'reflex_class', 'challenge_rating', 'level_scaling', *misc],
         f"""
@@ -240,7 +240,7 @@ def reflex():
     )
 
 def mental():
-    misc = get_misc_variables('mental', 2)
+    misc = get_misc_variables('mental', 3)
     return js_wrapper(
         ['level', 'willpower_starting', 'mental_class', 'challenge_rating', 'level_scaling', *misc],
         f"""
@@ -259,7 +259,7 @@ def encumbrance():
             setAttrs({{
                 encumbrance: Math.max(
                     body_armor_encumbrance
-                    - strength_starting
+                    - Math.max(0, strength_starting)
                     - {'-'.join(misc)}
                 , 0),
             }});
