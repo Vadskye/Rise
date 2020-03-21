@@ -139,6 +139,15 @@ verdamancy=MysticSphere(
             \\rank<5> The damage increases to \\glossterm<standard damage> -1d.
             \\rank<7> The damage increases to \\glossterm<standard damage>.
         """, tags=['Attune (target)']),
+        Spell('Verdant Armor', 1, 'Yourself', """
+            When you cast this spell, you choose a type of armor you are proficient with that is not normally made from metal.
+            Plants grow around your body, functioning like your chosen type of armor for you, except that the \\glossterm<encumbrance penalty> of the armor is reduced by 2.
+
+            \\rankline
+            \\rank<3> You also gain a +1 bonus to Armor defense.
+            \\rank<5> The encumbrance penalty reduction is increased to 3.
+            \\rank<7> The bonus to Armor defense increases to +2.
+        """, tags=['Attune (self)']),
     ],
     rituals=[
         Spell('Fertility', 3, None, """

@@ -88,6 +88,16 @@ bless=MysticSphere(
         """, tags=['Attune (target)']),
     ],
     rituals=[
+        Spell('Blessed Strike', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+            If the target makes a \\glossterm<strike> during the current phase,
+                it gains a +4 bonus to \\glossterm<accuracy> and rolls twice and takes the higher result.
+            If you cast this spell on yourself, it affects the first strike you make until the end of the next round.
+
+            \\rankline
+            \\rank<3> The bonus increases to +5.
+            \\rank<5> The bonus increases to +6.
+            \\rank<7> The bonus increases to +7.
+        """, tags=['Swift']),
         Spell('Blessing of Fortification', 1, 'One unattended, nonmagical object or part of an object of up to Large size', """
             Unlike most abilities, this ritual can affect individual parts of a whole object.
 

@@ -33,7 +33,7 @@ weaponcraft=MysticSphere(
     ],
     lists=['Arcane', 'Divine', 'Pact'],
     spells=[
-        Spell('Mystic Bow', 1, 'One creature or object within \\rngmed range', """
+        Spell('Mystic Arrow', 1, 'One creature or object within \\rngmed range', """
             Make an attack vs. Armor against the target.
             \\hit The target takes piercing \\glossterm<standard damage> +1d.
 
@@ -41,6 +41,15 @@ weaponcraft=MysticSphere(
             \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
             \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
+        """, tags=['Manifestation']),
+        Spell('Mystic Blast Arrow', 4, 'One creature or object within \\rngmed range', """
+            Make an attack vs. Armor agains the target.
+            \\hit The target takes piercing \\glossterm<standard damage> +2d.
+            If this attack \\glossterm<injures> the target, it is knocked \\glossterm<prone>.
+
+            \\rankline
+            \\rank<6> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<8> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=['Manifestation']),
         Spell('Bladestorm', 3, '\\glossterm<Enemies> adjacent to you', """
             This spell does not have the \\glossterm<Focus> tag.
