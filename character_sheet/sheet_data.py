@@ -17,10 +17,10 @@ ATTRIBUTE_SKILLS = {
     'intelligence': ['Craft _________', 'Deduction', 'Devices', 'Disguise', 'Heal', 'Knowledge _______', 'Knowledge ________', 'Linguistics'],
     'perception': ['Awareness', 'Creature Handling', 'Sense Motive', 'Spellcraft', 'Survival'],
     'willpower': [],
-    'other': ['Bluff', 'Intimidate', 'Perform _________', 'Persuasion'],
+    'other': ['Deception', 'Intimidate', 'Perform _________', 'Persuasion'],
 }
 
-ALL_SKILLS = ['Awareness', 'Balance', 'Bluff', 'Climb', 'Craft', 'Creature Handling',
+ALL_SKILLS = ['Awareness', 'Balance', 'Deception', 'Climb', 'Craft', 'Creature Handling',
               'Devices', 'Disguise', 'Escape Artist', 'Heal', 'Intimidate', 'Jump',
               'Knowledge', 'Linguistics', 'Perform', 'Persuasion',
               'Ride', 'Sense Motive', 'Sleight of Hand', 'Spellcraft', 'Sprint',

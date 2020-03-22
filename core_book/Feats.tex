@@ -94,10 +94,10 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \tb{Skill Feats}\label{Skill Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
         \featref{Acrobatics Specialization}        & Mastered Acrobatics         & Improve use of chosen skill           & \tdash & \featpref{Acrobatics Specialization}        \\
         \featref{Awareness Specialization}         & Mastered Awareness          & Improve use of chosen skill           & \tdash & \featpref{Awareness Specialization}         \\
-        \featref{Bluff Specialization}             & Mastered Bluff              & Improve use of chosen skill           & \tdash & \featpref{Bluff Specialization}             \\
         \featref{Climb Specialization}             & Mastered Climb              & Improve use of chosen skill           & \tdash & \featpref{Climb Specialization}             \\
         \featref{Craft Specialization}             & Mastered Craft              & Improve use of chosen skill           & \tdash & \featpref{Craft Specialization}             \\
         \featref{Creature Handling Specialization} & Mastered Creature Handling  & Improve use of chosen skill           & \tdash & \featpref{Creature Handling Specialization} \\
+        \featref{Deception Specialization}         & Mastered Deception          & Improve use of chosen skill           & \tdash & \featpref{Deception Specialization}         \\
         \featref{Devices Specialization}           & Mastered Devices            & Improve use of chosen skill           & \tdash & \featpref{Devices Specialization}           \\
         \featref{Disguise Specialization}          & Mastered Disguise           & Improve use of chosen skill           & \tdash & \featpref{Disguise Specialization}          \\
         \featref{Escape Artist Specialization}     & Mastered Escape Artist      & Improve use of chosen skill           & \tdash & \featpref{Escape Artist Specialization}     \\
@@ -289,35 +289,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[19]{Supreme Bloodspell} The bonus to \glossterm{power} from your \textit{bloodspell} ability increases to \plus6.
         In addition, the accuracy bonus increases to \plus2.
-    \end{feat}
-
-    \begin{feat}{Bluff Specialization}{Skill}
-        \featpre Bluff as a mastered skill.
-
-        \ff[1]{Specialization} You gain a \plus3 bonus to the Bluff skill.
-
-        \ff[4]{Dual Speech}[Magical] When you speak, you can use the \textit{dual speech} ability.
-        \begin{freeability}{Dual Speech}[\glossterm{Sustain} (minor)]
-            You speak the same words with two different vocal patterns, such as tone or accent, though you cannot significantly change the volume.
-            You can freely choose which creatures hear which pattern, treating all creatures you are not aware of as a single group. 
-
-            You can freely choose different vocal patterns each round that you sustain this ability.
-            \rankline
-            \featlevel{10} You can speak entirely different words with your two voices.
-            \featlevel{16} You can also speak with a third voice, using separate words and vocal patterns.
-        \end{freeability}
-
-        \ff[7]{Undetectable Lies} Any \glossterm{magical} abilities which detect lies are unable to detect lies you speak.
-
-        \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
-
-        \ff[13]{Deceive Magic}[\glossterm{Magical}] When you would be hit by a \glossterm{magical} attack, you can use this ability.
-        \begin{apability}{Deceive Magic}[\glossterm{Swift}]
-            The attack takes a \minus10 penalty to accuracy.
-            This can cause the attack to hit you instead of getting a \glossterm{critical hit}, or it can cause the attack to miss entirely.
-        \end{apability}
-
-        \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus9.
     \end{feat}
 
     \begin{feat}{Boongiver}{Casting, Magical}
@@ -516,6 +487,35 @@ Feats also make the system more mechanically complex, so they are not necessaril
         In addition, the number of bonus tricks you can teach from your \textit{efficient training} ability increases to four.
 
         \ff[19]{Supreme Command} You can \glossterm{sustain} the effect of the \textit{command} ability from the Creature Handling skill with a \glossterm{free action} instead of with a standard action.
+    \end{feat}
+
+    \begin{feat}{Deception Specialization}{Skill}
+        \featpre Deception as a mastered skill.
+
+        \ff[1]{Specialization} You gain a \plus3 bonus to the Deception skill.
+
+        \ff[4]{Dual Speech}[Magical] When you speak, you can use the \textit{dual speech} ability.
+        \begin{freeability}{Dual Speech}[\glossterm{Sustain} (minor)]
+            You speak the same words with two different vocal patterns, such as tone or accent, though you cannot significantly change the volume.
+            You can freely choose which creatures hear which pattern, treating all creatures you are not aware of as a single group. 
+
+            You can freely choose different vocal patterns each round that you sustain this ability.
+            \rankline
+            \featlevel{10} You can speak entirely different words with your two voices.
+            \featlevel{16} You can also speak with a third voice, using separate words and vocal patterns.
+        \end{freeability}
+
+        \ff[7]{Undetectable Lies} Any \glossterm{magical} abilities which detect lies are unable to detect lies you speak.
+
+        \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
+
+        \ff[13]{Deceive Magic}[\glossterm{Magical}] When you would be hit by a \glossterm{magical} attack, you can use this ability.
+        \begin{apability}{Deceive Magic}[\glossterm{Swift}]
+            The attack takes a \minus10 penalty to accuracy.
+            This can cause the attack to hit you instead of getting a \glossterm{critical hit}, or it can cause the attack to miss entirely.
+        \end{apability}
+
+        \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus9.
     \end{feat}
 
     \begin{feat}{Devices Specialization}{Skill}
@@ -1231,8 +1231,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
         Each Perform skill has an associated skill that it can be used to replace, as listed below.
         When you replace a skill in this way, you take a \minus4 penalty to the Perform check since the two skills do not exactly match.
         \begin{itemize}
-            \item Acting: Bluff
-            \item Comedy: Bluff
+            \item Acting: Deception
+            \item Comedy: Deception
             \item Dance: Acrobatics
             \item Keyboard instruments: Devices
             \item Oratory: Persuasion
@@ -1415,9 +1415,9 @@ Feats also make the system more mechanically complex, so they are not necessaril
             Make an attack vs. Mental against a creature within \rngclose range.
             Your \glossterm{accuracy} is equal to your Sense Motive skill.
             \hit You know the target's current emotions.
-            This grants you a \plus2 bonus to Bluff, Persuasion, and Intimidate attacks and checks against the target.
+            This grants you a \plus2 bonus to Deception, Persuasion, and Intimidate attacks and checks against the target.
             \crit You know the target's surface thoughts.
-            This grants you a \plus5 bonus to Bluff, Persuasion, and Intimidate attacks and checks against the target.
+            This grants you a \plus5 bonus to Deception, Persuasion, and Intimidate attacks and checks against the target.
 
             \rankline
             \featlevel{13} The range increases to \rnglong range.
@@ -1427,7 +1427,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
         \ff[13]{Truthsense} Whenever a creature within a \arealarge radius \glossterm{emanation} from you that you can hear and see speaks the truth with no attempt at evasion, concealment, or creative wording, you automatically recognize that.
-        This ability does not work if the creature is using the Bluff skill in any way, even if it is speaking the truth.
+        You do not recognize truth in this way if a creature is using the Deception skill in any way, even if it is speaking the truth.
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus9.
 
