@@ -50,7 +50,6 @@ def attributes_and_skills():
             ]),
             ''.join([skill_box(skill) for skill in ATTRIBUTE_SKILLS['other']]),
             freeform_number_input({'class': 'skill-box'}, {'name': 'other_skill_1_name'}, {'name': 'other_skill_1'}),
-            freeform_number_input({'class': 'skill-box'}, {'name': 'other_skill_2_name'}, {'name': 'other_skill_2'}),
         ]),
     ])
 
