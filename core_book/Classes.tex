@@ -3528,15 +3528,15 @@ This choice determines a great deal about your character's abilities.
     \begin{dtable!*}
         \lcaption{Wizard Progression}
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Min Level} & \tb{Alchemist}               & \tb{Arcane Magic}     & \tb{Arcane Spell Mastery}   & \tb{Arcane Scholar}   \tableheaderrule
-            1 & 1  & Portable workshop            & Spellcasting          & Mystic insight              & Scholastic lore       \\
-            2 & 2  & Alchemical infusion          & Mystic sphere         & Mage armor                  & Ritualist             \\
-            3 & 5  & Alchemical discovery         & Spell rank (3), spell & Wellspring of power         & Scholastic insight    \\
-            4 & 8  & Alchemical expertise         & Spell rank (4)        & Mystic insight              & Ritual expertise      \\
-            5 & 11 & Experienced quaffing         & Spell rank (5)        & Greater mage armor          & Contingency           \\
-            6 & 14 & Alchemical discovery         & Spell rank (6), spell & Greater wellspring of power & Scholastic insight    \\
-            7 & 17 & Greater alchemical expertise & Spell rank (7)        & Mystic insight              & Malleable contingency \\
-            8 & 20 &                              & Spell rank (8)        &                             &                       \\
+            \tb{Rank} & \tb{Min Level} & \tb{Alchemist}               & \tb{Arcane Magic}     & \tb{Arcane Scholar}   & \tb{Arcane Spell Mastery}   \tableheaderrule
+            1 & 1  & Portable workshop            & Spellcasting          & Scholastic lore       & Mystic insight              \\
+            2 & 2  & Alchemical infusion          & Mystic sphere         & Ritualist             & Mage armor                  \\
+            3 & 5  & Alchemical discovery         & Spell rank (3), spell & Scholastic insight    & Wellspring of power         \\
+            4 & 8  & Alchemical expertise         & Spell rank (4)        & Ritual expertise      & Mystic insight              \\
+            5 & 11 & Experienced quaffing         & Spell rank (5)        & Contingency           & Greater mage armor          \\
+            6 & 14 & Alchemical discovery         & Spell rank (6), spell & Scholastic insight    & Greater wellspring of power \\
+            7 & 17 & Greater alchemical expertise & Spell rank (7)        & Malleable contingency & Mystic insight              \\
+            8 & 20 &                              & Spell rank (8)        &                       &                             \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -3564,6 +3564,44 @@ This choice determines a great deal about your character's abilities.
         \cf{Wiz}{Armor Proficiencies}
         You are not proficient with any type of armor.
         Encumbrance from armor interferes with the gestures you make to cast spells, which can cause your spells with \glossterm{somatic components} to fail (see \pcref{Somatic Component Failure}).
+
+    \subsection{Alchemist}
+        This archetype improves your ability to use achemy to create unusual concoctions to aid your allies and harm your foes.
+
+        \cf{Wiz}[1]{Portable Workshop} 
+        You carry materials necessary to refine low-grade alchemical items wherever you are.
+        Items created with this ability deteriorate and become useless after 24 hours or after you finish a long rest, whichever comes first.
+        The items are just as effective when used as items created normally.
+        You can use this ability create alchemical items with a item level up to your level.
+
+        Creating an item in this way functions in the same way as crafting alchemical items normally, with the following changes.
+        First, you do not require any raw materials.
+        Seond, the difficulty rating goes up by 5 after each successful craft.
+        Third, if you fail to craft an item in this way, you cannot try again until you destroy all items crafted with this ability and finish a short rest.
+
+        If you use this ability extensively without visiting civilization or some other area where you can restock your personal supplies for weeks, you may run low on supplies and your ability to use this ability may be limited.
+
+        \cf{Wiz}[2]{Alchemical Infusion} Whenever you create or use an alchemical item, you may use your \glossterm{power} with \glossterm{magical} abilities in place of the item's normal power to determine its effects.
+
+        \cf{Wiz}[3]{Alchemical Discovery} You gain your choice of one of the following benefits.
+        {
+            \parhead{Complex Construction} You can use your portable workshop ability to create items with an item level up to two levels higher than your level.
+            \parhead{Durable Construction} You double the range of alchemical items you create.
+            \parhead{Efficient Crafting} It takes you half the normal time and material components to craft alchemical items.
+            \parhead{Explosive Construction} You double the area affected by alchemical items you create.
+            \parhead{Potent Construction} Alchemical items you create gain a \plus2 bonus to power.
+            \parhead{Repetitive Construction} Whenever you use your portable workshop ability, you can create two copies of the same alchemical item.
+            This only counts as one item for the purpose of determining the increase to your crafting difficulty.
+            \parhead{Safe Construction} Creatures who are not trained in Craft (alchemy) can use alchemical items you create without a mishap chance.
+        }
+
+        \cf{Wiz}[4]{Alchemical Expertise} You gain a \plus3 bonus to the Craft (alchemy) skill and a \plus1 bonus to accuracy with alchemical items.
+
+        \cf{Wiz}[5]{Experienced Quaffing} You can drink up to two doses of potions, elixirs, and other drinkable alchemical items simultaneously with no mishap risk.
+
+        \cf*{Wiz}[6]{Alchemical Discovery} You gain an additional \textit{alchemical discovery} ability.
+
+        \cf{Wiz}[7]{Greater Alchemical Expertise} The skill bonus from your \textit{alchemical expertise} ability increses to \plus6 and the accuracy bonus increases to \plus2.
 
     \subsection{Arcane Magic}
         This archetype grants you the ability to cast arcane spells.
@@ -3612,59 +3650,6 @@ This choice determines a great deal about your character's abilities.
 
         \cf*{Wiz}[8]{Spell Rank}[Magical] You become a rank 8 arcane spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 8.
-
-    \subsection{Arcane Spell Mastery}
-        This archetype improves the arcane spells you cast.
-        You must have the Arcane Magic archetype from the wizard class to gain the abilities from this archetype.
-
-        \cf{Wiz}[1]{Mystic Insight}[Magical]
-        You gain your choice of one of the following abilities.
-        {
-            \parhead{Focused Caster} You reduce your \glossterm{focus penalty} by 1.
-                You cannot choose this ability multiple times.
-            \parhead{Mystic Sphere Access} You gain access to an additional arcane \glossterm{mystic sphere}.
-                You cannot choose this ability multiple times.
-            \parhead{Rituals} You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
-                The maximum \glossterm{rank} of arcane ritual you can learn or perform is equal to the maximum rank of arcane spell that you can cast.
-                You cannot choose this ability multiple times.
-            \parhead{Spell Known} You learn an additional arcane \glossterm{spell} (see \pcref{Arcane Mystic Spheres}).
-                You can choose this ability multiple times, learning an additional spell each time.
-            \parhead{Spell Power} Choose an arcane \glossterm{spell} you know.
-                You gain a \plus2 bonus to \glossterm{power} with that spell.
-                You can choose this ability multiple times, choosing a different spell each time.
-            \parhead{Spell Precision} Choose an arcane \glossterm{spell} you know.
-                You gain a \plus1 bonus to \glossterm{accuracy} with that spell.
-                You can choose this ability multiple times, choosing a different spell each time.
-        }
-
-        \cf{Wiz}[2]{Mage Armor}[Magical] You can use the \textit{mage armor} ability as a standard action.
-        \begin{freeability}{Mage Armor}
-            You create a translucent suit of magical armor on your body and over your hands.
-            This functions like body armor that provides a \plus2 bonus to Armor defense and has no \glossterm{encumbrance}.
-            It also provides a bonus to \glossterm{resistances} against \glossterm{energy damage} equal to half your level.
-            The body armor does not appear if you are wearing other body armor of any kind.
-
-            As long as you have a free hand, the barrier also manifests as a shield that provides a \plus1 bonus to Armor defense.
-            This bonus is considered to come from a shield, and does not stack with the benefits of using a physical shield.
-
-            This ability lasts until you \glossterm{dismiss} it as a free action.
-        \end{freeability}
-
-        \cf{Wiz}[3]{Wellspring of Power}[Magical]
-        You gain a \plus1 bonus to \glossterm{power} with \glossterm{magical} abilities.
-
-        \cf*{Wiz}[4]{Mystic Insight}[Magical]
-        You gain an additional \textit{mystic insight} ability.
-
-        \cf{Wiz}[5]{Greater Mage Armor}[Magical]
-        The defense bonus from the body armor created by your \textit{mage armor} ability increases to \plus3.
-        In addition, the bonus to \glossterm{resistances} increases to be equal to your level.
-
-        \cf{Wiz}[6]{Greater Wellspring of Power}[Magical]
-        The bonus from your \textit{wellspring of power} ability increases to \plus2.
-
-        \cf*{Wiz}[7]{Mystic Insight}[Magical]
-        You gain an additional \textit{mystic insight} ability.
 
     \subsection{Arcane Scholar}
         This archetype deepens your study of arcane magic.
@@ -3736,41 +3721,55 @@ This choice determines a great deal about your character's abilities.
         \cf{Wiz}[7]{Malleable Contingency} If you have a \textit{contingency} active, you can change the conditions to trigger your \textit{contingency} as a standard action.
         This does not allow you to change the spell stored in your \textit{contingency}.
 
-    \subsection{Alchemist}
-        This archetype improves your ability to use achemy to create unusual concoctions to aid your allies and harm your foes.
+    \subsection{Arcane Spell Mastery}
+        This archetype improves the arcane spells you cast.
+        You must have the Arcane Magic archetype from the wizard class to gain the abilities from this archetype.
 
-        \cf{Wiz}[1]{Portable Workshop} 
-        You carry materials necessary to refine low-grade alchemical items wherever you are.
-        Items created with this ability deteriorate and become useless after 24 hours or after you finish a long rest, whichever comes first.
-        The items are just as effective when used as items created normally.
-        You can use this ability create alchemical items with a item level up to your level.
-
-        Creating an item in this way functions in the same way as crafting alchemical items normally, with the following changes.
-        First, you do not require any raw materials.
-        Seond, the difficulty rating goes up by 5 after each successful craft.
-        Third, if you fail to craft an item in this way, you cannot try again until you destroy all items crafted with this ability and finish a short rest.
-
-        If you use this ability extensively without visiting civilization or some other area where you can restock your personal supplies for weeks, you may run low on supplies and your ability to use this ability may be limited.
-
-        \cf{Wiz}[2]{Alchemical Infusion} Whenever you create or use an alchemical item, you may use your \glossterm{power} with \glossterm{magical} abilities in place of the item's normal power to determine its effects.
-
-        \cf{Wiz}[3]{Alchemical Discovery} You gain your choice of one of the following benefits.
+        \cf{Wiz}[1]{Mystic Insight}[Magical]
+        You gain your choice of one of the following abilities.
         {
-            \parhead{Complex Construction} You can use your portable workshop ability to create items with an item level up to two levels higher than your level.
-            \parhead{Durable Construction} You double the range of alchemical items you create.
-            \parhead{Efficient Crafting} It takes you half the normal time and material components to craft alchemical items.
-            \parhead{Explosive Construction} You double the area affected by alchemical items you create.
-            \parhead{Potent Construction} Alchemical items you create gain a \plus2 bonus to power.
-            \parhead{Repetitive Construction} Whenever you use your portable workshop ability, you can create two copies of the same alchemical item.
-            This only counts as one item for the purpose of determining the increase to your crafting difficulty.
-            \parhead{Safe Construction} Creatures who are not trained in Craft (alchemy) can use alchemical items you create without a mishap chance.
+            \parhead{Focused Caster} You reduce your \glossterm{focus penalty} by 1.
+                You cannot choose this ability multiple times.
+            \parhead{Mystic Sphere Access} You gain access to an additional arcane \glossterm{mystic sphere}.
+                You cannot choose this ability multiple times.
+            \parhead{Rituals} You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
+                The maximum \glossterm{rank} of arcane ritual you can learn or perform is equal to the maximum rank of arcane spell that you can cast.
+                You cannot choose this ability multiple times.
+            \parhead{Spell Known} You learn an additional arcane \glossterm{spell} (see \pcref{Arcane Mystic Spheres}).
+                You can choose this ability multiple times, learning an additional spell each time.
+            \parhead{Spell Power} Choose an arcane \glossterm{spell} you know.
+                You gain a \plus2 bonus to \glossterm{power} with that spell.
+                You can choose this ability multiple times, choosing a different spell each time.
+            \parhead{Spell Precision} Choose an arcane \glossterm{spell} you know.
+                You gain a \plus1 bonus to \glossterm{accuracy} with that spell.
+                You can choose this ability multiple times, choosing a different spell each time.
         }
 
-        \cf{Wiz}[4]{Alchemical Expertise} You gain a \plus3 bonus to the Craft (alchemy) skill and a \plus1 bonus to accuracy with alchemical items.
+        \cf{Wiz}[2]{Mage Armor}[Magical] You can use the \textit{mage armor} ability as a standard action.
+        \begin{freeability}{Mage Armor}
+            You create a translucent suit of magical armor on your body and over your hands.
+            This functions like body armor that provides a \plus2 bonus to Armor defense and has no \glossterm{encumbrance}.
+            It also provides a bonus to \glossterm{resistances} against \glossterm{energy damage} equal to half your level.
+            The body armor does not appear if you are wearing other body armor of any kind.
 
-        \cf{Wiz}[5]{Experienced Quaffing} You can drink up to two doses of potions, elixirs, and other drinkable alchemical items simultaneously with no mishap risk.
+            As long as you have a free hand, the barrier also manifests as a shield that provides a \plus1 bonus to Armor defense.
+            This bonus is considered to come from a shield, and does not stack with the benefits of using a physical shield.
 
-        \cf*{Wiz}[6]{Alchemical Discovery} You gain an additional \textit{alchemical discovery} ability.
+            This ability lasts until you \glossterm{dismiss} it as a free action.
+        \end{freeability}
 
-        \cf{Wiz}[7]{Greater Alchemical Expertise} The skill bonus from your \textit{alchemical expertise} ability increses to \plus6 and the accuracy bonus increases to \plus2.
+        \cf{Wiz}[3]{Wellspring of Power}[Magical]
+        You gain a \plus1 bonus to \glossterm{power} with \glossterm{magical} abilities.
 
+        \cf*{Wiz}[4]{Mystic Insight}[Magical]
+        You gain an additional \textit{mystic insight} ability.
+
+        \cf{Wiz}[5]{Greater Mage Armor}[Magical]
+        The defense bonus from the body armor created by your \textit{mage armor} ability increases to \plus3.
+        In addition, the bonus to \glossterm{resistances} increases to be equal to your level.
+
+        \cf{Wiz}[6]{Greater Wellspring of Power}[Magical]
+        The bonus from your \textit{wellspring of power} ability increases to \plus2.
+
+        \cf*{Wiz}[7]{Mystic Insight}[Magical]
+        You gain an additional \textit{mystic insight} ability.
