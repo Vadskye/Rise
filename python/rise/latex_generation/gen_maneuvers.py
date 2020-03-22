@@ -443,7 +443,7 @@ def generate_maneuvers():
             '8': 'The defense bonus increases to +2',
         },
         tags=['AP', 'Swift'],
-        lists=['Esoteric', 'Primal', 'Wild'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
