@@ -432,15 +432,17 @@ def generate_maneuvers():
         short_description='Recover hit points',
         target='Yourself',
         effect_text="""
-            You regain a \\glossterm<hit point>.
-            You can only use this ability once between \\glossterm<short rests>.
+            You regain all of your \\glossterm<hit points> and immediately stop being \\glossterm<bloodied>
+            After you use this ability, you cannot use it again until you take a \\glossterm<short rest>.
+
+            Because this is a \\glossterm<Swift> ability, this healing happens before you suffer the effects of attacks in the current phase.
         """,
+        rank=4,
         rank_upgrades={
-            '3': 'If you have a \\glossterm<vital wound>, you regain two \\glossterm<hit points> instead of one.',
-            '5': 'You can use the ability twice between \\glossterm<short rests>.',
-            '7': 'You remove two \\glossterm<hit points> regardless of whether you have a \\glossterm<vital wound>.',
+            '6': 'You also gain a +1 bonus to all defenses until the end of the round.',
+            '8': 'The defense bonus increases to +2',
         },
-        tags=[],
+        tags=['AP', 'Swift'],
         lists=['Esoteric', 'Primal', 'Wild'],
     ))
 
