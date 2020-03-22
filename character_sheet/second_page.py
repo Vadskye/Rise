@@ -91,7 +91,7 @@ def calc_skills(destination):
             *[calc_skill(skill_name, 'perception') for skill_name in ATTRIBUTE_SKILLS['perception']],
             *[calc_skill(skill_name, 'constitution') for skill_name in ATTRIBUTE_SKILLS['willpower']],
             skill_labels(),
-            *[calc_skill(skill_name) for skill_name in ['Bluff', 'Intimidate', 'Perform _________', 'Persuasion']],
+            *[calc_skill(skill_name) for skill_name in ['Deception', 'Intimidate', 'Perform _________', 'Persuasion']],
             flex_row({'class': 'skill-row'}, [
                 div({'class': 'skill-name'}, 'Points spent'),
                 number_input({
