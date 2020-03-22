@@ -105,7 +105,7 @@ def calc_skills(destination):
     else:
         blank_skill_info = [
             calc_skill('')
-            for i in range(17)
+            for i in range(16)
         ]
 
         return flex_col({'class': 'calc-skills'}, [
