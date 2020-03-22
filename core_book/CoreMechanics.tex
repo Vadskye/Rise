@@ -242,7 +242,6 @@ It defines how attributes work and explains how to make attacks in combat.
             \begin{itemize}
                 \item You gain a bonus (or penalty) to your \glossterm{hit points} equal to your base Constitution.
                 \item You gain a bonus (or penalty) to your Fortitude defense equal to your base Constitution.
-                \item Your Constitution modifies the number of rounds you can hold your breath (see \pcref{Drowning}).
                 \item If you have a high Constitution, it can increase your \glossterm{resistances} (see \pcref{Resistances}).
             \end{itemize}
         }
@@ -683,7 +682,7 @@ It defines how attributes work and explains how to make attacks in combat.
     \subsection{Subdual Damage}\label{Subdual Damage}
         Some attacks and environmental effects deal subdual damage.
         Subdual damage works in the same way as normal damage, except that \glossterm{vital wounds} from subdual damage cannot kill.
-        Any \glossterm{wound roll} below 0 from subdual damage is treated as a 0, causing the target to fall unconscious until the \glossterm{vital wound} is removed.
+        A \glossterm{wound roll} below 0 from subdual damage causes the target to fall unconscious until the \glossterm{vital wound} is removed.
 
 \section{Circumstances, Bonuses, and Penalties}
 
@@ -1272,7 +1271,7 @@ It defines how attributes work and explains how to make attacks in combat.
         Some abilities last as long as you take an action to sustain them each round.
         The type of action required is always specified in the ability.
         At the end of each round, the ability is dismissed unless you used the ability that phase or took the action to sustain the ability that phase.
-        Taking an action to a spell is not a \glossterm{Focus} ability.
+        Taking an action to sustain a spell is not a \glossterm{Focus} ability.
 
         % TODO: a more robust timing system would make stating this explicitly unnecessary
         If a sustained ability has effects that trigger at the end of the action phase, it ends before having its effects if you fail to sustain the ability.
@@ -1280,7 +1279,7 @@ It defines how attributes work and explains how to make attacks in combat.
         Taking an action to sustain an ability only allows you to sustain a single use of that ability.
         However, you can sustain multiple separate abilities at once if you have available actions.
 
-        You can only sustain an ability for up to 5 minutes.
+        You can normally only sustain an ability for up to 5 minutes.
         After that time, the ability's effect is \glossterm{dismissed}.
 
     \subsection{Permanent}
@@ -1794,12 +1793,6 @@ It defines how attributes work and explains how to make attacks in combat.
         In either case, the mount acts according to its nature.
         Most mounts flee combat without a rider.
 
-    \subsection{Drowning}\label{Drowning}
-        You can hold your breath for a number of consecutive rounds equal to 5 \add your Constitution.
-        After that time, you must roll 1d10 at the end of each round that you continue holding your breath.
-        This attack gains a \plus5 bonus for each round you hold your breath beyond your limit.
-        If the result exceeds your Fortitude defense, you gain a \glossterm{vital wound}.
-
     \subsection{Damaging Objects}\label{Damaging Objects}
         When an object would take damage, if the \glossterm{damage resistance} of the attacking object or creature is lower than the \glossterm{damage resistance} of the defender, the attacking object or creature takes the damage instead.
         For example, if you try to break a stone wall with a wooden club, the club will break instead of the wall.
@@ -1812,9 +1805,7 @@ It defines how attributes work and explains how to make attacks in combat.
 
     \subsection{Sleep and Fatigue}\label{Sleep and Fatigue}
         A typical creature needs a minimum of 6 hours of sleep for every 18 hours spent awake, and a minimum of 50 hours of sleep every week.
-        If you stay awake beyond those limits, you gain a \glossterm{vital wound} from \glossterm{subdual damage}.
-        If you continue to stay awake without sleeping, you gain an additional \glossterm{vital wound} every 24 hours.
-        These \glossterm{vital wounds} cannot be removed by any means except sleeping until you are back within your limits.
+        You can stay awake beyond those limits with the Endurance skill (see \pcref{Stay Awake}).
 
     \subsection{Teleportation}\label{Teleportation}
         Some abilities can \glossterm{teleport} creatures or objects.

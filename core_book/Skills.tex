@@ -64,6 +64,7 @@ This chapter describes each skill, including common uses for those skills.
                 Ride              & C        & \tdash   & \tdash   & C        & \tdash   & C        & \tdash   & \tdash   & \tdash   & C        & \tdash   & Dex          \\
                 Sleight of Hand   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Dex          \\
                 Stealth           & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Dex          \\
+                Endurance         & C        & \tdash   & C        & C        & C        & C        & C        & \tdash   & \tdash   & \tdash   & \tdash   & Con          \\
                 Craft             & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Int          \\
                 Deduction         & \tdash   & C        & C        & \tdash   & C        & C        & C        & C        & C        & C        & C        & Int          \\
                 Devices           & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Int          \\
@@ -814,6 +815,37 @@ This chapter describes each skill, including common uses for those skills.
         You cannot retry this check until you gain meaningful new information that would help you identify the disguise.
 
 \newpage
+\skill{Endurance}{Con}
+    The Endurance skill represents your ability to perservere through physical trials.
+
+    \subsection{Hold Breath}\label{Hold Breath}
+        You can hold your breath for up to 5 rounds without making an Endurance check.
+        After that time, you must make an Endurance check at the end of each round.
+        The \glossterm{difficulty rating} starts at 5, and increases by 5 in each subsequent round.
+        If you succeed, you continue holding your breath.
+        If you fail, you stop holding your breath and try to breathe in air.
+        If there is no air to breathe, you gain a \glossterm{vital wound} and must continue making this check in subsequent rounds.
+
+    \subsubsection{Overland Exertion}\label{Overland Exertion}
+        You can exert yourself while travelling overland to cover more ground (see \pcref{Overland Movement}).
+        You can hustle, which allows you to travel twice the normal distance in the same time.
+        You can also make a forced march, which allows you to travel for a longer period of time during the day.
+        Exerting yourself for an hour in between \glossterm{long rests} requires a \glossterm{difficulty rating} 5 Endurance check.
+        The \glossterm{difficulty rating} increases by 2 for every hour you spend exerting yourself.
+        Success means you suffer no penalty for the exertion.
+        Failure means you take a \glossterm{vital wound} from \glossterm{subdual damage}.
+
+        If you combine both forms of exertion, you increase the \glossterm{difficulty rating} of the check by 4 for that hour instead of by 2.
+
+    \subsection{Stay Awake}\label{Stay Awake}
+        A typical creature needs a minimum of 6 hours of sleep for every 18 hours spent awake, and a minimum of 50 hours of sleep every week.
+        If you try to stay awake beyond those limits, you must make an Endurance check.
+        The \glossterm{difficulty rating} starts at 5, and increases by 5 for each subsequent check.
+        If you succeed, you stay awake without suffering any penalties.
+        If you fail, you gain a \glossterm{vital wound} from \glossterm{subdual damage}.
+        You must make another check every 8 hours as long as you are still beyond your normal sleep limits.
+
+\newpage
 \skill{Escape Artist}{Dex}
         The Escape Artist skill represents your ability to escape bindings and move through small areas by contorting your body.
 
@@ -827,7 +859,7 @@ This chapter describes each skill, including common uses for those skills.
                 Ropes                               & Binder's grapple or Devices check \\
                 Net                                 & 10                                \\
                 Manacles                            & 20                                \\
-                Masterwork manacles                 & 30                                \\
+                Masterwork manacles                 & 25                                \\
                 Grappler                            & Grappler's attack result          \\
                 \spell{Entangle} and similar spells & Spellcaster's attack result       \\
             \end{dtabularx}
