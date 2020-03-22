@@ -111,7 +111,7 @@
         \parhead{Walk} A character can walk without a problem on the local scale.
         \parhead{Hustle} A character can hustle without a problem on the local scale. See \trefnp{Terrain and Overland Movement}, below, for movement measured in miles per hour.
 
-    \subsection{Overland Movement}
+    \subsection{Overland Movement}\label{Overland Movement}
 
         \begin{dtable}
             \lcaption{Terrain and Overland Movement}
@@ -165,7 +165,7 @@
 
         Characters covering long distances cross-country use overland movement. Overland movement is measured in miles per hour or miles per day. A day represents 10 hours of actual travel time. For rowed watercraft, a day represents 10 hours of rowing. For a sailing ship, it represents 24 hours.
 
-        \parhead{Walk} A character can walk 10 hours in a day of travel without a problem. Walking for longer than that, or hustling faster than that, can wear them out (see \pcref{Overland Exertion}).
+        \parhead{Walk} A character can walk 10 hours in a day of travel without a problem. Walking for longer than that, or hustling faster than that, requires an Endurance check (see \pcref{Overland Exertion}).
         \parhead{Terrain} The terrain through which a character travels affects how much distance they can cover in an hour or a day (see \trefnp{Terrain and Overland Movement}).
         A highway is a straight, major, paved road.
         A road is typically a dirt track.
@@ -176,34 +176,6 @@
         See \trefnp{Mounts and Vehicles} for mounted speeds and speeds for vehicles pulled by draft animals.
 
         \parhead{Waterborne Movement} See \trefnp{Mounts and Vehicles} for speeds for water vehicles.
-
-    \subsubsection{Overland Exertion}\label{Overland Exertion}
-        While travelling overland, you can exert yourself while travelling overland to cover more ground.
-        You can hustle, which allows you to travel twice the normal distance in the same time.
-        You can also make a forced march, which allows you to travel for a longer period of time during the day.
-        Exerting yourself for an hour in between \glossterm{long rests} deals 1d6 points of \glossterm{subdual damage} \add 1d per additional hour beyond the first.
-        % TODO: it would be nice if these hit points couldn't be healed
-        The damage progression is summarized in \tref{Overland Exertion Damage}.
-
-        If you combine both forms of exertion, you take both increments of subdual damage in sequence, increasing each one.
-        For example, if you forced march for an hour and then both forced march and hustled for an hour, you would take 1d6 point of \glossterm{subdual damage} in the first hour.
-        In the second hour, you would take 1d8 points of subdual damage for hustling and 1d10 points of subdual damage for the forced march.
-
-        \begin{dtable}
-            \lcaption{Overland Exertion Damage}
-            \begin{dtabularx}{\columnwidth}{l X}
-                \tb{Hours exerted} & \tb{Damage per hour} \\
-                1 & 1d6 \\
-                2 & 1d8 \\
-                3 & 1d10 \\
-                4 & 2d6 \\
-                5 & 2d8 \\
-                6 & 2d10 \\
-                7 & 4d6 \\
-                8 & 4d8 \\
-                9 & 4d10 \\
-            \end{dtabularx}
-        \end{dtable}
 
 \section{Exploration}
     \subsection{Vision and Light}
