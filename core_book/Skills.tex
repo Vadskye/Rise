@@ -76,15 +76,14 @@ This chapter describes each skill, including common uses for those skills.
                 Sense Motive      & \tdash   & C        & \tdash   & \tdash   & \tdash   & C        & \tdash   & C        & \tdash   & C        & \tdash   & Per          \\
                 Spellcraft        & \tdash   & C        & C        & \tdash   & C        & \tdash   & \tdash   & \tdash   & C        & C        & C        & Per          \\
                 Survival          & C        & \tdash   & C        & \tdash   & C        & \tdash   & C        & \tdash   & \tdash   & \tdash   & \tdash   & Per          \\
-                Intimidate        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Varies\fn{1} \\
-                Perform           & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Varies\fn{1} \\
-                Profession        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Varies\fn{1} \\
-                Bluff             & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & \tdash\fn{2} \\
-                Persuasion        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & \tdash\fn{2} \\
+                Bluff             & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & \tdash\fn{1} \\
+                Intimidate        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & \tdash\fn{1} \\
+                Perform           & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & \tdash\fn{1} \\
+                Persuasion        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & \tdash\fn{1} \\
+                Profession        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & \tdash\fn{1} \\
             \end{dtabularx}
             C\@: class skill \\
-            1. Attribute varies depending on skill usage \\
-            2. No attribute applies \\
+            1. No attribute applies \\
         \end{dtable!*}
 
     \subsection{Trying Again}
@@ -104,7 +103,7 @@ This chapter describes each skill, including common uses for those skills.
                     Lie                                 & Bluff (\tdash)           & Sense Motive (Per)                   \\
                     Create a forged artwork             & Craft (Int)              & Craft (Int) or Awareness (Per)       \\
                     Create a false map                  & Craft (Int)              & Craft (Int) or Knowledge (geography) \\
-                    Make a bully back down              & Intimidate (varies)      & Special\fn{1}                        \\
+                    Make a bully back down              & Intimidate (none)        & Special\fn{1}                        \\
                     Make someone look like someone else & Disguise (Int)           & Awareness (Per)                      \\
                     Sneak up on someone                 & Stealth (Dex)            & Awareness (Per)                      \\
                     Steal a coin pouch                  & Sleight of Hand (Dex)    & Awareness (Per)                      \\
@@ -881,9 +880,10 @@ This chapter describes each skill, including common uses for those skills.
         Likewise, you take a penalty of up to \minus10 if the target thinks you or your group is weaker than it is, or that there is otherwise no chance that you could cause it harm.
 
         \parhead{Choosing an Attribute}
-        Depending on how you are trying to intimidate creatures, you can use any attribute as a key attribute for Intimidate.
-        For example, if you intimidate a creature by smashing a table and threatening to smash its head in, you can use Strength to make the Intimidate check.
-        On the other hand, if you intimidate a creature by staring it down in a cold fury, you can use Willpower to make the Intimidate check.
+        No attribute is a key attribute for Intimidate.
+        However, depending on how you are trying to intimidate creatures, you can add any attribute's base value to your Intimidate check.
+        For example, if you intimidate a creature by smashing a table and threatening to smash its head in, you can add your base Strength to the Intimidate check.
+        On the other hand, if you intimidate a creature by staring it down in a cold fury, you can add your base Willpower to the Intimidate check.
 
     \subsection{Coerce}
         You can make an Intimidate check to convince a creature to do what you want. This functions like a Persuasion check to form an agreement with a group, except that you do not apply a relationship modifier. In addition, the \glossterm{difficulty rating} is up to 10 lower if the group thinks your group is significantly stronger than them, or up to 10 higher if the group thinks your group is significantly weaker.
@@ -1011,13 +1011,16 @@ This chapter describes each skill, including common uses for those skills.
         \end{itemize}
 
         \parhead{Choosing an Attribute}
-        Depending on how you are trying to perform, you can use any attribute as a key attribute for Perform.
+        No attribute is a key attribute for Perform.
+        However, depending on how you are trying to perform creatures, you can add any attribute's base value to your Perform check.
+        For example, if you create a complex and challenging tune on a harp, you can add your base Dexterity to the Perform check.
+        On the other hand, if you issue a bombastic series of trumpet blasts, you can add your base Constitution to the Perform check.
 
         \parhead{Performance Types}
         In general, there are three types of performances: instrumental performances, visual performances, and vocal performances.
         \subparhead{Instrumental Performances} These performances require an instrument of some sort to create sound, which always requires at least one hand to manipulate the instrument.
         They affect all creatures who can hear the performance.
-        \subparhead{Visual Perforamances} These performances require some sort of motion, such as juggling.
+        \subparhead{Visual Performances} These performances require some sort of motion, such as juggling.
         They affect all creatures who can see the performance.
         \subparhead{Vocal Performances} These performances use your voice to create sound.
         These are simpler to create than instrumental performances, since they don't require an instrument.
@@ -1137,7 +1140,10 @@ This chapter describes each skill, including common uses for those skills.
         Most commoners have some training in a Profession skill.
 
         \parhead{Choosing an Attribute}
-        Depending on your profession, you can use any attribute as a key attribute for Profession.
+        No attribute is a key attribute for Profession.
+        However, depending on how you are using your Profession, you can add any attribute's base value to your Profession check.
+        For example, if you use your experience as a farmer to harrow a field, you can add your base Strength to the Profession check.
+        On the other hand, if you use your experience as a sailor to determine the right angle for sails in the current wind, you can add your base Perception to the Profession check.
 
     \subsection{Appraise Item}
         You can make a Profession check to estimate the value of an item with 1 minute of careful study. The Profession skill used must be related to the item.
