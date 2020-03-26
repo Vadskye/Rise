@@ -83,19 +83,19 @@ cryomancy=MysticSphere(
             The pool of water targeted must be at least as large as the item you create.
 
             The item functions like a normal item of its type, except that it is more fragile.
-            Its \\glossterm<wound resistance> is equal to twice your \\glossterm<power>, and it is \\glossterm<vulnerable> to fire damage.
+            Its \\glossterm<vital resistance> is equal to twice your \\glossterm<power>, and it is \\glossterm<vulnerable> to fire damage.
 
             When a creature wearing armor created in this way takes physical damage, cold damage, or fire damage, that damage is also dealt to the armor.
             Likewise, when a creature wielding a weapon created in this way deals damage with the weapon, that damage is also dealt to the weapon.
             If the item becomes \\glossterm<broken>, this effect is \\glossterm<dismissed>.
 
             \\rankline
-            \\rank<3> The \\glossterm<wound resistance> of the item increases to three times your power.
+            \\rank<3> The \\glossterm<vital resistance> of the item increases to three times your power.
                 In addition, you can also create heavy armor.
             \\rank<5> The item created is magically enhanced.
                 A weapon grants a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities,
                     and armor grants a +1 \\glossterm<magic bonus> to Armor defense.
-            \\rank<7> The \\glossterm<wound resistance> of the item increases to four times your power.
+            \\rank<7> The \\glossterm<vital resistance> of the item increases to four times your power.
         """, tags=['Sustain (minor)']),
         Spell('Frost Breath', 4, ['Yourself', 'Everything within a \\arealarge cone'], """
             As a standard action, you can breathe cold like a dragon.

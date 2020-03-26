@@ -110,14 +110,14 @@ fabrication=MysticSphere(
         Spell('Web', 3, 'All Large or smaller creatures in the area (see text)', """
             You fill a \\areasmall radius \\glossterm<zone> within \\rngclose range with webs.
             The webs make the area \\glossterm<difficult terrain>.
-            Each 5-ft.\\ square of webbing has a \\glossterm<wound resistance> equal to twice your \\glossterm<power> and is \\glossterm<vulnerable> to fire damage.
+            Each 5-ft.\\ square of webbing has a \\glossterm<vital resistance> equal to twice your \\glossterm<power> and is \\glossterm<vulnerable> to fire damage.
 
             In addition, make an attack vs. Reflex against each target.
             \\hit Each secondary target is \\glossterm<immobilized> as long as it has webbing from this ability in its space.
 
             \\rankline
             \\rank<5> The webs are no longer \\glossterm<vulnerable> to fire damage.
-            \\rank<7> The wound resistance of each 5-ft.\\ square of webs increases to three times your \\glossterm<power>.
+            \\rank<7> The vital resistance of each 5-ft.\\ square of webs increases to three times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Poison -- Nitharit', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.

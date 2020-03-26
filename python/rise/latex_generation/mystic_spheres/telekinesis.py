@@ -103,7 +103,7 @@ telekinesis=MysticSphere(
         Spell('Wall of Force', 5, None, """
             You create a wall of telekinetic force in a 20 ft.\\ high, \\arealarge line within \\rngmed range.
             The wall is transparent, but blocks physical passage and \\glossterm<line of effect>.
-            Each five-foot square of wall has a \\glossterm<wound resistance> equal to four times your \\glossterm<power> and all of its defenses are 0.
+            Each five-foot square of wall has a \\glossterm<vital resistance> equal to four times your \\glossterm<power> and all of its defenses are 0.
 
             \\rankline
             \\rank<7> The area increases to a \\areahuge line.

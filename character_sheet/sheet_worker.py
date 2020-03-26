@@ -146,12 +146,12 @@ def defenses():
 def resistances():
     return [
         base_damage_resistance(),
-        base_wound_resistance(),
+        base_vital_resistance(),
         all_resistance(),
         energy_resistance(),
         physical_resistance(),
         damage_resistances(),
-        wound_resistances(),
+        vital_resistances(),
     ]
 
 def abilities_known():
@@ -438,11 +438,11 @@ def base_damage_resistance():
         """
     )
 
-def base_wound_resistance():
+def base_vital_resistance():
     return js_wrapper(
         ['level', 'constitution'],
         f"""
-            var base_wound_resistance = {{
+            var base_vital_resistance = {{
                 1: 14,
                 2: 16,
                 3: 18,
@@ -470,7 +470,7 @@ def base_wound_resistance():
                 25: 244,
             }}[Math.max(level, constitution)];
             setAttrs({{
-                base_wound_resistance,
+                base_vital_resistance,
             }});
         """
     )
@@ -487,12 +487,12 @@ def all_resistance():
     )
 
 def energy_resistance():
-    misc = get_misc_variables('energy_resistance_bonus', 4)
+    misc = get_misc_variables('energy_resistance_bonus', 3)
     return js_wrapper(
-        misc,
+        ['energy_resistance_bonus_armor', *misc],
         f"""
             setAttrs({{
-                energy_resistance_bonus: {sum_variables(misc)},
+                energy_resistance_bonus: energy_resistance_bonus_armor + {sum_variables(misc)},
             }});
         """
     )
@@ -522,16 +522,16 @@ def damage_resistances():
         """
     )
 
-def wound_resistances():
+def vital_resistances():
     return js_wrapper(
-        ['base_wound_resistance', 'all_resistance_bonus', 'energy_resistance_bonus', 'physical_resistance_bonus', 'challenge_rating'],
+        ['base_vital_resistance', 'all_resistance_bonus', 'energy_resistance_bonus', 'physical_resistance_bonus', 'challenge_rating'],
         f"""
-            var global_wound_resistance = base_wound_resistance + all_resistance_bonus;
+            var global_vital_resistance = base_vital_resistance + all_resistance_bonus;
             var resistance_modifier = challenge_rating === 0.5 ? 0.5 : 1;
             setAttrs({{
-                global_wound_resistance: Math.floor(global_wound_resistance * resistance_modifier),
-                energy_wound_resistance: Math.floor((global_wound_resistance + energy_resistance_bonus) * resistance_modifier),
-                physical_wound_resistance: Math.floor((global_wound_resistance + physical_resistance_bonus) * resistance_modifier),
+                global_vital_resistance: Math.floor(global_vital_resistance * resistance_modifier),
+                energy_vital_resistance: Math.floor((global_vital_resistance + energy_resistance_bonus) * resistance_modifier),
+                physical_vital_resistance: Math.floor((global_vital_resistance + physical_resistance_bonus) * resistance_modifier),
             }})
         """
     )

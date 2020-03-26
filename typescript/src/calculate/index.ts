@@ -16,4 +16,4 @@ export * from "./skill_modifier";
 export * from "./skill_modifier_by_name";
 export * from "./space_by_size";
 export * from "./speed_by_size";
-export * from "./wound_resistance_by_level";
+export * from "./vital_resistance_by_level";

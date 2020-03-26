@@ -98,8 +98,8 @@ polymorph=MysticSphere(
             \\rank<8> The bonus increases to be equal to your \\glossterm<power>.
         """, tags=['Attune (target)']),
         Spell('Regeneration', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-            A the end of each round, the target may gain a +1 bonus to the \\glossterm<wound roll> of its most recent \\glossterm<vital wound>.
-            If it does, the \\glossterm<wound roll> for that \\glossterm<vital wound> cannot be modified again.
+            A the end of each round, the target may gain a +1 bonus to the \\glossterm<vital roll> of its most recent \\glossterm<vital wound>.
+            If it does, the \\glossterm<vital roll> for that \\glossterm<vital wound> cannot be modified again.
 
             \\rankline
             \\rank<3> The bonus increases to +2.

@@ -9,11 +9,11 @@ from rise.latex.effects import Effects
 # Tertiary: debuff, utility
 vivimancy=MysticSphere(
     name="Vivimancy",
-    short_description="Alter life energy to cure or inflict wounds",
+    short_description="Manipulate life energy to aid allies or harm foes",
     cantrips=[
-        Effects('Ablate Wound', 'Yourself or a living \\glossterm<ally> within \\rngclose range', """
-            The target gains a +1 bonus to the \\glossterm<wound roll> of its most recent \\glossterm<vital wound>, up to a maximum of 0.
-            The \\glossterm<wound roll> for that \\glossterm<vital wound> cannot be modified again.
+        Effects('Ablate Vital Wound', 'Yourself or a living \\glossterm<ally> within \\rngclose range', """
+            The target gains a +1 bonus to the \\glossterm<vital roll> of its most recent \\glossterm<vital wound>, up to a maximum of 0.
+            The \\glossterm<vital roll> for that \\glossterm<vital wound> cannot be modified again.
         """, tags=[]),
     ],
     lists=['Arcane', 'Divine', 'Pact'],
@@ -39,8 +39,8 @@ vivimancy=MysticSphere(
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=[], focus=False),
         Spell('Seal Wound', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-            The target gains a +2 bonus to the \\glossterm<wound roll> of its most recent \\glossterm<vital wound>.
-            The \\glossterm<wound roll> for that \\glossterm<vital wound> cannot be modified again.
+            The target gains a +2 bonus to the \\glossterm<vital roll> of its most recent \\glossterm<vital wound>.
+            The \\glossterm<vital roll> for that \\glossterm<vital wound> cannot be modified again.
 
             \\rankline
             \\rank<3> The bonus increases to +3.
@@ -58,7 +58,7 @@ vivimancy=MysticSphere(
             \\rank<5> The number of additional hit points increases to two.
             \\rank<7> The Fortitude defense bonus increases to +4.
         """, tags=['Attune (target)']),
-        Spell('Cure Serious Wound', 5, 'Yourself or one living \\glossterm<ally> within \\rngclose range', """
+        Spell('Cure Vital Wound', 5, 'Yourself or one living \\glossterm<ally> within \\rngclose range', """
             The target removes one \\glossterm<vital wound>.
 
             \\rankline
@@ -99,7 +99,7 @@ vivimancy=MysticSphere(
             Make an attack vs. Fortitude against the target.
             You gain a +4 bonus to \\glossterm<accuracy> against a \\glossterm<bloodied> creature.
             \\hit As a \\glossterm<condition>, the target is marked for death.
-            It takes a penalty to its \\glossterm<wound resistance> equal to your \\glossterm<power> against all types of damage.
+            It takes a penalty to its \\glossterm<vital resistance> equal to your \\glossterm<power> against all types of damage.
 
             \\rankline
             \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
@@ -110,15 +110,15 @@ vivimancy=MysticSphere(
             When this spell resolves, and during each \\glossterm<action phase> in subsequent rounds, make an attack vs. Fortitude against each target.
             You cannot make this attack more than once against any individual target during this spell's duration.
             \\hit As a \\glossterm<condition>, each target is marked for death.
-            It takes a penalty to its \\glossterm<wound resistance> equal to half your \\glossterm<power> against all types of damage.
+            It takes a penalty to its \\glossterm<vital resistance> equal to half your \\glossterm<power> against all types of damage.
 
             \\rankline
             \\rank<5> The area increases to a \\arealarge radius \\glossterm<zone>.
             \\rank<7> The area increases to a \\areahuge radius \\glossterm<zone>.
         """, tags=['Attune (self)']),
         Spell('Circle of Life', 3, 'Yourself and each living \\glossterm<ally> in a \\glossterm<areamed> radius \\glossterm<zone> from your location', """
-            When this spell resolves, and the end of each subsequent round, each target gains a +2 bonus to the \\glossterm<wound roll> of its most recent \\glossterm<vital wound>.
-            The \\glossterm<wound roll> for each \\glossterm<vital wound> modified this way cannot be modified again.
+            When this spell resolves, and the end of each subsequent round, each target gains a +2 bonus to the \\glossterm<vital roll> of its most recent \\glossterm<vital wound>.
+            The \\glossterm<vital roll> for each \\glossterm<vital wound> modified this way cannot be modified again.
 
             \\rankline
             \\rank<5> The area increases to a \\arealarge radius \\glossterm<zone>.
@@ -153,7 +153,7 @@ vivimancy=MysticSphere(
             \\hit As a \\glossterm<condition>, the target becomes more vulnerable to injury.
             Whenever it loses a \\glossterm<hit point>, it reduces its maximum \\glossterm<hit points> by 1.
             When this condition is removed, the target's maximum \\glossterm<hit points> are restored.
-            \\crit As above, except that the target also takes a -2 penalty to \\glossterm<wound rolls>.
+            \\crit As above, except that the target also takes a -2 penalty to \\glossterm<vital rolls>.
 
             \\rankline
             \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.

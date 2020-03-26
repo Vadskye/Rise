@@ -26,6 +26,6 @@ const baseValues: Record<number, number> = {
   25: 244,
 };
 
-export function woundResistanceByLevel(level: number, constitution: number | null) {
+export function vitalResistanceByLevel(level: number, constitution: number | null) {
   return baseValues[Math.max(level, constitution || 0)];
 }

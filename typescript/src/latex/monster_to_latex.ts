@@ -84,12 +84,12 @@ function getMainContent(monster: MonsterBase) {
                 .join("; ")
             : monster.resistances.damage.physical
         }
-        \\pari \\textbf{WR} ${
+        \\pari \\textbf{VR} ${
           extraDamageTypes.size > 0
             ? Array.from(extraDamageTypes)
-                .map((t) => `${titleCase(t)} ${monster.resistances.wound[t]}`)
+                .map((t) => `${titleCase(t)} ${monster.resistances.vital[t]}`)
                 .join("; ")
-            : monster.resistances.wound.physical
+            : monster.resistances.vital.physical
         }
         ${getStrikes(monster)}
       \\end{spelltargetinginfo}

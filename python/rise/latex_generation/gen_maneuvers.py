@@ -825,7 +825,7 @@ def generate_maneuvers():
         target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a \\glossterm<strike> with a +3d bonus to damage.
-            If the strike's damage does not beat the target's \\glossterm<wound resistance>, it has no effect.
+            If the strike's damage does not beat the target's \\glossterm<vital resistance>, it has no effect.
         """,
         rank=4,
         rank_upgrades={

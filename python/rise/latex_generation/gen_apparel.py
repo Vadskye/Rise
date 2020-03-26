@@ -880,8 +880,8 @@ def generate_worn():
         material_type='Ring',
         tags=[],
         description="""
-            A the end of each round, you gain a +2 bonus to the \\glossterm<wound roll> of your most recent \\glossterm<vital wound>.
-            The \\glossterm<wound roll> for that \\glossterm<vital wound> cannot be modified again.
+            A the end of each round, you gain a +2 bonus to the \\glossterm<vital roll> of your most recent \\glossterm<vital wound>.
+            The \\glossterm<vital roll> for that \\glossterm<vital wound> cannot be modified again.
         """,
         short_description="Reduce the severity of vital wounds",
     ))
@@ -926,7 +926,7 @@ def generate_worn():
         description="""
             You gain a +1 bonus to maximum \\glossterm<hit points>.
         """,
-        short_description="Grants a +1 bonus to \\glossterm<wound rolls>",
+        short_description="Grants a +1 bonus to \\glossterm<vital rolls>",
     ))
 
     apparel.append(MagicItem(
@@ -936,7 +936,7 @@ def generate_worn():
         description="""
             This item functions like the \\mitem<amulet of health>, except that the bonus increases to +2.
         """,
-        short_description="Grants a +2 bonus to \\glossterm<wound rolls>",
+        short_description="Grants a +2 bonus to \\glossterm<vital rolls>",
     ))
 
     apparel.append(MagicItem(
@@ -1129,8 +1129,8 @@ def generate_worn():
         material_type='Belt',
         tags=[],
         description="""
-            As a standard action, you can use this belt to gain a +1 bonus to the \\glossterm<wound roll> of your most recent \\glossterm<vital wound>.
-            The \\glossterm<wound roll> for that \\glossterm<vital wound> cannot be modified again.
+            As a standard action, you can use this belt to gain a +1 bonus to the \\glossterm<vital roll> of your most recent \\glossterm<vital wound>.
+            The \\glossterm<vital roll> for that \\glossterm<vital wound> cannot be modified again.
         """,
         short_description="Grants healing",
     ))
@@ -1163,9 +1163,9 @@ def generate_worn():
         material_type='Belt',
         tags=[],
         description="""
-            You gain a +1 \\glossterm<magic bonus> to \\glossterm<wound rolls>.
+            You gain a +1 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
         """,
-        short_description="Grants +1 bonus to \\glossterm<wound rolls>",
+        short_description="Grants +1 bonus to \\glossterm<vital rolls>",
     ))
 
     apparel.append(MagicItem(
@@ -1174,9 +1174,9 @@ def generate_worn():
         material_type='Belt',
         tags=[],
         description="""
-            You gain a +2 \\glossterm<magic bonus> to \\glossterm<wound rolls>.
+            You gain a +2 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
         """,
-        short_description="Grants +2 bonus to \\glossterm<wound rolls>",
+        short_description="Grants +2 bonus to \\glossterm<vital rolls>",
     ))
 
     apparel.append(MagicItem(
@@ -1185,9 +1185,9 @@ def generate_worn():
         material_type='Belt',
         tags=[],
         description="""
-            You gain a +3 \\glossterm<magic bonus> to \\glossterm<wound rolls>.
+            You gain a +3 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
         """,
-        short_description="Grants +3 bonus to \\glossterm<wound rolls>",
+        short_description="Grants +3 bonus to \\glossterm<vital rolls>",
     ))
 
     apparel.append(MagicItem(

@@ -112,14 +112,14 @@ def vital_wound_chart():
             flex_col([
                 div({'class': 'header'}, 'Effect'),
                 "".join([
-                    div(wound_roll_effect(i))
+                    div(vital_roll_effect(i))
                     for i in [*range(-1, 11), '11+']
                 ]),
             ])
         ])
     ])
 
-def wound_roll_effect(roll):
+def vital_roll_effect(roll):
     return {
         -1: 'Unconscious, die next round',
         0: 'Unconscious while bloodied',
@@ -127,12 +127,12 @@ def wound_roll_effect(roll):
         2: 'Move at half speed',
         3: '-2 accuracy',
         4: '-2 defenses',
-        5: '-2 wound rolls',
+        5: '-2 vital rolls',
         6: '-1 max hit points',
         7: '-2 Fortitude',
         8: '-2 Mental',
         9: '-2 Reflex',
-        10: '-1 wound rolls',
+        10: '-1 vital rolls',
         '11+': 'No effect',
     }[roll]
 

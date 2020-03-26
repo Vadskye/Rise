@@ -503,12 +503,12 @@ This choice determines a great deal about your character's abilities.
     \subsection{Healer}
         This archetype grants you healing abilities.
 
-        \cf{Clr}[1]{Mitigate Wound} You can use the \textit{mitigate wound} ability as a standard action.
-        \begin{freeability}{Mitigate Wound}[\glossterm{Magical}]
+        \cf{Clr}[1]{Mitigate Vital Wound} You can use the \textit{mitigate vital wound} ability as a standard action.
+        \begin{freeability}{Mitigate Vital Wound}[\glossterm{Magical}]
             Choose yourself or a living \glossterm{ally} within \rngclose range.
-            The target can roll again for its most recent \glossterm{wound roll} with a \plus2 bonus.
+            The target can roll again for its most recent \glossterm{vital roll} with a \plus2 bonus.
             It can decide whether to keep its original roll or use the new roll.
-            In either case, the \glossterm{wound roll} for that \glossterm{vital wound} cannot be modified again.
+            In either case, the \glossterm{vital roll} for that \glossterm{vital wound} cannot be modified again.
 
             \rankline
             \rank{3} The bonus increases to \plus3.
@@ -528,7 +528,7 @@ This choice determines a great deal about your character's abilities.
             \rank{7} The range increases to \rnglong.
         \end{apability}
 
-        \cf{Clr}[4]{Reflexive Healing} When you suffer a \glossterm{vital wound} that makes you \glossterm{unconscious}, you automatically use your \textit{mitigate wound} ability on yourself at the end of the round.
+        \cf{Clr}[4]{Reflexive Healing} When you suffer a \glossterm{vital wound} that makes you \glossterm{unconscious}, you automatically use your \textit{mitigate vital wound} ability on yourself at the end of the round.
 
         \cf{Clr}[5]{Greater Healer's Grace} The bonus from your \textit{healer's grace} ability increases to \plus2.
 
@@ -672,7 +672,7 @@ This choice determines a great deal about your character's abilities.
 
         \subsubsection{Good}
             \parhead{Gift} Whenever an adjacent \glossterm{ally} suffers a \glossterm{vital wound}, you may gain a \glossterm{vital wound} instead.
-            You gain a \plus2 bonus to the \glossterm{wound roll} of each \glossterm{vital wound} you gain this way.
+            You gain a \plus2 bonus to the \glossterm{vital roll} of each \glossterm{vital wound} you gain this way.
             The original target suffers any other effects of the attack normally.
             \parhead{Aspect} This domain's domain gift affects any \glossterm{ally} within a \areamed radius \glossterm{emanation} from you.
             \parhead{Essence} You can use the \textit{compel good} ability as a standard action.
@@ -719,9 +719,9 @@ This choice determines a great deal about your character's abilities.
 
         \subsubsection{Life}
             \parhead{Gift} You gain a \plus4 bonus to the Heal skill (see \pcref{Heal}).
-            \parhead{Aspect} You gain a \plus1 bonus to \glossterm{wound rolls}.
-            \parhead{Essence} At the end of each round, if you became \glossterm{unconscious} from a \glossterm{vital wound} that round, you can use one \glossterm{magical} ability you have that modifies \glossterm{wound rolls} or removes \glossterm{vital wounds} on yourself without taking an action.
-            \parhead{Mastery} The bonus to \glossterm{wound rolls} from this domain's aspect increases to \plus3.
+            \parhead{Aspect} You gain a \plus1 bonus to \glossterm{vital rolls}.
+            \parhead{Essence} At the end of each round, if you became \glossterm{unconscious} from a \glossterm{vital wound} that round, you can use one \glossterm{magical} ability you have that modifies \glossterm{vital rolls} or removes \glossterm{vital wounds} on yourself without taking an action.
+            \parhead{Mastery} The bonus to \glossterm{vital rolls} from this domain's aspect increases to \plus3.
 
         \subsubsection{Magic}
             \parhead{Gift} You gain a \plus1 bonus to \glossterm{power} with \glossterm{magical} abilities.
@@ -1268,7 +1268,7 @@ This choice determines a great deal about your character's abilities.
             Your magical connection to the animal improves its resilience and strength in combat.
             The animal's statistics use the values below, except that each animal also gains a special ability based on the environment you are in.
             \begin{itemize}
-                \item Its \glossterm{damage resistance} and \glossterm{wound resistance} are equal to the base values for your level (see \pcref{Character Advancement}).
+                \item Its \glossterm{damage resistance} and \glossterm{vital resistance} are equal to the base values for your level (see \pcref{Character Advancement}).
                 \item Its \glossterm{hit points} are equal to 6.
                 \item Each of its \glossterm{defenses} is equal to 4 \add your level.
                 \item Its \glossterm{accuracy} is equal to the your level \add half your base Perception.
@@ -2091,7 +2091,7 @@ This choice determines a great deal about your character's abilities.
         \subparhead{Evil} Each target suffers a \minus1 penalty to \glossterm{defenses} as long as it is affected by at least one \glossterm{condition}.
         % TODO: clarify what happens if multiple people try to Good aura the same target
         \subparhead{Good} When a target gains a \glossterm{vital wound}, you may gain a \glossterm{vital wound} instead.
-        You gain a \plus2 bonus to the \glossterm{wound roll} of each \glossterm{vital wound} you gain this way.
+        You gain a \plus2 bonus to the \glossterm{vital roll} of each \glossterm{vital wound} you gain this way.
         The target suffers any other effects of the attack normally.
         \subparhead{Law} When a target rolls a 1 on an attack roll with a \glossterm{strike}, the attack roll is treated as a 6.
         This does not affect bonus dice rolled for exploding attacks (see \pcref{Exploding Attacks}).
@@ -2177,13 +2177,13 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Pal}[1]{Lay on Hands}[Magical] You can use the \textit{lay on hands} ability as a standard action.
         \begin{freeability}{Lay on Hands}[Life]
-            One \glossterm{ally} within your \glossterm{reach} gains a \plus2 bonus to its most recent \glossterm{wound roll}.
-            The \glossterm{wound roll} for that \glossterm{vital wound} cannot be modified again.
+            One \glossterm{ally} within your \glossterm{reach} gains a \plus2 bonus to its most recent \glossterm{vital roll}.
+            The \glossterm{vital roll} for that \glossterm{vital wound} cannot be modified again.
 
             \rankline
             \rank{3} The bonus increases to \plus3.
             \rank{5} When you use this ability, you can spend an \glossterm{action point}.
-            If you do, the target's most recent \glossterm{vital wound} is removed instead of having its \glossterm{wound roll} modified.
+            If you do, the target's most recent \glossterm{vital wound} is removed instead of having its \glossterm{vital roll} modified.
             \rank{7} The bonus increases to \plus5.
         \end{freeability}
 
@@ -2192,7 +2192,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Pal}[3]{Stalwart Resilience}
         You gain a \plus1 bonus to Fortitude and Mental defense.
-        In addition, you gain a \plus1 bonus to \glossterm{wound rolls}.
+        In addition, you gain a \plus1 bonus to \glossterm{vital rolls}.
 
         \cf{Pal}[4]{Defender's Boon}
         Whenever you are attacked, you gain a \plus1 bonus to \glossterm{accuracy} until the end of the next round.
@@ -2328,7 +2328,7 @@ This choice determines a great deal about your character's abilities.
             If any of its statistics are higher than the normal values below, the animal uses its own statistics instead.
             All other aspects of the animal, such as its speed and natural weapons, are unchanged.
             \begin{itemize}
-                \item Its \glossterm{damage resistance} and \glossterm{wound resistance} are equal to the base values for your level (see \pcref{Character Advancement}).
+                \item Its \glossterm{damage resistance} and \glossterm{vital resistance} are equal to the base values for your level (see \pcref{Character Advancement}).
                 \item Its \glossterm{hit points} are equal to 6.
                 \item Each of its \glossterm{defenses} is normally equal to 4 \add your level.
                 \item Its \glossterm{accuracy} is normally equal to your level \add half your base Perception.
@@ -2342,7 +2342,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Rgr}[3]{Pack Tactics} You gain a \plus1 bonus to \glossterm{defenses} against creatures that are \glossterm{overwhelmed}.
 
         \cf{Rgr}[4]{Greater Animal Companion} Your \textit{animal companion} gains an \glossterm{action point}.
-        In addition, it gains a \plus1 bonus to \glossterm{accuracy}, \glossterm{defenses}, and \glossterm{wound rolls}.
+        In addition, it gains a \plus1 bonus to \glossterm{accuracy}, \glossterm{defenses}, and \glossterm{vital rolls}.
 
         \cf{Rgr}[5]{Greater Handling Lore} The bonus from your \textit{handling lore} ability increases to \plus6.
 
