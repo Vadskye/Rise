@@ -162,16 +162,16 @@ polymorph=MysticSphere(
             You gain a +3 \\glossterm<magic bonus> to Awareness checks.
 
             \\rankline
-            \\rank<3> The bonus increases to +5.
-            \\rank<5> The bonus increases to +7.
-            \\rank<7> The bonus increases to +10.
+            \\rank<3> The bonus increases to +4.
+            \\rank<5> The bonus increases to +5.
+            \\rank<7> The bonus increases to +6.
         """, tags=['Attune (self)']),
-        Spell('Enhanced Muscles', 3, 'Yourself', """
+        Spell('Enhanced Muscles', 4, 'Yourself', """
             You gain a +2 \\glossterm<magic bonus> to your choice of either Strength-based checks or Dexterity-based checks.
 
             \\rankline
-            \\rank<5> The bonus increases to +3.
-            \\rank<7> The bonus increases to +4.
+            \\rank<6> The bonus increases to +3.
+            \\rank<8> The bonus increases to +4.
         """, tags=['Attune (self)']),
         Spell('Scent', 3, 'Yourself', """
             You gain the \\glossterm<scent> ability, giving you a +10 bonus to scent-based Awareness checks (see \\pcref<Senses>).
@@ -227,6 +227,14 @@ polymorph=MysticSphere(
             \\rank<6> The damage increases to \\glossterm<standard damage>.
             \\rank<8> The damage increases to \\glossterm<standard damage> +1.
         """, tags=[]),
+        Spell('Camouflage', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+            The target gains a +3 \\glossterm<magic bonus> to the Stealth skill.
+
+            \\rankline
+            \\rank<3> The bonus increases to +4.
+            \\rank<5> The bonus increases to +5.
+            \\rank<7> The bonus increases to +6.
+        """, tags=['Attune (target)', 'Sensation']),
     ],
     rituals=[
         # Should this also be a spell? Incredibly niche, but golem makers
