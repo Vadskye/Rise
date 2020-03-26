@@ -147,6 +147,18 @@ fabrication=MysticSphere(
             The primary effect causes the target to become lose a \\glossterm<hit point> from each successful poison attack, including this attack.
             The secondary effect causes the target to gain a \\glossterm<vital wound>.
         """, tags=['Manifestation']),
+        Spell('Caltrops', 1, 'One 5 ft.\\ square within \\rngclose range (see text)', """
+            You create exceptionally sharp caltrops in the target location.
+            Whenever a creature moves into the area, unless the creature moves at one quarter speed to avoid the danger, you make an attack vs. Armor against them.
+            Unlike most attacks, this attack can happen during the \\glossterm<movement phase>.
+            Caltrops may not be effective against creatures with an unusual anatomy.
+            \\hit The target takes \\glossterm<standard damage> -1d.
+
+            \\rankline
+            \\rank<3> You can affect an additional square within range.
+            \\rank<5> The number of additional squares you can affect increases to two.
+            \\rank<7> The number of additional squares you can affect increases to three.
+        """, tags=['Manifestation', 'Sustain (minor)']),
     ],
     rituals=[
         Spell('Manifest Object', 3, 'One unoccupied square within \\rngclose range', """
