@@ -95,7 +95,7 @@ aquamancy=MysticSphere(
             The wall provides both \\glossterm<cover> and \\glossterm<concealment> to targets on the opposite side of the wall, for a total of a +4 bonus to Armor defense.
             Creatures can pass through the wall unharmed, though it costs five extra feet of movement to move through the wall.
 
-            Each five-foot square of wall has a \\glossterm<wound resistance> equal to three times your \\glossterm<power> and all of its defenses are 0.
+            Each five-foot square of wall has a \\glossterm<vital resistance> equal to three times your \\glossterm<power> and all of its defenses are 0.
 
             \\rankline
             \\rank<6> The area of the wall increases to a \\areahuge line.
