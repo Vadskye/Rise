@@ -654,13 +654,14 @@ It defines how attributes work and explains how to make attacks in combat.
         The effect of the vital wound lasts until you remove that vital wound.
         The effects of vital wounds stack with each other, even if you roll the same effect twice for different \glossterm{vital wounds}.
 
-        \subsubsection{Vital Roll}\label{Vital Roll}
+        \subsubsection{Vital Rolls}\label{Vital Rolls}
             To make a \glossterm{vital roll}, roll 1d10 \sub the number of \glossterm{vital wounds} you already had, ignoring the vital wound you are rolling for.
             The result determines the effect of the \glossterm{vital wound}, as listed in \tref{Vital Wound Effects}.
 
-            \parhead{Changing Vital Rolls}
-            Some effects can change the \glossterm{vital roll} for \glossterm{vital wounds} you have already suffered.
-            If your \glossterm{vital roll} changes retroactively, it changes the effect of that \glossterm{vital wound}.
+            \parhead{Vitality Bonuses}\label{Vitality Bonuses}
+            Some effects can give you a \glossterm{vitality bonus} to the \glossterm{vital roll} for a \glossterm{vital wound} you have already suffered.
+            If your \glossterm{vital roll} changes retroactively, whether through a vitality bonus or some other means, it changes the effect of that \glossterm{vital wound}.
+            Vitality bonuses do not stack with each other.
 
             \begin{dtable}
                 \lcaption{Vital Wound Effects}
@@ -681,6 +682,7 @@ It defines how attributes work and explains how to make attacks in combat.
                     11 or more      & No effect                                                     \\
                 \end{dtabularx}
             \end{dtable}
+
 
     \subsection{Subdual Damage}\label{Subdual Damage}
         Some attacks and environmental effects deal subdual damage.
@@ -875,6 +877,7 @@ It defines how attributes work and explains how to make attacks in combat.
         \begin{itemize}
             \item Effects from the same source do not stack. Any ability with the same name has the same source.
             \item Magic bonuses do not stack with each other.
+            \item Vitality bonuses do not stack with each other (see \pcref{Vitality Bonuses}).
             \item If a creature gains the same condition multiple times, the effects do not stack, but each instance of the condition is tracked separately.
                 The creature must remove all instances of the condition before the effects are removed.
             \item Multiple effects that change a creature's \glossterm{size category} do not stack.
@@ -1841,7 +1844,7 @@ It defines how attributes work and explains how to make attacks in combat.
 
     \subsection{Resolving Ambiguity}\label{Resolving Ambiguity}
         When the rules are ambiguous about how they apply to you and no other creature, you decide how to resolve that ambiguity.
-        For example, if an ability causes you to remove your most recent \glossterm{condition}, and two \glossterm{conditions} were applied to you in the same \glossterm{phase}, you choose which condition is removed.
+        For example, if an ability causes you to remove one of your \glossterm{vital wounds}, and you have more than one vital wound, you choose which vital wound is removed.
         When the rules are ambiguous in any other situation, the GM decides how to resolve that ambiguity.
         This includes situations where multiple creatures are relevant and situations where no particular creature is relevant.
 

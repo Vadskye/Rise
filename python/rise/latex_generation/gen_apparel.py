@@ -880,8 +880,7 @@ def generate_worn():
         material_type='Ring',
         tags=[],
         description="""
-            A the end of each round, you gain a +2 bonus to the \\glossterm<vital roll> of your most recent \\glossterm<vital wound>.
-            The \\glossterm<vital roll> for that \\glossterm<vital wound> cannot be modified again.
+            A the end of each round, you gain a +2 \\glossterm<vitality bonus> to one of your \\glossterm<vital rolls>.
         """,
         short_description="Reduce the severity of vital wounds",
     ))
@@ -1129,8 +1128,7 @@ def generate_worn():
         material_type='Belt',
         tags=[],
         description="""
-            As a standard action, you can use this belt to gain a +1 bonus to the \\glossterm<vital roll> of your most recent \\glossterm<vital wound>.
-            The \\glossterm<vital roll> for that \\glossterm<vital wound> cannot be modified again.
+            As a standard action, you can use this belt to gain a +1 \\glossterm<vitality bonus> to one of your \\glossterm<vital rolls> (see \\pcref<Vital Rolls>).
         """,
         short_description="Grants healing",
     ))

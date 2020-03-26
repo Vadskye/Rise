@@ -40,8 +40,7 @@ def generate_tools():
         material_type='Potion',
         tags=[],
         description="""
-            When you drink this \\glossterm<potion>, you gain a +1 bonus to the \\glossterm<vital roll> of your most recent \\glossterm<vital wound>.
-            The \\glossterm<vital roll> for that \\glossterm<vital wound> cannot be modified again.
+            When you drink this \\glossterm<potion>, you gain a +1 \\glossterm<vitality bonus> to one of your \\glossterm<vital rolls> (see \\pcref<Vital Rolls>).
         """,
         short_description="Grants +1 bonus to a \\glossterm<vital roll>",
     ))
@@ -53,8 +52,7 @@ def generate_tools():
         material_type='Potion',
         tags=[],
         description="""
-            When you drink this \\glossterm<potion>, you gain a +2 bonus to the \\glossterm<vital roll> of your most recent \\glossterm<vital wound>.
-            The \\glossterm<vital roll> for that \\glossterm<vital wound> cannot be modified again.
+            When you drink this \\glossterm<potion>, you gain a +2 \\glossterm<vitality bonus> to one of your \\glossterm<vital rolls> (see \\pcref<Vital Rolls>).
         """,
         short_description="Grants +2 bonus to a \\glossterm<vital roll>",
     ))
@@ -66,8 +64,7 @@ def generate_tools():
         material_type='Potion',
         tags=[],
         description="""
-            When you drink this \\glossterm<potion>, you gain a +3 bonus to the \\glossterm<vital roll> of your most recent \\glossterm<vital wound>.
-            The \\glossterm<vital roll> for that \\glossterm<vital wound> cannot be modified again.
+            When you drink this \\glossterm<potion>, you gain a +3 \\glossterm<vitality bonus> to one of your \\glossterm<vital rolls> (see \\pcref<Vital Rolls>).
         """,
         short_description="Grants +3 bonus to a \\glossterm<vital roll>",
     ))
