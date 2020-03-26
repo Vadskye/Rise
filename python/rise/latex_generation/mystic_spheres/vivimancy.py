@@ -12,8 +12,7 @@ vivimancy=MysticSphere(
     short_description="Manipulate life energy to aid allies or harm foes",
     cantrips=[
         Effects('Ablate Vital Wound', 'Yourself or a living \\glossterm<ally> within \\rngclose range', """
-            The target gains a +1 bonus to the \\glossterm<vital roll> of its most recent \\glossterm<vital wound>, up to a maximum of 0.
-            The \\glossterm<vital roll> for that \\glossterm<vital wound> cannot be modified again.
+            The target gains a +1 \\glossterm<vitality bonus> to one of its \\glossterm<vital rolls>, up to a maximum result of 0 (see \\pcref<Vital Rolls>).
         """, tags=[]),
     ],
     lists=['Arcane', 'Divine', 'Pact'],
@@ -39,8 +38,7 @@ vivimancy=MysticSphere(
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=[], focus=False),
         Spell('Seal Wound', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-            The target gains a +2 bonus to the \\glossterm<vital roll> of its most recent \\glossterm<vital wound>.
-            The \\glossterm<vital roll> for that \\glossterm<vital wound> cannot be modified again.
+            The target gains a +2 \\glossterm<vitality bonus> to one of its \\glossterm<vital rolls> (see \\pcref<Vital Rolls>).
 
             \\rankline
             \\rank<3> The bonus increases to +3.
@@ -80,11 +78,11 @@ vivimancy=MysticSphere(
         # TODO: make "Undead Bane" spell after figuring out undead / life
         # damage interaction
         Spell('Vital Persistence', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-            The target ignores the vital wound effect of its most recent \\glossterm<vital wound>.
+            The target ignores the vital wound effect of one of its \\glossterm<vital wounds> (see \\pcref<Vital Wounds>).
 
             \\rankline
             \\rank<5> You can cast this spell as a \\glossterm<minor action>.
-            \\rank<7> The target can ignore the vital wound effect of its two most recent \\glossterm<vital wounds>.
+            \\rank<7> The target can ignore the vital wound effect of two of its \\glossterm<vital wounds> instead of only one.
         """, tags=['Attune (target)']),
         Spell('Curse of Vulnerability', 4, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
@@ -117,8 +115,7 @@ vivimancy=MysticSphere(
             \\rank<7> The area increases to a \\areahuge radius \\glossterm<zone>.
         """, tags=['Attune (self)']),
         Spell('Circle of Life', 3, 'Yourself and each living \\glossterm<ally> in a \\glossterm<areamed> radius \\glossterm<zone> from your location', """
-            When this spell resolves, and the end of each subsequent round, each target gains a +2 bonus to the \\glossterm<vital roll> of its most recent \\glossterm<vital wound>.
-            The \\glossterm<vital roll> for each \\glossterm<vital wound> modified this way cannot be modified again.
+            When this spell resolves, and the end of each subsequent round, each target gains a +2 \\glossterm<vitality bonus> to one of its \\glossterm<vital rolls> (see \\pcref<Vital Rolls>).
 
             \\rankline
             \\rank<5> The area increases to a \\arealarge radius \\glossterm<zone>.
