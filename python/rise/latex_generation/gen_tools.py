@@ -14,7 +14,7 @@ def generate_tools():
         material_type='Potion',
         tags=[],
         description="""
-            When you drink this \\glossterm<potion>, you remove your most recent \\glossterm<condition>.
+            When you drink this \\glossterm<potion>, you remove a \\glossterm<condition>.
             This cannot remove a condition applied during the current round.
         """,
         short_description="Removes a condition",
@@ -27,7 +27,7 @@ def generate_tools():
         material_type='Potion',
         tags=[],
         description="""
-            When you drink this \\glossterm<potion>, you remove your two most recent \\glossterm<conditions>.
+            When you drink this \\glossterm<potion>, you remove two \\glossterm<conditions>.
             This cannot remove a condition applied during the current round.
         """,
         short_description="Removes two conditions",
