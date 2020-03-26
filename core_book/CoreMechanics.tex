@@ -217,10 +217,10 @@ It defines how attributes work and explains how to make attacks in combat.
             It has the following effects:
             \begin{itemize}
                 \item Strength determines how much you can carry (see \tref{Carrying Capacity by Strength}).
+                \item You apply your base Strength as a bonus or penalty to \glossterm{power} with \glossterm{mundane} abilities, such as \glossterm{strikes} (see \pcref{Power}).
+                \item You reduce your total \glossterm{encumbrance} from \glossterm{armor} by an amount equal to your base Strength (see \pcref{Encumbrance}).
                 \item You apply your base Strength as a bonus or penalty to Strength-based \glossterm{skills}: Climb, Jump, and Swim (see \pcref{Skills}).
                 \item If your base Strength is at least 2, you are \glossterm{trained} with Strength-based skills.
-                \item You apply your base Strength as a bonus or penalty to \glossterm{power} with \glossterm{mundane} abilities, such as \glossterm{strikes} (see \pcref{Power}).
-                \item You reduce your \glossterm{encumbrance} from \glossterm{body armor} by an amount equal to your base Strength (see \pcref{Encumbrance}).
             \end{itemize}
         }
 
@@ -229,9 +229,9 @@ It defines how attributes work and explains how to make attacks in combat.
             Dexterity measures hand-eye coordination, agility, and reflexes.
             It has the following effects:
             \begin{itemize}
+                \item You gain a bonus (or penalty) to your Armor and Reflex defenses equal to your base Dexterity.
                 \item You apply your base Dexterity as a bonus or penalty to Dexterity-based \glossterm{skills}: Acrobatics, Escape Artist, Ride, Sleight of Hand, and Stealth (see \pcref{Skills}).
                 \item If your base Dexterity is at least 2, you are automatically \glossterm{trained} with Dexterity-based skills.
-                \item You gain a bonus (or penalty) to your Armor and Reflex defenses equal to your base Dexterity.
             \end{itemize}
         }
 
@@ -243,6 +243,8 @@ It defines how attributes work and explains how to make attacks in combat.
                 \item You gain a bonus (or penalty) to your \glossterm{hit points} equal to your base Constitution.
                 \item You gain a bonus (or penalty) to your Fortitude defense equal to your base Constitution.
                 \item If you have a high Constitution, it can increase your \glossterm{resistances} (see \pcref{Resistances}).
+                \item You apply your base Constitution as a bonus or penalty to the Constitution-based \glossterm{skill}: Endurance (see \pcref{Skills}).
+                \item If your base Constitution is at least 2, you are automatically \glossterm{trained} with the Constitution-based skill.
             \end{itemize}
         }
 
@@ -255,7 +257,7 @@ It defines how attributes work and explains how to make attacks in combat.
                 \item You gain a bonus (or penalty) to \glossterm{skill points} equal to twice your base Intelligence (see \pcref{Skill Points}).
                 \item You gain a bonus (or penalty) to \glossterm{insight points} equal to your base Intelligence (see \pcref{Insight Points}).
                 \item You gain bonus languages equal to your base Intelligence (see \pcref{Languages}).
-                \item You apply your Intelligence as a bonus or penalty to Intelligence-based \glossterm{skills}: Craft, Deduction, Disguise, Heal, Knowledge, and Linguistics (see \pcref{Skills}).
+                \item You apply your base Intelligence as a bonus or penalty to Intelligence-based \glossterm{skills}: Craft, Deduction, Disguise, Heal, Knowledge, and Linguistics (see \pcref{Skills}).
                 \item If your base Intelligence is at least 2, you are automatically \glossterm{trained} with Intelligence-based skills.
             \end{itemize}
 
@@ -539,8 +541,20 @@ It defines how attributes work and explains how to make attacks in combat.
 
 \section{Taking Damage}\label{Taking Damage}
 
-    When you are hit by an attack, you may take damage.
-    Depending on the amount of damage you take, you may lose a \glossterm{hit point} or even gain a \glossterm{vital wound}.
+    When you are hit by a damaging attack, you lose a \glossterm{hit point} (see \pcref{Hit Points}).
+
+    If the attack deals at least as much damage as your \glossterm{wound resistance}, the attack \glossterm{wounds} you.
+    Being wounded by an attack causes you to lose an additional hit point.
+    In addition, some special attacks have additional effects when they wound you.
+
+    If the attack deals at least as much damage as your \glossterm{vital resistance}, the attack \glossterm{vitally wounds} you.
+    Being vitally wounded by an attack causes you to lose an additional hit point and causes you to gain a \glossterm{vital wound}.
+    Generally, an attack that vitally wounds you also wounds you, which means you lose a total of three hit points from the attack.
+    In addition, some special attacks have additional effects when they vitally wound you.
+
+    \parhead{Extraordinary Damage}
+        In unusual circumstances, you may take damage in a single attack that is at least double your \glossterm{vital resistance}.
+        For each multiple of your vital resistance that you take from a single attack, you lose an additional \glossterm{hit point} and gain an additional \glossterm{vital wound}.
 
     % TODO: this table is awkwardly wide, can it have more information?
     \begin{dtable}
@@ -548,89 +562,78 @@ It defines how attributes work and explains how to make attacks in combat.
         \begin{dtabularx}{\columnwidth}{l *{2}{>{\ccol}X}}
             % DR is +1 every level at first, then +2 per level after 10th, with an extra + per level every 6 levels.
             % TODO: make the above logic make more sense with math
-            % WR doubles every 6 levels; anchor points are 4th, 10th, 16th
-            \tb{Level or Con} & \tb{DR}\fn{1} & \tb{WR}\fn{2} \tableheaderrule
-            1        & 1             & 14  \\
-            2        & 2             & 16  \\
-            3        & 3             & 18  \\
-            4        & 4             & 21  \\
-            5        & 5             & 24  \\
-            6        & 6             & 27  \\
-            7        & 7             & 30  \\
-            8        & 8             & 34  \\
-            9        & 9             & 38  \\
-            10       & 10            & 43  \\
-            11       & 12            & 48  \\
-            12       & 14            & 54  \\
-            13       & 16            & 61  \\
-            14       & 18            & 69  \\
-            15       & 20            & 77  \\
-            16       & 22            & 86  \\
-            17       & 25            & 96  \\
-            18       & 28            & 108 \\
-            19       & 31            & 122 \\
-            20       & 34            & 138 \\
-            21       & 37            & 154 \\
-            22       & 40            & 172 \\
-            23       & 44            & 192 \\
-            24       & 48            & 216 \\
-            25\plus\fn{3}       & \tdash            & \tdash \\
+            % VR doubles every 6 levels; anchor points are 4th, 10th, 16th
+            \tb{Level or Con} & \tb{Wound Resistance}\fn{1} & \tb{Vital Resistance}\fn{2} \tableheaderrule
+            1                 & 2             & 14     \\
+            2                 & 3             & 16     \\
+            3                 & 4             & 18     \\
+            4                 & 5             & 21     \\
+            5                 & 6             & 24     \\
+            6                 & 7             & 27     \\
+            7                 & 8             & 30     \\
+            8                 & 9             & 34     \\
+            9                 & 10            & 38     \\
+            10                & 11            & 43     \\
+            11                & 13            & 48     \\
+            12                & 15            & 54     \\
+            13                & 17            & 61     \\
+            14                & 19            & 69     \\
+            15                & 21            & 77     \\
+            16                & 23            & 86     \\
+            17                & 26            & 96     \\
+            18                & 29            & 108    \\
+            19                & 32            & 122    \\
+            20                & 35            & 138    \\
+            21                & 38            & 154    \\
+            22                & 41            & 172    \\
+            23                & 45            & 192    \\
+            24                & 49            & 216    \\
+            25\plus\fn{3}     & \tdash        & \tdash \\
         \end{dtabularx}
-        1. This is your \glossterm{damage resistance} (see \pcref{Damage Resistance}). \\
-        2. This is your \glossterm{wound resistance} (see \pcref{Wound Resistance}). \\
+        1. This is your \glossterm{damage resistance} (see \pcref{Wound Resistance}). \\
+        2. This is your \glossterm{vital resistance} (see \pcref{Vital Resistance}). \\
         3. To calculate the damage resistance for a creature with an epic Constitution, increase its damage resistance by 4 per point.
-        Its wound resistance is equal to twice the wound resistance it would have if its Constitution was 6 points lower.
+        Its vital resistance is equal to twice the vital resistance it would have if its Constitution was 6 points lower.
     \end{dtable}
 
-    \subsection{Resistances}\label{Resistances}
-        When you are hit by an attack, you use your \glossterm{resistances} to mitigate the damage from the attack.
-        You have two types of resistances: \glossterm{damage resistance}, which protects you from losing \glossterm{hit points}, and \glossterm{wound resistance}, which protects you from gaining \glossterm{vital wounds}.
+    \subsection{Wound Resistance}\label{Wound Resistance}
+        Your \glossterm{wound resistance} measures your ability to reduce the impact of minor damaging attacks.
+        It is based on the higher of your level and Constitution, as defined in \tref{Resistance Values}.
+        Wearing \glossterm{armor} can increase your resistance against \glossterm{physical damage}, and some special abilities can also increase it.
 
-        \subsubsection{Damage Resistance}\label{Damage Resistance}
-            Your \glossterm{damage resistance} measures your ability to shrug off insignificant amounts of damage.
-            When an attack would deal damage to you, if the damage is less than your \glossterm{damage resistance}, you take no damage from the attack.
-            This prevents you from losing a \glossterm{hit point} or suffering other negative consequences of taking damage.
+        \parhead{Missing Wound Resistance} An object or creature without a listed \glossterm{wound resistance} loses a single \glossterm{hit point} from damaging attacks.
 
-            Your \glossterm{damage resistance} is based on the higher of your level and Constitution, as defined in \tref{Resistance Values}.
-            Wearing \glossterm{armor} can increase your damage resistance against \glossterm{physical damage}, and some special abilities can also increase it.
+    \subsection{Vital Resistance}\label{Vital Resistance}
+        Your \glossterm{vital resistance} measures your ability to avoid gaining \glossterm{vital wounds} from dangerous attacks.
+        When you take damage from an attack, if the damage is at least as much as your \glossterm{vital resistance}, you gain a \glossterm{vital wound} (see \pcref{Vital Wounds}).
 
-            \parhead{Missing Damage Resistance} An object or creature without a listed \glossterm{damage resistance} loses a \glossterm{hit point} if it takes at least 1 damage from a single damage roll.
-            It effectively has a \glossterm{damage resistance} of 1.
+        Your \glossterm{vital resistance} is based on the higher of your level and Constitution, as defined in \tref{Resistance Values}.
+        Wearing \glossterm{armor} can increase your vital resistance against \glossterm{physical damage}, and some special abilities can also increase it.
 
-        \subsubsection{Wound Resistance}\label{Wound Resistance}
-            Your \glossterm{wound resistance} measures your ability to avoid gaining \glossterm{vital wounds} from dangerous attacks.
-            When you take damage from an attack, if the damage is at least as much as your \glossterm{wound resistance}, you gain a \glossterm{vital wound} (see \pcref{Vital Wounds}).
+        \parhead{Missing Vital Resistance} An object or creature without a listed \glossterm{vital resistance} cannot gain \glossterm{vital wounds} from taking damage directly.
+        It can only gain \glossterm{vital wounds} from taking damage while it has no \glossterm{hit points} remaining.
 
-            Your \glossterm{wound resistance} is based on the higher of your level and Constitution, as defined in \tref{Resistance Values}.
-            Wearing \glossterm{armor} can increase your wound resistance against \glossterm{physical damage}, and some special abilities can also increase it.
+    \subsubsection{Damage Type Resistances}\label{Damage Type Resistances}
+        Each type of resistance is further divided into what type of damage it protects against.
+        Your \glossterm{damage resistance} and \glossterm{vital resistance} apply against damage of any type.
+        Those are collectively called your \glossterm{resistances}.
+        Some effects increase your resistances against either \glossterm{physical damage} or \glossterm{energy damage}.
 
-            \parhead{Missing Wound Resistance} An object or creature without a listed \glossterm{wound resistance} cannot gain \glossterm{vital wounds} from taking damage directly.
-            It can only gain \glossterm{vital wounds} from taking damage while it has no \glossterm{hit points} remaining.
-
-        \subsubsection{Damage Type Resistances}\label{Damage Type Resistances}
-            Each type of resistance is further divided into what type of damage it protects against.
-            Your \glossterm{damage resistance} and \glossterm{wound resistance} apply against damage of any type.
-            Those are collectively called your \glossterm{resistances}.
-
-            Some effects increase your resistances against either \glossterm{physical damage} or \glossterm{energy damage}.
-            For example, wearing armor gives you a bonus to your \glossterm{resistances} against \glossterm{physical damage}.
-
-            \parhead{Stacking Magic Bonuses} A \glossterm{magic bonus} to a specific type of resistance does not stack with a \glossterm{magic bonus} to a more general resistance if both apply.
-            For example, if you have a \glossterm{magic bonus} to resistances against energy damage and another \glossterm{magic bonus} to resistances against fire damage, you only use the higher of the two when you take fire damage.
+        \parhead{Stacking Magic Bonuses} A \glossterm{magic bonus} to a specific type of resistance does not stack with a \glossterm{magic bonus} to a more general resistance if both apply.
+        For example, if you have a \glossterm{magic bonus} to resistances against energy damage and another \glossterm{magic bonus} to resistances against fire damage, you only use the higher of the two when you take fire damage.
 
     \subsection{Becoming Bloodied}\label{Becoming Bloodied}
         As your hit points get lower, you become more vulnerable to damage.
         At the end of each round, if you have half your maximum \glossterm{hit points} remaining or fewer (rounded down), you become \glossterm{bloodied}.
         Likewise, if you have more than half your maximum hit points remaining, you stop being \glossterm{bloodied}.
 
-        While you are bloodied, your \glossterm{wound resistance} is halved, to a minimum of your \glossterm{damage resistance} for each corresponding type of damage.
+        While you are bloodied, your \glossterm{vital resistance} is halved, to a minimum of your \glossterm{damage resistance} for each corresponding type of damage.
 
     \subsection{Hit Points}\label{Hit Points}
         Your \glossterm{hit points} measure how hard you are to kill.
-        When you take damage in excess of your \glossterm{damage resistance}, you lose a \glossterm{hit point} (see \pcref{Damage Resistance}).
         You can't normally exceed your maximum hit points, even with magical healing.
 
-        You normally have a number of \glossterm{hit points} equal to 5 \add your base Constitution.
+        You normally have a number of \glossterm{hit points} equal to 9 \add your base Constitution.
         Some special abilities can give you additional \glossterm{hit points}.
 
         If you would lose a \glossterm{hit point} while you have no \glossterm{hit points} remaining, you gain a \glossterm{vital wound} instead.
@@ -641,40 +644,40 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \subsubsection{Missing Hit Points}\label{Missing Hit Points}
             Some objects and creatures have no \glossterm{hit points} or \glossterm{damage resistance}.
-            They ignore all damage less than their \glossterm{wound resistance}.
+            They ignore all damage less than their \glossterm{vital resistance}.
 
     \subsection{Vital Wounds}\label{Vital Wounds}
-        A \glossterm{vital wound} represents a serious wound to your body.
+        A \glossterm{vital wound} represents serious damage to your body.
         Each \glossterm{vital wound} has a specific detrimental effect on you.
 
-        To determine the effect of a \glossterm{vital wound}, make a \glossterm{wound roll} and find the corresponding effect in \trefnp{Vital Wound Effects}.
-        The effect of the wound lasts until you remove that \glossterm{vital wound}.
+        To determine the effect of a \glossterm{vital wound}, make a \glossterm{vital roll} and find the corresponding effect in \trefnp{Vital Wound Effects}.
+        The effect of the vital wound lasts until you remove that vital wound.
         The effects of vital wounds stack with each other, even if you roll the same effect twice for different \glossterm{vital wounds}.
 
-        \subsubsection{Wound Roll}\label{Wound Roll}
-            To make a \glossterm{wound roll}, roll 1d10 \sub the number of \glossterm{vital wounds} you already had, ignoring the vital wound you are rolling for.
+        \subsubsection{Vital Roll}\label{Vital Roll}
+            To make a \glossterm{vital roll}, roll 1d10 \sub the number of \glossterm{vital wounds} you already had, ignoring the vital wound you are rolling for.
             The result determines the effect of the \glossterm{vital wound}, as listed in \tref{Vital Wound Effects}.
 
-            \parhead{Changing Wound Rolls}
-            Some effects can change the \glossterm{wound roll} for \glossterm{vital wounds} you have already suffered.
-            If your \glossterm{wound roll} changes retroactively, it changes the effect of that \glossterm{vital wound}.
+            \parhead{Changing Vital Rolls}
+            Some effects can change the \glossterm{vital roll} for \glossterm{vital wounds} you have already suffered.
+            If your \glossterm{vital roll} changes retroactively, it changes the effect of that \glossterm{vital wound}.
 
             \begin{dtable}
                 \lcaption{Vital Wound Effects}
                 \begin{dtabularx}{\textwidth}{l X}
-                    \tb{Wound Roll} & \tb{Effect} \tableheaderrule
+                    \tb{Vital Roll} & \tb{Effect} \tableheaderrule
                     \minus1 or less & You are unconscious, and at the end of the next round you die \\
                     0               & You are unconscious whenever you are \glossterm{bloodied}     \\
                     1               & Your maximum \glossterm{hit points} are reduced by 2          \\
                     2               & You move at half speed                                        \\
                     3               & You take a \minus2 penalty to \glossterm{accuracy}            \\
                     4               & You take a \minus2 penalty to all \glossterm{defenses}        \\
-                    5               & You take a \minus2 penalty to future \glossterm{wound rolls}  \\
+                    5               & You take a \minus2 penalty to future \glossterm{vital rolls}  \\
                     6               & Your maximum \glossterm{hit points} are reduced by 1          \\
                     7               & You take a \minus2 penalty to Fortitude defense               \\
                     8               & You take a \minus2 penalty to Mental defense                  \\
                     9               & You take a \minus2 penalty to Reflex defense                  \\
-                    10              & You take a \minus1 penalty to future \glossterm{wound rolls}  \\
+                    10              & You take a \minus1 penalty to future \glossterm{vital rolls}  \\
                     11 or more      & No effect                                                     \\
                 \end{dtabularx}
             \end{dtable}
@@ -682,7 +685,7 @@ It defines how attributes work and explains how to make attacks in combat.
     \subsection{Subdual Damage}\label{Subdual Damage}
         Some attacks and environmental effects deal subdual damage.
         Subdual damage works in the same way as normal damage, except that \glossterm{vital wounds} from subdual damage cannot kill.
-        A \glossterm{wound roll} below 0 from subdual damage causes the target to fall unconscious until the \glossterm{vital wound} is removed.
+        A \glossterm{vital roll} below 0 from subdual damage causes the target to fall unconscious until the \glossterm{vital wound} is removed.
 
 \section{Circumstances, Bonuses, and Penalties}
 
@@ -938,7 +941,7 @@ It defines how attributes work and explains how to make attacks in combat.
         This is the most common movement ability.
 
         \begin{freeability}{Hustle}
-            Choose a path that you want to travel.  You travel that path, up to the limit of your movement speed.
+            Choose a path that you want to travel. You travel that path, up to the limit of your movement speed.
         \end{freeability}
 
         \parhead{Block} As a \glossterm{move action}, you can use the \textit{block} ability to prevent a creature from entering a particular area.
@@ -1456,7 +1459,6 @@ It defines how attributes work and explains how to make attacks in combat.
             On a hit with any weapon, the target takes damage from one weapon you hit with (see \pcref{Strike Damage}).
 
             On a critical hit with any weapon, the target takes double damage from one weapon you hit with.
-            If the target takes damage this way, it loses an additional \glossterm{hit point}.
         \end{freeability}
 
         \begin{freeability}{\labeltext{Projectile Strike}}
@@ -1469,7 +1471,6 @@ It defines how attributes work and explains how to make attacks in combat.
             On a hit with any weapon, the target takes damage from one weapon you hit with (see \pcref{Strike Damage}).
 
             On a critical hit with any weapon, the target takes double damage from one weapon you hit with.
-            If the target takes damage this way, it loses an additional \glossterm{hit point}.
         \end{freeability}
 
         \begin{freeability}{\labeltext{Thrown Strike}}
@@ -1482,7 +1483,6 @@ It defines how attributes work and explains how to make attacks in combat.
             On a hit with any weapon, the target takes damage from one weapon you hit with (see \pcref{Strike Damage}).
 
             On a critical hit with any weapon, the target takes double damage from one weapon you hit with.
-            If the target takes damage this way, it loses an additional \glossterm{hit point}.
         \end{freeability}
 
         \subsubsection{Strike Damage}\label{Strike Damage}
@@ -1547,7 +1547,7 @@ It defines how attributes work and explains how to make attacks in combat.
         \begin{apability}{\labeltext{Desperate Exertion}}[\glossterm{Swift}]
             You treat the roll for any \glossterm{attack} or \glossterm{check} you just made as if it were a 10.
             This causes attacks to \glossterm{explode} just as if you had rolled a 10 normally.
-            You cannot use this to affect rolls that are not attacks or checks, such as \glossterm{wound rolls}.
+            You cannot use this to affect rolls that are not attacks or checks, such as \glossterm{vital rolls}.
         \end{apability}
 
         \parhead{Dirty Trick} As a standard action, you can use the \textit{dirty trick} ability to creatively impair a foe's ability to fight.
@@ -1685,7 +1685,8 @@ It defines how attributes work and explains how to make attacks in combat.
         Your encumbrance is a value that represents how much you are burdened by armor and weight.
         You apply your encumbrance as a penalty to all Strength and Dexterity-based checks you make.
         You can increase your encumbrance by wearing armor or by carrying an excessive weight (see \pcref{Carrying Capacity}).
-        In addition, you reduce your encumbrance from \glossterm{body armor} by an amount equal to your base Strength, to a minimum of 0.
+        In addition, you reduce your total encumbrance from \glossterm{armor} by an amount equal to your base Strength, to a minimum of 0.
+        You apply this reduction to the total encumbrance applied by all armor you wear, not individually for each piece of armor.
 
         Sleeping in armor is difficult.
         If you sleep while you have any encumbrance, only half the time you spend sleeping counts as sleep for the purpose of determining your fatigue (see \pcref{Sleep and Fatigue}).
@@ -1880,7 +1881,7 @@ It defines how attributes work and explains how to make attacks in combat.
     A character that increases in level gains additional benefits.
     \begin{itemize}
         \item At 2nd level, and every 3 levels thereafter, your maximum \glossterm{archetype rank} increases (see \pcref{Archetype Ranks}).
-        \item At 3rd level, and every 6 levels thereafter, you gain an additional \glossterm{action point}.
+        \item At 3rd level, and every 6 levels thereafter, you gain an additional \glossterm{action point} (see \pcref{Action Points}).
         \item At 6th level, and every 6 levels thereafter, you gain a \glossterm{legacy item} upgrade (see \pcref{Legacy Items}).
     \end{itemize}
 
@@ -1920,7 +1921,7 @@ It defines how attributes work and explains how to make attacks in combat.
             \item Your \glossterm{attributes} increase (see \pcref{Increasing Attributes})
             \item Your skill modifiers usually increase by 1 (see \pcref{Skill Modifier})
             \item Your \glossterm{power} with both \glossterm{mundane} and \glossterm{magical} abilities increases by 1 (see \pcref{Power}).
-            \item Your \glossterm{damage resistance} and \glossterm{wound resistance} usually increase (see \tref{Character Advancement}).
+            \item Your \glossterm{damage resistance} and \glossterm{vital resistance} increase (see \tref{Character Advancement}).
             \item Your \glossterm{accuracy} increases by 1 (see \pcref{Accuracy})
             \item All of your \glossterm{defenses} increase by 1 (see \pcref{Defenses})
             \item You gain an additional \glossterm{archetype rank} (see \pcref{Archetypes})

@@ -132,7 +132,7 @@ chronomancy=MysticSphere(
         """, tags=['Attune (self)']),
         Spell('Time Lock', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             You lock the state of the target's body in time.
-            Note the target's \\glossterm<hit points>, \\glossterm<vital wounds> (including \\glossterm<wound roll> results), and \\glossterm<conditions>.
+            Note the target's \\glossterm<hit points>, \\glossterm<vital wounds> (including \\glossterm<vital roll> results), and \\glossterm<conditions>.
             If the target dies, this effect ends immediately.
 
             As a \\glossterm<standard action>, you can reach through time to restore the target's state.

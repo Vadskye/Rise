@@ -1,11 +1,11 @@
 import { damageResistanceByLevel } from "@src/calculate/damage_resistance_by_level";
-import { woundResistanceByLevel } from "@src/calculate/wound_resistance_by_level";
+import { vitalResistanceByLevel } from "@src/calculate/vital_resistance_by_level";
 import { DamageType, damageTypes } from "@src/data";
 import { MonsterBase } from "@src/monsters";
 
 export interface Resistances {
   damage: Record<DamageType, number>;
-  wound: Record<DamageType, number>;
+  vital: Record<DamageType, number>;
 }
 
 export function calculateResistances(
@@ -17,7 +17,7 @@ export function calculateResistances(
   attributes: Creature.Attributes,
 ): Resistances {
   const dr = damageResistanceByLevel(level, attributes.con);
-  const wr = woundResistanceByLevel(level, attributes.con);
+  const wr = vitalResistanceByLevel(level, attributes.con);
   const resistances: Resistances = {
     damage: {
       physical: dr + resistanceBonuses.physical,
@@ -31,7 +31,7 @@ export function calculateResistances(
       electricity: dr + resistanceBonuses.energy + resistanceBonuses.electricity,
       fire: dr + resistanceBonuses.energy + resistanceBonuses.fire,
     },
-    wound: {
+    vital: {
       physical: wr + resistanceBonuses.physical,
       acid: wr + resistanceBonuses.physical + resistanceBonuses.acid,
       bludgeoning: wr + resistanceBonuses.physical + resistanceBonuses.bludgeoning,
@@ -46,7 +46,7 @@ export function calculateResistances(
   };
 
   if (challengeRating === 0.5) {
-    for (const category of ["damage" as const, "wound" as const]) {
+    for (const category of ["damage" as const, "vital" as const]) {
       for (const damageType of damageTypes) {
         resistances[category][damageType] *= 0.5;
       }

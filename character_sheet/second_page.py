@@ -262,11 +262,11 @@ def calc_base_resistances():
         ),
         equation_space,
         underlabel(
-            'Wound',
+            'Vital',
             number_input({
                 'disabled': True,
-                'name': 'base_wound_resistance_display',
-                'value': '(@{base_wound_resistance})',
+                'name': 'base_vital_resistance_display',
+                'value': '(@{base_vital_resistance})',
             }),
         ),
     ])
@@ -315,7 +315,14 @@ def calc_energy_resistance_bonus():
         div({'class': 'calc-header'}, 'Energy Damage'),
         equation(
             [
-                equation_misc_repeat('energy_resistance_bonus', 4)
+                underlabel(
+                    'Armor',
+                    number_input({
+                        'name': 'energy_resistance_bonus_armor',
+                    }),
+                ),
+                plus(),
+                equation_misc_repeat('energy_resistance_bonus', 3)
             ],
             result_attributes={
                 'disabled': 'true',

@@ -57,7 +57,7 @@ aberrationInput.push({
         The poison's primary effect makes the target \\glossterm{nauseated},
           and the secondary effect inflicts a \\glossterm{vital wound} with a special effect and ends the poison.
 
-        Instead of making a \\glossterm{wound roll} for the \\glossterm{vital wound},
+        Instead of making a \\glossterm{vital roll} for the \\glossterm{vital wound},
           the target's skin is transformed into a clear, slimy membrane.
         An afflicted creature must remain moistened with cool, fresh water every 10 minutes
           or it will lose a \\glossterm{hit point}.
