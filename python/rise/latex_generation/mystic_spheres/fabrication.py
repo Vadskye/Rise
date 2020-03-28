@@ -24,6 +24,98 @@ fabrication=MysticSphere(
     ],
     lists=['Arcane', 'Pact'],
     spells=[
+        Spell('Shieldbearer', 1, 'Yourself', """
+            You gain a +1 \\glossterm<magic bonus> to Armor defense.
+
+            \\rankline
+            \\rank<3> You are not considered \\glossterm<defenseless> as long as you are not \\glossterm<unaware>, even if you are not wielding a weapon or shield.
+            \\rank<5> The bonus increases to +2.
+            \\rank<7> You are not considered \\glossterm<defenseless> even if you are \\glossterm<unaware>.
+        """, tags=['Attune (self)', 'Manifestation']),
+        Spell('Mystic Arrow', 1, 'One creature or object within \\rngmed range', """
+            Make an attack vs. Armor against the target.
+            \\hit The target takes piercing \\glossterm<standard damage> +1d.
+
+            \\rankline
+            \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
+            \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
+        """, tags=['Manifestation']),
+        Spell('Mystic Blast Arrow', 4, 'One creature or object within \\rngmed range', """
+            Make an attack vs. Armor agains the target.
+            \\hit The target takes piercing \\glossterm<standard damage> +2d.
+            If this attack \\glossterm<injures> the target, it is knocked \\glossterm<prone>.
+
+            \\rankline
+            \\rank<6> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<8> The damage increases to \\glossterm<standard damage> +4d.
+        """, tags=['Manifestation']),
+        Spell('Bladestorm', 3, '\\glossterm<Enemies> adjacent to you', """
+            This spell does not have the \\glossterm<Focus> tag.
+            Make an attack vs. Armor against each target.
+            \\hit Each target takes slashing \\glossterm<standard damage> -1d.
+
+            \\rankline
+            \\rank<5> The damage increases to \\glossterm<standard damage>.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
+        """, tags=['Manifestation'], focus=False),
+        Spell('Missile Storm', 3, '\\glossterm<Enemies> in a \\areamed radius from you', """
+            Make an attack vs. Armor against each target.
+            \\hit Each target takes piercing \\glossterm<standard damage> -1d.
+
+            \\rankline
+            \\rank<6> The area increases to a \\arealarge radius.
+            \\rank<8> The area increases to a \\areahuge radius.
+        """, tags=['Manifestation']),
+        Spell('Hail of Arrows', 4, 'Everything in a \\areasmall radius within \\rngmed range', """
+            Make an attack vs. Armor against each target.
+            \\hit Each target takes piercing \\glossterm<standard damage> -1d.
+
+            \\rankline
+            \\rank<6> The damage increases to \\glossterm<standard damage>.
+            \\rank<8> The damage increases to \\glossterm<standard damage> +1d.
+        """, tags=['Manifestation']),
+        Spell('Blade Barrier', 3, 'Each creature that moves through the area (see text)', """
+            A wall of whirling blades appears within \\rngmed range.
+            The wall takes the form of a 20 ft.\\ high, \\arealarge line.
+            The wall provides \\glossterm<cover> against attacks made through it.
+            When a creature or object passes through the wall, make an attack vs. Armor against it.
+            \\hit The target takes slashing \\glossterm<standard damage> -1d.
+
+            \\rankline
+            \\rank<5> The damage increases to \\glossterm<standard damage>.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
+        """, tags=['Sustain (minor)']),
+        Spell('Blade Perimeter', 4, 'Each creature that moves through the area (see text)', """
+            A wall of whirling blades appears within \\rngmed range.
+            The wall takes the form of a 20 ft.\\ high, \\areamed radius line.
+            The wall provides \\glossterm<cover> against attacks made through it.
+            When a creature or object passes through the wall, make an attack vs. Armor against it.
+            \\hit The target takes slashing \\glossterm<standard damage> -1d.
+
+            % TODO: Clarify interaction with solid obstacles that block contraction?
+            \\rankline
+            \\rank<6> The wall's radius shrinks by 5 feet at the end of each round, dealing damage to everything it moves through.
+            When the wall shrinks to have no radius, this spell ends.
+            \\rank<8> After the wall shrinks to have no radius, it begins expanding again at a rate of 5 feet per round.
+            Once it expands back to its maximum radius, it begins shrinking again.
+        """, tags=['Sustain (minor)']),
+        Spell('Personal Weapon', 1, 'Yourself', """
+            Choose a type of weapon that you are proficient with.
+            You create a normal item of that type in your hand.
+            If the item stops touching you, it disappears, and this effect ends.
+
+            If you create a projectile weapon, you can fire it without ammunition by creating projectiles as you fire.
+            The projectiles disappear after the attack is complete.
+
+            % Strange duration for a spell
+            This spell lasts until you use it again, or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
+
+            \\rankline
+            \\rank<3> You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with \\glossterm<strikes> using the weapon.
+            \\rank<5> You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using the weapon.
+            \\rank<7> The bonus to accuracy increases to +2.
+        """, tags=['Manifestation']),
         Spell('Acid Orb', 1, 'One creature or object within \\rngmed range', """
             Make an attack vs. Armor against the target.
             \\hit The target takes acid \\glossterm<standard damage> +1d.

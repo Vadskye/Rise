@@ -2409,21 +2409,6 @@ Make an attack vs. Mental against each target.
 
 
 \newpage
-\begin{spellsection}{Corruption}
-
-\begin{spellheader}
-\spelldesc{Weaken the life force of foes, reducing their combat prowess.}
-\end{spellheader}
-
-
-\parhead{Mystic Sphere Lists} Arcane, Divine, Nature, Pact
-
-\subsubsection{Cantrips}
-
-
-\end{spellsection}
-
-\newpage
 \begin{spellsection}{Cryomancy}
 
 \begin{spellheader}
@@ -3178,6 +3163,89 @@ and armor grants a \plus1 \glossterm{magic bonus} to Armor defense.
 
 
 
+\lowercase{\hypertarget{spell:Mystic Arrow}{}}\label{spell:Mystic Arrow}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Mystic Arrow}{Mystic Arrow}}[\glossterm{Focus}, \glossterm{Manifestation}]
+\target{One creature or object within \rngmed range}
+Make an attack vs. Armor against the target.
+\hit The target takes piercing \glossterm{standard damage} \plus1d.
+
+\rankline
+\rank{3} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{5} The damage increases to \glossterm{standard damage} \plus3d.
+\rank{7} The damage increases to \glossterm{standard damage} \plus4d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Personal Weapon}{}}\label{spell:Personal Weapon}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Personal Weapon}{Personal Weapon}}[\glossterm{Focus}, \glossterm{Manifestation}]
+\target{Yourself}
+Choose a type of weapon that you are proficient with.
+You create a normal item of that type in your hand.
+If the item stops touching you, it disappears, and this effect ends.
+
+If you create a projectile weapon, you can fire it without ammunition by creating projectiles as you fire.
+The projectiles disappear after the attack is complete.
+
+% Strange duration for a spell
+This spell lasts until you use it again, or until you \glossterm{dismiss} it as a \glossterm{free action}.
+
+\rankline
+\rank{3} You gain a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} with \glossterm{strikes} using the weapon.
+\rank{5} You gain a \plus2 \glossterm{magic bonus} to \glossterm{power} with \glossterm{strikes} using the weapon.
+\rank{7} The bonus to accuracy increases to \plus2.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Shieldbearer}{}}\label{spell:Shieldbearer}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Shieldbearer}{Shieldbearer}}[\glossterm{Attune} (self), \glossterm{Focus}, \glossterm{Manifestation}]
+\target{Yourself}
+You gain a \plus1 \glossterm{magic bonus} to Armor defense.
+
+\rankline
+\rank{3} You are not considered \glossterm{defenseless} as long as you are not \glossterm{unaware}, even if you are not wielding a weapon or shield.
+\rank{5} The bonus increases to \plus2.
+\rank{7} You are not considered \glossterm{defenseless} even if you are \glossterm{unaware}.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Blade Barrier}{}}\label{spell:Blade Barrier}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Blade Barrier}{Blade Barrier}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
+\target{Each creature that moves through the area (see text)}
+A wall of whirling blades appears within \rngmed range.
+The wall takes the form of a 20 ft.\ high, \arealarge line.
+The wall provides \glossterm{cover} against attacks made through it.
+When a creature or object passes through the wall, make an attack vs. Armor against it.
+\hit The target takes slashing \glossterm{standard damage} \minus1d.
+
+\rankline
+\rank{5} The damage increases to \glossterm{standard damage}.
+\rank{7} The damage increases to \glossterm{standard damage} \plus1d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Bladestorm}{}}\label{spell:Bladestorm}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Bladestorm}{Bladestorm}}[\glossterm{Manifestation}]
+\targets{\glossterm{Enemies} adjacent to you}
+This spell does not have the \glossterm{Focus} tag.
+Make an attack vs. Armor against each target.
+\hit Each target takes slashing \glossterm{standard damage} \minus1d.
+
+\rankline
+\rank{5} The damage increases to \glossterm{standard damage}.
+\rank{7} The damage increases to \glossterm{standard damage} \plus1d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Corrosive Orb}{}}\label{spell:Corrosive Orb}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Corrosive Orb}{Corrosive Orb}}[\glossterm{Focus}, \glossterm{Manifestation}]
 \target{One creature or object within \rngmed range}
@@ -3188,6 +3256,20 @@ This attack deals double damage to objects.
 \rankline
 \rank{5} The damage increases to \glossterm{standard damage} \plus2d.
 \rank{7} The damage increases to \glossterm{standard damage} \plus3d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Missile Storm}{}}\label{spell:Missile Storm}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Missile Storm}{Missile Storm}}[\glossterm{Focus}, \glossterm{Manifestation}]
+\targets{\glossterm{Enemies} in a \areamed radius from you}
+Make an attack vs. Armor against each target.
+\hit Each target takes piercing \glossterm{standard damage} \minus1d.
+
+\rankline
+\rank{6} The area increases to a \arealarge radius.
+\rank{8} The area increases to a \areahuge radius.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3263,6 +3345,40 @@ Make an attack vs. Armor against each target.
 
 
 
+\lowercase{\hypertarget{spell:Blade Perimeter}{}}\label{spell:Blade Perimeter}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Blade Perimeter}{Blade Perimeter}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
+\target{Each creature that moves through the area (see text)}
+A wall of whirling blades appears within \rngmed range.
+The wall takes the form of a 20 ft.\ high, \areamed radius line.
+The wall provides \glossterm{cover} against attacks made through it.
+When a creature or object passes through the wall, make an attack vs. Armor against it.
+\hit The target takes slashing \glossterm{standard damage} \minus1d.
+
+% TODO: Clarify interaction with solid obstacles that block contraction?
+\rankline
+\rank{6} The wall's radius shrinks by 5 feet at the end of each round, dealing damage to everything it moves through.
+When the wall shrinks to have no radius, this spell ends.
+\rank{8} After the wall shrinks to have no radius, it begins expanding again at a rate of 5 feet per round.
+Once it expands back to its maximum radius, it begins shrinking again.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Hail of Arrows}{}}\label{spell:Hail of Arrows}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Hail of Arrows}{Hail of Arrows}}[\glossterm{Focus}, \glossterm{Manifestation}]
+\targets{Everything in a \areasmall radius within \rngmed range}
+Make an attack vs. Armor against each target.
+\hit Each target takes piercing \glossterm{standard damage} \minus1d.
+
+\rankline
+\rank{6} The damage increases to \glossterm{standard damage}.
+\rank{8} The damage increases to \glossterm{standard damage} \plus1d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Meteor}{}}\label{spell:Meteor}
 \begin{freeability}[Rank 4]{\hypertarget{spell:Meteor}{Meteor}}[\glossterm{Focus}, \glossterm{Manifestation}]
 \targets{Special}
@@ -3275,6 +3391,21 @@ Make an attack vs. Armor against everything in its path.
 \rankline
 \rank{3} The damage increases to \glossterm{standard damage}.
 \rank{5} The damage increases to \glossterm{standard damage} \plus1d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Mystic Blast Arrow}{}}\label{spell:Mystic Blast Arrow}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Mystic Blast Arrow}{Mystic Blast Arrow}}[\glossterm{Focus}, \glossterm{Manifestation}]
+\target{One creature or object within \rngmed range}
+Make an attack vs. Armor agains the target.
+\hit The target takes piercing \glossterm{standard damage} \plus2d.
+If this attack \glossterm{injures} the target, it is knocked \glossterm{prone}.
+
+\rankline
+\rank{6} The damage increases to \glossterm{standard damage} \plus3d.
+\rank{8} The damage increases to \glossterm{standard damage} \plus4d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -5116,7 +5247,7 @@ It gains the \glossterm{Planar} tag in addition to the tags from the \ritual{tel
 
 
 \newpage
-\begin{spellsection}{Summon}
+\begin{spellsection}{Summoning}
 
 \begin{spellheader}
 \spelldesc{Summon creatures to fight with you.}
@@ -5147,7 +5278,7 @@ If a summoned creature gains a \glossterm{vital wound} or has no hit points rema
 \item It has 6 \glossterm{hit points}.
 \item Each of its \glossterm{defenses} is equal to 4 \add your level.
 \item Its \glossterm{accuracy} is equal to your level \add half your base Perception \sub 2.
-\item Its \glossterm{power} with its attacks is equal to your \glossterm{power} \sub 4.
+\item Its \glossterm{power} with its attacks is equal to your \glossterm{power}.
 \item Its \glossterm{land speed} is 30 feet.
 \item It has no \glossterm{action points}.
 \end{itemize}
@@ -5156,7 +5287,7 @@ Each round, you can choose the creature's actions by mentally commanding it as a
 There are only two actions it can take.
 As a \glossterm{move action}, it can move as you direct.
 As a standard action, it can make a melee \glossterm{strike} against a creature it threatens.
-If it hits, it deals physical \glossterm{standard damage}.
+If it hits, it deals physical \glossterm{standard damage} \minus2d.
 The subtypes of damage dealt by this attack depend on the creature's appearance.
 Most animals bite or claw their foes, which deals bludgeoning and slashing damage.
 
@@ -5168,6 +5299,25 @@ Summoned creatures have no mind or agency, and will not act on their own even if
 \rank{5} The accuracy bonus increases to \plus2.
 \rank{7} The accuracy bonus increases to \plus3.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Summon Ballista}{}}\label{spell:Summon Ballista}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Summon Ballista}{Summon Ballista}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
+\target{One unoccupied square within \rngmed range}
+This spell functions like the \spell{summon weapon} spell, except that it creates a fully functional Large ballista instead of a weapon.
+The ballista functions like any other weapon, with the following exceptions.
+
+It cannot move, and makes ranged \glossterm{strikes} instead of melee strikes.
+Its attacks have a maximum range of 100 feet and deal piercing damage.
+In addition, the ballista attacks the creature farthest from it, instead of the creature closest to it.
+
+\rankline
+\rank{5} The damage dealt by the ballista increases to \glossterm{standard damage} \minus1d.
+\rank{7} The ballista gains a second bolt track, allowing it to fire at two different targets.
+It canot fire at the same target twice.
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -5214,6 +5364,46 @@ In addition, it is \glossterm{vulnerable} to electricity damage.
 \rank{5} The creature gains a \plus1 bonus to \glossterm{accuracy}.
 \rank{7} The accuracy bonus increases to \plus2.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Summon Weapon}{}}\label{spell:Summon Weapon}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Summon Weapon}{Summon Weapon}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
+\target{One unoccupied square within \rngmed range}
+This spell functions like the \textit{summon monster} spell, with the following exceptions.
+The summoned creature takes the form of a melee weapon of your choice that you are proficient with.
+It is sized appropriately to be wielded by a creature of your size.
+It floats three feet off the ground, and has a 30 foot \glossterm{fly speed} instead of a \glossterm{land speed}, with good \glossterm{maneuverability} (see \pcref{Fly Speed}).
+The weapon's maximum height above the ground is limited to 10 feet.
+The creature's accuracy and damage are modified appropriately for based on your chosen weapon, and it gains the effect of the weapon's normal tags (see \pcref{Weapon Tags}).
+The weapon is considered to be held in two hands if possible, which can increase the damage dealt by medium weapons (see \pcref{Weapon Usage Classes}).
+
+You cannot control the summoned weapon's actions.
+Each round, the weapon automatically moves towards the creature closest to it during the \glossterm{movement phase}, following that creature to the best of its abilities.
+During the \glossterm{action phase}, it makes a melee \glossterm{strike} against a creature that it \glossterm{threatens}.
+The weapon prefers to avoid accuracy and damage penalties that would be imposed by cover or special weapon grips.
+It choses randomly if all possible targets are equally easy to attack.
+
+\rankline
+\rank{3} The damage dealt by the weapon increases to \glossterm{standard damage} \minus1d.
+\rank{5} The damage dealt by the weapon increases to \glossterm{standard damage}.
+\rank{7} The damage dealt by the weapon increases to \glossterm{standard damage} \plus1d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Aerial Weapon}{}}\label{spell:Aerial Weapon}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Aerial Weapon}{Aerial Weapon}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
+\target{One unoccupied square within \rngmed range}
+This spell functions like the \spell{summon weapon} spell, except that the weapon's maximum height above the ground is increased to 100 feet.
+This allows the weapon to fly up to fight airborne foes.
+
+\rankline
+\rank{6} The weapon has no maximum height above the ground.
+\rank{8} The damage dealt by the weapon increases to \glossterm{standard damage} \minus1d.
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -5290,6 +5480,16 @@ Each creature obeys your command to the extent it can.
 \rankline
 \rank{7} The creature gains a \plus1 bonus to \glossterm{accuracy}.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Summon Paired Weapons}{}}\label{spell:Summon Paired Weapons}
+\begin{freeability}[Rank 8]{\hypertarget{spell:Summon Paired Weapons}{Summon Paired Weapons}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
+\target{One unoccupied square within \rngmed range}
+This spell functions like the \spell{summon weapon} spell, except that you summon two weapons instead of one.
+Each weapon attacks independently.
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -6936,264 +7136,5 @@ The resurrected creature's body is fully restored to its healthy state before dy
 This ritual takes 24 hours to perform, and requires 98 action points from its participants.
 In addition, it can only be learned through the divine \glossterm{magic source}.
 \end{apability}
-\vspace{0.25em}
-
-
-\newpage
-\begin{spellsection}{Weaponcraft}
-
-\begin{spellheader}
-\spelldesc{Create and manipulate weapons to attack foes.}
-\end{spellheader}
-
-
-\parhead{Mystic Sphere Lists} Arcane, Divine, Pact
-
-\subsubsection{Cantrips}
-
-
-\begin{freeability}{Personal Weapon}[\glossterm{Manifestation}]
-\target{Yourself}
-Choose a type of weapon that you are proficient with.
-You create a normal item of that type in your hand.
-If the item stops touching you, it disappears, and this effect ends.
-
-If you create a projectile weapon, you can fire it without ammunition by creating projectiles as you fire.
-The projectiles disappear after the attack is complete.
-
-% Strange duration for a cantrip
-This spell lasts until you use it again, or until you \glossterm{dismiss} it as a \glossterm{free action}.
-
-\rankline
-\rank{3} You gain a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} with \glossterm{strikes} using the weapon.
-\rank{5} You gain a \plus2 \glossterm{magic bonus} to \glossterm{power} with \glossterm{strikes} using the weapon.
-\rank{7} The bonus to accuracy increases to \plus2.
-\end{freeability}
-
-\end{spellsection}
-
-
-\subsubsection{Spells}
-
-
-\lowercase{\hypertarget{spell:Mystic Arrow}{}}\label{spell:Mystic Arrow}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Mystic Arrow}{Mystic Arrow}}[\glossterm{Focus}, \glossterm{Manifestation}]
-\target{One creature or object within \rngmed range}
-Make an attack vs. Armor against the target.
-\hit The target takes piercing \glossterm{standard damage} \plus1d.
-
-\rankline
-\rank{3} The damage increases to \glossterm{standard damage} \plus2d.
-\rank{5} The damage increases to \glossterm{standard damage} \plus3d.
-\rank{7} The damage increases to \glossterm{standard damage} \plus4d.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Shieldbearer}{}}\label{spell:Shieldbearer}
-\begin{attuneability}[Rank 1]{\hypertarget{spell:Shieldbearer}{Shieldbearer}}[\glossterm{Attune} (self), \glossterm{Focus}, \glossterm{Manifestation}]
-\target{Yourself}
-You gain a \plus1 \glossterm{magic bonus} to Armor defense.
-
-\rankline
-\rank{3} You are not considered \glossterm{defenseless} as long as you are not \glossterm{unaware}, even if you are not wielding a weapon or shield.
-\rank{5} The bonus increases to \plus2.
-\rank{7} You are not considered \glossterm{defenseless} even if you are \glossterm{unaware}.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Summon Club}{}}\label{spell:Summon Club}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Summon Club}{Summon Club}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
-\target{One unoccupied square within \rngmed range}
-A creature in the shape of a club appears in the target location.
-The weapon floats about three feet off the ground, and is sized appropriately to be wielded by a creature of your size.
-The creature's statistics use the values below.
-If a summoned weapon gains a \glossterm{vital wound} or has no hit points remaining at the end of a phase, it disappears.
-\begin{itemize}
-\item Its \glossterm{damage resistance} and \glossterm{vital resistance} are equal to the base values for your level (see \pcref{Character Advancement}).
-\item It has 8 \glossterm{hit points}.
-\item Each of its \glossterm{defenses} is equal to 4 \add your level.
-\item Its \glossterm{accuracy} is equal to your level \add half your base Perception \sub 2.
-\item Its \glossterm{power} with its attacks is equal to your \glossterm{power} \sub 2.
-\item Its \glossterm{fly speed} is 30 feet, with good \glossterm{maneuverability}.
-\item It has no \glossterm{action points}.
-\end{itemize}
-
-Each round, the weapon automatically moves towards the creature closest to it during the \glossterm{movement phase}, following that creature to the best of its abilities.
-During the \glossterm{action phase}, it makes a melee \glossterm{strike} against a random creature adjacent to it.
-If it hits, it deals \glossterm{standard damage}.
-
-\rankline
-\rank{3} The damage dealt by the weapon increases to \glossterm{standard damage}.
-\rank{5} The damage dealt by the weapon increases to \glossterm{standard damage} \plus1d.
-\rank{7} The damage dealt by the weapon increases to \glossterm{standard damage} \plus2d.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Aerial Weapon}{}}\label{spell:Aerial Weapon}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Aerial Weapon}{Aerial Weapon}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
-\target{One unoccupied square within \rngmed range}
-This spell functions like the \spell{summon club} spell, except that the weapon's maximum height above the ground is increased to 100 feet.
-This allows the weapon to fly up to fight airborne foes.
-
-\rankline
-\rank{5} The damage dealt by the weapon increases to \glossterm{standard damage}.
-\rank{7} The weapon has no maximum height above the ground.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Blade Barrier}{}}\label{spell:Blade Barrier}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Blade Barrier}{Blade Barrier}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
-\target{Each creature that moves through the area (see text)}
-A wall of whirling blades appears within \rngmed range.
-The wall takes the form of a 20 ft.\ high, \arealarge line.
-The wall provides \glossterm{cover} against attacks made through it.
-When a creature or object passes through the wall, make an attack vs. Armor against it.
-\hit The target takes slashing \glossterm{standard damage} \minus1d.
-
-\rankline
-\rank{5} The damage increases to \glossterm{standard damage}.
-\rank{7} The damage increases to \glossterm{standard damage} \plus1d.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Bladestorm}{}}\label{spell:Bladestorm}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Bladestorm}{Bladestorm}}[\glossterm{Manifestation}]
-\targets{\glossterm{Enemies} adjacent to you}
-This spell does not have the \glossterm{Focus} tag.
-Make an attack vs. Armor against each target.
-\hit Each target takes slashing \glossterm{standard damage} \minus1d.
-
-\rankline
-\rank{5} The damage increases to \glossterm{standard damage}.
-\rank{7} The damage increases to \glossterm{standard damage} \plus1d.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Missile Storm}{}}\label{spell:Missile Storm}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Missile Storm}{Missile Storm}}[\glossterm{Focus}, \glossterm{Manifestation}]
-\targets{\glossterm{Enemies} in a \areamed radius from you}
-Make an attack vs. Armor against each target.
-\hit Each target takes piercing \glossterm{standard damage} \minus1d.
-
-\rankline
-\rank{6} The area increases to a \arealarge radius.
-\rank{8} The area increases to a \areahuge radius.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Summon Ballista}{}}\label{spell:Summon Ballista}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Summon Ballista}{Summon Ballista}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
-\target{One unoccupied square within \rngmed range}
-This spell functions like the \spell{summon club} spell, except that it creates a fully functional Large ballista instead of a club.
-The ballista functions like any other weapon, with the following exceptions.
-
-It cannot move, and makes ranged \glossterm{strikes} instead of melee strikes.
-Its attacks have a maximum range of 100 feet and deal piercing damage.
-In addition, the ballista attacks the creature farthest from it, instead of the creature closest to it.
-
-\rankline
-\rank{5} The damage dealt by the ballista increases to \glossterm{standard damage}.
-\rank{7} The ballista gains a second bolt track, allowing it to fire at two different targets.
-It canot fire at the same target twice.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Blade Perimeter}{}}\label{spell:Blade Perimeter}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Blade Perimeter}{Blade Perimeter}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
-\target{Each creature that moves through the area (see text)}
-A wall of whirling blades appears within \rngmed range.
-The wall takes the form of a 20 ft.\ high, \areamed radius line.
-The wall provides \glossterm{cover} against attacks made through it.
-When a creature or object passes through the wall, make an attack vs. Armor against it.
-\hit The target takes slashing \glossterm{standard damage} \minus1d.
-
-% TODO: Clarify interaction with solid obstacles that block contraction?
-\rankline
-\rank{6} The wall's radius shrinks by 5 feet at the end of each round, dealing damage to everything it moves through.
-When the wall shrinks to have no radius, this spell ends.
-\rank{8} After the wall shrinks to have no radius, it begins expanding again at a rate of 5 feet per round.
-Once it expands back to its maximum radius, it begins shrinking again.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Giant Blade}{}}\label{spell:Giant Blade}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Giant Blade}{Giant Blade}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
-\target{One unoccupied square within \rngmed range}
-This spell functions like the \spell{summon club} spell, except that the weapon takes the form of a Large greatsword.
-The weapon's attacks hit everything in a \areasmall cone from it.
-It aims the cone to hit as many creatures as possible.
-
-\rankline
-\rank{6} The damage dealt by the weapon increases to \glossterm{standard damage}.
-\rank{8} The damage dealt by the weapon increases to \glossterm{standard damage} \plus1d.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Hail of Arrows}{}}\label{spell:Hail of Arrows}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Hail of Arrows}{Hail of Arrows}}[\glossterm{Focus}, \glossterm{Manifestation}]
-\targets{Everything in a \areasmall radius within \rngmed range}
-Make an attack vs. Armor against each target.
-\hit Each target takes piercing \glossterm{standard damage} \minus1d.
-
-\rankline
-\rank{6} The damage increases to \glossterm{standard damage}.
-\rank{8} The damage increases to \glossterm{standard damage} \plus1d.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Mystic Blast Arrow}{}}\label{spell:Mystic Blast Arrow}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Mystic Blast Arrow}{Mystic Blast Arrow}}[\glossterm{Focus}, \glossterm{Manifestation}]
-\target{One creature or object within \rngmed range}
-Make an attack vs. Armor agains the target.
-\hit The target takes piercing \glossterm{standard damage} \plus2d.
-If this attack \glossterm{injures} the target, it is knocked \glossterm{prone}.
-
-\rankline
-\rank{6} The damage increases to \glossterm{standard damage} \plus3d.
-\rank{8} The damage increases to \glossterm{standard damage} \plus4d.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Titan Blade}{}}\label{spell:Titan Blade}
-\begin{freeability}[Rank 7]{\hypertarget{spell:Titan Blade}{Titan Blade}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
-\target{One unoccupied square within \rngmed range}
-This spell functions like the \spell{summon club} spell, except that the weapon takes the form of a Gargantuan greatsword.
-The weapon's attacks hit everything in a \areamed cone from it.
-It aims the cone to hit as many creatures as possible.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Paired Weapons}{}}\label{spell:Paired Weapons}
-\begin{freeability}[Rank 8]{\hypertarget{spell:Paired Weapons}{Paired Weapons}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
-\target{One unoccupied square within \rngmed range}
-This spell functions like the \spell{summon club} spell, except that you summon two weapons instead of one.
-Each weapon attacks independently.
-\end{freeability}
 \vspace{0.25em}
 

@@ -9,7 +9,6 @@ from rise.latex_generation.mystic_spheres.bless import bless
 from rise.latex_generation.mystic_spheres.channel_divinity import channel_divinity
 from rise.latex_generation.mystic_spheres.chronomancy import chronomancy
 from rise.latex_generation.mystic_spheres.compel import compel
-from rise.latex_generation.mystic_spheres.corruption import corruption
 from rise.latex_generation.mystic_spheres.cryomancy import cryomancy
 from rise.latex_generation.mystic_spheres.delusion import delusion
 from rise.latex_generation.mystic_spheres.electromancy import electromancy
@@ -25,7 +24,6 @@ from rise.latex_generation.mystic_spheres.terramancy import terramancy
 from rise.latex_generation.mystic_spheres.thaumaturgy import thaumaturgy
 from rise.latex_generation.mystic_spheres.verdamancy import verdamancy
 from rise.latex_generation.mystic_spheres.vivimancy import vivimancy
-from rise.latex_generation.mystic_spheres.weaponcraft import weaponcraft
 from rise.latex_generation.book_path import book_path
 from rise.latex.util import latexify
 import rise.statistics.rise_data as rise_data
@@ -48,7 +46,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(channel_divinity)
     mystic_spheres.append(chronomancy)
     mystic_spheres.append(compel)
-    mystic_spheres.append(corruption)
     mystic_spheres.append(cryomancy)
     mystic_spheres.append(delusion)
     mystic_spheres.append(electromancy)
@@ -64,7 +61,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(thaumaturgy)
     mystic_spheres.append(verdamancy)
     mystic_spheres.append(vivimancy)
-    mystic_spheres.append(weaponcraft)
 
     return sorted(mystic_spheres, key=lambda m: m.name)
 
