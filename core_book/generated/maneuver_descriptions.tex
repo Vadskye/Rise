@@ -362,23 +362,6 @@ In addition, each target can ignore any effects from one \glossterm{condition} i
 
 
 
-\lowercase{\hypertarget{maneuver:Rapid Assault}{}}\label{maneuver:Rapid Assault}
-\hypertarget{maneuver:Rapid Assault}{}
-\begin{freeability}[Rank 1]{Rapid Assault}[]
-\targets{As chosen \glossterm{strikes} (see text)}
-Make two melee \glossterm{strikes}.
-You take a \minus2 penalty to accuracy and a \minus2d penalty to damage on both strikes.
-
-\rankline
-\rank{3} The accuracy penalty is reduced to -1.
-\rank{5} The damage penalty is reduced to \minus1d.
-\rank{7} The accuracy and damage penalties are removed.
-\parhead{Lists} Esoteric, Martial, Primal, Trick, Wild
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{maneuver:Reaping Charge}{}}\label{maneuver:Reaping Charge}
 \hypertarget{maneuver:Reaping Charge}{}
 \begin{freeability}[Rank 1]{Reaping Charge}[]
@@ -386,12 +369,12 @@ You take a \minus2 penalty to accuracy and a \minus2d penalty to damage on both 
 Move up to half your movement speed in a straight line.
 You can make a melee \glossterm{strike} with a slashing or bludgeoning weapon.
 The strike targets any number of creatures and objects within your \glossterm{reach} at any point during your movement, except for the space you start in and the space you end in.
-You take a \minus2 penalty to \glossterm{accuracy} with the strike.
+You take a \minus2d penalty to damage with the strike.
 
 \rankline
-\rank{3} The accuracy penalty is reduced to -1.
+\rank{3} The damage penalty is reduced to \minus1d.
 \rank{5} You can move up to your full movement speed instead of at half speed.
-\rank{7} The accuracy penalty is removed.
+\rank{7} The damage penalty is removed.
 \parhead{Lists} Esoteric, Martial, Primal, Wild
 \end{freeability}
 \vspace{0.25em}
@@ -545,12 +528,12 @@ If the strike deals damage, the target loses an additional \glossterm{hit point}
 \hypertarget{maneuver:Sweeping Strike}{}
 \begin{freeability}[Rank 1]{Sweeping Strike}[]
 \targets{Up to three creatures or objects within \glossterm{reach} (see text)}
-Make a melee \glossterm{strike} with a slashing or bludgeoning weapon against each target.
+Make a melee \glossterm{strike} with a \minus1d penalty to damage using a slashing or bludgeoning weapon against each target.
 
 \rankline
-\rank{3} You gain a \plus1d bonus to damage with the strike.
-\rank{5} The damage bonus increases to \plus2d.
-\rank{7} The damage bonus increases to \plus3d.
+\rank{3} The damage penalty is removed.
+\rank{5} You gain a \plus1d bonus to damage with the strike.
+\rank{7} The damage bonus increases to \plus2d.
 \parhead{Lists} Esoteric, Martial, Primal, Wild
 \end{freeability}
 \vspace{0.25em}
@@ -582,7 +565,7 @@ You can make a melee \glossterm{strike} from any location you occupy during the 
 \begin{freeability}[Rank 1]{Whirlwind}[]
 \targets{All \glossterm{enemies} within \glossterm{reach}}
 Make a melee \glossterm{strike} using a slashing weapon against each target.
-You take a \minus1 penalty to \glossterm{accuracy} with the strike.
+You take a \minus1d penalty to damage with the strike.
 
 \rankline
 \rank{3} You can move up to 5 feet when you use this ability.
@@ -608,23 +591,6 @@ it is \glossterm{sickened} as a \glossterm{condition}.
 \rank{5} On a \glossterm{critical hit}, the target is is \glossterm{paralyzed} instead of sickened.
 \rank{7} On a hit, the target is \glossterm{nauseated} instead of sickened.
 \parhead{Lists} Esoteric, Martial, Primal, Trick, Wild
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{maneuver:Barrage}{}}\label{maneuver:Barrage}
-\hypertarget{maneuver:Barrage}{}
-\begin{freeability}[Rank 3]{Barrage}[]
-\targets{As chosen \glossterm{strikes} (see text)}
-Make two ranged \glossterm{strikes}.
-You take a \minus4 penalty to accuracy on both strikes.
-For each previous round that you used this ability without moving, you reduce the accuracy penalty by 1.
-
-\rankline
-\rank{5} You gain a \plus1 bonus to accuracy with both strikes.
-\rank{7} The accuracy bonus increases to \plus2.
-\parhead{Lists} Esoteric, Martial, Trick, Wild
 \end{freeability}
 \vspace{0.25em}
 
@@ -784,7 +750,7 @@ it is \glossterm{sickened} as a \glossterm{condition}.
 \hypertarget{maneuver:Ricochet}{}
 \begin{freeability}[Rank 3]{Ricochet}[]
 \targets{Up to three creatures or objects in a \areasmall radius within \rngclose range (see text)}
-Make a thrown \glossterm{strike} using a single weapon that deals slashing or bludgeoning damage against each target.
+Make a thrown \glossterm{strike} with a \minus1d penalty to damage using a single weapon that deals slashing or bludgeoning damage against each target.
 If you choose yourself as one of the targets, you can catch the weapon instead of taking damage from it.
 
 \rankline
@@ -818,11 +784,11 @@ it is \glossterm{dazed} as a \glossterm{condition}.
 \begin{freeability}[Rank 3]{Thunderous Shout}[]
 \targets{Everything in a \areamed cone from you}
 Make an attack vs. Fortitude against each target.
-\hit Each target takes energy \glossterm{standard damage}.
+\hit Each target takes energy \glossterm{standard damage} \minus1d.
 
 \rankline
-\rank{5} The damage increases to \glossterm{standard damage} \plus1d.
-\rank{7} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{5} You gain a \plus1 bonus to accuracy with the attack.
+\rank{7} The accuracy bonus increases to \plus2.
 \parhead{Lists} Primal
 \end{freeability}
 \vspace{0.25em}
@@ -833,12 +799,12 @@ Make an attack vs. Fortitude against each target.
 \hypertarget{maneuver:Titanic Slam}{}
 \begin{freeability}[Rank 3]{Titanic Slam}[]
 \targets{Everything on the ground in a \areamed, 10 ft. wide line from you}
-Make a melee \glossterm{strike} with a bludgeoning weapon against each target.
+Make a melee \glossterm{strike} with a \minus1d penalty to damage using a bludgeoning weapon against each target.
 All damage dealt by this attack is bludgeoning damage instead of its normal types.
 
 \rankline
-\rank{5} You gain a \plus1d bonus to damage with the strike.
-\rank{7} The damage bonus increases to \plus2d.
+\rank{5} The damage penalty is removed.
+\rank{7} You gain a \plus1d bonus to damage with the strike.
 \parhead{Lists} Martial, Primal
 \end{freeability}
 \vspace{0.25em}
@@ -879,16 +845,33 @@ During the \glossterm{delayed action phase}, you can take the action you did not
 
 \subsection{Rank 4 Maneuvers}
 
+\lowercase{\hypertarget{maneuver:Barrage}{}}\label{maneuver:Barrage}
+\hypertarget{maneuver:Barrage}{}
+\begin{freeability}[Rank 4]{Barrage}[]
+\targets{As chosen \glossterm{strikes} (see text)}
+Make two ranged \glossterm{strikes}.
+You take a \minus4 penalty to accuracy and a \minus1d penalty to damage on both strikes.
+For each previous round that you used this ability without moving, you reduce the accuracy penalty by 1.
+
+\rankline
+\rank{6} You gain a \plus1 bonus to accuracy with both strikes.
+\rank{8} The accuracy bonus increases to \plus2.
+\parhead{Lists} Esoteric, Martial, Trick, Wild
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{maneuver:Deathblow}{}}\label{maneuver:Deathblow}
 \hypertarget{maneuver:Deathblow}{}
 \begin{freeability}[Rank 4]{Deathblow}[]
 \targets{As chosen \glossterm{strike}}
-Make a \glossterm{strike} with a \plus3d bonus to damage.
-If the strike's damage does not beat the target's \glossterm{vital resistance}, it has no effect.
+Make a \glossterm{strike} with a \plus2d bonus to damage.
+If the strike's damage does not beat the target's \glossterm{wound resistance}, it has no effect.
 
 \rankline
-\rank{6} The damage bonus increases to \plus4d.
-\rank{8} The damage bonus increases to \plus5d.
+\rank{6} The damage bonus increases to \plus3d.
+\rank{8} The damage bonus increases to \plus4d.
 \parhead{Lists} Esoteric, Martial, Primal
 \end{freeability}
 \vspace{0.25em}
@@ -899,12 +882,28 @@ If the strike's damage does not beat the target's \glossterm{vital resistance}, 
 \hypertarget{maneuver:Penetrating Shot}{}
 \begin{freeability}[Rank 4]{Penetrating Shot}[]
 \targets{Everything in a \arealarge, 5 ft.\ wide line from you}
-Make a ranged \glossterm{strike} against each target.
+Make a ranged \glossterm{strike} with a \minus1d penalty to damage against each target.
 
 \rankline
-\rank{6} You gain a \plus1d bonus to damage with the strike.
-\rank{8} The damage bonus increases to \plus2d.
+\rank{6} You gain a \plus1 bonus to \glossterm{accuracy} with the strike
+\rank{8} The accuracy bonus increases to \plus2.
 \parhead{Lists} Martial, Wild
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{maneuver:Rapid Assault}{}}\label{maneuver:Rapid Assault}
+\hypertarget{maneuver:Rapid Assault}{}
+\begin{freeability}[Rank 4]{Rapid Assault}[]
+\targets{As chosen \glossterm{strikes} (see text)}
+Make two melee \glossterm{strikes}.
+You take a \minus2 penalty to accuracy and a \minus2d penalty to damage on both strikes.
+
+\rankline
+\rank{6} The damage penalty is reduced to \minus1d.
+\rank{8} The damage penalty is removed.
+\parhead{Lists} Esoteric, Martial, Primal, Trick, Wild
 \end{freeability}
 \vspace{0.25em}
 
@@ -947,9 +946,8 @@ Make a \glossterm{strike} with a \plus1 bonus to \glossterm{accuracy} and a \plu
 \hypertarget{maneuver:Volley Fire}{}
 \begin{freeability}[Rank 4]{Volley Fire}[]
 \targets{Everything in a \areasmall radius within \rngmed range.}
-Make a ranged \glossterm{strike} using a projectile weapon against each target.
+Make a ranged \glossterm{strike} with a \minus1d penalty to damage using a projectile weapon against each target.
 This strike costs five projectiles.
-You take a \minus1 penalty to accuracy with the strike.
 
 \rankline
 \rank{6} You gain a \plus1d bonus to damage with the strike.
@@ -966,9 +964,8 @@ You take a \minus1 penalty to accuracy with the strike.
 \hypertarget{maneuver:Arrowstorm}{}
 \begin{freeability}[Rank 6]{Arrowstorm}[]
 \targets{Everything in a \areamed radius within \rngmed range.}
-Make a ranged \glossterm{strike} using a projectile weapon against each target.
+Make a ranged \glossterm{strike} with a \minus1d penalty to damage using a projectile weapon against each target.
 This strike costs five projectiles.
-You take a \minus1 penalty to accuracy with the strike.
 
 \rankline
 \rank{8} The range increases to \rnglong.
@@ -985,7 +982,7 @@ You take a \minus1 penalty to accuracy with the strike.
 \begin{freeability}[Rank 8]{Multistrike}[]
 \targets{As chosen \glossterm{strikes} (see text)}
 Make three melee \glossterm{strikes}.
-You take a \minus2 penalty to accuracy and a \minus2d penalty to damage on all three strikes.
+You take a \minus3 penalty to accuracy and a \minus3d penalty to damage on all three strikes.
 
 
 \parhead{Lists} Esoteric, Martial
