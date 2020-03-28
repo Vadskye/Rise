@@ -43,7 +43,7 @@ chronomancy=MysticSphere(
         """, tags=['Curse']),
         Spell('Curse of Temporal Dislocation', 4, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
-            \\hit At the end of each round, if the target lost a \\glossterm<hit point> that round, it has a 50\\% chance to be sent forward in time by one round.
+            \\hit At the end of each round, if the target took damage that round, it has a 50\\% chance to be sent forward in time by one round.
             At the end of the next round, it returns to its original location, or the closest open space if that location is occupied.
             This effect lasts until the target takes a \\glossterm<short rest>.
             \\crit As above, except that the effect lasts until the curse is removed.

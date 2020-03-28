@@ -35,12 +35,12 @@ terramancy=MysticSphere(
             You extract a Tiny chunk from a body of earth or unworked stone within 5 feet of you and blast it at your foes.
             If no such chunk can be extracted, this spell is \\glossterm<miscast>.
             Otherwise, make an attack vs. Armor against each target.
-            \\hit Each target takes bludgeoning and piercing \\glossterm<standard damage>.
+            \\hit Each target takes bludgeoning and piercing \\glossterm<standard damage> -1d.
 
             \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<3> The damage increases to \\glossterm<standard damage>.
+            \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
         """, tags=['Manifestation']),
         Spell('Earthcraft', 1, 'One body of earth or unworked stone within 5 feet of you', """
             You create a weapon or suit of armor from the target.
@@ -104,15 +104,15 @@ terramancy=MysticSphere(
         Spell('Fissure', 5, 'Everything in a \\areamed radius within \\rngmed range that is standing on earth or unworked stone', """
             You create an intense but highly localized tremor that rips through the ground.
             Make an attack vs. Reflex against each target.
-            \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
+            \\hit Each target takes bludgeoning \\glossterm<standard damage> -2d.
             Ecah Large or smaller target is also knocked \\glossterm<prone>.
 
             \\rankline
-            \\rank<7> The damage increases to \\glossterm<standard damage>.
+            \\rank<7> The damage increases to \\glossterm<standard damage> -1d.
         """, tags=[]),
         Spell('Earthquake', 3, '\\glossterm<Enemies> in a \\areamed radius from you that are standing on earth or unworked stone', """
             Make an attack vs. Reflex against each target.
-            \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
+            \\hit Each target takes bludgeoning \\glossterm<standard damage> -2d.
             Ecah Large or smaller target is also knocked \\glossterm<prone>.
 
             \\rankline

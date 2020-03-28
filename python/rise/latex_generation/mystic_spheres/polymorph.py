@@ -219,13 +219,13 @@ polymorph=MysticSphere(
         Spell('Bleed', 4, 'One living creature within \\rngclose range', """
             Make an attack vs. Fortitude against the target.
             \\hit As a \\glossterm<condition>, the target begins bleeding.
-            At the end of each round, it takes physical \\glossterm<standard damage> -1d.
-            This damage cannot inflict a \\glossterm<vital wound>, even if the target has no \\glossterm<hit points> remaining.
-            \\crit As above, except that the damage can inflict a \\glossterm<vital wound>.
+            At the end of each round, it takes physical \\glossterm<standard damage> -2d.
+            This damage is \\glossterm<subdual damage> (see \\pcref<Subdual Damage>).
+            \\crit As above, except that the damage is not \\glossterm<subdual damage>.
 
             \\rankline
-            \\rank<6> The damage increases to \\glossterm<standard damage>.
-            \\rank<8> The damage increases to \\glossterm<standard damage> +1.
+            \\rank<6> The damage increases to \\glossterm<standard damage> -1d.
+            \\rank<8> The damage increases to \\glossterm<standard damage>.
         """, tags=[]),
         Spell('Camouflage', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
             The target gains a +3 \\glossterm<magic bonus> to the Stealth skill.

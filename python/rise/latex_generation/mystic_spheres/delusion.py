@@ -63,8 +63,7 @@ delusion=MysticSphere(
             \\hit The target is inflicted with agonizing pain as a \\glossterm<condition>.
             It takes a -2 penalty to Mental defense.
             % Does this need to clarify that it takes effect in the round the spell was cast?
-            In addition, at the end of each \\glossterm<round>, if the target took damage that round, it takes \\glossterm<standard damage> -3d.
-            This damage is of all damage types that the target was damaged by during that round.
+            In addition, at the end of each \\glossterm<round>, if the target was \\glossterm<wounded> that round, it loses a \\glossterm<hit point>.
         """, tags=['Emotion']),
         Spell('Redirected Terror', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.

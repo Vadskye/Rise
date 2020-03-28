@@ -50,11 +50,11 @@ verdamancy=MysticSphere(
             % More accurate version: the acorn has a range increment of 10 feet to hit its target, but that accuracy roll is completely independent of the explosion.
             % Doesn't seem worth the complexity, and implicitly gives the fire seed surprisingly long range since objects are easy to hit.
             On impact, the acorn detonates, and you make an attack vs. Armor against everything within a \\areasmall radius of the struck creature or object.
-            \\hit Each target takes fire \\glossterm<standard damage>.
+            \\hit Each target takes fire \\glossterm<standard damage> -1d.
 
             \\rankline
-            \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
+            \\rank<5> The damage increases to \\glossterm<standard damage>.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
         """, tags=['Sustain (free)']),
         Spell('Wall of Thorns', 3, 'Each creature that moves through the area (see text)', """
             You create a wall of thorns in 20 ft.\\ high, \\areamed \\glossterm<wall> within \\rngmed range.
@@ -129,15 +129,15 @@ verdamancy=MysticSphere(
         """, tags=['Attune (self)']),
         Spell('Thornblade', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
             All damage the target deals with \\glossterm<strikes> becomes piercing damage in addition to the attack's normal damage types.
-            Whenever the target deals damage to a creature with a \\glossterm<strike>, thorns from the striking weapon enter the target's body.
-            As a \\glossterm<condition>, the damaged creature takes piercing \\glossterm<standard damage> -2d at the end of each round.
+            Whenever the target \\glossterm<wounds> a creature with a \\glossterm<strike>, thorns from the striking weapon enter the target's body.
+            As a \\glossterm<condition>, the target unable to heal the \\glossterm<hit points> lost to the attack.
 
             This condition can be removed by the \\textit<treat condition> ability (see \\pcref<Treat Condition>).
             The \\glossterm<difficulty rating> of the check is equal to 5 \\add your \\glossterm<power>.
 
             \\rankline
-            \\rank<5> The damage increases to \\glossterm<standard damage> -1d.
-            \\rank<7> The damage increases to \\glossterm<standard damage>.
+            \\rank<5> The difficulty rating of the check to remove the condition increases to 15 \\add your \\glossterm<power>.
+            \\rank<7> The condition cannot be removed without taking a \\glossterm<short rest>.
         """, tags=['Attune (target)']),
         Spell('Verdant Armor', 1, 'Yourself', """
             When you cast this spell, you choose a type of armor you are proficient with that is not normally made from metal.

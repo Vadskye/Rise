@@ -53,16 +53,16 @@ aquamancy=MysticSphere(
         """, tags=['Manifestation']),
         Spell('Crushing Wave', 1, 'Everything in a \\areamed, 10 ft.\\ wide line from you', """
             Make an attack vs. Reflex against each target.
-            \\hit Each target takes bludgeoning \\glossterm<standard damage>.
+            \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
 
             \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<3> The damage increases to \\glossterm<standard damage>.
+            \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
         """, tags=['Manifestation']),
         Spell('Great Flood', 3, 'Everything in a \\arealarge, 10 ft.\\ wide line from you', """
             Make an attack vs. Reflex against each target.
-            \\hit Each target takes bludgeoning \\glossterm<standard damage>.
+            \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
 
             \\rankline
             \\rank<5> The area increases to a \\areahuge, 10 ft.\\ wide line from you.
@@ -81,12 +81,12 @@ aquamancy=MysticSphere(
         """, tags=['Manifestation']),
         Spell('Fountain', 1, '\\glossterm<Enemies> within a \\areasmall radius from you', """
             Make an attack vs. Armor against each target.
-            \\hit Each target takes bludgeoning \\glossterm<standard damage>.
+            \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
 
             \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<3> The damage increases to \\glossterm<standard damage>.
+            \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
         """, tags=['Manifestation']),
         Spell('Wall of Water', 4, None, """
             You create a wall of water in a 20 ft.\\ high, \\arealarge line within \\rngmed range.
@@ -113,7 +113,7 @@ aquamancy=MysticSphere(
         """, tags=['Attune (target)']),
         Spell('Raging River', 3, 'Everything in a \\arealarge, 10 ft. wide line from you', """
             Make an attack vs. Fortitude against each target.
-            \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d and is \\glossterm<pushed> 20 feet in the direction the line points away from you.
+            \\hit Each target takes bludgeoning \\glossterm<standard damage> -2d and is \\glossterm<pushed> 20 feet in the direction the line points away from you.
             Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
 
             \\rankline
@@ -124,11 +124,11 @@ aquamancy=MysticSphere(
         Spell('Geyser', 3, 'Everything in a \\arealarge, 5 ft.\\ wide vertical line within \\rngmed range', """
             Make an attack vs. Armor against each target.
             If this spell has its area increased, such as with the Widened \\glossterm<augment>, only the length of the line increases.
-            \\hit Each target takes takes bludgeoning \\glossterm<standard damage> +1d.
+            \\hit Each target takes takes bludgeoning \\glossterm<standard damage>.
 
             \\rankline
-            \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
         """, tags=['Manifestation']),
         Spell('Rainstorm', 3, 'Everything in the area (see text)', f"""
             Torrential rain begins falling out of thin air within a \\arealarge radius \\glossterm<zone> from your location.

@@ -54,15 +54,15 @@ weaponcraft=MysticSphere(
         Spell('Bladestorm', 3, '\\glossterm<Enemies> adjacent to you', """
             This spell does not have the \\glossterm<Focus> tag.
             Make an attack vs. Armor against each target.
-            \\hit Each target takes slashing \\glossterm<standard damage>.
+            \\hit Each target takes slashing \\glossterm<standard damage> -1d.
 
             \\rankline
-            \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
+            \\rank<5> The damage increases to \\glossterm<standard damage>.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
         """, tags=['Manifestation'], focus=False),
         Spell('Missile Storm', 3, '\\glossterm<Enemies> in a \\areamed radius from you', """
             Make an attack vs. Armor against each target.
-            \\hit Each target takes piercing \\glossterm<standard damage>.
+            \\hit Each target takes piercing \\glossterm<standard damage> -1d.
 
             \\rankline
             \\rank<6> The area increases to a \\arealarge radius.
@@ -70,11 +70,11 @@ weaponcraft=MysticSphere(
         """, tags=['Manifestation']),
         Spell('Hail of Arrows', 4, 'Everything in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Armor against each target.
-            \\hit Each target takes piercing \\glossterm<standard damage>.
+            \\hit Each target takes piercing \\glossterm<standard damage> -1d.
 
             \\rankline
-            \\rank<6> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<8> The damage increases to \\glossterm<standard damage> +2d.
+            \\rank<6> The damage increases to \\glossterm<standard damage>.
+            \\rank<8> The damage increases to \\glossterm<standard damage> +1d.
         """, tags=['Manifestation']),
         Spell('Blade Barrier', 3, 'Each creature that moves through the area (see text)', """
             A wall of whirling blades appears within \\rngmed range.
@@ -101,23 +101,22 @@ weaponcraft=MysticSphere(
             \\rank<8> After the wall shrinks to have no radius, it begins expanding again at a rate of 5 feet per round.
             Once it expands back to its maximum radius, it begins shrinking again.
         """, tags=['Sustain (minor)']),
-        Spell('Summon Weapon', 1, 'One unoccupied square within \\rngmed range', """
-            A melee weapon that you are proficient with appears in the target location.
-            The weapon floats about three feet off the ground, and is sized appropriately for a creature of your size.
-            The specific weapon you choose affects the type of damage it deals.
-            Regardless of the appearance and size chosen, the creature's statistics use the values below.
+        Spell('Summon Club', 1, 'One unoccupied square within \\rngmed range', """
+            A creature in the shape of a club appears in the target location.
+            The weapon floats about three feet off the ground, and is sized appropriately to be wielded by a creature of your size.
+            The creature's statistics use the values below.
             If a summoned weapon gains a \\glossterm<vital wound> or has no hit points remaining at the end of a phase, it disappears.
             \\begin<itemize>
                 \\item Its \\glossterm<damage resistance> and \\glossterm<vital resistance> are equal to the base values for your level (see \\pcref<Character Advancement>).
-                \\item Its \\glossterm<hit points> are equal to 3.
+                \\item It has 8 \\glossterm<hit points>.
                 \\item Each of its \\glossterm<defenses> is equal to 4 \\add your level.
-                \\item Its \\glossterm<accuracy> is equal to your level \\add half your base Perception.
+                \\item Its \\glossterm<accuracy> is equal to your level \\add half your base Perception \\sub 2.
                 \\item Its \\glossterm<power> with its attacks is equal to your \\glossterm<power> \\sub 2.
                 \\item Its \\glossterm<fly speed> is 30 feet, with good \\glossterm<maneuverability>.
                 \\item It has no \\glossterm<action points>.
             \\end<itemize>
 
-            Each round, the weapon automatically moves towards the creature closest to it during the \\glossterm<movement phase>.
+            Each round, the weapon automatically moves towards the creature closest to it during the \\glossterm<movement phase>, following that creature to the best of its abilities.
             During the \\glossterm<action phase>, it makes a melee \\glossterm<strike> against a random creature adjacent to it.
             If it hits, it deals \\glossterm<standard damage>.
 
@@ -127,15 +126,15 @@ weaponcraft=MysticSphere(
             \\rank<7> The damage dealt by the weapon increases to \\glossterm<standard damage> +2d.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Aerial Weapon', 3, 'One unoccupied square within \\rngmed range', """
-            This spell functions like the \\spell<summon weapon> spell, except that the weapon's maximum height above the ground is increased to 100 feet.
+            This spell functions like the \\spell<summon club> spell, except that the weapon's maximum height above the ground is increased to 100 feet.
             This allows the weapon to fly up to fight airborne foes.
 
             \\rankline
             \\rank<5> The damage dealt by the weapon increases to \\glossterm<standard damage>.
             \\rank<7> The weapon has no maximum height above the ground.
         """, tags=['Manifestation', 'Sustain (minor)']),
-        Spell('Create Ballista', 3, 'One unoccupied square within \\rngmed range', """
-            This spell functions like the \\spell<summon weapon> spell, except that it creates a fully functional Large ballista instead of a weapon of your choice.
+        Spell('Summon Ballista', 3, 'One unoccupied square within \\rngmed range', """
+            This spell functions like the \\spell<summon club> spell, except that it creates a fully functional Large ballista instead of a club.
             The ballista functions like any other weapon, with the following exceptions.
 
             It cannot move, and makes ranged \\glossterm<strikes> instead of melee strikes.
@@ -148,7 +147,7 @@ weaponcraft=MysticSphere(
             It canot fire at the same target twice.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Giant Blade', 4, 'One unoccupied square within \\rngmed range', """
-            This spell functions like the \\spell<summon weapon> spell, except that the weapon takes the form of a Large greatsword.
+            This spell functions like the \\spell<summon club> spell, except that the weapon takes the form of a Large greatsword.
             The weapon's attacks hit everything in a \\areasmall cone from it.
             It aims the cone to hit as many creatures as possible.
 
@@ -157,12 +156,12 @@ weaponcraft=MysticSphere(
             \\rank<8> The damage dealt by the weapon increases to \\glossterm<standard damage> +1d.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Titan Blade', 7, 'One unoccupied square within \\rngmed range', """
-            This spell functions like the \\spell<summon weapon> spell, except that the weapon takes the form of a Gargantuan greatsword.
+            This spell functions like the \\spell<summon club> spell, except that the weapon takes the form of a Gargantuan greatsword.
             The weapon's attacks hit everything in a \\areamed cone from it.
             It aims the cone to hit as many creatures as possible.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Paired Weapons', 8, 'One unoccupied square within \\rngmed range', """
-            This spell functions like the \\spell<summon weapon> spell, except that you summon two weapons instead of one.
+            This spell functions like the \\spell<summon club> spell, except that you summon two weapons instead of one.
             Each weapon attacks independently.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Shieldbearer', 1, 'Yourself', """

@@ -50,11 +50,11 @@ pyromancy=MysticSphere(
         """, tags=[], focus=False),
         Spell('Fireball', 3, 'Everything in a \\areasmall radius within \\rngclose range', """
             Make an attack vs. Armor against each target.
-            \\hit Each target takes fire \\glossterm<standard damage>.
+            \\hit Each target takes fire \\glossterm<standard damage> -1d.
 
             \\rankline
-            \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
+            \\rank<5> The damage increases to \\glossterm<standard damage>.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
         """, tags=[]),
         Spell('Firebolt', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Armor against the target.
@@ -67,12 +67,12 @@ pyromancy=MysticSphere(
         """, tags=[]),
         Spell('Cone of Fire', 1, 'Everything in a \\areamed cone from you', f"""
             Make an attack vs. Armor against each target.
-            \\hit Each target takes fire \\glossterm<standard damage>.
+            \\hit Each target takes fire \\glossterm<standard damage> -1d.
 
             \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<3> The damage increases to \\glossterm<standard damage>.
+            \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
         """, tags=[]),
         Spell('Ignition', 4, 'One creature within \\rngmed range', f"""
             Make an attack vs. Reflex against the target.
@@ -128,7 +128,7 @@ pyromancy=MysticSphere(
         # spells like most spheres do.
         Spell('Inferno', 1, 'Everything in a \\areamed radius from you', """
             Make an attack vs. Armor against each target.
-            \\hit Each target takes fire \\glossterm<standard damage>.
+            \\hit Each target takes fire \\glossterm<standard damage> -1d.
 
             \\rankline
             \\rank<3> The area increases to a \\arealarge radius.
@@ -137,7 +137,7 @@ pyromancy=MysticSphere(
         """, tags=[]),
         Spell('Flame Serpent', 3, 'Everything in a \\areamed, 5 ft.\\ wide shapeable line within \\rngmed range', f"""
             Make an attack vs. Armor against each target.
-            \\hit Each target takes fire \\glossterm<standard damage>.
+            \\hit Each target takes fire \\glossterm<standard damage> -1d.
 
             \\rankline
             \\rank<5> The area increases to a \\arealarge, 5 ft.\\ wide shapeable line.
