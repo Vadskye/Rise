@@ -28,7 +28,7 @@ spells=[
     """, tags=[]),
     Spell('Lightning Bolt', 1, 'Everything in a \\areamed, 10 ft.\\ wide line from you', """
         Make an attack vs. Reflex against each target.
-        \\hit Each target takes electricity \\glossterm<standard damage>.
+        \\hit Each target takes electricity \\glossterm<standard damage> -1d.
 
         \\rankline
         \\rank<3> The area increases to a \\arealarge, 10 ft.\\ wide line from you
@@ -49,16 +49,16 @@ spells=[
     """, tags=[], focus=False),
     Spell('Discharge', 1, '\\glossterm<Enemies> and objects in a \\areasmall radius from you', """
         Make an attack vs. Reflex against each target.
-        \\hit Each target takes electricity \\glossterm<standard damage>.
+        \\hit Each target takes electricity \\glossterm<standard damage> -1d.
 
         \\rankline
-        \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
-        \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
-        \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
+        \\rank<3> The damage increases to \\glossterm<standard damage>.
+        \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
+        \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
     """, tags=[]),
     Spell('Lightning Storm', 3, '\\glossterm<Enemies> and objects in a \\areamed radius from you', """
         Make an attack vs. Reflex against each target.
-        \\hit Each target takes electricity \\glossterm<standard damage>.
+        \\hit Each target takes electricity \\glossterm<standard damage> -1d.
 
         \\rankline
         \\rank<5> The area increases to a \\arealarge radius.
@@ -67,11 +67,11 @@ spells=[
     Spell('Electromagnetic Bolt', 4, 'Everything in a \\arealarge, 10 ft.\\ wide line from you', """
         Make an attack vs. Reflex against each target.
         You gain a +2 bonus to accuracy against each target that is wearing metal armor or otherwise carrying or composed of a significant amount of metal.
-        \\hit Each target takes electricity \\glossterm<standard damage>.
+        \\hit Each target takes electricity \\glossterm<standard damage> -1d.
 
         \\rankline
-        \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
-        \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
+        \\rank<5> The damage increases to \\glossterm<standard damage>.
+        \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
     """, tags=[]),
     Spell('Magnetic Blade', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
         Metal weapons wielded by the target gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
@@ -103,12 +103,12 @@ spells=[
         Make an attack vs. Reflex against each target.
         If you are outdoors in cloudy or stormy weather, you gain a +2 bonus to \\glossterm<accuracy> with the attack.
         If this spell has its area increased, such as with the Widened \\glossterm<augment>, only the length of the line increases.
-        \\hit Each target takes takes electricity \\glossterm<standard damage> +1d.
+        \\hit Each target takes takes electricity \\glossterm<standard damage>.
 
 
         \\rankline
-        \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
-        \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
+        \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
+        \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
     """, tags=[]),
     Spell('Energize', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
         The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<base speed>, up to a maximum of double its \\glossterm<base speed>.
@@ -134,7 +134,7 @@ spells=[
         The ball of lightning does not occupy space or block movement, and can move through creatures (but not solid objects) freely.
         As a \\glossterm<move action>, you can move the ball up to 30 feet in any direction, even vertically.
         At the end of each round, if the ball is more than 100 feet from you, it disappears and this effect ends.
-        Otherwise, make an attack vs. Reflex against everything in its space.
+        Otherwise, make an attack vs. Reflex with a -2 penalty to accuracy against everything in its space.
         \\hit Each target in the ball's space takes electricity \\glossterm<standard damage> -2d.
 
         \\rankline

@@ -35,12 +35,12 @@ fabrication=MysticSphere(
         """, tags=['Manifestation']),
         Spell('Cone of Acid', 1, 'Everything in a \\areamed cone from you', """
             Make an attack vs. Armor against each target.
-            \\hit Each target takes acid \\glossterm<standard damage>.
+            \\hit Each target takes acid \\glossterm<standard damage> -1d.
 
             \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<3> The damage increases to \\glossterm<standard damage>.
+            \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
         """, tags=['Manifestation']),
         Spell('Acid Breath', 4, ['Yourself', 'Everything within a \\arealarge cone'], """
             As a standard action, you can breathe acid like a dragon.
@@ -64,11 +64,11 @@ fabrication=MysticSphere(
         """, tags=['Manifestation']),
         Spell('Acid Rain', 4, 'Everything in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Armor against each target.
-            \\hit Each target takes acid \\glossterm<standard damage>.
+            \\hit Each target takes acid \\glossterm<standard damage> -1d.
 
             \\rankline
-            \\rank<6> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<8> The damage increases to \\glossterm<standard damage> +2d.
+            \\rank<6> The damage increases to \\glossterm<standard damage>.
+            \\rank<8> The damage increases to \\glossterm<standard damage> +1d.
         """, tags=['Manifestation']),
         Spell('Forge', 1, 'One unoccupied square within \\rngclose range', """
             Choose a type of body armor, weapon, or shield that you are proficient with.
@@ -91,11 +91,11 @@ fabrication=MysticSphere(
             The meteor takes up a \\areasmall radius, and must be created in unoccupied space.
             After being summoned, it falls up to 100 feet before disappearing.
             Make an attack vs. Armor against everything in its path.
-            \\hit Each target takes bludgeoning and fire \\glossterm<standard damage>.
+            \\hit Each target takes bludgeoning and fire \\glossterm<standard damage> -1d.
 
             \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
+            \\rank<3> The damage increases to \\glossterm<standard damage>.
+            \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
         """, tags=['Manifestation']),
         Spell('Meteor Swarm', 8, 'Special', f"""
             You create up to five meteors in midair within \\rnglong range that each fall to the ground, crushing foes in their paths.
@@ -105,7 +105,7 @@ fabrication=MysticSphere(
 
             After being summoned, each meteor falls up to 100 feet before disappearing.
             Make an attack vs. Armor against everything in the path of any meteor.
-            \\hit Each target takes bludgeoning and fire \\glossterm<standard damage>.
+            \\hit Each target takes bludgeoning and fire \\glossterm<standard damage> -1d.
         """, tags=['Manifestation']),
         Spell('Web', 3, 'All Large or smaller creatures in the area (see text)', """
             You fill a \\areasmall radius \\glossterm<zone> within \\rngclose range with webs.
