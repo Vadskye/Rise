@@ -127,11 +127,11 @@ telekinesis=MysticSphere(
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=[]),
         Spell('Animated Weapon', 4, 'Yourself', """
-            As a \\glossterm<minor action>, you can make a \\glossterm<magical strike> with a -2 penalty to \\glossterm<accuracy> and a -2d penalty to damage.
+            As a \\glossterm<minor action>, you can make a \\glossterm<magical strike> with a -4 penalty to \\glossterm<accuracy> and a -2d penalty to damage.
 
             \\rankline
-            \\rank<6> The damage penalty is reduced to -1d.
-            \\rank<8> The accuracy penalty is reduced to -1.
+            \\rank<6> The accuracy penalty is reduced to -3.
+            \\rank<8> The accuracy penalty is reduced to -2.
         """, tags=['Attune (self)']),
     ],
     category='debuff, combat',
