@@ -28,16 +28,16 @@ cryomancy=MysticSphere(
         """, tags=[], focus=False),
         Spell('Cone of Cold', 1, 'Everything in a \\areamed cone from you', """
             Make an attack vs. Fortitude against each target.
-            \\hit Each target takes cold \\glossterm<standard damage>.
+            \\hit Each target takes cold \\glossterm<standard damage> -1d.
 
             \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<3> The damage increases to \\glossterm<standard damage>.
+            \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
         """, tags=[]),
         Spell('Winterwave', 3, 'Everything in a \\arealarge cone from you', """
             Make an attack vs. Fortitude against each target.
-            \\hit Each target takes cold \\glossterm<standard damage>.
+            \\hit Each target takes cold \\glossterm<standard damage> -1d.
 
             \\rankline
             \\rank<5> The area increases to a \\areahuge cone.
@@ -53,15 +53,15 @@ cryomancy=MysticSphere(
         """, tags=[]),
         Spell('Hailstorm', 4, 'Everything in a \\areasmall radius within \\rngclose range', """
             Make an attack vs. Armor against each target.
-            \\hit Each target takes cold and bludgeoning \\glossterm<standard damage>.
+            \\hit Each target takes cold and bludgeoning \\glossterm<standard damage> -1d.
 
             \\rankline
-            \\rank<6> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<8> The damage increases to \\glossterm<standard damage> +2d.
+            \\rank<6> The damage increases to \\glossterm<standard damage>.
+            \\rank<8> The damage increases to \\glossterm<standard damage> +1d.
         """, tags=[]),
         Spell('Blizzard', 1, '\\glossterm<Enemies> and objects in a \\areasmall radius from you', """
             Make an attack vs. Fortitude against each target.
-            \\hit Each target takes cold \\glossterm<standard damage>.
+            \\hit Each target takes cold \\glossterm<standard damage> -1d.
 
             \\rankline
             \\rank<3> The area increases to a \\areamed radius.
@@ -117,7 +117,8 @@ cryomancy=MysticSphere(
         Spell('Frostburn', 6, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit As a \\glossterm<condition>, the target is seared by painful cold.
-            At the end of each round, it takes cold \\glossterm<standard damage> -1d per round since it became affectd by this condition.
+            At the end of each round, it takes cold \\glossterm<standard damage> -1d per round since it became affected by this condition.
+            If this damage fails to \\glossterm<wound> the target, the condition is removed.
 
             \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=[]),

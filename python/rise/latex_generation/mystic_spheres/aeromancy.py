@@ -103,7 +103,7 @@ aeromancy = MysticSphere(
         """, tags=['Attune (self)']),
         Spell('Gust of Wind', 3, 'Everything in a \\arealarge, 10 ft. wide line from you', """
             Make an attack vs. Fortitude against each target.
-            \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d and is \\glossterm<pushed> 20 feet in the direction the line points away from you.
+            \\hit Each target takes bludgeoning \\glossterm<standard damage> -2d and is \\glossterm<pushed> 20 feet in the direction the line points away from you.
             Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
 
             \\rankline
@@ -167,15 +167,15 @@ aeromancy = MysticSphere(
         """, tags=['Attune (self)']),
         Spell('Cyclone', 3, 'Everything in a \\areasmall radius within \\rngclose range', """
             Make an attack vs. Armor against each target.
-            \\hit Each target takes bludgeoning \\glossterm<standard damage>.
+            \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
 
             \\rankline
-            \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
+            \\rank<5> The damage increases to \\glossterm<standard damage>.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
         """, tags=[]),
         Spell('Buffeting Hurricane', 4, '\\glossterm<Enemies> in a \\areamed radius from you', """
             Make an attack vs. Fortitude against each target.
-            \\hit Each target takes bludgeoning \\glossterm<standard damage> and is moved 20 feet clockwise around you.
+            \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d and is moved 20 feet clockwise around you.
             Each target's final position should be the same distance from you as its starting position.
 
             \\rankline

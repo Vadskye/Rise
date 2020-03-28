@@ -42,16 +42,16 @@ channel_divinity=MysticSphere(
         """, tags=[]),
         Spell('Word of Faith', 1, '\\glossterm<Enemies> in a \\areasmall radius from you', """
             Make an attack vs. Mental against each target.
-            \\hit Each target takes energy \\glossterm<standard damage>.
+            \\hit Each target takes energy \\glossterm<standard damage> -1d.
 
             \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<3> The damage increases to \\glossterm<standard damage>.
+            \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
         """, tags=[]),
         Spell('Proclamation', 3, '\\glossterm<Enemies> in a \\areamed radius from you', """
             Make an attack vs. Mental against each target.
-            \\hit Each target takes energy \\glossterm<standard damage>.
+            \\hit Each target takes energy \\glossterm<standard damage> -1d.
 
             \\rankline
             \\rank<5> The area increases to a \\arealarge radius.

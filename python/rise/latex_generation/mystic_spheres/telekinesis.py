@@ -36,21 +36,21 @@ telekinesis=MysticSphere(
         """, tags=[]),
         Spell('Force Lance', 1, 'Everything in a \\areamed, 10 ft.\\ wide line from you', """
             Make an attack vs. Armor against each target.
-            \\hit Each target takes piercing \\glossterm<standard damage>.
+            \\hit Each target takes piercing \\glossterm<standard damage> -1d.
 
             \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<3> The damage increases to \\glossterm<standard damage>.
+            \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
         """, tags=[]),
         Spell('Force Wave', 1, 'Everything in a \\areamed cone from you', """
             Make an attack vs. Armor against each target.
-            \\hit Each target takes bludgeoning \\glossterm<standard damage>.
+            \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
 
             \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<3> The damage increases to \\glossterm<standard damage>.
+            \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
         """, tags=[]),
         Spell('Force Extension', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
             Melee weapons wielded by the target gain +5 foot \\glossterm<magic bonus> to \\glossterm<reach>.
