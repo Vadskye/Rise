@@ -223,10 +223,10 @@ def generate_maneuvers():
             Make two melee \\glossterm<strikes>.
             You take a -2 penalty to accuracy and a -2d penalty to damage on both strikes.
         """,
+        rank=4,
         rank_upgrades={
-            '3': 'The accuracy penalty is reduced to -1.',
-            '5': 'The damage penalty is reduced to -1d.',
-            '7': 'The accuracy and damage penalties are removed.',
+            '6': 'The damage penalty is reduced to -1d.',
+            '8': 'The damage penalty is removed.',
         },
         tags=[],
         lists=['Primal', 'Martial', 'Wild', 'Trick', 'Esoteric'],
@@ -240,12 +240,12 @@ def generate_maneuvers():
             Move up to half your movement speed in a straight line.
             You can make a melee \\glossterm<strike> with a slashing or bludgeoning weapon.
             The strike targets any number of creatures and objects within your \\glossterm<reach> at any point during your movement, except for the space you start in and the space you end in.
-            You take a -2 penalty to \\glossterm<accuracy> with the strike.
+            You take a -2d penalty to damage with the strike.
         """,
         rank_upgrades={
-            '3': 'The accuracy penalty is reduced to -1.',
+            '3': 'The damage penalty is reduced to -1d.',
             '5': 'You can move up to your full movement speed instead of at half speed.',
-            '7': 'The accuracy penalty is removed.',
+            '7': 'The damage penalty is removed.',
         },
         tags=[],
         lists=['Primal', 'Martial', 'Wild', 'Esoteric'],
@@ -273,12 +273,12 @@ def generate_maneuvers():
         short_description='Make strikes against nearby foes',
         target="Up to three creatures or objects within \\glossterm<reach> (see text)",
         effect_text="""
-            Make a melee \\glossterm<strike> with a slashing or bludgeoning weapon against each target.
+            Make a melee \\glossterm<strike> with a -1d penalty to damage using a slashing or bludgeoning weapon against each target.
         """,
         rank_upgrades={
-            '3': 'You gain a +1d bonus to damage with the strike.',
-            '5': 'The damage bonus increases to +2d.',
-            '7': 'The damage bonus increases to +3d.',
+            '3': 'The damage penalty is removed.',
+            '5': 'You gain a +1d bonus to damage with the strike.',
+            '7': 'The damage bonus increases to +2d.',
         },
         tags=[],
         lists=['Primal', 'Martial', 'Wild', 'Esoteric'],
@@ -290,11 +290,11 @@ def generate_maneuvers():
         target="Everything in a \\areamed cone from you",
         effect_text="""
             Make an attack vs. Fortitude against each target.
-            \\hit Each target takes energy \\glossterm<standard damage>.
+            \\hit Each target takes energy \\glossterm<standard damage> -1d.
         """,
         rank_upgrades={
-            '5': 'The damage increases to \\glossterm<standard damage> +1d.',
-            '7': 'The damage increases to \\glossterm<standard damage> +2d.',
+            '5': 'You gain a +1 bonus to accuracy with the attack.',
+            '7': 'The accuracy bonus increases to +2.',
         },
         rank=3,
         tags=[],
@@ -307,7 +307,7 @@ def generate_maneuvers():
         target="All \\glossterm<enemies> within \\glossterm<reach>",
         effect_text="""
             Make a melee \\glossterm<strike> using a slashing weapon against each target.
-            You take a -1 penalty to \\glossterm<accuracy> with the strike.
+            You take a -1d penalty to damage with the strike.
         """,
         rank_upgrades={
             '3': """
@@ -773,13 +773,13 @@ def generate_maneuvers():
         target="As chosen \\glossterm<strikes> (see text)",
         effect_text="""
             Make two ranged \\glossterm<strikes>.
-            You take a -4 penalty to accuracy on both strikes.
+            You take a -4 penalty to accuracy and a -1d penalty to damage on both strikes.
             For each previous round that you used this ability without moving, you reduce the accuracy penalty by 1.
         """,
-        rank=3,
+        rank=4,
         rank_upgrades={
-            '5': 'You gain a +1 bonus to accuracy with both strikes.',
-            '7': 'The accuracy bonus increases to +2.',
+            '6': 'You gain a +1 bonus to accuracy with both strikes.',
+            '8': 'The accuracy bonus increases to +2.',
         },
         tags=[],
         lists=['Martial', 'Wild', 'Trick', 'Esoteric'],
@@ -807,7 +807,7 @@ def generate_maneuvers():
         short_description='Make a thrown strike that hits multiple targets',
         target="Up to three creatures or objects in a \\areasmall radius within \\rngclose range (see text)",
         effect_text="""
-            Make a thrown \\glossterm<strike> using a single weapon that deals slashing or bludgeoning damage against each target.
+            Make a thrown \\glossterm<strike> with a -1d penalty to damage using a single weapon that deals slashing or bludgeoning damage against each target.
             If you choose yourself as one of the targets, you can catch the weapon instead of taking damage from it.
         """,
         rank=3,
@@ -824,13 +824,13 @@ def generate_maneuvers():
         short_description='Make a powerful strike that cannot inflict minor damage',
         target="As chosen \\glossterm<strike>",
         effect_text="""
-            Make a \\glossterm<strike> with a +3d bonus to damage.
-            If the strike's damage does not beat the target's \\glossterm<vital resistance>, it has no effect.
+            Make a \\glossterm<strike> with a +2d bonus to damage.
+            If the strike's damage does not beat the target's \\glossterm<wound resistance>, it has no effect.
         """,
         rank=4,
         rank_upgrades={
-            '6': 'The damage bonus increases to +4d.',
-            '8': 'The damage bonus increases to +5d.',
+            '6': 'The damage bonus increases to +3d.',
+            '8': 'The damage bonus increases to +4d.',
         },
         tags=[],
         lists=['Esoteric', 'Martial', 'Primal'],
@@ -877,9 +877,8 @@ def generate_maneuvers():
         short_description='Fire a flurry of projectiles to blanket an area',
         target="Everything in a \\areasmall radius within \\rngmed range.",
         effect_text="""
-            Make a ranged \\glossterm<strike> using a projectile weapon against each target.
+            Make a ranged \\glossterm<strike> with a -1d penalty to damage using a projectile weapon against each target.
             This strike costs five projectiles.
-            You take a -1 penalty to accuracy with the strike.
         """,
         rank=4,
         rank_upgrades={
@@ -896,9 +895,8 @@ def generate_maneuvers():
         target='Everything in a \\areamed radius within \\rngmed range.',
         rank=6,
         effect_text="""
-            Make a ranged \\glossterm<strike> using a projectile weapon against each target.
+            Make a ranged \\glossterm<strike> with a -1d penalty to damage using a projectile weapon against each target.
             This strike costs five projectiles.
-            You take a -1 penalty to accuracy with the strike.
         """,
         rank_upgrades={
             '8': 'The range increases to \\rnglong.',
@@ -913,11 +911,11 @@ def generate_maneuvers():
         target='Everything in a \\arealarge, 5 ft.\\ wide line from you',
         rank=4,
         effect_text="""
-            Make a ranged \\glossterm<strike> against each target.
+            Make a ranged \\glossterm<strike> with a -1d penalty to damage against each target.
         """,
         rank_upgrades={
-            '6': 'You gain a +1d bonus to damage with the strike.',
-            '8': 'The damage bonus increases to +2d.',
+            '6': 'You gain a +1 bonus to \\glossterm<accuracy> with the strike',
+            '8': 'The accuracy bonus increases to +2.',
         },
         tags=[],
         lists=['Martial', 'Wild'],
@@ -947,13 +945,13 @@ def generate_maneuvers():
         short_description='Slam your weapon into the ground to deal damage in a line',
         target='Everything on the ground in a \\areamed, 10 ft. wide line from you',
         effect_text="""
-            Make a melee \\glossterm<strike> with a bludgeoning weapon against each target.
+            Make a melee \\glossterm<strike> with a -1d penalty to damage using a bludgeoning weapon against each target.
             All damage dealt by this attack is bludgeoning damage instead of its normal types.
         """,
         rank=3,
         rank_upgrades={
-            '5': 'You gain a +1d bonus to damage with the strike.',
-            '7': 'The damage bonus increases to +2d.',
+            '5': 'The damage penalty is removed.',
+            '7': 'You gain a +1d bonus to damage with the strike.',
         },
         tags=[],
         lists=['Martial', 'Primal'],
@@ -982,7 +980,7 @@ def generate_maneuvers():
         target="As chosen \\glossterm<strikes> (see text)",
         effect_text="""
             Make three melee \\glossterm<strikes>.
-            You take a -2 penalty to accuracy and a -2d penalty to damage on all three strikes.
+            You take a -3 penalty to accuracy and a -3d penalty to damage on all three strikes.
         """,
         rank=8,
         tags=[],
