@@ -158,7 +158,8 @@ aquamancy=MysticSphere(
         Spell('Aqueous Tentacles', 3, 'Yourself', """
             Each of your arms with a \\glossterm<free hand> is covered with watery tentacles that you can attack with.
             Each tentacle is a slam \\glossterm<natural weapon> (see \\tref<Natural Weapons>).
-            The tentacles have a \\glossterm<reach> of 10 feet, and any strikes with them are \\glossterm<magical strikes>.
+            The tentacles have the Reach weapon tag (see \\pcref<Weapon Tags>).
+            Strikes using the tentacles are considered \\glossterm<magical> abilities, which means you use your \\glossterm<power> with \\glossterm<magical> abilities to determine their damage.
 
             \\rankline
             \\rank<5> You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> on attacks using the tentacles.
