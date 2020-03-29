@@ -14,7 +14,7 @@ const baseAirElemental = {
       weaponName: "slam" as const,
     },
   ],
-  challengeRating: 2,
+  challengeRating: 2 as const,
   description: `
     Air elementals are an embodiment of the natural element of air.
     Their rapid flying speed makes them useful on vast battlefields or in extended aerial combat.
