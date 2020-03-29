@@ -177,67 +177,87 @@
 
         \parhead{Waterborne Movement} See \trefnp{Mounts and Vehicles} for speeds for water vehicles.
 
-\section{Exploration}
-    \subsection{Vision and Light}
-        Some creatures have \glossterm{darkvision}, but most creatures need light to see by. 
-        In an area of bright light, all characters can see clearly. A creature can't hide in an area of bright light unless it is invisible or has cover.
+\section{Vision and Light}
+    Some creatures have \glossterm{darkvision}, but most creatures need light to see by. 
+    In an area of bright light, all characters can see clearly. A creature can't hide in an area of bright light unless it is invisible or has cover.
 
-        In an area with shadowy illumination, creatures can see dimly.
-        Creatures within this area have \concealment, which can allow them to make Stealth checks to hide (see \pcref{Stealth}).
+    In an area with shadowy illumination, creatures can see dimly.
+    Creatures within this area have \concealment, which can allow them to make Stealth checks to hide (see \pcref{Stealth}).
 
-        In areas of darkness, creatures without \glossterm{darkvision} or some other form of supernatural vision are \blinded.
+    In areas of darkness, creatures without \glossterm{darkvision} or some other form of supernatural vision are \blinded.
 
-        Characters with low-light vision (elves, gnomes, and half-elves) treat sources of light as if they had double their normal illumination range.
+    Characters with low-light vision (elves, gnomes, and half-elves) treat sources of light as if they had double their normal illumination range.
 
-        Characters with \glossterm{darkvision} can see lit areas normally as well as dark areas within a radius defined by the ability -- usually, 50 feet. A creature can't hide within that range of a character using darkvision unless it is invisible or has cover. Darkvision does not function if the character is in bright light, and does not resume functioning until the end of the next round after the character leaves the area of bright light.
+    Characters with \glossterm{darkvision} can see lit areas normally as well as dark areas within a radius defined by the ability -- usually, 50 feet. A creature can't hide within that range of a character using darkvision unless it is invisible or has cover. Darkvision does not function if the character is in bright light, and does not resume functioning until the end of the next round after the character leaves the area of bright light.
 
-    \subsection{Breaking And Entering}
-        When attempting to break an object, you have two choices: smash it with a weapon or break it with sheer strength.
+\section{Breaking Objects}
+    There are two main ways of breaking objects.
+    You can deal damage to objects with attacks, similarly to how you can deal damage to creatures.
+    Alternately, you can attempt to sunder the object with sheer strength.
 
-        \subsubsection{Smashing an Object}
-            Smashing an object is accomplished by simply attacking the object as you would any other target. If it is attended, this is done using the \textit{disarm} special attack (see \pcref{Disarm}).
+    \subsection{Damaging Objects}
+        An object's size and primary material determines the number of \glossterm{vital wounds} it can suffer before being destroyed.
+        The primary material it is constructed from determines its \glossterm{resistances}, and can modify the number of vital wounds it can take.
+        An object breaks it takes \glossterm{vital wounds} in excess of its maximum.
+        Objects do not have \glossterm{hit points} or a \glossterm{wound resistance}, cannot be \glossterm{bloodied}, and do not make \glossterm{vital rolls}.
+        Objects are also not normally subject to \glossterm{critical hits}.
 
-            \parhead{Armor Defense} Objects are easier to hit than creatures because they usually don't move, but many are tough enough to shrug off some damage from each blow.
-% Why is this true? makes things simpler...
-            Normally, an object's Armor defense is equal to 0.
+    \subsection{Sundering Objects}
+        As a standard action, you can attempt to sunder an object you can touch.
+        This requires two hands.
+        An object's size and primary material determines the \glossterm{difficulty rating} of the check.
+        Success means that the object breaks.
+        Failure by 5 or less means you inflict a \glossterm{vital wound} on the object, but it does not break.
+        Failure by 6 or more means nothing happens.
 
-            \parhead{Resistances} An object's \glossterm{resistances} depend on what it is made of and how big it is.
+        \begin{dtable}
+            \lcaption{Object Defenses by Size}
+            \begin{dtabularx}{\textwidth}{l X X}
+                \tb{Size}  & \tb{Max Vital Wounds} & \tb{Sunder Difficulty Rating} \tableheaderrule
+                Fine       & 1                     & 1\fn{1} \\
+                Diminutive & 1                     & 2       \\
+                Tiny       & 2                     & 5       \\
+                Small      & 4                     & 10      \\
+                Medium     & 8                     & 15      \\
+                Large      & 16                    & 20      \\
+                Huge       & 32                    & 25      \\
+                Gargantuan & 64                    & 30      \\
+                Colossal   & 128                   & 35      \\
+            \end{dtabularx}
+            1. Extremely small objects may be difficult to grip effectively, which can significantly increase the difficulty to sunder them.
+        \end{dtable}
 
-            Smaller sections of very large objects may be treated as independent objects for determining \glossterm{resistances} and tracking whether the object is \glossterm{broken} or \glossterm{destroyed}.
+        \begin{dtable}
+            \lcaption{Object Defenses by Material}
+            \begin{dtabularx}{\textwidth}{l X X X}
+                \tb{Material}   & \tb{Vital Resistance} & \tb{Max Vital Wounds} & \tb{Sunder Modifier}  & \tableheaderrule
+                Adamantine      & 30                    & \mult3                & \plus20              \\
+                Glass           & 5                     & \mult1/2              & \tdash               \\
+                Ice             & 1                     & \mult1/2              & \minus5              \\
+                Iron or steel   & 12                    & \mult2                & \plus10              \\
+                Leather or hide & 3                     & \tdash                & \tdash               \\
+                Mithral         & 15                    & \mult2                & \plus10              \\
+                Paper or cloth  & 1                     & \mult1/2              & \minus5              \\
+                Rope            & 2                     & \tdash                & \tdash               \\
+                Stone           & 8                     & \mult2                & \plus5               \\
+                Wood            & 5                     & \tdash                & \tdash               \\
+            \end{dtabularx}
+        \end{dtable}
 
-            \subparhead{Immunities} Objects are immune to \glossterm{critical hits}.
+    \subsection{Broken and Destroyed Objects}
+        An object that reaches its maximum vital wounds or is sundered becomes \glossterm{broken}.
+        You can destroy an object by inflicting ten times its maximum \glossterm{vital wounds}, or by succeeding at a check to sunder the object by 20.
 
-            \subparhead{Vulnerability to Certain Attacks} Certain attacks are especially successful against some objects. In such cases, the object's \glossterm{resistances} are halved.
+        \parhead{Broken Objects}\label{Broken Objects}
+        Broken objects cannot be used for their intended purpose, but still retain enough of their original form to be repaired without too much work.
+        For example, a broken wall lies in pieces on the ground and no longer blocks passage, but can be repaired with far less effort than would be required to create a wall from scratch.
+        Magic items that are broken retain their magical properties once fixed.
+        Broken (but not destroyed) objects can be repaired with the Craft skill for a cost equal to 10\% of their value (see \pcref{Craft}).
 
-            \parhead{Saving Throws} Nonmagical, unattended items never make saving throws. They are considered to have failed their saving throws, so they always are affected by spells. An item attended by a character (being grasped, touched, or worn) makes saving throws as the character (that is, using the character's saving throw bonus).
-
-            \par Magic items have defenses. A magic item's Fortitude and Mental defenses are equal to 5 \add its \glossterm{power}, though its Reflex defense is 0. An attended magic item uses its defenses or its owner's defenses, whichever are higher.
-
-            \subparhead{Animated Objects} Animated objects count as creatures for purposes of determining their Armor Defense (do not treat them as inanimate objects).
-
-        \subsubsection{Damaged Objects}
-            An object that gains a \glossterm{vital wound} becomes \glossterm{broken}.
-            If it gains an additional \glossterm{vital wound}, it is \glossterm{destroyed}.
-            Objects do not make \glossterm{vital rolls}, and they ignore any other effects of \glossterm{vital wounds}.
-
-            Both magical and mundane objects that have lost \glossterm{hit points} or become \glossterm{broken} can be repaired to normal for a cost equal to 10\% of their value.
-            You must be able to craft the item originally to repair it.
-
-            \parhead{Broken Objects}\label{Broken Objects}
-            Broken objects cannot be used for their intended purpose, but still retain enough of their original form to be repaired without too much work. For example, a broken wall lies in pieces on the ground and no longer blocks passage, but can be repaired with no more effort than damaged items. Magic items that are broken retain their magical properties once fixed. Damaged and broken (but not destroyed) objects can be repaired with the Craft skill.
-
-            \parhead{Destroyed Objects}\label{Destroyed Objects}
-            Destroyed object have been damaged beyond hope of any sort of repair short of crafting the object again from raw materials.
-            For example, a destroyed wall is reduced to dust or small, useless chunks of rubble.
-            Magic items that are destroyed irrevocably lose their magical properties.
-
-        \subsubsection{Breaking Items}
-            If you try to break something with sudden force rather than by dealing damage, use a Strength check to see whether you succeed.
-            The \glossterm{difficulty rating} depends more on the construction of the item than on the material.
-
-            The \glossterm{difficulty rating} to break an object with Strength is reduced by 1 for each \glossterm{hit point} the object has lost.
-
-            A crowbar or portable ram improves a character's chance of breaking open a door.
+        \parhead{Destroyed Objects}\label{Destroyed Objects}
+        Destroyed object have been damaged beyond hope of any sort of repair short of crafting the object again from raw materials.
+        For example, a destroyed wall is reduced to dust or small, useless chunks of rubble.
+        Magic items that are destroyed irrevocably lose their magical properties.
 
 \section{Wealth And Money}
 
