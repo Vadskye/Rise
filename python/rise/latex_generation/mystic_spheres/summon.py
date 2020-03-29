@@ -61,9 +61,8 @@ summon=MysticSphere(
             It choses randomly if all possible targets are equally easy to attack.
 
             \\rankline
-            \\rank<3> The damage dealt by the weapon increases to \\glossterm<standard damage> -1d.
-            \\rank<5> The damage dealt by the weapon increases to \\glossterm<standard damage>.
-            \\rank<7> The damage dealt by the weapon increases to \\glossterm<standard damage> +1d.
+            \\rank<5> The damage dealt by the weapon increases to \\glossterm<standard damage> -1d.
+            \\rank<7> The damage dealt by the weapon increases to \\glossterm<standard damage>.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Aerial Weapon', 4, 'One unoccupied square within \\rngmed range', """
             This spell functions like the \\spell<summon weapon> spell, except that the weapon's maximum height above the ground is increased to 100 feet.
