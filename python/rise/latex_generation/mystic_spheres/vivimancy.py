@@ -62,15 +62,17 @@ vivimancy=MysticSphere(
             \\rankline
             \\rank<7> The target can remove two \\glossterm<vital wounds>.
         """, tags=['AP']),
-        Spell('Drain Life', 3, 'One living creature within \\rngmed range', """
+        Spell('Drain Life', 1, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target loses a \\glossterm<hit point>.
+            \\crit The target loses two \\glossterm<hit points>.
 
             \\rankline
-            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<7> The accuracy bonus increases to +2.
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<5> The accuracy bonus increases to +2.
+            \\rank<7> The accuracy bonus increases to +3.
         """, tags=[]),
-        Spell('Harm', 7, 'One creature within \\rngmed range', """
+        Spell('Harm', 5, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target loses two \\glossterm<hit points>.
             \\crit As above, and the target gains a \\glossterm<vital wound>.
