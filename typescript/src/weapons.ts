@@ -106,7 +106,7 @@ export const standardWeapons: Record<StandardWeaponName, Omit<CustomWeaponInput,
   },
   "slam": {
     damageTypes: ["bludgeoning"],
-    powerBonus: 2,
+    powerBonus: 0,
   },
   "smallsword": {
     accuracyBonus: 2,
