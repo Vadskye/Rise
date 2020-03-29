@@ -119,10 +119,10 @@ This choice determines a great deal about your character's abilities.
             1 & 1  & Battleforged endurance         & Rage                   & Exotic weaponry          & Primal maneuvers     \\
             2 & 2  & Toughened body                 & Seething anger         & Fast movement            & Primal lore          \\
             3 & 5  & Battle-scarred                 & Painless rage          & Savage precision         & Primal power         \\
-            4 & 8  & Greater battleforged endurance & Enduring anger         & Savage instincts         & Primal maneuver      \\
-            5 & 11 & Greater toughened body         & Powerful rage          & Greater fast movement    & Greater primal lore  \\
+            4 & 8  & Greater battleforged endurance & Greater rage           & Savage instincts         & Primal maneuver      \\
+            5 & 11 & Greater toughened body         & Greater seething anger & Greater fast movement    & Greater primal lore  \\
             6 & 14 & Greater battle-scarred         & Greater painless rage  & Greater savage precision & Greater primal power \\
-            7 & 17 & Supreme battleforged endurance & Greater seething anger & Greater savage instincts & Primal maneuver      \\
+            7 & 17 & Supreme battleforged endurance & Supreme rage           & Greater savage instincts & Primal maneuver      \\
             8 & 20 &                                & Titanic rage           &                          &                      \\
         \end{dtabularx}
     \end{dtable!*}
@@ -163,20 +163,20 @@ This choice determines a great deal about your character's abilities.
     \subsection{Battleforged Resilience}
         This archetype improves your durability in combat.
 
-        \cf{Bbn}[1]{Battleforged Endurance} You gain an additional \glossterm{hit point}.
+        \cf{Bbn}[1]{Battleforged Endurance} You increase your maximum \glossterm{hit points} by 2.
 
         \cf{Bbn}[2]{Toughened Body} You gain a \plus2 bonus to Fortitude defense.
 
         \cf{Bbn}[3]{Battle-Scarred} You gain a bonus equal to half your level to your \glossterm{resistances} against \glossterm{physical damage}.
 
-        \cf{Bbn}[4]{Greater Battleforged Endurance} You gain an additional \glossterm{hit point}.
+        \cf{Bbn}[4]{Greater Battleforged Endurance} The number of hit points granted by your \textit{battleforged endurance} ability increases to 3.
 
         \cf{Bbn}[5]{Greater Toughened Body} The bonus from your \textit{toughened body} ability increases to \plus4.
 
         \cf{Bbn}[6]{Greater Battle-Scarred}
         The bonus from your \textit{battle-scarred} ability increases to be equal to your level.
 
-        \cf{Bbn}[7]{Supreme Battleforged Endurance} You gain an additional \glossterm{hit point}.
+        \cf{Bbn}[7]{Supreme Battleforged Endurance} The number of hit points granted by your \textit{battleforged endurance} ability increases to 4.
 
     \subsection{Battlerager}\label{Rage}
         This archetype grants you a devastating rage, improving your combat prowess.
@@ -194,11 +194,12 @@ This choice determines a great deal about your character's abilities.
         \begin{attuneability}{Rage}[\glossterm{Emotion}, \glossterm{Attune} (self), \glossterm{Swift}]
             You gain the following benefits and drawbacks:
             \begin{itemize}
-                \item You increase your maximum \glossterm{hit points} by two and regain two \glossterm{hit points}.
-                    When this ability ends, you lose two \glossterm{hit points} and your maximum \glossterm{hit points} are restored to normal.
+                \item You increase your maximum \glossterm{hit points} by four and regain four \glossterm{hit points}.
+                    When this ability ends, you lose hit points equal to the hit points you regained this way.
                 \item You gain a \plus2 bonus to \glossterm{power} with \glossterm{mundane} abilities.
                 \item You take a \minus2 penalty to Armor and Reflex defenses.
                 \item You are unable to take \glossterm{standard actions} that do not cause you to make \glossterm{mundane} attacks.
+                \item You are unable to use \glossterm{Focus} abilities of any kind.
                 \item At the end of each round, if you did not make a \glossterm{mundane} attack that round, this ability ends.
                     If the ability ends this way, you regain the \glossterm{action point} you spent to attune to this ability the next time you take a \glossterm{short rest}.
             \end{itemize}
@@ -209,14 +210,14 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Bbn}[3]{Painless Rage} Your \textit{rage} ability also grants you a bonus equal to half your \glossterm{power} to your \glossterm{resistances} against \glossterm{physical damage}.
 
-        \cf{Bbn}[4]{Enduring Anger} You gain an additional \glossterm{hit point}.
+        \cf{Bbn}[4]{Greater Rage} The bonus to \glossterm{power} from your \textit{rage} ability increases to \plus4.
 
-        \cf{Bbn}[5]{Powerful Rage} The bonus to \glossterm{power} from your \textit{rage} ability increases to \plus4.
-
-        \cf{Bbn}[6]{Greater Seething Anger}
+        \cf{Bbn}[5]{Greater Seething Anger}
         The bonuses from your \textit{seething anger} ability increase to \plus4.
 
-        \cf{Bbn}[7]{Greater Painless Rage} The bonus to \glossterm{resistances} from your \textit{painless rage} ability increases to be equal to your \glossterm{power}.
+        \cf{Bbn}[6]{Greater Painless Rage} The bonus to \glossterm{resistances} from your \textit{painless rage} ability increases to be equal to your \glossterm{power}.
+
+        \cf{Bbn}[7]{Supreme Rage} The bonus to \glossterm{power} from your \textit{rage} ability increases to \plus6.
 
         \cf{Bbn}[8]{Titanic Rage}
         When you use your \textit{rage} ability, you can grow by one \glossterm{size category}.
@@ -625,7 +626,7 @@ This choice determines a great deal about your character's abilities.
             If you choose this domain, you add the \sphere{terramancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
 
             \parhead{Gift} You gain a \plus2 bonus to Fortitude defense.
-            \parhead{Aspect} You gain an additional \glossterm{hit point}.
+            \parhead{Aspect} You increase your maximum \glossterm{hit points} by 2.
             \parhead{Essence} You can use the \textit{speak with earth} ability as a standard action.
             \begin{attuneability}{Speak with Earth}[\glossterm{Attune} (self)]
                 You can speak with earth within a \areahuge \glossterm{zone} from your location.
@@ -633,7 +634,7 @@ This choice determines a great deal about your character's abilities.
 
                 After you use this ability on a particular area of earth, you cannot use it again on that same area for 24 hours.
             \end{attuneability}
-            \parhead{Mastery} You gain an additional \glossterm{hit point}.
+            \parhead{Mastery} You increase your maximum \glossterm{hit points} by 2.
 
         \subsubsection{Evil}
             \parhead{Gift} At the start of each phase, you may choose an adjacent \glossterm{ally}.
@@ -1264,7 +1265,7 @@ This choice determines a great deal about your character's abilities.
             It follows your directions to the best of its ability as long as you remain in its natural environment.
             Animals are unable to understand complex concepts, so their ability to obey convoluted instructions is limited.
             If you leave the animal's natural habitat, it remains behind and this effect ends.
-            If the animal gains a \glossterm{vital wound} or has no hit points remaining at the end of a phase, this effect ends.
+            If the animal gains a \glossterm{vital wound} or has no hit points remaining at the end of the round, this effect ends.
 
             Your magical connection to the animal improves its resilience and strength in combat.
             The animal's statistics use the values below, except that each animal also gains a special ability based on the environment you are in.
@@ -1527,7 +1528,7 @@ This choice determines a great deal about your character's abilities.
         \end{freeability}
 
         \cf{Ftr}[2]{Enduring Discipline}
-        You gain an additional \glossterm{hit point}.
+        You increase your maximum \glossterm{hit points} by 2.
 
         \cf{Ftr}[3]{Disciplined Stance}
         You learn how to control your body to adapt to any threat you face.
@@ -1547,7 +1548,7 @@ This choice determines a great deal about your character's abilities.
         You gain a \plus2 bonus to the Deception and Intimidate skills.
 
         \cf{Ftr}[5]{Greater Enduring Discipline}
-        You gain an additional \glossterm{hit point}.
+        The number of hit points granted by your \textit{enduring discipline} ability increases to 3.
 
         \cf{Ftr}[6]{Disciplined Vitality}
         You do not suffer any effects from \glossterm{vital wounds} until the end of the next round after they are applied.
@@ -2188,7 +2189,7 @@ This choice determines a great deal about your character's abilities.
         \end{freeability}
 
         \cf{Pal}[2]{Enduring Defender}
-        You gain an additional \glossterm{hit point}.
+        You increase your maximum \glossterm{hit points} by 2.
 
         \cf{Pal}[3]{Stalwart Resilience}
         You gain a \plus1 bonus to Fortitude and Mental defense.
@@ -2199,7 +2200,7 @@ This choice determines a great deal about your character's abilities.
         This bonus does not stack with itself.
 
         \cf{Pal}[5]{Greater Enduring Defender}
-        You gain an additional \glossterm{hit point}.
+        The number of hit points granted by your \textit{enduring defender} ability increases to 3.
 
         \cf{Pal}[6]{Greater Stalwart Resilience} The bonuses from your \textit{stalwart resilience} ability increase to \plus2.
 
@@ -2732,11 +2733,11 @@ This choice determines a great deal about your character's abilities.
             \begin{freeability}{Dirge of Doom}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
                 \target{One creature within \rngmed range}
                 Make an attack vs. Mental against the target.
-                \hit The target is treated as having two fewer \glossterm{hit points} than normal for the purpose of determining whether it is \glossterm{bloodied}.
+                \hit The target is treated as having four fewer \glossterm{hit points} than normal for the purpose of determining whether it is \glossterm{bloodied}.
 
                 \rankline
                 \rank{3} On a \glossterm{critical hit}, the target is \glossterm{bloodied} regardless of its hit point total.
-                \rank{5} The hit point reduction increases to four.
+                \rank{5} The hit point reduction increases to eight.
                 \rank{7} The target is \glossterm{bloodied} regardless of its hit point total.
             \end{freeability}
 
@@ -2823,13 +2824,13 @@ This choice determines a great deal about your character's abilities.
 
             \begin{freeability}{Vigorous Verse}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
                 \target{One \glossterm{ally} within \rngmed range}
-                The target increases its maximum \glossterm{hit points} by one and regains that many hit points.
+                The target increases its maximum \glossterm{hit points} by 2 and regains that many hit points.
                 When this effect ends, the target loses hit points equal to the hit points it regained this way.
 
                 \rankline
-                \rank{3} The number of additional hit points increases to two.
-                \rank{5} The number of additional hit points increases to three.
-                \rank{7} The number of additional hit points increases to four.
+                \rank{3} The number of additional hit points increases to 3.
+                \rank{5} The number of additional hit points increases to 4.
+                \rank{7} The number of additional hit points increases to 5.
             \end{freeability}
         }
 
@@ -3198,11 +3199,11 @@ This choice determines a great deal about your character's abilities.
             \tb{Rank} & \tb{Min Level} & \tb{Blessings of the Abyss}  & \tb{Pact Magic} & \tb{Pact Spell Mastery}     & \tb{Soulkeeper's Chosen} \tableheaderrule
             1 & 1  & Eldritch blast               & Spellcasting          & Mystic insight              & Possession                  \\
             2 & 2  & Fiendish resistance          & Soulbound focus       & Armor tolerance             & Empowering whispers         \\
-            3 & 5  & Abyssal jaunt                & Spell rank (3), spell & Wellspring of power         & Influence possession        \\
-            4 & 8  & Abyssal substitution         & Spell rank (4)        & Mystic insight              & Exchange soul fragment      \\
-            5 & 11 & Greater fiendish resistance  & Spell rank (5)        & Greater armor tolerance     & Powerful possession         \\
-            6 & 14 & Abyssal curse                & Spell rank (6), spell & Greater wellspring of power & Greater empowering whispers \\
-            7 & 17 & Greater abyssal substitution & Spell rank (7)        & Mystic insight              & Control possession          \\
+            3 & 5  & Abyssal jaunt                & Spell rank (3), spell & Wellspring of power         & Exchange soul fragment      \\
+            4 & 8  & Abyssal substitution         & Spell rank (4)        & Mystic insight              & Greater possession          \\
+            5 & 11 & Greater fiendish resistance  & Spell rank (5)        & Greater armor tolerance     & Greater empowering whispers \\
+            6 & 14 & Abyssal curse                & Spell rank (6), spell & Greater wellspring of power & Exchange vitality           \\
+            7 & 17 & Greater abyssal substitution & Spell rank (7)        & Mystic insight              & Supreme possession          \\
             8 & 20 &                              & Spell rank (8)        &                             &                             \\
         \end{dtabularx}
     \end{dtable!*}
@@ -3465,12 +3466,14 @@ This choice determines a great deal about your character's abilities.
         \begin{attuneability}{Possession}[\glossterm{Attune} (self)]
             You gain the following benefits and drawbacks:
             \begin{itemize}
-                \item You increase your maximum \glossterm{hit points} by two and regain two \glossterm{hit points}.
-                    When this ability ends, you lose two \glossterm{hit points} and your maximum \glossterm{hit points} are restored to normal.
+                \item You increase your maximum \glossterm{hit points} by 4 and regain 4 \glossterm{hit points}.
+                    When this effect ends, you lose hit points equal to the hit points you regained this way.
                 \item You gain a \plus2 bonus to \glossterm{power} with \glossterm{magical} abilities.
                 \item You take a \minus2 penalty to Mental defense.
-                \item You are unable to fully control your actions. At the start of each round, your soulkeeper chooses one of three behavior patterns: attack your enemies, defend yourself or your allies, or flee to protect your own life.
+                \item You are unable to fully control your actions.
+                    At the start of each round, your soulkeeper chooses one of three behavior patterns: attack your enemies, protect your allies, or protect yourself.
                     You must follow the chosen behavior that round during the best of your ability.
+                    If you are not in combat, your soulkeeper may influence your behavior in more subtle ways.
                 \item At the start of each round, if either you or your soulkeeper choose to end this ability, the ability ends.
                     If the ability ends this way, you regain the \glossterm{action point} you spent to attune to this ability the next time you take a \glossterm{short rest}.
             \end{itemize}
@@ -3481,7 +3484,7 @@ This choice determines a great deal about your character's abilities.
         {
             \subcf{Mentoring Whispers} You gain two additional \glossterm{skill points}.
 
-            \subcf{Spiteful Whispers} Whenever you miss a creature with an attack, you gain a \plus1 bonus to \glossterm{accuracy} against the creature you missed until the end of the next round.
+            \subcf{Spiteful Whispers} Whenever you miss a creature with an attack, you gain a \plus2 bonus to \glossterm{accuracy} against the creature you missed until the end of the next round.
 
             \subcf{Sycophantic Whispers} You gain a \plus2 bonus to Mental defense.
 
@@ -3490,30 +3493,28 @@ This choice determines a great deal about your character's abilities.
             \subcf{Whispers of the Mighty} You gain a \plus2 bonus to Fortitude defense.
         }
 
-        % does this need to be more explicit that you can act during the delayed action phase if you interrupt during the action phase?
-        \cf{War}[3]{Influence Possession} During your \textit{possession} ability, you can choose one behavior category at the start of each round.
-        Your soulkeeper cannot compel you to take the chosen behavior that round.
-
-        \cf{War}[4]{Exchange Soul Fragment} Your connection to your soulkeeper deepens, allowing you to send a fragment of your experiences through the link.
+        \cf{War}[3]{Exchange Soul Fragment} Your connection to your soulkeeper deepens, allowing you to send a fragment of your experiences through the link.
         You can use the \textit{exchange soul fragment} ability as a \glossterm{minor action}.
         \begin{freeability}{Exchange Soul Fragment}[\glossterm{Magical}]
-            You lose a \glossterm{hit point} and reduce your maximum \glossterm{hit points} by one.
+            You lose a \glossterm{hit point}.
             Remove a \glossterm{condition} affecting you.
             This cannot remove a condition applied during the current round.
-            When you take a \glossterm{short rest}, your maximum hit points are restored to their normal value.
 
             \rankline
-            \rank{6} This ability does not reduce your maximum \glossterm{hit points}.
-            \rank{8} You can remove any number of \glossterm{conditions}.
+            \rank{6} You can remove an additional \glossterm{condition}.
+            \rank{8} This ability gains the \glossterm{Swift} tag.
+            When you use it, the penalties from the removed conditions do not affect you during the current phase.
         \end{freeability}
 
-        \cf{War}[5]{Powerful Possession} The bonus to \glossterm{power} from your \textit{possession} ability increases to \plus4.
+        \cf{War}[4]{Greater Possession} During your \textit{possession} ability, you can choose one behavior category at the start of each round.
+        Your soulkeeper cannot compel you to take the chosen behavior that round.
+        In addition, the bonus to \glossterm{power} from your \textit{possession} ability increases to \plus4.
 
-        \cf{War}[6]{Greater Empowering Whispers}[Magical] You gain an additional ability depending on the voices you chose with your \textit{whispers of the lost} ability.
+        \cf{War}[5]{Greater Empowering Whispers}[Magical] You gain an additional ability depending on the voices you chose with your \textit{whispers of the lost} ability.
         {
             \subcf{Mentoring Whispers} You gain an additional \glossterm{insight point}.
 
-            \subcf{Spiteful Whispers} The bonus from your \textit{empowering whispers} ability increases to \plus2.
+            \subcf{Spiteful Whispers} The bonus from your \textit{empowering whispers} ability increases to \plus4.
 
             \subcf{Sycophantic Whispers} You are immune to being \glossterm{shaken}, \glossterm{frightened}, and \glossterm{panicked}.
 
@@ -3522,8 +3523,17 @@ This choice determines a great deal about your character's abilities.
             \subcf{Whispers of the Mighty} You are immune to being \glossterm{sickened} and \glossterm{nauseated}.
         }
 
-        \cf{War}[7]{Control Possession} During your \textit{possession} ability, you can choose your actions normally.
-        Your soulkeeper may still choose to end the ability.
+        \cf{War}[6]{Exchange Vitality} Your connection to your soulkeeper deepens, allowing you to send a fragment of your vitality through the link.
+        You can use the \textit{exchange vitality} ability as a \glossterm{standard action}.
+        \begin{apability}{Exchange Vitality}[\glossterm{Magical}]
+            You remove one \glossterm{vital wound} affecting you.
+            This cannot remove a vital wound applied during the current round.
+
+            \rankline
+            \rank{8} You can use this ability as a \glossterm{minor action}.
+        \end{apability}
+
+        \cf{War}[7]{Supreme Possession} The bonus to \glossterm{power} from your \textit{possession} ability increases to \plus6.
 
 \newpage
 \section{Wizard}\label{Wizard}
