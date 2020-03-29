@@ -256,8 +256,8 @@ def calc_base_resistances():
             'Damage',
             number_input({
                 'disabled': True,
-                'name': 'base_damage_resistance_display',
-                'value': '(@{base_damage_resistance})',
+                'name': 'base_wound_resistance_display',
+                'value': '(@{base_wound_resistance})',
             }),
         ),
         equation_space,

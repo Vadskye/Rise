@@ -8,7 +8,7 @@ export * from "./calculate_magical_power";
 export * from "./calculate_mundane_power";
 export * from "./calculate_resistances";
 export * from "./calculate_strike";
-export * from "./damage_resistance_by_level";
+export * from "./wound_resistance_by_level";
 export * from "./monster_bonus_by_level";
 export * from "./monster_power_bonus_by_level";
 export * from "./reach_by_size";

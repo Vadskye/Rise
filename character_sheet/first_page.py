@@ -113,7 +113,7 @@ def statistics_header():
         flex_row({'class': 'all-statistics'}, [
             core_statistics(),
             defenses(),
-            damage_resistance(),
+            wound_resistance(),
             vital_resistance(),
         ])
     ])
@@ -134,27 +134,27 @@ def defenses():
         ]),
     ])
 
-def damage_resistance():
+def wound_resistance():
     return flex_col({'class': 'damage-resistances'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Damage Resist')),
         "".join([
             sidelabel('Physical', number_input({
                 'disabled': True,
-                'name': 'physical_damage_resistance_display',
-                'value': '@{physical_damage_resistance}',
+                'name': 'physical_wound_resistance_display',
+                'value': '@{physical_wound_resistance}',
             })),
             sidelabel('Energy', number_input({
                 'disabled': True,
-                'name': 'energy_damage_resistance_display',
-                'value': '@{energy_damage_resistance}',
+                'name': 'energy_wound_resistance_display',
+                'value': '@{energy_wound_resistance}',
             })),
             freeform_number_input(
-                number_input_attributes={'name': 'damage_resistance_freeform'},
-                text_input_attributes={'name': 'damage_resistance_freeform_name'},
+                number_input_attributes={'name': 'wound_resistance_freeform'},
+                text_input_attributes={'name': 'wound_resistance_freeform_name'},
             ),
             freeform_number_input(
-                number_input_attributes={'name': 'damage_resistance_freeform_2'},
-                text_input_attributes={'name': 'damage_resistance_freeform_name_2'},
+                number_input_attributes={'name': 'wound_resistance_freeform_2'},
+                text_input_attributes={'name': 'wound_resistance_freeform_name_2'},
             ),
         ]),
     ])
