@@ -325,25 +325,27 @@ def generate_weapons():
 
     weapons.append(MagicItem(
         name="Morphing",
-        level=2,
+        level=4,
         material_type='Weapon',
         tags=[],
         description="""
              As a standard action, you can activate this weapon.
              If you do, it changes shape into a new weapon of your choice from the same weapon group.
+             If you stop attuning to this weapon, it returns to its original form.
         """,
         short_description="Can change into similar weapon",
     ))
 
     weapons.append(MagicItem(
         name="Morphing, Greater",
-        level=6,
+        level=8,
         material_type='Weapon',
         tags=[],
         description="""
              As a standard action, you can activate this weapon.
              If you do, it changes shape into a new weapon of your choice that you are proficient with.
              This can only change into existing manufactured weapons, not improvised weapons (see \\pcref<Weapons>).
+             If you stop attuning to this weapon, it returns to its original form.
         """,
         short_description="Can change into any weapon",
     ))

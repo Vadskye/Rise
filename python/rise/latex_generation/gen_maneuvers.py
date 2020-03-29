@@ -256,13 +256,13 @@ def generate_maneuvers():
         short_description='Make a weak strike that is extremely painful',
         target="As chosen \\glossterm<strike>",
         effect_text="""
-            Make a \\glossterm<strike> with a -2d penalty to damage using a slashing weapon.
-            If the strike deals damage, the target loses an additional \\glossterm<hit point>.
+            Make a \\glossterm<strike> with a -2 penalty to \\glossterm<accuracy> and a -2d penalty to damage using a slashing weapon.
+            If the strike hits, the target loses an additional \\glossterm<hit point>.
         """,
         rank_upgrades={
-            '3': 'You gain a +1 bonus to \\glossterm<accuracy> with the strike.',
-            '5': 'The accuracy bonus increases to +2.',
-            '7': 'The accuracy bonus increases to +3.',
+            '3': 'The accuracy penalty is reduced to -1.',
+            '5': 'The accuracy penalty is removed.',
+            '7': 'You gain a +1 bonus to \\glossterm<accuracy> with the strike.',
         },
         tags=[],
         lists=['Primal', 'Martial', 'Wild', 'Trick'],
