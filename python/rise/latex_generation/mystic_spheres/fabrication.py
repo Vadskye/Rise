@@ -44,7 +44,7 @@ fabrication=MysticSphere(
         Spell('Mystic Blast Arrow', 4, 'One creature or object within \\rngmed range', """
             Make an attack vs. Armor agains the target.
             \\hit The target takes piercing \\glossterm<standard damage> +2d.
-            If this attack \\glossterm<injures> the target, it is knocked \\glossterm<prone>.
+            If this attack \\glossterm<wounds> the target, it is knocked \\glossterm<prone>.
 
             \\rankline
             \\rank<6> The damage increases to \\glossterm<standard damage> +3d.

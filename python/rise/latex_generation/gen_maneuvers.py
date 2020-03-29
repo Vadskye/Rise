@@ -379,7 +379,7 @@ def generate_maneuvers():
         target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a \\glossterm<strike> with a slashing weapon.
-            If the strike \\glossterm<injures> the target, it is \\glossterm<slowed> as a \\glossterm<condition>.
+            If the strike \\glossterm<wounds> the target, it is \\glossterm<slowed> as a \\glossterm<condition>.
         """,
         rank=3,
         rank_upgrades={
@@ -963,7 +963,7 @@ def generate_maneuvers():
         target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a \\glossterm<strike> with a +1d bonus to damage using a piercing weapon.
-            If this strike \\glossterm<injures> the target, you gain a +4 bonus to \\glossterm<accuracy> with injury-based poisons delivered with the strike.
+            If this strike \\glossterm<wounds> the target, you gain a +4 bonus to \\glossterm<accuracy> with injury-based poisons delivered with the strike.
         """,
         rank=3,
         rank_upgrades={
