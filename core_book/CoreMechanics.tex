@@ -242,7 +242,7 @@ It defines how attributes work and explains how to make attacks in combat.
             \begin{itemize}
                 \item You gain a bonus (or penalty) to your \glossterm{hit points} equal to your base Constitution.
                 \item You gain a bonus (or penalty) to your Fortitude defense equal to your base Constitution.
-                \item If you have a high Constitution, it can increase your \glossterm{resistances} (see \pcref{Resistances}).
+                \item Your base Constitution influences your \glossterm{resistances} (see \pcref{Resistances}).
                 \item You apply your base Constitution as a bonus or penalty to the Constitution-based \glossterm{skill}: Endurance (see \pcref{Skills}).
                 \item If your base Constitution is at least 2, you are automatically \glossterm{trained} with the Constitution-based skill.
             \end{itemize}
@@ -563,42 +563,45 @@ It defines how attributes work and explains how to make attacks in combat.
             % DR is +1 every level at first, then +2 per level after 10th, with an extra + per level every 6 levels.
             % TODO: make the above logic make more sense with math
             % VR doubles every 6 levels; anchor points are 4th, 10th, 16th
-            \tb{Level or Con} & \tb{Wound Resistance}\fn{1} & \tb{Vital Resistance}\fn{2} \tableheaderrule
-            1                 & 2             & 14     \\
-            2                 & 3             & 16     \\
-            3                 & 4             & 18     \\
-            4                 & 5             & 21     \\
-            5                 & 6             & 24     \\
-            6                 & 7             & 27     \\
-            7                 & 8             & 30     \\
-            8                 & 9             & 34     \\
-            9                 & 10            & 38     \\
-            10                & 11            & 43     \\
-            11                & 13            & 48     \\
-            12                & 15            & 54     \\
-            13                & 17            & 61     \\
-            14                & 19            & 69     \\
-            15                & 21            & 77     \\
-            16                & 23            & 86     \\
-            17                & 26            & 96     \\
-            18                & 29            & 108    \\
-            19                & 32            & 122    \\
-            20                & 35            & 138    \\
-            21                & 38            & 154    \\
-            22                & 41            & 172    \\
-            23                & 45            & 192    \\
-            24                & 49            & 216    \\
-            25\plus\fn{3}     & \tdash        & \tdash \\
+            \tb{Total}\fn{1} & \tb{Wound Resistance} & \tb{Vital Resistance} \tableheaderrule
+            \minus1 or lower & 1                     & 10     \\
+            0                & 1                     & 12     \\
+            1                & 2                     & 14     \\
+            2                & 3                     & 16     \\
+            3                & 4                     & 18     \\
+            4                & 5                     & 21     \\
+            5                & 6                     & 24     \\
+            6                & 7                     & 27     \\
+            7                & 8                     & 30     \\
+            8                & 9                     & 34     \\
+            9                & 10                    & 38     \\
+            10               & 11                    & 43     \\
+            11               & 13                    & 48     \\
+            12               & 15                    & 54     \\
+            13               & 17                    & 61     \\
+            14               & 19                    & 69     \\
+            15               & 21                    & 77     \\
+            16               & 23                    & 86     \\
+            17               & 26                    & 96     \\
+            18               & 29                    & 108    \\
+            19               & 32                    & 122    \\
+            20               & 35                    & 138    \\
+            21               & 38                    & 154    \\
+            22               & 41                    & 172    \\
+            23               & 45                    & 192    \\
+            24               & 49                    & 216    \\
+            25\plus\fn{3}    & \tdash                & \tdash \\
         \end{dtabularx}
+        1. This is your level \add your base Constitution. \\
         1. This is your \glossterm{wound resistance} (see \pcref{Wound Resistance}). \\
         2. This is your \glossterm{vital resistance} (see \pcref{Vital Resistance}). \\
         3. To calculate the wound resistance for a creature with an epic Constitution, increase its wound resistance by 4 per point.
-        Its vital resistance is equal to twice the vital resistance it would have if its Constitution was 6 points lower.
+        Its vital resistance is equal to twice the vital resistance it would have if its Constitution was 6 points lower. \\
     \end{dtable}
 
     \subsection{Wound Resistance}\label{Wound Resistance}
         Your \glossterm{wound resistance} measures your ability to reduce the impact of minor damaging attacks.
-        It is based on the higher of your level and Constitution, as defined in \tref{Resistance Values}.
+        It is based on your level \add your base Constitution, as defined in \tref{Resistance Values}.
         Wearing \glossterm{armor} can increase your resistance against \glossterm{physical damage}, and some special abilities can also increase it.
 
         \parhead{Missing Wound Resistance} An object or creature without a listed \glossterm{wound resistance} loses a single \glossterm{hit point} from damaging attacks.
@@ -607,7 +610,7 @@ It defines how attributes work and explains how to make attacks in combat.
         Your \glossterm{vital resistance} measures your ability to avoid gaining \glossterm{vital wounds} from dangerous attacks.
         When you take damage from an attack, if the damage is at least as much as your \glossterm{vital resistance}, you gain a \glossterm{vital wound} (see \pcref{Vital Wounds}).
 
-        Your \glossterm{vital resistance} is based on the higher of your level and Constitution, as defined in \tref{Resistance Values}.
+        Your \glossterm{vital resistance} is based on your level \add your base Constitution, as defined in \tref{Resistance Values}.
         Wearing \glossterm{armor} can increase your vital resistance against \glossterm{physical damage}, and some special abilities can also increase it.
 
         \parhead{Missing Vital Resistance} An object or creature without a listed \glossterm{vital resistance} cannot gain \glossterm{vital wounds} from taking damage directly.
