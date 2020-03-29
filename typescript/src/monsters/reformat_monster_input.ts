@@ -29,7 +29,7 @@ export interface MonsterInput {
   attackInputs?: AttackInput[];
   activeAbilityInputs?: ActiveAbilityInput[];
   armorInputs?: ArmorInput[];
-  challengeRating?: number;
+  challengeRating?: 0.5 | 1 | 2 | 3 | 4;
   defenseBonuses?: Partial<Record<DefenseType, number>>;
   description: string;
   height?: string | null;

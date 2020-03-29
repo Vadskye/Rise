@@ -147,7 +147,7 @@ const animalInput: TypelessMonsterInput[] = [
 
 const baseCentipede = {
   armorInputs: [{ name: "carapace" as const }],
-  challengeRating: 4,
+  challengeRating: 4 as const,
   description: `
     Monstrous centipedes tend to attack anything that resembles food, biting with their jaws and injecting their poison.
   `,
@@ -194,7 +194,7 @@ animalInput.push({
 
 const spiderBase = {
   armorInputs: [{ name: "carapace" as const }],
-  challengeRating: 4,
+  challengeRating: 4 as const,
   description: `
     All monstrous spiders are aggressive predators that use their poisonous bites to subdue or kill prey.
   `,

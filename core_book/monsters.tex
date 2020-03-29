@@ -14,26 +14,38 @@ This chapter describes the rules for monsters, and the combat statistics for a v
         This has all of the same effects as the level for a player character, except that monsters do not gain any of the benefits described in \tref{Character Advancement}.
 
     \subsection{Challenge Rating}\label{Challenge Rating}
-        Each monster has a \glossterm{challenge rating} that indicates its approximate strength within its level.
-        A monster's challenge rating ranges from 1/2 to 4.
-        This has several effects on the monster's statistics, and is a guideline to how many of that monster should typically be present in an encounter (see \pcref{Encounter Balancing}).
+        Each monster has a \glossterm{challenge rating} that indicates its approximate strength within its level, ranging from 1/2 to 4.
+        A monster's challenge rating is a guideline to how many of that monster should typically be present in an encounter (see \pcref{Encounter Balancing}).
+        This has several effects on the monster's statistics, as decribed in \trefnp{Challenge Rating Effects}.
 
-        \parhead{Vital Wounds} Monsters do not normally make \glossterm{vital rolls} like player characters do.
-        Instead, once a monster takes at least as many \glossterm{vital wounds} as its \glossterm{challenge rating}, it is defeated.
-        Defeated monsters may be unconscious, dead, or merely flee the fight at the discretion of the Game Master.
+        \begin{dtable}
+            \lcaption{Challenge Rating Effects}
+            \begin{dtabularx}{\textwidth}{l X X X}
+                \tb{CR} & \tb{Hit Points} & \tb{Vital Wound Max} & \tb{Bonuses}\fn{1} \tableheaderrule
+                1/2     & \tdash\fn{2}    & 1                    & \plus0 \\
+                1       & \mult1/2        & 1                    & \plus0 \\
+                2       & \mult1          & 2                    & \plus1 \\
+                3       & \mult2          & 3                    & \plus2 \\
+                4       & \mult4          & 4                    & \plus3 \\
+            \end{dtabularx}
+            1. See \pcref{Monster CR Bonuses}. \\
+            2. See \pcref{Half CR Monsters}. \\
+        \end{dtable}
 
-        Monsters that can survive \glossterm{vital wounds} do not normally make \glossterm{vital rolls}.
-        Some monsters have specific mechanics for what happens if they gain \glossterm{vital wounds}.
-        Unless otherwise specified on the monster's description, \glossterm{vital wounds} have no negative effects on monsters.
+        \subsubsection{Monster Vital Wounds}
+            Monsters do not normally make \glossterm{vital rolls} like player characters do.
+            Instead, once a monster takes at least as many \glossterm{vital wounds} as its \glossterm{challenge rating}, it is defeated.
+            Defeated monsters may be unconscious, dead, or merely flee the fight at the discretion of the Game Master.
 
-        \parhead{CR 1 Monsters} A monster with a challenge rating of 1 has half the normal value for its maximum \glossterm{hit points}.
+            Some monsters have specific mechanics for what happens if they gain \glossterm{vital wounds}.
+            Unless otherwise specified on the monster's description, \glossterm{vital wounds} have no negative effects on monsters.
 
-        \parhead{1/2 CR Monsters} A monster with a challenge rating of 1/2 has no \glossterm{hit points} or \glossterm{damage resistance}.
-        In addition, its \glossterm{vital resistance} is one quarter of its normal value after taking into account all other modifiers.
+        \subsubsection{Half CR Monsters}\label{Half CR Monsters}
+            Monsters with a CR of 1/2 have no \glossterm{hit points} or \glossterm{damage resistance}.
+            In addition, their \glossterm{vital resistance} is one quarter of the normal value after taking into account all other modifiers.
 
-        \parhead{Action Points} For each challenge rating a monster has above 1, it gains an \glossterm{action point}.
-
-        \parhead{Accuracy and Defense Bonuses} For each challenge rating a monster has above 1, it gains a \plus1 bonus to \glossterm{accuracy}, \glossterm{defenses}, and \glossterm{power}.
+        \subusbsection{Monster CR Bonuses}
+            For each challenge rating a monster has above 1, it gains a \plus1 bonus to \glossterm{accuracy}, \glossterm{defenses}, and \glossterm{power}.
 
     \subsection{Attributes}
         Each of a monster's base attributes can range from \minus9 to 3, as appropriate for the type of monster.
