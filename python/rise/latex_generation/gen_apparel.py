@@ -923,9 +923,10 @@ def generate_worn():
         level=6,
         material_type='Amulet',
         description="""
-            You gain a +1 bonus to maximum \\glossterm<hit points>.
+            You increase your maximum \\glossterm<hit points> by 2.
+            When this item stops affecting you, you lose two \\glossterm<hit points>.
         """,
-        short_description="Grants a +1 bonus to \\glossterm<vital rolls>",
+        short_description="Grants 2 additional hit points",
     ))
 
     apparel.append(MagicItem(
@@ -933,9 +934,10 @@ def generate_worn():
         level=15,
         material_type='Amulet',
         description="""
-            This item functions like the \\mitem<amulet of health>, except that the bonus increases to +2.
+            You increase your maximum \\glossterm<hit points> by 4.
+            When this item stops affecting you, you lose four \\glossterm<hit points>.
         """,
-        short_description="Grants a +2 bonus to \\glossterm<vital rolls>",
+        short_description="Grants 4 additional hit points",
     ))
 
     apparel.append(MagicItem(
