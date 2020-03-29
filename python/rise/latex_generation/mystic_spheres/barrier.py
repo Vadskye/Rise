@@ -176,7 +176,7 @@ barrier=MysticSphere(
         """, tags=['Attune (self)']),
         Spell('Retributive Shield', 6, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
             The target gains a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical> damage.
-            Whenever an attack that deals \\glossterm<physical damage> fails to beat the target's \\glossterm<damage resistance>, the attacker takes that damage.
+            Whenever an attack that deals \\glossterm<physical damage> fails to beat the target's \\glossterm<wound resistance>, the attacker takes that damage.
             If the attacker is beyond \\rngclose range of the target, this reflection fails.
             Any effect which increases this spell's range increases the range of this effect by the same amount.
 

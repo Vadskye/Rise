@@ -13,7 +13,7 @@ polymorph=MysticSphere(
     cantrips=[
         Effects('Alter Object', 'Unattended, nonmagical object you can touch', """
             You make a Craft check to alter the target (see \\pcref<Craft>), except that you do not need any special tools to make the check (such as an anvil and furnace).
-            The maximum \\glossterm<damage resistance> of a material you can affect with this ability is equal to your \\glossterm<power>.
+            The maximum \\glossterm<vital resistance> of a material you can affect with this ability is equal to your \\glossterm<power>.
 
             % too short?
             Each time you use this ability, you can accomplish work that would take up to five minutes with a normal Craft check.
@@ -152,7 +152,7 @@ polymorph=MysticSphere(
         Spell('Malleable Body', 4, 'Yourself', """
             Your body and equipment becomes highly flexible and malleable, allowing you to compress your body or contort yourself into odd shapes.
             You gain a +8 \\glossterm<magic bonus> to the Escape Artist skill, and are immune to \\glossterm<critical hits> from \\glossterm<strikes>.
-            However, your \\glossterm<damage resistance> against \\glossterm<physical damage> is halved.
+            However, your \\glossterm<wound resistance> against \\glossterm<physical damage> is halved.
 
             \\rankline
             \\rank<6> The skill bonus increases to +12.

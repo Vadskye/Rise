@@ -590,9 +590,9 @@ It defines how attributes work and explains how to make attacks in combat.
             24                & 49            & 216    \\
             25\plus\fn{3}     & \tdash        & \tdash \\
         \end{dtabularx}
-        1. This is your \glossterm{damage resistance} (see \pcref{Wound Resistance}). \\
+        1. This is your \glossterm{wound resistance} (see \pcref{Wound Resistance}). \\
         2. This is your \glossterm{vital resistance} (see \pcref{Vital Resistance}). \\
-        3. To calculate the damage resistance for a creature with an epic Constitution, increase its damage resistance by 4 per point.
+        3. To calculate the wound resistance for a creature with an epic Constitution, increase its wound resistance by 4 per point.
         Its vital resistance is equal to twice the vital resistance it would have if its Constitution was 6 points lower.
     \end{dtable}
 
@@ -615,7 +615,7 @@ It defines how attributes work and explains how to make attacks in combat.
 
     \subsubsection{Damage Type Resistances}\label{Damage Type Resistances}
         Each type of resistance is further divided into what type of damage it protects against.
-        Your \glossterm{damage resistance} and \glossterm{vital resistance} apply against damage of any type.
+        Your \glossterm{wound resistance} and \glossterm{vital resistance} apply against damage of any type.
         Those are collectively called your \glossterm{resistances}.
         Some effects increase your resistances against either \glossterm{physical damage} or \glossterm{energy damage}.
 
@@ -627,7 +627,7 @@ It defines how attributes work and explains how to make attacks in combat.
         At the end of each round, if you have half your maximum \glossterm{hit points} remaining or fewer (rounded down), you become \glossterm{bloodied}.
         Likewise, if you have more than half your maximum hit points remaining, you stop being \glossterm{bloodied}.
 
-        While you are bloodied, your \glossterm{vital resistance} is halved, to a minimum of your \glossterm{damage resistance} for each corresponding type of damage.
+        While you are bloodied, your \glossterm{vital resistance} is halved, to a minimum of your \glossterm{wound resistance} for each corresponding type of damage.
 
     \subsection{Hit Points}\label{Hit Points}
         Your \glossterm{hit points} measure how hard you are to kill.
@@ -643,7 +643,7 @@ It defines how attributes work and explains how to make attacks in combat.
         Instead, you avoided the worst of the blow, but it bruised you through your armor, the effort to dodge the blow fatigued you, or it barely nicked you through sheer luck -- and everyone's luck runs out eventually.
 
         \subsubsection{Missing Hit Points}\label{Missing Hit Points}
-            Some objects and creatures have no \glossterm{hit points} or \glossterm{damage resistance}.
+            Most objects and some creatures have no \glossterm{hit points} or \glossterm{wound resistance}.
             They ignore all damage less than their \glossterm{vital resistance}.
 
     \subsection{Vital Wounds}\label{Vital Wounds}
@@ -1420,7 +1420,7 @@ It defines how attributes work and explains how to make attacks in combat.
             Other abilities similarly apply only if they apply to all damage types dealt by the attack.
 
             For example, a flaming longsword deals slashing and fire damage.
-            If you were hit with a strike with that longsword, you would use the lower of your \glossterm{damage resistance} against \glossterm{physical damage} and your \glossterm{damage resistance} against \glossterm{energy damage} to resist the damage.
+            If you were hit with a strike with that longsword, you would use the lower of your \glossterm{wound resistance} against \glossterm{physical damage} and your \glossterm{wound resistance} against \glossterm{energy damage} to resist the damage.
             An ability that gave you immunity to fire damage would not prevent you from taking damage from the attack unless you were also immune to slashing damage.
 
     \subsection{Magical and Mundane Abilities}\label{Magical and Mundane Abilities}
@@ -1801,11 +1801,6 @@ It defines how attributes work and explains how to make attacks in combat.
         In either case, the mount acts according to its nature.
         Most mounts flee combat without a rider.
 
-    \subsection{Damaging Objects}\label{Damaging Objects}
-        When an object would take damage, if the \glossterm{damage resistance} of the attacking object or creature is lower than the \glossterm{damage resistance} of the defender, the attacking object or creature takes the damage instead.
-        For example, if you try to break a stone wall with a wooden club, the club will break instead of the wall.
-        % TODO: define hardness for creatures and their natural weapons; natural weapons should generally have higher hardness than creatures to avoid hardness reflection being common
-
     \subsection{Underwater Combat}\label{Underwater Combat}
         Land-based creatures have considerable difficulty when fighting in water.
         You take a \minus4 penalty to \glossterm{accuracy} with \glossterm{physical attacks}, Strength and Dexterity-based \glossterm{checks}, and Armor and Reflex defenses.
@@ -1926,7 +1921,7 @@ It defines how attributes work and explains how to make attacks in combat.
             \item Your \glossterm{attributes} increase (see \pcref{Increasing Attributes})
             \item Your skill modifiers usually increase by 1 (see \pcref{Skill Modifier})
             \item Your \glossterm{power} with both \glossterm{mundane} and \glossterm{magical} abilities increases by 1 (see \pcref{Power}).
-            \item Your \glossterm{damage resistance} and \glossterm{vital resistance} increase (see \tref{Character Advancement}).
+            \item Your \glossterm{wound resistance} and \glossterm{vital resistance} increase (see \tref{Resistance Values}).
             \item Your \glossterm{accuracy} increases by 1 (see \pcref{Accuracy})
             \item All of your \glossterm{defenses} increase by 1 (see \pcref{Defenses})
             \item You gain an additional \glossterm{archetype rank} (see \pcref{Archetypes})
