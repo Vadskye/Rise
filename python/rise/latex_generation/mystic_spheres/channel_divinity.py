@@ -89,15 +89,14 @@ channel_divinity=MysticSphere(
             \\rank<7> The area increases to a \\areahuge radius \\glossterm<emanation>.
         """, tags=['Attune (self)', 'Emotion']),
         Spell('Faithful Endurance', 1, 'Yourself', """
-            The first time you gain a \\glossterm<vital wound> during this effect, you gain a +2 bonus to its \\glossterm<vital roll>.
-            The \\glossterm<vital roll> for that \\glossterm<vital wound> cannot be modified again.
+            You gain a +1 \\glossterm<magic bonus> to \\glossterm<vital rolls> (see \\pcref<Vital Roll>).
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<3> The bonus increases to +3.
-            \\rank<5> The bonus increases to +4.
-            \\rank<7> The bonus increases to +5.
+            \\rank<3> The bonus increases to +2.
+            \\rank<5> The bonus increases to +3.
+            \\rank<7> The bonus increases to +4.
         """, tags=['Attune (self)']),
         Spell('Divine Favor', 3, 'Yourself', """
             You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with all attacks.
@@ -119,7 +118,7 @@ channel_divinity=MysticSphere(
         """, tags=['Attune (self)']),
         Spell('Divine Offering', 6, 'Yourself', """
             When you cast this spell, you gain a \\glossterm<vital wound> that has no vital wound effect.
-            In exchange, you gain a +4 bonus to \\glossterm<vital rolls> and become immune to \\glossterm<conditions>.
+            In exchange, you gain a +4 \\glossterm<magic bonus> to \\glossterm<vital rolls> and become immune to \\glossterm<conditions>.
 
             You can cast this spell as a \\glossterm<minor action>.
 
