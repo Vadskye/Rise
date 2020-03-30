@@ -52,7 +52,7 @@ def create_page(destination):
                 flex_wrapper(div({'class': 'section-header'}, 'Power')),
                 calc_magical_power(),
                 calc_mundane_power(),
-                *[calc_blank_power(i) for i in range(1)],
+                *[calc_blank_power(i) for i in range(0)],
                 flex_wrapper(div({'class': 'section-header'}, 'Resistances')),
                 calc_base_resistances(),
                 calc_energy_resistance_bonus(),
@@ -120,7 +120,7 @@ def skill_labels():
     return flex_row({'class': 'skill-labels'}, [
         div({'class': 'skill-name'}),
         div({'class': 'skill-label'}, 'Points'),
-        div({'class': 'skill-label'}, 'Train'),
+        div({'class': 'skill-label'}, 'Training'),
         div({'class': 'skill-label misc'}, 'Misc'),
     ])
 
@@ -255,7 +255,7 @@ def calc_base_resistances():
     return flex_row([
         div({'class': 'calc-header'}, 'Base Resistances'),
         underlabel(
-            'Damage',
+            'Wound',
             number_input({
                 'disabled': True,
                 'name': 'base_wound_resistance_display',
@@ -364,7 +364,7 @@ def calc_hit_points():
                 underlabel('Base', number_input({
                     'disabled': True,
                     'name': 'hit_points_base',
-                    'value': '5',
+                    'value': '9',
                 })),
                 plus(),
                 underlabel('(Con)', number_input({
