@@ -51,7 +51,7 @@ revelation=MysticSphere(
             \\rank<5> The area increases to a \\areahuge radius \\glossterm<emanation>.
             \\rank<7> The area increases to a \\areaext radius \\glossterm<emanation>.
         """, tags=['Attune (self)']),
-        Spell('True Strike', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('True Strike', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             If the target makes a \\glossterm<strike> during the current phase,
                 it gains a +4 bonus to \\glossterm<accuracy> and rolls twice and takes the higher result.
             If you cast this spell on yourself, it affects the first strike you make until the end of the next round.
@@ -61,7 +61,7 @@ revelation=MysticSphere(
             \\rank<5> The bonus increases to +6.
             \\rank<7> The bonus increases to +7.
         """, tags=['Swift']),
-        Spell('Precognitive Offense', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('Precognitive Offense', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with all attacks.
 
             You can cast this spell as a \\glossterm<minor action>.
@@ -70,7 +70,7 @@ revelation=MysticSphere(
             \\rank<5> The target also gains a +2 \\glossterm<magic bonus> to \\glossterm<initiative>.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Attune (target)']),
-        Spell('Precognitive Defense', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('Precognitive Defense', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +1 \\glossterm<magic bonus> to Armor defense and Reflex defense.
 
             \\rankline
@@ -94,7 +94,7 @@ revelation=MysticSphere(
             \\rank<5> The bonus increases to +3.
             \\rank<7> The bonus increases to +4.
         """, tags=['Attune (self)']),
-        Spell('Boon of Many Eyes', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('Boon of Many Eyes', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target reduces its \\glossterm<overwhelm penalties> by 2.
 
             \\rankline

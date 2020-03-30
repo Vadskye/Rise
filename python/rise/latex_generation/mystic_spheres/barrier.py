@@ -130,7 +130,7 @@ barrier=MysticSphere(
             Whenever an object, creature, or ability passes through the barrier from the chosen side, the barrier parts to allow it through.
             If it stops halfway, it can return to its side, but once it passes through fully it treats the barrier as impassable from the other side.
         """, tags=['Sustain (standard)']),
-        Spell('Kinetic Shield', 4, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
+        Spell('Kinetic Shield', 4, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
             The target gains a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical> damage.
 
             You can cast this spell as a \\glossterm<minor action>.
@@ -139,7 +139,7 @@ barrier=MysticSphere(
             \\rank<6> The target also gains a +1 \\glossterm<magic bonus> to \\glossterm<vital rolls> on \\glossterm<vital wounds> from \\glossterm<physical> damage.
             \\rank<8> The bonus increases to be equal to your \\glossterm<power>.
         """, tags=['Attune (target)']),
-        Spell('Resist Energy', 4, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
+        Spell('Resist Energy', 4, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
             The target gains a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<energy> damage.
 
             You can cast this spell as a \\glossterm<minor action>.
@@ -148,7 +148,7 @@ barrier=MysticSphere(
             \\rank<6> The target also gains a +1 \\glossterm<magic bonus> to \\glossterm<vital rolls> on \\glossterm<vital wounds> from \\glossterm<energy> damage.
             \\rank<8> The bonus increases to be equal to your \\glossterm<power>.
         """, tags=['Attune (target)']),
-        Spell('Universal Shield', 6, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
+        Spell('Universal Shield', 6, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
             The target gains a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against all damage.
 
             \\rankline
@@ -174,7 +174,7 @@ barrier=MysticSphere(
             \\rankline
             \\rank<7> You may attune to this spell any number of times, choosing a different subtype of energy damage each time.
         """, tags=['Attune (self)']),
-        Spell('Retributive Shield', 6, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
+        Spell('Retributive Shield', 6, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
             The target gains a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical> damage.
             Whenever an attack that deals \\glossterm<physical damage> fails to beat the target's \\glossterm<wound resistance>, the attacker takes that damage.
             If the attacker is beyond \\rngclose range of the target, this reflection fails.
@@ -185,7 +185,7 @@ barrier=MysticSphere(
             \\rankline
             \\rank<8> The range of the spell and the range of the reflection increase to \\rngmed.
         """, tags=['Attune (target)']),
-        Spell('Deflective Shield', 1, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
+        Spell('Deflective Shield', 1, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
             The target gains a +1 \\glossterm<magic bonus> to Armor defense and Reflex defense.
 
             You can cast this spell as a \\glossterm<minor action>.
@@ -209,7 +209,7 @@ barrier=MysticSphere(
         """, tags=['Sustain (minor)']),
     ],
     rituals=[
-        Spell('Endure Elements', 1, 'Yourself or an \\glossterm<ally> or unattended object within \\rngclose range', """
+        Spell('Endure Elements', 1, 'Yourself or an \\glossterm<ally> or unattended object within \\rngmed range', """
             The target suffers no harm from being in a hot or cold environment.
             It can exist comfortably in conditions between \minus50 and 140 degrees Fahrenheit.
             Its equipment, if any, is also protected.

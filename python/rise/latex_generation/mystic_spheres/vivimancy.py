@@ -11,7 +11,7 @@ vivimancy=MysticSphere(
     name="Vivimancy",
     short_description="Manipulate life energy to aid allies or harm foes",
     cantrips=[
-        Effects('Ablate Vital Wound', 'Yourself or a living \\glossterm<ally> within \\rngclose range', """
+        Effects('Ablate Vital Wound', 'Yourself or a living \\glossterm<ally> within \\rngmed range', """
             The target gains a +1 \\glossterm<vitality bonus> to one of its \\glossterm<vital rolls>, up to a maximum result of 0 (see \\pcref<Vital Rolls>).
         """, tags=[]),
     ],
@@ -37,7 +37,7 @@ vivimancy=MysticSphere(
             \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=[], focus=False),
-        Spell('Seal Wound', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('Seal Wound', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +2 \\glossterm<vitality bonus> to one of its \\glossterm<vital rolls> (see \\pcref<Vital Rolls>).
 
             \\rankline
@@ -45,7 +45,7 @@ vivimancy=MysticSphere(
             \\rank<5> The bonus increases to +4.
             \\rank<7> The bonus increases to +5.
         """, tags=[]),
-        Spell('Fortify Life', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('Fortify Life', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +2 \\glossterm<magic bonus> to Fortitude defense.
 
             You can cast this spell as a \\glossterm<minor action>.
@@ -55,7 +55,7 @@ vivimancy=MysticSphere(
             \\rank<5> The bonus increases to +4.
             \\rank<7> The bonus increases to +5.
         """, tags=['Attune (target)']),
-        Spell('Lifegift', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('Lifegift', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target increases its maximum \\glossterm<hit points> by 2 and regains that many hit points.
             When this spell ends, the target loses hit points equal to the hit points it regained this way.
 
@@ -66,7 +66,7 @@ vivimancy=MysticSphere(
             \\rank<5> The number of additional hit points increases to 4.
             \\rank<7> The number of additional hit points increases to 5.
         """, tags=['Attune (target)']),
-        Spell('Cure Vital Wound', 5, 'Yourself or one living \\glossterm<ally> within \\rngclose range', """
+        Spell('Cure Vital Wound', 5, 'Yourself or one living \\glossterm<ally> within \\rngmed range', """
             The target removes one \\glossterm<vital wound>.
 
             \\rankline
@@ -89,7 +89,7 @@ vivimancy=MysticSphere(
         """, tags=[]),
         # TODO: make "Undead Bane" spell after figuring out undead / life
         # damage interaction
-        Spell('Vital Persistence', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('Vital Persistence', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target ignores the vital wound effect of one of its \\glossterm<vital wounds> (see \\pcref<Vital Wounds>).
 
             \\rankline
@@ -268,14 +268,14 @@ vivimancy=MysticSphere(
             This ritual takes 24 hours to perform, and requires 50 action points from its participants.
             In addition, it can only be learned through the nature \\glossterm<magic source>.
         """, tags=['AP', 'Creation']),
-        Spell('Purge Curse', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('Purge Curse', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             All curses affecting the target are removed.
             This ritual cannot remove a curse that is part of the effect of an item the target has equipped.
             However, it can allow the target to remove any cursed items it has equipped.
 
             This ritual takes 24 hours to perform, and requires 8 action points from its participants.
         """, tags=['AP']),
-        Spell('Restoration', 4, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('Restoration', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             All of the target's hit points, \\glossterm<subdual damage>, and \\glossterm<vital damage> are healed.
             In addition, any of the target's severed body parts or missing organs grow back by the end of the next round.
 

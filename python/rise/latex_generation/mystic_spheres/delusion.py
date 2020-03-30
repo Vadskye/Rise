@@ -11,7 +11,7 @@ delusion=MysticSphere(
     name="Delusion",
     short_description="Instill false emotions to influence creatures",
     cantrips=[
-        Effects('Cheer', 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Effects('Cheer', 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target's mood improves and it feels more cheerful.
 
             \\rankline

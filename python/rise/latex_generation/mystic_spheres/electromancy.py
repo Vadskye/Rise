@@ -73,7 +73,7 @@ spells=[
         \\rank<5> The damage increases to \\glossterm<standard damage>.
         \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
     """, tags=[]),
-    Spell('Magnetic Blade', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+    Spell('Magnetic Blade', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
         Metal weapons wielded by the target gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
 
         You can cast this spell as a \\glossterm<minor action>.
@@ -110,7 +110,7 @@ spells=[
         \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
         \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
     """, tags=[]),
-    Spell('Energize', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+    Spell('Energize', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
         The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<base speed>, up to a maximum of double its \\glossterm<base speed>.
         When this effect ends, the target becomes \\glossterm<fatigued> as a \\glossterm<condition>.
         You can cast this spell as a \\glossterm<minor action>.

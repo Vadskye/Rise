@@ -154,7 +154,7 @@ pyromancy=MysticSphere(
             \\rank<6> The damage increases to \\glossterm<standard damage> -1d.
             \\rank<8> The damage increases to \\glossterm<standard damage>.
         """, tags=['Attune (self)']),
-        Spell('Flame Blade', 4, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('Flame Blade', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             All damage the target deals with \\glossterm<strikes> becomes fire damage in addition to the attack's normal damage types.
 
             You can cast this spell as a \\glossterm<minor action>.

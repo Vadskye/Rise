@@ -101,7 +101,7 @@ aquamancy=MysticSphere(
             \\rank<6> The area of the wall increases to a \\areahuge line.
             \\rank<8> The area of the wall increases to a \\areaext line.
         """, tags=['Sustain (minor)', 'Manifestation']),
-        Spell('Underwater Freedom', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('Underwater Freedom', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target suffers no penalties for acting underwater, except for those relating to using ranged weapons.
 
             You can cast this spell as a \\glossterm<minor action>.

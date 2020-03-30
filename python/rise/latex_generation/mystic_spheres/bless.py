@@ -12,7 +12,7 @@ bless=MysticSphere(
     ],
     lists=['Divine'],
     spells=[
-        Spell('Blessing of Protection', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('Blessing of Protection', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +1 \\glossterm<magic bonus> to Armor defense and Mental defense.
 
             You can cast this spell as a \\glossterm<minor action>.
@@ -22,7 +22,7 @@ bless=MysticSphere(
             \\rank<5> The bonus to Armor defense increases to +2.
             \\rank<7> The bonus to Mental defense increases to +3.
         """, tags=['Attune (target)']),
-        Spell('Battle Blessing', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('Battle Blessing', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with all attacks.
 
             You can cast this spell as a \\glossterm<minor action>.
@@ -31,7 +31,7 @@ bless=MysticSphere(
             \\rank<5> The target also gains a +2 \\glossterm<magic bonus> to \\glossterm<power>.
             \\rank<7> The accuracy increases to +2.
         """, tags=['Attune (target)']),
-        Spell('Blessing of Resilience', 4, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('Blessing of Resilience', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             Whenever the target gains a \\glossterm<condition>, it can choose to negate that condition.
             After negating a condition in this way, this spell ends.
 
@@ -41,7 +41,7 @@ bless=MysticSphere(
             \\rank<6> The spell can negate two conditions before ending.
             \\rank<8> The spell can negate three conditions before ending.
         """, tags=['Attune (target)']),
-        Spell('Cleansing Blessing', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('Cleansing Blessing', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target can remove a \\glossterm<condition>.
             This cannot remove a condition applied during the current round.
 
@@ -56,7 +56,7 @@ bless=MysticSphere(
             \\rankline
             \\rank<8> The area increases to a \\arealarge radius.
         """, tags=[]),
-        Spell('Blessing of Might', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('Blessing of Might', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +4 \\glossterm<magic bonus> to Strength for the purpose of determining its \\glossterm<carrying capacity>.
 
             You can cast this spell as a \\glossterm<minor action>.
@@ -65,7 +65,7 @@ bless=MysticSphere(
             \\rank<5> The bonus increases to +6.
             \\rank<7> The bonus increases to +8.
         """, tags=['Attune (target)']),
-        Spell('Blessing of Endurance', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('Blessing of Endurance', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target increases its maximum \\glossterm<hit points> by one and regains one \\glossterm<hit point>.
             When this ability ends, the target loses \\glossterm<hit points> equal to the number of hit points it regained this way and its maximum \\glossterm<hit points> are restored to normal.
 
@@ -76,7 +76,7 @@ bless=MysticSphere(
             \\rank<5> The number of additional hit points increases to three.
             \\rank<7> The number of additional hit points increases to four.
         """, tags=['Attune (target)']),
-        Spell('Blessing of Persistence', 4, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('Blessing of Persistence', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target cannot fall asleep or be knocked unconscious, even by \\glossterm<vital wounds>.
             If it is already unconscious for any reason, this spell wakes it up before it decides whether to attune to this spell.
 
@@ -88,7 +88,7 @@ bless=MysticSphere(
         """, tags=['Attune (target)']),
     ],
     rituals=[
-        Spell('Blessed Strike', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('Blessed Strike', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             If the target makes a \\glossterm<strike> during the current phase,
                 it gains a +4 bonus to \\glossterm<accuracy> and rolls twice and takes the higher result.
             If you cast this spell on yourself, it affects the first strike you make until the end of the next round.

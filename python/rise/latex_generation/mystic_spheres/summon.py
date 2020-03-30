@@ -166,9 +166,9 @@ summon=MysticSphere(
     ],
     rituals=[
         # weird to have a spell and a ritual but both are useful
-        Spell('Ritual Mount', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('Ritual Mount', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             This ritual summons your choice of a Large light horse or a Medium pony to serve as a mount.
-            The creature appears in an unoccupied location within \\rngclose range.
+            The creature appears in an unoccupied location within \\rngmed range.
             It comes with a bit and bridle and a riding saddle, and will only accept the target as a rider.
             It has the same statistics as a creature from the \\spell<summon monster> spell, except that it follows its rider's directions to the extent that a well-trained horse would and it cannot attack.
         """, tags=['Attune (ritual)', 'Manifestation']),
