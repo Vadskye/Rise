@@ -13,7 +13,7 @@ def create_page(destination):
         ]),
         flex_col({'class': 'main-body'}, [
             boring_stuff(destination),
-            statistics_header(),
+            statistics_header(destination),
             attacks(destination),
             abilities(destination),
         ]),
@@ -108,10 +108,10 @@ def resources():
         ]),
     ])
 
-def statistics_header():
+def statistics_header(destination):
     return ''.join([
         flex_row({'class': 'all-statistics'}, [
-            core_statistics(),
+            core_statistics(destination),
             defenses(),
             wound_resistance(),
             vital_resistance(),
@@ -184,7 +184,7 @@ def vital_resistance():
         ]),
     ])
 
-def core_statistics():
+def core_statistics(destination):
     return flex_col({'class': 'core-statistics'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Core Statistics')),
         labeled_number_input('Land speed', input_attributes={
@@ -201,11 +201,30 @@ def core_statistics():
             'name': 'action_points_display',
             'value': '@{action_points}',
         })),
-        sidelabel('Initiative', number_input({
-            'disabled': True,
-            'name': 'initiative_display',
-            'value': '@{initiative}',
-        })),
+        (
+            sidelabel('Initiative', number_input({
+                'disabled': True,
+                'name': 'initiative_display',
+                'value': '@{initiative}',
+            }))
+            if destination == 'paper' else
+            flex_row({'class': 'labeled-number-input'}, [
+                button(
+                    {
+                        'class': 'number-label',
+                        'name': 'roll_initiative',
+                        'type': 'roll',
+                        'value': f"@{{character_name}} rolls initiative: [[d10+@{{initiative}}]]",
+                    },
+                    'Initiative',
+                ),
+                number_input({
+                    'disabled': True,
+                    'name': 'initiative_display',
+                    'value': '@{initiative}',
+                }),
+            ])
+        ),
     ])
 
 def movement():
@@ -273,10 +292,27 @@ def passive_ability(prefix, ability_number):
 def attacks(destination):
     return flex_col({'class': 'attacks'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Attacks')),
-        "".join([attack() for i in range(6)]) if destination == 'paper' else fieldset(
+        "".join([paper_attack() for i in range(6)]) if destination == 'paper' else fieldset(
             {'class': f'repeating_attacks'},
             attack(),
         )
+    ])
+
+def paper_attack():
+    return flex_row({'class': 'attack'}, [
+        labeled_text_input(
+            'Name',
+            {'class': 'attack-name'},
+        ),
+        underlabel_spaced(
+            'Accuracy',
+            number_input({'class': 'fake-text'}),
+            {'class': 'attack-bonus'}
+        ),
+        labeled_text_input(
+            'Damage/Effect',
+            {'class': 'attack-effect'},
+        ),
     ])
 
 def attack():
