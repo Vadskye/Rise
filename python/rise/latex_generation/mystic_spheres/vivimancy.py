@@ -45,16 +45,26 @@ vivimancy=MysticSphere(
             \\rank<5> The bonus increases to +4.
             \\rank<7> The bonus increases to +5.
         """, tags=[]),
+        Spell('Fortify Life', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+            The target gains a +2 \\glossterm<magic bonus> to Fortitude defense.
+
+            You can cast this spell as a \\glossterm<minor action>.
+
+            \\rankline
+            \\rank<3> The bonus increases to +3.
+            \\rank<5> The bonus increases to +4.
+            \\rank<7> The bonus increases to +5.
+        """, tags=['Attune (target)']),
         Spell('Lifegift', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-            The target increases its maximum \\glossterm<hit points> by one and regains that many hit points.
+            The target increases its maximum \\glossterm<hit points> by 2 and regains that many hit points.
             When this spell ends, the target loses hit points equal to the hit points it regained this way.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<3> The target also gains a +2 bonus to Fortitude defense.
-            \\rank<5> The number of additional hit points increases to two.
-            \\rank<7> The Fortitude defense bonus increases to +4.
+            \\rank<3> The number of additional hit points increases to 3.
+            \\rank<5> The number of additional hit points increases to 4.
+            \\rank<7> The number of additional hit points increases to 5.
         """, tags=['Attune (target)']),
         Spell('Cure Vital Wound', 5, 'Yourself or one living \\glossterm<ally> within \\rngclose range', """
             The target removes one \\glossterm<vital wound>.
