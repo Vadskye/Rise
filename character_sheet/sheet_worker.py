@@ -184,7 +184,7 @@ def action_points():
     return js_wrapper(
         ['level'],
         f"""
-            var action_points = 3 + Math.floor((level - 1) / 3);
+            var action_points = 3 + Math.floor(level / 3);
             setAttrs({{
                 action_points,
                 action_points_max: action_points,
