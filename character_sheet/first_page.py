@@ -136,7 +136,7 @@ def defenses():
 
 def wound_resistance():
     return flex_col({'class': 'damage-resistances'}, [
-        flex_wrapper(div({'class': 'section-header'}, 'Damage Resist')),
+        flex_wrapper(div({'class': 'section-header'}, 'Wound Resist')),
         "".join([
             sidelabel('Physical', number_input({
                 'disabled': True,
