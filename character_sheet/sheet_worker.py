@@ -12,7 +12,7 @@ def generate_script():
         action_points(),
         level_scaling(),
         skill_points_spent(),
-        # *[attack_damage(i) for i in range(20)],
+        *[attack_damage(i) for i in range(20)],
         '</script>',
         ""
     ])
@@ -577,9 +577,9 @@ def skill_points_spent():
 
 def attack_damage(i):
     return js_wrapper(
-        ['mundane_power', f'repeating_attacks_${i}_attack0_damage'],
+        ['mundane_power', f'repeating_attacks_${i}_attack_damage'],
         f"""
-            var power = Math.floor((mundane_power + 2 * repeating_attacks_{i}_attack0_damage) / 2) * 2;
+            var power = Math.floor((mundane_power + 2 * repeating_attacks_{i}_attack_damage) / 2) * 2;
             var dice = {{
                 '-2': '1d4',
                 0: '1d6',
@@ -598,7 +598,7 @@ def attack_damage(i):
             }}[power];
 
             setAttrs({{
-                '${i}_attack0_dice': dice,
+                '${i}_attack_dice': dice,
             }});
         """
     )
