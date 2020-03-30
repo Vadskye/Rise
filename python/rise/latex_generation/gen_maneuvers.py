@@ -990,7 +990,7 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Vault Over',
-        short_description='short_description',
+        short_description='Leap around a foe and make a strike',
         target="One creature adjacent to you no more than one size category larger than you",
         effect_text="""
             Make a Jump attack against the target's Reflex defense.
