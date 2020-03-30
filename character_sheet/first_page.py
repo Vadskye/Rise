@@ -273,63 +273,87 @@ def passive_ability(prefix, ability_number):
 def attacks(destination):
     return flex_col({'class': 'attacks'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Attacks')),
-        "".join([attack(i) for i in range(6)]) if destination == 'paper' else fieldset(
+        "".join([attack() for i in range(6)]) if destination == 'paper' else fieldset(
             {'class': f'repeating_attacks'},
-            attack(0),
+            attack(),
         )
     ])
 
-def attack(n):
+def attack():
     return flex_row({'class': 'attack'}, [
         labeled_text_input(
             'Name',
             {'class': 'attack-name'},
-            {'name': 'attack{0}_name'.format(n)},
+            {'name': 'attack_name'},
         ),
         underlabel_spaced(
-            'Accuracy',
+            '+Acc',
             number_input({
                 'class': 'fake-text',
-                'name': 'attack{0}_accuracy'.format(n),
+                'name': 'attack_accuracy',
+            }),
+            {'class': 'attack-bonus'}
+        ),
+        underlabel_spaced(
+            '+Dmg',
+            number_input({
+                'class': 'fake-text',
+                'name': 'attack_damage',
             }),
             {'class': 'attack-bonus'}
         ),
         labeled_text_input(
             'Defense',
             {'class': 'attack-defense'},
-            {'name': 'attack{0}_defense'.format(n)},
+            {'name': 'attack_defense'},
         ),
-        # underlabel_spaced(
-        #     'Dmg',
-        #     number_input({
-        #         'class': 'fake-text',
-        #         'name': 'attack{0}_damage'.format(n),
-        #     }),
-        #     {'class': 'attack-bonus'}
-        # ),
-        # labeled_text_input(
-        #     'Dice',
-        #     {'class': 'attack-defense'},
-        #     {
-        #         'disabled': True,
-        #         'name': 'attack{0}_dice_display'.format(n),
-        #         'value': f'@{{attack{n}_dice}}',
-        #     },
-        # ),
+        number_input({
+            'class': 'hidden',
+            'disabled': True,
+            'name': 'attack_power',
+            'value': "(@{mundane_power}+@{attack_damage}*2)",
+        }),
+        # TODO: make this work for negative standard damage
+        number_input({
+            'class': 'hidden',
+            'disabled': True,
+            'name': 'attack_dice_count',
+            'value': """(
+                floor(floor(@{attack_power}/16) * (4 + ((@{attack_power} - 16) / 2)))
+                + (
+                    -floor((@{attack_power}-16)/16) * (
+                        floor(floor(@{attack_power}/6) * 1.5) + 1
+                    )
+                )
+            )""".replace('\n', '').replace(' ', ''),
+        }),
+        number_input({
+            'class': 'hidden',
+            'disabled': True,
+            'name': 'attack_dice_size',
+            'value': """(
+                floor(floor(@{attack_power}/16) * 10)
+                + (
+                    -floor((@{attack_power}-16)/16) * (
+                        (floor((@{attack_power}%6)/2)*2)+6
+                    )
+                )
+            )""".replace('\n', '').replace(' ', ''),
+        }),
         labeled_text_input(
             'Effect',
             {'class': 'attack-effect'},
-            {'name': 'attack{0}_effect'.format(n)},
+            {'name': 'attack_effect'},
         ),
         button(
             {
                 'class': 'attack-roll',
-                'name': f"roll_attack_{n}",
+                'name': f"roll_attack",
                 'type': 'roll',
                 'value': (
-                    f"@{{character_name}} uses @{{attack{n}_name}}:"
-                    + f" [[d10! + @{{accuracy}} + @{{attack{n}_accuracy}}]] vs @{{attack{n}_defense}}!"
-                    + f" (@{{attack{n}_effect}})"
+                    f"@{{character_name}} uses @{{attack_name}}:"
+                    + f" [[d10! + @{{accuracy}} + @{{attack_accuracy}}]] vs @{{attack_defense}}!"
+                    + f" ([[@{{attack_dice_count}}d@{{attack_dice_size}}]]; @{{attack_effect}})"
                 ),
             },
             'Attack',
