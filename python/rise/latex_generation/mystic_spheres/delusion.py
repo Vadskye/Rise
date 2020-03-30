@@ -138,10 +138,9 @@ delusion=MysticSphere(
             The target gains a +2 bonus to Mental defense.
 
             \\rankline
-            \\rank<3> The target also increases its maximum \\glossterm<hit points> by one and regains that many hit points.
-            When this spell ends, the target loses hit points equal to the hit points it regained this way.
-            \\rank<5> The bonus to Mental defense increases to +4.
-            \\rank<7> The number of additional hit points increases to two.
+            \\rank<3> The bonus increases to +3.
+            \\rank<5> The bonus increases to +4.
+            \\rank<7> The bonus increases to +5.
         """, tags=['Attune (target)']),
     ],
     category='debuff, combat',
