@@ -295,7 +295,29 @@ def attack(n):
             {'class': 'attack-bonus'}
         ),
         labeled_text_input(
-            'Damage/Effect',
+            'Defense',
+            {'class': 'attack-defense'},
+            {'name': 'attack{0}_defense'.format(n)},
+        ),
+        # underlabel_spaced(
+        #     'Dmg',
+        #     number_input({
+        #         'class': 'fake-text',
+        #         'name': 'attack{0}_damage'.format(n),
+        #     }),
+        #     {'class': 'attack-bonus'}
+        # ),
+        # labeled_text_input(
+        #     'Dice',
+        #     {'class': 'attack-defense'},
+        #     {
+        #         'disabled': True,
+        #         'name': 'attack{0}_dice_display'.format(n),
+        #         'value': f'@{{attack{n}_dice}}',
+        #     },
+        # ),
+        labeled_text_input(
+            'Effect',
             {'class': 'attack-effect'},
             {'name': 'attack{0}_effect'.format(n)},
         ),
@@ -304,7 +326,11 @@ def attack(n):
                 'class': 'attack-roll',
                 'name': f"roll_attack_{n}",
                 'type': 'roll',
-                'value': f"@{{character_name}} uses @{{attack{n}_name}}: [[d10! + @{{accuracy}} + @{{attack{n}_accuracy}}]] to hit! (@{{attack{n}_effect}})",
+                'value': (
+                    f"@{{character_name}} uses @{{attack{n}_name}}:"
+                    + f" [[d10! + @{{accuracy}} + @{{attack{n}_accuracy}}]] vs @{{attack{n}_defense}}!"
+                    + f" (@{{attack{n}_effect}})"
+                ),
             },
             'Attack',
         ),

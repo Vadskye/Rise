@@ -12,6 +12,7 @@ def generate_script():
         action_points(),
         level_scaling(),
         skill_points_spent(),
+        # *[attack_damage(i) for i in range(20)],
         '</script>',
         ""
     ])
@@ -22,7 +23,7 @@ def js_wrapper(variables, function_body):
     variables_with_level = sorted(list(set(variables + ['level'])))
     change_string = ' '.join([f'change:{var}' for var in variables_with_level])
     get_attrs_string = ', '.join([f'"{var}"' for var in variables])
-    set_variables_string = ';\n    '.join([f'var {var} = Number(v.{var} || 0)' for var in variables]) + ';'
+    set_variables_string = ';\n    '.join([f'var {stringify_variable_name(var)} = Number(v["{var}"] || 0)' for var in variables]) + ';'
     return f"""
         on("{change_string}", function(eventInfo) {{
             getAttrs([{get_attrs_string}], function(v) {{
@@ -31,6 +32,9 @@ def js_wrapper(variables, function_body):
             }});
         }});
     """
+
+def stringify_variable_name(varname):
+    return varname.replace('$', '')
 
 def get_misc_variables(variable_name, count):
     return [f'{variable_name}_misc_{i}' for i in range(count)]
@@ -127,6 +131,7 @@ def core_statistics():
         accuracy(),
         base_speed(),
         encumbrance(),
+        focus_penalty(),
         hit_points(),
         initiative(),
         insight_points(),
@@ -301,6 +306,18 @@ def skill_points():
         """
     )
 
+def focus_penalty():
+    misc = get_misc_variables('focus_penalty', 3)
+    return js_wrapper(
+        ['level', *misc],
+        f"""
+            setAttrs({{
+                focus_penalty: 4 - ({sum_variables(misc)}),
+            }});
+        """
+    )
+
+
 def hit_points():
     misc = get_misc_variables('hit_points', 2)
     return js_wrapper(
@@ -407,7 +424,7 @@ def base_wound_resistance():
         ['level', 'constitution_starting'],
         f"""
             var base_wound_resistance = {{
-                -1: 1,
+                '-1': 1,
                 0: 1,
                 1: 2,
                 2: 3,
@@ -443,11 +460,11 @@ def base_wound_resistance():
 
 def base_vital_resistance():
     return js_wrapper(
-        ['level', 'constitution'],
+        ['level', 'constitution', 'constitution_starting'],
         f"""
             var base_vital_resistance = {{
-                -2: 10,
-                -1: 10,
+                '-2': 10,
+                '-1': 10,
                 0: 12,
                 1: 14,
                 2: 16,
@@ -557,3 +574,49 @@ def skill_points_spent():
             }});
         """
     )
+
+def attack_damage(i):
+    return js_wrapper(
+        ['mundane_power', f'repeating_attacks_${i}_attack0_damage'],
+        f"""
+            var power = Math.floor((mundane_power + 2 * repeating_attacks_{i}_attack0_damage) / 2) * 2;
+            var dice = {{
+                '-2': '1d4',
+                0: '1d6',
+                2: '1d8',
+                4: '1d10',
+                6: '2d6',
+                8: '2d8',
+                10: '2d10',
+                12: '4d6',
+                14: '4d8',
+                16: '4d10',
+                18: '5d10',
+                20: '6d10',
+                22: '7d10',
+                24: '8d10',
+            }}[power];
+
+            setAttrs({{
+                '${i}_attack0_dice': dice,
+            }});
+        """
+    )
+
+def standard_damage_at_power(power):
+    return {
+        '-2': '1d4',
+        0: '1d6',
+        2: '1d8',
+        4: '1d10',
+        6: '2d6',
+        8: '2d8',
+        10: '2d10',
+        12: '4d6',
+        14: '4d8',
+        16: '4d10',
+        18: '5d10',
+        20: '6d10',
+        22: '7d10',
+        24: '8d10',
+    }[power]

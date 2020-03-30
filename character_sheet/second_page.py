@@ -3,6 +3,7 @@ from cgi_simple import (
     plus, span, text_input, underlabel
 )
 from sheet_data import ATTRIBUTE_SHORTHAND, ATTRIBUTE_SKILLS, ATTRIBUTES, ROLL20_CALC
+from sheet_worker import standard_damage_at_power
 
 equation_space = flex_col({'class': 'equation-glue'}, div({'class': 'equation-math'}, ' '))
 
@@ -18,8 +19,8 @@ def equation_misc(name, i=0):
         }),
     ])
 
-def equation_misc_repeat(name, count=1):
-    return plus().join([
+def equation_misc_repeat(name, count=1, joiner=plus):
+    return joiner().join([
         equation_misc(name, i)
         for i in range(count)
     ])
@@ -42,6 +43,7 @@ def create_page(destination):
                 calc_base_speed(),
                 calc_carrying_capacity(),
                 calc_encumbrance(),
+                calc_focus_penalty(),
                 # TODO: somehow make room for focus penalties
                 calc_hit_points(),
                 calc_initiative(),
@@ -330,6 +332,27 @@ def calc_energy_resistance_bonus():
                 'value': '(@{energy_resistance_bonus})',
             },
             result_label='Bonus'
+        ),
+    ])
+
+def calc_focus_penalty():
+    return flex_row([
+        div({'class': 'calc-header'}, 'Focus Penalty'),
+        equation(
+            [
+                underlabel('Base', number_input({
+                    'disabled': True,
+                    'name': 'focus_penalty_base',
+                    'value': '4',
+                })),
+                minus(),
+                equation_misc_repeat('focus_penalty', 3, minus),
+            ],
+            result_attributes={
+                'disabled': True,
+                'name': 'focus_penalty_display',
+                'value': '@{focus_penalty}',
+            },
         ),
     ])
 
@@ -839,20 +862,3 @@ def standard_damage():
             ])
         ])
     ])
-
-def standard_damage_at_power(power):
-    return {
-        0: '1d6',
-        2: '1d8',
-        4: '1d10',
-        6: '2d6',
-        8: '2d8',
-        10: '2d10',
-        12: '4d6',
-        14: '4d8',
-        16: '4d10',
-        18: '5d10',
-        20: '6d10',
-        22: '7d10',
-        24: '8d10',
-    }[power]
