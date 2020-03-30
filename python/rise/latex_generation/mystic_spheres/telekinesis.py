@@ -52,7 +52,7 @@ telekinesis=MysticSphere(
             \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
         """, tags=[]),
-        Spell('Force Extension', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('Force Extension', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             Melee weapons wielded by the target gain +5 foot \\glossterm<magic bonus> to \\glossterm<reach>.
             This has no effect on ranged attacks the target makes.
 
@@ -83,7 +83,7 @@ telekinesis=MysticSphere(
             \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
         """, tags=[]),
-        Spell('Telekinetic Lift', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
+        Spell('Telekinetic Lift', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngmed range', """
             The target is reduced to half of its normal weight.
             This gives it a +4 \\glossterm<magic bonus> to the Jump skill, if applicable, and makes it easier to lift and move.
 
@@ -92,7 +92,7 @@ telekinesis=MysticSphere(
             \\rank<5> The target is reduced to a quarter of its normal weight. In addition, the bonus increases to +8.
             \\rank<7> The bonus increases to +10.
         """, tags=['Attune (target)']),
-        Spell('Levitate', 5, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
+        Spell('Levitate', 5, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngmed range', """
             % TODO: Wording
             As long as the target remains within 50 feet above a surface that could support its weight, it floats in midair, unaffected by gravity.
             During the movement phase, you can move the target up to ten feet in any direction as a \\glossterm<free action>.

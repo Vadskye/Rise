@@ -125,7 +125,7 @@ photomancy=MysticSphere(
         """, tags=['Sensation', 'Visual']),
     ],
     rituals=[
-        Spell('Mobile Light', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
+        Spell('Mobile Light', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngmed range', """
             The target glows like a torch, shedding bright light in a \\areamed radius (and dim light for an additional 20 feet).
 
             This ritual takes one minute to perform.

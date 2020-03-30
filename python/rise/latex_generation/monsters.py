@@ -333,7 +333,7 @@ def humanoids(sample_monsters):
                 \\crit As above, except that the penalty is increased to -6.
             """),
             active_ability('Hurt Less', f"""
-                One \\glossterm<ally> in Close range regains a \\glossterm<hit point>.
+                One \\glossterm<ally> in \\rngmed range regains 2 \\glossterm<hit points>.
                 That creature is unaffected by any additional uses of this ability until the shaman takes a \\glossterm<short rest>.
             """),
         ],

@@ -66,7 +66,7 @@ polymorph=MysticSphere(
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=[]),
-        Spell('Shrink', 1, 'Yourself or one Small or larger \\glossterm<ally> within \\rngclose range', """
+        Spell('Shrink', 1, 'Yourself or one Small or larger \\glossterm<ally> within \\rngmed range', """
             The target's size decreases by one \\glossterm<size category>.
             This decreases its \\glossterm<base speed> and improves its \\glossterm<Stealth> skill.
             It may also decrease the target's \\glossterm<reach> (see \\pcref<Size in Combat>).
@@ -88,7 +88,7 @@ polymorph=MysticSphere(
             \\rank<5> The bonus increases to +6.
             \\rank<7> The bonus increases to +8.
         """, tags=['Attune (self)']),
-        Spell('Stoneskin', 4, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('Stoneskin', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical damage>.
 
             You can cast this spell as a \\glossterm<minor action>.
@@ -97,7 +97,7 @@ polymorph=MysticSphere(
             \\rank<6> The target also gains a +1 \\glossterm<magic bonus> to Armor defense.
             \\rank<8> The bonus increases to be equal to your \\glossterm<power>.
         """, tags=['Attune (target)']),
-        Spell('Regeneration', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('Regeneration', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             A the end of each round, the target gains a +1 \\glossterm<vitality bonus> to one of its \\glossterm<vital rolls> (see \\pcref<Vital Rolls>).
 
             \\rankline
@@ -105,7 +105,7 @@ polymorph=MysticSphere(
             \\rank<5> The bonus increases to +3.
             \\rank<7> The bonus increases to +4.
         """, tags=['Attune (target)']),
-        Spell('Enlarge', 4, 'Yourself or one Large or smaller \\glossterm<ally> within \\rngclose range', """
+        Spell('Enlarge', 4, 'Yourself or one Large or smaller \\glossterm<ally> within \\rngmed range', """
             The target's size increases by one \\glossterm<size category>.
             This increases its \\glossterm<base speed> and reduces its \\glossterm<Stealth> skill.
             It may also increase the target's \\glossterm<reach> (see \\pcref<Size in Combat>).
@@ -117,7 +117,7 @@ polymorph=MysticSphere(
             \\rank<6> The target also gains a +2 \\glossterm<magic bonus> to Strength.
             \\rank<8> You may increase the target by two size categories instead of one.
         """, tags=['Attune (target)']),
-        Spell('Alter Appearance', 3, 'Yourself or one large or smaller \\glossterm<ally> within \\rngclose range', """
+        Spell('Alter Appearance', 3, 'Yourself or one large or smaller \\glossterm<ally> within \\rngmed range', """
             You make a Disguise check to alter the target's appearance (see \\pcref<Disguise Creature>).
             You gain a +4 bonus on the check, and you ignore penalties for changing the target's gender, species, subtype, or age.
             However, this effect is unable to alter the target's clothes or equipment in any way.
@@ -205,7 +205,7 @@ polymorph=MysticSphere(
             \\rank<5> The maximum size of the object increases to Medium.
             \\rank<7> The maximum size of the object increases to Large.
         """, tags=[]),
-        Spell('Acidic Blood', 1, ['Yourself or one \\glossterm<ally> within \\rngclose range', 'Everything adjacent to the primary target'], """
+        Spell('Acidic Blood', 1, ['Yourself or one \\glossterm<ally> within \\rngmed range', 'Everything adjacent to the primary target'], """
             The primary target's blood becomes acidic.
             This does not harm it, but the blood can be dangerous to anything nearby when it bleeds.
             At the end of each phase, if the primary target lost a \\glossterm<hit point> during that phase, make an attack vs. Armor against everything adjacent to the target.
@@ -227,7 +227,7 @@ polymorph=MysticSphere(
             \\rank<6> The damage increases to \\glossterm<standard damage> -1d.
             \\rank<8> The damage increases to \\glossterm<standard damage>.
         """, tags=[]),
-        Spell('Camouflage', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('Camouflage', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +3 \\glossterm<magic bonus> to the Stealth skill.
 
             \\rankline
@@ -266,7 +266,7 @@ polymorph=MysticSphere(
         Spell('Supreme Fortify', 7, 'One \\glossterm<unattended>, nonmagical object or part of an object of up to Large size.', """
             This ritual functions like the \\spell<fortify> ritual, except that the bonus to \\glossterm<resistances> increases to 15.
         """, tags=['Attune (ritual)']),
-        Spell('Awaken', 6, 'One Large or smaller \\glossterm<ally> within \\rngclose range', """
+        Spell('Awaken', 6, 'One Large or smaller \\glossterm<ally> within \\rngmed range', """
             The target becomes sentient.
             Its Intelligence becomes 1d6 - 5.
             Its type changes from animal to magical beast.

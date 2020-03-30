@@ -39,7 +39,7 @@ aeromancy = MysticSphere(
             \\rank<5> The penalty increases to -4.
             \\rank<7> The penalty increases to -5.
         """, tags=['Curse']),
-        Spell('Propulsion', 1, 'Yourself or one Large or smaller \\glossterm<ally> in \\rngclose range', """
+        Spell('Propulsion', 1, 'Yourself or one Large or smaller \\glossterm<ally> in \\rngmed range', """
             You \\glossterm<push> the target up to 50 feet in any direction.
             You cannot change the direction of the movement partway through.
             Moving the target upwards costs twice the normal movement cost.
@@ -110,7 +110,7 @@ aeromancy = MysticSphere(
             \\rank<5> The area increases to a \\areahuge, 10 ft. wide line from you.
             \\rank<7> Each struck target is pushed 50 feet instead of 20 feet.
         """, tags=[]),
-        Spell('Windblade', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('Windblade', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             Melee weapons wielded by the target gain +5 foot \\glossterm<magic bonus> to \\glossterm<reach>.
             Attacks that hit because of this reach deal bludgeoning damage instead of any other damage types.
             This has no effect on ranged attacks the target makes.
@@ -220,7 +220,7 @@ aeromancy = MysticSphere(
         """, tags=[]),
     ],
     rituals=[
-        Spell('Air Bubble', 3, 'Yourself or one \\glossterm<ally> within \\rngclose range', """
+        Spell('Air Bubble', 3, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
             The target can breathe clear, clean air regardless of its surroundings.
             This can allow it to breathe underwater and avoid air-based poisons.
         """, tags=['Attune (target)']),

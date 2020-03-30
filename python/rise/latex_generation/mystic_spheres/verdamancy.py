@@ -127,7 +127,7 @@ verdamancy=MysticSphere(
             \\rank<6> The area increases to a \\arealarge radius.
             \\rank<8> The area increases to a \\areahuge radius.
         """, tags=['Attune (self)']),
-        Spell('Thornblade', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('Thornblade', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             All damage the target deals with \\glossterm<strikes> becomes piercing damage in addition to the attack's normal damage types.
             Whenever the target \\glossterm<wounds> a creature with a \\glossterm<strike>, thorns from the striking weapon enter the target's body.
             As a \\glossterm<condition>, the target unable to heal the \\glossterm<hit points> lost to the attack.

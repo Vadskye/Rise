@@ -53,7 +53,7 @@ glamer=MysticSphere(
             \\rank<5> The bonus to Armor defense increases to +2.
             \\rank<7> The bonus to Stealth increases to +4.
         """, tags=['Attune (target)', 'Sensation', 'Visual']),
-        Spell('Hidden Blade', 1, 'Yourself or one \\glossterm<ally> within \\rngclose range', """
+        Spell('Hidden Blade', 1, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
             You can only cast this spell during the \\glossterm<action phase>.
 
             The target's weapons become invisible, and its hands are blurred.
@@ -91,7 +91,7 @@ glamer=MysticSphere(
             \\rank<6> The area increases to a \\arealarge radius \\glossterm<zone>.
             \\rank<8> The area increases to a \\areaext radius \\glossterm<zone>.
         """, tags=[]),
-        Spell('Conceal', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('Conceal', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +3 \\glossterm<magic bonus> to the Stealth skill.
 
             \\rankline
@@ -99,7 +99,7 @@ glamer=MysticSphere(
             \\rank<5> The bonus increases to +5.
             \\rank<7> The bonus increases to +6.
         """, tags=['Attune (target)', 'Sensation']),
-        Spell('Disguise Image', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+        Spell('Disguise Image', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             You make a Disguise check to alter the target's appearance (see \\pcref<Disguise Creature>).
             You gain a +4 bonus on the check, and you can freely alter the appearance of the target's clothes and equipment, regardless of their original form.
             However, this effect is unable to alter the sound, smell, texture, or temperature of the target or its clothes and equipment.
@@ -136,7 +136,7 @@ glamer=MysticSphere(
         """, tags=['Sensation', 'Visual']),
     ],
     rituals=[
-        Spell('Magic Mouth', 1, 'Yourself or one large or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
+        Spell('Magic Mouth', 1, 'Yourself or one large or smaller \\glossterm<ally> or unattended object within \\rngmed range', """
             Choose a triggering condition and a message of twenty-five words or less.
             The condition must be something that a typical human in the target's place could detect.
 
