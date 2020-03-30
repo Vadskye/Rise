@@ -980,13 +980,6 @@ It defines how attributes work and explains how to make attacks in combat.
             In addition, you can specify multiple targets and try to keep away from all of them.
         \end{freeability}
 
-        \parhead{Sprint} As a \glossterm{move action}, you can use the \textit{sprint} ability to move more quickly.
-
-        \begin{freeability}{\labeltext{Sprint}}
-            You move up to double your normal movement speed.
-            In addition, you lose a \glossterm{hit point}.
-        \end{freeability}
-
     \subsection{Movement Impediments}
 
         \parhead{Difficult Terrain}\label{Difficult Terrain}
@@ -1512,29 +1505,30 @@ It defines how attributes work and explains how to make attacks in combat.
             \lcaption{Special Combat Abilities}
             \begin{dtabularx}{\columnwidth}{>{\lcol}p{6em} l X}
                 \tb{Ability}             & \tb{Defense} & \tb{Brief Description} \tableheaderrule
-                Charge                   & Armor        & Move and attack                           \\
-                Cleanse\fn{1}            & \tdash       & Quickly remove all \glossterm{conditions} \\
-                Desperate Exertion\fn{1} & \tdash       & Gain a bonus on a single roll             \\
+                Charge\fn{1}             & Armor        & Move and attack                           \\
+                Cleanse\fn{2}            & \tdash       & Quickly remove all \glossterm{conditions} \\
+                Desperate Exertion\fn{2} & \tdash       & Gain a bonus on a single roll             \\
                 Dirty Trick              & Any          & Impose penalty on a foe                   \\
                 Disarm                   & Ref          & Attack item, knocking it free             \\
                 Grapple                  & Fort and Ref & Wrestle with a foe                        \\
                 Overrun                  & Fort         & Move through foe's space                  \\
-                Recover\fn{1}            & \tdash       & Regain all hit points                     \\
+                Recover\fn{2}            & \tdash       & Regain all hit points                     \\
                 Shove                    & Fort         & Move a foe                                \\
+                Sprint\fn{2}             & \tdash       & Move at double speed                      \\
                 Struggle                 & \tdash       & Move 5 feet regardless of penalties       \\
                 Total Defense            & \tdash       & Gain \plus2 to defenses                   \\
                 Trip                     & Ref          & Trip a foe                                \\
             \end{dtabularx}
-            1. This ability costs an \glossterm{action point} to use.
+            1. This ability costs a \glossterm{hit point} to use. \\
+            2. This ability costs an \glossterm{action point} to use. \\
         \end{dtable}
 
         \parhead{Charge} You can use the \textit{charge} ability as a standard action.
 
         \begin{freeability}{\labeltext{Charge}}
-            \glossterm{Swift}: You take a \minus2 penalty to defenses until the end of the round.
-
+            When you use this ability, you lose a \glossterm{hit point}.
             Move up to your speed in a single straight line.
-            At the end of your movement, you can make a melee \glossterm{strike} with a \minus2 penalty to \glossterm{accuracy} from your new location.
+            At the end of your movement, you can make a melee \glossterm{strike} from your new location.
         \end{freeability}
 
         \parhead{Cleanse} You can use the \textit{cleanse} ability as a \glossterm{minor action}.
@@ -1627,6 +1621,13 @@ It defines how attributes work and explains how to make attacks in combat.
             On a hit, you \glossterm{push} the target up to 10 feet.
             You can move the same distance that you push the target.
             You cannot keep moving the target if it stops being adjacent to you.
+        \end{freeability}
+
+        \parhead{Sprint} As a \glossterm{move action}, you can use the \textit{sprint} ability to move more quickly.
+
+        \begin{freeability}{\labeltext{Sprint}}
+            When you use this ability, you lose a \glossterm{hit point}.
+            You move up to double your normal movement speed.
         \end{freeability}
 
         \parhead{Struggle} As a standard action, you can use the \textit{struggle} ability to move despite movement impediments.
