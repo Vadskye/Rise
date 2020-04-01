@@ -23,7 +23,7 @@ summon=MysticSphere(
                 \\item Its \\glossterm<wound resistance> and \\glossterm<vital resistance> are equal to the base values for your level (see \\pcref<Resistance Values>).
                 \\item It has 6 \\glossterm<hit points>.
                 \\item Each of its \\glossterm<defenses> is equal to 4 \\add your level.
-                \\item Its \\glossterm<accuracy> is equal to your level \\add half your base Perception \\sub 2.
+                \\item Its \\glossterm<accuracy> is equal to your \\glossterm<accuracy> \\sub 2.
                 \\item Its \\glossterm<power> with its attacks is equal to your \\glossterm<power>.
                 \\item Its \\glossterm<land speed> is 30 feet.
                 \\item It has no \\glossterm<action points>.
