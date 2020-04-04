@@ -80,6 +80,14 @@ thaumaturgy=MysticSphere(
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=[]),
+        Spell('Reattunement', 3, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
+            The target can reattune to one ability that it stopped being attuned to since the start of the last round without spending an additional action point.
+            Any choices and effects of the attuned ability are restored to their exact state before the attunement was broken.
+
+            \\rankline
+            \\rank<5> You can target an additional ally within range.
+            \\rank<7> You can target an additional ally within range.
+        """, tags=[]),
         Spell('Dispel Magic', 3, 'One creature, object, or magical effect within \\rngmed range', """
             Make an attack against the target.
             If you target a creature or object, the attack result is applied to every \\glossterm<magical> effect on the target.
