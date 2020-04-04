@@ -16,11 +16,13 @@ glamer=MysticSphere(
             This functions like the \\textit<disguise creature>  ability with a +4 bonus, except that you cannot change the appearance of your equipment, species, creature type, or number of limbs (see \pcref{Disguise Creature}).
             This ability is commonly used to hide blemishes or to appear younger or older than one's true age.
 
+            This ability lasts until you use it again.
+
             \\rankline
             \\rank<3> The bonus increases to +6.
             \\rank<5> The bonus increases to +8.
             \\rank<7> The bonus increases to +10.
-        """, tags=['Sustain (free)', 'Sensation', 'Visual']),
+        """, tags=['Sensation', 'Visual']),
     ],
     lists=['Arcane'],
     spells=[
@@ -134,6 +136,28 @@ glamer=MysticSphere(
             \\glossterm<Mundane> \\glossterm<targeted> attacks against you suffer a 50\\% miss chance.
             This ability provides no defensive benefit against creatures immune to \\glossterm<Visual> abilities.
         """, tags=['Sensation', 'Visual']),
+        Spell('Shadow Double', 1, None, """
+            You create an illusory duplicate of yourself overlayed on your body.
+            Whenever you move, you may also move the illusory duplicate the same distance in any direction.
+            If the duplicate was sharing a space with you before this movement, onlookers cannot tell which is the real you and which is the duplicate.
+            When the duplicate is attacked by a \\glossterm<targeted> attack, it is destroyed.
+            At the end of each round, if the duplicate is outside of \\rngmed range from you, it is destroyed.
+            This effect ends when there are no duplicates remaining.
+
+            \\rankline
+            \\rank<3> The maximum range increases to \\rnglong.
+            \\rank<5> You can create a second duplicate of yourself.
+            \\rank<7> The maximum range increases to \\rngext.
+        """, tags=['Sustain (minor)']),
+        Spell('Shadowcaster', 3, 'Yourself', """
+            Whenever you cast a spell, you may replace the visual effects of the spell with the visual effects of another spell you can cast.
+            Both spells must be from the same \\glossterm<mystic sphere>.
+            An onlooker can detect the substitution and perceive the original effects using an Awareness check with a \\glossterm<difficulty rating> equal to 15 \\add your \\glossterm<power>.
+
+            \\rankline
+            \\rank<5> You can also replace the auditory effects of the spell.
+            \\rank<7> The two spells do not have to be from the same \\glossterm<mystic sphere>.
+        """, tags=['Attune (self)']),
     ],
     rituals=[
         Spell('Magic Mouth', 1, 'Yourself or one large or smaller \\glossterm<ally> or unattended object within \\rngmed range', """

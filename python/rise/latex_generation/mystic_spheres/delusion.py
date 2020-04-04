@@ -108,7 +108,7 @@ delusion=MysticSphere(
         """, tags=['Emotion', 'Sustain (standard)']),
         Spell('Enrage', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against the target.
-            \\hit As a \\glossterm<condition>, the target is unable to take any \\glossterm<standard actions> that do not cause it to make an attack.
+            \\hit As a \\glossterm<condition>, the target takes a -2 penalty to Armor defense and is unable to take any \\glossterm<standard actions> that do not cause it to make an attack.
             For example, it could make a \\glossterm<strike> or cast an offensive spell, but it could not heal itself or summon a creature.
 
             \\rankline
@@ -118,7 +118,7 @@ delusion=MysticSphere(
         """, tags=['Emotion']),
         Spell('Mass Enrage', 6, '\\glossterm<Enemies> in a \\areamed radius within \\rngmed range', """
             Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against each target.
-            \\hit As a \\glossterm<condition>, each target is unable to take any \\glossterm<standard actions> that do not cause it to make an attack.
+            \\hit As a \\glossterm<condition>, each target takes a -2 penalty to Armor defense and is unable to take any \\glossterm<standard actions> that do not cause it to make an attack.
             For example, it could make a \\glossterm<strike> or cast an offensive spell, but it could not heal itself or summon a creature.
 
             \\rankline
@@ -141,6 +141,23 @@ delusion=MysticSphere(
             \\rank<5> The bonus increases to +4.
             \\rank<7> The bonus increases to +5.
         """, tags=['Attune (target)']),
+        Spell('Ominous Presence', 1, 'Yourself', """
+            You gain a +3 \\glossterm<magic bonus> to the Intimidate skill.
+
+            \\rankline
+            \\rank<3> The bonus increases to +4.
+            \\rank<5> The bonus increases to +5.
+            \\rank<7> The bonus increases to +6.
+        """, tags=['Attune (self)']),
+        Spell('Alluring Presence', 1, 'Yourself', """
+
+            You gain a +3 \\glossterm<magic bonus> to the Persuasion skill.
+
+            \\rankline
+            \\rank<3> The bonus increases to +4.
+            \\rank<5> The bonus increases to +5.
+            \\rank<7> The bonus increases to +6.
+        """, tags=['Attune (self)']),
     ],
     category='debuff, combat',
 )

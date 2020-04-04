@@ -2434,7 +2434,7 @@ Make an attack vs. Mental against the target.
 \hit As a \glossterm{condition}, the target must move its maximum movement speed in a straight line during each \glossterm{movement phase}.
 It must use its movement mode with the highest speed to move this way.
 It is not required to use the \textit{sprint} ability, or use any other special movement ability, though it may choose to do so.
-If it is unable to move without making a skill check, it may choose to stop its movement after moving the maximum possible distance without doing so.
+If it is unable to move its full speed without making a skill check or encountering a solid obstacle, it may choose to stop its movement after moving the maximum possible distance without doing so.
 
 \rankline
 \rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
@@ -2778,6 +2778,20 @@ In addition, at the end of each \glossterm{round}, if the target was \glossterm{
 
 
 
+\lowercase{\hypertarget{spell:Alluring Presence}{}}\label{spell:Alluring Presence}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Alluring Presence}{Alluring Presence}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{Yourself}
+You gain a \plus3 \glossterm{magic bonus} to the Persuasion skill.
+
+\rankline
+\rank{3} The bonus increases to \plus4.
+\rank{5} The bonus increases to \plus5.
+\rank{7} The bonus increases to \plus6.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Demotivate}{}}\label{spell:Demotivate}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Demotivate}{Demotivate}}[\glossterm{Emotion}, \glossterm{Focus}]
 \target{One creature within \rngmed range}
@@ -2797,7 +2811,7 @@ Make an attack vs Mental with a \plus3 bonus against the target.
 \begin{freeability}[Rank 1]{\hypertarget{spell:Enrage}{Enrage}}[\glossterm{Emotion}, \glossterm{Focus}]
 \target{One creature within \rngmed range}
 Make an attack vs. Mental with a \plus2 bonus to \glossterm{accuracy} against the target.
-\hit As a \glossterm{condition}, the target is unable to take any \glossterm{standard actions} that do not cause it to make an attack.
+\hit As a \glossterm{condition}, the target takes a \minus2 penalty to Armor defense and is unable to take any \glossterm{standard actions} that do not cause it to make an attack.
 For example, it could make a \glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
 
 \rankline
@@ -2818,6 +2832,20 @@ The target gains a \plus2 bonus to Mental defense.
 \rank{3} The bonus increases to \plus3.
 \rank{5} The bonus increases to \plus4.
 \rank{7} The bonus increases to \plus5.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Ominous Presence}{}}\label{spell:Ominous Presence}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Ominous Presence}{Ominous Presence}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{Yourself}
+You gain a \plus3 \glossterm{magic bonus} to the Intimidate skill.
+
+\rankline
+\rank{3} The bonus increases to \plus4.
+\rank{5} The bonus increases to \plus5.
+\rank{7} The bonus increases to \plus6.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -2924,7 +2952,7 @@ The target is not directly aware of any magical influence on its mind, though un
 \begin{freeability}[Rank 6]{\hypertarget{spell:Mass Enrage}{Mass Enrage}}[\glossterm{Emotion}, \glossterm{Focus}]
 \targets{\glossterm{Enemies} in a \areamed radius within \rngmed range}
 Make an attack vs. Mental with a \plus2 bonus to \glossterm{accuracy} against each target.
-\hit As a \glossterm{condition}, each target is unable to take any \glossterm{standard actions} that do not cause it to make an attack.
+\hit As a \glossterm{condition}, each target takes a \minus2 penalty to Armor defense and is unable to take any \glossterm{standard actions} that do not cause it to make an attack.
 For example, it could make a \glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
 
 \rankline
@@ -3692,11 +3720,13 @@ This ritual takes one hour to perform.
 \subsubsection{Cantrips}
 
 
-\begin{freeability}{Beautify}[\glossterm{Sensation}, \glossterm{Sustain} (free), \glossterm{Visual}]
+\begin{freeability}{Beautify}[\glossterm{Sensation}, \glossterm{Visual}]
 \target{Yourself}
 You alter your appearance in minor ways.
 This functions like the \textit{disguise creature}  ability with a \plus4 bonus, except that you cannot change the appearance of your equipment, species, creature type, or number of limbs (see \pcref{Disguise Creature}).
 This ability is commonly used to hide blemishes or to appear younger or older than one's true age.
+
+This ability lasts until you use it again.
 
 \rankline
 \rank{3} The bonus increases to \plus6.
@@ -3798,6 +3828,25 @@ This effect provides no offensive benefit against creatures immune to \glossterm
 
 
 
+\lowercase{\hypertarget{spell:Shadow Double}{}}\label{spell:Shadow Double}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Shadow Double}{Shadow Double}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
+\targetrule
+You create an illusory duplicate of yourself overlayed on your body.
+Whenever you move, you may also move the illusory duplicate the same distance in any direction.
+If the duplicate was sharing a space with you before this movement, onlookers cannot tell which is the real you and which is the duplicate.
+When the duplicate is attacked by a \glossterm{targeted} attack, it is destroyed.
+At the end of each round, if the duplicate is outside of \rngmed range from you, it is destroyed.
+This effect ends when there are no duplicates remaining.
+
+\rankline
+\rank{3} The maximum range increases to \rnglong.
+\rank{5} You can create a second duplicate of yourself.
+\rank{7} The maximum range increases to \rngext.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Disguise Image}{}}\label{spell:Disguise Image}
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Disguise Image}{Disguise Image}}[\glossterm{Attune} (target), \glossterm{Focus}, \glossterm{Sensation}, \glossterm{Visual}]
 \target{Yourself or an \glossterm{ally} within \rngmed range}
@@ -3826,6 +3875,21 @@ This ability provides no defensive benefit against creatures immune to \glosster
 \rankline
 \rank{5} At the end of each round, if no images were destroyed that round, a destroyed image respawns.
 \rank{7} At the end of each round, a destroyed image respawns.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Shadowcaster}{}}\label{spell:Shadowcaster}
+\begin{attuneability}[Rank 3]{\hypertarget{spell:Shadowcaster}{Shadowcaster}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{Yourself}
+Whenever you cast a spell, you may replace the visual effects of the spell with the visual effects of another spell you can cast.
+Both spells must be from the same \glossterm{mystic sphere}.
+An onlooker can detect the substitution and perceive the original effects using an Awareness check with a \glossterm{difficulty rating} equal to 15 \add your \glossterm{power}.
+
+\rankline
+\rank{5} You can also replace the auditory effects of the spell.
+\rank{7} The two spells do not have to be from the same \glossterm{mystic sphere}.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -4216,7 +4280,7 @@ The target gains a \plus3 \glossterm{magic bonus} to the Stealth skill.
 \lowercase{\hypertarget{spell:Enhanced Senses}{}}\label{spell:Enhanced Senses}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Enhanced Senses}{Enhanced Senses}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \target{Yourself}
-You gain a \plus3 \glossterm{magic bonus} to Awareness checks.
+You gain a \plus3 \glossterm{magic bonus} to the Awareness skill.
 
 \rankline
 \rank{3} The bonus increases to \plus4.
@@ -4586,6 +4650,20 @@ This ritual takes one minute to perform.
 
 
 
+\lowercase{\hypertarget{spell:Morph Weapon}{}}\label{spell:Morph Weapon}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Morph Weapon}{Morph Weapon}}[\glossterm{Attune} (ritual), \glossterm{Focus}]
+\target{One unattended manufactured weapon}
+The target changes into another weapon from the same weapon group.
+At least one ritual participant must be proficient with that weapon group.
+You cannot change it into an exotic weapon in this way.
+When this effect ends, the target returns to its original shape.
+
+This ritual takes one minute to perform.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Purify Sustenance}{}}\label{spell:Purify Sustenance}
 \begin{apability}[Rank 1]{\hypertarget{spell:Purify Sustenance}{Purify Sustenance}}[\glossterm{Focus}]
 \targets{All food and water in a single square within \rngclose range}
@@ -4605,6 +4683,15 @@ This ritual takes one hour to perform.
 The target can breathe air as easily as a human breathes air, preventing it from suffocating above water if it can normally only breathe water or some other substance.
 
 This ritual takes one minute to perform.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Exotic Morph Weapon}{}}\label{spell:Exotic Morph Weapon}
+\begin{attuneability}[Rank 3]{\hypertarget{spell:Exotic Morph Weapon}{Exotic Morph Weapon}}[\glossterm{Attune} (ritual), \glossterm{Focus}]
+\target{One unattended manufatured weapon}
+This ritual functions like the \spell{morph weapon} ritual, except that you can also change the target into an exotic weapon.
 \end{attuneability}
 \vspace{0.25em}
 
