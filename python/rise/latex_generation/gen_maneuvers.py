@@ -1027,6 +1027,23 @@ def generate_maneuvers():
         lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
+    maneuvers.append(Maneuver(
+        name='Meteor Smash',
+        target="As chosen \\glossterm<strike> (see text)",
+        short_description='Make a strike with extra momentum from movement',
+        effect_text="""
+            Make a melee \\glossterm<strike> using a bludgeoning or piercing weapon.
+            If your movement during the \\glossterm<movement phase> consisted entirely of moving at least 20 feet in a straight line towards your target, you gain a +2d bonus to damage with the strike.
+        """,
+        rank=3,
+        rank_upgrades={
+            '5': 'The damage bonus increases to +3d.',
+            '7': 'The damage bonus increases to +4d.',
+        },
+        tags=[],
+        lists=['Primal', 'Wild'],
+    ))
+
     return maneuvers
 
 def generate_maneuver_latex():

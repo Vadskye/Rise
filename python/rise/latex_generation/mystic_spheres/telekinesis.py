@@ -43,15 +43,6 @@ telekinesis=MysticSphere(
             \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
         """, tags=[]),
-        Spell('Force Wave', 1, 'Everything in a \\areamed cone from you', """
-            Make an attack vs. Armor against each target.
-            \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
-
-            \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage>.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
-        """, tags=[]),
         Spell('Force Extension', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             Melee weapons wielded by the target gain +5 foot \\glossterm<magic bonus> to \\glossterm<reach>.
             This has no effect on ranged attacks the target makes.
@@ -71,6 +62,18 @@ telekinesis=MysticSphere(
             \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
+        """, tags=[]),
+        Spell('Blastwave', 3, '\\glossterm<Enemies> and objects in a \\areamed radius from you', """
+            Make an attack vs. Mental against each target.
+            \\hit You move each target up to 5 feet per two \\glossterm<power> in a straight line away from you.
+            Moving a target upwards costs twice the normal movement cost.
+            If the target impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgoning \\glossterm<standard damage> -2d.
+            Any individual object or creature can only take damage once in this way, even if it is hit by multiple targets that are knocked flying.
+
+            \\rankline
+            \\rank<3> The area increases to a \\arealarge radius.
+            \\rank<5> The area increases to a \\areahuge radius.
+            \\rank<7> The area increases to a \\areaext radius.
         """, tags=[]),
         Spell('Telekinetic Throw', 1, 'One Medium or smaller creature or object within \\rngmed range', """
             Make an attack vs. Mental against the target.

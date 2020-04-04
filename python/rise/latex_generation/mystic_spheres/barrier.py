@@ -22,14 +22,14 @@ barrier=MysticSphere(
 
             \\rank<6> The area increases to a \\arealarge line.
             \\rank<8> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
-        """, tags=['Sustain (minor)']),
+        """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Visual Barrier', 3, None, """
             This spell functions like the \\spell<mystic barrier> spell, except that the barrier is visible as a deep black that completely blocks sight.
             In addition, the \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to three times your \\glossterm<power>.
 
             \\rank<5> The area increases to a \\arealarge line.
             \\rank<7> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
-        """, tags=['Sustain (minor)']),
+        """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Audible Barrier', 3, None, """
             This spell functions like the \\spell<mystic barrier> spell, except that the barrier allows sound to pass through.
             Exceptionally strong sounds, such as sonic attacks that deal energy damage, are blocked by the barrier like other damaging effects.
@@ -37,7 +37,7 @@ barrier=MysticSphere(
 
             \\rank<5> The area increases to a \\arealarge line.
             \\rank<7> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
-        """, tags=['Sustain (minor)']),
+        """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Forceful Barrier', 3, None, """
             This spell functions like the \\spell<mystic barrier> spell, except that it breaks objects in its area that obstruct its path.
             Each object in the path of the wall takes energy \\glossterm<standard damage>.
@@ -48,7 +48,7 @@ barrier=MysticSphere(
             \\rankline
             \\rank<5> The area increases to a \\arealarge line.
             \\rank<7> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
-        """, tags=['Sustain (minor)']),
+        """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Mystic Barrier', 1, None, """
             You create a wall of magical energy in a 20 ft.\\ high, \\areamed line within \\rngmed range.
             If you create the wall within a space too small to hold it, it fills as much of the space as possible, allowing you to completely block off small tunnels.
@@ -60,7 +60,7 @@ barrier=MysticSphere(
             \\rank<3> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to three times your \\glossterm<power>.
             \\rank<5> The area increases to a \\arealarge line.
             \\rank<7> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
-        """, tags=['Sustain (minor)']),
+        """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Mystic Bridge', 3, None, """
             You create a horizontal field of magical energy in a \\areamed, 10 ft.\\ wide line within \\rngmed range.
             If you create the field within a space too small to hold it, it fills as much of the space as possible, allowing you to completely block off small vertical tunnels.
@@ -71,7 +71,7 @@ barrier=MysticSphere(
             \\rankline
             \\rank<5> The area increases to a \\arealarge line.
             \\rank<7> The area increases to be a \\areahuge, 20 ft.\\ wide line.
-        """, tags=['Sustain (minor)']),
+        """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Protective Sphere', 1, 'Yourself or one Large or smaller \\glossterm<ally> within \\rngmed range', """
             You create a sphere of magical energy around the target in its space.
             The sphere is visible as a shimmering magical membrane that does not block sight.
@@ -85,7 +85,28 @@ barrier=MysticSphere(
             \\rank<3> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to three times your \\glossterm<power>.
             \\rank<5> The maximum size of the target increases to Huge.
             \\rank<7> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
-        """, tags=['Sustain (minor)']),
+        """, tags=['Manifestation', 'Sustain (minor)']),
+        Spell('Quickseal', 3, 'One openable object within \\rngmed range (see text)', """
+            You create a curved field of magical energy that blocks access to the target's opening mechanism.
+            The opening mechanism must be Small or smaller in size.
+            Nothing can pass through the field until it is destroyed.
+            The field has a \\glossterm<vital resistance> equal to three times your \\glossterm<power>.
+
+            \\rankline
+            \\rank<5> The \\glossterm<vital resistance> of the field increases to four times your \\glossterm<power>.
+            \\rank<7> The \\glossterm<vital resistance> of the field increases to five times your \\glossterm<power>.
+        """, tags=['Manifestation', 'Sustain (minor)']),
+        Spell('Personal Sphere', 5, 'Yourself', """
+            You create a sphere of magical energy around yourself.
+            The sphere is visible as a shimmering magical membrane that does not block sight.
+            Nothing can pass through the field until it is destroyed.
+            This prevents the target from having \\glossterm<line of effect> to anything outside of the area.
+            When you move, the sphere moves with you, though you cannot force it against another creature or object.
+            Each 5-ft.\\ square of the field has a \\glossterm<vital resistance> equal to three times your \\glossterm<power>.
+
+            \\rankline
+            \\rank<7> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
+        """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Entrapping Sphere', 4, 'One Large or smaller creature within \\rngmed range', """
             Make an attack vs. Reflex against the target.
             \\hit You create a sphere of magical energy around the target in its space.
@@ -99,13 +120,13 @@ barrier=MysticSphere(
             \\rankline
             \\rank<6> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to three times your \\glossterm<power>.
             \\rank<8> The maximum size of the target increases to Huge.
-        """, tags=['Sustain (standard)']),
+        """, tags=['Manifestation', 'Sustain (standard)']),
         Spell('Invulnerable Barrier', 6, None, """
             This spell functions like the \\spell<mystic barrier> spell, except that each 5-ft.\\ square of wall has a \\glossterm<vital resistance> equal to four times your \\glossterm<power>.
             In addition, the wall is \\glossterm<resistant> to physical damage.
 
             \\rank<8> The area increases to a \\arealarge line.
-        """, tags=['Sustain (minor)']),
+        """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Wall of Energy Impedance', 3, None, """
             You create a wall of magical energy in a 20 ft.\\ high, \\areamed line within \\rngmed range.
             The wall is visible as a shimmering magical membrane that does not block sight.
@@ -115,7 +136,7 @@ barrier=MysticSphere(
             \\rankline
             \\rank<5> The area increases to a \\arealarge line.
             \\rank<7> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to three times your \\glossterm<power>.
-        """, tags=['Sustain (minor)']),
+        """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Wall of Magic Impedance', 5, None, """
             You create a wall of magical energy in a 20 ft.\\ high, \\areamed line within \\rngmed range.
             The wall is visible as a shimmering magical membrane that does not block sight.
@@ -124,12 +145,12 @@ barrier=MysticSphere(
 
             \\rankline
             \\rank<7> The area increases to a \\arealarge line.
-        """, tags=['Sustain (minor)']),
+        """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('One-Way Barrier', 7, None, """
             This spell functions like the \\spell<mystic barrier> spell, except that you choose one side of the barrier when you cast the spell.
             Whenever an object, creature, or ability passes through the barrier from the chosen side, the barrier parts to allow it through.
             If it stops halfway, it can return to its side, but once it passes through fully it treats the barrier as impassable from the other side.
-        """, tags=['Sustain (standard)']),
+        """, tags=['Manifestation', 'Sustain (standard)']),
         Spell('Kinetic Shield', 4, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
             The target gains a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical> damage.
 
@@ -222,7 +243,7 @@ barrier=MysticSphere(
             It can be unlocked with a Devices check against a \\glossterm<difficulty rating> equal to 20 \\add your \\glossterm<power>.
             The \\glossterm<difficulty rating> to break it open forcibly increases by 10.
 
-            You can freely pass your own \\ritual<arcane lock> as if the object were not locked.
+            You can freely pass your own \\ritual<mystic lock> as if the object were not locked.
             This effect lasts as long as you \\glossterm<attune> to it.
             If you use this ability multiple times, you can attune to it each time.
 
