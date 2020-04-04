@@ -154,15 +154,16 @@ pyromancy=MysticSphere(
             \\rank<6> The damage increases to \\glossterm<standard damage> -1d.
             \\rank<8> The damage increases to \\glossterm<standard damage>.
         """, tags=['Attune (self)']),
-        Spell('Flame Blade', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Flame Blade', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             All damage the target deals with \\glossterm<strikes> becomes fire damage in addition to the attack's normal damage types.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<6> The target also gains a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities.
-            % May be too strong
-            \\rank<8> The power bonus increases to +4.
+            \\rank<5> Whenever the target \\glossterm<vitally wounds> a creature with a \\glossterm<strike>, the struck creature is also \\glossterm<ignited> as a \\glossterm<condition>.
+            This condition can be removed if the target makes a \\glossterm<difficulty rating> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
+            Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
+            \\rank<7> The condition cannot be removed with a \\glossterm<move action>.
         """, tags=['Attune (target)']),
         Spell('Wall of Fire', 4, 'Each creature that moves through the area (see text)', """
             You create a wall of fire in a 20 ft.\\ high, \\arealarge \\glossterm<wall> within \\rngmed range.
