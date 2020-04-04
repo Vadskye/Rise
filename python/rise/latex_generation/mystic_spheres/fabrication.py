@@ -264,7 +264,13 @@ fabrication=MysticSphere(
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Antitoxin', 1, 'Yourself (see text)', """
             You create a small vial of antitoxin in one of your free hands.
-            A creature that drinks the vial gains an additional success to resist a poison currently affecting it (see \\pcref<Poisons>).
+            A creature can drinks the vial as a \\glossterm<standard action>.
+            When a creature drinks the vial, it gains an additional success to resist a poison currently affecting it (see \\pcref<Poisons>).
+
+            \\rankline
+            \\rank<3> The number of vials created increases to two.
+            \\rank<5> The number of vials created increases to three.
+            \\rank<7> The number of vials created increases to four.
         """, tags=['Sustain (minor)']),
         Spell('Fog Cloud', 3, 'Everything in a \\areasmall radius within \\rngmed range', """
             A cloud of fog appears in the area.
@@ -302,8 +308,12 @@ fabrication=MysticSphere(
         Spell('Copy Writing', 1, ['One Small or smaller written work within \\rngclose range', 'One Small or smaller set of blank pages within \\rngclose range'], """
             You copy the writing from the primary target onto the secondary target.
             The secondary target must have enough room for the writing.
-            Copying the writing takes a tenth the time required to copy it by hand and requires no writing materials.
-        """, tags=['Sustain (standard)']),
+            This ritual takes half the time required to copy the writing by hand, to a minimum of one minute, and does not require writing materials.
+        """, tags=[]),
+        Spell('Greater Copy Writing', 4, ['One Medium or smaller written work within \\rngclose range', 'One Medium or smaller set of blank pages within \\rngclose range'], """
+            This ritual functions like the \\spell<copy writing> ritual, except that it can target objects of Medium or smaller size.
+            In addition, the time required to perform this ritual decreases to one tenth of the time required to copy the writing by hand, to a minimum of one minute.
+        """, tags=[]),
     ],
     category='damage',
 )

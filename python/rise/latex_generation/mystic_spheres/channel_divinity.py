@@ -39,6 +39,9 @@ channel_divinity=MysticSphere(
         Spell('Glimpse of Divinity', 5, 'One creature within \\rngclose range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<blinded> as a \\glossterm<condition>.
+
+            \\rankline
+            \\rank<7> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=[]),
         Spell('Word of Faith', 1, '\\glossterm<Enemies> in a \\areasmall radius from you', """
             Make an attack vs. Mental against each target.

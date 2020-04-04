@@ -89,6 +89,12 @@ terramancy=MysticSphere(
 
             If this spell ends before you exit the stone, or if the stone stops being a valid target for the spell (such as if it is broken into pieces), you are forcibly expelled from the stone.
             When you are forcibly expelled from the stone, you take 4d10 bludgeoning damage and become \\glossterm<nauseated> as a \\glossterm<condition>.
+
+            \\rankline
+            \\rank<5> Exiting the stone does not cause this spell to end.
+            You can repeatedly exit and re-enter the stone as long as you maintain attunement to the spell.
+            \\rank<7> You can leave tiny tunnels carrying air through the stone as you move through it, allowing you to effectively breathe within the stone.
+            These trails disappear when this spell ends.
         """, tags=['Attune (self)']),
         # TODO: make tremor/fissure/earthquake targeting consistent
         Spell('Tremor', 1, 'All Large or smaller creatures in a \\areamed radius within \\rngmed range that are standing on earth or unworked stone', """

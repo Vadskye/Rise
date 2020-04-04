@@ -152,6 +152,7 @@ aquamancy=MysticSphere(
             Fog fills the air within a \\areamed radius \\glossterm<emanation> from your location.
             The fog partially obstructs sight, granting \\glossterm<concealment> to anything seen through the fog (see \\pcref<Concealment>).
 
+            \\rankline
             \\rank<6> You can exclude an inner radius of any size from the area, allowing you to create fog that surrounds you without blocking sight to things adjacent to you.
             \\rank<8> The area increases to a \\arealarge radius \\glossterm<zone>.
         """, tags=['Attune (self)']),
@@ -204,7 +205,7 @@ aquamancy=MysticSphere(
         Spell('Dampen', 1, 'Up to five ritual participants', """
             Each target gains a \\glossterm<magic bonus> equal to your \\glossterm<power> to \\glossterm<resistances> against fire damage.
 
-            You can cast this spell as a \\glossterm<minor action>.
+            This ritual takes one minute to perform.
         """, tags=['Attune (ritual)']),
         Spell('Water Breathing', 3, 'One Medium or smaller ritual participant', """
             The target can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.

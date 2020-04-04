@@ -61,9 +61,13 @@ delusion=MysticSphere(
         Spell('Agony', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target is inflicted with agonizing pain as a \\glossterm<condition>.
-            It takes a -2 penalty to Mental defense.
             % Does this need to clarify that it takes effect in the round the spell was cast?
-            In addition, at the end of each \\glossterm<round>, if the target was \\glossterm<wounded> that round, it loses a \\glossterm<hit point>.
+            Tt the end of each \\glossterm<round>, if the target was \\glossterm<wounded> that round, it loses a \\glossterm<hit point>.
+
+            \\rankline
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<5> The accuracy bonus increases to +2.
+            \\rank<7> The accuracy bonus increases to +3.
         """, tags=['Emotion']),
         Spell('Redirected Terror', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.

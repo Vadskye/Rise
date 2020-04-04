@@ -207,6 +207,9 @@ aeromancy = MysticSphere(
             If there is no dirt, dust, or collection of loose objects of similar size within 30 feet of the target's eyes, this spell is \\glossterm<miscast>.
             Make an attack vs. Reflex against the target.
             \\hit The target is \\glossterm<blinded> as a \\glossterm<condition>.
+
+            \\rankline
+            \\rank<7> The range increases to \\rnglong.
         """, tags=[]),
         Spell('Piercing Wind', 1, 'One creature or object within \\rngclose range', """
             A rush of wind flows rapidly through the gaps in your foe's armor to pierce its heart.
@@ -220,9 +223,11 @@ aeromancy = MysticSphere(
         """, tags=[]),
     ],
     rituals=[
-        Spell('Air Bubble', 3, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
+        Spell('Air Bubble', 3, 'One ritual participant', """
             The target can breathe clear, clean air regardless of its surroundings.
             This can allow it to breathe underwater and avoid air-based poisons.
+
+            This ritual takes one minute to perform.
         """, tags=['Attune (target)']),
     ],
     category='buff, defense',
