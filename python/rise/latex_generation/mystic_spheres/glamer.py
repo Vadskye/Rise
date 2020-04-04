@@ -146,6 +146,12 @@ glamer=MysticSphere(
 
             This ritual takes one minute to perform.
         """, tags=['Attune (ritual)', 'Sensation']),
+        Spell('Sunlight Ward', 3, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
+            The target is never considered to be in natural sunlight.
+            This does not impair its vision, but protects it if it would otherwise suffer negative consequences for being in natural sunlight.
+
+            This ritual takes one hour to perform.
+        """, tags=['Attune (target)']),
     ],
     category='buff, defense',
 )

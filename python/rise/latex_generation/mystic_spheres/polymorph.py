@@ -254,6 +254,13 @@ polymorph=MysticSphere(
             \\rank<5> The bonus increases to +5.
             \\rank<7> The bonus increases to +6.
         """, tags=['Attune (target)', 'Sensation']),
+        Spell('Sludgeform', 8, 'One living creature within \\rngclose range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit As a \\glossterm<condition>, the target's physical form loses coherence and partially collapses into a sludgelike mass.
+            It has no \\glossterm<free hands>, causing it to drop anything it is holding and making it unable to take any actions that require free hands.
+            Its speed with all of its \\glossterm<mundane> movement modes are reduced to one quarter normal.
+            It is also unable to speak normally or use verbal or somatic \\glossterm<components>.
+        """, tags=[]),
     ],
     rituals=[
         # Should this also be a spell? Incredibly niche, but golem makers

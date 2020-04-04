@@ -151,10 +151,20 @@ astromancy=MysticSphere(
             \\rank<6> You can also teleport vertically or diagonally in addition to horizontally.
             \\rank<8> You can teleport in this way even if you are unable to move, such as if you are \\glossterm<immobilized> or \\glossterm<paralyzed>.
         """, tags=['Attune (self)']),
-        Spell('Blink', 4, 'Yourself', """
+        Spell('Blink', 1, 'Yourself', """
+            You randomly blink between your current plane and the Astral Plane.
+            \\glossterm<Targeted> \\glossterm<strikes> against you have a 20\\% failure chance as you happen to be in the Astral Plane when the attack would hit.
+            However, all of your attacks also have the same failure chance.
+
+            \\rankline
+            \\rank<3> The failure chance increases to 30\\%.
+            \\rank<5> The failure chance increases to 40\\%.
+            \\rank<7> The failure chance increases to 50\\%.
+        """, tags=['Attune (self)']),
+        Spell('Controlled Blink', 4, 'Yourself', """
             You randomly blink between your current plane and the Astral Plane.
             This blinking stops when you take actions on your current plane.
-            In any phase where you do not take any actions, \\glossterm<targeted> \\glossterm<strikes> against you have a 50\\% miss chance.
+            In any phase where you do not take any actions, \\glossterm<targeted> \\glossterm<strikes> against you have a 50\\% failure chance as you happen to be in the Astral Plane when the attack would hit.
             You are still affected normally by abilities that affect an area.
 
             \\rankline

@@ -93,23 +93,27 @@ compel=MysticSphere(
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<stunned> as a \\glossterm<condition>.
             \\crit The target is \\glossterm<stunned> and \\glossterm<confused> as a single \\glossterm<condition>.
-            As a standard action, you can make an additional attack vs. Mental against the target as long as it remains affected by this condition is within \\rngmed range of you.
-            On a hit, the target becomes stunned and confused in the same way as an additional condition, continuing the effect even if the target removed the original condition in the same phase.
-            On a critical hit, if the target is humanoid, it becomes \\glossterm<dominated> by you as long as you \\glossterm<attune> to this ability.
+            If the target is humanoid and was already stunned and confused from a previous casting of this spell, it becomes \\glossterm<dominated> by you as long as you \\glossterm<attune> to this ability.
 
             \\rankline
             \\rank<7> You can dominate the target even if it is not humanoid.
         """, tags=['Compulsion']),
-        Spell('Sleep', 4, 'One creature within \\rngmed range', """
+        Spell('Sleep', 8, 'One creature within \\rngclose range', """
             Make an attack vs. Mental against the target.
-            \\hit The target is \\glossterm<exhausted> as a \\glossterm<condition>.
-            \\crit The target is \\glossterm<exhausted> and falls asleep as a \\glossterm<condition>.
+            \\hit The falls asleep as a \\glossterm<condition>.
             It cannot be awakened while the condition lasts unless it takes a \\glossterm<vital wound>, which causes it to wake up and ends the sleeping part of the condition.
             After the condition ends, the target can wake up normally, though it continues to sleep until it would wake up naturally.
         """, tags=['Compulsion']),
+        Spell('Close Your Eyes', 6, 'One creature within \\rngmed range', """
+            Make an attack vs. Mental against the target.
+            \\hit The target is \\glossterm<blinded>.
+
+            \\rankline
+            \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+        """, tags=['Compulsion']),
     ],
     rituals=[
-        Spell('Truthseal', 4, 'Up to five creatures within \\rngmed range', """
+        Spell('Tell the Truth', 4, 'Up to five creatures within \\rngmed range', """
             Make an attack vs. Mental against each target.
 
             \\hit Each target is unable to say things it knows to be untrue.

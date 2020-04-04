@@ -266,6 +266,23 @@ fabrication=MysticSphere(
             You create a small vial of antitoxin in one of your free hands.
             A creature that drinks the vial gains an additional success to resist a poison currently affecting it (see \\pcref<Poisons>).
         """, tags=['Sustain (minor)']),
+        Spell('Fog Cloud', 3, 'Everything in a \\areasmall radius within \\rngmed range', """
+            A cloud of fog appears in the area.
+            All sight through the area is partially obscured, granting \\glossterm<concealment> to anything in the area and anything viewed through the area (see \\pcref<Concealment>).
+
+            \\rankline
+            \\rank<5> The area increases to a \\areamed radius.
+            \\rank<7> The area increases to a \\arealarge radius.
+        """, tags=['Manifestation', 'Sustain (minor)']),
+        Spell('Fog Wall', 1, '', """
+            You create a wall of fog in a 20 ft.\\ high, \\arealarge \\glossterm<wall> within \\rngmed range.
+            The fog makes it difficult to see through the wall, granting \\glossterm<concealment> to anything viewed through the wall (see \\pcref<Concealment>).
+
+            \\rankline
+            \\rank<3> The area increases to a \\arealarge line.
+            \\rank<5> The area increases to a \\areahuge line.
+            \\rank<7> The area increases to a \\areaext line.
+        """, tags=['Manifestation', 'Sustain (minor)']),
     ],
     rituals=[
         Spell('Manifest Object', 3, 'One unoccupied square within \\rngclose range', """
