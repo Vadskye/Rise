@@ -214,6 +214,10 @@ revelation=MysticSphere(
             You otherwise act normally, though you may have difficulty moving or taking actions if the sensor cannot see your body or your intended targets, effectively making you \\blinded.
 
             If undisturbed, the sensor floats in the air in its position.
+
+            \\rankline
+            \\rank<5> The range increases to \\rnglong.
+            \\rank<7> The range increases to \\rngext.
         """, tags=['Sustain (minor)', 'Scrying']),
         Spell('Sensory Chain', 4, 'One creature within \\rngmed range (see text)', """
             Make an attack vs. Mental against the target.

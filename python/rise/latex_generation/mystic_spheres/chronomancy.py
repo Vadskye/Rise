@@ -47,6 +47,10 @@ chronomancy=MysticSphere(
             At the end of the next round, it returns to its original location, or the closest open space if that location is occupied.
             This effect lasts until the target takes a \\glossterm<short rest>.
             \\crit As above, except that the effect lasts until the curse is removed.
+
+            \\rankline
+            \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<8> The accuracy bonus increases to +2.
         """, tags=['Curse']),
         Spell('Accelerated Timestream', 5, 'Everything within a \\areamed radius \\glossterm<zone> from your location', """
             Make an attack vs. Mental against each target.

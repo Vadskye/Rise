@@ -309,6 +309,9 @@ At the end of each phase, if it moved during that phase, it takes bludgeoning \g
 If there is no dirt, dust, or collection of loose objects of similar size within 30 feet of the target's eyes, this spell is \glossterm{miscast}.
 Make an attack vs. Reflex against the target.
 \hit The target is \glossterm{blinded} as a \glossterm{condition}.
+
+\rankline
+\rank{7} The range increases to \rnglong.
 \end{freeability}
 \vspace{0.25em}
 
@@ -345,9 +348,11 @@ By choosing when to treat the air as solid, you can traverse the air with ease.
 
 \lowercase{\hypertarget{spell:Air Bubble}{}}\label{spell:Air Bubble}
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Air Bubble}{Air Bubble}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or one \glossterm{ally} within \rngmed range}
+\target{One ritual participant}
 The target can breathe clear, clean air regardless of its surroundings.
 This can allow it to breathe underwater and avoid air-based poisons.
+
+This ritual takes one minute to perform.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -637,6 +642,7 @@ Make an attack vs. Fortitude against the target.
 Fog fills the air within a \areamed radius \glossterm{emanation} from your location.
 The fog partially obstructs sight, granting \glossterm{concealment} to anything seen through the fog (see \pcref{Concealment}).
 
+\rankline
 \rank{6} You can exclude an inner radius of any size from the area, allowing you to create fog that surrounds you without blocking sight to things adjacent to you.
 \rank{8} The area increases to a \arealarge radius \glossterm{zone}.
 \end{attuneability}
@@ -671,7 +677,7 @@ Each five-foot square of wall has a \glossterm{vital resistance} equal to three 
 \target{Up to five ritual participants}
 Each target gains a \glossterm{magic bonus} equal to your \glossterm{power} to \glossterm{resistances} against fire damage.
 
-You can cast this spell as a \glossterm{minor action}.
+This ritual takes one minute to perform.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -1990,6 +1996,9 @@ You can cast this spell as a \glossterm{minor action}.
 \target{One creature within \rngclose range}
 Make an attack vs. Mental against the target.
 \hit The target is \glossterm{blinded} as a \glossterm{condition}.
+
+\rankline
+\rank{7} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2189,6 +2198,10 @@ Make an attack vs. Mental against the target.
 At the end of the next round, it returns to its original location, or the closest open space if that location is occupied.
 This effect lasts until the target takes a \glossterm{short rest}.
 \crit As above, except that the effect lasts until the curse is removed.
+
+\rankline
+\rank{6} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{8} The accuracy bonus increases to \plus2.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2731,6 +2744,7 @@ Make an attack vs. Fortitude against the target.
 At the end of each round, it takes cold \glossterm{standard damage} \minus1d per round since it became affected by this condition.
 If this damage fails to \glossterm{wound} the target, the condition is removed.
 
+\rankline
 \rank{8} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
 \end{freeability}
 \vspace{0.25em}
@@ -2770,9 +2784,13 @@ The target's mood improves and it feels more cheerful.
 \target{One creature within \rngmed range}
 Make an attack vs. Mental against the target.
 \hit The target is inflicted with agonizing pain as a \glossterm{condition}.
-It takes a \minus2 penalty to Mental defense.
 % Does this need to clarify that it takes effect in the round the spell was cast?
-In addition, at the end of each \glossterm{round}, if the target was \glossterm{wounded} that round, it loses a \glossterm{hit point}.
+Tt the end of each \glossterm{round}, if the target was \glossterm{wounded} that round, it loses a \glossterm{hit point}.
+
+\rankline
+\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3216,6 +3234,9 @@ Make an attack vs. Fortitude against the target.
 
 In addition, regardless of whether you hit the primary target, make an attack vs. Reflex against each secondary target.
 \hit Each secondary target takes electricity \glossterm{standard damage}.
+
+\rankline
+\rank{7} The damage to the primary target increases to \glossterm{standard damage} \plus3d, and the damage to each secondary target increases to \glossterm{standard damage} \plus1d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3270,7 +3291,13 @@ Make an attack vs. Armor against the target.
 \begin{freeability}[Rank 1]{\hypertarget{spell:Antitoxin}{Antitoxin}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
 \target{Yourself (see text)}
 You create a small vial of antitoxin in one of your free hands.
-A creature that drinks the vial gains an additional success to resist a poison currently affecting it (see \pcref{Poisons}).
+A creature can drinks the vial as a \glossterm{standard action}.
+When a creature drinks the vial, it gains an additional success to resist a poison currently affecting it (see \pcref{Poisons}).
+
+\rankline
+\rank{3} The number of vials created increases to two.
+\rank{5} The number of vials created increases to three.
+\rank{7} The number of vials created increases to four.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3668,7 +3695,7 @@ Make an attack vs. Armor against everything in the path of any meteor.
 
 
 \lowercase{\hypertarget{spell:Copy Writing}{}}\label{spell:Copy Writing}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Copy Writing}{Copy Writing}}[\glossterm{Focus}, \glossterm{Sustain} (standard)]
+\begin{freeability}[Rank 1]{\hypertarget{spell:Copy Writing}{Copy Writing}}[\glossterm{Focus}]
 
 Primary targets: One Small or smaller written work within \rngclose range
 \par\noindent
@@ -3676,7 +3703,7 @@ Secondary targets: One Small or smaller set of blank pages within \rngclose rang
 
 You copy the writing from the primary target onto the secondary target.
 The secondary target must have enough room for the writing.
-Copying the writing takes a tenth the time required to copy it by hand and requires no writing materials.
+This ritual takes half the time required to copy the writing by hand, to a minimum of one minute, and does not require writing materials.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3704,6 +3731,20 @@ It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as 
 
 This ritual takes one hour to perform.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Greater Copy Writing}{}}\label{spell:Greater Copy Writing}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Greater Copy Writing}{Greater Copy Writing}}[\glossterm{Focus}]
+
+Primary target: One Medium or smaller written work within \rngclose range
+\par\noindent
+Secondary target: One Medium or smaller set of blank pages within \rngclose range
+
+This ritual functions like the \spell{copy writing} ritual, except that it can target objects of Medium or smaller size.
+In addition, the time required to perform this ritual decreases to one tenth of the time required to copy the writing by hand, to a minimum of one minute.
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -5322,6 +5363,10 @@ While viewing through the sensor, your observation ability is the same as your n
 You otherwise act normally, though you may have difficulty moving or taking actions if the sensor cannot see your body or your intended targets, effectively making you \blinded.
 
 If undisturbed, the sensor floats in the air in its position.
+
+\rankline
+\rank{5} The range increases to \rnglong.
+\rank{7} The range increases to \rngext.
 \end{freeability}
 \vspace{0.25em}
 
@@ -6240,6 +6285,12 @@ If you fully exit the stone, this spell ends.
 
 If this spell ends before you exit the stone, or if the stone stops being a valid target for the spell (such as if it is broken into pieces), you are forcibly expelled from the stone.
 When you are forcibly expelled from the stone, you take 4d10 bludgeoning damage and become \glossterm{nauseated} as a \glossterm{condition}.
+
+\rankline
+\rank{5} Exiting the stone does not cause this spell to end.
+You can repeatedly exit and re-enter the stone as long as you maintain attunement to the spell.
+\rank{7} You can leave tiny tunnels carrying air through the stone as you move through it, allowing you to effectively breathe within the stone.
+These trails disappear when this spell ends.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -6618,6 +6669,10 @@ You can cast this spell as a \glossterm{minor action}.
 Make an attack vs. Mental against the target.
 \hit As a \glossterm{condition}, the target has a 50\% chance to \glossterm{miscast} any spell it casts.
 \crit As a \glossterm{condition}, the target automatically \glossterm{miscasts} any spell it casts.
+
+\rankline
+\rank{6} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{8} The accuracy bonus increases to \plus2.
 \end{freeability}
 \vspace{0.25em}
 
@@ -6723,6 +6778,7 @@ Make an attack vs. Mental against the secondary target.
 \hit One magical condition of your choice is removed from primary target and applied to the secondary target.
 \crit As above, except that you can transfer any number of magical conditions from each primary target in this way.
 
+\rankline
 \rank{8} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
 \end{freeability}
 \vspace{0.25em}

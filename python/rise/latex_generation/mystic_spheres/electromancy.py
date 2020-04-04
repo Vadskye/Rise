@@ -89,6 +89,9 @@ spells=[
 
         In addition, regardless of whether you hit the primary target, make an attack vs. Reflex against each secondary target.
         \\hit Each secondary target takes electricity \\glossterm<standard damage>.
+
+        \\rankline
+        \\rank<7> The damage to the primary target increases to \\glossterm<standard damage> +3d, and the damage to each secondary target increases to \\glossterm<standard damage> +1d.
     """, tags=[]),
     Spell('Electroshock', 3, 'One creature or object within \\rngmed range', """
         Make an attack vs. Fortitude against the target.

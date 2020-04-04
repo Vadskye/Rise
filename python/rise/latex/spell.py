@@ -30,6 +30,15 @@ class Spell(object):
                 if not is_valid_tag(tag):
                     logger.log(WARNING, f"Spell {self.name} has invalid tag {tag}")
 
+        if (
+                self.level < 7 and (
+                    'rankline' not in effect_text
+                    and 'This ritual' not in effect_text
+                    and 'functions like' not in effect_text
+                )
+        ):
+            logger.log(WARNING, f"Spell {self.name} is missing rank upgrades or ritual timing")
+
     def __str__(self):
         tag_text = to_latex_tags(self.tags)
 
