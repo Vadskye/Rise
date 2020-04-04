@@ -717,6 +717,22 @@ If the destination is invalid, the ability fails without effect.
 \subsubsection{Spells}
 
 
+\lowercase{\hypertarget{spell:Blink}{}}\label{spell:Blink}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Blink}{Blink}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{Yourself}
+You randomly blink between your current plane and the Astral Plane.
+\glossterm{Targeted} \glossterm{strikes} against you have a 20\% failure chance as you happen to be in the Astral Plane when the attack would hit.
+However, all of your attacks also have the same failure chance.
+
+\rankline
+\rank{3} The failure chance increases to 30\%.
+\rank{5} The failure chance increases to 40\%.
+\rank{7} The failure chance increases to 50\%.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Dimensional Grasp}{}}\label{spell:Dimensional Grasp}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Dimensional Grasp}{Dimensional Grasp}}[]
 \target{One creature or object you \glossterm{threaten}}
@@ -827,12 +843,12 @@ If you hit both targets, they each teleport into each other's locations.
 
 
 
-\lowercase{\hypertarget{spell:Blink}{}}\label{spell:Blink}
-\begin{attuneability}[Rank 4]{\hypertarget{spell:Blink}{Blink}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\lowercase{\hypertarget{spell:Controlled Blink}{}}\label{spell:Controlled Blink}
+\begin{attuneability}[Rank 4]{\hypertarget{spell:Controlled Blink}{Controlled Blink}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \target{Yourself}
 You randomly blink between your current plane and the Astral Plane.
 This blinking stops when you take actions on your current plane.
-In any phase where you do not take any actions, \glossterm{targeted} \glossterm{strikes} against you have a 50\% miss chance.
+In any phase where you do not take any actions, \glossterm{targeted} \glossterm{strikes} against you have a 50\% failure chance as you happen to be in the Astral Plane when the attack would hit.
 You are still affected normally by abilities that affect an area.
 
 \rankline
@@ -2397,19 +2413,6 @@ In combat, most creatures with an intelligence of 0 or less will often talk abou
 
 
 
-\lowercase{\hypertarget{spell:Sleep}{}}\label{spell:Sleep}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Sleep}{Sleep}}[\glossterm{Compulsion}, \glossterm{Focus}]
-\target{One creature within \rngmed range}
-Make an attack vs. Mental against the target.
-\hit The target is \glossterm{exhausted} as a \glossterm{condition}.
-\crit The target is \glossterm{exhausted} and falls asleep as a \glossterm{condition}.
-It cannot be awakened while the condition lasts unless it takes a \glossterm{vital wound}, which causes it to wake up and ends the sleeping part of the condition.
-After the condition ends, the target can wake up normally, though it continues to sleep until it would wake up naturally.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Confusion}{}}\label{spell:Confusion}
 \begin{freeability}[Rank 5]{\hypertarget{spell:Confusion}{Confusion}}[\glossterm{Compulsion}, \glossterm{Focus}]
 \target{One creature within \rngclose range}
@@ -2430,9 +2433,7 @@ Make an attack vs. Mental against the target.
 Make an attack vs. Mental against the target.
 \hit The target is \glossterm{stunned} as a \glossterm{condition}.
 \crit The target is \glossterm{stunned} and \glossterm{confused} as a single \glossterm{condition}.
-As a standard action, you can make an additional attack vs. Mental against the target as long as it remains affected by this condition is within \rngmed range of you.
-On a hit, the target becomes stunned and confused in the same way as an additional condition, continuing the effect even if the target removed the original condition in the same phase.
-On a critical hit, if the target is humanoid, it becomes \glossterm{dominated} by you as long as you \glossterm{attune} to this ability.
+If the target is humanoid and was already stunned and confused from a previous casting of this spell, it becomes \glossterm{dominated} by you as long as you \glossterm{attune} to this ability.
 
 \rankline
 \rank{7} You can dominate the target even if it is not humanoid.
@@ -2450,6 +2451,19 @@ Make an attack vs. Mental against the target.
 
 \rankline
 \rank{7} The range increases to \rnglong.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Close Your Eyes}{}}\label{spell:Close Your Eyes}
+\begin{freeability}[Rank 6]{\hypertarget{spell:Close Your Eyes}{Close Your Eyes}}[\glossterm{Compulsion}, \glossterm{Focus}]
+\target{One creature within \rngmed range}
+Make an attack vs. Mental against the target.
+\hit The target is \glossterm{blinded}.
+
+\rankline
+\rank{8} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2482,11 +2496,23 @@ Make an attack vs. Mental against each target.
 
 
 
+\lowercase{\hypertarget{spell:Sleep}{}}\label{spell:Sleep}
+\begin{freeability}[Rank 8]{\hypertarget{spell:Sleep}{Sleep}}[\glossterm{Compulsion}, \glossterm{Focus}]
+\target{One creature within \rngclose range}
+Make an attack vs. Mental against the target.
+\hit The falls asleep as a \glossterm{condition}.
+It cannot be awakened while the condition lasts unless it takes a \glossterm{vital wound}, which causes it to wake up and ends the sleeping part of the condition.
+After the condition ends, the target can wake up normally, though it continues to sleep until it would wake up naturally.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \subsubsection{Rituals}
 
 
-\lowercase{\hypertarget{spell:Truthseal}{}}\label{spell:Truthseal}
-\begin{attuneability}[Rank 4]{\hypertarget{spell:Truthseal}{Truthseal}}[\glossterm{Attune} (ritual), \glossterm{Focus}]
+\lowercase{\hypertarget{spell:Tell the Truth}{}}\label{spell:Tell the Truth}
+\begin{attuneability}[Rank 4]{\hypertarget{spell:Tell the Truth}{Tell the Truth}}[\glossterm{Attune} (ritual), \glossterm{Focus}]
 \target{Up to five creatures within \rngmed range}
 Make an attack vs. Mental against each target.
 
@@ -2659,8 +2685,8 @@ The temperature in a two mile radius cylinder-shaped \glossterm{zone} from your 
 After one minute, the temperature decreases by 50 degrees Fahrenheit, to a minimum of \minus50 degrees.
 
 \rankline
-\rank{6} The temperature decreases by 100 degrees, to a minimum of \minus70 degrees.
-\rank{8} The temperature decreases by 150 degrees, to a minimum of \minus90 degrees.
+\rank{6} The temperature decreases by 70 degrees, to a minimum of \minus70 degrees.
+\rank{8} The temperature decreases by 90 degrees, to a minimum of \minus90 degrees.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3238,6 +3264,21 @@ Make an attack vs. Armor against each target.
 
 
 
+\lowercase{\hypertarget{spell:Fog Wall}{}}\label{spell:Fog Wall}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Fog Wall}{Fog Wall}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
+
+You create a wall of fog in a 20 ft.\ high, \arealarge \glossterm{wall} within \rngmed range.
+The fog makes it difficult to see through the wall, granting \glossterm{concealment} to anything viewed through the wall (see \pcref{Concealment}).
+
+\rankline
+\rank{3} The area increases to a \arealarge line.
+\rank{5} The area increases to a \areahuge line.
+\rank{7} The area increases to a \areaext line.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Forge}{}}\label{spell:Forge}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Forge}{Forge}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \target{One unoccupied square within \rngclose range}
@@ -3377,6 +3418,20 @@ This attack deals double damage to objects.
 \rankline
 \rank{5} The damage increases to \glossterm{standard damage} \plus2d.
 \rank{7} The damage increases to \glossterm{standard damage} \plus3d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Fog Cloud}{}}\label{spell:Fog Cloud}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Fog Cloud}{Fog Cloud}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
+\targets{Everything in a \areasmall radius within \rngmed range}
+A cloud of fog appears in the area.
+All sight through the area is partially obscured, granting \glossterm{concealment} to anything in the area and anything viewed through the area (see \pcref{Concealment}).
+
+\rankline
+\rank{5} The area increases to a \areamed radius.
+\rank{7} The area increases to a \arealarge radius.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3828,6 +3883,18 @@ The mouth speaks the chosen message aloud.
 After the message is spoken, this effect is \glossterm{dismissed}.
 
 This ritual takes one minute to perform.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Sunlight Ward}{}}\label{spell:Sunlight Ward}
+\begin{attuneability}[Rank 3]{\hypertarget{spell:Sunlight Ward}{Sunlight Ward}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself or one \glossterm{ally} within \rngmed range}
+The target is never considered to be in natural sunlight.
+This does not impair its vision, but protects it if it would otherwise suffer negative consequences for being in natural sunlight.
+
+This ritual takes one hour to perform.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -4459,6 +4526,19 @@ Make an attack vs. Fortitude against the target.
 
 
 
+\lowercase{\hypertarget{spell:Sludgeform}{}}\label{spell:Sludgeform}
+\begin{freeability}[Rank 8]{\hypertarget{spell:Sludgeform}{Sludgeform}}[\glossterm{Focus}]
+\target{One living creature within \rngclose range}
+Make an attack vs. Fortitude against the target.
+\hit As a \glossterm{condition}, the target's physical form loses coherence and partially collapses into a sludgelike mass.
+It has no \glossterm{free hands}, causing it to drop anything it is holding and making it unable to take any actions that require free hands.
+Its speed with all of its \glossterm{mundane} movement modes are reduced to one quarter normal.
+It is also unable to speak normally or use verbal or somatic \glossterm{components}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \subsubsection{Rituals}
 
 
@@ -4806,8 +4886,8 @@ The temperature in a two mile radius cylinder-shaped \glossterm{zone} from your 
 After one minute, the temperature increases by 50 degrees Fahrenheit, to a maximum of 140 degrees.
 
 \rankline
-\rank{6} The temperature increases by 100 degrees, to a maximum of 160 degrees.
-\rank{8} The temperature increases by 150 degrees, to a maximum of 180 degrees.
+\rank{6} The temperature increases by 70 degrees, to a maximum of 160 degrees.
+\rank{8} The temperature increases by 90 degrees, to a maximum of 180 degrees.
 \end{freeability}
 \vspace{0.25em}
 
@@ -4851,7 +4931,7 @@ Its equipment is unaffected.
 \begin{freeability}[Rank 4]{\hypertarget{spell:Wall of Fire}{Wall of Fire}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
 \target{Each creature that moves through the area (see text)}
 You create a wall of fire in a 20 ft.\ high, \arealarge \glossterm{wall} within \rngmed range.
-The flames and heat make it diffcult to see through the wall, granting \glossterm{concealment} to targets on the opposite side of the wall.
+The flames and heat make it difficult to see through the wall, granting \glossterm{concealment} to targets on the opposite side of the wall.
 When a creature passes through the wall, you make an attack vs. Armor against that creature.
 You can only make an attack in this way against a given creature once per \glossterm{phase}.
 \hit The target takes fire \glossterm{standard damage}.
@@ -7095,6 +7175,21 @@ In addition, as a \glossterm{condition}, the target is unable to regain hit poin
 \rankline
 \rank{6} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
 \rank{8} The accuracy bonus increases to \plus2.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Quickseal}{}}\label{spell:Quickseal}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Quickseal}{Quickseal}}[\glossterm{Focus}]
+\target{Yourself or an \glossterm{ally} within \rngmed range}
+The target gains a \plus1 \glossterm{vitality bonus} to one of its \glossterm{vital rolls} (see \pcref{Vital Rolls}).
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{6} The bonus increases to \plus2.
+\rank{8} The bonus increases to \plus3.
 \end{freeability}
 \vspace{0.25em}
 

@@ -111,8 +111,8 @@ cryomancy=MysticSphere(
             After one minute, the temperature decreases by 50 degrees Fahrenheit, to a minimum of \\minus50 degrees.
 
             \\rankline
-            \\rank<6> The temperature decreases by 100 degrees, to a minimum of \\minus70 degrees.
-            \\rank<8> The temperature decreases by 150 degrees, to a minimum of \\minus90 degrees.
+            \\rank<6> The temperature decreases by 70 degrees, to a minimum of \\minus70 degrees.
+            \\rank<8> The temperature decreases by 90 degrees, to a minimum of \\minus90 degrees.
         """, tags=['Sustain (minor)']),
         Spell('Frostburn', 6, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.

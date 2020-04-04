@@ -166,7 +166,7 @@ pyromancy=MysticSphere(
         """, tags=['Attune (target)']),
         Spell('Wall of Fire', 4, 'Each creature that moves through the area (see text)', """
             You create a wall of fire in a 20 ft.\\ high, \\arealarge \\glossterm<wall> within \\rngmed range.
-            The flames and heat make it diffcult to see through the wall, granting \\glossterm<concealment> to targets on the opposite side of the wall.
+            The flames and heat make it difficult to see through the wall, granting \\glossterm<concealment> to targets on the opposite side of the wall.
             When a creature passes through the wall, you make an attack vs. Armor against that creature.
             You can only make an attack in this way against a given creature once per \\glossterm<phase>.
             \\hit The target takes fire \\glossterm<standard damage>.
@@ -183,8 +183,8 @@ pyromancy=MysticSphere(
             After one minute, the temperature increases by 50 degrees Fahrenheit, to a maximum of 140 degrees.
 
             \\rankline
-            \\rank<6> The temperature increases by 100 degrees, to a maximum of 160 degrees.
-            \\rank<8> The temperature increases by 150 degrees, to a maximum of 180 degrees.
+            \\rank<6> The temperature increases by 70 degrees, to a maximum of 160 degrees.
+            \\rank<8> The temperature increases by 90 degrees, to a maximum of 180 degrees.
         """, tags=['Sustain (minor)']),
     ],
     category='damage',
