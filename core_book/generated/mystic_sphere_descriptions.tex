@@ -3107,6 +3107,16 @@ Make an attack vs. Armor against the target.
 
 
 
+\lowercase{\hypertarget{spell:Antitoxin}{}}\label{spell:Antitoxin}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Antitoxin}{Antitoxin}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
+\target{Yourself (see text)}
+You create a small vial of antitoxin in one of your free hands.
+A creature that drinks the vial gains an additional success to resist a poison currently affecting it (see \pcref{Poisons}).
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Caltrops}{}}\label{spell:Caltrops}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Caltrops}{Caltrops}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
 \target{One 5 ft.\ square within \rngclose range (see text)}
@@ -3199,6 +3209,30 @@ This spell lasts until you use it again, or until you \glossterm{dismiss} it as 
 
 
 
+\lowercase{\hypertarget{spell:Poison -- Nitharit}{}}\label{spell:Poison -- Nitharit}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Poison -- Nitharit}{Poison -- Nitharit}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
+\target{Yourself (see text)}
+You create a vial containing a dose of nitharit poison in one of your \glossterm{free hands} (see \pcref{Poisons}).
+Nitharit is a contact powder poison.
+When a living creature that touches the powder, make an attack vs. Fortitude against it.
+After this happens once, the dose is used up.
+If you stop sustaining this spell, the poison disappears, and any affectd creatures stop being poisoned by it.
+
+\hit The target becomes \glossterm{poisoned} with nitharit.
+It becomes \glossterm{sickened} as long as it is poisoned.
+At the end of each subsequent round, you repeat this attack, as normal for poisons.
+A third successful attack causes the target to become \glossterm{nauseated} as long as it is poisoned.
+A third failed attack ends the poison.
+
+\rankline
+\rank{3} You create a second dose of the poison.
+\rank{5} You create a third dose of the poison.
+\rank{7} You create a fourth dose of the poison.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Shieldbearer}{}}\label{spell:Shieldbearer}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Shieldbearer}{Shieldbearer}}[\glossterm{Attune} (self), \glossterm{Focus}, \glossterm{Manifestation}]
 \target{Yourself}
@@ -3274,18 +3308,18 @@ Make an attack vs. Armor against each target.
 
 
 
-\lowercase{\hypertarget{spell:Poison -- Nitharit}{}}\label{spell:Poison -- Nitharit}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Poison -- Nitharit}{Poison -- Nitharit}}[\glossterm{Focus}, \glossterm{Manifestation}]
-\target{One creature within \rngmed range}
-Make an attack vs. Fortitude against the target.
-
-\hit The target becomes \glossterm{poisoned} with nitharit.
-The primary effect causes the target to become \glossterm{sickened}.
-The secondary effect causes the target to become \glossterm{nauseated}.
+\lowercase{\hypertarget{spell:Poison -- Dragon Bile}{}}\label{spell:Poison -- Dragon Bile}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Poison -- Dragon Bile}{Poison -- Dragon Bile}}[\glossterm{Focus}]
+\target{One living creature within \rngmed range}
+This spell functions like this \spell{poison -- nitharit} spell, except that you create a vial of dragon bile poison instead (see \pcref{Poisons}).
+Dragon bile is a contact liquid poison.
+A creature poisoned by dragon bile immediately loses a \glossterm{hit point} and becomes \glossterm{sickened} as long as it is poisoned.
+A third successful attack causes the target to lose two \glossterm{hit points} and become \glossterm{nauseated} as long as it is poisoned.
+A third failed attack ends the poison.
 
 \rankline
-\rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-\rank{7} The accuracy bonus increases to \plus2.
+\rank{5} You create a second dose of the poison.
+\rank{7} You create a third dose of the poison.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3410,30 +3444,17 @@ If this attack \glossterm{wounds} the target, it is knocked \glossterm{prone}.
 
 
 
-\lowercase{\hypertarget{spell:Poison -- Dragon Bile}{}}\label{spell:Poison -- Dragon Bile}
-\begin{freeability}[Rank 5]{\hypertarget{spell:Poison -- Dragon Bile}{Poison -- Dragon Bile}}[\glossterm{Focus}]
+\lowercase{\hypertarget{spell:Poison -- Black Lotus}{}}\label{spell:Poison -- Black Lotus}
+\begin{freeability}[Rank 5]{\hypertarget{spell:Poison -- Black Lotus}{Poison -- Black Lotus}}[\glossterm{Focus}, \glossterm{Manifestation}]
 \target{One creature within \rngmed range}
-Make an attack vs. Fortitude against the target.
-
-\hit The target becomes \glossterm{poisoned} with dragon bile.
-The primary effect causes the target to become \glossterm{sickened} and lose a \glossterm{hit point}.
-The secondary effect causes the target to become \glossterm{nauseated} and lose two \glossterm{hit points}.
+This spell functions like this \spell{poison -- nitharit} spell, except that you create a vial of black lotus extract instead (see \pcref{Poisons}).
+Black lotus extract is a contact liquid poison.
+Each successful attack, including the first, causes the target to lose two \glossterm{hit points}.
+A third successful attack causes the target to gain a \glossterm{vital wound} and ends the poison.
+A third failed attack ends the poison.
 
 \rankline
-\rank{7} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Poison -- Black Lotus}{}}\label{spell:Poison -- Black Lotus}
-\begin{freeability}[Rank 7]{\hypertarget{spell:Poison -- Black Lotus}{Poison -- Black Lotus}}[\glossterm{Focus}, \glossterm{Manifestation}]
-\target{One creature within \rngmed range}
-Make an attack vs. Fortitude against the target.
-
-\hit The target becomes \glossterm{poisoned} with black lotus extract.
-The primary effect causes the target to become lose a \glossterm{hit point} from each successful poison attack, including this attack.
-The secondary effect causes the target to gain a \glossterm{vital wound}.
+\rank{7} You create a second dose of the poison.
 \end{freeability}
 \vspace{0.25em}
 
@@ -4050,8 +4071,25 @@ Make an attack vs. Fortitude against the target.
 
 
 
+\lowercase{\hypertarget{spell:Intensify Poison}{}}\label{spell:Intensify Poison}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Intensify Poison}{Intensify Poison}}[\glossterm{Focus}]
+\target{One living creature within \rngmed range}
+Make an attack vs. Fortitude against the target.
+If the target is not currently poisoned, this ability has no effect.
+\hit Choose a poison affecting the target.
+The poison gains an additional hit against the target, which can have varying effects depending on the poison (see \pcref{Poisons}).
+
+\rankline
+\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Natural Weapon}{}}\label{spell:Natural Weapon}
-\begin{attuneability}[Rank 1]{\hypertarget{spell:Natural Weapon}{Natural Weapon}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Natural Weapon}{Natural Weapon}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \target{Yourself}
 You gain your choice of one of the following \glossterm{natural weapons}: bite, claw, constrict, gore, ram, slam, or talon.
 For details, see \tref{Natural Weapons}.
@@ -4061,6 +4099,20 @@ For details, see \tref{Natural Weapons}.
 \rank{5} You gain a \plus2 \glossterm{magic bonus} to \glossterm{power} with natural weapons.
 \rank{7} The accuracy bonus increases to \plus2.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Neutralize Poison}{}}\label{spell:Neutralize Poison}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Neutralize Poison}{Neutralize Poison}}[\glossterm{Focus}]
+\target{Yourself or one target within \rngmed range}
+The target gains an additional success to resist a poison currently affecting it (see \pcref{Poisons}).
+
+\rankline
+\rank{3} The number of additional successes increases to two.
+\rank{5} The number of additional successes increases to three, which is enough to remove most poisons immediately.
+\rank{7} The target can also gain the same number of successes to remove an additional poison affecting it.
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -6170,6 +6222,20 @@ Make an attack vs. Mental against the secondary target.
 \rankline
 \rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
 \rank{7} The accuracy bonus increases to \plus2.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Reattunement}{}}\label{spell:Reattunement}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Reattunement}{Reattunement}}[\glossterm{Focus}]
+\target{Yourself or one \glossterm{ally} within \rngmed range}
+The target can reattune to one ability that it stopped being attuned to since the start of the last round without spending an additional action point.
+Any choices and effects of the attuned ability are restored to their exact state before the attunement was broken.
+
+\rankline
+\rank{5} You can target an additional ally within range.
+\rank{7} You can target an additional ally within range.
 \end{freeability}
 \vspace{0.25em}
 

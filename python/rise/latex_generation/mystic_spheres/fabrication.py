@@ -211,33 +211,44 @@ fabrication=MysticSphere(
             \\rank<5> The webs are no longer \\glossterm<vulnerable> to fire damage.
             \\rank<7> The vital resistance of each 5-ft.\\ square of webs increases to three times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
-        Spell('Poison -- Nitharit', 3, 'One creature within \\rngmed range', """
-            Make an attack vs. Fortitude against the target.
+        Spell('Poison -- Nitharit', 1, 'Yourself (see text)', """
+            You create a vial containing a dose of nitharit poison in one of your \\glossterm<free hands> (see \\pcref<Poisons>).
+            Nitharit is a contact powder poison.
+            When a living creature that touches the powder, make an attack vs. Fortitude against it.
+            After this happens once, the dose is used up.
+            If you stop sustaining this spell, the poison disappears, and any affectd creatures stop being poisoned by it.
 
             \\hit The target becomes \\glossterm<poisoned> with nitharit.
-            The primary effect causes the target to become \\glossterm<sickened>.
-            The secondary effect causes the target to become \\glossterm<nauseated>.
+            It becomes \\glossterm<sickened> as long as it is poisoned.
+            At the end of each subsequent round, you repeat this attack, as normal for poisons.
+            A third successful attack causes the target to become \\glossterm<nauseated> as long as it is poisoned.
+            A third failed attack ends the poison.
 
             \\rankline
-            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<7> The accuracy bonus increases to +2.
-        """, tags=['Manifestation']),
-        Spell('Poison -- Dragon Bile', 5, 'One creature within \\rngmed range', """
-            Make an attack vs. Fortitude against the target.
-
-            \\hit The target becomes \\glossterm<poisoned> with dragon bile.
-            The primary effect causes the target to become \\glossterm<sickened> and lose a \\glossterm<hit point>.
-            The secondary effect causes the target to become \\glossterm<nauseated> and lose two \\glossterm<hit points>.
+            \\rank<3> You create a second dose of the poison.
+            \\rank<5> You create a third dose of the poison.
+            \\rank<7> You create a fourth dose of the poison.
+        """, tags=['Manifestation', 'Sustain (minor)']),
+        Spell('Poison -- Dragon Bile', 3, 'One living creature within \\rngmed range', """
+            This spell functions like this \\spell<poison -- nitharit> spell, except that you create a vial of dragon bile poison instead (see \\pcref<Poisons>).
+            Dragon bile is a contact liquid poison.
+            A creature poisoned by dragon bile immediately loses a \\glossterm<hit point> and becomes \\glossterm<sickened> as long as it is poisoned.
+            A third successful attack causes the target to lose two \\glossterm<hit points> and become \\glossterm<nauseated> as long as it is poisoned.
+            A third failed attack ends the poison.
 
             \\rankline
-            \\rank<7> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<5> You create a second dose of the poison.
+            \\rank<7> You create a third dose of the poison.
         """, tags=[]),
-        Spell('Poison -- Black Lotus', 7, 'One creature within \\rngmed range', """
-            Make an attack vs. Fortitude against the target.
+        Spell('Poison -- Black Lotus', 5, 'One creature within \\rngmed range', """
+            This spell functions like this \\spell<poison -- nitharit> spell, except that you create a vial of black lotus extract instead (see \\pcref<Poisons>).
+            Black lotus extract is a contact liquid poison.
+            Each successful attack, including the first, causes the target to lose two \\glossterm<hit points>.
+            A third successful attack causes the target to gain a \\glossterm<vital wound> and ends the poison.
+            A third failed attack ends the poison.
 
-            \\hit The target becomes \\glossterm<poisoned> with black lotus extract.
-            The primary effect causes the target to become lose a \\glossterm<hit point> from each successful poison attack, including this attack.
-            The secondary effect causes the target to gain a \\glossterm<vital wound>.
+            \\rankline
+            \\rank<7> You create a second dose of the poison.
         """, tags=['Manifestation']),
         Spell('Caltrops', 1, 'One 5 ft.\\ square within \\rngclose range (see text)', """
             You create exceptionally sharp caltrops in the target location.
@@ -251,6 +262,10 @@ fabrication=MysticSphere(
             \\rank<5> The number of additional squares you can affect increases to two.
             \\rank<7> The number of additional squares you can affect increases to three.
         """, tags=['Manifestation', 'Sustain (minor)']),
+        Spell('Antitoxin', 1, 'Yourself (see text)', """
+            You create a small vial of antitoxin in one of your free hands.
+            A creature that drinks the vial gains an additional success to resist a poison currently affecting it (see \\pcref<Poisons>).
+        """, tags=['Sustain (minor)']),
     ],
     rituals=[
         Spell('Manifest Object', 3, 'One unoccupied square within \\rngclose range', """

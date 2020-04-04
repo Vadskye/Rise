@@ -21,6 +21,25 @@ polymorph=MysticSphere(
     ],
     lists=['Arcane', 'Nature', 'Pact'],
     spells=[
+        Spell('Neutralize Poison', 1, 'Yourself or one target within \\rngmed range', """
+            The target gains an additional success to resist a poison currently affecting it (see \\pcref<Poisons>).
+
+            \\rankline
+            \\rank<3> The number of additional successes increases to two.
+            \\rank<5> The number of additional successes increases to three, which is enough to remove most poisons immediately.
+            \\rank<7> The target can also gain the same number of successes to remove an additional poison affecting it.
+        """, tags=[]),
+        Spell('Intensify Poison', 1, 'One living creature within \\rngmed range', """
+            Make an attack vs. Fortitude against the target.
+            If the target is not currently poisoned, this ability has no effect.
+            \\hit Choose a poison affecting the target.
+            The poison gains an additional hit against the target, which can have varying effects depending on the poison (see \\pcref<Poisons>).
+
+            \\rankline
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<5> The accuracy bonus increases to +2.
+            \\rank<7> The accuracy bonus increases to +3.
+        """, tags=[]),
         Spell('Natural Weapon', 1, 'Yourself', """
             You gain your choice of one of the following \\glossterm<natural weapons>: bite, claw, constrict, gore, ram, slam, or talon.
             For details, see \\tref<Natural Weapons>.
@@ -29,7 +48,7 @@ polymorph=MysticSphere(
             \\rank<3> You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with natural weapons.
             \\rank<5> You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with natural weapons.
             \\rank<7> The accuracy bonus increases to +2.
-        """, tags=['Attune (target)']),
+        """, tags=['Attune (self)']),
         Spell('Piercing Grasp', 1, 'One creature you \\glossterm<threaten>', """
             This spell does not have the \\glossterm<Focus> tag.
             You must have a \\glossterm<free hand> to cast this spell.
