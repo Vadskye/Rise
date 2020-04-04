@@ -137,6 +137,7 @@ thaumaturgy=MysticSphere(
             \\hit One magical condition of your choice is removed from primary target and applied to the secondary target.
             \\crit As above, except that you can transfer any number of magical conditions from each primary target in this way.
 
+            \\rankline
             \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=[]),
         Spell('Spell Absoption', 7, 'Yourself', """
@@ -202,6 +203,10 @@ thaumaturgy=MysticSphere(
             Make an attack vs. Mental against the target.
             \\hit As a \\glossterm<condition>, the target has a 50\\% chance to \\glossterm<miscast> any spell it casts.
             \\crit As a \\glossterm<condition>, the target automatically \\glossterm<miscasts> any spell it casts.
+
+            \\rankline
+            \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<8> The accuracy bonus increases to +2.
         """, tags=[]),
         Spell('Absorb Magic', 6, 'Yourself', """
             You gain a +2 \\glossterm<magic bonus> to defenses against \\glossterm<magical> effects.
