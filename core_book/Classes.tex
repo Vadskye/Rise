@@ -280,10 +280,10 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Min Level} & \tb{Divine Magic} & \tb{Divine Spell Mastery}   & \tb{Domain Influence}  & \tb{Healer} \tableheaderrule
             1 & 1  & Spellcasting   & Mystic insight              & Domains, domain gift  & Divine healing         \\
-            2 & 2  & Mystic sphere  & Battle priest               & Domain gift           & Vital healer           \\
+            2 & 2  & Mystic sphere  & Divine guidance             & Domain gift           & Vital healer           \\
             3 & 5  & Spell rank (3) & Wellspring of power         & Domain aspect         & Divine cleanse         \\
             4 & 8  & Spell rank (4) & Mystic insight              & Domain aspect         & Greater divine healing \\
-            5 & 11 & Spell rank (5) & Greater battle priest       & Domain essence        & Greater vital healer   \\
+            5 & 11 & Spell rank (5) & Greater divine guidance     & Domain essence        & Greater vital healer   \\
             6 & 14 & Spell rank (6) & Greater wellspring of power & Domain essence        & Greater divine cleanse \\
             7 & 17 & Spell rank (7) & Mystic insight              & Miracle               & Supreme divine healing \\
             8 & 20 & Spell rank (8) &                             & Domain masteries     \\
@@ -399,7 +399,7 @@ This choice determines a great deal about your character's abilities.
 
     \subsection{Divine Spell Mastery}
         This archetype improves the divine spells you cast.
-        You must be able to cast divine spells to gain the abilities from this archetype.
+        You must have the Divine Magic archetype from the cleric class to gain the abilities from this archetype.
 
         \cf{Clr}[1]{Mystic Insight}[Magical]
         You gain your choice of one of the following abilities.
@@ -421,7 +421,7 @@ This choice determines a great deal about your character's abilities.
                 You can choose this ability multiple times, choosing a different spell each time.
         }
 
-        \cf{Clr}[2]{Battle Priest} You reduce your \glossterm{focus penalty} by 1.
+        \cf{Clr}[2]{Divine Guidance} Once per \glossterm{long rest}, you may use the \textit{desperate exertion} ability without spending an \glossterm{action point} (see \pcref{Desperate Exertion}).
 
         \cf{Clr}[3]{Wellspring of Power}[Magical]
         You gain a \plus1 bonus to \glossterm{power} with \glossterm{magical} abilities.
@@ -429,7 +429,7 @@ This choice determines a great deal about your character's abilities.
         \cf*{Clr}[4]{Mystic Insight}[Magical]
         You gain an additional \textit{mystic insight} ability.
 
-        \cf{Clr}[5]{Greater Battle Priest} The penalty reduction from your \textit{battle priest} ability increases to 2.
+        \cf{Clr}[5]{Greater Divine Guidance} The number of additional uses you gain from your \textit{divine guidance} ability increases to two.
 
         \cf{Clr}[6]{Greater Wellspring of Power}[Magical]
         The bonus from your \textit{wellspring of power} ability increases to \plus2.
@@ -783,7 +783,7 @@ This choice determines a great deal about your character's abilities.
 
         \subsubsection{War}
             \parhead{Gift} You gain proficiency with heavy armor and an additional \glossterm{weapon group} of your choice.
-            \parhead{Aspect} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{mundane} abilities.
+            \parhead{Aspect} You reduce your \glossterm{focus penalty} by 1.
             \parhead{Essence} You learn one of the Legion, Selective, or Widened \glossterm{augments} (see \pcref{Augments}).
             You can apply augments to spells to change their effects.
             When you gain access to a new arcane spell \glossterm{rank}, you may change which augments you know, though this augment can only be one of the three listed.
