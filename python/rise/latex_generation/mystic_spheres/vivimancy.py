@@ -45,6 +45,15 @@ vivimancy=MysticSphere(
             \\rank<5> The bonus increases to +4.
             \\rank<7> The bonus increases to +5.
         """, tags=[]),
+        Spell('Quickseal', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            The target gains a +1 \\glossterm<vitality bonus> to one of its \\glossterm<vital rolls> (see \\pcref<Vital Rolls>).
+
+            You can cast this spell as a \\glossterm<minor action>.
+
+            \\rankline
+            \\rank<6> The bonus increases to +2.
+            \\rank<8> The bonus increases to +3.
+        """, tags=[]),
         Spell('Fortify Life', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +2 \\glossterm<magic bonus> to Fortitude defense.
 
