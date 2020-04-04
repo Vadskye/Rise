@@ -51,15 +51,14 @@ aberrationInput.push({
     {
       // TODO: this was originally a disease, but disease trigger times are less well defined
       description: `
-        Whenever a creature takes damage from the aboleth's tentacle,
-          if the attack result beat the target's Fortitude defense,
-          the damaged creature becomes \\glossterm{poisoned}.
-        The poison's primary effect makes the target \\glossterm{nauseated},
-          and the secondary effect inflicts a \\glossterm{vital wound} with a special effect and ends the poison.
+        Whenever a creature is \\glossterm{wounded} by the aboleth's tentacle,
+          the damaged creature becomes \\glossterm{poisoned} by aboleth slime.
+        The creature is \\glossterm{sickened} as long as it remains poisoned.
+        On a third hit, the creature gains a \\glossterm{vital wound}.
 
         Instead of making a \\glossterm{vital roll} for the \\glossterm{vital wound},
           the target's skin is transformed into a clear, slimy membrane.
-        An afflicted creature must remain moistened with cool, fresh water every 10 minutes
+        Every 5 minutes, an afflicted creature must be moistened with cool, fresh water
           or it will lose a \\glossterm{hit point}.
         This effect lasts until the \\glossterm{vital wound} is removed.
       `,

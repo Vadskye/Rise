@@ -794,14 +794,14 @@
 
         \begin{dtable*}
             \lcaption{Typical Poisons}\pdfbookmark[3]{Typical Poisons}{}
-            \begin{dtabularx}{\textwidth}{l l l l l X l}
-                \tb{Poison}         & \tb{Transmission} & \tb{Form} & \tb{Base Accuracy} & \tb{Primary Effect}                                 & \tb{Secondary Effect}                       & \tb{Type}  \\
-                Nitharit            & Contact           & Powder    & 3            & Sickened                                            & Nauseated                                   & Plant      \\
-                Arsenic             & Ingestion         & Powder    & 5            & Lose a hit point                                    & Gain a \glossterm{vital wound}, poison ends & Plant      \\
-                Sassone leaf        & Contact           & Powder    & 6            & Lose a hit point                                    & Lose two hit points, poison ends            & Plant      \\
-                Dragon bile         & Contact           & Liquid    & 10           & Sickened, lose a hit point                          & Nauseated, lose two hit points              & Venom      \\
-                Insanity mist       & Ingestion         & Gas       & 10           & Disoriented                                         & Confused                                    & Alchemical \\
-                Black lotus extract & Contact           & Liquid    & 15           & Lose a hit point from each successful poison attack & Gain a \glossterm{vital wound}              & Plant      \\
+            \begin{dtabularx}{\textwidth}{l l l l >{\lcol}X >{\lcol}X l}
+                \tb{Poison}         & \tb{Transmission} & \tb{Form} & \tb{Base Accuracy} & \tb{Initial Effect}                           & \tb{Third Hit Effect}               & \tb{Type}                  \\
+                Nitharit            & Contact   & Powder & 3  & Sickened while poison lasts                   & Nauseated while poison lasts                      & Plant      \\
+                Arsenic             & Ingestion & Powder & 5  & Lose a hit point from each hit                & Gain a \glossterm{vital wound}, poison ends       & Plant      \\
+                Sassone leaf        & Contact   & Powder & 6  & Lose a hit point from each hit                & Poison ends                                       & Plant      \\
+                Dragon bile         & Contact   & Liquid & 10 & Lose a hit point, sickened while poison lasts & Lose two hit points, nauseated while poison lasts & Venom      \\
+                Insanity mist       & Ingestion & Gas    & 10 & Disoriented while poison lasts                & Confused while poison lasts                       & Alchemical \\
+                Black lotus extract & Contact   & Liquid & 15 & Lose a hit point from each hit                & Gain a \glossterm{vital wound}                    & Plant      \\
             \end{dtabularx}
         \end{dtable*}
 
@@ -840,37 +840,24 @@
             \parhead{Becoming Poisoned}
             All poisons have an base \glossterm{accuracy}.
             When a creature first comes into contact with a poison, the poison makes an attack roll using its accuracy against the Fortitude defense of the poisoned creature.
-            On a hit, the target becomes \glossterm{poisoned} and suffers the primary effect of the poison.
+            On a hit, the target becomes \glossterm{poisoned} and suffers the initial effect of the poison.
             On a miss, the target is not \glossterm{poisoned}.
 
             Some attacks make the target poisoned if they hit the target.
             In that case, the ability's accuracy defines the poison's accuracy.
 
+            Many poisons have an additional effect when they hit the target for the third time.
+
             \parhead{Poison Attacks}
-            At the end of each round, the poison makes an attack roll against the Fortitude defense of the poisoned creature.
-            On a hit, the creature gets closer to the poison's secondary effect (see Secondary Effects, below).
-            For every 10 points by which the attack hits, it counts as an additional successful attack for the purpose of reaching the poison's secondary effect.
-            On a miss, the creature does not suffect the effect of the poison that round, and gets closer to resisting the poison (see Resisting Poisons, below).
-            For every 10 points by which the attack misses, it counts as an additional failed attack for the purpose of resisting the poison.
+            At the end of each subsequent round after the target becomes poisoned, the poison makes an attack roll against the Fortitude defense of the poisoned creature.
+            Some poisons have special effects on each hit with this attack.
+            For every 10 points by which the attack hits, it counts as an additional hit.
+            On a miss, the creature gets closer to resisting the poison (see Resisting Poisons, below).
+            For every 10 points by which the attack misses, it counts as an additional miss for the purpose of resisting the poison.
 
             \parhead{Resisting Poisons}
-            If a poisoned creature resists a poison three times, the creature stops being poisoned by that poison.
-            Unless otherwise noted, this removes any lingering effects from the poison.
-
-            \parhead{Primary Effects}
-            Most poisons have primary effects.
-            If the poison successfully attacks a poisoned creature, the creature suffers the poison's primary effect as long as the creature remains poisoned.
-            Repeated primary effects, such as losing a hit point with each successful poison attack, occur whenever the trigger is met.
-            % TODO: wording
-            The first attack that inflicts the poison counts as a poison attack for this purpose.
-
-            \parhead{Secondary Effects}
-            Most poisons have a secondary effect based on the type of the poison.
-            If the poison successfully attacks a poisoned creature three times,
-                including the initial attack that inflicted the poison,
-                the creature suffers the poison's secondary effect in addition to its primary effect.
-            Some poisons end after the secondary effect is applied.
-            Unless otherwise noted, a creature continues to be poisoned until it resists the poison three times or until the poison is removed by other means.
+            If a poison misses a creature three times with its attack at the end of each round, the creature stops being poisoned by that poison.
+            Some poisons may require more attacks to end the poison, as indicated in their description.
 
             \parhead{Multiple Doses}
             A creature can be affected by multiple doses of the same poison.
