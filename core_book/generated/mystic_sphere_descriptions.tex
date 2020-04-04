@@ -3772,6 +3772,22 @@ The target gains a \plus3 \glossterm{magic bonus} to the Stealth skill.
 
 
 
+\lowercase{\hypertarget{spell:Conceal Trail}{}}\label{spell:Conceal Trail}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Conceal Trail}{Conceal Trail}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\targets{Yourself and up to five \glossterm{allies}}
+At the end of each round, the footprints, scent, and other tracks left by each target during that round are magically concealed.
+This increases the \glossterm{difficulty rating} to follow the trail by 10, but does not prevent creatures from seeing or smelling each target normally in combat.
+At the end of each round, if any target is outside of \rnglong range from you, the effect is broken for that target and its trail is revealed.
+
+\rankline
+\rank{3} The \glossterm{difficulty rating} increase increases to 15.
+\rank{5} The \glossterm{difficulty rating} increase increases to 20.
+\rank{7} The \glossterm{difficulty rating} increase increases to 25.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Dark Shroud}{}}\label{spell:Dark Shroud}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Dark Shroud}{Dark Shroud}}[\glossterm{Focus}, \glossterm{Sensation}, \glossterm{Visual}]
 \target{One creature within \rngmed range}
@@ -4913,6 +4929,23 @@ Make an attack vs. Armor against each target.
 
 
 
+\lowercase{\hypertarget{spell:Flame Blade}{}}\label{spell:Flame Blade}
+\begin{attuneability}[Rank 3]{\hypertarget{spell:Flame Blade}{Flame Blade}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself or an \glossterm{ally} within \rngmed range}
+All damage the target deals with \glossterm{strikes} becomes fire damage in addition to the attack's normal damage types.
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{5} Whenever the target \glossterm{vitally wounds} a creature with a \glossterm{strike}, the struck creature is also \glossterm{ignited} as a \glossterm{condition}.
+This condition can be removed if the target makes a \glossterm{difficulty rating} 10 Dexterity check as a \glossterm{move action} to put out the flames.
+Dropping \glossterm{prone} as part of this action gives a \plus5 bonus to this check.
+\rank{7} The condition cannot be removed with a \glossterm{move action}.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Flame Serpent}{}}\label{spell:Flame Serpent}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Flame Serpent}{Flame Serpent}}[\glossterm{Focus}]
 \targets{Everything in a \areamed, 5 ft.\ wide shapeable line within \rngmed range}
@@ -4943,22 +4976,6 @@ You can cast this spell as a \glossterm{minor action}.
 \rankline
 \rank{6} The damage increases to \glossterm{standard damage} \minus1d.
 \rank{8} The damage increases to \glossterm{standard damage}.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Flame Blade}{}}\label{spell:Flame Blade}
-\begin{attuneability}[Rank 4]{\hypertarget{spell:Flame Blade}{Flame Blade}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
-All damage the target deals with \glossterm{strikes} becomes fire damage in addition to the attack's normal damage types.
-
-You can cast this spell as a \glossterm{minor action}.
-
-\rankline
-\rank{6} The target also gains a \plus2 \glossterm{magic bonus} to \glossterm{power} with \glossterm{mundane} abilities.
-% May be too strong
-\rank{8} The power bonus increases to \plus4.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -7069,22 +7086,6 @@ When this condition is removed, the target's maximum \glossterm{hit points} are 
 
 
 
-\lowercase{\hypertarget{spell:Drain Life}{}}\label{spell:Drain Life}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Drain Life}{Drain Life}}[\glossterm{Focus}]
-\target{One living creature within \rngmed range}
-Make an attack vs. Fortitude against the target.
-\hit The target loses a \glossterm{hit point}.
-\crit The target loses two \glossterm{hit points}.
-
-\rankline
-\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-\rank{5} The accuracy bonus increases to \plus2.
-\rank{7} The accuracy bonus increases to \plus3.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Fortify Life}{}}\label{spell:Fortify Life}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Fortify Life}{Fortify Life}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself or an \glossterm{ally} within \rngmed range}
@@ -7210,6 +7211,20 @@ Make an attack vs. Mental against the target.
 
 
 
+\lowercase{\hypertarget{spell:Cursed Blade}{}}\label{spell:Cursed Blade}
+\begin{attuneability}[Rank 3]{\hypertarget{spell:Cursed Blade}{Cursed Blade}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself or one \glossterm{ally} within \rngmed range}
+All damage the target deals with \glossterm{strikes} becomes \glossterm{energy damage} in addition to the attack's normal damage types.
+
+\rankline
+\rank{5} Whenever the target \glossterm{vitally wounds} a creature with a \glossterm{strike}, the target is unable to remove the \glossterm{vital wound} until it removes this effect.
+This is a \glossterm{Curse} effect, and can only be removed by abilities that can remove curses.
+\rank{7} The target is also unable to heal the hit points lost to the vitally wounding attack until it removes the curse.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Draining Grasp}{}}\label{spell:Draining Grasp}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Draining Grasp}{Draining Grasp}}[]
 \target{One creature or object you \glossterm{threaten}}
@@ -7218,6 +7233,20 @@ You must have a \glossterm{free hand} to cast this spell.
 
 Make a \glossterm{physical attack} vs. Reflex against the target.
 \hit The target loses a \glossterm{hit point}.
+
+\rankline
+\rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{7} The accuracy bonus increases to \plus2.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Inflict Wound}{}}\label{spell:Inflict Wound}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Inflict Wound}{Inflict Wound}}[\glossterm{Focus}]
+\target{One living creature within \rngmed range}
+Make an attack vs. Fortitude against the target.
+\hit The target loses two \glossterm{hit points}.
 
 \rankline
 \rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
@@ -7273,7 +7302,7 @@ Make an attack vs. Mental against the target.
 \begin{freeability}[Rank 4]{\hypertarget{spell:Lifeseal}{Lifeseal}}[\glossterm{Focus}]
 \target{One creature within \rngmed range}
 Make an attack vs. Fortitude against the target.
-\hit The target loses a \glossterm{hit point}.
+\hit The target loses two \glossterm{hit points}.
 In addition, as a \glossterm{condition}, the target is unable to regain hit points.
 
 \rankline
@@ -7311,6 +7340,21 @@ The target removes one \glossterm{vital wound}.
 
 
 
+\lowercase{\hypertarget{spell:Drain Life}{}}\label{spell:Drain Life}
+\begin{freeability}[Rank 5]{\hypertarget{spell:Drain Life}{Drain Life}}[\glossterm{Focus}]
+\target{One living creature within \rngmed range}
+Make an attack vs. Fortitude against the target.
+\hit The target takes energy \glossterm{standard damage} \plus3d.
+If this damage \glossterm{vitally wounds} the target, you can spend an \glossterm{action point}.
+When you do, you may remove one of your \glossterm{vital wounds}.
+
+\rankline
+\rank{7} The damage increases to \glossterm{standard damage} \plus4d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Eyebite}{}}\label{spell:Eyebite}
 \begin{freeability}[Rank 5]{\hypertarget{spell:Eyebite}{Eyebite}}[\glossterm{Focus}]
 \target{One living creature within \rngclose range}
@@ -7325,17 +7369,6 @@ Make an attack vs. Fortitude against the target.
 
 
 
-\lowercase{\hypertarget{spell:Harm}{}}\label{spell:Harm}
-\begin{freeability}[Rank 5]{\hypertarget{spell:Harm}{Harm}}[\glossterm{Focus}]
-\target{One creature within \rngmed range}
-Make an attack vs. Fortitude against the target.
-\hit The target loses two \glossterm{hit points}.
-\crit As above, and the target gains a \glossterm{vital wound}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Cripple}{}}\label{spell:Cripple}
 \begin{freeability}[Rank 6]{\hypertarget{spell:Cripple}{Cripple}}[\glossterm{Focus}]
 \target{One living creature within \rngclose range}
@@ -7345,6 +7378,17 @@ Make an attack vs. Fortitude against the target.
 
 \rankline
 \rank{8} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Inflict Vital Wound}{}}\label{spell:Inflict Vital Wound}
+\begin{freeability}[Rank 7]{\hypertarget{spell:Inflict Vital Wound}{Inflict Vital Wound}}[\glossterm{Focus}]
+\target{One living creature within \rngmed range}
+Make an attack vs. Fortitude against the target.
+\hit The target loses three \glossterm{hit points}.
+\crit As above, and the target gains a \glossterm{vital wound}.
 \end{freeability}
 \vspace{0.25em}
 

@@ -158,6 +158,16 @@ glamer=MysticSphere(
             \\rank<5> You can also replace the auditory effects of the spell.
             \\rank<7> The two spells do not have to be from the same \\glossterm<mystic sphere>.
         """, tags=['Attune (self)']),
+        Spell('Conceal Trail', 1, 'Yourself and up to five \\glossterm<allies>', """
+            At the end of each round, the footprints, scent, and other tracks left by each target during that round are magically concealed.
+            This increases the \\glossterm<difficulty rating> to follow the trail by 10, but does not prevent creatures from seeing or smelling each target normally in combat.
+            At the end of each round, if any target is outside of \\rnglong range from you, the effect is broken for that target and its trail is revealed.
+
+            \\rankline
+            \\rank<3> The \\glossterm<difficulty rating> increase increases to 15.
+            \\rank<5> The \\glossterm<difficulty rating> increase increases to 20.
+            \\rank<7> The \\glossterm<difficulty rating> increase increases to 25.
+        """, tags=['Attune (self)']),
     ],
     rituals=[
         Spell('Magic Mouth', 1, 'Yourself or one large or smaller \\glossterm<ally> or unattended object within \\rngmed range', """
