@@ -19,7 +19,7 @@ vivimancy=MysticSphere(
     spells=[
         Spell('Lifeseal', 4, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
-            \\hit The target loses a \\glossterm<hit point>.
+            \\hit The target loses two \\glossterm<hit points>.
             In addition, as a \\glossterm<condition>, the target is unable to regain hit points.
 
             \\rankline
@@ -81,20 +81,27 @@ vivimancy=MysticSphere(
             \\rankline
             \\rank<7> The target can remove two \\glossterm<vital wounds>.
         """, tags=['AP']),
-        Spell('Drain Life', 1, 'One living creature within \\rngmed range', """
-            Make an attack vs. Fortitude against the target.
-            \\hit The target loses a \\glossterm<hit point>.
-            \\crit The target loses two \\glossterm<hit points>.
-
-            \\rankline
-            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<5> The accuracy bonus increases to +2.
-            \\rank<7> The accuracy bonus increases to +3.
-        """, tags=[]),
-        Spell('Harm', 5, 'One creature within \\rngmed range', """
+        Spell('Inflict Wound', 3, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target loses two \\glossterm<hit points>.
+
+            \\rankline
+            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<7> The accuracy bonus increases to +2.
+        """, tags=[]),
+        Spell('Inflict Vital Wound', 7, 'One living creature within \\rngmed range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit The target loses three \\glossterm<hit points>.
             \\crit As above, and the target gains a \\glossterm<vital wound>.
+        """, tags=[]),
+        Spell('Drain Life', 5, 'One living creature within \\rngmed range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit The target takes energy \\glossterm<standard damage> +3d.
+            If this damage \\glossterm<vitally wounds> the target, you can spend an \\glossterm<action point>.
+            When you do, you may remove one of your \\glossterm<vital wounds>.
+
+            \\rankline
+            \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=[]),
         # TODO: make "Undead Bane" spell after figuring out undead / life
         # damage interaction
@@ -224,6 +231,14 @@ vivimancy=MysticSphere(
             \\hit The target is \\glossterm<immobilized> until it takes a \\glossterm<short rest>.
             \\crit As above, except that the effect lasts until this curse is removed.
         """, tags=['Curse']),
+        Spell('Cursed Blade', 3, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
+            All damage the target deals with \\glossterm<strikes> becomes \\glossterm<energy damage> in addition to the attack's normal damage types.
+
+            \\rankline
+            \\rank<5> Whenever the target \\glossterm<vitally wounds> a creature with a \\glossterm<strike>, the target is unable to remove the \\glossterm<vital wound> until it removes this effect.
+            This is a \\glossterm<Curse> effect, and can only be removed by abilities that can remove curses.
+            \\rank<7> The target is also unable to heal the hit points lost to the vitally wounding attack until it removes the curse.
+        """, tags=['Attune (target)']),
     ],
     rituals=[
         Spell('Remove Disease', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
