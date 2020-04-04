@@ -48,6 +48,17 @@ chronomancy=MysticSphere(
             This effect lasts until the target takes a \\glossterm<short rest>.
             \\crit As above, except that the effect lasts until the curse is removed.
         """, tags=['Curse']),
+        Spell('Accelerated Timestream', 5, 'Everything within a \\areamed radius \\glossterm<zone> from your location', """
+            Make an attack vs. Mental against each target.
+            Whenever a creature enters the area, you make this attack against them.
+            A creature that leaves the area and re-enters it uses the original attack result against it.
+            \\hit Each target acts at half speed within the area.
+            It skips every other round, starting with the round after it becomes affected by this affect.
+            In addition, it takes a -2 penalty to \\glossterm<accuracy> and \\glossterm<defenses> against creatures moving at normal speed.
+
+            \\rankline
+            \\rank<7> The area increases to a \\arealarge radius zone.
+        """, tags=[]),
         Spell('Slow', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<slowed> as a \\glossterm<condition>.
