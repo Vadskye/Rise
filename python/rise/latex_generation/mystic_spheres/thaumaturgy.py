@@ -20,8 +20,27 @@ thaumaturgy=MysticSphere(
             \\rank<7> The bonus increases to +10.
         """, tags=[]),
     ],
-    lists=['Arcane', 'Divine'],
+    lists=['Arcane'],
     spells=[
+        Spell('Magic Missile', 1, 'One creature within \\rngmed range', """
+            You send an unerring projectile made of pure magical energy towards the target.
+            The target takes energy \\glossterm<standard damage> -2d.
+            If this damage does not \\glossterm<wound> the target, it has no effect, and the target does not lose any \\glossterm<hit points>.
+
+            \\rankline
+            \\rank<3> The damage increases to \\glossterm<standard damage> -1d.
+            \\rank<5> The damage increases to \\glossterm<standard damage>.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
+        """, tags=[]),
+        Spell('Magic Missile Storm', 4, 'Each \\glossterm<enemy> within a \\areamed radius from you', """
+            You send an unerring projectile made of pure magical energy towards each target.
+            Each target takes energy \\glossterm<standard damage> -3d.
+            If this damage does not \\glossterm<wound> a target, it has no effect, and that target does not lose any \\glossterm<hit points>.
+
+            \\rankline
+            \\rank<6> The area increases to a \\arealarge radius.
+            \\rank<8> The area increases to a \\areahuge radius.
+        """, tags=[]),
         Spell('Suppress Magic', 1, 'One creature, object, or magical effect within \\rngmed range', """
             Make an attack against the target.
             If you target a creature or object, the attack result is applied to every \\glossterm<magical> effect on the target.

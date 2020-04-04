@@ -125,14 +125,13 @@ delusion=MysticSphere(
             \\rank<8> The range increases to \\rnglong.
         """, tags=['Emotion']),
         Spell('Demotivate', 1, 'One creature within \\rngmed range', """
-            Make an attack vs Mental with a +2 bonus against the target.
+            Make an attack vs Mental with a +3 bonus against the target.
             \\hit As a \\glossterm<condition>, the target takes a -2 penalty to Mental defense.
-            In addition, it loses an \\glossterm<action point> whenever it spends an \\glossterm<action point>.
 
             \\rankline
-            \\rank<3> The accuracy bonus increases to +3.
-            \\rank<5> The accuracy bonus increases to +4.
-            \\rank<7> The accuracy bonus increases to +5.
+            \\rank<3> The penalty increases to -3.
+            \\rank<5> The penalty increases to -4.
+            \\rank<7> The penalty increases to -5.
         """, tags=['Emotion']),
         Spell('Motivate', 1, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
             The target gains a +2 bonus to Mental defense.

@@ -219,10 +219,14 @@ vivimancy=MysticSphere(
     rituals=[
         Spell('Remove Disease', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             All diseases affecting the target are removed.
+
+            This ritual takes one minute to perform.
         """, tags=['AP']),
         Spell('Restore Senses', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             One of the target's physical senses, such as sight or hearing, is restored to full capacity.
             This can heal both magical and mundane effects, but it cannot completely replace missing body parts required for a sense to function (such as missing eyes).
+
+            This ritual takes one minute to perform.
         """, tags=['AP']),
         Spell('Reincarnation', 5, 'One Diminuitive or larger piece of a humanoid corpse', """
             The target must have been part of the original creature's body at the time of death.

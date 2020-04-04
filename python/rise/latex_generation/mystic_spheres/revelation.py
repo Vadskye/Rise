@@ -232,6 +232,20 @@ revelation=MysticSphere(
         # spell to cast spells from the eye instead of from your body?
     ],
     rituals=[
+        Spell('Locate Creature', 3, None, """
+            When you perform this ritual, choose a creature.
+            You must have seen the chosen creature in person and either be able to clearly visualize its appearance or know its proper name to find it with this ritual.
+            A creature without a proper name cannot be identified by name in this way.
+            If you specify the chosen creature's appearance incorrectly, or if it has significantly changed its appearance, you may accidentally affect a different creature, or the ritual may simply fail.
+
+            If the creature is within 100 miles of your location, you unerringly learn the relative direction from your location to the location it was in when you started performing this ritual.
+
+            This ritual takes one hour to perform.
+        """, tags=[]),
+        Spell('Locate Object', 3, None, """
+            This ritual functions like the \\spell<locate creature> ritual, except that it locates objects instead of creatures.
+            Objects currently being worn or carried by creatures cannot be found by this ritual.
+        """, tags=[]),
         Spell('Read Magic', 1, 'Yourself', """
             You gain the ability to decipher magical inscriptions that would otherwise be unintelligible.
             This can allow you to read ritual books and similar objects created by other creatures.
@@ -239,13 +253,13 @@ revelation=MysticSphere(
 
             This ritual takes one minute to perform.
         """, tags=['Attune (ritual)']),
-        Spell('Discern Location', 5, 'Any creature or object on the same plane as you', """
-            You do not need \\glossterm<line of sight> or \\glossterm<line of effect> to the target.
-            However, you must specify your target with a precise mental image of its appearance.
-            The image does not have to be perfect, but it must unambiguously identify the target.
-            If you specify its appearance incorrectly, or if the target has changed its appearance, you may accidentally target a different creature, or the ritual may simply fail.
+        Spell('Discern Location', 5, None, """
+            When you perform this ritual, choose a creature or object.
+            You must have seen the chosen creature or object in person and either be able to clearly visualize its appearance or know its proper name to find it with this ritual.
+            A creature or object without a proper name cannot be identified by name in this way.
+            If you specify the chosen creature or object's appearance incorrectly, or if it has significantly changed its appearance, you may accidentally affect a different creature, or the ritual may simply fail.
 
-            You learn the location (place, name, business name, or the like), community, country, and continent where the target lies.
+            If the chosen creature or object on the same plane as you, you learn the location (place, name, business name, or the like), community, country, and continent where the target was at when you started performing this ritual.
             % Wording?
             If there is no corresponding information about an aspect of the target's location, such as if the target is in a location which is not part of a recognized country,
                 you learn only that that that aspect of the information is missing.

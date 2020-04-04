@@ -21,17 +21,27 @@ compel=MysticSphere(
             If it is unable to take the same action, such as if the action exhausted one of the creature's resources, it cannot take a standard action that round.
             This effect lasts until it takes a \\glossterm<short rest>.
             \\crit As above, except that the effect lasts until the curse is removed.
+
+            \\rankline
+            \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=['Compulsion', 'Curse']),
         Spell('Drop', 5, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target drops anything it is holding in its hands.
             \\crit As above, and as a \\glossterm<condition> the target is unable to pick up the dropped items.
+
+            \\rankline
+            \\rank<7> The range increases to \\rnglong.
         """, tags=['Compulsion']),
-        Spell('Monologue', 1, 'One creature within \\rngmed range', """
+        Spell('Monologue', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
-            \\hit As a \\glossterm<condition>, the target is forced to speak all of its current thoughts out loud.
-            This does not control what it thinks about, so a quick-thinking target may be able to avoid revealing anything of great interest.
-            In combat, most creatures will think about what they are planning on doing, which can help you predict their actions.
+            \\hit As a \\glossterm<condition>, the target is forced to speak out loud constantly whenever it can.
+            This does not control what it talks about, so a reasonably savvy creature may be able to avoid revealing anything of great interest.
+            In combat, most creatures with an intelligence of 0 or less will often talk about what they are planning on doing, which can help you predict their actions.
+
+            \\rankline
+            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Compulsion']),
         Spell('Dance', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
@@ -97,6 +107,15 @@ compel=MysticSphere(
             It cannot be awakened while the condition lasts unless it takes a \\glossterm<vital wound>, which causes it to wake up and ends the sleeping part of the condition.
             After the condition ends, the target can wake up normally, though it continues to sleep until it would wake up naturally.
         """, tags=['Compulsion']),
+    ],
+    rituals=[
+        Spell('Truthseal', 4, 'Up to five creatures within \\rngmed range', """
+            Make an attack vs. Mental against each target.
+
+            \\hit Each target is unable to say things it knows to be untrue.
+
+            This ritual takes one minute to perform.
+        """, tags=['Attune (ritual)']),
     ],
     category='debuff, combat',
 )
