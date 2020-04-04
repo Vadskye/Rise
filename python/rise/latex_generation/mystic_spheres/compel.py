@@ -25,12 +25,12 @@ compel=MysticSphere(
             \\rankline
             \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=['Compulsion', 'Curse']),
-        Spell('Drop', 5, 'One creature within \\rngmed range', """
+        Spell('Drop', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target drops anything it is holding in its hands.
-            \\crit As above, and as a \\glossterm<condition> the target is unable to pick up the dropped items.
 
             \\rankline
+            \\rank<5> On a \\glossterm<critical hit>, the target is unable to pick up the dropped items as a \\glossterm<condition>.
             \\rank<7> The range increases to \\rnglong.
         """, tags=['Compulsion']),
         Spell('Monologue', 3, 'One creature within \\rngmed range', """
@@ -106,10 +106,21 @@ compel=MysticSphere(
         """, tags=['Compulsion']),
         Spell('Close Your Eyes', 6, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
-            \\hit The target is \\glossterm<blinded>.
+            \\hit The target is \\glossterm<blinded> as a \\glossterm<condition>.
 
             \\rankline
             \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+        """, tags=['Compulsion']),
+        Spell('Run', 3, 'One creature within \\rngmed range', """
+            Make an attack vs. Mental against the target.
+            \\hit As a \\glossterm<condition>, the target must move its maximum movement speed in a straight line during each \\glossterm<movement phase>.
+            It must use its movement mode with the highest speed to move this way.
+            It is not required to use the \\textit<sprint> ability, or use any other special movement ability, though it may choose to do so.
+            If it is unable to move without making a skill check, it may choose to stop its movement after moving the maximum possible distance without doing so.
+
+            \\rankline
+            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Compulsion']),
     ],
     rituals=[
