@@ -178,7 +178,7 @@ polymorph=MysticSphere(
             \\rank<8> The skill bonus increases to +16.
         """, tags=['Attune (self)']),
         Spell('Enhanced Senses', 1, 'Yourself', """
-            You gain a +3 \\glossterm<magic bonus> to Awareness checks.
+            You gain a +3 \\glossterm<magic bonus> to the Awareness skill.
 
             \\rankline
             \\rank<3> The bonus increases to +4.
@@ -270,6 +270,17 @@ polymorph=MysticSphere(
 
             This ritual takes one minute to perform.
         """, tags=['AP']),
+        Spell('Morph Weapon', 1, 'One unattended manufactured weapon', """
+            The target changes into another weapon from the same weapon group.
+            At least one ritual participant must be proficient with that weapon group.
+            You cannot change it into an exotic weapon in this way.
+            When this effect ends, the target returns to its original shape.
+
+            This ritual takes one minute to perform.
+        """, tags=['Attune (ritual)']),
+        Spell('Exotic Morph Weapon', 3, 'One unattended manufatured weapon', """
+            This ritual functions like the \\spell<morph weapon> ritual, except that you can also change the target into an exotic weapon.
+        """, tags=['Attune (ritual)']),
         Spell('Fortify', 1, 'One \\glossterm<unattended>, nonmagical object or part of an object of up to Large size.', """
             Unlike most abilities, this ritual can affect individual parts of a whole object.
 
