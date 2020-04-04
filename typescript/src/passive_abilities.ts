@@ -5,10 +5,10 @@ export interface PassiveAbility {
 
 export function poisonousWeapon(weaponName: string, primaryEffect: string, terminalEffect: string) {
   return `
-    Whenever a creature takes damage from the $name's ${weaponName},
-      if the attack result beat the target's Fortitude defense,
+    Whenever a creature is \\glossterm{wounded} by the $name's ${weaponName},
       the damaged creature becomes \\glossterm{poisoned}.
-    The poison's primary effect makes the target ${primaryEffect}, and the terminal effect makes it ${terminalEffect}
+    Its initial effect makes the target ${primaryEffect}.
+    On the poison's third hit, the target is ${terminalEffect}.
   `;
 }
 

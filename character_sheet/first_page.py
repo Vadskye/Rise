@@ -290,13 +290,30 @@ def passive_ability(prefix, ability_number):
 
 
 def attacks(destination):
-    return flex_col({'class': 'attacks'}, [
-        flex_wrapper(div({'class': 'section-header'}, 'Attacks')),
-        "".join([paper_attack() for i in range(6)]) if destination == 'paper' else fieldset(
-            {'class': f'repeating_attacks'},
-            attack(),
-        )
-    ])
+    if destination == 'paper':
+        return flex_col({'class': 'attacks'}, [
+            flex_wrapper(div({'class': 'section-header'}, 'Attacks')),
+            "".join([paper_attack() for i in range(6)])
+        ])
+    else:
+        return flex_col({'class': 'attacks'}, [
+            flex_wrapper(div({'class': 'section-header'}, 'Magical Attacks')),
+            fieldset(
+                {'class': f'repeating_magicalattacks'},
+                attack('magical'),
+            ),
+            flex_wrapper(div({'class': 'section-header'}, 'Mundane Attacks')),
+            fieldset(
+                {'class': f'repeating_mundaneattacks'},
+                attack('mundane'),
+            ),
+            flex_wrapper(div({'class': 'section-header'}, 'Non-Damaging Attacks')),
+            fieldset(
+                {'class': f'repeating_attacks'},
+                attack('nondamaging'),
+            ),
+        ])
+
 
 def paper_attack():
     return flex_row({'class': 'attack'}, [
@@ -315,18 +332,19 @@ def paper_attack():
         ),
     ])
 
-def attack():
+# source: 'magical', 'mundane', 'nondamaging'
+def attack(source):
     return flex_row({'class': 'attack'}, [
         labeled_text_input(
             'Name',
             {'class': 'attack-name'},
-            {'name': 'attack_name'},
+            {'name': 'attack0_name'},
         ),
         underlabel_spaced(
             '+Acc',
             number_input({
                 'class': 'fake-text',
-                'name': 'attack_accuracy',
+                'name': 'attack0_accuracy',
             }),
             {'class': 'attack-bonus'}
         ),
@@ -334,31 +352,31 @@ def attack():
             '+Dmg',
             number_input({
                 'class': 'fake-text',
-                'name': 'attack_damage',
+                'name': 'attack0_damage',
             }),
             {'class': 'attack-bonus'}
-        ),
+        ) if source != 'nondamaging' else '',
         labeled_text_input(
             'Defense',
             {'class': 'attack-defense'},
-            {'name': 'attack_defense'},
+            {'name': 'attack0_defense'},
         ),
         number_input({
             'class': 'hidden',
             'disabled': True,
-            'name': 'attack_power',
-            'value': "(@{mundane_power}+@{attack_damage}*2)",
+            'name': 'attack0_power',
+            'value': f"(@{{{source}_power}}+@{{attack0_damage}}*2)",
         }),
         # TODO: make this work for negative standard damage
         number_input({
             'class': 'hidden',
             'disabled': True,
-            'name': 'attack_dice_count',
+            'name': 'attack0_dice_count',
             'value': """(
-                floor(floor(@{attack_power}/16) * (4 + ((@{attack_power} - 16) / 2)))
+                floor(floor(@{attack0_power}/16) * (4 + ((@{attack0_power} - 16) / 2)))
                 + (
-                    -floor((@{attack_power}-16)/16) * (
-                        floor(floor(@{attack_power}/6) * 1.5) + 1
+                    -floor((@{attack0_power}-16)/16) * (
+                        floor(floor(@{attack0_power}/6) * 1.5) + 1
                     )
                 )
             )""".replace('\n', '').replace(' ', ''),
@@ -366,12 +384,12 @@ def attack():
         number_input({
             'class': 'hidden',
             'disabled': True,
-            'name': 'attack_dice_size',
+            'name': 'attack0_dice_size',
             'value': """(
-                floor(floor(@{attack_power}/16) * 10)
+                floor(floor(@{attack0_power}/16) * 10)
                 + (
-                    -floor((@{attack_power}-16)/16) * (
-                        (floor((@{attack_power}%6)/2)*2)+6
+                    -floor((@{attack0_power}-16)/16) * (
+                        (floor((@{attack0_power}%6)/2)*2)+6
                     )
                 )
             )""".replace('\n', '').replace(' ', ''),
@@ -379,7 +397,7 @@ def attack():
         labeled_text_input(
             'Effect',
             {'class': 'attack-effect'},
-            {'name': 'attack_effect'},
+            {'name': 'attack0_effect'},
         ),
         button(
             {
@@ -387,9 +405,13 @@ def attack():
                 'name': f"roll_attack",
                 'type': 'roll',
                 'value': (
-                    f"@{{character_name}} uses @{{attack_name}}:"
-                    + f" [[d10! + @{{accuracy}} + @{{attack_accuracy}}]] vs @{{attack_defense}}!"
-                    + f" ([[@{{attack_dice_count}}d@{{attack_dice_size}}]]; @{{attack_effect}})"
+                    f"@{{character_name}} uses @{{attack0_name}}:"
+                    + f" [[d10! + @{{accuracy}} + @{{attack0_accuracy}}]] vs @{{attack0_defense}}!"
+                    + (
+                        f" (@{{attack0_effect}})"
+                        if source == 'nondamaging' else
+                        f" ([[@{{attack0_dice_count}}d@{{attack0_dice_size}}]]; @{{attack0_effect}})"
+                    )
                 ),
             },
             'Attack',
