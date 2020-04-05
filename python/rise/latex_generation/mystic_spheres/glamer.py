@@ -24,7 +24,7 @@ glamer=MysticSphere(
             \\rank<7> The bonus increases to +10.
         """, tags=['Sensation', 'Visual']),
     ],
-    lists=['Arcane'],
+    lists=['Arcane', 'Pact'],
     spells=[
         Spell('Dark Shroud', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
