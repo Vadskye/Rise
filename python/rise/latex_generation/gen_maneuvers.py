@@ -1076,7 +1076,7 @@ def generate_maneuver_list_latex():
     return latexify(
         "\n\n".join([
             latex_for_source(source, maneuvers_by_source[source])
-            for source in maneuver_sources
+            for source in sorted(maneuver_sources)
         ])
     )
 
