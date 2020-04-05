@@ -184,16 +184,17 @@ vivimancy=MysticSphere(
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Curse']),
         Spell('Decay', 1, 'One living creature within \\rngmed range', """
-            Make an attack vs. Fortitude against the target.
+            Make an attack vs. Fortitude with a +2 \\glossterm<accuracy> bonus against the target.
             \\hit As a \\glossterm<condition>, the target becomes more vulnerable to injury.
-            Whenever it loses a \\glossterm<hit point>, it reduces its maximum \\glossterm<hit points> by 1.
+            It takes a -2 penalty to Fortitude defense.
+            In addition, whenever it loses a \\glossterm<hit point>, it reduces its maximum \\glossterm<hit points> by 1.
             When this condition is removed, the target's maximum \\glossterm<hit points> are restored.
-            \\crit As above, except that the target also takes a -2 penalty to \\glossterm<vital rolls>.
+            \\crit As above, except that the penalty increases to -4.
 
             \\rankline
-            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<5> The accuracy bonus increases to +2.
-            \\rank<7> The accuracy bonus increases to +3.
+            \\rank<5> The accuracy bonus increases to +3.
+            \\rank<5> The accuracy bonus increases to +4.
+            \\rank<7> The accuracy bonus increases to +5.
         """, tags=[]),
         Spell('Curse of Decay', 3, 'One living creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
