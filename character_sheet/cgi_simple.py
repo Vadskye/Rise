@@ -168,6 +168,15 @@ def text_input(attributes=None):
         attributes['value'] = ""
     return html_tag('input', attributes)
 
+def textarea(attributes=None):
+    attributes = attributes or dict()
+    attributes['rows'] = attributes.get('rows', '1')
+    attributes['cols'] = attributes.get('cols', '10')
+    if DESTINATION == 'paper' and 'value' in attributes:
+        # Hide "default" attributes from the paper sheet
+        attributes['value'] = ""
+    return html_tag('textarea', attributes)
+
 # less simple
 
 def space_join(values):
@@ -196,6 +205,17 @@ def labeled_text_input(label_name, attributes=None, input_attributes=None):
     space_append(attributes, 'class', 'labeled-text-input')
     return div(attributes, flex_col([
         text_input(input_attributes),
+        span(
+            {'class': 'under-label'},
+            label_name
+        ),
+    ]))
+
+def labeled_textarea(label_name, attributes=None, input_attributes=None):
+    attributes = attributes or dict()
+    space_append(attributes, 'class', 'labeled-text-input')
+    return div(attributes, flex_col([
+        textarea(input_attributes),
         span(
             {'class': 'under-label'},
             label_name
