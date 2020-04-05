@@ -1,7 +1,7 @@
 from cgi_simple import (
     button, div, fieldset, flex_col, flex_row, flex_wrapper, freeform_number_input,
     labeled_number_input, labeled_text_input, number_input, sidelabel, span,
-    text_input, underlabel, underlabel_spaced
+    text_input, underlabel, underlabel_spaced, labeled_textarea
 )
 from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS
 
@@ -253,7 +253,7 @@ def ability(ability_number=None):
             {'class': 'active-ability-name'},
             {'name': 'active_ability{0}_name'.format(ability_number)},
         ),
-        labeled_text_input(
+        labeled_textarea(
             'Effect',
             {'class': 'active-ability-effect'},
             {'name': 'active_ability{0}_effect'.format(ability_number)},
@@ -283,7 +283,7 @@ def passive_ability(prefix, ability_number):
         labeled_text_input('Name', {'class': 'passive-name'}, input_attributes={
             'name': 'passive{0}-{1}-name'.format(ability_number, prefix),
         }),
-        labeled_text_input('Effect', {'class': 'passive-effect'}, input_attributes={
+        labeled_textarea('Effect', {'class': 'passive-effect'}, input_attributes={
             'name': 'passive{0}-{1}-effect'.format(ability_number, prefix),
         }),
     ])
@@ -394,7 +394,7 @@ def attack(source):
                 )
             )""".replace('\n', '').replace(' ', ''),
         }),
-        labeled_text_input(
+        labeled_textarea(
             'Effect',
             {'class': 'attack-effect'},
             {'name': 'attack0_effect'},
