@@ -26,17 +26,27 @@ vivimancy=MysticSphere(
             \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<8> The accuracy bonus increases to +2.
         """, tags=[]),
-        Spell('Draining Grasp', 3, 'One creature or object you \\glossterm<threaten>', """
+        Spell('Draining Grasp', 1, 'One creature or object you \\glossterm<threaten>', """
             This spell does not have the \\glossterm<Focus> tag.
             You must have a \\glossterm<free hand> to cast this spell.
 
             Make a \\glossterm<physical attack> vs. Reflex against the target.
-            \\hit The target loses a \\glossterm<hit point>.
+            \\hit The target takes energy \\glossterm<standard damage> +1d.
 
             \\rankline
-            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<7> The accuracy bonus increases to +2.
+            \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
+            \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=[], focus=False),
+        Spell('Drain Life', 1, 'One creature within \\rngmed range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit The target takes energy \\glossterm<standard damage> +1d.
+
+            \\rankline
+            \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
+            \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
+        """, tags=[]),
         Spell('Seal Wound', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +2 \\glossterm<vitality bonus> to one of its \\glossterm<vital rolls> (see \\pcref<Vital Rolls>).
 
@@ -45,7 +55,7 @@ vivimancy=MysticSphere(
             \\rank<5> The bonus increases to +4.
             \\rank<7> The bonus increases to +5.
         """, tags=[]),
-        Spell('Quickseal', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Triage', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +1 \\glossterm<vitality bonus> to one of its \\glossterm<vital rolls> (see \\pcref<Vital Rolls>).
 
             You can cast this spell as a \\glossterm<minor action>.
@@ -94,7 +104,7 @@ vivimancy=MysticSphere(
             \\hit The target loses three \\glossterm<hit points>.
             \\crit As above, and the target gains a \\glossterm<vital wound>.
         """, tags=[]),
-        Spell('Drain Life', 5, 'One living creature within \\rngmed range', """
+        Spell('Lifesteal', 5, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target takes energy \\glossterm<standard damage> +3d.
             If this damage \\glossterm<vitally wounds> the target, you can spend an \\glossterm<action point>.
