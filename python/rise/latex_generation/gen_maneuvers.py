@@ -740,7 +740,7 @@ def generate_maneuvers():
         target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a melee \\glossterm<strike>.
-            For each previous consecutive round that you used this ability, you gain a +1d bonus to damage with the strike, up to a maximum of +4d.
+            For each previous consecutive round that you used this ability, you gain a +1d bonus to damage with the strike, up to a maximum of +3d.
         """,
         rank_upgrades={
             '3': 'You gain a +1d bonus to damage with the strike.',
