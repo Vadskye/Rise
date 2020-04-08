@@ -224,16 +224,15 @@ polymorph=MysticSphere(
             \\rank<5> The maximum size of the object increases to Medium.
             \\rank<7> The maximum size of the object increases to Large.
         """, tags=[]),
-        Spell('Acidic Blood', 1, ['Yourself or one \\glossterm<ally> within \\rngmed range', 'Everything adjacent to the primary target'], """
+        Spell('Acidic Blood', 3, ['Yourself or one \\glossterm<ally> within \\rngmed range', 'Everything adjacent to the primary target'], """
             The primary target's blood becomes acidic.
             This does not harm it, but the blood can be dangerous to anything nearby when it bleeds.
-            At the end of each phase, if the primary target lost a \\glossterm<hit point> during that phase, make an attack vs. Armor against everything adjacent to the target.
+            At the end of each round, if the primary target was \\glossterm<wounded> during that round, make an attack vs. Armor against everything adjacent to the target.
             \\hit Each secondary target takes acid \\glossterm<standard damage> -1d.
 
             \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage>.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
+            \\rank<5> The damage increases to \\glossterm<standard damage>.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
         """, tags=['Attune (target)']),
         Spell('Bleed', 4, 'One living creature within \\rngclose range', """
             Make an attack vs. Fortitude against the target.
