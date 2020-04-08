@@ -62,7 +62,7 @@ delusion=MysticSphere(
             Make an attack vs. Mental against the target.
             \\hit The target is inflicted with agonizing pain as a \\glossterm<condition>.
             % Does this need to clarify that it takes effect in the round the spell was cast?
-            Tt the end of each \\glossterm<round>, if the target was \\glossterm<wounded> that round, it loses a \\glossterm<hit point>.
+            At the end of each \\glossterm<round>, if the target was \\glossterm<wounded> that round, it loses a \\glossterm<hit point>.
 
             \\rankline
             \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.

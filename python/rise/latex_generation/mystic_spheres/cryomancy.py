@@ -109,6 +109,9 @@ cryomancy=MysticSphere(
         Spell('Frostfall', 4, None, """
             The temperature in a two mile radius cylinder-shaped \\glossterm<zone> from your location decreases rapidly.
             After one minute, the temperature decreases by 50 degrees Fahrenheit, to a minimum of \\minus50 degrees.
+            Unlike normal, this effect does not require \\glossterm<line of effect> to you.
+            Instead, it affects all outdoor locations within the area.
+            Even a thin barrier, such as a tent, is enough to protect locations from the effect of this ritual.
 
             \\rankline
             \\rank<6> The temperature decreases by 70 degrees, to a minimum of \\minus70 degrees.
