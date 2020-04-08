@@ -180,7 +180,10 @@ pyromancy=MysticSphere(
             \\rank<8> The damage increases to \\glossterm<standard damage> +2d.
         """, tags=['Sustain (minor)']),
         Spell('Heat Wave', 4, None, """
-            The temperature in a two mile radius cylinder-shaped \\glossterm<zone> from your location decreases rapidly.
+            The temperature in a two mile radius cylinder-shaped \\glossterm<zone> from your location increases rapidly.
+            Unlike normal, this effect does not require \\glossterm<line of effect> to you.
+            Instead, it affects all outdoor locations within the area.
+            Even a thin barrier, such as a tent, is enough to protect locations from the effect of this ritual.
             After one minute, the temperature increases by 50 degrees Fahrenheit, to a maximum of 140 degrees.
 
             \\rankline
