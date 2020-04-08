@@ -54,7 +54,7 @@ polymorph=MysticSphere(
             You must have a \\glossterm<free hand> to cast this spell.
 
             You twist your hand into a spike that bends past armor to injure your foe.
-            Make a \\glossterm<physical attack> vs. Reflex against the target.
+            Make a melee attack vs. Reflex against the target.
             \\hit The target takes piercing \\glossterm<standard damage> +1d.
 
             \\rankline

@@ -36,7 +36,7 @@ For details, see \pcref{Archetype Ranks}.
 There are two kinds of armor: \glossterm{body armor}, which you wear on your body, and \glossterm{shields}, which you wield in a hand.
 For details, see \pcref{Armor}.
 
-\glossdef{attack}[attacks] Anything that affects another creature in a potentially harmful way. There are two kinds of attacks: \glossterm{physical attacks} and \glossterm{magical} attacks.
+\glossdef{attack}[attacks] Anything that affects another creature in a potentially harmful way. There are two kinds of attacks: \glossterm{mundane} attacks and \glossterm{magical} attacks.
 
 \glossdef{attack result} An attack result is the total you get on an \glossterm{attack roll}, after taking to account any bonuses or penalties that apply to the roll.
 
@@ -167,7 +167,7 @@ For details, see \pcref{Cover}.
 \glossdef{Creation} See \pcref{Ability Tags}.
 
 \glossdef{crouching} A crouching creature is ducking down instead of standing normally.
-\glossterm{Melee attacks} against it gain a \plus2 bonus to \glossterm{accuracy}, while physical ranged attacks against it take a \minus2 penalty to accuracy.
+\glossterm{Melee attacks} against it gain a \plus2 bonus to \glossterm{accuracy}, while \glossterm{mundane} ranged attacks against it take a \minus2 penalty to accuracy.
 In addition, it takes a \minus2 penalty to accuracy with melee attacks and moves at half speed.
 
 \glossdef{Curse} See \pcref{Ability Tags}.
@@ -332,7 +332,7 @@ For details, see \pcref{Grapple}.
 While grappled, you suffer certain penalties and restrictions, as described below.
 \begin{itemize}
     \item You must use a free hand (or equivalent limbs) to grapple, preventing you from taking any actions which would require having two free hands.
-        If you cannot free a hand, you suffer a \minus10 penalty to accuracy on all \glossterm{physical attacks} until you have a free hand.
+        If you cannot free a hand, you suffer a \minus10 penalty to accuracy on all \glossterm{mundane} attacks until you have a free hand.
     \item You are \defenseless against creatures who are not grappled by you.
     \item You take a \minus4 penalty to \glossterm{accuracy} with weapons that are not light, since they are too large and cumbersome to be used effectively in a grapple.
     \item Spellcasting is extremely difficult. You cannot cast spells with \glossterm{somatic components}.
@@ -348,9 +348,8 @@ Heavy undergrowth quadruples the movement cost required to move out of each squa
 For details, see \pcref{Weapon Usage Classes}.
 
 \glossdef{helpless} A helpless creature is completely at an opponent's mercy.
-Its Dexterity is treated as \minus10.
+Its base Dexterity is treated as \minus10 for the purpose of determining its Armor and Reflex defenses.
 Paralyzed, bound, and unconscious creatures are helpless.
-Any \glossterm{physical attack} against a helpless creature gains a \plus5 bonus to \glossterm{accuracy}.
 
 \glossdef{hidden task}[hidden tasks] Any checks for a hidden \glossterm{task} should be rolled secretly by the GM.\@
 You should not know the result of your check, or even that a check was made.
@@ -467,7 +466,7 @@ For details, see \pcref{Skill Training}.
 \glossdef{medium weapon} A medium weapon is a type of \glossterm{weapon} that can be wielded in either one or two hands.
 For details, see \pcref{Weapon Usage Classes}.
 
-\glossdef{melee attack}[Melee attack] A melee attack is a \glossterm{physical attack} using your body or a weapon that does not leave your grasp.
+\glossdef{melee attack}[Melee attack] A melee attack is an attack using your body or a weapon that does not leave your grasp.
 You can only make melee attacks against targets within your \glossterm{reach}.
 
 \glossdef{melee weapon}[Melee weapon] A melee weapon is a weapon designed for \glossterm{melee attacks}.
@@ -555,10 +554,6 @@ It is an abstract concept designed to represent a variety of actions that all ta
 
 \glossdef{Physical} See \pcref{Ability Tags}.
 
-\glossdef{physical attack} A physical attack is an \glossterm{attack} made with a creature's body.
-The most common type of physical attack is a \glossterm{strike}, but there are other physical attacks, such as the \textit{trip} ability (see \pcref{Trip}).
-Most physical attacks target Armor defense.
-
 \glossdef{pinned} A pinned creature is held completely immobile in a grapple.
 The only physical actions it can make are to escape the grapple (see \pcref{Grappling}).
 Like a \glossterm{helpless} creature, its Dexterity is treated as \minus10.
@@ -591,7 +586,7 @@ For details, see \pcref{Power}.
 
 \glossdef{proficient}[proficiency] A creature can be proficient with weapons and armor.
 If you try to attack with a weapon you are not proficient with, you take a \minus2 penalty to accuracy (see \pcref{Weapon Proficiency}).
-If you try to use armor you are not proficient with, it is less effective and your \glossterm{accuracy} with \glossterm{physical attacks} is reduced (see \pcref{Armor Proficiency}).
+If you try to use armor you are not proficient with, it is less effective and your \glossterm{accuracy} with \glossterm{mundane} attacks is reduced (see \pcref{Armor Proficiency}).
 
 \glossdef{projectile} A projectile is an object fired from a weapon at a target.
 Arrows and bolts are projectiles.
@@ -612,7 +607,7 @@ If a creature being pushed encounters an obstacle, it stops moving with no negat
 \glossdef{range} The range of an ability determines how far away it can be used.
 You can't use abilities on a target outside of the ability's range.
 
-\glossdef{range increment}[range increments] Physical ranged attacks often have a specific range increment.
+\glossdef{range increment}[range increments] \glossterm{Mundane} ranged attacks often have a specific range increment.
 A range increment is always measured in feet.
 You take a \minus1 penalty to accuracy with the ranged attack for each full range increment between you and your target.
 
@@ -827,7 +822,7 @@ For details, see \pcref{Unarmed Combat}.
 Some abilities can only affect unattended items.
 
 \glossdef{unaware} An unaware creature does not know that it is being attacked.
-Any \glossterm{physical attack} against an unaware creature gains a \plus5 bonus to \glossterm{accuracy}.
+It takes a \minus5 penalty to Armor and Reflex defenses against attacks that it is unaware of.
 After being attacked, an unaware creature typically stops being unaware of future attacks, even if it cannot see or identify its attacker.
 
 \glossdef{undergrowth} The presence of a significant amount of roots, bushes, and similar plants that can obstruct movement is called undergrowth.

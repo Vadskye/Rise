@@ -31,7 +31,7 @@ aeromancy = MysticSphere(
     spells=[
         Spell('Curse of Arrow Attraction', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental agains the target.
-            \\hit The target takes a -2 penalty to defenses against ranged \\glossterm<physical attacks> from weapons or projectiles that are Small or smaller until it takes a \\glossterm<short rest>.
+            \\hit The target takes a -2 penalty to defenses against \\glossterm<mundane> ranged attacks from weapons or projectiles that are Small or smaller until it takes a \\glossterm<short rest>.
             \\crit As above, except that the effect lasts until this curse is removed.
 
             \\rankline
@@ -51,7 +51,7 @@ aeromancy = MysticSphere(
         """, tags=['Swift']),
         Spell('Wind Screen', 1, 'Yourself', """
             You gain a +1 \\glossterm<magic bonus> to Armor defense.
-            This bonus is increased to +4 against ranged \\glossterm<physical attacks> from weapons or projectiles that are Small or smaller.
+            This bonus is increased to +4 against \\glossterm<mundane> ranged attacks from weapons or projectiles that are Small or smaller.
 
             You can cast this spell as a \\glossterm<minor action>.
             Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.

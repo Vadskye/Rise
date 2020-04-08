@@ -40,7 +40,7 @@ pyromancy=MysticSphere(
             This spell does not have the \\glossterm<Focus> tag.
             You must have a \\glossterm<free hand> to cast this spell.
 
-            Make a \\glossterm<physical attack> vs. Reflex against the target.
+            Make a melee attack vs. Reflex against the target.
             \\hit The target takes fire \\glossterm<standard damage> +1d.
 
             \\rankline
