@@ -994,7 +994,7 @@ def generate_maneuvers():
         short_description='Grapple a creature by the throat',
         effect_text="""
             % Flipped defense order because it reads weirdly otherwise
-            Make an melee \\glossterm<physical attack> with a free hand against the target's Fortitude and Reflex defenses.
+            Make an melee attack with a free hand against the target's Fortitude and Reflex defenses.
             On a hit against both defense, the target takes bludgeoning \\glossterm<standard damage> and you and the target are \\glossterm<grappled> by each other.
             For details, see \\pcref<Grappling>.
         """,

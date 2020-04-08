@@ -28,7 +28,7 @@ astromancy=MysticSphere(
             You must have a \\glossterm<free hand> to cast this spell.
 
             You partially teleport a touched target into the Astral Plane.
-            Make a \\glossterm<physical attack> vs. Reflex against the target.
+            Make a melee attack vs. Reflex against the target.
             \\hit The target takes energy \\glossterm<standard damage> +1d.
 
             \\rankline
