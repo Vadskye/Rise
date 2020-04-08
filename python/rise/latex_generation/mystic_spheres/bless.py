@@ -13,7 +13,7 @@ bless=MysticSphere(
     lists=['Divine'],
     spells=[
         Spell('Blessing of Mental Clarity', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            The target gains a +4 bonus to \\glossterm<defenses> against \\glossterm<Compulsion> and \\glossterm<Emotion> effects.
+            The target gains a +4 \\glossterm<magic bonus> to \\glossterm<defenses> against \\glossterm<Compulsion> and \\glossterm<Emotion> effects.
 
             \\rankline
             \\rank<5> The bonus increases to +6.
