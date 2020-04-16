@@ -10,12 +10,14 @@ def generate_weapons():
 
     weapons.append(MagicItem(
         name="Concussive",
-        level=4,
+        level=6,
         material_type='Weapon',
         # tags=[tag],
         description="""
-            As a standard action, you can infuse this weapon with concussive force.
-            The next time you make a \\glossterm<strike> with this weapon, if your attack result beats the target's Fortitude defense, it is \\glossterm<dazed> as a \\glossterm<condition>.
+            This weapon vibrates slightly in the hand.
+            As a standard action, you can intensify the vibration, imbuing the weapon with concussive force.
+            When you \\glossterm<wound> a creature with a \\glossterm<strike> using this weapon, if the weapon is intensified,
+                the creature is \\glossterm<dazed> as a \\glossterm<condition> and the weapon stops being intensified.
         """,
         short_description="Can daze a foe",
     ))
@@ -39,8 +41,8 @@ def generate_weapons():
         tags=[],
         description="""
             This item functions like a \\mitem<flaming> item, except that you can also kindle the flames as a standard action.
-            When you make a \\glossterm<strike> with this weapon, if the weapon is kindled and your attack result beats the target's Reflex defense,
-                it is \\glossterm<ignited> as a \\glossterm<condition> and the weapon stops being kindled.
+            When you \\glossterm<wound> a creature with a \\glossterm<strike> using this weapon, if the weapon is kindled,
+                the creature is \\glossterm<ignited> as a \\glossterm<condition> and the weapon stops being kindled.
             This condition can be removed if the target makes a \\glossterm<difficulty rating> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
             Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
         """,
@@ -54,7 +56,8 @@ def generate_weapons():
         tags=[],
         description="""
             This item functions like a \\mitem<flaming> item, except that the flames are constantly kindled.
-            When you make a \\glossterm<strike> with this weapon, if your attack result beats the target's Reflex defense, it is \\glossterm<ignited> as a \\glossterm<condition>.
+            When you \\glossterm<wound> a creature with a \\glossterm<strike> using this weapon,
+                the creature is \\glossterm<ignited> as a \\glossterm<condition>.
             This condition can be removed if the target makes a \\glossterm<difficulty rating> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
             Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
         """,
@@ -100,20 +103,21 @@ def generate_weapons():
         tags=[],
         description="""
             This item functions like a \\mitem<shocking> item, except that you can also intensify the electricity as a standard action.
-            When you make a \\glossterm<strike> with this weapon, if the weapon is intensified and your attack result beats the target's Fortitude defense,
-                the target is \\dazed as a \\glossterm<condition> and the weapon stops being intensified.
+            When you \\glossterm<wound> a creature with a \\glossterm<strike> using this weapon, if the weapon is intensified,
+                the creature is \\dazed as a \\glossterm<condition> and the weapon stops being intensified.
         """,
         short_description="Deals electricity damage, can daze foes",
     ))
 
     weapons.append(MagicItem(
-        name="Shocking, Greater",
+        name="Shocking, Supreme",
         level=20,
         material_type='Weapon',
         tags=[],
         description="""
             This item functions like a \\mitem<shocking> item, except that the electricity is constantly intensified.
-            When you make a \\glossterm<strike> with this weapon, if your attack result beats the target's Fortitude defense, it is \\dazed as a \\glossterm<condition>.
+            When you \\glossterm<wound> a creature with a \\glossterm<strike> using this weapon,
+                the creature is \\dazed as a \\glossterm<condition>.
         """,
         short_description="Deals electicity damage, dazes foes",
     ))
@@ -136,20 +140,21 @@ def generate_weapons():
         tags=[],
         description="""
             This item functions like a \\mitem<freezing> item, except that you can also intensify the cold as a standard action.
-            When you make a \\glossterm<strike> with this weapon, if the weapon is intensified and your attack result beats the target's Fortitude defense,
-                the target is \\chilled as a \\glossterm<condition> and the weapon stops being intensified.
+            When you \\glossterm<wound> a creature with a \\glossterm<strike> using this weapon, if the weapon is intensified,
+                the creature is \\chilled as a \\glossterm<condition> and the weapon stops being intensified.
         """,
         short_description="Deals cold damage, can chill",
     ))
 
     weapons.append(MagicItem(
-        name="Freezing, Greater",
+        name="Freezing, Supreme",
         level=20,
         material_type='Weapon',
         tags=[],
         description="""
             This item functions like a \\mitem<freezing> item, except that the cold is constantly intensified.
-            When you make a \\glossterm<strike> with this weapon, if your attack result beats the target's Fortitude defense, the target is \\chilled as a \\glossterm<condition>.
+            When you \\glossterm<wound> a creature with a \\glossterm<strike> using this weapon,
+                the creature is \\chilled as a \\glossterm<condition>.
         """,
         short_description="Deals cold damage, chills foes",
     ))
@@ -207,26 +212,27 @@ def generate_weapons():
 
     weapons.append(MagicItem(
         name="Disorienting",
-        level=7,
+        level=10,
         material_type='Weapon',
         tags=['Compulsion'],
         description="""
             This weapon shimmers with a chaotic pattern of colors.
             As a standard action, you can intensify the shimmering.
-            When you make a \\glossterm<strike> with this weapon, if the weapon is intensified and your attack result beats the target's Mental defense,
-                the target is \\disoriented as a \\glossterm<condition> and the weapon stops being intensified.
+            When you \\glossterm<wound> a creature with a \\glossterm<strike> using this weapon, if the weapon is intensified,
+                the creature is \\glossterm<disoriented> as a \\glossterm<condition> and the weapon stops being intensified.
         """,
         short_description="Can disorient struck foes",
     ))
 
     weapons.append(MagicItem(
         name="Disorienting, Greater",
-        level=16,
+        level=18,
         material_type='Weapon',
         tags=['Compulsion'],
         description="""
             This weapon shimmers with a chaotic pattern of colors.
-            When you make a \\glossterm<strike> with this weapon, if your attack result beats the target's Mental defense, it is \\disoriented as a \\glossterm<condition>.
+            When you \\glossterm<wound> a creature with a \\glossterm<strike> using this weapon,
+                the creature is it is \\disoriented as a \\glossterm<condition>.
         """,
         short_description="Disorients struck foes",
     ))
