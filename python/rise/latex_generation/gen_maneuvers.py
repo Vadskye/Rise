@@ -813,7 +813,7 @@ def generate_maneuvers():
         """,
         rank=3,
         rank_upgrades={
-            '5': 'You gain a +1d bonus to damage with the strike.',
+            '5': 'The damage penalty is removed.',
             '7': 'You gain a +1d bonus to damage with the strike.',
         },
         tags=[],
@@ -858,13 +858,13 @@ def generate_maneuvers():
         short_description='Fire a flurry of projectiles to blanket an area',
         target="Everything in a \\areasmall radius within \\rngmed range.",
         effect_text="""
-            Make a ranged \\glossterm<strike> with a -1d penalty to damage using a projectile weapon against each target.
+            Make a ranged \\glossterm<strike> with a -2d penalty to damage using a projectile weapon against each target.
             This strike costs five projectiles.
         """,
-        rank=4,
+        rank=3,
         rank_upgrades={
-            '6': 'You gain a +1d bonus to damage with the strike.',
-            '8': 'The damage bonus increases to +2d.',
+            '5': 'The damage penalty is reduced to -1d.',
+            '7': 'The damage penalty is removed.',
         },
         tags=[],
         lists=['Martial', 'Wild'],
@@ -874,13 +874,13 @@ def generate_maneuvers():
         name='Arrowstorm',
         short_description='Fire a flurry of projectiles to blanket a large area',
         target='Everything in a \\areamed radius within \\rngmed range.',
-        rank=6,
+        rank=5,
         effect_text="""
-            Make a ranged \\glossterm<strike> with a -1d penalty to damage using a projectile weapon against each target.
+            Make a ranged \\glossterm<strike> with a -2d penalty to damage using a projectile weapon against each target.
             This strike costs five projectiles.
         """,
         rank_upgrades={
-            '8': 'The range increases to \\rnglong.',
+            '7': 'The range increases to \\rnglong.',
         },
         tags=[],
         lists=['Martial', 'Wild'],

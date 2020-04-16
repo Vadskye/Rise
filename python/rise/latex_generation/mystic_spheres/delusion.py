@@ -120,13 +120,14 @@ delusion=MysticSphere(
             \\rank<5> The accuracy bonus increases to +4.
             \\rank<7> The accuracy bonus increases to +5.
         """, tags=['Emotion']),
-        Spell('Mass Enrage', 6, '\\glossterm<Enemies> in a \\areamed radius within \\rngmed range', """
+        Spell('Mass Enrage', 4, '\\glossterm<Enemies> in a \\areamed radius within \\rngmed range', """
             Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against each target.
             \\hit As a \\glossterm<condition>, each target takes a -2 penalty to Armor defense and is unable to take any \\glossterm<standard actions> that do not cause it to make an attack.
             For example, it could make a \\glossterm<strike> or cast an offensive spell, but it could not heal itself or summon a creature.
 
             \\rankline
-            \\rank<8> The range increases to \\rnglong.
+            \\rank<6> The range increases to \\rnglong.
+            \\rank<8> The area increases to a \\arealarge radius.
         """, tags=['Emotion']),
         Spell('Demotivate', 1, 'One creature within \\rngmed range', """
             Make an attack vs Mental with a +3 bonus against the target.

@@ -36,11 +36,11 @@ photomancy=MysticSphere(
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=['Sensation', 'Visual']),
-        Spell('Searing Light', 1, 'One creature within \\rngclose range', """
+        Spell('Searing Light', 1, 'One creature within \\rngmed range', """
             A ray of light flashes between you and the target.
             Bright light illuminates a 50 foot radius around the path the ray took until the end of the round.
             In addition, make an attack vs. Reflex against the target.
-            \\hit The target takes energy \\glossterm<standard damage> +1d.
+            \\hit The target takes energy \\glossterm<standard damage>.
 
             % This intentionally gives accuracy instead of the more common damage because photomancy isn't supposed to be
             % a high-damage mystic sphere
@@ -49,16 +49,16 @@ photomancy=MysticSphere(
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=['Sensation', 'Visual']),
-        Spell('Solar Ray', 4, 'One creature within \\rngclose range', """
+        Spell('Solar Ray', 4, 'One creature within \\rngmed range', """
             A ray of light flashes between you and the target.
-            Bright light illuminates a 50 foot radius around the path the ray took until the end of the round.
+            Bright light illuminates a 100 foot radius around the path the ray took until the end of the round.
             In addition, make an attack vs. Reflex against the target.
-            \\hit The target takes energy \\glossterm<standard damage> +2d.
+            \\hit The target takes energy \\glossterm<standard damage> +1d.
             In addition, the target suffers consequences as if it had been struck by a beam of true sunlight.
 
             \\rankline
-            \\rank<6> The damage increases to \\glossterm<standard damage> +3d.
-            \\rank<8> The damage increases to \\glossterm<standard damage> +4d.
+            \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<8> The accuracy bonus increases to +2.
         """, tags=['Sensation', 'Visual']),
         Spell('Blinding Flash', 6, 'One creature within \\rngclose range', """
             A burst of light flashes in front of a creature's eyes.
@@ -69,7 +69,7 @@ photomancy=MysticSphere(
             \\rankline
             \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=['Sensation', 'Visual']),
-        Spell('Lightburst', 4, 'All creatures in the area (see text)', """
+        Spell('Lightburst', 3, 'All creatures in the area (see text)', """
             A burst of light light fills a \\areasmall radius \\glossterm<zone> within \\rngmed range of you.
             Bright light illuminates a 100 foot radius around the area until the end of the round.
             In addition, make an attack vs. Fortitude against each target creature.
@@ -79,7 +79,7 @@ photomancy=MysticSphere(
             \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<8> The accuracy bonus increases to +2.
         """, tags=['Sensation', 'Visual']),
-        Spell('Sunburst', 6, 'All creatures in the area (see text)', """
+        Spell('Sunburst', 5, 'All creatures in the area (see text)', """
             A burst of light light fills a \\areamed radius \\glossterm<zone> within \\rngmed range of you.
             Bright light illuminates a 100 foot radius around the area until the end of the round.
             In addition, make an attack vs. Fortitude against each target creature.
@@ -89,13 +89,13 @@ photomancy=MysticSphere(
             \\rankline
             \\rank<8> The area increases to a \\arealarge radius.
         """, tags=['Sensation', 'Visual']),
-        Spell('Pillars of Light', 8, 'All creatures in the area (see text)', """
+        Spell('Pillars of Light', 7, 'All creatures in the area (see text)', """
             A burst of light light fills up to five \\areasmall radius \\glossterm<zones> within \\rngmed range of you.
             Bright light illuminates a 100 foot radius around each area until the end of the round.
             In addition, make an attack vs. Fortitude against each target creature.
             \\hit Each target is \\dazzled as a \\glossterm<condition>.
         """, tags=['Sensation', 'Visual']),
-        Spell('Kaleidoscopic Pattern', 5, 'All creatures in the area (see text)', """
+        Spell('Kaleidoscopic Pattern', 4, 'All creatures in the area (see text)', """
             This spell creates a brilliant, rapidly shifting rainbow of lights in a \\areasmall radius within \\rngmed range of you.
             They illuminate a 100 foot radius around the area with bright light until the end of the round.
             In addition, make an attack vs. Mental against each target creature.
