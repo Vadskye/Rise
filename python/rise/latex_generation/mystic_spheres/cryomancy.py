@@ -51,7 +51,8 @@ cryomancy=MysticSphere(
             \\rank<5> The damage increases to \\glossterm<standard damage> -1d.
             \\rank<7> The damage increases to \\glossterm<standard damage>.
         """, tags=[]),
-        Spell('Hailstorm', 4, 'Everything in a \\areasmall radius within \\rngclose range', """
+        # +1 level for cold + bludgeoning, which breaks resistances
+        Spell('Hailstorm', 4, 'Everything in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Armor against each target.
             \\hit Each target takes cold and bludgeoning \\glossterm<standard damage> -1d.
 

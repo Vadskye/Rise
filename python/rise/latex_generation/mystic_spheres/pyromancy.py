@@ -48,7 +48,7 @@ pyromancy=MysticSphere(
             \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=[], focus=False),
-        Spell('Fireball', 3, 'Everything in a \\areasmall radius within \\rngclose range', """
+        Spell('Fireball', 3, 'Everything in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Armor against each target.
             \\hit Each target takes fire \\glossterm<standard damage> -1d.
 
@@ -135,13 +135,13 @@ pyromancy=MysticSphere(
             \\rank<5> The area increases to a \\areahuge radius.
             \\rank<7> The area increases to a \\areaext radius.
         """, tags=[]),
-        Spell('Flame Serpent', 3, 'Everything in a \\areamed, 5 ft.\\ wide shapeable line within \\rngmed range', f"""
+        Spell('Flame Serpent', 3, 'Everything in a \\areamed, 5 ft.\\ wide shapeable line within \\rngclose range', f"""
             Make an attack vs. Armor against each target.
             \\hit Each target takes fire \\glossterm<standard damage> -1d.
 
             \\rankline
             \\rank<5> The area increases to a \\arealarge, 5 ft.\\ wide shapeable line.
-            \\rank<7> The range increases to \\rnglong.
+            \\rank<7> The range increases to \\rngmed.
         """, tags=[]),
         Spell('Flame Aura', 4, ['Yourself', 'Everything in a \\areasmall radius from you (see text)'], """
             Heat constantly radiates in a \\areasmall radius emanation from you.

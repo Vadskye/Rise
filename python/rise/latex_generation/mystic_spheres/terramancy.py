@@ -107,14 +107,15 @@ terramancy=MysticSphere(
             \\rank<5> The maximum size is increased to Gargantuan.
             \\rank<7> The maximum size is removed.
         """, tags=[]),
-        Spell('Fissure', 5, 'Everything in a \\areamed radius within \\rngmed range that is standing on earth or unworked stone', """
+        Spell('Fissure', 4, 'Everything in a \\areamed radius within \\rngmed range that is standing on earth or unworked stone', """
             You create an intense but highly localized tremor that rips through the ground.
             Make an attack vs. Reflex against each target.
             \\hit Each target takes bludgeoning \\glossterm<standard damage> -2d.
             Ecah Large or smaller target is also knocked \\glossterm<prone>.
 
             \\rankline
-            \\rank<7> The damage increases to \\glossterm<standard damage> -1d.
+            \\rank<6> The damage increases to \\glossterm<standard damage> -1d.
+            \\rank<8> The damage increases to \\glossterm<standard damage>.
         """, tags=[]),
         Spell('Earthquake', 3, '\\glossterm<Enemies> in a \\areamed radius from you that are standing on earth or unworked stone', """
             Make an attack vs. Reflex against each target.

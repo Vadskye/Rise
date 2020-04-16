@@ -83,7 +83,7 @@ glamer=MysticSphere(
             \\rank<5> The area increases to a \\areahuge radius \\glossterm<emanation>.
             \\rank<7> The area increases to a \\areaext radius \\glossterm<emanation>.
         """, tags=['Attune (self)', 'Sensation']),
-        Spell('Darkness', 4, 'One \\areamed radius \\glossterm<zone> within \\rngmed range', """
+        Spell('Darkness', 3, 'One \\areamed radius \\glossterm<zone> within \\rngmed range', """
             All light within the area is suppressed.
             Light within or passing through the area is snuffed out.
             Any object or effect which blocks light also blocks this spell's effect.
