@@ -52,14 +52,15 @@ revelation=MysticSphere(
             \\rank<7> The area increases to a \\areaext radius \\glossterm<emanation>.
         """, tags=['Attune (self)']),
         Spell('True Strike', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            If the target makes a \\glossterm<strike> during the current phase,
-                it gains a +4 bonus to \\glossterm<accuracy> and rolls twice and takes the higher result.
+            The first time the target makes a \\glossterm<strike> this round,
+                it gains a +2 bonus to \\glossterm<accuracy> and rolls twice and takes the higher result.
+            Because this ability has the \\glossterm<Swift> tag, it can affect an attack the target makes during the current phase.
             If you cast this spell on yourself, it affects the first strike you make until the end of the next round.
 
             \\rankline
-            \\rank<3> The bonus increases to +5.
-            \\rank<5> The bonus increases to +6.
-            \\rank<7> The bonus increases to +7.
+            \\rank<3> The bonus increases to +3.
+            \\rank<5> The bonus increases to +4.
+            \\rank<7> The bonus increases to +5.
         """, tags=['Swift']),
         Spell('Precognitive Offense', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with all attacks.
