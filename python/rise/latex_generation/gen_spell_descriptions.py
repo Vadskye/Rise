@@ -65,43 +65,19 @@ def generate_mystic_spheres():
     return sorted(mystic_spheres, key=lambda m: m.name)
 
 
-def sanity_check(spells):
-    # Make sure that the right kinds of spells exist
+def sanity_check(mystic_spheres):
+    sphere_spells_by_rank = {}
+    # Make sure that each sphere has reasonable spell counts
+    for sphere in mystic_spheres:
+        spells_by_rank = {}
+        for spell in sphere.spells:
+            spells_by_rank[spell.level] = spells_by_rank.get(spell.level, 0) + 1
+        sphere_spells_by_rank[sphere.name] = spells_by_rank
 
-    # Every spell source should have one spell of each category
-    for category in rise_data.categories:
-        has_spell = {source: False for source in rise_data.spell_sources}
-        for spell in spells:
-            if spell.category == category:
-                for source in spell.lists:
-                    if source in has_spell:
-                        has_spell[source] = True
-        for source in rise_data.spell_sources:
-            if not has_spell[source]:
-                warn(f"Source {source} has no spell for {category}")
-
-    # Every spell source should have both single target and multi damage spells
-    # that target every defense
-    for defense in rise_data.defenses:
-        has_damage = {source: False for source in rise_data.spell_sources}
-        # Every source should also have debuffs against every defense
-        has_debuff = {source: False for source in rise_data.spell_sources}
-        for spell in spells:
-            if spell.effects.attack and spell.effects.attack.defense == defense:
-                if spell.category == 'damage':
-                    for source in spell.lists:
-                        if source in rise_data.spell_sources:
-                            has_damage[source] = True
-                elif spell.category[:6] == 'debuff':
-                    for source in spell.lists:
-                        if source in rise_data.spell_sources:
-                            has_debuff[source] = True
-
-        for source in rise_data.spell_sources:
-            if not has_damage[source]:
-                warn(f"Source {source} has no damage spell against {defense}")
-            if not has_debuff[source]:
-                warn(f"Source {source} has no debuff spell against {defense}")
+    for sphere_name in sphere_spells_by_rank.keys():
+        print(f"{sphere_name}:")
+        rank_texts = [f"{sphere_spells_by_rank[sphere_name].get(rank, 0)}" for rank in [1, 3, 4, 5, 6, 7]]
+        print(f"  {' | '.join(rank_texts)}")
 
 
 def generate_mystic_sphere_latex(check=False):
