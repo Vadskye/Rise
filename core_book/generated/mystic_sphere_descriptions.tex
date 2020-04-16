@@ -153,7 +153,7 @@ Make an attack vs. Reflex against the target.
 
 \lowercase{\hypertarget{spell:Cyclone}{}}\label{spell:Cyclone}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Cyclone}{Cyclone}}[\glossterm{Focus}]
-\targets{Everything in a \areasmall radius within \rngclose range}
+\targets{Everything in a \areasmall radius within \rngmed range}
 Make an attack vs. Armor against each target.
 \hit Each target takes bludgeoning \glossterm{standard damage} \minus1d.
 
@@ -2776,7 +2776,7 @@ Even a thin barrier, such as a tent, is enough to protect locations from the eff
 
 \lowercase{\hypertarget{spell:Hailstorm}{}}\label{spell:Hailstorm}
 \begin{freeability}[Rank 4]{\hypertarget{spell:Hailstorm}{Hailstorm}}[\glossterm{Focus}]
-\targets{Everything in a \areasmall radius within \rngclose range}
+\targets{Everything in a \areasmall radius within \rngmed range}
 Make an attack vs. Armor against each target.
 \hit Each target takes cold and bludgeoning \glossterm{standard damage} \minus1d.
 
@@ -3001,6 +3001,21 @@ Make an attack vs. Mental against the target.
 
 
 
+\lowercase{\hypertarget{spell:Mass Enrage}{}}\label{spell:Mass Enrage}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Mass Enrage}{Mass Enrage}}[\glossterm{Emotion}, \glossterm{Focus}]
+\targets{\glossterm{Enemies} in a \areamed radius within \rngmed range}
+Make an attack vs. Mental with a \plus2 bonus to \glossterm{accuracy} against each target.
+\hit As a \glossterm{condition}, each target takes a \minus2 penalty to Armor defense and is unable to take any \glossterm{standard actions} that do not cause it to make an attack.
+For example, it could make a \glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
+
+\rankline
+\rank{6} The range increases to \rnglong.
+\rank{8} The area increases to a \arealarge radius.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Amnesiac Charm}{}}\label{spell:Amnesiac Charm}
 \begin{freeability}[Rank 6]{\hypertarget{spell:Amnesiac Charm}{Amnesiac Charm}}[\glossterm{Emotion}, \glossterm{Focus}, \glossterm{Subtle}, \glossterm{Sustain} (minor)]
 \target{One creature within \rngmed range}
@@ -3013,20 +3028,6 @@ The target is not directly aware of any magical influence on its mind, though un
 
 \rankline
 \rank{8} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Mass Enrage}{}}\label{spell:Mass Enrage}
-\begin{freeability}[Rank 6]{\hypertarget{spell:Mass Enrage}{Mass Enrage}}[\glossterm{Emotion}, \glossterm{Focus}]
-\targets{\glossterm{Enemies} in a \areamed radius within \rngmed range}
-Make an attack vs. Mental with a \plus2 bonus to \glossterm{accuracy} against each target.
-\hit As a \glossterm{condition}, each target takes a \minus2 penalty to Armor defense and is unable to take any \glossterm{standard actions} that do not cause it to make an attack.
-For example, it could make a \glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
-
-\rankline
-\rank{8} The range increases to \rnglong.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3500,6 +3501,20 @@ You gain a \plus1 \glossterm{magic bonus} to Armor defense.
 
 
 
+\lowercase{\hypertarget{spell:Acid Rain}{}}\label{spell:Acid Rain}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Acid Rain}{Acid Rain}}[\glossterm{Focus}, \glossterm{Manifestation}]
+\targets{Everything in a \areasmall radius within \rngmed range}
+Make an attack vs. Armor against each target.
+\hit Each target takes acid \glossterm{standard damage} \minus1d.
+
+\rankline
+\rank{5} The damage increases to \glossterm{standard damage}.
+\rank{7} The damage increases to \glossterm{standard damage} \plus1d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Blade Barrier}{}}\label{spell:Blade Barrier}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Blade Barrier}{Blade Barrier}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
 \target{Each creature that moves through the area (see text)}
@@ -3549,13 +3564,27 @@ This attack deals double damage to objects.
 
 \lowercase{\hypertarget{spell:Fog Cloud}{}}\label{spell:Fog Cloud}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Fog Cloud}{Fog Cloud}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
-\targets{Everything in a \areasmall radius within \rngmed range}
+\targets{Everything in a \areamed radius within \rngmed range}
 A cloud of fog appears in the area.
 All sight through the area is partially obscured, granting \glossterm{concealment} to anything in the area and anything viewed through the area (see \pcref{Concealment}).
 
 \rankline
-\rank{5} The area increases to a \areamed radius.
-\rank{7} The area increases to a \arealarge radius.
+\rank{5} The area increases to a \arealarge radius.
+\rank{7} The range increases to \rnglong.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Hail of Arrows}{}}\label{spell:Hail of Arrows}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Hail of Arrows}{Hail of Arrows}}[\glossterm{Focus}, \glossterm{Manifestation}]
+\targets{Everything in a \areasmall radius within \rngmed range}
+Make an attack vs. Armor against each target.
+\hit Each target takes piercing \glossterm{standard damage} \minus1d.
+
+\rankline
+\rank{5} The damage increases to \glossterm{standard damage}.
+\rank{7} The damage increases to \glossterm{standard damage} \plus1d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3595,7 +3624,7 @@ A third failed attack ends the poison.
 \lowercase{\hypertarget{spell:Web}{}}\label{spell:Web}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Web}{Web}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
 \targets{All Large or smaller creatures in the area (see text)}
-You fill a \areasmall radius \glossterm{zone} within \rngclose range with webs.
+You fill a \areasmall radius \glossterm{zone} within \rngmed range with webs.
 The webs make the area \glossterm{difficult terrain}.
 Each 5-ft.\ square of webbing has a \glossterm{vital resistance} equal to twice your \glossterm{power} and is \glossterm{vulnerable} to fire damage.
 
@@ -3631,20 +3660,6 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 
-\lowercase{\hypertarget{spell:Acid Rain}{}}\label{spell:Acid Rain}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Acid Rain}{Acid Rain}}[\glossterm{Focus}, \glossterm{Manifestation}]
-\targets{Everything in a \areasmall radius within \rngmed range}
-Make an attack vs. Armor against each target.
-\hit Each target takes acid \glossterm{standard damage} \minus1d.
-
-\rankline
-\rank{6} The damage increases to \glossterm{standard damage}.
-\rank{8} The damage increases to \glossterm{standard damage} \plus1d.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Blade Perimeter}{}}\label{spell:Blade Perimeter}
 \begin{freeability}[Rank 4]{\hypertarget{spell:Blade Perimeter}{Blade Perimeter}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
 \target{Each creature that moves through the area (see text)}
@@ -3660,20 +3675,6 @@ When a creature or object passes through the wall, make an attack vs. Armor agai
 When the wall shrinks to have no radius, this spell ends.
 \rank{8} After the wall shrinks to have no radius, it begins expanding again at a rate of 5 feet per round.
 Once it expands back to its maximum radius, it begins shrinking again.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Hail of Arrows}{}}\label{spell:Hail of Arrows}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Hail of Arrows}{Hail of Arrows}}[\glossterm{Focus}, \glossterm{Manifestation}]
-\targets{Everything in a \areasmall radius within \rngmed range}
-Make an attack vs. Armor against each target.
-\hit Each target takes piercing \glossterm{standard damage} \minus1d.
-
-\rankline
-\rank{6} The damage increases to \glossterm{standard damage}.
-\rank{8} The damage increases to \glossterm{standard damage} \plus1d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3956,6 +3957,22 @@ This effect ends when there are no duplicates remaining.
 
 
 
+\lowercase{\hypertarget{spell:Darkness}{}}\label{spell:Darkness}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Darkness}{Darkness}}[\glossterm{Focus}]
+\target{One \areamed radius \glossterm{zone} within \rngmed range}
+All light within the area is suppressed.
+Light within or passing through the area is snuffed out.
+Any object or effect which blocks light also blocks this spell's effect.
+Darkvision and similar abilities which do not require light still function within the area.
+
+\rankline
+\rank{6} The area increases to a \arealarge radius \glossterm{zone}.
+\rank{8} The area increases to a \areaext radius \glossterm{zone}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Disguise Image}{}}\label{spell:Disguise Image}
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Disguise Image}{Disguise Image}}[\glossterm{Attune} (target), \glossterm{Focus}, \glossterm{Sensation}, \glossterm{Visual}]
 \target{Yourself or an \glossterm{ally} within \rngmed range}
@@ -4000,22 +4017,6 @@ An onlooker can detect the substitution and perceive the original effects using 
 \rank{5} You can also replace the auditory effects of the spell.
 \rank{7} The two spells do not have to be from the same \glossterm{mystic sphere}.
 \end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Darkness}{}}\label{spell:Darkness}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Darkness}{Darkness}}[\glossterm{Focus}]
-\target{One \areamed radius \glossterm{zone} within \rngmed range}
-All light within the area is suppressed.
-Light within or passing through the area is snuffed out.
-Any object or effect which blocks light also blocks this spell's effect.
-Darkvision and similar abilities which do not require light still function within the area.
-
-\rankline
-\rank{6} The area increases to a \arealarge radius \glossterm{zone}.
-\rank{8} The area increases to a \areaext radius \glossterm{zone}.
-\end{freeability}
 \vspace{0.25em}
 
 
@@ -4156,11 +4157,11 @@ In addition, make an attack vs. Fortitude against the target.
 
 \lowercase{\hypertarget{spell:Searing Light}{}}\label{spell:Searing Light}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Searing Light}{Searing Light}}[\glossterm{Focus}, \glossterm{Sensation}, \glossterm{Visual}]
-\target{One creature within \rngclose range}
+\target{One creature within \rngmed range}
 A ray of light flashes between you and the target.
 Bright light illuminates a 50 foot radius around the path the ray took until the end of the round.
 In addition, make an attack vs. Reflex against the target.
-\hit The target takes energy \glossterm{standard damage} \plus1d.
+\hit The target takes energy \glossterm{standard damage}.
 
 % This intentionally gives accuracy instead of the more common damage because photomancy isn't supposed to be
 % a high-damage mystic sphere
@@ -4168,6 +4169,22 @@ In addition, make an attack vs. Reflex against the target.
 \rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
 \rank{5} The accuracy bonus increases to \plus2.
 \rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Lightburst}{}}\label{spell:Lightburst}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Lightburst}{Lightburst}}[\glossterm{Focus}, \glossterm{Sensation}, \glossterm{Visual}]
+\targets{All creatures in the area (see text)}
+A burst of light light fills a \areasmall radius \glossterm{zone} within \rngmed range of you.
+Bright light illuminates a 100 foot radius around the area until the end of the round.
+In addition, make an attack vs. Fortitude against each target creature.
+\hit Each target is \dazzled as a \glossterm{condition}.
+
+\rankline
+\rank{6} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{8} The accuracy bonus increases to \plus2.
 \end{freeability}
 \vspace{0.25em}
 
@@ -4187,41 +4204,8 @@ Abilities that work without light, such as \glossterm{darkvision}, still functio
 
 
 
-\lowercase{\hypertarget{spell:Lightburst}{}}\label{spell:Lightburst}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Lightburst}{Lightburst}}[\glossterm{Focus}, \glossterm{Sensation}, \glossterm{Visual}]
-\targets{All creatures in the area (see text)}
-A burst of light light fills a \areasmall radius \glossterm{zone} within \rngmed range of you.
-Bright light illuminates a 100 foot radius around the area until the end of the round.
-In addition, make an attack vs. Fortitude against each target creature.
-\hit Each target is \dazzled as a \glossterm{condition}.
-
-\rankline
-\rank{6} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-\rank{8} The accuracy bonus increases to \plus2.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Solar Ray}{}}\label{spell:Solar Ray}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Solar Ray}{Solar Ray}}[\glossterm{Focus}, \glossterm{Sensation}, \glossterm{Visual}]
-\target{One creature within \rngclose range}
-A ray of light flashes between you and the target.
-Bright light illuminates a 50 foot radius around the path the ray took until the end of the round.
-In addition, make an attack vs. Reflex against the target.
-\hit The target takes energy \glossterm{standard damage} \plus2d.
-In addition, the target suffers consequences as if it had been struck by a beam of true sunlight.
-
-\rankline
-\rank{6} The damage increases to \glossterm{standard damage} \plus3d.
-\rank{8} The damage increases to \glossterm{standard damage} \plus4d.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Kaleidoscopic Pattern}{}}\label{spell:Kaleidoscopic Pattern}
-\begin{freeability}[Rank 5]{\hypertarget{spell:Kaleidoscopic Pattern}{Kaleidoscopic Pattern}}[\glossterm{Compulsion}, \glossterm{Focus}, \glossterm{Sensation}, \glossterm{Visual}]
+\begin{freeability}[Rank 4]{\hypertarget{spell:Kaleidoscopic Pattern}{Kaleidoscopic Pattern}}[\glossterm{Compulsion}, \glossterm{Focus}, \glossterm{Sensation}, \glossterm{Visual}]
 \targets{All creatures in the area (see text)}
 This spell creates a brilliant, rapidly shifting rainbow of lights in a \areasmall radius within \rngmed range of you.
 They illuminate a 100 foot radius around the area with bright light until the end of the round.
@@ -4231,6 +4215,39 @@ In addition, make an attack vs. Mental against each target creature.
 
 \rankline
 \rank{7} The area increases to a \areamed radius.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Solar Ray}{}}\label{spell:Solar Ray}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Solar Ray}{Solar Ray}}[\glossterm{Focus}, \glossterm{Sensation}, \glossterm{Visual}]
+\target{One creature within \rngmed range}
+A ray of light flashes between you and the target.
+Bright light illuminates a 100 foot radius around the path the ray took until the end of the round.
+In addition, make an attack vs. Reflex against the target.
+\hit The target takes energy \glossterm{standard damage} \plus1d.
+In addition, the target suffers consequences as if it had been struck by a beam of true sunlight.
+
+\rankline
+\rank{6} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{8} The accuracy bonus increases to \plus2.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Sunburst}{}}\label{spell:Sunburst}
+\begin{freeability}[Rank 5]{\hypertarget{spell:Sunburst}{Sunburst}}[\glossterm{Focus}, \glossterm{Sensation}, \glossterm{Visual}]
+\targets{All creatures in the area (see text)}
+A burst of light light fills a \areamed radius \glossterm{zone} within \rngmed range of you.
+Bright light illuminates a 100 foot radius around the area until the end of the round.
+In addition, make an attack vs. Fortitude against each target creature.
+\hit Each target is \dazzled as a \glossterm{condition}.
+In addition, each target is affected as if it had entered natural sunlight.
+
+\rankline
+\rank{8} The area increases to a \arealarge radius.
 \end{freeability}
 \vspace{0.25em}
 
@@ -4251,24 +4268,8 @@ In addition, make an attack vs. Fortitude against the target.
 
 
 
-\lowercase{\hypertarget{spell:Sunburst}{}}\label{spell:Sunburst}
-\begin{freeability}[Rank 6]{\hypertarget{spell:Sunburst}{Sunburst}}[\glossterm{Focus}, \glossterm{Sensation}, \glossterm{Visual}]
-\targets{All creatures in the area (see text)}
-A burst of light light fills a \areamed radius \glossterm{zone} within \rngmed range of you.
-Bright light illuminates a 100 foot radius around the area until the end of the round.
-In addition, make an attack vs. Fortitude against each target creature.
-\hit Each target is \dazzled as a \glossterm{condition}.
-In addition, each target is affected as if it had entered natural sunlight.
-
-\rankline
-\rank{8} The area increases to a \arealarge radius.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Pillars of Light}{}}\label{spell:Pillars of Light}
-\begin{freeability}[Rank 8]{\hypertarget{spell:Pillars of Light}{Pillars of Light}}[\glossterm{Focus}, \glossterm{Sensation}, \glossterm{Visual}]
+\begin{freeability}[Rank 7]{\hypertarget{spell:Pillars of Light}{Pillars of Light}}[\glossterm{Focus}, \glossterm{Sensation}, \glossterm{Visual}]
 \targets{All creatures in the area (see text)}
 A burst of light light fills up to five \areasmall radius \glossterm{zones} within \rngmed range of you.
 Bright light illuminates a 100 foot radius around each area until the end of the round.
@@ -5009,7 +5010,7 @@ Make an attack vs. Armor against each target.
 
 \lowercase{\hypertarget{spell:Fireball}{}}\label{spell:Fireball}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Fireball}{Fireball}}[\glossterm{Focus}]
-\targets{Everything in a \areasmall radius within \rngclose range}
+\targets{Everything in a \areasmall radius within \rngmed range}
 Make an attack vs. Armor against each target.
 \hit Each target takes fire \glossterm{standard damage} \minus1d.
 
@@ -5040,13 +5041,13 @@ Dropping \glossterm{prone} as part of this action gives a \plus5 bonus to this c
 
 \lowercase{\hypertarget{spell:Flame Serpent}{}}\label{spell:Flame Serpent}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Flame Serpent}{Flame Serpent}}[\glossterm{Focus}]
-\targets{Everything in a \areamed, 5 ft.\ wide shapeable line within \rngmed range}
+\targets{Everything in a \areamed, 5 ft.\ wide shapeable line within \rngclose range}
 Make an attack vs. Armor against each target.
 \hit Each target takes fire \glossterm{standard damage} \minus1d.
 
 \rankline
 \rank{5} The area increases to a \arealarge, 5 ft.\ wide shapeable line.
-\rank{7} The range increases to \rnglong.
+\rank{7} The range increases to \rngmed.
 \end{freeability}
 \vspace{0.25em}
 
@@ -6374,6 +6375,22 @@ This makes them more resistant to attack and allows the construction of more com
 
 
 
+\lowercase{\hypertarget{spell:Fissure}{}}\label{spell:Fissure}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Fissure}{Fissure}}[\glossterm{Focus}]
+\targets{Everything in a \areamed radius within \rngmed range that is standing on earth or unworked stone}
+You create an intense but highly localized tremor that rips through the ground.
+Make an attack vs. Reflex against each target.
+\hit Each target takes bludgeoning \glossterm{standard damage} \minus2d.
+Ecah Large or smaller target is also knocked \glossterm{prone}.
+
+\rankline
+\rank{6} The damage increases to \glossterm{standard damage} \minus1d.
+\rank{8} The damage increases to \glossterm{standard damage}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Quagmire}{}}\label{spell:Quagmire}
 \begin{freeability}[Rank 4]{\hypertarget{spell:Quagmire}{Quagmire}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
 \targets{All earth and unworked stone in a \areamed radius within \rnglong range}
@@ -6400,21 +6417,6 @@ This does not allow you to breathe while inside the earth or stone, so your abil
 \rankline
 \rank{7} Your speed increases to be equal to half your \glossterm{base speed}.
 \end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Fissure}{}}\label{spell:Fissure}
-\begin{freeability}[Rank 5]{\hypertarget{spell:Fissure}{Fissure}}[\glossterm{Focus}]
-\targets{Everything in a \areamed radius within \rngmed range that is standing on earth or unworked stone}
-You create an intense but highly localized tremor that rips through the ground.
-Make an attack vs. Reflex against each target.
-\hit Each target takes bludgeoning \glossterm{standard damage} \minus2d.
-Ecah Large or smaller target is also knocked \glossterm{prone}.
-
-\rankline
-\rank{7} The damage increases to \glossterm{standard damage} \minus1d.
-\end{freeability}
 \vspace{0.25em}
 
 

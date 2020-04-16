@@ -67,13 +67,13 @@ fabrication=MysticSphere(
             \\rank<6> The area increases to a \\arealarge radius.
             \\rank<8> The area increases to a \\areahuge radius.
         """, tags=['Manifestation']),
-        Spell('Hail of Arrows', 4, 'Everything in a \\areasmall radius within \\rngmed range', """
+        Spell('Hail of Arrows', 3, 'Everything in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Armor against each target.
             \\hit Each target takes piercing \\glossterm<standard damage> -1d.
 
             \\rankline
-            \\rank<6> The damage increases to \\glossterm<standard damage>.
-            \\rank<8> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<5> The damage increases to \\glossterm<standard damage>.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
         """, tags=['Manifestation']),
         Spell('Blade Barrier', 3, 'Each creature that moves through the area (see text)', """
             A wall of whirling blades appears within \\rngmed range.
@@ -154,13 +154,13 @@ fabrication=MysticSphere(
             \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
         """, tags=['Manifestation']),
-        Spell('Acid Rain', 4, 'Everything in a \\areasmall radius within \\rngmed range', """
+        Spell('Acid Rain', 3, 'Everything in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Armor against each target.
             \\hit Each target takes acid \\glossterm<standard damage> -1d.
 
             \\rankline
-            \\rank<6> The damage increases to \\glossterm<standard damage>.
-            \\rank<8> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<5> The damage increases to \\glossterm<standard damage>.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
         """, tags=['Manifestation']),
         Spell('Forge', 1, 'One unoccupied square within \\rngclose range', """
             Choose a type of body armor, weapon, or shield that you are proficient with.
@@ -200,7 +200,7 @@ fabrication=MysticSphere(
             \\hit Each target takes bludgeoning and fire \\glossterm<standard damage> -1d.
         """, tags=['Manifestation']),
         Spell('Web', 3, 'All Large or smaller creatures in the area (see text)', """
-            You fill a \\areasmall radius \\glossterm<zone> within \\rngclose range with webs.
+            You fill a \\areasmall radius \\glossterm<zone> within \\rngmed range with webs.
             The webs make the area \\glossterm<difficult terrain>.
             Each 5-ft.\\ square of webbing has a \\glossterm<vital resistance> equal to twice your \\glossterm<power> and is \\glossterm<vulnerable> to fire damage.
 
@@ -272,13 +272,13 @@ fabrication=MysticSphere(
             \\rank<5> The number of vials created increases to three.
             \\rank<7> The number of vials created increases to four.
         """, tags=['Sustain (minor)']),
-        Spell('Fog Cloud', 3, 'Everything in a \\areasmall radius within \\rngmed range', """
+        Spell('Fog Cloud', 3, 'Everything in a \\areamed radius within \\rngmed range', """
             A cloud of fog appears in the area.
             All sight through the area is partially obscured, granting \\glossterm<concealment> to anything in the area and anything viewed through the area (see \\pcref<Concealment>).
 
             \\rankline
-            \\rank<5> The area increases to a \\areamed radius.
-            \\rank<7> The area increases to a \\arealarge radius.
+            \\rank<5> The area increases to a \\arealarge radius.
+            \\rank<7> The range increases to \\rnglong.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Fog Wall', 1, '', """
             You create a wall of fog in a 20 ft.\\ high, \\arealarge \\glossterm<wall> within \\rngmed range.

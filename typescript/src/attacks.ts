@@ -99,7 +99,7 @@ const standardAttacks: Record<
     hit: "Each target takes $damage.",
     source: "magical",
     tags: ["Focus"],
-    target: "Everything in a \\areasmall radius within \\rngclose range",
+    target: "Everything in a \\areasmall radius within \\rngmed range",
   },
 };
 
