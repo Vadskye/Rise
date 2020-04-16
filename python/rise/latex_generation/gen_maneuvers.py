@@ -33,6 +33,7 @@ def generate_maneuvers():
         effect_text="""
             You take half damage from \\glossterm<physical> damage this round.
             This halving is applied before \\glossterm<resistances> and similar abilities.
+            Because this is a \\glossterm<Swift> ability, it affects damage you take during the current phase.
         """,
         rank_upgrades={
             # Alternate idea: bonuses against attackers or ignore conditions
