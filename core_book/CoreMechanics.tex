@@ -599,38 +599,33 @@ It defines how attributes work and explains how to make attacks in combat.
         Its vital resistance is equal to twice the vital resistance it would have if its Constitution was 6 points lower. \\
     \end{dtable}
 
-    \subsection{Wound Resistance}\label{Wound Resistance}
-        Your \glossterm{wound resistance} measures your ability to reduce the impact of minor damaging attacks.
-        It is based on your level \add your base Constitution, as defined in \tref{Resistance Values}.
-        Wearing \glossterm{armor} can increase your resistance against \glossterm{physical damage}, and some special abilities can also increase it.
+    \subsection{Resistances}\label{Resistances}
 
-        \parhead{Missing Wound Resistance} An object or creature without a listed \glossterm{wound resistance} loses a single \glossterm{hit point} from damaging attacks.
+        \subsubsection{Wound Resistance}\label{Wound Resistance}
+            Your \glossterm{wound resistance} measures your ability to reduce the impact of minor damaging attacks.
+            It is based on your level \add your base Constitution, as defined in \tref{Resistance Values}.
+            Wearing \glossterm{armor} can increase your resistance against \glossterm{physical damage}, and some special abilities can also increase it.
 
-    \subsection{Vital Resistance}\label{Vital Resistance}
-        Your \glossterm{vital resistance} measures your ability to avoid gaining \glossterm{vital wounds} from dangerous attacks.
-        When you take damage from an attack, if the damage is at least as much as your \glossterm{vital resistance}, you gain a \glossterm{vital wound} (see \pcref{Vital Wounds}).
+            \parhead{Missing Wound Resistance} An object or creature without a listed \glossterm{wound resistance} loses a single \glossterm{hit point} from damaging attacks.
 
-        Your \glossterm{vital resistance} is based on your level \add your base Constitution, as defined in \tref{Resistance Values}.
-        Wearing \glossterm{armor} can increase your vital resistance against \glossterm{physical damage}, and some special abilities can also increase it.
+        \subsubsection{Vital Resistance}\label{Vital Resistance}
+            Your \glossterm{vital resistance} measures your ability to avoid gaining \glossterm{vital wounds} from dangerous attacks.
+            When you take damage from an attack, if the damage is at least as much as your \glossterm{vital resistance}, you gain a \glossterm{vital wound} (see \pcref{Vital Wounds}).
 
-        \parhead{Missing Vital Resistance} An object or creature without a listed \glossterm{vital resistance} cannot gain \glossterm{vital wounds} from taking damage directly.
-        It can only gain \glossterm{vital wounds} from taking damage while it has no \glossterm{hit points} remaining.
+            Your \glossterm{vital resistance} is based on your level \add your base Constitution, as defined in \tref{Resistance Values}.
+            Wearing \glossterm{armor} can increase your vital resistance against \glossterm{physical damage}, and some special abilities can also increase it.
 
-    \subsubsection{Damage Type Resistances}\label{Damage Type Resistances}
-        Each type of resistance is further divided into what type of damage it protects against.
-        Your \glossterm{wound resistance} and \glossterm{vital resistance} apply against damage of any type.
-        Those are collectively called your \glossterm{resistances}.
-        Some effects increase your resistances against either \glossterm{physical damage} or \glossterm{energy damage}.
+            \parhead{Missing Vital Resistance} An object or creature without a listed \glossterm{vital resistance} cannot gain \glossterm{vital wounds} from taking damage directly.
+            It can only gain \glossterm{vital wounds} from taking damage while it has no \glossterm{hit points} remaining.
 
-        \parhead{Stacking Magic Bonuses} A \glossterm{magic bonus} to a specific type of resistance does not stack with a \glossterm{magic bonus} to a more general resistance if both apply.
-        For example, if you have a \glossterm{magic bonus} to resistances against energy damage and another \glossterm{magic bonus} to resistances against fire damage, you only use the higher of the two when you take fire damage.
+        \subsubsection{Damage Type Resistances}\label{Damage Type Resistances}
+            Each type of resistance is further divided into what type of damage it protects against.
+            Your \glossterm{wound resistance} and \glossterm{vital resistance} apply against damage of any type.
+            Those are collectively called your \glossterm{resistances}.
+            Some effects increase your resistances against either \glossterm{physical damage} or \glossterm{energy damage}.
 
-    \subsection{Becoming Bloodied}\label{Becoming Bloodied}
-        As your hit points get lower, you become more vulnerable to damage.
-        At the end of each round, if you have half your maximum \glossterm{hit points} remaining or fewer (rounded down), you become \glossterm{bloodied}.
-        Likewise, if you have more than half your maximum hit points remaining, you stop being \glossterm{bloodied}.
-
-        While you are bloodied, your \glossterm{vital resistance} is halved, to a minimum of your \glossterm{wound resistance} for each corresponding type of damage.
+            \parhead{Stacking Magic Bonuses} A \glossterm{magic bonus} to a specific type of resistance does not stack with a \glossterm{magic bonus} to a more general resistance if both apply.
+            For example, if you have a \glossterm{magic bonus} to resistances against energy damage and another \glossterm{magic bonus} to resistances against fire damage, you only use the higher of the two when you take fire damage.
 
     \subsection{Hit Points}\label{Hit Points}
         Your \glossterm{hit points} measure how hard you are to kill.
@@ -648,6 +643,13 @@ It defines how attributes work and explains how to make attacks in combat.
         \subsubsection{Missing Hit Points}\label{Missing Hit Points}
             Most objects and some creatures have no \glossterm{hit points} or \glossterm{wound resistance}.
             They ignore all damage less than their \glossterm{vital resistance}.
+
+        \subsubsection{Becoming Bloodied}\label{Becoming Bloodied}
+            As your hit points get lower, you become more vulnerable to damage.
+            At the end of each round, if you have half your maximum \glossterm{hit points} remaining or fewer (rounded down), you become \glossterm{bloodied}.
+            Likewise, if you have more than half your maximum hit points remaining, you stop being \glossterm{bloodied}.
+
+            While you are bloodied, your \glossterm{vital resistance} is halved, to a minimum of your \glossterm{wound resistance} for each corresponding type of damage.
 
     \subsection{Vital Wounds}\label{Vital Wounds}
         A \glossterm{vital wound} represents serious damage to your body.
