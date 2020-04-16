@@ -12,8 +12,48 @@ bless=MysticSphere(
     ],
     lists=['Divine'],
     spells=[
+        Spell('Boon of Precision', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            The first time the target makes a \\glossterm<strike> this round,
+                it gains a +2 bonus to \\glossterm<accuracy> and rolls twice and takes the higher result.
+            Because this ability has the \\glossterm<Swift> tag, it can affect an attack the target makes during the current phase.
+            If you cast this spell on yourself, it affects the first strike you make until the end of the next round.
+
+            \\rankline
+            \\rank<3> The bonus increases to +3.
+            \\rank<5> The bonus increases to +4.
+            \\rank<7> The bonus increases to +5.
+        """, tags=['Swift']),
+        Spell('Boon of Avoidance', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            The target gains a +2 bonus to \\glossterm<defenses> until the end of the round.
+            Because this ability has the \\glossterm<Swift> tag, this improves the target's defenses against attacks made against it during the current phase.
+
+            \\rankline
+            \\rank<3> The bonus increases to +3.
+            \\rank<5> The bonus increases to +4.
+            \\rank<7> The bonus increases to +5.
+        """, tags=['Swift']),
+        Spell('Boon of Durability', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            The target gains a bonus equal to your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical damage> this round.
+            Because this ability has the \\glossterm<Swift> tag, this improves the target's resistances against damage it takes during the current phase.
+
+            \\rankline
+            \\rank<3> The bonus increases to be equal to twice your \\glossterm<power>.
+            \\rank<5> The bonus increases to be equal to three times your \\glossterm<power>.
+            \\rank<7> The bonus increases to be equal to four times your \\glossterm<power>.
+        """, tags=['Swift']),
+        Spell('Blessing of Purification', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            The target gains a +4 \\glossterm<magic bonus> to \\glossterm<defenses> against \\glossterm<poisons> and \\glossterm<diseases>.
+
+            You can cast this spell as a \\glossterm<minor action>.
+
+            \\rankline
+            \\rank<5> The bonus increases to +6.
+            \\rank<7> The bonus increases to +8.
+        """, tags=['Attune (target)']),
         Spell('Blessing of Mental Clarity', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +4 \\glossterm<magic bonus> to \\glossterm<defenses> against \\glossterm<Compulsion> and \\glossterm<Emotion> effects.
+
+            You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
             \\rank<5> The bonus increases to +6.
@@ -38,17 +78,17 @@ bless=MysticSphere(
             \\rank<5> The target also gains a +2 \\glossterm<magic bonus> to \\glossterm<power>.
             \\rank<7> The accuracy increases to +2.
         """, tags=['Attune (target)']),
-        Spell('Blessing of Resilience', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Blessing of Resilience', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             Whenever the target gains a \\glossterm<condition>, it can choose to negate that condition.
             After negating a condition in this way, this spell ends.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<6> The spell can negate two conditions before ending.
-            \\rank<8> The spell can negate three conditions before ending.
+            \\rank<5> The spell can negate two conditions before ending.
+            \\rank<7> The spell can negate three conditions before ending.
         """, tags=['Attune (target)']),
-        Spell('Cleansing Blessing', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Boon of Cleansing', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target can remove a \\glossterm<condition>.
             This cannot remove a condition applied during the current round.
 
@@ -63,12 +103,13 @@ bless=MysticSphere(
             \\rankline
             \\rank<8> The area increases to a \\arealarge radius.
         """, tags=[]),
-        Spell('Blessing of Might', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            The target gains a +4 \\glossterm<magic bonus> to Strength for the purpose of determining its \\glossterm<carrying capacity>.
+        Spell('Blessing of Might', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            The target gains a +2 \\glossterm<magic bonus> to Strength for the purpose of determining its \\glossterm<carrying capacity>.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
+            \\rank<3> The bonus increases to +4.
             \\rank<5> The bonus increases to +6.
             \\rank<7> The bonus increases to +8.
         """, tags=['Attune (target)']),
@@ -95,16 +136,6 @@ bless=MysticSphere(
         """, tags=['Attune (target)']),
     ],
     rituals=[
-        Spell('Blessed Strike', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            If the target makes a \\glossterm<strike> during the current phase,
-                it gains a +4 bonus to \\glossterm<accuracy> and rolls twice and takes the higher result.
-            If you cast this spell on yourself, it affects the first strike you make until the end of the next round.
-
-            \\rankline
-            \\rank<3> The bonus increases to +5.
-            \\rank<5> The bonus increases to +6.
-            \\rank<7> The bonus increases to +7.
-        """, tags=['Swift']),
         Spell('Blessing of Fortification', 1, 'One unattended, nonmagical object or part of an object of up to Large size', """
             Unlike most abilities, this ritual can affect individual parts of a whole object.
 
