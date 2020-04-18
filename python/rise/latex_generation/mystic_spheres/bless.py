@@ -45,12 +45,11 @@ bless=MysticSphere(
             \\rank<5> The bonus increases to +4.
             \\rank<7> The bonus increases to +5.
         """, tags=['Swift']),
-        Spell('Boon of Durability', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            The target gains a bonus equal to your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical damage> this round.
+        Spell('Boon of Durability', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            The target gains a bonus equal to twice your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical damage> this round.
             Because this ability has the \\glossterm<Swift> tag, this improves the target's resistances against damage it takes during the current phase.
 
             \\rankline
-            \\rank<3> The bonus increases to be equal to twice your \\glossterm<power>.
             \\rank<5> The bonus increases to be equal to three times your \\glossterm<power>.
             \\rank<7> The bonus increases to be equal to four times your \\glossterm<power>.
         """, tags=['Swift']),

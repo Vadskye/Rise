@@ -60,14 +60,15 @@ channel_divinity=MysticSphere(
             \\rank<5> The area increases to a \\arealarge radius.
             \\rank<7> The area increases to a \\areahuge radius.
         """, tags=[]),
-        Spell('Mantle of Faith', 4, 'Yourself', """
-            You gain a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical> damage.
+        Spell('Mantle of Faith', 1, 'Yourself', """
+            You gain a +2 \\glossterm<magic bonus> to \\glossterm<resistances>.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<6> The bonus also applies against \\glossterm<energy> damage.
-            \\rank<8> The bonus increases to be equal to your \\glossterm<power>.
+            \\rank<3> The bonus increases to +4.
+            \\rank<5> The bonus increases to be equal to half your \\glossterm<power>.
+            \\rank<7> The bonus increases to be equal to your \\glossterm<power>.
         """, tags=['Attune (self)']),
         Spell('Divine Might', 4, 'Yourself', """
             You increase your size by one \\glossterm<size category>.
