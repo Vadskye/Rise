@@ -656,18 +656,7 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Boots of Freedom",
-        level=3,
-        material_type='Boots',
-        description="""
-            You are immune to magical effects that restrict your mobility.
-            This does not prevent physical obstacles from affecting you, such as \\glossterm<difficult terrain>.
-        """,
-        short_description="Grants immunity to magical mobility restrictions",
-    ))
-
-    apparel.append(MagicItem(
-        name="Boots of Freedom, Greater",
-        level=9,
+        level=12,
         material_type='Boots',
         description="""
             You are immune to all effects that restrict your mobility, including nonmagical effects such as \\glossterm<difficult terrain>.
