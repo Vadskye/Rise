@@ -151,29 +151,32 @@ barrier=MysticSphere(
             Whenever an object, creature, or ability passes through the barrier from the chosen side, the barrier parts to allow it through.
             If it stops halfway, it can return to its side, but once it passes through fully it treats the barrier as impassable from the other side.
         """, tags=['Manifestation', 'Sustain (standard)']),
-        Spell('Kinetic Shield', 4, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
-            The target gains a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical> damage.
+        Spell('Kinetic Shield', 1, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
+            The target gains a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical> damage.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<6> The target also gains a +1 \\glossterm<magic bonus> to \\glossterm<vital rolls> on \\glossterm<vital wounds> from \\glossterm<physical> damage.
-            \\rank<8> The bonus increases to be equal to your \\glossterm<power>.
+            \\rank<3> The bonus increases to +4.
+            \\rank<5> The bonus increases to be equal to half your \\glossterm<power>.
+            \\rank<7> The bonus increases to be equal to your \\glossterm<power>.
         """, tags=['Attune (target)']),
-        Spell('Resist Energy', 4, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
-            The target gains a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<energy> damage.
+        Spell('Resist Energy', 1, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
+            The target gains a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<energy> damage.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<6> The target also gains a +1 \\glossterm<magic bonus> to \\glossterm<vital rolls> on \\glossterm<vital wounds> from \\glossterm<energy> damage.
-            \\rank<8> The bonus increases to be equal to your \\glossterm<power>.
+            \\rank<3> The bonus increases to +4.
+            \\rank<5> The bonus increases to be equal to half your \\glossterm<power>.
+            \\rank<7> The bonus increases to be equal to your \\glossterm<power>.
         """, tags=['Attune (target)']),
-        Spell('Universal Shield', 6, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
-            The target gains a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against all damage.
+        Spell('Universal Shield', 4, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
+            The target gains a +4 \\glossterm<magic bonus> to \\glossterm<resistances> against all damage.
 
             \\rankline
-            \\rank<8> The target also gains a +1 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
+            \\rank<6> The bonus increases to be equal to half your \\glossterm<power>.
+            \\rank<8> The bonus increases to be equal to your \\glossterm<power>.
         """, tags=['Attune (target)']),
         Spell('Repulsion Field', 3, '\\glossterm<Enemies> that enter the area (see text)', """
             This spell creates a repulsive field in a \\areamed radius \\glossterm<zone> from your location.
