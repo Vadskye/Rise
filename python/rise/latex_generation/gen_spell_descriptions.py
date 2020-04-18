@@ -13,7 +13,6 @@ from rise.latex_generation.mystic_spheres.cryomancy import cryomancy
 from rise.latex_generation.mystic_spheres.delusion import delusion
 from rise.latex_generation.mystic_spheres.electromancy import electromancy
 from rise.latex_generation.mystic_spheres.fabrication import fabrication
-from rise.latex_generation.mystic_spheres.glamer import glamer
 from rise.latex_generation.mystic_spheres.polymorph import polymorph
 from rise.latex_generation.mystic_spheres.photomancy import photomancy
 from rise.latex_generation.mystic_spheres.pyromancy import pyromancy
@@ -22,6 +21,7 @@ from rise.latex_generation.mystic_spheres.summon import summon
 from rise.latex_generation.mystic_spheres.telekinesis import telekinesis
 from rise.latex_generation.mystic_spheres.terramancy import terramancy
 from rise.latex_generation.mystic_spheres.thaumaturgy import thaumaturgy
+from rise.latex_generation.mystic_spheres.umbramancy import umbramancy
 from rise.latex_generation.mystic_spheres.verdamancy import verdamancy
 from rise.latex_generation.mystic_spheres.vivimancy import vivimancy
 from rise.latex_generation.book_path import book_path
@@ -50,7 +50,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(delusion)
     mystic_spheres.append(electromancy)
     mystic_spheres.append(fabrication)
-    mystic_spheres.append(glamer)
     mystic_spheres.append(polymorph)
     mystic_spheres.append(photomancy)
     mystic_spheres.append(pyromancy)
@@ -59,6 +58,7 @@ def generate_mystic_spheres():
     mystic_spheres.append(telekinesis)
     mystic_spheres.append(terramancy)
     mystic_spheres.append(thaumaturgy)
+    mystic_spheres.append(umbramancy)
     mystic_spheres.append(verdamancy)
     mystic_spheres.append(vivimancy)
 
