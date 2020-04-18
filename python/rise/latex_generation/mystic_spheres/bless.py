@@ -12,6 +12,19 @@ bless=MysticSphere(
     ],
     lists=['Divine'],
     spells=[
+        Spell('Blessing of Preservation', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            The target gains a +2 \\glossterm<vitality bonus> to all of its \\glossterm<vital rolls>, including any new \\glossterm<vital wounds> it gains while attuned to this effect.
+
+            \\rankline
+            \\rank<6> The bonus increases to +3.
+            \\rank<8> The bonus increases to +4.
+        """, tags=['Attune (target)']),
+        Spell('Blessing of Freedom', 5, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            The target cannot be \\glossterm<slowed>, \\glossterm<decelerated>, or \\glossterm<immobilized>.
+
+            \\rankline
+            \\rank<7> The bonus increases to +4.
+        """, tags=['Attune (target)']),
         Spell('Boon of Precision', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The first time the target makes a \\glossterm<strike> this round,
                 it gains a +2 bonus to \\glossterm<accuracy> and rolls twice and takes the higher result.

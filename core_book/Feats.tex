@@ -138,7 +138,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featref{Sphere Focus: Delusion}         & \sphere{Delusion} sphere access         & Improve casting with chosen sphere        & Magical                 & \featpref{Sphere Focus: Delusion}         \\
         \featref{Sphere Focus: Electromancy}     & \sphere{Electromancy} sphere access     & Improve casting with chosen sphere        & Magical                 & \featpref{Sphere Focus: Electromancy}     \\
         \featref{Sphere Focus: Fabrication}      & \sphere{Fabrication} sphere access      & Improve casting with chosen sphere        & Magical                 & \featpref{Sphere Focus: Fabrication}      \\
-        \featref{Sphere Focus: Glamer}           & \sphere{Glamer} sphere access           & Improve casting with chosen sphere        & Magical                 & \featpref{Sphere Focus: Glamer}           \\
         \featref{Sphere Focus: Photomancy}       & \sphere{Photomancy} sphere access       & Improve casting with chosen sphere        & Magical                 & \featpref{Sphere Focus: Photomancy}       \\
         \featref{Sphere Focus: Polymorph}        & \sphere{Polymorph} sphere access        & Improve casting with chosen sphere        & Magical                 & \featpref{Sphere Focus: Polymorph}        \\
         \featref{Sphere Focus: Pyromancy}        & \sphere{Pyromancy} sphere access        & Improve casting with chosen sphere        & Magical                 & \featpref{Sphere Focus: Pyromancy}        \\
@@ -147,6 +146,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featref{Sphere Focus: Telekinesis}      & \sphere{Telekinesis} sphere access      & Improve casting with chosen sphere        & Magical                 & \featpref{Sphere Focus: Telekinesis}      \\
         \featref{Sphere Focus: Terramancy}       & \sphere{Terramancy} sphere access       & Improve casting with chosen sphere        & Magical                 & \featpref{Sphere Focus: Terramancy}       \\
         \featref{Sphere Focus: Thaumaturgy}      & \sphere{Thaumaturgy} sphere access      & Improve casting with chosen sphere        & Magical                 & \featpref{Sphere Focus: Thaumaturgy}      \\
+        \featref{Sphere Focus: Umbramancy}           & \sphere{Umbramancy} sphere access           & Improve casting with chosen sphere        & Magical                 & \featpref{Sphere Focus: Umbramancy}           \\
         \featref{Sphere Focus: Verdamancy}       & \sphere{Verdamancy} sphere access       & Improve casting with chosen sphere        & Magical                 & \featpref{Sphere Focus: Verdamancy}       \\
         \featref{Sphere Focus: Vivimancy}        & \sphere{Vivimancy} sphere access        & Improve casting with chosen sphere        & Magical                 & \featpref{Sphere Focus: Vivimancy}        \\
 
@@ -1096,7 +1096,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
                 Delusion & \tdash \\
                 Electromancy & Electricity \\
                 Fabrication & Physical \\
-                Glamer & \tdash \\
                 Photomancy & Energy \\
                 Polymorph & Physical \\
                 Pyromancy & Fire \\
@@ -1105,6 +1104,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
                 Telekinesis & Physical \\
                 Terramancy & Bludgeoning \\
                 Thaumaturgy & Energy \\
+                Umbramancy & Cold \\
                 Verdamancy & \tdash \\
                 Vivimancy & \tdash \\
             \end{dtabularx}
@@ -1897,25 +1897,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[19]{Supreme Fabricate Trinket} The maximum size of object you can create with the \textit{fabricate trinket} \glossterm{cantrip} increases to Medium.
     \end{feat}
 
-    \begin{feat}{Sphere Focus: Glamer}{Casting, Magical}
-        \featpre Access to the \sphere{Glamer} \glossterm{mystic sphere}.
-
-        \ff[1]{Glamer Focus} You gain a \plus1 bonus to \glossterm{accuracy} with abilities from the \sphere{glamer} \glossterm{mystic sphere}.
-
-        \ff[4]{Reflexive Illusion} You gain a \plus1 \glossterm{magic bonus} to the Disguise, Sleight of Hand, and Stealth skills.
-
-        \ff[7]{Spell} You learn a spell from the \sphere{glamer} \glossterm{mystic sphere}.
-        When you gain access to new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
-
-        \ff[10]{Muffled Glamer} You do not need \glossterm{verbal components} to cast spells from the \sphere{glamer} \glossterm{mystic sphere}.
-
-        \ff[13]{Greater Reflexive Illusion} The bonus from your \textit{reflexive illusion} ability increases to \plus2.
-
-        \ff[16]{Greater Glamer Focus} The bonus from your \textit{glamer focus} ability increases to \plus2.
-
-        \ff[19]{Hidden Glamer} You do not need \glossterm{somatic components} to cast spells from the \sphere{glamer} \glossterm{mystic sphere}.
-    \end{feat}
-
     \begin{feat}{Sphere Focus: Photomancy}{Casting, Magical}
         \featpre Access to the \sphere{Photomancy} \glossterm{mystic sphere}.
 
@@ -2128,6 +2109,27 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[16]{Greater Thaumaturgy Focus} The bonus from your \textit{thaumaturgy focus} ability increases to \plus2.
 
         \ff[19]{Greater Magic Tolerance} The bonus from your \textit{magic tolerance} ability increases to \plus2.
+    \end{feat}
+
+    \begin{feat}{Sphere Focus: Umbramancy}{Casting, Magical}
+        \featpre Access to the \sphere{Umbramancy} \glossterm{mystic sphere}.
+
+        \ff[1]{Umbramancy Focus} You gain a \plus1 bonus to \glossterm{accuracy} with abilities from the \sphere{Umbramancy} \glossterm{mystic sphere}.
+
+        \ff[4]{Reflexive Concealment} You gain a \plus2 bonus to the Sleight of Hand and Stealth skills.
+
+        \ff[7]{Spell} You learn a spell from the \sphere{Umbramancy} \glossterm{mystic sphere}.
+        When you gain access to new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
+
+        \ff[10]{Darksight} You gain \glossterm{darkvision} with a 50 foot range, allowing you to see in complete darkness clearly.
+        If you already have that ability, you increase its range by 50 feet.
+        In addition, your darkvision is not disabled by being in bright light.
+
+        \ff[13]{Greater Reflexive Concealment} The bonuses from your \textit{reflexive concealment} ability increase to \plus4.
+
+        \ff[16]{Greater Umbramancy Focus} The bonus from your \textit{Umbramancy focus} ability increases to \plus2.
+
+        \ff[19]{Greater Darksight} The range of your darkvision ability increases by 100 feet.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Verdamancy}{Casting, Magical}
