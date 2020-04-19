@@ -2503,6 +2503,19 @@ If you do, the target disappears for two rounds at the same time as the duplicat
 
 
 
+\lowercase{\hypertarget{spell:Decelerate}{}}\label{spell:Decelerate}
+\begin{freeability}[Rank 6]{\hypertarget{spell:Decelerate}{Decelerate}}[\glossterm{Focus}]
+\target{One creature within \rngmed range}
+Make an attack vs. Mental against the target.
+\hit The target is \glossterm{decelerated} as a \glossterm{condition}.
+
+\rankline
+\rank{8} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Time Stop}{}}\label{spell:Time Stop}
 \begin{freeability}[Rank 8]{\hypertarget{spell:Time Stop}{Time Stop}}[\glossterm{Focus}]
 \target{Yourself}
@@ -4292,26 +4305,6 @@ Each time you use this ability, you can accomplish work that would take up to fi
 \subsubsection{Spells}
 
 
-\lowercase{\hypertarget{spell:Absorb Object}{}}\label{spell:Absorb Object}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Absorb Object}{Absorb Object}}[\glossterm{Focus}]
-\target{One Tiny or smaller \glossterm{unattended} object you touch}
-You absorb the target into your body.
-Your weight is increased by the weight of the object, but the object's presence cannot be otherwise physically detected.
-A reactive object, such as alchemist's fire or poison, continues reacting inside your body, which may be harmful to you.
-You cannot absorb only part of a larger object.
-
-This effect lasts until you use it again, \glossterm{dismiss} it as a \glossterm{free action}, or fall unconscious.
-When this effect ends, the object appears in a free hand, if you have one available, or drops to the floor.
-
-\rankline
-\rank{3} The maximum size of the object increases to Small.
-\rank{5} The maximum size of the object increases to Medium.
-\rank{7} The maximum size of the object increases to Large.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Camouflage}{}}\label{spell:Camouflage}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Camouflage}{Camouflage}}[\glossterm{Attune} (target), \glossterm{Focus}, \glossterm{Sensation}]
 \target{Yourself or an \glossterm{ally} within \rngmed range}
@@ -4346,23 +4339,6 @@ You gain a \plus3 \glossterm{magic bonus} to the Awareness skill.
 Make an attack vs. Fortitude against the target.
 \hit The target is \glossterm{sickened} as a \glossterm{condition}.
 \crit The target is \glossterm{nauseated} as a \glossterm{condition}.
-
-\rankline
-\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-\rank{5} The accuracy bonus increases to \plus2.
-\rank{7} The accuracy bonus increases to \plus3.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Intensify Poison}{}}\label{spell:Intensify Poison}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Intensify Poison}{Intensify Poison}}[\glossterm{Focus}]
-\target{One living creature within \rngmed range}
-Make an attack vs. Fortitude against the target.
-If the target is not currently poisoned, this ability has no effect.
-\hit Choose a poison affecting the target.
-The poison gains an additional hit against the target, which can have varying effects depending on the poison (see \pcref{Poisons}).
 
 \rankline
 \rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
@@ -4484,6 +4460,25 @@ Make an attack vs. Fortitude against the target.
 
 
 
+\lowercase{\hypertarget{spell:Absorb Object}{}}\label{spell:Absorb Object}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Absorb Object}{Absorb Object}}[\glossterm{Focus}]
+\targets{One Small or smaller \glossterm{unattended} object you touch}
+You absorb the target into your body.
+Your weight is increased by the weight of the object, but the object's presence cannot be otherwise physically detected.
+A reactive object, such as alchemist's fire or poison, continues reacting inside your body, which may be harmful to you.
+You cannot absorb only part of a larger object.
+
+This effect lasts until you use it again, \glossterm{dismiss} it as a \glossterm{free action}, or fall unconscious.
+When this effect ends, the object appears in a free hand, if you have one available, or drops to the floor.
+
+\rankline
+\rank{5} The maximum size of the object increases to Medium.
+\rank{7} The maximum size of the object increases to Large.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Acidic Blood}{}}\label{spell:Acidic Blood}
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Acidic Blood}{Acidic Blood}}[\glossterm{Attune} (target), \glossterm{Focus}]
 
@@ -4515,6 +4510,22 @@ However, this effect is unable to alter the target's clothes or equipment in any
 \rank{5} The bonus increases to \plus6.
 \rank{7} The bonus increases to \plus8.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Intensify Poison}{}}\label{spell:Intensify Poison}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Intensify Poison}{Intensify Poison}}[\glossterm{Focus}]
+\target{One living creature within \rngmed range}
+Make an attack vs. Fortitude with a \plus2 bonus to \glossterm{accuracy} against the target.
+If the target is not currently poisoned, this ability has no effect.
+\hit Choose a poison affecting the target.
+The poison gains an additional hit against the target, which can have varying effects depending on the poison (see \pcref{Poisons}).
+
+\rankline
+\rank{5} The accuracy bonus increases to \plus3.
+\rank{7} The accuracy bonus increases to \plus4.
+\end{freeability}
 \vspace{0.25em}
 
 
