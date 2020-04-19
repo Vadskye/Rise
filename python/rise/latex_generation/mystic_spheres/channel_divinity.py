@@ -13,20 +13,55 @@ channel_divinity=MysticSphere(
     cantrips=[
         Effects('Testament', 'Yourself', """
             The magical essence of your deity or alignment is overlayed on your body as an aura.
-            This channels your deity if you are a cleric, or your alignment if you are a paladin.
+            This represents your deity if you are a cleric, or your alignment if you are a paladin.
             In either case, you gain the ability to see the auras of other creatures using this spell if they are within \\rngclose range.
             If you see another creature with the same aura as you, this spell grants you the unerring knowledge of that similarity.
             This can allow you to identify other followers of your deity or alignment with certainty.
+
+            This spell lasts until you use it again, or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
 
             \\rankline
             \\rank<3> The range increases to \\rngmed.
             \\rank<5> If you are a cleric, you can also unerringly see an aura around creatures who worship your deity.
                 If you are a paladin, you can also unerringly see an aura around creatures who share your devoted alignment.
             \\rank<7> The range increases to \\rngext.
-        """, tags=['Sustain (free)']),
+        """, tags=[]),
     ],
     lists=['Divine'],
     spells=[
+        Spell('Faith Rewarded', 3, 'Yourself', """
+            At the end of the next round, you become infused with divine power.
+            You remove one \\glossterm<condition> affecting you and heal one \\glossterm<hit point>.
+            This cannot remove a condition applied during that round.
+            In addition, you gain a +4 bonus to \\glossterm<accuracy> during the round after you become infused with divine power.
+
+            \\rankline
+            \\rank<5> The accuracy bonus increases to +5.
+            \\rank<7> You can remove two conditions instead of one.
+        """, tags=[]),
+        Spell('Divine Authority', 1, 'Yourself', """
+            You gain a +3 \\glossterm<magic bonus> to the Persuasion skill.
+
+            \\rankline
+            \\rank<3> The bonus increases to +4.
+            \\rank<5> The bonus increases to +5.
+            \\rank<7> The bonus increases to +6.
+        """, tags=['Attune (self)']),
+        Spell('Agent of the Divine', 5, 'Yourself', """
+            You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> and all \\glossterm<defenses>.
+            In addition, you gain a +2 \\glossterm<magic bonus> to \\glossterm<power>.
+
+            \\rankline
+            \\rank<7> The accuracy bonus increases to +2.
+        """, tags=['Attune (self)']),
+        Spell('Endurance of the Faithful', 3, 'Yourself', """
+            You gin a bonus equal to twice your \\glossterm<power> to \\glossterm<resistances> this round.
+            Because this ability has the \\glossterm<Swift> tag, this improves your resistances against damage you take during the current phase.
+
+            \\rankline
+            \\rank<5> The bonus increases to be equal to three times your \\glossterm<power>.
+            \\rank<7> The bonus increases to be equal to four times your \\glossterm<power>.
+        """, tags=['Swift']),
         Spell('Divine Judgment', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target takes energy \\glossterm<standard damage> +1d.
@@ -36,12 +71,33 @@ channel_divinity=MysticSphere(
             \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=[]),
-        Spell('Glimpse of Divinity', 5, 'One creature within \\rngclose range', """
+        Spell('Glimpse of Divinity', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
-            \\hit The target is \\glossterm<blinded> as a \\glossterm<condition>.
+            \\hit The target is \\glossterm<dazzled> as a \\glossterm<condition>.
+            \\crit The target is \\glossterm<blinded> as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<7> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<5> The accuracy bonus increases to +2.
+            \\rank<7> The accuracy bonus increases to +3.
+        """, tags=[]),
+        Spell('Face of Divinity', 6, 'One creature within \\rngmed range', """
+            Make an attack vs. Mental against the target.
+            \\hit The target is \\shaken by you as a \\glossterm<condition>.
+            \\crit The target is \\glossterm<panicked> by you as a \\glossterm<condition>.
+
+            \\rankline
+            \\rank<8> The range increases to \\rnglong.
+        """, tags=[]),
+        Spell('Fear of the Divine', 1, 'One creature within \\rngmed range', """
+            Make an attack vs. Mental against the target.
+            \\hit The target is \\shaken by you as a \\glossterm<condition>.
+            \\crit The target is \\glossterm<panicked> by you as a \\glossterm<condition>.
+
+            \\rankline
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<5> The accuracy bonus increases to +2.
+            \\rank<7> The accuracy bonus increases to +3.
         """, tags=[]),
         Spell('Word of Faith', 1, '\\glossterm<Enemies> in a \\areasmall radius from you', """
             Make an attack vs. Mental against each target.
@@ -102,6 +158,16 @@ channel_divinity=MysticSphere(
             \\rank<5> The bonus increases to +3.
             \\rank<7> The bonus increases to +4.
         """, tags=['Attune (self)']),
+        Spell('Divine Conduit', 1, 'Yourself', """
+            You reduce your \\glossterm<focus penalty> with divine spells by 2.
+
+            You can cast this spell as a \\glossterm<minor action>.
+
+            \\rankline
+            \\rank<3> You also gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with divine spells.
+            \\rank<5> Your divine spells no longer have the \\glossterm<Focus> tag.
+            \\rank<7> The power bonus increases to +4.
+        """, tags=['Attune (self)']),
         Spell('Divine Favor', 3, 'Yourself', """
             You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with all attacks.
 
@@ -129,6 +195,14 @@ channel_divinity=MysticSphere(
             \\rankline
             \\rank<8> The bonus to \\glossterm<vital rolls> increases to +6.
         """, tags=['Sustain (free)']),
+        Spell('Divine Seal', 4, 'Creatures in a \\areasmall radius \\glossterm<zone> within \\rngmed range', """
+            You seal an area with divine power, limiting its connection to divine powers.
+            Whenever a creature casts a divine spell in the area, if that creature does not share your deity (for clerics) or devoted alignment (for paladins), it has a 50\% chance to \\glossterm<miscast> the spell.
+
+            \\rankline
+            \\rank<6> The area increases to a \\areamed radius.
+            \\rank<8> The area increases to a \\arealarge radius.
+        """, tags=['Sustain (minor)']),
     ],
     rituals=[
         Spell('Consecrate', 3, None, """

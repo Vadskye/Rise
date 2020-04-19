@@ -155,7 +155,6 @@ delusion=MysticSphere(
             \\rank<7> The bonus increases to +6.
         """, tags=['Attune (self)']),
         Spell('Alluring Presence', 1, 'Yourself', """
-
             You gain a +3 \\glossterm<magic bonus> to the Persuasion skill.
 
             \\rankline

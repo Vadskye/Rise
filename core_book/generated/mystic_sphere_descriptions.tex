@@ -1907,13 +1907,15 @@ This ritual functions like the \spell{blessing of fortification} ritual, except 
 \subsubsection{Cantrips}
 
 
-\begin{freeability}{Testament}[\glossterm{Sustain} (free)]
+\begin{freeability}{Testament}
 \target{Yourself}
 The magical essence of your deity or alignment is overlayed on your body as an aura.
-This channels your deity if you are a cleric, or your alignment if you are a paladin.
+This represents your deity if you are a cleric, or your alignment if you are a paladin.
 In either case, you gain the ability to see the auras of other creatures using this spell if they are within \rngclose range.
 If you see another creature with the same aura as you, this spell grants you the unerring knowledge of that similarity.
 This can allow you to identify other followers of your deity or alignment with certainty.
+
+This spell lasts until you use it again, or until you \glossterm{dismiss} it as a \glossterm{free action}.
 
 \rankline
 \rank{3} The range increases to \rngmed.
@@ -1926,6 +1928,36 @@ If you are a paladin, you can also unerringly see an aura around creatures who s
 
 
 \subsubsection{Spells}
+
+
+\lowercase{\hypertarget{spell:Divine Authority}{}}\label{spell:Divine Authority}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Divine Authority}{Divine Authority}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{Yourself}
+You gain a \plus3 \glossterm{magic bonus} to the Persuasion skill.
+
+\rankline
+\rank{3} The bonus increases to \plus4.
+\rank{5} The bonus increases to \plus5.
+\rank{7} The bonus increases to \plus6.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Divine Conduit}{}}\label{spell:Divine Conduit}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Divine Conduit}{Divine Conduit}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{Yourself}
+You reduce your \glossterm{focus penalty} with divine spells by 2.
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{3} You also gain a \plus2 \glossterm{magic bonus} to \glossterm{power} with divine spells.
+\rank{5} Your divine spells no longer have the \glossterm{Focus} tag.
+\rank{7} The power bonus increases to \plus4.
+\end{attuneability}
+\vspace{0.25em}
+
 
 
 \lowercase{\hypertarget{spell:Divine Judgment}{}}\label{spell:Divine Judgment}
@@ -1955,6 +1987,38 @@ You can cast this spell as a \glossterm{minor action}.
 \rank{5} The bonus increases to \plus3.
 \rank{7} The bonus increases to \plus4.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Fear of the Divine}{}}\label{spell:Fear of the Divine}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Fear of the Divine}{Fear of the Divine}}[\glossterm{Focus}]
+\target{One creature within \rngmed range}
+Make an attack vs. Mental against the target.
+\hit The target is \shaken by you as a \glossterm{condition}.
+\crit The target is \glossterm{panicked} by you as a \glossterm{condition}.
+
+\rankline
+\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Glimpse of Divinity}{}}\label{spell:Glimpse of Divinity}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Glimpse of Divinity}{Glimpse of Divinity}}[\glossterm{Focus}]
+\target{One creature within \rngmed range}
+Make an attack vs. Mental against the target.
+\hit The target is \glossterm{dazzled} as a \glossterm{condition}.
+\crit The target is \glossterm{blinded} as a \glossterm{condition}.
+
+\rankline
+\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -2036,6 +2100,36 @@ You cannot make this attack more than once against any individual target during 
 
 
 
+\lowercase{\hypertarget{spell:Endurance of the Faithful}{}}\label{spell:Endurance of the Faithful}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Endurance of the Faithful}{Endurance of the Faithful}}[\glossterm{Focus}, \glossterm{Swift}]
+\target{Yourself}
+You gin a bonus equal to twice your \glossterm{power} to \glossterm{resistances} this round.
+Because this ability has the \glossterm{Swift} tag, this improves your resistances against damage you take during the current phase.
+
+\rankline
+\rank{5} The bonus increases to be equal to three times your \glossterm{power}.
+\rank{7} The bonus increases to be equal to four times your \glossterm{power}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Faith Rewarded}{}}\label{spell:Faith Rewarded}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Faith Rewarded}{Faith Rewarded}}[\glossterm{Focus}]
+\target{Yourself}
+At the end of the next round, you become infused with divine power.
+You remove one \glossterm{condition} affecting you and heal one \glossterm{hit point}.
+This cannot remove a condition applied during that round.
+In addition, you gain a \plus4 bonus to \glossterm{accuracy} during the round after you become infused with divine power.
+
+\rankline
+\rank{5} The accuracy bonus increases to \plus5.
+\rank{7} You can remove two conditions instead of one.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Proclamation}{}}\label{spell:Proclamation}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Proclamation}{Proclamation}}[\glossterm{Focus}]
 \targets{\glossterm{Enemies} in a \areamed radius from you}
@@ -2068,15 +2162,29 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 
-\lowercase{\hypertarget{spell:Glimpse of Divinity}{}}\label{spell:Glimpse of Divinity}
-\begin{freeability}[Rank 5]{\hypertarget{spell:Glimpse of Divinity}{Glimpse of Divinity}}[\glossterm{Focus}]
-\target{One creature within \rngclose range}
-Make an attack vs. Mental against the target.
-\hit The target is \glossterm{blinded} as a \glossterm{condition}.
+\lowercase{\hypertarget{spell:Divine Seal}{}}\label{spell:Divine Seal}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Divine Seal}{Divine Seal}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
+\targets{Creatures in a \areasmall radius \glossterm{zone} within \rngmed range}
+You seal an area with divine power, limiting its connection to divine powers.
+Whenever a creature casts a divine spell in the area, if that creature does not share your deity (for clerics) or devoted alignment (for paladins), it has a 50\% chance to \glossterm{miscast} the spell.
 
 \rankline
-\rank{7} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{6} The area increases to a \areamed radius.
+\rank{8} The area increases to a \arealarge radius.
 \end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Agent of the Divine}{}}\label{spell:Agent of the Divine}
+\begin{attuneability}[Rank 5]{\hypertarget{spell:Agent of the Divine}{Agent of the Divine}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{Yourself}
+You gain a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} and all \glossterm{defenses}.
+In addition, you gain a \plus2 \glossterm{magic bonus} to \glossterm{power}.
+
+\rankline
+\rank{7} The accuracy bonus increases to \plus2.
+\end{attuneability}
 \vspace{0.25em}
 
 
@@ -2091,6 +2199,20 @@ You can cast this spell as a \glossterm{minor action}.
 
 \rankline
 \rank{8} The bonus to \glossterm{vital rolls} increases to \plus6.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Face of Divinity}{}}\label{spell:Face of Divinity}
+\begin{freeability}[Rank 6]{\hypertarget{spell:Face of Divinity}{Face of Divinity}}[\glossterm{Focus}]
+\target{One creature within \rngmed range}
+Make an attack vs. Mental against the target.
+\hit The target is \shaken by you as a \glossterm{condition}.
+\crit The target is \glossterm{panicked} by you as a \glossterm{condition}.
+
+\rankline
+\rank{8} The range increases to \rnglong.
 \end{freeability}
 \vspace{0.25em}
 
@@ -6605,6 +6727,20 @@ Instead, you always make the same choice you made the last time you manually sus
 
 
 
+\lowercase{\hypertarget{spell:Spellseal}{}}\label{spell:Spellseal}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Spellseal}{Spellseal}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
+\targets{Creatures in a \areasmall radius \glossterm{zone} within \rngmed range}
+You seal off an area's connection to magic.
+Whenever a creature casts a spell in the area, it has a 50\% chance to \glossterm{miscast} the spell.
+
+\rankline
+\rank{6} The area increases to a \areamed radius.
+\rank{8} The range increases to \rnglong.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Teleportation Ward}{}}\label{spell:Teleportation Ward}
 \begin{attuneability}[Rank 4]{\hypertarget{spell:Teleportation Ward}{Teleportation Ward}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \targets{Everything in a \arealarge radius \glossterm{emanation} from you (see text)}
@@ -6744,8 +6880,8 @@ This does not prevent it from being carried or forcibly removed from the ground.
 
 
 
-\lowercase{\hypertarget{spell:Clutch of Darkness}{}}\label{spell:Clutch of Darkness}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Clutch of Darkness}{Clutch of Darkness}}[\glossterm{Focus}]
+\lowercase{\hypertarget{spell:Chill of Darkness}{}}\label{spell:Chill of Darkness}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Chill of Darkness}{Chill of Darkness}}[\glossterm{Focus}]
 \target{One creature within \rngmed range}
 Make an attack vs. Fortitude against the target.
 You gain a \plus2 bonus to \glossterm{accuracy} with the attack if the target is not in bright light.
@@ -6787,6 +6923,25 @@ At the end of each round, if any target is outside of \rnglong range from you, t
 \rank{5} The \glossterm{difficulty rating} increase increases to 20.
 \rank{7} The \glossterm{difficulty rating} increase increases to 25.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Dark Grasp}{}}\label{spell:Dark Grasp}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Dark Grasp}{Dark Grasp}}[]
+\target{One creature or object you \glossterm{threaten}}
+This spell does not have the \glossterm{Focus} tag.
+You must have a \glossterm{free hand} to cast this spell.
+
+Make a melee attack vs. Reflex against the target.
+You gain a \plus2 bonus to \glossterm{accuracy} with the attack if the target is not in bright light.
+\hit The target takes cold \glossterm{standard damage}.
+
+\rankline
+\rank{3} The damage increases to \glossterm{standard damage} \plus1d.
+\rank{5} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{7} The damage increases to \glossterm{standard damage} \plus3d.
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -7430,8 +7585,8 @@ Make an attack vs. Fortitude against the target.
 
 
 
-\lowercase{\hypertarget{spell:Seal Wound}{}}\label{spell:Seal Wound}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Seal Wound}{Seal Wound}}[\glossterm{Focus}]
+\lowercase{\hypertarget{spell:Seal Vital Wound}{}}\label{spell:Seal Vital Wound}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Seal Vital Wound}{Seal Vital Wound}}[\glossterm{Focus}]
 \target{Yourself or an \glossterm{ally} within \rngmed range}
 The target gains a \plus2 \glossterm{vitality bonus} to one of its \glossterm{vital rolls} (see \pcref{Vital Rolls}).
 
@@ -7469,6 +7624,19 @@ When this spell resolves, and the end of each subsequent round, each target gain
 \rank{5} The area increases to a \arealarge radius \glossterm{zone}.
 \rank{7} The area increases to a \areahuge radius \glossterm{zone}.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Cure Wound}{}}\label{spell:Cure Wound}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Cure Wound}{Cure Wound}}[\glossterm{Focus}]
+\target{Yourself or one living \glossterm{ally} within \rngclose range}
+The target regains one lost \glossterm{hit point}.
+
+\rankline
+\rank{5} The range increases to \rngmed.
+\rank{7} The number of hit points regained increases to two.
+\end{freeability}
 \vspace{0.25em}
 
 
