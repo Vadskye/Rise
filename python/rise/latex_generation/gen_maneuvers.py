@@ -364,10 +364,11 @@ def generate_maneuvers():
         effect_text="""
             Each target is immune to \\glossterm<conditions> this round.
             In addition, each target can ignore any effects from one \\glossterm<condition> it is already affected by this round.
+            Because this ability has the \\glossterm<Swift> tag, it protects your allies from conditions they would receive during the current phase.
         """,
         rank_upgrades={
             '3': 'The area increases to a \\arealarge radius from you.',
-            '5': 'Each target can ignore any number of conditions instead of only one.',
+            '5': 'Each target can ignore two conditions instead of only one.',
             '7': 'The area increases to a \\areahuge radius from you.',
         },
         tags=['Swift'],
@@ -379,7 +380,7 @@ def generate_maneuvers():
         short_description='Make a strike that slows',
         target="As chosen \\glossterm<strike>",
         effect_text="""
-            Make a \\glossterm<strike> with a slashing weapon.
+            Make a \\glossterm<strike> with a -1d penalty to damage using a slashing weapon.
             If the strike \\glossterm<wounds> the target, it is \\glossterm<slowed> as a \\glossterm<condition>.
         """,
         rank=3,
@@ -415,8 +416,8 @@ def generate_maneuvers():
         short_description='Make a strike that dazes',
         target="As chosen \\glossterm<strike>",
         effect_text="""
-            Make a \\glossterm<strike> with a -2d penalty to damage.
-            If the attack result hits the target's Mental defense,
+            Make a \\glossterm<strike> with a -1d penalty to damage using a bludgeoning weapon.
+            If the strike \\glossterm<wounds> the target,
                 it is \\glossterm<dazed> as a \\glossterm<condition>.
         """,
         rank=3,
@@ -433,7 +434,8 @@ def generate_maneuvers():
         short_description='Recover hit points',
         target='Yourself',
         effect_text="""
-            You regain all of your \\glossterm<hit points> and immediately stop being \\glossterm<bloodied>
+            You regain half of your maximum \\glossterm<hit points> (rounded down).
+            If your new hit point total is at least half your maximum hit points, you immediately stop being \\glossterm<bloodied>.
             After you use this ability, you cannot use it again until you take a \\glossterm<short rest>.
 
             Because this is a \\glossterm<Swift> ability, this healing happens before you suffer the effects of attacks in the current phase.
@@ -616,7 +618,7 @@ def generate_maneuvers():
         short_description='Knock a foe prone with brute force',
         target="As chosen \\glossterm<strike>",
         effect_text="""
-            Make a melee \\glossterm<strike> using a bludgeoning weapon with a -2d penalty to damage.
+            Make a melee \\glossterm<strike> with a -1d penalty to damage using a bludgeoning weapon.
             If the attack result hits the target's Fortitude defense,
                 it falls \\glossterm<prone>.
         """,
