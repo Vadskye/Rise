@@ -40,7 +40,20 @@ umbramancy=MysticSphere(
             \\rank<5> The radius increases to 150 feet.
             \\rank<7> The radius increases to 200 feet.
         """, tags=['Attune (target)']),
-        Spell('Clutch of Darkness', 1, 'One creature within \\rngmed range', """
+        Spell('Dark Grasp', 1, 'One creature or object you \\glossterm<threaten>', """
+            This spell does not have the \\glossterm<Focus> tag.
+            You must have a \\glossterm<free hand> to cast this spell.
+
+            Make a melee attack vs. Reflex against the target.
+            You gain a +2 bonus to \\glossterm<accuracy> with the attack if the target is not in bright light.
+            \\hit The target takes cold \\glossterm<standard damage>.
+
+            \\rankline
+            \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
+        """, tags=[], focus=False),
+        Spell('Chill of Darkness', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             You gain a +2 bonus to \\glossterm<accuracy> with the attack if the target is not in bright light.
 
