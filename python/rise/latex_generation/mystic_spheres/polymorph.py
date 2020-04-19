@@ -29,16 +29,15 @@ polymorph=MysticSphere(
             \\rank<5> The number of additional successes increases to three, which is enough to remove most poisons immediately.
             \\rank<7> The target can also gain the same number of successes to remove an additional poison affecting it.
         """, tags=[]),
-        Spell('Intensify Poison', 1, 'One living creature within \\rngmed range', """
-            Make an attack vs. Fortitude against the target.
+        Spell('Intensify Poison', 3, 'One living creature within \\rngmed range', """
+            Make an attack vs. Fortitude with a +2 bonus to \\glossterm<accuracy> against the target.
             If the target is not currently poisoned, this ability has no effect.
             \\hit Choose a poison affecting the target.
             The poison gains an additional hit against the target, which can have varying effects depending on the poison (see \\pcref<Poisons>).
 
             \\rankline
-            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<5> The accuracy bonus increases to +2.
-            \\rank<7> The accuracy bonus increases to +3.
+            \\rank<5> The accuracy bonus increases to +3.
+            \\rank<7> The accuracy bonus increases to +4.
         """, tags=[]),
         Spell('Natural Weapon', 1, 'Yourself', """
             You gain your choice of one of the following \\glossterm<natural weapons>: bite, claw, constrict, gore, ram, slam, or talon.
@@ -210,7 +209,7 @@ polymorph=MysticSphere(
             \\rank<6> The damage increases to \\glossterm<standard damage> -1d.
             \\rank<8> The damage increases to \\glossterm<standard damage>.
         """, tags=['Attune (self)']),
-        Spell('Absorb Object', 1, 'One Tiny or smaller \\glossterm<unattended> object you touch', """
+        Spell('Absorb Object', 3, 'One Small or smaller \\glossterm<unattended> object you touch', """
             You absorb the target into your body.
             Your weight is increased by the weight of the object, but the object's presence cannot be otherwise physically detected.
             A reactive object, such as alchemist's fire or poison, continues reacting inside your body, which may be harmful to you.
@@ -220,7 +219,6 @@ polymorph=MysticSphere(
             When this effect ends, the object appears in a free hand, if you have one available, or drops to the floor.
 
             \\rankline
-            \\rank<3> The maximum size of the object increases to Small.
             \\rank<5> The maximum size of the object increases to Medium.
             \\rank<7> The maximum size of the object increases to Large.
         """, tags=[]),

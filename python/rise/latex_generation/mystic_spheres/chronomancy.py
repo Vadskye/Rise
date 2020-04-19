@@ -73,6 +73,13 @@ chronomancy=MysticSphere(
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=[]),
+        Spell('Decelerate', 6, 'One creature within \\rngmed range', """
+            Make an attack vs. Mental against the target.
+            \\hit The target is \\glossterm<decelerated> as a \\glossterm<condition>.
+
+            \\rankline
+            \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+        """, tags=[]),
         Spell('Mental Lag', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<slowed> and \\glossterm<dazed> as a single \\glossterm<condition>.
