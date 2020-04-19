@@ -47,13 +47,20 @@ vivimancy=MysticSphere(
             \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=[]),
-        Spell('Seal Wound', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Seal Vital Wound', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +2 \\glossterm<vitality bonus> to one of its \\glossterm<vital rolls> (see \\pcref<Vital Rolls>).
 
             \\rankline
             \\rank<3> The bonus increases to +3.
             \\rank<5> The bonus increases to +4.
             \\rank<7> The bonus increases to +5.
+        """, tags=[]),
+        Spell('Cure Wound', 3, 'Yourself or one living \\glossterm<ally> within \\rngclose range', """
+            The target regains one lost \\glossterm<hit point>.
+
+            \\rankline
+            \\rank<5> The range increases to \\rngmed.
+            \\rank<7> The number of hit points regained increases to two.
         """, tags=[]),
         Spell('Triage', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +1 \\glossterm<vitality bonus> to one of its \\glossterm<vital rolls> (see \\pcref<Vital Rolls>).
