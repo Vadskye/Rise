@@ -844,7 +844,7 @@ def generate_maneuvers():
         short_description='Strike foes in a line',
         target="\\glossterm<Enemies> in a \\areasmall, 5 ft.\\ wide line from you",
         effect_text="""
-            Make a \\glossterm<strike> against each target with a piercing weapon.
+            Make a \\glossterm<strike> using a piercing weapon against each target.
         """,
         rank_upgrades={
             '3': 'You gain a +1d bonus to \\glossterm<damage> with the strike.',
