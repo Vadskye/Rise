@@ -24,7 +24,7 @@ pyromancy=MysticSphere(
         Effects('Personal Torch', 'Yourself', """
             You create a flame in your hand.
             You can create it at any intensity, up to a maximum heat equivalent to a burning torch.
-            At it most intense, it sheds bright light in a 20 foot radius and dim light in an 40 foot radius.
+            At it most intense, it sheds \\glossterm<bright illumination> in a 20 foot radius and shadowy illumination in an 40 foot radius.
             If you touch a creature or object with it, the target takes fire \\glossterm<standard damage> -2d.
             This effect lasts until you use it again or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
 
