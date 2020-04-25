@@ -90,6 +90,8 @@ cryomancy=MysticSphere(
             Likewise, when a creature wielding a weapon created in this way deals damage with the weapon, that damage is also dealt to the weapon.
             If the item becomes \\glossterm<broken>, this effect is \\glossterm<dismissed>.
 
+            This spell lasts until you use it again, or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
+
             \\rankline
             \\rank<3> The \\glossterm<vital resistance> of the item increases to three times your power.
                 In addition, you can also create heavy armor.
@@ -97,7 +99,7 @@ cryomancy=MysticSphere(
                 A weapon grants a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities,
                     and armor grants a +1 \\glossterm<magic bonus> to Armor defense.
             \\rank<7> The \\glossterm<vital resistance> of the item increases to four times your power.
-        """, tags=['Sustain (minor)']),
+        """, tags=[]),
         Spell('Frost Breath', 4, ['Yourself', 'Everything within a \\arealarge cone'], """
             As a standard action, you can breathe cold like a dragon.
             When you do, make an attack vs Armor against each secondary target.
