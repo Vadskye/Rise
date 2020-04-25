@@ -25,7 +25,7 @@ photomancy=MysticSphere(
         """, tags=['Sensation', 'Visual']),
         Effects('Illuminate', 'One location within \\rngmed range', """
             A glowing light appears in midair in the target location.
-            It casts bright light in up to a 20 foot radius and dim light in twice that radius.
+            It creates \\glossterm<bright illumination> in a radius of your choice, up to a 20 foot radius, and \\glossterm<shadowy illumination> in twice that radius.
             This effect lasts until you use it again or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
 
             \\rankline
