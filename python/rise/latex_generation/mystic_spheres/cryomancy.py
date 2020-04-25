@@ -103,11 +103,13 @@ cryomancy=MysticSphere(
         Spell('Frost Breath', 4, ['Yourself', 'Everything within a \\arealarge cone'], """
             As a standard action, you can breathe cold like a dragon.
             When you do, make an attack vs Armor against each secondary target.
-            \\hit Each secondary target takes cold \\glossterm<standard damage> +1d.
+            \\hit Each secondary target takes cold \\glossterm<standard damage>.
+
+            You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<6> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<8> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<6> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<8> The damage increases to \\glossterm<standard damage> +2d.
         """, tags=['Attune (self)']),
         Spell('Frostfall', 4, None, """
             The temperature in a two mile radius cylinder-shaped \\glossterm<zone> from your location decreases rapidly.
