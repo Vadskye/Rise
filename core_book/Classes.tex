@@ -573,7 +573,7 @@ This choice determines a great deal about your character's abilities.
         \subsubsection{Chaos}
             If you choose this domain, you add the Deception skill to your \glossterm{class skill} list.
 
-            \parhead{Gift} You are immune to \glossterm{Compulsion} effects.
+            \parhead{Gift} You are immune to \glossterm{Compulsion} attacks.
             \parhead{Aspect} If you roll a 1 on an attack roll, it explodes (see \pcref{Exploding Attacks}).
             This does not affect bonus dice rolled for exploding attacks (see \pcref{Exploding Attacks}).
             \parhead{Essence} You can use the \textit{twist of fate} ability as a standard action.
@@ -2003,20 +2003,24 @@ This choice determines a great deal about your character's abilities.
         \cf{Mnk}[2]{Transcend Frailty}[Magical]
         You are immune to being \glossterm{sickened} and \glossterm{nauseated}.
 
-        \cf{Mnk}[3]{Inner Peace} You are immune to hostile \glossterm{Emotion} abilities.
+        \cf{Mnk}[3]{Inner Peace} You are immune to \glossterm{Compulsion} and \glossterm{Emotion} attacks.
 
         \cf{Mnk}[4]{Feel the Flow of Life}[Magical] You gain the \glossterm{lifesense} ability with a 50 foot range.
 
         \cf{Mnk}[5]{Transcend Flesh}[Magical]
-        You are immune to hostile \glossterm{Flesh} abilities.
+        You are no longer considered a living creature for the purpose of attacks against you.
+        This means that attacks which only affect living creatures have no effect against you.
         In addition, you no longer take penalties to your attributes for aging, and cannot be magically aged.
         You still die of old age when your time is up.
 
+        % TODO: what does this actually do?
         \cf{Mnk}[6]{Greater Inner Peace}
-        You are immune to hostile \glossterm{Compulsion} abilities.
+        You are no longer considered to have a mind for the purpose of attacks against you.
+        This means that attacks which only affect creatures with a mind have no effect against you.
 
         \cf{Mnk}[7]{See the Flow of Life}[Magical]
         You gain the \glossterm{lifesight} ability with 50 foot range.
+        In addition, the range of your \glossterm{lifesense} ability increases to 100 feet.
 
         % This feels like a rank 8 ability
         \cf{Mnk}[8]{Transcend Mortality}[Magical]
@@ -2980,11 +2984,11 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Min Level} & \tb{Arcane Magic} & \tb{Arcane Spell Mastery} & \tb{Draconic Magic} & \tb{Innate Arcanist} & \tb{Wild Magic} \tableheaderrule
             1 & 1  & Spellcasting          & Mystic insight              & Draconic bloodline         & Innate magic             & Wildspell                \\
-            2 & 2  & Innate focus          & Mage armor                  & Draconic focus             & Mystic tolerance         & Wild power               \\
-            3 & 5  & Spell rank (3), spell & Wellspring of power         & Draconic precision         & Augment                  & Chaotic miscast          \\
+            2 & 2  & Innate focus          & Mage armor                  & Draconic focus             & Mystic tolerance         & Chaotic miscast, wild soul               \\
+            3 & 5  & Spell rank (3), spell & Wellspring of power         & Draconic precision         & Augment                  & Chaotic exertion          \\
             4 & 8  & Spell rank (4)        & Mystic insight              & Draconic hide              & Spell absorption         & Controlled chaos         \\
-            5 & 11 & Spell rank (5)        & Greater mage armor          & Draconic heart             & Greater mystic tolerance & Greater wild power       \\
-            6 & 14 & Spell rank (6), spell & Greater wellspring of power & Greater draconic precision & Augment                  & Greater chaotic miscast  \\
+            5 & 11 & Spell rank (5)        & Greater mage armor          & Draconic heart             & Greater mystic tolerance & Greater chaotic miscast, greater wild  soul       \\
+            6 & 14 & Spell rank (6), spell & Greater wellspring of power & Greater draconic precision & Augment                  & Greater chaotic exertion  \\
             7 & 17 & Spell rank (7)        & Mystic insight              & Greater draconic hide      & Greater spell absorption & Greater controlled chaos \\
             8 & 20 & Spell rank (8)        &                             &                            &                          &                          \\
         \end{dtabularx}
@@ -3180,10 +3184,11 @@ This choice determines a great deal about your character's abilities.
     \subsection{Wild Magic}
         This archetype makes the magic you cast more chaotic, generally increasing its power at the cost of your control over your magic.
 
-        \cf{Sor}[1]{Wildspell} Whenever you cast a spell, you may use this ability after making all other decisions for the spell (such as targets, intended area, and so on).
-        When you do, roll 1d10 and apply the corresponding wild magic effect from \trefnp{Wild Magic Effects}.
+        \cf{Sor}[1]{Wildspell} Whenever you cast a spell that does not have the \glossterm{Attune} or \glossterm{Sustain} tags, you may use this ability after making all other decisions for the spell (such as targets, intended area, and so on).
+        When you do, you gain a \plus2 bonus to \glossterm{power} with the spell.
+        In addition, roll 1d10 and apply the corresponding wild magic effect from \trefnp{Wild Magic Effects}.
         Some wild magic effects cannot be meaningfully applied to all spells.
-        For example, doubling the number of targets does not meaningfully affect spells that only target yourself.
+        For example, changing the damage dealt by a spell does not affect spells that do not deal damage.
         Any wildspell effects that do not make sense for a particular spell should be ignored.
 
         \begin{dtable}
@@ -3191,31 +3196,38 @@ This choice determines a great deal about your character's abilities.
             \begin{dtabularx}{\textwidth}{l X}
                 \tb{Roll} & \tb{Effect} \tableheaderrule
                 1 or lower & You \glossterm{miscast} the spell \\
-                2 & You take a \minus2 penalty to \glossterm{accuracy} and \glossterm{power} with the spell \\
-                3 & The spell targets you in addition to any other targets \\
+                2 & You roll the attack roll twice for the spell and take the lower result \\
+                3 & If you are a valid target for the spell, it also targets you in addition to any other targets \\
                 4 & All damage dealt by the spell changes to physical damage \\
                 5 & All damage dealt by the spell changes to energy damage \\
                 6 & The spell's area is doubled \\
-                7 & The spell affects twice as many targets \\
+                7 & Each target \glossterm{wounded} by the spell this round is also \glossterm{dazed} as a \glossterm{condition} \\
                 8 & You roll damage twice for the spell and take the higher result \\
                 9 & You roll the attack roll twice for the spell and take the higher result \\
                 10 or higher & During the \glossterm{action phase} of the next round, the spell takes effect again with the same choices for all decisions, such as targets \\
             \end{dtabularx}
         \end{dtable}
 
-        \cf{Sor}[2]{Wild Power} You gain a \plus1 bonus to \glossterm{power} with \glossterm{magical} abilities.
-
-        \cf{Sor}[3]{Chaotic Miscast} Whenever you \glossterm{miscast} a spell for any reason other a wild magic effect, you may instead roll on the \trefnp{Wild Magic Effects} table to determine the spell's effect.
+        \cf{Sor}[2]{Chaotic Miscast} Whenever you \glossterm{miscast} a spell for any reason other a wild magic effect, you may instead roll on the \trefnp{Wild Magic Effects} table to determine the spell's effect.
         You take a \minus5 penalty to the roll.
         If the spell's effect is impossible after this roll, such as if all of its targets are invalid, it fails with no effect and is not miscast.
 
-        \cf{Sor}[4]{Controlled Chaos} You gain a \plus1 bonus to all rolls you make to determine wild magic effects.
+        \cf{Sor}[2]{Wild Soul} You are immune to \glossterm{Compulsion} attacks.
 
-        \cf{Sor}[5]{Greater Wild Power} The bonus from your \textit{wild power} ability increases to \plus2.
+        \cf{Sor}[3]{Chaotic Exertion} Once per \glossterm{long rest}, you can use the \textit{desperate exertion} ability without spending an \glossterm{action point}.
+        In addition, you gain a \plus1 bonus to the roll when you use the \textit{desperate exertion} ability.
+        This bonus stacks with the normal \plus2 bonus that ability provides.
 
-        \cf{Sor}[6]{Greater Chaotic Miscast} The penalty from your \textit{chaotic miscast} ability is reduced to \minus2.
+        \cf{Sor}[4]{Controlled Chaos} Whenever you make a wild magic roll, you can choose to gain a \plus1 bonus to the roll after seeing the result.
 
-        \cf{Sor}[7]{Greater Controlled Chaos} The bonus from your \textit{controlled chaos} ability increases to \plus2.
+        \cf{Sor}[5]{Greater Chaotic Miscast} The penalty from your \textit{chaotic miscast} ability is reduced to \minus2.
+
+        \cf{Sor}[5]{Greater Wild Soul} You are immune to \glossterm{Emotion} attacks.
+
+        \cf{Sor}[6]{Greater Chaotic Exertion} The number of times you can use the \textit{desperate exertion} ability with your \textit{chaotic exertion} ability increases to two.
+        In addition, the bonus with your \textit{desperate exertion} ability increases to \plus2.
+
+        \cf{Sor}[7]{Greater Controlled Chaos} You can choose to gain either a \plus1 or a \plus2 bonus with your \textit{controlled chaos} ability.
 
 \newpage
 \section{Warlock}\label{Warlock}
