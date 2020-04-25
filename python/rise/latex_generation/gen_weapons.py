@@ -29,7 +29,7 @@ def generate_weapons():
         tags=[],
         description="""
             This weapon is on fire.
-            It sheds light as a torch, and all damage dealt with it is fire damage in addition to its other types.
+            It sheds light as a torch, and all damage dealt with it is fire damage instead of its normal damage types.
         """,
         short_description="Deals fire damage",
     ))
@@ -91,7 +91,7 @@ def generate_weapons():
         tags=[],
         description="""
             This weapon continuously crackles with electricity.
-            The constant sparks shed light as a torch, and all damage dealt with it is electricity damage in addition to its other types.
+            The constant sparks shed light as a torch, and all damage dealt with it is electricity damage instead of its normal damage types.
         """,
         short_description="Deals electicity damage",
     ))
@@ -128,7 +128,7 @@ def generate_weapons():
         material_type='Weapon',
         tags=[],
         description="""
-            This weapon is bitterly cold, and all damage dealt with it is cold damage in addition to its other types.
+            This weapon is bitterly cold, and all damage dealt with it is cold damage instead of its normal damage types.
         """,
         short_description="Deals cold damage",
     ))
