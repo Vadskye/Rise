@@ -55,7 +55,7 @@ channel_divinity=MysticSphere(
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Attune (self)']),
         Spell('Endurance of the Faithful', 3, 'Yourself', """
-            You gin a bonus equal to twice your \\glossterm<power> to \\glossterm<resistances> this round.
+            You gain a bonus equal to twice your \\glossterm<power> to \\glossterm<resistances> this round.
             Because this ability has the \\glossterm<Swift> tag, this improves your resistances against damage you take during the current phase.
 
             \\rankline
