@@ -158,7 +158,8 @@ def generate_tools():
         tags=[],
         description="""
             As a standard action, you can throw this powder in the air in your location.
-            When you do, it emits a brief burst of bright light in a 50 foot radius and shadowy light in a 100 foot radius.
+            When you do, it emits a burst of \\glossterm<bright illumination> in a 50 foot radius and \\glossterm<shadowy illumination> in a 100 foot radius.
+            The light lasts until the end of the round.
         """,
         short_description="Emits burst of bright light",
     ))
@@ -225,9 +226,9 @@ def generate_tools():
         tags=[],
         description="""
             As a standard action, you can activate this item.
-            When you do, it shines bright light in a 50 foot radius and dim light in a 100 foot radius for 5 minutes.
+            When you do, it creates \\glossterm<bright illumination> in a 50 foot radius and \\glossterm<shadowy illumination> in a 100 foot radius for 5 minutes.
         """,
-        short_description="Emits bright light continuously",
+        short_description="Emits bright illumination continuously",
     ))
 
     tools.append(MagicItem(
@@ -239,7 +240,7 @@ def generate_tools():
         description="""
             This item functions like a \\mitem<sunrod>, except that the effect lasts for 8 hours.
         """,
-        short_description="Emits bright light continuously",
+        short_description="Emits bright illumination continuously",
     ))
 
     tools.append(MagicItem(
