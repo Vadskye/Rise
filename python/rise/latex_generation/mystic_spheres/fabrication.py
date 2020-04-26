@@ -283,7 +283,7 @@ fabrication=MysticSphere(
             \\rank<5> The area increases to a \\arealarge radius.
             \\rank<7> The range increases to \\rnglong.
         """, tags=['Manifestation', 'Sustain (minor)']),
-        Spell('Fog Wall', 1, '', """
+        Spell('Fog Wall', 1, None, """
             You create a wall of fog in a 20 ft.\\ high, \\arealarge \\glossterm<wall> within \\rngmed range.
             The fog makes it difficult to see through the wall, granting \\glossterm<concealment> to anything viewed through the wall (see \\pcref<Concealment>).
 
