@@ -6892,7 +6892,7 @@ Any object or effect which blocks light also blocks this spell's effect.
 \begin{freeability}[Rank 1]{\hypertarget{spell:Bind Shadow}{Bind Shadow}}[\glossterm{Focus}]
 \target{One creature within \rngmed range standing on the ground}
 You pin the target's shadow to the ground, impairing its movement.
-If the target does not have a shadow and is in \glossterm{bright illumination}, this spell is \glossterm{miscast}.
+If the target is in \glossterm{bright illumination} and does not have a shadow, this spell is \glossterm{miscast}.
 Make an attack vs. Mental against the target.
 \hit As a \glossterm{condition}, the target is \glossterm{slowed} and unable to fly or otherwise leave the ground under its own power.
 This does not prevent it from being carried or forcibly removed from the ground.
@@ -7039,9 +7039,9 @@ The target gains a \plus1 \glossterm{magic bonus} to Armor defense and the Steal
 
 \lowercase{\hypertarget{spell:Shadowstep}{}}\label{spell:Shadowstep}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Shadowstep}{Shadowstep}}[\glossterm{Focus}]
-\target{Yourself or up to one Medium or smaller \glossterm{ally} within \rngmed range}
-The target teleports into an unoccupied destination within range.
-If the target is in \glossterm{bright illumination}, this spell is \glossterm{miscast}.
+\target{Yourself or up to one Medium or smaller \glossterm{ally} within \rngmed range standing on the ground}
+The target teleports into an unoccupied destination on the ground within range.
+If the target is in \glossterm{bright illumination} and does not have a shadow, this spell is \glossterm{miscast}.
 
 \rankline
 \rank{3} The range increases to \rnglong.
@@ -7087,6 +7087,21 @@ Darkvision and similar abilities which do not require light still function withi
 
 
 
+\lowercase{\hypertarget{spell:Dark Miasma}{}}\label{spell:Dark Miasma}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Dark Miasma}{Dark Miasma}}[\glossterm{Focus}]
+\targets{\glossterm{Enemies} in a \areasmall radius from you}
+Make an attack vs. Fortitude against each target.
+You gain a \plus2 bonus to \glossterm{accuracy} with the attack against each target that is not in \glossterm{bright illumination}.
+\hit Each target takes cold \glossterm{standard damage} \minus1d.
+
+\rankline
+\rank{5} The area increases to a \areamed radius.
+\rank{7} The area increases to a \arealarge radius.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Hidden Blade}{}}\label{spell:Hidden Blade}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Hidden Blade}{Hidden Blade}}[\glossterm{Focus}, \glossterm{Sensation}, \glossterm{Visual}]
 \target{Yourself or one \glossterm{ally} within \rngmed range}
@@ -7114,7 +7129,7 @@ This effect provides no offensive benefit against creatures immune to \glossterm
 \begin{freeability}[Rank 3]{\hypertarget{spell:Shadow Dance}{Shadow Dance}}[\glossterm{Focus}]
 \target{One creature within \rngmed range standing on the ground}
 You command the target's shadow to move differently from the target, interfering with its movement.
-If the target does not have a shadow and is in \glossterm{bright illumination}, this spell is \glossterm{miscast}.
+If the target is in \glossterm{bright illumination} and does not have a shadow, this spell is \glossterm{miscast}.
 Make an attack vs. Mental against the target.
 \hit The target is \glossterm{disoriented} as a \glossterm{condition}.
 \crit As a \glossterm{condition}, you can force the target to move as you choose during each \glossterm{movement phase}.
@@ -7497,6 +7512,20 @@ The target gains a \plus1 \glossterm{vitality bonus} to one of its \glossterm{vi
 \subsubsection{Spells}
 
 
+\lowercase{\hypertarget{spell:Cure Wound}{}}\label{spell:Cure Wound}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Cure Wound}{Cure Wound}}[\glossterm{Focus}]
+\target{Yourself or one living \glossterm{ally} within \rngclose range}
+The target regains one lost \glossterm{hit point}.
+
+\rankline
+\rank{3} The range increases to \rngmed.
+\rank{5} The number of hit points regained increases to two.
+\rank{7} The range increases to \rnglong.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Death Knell}{}}\label{spell:Death Knell}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Death Knell}{Death Knell}}[\glossterm{Focus}]
 \target{One creature within \rngmed range}
@@ -7654,19 +7683,6 @@ When this spell resolves, and the end of each subsequent round, each target gain
 \rank{5} The area increases to a \arealarge radius \glossterm{zone}.
 \rank{7} The area increases to a \areahuge radius \glossterm{zone}.
 \end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Cure Wound}{}}\label{spell:Cure Wound}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Cure Wound}{Cure Wound}}[\glossterm{Focus}]
-\target{Yourself or one living \glossterm{ally} within \rngclose range}
-The target regains one lost \glossterm{hit point}.
-
-\rankline
-\rank{5} The range increases to \rngmed.
-\rank{7} The number of hit points regained increases to two.
-\end{freeability}
 \vspace{0.25em}
 
 
