@@ -15,6 +15,9 @@ fabrication=MysticSphere(
             You make a Craft check to create an object of Tiny size or smaller.
             The object appears in your hand or at your feet.
             It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as wood or cloth.
+            At the end of each round, this spell ends if you are not within \\rngmed range of the item.
+
+            This spell lasts until you use it again or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
 
             \\rankline
             \\rank<3> The maximum size of the object increases to Small.
@@ -109,7 +112,7 @@ fabrication=MysticSphere(
             The projectiles disappear after the attack is complete.
 
             % Strange duration for a spell
-            This spell lasts until you use it again, or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
+            This spell lasts until you use it again or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
 
             \\rankline
             \\rank<3> You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with \\glossterm<strikes> using the weapon.
