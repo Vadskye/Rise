@@ -18,7 +18,7 @@ aeromancy = MysticSphere(
             \\rank<5> The bonus increases to +8.
             \\rank<7> The bonus increases to +10.
         """, tags=[]),
-        Effects('Soften Landing', 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Effects('Soften Landing', 'Yourself or an \\glossterm<ally> within \\rnglong range', """
             Until the end of the round, the target treats all falls as if they were 20 feet shorter for the purpose of determining \\glossterm<falling damage>.
 
             \\rankline
