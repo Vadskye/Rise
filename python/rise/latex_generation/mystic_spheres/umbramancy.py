@@ -54,6 +54,15 @@ umbramancy=MysticSphere(
             \\rank<5> The radius increases to 150 feet.
             \\rank<7> The radius increases to 200 feet.
         """, tags=['Attune (target)']),
+        Spell('Dark Miasma', 3, '\\glossterm<Enemies> in a \\areasmall radius from you', """
+            Make an attack vs. Fortitude against each target.
+            You gain a +2 bonus to \\glossterm<accuracy> with the attack against each target that is not in \\glossterm<bright illumination>.
+            \\hit Each target takes cold \\glossterm<standard damage> -1d.
+
+            \\rankline
+            \\rank<5> The area increases to a \\areamed radius.
+            \\rank<7> The area increases to a \\arealarge radius.
+        """, tags=[]),
         Spell('Dark Grasp', 1, 'One creature or object you \\glossterm<threaten>', """
             This spell does not have the \\glossterm<Focus> tag.
             You must have a \\glossterm<free hand> to cast this spell.
@@ -142,9 +151,9 @@ umbramancy=MysticSphere(
             \\rank<5> The bonus increases to +5.
             \\rank<7> The bonus increases to +6.
         """, tags=['Attune (target)', 'Sensation']),
-        Spell('Shadowstep', 1, 'Yourself or up to one Medium or smaller \\glossterm<ally> within \\rngmed range', """
-            The target teleports into an unoccupied destination within range.
-            If the target is in \\glossterm<bright illumination>, this spell is \\glossterm<miscast>.
+        Spell('Shadowstep', 1, 'Yourself or up to one Medium or smaller \\glossterm<ally> within \\rngmed range standing on the ground', """
+            The target teleports into an unoccupied destination on the ground within range.
+            If the target is in \\glossterm<bright illumination> and does not have a shadow, this spell is \\glossterm<miscast>.
 
             \\rankline
             \\rank<3> The range increases to \\rnglong.
@@ -164,7 +173,7 @@ umbramancy=MysticSphere(
         """, tags=['Attune (self)']),
         Spell('Bind Shadow', 1, 'One creature within \\rngmed range standing on the ground', """
             You pin the target's shadow to the ground, impairing its movement.
-            If the target does not have a shadow and is in \\glossterm<bright illumination>, this spell is \\glossterm<miscast>.
+            If the target is in \\glossterm<bright illumination> and does not have a shadow, this spell is \\glossterm<miscast>.
             Make an attack vs. Mental against the target.
             \\hit As a \\glossterm<condition>, the target is \\glossterm<slowed> and unable to fly or otherwise leave the ground under its own power.
             This does not prevent it from being carried or forcibly removed from the ground.
@@ -177,7 +186,7 @@ umbramancy=MysticSphere(
         """, tags=[]),
         Spell('Shadow Dance', 3, 'One creature within \\rngmed range standing on the ground', """
             You command the target's shadow to move differently from the target, interfering with its movement.
-            If the target does not have a shadow and is in \\glossterm<bright illumination>, this spell is \\glossterm<miscast>.
+            If the target is in \\glossterm<bright illumination> and does not have a shadow, this spell is \\glossterm<miscast>.
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<disoriented> as a \\glossterm<condition>.
             \\crit As a \\glossterm<condition>, you can force the target to move as you choose during each \\glossterm<movement phase>.
