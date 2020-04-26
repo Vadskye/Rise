@@ -142,7 +142,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featref{Sphere Focus: Polymorph}        & \sphere{Polymorph} sphere access        & Improve casting with chosen sphere        & Magical                 & \featpref{Sphere Focus: Polymorph}        \\
         \featref{Sphere Focus: Pyromancy}        & \sphere{Pyromancy} sphere access        & Improve casting with chosen sphere        & Magical                 & \featpref{Sphere Focus: Pyromancy}        \\
         \featref{Sphere Focus: Revelation}       & \sphere{Revelation} sphere access       & Improve casting with chosen sphere        & Magical                 & \featpref{Sphere Focus: Revelation}       \\
-        \featref{Sphere Focus: Summon}           & \sphere{Summon} sphere access           & Improve casting with chosen sphere        & Magical                 & \featpref{Sphere Focus: Summon}           \\
+        \featref{Sphere Focus: Summoning}           & \sphere{Summoning} sphere access           & Improve casting with chosen sphere        & Magical                 & \featpref{Sphere Focus: Summoning}           \\
         \featref{Sphere Focus: Telekinesis}      & \sphere{Telekinesis} sphere access      & Improve casting with chosen sphere        & Magical                 & \featpref{Sphere Focus: Telekinesis}      \\
         \featref{Sphere Focus: Terramancy}       & \sphere{Terramancy} sphere access       & Improve casting with chosen sphere        & Magical                 & \featpref{Sphere Focus: Terramancy}       \\
         \featref{Sphere Focus: Thaumaturgy}      & \sphere{Thaumaturgy} sphere access      & Improve casting with chosen sphere        & Magical                 & \featpref{Sphere Focus: Thaumaturgy}      \\
@@ -1102,7 +1102,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
                 Polymorph & Physical \\
                 Pyromancy & Fire \\
                 Revelation & \tdash \\
-                Summon & \tdash \\
+                Summoning & \tdash \\
                 Telekinesis & Physical \\
                 Terramancy & Bludgeoning \\
                 Thaumaturgy & Energy \\
@@ -1896,14 +1896,14 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[7]{Fabrication Focus} You gain a \plus1 bonus to \glossterm{accuracy} with abilities from the \sphere{Fabrication} \glossterm{mystic sphere}.
 
-        \ff[10]{Greater Fabricate Trinket} The maximum size of object you can create with the \textit{fabricate trinket} \glossterm{cantrip} increases to Small.
+        \ff[10]{Persistent Manifestation} Once per round, you can \glossterm{sustain} a spell from the Fabrication mystic sphere as a \glossterm{free action}.
 
         \ff[13]{Greater Crafting Familiarity} The Craft bonus from your \textit{crafting familiarity} ability increases to \plus4.
         In addition, the \glossterm{vital resistance} bonus increases to twice your \glossterm{power}.
 
         \ff[16]{Greater Fabrication Focus} The bonus from your \textit{fabrication focus} ability increases to \plus2.
 
-        \ff[19]{Supreme Fabricate Trinket} The maximum size of object you can create with the \textit{fabricate trinket} \glossterm{cantrip} increases to Medium.
+        \ff[19]{Greater Persistent Manifestation} You can use your \textit{persistent manifestation} ability twice per round.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Photomancy}{Casting, Magical}
@@ -2010,23 +2010,23 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[19]{Greater Truesight} The range of your \glossterm{truesight} ability increases by 100 feet.
     \end{feat}
 
-    \begin{feat}{Sphere Focus: Summon}{Casting, Magical}
-        \featpre Access to the \sphere{Summon} \glossterm{mystic sphere}.
+    \begin{feat}{Sphere Focus: Summoning}{Casting, Magical}
+        \featpre Access to the \sphere{Summoning} \glossterm{mystic sphere}.
 
-        \ff[1]{Spell} You learn a spell from the \sphere{Summon} \glossterm{mystic sphere}.
+        \ff[1]{Spell} You learn a spell from the \sphere{Summoning} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that \glossterm{mystic sphere}.
 
         \ff[4]{Fortified Summons} Creatures you create with the \sphere{Summoning} \glossterm{mystic sphere} have their maximum \glossterm{hit points} increased by 2.
 
         \ff[4]{Resummon} You can use the \textit{resummon} ability as a \glossterm{minor action}.
         \begin{freeability}{Resummon}
-            Choose one creature or object that you summoned with an ability from the \sphere{Summon} \glossterm{mystic sphere}.
+            Choose one creature or object that you summoned with an ability from the \sphere{Summoning} \glossterm{mystic sphere}.
             You teleport the target into an unoccupied space on stable ground within \rngmed range of you.
         \end{freeability}
 
         \ff[7]{Guided Summons} Creatures you create with the \sphere{Summoning} \glossterm{mystic sphere} gain a \plus1 bonus to \glossterm{accuracy}.
 
-        \ff[10]{Augmented Summons} Creatures you create with abilities from the \sphere{Summon} spell gain an \glossterm{action point}.
+        \ff[10]{Augmented Summons} Creatures you create with abilities from the \sphere{Summoning} spell gain an \glossterm{action point}.
 
         \ff[13]{Greater Fortified Summons} The number of additional \glossterm{hit points} from your \textit{fortified summoning} ability increases to 3.
 
@@ -2082,7 +2082,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[10]{Stonemason} You may treat worked stone as if it were earth for the purpose of spells from the \sphere{Terramancy} \glossterm{mystic sphere}.
 
-        \ff[13]{Body of Stone} You gain a \plus1 bonus to \glossterm{vital rolls}.
+        \ff[13]{Body of Stone} You gain a \plus1 bonus to Armor defense.
 
         \ff[16]{Greater Terramancy Focus} The bonus from your \textit{terramancy focus} ability increases to \plus2.
 
@@ -2126,19 +2126,21 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Spell} You learn a spell from the \sphere{Umbramancy} \glossterm{mystic sphere}.
         When you gain access to new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[4]{Reflexive Concealment} You gain a \plus2 bonus to the Sleight of Hand and Stealth skills.
+        \ff[4]{Darkvision} You gain \glossterm{darkvision} with a 50 foot range, allowing you to see in complete darkness clearly.
+        If you already have that ability, you increase its range by 50 feet.
 
         \ff[7]{Umbramancy Focus} You gain a \plus1 bonus to \glossterm{accuracy} with abilities from the \sphere{Umbramancy} \glossterm{mystic sphere}.
 
-        \ff[10]{Darksight} You gain \glossterm{darkvision} with a 50 foot range, allowing you to see in complete darkness clearly.
-        If you already have that ability, you increase its range by 50 feet.
+        \ff[10]{Greater Suppress Light} You can cast the \spell{suppress light} \glossterm{cantrip} from the Umbramancy mystic sphere as a \glossterm{minor action}.
+
+        \ff[13]{Darksight} The range of your darkvision ability increases by 100 feet.
         In addition, your darkvision is not disabled by being in \glossterm{bright illumination}.
 
         \ff[13]{Greater Reflexive Concealment} The bonuses from your \textit{reflexive concealment} ability increase to \plus4.
 
         \ff[16]{Greater Umbramancy Focus} The bonus from your \textit{Umbramancy focus} ability increases to \plus2.
 
-        \ff[19]{Greater Darksight} The range of your darkvision ability increases by 100 feet.
+        \ff[19]{Supreme Suppress Light} You can both cast and \glossterm{sustain} the \spell{suppress light} cantrip as a \glossterm{free action}.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Verdamancy}{Casting, Magical}
@@ -2159,7 +2161,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[16]{Greater Verdamancy Focus} The bonus from your \textit{verdamancy focus} ability increases to \plus2.
 
-        % Seems weird for an 18th level; should stay in sync with the druid wild aspect
+        % Seems weird for an 19th level; should stay in sync with the druid wild aspect
         \ff[19]{Supreme Verdant Allies} The movement penalties from \glossterm{undergrowth} are doubled for enemies within a \areahuge radius emanation from you.
     \end{feat}
 
@@ -2173,14 +2175,15 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[7]{Vivimancy Focus} You gain a \plus1 bonus to \glossterm{accuracy} with abilities from the \sphere{Vivimancy} \glossterm{mystic sphere}.
 
-        \ff[10]{Greater Personal Vitality} The bonus to Fortitude defense from your \textit{fortified life} ability increases to \plus2.
-        In addition, you are immune to being \glossterm{nauseated}.
+        \ff[10]{Life Suppression} You gain a \plus4 bonus to defenses against abilities that only affect living creatures.
 
-        \ff[13]{Life Suppression} You gain a \plus4 bonus to defenses against abilities that only affect living creatures.
+        \ff[13]{Greater Personal Vitality} The bonus to Fortitude defense from your \textit{fortified life} ability increases to \plus2.
+        In addition, you are immune to being \glossterm{nauseated}.
 
         \ff[16]{Greater Vivimancy Focus} The bonus from your \textit{vivimancy focus} ability increases to \plus2.
 
-        \ff[19]{Greater Life Suppression} You are no longer considered a living creature for the purpose of abilities used by your \glossterm{enemies}.
+        \ff[19]{Greater Life Suppression} You are no longer considered a living creature for the purpose of attacks against you.
+        This means that attacks which only affect living creatures have no effect against you.
     \end{feat}
 
     \begin{feat}{Stealth Specialization}{Skill}
