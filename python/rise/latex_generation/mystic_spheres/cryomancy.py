@@ -90,7 +90,7 @@ cryomancy=MysticSphere(
             Likewise, when a creature wielding a weapon created in this way deals damage with the weapon, that damage is also dealt to the weapon.
             If the item becomes \\glossterm<broken>, this effect is \\glossterm<dismissed>.
 
-            This spell lasts until you use it again, or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
+            This spell lasts until you use it again or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
 
             \\rankline
             \\rank<3> The \\glossterm<vital resistance> of the item increases to three times your power.
