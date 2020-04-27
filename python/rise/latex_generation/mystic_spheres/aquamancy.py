@@ -20,6 +20,16 @@ aquamancy=MysticSphere(
             \\rank<5> The volume created increases to ten gallons.
             \\rank<7> The volume created increases to twenty gallons.
         """, tags=['Creation']),
+        Effects('Purify Water', 'Up to five gallons of water within \\rngclose range', """
+            You can separate out dirt, sand, and minor pollutants from the target water, moving the waste material to the edge of the water so falls out or can be easily removed.
+            This does not remove poisons, magical effects, or contaminants heavier than half a pound.
+            Using this on a very large body of water is difficult, since the waste material can easily mix with the water unaffected by a single casting of this spell.
+
+            \\rankline
+            \\rank<3> The volume affected increases to ten gallons.
+            \\rank<5> The volume affected increases to twenty gallons.
+            \\rank<7> The volume affected increases to fifty gallons.
+        """, tags=['Manifestation']),
         Effects('Slippery Escape', 'Yourself', """
             You gain a +4 bonus to the Escape Artist skill until the end of the next round.
 
