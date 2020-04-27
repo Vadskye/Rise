@@ -10,8 +10,7 @@ from rise.latex.effects import Effects
 barrier=MysticSphere(
     name='Barrier',
     short_description="Construct barriers to shield allies and areas from hostile forces",
-    cantrips=[
-    ],
+    cantrips=[],
     lists=['Arcane', 'Divine', 'Nature'],
     spells=[
         Spell('Mirror Barrier', 4, None, """
