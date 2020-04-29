@@ -11,6 +11,15 @@ cryomancy=MysticSphere(
     name='Cryomancy',
     short_description='Drain heat to injure and freeze foes',
     cantrips=[
+        Effects('Chill', 'One creature or object within \\rngclose range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit The target takes cold \\glossterm<standard damage>.
+
+            \\rankline
+            \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
+        """, tags=[]),
     ],
     lists=['Arcane', 'Nature', 'Pact'],
     spells=[

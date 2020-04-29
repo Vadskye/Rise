@@ -27,6 +27,24 @@ aeromancy = MysticSphere(
             \\rank<5> You can change the wind speed by up to 20 miles per hour.
             \\rank<7> The area increases to an \\areaext radius \\glossterm<emanation>.
         """, tags=['Sustain (free)']),
+        Effects('Buffet', 'One creature or object within \\rngclose range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit The target takes bludgeoning \\glossterm<standard damage>.
+
+            \\rankline
+            \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
+        """, tags=[]),
+        Effects('Detect Air', None, """
+            You learn the approximate distance and direction to any air within \\rnglong \\glossterm<range> of you.
+            This spell can detect air pockets with a minimum size of Fine.
+
+            \\rankline
+            \\rank<3> The range increases to \\rngext.
+            \\rank<5> The range increases to 2,000 feet.
+            \\rank<7> The range increases to 5,000 feet.
+        """, tags=['Detection']),
         Effects('Soften Landing', 'Yourself or an \\glossterm<ally> within \\rnglong range', """
             Until the end of the round, the target treats all falls as if they were 20 feet shorter for the purpose of determining \\glossterm<falling damage>.
 

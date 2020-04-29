@@ -11,7 +11,16 @@ astromancy=MysticSphere(
     name="Astromancy",
     short_description="Transport creatures and objects instantly through space",
     cantrips=[
-        Effects('Minor Translocation', 'Tiny or smaller unattended object within \\rngclose range', """
+        Effects('Dimension Hop', 'Yourself', """
+            You teleport into an unoccupied destination within 5 foot \\glossterm<range>.
+            If the destination is invalid, this spell is \\glossterm<miscast>.
+
+            \\rankline
+            \\rank<3> The range increases to 10 feet.
+            \\rank<5> The range increases to \\rngclose feet.
+            \\rank<7> The range increases to \\rngmed feet.
+        """, tags=[]),
+        Effects('Translocate Object', 'One Tiny or smaller unattended object within \\rngclose range', """
             The target teleports into an unoccupied location on a stable surface within range that can support the weight of the target.
             If the destination is invalid, the ability fails without effect.
 
