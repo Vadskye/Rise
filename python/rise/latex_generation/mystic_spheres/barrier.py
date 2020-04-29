@@ -10,7 +10,16 @@ from rise.latex.effects import Effects
 barrier=MysticSphere(
     name='Barrier',
     short_description="Construct barriers to shield allies and areas from hostile forces",
-    cantrips=[],
+    cantrips=[
+        Effects('Minor Barrier', None, """
+            This cantrip functions like the \\spell<mystic barrier> spell, except that its \\glossterm<range> is \\rngclose and the maximum dimensions of the barrier are a 5 ft.\\ by 5 ft.\\ square.
+
+            \\rankline
+            \\rank<3> The range increases to \\rngmed.
+            \\rank<5> The maximum dimensions of the wall increase to a 5 ft.\\ by 10 ft.\\ rectangle.
+            \\rank<7> The maximum dimensions of the wall increase to a 10 ft.\\ by 10 ft.\\ square.
+        """, tags=[]),
+    ],
     lists=['Arcane', 'Divine', 'Nature'],
     spells=[
         Spell('Mirror Barrier', 4, None, """
@@ -23,14 +32,18 @@ barrier=MysticSphere(
             \\rank<8> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Visual Barrier', 3, None, """
-            This spell functions like the \\spell<mystic barrier> spell, except that the barrier is visible as a deep black that completely blocks sight.
+            This spell functions like the \\spell<mystic barrier> spell, except that you can choose the visibility of the barrier.
+            There are three possibilities: fully invisible, barely visible like a normal \\spell<mystic barrier>, and visible as a deep black tht completely blocks sight.
+            You can change the opacity of the barrier as a \\glossterm<minor action>.
             In addition, the \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to three times your \\glossterm<power>.
 
             \\rank<5> The area increases to a \\arealarge line.
             \\rank<7> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Audible Barrier', 3, None, """
-            This spell functions like the \\spell<mystic barrier> spell, except that the barrier allows sound to pass through.
+            This spell functions like the \\spell<mystic barrier> spell, except that you can choose how much the barrier blocks sound.
+            There are two possibilities: fully sound-permeable, and fully sound-blocking like a normal \\spell<mystic barrier>.
+            You can change how much the barrier blocks sound as a \\glossterm<minor action>.
             Exceptionally strong sounds, such as sonic attacks that deal energy damage, are blocked by the barrier like other damaging effects.
             In addition, the \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to three times your \\glossterm<power>.
 
@@ -49,7 +62,8 @@ barrier=MysticSphere(
             \\rank<7> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Mystic Barrier', 1, None, """
-            You create a wall of magical energy in a 20 ft.\\ high, \\areamed line within \\rngmed range.
+            You create a wall of magical energy within \\rngmed range.
+            You can choose the dimensions of the wall, up to a maximum of a 20 ft.\\ high, \\areamed length line.
             If you create the wall within a space too small to hold it, it fills as much of the space as possible, allowing you to completely block off small tunnels.
             The wall is visible as a shimmering magical membrane that does not block sight.
             Nothing can pass through the wall until it is destroyed.
@@ -61,7 +75,8 @@ barrier=MysticSphere(
             \\rank<7> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Mystic Bridge', 3, None, """
-            You create a horizontal field of magical energy in a \\areamed, 10 ft.\\ wide line within \\rngmed range.
+            You create a horizontal field of magical energy within \\rngmed range.
+            You can choose the dimensions of the field, up to a maximum of a \\areamed length, 10 ft.\\ width line.
             If you create the field within a space too small to hold it, it fills as much of the space as possible, allowing you to completely block off small vertical tunnels.
             The field is visible as a shimmering magical membrane that does not block sight.
             Nothing can pass through the field until it is destroyed.

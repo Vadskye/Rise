@@ -14,10 +14,20 @@ from rise.latex.effects import Effects
 electromancy=MysticSphere(
 name="Electromancy",
 short_description='Create electricity to injure and stun foes',
-cantrips=[],
+cantrips=[
+    Effects('Spark', 'One creature or object within \\rngclose range', """
+        Make an attack vs. Reflex against the target.
+        \\hit The target takes electricity \\glossterm<standard damage>.
+
+        \\rankline
+        \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
+        \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
+        \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
+    """, tags=[]),
+],
 lists=['Arcane', 'Nature', 'Pact'],
 spells=[
-    Spell('Spark', 1, 'One creature within \\rngmed range', """
+    Spell('Electric Jolt', 1, 'One creature or object within \\rngmed range', """
         Make an attack vs. Reflex against the target.
         \\hit The target takes electricity \\glossterm<standard damage> +1d.
 

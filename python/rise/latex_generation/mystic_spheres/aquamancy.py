@@ -20,6 +20,15 @@ aquamancy=MysticSphere(
             \\rank<5> The volume created increases to ten gallons.
             \\rank<7> The volume created increases to twenty gallons.
         """, tags=['Creation']),
+        Effects('Detect Water', None, """
+            You learn the approximate distance and direction to any bodies of water within \\rnglong \\glossterm<range> of you.
+            This spell can detect bodies of water with a minimum size of Fine.
+
+            \\rankline
+            \\rank<3> The range increases to \\rngext.
+            \\rank<5> The range increases to 2,000 feet.
+            \\rank<7> The range increases to 5,000 feet.
+        """, tags=['Detection']),
         Effects('Purify Water', 'Up to five gallons of water within \\rngclose range', """
             You can separate out dirt, sand, and minor pollutants from the target water, moving the waste material to the edge of the water so falls out or can be easily removed.
             This does not remove poisons, magical effects, or contaminants heavier than half a pound.

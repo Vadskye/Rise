@@ -34,6 +34,30 @@ If you decrease the wind's speed to 0, you can increase it again with the remain
 \end{freeability}
 
 
+\begin{freeability}{Buffet}
+\target{One creature or object within \rngclose range}
+Make an attack vs. Fortitude against the target.
+\hit The target takes bludgeoning \glossterm{standard damage}.
+
+\rankline
+\rank{3} The damage increases to \glossterm{standard damage} \plus1d.
+\rank{5} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{7} The damage increases to \glossterm{standard damage} \plus3d.
+\end{freeability}
+
+
+\begin{freeability}{Detect Air}[\glossterm{Detection}]
+
+You learn the approximate distance and direction to any air within \rnglong \glossterm{range} of you.
+This spell can detect air pockets with a minimum size of Fine.
+
+\rankline
+\rank{3} The range increases to \rngext.
+\rank{5} The range increases to 2,000 feet.
+\rank{7} The range increases to 5,000 feet.
+\end{freeability}
+
+
 \begin{freeability}{Soften Landing}
 \target{Yourself or an \glossterm{ally} within \rnglong range}
 Until the end of the round, the target treats all falls as if they were 20 feet shorter for the purpose of determining \glossterm{falling damage}.
@@ -394,6 +418,18 @@ You must create a minimum of one ounce of water in each location.
 \end{freeability}
 
 
+\begin{freeability}{Detect Water}[\glossterm{Detection}]
+
+You learn the approximate distance and direction to any bodies of water within \rnglong \glossterm{range} of you.
+This spell can detect bodies of water with a minimum size of Fine.
+
+\rankline
+\rank{3} The range increases to \rngext.
+\rank{5} The range increases to 2,000 feet.
+\rank{7} The range increases to 5,000 feet.
+\end{freeability}
+
+
 \begin{freeability}{Purify Water}[\glossterm{Manifestation}]
 \target{Up to five gallons of water within \rngclose range}
 You can separate out dirt, sand, and minor pollutants from the target water, moving the waste material to the edge of the water so falls out or can be easily removed.
@@ -731,8 +767,20 @@ This ritual takes one minute to perform.
 \subsubsection{Cantrips}
 
 
-\begin{freeability}{Minor Translocation}
-\target{Tiny or smaller unattended object within \rngclose range}
+\begin{freeability}{Dimension Hop}
+\target{Yourself}
+You teleport into an unoccupied destination within 5 foot \glossterm{range}.
+If the destination is invalid, this spell is \glossterm{miscast}.
+
+\rankline
+\rank{3} The range increases to 10 feet.
+\rank{5} The range increases to \rngclose feet.
+\rank{7} The range increases to \rngmed feet.
+\end{freeability}
+
+
+\begin{freeability}{Translocate Object}
+\target{One Tiny or smaller unattended object within \rngclose range}
 The target teleports into an unoccupied location on a stable surface within range that can support the weight of the target.
 If the destination is invalid, the ability fails without effect.
 
@@ -1119,6 +1167,16 @@ This ritual takes one week to perform, and requires 98 action points from its pa
 \subsubsection{Cantrips}
 
 
+\begin{freeability}{Minor Barrier}
+
+This cantrip functions like the \spell{mystic barrier} spell, except that its \glossterm{range} is \rngclose and the maximum dimensions of the barrier are a 5 ft.\ by 5 ft.\ square.
+
+\rankline
+\rank{3} The range increases to \rngmed.
+\rank{5} The maximum dimensions of the wall increase to a 5 ft.\ by 10 ft.\ rectangle.
+\rank{7} The maximum dimensions of the wall increase to a 10 ft.\ by 10 ft.\ square.
+\end{freeability}
+
 \end{spellsection}
 
 
@@ -1160,7 +1218,8 @@ You can cast this spell as a \glossterm{minor action}.
 \lowercase{\hypertarget{spell:Mystic Barrier}{}}\label{spell:Mystic Barrier}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Mystic Barrier}{Mystic Barrier}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
 \targetrule
-You create a wall of magical energy in a 20 ft.\ high, \areamed line within \rngmed range.
+You create a wall of magical energy within \rngmed range.
+You can choose the dimensions of the wall, up to a maximum of a 20 ft.\ high, \areamed length line.
 If you create the wall within a space too small to hold it, it fills as much of the space as possible, allowing you to completely block off small tunnels.
 The wall is visible as a shimmering magical membrane that does not block sight.
 Nothing can pass through the wall until it is destroyed.
@@ -1214,7 +1273,9 @@ You can cast this spell as a \glossterm{minor action}.
 \lowercase{\hypertarget{spell:Audible Barrier}{}}\label{spell:Audible Barrier}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Audible Barrier}{Audible Barrier}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
 \targetrule
-This spell functions like the \spell{mystic barrier} spell, except that the barrier allows sound to pass through.
+This spell functions like the \spell{mystic barrier} spell, except that you can choose how much the barrier blocks sound.
+There are two possibilities: fully sound-permeable, and fully sound-blocking like a normal \spell{mystic barrier}.
+You can change how much the barrier blocks sound as a \glossterm{minor action}.
 Exceptionally strong sounds, such as sonic attacks that deal energy damage, are blocked by the barrier like other damaging effects.
 In addition, the \glossterm{vital resistance} of each 5-ft.\ square increases to be equal to three times your \glossterm{power}.
 
@@ -1245,7 +1306,8 @@ In addition, the \glossterm{vital resistance} of each 5-ft.\ square increases to
 \lowercase{\hypertarget{spell:Mystic Bridge}{}}\label{spell:Mystic Bridge}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Mystic Bridge}{Mystic Bridge}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
 \targetrule
-You create a horizontal field of magical energy in a \areamed, 10 ft.\ wide line within \rngmed range.
+You create a horizontal field of magical energy within \rngmed range.
+You can choose the dimensions of the field, up to a maximum of a \areamed length, 10 ft.\ width line.
 If you create the field within a space too small to hold it, it fills as much of the space as possible, allowing you to completely block off small vertical tunnels.
 The field is visible as a shimmering magical membrane that does not block sight.
 Nothing can pass through the field until it is destroyed.
@@ -1296,7 +1358,9 @@ Creatures in the area at the time that the spell is cast are unaffected by the s
 \lowercase{\hypertarget{spell:Visual Barrier}{}}\label{spell:Visual Barrier}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Visual Barrier}{Visual Barrier}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
 \targetrule
-This spell functions like the \spell{mystic barrier} spell, except that the barrier is visible as a deep black that completely blocks sight.
+This spell functions like the \spell{mystic barrier} spell, except that you can choose the visibility of the barrier.
+There are three possibilities: fully invisible, barely visible like a normal \spell{mystic barrier}, and visible as a deep black tht completely blocks sight.
+You can change the opacity of the barrier as a \glossterm{minor action}.
 In addition, the \glossterm{vital resistance} of each 5-ft.\ square increases to be equal to three times your \glossterm{power}.
 
 \rank{5} The area increases to a \arealarge line.
@@ -2803,6 +2867,17 @@ This ritual takes one minute to perform.
 \subsubsection{Cantrips}
 
 
+\begin{freeability}{Chill}
+\target{One creature or object within \rngclose range}
+Make an attack vs. Fortitude against the target.
+\hit The target takes cold \glossterm{standard damage}.
+
+\rankline
+\rank{3} The damage increases to \glossterm{standard damage} \plus1d.
+\rank{5} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{7} The damage increases to \glossterm{standard damage} \plus3d.
+\end{freeability}
+
 \end{spellsection}
 
 
@@ -3250,6 +3325,17 @@ Make an attack vs. Mental against the target.
 \subsubsection{Cantrips}
 
 
+\begin{freeability}{Spark}
+\target{One creature or object within \rngclose range}
+Make an attack vs. Reflex against the target.
+\hit The target takes electricity \glossterm{standard damage}.
+
+\rankline
+\rank{3} The damage increases to \glossterm{standard damage} \plus1d.
+\rank{5} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{7} The damage increases to \glossterm{standard damage} \plus3d.
+\end{freeability}
+
 \end{spellsection}
 
 
@@ -3266,6 +3352,21 @@ Make an attack vs. Reflex against each target.
 \rank{3} The damage increases to \glossterm{standard damage}.
 \rank{5} The damage increases to \glossterm{standard damage} \plus1d.
 \rank{7} The damage increases to \glossterm{standard damage} \plus2d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Electric Jolt}{}}\label{spell:Electric Jolt}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Electric Jolt}{Electric Jolt}}[\glossterm{Focus}]
+\target{One creature or object within \rngmed range}
+Make an attack vs. Reflex against the target.
+\hit The target takes electricity \glossterm{standard damage} \plus1d.
+
+\rankline
+\rank{3} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{5} The damage increases to \glossterm{standard damage} \plus3d.
+\rank{7} The damage increases to \glossterm{standard damage} \plus4d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3309,21 +3410,6 @@ This spell does not have the \glossterm{Focus} tag.
 You must have a \glossterm{free hand} to cast this spell.
 
 Make a melee attack vs. Reflex against the target.
-\hit The target takes electricity \glossterm{standard damage} \plus1d.
-
-\rankline
-\rank{3} The damage increases to \glossterm{standard damage} \plus2d.
-\rank{5} The damage increases to \glossterm{standard damage} \plus3d.
-\rank{7} The damage increases to \glossterm{standard damage} \plus4d.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Spark}{}}\label{spell:Spark}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Spark}{Spark}}[\glossterm{Focus}]
-\target{One creature within \rngmed range}
-Make an attack vs. Reflex against the target.
 \hit The target takes electricity \glossterm{standard damage} \plus1d.
 
 \rankline
@@ -4899,16 +4985,28 @@ This ritual functions like the \spell{fortify} ritual, except that the bonus to 
 \subsubsection{Cantrips}
 
 
+\begin{freeability}{Detect Flame}[\glossterm{Detection}]
+
+You learn the approximate distance and direction to any active fires within \rnglong \glossterm{range} of you.
+This spell can sense fires as small as a candle flame, but no smaller.
+
+\rankline
+\rank{3} The range increases to \rngext.
+\rank{5} The range increases to 2,000 feet.
+\rank{7} The range increases to 5,000 feet.
+\end{freeability}
+
+
 \begin{freeability}{Kindle}
-\target{Object within \rngclose range}
+\target{One creature or object within \rngclose range}
 Make an attack vs. Armor against the target.
-\hit The target takes fire damage equal to your \glossterm{power}.
+\hit The target takes fire \glossterm{standard damage}.
 If the target is highly flammable, such as a torch or campfire, it ignites.
 
 \rankline
-\rank{3} The range increases to \rngmed.
-\rank{5} The range increases to \rnglong.
-\rank{7} The range increases to \rngext.
+\rank{3} The damage increases to \glossterm{standard damage} \plus1d.
+\rank{5} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{7} The damage increases to \glossterm{standard damage} \plus3d.
 \end{freeability}
 
 
@@ -4917,7 +5015,9 @@ If the target is highly flammable, such as a torch or campfire, it ignites.
 You create a flame in your hand.
 You can create it at any intensity, up to a maximum heat equivalent to a burning torch.
 At it most intense, it sheds \glossterm{bright illumination} in a 20 foot radius and shadowy illumination in an 40 foot radius.
-If you touch a creature or object with it, the target takes fire \glossterm{standard damage} \minus2d.
+As a standard action, you can make a melee attack vs. Armor against a creature or object.
+On a hit, the target takes fire \glossterm{standard damage} \minus1d.
+
 This effect lasts until you use it again or until you \glossterm{dismiss} it as a \glossterm{free action}.
 
 \rankline
@@ -7532,6 +7632,11 @@ This ritual takes 24 hours to perform and requires 32 action points from its rit
 \begin{freeability}{Ablate Vital Wound}
 \target{Yourself or a living \glossterm{ally} within \rngmed range}
 The target gains a \plus1 \glossterm{vitality bonus} to one of its \glossterm{vital rolls}, up to a maximum result of 0 (see \pcref{Vital Rolls}).
+
+\rankline
+\rank{3} The bonus increases to \plus2.
+\rank{5} The bonus increases to \plus3.
+\rank{7} The bonus increases to \plus4.
 \end{freeability}
 
 \end{spellsection}
