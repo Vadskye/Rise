@@ -11,21 +11,32 @@ pyromancy=MysticSphere(
     name='Pyromancy',
     short_description="Create fire to incinerate foes",
     cantrips=[
-        Effects('Kindle', 'Object within \\rngclose range', """
+        Effects('Detect Flame', None, """
+            You learn the approximate distance and direction to any active fires within \\rnglong \\glossterm<range> of you.
+            This spell can sense fires as small as a candle flame, but no smaller.
+
+            \\rankline
+            \\rank<3> The range increases to \\rngext.
+            \\rank<5> The range increases to 2,000 feet.
+            \\rank<7> The range increases to 5,000 feet.
+        """, tags=['Detection']),
+        Effects('Kindle', 'One creature or object within \\rngclose range', """
             Make an attack vs. Armor against the target.
-            \\hit The target takes fire damage equal to your \\glossterm<power>.
+            \\hit The target takes fire \\glossterm<standard damage>.
             If the target is highly flammable, such as a torch or campfire, it ignites.
 
             \\rankline
-            \\rank<3> The range increases to \\rngmed.
-            \\rank<5> The range increases to \\rnglong.
-            \\rank<7> The range increases to \\rngext.
+            \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
         """, tags=[]),
         Effects('Personal Torch', 'Yourself', """
             You create a flame in your hand.
             You can create it at any intensity, up to a maximum heat equivalent to a burning torch.
             At it most intense, it sheds \\glossterm<bright illumination> in a 20 foot radius and shadowy illumination in an 40 foot radius.
-            If you touch a creature or object with it, the target takes fire \\glossterm<standard damage> -2d.
+            As a standard action, you can make a melee attack vs. Armor against a creature or object.
+            On a hit, the target takes fire \\glossterm<standard damage> -1d.
+
             This effect lasts until you use it again or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
 
             \\rankline

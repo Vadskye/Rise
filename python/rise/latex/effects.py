@@ -4,6 +4,8 @@ from rise.latex.util import join
 logger = getLogger(__name__)
 
 def targets_are_plural(target_text):
+    if target_text is None:
+        return False
     target_text = target_text.lower()
     for keyword in ['all ', 'any number', 'allies', 'enemies', 'everything', 'special']:
         if keyword in target_text:

@@ -13,6 +13,11 @@ vivimancy=MysticSphere(
     cantrips=[
         Effects('Ablate Vital Wound', 'Yourself or a living \\glossterm<ally> within \\rngmed range', """
             The target gains a +1 \\glossterm<vitality bonus> to one of its \\glossterm<vital rolls>, up to a maximum result of 0 (see \\pcref<Vital Rolls>).
+
+            \\rankline
+            \\rank<3> The bonus increases to +2.
+            \\rank<5> The bonus increases to +3.
+            \\rank<7> The bonus increases to +4.
         """, tags=[]),
     ],
     lists=['Arcane', 'Divine', 'Pact'],
