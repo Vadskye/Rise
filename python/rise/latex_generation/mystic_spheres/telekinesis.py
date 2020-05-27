@@ -71,9 +71,8 @@ telekinesis=MysticSphere(
             Any individual object or creature can only take damage once in this way, even if it is hit by multiple targets that are knocked flying.
 
             \\rankline
-            \\rank<3> The area increases to a \\arealarge radius.
-            \\rank<5> The area increases to a \\areahuge radius.
-            \\rank<7> The area increases to a \\areaext radius.
+            \\rank<5> The area increases to a \\arealarge radius.
+            \\rank<7> The area increases to a \\areahuge radius.
         """, tags=[]),
         Spell('Telekinetic Throw', 1, 'One Medium or smaller creature or object within \\rngmed range', """
             Make an attack vs. Mental against the target.
