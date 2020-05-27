@@ -22,13 +22,13 @@ pyromancy=MysticSphere(
         """, tags=['Detection']),
         Effects('Kindle', 'One creature or object within \\rngclose range', """
             Make an attack vs. Armor against the target.
-            \\hit The target takes fire \\glossterm<standard damage>.
+            \\hit The target takes 2 fire damage.
             If the target is highly flammable, such as a torch or campfire, it ignites.
 
             \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<3> The damage increases to 5.
+            \\rank<5> The damage increases to 10.
+            \\rank<7> The damage increases to 20.
         """, tags=[]),
         Effects('Personal Torch', 'Yourself', """
             You create a flame in your hand.

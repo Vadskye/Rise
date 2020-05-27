@@ -17,12 +17,12 @@ short_description='Create electricity to injure and stun foes',
 cantrips=[
     Effects('Spark', 'One creature or object within \\rngclose range', """
         Make an attack vs. Reflex against the target.
-        \\hit The target takes electricity \\glossterm<standard damage>.
+        \\hit The target takes 2 electricity damage.
 
         \\rankline
-        \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
-        \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
-        \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
+        \\rank<3> The damage increases to 5.
+        \\rank<5> The damage increases to 10.
+        \\rank<7> The damage increases to 20.
     """, tags=[]),
 ],
 lists=['Arcane', 'Nature', 'Pact'],

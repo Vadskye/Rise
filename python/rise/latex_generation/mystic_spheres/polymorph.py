@@ -16,7 +16,12 @@ polymorph=MysticSphere(
             The maximum \\glossterm<vital resistance> of a material you can affect with this ability is equal to your \\glossterm<power>.
 
             % too short?
-            Each time you use this ability, you can accomplish work that would take up to five minutes with a normal Craft check.
+            Each time you cast this spell, you can accomplish work that would take up to two rounds with a normal Craft check.
+
+            \\rankline
+            \\rank<3> The amount of work you accomplish with the spell increases to five rounds.
+            \\rank<5> The amount of work you accomplish with the spell increases to one minute.
+            \\rank<7> The amount of work you accomplish with the spell increases to two minutes.
         """, tags=[]),
     ],
     lists=['Arcane', 'Nature', 'Pact'],
