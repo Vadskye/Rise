@@ -865,24 +865,14 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Ring of Regeneration",
-        level=10,
+        level=15,
         material_type='Ring',
         tags=[],
         description="""
-            A the end of each round, you gain a +2 \\glossterm<vitality bonus> to one of your \\glossterm<vital rolls>.
+            A the end of each round, you can spend an \\glossterm<action point>.
+            If you do, you remove one of your \\glossterm<vital wounds>.
         """,
-        short_description="Reduce the severity of vital wounds",
-    ))
-
-    apparel.append(MagicItem(
-        name="Ring of Regeneration, Greater",
-        level=16,
-        material_type='Ring',
-        tags=[],
-        description="""
-            This item functions like the \\mitem<ring of regeneration> item, except that the bonus increases to +3.
-        """,
-        short_description="Greatly reduces the severity of vital wounds",
+        short_description="Automatically removes vital wounds",
     ))
 
     # Amulets
@@ -1119,7 +1109,7 @@ def generate_worn():
         material_type='Belt',
         tags=[],
         description="""
-            As a standard action, you can use this belt to gain a +1 \\glossterm<vitality bonus> to one of your \\glossterm<vital rolls> (see \\pcref<Vital Rolls>).
+            As a standard action, you can use this belt to regain a \\glossterm<hit point>.
         """,
         short_description="Grants healing",
     ))

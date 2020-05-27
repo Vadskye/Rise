@@ -502,18 +502,15 @@ This choice determines a great deal about your character's abilities.
     \subsection{Healer}
         This archetype grants you healing abilities.
 
-        \cf{Clr}[1]{Mitigate Vital Wound} You can use the \textit{mitigate vital wound} ability as a standard action.
-        \begin{freeability}{Mitigate Vital Wound}[\glossterm{Magical}]
-            Choose yourself or a living \glossterm{ally} within \rngmed range.
-            The target can make a new \glossterm{vital roll} to determine the effect of one of its \glossterm{vital wounds}.
-            The roll uses all modifiers that originally applied to that vital roll, plus a \plus2 \glossterm{vitality bonus} (see \pcref{Vital Rolls}).
-            It can decide whether to keep its original roll or use the new roll.
-            In either case, the \glossterm{vital roll} for that \glossterm{vital wound} cannot be modified again.
+        \cf{Clr}[1]{Restoration} You can use the \textit{restoration} ability as a standard action.
+        \begin{freeability}{Restoration}[\glossterm{Magical}]
+            \target{Yourself or a living \glossterm{ally} within \glossterm{reach}}
+            The target regains two \glossterm{hit points}.
 
             \rankline
-            \rank{3} The bonus increases to \plus3.
-            \rank{5} The range increases to \rnglong.
-            \rank{7} The bonus increases to \plus4.
+            \rank{3} The range increases to \rngclose.
+            \rank{5} If the target is \glossterm{bloodied}, it regains an additional hit point.
+            \rank{7} The range increases to \rngmed.
         \end{freeability}
 
         \cf{Clr}[2]{Healer's Grace} You gain a \plus1 bonus to all defenses.
@@ -521,14 +518,15 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Clr}[3]{Divine Healing} You can use the \textit{divine healing} ability as a standard action.
         \begin{apability}{Divine Healing}[\glossterm{Magical}]
-            You or a living \glossterm{ally} within \rngmed range removes a \glossterm{vital wound}.
+            \target{Yourself or a living \glossterm{ally} within \rngmed range.}
+            The target removes a \glossterm{vital wound}.
 
             \rankline
             \rank{5} The target removes an additional \glossterm{vital wound}.
             \rank{7} The range increases to \rnglong.
         \end{apability}
 
-        \cf{Clr}[4]{Reflexive Healing} When you suffer a \glossterm{vital wound} that makes you \glossterm{unconscious}, you automatically use your \textit{mitigate vital wound} ability on yourself at the end of the round.
+        \cf{Clr}[4]{Reflexive Healing} During the \glossterm{action phase} of each round, if you are unconscious due to a \glossterm{vital wound}, you automatically use your \textit{divine healing} ability on yourself to remove that vital wound.
 
         \cf{Clr}[5]{Greater Healer's Grace} The bonus from your \textit{healer's grace} ability increases to \plus2.
 
@@ -2207,14 +2205,14 @@ This choice determines a great deal about your character's abilities.
         This archetype grants you healing abilities and improves your defensive prowess.
 
         \cf{Pal}[1]{Lay on Hands}[Magical] You can use the \textit{lay on hands} ability as a standard action.
-        \begin{freeability}{Lay on Hands}[Life]
-            One \glossterm{ally} within your \glossterm{reach} gains a \plus2 \glossterm{vitality bonus} to one of its \glossterm{vital rolls} (see \pcref{Vital Rolls}).
+        \begin{freeability}{Lay on Hands}
+            \target{Yourself or a living \glossterm{ally} within \glossterm{reach}}
+            The target regains two \glossterm{hit points}.
 
             \rankline
-            \rank{3} The bonus increases to \plus3.
-            \rank{5} When you use this ability, you can spend an \glossterm{action point}.
-            If you do, the target removes one of its \glossterm{vital wounds} instead of gaining a vitality bonus to a vital roll.
-            \rank{7} The bonus increases to \plus5.
+            \rank{3} Instead of regaining hit points, the target can choose to remove a \glossterm{condition} affecting it.
+            \rank{5} Instead of regaining hit points, the target can choose to spend an \glossterm{action point} to remove a \glossterm{vital wound} affecting it.
+            \rank{7} If the target is \glossterm{bloodied}, it regains an additional hit point.
         \end{freeability}
 
         \cf{Pal}[2]{Enduring Defender}
