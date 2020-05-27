@@ -40,9 +40,9 @@ def generate_tools():
         material_type='Potion',
         tags=[],
         description="""
-            When you drink this \\glossterm<potion>, you gain a +1 \\glossterm<vitality bonus> to one of your \\glossterm<vital rolls> (see \\pcref<Vital Rolls>).
+            When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<wound roll> of -1, you treat that wound roll as a 0 instead (see \\pcref<Vital Wounds>).
         """,
-        short_description="Grants +1 bonus to a \\glossterm<vital roll>",
+        short_description="Prevents death from barely lethal vital wounds",
     ))
 
     tools.append(MagicItem(
@@ -52,9 +52,9 @@ def generate_tools():
         material_type='Potion',
         tags=[],
         description="""
-            When you drink this \\glossterm<potion>, you gain a +2 \\glossterm<vitality bonus> to one of your \\glossterm<vital rolls> (see \\pcref<Vital Rolls>).
+            When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<wound roll> of -1 or -2, you treat that wound roll as a 0 instead (see \\pcref<Vital Wounds>).
         """,
-        short_description="Grants +2 bonus to a \\glossterm<vital roll>",
+        short_description="Prevents death from vital wounds",
     ))
 
     tools.append(MagicItem(
@@ -64,9 +64,9 @@ def generate_tools():
         material_type='Potion',
         tags=[],
         description="""
-            When you drink this \\glossterm<potion>, you gain a +3 \\glossterm<vitality bonus> to one of your \\glossterm<vital rolls> (see \\pcref<Vital Rolls>).
+            When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<wound roll> of -1, -2, or -3, you treat that wound roll as a 0 instead (see \\pcref<Vital Wounds>).
         """,
-        short_description="Grants +3 bonus to a \\glossterm<vital roll>",
+        short_description="Prevents death from major vital wounds",
     ))
 
     tools.append(MagicItem(
@@ -84,7 +84,7 @@ def generate_tools():
     tools.append(MagicItem(
         consumable=True,
         name="Potion of Healing, Greater",
-        level=9,
+        level=15,
         material_type='Potion',
         tags=[],
         description="""
@@ -92,19 +92,6 @@ def generate_tools():
         """,
         short_description="Restores two hit points",
     ))
-
-    tools.append(MagicItem(
-        consumable=True,
-        name="Potion of Healing, Supreme",
-        level=15,
-        material_type='Potion',
-        tags=[],
-        description="""
-            When you drink this \\glossterm<potion>, you heal three \\glossterm<hit point>.
-        """,
-        short_description="Restores three hit points",
-    ))
-
 
     # Alchemical items
 

@@ -120,13 +120,12 @@ polymorph=MysticSphere(
             \\rank<6> The target also gains a +1 \\glossterm<magic bonus> to Armor defense.
             \\rank<8> The bonus increases to be equal to your \\glossterm<power>.
         """, tags=['Attune (target)']),
-        Spell('Regeneration', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            A the end of each round, the target gains a +1 \\glossterm<vitality bonus> to one of its \\glossterm<vital rolls> (see \\pcref<Vital Rolls>).
+        Spell('Regeneration', 5, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            A the end of each round, the target can spend an \\glossterm<action point>.
+            If it does, it removes one of its \\glossterm<vital wounds>.
 
             \\rankline
-            \\rank<3> The bonus increases to +2.
-            \\rank<5> The bonus increases to +3.
-            \\rank<7> The bonus increases to +4.
+            \\rank<7> The target can remove up to two \\glossterm<vital wounds> instead of only one.
         """, tags=['Attune (target)']),
         Spell('Enlarge', 4, 'Yourself or one Large or smaller \\glossterm<ally> within \\rngmed range', """
             The target's size increases by one \\glossterm<size category>.
