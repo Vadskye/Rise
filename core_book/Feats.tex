@@ -803,11 +803,13 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[4]{Healing Touch} You can use the \textit{healing touch} ability as a standard action.
         \begin{freeability}{Healing Touch}[\glossterm{Life}]
-            One \glossterm{ally} within your \glossterm{reach} gains a \plus2 \glossterm{vitality bonus} one of its \glossterm{vital rolls} (see \pcref{Vital Rolls}).
+            \target{Yourself or a living \glossterm{ally} within \glossterm{reach}}
+            The target regains a \glossterm{hit point}.
+            If it is \glossterm{bloodied}, it regains two hit points instead of one.
 
             \rankline
-            \featlevel{10} The bonus increases to \plus3.
-            \featlevel{16} The bonus increases to \plus4.
+            \featlevel{10} The number of hit points regained increases to two.
+            \featlevel{16} If the target is bloodied, it regains three hit points instead of two.
         \end{freeability}
 
         \ff[7]{Purging Touch} You can use the \textit{purging touch} ability as a standard action.

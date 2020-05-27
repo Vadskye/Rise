@@ -12,12 +12,12 @@ vivimancy=MysticSphere(
     short_description="Manipulate life energy to aid allies or harm foes",
     cantrips=[
         Effects('Ablate Vital Wound', 'Yourself or a living \\glossterm<ally> within \\rngmed range', """
-            The target gains a +1 \\glossterm<vitality bonus> to one of its \\glossterm<vital rolls>, up to a maximum result of 0 (see \\pcref<Vital Rolls>).
+            If the target has a \\glossterm<vital wound> with a \\glossterm<vital roll> of -1, it treats that \\glossterm<vital roll> as a 0, preventing it from dying (see \\pcref<Vital Wounds>).
 
             \\rankline
-            \\rank<3> The bonus increases to +2.
-            \\rank<5> The bonus increases to +3.
-            \\rank<7> The bonus increases to +4.
+            \\rank<3> The minimum \\glossterm<vital roll> you can mitigate decreases to -2.
+            \\rank<5> The minimum \\glossterm<vital roll> you can mitigate decreases to -3.
+            \\rank<7> The minimum \\glossterm<vital roll> you can mitigate decreases to -4.
         """, tags=[]),
     ],
     lists=['Arcane', 'Divine', 'Pact'],
@@ -52,30 +52,22 @@ vivimancy=MysticSphere(
             \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=[]),
-        Spell('Seal Vital Wound', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            The target gains a +2 \\glossterm<vitality bonus> to one of its \\glossterm<vital rolls> (see \\pcref<Vital Rolls>).
-
-            \\rankline
-            \\rank<3> The bonus increases to +3.
-            \\rank<5> The bonus increases to +4.
-            \\rank<7> The bonus increases to +5.
-        """, tags=[]),
         Spell('Cure Wound', 1, 'Yourself or one living \\glossterm<ally> within \\rngclose range', """
             The target regains one lost \\glossterm<hit point>.
 
             \\rankline
-            \\rank<3> The range increases to \\rngmed.
+            \\rank<3> If the target is \\glossterm<bloodied>, it regains two hit points instead of one.
             \\rank<5> The number of hit points regained increases to two.
-            \\rank<7> The range increases to \\rnglong.
+            \\rank<7> If the target is \\glossterm<bloodied>, it regains three hit points instead of two.
         """, tags=[]),
         Spell('Triage', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            The target gains a +1 \\glossterm<vitality bonus> to one of its \\glossterm<vital rolls> (see \\pcref<Vital Rolls>).
+            If the target has a \\glossterm<vital wound> with a \\glossterm<vital roll> of -1, it treats that \\glossterm<vital roll> as a 0, preventing it from dying (see \\pcref<Vital Wounds>).
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<6> The bonus increases to +2.
-            \\rank<8> The bonus increases to +3.
+            \\rank<6> The minimum \\glossterm<vital roll> you can mitigate decreases to -2.
+            \\rank<8> The minimum \\glossterm<vital roll> you can mitigate decreases to -3.
         """, tags=[]),
         Spell('Fortify Life', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +2 \\glossterm<magic bonus> to Fortitude defense.
@@ -155,22 +147,19 @@ vivimancy=MysticSphere(
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=[]),
-        Spell('Circle of Death', 3, 'Living \\glossterm<enemies> in a \\areamed radius \\glossterm<zone> from your location', """
-            When this spell resolves, and during each \\glossterm<action phase> in subsequent rounds, make an attack vs. Fortitude against each target.
-            You cannot make this attack more than once against any individual target during this spell's duration.
-            \\hit As a \\glossterm<condition>, each target is marked for death.
-            It takes a penalty to its \\glossterm<vital resistance> equal to half your \\glossterm<power> against all types of damage.
+        Spell('Circle of Death', 3, 'Living \\glossterm<enemies> in a \\areamed radius', """
+            Make an attack vs. Fortitude against each target.
+            \\hit Each target loses one \\glossterm<hit point>.
 
             \\rankline
-            \\rank<5> The area increases to a \\arealarge radius \\glossterm<zone>.
-            \\rank<7> The area increases to a \\areahuge radius \\glossterm<zone>.
+            \\rank<5> The area increases to a \\arealarge radius.
+            \\rank<7> The area increases to a \\areahuge radius.
         """, tags=['Attune (self)']),
-        Spell('Circle of Life', 3, 'Yourself and each living \\glossterm<ally> in a \\glossterm<areamed> radius \\glossterm<zone> from your location', """
-            When this spell resolves, and the end of each subsequent round, each target gains a +2 \\glossterm<vitality bonus> to one of its \\glossterm<vital rolls> (see \\pcref<Vital Rolls>).
+        Spell('Circle of Life', 5, 'Yourself and each living \\glossterm<ally> in a \\areamed radius', """
+            Each target regains one lost \\glossterm<hit point>.
 
             \\rankline
-            \\rank<5> The area increases to a \\arealarge radius \\glossterm<zone>.
-            \\rank<7> The area increases to a \\areahuge radius \\glossterm<zone>.
+            \\rank<7> The area increases to a \\arealarge radius.
         """, tags=['Attune (self)']),
         Spell('Avasculate', 8, 'One creature within \\rngclose range', """
             Make an attack vs. Fortitude against the target.
