@@ -36,7 +36,7 @@ verdamancy=MysticSphere(
             You throw a seed that embeds itself in a foe and grows painfully.
             Make an attack vs. Fortitude against the target.
             \\hit As a \\glossterm<condition>, the target takes physical \\glossterm<standard damage> during each \\glossterm<action phase> in subsequent rounds.
-            This condition can be removed if the target or a creature that can reach the target makes a \\glossterm<difficulty rating> 5 Heal check as a standard action to remove the seed.
+            This condition can be removed if the target or a creature that can reach the target makes a \\glossterm<difficulty rating> 5 Medicine check as a standard action to remove the seed (see \\pcref<Treat Condition>).
 
             \\rankline
             \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.

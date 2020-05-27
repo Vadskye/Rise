@@ -103,11 +103,11 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featref{Endurance Specialization}         & Mastered Endurance          & Improve use of chosen skill           & \tdash & \featpref{Endurance Specialization}         \\
         \featref{Escape Artist Specialization}     & Mastered Escape Artist      & Improve use of chosen skill           & \tdash & \featpref{Escape Artist Specialization}     \\
         \featref{Intimidate Specialization}        & Mastered Intimidate         & Improve use of chosen skill           & \tdash & \featpref{Intimidate Specialization}        \\
-        \featref{Heal Specialization}              & Mastered Heal               & Improve use of chosen skill           & \tdash & \featpref{Heal Specialization}              \\
         \featref{Herbalist}                        & Mastered Knowledge (nature) & Brew potions with natural ingredients & \tdash & \featpref{Herbalist}                        \\
         \featref{Jump Specialization}              & Mastered Jump               & Improve use of chosen skill           & \tdash & \featpref{Jump Specialization}              \\
         \featref{Knowledge Specialization}         & Mastered Knowledge          & Improve use of chosen skill           & \tdash & \featpref{Knowledge Specialization}         \\
         \featref{Linguistics Specialization}       & Mastered Linguistics        & Improve use of chosen skill           & \tdash & \featpref{Linguistics Specialization}       \\
+        \featref{Medicine Specialization}          & Mastered Medicine           & Improve use of chosen skill           & \tdash & \featpref{Medicine Specialization}              \\
         \featref{Perform Specialization}           & Mastered Perform            & Improve use of chosen skill           & \tdash & \featpref{Perform Specialization}           \\
         \featref{Persuasion Specialization}        & Mastered Persuasion         & Improve use of chosen skill           & \tdash & \featpref{Persuasion Specialization}        \\
         \featref{Ride Specialization}              & Mastered Ride               & Improve use of chosen skill           & \tdash & \featpref{Ride Specialization}              \\
@@ -796,41 +796,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[19]{Greater Resolute Defender} The bonuses from your \textit{resolute defender} ability increase to \plus2.
     \end{feat}
 
-    \begin{feat}{Heal Specialization}{Skill}
-        \featpre Heal as a mastered skill.
-
-        \ff[1]{Specialization} You gain a \plus3 bonus to the Heal skill.
-
-        \ff[4]{Healing Touch} You can use the \textit{healing touch} ability as a standard action.
-        \begin{freeability}{Healing Touch}[\glossterm{Life}]
-            \target{Yourself or a living \glossterm{ally} within \glossterm{reach}}
-            The target regains a \glossterm{hit point}.
-            If it is \glossterm{bloodied}, it regains two hit points instead of one.
-
-            \rankline
-            \featlevel{10} The number of hit points regained increases to two.
-            \featlevel{16} If the target is bloodied, it regains three hit points instead of two.
-        \end{freeability}
-
-        \ff[7]{Purging Touch} You can use the \textit{purging touch} ability as a standard action.
-        \begin{freeability}{Purging Touch}
-            Make a Heal check on an \glossterm{ally} you can touch.
-            For each poison and disease on the target, if your check result is at least 10 higher than the \glossterm{power} of the effect, the effect is removed.
-
-            \rankline
-            \featlevel{13} You can target any number of \glossterm{allies} within your reach.
-            \featlevel{19} You gain a \plus5 bonus to the check.
-        \end{freeability}
-
-        \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
-
-        \ff[13]{Lifesaver} You can use the \textit{first aid} ability as a \glossterm{minor action} (see \pcref{First Aid}).
-
-        \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus9.
-
-        \ff[19]{Greater Lifesaver} You can use the \textit{first aid} ability as a \glossterm{free action}.
-    \end{feat}
-
     \begin{feat}{Herbalist}{Skill}
         \featpre Knowledge (nature) as a mastered skill.
 
@@ -1045,6 +1010,41 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[16]{Equipment Training} You gain an additional \textit{equipment training} ability of your choice.
 
         \ff[19]{Greater Martial Power} The bonus from your \textit{martial power} ability increases to \plus2.
+    \end{feat}
+
+    \begin{feat}{Medicine Specialization}{Skill}
+        \featpre Medicine as a mastered skill.
+
+        \ff[1]{Specialization} You gain a \plus3 bonus to the Medicine skill.
+
+        \ff[4]{Healing Touch} You can use the \textit{healing touch} ability as a standard action.
+        \begin{freeability}{Healing Touch}[\glossterm{Life}]
+            \target{Yourself or a living \glossterm{ally} within \glossterm{reach}}
+            The target regains a \glossterm{hit point}.
+            If it is \glossterm{bloodied}, it regains two hit points instead of one.
+
+            \rankline
+            \featlevel{10} The number of hit points regained increases to two.
+            \featlevel{16} If the target is bloodied, it regains three hit points instead of two.
+        \end{freeability}
+
+        \ff[7]{Purging Touch} You can use the \textit{purging touch} ability as a standard action.
+        \begin{freeability}{Purging Touch}
+            Make a Medicine check on an \glossterm{ally} you can touch.
+            For each poison and disease on the target, if your check result is at least 10 higher than the \glossterm{power} of the effect, the effect is removed.
+
+            \rankline
+            \featlevel{13} You can target any number of \glossterm{allies} within your reach.
+            \featlevel{19} You gain a \plus5 bonus to the check.
+        \end{freeability}
+
+        \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
+
+        \ff[13]{Lifesaver} You can use the \textit{first aid} ability as a \glossterm{minor action} (see \pcref{First Aid}).
+
+        \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus9.
+
+        \ff[19]{Greater Lifesaver} You can use the \textit{first aid} ability as a \glossterm{free action}.
     \end{feat}
 
     \begin{feat}{Mental Magic}{Casting, Magical}

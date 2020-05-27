@@ -101,11 +101,10 @@ Rank 1 Focus/non-choice; Rank 3 non-Focus:
 * Single-target:
   * Deal std +1d/+1a in std range
   * Deal conditional std +2d/+2a in std range
-  * Heal std +1d in std range
+  * Heal one hit point in close range
   * r1 condition with r3 crit-only condition in std range
   * Deal std in long range
 * AOE:
-  * Heal std damage -2d to all within Med radius from you
   * Deal std to all within Med/10 line from you
   * Deal std to all within Med cone from you
   * Deal std to enemies within Small radius from you
@@ -133,6 +132,7 @@ Rank 3 Focus/non-choice; Rank 5 non-Focus:
   * Deal std in extreme range
   * r2 condition in std range
 * AOE:
+  * Heal one hit point to allies in Med radius from you
   * Deal std to all within Large/10 line from you
   * Deal std to all within Large cone from you
   * Deal std to all within Small radius in Med range
@@ -157,6 +157,7 @@ Rank 5 Focus/non-choice; Rank 7 non-Focus:
   * Deal std -1d in std range and apply r1 condition
   * r3 condition in close range
 * AOE:
+  * Heal two hit points to ally in Med range
   * Deal std to all within Huge/10 line from you
   * Deal std to all within Huge cone from you
   * Deal std to enemies within Large radius from you
