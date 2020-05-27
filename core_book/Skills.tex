@@ -69,9 +69,9 @@ This chapter describes each skill, including common uses for those skills.
                 Deduction         & \tdash   & C        & C        & \tdash   & C        & C        & C        & C        & C        & C        & C        & Int          \\
                 Devices           & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Int          \\
                 Disguise          & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Int          \\
-                Heal              & C        & C        & C        & \tdash   & C        & C        & C        & \tdash   & \tdash   & \tdash   & \tdash   & Int          \\
                 Knowledge         & \tdash   & C        & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & C        & C        & C        & Int          \\
                 Linguistics       & \tdash   & C        & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & C        & C        & C        & Int          \\
+                Medicine          & C        & C        & C        & \tdash   & C        & C        & C        & \tdash   & \tdash   & \tdash   & \tdash   & Int          \\
                 Awareness         & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Per          \\
                 Creature Handling & C        & \tdash   & C        & \tdash   & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & \tdash   & Per          \\
                 Sense Motive      & \tdash   & C        & \tdash   & \tdash   & \tdash   & C        & \tdash   & C        & \tdash   & C        & \tdash   & Per          \\
@@ -878,35 +878,6 @@ This chapter describes each skill, including common uses for those skills.
         \end{freeability}
 
 \newpage
-\skill{Heal}{Int}
-        The Heal skill allows you to tend to the injuries and afflictions of others.
-        In order to heal a creature, you must be able to see and touch it.
-
-    \subsection{Accelerate Recovery}\label{Accelerate Recovery}
-        You can make a \glossterm{difficulty rating} 10 Heal check to accelerate the recovery of up to four willing creatures during a \glossterm{long rest}.
-        Success means that each creature removes an additional \glossterm{vital wound} during the rest.
-        For every 10 points by which you succeed, each creature can removes an additional \glossterm{vital wound}.
-
-        To accelerate a creature's recovery, you need a few items and supplies (bandages, salves, and so on) that are easy to come by in civilized areas.
-        You can accelerate the recovery of additional creatures during the same rest by taking a cumulative \minus2 penalty per additional creature.
-
-    \subsection{First Aid}\label{First Aid}
-        As a standard action, you can make a Heal check to prevent a willing creature from dying from a \glossterm{vital wound} with a negative \glossterm{vital roll}.
-        The \glossterm{difficulty rating} is equal to 10 \add 10 for each point by which the vital roll is below -1.
-        Success means that the target treats the \glossterm{vital roll} as a 0 instead of its original value, which prevents it from dying.
-        For details, see \pcref{Vital Wounds}.
-
-    \subsection{Treat Poison or Disease}
-        You can make a Heal check to treat poison or disease in a character.
-        To resist the next attack by the poison or disease, it can use your Heal check or its Fortitude defense, whichever is higher.
-        Treating a poison takes a standard action. Treating a disease takes five minutes of work.
-
-    \subsection{Treat Condition}\label{Treat Condition}
-        As a standard action, you can make a Heal check to treat some specific conditions.
-        Success usually means the condition is gone, as indicated by the effect's description.
-        A condition cannot be removed by this ability unless says this ability can remove it.
-
-\newpage
 \skill{Intimidate}{Varies}
         The Intimidate skill represents your ability to intimidate and coerce people into doing what you want.
 
@@ -1026,6 +997,35 @@ This chapter describes each skill, including common uses for those skills.
     \subsection{Identify Language}
         You make a \glossterm{difficulty rating} 10 Linguistics check to identify the language used in speech or writing, even if you can't understand the language.
         For details about languages, see \pcref{Languages}.
+
+\newpage
+\skill{Medicine}{Int}
+        The Medicine skill allows you to tend to the injuries and afflictions of others.
+        In order to use this skill to aid a creature, you must be able to see and touch it.
+
+    \subsection{Accelerate Recovery}\label{Accelerate Recovery}
+        You can make a \glossterm{difficulty rating} 10 Medicine check to accelerate the recovery of up to four willing creatures during a \glossterm{long rest}.
+        Success means that each creature removes an additional \glossterm{vital wound} during the rest.
+        For every 10 points by which you succeed, each creature can removes an additional \glossterm{vital wound}.
+
+        To accelerate a creature's recovery, you need a few items and supplies (bandages, salves, and so on) that are easy to come by in civilized areas.
+        You can accelerate the recovery of additional creatures during the same rest by taking a cumulative \minus2 penalty per additional creature.
+
+    \subsection{First Aid}\label{First Aid}
+        As a standard action, you can make a Medicine check to prevent a willing creature from dying from a \glossterm{vital wound} with a negative \glossterm{vital roll}.
+        The \glossterm{difficulty rating} is equal to 10 \add 10 for each point by which the vital roll is below -1.
+        Success means that the target treats the \glossterm{vital roll} as a 0 instead of its original value, which prevents it from dying.
+        For details, see \pcref{Vital Wounds}.
+
+    \subsection{Treat Condition}\label{Treat Condition}
+        As a standard action, you can make a Medicine check to treat some specific conditions.
+        Success usually means the condition is gone, as indicated by the effect's description.
+        A condition cannot be removed by this ability unless says this ability can remove it.
+
+    \subsection{Treat Poison or Disease}
+        You can make a Medicine check to treat poison or disease in a character.
+        To resist the next attack by the poison or disease, it can use your Medicine check or its Fortitude defense, whichever is higher.
+        Treating a poison takes a standard action. Treating a disease takes five minutes of work.
 
 \newpage
 \skill{Perform}{Varies}
