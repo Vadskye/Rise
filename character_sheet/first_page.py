@@ -1,7 +1,7 @@
 from cgi_simple import (
     button, div, fieldset, flex_col, flex_row, flex_wrapper, freeform_number_input,
     labeled_number_input, labeled_text_input, number_input, sidelabel, span,
-    text_input, underlabel, underlabel_spaced, labeled_textarea
+    text_input, underlabel, underlabel_spaced, underlabeled_checkbox, labeled_textarea
 )
 from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS
 
@@ -16,6 +16,7 @@ def create_page(destination):
             statistics_header(destination),
             attacks(destination),
             abilities(destination),
+            tracking(destination),
         ]),
     ])
 
@@ -417,6 +418,57 @@ def attack(source):
             'Attack',
         ),
     ])
+
+def tracking(destination):
+    if destination == 'paper':
+        return div()
+    else:
+        return flex_col({'class': 'tracking'}, [
+            flex_wrapper(div({'class': 'section-header'}, 'Attuned Effects')),
+            fieldset(
+                {'class': f'repeating_attunements'},
+                attunement(),
+            ),
+            flex_wrapper(div({'class': 'section-header'}, 'Vital Wounds')),
+            fieldset(
+                {'class': f'repeating_vitalwounds'},
+                vital_wound(),
+            ),
+        ])
+
+def attunement():
+    return flex_row({'class': 'attunement'}, [
+        labeled_text_input(
+            'Name',
+            {'class': 'attunement-name'},
+            {'name': 'attunement_name'},
+        ),
+        labeled_text_input(
+            'Effect',
+            {'class': 'attunement-effect'},
+            {'name': 'attunement_effect'},
+        ),
+        underlabeled_checkbox(
+            'Active?',
+            None,
+            {'class': 'attunement-active', 'name': 'attunement_active'},
+        ),
+    ])
+
+def vital_wound():
+    return flex_row({'class': 'vital-wound'}, [
+        underlabel_spaced(
+            'Vital Roll',
+            number_input({'class': 'fake-text', 'name': 'vital_wound_roll'}),
+            {'class': 'vital-wound-roll'}
+        ),
+        labeled_text_input(
+            'Effect',
+            {'class': 'vital-wound-effect'},
+            {'name': 'vital_wound_effect'},
+        ),
+    ])
+
 
 def rise_title():
     return div(

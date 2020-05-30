@@ -340,3 +340,19 @@ def select(attributes=None, contents=None):
 
 def option(attributes=None, contents=None):
     return html_tag('option', attributes, contents)
+
+def checkbox(attributes=None):
+    attributes = attributes or dict()
+    attributes['type'] = 'checkbox'
+    return html_tag('input', attributes)
+
+def underlabeled_checkbox(label_text, attributes=None, input_attributes=None):
+    attributes = attributes or dict()
+    space_append(attributes, 'class', 'labeled-text-input')
+    return div(attributes, flex_col([
+        checkbox(input_attributes),
+        span(
+            {'class': 'under-label'},
+            label_text,
+        ),
+    ]))
