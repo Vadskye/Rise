@@ -5,7 +5,7 @@ export const skills: Creature.Skill[] = [
   "swim",
 
   // Dexterity
-  "acrobatics",
+  "agility",
   "flexibility",
   "ride",
   "sleight of hand",

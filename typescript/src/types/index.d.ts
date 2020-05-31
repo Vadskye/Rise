@@ -10,7 +10,7 @@ declare namespace Creature {
     | "swim"
 
     // Dexterity
-    | "acrobatics"
+    | "agility"
     | "flexibility"
     | "ride"
     | "sleight of hand"
