@@ -12,7 +12,7 @@ thaumaturgy=MysticSphere(
     short_description="Suppress and manipulate magical effects",
     cantrips=[
         Effects('Sense Magic', 'Yourself', """
-            You gain a +4 bonus to the Spellcraft skill until the end of the next round.
+            You gain a +4 bonus to the Spellsense skill until the end of the next round.
 
             \\rankline
             \\rank<3> The bonus increases to +6.
@@ -57,7 +57,7 @@ thaumaturgy=MysticSphere(
         """, tags=['Sustain (standard)']),
         Spell('Alter Magic Aura', 1, 'One Large or smaller magical object in \\rngmed range', """
             Make an attack vs. Mental against the target.
-            \\hit One of the target's magic auras is altered (see \pcref{Spellcraft}).
+            \\hit One of the target's magic auras is altered (see \\pcref<Spellsense>).
             You can change the \\glossterm<ability tags> the aura has.
             In addition, you can decrease the \\glossterm<power> of the aura by up to half your power, or increase the power of the aura up to a maximum of your power.
 
