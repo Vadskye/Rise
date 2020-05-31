@@ -18,14 +18,14 @@ export const skillAttributes: Record<keyof Creature.Skills, keyof Creature.Attri
   "deduction": "int",
   "devices": "int",
   "disguise": "int",
-  "heal": "int",
   "knowledge": "int",
   "linguistics": "int",
+  "medicine": "int",
 
   // Perception
   "awareness": "per",
   "creature handling": "per",
-  "sense motive": "per",
+  "social insight": "per",
   "spellcraft": "per",
   "survival": "per",
 
