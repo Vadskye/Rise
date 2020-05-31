@@ -31,7 +31,7 @@ declare namespace Creature {
     | "awareness"
     | "creature handling"
     | "social insight"
-    | "spellcraft"
+    | "spellsense"
     | "survival"
 
     // Willpower has no skills

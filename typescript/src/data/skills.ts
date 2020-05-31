@@ -26,7 +26,7 @@ export const skills: Creature.Skill[] = [
   "awareness",
   "creature handling",
   "social insight",
-  "spellcraft",
+  "spellsense",
   "survival",
 
   // Willpower has no skills
