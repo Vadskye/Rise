@@ -74,7 +74,7 @@ This chapter describes each skill, including common uses for those skills.
                 Medicine          & C        & C        & C        & \tdash   & C        & C        & C        & \tdash   & \tdash   & \tdash   & \tdash   & Int          \\
                 Awareness         & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Per          \\
                 Creature Handling & C        & \tdash   & C        & \tdash   & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & \tdash   & Per          \\
-                Sense Motive      & \tdash   & C        & \tdash   & \tdash   & \tdash   & C        & \tdash   & C        & \tdash   & C        & \tdash   & Per          \\
+                Social Insight    & \tdash   & C        & \tdash   & \tdash   & \tdash   & C        & \tdash   & C        & \tdash   & C        & \tdash   & Per          \\
                 Spellcraft        & \tdash   & C        & C        & \tdash   & C        & \tdash   & \tdash   & \tdash   & C        & C        & C        & Per          \\
                 Survival          & C        & \tdash   & C        & \tdash   & C        & \tdash   & C        & \tdash   & \tdash   & \tdash   & \tdash   & Per          \\
                 Deception         & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & \tdash\fn{1} \\
@@ -103,7 +103,7 @@ This chapter describes each skill, including common uses for those skills.
                     \tb{Task}                           & \tb{Skill (Key Ability)} & \tb{Opposing Skill (Key Ability)} \tableheaderrule
                     Create a forged artwork             & Craft (Int)              & Craft (Int) or Awareness (Per)       \\
                     Create a false map                  & Craft (Int)              & Craft (Int) or Knowledge (geography) \\
-                    Lie                                 & Deception (\tdash)       & Sense Motive (Per)                   \\
+                    Lie                                 & Deception (\tdash)       & Social Insight (Per)                   \\
                     Make a bully back down              & Intimidate (none)        & Special\fn{1}                        \\
                     Make someone look like someone else & Disguise (Int)           & Awareness (Per)                      \\
                     Sneak up on someone                 & Stealth (Dex)            & Awareness (Per)                      \\
@@ -140,8 +140,8 @@ This chapter describes each skill, including common uses for those skills.
     \subsubsection{Hidden Tasks}\label{Hidden Tasks}
         Some \glossterm{tasks} are called \glossterm{hidden tasks}, and are marked with a [Hidden] tag in the task name.
         These tasks rely on hidden information that you should not have access to.
-        For example, you can make a Sense Motive check to identify whether a creature is lying.
-        If you are told to make a Sense Motive check when a creature talks, you can deduce that it is probably lying regardless of the success or failure of the check.
+        For example, you can make a Social Insight check to identify whether a creature is lying.
+        If you are told to make a Social Insight check when a creature talks, you can deduce that it is probably lying regardless of the success or failure of the check.
         To solve this issue, any checks for hidden tasks should be made secretly by the GM.\@
         Usually, you should not even know that you made a check unless you learn a result from it.
 
@@ -357,12 +357,12 @@ This chapter describes each skill, including common uses for those skills.
         Success means you remain unobserved.
         Failure means the person looking for you finds you.
 
-        If you act differently from the crowd you are trying to blend in with, anyone observing you gets a \plus5 bonus to find you. You may need to make Awareness or Sense Motive checks to figure out how to act, depending on the situation. If you are extremely dissimilar from the crowd, such as a naked person in a temple or a human among halflings, anyone observing you may gain a \plus10 or greater bonus to find you.
+        If you act differently from the crowd you are trying to blend in with, anyone observing you gets a \plus5 bonus to find you. You may need to make Awareness or Social Insight checks to figure out how to act, depending on the situation. If you are extremely dissimilar from the crowd, such as a naked person in a temple or a human among halflings, anyone observing you may gain a \plus10 or greater bonus to find you.
 
     \subsection{Distract}\label{Distract}
         As a standard action, you can make a Deception check to distract a creature you are interacting with.
-        Your Deception check is opposed by your target's Sense Motive check.
-        Success means they take a \minus5 penalty to the Awareness and Sense Motive skills against targets other than you until the end of the next round.
+        Your Deception check is opposed by your target's Social Insight check.
+        Success means they take a \minus5 penalty to the Awareness and Social Insight skills against targets other than you until the end of the next round.
         Failure means they take no penalty, and realize you were trying to distract them.
         You can continue distracting the target by using this ability against them each round.
         The \glossterm{difficulty rating} increases by 2 for each consecutive round that you have distracted the same creature.
@@ -376,7 +376,7 @@ This chapter describes each skill, including common uses for those skills.
     \subsection{Impersonate}\label{Impersonate}
         When you are pretending to be another creature, you can assume the mannerisms and speech patterns of the creature you are impersonating.
         To do so, you must make a Deception check.
-        Anyone observing you can oppose your check with a Sense Motive check to identify the impersonation (see the \textit{identify disguise} ability, page \pref{Identify Disguise}).
+        Anyone observing you can oppose your check with a Social Insight check to identify the impersonation (see the \textit{identify disguise} ability, page \pref{Identify Disguise}).
         If you succeed, the observer thinks your impersonation is accurate.
         If you critically succeed, they also take a \minus5 penalty to any other check to see through your impersonation, such as to notice a flawed disguise.
         If they succeed, they notice inconsistencies or mistakes in your impersonation, and may realize you are not what you seem.
@@ -393,18 +393,18 @@ This chapter describes each skill, including common uses for those skills.
 
     \subsection{Lie}
         As a free action, when you say something which you know is untrue, you can make a Deception check to avoid revealing your deception.
-        Anyone observing you lie can oppose your check with a Sense Motive check.
+        Anyone observing you lie can oppose your check with a Social Insight check.
         If you succeed, the observer does not notice any indication that you are lying.
         If they succeed, they realize that you are lying.
 
-        A creature that fails its Sense Motive check may choose not to believe you for other reasons.
+        A creature that fails its Social Insight check may choose not to believe you for other reasons.
         This check only prevents a creature from recognizing the lie based on your body language and behavior.
         To convince creatures to believe or take actions based on lies, you need the Persuasion skill (see \pcref{Compel Belief}).
 
     \subsection{Secret Message}
         As part of normal speech, you can make a Deception check to attempt to convey a hidden message to another character without others understanding it using codes, metaphors, and similar misdirection tools. The \glossterm{difficulty rating} is 10 for simple messages and 15 for complex messages. If the message contains completely new information, the \glossterm{difficulty rating} increases by 5. You can freely increase the \glossterm{difficulty rating} to make the message more difficult to intercept, but doing so also makes it more difficult for the intended recipient to interpret.
 
-        Anyone witnessing the exchange may make a Sense Motive check against the same \glossterm{difficulty rating} to identify the hidden message.
+        Anyone witnessing the exchange may make a Social Insight check against the same \glossterm{difficulty rating} to identify the hidden message.
         Creatures who know your system for conveying hidden messages -- normally, the intended recipient -- receive a \plus10 bonus.
         Creatures who know in advance that a message will be conveyed also receive a \plus5 bonus on this check.
 
@@ -681,7 +681,7 @@ This chapter describes each skill, including common uses for those skills.
             When you use this ability, you can decide to trust your own observations, your own knowledge, or both.
 
             If you trust your own observations, and the deduction requires making observations, your Deduction modifier on the check is limited to be no greater than your modifier with the skill used to make observations.
-            This skill is typically Awareness or Sense Motive.
+            This skill is typically Awareness or Social Insight.
             If you trust your own knowledge, and the deduction requires knowledge, your Deduction modifier on the check is limited to be no greater than twice your Knowledge modifier with any relevant knowledge.
             If you trust both your observations and your knowledge, both limits apply.
 
@@ -1089,7 +1089,7 @@ This chapter describes each skill, including common uses for those skills.
 
         Persuasion checks are usually made against a group. For the purposes of a Persuasion check, a ``group'' consists of creatures who consider themselves to be \glossterm{allies} and who share similar information or backgrounds. For example, in a king's court, you cannot simply influence the king alone; his trusted advisors are also part of the same group. It is possible to influence one group without influencing another. For example, the king and his advisors may be unpersuaded, but the prince may find your arguments compelling. Groups can also consist of a single creature. The game master decides what the groups are.
 
-        The base \glossterm{difficulty rating} for a Persuasion check against a group is equal to 5 \add the highest level of any character in the group or the highest Sense Motive of any character in the group, whichever is higher.
+        The base \glossterm{difficulty rating} for a Persuasion check against a group is equal to 5 \add the highest level of any character in the group or the highest Social Insight of any character in the group, whichever is higher.
 
         Not all social interactions require Persuasion checks. Much of the time, being extraordinarily persuasive is unnecessary, and creatures can be convinced with normal, inartful conversation and good reasoning. Persuasion checks should only be used when your personal persuasiveness matters.
 
@@ -1229,44 +1229,6 @@ This chapter describes each skill, including common uses for those skills.
         If it lacks a saddle and other riding gear, the \glossterm{difficulty rating} to ride it increases by 5. If it takes a standard action other than movement, such as attacking, the \glossterm{difficulty rating} to ride it that round increases by 5.
 
 \newpage
-\skill{Sense Motive}{Per}
-        The Sense Motive skill represents your ability to read body language and emotion.
-        Most Sense Motive tasks are \glossterm{hidden tasks}.
-
-    \subsection{Discern Enchantment [Hidden]}
-        When you interact with a creature, you can try to notice whether it is affected by mind-affecting abilities with a Sense Motive check.
-        If the creature is not affected by any such abilities, the check automatically fails.
-        If the creature is affected by Compulsion or Emotion effects that are not currently altering its behavior, the check also automatically fails.
-        If the creature's behavior is currently being altered by a \glossterm{Compulsion} effect, the \glossterm{difficulty rating} is 10, and success means you identify the presence of a Compulsion effect.
-        If the creature's behavior is currently being altered by an \glossterm{Emotion} effect, the \glossterm{difficulty rating} is 20, and success means you identify the presence of an Emotion effect.
-        Failure means you do not notice any such effects on the creature.
-
-        You can also make this check to identify \glossterm{Subtle} effects on yourself, using the same \glossterm{difficulty ratings}.
-
-    \subsection{Discern Lies [Hidden]}
-        When you observe a creature speak, you can make a Sense Motive check.
-        The \glossterm{difficulty rating} is equal to the speaking creature's Deception check result.
-        Success means you identify whether the creature was lying.
-        Failure means you do not notice any indication that the creature is lying.
-
-    \subsection{Discern Secret Message}
-        When you observe a hidden message being conveyed, you can make a Sense Motive check.
-        The \glossterm{difficulty rating} is equal to the \glossterm{difficulty rating} of the secret message (see \pcref{Deception}).
-        Success means you recognize that a hidden message is present, but not its contents.
-        Critical success means you can understand the message.
-        Failure means you don't notice the hidden message.
-
-    \subsection{Social Assessment}\label{Social Assessment}
-        You can make a \glossterm{difficulty rating} 5 Sense Motive check to get a general assessment of a social situation.
-        This does not take an action by itself, but you must observe the group for at least a minute.
-        Success means you learn a piece of useful information about the situation, such as a general understanding of expected behaviors or a rough understanding of the social hierarchy.
-        For every 5 points by which you beat the \glossterm{difficulty rating}, you gain an additional insight into the situation.
-
-        You can make a social assessment after only a single round of observation, but you take a \minus10 penalty on the check.
-        If you don't understand the language the group is using, you take a \minus10 penalty on the check.
-        The information gained at a given \glossterm{difficulty rating} may vary in usefulness depending on how obvious or subtle the situation is.
-
-\newpage
 \skill{Sleight of Hand}{Dex}
 
         The Sleight of Hand skill represents your ability to pick pockets, palm objects, and perform other feats of legerdemain.
@@ -1305,6 +1267,44 @@ This chapter describes each skill, including common uses for those skills.
 
     \subsection{Pickpocket}
         You can make a Sleight of Hand check as a standard action to steal an object from another creature. The object must be loose and accessible, such as in a pocket. The \glossterm{difficulty rating} depends on whether the creature notices your attempt using Awareness. If the creature's Awareness check exceeds your Sleight of Hand check, the creature notices your attempt and the \glossterm{difficulty rating} is equal to the creature's Reflex defense. Otherwise, the creature does not notice your attempt, and the \glossterm{difficulty rating} is 10. Success means you successfully steal the object. Failure means you do not steal the object.
+
+\newpage
+\skill{Social Insight}{Per}
+        The Social Insight skill represents your ability to read body language and emotion.
+        Most Social Insight tasks are \glossterm{hidden tasks}.
+
+    \subsection{Discern Enchantment [Hidden]}
+        When you interact with a creature, you can try to notice whether it is affected by mind-affecting abilities with a Social Insight check.
+        If the creature is not affected by any such abilities, the check automatically fails.
+        If the creature is affected by Compulsion or Emotion effects that are not currently altering its behavior, the check also automatically fails.
+        If the creature's behavior is currently being altered by a \glossterm{Compulsion} effect, the \glossterm{difficulty rating} is 10, and success means you identify the presence of a Compulsion effect.
+        If the creature's behavior is currently being altered by an \glossterm{Emotion} effect, the \glossterm{difficulty rating} is 20, and success means you identify the presence of an Emotion effect.
+        Failure means you do not notice any such effects on the creature.
+
+        You can also make this check to identify \glossterm{Subtle} effects on yourself, using the same \glossterm{difficulty ratings}.
+
+    \subsection{Discern Lies [Hidden]}
+        When you observe a creature speak, you can make a Social Insight check.
+        The \glossterm{difficulty rating} is equal to the speaking creature's Deception check result.
+        Success means you identify whether the creature was lying.
+        Failure means you do not notice any indication that the creature is lying.
+
+    \subsection{Discern Secret Message}
+        When you observe a hidden message being conveyed, you can make a Social Insight check.
+        The \glossterm{difficulty rating} is equal to the \glossterm{difficulty rating} of the secret message (see \pcref{Deception}).
+        Success means you recognize that a hidden message is present, but not its contents.
+        Critical success means you can understand the message.
+        Failure means you don't notice the hidden message.
+
+    \subsection{Social Assessment}\label{Social Assessment}
+        You can make a \glossterm{difficulty rating} 5 Social Insight check to get a general assessment of a social situation.
+        This does not take an action by itself, but you must observe the group for at least a minute.
+        Success means you learn a piece of useful information about the situation, such as a general understanding of expected behaviors or a rough understanding of the social hierarchy.
+        For every 5 points by which you beat the \glossterm{difficulty rating}, you gain an additional insight into the situation.
+
+        You can make a social assessment after only a single round of observation, but you take a \minus10 penalty on the check.
+        If you don't understand the language the group is using, you take a \minus10 penalty on the check.
+        The information gained at a given \glossterm{difficulty rating} may vary in usefulness depending on how obvious or subtle the situation is.
 
 \newpage
 \skill{Spellcraft}{Per}
@@ -1369,7 +1369,7 @@ This chapter describes each skill, including common uses for those skills.
     \subsection{Blend In}
         You can make a Stealth check to blend in with a crowd. Your Stealth check is opposed by the Awareness checks of anyone looking for you. Success means you remain unobserved. Failure means the person looking for you found you.
 
-        If you act differently from the crowd you are trying to blend in with, anyone observing you gets a \plus5 bonus to find you. You may need to make Awareness or Sense Motive checks to figure out how to act, depending on the situation. If you are extremely dissimilar from the crowd, such as a naked person in church or a human among halflings, anyone observing you may gain a \plus10 or greater bonus to find you.
+        If you act differently from the crowd you are trying to blend in with, anyone observing you gets a \plus5 bonus to find you. You may need to make Awareness or Social Insight checks to figure out how to act, depending on the situation. If you are extremely dissimilar from the crowd, such as a naked person in church or a human among halflings, anyone observing you may gain a \plus10 or greater bonus to find you.
 
     \subsection{Hide [Hidden]}
         As part of movement, or as a \glossterm{move action} if you want to hide in place, you can make a Stealth check to hide so people can't see you.

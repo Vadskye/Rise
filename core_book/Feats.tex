@@ -111,8 +111,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featref{Perform Specialization}           & Mastered Perform            & Improve use of chosen skill           & \tdash & \featpref{Perform Specialization}           \\
         \featref{Persuasion Specialization}        & Mastered Persuasion         & Improve use of chosen skill           & \tdash & \featpref{Persuasion Specialization}        \\
         \featref{Ride Specialization}              & Mastered Ride               & Improve use of chosen skill           & \tdash & \featpref{Ride Specialization}              \\
-        \featref{Sense Motive Specialization}      & Mastered Sense Motive       & Improve use of chosen skill           & \tdash & \featpref{Sense Motive Specialization}      \\
         \featref{Sleight of Hand Specialization}   & Mastered Sleight of Hand    & Improve use of chosen skill           & \tdash & \featpref{Sleight of Hand Specialization}   \\
+        \featref{Social Insight Specialization}      & Mastered Social Insight       & Improve use of chosen skill           & \tdash & \featpref{Social Insight Specialization}      \\
         \featref{Spellcraft Specialization}        & Mastered Spellcraft         & Improve use of chosen skill           & \tdash & \featpref{Spellcraft Specialization}        \\
         \featref{Stealth Specialization}           & Mastered Stealth            & Improve use of chosen skill           & \tdash & \featpref{Stealth Specialization}           \\
         \featref{Survival Specialization}          & Mastered Survival           & Improve use of chosen skill           & \tdash & \featpref{Survival Specialization}          \\
@@ -1472,37 +1472,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[19]{Supreme Brute Force} The accuracy bonus from your \textit{brute force} ability increases to \plus6.
     \end{feat}
 
-    \begin{feat}{Sense Motive Specialization}{Skill}
-        \featpre Sense Motive as a mastered skill.
-
-        \ff[1]{Specialization} You gain a \plus3 bonus to the Sense Motive skill.
-
-        \ff[4]{Social Intuition} You take no penalty for making a social assessment ability after only a single round of observation (see \pcref{Social Assessment}).
-
-        \ff[7]{Read Mind}[Magical] You can use the \textit{read mind} ability as a standard action.
-        \begin{freeability}{Read Mind}[\glossterm{Emotion}, \glossterm{Sustain} (minor)]
-            Make an attack vs. Mental against a creature within \rngclose range.
-            Your \glossterm{accuracy} is equal to your Sense Motive skill.
-            \hit You know the target's current emotions.
-            This grants you a \plus2 bonus to Deception, Persuasion, and Intimidate attacks and checks against the target.
-            \crit You know the target's surface thoughts.
-            This grants you a \plus5 bonus to Deception, Persuasion, and Intimidate attacks and checks against the target.
-
-            \rankline
-            \featlevel{13} The range increases to \rnglong range.
-            \featlevel{19} You can use this ability as a \glossterm{minor action}.
-        \end{freeability}
-
-        \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
-
-        \ff[13]{Truthsense} Whenever a creature within a \arealarge radius \glossterm{emanation} from you that you can hear and see speaks the truth with no attempt at evasion, concealment, or creative wording, you automatically recognize that.
-        You do not recognize truth in this way if a creature is using the Deception skill in any way, even if it is speaking the truth.
-
-        \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus9.
-
-        \ff[19]{Greater Truthsense} The area of your \textit{truthsense} ability increases to a 200 foot radius.
-    \end{feat}
-
     \begin{feat}{Sleight of Hand Specialization}{Skill}
         \featpre Sleight of Hand as a mastered skill.
 
@@ -1553,6 +1522,37 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[16]{Supreme Distance Tolerance} The penalty reduction from your \textit{distance tolerance} ability increases to 3.
 
         \ff[19]{Sniper's Precision} You gain a \plus1 bonus to \glossterm{accuracy}.
+    \end{feat}
+
+    \begin{feat}{Social Insight Specialization}{Skill}
+        \featpre Social Insight as a mastered skill.
+
+        \ff[1]{Specialization} You gain a \plus3 bonus to the Social Insight skill.
+
+        \ff[4]{Social Intuition} You take no penalty for making a social assessment ability after only a single round of observation (see \pcref{Social Assessment}).
+
+        \ff[7]{Read Mind}[Magical] You can use the \textit{read mind} ability as a standard action.
+        \begin{freeability}{Read Mind}[\glossterm{Emotion}, \glossterm{Sustain} (minor)]
+            Make an attack vs. Mental against a creature within \rngclose range.
+            Your \glossterm{accuracy} is equal to your Social Insight skill.
+            \hit You know the target's current emotions.
+            This grants you a \plus2 bonus to Deception, Persuasion, and Intimidate attacks and checks against the target.
+            \crit You know the target's surface thoughts.
+            This grants you a \plus5 bonus to Deception, Persuasion, and Intimidate attacks and checks against the target.
+
+            \rankline
+            \featlevel{13} The range increases to \rnglong range.
+            \featlevel{19} You can use this ability as a \glossterm{minor action}.
+        \end{freeability}
+
+        \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
+
+        \ff[13]{Truthsense} Whenever a creature within a \arealarge radius \glossterm{emanation} from you that you can hear and see speaks the truth with no attempt at evasion, concealment, or creative wording, you automatically recognize that.
+        You do not recognize truth in this way if a creature is using the Deception skill in any way, even if it is speaking the truth.
+
+        \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus9.
+
+        \ff[19]{Greater Truthsense} The area of your \textit{truthsense} ability increases to a 200 foot radius.
     \end{feat}
 
     \begin{feat}{Spellcraft Specialization}{Skill}
@@ -1878,7 +1878,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         When you gain access to new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
         \ff[4]{Subtle Influence} You gain a \plus2 bonus to \glossterm{accuracy} with spells from the Delusion mystic sphere against \glossterm{unaware} creatures.
-        In addition, the \glossterm{difficulty rating} to identify your \glossterm{Emotion} abilities with Spellcraft, and to identify their effects with the Sense Motive skill, increases by 5.
+        In addition, the \glossterm{difficulty rating} to identify your \glossterm{Emotion} abilities with Spellcraft, and to identify their effects with the Social Insight skill, increases by 5.
 
         \ff[7]{Delusion Focus} You gain a \plus1 bonus to \glossterm{accuracy} with abilities from the \sphere{Delusion} \glossterm{mystic sphere}.
 
@@ -2026,7 +2026,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Spell} You learn a spell from the \sphere{Revelation} \glossterm{mystic sphere}.
         When you gain access to new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[4]{Truthsense} You gain a \plus2 \glossterm{magic bonus} to all Knowledge skills and the Sense Motive skill.
+        \ff[4]{Truthsense} You gain a \plus2 \glossterm{magic bonus} to all Knowledge skills and the Social Insight skill.
 
         \ff[7]{Revelation Focus} You gain a \plus1 bonus to \glossterm{accuracy} with abilities from the \sphere{Revelation} \glossterm{mystic sphere}.
 

@@ -18,14 +18,14 @@ export const skills: Creature.Skill[] = [
   "deduction",
   "devices",
   "disguise",
-  "heal",
   "knowledge",
   "linguistics",
+  "medicine",
 
   // Perception
   "awareness",
   "creature handling",
-  "sense motive",
+  "social insight",
   "spellcraft",
   "survival",
 
