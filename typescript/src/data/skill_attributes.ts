@@ -6,7 +6,7 @@ export const skillAttributes: Record<keyof Creature.Skills, keyof Creature.Attri
 
   // Dexterity
   "acrobatics": "dex",
-  "escape artist": "dex",
+  "flexibility": "dex",
   "ride": "dex",
   "sleight of hand": "dex",
   "stealth": "dex",

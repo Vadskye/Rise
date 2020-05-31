@@ -40,7 +40,7 @@ aquamancy=MysticSphere(
             \\rank<7> The volume affected increases to fifty gallons.
         """, tags=['Manifestation']),
         Effects('Slippery Escape', 'Yourself', """
-            You gain a +4 bonus to the Escape Artist skill until the end of the next round.
+            You gain a +4 bonus to the Flexibility skill until the end of the next round.
 
             \\rankline
             \\rank<3> The bonus increases to +6.
@@ -198,7 +198,7 @@ aquamancy=MysticSphere(
             This has the following effects:
             \\begin<itemize>
                 \\item You gain a \\glossterm<swim speed> equal to your \\glossterm<base speed>
-                \\item You gain a +8 \\glossterm<magic bonus> to the Escape Artist skill
+                \\item You gain a +8 \\glossterm<magic bonus> to the Flexibility skill
                 \\item You are immune to \\glossterm<critical hits> from \\glossterm<strikes>
                 \\item Your \\glossterm<wound resistance> against \\glossterm<physical damage> is halved.
             \\end<itemize>

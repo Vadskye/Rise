@@ -12,7 +12,7 @@ ATTRIBUTE_SHORTHAND = {
 }
 ATTRIBUTE_SKILLS = {
     'strength': 'Climb Jump Swim'.split(),
-    'dexterity': ['Acrobatics', 'Escape Artist', 'Ride', 'Sleight of Hand', 'Stealth'],
+    'dexterity': ['Acrobatics', 'Flexibility', 'Ride', 'Sleight of Hand', 'Stealth'],
     'constitution': ['Endurance'],
     'intelligence': ['Craft _________', 'Deduction', 'Devices', 'Disguise', 'Knowledge _______', 'Knowledge ________', 'Linguistics', 'Medicine'],
     'perception': ['Awareness', 'Creature Handling', 'Social Insight', 'Spellcraft', 'Survival'],
@@ -21,7 +21,7 @@ ATTRIBUTE_SKILLS = {
 }
 
 ALL_SKILLS = ['Awareness', 'Balance', 'Deception', 'Climb', 'Craft', 'Creature Handling',
-              'Devices', 'Disguise', 'Escape Artist', 'Endurance', 'Intimidate', 'Jump',
+              'Devices', 'Disguise', 'Flexibility', 'Endurance', 'Intimidate', 'Jump',
               'Knowledge', 'Linguistics', 'Medicine', 'Perform', 'Persuasion',
               'Ride', 'Social Insight', 'Sleight of Hand', 'Spellcraft', 'Sprint',
               'Stealth', 'Survival', 'Swim', 'Tumble']

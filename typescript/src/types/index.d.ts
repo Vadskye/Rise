@@ -11,7 +11,7 @@ declare namespace Creature {
 
     // Dexterity
     | "acrobatics"
-    | "escape artist"
+    | "flexibility"
     | "ride"
     | "sleight of hand"
     | "stealth"
