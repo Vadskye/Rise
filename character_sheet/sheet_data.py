@@ -15,7 +15,7 @@ ATTRIBUTE_SKILLS = {
     'dexterity': ['Agility', 'Flexibility', 'Ride', 'Sleight of Hand', 'Stealth'],
     'constitution': ['Endurance'],
     'intelligence': ['Craft _________', 'Deduction', 'Devices', 'Disguise', 'Knowledge _______', 'Knowledge ________', 'Linguistics', 'Medicine'],
-    'perception': ['Awareness', 'Creature Handling', 'Social Insight', 'Spellcraft', 'Survival'],
+    'perception': ['Awareness', 'Creature Handling', 'Social Insight', 'Spellsense', 'Survival'],
     'willpower': [],
     'other': ['Deception', 'Intimidate', 'Perform _________', 'Persuasion'],
 }
@@ -23,7 +23,7 @@ ATTRIBUTE_SKILLS = {
 ALL_SKILLS = ['Awareness', 'Balance', 'Deception', 'Climb', 'Craft', 'Creature Handling',
               'Devices', 'Disguise', 'Flexibility', 'Endurance', 'Intimidate', 'Jump',
               'Knowledge', 'Linguistics', 'Medicine', 'Perform', 'Persuasion',
-              'Ride', 'Social Insight', 'Sleight of Hand', 'Spellcraft', 'Sprint',
+              'Ride', 'Social Insight', 'Sleight of Hand', 'Spellsense', 'Sprint',
               'Stealth', 'Survival', 'Swim', 'Tumble']
 
 ROLL20_CALC = {
