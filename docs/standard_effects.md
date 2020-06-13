@@ -83,16 +83,16 @@ condition".
 
 Rank 1 non-Focus:
 * AOE:
-  * Deal std to all in Small cone
-  * Deal std to all within Small/5 line
+  * Deal std -1d to all in Small cone
+  * Deal std -1d to all within Small/5 line
   * Deal std to 2 in reach
   * Deal std -1a to any number in reach
   * Deal std -1a/-1d to all within Med cone or Med/10 line
 
 Rank 2 non-Focus:
 * AOE:
-  * Deal std to all within Med/5 line
-  * Deal std to all within Small radius from you?
+  * Deal std -1d to all within Med/5 line
+  * Deal std -1d to all within Small radius from you?
 
 Rank 1 Focus/non-choice; Rank 3 non-Focus:
 * Self-only:
@@ -105,9 +105,9 @@ Rank 1 Focus/non-choice; Rank 3 non-Focus:
   * r1 condition with r3 crit-only condition in std range
   * Deal std in long range
 * AOE:
-  * Deal std to all within Med/10 line from you
-  * Deal std to all within Med cone from you
-  * Deal std to enemies within Small radius from you
+  * Deal std -1d to all within Med/10 line from you
+  * Deal std -1d to all within Med cone from you
+  * Deal std -1d to enemies within Small radius from you
 
 Rank 2 Focus/non-choice; Rank 4 non-Focus:
 * Special notes
@@ -121,9 +121,9 @@ Rank 2 Focus/non-choice; Rank 4 non-Focus:
 * Single-target:
   * Deal std +2d to 1 in melee range
 * AOE:
-  * Deal std to all within Large/5 line from you
-  * Deal std to all within Med/5 line entirely within Close range
-  * Deal std to all within Small radius in Close range
+  * Deal std -1d to all within Large/5 line from you
+  * Deal std -1d to all within Med/5 line entirely within Close range
+  * Deal std -1d to all within Small radius in Close range
 
 Rank 3 Focus/non-choice; Rank 5 non-Focus:
 * Spells only:
@@ -133,10 +133,10 @@ Rank 3 Focus/non-choice; Rank 5 non-Focus:
   * r2 condition in std range
 * AOE:
   * Heal one hit point to allies in Med radius from you
-  * Deal std to all within Large/10 line from you
-  * Deal std to all within Large cone from you
-  * Deal std to all within Small radius in Med range
-  * Deal std to enemies within Med radius from you
+  * Deal std -1d to all within Large/10 line from you
+  * Deal std -1d to all within Large cone from you
+  * Deal std -1d to all within Small radius in Med range
+  * Deal std -1d to enemies within Med radius from you
 
 Rank 4 Focus/non-choice; Rank 6 non-Focus:
 * Shared:
@@ -145,9 +145,9 @@ Rank 4 Focus/non-choice; Rank 6 non-Focus:
   * r2 condition with r4 crit-only condition in std range
 * AOE:
   * Remove condition from non-self in Med radius from you
-  * Deal std to all within Large/15 line from you
-  * Deal std to all within Large/5 line entirely within Med range
-  * Deal std to all within Med radius in Close range
+  * Deal std -1d to all within Large/15 line from you
+  * Deal std -1d to all within Large/5 line entirely within Med range
+  * Deal std -1d to all within Med radius in Close range
 * Maneuvers only:
 * AOE: see 3rd level spell AOE
 
@@ -158,10 +158,10 @@ Rank 5 Focus/non-choice; Rank 7 non-Focus:
   * r3 condition in close range
 * AOE:
   * Heal two hit points to ally in Med range
-  * Deal std to all within Huge/10 line from you
-  * Deal std to all within Huge cone from you
-  * Deal std to enemies within Large radius from you
-  * Deal std to all within Med radius in Med range
+  * Deal std -1d to all within Huge/10 line from you
+  * Deal std -1d to all within Huge cone from you
+  * Deal std -1d to enemies within Large radius from you
+  * Deal std -1d to all within Med radius in Med range
 
 Rank 6 Focus/non-choice; Rank 8 non-Focus:
 * Shared:
@@ -169,19 +169,19 @@ Rank 6 Focus/non-choice; Rank 8 non-Focus:
   * Deal std damage -1d and r2 condition in std range
   * r3 condition in std range
 * AOE:
-  * Deal std to all within Huge radius from you
-  * Deal std to all within Huge/15 line from you
+  * Deal std -1d to all within Huge radius from you
+  * Deal std -1d to all within Huge/15 line from you
 
 Rank 7 Focus:
 * Shared:
 * Single-target:
   * Deal std in std range and apply r1 condition
 * AOE:
-  * Deal std to all within Huge/20 line from you
-  * Deal std to all within Ext/10 line from you
-  * Deal std to all within Med radius in Long range
-  * Deal std to all within Large radius in Med range
-  * Deal std to enemies within Huge radius from you
+  * Deal std -1d to all within Huge/20 line from you
+  * Deal std -1d to all within Ext/10 line from you
+  * Deal std -1d to all within Med radius in Long range
+  * Deal std -1d to all within Large radius in Med range
+  * Deal std -1d to enemies within Huge radius from you
 
 Rank 8 Focus:
 * Shared:
