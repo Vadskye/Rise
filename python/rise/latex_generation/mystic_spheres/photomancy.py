@@ -159,17 +159,20 @@ photomancy=MysticSphere(
             \\rank<5> The bonus increases to +6.
             \\rank<7> The bonus increases to +8.
         """, tags=['Attune (target)', 'Sensation', 'Visual']),
-        Spell('Mirror Image', 3, 'Yourself', """
-            Four illusory duplicates appear around you that mirror your every move.
+        Spell('Mirror Image', 1, 'Yourself', """
+            Two illusory duplicates appear around you that mirror your every move.
             The duplicates shift chaotically in your space, making it difficult to identify your real location.
 
             All \\glossterm<targeted> against you have a 50\\% miss chance.
+            Like other miss chances, this miss chance is rolled before determining whether the attack beats your defenses.
             When an attack misses in this way, it affects an image, destroying it.
+            When the last image is destroyed, this ability provides no further benefit.
             This ability provides no defensive benefit against creatures immune to \\glossterm<Visual> abilities.
 
             \\rankline
-            \\rank<5> At the end of each round, if no images were destroyed that round, a destroyed image respawns.
-            \\rank<7> At the end of each round, a destroyed image respawns.
+            \\rank<3> The spell creates three duplicates.
+            \\rank<5> The spell creates four duplicates.
+            \\rank<7> The spell creates five duplicates.
         """, tags=['Attune (self)', 'Sensation', 'Visual']),
         Spell('Displacement', 8, 'Yourself', """
             Your image appears to be two to three feet from its real location.
