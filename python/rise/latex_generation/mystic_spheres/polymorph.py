@@ -3,13 +3,13 @@ from rise.latex.spell import Spell
 from rise.latex.effects import Effects
 
 
-# Primary: damage
-# Secondary: buff
-# Tertiary: utility
-# None: debuff
+# Primary: buff
+# Secondary: utility
+# Tertiary: debuff, damage
+# None: none
 polymorph=MysticSphere(
     name="Polymorph",
-    short_description="Change the physical forms of objects and creatures",
+    short_description="Change the physical shape or outward form of objects and creatures",
     cantrips=[
         Effects('Alter Object', 'Unattended, nonmagical object you can touch', """
             You make a Craft check to alter the target (see \\pcref<Craft>), except that you do not need any special tools to make the check (such as an anvil and furnace).
@@ -26,24 +26,6 @@ polymorph=MysticSphere(
     ],
     lists=['Arcane', 'Nature', 'Pact'],
     spells=[
-        Spell('Neutralize Poison', 1, 'Yourself or one target within \\rngmed range', """
-            The target gains an additional success to resist a poison currently affecting it (see \\pcref<Poisons>).
-
-            \\rankline
-            \\rank<3> The number of additional successes increases to two.
-            \\rank<5> The number of additional successes increases to three, which is enough to remove most poisons immediately.
-            \\rank<7> The target can also gain the same number of successes to remove an additional poison affecting it.
-        """, tags=[]),
-        Spell('Intensify Poison', 3, 'One living creature within \\rngmed range', """
-            Make an attack vs. Fortitude with a +2 bonus to \\glossterm<accuracy> against the target.
-            If the target is not currently poisoned, this ability has no effect.
-            \\hit Choose a poison affecting the target.
-            The poison gains an additional hit against the target, which can have varying effects depending on the poison (see \\pcref<Poisons>).
-
-            \\rankline
-            \\rank<5> The accuracy bonus increases to +3.
-            \\rank<7> The accuracy bonus increases to +4.
-        """, tags=[]),
         Spell('Natural Weapon', 1, 'Yourself', """
             You gain your choice of one of the following \\glossterm<natural weapons>: bite, claw, constrict, gore, ram, slam, or talon.
             For details, see \\tref<Natural Weapons>.
@@ -79,16 +61,6 @@ polymorph=MysticSphere(
             \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=[]),
-        Spell('Fleshbite', 1, 'One creature within \\rngmed range', """
-            Make an attack vs. Fortitude against the target.
-            \\hit The target is \\glossterm<sickened> as a \\glossterm<condition>.
-            \\crit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
-
-            \\rankline
-            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<5> The accuracy bonus increases to +2.
-            \\rank<7> The accuracy bonus increases to +3.
-        """, tags=[]),
         Spell('Shrink', 1, 'Yourself or one Small or larger \\glossterm<ally> within \\rngmed range', """
             The target's size decreases by one \\glossterm<size category>.
             This decreases its \\glossterm<base speed> and improves its \\glossterm<Stealth> skill.
@@ -102,30 +74,15 @@ polymorph=MysticSphere(
             \\rank<5> You can decrease the target's size category by up to two size categories.
             \\rank<7> The minimum size category is reduced to Fine.
         """, tags=['Attune (target)']),
-        Spell('Spider Climb', 1, 'Yourself', """
-            You gain a \\glossterm<climb speed> equal to your \\glossterm<base speed>.
-            You also gain a +2 \\glossterm<magic bonus> to Climb checks.
-
-            \\rankline
-            \\rank<3> The bonus increases to +4.
-            \\rank<5> The bonus increases to +6.
-            \\rank<7> The bonus increases to +8.
-        """, tags=['Attune (self)']),
-        Spell('Stoneskin', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            The target gains a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical damage>.
+        Spell('Stoneskin', 1, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
+            The target gains a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical> damage.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<6> The target also gains a +1 \\glossterm<magic bonus> to Armor defense.
-            \\rank<8> The bonus increases to be equal to your \\glossterm<power>.
-        """, tags=['Attune (target)']),
-        Spell('Regeneration', 5, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            A the end of each round, the target can spend an \\glossterm<action point>.
-            If it does, it removes one of its \\glossterm<vital wounds>.
-
-            \\rankline
-            \\rank<7> The target can remove up to two \\glossterm<vital wounds> instead of only one.
+            \\rank<3> The bonus increases to +4.
+            \\rank<5> The bonus increases to be equal to half your \\glossterm<power>.
+            \\rank<7> The bonus increases to be equal to your \\glossterm<power>.
         """, tags=['Attune (target)']),
         Spell('Enlarge', 4, 'Yourself or one Large or smaller \\glossterm<ally> within \\rngmed range', """
             The target's size increases by one \\glossterm<size category>.
@@ -180,27 +137,12 @@ polymorph=MysticSphere(
             \\rank<6> The skill bonus increases to +12.
             \\rank<8> The skill bonus increases to +16.
         """, tags=['Attune (self)']),
-        Spell('Enhanced Senses', 1, 'Yourself', """
-            You gain a +3 \\glossterm<magic bonus> to the Awareness skill.
-
-            \\rankline
-            \\rank<3> The bonus increases to +4.
-            \\rank<5> The bonus increases to +5.
-            \\rank<7> The bonus increases to +6.
-        """, tags=['Attune (self)']),
         Spell('Enhanced Muscles', 4, 'Yourself', """
             You gain a +2 \\glossterm<magic bonus> to your choice of either Strength-based checks or Dexterity-based checks.
 
             \\rankline
             \\rank<6> The bonus increases to +3.
             \\rank<8> The bonus increases to +4.
-        """, tags=['Attune (self)']),
-        Spell('Scent', 3, 'Yourself', """
-            You gain the \\glossterm<scent> ability, giving you a +10 bonus to scent-based Awareness checks (see \\pcref<Senses>).
-
-            \\rankline
-            \\rank<5> The bonus increases to +15.
-            \\rank<7> The bonus increases to +20.
         """, tags=['Attune (self)']),
         Spell('Spikeform', 4, ['Yourself', '\\glossterm<Enemies> adjacent to you (see text)'], """
             You transform your body to have dangerous spikes.
@@ -226,16 +168,6 @@ polymorph=MysticSphere(
             \\rank<5> The maximum size of the object increases to Medium.
             \\rank<7> The maximum size of the object increases to Large.
         """, tags=[]),
-        Spell('Acidic Blood', 3, ['Yourself or one \\glossterm<ally> within \\rngmed range', 'Everything adjacent to the primary target'], """
-            The primary target's blood becomes acidic.
-            This does not harm it, but the blood can be dangerous to anything nearby when it bleeds.
-            At the end of each round, if the primary target was \\glossterm<wounded> during that round, make an attack vs. Armor against everything adjacent to the target.
-            \\hit Each secondary target takes acid \\glossterm<standard damage> -1d.
-
-            \\rankline
-            \\rank<5> The damage increases to \\glossterm<standard damage>.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
-        """, tags=['Attune (target)']),
         Spell('Bleed', 4, 'One living creature within \\rngclose range', """
             Make an attack vs. Fortitude against the target.
             \\hit As a \\glossterm<condition>, the target begins bleeding.
@@ -304,17 +236,6 @@ polymorph=MysticSphere(
         Spell('Supreme Fortify', 7, 'One \\glossterm<unattended>, nonmagical object or part of an object of up to Large size.', """
             This ritual functions like the \\spell<fortify> ritual, except that the bonus to \\glossterm<resistances> increases to 15.
         """, tags=['Attune (ritual)']),
-        Spell('Awaken', 6, 'One Large or smaller \\glossterm<ally> within \\rngmed range', """
-            The target becomes sentient.
-            Its Intelligence becomes 1d6 - 5.
-            Its type changes from animal to magical beast.
-            It gains the ability to speak and understand one language that you know of your choice.
-            Its maximum age increases to that of a human (rolled secretly).
-            This effect is permanent.
-
-            This ritual takes 24 hours to perform, and requires 50 action points from its participants.
-            It can only be learned with the nature \\glossterm<magic source>.
-        """, tags=['AP', ]),
         Spell('Ironwood', 4, 'One Small or smaller unattended, nonmagical wooden object within \\rngclose range', """
             The target is transformed into ironwood.
             While remaining natural wood in almost every way, ironwood is as strong, heavy, and resistant to fire as iron.
@@ -330,16 +251,6 @@ polymorph=MysticSphere(
 
             This ritual takes one hour to perform.
         """, tags=['AP']),
-        Spell('Air Breathing', 3, 'One Medium or smaller ritual participant', """
-            The target can breathe air as easily as a human breathes air, preventing it from suffocating above water if it can normally only breathe water or some other substance.
-
-            This ritual takes one minute to perform.
-        """, tags=['Attune (ritual)']),
-        Spell('Water Breathing', 3, 'One Medium or smaller ritual participant', """
-            The target can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
-
-            This ritual takes one minute to perform.
-        """, tags=['Attune (ritual)']),
     ],
     category='damage',
 )

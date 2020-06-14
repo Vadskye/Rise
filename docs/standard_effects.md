@@ -105,6 +105,7 @@ Rank 1 Focus/non-choice; Rank 3 non-Focus:
   * r1 condition with r3 crit-only condition in std range
   * Deal std in long range
 * AOE:
+  * r1 condition until eonr or r1 condition on crit vs enemies in Medium radius in std range
   * Deal std -1d to all within Med/10 line from you
   * Deal std -1d to all within Med cone from you
   * Deal std -1d to enemies within Small radius from you
@@ -148,6 +149,7 @@ Rank 4 Focus/non-choice; Rank 6 non-Focus:
   * Deal std -1d to all within Large/15 line from you
   * Deal std -1d to all within Large/5 line entirely within Med range
   * Deal std -1d to all within Med radius in Close range
+  * r2 condition until eonr or r2 condition on crit vs enemies in Medium radius in std range
 * Maneuvers only:
 * AOE: see 3rd level spell AOE
 
@@ -162,6 +164,7 @@ Rank 5 Focus/non-choice; Rank 7 non-Focus:
   * Deal std -1d to all within Huge cone from you
   * Deal std -1d to enemies within Large radius from you
   * Deal std -1d to all within Med radius in Med range
+  * r3 condition until eonr or r3 condition on crit vs enemies in Small radius in std range
 
 Rank 6 Focus/non-choice; Rank 8 non-Focus:
 * Shared:
@@ -182,6 +185,7 @@ Rank 7 Focus:
   * Deal std -1d to all within Med radius in Long range
   * Deal std -1d to all within Large radius in Med range
   * Deal std -1d to enemies within Huge radius from you
+  * r3 condition until eonr or r3 condition on crit vs enemies in Medium radius in std range
 
 Rank 8 Focus:
 * Shared:

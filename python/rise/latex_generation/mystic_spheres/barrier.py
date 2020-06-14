@@ -52,7 +52,6 @@ barrier=MysticSphere(
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Forceful Barrier', 3, None, """
             This spell functions like the \\spell<mystic barrier> spell, except that it breaks objects in its area that obstruct its path.
-            Each object in the path of the wall takes energy \\glossterm<standard damage>.
             Any object destroyed in this way does not block the barrier's area of effect.
             This does no damage to creatures, who block the path of the barrier like normal.
             In addition, the \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to three times your \\glossterm<power>.
@@ -64,7 +63,8 @@ barrier=MysticSphere(
         Spell('Mystic Barrier', 1, None, """
             You create a wall of magical energy within \\rngmed range.
             You can choose the dimensions of the wall, up to a maximum of a 20 ft.\\ high, \\areamed length line.
-            If you create the wall within a space too small to hold it, it fills as much of the space as possible, allowing you to completely block off small tunnels.
+            If you create the wall within a space too small to hold it, it fills as much of the space as possible, starting from the middle of the chosen space.
+            This can allow you to completely block off small tunnels.
             The wall is visible as a shimmering magical membrane that does not block sight.
             Nothing can pass through the wall until it is destroyed.
             Each 5-ft.\\ square of wall has a \\glossterm<vital resistance> equal to twice your \\glossterm<power>.

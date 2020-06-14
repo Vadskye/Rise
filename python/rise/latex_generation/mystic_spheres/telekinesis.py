@@ -63,7 +63,17 @@ telekinesis=MysticSphere(
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=[]),
-        Spell('Blastwave', 3, '\\glossterm<Enemies> and objects in a \\areamed radius from you', """
+        Spell('Mass Kinetic Impedance', 1, '\\glossterm<Enemies> in a \\areamed radius within \\rngmed range', """
+            Make an attack vs. Mental against each target.
+            \\hit Each target is \\glossterm<slowed> until the end of the next round.
+            \\crit Each target is \\glossterm<slowed> as a \\glossterm<condition>.
+
+            \\rankline
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<5> The accuracy bonus increases to +2.
+            \\rank<7> The accuracy bonus increases to +3.
+        """, tags=['Compulsion']),
+        Spell('Blastwave', 1, '\\glossterm<Enemies> and objects in a \\areasmall radius from you', """
             Make an attack vs. Mental against each target.
             \\hit You move each target up to 5 feet per two \\glossterm<power> in a straight line away from you.
             Moving a target upwards costs twice the normal movement cost.
@@ -71,6 +81,7 @@ telekinesis=MysticSphere(
             Any individual object or creature can only take damage once in this way, even if it is hit by multiple targets that are knocked flying.
 
             \\rankline
+            \\rank<5> The area increases to a \\areamed radius.
             \\rank<5> The area increases to a \\arealarge radius.
             \\rank<7> The area increases to a \\areahuge radius.
         """, tags=[]),
@@ -94,22 +105,28 @@ telekinesis=MysticSphere(
             \\rank<5> The target is reduced to a quarter of its normal weight. In addition, the bonus increases to +8.
             \\rank<7> The bonus increases to +10.
         """, tags=['Attune (target)']),
-        Spell('Levitate', 5, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngmed range', """
+        Spell('Levitate', 4, 'Yourself', """
             % TODO: Wording
-            As long as the target remains within 50 feet above a surface that could support its weight, it floats in midair, unaffected by gravity.
-            During the movement phase, you can move the target up to ten feet in any direction as a \\glossterm<free action>.
+            As long as you remain within 50 feet above a surface that could support its weight, it floats in midair, unaffected by gravity.
+            During the movement phase, you can move yourself up to ten feet in any direction as a \\glossterm<move action>.
 
             \\rankline
-            \\rank<7> The maximum height above the surface increases to 100 feet.
+            \\rank<6> The maximum height above the surface increases to 100 feet.
+            \\rank<8> The distance you can move increases to 30 feet.
         """, tags=['Attune (self)']),
-        Spell('Wall of Force', 5, None, """
-            You create a wall of telekinetic force in a 20 ft.\\ high, \\arealarge line within \\rngmed range.
-            The wall is transparent, but blocks physical passage and \\glossterm<line of effect>.
-            Each five-foot square of wall has a \\glossterm<vital resistance> equal to four times your \\glossterm<power> and all of its defenses are 0.
+        Spell('Wall of Force', 1, None, """
+            You create a wall of magical energy within \\rngmed range.
+            You can choose the dimensions of the wall, up to a maximum of a 20 ft.\\ high, \\areamed length line.
+            If you create the wall within a space too small to hold it, it fills as much of the space as possible, allowing you to completely block off small tunnels.
+            The wall is visible as a shimmering magical membrane that does not block sight.
+            Nothing can pass through the wall until it is destroyed.
+            Each 5-ft.\\ square of wall has a \\glossterm<vital resistance> equal to twice your \\glossterm<power>.
 
             \\rankline
-            \\rank<7> The area increases to a \\areahuge line.
-        """, tags=['Attune (self)']),
+            \\rank<3> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to three times your \\glossterm<power>.
+            \\rank<5> The area increases to a \\arealarge line.
+            \\rank<7> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
+        """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Forcecage', 8, None, """
             You create a 10 ft.\\ cube of telekinetic force within \\rngmed range.
             You can create the cube around a sufficiently small creature to trap it inside.

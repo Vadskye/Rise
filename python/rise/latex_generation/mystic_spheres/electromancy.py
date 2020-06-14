@@ -84,12 +84,12 @@ spells=[
         \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
     """, tags=[]),
     Spell('Magnetic Blade', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-        Metal weapons wielded by the target gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
+        Metal weapons wielded by the target gain a +2 \\glossterm<magic bonus> to \\glossterm<accuracy> against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
 
         You can cast this spell as a \\glossterm<minor action>.
 
         \\rankline
-        \\rank<5> The accuracy bonus increases to +2.
+        \\rank<5> The target is also immune to the \\textit<disarm> ability and similar effects if it is wearing metal gauntlets.
         \\rank<7> The accuracy bonus increases to +3.
     """, tags=['Attune (target)']),
     Spell('Chain Lightning', 5,
@@ -133,10 +133,12 @@ spells=[
         \\rank<5> The speed bonus increases to +20 feet.
         \\rank<7> The speed bonus increases to +30 feet.
     """, tags=['Attune (target)']),
-    Spell('Lightning Breath', 4, ['Yourself', 'Everything within a \\arealarge cone'], """
+    Spell('Lightning Breath', 4, 'Yourself (see text)', """
         As a standard action, you can breathe electricity like a dragon.
-        When you do, make an attack vs Reflex against each secondary target.
-        \\hit Each secondary target takes electricity \\glossterm<standard damage> +1d.
+        When you do, make an attack vs Reflex against everything within a \\arealarge cone.
+        \\hit Each target takes electricity \\glossterm<standard damage> +1d.
+
+        You can cast this spell as a \\glossterm<minor action>.
 
         \\rankline
         \\rank<6> The damage increases to \\glossterm<standard damage> +2d.

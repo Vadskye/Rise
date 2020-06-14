@@ -11,27 +11,47 @@ compel=MysticSphere(
     name="Compel",
     short_description="Bend creatures to your will by controlling their actions",
     cantrips=[
+        Effects('Repeat', 'One creature within \\rngmed range', """
+            Make an attack vs. Mental against the target.
+            \\hit During the next round, the target must repeat all actions that it took this round.
+            It can choose different targets or otherwise make different decisions about its action, but the action must be the same.
+            If it is unable to take the same action, it cannot is unable to take an action of that type.
+            For example, if a creature moved during the round that you cast this spell and was \\glossterm<immobilized> or knocked \\glossterm<prone>, it cannot move at all during the following round.
+
+            \\rankline
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<5> The accuracy bonus increases to +2.
+            \\rank<7> The accuracy bonus increases to +3.
+        """),
     ],
     lists=['Arcane', 'Divine', 'Pact'],
     spells=[
-        Spell('Curse of Repetition', 6, 'One creature within \\rngmed range', """
-            Make an attack vs. Mental against the target.
-            \\hit Whenever the target takes a standard action voluntarily, it is compelled to repeat the same action next round.
-            It can choose different targets or otherwise make different decisions about its action, but the action must be the same.
-            If it is unable to take the same action, such as if the action exhausted one of the creature's resources, it cannot take a standard action that round.
-            This effect lasts until it takes a \\glossterm<short rest>.
-            \\crit As above, except that the effect lasts until the curse is removed.
+        Spell('Mass Repeat', 1, '\\glossterm<Enemies> in a \\areasmall radius within \\rngmed range', """
+            This spell functions like the \\spell<repeat> spell, except that it affects more creatures.
 
             \\rankline
-            \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-        """, tags=['Compulsion', 'Curse']),
-        Spell('Drop', 3, 'One creature within \\rngmed range', """
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<5> The accuracy bonus increases to +2.
+            \\rank<7> The accuracy bonus increases to +3.
+        """, tags=['Compulsion']),
+        Spell('Drop', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target drops anything it is holding in its hands.
+            \\crit As above, and as a \\glossterm<condition>, the target is unable to pick up the dropped items.
+            It can still hold other items, but if the dropped items are placed in its hands, it will immediately drop them again.
 
             \\rankline
-            \\rank<5> On a \\glossterm<critical hit>, the target is unable to pick up the dropped items as a \\glossterm<condition>.
-            \\rank<7> The range increases to \\rnglong.
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<5> The accuracy bonus increases to +2.
+            \\rank<7> The accuracy bonus increases to +3.
+        """, tags=['Compulsion']),
+        Spell('Mass Drop', 4, '\\glossterm<Enemies> in a \\areamed radius within \\rngmed range', """
+            Make an attack vs. Mental gainst each target.
+            \\hit Each target drops anything it is holding in its hands.
+
+            \\rankline
+            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Compulsion']),
         Spell('Monologue', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
@@ -56,21 +76,31 @@ compel=MysticSphere(
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=['Compulsion']),
-        Spell('Collapse', 1, '\\glossterm<Enemies> in a \\areamed radius from you', """
+        Spell('Collapse', 1, '\\glossterm<Enemies> in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Mental against each target.
             \\hit Each target falls \\glossterm<prone>.
             \\crit As above, and as a \\glossterm<condition>, each target is unable to stand up.
             If a target is somehow brought into a standing position, it will immediately fall and become prone again.
 
             \\rankline
-            \\rank<3> The area increases to a \\arealarge radius.
-            \\rank<5> The area increases to a \\areahuge radius.
-            \\rank<7> The area increases to a \\areaext radius.
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<5> The accuracy bonus increases to +2.
+            \\rank<7> The accuracy bonus increases to +3.
         """, tags=['Compulsion']),
         Spell('Stop', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<slowed> as a \\glossterm<condition>.
             \\crit The target is \\glossterm<decelerated> as a \\glossterm<condition>.
+
+            \\rankline
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<5> The accuracy bonus increases to +2.
+            \\rank<7> The accuracy bonus increases to +3.
+        """, tags=['Compulsion']),
+        Spell('Mass Stop', 1, '\\glossterm<Enemies> in a \\areamed radius within \\rngmed range', """
+            Make an attack vs. Mental against each target.
+            \\hit Each target is \\glossterm<slowed> until the end of the next round.
+            \\crit Each target is \\glossterm<slowed> as a \\glossterm<condition>.
 
             \\rankline
             \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
@@ -85,9 +115,13 @@ compel=MysticSphere(
             \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<8> The accuracy bonus increases to +2.
         """, tags=['Compulsion']),
-        Spell('Discordant Song', 7, '\\glossterm<Enemies> in a \\areasmall radius from you', """
+        Spell('Mass Confusion', 5, '\\glossterm<Enemies> in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Mental against each target.
-            \\hit Each target is \\disoriented as a \\glossterm<condition>.
+            \\hit Each target is \\confused until the end of the next round.
+            \\crit Each target is \\glossterm<confused> as a \\glossterm<condition>.
+
+            \\rankline
+            \\rank<7> The area increases to a \\areamed radius.
         """, tags=['Compulsion']),
         Spell('Dominate', 5, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
@@ -111,7 +145,15 @@ compel=MysticSphere(
             \\rankline
             \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=['Compulsion']),
-        Spell('Run', 3, 'One creature within \\rngmed range', """
+        Spell('Close Their Eyes', 7, '\\glossterm<Enemies> in a \\areamed radius within \\rngmed range', """
+            Make an attack vs. Mental against each target.
+            \\hit Each target is \\blinded until the end of the next round.
+            \\crit Each target is \\glossterm<blinded> as a \\glossterm<condition>.
+
+            \\rankline
+            \\rank<7> The area increases to a \\areamed radius.
+        """, tags=['Compulsion']),
+        Spell('Run', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit As a \\glossterm<condition>, the target must move its maximum movement speed in a straight line during each \\glossterm<movement phase>.
             It must use its movement mode with the highest speed to move this way.
@@ -119,8 +161,68 @@ compel=MysticSphere(
             If it is unable to move its full speed without making a skill check or encountering a solid obstacle, it may choose to stop its movement after moving the maximum possible distance without doing so.
 
             \\rankline
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<5> The accuracy bonus increases to +2.
+            \\rank<7> The accuracy bonus increases to +3.
+        """, tags=['Compulsion']),
+        Spell('Follow the Leader', 3, ['Yourself', '\\glossterm<Enemies> adjacent to you'], """
+            You emanate an aura around you that compels creatures to follow you.
+            During each \\glossterm<action phase>, make an attack vs. Mental against each secondary target.
+            \\hit Each secondary target is compelled to mimic your movements during the next \\glossterm<movement phase>.
+            If you move during that movement phase, it must move with the same movement mode in the same distance and direction up to the limit of its ability to follow you.
+            It is not compelled to sprint to keep up with you, though it may choose to (see \\pcref<Sprint>).
+            If you do not move, or if you move with a movement mode that it is incapable of using, it is simply \\glossterm<immobilized> for that movement phase.
+
+            \\rankline
             \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
+        """, tags=['Attune (self)', 'Compulsion']),
+        Spell('Blink', 1, 'One creature within \\rngmed range', """
+            Make an attack vs. Mental against the target.
+            \\hit The target is \\glossterm<blinded> until the end of the next round.
+
+            \\rankline
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<5> The accuracy bonus increases to +2.
+            \\rank<7> The accuracy bonus increases to +3.
+        """, tags=['Compulsion']),
+        Spell('Mass Blink', 4, '\\glossterm<Enemies> in a \\areamed radius within \\rngmed range', """
+            Make an attack vs. Mental against each target.
+            \\hit Each target is \\glossterm<blinded> until the end of the next round.
+
+            \\rankline
+            \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<8> The accuracy bonus increases to +2.
+        """, tags=['Compulsion']),
+        Spell('Heedless Rush', 1, 'One creature within \\rngmed range', """
+            Make an attack vs. Mental against the target.
+            \\hit As a \\glossterm<condition>, the target is forced to use the \\textit<sprint> action whenever it moves (see \\pcref<Sprint>).
+            It can still stop before reaching its maximum movement speed, but it must pay the hit point cost if it moves from its current position.
+
+            \\rankline
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<5> The accuracy bonus increases to +2.
+            \\rank<7> The accuracy bonus increases to +3.
+        """, tags=['Compulsion']),
+        Spell('Selfstrike', 4, 'One creature within \\rngmed range', """
+            Make an attack vs. Mental against the target.
+            \\hit During the next \\glossterm<action phase>, the target is compelled to make a \\glossterm<strike> against itself instead of taking any other actions.
+            If it has any weapons in hand or natural weapons at that time, it must use one of them.
+            Otherwise, it uses its unarmed attack.
+            This does not use up any of the creature's actions for the round, and it can take any unused actions during the \\glossterm<delayed action phase> of that round.
+
+            \\rankline
+            \\rank<6> The accuracy bonus increases to +2.
+            \\rank<8> The accuracy bonus increases to +3.
+        """, tags=['Compulsion']),
+        Spell('Discordant Song', 4, '\\glossterm<Enemies> in a \\areamed radius from you', """
+            Make an attack vs. Mental against each target.
+            \\hit Each target is \\disoriented until the end of the next round.
+            \\crit Each target is \\glossterm<disoriented> as a \\glossterm<condition>.
+
+            \\rankline
+            \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<8> The accuracy bonus increases to +2.
         """, tags=['Compulsion']),
     ],
     rituals=[

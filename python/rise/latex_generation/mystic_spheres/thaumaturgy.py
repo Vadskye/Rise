@@ -260,6 +260,13 @@ thaumaturgy=MysticSphere(
             \\rank<6> The area increases to a \\areamed radius.
             \\rank<8> The range increases to \\rnglong.
         """, tags=['Sustain (minor)']),
+        Spell('Purge Curse', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            All curses affecting the target are removed.
+            This ritual cannot remove a curse that is part of the effect of an item the target has equipped.
+            However, it can allow the target to remove any cursed items it has equipped.
+
+            This ritual takes 24 hours to perform, and requires 8 action points from its participants.
+        """, tags=['AP']),
     ],
     category='debuff, combat',
 )
