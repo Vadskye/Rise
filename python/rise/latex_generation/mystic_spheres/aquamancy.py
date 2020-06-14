@@ -175,16 +175,17 @@ aquamancy=MysticSphere(
             \\rank<6> You can exclude an inner radius of any size from the area, allowing you to create fog that surrounds you without blocking sight to things adjacent to you.
             \\rank<8> The area increases to a \\arealarge radius \\glossterm<zone>.
         """, tags=['Attune (self)']),
-        Spell('Aqueous Tentacles', 3, 'Yourself', """
-            Each of your arms with a \\glossterm<free hand> is covered with watery tentacles that you can attack with.
-            Each tentacle is a slam \\glossterm<natural weapon> (see \\tref<Natural Weapons>).
-            The tentacles have the Reach weapon tag (see \\pcref<Weapon Tags>).
+        Spell('Aqueous Tentacles', 1, 'Yourself', """
+            You grow watery tentacles from your body.
+            The tentacles grant you a slam \\glossterm<natural weapon> (see \\tref<Natural Weapons>).
+            The natural weapon has the Long \\glossterm<weapon tag> and does not require a \\glossterm<free hand> to use (see \\pcref<Weapon Tags>).
             Strikes using the tentacles are considered \\glossterm<magical> abilities, which means you use your \\glossterm<power> with \\glossterm<magical> abilities to determine their damage.
 
             \\rankline
-            \\rank<5> You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> on attacks using the tentacles.
-            \\rank<7> Your \\glossterm<reach> with the tentacles increases to 20 feet.
-        """, tags=['Attune (self)']),
+            \\rank<3> You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with attacks using the tentacles.
+            \\rank<5> You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with attacks using the tentacles.
+            \\rank<7> You gain a +5 bonus to \\glossterm<reach> with attacks using the tentacles.
+        """, tags=['Attune (self)', 'Manifestation']),
         Spell('Dessicate', 4, 'One creature within \\rngclose range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target takes physical \\glossterm<standard damage> and is \\glossterm<sickened> as a \\glossterm<condition>.
@@ -219,6 +220,23 @@ aquamancy=MysticSphere(
             \\rank<5> You gain a +2 bonus to Armor defense during the current phase.
             \\rank<7> The distance increases to 300 feet.
         """, tags=[]),
+        Spell('Fog Cloud', 3, 'Everything in a \\areamed radius within \\rngmed range', """
+            A cloud of fog appears in the area.
+            All sight through the area is partially obscured, granting \\glossterm<concealment> to anything in the area and anything viewed through the area (see \\pcref<Concealment>).
+
+            \\rankline
+            \\rank<5> The area increases to a \\arealarge radius.
+            \\rank<7> The range increases to \\rnglong.
+        """, tags=['Manifestation', 'Sustain (minor)']),
+        Spell('Fog Wall', 1, None, """
+            You create a wall of fog in a 20 ft.\\ high, \\arealarge \\glossterm<wall> within \\rngmed range.
+            The fog makes it difficult to see through the wall, granting \\glossterm<concealment> to anything viewed through the wall (see \\pcref<Concealment>).
+
+            \\rankline
+            \\rank<3> The area increases to a \\arealarge line.
+            \\rank<5> The area increases to a \\areahuge line.
+            \\rank<7> The area increases to a \\areaext line.
+        """, tags=['Manifestation', 'Sustain (minor)']),
     ],
     rituals=[
         Spell('Dampen', 1, 'Up to five ritual participants', """
