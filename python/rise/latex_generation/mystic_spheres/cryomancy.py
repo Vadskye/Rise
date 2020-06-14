@@ -109,6 +109,9 @@ cryomancy=MysticSphere(
             While you are leaving a trail of ice behind you, you can move into thin air by walking on your own ice trail, just as if it was solid ground.
             If you are still standing on your own ice trail when it disappears at the end of the round, you fall.
 
+            Creatures following closely behind you while you move may also be able to use your ice trail.
+            However, most Large or larger creatures will break the ice trail if they step onto it, which may cause both of you to fall.
+
             \\rankline
             \\rank<5> Your ice trail collapses more gradually.  If you are still standing on your own ice trail when it disappears, you can fall up to 50 feet before you start taking \\glossterm<falling damage>.
             \\rank<7> Your ice trail lasts until the end of the next round after your movement.
@@ -190,10 +193,10 @@ cryomancy=MysticSphere(
                     and armor grants a +1 \\glossterm<magic bonus> to Armor defense.
             \\rank<7> The \\glossterm<vital resistance> of the item increases to four times your power.
         """, tags=[]),
-        Spell('Frost Breath', 4, ['Yourself', 'Everything within a \\arealarge cone'], """
+        Spell('Frost Breath', 4, 'Yourself', """
             As a standard action, you can breathe cold like a dragon.
-            When you do, make an attack vs Armor against each secondary target.
-            \\hit Each secondary target takes cold \\glossterm<standard damage>.
+            When you do, make an attack vs Armor against everything in a \\arealarge cone.
+            \\hit Each target takes cold \\glossterm<standard damage>.
 
             You can cast this spell as a \\glossterm<minor action>.
 

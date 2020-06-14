@@ -1250,7 +1250,8 @@ You can cast this spell as a \glossterm{minor action}.
 \targetrule
 You create a wall of magical energy within \rngmed range.
 You can choose the dimensions of the wall, up to a maximum of a 20 ft.\ high, \areamed length line.
-If you create the wall within a space too small to hold it, it fills as much of the space as possible, allowing you to completely block off small tunnels.
+If you create the wall within a space too small to hold it, it fills as much of the space as possible, starting from the middle of the chosen space.
+This can allow you to completely block off small tunnels.
 The wall is visible as a shimmering magical membrane that does not block sight.
 Nothing can pass through the wall until it is destroyed.
 Each 5-ft.\ square of wall has a \glossterm{vital resistance} equal to twice your \glossterm{power}.
@@ -1320,7 +1321,6 @@ In addition, the \glossterm{vital resistance} of each 5-ft.\ square increases to
 \begin{freeability}[Rank 3]{\hypertarget{spell:Forceful Barrier}{Forceful Barrier}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
 \targetrule
 This spell functions like the \spell{mystic barrier} spell, except that it breaks objects in its area that obstruct its path.
-Each object in the path of the wall takes energy \glossterm{standard damage}.
 Any object destroyed in this way does not block the barrier's area of effect.
 This does no damage to creatures, who block the path of the barrier like normal.
 In addition, the \glossterm{vital resistance} of each 5-ft.\ square increases to be equal to three times your \glossterm{power}.
@@ -1656,6 +1656,359 @@ This ritual takes 24 hours to perform, and requires 32 action points from its pa
 This ritual functions like the \ritual{mystic lock} ritual, except that the \glossterm{difficulty rating} to unlock the target with a Devices check is instead equal to 30 + your \glossterm{power}.
 In addition, the \glossterm{difficulty rating} to break it open increases by 20 instead of by 10.
 \end{attuneability}
+\vspace{0.25em}
+
+
+\newpage
+\begin{spellsection}{Biomancy}
+
+\begin{spellheader}
+\spelldesc{Manipulate the biological nature of creatures.}
+\end{spellheader}
+
+
+\parhead{Mystic Sphere Lists} Arcane, Nature, Pact
+
+\subsubsection{Cantrips}
+
+
+\end{spellsection}
+
+
+\subsubsection{Spells}
+
+
+\lowercase{\hypertarget{spell:Decay}{}}\label{spell:Decay}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Decay}{Decay}}[\glossterm{Focus}]
+\target{One living creature within \rngmed range}
+Make an attack vs. Fortitude with a \plus2 \glossterm{accuracy} bonus against the target.
+\hit As a \glossterm{condition}, the target becomes more vulnerable to injury.
+It takes a \minus2 penalty to Fortitude defense.
+In addition, whenever it loses a \glossterm{hit point}, it reduces its maximum \glossterm{hit points} by 1.
+When this condition is removed, the target's maximum \glossterm{hit points} are restored.
+\crit As above, except that the penalty increases to -4.
+
+\rankline
+\rank{5} The accuracy bonus increases to \plus3.
+\rank{5} The accuracy bonus increases to \plus4.
+\rank{7} The accuracy bonus increases to \plus5.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Enhanced Senses}{}}\label{spell:Enhanced Senses}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Enhanced Senses}{Enhanced Senses}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{Yourself}
+You gain a \plus3 \glossterm{magic bonus} to the Awareness skill.
+
+\rankline
+\rank{3} The bonus increases to \plus4.
+\rank{5} The bonus increases to \plus5.
+\rank{7} The bonus increases to \plus6.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Fleshbite}{}}\label{spell:Fleshbite}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Fleshbite}{Fleshbite}}[\glossterm{Focus}]
+\target{One creature within \rngmed range}
+Make an attack vs. Fortitude against the target.
+\hit The target is \glossterm{sickened} as a \glossterm{condition}.
+\crit The target is \glossterm{nauseated} as a \glossterm{condition}.
+
+\rankline
+\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Malaise}{}}\label{spell:Malaise}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Malaise}{Malaise}}[\glossterm{Focus}]
+\target{One living creature within \rngmed range}
+Make an attack vs. Fortitude against the target.
+\hit The target is \glossterm{sickened} as a \glossterm{condition}.
+\crit The target is \glossterm{nauseated} as a \glossterm{condition}.
+
+\rankline
+\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Neutralize Poison}{}}\label{spell:Neutralize Poison}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Neutralize Poison}{Neutralize Poison}}[\glossterm{Focus}]
+\target{Yourself or one target within \rngmed range}
+The target gains an additional success to resist a poison currently affecting it (see \pcref{Poisons}).
+
+\rankline
+\rank{3} The number of additional successes increases to two.
+\rank{5} The number of additional successes increases to three, which is enough to remove most poisons immediately.
+\rank{7} The target can also gain the same number of successes to remove an additional poison affecting it.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Poison -- Asp Venom}{}}\label{spell:Poison -- Asp Venom}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Poison -- Asp Venom}{Poison -- Asp Venom}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
+\target{One living creature within \rngmed range}
+Make an attack vs. Fortitude against the target.
+\hit The target becomes \glossterm{poisoned} with asp venom.
+At the end of each subsequent round, you repeat this attack, as normal for poisons.
+A creature poisoned by asp venom becomes \glossterm{sickened} as long as it is poisoned.
+A third successful attack inflicts a \glossterm{vital wound} and ends the poison.
+A third failed attack ends the poison.
+
+\rankline
+\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Spider Climb}{}}\label{spell:Spider Climb}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Spider Climb}{Spider Climb}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{Yourself}
+You gain a \glossterm{climb speed} equal to your \glossterm{base speed}.
+You also gain a \plus2 \glossterm{magic bonus} to Climb checks.
+
+\rankline
+\rank{3} The bonus increases to \plus4.
+\rank{5} The bonus increases to \plus6.
+\rank{7} The bonus increases to \plus8.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Acidic Blood}{}}\label{spell:Acidic Blood}
+\begin{attuneability}[Rank 3]{\hypertarget{spell:Acidic Blood}{Acidic Blood}}[\glossterm{Attune} (target), \glossterm{Focus}]
+
+Primary target: Yourself or one \glossterm{ally} within \rngmed range
+\par\noindent
+Secondary targets: Everything adjacent to the primary target
+
+The primary target's blood becomes acidic.
+This does not harm it, but the blood can be dangerous to anything nearby when it bleeds.
+At the end of each round, if the primary target was \glossterm{wounded} during that round, make an attack vs. Armor against everything adjacent to the target.
+\hit Each secondary target takes acid \glossterm{standard damage} \minus1d.
+
+\rankline
+\rank{5} The damage increases to \glossterm{standard damage}.
+\rank{7} The damage increases to \glossterm{standard damage} \plus1d.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Curse of Decay}{}}\label{spell:Curse of Decay}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Curse of Decay}{Curse of Decay}}[\glossterm{Curse}, \glossterm{Focus}]
+\target{One living creature within \rngmed range}
+Make an attack vs. Mental against the target.
+\hit The target becomes more vulnerable to injury until it takes a short rest.
+Whenever it loses a \glossterm{hit point}, it reduces its maximum \glossterm{hit points} by 1.
+This cannot reduce the target's maximum \glossterm{hit points} below 1.
+When this effect is removed, the target's maximum \glossterm{hit points} are restored.
+\crit As above, except that the effect lasts until this curse is removed.
+
+\rankline
+\rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{7} The accuracy bonus increases to \plus2.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Curse of Malaise}{}}\label{spell:Curse of Malaise}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Curse of Malaise}{Curse of Malaise}}[\glossterm{Curse}, \glossterm{Focus}]
+\target{One living creature within \rngmed range}
+Make an attack vs. Mental against the target.
+\hit The target is \glossterm{sickened} until it takes a \glossterm{short rest}.
+\crit As above, except that the effect lasts until this curse is removed.
+
+\rankline
+\rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{7} The accuracy bonus increases to \plus2.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Intensify Poison}{}}\label{spell:Intensify Poison}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Intensify Poison}{Intensify Poison}}[\glossterm{Focus}]
+\target{One living creature within \rngmed range}
+Make an attack vs. Fortitude with a \plus2 bonus to \glossterm{accuracy} against the target.
+If the target is not currently poisoned, this ability has no effect.
+\hit Choose a poison affecting the target.
+The poison gains an additional hit against the target, which can have varying effects depending on the poison (see \pcref{Poisons}).
+
+\rankline
+\rank{5} The accuracy bonus increases to \plus3.
+\rank{7} The accuracy bonus increases to \plus4.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Poison -- Dragon Bile}{}}\label{spell:Poison -- Dragon Bile}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Poison -- Dragon Bile}{Poison -- Dragon Bile}}[\glossterm{Focus}]
+\target{One living creature within \rngmed range}
+This spell functions like this \spell{poison -- nitharit} spell, except that the target becomes poisoned with sassone leaf instead (see \pcref{Poisons}).
+A creature poisoned by sassone leaf immediately loses a \glossterm{hit point} and is \glossterm{sickened} as long as it is poisoned.
+A third successful attack causes the target to lose two \glossterm{hit points} and become \glossterm{nauseated} as long as it is poisoned.
+A third failed attack ends the poison.
+
+\rankline
+\rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{7} The accuracy bonus increases to \plus2.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Scent}{}}\label{spell:Scent}
+\begin{attuneability}[Rank 3]{\hypertarget{spell:Scent}{Scent}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{Yourself}
+You gain the \glossterm{scent} ability, giving you a \plus10 bonus to scent-based Awareness checks (see \pcref{Senses}).
+
+\rankline
+\rank{5} The bonus increases to \plus15.
+\rank{7} The bonus increases to \plus20.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Dragon Breath}{}}\label{spell:Dragon Breath}
+\begin{attuneability}[Rank 4]{\hypertarget{spell:Dragon Breath}{Dragon Breath}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{Yourself (see text)}
+You gain the ability to breath energy like a dragon.
+When you cast this spell, choose a type of damage: acid, cold, electricity, or fire.
+As a standard action, you can breath a cone of that type of energy.
+When you do, make an attack vs. Armor against everything within a \arealarge cone from you.
+\hit Each target takes \glossterm{standard damage} \plus1d of the chosen type.
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{6} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{8} The damage increases to \glossterm{standard damage} \plus3d.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Eyebite}{}}\label{spell:Eyebite}
+\begin{freeability}[Rank 5]{\hypertarget{spell:Eyebite}{Eyebite}}[\glossterm{Focus}]
+\target{One living creature within \rngclose range}
+Make an attack vs. Fortitude against the target.
+\hit The target is \glossterm{blinded} as a \glossterm{condition}.
+
+\rankline
+\rank{6} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{8} The accuracy bonus increases to \plus2.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Regeneration}{}}\label{spell:Regeneration}
+\begin{attuneability}[Rank 5]{\hypertarget{spell:Regeneration}{Regeneration}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself or an \glossterm{ally} within \rngmed range}
+A the end of each round, the target can spend an \glossterm{action point}.
+If it does, it removes one of its \glossterm{vital wounds}.
+
+\rankline
+\rank{7} The target can remove up to two \glossterm{vital wounds} instead of only one.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Cripple}{}}\label{spell:Cripple}
+\begin{freeability}[Rank 6]{\hypertarget{spell:Cripple}{Cripple}}[\glossterm{Focus}]
+\target{One living creature within \rngclose range}
+Make an attack vs. Fortitude against the target.
+\hit The target is \glossterm{immobilized} as a \glossterm{condition}.
+\crit The target is \glossterm{paralyzed} as a \glossterm{condition}.
+
+\rankline
+\rank{8} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Crippling Curse}{}}\label{spell:Crippling Curse}
+\begin{freeability}[Rank 8]{\hypertarget{spell:Crippling Curse}{Crippling Curse}}[\glossterm{Curse}, \glossterm{Focus}]
+\target{One living creature within \rngclose range}
+Make an attack vs. Mental against the target.
+\hit The target is \glossterm{immobilized} until it takes a \glossterm{short rest}.
+\crit As above, except that the effect lasts until this curse is removed.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Eyebite Curse}{}}\label{spell:Eyebite Curse}
+\begin{freeability}[Rank 8]{\hypertarget{spell:Eyebite Curse}{Eyebite Curse}}[\glossterm{Curse}, \glossterm{Focus}]
+\target{One living creature within \rngclose range}
+Make an attack vs. Mental against the target.
+\hit The target is \glossterm{blinded} until it takes a \glossterm{short rest}.
+\crit As above, except that the effect lasts until this curse is removed.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\subsubsection{Rituals}
+
+
+\lowercase{\hypertarget{spell:Air Breathing}{}}\label{spell:Air Breathing}
+\begin{attuneability}[Rank 3]{\hypertarget{spell:Air Breathing}{Air Breathing}}[\glossterm{Attune} (ritual), \glossterm{Focus}]
+\target{One Medium or smaller ritual participant}
+The target can breathe air as easily as a human breathes air, preventing it from suffocating above water if it can normally only breathe water or some other substance.
+
+This ritual takes one minute to perform.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Water Breathing}{}}\label{spell:Water Breathing}
+\begin{attuneability}[Rank 3]{\hypertarget{spell:Water Breathing}{Water Breathing}}[\glossterm{Attune} (ritual), \glossterm{Focus}]
+\target{One Medium or smaller ritual participant}
+The target can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
+
+This ritual takes one minute to perform.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Awaken}{}}\label{spell:Awaken}
+\begin{apability}[Rank 6]{\hypertarget{spell:Awaken}{Awaken}}[\glossterm{Focus}]
+\target{One Large or smaller \glossterm{ally} within \rngmed range}
+The target becomes sentient.
+Its Intelligence becomes 1d6 \sub 5.
+Its type changes from animal to magical beast.
+It gains the ability to speak and understand one language that you know of your choice.
+Its maximum age increases to that of a human (rolled secretly).
+This effect is permanent.
+
+This ritual takes 24 hours to perform, and requires 50 action points from its participants.
+You can only learn this ritual if you know this mystic sphere through the nature \glossterm{magic source}.
+\end{apability}
 \vspace{0.25em}
 
 
@@ -2670,24 +3023,53 @@ This ritual takes one minute to perform.
 \subsubsection{Cantrips}
 
 
+\begin{freeability}{Repeat}
+\target{One creature within \rngmed range}
+Make an attack vs. Mental against the target.
+\hit During the next round, the target must repeat all actions that it took this round.
+It can choose different targets or otherwise make different decisions about its action, but the action must be the same.
+If it is unable to take the same action, it cannot is unable to take an action of that type.
+For example, if a creature moved during the round that you cast this spell and was \glossterm{immobilized} or knocked \glossterm{prone}, it cannot move at all during the following round.
+
+\rankline
+\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
+
 \end{spellsection}
 
 
 \subsubsection{Spells}
 
 
+\lowercase{\hypertarget{spell:Blink}{}}\label{spell:Blink}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Blink}{Blink}}[\glossterm{Compulsion}, \glossterm{Focus}]
+\target{One creature within \rngmed range}
+Make an attack vs. Mental against the target.
+\hit The target is \glossterm{blinded} until the end of the next round.
+
+\rankline
+\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Collapse}{}}\label{spell:Collapse}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Collapse}{Collapse}}[\glossterm{Compulsion}, \glossterm{Focus}]
-\targets{\glossterm{Enemies} in a \areamed radius from you}
+\targets{\glossterm{Enemies} in a \areasmall radius within \rngmed range}
 Make an attack vs. Mental against each target.
 \hit Each target falls \glossterm{prone}.
 \crit As above, and as a \glossterm{condition}, each target is unable to stand up.
 If a target is somehow brought into a standing position, it will immediately fall and become prone again.
 
 \rankline
-\rank{3} The area increases to a \arealarge radius.
-\rank{5} The area increases to a \areahuge radius.
-\rank{7} The area increases to a \areaext radius.
+\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2702,6 +3084,87 @@ It can spend a \glossterm{move action} to dance, if it is physically capable of 
 At the end of each round, if the target did not dance during that round, it takes a \minus2 penalty to \glossterm{accuracy} and Mental defense as the compulsion intensifies.
 This penalty stacks each round until the target dances, which resets the penalties to 0.
 \crit As above, except that the target must dance as a \glossterm{standard action} to reset the penalties, instead of as a move action.
+
+\rankline
+\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Drop}{}}\label{spell:Drop}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Drop}{Drop}}[\glossterm{Compulsion}, \glossterm{Focus}]
+\target{One creature within \rngmed range}
+Make an attack vs. Mental against the target.
+\hit The target drops anything it is holding in its hands.
+\crit As above, and as a \glossterm{condition}, the target is unable to pick up the dropped items.
+It can still hold other items, but if the dropped items are placed in its hands, it will immediately drop them again.
+
+\rankline
+\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Heedless Rush}{}}\label{spell:Heedless Rush}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Heedless Rush}{Heedless Rush}}[\glossterm{Compulsion}, \glossterm{Focus}]
+\target{One creature within \rngmed range}
+Make an attack vs. Mental against the target.
+\hit As a \glossterm{condition}, the target is forced to use the \textit{sprint} action whenever it moves (see \pcref{Sprint}).
+It can still stop before reaching its maximum movement speed, but it must pay the hit point cost if it moves from its current position.
+
+\rankline
+\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Mass Repeat}{}}\label{spell:Mass Repeat}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Mass Repeat}{Mass Repeat}}[\glossterm{Compulsion}, \glossterm{Focus}]
+\targets{\glossterm{Enemies} in a \areasmall radius within \rngmed range}
+This spell functions like the \spell{repeat} spell, except that it affects more creatures.
+
+\rankline
+\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Mass Stop}{}}\label{spell:Mass Stop}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Mass Stop}{Mass Stop}}[\glossterm{Compulsion}, \glossterm{Focus}]
+\targets{\glossterm{Enemies} in a \areamed radius within \rngmed range}
+Make an attack vs. Mental against each target.
+\hit Each target is \glossterm{slowed} until the end of the next round.
+\crit Each target is \glossterm{slowed} as a \glossterm{condition}.
+
+\rankline
+\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Run}{}}\label{spell:Run}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Run}{Run}}[\glossterm{Compulsion}, \glossterm{Focus}]
+\target{One creature within \rngmed range}
+Make an attack vs. Mental against the target.
+\hit As a \glossterm{condition}, the target must move its maximum movement speed in a straight line during each \glossterm{movement phase}.
+It must use its movement mode with the highest speed to move this way.
+It is not required to use the \textit{sprint} ability, or use any other special movement ability, though it may choose to do so.
+If it is unable to move its full speed without making a skill check or encountering a solid obstacle, it may choose to stop its movement after moving the maximum possible distance without doing so.
 
 \rankline
 \rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
@@ -2728,16 +3191,24 @@ Make an attack vs. Mental against the target.
 
 
 
-\lowercase{\hypertarget{spell:Drop}{}}\label{spell:Drop}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Drop}{Drop}}[\glossterm{Compulsion}, \glossterm{Focus}]
-\target{One creature within \rngmed range}
-Make an attack vs. Mental against the target.
-\hit The target drops anything it is holding in its hands.
+\lowercase{\hypertarget{spell:Follow the Leader}{}}\label{spell:Follow the Leader}
+\begin{attuneability}[Rank 3]{\hypertarget{spell:Follow the Leader}{Follow the Leader}}[\glossterm{Attune} (self), \glossterm{Compulsion}, \glossterm{Focus}]
+
+Primary target: Yourself
+\par\noindent
+Secondary targets: \glossterm{Enemies} adjacent to you
+
+You emanate an aura around you that compels creatures to follow you.
+During each \glossterm{action phase}, make an attack vs. Mental against each secondary target.
+\hit Each secondary target is compelled to mimic your movements during the next \glossterm{movement phase}.
+If you move during that movement phase, it must move with the same movement mode in the same distance and direction up to the limit of its ability to follow you.
+It is not compelled to sprint to keep up with you, though it may choose to (see \pcref{Sprint}).
+If you do not move, or if you move with a movement mode that it is incapable of using, it is simply \glossterm{immobilized} for that movement phase.
 
 \rankline
-\rank{5} On a \glossterm{critical hit}, the target is unable to pick up the dropped items as a \glossterm{condition}.
-\rank{7} The range increases to \rnglong.
-\end{freeability}
+\rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{7} The accuracy bonus increases to \plus2.
+\end{attuneability}
 \vspace{0.25em}
 
 
@@ -2758,18 +3229,61 @@ In combat, most creatures with an intelligence of 0 or less will often talk abou
 
 
 
-\lowercase{\hypertarget{spell:Run}{}}\label{spell:Run}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Run}{Run}}[\glossterm{Compulsion}, \glossterm{Focus}]
-\target{One creature within \rngmed range}
-Make an attack vs. Mental against the target.
-\hit As a \glossterm{condition}, the target must move its maximum movement speed in a straight line during each \glossterm{movement phase}.
-It must use its movement mode with the highest speed to move this way.
-It is not required to use the \textit{sprint} ability, or use any other special movement ability, though it may choose to do so.
-If it is unable to move its full speed without making a skill check or encountering a solid obstacle, it may choose to stop its movement after moving the maximum possible distance without doing so.
+\lowercase{\hypertarget{spell:Discordant Song}{}}\label{spell:Discordant Song}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Discordant Song}{Discordant Song}}[\glossterm{Compulsion}, \glossterm{Focus}]
+\targets{\glossterm{Enemies} in a \areamed radius from you}
+Make an attack vs. Mental against each target.
+\hit Each target is \disoriented until the end of the next round.
+\crit Each target is \glossterm{disoriented} as a \glossterm{condition}.
+
+\rankline
+\rank{6} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{8} The accuracy bonus increases to \plus2.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Mass Blink}{}}\label{spell:Mass Blink}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Mass Blink}{Mass Blink}}[\glossterm{Compulsion}, \glossterm{Focus}]
+\targets{\glossterm{Enemies} in a \areamed radius within \rngmed range}
+Make an attack vs. Mental against each target.
+\hit Each target is \glossterm{blinded} until the end of the next round.
+
+\rankline
+\rank{6} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{8} The accuracy bonus increases to \plus2.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Mass Drop}{}}\label{spell:Mass Drop}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Mass Drop}{Mass Drop}}[\glossterm{Compulsion}, \glossterm{Focus}]
+\targets{\glossterm{Enemies} in a \areamed radius within \rngmed range}
+Make an attack vs. Mental gainst each target.
+\hit Each target drops anything it is holding in its hands.
 
 \rankline
 \rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
 \rank{7} The accuracy bonus increases to \plus2.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Selfstrike}{}}\label{spell:Selfstrike}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Selfstrike}{Selfstrike}}[\glossterm{Compulsion}, \glossterm{Focus}]
+\target{One creature within \rngmed range}
+Make an attack vs. Mental against the target.
+\hit During the next \glossterm{action phase}, the target is compelled to make a \glossterm{strike} against itself instead of taking any other actions.
+If it has any weapons in hand or natural weapons at that time, it must use one of them.
+Otherwise, it uses its unarmed attack.
+This does not use up any of the creature's actions for the round, and it can take any unused actions during the \glossterm{delayed action phase} of that round.
+
+\rankline
+\rank{6} The accuracy bonus increases to \plus2.
+\rank{8} The accuracy bonus increases to \plus3.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2804,6 +3318,20 @@ If the target is humanoid and was already stunned and confused from a previous c
 
 
 
+\lowercase{\hypertarget{spell:Mass Confusion}{}}\label{spell:Mass Confusion}
+\begin{freeability}[Rank 5]{\hypertarget{spell:Mass Confusion}{Mass Confusion}}[\glossterm{Compulsion}, \glossterm{Focus}]
+\targets{\glossterm{Enemies} in a \areasmall radius within \rngmed range}
+Make an attack vs. Mental against each target.
+\hit Each target is \confused until the end of the next round.
+\crit Each target is \glossterm{confused} as a \glossterm{condition}.
+
+\rankline
+\rank{7} The area increases to a \areamed radius.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Close Your Eyes}{}}\label{spell:Close Your Eyes}
 \begin{freeability}[Rank 6]{\hypertarget{spell:Close Your Eyes}{Close Your Eyes}}[\glossterm{Compulsion}, \glossterm{Focus}]
 \target{One creature within \rngmed range}
@@ -2817,28 +3345,15 @@ Make an attack vs. Mental against the target.
 
 
 
-\lowercase{\hypertarget{spell:Curse of Repetition}{}}\label{spell:Curse of Repetition}
-\begin{freeability}[Rank 6]{\hypertarget{spell:Curse of Repetition}{Curse of Repetition}}[\glossterm{Compulsion}, \glossterm{Curse}, \glossterm{Focus}]
-\target{One creature within \rngmed range}
-Make an attack vs. Mental against the target.
-\hit Whenever the target takes a standard action voluntarily, it is compelled to repeat the same action next round.
-It can choose different targets or otherwise make different decisions about its action, but the action must be the same.
-If it is unable to take the same action, such as if the action exhausted one of the creature's resources, it cannot take a standard action that round.
-This effect lasts until it takes a \glossterm{short rest}.
-\crit As above, except that the effect lasts until the curse is removed.
+\lowercase{\hypertarget{spell:Close Their Eyes}{}}\label{spell:Close Their Eyes}
+\begin{freeability}[Rank 7]{\hypertarget{spell:Close Their Eyes}{Close Their Eyes}}[\glossterm{Compulsion}, \glossterm{Focus}]
+\targets{\glossterm{Enemies} in a \areamed radius within \rngmed range}
+Make an attack vs. Mental against each target.
+\hit Each target is \blinded until the end of the next round.
+\crit Each target is \glossterm{blinded} as a \glossterm{condition}.
 
 \rankline
-\rank{8} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Discordant Song}{}}\label{spell:Discordant Song}
-\begin{freeability}[Rank 7]{\hypertarget{spell:Discordant Song}{Discordant Song}}[\glossterm{Compulsion}, \glossterm{Focus}]
-\targets{\glossterm{Enemies} in a \areasmall radius from you}
-Make an attack vs. Mental against each target.
-\hit Each target is \disoriented as a \glossterm{condition}.
+\rank{7} The area increases to a \areamed radius.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3106,6 +3621,9 @@ The ice lasts until the end of the round before disappearing.
 While you are leaving a trail of ice behind you, you can move into thin air by walking on your own ice trail, just as if it was solid ground.
 If you are still standing on your own ice trail when it disappears at the end of the round, you fall.
 
+Creatures following closely behind you while you move may also be able to use your ice trail.
+However, most Large or larger creatures will break the ice trail if they step onto it, which may cause both of you to fall.
+
 \rankline
 \rank{5} Your ice trail collapses more gradually.  If you are still standing on your own ice trail when it disappears, you can fall up to 50 feet before you start taking \glossterm{falling damage}.
 \rank{7} Your ice trail lasts until the end of the next round after your movement.
@@ -3144,14 +3662,10 @@ In addition, it becomes \glossterm{vulnerable} to bludgeoning damage until the e
 
 \lowercase{\hypertarget{spell:Frost Breath}{}}\label{spell:Frost Breath}
 \begin{attuneability}[Rank 4]{\hypertarget{spell:Frost Breath}{Frost Breath}}[\glossterm{Attune} (self), \glossterm{Focus}]
-
-Primary target: Yourself
-\par\noindent
-Secondary targets: Everything within a \arealarge cone
-
+\target{Yourself}
 As a standard action, you can breathe cold like a dragon.
-When you do, make an attack vs Armor against each secondary target.
-\hit Each secondary target takes cold \glossterm{standard damage}.
+When you do, make an attack vs Armor against everything in a \arealarge cone.
+\hit Each target takes cold \glossterm{standard damage}.
 
 You can cast this spell as a \glossterm{minor action}.
 
@@ -3622,12 +4136,12 @@ Make an attack vs. Reflex against each target.
 \lowercase{\hypertarget{spell:Magnetic Blade}{}}\label{spell:Magnetic Blade}
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Magnetic Blade}{Magnetic Blade}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself or an \glossterm{ally} within \rngmed range}
-Metal weapons wielded by the target gain a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
+Metal weapons wielded by the target gain a \plus2 \glossterm{magic bonus} to \glossterm{accuracy} against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
 
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{5} The accuracy bonus increases to \plus2.
+\rank{5} The target is also immune to the \textit{disarm} ability and similar effects if it is wearing metal gauntlets.
 \rank{7} The accuracy bonus increases to \plus3.
 \end{attuneability}
 \vspace{0.25em}
@@ -3688,14 +4202,12 @@ You gain a \plus2 bonus to accuracy against each target that is wearing metal ar
 
 \lowercase{\hypertarget{spell:Lightning Breath}{}}\label{spell:Lightning Breath}
 \begin{attuneability}[Rank 4]{\hypertarget{spell:Lightning Breath}{Lightning Breath}}[\glossterm{Attune} (self), \glossterm{Focus}]
-
-Primary target: Yourself
-\par\noindent
-Secondary targets: Everything within a \arealarge cone
-
+\target{Yourself (see text)}
 As a standard action, you can breathe electricity like a dragon.
-When you do, make an attack vs Reflex against each secondary target.
-\hit Each secondary target takes electricity \glossterm{standard damage} \plus1d.
+When you do, make an attack vs Reflex against everything within a \arealarge cone.
+\hit Each target takes electricity \glossterm{standard damage} \plus1d.
+
+You can cast this spell as a \glossterm{minor action}.
 
 \rankline
 \rank{6} The damage increases to \glossterm{standard damage} \plus2d.
@@ -3988,14 +4500,10 @@ In addition, make an attack vs. Reflex against each target.
 
 \lowercase{\hypertarget{spell:Acid Breath}{}}\label{spell:Acid Breath}
 \begin{attuneability}[Rank 4]{\hypertarget{spell:Acid Breath}{Acid Breath}}[\glossterm{Attune} (self), \glossterm{Focus}]
-
-Primary target: Yourself
-\par\noindent
-Secondary targets: Everything within a \arealarge cone
-
+\target{Yourself (see text)}
 As a standard action, you can breathe acid like a dragon.
-When you do, make an attack vs Armor against each secondary target.
-\hit Each secondary target takes acid \glossterm{standard damage} \plus1d.
+When you do, make an attack vs Armor against everything in a \arealarge cone from you.
+\hit Each target takes acid \glossterm{standard damage} \plus1d.
 
 You can cast this spell as a \glossterm{minor action}.
 
@@ -4452,7 +4960,7 @@ This ritual takes 24 hours to perform, and it requires 8 action points from its 
 \begin{spellsection}{Polymorph}
 
 \begin{spellheader}
-\spelldesc{Change the physical forms of objects and creatures.}
+\spelldesc{Change the physical shape or outward form of objects and creatures.}
 \end{spellheader}
 
 
@@ -4495,36 +5003,6 @@ The target gains a \plus3 \glossterm{magic bonus} to the Stealth skill.
 
 
 
-\lowercase{\hypertarget{spell:Enhanced Senses}{}}\label{spell:Enhanced Senses}
-\begin{attuneability}[Rank 1]{\hypertarget{spell:Enhanced Senses}{Enhanced Senses}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\target{Yourself}
-You gain a \plus3 \glossterm{magic bonus} to the Awareness skill.
-
-\rankline
-\rank{3} The bonus increases to \plus4.
-\rank{5} The bonus increases to \plus5.
-\rank{7} The bonus increases to \plus6.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Fleshbite}{}}\label{spell:Fleshbite}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Fleshbite}{Fleshbite}}[\glossterm{Focus}]
-\target{One creature within \rngmed range}
-Make an attack vs. Fortitude against the target.
-\hit The target is \glossterm{sickened} as a \glossterm{condition}.
-\crit The target is \glossterm{nauseated} as a \glossterm{condition}.
-
-\rankline
-\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-\rank{5} The accuracy bonus increases to \plus2.
-\rank{7} The accuracy bonus increases to \plus3.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Natural Weapon}{}}\label{spell:Natural Weapon}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Natural Weapon}{Natural Weapon}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \target{Yourself}
@@ -4536,20 +5014,6 @@ For details, see \tref{Natural Weapons}.
 \rank{5} You gain a \plus2 \glossterm{magic bonus} to \glossterm{power} with natural weapons.
 \rank{7} The accuracy bonus increases to \plus2.
 \end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Neutralize Poison}{}}\label{spell:Neutralize Poison}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Neutralize Poison}{Neutralize Poison}}[\glossterm{Focus}]
-\target{Yourself or one target within \rngmed range}
-The target gains an additional success to resist a poison currently affecting it (see \pcref{Poisons}).
-
-\rankline
-\rank{3} The number of additional successes increases to two.
-\rank{5} The number of additional successes increases to three, which is enough to remove most poisons immediately.
-\rank{7} The target can also gain the same number of successes to remove an additional poison affecting it.
-\end{freeability}
 \vspace{0.25em}
 
 
@@ -4592,16 +5056,17 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 
-\lowercase{\hypertarget{spell:Spider Climb}{}}\label{spell:Spider Climb}
-\begin{attuneability}[Rank 1]{\hypertarget{spell:Spider Climb}{Spider Climb}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\target{Yourself}
-You gain a \glossterm{climb speed} equal to your \glossterm{base speed}.
-You also gain a \plus2 \glossterm{magic bonus} to Climb checks.
+\lowercase{\hypertarget{spell:Stoneskin}{}}\label{spell:Stoneskin}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Stoneskin}{Stoneskin}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself or an \glossterm{ally} in \rngmed range}
+The target gains a \plus2 \glossterm{magic bonus} to \glossterm{resistances} against \glossterm{physical} damage.
+
+You can cast this spell as a \glossterm{minor action}.
 
 \rankline
 \rank{3} The bonus increases to \plus4.
-\rank{5} The bonus increases to \plus6.
-\rank{7} The bonus increases to \plus8.
+\rank{5} The bonus increases to be equal to half your \glossterm{power}.
+\rank{7} The bonus increases to be equal to your \glossterm{power}.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -4641,26 +5106,6 @@ When this effect ends, the object appears in a free hand, if you have one availa
 
 
 
-\lowercase{\hypertarget{spell:Acidic Blood}{}}\label{spell:Acidic Blood}
-\begin{attuneability}[Rank 3]{\hypertarget{spell:Acidic Blood}{Acidic Blood}}[\glossterm{Attune} (target), \glossterm{Focus}]
-
-Primary target: Yourself or one \glossterm{ally} within \rngmed range
-\par\noindent
-Secondary targets: Everything adjacent to the primary target
-
-The primary target's blood becomes acidic.
-This does not harm it, but the blood can be dangerous to anything nearby when it bleeds.
-At the end of each round, if the primary target was \glossterm{wounded} during that round, make an attack vs. Armor against everything adjacent to the target.
-\hit Each secondary target takes acid \glossterm{standard damage} \minus1d.
-
-\rankline
-\rank{5} The damage increases to \glossterm{standard damage}.
-\rank{7} The damage increases to \glossterm{standard damage} \plus1d.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Alter Appearance}{}}\label{spell:Alter Appearance}
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Alter Appearance}{Alter Appearance}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself or one large or smaller \glossterm{ally} within \rngmed range}
@@ -4671,35 +5116,6 @@ However, this effect is unable to alter the target's clothes or equipment in any
 \rankline
 \rank{5} The bonus increases to \plus6.
 \rank{7} The bonus increases to \plus8.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Intensify Poison}{}}\label{spell:Intensify Poison}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Intensify Poison}{Intensify Poison}}[\glossterm{Focus}]
-\target{One living creature within \rngmed range}
-Make an attack vs. Fortitude with a \plus2 bonus to \glossterm{accuracy} against the target.
-If the target is not currently poisoned, this ability has no effect.
-\hit Choose a poison affecting the target.
-The poison gains an additional hit against the target, which can have varying effects depending on the poison (see \pcref{Poisons}).
-
-\rankline
-\rank{5} The accuracy bonus increases to \plus3.
-\rank{7} The accuracy bonus increases to \plus4.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Scent}{}}\label{spell:Scent}
-\begin{attuneability}[Rank 3]{\hypertarget{spell:Scent}{Scent}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\target{Yourself}
-You gain the \glossterm{scent} ability, giving you a \plus10 bonus to scent-based Awareness checks (see \pcref{Senses}).
-
-\rankline
-\rank{5} The bonus increases to \plus15.
-\rank{7} The bonus increases to \plus20.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -4824,34 +5240,6 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 
-\lowercase{\hypertarget{spell:Stoneskin}{}}\label{spell:Stoneskin}
-\begin{attuneability}[Rank 4]{\hypertarget{spell:Stoneskin}{Stoneskin}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
-The target gains a \glossterm{magic bonus} equal to half your \glossterm{power} to \glossterm{resistances} against \glossterm{physical damage}.
-
-You can cast this spell as a \glossterm{minor action}.
-
-\rankline
-\rank{6} The target also gains a \plus1 \glossterm{magic bonus} to Armor defense.
-\rank{8} The bonus increases to be equal to your \glossterm{power}.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Regeneration}{}}\label{spell:Regeneration}
-\begin{attuneability}[Rank 5]{\hypertarget{spell:Regeneration}{Regeneration}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
-A the end of each round, the target can spend an \glossterm{action point}.
-If it does, it removes one of its \glossterm{vital wounds}.
-
-\rankline
-\rank{7} The target can remove up to two \glossterm{vital wounds} instead of only one.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Baleful Polymorph}{}}\label{spell:Baleful Polymorph}
 \begin{freeability}[Rank 7]{\hypertarget{spell:Baleful Polymorph}{Baleful Polymorph}}[\glossterm{Focus}]
 \target{One creature within \rngmed range}
@@ -4932,32 +5320,10 @@ This ritual takes one hour to perform.
 
 
 
-\lowercase{\hypertarget{spell:Air Breathing}{}}\label{spell:Air Breathing}
-\begin{attuneability}[Rank 3]{\hypertarget{spell:Air Breathing}{Air Breathing}}[\glossterm{Attune} (ritual), \glossterm{Focus}]
-\target{One Medium or smaller ritual participant}
-The target can breathe air as easily as a human breathes air, preventing it from suffocating above water if it can normally only breathe water or some other substance.
-
-This ritual takes one minute to perform.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Exotic Morph Weapon}{}}\label{spell:Exotic Morph Weapon}
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Exotic Morph Weapon}{Exotic Morph Weapon}}[\glossterm{Attune} (ritual), \glossterm{Focus}]
 \target{One unattended manufatured weapon}
 This ritual functions like the \spell{morph weapon} ritual, except that you can also change the target into an exotic weapon.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Water Breathing}{}}\label{spell:Water Breathing}
-\begin{attuneability}[Rank 3]{\hypertarget{spell:Water Breathing}{Water Breathing}}[\glossterm{Attune} (ritual), \glossterm{Focus}]
-\target{One Medium or smaller ritual participant}
-The target can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
-
-This ritual takes one minute to perform.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -4999,23 +5365,6 @@ This ritual takes 24 hours to perform.
 \begin{apability}[Rank 5]{\hypertarget{spell:Enduring Greater Fortify}{Enduring Greater Fortify}}[\glossterm{Focus}]
 \target{Greater Fortify}
 This ritual functions like the \spell{greater fortify} ritual, except that the effect lasts for one hundred years.
-\end{apability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Awaken}{}}\label{spell:Awaken}
-\begin{apability}[Rank 6]{\hypertarget{spell:Awaken}{Awaken}}[\glossterm{Focus}]
-\target{One Large or smaller \glossterm{ally} within \rngmed range}
-The target becomes sentient.
-Its Intelligence becomes 1d6 \sub 5.
-Its type changes from animal to magical beast.
-It gains the ability to speak and understand one language that you know of your choice.
-Its maximum age increases to that of a human (rolled secretly).
-This effect is permanent.
-
-This ritual takes 24 hours to perform, and requires 50 action points from its participants.
-It can only be learned with the nature \glossterm{magic source}.
 \end{apability}
 \vspace{0.25em}
 
@@ -5236,14 +5585,12 @@ You can cast this spell as a \glossterm{minor action}.
 
 \lowercase{\hypertarget{spell:Flame Breath}{}}\label{spell:Flame Breath}
 \begin{attuneability}[Rank 4]{\hypertarget{spell:Flame Breath}{Flame Breath}}[\glossterm{Attune} (self), \glossterm{Focus}]
-
-Primary target: Yourself
-\par\noindent
-Secondary targets: Everything within a \arealarge cone
-
+\target{Yourself (see text)}
 As a standard action, you can breathe fire like a dragon.
-When you do, make an attack vs Armor against each secondary target.
-\hit Each secondary target takes fire \glossterm{standard damage} \plus1d.
+When you do, make an attack vs Armor against everything within a \arealarge cone from you.
+\hit Each target takes fire \glossterm{standard damage} \plus1d.
+
+You can cast this spell as a \glossterm{minor action}.
 
 \rankline
 \rank{6} The damage increases to \glossterm{standard damage} \plus2d.
@@ -6166,6 +6513,24 @@ Any attacks you make with the object or checks you make to manipulate the object
 \subsubsection{Spells}
 
 
+\lowercase{\hypertarget{spell:Blastwave}{}}\label{spell:Blastwave}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Blastwave}{Blastwave}}[\glossterm{Focus}]
+\targets{\glossterm{Enemies} and objects in a \areasmall radius from you}
+Make an attack vs. Mental against each target.
+\hit You move each target up to 5 feet per two \glossterm{power} in a straight line away from you.
+Moving a target upwards costs twice the normal movement cost.
+If the target impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgoning \glossterm{standard damage} \minus2d.
+Any individual object or creature can only take damage once in this way, even if it is hit by multiple targets that are knocked flying.
+
+\rankline
+\rank{5} The area increases to a \areamed radius.
+\rank{5} The area increases to a \arealarge radius.
+\rank{7} The area increases to a \areahuge radius.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Force Lance}{}}\label{spell:Force Lance}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Force Lance}{Force Lance}}[\glossterm{Focus}]
 \targets{Everything in a \areamed, 10 ft.\ wide line from you}
@@ -6202,6 +6567,22 @@ Make an attack vs. Armor against the target.
 Make an attack vs. Mental against the target.
 \hit The target is \glossterm{slowed} as a \glossterm{condition}.
 \crit The target is \glossterm{decelerated} as a \glossterm{condition}.
+
+\rankline
+\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Mass Kinetic Impedance}{}}\label{spell:Mass Kinetic Impedance}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Mass Kinetic Impedance}{Mass Kinetic Impedance}}[\glossterm{Compulsion}, \glossterm{Focus}]
+\targets{\glossterm{Enemies} in a \areamed radius within \rngmed range}
+Make an attack vs. Mental against each target.
+\hit Each target is \glossterm{slowed} until the end of the next round.
+\crit Each target is \glossterm{slowed} as a \glossterm{condition}.
 
 \rankline
 \rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
@@ -6262,18 +6643,20 @@ If the target impacts a solid object before the maximum distance, it stops movin
 
 
 
-\lowercase{\hypertarget{spell:Blastwave}{}}\label{spell:Blastwave}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Blastwave}{Blastwave}}[\glossterm{Focus}]
-\targets{\glossterm{Enemies} and objects in a \areamed radius from you}
-Make an attack vs. Mental against each target.
-\hit You move each target up to 5 feet per two \glossterm{power} in a straight line away from you.
-Moving a target upwards costs twice the normal movement cost.
-If the target impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgoning \glossterm{standard damage} \minus2d.
-Any individual object or creature can only take damage once in this way, even if it is hit by multiple targets that are knocked flying.
+\lowercase{\hypertarget{spell:Wall of Force}{}}\label{spell:Wall of Force}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Wall of Force}{Wall of Force}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
+\targetrule
+You create a wall of magical energy within \rngmed range.
+You can choose the dimensions of the wall, up to a maximum of a 20 ft.\ high, \areamed length line.
+If you create the wall within a space too small to hold it, it fills as much of the space as possible, allowing you to completely block off small tunnels.
+The wall is visible as a shimmering magical membrane that does not block sight.
+Nothing can pass through the wall until it is destroyed.
+Each 5-ft.\ square of wall has a \glossterm{vital resistance} equal to twice your \glossterm{power}.
 
 \rankline
-\rank{5} The area increases to a \arealarge radius.
-\rank{7} The area increases to a \areahuge radius.
+\rank{3} The \glossterm{vital resistance} of each 5-ft.\ square increases to be equal to three times your \glossterm{power}.
+\rank{5} The area increases to a \arealarge line.
+\rank{7} The \glossterm{vital resistance} of each 5-ft.\ square increases to be equal to four times your \glossterm{power}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -6309,28 +6692,15 @@ As a \glossterm{minor action}, you can make a \glossterm{magical strike} with a 
 
 
 \lowercase{\hypertarget{spell:Levitate}{}}\label{spell:Levitate}
-\begin{attuneability}[Rank 5]{\hypertarget{spell:Levitate}{Levitate}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\target{Yourself or one Medium or smaller \glossterm{ally} or unattended object within \rngmed range}
+\begin{attuneability}[Rank 4]{\hypertarget{spell:Levitate}{Levitate}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{Yourself}
 % TODO: Wording
-As long as the target remains within 50 feet above a surface that could support its weight, it floats in midair, unaffected by gravity.
-During the movement phase, you can move the target up to ten feet in any direction as a \glossterm{free action}.
+As long as you remain within 50 feet above a surface that could support its weight, it floats in midair, unaffected by gravity.
+During the movement phase, you can move yourself up to ten feet in any direction as a \glossterm{move action}.
 
 \rankline
-\rank{7} The maximum height above the surface increases to 100 feet.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Wall of Force}{}}\label{spell:Wall of Force}
-\begin{attuneability}[Rank 5]{\hypertarget{spell:Wall of Force}{Wall of Force}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\targetrule
-You create a wall of telekinetic force in a 20 ft.\ high, \arealarge line within \rngmed range.
-The wall is transparent, but blocks physical passage and \glossterm{line of effect}.
-Each five-foot square of wall has a \glossterm{vital resistance} equal to four times your \glossterm{power} and all of its defenses are 0.
-
-\rankline
-\rank{7} The area increases to a \areahuge line.
+\rank{6} The maximum height above the surface increases to 100 feet.
+\rank{8} The distance you can move increases to 30 feet.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -6824,6 +7194,19 @@ Make an attack vs. Mental against the secondary target.
 \rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
 \rank{7} The accuracy bonus increases to \plus2.
 \end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Purge Curse}{}}\label{spell:Purge Curse}
+\begin{apability}[Rank 3]{\hypertarget{spell:Purge Curse}{Purge Curse}}[\glossterm{Focus}]
+\target{Yourself or an \glossterm{ally} within \rngmed range}
+All curses affecting the target are removed.
+This ritual cannot remove a curse that is part of the effect of an item the target has equipped.
+However, it can allow the target to remove any cursed items it has equipped.
+
+This ritual takes 24 hours to perform, and requires 8 action points from its participants.
+\end{apability}
 \vspace{0.25em}
 
 
@@ -7530,8 +7913,8 @@ When this spell's duration ends, the plants return to their natural size.
 \target{One living creature within \rngmed range}
 Make an attack vs. Fortitude against the target.
 \hit The target becomes \glossterm{poisoned} with nitharit.
-It becomes \glossterm{sickened} as long as it is poisoned.
 At the end of each subsequent round, you repeat this attack, as normal for poisons.
+A creature poisoned by nitharit becomes \glossterm{sickened} as long as it is poisoned.
 A third successful attack causes the target to become \glossterm{nauseated} as long as it is poisoned.
 A third failed attack ends the poison.
 
@@ -7539,6 +7922,22 @@ A third failed attack ends the poison.
 \rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
 \rank{5} The accuracy bonus increases to \plus2.
 \rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Poison -- Sassone Leaf}{}}\label{spell:Poison -- Sassone Leaf}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Poison -- Sassone Leaf}{Poison -- Sassone Leaf}}[\glossterm{Focus}]
+\target{One living creature within \rngmed range}
+This spell functions like this \spell{poison -- nitharit} spell, except that the target becomes poisoned with sassone leaf instead (see \pcref{Poisons}).
+A creature poisoned by sassone leaf loses a \glossterm{hit point} from each successful attack, including the first.
+A third successful attack causes the target to lose an additional hit point and ends the poison.
+A third failed attack ends the poison.
+
+\rankline
+\rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{7} The accuracy bonus increases to \plus2.
 \end{freeability}
 \vspace{0.25em}
 
@@ -7663,12 +8062,12 @@ On impact, the acorn detonates, and you make an attack vs. Armor against everyth
 
 
 
-\lowercase{\hypertarget{spell:Poison -- Sassone Leaf}{}}\label{spell:Poison -- Sassone Leaf}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Poison -- Sassone Leaf}{Poison -- Sassone Leaf}}[\glossterm{Focus}]
+\lowercase{\hypertarget{spell:Poison -- Arsenic}{}}\label{spell:Poison -- Arsenic}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Poison -- Arsenic}{Poison -- Arsenic}}[\glossterm{Focus}]
 \target{One living creature within \rngmed range}
-This spell functions like this \spell{poison -- nitharit} spell, except that the target becomes poisoned with sassone leaf instead (see \pcref{Poisons}).
-A creature poisoned by sassone leaf loses a \glossterm{hit point} from each successful attack, including the first.
-A third successful attack causes the target to lose an additional hit point and ends the poison.
+This spell functions like this \spell{poison -- nitharit} spell, except that the target becomes poisoned with arsenic instead (see \pcref{Poisons}).
+A creature poisoned by arsenic loses a \glossterm{hit point} from each successful attack, including the first.
+A third successful attack causes the target gain a \glossterm{vital wound} and ends the poison.
 A third failed attack ends the poison.
 
 \rankline
@@ -7753,7 +8152,7 @@ That prevents the vines from impeding your movement, though they do impede the m
 
 
 \lowercase{\hypertarget{spell:Poison -- Black Lotus}{}}\label{spell:Poison -- Black Lotus}
-\begin{freeability}[Rank 5]{\hypertarget{spell:Poison -- Black Lotus}{Poison -- Black Lotus}}[\glossterm{Focus}, \glossterm{Manifestation}]
+\begin{freeability}[Rank 4]{\hypertarget{spell:Poison -- Black Lotus}{Poison -- Black Lotus}}[\glossterm{Focus}, \glossterm{Manifestation}]
 \target{One living creature within \rngmed range}
 This spell functions like this \spell{poison -- nitharit} spell, except that the target becomes poisoned with black lotus extract instead (see \pcref{Poisons}).
 A creature poisoned by black lotus extract loses a \glossterm{hit point} from each successful attack, including the first.
@@ -7885,32 +8284,14 @@ The target regains one lost \glossterm{hit point}.
 \target{One creature within \rngmed range}
 Make an attack vs. Fortitude against the target.
 You gain a \plus4 bonus to \glossterm{accuracy} against a \glossterm{bloodied} creature.
-\hit As a \glossterm{condition}, the target is marked for death.
+\hit The target loses a \glossterm{hit point}.
+In addition, as a \glossterm{condition}, the target is marked for death.
 It takes a penalty to its \glossterm{vital resistance} equal to your \glossterm{power} against all types of damage.
 
 \rankline
 \rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
 \rank{5} The accuracy bonus increases to \plus2.
 \rank{7} The accuracy bonus increases to \plus3.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Decay}{}}\label{spell:Decay}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Decay}{Decay}}[\glossterm{Focus}]
-\target{One living creature within \rngmed range}
-Make an attack vs. Fortitude with a \plus2 \glossterm{accuracy} bonus against the target.
-\hit As a \glossterm{condition}, the target becomes more vulnerable to injury.
-It takes a \minus2 penalty to Fortitude defense.
-In addition, whenever it loses a \glossterm{hit point}, it reduces its maximum \glossterm{hit points} by 1.
-When this condition is removed, the target's maximum \glossterm{hit points} are restored.
-\crit As above, except that the penalty increases to -4.
-
-\rankline
-\rank{5} The accuracy bonus increases to \plus3.
-\rank{5} The accuracy bonus increases to \plus4.
-\rank{7} The accuracy bonus increases to \plus5.
 \end{freeability}
 \vspace{0.25em}
 
@@ -7949,6 +8330,22 @@ Make a melee attack vs. Reflex against the target.
 
 
 
+\lowercase{\hypertarget{spell:Draining Miasma}{}}\label{spell:Draining Miasma}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Draining Miasma}{Draining Miasma}}[\glossterm{Compulsion}, \glossterm{Focus}]
+\targets{\glossterm{Enemies} in a \areamed radius within \rngmed range}
+Make an attack vs. Fortitude against each target.
+\hit Each target is \glossterm{sickened} until the end of the next round.
+\crit Each target is \glossterm{sickened} as a \glossterm{condition}.
+
+\rankline
+\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Fortify Life}{}}\label{spell:Fortify Life}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Fortify Life}{Fortify Life}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself or an \glossterm{ally} within \rngmed range}
@@ -7982,22 +8379,6 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 
-\lowercase{\hypertarget{spell:Malaise}{}}\label{spell:Malaise}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Malaise}{Malaise}}[\glossterm{Focus}]
-\target{One living creature within \rngmed range}
-Make an attack vs. Fortitude against the target.
-\hit The target is \glossterm{sickened} as a \glossterm{condition}.
-\crit The target is \glossterm{nauseated} as a \glossterm{condition}.
-
-\rankline
-\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-\rank{5} The accuracy bonus increases to \plus2.
-\rank{7} The accuracy bonus increases to \plus3.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Circle of Death}{}}\label{spell:Circle of Death}
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Circle of Death}{Circle of Death}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \targets{Living \glossterm{enemies} in a \areamed radius}
@@ -8007,53 +8388,6 @@ Make an attack vs. Fortitude against each target.
 \rankline
 \rank{5} The area increases to a \arealarge radius.
 \rank{7} The area increases to a \areahuge radius.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Curse of Decay}{}}\label{spell:Curse of Decay}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Curse of Decay}{Curse of Decay}}[\glossterm{Curse}, \glossterm{Focus}]
-\target{One living creature within \rngmed range}
-Make an attack vs. Mental against the target.
-\hit The target becomes more vulnerable to injury until it takes a short rest.
-Whenever it loses a \glossterm{hit point}, it reduces its maximum \glossterm{hit points} by 1.
-This cannot reduce the target's maximum \glossterm{hit points} below 1.
-When this effect is removed, the target's maximum \glossterm{hit points} are restored.
-\crit As above, except that the effect lasts until this curse is removed.
-
-\rankline
-\rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-\rank{7} The accuracy bonus increases to \plus2.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Curse of Malaise}{}}\label{spell:Curse of Malaise}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Curse of Malaise}{Curse of Malaise}}[\glossterm{Curse}, \glossterm{Focus}]
-\target{One living creature within \rngmed range}
-Make an attack vs. Mental against the target.
-\hit The target is \glossterm{sickened} until it takes a \glossterm{short rest}.
-\crit As above, except that the effect lasts until this curse is removed.
-
-\rankline
-\rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-\rank{7} The accuracy bonus increases to \plus2.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Cursed Blade}{}}\label{spell:Cursed Blade}
-\begin{attuneability}[Rank 3]{\hypertarget{spell:Cursed Blade}{Cursed Blade}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or one \glossterm{ally} within \rngmed range}
-All damage the target deals with \glossterm{strikes} becomes \glossterm{energy damage} in addition to the attack's normal damage types.
-
-\rankline
-\rank{5} Whenever the target \glossterm{vitally wounds} a creature with a \glossterm{strike}, the target is unable to remove the \glossterm{vital wound} until it removes this effect.
-This is a \glossterm{Curse} effect, and can only be removed by abilities that can remove curses.
-\rank{7} The target is also unable to heal the hit points lost to the vitally wounding attack until it removes the curse.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -8073,15 +8407,15 @@ Make an attack vs. Fortitude against the target.
 
 
 
-\lowercase{\hypertarget{spell:Miasma}{}}\label{spell:Miasma}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Miasma}{Miasma}}[\glossterm{Focus}]
-\targets{\glossterm{Enemies} within an \areamed radius from you}
-Make an attack vs. Fortitude against each target.
-\hit Each target is \glossterm{sickened} as a \glossterm{condition}.
+\lowercase{\hypertarget{spell:Lifesteal}{}}\label{spell:Lifesteal}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Lifesteal}{Lifesteal}}[\glossterm{Focus}]
+\target{One living creature within \rngmed range}
+Make an attack vs. Fortitude against the target.
+\hit The target loses a \glossterm{hit point} and you regain a lost hit point.
 
 \rankline
-\rank{5} The area increases to a \arealarge radius.
-\rank{7} The area increases to a \areahuge radius.
+\rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{7} The accuracy bonus increases to \plus2.
 \end{freeability}
 \vspace{0.25em}
 
@@ -8130,6 +8464,21 @@ In addition, as a \glossterm{condition}, the target is unable to regain hit poin
 
 
 
+\lowercase{\hypertarget{spell:Lifesteal Blade}{}}\label{spell:Lifesteal Blade}
+\begin{attuneability}[Rank 4]{\hypertarget{spell:Lifesteal Blade}{Lifesteal Blade}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself or one \glossterm{ally} within \rngmed range}
+Once per round, when the target \glossterm{vitally wounds} a living creature with a \glossterm{strike}, the target regains a lost \glossterm{hit point}.
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{6} This healing only requires the target to \glossterm{wound} a living creature with a strike.
+\rank{8} This healing only requires the target to deal damage to a living creature with a strike.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Triage}{}}\label{spell:Triage}
 \begin{freeability}[Rank 4]{\hypertarget{spell:Triage}{Triage}}[\glossterm{Focus}]
 \target{Yourself or an \glossterm{ally} within \rngmed range}
@@ -8169,22 +8518,8 @@ The target removes one \glossterm{vital wound}.
 
 
 
-\lowercase{\hypertarget{spell:Eyebite}{}}\label{spell:Eyebite}
-\begin{freeability}[Rank 5]{\hypertarget{spell:Eyebite}{Eyebite}}[\glossterm{Focus}]
-\target{One living creature within \rngclose range}
-Make an attack vs. Fortitude against the target.
-\hit The target is \glossterm{blinded} as a \glossterm{condition}.
-
-\rankline
-\rank{6} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-\rank{8} The accuracy bonus increases to \plus2.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Lifesteal}{}}\label{spell:Lifesteal}
-\begin{freeability}[Rank 5]{\hypertarget{spell:Lifesteal}{Lifesteal}}[\glossterm{Focus}]
+\lowercase{\hypertarget{spell:Steal Vitality}{}}\label{spell:Steal Vitality}
+\begin{freeability}[Rank 5]{\hypertarget{spell:Steal Vitality}{Steal Vitality}}[\glossterm{Focus}]
 \target{One living creature within \rngmed range}
 Make an attack vs. Fortitude against the target.
 \hit The target takes energy \glossterm{standard damage} \plus3d.
@@ -8193,20 +8528,6 @@ When you do, you may remove one of your \glossterm{vital wounds}.
 
 \rankline
 \rank{7} The damage increases to \glossterm{standard damage} \plus4d.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Cripple}{}}\label{spell:Cripple}
-\begin{freeability}[Rank 6]{\hypertarget{spell:Cripple}{Cripple}}[\glossterm{Focus}]
-\target{One living creature within \rngclose range}
-Make an attack vs. Fortitude against the target.
-\hit The target is \glossterm{immobilized} as a \glossterm{condition}.
-\crit The target is \glossterm{paralyzed} as a \glossterm{condition}.
-
-\rankline
-\rank{8} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
 \end{freeability}
 \vspace{0.25em}
 
@@ -8229,28 +8550,6 @@ Make an attack vs. Fortitude against the target.
 Make an attack vs. Fortitude against the target.
 \hit The target loses \glossterm{hit points} equal to half its maximum hit points.
 Unlike normal, this hit point loss is rounded up instead of down.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Crippling Curse}{}}\label{spell:Crippling Curse}
-\begin{freeability}[Rank 8]{\hypertarget{spell:Crippling Curse}{Crippling Curse}}[\glossterm{Curse}, \glossterm{Focus}]
-\target{One living creature within \rngclose range}
-Make an attack vs. Mental against the target.
-\hit The target is \glossterm{immobilized} until it takes a \glossterm{short rest}.
-\crit As above, except that the effect lasts until this curse is removed.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Eyebite Curse}{}}\label{spell:Eyebite Curse}
-\begin{freeability}[Rank 8]{\hypertarget{spell:Eyebite Curse}{Eyebite Curse}}[\glossterm{Curse}, \glossterm{Focus}]
-\target{One living creature within \rngclose range}
-Make an attack vs. Mental against the target.
-\hit The target is \glossterm{blinded} until it takes a \glossterm{short rest}.
-\crit As above, except that the effect lasts until this curse is removed.
 \end{freeability}
 \vspace{0.25em}
 
