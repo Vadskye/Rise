@@ -50,42 +50,75 @@ biomancy=MysticSphere(
             \\rank<5> The accuracy bonus increases to +3.
             \\rank<7> The accuracy bonus increases to +4.
         """, tags=[]),
-        Spell('Fleshbite', 1, 'One creature within \\rngmed range', """
-            Make an attack vs. Fortitude against the target.
-            \\hit The target is \\glossterm<sickened> as a \\glossterm<condition>.
-            \\crit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
+        Spell('Vital Regeneration', 5, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            A the end of each round, the target can spend an \\glossterm<action point>.
+            If it does, it removes one of its \\glossterm<vital wounds>.
+
+            You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<5> The accuracy bonus increases to +2.
-            \\rank<7> The accuracy bonus increases to +3.
-        """, tags=[]),
-        Spell('Spider Climb', 1, 'Yourself', """
-            You gain a \\glossterm<climb speed> equal to your \\glossterm<base speed>.
-            You also gain a +2 \\glossterm<magic bonus> to Climb checks.
+            \\rank<7> The target can remove up to two \\glossterm<vital wounds> for each action point spent instead of only one.
+        """, tags=['Attune (target)']),
+        Spell('Regeneration', 4, 'Yourself', """
+            At the end of each round, if you did not lose a \\glossterm<hit point> that round, you regain a lost hit point.
+
+            You can cast this spell as a \\glossterm<minor action>.
+
+            \\rankline
+            \\rank<6> You also gain a +1 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
+            \\rank<8> You regain two hit points instead of one.
+        """, tags=['Attune (self)']),
+        Spell('Swimmer', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            The target gains a \\glossterm<swim speed> equal to its \\glossterm<base speed>.
+            In addition, it gains a +2 \\glossterm<magic bonus> to Swim checks.
+
+            You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
             \\rank<3> The bonus increases to +4.
             \\rank<5> The bonus increases to +6.
             \\rank<7> The bonus increases to +8.
-        """, tags=['Attune (self)']),
-        Spell('Regeneration', 5, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            A the end of each round, the target can spend an \\glossterm<action point>.
-            If it does, it removes one of its \\glossterm<vital wounds>.
+        """, tags=['Attune (target)']),
+        Spell('Climber', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            The target gains a \\glossterm<climb speed> equal to its \\glossterm<base speed>.
+            In addition, it gains a +2 \\glossterm<magic bonus> to Climb checks.
+
+            You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<7> The target can remove up to two \\glossterm<vital wounds> instead of only one.
+            \\rank<3> The bonus increases to +4.
+            \\rank<5> The bonus increases to +6.
+            \\rank<7> The bonus increases to +8.
         """, tags=['Attune (target)']),
-        Spell('Enhanced Senses', 1, 'Yourself', """
-            You gain a +3 \\glossterm<magic bonus> to the Awareness skill.
+        Spell('Runner', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<land speed>.
+
+            You can cast this spell as a \\glossterm<minor action>.
+
+            \\rankline
+            \\rank<3> The bonus increases to +15 feet.
+            \\rank<5> The bonus increases to +20 feet.
+            \\rank<7> The bonus increases to +30 feet.
+        """, tags=['Attune (target)']),
+        Spell('Enhanced Muscles', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            The target gains a +2 \\glossterm<magic bonus> to Strength-based checks.
+
+            \\rankline
+            \\rank<5> The bonus increases to +3.
+            \\rank<7> The bonus increases to +4.
+        """, tags=['Attune (self)']),
+        Spell('Enhanced Senses', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            The target gains a +3 \\glossterm<magic bonus> to the Awareness skill.
 
             \\rankline
             \\rank<3> The bonus increases to +4.
             \\rank<5> The bonus increases to +5.
             \\rank<7> The bonus increases to +6.
-        """, tags=['Attune (self)']),
+        """, tags=['Attune (target)']),
         Spell('Scent', 3, 'Yourself', """
             You gain the \\glossterm<scent> ability, giving you a +10 bonus to scent-based Awareness checks (see \\pcref<Senses>).
+
+            You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
             \\rank<5> The bonus increases to +15.
@@ -114,7 +147,7 @@ biomancy=MysticSphere(
             \\rank<6> The damage increases to \\glossterm<standard damage> +2d.
             \\rank<8> The damage increases to \\glossterm<standard damage> +3d.
         """, tags=['Attune (self)']),
-        Spell('Decay', 1, 'One living creature within \\rngmed range', """
+        Spell('Withering', 1, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude with a +2 \\glossterm<accuracy> bonus against the target.
             \\hit As a \\glossterm<condition>, the target becomes more vulnerable to injury.
             It takes a -2 penalty to Fortitude defense.
@@ -127,7 +160,7 @@ biomancy=MysticSphere(
             \\rank<5> The accuracy bonus increases to +4.
             \\rank<7> The accuracy bonus increases to +5.
         """, tags=[]),
-        Spell('Curse of Decay', 3, 'One living creature within \\rngmed range', """
+        Spell('Withering Curse', 3, 'One living creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target becomes more vulnerable to injury until it takes a short rest.
             Whenever it loses a \\glossterm<hit point>, it reduces its maximum \\glossterm<hit points> by 1.
@@ -139,7 +172,7 @@ biomancy=MysticSphere(
             \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Curse']),
-        Spell('Malaise', 1, 'One living creature within \\rngmed range', """
+        Spell('Sickness', 1, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target is \\glossterm<sickened> as a \\glossterm<condition>.
             \\crit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
@@ -149,7 +182,7 @@ biomancy=MysticSphere(
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=[]),
-        Spell('Curse of Malaise', 3, 'One living creature within \\rngmed range', """
+        Spell('Curse of Sickness', 3, 'One living creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<sickened> until it takes a \\glossterm<short rest>.
             \\crit As above, except that the effect lasts until this curse is removed.

@@ -137,13 +137,6 @@ polymorph=MysticSphere(
             \\rank<6> The skill bonus increases to +12.
             \\rank<8> The skill bonus increases to +16.
         """, tags=['Attune (self)']),
-        Spell('Enhanced Muscles', 4, 'Yourself', """
-            You gain a +2 \\glossterm<magic bonus> to your choice of either Strength-based checks or Dexterity-based checks.
-
-            \\rankline
-            \\rank<6> The bonus increases to +3.
-            \\rank<8> The bonus increases to +4.
-        """, tags=['Attune (self)']),
         Spell('Spikeform', 4, ['Yourself', '\\glossterm<Enemies> adjacent to you (see text)'], """
             You transform your body to have dangerous spikes.
             As a \\glossterm<minor action>, you can extend the spikes to make an attack vs. Armor against each creature adjacent to you.

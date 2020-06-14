@@ -1678,67 +1678,33 @@ In addition, the \glossterm{difficulty rating} to break it open increases by 20 
 \subsubsection{Spells}
 
 
-\lowercase{\hypertarget{spell:Decay}{}}\label{spell:Decay}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Decay}{Decay}}[\glossterm{Focus}]
-\target{One living creature within \rngmed range}
-Make an attack vs. Fortitude with a \plus2 \glossterm{accuracy} bonus against the target.
-\hit As a \glossterm{condition}, the target becomes more vulnerable to injury.
-It takes a \minus2 penalty to Fortitude defense.
-In addition, whenever it loses a \glossterm{hit point}, it reduces its maximum \glossterm{hit points} by 1.
-When this condition is removed, the target's maximum \glossterm{hit points} are restored.
-\crit As above, except that the penalty increases to -4.
+\lowercase{\hypertarget{spell:Climber}{}}\label{spell:Climber}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Climber}{Climber}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself or an \glossterm{ally} within \rngmed range}
+The target gains a \glossterm{climb speed} equal to its \glossterm{base speed}.
+In addition, it gains a \plus2 \glossterm{magic bonus} to Climb checks.
+
+You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{5} The accuracy bonus increases to \plus3.
-\rank{5} The accuracy bonus increases to \plus4.
-\rank{7} The accuracy bonus increases to \plus5.
-\end{freeability}
+\rank{3} The bonus increases to \plus4.
+\rank{5} The bonus increases to \plus6.
+\rank{7} The bonus increases to \plus8.
+\end{attuneability}
 \vspace{0.25em}
 
 
 
 \lowercase{\hypertarget{spell:Enhanced Senses}{}}\label{spell:Enhanced Senses}
-\begin{attuneability}[Rank 1]{\hypertarget{spell:Enhanced Senses}{Enhanced Senses}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\target{Yourself}
-You gain a \plus3 \glossterm{magic bonus} to the Awareness skill.
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Enhanced Senses}{Enhanced Senses}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself or an \glossterm{ally} within \rngmed range}
+The target gains a \plus3 \glossterm{magic bonus} to the Awareness skill.
 
 \rankline
 \rank{3} The bonus increases to \plus4.
 \rank{5} The bonus increases to \plus5.
 \rank{7} The bonus increases to \plus6.
 \end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Fleshbite}{}}\label{spell:Fleshbite}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Fleshbite}{Fleshbite}}[\glossterm{Focus}]
-\target{One creature within \rngmed range}
-Make an attack vs. Fortitude against the target.
-\hit The target is \glossterm{sickened} as a \glossterm{condition}.
-\crit The target is \glossterm{nauseated} as a \glossterm{condition}.
-
-\rankline
-\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-\rank{5} The accuracy bonus increases to \plus2.
-\rank{7} The accuracy bonus increases to \plus3.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Malaise}{}}\label{spell:Malaise}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Malaise}{Malaise}}[\glossterm{Focus}]
-\target{One living creature within \rngmed range}
-Make an attack vs. Fortitude against the target.
-\hit The target is \glossterm{sickened} as a \glossterm{condition}.
-\crit The target is \glossterm{nauseated} as a \glossterm{condition}.
-
-\rankline
-\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-\rank{5} The accuracy bonus increases to \plus2.
-\rank{7} The accuracy bonus increases to \plus3.
-\end{freeability}
 \vspace{0.25em}
 
 
@@ -1776,17 +1742,70 @@ A third failed attack ends the poison.
 
 
 
-\lowercase{\hypertarget{spell:Spider Climb}{}}\label{spell:Spider Climb}
-\begin{attuneability}[Rank 1]{\hypertarget{spell:Spider Climb}{Spider Climb}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\target{Yourself}
-You gain a \glossterm{climb speed} equal to your \glossterm{base speed}.
-You also gain a \plus2 \glossterm{magic bonus} to Climb checks.
+\lowercase{\hypertarget{spell:Runner}{}}\label{spell:Runner}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Runner}{Runner}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself or an \glossterm{ally} within \rngmed range}
+The target gains a \plus10 foot \glossterm{magic bonus} to its \glossterm{land speed}.
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{3} The bonus increases to \plus15 feet.
+\rank{5} The bonus increases to \plus20 feet.
+\rank{7} The bonus increases to \plus30 feet.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Sickness}{}}\label{spell:Sickness}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Sickness}{Sickness}}[\glossterm{Focus}]
+\target{One living creature within \rngmed range}
+Make an attack vs. Fortitude against the target.
+\hit The target is \glossterm{sickened} as a \glossterm{condition}.
+\crit The target is \glossterm{nauseated} as a \glossterm{condition}.
+
+\rankline
+\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Swimmer}{}}\label{spell:Swimmer}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Swimmer}{Swimmer}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself or an \glossterm{ally} within \rngmed range}
+The target gains a \glossterm{swim speed} equal to its \glossterm{base speed}.
+In addition, it gains a \plus2 \glossterm{magic bonus} to Swim checks.
+
+You can cast this spell as a \glossterm{minor action}.
 
 \rankline
 \rank{3} The bonus increases to \plus4.
 \rank{5} The bonus increases to \plus6.
 \rank{7} The bonus increases to \plus8.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Withering}{}}\label{spell:Withering}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Withering}{Withering}}[\glossterm{Focus}]
+\target{One living creature within \rngmed range}
+Make an attack vs. Fortitude with a \plus2 \glossterm{accuracy} bonus against the target.
+\hit As a \glossterm{condition}, the target becomes more vulnerable to injury.
+It takes a \minus2 penalty to Fortitude defense.
+In addition, whenever it loses a \glossterm{hit point}, it reduces its maximum \glossterm{hit points} by 1.
+When this condition is removed, the target's maximum \glossterm{hit points} are restored.
+\crit As above, except that the penalty increases to -4.
+
+\rankline
+\rank{5} The accuracy bonus increases to \plus3.
+\rank{5} The accuracy bonus increases to \plus4.
+\rank{7} The accuracy bonus increases to \plus5.
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -1811,14 +1830,11 @@ At the end of each round, if the primary target was \glossterm{wounded} during t
 
 
 
-\lowercase{\hypertarget{spell:Curse of Decay}{}}\label{spell:Curse of Decay}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Curse of Decay}{Curse of Decay}}[\glossterm{Curse}, \glossterm{Focus}]
+\lowercase{\hypertarget{spell:Curse of Sickness}{}}\label{spell:Curse of Sickness}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Curse of Sickness}{Curse of Sickness}}[\glossterm{Curse}, \glossterm{Focus}]
 \target{One living creature within \rngmed range}
 Make an attack vs. Mental against the target.
-\hit The target becomes more vulnerable to injury until it takes a short rest.
-Whenever it loses a \glossterm{hit point}, it reduces its maximum \glossterm{hit points} by 1.
-This cannot reduce the target's maximum \glossterm{hit points} below 1.
-When this effect is removed, the target's maximum \glossterm{hit points} are restored.
+\hit The target is \glossterm{sickened} until it takes a \glossterm{short rest}.
 \crit As above, except that the effect lasts until this curse is removed.
 
 \rankline
@@ -1829,17 +1845,15 @@ When this effect is removed, the target's maximum \glossterm{hit points} are res
 
 
 
-\lowercase{\hypertarget{spell:Curse of Malaise}{}}\label{spell:Curse of Malaise}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Curse of Malaise}{Curse of Malaise}}[\glossterm{Curse}, \glossterm{Focus}]
-\target{One living creature within \rngmed range}
-Make an attack vs. Mental against the target.
-\hit The target is \glossterm{sickened} until it takes a \glossterm{short rest}.
-\crit As above, except that the effect lasts until this curse is removed.
+\lowercase{\hypertarget{spell:Enhanced Muscles}{}}\label{spell:Enhanced Muscles}
+\begin{attuneability}[Rank 3]{\hypertarget{spell:Enhanced Muscles}{Enhanced Muscles}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{Yourself or an \glossterm{ally} within \rngmed range}
+The target gains a \plus2 \glossterm{magic bonus} to Strength-based checks.
 
 \rankline
-\rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-\rank{7} The accuracy bonus increases to \plus2.
-\end{freeability}
+\rank{5} The bonus increases to \plus3.
+\rank{7} The bonus increases to \plus4.
+\end{attuneability}
 \vspace{0.25em}
 
 
@@ -1881,10 +1895,30 @@ A third failed attack ends the poison.
 \target{Yourself}
 You gain the \glossterm{scent} ability, giving you a \plus10 bonus to scent-based Awareness checks (see \pcref{Senses}).
 
+You can cast this spell as a \glossterm{minor action}.
+
 \rankline
 \rank{5} The bonus increases to \plus15.
 \rank{7} The bonus increases to \plus20.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Withering Curse}{}}\label{spell:Withering Curse}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Withering Curse}{Withering Curse}}[\glossterm{Curse}, \glossterm{Focus}]
+\target{One living creature within \rngmed range}
+Make an attack vs. Mental against the target.
+\hit The target becomes more vulnerable to injury until it takes a short rest.
+Whenever it loses a \glossterm{hit point}, it reduces its maximum \glossterm{hit points} by 1.
+This cannot reduce the target's maximum \glossterm{hit points} below 1.
+When this effect is removed, the target's maximum \glossterm{hit points} are restored.
+\crit As above, except that the effect lasts until this curse is removed.
+
+\rankline
+\rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{7} The accuracy bonus increases to \plus2.
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -1908,6 +1942,21 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 
+\lowercase{\hypertarget{spell:Regeneration}{}}\label{spell:Regeneration}
+\begin{attuneability}[Rank 4]{\hypertarget{spell:Regeneration}{Regeneration}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{Yourself}
+At the end of each round, if you did not lose a \glossterm{hit point} that round, you regain a lost hit point.
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{6} You also gain a \plus1 \glossterm{magic bonus} to \glossterm{vital rolls}.
+\rank{8} You regain two hit points instead of one.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Eyebite}{}}\label{spell:Eyebite}
 \begin{freeability}[Rank 5]{\hypertarget{spell:Eyebite}{Eyebite}}[\glossterm{Focus}]
 \target{One living creature within \rngclose range}
@@ -1922,14 +1971,16 @@ Make an attack vs. Fortitude against the target.
 
 
 
-\lowercase{\hypertarget{spell:Regeneration}{}}\label{spell:Regeneration}
-\begin{attuneability}[Rank 5]{\hypertarget{spell:Regeneration}{Regeneration}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\lowercase{\hypertarget{spell:Vital Regeneration}{}}\label{spell:Vital Regeneration}
+\begin{attuneability}[Rank 5]{\hypertarget{spell:Vital Regeneration}{Vital Regeneration}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself or an \glossterm{ally} within \rngmed range}
 A the end of each round, the target can spend an \glossterm{action point}.
 If it does, it removes one of its \glossterm{vital wounds}.
 
+You can cast this spell as a \glossterm{minor action}.
+
 \rankline
-\rank{7} The target can remove up to two \glossterm{vital wounds} instead of only one.
+\rank{7} The target can remove up to two \glossterm{vital wounds} for each action point spent instead of only one.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -5169,19 +5220,6 @@ Its equipment is unaffected.
 \rank{6} The damage increases to \glossterm{standard damage} \plus3d.
 \rank{8} The damage increases to \glossterm{standard damage} \plus4d.
 \end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Enhanced Muscles}{}}\label{spell:Enhanced Muscles}
-\begin{attuneability}[Rank 4]{\hypertarget{spell:Enhanced Muscles}{Enhanced Muscles}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\target{Yourself}
-You gain a \plus2 \glossterm{magic bonus} to your choice of either Strength-based checks or Dexterity-based checks.
-
-\rankline
-\rank{6} The bonus increases to \plus3.
-\rank{8} The bonus increases to \plus4.
-\end{attuneability}
 \vspace{0.25em}
 
 
