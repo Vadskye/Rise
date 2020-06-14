@@ -477,6 +477,23 @@ This movement is doubled underwater instead of being dramatically slowed like no
 
 
 
+\lowercase{\hypertarget{spell:Aqueous Tentacles}{}}\label{spell:Aqueous Tentacles}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Aqueous Tentacles}{Aqueous Tentacles}}[\glossterm{Attune} (self), \glossterm{Focus}, \glossterm{Manifestation}]
+\target{Yourself}
+You grow watery tentacles from your body.
+The tentacles grant you a slam \glossterm{natural weapon} (see \tref{Natural Weapons}).
+The natural weapon has the Long \glossterm{weapon tag} and does not require a \glossterm{free hand} to use (see \pcref{Weapon Tags}).
+Strikes using the tentacles are considered \glossterm{magical} abilities, which means you use your \glossterm{power} with \glossterm{magical} abilities to determine their damage.
+
+\rankline
+\rank{3} You gain a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} with attacks using the tentacles.
+\rank{5} You gain a \plus2 \glossterm{magic bonus} to \glossterm{power} with attacks using the tentacles.
+\rank{7} You gain a \plus5 bonus to \glossterm{reach} with attacks using the tentacles.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Crushing Wave}{}}\label{spell:Crushing Wave}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Crushing Wave}{Crushing Wave}}[\glossterm{Focus}, \glossterm{Manifestation}]
 \targets{Everything in a \areamed, 10 ft.\ wide line from you}
@@ -487,6 +504,21 @@ Make an attack vs. Reflex against each target.
 \rank{3} The damage increases to \glossterm{standard damage}.
 \rank{5} The damage increases to \glossterm{standard damage} \plus1d.
 \rank{7} The damage increases to \glossterm{standard damage} \plus2d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Fog Wall}{}}\label{spell:Fog Wall}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Fog Wall}{Fog Wall}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
+\targetrule
+You create a wall of fog in a 20 ft.\ high, \arealarge \glossterm{wall} within \rngmed range.
+The fog makes it difficult to see through the wall, granting \glossterm{concealment} to anything viewed through the wall (see \pcref{Concealment}).
+
+\rankline
+\rank{3} The area increases to a \arealarge line.
+\rank{5} The area increases to a \areahuge line.
+\rank{7} The area increases to a \areaext line.
 \end{freeability}
 \vspace{0.25em}
 
@@ -555,22 +587,6 @@ Moving yourself upwards costs twice the normal movement cost.
 
 
 
-\lowercase{\hypertarget{spell:Aqueous Tentacles}{}}\label{spell:Aqueous Tentacles}
-\begin{attuneability}[Rank 3]{\hypertarget{spell:Aqueous Tentacles}{Aqueous Tentacles}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\target{Yourself}
-Each of your arms with a \glossterm{free hand} is covered with watery tentacles that you can attack with.
-Each tentacle is a slam \glossterm{natural weapon} (see \tref{Natural Weapons}).
-The tentacles have the Reach weapon tag (see \pcref{Weapon Tags}).
-Strikes using the tentacles are considered \glossterm{magical} abilities, which means you use your \glossterm{power} with \glossterm{magical} abilities to determine their damage.
-
-\rankline
-\rank{5} You gain a \plus2 \glossterm{magic bonus} to \glossterm{power} on attacks using the tentacles.
-\rank{7} Your \glossterm{reach} with the tentacles increases to 20 feet.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Constraining Bubble}{}}\label{spell:Constraining Bubble}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Constraining Bubble}{Constraining Bubble}}[\glossterm{Focus}, \glossterm{Manifestation}]
 \target{One Large or smaller creature within \rngmed range}
@@ -598,6 +614,20 @@ it stops being sickened for 10 minutes.
 \rankline
 \rank{5} On a \glossterm{critical hit}, the target is \glossterm{nauseated} instead of \glossterm{sickened}.
 \rank{7} The target is nauseated instead of sickened.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Fog Cloud}{}}\label{spell:Fog Cloud}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Fog Cloud}{Fog Cloud}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
+\targets{Everything in a \areamed radius within \rngmed range}
+A cloud of fog appears in the area.
+All sight through the area is partially obscured, granting \glossterm{concealment} to anything in the area and anything viewed through the area (see \pcref{Concealment}).
+
+\rankline
+\rank{5} The area increases to a \arealarge radius.
+\rank{7} The range increases to \rnglong.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3743,22 +3773,6 @@ Make an attack vs. Armor against the target.
 
 
 
-\lowercase{\hypertarget{spell:Antitoxin}{}}\label{spell:Antitoxin}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Antitoxin}{Antitoxin}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
-\target{Yourself (see text)}
-You create a small vial of antitoxin in one of your free hands.
-A creature can drinks the vial as a \glossterm{standard action}.
-When a creature drinks the vial, it gains an additional success to resist a poison currently affecting it (see \pcref{Poisons}).
-
-\rankline
-\rank{3} The number of vials created increases to two.
-\rank{5} The number of vials created increases to three.
-\rank{7} The number of vials created increases to four.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Caltrops}{}}\label{spell:Caltrops}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Caltrops}{Caltrops}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
 \target{One 5 ft.\ square within \rngclose range (see text)}
@@ -3787,21 +3801,6 @@ Make an attack vs. Armor against each target.
 \rank{3} The damage increases to \glossterm{standard damage}.
 \rank{5} The damage increases to \glossterm{standard damage} \plus1d.
 \rank{7} The damage increases to \glossterm{standard damage} \plus2d.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Fog Wall}{}}\label{spell:Fog Wall}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Fog Wall}{Fog Wall}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
-\targetrule
-You create a wall of fog in a 20 ft.\ high, \arealarge \glossterm{wall} within \rngmed range.
-The fog makes it difficult to see through the wall, granting \glossterm{concealment} to anything viewed through the wall (see \pcref{Concealment}).
-
-\rankline
-\rank{3} The area increases to a \arealarge line.
-\rank{5} The area increases to a \areahuge line.
-\rank{7} The area increases to a \areaext line.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3861,30 +3860,6 @@ This spell lasts until you use it again or until you \glossterm{dismiss} it as a
 \rank{3} You gain a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} with \glossterm{strikes} using the weapon.
 \rank{5} You gain a \plus2 \glossterm{magic bonus} to \glossterm{power} with \glossterm{strikes} using the weapon.
 \rank{7} The bonus to accuracy increases to \plus2.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Poison -- Nitharit}{}}\label{spell:Poison -- Nitharit}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Poison -- Nitharit}{Poison -- Nitharit}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
-\target{Yourself (see text)}
-You create a vial containing a dose of nitharit poison in one of your \glossterm{free hands} (see \pcref{Poisons}).
-Nitharit is a contact powder poison.
-When a living creature that touches the powder, make an attack vs. Fortitude against it.
-After this happens once, the dose is used up.
-If you stop sustaining this spell, the poison disappears, and any affectd creatures stop being poisoned by it.
-
-\hit The target becomes \glossterm{poisoned} with nitharit.
-It becomes \glossterm{sickened} as long as it is poisoned.
-At the end of each subsequent round, you repeat this attack, as normal for poisons.
-A third successful attack causes the target to become \glossterm{nauseated} as long as it is poisoned.
-A third failed attack ends the poison.
-
-\rankline
-\rank{3} You create a second dose of the poison.
-\rank{5} You create a third dose of the poison.
-\rank{7} You create a fourth dose of the poison.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3965,20 +3940,6 @@ This attack deals double damage to objects.
 
 
 
-\lowercase{\hypertarget{spell:Fog Cloud}{}}\label{spell:Fog Cloud}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Fog Cloud}{Fog Cloud}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
-\targets{Everything in a \areamed radius within \rngmed range}
-A cloud of fog appears in the area.
-All sight through the area is partially obscured, granting \glossterm{concealment} to anything in the area and anything viewed through the area (see \pcref{Concealment}).
-
-\rankline
-\rank{5} The area increases to a \arealarge radius.
-\rank{7} The range increases to \rnglong.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Hail of Arrows}{}}\label{spell:Hail of Arrows}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Hail of Arrows}{Hail of Arrows}}[\glossterm{Focus}, \glossterm{Manifestation}]
 \targets{Everything in a \areasmall radius within \rngmed range}
@@ -4002,23 +3963,6 @@ Make an attack vs. Armor against each target.
 \rankline
 \rank{6} The area increases to a \arealarge radius.
 \rank{8} The area increases to a \areahuge radius.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Poison -- Dragon Bile}{}}\label{spell:Poison -- Dragon Bile}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Poison -- Dragon Bile}{Poison -- Dragon Bile}}[\glossterm{Focus}]
-\target{One living creature within \rngmed range}
-This spell functions like this \spell{poison -- nitharit} spell, except that you create a vial of dragon bile poison instead (see \pcref{Poisons}).
-Dragon bile is a contact liquid poison.
-A creature poisoned by dragon bile immediately loses a \glossterm{hit point} and becomes \glossterm{sickened} as long as it is poisoned.
-A third successful attack causes the target to lose two \glossterm{hit points} and become \glossterm{nauseated} as long as it is poisoned.
-A third failed attack ends the poison.
-
-\rankline
-\rank{5} You create a second dose of the poison.
-\rank{7} You create a third dose of the poison.
 \end{freeability}
 \vspace{0.25em}
 
@@ -4110,22 +4054,6 @@ If this attack \glossterm{wounds} the target, it is knocked \glossterm{prone}.
 \rankline
 \rank{6} The damage increases to \glossterm{standard damage} \plus3d.
 \rank{8} The damage increases to \glossterm{standard damage} \plus4d.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Poison -- Black Lotus}{}}\label{spell:Poison -- Black Lotus}
-\begin{freeability}[Rank 5]{\hypertarget{spell:Poison -- Black Lotus}{Poison -- Black Lotus}}[\glossterm{Focus}, \glossterm{Manifestation}]
-\target{One creature within \rngmed range}
-This spell functions like this \spell{poison -- nitharit} spell, except that you create a vial of black lotus extract instead (see \pcref{Poisons}).
-Black lotus extract is a contact liquid poison.
-Each successful attack, including the first, causes the target to lose two \glossterm{hit points}.
-A third successful attack causes the target to gain a \glossterm{vital wound} and ends the poison.
-A third failed attack ends the poison.
-
-\rankline
-\rank{7} You create a second dose of the poison.
 \end{freeability}
 \vspace{0.25em}
 
@@ -7487,14 +7415,49 @@ This ritual takes one hour to perform.
 
 \begin{freeability}{Rapid Growth}[\glossterm{Sustain} (minor)]
 \targets{Small or smaller inanimate plant within \rngclose range}
-The target grows as if a month of time had passed.
+Choose any number of days up to a week.
+The target grows as if that many days had passed.
 When this spell ends, the plant returns to its original state.
+
+\rankline
+\rank{3} You can choose up to a month of time to grow.
+\rank{5} You can choose up to three months months of time to grow.
+\rank{7} You can choose up to a year of time to grow.
 \end{freeability}
+
+
+\begin{attuneability}{Verdant Conduit}[\glossterm{Attune} (self)]
+\target{Yourself}
+You are considered to be a source of unworked earth.
+This can allow you to cast spells from this sphere that require unworked earth without having other sources of unworked earth nearby.
+
+\rankline
+\rank{3} All components of Medium or larger solid objects within a \areasmall \glossterm{emanation} from you are also considered to be sources of unworked earth.
+Unlike most spells, this can affect only part of a larger object, and it only affects the part of the object within the radius.
+\rank{5} The area of the emanation increases to a \areamed radius.
+\rank{7} The area of the emanation increases to a \arealarge radius.
+\end{attuneability}
 
 \end{spellsection}
 
 
 \subsubsection{Spells}
+
+
+\lowercase{\hypertarget{spell:Barkskin}{}}\label{spell:Barkskin}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Barkskin}{Barkskin}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself}
+You gain a \plus2 \glossterm{magic bonus} to \glossterm{resistances} against \glossterm{physical} damage.
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{3} The bonus increases to \plus4.
+\rank{5} The bonus increases to be equal to half your \glossterm{power}.
+\rank{7} The bonus increases to be equal to your \glossterm{power}.
+\end{attuneability}
+\vspace{0.25em}
+
 
 
 \lowercase{\hypertarget{spell:Blight}{}}\label{spell:Blight}
@@ -7514,38 +7477,15 @@ This damage is doubled if the target is a plant, including plant creatures.
 
 
 
-\lowercase{\hypertarget{spell:Embedded Growth}{}}\label{spell:Embedded Growth}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Embedded Growth}{Embedded Growth}}[\glossterm{Focus}]
-\target{One creature within \rngclose range}
-You throw a seed that embeds itself in a foe and grows painfully.
-Make an attack vs. Fortitude against the target.
-\hit As a \glossterm{condition}, the target takes physical \glossterm{standard damage} during each \glossterm{action phase} in subsequent rounds.
-This condition can be removed if the target or a creature that can reach the target makes a \glossterm{difficulty rating} 5 Medicine check as a standard action to remove the seed (see \pcref{Treat Condition}).
+\lowercase{\hypertarget{spell:Herbal Antidote}{}}\label{spell:Herbal Antidote}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Herbal Antidote}{Herbal Antidote}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
+\target{Yourself or an \glossterm{ally} within \rngmed range}
+The target gains an additional success to resist a poison currently affecting it (see \pcref{Poisons}).
 
 \rankline
-\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-\rank{5} The accuracy bonus increases to \plus2.
-\rank{7} The accuracy bonus increases to \plus3.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Entangle}{}}\label{spell:Entangle}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Entangle}{Entangle}}[\glossterm{Focus}]
-\target{One Large or smaller creature within \rngclose range}
-You cause plants to grow and trap a foe.
-Make an attack vs. Reflex against the target.
-The target must be within 5 feet of earth or plants.
-You gain a \plus2 bonus to \glossterm{accuracy} with this attack if the target is in standing in \glossterm{undergrowth}.
-\hit The target is \glossterm{immobilized} as a \glossterm{condition}.
-This condition can be removed if the target or a creature that can reach the target makes a \glossterm{difficulty rating} 5 Strength check break the target free of the plants.
-The target can make this check as a \glossterm{move action}, while other creatures can make the check as a standard action.
-
-\rankline
-\rank{3} The \glossterm{difficulty rating} of the Strength check increases to 10.
-\rank{5} The condition cannot be removed with a check.
-\rank{7} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{3} The number of additional successes increases to two.
+\rank{5} The number of additional successes increases to three.
+\rank{7} The number of additional successes increases to four.
 \end{freeability}
 \vspace{0.25em}
 
@@ -7585,6 +7525,25 @@ When this spell's duration ends, the plants return to their natural size.
 
 
 
+\lowercase{\hypertarget{spell:Poison -- Nitharit}{}}\label{spell:Poison -- Nitharit}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Poison -- Nitharit}{Poison -- Nitharit}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
+\target{One living creature within \rngmed range}
+Make an attack vs. Fortitude against the target.
+\hit The target becomes \glossterm{poisoned} with nitharit.
+It becomes \glossterm{sickened} as long as it is poisoned.
+At the end of each subsequent round, you repeat this attack, as normal for poisons.
+A third successful attack causes the target to become \glossterm{nauseated} as long as it is poisoned.
+A third failed attack ends the poison.
+
+\rankline
+\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Shillelagh}{}}\label{spell:Shillelagh}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Shillelagh}{Shillelagh}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \target{One nonmagical stick of wood}
@@ -7602,16 +7561,85 @@ You gain a \plus2 \glossterm{magic bonus} to \glossterm{power} on attacks with i
 
 
 \lowercase{\hypertarget{spell:Verdant Armor}{}}\label{spell:Verdant Armor}
-\begin{attuneability}[Rank 1]{\hypertarget{spell:Verdant Armor}{Verdant Armor}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Verdant Armor}{Verdant Armor}}[\glossterm{Attune} (self), \glossterm{Focus}, \glossterm{Manifestation}]
 \target{Yourself}
 When you cast this spell, you choose a type of armor you are proficient with that is not normally made from metal.
 Plants grow around your body, functioning like your chosen type of armor for you, except that the \glossterm{encumbrance penalty} of the armor is reduced by 2.
+These plants are considered to be normal plants for the purpose of abilities that require plants to be near targets, such as spells from this mystic sphere.
 
 \rankline
 \rank{3} You also gain a \plus1 bonus to Armor defense.
 \rank{5} The encumbrance penalty reduction is increased to 3.
 \rank{7} The bonus to Armor defense increases to \plus2.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Vine Tentacles}{}}\label{spell:Vine Tentacles}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Vine Tentacles}{Vine Tentacles}}[\glossterm{Attune} (self), \glossterm{Focus}, \glossterm{Manifestation}]
+\target{Yourself}
+You grow vine tentacles from your body.
+The tentacles grant you a slam \glossterm{natural weapon} (see \tref{Natural Weapons}).
+The natural weapon has the Long \glossterm{weapon tag} and does not require a \glossterm{free hand} to use (see \pcref{Weapon Tags}).
+
+\rankline
+\rank{3} You gain a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} with attacks using the tentacles.
+\rank{5} You gain a \plus2 \glossterm{magic bonus} to \glossterm{power} with attacks using the tentacles.
+\rank{7} You gain a \plus5 bonus to \glossterm{reach} with attacks using the tentacles.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Vine Whip}{}}\label{spell:Vine Whip}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Vine Whip}{Vine Whip}}[\glossterm{Focus}, \glossterm{Manifestation}]
+\target{One creature within \rngmed range}
+The target must be within 30 feet of unworked earth or plants.
+Make an attack vs. Armor against the target.
+You gain a \plus2 bonus to \glossterm{accuracy} with this attack if the target is in standing in \glossterm{undergrowth}.
+\hit The target takes bludgeoning \glossterm{standard damage} \plus1d.
+
+\rankline
+\rank{3} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{5} The damage increases to \glossterm{standard damage} \plus3d.
+\rank{7} The damage increases to \glossterm{standard damage} \plus4d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Vineburst}{}}\label{spell:Vineburst}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Vineburst}{Vineburst}}[\glossterm{Focus}, \glossterm{Manifestation}]
+\targets{\glossterm{Enemies} and objects in a \areasmall radius from you}
+Make an attack vs. Armor against each target that is within 10 feet of unworked earth or plants..
+You gain a \plus2 bonus to \glossterm{accuracy} with this attack against targets standing in \glossterm{undergrowth}.
+\hit Each target takes bludgeoning \glossterm{standard damage} \minus1d.
+
+\rankline
+\rank{3} The damage increases to \glossterm{standard damage}.
+\rank{5} The damage increases to \glossterm{standard damage} \plus1d.
+\rank{7} The damage increases to \glossterm{standard damage} \plus2d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Entangle}{}}\label{spell:Entangle}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Entangle}{Entangle}}[\glossterm{Focus}, \glossterm{Manifestation}]
+\target{One Large or smaller creature within \rngclose range}
+You cause plants to grow and trap a foe.
+The target must be within 10 feet of unworked earth or plants.
+Make an attack vs. Reflex against the target.
+You gain a \plus2 bonus to \glossterm{accuracy} with this attack if the target is in standing in \glossterm{undergrowth}.
+\hit The target is \glossterm{immobilized} as a \glossterm{condition}.
+This condition can be removed if the target or a creature that can reach the target makes a \glossterm{difficulty rating} 10 Strength check to break the target free of the plants.
+The target can make this check as a \glossterm{move action}, while other creatures can make the check as a standard action.
+
+\rankline
+\rank{5} The condition cannot be removed with a check.
+\rank{7} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -7630,6 +7658,22 @@ On impact, the acorn detonates, and you make an attack vs. Armor against everyth
 \rankline
 \rank{5} The damage increases to \glossterm{standard damage}.
 \rank{7} The damage increases to \glossterm{standard damage} \plus1d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Poison -- Sassone Leaf}{}}\label{spell:Poison -- Sassone Leaf}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Poison -- Sassone Leaf}{Poison -- Sassone Leaf}}[\glossterm{Focus}]
+\target{One living creature within \rngmed range}
+This spell functions like this \spell{poison -- nitharit} spell, except that the target becomes poisoned with sassone leaf instead (see \pcref{Poisons}).
+A creature poisoned by sassone leaf loses a \glossterm{hit point} from each successful attack, including the first.
+A third successful attack causes the target to lose an additional hit point and ends the poison.
+A third failed attack ends the poison.
+
+\rankline
+\rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{7} The accuracy bonus increases to \plus2.
 \end{freeability}
 \vspace{0.25em}
 
@@ -7676,6 +7720,21 @@ It is \glossterm{vulnerable} to fire damage.
 
 
 
+\lowercase{\hypertarget{spell:Embedded Growth}{}}\label{spell:Embedded Growth}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Embedded Growth}{Embedded Growth}}[\glossterm{Focus}]
+\target{One creature within \rngclose range}
+You throw a seed that embeds itself in a foe and grows painfully.
+Make an attack vs. Fortitude against the target.
+\hit As a \glossterm{condition}, the target takes physical \glossterm{standard damage} at the end of each round.
+
+\rankline
+\rank{6} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{8} The accuracy bonus increases to \plus2.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Flourishing Vines}{}}\label{spell:Flourishing Vines}
 \begin{attuneability}[Rank 4]{\hypertarget{spell:Flourishing Vines}{Flourishing Vines}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \target{Yourself}
@@ -7689,6 +7748,40 @@ That prevents the vines from impeding your movement, though they do impede the m
 \rank{6} The area increases to a \arealarge radius.
 \rank{8} The area increases to a \areahuge radius.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Poison -- Black Lotus}{}}\label{spell:Poison -- Black Lotus}
+\begin{freeability}[Rank 5]{\hypertarget{spell:Poison -- Black Lotus}{Poison -- Black Lotus}}[\glossterm{Focus}, \glossterm{Manifestation}]
+\target{One living creature within \rngmed range}
+This spell functions like this \spell{poison -- nitharit} spell, except that the target becomes poisoned with black lotus extract instead (see \pcref{Poisons}).
+A creature poisoned by black lotus extract loses a \glossterm{hit point} from each successful attack, including the first.
+A third successful attack causes the target to gain a \glossterm{vital wound}.
+A third failed attack ends the poison.
+
+\rankline
+\rank{7} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Strangling Vines}{}}\label{spell:Strangling Vines}
+\begin{freeability}[Rank 6]{\hypertarget{spell:Strangling Vines}{Strangling Vines}}[\glossterm{Focus}, \glossterm{Manifestation}]
+\target{One Large or smaller creature within \rngclose range}
+The target must be within 10 feet of unworked earth or plants.
+Make an attack vs. Fortitude against the target.
+You gain a \plus2 bonus to \glossterm{accuracy} with this attack if the target is in standing in \glossterm{undergrowth}.
+\hit The target is \glossterm{immobilized} by a mass of vines as a \glossterm{condition}.
+In addition, it is unable to breathe, and it takes bludgeoning \glossterm{standard damage} \minus3d at the end of each round.
+This condition can be removed if the target or a creature that can reach the target makes a Strength check to break the target free of the vines.
+The \glossterm{difficulty rating} of the check is equal to your \glossterm{power}.
+The target can make this check as a \glossterm{move action}, while other creatures can make the check as a standard action.
+
+\rankline
+\rank{8} The \glossterm{difficulty rating} to escape the condition increases by 5.
+\end{freeability}
 \vspace{0.25em}
 
 

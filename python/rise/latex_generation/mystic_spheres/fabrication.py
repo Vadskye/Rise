@@ -214,45 +214,6 @@ fabrication=MysticSphere(
             \\rank<5> The webs are no longer \\glossterm<vulnerable> to fire damage.
             \\rank<7> The vital resistance of each 5-ft.\\ square of webs increases to three times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
-        Spell('Poison -- Nitharit', 1, 'Yourself (see text)', """
-            You create a vial containing a dose of nitharit poison in one of your \\glossterm<free hands> (see \\pcref<Poisons>).
-            Nitharit is a contact powder poison.
-            When a living creature that touches the powder, make an attack vs. Fortitude against it.
-            After this happens once, the dose is used up.
-            If you stop sustaining this spell, the poison disappears, and any affectd creatures stop being poisoned by it.
-
-            \\hit The target becomes \\glossterm<poisoned> with nitharit.
-            It becomes \\glossterm<sickened> as long as it is poisoned.
-            At the end of each subsequent round, you repeat this attack, as normal for poisons.
-            A third successful attack causes the target to become \\glossterm<nauseated> as long as it is poisoned.
-            A third failed attack ends the poison.
-
-            \\rankline
-            \\rank<3> You create a second dose of the poison.
-            \\rank<5> You create a third dose of the poison.
-            \\rank<7> You create a fourth dose of the poison.
-        """, tags=['Manifestation', 'Sustain (minor)']),
-        Spell('Poison -- Dragon Bile', 3, 'One living creature within \\rngmed range', """
-            This spell functions like this \\spell<poison -- nitharit> spell, except that you create a vial of dragon bile poison instead (see \\pcref<Poisons>).
-            Dragon bile is a contact liquid poison.
-            A creature poisoned by dragon bile immediately loses a \\glossterm<hit point> and becomes \\glossterm<sickened> as long as it is poisoned.
-            A third successful attack causes the target to lose two \\glossterm<hit points> and become \\glossterm<nauseated> as long as it is poisoned.
-            A third failed attack ends the poison.
-
-            \\rankline
-            \\rank<5> You create a second dose of the poison.
-            \\rank<7> You create a third dose of the poison.
-        """, tags=[]),
-        Spell('Poison -- Black Lotus', 5, 'One creature within \\rngmed range', """
-            This spell functions like this \\spell<poison -- nitharit> spell, except that you create a vial of black lotus extract instead (see \\pcref<Poisons>).
-            Black lotus extract is a contact liquid poison.
-            Each successful attack, including the first, causes the target to lose two \\glossterm<hit points>.
-            A third successful attack causes the target to gain a \\glossterm<vital wound> and ends the poison.
-            A third failed attack ends the poison.
-
-            \\rankline
-            \\rank<7> You create a second dose of the poison.
-        """, tags=['Manifestation']),
         Spell('Caltrops', 1, 'One 5 ft.\\ square within \\rngclose range (see text)', """
             You create exceptionally sharp caltrops in the target location.
             Whenever a creature moves into the area, unless the creature moves at one quarter speed to avoid the danger, you make an attack vs. Armor against them.
@@ -264,33 +225,6 @@ fabrication=MysticSphere(
             \\rank<3> You can affect an additional square within range.
             \\rank<5> The number of additional squares you can affect increases to two.
             \\rank<7> The number of additional squares you can affect increases to three.
-        """, tags=['Manifestation', 'Sustain (minor)']),
-        Spell('Antitoxin', 1, 'Yourself (see text)', """
-            You create a small vial of antitoxin in one of your free hands.
-            A creature can drinks the vial as a \\glossterm<standard action>.
-            When a creature drinks the vial, it gains an additional success to resist a poison currently affecting it (see \\pcref<Poisons>).
-
-            \\rankline
-            \\rank<3> The number of vials created increases to two.
-            \\rank<5> The number of vials created increases to three.
-            \\rank<7> The number of vials created increases to four.
-        """, tags=['Sustain (minor)']),
-        Spell('Fog Cloud', 3, 'Everything in a \\areamed radius within \\rngmed range', """
-            A cloud of fog appears in the area.
-            All sight through the area is partially obscured, granting \\glossterm<concealment> to anything in the area and anything viewed through the area (see \\pcref<Concealment>).
-
-            \\rankline
-            \\rank<5> The area increases to a \\arealarge radius.
-            \\rank<7> The range increases to \\rnglong.
-        """, tags=['Manifestation', 'Sustain (minor)']),
-        Spell('Fog Wall', 1, None, """
-            You create a wall of fog in a 20 ft.\\ high, \\arealarge \\glossterm<wall> within \\rngmed range.
-            The fog makes it difficult to see through the wall, granting \\glossterm<concealment> to anything viewed through the wall (see \\pcref<Concealment>).
-
-            \\rankline
-            \\rank<3> The area increases to a \\arealarge line.
-            \\rank<5> The area increases to a \\areahuge line.
-            \\rank<7> The area increases to a \\areaext line.
         """, tags=['Manifestation', 'Sustain (minor)']),
     ],
     rituals=[
