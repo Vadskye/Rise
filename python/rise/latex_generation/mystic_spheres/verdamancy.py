@@ -94,8 +94,8 @@ verdamancy=MysticSphere(
         Spell('Poison -- Nitharit', 1, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target becomes \\glossterm<poisoned> with nitharit.
-            It becomes \\glossterm<sickened> as long as it is poisoned.
             At the end of each subsequent round, you repeat this attack, as normal for poisons.
+            A creature poisoned by nitharit becomes \\glossterm<sickened> as long as it is poisoned.
             A third successful attack causes the target to become \\glossterm<nauseated> as long as it is poisoned.
             A third failed attack ends the poison.
 
@@ -104,7 +104,7 @@ verdamancy=MysticSphere(
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=['Manifestation', 'Sustain (minor)']),
-        Spell('Poison -- Sassone Leaf', 3, 'One living creature within \\rngmed range', """
+        Spell('Poison -- Sassone Leaf', 1, 'One living creature within \\rngmed range', """
             This spell functions like this \\spell<poison -- nitharit> spell, except that the target becomes poisoned with sassone leaf instead (see \\pcref<Poisons>).
             A creature poisoned by sassone leaf loses a \\glossterm<hit point> from each successful attack, including the first.
             A third successful attack causes the target to lose an additional hit point and ends the poison.
@@ -114,7 +114,17 @@ verdamancy=MysticSphere(
             \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=[]),
-        Spell('Poison -- Black Lotus', 5, 'One living creature within \\rngmed range', """
+        Spell('Poison -- Arsenic', 3, 'One living creature within \\rngmed range', """
+            This spell functions like this \\spell<poison -- nitharit> spell, except that the target becomes poisoned with arsenic instead (see \\pcref<Poisons>).
+            A creature poisoned by arsenic loses a \\glossterm<hit point> from each successful attack, including the first.
+            A third successful attack causes the target gain a \\glossterm<vital wound> and ends the poison.
+            A third failed attack ends the poison.
+
+            \\rankline
+            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<7> The accuracy bonus increases to +2.
+        """, tags=[]),
+        Spell('Poison -- Black Lotus', 4, 'One living creature within \\rngmed range', """
             This spell functions like this \\spell<poison -- nitharit> spell, except that the target becomes poisoned with black lotus extract instead (see \\pcref<Poisons>).
             A creature poisoned by black lotus extract loses a \\glossterm<hit point> from each successful attack, including the first.
             A third successful attack causes the target to gain a \\glossterm<vital wound>.

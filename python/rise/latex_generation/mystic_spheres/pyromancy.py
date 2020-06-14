@@ -126,10 +126,12 @@ pyromancy=MysticSphere(
             \\rankline
             \\rank<7> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=[]),
-        Spell('Flame Breath', 4, ['Yourself', 'Everything within a \\arealarge cone'], """
+        Spell('Flame Breath', 4, 'Yourself (see text)', """
             As a standard action, you can breathe fire like a dragon.
-            When you do, make an attack vs Armor against each secondary target.
-            \\hit Each secondary target takes fire \\glossterm<standard damage> +1d.
+            When you do, make an attack vs Armor against everything within a \\arealarge cone from you.
+            \\hit Each target takes fire \\glossterm<standard damage> +1d.
+
+            You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
             \\rank<6> The damage increases to \\glossterm<standard damage> +2d.
