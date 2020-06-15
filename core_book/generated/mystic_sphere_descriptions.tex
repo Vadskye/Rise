@@ -139,7 +139,7 @@ Moving the target upwards costs twice the normal movement cost.
 
 
 \lowercase{\hypertarget{spell:Wind Screen}{}}\label{spell:Wind Screen}
-\begin{attuneability}[Rank 1]{\hypertarget{spell:Wind Screen}{Wind Screen}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Wind Screen}{Wind Screen}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \target{Yourself}
 You gain a \plus1 \glossterm{magic bonus} to Armor defense.
 This bonus is increased to \plus4 against \glossterm{mundane} ranged attacks from weapons or projectiles that are Small or smaller.
@@ -1255,6 +1255,9 @@ This can allow you to completely block off small tunnels.
 The wall is visible as a shimmering magical membrane that does not block sight.
 Nothing can pass through the wall until it is destroyed.
 Each 5-ft.\ square of wall has a \glossterm{vital resistance} equal to twice your \glossterm{power}.
+
+When you cast this spell, you can \glossterm{attune} to it.
+If you do, it gains the \glossterm{Attune} (self) tag and loses the \glossterm{Sustain} (minor) tag.
 
 \rankline
 \rank{3} The \glossterm{vital resistance} of each 5-ft.\ square increases to be equal to three times your \glossterm{power}.
@@ -6631,6 +6634,62 @@ Make an attack vs. Mental against each target.
 
 
 
+\lowercase{\hypertarget{spell:Mind Arrow}{}}\label{spell:Mind Arrow}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Mind Arrow}{Mind Arrow}}[\glossterm{Focus}]
+
+Primary target: One Tiny or smaller \glossterm{unattened} projectile within \rngmed range
+\par\noindent
+Secondary target: One creature or object within \rngmed range
+
+You make a \glossterm{magical strike} using the primary target against the secondary target.
+The projectile flies directly toward the secondary target instead of originating from your position, which may allow you to avoid \glossterm{cover} and similar obstacles.
+
+\rankline
+\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Reactive Deflection}{}}\label{spell:Reactive Deflection}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Reactive Deflection}{Reactive Deflection}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{Yourself}
+You gain a \plus1 \glossterm{magic bonus} to Armor defense.
+This bonus is increased to \plus4 against \glossterm{mundane} ranged attacks from weapons or projectiles that are Small or smaller.
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{3} The bonus against ranged attacks increases to \plus6.
+\rank{5} The bonus to Armor defense increases to \plus2.
+\rank{7} The bonus against ranged attacks increases to \plus8.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Repulsive Grasp}{}}\label{spell:Repulsive Grasp}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Repulsive Grasp}{Repulsive Grasp}}[\glossterm{Focus}]
+\target{One creature or object you \glossterm{threaten}}
+This spell does not have the \glossterm{Focus} tag.
+You must have a \glossterm{free hand} to cast this spell.
+
+Make a melee attack vs. Reflex against the target.
+\hit You \glossterm{knockback} the target up to 5 feet per \glossterm{power} in a straight line directly away from you.
+Moving the target upwards costs twice the normal movement cost.
+If the target impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgeoning \glossterm{standard damage}.
+
+\rankline
+\rank{3} The damage increases to \glossterm{standard damage} \plus1d.
+\rank{5} The damage increases to \glossterm{standard damage} \plus2d.
+\rank{7} The damage increases to \glossterm{standard damage} \plus3d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Steal Item}{}}\label{spell:Steal Item}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Steal Item}{Steal Item}}[\glossterm{Focus}]
 \targets{One Small or smaller object within \rngmed range}
@@ -6668,7 +6727,7 @@ This gives it a \plus4 \glossterm{magic bonus} to the Jump skill, if applicable,
 \begin{freeability}[Rank 1]{\hypertarget{spell:Telekinetic Throw}{Telekinetic Throw}}[\glossterm{Focus}]
 \target{One Medium or smaller creature or object within \rngmed range}
 Make an attack vs. Mental against the target.
-\hit You move the target up to 5 feet per \glossterm{power} in a straight line in any direction.
+\hit You \glossterm{knockback} the target up to 5 feet per \glossterm{power} in a straight line in any direction.
 Moving the target upwards costs twice the normal movement cost.
 If the target impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgeoning \glossterm{standard damage}.
 
