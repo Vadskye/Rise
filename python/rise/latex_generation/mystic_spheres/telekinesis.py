@@ -85,9 +85,23 @@ telekinesis=MysticSphere(
             \\rank<5> The area increases to a \\arealarge radius.
             \\rank<7> The area increases to a \\areahuge radius.
         """, tags=[]),
+        Spell('Repulsive Grasp', 1, 'One creature or object you \\glossterm<threaten>', """
+            This spell does not have the \\glossterm<Focus> tag.
+            You must have a \\glossterm<free hand> to cast this spell.
+
+            Make a melee attack vs. Reflex against the target.
+            \\hit You \\glossterm<knockback> the target up to 5 feet per \\glossterm<power> in a straight line directly away from you.
+                Moving the target upwards costs twice the normal movement cost.
+                If the target impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgeoning \\glossterm<standard damage>.
+
+            \\rankline
+            \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
+        """, tags=[]),
         Spell('Telekinetic Throw', 1, 'One Medium or smaller creature or object within \\rngmed range', """
             Make an attack vs. Mental against the target.
-            \\hit You move the target up to 5 feet per \\glossterm<power> in a straight line in any direction.
+            \\hit You \\glossterm<knockback> the target up to 5 feet per \\glossterm<power> in a straight line in any direction.
                 Moving the target upwards costs twice the normal movement cost.
                 If the target impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgeoning \\glossterm<standard damage>.
 
@@ -151,6 +165,26 @@ telekinesis=MysticSphere(
             \\rankline
             \\rank<6> The accuracy penalty is reduced to -3.
             \\rank<8> The accuracy penalty is reduced to -2.
+        """, tags=['Attune (self)']),
+        Spell('Mind Arrow', 1, ['One Tiny or smaller \\glossterm<unattened> projectile within \\rngmed range', 'One creature or object within \\rngmed range'], """
+            You make a \\glossterm<magical strike> using the primary target against the secondary target.
+            The projectile flies directly toward the secondary target instead of originating from your position, which may allow you to avoid \\glossterm<cover> and similar obstacles.
+
+            \\rankline
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<5> The accuracy bonus increases to +2.
+            \\rank<7> The accuracy bonus increases to +3.
+        """, tags=[]),
+        Spell('Reactive Deflection', 1, 'Yourself', """
+            You gain a +1 \\glossterm<magic bonus> to Armor defense.
+            This bonus is increased to +4 against \\glossterm<mundane> ranged attacks from weapons or projectiles that are Small or smaller.
+
+            You can cast this spell as a \\glossterm<minor action>.
+
+            \\rankline
+            \\rank<3> The bonus against ranged attacks increases to +6.
+            \\rank<5> The bonus to Armor defense increases to +2.
+            \\rank<7> The bonus against ranged attacks increases to +8.
         """, tags=['Attune (self)']),
     ],
     category='debuff, combat',
