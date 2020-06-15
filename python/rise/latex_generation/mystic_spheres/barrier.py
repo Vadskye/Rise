@@ -69,6 +69,9 @@ barrier=MysticSphere(
             Nothing can pass through the wall until it is destroyed.
             Each 5-ft.\\ square of wall has a \\glossterm<vital resistance> equal to twice your \\glossterm<power>.
 
+            When you cast this spell, you can \\glossterm<attune> to it.
+            If you do, it gains the \\glossterm<Attune> (self) tag and loses the \\glossterm<Sustain> (minor) tag.
+
             \\rankline
             \\rank<3> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to three times your \\glossterm<power>.
             \\rank<5> The area increases to a \\arealarge line.

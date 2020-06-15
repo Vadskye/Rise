@@ -87,7 +87,7 @@ aeromancy = MysticSphere(
             \\rank<3> The bonus against ranged attacks increases to +6.
             \\rank<5> The bonus to Armor defense increases to +2.
             \\rank<7> The bonus against ranged attacks increases to +8.
-        """, tags=['Attune (target)']),
+        """, tags=['Attune (self)']),
         Spell('Windstrike', 1, 'One creature or object within \\rngmed range', """
             Make an attack vs. Armor against the target.
             \\hit The target takes bludgeoning \\glossterm<standard damage> +1d.
