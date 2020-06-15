@@ -51,6 +51,14 @@ cryomancy=MysticSphere(
             \\rankline
             \\rank<7> The range increases to \\rngmed.
         """, tags=[]),
+        Spell('Mass Frozen Legs', 5, '\\glossterm<Enemies> in a \\areasmall radius within \\rngmed range', """
+            Make an attack vs. Fortitude against each target.
+            \\hit Each target is \\glossterm<immobilized> until the end of the next round.
+            \\crit Each target is \\glossterm<immobilized> as a \\glossterm<condition>.
+
+            \\rankline
+            \\rank<7> The area increases to a \\areamed radius.
+        """, tags=[]),
         Spell('Ice Lance', 3, 'Everything in a \\arealarge, 5 ft.\\ wide line from you', """
             Make an attack vs. Armor against each target.
             \\hit Each target takes piercing and cold \\glossterm<standard damage> -1d.
@@ -92,6 +100,15 @@ cryomancy=MysticSphere(
             \\rankline
             \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
+        """, tags=[]),
+        Spell('Mass Chilled Mind', 4, '\\glossterm<Enemies> in a \\areamed radius within \\rngmed range', """
+            Make an attack vs. Fortitude against each target.
+            \\hit Each target is \\glossterm<stunned> until the end of the next round.
+            \\crit Each target is \\glossterm<stunned> as a \\glossterm<condition>.
+
+            \\rankline
+            \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<8> The accuracy bonus increases to +2.
         """, tags=[]),
         Spell('Skate', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target can move on top of calm water as if it were land.
