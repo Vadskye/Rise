@@ -50,6 +50,14 @@ biomancy=MysticSphere(
             \\rank<5> The accuracy bonus increases to +3.
             \\rank<7> The accuracy bonus increases to +4.
         """, tags=[]),
+        Spell('Brief Regeneration', 1, 'Yourself or one living \\glossterm<ally> within \\rngclose range', """
+            The target regains one lost \\glossterm<hit point>.
+
+            \\rankline
+            \\rank<3> If the target is \\glossterm<bloodied>, it regains two hit points instead of one.
+            \\rank<5> The number of hit points regained increases to two.
+            \\rank<7> If the target is \\glossterm<bloodied>, it regains three hit points instead of two.
+        """, tags=[]),
         Spell('Vital Regeneration', 5, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             A the end of each round, the target can spend an \\glossterm<action point>.
             If it does, it removes one of its \\glossterm<vital wounds>.
