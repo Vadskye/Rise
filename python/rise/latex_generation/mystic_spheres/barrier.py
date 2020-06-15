@@ -52,6 +52,7 @@ barrier=MysticSphere(
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Forceful Barrier', 3, None, """
             This spell functions like the \\spell<mystic barrier> spell, except that it breaks objects in its area that obstruct its path.
+            Each object in the path of the wall takes energy \\glossterm<standard damage>.
             Any object destroyed in this way does not block the barrier's area of effect.
             This does no damage to creatures, who block the path of the barrier like normal.
             In addition, the \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to three times your \\glossterm<power>.

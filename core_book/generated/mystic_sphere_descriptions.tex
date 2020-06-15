@@ -826,22 +826,6 @@ If the destination is invalid, the ability fails without effect.
 \subsubsection{Spells}
 
 
-\lowercase{\hypertarget{spell:Blink}{}}\label{spell:Blink}
-\begin{attuneability}[Rank 1]{\hypertarget{spell:Blink}{Blink}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\target{Yourself}
-You randomly blink between your current plane and the Astral Plane.
-\glossterm{Targeted} \glossterm{strikes} against you have a 20\% failure chance as you happen to be in the Astral Plane when the attack would hit.
-However, all of your attacks also have the same failure chance.
-
-\rankline
-\rank{3} The failure chance increases to 30\%.
-\rank{5} The failure chance increases to 40\%.
-\rank{7} The failure chance increases to 50\%.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Dimensional Grasp}{}}\label{spell:Dimensional Grasp}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Dimensional Grasp}{Dimensional Grasp}}[]
 \target{One creature or object you \glossterm{threaten}}
@@ -873,6 +857,22 @@ Make an attack vs. Mental against the target.
 \rank{5} The damage increases to \glossterm{standard damage} \plus3d.
 \rank{7} The damage increases to \glossterm{standard damage} \plus4d.
 \end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Flicker}{}}\label{spell:Flicker}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Flicker}{Flicker}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{Yourself}
+You randomly flicker between your current plane and the Astral Plane.
+\glossterm{Targeted} \glossterm{strikes} against you have a 20\% failure chance as you happen to be in the Astral Plane when the attack would hit.
+However, all of your attacks also have the same failure chance.
+
+\rankline
+\rank{3} The failure chance increases to 30\%.
+\rank{5} The failure chance increases to 40\%.
+\rank{7} The failure chance increases to 50\%.
+\end{attuneability}
 \vspace{0.25em}
 
 
@@ -952,11 +952,11 @@ If you hit both targets, they each teleport into each other's locations.
 
 
 
-\lowercase{\hypertarget{spell:Controlled Blink}{}}\label{spell:Controlled Blink}
-\begin{attuneability}[Rank 4]{\hypertarget{spell:Controlled Blink}{Controlled Blink}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\lowercase{\hypertarget{spell:Controlled Flicker}{}}\label{spell:Controlled Flicker}
+\begin{attuneability}[Rank 4]{\hypertarget{spell:Controlled Flicker}{Controlled Flicker}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \target{Yourself}
-You randomly blink between your current plane and the Astral Plane.
-This blinking stops when you take actions on your current plane.
+You randomly flicker between your current plane and the Astral Plane.
+This flickering stops when you take actions on your current plane.
 In any phase where you do not take any actions, \glossterm{targeted} \glossterm{strikes} against you have a 50\% failure chance as you happen to be in the Astral Plane when the attack would hit.
 You are still affected normally by abilities that affect an area.
 
@@ -1324,6 +1324,7 @@ In addition, the \glossterm{vital resistance} of each 5-ft.\ square increases to
 \begin{freeability}[Rank 3]{\hypertarget{spell:Forceful Barrier}{Forceful Barrier}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
 \targetrule
 This spell functions like the \spell{mystic barrier} spell, except that it breaks objects in its area that obstruct its path.
+Each object in the path of the wall takes energy \glossterm{standard damage}.
 Any object destroyed in this way does not block the barrier's area of effect.
 This does no damage to creatures, who block the path of the barrier like normal.
 In addition, the \glossterm{vital resistance} of each 5-ft.\ square increases to be equal to three times your \glossterm{power}.
@@ -3762,6 +3763,21 @@ Make an attack vs. Armor against each target.
 
 
 
+\lowercase{\hypertarget{spell:Mass Chilled Mind}{}}\label{spell:Mass Chilled Mind}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Mass Chilled Mind}{Mass Chilled Mind}}[\glossterm{Focus}]
+\targets{\glossterm{Enemies} in a \areamed radius within \rngmed range}
+Make an attack vs. Fortitude against each target.
+\hit Each target is \glossterm{stunned} until the end of the next round.
+\crit Each target is \glossterm{stunned} as a \glossterm{condition}.
+
+\rankline
+\rank{6} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{8} The accuracy bonus increases to \plus2.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Frozen Legs}{}}\label{spell:Frozen Legs}
 \begin{freeability}[Rank 5]{\hypertarget{spell:Frozen Legs}{Frozen Legs}}[\glossterm{Focus}]
 \target{One creature within \rngclose range}
@@ -3770,6 +3786,20 @@ Make an attack vs. Fortitude against the target.
 
 \rankline
 \rank{7} The range increases to \rngmed.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Mass Frozen Legs}{}}\label{spell:Mass Frozen Legs}
+\begin{freeability}[Rank 5]{\hypertarget{spell:Mass Frozen Legs}{Mass Frozen Legs}}[\glossterm{Focus}]
+\targets{\glossterm{Enemies} in a \areasmall radius within \rngmed range}
+Make an attack vs. Fortitude against each target.
+\hit Each target is \glossterm{immobilized} until the end of the next round.
+\crit Each target is \glossterm{immobilized} as a \glossterm{condition}.
+
+\rankline
+\rank{7} The area increases to a \areamed radius.
 \end{freeability}
 \vspace{0.25em}
 
