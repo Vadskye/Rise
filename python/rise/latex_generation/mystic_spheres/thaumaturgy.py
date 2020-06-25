@@ -89,15 +89,15 @@ thaumaturgy=MysticSphere(
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=[]),
         Spell('Deattunement', 1, 'One creature within \\rngmed range', """
-            Make an attack vs. Mental against the target.
+            Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against the target.
             \\hit The target stops being \\glossterm<attuned> to one ability of its choice that it is currently attuned to.
-                This ability does not affect attunement to magic items.
-            \\crit The target breaks its attunement to all abilities that it is attuned to other than \\glossterm<magic items>.
+            \\crit The target stops being \\glossterm<attuned> to two abilities of its choice that it is currently attuned to.
+            In addition, as a \\glossterm<condition>, it becomes unable to \\glossterm<attune> to any additional abilities.
 
             \\rankline
-            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<5> The accuracy bonus increases to +2.
-            \\rank<7> The accuracy bonus increases to +3.
+            \\rank<3> The accuracy bonus increases to +3.
+            \\rank<5> The accuracy bonus increases to +4.
+            \\rank<7> The accuracy bonus increases to +5.
         """, tags=[]),
         Spell('Reattunement', 3, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
             The target can reattune to one ability that it stopped being attuned to since the start of the last round without spending an additional action point.

@@ -156,7 +156,7 @@ biomancy=MysticSphere(
             \\rank<8> The damage increases to \\glossterm<standard damage> +3d.
         """, tags=['Attune (self)']),
         Spell('Withering', 1, 'One living creature within \\rngmed range', """
-            Make an attack vs. Fortitude with a +2 \\glossterm<accuracy> bonus against the target.
+            Make an attack vs. Fortitude with a +2 bonus to \\glossterm<accuracy> against the target.
             \\hit As a \\glossterm<condition>, the target becomes more vulnerable to injury.
             It takes a -2 penalty to Fortitude defense.
             In addition, whenever it loses a \\glossterm<hit point>, it reduces its maximum \\glossterm<hit points> by 1.
