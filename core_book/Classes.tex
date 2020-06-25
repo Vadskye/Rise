@@ -2039,14 +2039,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Paladin Progression}
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Min Level} & \tb{Devoted Paragon}  & \tb{Divine Magic} & \tb{Divine Spell Expertise}   & \tb{Stalwart Guardian}      & \tb{Zealous Warrior}       \tableheaderrule
-            1 & 1  & Aligned aura          & Spellcasting   & Insight point              & Lay on hands                & Smite                      \\
-            2 & 2  & Aligned immunity      & Battle prayer  & Battle caster               & Stalwart champion           & Zealous conviction         \\
-            3 & 5  & Paragon power         & Spell rank (3) & Wellspring of power         & Stalwart resilience         & Zealous power              \\
-            4 & 8  & Greater aligned aura  & Spell rank (4) & Insight point              & Greater lay on hands        & Greater smite              \\
-            5 & 11 & Devoted mind          & Spell rank (5) & Greater battle caster       & Greater stalwart champion   & Greater zealous conviction \\
-            6 & 14 & Greater paragon power & Spell rank (6) & Greater wellspring of power & Greater stalwart resilience & Greater zealous power      \\
-            7 & 17 & Supreme aligned aura  & Spell rank (7) & Insight point              & Supreme lay on hands        & Supreme smite              \\
-            8 & 20 & Aligned soul          & Spell rank (8) &                             &                             &                            \\
+            1 & 1  & Aligned aura          & Spellcasting   & Insight point               & Lay on hands                & Smite                    \\
+            2 & 2  & Aligned immunity      & Battle prayer  & Battle caster               & Enduring defender           & Zealous offense          \\
+            3 & 5  & Paragon power         & Spell rank (3) & Wellspring of power         & Stalwart resilience         & Zealous purge            \\
+            4 & 8  & Greater aligned aura  & Spell rank (4) & Insight point               & Defender's boon             & Zealous fixation         \\
+            5 & 11 & Devoted mind          & Spell rank (5) & Greater battle caster       & Greater enduring defender   & Pass judgment            \\
+            6 & 14 & Greater paragon power & Spell rank (6) & Greater wellspring of power & Greater stalwart resilience & Greater zealous offense  \\
+            7 & 17 & Supreme aligned aura  & Spell rank (7) & Insight point               & Greater defender's boon     & Greater zealous fixation \\
+            8 & 20 & Aligned soul          & Spell rank (8) &                             &                             &                          \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -2251,36 +2251,43 @@ This choice determines a great deal about your character's abilities.
             \rank{7} The damage bonus increases to \plus4d.
         \end{freeability}
 
-        \cf{Pal}[2]{Zealous Conviction} You gain a \plus1 bonus to Fortitude and Mental defenses.
+        \cf{Pal}[2]{Zealous Offense} You gain a \plus1 bonus to \glossterm{accuracy}.
 
         \cf{Pal}[3]{Zealous Purge} You can use your \textit{zealous purge} ability as a standard action.
         \begin{freeability}{Zealous Purge}
             Make a \glossterm{strike}.
             Because this is a \glossterm{magical} ability, you use your \glossterm{power} with \glossterm{magical} abilities to determine your damage instead of your power with \glossterm{mundane} abilities.
-            If the target is \glossterm{wounded} by your attack, the target stops being \glossterm{attuned} to one ability of its choice that it is currently attuned to.
-            This ability does not affect attunement to magic items.
+
+            On a hit, the target stops being \glossterm{attuned} to one ability of its choice that it is currently attuned to.
+
+            On a \glossterm{critical hit}, the target stops being attuned to two abilities of its choice that it is currently attuned to.
+            In addition, as a \glossterm{condition}, it stops being able to attune to abilities.
 
             \rankline
             \rank{5} If you deal damage with a \glossterm{critical hit}, the target stops being \glossterm{attuned} to all abilities that it is attuned to other than \glossterm{magic items}.
             \rank{7} You gain a \plus1 bonus to \glossterm{accuracy} with the strike.
         \end{freeability}
 
-        \cf{Pal}[4]{Pass Judgment}[Magical] When you use your \textit{smite} ability, you can use the \textit{pass judgment} ability.
-        \begin{attuneability}{Pass Judgment}[\glossterm{Attune} (self)]
-            The target of your \textit{smite} is treated as if it had the alignment opposed to your devoted alignment for the purpose of all abilities, including for your initial \textit{smite}.
+        \cf{Pal}[4]{Zealous Fixation} You roll twice for \glossterm{miss chances} and take your preferred result.
+
+        \cf{Pal}[5]{Pass Judgment}[Magical] You can use the \textit{pass judgment} ability as a \glossterm{minor action}.
+        \begin{freeability}{Pass Judgment}
+            \target{One creature within \rnglong range}
+            The target is treated as if it had the alignment opposed to your devoted alignment for the purpose of all abilities.
             This only affects its alignment along the alignment axis your devoted alignment is on.
             For example, if your devoted alignment was evil, a chaotic neutral target would be treated as chaotic good.
+            This ability lasts until you use it again or until you \glossterm{dismiss} it as a \glossterm{free action}.
 
             You can use this ability to do battle against foes who share your alignment, but you should exercise caution in doing so.
             Persecution of those who share your ideals can lead you to fall and become an ex-paladin.
-        \end{attuneability}
 
-        \cf{Pal}[5]{Greater Zealous Conviction} The bonus from your \textit{zealous conviction} ability increases to \plus2.
+            \rankline
+            \rank{7} This ability does not end when you use it again, allowing you to pass judgment on any number of different creatures.
+        \end{freeability}
 
-        \cf{Pal}[6]{Zealous Offense} You gain a \plus1 bonus to \glossterm{accuracy}.
+        \cf{Pal}[6]{Greater Zealous Offense} The bonus from your \textit{zealous offense} ability increases to \plus2.
 
-        \cf{Pal}[7]{Greater Pass Judgment} Your \textit{pass judgment} ability loses the \glossterm{Attune} tag.
-        Instead, it lasts until you decide to lift your judgment on the target as a \glossterm{free action}.
+        \cf{Pal}[7]{Greater Zealous Fixation} Whenever you hit a creature with a \glossterm{strike}, you ignore all \glossterm{miss chances} against that creature with your attacks until you take a \glossterm{short rest}.
 
         % TODO: Doesn't work with new spell system
         % \cf{Pal}[20]{Martyr's Retribution}[Mag]
@@ -3090,7 +3097,7 @@ This choice determines a great deal about your character's abilities.
             As long as you have a free hand, the barrier also manifests as a shield that provides a \plus1 bonus to Armor defense.
             This bonus is considered to come from a shield, and does not stack with the benefits of using a physical shield.
 
-            This ability lasts until you \glossterm{dismiss} it as a free action.
+            This ability lasts until you use it again or until you \glossterm{dismiss} it as a free action.
         \end{freeability}
 
         \cf{Sor}[3]{Wellspring of Power}[Magical]
