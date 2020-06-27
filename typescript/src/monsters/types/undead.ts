@@ -35,8 +35,7 @@ export const undeadInput: TypelessMonsterInput[] = [
       },
     ],
     skillPoints: { awareness: 2, intimidate: 2, stealth: 2 },
-    // TODO: add fly speed
-    speed: 30,
+    speeds: { fly: 30, land: null },
     startingAttributes: { str: null, dex: 3, con: null, int: 1, per: 1, wil: 2 },
   },
 ];
