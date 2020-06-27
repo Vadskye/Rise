@@ -45,13 +45,12 @@ export function parseArmorInput(input: ArmorInput): Armor {
 export type StandardArmorName =
   | "breastplate"
   | "full plate"
-  | "heavy shield"
+  | "standard shield"
   | "hide"
   | "scales"
   | "fur"
   | "feathers"
   | "carapace"
-  | "outsider skin"
   | "thick skin";
 
 export function isStandardArmorInput(input: ArmorInput): input is StandardArmorInput {
@@ -69,35 +68,35 @@ export function isStandardArmorInput(input: ArmorInput): input is StandardArmorI
 export const standardArmors: Record<StandardArmorName, Omit<CustomArmorInput, "name">> = {
   "full plate": {
     defenseBonuses: { armor: 4 },
-    resistanceBonuses: { physical: 6 },
+    resistanceBonuses: { energy: 3, physical: 6 },
   },
-  "heavy shield": {
+  "standard shield": {
     defenseBonuses: { armor: 2 },
     resistanceBonuses: {},
   },
   "breastplate": {
     defenseBonuses: { armor: 3 },
-    resistanceBonuses: { physical: 4 },
+    resistanceBonuses: { energy: 2, physical: 4 },
   },
-  // Conflicts with body armor
+  // Conflicts with body armor; equivalent to hide
   "fur": {
     defenseBonuses: { armor: 3 },
     resistanceBonuses: { energy: 3, physical: 3 },
   },
-  // Conflicts with body armor
+  // Conflicts with body armor; equivalent to breastplate
   "scales": {
-    defenseBonuses: { armor: 4 },
-    resistanceBonuses: { energy: 4, physical: 4 },
+    defenseBonuses: { armor: 3 },
+    resistanceBonuses: { energy: 2, physical: 4 },
   },
   "hide": {
-    defenseBonuses: { armor: 2 },
-    resistanceBonuses: { energy: 3, physical: 3 },
+    defenseBonuses: { armor: 3 },
+    resistanceBonuses: { energy: 2, physical: 2 },
   },
   "feathers": {
-    defenseBonuses: { armor: 3 },
+    defenseBonuses: { armor: 2 },
     resistanceBonuses: { energy: 1, physical: 1 },
   },
-  // Conflicts with body armor
+  // Conflicts with body armor; equivalent to full plate
   "carapace": {
     defenseBonuses: { armor: 4 },
     resistanceBonuses: { energy: 3, physical: 6 },
@@ -105,10 +104,5 @@ export const standardArmors: Record<StandardArmorName, Omit<CustomArmorInput, "n
   "thick skin": {
     defenseBonuses: { armor: 1 },
     resistanceBonuses: { energy: 3, physical: 3 },
-  },
-  // Conflicts with body armor
-  "outsider skin": {
-    defenseBonuses: { armor: 4 },
-    resistanceBonuses: { energy: 4, physical: 4 },
   },
 };

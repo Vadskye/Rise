@@ -16,10 +16,10 @@ export type WeaponInput = StandardWeaponInput | CustomWeaponInput;
 
 export type Weapon = Required<CustomWeaponInput>;
 
-export type WeaponTag = "sweeping 1" | "sweeping 2" | "forceful" | "long";
+export type WeaponTag = "keen" | "impact" | "sweeping 1" | "sweeping 2" | "forceful" | "long";
 
 export function parseWeaponInput(input: WeaponInput): Weapon {
-  return {
+  const weapon = {
     accuracyBonus: 0,
     damageTypes: [],
     powerBonus: 0,
@@ -27,6 +27,8 @@ export function parseWeaponInput(input: WeaponInput): Weapon {
     ...(isStandardWeaponName(input.name) && standardWeapons[input.name]),
     ...input,
   };
+  weapon.damageTypes.sort();
+  return weapon;
 }
 
 // This is somewhat cumbersome to write, but it ensure that we specify a damage type for any
@@ -40,6 +42,7 @@ export type StandardWeaponName =
   | "greataxe"
   | "greatclub"
   | "greatsword"
+  | "greatmace"
   | "gore"
   | "light crossbow"
   | "mace"
@@ -68,11 +71,11 @@ export const standardWeapons: Record<StandardWeaponName, Omit<CustomWeaponInput,
     // TODO: define range increment
   },
   "claw": {
-    accuracyBonus: 1,
+    accuracyBonus: 2,
+    powerBonus: -2,
     damageTypes: ["slashing", "piercing"],
   },
   "club": {
-    accuracyBonus: -1,
     damageTypes: ["bludgeoning"],
   },
   "greataxe": {
@@ -84,44 +87,49 @@ export const standardWeapons: Record<StandardWeaponName, Omit<CustomWeaponInput,
     powerBonus: 4,
     damageTypes: ["bludgeoning"],
   },
+  "greatmace": {
+    damageTypes: ["bludgeoning"],
+    powerBonus: 4,
+    tags: ["forceful"],
+  },
   "greatsword": {
     damageTypes: ["slashing"],
     powerBonus: 2,
-    tags: ["long", "sweeping 2"],
+    tags: ["sweeping 2"],
   },
   "gore": {
     damageTypes: ["piercing"],
     powerBonus: 2,
+    tags: ["impact"],
   },
   "light crossbow": {
     damageTypes: ["piercing"],
   },
   "mace": {
     damageTypes: ["bludgeoning"],
-    powerBonus: 2,
   },
   "ram": {
     damageTypes: ["bludgeoning"],
+    powerBonus: 2,
     tags: ["forceful"],
   },
   "slam": {
     damageTypes: ["bludgeoning"],
-    powerBonus: 0,
   },
   "smallsword": {
     accuracyBonus: 2,
-    powerBonus: -2,
     damageTypes: ["slashing"],
+    powerBonus: -2,
+    tags: ["keen"],
   },
   "spear": {
     damageTypes: ["piercing"],
   },
   "tentacle": {
     damageTypes: ["bludgeoning"],
-    powerBonus: 2,
   },
   "talon": {
-    accuracyBonus: 1,
+    accuracyBonus: 2,
     damageTypes: ["piercing", "slashing"],
     powerBonus: -2,
   },

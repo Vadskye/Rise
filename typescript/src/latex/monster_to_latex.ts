@@ -2,6 +2,7 @@ import { CalculatedAttack, calculateStrike } from "@src/calculate";
 import { DamageType, damageTypes } from "@src/data";
 import * as format from "@src/latex/format";
 import { MonsterBase } from "@src/monsters";
+import { MovementMode, movementModes } from "@src/movement_modes";
 import { PassiveAbility } from "@src/passive_abilities";
 import { Weapon } from "@src/weapons";
 import { sentenceCase, titleCase } from "change-case";
@@ -100,7 +101,7 @@ function getMainContent(monster: MonsterBase) {
 function getFooter(monster: MonsterBase) {
   return `
     \\begin{monsterfooter}
-      \\pari \\textbf{Speed} ${format.feet(monster.speed)};
+      \\pari ${formatSpeeds(monster)};
         \\textbf{Space} ${format.feet(monster.space)};
         \\textbf{Reach} ${format.feet(monster.reach)}
       \\pari \\textbf{Awareness} ${format.modifier(monster.skills.awareness)}
@@ -172,7 +173,12 @@ function formatStrike(monster: MonsterBase, weapon: Weapon) {
   const strike = calculateStrike(monster, weapon);
   const formattedTags = weapon.tags ? weapon.tags.sort().map((t) => sentenceCase(t)) : [];
   const effectText = [format.damageDice(strike.power), ...formattedTags].join(", ");
-  return `${name} \\plus${strike.accuracy} (${effectText})`;
+  const damageTypeText = {
+    1: weapon.damageTypes[0],
+    2: `${weapon.damageTypes[0]} and ${weapon.damageTypes[1]}`,
+    3: `${weapon.damageTypes[0]}, ${weapon.damageTypes[1]}, and ${weapon.damageTypes[2]}`,
+  }[weapon.damageTypes.length as 1 | 2 | 3];
+  return `${name} \\plus${strike.accuracy} (${effectText} ${damageTypeText})`;
 }
 
 function getPassiveAbilities(monster: MonsterBase) {
@@ -182,5 +188,20 @@ function getPassiveAbilities(monster: MonsterBase) {
 }
 
 function formatPassiveAbility(ability: PassiveAbility) {
-  return `\\parhead{${titleCase(ability.name)}} ${ability.description}`;
+  return `\\parhead{${titleCase(ability.name)}} ${ability.description || ""}`;
+}
+
+function formatSpeeds(monster: MonsterBase) {
+  const activeModes = movementModes.filter((mode) => monster.speeds[mode]);
+  if (activeModes.length > 1) {
+    const speedTexts = activeModes.map((mode) => `${mode} ${format.feet(monster.speeds[mode])}`);
+    return `\\textbf{Speeds} ${speedTexts.join(", ")}`;
+  } else {
+    const mode = activeModes[0];
+    if (mode && mode !== "land") {
+      return `\\textbf{${titleCase(mode)} Speed} ${format.feet(monster.speeds[mode])}`;
+    } else {
+      return `\\textbf{Speed} ${format.feet(monster.speeds.land)}`;
+    }
+  }
 }

@@ -65,7 +65,7 @@ const lizardfolkBase = {
 
 humanoidInput.push({
   ...lizardfolkBase,
-  armorInputs: [{ name: "breastplate" }, { name: "hide" }, { name: "heavy shield" }],
+  armorInputs: [{ name: "breastplate" }, { name: "hide" }, { name: "standard shield" }],
   resistanceBonuses: { physical: 4 },
   level: 10,
   name: "Lizardfolk, Grunt",
@@ -80,7 +80,7 @@ humanoidInput.push({
 });
 humanoidInput.push({
   ...lizardfolkBase,
-  armorInputs: [{ name: "breastplate" }, { name: "hide" }, { name: "heavy shield" }],
+  armorInputs: [{ name: "breastplate" }, { name: "hide" }, { name: "standard shield" }],
   challengeRating: 2,
   passiveAbilities: [
     {

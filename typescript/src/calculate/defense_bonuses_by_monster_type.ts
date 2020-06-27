@@ -4,46 +4,53 @@ import { MonsterType } from "@src/monsters/types";
 export function defenseBonusesByMonsterType(monsterType: MonsterType): Record<DefenseType, number> {
   return {
     "aberration": {
-      armor: 0,
-      fortitude: 4,
-      reflex: 3,
-      mental: 5,
+      armor: 2,
+      fortitude: 3,
+      reflex: 2,
+      mental: 4,
     },
     "animal": {
-      armor: 0,
-      fortitude: 5,
-      reflex: 4,
-      mental: 3,
+      armor: 2,
+      fortitude: 4,
+      reflex: 3,
+      mental: 2,
     },
     "animate": {
-      armor: 0,
-      fortitude: 4,
-      reflex: 4,
-      mental: 4,
+      armor: 2,
+      fortitude: 3,
+      reflex: 3,
+      mental: 3,
     },
     "humanoid": {
-      armor: 0,
-      fortitude: 4,
-      reflex: 4,
-      mental: 4,
-    },
-    "monstrous humanoid": {
-      armor: 0,
-      fortitude: 4,
-      reflex: 4,
-      mental: 4,
-    },
-    "outsider": {
-      armor: 0,
-      fortitude: 4,
-      reflex: 4,
-      mental: 4,
-    },
-    "undead": {
+      // This is lower because humanoids are expected to wear armor
       armor: 0,
       fortitude: 3,
-      reflex: 4,
-      mental: 5,
+      reflex: 3,
+      mental: 3,
+    },
+    "magical beast": {
+      armor: 2,
+      fortitude: 3,
+      reflex: 3,
+      mental: 3,
+    },
+    "monstrous humanoid": {
+      armor: 2,
+      fortitude: 3,
+      reflex: 3,
+      mental: 3,
+    },
+    "outsider": {
+      armor: 3,
+      fortitude: 3,
+      reflex: 3,
+      mental: 3,
+    },
+    "undead": {
+      armor: 2,
+      fortitude: 2,
+      reflex: 3,
+      mental: 4,
     },
   }[monsterType];
 }

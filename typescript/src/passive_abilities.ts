@@ -1,5 +1,5 @@
 export interface PassiveAbility {
-  description: string;
+  description?: string;
   name: string;
 }
 

@@ -24,6 +24,7 @@ import { fromPairs } from "@src/util/from_pairs";
 import { parseWeaponInput, Weapon, WeaponInput } from "@src/weapons";
 import _ from "lodash";
 
+import { MovementMode } from "@src/movement_modes";
 export interface MonsterInput {
   accuracyBonus?: number;
   attackInputs?: AttackInput[];
@@ -43,7 +44,7 @@ export interface MonsterInput {
   size?: Creature.Size;
   skillPoints?: Partial<Creature.SkillPoints>;
   space?: number;
-  speed?: number;
+  speeds?: Partial<Record<MovementMode, number | null>>;
   startingAttributes?: Partial<Creature.Attributes>;
   weaponInput?: WeaponInput[];
   weight?: string | null;
@@ -69,7 +70,7 @@ interface MonsterCalculatedValues {
   skillPoints: Creature.SkillPoints;
   startingAttributes: Creature.Attributes;
   space: number;
-  speed: number;
+  speeds: Record<MovementMode, number>;
   weapons: Weapon[];
 }
 
@@ -94,6 +95,7 @@ const monsterDefaults: Required<
   resistanceBonuses: Record<DamageType, number>;
   passiveAbilities: PassiveAbility[];
   skillPoints: Creature.Skills;
+  speeds: Record<MovementMode, number>;
   startingAttributes: Creature.Attributes;
   weapons: Weapon[];
 } = {
@@ -110,6 +112,7 @@ const monsterDefaults: Required<
   resistanceBonuses: fromPairs(damageTypes.map((d) => [d, 0])),
   size: "medium",
   skillPoints: fromPairs(skills.map((s) => [s, 0])),
+  speeds: { burrow: 0, climb: 0, fly: 0, land: 0, swim: 0 },
   startingAttributes: fromPairs(attributes.map((a) => [a, 0])),
   weaponInput: [],
   weapons: [],
@@ -193,7 +196,13 @@ export function reformatMonsterInput(monsterInput: MonsterInput): MonsterBase {
     reach: reachBySize(monster.size),
     resistances: calculateResistances(monster, attributeModifiers),
     space: spaceBySize(monster.size),
-    speed: speedBySize(monster.size),
+    speeds: {
+      burrow: monsterInput.speeds?.burrow || 0,
+      climb: monsterInput.speeds?.climb || 0,
+      fly: monsterInput.speeds?.fly || 0,
+      land: monsterInput.speeds?.land === null ? 0 : speedBySize(monster.size),
+      swim: monsterInput.speeds?.swim || 0,
+    },
     skills: calculateSkills(attributeModifiers, skillPoints, monster),
     weapons,
   };
