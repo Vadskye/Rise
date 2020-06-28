@@ -11,23 +11,6 @@ const boulder: WeaponInput = {
 export const monstrousHumanoidInput: TypelessMonsterInput[] = [
   {
     alignment: "Usually chaotic evil",
-    attackInputs: [
-      {
-        // Uses str for accuracy instead of per
-        accuracyBonus: 3,
-        defense: "fortitude",
-        hit: `
-          Each target is knocked back 10 feet and takes $damage.
-        `,
-        name: "Forceful Shove",
-        powerBonus: -6,
-        preface: `
-          For each size category larger or smaller than the target that the hill giant is, it gains a +4 bonus or penalty to \\glossterm{accuracy}.
-        `,
-        target: "As a greatclub strike",
-        weaponName: "greatclub",
-      },
-    ],
     armorInputs: [{ name: "breastplate" }, { name: "thick skin" }],
     challengeRating: 3,
     description: `
@@ -49,6 +32,29 @@ export const monstrousHumanoidInput: TypelessMonsterInput[] = [
       If possible, they smash their foes off of cliffs.
     `,
     weaponInput: [{ name: "greatclub" }, boulder],
+  },
+  {
+    alignment: "Usually true neutral",
+    armorInputs: [{ name: "hide" }, { name: "thick skin" }],
+    challengeRating: 3,
+    description: `
+      Stone giants prefer thick leather garments, dyed in shades of brown and gray to match the stone around them. Adults stand about 20 feet tall. Stone giants can live to be 300 years old.
+
+      Young stone giants can be capricious, hunting tiny creatures like goats and humanoids on a whim.
+      Elder stone giants tend to be wiser and more cautious, and avoid unnecessary conflict.
+    `,
+    languages: ["Common", "Giant"],
+    level: 10,
+    name: "Giant, Stone",
+    passiveAbilities: [
+      { name: "Massive Sweep", description: "A stone giant's greatclub has the Sweeping (2) tag." },
+    ],
+    size: "gargantuan",
+    startingAttributes: { str: 7, dex: -1, con: 3, int: 0, per: 0, wil: -2 },
+    tactics: `
+      Stone giants fight from a great distance whenever possible, using their ability to hurl stones up to 1,000 feet.
+    `,
+    weaponInput: [{ name: "greatclub" }, { ...boulder, rangeIncrement: 200 }],
   },
   {
     alignment: "Usually chaotic evil",
