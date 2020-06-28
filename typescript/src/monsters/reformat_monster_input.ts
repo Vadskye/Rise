@@ -47,7 +47,7 @@ export interface MonsterInput {
   space?: number;
   speeds?: Partial<Record<MovementMode, number | null>>;
   startingAttributes?: Partial<Creature.Attributes>;
-  tactics?: string;
+  tactics?: string | null;
   weaponInput?: WeaponInput[];
   weight?: string | null;
 }
@@ -81,6 +81,7 @@ export type MonsterBase = Required<MonsterInput> & MonsterCalculatedValues;
 const monsterDefaults: Required<
   Omit<
     MonsterInput,
+    | "alignment"
     | "defenseBonuses"
     | "description"
     | "level"
@@ -116,6 +117,7 @@ const monsterDefaults: Required<
   skillPoints: fromPairs(skills.map((s) => [s, 0])),
   speeds: { burrow: 0, climb: 0, fly: 0, land: 0, swim: 0 },
   startingAttributes: fromPairs(attributes.map((a) => [a, 0])),
+  tactics: null,
   weaponInput: [],
   weapons: [],
   weight: null,
