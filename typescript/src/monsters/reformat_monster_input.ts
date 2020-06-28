@@ -27,6 +27,7 @@ import _ from "lodash";
 import { MovementMode } from "@src/movement_modes";
 export interface MonsterInput {
   accuracyBonus?: number;
+  alignment: string;
   attackInputs?: AttackInput[];
   activeAbilityInputs?: ActiveAbilityInput[];
   armorInputs?: ArmorInput[];
@@ -46,6 +47,7 @@ export interface MonsterInput {
   space?: number;
   speeds?: Partial<Record<MovementMode, number | null>>;
   startingAttributes?: Partial<Creature.Attributes>;
+  tactics?: string;
   weaponInput?: WeaponInput[];
   weight?: string | null;
 }

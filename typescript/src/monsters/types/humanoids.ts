@@ -2,6 +2,7 @@ import { addType, TypelessMonsterInput } from "./add_type";
 
 export const humanoidInput: TypelessMonsterInput[] = [
   {
+    alignment: "Usually lawful evil",
     armorInputs: [{ name: "breastplate" }],
     attackInputs: [
       {
@@ -23,6 +24,7 @@ export const humanoidInput: TypelessMonsterInput[] = [
     weaponInput: [{ name: "greataxe" }, { name: "light crossbow" }],
   },
   {
+    alignment: "Usually lawful evil",
     attackInputs: [{ name: "drain life" }],
     description: `
       Cultists may serve many masters.
@@ -34,6 +36,7 @@ export const humanoidInput: TypelessMonsterInput[] = [
     weaponInput: [{ name: "club" }],
   },
   {
+    alignment: "Any",
     attackInputs: [{ name: "combustion", powerBonus: 2 }, { name: "fireball" }],
     description: `
       Pyromancers wield powerful fire magic to attack their foes.
@@ -47,6 +50,7 @@ export const humanoidInput: TypelessMonsterInput[] = [
 ];
 
 const lizardfolkBase = {
+  alignment: "Usually true neutral",
   description: `
     Lizardfolk are bipedal creatures covered in reptilian scales.
     Their tail resembles that of a crocodile, and is typically 3 to 4 feet long.

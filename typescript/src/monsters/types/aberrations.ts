@@ -4,6 +4,7 @@ const aberrationInput: TypelessMonsterInput[] = [];
 
 const abolethLevel = 12;
 aberrationInput.push({
+  alignment: "Usually lawful evil",
   // TODO: add ritual casting
   armorInputs: [{ name: "carapace" }],
   attackInputs: [
@@ -75,6 +76,7 @@ aberrationInput.push({
 });
 
 aberrationInput.push({
+  alignment: "Usually chaotic evil",
   armorInputs: [{ name: "carapace" }],
   attackInputs: [
     {
