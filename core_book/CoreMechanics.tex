@@ -1534,7 +1534,7 @@ It defines how attributes work and explains how to make attacks in combat.
                 Dirty Trick              & Any          & Impose penalty on a foe                   \\
                 Disarm                   & Ref          & Attack item, knocking it free             \\
                 Grapple                  & Fort and Ref & Wrestle with a foe                        \\
-                Overrun                  & Fort         & Move through foe's space                  \\
+                Overrun\fn{1}            & Fort         & Move through foe's space                  \\
                 Recover\fn{2}            & \tdash       & Regain all hit points                     \\
                 Shove                    & Fort         & Move a foe                                \\
                 Sprint\fn{2}             & \tdash       & Move at double speed                      \\
@@ -1611,17 +1611,20 @@ It defines how attributes work and explains how to make attacks in combat.
             For details, see \pcref{Grappling}.
         \end{freeability}
 
-        \parhead{Overrun} As a \glossterm{standard action}, you can use the \textit{overrun} ability to move through creatures in your way.
+        \parhead{Overrun} As a \glossterm{move action}, you can use the \textit{overrun} ability to move through creatures in your way.
 
         \begin{freeability}{\labeltext{Overrun}}
+            When you use this ability, you lose a \glossterm{hit point}.
             Move up to your movement speed.
             You can try to move directly through creatures in your way during this movement.
             Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered.
             If a creature does not attempt to avoid you, you make an attack vs. Fortitude against it.
-            Your \glossterm{accuracy} is equal to your Strength.
+            You use your Strength in place of your Perception to determine your \glossterm{accuracy} with this attack.
+            In addition, for each size category larger or smaller than the target that you are, you gain a \plus4 bonus or penalty to \glossterm{accuracy}.
 
-            On a hit, the target is knocked \glossterm{prone} and you can move through its space, though you treat it as \glossterm{difficult terrain}.
-            On a miss, you end your movement immediately.
+            On a hit, you can move through each target's space, though you treat it as \glossterm{difficult terrain}.
+            On a critical hit, each target is knocked \glossterm{prone}, and you do not treat its space as \glossterm{difficult terrain} when you move through it.
+            On a miss, you fall \glossterm{prone} and end your movement immediately.
         \end{freeability}
 
         \parhead{Recover} You can use the \textit{recover} ability as a standard action.
@@ -1640,9 +1643,8 @@ It defines how attributes work and explains how to make attacks in combat.
             You use your Strength in place of your Perception to determine your \glossterm{accuracy} with this attack.
             In addition, for each size category larger or smaller than the target that you are, you gain a \plus4 bonus or penalty to \glossterm{accuracy}.
 
-            On a hit, you \glossterm{push} the target up to 10 feet.
+            On a hit, you \glossterm{push} the target up half to your movement speed.
             You can move the same distance that you push the target.
-            You cannot keep moving the target if it stops being adjacent to you.
         \end{freeability}
 
         \parhead{Sprint} As a \glossterm{move action}, you can use the \textit{sprint} ability to move more quickly.
