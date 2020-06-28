@@ -2,6 +2,7 @@ import { addType, TypelessMonsterInput } from "./add_type";
 
 export const magicalBeastInput: TypelessMonsterInput[] = [
   {
+    alignment: "Always true neutral",
     armorInputs: [{ name: "carapace" }],
     attackInputs: [
       {
@@ -15,7 +16,7 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
       },
       {
         // Accuracy bonus mimics size bonus from Shove and Str for accuracy
-        accuracyBonus: 8,
+        accuracyBonus: 6,
         defense: "fortitude",
         hit: `The ankheg \\glossterm{pushes} the target up to 30 feet.
           It can move the same distance that it pushes the target.`,

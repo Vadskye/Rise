@@ -2,6 +2,7 @@ import { addType, TypelessMonsterInput } from "./add_type";
 
 export const outsiderInput: TypelessMonsterInput[] = [
   {
+    alignment: "Always good",
     armorInputs: [{ name: "thick skin" }],
     challengeRating: 2,
     description: `

@@ -5,6 +5,7 @@ const animateInput: TypelessMonsterInput[] = [];
 const baseAirElemental = {
   // TODO: add fly speed
   // TODO: add whirlwind
+  alignment: "Usually true neutral",
   armorInputs: [{ name: "hide" as const }],
   attackInputs: [
     {
@@ -45,6 +46,7 @@ animateInput.push({
 });
 
 const baseAnimatedObject = {
+  alignment: "Always true neutral",
   armorInputs: [{ name: "thick skin" as const }],
   description: `
     Animated objects come in all sizes, shapes, and colors. They owe their existence as creatures to magical effects.

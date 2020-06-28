@@ -9,6 +9,7 @@ interface CustomWeaponInput {
   damageTypes: DamageType[];
   name: string;
   powerBonus?: number;
+  rangeIncrement?: number | null;
   tags?: WeaponTag[];
 }
 
@@ -23,6 +24,7 @@ export function parseWeaponInput(input: WeaponInput): Weapon {
     accuracyBonus: 0,
     damageTypes: [],
     powerBonus: 0,
+    rangeIncrement: null,
     tags: [],
     ...(isStandardWeaponName(input.name) && standardWeapons[input.name]),
     ...input,
@@ -36,7 +38,6 @@ export function parseWeaponInput(input: WeaponInput): Weapon {
 // actually just a missing standard weapon, so it's worth the duplication.
 export type StandardWeaponName =
   | "bite"
-  | "boulder"
   | "claw"
   | "club"
   | "greataxe"
@@ -64,11 +65,6 @@ export const standardWeapons: Record<StandardWeaponName, Omit<CustomWeaponInput,
   "bite": {
     damageTypes: ["bludgeoning", "piercing"],
     powerBonus: 2,
-  },
-  "boulder": {
-    damageTypes: ["bludgeoning"],
-    powerBonus: 2,
-    // TODO: define range increment
   },
   "claw": {
     accuracyBonus: 2,

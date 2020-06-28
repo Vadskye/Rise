@@ -3,6 +3,7 @@ import { addType, TypelessMonsterInput } from "./add_type";
 
 const animalInput: TypelessMonsterInput[] = [
   {
+    alignment: "Always true neutral",
     armorInputs: [{ name: "fur" }],
     challengeRating: 2,
     description: `
@@ -16,6 +17,7 @@ const animalInput: TypelessMonsterInput[] = [
     weaponInput: [{ name: "bite" }],
   },
   {
+    alignment: "Always true neutral",
     armorInputs: [{ name: "fur" }],
     challengeRating: 2,
     description: `
@@ -31,6 +33,7 @@ const animalInput: TypelessMonsterInput[] = [
     weight: "1,800 pounds",
   },
   {
+    alignment: "Always true neutral",
     armorInputs: [{ name: "fur" }],
     description: `
       Wolves are pack hunters known for their persistence and cunning.
@@ -41,6 +44,7 @@ const animalInput: TypelessMonsterInput[] = [
     weaponInput: [{ name: "bite" }],
   },
   {
+    alignment: "Always true neutral",
     armorInputs: [{ name: "hide" }],
     description: `
       The statistics presented here describe a small horse, under 5 feet tall at the shoulder.
@@ -53,6 +57,7 @@ const animalInput: TypelessMonsterInput[] = [
     weaponInput: [{ powerBonus: -2, name: "bite" }],
   },
   {
+    alignment: "Always true neutral",
     armorInputs: [{ name: "feathers" }],
     challengeRating: 4,
     description: `
@@ -72,6 +77,7 @@ const animalInput: TypelessMonsterInput[] = [
     weight: "8,000 pounds",
   },
   {
+    alignment: "Always true neutral",
     armorInputs: [{ name: "scales" }],
     challengeRating: 2,
     description: `
@@ -84,6 +90,7 @@ const animalInput: TypelessMonsterInput[] = [
     startingAttributes: { str: 3, dex: 3, con: 2, int: -8, per: 0, wil: -1 },
   },
   {
+    alignment: "Always true neutral",
     armorInputs: [{ name: "fur" }],
     challengeRating: 2,
     description: `
@@ -99,6 +106,7 @@ const animalInput: TypelessMonsterInput[] = [
     weight: "800 pounds",
   },
   {
+    alignment: "Always true neutral",
     armorInputs: [{ name: "feathers" }],
     description: `
       These glossy black birds are about 2 feet long and have wingspans of about 4 feet.
@@ -111,6 +119,7 @@ const animalInput: TypelessMonsterInput[] = [
     weaponInput: [{ name: "talon" }],
   },
   {
+    alignment: "Always true neutral",
     armorInputs: [{ name: "carapace" }],
     challengeRating: 2,
     description: `
@@ -130,6 +139,7 @@ const animalInput: TypelessMonsterInput[] = [
     ],
   },
   {
+    alignment: "Always true neutral",
     armorInputs: [{ name: "carapace" }],
     attackInputs: [{ name: "acid breath" }],
     challengeRating: 2,
@@ -146,6 +156,7 @@ const animalInput: TypelessMonsterInput[] = [
 ];
 
 const baseCentipede = {
+  alignment: "Always true neutral",
   armorInputs: [{ name: "carapace" as const }],
   challengeRating: 4 as const,
   description: `
@@ -193,6 +204,7 @@ animalInput.push({
 });
 
 const spiderBase = {
+  alignment: "Always true neutral",
   armorInputs: [{ name: "carapace" as const }],
   challengeRating: 4 as const,
   description: `

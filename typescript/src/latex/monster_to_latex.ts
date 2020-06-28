@@ -16,6 +16,7 @@ export function monsterToLatex(monster: MonsterBase): string {
     \\vspace{0em}
 
     ${monster.description}
+    ${monster.tactics ? `\\parhead{Tactics} ${monster.tactics}` : ""}
 
     ${getMainContent(monster).trim()}
     ${getFooter(monster).trim()}
@@ -117,6 +118,7 @@ function getFooter(monster: MonsterBase) {
   )}
       \\pari \\textbf{Accuracy} ${monster.accuracy};
         ${getPower(monster).trim()}
+      \\pari \\textbf{Alignment} ${monster.alignment}
     \\end{monsterfooter}
   `;
 }
@@ -173,12 +175,16 @@ function formatStrike(monster: MonsterBase, weapon: Weapon) {
   const strike = calculateStrike(monster, weapon);
   const formattedTags = weapon.tags ? weapon.tags.sort().map((t) => sentenceCase(t)) : [];
   const effectText = [format.damageDice(strike.power), ...formattedTags].join(", ");
+  if (![1, 2, 3].includes(weapon.damageTypes.length)) {
+    throw new Error(`Weapon has wrong number of damage types: ${weapon.damageTypes}`);
+  }
   const damageTypeText = {
     1: weapon.damageTypes[0],
     2: `${weapon.damageTypes[0]} and ${weapon.damageTypes[1]}`,
     3: `${weapon.damageTypes[0]}, ${weapon.damageTypes[1]}, and ${weapon.damageTypes[2]}`,
   }[weapon.damageTypes.length as 1 | 2 | 3];
-  return `${name} \\plus${strike.accuracy} (${effectText} ${damageTypeText})`;
+  const rangeText = weapon.rangeIncrement ? `; ${weapon.rangeIncrement} ft. range` : "";
+  return `${name} \\plus${strike.accuracy} (${effectText} ${damageTypeText}${rangeText})`;
 }
 
 function getPassiveAbilities(monster: MonsterBase) {

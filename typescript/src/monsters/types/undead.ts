@@ -3,6 +3,7 @@ import { addType, TypelessMonsterInput } from "./add_type";
 
 export const undeadInput: TypelessMonsterInput[] = [
   {
+    alignment: "Always neutral evil",
     attackInputs: [
       {
         crit: "The target loses two \\glossterm{hit points}.",
