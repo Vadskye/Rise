@@ -37,7 +37,7 @@ class Maneuver(object):
 
     def to_latex(self):
         tag_text = to_latex_tags(self.tags)
-        ability_type = 'attuneability' if 'Attune' in tag_text else 'apability' if 'AP' in tag_text else 'freeability'
+        ability_type = 'attuneability' if 'Attune' in tag_text else 'apability' if 'AP' in self.tags else 'freeability'
 
         ranks = sorted(self.rank_upgrades.keys())
         rank_text = (
