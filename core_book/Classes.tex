@@ -1472,10 +1472,10 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Min Level} & \tb{Combat Discipline}       & \tb{Equipment Training}      & \tb{Martial Mastery}   & \tb{Tactician} \tableheaderrule
             1 & 1  & Discipline                   & Armor expertise              & Martial maneuvers      & Battle tactics                \\
-            2 & 2  & Enduring discipline          & Weapon training              & Martial lore           & Tactical advice               \\
+            2 & 2  & Enduring discipline          & Weapon expertise             & Martial lore           & Tactical advice               \\
             3 & 5  & Disciplined stance           & Equipment efficiency         & Martial power          & Tactical coordination         \\
             4 & 8  & Disciplined reaction         & Greater armor expertise      & Martial maneuver       & Battle tactic                 \\
-            5 & 11 & Greater enduring discipline  & Weapon expertise             & Greater martial power  & Greater battle tactics        \\
+            5 & 11 & Greater enduring discipline  & Greater weapon expertise     & Greater martial power  & Greater battle tactics        \\
             6 & 14 & Disciplined vitality         & Greater equipment efficiency & Steady expertise       & Greater tactical coordination \\
             7 & 17 & Supreme disciplined reaction & Supreme armor expertise      & Martial maneuver       & Battle tactic                 \\
             8 & 20 &                              &                              &                       \\
@@ -1566,29 +1566,18 @@ This choice determines a great deal about your character's abilities.
         You gain a \plus1 bonus to Armor defense while wearing body armor.
         In addition, you reduce the \glossterm{encumbrance} of body armor you wear by 1.
 
-        \cf{Ftr}[2]{Weapon Training} You can use the \textit{weapon training} ability by spending an hour training with a weapon.
-        You cannot use this ability with an \glossterm{exotic weapon} unless you are proficient with the \glossterm{weapon group} that weapon belongs to.
-        \begin{freeability}{Weapon Training}
-            You become proficient with the weapon you trained with.
-            This ability's effect lasts until you use this ability again.
+        \cf{Ftr}[2]{Weapon Expertise} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{mundane} abilities.
 
-            \rankline
-            \rank{4} You can use this ability with only five minutes of training.
-            \rank{6} The effect is permanent.
-            \rank{8} You can use this ability as a \glossterm{minor action}.
-        \end{freeability}
-
-        % TODO: wording
-        \cf{Ftr}[3]{Equipment Efficiency} You can \glossterm{attune} to one magic weapon or magic armor without spending an \glossterm{action point}.
-        After using this ability, you cannot use it again until you take a \glossterm{long rest}.
+        \cf{Ftr}[3]{Equipment Efficiency} You gain an additional \glossterm{action point}.
+        You can only use this action point to \glossterm{attune} to magic weapons and magic armor.
 
         \cf{Ftr}[4]{Greater Armor Expertise}
         The \glossterm{encumbrance} reduction from your \textit{armor expertise} ability increases to 2.
         In addition, you treat body armor were one encumbrance category lighter than normal when doing so would be beneficial for you.
 
-        \cf{Ftr}[5]{Weapon Expertise} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{mundane} abilities.
+        \cf{Ftr}[5]{Greater Weapon Expertise} The bonus from your \textit{weapon expertise} ability increases to \plus2.
 
-        \cf{Ftr}[6]{Greater Equipment Efficiency} The number of additional attunements you gain with your \textit{efficient equipment} ability increases to two.
+        \cf{Ftr}[6]{Greater Equipment Efficiency} The number of action points you gain from your \textit{efficient equipment} ability increases to two.
         In addition, you can use the ability to attune to any magic apparel items in addition to weapons and armor.
 
         \cf{Ftr}[7]{Supreme Armor Expertise}
@@ -1625,13 +1614,11 @@ This choice determines a great deal about your character's abilities.
         Choose a single battle tactic from the list below.
         You can also spend \glossterm{insight points} to learn one additional \textit{battle tactic} per \glossterm{insight point}.
 
-        You can initiate a \textit{battle tactic} as a standard action.
+        You can initiate a \textit{battle tactic} as a \glossterm{minor action}.
         Your \textit{battle tactics} affect your \glossterm{allies} within a \arealarge radius emanation from you who can either see or hear you.
 
-        All \textit{battle tactics} have the \glossterm{Attune} (self) tag, so they last as long as you \glossterm{attune} to them (see \pcref{Attunement}).
-        If you know multiple battle tactics, you can initiate multiple \textit{battle tactics} simultaneously.
-        However, a creature can gain only the benefits of one \textit{battle tactic} at a time.
-        If it has multiple options, it chooses at the start of each round which \textit{battle tactic} to follow.
+        All \textit{battle tactics} have the \glossterm{Sustain} (free) tag, so they last as long as you \glossterm{sustain} them (see \pcref{Sustained Abilities}).
+        You cannot sustain multiple battle tactics simultaneously.
 
         {
             \begin{attuneability}{Break Through}[\glossterm{Attune} (self)]
