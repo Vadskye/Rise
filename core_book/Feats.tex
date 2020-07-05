@@ -157,10 +157,12 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featref{Brawler}             & Str 1, Dex 1 & Fight better unarmed and in close quarters & \tdash & \featpref{Brawler}             \\
         \featref{Duelist}             & Dex 1, Int 1 & Fight one-on-one better                    & \tdash & \featpref{Duelist}             \\
         \featref{Executioner}         & Str 1, Per 2 & Kill weakened foes more easily             & \tdash & \featpref{Executioner}         \\
+        \featref{Greatweapon Warrior} & Str 2        & Fight better with two-handed weapons       & \tdash & \featpref{Greatweapon Warrior} \\
         \featref{Guardian}            & Per 1, Wil 1 & Protect nearby allies                      & \tdash & \featpref{Guardian}            \\
         \featref{Leadership}          & Wil 2        & Inspire nearby allies                      & \tdash & \featpref{Leadership}          \\
         \featref{Martial Training}    & \tdash       & Improve combat abilities                   & \tdash & \featpref{Martial Training}    \\
         \featref{Savage}              & Str 2        & Shove and overrun foes to deal damage      & \tdash & \featpref{Savage}              \\
+        \featref{Shieldbearer}        & Str 2        & Defend better with shields                 & \tdash & \featpref{Shieldbearer}        \\
         \featref{Sniper}              & Per 2        & Aim precisely at distant foes              & \tdash & \featpref{Sniper}              \\
         \featref{Two-Weapon Fighting} & Dex 2        & Fight better with two weapons at once      & \tdash & \featpref{Two-Weapon Fighting} \\
         \featref{Whirlwind Warrior}   & Dex 2, Per 1 & Fight hordes with agile ease               & \tdash & \featpref{Whirlwind Warrior}   \\
@@ -741,6 +743,33 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[19]{Greater Constraint Tolerance} The penalty reduction from your \textit{constraint tolerance} ability increases to 4.
         In addition, your movement speed is not halved while \glossterm{squeezing}.
+    \end{feat}
+
+    \begin{feat}{Greatweapon Warrior}{Combat}
+        \featpre Base Strength of 2.
+
+        \ff[1]{Power Attack} Whenever you make a strike with a weapon you wield in two hands, you may take a \minus1 penalty to \glossterm{accuracy}.
+        If you do, you gain a \plus1d bonus to damage.
+
+        \ff[4]{Cleave} Whenever you wield a melee weapon in two hands, it gains the Sweeping (1) tag (see \pcref{Weapon tags}).
+        If the weapon already has the Sweeping tag, you increase the number of secondary targets by 1.
+        In addition, you can choose secondary targets within 10 feet of the primary target instead of the normal 5 feet.
+        Each secondary target must still be within your \glossterm{reach} with the weapon.
+
+        \ff[7]{Destructive Force} You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{disarm} ability with weapons you wield in two hands (see \pcref{Disarm}).
+        In addition, whenever you make a strike with a weapon you wield in two hands, it deals double damage to objects.
+
+        \ff[10]{Greater Power Attack} The damage bonus from your \textit{power attack} ability increases to \plus2d.
+
+        \ff[13]{Greater Cleave} The tag granted by your \textit{cleave} ability changes to be Sweeping (2).
+        If the weapon already has the Sweeping tag, you instead increase the number of secondary targets by 2.
+
+        \ff[13]{Greater Mighty Swing} The bonus from your \textit{mighty swing} ability increases to \plus2d.
+
+        \ff[16]{Greater Destructive Force} The accuracy bonus from your \textit{destructive force} ability increases to \plus4.
+        In addition, the damage multiplier from your \textit{destructive force} ability increases to triple damage.
+
+        \ff[19]{Supreme Power Attack} The damage bonus from your \textit{power attack} ability increases to \plus3d.
     \end{feat}
 
     \begin{feat}{Guardian}{Combat}
@@ -1473,6 +1502,24 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[19]{Supreme Brute Force} The accuracy bonus from your \textit{brute force} ability increases to \plus6.
         In addition, the power bonus increases to \plus3.
+    \end{feat}
+
+    \begin{feat}{Shieldbearer}{Combat}
+        \featpre Base Strength of 2.
+
+        \ff[1]{Shield Expertise} You gain a \plus1 bonus to Armor defense while you wield a shield.
+
+        \ff[4]{Forceful Block} Whenever a creature misses you with a melee \glossterm{strike}, that creature takes a \minus2 penalty to Armor defense until the end of the next round.
+
+        \ff[7]{Arrow Deflection} You and each \glossterm{ally} adjacent to you gain a \plus2 bonus to Armor defense against \glossterm{mundane} ranged attacks from weapons or projectiles that are at least one \glossterm{size category} smaller than you.
+
+        \ff[10]{Greater Shield Expertise} The bonus from your \textit{shield expertise} ability increases to \plus2.
+
+        \ff[13]{Greater Forceful Block} The penalty from your \textit{forceful block} ability increases to \minus3.
+
+        \ff[16]{Greater Arrow Deflection} The bonus from your \textit{arrow deflection} ability increases to \plus4.
+
+        \ff[19]{Greater Shield Expertise} The bonus from your \textit{shield expertise} ability increases to \plus3.
     \end{feat}
 
     \begin{feat}{Sleight of Hand Specialization}{Skill}
@@ -2362,34 +2409,20 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{feat}{Two-Weapon Fighting}{Combat}
         \featpre Base Dexterity of 2.
 
-        \ff[1]{Rend} You can use the \textit{rend} ability as a standard action.
-        \begin{freeability}{Rend}
-            Make a melee \glossterm{strike} using two weapons.
-            If you hit with the \glossterm{attack roll} for both weapons, you gain a \plus2d bonus to damage with the strike.
+        \ff[1]{Offhand Force} You gain a \plus1d bonus to damage with the \textit{offhand strike} ability.
 
-            \rankline
-            \featlevel{7} The damage bonus increases to \plus3d.
-            \featlevel{13} The damage bonus increases to \plus4d.
-            \featlevel{19} The damage bonus increases to \plus5d.
-        \end{freeability}
+        \ff[4]{Dual Precision} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{strikes} while you wield two weapons.
 
-        \ff[4]{Two-Weapon Defense} While wielding two melee weapons, you gain a \plus1 bonus to Armor defense.
+        \ff[7]{Two-Weapon Defense} While wielding two melee weapons, you gain a \plus1 bonus to Armor defense.
         This bonus is considered to come from a shield, and does not stack with the benefits of using a physical shield.
 
-        \ff[7]{Dual Precision} You gain a \plus1 bonus to \glossterm{accuracy} when making strikes with two weapons at once.
+        \ff[10]{Greater Offhand Force} The bonus from your \textit{offhand force} ability increases to \plus2d.
 
-        \ff[10]{Overwhelming Flurry} You can use the \textit{overwhelming flurry} ability as a \glossterm{minor action}.
-        \begin{attuneability}{Overwhelming Flurry}[\glossterm{Attune} (self)]
-            You begin attacking and feinting with incredible speed, dazzling your foes.
-            You are considered an additional creature for the purpose of determining \glossterm{overwhelm penalties} you inflict on other creatures.
-            This can allow you to overwhelm creatures by yourself.
-        \end{attuneability}
+        \ff[13]{Greater Dual Precision} The bonus from your \textit{dual precision} ability increases to \plus2.
 
-        \ff[13]{Greater Two-Weapon Defense} The bonus from your \textit{two-weapon defense} ability increases to \plus2.
+        \ff[16]{Greater Two-Weapon Defense} The bonus from your \textit{two-weapon defense} ability increases to \plus2.
 
-        \ff[16]{Greater Dual Precision} The bonus from your \textit{dual precision} ability increases to \plus2.
-
-        \ff[19]{Greater Overwhelming Flurry} Your \textit{overwhelming flurry} ability also causes you to be treated as one \glossterm{size category} larger for the purpose of determining \glossterm{overwhelm penalties} you inflict on other creatures.
+        \ff[19]{Supreme Offhand Force} The bonus from your \textit{offhand force} ability increases to \plus3d.
     \end{feat}
 
     \begin{feat}{Whirlwind Warrior}{Combat}
