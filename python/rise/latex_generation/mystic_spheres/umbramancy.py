@@ -63,7 +63,7 @@ umbramancy=MysticSphere(
             \\rank<5> The area increases to a \\areamed radius.
             \\rank<7> The area increases to a \\arealarge radius.
         """, tags=[]),
-        Spell('Dark Grasp', 1, 'One creature or object you \\glossterm<threaten>', """
+        Spell('Dark Grasp', 1, 'One creature or object within your \\glossterm<reach>', """
             This spell does not have the \\glossterm<Focus> tag.
             You must have a \\glossterm<free hand> to cast this spell.
 

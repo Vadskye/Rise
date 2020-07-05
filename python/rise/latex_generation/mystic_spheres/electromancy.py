@@ -45,7 +45,7 @@ spells=[
         \\rank<5> The area increases to a \\areahuge, 10 ft.\\ wide line.
         \\rank<7> The area increases to a \\areaext, 10 ft.\\ wide line.
     """, tags=[]),
-    Spell('Shocking Grasp', 1, 'One creature or object you \\glossterm<threaten>', """
+    Spell('Shocking Grasp', 1, 'One creature or object within your \\glossterm<reach>', """
         This spell does not have the \\glossterm<Focus> tag.
         You must have a \\glossterm<free hand> to cast this spell.
 

@@ -31,7 +31,7 @@ vivimancy=MysticSphere(
             \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<8> The accuracy bonus increases to +2.
         """, tags=[]),
-        Spell('Draining Grasp', 1, 'One creature or object you \\glossterm<threaten>', """
+        Spell('Draining Grasp', 1, 'One creature or object within your \\glossterm<reach>', """
             This spell does not have the \\glossterm<Focus> tag.
             You must have a \\glossterm<free hand> to cast this spell.
 

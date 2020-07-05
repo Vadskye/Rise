@@ -23,7 +23,7 @@ cryomancy=MysticSphere(
     ],
     lists=['Arcane', 'Nature', 'Pact'],
     spells=[
-        Spell('Freezing Grasp', 1, 'One creature or object you \\glossterm<threaten>', """
+        Spell('Freezing Grasp', 1, 'One creature or object within your \\glossterm<reach>', """
             This spell does not have the \\glossterm<Focus> tag.
             You must have a \\glossterm<free hand> to cast this spell.
 
