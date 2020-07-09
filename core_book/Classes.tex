@@ -1476,10 +1476,10 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Min Level} & \tb{Combat Discipline}       & \tb{Equipment Training}      & \tb{Martial Mastery}   & \tb{Tactician} \tableheaderrule
             1 & 1  & Discipline                   & Armor expertise              & Martial maneuvers      & Battle tactics                \\
-            2 & 2  & Enduring discipline          & Weapon expertise             & Martial lore           & Tactical advice               \\
+            2 & 2  & Enduring discipline          & Weapon training             & Martial lore           & Tactical advice               \\
             3 & 5  & Disciplined stance           & Equipment efficiency         & Martial power          & Tactical coordination         \\
             4 & 8  & Disciplined reaction         & Greater armor expertise      & Martial maneuver       & Battle tactic                 \\
-            5 & 11 & Greater enduring discipline  & Greater weapon expertise     & Greater martial power  & Greater battle tactics        \\
+            5 & 11 & Greater enduring discipline  & Weapon expertise     & Greater martial power  & Greater battle tactics        \\
             6 & 14 & Disciplined vitality         & Greater equipment efficiency & Steady expertise       & Greater tactical coordination \\
             7 & 17 & Supreme disciplined reaction & Supreme armor expertise      & Martial maneuver       & Battle tactic                 \\
             8 & 20 &                              &                              &                       \\
@@ -1570,7 +1570,18 @@ This choice determines a great deal about your character's abilities.
         You gain a \plus1 bonus to Armor defense while wearing body armor.
         In addition, you reduce the \glossterm{encumbrance} of body armor you wear by 1.
 
-        \cf{Ftr}[2]{Weapon Expertise} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{mundane} abilities.
+        \cf{Ftr}[2]{Weapon Training} You can use the \textit{weapon training} ability by spending an hour training with a weapon.
+        You cannot use this ability with an \glossterm{exotic weapon} that is from a \glossterm{weapon group} you are not proficient with.
+        \begin{freeability}{Weapon Training}
+            You become proficient with the weapon you trained with.
+            If the weapon is not an exotic weapon, you gain a \plus1 bonus to \glossterm{accuracy} with the weapon.
+            This ability's effect lasts until you use this ability again.
+
+            \rankline
+            \rank{4} You can use this ability with only five minutes of training.
+            \rank{6} The effect is permanent.
+            \rank{8} You can use this ability as a \glossterm{minor action}.
+        \end{freeability}
 
         \cf{Ftr}[3]{Equipment Efficiency} You gain an additional \glossterm{action point}.
         You can only use this action point to \glossterm{attune} to magic weapons and magic armor.
@@ -1579,7 +1590,7 @@ This choice determines a great deal about your character's abilities.
         The \glossterm{encumbrance} reduction from your \textit{armor expertise} ability increases to 2.
         In addition, you treat body armor were one encumbrance category lighter than normal when doing so would be beneficial for you.
 
-        \cf{Ftr}[5]{Greater Weapon Expertise} The bonus from your \textit{weapon expertise} ability increases to \plus2.
+        \cf{Ftr}[5]{Weapon Expertise} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{mundane} abilities.
 
         \cf{Ftr}[6]{Greater Equipment Efficiency} The number of action points you gain from your \textit{efficient equipment} ability increases to two.
         In addition, you can use the ability to attune to any magic apparel items in addition to weapons and armor.
@@ -2263,8 +2274,8 @@ This choice determines a great deal about your character's abilities.
             In addition, as a \glossterm{condition}, it stops being able to attune to abilities.
 
             \rankline
-            \rank{5} If you deal damage with a \glossterm{critical hit}, the target stops being \glossterm{attuned} to all abilities that it is attuned to other than \glossterm{magic items}.
-            \rank{7} You gain a \plus1 bonus to \glossterm{accuracy} with the strike.
+            \rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the strike.
+            \rank{7} The accuracy bonus increases to \plus2.
         \end{freeability}
 
         \cf{Pal}[4]{Zealous Fixation} You roll twice for \glossterm{miss chances} and take your preferred result.
@@ -3480,8 +3491,8 @@ This choice determines a great deal about your character's abilities.
                 You cannot choose this ability multiple times.
             \parhead{Insight Point} You gain an additional \glossterm{insight point}.
                 You can choose this ability multiple times, gaining an additional insight point each time.
-            \parhead{Rituals} The maximum \glossterm{rank} of pact ritual you can learn or perform is equal to the maximum rank of pact spell that you can cast.
-                You gain the ability to perform pact rituals to create unique magical effects (see \pcref{Rituals}).
+            \parhead{Rituals} You gain the ability to perform pact rituals to create unique magical effects (see \pcref{Rituals}).
+                The maximum \glossterm{rank} of pact ritual you can learn or perform is equal to the maximum rank of pact spell that you can cast.
                 You cannot choose this ability multiple times.
             \parhead{Spell Power} Choose a pact \glossterm{spell} you know.
                 You gain a \plus2 bonus to \glossterm{power} with that spell.
