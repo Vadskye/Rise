@@ -88,6 +88,7 @@ Rank 1 non-Focus:
   * Deal std to 2 in reach
   * Deal std -1a to any number in reach
   * Deal std -1a/-1d to all within Med cone or Med/10 line
+  * r1 condition until eonr or r1 condition on crit vs enemies in Medium radius from you
 
 Rank 2 non-Focus:
 * AOE:
