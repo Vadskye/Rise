@@ -1,17 +1,37 @@
 import { CalculatedAttack, calculateStrike } from "@src/calculate";
 import { DamageType, damageTypes } from "@src/data";
 import * as format from "@src/latex/format";
-import { MonsterBase } from "@src/monsters";
-import { MovementMode, movementModes } from "@src/movement_modes";
+import { Monster, MonsterBase, MonsterGroup, monsterIsMonsterGroup } from "@src/monsters";
+import { movementModes } from "@src/movement_modes";
 import { PassiveAbility } from "@src/passive_abilities";
 import { Weapon } from "@src/weapons";
 import { sentenceCase, titleCase } from "change-case";
 import _ from "lodash";
 import { standardAttackEffect } from "./standard_attack_effect";
 
-export function monsterToLatex(monster: MonsterBase): string {
+export function monsterToLatex(monster: Monster): string {
+  if (monsterIsMonsterGroup(monster)) {
+    return monsterGroupToLatex(monster);
+  } else {
+    return monsterBaseToLatex(monster);
+  }
+}
+
+function monsterGroupToLatex(monsterGroup: MonsterGroup) {
   return `
-  \\begin{monsection}${getMonsectionArgs(monster)}
+    \\subsection{${monsterGroup.name}}
+      ${monsterGroup.description}
+
+      ${monsterGroup.tactics || ""}
+
+      ${monsterGroup.monsters.map((m) => monsterBaseToLatex(m, { subsection: true }))}
+  `;
+}
+
+function monsterBaseToLatex(monster: MonsterBase, options?: { subsection?: Boolean }) {
+  const sectionTag = options?.subsection ? "monsubsection" : "monsection";
+  return `
+  \\begin{${sectionTag}}${getMonsectionArgs(monster)}
     ${getTitleAndTypeHeader(monster).trim()}
     \\vspace{0em}
 
@@ -20,7 +40,7 @@ export function monsterToLatex(monster: MonsterBase): string {
 
     ${getMainContent(monster).trim()}
     ${getFooter(monster).trim()}
-  \\end{monsection}
+  \\end{${sectionTag}}
   ${getAbilities(monster).trim()}
   `
     .replace(/\$name/g, getMonsterName(monster).toLowerCase())

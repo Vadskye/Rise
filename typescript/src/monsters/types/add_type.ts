@@ -1,7 +1,13 @@
-import { MonsterInput } from "@src/monsters/reformat_monster_input";
+import {
+  MonsterBaseInput,
+  MonsterGroupInput,
+  MonsterInput,
+} from "@src/monsters/reformat_monster_input";
 import { MonsterType } from "@src/monsters/types";
 
-export type TypelessMonsterInput = Omit<MonsterInput, "monsterType">;
+export type TypelessMonsterInput =
+  | Omit<MonsterBaseInput, "monsterType">
+  | Omit<MonsterGroupInput, "monsterType">;
 
 export function addType(
   monsterType: MonsterType,
