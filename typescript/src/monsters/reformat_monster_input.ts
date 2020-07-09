@@ -25,7 +25,28 @@ import { parseWeaponInput, Weapon, WeaponInput } from "@src/weapons";
 import _ from "lodash";
 
 import { MovementMode } from "@src/movement_modes";
-export interface MonsterInput {
+
+export interface MonsterGroupInput {
+  description: string;
+  monsters: Array<Omit<MonsterBaseInput, "monsterType">>;
+  monsterType: MonsterType;
+  name: string;
+  tactics?: string | null;
+}
+
+export type MonsterGroup = Omit<MonsterGroupInput, "monsters"> & { monsters: MonsterBase[] };
+
+function monsterInputIsMonsterGroupInput(monster: MonsterInput): monster is MonsterGroupInput {
+  return Boolean((monster as MonsterGroupInput).monsters);
+}
+
+export function monsterIsMonsterGroup(monster: Monster): monster is MonsterGroup {
+  return Boolean((monster as MonsterGroup).monsters);
+}
+
+export type MonsterInput = MonsterBaseInput | MonsterGroupInput;
+
+export interface MonsterBaseInput {
   accuracyBonus?: number;
   alignment: string;
   attackInputs?: AttackInput[];
@@ -76,11 +97,13 @@ interface MonsterCalculatedValues {
   weapons: Weapon[];
 }
 
-export type MonsterBase = Required<MonsterInput> & MonsterCalculatedValues;
+export type MonsterBase = Required<MonsterBaseInput> & MonsterCalculatedValues;
+
+export type Monster = MonsterGroup | MonsterBase;
 
 const monsterDefaults: Required<
   Omit<
-    MonsterInput,
+    MonsterBaseInput,
     | "alignment"
     | "defenseBonuses"
     | "description"
@@ -126,7 +149,7 @@ const monsterDefaults: Required<
 function calculateSkills(
   attributes: Creature.Attributes,
   skillPoints: Creature.SkillPoints,
-  monsterInput: MonsterInput,
+  monsterInput: MonsterBaseInput,
 ): Creature.Skills {
   const skillModifiers: Partial<Creature.Skills> = {};
   for (const skillName of skills) {
@@ -140,7 +163,25 @@ function calculateSkills(
   return skillModifiers as Creature.Skills;
 }
 
-export function reformatMonsterInput(monsterInput: MonsterInput): MonsterBase {
+export function processMonsterInput(monsterInput: MonsterBaseInput | MonsterGroupInput): Monster {
+  return monsterInputIsMonsterGroupInput(monsterInput)
+    ? generateMonsterGroup(monsterInput)
+    : generateMonsterBase(monsterInput);
+}
+
+function generateMonsterGroup(monsterGroupInput: MonsterGroupInput): MonsterGroup {
+  return {
+    ...monsterGroupInput,
+    monsters: monsterGroupInput.monsters.map((m) =>
+      generateMonsterBase({
+        ...m,
+        monsterType: monsterGroupInput.monsterType,
+      }),
+    ),
+  };
+}
+
+function generateMonsterBase(monsterInput: MonsterBaseInput): MonsterBase {
   const defenseBonuses = Object.assign(
     {},
     monsterDefaults.defenseBonuses,

@@ -30,7 +30,7 @@ export const undeadInput: TypelessMonsterInput[] = [
           During each \\glossterm{action phase}, the allip makes an attack vs. Mental against each creature
           within an \\arealarge radius \\glossterm{emanation} from it.
           It cannot make this attack more than once against any individual target between \\glossterm{short rests}.
-          \\hit Each target is \\glossterm{confused} as a \\glossterm{condition}.
+          \\hit Each target is \\glossterm{dazed} as a \\glossterm{condition}.
         `,
         name: "Babble",
       },

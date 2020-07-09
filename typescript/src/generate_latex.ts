@@ -10,9 +10,10 @@ function generateLatex(latexType: string): string {
   let latex = "";
   if (latexType === "monsters") {
     for (const monsterType of monsterTypes) {
+      const pluralText = monsterType === "undead" ? "undead" : `${monsterType}s`;
       // TODO: handle weird plurals as necessary
       latex += `
-        \\section{${titleCase(monsterType)}s}
+        \\section{${titleCase(pluralText)}}
       `;
       for (const monster of monstersByType[monsterType]) {
         latex += monsterToLatex(monster);
