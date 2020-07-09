@@ -86,26 +86,6 @@ If the target attacked you earlier in the current round, you gain a \plus1 bonus
 
 
 
-\lowercase{\hypertarget{maneuver:Deattunement Strike}{}}\label{maneuver:Deattunement Strike}
-\hypertarget{maneuver:Deattunement Strike}{}
-\begin{freeability}[Rank 1]{Deattunement Strike}[]
-\targets{As chosen \glossterm{strike}}
-Make a \glossterm{strike} with a \minus2d penalty to damage.
-If the attack result hits the target's Mental defense,
-it stops being \glossterm{attuned} to one effect of its choice.
-This functions as if the target had used the \textit{release attunement} ability,
-including allowing the target to regain its \glossterm{action point} when it takes a \glossterm{short rest}.
-
-\rankline
-\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the strike.
-\rank{5} The accuracy bonus increases to \plus2.
-\rank{7} The accuracy bonus increases to \plus3.
-\parhead{Lists} Esoteric, Trick
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{maneuver:Defensive Strike}{}}\label{maneuver:Defensive Strike}
 \hypertarget{maneuver:Defensive Strike}{}
 \begin{freeability}[Rank 1]{Defensive Strike}[\glossterm{Swift} (see text)]
@@ -127,14 +107,15 @@ The defense bonus is a \glossterm{Swift} effect, so it protects you from attacks
 \lowercase{\hypertarget{maneuver:Demoralizing Shout}{}}\label{maneuver:Demoralizing Shout}
 \hypertarget{maneuver:Demoralizing Shout}{}
 \begin{freeability}[Rank 1]{Demoralizing Shout}[\glossterm{Emotion}]
-\targets{\glossterm{Enemies} in a \areasmall radius from you.}
+\targets{\glossterm{Enemies} in a \areamed radius from you.}
 Make an attack vs. Mental against each target.
-\hit Each target is \glossterm{shaken} by you as a \glossterm{condition}.
+\hit Each target is \glossterm{shaken} by you until the end of the next round.
+\crit Each target is \glossterm{shaken} by you as a \glossterm{condition}.
 
 \rankline
-\rank{3} The area increases to a \areamed radius.
-\rank{5} The area increases to a \arealarge radius.
-\rank{7} The area increases to a \areahuge radius.
+\rank{3} The area increases to a \arealarge radius.
+\rank{5} The area increases to a \areahuge radius.
+\rank{7} The area increases to a \areaext radius.
 \parhead{Lists} Primal
 \end{freeability}
 \vspace{0.25em}
@@ -574,6 +555,25 @@ it is \glossterm{sickened} as a \glossterm{condition}.
 \rank{5} On a \glossterm{critical hit}, the target is is \glossterm{paralyzed} instead of sickened.
 \rank{7} On a hit, the target is \glossterm{nauseated} instead of sickened.
 \parhead{Lists} Esoteric, Martial, Primal, Trick, Wild
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{maneuver:Deattunement Strike}{}}\label{maneuver:Deattunement Strike}
+\hypertarget{maneuver:Deattunement Strike}{}
+\begin{freeability}[Rank 3]{Deattunement Strike}[]
+\targets{As chosen \glossterm{strike}}
+Make a \glossterm{strike}.
+On a hit, the target stops being \glossterm{attuned} to one effect of its choice that it is currently attuned to.
+
+On a \glossterm{critical hit}, the target stops being attuned to two abilities of its choice that it is currently attuned to.
+In addition, as a \glossterm{condition}, it stops being able to attune to abilities.
+
+\rankline
+\rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the strike.
+\rank{7} The accuracy bonus increases to \plus2.
+\parhead{Lists} Esoteric
 \end{freeability}
 \vspace{0.25em}
 

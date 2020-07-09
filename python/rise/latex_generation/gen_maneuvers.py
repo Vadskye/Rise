@@ -116,15 +116,16 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Demoralizing Shout',
         short_description='Inflict fear on nearby enemies',
-        target="\\glossterm<Enemies> in a \\areasmall radius from you.",
+        target="\\glossterm<Enemies> in a \\areamed radius from you.",
         effect_text="""
             Make an attack vs. Mental against each target.
-            \\hit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
+            \\hit Each target is \\glossterm<shaken> by you until the end of the next round.
+            \\crit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
         """,
         rank_upgrades={
-            '3': 'The area increases to a \\areamed radius.',
-            '5': 'The area increases to a \\arealarge radius.',
-            '7': 'The area increases to a \\areahuge radius.',
+            '3': 'The area increases to a \\arealarge radius.',
+            '5': 'The area increases to a \\areahuge radius.',
+            '7': 'The area increases to a \\areaext radius.',
         },
         tags=['Emotion'],
         lists=['Primal'],
@@ -489,19 +490,19 @@ def generate_maneuvers():
         short_description="Make a strike to break a target's \\glossterm<attunement>",
         target="As chosen \\glossterm<strike>",
         effect_text="""
-            Make a \\glossterm<strike> with a -2d penalty to damage.
-            If the attack result hits the target's Mental defense,
-                it stops being \\glossterm<attuned> to one effect of its choice.
-            This functions as if the target had used the \\textit<release attunement> ability,
-                including allowing the target to regain its \\glossterm<action point> when it takes a \\glossterm<short rest>.
+            Make a \\glossterm<strike>.
+            On a hit, the target stops being \\glossterm<attuned> to one effect of its choice that it is currently attuned to.
+
+            On a \\glossterm<critical hit>, the target stops being attuned to two abilities of its choice that it is currently attuned to.
+            In addition, as a \\glossterm<condition>, it stops being able to attune to abilities.
         """,
+        rank=3,
         rank_upgrades={
-            '3': 'You gain a +1 bonus to \\glossterm<accuracy> with the strike.',
-            '5': 'The accuracy bonus increases to +2.',
-            '7': 'The accuracy bonus increases to +3.',
+            '5': 'You gain a +1 bonus to \\glossterm<accuracy> with the strike.',
+            '7': 'The accuracy bonus increases to +2.',
         },
         tags=[],
-        lists=['Esoteric', 'Trick'],
+        lists=['Esoteric'],
     ))
 
     maneuvers.append(Maneuver(
