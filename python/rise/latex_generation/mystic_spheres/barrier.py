@@ -280,7 +280,7 @@ barrier=MysticSphere(
             It becomes a \\glossterm<trap>.
             To read the writing, a creature must concentrate on reading it, which requires a standard action.
             If a creature reads the target, the target explodes.
-            You make an attack vs. Armor against everything within a \\areamed radius from the target.
+            You make an attack vs. Reflex against everything within a \\areamed radius from the target.
             Each struck target takes energy \\glossterm<standard damage> from the explosion.
 
             After the target object explodes in this way, the ritual is \\glossterm<dismissed>.

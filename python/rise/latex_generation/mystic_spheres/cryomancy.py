@@ -179,15 +179,6 @@ cryomancy=MysticSphere(
             \\rank<5> The area increases to a \\arealarge radius.
             \\rank<7> The area increases to a \\areahuge radius.
         """, tags=[]),
-        Spell('Ray of Frost', 1, 'One creature or object within \\rngclose range', """
-            Make an attack vs. Reflex against the target.
-            \\hit The target takes cold \\glossterm<standard damage> +1d.
-
-            \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
-        """, tags=[]),
         Spell('Icecraft', 1, 'One pool of unattended, nonmagical water within \\rngclose range.', """
             This spell creates an icy weapon or a suit of icy armor from the target pool of water.
             You can create any weapon, shield, or body armor that you are proficient with, and which would normally be made entirely from metal, except for heavy armor.
@@ -212,7 +203,7 @@ cryomancy=MysticSphere(
         """, tags=[]),
         Spell('Frost Breath', 4, 'Yourself', """
             As a standard action, you can breathe cold like a dragon.
-            When you do, make an attack vs Armor against everything in a \\arealarge cone.
+            When you do, make an attack vs Fortitude against everything in a \\arealarge cone.
             \\hit Each target takes cold \\glossterm<standard damage>.
 
             You can cast this spell as a \\glossterm<minor action>.
