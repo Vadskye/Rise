@@ -135,7 +135,7 @@ biomancy=MysticSphere(
         Spell('Acidic Blood', 3, ['Yourself or one \\glossterm<ally> within \\rngmed range', 'Everything adjacent to the primary target'], """
             The primary target's blood becomes acidic.
             This does not harm it, but the blood can be dangerous to anything nearby when it bleeds.
-            At the end of each round, if the primary target was \\glossterm<wounded> during that round, make an attack vs. Armor against everything adjacent to the target.
+            At the end of each round, if the primary target was \\glossterm<wounded> during that round, make an attack vs. Fortitude against everything adjacent to the target.
             \\hit Each secondary target takes acid \\glossterm<standard damage> -1d.
 
             \\rankline
@@ -146,7 +146,7 @@ biomancy=MysticSphere(
             You gain the ability to breath energy like a dragon.
             When you cast this spell, choose a type of damage: acid, cold, electricity, or fire.
             As a standard action, you can breath a cone of that type of energy.
-            When you do, make an attack vs. Armor against everything within a \\arealarge cone from you.
+            When you do, make an attack vs. Reflex against everything within a \\arealarge cone from you.
             \\hit Each target takes \\glossterm<standard damage> +1d of the chosen type.
 
             You can cast this spell as a \\glossterm<minor action>.

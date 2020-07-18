@@ -120,7 +120,7 @@ fabrication=MysticSphere(
             \\rank<7> The bonus to accuracy increases to +2.
         """, tags=['Manifestation']),
         Spell('Acid Orb', 1, 'One creature or object within \\rngmed range', """
-            Make an attack vs. Armor against the target.
+            Make an attack vs. Fortitude against the target.
             \\hit The target takes acid \\glossterm<standard damage> +1d.
 
             \\rankline
@@ -129,7 +129,7 @@ fabrication=MysticSphere(
             \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=['Manifestation']),
         Spell('Cone of Acid', 1, 'Everything in a \\areamed cone from you', """
-            Make an attack vs. Armor against each target.
+            Make an attack vs. Fortitude against each target.
             \\hit Each target takes acid \\glossterm<standard damage> -1d.
 
             \\rankline
@@ -139,7 +139,7 @@ fabrication=MysticSphere(
         """, tags=['Manifestation']),
         Spell('Acid Breath', 4, 'Yourself (see text)', """
             As a standard action, you can breathe acid like a dragon.
-            When you do, make an attack vs Armor against everything in a \\arealarge cone from you.
+            When you do, make an attack vs Fortitude against everything in a \\arealarge cone from you.
             \\hit Each target takes acid \\glossterm<standard damage> +1d.
 
             You can cast this spell as a \\glossterm<minor action>.
@@ -149,7 +149,7 @@ fabrication=MysticSphere(
             \\rank<8> The damage increases to \\glossterm<standard damage> +3d.
         """, tags=['Attune (self)']),
         Spell('Corrosive Orb', 3, 'One creature or object within \\rngmed range', """
-            Make an attack vs. Reflex against the target.
+            Make an attack vs. Fortitude against the target.
             \\hit The target takes acid \\glossterm<standard damage> +1d.
             This attack deals double damage to objects.
 
@@ -158,7 +158,7 @@ fabrication=MysticSphere(
             \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
         """, tags=['Manifestation']),
         Spell('Acid Rain', 3, 'Everything in a \\areasmall radius within \\rngmed range', """
-            Make an attack vs. Armor against each target.
+            Make an attack vs. Fortitude against each target.
             \\hit Each target takes acid \\glossterm<standard damage> -1d.
 
             \\rankline
