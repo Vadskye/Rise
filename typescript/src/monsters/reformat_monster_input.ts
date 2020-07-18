@@ -54,6 +54,7 @@ export interface MonsterBaseInput {
   armorInputs?: ArmorInput[];
   challengeRating?: 0.5 | 1 | 2 | 3 | 4;
   defenseBonuses?: Partial<Record<DefenseType, number>>;
+  delayedCalculations?: Array<(monster: MonsterBase) => void>;
   description: string;
   height?: string | null;
   languages?: string[];
@@ -132,6 +133,7 @@ const monsterDefaults: Required<
   armors: [],
   challengeRating: 1,
   defenseBonuses: fromPairs(defenseTypes.map((d) => [d, 0])),
+  delayedCalculations: [],
   height: null,
   languages: [],
   passiveAbilities: [],
@@ -224,7 +226,7 @@ function generateMonsterBase(monsterInput: MonsterBaseInput): MonsterBase {
   const activeAbilities = monster.activeAbilityInputs.map(parseActiveAbility);
   const weapons = monster.weaponInput.map(parseWeaponInput);
   const attacks = monster.attackInputs.map(parseAttack);
-  return {
+  const monsterBase: MonsterBase = {
     ...monster,
     accuracy,
     activeAbilities,
@@ -251,4 +253,11 @@ function generateMonsterBase(monsterInput: MonsterBaseInput): MonsterBase {
     skills: calculateSkills(attributeModifiers, skillPoints, monster),
     weapons,
   };
+
+  if (monsterInput.delayedCalculations?.length) {
+    for (const calc of monsterInput.delayedCalculations) {
+      calc(monsterBase);
+    }
+  }
+  return monsterBase;
 }

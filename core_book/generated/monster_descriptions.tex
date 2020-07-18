@@ -20,8 +20,8 @@
           \textbf{Fort} 24;
           \textbf{Ref} 18;
           \textbf{Ment} 25
-        \pari \textbf{DR} Physical 26; Energy 35
-        \pari \textbf{VR} Physical 83; Energy 92
+        \pari \textbf{DR} Physical 36; Energy 33
+        \pari \textbf{VR} Physical 93; Energy 90
         \pari \textbf{Strike:}
             Tentacle \plus17 (7d10 bludgeoning)
       \end{spelltargetinginfo}
@@ -46,7 +46,7 @@
        The aboleth makes a \plus17 attack
         vs. Mental against the target.
     
-    \hit The target takes 7d10  damage and is \glossterm{confused} as a \glossterm{condition}.
+    \hit The target takes 7d10 energy damage and is \glossterm{confused} as a \glossterm{condition}.
     \crit 
           The aboleth can spend an action point to attune to this ability.
           If it does, the target is dominated by the aboleth as long as the ability lasts.
@@ -59,11 +59,18 @@
        The aboleth makes a \plus17 attack
         vs. Mental against each target.
     
-    \hit Each target takes 7d10 energy damage and is \glossterm{dazed} as a \glossterm{condition}.
+    \hit Each target takes 6d10 energy damage. Any target \glossterm{wounded} by this damage is \glossterm{dazed} as a \glossterm{condition}.
     \end{freeability}
   
-      \parhead{Psionic Barrier} The aboleth gains a bonus equal to its level to \glossterm{resistances} against \glossterm{energy damage}.
-    \parhead{Rituals} The aboleth can learn and perform arcane rituals of up to 5th level.
+      \parhead{Psionic} 
+        The aboleth can learn and perform arcane rituals as a rank 5 caster.
+        In combat, it can use its \textit{mind crush} and \textit{psionic blast} abilities as a \glossterm{minor action}.
+        In addition, many aboleths can cast arcane spells of their choice as a rank 5 caster.
+        They do not use verbal or somatic components to cast spells, and they do not suffer any \glossterm{focus penalty}.
+      
+    \parhead{Psionic Barrier} 
+        The aboleth is \glossterm{attuned} to both a \spell{kinetic shield} and a \spell{resist energy} spell.
+      
     \parhead{Slime} 
         Whenever a creature is \glossterm{wounded} by the aboleth's tentacle,
           the damaged creature becomes \glossterm{poisoned} by aboleth slime.
@@ -1763,46 +1770,125 @@
     \subsection{Angels}
       
       Angels are divine beings native to the good-aligned Outer Planes.
-      All angels have a striking and highly memorable appearance, though whether that memory is of beauty or dread depends on the angel.
+      All angels have a striking and highly memorable appearance that evokes strong emotions in most viewers.
+      Most angels evoke an overpowering sense of awe and beauty, but individual angels may have highly varied appearances.
     
 
       
 
       
-  \begin{monsubsection}{Deva}{14}[2]
+  \begin{monsubsection}{Deva}{12}[4]
     \vspace{-1em}\spelltwocol{}{Medium outsider}\vspace{-1em}
     \vspace{0em}
 
     
-          A deva is a powerful celestial creature that acts as a champion of good in the Outer Planes.
+         An astral deva is about 7 1/2 feet tall and weighs about 250 pounds.
         
     
 
     \begin{spellcontent}
       \begin{spelltargetinginfo}
-        \pari \textbf{HP} 11;
+        \pari \textbf{HP} 44;
           \textbf{AD} 23;
           \textbf{Fort} 22;
           \textbf{Ref} 22;
           \textbf{Ment} 23
-        \pari \textbf{DR} Physical 23; Energy 37
-        \pari \textbf{VR} Physical 80; Energy 94
+        \pari \textbf{DR} Physical 19; Energy 33
+        \pari \textbf{VR} Physical 64; Energy 78
         \pari \textbf{Strike:}
-            Greatmace \plus18 (9d10, Forceful bludgeoning)
+            Greatmace \plus18 (8d10, Forceful bludgeoning)
       \end{spelltargetinginfo}
     \end{spellcontent}
     \begin{monsterfooter}
       \pari \textbf{Speeds} land 30 ft., fly 40 ft.;
         \textbf{Space} 5 ft.;
         \textbf{Reach} 5 ft.
-      \pari \textbf{Awareness} \plus7
+      \pari \textbf{Awareness} \plus6
       \pari \textbf{Attributes}:
-        Str 16, Dex 15,
-        Con 15, Int 15,
-        Per 15, Wil 16
+        Str 14, Dex 13,
+        Con 13, Int 13,
+        Per 13, Wil 14
       \pari \textbf{Accuracy} 18;
-        \textbf{Mundane Power} 21;
+        \textbf{Mundane Power} 19;
       \textbf{Magical Power} 20
+      \pari \textbf{Alignment} Always good
+    \end{monsterfooter}
+  \end{monsubsection}
+  
+  ,
+  \begin{monsubsection}{Planetar}{16}[4]
+    \vspace{-1em}\spelltwocol{}{Medium outsider}\vspace{-1em}
+    \vspace{0em}
+
+    
+         An astral deva is about 7 1/2 feet tall and weighs about 250 pounds.
+        
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 44;
+          \textbf{AD} 27;
+          \textbf{Fort} 26;
+          \textbf{Ref} 26;
+          \textbf{Ment} 27
+        \pari \textbf{DR} Physical 28; Energy 42
+        \pari \textbf{VR} Physical 99; Energy 113
+        \pari \textbf{Strike:}
+            Greatmace \plus22 (11d10, Forceful bludgeoning)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speeds} land 30 ft., fly 40 ft.;
+        \textbf{Space} 5 ft.;
+        \textbf{Reach} 5 ft.
+      \pari \textbf{Awareness} \plus8
+      \pari \textbf{Attributes}:
+        Str 18, Dex 17,
+        Con 17, Int 17,
+        Per 17, Wil 18
+      \pari \textbf{Accuracy} 22;
+        \textbf{Mundane Power} 25;
+      \textbf{Magical Power} 30
+      \pari \textbf{Alignment} Always good
+    \end{monsterfooter}
+  \end{monsubsection}
+  
+  ,
+  \begin{monsubsection}{Planetar}{16}[4]
+    \vspace{-1em}\spelltwocol{}{Medium outsider}\vspace{-1em}
+    \vspace{0em}
+
+    
+         A planetar is nearly 9 feet tall and weighs about 500 pounds.
+        
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 44;
+          \textbf{AD} 27;
+          \textbf{Fort} 26;
+          \textbf{Ref} 26;
+          \textbf{Ment} 27
+        \pari \textbf{DR} Physical 28; Energy 42
+        \pari \textbf{VR} Physical 99; Energy 113
+        \pari \textbf{Strike:}
+            Greatmace \plus22 (11d10, Forceful bludgeoning)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speeds} land 30 ft., fly 40 ft.;
+        \textbf{Space} 5 ft.;
+        \textbf{Reach} 5 ft.
+      \pari \textbf{Awareness} \plus8
+      \pari \textbf{Attributes}:
+        Str 18, Dex 17,
+        Con 17, Int 17,
+        Per 17, Wil 18
+      \pari \textbf{Accuracy} 22;
+        \textbf{Mundane Power} 25;
+      \textbf{Magical Power} 30
       \pari \textbf{Alignment} Always good
     \end{monsterfooter}
   \end{monsubsection}
