@@ -107,6 +107,15 @@ umbramancy=MysticSphere(
             \\rank<5> The \\glossterm<difficulty rating> increase increases to 20.
             \\rank<7> The \\glossterm<difficulty rating> increase increases to 25.
         """, tags=['Attune (self)']),
+        Spell('Fade Into Darkness', 1, 'Yourself', """
+            At the end of each round, if you took no actions that round and are not in \\glossterm<bright illumination>, you become \\glossterm<invisible>.
+            This invisibility ends after you take any action.
+
+            \\rankline
+            \\rank<3> Moving during a round does not prevent you from becoming invisible at the end of the round.
+            \\rank<5> Taking \\glossterm<minor actions> does not prevent you from becoming invisible at the end of the round.
+            \\rank<7> The invisibility lasts until the end of the round after you take an action, rather than ending immediately after the action.
+        """, tags=['Attune (self)']),
         Spell('Dark Shroud', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             You gain a +2 bonus to \\glossterm<accuracy> with the attack if the target is not in \\glossterm<bright illumination>.
