@@ -203,9 +203,11 @@
             \itemhead*{Darkvision}: Tieflings can see in the dark clearly up to 50 feet. Darkvision does not function if a tiefling is in a brightly lit area, and does not resume functioning until the end of the next round after the tiefling leaves the brightly lit area.
             \itemhead*{Fire Resistance} (Magical): Tieflings gain a bonus equal to their level to \glossterm{resistances} against fire damage.
             \itemhead*{Infernal Darkness} (Magical): A tiefling can use the \textit{infernal darkness} ability as a \glossterm{standard action}.
-                \begin{attuneability}{Infernal Darkness}[\glossterm{Attune} (self)]
-                    Light is suppressed within an \areamed radius \glossterm{zone} within \rngclose range.
-                    Light within or passing through the area is dimmed to be no brighter than shadowy illumination.
+                \begin{attuneability}{Infernal Darkness}[\glossterm{Sustain} (minor)]
+                    \target{One \glossterm{zone} within \rngmed range}
+                    You can choose this ability's radius, up to a maximum of a \areamed radius.
+                    Light within or passing through the area is dimmed to be no brighter than \glossterm{shadowy illumination}
+                    Any object or effect which blocks light also blocks this spell's effect.
                 \end{attuneability}
             \itemhead*{Infernal Presence}: Tieflings gain a \plus2 bonus to the Deception and Intimidate skills.
         \end{itemize}
@@ -219,12 +221,47 @@
 \begin{longtablewrapper}
     \begin{longtable}{>{\lcol}p{11em} >{\lcol}p{12em} l >{\lcol}p{8em} >{\lcol}p{3em}}
         \lcaption{Feats}\\
-        \tb{General Feats}\label{General Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
-        \featref{Naiad Heritage}            & Naiaidi    & Gain aspects of naiads          & Bloodline             & \featpref{Naiad Heritage}            \\
+        \tb{General Feats}\label{General Feats} & \tb{Prerequisites} & \tb{Benefits}          & \tb{Feat Types} & \tb{Page}                 \\
+        \featref{Infernal Heritage}             & Tiefling           & Gain aspects of demons & Bloodline       & \featpref{Infernal Heritage} \\
+        \featref{Naiad Heritage}                & Naiaidi            & Gain aspects of naiads & Bloodline       & \featpref{Naiad Heritage} \\
     \end{longtable}
 \end{longtablewrapper}
 
     \section{Feat Descriptions}
+
+    \begin{feat}{Infernal Heritage}{Bloodline}
+        \featpre Tiefling species.
+
+        \ff[1]{Infernal Rebuke} You can use the \textit{infernal rebuke} ability as a standard action.
+        \begin{freeability}{Infernal Rebuke}
+            \target{One creature within \rngclose range}
+            Make an attack vs. Fortitude against the target.
+            You gain a \plus2 bonus to \glossterm{accuracy} with this attack if the target attacked you since the start of the last round.
+            \hit The target takes fire \glossterm{standard damage} +1d.
+
+            \rankline
+            \rank{3} The damage increases to \glossterm{standard damage} +2d.
+            \rank{5} The damage increases to \glossterm{standard damage} +3d.
+            \rank{7} The damage increases to \glossterm{standard damage} +4d.
+        \end{freeability}
+
+        \ff[4]{Greater Infernal Presence} The bonuses from your \textit{infernal presence} ability increase to \plus4.
+
+        \ff[7]{Greater Infernal Darkness} The maximum radius affected by your \textit{infernal darkness} ability increases to a \arealarge radius.
+        In addition, when you use the ability you may choose whether it also blocks \glossterm{darkvision} from seeing into the area.
+
+        \ff[10]{Hellfire Conduit} Whenever you deal fire damage, you also treat that damage as being pure energy damage.
+        This can help you deal damage to enemies that are highly resistant to fire damage.
+        In addition, your bonus to resistances against fire damage from your tiefling \textit{fire resistance} ability increases to twice your level.
+
+        \ff[13]{Supreme Infernal Presence} The bonuses from your \textit{infernal presence} ability increase to \plus6.
+
+        \ff[16]{Cloak of Darkness} When you use your \textit{infernal darkness} ability, you can change the area to be an \glossterm{emanation} from you instead of a \glossterm{zone} within range.
+        In addtion, your darkvision functions within your own \textit{infernal darkness} even if you block all other sources of darkvision from working.
+
+        \ff[19]{Greater Hellfire Conduit} Whenever you deal fire damage, you also treat that damage as being physical damage.
+        In addition, you treat all fire damage you take as \glossterm{enviromental damage}.
+    \end{feat}
 
     \begin{feat}{Naiad Heritage}{Bloodline}
         \featpre Naiaidi species.
