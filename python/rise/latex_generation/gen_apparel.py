@@ -1002,11 +1002,12 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Assassin's Cloak",
-        level=7,
+        level=8,
         material_type='Cloak',
         tags=['Sensation'],
         description="""
-            At the end of each round, if you took no actions that round, you become \\glossterm<invisible> until after you take an action.
+            At the end of each round, if you took no actions that round, you become \\glossterm<invisible>.
+            This invisibility ends after you take any action.
         """,
         short_description="Grants invisibility while inactive",
     ))
