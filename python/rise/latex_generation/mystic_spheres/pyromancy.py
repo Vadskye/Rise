@@ -21,7 +21,7 @@ pyromancy=MysticSphere(
             \\rank<7> The range increases to 5,000 feet.
         """, tags=['Detection']),
         Effects('Kindle', 'One creature or object within \\rngclose range', """
-            Make an attack vs. Armor against the target.
+            Make an attack vs. Fortitude against the target.
             \\hit The target takes 2 fire damage.
             If the target is highly flammable, such as a torch or campfire, it ignites.
 
@@ -34,7 +34,7 @@ pyromancy=MysticSphere(
             You create a flame in your hand.
             You can create it at any intensity, up to a maximum heat equivalent to a burning torch.
             At it most intense, it sheds \\glossterm<bright illumination> in a 20 foot radius and shadowy illumination in an 40 foot radius.
-            As a standard action, you can make a melee attack vs. Armor against a creature or object.
+            As a standard action, you can make a melee attack vs. Reflex against a creature or object.
             On a hit, the target takes fire \\glossterm<standard damage> -1d.
 
             This effect lasts until you use it again or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
@@ -60,7 +60,7 @@ pyromancy=MysticSphere(
             \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=[], focus=False),
         Spell('Fireball', 3, 'Everything in a \\areasmall radius within \\rngmed range', """
-            Make an attack vs. Armor against each target.
+            Make an attack vs. Reflex against each target.
             \\hit Each target takes fire \\glossterm<standard damage> -1d.
 
             \\rankline
@@ -77,7 +77,7 @@ pyromancy=MysticSphere(
             \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=[]),
         Spell('Cone of Fire', 1, 'Everything in a \\areamed cone from you', f"""
-            Make an attack vs. Armor against each target.
+            Make an attack vs. Reflex against each target.
             \\hit Each target takes fire \\glossterm<standard damage> -1d.
 
             \\rankline
@@ -86,7 +86,7 @@ pyromancy=MysticSphere(
             \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
         """, tags=[]),
         Spell('Ignition', 4, 'One creature within \\rngmed range', f"""
-            Make an attack vs. Reflex against the target.
+            Make an attack vs. Fortitude against the target.
             \\hit The target is \\glossterm<ignited> as a \\glossterm<condition>.
             This condition can be removed if the target makes a \\glossterm<difficulty rating> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
             Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
@@ -98,7 +98,7 @@ pyromancy=MysticSphere(
         """, tags=[]),
         Spell('Combustion', 1, 'One creature within \\rngmed range', """
             You set the target on fire from the inside out.
-            Make an attack vs. Reflex against the target.
+            Make an attack vs. Fortitude against the target.
             \\hit The target takes fire \\glossterm<standard damage> +1d.
 
             \\rankline
@@ -107,7 +107,7 @@ pyromancy=MysticSphere(
             \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=[]),
         Spell('Immolate', 4, 'One creature within \\rngmed range', """
-            Make an attack vs. Reflex against the target.
+            Make an attack vs. Fortitude against the target.
             \\hit The target takes fire \\glossterm<standard damage> +2d.
             In addition, if the target has no hit points remaining at the end of the current \\glossterm<phase>, it dies.
             Its body is completely disintegrated, leaving behind only a pinch of ash.
@@ -128,7 +128,7 @@ pyromancy=MysticSphere(
         """, tags=[]),
         Spell('Flame Breath', 4, 'Yourself (see text)', """
             As a standard action, you can breathe fire like a dragon.
-            When you do, make an attack vs Armor against everything within a \\arealarge cone from you.
+            When you do, make an attack vs Reflex against everything within a \\arealarge cone from you.
             \\hit Each target takes fire \\glossterm<standard damage> +1d.
 
             You can cast this spell as a \\glossterm<minor action>.
@@ -140,7 +140,7 @@ pyromancy=MysticSphere(
         # Pyromancy specifically doesn't get "enemies only" self-radius
         # spells like most spheres do.
         Spell('Inferno', 1, 'Everything in a \\areamed radius from you', """
-            Make an attack vs. Armor against each target.
+            Make an attack vs. Reflex against each target.
             \\hit Each target takes fire \\glossterm<standard damage> -1d.
 
             \\rankline
@@ -149,7 +149,7 @@ pyromancy=MysticSphere(
             \\rank<7> The area increases to a \\areaext radius.
         """, tags=[]),
         Spell('Flame Serpent', 3, 'Everything in a \\areamed, 5 ft.\\ wide shapeable line within \\rngclose range', f"""
-            Make an attack vs. Armor against each target.
+            Make an attack vs. Reflex against each target.
             \\hit Each target takes fire \\glossterm<standard damage> -1d.
 
             \\rankline
@@ -158,7 +158,7 @@ pyromancy=MysticSphere(
         """, tags=[]),
         Spell('Flame Aura', 4, ['Yourself', 'Everything in a \\areasmall radius from you (see text)'], """
             Heat constantly radiates in a \\areasmall radius emanation from you.
-            As a \\glossterm<minor action>, you can intensify the flames to make an attack vs. Armor against everything in the area.
+            As a \\glossterm<minor action>, you can intensify the flames to make an attack vs. Fortitude against everything in the area.
             \\hit Each secondary target takes fire \\glossterm<standard damage> -2d.
 
             You can cast this spell as a \\glossterm<minor action>.
@@ -181,7 +181,7 @@ pyromancy=MysticSphere(
         Spell('Wall of Fire', 4, 'Each creature that moves through the area (see text)', """
             You create a wall of fire in a 20 ft.\\ high, \\arealarge \\glossterm<wall> within \\rngmed range.
             The flames and heat make it difficult to see through the wall, granting \\glossterm<concealment> to targets on the opposite side of the wall.
-            When a creature passes through the wall, you make an attack vs. Armor against that creature.
+            When a creature passes through the wall, you make an attack vs. Reflex against that creature.
             You can only make an attack in this way against a given creature once per \\glossterm<phase>.
             \\hit The target takes fire \\glossterm<standard damage>.
 

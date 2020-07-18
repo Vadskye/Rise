@@ -34,7 +34,7 @@ terramancy=MysticSphere(
         Spell('Shrapnel Blast', 1, 'Everything in a \\areamed cone from you', """
             You extract a Tiny chunk from a body of earth or unworked stone within 5 feet of you and blast it at your foes.
             If no such chunk can be extracted, this spell is \\glossterm<miscast>.
-            Otherwise, make an attack vs. Armor against each target.
+            Otherwise, make an attack vs. Reflex against each target.
             \\hit Each target takes bludgeoning and piercing \\glossterm<standard damage> -1d.
 
             \\rankline

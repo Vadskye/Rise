@@ -193,7 +193,7 @@ aeromancy = MysticSphere(
             Making a weather change that is inappropriate for the local environment takes twice as long as making an appropriate change.
         """, tags=['Attune (self)']),
         Spell('Cyclone', 3, 'Everything in a \\areasmall radius within \\rngmed range', """
-            Make an attack vs. Armor against each target.
+            Make an attack vs. Fortitude against each target.
             \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
 
             \\rankline
