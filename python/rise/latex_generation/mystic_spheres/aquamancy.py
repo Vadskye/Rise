@@ -61,6 +61,17 @@ aquamancy=MysticSphere(
             \\rank<5> On a \\glossterm<critical hit>, the target is \\glossterm<nauseated> instead of \\glossterm<sickened>.
             \\rank<7> The target is nauseated instead of sickened.
         """, tags=['Curse']),
+        Spell('Sphere of Constraint', 5, 'All Huge or smaller \\glossterm<enemies> completely within a \\areamed radius within \\rngmed range', """
+            You create a sphere of water that contracts to stick to enemies in the area.
+            Unlike most abilities, this ability only affects creatures whose entire space is within the area.
+            Make an attack vs. Reflex against each target.
+            \\hit Until the end of the next round, the majority of the target's body is surrounded by a layer of water.
+            This does not impede the target's ability to breathe, but it takes penalties as if it was fighting underwater (see \\pcref<Underwater Combat>).
+            \\crit As above, except that the effect is a \\glossterm<condition> instead of lasting until the end of the next round.
+
+            \\rankline
+            \\rank<7> The maximum size increases to Gargantuan.
+        """, tags=['Manifestation']),
         Spell('Constraining Bubble', 3, 'One Large or smaller creature within \\rngmed range', """
             Make an attack vs. Reflex against the target.
             \\hit As a \\glossterm<condition>, the majority of the target's body is surrounded by a layer of water.
@@ -174,6 +185,14 @@ aquamancy=MysticSphere(
             \\rankline
             \\rank<6> You can exclude an inner radius of any size from the area, allowing you to create fog that surrounds you without blocking sight to things adjacent to you.
             \\rank<8> The area increases to a \\arealarge radius \\glossterm<zone>.
+        """, tags=['Attune (self)']),
+        Spell('Octopus Tentacles', 5, 'Yourself', """
+            This spell functions like the \\textit<aqueous tentacles> spell, except that you create eight tentacles.
+            Whenever you make a \\glossterm<strike> with the tentacles, you can attack with all of the tentacles at once, with each tentacle attacking a different target.
+            This functions as if your attacks had the \\glossterm<Sweeping> (7) tag, with no limit on how far each secondary target must be from the primary target (see \\pcref<Sweeping>).
+
+            \\rankline
+            \\rank<7> You gain a +5 bonus to \\glossterm<reach> with attacks using the tentacles.
         """, tags=['Attune (self)']),
         Spell('Aqueous Tentacles', 1, 'Yourself', """
             You grow watery tentacles from your body.
