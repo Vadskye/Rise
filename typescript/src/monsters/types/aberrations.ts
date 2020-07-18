@@ -1,3 +1,4 @@
+import { damageTypes } from "@src/data";
 import { addType, TypelessMonsterInput } from "./add_type";
 
 const aberrationInput: TypelessMonsterInput[] = [];
@@ -14,7 +15,7 @@ aberrationInput.push({
           If it does, the target is dominated by the aboleth as long as the ability lasts.
           Otherwise, the target takes double the damage of a non-critical hit.
         `,
-      damageTypes: [],
+      damageTypes: ["energy"],
       defense: "mental",
       hit: "The target takes $damage and is \\glossterm{confused} as a \\glossterm{condition}.",
       name: "Mind Crush",
@@ -25,11 +26,22 @@ aberrationInput.push({
       damageTypes: ["energy"],
       defense: "mental",
       name: "Psionic Blast",
-      hit: "Each target takes $damage and is \\glossterm{dazed} as a \\glossterm{condition}.",
+      hit:
+        "Each target takes $damage. Any target \\glossterm{wounded} by this damage is \\glossterm{dazed} as a \\glossterm{condition}.",
+      powerBonus: -2,
       target: "Each enemy in a \\arealarge cone from the aboleth",
     },
   ],
   challengeRating: 4,
+  delayedCalculations: [
+    (monster) => {
+      for (const resistanceType of ["damage" as const, "vital" as const]) {
+        for (const damageType of damageTypes) {
+          monster.resistances[resistanceType][damageType] += Math.floor(monster.magicalPower / 2);
+        }
+      }
+    },
+  ],
   description: `
     The aboleth is a revolting fishlike amphibian found primarily in subterranean lakes and rivers.
     It has a pink belly.
@@ -41,13 +53,21 @@ aberrationInput.push({
   name: "Aboleth",
   passiveAbilities: [
     {
-      description:
-        "The aboleth gains a bonus equal to its level to \\glossterm{resistances} against \\glossterm{energy damage}.",
+      // This implies, but does not explicitly state that the effects of these spells are based on a
+      // rank 5 version of the spells.
+      description: `
+        The aboleth is \\glossterm{attuned} to both a \\spell{kinetic shield} and a \\spell{resist energy} spell.
+      `,
       name: "Psionic Barrier",
     },
     {
-      description: "The aboleth can learn and perform arcane rituals of up to 5th level.",
-      name: "Rituals",
+      description: `
+        The aboleth can learn and perform arcane rituals as a rank 5 caster.
+        In combat, it can use its \\textit{mind crush} and \\textit{psionic blast} abilities as a \\glossterm{minor action}.
+        In addition, many aboleths can cast arcane spells of their choice as a rank 5 caster.
+        They do not use verbal or somatic components to cast spells, and they do not suffer any \\glossterm{focus penalty}.
+      `,
+      name: "Psionic",
     },
     {
       // TODO: this was originally a disease, but disease trigger times are less well defined
@@ -66,9 +86,6 @@ aberrationInput.push({
       name: "Slime",
     },
   ],
-  resistanceBonuses: {
-    energy: abolethLevel,
-  },
   size: "huge",
   startingAttributes: { str: 4, dex: -1, con: 4, int: 3, per: 1, wil: 4 },
   weaponInput: [{ name: "tentacle" }],
