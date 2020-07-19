@@ -17,20 +17,20 @@
             \lcaption{Weapon Groups}
             \begin{dtabularx}{\textwidth}{l >{\lcol}X >{\lcol}X}
                 \tb{Group}         & \tb{Weapons}                                                                         & \tb{Exotic Weapons} \tableheaderrule
-                Armor weapons      & Armor spikes, Standard shield (and spiked)                                           &                                           \\
-                Blades             & Broadsword, dagger, estoc, greatsword, rapier, sabre, smallsword                     & Boot dagger, falchion, katana, kukri      \\
-                Bows               & Longbow, shortbow                                                                    & Flatbow, heartseeker arrows, takedown bow \\
-                Club-like weapons  & Club, greatclub, greatmace, mace, morning star, sap                                  &                                           \\
-                Crossbows          & Hand crossbow, heavy crossbow, light crossbow                                        & Repeating crossbows                       \\
-                Flexible Weapons   & Flail, heavy flail, nunchaku, slapjack, whip                                         &                                           \\
-                Headed weapons     & Battleaxe, greataxe, handaxe, light hammer, pickaxe, sickle, sledgehammer, warhammer & Dwarven waraxe                            \\
-                Improvised weapons & \tdash                                                                               & \tdash                                    \\
-                Monk weapons       & Jitte, hama, nunchaku, quarterstaff, sai, shuriken                                   &                                           \\
-                Polearms           & Bardiche, glaive, halberd, longhammer, pollaxe, quarterstaff, scythe, swordstaff     & Fauchard, war scythe                      \\
-                Simple weapons     & Club, dagger, light crossbow, quarterstaff, unarmed strike                           &                                           \\
-                Spears             & Greatspear, javelin, lance, longspear, ranseur, partisan, spear                      & Pike                                      \\
-                Thrown weapons     & Dagger, dart, handaxe, javelin, light hammer, shuriken, sling                        & Bolas, net                                \\
-                Unarmed weapons    & Claw sheath, gauntlet, spiked gauntlet, unarmed strike                               &                                           \\
+                Armor weapons      & Armor spikes, Standard shield (and spiked)                                           &                                                \\
+                Blades             & Broadsword, dagger, estoc, greatsword, rapier, sabre, smallsword                     & Boot dagger, falchion, katana, kukri           \\
+                Bows               & Longbow, shortbow                                                                    & Flatbow, heartseeker arrows, takedown bow      \\
+                Club-like weapons  & Club, greatclub, greatmace, mace, morning star, sap                                  &                                                \\
+                Crossbows          & Hand crossbow, heavy crossbow, light crossbow                                        & Repeating crossbows                            \\
+                Flexible Weapons   & Flail, heavy flail, nunchaku, slapjack, whip                                         &                                                \\
+                Headed weapons     & Battleaxe, greataxe, handaxe, light hammer, pickaxe, sickle, sledgehammer, warhammer & Dwarven waraxe, heavy pickaxe, orcish greataxe \\
+                Improvised weapons & \tdash                                                                               & \tdash                                         \\
+                Monk weapons       & Jitte, hama, nunchaku, quarterstaff, sai, shuriken                                   &                                                \\
+                Polearms           & Bardiche, glaive, halberd, longhammer, pollaxe, quarterstaff, scythe, swordstaff     & Fauchard, war scythe                           \\
+                Simple weapons     & Club, dagger, light crossbow, quarterstaff, unarmed strike                           &                                                \\
+                Spears             & Greatspear, javelin, lance, longspear, ranseur, partisan, spear                      & Pike                                           \\
+                Thrown weapons     & Dagger, dart, handaxe, javelin, light hammer, shuriken, sling                        & Bolas, net                                     \\
+                Unarmed weapons    & Claw sheath, gauntlet, spiked gauntlet, unarmed strike                               &                                                \\
             \end{dtabularx}
         \end{dtable!*}
 
@@ -192,11 +192,11 @@
                 \tind Battleaxe                    & Medium & \plus0  & \plus0d  & Slashing                 & 10 gp   & 6 lb.   & Sweeping (1)                 \\
                 \tind Greataxe                     & Heavy  & \plus0  & \plus2d  & Slashing                 & 20 gp   & 12 lb.  & Sweeping (1)                 \\
                 \tind Handaxe                      & Light  & \plus2  & \minus1d & Slashing                 & 4 gp    & 2 lb.   & Throwing (20 ft.)            \\
-                \tind Light hammer                 & Light  & \plus1  & \minus1d & Bludgeoning              & 2 gp    & 2 lb.   & Impact, Throwing (20 ft.)    \\
-                \tind Pickaxe                      & Medium & \plus0  & \plus1d  & Piercing                 & 8 gp    & 6 lb.   & \tdash                       \\
+                \tind Light hammer                 & Light  & \plus1  & \minus1d & Bludgeoning              & 2 gp    & 2 lb.   & Forceful, Throwing (20 ft.)    \\
+                \tind Pickaxe                      & Medium & \plus0  & \plus0  & Piercing                 & 8 gp    & 6 lb.   &  Impact                      \\
                 \tind Sickle                       & Light  & \plus1  & \minus1d & Slashing                 & 6 gp    & 2 lb.   & Sweeping (1), Tripping       \\
-                \tind Sledgehammer                 & Heavy  & \plus0  & \plus2d  & Bludgeoning              & 12 gp   & 5 lb.   & Impact                       \\
-                \tind Warhammer                    & Medium & \plus0  & \plus0d  & Bludgeoning              & 12 gp   & 5 lb.   & Impact                       \\
+                \tind Sledgehammer                 & Heavy  & \plus0  & \plus2d  & Bludgeoning              & 12 gp   & 5 lb.   & Forceful                       \\
+                \tind Warhammer                    & Medium & \plus0  & \plus0d  & Bludgeoning              & 12 gp   & 5 lb.   & Forceful                       \\
 
                 Monk weapons                       &        &         &          &                          &         &         &                              \\
                 \tind Jitte                        & Light  & \plus2  & \minus1d & Piercing                 & 2 gp    & 2 lb.   & Disarming                    \\
@@ -274,9 +274,10 @@
                 \tind Repeating light crossbow\fn{3} & Medium  & \plus0 & \plus0d        & Piercing             & 250 gp & 6 lb.  & Projectile (50 ft.)            \\
                 \tind Repeating bolts (5)            & \tdash  & \plus0 & \plus0d        & \tdash               & 1 gp   & 1 lb.  & Ammunition                     \\
                 Flexible weapons                     &         &        &                &                      &        &        &                                \\
-                \tind Three-section staff            & Heavy   & \plus0 & \plus1d        & Slashing             & 40 gp  & 6 lb.  & Disarming, Reach, Tripping        \\
+                \tind Three-section staff            & Heavy   & \plus0 & \plus1d        & Slashing             & 40 gp  & 6 lb.  & Disarming, Reach, Tripping     \\
                 Headed weapons                       &         &        &                &                      &        &        &                                \\
                 \tind Dwarven waraxe                 & Medium  & \plus0 & \plus1d        & Slashing             & 75 gp  & 8 lb.  & Thrown (20 ft.)                \\
+                \tind Heavy pickaxe                  & Heavy   & \plus0 & \plus2d        & Piercing             & 40 gp  & 10 lb. & Keen, Impact                   \\
                 \tind Orcish greataxe                & Heavy   & \plus0 & \plus2d        & Slashing             & 60 gp  & 10 lb. & Impact, Sweeping (1)           \\
                 Monk weapons                         &         &        &                &                      &        &        &                                \\
                 Polearms                             &         &        &                &                      &        &        &                                \\
