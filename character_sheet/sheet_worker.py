@@ -198,7 +198,8 @@ def level_scaling():
     return js_wrapper(
         ['challenge_rating', 'level'],
         f"""
-            var level_scaling = challenge_rating === 0 ? 0 : Math.floor((level + 1) / 6);
+            // var level_scaling = challenge_rating === 0 ? 0 : Math.floor((level + 1) / 6);
+            var level_scaling = 0;
             setAttrs({{
                 level_scaling,
             }});
