@@ -1,4 +1,5 @@
 import { damageTypes } from "@src/data";
+import * as format from "@src/latex/format";
 import { addType, TypelessMonsterInput } from "./add_type";
 
 const aberrationInput: TypelessMonsterInput[] = [];
@@ -11,15 +12,24 @@ aberrationInput.push({
   attackInputs: [
     {
       crit: `
-          The aboleth can spend an action point to attune to this ability.
-          If it does, the target is dominated by the aboleth as long as the ability lasts.
-          Otherwise, the target takes double the damage of a non-critical hit.
-        `,
+        The aboleth can spend an action point to attune to this ability.
+        If it does, the target is dominated by the aboleth as long as the ability lasts.
+        Otherwise, the target takes double the damage of a non-critical hit.
+      `,
+      defense: "mental",
+      hit: "The target is \\glossterm{confused} as a \\glossterm{condition}.",
+      name: "Mind Control",
+      preface: "An aboleth can use this ability as a \\glossterm{minor action}.",
+      source: "magical",
+      target: "One creature within \\rnglong range",
+    },
+    {
       damageTypes: ["energy"],
       defense: "mental",
-      hit: "The target takes $damage and is \\glossterm{confused} as a \\glossterm{condition}.",
       name: "Mind Crush",
-      source: "magical",
+      hit: "The target takes $damage.",
+      powerBonus: 2,
+      preface: "An aboleth can use this ability as a \\glossterm{minor action}.",
       target: "One creature within \\rnglong range",
     },
     {
@@ -29,6 +39,7 @@ aberrationInput.push({
       hit:
         "Each target takes $damage. Any target \\glossterm{wounded} by this damage is \\glossterm{dazed} as a \\glossterm{condition}.",
       powerBonus: -2,
+      preface: "An aboleth can use this ability as a \\glossterm{minor action}.",
       target: "Each enemy in a \\arealarge cone from the aboleth",
     },
   ],
@@ -45,7 +56,7 @@ aberrationInput.push({
   description: `
     The aboleth is a revolting fishlike amphibian found primarily in subterranean lakes and rivers.
     It has a pink belly.
-    Four pulsating blueblack orifices line the bottom of its body and secrete gray slime that smells like rancid grease.
+    Four pulsating dark blue orifices line the bottom of its body and secrete gray slime that smells like rancid grease.
     It uses its tail for propulsion in the water and drags itself along with its tentacles on land.
   `,
   languages: ["Aquan", "Undercommon"],
@@ -53,21 +64,17 @@ aberrationInput.push({
   name: "Aboleth",
   passiveAbilities: [
     {
-      // This implies, but does not explicitly state that the effects of these spells are based on a
-      // rank 5 version of the spells.
-      description: `
-        The aboleth is \\glossterm{attuned} to both a \\spell{kinetic shield} and a \\spell{resist energy} spell.
-      `,
-      name: "Psionic Barrier",
+      name: "Telepathy (1,000 ft.)",
     },
     {
-      description: `
-        The aboleth can learn and perform arcane rituals as a rank 5 caster.
-        In combat, it can use its \\textit{mind crush} and \\textit{psionic blast} abilities as a \\glossterm{minor action}.
-        In addition, many aboleths can cast arcane spells of their choice as a rank 5 caster.
-        They do not use verbal or somatic components to cast spells, and they do not suffer any \\glossterm{focus penalty}.
+      description: (monster) => `
+        The aboleth is \\glossterm{attuned} to this ability.
+        It gains a ${format.modifier(
+          Math.floor(monster.magicalPower / 2),
+        )} \\glossterm{magic bonus} to \\glossterm{resistances}.
       `,
-      name: "Psionic",
+      magical: true,
+      name: "Psionic Barrier",
     },
     {
       // TODO: this was originally a disease, but disease trigger times are less well defined
@@ -87,6 +94,7 @@ aberrationInput.push({
     },
   ],
   size: "huge",
+  speeds: { land: 10, swim: 50 },
   startingAttributes: { str: 4, dex: -1, con: 4, int: 3, per: 1, wil: 4 },
   weaponInput: [{ name: "tentacle" }],
   weight: "6,500 pounds",

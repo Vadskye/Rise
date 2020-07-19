@@ -55,13 +55,17 @@ export interface MonsterBaseInput {
   challengeRating?: 0.5 | 1 | 2 | 3 | 4;
   defenseBonuses?: Partial<Record<DefenseType, number>>;
   delayedCalculations?: Array<(monster: MonsterBase) => void>;
-  description: string;
+  description: ((monster: MonsterBase) => string) | string;
   height?: string | null;
   languages?: string[];
   level: number;
   monsterType: MonsterType;
   name: string;
   passiveAbilities?: PassiveAbility[];
+  powerBonuses?: {
+    magical?: number;
+    mundane?: number;
+  };
   reach?: number;
   resistanceBonuses?: Partial<Record<DamageType, number>>;
   size?: Creature.Size;
@@ -137,6 +141,7 @@ const monsterDefaults: Required<
   height: null,
   languages: [],
   passiveAbilities: [],
+  powerBonuses: {},
   resistanceBonuses: fromPairs(damageTypes.map((d) => [d, 0])),
   size: "medium",
   skillPoints: fromPairs(skills.map((s) => [s, 0])),

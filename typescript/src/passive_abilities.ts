@@ -1,5 +1,8 @@
+import { MonsterBase } from "@src/monsters/reformat_monster_input";
+
 export interface PassiveAbility {
-  description?: string;
+  description?: ((monster: MonsterBase) => string) | string;
+  magical?: boolean;
   name: string;
 }
 

@@ -35,7 +35,7 @@ function monsterBaseToLatex(monster: MonsterBase, options?: { subsection?: Boole
     ${getTitleAndTypeHeader(monster).trim()}
     \\vspace{0em}
 
-    ${monster.description}
+    ${typeof monster.description === "string" ? monster.description : monster.description(monster)}
     ${monster.tactics ? `\\parhead{Tactics} ${monster.tactics}` : ""}
 
     ${getMainContent(monster).trim()}
@@ -193,8 +193,6 @@ function getStrikes(monster: MonsterBase) {
 function formatStrike(monster: MonsterBase, weapon: Weapon) {
   const name = titleCase(weapon.name);
   const strike = calculateStrike(monster, weapon);
-  const formattedTags = weapon.tags ? weapon.tags.sort().map((t) => sentenceCase(t)) : [];
-  const effectText = [format.damageDice(strike.power), ...formattedTags].join(", ");
   if (![1, 2, 3].includes(weapon.damageTypes.length)) {
     throw new Error(`Weapon has wrong number of damage types: ${weapon.damageTypes}`);
   }
@@ -203,24 +201,38 @@ function formatStrike(monster: MonsterBase, weapon: Weapon) {
     2: `${weapon.damageTypes[0]} and ${weapon.damageTypes[1]}`,
     3: `${weapon.damageTypes[0]}, ${weapon.damageTypes[1]}, and ${weapon.damageTypes[2]}`,
   }[weapon.damageTypes.length as 1 | 2 | 3];
+  const formattedTags = weapon.tags ? weapon.tags.sort().map((t) => sentenceCase(t)) : [];
+  const damageText = `${format.damageDice(strike.power)} ${damageTypeText}`;
+  const tagsText = formattedTags.join(", ");
   const rangeText = weapon.rangeIncrement ? `; ${weapon.rangeIncrement} ft. range` : "";
-  return `${name} \\plus${strike.accuracy} (${effectText} ${damageTypeText}${rangeText})`;
+  const effectComponents = [damageText, rangeText, tagsText].filter(Boolean);
+  return `${name} \\plus${strike.accuracy} (${effectComponents.join("; ")})`;
 }
 
 function getPassiveAbilities(monster: MonsterBase) {
   return _.sortBy(monster.passiveAbilities, "name")
-    .map(formatPassiveAbility)
+    .map((ability) => formatPassiveAbility(ability, monster))
     .join("\n    ");
 }
 
-function formatPassiveAbility(ability: PassiveAbility) {
-  return `\\parhead{${titleCase(ability.name)}} ${ability.description || ""}`;
+function formatPassiveAbility(ability: PassiveAbility, monster: MonsterBase) {
+  if (ability.description) {
+    const descriptionText =
+      typeof ability.description === "string" ? ability.description : ability.description(monster);
+    // TODO: indicate magical abilities somehow
+    return `\\parhead{${titleCase(ability.name)}} ${descriptionText}`;
+  } else {
+    return `\\par \\textbf{${titleCase(ability.name)}}`;
+  }
 }
 
 function formatSpeeds(monster: MonsterBase) {
   const activeModes = movementModes.filter((mode) => monster.speeds[mode]);
+  activeModes.sort();
   if (activeModes.length > 1) {
-    const speedTexts = activeModes.map((mode) => `${mode} ${format.feet(monster.speeds[mode])}`);
+    const speedTexts = activeModes.map(
+      (mode) => `${sentenceCase(mode)} ${format.feet(monster.speeds[mode])}`,
+    );
     return `\\textbf{Speeds} ${speedTexts.join(", ")}`;
   } else {
     const mode = activeModes[0];

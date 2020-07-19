@@ -8,7 +8,7 @@
     
     The aboleth is a revolting fishlike amphibian found primarily in subterranean lakes and rivers.
     It has a pink belly.
-    Four pulsating blueblack orifices line the bottom of its body and secrete gray slime that smells like rancid grease.
+    Four pulsating dark blue orifices line the bottom of its body and secrete gray slime that smells like rancid grease.
     It uses its tail for propulsion in the water and drags itself along with its tentacles on land.
   
     
@@ -27,7 +27,7 @@
       \end{spelltargetinginfo}
     \end{spellcontent}
     \begin{monsterfooter}
-      \pari \textbf{Speed} 50 ft.;
+      \pari \textbf{Speeds} Land 50 ft., Swim 50 ft.;
         \textbf{Space} 15 ft.;
         \textbf{Reach} 15 ft.
       \pari \textbf{Awareness} \plus3
@@ -41,35 +41,39 @@
       \pari \textbf{Alignment} Usually lawful evil
     \end{monsterfooter}
   \end{monsection}
-  \begin{freeability}{Mind Crush}
+  \begin{freeability}{Mind Control}
       \target{One creature within \rnglong range}
-       The aboleth makes a \plus17 attack
+      An aboleth can use this ability as a \glossterm{minor action}. The aboleth makes a \plus17 attack
         vs. Mental against the target.
     
-    \hit The target takes 7d10 energy damage and is \glossterm{confused} as a \glossterm{condition}.
+    \hit The target is \glossterm{confused} as a \glossterm{condition}.
     \crit 
-          The aboleth can spend an action point to attune to this ability.
-          If it does, the target is dominated by the aboleth as long as the ability lasts.
-          Otherwise, the target takes double the damage of a non-critical hit.
+        The aboleth can spend an action point to attune to this ability.
+        If it does, the target is dominated by the aboleth as long as the ability lasts.
+        Otherwise, the target takes double the damage of a non-critical hit.
+    \end{freeability}
+  
+
+    \begin{freeability}{Mind Crush}
+      \target{One creature within \rnglong range}
+      An aboleth can use this ability as a \glossterm{minor action}. The aboleth makes a \plus17 attack
+        vs. Mental against the target.
+    
+    \hit The target takes 8d10 energy damage.
     \end{freeability}
   
 
     \begin{freeability}{Psionic Blast}
       \targets{Each enemy in a \arealarge cone from the aboleth}
-       The aboleth makes a \plus17 attack
+      An aboleth can use this ability as a \glossterm{minor action}. The aboleth makes a \plus17 attack
         vs. Mental against each target.
     
     \hit Each target takes 6d10 energy damage. Any target \glossterm{wounded} by this damage is \glossterm{dazed} as a \glossterm{condition}.
     \end{freeability}
   
-      \parhead{Psionic} 
-        The aboleth can learn and perform arcane rituals as a rank 5 caster.
-        In combat, it can use its \textit{mind crush} and \textit{psionic blast} abilities as a \glossterm{minor action}.
-        In addition, many aboleths can cast arcane spells of their choice as a rank 5 caster.
-        They do not use verbal or somatic components to cast spells, and they do not suffer any \glossterm{focus penalty}.
-      
-    \parhead{Psionic Barrier} 
-        The aboleth is \glossterm{attuned} to both a \spell{kinetic shield} and a \spell{resist energy} spell.
+      \parhead{Psionic Barrier} 
+        The aboleth is \glossterm{attuned} to this ability.
+        It gains a \plus10 \glossterm{magic bonus} to \glossterm{resistances}.
       
     \parhead{Slime} 
         Whenever a creature is \glossterm{wounded} by the aboleth's tentacle,
@@ -82,6 +86,8 @@
         Every 5 minutes, an afflicted creature must be moistened with cool, fresh water
           or it will lose a \glossterm{hit point}.
         This effect lasts until the \glossterm{vital wound} is removed.
+      
+    \par \textbf{Telepathy 1 000 Ft}
   
   \begin{monsection}{Umber Hulk}{12}[2]
     \vspace{-1em}\spelltwocol{}{Gargantuan aberration}\vspace{-1em}
@@ -934,7 +940,7 @@
         \glossterm{strike} vs. Armor
         with its slam against each target.
     
-    \hit Each target takes 7d10  damage.
+    \hit Each target takes 7d10 bludgeoning damage.
     \end{freeability}
   
   \begin{monsection}{Air Elemental}[Huge]{8}[2]
@@ -981,7 +987,7 @@
         \glossterm{strike} vs. Armor
         with its slam against each target.
     
-    \hit Each target takes 4d10  damage.
+    \hit Each target takes 4d10 bludgeoning damage.
     \end{freeability}
   
   \begin{monsection}{Air Elemental}[Large]{5}[2]
@@ -1028,7 +1034,7 @@
         \glossterm{strike} vs. Armor
         with its slam against each target.
     
-    \hit Each target takes 4d6  damage.
+    \hit Each target takes 4d6 bludgeoning damage.
     \end{freeability}
   
   \begin{monsection}{Animated Object}[Colossal]{11}[3]
@@ -1480,7 +1486,7 @@
         \pari \textbf{DR} Physical 16; Energy 11
         \pari \textbf{VR} Physical 45; Energy 40
         \pari \textbf{Strikes:}
-            Greataxe \plus9 (5d10, Sweeping 1 slashing);
+            Greataxe \plus9 (5d10 slashing; Sweeping 1);
 \par Light Crossbow \plus9 (4d8 piercing)
       \end{spelltargetinginfo}
     \end{spellcontent}
@@ -1505,7 +1511,7 @@
         \glossterm{strike} vs. Armor
         with its greataxe against the target.
     
-    \hit The target takes 7d10  damage.
+    \hit The target takes 7d10 slashing damage.
     \end{freeability}
   
   \begin{monsection}{Pyromancer}{5}[1]
@@ -1589,7 +1595,7 @@
       \end{spelltargetinginfo}
     \end{spellcontent}
     \begin{monsterfooter}
-      \pari \textbf{Speeds} burrow 20 ft., land 40 ft.;
+      \pari \textbf{Speeds} Burrow 20 ft., Land 40 ft.;
         \textbf{Space} 10 ft.;
         \textbf{Reach} 10 ft.
       \pari \textbf{Awareness} \plus3
@@ -1621,8 +1627,8 @@
           It can move the same distance that it pushes the target.
     \end{freeability}
   
-      \parhead{Darkvision 50 Ft} 
-    \parhead{Tremorsense 50 Ft}
+      \par \textbf{Darkvision 50 Ft}
+    \par \textbf{Tremorsense 50 Ft}
   
         \section{Monstrous Humanoids}
       
@@ -1651,8 +1657,8 @@
         \pari \textbf{DR} Physical 16; Energy 14
         \pari \textbf{VR} Physical 45; Energy 43
         \pari \textbf{Strikes:}
-            Greatclub \plus8 (5d10 bludgeoning);
-\par Boulder \plus8 (4d8 bludgeoning; 100 ft. range)
+            Greatclub \plus8 (5d10 bludgeoning; Forceful);
+\par Boulder \plus8 (4d8 bludgeoning; ; 100 ft. range)
       \end{spelltargetinginfo}
     \end{spellcontent}
     \begin{monsterfooter}
@@ -1696,8 +1702,8 @@
         \pari \textbf{DR} 19
         \pari \textbf{VR} 59
         \pari \textbf{Strikes:}
-            Greatclub \plus13 (9d10 bludgeoning);
-\par Boulder \plus13 (7d10 bludgeoning; 200 ft. range)
+            Greatclub \plus13 (9d10 bludgeoning; Forceful);
+\par Boulder \plus13 (7d10 bludgeoning; ; 200 ft. range)
       \end{spelltargetinginfo}
     \end{spellcontent}
     \begin{monsterfooter}
@@ -1737,8 +1743,8 @@
         \pari \textbf{DR} 10
         \pari \textbf{VR} 33
         \pari \textbf{Strikes:}
-            Gore \plus8 (4d8, Impact piercing);
-\par Ram \plus8 (4d8, Forceful bludgeoning)
+            Gore \plus8 (4d8 piercing; Impact);
+\par Ram \plus8 (4d8 bludgeoning; Forceful)
       \end{spelltargetinginfo}
     \end{spellcontent}
     \begin{monsterfooter}
@@ -1762,7 +1768,7 @@
         \glossterm{strike} vs. Fortitude
         with its ram against each target.
     
-    \hit The target is knocked back 10 feet and takes 2d8  damage.
+    \hit The target is knocked back 10 feet and takes 2d8 bludgeoning damage.
     \end{freeability}
   
         \section{Outsiders}
@@ -1777,7 +1783,7 @@
       
 
       
-  \begin{monsubsection}{Deva}{12}[4]
+  \begin{monsubsection}{Astral Deva}{12}[4]
     \vspace{-1em}\spelltwocol{}{Medium outsider}\vspace{-1em}
     \vspace{0em}
 
@@ -1789,18 +1795,18 @@
     \begin{spellcontent}
       \begin{spelltargetinginfo}
         \pari \textbf{HP} 44;
-          \textbf{AD} 23;
-          \textbf{Fort} 22;
-          \textbf{Ref} 22;
-          \textbf{Ment} 23
-        \pari \textbf{DR} Physical 19; Energy 33
-        \pari \textbf{VR} Physical 64; Energy 78
+          \textbf{AD} 24;
+          \textbf{Fort} 23;
+          \textbf{Ref} 23;
+          \textbf{Ment} 24
+        \pari \textbf{DR} Physical 30; Energy 36
+        \pari \textbf{VR} Physical 75; Energy 81
         \pari \textbf{Strike:}
-            Greatmace \plus18 (8d10, Forceful bludgeoning)
+            Greatmace \plus19 (9d10 bludgeoning; Impact)
       \end{spelltargetinginfo}
     \end{spellcontent}
     \begin{monsterfooter}
-      \pari \textbf{Speeds} land 30 ft., fly 40 ft.;
+      \pari \textbf{Speeds} Fly 40 ft., Land 30 ft.;
         \textbf{Space} 5 ft.;
         \textbf{Reach} 5 ft.
       \pari \textbf{Awareness} \plus6
@@ -1808,20 +1814,64 @@
         Str 14, Dex 13,
         Con 13, Int 13,
         Per 13, Wil 14
-      \pari \textbf{Accuracy} 18;
-        \textbf{Mundane Power} 19;
-      \textbf{Magical Power} 20
+      \pari \textbf{Accuracy} 19;
+        \textbf{Mundane Power} 21;
+      \textbf{Magical Power} 22
       \pari \textbf{Alignment} Always good
     \end{monsterfooter}
   \end{monsubsection}
+  \begin{freeability}{Proclamation}
+      \targets{\glossterm{Enemies} within a \arealarge radius from the astral deva}
+       The astral deva makes a \plus19 attack
+        vs. Mental against each target.
+    
+    \hit Each target takes 7d10 energy damage.
+    \end{freeability}
   
+
+    \begin{freeability}{Glimpse Of Divinity}
+      \target{One creature within \rngmed range of the astral deva}
+       The astral deva makes a \plus21 attack
+        vs. Mental against the target.
+    
+    \hit The target is \glossterm{dazzled} as a \glossterm{condition}.
+    \crit The target is \glossterm{blinded} as a condition.
+    \end{freeability}
+  
+
+    \begin{freeability}{Stunning Smash}
+      \target{One creature or object within \glossterm{reach}}
+       The astral deva makes a \plus19
+        \glossterm{strike} vs. Armor
+        with its greatmace against the target.
+    
+    \hit The target takes 9d10 bludgeoning damage. If the target is \glossterm{wounded} by the attack, it is \glossterm{stunned} as a \glossterm{condition}.
+    \end{freeability}
+  
+      \parhead{Agent Of The Divine} 
+              The astral deva is \glossterm{attuned} to this ability.
+              It gains a \plus1 \glossterm{magic bonus} to accuracy and all defenses, and a \plus2 magic bonus to power.
+            
+    \parhead{Divine Alacrity} 
+              The astral deva can take two standard actions each round.
+              It cannot use the same action twice in the same round.
+            
+    \parhead{Divine Intervention} 
+              An astral deva can learn and perform divine spells and rituals as a rank 5 caster.
+              It has access to two spheres and knows five spells from among those spheres.
+              They do not use verbal or somatic components to cast spells, and do not suffer any \glossterm{focus penalty}.
+              A typical astral deva has access to the Bless and Channel Divinity spheres, and knows the \spell{agent of the divine}, \spell{boon of cleansing}, \spell{glimpse of divinity}, \spell{mantle of faith} and \spell{proclamation} spells.
+            
+    \parhead{Mantle Of Faith} 
+              The astral deva is \glossterm{attuned} to this ability.
+              It gains a \plus11 \glossterm{magic bonus} to \glossterm{resistances}.
   ,
   \begin{monsubsection}{Planetar}{16}[4]
     \vspace{-1em}\spelltwocol{}{Medium outsider}\vspace{-1em}
     \vspace{0em}
 
     
-         An astral deva is about 7 1/2 feet tall and weighs about 250 pounds.
+          A planetar is nearly 9 feet tall and weighs about 500 pounds.
         
     
 
@@ -1832,14 +1882,14 @@
           \textbf{Fort} 26;
           \textbf{Ref} 26;
           \textbf{Ment} 27
-        \pari \textbf{DR} Physical 28; Energy 42
-        \pari \textbf{VR} Physical 99; Energy 113
+        \pari \textbf{DR} Physical 43; Energy 51
+        \pari \textbf{VR} Physical 114; Energy 122
         \pari \textbf{Strike:}
-            Greatmace \plus22 (11d10, Forceful bludgeoning)
+            Greatmace \plus22 (11d10 bludgeoning; Impact)
       \end{spelltargetinginfo}
     \end{spellcontent}
     \begin{monsterfooter}
-      \pari \textbf{Speeds} land 30 ft., fly 40 ft.;
+      \pari \textbf{Speeds} Fly 50 ft., Land 30 ft.;
         \textbf{Space} 5 ft.;
         \textbf{Reach} 5 ft.
       \pari \textbf{Awareness} \plus8
@@ -1855,40 +1905,40 @@
   \end{monsubsection}
   
   ,
-  \begin{monsubsection}{Planetar}{16}[4]
+  \begin{monsubsection}{Solar}{20}[4]
     \vspace{-1em}\spelltwocol{}{Medium outsider}\vspace{-1em}
     \vspace{0em}
 
     
-         A planetar is nearly 9 feet tall and weighs about 500 pounds.
+          A solar has a deep and commanding voice, and stands about 9 feet tall. It weighs about 500 pounds.
         
     
 
     \begin{spellcontent}
       \begin{spelltargetinginfo}
         \pari \textbf{HP} 44;
-          \textbf{AD} 27;
-          \textbf{Fort} 26;
-          \textbf{Ref} 26;
-          \textbf{Ment} 27
-        \pari \textbf{DR} Physical 28; Energy 42
-        \pari \textbf{VR} Physical 99; Energy 113
+          \textbf{AD} 32;
+          \textbf{Fort} 31;
+          \textbf{Ref} 31;
+          \textbf{Ment} 32
+        \pari \textbf{DR} Physical 60; Energy 70
+        \pari \textbf{VR} Physical 177; Energy 187
         \pari \textbf{Strike:}
-            Greatmace \plus22 (11d10, Forceful bludgeoning)
+            Greatmace \plus27 (14d10 bludgeoning; Impact)
       \end{spelltargetinginfo}
     \end{spellcontent}
     \begin{monsterfooter}
-      \pari \textbf{Speeds} land 30 ft., fly 40 ft.;
+      \pari \textbf{Speeds} Fly 60 ft., Land 30 ft.;
         \textbf{Space} 5 ft.;
         \textbf{Reach} 5 ft.
-      \pari \textbf{Awareness} \plus8
+      \pari \textbf{Awareness} \plus10
       \pari \textbf{Attributes}:
-        Str 18, Dex 17,
-        Con 17, Int 17,
-        Per 17, Wil 18
-      \pari \textbf{Accuracy} 22;
-        \textbf{Mundane Power} 25;
-      \textbf{Magical Power} 30
+        Str 22, Dex 21,
+        Con 21, Int 21,
+        Per 21, Wil 22
+      \pari \textbf{Accuracy} 27;
+        \textbf{Mundane Power} 31;
+      \textbf{Magical Power} 40
       \pari \textbf{Alignment} Always good
     \end{monsterfooter}
   \end{monsubsection}

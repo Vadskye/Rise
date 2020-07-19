@@ -56,7 +56,7 @@ export type StandardWeaponName =
   | "tentacle";
 
 export function isStandardWeaponName(
-  name: StandardWeaponName | string,
+  name: StandardWeaponName | string | null | undefined,
 ): name is StandardWeaponName {
   return Boolean(standardWeapons[name as StandardWeaponName]);
 }
@@ -82,11 +82,12 @@ export const standardWeapons: Record<StandardWeaponName, Omit<CustomWeaponInput,
   "greatclub": {
     powerBonus: 4,
     damageTypes: ["bludgeoning"],
+    tags: ["forceful"],
   },
   "greatmace": {
     damageTypes: ["bludgeoning"],
     powerBonus: 4,
-    tags: ["forceful"],
+    tags: ["impact"],
   },
   "greatsword": {
     damageTypes: ["slashing"],
