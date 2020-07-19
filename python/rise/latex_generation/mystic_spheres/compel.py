@@ -177,22 +177,13 @@ compel=MysticSphere(
             \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Attune (self)', 'Compulsion']),
-        Spell('Blink', 1, 'One creature within \\rngmed range', """
-            Make an attack vs. Mental against the target.
-            \\hit The target is \\glossterm<blinded> until the end of the next round.
-
-            \\rankline
-            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<5> The accuracy bonus increases to +2.
-            \\rank<7> The accuracy bonus increases to +3.
-        """, tags=['Compulsion']),
-        Spell('Mass Blink', 4, '\\glossterm<Enemies> in a \\areamed radius within \\rngmed range', """
+        Spell('Blink', 4, '\\glossterm<Enemies> in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Mental against each target.
             \\hit Each target is \\glossterm<blinded> until the end of the next round.
 
             \\rankline
-            \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<8> The accuracy bonus increases to +2.
+            \\rank<6> The area increases to a \\areamed radius.
+            \\rank<8> The area increases to a \\arealarge radius.
         """, tags=['Compulsion']),
         Spell('Heedless Rush', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
