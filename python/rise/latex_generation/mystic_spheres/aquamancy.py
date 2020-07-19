@@ -197,7 +197,8 @@ aquamancy=MysticSphere(
         Spell('Aqueous Tentacles', 1, 'Yourself', """
             You grow watery tentacles from your body.
             The tentacles grant you a slam \\glossterm<natural weapon> (see \\tref<Natural Weapons>).
-            The natural weapon has the Reach \\glossterm<weapon tag> and does not require a \\glossterm<free hand> to use (see \\pcref<Weapon Tags>).
+            The natural weapon deals +2d damage, as normal for a slam natural weapon.
+            In addition, it has the Reach \\glossterm<weapon tag> and does not require a \\glossterm<free hand> to use (see \\pcref<Weapon Tags>).
             Strikes using the tentacles are considered \\glossterm<magical> abilities, which means you use your \\glossterm<power> with \\glossterm<magical> abilities to determine their damage.
 
             \\rankline
