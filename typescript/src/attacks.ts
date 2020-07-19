@@ -122,6 +122,7 @@ export function parseAttack(input: AttackInput): Attack {
     const weapon = standardWeapons[input.weaponName];
     return {
       ...defaults,
+      damageTypes: weapon.damageTypes,
       defense: "armor",
       hit: "The target takes $damage.",
       target: "One creature or object within \\glossterm{reach}",
