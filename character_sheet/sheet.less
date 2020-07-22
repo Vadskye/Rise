@@ -146,3 +146,14 @@ input[type=number].fake-text {
     padding-top: 0.75em;
     width: 100%;
 }
+
+input[type=number]:disabled::-webkit-inner-spin-button,
+input[type=number]:disabled::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    display: none;
+    margin: 0;
+}
+
+input[type=number]:disabled {
+    -moz-appearance: textfield;
+}
