@@ -35,9 +35,6 @@ input {
         .skill-label {
             font-size: 1em;
         }
-        .skill-label.misc {
-            flex-basis: 6.5em;
-        }
 
         .skill-row {
             .skill-training {
@@ -46,6 +43,17 @@ input {
             }
         }
     }
+}
+
+input[type=number]:disabled::-webkit-inner-spin-button,
+input[type=number]:disabled::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    display: none;
+    margin: 0;
+}
+
+input[type=number]:disabled {
+    -moz-appearance: textfield;
 }
 
 .under-label {
