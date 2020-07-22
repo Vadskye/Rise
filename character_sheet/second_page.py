@@ -118,9 +118,8 @@ def calc_skills(destination):
 
 def skill_labels():
     return flex_row({'class': 'skill-labels'}, [
-        div({'class': 'skill-name'}),
         div({'class': 'skill-label'}, 'Points'),
-        div({'class': 'skill-label'}, 'Training'),
+        div({'class': 'skill-label'}, 'Train'),
         div({'class': 'skill-label misc'}, 'Misc'),
     ])
 
@@ -145,14 +144,7 @@ def calc_skill(skill_name, attribute=None, blank_input=False):
             'name': skill_parsable + '_training_display',
             'value': '@{' + skill_parsable + '_training}',
         }),
-        number_input({
-            'class': 'equation-misc',
-            'name': skill_parsable + '_misc_0',
-        }),
-        number_input({
-            'class': 'equation-misc',
-            'name': skill_parsable + '_misc_1',
-        }),
+        equation_misc_repeat(skill_parsable, 3, lambda: '')
     ])
 
 def calc_attributes():

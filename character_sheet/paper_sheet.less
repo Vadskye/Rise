@@ -59,3 +59,14 @@ input[type=number].fake-text {
     border-bottom: 1px solid black;
     height: 1em;
 }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    display: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
