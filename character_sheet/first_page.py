@@ -73,6 +73,9 @@ def attribute_section(attribute):
     ])
 
 def skill_box(name):
+    if 'Knowledge' in name:
+        return knowledge_skill_box(name)
+
     formatted_skill = name.lower().replace(' ', '_')
     return flex_row({'class': 'skill-box'}, [
         button(
@@ -84,6 +87,31 @@ def skill_box(name):
             },
             name
         ),
+        number_input({
+            'disabled': True,
+            'name': formatted_skill + '_total_display',
+            'value': '@{' + formatted_skill + '_total}',
+        }),
+    ])
+
+def knowledge_skill_box(name):
+    formatted_skill = name.lower().replace(' ', '_')
+    return flex_row({'class': 'skill-box'}, [
+        button(
+            {
+                'class': 'number-label',
+                'name': f"roll_skill_{formatted_skill}",
+                'type': 'roll',
+                'value': f"@{{character_name}} uses Knowledge (@{{{formatted_skill}_type}}): [[d10 + @{{{formatted_skill}_total}}]]",
+            },
+            'Knowledge'
+        ),
+        text_input({
+            'class': 'knowledge-type',
+            'disabled': True,
+            'name': f'{formatted_skill}_type_display',
+            'value': f'@{{{formatted_skill}_type}}',
+        }),
         number_input({
             'disabled': True,
             'name': formatted_skill + '_total_display',

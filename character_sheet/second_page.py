@@ -86,7 +86,7 @@ def calc_skills(destination):
             *[calc_skill(skill_name, 'strength') for skill_name in ATTRIBUTE_SKILLS['strength']],
             skill_labels(),
             *[calc_skill(skill_name, 'dexterity') for skill_name in ATTRIBUTE_SKILLS['dexterity']],
-            # *[calc_skill(skill_name) for skill_name in ATTRIBUTE_SKILLS['constitution']],
+            *[calc_skill(skill_name, 'constitution') for skill_name in ATTRIBUTE_SKILLS['constitution']],
             skill_labels(),
             *[calc_skill(skill_name, 'intelligence') for skill_name in ATTRIBUTE_SKILLS['intelligence']],
             skill_labels(),
@@ -125,9 +125,19 @@ def skill_labels():
     ])
 
 def calc_skill(skill_name, attribute=None, blank_input=False):
+    visible_skill_name = 'Knowledge' if 'Knowledge' in skill_name else skill_name
     skill_parsable = skill_name.lower().replace(' ', '_')
     return flex_row({'class': 'skill-row'}, [
-        div({'class': f'skill-name{" blank-input" if blank_input else ""}'}, skill_name),
+        div(
+            {'class': f'skill-name{" blank-input" if blank_input else ""}'},
+            [
+                visible_skill_name,
+                text_input({
+                    'class': 'knowledge-type',
+                    'name': f'{skill_parsable}_type',
+                }) if 'Knowledge' in skill_name else '',
+            ],
+        ),
         number_input({'class': 'skill-points', 'name': skill_parsable + '_points'}),
         text_input({
             'class': 'skill-training',
