@@ -251,7 +251,7 @@ thaumaturgy=MysticSphere(
             \\rank<6> The area increases to a \\areahuge radius emanation.
             \\rank<8> The delay increases to two rounds.
         """, tags=['Attune (self)']),
-        Spell('Spellseal', 4, 'Creatures in a \\areasmall radius \\glossterm<zone> within \\rngmed range', """
+        Spell('Spellward', 4, 'Creatures in a \\areasmall radius \\glossterm<zone> within \\rngmed range', """
             You seal off an area's connection to magic.
             Whenever a creature casts a spell in the area, it has a 50\% chance to \\glossterm<miscast> the spell.
 
