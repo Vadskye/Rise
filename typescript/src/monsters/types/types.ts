@@ -1,3 +1,5 @@
+import { defenseBonusesByMonsterType } from "@src/calculate/defense_bonuses_by_monster_type";
+import * as format from "@src/latex/format";
 import { MonsterInput } from "@src/monsters/reformat_monster_input";
 import { aberrations } from "./aberrations";
 import { animals } from "./animals";
@@ -38,4 +40,49 @@ export const monsterInputsByType: Record<MonsterType, MonsterInput[]> = {
   "monstrous humanoid": monstrousHumanoids,
   "outsider": outsiders,
   "undead": undead,
+};
+
+function formatDefenseBonuses(monsterType: MonsterType) {
+  const bonuses = defenseBonusesByMonsterType(monsterType);
+  return `
+    \\parhead{Defenses}
+    ${format.modifier(bonuses.armor)} Armor,
+    ${format.modifier(bonuses.fortitude)} Fortitude,
+    ${format.modifier(bonuses.reflex)} Reflex,
+    ${format.modifier(bonuses.mental)} Mental
+  `;
+}
+
+export const typeDescriptions: Record<MonsterType, string | null> = {
+  "aberration": `
+    ${formatDefenseBonuses("aberration")}
+  `,
+  "animal": `
+    ${formatDefenseBonuses("animal")}
+  `,
+  "animate": `
+    ${formatDefenseBonuses("animate")}
+  `,
+  "humanoid": `
+    ${formatDefenseBonuses("humanoid")}
+  `,
+  "magical beast": `
+    ${formatDefenseBonuses("magical beast")}
+  `,
+  "monstrous humanoid": `
+    ${formatDefenseBonuses("monstrous humanoid")}
+  `,
+  "outsider": `
+    ${formatDefenseBonuses("outsider")}
+  `,
+  "undead": `
+    ${formatDefenseBonuses("undead")}
+    \\parhead{Unliving} Undead are not living creatures, and are immune to most abilities that only affect living creatures.
+    However, they are affected in a specific way by effects from the \\sphere{vivimancy} mystic sphere.
+    Undead are always considered an \\glossterm{ally} for \\sphere{vivimancy} spells.
+    Any effect from the \\sphere{vivimancy} sphere that would directly cause an undead creature to lose hit points without dealing damage causes that creature to regain that many lost hit points instead.
+    In addition, any effect from the \\sphere{vivimancy} sphere that would cause an undead creature to regain lost hit points instead causes it to lose that many hit points instead.
+    \\parhead{Unnatural Mind} Undead are controlled by fragments of the souls of deceased creatures.
+    Many undead are mindless, and even intelligent undead are immune to \\glossterm{Compulsion} and \\glossterm{Delusion} abilities.
+  `,
 };
