@@ -1,6 +1,6 @@
 import { monsterToLatex } from "@src/latex/monster_to_latex";
 import { monstersByType } from "@src/monsters";
-import { monsterTypes } from "@src/monsters/types";
+import { monsterTypes, typeDescriptions } from "@src/monsters/types";
 import { titleCase } from "change-case";
 import cli from "commander";
 import fs from "fs";
@@ -14,6 +14,9 @@ function generateLatex(latexType: string): string {
       // TODO: handle weird plurals as necessary
       latex += `
         \\section{${titleCase(pluralText)}}
+
+        All ${pluralText} have the following properties unless noted otherwise in their description:
+        ${typeDescriptions[monsterType]}
       `;
       for (const monster of monstersByType[monsterType]) {
         latex += monsterToLatex(monster);

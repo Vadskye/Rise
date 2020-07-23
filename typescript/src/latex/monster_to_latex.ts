@@ -94,23 +94,23 @@ function getMainContent(monster: MonsterBase) {
   return `
     \\begin{spellcontent}
       \\begin{spelltargetinginfo}
-        \\pari \\textbf{HP} ${monster.hitPoints};
-          \\textbf{AD} ${monster.defenses.armor};
-          \\textbf{Fort} ${monster.defenses.fortitude};
-          \\textbf{Ref} ${monster.defenses.reflex};
+        \\pari \\textbf{HP} ${monster.hitPoints} \\monsep
+          \\textbf{AD} ${monster.defenses.armor} \\monsep
+          \\textbf{Fort} ${monster.defenses.fortitude} \\monsep
+          \\textbf{Ref} ${monster.defenses.reflex} \\monsep
           \\textbf{Ment} ${monster.defenses.mental}
-        \\pari \\textbf{DR} ${
+        \\pari \\textbf{WR} ${
           extraDamageTypes.size > 0
             ? Array.from(extraDamageTypes)
                 .map((t: DamageType) => `${titleCase(t)} ${monster.resistances.damage[t]}`)
-                .join("; ")
+                .join(", ")
             : monster.resistances.damage.physical
-        }
-        \\pari \\textbf{VR} ${
+        } \\monsep
+        \\textbf{VR} ${
           extraDamageTypes.size > 0
             ? Array.from(extraDamageTypes)
                 .map((t) => `${titleCase(t)} ${monster.resistances.vital[t]}`)
-                .join("; ")
+                .join(", ")
             : monster.resistances.vital.physical
         }
         ${getStrikes(monster)}
@@ -122,11 +122,11 @@ function getMainContent(monster: MonsterBase) {
 function getFooter(monster: MonsterBase) {
   return `
     \\begin{monsterfooter}
-      \\pari ${formatSpeeds(monster)};
-        \\textbf{Space} ${format.feet(monster.space)};
+      \\pari ${formatSpeeds(monster)} \\monsep
+        \\textbf{Space} ${format.feet(monster.space)} \\monsep
         \\textbf{Reach} ${format.feet(monster.reach)}
       \\pari \\textbf{Awareness} ${format.modifier(monster.skills.awareness)}
-      \\pari \\textbf{Attributes}:
+      \\pari \\textbf{Attributes}
         Str ${format.attribute(monster.attributes.str)}, Dex ${format.attribute(
     monster.attributes.dex,
   )},
@@ -136,7 +136,7 @@ function getFooter(monster: MonsterBase) {
         Per ${format.attribute(monster.attributes.per)}, Wil ${format.attribute(
     monster.attributes.wil,
   )}
-      \\pari \\textbf{Accuracy} ${monster.accuracy};
+      \\pari \\textbf{Accuracy} ${monster.accuracy} \\monsep
         ${getPower(monster).trim()}
       \\pari \\textbf{Alignment} ${monster.alignment}
     \\end{monsterfooter}
@@ -148,7 +148,7 @@ function getPower(monster: MonsterBase) {
     return `\\textbf{Power} ${monster.mundanePower}`;
   } else {
     return `
-      \\textbf{Mundane Power} ${monster.mundanePower};
+      \\textbf{Mundane Power} ${monster.mundanePower} \\monsep
       \\textbf{Magical Power} ${monster.magicalPower}
     `;
   }
@@ -237,7 +237,7 @@ function formatSpeeds(monster: MonsterBase) {
   } else {
     const mode = activeModes[0];
     if (mode && mode !== "land") {
-      return `\\textbf{${titleCase(mode)} Speed} ${format.feet(monster.speeds[mode])}`;
+      return `\\textbf{Speed} ${titleCase(mode)} ${format.feet(monster.speeds[mode])}`;
     } else {
       return `\\textbf{Speed} ${format.feet(monster.speeds.land)}`;
     }

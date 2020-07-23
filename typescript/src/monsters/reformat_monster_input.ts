@@ -226,8 +226,8 @@ function generateMonsterBase(monsterInput: MonsterBaseInput): MonsterBase {
 
   const attributeModifiers = attributesAtLevel({ level: monster.level, startingAttributes });
   const accuracy = calculateAccuracy({ ...monster, attributes: attributeModifiers });
-  const magicalPower = calculateMagicalPower({ ...monster, attributes: attributeModifiers });
-  const mundanePower = calculateMundanePower({ ...monster, attributes: attributeModifiers });
+  const magicalPower = calculateMagicalPower({ ...monster, startingAttributes });
+  const mundanePower = calculateMundanePower({ ...monster, startingAttributes });
   const activeAbilities = monster.activeAbilityInputs.map(parseActiveAbility);
   const weapons = monster.weaponInput.map(parseWeaponInput);
   const attacks = monster.attackInputs.map(parseAttack);
