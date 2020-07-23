@@ -45,6 +45,13 @@ summon=MysticSphere(
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=['Attune (self)', 'Manifestation']),
+        Spell('Summon Unicorn', 6, 'One unoccupied square within \\rngmed range', """
+            This spell functions like the \\textit<summon monster> spell, except that the summoned creature appears to be a unicorn.
+            Its attacks deal piercing damage, and you can command it to heal instead of attack.
+            If you do, during the \\glossterm<action phase> it cause one of your \\glossterm<allies> within \\rngclose range of it to regain one lost \\glossterm<hit point>.
+            You can tell it which creature to heal.
+            If you do not instruct it to heal a specific creature, it will automatically heal the ally closest to it that has lost at least one hit point.
+        """, tags=['Attune (self)', 'Manifestation']),
         Spell('Summon Weapon', 3, 'One unoccupied square within \\rngmed range', """
             This spell functions like the \\textit<summon monster> spell, with the following exceptions.
             The summoned creature takes the form of a melee weapon of your choice that you are proficient with.
@@ -90,7 +97,8 @@ summon=MysticSphere(
             Each weapon attacks independently.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Summon Earth Elemental', 4, 'One unoccupied square on stable ground within \\rngmed range', """
-            This spell functions like the \\spell<summon monster> spell, except that the summoned creature appears to be an earth elemental and deals bludgeoning damage.
+            This spell functions like the \\spell<summon monster> spell, except that the summoned creature appears to be an earth elemental.
+            Its attacks deal bludgeoning damage.
             It has two additional \\glossterm<hit points>, a bonus to \\glossterm<resistances> against \\glossterm<physical damage> equal to half your \\glossterm<power>, and is immune to electricity damage.
 
             \\rankline
@@ -98,16 +106,18 @@ summon=MysticSphere(
             \\rank<8> The accuracy bonus increases to +2.
         """, tags=['Attune (self)', 'Manifestation']),
         Spell('Summon Water Elemental', 3, 'One unoccupied square on stable ground within \\rngmed range', """
-            This spell functions like the \\spell<summon monster> spell, except that the summoned creature appears to be an water elemental and deals bludgeoning damage.
-            It has a 30 foot \\glossterm<swim speed> and suffer no penalties for fighting underwater (see \\pcref<Underwater Combat>).
-            In addition, it is \\glossterm<vulnerable> to electricity damage.
+            This spell functions like the \\spell<summon monster> spell, except that the summoned creature appears to be an water elemental.
+            Its attacks deal bludgeoning damage.
+            It has a +1 bonus to \\glossterm<accuracy>, a 30 foot \\glossterm<swim speed>, and it suffers no penalties for fighting underwater (see \\pcref<Underwater Combat>).
+            However, it is \\glossterm<vulnerable> to electricity damage.
 
             \\rankline
-            \\rank<5> The creature gains a +1 bonus to \\glossterm<accuracy>.
-            \\rank<7> The accuracy bonus increases to +2.
+            \\rank<5> The creature's accuracy bonus increases to +2.
+            \\rank<7> The creature's accuracy bonus increases to +3.
         """, tags=['Attune (self)', 'Manifestation']),
         Spell('Summon Air Elemental', 4, 'One unoccupied square on stable ground within \\rngmed range', """
-            This spell functions like the \\spell<summon monster> spell, except that the summoned creature appears to be an air elemental and deals bludgeoning damage.
+            This spell functions like the \\spell<summon monster> spell, except that the summoned creature appears to be an air elemental.
+            Its attacks deal bludgeoning damage.
             It has a 30 foot \\glossterm<fly speed> with good \\glossterm<maneuverability>.
 
             \\rankline
@@ -115,7 +125,8 @@ summon=MysticSphere(
             \\rank<8> The accuracy bonus increases to +2.
         """, tags=['Attune (self)', 'Manifestation']),
         Spell('Summon Fire Elemental', 5, 'One unoccupied square on stable ground within \\rngmed range', """
-            This spell functions like the \\spell<summon monster> spell, except that the summoned creature appears to be a fire elemental and deals fire damage.
+            This spell functions like the \\spell<summon monster> spell, except that the summoned creature appears to be a fire elemental.
+            Its attacks deal fire damage.
             When it deals fire damage to a creature with a \\glossterm<critical hit>, that creature is \\glossterm<ignited> as a \\glossterm<condition>.
             This condition can be removed if the target makes a \\glossterm<difficulty rating> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
             Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
@@ -128,6 +139,7 @@ summon=MysticSphere(
         """, tags=['Attune (self)', 'Manifestation']),
         Spell('Summon Bear', 3, 'One unoccupied square on stable ground within \\rngmed range', """
             This spell functions like the \\spell<summon monster> spell, except that the creature appears to be a Medium bear.
+            Its attacks deal bludgeoning and slashing damage, and it suffers no penalty for attacking in a grapple.
             As a standard action, it can make a \\glossterm<grapple> attack against a creature it threatens.
             While grappling, the manifested creature can either make a strike or attempt to escape the grapple.
 
@@ -146,14 +158,15 @@ summon=MysticSphere(
             \\rank<7> The hit point bonus increases to +2.
         """, tags=['Attune (target)', 'Manifestation']),
         Spell('Summon Wolfpack', 5, 'One unoccupied square on stable ground within \\rngmed range', """
-            This spell functions like the \\spell<summon monster> spell, except that it summons a pack of four wolf-shaped creatures instead of a single creature.
+            This spell functions like the \\spell<summon monster> spell, except that it summons a pack of four Small wolf-shaped creatures instead of a single creature.
             Each creature has a -2 penalty to \\glossterm<accuracy> and \\glossterm<defenses> compared to a normal summoned creature.
+            In addition, each creature has 3 hit points instead of the normal 6.
             % TODO: wording?
             You must command the creatures as a group, rather than as individuals.
             Each creature obeys your command to the extent it can.
 
             \\rankline
-            \\rank<7> The creature gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<7> The creatures gain a +1 bonus to \\glossterm<accuracy>.
         """, tags=['Attune (self)', 'Manifestation']),
         Spell('Summon Pegasus', 5, 'One unoccupied location on stable ground within \\rngmed range', """
             This spell functions like the \\spell<summon mount> spell, except that the summoned creature appears to be either a Large or Medium pegasus.
@@ -163,6 +176,12 @@ summon=MysticSphere(
             \\rankline
             \\rank<7> The creature gains a +1 bonus to its maximum \\glossterm<hit points>.
         """, tags=['Attune (target)', 'Manifestation']),
+        Spell('Summon Asp', 4, 'target', """
+            This spell functions like the \\spell<summon creature> spell, except that the summoned creature appears to be a snake.
+            Whenever it \\glossterm<wounds> a living creature with a \\glossterm<strike>, the damaged creature becomes \\glossterm<poisoned> with asp venom (see \\tref{Typical Poisons}).
+            It immediately loses a \\glossterm<hit point> and becomes \\glossterm<sickened> while the poison lasts.
+            A third successful attack causes the target to become \\glossterm<nauseated> as long as it is poisoned.
+        """, tags=['Attune (self)', 'Manifestation']),
     ],
     rituals=[
         # weird to have a spell and a ritual but both are useful

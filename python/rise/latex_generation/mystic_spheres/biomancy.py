@@ -14,7 +14,7 @@ biomancy=MysticSphere(
             \\hit The target becomes \\glossterm<poisoned> with asp venom.
             At the end of each subsequent round, you repeat this attack, as normal for poisons.
             A creature poisoned by asp venom becomes \\glossterm<sickened> as long as it is poisoned.
-            A third successful attack inflicts a \\glossterm<vital wound> and ends the poison.
+            A third successful attack causes the target to become \\glossterm<nauseated> as long as it is poisoned.
             A third failed attack ends the poison.
 
             \\rankline
