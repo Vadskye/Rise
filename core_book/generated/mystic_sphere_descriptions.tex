@@ -1780,7 +1780,7 @@ Make an attack vs. Fortitude against the target.
 \hit The target becomes \glossterm{poisoned} with asp venom.
 At the end of each subsequent round, you repeat this attack, as normal for poisons.
 A creature poisoned by asp venom becomes \glossterm{sickened} as long as it is poisoned.
-A third successful attack inflicts a \glossterm{vital wound} and ends the poison.
+A third successful attack causes the target to become \glossterm{nauseated} as long as it is poisoned.
 A third failed attack ends the poison.
 
 \rankline
@@ -6387,6 +6387,7 @@ It canot fire at the same target twice.
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Summon Bear}{Summon Bear}}[\glossterm{Attune} (self), \glossterm{Focus}, \glossterm{Manifestation}]
 \target{One unoccupied square on stable ground within \rngmed range}
 This spell functions like the \spell{summon monster} spell, except that the creature appears to be a Medium bear.
+Its attacks deal bludgeoning and slashing damage, and it suffers no penalty for attacking in a grapple.
 As a standard action, it can make a \glossterm{grapple} attack against a creature it threatens.
 While grappling, the manifested creature can either make a strike or attempt to escape the grapple.
 
@@ -6417,13 +6418,14 @@ The creature follows its rider's directions to the extent that a well-trained ho
 \lowercase{\hypertarget{spell:Summon Water Elemental}{}}\label{spell:Summon Water Elemental}
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Summon Water Elemental}{Summon Water Elemental}}[\glossterm{Attune} (self), \glossterm{Focus}, \glossterm{Manifestation}]
 \target{One unoccupied square on stable ground within \rngmed range}
-This spell functions like the \spell{summon monster} spell, except that the summoned creature appears to be an water elemental and deals bludgeoning damage.
-It has a 30 foot \glossterm{swim speed} and suffer no penalties for fighting underwater (see \pcref{Underwater Combat}).
-In addition, it is \glossterm{vulnerable} to electricity damage.
+This spell functions like the \spell{summon monster} spell, except that the summoned creature appears to be an water elemental.
+Its attacks deal bludgeoning damage.
+It has a \plus1 bonus to \glossterm{accuracy}, a 30 foot \glossterm{swim speed}, and it suffers no penalties for fighting underwater (see \pcref{Underwater Combat}).
+However, it is \glossterm{vulnerable} to electricity damage.
 
 \rankline
-\rank{5} The creature gains a \plus1 bonus to \glossterm{accuracy}.
-\rank{7} The accuracy bonus increases to \plus2.
+\rank{5} The creature's accuracy bonus increases to \plus2.
+\rank{7} The creature's accuracy bonus increases to \plus3.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -6471,7 +6473,8 @@ This allows the weapon to fly up to fight airborne foes.
 \lowercase{\hypertarget{spell:Summon Air Elemental}{}}\label{spell:Summon Air Elemental}
 \begin{attuneability}[Rank 4]{\hypertarget{spell:Summon Air Elemental}{Summon Air Elemental}}[\glossterm{Attune} (self), \glossterm{Focus}, \glossterm{Manifestation}]
 \target{One unoccupied square on stable ground within \rngmed range}
-This spell functions like the \spell{summon monster} spell, except that the summoned creature appears to be an air elemental and deals bludgeoning damage.
+This spell functions like the \spell{summon monster} spell, except that the summoned creature appears to be an air elemental.
+Its attacks deal bludgeoning damage.
 It has a 30 foot \glossterm{fly speed} with good \glossterm{maneuverability}.
 
 \rankline
@@ -6482,10 +6485,23 @@ It has a 30 foot \glossterm{fly speed} with good \glossterm{maneuverability}.
 
 
 
+\lowercase{\hypertarget{spell:Summon Asp}{}}\label{spell:Summon Asp}
+\begin{attuneability}[Rank 4]{\hypertarget{spell:Summon Asp}{Summon Asp}}[\glossterm{Attune} (self), \glossterm{Focus}, \glossterm{Manifestation}]
+\target{target}
+This spell functions like the \spell{summon creature} spell, except that the summoned creature appears to be a snake.
+Whenever it \glossterm{wounds} a living creature with a \glossterm{strike}, the damaged creature becomes \glossterm{poisoned} with asp venom (see \tref{Typical Poisons}).
+It immediately loses a \glossterm{hit point} and becomes \glossterm{sickened} while the poison lasts.
+A third successful attack causes the target to become \glossterm{nauseated} as long as it is poisoned.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Summon Earth Elemental}{}}\label{spell:Summon Earth Elemental}
 \begin{attuneability}[Rank 4]{\hypertarget{spell:Summon Earth Elemental}{Summon Earth Elemental}}[\glossterm{Attune} (self), \glossterm{Focus}, \glossterm{Manifestation}]
 \target{One unoccupied square on stable ground within \rngmed range}
-This spell functions like the \spell{summon monster} spell, except that the summoned creature appears to be an earth elemental and deals bludgeoning damage.
+This spell functions like the \spell{summon monster} spell, except that the summoned creature appears to be an earth elemental.
+Its attacks deal bludgeoning damage.
 It has two additional \glossterm{hit points}, a bonus to \glossterm{resistances} against \glossterm{physical damage} equal to half your \glossterm{power}, and is immune to electricity damage.
 
 \rankline
@@ -6499,7 +6515,8 @@ It has two additional \glossterm{hit points}, a bonus to \glossterm{resistances}
 \lowercase{\hypertarget{spell:Summon Fire Elemental}{}}\label{spell:Summon Fire Elemental}
 \begin{attuneability}[Rank 5]{\hypertarget{spell:Summon Fire Elemental}{Summon Fire Elemental}}[\glossterm{Attune} (self), \glossterm{Focus}, \glossterm{Manifestation}]
 \target{One unoccupied square on stable ground within \rngmed range}
-This spell functions like the \spell{summon monster} spell, except that the summoned creature appears to be a fire elemental and deals fire damage.
+This spell functions like the \spell{summon monster} spell, except that the summoned creature appears to be a fire elemental.
+Its attacks deal fire damage.
 When it deals fire damage to a creature with a \glossterm{critical hit}, that creature is \glossterm{ignited} as a \glossterm{condition}.
 This condition can be removed if the target makes a \glossterm{difficulty rating} 10 Dexterity check as a \glossterm{move action} to put out the flames.
 Dropping \glossterm{prone} as part of this action gives a \plus5 bonus to this check.
@@ -6531,14 +6548,28 @@ It has a 30 foot \glossterm{fly speed} and is trained as a mount.
 \lowercase{\hypertarget{spell:Summon Wolfpack}{}}\label{spell:Summon Wolfpack}
 \begin{attuneability}[Rank 5]{\hypertarget{spell:Summon Wolfpack}{Summon Wolfpack}}[\glossterm{Attune} (self), \glossterm{Focus}, \glossterm{Manifestation}]
 \target{One unoccupied square on stable ground within \rngmed range}
-This spell functions like the \spell{summon monster} spell, except that it summons a pack of four wolf-shaped creatures instead of a single creature.
+This spell functions like the \spell{summon monster} spell, except that it summons a pack of four Small wolf-shaped creatures instead of a single creature.
 Each creature has a \minus2 penalty to \glossterm{accuracy} and \glossterm{defenses} compared to a normal summoned creature.
+In addition, each creature has 3 hit points instead of the normal 6.
 % TODO: wording?
 You must command the creatures as a group, rather than as individuals.
 Each creature obeys your command to the extent it can.
 
 \rankline
-\rank{7} The creature gains a \plus1 bonus to \glossterm{accuracy}.
+\rank{7} The creatures gain a \plus1 bonus to \glossterm{accuracy}.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Summon Unicorn}{}}\label{spell:Summon Unicorn}
+\begin{attuneability}[Rank 6]{\hypertarget{spell:Summon Unicorn}{Summon Unicorn}}[\glossterm{Attune} (self), \glossterm{Focus}, \glossterm{Manifestation}]
+\target{One unoccupied square within \rngmed range}
+This spell functions like the \textit{summon monster} spell, except that the summoned creature appears to be a unicorn.
+Its attacks deal piercing damage, and you can command it to heal instead of attack.
+If you do, during the \glossterm{action phase} it cause one of your \glossterm{allies} within \rngclose range of it to regain one lost \glossterm{hit point}.
+You can tell it which creature to heal.
+If you do not instruct it to heal a specific creature, it will automatically heal the ally closest to it that has lost at least one hit point.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -7451,8 +7482,8 @@ Instead, you always make the same choice you made the last time you manually sus
 
 
 
-\lowercase{\hypertarget{spell:Spellseal}{}}\label{spell:Spellseal}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Spellseal}{Spellseal}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
+\lowercase{\hypertarget{spell:Spellward}{}}\label{spell:Spellward}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Spellward}{Spellward}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
 \targets{Creatures in a \areasmall radius \glossterm{zone} within \rngmed range}
 You seal off an area's connection to magic.
 Whenever a creature casts a spell in the area, it has a 50\% chance to \glossterm{miscast} the spell.
@@ -8424,7 +8455,7 @@ If the target has a \glossterm{vital wound} with a \glossterm{vital roll} of \mi
 
 \lowercase{\hypertarget{spell:Cure Wound}{}}\label{spell:Cure Wound}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Cure Wound}{Cure Wound}}[\glossterm{Focus}]
-\target{Yourself or one living \glossterm{ally} within \rngclose range}
+\target{Yourself or a living \glossterm{ally} within \rngclose range}
 The target regains one lost \glossterm{hit point}.
 
 \rankline
@@ -8438,7 +8469,7 @@ The target regains one lost \glossterm{hit point}.
 
 \lowercase{\hypertarget{spell:Death Knell}{}}\label{spell:Death Knell}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Death Knell}{Death Knell}}[\glossterm{Focus}]
-\target{One creature within \rngmed range}
+\target{One living creature within \rngmed range}
 Make an attack vs. Fortitude against the target.
 You gain a \plus4 bonus to \glossterm{accuracy} against a \glossterm{bloodied} creature.
 \hit The target loses a \glossterm{hit point}.
@@ -8456,7 +8487,7 @@ It takes a penalty to its \glossterm{vital resistance} equal to your \glossterm{
 
 \lowercase{\hypertarget{spell:Drain Life}{}}\label{spell:Drain Life}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Drain Life}{Drain Life}}[\glossterm{Focus}]
-\target{One creature within \rngmed range}
+\target{One living creature within \rngmed range}
 Make an attack vs. Fortitude against the target.
 \hit The target takes energy \glossterm{standard damage} \plus1d.
 
@@ -8471,7 +8502,7 @@ Make an attack vs. Fortitude against the target.
 
 \lowercase{\hypertarget{spell:Draining Grasp}{}}\label{spell:Draining Grasp}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Draining Grasp}{Draining Grasp}}[]
-\target{One creature or object within your \glossterm{reach}}
+\target{One living creature within your \glossterm{reach}}
 This spell does not have the \glossterm{Focus} tag.
 You must have a \glossterm{free hand} to cast this spell.
 
@@ -8489,7 +8520,7 @@ Make a melee attack vs. Reflex against the target.
 
 \lowercase{\hypertarget{spell:Draining Miasma}{}}\label{spell:Draining Miasma}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Draining Miasma}{Draining Miasma}}[\glossterm{Compulsion}, \glossterm{Focus}]
-\targets{\glossterm{Enemies} in a \areamed radius within \rngmed range}
+\targets{Living \glossterm{enemies} in a \areamed radius within \rngmed range}
 Make an attack vs. Fortitude against each target.
 \hit Each target is \glossterm{sickened} until the end of the next round.
 \crit Each target is \glossterm{sickened} as a \glossterm{condition}.
@@ -8505,15 +8536,15 @@ Make an attack vs. Fortitude against each target.
 
 \lowercase{\hypertarget{spell:Fortify Life}{}}\label{spell:Fortify Life}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Fortify Life}{Fortify Life}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
-The target gains a \plus2 \glossterm{magic bonus} to Fortitude defense.
+\target{Yourself or a living \glossterm{ally} within \rngmed range}
+The target gains a \plus3 \glossterm{magic bonus} to Fortitude defense.
 
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{3} The bonus increases to \plus3.
-\rank{5} The bonus increases to \plus4.
-\rank{7} The bonus increases to \plus5.
+\rank{3} The bonus increases to \plus4.
+\rank{5} The bonus increases to \plus5.
+\rank{7} The bonus increases to \plus6.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -8521,7 +8552,7 @@ You can cast this spell as a \glossterm{minor action}.
 
 \lowercase{\hypertarget{spell:Lifegift}{}}\label{spell:Lifegift}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Lifegift}{Lifegift}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
+\target{Yourself or a living \glossterm{ally} within \rngmed range}
 The target increases its maximum \glossterm{hit points} by 2 and regains that many hit points.
 When this spell ends, the target loses hit points equal to the hit points it regained this way.
 
@@ -8537,7 +8568,7 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 \lowercase{\hypertarget{spell:Circle of Death}{}}\label{spell:Circle of Death}
-\begin{attuneability}[Rank 3]{\hypertarget{spell:Circle of Death}{Circle of Death}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\begin{freeability}[Rank 3]{\hypertarget{spell:Circle of Death}{Circle of Death}}[\glossterm{Focus}]
 \targets{Living \glossterm{enemies} in a \areamed radius}
 Make an attack vs. Fortitude against each target.
 \hit Each target loses one \glossterm{hit point}.
@@ -8545,7 +8576,7 @@ Make an attack vs. Fortitude against each target.
 \rankline
 \rank{5} The area increases to a \arealarge radius.
 \rank{7} The area increases to a \areahuge radius.
-\end{attuneability}
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -8580,7 +8611,7 @@ Make an attack vs. Fortitude against the target.
 
 \lowercase{\hypertarget{spell:Vital Persistence}{}}\label{spell:Vital Persistence}
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Vital Persistence}{Vital Persistence}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
+\target{Yourself or a living \glossterm{ally} within \rngmed range}
 The target ignores the vital wound effect of one of its \glossterm{vital wounds} (see \pcref{Vital Wounds}).
 
 \rankline
@@ -8591,24 +8622,9 @@ The target ignores the vital wound effect of one of its \glossterm{vital wounds}
 
 
 
-\lowercase{\hypertarget{spell:Curse of Vulnerability}{}}\label{spell:Curse of Vulnerability}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Curse of Vulnerability}{Curse of Vulnerability}}[\glossterm{Curse}, \glossterm{Focus}]
-\target{One creature within \rngmed range}
-Make an attack vs. Mental against the target.
-\hit The target takes a penalty to \glossterm{resistances} equal to half your \glossterm{power} until it takes a \glossterm{short rest}.
-\crit As above, except that the effect lasts until this curse is removed.
-
-\rankline
-\rank{6} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-\rank{8} The accuracy bonus increases to \plus2.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Lifeseal}{}}\label{spell:Lifeseal}
 \begin{freeability}[Rank 4]{\hypertarget{spell:Lifeseal}{Lifeseal}}[\glossterm{Focus}]
-\target{One creature within \rngmed range}
+\target{One living creature within \rngmed range}
 Make an attack vs. Fortitude against the target.
 \hit The target loses two \glossterm{hit points}.
 In addition, as a \glossterm{condition}, the target is unable to regain hit points.
@@ -8623,7 +8639,7 @@ In addition, as a \glossterm{condition}, the target is unable to regain hit poin
 
 \lowercase{\hypertarget{spell:Lifesteal Blade}{}}\label{spell:Lifesteal Blade}
 \begin{attuneability}[Rank 4]{\hypertarget{spell:Lifesteal Blade}{Lifesteal Blade}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or one \glossterm{ally} within \rngmed range}
+\target{Yourself or a living \glossterm{ally} within \rngmed range}
 Once per round, when the target \glossterm{vitally wounds} a living creature with a \glossterm{strike}, the target regains a lost \glossterm{hit point}.
 
 You can cast this spell as a \glossterm{minor action}.
@@ -8638,7 +8654,7 @@ You can cast this spell as a \glossterm{minor action}.
 
 \lowercase{\hypertarget{spell:Triage}{}}\label{spell:Triage}
 \begin{freeability}[Rank 4]{\hypertarget{spell:Triage}{Triage}}[\glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
+\target{Yourself or a living \glossterm{ally} within \rngmed range}
 If the target has a \glossterm{vital wound} with a \glossterm{vital roll} of \minus1, it treats that \glossterm{vital roll} as a 0, preventing it from dying (see \pcref{Vital Wounds}).
 
 You can cast this spell as a \glossterm{minor action}.
@@ -8652,20 +8668,20 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 \lowercase{\hypertarget{spell:Circle of Life}{}}\label{spell:Circle of Life}
-\begin{attuneability}[Rank 5]{\hypertarget{spell:Circle of Life}{Circle of Life}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\begin{freeability}[Rank 5]{\hypertarget{spell:Circle of Life}{Circle of Life}}[\glossterm{Focus}]
 \target{Yourself and each living \glossterm{ally} in a \areamed radius}
 Each target regains one lost \glossterm{hit point}.
 
 \rankline
 \rank{7} The area increases to a \arealarge radius.
-\end{attuneability}
+\end{freeability}
 \vspace{0.25em}
 
 
 
 \lowercase{\hypertarget{spell:Cure Vital Wound}{}}\label{spell:Cure Vital Wound}
 \begin{apability}[Rank 5]{\hypertarget{spell:Cure Vital Wound}{Cure Vital Wound}}[\glossterm{Focus}]
-\target{Yourself or one living \glossterm{ally} within \rngmed range}
+\target{Yourself or a living \glossterm{ally} within \rngmed range}
 The target removes one \glossterm{vital wound}.
 
 \rankline
@@ -8703,7 +8719,7 @@ Make an attack vs. Fortitude against the target.
 
 \lowercase{\hypertarget{spell:Avasculate}{}}\label{spell:Avasculate}
 \begin{freeability}[Rank 8]{\hypertarget{spell:Avasculate}{Avasculate}}[\glossterm{Focus}]
-\target{One creature within \rngclose range}
+\target{One living creature within \rngclose range}
 Make an attack vs. Fortitude against the target.
 \hit The target loses \glossterm{hit points} equal to half its maximum hit points.
 Unlike normal, this hit point loss is rounded up instead of down.
