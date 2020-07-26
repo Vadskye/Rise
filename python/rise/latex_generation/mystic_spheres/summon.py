@@ -108,12 +108,12 @@ summon=MysticSphere(
         Spell('Summon Water Elemental', 3, 'One unoccupied square on stable ground within \\rngmed range', """
             This spell functions like the \\spell<summon monster> spell, except that the summoned creature appears to be an water elemental.
             Its attacks deal bludgeoning damage.
-            It has a +1 bonus to \\glossterm<accuracy>, a 30 foot \\glossterm<swim speed>, and it suffers no penalties for fighting underwater (see \\pcref<Underwater Combat>).
+            It has a 30 foot \\glossterm<swim speed>, and it suffers no penalties for fighting underwater (see \\pcref<Underwater Combat>).
             However, it is \\glossterm<vulnerable> to electricity damage.
 
             \\rankline
-            \\rank<5> The creature's accuracy bonus increases to +2.
-            \\rank<7> The creature's accuracy bonus increases to +3.
+            \\rank<5> The creature gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Attune (self)', 'Manifestation']),
         Spell('Summon Air Elemental', 4, 'One unoccupied square on stable ground within \\rngmed range', """
             This spell functions like the \\spell<summon monster> spell, except that the summoned creature appears to be an air elemental.
