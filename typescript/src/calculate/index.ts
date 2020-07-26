@@ -1,6 +1,7 @@
 export * from "./attributes_at_level";
 export * from "./calculate_accuracy";
 export * from "./calculate_attack";
+export * from "./calculate_damage_dice";
 export * from "./calculate_challenge_rating_bonus";
 export * from "./calculate_defenses";
 export * from "./calculate_hit_points";
