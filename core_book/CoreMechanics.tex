@@ -454,11 +454,9 @@ It defines how attributes work and explains how to make attacks in combat.
                     18--19 & 5d10 \\
                     20--21 & 6d10 \\
                     22--23 & 7d10 \\
-                    24--25 & 8d10 \\
-                    26--27 & 9d10 \\
-                    28--29\fn{1} & 10d10 \\
+                    24--25\fn{1} & 8d10 \\
                 \end{dtabularx}
-                1. For every even value above 29, add a +5 bonus to the result instead of rolling additional dice.
+                1. For every even value above 26, add a +10 bonus to the result instead of rolling additional dice.
             \end{dtable}
 
         \subsubsection{Power vs. Die Increments}\label{Power vs. Die Increments}
@@ -562,42 +560,39 @@ It defines how attributes work and explains how to make attacks in combat.
     \begin{dtable}
         \lcaption{Resistance Values}
         \begin{dtabularx}{\columnwidth}{l *{2}{>{\ccol}X}}
-            % DR is +1 every level at first, then +2 per level after 10th, with an extra + per level every 6 levels.
-            % WR is +2 every level at first, then +3 per level after 3rd, with an extra + per level every 3 levels.
-            % TODO: make the above logic make more sense with math
             \tb{Total}\fn{1} & \tb{Wound Resistance} & \tb{Vital Resistance} \tableheaderrule
             \minus1 or lower & 1                     & 10     \\
-            0                & 1                     & 12     \\
-            1                & 2                     & 14     \\
-            2                & 3                     & 16     \\
-            3                & 4                     & 18     \\ % vr change to +3
-            4                & 5                     & 21     \\
-            5                & 6                     & 24     \\
-            6                & 7                     & 27     \\ % vr change to +4
-            7                & 8                     & 31     \\
-            8                & 9                     & 35     \\
-            9                & 10                    & 39     \\ % vr change to +5
-            10               & 11                    & 44     \\
-            11               & 13                    & 49     \\
-            12               & 15                    & 54     \\ % vr change to +6
-            13               & 17                    & 60     \\
-            14               & 19                    & 66     \\
-            15               & 21                    & 72     \\ % vr change to +7
-            16               & 23                    & 79     \\
-            17               & 26                    & 86     \\
-            18               & 29                    & 93     \\ % vr change to +8
-            19               & 32                    & 101    \\
-            20               & 35                    & 109    \\
-            21               & 38                    & 117    \\ % vr change to +9
-            22               & 41                    & 126    \\
-            23               & 45                    & 135    \\
-            24               & 49                    & 144    \\ % vr change to +10
+            0                & 1                     & 11     \\
+            1                & 2                     & 12     \\
+            2                & 3                     & 13     \\
+            3                & 4                     & 15     \\
+            4                & 5                     & 17     \\
+            5                & 6                     & 19     \\
+            6                & 7                     & 23     \\
+            7                & 8                     & 27     \\
+            8                & 10                    & 32     \\
+            9                & 12                    & 37     \\
+            10               & 14                    & 43     \\
+            11               & 17                    & 49     \\
+            12               & 20                    & 55     \\
+            13               & 23                    & 61     \\
+            14               & 26                    & 68     \\
+            15               & 29                    & 75     \\
+            16               & 32                    & 82     \\
+            17               & 36                    & 90     \\
+            18               & 40                    & 100    \\
+            19               & 45                    & 110    \\
+            20               & 50                    & 120    \\
+            21               & 55                    & 130    \\
+            22               & 60                    & 140    \\
+            23               & 65                    & 150    \\
+            24               & 70                    & 160    \\
             25\plus\fn{3}    & \tdash                & \tdash \\
         \end{dtabularx}
         1. This is your level \add your base Constitution. \\
         1. This is your \glossterm{wound resistance} (see \pcref{Wound Resistance}). \\
         2. This is your \glossterm{vital resistance} (see \pcref{Vital Resistance}). \\
-        3. To calculate the wound resistance for a creature with an epic Constitution, increase its wound resistance by 4 per point, and its vital resistance by 10 per point.
+        3. To calculate the wound resistance for a creature with an epic Constitution, increase its wound resistance by 5 per point, and its vital resistance by 10 per point.
     \end{dtable}
 
     \subsection{Resistances}\label{Resistances}
