@@ -170,11 +170,11 @@ def abilities_known():
 def accuracy():
     misc = get_misc_variables('accuracy', 2)
     return js_wrapper(
-        ['challenge_rating', 'level', 'perception_starting', 'level_scaling', *misc],
+        ['challenge_rating', 'level', 'perception_starting', *misc],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             setAttrs({{
-                accuracy: level + Math.floor(perception_starting / 2)  + level_scaling + {sum_variables(misc)} + cr_mod,
+                accuracy: level + Math.floor(perception_starting / 2)  + {sum_variables(misc)} + cr_mod,
             }});
         """
     )
@@ -198,8 +198,7 @@ def level_scaling():
     return js_wrapper(
         ['challenge_rating', 'level'],
         f"""
-            // var level_scaling = challenge_rating === 0 ? 0 : Math.floor((level + 1) / 6);
-            var level_scaling = 0;
+            var level_scaling = challenge_rating === 0 ? 0 : Math.floor((level + 1) / 6);
             setAttrs({{
                 level_scaling,
             }});
@@ -210,11 +209,11 @@ def level_scaling():
 def armor_defense():
     misc = get_misc_variables('armor_defense', 1)
     return js_wrapper(
-        ['level', 'dexterity_starting', 'armor_defense_class_bonus', 'body_armor_defense_value', 'shield_defense_value', *misc, 'challenge_rating', 'level_scaling'],
+        ['level', 'dexterity_starting', 'armor_defense_class_bonus', 'body_armor_defense_value', 'shield_defense_value', *misc, 'challenge_rating'],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             var before_equipment = level + dexterity_starting + cr_mod + armor_defense_class_bonus;
-            var total = before_equipment + body_armor_defense_value + shield_defense_value + level_scaling + {sum_variables(misc)};
+            var total = before_equipment + body_armor_defense_value + shield_defense_value + {sum_variables(misc)};
             setAttrs({{
                 armor_defense: total,
             }});
@@ -224,11 +223,11 @@ def armor_defense():
 def fortitude():
     misc = get_misc_variables('fortitude', 3)
     return js_wrapper(
-        ['level', 'constitution_starting', 'fortitude_class', 'challenge_rating', 'level_scaling', *misc],
+        ['level', 'constitution_starting', 'fortitude_class', 'challenge_rating', *misc],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             setAttrs({{
-                fortitude: level + constitution_starting + fortitude_class + cr_mod + level_scaling + {sum_variables(misc)},
+                fortitude: level + constitution_starting + fortitude_class + cr_mod + {sum_variables(misc)},
             }});
         """
     )
@@ -236,11 +235,11 @@ def fortitude():
 def reflex():
     misc = get_misc_variables('reflex', 3)
     return js_wrapper(
-        ['level', 'dexterity_starting', 'reflex_class', 'challenge_rating', 'level_scaling', *misc],
+        ['level', 'dexterity_starting', 'reflex_class', 'challenge_rating', *misc],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             setAttrs({{
-                reflex: level + dexterity_starting + reflex_class + cr_mod + level_scaling + {sum_variables(misc)},
+                reflex: level + dexterity_starting + reflex_class + cr_mod + {sum_variables(misc)},
             }});
         """
     )
@@ -248,11 +247,11 @@ def reflex():
 def mental():
     misc = get_misc_variables('mental', 3)
     return js_wrapper(
-        ['level', 'willpower_starting', 'mental_class', 'challenge_rating', 'level_scaling', *misc],
+        ['level', 'willpower_starting', 'mental_class', 'challenge_rating', *misc],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             setAttrs({{
-                mental: level + willpower_starting + mental_class + cr_mod + level_scaling + {sum_variables(misc)},
+                mental: level + willpower_starting + mental_class + cr_mod + {sum_variables(misc)},
             }});
         """
     )
@@ -358,7 +357,7 @@ def magical_power():
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             setAttrs({{
-                magical_power: level + willpower_starting + cr_mod + level_scaling + {sum_variables(misc)},
+                magical_power: level + willpower_starting + cr_mod + level_scaling * 2 + {sum_variables(misc)},
             }});
         """
     )
@@ -370,7 +369,7 @@ def mundane_power():
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             setAttrs({{
-                mundane_power: level + strength_starting + cr_mod + level_scaling + {sum_variables(misc)},
+                mundane_power: level + strength_starting + cr_mod + level_scaling * 2 + {sum_variables(misc)},
             }});
         """
     )
