@@ -4,116 +4,164 @@
 
     Weapons are grouped into several interlocking sets of categories. These categories pertain to what weapon group the weapon belongs to (axes, bows, and so on), the weapon's usefulness either in close combat (melee) or at a distance (ranged, which includes both thrown and projectile weapons), and its relative \glossterm{usage class} (light, medium, or heavy).
 
-    \subsection{Weapon Groups}\label{Weapon Groups}
+    \subsection{Weapon Mechanics}
 
-        Weapons are organized into thematically related categories called weapon groups. They are described in \trefnp{Weapon Groups}. For example, all axes belong to the ``axes'' weapon group. Some weapons can be found in multiple weapon groups. For example, a dagger is a simple weapon, a blade, and a thrown weapon.
+        \subsubsection{Weapon Groups}\label{Weapon Groups}
 
-        \parhead{Exotic Weapons}\label{Exotic Weapons} Some weapons are rare and have unusual fighting styles.
-        These weapons are called exotic weapons.
-        Proficiency with a weapon group does not grant you with exotic weapons from that group.
-        Some class abilities grant proficiency with exotic weapons.
+            Weapons are organized into thematically related categories called weapon groups. They are described in \trefnp{Weapon Groups}. For example, all axes belong to the ``axes'' weapon group. Some weapons can be found in multiple weapon groups. For example, a dagger is a simple weapon, a blade, and a thrown weapon.
 
-        \begin{dtable!*}
-            \lcaption{Weapon Groups}
-            \begin{dtabularx}{\textwidth}{l >{\lcol}X >{\lcol}X}
-                \tb{Group}         & \tb{Weapons}                                                                         & \tb{Exotic Weapons} \tableheaderrule
-                Armor weapons      & Armor spikes, Standard shield (and spiked)                                           &                                                \\
-                Blades             & Broadsword, dagger, estoc, greatsword, rapier, sabre, smallsword                     & Boot dagger, falchion, katana, kukri           \\
-                Bows               & Longbow, shortbow                                                                    & Flatbow, heartseeker arrows, takedown bow      \\
-                Club-like weapons  & Club, greatclub, greatmace, mace, morning star, sap                                  &                                                \\
-                Crossbows          & Hand crossbow, heavy crossbow, light crossbow                                        & Repeating crossbows                            \\
-                Flexible Weapons   & Flail, heavy flail, nunchaku, slapjack, whip                                         &                                                \\
-                Headed weapons     & Battleaxe, greataxe, handaxe, light hammer, pickaxe, sickle, sledgehammer, warhammer & Dwarven waraxe, heavy pickaxe, orcish greataxe \\
-                Improvised weapons & \tdash                                                                               & \tdash                                         \\
-                Monk weapons       & Jitte, hama, nunchaku, quarterstaff, sai, shuriken                                   &                                                \\
-                Polearms           & Bardiche, glaive, halberd, longhammer, pollaxe, quarterstaff, scythe, swordstaff     & Fauchard, war scythe                           \\
-                Simple weapons     & Club, dagger, light crossbow, quarterstaff, unarmed strike                           &                                                \\
-                Spears             & Greatspear, javelin, lance, longspear, ranseur, partisan, spear                      & Pike                                           \\
-                Thrown weapons     & Dagger, dart, handaxe, javelin, light hammer, shuriken, sling                        & Bolas, net                                     \\
-                Unarmed weapons    & Claw sheath, gauntlet, spiked gauntlet, unarmed strike                               &                                                \\
-            \end{dtabularx}
-        \end{dtable!*}
+            \parhead{Exotic Weapons}\label{Exotic Weapons} Some weapons are rare and have unusual fighting styles.
+            These weapons are called exotic weapons.
+            Proficiency with a weapon group does not grant you with exotic weapons from that group.
+            Some class abilities grant proficiency with exotic weapons.
 
-        \subsubsection{Weapon Proficiency}\label{Weapon Proficiency}
-            Each character is proficient with different weapon groups. These indicate the weapons that you can use effectively. You take a \minus2 penalty to accuracy with weapons you are not proficient with, and you cannot use them to defend yourself, which can cause you to be \defenseless.
+            \begin{dtable!*}
+                \lcaption{Weapon Groups}
+                \begin{dtabularx}{\textwidth}{l >{\lcol}X >{\lcol}X}
+                    \tb{Group}         & \tb{Weapons}                                                                         & \tb{Exotic Weapons} \tableheaderrule
+                    Armor weapons      & Armor spikes, Standard shield (and spiked)                                           &                                                \\
+                    Blades             & Broadsword, dagger, estoc, greatsword, rapier, sabre, smallsword                     & Boot dagger, falchion, katana, kukri           \\
+                    Bows               & Longbow, shortbow                                                                    & Flatbow, heartseeker arrows, takedown bow      \\
+                    Club-like weapons  & Club, greatclub, greatmace, mace, morning star, sap                                  &                                                \\
+                    Crossbows          & Hand crossbow, heavy crossbow, light crossbow                                        & Repeating crossbows                            \\
+                    Flexible Weapons   & Flail, heavy flail, nunchaku, slapjack, whip                                         &                                                \\
+                    Headed weapons     & Battleaxe, greataxe, handaxe, light hammer, pickaxe, sickle, sledgehammer, warhammer & Dwarven waraxe, heavy pickaxe, orcish greataxe \\
+                    Improvised weapons & \tdash                                                                               & \tdash                                         \\
+                    Monk weapons       & Jitte, hama, nunchaku, quarterstaff, sai, shuriken                                   &                                                \\
+                    Polearms           & Bardiche, glaive, halberd, longhammer, pollaxe, quarterstaff, scythe, swordstaff     & Fauchard, war scythe                           \\
+                    Simple weapons     & Club, dagger, light crossbow, quarterstaff, unarmed strike                           &                                                \\
+                    Spears             & Greatspear, javelin, lance, longspear, ranseur, partisan, spear                      & Pike                                           \\
+                    Thrown weapons     & Dagger, dart, handaxe, javelin, light hammer, shuriken, sling                        & Bolas, net                                     \\
+                    Unarmed weapons    & Claw sheath, gauntlet, spiked gauntlet, unarmed strike                               &                                                \\
+                \end{dtabularx}
+            \end{dtable!*}
 
-    \subsection{Weapon Usage Classes}\label{Weapon Usage Classes}
-        A weapon's \glossterm{usage class} is a measure of how much effort it takes to wield a weapon in combat.
-        It indicates whether a melee weapon, when wielded by a creature the weapon is sized for, is considered a light weapon, a medium weapon, or a heavy weapon.
+            \subsubsection{Weapon Proficiency}\label{Weapon Proficiency}
+                Each character is proficient with different weapon groups. These indicate the weapons that you can use effectively. You take a \minus2 penalty to accuracy with weapons you are not proficient with, and you cannot use them to defend yourself, which can cause you to be \defenseless.
 
-        % All weapons should have two improvements over a ``baseline'' +0/+0d weapon with no properties.
-        % Being Light comes with an automatic +1a/-1d and light weapons cannot normally reach +0d damage.
-        % Being Medium is considered an improvement since it grants the option to two-hand for +1d.
-        % Being Heavy grants an automatic +1d that does *not* count as an improvement because it requires two hands.
-        % Extreme weapons are discouraged; although this permits a Heavy weapon with +3d, no such weapon should exist.
-        % Trading +1a for +1d in either direction is not considered an improvement.
+        \subsubsection{Weapon Usage Classes}\label{Weapon Usage Classes}
+            A weapon's \glossterm{usage class} is a measure of how much effort it takes to wield a weapon in combat.
+            It indicates whether a melee weapon, when wielded by a creature the weapon is sized for, is considered a light weapon, a medium weapon, or a heavy weapon.
 
-        \parhead{Light Weapons}\label{Light Weapons} Light weapons are easier to use while making attacking with two weapons at once (see \pcref{Two-Weapon Strikes}) or while grappling.
-        They cannot be held in two hands.
-        Light weapons tend to have higher \glossterm{accuracy} than heavier weapons.
+            % All weapons should have two improvements over a ``baseline'' +0/+0d weapon with no properties.
+            % Being Light comes with an automatic +1a/-1d and light weapons cannot normally reach +0d damage.
+            % Being Medium is considered an improvement since it grants the option to two-hand for +1d.
+            % Being Heavy grants an automatic +1d that does *not* count as an improvement because it requires two hands.
+            % Extreme weapons are discouraged; although this permits a Heavy weapon with +3d, no such weapon should exist.
+            % Trading +1a for +1d in either direction is not considered an improvement.
 
-        \parhead{Medium Weapon} A medium weapon can normally be used in one hand.
-        You can also hold a medium weapon in two hands.
-        If you have a Strength of \minus1 or lower, you cannot wield a medium weapon in only one hand.
-        While you hold a medium weapon in two hands, you gain a \plus1d bonus to damage with the weapon.
-        Changing grips to hold it in one hand or two hands can be done as a \glossterm{free action} that requires both hands.
+            \parhead{Light Weapons}\label{Light Weapons} Light weapons are easier to use while making attacking with two weapons at once (see \pcref{Two-Weapon Strikes}) or while grappling.
+            They cannot be held in two hands.
+            Light weapons tend to have higher \glossterm{accuracy} than heavier weapons.
 
-        \parhead{Heavy Weapon} Two hands are normally required to wield a heavy weapon.
-        Heavy weapons tend to have higher damage than lighter weapons.
-        If you have a Strength of 5 or higher, you can wield a heavy weapon in one hand, but you take a \minus1 penalty to \glossterm{accuracy} and a \minus1d penalty to damage with the weapon while doing so.
-        Changing grips to hold it in one hand or two hands can be done as a \glossterm{free action} that requires both hands.
+            \parhead{Medium Weapon} A medium weapon can normally be used in one hand.
+            You can also hold a medium weapon in two hands.
+            If you have a Strength of \minus1 or lower, you cannot wield a medium weapon in only one hand.
+            While you hold a medium weapon in two hands, you gain a \plus1d bonus to damage with the weapon.
+            Changing grips to hold it in one hand or two hands can be done as a \glossterm{free action} that requires both hands.
 
-    \subsection{Melee Weapons}
-        Melee weapons are used for making melee attacks against foes within your reach (see \pcref{Reach}). Most weapons are melee weapons.
+            \parhead{Heavy Weapon} Two hands are normally required to wield a heavy weapon.
+            Heavy weapons tend to have higher damage than lighter weapons.
+            If you have a Strength of 5 or higher, you can wield a heavy weapon in one hand, but you take a \minus1 penalty to \glossterm{accuracy} and a \minus1d penalty to damage with the weapon while doing so.
+            Changing grips to hold it in one hand or two hands can be done as a \glossterm{free action} that requires both hands.
 
-    \subsection{Ranged Weapons}
-        Ranged weapons are used to make attacks against distant foes within the range of your weapon. There are two kinds of ranged weapons: projectile weapons and thrown weapons.
+        \subsubsection{Melee Weapons}
+            Melee weapons are used for making melee attacks against foes within your reach (see \pcref{Reach}). Most weapons are melee weapons.
 
-        \subsubsection{Range Increments}\label{Range Increment} All ranged weapons have a ``range increment'', which indicates the distance at which you can effectively attack with the weapon. Any attack against a target within your range increment takes no penalty. For each range increment by which the target is distant from you, you take a cumulative \minus1 penalty to your accuracy. A thrown weapon has a maximum range of five range increments. A projectile weapon can shoot out to ten range increments.
+        \subsubsection{Ranged Weapons}
+            Ranged weapons are used to make attacks against distant foes within the range of your weapon. There are two kinds of ranged weapons: projectile weapons and thrown weapons.
 
-        \subsubsection{Projectile Weapons} Projectile weapons fire ammunition at a target to deal damage. The ammunition generally breaks when used.
+            \subsubsection{Range Increments}\label{Range Increment} All ranged weapons have a ``range increment'', which indicates the distance at which you can effectively attack with the weapon. Any attack against a target within your range increment takes no penalty. For each range increment by which the target is distant from you, you take a cumulative \minus1 penalty to your accuracy. A thrown weapon has a maximum range of five range increments. A projectile weapon can shoot out to ten range increments.
 
-        \subsubsection{Thrown Weapons}\label{Thrown Weapons} Thrown weapons are thrown at a target to deal damage. They generally do not break when thrown.
+            \subsubsection{Projectile Weapons} Projectile weapons fire ammunition at a target to deal damage. The ammunition generally breaks when used.
 
-            \parhead{Throwing Other Weapons} It is possible to throw a weapon that is not designed to be thrown. The range increment is 10 feet. You are treated as being nonproficient with the weapon. If the attack hits, the weapon deals its normal damage.
+            \subsubsection{Thrown Weapons}\label{Thrown Weapons} Thrown weapons are thrown at a target to deal damage. They generally do not break when thrown.
 
-            \parhead{Heavy Weapons} Heavy thrown weapons require a standard action to throw, rather than an attack action like normal.
-            They are not always physically thrown with two hands, but they require the use of your entire body to propel the weapon, preventing you from using your hands for anything else.
-            This can cause you to be \defenseless.
+                \parhead{Throwing Other Weapons} It is possible to throw a weapon that is not designed to be thrown. The range increment is 10 feet. You are treated as being nonproficient with the weapon. If the attack hits, the weapon deals its normal damage.
 
-        \subsubsection{Ranged Weapons in Melee}
+                \parhead{Heavy Weapons} Heavy thrown weapons require a standard action to throw, rather than an attack action like normal.
+                They are not always physically thrown with two hands, but they require the use of your entire body to propel the weapon, preventing you from using your hands for anything else.
+                This can cause you to be \defenseless.
 
-            You take a \minus4 penalty to accuracy with medium and large ranged weapons against creatures adjacent to you. In addition, you are usually \defenseless while using ranged weapons.
+            \subsubsection{Ranged Weapons in Melee}
 
-            \parhead{Thrown Weapons in Melee}\label{Thrown Weapons in Melee} You cannot defend yourself with a weapon you are throwing, which can cause you to be \defenseless. To avoid this, you can attempt to use the weapon as a melee weapon. Some thrown weapon are not designed for use in melee, such as shurikens. When using such a weapon as a melee weapon, you are always treated as nonproficient with it, which means you cannot defend yourself with it.
+                You take a \minus4 penalty to accuracy with medium and large ranged weapons against creatures adjacent to you. In addition, you are usually \defenseless while using ranged weapons.
 
-            \parhead{Physical Size} Like all objects and creatures, weapons have a size category that represents how physically large they are. In general, a light weapon is an object two size categories smaller than the wielder, a medium weapon is an object one size category smaller than the wielder, and a heavy weapon is an object of the same size category as the wielder.
+                \parhead{Thrown Weapons in Melee}\label{Thrown Weapons in Melee} You cannot defend yourself with a weapon you are throwing, which can cause you to be \defenseless. To avoid this, you can attempt to use the weapon as a melee weapon. Some thrown weapon are not designed for use in melee, such as shurikens. When using such a weapon as a melee weapon, you are always treated as nonproficient with it, which means you cannot defend yourself with it.
 
-            \parhead{Inappropriately Sized Weapons}\label{Inappropriately Sized Weapons} A weapon's \glossterm{usage class} is altered by one step for each size category of difference between the wielder's size and the size of the creature for which the weapon was designed.
-            For example, a light weapon sized for a Large creature can be used by a Medium creature as if it had a medium usage class.
-            The wielder also gains a \plus1d bonus to damage with the weapon per size category if the weapon is unusually large, or a \minus1d penalty to damage with the weapon if the weapon is unusually small.
-            In addition, the wielder takes a \minus2 penalty to accuracy with the weapon per size category of difference.
-            If a weapon's usage class would be changed to something other than light, medium, or heavy by this alteration, the creature can't wield the weapon at all.
+                \parhead{Physical Size} Like all objects and creatures, weapons have a size category that represents how physically large they are. In general, a light weapon is an object two size categories smaller than the wielder, a medium weapon is an object one size category smaller than the wielder, and a heavy weapon is an object of the same size category as the wielder.
 
-    \subsection{Improvised Weapons}\label{Improvised Weapons}
-        Sometimes objects not crafted to be weapons nonetheless see use in combat.
-        You can choose to be proficient with the improvised weapons weapon group, which has no specific weapons associated with it but which allows you to pick up and use non-manufactured weapons without taking a nonproficiency penalty (see \pcref{Weapon Proficiency}).
+                \parhead{Inappropriately Sized Weapons}\label{Inappropriately Sized Weapons} A weapon's \glossterm{usage class} is altered by one step for each size category of difference between the wielder's size and the size of the creature for which the weapon was designed.
+                For example, a light weapon sized for a Large creature can be used by a Medium creature as if it had a medium usage class.
+                The wielder also gains a \plus1d bonus to damage with the weapon per size category if the weapon is unusually large, or a \minus1d penalty to damage with the weapon if the weapon is unusually small.
+                In addition, the wielder takes a \minus2 penalty to accuracy with the weapon per size category of difference.
+                If a weapon's usage class would be changed to something other than light, medium, or heavy by this alteration, the creature can't wield the weapon at all.
 
-        To determine the appropriate statistics for an improvised weapon, compare its shape and composition to the weapon list to find a reasonable match.
-        An improvised weapon will generally have a \minus1 accuracy penalty, a \minus1d damage penalty, or be missing at least one weapon tag relative to a similarly structured manufactured weapon.
+        \subsubsection{Improvised Weapons}\label{Improvised Weapons}
+            Sometimes objects not crafted to be weapons nonetheless see use in combat.
+            You can choose to be proficient with the improvised weapons weapon group, which has no specific weapons associated with it but which allows you to pick up and use non-manufactured weapons without taking a nonproficiency penalty (see \pcref{Weapon Proficiency}).
 
-    \subsection{Drawing and Sheathing Weapons}\label{Drawing and Sheathing Weapons}
-        Drawing and sheathing weapons always requires the hand or hands used to hold the weapon.
-        The time it takes to draw and sheathe a weapon depends on how encumbering the weapon is.
-        You can draw or sheathe a \glossterm{light weapon} or \glossterm{medium weapon} as a \glossterm{free action}.
-        You can draw or sheathe a \glossterm{heavy weapon} or \glossterm{hidden weapon} as a \glossterm{standard action}.
+            To determine the appropriate statistics for an improvised weapon, compare its shape and composition to the weapon list to find a reasonable match.
+            An improvised weapon will generally have a \minus1 accuracy penalty, a \minus1d damage penalty, or be missing at least one weapon tag relative to a similarly structured manufactured weapon.
 
-    \subsection{Natural Weapons}\label{Natural Weapons}
-        Every creature can attack with its body using an unarmed strike. Many monsters can attack more effectively with specific parts of their body, such as teeth and claws. These are called natural weapons. You are automatically proficient with any natural weapons you possess. Most humanoids possess no natural weapons. Natural weapons are described on \tref{Natural Weapons}.
+        \subsubsection{Natural Weapons}\label{Natural Weapons}
+            Every creature can attack with its body using an unarmed strike. Many monsters can attack more effectively with specific parts of their body, such as teeth and claws. These are called natural weapons. You are automatically proficient with any natural weapons you possess. Most humanoids possess no natural weapons. Natural weapons are described on \tref{Natural Weapons}.
 
-        A creature with multiple natural weapons of the same type can designate one as a primary attack and one as a secondary attack, allowing it to fight with both at once (see \pcref{Two-Weapon Strikes}). You are only considered to have one unarmed strike, so you cannot dual wield with only your unarmed strike (but see the unarmed warrior monk ability, \pref{Mnk:Unarmed Warrior}).
+            A creature with multiple natural weapons of the same type can designate one as a primary attack and one as a secondary attack, allowing it to fight with both at once (see \pcref{Two-Weapon Strikes}). You are only considered to have one unarmed strike, so you cannot dual wield with only your unarmed strike (but see the unarmed warrior monk ability, \pref{Mnk:Unarmed Warrior}).
 
-    \subsection{Weapon Qualities}
+        \subsubsection{Drawing and Sheathing Weapons}\label{Drawing and Sheathing Weapons}
+            Drawing and sheathing weapons always requires the hand or hands used to hold the weapon.
+            The time it takes to draw and sheathe a weapon depends on how encumbering the weapon is.
+            You can draw or sheathe a \glossterm{light weapon} or \glossterm{medium weapon} as a \glossterm{free action}.
+            You can draw or sheathe a \glossterm{heavy weapon} or \glossterm{hidden weapon} as a \glossterm{standard action}.
+
+        \subsubsection{Weapon Tags}\label{Weapon Tags}
+            Some weapons found on \trefnp{Weapons} have tags that indicate that they have special abilities. The list of abilities that weapons can have is given below.
+            \parhead{Ammunition} This weapon is designed to thrown or fired by a projectile weapon in large quantities. It is cheaper to buy and craft, but ammunition is usually \glossterm{broken} after being fired.
+            \parhead{Compact} This weapon is unusually small.
+            It is one size category smaller than normal for a light weapon (that is, three size categories smaller than the creature it is intended for).
+            This makes it easier to conceal (see \pcref{Sleight of Hand}).
+            In addition, you can draw or sheathe this weapon so quickly that you can also take another action in the same phase with that hand.
+            For example, you can draw this weapon and attack with it in the same phase.
+            \parhead{Disarming} When you use the \textit{disarm} ability with this weapon, you can knock loose objects that are held in a single hand, but not objects that are held in two hands or well secured (see \pcref{Disarm}).
+            \parhead{Forceful} Whenever you \glossterm{wound} a target of your size or smaller with a strike using this weapon, you can \glossterm{knockback} the target up to 10 feet.
+            \parhead{Grappling} You gain a \plus2 bonus to \glossterm{accuracy} on \glossterm{melee attacks} with this weapon against creatures who are \glossterm{grappled} by you.
+            In addition, it is treated as a light weapon for the purpose of determining whether you take accuracy penalties when attacking with it in a grapple.
+            \parhead{Impact} When you get a \glossterm{critical hit} with this weapon, you deal triple damage instead of double damage.
+            \parhead{Keen} You gain a \plus4 bonus to \glossterm{accuracy} with \glossterm{strikes} using this weapon for the purpose of determining whether you get a \glossterm{critical hit}.
+            \parhead{Long}\label{Long Weapon} This weapon can be used to attack at double your natural \glossterm{reach} (so 10 feet for a typical Small or Medium creature).
+            However, it cannot attack a creature within your natural reach.
+
+            Long weapons can held using a different grip to strike nearby foes.
+            This is called ``short hafting''.
+            While short hafting a Long weapon, you ignore the weapon's Long property, but you take a \minus2 penalty to accuracy with it.
+            You can change your grip as a \glossterm{free action} that requires the hand or hands used to hold the weapon.
+            As normal, you cannot combine that action with other actions using the same hands, so you cannot change your grip and attack with the weapon in the same phase.
+            \parhead{Mounted}\label{Mounted Weapon} If you are mounted, and mount moves in the same phase that you make a \glossterm{strike} with a Mounted weapon, you gain a \plus1d bonus to damage with the strike.
+            You take a \minus1d penalty to damage with Mounted weapons while not mounted.
+            \parhead{Parrying} If a creature misses you with a \glossterm{strike} while you wield this weapon, you gain a \plus2 bonus to \glossterm{accuracy} with strikes using this weapon against that creature during the next round.
+            \parhead{Projectile} This weapon fires projectiles at range. Projectile weapons have a \glossterm{range increment} listed in their description, which indicates the distance they can be easily fired. Projectile weapons must be reloaded. The time required to reload a projectile weapon is given in the weapon description.
+            Unless otherwise noted, projectile weapons cannot be used while \prone.
+            \parhead{Reach}\label{Reach Weapon} This weapon can be held in an extended grip to strike more distant creatures.
+            This is called ``reaching''.
+            While reaching with a Reach weapon, you can attack enemies 5 feet farther away than you would otherwise be able to attack.
+            However, you are unable to attack enemies adjacent to you.
+            This affects which enemies you \glossterm{threaten}.
+            However, you take a \minus2 penalty to \glossterm{accuracy} with the weapon.
+            You can change your grip as a \glossterm{free action} that requires the hand or hands used to hold the weapon.
+            As normal, you cannot combine that action with other actions using the same hands, so you cannot change your grip and attack with the weapon in the same phase.
+            \parhead{Sweeping} When you make a \glossterm{strike} with this weapon, you may also target one or more secondary creatures or objects within your \glossterm{reach} with that weapon.
+            Each secondary target must be within 5 feet of the primary target.
+            The strike affects each secondary target in the same way as the primary target.
+            Sweeping weapons have a number that indicates the number of secondary targets you can affect.
+            \parhead{Subdual} This weapon deals \glossterm{subdual damage} (see \pcref{Subdual Damage}).
+            \parhead{Throwing} This weapon is designed to be thrown. Throwing weapons have a range increment listed in their description, which indicates the distance they can be easily thrown. See \pcref{Thrown Weapons}.
+            Unless otherwise noted in a weapon's description, a throwing weapon can be used to attack in melee without penalty.
+            \parhead{Tripping} When you use the \textit{trip} ability, you can attack with this weapon instead of with a free hand (see \pcref{Trip}).
+            When you successfully trip a creature with this weapon, the target takes damage as if you hit it with a strike using the weapon with a \minus3d penalty to damage.
+            \parhead{Unarmed} This weapon does not prevent you from using the hand it's equipped on as a free hand.
+
+    \subsection{Weapon Table}
         Here is the format for weapon entries (given as column headings on \trefnp{Weapons}, below).
 
         \parhead{Usage Class} Describes whether the weapon's \glossterm{usage class} is light, medium, or heavy (see \pcref{Usage Class}).
@@ -136,7 +184,7 @@
         \parhead{Weight} This column gives the weight of a Medium version of the weapon. Halve this number for Small weapons, and double it for Large weapons.
 
         \parhead{Special} Some weapons have special properties. See the weapon
-        descriptions for details.
+            descriptions for details.
 
         \begin{longtablewrapper}
             \begin{longtable}{p{11em} c c c >{\ccol}p{7em} c c >{\ccol}p{8em}}
@@ -314,53 +362,7 @@
             2 This weapon has special rules. \\
         \end{dtable!*}
 
-    \subsection{Weapon Tags}\label{Weapon Tags}
-        Some weapons found on \trefnp{Weapons} have tags that indicate that they have special abilities. The list of abilities that weapons can have is given below.
-        \parhead{Ammunition} This weapon is designed to thrown or fired by a projectile weapon in large quantities. It is cheaper to buy and craft, but ammunition is usually \glossterm{broken} after being fired.
-        \parhead{Compact} This weapon is unusually small.
-        It is one size category smaller than normal for a light weapon (that is, three size categories smaller than the creature it is intended for).
-        This makes it easier to conceal (see \pcref{Sleight of Hand}).
-        In addition, you can draw or sheathe this weapon so quickly that you can also take another action in the same phase with that hand.
-        For example, you can draw this weapon and attack with it in the same phase.
-        \parhead{Disarming} When you use the \textit{disarm} ability with this weapon, you can knock loose objects that are held in a single hand, but not objects that are held in two hands or well secured (see \pcref{Disarm}).
-        \parhead{Forceful} Whenever you \glossterm{wound} a target of your size or smaller with a strike using this weapon, you can \glossterm{knockback} the target up to 10 feet.
-        \parhead{Grappling} You gain a \plus2 bonus to \glossterm{accuracy} on \glossterm{melee attacks} with this weapon against creatures who are \glossterm{grappled} by you.
-        In addition, it is treated as a light weapon for the purpose of determining whether you take accuracy penalties when attacking with it in a grapple.
-        \parhead{Impact} When you get a \glossterm{critical hit} with this weapon, you deal triple damage instead of double damage.
-        \parhead{Keen} You gain a \plus4 bonus to \glossterm{accuracy} with \glossterm{strikes} using this weapon for the purpose of determining whether you get a \glossterm{critical hit}.
-        \parhead{Long}\label{Long Weapon} This weapon can be used to attack at double your natural \glossterm{reach} (so 10 feet for a typical Small or Medium creature).
-        However, it cannot attack a creature within your natural reach.
-
-        Long weapons can held using a different grip to strike nearby foes.
-        This is called ``short hafting''.
-        While short hafting a Long weapon, you ignore the weapon's Long property, but you take a \minus2 penalty to accuracy with it.
-        You can change your grip as a \glossterm{free action} that requires the hand or hands used to hold the weapon.
-        As normal, you cannot combine that action with other actions using the same hands, so you cannot change your grip and attack with the weapon in the same phase.
-        \parhead{Mounted}\label{Mounted Weapon} If you are mounted, and mount moves in the same phase that you make a \glossterm{strike} with a Mounted weapon, you gain a \plus1d bonus to damage with the strike.
-        You take a \minus1d penalty to damage with Mounted weapons while not mounted.
-        \parhead{Parrying} If a creature misses you with a \glossterm{strike} while you wield this weapon, you gain a \plus2 bonus to \glossterm{accuracy} with strikes using this weapon against that creature during the next round.
-        \parhead{Projectile} This weapon fires projectiles at range. Projectile weapons have a \glossterm{range increment} listed in their description, which indicates the distance they can be easily fired. Projectile weapons must be reloaded. The time required to reload a projectile weapon is given in the weapon description.
-        Unless otherwise noted, projectile weapons cannot be used while \prone.
-        \parhead{Reach}\label{Reach Weapon} This weapon can be held in an extended grip to strike more distant creatures.
-        This is called ``reaching''.
-        While reaching with a Reach weapon, you can attack enemies 5 feet farther away than you would otherwise be able to attack.
-        However, you are unable to attack enemies adjacent to you.
-        This affects which enemies you \glossterm{threaten}.
-        However, you take a \minus2 penalty to \glossterm{accuracy} with the weapon.
-        You can change your grip as a \glossterm{free action} that requires the hand or hands used to hold the weapon.
-        As normal, you cannot combine that action with other actions using the same hands, so you cannot change your grip and attack with the weapon in the same phase.
-        \parhead{Sweeping} When you make a \glossterm{strike} with this weapon, you may also target one or more secondary creatures or objects within your \glossterm{reach} with that weapon.
-        Each secondary target must be within 5 feet of the primary target.
-        The strike affects each secondary target in the same way as the primary target.
-        Sweeping weapons have a number that indicates the number of secondary targets you can affect.
-        \parhead{Subdual} This weapon deals \glossterm{subdual damage} (see \pcref{Subdual Damage}).
-        \parhead{Throwing} This weapon is designed to be thrown. Throwing weapons have a range increment listed in their description, which indicates the distance they can be easily thrown. See \pcref{Thrown Weapons}.
-        Unless otherwise noted in a weapon's description, a throwing weapon can be used to attack in melee without penalty.
-        \parhead{Tripping} When you use the \textit{trip} ability, you can attack with this weapon instead of with a free hand (see \pcref{Trip}).
-        When you successfully trip a creature with this weapon, the target takes damage as if you hit it with a strike using the weapon with a \minus3d penalty to damage.
-        \parhead{Unarmed} This weapon does not prevent you from using the hand it's equipped on as a free hand.
-
-    \subsection{Weapon Descriptions}
+    \subsection{Individual Weapon Descriptions}
         Some weapons in \trefnp{Weapons} have additional abilities which are described below.
         \parhead{Armor spikes} Any \glossterm{body armor} can be spiked.
         You cannot normally attack with armor spikes.
@@ -426,9 +428,11 @@
     If you somehow wear multiple layers of body armor, the penalties stack and the benefits do not stack.
     A shield requires a free hand instead of being worn on the body.
 
-    \subsection{Armor Usage Classes}\label{Armor Usage Classes}
-        An armor's \glossterm{usage class} is a measure of how the armor is used, and how much effort is required to use it.
-        It indicates whether armor, when used by a creature the armor is sized for, is considered light armor, medium armor, or heavy armor.
+    \subsection{Armor Mechanics}
+
+        \subsubsection{Armor Usage Classes}\label{Armor Usage Classes}
+            An armor's \glossterm{usage class} is a measure of how the armor is used, and how much effort is required to use it.
+            It indicates whether armor, when used by a creature the armor is sized for, is considered light armor, medium armor, or heavy armor.
 
         \subsubsection{Armor Proficiency}\label{Armor Proficiency}
             Unlike weapons, proficiency with armor is defined by the armor's usage class.
@@ -436,7 +440,43 @@
             In addition, you apply that armor's \glossterm{encumbrance} as a penalty to your \glossterm{accuracy} with \glossterm{mundane} attacks.
             Since standard shields have no \glossterm{encumbrance}, you can use them without penalizing your attacks.
 
-    \subsection{Armor Qualities}
+        \subsubsection{Getting Into And Out Of Armor}
+            The time required to don armor depends on its type; see \trefnp{Donning Armor}. Donning and removing body armor and shields takes both hands.
+            \parhead{Don} This column tells how long it takes a character to put the armor on. (One minute is 10 rounds.) Readying (strapping on) a shield is a \glossterm{free action}.
+            \parhead{Don Hastily} This column tells how long it takes to put the armor on in a hurry. The \glossterm{encumbrance} and defense bonus for hastily donned armor are each 1 point worse than normal.
+            \parhead{Remove} This column tells how long it takes to get the armor off. Loosing a shield (removing it from the arm and dropping it) is a \glossterm{free action}.
+
+            \begin{dtable}
+                \lcaption{Donning Armor}
+                \begin{dtabularx}{\columnwidth}{>{\lcol}X c c c}
+                    \tb{Armor Type} & \tb{Don} & \tb{Don Hastily} & \tb{Remove} \tableheaderrule
+                    Shield (any)      & 1 free action   & n/a             & 1 free action           \\
+                    Light body armor  & 1 minute        & 5 rounds        & 1 minute\fn{1}          \\
+                    Medium body armor & 4 minutes\fn{1} & 1 minute        & 1 minute\fn{1}          \\
+                    Heavy body armor & 4 minutes\fn{2} & 4 minutes\fn{1} & 1d4\plus1 minutes\fn{1} \\
+                \end{dtabularx}
+                1 If the character has some help, cut this time in half. A single character doing nothing else can help one or two adjacent characters. Two characters can't help each other don armor at the same time. \\
+                2 The wearer must have help to don this armor. Without help, it can be donned only hastily.
+            \end{dtable}
+
+        \subsubsection{Armor for Unusual Creatures}\label{Armor for Unusual Creatures}
+            Armor and shields for unusually big creatures, unusually little creatures, and nonhumanoid creatures have different costs and weights from those given on \trefnp{Armor and Shields}. Refer to the appropriate line on the table below and apply the multipliers to cost and weight for the armor type in question.
+            \begin{dtable}
+                \lcaption{Armor for Unusual Creatures}
+                \begin{dtabularx}{\columnwidth}{>{\lcol}X c c c c}
+                    & \multicolumn{2}{c}{\tb{Humanoid}} & \multicolumn{2}{c}{\tb{Nonhumanoid}} \tableheaderrule
+                    \tb{Size} & \tb{Cost} & \tb{Weight} & \tb{Cost} & \tb{Weight} \\
+                    Tiny or smaller & \mult1/2 & \mult1/10 & \mult1 & \mult1/10 \\
+                    Small & \mult1 & \mult1/2 & \mult2 & \mult1/2 \\
+                    Medium & \mult1 & \mult1 & \mult2 & \mult1 \\
+                    Large & \mult2 & \mult2 & \mult4 & \mult2 \\
+                    Huge & \mult4 & \mult4 & \mult8 & \mult4 \\
+                    Gargantuan & \mult8 & \mult8 & \mult16 & \mult8 \\
+                    Colossal & \mult16 & \mult12 & \mult32 & \mult12 \\
+                \end{dtabularx}
+            \end{dtable}
+
+    \subsection{Armor Table}
         \par Here is the format for armor entries (given as column headings on \trefnp{Armor and Shields}, below).
 
         \parhead{Defense} This value indicates how much the armor increases your Armor defense.
@@ -459,25 +499,6 @@
 
         \parhead{Weight} This value indicates the weight of armor sized for a Medium creature.
         Armor fitted for Small creatures weighs half as much, and armor for Large creatures weighs twice as much.
-
-    \subsection{Getting Into And Out Of Armor}
-        The time required to don armor depends on its type; see \trefnp{Donning Armor}. Donning and removing body armor and shields takes both hands.
-        \parhead{Don} This column tells how long it takes a character to put the armor on. (One minute is 10 rounds.) Readying (strapping on) a shield is a \glossterm{free action}.
-        \parhead{Don Hastily} This column tells how long it takes to put the armor on in a hurry. The \glossterm{encumbrance} and defense bonus for hastily donned armor are each 1 point worse than normal.
-        \parhead{Remove} This column tells how long it takes to get the armor off. Loosing a shield (removing it from the arm and dropping it) is a \glossterm{free action}.
-
-        \begin{dtable}
-            \lcaption{Donning Armor}
-            \begin{dtabularx}{\columnwidth}{>{\lcol}X c c c}
-                \tb{Armor Type} & \tb{Don} & \tb{Don Hastily} & \tb{Remove} \tableheaderrule
-                Shield (any)      & 1 free action   & n/a             & 1 free action           \\
-                Light body armor  & 1 minute        & 5 rounds        & 1 minute\fn{1}          \\
-                Medium body armor & 4 minutes\fn{1} & 1 minute        & 1 minute\fn{1}          \\
-                Heavy body armor & 4 minutes\fn{2} & 4 minutes\fn{1} & 1d4\plus1 minutes\fn{1} \\
-            \end{dtabularx}
-            1 If the character has some help, cut this time in half. A single character doing nothing else can help one or two adjacent characters. Two characters can't help each other don armor at the same time. \\
-            2 The wearer must have help to don this armor. Without help, it can be donned only hastily.
-        \end{dtable}
 
         \begin{dtable!*}
             \lcaption{Armor and Shields}
@@ -508,7 +529,7 @@
             2 Tower shields can grant you cover. See the description. \\
         \end{dtable!*}
 
-    \subsection{Armor Descriptions}
+    \subsection{Individual Armor Descriptions}
         Any special benefits or accessories to the types of armor found on \trefnp{Armor and Shields} are described below.
         \parhead{Armor Spikes} You can add armor spikes to any \glossterm{body armor}.
         Armor spikes are a \glossterm{weapon} that you can deal damage with (see \pcref{Armor Weapons}).
@@ -541,23 +562,6 @@
         \parhead{Shield Spikes} When added to your shield, these spikes turn it into a piercing weapon that increases the damage dealt by a shield bash as if the shield were designed for a creature one size category larger than you. You can't put spikes on a buckler or a tower shield. Otherwise, attacking with a spiked shield is like making a shield bash attack (see above).
         \parhead{Studded Leather} Only the studs on studded leather are made of metal.
         Studded leather armor made with studs from special materials does not grant the wearer the properties of the special material.
-
-    \subsection{Armor for Unusual Creatures}\label{Armor for Unusual Creatures}
-        Armor and shields for unusually big creatures, unusually little creatures, and nonhumanoid creatures have different costs and weights from those given on \trefnp{Armor and Shields}. Refer to the appropriate line on the table below and apply the multipliers to cost and weight for the armor type in question.
-        \begin{dtable}
-            \lcaption{Armor for Unusual Creatures}
-            \begin{dtabularx}{\columnwidth}{>{\lcol}X c c c c}
-                & \multicolumn{2}{c}{\tb{Humanoid}} & \multicolumn{2}{c}{\tb{Nonhumanoid}} \tableheaderrule
-                \tb{Size} & \tb{Cost} & \tb{Weight} & \tb{Cost} & \tb{Weight} \\
-                Tiny or smaller & \mult1/2 & \mult1/10 & \mult1 & \mult1/10 \\
-                Small & \mult1 & \mult1/2 & \mult2 & \mult1/2 \\
-                Medium & \mult1 & \mult1 & \mult2 & \mult1 \\
-                Large & \mult2 & \mult2 & \mult4 & \mult2 \\
-                Huge & \mult4 & \mult4 & \mult8 & \mult4 \\
-                Gargantuan & \mult8 & \mult8 & \mult16 & \mult8 \\
-                Colossal & \mult16 & \mult12 & \mult32 & \mult12 \\
-            \end{dtabularx}
-        \end{dtable}
 
     \subsection{Special Materials}
         Body armor and shields can be made from special materials that can alter the properties of the item.
