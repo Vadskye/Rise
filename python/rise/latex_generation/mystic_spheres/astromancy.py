@@ -73,6 +73,7 @@ astromancy=MysticSphere(
         """, tags=[]),
         # TODO: target wording is awkward
         Spell('Teleport', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
+            If the target is not standing on solid ground, this spell fails.
             The target teleports into an unoccupied destination within range.
             If the destination is invalid, this spell is \\glossterm<miscast>.
 
@@ -182,6 +183,7 @@ astromancy=MysticSphere(
         """, tags=['Attune (self)']),
         Spell('Transposition', 3, 'Two Large or smaller creatures within \\rngmed range', """
             Make an attack vs. Mental against each target.
+            If either target is not standing on solid ground, this spell fails.
             If you hit both targets, they each teleport into each other's locations.
 
             \\rankline
