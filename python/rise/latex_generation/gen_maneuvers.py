@@ -185,7 +185,7 @@ def generate_maneuvers():
     ))
 
     maneuvers.append(Maneuver(
-        name='Power Attack',
+        name='Power Strike',
         short_description='Make a strike that trades accuracy for damage',
         target="As chosen \\glossterm<strike>",
         effect_text="""
@@ -675,13 +675,13 @@ def generate_maneuvers():
         short_description='Attack vulnerabilities in focusing foes',
         target="As chosen \\glossterm<strike>",
         effect_text="""
-            Make a melee \\glossterm<strike> with a -1d penalty to damage.
+            Make a melee \\glossterm<strike>.
             If the target is using a \\glossterm<Focus> ability during the current phase, the strike deals double damage.
         """,
         rank_upgrades={
-            '3': 'You gain a +1 bonus to \\glossterm<accuracy> with the strike.',
-            '5': 'The damage penalty is removed.',
-            '7': 'The accuracy bonus increases to +2.',
+            '3': 'You gain a +1d bonus to damage with the strike.',
+            '5': 'The damage bonus increases to +2d.',
+            '7': 'The damage bonus increases to +3d.',
         },
         tags=[],
         lists=['Esoteric', 'Martial', 'Trick', 'Primal', 'Wild'],
