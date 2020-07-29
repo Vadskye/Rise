@@ -483,7 +483,7 @@ def generate_weapons():
 
     weapons.append(MagicItem(
         name="Vorpal",
-        level=12,
+        level=20,
         material_type='Weapon',
         description="""
             Critical hits on \\glossterm<strikes> with this weapon deal maximum damage.
