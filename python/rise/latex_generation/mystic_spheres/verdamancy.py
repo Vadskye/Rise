@@ -84,7 +84,8 @@ verdamancy=MysticSphere(
         Spell('Vine Tentacles', 1, 'Yourself', """
             You grow vine tentacles from your body.
             The tentacles grant you a slam \\glossterm<natural weapon> (see \\tref<Natural Weapons>).
-            The natural weapon has the Long \\glossterm<weapon tag> and does not require a \\glossterm<free hand> to use (see \\pcref<Weapon Tags>).
+            The natural weapon deals +2d damage, as normal for a slam natural weapon.
+            The natural weapon has the Reach \\glossterm<weapon tag> and does not require a \\glossterm<free hand> to use (see \\pcref<Weapon Tags>).
 
             \\rankline
             \\rank<3> You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with attacks using the tentacles.
