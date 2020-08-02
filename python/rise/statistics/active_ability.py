@@ -8,7 +8,7 @@ def properties_from_ability_name(name):
     return {
         'firebolt': [lambda c: 2 + (c.level - 2) // 6, 'magical', 'Armor', True],
         'inflict wounds': [lambda c: 2 + (c.level - 2) // 6, 'magical', 'Fortitude', True],
-        'power attack': [lambda c: 2 + (c.level - 2) // 6, 'strike', 'Armor', True],
+        'power strike': [lambda c: 2 + (c.level - 2) // 6, 'strike', 'Armor', True],
         'pyromancy': [0, 'magical', 'Armor'],
         'vivimancy': [0, 'magical', 'Fortitude'],
     }[name]
