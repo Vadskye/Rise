@@ -581,7 +581,7 @@ def calc_skill_points():
         equation(
             [
                 underlabel('Base', number_input({
-                    'disabled': True, 'name': 'skill_points_base', 'value': 8,
+                    'disabled': True, 'name': 'skill_points_base', 'value': 6,
                 })),
                 plus(),
                 underlabel('2 * (Int)', number_input({
