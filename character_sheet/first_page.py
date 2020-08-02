@@ -390,38 +390,9 @@ def attack(source):
             {'class': 'attack-defense'},
             {'name': 'attack0_defense'},
         ),
-        number_input({
+        text_input({
             'class': 'hidden',
-            'disabled': True,
-            'name': 'attack0_power',
-            'value': f"(@{{{source}_power}}+@{{attack0_damage}}*2)",
-        }),
-        # TODO: make this work for negative standard damage
-        number_input({
-            'class': 'hidden',
-            'disabled': True,
-            'name': 'attack0_dice_count',
-            'value': """(
-                floor(floor(@{attack0_power}/16) * (4 + ((@{attack0_power} - 16) / 2)))
-                + (
-                    -floor((@{attack0_power}-16)/16) * (
-                        floor(floor(@{attack0_power}/6) * 1.5) + 1
-                    )
-                )
-            )""".replace('\n', '').replace(' ', ''),
-        }),
-        number_input({
-            'class': 'hidden',
-            'disabled': True,
-            'name': 'attack0_dice_size',
-            'value': """(
-                floor(floor(@{attack0_power}/16) * 10)
-                + (
-                    -floor((@{attack0_power}-16)/16) * (
-                        (floor((@{attack0_power}%6)/2)*2)+6
-                    )
-                )
-            )""".replace('\n', '').replace(' ', ''),
+            'name': 'attack0_dice',
         }),
         labeled_textarea(
             'Effect',
@@ -439,7 +410,7 @@ def attack(source):
                     + (
                         f" (@{{attack0_effect}})"
                         if source == 'nondamaging' else
-                        f" ([[@{{attack0_dice_count}}d@{{attack0_dice_size}}]]; @{{attack0_effect}})"
+                        f" ([[@{{attack0_dice}}]]; @{{attack0_effect}})"
                     )
                 ),
             },
