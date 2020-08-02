@@ -59,7 +59,7 @@ def generate_modifiers():
     modifiers['greatsword'] = greatsword
 
     def power_attack(c):
-        c.active_abilities.append(ActiveAbility('power attack'))
+        c.active_abilities.append(ActiveAbility('power strike'))
     modifiers['power_attack'] = power_attack
     # Shorthand
     modifiers['pa'] = power_attack
