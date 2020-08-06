@@ -301,7 +301,7 @@ def skill_points():
         ['level', 'intelligence_starting', *misc],
         f"""
             setAttrs({{
-                skill_points: 8 + intelligence_starting * 2 + {sum_variables(misc)}
+                skill_points: 6 + intelligence_starting * 2 + {sum_variables(misc)}
             }});
         """
     )
