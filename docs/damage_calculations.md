@@ -100,10 +100,11 @@ Standard power upgrade levels:
 +1 at level 6 from wellspring
 +2 at level 9 from magic implement
 +1 at level 14 from wellspring
-+2 at level 17 from rank 7 spells
++2 at level 18 from magic implement
++1 at level 20 to make even/odd work out better
 
 so at level 20, a standard spellcaster would expect to have:
-(level1 6) + (levels 19) + (bonuses 12) = 37 effective power.
+(level1 2) + (levels 19) + (bonuses 7) = 28 effective power.
 
 We use the following standard checkpoints:
 
@@ -111,7 +112,7 @@ We use the following standard checkpoints:
 5th level: 6 power = 2d6 damage
 10th level: 14 power = 4d8 damage
 15th level: 20 power = 6d10 damage
-20th level: 27 power = 8d10+10 damage
+20th level: 28 power = 8d10+20 damage
 
 ## Recommended values
 
