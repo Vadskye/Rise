@@ -62,6 +62,10 @@ export const typeDescriptions: Record<MonsterType, string | null> = {
   `,
   "animate": `
     ${formatDefenseBonuses("animate")}
+    \\parhead{Animated Life} Animates are living creatures that are fundamentally composed of non-sentient matter.
+    They are considered to be both objects and creatures, and are affected equally by abilities that affect both.
+    \\parhead{Nonsentient} Animates may have an intelligence of a sort, depending on the nature of their animation, but they are fundamentally not sentient creatures.
+    All animates are immune to \\glossterm{Compulsion} and \\glossterm{Delusion} abilities.
   `,
   "humanoid": `
     ${formatDefenseBonuses("humanoid")}
@@ -74,6 +78,11 @@ export const typeDescriptions: Record<MonsterType, string | null> = {
   `,
   "outsider": `
     ${formatDefenseBonuses("outsider")}
+    \\parhead{Planar Essence} An outsider is fundamentally composed of the essence of its home plane.
+    When an outsider dies, its essence returns to its plane.
+    Weak outsiders lose their independent identity and become part of the core composition of the plane once more.
+    Strong outsiders can retain their identity and reform from that raw material given time, making them difficult or impossible to kill completely.
+    In either case, outsiders cannot be resurrected by mortal magic such as the \\spell{resurrection} spell.
   `,
   "undead": `
     ${formatDefenseBonuses("undead")}
@@ -83,6 +92,6 @@ export const typeDescriptions: Record<MonsterType, string | null> = {
     Any effect from the \\sphere{vivimancy} sphere that would directly cause an undead creature to lose hit points without dealing damage causes that creature to regain that many lost hit points instead.
     In addition, any effect from the \\sphere{vivimancy} sphere that would cause an undead creature to regain lost hit points instead causes it to lose that many hit points instead.
     \\parhead{Unnatural Mind} Undead are controlled by fragments of the souls of deceased creatures.
-    Many undead are mindless, and even intelligent undead are immune to \\glossterm{Compulsion} and \\glossterm{Delusion} abilities.
+    Many undead are \\glossterm{mindless}, and even intelligent undead are immune to \\glossterm{Compulsion} and \\glossterm{Delusion} abilities.
   `,
 };
