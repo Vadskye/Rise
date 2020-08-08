@@ -50,6 +50,45 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
     weaponInput: [{ damageTypes: ["piercing", "bludgeoning", "acid"], name: "bite" }],
     weight: "800 pounds",
   },
+  {
+    alignment: "Always true neutral",
+    armorInputs: [{ name: "thick skin" }],
+    attackInputs: [
+      {
+        damageTypes: ["cold"],
+        defense: "fortitude",
+        name: "Crawling Darkness",
+        powerBonus: -2,
+        source: "magical",
+        target: "Enemies in a \\areamed radius",
+      },
+      {
+        damageTypes: ["cold"],
+        defense: "reflex",
+        name: "Dark Embrace",
+        powerBonus: 2,
+        source: "magical",
+        target: "One enemy within \\reach",
+      },
+    ],
+    challengeRating: 2,
+    description: `
+      A nightcrawler is a large worm imbued with umbramantic power.
+      Its body is colored only in shades of gray.
+      It is about 9 feet long and weighs about 700 pounds.
+      Nightcrawlers move slowly, but they are surprisingly agile in combat.
+      They can easily contort their body to avoid attacks or wrap around the defenses of foes.
+    `,
+    level: 7,
+    name: "Nightcrawler",
+    size: "large",
+    skillPoints: { climb: 2, flexibility: 1 },
+    speeds: {
+      climb: 20,
+      land: 20,
+    },
+    startingAttributes: { str: 1, dex: 3, con: 0, int: -8, per: 1, wil: 2 },
+  },
 ];
 
 export const magicalBeasts = addType("magical beast", magicalBeastInput);
