@@ -70,7 +70,7 @@ def generate_armor():
         material_type='Shield',
         description="""
             This item functions like the \\mitem<shield of arrow catching> item, except that it affects a \\arealarge radius from you.
-            In addition, you may choose to exclude creature from this item's effect, allowing projectiles to target nearby foes normally.
+            In addition, the item only redirects projectiles away from \\glossterm<allies> within the area, not all creatures.
         """,
         short_description="Selectively redirects small nearby projectiles to hit you",
     ))
@@ -132,7 +132,7 @@ def generate_armor():
         description="""
             You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using this shield.
         """,
-        short_description="Deals +1d damage",
+        short_description="Grants +2 power",
     ))
 
     apparel.append(MagicItem(
@@ -142,7 +142,7 @@ def generate_armor():
         description="""
             You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using this shield.
         """,
-        short_description="Deals +2d damage",
+        short_description="Grants +4 power",
     ))
 
     apparel.append(MagicItem(
@@ -152,16 +152,16 @@ def generate_armor():
         description="""
             You gain a +6 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using this shield.
         """,
-        short_description="Deals +3d damage",
+        short_description="Grants +6 power",
     ))
 
     apparel.append(MagicItem(
         name="Armor of Energy Resistance",
-        level=11,
+        level=8,
         tags=[],
         material_type='Body armor',
         description="""
-            You gain a \\glossterm<magic bonus> equal to half the item's \\glossterm<power> to \\glossterm<resistances> against \\glossterm<energy damage>.
+            You gain a +4 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<energy damage>.
             When you resist energy damage, it sheds light as a torch until the end of the next round.
             The color of the light depends on the energy damage resisted: blue for cold, yellow for electricity, and red for fire.
         """,
@@ -170,6 +170,17 @@ def generate_armor():
 
     apparel.append(MagicItem(
         name="Armor of Energy Resistance, Greater",
+        level=14,
+        tags=[],
+        material_type='Body armor',
+        description="""
+            This item functions like the \\mitem<armor of energy resistance> item, except that the bonus is equal to half the item's \\glossterm<power>.
+        """,
+        short_description="Significantly reduces energy damage",
+    ))
+
+    apparel.append(MagicItem(
+        name="Armor of Energy Resistance, Supreme",
         level=20,
         tags=[],
         material_type='Body armor',
@@ -269,13 +280,24 @@ def generate_armor():
 
     apparel.append(MagicItem(
         name="Armor of Invulnerability",
-        level=11,
+        level=8,
+        tags=[],
+        material_type='Body armor',
+        description="""
+            You gain a +4 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
+        """,
+        short_description="Reduces physical damage",
+    ))
+
+    apparel.append(MagicItem(
+        name="Armor of Invulnerability",
+        level=14,
         tags=[],
         material_type='Body armor',
         description="""
             You gain a \\glossterm<magic bonus> equal to half the item's \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical damage>.
         """,
-        short_description="Reduces physical damage",
+        short_description="Significantly reduces physical damage",
     ))
 
     apparel.append(MagicItem(
@@ -286,7 +308,7 @@ def generate_armor():
         description="""
             You gain a \\glossterm<magic bonus> equal to the item's \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical damage>.
         """,
-        short_description="Greatly reduces physical damage",
+        short_description="Drastically reduces physical damage",
     ))
 
     apparel.append(MagicItem(
