@@ -220,3 +220,13 @@ Rank 8 Focus:
 * Assuming unrelated ability at +2 ranks:
   * +4 ranks: +2a/+2d
   * +4 ranks: Add r1 condition to damaging effect
+
+# Magic items
+
+A magic item of a given level should generally function as if you had a tiny spellcaster nearby who
+was 3 levels lower than the magic item's level casting a relevant spell.
+
+This means that magic items can often mimic spell effects, but only Attune (target) effects, not
+Attune (self) effects. They should generally not have rank upgrades at all, and to the extent that
+they have rank upgrades, the upgrades should match those that a spellcaster 3 levels lower would
+have.
