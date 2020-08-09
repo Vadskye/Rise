@@ -73,7 +73,6 @@ astromancy=MysticSphere(
         """, tags=[]),
         # TODO: target wording is awkward
         Spell('Teleport', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
-            If the target is not standing on solid ground, this spell fails.
             The target teleports into an unoccupied destination within range.
             If the destination is invalid, this spell is \\glossterm<miscast>.
 
