@@ -61,58 +61,58 @@ hits 1% of the time and always dealt vital wounds on critical hits.
 Resistance bonuses can vary widely, but even with no meaningful investment we assume
 a flat bonus of at least 1 + half level, leaving base values:
 
-level 1: 3 WR, 15 VR
-level 5: 9 WR, 29 VR
-level 10: 17 WR, 50 VR
-level 15: 29 WR, 80 VR
-level 20: 46 WR, 120 VR
+* level 1: 3 WR, 15 VR
+* level 5: 9 WR, 29 VR
+* level 10: 17 WR, 50 VR
+* level 15: 29 WR, 80 VR
+* level 20: 46 WR, 120 VR
 
 ### High damage attack
 Assume 3 starting Willpower and a single-target damage spell. Expected power at level 1 is:
 (level 1) + (willpower 3) + (spell 2) = 6.
 
 Standard power upgrade levels:
-+2 at level 5 from rank 3 spells
-+1 at level 6 from wellspring
-+2 at level 9 from magic implement
-+2 at level 11 from rank 5 spells
-+1 at level 14 from wellspring
-+2 at level 17 from rank 7 spells
-+2 at level 18 from magic implement
-+1 at level 20 to make even/odd work out better
-
+* +2 at level 5 from rank 3 spells
+* +1 at level 6 from wellspring
+* +2 at level 9 from magic implement
+* +2 at level 11 from rank 5 spells
+* +1 at level 14 from wellspring
+* +2 at level 17 from rank 7 spells
+* +2 at level 18 from magic implement
+* +1 at level 20 to make even/odd work out better
+ 
 so at level 20, a standard spellcaster would expect to have:
 (level1 6) + (levels 19) + (bonuses 12) = 37 effective power.
 
 We use the following standard checkpoints:
 
-1st level: 6 power = 2d6 damage
-5th level: 12 power = 4d6 damage
-10th level: 20 power = 6d10 damage
-15th level: 28 power = 8d10 + 20
-20th level: 38 power = 8d10 + 80
+* 1st level: 6 power = 2d6 damage
+* 5th level: 12 power = 4d6 damage
+* 10th level: 20 power = 6d10 damage
+* 15th level: 28 power = 8d10 + 20
+* 20th level: 38 power = 8d10 + 80
 
 ### Low damage attack
 Assume 3 starting Willpower and an AOE damage spell (similar to Certain Strike, etc.). Expected power at level 1 is:
 (level 1) + (willpower 3) + (spell -2) = 2.
 
 Standard power upgrade levels:
-+1 at level 6 from wellspring
-+2 at level 9 from magic implement
-+1 at level 14 from wellspring
-+2 at level 18 from magic implement
-+1 at level 20 to make even/odd work out better
+* +1 at level 6 from wellspring
+* +2 at level 9 from magic implement
+* +1 at level 14 from wellspring
+* +2 at level 18 from magic implement
+* +1 at level 20 to make even/odd work out better
 
 so at level 20, a standard spellcaster would expect to have:
 (level1 2) + (levels 19) + (bonuses 7) = 28 effective power.
 
 We use the following standard checkpoints:
 
-1st level: 2 power = 1d8 damage
-5th level: 6 power = 2d6 damage
-10th level: 14 power = 4d8 damage
-15th level: 20 power = 6d10 damage
-20th level: 28 power = 8d10+20 damage
+* 1st level: 2 power = 1d8 damage
+* 5th level: 6 power = 2d6 damage
+* 10th level: 14 power = 4d8 damage
+* 15th level: 20 power = 6d10 damage
+* 20th level: 28 power = 8d10+20 damage
 
 ## Recommended values
 
@@ -131,55 +131,53 @@ function: crit A:d B:n {
 #### HDA vs low resistance target
 
 To maintain 95% chance of wounding, the following values work:
-output [crit 2d6 1d20] named "level 1 -- 3"
-output [crit 4d6 1d20] named "level 5 -- 9"
-output [crit 6d10 1d20] named "level 10 -- 22"
-output [crit 8d10+20 1d20] named "level 15 -- 51"
-output [crit 8d10+80 1d20] named "level 20 -- 111"
+* output [crit 2d6 1d20] named "level 1 -- 3"
+* output [crit 4d6 1d20] named "level 5 -- 9"
+* output [crit 6d10 1d20] named "level 10 -- 22"
+* output [crit 8d10+20 1d20] named "level 15 -- 51"
+* output [crit 8d10+80 1d20] named "level 20 -- 111"
 
 Subtracting the current (1 + half level) assumption for minimal investment bonuses to resistances,
 that suggests base wound resistance values of:
 
-level 1: 2
-level 5: 6
-level 10: 16
-level 15: 43
-level 20: 100
+* level 1: 2
+* level 5: 6
+* level 10: 16
+* level 15: 43
+* level 20: 100
 
 #### LDA vs low resistance target
 
 To maintain 50% chance of wounding at low damage values and squishy wound resistance values, the following values work:
 
-output [crit 1d8 1d20] named "level 1 -- 5"
-output [crit 2d6 1d20] named "level 5 -- 8"
-output [crit 4d8 1d20] named "level 10 -- 19"
-output [crit 6d10 1d20] named "level 15 -- 34"
-output [crit 8d10+10 1d20] named "level 20 -- 55"
+* output [crit 1d8 1d20] named "level 1 -- 5"
+* output [crit 2d6 1d20] named "level 5 -- 8"
+* output [crit 4d8 1d20] named "level 10 -- 19"
+* output [crit 6d10 1d20] named "level 15 -- 34"
+* output [crit 8d10+10 1d20] named "level 20 -- 55"
 
 Subtracting the current (1 + half level) assumption for minimal investment bonuses to resistances,
 that suggests base wound resistance values of:
 
-level 1: 4
-level 5: 5
-level 10: 13
-level 15: 26
-level 20: 44
+* level 1: 4
+* level 5: 5
+* level 10: 13
+* level 15: 26
+* level 20: 44
 
 #### HDA vs high resistance target
 
 To maintain a 50% chance of wounding, the following values work:
 
-output [crit 2d6 1d20] >= 7 named "level 1"
-output [crit 4d6 1d20] >= 15 named "level 5"
-output [crit 6d10 1d20] >= 34 named "level 10"
-output [crit 10d10 1d20] >= 57 named "level 15"
-output [crit 14d10 1d20] >= 79 named "level 20"
+* output [crit 2d6 1d20] >= 7 named "level 1"
+* output [crit 4d6 1d20] >= 15 named "level 5"
+* output [crit 6d10 1d20] >= 34 named "level 10"
+* output [crit 10d10 1d20] >= 57 named "level 15"
+* output [crit 14d10 1d20] >= 79 named "level 20"
 
 This requires a bonus from investment of:
 
-level 1: 5
-level 5: 9
-level 10: 
+TODO
 
 ### Vital resistance
 
@@ -188,42 +186,42 @@ level 10:
 To maintain a 5% chance of getting a vital wound at standard damage values and squishy resistance
 values, the following values work:
 
-output [crit 2d6 1d20] named "level 1 -- 12"
-output [crit 4d6 1d20] named "level 5 -- 22"
-output [crit 6d10 1d20] named "level 10 -- 49"
-output [crit 8d10+20 1d20] named "level 15 -- 83"
-output [crit 8d10+80 1d20] named "level 20 -- 143"
+* output [crit 2d6 1d20] named "level 1 -- 12"
+* output [crit 4d6 1d20] named "level 5 -- 22"
+* output [crit 6d10 1d20] named "level 10 -- 49"
+* output [crit 8d10+20 1d20] named "level 15 -- 83"
+* output [crit 8d10+80 1d20] named "level 20 -- 143"
 
 Subtracting the current (1 + half level) assumption for minimal investment bonuses to resistances,
 that suggests base vital resistance values of:
 
-level 1: 11
-level 5: 19
-level 10: 43
-level 15: 75
-level 20: 132
+* level 1: 11
+* level 5: 19
+* level 10: 43
+* level 15: 75
+* level 20: 132
 
 #### HDA vs lower level target
 
 A high damage attack should have a 96% chance of vitally wounding a low resistance target 5
 levels lower. Or so. This sort of works out, though things get a bit crazy at high levels.
 
-output [crit 4d6 1d20] >= 11 named "level 5"
-output [crit 6d10 1d20] >= 22 named "level 10"
-output [crit 8d10+20 1d20] >= 49 named "level 15"
-output [crit 8d10+80 1d20] >= 83 named "level 20"
+* output [crit 4d6 1d20] >= 11 named "level 5"
+* output [crit 6d10 1d20] >= 22 named "level 10"
+* output [crit 8d10+20 1d20] >= 49 named "level 15"
+* output [crit 8d10+80 1d20] >= 83 named "level 20"
 
 #### HDA vs low resistance target - high damage calcs
 
-output [crit 2d6 1d20] >= 13 named "level 1"
-output [crit 4d6 1d20] >= 23 named "level 5"
-output [crit 8d8 1d20] >= 55 named "level 10"
-output [crit 8d10+30 1d20] >= 105 named "level 15"
-output [crit 8d10+80 1d20] >= 160 named "level 20"
+* output [crit 2d6 1d20] >= 13 named "level 1"
+* output [crit 4d6 1d20] >= 23 named "level 5"
+* output [crit 8d8 1d20] >= 55 named "level 10"
+* output [crit 8d10+30 1d20] >= 105 named "level 15"
+* output [crit 8d10+80 1d20] >= 160 named "level 20"
 
 #### HDA vs lower level target - high damage calcs
 
-output [crit 4d6 1d20] >= 12 named "level 5"
-output [crit 8d8 1d20] >= 23 named "level 10"
-output [crit 8d10+30 1d20] >= 55 named "level 15"
-output [crit 8d10+80 1d20] >= 105 named "level 20"
+* output [crit 4d6 1d20] >= 12 named "level 5"
+* output [crit 8d8 1d20] >= 23 named "level 10"
+* output [crit 8d10+30 1d20] >= 55 named "level 15"
+* output [crit 8d10+80 1d20] >= 105 named "level 20"
