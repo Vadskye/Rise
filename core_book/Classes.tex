@@ -613,7 +613,7 @@ This choice determines a great deal about your character's abilities.
 
                 \rankline
                 \rank{3} The damage bonus increases to \plus3d.
-                \rank{5} The damage bonus increases to \plus4d.
+                \rank{5} The damage bonus increases to \plus4d, and the attack deals double damage to objects.
                 \rank{7} The damage bonus increases to \plus5d.
             \end{freeability}
             \parhead{Aspect} Your abilities deal double damage to objects.
@@ -2249,8 +2249,8 @@ This choice determines a great deal about your character's abilities.
 
             \rankline
             \rank{3} The damage bonus increases to \plus2d.
-            \rank{5} The damage bonus increases to \plus3d.
-            \rank{7} The damage bonus increases to \plus4d.
+            \rank{5} The damage bonus increases to \plus3d. In addition, you may choose to have the smite deal half damage to targets that share your alignment.
+            \rank{7} The damage bonus increases to \plus4d. In addition, you may choose to have the smite deal full damage to targets that share your alignment.
         \end{freeability}
 
         \cf{Pal}[2]{Zealous Offense} You gain a \plus1 bonus to \glossterm{accuracy}.
@@ -2271,6 +2271,8 @@ This choice determines a great deal about your character's abilities.
         \end{freeability}
 
         \cf{Pal}[4]{Zealous Fixation} You roll twice for \glossterm{miss chances} and take your preferred result.
+        In addition, you gain a \plus2 bonus to any roll that you use the \textit{desperate exertion} ability on.
+        This bonus stacks with the normal \plus2 bonus provided by that ability.
 
         \cf{Pal}[5]{Pass Judgment}[Magical] You can use the \textit{pass judgment} ability as a \glossterm{minor action}.
         \begin{freeability}{Pass Judgment}
@@ -2667,7 +2669,9 @@ This choice determines a great deal about your character's abilities.
             \rankline
             \rank{3} The damage bonus increases to \plus3d.
             \rank{5} The damage bonus increases to \plus4d.
+            In addition, the maximum range increases to \rngmed range.
             \rank{7} The damage bonus increases to \plus5d.
+            In addition, the maximum range increases to \rnglong range.
         \end{freeability}
 
         % TODO: wording
@@ -3337,6 +3341,7 @@ This choice determines a great deal about your character's abilities.
             \rank{3} The damage increases to \glossterm{standard damage} \plus2d.
             \rank{5} The damage increases to \glossterm{standard damage} \plus3d.
             \rank{7} The damage increases to \glossterm{standard damage} \plus4d.
+                In addition, the range increases to \rngmed range.
         \end{freeability}
 
         \cf{War}[2]{Fiendish Resistance} You gain a bonus equal to half your level to \glossterm{resistances} against \glossterm{energy damage}.
@@ -3344,12 +3349,14 @@ This choice determines a great deal about your character's abilities.
         \cf{War}[3]{Abyssal Jaunt} You can use the \textit{abyssal jaunt} ability as a standard action.
         \begin{freeability}{Abyssal Jaunt}[\glossterm{Magical}]
             Make an attack vs. Mental against one creature or object within \rngclose range.
-            \hit The target is teleported into the Abyss and takes fire \glossterm{standard damage} \minus2d.
-            At the end of the next round, it returns to its original location, or the closest open space if that location is occupied.
+            \hit The target is teleported briefly into the Abyss and takes fire \glossterm{standard damage}.
+            At the end of the round, it returns to its original location, or into the closest open space if that location is occupied.
+            \crit As above, except that the target takes double damage, and it does not return until the end of the next round.
 
             \rankline
-            \rank{5} The damage penalty is reduced to \minus1d.
-            \rank{7} The damage penalty is removed.
+            \rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+            \rank{7} The accuracy bonus increases to \plus2.
+                In addition, the range increases to \rngmed range.
         \end{freeability}
 
         \cf{War}[4]{Abyssal Substitution} Whenever you use an ability that deals \glossterm{energy damage} or any subtype of energy damage, you can change the type of the damage to fire damage.
