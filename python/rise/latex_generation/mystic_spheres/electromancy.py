@@ -135,7 +135,7 @@ spells=[
     """, tags=['Attune (target)']),
     Spell('Lightning Breath', 4, 'Yourself (see text)', """
         As a standard action, you can breathe electricity like a dragon.
-        When you do, make an attack vs Reflex against everything within a \\arealarge cone.
+        When you do, make an attack vs. Reflex against everything within a \\arealarge cone.
         \\hit Each target takes electricity \\glossterm<standard damage> +1d.
 
         You can cast this spell as a \\glossterm<minor action>.
@@ -165,6 +165,14 @@ spells=[
         \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
         \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
     """, tags=['Attune (self)']),
+    Spell('Electrocute', 5, 'One creature within \\rngmed range', """
+        Make an attack vs. Fortitude against the target.
+        \\hit The target takes electricity \\glossterm<standard damage> +3d.
+        If this damage would inflict a \\glossterm<vital wound>, it inflicts an additional \\glossterm<vital wound>.
+
+        \\rankline
+        \\rank<7> The damage increases to \\glossterm<standard damag> +4d.
+    """, tags=[]),
 ],
 category='damage',
 )

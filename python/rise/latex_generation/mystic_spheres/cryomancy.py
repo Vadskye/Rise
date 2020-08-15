@@ -203,7 +203,7 @@ cryomancy=MysticSphere(
         """, tags=[]),
         Spell('Frost Breath', 4, 'Yourself', """
             As a standard action, you can breathe cold like a dragon.
-            When you do, make an attack vs Fortitude against everything in a \\arealarge cone.
+            When you do, make an attack vs. Fortitude against everything in a \\arealarge cone.
             \\hit Each target takes cold \\glossterm<standard damage>.
 
             You can cast this spell as a \\glossterm<minor action>.

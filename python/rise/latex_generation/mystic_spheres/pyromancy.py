@@ -109,8 +109,8 @@ pyromancy=MysticSphere(
         Spell('Immolate', 5, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target takes fire \\glossterm<standard damage> +3d.
-            In addition, if the target has no hit points remaining at the end of the current \\glossterm<phase>, it dies.
-            Its body is completely disintegrated, leaving behind only a pinch of ash.
+            If this damage would inflict a \\glossterm<vital wound>, it inflicts an additional \\glossterm<vital wound>.
+            A target that dies from those vital wounds is completely disintegrated, leaving behind only a pinch of ash.
             Its equipment is unaffected.
 
             \\rankline
@@ -127,7 +127,7 @@ pyromancy=MysticSphere(
         """, tags=[]),
         Spell('Flame Breath', 4, 'Yourself (see text)', """
             As a standard action, you can breathe fire like a dragon.
-            When you do, make an attack vs Reflex against everything within a \\arealarge cone from you.
+            When you do, make an attack vs. Reflex against everything within a \\arealarge cone from you.
             \\hit Each target takes fire \\glossterm<standard damage> +1d.
 
             You can cast this spell as a \\glossterm<minor action>.
