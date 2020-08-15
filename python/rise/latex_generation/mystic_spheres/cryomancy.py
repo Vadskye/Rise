@@ -212,17 +212,6 @@ cryomancy=MysticSphere(
             \\rank<6> The damage increases to \\glossterm<standard damage> +1d.
             \\rank<8> The damage increases to \\glossterm<standard damage> +2d.
         """, tags=['Attune (self)']),
-        Spell('Frostfall', 4, None, """
-            The temperature in a two mile radius cylinder-shaped \\glossterm<zone> from your location decreases rapidly.
-            After one minute, the temperature decreases by 50 degrees Fahrenheit, to a minimum of \\minus50 degrees.
-            Unlike normal, this effect does not require \\glossterm<line of effect> to you.
-            Instead, it affects all outdoor locations within the area.
-            Even a thin barrier, such as a tent, is enough to protect locations from the effect of this ritual.
-
-            \\rankline
-            \\rank<6> The temperature decreases by 70 degrees, to a minimum of \\minus70 degrees.
-            \\rank<8> The temperature decreases by 90 degrees, to a minimum of \\minus90 degrees.
-        """, tags=['Sustain (minor)']),
         Spell('Frostburn', 6, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit As a \\glossterm<condition>, the target is seared by painful cold.
@@ -232,6 +221,21 @@ cryomancy=MysticSphere(
             \\rankline
             \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=[]),
+    ],
+    rituals=[
+        Spell('Frostfall', 4, None, """
+            The temperature in a two mile radius cylinder-shaped \\glossterm<zone> from your location decreases rapidly.
+            Over the next minute after you finish this ritual, the temperature decreases by 40 degrees Fahrenheit, to a minimum of \\minus30 degrees.
+            Unlike normal, this effect does not require \\glossterm<line of effect> to you.
+            Instead, it affects all outdoor locations within the area.
+            Even a thin barrier, such as a tent, is enough to protect locations from the effect of this ritual.
+
+            This ritual takes one hour to perform.
+
+            \\rankline
+            \\rank<6> The temperature decreases by 50 degrees, to a minimum of \\minus50 degrees.
+            \\rank<8> The temperature decreases by 60 degrees, to a minimum of \\minus70 degrees.
+        """, tags=['Attune (self)']),
     ],
     category='damage',
 )

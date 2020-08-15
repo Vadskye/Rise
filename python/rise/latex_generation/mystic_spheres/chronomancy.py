@@ -186,6 +186,24 @@ chronomancy=MysticSphere(
             \\rank<6> You also gain a +1 \\glossterm<magic bonus> to Reflex defense.
             \\rank<8> The defense bonus increases to +2.
         """, tags=['Attune (self)']),
+        Spell('Minor Acceleration', 6, 'Yourself', """
+            You can take two \\glossterm<minor actions> each round instead of one.
+            You cannot take the same minor action twice in the same round.
+
+            \\rankline
+            \\rank<8> You can take the same minor action twice in the same round, but not twice in the same phase.
+        """, tags=['Attune (self)']),
+        Spell('Accelerate Aging', 5, 'One creature within \\rngmed range', """
+            Make an attack vs. Mental against the target.
+            \\hit As a \\glossterm<condition>, the target's body temporarily ages to become extremely old.
+            The target suffers a -4 penalty to \\glossterm<accuracy>, \\glossterm<checks>, Armor defense, Fortitude defense, and Reflex defense.
+            These penalties are doubled if the target was already suffering age-related penalties.
+            In addition, the target moves at half speed.
+            \\crit As above, except that the penalties increase to -6.
+
+            \\rankline
+            \\rank<7> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+        """, tags=[]),
     ],
     rituals=[
         Spell('Gentle Repose', 3, 'One unattended, nonmagical object within \\rngclose range', """

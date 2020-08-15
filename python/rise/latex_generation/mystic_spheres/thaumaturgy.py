@@ -32,14 +32,13 @@ thaumaturgy=MysticSphere(
             \\rank<5> The damage increases to \\glossterm<standard damage>.
             \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
         """, tags=[]),
-        Spell('Magic Missile Storm', 4, 'Each \\glossterm<enemy> within a \\areamed radius from you', """
+        Spell('Magic Missile Storm', 5, '\\glossterm<Enemies> in a \\areasmall radius within \\rngmed range', """
             You send an unerring projectile made of pure magical energy towards each target.
-            Each target takes energy \\glossterm<standard damage> -3d.
+            Each target takes energy \\glossterm<standard damage> -2d.
             If this damage does not \\glossterm<wound> a target, it has no effect, and that target does not lose any \\glossterm<hit points>.
 
             \\rankline
-            \\rank<6> The area increases to a \\arealarge radius.
-            \\rank<8> The area increases to a \\areahuge radius.
+            \\rank<7> The area increases to a \\areamed radius.
         """, tags=[]),
         Spell('Suppress Magic', 1, 'One creature, object, or magical effect within \\rngmed range', """
             Make an attack against the target.
@@ -259,6 +258,8 @@ thaumaturgy=MysticSphere(
             \\rank<6> The area increases to a \\areamed radius.
             \\rank<8> The range increases to \\rnglong.
         """, tags=['Sustain (minor)']),
+    ],
+    rituals=[
         Spell('Purge Curse', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             All curses affecting the target are removed.
             This ritual cannot remove a curse that is part of the effect of an item the target has equipped.
