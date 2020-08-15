@@ -690,15 +690,19 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Focused Strike',
         short_description='You concentrate to strike a critical blow',
-        target="As chosen \\glossterm<strike>",
+        target="One creature within \\rngclose range",
         effect_text="""
-            Make a melee \\glossterm<strike> with a \\minus1d penalty to damage.
+            You can only use this ability during the \\glossterm<action phase>.
+            During that phase, you concentrate on your target.
+            You only suffer a \\glossterm<focus penalty> for this attack during the action phase.
+
+            During the \\glossterm<delayed action phase>, you can a melee \\glossterm<strike> against the target with a \\minus1d penalty to damage.
             The attack roll \\glossterm<explodes> regardless of what you roll.
         """,
         rank_upgrades={
-            '3': 'You also gain a \\plus1 bonus to \\glossterm<accuracy> with the strike.',
-            '5': 'You reduce your \\glossterm<focus penalties> with this ability by 1.',
-            '7': 'The accuracy bonus increases to \\plus2.',
+            '3': 'You also gain a +1 bonus to \\glossterm<accuracy> with the strike.',
+            '5': 'The accuracy bonus increases to +2.',
+            '7': 'The accuracy bonus increases to +3.',
         },
         tags=['Focus'],
         lists=['Esoteric', 'Martial'],
