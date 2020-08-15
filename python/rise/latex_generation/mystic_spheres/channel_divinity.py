@@ -139,7 +139,7 @@ channel_divinity=MysticSphere(
             \\rank<8> You can increase your size by two size categories instead of one.
         """, tags=['Attune (self)']),
         Spell('Divine Presence', 3, '\\glossterm<Enemies> in the area (see text)', """
-            You radiate an aura that invokes a fear of your divine connection in a \\areasmall radius \\glossterm<emanation> from you.
+            You radiate an aura in a \\areasmall radius \\glossterm<emanation> from you that invokes a fear of your divine connection.
             When you attune to this spell, and during each \\glossterm<action phase> in subsequent rounds, make an attack vs. Mental against each target.
             You cannot make this attack more than once against any individual target during this spell's duration.
             \\hit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
