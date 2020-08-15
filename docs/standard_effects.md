@@ -1,5 +1,13 @@
 # Standard spell and maneuver effects
 
+## Ability scaling
+
+In general, automatic rank upgrades should be similar to to a normal spell of the higher level, but
+slightly weaker. In general, high level spells should come with additional narrative effects, small
+bonuses, and half-rank upgrades to make them more appealing and compensate for the downside of using
+abilities that can't be augmented or upgraded. This is especially true for damaging effects, since
+debuff abilities already have nonlinear scaling in a way that pure damage spells do not.
+
 ## Range balancing
 
 Standard range = Med range for spell, melee/ranged for martial
