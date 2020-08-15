@@ -80,6 +80,11 @@ chronomancy=MysticSphere(
             \\rankline
             \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=[]),
+        Spell('Mass Decelerate', 7, '\\glossterm<Enemies> in a \\areamed radius within \\rngmed range', """
+            Make an attack vs. Mental against each target.
+            \\hit Each target is \\glossterm<decelerated> until the end of the next round.
+            \\crit Each target is \\glossterm<decelerated> as a \\glossterm<condition>.
+        """, tags=[]),
         Spell('Mental Lag', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<slowed> and \\glossterm<dazed> as a single \\glossterm<condition>.
@@ -137,6 +142,16 @@ chronomancy=MysticSphere(
             \\rankline
             \\rank<5> The maximum size of the target increases to Large.
             \\rank<7> The maximum size of the target increases to Huge.
+        """, tags=[]),
+        Spell('Mass Slow', 1, '\\glossterm<Enemies> in a \\areamed radius within \\rngmed range', """
+            Make an attack vs. Mental against each target.
+            \\hit Each target is \\glossterm<slowed> until the end of the next round.
+            \\crit Each target is \\glossterm<slowed> as a \\glossterm<condition>.
+
+            \\rankline
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<5> The accuracy bonus increases to +2.
+            \\rank<7> The accuracy bonus increases to +3.
         """, tags=[]),
         Spell('Temporal Stasis', 4, 'Yourself or one Medium or smaller \\glossterm<ally> within \\rngmed range', """
             The target is placed into stasis, rendering it unconscious.
@@ -203,6 +218,20 @@ chronomancy=MysticSphere(
 
             \\rankline
             \\rank<7> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+        """, tags=[]),
+        Spell('Instant Analysis', 3, 'Yourself', """
+            You freeze time for five rounds.
+            During this time, all creatures and objects are fixed in time, and cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
+            Your mind remains active during this time, and you are the only one aware of the stoppage of time.
+            You cannot move or take any actions other than to observe your surroundings.
+            In addition, you can release the time freeze as a \\glossterm<free action>.
+            When this spell ends, time resumes in the same phase that it was originally frozen.
+
+            After casting this spell, you cannot cast it again until you take a \\glossterm<short rest>.
+
+            \\rankline
+            \\rank<5> You can cast this spell as a \\glossterm<minor action>.
+            \\rank<7> The length of frozen time increases to five minutes.
         """, tags=[]),
     ],
     rituals=[
