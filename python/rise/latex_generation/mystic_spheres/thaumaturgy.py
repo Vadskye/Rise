@@ -252,7 +252,7 @@ thaumaturgy=MysticSphere(
         """, tags=['Attune (self)']),
         Spell('Spellward', 4, 'Creatures in a \\areasmall radius \\glossterm<zone> within \\rngmed range', """
             You seal off an area's connection to magic.
-            Whenever a creature casts a spell in the area, it has a 50\% chance to \\glossterm<miscast> the spell.
+            Whenever a creature casts a spell in the area, it has a 50\\% chance to \\glossterm<miscast> the spell.
 
             \\rankline
             \\rank<6> The area increases to a \\areamed radius.
