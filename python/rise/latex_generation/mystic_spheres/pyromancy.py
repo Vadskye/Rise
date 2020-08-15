@@ -191,17 +191,21 @@ pyromancy=MysticSphere(
             \\rank<6> The damage increases to \\glossterm<standard damage> +1d.
             \\rank<8> The damage increases to \\glossterm<standard damage> +2d.
         """, tags=['Sustain (minor)']),
+    ],
+    rituals=[
         Spell('Heat Wave', 4, None, """
             The temperature in a two mile radius cylinder-shaped \\glossterm<zone> from your location increases rapidly.
+            Over the next minute after you finish this ritual, the temperature increases by 40 degrees Fahrenheit, to a maximum of 120 degrees.
             Unlike normal, this effect does not require \\glossterm<line of effect> to you.
             Instead, it affects all outdoor locations within the area.
             Even a thin barrier, such as a tent, is enough to protect locations from the effect of this ritual.
-            After one minute, the temperature increases by 50 degrees Fahrenheit, to a maximum of 140 degrees.
+
+            This ritual takes one hour to perform.
 
             \\rankline
-            \\rank<6> The temperature increases by 70 degrees, to a maximum of 160 degrees.
-            \\rank<8> The temperature increases by 90 degrees, to a maximum of 180 degrees.
-        """, tags=['Sustain (minor)']),
+            \\rank<6> The temperature increases by 50 degrees, to a maximum of 140 degrees.
+            \\rank<8> The temperature increases by 60 degrees, to a maximum of 160 degrees.
+        """, tags=['Attune (self)']),
     ],
     category='damage',
 )
