@@ -2717,14 +2717,14 @@ You can cast this spell as a \glossterm{minor action}.
 \lowercase{\hypertarget{spell:Divine Presence}{}}\label{spell:Divine Presence}
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Divine Presence}{Divine Presence}}[\glossterm{Attune} (self), \glossterm{Emotion}, \glossterm{Focus}]
 \targets{\glossterm{Enemies} in the area (see text)}
-You radiate an aura that invokes a fear of your divine connection in a \areamed radius \glossterm{emanation} from you.
+You radiate an aura that invokes a fear of your divine connection in a \areasmall radius \glossterm{emanation} from you.
 When you attune to this spell, and during each \glossterm{action phase} in subsequent rounds, make an attack vs. Mental against each target.
 You cannot make this attack more than once against any individual target during this spell's duration.
 \hit Each target is \glossterm{shaken} by you as a \glossterm{condition}.
 
 \rankline
-\rank{5} The area increases to a \arealarge radius \glossterm{emanation}.
-\rank{7} The area increases to a \areahuge radius \glossterm{emanation}.
+\rank{5} The area increases to a \areamed radius \glossterm{emanation}.
+\rank{7} The area increases to a \arealarge radius \glossterm{emanation}.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -4050,7 +4050,7 @@ You gain a \plus3 \glossterm{magic bonus} to the Persuasion skill.
 \lowercase{\hypertarget{spell:Demotivate}{}}\label{spell:Demotivate}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Demotivate}{Demotivate}}[\glossterm{Emotion}, \glossterm{Focus}]
 \target{One creature within \rngmed range}
-Make an attack vs Mental with a \plus3 bonus against the target.
+Make an attack vs. Mental with a \plus3 bonus against the target.
 \hit As a \glossterm{condition}, the target takes a \minus2 penalty to Mental defense.
 
 \rankline
@@ -4078,10 +4078,26 @@ For example, it could make a \glossterm{strike} or cast an offensive spell, but 
 
 
 
+\lowercase{\hypertarget{spell:Mass Terror}{}}\label{spell:Mass Terror}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Mass Terror}{Mass Terror}}[\glossterm{Emotion}, \glossterm{Focus}]
+\targets{\glossterm{Enemies} in a \areamed radius within \rngmed range}
+Make an attack vs. Mental against each target.
+\hit Each target is \glossterm{shaken} by you until the end of the next round.
+\crit Each target is \glossterm{shaken} by you as a \glossterm{condition}.
+
+\rankline
+\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{5} The accuracy bonus increases to \plus2.
+\rank{7} The accuracy bonus increases to \plus3.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Motivate}{}}\label{spell:Motivate}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Motivate}{Motivate}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself or one \glossterm{ally} within \rngmed range}
-The target gains a \plus2 bonus to Mental defense.
+The target gains a \plus2 \glossterm{magic bonus} to Mental defense.
 
 \rankline
 \rank{3} The bonus increases to \plus3.
@@ -4151,6 +4167,38 @@ An observant target may interpret overt threats to its allies as a threat to its
 \rank{5} You may target two creature within range.
 \rank{7} You may target three creatures within range.
 \end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Curse of Phobia}{}}\label{spell:Curse of Phobia}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Curse of Phobia}{Curse of Phobia}}[\glossterm{Focus}]
+\target{One creature within \rngmed range}
+When you cast this spell, choose one of the following fears: blood (including any \glossterm{bloodied} creature, even the target), darkness (any location that does not have \glossterm{bright illumination}), heights (any drop more 10 feet high), insects, snakes, or water.
+Make an attack vs. Mental against the target.
+\hit The is \glossterm{shaken} by all sources of your chosen fear until it takes a \glossterm{short rest}.
+\crit As above, except that the effect lasts until this curse is removed.
+
+\rankline
+\rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\rank{7} The accuracy bonus increases to \plus2.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Enticing Target}{}}\label{spell:Enticing Target}
+\begin{attuneability}[Rank 3]{\hypertarget{spell:Enticing Target}{Enticing Target}}[\glossterm{Attune} (self), \glossterm{Emotion}, \glossterm{Focus}]
+\targets{\glossterm{Enemies} in the area (see text)}
+You radiate an aura in a \areasmall radius \glossterm{emanation} from you that encourages your enemies to attack you.
+When you attune to this spell, and during each \glossterm{action phase} in subsequent rounds, make an attack vs. Mental against each target.
+You cannot make this attack more than once against any individual target during this spell's duration.
+\hit Each target is \glossterm{goaded} by you as a \glossterm{condition}.
+
+\rankline
+\rank{5} The area increases to a \areamed radius \glossterm{emanation}.
+\rank{7} The area increases to a \arealarge radius \glossterm{emanation}.
+\end{attuneability}
 \vspace{0.25em}
 
 
@@ -4226,6 +4274,19 @@ Make an attack vs. Mental against the target.
 
 \rankline
 \rank{8} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Solipsism}{}}\label{spell:Solipsism}
+\begin{freeability}[Rank 7]{\hypertarget{spell:Solipsism}{Solipsism}}[\glossterm{Focus}, \glossterm{Subtle}]
+\target{One creature within \rngmed range}
+Make an attack vs. Mental against the target.
+\hit As a \glossterm{condition}, target believes that it is the only real creature, and the rest of the world is an illusion.
+It may wander aimlessly, but generally takes no action to defend itself and does not perceive itself to be in danger from other creatures.
+It still avoids obvious environmental hazards, such as cliff edges or fires.
+If it loses any \glossterm{hit points} or is otherwise harmed, including subjective pain or discomfort, this effect is automatically broken.
 \end{freeability}
 \vspace{0.25em}
 
