@@ -32,6 +32,16 @@ delusion=MysticSphere(
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=['Emotion']),
+        Spell('Mass Terror', 1, '\\glossterm<Enemies> in a \\areamed radius within \\rngmed range', """
+            Make an attack vs. Mental against each target.
+            \\hit Each target is \\glossterm<shaken> by you until the end of the next round.
+            \\crit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
+
+            \\rankline
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<5> The accuracy bonus increases to +2.
+            \\rank<7> The accuracy bonus increases to +3.
+        """, tags=['Emotion']),
         Spell('Panic', 6, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\panicked by you as a \\glossterm<condition>.
@@ -49,15 +59,6 @@ delusion=MysticSphere(
             \\rank<5> The area increases to a \\arealarge radius \\glossterm<emanation>.
             \\rank<7> The area increases to a \\areahuge radius \\glossterm<emanation>.
         """, tags=['Attune (self)', 'Emotion']),
-        # Math: at 1st level, power is probably ~2, so standard damage is probably 2d6.
-        # Casting this spell and then two standard damage spells deals 4d6+2d8 = 23 damage
-        # casting three standard damage spells deals 6d6 = 21 damage
-        # So when fighting alone, this takes 3 rounds of effectiveness to be equal
-        # in power to a simple damage spell.
-
-        # At 20th level, power is ~22, so standard damage is 9d10
-        # Casting this spell and then two standard damage spells deals 18d10+7d10=25d10
-        # Casting three standard damage spells deals 27d10
         Spell('Agony', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target is inflicted with agonizing pain as a \\glossterm<condition>.
@@ -129,8 +130,28 @@ delusion=MysticSphere(
             \\rank<6> The range increases to \\rnglong.
             \\rank<8> The area increases to a \\arealarge radius.
         """, tags=['Emotion']),
+        Spell('Enticing Target', 3, '\\glossterm<Enemies> in the area (see text)', """
+            You radiate an aura in a \\areasmall radius \\glossterm<emanation> from you that encourages your enemies to attack you.
+            When you attune to this spell, and during each \\glossterm<action phase> in subsequent rounds, make an attack vs. Mental against each target.
+            You cannot make this attack more than once against any individual target during this spell's duration.
+            \\hit Each target is \\glossterm<goaded> by you as a \\glossterm<condition>.
+
+            \\rankline
+            \\rank<5> The area increases to a \\areamed radius \\glossterm<emanation>.
+            \\rank<7> The area increases to a \\arealarge radius \\glossterm<emanation>.
+        """, tags=['Attune (self)', 'Emotion']),
+        Spell('Curse of Phobia', 3, 'One creature within \\rngmed range', """
+            When you cast this spell, choose one of the following fears: blood (including any \\glossterm<bloodied> creature, even the target), darkness (any location that does not have \\glossterm<bright illumination>), heights (any drop more 10 feet high), insects, snakes, or water.
+            Make an attack vs. Mental against the target.
+            \\hit The is \\glossterm<shaken> by all sources of your chosen fear until it takes a \\glossterm<short rest>.
+            \\crit As above, except that the effect lasts until this curse is removed.
+
+            \\rankline
+            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<7> The accuracy bonus increases to +2.
+        """, tags=[]),
         Spell('Demotivate', 1, 'One creature within \\rngmed range', """
-            Make an attack vs Mental with a +3 bonus against the target.
+            Make an attack vs. Mental with a +3 bonus against the target.
             \\hit As a \\glossterm<condition>, the target takes a -2 penalty to Mental defense.
 
             \\rankline
@@ -139,7 +160,7 @@ delusion=MysticSphere(
             \\rank<7> The penalty increases to -5.
         """, tags=['Emotion']),
         Spell('Motivate', 1, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
-            The target gains a +2 bonus to Mental defense.
+            The target gains a +2 \\glossterm<magic bonus> to Mental defense.
 
             \\rankline
             \\rank<3> The bonus increases to +3.
@@ -162,6 +183,13 @@ delusion=MysticSphere(
             \\rank<5> The bonus increases to +5.
             \\rank<7> The bonus increases to +6.
         """, tags=['Attune (self)']),
+        Spell('Solipsism', 7, 'One creature within \\rngmed range', """
+            Make an attack vs. Mental against the target.
+            \\hit As a \\glossterm<condition>, target believes that it is the only real creature, and the rest of the world is an illusion.
+            It may wander aimlessly, but generally takes no action to defend itself and does not perceive itself to be in danger from other creatures.
+            It still avoids obvious environmental hazards, such as cliff edges or fires.
+            If it loses any \\glossterm<hit points> or is otherwise harmed, including subjective pain or discomfort, this effect is automatically broken.
+        """, tags=['Subtle']),
     ],
     category='debuff, combat',
 )
