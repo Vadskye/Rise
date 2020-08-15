@@ -8,6 +8,10 @@ bonuses, and half-rank upgrades to make them more appealing and compensate for t
 abilities that can't be augmented or upgraded. This is especially true for damaging effects, since
 debuff abilities already have nonlinear scaling in a way that pure damage spells do not.
 
+This also means that some class abilities may need small scaling bumps to ensure that they stay
+relevant with high level spells and maneuvers. This mainly applies to pure damage abilities like
+Sneak Attack or Smite.
+
 ## Range balancing
 
 Standard range = Med range for spell, melee/ranged for martial
