@@ -106,16 +106,15 @@ pyromancy=MysticSphere(
             \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=[]),
-        Spell('Immolate', 4, 'One creature within \\rngmed range', """
+        Spell('Immolate', 5, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
-            \\hit The target takes fire \\glossterm<standard damage> +2d.
+            \\hit The target takes fire \\glossterm<standard damage> +3d.
             In addition, if the target has no hit points remaining at the end of the current \\glossterm<phase>, it dies.
             Its body is completely disintegrated, leaving behind only a pinch of ash.
             Its equipment is unaffected.
 
             \\rankline
-            \\rank<6> The damage increases to \\glossterm<standard damage> +3d.
-            \\rank<8> The damage increases to \\glossterm<standard damage> +4d.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=[]),
         Spell('Heat Metal', 5, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
