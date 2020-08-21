@@ -63,6 +63,16 @@ telekinesis=MysticSphere(
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=[]),
+        Spell('Reload', 1, 'Yourself', """
+            This spell does not have \\glossterm<somatic components>, and you can cast it as a \\glossterm<minor action>.
+            You reload any projectile weapon you wield with ammunition easily accessible on your body.
+
+            \\rankline
+            \\rank<3> This spell no longer has the \\glossterm<Focus> tag.
+            \\rank<5> You can cast this spell as a \\glossterm<free action>.
+            However, you can only cast it once per round.
+            \\rank<7> This spell no longer has \\glossterm<verbal components>.
+        """, tags=[]),
         Spell('Mass Kinetic Impedance', 1, '\\glossterm<Enemies> in a \\areamed radius within \\rngmed range', """
             Make an attack vs. Mental against each target.
             \\hit Each target is \\glossterm<slowed> until the end of the next round.
