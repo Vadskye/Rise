@@ -59,6 +59,14 @@ pyromancy=MysticSphere(
             \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=[], focus=False),
+        Spell('Pyroclasm', 5, 'Everything in a a \\areamed radius within \\rngmed range', """
+            Make an attack vs. Reflex against each target.
+            \\hit Each target takes fire \\glossterm<standard damage> -1d.
+            In addition, if the target is a flammable object, it is \\glossterm<ignited>.
+
+            \\rankline
+            \\rank<7> The area increases to a \\arealarge radius.
+        """, tags=[]),
         Spell('Fireball', 3, 'Everything in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Reflex against each target.
             \\hit Each target takes fire \\glossterm<standard damage> -1d.
