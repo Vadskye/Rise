@@ -257,6 +257,24 @@ aquamancy=MysticSphere(
             \\rank<5> The area increases to a \\areahuge line.
             \\rank<7> The area increases to a \\areaext line.
         """, tags=['Manifestation', 'Sustain (minor)']),
+        Spell('Fluid Motion', 5, 'Yourself', """
+            When you move, you can transform yourself into a rushing flow of water with a volume roughly equal to your normal volume until your movement is complete.
+            You can only transform into water in this way once during your movement, and you regain your normal form at the end of the movement.
+            In this form, you may move wherever water could go, you cannot take other actions, such as jumping, attacking, or casting spells.
+            You may move through squares occupied by enemies without penalty.
+            Being \\glossterm<grappled> or otherwise physically constrained does not prevent you from transforming into water in this way.
+
+            Your speed is halved when moving uphill and doubled when moving downhill.
+            Unusually steep inclines may cause greater movement differences while in this form.
+
+            If the water is split, you may reform from anywhere the water has reached, to as little as a single ounce of water.
+            If not even an ounce of water exists contiguously, your body reforms from all of the largest available sections of water, cut into pieces of appropriate size.
+            This usually causes you to die.
+
+            \\rankline
+            \\rank<7> You can transform to and from water any number of times during a single movement.
+            You must still regain your normal form at the end of the movement.
+        """, tags=['Attune (self)']),
     ],
     rituals=[
         Spell('Dampen', 1, 'Up to five ritual participants', """
