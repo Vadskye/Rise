@@ -170,15 +170,11 @@ astromancy=MysticSphere(
             \\rank<5> The failure chance increases to 40\\%.
             \\rank<7> The failure chance increases to 50\\%.
         """, tags=['Attune (self)']),
-        Spell('Controlled Flicker', 4, 'Yourself', """
-            You randomly flicker between your current plane and the Astral Plane.
-            This flickering stops when you take actions on your current plane.
-            In any phase where you do not take any actions, \\glossterm<targeted> \\glossterm<strikes> against you have a 50\\% failure chance as you happen to be in the Astral Plane when the attack would hit.
-            You are still affected normally by abilities that affect an area.
+        Spell('Controlled Flicker', 3, 'Yourself', """
+            This spell functions like the \\textit<flicker> spell, except that you can choose at the start of each round to stop flickering for that round.
 
-            \\rankline
-            \\rank<6> This protects you against \\glossterm<mundane> \\glossterm<targeted> attacks instead of only from \\glossterm<strikes>.
-            \\rank<8> This protects you against all \\glossterm<targeted> attacks.
+            \\rank<5> The failure chance increases to 30\\%.
+            \\rank<7> The failure chance increases to 40\\%.
         """, tags=['Attune (self)']),
         Spell('Transposition', 3, 'Two Large or smaller creatures within \\rngmed range', """
             Make an attack vs. Mental against each target.
