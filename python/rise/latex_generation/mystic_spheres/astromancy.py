@@ -172,6 +172,7 @@ astromancy=MysticSphere(
         """, tags=['Attune (self)']),
         Spell('Controlled Flicker', 3, 'Yourself', """
             This spell functions like the \\textit<flicker> spell, except that you can choose at the start of each round to stop flickering for that round.
+            If you do, your attacks do not have a failure chance, and attacks against you also do not have a failure chance.
 
             \\rank<5> The failure chance increases to 30\\%.
             \\rank<7> The failure chance increases to 40\\%.
