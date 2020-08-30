@@ -326,7 +326,7 @@ def generate_armor():
     ))
 
     apparel.append(MagicItem(
-        name="Acid Coated",
+        name="Acidic Armor",
         level=5,
         material_type='Body armor',
         tags=[],
@@ -339,7 +339,7 @@ def generate_armor():
     ))
 
     apparel.append(MagicItem(
-        name="Agile",
+        name="Agile Armor",
         level=6,
         material_type='Body armor',
         tags=[],
@@ -350,7 +350,7 @@ def generate_armor():
     ))
 
     apparel.append(MagicItem(
-        name="Agile, Greater",
+        name="Agile Armor, Greater",
         level=15,
         material_type='Body armor',
         tags=[],
@@ -361,7 +361,7 @@ def generate_armor():
     ))
 
     apparel.append(MagicItem(
-        name="Fortified",
+        name="Fortified Armor",
         level=6,
         material_type='Body armor',
         tags=[],
@@ -372,7 +372,7 @@ def generate_armor():
     ))
 
     apparel.append(MagicItem(
-        name="Fortified, Greater",
+        name="Fortified Armor, Greater",
         level=15,
         material_type='Body armor',
         tags=[],
@@ -383,7 +383,7 @@ def generate_armor():
     ))
 
     apparel.append(MagicItem(
-        name="Willguard",
+        name="Willguard Armor",
         level=6,
         material_type='Body armor',
         tags=[],
@@ -394,7 +394,7 @@ def generate_armor():
     ))
 
     apparel.append(MagicItem(
-        name="Willguard, Greater",
+        name="Willguard Armor, Greater",
         level=15,
         material_type='Body armor',
         tags=[],
@@ -405,7 +405,7 @@ def generate_armor():
     ))
 
     apparel.append(MagicItem(
-        name="Anchoring",
+        name="Anchoring Armor",
         level=7,
         material_type='Body armor',
         tags=[],
@@ -417,7 +417,7 @@ def generate_armor():
     ))
 
     apparel.append(MagicItem(
-        name="Anchoring, Greater",
+        name="Anchoring Armor, Greater",
         level=13,
         material_type='Body armor',
         tags=[],
@@ -429,8 +429,8 @@ def generate_armor():
     ))
 
     apparel.append(MagicItem(
-        name="Translocation",
-        level=5,
+        name="Armor of Translocation",
+        level=7,
         material_type='Body armor',
         tags=[],
         description="""
@@ -441,25 +441,43 @@ def generate_armor():
     ))
 
     apparel.append(MagicItem(
-        name="Translocation, Greater",
-        level=11,
+        name="Armor of Translocation, Greater",
+        level=12,
         material_type='Body armor',
         tags=[],
         description="""
-            This item functions like the \\mitem<translocation> item, except that the range increases to \\rngmed.
+            This item functions like the \\mitem<armor of translocation> item, except that the range increases to \\rngmed.
         """,
         short_description="Grants ability to teleport up to 100 feet",
     ))
 
     apparel.append(MagicItem(
-        name="Translocation, Supreme",
+        name="Armor of Translocation, Supreme",
         level=17,
         material_type='Body armor',
         tags=[],
         description="""
-            This item functions like the \\mitem<translocation> item, except that the range increases to \\rnglong.
+            This item functions like the \\mitem<armor of translocation> item, except that the range increases to \\rnglong.
         """,
         short_description="Grants ability to teleport up to 300 feet",
+    ))
+
+    apparel.append(MagicItem(
+        name="Shield of Medusa",
+        level=8,
+        material_type='Shield',
+        tags=['Visual'],
+        description="""
+            This shield normally has a cloth covering its face.
+            As a standard action, you can pull the cloth back and reveal the horrifying face emblazoned on the shield.
+            When you do, make an attack vs. Fortitude against each creature within a \\areamed cone.
+            On a hit, each target is \\glossterm<nauseated> until the end of the next round.
+            On a \\glossterm<critical hit>, each target is \\glossterm<paralyzed> until the end of the next round.
+            In either case, each target is immune to this ability until it takes a \\glossterm<short rest>.
+
+            If the cloth is prematurely pulled back, allowing creatures to see the shield without a dramatic reveal, the shield has no effect.
+        """,
+        short_description="Grants ability to briefly nauseate nearby foes",
     ))
 
     # Other
@@ -1082,7 +1100,7 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Amulet of Translocation",
-        level=5,
+        level=7,
         material_type='Amulet',
         tags=[],
         description="""
@@ -1094,7 +1112,7 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Amulet of Translocation, Greater",
-        level=11,
+        level=12,
         material_type='Amulet',
         tags=[],
         description="""
