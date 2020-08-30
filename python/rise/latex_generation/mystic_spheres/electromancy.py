@@ -173,6 +173,14 @@ spells=[
         \\rankline
         \\rank<7> The damage increases to \\glossterm<standard damag> +4d.
     """, tags=[]),
+    Spell('Shock and Awe', 5, '\\glossterm<Enemies> in a \\areamed radius within \\rngmed range', """
+         Make an attack vs. Fortitude against each target.
+         \\hit Each target is \\glossterm<stunned> and \\glossterm<disoriented> until the end of the next round.
+         \\ Each target is \\glossterm<stunned> and \\glossterm<disoriented> as a single \\glossterm<condition>.
+
+         \\rankline
+         \\rank<7> The area increases to a \\arealarge radius.
+    """, tags=[]),
 ],
 category='damage',
 )
