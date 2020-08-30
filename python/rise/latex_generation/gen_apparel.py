@@ -325,6 +325,145 @@ def generate_armor():
         short_description="React to reflect magical attacks",
     ))
 
+    apparel.append(MagicItem(
+        name="Acid Coated",
+        level=5,
+        material_type='Body armor',
+        tags=[],
+        description="""
+            At the end of each round, if this armor is making significant contact against a creature or object other than you and your equipment, make an attack vs. Fortitude against it.
+            Generally, you can only affect another creature with this armor if you are \\glossterm<grappling> it.
+            On a hit, the target takes acid \\glossterm<standard damage>.
+        """,
+        short_description="Deals acid damage to anything it touches",
+    ))
+
+    apparel.append(MagicItem(
+        name="Agile",
+        level=6,
+        material_type='Body armor',
+        tags=[],
+        description="""
+            You gain a +2 \\glossterm<magic bonus> to Reflex defense.
+        """,
+        short_description="Grants +2 Reflex defense",
+    ))
+
+    apparel.append(MagicItem(
+        name="Agile, Greater",
+        level=15,
+        material_type='Body armor',
+        tags=[],
+        description="""
+            You gain a +4 \\glossterm<magic bonus> to Reflex defense.
+        """,
+        short_description="Grants +4 Reflex defense",
+    ))
+
+    apparel.append(MagicItem(
+        name="Fortified",
+        level=6,
+        material_type='Body armor',
+        tags=[],
+        description="""
+            You gain a +2 \\glossterm<magic bonus> to Fortitude defense.
+        """,
+        short_description="Grants +2 Fortitude defense",
+    ))
+
+    apparel.append(MagicItem(
+        name="Fortified, Greater",
+        level=15,
+        material_type='Body armor',
+        tags=[],
+        description="""
+            You gain a +4 \\glossterm<magic bonus> to Fortitude defense.
+        """,
+        short_description="Grants +4 Fortitude defense",
+    ))
+
+    apparel.append(MagicItem(
+        name="Willguard",
+        level=6,
+        material_type='Body armor',
+        tags=[],
+        description="""
+            You gain a +2 \\glossterm<magic bonus> to Mental defense.
+        """,
+        short_description="Grants +2 Mental defense",
+    ))
+
+    apparel.append(MagicItem(
+        name="Willguard, Greater",
+        level=15,
+        material_type='Body armor',
+        tags=[],
+        description="""
+            You gain a +4 \\glossterm<magic bonus> to Mental defense.
+        """,
+        short_description="Grants +4 Mental defense",
+    ))
+
+    apparel.append(MagicItem(
+        name="Anchoring",
+        level=7,
+        material_type='Body armor',
+        tags=[],
+        description="""
+            You ignore all attacks that would \\glossterm<knockback> or \\glossterm<push> you, unless the attack scores a \\glossterm<critical hit> against you.
+            This does not make you immune to \\glossterm<teleportation>, and does not affect movement effects used by your \\glossterm<allies>.
+        """,
+        short_description="Protects you from most forced movement attacks",
+    ))
+
+    apparel.append(MagicItem(
+        name="Anchoring, Greater",
+        level=13,
+        material_type='Body armor',
+        tags=[],
+        description="""
+            You ignore all attacks that would \\glossterm<teleport>, \\glossterm<knockback>, or \\glossterm<push> you.
+            This does not affect movement effects used by your \\glossterm<allies>.
+        """,
+        short_description="Protects you from all forced movement and teleportation attacks",
+    ))
+
+    apparel.append(MagicItem(
+        name="Translocation",
+        level=5,
+        material_type='Body armor',
+        tags=[],
+        description="""
+            As a standard action, you can \\glossterm<teleport> yourself into an unoccupied destination within \\rngclose range.
+            If the destination is invalid, this ability has no effect.
+        """,
+        short_description="Grants ability to teleport up to 30 feet",
+    ))
+
+    apparel.append(MagicItem(
+        name="Translocation, Greater",
+        level=11,
+        material_type='Body armor',
+        tags=[],
+        description="""
+            This item functions like the \\mitem<translocation> item, except that the range increases to \\rngmed.
+        """,
+        short_description="Grants ability to teleport up to 100 feet",
+    ))
+
+    apparel.append(MagicItem(
+        name="Translocation, Supreme",
+        level=17,
+        material_type='Body armor',
+        tags=[],
+        description="""
+            This item functions like the \\mitem<translocation> item, except that the range increases to \\rnglong.
+        """,
+        short_description="Grants ability to teleport up to 300 feet",
+    ))
+
+    # Other
+
     return apparel
 
 def generate_worn():
@@ -942,6 +1081,40 @@ def generate_worn():
     ))
 
     apparel.append(MagicItem(
+        name="Amulet of Translocation",
+        level=5,
+        material_type='Amulet',
+        tags=[],
+        description="""
+            As a standard action, you can \\glossterm<teleport> yourself into an unoccupied destination within \\rngclose range.
+            If the destination is invalid, this ability has no effect.
+        """,
+        short_description="Grants ability to teleport up to 30 feet",
+    ))
+
+    apparel.append(MagicItem(
+        name="Amulet of Translocation, Greater",
+        level=11,
+        material_type='Amulet',
+        tags=[],
+        description="""
+            This item functions like the \\mitem<amulet of translocation> item, except that the range increases to \\rngmed.
+        """,
+        short_description="Grants ability to teleport up to 100 feet",
+    ))
+
+    apparel.append(MagicItem(
+        name="Amulet of Translocation, Supreme",
+        level=17,
+        material_type='Amulet',
+        tags=[],
+        description="""
+            This item functions like the \\mitem<amulet of translocation> item, except that the range increases to \\rnglong.
+        """,
+        short_description="Grants ability to teleport up to 300 feet",
+    ))
+
+    apparel.append(MagicItem(
         name="Amulet of the Planes",
         level=12,
         material_type='Amulet',
@@ -1265,8 +1438,6 @@ def generate_worn():
         """,
         short_description="Grants +2 Mental and slows falls",
     ))
-
-    # Other
 
     return apparel
 
