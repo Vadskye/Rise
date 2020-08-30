@@ -73,7 +73,7 @@ astromancy=MysticSphere(
         """, tags=[]),
         # TODO: target wording is awkward
         Spell('Teleport', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
-            The target teleports into an unoccupied destination within range.
+            The target \\glossterm<teleports> into an unoccupied destination within range.
             If the destination is invalid, this spell is \\glossterm<miscast>.
 
             \\rankline
