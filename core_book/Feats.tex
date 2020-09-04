@@ -1772,7 +1772,10 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Spell} You learn a spell from the \sphere{Astromancy} \glossterm{mystic sphere}.
         When you gain access to new spell ranks, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[4]{Astral Spell Transit} You double your range with abilities from the \sphere{Astromancy} \glossterm{mystic sphere}.
+        \ff[4]{Efficient Transit} You learn how to transport creatures and objects more smoothly between planes.
+        The \glossterm{difficulty rating} to hear noise caused by creatures and objects you \glossterm{teleport} increases by 10 (see \pcref{Teleportation Noise}).
+        In addition, whenever you fail to teleport a creature or object due to specifying an invalid destination, you may immediately specify a different destination for that ability.
+        If that second destination is also invalid, the ability fails normally.
 
         \ff[7]{Personal Translocation} You can use the \textit{personal translocation} ability as a \glossterm{move action}.
         \begin{freeability}{Personal Translocation}[\glossterm{Teleportation}]
@@ -1782,13 +1785,13 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[10]{Personal Astromancy} You gain an additional \glossterm{action point}.
         You can only use this action point to \glossterm{attune} to spells and rituals from the \sphere{Astromancy} \glossterm{mystic sphere}.
 
-        \ff[13]{Greater Astral Spell Transit} When determining whether you have \glossterm{line of effect} to a particular location with abilites from the \sphere{Astromancy} \glossterm{mystic sphere}, you can ignore all physical obstacles in a single five-foot span.
-        This can allow you to use abilities through solid walls, though it does not grant you the ability to see through the wall.
+        \ff[13]{Astral Spell Transit} You double your range with abilities from the \sphere{Astromancy} \glossterm{mystic sphere}.
 
         \ff[16]{Spell} You learn a spell from the \sphere{Astromancy} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that mystic sphere.
 
-        \ff[19]{Greater Personal Translocation} You can use the \textit{personal translocation} ability as a \glossterm{minor action}.
+        \ff[19]{Greater Astral Spell Transit} When determining whether you have \glossterm{line of effect} to a particular location with abilites from the \sphere{Astromancy} \glossterm{mystic sphere}, you can ignore all physical obstacles in a single five-foot span.
+        This can allow you to use abilities through solid walls, though it does not grant you the ability to see through the wall.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Barrier}{Casting, Magical}
@@ -1826,9 +1829,9 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Spell} You learn a spell from the \sphere{Bless} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[4]{Inspiring Blessing} Each creature that is \glossterm{attuned} to a spell you cast from the \sphere{Bless} \glossterm{mystic sphere} increases its maximum \glossterm{hit points} by 1.
-        When a creature's maximum hit points increase in this way, it also increases its current \glossterm{hit points} by one.
-        When this effect ends, the creature loses one of its \glossterm{hit points}.
+        \ff[4]{Inspiring Blessing} Each creature that is \glossterm{attuned} to a spell you cast from the \sphere{Bless} \glossterm{mystic sphere} increases its current \glossterm{hit points} by 1.
+        This can allow the target's current hit points to exceed its normal maximum hit points.
+        When this effect ends, the creature loses one hit point.
 
         \ff[7]{Simple Blessing} Spells you cast from the Bless mystic sphere do not have the \glossterm{Focus} tag (see \pcref{Focus}).
 
@@ -1836,7 +1839,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         You can only use this action point to attune to spells you cast from the \sphere{Bless} mystic sphere.
 
         \ff[13]{Greater Inspiring Blessing} The number of hit points granted by your \textit{inspiring blessing} ability increases to two.
-        This affects the maximum hit points granted, the current hit points gained, and the current hit points lost.
+        In addition, the creature loses two hit points when the effect ends instead of one.
 
         \ff[16]{Spell} You learn a spell from the \sphere{Bless} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that mystic sphere.
@@ -1862,8 +1865,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
             This cannot remove a poison or disease applied during the current round.
 
             \rankline
-            \rank{5} This ability can target any \glossterm{ally} within your \glossterm{reach}.
-            \rank{7} This ability can target any \glossterm{ally} within \rngmed range.
+            \featlevel{13} This ability can target any \glossterm{ally} within your \glossterm{reach}.
+            \featlevel{19} This ability can target any \glossterm{ally} within \rngmed range.
         \end{freeability}
 
         \ff[10]{Personal Biomancy} You gain an additional \glossterm{action point}.
@@ -2056,7 +2059,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Spell} You learn a spell from the \sphere{Photomancy} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[4]{Augmented Vision} You gain a \plus2 \glossterm{magic bonus} to the Awareness skill.
+        \ff[4]{Augmented Vision} You gain a \plus2 bonus to the Awareness skill.
         In addition, you gain the \glossterm{low-light vision} ability, allowing you to treat sources of light as if they had double their normal illumination range.
 
         \ff[7]{Certain Sight} You are immune to being \glossterm{dazzled} and \glossterm{blinded}.
@@ -2065,14 +2068,15 @@ Feats also make the system more mechanically complex, so they are not necessaril
         You can only use this action point to \glossterm{attune} to spells and rituals from the \sphere{Photomancy} \glossterm{mystic sphere}.
 
         \ff[13]{Greater Augmented Vision} The bonus from your \textit{augmented vision} ability increases to \plus4.
-        In addition, the benefit of your \glossterm{low-light vision} ability doubles, allowing you to treat sources of light as if they had four times their norrmal illumination range.
+        In addition, you can see through solid objects up to one inch thick.
+        You can perceive the existence of obstacles thinner than that, but they do not inhibit your sight.
+        This does not grant you \glossterm{line of effect} to anything you see in this way, since the obstacle still exists.
 
         \ff[16]{Spell} You learn a spell from the \sphere{Photomancy} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that mystic sphere.
 
         \ff[19]{Supreme Augmented Vision} The bonus from your \textit{augmented vision} ability increases to \plus6.
-        In addition, you gain the \glossterm{truesight} ability with a 50 foot range.
-        If you already have the \glossterm{truesight} ability, you increase its range by 50 feet.
+        In addition, the maximum thickness that you can see through with your \textit{augmented vision} ability increases to one foot.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Polymorph}{Casting, Magical}
@@ -2160,6 +2164,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         When you gain access to a new spell level, you can change which spell you know from that mystic sphere.
 
         \ff[19]{Greater Truesight} The range of your \glossterm{truesight} ability increases by 100 feet.
+        In addition, you can \glossterm{suppress} any \glossterm{Sensation} ability you observe within the range of your truesight ability as a \glossterm{free action}.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Summoning}{Casting, Magical}
@@ -2177,6 +2182,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \end{freeability}
 
         \ff[7]{Augmented Summons} Creatures you create with abilities from the \sphere{Summoning} spell gain an \glossterm{action point}.
+        Most summoned creatures cannot use the \textit{recover} action or similar abilities, since the actions they can take are listed in the description of the spell or ritual.
+        However, your summoned creatures can use this action point to \glossterm{attune} to abilities.
 
         \ff[10]{Personal Summoning} You gain an additional \glossterm{action point}.
         You can only use this action point to \glossterm{attune} to spells and rituals from the \sphere{Summoning} \glossterm{mystic sphere}.
@@ -2191,6 +2198,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
         When you gain access to a new spell level, you can change which spell you know from that mystic sphere.
 
         \ff[19]{Greater Augmented Summons} The number of action points granted by your \textit{augmented summons} ability increases to two.
+        In addition, creatures you summon can use the \textit{recover} and \textit{cleanse} actions if you command them to.
+        They cannot use the \textit{recover} action more than once between \glossterm{short rests}.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Telekinesis}{Casting, Magical}
@@ -2224,7 +2233,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[16]{Spell} You learn a spell from the \sphere{Telekinesis} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that mystic sphere.
 
-        \ff[19]{Levitation} As long as you are within 50 feet above a surface that could support your weight, you can choose to float in midair, unaffected by gravity.
+        \ff[19]{Levitation} As long as you are no more than 100 feet above a surface that could support your weight, you can choose to float in midair, unaffected by gravity.
         As a \glossterm{minor action}, you can move yourself up to 30 feet in any direction.
     \end{feat}
 
@@ -2236,7 +2245,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[4]{Heart of Stone} You gain a \plus2 bonus to Fortitude defense.
 
-        \ff[7]{Stonemason} You may treat worked stone as if it were earth for the purpose of spells from the \sphere{Terramancy} \glossterm{mystic sphere}.
+        \ff[7]{Earthen Alloys} You may treat iron, steel, and worked stone as if they earth for the purpose of spells from the \sphere{Terramancy} \glossterm{mystic sphere}.
 
         \ff[10]{Personal Terramancy} You gain an additional \glossterm{action point}.
         You can only use this action point to \glossterm{attune} to spells and rituals from the \sphere{Terramancy} \glossterm{mystic sphere}.
@@ -2246,7 +2255,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[16]{Spell} You learn a spell from the \sphere{Terramancy} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that mystic sphere.
 
-        \ff[19]{Earthen Alloy} You may treat metal as if it were earth for the purpose of spells from the \sphere{Terramancy} \glossterm{mystic sphere}.
+        \ff[19]{Greater Earthen Alloys} You may treat sand, glass, and metal of any kind as if it were earth for the purpose of spells from the \sphere{Terramancy} \glossterm{mystic sphere}.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Thaumaturgy}{Casting, Magical}
@@ -2331,7 +2340,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         When you gain access to a new spell level, you can change which spell you know from that mystic sphere.
 
         % Seems weird for an 19th level; should stay in sync with the druid wild aspect
-        \ff[19]{Supreme Verdant Allies} The movement penalties from \glossterm{undergrowth} are doubled for enemies within a \areahuge radius emanation from you.
+        \ff[19]{Supreme Verdant Allies} You treat all living creatures as if they were plants for the purpose of abilities from this feat and abilities from the \sphere{Verdamancy} \glossterm{mystic sphere}.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Vivimancy}{Casting, Magical}
@@ -2340,14 +2349,14 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Spell} You learn a spell from the \sphere{Vivimancy} \glossterm{mystic sphere}.
         When you gain access to new spell ranks, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[4]{Personal Vitality} You gain a \plus2 bonus to Fortitude defense and are immune to being \glossterm{sickened}.
+        \ff[4]{Personal Vitality} You gain a \plus1 bonus to Fortitude defense and are immune to being \glossterm{sickened}.
 
         \ff[7]{Life Suppression} You gain a \plus4 bonus to defenses against abilities that only affect living creatures.
 
         \ff[10]{Personal Vivimancy} You gain an additional \glossterm{action point}.
         You can only use this action point to \glossterm{attune} to spells and rituals from the \sphere{Vivimancy} \glossterm{mystic sphere}.
 
-        \ff[13]{Greater Personal Vitality} The bonus to Fortitude defense from your \textit{fortified life} ability increases to \plus4.
+        \ff[13]{Greater Personal Vitality} The bonus to Fortitude defense from your \textit{fortified life} ability increases to \plus2.
         In addition, you are immune to being \glossterm{nauseated}.
 
         \ff[16]{Spell} You learn a spell from the \sphere{Vivimancy} \glossterm{mystic sphere}.
