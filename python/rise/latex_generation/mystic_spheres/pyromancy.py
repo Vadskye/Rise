@@ -287,6 +287,13 @@ pyromancy=MysticSphere(
             \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
         """, tags=[]),
+        Spell('Wings of the Phoenix', 5, 'Yourself', """
+            You gain a 25 foot \\glossterm<fly speed> as long as you are no more than 50 feet above solid ground (see \\pcref<Flying>).
+            If you are above that height, you gain a 30 foot \\glossterm<glide speed> instead.
+
+            \\rankline
+            \\rank<7> The maximum distance above the ground increases to 100 feet.
+        """, tags=['Attune (self)']),
     ],
     rituals=[
         Spell('Heat Wave', 4, None, """
