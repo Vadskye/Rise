@@ -30,6 +30,16 @@ pyromancy=MysticSphere(
             \\rank<5> The damage increases to 10.
             \\rank<7> The damage increases to 20.
         """, tags=[]),
+        Effects('Extinguish', 'One Medium or smaller active flame within \\rngmed range', """
+            If the target is \\glossterm<attended> by a creature, such as a torch being carried, you must make an attack vs. Reflex against the attending creature.
+            Otherwise, the attack automatically hits.
+            \\hit The target flame is extinguished.
+
+            \\rankline
+            \\rank<3> The maximum size increases to Large.
+            \\rank<5> The maximum size increases to Huge.
+            \\rank<7> The maximum size increases to Gargantuan.
+        """, tags=[]),
         Effects('Personal Torch', 'Yourself', """
             You create a flame in your hand.
             You can create it at any intensity, up to a maximum heat equivalent to a burning torch.
