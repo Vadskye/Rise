@@ -17,10 +17,11 @@ def generate_maneuvers():
             Each target gains a +1 bonus to \\glossterm<accuracy> until the end of the next round.
             This does not affect attacks during the current phase.
         """,
+        rank=2,
         rank_upgrades={
-            '3': 'Each target also gains a +1 bonus to Mental defense.',
-            '5': 'The accuracy bonus increases to +2.',
-            '7': 'The Mental defense bonus increases to +2.',
+            '4': 'Each target also gains a +2 bonus to Mental defense.',
+            '6': 'The accuracy bonus increases to +2.',
+            '8': 'The Mental defense bonus increases to +4.',
         },
         tags=[],
         lists=['Primal'],
@@ -66,7 +67,7 @@ def generate_maneuvers():
         short_description='Make a strike that mitigates miss chances',
         target="As chosen \\glossterm<strike>",
         effect_text="""
-            Make a \\glossterm<strike>.
+            Make a \\glossterm<strike> with a +1 bonus to \\glossterm<accuracy>.
             You can reroll any \\glossterm<miss chances>, such as when attacking \\glossterm<invisible> creatures, and take the better result.
         """,
         rank=3,
@@ -86,13 +87,32 @@ def generate_maneuvers():
             Make a \\glossterm<strike>.
             If the target attacked you earlier in the current round, you gain a +1 bonus to \\glossterm<accuracy> and a +1d bonus to damage with the strike.
         """,
+        rank=2,
         rank_upgrades={
-            '3': 'The damage bonus increases to +2d.',
-            '5': 'The accuracy bonus increases to +2.',
-            '7': 'The damage bonus increases to +3d.',
+            '4': 'The damage bonus increases to +2d.',
+            '6': 'The accuracy bonus increases to +2.',
+            '8': 'The damage bonus increases to +3d.',
         },
         tags=[],
         lists=['Primal', 'Martial', 'Trick'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Followup Strike',
+        target="As chosen \\glossterm<strike>",
+        short_description='Make a strike with bonuses if you previously missed',
+        effect_text="""
+            Make a \\glossterm<strike>.
+            If you missed the target with a \\glossterm<strike> last round, you gain a +2 bonus to \\glossterm<accuracy> with the strike.
+        """,
+        rank=2,
+        rank_upgrades={
+            '4': 'The accuracy bonus increases to +3.',
+            '6': 'The accuracy bonus increases to +4.',
+            '8': 'The accuracy bonus increases to +5.',
+        },
+        tags=[],
+        lists=['Esoteric', 'Martial'],
     ))
 
     maneuvers.append(Maneuver(
@@ -140,10 +160,11 @@ def generate_maneuvers():
             If you use this ability during the \\glossterm<action phase>, you can also make a \\glossterm<strike> during the \\glossterm<delayed action phase>.
             \\hit Each target is knocked \\prone.
         """,
-        rank=3,
+        rank=2,
         rank_upgrades={
-            '5': 'The maximum size increases to Huge.',
-            '7': 'The maximum size increases to Gargantuan.',
+            '4': 'The maximum size increases to Huge.',
+            '6': 'The maximum size increases to Gargantuan.',
+            '8': 'The maximum size increases to Colossal.',
         },
         tags=[],
         lists=['Primal'],
@@ -155,12 +176,13 @@ def generate_maneuvers():
         target="One creature or object within \\glossterm<reach> during movement (see text)",
         effect_text="""
             You make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to your \\glossterm<base speed> (see \\pcref<Leap>).
-            You can make a melee \\glossterm<strike> with a -2 penalty to \\glossterm<accuracy> from any location you occupy during the leap.
+            You can make a melee \\glossterm<strike> with a -1 penalty to \\glossterm<accuracy> from any location you occupy during the leap.
         """,
+        rank=2,
         rank_upgrades={
-            '3': "You gain a +1d bonus to damage with the strike if you attack while above the target's space.",
-            '5': 'The damage bonus increases to +2d.',
-            '7': 'The damage bonus increases to +3d.',
+            '4': "You gain a +1d bonus to damage with the strike if you attack while above the target's space.",
+            '6': 'The damage bonus increases to +2d.',
+            '8': 'The damage bonus increases to +3d.',
         },
         tags=[],
         lists=['Primal', 'Wild', 'Trick', 'Esoteric'],
@@ -242,12 +264,13 @@ def generate_maneuvers():
             Move up to half your movement speed in a straight line.
             You can make a melee \\glossterm<strike> with a slashing or bludgeoning weapon.
             The strike targets any number of creatures and objects within your \\glossterm<reach> at any point during your movement, except for the space you start in and the space you end in.
-            You take a -2d penalty to damage with the strike.
+            You take a -1d penalty to damage with the strike.
         """,
+        rank=2,
         rank_upgrades={
-            '3': 'The damage penalty is reduced to -1d.',
-            '5': 'You can move up to your full movement speed instead of at half speed.',
-            '7': 'The damage penalty is removed.',
+            '4': 'The damage penalty is removed.',
+            '6': 'You can move up to your full movement speed instead of at half speed.',
+            '8': 'You gain a +1d bonus to damage with the strike.',
         },
         tags=[],
         lists=['Primal', 'Martial', 'Wild', 'Esoteric'],
@@ -261,10 +284,11 @@ def generate_maneuvers():
             Make a \\glossterm<strike> with a -2d penalty to damage using a slashing weapon.
             If the strike \\glossterm<wounds> the target, it loses an additional \\glossterm<hit point>.
         """,
+        rank=2,
         rank_upgrades={
-            '3': 'You gain a +1 bonus to \\glossterm<accuracy> with the strike.',
-            '5': 'The accuracy bonus increases to +2.',
-            '7': 'The accuracy bonus increases to +3.',
+            '4': 'You gain a +1 bonus to \\glossterm<accuracy> with the strike.',
+            '6': 'The accuracy bonus increases to +2.',
+            '8': 'The accuracy bonus increases to +3.',
         },
         tags=[],
         lists=['Primal', 'Martial', 'Wild', 'Trick'],
@@ -332,10 +356,11 @@ def generate_maneuvers():
             If the strike beats the target's Mental defense, it takes a -2 penalty to \\glossterm<accuracy> against creatures other than you as a \\glossterm<condition>.
             This condition is removed if another creature applies this condition to the same target.
         """,
+        rank=2,
         rank_upgrades={
-            '3': 'The penalty increases to -3.',
-            '5': 'The penalty increases to -4.',
-            '7': 'The penalty increases to -5.',
+            '4': 'You gain a +1 bonus to \\glossterm<accuracy> with the strike.',
+            '6': 'The accuracy bonus increases to +2.',
+            '8': 'The accuracy bonus increases to +3.',
         },
         tags=[],
         lists=['Martial'],
@@ -360,20 +385,37 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Rally the Troops',
-        short_description='Suppress and prevent conditions on allies',
+        short_description='Suppress conditions on allies',
         target="You and your \\glossterm<allies> within a \\areamed radius from you",
         effect_text="""
-            Each target is immune to \\glossterm<conditions> this round.
-            In addition, each target can ignore any effects from one \\glossterm<condition> it is already affected by this round.
-            Because this ability has the \\glossterm<Swift> tag, it protects your allies from conditions they would receive during the current phase.
+            Each target can ignore any effects from one \\glossterm<condition> it is already affected by until the end of the next round.
+            Because this ability has the \\glossterm<Swift> tag, it allows your allies to ignore conditions they would be affected by during the current phase.
         """,
+        rank=2,
         rank_upgrades={
-            '3': 'The area increases to a \\arealarge radius from you.',
-            '5': 'Each target can ignore two conditions instead of only one.',
-            '7': 'The area increases to a \\areahuge radius from you.',
+            '4': 'The area increases to a \\arealarge radius from you.',
+            '6': 'The area increases to a \\areahuge radius from you.',
+            '8': 'The area increases to a \\areaext radius from you.',
         },
         tags=['Swift'],
         lists=['Martial'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Brow Gash',
+        short_description="Make a strike that bleeds into the target's eyes",
+        target="As chosen \\glossterm<strike>",
+        effect_text="""
+            Make a \\glossterm<strike> with a -1 penalty to \\glossterm<accuracy> using a slashing weapon.
+            If the strike \\glossterm<wounds> the target, it is \\glossterm<dazzled> as a \\glossterm<condition>.
+        """,
+        rank=3,
+        rank_upgrades={
+            '5': 'You gain a +1d bonus to damage with the strike.',
+            '7': 'The damage bonus increases to +2d.',
+        },
+        tags=[],
+        lists=['Trick', 'Esoteric', 'Martial'],
     ))
 
     maneuvers.append(Maneuver(
@@ -381,13 +423,13 @@ def generate_maneuvers():
         short_description='Make a strike that slows',
         target="As chosen \\glossterm<strike>",
         effect_text="""
-            Make a \\glossterm<strike> with a -1d penalty to damage using a slashing weapon.
+            Make a \\glossterm<strike> with a -1 penalty to \\glossterm<accuracy> using a slashing weapon.
             If the strike \\glossterm<wounds> the target, it is \\glossterm<slowed> as a \\glossterm<condition>.
         """,
         rank=3,
         rank_upgrades={
-            '5': 'On a \\glossterm<critical hit>, the target is \\glossterm<decelerated> instead of slowed.',
-            '7': 'This condition cannot be removed until the target regains a \\glossterm<hit point>',
+            '5': 'You gain a +1d bonus to damage with the strike.',
+            '7': 'The damage bonus increases to +2d.',
         },
         tags=[],
         lists=['Wild', 'Trick', 'Esoteric'],
@@ -417,14 +459,14 @@ def generate_maneuvers():
         short_description='Make a strike that dazes',
         target="As chosen \\glossterm<strike>",
         effect_text="""
-            Make a \\glossterm<strike> with a -1d penalty to damage using a bludgeoning weapon.
+            Make a \\glossterm<strike> with a -1 penalty to accuracy using a bludgeoning weapon.
             If the strike \\glossterm<wounds> the target,
                 it is \\glossterm<dazed> as a \\glossterm<condition>.
         """,
         rank=3,
         rank_upgrades={
-            '5': 'On a \\glossterm<critical hit>, the target is also \\glossterm<confused> as part of the same condition.',
-            '7': 'On a hit, the target is \\glossterm<stunned> instead of dazed.',
+            '5': 'You gain a +1d bonus to damage with the strike.',
+            '7': 'The damage bonus increases to +2d.',
         },
         tags=['Emotion'],
         lists=['Trick', 'Esoteric'],
@@ -458,10 +500,11 @@ def generate_maneuvers():
             Make a ranged \\glossterm<strike>.
             You reduce your penalties for \\glossterm<range increments> with the strike by 2.
         """,
+        rank=2,
         rank_upgrades={
-            '3': 'You gain a +1 bonus to \\glossterm<accuracy> with the strike.',
-            '5': 'The accuracy bonus increases to +2.',
-            '7': 'The accuracy bonus increases to +3.',
+            '4': 'You gain a +1 bonus to \\glossterm<accuracy> with the strike.',
+            '6': 'The accuracy bonus increases to +2.',
+            '8': 'The accuracy bonus increases to +3.',
         },
         tags=[],
         lists=['Martial', 'Wild'],
@@ -510,17 +553,14 @@ def generate_maneuvers():
         short_description='Make a strike and continue moving',
         target="As chosen \\glossterm<strike> (see text)",
         effect_text="""
-            Move up to half your movement speed and make a melee \\glossterm<strike> with a -2d penalty to damage.
+            Move up to half your movement speed and make a melee \\glossterm<strike> with a -1d penalty to damage.
             If you use this ability during the \\glossterm<action phase>, you may use the other half of your movement during the \\glossterm<delayed action phase>.',
         """,
+        rank=2,
         rank_upgrades={
-            '3': 'You also gain a +1 bonus to Armor defense and Reflex defense until the end of the round. This is a \\glossterm<Swift> effect.',
-            '5': """
-                You can move up to your full speed when you use this ability.
-                % TODO: wording
-                Your movement during the \\glossterm<delayed action phase>, if any, becomes equal to the remaining distance you could have moved during the \\glossterm<action phase>.
-            """,
-            '7': 'The defense bonuses increase to +2.',
+            '4': 'You also gain a +1 bonus to Armor defense and Reflex defense until the end of the round. This is a \\glossterm<Swift> effect.',
+            '6': "The damage penalty is removed.",
+            '8': 'The defense bonuses increase to +2.',
         },
         tags=[],
         lists=['Esoteric', 'Trick', 'Wild'],
@@ -535,10 +575,11 @@ def generate_maneuvers():
             %TODO: wording
             During the \\glossterm<delayed action phase>, you can take the action you did not take during the \\glossterm<action phase>.
         """,
-        rank=3,
+        rank=2,
         rank_upgrades={
-            '5': 'You gain a +1d bonus to damage with the strike.',
-            '7': 'The damage bonus increases to +2d.',
+            '4': 'You gain a +1d bonus to damage with the strike.',
+            '6': 'The damage bonus increases to +2d.',
+            '8': 'The damage bonus increases to +3d.',
         },
         tags=[],
         lists=['Primal', 'Wild', 'Esoteric'],
@@ -564,7 +605,7 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Quivering Palm',
-        short_description='Make a nauseating strike with an unarmed attack',
+        short_description='Make a sickening strike with an unarmed attack',
         target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a strike using an \\glossterm<unarmed attack>.
@@ -588,10 +629,11 @@ def generate_maneuvers():
             Make a melee \\glossterm<strike> with a -2d penalty to damage.
             If you hit, the target takes a -2 penalty to Armor defense until the end of the next round.
         """,
+        rank=2,
         rank_upgrades={
-            '3': 'The penalty increases to -3.',
-            '5': 'The penalty increases to -4.',
-            '7': 'The penalty increases to -5.',
+            '4': 'You gain a +1 bonus to \\glossterm<accuracy> with the attack.',
+            '6': 'The accuracy bonus increases to +2.',
+            '8': 'The accuracy bonus increases to +3.',
         },
         tags=[],
         lists=['Esoteric', 'Martial', 'Trick'],
@@ -605,10 +647,11 @@ def generate_maneuvers():
             Make a melee \\glossterm<strike> with a +1 bonus to \\glossterm<accuracy> and a +1d bonus to damage.
             During the next round, you take a -2 penalty to all defenses.
         """,
+        rank=2,
         rank_upgrades={
-            '3': 'The damage bonus increases to +2d.',
-            '5': 'The accuracy bonus increases to +2.',
-            '7': 'The damage bonus increases to +4d.',
+            '4': 'The damage bonus increases to +2d.',
+            '6': 'The accuracy bonus increases to +2.',
+            '8': 'The damage bonus increases to +4d.',
         },
         tags=[],
         lists=['Primal'],
@@ -619,17 +662,14 @@ def generate_maneuvers():
         short_description='Knock a foe prone with brute force',
         target="As chosen \\glossterm<strike>",
         effect_text="""
-            Make a melee \\glossterm<strike> with a -1d penalty to damage using a bludgeoning weapon.
+            Make a melee \\glossterm<strike> with a -2d penalty to damage using a bludgeoning weapon.
             If the attack result hits the target's Fortitude defense,
                 it falls \\glossterm<prone>.
         """,
         rank_upgrades={
-            '3': """
-                On a \\glossterm<critical hit>, the target is unable to stand up on its own until the end of the next round.
-                If it is somehow brought into a standing position, it will immediately fall and become prone again.
-            """,
-            '5': 'The damage penalty is reduced to -1d.',
-            '7': 'On a hit, the target is unable to stand on its own.',
+            '3': "You gain a +1 bonus to \\glossterm<accuracy> with the strike.",
+            '5': 'The accuracy bonus increases to +2.',
+            '7': 'The accuracy bonus increases to +3.',
         },
         tags=[],
         lists=['Esoteric', 'Martial', 'Primal'],
@@ -641,13 +681,14 @@ def generate_maneuvers():
         target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a melee \\glossterm<strike> with a -2d penalty to damage.
-            In addition, you gain a +2 bonus to Armor defense until the end of the round.
+            In addition, you gain a +2 bonus to Armor and Reflex defenses until the end of the round.
             The defense bonus is a \\glossterm<Swift> effect, so it protects you from attacks in the current phase.
         """,
+        rank=2,
         rank_upgrades={
-            '3': 'The defense bonus increases to +3.',
-            '5': 'The defense bonus increases to +4.',
-            '7': 'The defense bonus increases to +5.',
+            '4': 'The defense bonus increases to +3.',
+            '6': 'The defense bonus increases to +4.',
+            '8': 'The defense bonus increases to +5.',
         },
         tags=['Swift (see text)'],
         lists=['Esoteric', 'Martial', 'Trick', 'Wild'],
@@ -700,7 +741,7 @@ def generate_maneuvers():
             The attack roll \\glossterm<explodes> regardless of what you roll.
         """,
         rank_upgrades={
-            '3': 'You also gain a +1 bonus to \\glossterm<accuracy> with the strike.',
+            '3': 'You gain a +1 bonus to \\glossterm<accuracy> with the strike.',
             '5': 'The accuracy bonus increases to +2.',
             '7': 'The accuracy bonus increases to +3.',
         },
@@ -767,8 +808,8 @@ def generate_maneuvers():
             Make a \\glossterm<strike> and move up to half your movement speed in a straight line away from the target.
         """,
         rank_upgrades={
-            '3': 'The distance you can move increases to be equal to your movement speed.',
-            '5': 'You also gain a +1 bonus to Armor and Reflex defenses during the current phase. This is a \\glossterm<Swift> effect.',
+            '3': 'You also gain a +1 bonus to Armor and Reflex defenses during the current phase. This is a \\glossterm<Swift> effect.',
+            '5': 'The distance you can move increases to be equal to your movement speed.',
             '7': 'The defense bonuses increase to +2.',
         },
         tags=[],
@@ -798,13 +839,14 @@ def generate_maneuvers():
         short_description='Make a projectile strike in melee range',
         target="As chosen \\glossterm<strike>",
         effect_text="""
-            Make a ranged \\glossterm<strike> with a +1d bonus to damage using a \\glossterm<projectile> weapon against a creature adjacent to you.
+            Make a ranged \\glossterm<strike> using a \\glossterm<projectile> weapon against a creature adjacent to you.
             You are not \\glossterm<defenseless> against that creature during the current phase.
         """,
-        rank=3,
+        rank=2,
         rank_upgrades={
-            '5': 'The damage bonus increases to +2d.',
-            '7': 'The damage bonus increases to +3d.',
+            '4': 'You gain a +1d bonus to damage with the strike',
+            '6': 'The damage bonus increases to +2d.',
+            '8': 'The damage bonus increases to +3d.',
         },
         tags=[],
         lists=['Martial', 'Wild'],
@@ -833,12 +875,12 @@ def generate_maneuvers():
         target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a \\glossterm<strike> with a +2d bonus to damage.
-            If the strike's damage does not beat the target's \\glossterm<wound resistance>, it has no effect.
+            If the strike's damage does not beat the target's \\glossterm<vital resistance>, it has no effect.
         """,
-        rank=4,
+        rank=3,
         rank_upgrades={
-            '6': 'The damage bonus increases to +3d.',
-            '8': 'The damage bonus increases to +4d.',
+            '5': 'The damage bonus increases to +3d.',
+            '7': 'The damage bonus increases to +4d.',
         },
         tags=[],
         lists=['Esoteric', 'Martial', 'Primal'],
@@ -863,10 +905,10 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Volley Fire',
         short_description='Fire a flurry of projectiles to blanket an area',
-        target="Everything in a \\areasmall radius within \\rngmed range.",
+        target="Each creature in a \\areasmall radius within \\rngmed range.",
         effect_text="""
             Make a ranged \\glossterm<strike> with a -2d penalty to damage using a projectile weapon against each target.
-            This strike costs five projectiles.
+            This strike costs one projectile per target.
         """,
         rank=3,
         rank_upgrades={
@@ -884,7 +926,7 @@ def generate_maneuvers():
         rank=5,
         effect_text="""
             Make a ranged \\glossterm<strike> with a -2d penalty to damage using a projectile weapon against each target.
-            This strike costs five projectiles.
+            This strike costs one projectile per target.
         """,
         rank_upgrades={
             '7': 'The range increases to \\rnglong.',
@@ -917,12 +959,13 @@ def generate_maneuvers():
             Make a melee \\glossterm<strike> with a +2d bonus to damage.
             After making the strike, you fall \\glossterm<prone>.
             % TODO: This is obviously a hack
-            If you use this ability during the \\glossterm<delayed action phase>, you cannot stand up during the \\glossterm<movement phase> of the following round.
+            If you use this ability during the \\glossterm<delayed action phase>, you cannot move during the \\glossterm<movement phase> of the following round.
         """,
+        rank=2,
         rank_upgrades={
-            '3': 'The damage bonus increases to +3d.',
-            '5': 'The damage bonus increases to +4d.',
-            '7': 'The damage bonus increases to +5d.',
+            '4': 'The damage bonus increases to +3d.',
+            '6': 'The damage bonus increases to +4d.',
+            '8': 'The damage bonus increases to +5d.',
         },
         tags=[],
         lists=['Primal', 'Wild'],
@@ -950,16 +993,17 @@ def generate_maneuvers():
         short_description='Make a strike that excels at injecting poison',
         target="As chosen \\glossterm<strike>",
         effect_text="""
-            Make a \\glossterm<strike> with a +1d bonus to damage using a piercing weapon.
+            Make a \\glossterm<strike> using a piercing weapon.
             If this strike \\glossterm<wounds> the target, you gain a +4 bonus to \\glossterm<accuracy> with injury-based poisons delivered with the strike.
         """,
-        rank=3,
+        rank=2,
         rank_upgrades={
-            '5': 'The accuracy bonus increases to +6.',
-            '7': 'The accuracy bonus increases to +8.',
+            '4': 'The accuracy bonus increases to +6.',
+            '6': 'The accuracy bonus increases to +8.',
+            '6': 'The accuracy bonus increases to +10.',
         },
         tags=[],
-        lists=['Trick'],
+        lists=['Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -987,10 +1031,11 @@ def generate_maneuvers():
             Your final destination cannot be more distant from your starting location than your \\glossterm<land speed>.
             You can make a melee \\glossterm<strike> from any location you occupy during the leap.
         """,
+        rank=2,
         rank_upgrades={
-            '3': 'The maximum size category of the target increases to two size categories larger than you',
-            '5': 'The maximum size category of the target increases to three size categories larger than you',
-            '7': 'The maximum size category of the target increases to four size categories larger than you',
+            '4': 'The maximum size category of the target increases to two size categories larger than you',
+            '6': 'The maximum size category of the target increases to three size categories larger than you',
+            '8': 'The maximum size category of the target increases to four size categories larger than you',
         },
         tags=[],
         lists=['Esoteric', 'Primal', 'Trick', 'Wild'],
@@ -1037,6 +1082,7 @@ def generate_maneuvers():
 def generate_maneuver_latex():
     maneuvers_by_rank = {
         1: [],
+        2: [],
         3: [],
         4: [],
         5: [],
