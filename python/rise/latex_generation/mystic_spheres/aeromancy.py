@@ -125,6 +125,7 @@ aeromancy = MysticSphere(
         """, tags=['Attune (self)']),
         Spell('Flight', 5, 'Yourself', """
             You gain a 30 foot \\glossterm<fly speed> as long as you are no more than 100 feet above solid ground (see \\pcref<Flying>).
+            If you are above that height, you gain a 30 foot \\glossterm<glide speed> instead.
 
             \\rankline
             \\rank<7> The maximum distance above the ground increases to 300 feet.
