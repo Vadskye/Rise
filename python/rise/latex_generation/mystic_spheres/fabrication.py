@@ -30,6 +30,8 @@ fabrication=MysticSphere(
         Spell('Shieldbearer', 1, 'Yourself', """
             You gain a +1 \\glossterm<magic bonus> to Armor defense.
 
+            You can cast this spell as a \\glossterm<minor action>.
+
             \\rankline
             \\rank<3> You are not considered \\glossterm<defenseless> as long as you are not \\glossterm<unaware>, even if you are not wielding a weapon or shield.
             \\rank<5> The bonus increases to +2.
@@ -78,7 +80,7 @@ fabrication=MysticSphere(
             \\rank<5> The damage increases to \\glossterm<standard damage>.
             \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
         """, tags=['Manifestation']),
-        Spell('Blade Barrier', 3, 'Each creature that moves through the area (see text)', """
+        Spell('Blade Barrier', 2, 'Each creature that moves through the area (see text)', """
             A wall of whirling blades appears within \\rngmed range.
             The wall takes the form of a 20 ft.\\ high, \\arealarge line.
             The wall provides \\glossterm<cover> against attacks made through it.
@@ -86,8 +88,9 @@ fabrication=MysticSphere(
             \\hit The target takes slashing \\glossterm<standard damage> -1d.
 
             \\rankline
-            \\rank<5> The damage increases to \\glossterm<standard damage>.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<4> The damage increases to \\glossterm<standard damage>.
+            \\rank<6> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<8> The damage increases to \\glossterm<standard damage> +2d.
         """, tags=['Sustain (minor)']),
         Spell('Blade Perimeter', 4, 'Each creature that moves through the area (see text)', """
             A wall of whirling blades appears within \\rngmed range.
@@ -140,30 +143,30 @@ fabrication=MysticSphere(
         Spell('Acid Breath', 4, 'Yourself (see text)', """
             As a standard action, you can breathe acid like a dragon.
             When you do, make an attack vs. Fortitude against everything in a \\arealarge cone from you.
-            \\hit Each target takes acid \\glossterm<standard damage> +1d.
+            \\hit Each target takes acid \\glossterm<standard damage>.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<6> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<8> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<6> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<8> The damage increases to \\glossterm<standard damage> +2d.
         """, tags=['Attune (self)']),
-        Spell('Corrosive Orb', 3, 'One creature or object within \\rngmed range', """
+        Spell('Corrosive Orb', 5, 'One creature or object within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
-            \\hit The target takes acid \\glossterm<standard damage> +1d.
+            \\hit The target takes acid \\glossterm<standard damage> +3d.
             This attack deals double damage to objects.
 
             \\rankline
-            \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=['Manifestation']),
-        Spell('Acid Rain', 3, 'Everything in a \\areasmall radius within \\rngmed range', """
+        Spell('Acid Rain', 2, 'Everything in a \\areasmall radius within \\rngclose range', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes acid \\glossterm<standard damage> -1d.
 
             \\rankline
-            \\rank<5> The damage increases to \\glossterm<standard damage>.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<4> The damage increases to \\glossterm<standard damage>.
+            \\rank<6> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<8> The damage increases to \\glossterm<standard damage> +2d.
         """, tags=['Manifestation']),
         Spell('Forge', 1, 'One unoccupied square within \\rngclose range', """
             Choose a type of body armor, weapon, or shield that you are proficient with.
@@ -214,17 +217,17 @@ fabrication=MysticSphere(
             \\rank<5> The webs are no longer \\glossterm<vulnerable> to fire damage.
             \\rank<7> The vital resistance of each 5-ft.\\ square of webs increases to three times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
-        Spell('Caltrops', 1, 'One 5 ft.\\ square within \\rngclose range (see text)', """
+        Spell('Caltrops', 2, 'One 5 ft.\\ square within \\rngclose range (see text)', """
             You create exceptionally sharp caltrops in the target location.
             Whenever a creature moves into the area, unless the creature moves at one quarter speed to avoid the danger, you make an attack vs. Armor against them.
             Unlike most attacks, this attack can happen during the \\glossterm<movement phase>.
             Caltrops may not be effective against creatures with an unusual anatomy.
-            \\hit The target takes \\glossterm<standard damage> -1d.
+            \\hit The target takes \\glossterm<standard damage>.
 
             \\rankline
-            \\rank<3> You can affect an additional square within range.
-            \\rank<5> The number of additional squares you can affect increases to two.
-            \\rank<7> The number of additional squares you can affect increases to three.
+            \\rank<4> You can affect an additional square within range.
+            \\rank<6> The number of additional squares you can affect increases to two.
+            \\rank<8> The number of additional squares you can affect increases to three.
         """, tags=['Manifestation', 'Sustain (minor)']),
     ],
     rituals=[

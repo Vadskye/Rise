@@ -59,16 +59,16 @@ delusion=MysticSphere(
             \\rank<5> The area increases to a \\arealarge radius \\glossterm<emanation>.
             \\rank<7> The area increases to a \\areahuge radius \\glossterm<emanation>.
         """, tags=['Attune (self)', 'Emotion']),
-        Spell('Agony', 1, 'One creature within \\rngmed range', """
+        Spell('Agony', 2, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target is inflicted with agonizing pain as a \\glossterm<condition>.
             % Does this need to clarify that it takes effect in the round the spell was cast?
             At the end of each \\glossterm<round>, if the target was \\glossterm<wounded> that round, it loses a \\glossterm<hit point>.
 
             \\rankline
-            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<5> The accuracy bonus increases to +2.
-            \\rank<7> The accuracy bonus increases to +3.
+            \\rank<4> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<6> The accuracy bonus increases to +2.
+            \\rank<8> The accuracy bonus increases to +3.
         """, tags=['Emotion']),
         Spell('Redirected Terror', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
@@ -111,15 +111,25 @@ delusion=MysticSphere(
             \\rank<5> The area increases to a \\areahuge radius.
             \\rank<7> The area increases to a \\areaext radius.
         """, tags=['Emotion', 'Sustain (standard)']),
-        Spell('Enrage', 1, 'One creature within \\rngmed range', """
+        Spell('Enrage', 2, 'One creature within \\rngmed range', """
             Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against the target.
             \\hit As a \\glossterm<condition>, the target takes a -2 penalty to Armor defense and is unable to take any \\glossterm<standard actions> that do not cause it to make an attack.
             For example, it could make a \\glossterm<strike> or cast an offensive spell, but it could not heal itself or summon a creature.
 
             \\rankline
-            \\rank<3> The accuracy bonus increases to +3.
-            \\rank<5> The accuracy bonus increases to +4.
-            \\rank<7> The accuracy bonus increases to +5.
+            \\rank<4> The accuracy bonus increases to +3.
+            \\rank<6> The accuracy bonus increases to +4.
+            \\rank<8> The accuracy bonus increases to +5.
+        """, tags=['Emotion']),
+        Spell('Deaden Emotions', 2, 'One creature within \\rngmed range', """
+            Make an attack vs. Mental against the target.
+            \\hit As a \\glossterm<condition>, the target is unable to take any \\glossterm<standard actions> that it to make an attack.
+            If it loses any \\glossterm<hit points> or is otherwise harmed, including subjective pain or discomfort, this effect is automatically broken.
+
+            \\rankline
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<5> The accuracy bonus increases to +2.
+            \\rank<7> The accuracy bonus increases to +3.
         """, tags=['Emotion']),
         Spell('Mass Enrage', 4, '\\glossterm<Enemies> in a \\areamed radius within \\rngmed range', """
             Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against each target.
@@ -150,14 +160,15 @@ delusion=MysticSphere(
             \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=[]),
-        Spell('Demotivate', 1, 'One creature within \\rngmed range', """
+        Spell('Demotivate', 2, 'One creature within \\rngmed range', """
             Make an attack vs. Mental with a +3 bonus against the target.
             \\hit As a \\glossterm<condition>, the target takes a -2 penalty to Mental defense.
+            \\crit As above, except that the penalty increases to -5.
 
             \\rankline
-            \\rank<3> The penalty increases to -3.
-            \\rank<5> The penalty increases to -4.
-            \\rank<7> The penalty increases to -5.
+            \\rank<4> The accuracy bonus increases to +5.
+            \\rank<6> The accuracy bonus increases to +7.
+            \\rank<8> The accuracy bonus increases to +9.
         """, tags=['Emotion']),
         Spell('Motivate', 1, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
             The target gains a +2 \\glossterm<magic bonus> to Mental defense.

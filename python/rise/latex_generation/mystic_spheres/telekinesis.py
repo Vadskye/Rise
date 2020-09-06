@@ -63,15 +63,15 @@ telekinesis=MysticSphere(
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=[]),
-        Spell('Reload', 1, 'Yourself', """
+        Spell('Reload', 2, 'Yourself', """
             This spell does not have \\glossterm<somatic components>, and you can cast it as a \\glossterm<minor action>.
             You reload any projectile weapon you wield with ammunition easily accessible on your body.
 
             \\rankline
-            \\rank<3> This spell no longer has the \\glossterm<Focus> tag.
-            \\rank<5> You can cast this spell as a \\glossterm<free action>.
+            \\rank<4> This spell no longer has the \\glossterm<Focus> tag.
+            \\rank<6> You can cast this spell as a \\glossterm<free action>.
             However, you can only cast it once per round.
-            \\rank<7> This spell no longer has \\glossterm<verbal components>.
+            \\rank<8> This spell no longer has \\glossterm<verbal components>.
         """, tags=[]),
         Spell('Mass Kinetic Impedance', 1, '\\glossterm<Enemies> in a \\areamed radius within \\rngmed range', """
             Make an attack vs. Mental against each target.
@@ -83,7 +83,7 @@ telekinesis=MysticSphere(
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=['Compulsion']),
-        Spell('Blastwave', 1, '\\glossterm<Enemies> and objects in a \\areasmall radius from you', """
+        Spell('Blastwave', 3, '\\glossterm<Enemies> and objects in a \\areamed radius from you', """
             Make an attack vs. Mental against each target.
             \\hit You move each target up to 5 feet per two \\glossterm<power> in a straight line away from you.
             Moving a target upwards costs twice the normal movement cost.
@@ -91,11 +91,10 @@ telekinesis=MysticSphere(
             Any individual object or creature can only take damage once in this way, even if it is hit by multiple targets that are knocked flying.
 
             \\rankline
-            \\rank<5> The area increases to a \\areamed radius.
             \\rank<5> The area increases to a \\arealarge radius.
             \\rank<7> The area increases to a \\areahuge radius.
         """, tags=[]),
-        Spell('Repulsive Grasp', 1, 'One creature or object you \\glossterm<threaten>', """
+        Spell('Repulsive Grasp', 2, 'One creature or object you \\glossterm<threaten>', """
             This spell does not have the \\glossterm<Focus> tag.
             You must have a \\glossterm<free hand> to cast this spell.
 
@@ -109,16 +108,16 @@ telekinesis=MysticSphere(
             \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
         """, tags=[]),
-        Spell('Telekinetic Throw', 1, 'One Medium or smaller creature or object within \\rngmed range', """
+        Spell('Telekinetic Throw', 2, 'One Medium or smaller creature or object within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit You \\glossterm<knockback> the target up to 5 feet per \\glossterm<power> in a straight line in any direction.
                 Moving the target upwards costs twice the normal movement cost.
-                If the target impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgeoning \\glossterm<standard damage>.
+                If the target impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgeoning \\glossterm<standard damage> +1d.
 
             \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<4> The damage increases to \\glossterm<standard damage> +2d.
+            \\rank<6> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<8> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=[]),
         Spell('Telekinetic Lift', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngmed range', """
             The target is reduced to half of its normal weight.
@@ -141,8 +140,9 @@ telekinesis=MysticSphere(
         Spell('Wall of Force', 1, None, """
             You create a wall of magical energy within \\rngmed range.
             You can choose the dimensions of the wall, up to a maximum of a 20 ft.\\ high, \\areamed length line.
-            If you create the wall within a space too small to hold it, it fills as much of the space as possible, allowing you to completely block off small tunnels.
-            The wall is visible as a shimmering magical membrane that does not block sight.
+            If you create the wall within a space too small to hold it, it fills as much of the space as possible, starting from the middle of the chosen space.
+            This can allow you to completely block off small tunnels.
+            The wall is visible as a shimmering magical field that does not block sight.
             Nothing can pass through the wall until it is destroyed.
             Each 5-ft.\\ square of wall has a \\glossterm<vital resistance> equal to twice your \\glossterm<power>.
 
@@ -157,17 +157,17 @@ telekinesis=MysticSphere(
             Each wall is transparent, but blocks physical passage and \\glossterm<line of effect>.
             Each five-foot square of wall has hit points equal to twice your \\glossterm<power>, and all of its defenses are 0.
         """, tags=['Attune (self)']),
-        Spell('Steal Item', 1, 'One Small or smaller object within \\rngmed range', """
-            Make an attack vs. Armor against the target.
-            If the target is \\glossterm<attended>, you must also beat the attending creature's Reflex defense.
+        Spell('Steal Item', 2, 'One Small or smaller object within \\rngmed range', """
+            If the target is \\glossterm<attended>, make an attack vs. Reflex against the attending creature.
+            Otherwise, this attack automatically hits.
             \\hit Unless the target is held in a creature's hand or otherwise well secured (such as an equipped ring or shield), it flies towards you, allowing you to catch it.
             If you are unable or unwilling to catch it, it falls to the ground in your space.
             \\crit As above, except that you can also pull objects that are held in the hand of an attending creature, but not objects that are well secured.
 
             \\rankline
-            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<5> The accuracy bonus increases to +2.
-            \\rank<7> The accuracy bonus increases to +3.
+            \\rank<4> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<6> The accuracy bonus increases to +2.
+            \\rank<8> The accuracy bonus increases to +3.
         """, tags=[]),
         Spell('Animated Weapon', 4, 'Yourself', """
             As a \\glossterm<minor action>, you can make a \\glossterm<magical strike> with a -4 penalty to \\glossterm<accuracy> and a -2d penalty to damage.
@@ -176,14 +176,14 @@ telekinesis=MysticSphere(
             \\rank<6> The accuracy penalty is reduced to -3.
             \\rank<8> The accuracy penalty is reduced to -2.
         """, tags=['Attune (self)']),
-        Spell('Mind Arrow', 1, ['One Tiny or smaller \\glossterm<unattened> projectile within \\rngmed range', 'One creature or object within \\rngmed range'], """
-            You make a \\glossterm<magical strike> using the primary target against the secondary target.
+        Spell('Mind Arrow', 2, ['One Tiny or smaller \\glossterm<unattened> projectile within \\rngmed range', 'One creature or object within \\rngmed range'], """
+            You make a \\glossterm<magical strike> with a +1 bonus to \\glossterm<accuracy> using the primary target against the secondary target.
             The projectile flies directly toward the secondary target instead of originating from your position, which may allow you to avoid \\glossterm<cover> and similar obstacles.
 
             \\rankline
-            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<5> The accuracy bonus increases to +2.
-            \\rank<7> The accuracy bonus increases to +3.
+            \\rank<4> The accuracy bonus increases to +2.
+            \\rank<6> The accuracy bonus increases to +3.
+            \\rank<8> The accuracy bonus increases to +4.
         """, tags=[]),
         Spell('Reactive Deflection', 1, 'Yourself', """
             You gain a +1 \\glossterm<magic bonus> to Armor defense.

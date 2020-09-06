@@ -97,15 +97,15 @@ terramancy=MysticSphere(
             These trails disappear when this spell ends.
         """, tags=['Attune (self)']),
         # TODO: make tremor/fissure/earthquake targeting consistent
-        Spell('Tremor', 1, 'All Large or smaller creatures in a \\areamed radius within \\rngmed range that are standing on earth or unworked stone', """
+        Spell('Tremor', 1, 'Creatures in a \\areamed radius within \\rngmed range that are standing on earth or unworked stone', """
             You create an highly localized tremor that rips through the ground.
             Make an attack vs. Reflex against each target.
             \\hit Each target is knocked \\glossterm<prone>.
 
             \\rankline
-            \\rank<3> The maximum size is increased to Huge.
-            \\rank<5> The maximum size is increased to Gargantuan.
-            \\rank<7> The maximum size is removed.
+            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<5> The accuracy bonus increases to +2.
+            \\rank<7> The accuracy bonus increases to +2.
         """, tags=[]),
         Spell('Fissure', 4, 'Everything in a \\areamed radius within \\rngmed range that is standing on earth or unworked stone', """
             You create an intense but highly localized tremor that rips through the ground.
@@ -139,15 +139,16 @@ terramancy=MysticSphere(
             \\rankline
             \\rank<8> The maximum size increases to Huge.
         """, tags=[]),
-        Spell('Earthbind', 3, 'One creature within \\rnglong range that is within 100 feet of the ground', """
+        Spell('Earthbind', 2, 'One creature within \\rngmed range that is within 100 feet of the ground', """
             Make an attack vs. Fortitude against the target.
             \\hit As a \\glossterm<condition>, the target is pulled towards the ground with great force, approximately quadrupling the gravity it experiences.
             This imposes a -2 penalty to \\glossterm<accuracy>, physical \\glossterm<checks>, and \\glossterm<defenses>.
             In addition, most flying creatures are unable to fly with this increased gravity and crash to the ground.
 
             \\rankline
-            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<7> The accuracy bonus increases to +2.
+            \\rank<4> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<6> The accuracy bonus increases to +2.
+            \\rank<8> The accuracy bonus increases to +3.
         """, tags=[]),
         Spell('Quagmire', 4, 'All earth and unworked stone in a \\areamed radius within \\rnglong range', """
             % TODO: wording to allow it to affect smaller parts of larger objects
@@ -190,6 +191,18 @@ terramancy=MysticSphere(
             The stone blocks both air and \\glossterm<line of effect> to the target unless it is destroyed.
             In addition, the target is \\glossterm<paralyzed> as a \\glossterm<condition>.
         """, tags=['Manifestation']),
+        Spell('Rocky Shell', 2, 'Yourself', """
+            You cover your body with four overlapping layers of rock that crumple when they take damage.
+            The rock does not cover your joints, allowing you to move, though the shell increases your \\glossterm<encumbrance> by 2.
+            You are \\glossterm<resistant> to all \\glossterm<damage>.
+            Whenever you take damage, one layer of rock is destroyed.
+            When the last layer of rock is destroyed, this ability provides no further benefit.
+
+            \\rankline
+            \\rank<4> The spell creates six layers of rock.
+            \\rank<6> The spell creates eight layers of rock.
+            \\rank<8> The spell creates ten layers of rock.
+        """, tags=['Attune (self)', 'Manifestation']),
     ],
     rituals=[
     ],

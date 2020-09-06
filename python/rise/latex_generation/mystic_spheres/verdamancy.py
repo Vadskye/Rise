@@ -105,15 +105,16 @@ verdamancy=MysticSphere(
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=['Manifestation', 'Sustain (minor)']),
-        Spell('Poison -- Sassone Leaf', 1, 'One living creature within \\rngmed range', """
+        Spell('Poison -- Sassone Leaf', 2, 'One living creature within \\rngmed range', """
             This spell functions like this \\spell<poison -- nitharit> spell, except that the target becomes poisoned with sassone leaf instead (see \\pcref<Poisons>).
             A creature poisoned by sassone leaf loses a \\glossterm<hit point> from each successful attack, including the first.
             A third successful attack causes the target to lose an additional hit point and ends the poison.
             A third failed attack ends the poison.
 
             \\rankline
-            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<7> The accuracy bonus increases to +2.
+            \\rank<4> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<6> The accuracy bonus increases to +2.
+            \\rank<8> The accuracy bonus increases to +3.
         """, tags=[]),
         Spell('Poison -- Arsenic', 3, 'One living creature within \\rngmed range', """
             This spell functions like this \\spell<poison -- nitharit> spell, except that the target becomes poisoned with arsenic instead (see \\pcref<Poisons>).
@@ -191,7 +192,7 @@ verdamancy=MysticSphere(
             \\rank<5> The area increases to a \\arealarge shapeable line.
             \\rank<7> The damage increases to \\glossterm<standard damage>.
         """, tags=['Attune (self)']),
-        Spell('Plant Growth', 1, 'All plants and arable earth in a \\areamed radius within \\rngmed range', """
+        Spell('Plant Growth', 2, 'All plants and arable earth in a \\areamed radius within \\rngmed range', """
             Choose whether you want plants within the area to grow or diminish.
 
             If you choose for plants to grow, all arable earth within the area becomes \\glossterm<light undergrowth>.
@@ -201,20 +202,20 @@ verdamancy=MysticSphere(
             When this spell's duration ends, the plants return to their natural size.
 
             \\rankline
-            \\rank<3> The area increases to a \\arealarge radius.
-            \\rank<5> The range increases to \\rnglong.
-            \\rank<7> The area increases to a \\areahuge radius.
+            \\rank<4> The area increases to a \\arealarge radius.
+            \\rank<6> The range increases to \\rnglong.
+            \\rank<8> The area increases to a \\areahuge radius.
         """, tags=['Sustain (minor)']),
-        Spell('Blight', 1, 'One living creature or plant within \\rngmed range', """
+        Spell('Blight', 2, 'One living creature or plant within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             % TODO: is this the right damage type?
-            \\hit The target takes acid \\glossterm<standard damage>.
+            \\hit The target takes acid \\glossterm<standard damage> +1d.
             This damage is doubled if the target is a plant, including plant creatures.
 
             \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<4> The damage increases to \\glossterm<standard damage> +2d.
+            \\rank<6> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<8> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=[]),
         Spell('Shillelagh', 1, 'One nonmagical stick of wood', """
             You transform the target into a club, greatclub, or quarterstaff, as you choose (see \\pcref<Weapons>).

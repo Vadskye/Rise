@@ -23,7 +23,7 @@ cryomancy=MysticSphere(
     ],
     lists=['Arcane', 'Nature', 'Pact'],
     spells=[
-        Spell('Freezing Grasp', 1, 'One creature or object within your \\glossterm<reach>', """
+        Spell('Freezing Grasp', 2, 'One creature or object within your \\glossterm<reach>', """
             This spell does not have the \\glossterm<Focus> tag.
             You must have a \\glossterm<free hand> to cast this spell.
 
@@ -31,9 +31,9 @@ cryomancy=MysticSphere(
             \\hit The target takes cold \\glossterm<standard damage> +1d.
 
             \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
+            \\rank<4> The damage increases to \\glossterm<standard damage> +2d.
+            \\rank<6> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<8> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=[], focus=False),
         Spell('Cone of Cold', 1, 'Everything in a \\areamed cone from you', """
             Make an attack vs. Fortitude against each target.
@@ -67,14 +67,14 @@ cryomancy=MysticSphere(
             \\rank<5> The damage increases to \\glossterm<standard damage>.
             \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
         """, tags=['Manifestation']),
-        Spell('Ice Spike', 1, 'One creature or object within \\rngclose range', """
+        Spell('Ice Spike', 2, 'One creature or object within \\rngmed range', """
             Make an attack vs. Armor against the target.
             \\hit The target takes piercing and cold \\glossterm<standard damage>.
 
             \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<4> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<6> The damage increases to \\glossterm<standard damage> +2d.
+            \\rank<8> The damage increases to \\glossterm<standard damage> +3d.
         """, tags=['Manifestation']),
         Spell('Freeze Poison', 1, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
             The target takes cold damage equal to your \\glossterm<power>.
@@ -110,14 +110,16 @@ cryomancy=MysticSphere(
             \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<8> The accuracy bonus increases to +2.
         """, tags=[]),
-        Spell('Skate', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Skate', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target can move on top of calm water as if it were land.
             It treats the water as \\glossterm<difficult terrain>.
 
+            You can cast this spell as a \\glossterm<minor action>.
+
             \\rankline
-            \\rank<3> The target can also move on top of rough water.
-            \\rank<5> The target can also move on top of stormy water.
-            \\rank<7> The target no longer treats the water as difficult terrain.
+            \\rank<4> The target can also move on top of rough water.
+            \\rank<6> The target can also move on top of stormy water.
+            \\rank<8> The target no longer treats the water as difficult terrain.
         """, tags=['Attune (target)']),
         Spell('Skyskate', 3, 'Yourself', """
             Whenever you move, you can leave a trail of ice behind you.
@@ -133,17 +135,17 @@ cryomancy=MysticSphere(
             \\rank<5> Your ice trail collapses more gradually.  If you are still standing on your own ice trail when it disappears, you can fall up to 50 feet before you start taking \\glossterm<falling damage>.
             \\rank<7> Your ice trail lasts until the end of the next round after your movement.
         """, tags=['Attune (self)', 'Manifestation']),
-        Spell('Icy Shell', 1, 'Yourself', """
-            You cover your body with three overlapping layers of ice that crumple when they take damage.
+        Spell('Icy Shell', 2, 'Yourself', """
+            You cover your body with four overlapping layers of ice that crumple when they take damage.
             The ice does not cover your joints, allowing you to move freely.
             You are \\glossterm<resistant> to \\glossterm<physical damage> and \\glossterm<fire damage>.
             Whenever you take physical damage or fire damage, one layer of ice is destroyed.
             When the last layer of ice is destroyed, this ability provides no further benefit.
 
             \\rankline
-            \\rank<3> The spell creates five layers of ice.
-            \\rank<5> The spell creates seven layers of ice.
-            \\rank<7> The spell creates ten layers of ice.
+            \\rank<4> The spell creates six layers of ice.
+            \\rank<6> The spell creates eight layers of ice.
+            \\rank<8> The spell creates ten layers of ice.
         """, tags=['Attune (self)', 'Manifestation']),
         Spell('Winterwave', 3, 'Everything in a \\arealarge cone from you', """
             Make an attack vs. Fortitude against each target.

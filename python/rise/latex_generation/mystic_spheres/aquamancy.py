@@ -72,7 +72,9 @@ aquamancy=MysticSphere(
             \\rankline
             \\rank<7> The maximum size increases to Gargantuan.
         """, tags=['Manifestation']),
-        Spell('Constraining Bubble', 3, 'One Large or smaller creature within \\rngmed range', """
+        # fighting underwater is slightly more detrimental than the standard
+        # rank 2 condition, so this is close range instead of medium range.
+        Spell('Constraining Bubble', 3, 'One Large or smaller creature within \\rngclose range', """
             Make an attack vs. Reflex against the target.
             \\hit As a \\glossterm<condition>, the majority of the target's body is surrounded by a layer of water.
             This does not impede the target's ability to breathe, but it takes penalties as if it was fighting underwater (see \\pcref<Underwater Combat>).
@@ -131,15 +133,15 @@ aquamancy=MysticSphere(
             \\rank<6> The area of the wall increases to a \\areahuge line.
             \\rank<8> The area of the wall increases to a \\areaext line.
         """, tags=['Sustain (minor)', 'Manifestation']),
-        Spell('Underwater Freedom', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Underwater Freedom', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target suffers no penalties for acting underwater, except for those relating to using ranged weapons.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<3> The target can also breathe water as if it was air.
-            \\rank<5> The target also gains a swim speed equal to half its \\glossterm<base speed>.
-            \\rank<7> The swim speed increases to be equal to the target's \\glossterm<base speed>.
+            \\rank<4> The target can also breathe water as if it was air.
+            \\rank<6> The target also gains a swim speed equal to half its \\glossterm<base speed>.
+            \\rank<8> The swim speed increases to be equal to the target's \\glossterm<base speed>.
         """, tags=['Attune (target)']),
         Spell('Raging River', 3, 'Everything in a \\arealarge, 10 ft. wide line from you', """
             Make an attack vs. Fortitude against each target.
@@ -160,23 +162,24 @@ aquamancy=MysticSphere(
             \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
         """, tags=['Manifestation']),
-        Spell('Rainstorm', 3, 'Everything in the area (see text)', f"""
+        Spell('Rainstorm', 2, 'Everything in the area (see text)', f"""
             Torrential rain begins falling out of thin air within a \\arealarge radius \\glossterm<zone> from your location.
             The rain extinguishes minor fires such as campfires and torches on contact.
             Everything in the area gain a bonus equal to your \\glossterm<power> to \\glossterm<resistances> against fire damage.
 
             \\rankline
-            \\rank<5> The area increases to a \\areahuge radius \\glossterm<zone>.
-            \\rank<7> The area increases to a \\areaext radius \\glossterm<zone>.
+            \\rank<4> The area increases to a \\areahuge radius \\glossterm<zone>.
+            \\rank<6> The area increases to a \\areaext radius \\glossterm<zone>.
+            \\rank<8> The area increases to a 500 foot radius \\glossterm<zone>.
         """, tags=['Manifestation', 'Sustain (minor)']),
-        Spell('Obscuring Mist', 1, None, """
+        Spell('Obscuring Mist', 2, None, """
             Fog fills the air within a \\areamed radius \\glossterm<zone> from your location.
             The fog partially obstructs sight, granting \\glossterm<concealment> to anything seen through the fog (see \\pcref<Concealment>).
 
             \\rankline
-            \\rank<3> The area increases to a \\arealarge radius \\glossterm<zone>.
-            \\rank<5> You can exclude an inner radius of any size from the area, allowing you to create fog that surrounds you without blocking sight to things adjacent to you.
-            \\rank<7> The area increases to a \\areahuge radius \\glossterm<zone>.
+            \\rank<4> The area increases to a \\arealarge radius \\glossterm<zone>.
+            \\rank<6> You can exclude an inner radius of any size from the area, allowing you to create fog that surrounds you without blocking sight to things adjacent to you.
+            \\rank<8> The area increases to a \\areahuge radius \\glossterm<zone>.
         """, tags=['Sustain (minor)']),
         Spell('Misty Shroud', 4, None, """
             Fog fills the air within a \\areamed radius \\glossterm<emanation> from your location.
@@ -194,7 +197,7 @@ aquamancy=MysticSphere(
             \\rankline
             \\rank<7> You gain a +5 bonus to \\glossterm<reach> with attacks using the tentacles.
         """, tags=['Attune (self)']),
-        Spell('Aqueous Tentacles', 1, 'Yourself', """
+        Spell('Aqueous Tentacles', 2, 'Yourself', """
             You grow watery tentacles from your body.
             The tentacles grant you a slam \\glossterm<natural weapon> (see \\tref<Natural Weapons>).
             The natural weapon deals +2d damage, as normal for a slam natural weapon.
@@ -202,9 +205,9 @@ aquamancy=MysticSphere(
             Strikes using the tentacles are considered \\glossterm<magical> abilities, which means you use your \\glossterm<power> with \\glossterm<magical> abilities to determine their damage.
 
             \\rankline
-            \\rank<3> You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with attacks using the tentacles.
-            \\rank<5> You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with attacks using the tentacles.
-            \\rank<7> You gain a +5 bonus to \\glossterm<reach> with attacks using the tentacles.
+            \\rank<4> You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with attacks using the tentacles.
+            \\rank<6> You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with attacks using the tentacles.
+            \\rank<8> You gain a +5 bonus to \\glossterm<reach> with attacks using the tentacles.
         """, tags=['Attune (self)', 'Manifestation']),
         Spell('Dessicate', 4, 'One creature within \\rngclose range', """
             Make an attack vs. Fortitude against the target.
@@ -282,7 +285,7 @@ aquamancy=MysticSphere(
 
             This ritual takes one minute to perform.
         """, tags=['Attune (ritual)']),
-        Spell('Water Breathing', 3, 'One Medium or smaller ritual participant', """
+        Spell('Water Breathing', 3, 'One ritual participant', """
             The target can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
 
             This ritual takes one minute to perform.

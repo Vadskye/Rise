@@ -40,20 +40,6 @@ thaumaturgy=MysticSphere(
             \\rankline
             \\rank<7> The area increases to a \\areamed radius.
         """, tags=[]),
-        Spell('Suppress Magic', 1, 'One creature, object, or magical effect within \\rngmed range', """
-            Make an attack against the target.
-            If you target a creature or object, the attack result is applied to every \\glossterm<magical> effect on the target.
-            % Is this clear enough?
-            This does not affect the passive effects of any magic items the target has equipped.
-            If you target a magical effect directly, the attack result is applied against the effect itself.
-            The \\glossterm<difficulty rating> for each effect is equal to the \\glossterm<power> of that effect.
-            \\hit Each effect is \\glossterm<suppressed>.
-
-            \\rankline
-            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<5> The accuracy bonus increases to +2.
-            \\rank<7> The accuracy bonus increases to +3.
-        """, tags=['Sustain (standard)']),
         Spell('Alter Magic Aura', 1, 'One Large or smaller magical object in \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit One of the target's magic auras is altered (see \\pcref<Spellsense>).
@@ -80,8 +66,6 @@ thaumaturgy=MysticSphere(
             Otherwise, this spell has no effect.
             \\hit The target is treated as if the ability that created it was \\glossterm<dismissed>.
             This usually causes the target to disappear.
-            If an \\glossterm<attuned> effect is \\glossterm<dismissed> in this way,
-                the attuning creature can regain the \\glossterm<action point> spent to attune to the spell when it takes a \\glossterm<short rest>.
 
             \\rankline
             \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
@@ -105,21 +89,38 @@ thaumaturgy=MysticSphere(
             \\rank<5> You can target an additional ally within range.
             \\rank<7> You can target an additional ally within range.
         """, tags=[]),
-        Spell('Dispel Magic', 3, 'One creature, object, or magical effect within \\rngmed range', """
+        Spell('Suppress Magic', 2, 'One magical effect within \\rngmed range (see text)', """
+            The target must be the source or result of an active \\glossterm<magical> effect.
+            This includes magical \\glossterm<conditions>, \\glossterm<sustained> effects, and \\glossterm<attuned> effects.
+            It does not include \\glossterm<Curse> effects, which are more difficult to remove.
+            This spell cannot be used to interrupt or negate immediate effects.
+            Identifying non-visual magical effects to target with this spell may require the use of the Spellsense skill (see \\pcref<Spellsense>).
+
             Make an attack against the target.
-            If you target a creature or object, the attack result is applied to every \\glossterm<magical> effect on the target.
-            % Is this clear enough?
-            This does not affect the passive effects of any magic items the target has equipped.
-            If you target a magical effect directly, the attack result is applied against the effect itself.
-            The \\glossterm<difficulty rating> for each effect is equal to the \\glossterm<power> of that effect.
-            \\hit Each effect is \\glossterm<dismissed>
-            If an \\glossterm<attuned> effect is \\glossterm<dismissed> in this way,
-                the attuning creature can regain the \\glossterm<action point> spent to attune to the spell when it takes a \\glossterm<short rest>.
+            Its defense against this attack is equal to its \\glossterm<power>.
+            \\hit The effect is \\glossterm<suppressed> as long as you \\glossterm<sustain> this ability.
 
             \\rankline
-            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<7> The accuracy bonus increases to +2.
-        """, tags=['Sustain (standard)']),
+            \\rank<4> You gain a +2 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<6> The accuracy bonus increases to +4.
+            \\rank<8> The accuracy bonus increases to +6.
+        """, tags=['Sustain (minor)']),
+        Spell('Dispel Magic', 4, 'One magical effect within \\rngmed range (see text)', """
+            The target must be the source or result of an active \\glossterm<magical> effect with a duration.
+            This includes magical \\glossterm<conditions>, \\glossterm<sustained> effects, and \\glossterm<attuned> effects.
+            It does not include \\glossterm<Curse> effects, which are more difficult to remove.
+            This spell cannot be used to interrupt or negate immediate effects.
+            Identifying non-visual magical effects to target with this spell may require the use of the Spellsense skill (see \\pcref<Spellsense>).
+
+            Make an attack against the target.
+            Its defense against this attack is equal to its \\glossterm<power>.
+            \\hit The effect is \\glossterm<dismissed>.
+            If it required attunement, that attunement is broken.
+
+            \\rankline
+            \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<8> The accuracy bonus increases to +2.
+        """, tags=[]),
         Spell('Malign Transferance', 3, ['Yourself or an \\glossterm<ally> within \\rngmed range', 'One other creature within that range'], """
             The primary target must be currently affected by a \\glossterm<magical> \\glossterm<condition>.
             Make an attack vs. Mental against the secondary target.
@@ -132,7 +133,7 @@ thaumaturgy=MysticSphere(
         """, tags=[]),
         Spell('Malign Confluence', 6, ['Yourself and each \\glossterm<ally> within \\rngmed range', 'One other creature within that range'], """
             Make an attack vs. Mental against the secondary target.
-            \\hit One magical condition of your choice is removed from primary target and applied to the secondary target.
+            \\hit One magical condition of your choice is removed from each primary target and applied to the secondary target.
             \\crit As above, except that you can transfer any number of magical conditions from each primary target in this way.
 
             \\rankline
@@ -146,10 +147,11 @@ thaumaturgy=MysticSphere(
         """, tags=['Attune (self)']),
         Spell('Enhance Magic', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<magical> abilities.
+
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<5> The target also reduces its \\glossterm<focus penalties> by 1.
+            \\rank<5> The target gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with \\glossterm<magical> abilities.
             \\rank<7> The bonus increases to +4.
         """, tags=['Attune (target)']),
         # Is this worth the complexity it adds to the system?
@@ -162,16 +164,15 @@ thaumaturgy=MysticSphere(
             You cannot exclude yourself from this \\glossterm<emanation>.
             However, this spell does not prevent you from sustaining or dismissing this spell.
         """, tags=['Sustain (minor)']),
-        # Does having this be Swift break anything?
         Spell('Dimensional Anchor', 3, 'One creature or object within \\rngmed range', """
-            Make an attack vs. Mental against the target.
+            Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against the target.
             \\hit The target is unable to travel extradimensionally.
             This prevents all \\glossterm<Manifestation> effects and effects that teleport the target or move it between planes.
 
             \\rankline
-            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<5> The accuracy bonus increases to +1.
             \\rank<7> The accuracy bonus increases to +2.
-        """, tags=['Swift', 'Sustain (minor)']),
+        """, tags=['Sustain (minor)']),
         Spell('Dimensional Lock', 6, None, """
             This spell creates a dimensional lock in a \\arealarge radius \\glossterm<zone> from your location.
             Extraplanar travel into or out of the area is impossible.
@@ -225,15 +226,16 @@ thaumaturgy=MysticSphere(
             \\rank<6> Whenever you sustain an ability with this effect, you can also make any relevant choices as part of sustaining the ability.
             \\rank<8> You can sustain a second ability with this effect.
         """, tags=['Attune (self)']),
-        Spell('Spellseal', 3, 'One creature within \\rngmed range', """
+        Spell('Spellseal', 2, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             You gain a +2 bonus to \\glossterm<accuracy> if the target is casting a spell in the current phase.
             \\hit As a \\glossterm<condition>, the next time the target tries to cast a spell, it \\glossterm<miscasts> that spell instead.
             When the target miscasts a spell in this way, this effect ends.
 
             \\rankline
-            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<7> The accuracy bonus increases to +2.
+            \\rank<4> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<6> The accuracy bonus increases to +2.
+            \\rank<8> The accuracy bonus increases to +3.
         """, tags=[]),
         Spell('Delay Teleportation', 4, 'See text', """
             Whenever a creature or object would teleport into the area in a \\arealarge radius \\glossterm<emanation> from you, that teleportation is delayed by a round.
