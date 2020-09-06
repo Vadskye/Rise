@@ -77,7 +77,7 @@ Note: This is duplicated in the Metacaster feat.
   * List: deafened, prone
 * Rank 1
   * Generally give -2 to a category (accuracy/defenses)
-  * List: dazed, fatigued, sickened, slowed
+  * List: dazed, dazzled, sickened, slowed
 * Rank 2
   * Generally give -4 to a category (accuracy/defenses)
   * List: exhausted, frightened, nauseated, generic -2 to all, ignited (move action to remove), stunned
