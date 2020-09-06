@@ -72,7 +72,7 @@ astromancy=MysticSphere(
             \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=[]),
         # TODO: target wording is awkward
-        Spell('Teleport', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
+        Spell('Translocation', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
             The target \\glossterm<teleports> into an unoccupied destination within range.
             If the destination is invalid, this spell is \\glossterm<miscast>.
 
@@ -143,12 +143,13 @@ astromancy=MysticSphere(
             \\hit The target takes energy \\glossterm<standard damage> -2d and is \\glossterm<confused> as a \\glossterm<condition>.
         """, tags=[]),
         # TODO: target wording
-        Spell('Dimensional Shuffle', 3, 'Up to five targets within \\rngmed range from among you and your \\glossterm<allies>', """
-            Each target teleports into the location of a different target.
+        Spell('Dimensional Shuffle', 2, 'Up to five targets within \\rngmed range from among you and your \\glossterm<allies>', """
+            Each target \\glossterm<teleports> into the location of a different target.
 
             \\rankline
-            \\rank<5> The range increases to \\rnglong.
-            \\rank<7> The range increases to \\rngext.
+            \\rank<4> The range increases to \\rnglong.
+            \\rank<6> The range increases to \\rngext.
+            \\rank<8> The maximum number of targets increases to ten.
         """, tags=[]),
         Spell('Dimension Walk', 4, 'Yourself', """
             You can teleport horizontally instead of moving normally.
@@ -160,22 +161,32 @@ astromancy=MysticSphere(
             \\rank<6> You can also teleport vertically or diagonally in addition to horizontally.
             \\rank<8> You can teleport in this way even if you are unable to move, such as if you are \\glossterm<immobilized> or \\glossterm<paralyzed>.
         """, tags=['Attune (self)']),
-        Spell('Flicker', 1, 'Yourself', """
+        Spell('Flicker', 2, 'Yourself', """
             You randomly flicker between your current plane and the Astral Plane.
             \\glossterm<Targeted> \\glossterm<strikes> against you have a 20\\% failure chance as you happen to be in the Astral Plane when the attack would hit.
             However, all of your attacks also have the same failure chance.
 
             \\rankline
-            \\rank<3> The failure chance increases to 30\\%.
-            \\rank<5> The failure chance increases to 40\\%.
-            \\rank<7> The failure chance increases to 50\\%.
+            \\rank<4> The failure chance increases to 30\\%.
+            \\rank<6> The failure chance increases to 40\\%.
+            \\rank<8> The failure chance increases to 50\\%.
         """, tags=['Attune (self)']),
-        Spell('Controlled Flicker', 3, 'Yourself', """
+        Spell('Controlled Flicker', 4, 'Yourself', """
             This spell functions like the \\textit<flicker> spell, except that you can choose at the start of each round to stop flickering for that round.
             If you do, your attacks do not have a failure chance, and attacks against you also do not have a failure chance.
 
-            \\rank<5> The failure chance increases to 30\\%.
-            \\rank<7> The failure chance increases to 40\\%.
+            \\rank<6> The failure chance increases to 30\\%.
+            \\rank<8> The failure chance increases to 40\\%.
+        """, tags=['Attune (self)']),
+        Spell('Astral Instability', 2, 'Yourself', """
+            At the start of each phase, you may \\glossterm<teleport> into a random location in the Astral Plane.
+            At the end of the round, you reappear in the location where you disappeared.
+            If that space is occupied, you reappear in the closest available space.
+
+            \\rankline
+            \\rank<4> You can reappear anywhere within \\rngclose range from the location where you disappeared.
+            \\rank<6> The distance you can reappear at increases to \\rngmed range.
+            \\rank<8> The distance you can reappear at increases to \\rnglong range.
         """, tags=['Attune (self)']),
         Spell('Transposition', 3, 'Two Large or smaller creatures within \\rngmed range', """
             Make an attack vs. Mental against each target.

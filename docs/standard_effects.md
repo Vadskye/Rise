@@ -88,6 +88,11 @@ Note: This is duplicated in the Metacaster feat.
   * Generally cause complete action denial
   * List: Asleep, paralyzed
 
+### End of next round effects
+
+A enemies-only rank 1 debuff until eonr with the same rank 1 condition on a crit
+is -4 ranks relative to a standard damage attack.
+
 ## Stock effects
 
 For effects that only deal damage, "deal standard damage" can be replaced with "inflict r1

@@ -35,7 +35,7 @@ polymorph=MysticSphere(
             \\rank<5> You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with natural weapons.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Attune (self)']),
-        Spell('Piercing Grasp', 1, 'One creature you \\glossterm<threaten>', """
+        Spell('Piercing Grasp', 2, 'One creature you \\glossterm<threaten>', """
             This spell does not have the \\glossterm<Focus> tag.
             You must have a \\glossterm<free hand> to cast this spell.
 
@@ -44,9 +44,9 @@ polymorph=MysticSphere(
             \\hit The target takes piercing \\glossterm<standard damage> +1d.
 
             \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
+            \\rank<4> The damage increases to \\glossterm<standard damage> +2d.
+            \\rank<6> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<8> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=[], focus=False),
         Spell('Baleful Polymorph', 7, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
@@ -61,7 +61,7 @@ polymorph=MysticSphere(
             \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=[]),
-        Spell('Shrink', 1, 'Yourself or one Small or larger \\glossterm<ally> within \\rngmed range', """
+        Spell('Shrink', 2, 'Yourself or one Small or larger \\glossterm<ally> within \\rngmed range', """
             The target's size decreases by one \\glossterm<size category>.
             This decreases its \\glossterm<base speed> and improves its \\glossterm<Stealth> skill.
             It may also decrease the target's \\glossterm<reach> (see \\pcref<Size in Combat>).
@@ -70,9 +70,9 @@ polymorph=MysticSphere(
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<3> The minimum size category is reduced to Diminuitive.
-            \\rank<5> You can decrease the target's size category by up to two size categories.
-            \\rank<7> The minimum size category is reduced to Fine.
+            \\rank<4> The minimum size category is reduced to Diminuitive.
+            \\rank<6> You can decrease the target's size category by up to two size categories.
+            \\rank<8> The minimum size category is reduced to Fine.
         """, tags=['Attune (target)']),
         Spell('Stoneskin', 1, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
             The target gains a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical> damage.

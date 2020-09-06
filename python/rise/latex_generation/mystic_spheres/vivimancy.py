@@ -31,7 +31,7 @@ vivimancy=MysticSphere(
             \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<8> The accuracy bonus increases to +2.
         """, tags=[]),
-        Spell('Draining Grasp', 1, 'One living creature within your \\glossterm<reach>', """
+        Spell('Draining Grasp', 2, 'One living creature within your \\glossterm<reach>', """
             This spell does not have the \\glossterm<Focus> tag.
             You must have a \\glossterm<free hand> to cast this spell.
 
@@ -39,9 +39,9 @@ vivimancy=MysticSphere(
             \\hit The target takes energy \\glossterm<standard damage> +1d.
 
             \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
+            \\rank<4> The damage increases to \\glossterm<standard damage> +2d.
+            \\rank<6> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<8> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=[], focus=False),
         Spell('Drain Life', 1, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
@@ -80,8 +80,9 @@ vivimancy=MysticSphere(
             \\rank<7> The bonus increases to +6.
         """, tags=['Attune (target)']),
         Spell('Lifegift', 1, 'Yourself or a living \\glossterm<ally> within \\rngmed range', """
-            The target increases its maximum \\glossterm<hit points> by 2 and regains that many hit points.
-            When this spell ends, the target loses hit points equal to the hit points it regained this way.
+            The target increases its current \\glossterm<hit points> by 2.
+            This can cause its current hit points to exceed its normal maximum hit points.
+            When this spell ends, the target loses hit points equal to the number of hit points it gained this way.
 
             You can cast this spell as a \\glossterm<minor action>.
 
@@ -127,7 +128,7 @@ vivimancy=MysticSphere(
             \\rank<5> You can cast this spell as a \\glossterm<minor action>.
             \\rank<7> The target can ignore the vital wound effect of two of its \\glossterm<vital wounds> instead of only one.
         """, tags=['Attune (target)']),
-        Spell('Death Knell', 1, 'One living creature within \\rngmed range', """
+        Spell('Death Knell', 2, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             You gain a +4 bonus to \\glossterm<accuracy> against a \\glossterm<bloodied> creature.
             \\hit The target loses a \\glossterm<hit point>.
@@ -135,9 +136,9 @@ vivimancy=MysticSphere(
             It takes a penalty to its \\glossterm<vital resistance> equal to your \\glossterm<power> against all types of damage.
 
             \\rankline
-            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<5> The accuracy bonus increases to +2.
-            \\rank<7> The accuracy bonus increases to +3.
+            \\rank<4> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<6> The accuracy bonus increases to +2.
+            \\rank<8> The accuracy bonus increases to +3.
         """, tags=[]),
         Spell('Circle of Death', 3, 'Living \\glossterm<enemies> in a \\areamed radius', """
             Make an attack vs. Fortitude against each target.
@@ -185,6 +186,16 @@ vivimancy=MysticSphere(
             \\rank<6> This healing only requires the target to \\glossterm<wound> a living creature with a strike.
             \\rank<8> This healing only requires the target to deal damage to a living creature with a strike.
         """, tags=['Attune (target)']),
+        Spell('Corpse Explosion', 2, 'One Small or larger corpse within \\rngmed range (see text)', """
+            You violently discharge the latent magical potential within the target corpse, causing it to explode.
+            Make an attack vs. Reflex against each creature within a \\areasmall radius from it.
+            \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
+
+            \\rankline
+            \\rank<4> The damage increases to \\glossterm<standard damage>.
+            \\rank<6> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<8> The damage increases to \\glossterm<standard damage> +2d.
+        """, tags=[]),
     ],
     rituals=[
         Spell('Remove Disease', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """

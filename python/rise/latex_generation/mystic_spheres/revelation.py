@@ -44,12 +44,12 @@ revelation=MysticSphere(
             \\rank<5> You also gain \\glossterm<exotic proficiency> with the chosen weapon group.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Attune (self)']),
-        Spell('Purge Invisibility', 3, 'Everything in a \\arealarge radius \\glossterm<emanation> from you', """
+        Spell('Purge Invisibility', 2, 'Everything in a \\arealarge radius \\glossterm<emanation> from you', """
             All invisibility effects are \\glossterm<suppressed> on all targets in the area.
 
             \\rankline
-            \\rank<5> The area increases to a \\areahuge radius \\glossterm<emanation>.
-            \\rank<7> The area increases to a \\areaext radius \\glossterm<emanation>.
+            \\rank<4> The area increases to a \\areahuge radius \\glossterm<emanation>.
+            \\rank<6> The area increases to a \\areaext radius \\glossterm<emanation>.
         """, tags=['Attune (self)']),
         Spell('True Strike', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The first time the target makes a \\glossterm<strike> this round,
@@ -118,24 +118,27 @@ revelation=MysticSphere(
             \\rank<6> The range increases to 100 feet.
             \\rank<8> The range increases to 200 feet.
         """, tags=['Attune (self)']),
-        Spell('Reveal Weakness', 1, 'One creature within \\rngmed range', """
-            Make an attack vs. Mental against the target.
-            \\hit The target's physical weaknesses are highlighted, and openings in its defenses are revealed to attackers moments before they exist.
-            It suffers a -2 penalty to Armor defense as a \\glossterm<condition>.
+        Spell('Reveal Weakness', 2, 'One creature within \\rngmed range', """
+            When you cast this spell, choose one of the four defenses: Armor, Fortitude, Reflex, or Mental.
+            Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against the target.
+            \\hit As a \\glossterm<condition>, the target's weaknesses are highlighted, and openings in its defenses are revealed to attackers moments before they exist.
+            It takes a -2 penalty to the chosen defense.
             \\crit As above, except that the penalty is doubled.
 
             \\rankline
-            \\rank<3> The penalty increases to -3.
-            \\rank<5> The penalty increases to -4.
-            \\rank<7> The penalty increases to -5.
+            \\rank<3> The accuracy bonus increases to +3.
+            \\rank<5> The accuracy bonus increases to +4.
+            \\rank<7> The accuracy bonus increases to +5.
         """, tags=[]),
-        Spell('Reveal Vulnerability', 6, 'One creature within \\rngmed range', """
+        Spell('Reveal Vulnerability', 4, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
-            \\hit The target's vulnerabilities become clear for all to see.
-            Its \\glossterm<resistances> are halved as a \\glossterm<condition>.
+            \\hit As a \\glossterm<condition>, the target's vulnerabilities become clear for all to see.
+            Its \\glossterm<wound resistance> is halved.
+            \\crit As above, except that the target's \\glossterm<vital resistance> is also halved.
 
             \\rankline
-            \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<8> The accuracy bonus increases to +2.
         """, tags=[]),
         Spell('Myriad Visions', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
@@ -161,7 +164,7 @@ revelation=MysticSphere(
             \\rankline
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=[]),
-        Spell('Alarm', 1, 'One unoccupied square within \\rngmed range', """
+        Spell('Alarm', 2, 'One unoccupied square within \\rngmed range', """
             A \\glossterm<scrying sensor> appears floating in the air in the target location.
             The sensor passively observes its surroundings.
             As with other \\glossterm<Scrying> effects, its visual acuity is the same as yours.
@@ -171,11 +174,11 @@ revelation=MysticSphere(
             This mental sensation is strong enough to wake you from normal sleep, but does not otherwise disturb concentration.
 
             \\rankline
-            \\rank<3> The sensor gains a +2 bonus to Awareness.
-            \\rank<5> The Awareness bonus increases to +4.
-            \\rank<7> The Awareness bonus increases to +6.
+            \\rank<4> The sensor gains a +2 bonus to Awareness.
+            \\rank<6> The Awareness bonus increases to +4.
+            \\rank<8> The Awareness bonus increases to +6.
         """, tags=['Attune (self)', 'Scrying']),
-        Spell('Arcane Eye', 1, 'One unoccupied square within \\rngmed range', """
+        Spell('Arcane Eye', 2, 'One unoccupied square within \\rngmed range', """
             A \\glossterm<scrying sensor> appears floating in the air in the target location.
             At the start of each round, you choose whether you see and hear from this sensor or from your body.
 
@@ -187,9 +190,9 @@ revelation=MysticSphere(
             At the end of each round, if the sensor is does not have \\glossterm<line of effect> from you, it is destroyed.
 
             \\rankline
-            \\rank<3> The sensor is not destroyed if you do not have \\glossterm<line of effect> to it.
-            \\rank<5> You constantly receive sensory input from both your body and the sensor.
-            \\rank<7> The range increases to \\rnglong.
+            \\rank<4> The sensor is not destroyed if you do not have \\glossterm<line of effect> to it.
+            \\rank<6> You constantly receive sensory input from both your body and the sensor.
+            \\rank<8> The distance you can move the sensor during each movement phase increases to 100 feet.
         """, tags=['Sustain (minor)', 'Scrying']),
         Spell('Clairvoyance', 5, 'One unoccupied square within \\rngmed range (see text)', """
             You do not need \\glossterm<line of sight> or \\glossterm<line of effect> to target a location.
