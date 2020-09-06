@@ -116,13 +116,13 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Barbarian Progression}
         \begin{dtabularx}{\textwidth}{l l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Min Level} & \tb{Battleforged Resilience}   & \tb{Battlerager}       & \tb{Outland Savage}      & \tb{Primal Warrior}    \tableheaderrule
-            1 & 1  & Battleforged endurance         & Rage                   & Exotic weaponry          & Primal maneuvers     \\
-            2 & 2  & Toughened body                 & Seething anger         & Fast movement            & Maneuver rank (2), primal lore         \\
-            3 & 5  & Battle-scarred                 & Powerful anger         & Savage precision         & Maneuver rank (3), primal force         \\
-            4 & 8  & Greater battleforged endurance & Greater rage           & Savage instincts         & Maneuver rank (4), primal maneuver      \\
-            5 & 11 & Greater toughened body         & Greater seething anger & Greater fast movement    & Maneuver rank (5), greater primal lore  \\
-            6 & 14 & Greater battle-scarred         & Greater powerful anger & Greater savage precision & Maneuver rank (6), greater primal force \\
-            7 & 17 & Supreme battleforged endurance & Supreme rage           & Greater savage instincts & Maneuver rank (7), primal maneuver      \\
+            1 & 1  & Battleforged endurance         & Rage                   & Exotic weaponry          & Primal maneuvers                        \\
+            2 & 2  & Toughened body                 & Seething anger         & Fast movement            & Maneuver rank (2), primal maneuver      \\
+            3 & 5  & Battle-scarred                 & Powerful anger         & Savage precision         & Maneuver rank (3), primal lore          \\
+            4 & 8  & Greater battleforged endurance & Greater rage           & Savage instincts         & Maneuver rank (4), primal force         \\
+            5 & 11 & Greater toughened body         & Greater seething anger & Greater fast movement    & Maneuver rank (5), primal maneuver      \\
+            6 & 14 & Greater battle-scarred         & Greater powerful anger & Greater savage precision & Maneuver rank (6), primal endurance     \\
+            7 & 17 & Supreme battleforged endurance & Supreme rage           & Greater savage instincts & Maneuver rank (7), greater primal force \\
             8 & 20 & Epic resilience                & Epic rage              & Epic savagery            & Maneuver rank (8), epic primality       \\
         \end{dtabularx}
     \end{dtable!*}
@@ -224,7 +224,7 @@ This choice determines a great deal about your character's abilities.
         Your \textit{rage} ability also no longer imposes defense penalties.
         In addition, when you use your \textit{rage} ability, you can grow by one \glossterm{size category}.
 
-    \subection{Outland Savage}
+        \subection{Outland Savage}
         This archetype improves your mobility and combat prowess with direct, brutal abilities.
 
         \cf{Bbn}[1]{Exotic Weaponry} You gain proficiency with improvised weapons (see \pcref{Improvised Weapons}).
@@ -253,53 +253,69 @@ This choice determines a great deal about your character's abilities.
         % +2 skill points
         % +2 Str/Dex checks
 
-        \cf{Bbn}[1]{Primal Maneuvers}
-        You can channel your primal energy into ferocious attacks.
-        You learn two \glossterm{maneuvers} from the primal maneuver list (see \pcref{Primal Maneuvers}).
-        You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
-        As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
+        {
+            \cf{Bbn}[1]{Primal Maneuvers}
+            You can channel your primal energy into ferocious attacks.
+            You learn one \glossterm{maneuver} from the primal maneuver list (see \pcref{Primal Maneuvers}).
+            You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
+            As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
 
-        When you gain access to a new \glossterm{rank} in this archetype,
+            When you gain access to a new \glossterm{rank} in this archetype,
             you can exchange any number of maneuvers you know for other maneuvers,
             including maneuvers of the higher rank.
+        }
 
-        \cf{Bbn}[2]{Maneuver Rank}[Magical] You become a rank 2 primal maneuverist.
-        This gives you access to maneuvers that require a minimum rank of 2.
+        {
+            \cf{Bbn}[2]{Maneuver Rank}[Magical] You become a rank 2 primal maneuverist.
+            This gives you access to maneuvers that require a minimum rank of 2.
 
-        \cf{Bbn}[2]{Primal Lore} You gain two additional \glossterm{skill points}.
+            \cf{Bbn}[2]{Primal Maneuver}
+            You learn an additional primal \glossterm{maneuver} (see \pcref{Primal Maneuvers}).
+        }
 
-        \cf*{Bbn}[3]{Maneuver Rank}[Magical] You become a rank 3 primal maneuverist.
-        This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 3.
+        {
+            \cf*{Bbn}[3]{Maneuver Rank}[Magical] You become a rank 3 primal maneuverist.
+            This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 3.
 
-        \cf{Bbn}[3]{Primal Force} You gain a \plus1 bonus to Strength-based \glossterm{checks} and Constitution-based \glossterm{checks}.
+            \cf{Bbn}[3]{Primal Lore} You gain two additional \glossterm{skill points}.
+        }
 
-        \cf*{Bbn}[4]{Maneuver Rank}[Magical] You become a rank 4 primal maneuverist.
-        This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 4.
+        {
+            \cf*{Bbn}[4]{Maneuver Rank}[Magical] You become a rank 4 primal maneuverist.
+            This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 4.
 
-        \cf{Bbn}[4]{Primal Maneuver}
-        You learn an additional primal \glossterm{maneuver} (see \pcref{Primal Maneuvers}).
+            \cf{Bbn}[4]{Primal Force} You gain a \plus1 bonus to Strength-based \glossterm{checks} and Constitution-based \glossterm{checks}.
+        }
 
-        \cf*{Bbn}[5]{Maneuver Rank}[Magical] You become a rank 5 primal maneuverist.
-        This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 5.
+        {
+            \cf*{Bbn}[5]{Maneuver Rank}[Magical] You become a rank 5 primal maneuverist.
+            This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 5.
 
-        \cf{Bbn}[5]{Greater Primal Lore} You gain two additional \glossterm{skill points}.
+            \cf*{Bbn}[5]{Primal Maneuver}
+            You learn an additional primal \glossterm{maneuver} (see \pcref{Primal Maneuvers}).
+        }
 
-        \cf*{Bbn}[6]{Maneuver Rank}[Magical] You become a rank 6 primal maneuverist.
-        This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 6.
+        {
+            \cf*{Bbn}[6]{Maneuver Rank}[Magical] You become a rank 6 primal maneuverist.
+            This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 6.
 
-        \cf{Bbn}[6]{Greater Primal Force} The bonuses from your \textit{primal force} ability increase to \plus2.
+            \cf{Bbn}[6]{Primal Endurance} You gain a +2 bonus to Fortitude defense.
+        }
 
-        \cf*{Bbn}[7]{Maneuver Rank}[Magical] You become a rank 7 primal maneuverist.
-        This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 7.
+        {
+            \cf*{Bbn}[7]{Maneuver Rank}[Magical] You become a rank 7 primal maneuverist.
+            This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 7.
 
-        \cf*{Bbn}[7]{Primal Maneuver}
-        You learn an additional primal \glossterm{maneuver} (see \pcref{Primal Maneuvers}).
+            \cf{Bbn}[7]{Greater Primal Force} The bonuses from your \textit{primal force} ability increase to \plus2.
+        }
 
-        \cf*{Bbn}[8]{Maneuver Rank}[Magical] You become a rank 8 primal maneuverist.
-        This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 8.
+        {
+            \cf*{Bbn}[8]{Maneuver Rank}[Magical] You become a rank 8 primal maneuverist.
+            This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 8.
 
-        \cf{Bbn}[8]{Epic Primality} The bonuses from your \textit{primal force} ability increase to \plus5.
-        In addition, you learn an additional primal \glossterm{maneuver}.
+            \cf{Bbn}[8]{Epic Primality} The bonuses from your \textit{primal force} ability increase to \plus5.
+            In addition, you learn an additional primal \glossterm{maneuver}.
+        }
 
 
 \newpage
@@ -309,10 +325,10 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Min Level} & \tb{Divine Magic} & \tb{Divine Spell Mastery}   & \tb{Domain Influence}  & \tb{Healer} \tableheaderrule
             1 & 1  & Spellcasting                         & Mystic insight              & Domains, domain gift & Divine healing         \\
-            2 & 2  & Spell rank (2)                       & Insightful caster           & Domain gift          & Vital healer           \\
+            2 & 2  & Spell rank (2), spell knowledge      & Insightful caster           & Domain gift          & Vital healer           \\
             3 & 5  & Spell rank (3)                       & Wellspring of power         & Domain aspect        & Divine cleanse         \\
             4 & 8  & Spell rank (4)                       & Mystic insight              & Domain aspect        & Greater divine healing \\
-            5 & 11 & Spell rank (5)                       & Greater insightful caster   & Domain essence       & Greater vital healer   \\
+            5 & 11 & Spell rank (5), spell knowledge      & Greater insightful caster   & Domain essence       & Greater vital healer   \\
             6 & 14 & Spell rank (6)                       & Greater wellspring of power & Domain essence       & Greater divine cleanse \\
             7 & 17 & Spell rank (7)                       & Mystic insight              & Miracle              & Supreme divine healing \\
             8 & 20 & Spell rank (8), epic spell knowledge & Epic divine mastery         & Domain masteries     & Epic healer            \\
@@ -394,7 +410,7 @@ This choice determines a great deal about your character's abilities.
         Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
 
         You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
-        In addition, you learn two rank 1 \glossterm{spells} from your chosen \glossterm{mystic sphere}.
+        In addition, you learn one rank 1 \glossterm{spell} from your chosen \glossterm{mystic sphere}.
         You can also spend \glossterm{insight points} to learn one additional divine spell per \glossterm{insight point}.
         You cannot learn spells from mystic spheres you do not have access to.
         Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
@@ -409,6 +425,8 @@ This choice determines a great deal about your character's abilities.
         \cf{Clr}[2]{Spell Rank}[Magical] You become a rank 2 divine spellcaster.
         This gives you access to spells that require a minimum rank of 2.
 
+        \cf{Clr}[2]{Spell Knowledge} You learn an additional divine \glossterm{spell}.
+
         \cf*{Clr}[3]{Spell Rank}[Magical] You become a rank 3 divine spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 3.
 
@@ -417,6 +435,8 @@ This choice determines a great deal about your character's abilities.
 
         \cf*{Clr}[5]{Spell Rank}[Magical] You become a rank 5 divine spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 5.
+
+        \cf*{Clr}[5]{Spell Knowledge} You learn an additional divine \glossterm{spell}.
 
         \cf*{Clr}[6]{Spell Rank}[Magical] You become a rank 6 divine spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 6.
@@ -879,10 +899,10 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X l >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Min Level} & \tb{Elementalist}         & \tb{Nature Magic} & \tb{Nature Spell Mastery}   & \tb{Shifter}               & \tb{Wildspeaker}         \tableheaderrule
             1 & 1  & Elemental balance         & Spellcasting                         & Mystic insight              & Wild aspects               & Natural servant         \\
-            2 & 2  & Elemental magic           & Spell rank (2)                       & Combat caster               & Shifting defense           & Animal speech           \\
+            2 & 2  & Elemental magic           & Spell rank (2), spell knowledge      & Combat caster               & Shifting defense           & Animal speech           \\
             3 & 5  & Elemental influence       & Spell rank (3)                       & Wellspring of power         & Shift body                 & Wild guardian           \\
             4 & 8  & Greater elemental balance & Spell rank (4)                       & Mystic insight              & Wild aspect                & Greater natural servant \\
-            5 & 11 & Elemental spell           & Spell rank (5)                       & Greater combat caster       & Greater shifting defense   & Plant speech            \\
+            5 & 11 & Elemental spell           & Spell rank (5), spell knowledge      & Greater combat caster       & Greater shifting defense   & Plant speech            \\
             6 & 14 & Elemental control         & Spell rank (6)                       & Greater wellspring of power & Greater shift body         & Greater wild guardian   \\
             7 & 17 & Supreme elemental balance & Spell rank (7)                       & Mystic insight              & Triple aspect, wild aspect & Supreme natural servant \\
             8 & 20 & Avatar of elements        & Spell rank (8), epic spell knowledge & Epic nature mastery         & Wild fusion                & Twin servant            \\
@@ -1001,7 +1021,7 @@ This choice determines a great deal about your character's abilities.
         Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
 
         You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
-        In addition, you learn two rank 1 \glossterm{spells} from your chosen \glossterm{mystic sphere}.
+        In addition, you learn one rank 1 \glossterm{spell} from your chosen \glossterm{mystic sphere}.
         You can also spend \glossterm{insight points} to learn one additional nature spell per \glossterm{insight point}.
         You cannot learn spells from mystic spheres you do not have access to.
         Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
@@ -1016,6 +1036,8 @@ This choice determines a great deal about your character's abilities.
         \cf{Drd}[2]{Spell Rank}[Magical] You become a rank 2 nature spellcaster.
         This gives you access to spells that require a minimum rank of 2.
 
+        \cf{Drd}[2]{Spell Knowledge} You learn an additional nature \glossterm{spell}.
+
         \cf{Drd}[3]{Spell Rank}[Magical] You become a rank 3 nature spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 3.
 
@@ -1024,6 +1046,8 @@ This choice determines a great deal about your character's abilities.
 
         \cf*{Drd}[5]{Spell Rank}[Magical] You become a rank 5 nature spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 5.
+
+        \cf*{Drd}[5]{Spell Knowledge} You learn an additional nature \glossterm{spell}.
 
         \cf*{Drd}[6]{Spell Rank}[Magical] You become a rank 6 nature spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 6.
@@ -1519,12 +1543,12 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Min Level} & \tb{Combat Discipline}       & \tb{Equipment Training}      & \tb{Martial Mastery}   & \tb{Tactician} \tableheaderrule
             1 & 1  & Discipline                  & Armor expertise              & Martial maneuvers                              & Battle tactics                \\
-            2 & 2  & Enduring discipline         & Weapon training              & Maneuver rank (2), martial lore                & Tactical advice               \\
-            3 & 5  & Disciplined power           & Equipment efficiency         & Maneuver rank (3), defensive expertise         & Tactical coordination         \\
-            4 & 8  & Disciplined reaction        & Greater armor expertise      & Maneuver rank (4), martial maneuver            & Battle tactic                 \\
-            5 & 11 & Greater enduring discipline & Weapon expertise             & Maneuver rank (5), greater martial lore        & Greater battle tactics        \\
-            6 & 14 & Greater disciplined power   & Greater equipment efficiency & Maneuver rank (6), greater defensive expertise & Greater tactical coordination \\
-            7 & 17 & Disciplined vitality        & Supreme armor expertise      & Maneuver rank (7), martial maneuver            & Battle tactic                 \\
+            2 & 2  & Enduring discipline         & Weapon training              & Maneuver rank (2), martial maneuver            & Tactical advice               \\
+            3 & 5  & Disciplined power           & Equipment efficiency         & Maneuver rank (3), martial endurance           & Tactical coordination         \\
+            4 & 8  & Disciplined reaction        & Greater armor expertise      & Maneuver rank (4), defensive expertise         & Battle tactic                 \\
+            5 & 11 & Greater enduring discipline & Weapon expertise             & Maneuver rank (5), martial maneuver            & Greater battle tactics        \\
+            6 & 14 & Greater disciplined power   & Greater equipment efficiency & Maneuver rank (6), greater martial endurance   & Greater tactical coordination \\
+            7 & 17 & Disciplined vitality        & Supreme armor expertise      & Maneuver rank (7), greater defensive expertise & Battle tactic                 \\
             8 & 20 & Epic discipline             & Equipment supremacy          & Maneuver rank (8), epic martialist             & Tactical fusion               \\
         \end{dtabularx}
     \end{dtable!*}
@@ -1640,7 +1664,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Ftr}[1]{Martial Maneuvers}
         You can channel your martial prowess into devastating attacks.
-        You learn two \glossterm{maneuvers} from the martial maneuver list (see \pcref{Martial Maneuvers}).
+        You learn one \glossterm{maneuver} from the martial maneuver list (see \pcref{Martial Maneuvers}).
         You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
         As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
 
@@ -1651,34 +1675,34 @@ This choice determines a great deal about your character's abilities.
         \cf{Ftr}[2]{Maneuver Rank}[Magical] You become a rank 2 martial maneuverist.
         This gives you access to maneuvers that require a minimum rank of 2.
 
-        \cf{Ftr}[2]{Martial Lore} You gain two additional \glossterm{skill points}.
+        \cf{Ftr}[2]{Martial Maneuver}
+        You learn an additional martial \glossterm{maneuver} (see \pcref{Martial Maneuvers}).
 
         \cf*{Ftr}[3]{Maneuver Rank}[Magical] You become a rank 3 martial maneuverist.
         This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 3.
 
-        \cf{Ftr}[3]{Defensive Expertise} You gain a \plus1 bonus to Armor defense.
+        \cf{Ftr}[3]{Martial Endurance} You gain a \plus1 bonus to Fortitude and Mental defense.
 
         \cf*{Ftr}[4]{Maneuver Rank}[Magical] You become a rank 4 martial maneuverist.
         This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 4.
 
-        \cf{Ftr}[4]{Martial Maneuver}
-        You learn an additional martial \glossterm{maneuver} (see \pcref{Martial Maneuvers}).
+        \cf{Ftr}[4]{Defensive Expertise} You gain a \plus1 bonus to Armor defense.
 
         \cf*{Ftr}[5]{Maneuver Rank}[Magical] You become a rank 5 martial maneuverist.
         This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 5.
 
-        \cf{Ftr}[5]{Greater Martial Lore} You gain two additional \glossterm{skill points}.
+        \cf*{Ftr}[5]{Martial Maneuver}
+        You learn an additional martial \glossterm{maneuver} (see \pcref{Martial Maneuvers}).
 
         \cf*{Ftr}[6]{Maneuver Rank}[Magical] You become a rank 6 martial maneuverist.
         This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 6.
 
-        \cf{Ftr}[6]{Greater Defensive Expertise} The bonus from your \textit{defensive expertise} ability increases to \plus2.
+        \cf{Ftr}[6]{Greater Martial Endurance} The bonus from your \textit{martial endurance} ability increases to \plus2.
 
         \cf*{Ftr}[7]{Maneuver Rank}[Magical] You become a rank 7 martial maneuverist.
         This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 7.
 
-        \cf*{Ftr}[7]{Martial Maneuver}
-        You learn an additional martial \glossterm{maneuver} (see \pcref{Martial Maneuvers}).
+        \cf{Ftr}[7]{Greater Defensive Expertise} The bonus from your \textit{defensive expertise} ability increases to \plus2.
 
         \cf*{Ftr}[8]{Maneuver Rank}[Magical] You become a rank 8 martial maneuverist.
         This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 8.
@@ -1798,12 +1822,12 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Min Level} & \tb{Esoteric Warrior}               & \tb{Ki}                                & \tb{Perfected Form}        & \tb{Transcendent Sage} \tableheaderrule
             1 & 1  & Esoteric maneuvers                           & Ki barrier, ki manifestations & Fast movement, unarmed warrior & Clear the mind        \\
-            2 & 2  & Maneuver rank (2), esoteric lore             & Ki strike                     & Perfect body                   & Transcend frailty     \\
-            3 & 5  & Maneuver rank (3), esoteric fluidity         & Ki power                      & Perfect precision              & Inner peace           \\
-            4 & 8  & Maneuver rank (4), esoteric maneuver         & Ki manifestation              & Greater fast movement          & Feel the flow of life \\
-            5 & 11 & Maneuver rank (5), greater esoteric lore     & Greater ki barrier            & Greater perfect body           & Transcend flesh       \\
-            6 & 14 & Maneuver rank (6), greater esoteric fluidity & Greater ki power              & Greater perfect precision      & Greater inner peace   \\
-            7 & 17 & Maneuver rank (7), esoteric maneuver         & Ki manifestation              & Supreme fast movement          & See the flow of life  \\
+            2 & 2  & Maneuver rank (2), esoteric maneuver         & Ki strike                     & Perfect body                   & Transcend frailty     \\
+            3 & 5  & Maneuver rank (3), esoteric lore             & Ki power                      & Perfect precision              & Inner peace           \\
+            4 & 8  & Maneuver rank (4), esoteric fluidity         & Ki manifestation              & Greater fast movement          & Feel the flow of life \\
+            5 & 11 & Maneuver rank (5), esoteric maneuver         & Greater ki barrier            & Greater perfect body           & Transcend flesh       \\
+            6 & 14 & Maneuver rank (6), esoteric agility          & Greater ki power              & Greater perfect precision      & Greater inner peace   \\
+            7 & 17 & Maneuver rank (7), greater esoteric fluidity & Ki manifestation              & Supreme fast movement          & See the flow of life  \\
             8 & 20 & Maneuver rank (8), esoteric supremacy        & Epic ki                       & Perfection                     & Transcendence         \\
         \end{dtabularx}
     \end{dtable!*}
@@ -1843,7 +1867,7 @@ This choice determines a great deal about your character's abilities.
         This archetype improves your combat prowess with unusual fighting styles like unarmed attacks and grappling.
 
         \cf{Mnk}[1]{Esoteric Maneuvers} 
-        You learn two \glossterm{maneuvers} from the esoteric maneuver list (see \pcref{Esoteric Maneuvers}).
+        You learn one \glossterm{maneuver} from the esoteric maneuver list (see \pcref{Esoteric Maneuvers}).
         You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
         As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
 
@@ -1854,12 +1878,12 @@ This choice determines a great deal about your character's abilities.
         \cf{Mnk}[2]{Maneuver Rank}[Magical] You become a rank 2 esoteric maneuverist.
         This gives you access to maneuvers that require a minimum rank of 2.
 
-        \cf{Mnk}[2]{Esoteric Lore} You gain two additional \glossterm{skill points}.
+        \cf{Mnk}[2]{Esoteric Maneuver} You learn an additional esoteric \glossterm{maneuver} (see \pcref{Esoteric Maneuvers}).
 
         \cf{Mnk}[3]{Maneuver Rank}[Magical] You become a rank 3 esoteric maneuverist.
         This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 3.
 
-        \cf{Mnk}[3]{Esoteric Fluidity} You gain a \plus1 bonus to Dexterity-based \glossterm{checks}, except \glossterm{initiative} checks.
+        \cf{Mnk}[3]{Esoteric Lore} You gain two additional \glossterm{skill points}.
 
         % TODO: wording?
         % \cf{Mnk}[3]{Evasion} When you are attacked by an ability that affects an area, you can use your Reflex defense in place of any other defenses against that attack.
@@ -1872,22 +1896,22 @@ This choice determines a great deal about your character's abilities.
         \cf{Mnk}[4]{Maneuver Rank}[Magical] You become a rank 4 esoteric maneuverist.
         This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 4.
 
-        \cf{Mnk}[4]{Esoteric Maneuver} You learn an additional esoteric \glossterm{maneuver} (see \pcref{Esoteric Maneuvers}).
+        \cf{Mnk}[4]{Esoteric Fluidity} You gain a \plus1 bonus to Dexterity-based \glossterm{checks}, except \glossterm{initiative} checks.
 
         \cf{Mnk}[5]{Maneuver Rank}[Magical] You become a rank 5 esoteric maneuverist.
         This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 5.
 
-        \cf{Mnk}[5]{Greater Esoteric Lore} You gain two additional \glossterm{skill points}.
+        \cf*{Mnk}[5]{Esoteric Maneuver} You learn an additional esoteric \glossterm{maneuver} (see \pcref{Esoteric Maneuvers}).
 
         \cf{Mnk}[6]{Maneuver Rank}[Magical] You become a rank 6 esoteric maneuverist.
         This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 6.
 
-        \cf{Mnk}[6]{Greater Esoteric Fluidity} The bonus from your \textit{esoteric fluidity} ability increases to \plus2.
+        \cf{Mnk}[6]{Esoteric Agility} You gain a \plus2 bonus to Reflex defense.
 
         \cf{Mnk}[7]{Maneuver Rank}[Magical] You become a rank 7 esoteric maneuverist.
         This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 7.
 
-        \cf*{Mnk}[7]{Esoteric Maneuver} You learn an additional esoteric \glossterm{maneuver} (see \pcref{Esoteric Maneuvers}).
+        \cf{Mnk}[7]{Greater Esoteric Fluidity} The bonus from your \textit{esoteric fluidity} ability increases to \plus2.
 
         \cf{Mnk}[8]{Maneuver Rank}[Magical] You become a rank 8 esoteric maneuverist.
         This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 8.
@@ -2140,14 +2164,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Paladin Progression}
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Min Level} & \tb{Devoted Paragon}  & \tb{Divine Magic} & \tb{Divine Spell Expertise}   & \tb{Stalwart Guardian}      & \tb{Zealous Warrior}       \tableheaderrule
-            1 & 1  & Aligned aura          & Spellcasting   & Insight point               & Lay on hands                & Smite                    \\
-            2 & 2  & Aligned immunity      & Spell rank (2) & Combat caster               & Enduring defender           & Zealous offense          \\
-            3 & 5  & Paragon power         & Spell rank (3) & Wellspring of power         & Stalwart resilience         & Zealous purge            \\
-            4 & 8  & Greater aligned aura  & Spell rank (4) & Insight point               & Defender's boon             & Zealous fixation         \\
-            5 & 11 & Devoted mind          & Spell rank (5) & Greater combat caster       & Greater enduring defender   & Pass judgment            \\
-            6 & 14 & Greater paragon power & Spell rank (6) & Greater wellspring of power & Greater stalwart resilience & Greater zealous offense  \\
-            7 & 17 & Supreme aligned aura  & Spell rank (7) & Insight point               & Greater defender's boon     & Greater zealous fixation \\
-            8 & 20 & Epic paragon          & Spell rank (8) & Epic divine expertise       & Epic guardian               & Epic zeal                \\
+            1 & 1  & Aligned aura          & Spellcasting                    & Insight point               & Lay on hands                & Smite                    \\
+            2 & 2  & Aligned immunity      & Spell rank (2), spell knowledge & Combat caster               & Enduring defender           & Zealous offense          \\
+            3 & 5  & Paragon power         & Spell rank (3)                  & Wellspring of power         & Stalwart resilience         & Zealous purge            \\
+            4 & 8  & Greater aligned aura  & Spell rank (4)                  & Insight point               & Defender's boon             & Zealous fixation         \\
+            5 & 11 & Devoted mind          & Spell rank (5), spell knowledge & Greater combat caster       & Greater enduring defender   & Pass judgment            \\
+            6 & 14 & Greater paragon power & Spell rank (6)                  & Greater wellspring of power & Greater stalwart resilience & Greater zealous offense  \\
+            7 & 17 & Supreme aligned aura  & Spell rank (7)                  & Insight point               & Greater defender's boon     & Greater zealous fixation \\
+            8 & 20 & Epic paragon          & Divine spell conduit            & Epic divine expertise       & Epic guardian               & Epic zeal                \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -2255,7 +2279,7 @@ This choice determines a great deal about your character's abilities.
         Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
 
         You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
-        In addition, you learn two rank 1 \glossterm{spells} from your chosen \glossterm{mystic sphere}.
+        In addition, you learn one rank 1 \glossterm{spells} from your chosen \glossterm{mystic sphere}.
         You can also spend \glossterm{insight points} to learn one additional divine spell per \glossterm{insight point}.
         You cannot learn spells from mystic spheres you do not have access to.
         Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
@@ -2270,6 +2294,8 @@ This choice determines a great deal about your character's abilities.
         \cf{Pal}[2]{Spell Rank}[Magical] You become a rank 2 divine spellcaster.
         This gives you access to spells that require a minimum rank of 2.
 
+        \cf{Pal}[2]{Spell Knowledge} You learn an additional divine \glossterm{spell} (see \pcref{Divine Spells}).
+
         \cf{Pal}[3]{Spell Rank}[Magical] You become a rank 3 divine spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 3.
 
@@ -2279,16 +2305,15 @@ This choice determines a great deal about your character's abilities.
         \cf*{Pal}[5]{Spell Rank}[Magical] You become a rank 5 divine spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 5.
 
+        \cf*{Pal}[5]{Spell Knowledge} You learn an additional divine \glossterm{spell} (see \pcref{Divine Spells}).
+
         \cf*{Pal}[6]{Spell Rank}[Magical] You become a rank 6 divine spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 6.
 
         \cf*{Pal}[7]{Spell Rank}[Magical] You become a rank 7 divine spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 7.
 
-        \cf{Pal}[8]{Epic Spell Knowledge} You learn two additional divine spells.
-
-        \cf*{Pal}[8]{Spell Rank}[Magical] You become a rank 8 divine spellcaster.
-        This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 8.
+        \cf{Pal}[8]{Divine Spell Conduit} You gain a \plus2 bonus to \glossterm{accuracy} with divine spells and a \plus4 bonus to \glossterm{power} with divine spells.
 
     \subsection{Divine Spell Expertise}
         This archetype improves the divine spells you cast.
@@ -2430,12 +2455,12 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X > {\lcol}X}
             \tb{Rank} & \tb{Min Level} & \tb{Beastmaster}         & \tb{Huntmaster} & \tb{Keen Senses}    & \tb{Wilderness Warrior} \tableheaderrule
             1 & 1  & Animal companion         & Quarry                     & Keen vision               & Wild maneuvers                          \\
-            2 & 2  & Handling lore            & Hunting style              & Farsight                  & Maneuver rank (2), wild lore            \\
-            3 & 5  & Pack tactics             & Hunter's instincts         & Perceive weakness         & Maneuver rank (3), wild force           \\
-            4 & 8  & Greater animal companion & Tracker                    & Blindsight                & Maneuver rank (4), wild maneuver        \\
-            5 & 11 & Greater handling lore    & Hunting style              & Greater farsight          & Maneuver rank (5), greater wild lore    \\
-            6 & 14 & Greater pack tactics     & Greater hunter's instincts & Greater perceive weakness & Maneuver rank (6), greater wild force   \\
-            7 & 17 & Supreme animal companion & Greater tracker            & Greater blindsight        & Maneuver rank (7), wild maneuver        \\
+            2 & 2  & Handling lore            & Hunting style              & Farsight                  & Maneuver rank (2), wild maneuver            \\
+            3 & 5  & Pack tactics             & Hunter's instincts         & Perceive weakness         & Maneuver rank (3), wild lore           \\
+            4 & 8  & Greater animal companion & Tracker                    & Blindsight                & Maneuver rank (4), wild senses        \\
+            5 & 11 & Greater handling lore    & Hunting style              & Greater farsight          & Maneuver rank (5), wild maneuver    \\
+            6 & 14 & Greater pack tactics     & Greater hunter's instincts & Greater perceive weakness & Maneuver rank (6), wild agility   \\
+            7 & 17 & Supreme animal companion & Greater tracker            & Greater blindsight        & Maneuver rank (7), greater wild senses        \\
             8 & 20 & Twin companion           & Dual quarry                & Epic senses               & Maneuver rank (8), wilderness supremacy \\
         \end{dtabularx}
     \end{dtable!*}
@@ -2699,7 +2724,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rgr}[1]{Wild Maneuvers} 
         You can channel your martial prowess into devastating attacks.
-        You learn two \glossterm{maneuvers} from the wild maneuver list (see \pcref{Wild Maneuvers}).
+        You learn one \glossterm{maneuver} from the wild maneuver list (see \pcref{Wild Maneuvers}).
         You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
         As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
 
@@ -2710,34 +2735,34 @@ This choice determines a great deal about your character's abilities.
         \cf{Rgr}[2]{Maneuver Rank}[Magical] You become a rank 2 wild maneuverist.
         This gives you access to maneuvers that require a minimum rank of 2.
 
-        \cf{Rgr}[2]{Wild Lore} You gain two additional \glossterm{skill points}.
+        \cf{Rgr}[2]{Wild Maneuver}
+        You learn an additional wild \glossterm{maneuver} (see \pcref{Wild Maneuvers}).
 
         \cf*{Rgr}[3]{Maneuver Rank}[Magical] You become a rank 3 wild maneuverist.
         This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 3.
 
-        \cf{Rgr}[3]{Wild Senses} You gain a \plus1 bonus to Perception-based checks, except \glossterm{initiative} checks.
+        \cf{Rgr}[3]{Wild Lore} You gain two additional \glossterm{skill points}.
 
         \cf*{Rgr}[4]{Maneuver Rank}[Magical] You become a rank 4 wild maneuverist.
         This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 4.
 
-        \cf{Rgr}[4]{Wild Maneuver}
-        You learn an additional wild \glossterm{maneuver} (see \pcref{Wild Maneuvers}).
+        \cf{Rgr}[4]{Wild Senses} You gain a \plus1 bonus to Perception-based checks, except \glossterm{initiative} checks.
 
         \cf*{Rgr}[5]{Maneuver Rank}[Magical] You become a rank 5 wild maneuverist.
         This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 5.
 
-        \cf{Rgr}[5]{Greater Wild Lore} The bonus to Perception-based checks from your \textit{wild lore} ability increases to \plus3.
+        \cf*{Rgr}[5]{Wild Maneuver}
+        You learn an additional wild \glossterm{maneuver} (see \pcref{Wild Maneuvers}).
 
         \cf*{Rgr}[6]{Maneuver Rank}[Magical] You become a rank 6 wild maneuverist.
         This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 6.
 
-        \cf{Rgr}[6]{Greater Wild Senses} The bonus from your \textit{wild senses} ability increases to \plus2.
+        \cf{Rgr}[6]{Wild Agility} You gain a \plus2 bonus to Reflex defense.
 
         \cf*{Rgr}[7]{Maneuver Rank}[Magical] You become a rank 7 wild maneuverist.
         This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 7.
 
-        \cf*{Rgr}[7]{Wild Maneuver}
-        You learn an additional wild \glossterm{maneuver} (see \pcref{Wild Maneuvers}).
+        \cf{Rgr}[7]{Greater Wild Senses} The bonus from your \textit{wild senses} ability increases to \plus2.
 
         \cf*{Rgr}[8]{Maneuver Rank}[Magical] You become a rank 8 wild maneuverist.
         This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 8.
@@ -2759,13 +2784,13 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Min Level} & \tb{Assassin}               & \tb{Bard}              & \tb{Combat Trickster} & \tb{Jack of All Trades} \tableheaderrule
             1 & 1  & Sneak attack                & Bardic performances    & Tricky manuevers                          & Skill lore              \\
-            2 & 2  & Evasion                     & Bardic lore            & Maneuver rank (3), trick lore             & Dabbler                 \\
-            3 & 5  & Darkstalker                 & Bardic combat training & Maneuver rank (3), tricky agility         & Versatile power         \\
-            4 & 8  & Hide in plain sight         & Bardic performance     & Maneuver rank (3), trick manuever         & Skill exemplar          \\
-            5 & 11 & Greater evasion             & Dual performance       & Maneuver rank (3), greater trick lore     & Greater dabbler         \\
-            6 & 14 & Assassination               & Loremaster             & Maneuver rank (3), greater tricky agility & Greater versatile power \\
-            7 & 17 & Greater hide in plain sight & Bardic performance     & Maneuver rank (3), trick maneuver         & Greater skill exemplar  \\
-            8 & 20 & Epic assassin               & Epic bardic            & Maneuver rank (3), epic trickster         & Master of all trades    \\
+            2 & 2  & Evasion                     & Bardic lore            & Maneuver rank (2), trick maneuver         & Dabbler                 \\
+            3 & 5  & Darkstalker                 & Bardic combat training & Maneuver rank (3), tricky lore            & Versatile power         \\
+            4 & 8  & Hide in plain sight         & Bardic performance     & Maneuver rank (4), tricky finesse         & Skill exemplar          \\
+            5 & 11 & Greater evasion             & Dual performance       & Maneuver rank (5), trick maneuver         & Greater dabbler         \\
+            6 & 14 & Assassination               & Loremaster             & Maneuver rank (6), tricky agility         & Greater versatile power \\
+            7 & 17 & Greater hide in plain sight & Bardic performance     & Maneuver rank (7), greater tricky finesse & Greater skill exemplar  \\
+            8 & 20 & Epic assassin               & Epic bardic            & Maneuver rank (8), epic trickster         & Master of all trades    \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -3046,7 +3071,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rog}[1]{Trick Maneuvers}
         You can confuse and confound your foes in combat.
-        You learn two \glossterm{maneuvers} from the trick maneuver list (see \pcref{Trick Maneuvers}).
+        You learn one \glossterm{maneuver} from the trick maneuver list (see \pcref{Trick Maneuvers}).
         You can also spend \glossterm{insight points} to learn one additional trick \glossterm{maneuver} per \glossterm{insight point}.
         As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
 
@@ -3057,34 +3082,34 @@ This choice determines a great deal about your character's abilities.
         \cf{Rog}[2]{Maneuver Rank} You become a rank 2 trick maneuverist.
         This gives you access to maneuvers that require a minimum rank of 2.
 
-        \cf{Rog}[2]{Trick Lore} You gain two additional \glossterm{skill points}.
+        \cf{Rog}[2]{Trick Maneuver}
+        You learn an additional trick \glossterm{maneuver} (see \pcref{Trick Maneuvers}).
 
         \cf*{Rog}[3]{Maneuver Rank}[Magical] You become a rank 3 trick maneuverist.
         This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 3.
 
-        \cf{Rog}[3]{Tricky Agility} You gain a \plus1 bonus to Dexterity-based checks, except \glossterm{initiative} checks.
+        \cf{Rog}[3]{Trick Lore} You gain two additional \glossterm{skill points}.
 
         \cf*{Rog}[4]{Maneuver Rank}[Magical] You become a rank 4 trick maneuverist.
         This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 4.
 
-        \cf{Rog}[4]{Trick Maneuver}
-        You learn an additional trick \glossterm{maneuver} (see \pcref{Trick Maneuvers}).
+        \cf{Rog}[4]{Tricky Finesse} You gain a \plus1 bonus to Dexterity-based checks, except \glossterm{initiative} checks.
 
         \cf*{Rog}[5]{Maneuver Rank}[Magical] You become a rank 5 trick maneuverist.
         This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 5.
 
-        \cf{Rog}[5]{Greater Trick Lore} You gain two additional \glossterm{skill points}.
+        \cf*{Rog}[5]{Trick Maneuver}
+        You learn an additional trick \glossterm{maneuver} (see \pcref{Trick Maneuvers}).
 
         \cf*{Rog}[6]{Maneuver Rank}[Magical] You become a rank 6 trick maneuverist.
         This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 6.
 
-        \cf{Rog}[6]{Greater Tricky Agility} The bonus from your \textit{tricky agility} ability increases to \plus2.
+        \cf{Rog}[6]{Tricky Agility} You gain a \plus2 bonus to Reflex defense.
 
         \cf*{Rog}[7]{Maneuver Rank}[Magical] You become a rank 7 trick maneuverist.
         This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 7.
 
-        \cf*{Rog}[7]{Trick Maneuver}
-        You learn an additional trick \glossterm{maneuver} (see \pcref{Trick Maneuvers}).
+        \cf{Rog}[7]{Greater Tricky Finesse} The bonus from your \textit{tricky finesse} ability increases to \plus2.
 
         \cf*{Rog}[8]{Maneuver Rank}[Magical] You become a rank 8 trick maneuverist.
         This can improve the effectiveness of your maneuvers and give you access to maneuvers that require a minimum rank of 8.
@@ -3171,13 +3196,13 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Sorcerer Progression}
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Min Level} & \tb{Arcane Magic} & \tb{Arcane Spell Mastery} & \tb{Draconic Magic} & \tb{Innate Arcanist} & \tb{Wild Magic} \tableheaderrule
-            1 & 1  & Spellcasting                         & Mystic insight              & Draconic bloodline         & Innate magic             & Wildspell                                   \\
-            2 & 2  & Spell rank (2), mage armor           & Combat caster               & Draconic focus             & Mystic tolerance         & Chaotic miscast, wild soul                  \\
-            3 & 5  & Spell rank (3), spell knowledge      & Wellspring of power         & Draconic precision         & Augment                  & Chaotic exertion                            \\
-            4 & 8  & Spell rank (4)                       & Mystic insight              & Draconic hide              & Spell absorption         & Controlled chaos                            \\
-            5 & 11 & Spell rank (5), greater mage armor   & Greater combat caster       & Draconic heart             & Greater mystic tolerance & Greater chaotic miscast, greater wild  soul \\
-            6 & 14 & Spell rank (6), spell knowledge      & Greater wellspring of power & Greater draconic precision & Augment                  & Greater chaotic exertion                    \\
-            7 & 17 & Spell rank (7)                       & Mystic insight              & Greater draconic hide      & Greater spell absorption & Greater controlled chaos                    \\
+            1 & 1  & Spellcasting, mage armor             & Mystic insight              & Draconic bloodline         & Innate magic             & Wildspell                                   \\
+            2 & 2  & Spell rank (2), spell knowledge      & Combat caster               & Draconic focus             & Mystic tolerance         & Chaotic miscast, wild soul                  \\
+            3 & 5  & Spell rank (3)                       & Wellspring of power         & Draconic precision         & Augment                  & Chaotic exertion                            \\
+            4 & 8  & Spell rank (4), greater mage armor   & Mystic insight              & Draconic hide              & Spell absorption         & Controlled chaos                            \\
+            5 & 11 & Spell rank (5), spell knowledge      & Greater combat caster       & Draconic heart             & Greater mystic tolerance & Greater chaotic miscast, greater wild  soul \\
+            6 & 14 & Spell rank (6)                       & Greater wellspring of power & Greater draconic precision & Augment                  & Greater chaotic exertion                    \\
+            7 & 17 & Spell rank (7), supreme mage armor   & Mystic insight              & Greater draconic hide      & Greater spell absorption & Greater controlled chaos                    \\
             8 & 20 & Spell rank (8), epic spell knowledge & Epic arcane mastery         & Epic augmentation          & Epic wildspell           &                                             \\
         \end{dtabularx}
     \end{dtable!*}
@@ -3217,7 +3242,7 @@ This choice determines a great deal about your character's abilities.
         Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
 
         You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
-        In addition, you learn two rank 1 \glossterm{spells} from your chosen \glossterm{mystic sphere}.
+        In addition, you learn one rank 1 \glossterm{spell} from your chosen \glossterm{mystic sphere}.
         You can also spend \glossterm{insight points} to learn one additional arcane spell per \glossterm{insight point}.
         You cannot learn spells from mystic spheres you do not have access to.
         Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
@@ -3229,14 +3254,11 @@ This choice determines a great deal about your character's abilities.
         Arcane spells require both \glossterm{verbal components} and \glossterm{somatic components} to cast (see \pcref{Casting Components}).
         For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
 
-        \cf{Sor}[2]{Spell Rank}[Magical] You become a rank 2 arcane spellcaster.
-        This gives you access to spells that require a minimum rank of 2.
-
-        \cf{Sor}[2]{Mage Armor}[Magical] You can use the \textit{mage armor} ability as a standard action.
+        \cf{Sor}[1]{Mage Armor}[Magical] You can use the \textit{mage armor} ability as a standard action.
         \begin{freeability}{Mage Armor}
             You create a translucent suit of magical armor on your body and over your hands.
             This functions like body armor that provides a \plus2 bonus to Armor defense and has no \glossterm{encumbrance}.
-            It also provides a bonus to \glossterm{resistances} against \glossterm{energy damage} equal to 2 \add half your level.
+            It also provides a \plus2 bonus to \glossterm{resistances} against \glossterm{energy damage}.
             The body armor does not appear if you are wearing other body armor of any kind.
 
             As long as you have a free hand, the barrier also manifests as a shield that provides a \plus1 bonus to Armor defense.
@@ -3245,28 +3267,35 @@ This choice determines a great deal about your character's abilities.
             This ability lasts until you use it again or until you \glossterm{dismiss} it as a free action.
         \end{freeability}
 
+        \cf{Sor}[2]{Spell Rank}[Magical] You become a rank 2 arcane spellcaster.
+        This gives you access to spells that require a minimum rank of 2.
+
+        \cf{Sor}[2]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
+
         \cf{Sor}[3]{Spell Rank}[Magical] You become a rank 3 arcane spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 3.
-
-        \cf{Sor}[3]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
 
         \cf*{Sor}[4]{Spell Rank}[Magical] You become a rank 4 arcane spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 4.
 
+        \cf{Sor}[4]{Greater Mage Armor}[Magical]
+        The defense bonus from the body armor created by your \textit{mage armor} ability increases to \plus3.
+        In addition, the bonus to \glossterm{resistances} against \glossterm{energy damage} increases to be equal to half your \glossterm{power}.
+
         \cf*{Sor}[5]{Spell Rank}[Magical] You become a rank 5 arcane spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 5.
 
-        \cf{Sor}[5]{Greater Mage Armor}[Magical]
-        The defense bonus from the body armor created by your \textit{mage armor} ability increases to \plus3.
-        In addition, the bonus to \glossterm{resistances} against \glossterm{energy damage} increases to be equal to your level.
+        \cf*{Sor}[5]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
 
         \cf*{Sor}[6]{Spell Rank}[Magical] You become a rank 6 arcane spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 6.
 
-        \cf*{Sor}[6]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
-
         \cf*{Sor}[7]{Spell Rank}[Magical] You become a rank 7 arcane spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 7.
+
+        \cf{Sor}[7]{Greater Mage Armor}[Magical]
+        The defense bonus from the body armor created by your \textit{mage armor} ability increases to \plus3.
+        In addition, the bonus to \glossterm{resistances} against \glossterm{energy damage} increases to be equal to your \glossterm{power}.
 
         \cf*{Sor}[8]{Spell Rank}[Magical] You become a rank 8 arcane spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 8.
@@ -3458,14 +3487,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Warlock Progression}
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Min Level} & \tb{Blessings of the Abyss}  & \tb{Pact Magic} & \tb{Pact Spell Mastery}     & \tb{Soulkeeper's Chosen} \tableheaderrule
-            1 & 1  & Eldritch blast               & Spellcasting                            & Mystic insight              & Possession                  \\
-            2 & 2  & Fiendish resistance          & Spell rank (2), armor tolerance         & Combat caster               & Empowering whispers         \\
-            3 & 5  & Abyssal jaunt                & Spell rank (3), spell                   & Wellspring of power         & Exchange soul fragment      \\
-            4 & 8  & Abyssal substitution         & Spell rank (4)                          & Mystic insight              & Greater possession          \\
-            5 & 11 & Greater fiendish resistance  & Spell rank (5), greater armor tolerance & Greater combat caster       & Greater empowering whispers \\
-            6 & 14 & Abyssal curse                & Spell rank (6), spell                   & Greater wellspring of power & Exchange vitality           \\
-            7 & 17 & Greater abyssal substitution & Spell rank (7)                          & Mystic insight              & Supreme possession          \\
-            8 & 20 & Abyssal apotheosis           & Spell rank (8)                          & Epic pact mastery           & Epic possession             \\
+            1 & 1  & Eldritch blast               & Spellcasting, armor tolerance           & Mystic insight              & Possession                  \\
+            2 & 2  & Fiendish resistance          & Spell rank (2), spell knowledge         & Combat caster               & Empowering whispers         \\
+            3 & 5  & Abyssal jaunt                & Spell rank (3)                          & Wellspring of power         & Exchange soul fragment      \\
+            4 & 8  & Abyssal substitution         & Spell rank (4), greater armor tolerance & Mystic insight              & Greater possession          \\
+            5 & 11 & Greater fiendish resistance  & Spell rank (5), spell knowledge         & Greater combat caster       & Greater empowering whispers \\
+            6 & 14 & Abyssal curse                & Spell rank (6)                          & Greater wellspring of power & Exchange vitality           \\
+            7 & 17 & Greater abyssal substitution & Spell rank (7), supreme armor tolerance & Mystic insight              & Supreme possession          \\
+            8 & 20 & Abyssal apotheosis           & Spell rank (8), epic spell knowledge    & Epic pact mastery           & Epic possession             \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -3596,7 +3625,7 @@ This choice determines a great deal about your character's abilities.
         You may spend \glossterm{insight points} to learn one additional \glossterm{mystic sphere} per two \glossterm{insight points}.
 
         You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
-        In addition, you learn two rank 1 \glossterm{spells} from your chosen \glossterm{mystic sphere}.
+        In addition, you learn one rank 1 \glossterm{spell} from your chosen \glossterm{mystic sphere}.
         You can also spend \glossterm{insight points} to learn one additional pact spell per \glossterm{insight point}.
         You cannot learn spells from mystic spheres you do not have access to.
         Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
@@ -3608,28 +3637,33 @@ This choice determines a great deal about your character's abilities.
         Pact spells require require both \glossterm{verbal components} and \glossterm{somatic components} to cast (see \pcref{Casting Components}).
         For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
 
-        \cf{War}[2]{Armor Tolerance} You reduce your \glossterm{encumbrance} by 2 when determining your \glossterm{somatic component failure}.
+        \cf{War}[1]{Armor Tolerance} You reduce your \glossterm{encumbrance} by 2 when determining your \glossterm{somatic component failure}.
+
+        \cf{War}[2]{Spell Rank}[Magical] You become a rank 2 pact spellcaster.
+        This gives you access to spells that require a minimum rank of 2.
+
+        \cf{War}[2]{Spell Knowledge} You learn an additional pact \glossterm{spell}.
 
         \cf{War}[3]{Spell Rank}[Magical] You become a rank 3 pact spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 3.
 
-        \cf{War}[3]{Spell Knowledge} You learn an additional pact \glossterm{spell}.
-
         \cf*{War}[4]{Spell Rank}[Magical] You become a rank 4 pact spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 4.
+
+        \cf{War}[4]{Greater Armor Tolerance}[Magical] The penalty reduction from your \textit{armor tolerance} ability increases to 3.
 
         \cf*{War}[5]{Spell Rank}[Magical] You become a rank 5 pact spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 5.
 
-        \cf{War}[5]{Greater Armor Tolerance}[Magical] The penalty reduction from your \textit{armor tolerance} ability increases to 3.
+        \cf*{War}[5]{Spell Knowledge} You learn an additional pact \glossterm{spell}.
 
         \cf*{War}[6]{Spell Rank}[Magical] You become a rank 6 pact spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 6.
 
-        \cf*{War}[6]{Spell Knowledge} You learn an additional pact \glossterm{spell}.
-
         \cf*{War}[7]{Spell Rank}[Magical] You become a rank 7 pact spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 7.
+
+        \cf{War}[7]{Supreme Armor Tolerance}[Magical] The penalty reduction from your \textit{armor tolerance} ability increases to 4.
 
         \cf*{War}[8]{Spell Rank}[Magical] You become a rank 8 pact spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 8.
@@ -3820,13 +3854,13 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Wizard Progression}
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Min Level} & \tb{Alchemist}               & \tb{Arcane Magic}     & \tb{Arcane Scholar}   & \tb{Arcane Spell Mastery}   \tableheaderrule
-            1 & 1  & Portable workshop            & Spellcasting                       & Scholastic lore       & Mystic insight              \\
-            2 & 2  & Alchemical infusion          & Spell rank (2), mage armor         & Ritualist             & Insightful caster           \\
-            3 & 5  & Alchemical discovery         & Spell rank (3), spell knowledge    & Scholastic insight    & Wellspring of power         \\
-            4 & 8  & Alchemical expertise         & Spell rank (4)                     & Ritual expertise      & Mystic insight              \\
-            5 & 11 & Experienced quaffing         & Spell rank (5), greater mage armor & Contingency           & Greater insightful caster   \\
-            6 & 14 & Alchemical discovery         & Spell rank (6), spell knowledge    & Scholastic insight    & Greater wellspring of power \\
-            7 & 17 & Greater alchemical expertise & Spell rank (7)                     & Malleable contingency & Mystic insight              \\
+            1 & 1  & Portable workshop            & Spellcasting                         & Scholastic lore       & Mystic insight              \\
+            2 & 2  & Alchemical infusion          & Spell rank (2), mage armor           & Ritualist             & Insightful caster           \\
+            3 & 5  & Alchemical discovery         & Spell rank (3), spell knowledge      & Scholastic insight    & Wellspring of power         \\
+            4 & 8  & Alchemical expertise         & Spell rank (4)                       & Ritual expertise      & Mystic insight              \\
+            5 & 11 & Experienced quaffing         & Spell rank (5), greater mage armor   & Contingency           & Greater insightful caster   \\
+            6 & 14 & Alchemical discovery         & Spell rank (6), spell knowledge      & Scholastic insight    & Greater wellspring of power \\
+            7 & 17 & Greater alchemical expertise & Spell rank (7)                       & Malleable contingency & Mystic insight              \\
             8 & 20 & Epic alchemy                 & Spell rank (8), epic spell knowledge & Multiple contingency  & Epic arcane mastery         \\
         \end{dtabularx}
     \end{dtable!*}
@@ -3899,8 +3933,6 @@ This choice determines a great deal about your character's abilities.
 
     \subsection{Arcane Magic}
         This archetype grants you the ability to cast arcane spells.
-        % TODO: less boring attribute integration?
-        You must have an base Intelligence of at least 1 to gain this archetype.
 
         \cf{Wiz}[1]{Spellcasting}[Magical]
         You have the ability to use arcane magic.
@@ -3909,7 +3941,7 @@ This choice determines a great deal about your character's abilities.
         Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
 
         You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
-        In addition, you learn two rank 1 \glossterm{spells} from your chosen \glossterm{mystic sphere}.
+        In addition, you learn one rank 1 \glossterm{spell} from your chosen \glossterm{mystic sphere}.
         You can also spend \glossterm{insight points} to learn one additional arcane spell per \glossterm{insight point}.
         You cannot learn spells from mystic spheres you do not have access to.
         Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
@@ -3921,20 +3953,23 @@ This choice determines a great deal about your character's abilities.
         Arcane spells require both \glossterm{verbal components} and \glossterm{somatic components} to cast (see \pcref{Casting Components}).
         For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
 
-        \cf{Wiz}[2]{Mage Armor}[Magical] You can use the \textit{mage armor} ability as a standard action.
+        \cf{Wiz}[1]{Mage Armor}[Magical] You can use the \textit{mage armor} ability as a standard action.
         \begin{freeability}{Mage Armor}
             You create a translucent suit of magical armor on your body and over your hands.
             This functions like body armor that provides a \plus2 bonus to Armor defense and has no \glossterm{encumbrance}.
-            It also provides a bonus to \glossterm{resistances} against \glossterm{energy damage} equal to half your level.
+            It also provides a \plus2 bonus to \glossterm{resistances} against \glossterm{energy damage}.
             The body armor does not appear if you are wearing other body armor of any kind.
 
             As long as you have a free hand, the barrier also manifests as a shield that provides a \plus1 bonus to Armor defense.
             This bonus is considered to come from a shield, and does not stack with the benefits of using a physical shield.
 
-            This ability lasts until you \glossterm{dismiss} it as a free action.
+            This ability lasts until you use it again or until you \glossterm{dismiss} it as a free action.
         \end{freeability}
 
-        \cf{Wiz}[3]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
+        \cf{Wiz}[2]{Spell Rank}[Magical] You become a rank 2 arcane spellcaster.
+        This gives you access to spells that require a minimum rank of 2.
+
+        \cf{Wiz}[2]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
 
         \cf{Wiz}[3]{Spell Rank}[Magical] You become a rank 3 arcane spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 3.
@@ -3942,25 +3977,29 @@ This choice determines a great deal about your character's abilities.
         \cf*{Wiz}[4]{Spell Rank}[Magical] You become a rank 4 arcane spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 4.
 
+        \cf{Wiz}[4]{Greater Mage Armor}[Magical]
+        The defense bonus from the body armor created by your \textit{mage armor} ability increases to \plus3.
+        In addition, the bonus to \glossterm{resistances} against \glossterm{energy damage} increases to be equal to half your \glossterm{power}.
+
         \cf*{Wiz}[5]{Spell Rank}[Magical] You become a rank 5 arcane spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 5.
 
-        \cf{Wiz}[5]{Greater Mage Armor}[Magical]
-        The defense bonus from the body armor created by your \textit{mage armor} ability increases to \plus3.
-        In addition, the bonus to \glossterm{resistances} increases to be equal to your level.
+        \cf*{Wiz}[5]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
 
         \cf*{Wiz}[6]{Spell Rank}[Magical] You become a rank 6 arcane spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 6.
 
-        \cf{Wiz}[6]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
-
         \cf*{Wiz}[7]{Spell Rank}[Magical] You become a rank 7 arcane spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 7.
 
+        \cf{Wiz}[7]{Greater Mage Armor}[Magical]
+        The defense bonus from the body armor created by your \textit{mage armor} ability increases to \plus3.
+        In addition, the bonus to \glossterm{resistances} against \glossterm{energy damage} increases to be equal to your \glossterm{power}.
+
         \cf*{Wiz}[8]{Spell Rank}[Magical] You become a rank 8 arcane spellcaster.
         This can improve the effectiveness of your spells and give you access to spells that require a minimum rank of 8.
-                    
-        \cf{Wiz}[8]{Epic Spell Knowledge} You learn two additional pact spells.
+
+        \cf{Wiz}[8]{Epic Spell Knowledge} You learn two additional divine spells.
 
     \subsection{Arcane Scholar}
         This archetype deepens your study of arcane magic.
