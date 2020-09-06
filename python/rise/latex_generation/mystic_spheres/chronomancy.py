@@ -85,6 +85,16 @@ chronomancy=MysticSphere(
             \\hit Each target is \\glossterm<decelerated> until the end of the next round.
             \\crit Each target is \\glossterm<decelerated> as a \\glossterm<condition>.
         """, tags=[]),
+        Spell('Stutterstop', 2, 'One creature within \\rngmed range', """
+            Make an attack vs. Mental with a +1 bonus to \\glossterm<accuracy> against the target.
+            \\hit The target is \\glossterm<slowed> as a \\glossterm<condition>.
+            In addition, at the start of each round, it has a 50\\% chance to be  \\glossterm<immobilized>.
+
+            \\rankline
+            \\rank<4> The accuracy bonus increases to +2.
+            \\rank<6> The accuracy bonus increases to +3.
+            \\rank<8> The accuracy bonus increases to +4.
+        """, tags=[]),
         Spell('Mental Lag', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<slowed> and \\glossterm<dazed> as a single \\glossterm<condition>.
@@ -128,7 +138,7 @@ chronomancy=MysticSphere(
             \\rank<7> If you cast this spell as a standard action, you can choose to have the duplicate persist for two rounds instead of one.
                 If you do, the target disappears for two rounds at the same time as the duplicate.
         """, tags=[]),
-        Spell('Time Hop', 3, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngmed range', """
+        Spell('Time Hop', 2, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngmed range', """
             You send the target into the future, causing it to temporarily cease to exist.
             When you cast this spell, you choose how many rounds the target ceases to exist for, up to a maximum of five rounds.
             At the end of the last round, it reappears in the same location where it disappeared.
@@ -140,9 +150,18 @@ chronomancy=MysticSphere(
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<5> The maximum size of the target increases to Large.
-            \\rank<7> The maximum size of the target increases to Huge.
+            \\rank<4> The maximum size of the target increases to Large.
+            \\rank<6> The maximum size of the target increases to Huge.
+            \\rank<8> The maximum size of the target increases to Gargantuan.
         """, tags=[]),
+        Spell('Accelerated Reaction', 2, 'Yourself', """
+            You gain a +2 \\glossterm<magic bonus> to Reflex defense and \\glossterm<initiative> checks.
+
+            \\rankline
+            \\rank<4> The bonuses increase to +3.
+            \\rank<6> The bonuses increase to +4.
+            \\rank<8> The bonuses increase to +5.
+        """, tags=['Attune (self)']),
         Spell('Mass Slow', 1, '\\glossterm<Enemies> in a \\areamed radius within \\rngmed range', """
             Make an attack vs. Mental against each target.
             \\hit Each target is \\glossterm<slowed> until the end of the next round.
@@ -195,7 +214,7 @@ chronomancy=MysticSphere(
             After casting this spell, you cannot cast it again until you take a \\glossterm<short rest>.
         """, tags=[]),
         Spell('Evasion', 4, 'Yourself', """
-            When you are attacked by an ability that affects an area, you can use your Reflex defense in place of any other defenses against that attack.
+            When you are attacked by an ability that affects an area, you can use your Reflex defense in place of your armor against that attack.
 
             \\rankline
             \\rank<6> You also gain a +1 \\glossterm<magic bonus> to Reflex defense.

@@ -20,22 +20,23 @@ bless=MysticSphere(
             \\rankline
             \\rank<7> The bonus increases to +4.
         """, tags=['Attune (target)']),
-        Spell('Blessing of Swiftness', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Blessing of Swiftness', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<base speed>, up to a maximum of double its \\glossterm<base speed>.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<3> The speed bonus increases to +15 feet.
-            \\rank<5> The speed bonus increases to +20 feet.
-            \\rank<7> The speed bonus increases to +30 feet.
+            \\rank<4> The speed bonus increases to +15 feet.
+            \\rank<6> The speed bonus increases to +20 feet.
+            \\rank<8> The speed bonus increases to +30 feet.
         """, tags=['Attune (target)']),
-        Spell('Blessing of Recovery', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Blessing of Recovery', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a additional +5 bonus to a vital wound after a \\glossterm<long rest> (see \\pcref<Removing Vital Wounds>).
 
             \\rankline
-            \\rank<5> The target gains two additional +5 bonuses.
-            \\rank<7> The target gains three additional +5 bonuses.
+            \\rank<4> The target gains two additional +5 bonuses.
+            \\rank<6> The target gains three additional +5 bonuses.
+            \\rank<8> The target gains four additional +5 bonuses.
         """, tags=['Attune (target)']),
         Spell('Blessing of Regeneration', 7, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             At the end of each round, the target regains one lost \\glossterm<hit point>.
@@ -85,14 +86,15 @@ bless=MysticSphere(
             \\rank<5> The bonus increases to be equal to three times your \\glossterm<power>.
             \\rank<7> The bonus increases to be equal to four times your \\glossterm<power>.
         """, tags=['Swift']),
-        Spell('Blessing of Purification', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Blessing of Purification', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +4 \\glossterm<magic bonus> to \\glossterm<defenses> against \\glossterm<poisons> and \\glossterm<diseases>.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<5> The bonus increases to +6.
-            \\rank<7> The bonus increases to +8.
+            \\rank<4> The bonus increases to +6.
+            \\rank<6> The bonus increases to +8.
+            \\rank<8> The bonus increases to +10.
         """, tags=['Attune (target)']),
         Spell('Blessing of Mental Clarity', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +4 \\glossterm<magic bonus> to \\glossterm<defenses> against \\glossterm<Compulsion> and \\glossterm<Emotion> effects.
@@ -158,15 +160,16 @@ bless=MysticSphere(
             \\rank<7> The bonus increases to +8.
         """, tags=['Attune (target)']),
         Spell('Blessing of Endurance', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            The target increases its maximum \\glossterm<hit points> by one and regains one \\glossterm<hit point>.
-            When this ability ends, the target loses \\glossterm<hit points> equal to the number of hit points it regained this way and its maximum \\glossterm<hit points> are restored to normal.
+            The target increases its current \\glossterm<hit points> by 2.
+            This can cause its current hit points to exceed its normal maximum hit points.
+            When this ability ends, the target loses \\glossterm<hit points> equal to the number of hit points it gained this way.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<3> The number of additional hit points increases to two.
-            \\rank<5> The number of additional hit points increases to three.
-            \\rank<7> The number of additional hit points increases to four.
+            \\rank<3> The number of additional hit points increases to 3.
+            \\rank<5> The number of additional hit points increases to 4.
+            \\rank<7> The number of additional hit points increases to 5.
         """, tags=['Attune (target)']),
         Spell('Blessing of Persistence', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target cannot fall asleep or be knocked unconscious, even by \\glossterm<vital wounds>.

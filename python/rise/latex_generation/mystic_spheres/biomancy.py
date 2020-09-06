@@ -40,15 +40,16 @@ biomancy=MysticSphere(
             \\rank<5> The number of additional successes increases to three, which is enough to remove most poisons immediately.
             \\rank<7> The target can also gain the same number of successes to remove an additional poison affecting it.
         """, tags=[]),
-        Spell('Intensify Poison', 3, 'One living creature within \\rngmed range', """
+        Spell('Intensify Poison', 2, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude with a +2 bonus to \\glossterm<accuracy> against the target.
             If the target is not currently poisoned, this ability has no effect.
             \\hit Choose a poison affecting the target.
             The poison gains an additional hit against the target, which can have varying effects depending on the poison (see \\pcref<Poisons>).
 
             \\rankline
-            \\rank<5> The accuracy bonus increases to +3.
-            \\rank<7> The accuracy bonus increases to +4.
+            \\rank<4> The accuracy bonus increases to +3.
+            \\rank<6> The accuracy bonus increases to +4.
+            \\rank<8> The accuracy bonus increases to +5.
         """, tags=[]),
         Spell('Brief Regeneration', 1, 'Yourself or one living \\glossterm<ally> within \\rngclose range', """
             The target regains one lost \\glossterm<hit point>.
@@ -76,37 +77,37 @@ biomancy=MysticSphere(
             \\rank<6> You also gain a +1 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
             \\rank<8> You regain two hit points instead of one.
         """, tags=['Attune (self)']),
-        Spell('Swimmer', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Swimmer', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a \\glossterm<swim speed> equal to its \\glossterm<base speed>.
             In addition, it gains a +2 \\glossterm<magic bonus> to Swim checks.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<3> The bonus increases to +4.
-            \\rank<5> The bonus increases to +6.
-            \\rank<7> The bonus increases to +8.
+            \\rank<4> The bonus increases to +4.
+            \\rank<6> The bonus increases to +6.
+            \\rank<8> The bonus increases to +8.
         """, tags=['Attune (target)']),
-        Spell('Climber', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Climber', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a \\glossterm<climb speed> equal to its \\glossterm<base speed>.
             In addition, it gains a +2 \\glossterm<magic bonus> to Climb checks.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<3> The bonus increases to +4.
-            \\rank<5> The bonus increases to +6.
-            \\rank<7> The bonus increases to +8.
+            \\rank<4> The bonus increases to +4.
+            \\rank<6> The bonus increases to +6.
+            \\rank<8> The bonus increases to +8.
         """, tags=['Attune (target)']),
-        Spell('Runner', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Runner', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<land speed>.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<3> The bonus increases to +15 feet.
-            \\rank<5> The bonus increases to +20 feet.
-            \\rank<7> The bonus increases to +30 feet.
+            \\rank<4> The bonus increases to +15 feet.
+            \\rank<6> The bonus increases to +20 feet.
+            \\rank<8> The bonus increases to +30 feet.
         """, tags=['Attune (target)']),
         Spell('Enhanced Muscles', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +2 \\glossterm<magic bonus> to Strength-based checks.
@@ -147,33 +148,32 @@ biomancy=MysticSphere(
             When you cast this spell, choose a type of damage: acid, cold, electricity, or fire.
             As a standard action, you can breath a cone of that type of energy.
             When you do, make an attack vs. Reflex against everything within a \\arealarge cone from you.
-            \\hit Each target takes \\glossterm<standard damage> +1d of the chosen type.
+            \\hit Each target takes \\glossterm<standard damage> of the chosen type.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<6> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<8> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<6> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<8> The damage increases to \\glossterm<standard damage> +2d.
         """, tags=['Attune (self)']),
-        Spell('Withering', 1, 'One living creature within \\rngmed range', """
+        Spell('Withering', 2, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude with a +2 bonus to \\glossterm<accuracy> against the target.
-            \\hit As a \\glossterm<condition>, the target becomes more vulnerable to injury.
+            \\hit As a \\glossterm<condition>, the target's body withers.
             It takes a -2 penalty to Fortitude defense.
-            In addition, whenever it loses a \\glossterm<hit point>, it reduces its maximum \\glossterm<hit points> by 1.
-            When this condition is removed, the target's maximum \\glossterm<hit points> are restored.
-            \\crit As above, except that the penalty increases to -4.
+            Whenever it loses one or more \\glossterm<hit points> from a single attack, this penalty increases by 1.
+            This penalty increase stacks, and persists even if the target regains the lost hit points.
 
             \\rankline
             \\rank<5> The accuracy bonus increases to +3.
-            \\rank<5> The accuracy bonus increases to +4.
-            \\rank<7> The accuracy bonus increases to +5.
+            \\rank<5> The accuracy bonus increases to +6.
+            \\rank<7> The accuracy bonus increases to +7.
         """, tags=[]),
-        Spell('Withering Curse', 3, 'One living creature within \\rngmed range', """
-            Make an attack vs. Mental against the target.
+        Spell('Withering Curse', 4, 'One living creature within \\rngmed range', """
+            Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against the target.
             \\hit The target becomes more vulnerable to injury until it takes a short rest.
-            Whenever it loses a \\glossterm<hit point>, it reduces its maximum \\glossterm<hit points> by 1.
-            This cannot reduce the target's maximum \\glossterm<hit points> below 1.
-            When this effect is removed, the target's maximum \\glossterm<hit points> are restored.
+            It takes a -2 penalty to Fortitude defense.
+            Whenever it loses one or more \\glossterm<hit points> from a single attack, this penalty increases by 1.
+            This penalty increase stacks, and persists even if the target regains the lost hit points.
             \\crit As above, except that the effect lasts until this curse is removed.
 
             \\rankline

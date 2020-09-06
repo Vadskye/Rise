@@ -36,16 +36,16 @@ spells=[
         \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
         \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
     """, tags=[]),
-    Spell('Lightning Bolt', 1, 'Everything in a \\areamed, 10 ft.\\ wide line from you', """
+    Spell('Lightning Bolt', 2, 'Everything in a \\arealarge, 5 ft.\\ wide line from you', """
         Make an attack vs. Reflex against each target.
         \\hit Each target takes electricity \\glossterm<standard damage> -1d.
 
         \\rankline
-        \\rank<3> The area increases to a \\arealarge, 10 ft.\\ wide line from you
-        \\rank<5> The area increases to a \\areahuge, 10 ft.\\ wide line.
-        \\rank<7> The area increases to a \\areaext, 10 ft.\\ wide line.
+        \\rank<4> The area increases to a \\areahuge, 5 ft.\\ wide line.
+        \\rank<6> The area increases to a \\areaext, 5 ft.\\ wide line.
+        \\rank<8> The area increases to a \\areaext, 15 ft.\\ wide line.
     """, tags=[]),
-    Spell('Shocking Grasp', 1, 'One creature or object within your \\glossterm<reach>', """
+    Spell('Shocking Grasp', 2, 'One creature or object within your \\glossterm<reach>', """
         This spell does not have the \\glossterm<Focus> tag.
         You must have a \\glossterm<free hand> to cast this spell.
 
@@ -53,9 +53,9 @@ spells=[
         \\hit The target takes electricity \\glossterm<standard damage> +1d.
 
         \\rankline
-        \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
-        \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
-        \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
+        \\rank<4> The damage increases to \\glossterm<standard damage> +2d.
+        \\rank<6> The damage increases to \\glossterm<standard damage> +3d.
+        \\rank<8> The damage increases to \\glossterm<standard damage> +4d.
     """, tags=[], focus=False),
     Spell('Discharge', 1, '\\glossterm<Enemies> and objects in a \\areasmall radius from you', """
         Make an attack vs. Reflex against each target.
@@ -103,14 +103,26 @@ spells=[
         \\rankline
         \\rank<7> The damage to the primary target increases to \\glossterm<standard damage> +3d, and the damage to each secondary target increases to \\glossterm<standard damage> +1d.
     """, tags=[]),
-    Spell('Electroshock', 3, 'One creature or object within \\rngmed range', """
+    Spell('Electroshock', 1, 'One creature within \\rngmed range', """
         Make an attack vs. Fortitude against the target.
 
-        \\hit The target takes electricity \\glossterm<standard damage> -2d and is \\glossterm<dazed> as a \\glossterm<condition>.
+        \\hit The target is \\glossterm<dazed> as a \\glossterm<condition>.
+        \\crit The target is \\glossterm<disoriented> as a \\glossterm<condition>.
 
         \\rankline
-        \\rank<5> The damage increases to \\glossterm<standard damage> -1d.
-        \\rank<7> The damage increases to \\glossterm<standard damage>.
+        \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+        \\rank<5> The accuracy bonus increases to +2.
+        \\rank<7> The accuracy bonus increases to +3.
+    """, tags=[]),
+    Spell('Shockwave', 2, '\\glossterm<Enemies> in a \\areahuge, 15 ft.\\ wide line', """
+        Make an attack vs. Fortitude against each target.
+        \\hit Each target is \\glossterm<dazed> until the end of the next round.
+        \\crit Each target is \\glossterm<dazed> as a \\glossterm<condition>.
+
+        \\rankline
+        \\rank<4> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+        \\rank<6> The accuracy bonus increases to +2.
+        \\rank<8> The accuracy bonus increases to +3.
     """, tags=[]),
     Spell('Call Lightning', 3, 'Everything in a \\arealarge, 5 ft.\\ wide vertical line within \\rngmed range', """
         Make an attack vs. Reflex against each target.
@@ -123,26 +135,26 @@ spells=[
         \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
         \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
     """, tags=[]),
-    Spell('Energize', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+    Spell('Energize', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
         The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<base speed>, up to a maximum of double its \\glossterm<base speed>.
-        When this effect ends, the target becomes \\glossterm<fatigued> as a \\glossterm<condition>.
+
         You can cast this spell as a \\glossterm<minor action>.
 
         \\rankline
-        \\rank<3> The speed bonus increases to +15 feet.
-        \\rank<5> The speed bonus increases to +20 feet.
-        \\rank<7> The speed bonus increases to +30 feet.
+        \\rank<4> The speed bonus increases to +15 feet.
+        \\rank<6> The speed bonus increases to +20 feet.
+        \\rank<8> The speed bonus increases to +30 feet.
     """, tags=['Attune (target)']),
     Spell('Lightning Breath', 4, 'Yourself (see text)', """
         As a standard action, you can breathe electricity like a dragon.
         When you do, make an attack vs. Reflex against everything within a \\arealarge cone.
-        \\hit Each target takes electricity \\glossterm<standard damage> +1d.
+        \\hit Each target takes electricity \\glossterm<standard damage>.
 
         You can cast this spell as a \\glossterm<minor action>.
 
         \\rankline
-        \\rank<6> The damage increases to \\glossterm<standard damage> +2d.
-        \\rank<8> The damage increases to \\glossterm<standard damage> +3d.
+        \\rank<6> The damage increases to \\glossterm<standard damage> +1d.
+        \\rank<8> The damage increases to \\glossterm<standard damage> +2d.
     """, tags=['Attune (self)']),
     Spell('Ball Lightning', 4, 'See text', """
         You create a Medium ball of lightning in one space within \\rngmed range.

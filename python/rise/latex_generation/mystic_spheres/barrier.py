@@ -31,24 +31,27 @@ barrier=MysticSphere(
             \\rank<6> The area increases to a \\arealarge line.
             \\rank<8> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
-        Spell('Visual Barrier', 3, None, """
+        Spell('Visual Barrier', 2, None, """
             This spell functions like the \\spell<mystic barrier> spell, except that you can choose the visibility of the barrier.
             There are three possibilities: fully invisible, barely visible like a normal \\spell<mystic barrier>, and visible as a deep black tht completely blocks sight.
             You can change the opacity of the barrier as a \\glossterm<minor action>.
-            In addition, the \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to three times your \\glossterm<power>.
 
-            \\rank<5> The area increases to a \\arealarge line.
-            \\rank<7> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
+            \\rankline
+            \\rank<4> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to three times your \\glossterm<power>.
+            \\rank<6> The area increases to a \\arealarge line.
+            \\rank<8> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
-        Spell('Audible Barrier', 3, None, """
+        Spell('Audible Barrier', 2, None, """
             This spell functions like the \\spell<mystic barrier> spell, except that you can choose how much the barrier blocks sound.
             There are two possibilities: fully sound-permeable, and fully sound-blocking like a normal \\spell<mystic barrier>.
             You can change how much the barrier blocks sound as a \\glossterm<minor action>.
             Exceptionally strong sounds, such as sonic attacks that deal energy damage, are blocked by the barrier like other damaging effects.
             In addition, the \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to three times your \\glossterm<power>.
 
-            \\rank<5> The area increases to a \\arealarge line.
-            \\rank<7> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
+            \\rankline
+            \\rank<4> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to three times your \\glossterm<power>.
+            \\rank<6> The area increases to a \\arealarge line.
+            \\rank<8> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Forceful Barrier', 3, None, """
             This spell functions like the \\spell<mystic barrier> spell, except that it breaks objects in its area that obstruct its path.
@@ -104,15 +107,16 @@ barrier=MysticSphere(
             \\rank<5> The maximum size of the target increases to Huge.
             \\rank<7> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
-        Spell('Quickseal', 3, 'One openable object within \\rngmed range (see text)', """
+        Spell('Quickseal', 2, 'One openable object within \\rngmed range (see text)', """
             You create a curved field of magical energy that blocks access to the target's opening mechanism.
             The opening mechanism must be Small or smaller in size.
             Nothing can pass through the field until it is destroyed.
-            The field has a \\glossterm<vital resistance> equal to three times your \\glossterm<power>.
+            The field has a \\glossterm<vital resistance> equal to twice your \\glossterm<power>.
 
             \\rankline
-            \\rank<5> The \\glossterm<vital resistance> of the field increases to four times your \\glossterm<power>.
-            \\rank<7> The \\glossterm<vital resistance> of the field increases to five times your \\glossterm<power>.
+            \\rank<4> The \\glossterm<vital resistance> of the field increases to three times your \\glossterm<power>.
+            \\rank<6> The \\glossterm<vital resistance> of the field increases to four times your \\glossterm<power>.
+            \\rank<8> The \\glossterm<vital resistance> of the field increases to five times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Personal Sphere', 5, 'Yourself', """
             You create a sphere of magical energy around yourself.
@@ -125,7 +129,7 @@ barrier=MysticSphere(
             \\rankline
             \\rank<7> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
-        Spell('Entrapping Sphere', 4, 'One Large or smaller creature within \\rngmed range', """
+        Spell('Entrapping Sphere', 4, 'One Large or smaller creature or object within \\rngmed range', """
             Make an attack vs. Reflex against the target.
             \\hit You create a sphere of magical energy around the target in its space.
             The sphere is visible as a shimmering magical membrane that does not block sight.
@@ -189,10 +193,11 @@ barrier=MysticSphere(
             \\rank<5> The bonus increases to be equal to half your \\glossterm<power>.
             \\rank<7> The bonus increases to be equal to your \\glossterm<power>.
         """, tags=['Attune (target)']),
-        Spell('Universal Shield', 4, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
-            The target gains a +4 \\glossterm<magic bonus> to \\glossterm<resistances> against all damage.
+        Spell('Universal Shield', 2, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
+            The target gains a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against all damage.
 
             \\rankline
+            \\rank<4> The bonus increases to +4.
             \\rank<6> The bonus increases to be equal to half your \\glossterm<power>.
             \\rank<8> The bonus increases to be equal to your \\glossterm<power>.
         """, tags=['Attune (target)']),
@@ -208,7 +213,7 @@ barrier=MysticSphere(
             \\rank<5> The area increases to a \\arealarge radius.
             \\rank<7> The area increases to a \\areahuge radius.
         """, tags=['Sustain (minor)']),
-        Spell('Energetic Immunity', 5, 'Yourself', """
+        Spell('Energy Immunity', 5, 'Yourself', """
             Choose a subtype of \\glossterm<energy damage>: cold, electricity, or fire.
             You become immune to damage of the chosen type.
             Attacks that deal damage of multiple types still inflict damage normally unless you are immune to all types of damage dealt.

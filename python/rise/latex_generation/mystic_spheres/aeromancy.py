@@ -97,13 +97,14 @@ aeromancy = MysticSphere(
             \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=[]),
-        Spell('Windsnipe', 3, 'One creature or object within \\rnglong range', """
-            Make an attack vs. Armor against the target.
-            \\hit The target takes bludgeoning \\glossterm<standard damage> +1d.
+        Spell('Windsnipe', 2, 'One creature or object within \\rnglong range', """
+            Make an attack vs. Armor with a +1 bonus to \\glossterm<accuracy> against the target.
+            \\hit The target takes bludgeoning \\glossterm<standard damage>.
 
             \\rankline
-            \\rank<5> The range increases to \\rngext.
-            \\rank<7> The range increases to 3,000 feet.
+            \\rank<4> The accuracy bonus increases to +2.
+            \\rank<6> The accuracy bonus increases to +3.
+            \\rank<8> The accuracy bonus increases to +4.
         """, tags=[]),
         Spell('Buffeting Blast', 1, 'One creature or object within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
@@ -128,14 +129,15 @@ aeromancy = MysticSphere(
             \\rankline
             \\rank<7> The maximum distance above the ground increases to 300 feet.
         """, tags=['Attune (self)']),
-        Spell('Gust of Wind', 3, 'Everything in a \\arealarge, 10 ft. wide line from you', """
+        Spell('Gust of Wind', 2, 'Everything in a \\arealarge, 10 ft. wide line from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes bludgeoning \\glossterm<standard damage> -2d and is \\glossterm<pushed> 20 feet in the direction the line points away from you.
             Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
 
             \\rankline
-            \\rank<5> The area increases to a \\areahuge, 10 ft. wide line from you.
-            \\rank<7> Each struck target is pushed 50 feet instead of 20 feet.
+            \\rank<4> The area increases to a \\areahuge, 10 ft. wide line from you.
+            \\rank<6> Each struck target is pushed 50 feet instead of 20 feet.
+            \\rank<8> The area increases to a \\areaext, 15 ft. wide line from you.
         """, tags=[]),
         Spell('Windblade', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             Melee weapons wielded by the target gain +5 foot \\glossterm<magic bonus> to \\glossterm<reach>.
@@ -209,15 +211,15 @@ aeromancy = MysticSphere(
             \\rank<6> The area increases to a \\arealarge radius.
             \\rank<8> The area increases to a \\areahuge radius.
         """, tags=[]),
-        Spell('Windtheft', 1, 'One creature or object within \\rngmed range', """
+        Spell('Windtheft', 2, 'One creature or object within \\rngmed range', """
             Make an attack vs. Reflex against the target.
             \\hit The target drops all items it is holding that are not well secured (such as a ring) or held in a hand.
             \\crit As above, except that the target also drops items that are held a hand.
 
             \\rankline
-            \\rank<3> Each dropped item is scattered 30 feet in a random horizontal direction.
-            \\rank<5> You can choose for the dropped items to fly towards you instead of being scattered randomly.
-            \\rank<7> The distance each dropped item flies increases to 100 feet.
+            \\rank<4> Each dropped item is scattered 30 feet in a random horizontal direction.
+            \\rank<6> You can choose for the dropped items to fly towards you instead of being scattered randomly.
+            \\rank<8> The distance each dropped item flies increases to 100 feet.
         """, tags=[]),
         Spell('Windseal', 4, 'One Large or smaller creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
@@ -230,6 +232,21 @@ aeromancy = MysticSphere(
             \\rank<6> The maximum size increases to Huge.
             \\rank<8> The maximum size increases to Gargantuan.
         """, tags=[]),
+        Spell('Dust Cloud', 2, 'Creatures in a \\areamed radius within \\rngmed range', """
+            Make an attack vs. Reflex against each target.
+            \\hit Each target is \\glossterm<dazzled> until the end of the next round.
+            \\crit Each target is \\glossterm<dazzled> as a \\glossterm<condition>.
+
+            \\rankline
+            \\rank<4> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<6> The accuracy bonus increases to +2.
+            \\rank<8> The accuracy bonus increases to +3.
+        """, tags=[]),
+        Spell('Blinding Dust Cloud', 7, 'Creatures in a \\areamed radius within \\rngmed range', """
+            Make an attack vs. Reflex against each target.
+            \\hit Each target is \\glossterm<blinded> until the end of the next round.
+            \\crit Each target is \\glossterm<blinded> as a \\glossterm<condition>.
+        """, tags=[]),
         Spell('Dustblind', 5, 'One creature within \\rngclose range', """
             If there is no dirt, dust, or collection of loose objects of similar size within 30 feet of the target's eyes, this spell is \\glossterm<miscast>.
             Make an attack vs. Reflex against the target.
@@ -238,15 +255,15 @@ aeromancy = MysticSphere(
             \\rankline
             \\rank<7> The range increases to \\rnglong.
         """, tags=[]),
-        Spell('Piercing Wind', 1, 'One creature or object within \\rngclose range', """
+        Spell('Piercing Wind', 2, 'One creature or object within \\rngclose range', """
             A rush of wind flows rapidly through the gaps in your foe's armor to pierce its heart.
             Make an attack vs. Reflex against the target.
             \\hit The target takes piercing \\glossterm<standard damage> +1d.
 
             \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
+            \\rank<4> The damage increases to \\glossterm<standard damage> +2d.
+            \\rank<6> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<8> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=[]),
     ],
     rituals=[

@@ -21,7 +21,7 @@ summon=MysticSphere(
 
             \\begin<itemize>
                 \\item Its \\glossterm<wound resistance> and \\glossterm<vital resistance> are equal to the base values for your level (see \\pcref<Resistance Values>).
-                \\item It has 6 \\glossterm<hit points>.
+                \\item It has 5 \\glossterm<hit points>.
                 \\item Each of its \\glossterm<defenses> is equal to 4 \\add your level.
                 \\item Its \\glossterm<accuracy> is equal to your \\glossterm<accuracy> \\sub 2.
                 \\item Its \\glossterm<power> with its attacks is equal to your \\glossterm<power>.
@@ -105,15 +105,16 @@ summon=MysticSphere(
             \\rank<6> The creature gains a +1 bonus to \\glossterm<accuracy>.
             \\rank<8> The accuracy bonus increases to +2.
         """, tags=['Attune (self)', 'Manifestation']),
-        Spell('Summon Water Elemental', 3, 'One unoccupied square on stable ground within \\rngmed range', """
+        Spell('Summon Water Elemental', 2, 'One unoccupied square on stable ground within \\rngmed range', """
             This spell functions like the \\spell<summon monster> spell, except that the summoned creature appears to be an water elemental.
             Its attacks deal bludgeoning damage.
             It has a 30 foot \\glossterm<swim speed>, and it suffers no penalties for fighting underwater (see \\pcref<Underwater Combat>).
             However, it is \\glossterm<vulnerable> to electricity damage.
 
             \\rankline
-            \\rank<5> The creature gains a +1 bonus to \\glossterm<accuracy>.
-            \\rank<7> The accuracy bonus increases to +2.
+            \\rank<4> The creature gains a +1 bonus to \\glossterm<accuracy>.
+            \\rank<6> The accuracy bonus increases to +2.
+            \\rank<8> The accuracy bonus increases to +3.
         """, tags=['Attune (self)', 'Manifestation']),
         Spell('Summon Air Elemental', 4, 'One unoccupied square on stable ground within \\rngmed range', """
             This spell functions like the \\spell<summon monster> spell, except that the summoned creature appears to be an air elemental.

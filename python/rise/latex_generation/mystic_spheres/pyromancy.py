@@ -47,7 +47,7 @@ pyromancy=MysticSphere(
     ],
     lists=['Arcane', 'Nature', 'Pact'],
     spells=[
-        Spell('Burning Grasp', 1, 'One creature or object within your \\glossterm<reach>', """
+        Spell('Burning Grasp', 2, 'One creature or object within your \\glossterm<reach>', """
             This spell does not have the \\glossterm<Focus> tag.
             You must have a \\glossterm<free hand> to cast this spell.
 
@@ -124,36 +124,63 @@ pyromancy=MysticSphere(
             \\rankline
             \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=[]),
-        Spell('Heat Metal', 5, 'One creature within \\rngmed range', """
-            Make an attack vs. Fortitude against the target.
-            This attack automatically misses if the target is not wearing metal armor, wielding a metal weapon, or significantly composed of metal.
-            \\hit The target is \\glossterm<ignited> as a \\glossterm<condition>.
-            The condition can be removed if the target stops touching or being composed of metal of any kind.
+        Spell('Heat Metal', 2, 'One Small or smaller metal object within \\rngmed range', """
+            If the target is \\glossterm<attended>, make an attack vs. Reflex against the attending creature.
+            Otherwise, this attack automatically hits.
+            \\hit The target object becomes burning hot to the touch.
+            At the end of each round, it and anything touching it takes fire \\glossterm<standard damage>.
 
             \\rankline
-            \\rank<7> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-        """, tags=[]),
+            \\rank<4> The maximum size of the target increases to Medium.
+            \\rank<6> The maximum size of the target increases to Large.
+            \\rank<8> The maximum size of the target increases to Huge.
+        """, tags=['Sustain (minor)']),
         Spell('Flame Breath', 4, 'Yourself (see text)', """
             As a standard action, you can breathe fire like a dragon.
             When you do, make an attack vs. Reflex against everything within a \\arealarge cone from you.
-            \\hit Each target takes fire \\glossterm<standard damage> +1d.
+            \\hit Each target takes fire \\glossterm<standard damage>.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<6> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<8> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<6> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<8> The damage increases to \\glossterm<standard damage> +2d.
+        """, tags=['Attune (self)']),
+        Spell('Eyes of Flame', 2, 'Yourself (see text)', """
+            As a standard action, you can set something on fire simply by staring at it.
+            When you do, make an attack vs. Fortitude against one creature or object within \\rngmed range from you.
+            \\hit The target takes fire \\glossterm<standard damage> +2d.
+
+            You can cast this spell as a \\glossterm<minor action>.
+
+            \\rankline
+            \\rank<4> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<6> The damage increases to \\glossterm<standard damage> +4d.
+            \\rank<8> The damage increases to \\glossterm<standard damage> +5d.
+        """, tags=['Attune (self)']),
+        Spell('Flaming Spheres', 4, 'Yourself (see text)', """
+            When you cast this spell, five flaming spheres appear over your head.
+            Each sphere is approximately one foot in diameter.
+            As a \\glossterm<minor action>, you can fire an orb at a creature or object within \\rngclose range.
+            When you do, make an attack vs. Armor against that target.
+            \\hit The target takes fire \\glossterm<standard damage> -2d.
+
+            You can cast this spell as a \\glossterm<minor action>.
+
+            \\rankline
+            \\rank<6> The damage increases to \\glossterm<standard damage> -1d.
+            \\rank<8> The damage increases to \\glossterm<standard damage>.
         """, tags=['Attune (self)']),
         # Pyromancy specifically doesn't get "enemies only" self-radius
         # spells like most spheres do.
-        Spell('Inferno', 1, 'Everything in a \\areamed radius from you', """
+        Spell('Inferno', 2, 'Everything in a \\areamed radius from you', """
             Make an attack vs. Reflex against each target.
             \\hit Each target takes fire \\glossterm<standard damage> -1d.
 
             \\rankline
-            \\rank<3> The area increases to a \\arealarge radius.
-            \\rank<5> The area increases to a \\areahuge radius.
-            \\rank<7> The area increases to a \\areaext radius.
+            \\rank<4> The area increases to a \\arealarge radius.
+            \\rank<6> The area increases to a \\areahuge radius.
+            \\rank<8> The area increases to a \\areaext radius.
         """, tags=[]),
         Spell('Flame Serpent', 3, 'Everything in a \\areamed, 5 ft.\\ wide shapeable line within \\rngclose range', f"""
             Make an attack vs. Reflex against each target.
@@ -199,6 +226,57 @@ pyromancy=MysticSphere(
             \\rank<6> The damage increases to \\glossterm<standard damage> +1d.
             \\rank<8> The damage increases to \\glossterm<standard damage> +2d.
         """, tags=['Sustain (minor)']),
+        Spell('Personal Ignition', 3, ['Yourself', 'See text'], """
+            You catch on fire.
+            You are immune to being \\glossterm<ignited>.
+            In addition, at the end of each round, make an attack vs. Fortitude against each creature adjacent to you that either is \\glossterm<grappling> with you or that attacked you with a melee weapon that round.
+            \\hit Each secondary target takes fire \\glossterm<standard damage>.
+
+            \\rankline
+            \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
+        """, tags=['Attune (self)']),
+        Spell('Pyrophobia', 2, 'One creature within \\rngmed range', """
+            Make an attack vs. Mental against the target.
+            \\hit The target is \\glossterm<shaken> by you and all other sources of fire as a \\glossterm<condition>.
+            \\crit The target is \\glossterm<panicked> by you and all other sources of fire as a \\glossterm<condition>.
+
+            \\rankline
+            \\rank<4> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<6> The accuracy bonus increases to +2.
+            \\rank<8> The accuracy bonus increases to +3.
+        """, tags=[]),
+        Spell('Pyrohemia', 3, 'One creature within \\rngmed range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit The target takes fire \\glossterm<standard damage> -2d.
+            In addition, it is \\glossterm<sickened> as a \\glossterm<condition>.
+
+            \\rankline
+            \\rank<4> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<6> The accuracy bonus increases to +2.
+            \\rank<8> The accuracy bonus increases to +3.
+        """, tags=[]),
+        Spell('Curse of Flammability', 5, 'One creature within \\rngmed range', """
+            Make an attack vs. Mental against the target.
+            \\hit The target is highly flammable until it takes a \\glossterm<short rest>.
+            Like dry wood or kindling, it becomes \\glossterm<ignited> whenever it takes any \\glossterm<fire damage>.
+            This ignited effect can be removed if the target makes a \\glossterm<difficulty rating> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
+            Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
+            \\crit As above, except that the effect lasts until the curse is removed.
+
+            \\rankline
+            \\rank<7> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+        """, tags=['Curse']),
+        Spell('Kindled Fireburst', 1, 'One Tiny or larger active fire within \\rngclose range (see text)', """
+            You cause a small source of fire, such as a torch, to erupts into a larger burst of flame.
+            Make an attack vs. Reflex against everything within an \\areasmall radius from the target.
+            \\hit Each target takes fire \\glossterm<standard damage> -1d.
+
+            \\rankline
+            \\rank<3> The damage increases to \\glossterm<standard damage>.
+            \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
+        """, tags=[]),
     ],
     rituals=[
         Spell('Heat Wave', 4, None, """

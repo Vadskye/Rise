@@ -46,13 +46,13 @@ umbramancy=MysticSphere(
             \\rank<5> The maximum area increases to a \\areahuge radius.
             \\rank<7> The maximum area increases to a \\areaext radius.
         """, tags=['Attune (self)', 'Sensation']),
-        Spell('Darkvision', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Darkvision', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains \\glossterm<darkvision> with a 50 foot radius.
 
             \\rankline
-            \\rank<3> The radius increases to 100 feet.
-            \\rank<5> The radius increases to 150 feet.
-            \\rank<7> The radius increases to 200 feet.
+            \\rank<4> The radius increases to 100 feet.
+            \\rank<6> The radius increases to 150 feet.
+            \\rank<8> The radius increases to 200 feet.
         """, tags=['Attune (target)']),
         Spell('Dark Miasma', 3, '\\glossterm<Enemies> in a \\areasmall radius from you', """
             Make an attack vs. Fortitude against each target.
@@ -63,7 +63,7 @@ umbramancy=MysticSphere(
             \\rank<5> The area increases to a \\areamed radius.
             \\rank<7> The area increases to a \\arealarge radius.
         """, tags=[]),
-        Spell('Dark Grasp', 1, 'One creature or object within your \\glossterm<reach>', """
+        Spell('Dark Grasp', 2, 'One creature or object within your \\glossterm<reach>', """
             This spell does not have the \\glossterm<Focus> tag.
             You must have a \\glossterm<free hand> to cast this spell.
 
@@ -72,9 +72,9 @@ umbramancy=MysticSphere(
             \\hit The target takes cold \\glossterm<standard damage>.
 
             \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<4> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<6> The damage increases to \\glossterm<standard damage> +2d.
+            \\rank<8> The damage increases to \\glossterm<standard damage> +3d.
         """, tags=[], focus=False),
         Spell('Chill of Darkness', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
@@ -97,24 +97,24 @@ umbramancy=MysticSphere(
             \\rank<5> The bonus to Armor defense and Stealth increases to +2.
             \\rank<7> The bonus to all defenses increases to +2.
         """, tags=['Attune (target)']),
-        Spell('Conceal Trail', 1, 'Yourself and up to five \\glossterm<allies>', """
+        Spell('Conceal Trail', 2, 'Yourself and up to five \\glossterm<allies>', """
             At the end of each round, the footprints, scent, and other tracks left by each target during that round are magically concealed.
             This increases the \\glossterm<difficulty rating> to follow the trail by 10, but does not prevent creatures from seeing or smelling each target normally in combat.
             At the end of each round, if any target is outside of \\rnglong range from you, the effect is broken for that target and its trail is revealed.
 
             \\rankline
-            \\rank<3> The \\glossterm<difficulty rating> increase increases to 15.
-            \\rank<5> The \\glossterm<difficulty rating> increase increases to 20.
-            \\rank<7> The \\glossterm<difficulty rating> increase increases to 25.
+            \\rank<4> The \\glossterm<difficulty rating> increase increases to 15.
+            \\rank<6> The \\glossterm<difficulty rating> increase increases to 20.
+            \\rank<8> The \\glossterm<difficulty rating> increase increases to 25.
         """, tags=['Attune (self)']),
-        Spell('Fade Into Darkness', 1, 'Yourself', """
+        Spell('Fade Into Darkness', 2, 'Yourself', """
             At the end of each round, if you took no actions that round and are not in \\glossterm<bright illumination>, you become \\glossterm<invisible>.
             This invisibility ends after you take any action.
 
             \\rankline
-            \\rank<3> Moving during a round does not prevent you from becoming invisible at the end of the round.
-            \\rank<5> Taking \\glossterm<minor actions> does not prevent you from becoming invisible at the end of the round.
-            \\rank<7> The invisibility lasts until the end of the round after you take an action, rather than ending immediately after the action.
+            \\rank<4> Moving during a round does not prevent you from becoming invisible at the end of the round.
+            \\rank<6> Taking \\glossterm<minor actions> does not prevent you from becoming invisible at the end of the round.
+            \\rank<8> The invisibility lasts until the end of the round after you take an action, rather than ending immediately after the action.
         """, tags=['Attune (self)']),
         Spell('Dark Shroud', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
@@ -162,7 +162,7 @@ umbramancy=MysticSphere(
         """, tags=['Attune (target)', 'Sensation']),
         Spell('Shadowstep', 1, 'Yourself', """
             You teleport into an unoccupied destination on the ground within \\rngmed range.
-            Unlike most teleportation, both your departure and arrival with this spell are silent.
+            Unlike most teleportation effects, both your departure and arrival with this spell are silent.
             If you are in \\glossterm<bright illumination> and are not touching your shadow, this spell is \\glossterm<miscast>.
 
             \\rankline
@@ -238,7 +238,8 @@ umbramancy=MysticSphere(
         """, tags=['Attune (self)']),
         Spell('Wall of Darkness', 1, None, """
             You create a wall of darkness in a 20 ft.\\ high, \\areamed line within \\rngmed range.
-            If you create the wall within a space too small to hold it, it fills as much of the space as possible, allowing you to completely block off small tunnels.
+            If you create the wall within a space too small to hold it, it fills as much of the space as possible, starting from the middle of the chosen space.
+            This can allow you to completely block off small tunnels.
             The wall is visible as a solid block of darkness that blocks sight.
             Creatures with the \\glossterm<darkvision> ability can see through the wall normally.
             It does not inhibit the passage of objects or creatures.
