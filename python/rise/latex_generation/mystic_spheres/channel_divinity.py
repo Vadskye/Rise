@@ -174,8 +174,8 @@ channel_divinity=MysticSphere(
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<4> You also gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with divine spells.
-            \\rank<6> Your divine spells no longer have the \\glossterm<Focus> tag.
+            \\rank<4> You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with divine spells.
+            \\rank<6> You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with divine spells.
             \\rank<8> The power bonus increases to +4.
         """, tags=['Attune (self)']),
         Spell('Divine Favor', 3, 'Yourself', """

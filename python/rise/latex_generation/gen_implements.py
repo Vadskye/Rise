@@ -152,16 +152,6 @@ def generate_implements():
     ))
 
     implements.append(MagicItem(
-        name="Staff of Focus, Greater",
-        level=15,
-        material_type='Staff',
-        description="""
-            You reduce your \\glossterm<focus penalty> by 2.
-        """,
-        short_description="Reduces \\glossterm<focus penalty> by 2",
-    ))
-
-    implements.append(MagicItem(
         name="Staff of Power",
         level=8,
         material_type='Staff',
