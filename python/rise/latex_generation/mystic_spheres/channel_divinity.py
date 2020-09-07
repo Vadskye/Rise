@@ -91,14 +91,14 @@ channel_divinity=MysticSphere(
             \\rank<8> The range increases to \\rnglong.
         """, tags=[]),
         Spell('Judge Unworthy', 2, 'One creature within \\rngmed range', """
-            Make an attack vs. Mental with a +4 bonus to \\glossterm<accuracy> against the target.
+            Make an attack vs. Mental with a +2 bonus against the target.
             \\hit As a \\glossterm<condition>, the target takes a -2 penalty to Mental defense.
-            \\crit As above, except that the penalty increases to -4.
+            \\crit As above, except that the penalty increases to -5.
 
             \\rankline
-            \\rank<4> The accuracy bonus increases to +5.
+            \\rank<4> The accuracy bonus increases to +4.
             \\rank<6> The accuracy bonus increases to +6.
-            \\rank<8> The accuracy bonus increases to +7.
+            \\rank<8> The accuracy bonus increases to +8.
         """, tags=[]),
         Spell('Fear of the Divine', 1, 'One creature within \\rngclose range', """
             Make an attack vs. Mental with a +1 bonus to \\glossterm<accuracy> against the target.
