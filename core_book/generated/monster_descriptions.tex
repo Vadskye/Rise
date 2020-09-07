@@ -34,7 +34,7 @@
         \pari \textbf{WR} Physical 49, Energy 46 \monsep
         \textbf{VR} Physical 102, Energy 99
         \pari \textbf{Strike:}
-            Tentacle \plus15 (11d10 bludgeoning)
+            Tentacle \plus16 (10d10 bludgeoning)
       \end{spelltargetinginfo}
     \end{spellcontent}
     \begin{monsterfooter}
@@ -1346,6 +1346,66 @@
   
   
   
+  \begin{monsection}{Darkwraith}{9}[4]
+    \vspace{-1em}\spelltwocol{}{Medium animate}\vspace{-1em}
+    \vspace{0em}
+
+    
+      An darkwraith is a shadow disconnected from its host through strange umbramantic power.
+      Though it appears similar to a ghost, it is not undead.
+      Darkwraiths bear a hateful malevolence towards anything that brings light.
+      They instinctively seek out sources of warmth, including most living creatures, to suppress them with its chilling aura.
+      However, it will not attack directly unless provoked by light or damage.
+      Darkwraiths cannot speak or make noise of any kind.
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 36 \monsep
+          \textbf{AD} 17 \monsep
+          \textbf{Fort} 15 \monsep
+          \textbf{Ref} 18 \monsep
+          \textbf{Ment} 17
+        \pari \textbf{WR} 12 \monsep
+        \textbf{VR} 43
+        
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} Fly 30 ft. \monsep
+        \textbf{Space} 5 ft. \monsep
+        \textbf{Reach} 5 ft.
+      \pari \textbf{Awareness} \plus13
+      \pari \textbf{Attributes}
+        Str N/A, Dex 11,
+        Con 0, Int 5,
+        Per 5, Wil 10
+      \pari \textbf{Accuracy} 12 \monsep
+        \textbf{Mundane Power} 15 \monsep
+      \textbf{Magical Power} 17
+      \pari \textbf{Alignment} Always neutral evil
+    \end{monsterfooter}
+  \end{monsection}
+  \begin{freeability}{Dark Grasp}
+      \target{One creature within \glossterm{reach}}
+       The darkwraith makes a \plus12 attack
+        vs. Reflex against the target.
+    \end{freeability}
+  
+
+    \begin{freeability}{Chilling Aura}
+      \targets{Everything within a \areasmall radius \glossterm{emanation}}
+      The darkwraith automatically makes this attack at the end of each round in addition to its other actions.
+          \par The darkwraith makes a \plus12 attack
+        vs. Fortitude against each target.
+    \end{freeability}
+  
+      \parhead{Incorporeal} 
+      The darkwraith is \glossterm{incorporeal}.
+      It does not have a tangible body, and is immune to \glossterm{physical damage}.
+      It can enter or pass through solid objects.
+  
     \subsection{Treants}
       
     Treants are intelligent plant creatures that appear extremely similar to trees.
@@ -2002,6 +2062,57 @@
       \par \textbf{Darkvision 50 Ft}
     \par \textbf{Tremorsense 50 Ft}
   
+  \begin{monsection}{Hydra Maggot}{7}[2]
+    \vspace{-1em}\spelltwocol{}{Large magical beast}\vspace{-1em}
+    \vspace{0em}
+
+    
+      A hydra maggot is a large maggot-like creature that wriggles across the ground in search of food.
+      Hydra maggots are named for the cluster of tentacles that sprout from their heads, which they use to grab foes.
+      They are carnivorous, but are not picky, and will feast on rotting carcasses just as happily as they will feast on fresh meat.
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 9 \monsep
+          \textbf{AD} 14 \monsep
+          \textbf{Fort} 11 \monsep
+          \textbf{Ref} 14 \monsep
+          \textbf{Ment} 10
+        \pari \textbf{WR} 11 \monsep
+        \textbf{VR} 35
+        \pari \textbf{Strikes:}
+            Bite \plus9 (4d8 bludgeoning and piercing);
+\par Tentacle \plus10 (2d10 bludgeoning)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 40 ft. \monsep
+        \textbf{Space} 10 ft. \monsep
+        \textbf{Reach} 10 ft.
+      \pari \textbf{Awareness} \plus4
+      \pari \textbf{Attributes}
+        Str 4, Dex 9,
+        Con 0, Int -7,
+        Per 8, Wil -1
+      \pari \textbf{Accuracy} 9 \monsep
+        \textbf{Mundane Power} 10 \monsep
+      \textbf{Magical Power} 8
+      \pari \textbf{Alignment} Always true neutral
+    \end{monsterfooter}
+  \end{monsection}
+  \begin{freeability}{Impaling Tentacles}
+      \target{One creature within \glossterm{reach}}
+       The hydra maggot makes a \plus10
+        \glossterm{strike} vs. Reflex
+        with its tentacle against the target.
+    
+    \hit 
+          The target takes 2d10 piercing damage.
+          In addition, if this attack also beats Fortitude defense, the target is \glossterm{grappled} by the hydra maggot.
+    \end{freeability}
+  
   \begin{monsection}{Nightcrawler}{7}[2]
     \vspace{-1em}\spelltwocol{}{Large magical beast}\vspace{-1em}
     \vspace{0em}
@@ -2055,6 +2166,56 @@
         vs. Reflex against the target.
     \end{freeability}
   
+  \begin{monsection}{Stygian Leech}{7}[1]
+    \vspace{-1em}\spelltwocol{}{Medium magical beast}\vspace{-1em}
+    \vspace{0em}
+
+    
+      A stygian leech is a worm-like creature that feeds on life energy.
+      They have a rudimentary intelligence, and use their ability to crawl on walls and ceilings to drop on unsuspecting foes.
+      They instinctively avoid feeding on other stygian leeches, but will otherwise attempt to drain the life from any living creatures, regardless of danger.
+      Some non-living creatures, such as intelligent undead, gather stygian leeches to guard their homes, since the leeches ignore non-living creatures entirely unless severely provoked.
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 5 \monsep
+          \textbf{AD} 12 \monsep
+          \textbf{Fort} 11 \monsep
+          \textbf{Ref} 12 \monsep
+          \textbf{Ment} 13
+        \pari \textbf{WR} 11 \monsep
+        \textbf{VR} 35
+        \pari \textbf{Strike:}
+            Bite \plus7 (2d10 bludgeoning and piercing)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speeds} Climb 30 ft., Land 30 ft. \monsep
+        \textbf{Space} 5 ft. \monsep
+        \textbf{Reach} 5 ft.
+      \pari \textbf{Awareness} \plus4
+      \pari \textbf{Attributes}
+        Str 0, Dex 8,
+        Con 4, Int -5,
+        Per 0, Wil 9
+      \pari \textbf{Accuracy} 7 \monsep
+        \textbf{Mundane Power} 7 \monsep
+      \textbf{Magical Power} 10
+      \pari \textbf{Alignment} Always neutral evil
+    \end{monsterfooter}
+  \end{monsection}
+  \begin{freeability}{Leech Life}
+      \target{One living creature within \glossterm{reach}}
+       The stygian leech makes a \plus7 attack
+        vs. Fortitude against the target.
+    
+    \hit 
+          The target takes 4d10 energy damage.
+          If this attack \glossterm{wounds} the target, the stygian leech regains one lost hit point.
+    \end{freeability}
+  
         \section{Monstrous Humanoids}
 
         All monstrous humanoids have the following properties unless noted otherwise in their description:
@@ -2068,6 +2229,66 @@
   
   
       
+  \begin{monsection}{Choker}{5}[1]
+    \vspace{-1em}\spelltwocol{}{Small monstrous humanoid}\vspace{-1em}
+    \vspace{0em}
+
+    
+      Chokers are vicious predators that delight in strangling their foes.
+      They live to hear the desperate gasping for breath and crunching of bones that their powerful arms can inflict on their prey.
+      They are bipedal, but their arms are inhumanly long and sinuous, terminating in hands with spiny pads to help them hold on tightly to walls and foes.
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 4 \monsep
+          \textbf{AD} 13 \monsep
+          \textbf{Fort} 7 \monsep
+          \textbf{Ref} 11 \monsep
+          \textbf{Ment} 7
+        \pari \textbf{WR} 9 \monsep
+        \textbf{VR} 26
+        \pari \textbf{Strike:}
+            Tentacle \plus6 (2d8 bludgeoning)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speeds} Climb 20 ft., Land 25 ft. \monsep
+        \textbf{Space} 5 ft. \monsep
+        \textbf{Reach} 5 ft.
+      \pari \textbf{Awareness} \plus0
+      \pari \textbf{Attributes}
+        Str 7, Dex 7,
+        Con -1, Int -5,
+        Per 0, Wil -1
+      \pari \textbf{Accuracy} 5 \monsep
+        \textbf{Mundane Power} 8 \monsep
+      \textbf{Magical Power} 4
+      \pari \textbf{Alignment} Usually chaotic evil
+    \end{monsterfooter}
+  \end{monsection}
+  \begin{freeability}{Snatch}
+      \target{One creature or object within \glossterm{reach}}
+       The choker makes a \plus6
+        \glossterm{strike} vs. Reflex
+        with its tentacle against the target.
+    
+    \hit 
+          The target takes 2d8 bludgeoning damage.
+          If this attack also beats the target's Fortitude defense, it is \glossterm{grappled} by the choker.
+    \end{freeability}
+  
+
+    \begin{freeability}{Choke}
+      \target{One creature \glossterm{grappled} by the choker}
+       The choker makes a \plus6
+        \glossterm{strike} vs. Fortitude
+        with its tentacle against the target.
+    
+    \hit The target takes 4d8 bludgeoning damage and is \glossterm{grappled} by the choker.
+    \end{freeability}
+  
   \begin{monsection}{Giant}[Hill]{7}[3]
     \vspace{-1em}\spelltwocol{}{Huge monstrous humanoid}\vspace{-1em}
     \vspace{0em}
@@ -2465,15 +2686,11 @@
       \parhead{Babble} 
           During each \glossterm{action phase}, the allip makes an attack vs. Mental against each creature
           within an \arealarge radius \glossterm{emanation} from it.
-          It cannot make this attack more than once against any individual target between \glossterm{short rests}.
+          After it attacks a creature this way, that creature becomes immune to this allip's \textit{babble} ability until it takes a \glossterm<short rest>.
           \hit Each target is \glossterm{dazed} as a \glossterm{condition}.
         
     \parhead{Incorporeal} 
-      The allip has no physical body.
-      It makes no sound while moving, and may be unaffected by other abilities that only affect corporeal creatures, such as \glossterm{tremorsense}.
-      It is immune to \glossterm{physical} damage and all \glossterm{mundane} abilities that do not deal damage.
-      Whenever it would take damage, it has a 50\% chance to take no damage instead.
-
-      The allip can enter or pass through solid objects, but it must remain adjacent to the object's exterior at all times.
-      While completely inside a solid object, the object provides \glossterm{total cover}, so it must emerge from the object to attack or be attacked.
+      The allip is \glossterm{incorporeal}.
+      It does not have a tangible body, and is immune to \glossterm{physical damage}.
+      It can enter or pass through solid objects.
   

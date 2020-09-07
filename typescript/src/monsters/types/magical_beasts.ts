@@ -89,6 +89,66 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
     },
     startingAttributes: { str: 1, dex: 3, con: 0, int: -8, per: 1, wil: 2 },
   },
+  {
+    alignment: "Always true neutral",
+    armorInputs: [{ name: "thick skin" }],
+    attackInputs: [
+      {
+        damageTypes: ["piercing"],
+        defense: "reflex",
+        hit: `
+          The target takes $damage.
+          In addition, if this attack also beats Fortitude defense, the target is \\glossterm{grappled} by the $name.
+        `,
+        name: "Impaling Tentacles",
+        target: "One creature within \\glossterm{reach}",
+        weaponName: "tentacle",
+      },
+    ],
+    challengeRating: 2,
+    description: `
+      A hydra maggot is a large maggot-like creature that wriggles across the ground in search of food.
+      Hydra maggots are named for the cluster of tentacles that sprout from their heads, which they use to grab foes.
+      They are carnivorous, but are not picky, and will feast on rotting carcasses just as happily as they will feast on fresh meat.
+    `,
+    level: 7,
+    name: "Hydra Maggot",
+    size: "large",
+    startingAttributes: { str: 1, dex: 3, int: -7, per: 2, wil: -1 },
+    weaponInput: [{ name: "bite" }, { name: "tentacle" }],
+  },
+  {
+    alignment: "Always neutral evil",
+    armorInputs: [{ name: "thick skin" }],
+    attackInputs: [
+      {
+        damageTypes: ["energy"],
+        defense: "fortitude",
+        hit: `
+          The target takes $damage.
+          If this attack \\glossterm{wounds} the target, the $name regains one lost hit point.
+        `,
+        name: "Leech Life",
+        powerBonus: 4,
+        source: "magical",
+        target: "One living creature within \\glossterm{reach}",
+      },
+    ],
+    challengeRating: 1,
+    description: `
+      A stygian leech is a worm-like creature that feeds on life energy.
+      They have a rudimentary intelligence, and use their ability to crawl on walls and ceilings to drop on unsuspecting foes.
+      They instinctively avoid feeding on other stygian leeches, but will otherwise attempt to drain the life from any living creatures, regardless of danger.
+      Some non-living creatures, such as intelligent undead, gather stygian leeches to guard their homes, since the leeches ignore non-living creatures entirely unless severely provoked.
+    `,
+    level: 7,
+    name: "Stygian Leech",
+    skillPoints: { awareness: 1, climb: 2 },
+    speeds: { climb: 30 },
+    size: "medium",
+    startingAttributes: { str: 0, dex: 2, con: 1, int: -5, wil: 3 },
+    weaponInput: [{ name: "bite" }],
+  },
 ];
 
 export const magicalBeasts = addType("magical beast", magicalBeastInput);

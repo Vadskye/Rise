@@ -86,6 +86,42 @@ export const monstrousHumanoidInput: TypelessMonsterInput[] = [
     startingAttributes: { str: 4, dex: -1, con: 2, per: 0, wil: 1 },
     weaponInput: [{ name: "gore" }, { name: "ram" }],
   },
+  {
+    alignment: "Usually chaotic evil",
+    attackInputs: [
+      {
+        defense: "reflex",
+        hit: `
+          The target takes $damage.
+          If this attack also beats the target's Fortitude defense, it is \\glossterm{grappled} by the $name.
+      `,
+        name: "Snatch",
+        weaponName: "tentacle",
+      },
+      {
+        defense: "fortitude",
+        hit: `The target takes $damage and is \\glossterm{grappled} by the $name.`,
+        name: "Choke",
+        powerBonus: 6,
+        target: "One creature \\glossterm{grappled} by the $name",
+        weaponName: "tentacle",
+      },
+    ],
+    armorInputs: [{ name: "fur" }],
+    challengeRating: 1,
+    description: `
+      Chokers are vicious predators that delight in strangling their foes.
+      They live to hear the desperate gasping for breath and crunching of bones that their powerful arms can inflict on their prey.
+      They are bipedal, but their arms are inhumanly long and sinuous, terminating in hands with spiny pads to help them hold on tightly to walls and foes.
+    `,
+    languages: [],
+    level: 5,
+    name: "Choker",
+    size: "small",
+    speeds: { climb: 20 },
+    startingAttributes: { str: 3, dex: 3, con: -1, int: -5, per: 0, wil: -1 },
+    weaponInput: [{ name: "tentacle" }],
+  },
 ];
 
 export const monstrousHumanoids = addType("monstrous humanoid", monstrousHumanoidInput);
