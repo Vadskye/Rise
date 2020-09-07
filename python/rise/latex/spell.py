@@ -25,19 +25,23 @@ class Spell(object):
         self.tags = tags
         self.extra_text = extra_text
 
+        is_ritual = 'This ritual' in effect_text
+
         if (self.tags):
             for tag in self.tags:
                 if not is_valid_tag(tag):
                     logger.log(WARNING, f"Spell {self.name} has invalid tag {tag}")
 
-        if (
-                self.level < 7 and (
-                    'rankline' not in effect_text
-                    and 'This ritual' not in effect_text
-                    and 'functions like' not in effect_text
-                )
-        ):
-            logger.log(WARNING, f"Spell {self.name} is missing rank upgrades or ritual timing")
+        if (not is_ritual):
+            if (self.level < 7 and 'rankline' not in effect_text):
+                logger.log(WARNING, f"Spell {self.name} is missing rank upgrades or ritual timing")
+
+            # Make sure that the rank upgrades match the spell's rank 
+            if (self.level in [1, 3, 5] and 'rank<7>' not in effect_text):
+                logger.log(WARNING, f"Spell {self.name} has wrong rank upgrade pattern")
+            if (self.level in [2, 4, 6] and 'rank<8>' not in effect_text):
+                logger.log(WARNING, f"Spell {self.name} has wrong rank upgrade pattern")
+
 
     def __str__(self):
         tag_text = to_latex_tags(self.tags)

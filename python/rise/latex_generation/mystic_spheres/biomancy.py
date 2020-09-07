@@ -164,9 +164,9 @@ biomancy=MysticSphere(
             This penalty increase stacks, and persists even if the target regains the lost hit points.
 
             \\rankline
-            \\rank<5> The accuracy bonus increases to +3.
-            \\rank<5> The accuracy bonus increases to +6.
-            \\rank<7> The accuracy bonus increases to +7.
+            \\rank<4> The accuracy bonus increases to +3.
+            \\rank<6> The accuracy bonus increases to +6.
+            \\rank<8> The accuracy bonus increases to +7.
         """, tags=[]),
         Spell('Withering Curse', 4, 'One living creature within \\rngmed range', """
             Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against the target.
@@ -177,8 +177,8 @@ biomancy=MysticSphere(
             \\crit As above, except that the effect lasts until this curse is removed.
 
             \\rankline
-            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<7> The accuracy bonus increases to +2.
+            \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<8> The accuracy bonus increases to +2.
         """, tags=['Curse']),
         Spell('Sickness', 1, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
@@ -204,8 +204,7 @@ biomancy=MysticSphere(
             \\hit The target is \\glossterm<blinded> as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<8> The accuracy bonus increases to +2.
+            \\rank<7> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=[]),
         Spell('Eyebite Curse', 8, 'One living creature within \\rngclose range', """
             Make an attack vs. Mental against the target.

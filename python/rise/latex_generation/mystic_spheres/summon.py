@@ -51,6 +51,9 @@ summon=MysticSphere(
             If you do, during the \\glossterm<action phase> it cause one of your \\glossterm<allies> within \\rngclose range of it to regain one lost \\glossterm<hit point>.
             You can tell it which creature to heal.
             If you do not instruct it to heal a specific creature, it will automatically heal the ally closest to it that has lost at least one hit point.
+
+            \\rankline
+            \\rank<8> The creature gains a +1 bonus to \\glossterm<accuracy>.
         """, tags=['Attune (self)', 'Manifestation']),
         Spell('Summon Weapon', 3, 'One unoccupied square within \\rngmed range', """
             This spell functions like the \\textit<summon monster> spell, with the following exceptions.
@@ -182,6 +185,10 @@ summon=MysticSphere(
             Whenever it \\glossterm<wounds> a living creature with a \\glossterm<strike>, the damaged creature becomes \\glossterm<poisoned> with asp venom (see \\tref{Typical Poisons}).
             It immediately loses a \\glossterm<hit point> and becomes \\glossterm<sickened> while the poison lasts.
             A third successful attack causes the target to become \\glossterm<nauseated> as long as it is poisoned.
+
+            \\rankline
+            \\rank<6> The creatures gain a +1 bonus to \\glossterm<accuracy>.
+            \\rank<8> The accuracy bonus increases to +2.
         """, tags=['Attune (self)', 'Manifestation']),
     ],
     rituals=[
