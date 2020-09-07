@@ -255,7 +255,7 @@ pyromancy=MysticSphere(
             \\rank<4> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<6> The accuracy bonus increases to +2.
             \\rank<8> The accuracy bonus increases to +3.
-        """, tags=[]),
+        """, tags=['Emotion']),
         Spell('Pyrohemia', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target takes fire \\glossterm<standard damage> -2d.
