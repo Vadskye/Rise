@@ -92,6 +92,7 @@ cryomancy=MysticSphere(
 
             \\rankline
             \\rank<6> The vulnerability lasts until the end of the next round.
+            \\rank<8> The vulnerability lasts until the end of the next round.
         """, tags=[]),
         Spell('Chilled Mind', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.

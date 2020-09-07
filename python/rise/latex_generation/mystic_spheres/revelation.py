@@ -50,6 +50,7 @@ revelation=MysticSphere(
             \\rankline
             \\rank<4> The area increases to a \\areahuge radius \\glossterm<emanation>.
             \\rank<6> The area increases to a \\areaext radius \\glossterm<emanation>.
+            \\rank<8> The area increases to a 500 foot radius \\glossterm<emanation>.
         """, tags=['Attune (self)']),
         Spell('True Strike', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The first time the target makes a \\glossterm<strike> this round,
@@ -126,9 +127,9 @@ revelation=MysticSphere(
             \\crit As above, except that the penalty is doubled.
 
             \\rankline
-            \\rank<3> The accuracy bonus increases to +3.
-            \\rank<5> The accuracy bonus increases to +4.
-            \\rank<7> The accuracy bonus increases to +5.
+            \\rank<4> The accuracy bonus increases to +3.
+            \\rank<6> The accuracy bonus increases to +4.
+            \\rank<8> The accuracy bonus increases to +5.
         """, tags=[]),
         Spell('Reveal Vulnerability', 4, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.

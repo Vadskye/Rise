@@ -80,8 +80,8 @@ spells=[
         \\hit Each target takes electricity \\glossterm<standard damage> -1d.
 
         \\rankline
-        \\rank<5> The damage increases to \\glossterm<standard damage>.
-        \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
+        \\rank<6> The damage increases to \\glossterm<standard damage>.
+        \\rank<8> The damage increases to \\glossterm<standard damage> +1d.
     """, tags=[]),
     Spell('Magnetic Blade', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
         Metal weapons wielded by the target gain a +2 \\glossterm<magic bonus> to \\glossterm<accuracy> against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
