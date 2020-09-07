@@ -1000,7 +1000,7 @@ def generate_maneuvers():
         rank_upgrades={
             '4': 'The accuracy bonus increases to +6.',
             '6': 'The accuracy bonus increases to +8.',
-            '6': 'The accuracy bonus increases to +10.',
+            '8': 'The accuracy bonus increases to +10.',
         },
         tags=[],
         lists=['Trick', 'Wild'],
