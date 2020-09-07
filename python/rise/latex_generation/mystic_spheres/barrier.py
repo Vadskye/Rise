@@ -28,6 +28,7 @@ barrier=MysticSphere(
             Whenever a creature misses the barrier with a \\glossterm<mundane> attack, it makes the same attack against itself, rolling a new attack roll against its own defenses.
             In addition, the \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to three times your \\glossterm<power>.
 
+            \\rankline
             \\rank<6> The area increases to a \\arealarge line.
             \\rank<8> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
@@ -147,6 +148,7 @@ barrier=MysticSphere(
             This spell functions like the \\spell<mystic barrier> spell, except that each 5-ft.\\ square of wall has a \\glossterm<vital resistance> equal to four times your \\glossterm<power>.
             In addition, the wall is \\glossterm<resistant> to physical damage.
 
+            \\rankline
             \\rank<8> The area increases to a \\arealarge line.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Wall of Energy Impedance', 3, None, """

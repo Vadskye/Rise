@@ -105,9 +105,9 @@ channel_divinity=MysticSphere(
             \\crit The target is \\glossterm<panicked> by you as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<4> The accuracy bonus increases to +3.
-            \\rank<6> The accuracy bonus increases to +4.
-            \\rank<8> The accuracy bonus increases to +5.
+            \\rank<3> The accuracy bonus increases to +2.
+            \\rank<5> The accuracy bonus increases to +3.
+            \\rank<7> The accuracy bonus increases to +4.
         """, tags=[]),
         Spell('Word of Faith', 1, '\\glossterm<Enemies> in a \\areasmall radius from you', """
             Make an attack vs. Mental against each target.

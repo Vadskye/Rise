@@ -65,9 +65,9 @@ pyromancy=MysticSphere(
             \\hit The target takes fire \\glossterm<standard damage> +1d.
 
             \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
+            \\rank<4> The damage increases to \\glossterm<standard damage> +2d.
+            \\rank<6> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<8> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=[], focus=False),
         Spell('Pyroclasm', 5, 'Everything in a a \\areamed radius within \\rngmed range', """
             Make an attack vs. Reflex against each target.
@@ -262,9 +262,8 @@ pyromancy=MysticSphere(
             In addition, it is \\glossterm<sickened> as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<4> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<6> The accuracy bonus increases to +2.
-            \\rank<8> The accuracy bonus increases to +3.
+            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<7> The accuracy bonus increases to +2.
         """, tags=[]),
         Spell('Curse of Flammability', 5, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.

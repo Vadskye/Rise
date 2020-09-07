@@ -50,8 +50,8 @@ compel=MysticSphere(
             \\hit Each target drops anything it is holding in its hands.
 
             \\rankline
-            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<7> The accuracy bonus increases to +2.
+            \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<8> The accuracy bonus increases to +2.
         """, tags=['Compulsion']),
         Spell('Monologue', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
@@ -112,8 +112,7 @@ compel=MysticSphere(
             \\hit The target is \\confused as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<8> The accuracy bonus increases to +2.
+            \\rank<7> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=['Compulsion']),
         Spell('Mass Confusion', 5, '\\glossterm<Enemies> in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Mental against each target.

@@ -182,6 +182,7 @@ astromancy=MysticSphere(
             This spell functions like the \\textit<flicker> spell, except that you can choose at the start of each round to stop flickering for that round.
             If you do, your attacks do not have a failure chance, and attacks against you also do not have a failure chance.
 
+            \\rankline
             \\rank<6> The failure chance increases to 30\\%.
             \\rank<8> The failure chance increases to 40\\%.
         """, tags=['Attune (self)']),

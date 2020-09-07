@@ -133,7 +133,8 @@ verdamancy=MysticSphere(
             A third failed attack ends the poison.
 
             \\rankline
-            \\rank<7> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<8> The accuracy bonus increases to +2.
         """, tags=['Manifestation']),
         Spell('Herbal Antidote', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains an additional success to resist a poison currently affecting it (see \\pcref<Poisons>).

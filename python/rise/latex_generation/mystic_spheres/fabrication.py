@@ -69,8 +69,8 @@ fabrication=MysticSphere(
             \\hit Each target takes piercing \\glossterm<standard damage> -1d.
 
             \\rankline
-            \\rank<6> The area increases to a \\arealarge radius.
-            \\rank<8> The area increases to a \\areahuge radius.
+            \\rank<5> The area increases to a \\arealarge radius.
+            \\rank<7> The area increases to a \\areahuge radius.
         """, tags=['Manifestation']),
         Spell('Hail of Arrows', 3, 'Everything in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Armor against each target.
@@ -184,16 +184,15 @@ fabrication=MysticSphere(
                     and armor grants a +1 \\glossterm<magic bonus> to Armor defense.
             \\rank<7> You can cast this spell with the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Attune> (self) tag.
         """, tags=['Attune (self)']),
-        Spell('Meteor', 4, 'Special', """
-            You create a meteor in midair within \\rngclose range that falls to the ground, crushing foes in its path.
+        Spell('Meteor', 5, 'Special', """
+            You create a meteor in midair within \\rngmed range that falls to the ground, crushing foes in its path.
             The meteor takes up a \\areasmall radius, and must be created in unoccupied space.
             After being summoned, it falls up to 100 feet before disappearing.
             Make an attack vs. Armor against everything in its path.
             \\hit Each target takes bludgeoning and fire \\glossterm<standard damage> -1d.
 
             \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage>.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<7> The damage increases to \\glossterm<standard damage>.
         """, tags=['Manifestation']),
         Spell('Meteor Swarm', 8, 'Special', f"""
             You create up to five meteors in midair within \\rnglong range that each fall to the ground, crushing foes in their paths.

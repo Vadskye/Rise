@@ -104,9 +104,9 @@ telekinesis=MysticSphere(
                 If the target impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgeoning \\glossterm<standard damage>.
 
             \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
+            \\rank<4> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<6> The damage increases to \\glossterm<standard damage> +2d.
+            \\rank<8> The damage increases to \\glossterm<standard damage> +3d.
         """, tags=[]),
         Spell('Telekinetic Throw', 2, 'One Medium or smaller creature or object within \\rngmed range', """
             Make an attack vs. Mental against the target.

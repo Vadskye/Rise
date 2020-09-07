@@ -127,9 +127,9 @@ delusion=MysticSphere(
             If it loses any \\glossterm<hit points> or is otherwise harmed, including subjective pain or discomfort, this effect is automatically broken.
 
             \\rankline
-            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<5> The accuracy bonus increases to +2.
-            \\rank<7> The accuracy bonus increases to +3.
+            \\rank<4> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<6> The accuracy bonus increases to +2.
+            \\rank<8> The accuracy bonus increases to +3.
         """, tags=['Emotion']),
         Spell('Mass Enrage', 4, '\\glossterm<Enemies> in a \\areamed radius within \\rngmed range', """
             Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against each target.
