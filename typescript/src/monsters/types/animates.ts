@@ -2,6 +2,139 @@ import { addType, TypelessMonsterInput } from "./add_type";
 
 const animateInput: TypelessMonsterInput[] = [];
 
+const baseTreant = {
+  activeAbilityInputs: [
+    {
+      effect: `
+        The target tree must be the same type of tree as the treant.
+        The target animates and fights at the treant's command.
+
+        Its statistics are the same as the treant's, except that the tree may be a different size category, and it lacks this ability.
+        This ability lasts until the treant uses it again or \\glossterm{dismisses} it as a \\glossterm{free action}.
+        When this ability ends, the tree sets down roots in its new location if possible.
+        Treants avoid stranding trees in unsustainable locations except in desperate circumstances.
+      `,
+      name: "Animate Tree",
+      target: "One tree no larger than the treant (see text)",
+    },
+  ],
+  armorInputs: [{ name: "hide" } as const],
+  challengeRating: 2 as const,
+  languages: ["Common", "Sylvan"],
+  passiveAbilities: [
+    {
+      description: `
+        Treants are \\glossterm{vulnerable} to fire damage.
+      `,
+      name: "Fire Vulnerability",
+    },
+    {
+      description: `
+        Treants can stand immobile, allowing them to impersonate trees.
+        Distinguishing an immobile treant from a tree requires an Awareness check with a \\glossterm{difficulty rating} of 20.
+      `,
+      name: "Tree Body",
+    },
+  ],
+  weaponInput: [{ name: "slam" as const, tags: ["Sweeping 2"] }],
+};
+animateInput.push({
+  description: `
+    Treants are intelligent plant creatures that appear extremely similar to trees.
+    They are bipedal, but their legs fuse together when they rest or wish to hide, matching the appearance of a tree trunk.
+
+    A treant's appearance and attitude generally depends on the type of tree it resembles.
+    They they are generally both strong and durable, though they are vulnerable to fire and lack agility.
+    Virtually all treants share a strong affinity for nature and forests, and react angrily to those who would befoul nature.
+    In combat, they are almost always encountered in the company of a tree they animated to fight by their side.
+  `,
+  name: "Treants",
+  monsters: [
+    {
+      ...baseTreant,
+      alignment: "Usually true neutral",
+      description: `
+        Birch treants tend to be shy, and they to avoid conflict if at all possible.
+      `,
+      level: 5,
+      name: "Birth Treant",
+      size: "large",
+      startingAttributes: { str: 2, dex: 0, con: 2, int: 1, per: 2, wil: -1 },
+    },
+    {
+      ...baseTreant,
+      alignment: "Usually true neutral",
+      description: `
+        Chestnut treants tend to mischievous and outgoing.
+        They like playing small tricks on interesting creatures that pass by.
+      `,
+      level: 6,
+      name: "Maple Treant",
+      size: "large",
+      startingAttributes: { str: 2, dex: 0, con: 2, int: 1, per: 4, wil: 0 },
+    },
+    {
+      ...baseTreant,
+      alignment: "Usually true neutral",
+      description: `
+        Willow treants are the most agile treants, and they can twist and bend their bodies with surprising finesse.
+        Their attitudes tend to be similarly flexible, and they tend to be easily persuadable.
+      `,
+      level: 7,
+      name: "Willow Treant",
+      size: "large",
+      startingAttributes: { str: 4, dex: 2, con: 2, int: 1, per: 2, wil: -2 },
+    },
+    {
+      ...baseTreant,
+      alignment: "Usually neutral evil",
+      description: `
+        Darkroot treants, unlike most other treants, primarily inhabit swamps and other grimy places.
+        Their bark is mottled with fungus, and they tend to have a more sinister demeanor than most treants.
+      `,
+      level: 8,
+      name: "Darkroot Treant",
+      size: "huge",
+      startingAttributes: { str: 4, dex: 0, con: 1, int: 1, per: 2, wil: 1 },
+    },
+    {
+      ...baseTreant,
+      alignment: "Usually neutral good",
+      description: `
+         Pine treants tend to be the most steadfast treants.
+         They are strong-willed, but while oak treants are stubborn, pine treants are resolutely benevolent, sheltering all who need aid.
+      `,
+      level: 9,
+      name: "Pine Treant",
+      size: "huge",
+      startingAttributes: { str: 4, dex: -2, con: 4, int: 1, per: 2, wil: 3 },
+    },
+    {
+      ...baseTreant,
+      alignment: "Usually true neutral",
+      description: `
+        Oak treants tend to be the most stubborn treants, and they brook no guff from wayward adventurers.
+      `,
+      level: 10,
+      name: "Oak Treant",
+      size: "huge",
+      startingAttributes: { str: 4, dex: -2, con: 4, int: 1, per: 2, wil: 3 },
+    },
+    {
+      ...baseTreant,
+      alignment: "Usually true neutral",
+      description: `
+        Cyprus treants are the most durable of treants.
+        They are virtually indestructible, and are fearsome when roused to anger.
+      `,
+      level: 11,
+      name: "Cyprus Treant",
+      size: "huge",
+      startingAttributes: { str: 6, dex: -2, con: 6, int: 1, per: 2, wil: 1 },
+    },
+  ],
+});
+
 const baseAirElemental = {
   // TODO: add fly speed
   // TODO: add whirlwind
