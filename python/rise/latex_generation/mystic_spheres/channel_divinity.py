@@ -55,13 +55,14 @@ channel_divinity=MysticSphere(
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Attune (self)']),
         Spell('Endurance of the Faithful', 3, 'Yourself', """
+            This spell does not have the \\glossterm<Focus> tag.
             You gain a bonus equal to twice your \\glossterm<power> to \\glossterm<resistances> this round.
             Because this ability has the \\glossterm<Swift> tag, this improves your resistances against damage you take during the current phase.
 
             \\rankline
             \\rank<5> The bonus increases to be equal to three times your \\glossterm<power>.
             \\rank<7> The bonus increases to be equal to four times your \\glossterm<power>.
-        """, tags=['Swift']),
+        """, tags=['Swift'], focus=False),
         Spell('Divine Wrath', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target takes energy \\glossterm<standard damage> +1d.
