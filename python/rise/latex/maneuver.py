@@ -31,6 +31,12 @@ class Maneuver(object):
             if lowest_rank_upgrade != self.rank + 2:
                 logger.log(WARNING, f"Maneuver {self.name} with rank {self.rank} has invalid rank upgrades {self.rank_upgrades}")
 
+        # Make sure that the rank upgrades match the spell's rank 
+        if (self.rank in [1, 3, 5] and '7' not in self.rank_upgrades.keys()):
+            logger.log(WARNING, f"Maneuver {self.name} has wrong rank upgrade pattern")
+        if (self.rank in [2, 4, 6] and '8' not in self.rank_upgrades.keys()):
+            logger.log(WARNING, f"Maneuver {self.name} has wrong rank upgrade pattern")
+
         for tag in self.tags:
             if not is_valid_tag(tag):
                 logger.log(WARNING, f"Maneuver {self.name} has invalid tag {tag}")
