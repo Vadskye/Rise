@@ -1,6 +1,47 @@
+import { passiveAbilities } from "@src/passive_abilities";
 import { addType, TypelessMonsterInput } from "./add_type";
 
-const animateInput: TypelessMonsterInput[] = [];
+const animateInput: TypelessMonsterInput[] = [
+  {
+    alignment: "Always neutral evil",
+    attackInputs: [
+      {
+        damageTypes: ["cold"],
+        defense: "reflex",
+        name: "Dark Grasp",
+        powerBonus: 4,
+        source: "magical",
+        target: "One creature within \\glossterm{reach}",
+      },
+      {
+        damageTypes: ["cold"],
+        defense: "fortitude",
+        preface: `
+          The darkwraith automatically makes this attack at the end of each round in addition to its other actions.
+          \\par
+        `,
+        name: "Chilling Aura",
+        powerBonus: -2,
+        target: "Each \\glossterm{enemy} within a \\areasmall radius \\glossterm{emanation}",
+      },
+    ],
+    challengeRating: 4,
+    description: `
+      An darkwraith is a shadow disconnected from its host through strange umbramantic power.
+      Though it appears similar to a ghost, it is not undead.
+      Darkwraiths bear a hateful malevolence towards anything that brings light.
+      They instinctively seek out sources of warmth, including most living creatures, to suppress them with its chilling aura.
+      However, it will not attack directly unless provoked by light or damage.
+      Darkwraiths cannot speak or make noise of any kind.
+    `,
+    level: 9,
+    name: "Darkwraith",
+    passiveAbilities: [passiveAbilities.incorporeal],
+    skillPoints: { awareness: 2, stealth: 2 },
+    speeds: { fly: 30, land: null },
+    startingAttributes: { str: null, dex: 3, int: 1, per: 2, wil: 0 },
+  },
+];
 
 const baseTreant = {
   activeAbilityInputs: [

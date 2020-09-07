@@ -124,7 +124,9 @@ export const standardWeapons: Record<StandardWeaponName, Omit<CustomWeaponInput,
     damageTypes: ["piercing"],
   },
   "tentacle": {
+    accuracyBonus: 1,
     damageTypes: ["bludgeoning"],
+    powerBonus: -2,
   },
   "talon": {
     accuracyBonus: 2,
