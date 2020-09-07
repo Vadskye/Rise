@@ -239,7 +239,8 @@ chronomancy=MysticSphere(
             \\rank<7> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=[]),
         Spell('Instant Analysis', 3, 'Yourself', """
-            You freeze time for five rounds.
+            You accelerate your mind to incredible speed, allowing you to process information quickly.
+            From your perspective, you freeze time for five rounds.
             During this time, all creatures and objects are fixed in time, and cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
             Your mind remains active during this time, and you are the only one aware of the stoppage of time.
             You cannot move or take any actions other than to observe your surroundings.
