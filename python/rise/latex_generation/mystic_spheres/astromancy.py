@@ -81,6 +81,13 @@ astromancy=MysticSphere(
             \\rank<5> The range increases to \\rnglong.
             \\rank<7> The range increases to \\rngext.
         """, tags=[]),
+        Spell('Silent Translocation', 3, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
+            This spell functions like the \\textit<translocation> spell, except that the target's departure and arrival with this spell are silent.
+
+            \\rankline
+            \\rank<5> The range increases to \\rngmed.
+            \\rank<7> The range increases to \\rnglong.
+        """, tags=[]),
         Spell('Banishment', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             You gain a +2 bonus to \\glossterm<accuracy> against \\glossterm<outsiders> not on their home planes and creatures created by \\glossterm<Manifestation> abilities.
