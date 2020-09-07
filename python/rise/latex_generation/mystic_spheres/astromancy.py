@@ -89,16 +89,15 @@ astromancy=MysticSphere(
             \\rank<7> The range increases to \\rnglong.
         """, tags=[]),
         Spell('Banishment', 3, 'One creature within \\rngmed range', """
-            Make an attack vs. Mental against the target.
-            You gain a +2 bonus to \\glossterm<accuracy> against \\glossterm<outsiders> not on their home planes and creatures created by \\glossterm<Manifestation> abilities.
+            Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against the target.
             \\hit The target takes energy \\glossterm<standard damage>.
             \\crit The target takes double damage.
             In addition, if it is an outsider not on its home plane, it is teleported to a random location on its home plane.
             If it is a creature created by a \\glossterm<Manifestation> ability, it immediately disappears.
 
             \\rankline
-            \\rank<5> The selective accuracy bonus increases to +4.
-            \\rank<7> The selective accuracy bonus increases to +6.
+            \\rank<5> The accuracy bonus increases to +3.
+            \\rank<7> The accuracy bonus increases to +4.
         """, tags=[]),
         Spell('Dimension Door', 4, 'Yourself', """
             You teleport to a location within \\rnglong range of you.
@@ -186,15 +185,15 @@ astromancy=MysticSphere(
             \\rank<6> The failure chance increases to 30\\%.
             \\rank<8> The failure chance increases to 40\\%.
         """, tags=['Attune (self)']),
-        Spell('Astral Instability', 2, 'Yourself', """
+        Spell('Astral Instability', 3, 'Yourself', """
             At the start of each phase, you may \\glossterm<teleport> into a random location in the Astral Plane.
             At the end of the round, you reappear in the location where you disappeared.
             If that space is occupied, you reappear in the closest available space.
 
             \\rankline
-            \\rank<4> You can reappear anywhere within \\rngclose range from the location where you disappeared.
-            \\rank<6> The distance you can reappear at increases to \\rngmed range.
-            \\rank<8> The distance you can reappear at increases to \\rnglong range.
+            \\rank<5> When you disappear, you can choose where you reappear.
+            You can choose any unoccupied location within \\rngclose range from the location where you disappeared.
+            \\rank<7> The distance you can reappear at increases to \\rngmed range.
         """, tags=['Attune (self)']),
         Spell('Transposition', 3, 'Two Large or smaller creatures within \\rngmed range', """
             Make an attack vs. Mental against each target.
