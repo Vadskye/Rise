@@ -66,15 +66,15 @@ aeromancy = MysticSphere(
             \\rank<5> The penalty increases to -4.
             \\rank<7> The penalty increases to -5.
         """, tags=['Curse']),
-        Spell('Propulsion', 1, 'Yourself or one Large or smaller \\glossterm<ally> in \\rngmed range', """
-            You \\glossterm<push> the target up to 50 feet in any direction.
+        Spell('Propulsion', 2, 'Yourself or one Large or smaller \\glossterm<ally> in \\rngmed range', """
+            You \\glossterm<push> the target up to 100 feet in any direction.
             You cannot change the direction of the movement partway through.
             Moving the target upwards costs twice the normal movement cost.
 
             \\rankline
-            \\rank<3> The distance increases to 100 feet.
-            \\rank<5> The target gains a +2 bonus to Armor defense during the current phase.
-            \\rank<7> The distance increases to 300 feet.
+            \\rank<4> The distance increases to 300 feet.
+            \\rank<6> The distance increases to 1,000 feet.
+            \\rank<8> The distance increases to 2,000 feet.
         """, tags=['Swift']),
         Spell('Wind Screen', 1, 'Yourself', """
             You gain a +1 \\glossterm<magic bonus> to Armor defense.
