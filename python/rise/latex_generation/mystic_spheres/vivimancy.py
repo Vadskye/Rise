@@ -115,7 +115,7 @@ vivimancy=MysticSphere(
             Make an attack vs. Fortitude against the target.
             \\hit The target takes energy \\glossterm<standard damage> +3d.
             If this damage \\glossterm<vitally wounds> the target, you can remove one of your \\glossterm<vital wounds>.
-            When you do, you gain one \\glossterm<fatigue point>.
+            When you do, you gain two \\glossterm<fatigue points>.
 
             \\rankline
             \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
