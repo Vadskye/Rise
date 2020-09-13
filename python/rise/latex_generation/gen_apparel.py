@@ -934,8 +934,8 @@ def generate_worn():
         material_type='Boots',
         tags=[],
         description="""
-            As a standard action, you can spend an \\glossterm<action point> to activate these boots.
-            If you do, you teleport exactly 25 miles in a direction you specify.
+            As a standard action, you can activate these boots.
+            When you do, you gain a \\glossterm<fatigue point> and teleport exactly 25 miles in a direction you specify.
             If this would place you within a solid object or otherwise impossible space, the boots will shunt you up to 1,000 feet in any direction to the closest available space.
             If there is no available space within 1,000 feet of your intended destination, the effect fails and you take \\glossterm<standard damage> -1d.
         """,
@@ -1048,8 +1048,8 @@ def generate_worn():
         material_type='Ring',
         tags=[],
         description="""
-            A the end of each round, you can spend an \\glossterm<action point>.
-            If you do, you remove one of your \\glossterm<vital wounds>.
+            A the end of each round, you can remove one of your \\glossterm<vital wounds>.
+            If you do, you gain a \\glossterm<fatigue point>.
         """,
         short_description="Automatically removes vital wounds",
     ))
@@ -1138,7 +1138,7 @@ def generate_worn():
         material_type='Amulet',
         tags=[],
         description="""
-            When you perform the \\ritual<plane shift> ritual, this amulet provides all action points required.
+            When you perform the \\ritual<plane shift> ritual, this amulet provides all \\glossterm<fatigue points> required.
             This does not grant you the ability to perform the \\ritual<plane shift> ritual if you could not already.
         """,
         short_description="Aids travel with \\ritual<plane shift>",
