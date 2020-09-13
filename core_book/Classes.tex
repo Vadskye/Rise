@@ -456,7 +456,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Clr}[1]{Mystic Insight}[Magical]
         You gain your choice of one of the following abilities.
         {
-            \parhead{Divine Guidance} Once per \glossterm{long rest}, you may use the \textit{desperate exertion} ability without gaining a \glossterm{fatigue point} to affect a divine spell you cast (see \pcref{Desperate Exertion}).
+            \parhead{Divine Guidance} Once per \glossterm{long rest}, you may use the \textit{desperate exertion} ability without gaining any \glossterm{fatigue points} to affect a divine spell you cast (see \pcref{Desperate Exertion}).
                 You cannot choose this ability multiple times.
             \parhead{Focused Caster} You reduce your \glossterm{focus penalty} by 1.
                 You cannot choose this ability multiple times.
@@ -577,15 +577,13 @@ This choice determines a great deal about your character's abilities.
         \cf{Clr}[3]{Divine Healing} You can use the \textit{divine healing} ability as a standard action.
         \begin{freeability}{Divine Healing}[\glossterm{Magical}]
             \target{Yourself or a living \glossterm{ally} within \glossterm{reach}.}
-            When you use this ability, you gain a \glossterm{fatigue point} (see \pcref{Fatigue}).
+            When you use this ability, you gain two \glossterm{fatigue points} (see \pcref{Fatigue}).
 
-            The target gains a \plus5 bonus to the \glossterm{vital roll} for one of its \glossterm{vital wounds}.
-            This changes the effect of the vital wound, generally making it less severe.
-            If this makes the total \glossterm{vital roll} for that vital wound 11 or more, the vital wound is removed completely.
+            The target removes one of its \glossterm{vital wounds}.
 
             \rankline
-            \rank{5} The target removes an additional \glossterm{vital wound}.
-            \rank{7} The range increases to \rnglong.
+            \rank{5} The target can remove an additional \glossterm{vital wound}.
+            \rank{7} The range increases to \rngmed.
         \end{freeability}
 
         \cf{Clr}[4]{Reflexive Healing} During the \glossterm{action phase} of each round, if you are unconscious due to a \glossterm{vital wound}, you automatically use your \textit{divine healing} ability on yourself to remove that vital wound.
@@ -594,7 +592,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Clr}[6]{Revivify} You can use the \textit{revivify} ability as a standard action.
         \begin{freeability}{Revivify}
-            When you use this ability, you gain two \glossterm{fatigue points} (see \pcref{Fatigue}).
+            When you use this ability, you gain three \glossterm{fatigue points} (see \pcref{Fatigue}).
 
             Choose a dead creature within \rngclose range.
             If it was dead for no more than 1 minute, it is restored to life, as the \ritual{resurrection} ritual.
@@ -607,7 +605,7 @@ This choice determines a great deal about your character's abilities.
         % TODO: why 4? Ideally, this should correspond to some sort of ``half as strong'' benchmark.
         \cf{Clr}[7]{Wellspring of Health} When you use your \textit{divine healing} ability,
             if the target's level is at least four levels lower than your level,
-            you do not gain a \glossterm{fatigue point} from the ability.
+            you do not gain any \glossterm{fatigue points} from the ability.
 
         \cf{Clr}[8]{Epic Healer} The bonus from your \textit{healer's grace} ability increases to \plus4.
         In addition, the number of hit points regained by all of your abilities increases by one.
@@ -2346,9 +2344,9 @@ This choice determines a great deal about your character's abilities.
             The target regains two \glossterm{hit points}.
 
             \rankline
-            \rank{3} Instead of regaining hit points, the target can choose to remove a \glossterm{condition} affecting it.
-            \rank{5} Instead of regaining hit points, the target can choose to remove a \glossterm{vital wound} affecting it.
-            If it does, it gains two \glossterm{fatigue points}.
+            \rank{3} Instead of regaining hit points, you can cause the target to remove a \glossterm{condition} of its choice affecting it.
+            \rank{5} Instead of regaining hit points, you can cause the target remove one of its \glossterm{vital wounds}.
+            If it does, you gain two \glossterm{fatigue points}.
             \rank{7} If the target is \glossterm{bloodied}, it regains an additional hit point.
         \end{freeability}
 
@@ -3448,7 +3446,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Sor}[2]{Wild Soul} You are immune to \glossterm{Compulsion} attacks.
 
-        \cf{Sor}[3]{Chaotic Exertion} Once per \glossterm{long rest}, you can use the \textit{desperate exertion} ability without gaining a \glossterm{fatigue point}.
+        \cf{Sor}[3]{Chaotic Exertion} Once per \glossterm{long rest}, you can use the \textit{desperate exertion} ability without gaining any \glossterm{fatigue points}.
         In addition, you gain a \plus1 bonus to the roll when you use the \textit{desperate exertion} ability.
         This bonus stacks with the normal \plus2 bonus provided by that ability.
 
@@ -3835,7 +3833,9 @@ This choice determines a great deal about your character's abilities.
         \cf{War}[6]{Exchange Vitality} Your connection to your soulkeeper deepens, allowing you to send a fragment of your vitality through the link.
         You can use the \textit{exchange vitality} ability as a \glossterm{standard action}.
         \begin{freeability}{Exchange Vitality}[\glossterm{Magical}]
-            When you use this ability, you gain a \glossterm{fatigue point}.
+            When you use this ability, you gain two \glossterm{fatigue points}.
+
+            You remove one of your \glossterm{vital wounds}.
             This cannot remove a vital wound applied during the current round.
 
             \rankline

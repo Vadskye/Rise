@@ -477,7 +477,7 @@ def generate_maneuvers():
         short_description='Recover hit points',
         target='Yourself',
         effect_text="""
-            When you use this ability, you gain a \\glossterm<fatigue point>.
+            When you use this ability, you gain two \\glossterm<fatigue points>.
 
             You regain half of your maximum \\glossterm<hit points> (rounded down).
             If your new hit point total is at least half your maximum hit points, you immediately stop being \\glossterm<bloodied>.

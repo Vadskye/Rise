@@ -1049,7 +1049,7 @@ def generate_worn():
         tags=[],
         description="""
             A the end of each round, you can remove one of your \\glossterm<vital wounds>.
-            If you do, you gain a \\glossterm<fatigue point>.
+            If you do, you gain two \\glossterm<fatigue points>.
         """,
         short_description="Automatically removes vital wounds",
     ))

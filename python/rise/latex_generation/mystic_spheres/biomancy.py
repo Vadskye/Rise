@@ -61,13 +61,13 @@ biomancy=MysticSphere(
         """, tags=[]),
         Spell('Vital Regeneration', 5, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             A the end of each round, the target can remove one of its \\glossterm<vital wounds>.
-            If it does, it gains a \\glossterm<fatigue point>.
+            If it does, it gains two \\glossterm<fatigue points>.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
             \\rank<7> The target can remove two \\glossterm<vital wounds> instead of one.
-            It gains one \\glossterm<fatigue point> per vital wound removed this way.
+            It gains two \\glossterm<fatigue points> per vital wound removed this way.
         """, tags=['Attune (target)']),
         Spell('Regeneration', 4, 'Yourself', """
             At the end of each round, if you did not lose a \\glossterm<hit point> that round, you regain a lost hit point.
