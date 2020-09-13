@@ -108,33 +108,6 @@
     innerbottommargin=0.25em,
 ]{freeability}
 
-\DeclareDocumentEnvironment{apability}{o m o}
-{
-    \begin{thesamepage}
-        \spelltwocol{
-            \textit{#2}\IfValueTF{#1}{~--~#1}{}
-        }{
-            \IfValueTF{#3}{\glossterm{AP},~#3}{\glossterm{AP}}
-        }
-}
-{
-    \end{thesamepage}
-}
-\surroundwithmdframed[
-    backgroundcolor=Periwinkle!6,
-    leftline=true,
-    topline=true,
-    rightline=true,
-    bottomline=true,
-    roundcorner=4pt,
-    skipabove=0.25em,
-    skipbelow=0.5em,
-    innerleftmargin=0.25em,
-    innerrightmargin=0.5em,
-    innertopmargin=-0.1em,  % using thesamepage gives it a top margin
-    innerbottommargin=0.25em,
-]{apability}
-
 \DeclareDocumentEnvironment{attuneability}{o m o}
 {
     \begin{thesamepage}

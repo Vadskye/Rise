@@ -114,8 +114,8 @@ vivimancy=MysticSphere(
         Spell('Steal Vitality', 5, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target takes energy \\glossterm<standard damage> +3d.
-            If this damage \\glossterm<vitally wounds> the target, you can spend an \\glossterm<action point>.
-            When you do, you may remove one of your \\glossterm<vital wounds>.
+            If this damage \\glossterm<vitally wounds> the target, you can remove one of your \\glossterm<vital wounds>.
+            When you do, you gain one \\glossterm<fatigue point>.
 
             \\rankline
             \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
@@ -222,10 +222,10 @@ vivimancy=MysticSphere(
             However, its languages are unchanged.
 
             Coming back from the dead is an ordeal.
-            All of the creature's action points and other daily abilities are expended when it returns to life.
-            In addition, its maximum action points are reduced by 1.
+            All of the creature's \\glossterm<attunement points> and daily abilities are expended when it returns to life.
+            In addition, its maximum attunement points are reduced by 1.
             This penalty lasts for thirty days, or until the creature gains a level.
-            If this would reduce a creature's maximum action points below 0, the creature cannot be resurrected.
+            If this would reduce a creature's maximum attunement points below 0, the creature cannot be resurrected.
 
             This ritual can only be learned through the nature \\glossterm<magic source>.
         """, tags=['Creation'], ritual_time='24 hours', extra_text="""
@@ -267,10 +267,10 @@ vivimancy=MysticSphere(
             The creature may therefore die shortly after being resurrected if its body is excessively damaged.
 
             Coming back from the dead is an ordeal.
-            All of the creature's action points and other daily abilities are expended when it returns to life.
-            In addition, its maximum action points are reduced by 1.
+            All of the creature's \\glossterm<attunement points> and daily abilities are expended when it returns to life.
+            In addition, its maximum attunement points are reduced by 1.
             This penalty lasts for thirty days, or until the creature gains a level.
-            If this would reduce a creature's maximum action points below 0, the creature cannot be resurrected.
+            If this would reduce a creature's maximum attunement points below 0, the creature cannot be resurrected.
 
             This ritual can only be learned through the divine \\glossterm<magic source>.
         """, tags=[], ritual_time='24 hours'),
