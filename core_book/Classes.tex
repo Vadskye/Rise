@@ -456,7 +456,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Clr}[1]{Mystic Insight}[Magical]
         You gain your choice of one of the following abilities.
         {
-            \parhead{Divine Guidance} Once per \glossterm{long rest}, you may use the \textit{desperate exertion} ability without spending an \glossterm{action point} to affect a divine spell you cast (see \pcref{Desperate Exertion}).
+            \parhead{Divine Guidance} Once per \glossterm{long rest}, you may use the \textit{desperate exertion} ability without gaining a \glossterm{fatigue point} to affect a divine spell you cast (see \pcref{Desperate Exertion}).
                 You cannot choose this ability multiple times.
             \parhead{Focused Caster} You reduce your \glossterm{focus penalty} by 1.
                 You cannot choose this ability multiple times.
@@ -575,8 +575,10 @@ This choice determines a great deal about your character's abilities.
         After you attack a living creature, you lose this bonus until the end of the next round.
 
         \cf{Clr}[3]{Divine Healing} You can use the \textit{divine healing} ability as a standard action.
-        \begin{apability}{Divine Healing}[\glossterm{Magical}]
+        \begin{freeability}{Divine Healing}[\glossterm{Magical}]
             \target{Yourself or a living \glossterm{ally} within \glossterm{reach}.}
+            When you use this ability, you gain a \glossterm{fatigue point} (see \pcref{Fatigue}).
+
             The target gains a \plus5 bonus to the \glossterm{vital roll} for one of its \glossterm{vital wounds}.
             This changes the effect of the vital wound, generally making it less severe.
             If this makes the total \glossterm{vital roll} for that vital wound 11 or more, the vital wound is removed completely.
@@ -584,26 +586,28 @@ This choice determines a great deal about your character's abilities.
             \rankline
             \rank{5} The target removes an additional \glossterm{vital wound}.
             \rank{7} The range increases to \rnglong.
-        \end{apability}
+        \end{freeability}
 
         \cf{Clr}[4]{Reflexive Healing} During the \glossterm{action phase} of each round, if you are unconscious due to a \glossterm{vital wound}, you automatically use your \textit{divine healing} ability on yourself to remove that vital wound.
 
         \cf{Clr}[5]{Greater Healer's Grace} The bonus from your \textit{healer's grace} ability increases to \plus2.
 
         \cf{Clr}[6]{Revivify} You can use the \textit{revivify} ability as a standard action.
-        \begin{apability}{Revivify}
+        \begin{freeability}{Revivify}
+            When you use this ability, you gain two \glossterm{fatigue points} (see \pcref{Fatigue}).
+
             Choose a dead creature within \rngclose range.
             If it was dead for no more than 1 minute, it is restored to life, as the \ritual{resurrection} ritual.
             After using this ability, you cannot use it for 24 hours.
 
             \rankline
             \rank{8} You can use this ability again after 1 hour instead of after 24 hours.
-        \end{apability}
+        \end{freeability}
 
         % TODO: why 4? Ideally, this should correspond to some sort of ``half as strong'' benchmark.
         \cf{Clr}[7]{Wellspring of Health} When you use your \textit{divine healing} ability,
             if the target's level is at least four levels lower than your level,
-            you regain the \glossterm{action point} spent to use the ability.
+            you do not gain a \glossterm{fatigue point} from the ability.
 
         \cf{Clr}[8]{Epic Healer} The bonus from your \textit{healer's grace} ability increases to \plus4.
         In addition, the number of hit points regained by all of your abilities increases by one.
@@ -1346,7 +1350,7 @@ This choice determines a great deal about your character's abilities.
                 \item Its \glossterm{accuracy} is equal to your \glossterm{accuracy} \sub 1.
                 \item Its \glossterm{power} with its attacks is equal to your \glossterm{power}.
                 \item Its \glossterm{base speed} is the normal base speed for its size.
-                \item It has no \glossterm{action points}.
+                \item It has no \glossterm{attunement points}.
             \end{itemize}
         \end{attuneability}
 
@@ -1387,8 +1391,8 @@ This choice determines a great deal about your character's abilities.
         If you attack an animal or plant, this ability no longer provides protection against it and its \glossterm{allies}.
         This effect does not protect your allies from attack.
 
-        \cf{Drd}[4]{Greater Natural Servant}[Magical] Your \textit{natural servant} gains an \glossterm{action point}.
-        This action point is shared among any creatures you summon with your \textit{natural servant} ability, and is only recovered when you take a \glossterm{long rest}.
+        \cf{Drd}[4]{Greater Natural Servant}[Magical] Your \textit{natural servant} gains an \glossterm{attunement point}.
+        This attunement point is shared among any creatures you summon with your \textit{natural servant} ability, and is only recovered when you take a \glossterm{long rest}.
         In addition, you can summon an alternate \textit{natural servant} based on your local environment, as described below.
         \begin{itemize}
             \item Aquatic: A Medium shark appears that has a 40 foot \glossterm{swim speed} and no land speed.
@@ -1417,8 +1421,7 @@ This choice determines a great deal about your character's abilities.
         The protection ends if any target attacks an animal or plant instead of only if you attack.
         In addition, the \glossterm{difficulty rating} of the Creature Handling check increases to 20 \add your \glossterm{power}.
 
-        \cf{Drd}[7]{Supreme Natural Servant}[Magical] Your \textit{natural servant} gains two additional \glossterm{action points}.
-        These action points are shared among any creatures you summon with your \textit{natural servant} ability, and are only recovered when you take a \glossterm{long rest}.
+        \cf{Drd}[7]{Supreme Natural Servant}[Magical] Your \textit{natural servant} gains two additional \glossterm{attunement points}.
 
         \cf{Drd}[8]{Twin Servant} You may acquire an additional \textit{natural servant}, attuning to each ability separately.
 
@@ -1640,8 +1643,8 @@ This choice determines a great deal about your character's abilities.
             \rank{8} You can use this ability as a \glossterm{minor action}.
         \end{freeability}
 
-        \cf{Ftr}[3]{Equipment Efficiency} You gain an additional \glossterm{action point}.
-        You can only use this action point to \glossterm{attune} to magic weapons and magic armor.
+        \cf{Ftr}[3]{Equipment Efficiency} You gain an additional \glossterm{attunement point}.
+        You can only use this attunement point to \glossterm{attune} to magic weapons and magic armor.
 
         \cf{Ftr}[4]{Greater Armor Expertise}
         The \glossterm{encumbrance} reduction from your \textit{armor expertise} ability increases to 2.
@@ -1649,7 +1652,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Ftr}[5]{Weapon Expertise} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{mundane} abilities.
 
-        \cf{Ftr}[6]{Greater Equipment Efficiency} The number of action points you gain from your \textit{efficient equipment} ability increases to two.
+        \cf{Ftr}[6]{Greater Equipment Efficiency} The number of attunement points you gain from your \textit{efficient equipment} ability increases to two.
         In addition, you can use the ability to attune to any magic item, not just weapons and armor.
 
         \cf{Ftr}[7]{Supreme Armor Expertise}
@@ -1657,7 +1660,7 @@ This choice determines a great deal about your character's abilities.
         In addition, you treat body armor as if it were an additional encumbrance category lighter than normal when doing so would be beneficial for you.
 
         \cf{Ftr}[8]{Equipment Supremacy} The bonus from your \textit{weapon expertise} ability increases to \plus2.
-        In addition, the number of action points you gain from your \textit{efficient equipment} ability increases to three.
+        In addition, the number of attunement points you gain from your \textit{efficient equipment} ability increases to three.
 
     \subsection{Martial Mastery}
         This archetype grants you special abilities to use in combat.
@@ -2241,7 +2244,7 @@ This choice determines a great deal about your character's abilities.
         The effect of your \textit{aligned aura} becomes stronger, as described below.
 
         \subparhead{Chaos} The effect applies to all attacks, not just \glossterm{strikes}.
-        \subparhead{Evil} When a target would remove a \glossterm{condition}, the condition instead remains unless it spends an additional \glossterm{action point}.
+        \subparhead{Evil} When a target removes a \glossterm{condition}, it gains a \glossterm{fatigue point}.
         \subparhead{Good} When a target loses a \glossterm{hit point}, you may lose that hit point instead.
         The target suffers any other effects of the attack normally.
         \subparhead{Law} The effect applies to all attacks, not just \glossterm{strikes}.
@@ -2344,7 +2347,8 @@ This choice determines a great deal about your character's abilities.
 
             \rankline
             \rank{3} Instead of regaining hit points, the target can choose to remove a \glossterm{condition} affecting it.
-            \rank{5} Instead of regaining hit points, the target can choose to spend an \glossterm{action point} to remove a \glossterm{vital wound} affecting it.
+            \rank{5} Instead of regaining hit points, the target can choose to remove a \glossterm{vital wound} affecting it.
+            If it does, it gains two \glossterm{fatigue points}.
             \rank{7} If the target is \glossterm{bloodied}, it regains an additional hit point.
         \end{freeability}
 
@@ -2519,14 +2523,14 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rgr}[3]{Pack Tactics} Any \glossterm{overwhelmed} creature that is \glossterm{threatened} by you or your animal companion takes a \minus1 penalty to \glossterm{accuracy}.
 
-        \cf{Rgr}[4]{Greater Animal Companion} Your \textit{animal companion} gains an \glossterm{action point}.
+        \cf{Rgr}[4]{Greater Animal Companion} Your \textit{animal companion} gains an \glossterm{attunement point}.
         In addition, it gains a \plus1 bonus to \glossterm{accuracy}, \glossterm{defenses}, and \glossterm{vital rolls}.
 
         \cf{Rgr}[5]{Greater Handling Lore} The bonus from your \textit{handling lore} ability increases to \plus6.
 
         \cf{Rgr}[6]{Greater Pack Tactics} The penalty from your \textit{pack tactics} ability increases to \minus2.
 
-        \cf{Rgr}[7]{Supreme Animal Companion} Your \textit{animal companion} gains an additional \glossterm{action point}.
+        \cf{Rgr}[7]{Supreme Animal Companion} Your \textit{animal companion} gains an additional \glossterm{attunement point}.
         In addition, the bonuses from your \textit{greater animal companion} ability increase to \plus2.
 
         \cf{Rgr}[8]{Twin Companion} You may acquire an additional \textit{animal companion}, attuning to each ability separately.
@@ -3444,7 +3448,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Sor}[2]{Wild Soul} You are immune to \glossterm{Compulsion} attacks.
 
-        \cf{Sor}[3]{Chaotic Exertion} Once per \glossterm{long rest}, you can use the \textit{desperate exertion} ability without spending an \glossterm{action point}.
+        \cf{Sor}[3]{Chaotic Exertion} Once per \glossterm{long rest}, you can use the \textit{desperate exertion} ability without gaining a \glossterm{fatigue point}.
         In addition, you gain a \plus1 bonus to the roll when you use the \textit{desperate exertion} ability.
         This bonus stacks with the normal \plus2 bonus provided by that ability.
 
@@ -3781,7 +3785,6 @@ This choice determines a great deal about your character's abilities.
                     You must follow the chosen behavior that round during the best of your ability.
                     If you are not in combat, your soulkeeper may influence your behavior in more subtle ways.
                 \item At the start of each round, if either you or your soulkeeper choose to end this ability, the ability ends.
-                    If the ability ends this way, you regain the \glossterm{action point} you spent to attune to this ability the next time you take a \glossterm{short rest}.
             \end{itemize}
         \end{attuneability}
 
@@ -3831,13 +3834,13 @@ This choice determines a great deal about your character's abilities.
 
         \cf{War}[6]{Exchange Vitality} Your connection to your soulkeeper deepens, allowing you to send a fragment of your vitality through the link.
         You can use the \textit{exchange vitality} ability as a \glossterm{standard action}.
-        \begin{apability}{Exchange Vitality}[\glossterm{Magical}]
-            You remove one \glossterm{vital wound} affecting you.
+        \begin{freeability}{Exchange Vitality}[\glossterm{Magical}]
+            When you use this ability, you gain a \glossterm{fatigue point}.
             This cannot remove a vital wound applied during the current round.
 
             \rankline
             \rank{8} You can use this ability as a \glossterm{minor action}.
-        \end{apability}
+        \end{freeability}
 
         \cf{War}[7]{Supreme Possession} The bonus to \glossterm{power} from your \textit{possession} ability increases to \plus6.
 
@@ -4032,7 +4035,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Memorized Sphere} % TODO: clarify you need to be high enough rank?
             Choose a \glossterm{mystic sphere} you have access to.
             You can perform rituals from that \glossterm{mystic sphere} without having them written in your ritual book.
-            If you lead a ritual from that \glossterm{mystic sphere}, it requires half the normal amount of time to perform and costs half the normal number of \glossterm{action points} (minimum 1).
+            If you lead a ritual from that \glossterm{mystic sphere}, it requires half the normal amount of time to perform and causes half the normal number of \glossterm{fatigue points}.
             \par You can choose this insight multiple times, choosing a different \glossterm{mystic sphere} each time.
         }
 
