@@ -122,7 +122,7 @@ def knowledge_skill_box(name):
 def resources():
     return flex_col({'class': 'resources'}, [
         flex_wrapper({'class': 'section-header'}, 'Resources'),
-        flex_wrapper({'class': 'action-point-header'}, 'Action points'),
+        flex_wrapper({'class': 'action-point-header'}, 'Attunement points'),
         flex_row({'class': 'action-point-wrapper'}, [
             underlabel('Max', number_input({
                 'disabled': True,
@@ -225,7 +225,7 @@ def core_statistics(destination):
             'name': 'hit_points_display',
             'value': '@{hit_points}',
         })),
-        sidelabel('Action points', number_input({
+        sidelabel('Attunement points', number_input({
             'disabled': True,
             'name': 'action_points_display',
             'value': '@{action_points}',
