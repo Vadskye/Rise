@@ -82,7 +82,7 @@ thaumaturgy=MysticSphere(
             \\rank<7> The accuracy bonus increases to +4.
         """, tags=[]),
         Spell('Reattunement', 3, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
-            The target can reattune to one ability that it stopped being attuned to since the start of the last round without spending an additional action point.
+            The target can reattune to one ability that it stopped being attuned to since the start of the last round without spending an additional \\glossterm<attunement point>.
             Any choices and effects of the attuned ability are restored to their exact state before the attunement was broken.
 
             \\rankline
