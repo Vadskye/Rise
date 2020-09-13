@@ -221,7 +221,7 @@
         Rituals are described in the body of the \glossterm{mystic sphere} they are associated with, following the description of spells from that mystic sphere.
 
     \subsection{Ritual Books}
-        A ritual book contains one or more rituals that you can use as frequently as you want, as long as you can spend the time and \glossterm{action points} to perform the ritual.
+        A ritual book contains one or more rituals that you can use as frequently as you want, as long as you can spend the time and \glossterm{fatigue points} to perform the ritual.
         Scribing a ritual in a ritual book costs an amount of precious inks.
 
     \subsection{Ritual Costs}\label{Ritual Costs}
@@ -242,42 +242,42 @@
 
     \subsection{Performing Rituals}
         To perform a ritual, you must have a ritual book containing the ritual and the material components required for the ritual.
-        Unless otherwise specified, performing a ritual requires spending a single \glossterm{action point}.
-        Some rituals require multiple action points to complete.
-        Other creatures can supply action points to help you perform rituals; see Ritual Participants, below.
+        Some rituals cause the creatures performing them to gain \glossterm{fatigue points}, as indicated in their descriptions.
+        Other creatures can suffer this fatigue to help you perform rituals; see Ritual Participants, below.
 
-        % The action point cost for 24 hour rituals is equal to (ritual rank ^ 2) * 2.
+        % The fatigue point cost for 24 hour rituals is equal to (ritual rank ^ 2) * 2.
         % Should this be specified explicitly?
-
-        Rituals with the \glossterm{Attune} (ritual) tag do not cost action points to perform, but require a ritual participant to attune to the ritual's effect, which costs an action point.
-        For details, see \pcref{Attunement}.
 
         \subsubsection{Ritual Participants}
             Creatures can assist in the performance of rituals even if they are unable to perform rituals themselves.
             A creature that helps perform a ritual is called a ritual participant, and the creature performing the ritual is called the ritual leader.
-            A ritual participant may spend an action point in place of or in addition to the action point spent by the creature performing the ritual.
-            It may also \glossterm{attune} to the effect of the ritual in place of the creature performing the ritual.
-            Only one creature may attune to the ritual's effect in this way.
-            If multiple creatures are willing to spend action points or attune to effects, the ritual leader decides which creatures spend action points or attune to the ritual's effects.
+            A ritual participant may spend an fatigue point in place of or in addition to the fatigue point spent by the creature performing the ritual.
+            If multiple creatures are willing to gain fatigue points points or attune to effects, the ritual leader decides which creatures gain fatigue points or attune to the ritual's effects.
 
             The steps required to participate in rituals can be complex.
             Ritual participants must be given specific instructions for the actions they must perform during a ritual by a creature who knows how to perform the ritual.
             This instruction generally takes half the time required to perform the ritual.
             A creature cannot participate in rituals unless it has an Intelligence of at least 0, can speak at least one language, and has the fine motor control required to perform the \glossterm{somatic components} of rituals.
 
-            Normally, a ritual participant can only contribute one action point.
-            If the participant has access to the same \glossterm{magic source} as the ritual, they can contribute any number of action points.
+            Normally, a ritual participant can only contribute one \glossterm{fatigue point}.
+            If the participant has access to the same \glossterm{magic source} as the ritual, they can contribute any number of \glossterm{fatigue points} (until they drop unconscious).
+            Creatures willing to gain fatigue points generally gain them at a rate no faster than one fatigue point per ten minutes spent performing the ritual.
 
             \parhead{Changing Ritual Participation}
             Rituals are deeply complex magic, and they cannot be abandoned or paused partway through.
             If the number of ritual participants in a ritual decreases below its initial value, the ritual fails at the end of the next round if the number of participants is not restored.
             However, ritual participants can transfer their participation to other creatures without disrupting the ritual.
 
-            In order to transfer ritual participation, the new creature must be able to participate in the ritual, and must immediately spend the same number of action points as the creature that it is taking over from.
+            In order to transfer ritual participation, the new creature must be able to participate in the ritual.
             Similarly, the ritual leader can transfer their leadership to another creature.
             In addition to the requirements for transferring ritual participation, the new leader must know the ritual and be able to perform it themselves.
 
             Changing ritual participation and leadership is usually done when performing extraordinarily long or demanding rituals.
+
+            \parhead{Attunement Rituals}
+                Rituals with the \glossterm{Attune} (ritual) tag require a single ritual participant to \glossterm{attune} to the ritual's effect.
+                Any ritual participant can attune to the effect, but only one ritual participant can attune to the effect unless otherwise noted in the ritual's description.
+                For details, see \pcref{Attunement}.
 
     \subsection{Magical Writings}
         To record a spell in written form, a character uses complex notation that describes the magical forces involved in the spell.
