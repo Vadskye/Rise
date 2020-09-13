@@ -12,7 +12,7 @@ aberrationInput.push({
   attackInputs: [
     {
       crit: `
-        The aboleth can spend an action point to attune to this ability.
+        The aboleth can spend an attunement point to attune to this ability.
         If it does, the target is dominated by the aboleth as long as the ability lasts.
         Otherwise, the target takes double the damage of a non-critical hit.
       `,

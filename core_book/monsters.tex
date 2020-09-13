@@ -21,12 +21,12 @@ This chapter describes the rules for monsters, and the combat statistics for a v
         \begin{dtable}
             \lcaption{Challenge Rating Effects}
             \begin{dtabularx}{\textwidth}{l X X X}
-                \tb{CR} & \tb{Hit Points} & \tb{Vital Wound Max} & \tb{Bonuses}\fn{1} \tableheaderrule
-                1/2     & \tdash\fn{2}    & 1                    & \plus0 \\
-                1       & \mult1/2        & 1                    & \plus0 \\
-                2       & \mult1          & 2                    & \plus1 \\
-                3       & \mult2          & 3                    & \plus2 \\
-                4       & \mult4          & 4                    & \plus3 \\
+                \tb{CR} & \tb{Hit Points} & \tb{Vital Wound Max} & \tb{Attunement Points} & \tb{Bonuses}\fn{1} \tableheaderrule
+                1/2     & \tdash\fn{2}    & 1                    & 0 & \plus0 \\
+                1       & \mult1/2        & 1                    & 0 & \plus0 \\
+                2       & \mult1          & 2                    & 1 & \plus1 \\
+                3       & \mult2          & 3                    & 2 & \plus2 \\
+                4       & \mult4          & 4                    & 3 & \plus3 \\
             \end{dtabularx}
             1. See \pcref{Monster CR Bonuses}. \\
             2. See \pcref{Half CR Monsters}. \\
@@ -47,17 +47,17 @@ This chapter describes the rules for monsters, and the combat statistics for a v
             Monsters with a CR of 1/2 have no \glossterm{hit points} or \glossterm{wound resistance}.
             In addition, their \glossterm{vital resistance} is one quarter of the normal value after taking into account all other modifiers.
 
-        \subsubsection{Condition Removal}
-            Monsters with a high challenge rating can remove conditions automatically.
+        \subsubsection{Spending Resources}
+            Monsters with a CR of 1 or less are unable to use abilities that cause them to lose \glossterm{hit points}, such as the \textit{sprint} ability (see \pcref{Sprint}).
+            Unless otherwise noted, all monsters are unable to use abilities that would cause them to gain \glossterm{fatigue points}, such as the \textit{desperate exertion} ability.
+
+        \subsubsection{Recovering Hit Points and Conditions}
+            Monsters cannot normally use the \textit{recover} ability.
+            However, monsters with a high challenge rating can remove conditions automatically.
             At the end of each round, monsters with CR of 1 or higher roll 1d10 \add their CR.
             If the result is 11 or higher, the monster removes one condition of its choice.
             This effect cannot remove a condition applied during the current round.
             Monsters without a sufficient understanding of the conditions affecting them generally choose randomly.
-
-        \subsubsection{Action Points and Attunement}
-            Monsters do not normally have \glossterm{action points}.
-            However, CR 2 or higher monsters can \glossterm{attune} to a number of abilities equal to their CR minus 1 without spending action points.
-            If the monster breaks its attunement to an ability, it can reattune after taking a \glossterm{short rest}.
 
         \subsubsection{Monster Actions}
             All monsters are able to take \glossterm{free actions}.
