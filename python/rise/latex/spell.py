@@ -61,7 +61,7 @@ class Spell(object):
     def __str__(self):
         tag_text = to_latex_tags(self.tags)
 
-        ability_type = 'attuneability' if 'Attune' in tag_text else ('apability' if 'AP' in self.tags else 'freeability')
+        ability_type = 'attuneability' if 'Attune' in tag_text else 'freeability'
 
         if isinstance(self.targets, str):
             target_tag = 'targets' if targets_are_plural(self.targets) else 'target'

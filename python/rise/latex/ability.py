@@ -12,7 +12,7 @@ def active_ability(
         ]) + ']'
     ) if tags else ""
 
-    ability_type = 'attuneability' if 'Attune' in tag_text else ('apability' if ap_cost else 'freeability')
+    ability_type = 'attuneability' if 'Attune' in tag_text else 'freeability'
 
     return f"""
         \\begin<{ability_type}><{name}>{tag_text}
