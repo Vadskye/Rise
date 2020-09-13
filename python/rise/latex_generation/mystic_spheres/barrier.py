@@ -293,7 +293,7 @@ barrier=MysticSphere(
             This ritual creates a ward against scrying in a \\arealarge radius \\glossterm<zone> centered on your location.
             All \\glossterm<Scrying> effects fail to function in the area.
             This effect is permanent.
-        """, tags=['AP'], ritual_time='24 hours'),
+        """, tags=[], ritual_time='24 hours'),
         Spell('Private Sanctum', 5, None, """
             This ritual creates a ward against any external perception in a \\arealarge radius \\glossterm<zone> centered on your location.
             This effect is permanent.
@@ -301,7 +301,7 @@ barrier=MysticSphere(
             Anyone observing the area from outside sees only a dark, silent void, regardless of darkvision and similar abilities.
             In addition, all \\glossterm<Scrying> effects fail to function in the area.
             Creatures inside the area can see within the area and outside of it without any difficulty.
-        """, tags=['AP'], ritual_time='24 hours'),
+        """, tags=[], ritual_time='24 hours'),
     ],
     category='buff, defense',
 )

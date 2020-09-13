@@ -477,6 +477,8 @@ def generate_maneuvers():
         short_description='Recover hit points',
         target='Yourself',
         effect_text="""
+            When you use this ability, you gain a \\glossterm<fatigue point>.
+
             You regain half of your maximum \\glossterm<hit points> (rounded down).
             If your new hit point total is at least half your maximum hit points, you immediately stop being \\glossterm<bloodied>.
             After you use this ability, you cannot use it again until you take a \\glossterm<short rest>.
@@ -488,7 +490,7 @@ def generate_maneuvers():
             '6': 'You also gain a +1 bonus to all defenses until the end of the round.',
             '8': 'The defense bonus increases to +2',
         },
-        tags=['AP', 'Swift'],
+        tags=['Swift'],
         lists=['Esoteric', 'Martial', 'Primal', 'Wild'],
     ))
 
