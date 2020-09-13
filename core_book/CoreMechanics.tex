@@ -360,24 +360,16 @@ It defines how attributes work and explains how to make attacks in combat.
 \section{Character Statistics}
     This section explains how character statistics, such as how strong you are or how accurate your attacks are, should be calculated.
 
-    \subsection{Action Points}\label{Action Points}
-        You can use \glossterm{action points} to \glossterm{attune} to effects such as spells or items (see \pcref{Attunement}).
-        Abilities that require attunement \glossterm{Attune} tag (see \pcref{Ability Tags}).
-        In addition, you can use some special abilities by spending \glossterm{action points}.
-        Abilities that spend action points have the \glossterm{AP} tag.
-        The most common abilities that require \glossterm{action points} are the \textit{cleanse} and \textit{desperate exertion} abilities (see \pcref{Cleanse}, and \pcref{Desperate Exertion}).
+    \subsection{Attunement Points}\label{Attunement Points}
+        You can use \glossterm{attunement points} to \glossterm{attune} to effects such as spells or items (see \pcref{Attunement}).
+        Abilities that require attunement have the \glossterm{Attune} tag (see \pcref{Ability Tags}).
 
-        A 1st level character typically has 3 \glossterm{action points}.
-        At higher levels, you gain additional \glossterm{action points} (see \pcref{Character Advancement}).
-        A small number of abilities can also grant additional \glossterm{action points}.
+        A 1st level character typically has 2 \glossterm{attunement points}.
+        At higher levels, you gain additional \glossterm{attunement points} (see \pcref{Character Advancement}).
+        A small number of abilities can also grant additional \glossterm{attunement points}.
 
-        When you take a \glossterm{long rest}, you recover all spent \glossterm{action points}.
+        When you take a \glossterm{short rest}, you recover all \glossterm{attunement points} that you released from attuned effects.
         For details, see \pcref{Resting}.
-
-        \subsubsection{Legendary Actions}
-            On rare occasions, you can gain action points by performing extraordinary deeds worthy of legends.
-            These action points can even allow you to exceed your normal maximum number of action points.
-            If you have not spent these action points by the time you take your next \glossterm{long rest}, they are lost.
 
     \subsection{Accuracy}\label{Accuracy}
         Your accuracy with an \glossterm{attack} is the number that you add to the \glossterm{attack roll}.
@@ -716,6 +708,25 @@ It defines how attributes work and explains how to make attacks in combat.
             If a creature would take \glossterm{environmental damage} that is less than its \glossterm{wound resistance}, it does not take the damage and does not lose any \glossterm{hit points}.
 
             It is possible for damage to be both environmental damage and subdual damage.
+
+\section{Fatigue}\label{Fatigue}
+    Thoughout the day, you can become fatigued by your exertions both in and out of combat.
+    While \glossterm{hit points} are easy to restore, \glossterm{fatigue} generally requires a \glossterm{long rest} to remove.
+    Fatigue is still easier to recover from than \glossterm{vital wounds}.
+
+    \subsection{Fatigue Points}\label{Fatigue Points}
+        Your level of fatigue is measured with \glossterm{fatigue points}.
+        A number of abilities and attacks can cause you to gain fatigue points.
+        You take a penalty to \glossterm{accuracy}, \glossterm{checks}, and \glossterm{defenses} equal to the number of fatigue points you have \sub your base Constitution.
+        This penalty is called your \glossterm{fatigue penalty}.
+        If you have a fatigue penalty of at least \minus1, you are considered \glossterm{fatigued}.
+
+    \subsection{Exhaustion}\label{Exhaustion}
+        When your \glossterm{fatigue penalty} reaches \minus5, you fall \glossterm{unconscious} until your fatigue penalty is reduced below \minus5.
+        Generally, this means that you are unconscious for 8 hours.
+
+    \subsection{Recovering From Fatigue}
+        When you take a \glossterm{long rest}, you remove all of your \glossterm{fatigue points}.
 
 \section{Circumstances, Bonuses, and Penalties}
 
@@ -1258,11 +1269,11 @@ It defines how attributes work and explains how to make attacks in combat.
 
     \subsection{Attunement}\label{Attunement}
         Many abilities last as long as a creature attunes to them.
-        Attuning to an ability costs an \glossterm{action point}.
-        As long as you remain attuned to that ability, you cannot recover that action point by any means.
-        After you stop being attuned to that ability, you can recover that action point when you take your next \glossterm{short rest}.
+        Attuning to an ability costs an \glossterm{attunement point}.
+        As long as you remain attuned to that ability, you cannot recover that attunement point by any means.
+        After you stop being attuned to that ability, you can recover that attunement point when you take your next \glossterm{short rest}.
 
-        As a standard action, you can use the \textit{release attunement} ability to stop being attuned an ability you have attuned to.
+        As a \glossterm{free action}, you can use the \textit{release attunement} ability to stop being attuned an ability you have attuned to.
         \begin{freeability}{Release Attunement}
             You stop being attuned to one effect you have attuned to.
         \end{freeability}
@@ -1338,10 +1349,6 @@ It defines how attributes work and explains how to make attacks in combat.
         Many abilities have tags that describe the nature of the ability.
         Many of these tags have no game effect by themselves, but they govern how the ability interacts with spells, other abilities, unusual creatures, and so on.
         They are described below.
-
-        \parhead{AP} AP abilities require spending \glossterm{action points} to use.
-        Some AP abilities, such as specific \glossterm{rituals}, require spending multiple action points instead of only one.
-        Unless otherwise specified in the ability's description, an AP ability requires a single \glossterm{action point}.
 
         \parhead{Auditory} Auditory abilities use sound to cause their effects.
         Creatures and objects that cannot hear the effect are immune to it.
@@ -1530,23 +1537,22 @@ It defines how attributes work and explains how to make attacks in combat.
             \lcaption{Special Combat Abilities}
             \begin{dtabularx}{\columnwidth}{>{\lcol}p{6em} l X}
                 \tb{Ability}             & \tb{Defense} & \tb{Brief Description} \tableheaderrule
-                Charge\fn{1}             & Armor        & Move and attack                           \\
-                Cleanse\fn{2}            & \tdash       & Quickly remove all \glossterm{conditions} \\
-                Desperate Exertion\fn{2} & \tdash       & Gain a bonus on a single roll             \\
-                Dirty Trick              & Any          & Impose penalty on a foe                   \\
-                Disarm                   & Ref          & Attack item, knocking it free             \\
-                Grapple                  & Fort and Ref & Wrestle with a foe                        \\
-                Offhand Strike           & Armor        & Make a strike with an offhand weapon      \\
-                Overrun\fn{1}            & Fort         & Move through foe's space                  \\
-                Recover\fn{2}            & \tdash       & Regain all hit points                     \\
-                Shove                    & Fort         & Move a foe                                \\
-                Sprint\fn{2}             & \tdash       & Move at double speed                      \\
-                Struggle                 & \tdash       & Move 5 feet regardless of penalties       \\
-                Total Defense            & \tdash       & Gain \plus2 to defenses                   \\
-                Trip                     & Ref          & Trip a foe                                \\
+                Charge\fn{1}             & Armor        & Move and attack                      \\
+                Desperate Exertion\fn{2} & \tdash       & Gain a bonus on a single roll        \\
+                Dirty Trick              & Any          & Impose penalty on a foe              \\
+                Disarm                   & Ref          & Attack item, knocking it free        \\
+                Grapple                  & Fort and Ref & Wrestle with a foe                   \\
+                Offhand Strike           & Armor        & Make a strike with an offhand weapon \\
+                Overrun\fn{1}            & Fort         & Move through foe's space             \\
+                Recover\fn{2}            & \tdash       & Regain hit points, remove conditions \\
+                Shove                    & Fort         & Move a foe                           \\
+                Sprint\fn{1}             & \tdash       & Move at double speed                 \\
+                Struggle                 & \tdash       & Move 5 feet regardless of penalties  \\
+                Total Defense            & \tdash       & Gain \plus2 to defenses              \\
+                Trip                     & Ref          & Trip a foe                           \\
             \end{dtabularx}
             1. This ability costs a \glossterm{hit point} to use. \\
-            2. This ability costs an \glossterm{action point} to use. \\
+            2. This ability gives you a \glossterm{fatigue point} when used. \\
         \end{dtable}
 
         \parhead{Charge} You can use the \textit{charge} ability as a standard action.
@@ -1557,25 +1563,20 @@ It defines how attributes work and explains how to make attacks in combat.
             At the end of your movement, if you are at least 10 feet from your original location, you can make a melee \glossterm{strike} from your new location.
         \end{freeability}
 
-        \parhead{Cleanse} You can use the \textit{cleanse} ability as a \glossterm{minor action}.
-        As long as you are conscious, no effect can prevent you from using this ability, even effects that prohibit using any other abilities.
-        \begin{apability}{\labeltext{Cleanse}}
-            You remove all \glossterm{conditions} affecting you.
-            This cannot remove a condition applied during the current round.
-        \end{apability}
-
         \parhead{Desperate Exertion} You can use the \textit{desperate exertion} ability to succeed at a critical moment when you would otherwise fail.
         Using this ability is not an action, and can be done at any time.
         You can decide to use this ability after you learn whether the original roll succeeded or failed.
         You can even use it after you learn what the effects of a successful attack or check would be, if that is information you could normally learn if it succeeded.
         However, you must use it before the phase is over.
 
-        \begin{apability}{\labeltext{Desperate Exertion}}[\glossterm{Swift}]
+        \begin{freeability}{\labeltext{Desperate Exertion}}[\glossterm{Swift}]
             You reroll any \glossterm{attack} or \glossterm{check} you just made and gain a \plus2 bonus.
             You must reroll the entire roll, not just one die from the roll (such as if the original roll \glossterm{exploded}).
             You cannot use this to affect rolls that are not attacks or checks, such as \glossterm{vital rolls}.
-            You can use this ability multiple times to affect the same roll if you have the action points to do so, but the bonus does not stack.
-        \end{apability}
+            You cannot use this ability multiple times to affect the same roll.
+
+            When you use this ability, after resolving the rerolled attack or check, you gain a \glossterm{fatigue point} (see \pcref{Fatigue}).
+        \end{freeability}
 
         \parhead{Dirty Trick} As a standard action, you can use the \textit{dirty trick} ability to creatively impair a foe's ability to fight.
 
@@ -1644,13 +1645,18 @@ It defines how attributes work and explains how to make attacks in combat.
         \end{freeability}
 
         \parhead{Recover} You can use the \textit{recover} ability as a standard action.
-        \begin{apability}{\labeltext{Recover}}[\glossterm{Swift}]
-            You regain half of your maximum \glossterm{hit points} (rounded down).
-            If your new hit point total is at least half your maximum hit points, you immediately stop being \glossterm{bloodied}.
-            After you use this ability, you cannot use it again until you take a \glossterm{short rest}.
+        As long as you are conscious, no effect can prevent you from using this ability, even effects that prohibit using any other abilities.
+        \begin{freeability}{\labeltext{Recover}}[\glossterm{Swift}]
+            When you use this ability, you gain a \glossterm{fatigue point} (see \pcref{Fatigue}).
 
-            Because this is a \glossterm{Swift} ability, this healing happens before you suffer the effects of attacks in the current phase.
-        \end{apability}
+            You regain half of your maximum \glossterm{hit points} (rounded down).
+            In addition, you remove all \glossterm{conditions} affecting you.
+            This cannot remove a condition applied during the current round.
+            If your new hit point total is at least half your maximum hit points, you immediately stop being \glossterm{bloodied}.
+
+            After you use this ability, you cannot use it again until you take a \glossterm{short rest}.
+            Because this is a \glossterm{Swift} ability, this healing and condition removal happens before you suffer the effects of attacks in the current phase.
+        \end{freeability}
 
         \parhead{Shove} As a standard action, you can use the \textit{shove} ability to physically move a creature.
 
@@ -1919,7 +1925,7 @@ It defines how attributes work and explains how to make attacks in combat.
             When you take a short rest, you gain the following benefits.
             \begin{itemize}
                 \item You regain all of your \glossterm{hit points}.
-                \item You regain any \glossterm{action points} you released from \glossterm{attuned} abilities (see \pcref{Attunement}).
+                \item You regain any \glossterm{attunement points} you released from \glossterm{attuned} abilities (see \pcref{Attunement}).
                 \item You remove all \glossterm{conditions} affecting you (unless they cannot be removed normally).
                 \item Some other abilities have specific effects that last until you take a short rest.
                     For example, a barbarian cannot use their \textit{rage} ability again after raging until after they take a short rest (see Rage, page \pref{Bbn:Rage}).
@@ -1931,7 +1937,7 @@ It defines how attributes work and explains how to make attacks in combat.
             \begin{itemize}
                 \item You make progress towards removing one of your vital wounds (see \pcref{Removing Vital Wounds}).
                     The Medicine skill can increase this healing (see \pcref{Accelerate Recovery}).
-                \item You regain all spent \glossterm{action points} other than \glossterm{action points} which are currently \glossterm{attuned} to abilities (see \pcref{Attunement}).
+                \item You remove all of your \glossterm{fatigue points}.
                 \item Some other abilities have specific effects that last until you take a long rest.
             \end{itemize}
 
@@ -1944,7 +1950,7 @@ It defines how attributes work and explains how to make attacks in combat.
     A character that increases in level gains additional benefits.
     \begin{itemize}
         \item At 2nd level, and every 3 levels thereafter, your maximum \glossterm{archetype rank} increases (see \pcref{Archetype Ranks}).
-        \item At 3rd level, and every 3 levels thereafter, you gain an additional \glossterm{action point} (see \pcref{Action Points}).
+        \item At 3rd level, and every 3 levels thereafter, you gain an additional \glossterm{attunement point} (see \pcref{Attunement Points}).
         \item At 4th level, and every 6 levels thereafter, you gain a \glossterm{legacy item} upgrade (see \pcref{Legacy Items}).
     \end{itemize}
 
@@ -1952,30 +1958,30 @@ It defines how attributes work and explains how to make attacks in combat.
         \lcaption{Character Advancement}
         \begin{dtabularx}{\columnwidth}{*{2}{>{\lcol}l} *{4}{>{\lcol}X}}
             \tb{Level} & \tb{XP} & \tb{Max Rank}\fn{1} & \tb{Legacy Item}\fn{2} & \tb{AP}\fn{3} \tableheaderrule
-            1st        & 0       & 1                   & \tdash                 & 3      \\
+            1st        & 0       & 1                   & \tdash                 & 2      \\
             2nd        & 20      & 2                   & \tdash                 & \tdash \\
-            3rd        & 50      & \tdash              & \tdash                 & 4      \\
+            3rd        & 50      & \tdash              & \tdash                 & 3      \\
             4th        & 90      & \tdash              & 1                      & \tdash \\
             5th        & 150     & 3                   & \tdash                 & \tdash \\
-            6th        & 230     & \tdash              & \tdash                 & 5      \\
+            6th        & 230     & \tdash              & \tdash                 & 4      \\
             7th        & 350     & \tdash              & \tdash                 & \tdash \\
             8th        & 510     & 4                   & \tdash                 & \tdash \\
-            9th        & 750     & \tdash              & \tdash                 & 6      \\
+            9th        & 750     & \tdash              & \tdash                 & 5      \\
             10th       & 1,050   & \tdash              & 2                      & \tdash \\
             11th       & 1,550   & 5                   & \tdash                 & \tdash \\
-            12th       & 2,200   & \tdash              & \tdash                 & 7      \\
+            12th       & 2,200   & \tdash              & \tdash                 & 6      \\
             13th       & 3,150   & \tdash              & \tdash                 & \tdash \\
             14th       & 4,450   & 6                   & \tdash                 & \tdash \\
-            15th       & 6,350   & \tdash              & \tdash                 & 8      \\
+            15th       & 6,350   & \tdash              & \tdash                 & 7      \\
             16th       & 8,900   & \tdash              & 3                      & \tdash \\
             17th       & 13,000  & 7                   & \tdash                 & \tdash \\
-            18th       & 18,000  & \tdash              & \tdash                 & 9      \\
+            18th       & 18,000  & \tdash              & \tdash                 & 8      \\
             19th       & 25,500  & \tdash              & \tdash                 & \tdash \\
             20th       & 36,000  & 8                   & \tdash                 & \tdash \\
         \end{dtabularx}
         1. This is your maximum rank in your class archetypes (see \pcref{Archetype Ranks}). \\
         2. This is the number of abilities you gain with your \glossterm{legacy item} (see \pcref{Legacy Items}). \\
-        3. This is the number of \glossterm{action points} you have (see \pcref{Action Points}). \\
+        3. This is the number of \glossterm{attumenent points} you have (see \pcref{Attunement Points}). \\
     \end{dtable}
 
     \subsection{Leveling Up}
