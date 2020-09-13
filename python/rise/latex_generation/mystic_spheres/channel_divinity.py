@@ -220,9 +220,7 @@ channel_divinity=MysticSphere(
             The area within an \\arealarge radius \\glossterm<zone> from your location becomes sacred to your deity.
             % TODO: what cares about consecration?
             This has no tangible effects by itself, but some special abilities and monsters behave differently in consecrated areas.
-
-            This ritual takes 24 hours to perform and requires 8 action points from its ritual participants.
-        """, tags=['Attune (self)']),
+        """, tags=['Attune (self)'], ritual_time='24 hours'),
         Spell('Divine Transit', 5, 'Up to five Medium or smaller ritual participants', """
             Choose a destination up to 100 miles away from you on your current plane.
             Each target is teleported to the temple or equivalent holy site to your deity that is closest to the chosen destination.
@@ -233,9 +231,7 @@ channel_divinity=MysticSphere(
             The new destination will be one that more closely resembles your mental image.
             If no such area exists, the ritual simply fails.
             % TODO: does this need more clarity about what teleportation works?
-
-            This ritual takes 24 hours to perform and requires 32 action points from its ritual participants.
-        """, tags=['AP']),
+        """, tags=[], ritual_time='24 hours'),
     ],
     category='damage',
 )

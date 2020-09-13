@@ -271,9 +271,7 @@ aeromancy = MysticSphere(
         Spell('Air Bubble', 3, 'One ritual participant', """
             The target can breathe clear, clean air regardless of its surroundings.
             This can allow it to breathe underwater and avoid air-based poisons.
-
-            This ritual takes one minute to perform.
-        """, tags=['Attune (target)']),
+        """, tags=['Attune (target)'], ritual_time='one minute'),
     ],
     category='buff, defense',
 )

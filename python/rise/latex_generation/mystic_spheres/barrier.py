@@ -263,9 +263,7 @@ barrier=MysticSphere(
             It can exist comfortably in conditions between \minus50 and 140 degrees Fahrenheit.
             Its equipment, if any, is also protected.
             This does not protect the target from fire or cold damage.
-
-            This ritual takes one minute to perform.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one minute'),
         Spell('Mystic Lock', 3, 'One large or smaller closable, nonmagical object within \\rngclose range, such as a door or box', """
             The target object becomes magically locked.
             It can be unlocked with a Devices check against a \\glossterm<difficulty rating> equal to 20 \\add your \\glossterm<power>.
@@ -274,13 +272,11 @@ barrier=MysticSphere(
             You can freely pass your own \\ritual<mystic lock> as if the object were not locked.
             This effect lasts as long as you \\glossterm<attune> to it.
             If you use this ability multiple times, you can attune to it each time.
-
-            This ritual takes one minute to perform.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one minute'),
         Spell('Resilient Lock', 5, 'One large or smaller closable, nonmagical object within \\rngclose range, such as a door or box', f"""
             This ritual functions like the \\ritual<mystic lock> ritual, except that the \\glossterm<difficulty rating> to unlock the target with a Devices check is instead equal to 30 + your \\glossterm<power>.
             In addition, the \\glossterm<difficulty rating> to break it open increases by 20 instead of by 10.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one hour'),
         Spell('Explosive Runes', 4, 'One Small or smaller unattended object with writing on it within \\rngclose range', """
             % TODO: clarify how to identify that this is Explosive Runes instead of bad handwriting
             The writing on the target is altered by the runes in subtle ways, making it more difficult to read.
@@ -292,15 +288,12 @@ barrier=MysticSphere(
 
             After the target object explodes in this way, the ritual is \\glossterm<dismissed>.
             If the target is destroyed or rendered illegible, the ritual is dismissed without exploding.
-            This ritual takes one hour to perform.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one hour'),
         Spell('Scryward', 3, None, """
             This ritual creates a ward against scrying in a \\arealarge radius \\glossterm<zone> centered on your location.
             All \\glossterm<Scrying> effects fail to function in the area.
             This effect is permanent.
-
-            This ritual takes 24 hour to perform, and requires 8 action points from its participants.
-        """, tags=['AP']),
+        """, tags=['AP'], ritual_time='24 hours'),
         Spell('Private Sanctum', 5, None, """
             This ritual creates a ward against any external perception in a \\arealarge radius \\glossterm<zone> centered on your location.
             This effect is permanent.
@@ -308,9 +301,7 @@ barrier=MysticSphere(
             Anyone observing the area from outside sees only a dark, silent void, regardless of darkvision and similar abilities.
             In addition, all \\glossterm<Scrying> effects fail to function in the area.
             Creatures inside the area can see within the area and outside of it without any difficulty.
-
-            This ritual takes 24 hours to perform, and requires 32 action points from its participants.
-        """, tags=['AP']),
+        """, tags=['AP'], ritual_time='24 hours'),
     ],
     category='buff, defense',
 )

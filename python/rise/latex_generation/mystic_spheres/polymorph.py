@@ -193,20 +193,16 @@ polymorph=MysticSphere(
         # would want it...
         Spell('Mending', 1, 'One \\glossterm<unattended> object within \\rngclose range', """
             The target is regains one \\glossterm<hit point>.
-
-            This ritual takes one minute to perform.
-        """, tags=['AP']),
+        """, tags=['AP'], ritual_time='one minute'),
         Spell('Morph Weapon', 1, 'One unattended manufactured weapon', """
             The target changes into another weapon from the same weapon group.
             At least one ritual participant must be proficient with that weapon group.
             You cannot change it into an exotic weapon in this way.
             When this effect ends, the target returns to its original shape.
-
-            This ritual takes one minute to perform.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one minute'),
         Spell('Exotic Morph Weapon', 3, 'One unattended manufatured weapon', """
             This ritual functions like the \\spell<morph weapon> ritual, except that you can also change the target into an exotic weapon.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one minute'),
         Spell('Fortify', 1, 'One \\glossterm<unattended>, nonmagical object or part of an object of up to Large size.', """
             Unlike most abilities, this ritual can affect individual parts of a whole object.
 
@@ -214,36 +210,29 @@ polymorph=MysticSphere(
             The target gains a +5 \\glossterm<magic bonus> to \\glossterm<resistances>.
             If the target is moved, this effect ends.
             Otherwise, it lasts for one year.
-
-            This ritual takes one hour to perform.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one hour'),
         Spell('Enduring Fortify', 4, 'One \\glossterm<unattended>, nonmagical object or part of an object of up to Large size.', """
             This ritual functions like the \\spell<fortify> ritual, except that the effect lasts for one hundred years.
-        """, tags=['AP']),
+        """, tags=['AP'], ritual_time='24 hours'),
         Spell('Enduring Greater Fortify', 5,'Greater Fortify', """
             This ritual functions like the \\spell<greater fortify> ritual, except that the effect lasts for one hundred years.
-        """, tags=['AP']),
+        """, tags=['AP'], ritual_time='24 hours'),
         Spell('Greater Fortify', 4, 'One \\glossterm<unattended>, nonmagical object or part of an object of up to Large size.', """
             This ritual functions like the \\spell<fortify> ritual, except that the bonus to \\glossterm<resistances> increases to 10.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one hour'),
         Spell('Supreme Fortify', 7, 'One \\glossterm<unattended>, nonmagical object or part of an object of up to Large size.', """
             This ritual functions like the \\spell<fortify> ritual, except that the bonus to \\glossterm<resistances> increases to 15.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one hour'),
         Spell('Ironwood', 4, 'One Small or smaller unattended, nonmagical wooden object within \\rngclose range', """
             The target is transformed into ironwood.
             While remaining natural wood in almost every way, ironwood is as strong, heavy, and resistant to fire as iron.
             Metallic armor and weapons, such as full plate, can be crafted from ironwood.
-
-            % Should this have an action point cost? May be too rare...
-            This ritual takes 24 hours to perform.
-        """, tags=['AP']),
+        """, tags=['AP'], ritual_time='24 hours'),
         Spell('Purify Sustenance', 1, 'All food and water in a single square within \\rngclose range', """
             The targets are purified.
             Spoiled, rotten, poisonous, or otherwise contaminated food and water becomes pure and suitable for eating and drinking.
             This does not prevent subsequent natural decay or spoiling.
-
-            This ritual takes one hour to perform.
-        """, tags=['AP']),
+        """, tags=['AP'], ritual_time='one hour'),
     ],
     category='damage',
 )

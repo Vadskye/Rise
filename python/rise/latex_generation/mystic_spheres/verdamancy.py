@@ -276,17 +276,13 @@ verdamancy=MysticSphere(
             Normal plants within the area become twice as productive as normal for the next year.
             This ritual does not stack with itself.
             If the \\ritual<infertility> ritual is also applied to the same area, the most recently performed ritual takes precedence.
-
-            This ritual takes 24 hours to perform, and requires 8 action points from its participants.
-        """, tags=['AP']),
+        """, tags=['AP'], ritual_time='24 hours'),
         Spell('Infertility', 3, None, """
             This ritual creates an area of death and decay in a one mile radius \\glossterm<zone> from your location.
             Normal plants within the area become half as productive as normal for the next year.
             This ritual does not stack with itself.
             If the \\ritual<fertility> ritual is also applied to the same area, the most recently performed ritual takes precedence.
-
-            This ritual takes 24 hours to perform, and requires 8 action points from its participants.
-        """, tags=['AP']),
+        """, tags=['AP'], ritual_time='24 hours'),
         Spell('Lifeweb Transit', 5, 'Up to five Medium or smaller ritual participants', """
             Choose up a living plant that all ritual participants touch during the ritual.
             The plant must be at least one size category larger than the largest target.
@@ -299,8 +295,6 @@ verdamancy=MysticSphere(
             The new destination will be one that more closely resembles your mental image.
             If no such area exists, the ritual simply fails.
             % TODO: does this need more clarity about what teleportation works?
-
-            This ritual takes 24 hours to perform and requires 32 action points from its ritual participants.
-        """, tags=['AP']),
+        """, tags=['AP'], ritual_time='24 hours'),
     ],
 )

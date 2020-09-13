@@ -232,13 +232,10 @@ cryomancy=MysticSphere(
             Unlike normal, this effect does not require \\glossterm<line of effect> to you.
             Instead, it affects all outdoor locations within the area.
             Even a thin barrier, such as a tent, is enough to protect locations from the effect of this ritual.
-
-            This ritual takes one hour to perform.
-
-            \\rankline
-            \\rank<6> The temperature decreases by 50 degrees, to a minimum of \\minus50 degrees.
-            \\rank<8> The temperature decreases by 60 degrees, to a minimum of \\minus70 degrees.
-        """, tags=['Attune (self)']),
+        """, tags=['Attune (self)'], ritual_time='one hour'),
+        Spell('Froststorm', 8, None, """
+            This ritual functions like the \\spell<frostfall> ritual, except that the temperature in the area decreases by 60 degrees, to a minimum of \\minus70 degrees.
+        """, tags=['Attune (self)'], ritual_time='one hour'),
     ],
     category='damage',
 )

@@ -201,15 +201,11 @@ vivimancy=MysticSphere(
     rituals=[
         Spell('Remove Disease', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             All diseases affecting the target are removed.
-
-            This ritual takes one minute to perform.
-        """, tags=['AP']),
+        """, tags=['AP'], ritual_time='one hour'),
         Spell('Restore Senses', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             One of the target's physical senses, such as sight or hearing, is restored to full capacity.
             This can heal both magical and mundane effects, but it cannot completely replace missing body parts required for a sense to function (such as missing eyes).
-
-            This ritual takes one minute to perform.
-        """, tags=['AP']),
+        """, tags=['AP'], ritual_time='one hour'),
         Spell('Reincarnation', 5, 'One Diminuitive or larger piece of a humanoid corpse', """
             The target must have been part of the original creature's body at the time of death.
             The creature the target corpse belongs to returns to life in a new body.
@@ -231,9 +227,8 @@ vivimancy=MysticSphere(
             This penalty lasts for thirty days, or until the creature gains a level.
             If this would reduce a creature's maximum action points below 0, the creature cannot be resurrected.
 
-            This ritual takes 24 hours to perform, and requires 32 action points from its participants.
-            In addition, it can only be learned through the nature \\glossterm<magic source>.
-        """, tags=['AP', 'Creation'], extra_text="""
+            This ritual can only be learned through the nature \\glossterm<magic source>.
+        """, tags=['AP', 'Creation'], ritual_time='24 hours', extra_text="""
             \\begin{dtable}
                 \\lcaption{Humanoid Reincarnations}
                 \\begin{dtabularx}{\\columnwidth}{l X}
@@ -251,22 +246,17 @@ vivimancy=MysticSphere(
         Spell('Fated Reincarnation', 6, 'One Diminuitive or larger piece of a humanoid corpse', f"""
             This ritual functions like the \\ritual<reincarnation> ritual, except that the target is reincarnated as its original species instead of as a random species.
 
-            This ritual takes 24 hours to perform, and requires 50 action points from its participants.
-            In addition, it can only be learned through the nature \\glossterm<magic source>.
-        """, tags=['AP', 'Creation']),
+            This ritual can only be learned through the nature \\glossterm<magic source>.
+        """, tags=['AP', 'Creation'], ritual_time='24 hours'),
         Spell('Purge Curse', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             All curses affecting the target are removed.
             This ritual cannot remove a curse that is part of the effect of an item the target has equipped.
             However, it can allow the target to remove any cursed items it has equipped.
-
-            This ritual takes 24 hours to perform, and requires 8 action points from its participants.
-        """, tags=['AP']),
+        """, tags=['AP'], ritual_time='24 hours'),
         Spell('Restoration', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             All of the target's hit points, \\glossterm<subdual damage>, and \\glossterm<vital damage> are healed.
             In addition, any of the target's severed body parts or missing organs grow back by the end of the next round.
-
-            This ritual takes 24 hours to perform, and requires 18 action points from its participants.
-        """, tags=['AP']),
+        """, tags=['AP'], ritual_time='24 hours'),
         Spell('Resurrection', 4, 'One intact humanoid corpse within \\rngclose range', """
             The target returns to life.
             It must not have died due to old age.
@@ -282,25 +272,22 @@ vivimancy=MysticSphere(
             This penalty lasts for thirty days, or until the creature gains a level.
             If this would reduce a creature's maximum action points below 0, the creature cannot be resurrected.
 
-            This ritual takes 24 hours to perform, and requires 18 action points from its participants.
-            In addition, it can only be learned through the divine \\glossterm<magic source>.
-        """, tags=['AP']),
+            This ritual can only be learned through the divine \\glossterm<magic source>.
+        """, tags=['AP'], ritual_time='24 hours'),
         Spell('Complete Resurrection', 6, 'One Diminuitive or larger piece of a humanoid corpse within \\rngclose range', """
             This ritual functions like the \\ritual<resurrection> ritual, except that it does not have to target a fully intact corpse.
             The target must have been part of the original creature's body at the time of death.
             The resurrected creature's body is fully restored to its healthy state before dying, including regenerating all missing or damaged body parts.
 
-            This ritual takes 24 hours to perform, and requires 50 action points from its participants.
-            In addition, it can only be learned through the divine \\glossterm<magic source>.
-        """, tags=['AP', 'Creation']),
+            This ritual can only be learned through the divine \\glossterm<magic source>.
+        """, tags=['AP', 'Creation'], ritual_time='24 hours'),
         Spell('True Resurrection', 8, 'Special', """
             This ritual functions like the \\ritual<resurrection> ritual, except that it does not require any piece of the corpse.
             Instead, you must explicitly and unambiguously specify the identity of the creature being resurrected.
             The resurrected creature's body is fully restored to its healthy state before dying, including regenerating all missing or damaged body parts.
 
-            This ritual takes 24 hours to perform, and requires 98 action points from its participants.
-            In addition, it can only be learned through the divine \\glossterm<magic source>.
-        """, tags=['AP', 'Creation']),
+            This ritual can only be learned through the divine \\glossterm<magic source>.
+        """, tags=['AP', 'Creation'], ritual_time='24 hours'),
         Spell('Soul Bind', 6, 'One intact corpse within \\rngclose range', """
             % Is this clear enough that you can't use the same gem for this ritual twice?
             Choose a nonmagical gem you hold that is worth at least 1,000 gp.
@@ -309,9 +296,7 @@ vivimancy=MysticSphere(
             However, it prevents the creature from being resurrected, and prevents the corpse from being used to create undead creatures, as long as the gem is intact.
             A creature holding the gem may still resurrect or reanimate the creature.
             If the gem is shattered, the fragment of the creature's soul returns to its body.
-
-            This ritual takes one hour to perform.
-        """, tags=['AP']),
+        """, tags=['AP'], ritual_time='one hour'),
         Spell('Animate Dead', 3, 'Any number of corpses within \\rngclose range', """
             The combined levels of all targets cannot exceed your \\glossterm<power>.
             The target becomes an undead creature that obeys your spoken commands.
@@ -319,9 +304,7 @@ vivimancy=MysticSphere(
             Creating a zombie require a mostly intact corpse, including most of the flesh.
             Creating a skeleton only requires a mostly intact skeleton.
             If a skeleton is made from an intact corpse, the flesh quickly falls off the animated bones.
-
-            This ritual takes one hour to perform.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one hour'),
     ],
     category='damage',
 )

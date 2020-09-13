@@ -191,14 +191,11 @@ photomancy=MysticSphere(
     rituals=[
         Spell('Continuous Light', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngmed range', """
             The target glows like a torch, shedding bright illumination in a \\areamed radius (and shadowy illumination for an additional 20 feet).
-
-            This ritual takes one minute to perform.
-        """, tags=['Attune (ritual)', 'Sensation']),
+        """, tags=['Attune (ritual)', 'Sensation'], ritual_time='one minute'),
         Spell('Permanent Light', 3, 'One Medium or smaller unattended object within \\rngclose range', """
             This ritual functions like the \\spell<continuous light> ritual, except that it loses the \\glossterm<Attune> (ritual) tag and the effect lasts permanently.
             In addition, it can only target objects.
-            This ritual takes 24 hours to perform, and it requires 8 action points from its participants.
-        """, tags=['AP', 'Sensation']),
+        """, tags=['AP', 'Sensation'], ritual_time='24 hours'),
     ],
     category='debuff, combat',
 )

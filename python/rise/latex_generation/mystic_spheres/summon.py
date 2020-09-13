@@ -26,7 +26,7 @@ summon=MysticSphere(
                 \\item Its \\glossterm<accuracy> is equal to your \\glossterm<accuracy> \\sub 2.
                 \\item Its \\glossterm<power> with its attacks is equal to your \\glossterm<power>.
                 \\item Its \\glossterm<land speed> is 30 feet.
-                \\item It has no \\glossterm<action points>.
+                \\item It has no \\glossterm<attunement points>.
             \\end<itemize>
 
             Each round, you can choose the creature's actions by mentally commanding it as a \\glossterm<minor action>.
@@ -198,7 +198,7 @@ summon=MysticSphere(
             The creature appears in an unoccupied location within \\rngmed range.
             It comes with a bit and bridle and a riding saddle, and will only accept the target as a rider.
             It has the same statistics as a creature from the \\spell<summon monster> spell, except that it follows its rider's directions to the extent that a well-trained horse would and it cannot attack.
-        """, tags=['Attune (ritual)', 'Manifestation']),
+        """, tags=['Attune (ritual)', 'Manifestation'], ritual_time='one minute'),
     ],
     # What category does this belong to?
     category='buff, offense',

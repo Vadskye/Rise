@@ -248,20 +248,16 @@ revelation=MysticSphere(
             If you specify the chosen creature's appearance incorrectly, or if it has significantly changed its appearance, you may accidentally affect a different creature, or the ritual may simply fail.
 
             If the creature is within 100 miles of your location, you unerringly learn the relative direction from your location to the location it was in when you started performing this ritual.
-
-            This ritual takes one hour to perform.
-        """, tags=[]),
+        """, tags=[], ritual_time='one hour'),
         Spell('Locate Object', 3, None, """
             This ritual functions like the \\spell<locate creature> ritual, except that it locates objects instead of creatures.
             Objects currently being worn or carried by creatures cannot be found by this ritual.
-        """, tags=[]),
+        """, tags=[], ritual_time='one minute'),
         Spell('Read Magic', 1, 'Yourself', """
             You gain the ability to decipher magical inscriptions that would otherwise be unintelligible.
             This can allow you to read ritual books and similar objects created by other creatures.
             After you have read an inscription in this way, you are able to read that particular writing without the use of this ritual.
-
-            This ritual takes one minute to perform.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one minute'),
         Spell('Discern Location', 5, None, """
             When you perform this ritual, choose a creature or object.
             You must have seen the chosen creature or object in person and either be able to clearly visualize its appearance or know its proper name to find it with this ritual.
@@ -272,15 +268,11 @@ revelation=MysticSphere(
             % Wording?
             If there is no corresponding information about an aspect of the target's location, such as if the target is in a location which is not part of a recognized country,
                 you learn only that that that aspect of the information is missing.
-
-            This ritual takes 24 hours to perform, and it requires 32 action points from its participants.
-        """, tags=['AP']),
+        """, tags=[], ritual_time='24 hours'),
         Spell('Interplanar Discern Location', 7, 'Any creature or object on the same plane as you', """
             This ritual functions like the \\ritual<discern location> ritual, except that the target does not have to be on the same plane as you.
             It gains the \\glossterm<Planar> tag in addition to the tags from the \\ritual<discern location> ritual.
-
-            This ritual takes 24 hours to perform, and it requires 72 action points from its participants.
-        """, tags=['AP']),
+        """, tags=[], ritual_time='24 hours'),
         Spell('Sending', 4, 'Any creature on the same plane as you', """
             You do not need \\glossterm<line of sight> or \\glossterm<line of effect> to the target.
             However,  must specify your target with a precise mental image of its appearance.
@@ -292,13 +284,11 @@ revelation=MysticSphere(
 
             After the the target receives the message, it may reply with a message of the same length as long as the ritual's effect continues.
             Once it speaks twenty-five words, or you stop sustaining the effect, the ritual is \\glossterm<dismissed>.
-
-            This ritual takes one hour to perform.
-        """, tags=['AP', 'Sustain (standard)']),
+        """, tags=['Sustain (standard)'], ritual_time='one hour'),
         Spell('Interplanar Sending', 7, 'Any creature on the same plane as you', """
             This ritual functions like the \\ritual<sending> ritual, except that the target does not have to be on the same plane as you.
             It gains the \\glossterm<Planar> tag in addition to the tags from the \\ritual<sending> ritual.
-        """, tags=['AP', 'Sustain (standard)']),
+        """, tags=['Sustain (standard)'], ritual_time='one hour'),
         Spell('Telepathic Bond', 4, 'Up to five ritual participants', """
             Each target can communicate mentally through telepathy with each other target.
             This communication is instantaneous, though it cannot reach more than 100 miles or across planes.
@@ -308,22 +298,18 @@ revelation=MysticSphere(
             If a target breaks its attunement, it stops being able to send and receive mental messages with other targets.
             However, the effect continues as long as at least one target attunes to it.
             If you \\glossterm<dismiss> the ritual, the effect ends for all targets.
-
-            This ritual takes one minute to perform.
-        """, tags=['Attune (ritual; see text)']),
+        """, tags=['Attune (ritual; see text)'], ritual_time='one minute'),
         Spell('Long-Distance Bond', 6, 'Up to five ritual participants', """
             This ritual functions like the \\ritual<telepathic bond> ritual, except that the effect works at any distance.
             The communication still does not function across planes.
-        """, tags=['Attune (ritual; see text)']),
+        """, tags=['Attune (ritual; see text)'], ritual_time='one minute'),
         Spell('Planar Bond', 8, 'Up to five ritual participants', """
             This ritual functions like the \\ritual<telepathic bond> ritual, except that the effect works at any distance and across planes.
             It gains the \\glossterm<Planar> tag in addition to the tags from the \\ritual<telepathic bond> ritual.
-        """, tags=['Attune (ritual; see text)']),
+        """, tags=['Attune (ritual; see text)'], ritual_time='one minute'),
         Spell('Seek Legacy', 3, 'One ritual participant', """
             The target learns the precise distance and direction to their \\glossterm<legacy item>, if it is on the same plane.
-
-            This ritual takes 24 hours to perform, and requires 8 action points from its ritual participants.
-        """, tags=['AP']),
+        """, tags=['AP'], ritual_time='24 hours'),
         Spell('Scry Creature', 5, 'One creature on the same plane as you', """
             Make an attack vs. Mental against the target.
             You do not need \\glossterm<line of sight> or \\glossterm<line of effect> to the target.
@@ -335,13 +321,11 @@ revelation=MysticSphere(
             This sensor functions like the sensor created by the \\spell<arcane eye> spell, except that you cannot move the sensor manually.
             Instead, it automatically tries to follow the target to stay in its space.
             At the end of each phase, if the sensor is not in the target's space, this effect is \\glossterm<dismissed>.
-
-            This ritual takes one hour to perform.
-        """, tags=['AP', 'Scrying']),
+        """, tags=['AP', 'Scrying'], ritual_time='one hour'),
         Spell('Interplanar Scry Creature', 8, 'One creature on the same plane as you', """
             This ritual functions like the \\ritual<scry creature> ritual, except that the target does not have to be on the same plane as you.
             It gains the \\glossterm<Planar> tag in addition to the tags from the \\ritual<scry creature> ritual.
-        """, tags=['AP', 'Scrying']),
+        """, tags=['AP', 'Scrying'], ritual_time='one hour'),
     ],
     category='buff, offense',
 )

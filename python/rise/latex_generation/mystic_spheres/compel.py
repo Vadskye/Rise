@@ -220,9 +220,7 @@ compel=MysticSphere(
             Make an attack vs. Mental against each target.
 
             \\hit Each target is unable to say things it knows to be untrue.
-
-            This ritual takes one minute to perform.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one minute'),
     ],
     category='debuff, combat',
 )

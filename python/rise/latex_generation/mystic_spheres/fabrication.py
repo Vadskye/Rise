@@ -235,24 +235,23 @@ fabrication=MysticSphere(
             The object appears out of thin air in the target location.
             % TODO: add ability to create objects of other sizes/materials
             It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as wood or cloth.
-
-            This ritual takes one hour to perform.
-        """, tags=['Attune (ritual)', 'Manifestation']),
+        """, tags=['Attune (ritual)', 'Manifestation'], ritual_time='one hour'),
         Spell('Create Sustenance', 3, 'One unoccupied squre within \\rngclose range', """
             This ritual creates food and drink in that square that is sufficient to sustain two Medium creatures per \\glossterm<power> for 24 hours.
             The food that this ritual creates is simple fare of your choice -- highly nourishing, if rather bland.
-
-            This ritual takes one hour to perform.
-        """, tags=['AP', 'Creation']),
+        """, tags=['AP', 'Creation'], ritual_time='one hour'),
         Spell('Copy Writing', 1, ['One Small or smaller written work within \\rngclose range', 'One Small or smaller set of blank pages within \\rngclose range'], """
             You copy the writing from the primary target onto the secondary target.
             The secondary target must have enough room for the writing.
             This ritual takes half the time required to copy the writing by hand, to a minimum of one minute, and does not require writing materials.
-        """, tags=[]),
+            It requires one \\glossterm<fatigue point> from its participants.
+        """, tags=[], ritual_time='special'),
         Spell('Greater Copy Writing', 4, ['One Medium or smaller written work within \\rngclose range', 'One Medium or smaller set of blank pages within \\rngclose range'], """
             This ritual functions like the \\spell<copy writing> ritual, except that it can target objects of Medium or smaller size.
+            % "This ritual takes" -- make checks happy
             In addition, the time required to perform this ritual decreases to one tenth of the time required to copy the writing by hand, to a minimum of one minute.
-        """, tags=[]),
+            It requires one \\glossterm<fatigue point> from its participants.
+        """, tags=[], ritual_time='special'),
     ],
     category='damage',
 )
