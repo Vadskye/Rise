@@ -282,14 +282,10 @@ aquamancy=MysticSphere(
     rituals=[
         Spell('Dampen', 1, 'Up to five ritual participants', """
             Each target gains a \\glossterm<magic bonus> equal to your \\glossterm<power> to \\glossterm<resistances> against fire damage.
-
-            This ritual takes one minute to perform.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one minute'),
         Spell('Water Breathing', 3, 'One ritual participant', """
             The target can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
-
-            This ritual takes one minute to perform.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one minute'),
     ],
     category='damage',
 )

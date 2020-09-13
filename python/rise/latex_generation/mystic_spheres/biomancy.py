@@ -60,13 +60,14 @@ biomancy=MysticSphere(
             \\rank<7> If the target is \\glossterm<bloodied>, it regains three hit points instead of two.
         """, tags=[]),
         Spell('Vital Regeneration', 5, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            A the end of each round, the target can spend an \\glossterm<action point>.
-            If it does, it removes one of its \\glossterm<vital wounds>.
+            A the end of each round, the target can remove one of its \\glossterm<vital wounds>.
+            If it does, it gains a \\glossterm<fatigue point>.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<7> The target can remove up to two \\glossterm<vital wounds> for each action point spent instead of only one.
+            \\rank<7> The target can remove two \\glossterm<vital wounds> instead of one.
+            It gains one \\glossterm<fatigue point> per vital wound removed this way.
         """, tags=['Attune (target)']),
         Spell('Regeneration', 4, 'Yourself', """
             At the end of each round, if you did not lose a \\glossterm<hit point> that round, you regain a lost hit point.
@@ -234,19 +235,14 @@ biomancy=MysticSphere(
             Its maximum age increases to that of a human (rolled secretly).
             This effect is permanent.
 
-            This ritual takes 24 hours to perform, and requires 50 action points from its participants.
-            You can only learn this ritual if you know this mystic sphere through the nature \\glossterm<magic source>.
-        """, tags=['AP', ]),
+            You can only learn this ritual if you have access to this mystic sphere through the nature \\glossterm<magic source>.
+        """, tags=[], ritual_time='24 hours'),
         Spell('Air Breathing', 3, 'One Medium or smaller ritual participant', """
             The target can breathe air as easily as a human breathes air, preventing it from suffocating above water if it can normally only breathe water or some other substance.
-
-            This ritual takes one minute to perform.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one minute'),
         Spell('Water Breathing', 3, 'One Medium or smaller ritual participant', """
             The target can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
-
-            This ritual takes one minute to perform.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one minute'),
     ],
     category='damage',
 )

@@ -251,12 +251,10 @@ umbramancy=MysticSphere(
         """, tags=['Sensation', 'Sustain (minor)']),
     ],
     rituals=[
-        Spell('Sunlight Ward', 3, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
+        Spell('Sunlight Ward', 3, 'One ritual participant', """
             The target is never considered to be in natural sunlight.
             This does not impair its vision, but protects it if it would otherwise suffer negative consequences for being in natural sunlight.
-
-            This ritual takes one hour to perform.
-        """, tags=['Attune (target)']),
+        """, tags=['Attune (target)'], ritual_time='one hour'),
     ],
     category='buff, defense',
 )

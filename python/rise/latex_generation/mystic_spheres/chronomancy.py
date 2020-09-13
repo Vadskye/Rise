@@ -263,9 +263,7 @@ chronomancy=MysticSphere(
             Additionally, this can make transporting a fallen comrade more pleasant.
 
             % Does this need to explicitly clarify that it doesn't stop time from passing for the creature's soul?
-
-            This ritual takes one minute to perform.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one minute'),
     ],
     category='debuff, combat',
 )
