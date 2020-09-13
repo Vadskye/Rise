@@ -193,7 +193,7 @@ polymorph=MysticSphere(
         # would want it...
         Spell('Mending', 1, 'One \\glossterm<unattended> object within \\rngclose range', """
             The target is regains one \\glossterm<hit point>.
-        """, tags=['AP'], ritual_time='one minute'),
+        """, tags=[], ritual_time='one minute'),
         Spell('Morph Weapon', 1, 'One unattended manufactured weapon', """
             The target changes into another weapon from the same weapon group.
             At least one ritual participant must be proficient with that weapon group.
@@ -213,10 +213,10 @@ polymorph=MysticSphere(
         """, tags=['Attune (ritual)'], ritual_time='one hour'),
         Spell('Enduring Fortify', 4, 'One \\glossterm<unattended>, nonmagical object or part of an object of up to Large size.', """
             This ritual functions like the \\spell<fortify> ritual, except that the effect lasts for one hundred years.
-        """, tags=['AP'], ritual_time='24 hours'),
+        """, tags=[], ritual_time='24 hours'),
         Spell('Enduring Greater Fortify', 5,'Greater Fortify', """
             This ritual functions like the \\spell<greater fortify> ritual, except that the effect lasts for one hundred years.
-        """, tags=['AP'], ritual_time='24 hours'),
+        """, tags=[], ritual_time='24 hours'),
         Spell('Greater Fortify', 4, 'One \\glossterm<unattended>, nonmagical object or part of an object of up to Large size.', """
             This ritual functions like the \\spell<fortify> ritual, except that the bonus to \\glossterm<resistances> increases to 10.
         """, tags=['Attune (ritual)'], ritual_time='one hour'),
@@ -227,12 +227,12 @@ polymorph=MysticSphere(
             The target is transformed into ironwood.
             While remaining natural wood in almost every way, ironwood is as strong, heavy, and resistant to fire as iron.
             Metallic armor and weapons, such as full plate, can be crafted from ironwood.
-        """, tags=['AP'], ritual_time='24 hours'),
+        """, tags=[], ritual_time='24 hours'),
         Spell('Purify Sustenance', 1, 'All food and water in a single square within \\rngclose range', """
             The targets are purified.
             Spoiled, rotten, poisonous, or otherwise contaminated food and water becomes pure and suitable for eating and drinking.
             This does not prevent subsequent natural decay or spoiling.
-        """, tags=['AP'], ritual_time='one hour'),
+        """, tags=[], ritual_time='one hour'),
     ],
     category='damage',
 )

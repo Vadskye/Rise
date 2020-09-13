@@ -195,7 +195,7 @@ photomancy=MysticSphere(
         Spell('Permanent Light', 3, 'One Medium or smaller unattended object within \\rngclose range', """
             This ritual functions like the \\spell<continuous light> ritual, except that it loses the \\glossterm<Attune> (ritual) tag and the effect lasts permanently.
             In addition, it can only target objects.
-        """, tags=['AP', 'Sensation'], ritual_time='24 hours'),
+        """, tags=['Sensation'], ritual_time='24 hours'),
     ],
     category='debuff, combat',
 )
