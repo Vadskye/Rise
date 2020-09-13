@@ -239,7 +239,7 @@ fabrication=MysticSphere(
         Spell('Create Sustenance', 3, 'One unoccupied squre within \\rngclose range', """
             This ritual creates food and drink in that square that is sufficient to sustain two Medium creatures per \\glossterm<power> for 24 hours.
             The food that this ritual creates is simple fare of your choice -- highly nourishing, if rather bland.
-        """, tags=['AP', 'Creation'], ritual_time='one hour'),
+        """, tags=['Creation'], ritual_time='one hour'),
         Spell('Copy Writing', 1, ['One Small or smaller written work within \\rngclose range', 'One Small or smaller set of blank pages within \\rngclose range'], """
             You copy the writing from the primary target onto the secondary target.
             The secondary target must have enough room for the writing.

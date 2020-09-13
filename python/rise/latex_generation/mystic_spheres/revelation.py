@@ -309,7 +309,7 @@ revelation=MysticSphere(
         """, tags=['Attune (ritual; see text)'], ritual_time='one minute'),
         Spell('Seek Legacy', 3, 'One ritual participant', """
             The target learns the precise distance and direction to their \\glossterm<legacy item>, if it is on the same plane.
-        """, tags=['AP'], ritual_time='24 hours'),
+        """, tags=[], ritual_time='24 hours'),
         Spell('Scry Creature', 5, 'One creature on the same plane as you', """
             Make an attack vs. Mental against the target.
             You do not need \\glossterm<line of sight> or \\glossterm<line of effect> to the target.
@@ -321,11 +321,11 @@ revelation=MysticSphere(
             This sensor functions like the sensor created by the \\spell<arcane eye> spell, except that you cannot move the sensor manually.
             Instead, it automatically tries to follow the target to stay in its space.
             At the end of each phase, if the sensor is not in the target's space, this effect is \\glossterm<dismissed>.
-        """, tags=['AP', 'Scrying'], ritual_time='one hour'),
+        """, tags=['Scrying'], ritual_time='one hour'),
         Spell('Interplanar Scry Creature', 8, 'One creature on the same plane as you', """
             This ritual functions like the \\ritual<scry creature> ritual, except that the target does not have to be on the same plane as you.
             It gains the \\glossterm<Planar> tag in addition to the tags from the \\ritual<scry creature> ritual.
-        """, tags=['AP', 'Scrying'], ritual_time='one hour'),
+        """, tags=['Scrying'], ritual_time='one hour'),
     ],
     category='buff, offense',
 )

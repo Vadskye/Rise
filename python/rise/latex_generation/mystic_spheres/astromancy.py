@@ -221,7 +221,7 @@ astromancy=MysticSphere(
             % TODO: Is this planar cosmology correct?
             The Astral Plane connects to every plane, but transit from other planes is usually more limited.
             From the Material Plane, you can only reach the Astral Plane.
-        """, tags=['AP', 'Sustain (standard)'], ritual_time='one week'),
+        """, tags=['Sustain (standard)'], ritual_time='one week'),
         Spell('Plane Shift', 4, ['Up to five Large or smaller ritual participants', 'One \\glossterm<planar rift> within \\rngmed range'], """
             The target creatures teleport to the unoccupied spaces closest to the other side of the target planar rift.
             For details about \\glossterm<planar rifts>, see \\pcref<Planar Rifts>.
@@ -251,7 +251,7 @@ astromancy=MysticSphere(
             The new destination will be one that more closely resembles your mental image.
             If no such area exists, the ritual simply fails.
             % TODO: does this need more clarity about what teleportation works?
-        """, tags=['AP'], ritual_time='24 hours'),
+        """, tags=[], ritual_time='24 hours'),
         Spell('Retrieve Legacy', 4, 'One ritual participant', """
             If the target's \\glossterm<legacy item> is on the same plane and \\glossterm<unattended>, it is teleported into the target's hand.
         """, tags=[], ritual_time='24 hours'),
