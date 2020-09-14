@@ -117,6 +117,14 @@ biomancy=MysticSphere(
             \\rank<5> The bonus increases to +3.
             \\rank<7> The bonus increases to +4.
         """, tags=['Attune (self)']),
+        Spell('Longshot', 1, 'Yourself', """
+            The target reduces its penalties for \\glossterm<range increments> by 1.
+
+            \\rankline
+            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<5> The penalty reduction increases to 2.
+            \\rank<7> The penalty reduction increases to 3.
+        """, tags=['Attune (target)']),
         Spell('Enhanced Senses', 1, 'Yourself', """
             The target gains a +3 \\glossterm<magic bonus> to the Awareness skill.
 
