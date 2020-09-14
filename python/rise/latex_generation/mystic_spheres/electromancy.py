@@ -83,14 +83,14 @@ spells=[
         \\rank<6> The damage increases to \\glossterm<standard damage>.
         \\rank<8> The damage increases to \\glossterm<standard damage> +1d.
     """, tags=[]),
-    Spell('Magnetic Blade', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-        Metal weapons wielded by the target gain a +2 \\glossterm<magic bonus> to \\glossterm<accuracy> against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
+    Spell('Magnetic Blade', 3, 'Yourself', """
+        Metal weapons wielded by the target gain a +1 bonus to \\glossterm<accuracy> against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
 
         You can cast this spell as a \\glossterm<minor action>.
 
         \\rankline
-        \\rank<5> The target is also immune to the \\textit<disarm> ability and similar effects if it is wearing metal gauntlets.
-        \\rank<7> The accuracy bonus increases to +3.
+        \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+        \\rank<7> The accuracy bonus increases to +2.
     """, tags=['Attune (target)']),
     Spell('Chain Lightning', 5,
           ['One creature or object within \\rngmed range', '\\glossterm<Enemies> within a \\areasmall radius from the primary target'], """
@@ -135,13 +135,13 @@ spells=[
         \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
         \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
     """, tags=[]),
-    Spell('Energize', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+    Spell('Energize', 2, 'Yourself', """
         The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<base speed>, up to a maximum of double its \\glossterm<base speed>.
 
         You can cast this spell as a \\glossterm<minor action>.
 
         \\rankline
-        \\rank<4> The speed bonus increases to +15 feet.
+        \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
         \\rank<6> The speed bonus increases to +20 feet.
         \\rank<8> The speed bonus increases to +30 feet.
     """, tags=['Attune (target)']),

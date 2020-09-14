@@ -47,12 +47,12 @@ channel_divinity=MysticSphere(
             \\rank<5> The bonus increases to +5.
             \\rank<7> The bonus increases to +6.
         """, tags=['Attune (self)']),
-        Spell('Agent of the Divine', 5, 'Yourself', """
+        Spell('Agent of the Divine', 6, 'Yourself', """
             You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> and all \\glossterm<defenses>.
             In addition, you gain a +2 \\glossterm<magic bonus> to \\glossterm<power>.
 
             \\rankline
-            \\rank<7> The accuracy bonus increases to +2.
+            \\rank<8> The accuracy bonus increases to +2.
         """, tags=['Attune (self)']),
         Spell('Endurance of the Faithful', 3, 'Yourself', """
             This spell does not have the \\glossterm<Focus> tag.
@@ -156,18 +156,17 @@ channel_divinity=MysticSphere(
             \\hit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<5> You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with the attack.
+            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Attune (self)', 'Emotion']),
-        Spell('Faithful Endurance', 2, 'Yourself', """
+        Spell('Faithful Endurance', 3, 'Yourself', """
             You gain a +1 \\glossterm<magic bonus> to \\glossterm<vital rolls> (see \\pcref<Vital Roll>).
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<4> The bonus increases to +2.
-            \\rank<6> The bonus increases to +3.
-            \\rank<8> The bonus increases to +4.
+            \\rank<5> The bonus increases to +2.
+            \\rank<7> The bonus increases to +3.
         """, tags=['Attune (self)']),
         Spell('Divine Conduit', 2, 'Yourself', """
             You reduce your \\glossterm<focus penalty> with divine spells by 2.

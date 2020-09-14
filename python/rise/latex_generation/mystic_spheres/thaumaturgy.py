@@ -145,13 +145,13 @@ thaumaturgy=MysticSphere(
             You cannot voluntarily allow spells to affect you while this effect lasts.
             After you absorb three spells in this way, this effect ends.
         """, tags=['Attune (self)']),
-        Spell('Enhance Magic', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Enhance Magic', 3, 'Yourself', """
             The target gains a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<magical> abilities.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<5> The target gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with \\glossterm<magical> abilities.
+            \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<7> The bonus increases to +4.
         """, tags=['Attune (target)']),
         # Is this worth the complexity it adds to the system?
@@ -208,7 +208,7 @@ thaumaturgy=MysticSphere(
             \\rank<8> The accuracy bonus increases to +2.
         """, tags=[]),
         Spell('Absorb Magic', 6, 'Yourself', """
-            You gain a +2 \\glossterm<magic bonus> to defenses against \\glossterm<magical> effects.
+            You gain a +2 bonus to defenses against \\glossterm<magical> effects.
             In addition, the next time a \\glossterm<magical> attack beats your defenses, it has no effect on you.
             When you negate an attack in this way, you regain one \\glossterm<hit point> and this spell's effect ends.
 

@@ -103,13 +103,13 @@ chronomancy=MysticSphere(
             \\rank<5> On a \\glossterm<critical hit>, the target is \\glossterm<decelerated> and \\glossterm<stunned> instead of \\glossterm<slowed> and \\glossterm<dazed>.
             \\rank<7> On a hit, the target is decelerated and stunned instead of slowed and dazed.
         """, tags=[]),
-        Spell('Haste', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Haste', 1, 'Yourself', """
             The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<base speed>, up to a maximum of double its \\glossterm<base speed>.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<3> The speed bonus increases to +15 feet.
+            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<5> The speed bonus increases to +20 feet.
             \\rank<7> The speed bonus increases to +30 feet.
         """, tags=['Attune (target)']),
@@ -214,11 +214,11 @@ chronomancy=MysticSphere(
             After casting this spell, you cannot cast it again until you take a \\glossterm<short rest>.
         """, tags=[]),
         Spell('Evasion', 4, 'Yourself', """
-            When you are attacked by an ability that affects an area, you can use your Reflex defense in place of your armor against that attack.
+            When you are attacked by an ability that affects an area, you can use your Reflex defense in place of your Armor defense against that attack.
 
             \\rankline
-            \\rank<6> You also gain a +1 \\glossterm<magic bonus> to Reflex defense.
-            \\rank<8> The defense bonus increases to +2.
+            \\rank<6> You also gain a +2 \\glossterm<magic bonus> to Reflex defense.
+            \\rank<8> You can use your Reflex defense to replace any defense, not just Armor defense.
         """, tags=['Attune (self)']),
         Spell('Minor Acceleration', 6, 'Yourself', """
             You can take two \\glossterm<minor actions> each round instead of one.
