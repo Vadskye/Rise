@@ -43,14 +43,14 @@ telekinesis=MysticSphere(
             \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
         """, tags=[]),
-        Spell('Force Extension', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Force Extension', 3, 'Yourself', """
             Melee weapons wielded by the target gain +5 foot \\glossterm<magic bonus> to \\glossterm<reach>.
             This has no effect on ranged attacks the target makes.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<5> The target also gains a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities.
+            \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<7> The bonus to \\glossterm<reach> increases to +10 feet.
         """, tags=['Attune (target)']),
         Spell('Kinetic Impedance', 1, 'One Large or smaller target within \\rngmed range', """
@@ -127,7 +127,7 @@ telekinesis=MysticSphere(
             \\rank<3> The bonus increases to +6.
             \\rank<5> The target is reduced to a quarter of its normal weight. In addition, the bonus increases to +8.
             \\rank<7> The bonus increases to +10.
-        """, tags=['Attune (target)']),
+        """, tags=['Attune (self)']),
         Spell('Levitate', 4, 'Yourself', """
             % TODO: Wording
             As long as you remain within 50 feet above a surface that could support its weight, it floats in midair, unaffected by gravity.
@@ -185,16 +185,16 @@ telekinesis=MysticSphere(
             \\rank<6> The accuracy bonus increases to +3.
             \\rank<8> The accuracy bonus increases to +4.
         """, tags=[]),
-        Spell('Reactive Deflection', 1, 'Yourself', """
+        Spell('Reactive Deflection', 2, 'Yourself', """
             You gain a +1 \\glossterm<magic bonus> to Armor defense.
-            This bonus is increased to +4 against \\glossterm<mundane> ranged attacks from weapons or projectiles that are Small or smaller.
+            In addition, you gain a +2 bonus to defenses against \\glossterm<mundane> ranged attacks from weapons or projectiles that are Small or smaller.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<3> The bonus against ranged attacks increases to +6.
-            \\rank<5> The bonus to Armor defense increases to +2.
-            \\rank<7> The bonus against ranged attacks increases to +8.
+            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<6> The bonus to Armor defense increases to +2.
+            \\rank<8> The bonus to Armor defense increases to +3.
         """, tags=['Attune (self)']),
     ],
     category='debuff, combat',

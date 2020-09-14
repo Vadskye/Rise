@@ -175,31 +175,34 @@ barrier=MysticSphere(
             Whenever an object, creature, or ability passes through the barrier from the chosen side, the barrier parts to allow it through.
             If it stops halfway, it can return to its side, but once it passes through fully it treats the barrier as impassable from the other side.
         """, tags=['Manifestation', 'Sustain (standard)']),
-        Spell('Kinetic Shield', 1, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
+        Spell('Kinetic Shield', 1, 'Yourself', """
             The target gains a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical> damage.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<3> The bonus increases to +4.
+            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            In addition, the bonus increases to +4.
             \\rank<5> The bonus increases to be equal to half your \\glossterm<power>.
             \\rank<7> The bonus increases to be equal to your \\glossterm<power>.
         """, tags=['Attune (target)']),
-        Spell('Resist Energy', 1, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
+        Spell('Resist Energy', 1, 'Yourself', """
             The target gains a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<energy> damage.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<3> The bonus increases to +4.
+            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            In addition, the bonus increases to +4.
             \\rank<5> The bonus increases to be equal to half your \\glossterm<power>.
             \\rank<7> The bonus increases to be equal to your \\glossterm<power>.
         """, tags=['Attune (target)']),
-        Spell('Universal Shield', 2, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
+        Spell('Universal Shield', 2, 'Yourself', """
             The target gains a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against all damage.
 
             \\rankline
-            \\rank<4> The bonus increases to +4.
+            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            In addition, the bonus increases to +4.
             \\rank<6> The bonus increases to be equal to half your \\glossterm<power>.
             \\rank<8> The bonus increases to be equal to your \\glossterm<power>.
         """, tags=['Attune (target)']),
@@ -234,15 +237,15 @@ barrier=MysticSphere(
             \\rankline
             \\rank<8> The range of the spell and the range of the reflection increase to \\rngmed.
         """, tags=['Attune (target)']),
-        Spell('Deflective Shield', 1, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
+        Spell('Deflective Shield', 2, 'Yourself', """
             The target gains a +1 \\glossterm<magic bonus> to Armor defense and Reflex defense.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<3> The bonus to Reflex defense increases to +2.
-            \\rank<5> The bonus to Armor defense increases to +2.
-            \\rank<7> The bonus to Reflex dfense increases to +3.
+            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<6> The bonus increases to +2.
+            \\rank<8> The bonus increases to +3.
         """, tags=['Attune (target)']),
         Spell('Antilife Shell', 6, '\\glossterm<Enemies> that enter the area (see text)', """
             This spell creates a repulsive field in a \\areamed radius \\glossterm<zone> from your location.

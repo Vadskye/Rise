@@ -133,13 +133,13 @@ aquamancy=MysticSphere(
             \\rank<6> The area of the wall increases to a \\areahuge line.
             \\rank<8> The area of the wall increases to a \\areaext line.
         """, tags=['Sustain (minor)', 'Manifestation']),
-        Spell('Underwater Freedom', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Underwater Freedom', 2, 'Yourself', """
             The target suffers no penalties for acting underwater, except for those relating to using ranged weapons.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<4> The target can also breathe water as if it was air.
+            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The target also gains a swim speed equal to half its \\glossterm<base speed>.
             \\rank<8> The swim speed increases to be equal to the target's \\glossterm<base speed>.
         """, tags=['Attune (target)']),

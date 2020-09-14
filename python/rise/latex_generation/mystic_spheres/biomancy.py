@@ -78,52 +78,52 @@ biomancy=MysticSphere(
             \\rank<6> You also gain a +1 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
             \\rank<8> You regain two hit points instead of one.
         """, tags=['Attune (self)']),
-        Spell('Swimmer', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Swimmer', 2, 'Yourself', """
             The target gains a \\glossterm<swim speed> equal to its \\glossterm<base speed>.
             In addition, it gains a +2 \\glossterm<magic bonus> to Swim checks.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<4> The bonus increases to +4.
-            \\rank<6> The bonus increases to +6.
-            \\rank<8> The bonus increases to +8.
+            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<6> The bonus increases to +4.
+            \\rank<8> The bonus increases to +6.
         """, tags=['Attune (target)']),
-        Spell('Climber', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Climber', 2, 'Yourself', """
             The target gains a \\glossterm<climb speed> equal to its \\glossterm<base speed>.
             In addition, it gains a +2 \\glossterm<magic bonus> to Climb checks.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<4> The bonus increases to +4.
-            \\rank<6> The bonus increases to +6.
-            \\rank<8> The bonus increases to +8.
+            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<6> The bonus increases to +4.
+            \\rank<8> The bonus increases to +6.
         """, tags=['Attune (target)']),
-        Spell('Runner', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Runner', 2, 'Yourself', """
             The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<land speed>.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<4> The bonus increases to +15 feet.
+            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The bonus increases to +20 feet.
             \\rank<8> The bonus increases to +30 feet.
         """, tags=['Attune (target)']),
-        Spell('Enhanced Muscles', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Enhanced Muscles', 3, 'Yourself', """
             The target gains a +2 \\glossterm<magic bonus> to Strength-based checks.
 
             \\rankline
             \\rank<5> The bonus increases to +3.
             \\rank<7> The bonus increases to +4.
         """, tags=['Attune (self)']),
-        Spell('Enhanced Senses', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Enhanced Senses', 1, 'Yourself', """
             The target gains a +3 \\glossterm<magic bonus> to the Awareness skill.
 
             \\rankline
-            \\rank<3> The bonus increases to +4.
+            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<5> The bonus increases to +5.
-            \\rank<7> The bonus increases to +6.
+            \\rank<7> The bonus increases to +7.
         """, tags=['Attune (target)']),
         Spell('Scent', 3, 'Yourself', """
             You gain the \\glossterm<scent> ability, giving you a +10 bonus to scent-based Awareness checks (see \\pcref<Senses>).
@@ -134,15 +134,15 @@ biomancy=MysticSphere(
             \\rank<5> The bonus increases to +15.
             \\rank<7> The bonus increases to +20.
         """, tags=['Attune (self)']),
-        Spell('Acidic Blood', 3, ['Yourself or one \\glossterm<ally> within \\rngmed range', 'Everything adjacent to the primary target'], """
+        Spell('Acidic Blood', 3, ['Yourself', 'Everything adjacent to the primary target'], """
             The primary target's blood becomes acidic.
             This does not harm it, but the blood can be dangerous to anything nearby when it bleeds.
             At the end of each round, if the primary target was \\glossterm<wounded> during that round, make an attack vs. Fortitude against everything adjacent to the target.
             \\hit Each secondary target takes acid \\glossterm<standard damage> -1d.
 
             \\rankline
-            \\rank<5> The damage increases to \\glossterm<standard damage>.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<7> The damage increases to \\glossterm<standard damage>.
         """, tags=['Attune (target)']),
         Spell('Dragon Breath', 4, 'Yourself (see text)', """
             You gain the ability to breath energy like a dragon.
