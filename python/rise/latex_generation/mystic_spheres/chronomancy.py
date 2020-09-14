@@ -154,14 +154,14 @@ chronomancy=MysticSphere(
             \\rank<6> The maximum size of the target increases to Huge.
             \\rank<8> The maximum size of the target increases to Gargantuan.
         """, tags=[]),
-        Spell('Accelerated Reaction', 2, 'Yourself', """
+        Spell('Accelerated Reaction', 1, 'Yourself', """
             You gain a +2 \\glossterm<magic bonus> to Reflex defense and \\glossterm<initiative> checks.
 
             \\rankline
-            \\rank<4> The bonuses increase to +3.
-            \\rank<6> The bonuses increase to +4.
-            \\rank<8> The bonuses increase to +5.
-        """, tags=['Attune (self)']),
+            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<5> The bonuses increase to +4.
+            \\rank<7> The bonuses increase to +5.
+        """, tags=['Attune (target)']),
         Spell('Mass Slow', 1, '\\glossterm<Enemies> in a \\areamed radius within \\rngmed range', """
             Make an attack vs. Mental against each target.
             \\hit Each target is \\glossterm<slowed> until the end of the next round.
