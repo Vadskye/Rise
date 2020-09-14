@@ -204,6 +204,15 @@ astromancy=MysticSphere(
             \\rank<5> The maximum size increases to Huge.
             \\rank<7> The maximum size increases to Gargantuan.
         """, tags=[]),
+        Spell('Phasing Blade', 3, 'Yourself', """
+            Whenever the target makes a \\glossterm<strike>, its weapon or projectile can pass through a single solid object up to one foot thick on its way to the strike's target.
+            This can allow the target to ignore \\glossterm<cover>, or even attack through solid walls.
+            It does not allow the target to ignore armor, shields, or or similar items used by the target of its attacks.
+
+            \\rankline
+            \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<7> The strike can penetrate through any number of solid objects with a combined thickness of ten feet or less.
+        """, tags=[]),
     ],
 
     rituals=[
