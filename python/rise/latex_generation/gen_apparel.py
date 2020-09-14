@@ -8,322 +8,491 @@ from rise.latex.util import latexify, longtablify
 def generate_armor():
     apparel = []
 
-    apparel.append(MagicItem(
-        name="Protective Armor",
-        level=5,
-        material_type='Body armor',
-        tags=[],
-        description="""
-            You gain a +1 \\glossterm<magic bonus> to Armor defense.
-        """,
-        short_description="Grants +1 Armor defense",
-    ))
+    apparel += [
+        MagicItem(
+            name="Protective Armor",
+            level=5,
+            material_type='Body armor',
+            tags=[],
+            description="""
+                You gain a +1 \\glossterm<magic bonus> to Armor defense.
+            """,
+            short_description="Grants +1 Armor defense",
+        ),
+        MagicItem(
+            name="Protective Armor, Greater",
+            level=11,
+            material_type='Body armor',
+            tags=[],
+            description="""
+                You gain a +2 \\glossterm<magic bonus> to Armor defense.
+            """,
+            short_description="Grants +2 Armor defense",
+        ),
+        MagicItem(
+            name="Protective Armor, Supreme",
+            level=17,
+            material_type='Body armor',
+            tags=[],
+            description="""
+                You gain a +3 \\glossterm<magic bonus> to Armor defense.
+            """,
+            short_description="Grants +3 Armor defense",
+        ),
+        MagicItem(
+            name="Protective Shield",
+            level=5,
+            material_type='Shield',
+            tags=[],
+            description="""
+                You gain a +1 \\glossterm<magic bonus> to Armor defense.
+            """,
+            short_description="Grants +1 Armor defense",
+        ),
+        MagicItem(
+            name="Protective Shield, Greater",
+            level=11,
+            material_type='Shield',
+            tags=[],
+            description="""
+                You gain a +2 \\glossterm<magic bonus> to Armor defense.
+            """,
+            short_description="Grants +2 Armor defense",
+        ),
+        MagicItem(
+            name="Protective Shield, Supreme",
+            level=17,
+            material_type='Shield',
+            tags=[],
+            description="""
+                You gain a +3 \\glossterm<magic bonus> to Armor defense.
+            """,
+            short_description="Grants +3 Armor defense",
+        ),
+    ]
 
-    apparel.append(MagicItem(
-        name="Protective Armor, Greater",
-        level=14,
-        material_type='Body armor',
-        tags=[],
-        description="""
-            You gain a +2 \\glossterm<magic bonus> to Armor defense.
-        """,
-        short_description="Grants +2 Armor defense",
-    ))
+    apparel += [
+        MagicItem(
+            name="Ring of Protection",
+            level=10,
+            material_type='Body armor',
+            tags=[],
+            description="""
+                You gain a +1 \\glossterm<magic bonus> to all defenses.
+            """,
+            short_description="Grants +1 defenses",
+        ),
+        MagicItem(
+            name="Ring of Protection, Greater",
+            level=16,
+            material_type='Body armor',
+            tags=[],
+            description="""
+                You gain a +2 \\glossterm<magic bonus> to all defenses.
+            """,
+            short_description="Grants +2 defenses",
+        ),
+    ]
 
-    apparel.append(MagicItem(
-        name="Protective Shield",
-        level=5,
-        material_type='Shield',
-        tags=[],
-        description="""
-            You gain a +1 \\glossterm<magic bonus> to Armor defense.
-        """,
-        short_description="Grants +1 Armor defense",
-    ))
+    apparel += [
+        MagicItem(
+            name='Shield of Arrow Catching',
+            level=5,
+            material_type='Shield',
+            description="""
+                When a creature within a \\areamed radius emanation from you would be attacked by a ranged weapon, the attack is redirected to target you instead.
+                Resolve the attack as if it had initially targeted you, except that the attack is not affected by cover or concealment.
+                This item can only affect projectiles and thrown objects that are Small or smaller.
+            """,
+            short_description="Redirects small nearby projectiles to hit you",
+        ),
+        MagicItem(
+            name='Shield of Arrow Catching, Greater',
+            level=11,
+            material_type='Shield',
+            description="""
+                This item functions like the \\mitem<shield of arrow catching> item, except that it affects a \\arealarge radius from you.
+                In addition, the item only redirects projectiles away from \\glossterm<allies> within the area, not all creatures.
+            """,
+            short_description="Selectively redirects small projectiles to hit you",
+        ),
+        MagicItem(
+            name='Shield of Boulder Catching',
+            level=8,
+            material_type='Shield',
+            description="""
+                This item functions like the \\mitem<shield of arrow catching> item, except that it can affect projectile and thrown objects of up to Large size.
+            """,
+            short_description="Redirects large nearby projectiles to hit you",
+        ),
+        MagicItem(
+            name='Shield of Boulder Catching, Greater',
+            level=14,
+            material_type='Shield',
+            description="""
+                This item functions like the \\mitem<greater shield of arrow catching> item, except that it can affect projectile and thrown objects of up to Large size.
+            """,
+            short_description="Redirects large projectiles to hit you",
+        ),
+    ]
 
-    apparel.append(MagicItem(
-        name="Protective Shield, Greater",
-        level=14,
-        material_type='Shield',
-        tags=[],
-        description="""
-            You gain a +2 \\glossterm<magic bonus> to Armor defense.
-        """,
-        short_description="Grants +2 Armor defense",
-    ))
+    apparel += [
+        MagicItem(
+            name="Shield of Arrow Deflection",
+            level=5,
+            material_type='Shield',
+            description="""
+                You gain a +2 bonus to defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
+            """,
+            short_description="Grants +2 defenses vs small projectiles",
+        ),
+        MagicItem(
+            name="Shield of Arrow Deflection, Greater",
+            level=11,
+            material_type='Shield',
+            description="""
+                You gain a +4 bonus to defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
+            """,
+            short_description="Grants +4 defenses vs small projectiles",
+        ),
+        MagicItem(
+            name="Shield of Arrow Deflection, Supreme",
+            level=17,
+            material_type='Shield',
+            description="""
+                You gain a +6 bonus to defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
+            """,
+            short_description="Grants +6 defenses vs small projectiles",
+        ),
+        MagicItem(
+            name="Shield of Boulder Deflection",
+            level=8,
+            material_type='Shield',
+            description="""
+                This item functions like the \\mitem<shield of arrow deflection> item, except that it can affect weapons and projectiles of up to Large size.
+            """,
+            short_description="Grants +2 defenses vs projectiles",
+        ),
+        MagicItem(
+            name="Shield of Boulder Deflection, Greater",
+            level=14,
+            material_type='Shield',
+            description="""
+                This item functions like the \\mitem<greater shield of arrow deflection> item, except that it can affect weapons and projectiles of up to Large size.
+            """,
+            short_description="Grants +4 defenses vs projectiles",
+        ),
+    ]
 
-    apparel.append(MagicItem(
-        name='Shield of Arrow Catching',
-        level=5,
-        material_type='Shield',
-        description="""
-            When a creature within a \\areamed radius emanation from you would be attacked by a ranged weapon, the attack is redirected to target you instead.
-            Resolve the attack as if it had initially targeted you, except that the attack is not affected by cover or concealment.
-            This item can only affect projectiles and thrown objects that are Small or smaller.
-        """,
-        short_description="Redirects small nearby projectiles to hit you",
-    ))
+    apparel += [
+        MagicItem(
+            name="Shield of Bashing",
+            level=4,
+            material_type='Shield',
+            description="""
+                You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using this shield.
+            """,
+            short_description="Grants +2 power",
+        ),
+        MagicItem(
+            name="Shield of Bashing, Greater",
+            level=10,
+            material_type='Shield',
+            description="""
+                You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using this shield.
+            """,
+            short_description="Grants +4 power",
+        ),
+        MagicItem(
+            name="Shield of Bashing, Supreme",
+            level=16,
+            material_type='Shield',
+            description="""
+                You gain a +6 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using this shield.
+            """,
+            short_description="Grants +6 power",
+        ),
+    ]
 
-    apparel.append(MagicItem(
-        name='Shield of Arrow Catching, Greater',
-        level=11,
-        material_type='Shield',
-        description="""
-            This item functions like the \\mitem<shield of arrow catching> item, except that it affects a \\arealarge radius from you.
-            In addition, the item only redirects projectiles away from \\glossterm<allies> within the area, not all creatures.
-        """,
-        short_description="Selectively redirects small nearby projectiles to hit you",
-    ))
+    apparel += [
+        MagicItem(
+            name="Armor of Energy Resistance",
+            level=2,
+            tags=[],
+            material_type='Body armor',
+            description="""
+                You gain a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<energy damage>.
+                When you resist energy damage, this item sheds light as a torch until the end of the next round.
+                The color of the light depends on the energy damage resisted: blue for cold, yellow for electricity, and red for fire.
+            """,
+            short_description="Reduces energy damage",
+        ),
+        MagicItem(
+            name="Armor of Energy Resistance, Greater",
+            level=8,
+            tags=[],
+            material_type='Body armor',
+            description="""
+                This item functions like the \\mitem<armor of energy resistance> item, except that the bonus is equal to half your magical \\glossterm<power>, with a minimum bonus of +4.
+            """,
+            short_description="Significantly reduces energy damage",
+        ),
+        MagicItem(
+            name="Armor of Energy Resistance, Supreme",
+            level=14,
+            tags=[],
+            material_type='Body armor',
+            description="""
+                This item functions like the \\mitem<armor of energy resistance> item, except that the bonus is equal to your magical \\glossterm<power>, with a minimum bonus of +14.
+            """,
+            short_description="Significantly reduces energy damage",
+        ),
+        MagicItem(
+            name="Ring of Energy Resistance",
+            # +2 level since ring is secondary for this effect
+            level=4,
+            tags=[],
+            material_type='Ring',
+            description="""
+                You gain a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<energy damage>.
+                When you resist energy damage, this item sheds light as a torch until the end of the next round.
+                The color of the light depends on the energy damage resisted: blue for cold, yellow for electricity, and red for fire.
+            """,
+            short_description="Reduces energy damage",
+        ),
+        MagicItem(
+            name="Ring of Energy Resistance, Greater",
+            level=10,
+            tags=[],
+            material_type='Ring',
+            description="""
+                This item functions like the \\mitem<ring of energy resistance> item, except that the bonus is equal to half your magical \\glossterm<power>, with a minimum bonus of +5.
+            """,
+            short_description="Significantly reduces energy damage",
+        ),
+        MagicItem(
+            name="Ring of Energy Resistance, Supreme",
+            level=16,
+            tags=[],
+            material_type='Ring',
+            description="""
+                This item functions like the \\mitem<ring of energy resistance> item, except that the bonus is equal to your magical \\glossterm<power>, wiht a minimum bonus of +16.
+            """,
+            short_description="Significantly reduces energy damage",
+        ),
+    ]
 
-    apparel.append(MagicItem(
-        name='Shield of Boulder Catching',
-        level=8,
-        material_type='Shield',
-        description="""
-            This item functions like the \\mitem<shield of arrow catching> item, except that it can affect projectile and thrown objects of up to Large size.
-        """,
-        short_description="Redirects large nearby projectiles to hit you",
-    ))
+    apparel += [
+        MagicItem(
+            name="Featherlight Armor",
+            level=6,
+            material_type='Body armor',
+            description="""
+                This armor's \\glossterm<encumbrance> is reduced by 1.
+            """,
+            short_description="Reduces encumbrance by 1",
+        ),
+        MagicItem(
+            name="Featherlight Armor, Greater",
+            level=12,
+            material_type='Body armor',
+            description="""
+                This armor's \\glossterm<encumbrance> is reduced by 2.
+            """,
+            short_description="Reduces encumbrance by 2",
+        ),
+        MagicItem(
+            name="Featherlight Armor, Supreme",
+            level=18,
+            material_type='Body armor',
+            description="""
+                This armor's \\glossterm<encumbrance> is reduced by 3.
+            """,
+            short_description="Reduces encumbrance by 3",
+        ),
+    ]
 
-    apparel.append(MagicItem(
-        name="Shield of Arrow Deflection",
-        level=5,
-        material_type='Shield',
-        description="""
-            You gain a +2 \\glossterm<magic bonus> to Armor defense against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
-        """,
-        short_description="Blocks small projectiles",
-    ))
+    apparel += [
+        MagicItem(
+            name="Armor of Fortification",
+            level=8,
+            material_type='Body armor',
+            description="""
+                You gain a +4 bonus to defenses when determining whether a \\glossterm<strike> gets a \\glossterm<critical hit> against you instead of a normal hit.
+            """,
+            short_description="Reduces critical hits from strikes",
+        ),
+        MagicItem(
+            name="Armor of Fortification, Greater",
+            level=17,
+            material_type='Body armor',
+            description="""
+                This item functions like the \\mitem<armor of fortification> item, except that the bonus increases to +8.
+            """,
+            short_description="Drastically reduces critical hits from strikes",
+        ),
+        MagicItem(
+            name="Armor of Fortification, Mystic",
+            level=14,
+            material_type='Body armor',
+            description="""
+                This item functions like the \\mitem<armor of fortification> item, except that it applies against \\glossterm<magical> instead of against \\glossterm<strikes>.
+            """,
+            short_description="Reduces critical hits from magical attacks",
+        ),
+    ]
 
-    apparel.append(MagicItem(
-        name="Shield of Arrow Deflection, Greater",
-        level=14,
-        material_type='Shield',
-        description="""
-            You gain a +4 \\glossterm<magic bonus> to Armor defense against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
-        """,
-        short_description="Blocks small projectiles",
-    ))
+    apparel += [
+        MagicItem(
+            name="Hidden Armor",
+            level=3,
+            tags=['Sensation'],
+            material_type='Body armor',
+            description="""
+                 As a standard action, you can use this item.
+                 If you do, it appears to change shape and form to assume the shape of a normal set of clothing.
+                 You may choose the design of the clothing.
+                 The item retains all of its properties, including weight and sound, while disguised in this way.
+                 Only its visual appearance is altered.
 
-    apparel.append(MagicItem(
-        name="Shield of Boulder Deflection",
-        level=8,
-        material_type='Shield',
-        description="""
-            This item functions like the \\mitem<shield of arrow deflection> item, except that it can affect weapons and projectiles of up to Large size.
-        """,
-        short_description="Can block large projectiles",
-    ))
+                 Alternately, you may return the armor to its original appearance.
+            """,
+            short_description="Can look like normal clothing",
+        ),
+        MagicItem(
+            name="Hidden Armor, Greater",
+            level=9,
+            material_type='Body armor',
+            tags=['Sensation'],
+            description="""
+                This item functions like the \\mitem<hidden armor> item, except that the item also makes sound appropriate to its disguised form while disguised.
+            """,
+            short_description="Can look and sound like normal clothing",
+        ),
+    ]
 
-    apparel.append(MagicItem(
-        name="Shield of Boulder Deflection, Greater",
-        level=17,
-        material_type='Shield',
-        description="""
-            This item functions like the \\mitem<greater shield of arrow deflection> item, except that it can affect weapons and projectiles of up to Large size.
-        """,
-        short_description="Blocks large projectiles",
-    ))
+    apparel += [
+        MagicItem(
+            name="Armor of Kinetic Absorption",
+            level=2,
+            tags=[],
+            material_type='Body armor',
+            description="""
+                You gain a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
+            """,
+            short_description="Reduces physical damage",
+        ),
+        MagicItem(
+            name="Armor of Kinetic Absorption, Greater",
+            level=8,
+            tags=[],
+            material_type='Body armor',
+            description="""
+                This item functions like the \\mitem<armor of kinetic absorption> item, except that the bonus is equal to half your magical \\glossterm<power>, with a minimum bonus of +4.
+            """,
+            short_description="Significantly reduces energy damage",
+        ),
+        MagicItem(
+            name="Armor of Kinetic Absorption, Supreme",
+            level=14,
+            tags=[],
+            material_type='Body armor',
+            description="""
+                This item functions like the \\mitem<armor of kinetic absorption> item, except that the bonus is equal to half your magical \\glossterm<power>, with a minimum bonus of +14.
+            """,
+            short_description="Drastically reduces energy damage",
+        ),
+        MagicItem(
+            name="Amulet of Kinetic Absorption",
+            # +2 since amulet is secondary for this effect
+            level=4,
+            tags=[],
+            material_type='Amulet',
+            description="""
+                You gain a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
+            """,
+            short_description="Reduces physical damage",
+        ),
+        MagicItem(
+            name="Amulet of Kinetic Absorption, Greater",
+            level=10,
+            tags=[],
+            material_type='Amulet',
+            description="""
+                This item functions like the \\mitem<amulet of kinetic absorption> item, except that the bonus is equal to half your magical \\glossterm<power>, with a minimum bonus of +5.
+            """,
+            short_description="Significantly reduces energy damage",
+        ),
+        MagicItem(
+            name="Amulet of Kinetic Absorption, Supreme",
+            level=16,
+            tags=[],
+            material_type='Amulet',
+            description="""
+                This item functions like the \\mitem<amulet of kinetic absorption> item, except that the bonus is equal to half your magical \\glossterm<power>, with a minimum bonus of +16.
+            """,
+            short_description="Drastically reduces energy damage",
+        ),
+    ]
 
-    apparel.append(MagicItem(
-        name="Shield of Bashing",
-        level=2,
-        material_type='Shield',
-        description="""
-            You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using this shield.
-        """,
-        short_description="Grants +2 power",
-    ))
+    apparel += [
+        MagicItem(
+            name="Armor of Invulnerability",
+            level=7,
+            tags=[],
+            material_type='Body armor',
+            description="""
+                You gain a +3 \\glossterm<magic bonus> to \\glossterm<resistances>.
+            """,
+            short_description="Reduces damage",
+        ),
+        MagicItem(
+            name="Armor of Invulnerability, Greater",
+            level=13,
+            tags=[],
+            material_type='Body armor',
+            description="""
+                This item functions like the \\mitem<armor of invulnerability> item, except that the bonus is equal to half your magical \\glossterm<power>, with a minimum bonus of +6.
+            """,
+            short_description="Significantly reduces damage",
+        ),
+        MagicItem(
+            name="Armor of Invulnerability, Supreme",
+            level=19,
+            tags=[],
+            material_type='Body armor',
+            description="""
+                This item functions like the \\mitem<armor of invulnerability> item, except that the bonus is equal to your magical \\glossterm<power>, with a minimum bonus of +19.
+            """,
+            short_description="Drastically reduces damage",
+        ),
+    ]
 
-    apparel.append(MagicItem(
-        name="Shield of Bashing, Greater",
-        level=11,
-        material_type='Shield',
-        description="""
-            You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using this shield.
-        """,
-        short_description="Grants +4 power",
-    ))
-
-    apparel.append(MagicItem(
-        name="Shield of Bashing, Supreme",
-        level=20,
-        material_type='Shield',
-        description="""
-            You gain a +6 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using this shield.
-        """,
-        short_description="Grants +6 power",
-    ))
-
-    apparel.append(MagicItem(
-        name="Armor of Energy Resistance",
-        level=8,
-        tags=[],
-        material_type='Body armor',
-        description="""
-            You gain a +4 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<energy damage>.
-            When you resist energy damage, it sheds light as a torch until the end of the next round.
-            The color of the light depends on the energy damage resisted: blue for cold, yellow for electricity, and red for fire.
-        """,
-        short_description="Reduces energy damage",
-    ))
-
-    apparel.append(MagicItem(
-        name="Armor of Energy Resistance, Greater",
-        level=14,
-        tags=[],
-        material_type='Body armor',
-        description="""
-            This item functions like the \\mitem<armor of energy resistance> item, except that the bonus is equal to half the item's \\glossterm<power>.
-        """,
-        short_description="Significantly reduces energy damage",
-    ))
-
-    apparel.append(MagicItem(
-        name="Armor of Energy Resistance, Supreme",
-        level=20,
-        tags=[],
-        material_type='Body armor',
-        description="""
-            This item functions like the \\mitem<armor of energy resistance> item, except that the bonus is equal to the item's \\glossterm<power>.
-        """,
-        short_description="Drastically reduces energy damage",
-    ))
-
-    apparel.append(MagicItem(
-        name="Featherlight Armor",
-        level=6,
-        material_type='Body armor',
-        description="""
-            This armor's \\glossterm<encumbrance> is reduced by 1.
-        """,
-        short_description="Reduces encumbrance by 1",
-    ))
-
-    apparel.append(MagicItem(
-        name="Featherlight Armor, Greater",
-        level=12,
-        material_type='Body armor',
-        description="""
-            This armor's \\glossterm<encumbrance> is reduced by 2.
-        """,
-        short_description="Reduces encumbrance by 2",
-    ))
-
-    apparel.append(MagicItem(
-        name="Featherlight Armor, Supreme",
-        level=18,
-        material_type='Body armor',
-        description="""
-            This armor's \\glossterm<encumbrance> is reduced by 3.
-        """,
-        short_description="Reduces encumbrance by 2",
-    ))
-
-    apparel.append(MagicItem(
-        name="Armor of Fortification",
-        level=7,
-        material_type='Body armor',
-        description="""
-            You gain a +5 bonus to defenses when determining whether a \\glossterm<strike> gets a \\glossterm<critical hit> against you instead of a normal hit.
-        """,
-        short_description="Reduces critical hits from strikes",
-    ))
-
-    apparel.append(MagicItem(
-        name="Armor of Fortification, Greater",
-        level=15,
-        material_type='Body armor',
-        description="""
-            This item functions like the \\mitem<armor of fortification> item, except that the bonus increases to +10.
-        """,
-        short_description="Drastically reduces critical hits from strikes",
-    ))
-
-    apparel.append(MagicItem(
-        name="Armor of Fortification, Mystic",
-        level=12,
-        material_type='Body armor',
-        description="""
-            This item functions like the \\mitem<armor of fortification> item, except that it applies against all attacks instead of only against \\glossterm<strikes>.
-        """,
-        short_description="Reduces critical hits from all attacks",
-    ))
-
-    apparel.append(MagicItem(
-        name="Hidden Armor",
-        level=5,
-        tags=['Sensation'],
-        material_type='Body armor',
-        description="""
-             As a standard action, you can use this item.
-             If you do, it appears to change shape and form to assume the shape of a normal set of clothing.
-             You may choose the design of the clothing.
-             The item retains all of its properties, including weight and sound, while disguised in this way.
-             Only its visual appearance is altered.
-
-             Alternately, you may return the armor to its original appearance.
-        """,
-        short_description="Can look like normal clothing",
-    ))
-
-    apparel.append(MagicItem(
-        name="Hidden Armor, Greater",
-        level=9,
-        material_type='Body armor',
-        tags=['Sensation'],
-        description="""
-            This item functions like the \\mitem<hidden armor> item, except that the item also makes sound appropriate to its disguised form while disguised.
-        """,
-        short_description="Can look and sound like normal clothing",
-    ))
-
-    apparel.append(MagicItem(
-        name="Armor of Invulnerability",
-        level=8,
-        tags=[],
-        material_type='Body armor',
-        description="""
-            You gain a +4 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
-        """,
-        short_description="Reduces physical damage",
-    ))
-
-    apparel.append(MagicItem(
-        name="Armor of Invulnerability",
-        level=14,
-        tags=[],
-        material_type='Body armor',
-        description="""
-            You gain a \\glossterm<magic bonus> equal to half the item's \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical damage>.
-        """,
-        short_description="Significantly reduces physical damage",
-    ))
-
-    apparel.append(MagicItem(
-        name="Armor of Invulnerability, Greater",
-        level=20,
-        tags=[],
-        material_type='Body armor',
-        description="""
-            You gain a \\glossterm<magic bonus> equal to the item's \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical damage>.
-        """,
-        short_description="Drastically reduces physical damage",
-    ))
-
-    apparel.append(MagicItem(
-        name="Shield of Mystic Reflection",
-        level=12,
-        tags=[],
-        material_type='Shield',
-        description="""
-            As a standard action, you can activate this shield.
-            When you do, any \\glossterm<targeted> \\glossterm<magical> abilities that would target you this round are redirected to target the creature using that ability instead of you.
-            Any other targets of the ability are affected normally.
-            This is a \\glossterm<Swift> ability, so it affects any abilities targeting you in the phase you activate the item.
-        """,
-        short_description="React to reflect magical attacks",
-    ))
+    apparel += [
+        MagicItem(
+            name="Shield of Mystic Reflection",
+            level=10,
+            tags=[],
+            material_type='Shield',
+            description="""
+                As a standard action, you can activate this shield.
+                When you do, any \\glossterm<targeted> \\glossterm<magical> abilities that would target you this round are redirected to target the creature using that ability instead of you.
+                Any other targets of the ability are affected normally.
+                This is a \\glossterm<Swift> ability, so it affects any abilities targeting you in the phase you activate the item.
+            """,
+            short_description="React to reflect magical attacks",
+        ),
+        MagicItem(
+            name="Shield of Mystic Reflection, Greater",
+            level=16,
+            material_type='Shield',
+            tags=[],
+            description="""
+                This item functions like the \\mitem<shield of mystic reflection> item, except that it also affects all \\glossterm<allies> in a \\areamed radius from you.
+            """,
+            short_description="React to reflect magical attacks against allies",
+        ),
+    ]
 
     apparel.append(MagicItem(
         name="Acidic Armor",
@@ -338,129 +507,329 @@ def generate_armor():
         short_description="Deals acid damage to anything it touches",
     ))
 
-    apparel.append(MagicItem(
-        name="Agile Armor",
-        level=6,
-        material_type='Body armor',
-        tags=[],
-        description="""
-            You gain a +2 \\glossterm<magic bonus> to Reflex defense.
-        """,
-        short_description="Grants +2 Reflex defense",
-    ))
+    apparel += [
+        MagicItem(
+            name="Agile Boots",
+            level=2,
+            material_type='Boots',
+            tags=[],
+            description="""
+                You gain a +2 \\glossterm<magic bonus> to Reflex defense.
+            """,
+            short_description="Grants +2 Reflex defense",
+        ),
+        MagicItem(
+            name="Agile Boots, Greater",
+            level=8,
+            material_type='Boots',
+            tags=[],
+            description="""
+                You gain a +3 \\glossterm<magic bonus> to Reflex defense.
+            """,
+            short_description="Grants +3 Reflex defense",
+        ),
+        MagicItem(
+            name="Agile Boots, Supreme",
+            level=14,
+            material_type='Boots',
+            tags=[],
+            description="""
+                You gain a +4 \\glossterm<magic bonus> to Reflex defense.
+            """,
+            short_description="Grants +4 Reflex defense",
+        ),
+        MagicItem(
+            name="Agile Armor",
+            # +2 levels since armor is secondary for this effect
+            level=4,
+            material_type='Body armor',
+            tags=[],
+            description="""
+                You gain a +2 \\glossterm<magic bonus> to Reflex defense.
+            """,
+            short_description="Grants +2 Reflex defense",
+        ),
+        MagicItem(
+            name="Agile Armor, Greater",
+            level=10,
+            material_type='Body armor',
+            tags=[],
+            description="""
+                You gain a +3 \\glossterm<magic bonus> to Reflex defense.
+            """,
+            short_description="Grants +3 Reflex defense",
+        ),
+        MagicItem(
+            name="Agile Armor, Supreme",
+            level=16,
+            material_type='Body armor',
+            tags=[],
+            description="""
+                You gain a +4 \\glossterm<magic bonus> to Reflex defense.
+            """,
+            short_description="Grants +4 Reflex defense",
+        ),
+    ]
 
-    apparel.append(MagicItem(
-        name="Agile Armor, Greater",
-        level=15,
-        material_type='Body armor',
-        tags=[],
-        description="""
-            You gain a +4 \\glossterm<magic bonus> to Reflex defense.
-        """,
-        short_description="Grants +4 Reflex defense",
-    ))
+    apparel += [
+        MagicItem(
+            name="Fortified Belt",
+            level=2,
+            material_type='Belt',
+            tags=[],
+            description="""
+                You gain a +2 \\glossterm<magic bonus> to Fortitude defense.
+            """,
+            short_description="Grants +2 Fortitude defense",
+        ),
+        MagicItem(
+            name="Fortified Belt, Greater",
+            level=8,
+            material_type='Belt',
+            tags=[],
+            description="""
+                You gain a +3 \\glossterm<magic bonus> to Fortitude defense.
+            """,
+            short_description="Grants +3 Fortitude defense",
+        ),
+        MagicItem(
+            name="Fortified Belt, Supreme",
+            level=14,
+            material_type='Belt',
+            tags=[],
+            description="""
+                You gain a +4 \\glossterm<magic bonus> to Fortitude defense.
+            """,
+            short_description="Grants +4 Fortitude defense",
+        ),
+        MagicItem(
+            name="Fortified Armor",
+            # +2 levels since armor is secondary for this effect
+            level=4,
+            material_type='Body armor',
+            tags=[],
+            description="""
+                You gain a +2 \\glossterm<magic bonus> to Fortitude defense.
+            """,
+            short_description="Grants +2 Fortitude defense",
+        ),
+        MagicItem(
+            name="Fortified Armor, Greater",
+            level=10,
+            material_type='Body armor',
+            tags=[],
+            description="""
+                You gain a +3 \\glossterm<magic bonus> to Fortitude defense.
+            """,
+            short_description="Grants +3 Fortitude defense",
+        ),
+        MagicItem(
+            name="Fortified Armor, Supreme",
+            level=16,
+            material_type='Body armor',
+            tags=[],
+            description="""
+                You gain a +4 \\glossterm<magic bonus> to Fortitude defense.
+            """,
+            short_description="Grants +4 Fortitude defense",
+        ),
+    ]
 
-    apparel.append(MagicItem(
-        name="Fortified Armor",
-        level=6,
-        material_type='Body armor',
-        tags=[],
-        description="""
-            You gain a +2 \\glossterm<magic bonus> to Fortitude defense.
-        """,
-        short_description="Grants +2 Fortitude defense",
-    ))
+    apparel += [
+        MagicItem(
+            name="Willguard Amulet",
+            level=2,
+            material_type='Amulet',
+            tags=[],
+            description="""
+                You gain a +2 \\glossterm<magic bonus> to Mental defense.
+            """,
+            short_description="Grants +2 Mental defense",
+        ),
+        MagicItem(
+            name="Willguard Amulet, Greater",
+            level=8,
+            material_type='Amulet',
+            tags=[],
+            description="""
+                You gain a +3 \\glossterm<magic bonus> to Mental defense.
+            """,
+            short_description="Grants +3 Mental defense",
+        ),
+        MagicItem(
+            name="Willguard Amulet, Supreme",
+            level=14,
+            material_type='Amulet',
+            tags=[],
+            description="""
+                You gain a +4 \\glossterm<magic bonus> to Mental defense.
+            """,
+            short_description="Grants +4 Mental defense",
+        ),
+        MagicItem(
+            name="Willguard Armor",
+            # +2 levels since armor is secondary for this effect
+            level=4,
+            material_type='Body armor',
+            tags=[],
+            description="""
+                You gain a +2 \\glossterm<magic bonus> to Mental defense.
+            """,
+            short_description="Grants +2 Mental defense",
+        ),
+        MagicItem(
+            name="Willguard Armor, Greater",
+            level=10,
+            material_type='Body armor',
+            tags=[],
+            description="""
+                You gain a +3 \\glossterm<magic bonus> to Mental defense.
+            """,
+            short_description="Grants +3 Mental defense",
+        ),
+        MagicItem(
+            name="Willguard Armor, Supreme",
+            level=16,
+            material_type='Body armor',
+            tags=[],
+            description="""
+                You gain a +4 \\glossterm<magic bonus> to Mental defense.
+            """,
+            short_description="Grants +4 Mental defense",
+        ),
+    ]
 
-    apparel.append(MagicItem(
-        name="Fortified Armor, Greater",
-        level=15,
-        material_type='Body armor',
-        tags=[],
-        description="""
-            You gain a +4 \\glossterm<magic bonus> to Fortitude defense.
-        """,
-        short_description="Grants +4 Fortitude defense",
-    ))
+    apparel += [
+        MagicItem(
+            name="Anchoring Armor",
+            # +2 levels since armor is secondary for this effect
+            level=7,
+            material_type='Body armor',
+            tags=[],
+            description="""
+                You are immune to \\glossterm<knockback> or \\glossterm<push> effects from attacks, unless the effects come from an attack that scores a \\glossterm<critical hit>.
+                This does not make you immune to \\glossterm<teleportation>, and does not affect movement effects used by your \\glossterm<allies>.
+            """,
+            short_description="Protects you from most forced movement attacks",
+        ),
+        MagicItem(
+            name="Anchoring Armor, Greater",
+            level=13,
+            material_type='Body armor',
+            tags=[],
+            description="""
+                This item functions like the \\mitem<anchoring armor> item, except that you are also immune to \\glossterm<teleport> effects from attacks that are not critical hits.
+            """,
+            short_description="Protects you from most forced movement and teleportation attacks",
+        ),
+        MagicItem(
+            name="Anchoring Armor, Supreme",
+            level=19,
+            material_type='Body armor',
+            tags=[],
+            description="""
+                This item functions like the \\mitem<anchoring armor> item, except that the immunities apply even against critical hits.
+            """,
+            short_description="Protects you from all forced movement and teleportation attacks",
+        ),
+        MagicItem(
+            name="Anchoring Boots",
+            level=5,
+            material_type='Boots',
+            tags=[],
+            description="""
+                You are immune to \\glossterm<knockback> or \\glossterm<push> effects from attacks, unless the effects come from an attack that scores a \\glossterm<critical hit>.
+                This does not make you immune to \\glossterm<teleportation>, and does not affect movement effects used by your \\glossterm<allies>.
+            """,
+            short_description="Protects you from most forced movement attacks",
+        ),
+        MagicItem(
+            name="Anchoring Boots, Greater",
+            level=11,
+            material_type='Boots',
+            tags=[],
+            description="""
+                This item functions like the \\mitem<anchoring boots> item, except that you are also immune to \\glossterm<teleport> effects from attacks that are not critical hits.
+            """,
+            short_description="Protects you from most forced movement and teleportation attacks",
+        ),
+        MagicItem(
+            name="Anchoring Boots, Supreme",
+            level=17,
+            material_type='Boots',
+            tags=[],
+            description="""
+                This item functions like the \\mitem<anchoring boots> item, except that the immunities apply even against critical hits.
+            """,
+            short_description="Protects you from all forced movement and teleportation attacks",
+        ),
+    ]
 
-    apparel.append(MagicItem(
-        name="Willguard Armor",
-        level=6,
-        material_type='Body armor',
-        tags=[],
-        description="""
-            You gain a +2 \\glossterm<magic bonus> to Mental defense.
-        """,
-        short_description="Grants +2 Mental defense",
-    ))
-
-    apparel.append(MagicItem(
-        name="Willguard Armor, Greater",
-        level=15,
-        material_type='Body armor',
-        tags=[],
-        description="""
-            You gain a +4 \\glossterm<magic bonus> to Mental defense.
-        """,
-        short_description="Grants +4 Mental defense",
-    ))
-
-    apparel.append(MagicItem(
-        name="Anchoring Armor",
-        level=7,
-        material_type='Body armor',
-        tags=[],
-        description="""
-            You ignore all attacks that would \\glossterm<knockback> or \\glossterm<push> you, unless the attack scores a \\glossterm<critical hit> against you.
-            This does not make you immune to \\glossterm<teleportation>, and does not affect movement effects used by your \\glossterm<allies>.
-        """,
-        short_description="Protects you from most forced movement attacks",
-    ))
-
-    apparel.append(MagicItem(
-        name="Anchoring Armor, Greater",
-        level=13,
-        material_type='Body armor',
-        tags=[],
-        description="""
-            You ignore all attacks that would \\glossterm<teleport>, \\glossterm<knockback>, or \\glossterm<push> you.
-            This does not affect movement effects used by your \\glossterm<allies>.
-        """,
-        short_description="Protects you from all forced movement and teleportation attacks",
-    ))
-
-    apparel.append(MagicItem(
-        name="Armor of Translocation",
-        level=7,
-        material_type='Body armor',
-        tags=[],
-        description="""
-            As a standard action, you can \\glossterm<teleport> yourself into an unoccupied destination within \\rngclose range.
-            If the destination is invalid, this ability has no effect.
-        """,
-        short_description="Grants ability to teleport up to 30 feet",
-    ))
-
-    apparel.append(MagicItem(
-        name="Armor of Translocation, Greater",
-        level=12,
-        material_type='Body armor',
-        tags=[],
-        description="""
-            This item functions like the \\mitem<armor of translocation> item, except that the range increases to \\rngmed.
-        """,
-        short_description="Grants ability to teleport up to 100 feet",
-    ))
-
-    apparel.append(MagicItem(
-        name="Armor of Translocation, Supreme",
-        level=17,
-        material_type='Body armor',
-        tags=[],
-        description="""
-            This item functions like the \\mitem<armor of translocation> item, except that the range increases to \\rnglong.
-        """,
-        short_description="Grants ability to teleport up to 300 feet",
-    ))
+    apparel += [
+        MagicItem(
+            name="Boots of Translocation",
+            level=5,
+            material_type='Boots',
+            tags=[],
+            description="""
+                As a standard action, you can \\glossterm<teleport> yourself into an unoccupied destination within \\rngclose range.
+                If the destination is invalid, this ability has no effect.
+            """,
+            short_description="Grants ability to teleport up to 30 feet",
+        ),
+        MagicItem(
+            name="Boots of Translocation, Greater",
+            level=11,
+            material_type='Boots',
+            tags=[],
+            description="""
+                This item functions like the \\mitem<boots of translocation> item, except that the range increases to \\rngmed.
+            """,
+            short_description="Grants ability to teleport up to 100 feet",
+        ),
+        MagicItem(
+            name="Boots of Translocation, Supreme",
+            level=17,
+            material_type='Boots',
+            tags=[],
+            description="""
+                This item functions like the \\mitem<boots of translocation> item, except that the range increases to \\rnglong.
+            """,
+            short_description="Grants ability to teleport up to 300 feet",
+        ),
+        MagicItem(
+            name="Armor of Translocation",
+            # +2 levels since armor is secondary for this effect
+            level=7,
+            material_type='Body armor',
+            tags=[],
+            description="""
+                As a standard action, you can \\glossterm<teleport> yourself into an unoccupied destination within \\rngclose range.
+                If the destination is invalid, this ability has no effect.
+            """,
+            short_description="Grants ability to teleport up to 30 feet",
+        ),
+        MagicItem(
+            name="Armor of Translocation, Greater",
+            level=13,
+            material_type='Body armor',
+            tags=[],
+            description="""
+                This item functions like the \\mitem<armor of translocation> item, except that the range increases to \\rngmed.
+            """,
+            short_description="Grants ability to teleport up to 100 feet",
+        ),
+        MagicItem(
+            name="Armor of Translocation, Supreme",
+            level=18,
+            material_type='Body armor',
+            tags=[],
+            description="""
+                This item functions like the \\mitem<armor of translocation> item, except that the range increases to \\rnglong.
+            """,
+            short_description="Grants ability to teleport up to 300 feet",
+        ),
+    ]
 
     apparel.append(MagicItem(
         name="Shield of Medusa",
@@ -732,9 +1101,9 @@ def generate_worn():
             The flame sheds light as a torch.
 
             You and your \\glossterm<allies> within a \\arealarge radius emanation from you
-                gain a \\glossterm<magic bonus> equal to this item's \\glossterm<power> to \\glossterm<resistances> against fire damage.
+                gain a bonus equal to half your magical \\glossterm<power> to \\glossterm<resistances> against fire damage, with a minimum bonus of +4.
         """,
-        short_description="Grants nearby allies immunity to fire damage",
+        short_description="Reduces fire damage to nearby allies",
     ))
 
     apparel.append(MagicItem(
@@ -989,19 +1358,6 @@ def generate_worn():
             This item functions like the \\magicitem<ring of protection>, except that the bonus increases to +2.
         """,
         short_description="Grants +2 to Armor and Reflex defenses",
-    ))
-
-    apparel.append(MagicItem(
-        name="Ring of Energy Resistance",
-        level=12,
-        material_type='Ring',
-        tags=[],
-        description="""
-            You gain a \\glossterm<magic bonus> equal to half this item's \\glossterm<power> to \\glossterm<resistances> against \\glossterm<energy damage>.
-            When you resist energy with this ability, the ring sheds light as a torch until the end of the next round.
-            The color of the light depends on the energy damage resisted: blue for cold, yellow for electricity, and red for fire.
-        """,
-        short_description="Reduces energy damage",
     ))
 
     apparel.append(MagicItem(

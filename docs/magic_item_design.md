@@ -1,6 +1,6 @@
 # Magic Item Design
 
-## Spell Balance
+## Attuned Effects
 
 Many effects that items can provide can also be gained from Attune (target) spells.
 In general, an item providing a given effect should have an item level 3 levels lower than the
@@ -28,3 +28,19 @@ Battle Blessing increases its bonus to +2 at rank 7 spell (min level 17), so a G
 
 This suggests that a Supreme Surestrike weapon could exist as a level 20 item, though there is no
 corresponding spell.
+
+## Minor Level Modifiers
+It would be weird if all items had 2/5/8/etc. levels.
+Every level should bring new item options.
+This is a list of small level modifiers that can be applied to items:
+
+* +1: Trivial benefit, like shedding light
+* +2: in generic/secondary item slot, like a movement effect in armor
+* +5: Two different effects in the same item
+* +10: Three different effects in the same item
+
+## Active Effects
+
+Magic items that grant active effects are challenging to design. Since magic item power doesn't
+scale nearly as well as a character's power with their primary active abilities, it's difficult for
+damaging magic items to keep pace. 
