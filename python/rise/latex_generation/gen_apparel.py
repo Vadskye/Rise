@@ -858,83 +858,88 @@ def generate_worn():
 
     # Arm
 
-    apparel.append(MagicItem(
-        name="Titan Gauntlets",
-        level=10,
-        material_type='Gauntlet',
-        description="""
-            You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities.
-        """,
-        short_description="Grants +2 \\glossterm<mundane> power",
-    ))
+    apparel += [
+        MagicItem(
+            name="Titan Gauntlets",
+            level=10,
+            material_type='Gauntlet',
+            description="""
+                You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities.
+            """,
+            short_description="Grants +2 \\glossterm<mundane> power",
+        ),
+        MagicItem(
+            name="Titan Gauntlets, Greater",
+            level=19,
+            material_type='Gauntlet',
+            description="""
+                You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities.
+            """,
+            short_description="Grants +4 \\glossterm<mundane> power",
+        ),
+    ]
 
-    apparel.append(MagicItem(
-        name="Titan Gauntlets, Greater",
-        level=19,
-        material_type='Gauntlet',
-        description="""
-            You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities.
-        """,
-        short_description="Grants +4 \\glossterm<mundane> power",
-    ))
+    apparel += [
+        MagicItem(
+            name="Bracers of Archery",
+            level=1,
+            material_type='Bracers',
+            description="""
+                You are proficient with bows.
+            """,
+            short_description="Grants bow proficiency",
+        ),
+        MagicItem(
+            name="Bracers of Archery, Greater",
+            level=7,
+            material_type='Bracers',
+            description="""
+                You are proficient with bows.
+                In addition, you gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with ranged \\glossterm<strikes>.
+            """,
+            short_description="Grants bow proficiency, +1 ranged accuracy",
+        ),
+    ]
 
-    apparel.append(MagicItem(
-        name="Bracers of Archery",
-        level=1,
-        material_type='Bracers',
-        description="""
-            You are proficient with bows.
-        """,
-        short_description="Grants bow proficiency",
-    ))
+    apparel += [
+        MagicItem(
+            name="Bracers of Armor",
+            level=2,
+            material_type='Bracers',
+            tags=[],
+            description="""
+                You gain a +2 bonus to Armor defense.
+                The protection from these bracers is treated as body armor, and it does not stack with any other body armor you wear.
+            """,
+            short_description="Grants invisible armor",
+        ),
+    ]
 
-    apparel.append(MagicItem(
-        name="Bracers of Archery, Greater",
-        level=7,
-        material_type='Bracers',
-        description="""
-            You are proficient with bows.
-            In addition, you gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with ranged \\glossterm<strikes>.
-        """,
-        short_description="Grants bow proficiency, +1 ranged accuracy",
-    ))
-
-    apparel.append(MagicItem(
-        name="Bracers of Armor",
-        level=2,
-        material_type='Bracers',
-        tags=[],
-        description="""
-            You gain a +2 bonus to Armor defense.
-            The protection from these bracers is treated as body armor, and it does not stack with any other body armor you wear.
-        """,
-        short_description="Grants invisible armor",
-    ))
-
-    apparel.append(MagicItem(
-        name="Bracers of Repulsion",
-        level=7,
-        material_type='Bracers',
-        description="""
-            As a standard action, you can activate these bracers.
-            When you do, they emit a telekinetic burst of force.
-            Make an attack vs. Fortitude against everything within a \\areasmall radius burst from you.
-            If you use this item during the \\glossterm<delayed action phase>,
-                you gain a +4 bonus to \\glossterm<accuracy> with this attack against any creature that attacked you during the \\glossterm<action phase>.
-            On a hit, you \\glossterm<knockback> each target up to 20 feet.
-        """,
-        short_description="Can knock nearby creatures back",
-    ))
-
-    apparel.append(MagicItem(
-        name="Bracers of Repulsion, Greater",
-        level=15,
-        material_type='Bracers',
-        description="""
-            This item functions like the \\mitem<bracers of repulsion> item, except that it targets everything within a \\arealarge radius burst.
-        """,
-        short_description="Can knock many nearby creatures back",
-    ))
+    apparel += [
+        MagicItem(
+            name="Bracers of Repulsion",
+            level=7,
+            material_type='Bracers',
+            description="""
+                As a standard action, you can activate these bracers.
+                When you do, they emit a telekinetic burst of force.
+                Make an attack vs. Fortitude against everything within a \\areasmall radius burst from you.
+                If you use this item during the \\glossterm<delayed action phase>,
+                    you gain a +4 bonus to \\glossterm<accuracy> with this attack against any creature that attacked you during the \\glossterm<action phase>.
+                On a hit, you \\glossterm<knockback> each target up to 20 feet.
+            """,
+            short_description="Can knock nearby creatures back",
+        ),
+        MagicItem(
+            name="Bracers of Repulsion, Greater",
+            level=15,
+            material_type='Bracers',
+            description="""
+                This item functions like the \\mitem<bracers of repulsion> item, except that it targets everything within a \\arealarge radius burst.
+            """,
+            short_description="Can knock many nearby creatures back",
+        ),
+    ]
 
     apparel.append(MagicItem(
         name="Torchlight Gloves",
@@ -948,67 +953,70 @@ def generate_worn():
         short_description="Sheds light as a torch",
     ))
 
-    apparel.append(MagicItem(
-        name="Gauntlets of Improvisation",
-        level=2,
-        material_type='Gauntlet',
-        description="""
-            You gain a +1d \\glossterm<magic bonus> to damage with \\glossterm<improvised weapons>.
-        """,
-        short_description="Grants +1d damage with improvised weapons",
-    ))
+    apparel += [
+        MagicItem(
+            name="Gauntlets of Improvisation",
+            level=2,
+            material_type='Gauntlet',
+            description="""
+                You gain a +1d \\glossterm<magic bonus> to damage with \\glossterm<improvised weapons>.
+            """,
+            short_description="Grants +1d damage with improvised weapons",
+        ),
+        MagicItem(
+            name="Gauntlets of Improvisation, Greater",
+            level=7,
+            material_type='Gauntlet',
+            description="""
+                This item functions like the \\mitem<gauntlets of improvisation>, except that the damage bonus is increased to +2d.
+            """,
+            short_description="Grants +2d damage with improvised weapons",
+        ),
+    ]
 
-    apparel.append(MagicItem(
-        name="Gauntlets of Improvisation, Greater",
-        level=7,
-        material_type='Gauntlet',
-        description="""
-            This item functions like the \\mitem<gauntlets of improvisation>, except that the damage bonus is increased to +2d.
-        """,
-        short_description="Grants +2d damage with improvised weapons",
-    ))
+    apparel += [
+        MagicItem(
+            name="Gauntlet of the Ram",
+            level=4,
+            material_type='Gauntlet',
+            description="""
+                When you make a \\glossterm<strike> with this gauntlet, you also compare the attack result to the target's Fortitude defense.
+                On a hit, you \\glossterm<knockback> the target up to 10 feet.
+                Making a strike with this gauntlet is equivalent to an \\glossterm<unarmed attack>.
+            """,
+            short_description="Knocks back foe when used to strike",
+        ),
+        MagicItem(
+            name="Gauntlet of the Ram, Greater",
+            level=7,
+            material_type='Gauntlet',
+            description="""
+                This item functions like the \\mitem<gauntlet of the ram>, except that you \\glossterm<knockback> the target up to 30 feet.
+            """,
+            short_description="Knocks back foe farther when use to strike",
+        ),
+    ]
 
-    apparel.append(MagicItem(
-        name="Gauntlet of the Ram",
-        level=4,
-        material_type='Gauntlet',
-        description="""
-            When you make a \\glossterm<strike> with this gauntlet, you also compare the attack result to the target's Fortitude defense.
-            On a hit, you \\glossterm<knockback> the target up to 10 feet.
-            Making a strike with this gauntlet is equivalent to an \\glossterm<unarmed attack>.
-        """,
-        short_description="Knocks back foe when used to strike",
-    ))
-
-    apparel.append(MagicItem(
-        name="Gauntlet of the Ram, Greater",
-        level=7,
-        material_type='Gauntlet',
-        description="""
-            This item functions like the \\mitem<gauntlet of the ram>, except that you \\glossterm<knockback> the target up to 30 feet.
-        """,
-        short_description="Knocks back foe farther when use to strike",
-    ))
-
-    apparel.append(MagicItem(
-        name="Greatreach Bracers",
-        level=9,
-        material_type='Bracers',
-        description="""
-            Your \\glossterm<reach> is increased by 5 feet.
-        """,
-        short_description="Increases reach by five feet",
-    ))
-
-    apparel.append(MagicItem(
-        name="Greatreach Bracers, Greater",
-        level=17,
-        material_type='Bracers',
-        description="""
-            Your \\glossterm<reach> is increased by 10 feet.
-        """,
-        short_description="Increases reach by ten feet",
-    ))
+    apparel += [
+        MagicItem(
+            name="Greatreach Bracers",
+            level=9,
+            material_type='Bracers',
+            description="""
+                Your \\glossterm<reach> is increased by 5 feet.
+            """,
+            short_description="Increases reach by five feet",
+        ),
+        MagicItem(
+            name="Greatreach Bracers, Greater",
+            level=17,
+            material_type='Bracers',
+            description="""
+                Your \\glossterm<reach> is increased by 10 feet.
+            """,
+            short_description="Increases reach by ten feet",
+        ),
+    ]
 
     apparel.append(MagicItem(
         name="Throwing Gloves",
@@ -1024,40 +1032,40 @@ def generate_worn():
 
     # Head
 
-    apparel.append(MagicItem(
-        name="Circlet of Blasting",
-        level=5,
-        material_type='Circlet',
-        tags=[],
-        description="""
-            As a standard action, you can activate this circlet.
-            If you do, make an attack vs. Armor against a creature or object within \\rngmed range.
-            \\hit The target takes fire \\glossterm<standard damage>.
-        """,
-        short_description="Can blast foe with fire",
-    ))
-
-    apparel.append(MagicItem(
-        name="Circlet of Blasting, Greater",
-        level=10,
-        material_type='Circlet',
-        tags=[],
-        description="""
-            This item functions like the \\textit<circlet of blasting>, except that it gains a +1d bonus to damage.
-        """,
-        short_description="Can blast foe with intense fire",
-    ))
-
-    apparel.append(MagicItem(
-        name="Circlet of Blasting, Supreme",
-        level=16,
-        material_type='Circlet',
-        tags=[],
-        description="""
-            This item functions like the \\textit<circlet of blasting>, except that it gains a +2d bonus to damage.
-        """,
-        short_description="Can blast foe with supremely intense fire",
-    ))
+    apparel += [
+        MagicItem(
+            name="Circlet of Blasting",
+            level=5,
+            material_type='Circlet',
+            tags=[],
+            description="""
+                As a standard action, you can activate this circlet.
+                If you do, make an attack vs. Armor against a creature or object within \\rngmed range.
+                \\hit The target takes fire \\glossterm<standard damage>.
+            """,
+            short_description="Can blast foe with fire",
+        ),
+        MagicItem(
+            name="Circlet of Blasting, Greater",
+            level=10,
+            material_type='Circlet',
+            tags=[],
+            description="""
+                This item functions like the \\textit<circlet of blasting>, except that it gains a +1d bonus to damage.
+            """,
+            short_description="Can blast foe with intense fire",
+        ),
+        MagicItem(
+            name="Circlet of Blasting, Supreme",
+            level=16,
+            material_type='Circlet',
+            tags=[],
+            description="""
+                This item functions like the \\textit<circlet of blasting>, except that it gains a +2d bonus to damage.
+            """,
+            short_description="Can blast foe with supremely intense fire",
+        ),
+    ]
 
     apparel.append(MagicItem(
         name="Circlet of Persuasion",
@@ -1164,31 +1172,32 @@ def generate_worn():
         short_description="Deals your falling damage to enemies",
     ))
 
-    apparel.append(MagicItem(
-        name="Boots of the Skydancer",
-        level=7,
-        material_type='Boots',
-        tags=['Swift'],
-        description="""
-            As a \\glossterm<free action>, you can activate these boots.
-            When you do, you may treat air as if it were solid ground to your feet for the rest of the current phase.
-            You may selectively choose when to treat the air as solid ground, allowing you to walk or jump on air freely.
-            After using this ability, you cannot use it again until these boots touch the ground.
-        """,
-        short_description="Can walk on air",
-    ))
-
-    apparel.append(MagicItem(
-        name="Boots of the Skydancer, Greater",
-        level=13,
-        material_type='Boots',
-        tags=['Swift'],
-        description="""
-            This item functions like the \\magicitem<boots of the skydancer>, except that the ability lasts until the end of the round.
-            In addition, you can use this item twice before the boots touch the ground.
-        """,
-        short_description="description",
-    ))
+    apparel += [
+        MagicItem(
+            name="Boots of the Skydancer",
+            level=7,
+            material_type='Boots',
+            tags=['Swift'],
+            description="""
+                As a \\glossterm<free action>, you can activate these boots.
+                When you do, you may treat air as if it were solid ground to your feet for the rest of the current phase.
+                You may selectively choose when to treat the air as solid ground, allowing you to walk or jump on air freely.
+                After using this ability, you cannot use it again until these boots touch the ground.
+            """,
+            short_description="Can walk on air",
+        ),
+        MagicItem(
+            name="Boots of the Skydancer, Greater",
+            level=13,
+            material_type='Boots',
+            tags=['Swift'],
+            description="""
+                This item functions like the \\magicitem<boots of the skydancer>, except that the ability lasts until the end of the round.
+                In addition, you can use this item twice before the boots touch the ground.
+            """,
+            short_description="description",
+        ),
+    ]
 
     apparel.append(MagicItem(
         name="Boots of Earth's Embrace",
@@ -1225,38 +1234,38 @@ def generate_worn():
         short_description="Redirects personal gravity",
     ))
 
-    apparel.append(MagicItem(
-        name="Boots of Speed",
-        level=6,
-        material_type='Boots',
-        tags=[],
-        description="""
-            You gain a +10 foot \\glossterm<magic bonus> to your land speed, up to a maximum of double your normal speed.
-        """,
-        short_description="Increases speed by ten feet",
-    ))
-
-    apparel.append(MagicItem(
-        name="Boots of Speed, Greater",
-        level=10,
-        material_type='Boots',
-        tags=[],
-        description="""
-            You gain a +20 foot \\glossterm<magic bonus> to your land speed, up to a maximum of double your normal speed.
-        """,
-        short_description="Increases speed by twenty feet",
-    ))
-
-    apparel.append(MagicItem(
-        name="Boots of Speed, Supreme",
-        level=14,
-        material_type='Boots',
-        tags=[],
-        description="""
-            You gain a +30 foot \\glossterm<magic bonus> to your land speed, up to a maximum of double your normal speed.
-        """,
-        short_description="Increases speed by thirty feet",
-    ))
+    apparel += [
+        MagicItem(
+            name="Boots of Speed",
+            level=6,
+            material_type='Boots',
+            tags=[],
+            description="""
+                You gain a +10 foot \\glossterm<magic bonus> to your land speed, up to a maximum of double your normal speed.
+            """,
+            short_description="Increases speed by ten feet",
+        ),
+        MagicItem(
+            name="Boots of Speed, Greater",
+            level=10,
+            material_type='Boots',
+            tags=[],
+            description="""
+                You gain a +20 foot \\glossterm<magic bonus> to your land speed, up to a maximum of double your normal speed.
+            """,
+            short_description="Increases speed by twenty feet",
+        ),
+        MagicItem(
+            name="Boots of Speed, Supreme",
+            level=14,
+            material_type='Boots',
+            tags=[],
+            description="""
+                You gain a +30 foot \\glossterm<magic bonus> to your land speed, up to a maximum of double your normal speed.
+            """,
+            short_description="Increases speed by thirty feet",
+        ),
+    ]
 
     apparel.append(MagicItem(
         name="Astral Boots",
@@ -1337,30 +1346,6 @@ def generate_worn():
     # Rings
 
     apparel.append(MagicItem(
-        name="Ring of Protection",
-        level=8,
-        material_type='Ring',
-        tags=[],
-        description="""
-            This ring creates a transluscent shield-like barrier that floats in front of you, deflecting enemy attacks.
-            You gain a +1 \\glossterm<magic bonus> to Armor and Reflex defenses.
-            This does not stack with the defense bonus from any shields you use.
-        """,
-        short_description="Grants +1 to Armor and Reflex defenses",
-    ))
-
-    apparel.append(MagicItem(
-        name="Ring of Protection, Greater",
-        level=16,
-        material_type='Ring',
-        tags=[],
-        description="""
-            This item functions like the \\magicitem<ring of protection>, except that the bonus increases to +2.
-        """,
-        short_description="Grants +2 to Armor and Reflex defenses",
-    ))
-
-    apparel.append(MagicItem(
         name="Ring of Elemental Endurance",
         level=2,
         material_type='Ring',
@@ -1372,31 +1357,32 @@ def generate_worn():
         short_description="Grants tolerance of temperature extremes",
     ))
 
-    apparel.append(MagicItem(
-        name="Ring of Nourishment",
-        level=3,
-        material_type='Ring',
-        tags=['Creation'],
-        description="""
-            You continuously gain nourishment, and no longer need to eat or drink.
-            This ring must be worn for 24 hours before it begins to work.
-        """,
-        short_description="Provides food and water",
-    ))
+    apparel += [
+        MagicItem(
+            name="Ring of Nourishment",
+            level=3,
+            material_type='Ring',
+            tags=['Creation'],
+            description="""
+                You continuously gain nourishment, and no longer need to eat or drink.
+                This ring must be worn for 24 hours before it begins to work.
+            """,
+            short_description="Provides food and water",
+        ),
+        MagicItem(
+            name="Ring of Sustenance",
+            level=7,
+            material_type='Ring',
+            tags=['Creation'],
+            description="""
+                You continuously gain nourishment, and no longer need to eat or drink.
+                The ring must be worn for 24 hours before it begins to work.
 
-    apparel.append(MagicItem(
-        name="Ring of Sustenance",
-        level=7,
-        material_type='Ring',
-        tags=['Creation'],
-        description="""
-            You continuously gain nourishment, and no longer need to eat or drink.
-            In addition, you need only one-quarter your normal amount of sleep (or similar activity, such as elven trance) each day.
-
-            The ring must be worn for 24 hours before it begins to work.
-        """,
-        short_description="Provides food, water, and rest",
-    ))
+                In addition, you need only one-quarter your normal amount of sleep (or similar activity, such as elven trance) each day.
+                """,
+                short_description="Provides food, water, and rest",
+        ),
+    ]
 
     apparel.append(MagicItem(
         name="Ring of Regeneration",
@@ -1412,81 +1398,49 @@ def generate_worn():
 
     # Amulets
 
-    apparel.append(MagicItem(
-        name="Amulet of Mighty Fists",
-        level=8,
-        material_type='Amulet',
-        description="""
-            You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<unarmed attacks> and natural weapons.
-        """,
-        short_description="Grants +2 power with natural and unarmed attacks",
-    ))
+    apparel += [
+        MagicItem(
+            name="Amulet of Mighty Fists",
+            level=8,
+            material_type='Amulet',
+            description="""
+                You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<unarmed attacks> and natural weapons.
+            """,
+            short_description="Grants +2 power with natural and unarmed attacks",
+        ),
+        MagicItem(
+            name="Amulet of Mighty Fists, Greater",
+            level=16,
+            material_type='Amulet',
+            description="""
+                You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<unarmed attacks> and natural weapons.
+            """,
+            short_description="Grants +4 power with natural and unarmed attacks",
+        ),
+    ]
 
-    apparel.append(MagicItem(
-        name="Amulet of Mighty Fists, Greater",
-        level=16,
-        material_type='Amulet',
-        description="""
-            You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<unarmed attacks> and natural weapons.
-        """,
-        short_description="Grants +4 power with natural and unarmed attacks",
-    ))
-
-    apparel.append(MagicItem(
-        name="Amulet of Health",
-        level=6,
-        material_type='Amulet',
-        description="""
-            You increase your maximum \\glossterm<hit points> by 2.
-            When this item stops affecting you, you lose two \\glossterm<hit points>.
-        """,
-        short_description="Grants 2 additional hit points",
-    ))
-
-    apparel.append(MagicItem(
-        name="Amulet of Health, Greater",
-        level=15,
-        material_type='Amulet',
-        description="""
-            You increase your maximum \\glossterm<hit points> by 4.
-            When this item stops affecting you, you lose four \\glossterm<hit points>.
-        """,
-        short_description="Grants 4 additional hit points",
-    ))
-
-    apparel.append(MagicItem(
-        name="Amulet of Translocation",
-        level=7,
-        material_type='Amulet',
-        tags=[],
-        description="""
-            As a standard action, you can \\glossterm<teleport> yourself into an unoccupied destination within \\rngclose range.
-            If the destination is invalid, this ability has no effect.
-        """,
-        short_description="Grants ability to teleport up to 30 feet",
-    ))
-
-    apparel.append(MagicItem(
-        name="Amulet of Translocation, Greater",
-        level=12,
-        material_type='Amulet',
-        tags=[],
-        description="""
-            This item functions like the \\mitem<amulet of translocation> item, except that the range increases to \\rngmed.
-        """,
-        short_description="Grants ability to teleport up to 100 feet",
-    ))
-
-    apparel.append(MagicItem(
-        name="Amulet of Translocation, Supreme",
-        level=17,
-        material_type='Amulet',
-        tags=[],
-        description="""
-            This item functions like the \\mitem<amulet of translocation> item, except that the range increases to \\rnglong.
-        """,
-        short_description="Grants ability to teleport up to 300 feet",
-    ))
+    apparel += [
+        MagicItem(
+            name="Amulet of Health",
+            level=6,
+            material_type='Amulet',
+            description="""
+                You increase your maximum \\glossterm<hit points> by 2.
+                When this item stops affecting you, you lose two \\glossterm<hit points>.
+            """,
+            short_description="Grants 2 additional hit points",
+        ),
+        MagicItem(
+            name="Amulet of Health, Greater",
+            level=15,
+            material_type='Amulet',
+            description="""
+                You increase your maximum \\glossterm<hit points> by 4.
+                When this item stops affecting you, you lose four \\glossterm<hit points>.
+            """,
+            short_description="Grants 4 additional hit points",
+        ),
+    ]
 
     apparel.append(MagicItem(
         name="Amulet of the Planes",
@@ -1500,63 +1454,64 @@ def generate_worn():
         short_description="Aids travel with \\ritual<plane shift>",
     ))
 
-    apparel.append(MagicItem(
-        name="Amulet of Nondetection",
-        level=6,
-        material_type='Amulet',
-        tags=[],
-        description="""
-            You gain a +4 bonus to defenses against abilities with the \\glossterm<Detection> or \\glossterm<Scrying> tags.
-        """,
-        short_description="Grants +4 to defenses against detection",
-    ))
-
-    apparel.append(MagicItem(
-        name="Amulet of Nondetection, Greater",
-        level=14,
-        material_type='Amulet',
-        tags=[],
-        description="""
-            You gain a +8 bonus to defenses against abilities with the \\glossterm<Detection> or \\glossterm<Scrying> tags.
-        """,
-        short_description="Grants +8 to defenses against detection",
-    ))
+    apparel += [
+        MagicItem(
+            name="Amulet of Nondetection",
+            level=6,
+            material_type='Amulet',
+            tags=[],
+            description="""
+                You gain a +4 bonus to defenses against abilities with the \\glossterm<Detection> or \\glossterm<Scrying> tags.
+            """,
+            short_description="Grants +4 to defenses against detection",
+        ),
+        MagicItem(
+            name="Amulet of Nondetection, Greater",
+            level=14,
+            material_type='Amulet',
+            tags=[],
+            description="""
+                You gain a +8 bonus to defenses against abilities with the \\glossterm<Detection> or \\glossterm<Scrying> tags.
+            """,
+            short_description="Grants +8 to defenses against detection",
+        ),
+    ]
 
     # Cloaks
 
-    apparel.append(MagicItem(
-        name="Quilled Cloak",
-        level=6,
-        material_type='Cloak',
-        tags=[],
-        description="""
-            Whenever a creature grapples you, you immediately deal it piercing \\glossterm<standard damage>.
-            This does not affect creatures that you initiate a grapple with.
-        """,
-        short_description="Deals damage to creatures that grapple you",
-    ))
-
-    apparel.append(MagicItem(
-        name="Greater Quilled Cloak",
-        level=12,
-        material_type='Cloak',
-        tags=[],
-        description="""
-            This item functions like the \\textit<quilled cloak>, except that the damage increases to \\glossterm<standard damage> +1d.
-        """,
-        short_description="Deals more damage to creatures that grapple you",
-    ))
-
-    apparel.append(MagicItem(
-        name="Supreme Quilled Cloak",
-        level=18,
-        material_type='Cloak',
-        tags=[],
-        description="""
-            This item functions like the \\textit<quilled cloak>, except that the damage increases to \\glossterm<standard damage> +2d.
-        """,
-        short_description="Deals even more damage to creatures that grapple you",
-    ))
+    apparel += [
+        MagicItem(
+            name="Quilled Cloak",
+            level=6,
+            material_type='Cloak',
+            tags=[],
+            description="""
+                Whenever a creature grapples you, you immediately deal it piercing \\glossterm<standard damage>.
+                This does not affect creatures that you initiate a grapple with.
+            """,
+            short_description="Deals damage to creatures that grapple you",
+        ),
+        MagicItem(
+            name="Greater Quilled Cloak",
+            level=12,
+            material_type='Cloak',
+            tags=[],
+            description="""
+                This item functions like the \\textit<quilled cloak>, except that the damage increases to \\glossterm<standard damage> +1d.
+            """,
+            short_description="Deals more damage to creatures that grapple you",
+        ),
+        MagicItem(
+            name="Supreme Quilled Cloak",
+            level=18,
+            material_type='Cloak',
+            tags=[],
+            description="""
+                This item functions like the \\textit<quilled cloak>, except that the damage increases to \\glossterm<standard damage> +2d.
+            """,
+            short_description="Deals even more damage to creatures that grapple you",
+        ),
+    ]
 
     apparel.append(MagicItem(
         name="Avian Cloak",
@@ -1569,57 +1524,58 @@ def generate_worn():
         short_description="Grants a glide speed",
     ))
 
-    apparel.append(MagicItem(
-        name="Assassin's Cloak",
-        level=8,
-        material_type='Cloak',
-        tags=['Sensation'],
-        description="""
-            At the end of each round, if you took no actions that round, you become \\glossterm<invisible>.
-            This invisibility ends after you take any action.
-        """,
-        short_description="Grants invisibility while inactive",
-    ))
+    apparel += [
+        MagicItem(
+            name="Assassin's Cloak",
+            level=8,
+            material_type='Cloak',
+            tags=['Sensation'],
+            description="""
+                At the end of each round, if you took no actions that round, you become \\glossterm<invisible>.
+                This invisibility ends after you take any action.
+            """,
+            short_description="Grants invisibility while inactive",
+        ),
+        MagicItem(
+            name="Assassin's Cloak, Greater",
+            level=13,
+            material_type='Cloak',
+            tags=['Sensation'],
+            description="""
+                At the end of each round, if you took no actions that round, you become \\glossterm<invisible> until the end of the next round.
+            """,
+            short_description="Grants longer invisibility while inactive",
+        ),
+    ]
 
-    apparel.append(MagicItem(
-        name="Assassin's Cloak, Greater",
-        level=13,
-        material_type='Cloak',
-        tags=['Sensation'],
-        description="""
-            At the end of each round, if you took no actions that round, you become \\glossterm<invisible> until the end of the next round.
-        """,
-        short_description="Grants longer invisibility while inactive",
-    ))
+    apparel += [
+        MagicItem(
+            name="Cloak of Mist",
+            level=8,
+            material_type='Cloak',
+            tags=['Manifestation'],
+            description="""
+                Fog constantly fills a \\areamed radius emanation from you.
 
-    apparel.append(MagicItem(
-        name="Cloak of Mist",
-        level=8,
-        material_type='Cloak',
-        tags=['Manifestation'],
-        description="""
-            Fog constantly fills a \\areamed radius emanation from you.
-            This fog does not fully block sight, but it provides \\concealment.
+                If a 5-foot square of fog takes fire damage equal to half this item's \\glossterm<power>, the fog disappears from that area until the end of the next round.
+                This fog does not fully block sight, but it provides \\concealment.
+            """,
+            short_description="Fills nearby area with fog",
+        ),
+        MagicItem(
+            name="Cloak of Mist, Greater",
+            level=16,
+            material_type='Cloak',
+            tags=['Manifestation'],
+            description="""
+                A thick fog constantly fills a \\areamed radius emanation from you.
+                This fog completely blocks sight beyond 10 feet.
 
-            If a 5-foot square of fog takes fire damage equal to half this item's \\glossterm<power>, the fog disappears from that area until the end of the next round.
-        """,
-        short_description="Fills nearby area with fog",
-    ))
-
-    apparel.append(MagicItem(
-        name="Cloak of Mist, Greater",
-        level=16,
-        material_type='Cloak',
-        tags=['Manifestation'],
-        description="""
-            A thick fog constantly fills a \\areamed radius emanation from you.
-            This fog completely blocks sight beyond 10 feet.
-            Within that range, it still provides \\concealment.
-
-            If a 5-foot square of fog takes fire damage equal to this item's \\glossterm<power>, the fog disappears from that area until the end of the next round.
-        """,
-        short_description="Fills nearby area with thick fog",
-    ))
+                If a 5-foot square of fog takes fire damage equal to this item's \\glossterm<power>, the fog disappears from that area until the end of the next round.
+            """,
+            short_description="Fills nearby area with thick fog",
+        ),
+    ]
 
     apparel.append(MagicItem(
         name="Vanishing Cloak",
@@ -1636,169 +1592,172 @@ def generate_worn():
         short_description="Can teleport a short distance and grant invisibility",
     ))
 
-    # Maybe too strong?
-    apparel.append(MagicItem(
-        name="Hexward Amulet",
-        level=7,
-        material_type='Amulet',
-        tags=[],
-        description="""
-            You gain a +1 bonus to defenses against \\glossterm<magical> abilities that target you directly.
-            This does not protect you from abilities that affect an area.
-        """,
-        short_description="Grants +1 defenses against targeted magical attacks",
-    ))
-
-    apparel.append(MagicItem(
-        name="Hexproof Amulet, Greater",
-        level=13,
-        material_type='Amulet',
-        tags=[],
-        description="""
-            This item functions like the \\mitem<hexward amulet> item, except that the bonus increases to +2.
-        """,
-        short_description="Grants +2 defenses against targeted magical attacks",
-    ))
-
-    apparel.append(MagicItem(
-        name="Hexproof Amulet, Supreme",
-        level=19,
-        material_type='Amulet',
-        tags=[],
-        description="""
-            This item functions like the \\mitem<hexward amulet> item, except that the bonus increases to +3.
-        """,
-        short_description="Grants +3 defenses against targeted magical attacks",
-    ))
+    apparel += [
+        MagicItem(
+            # Maybe too strong?
+            name="Hexward Amulet",
+            level=7,
+            material_type='Amulet',
+            tags=[],
+            description="""
+                You gain a +1 bonus to defenses against \\glossterm<magical> abilities that target you directly.
+                This does not protect you from abilities that affect an area.
+            """,
+            short_description="Grants +1 defenses against targeted magical attacks",
+        ),
+        MagicItem(
+            name="Hexproof Amulet, Greater",
+            level=13,
+            material_type='Amulet',
+            tags=[],
+            description="""
+                This item functions like the \\mitem<hexward amulet> item, except that the bonus increases to +2.
+            """,
+            short_description="Grants +2 defenses against targeted magical attacks",
+        ),
+        MagicItem(
+            name="Hexproof Amulet, Supreme",
+            level=19,
+            material_type='Amulet',
+            tags=[],
+            description="""
+                This item functions like the \\mitem<hexward amulet> item, except that the bonus increases to +3.
+            """,
+            short_description="Grants +3 defenses against targeted magical attacks",
+        ),
+    ]
 
     # Belts
 
-    apparel.append(MagicItem(
-        name="Belt of Healing",
-        level=2,
-        material_type='Belt',
-        tags=[],
-        description="""
-            As a standard action, you can use this belt to regain a \\glossterm<hit point>.
-        """,
-        short_description="Grants healing",
-    ))
+    apparel += [
+        MagicItem(
+            name="Belt of Healing",
+            level=2,
+            material_type='Belt',
+            tags=[],
+            description="""
+                As a standard action, you can use this belt to regain a \\glossterm<hit point>.
+            """,
+            short_description="Grants healing",
+        ),
+        MagicItem(
+            name="Belt of Healing, Greater",
+            level=8,
+            material_type='Belt',
+            tags=[],
+            description="""
+                This item functions like the \\textit<belt of healing>, except that the bonus increases to +2.
+            """,
+            short_description="Grants more healing",
+        ),
+        MagicItem(
+            name="Belt of Healing, Supreme",
+            level=14,
+            material_type='Belt',
+            tags=[],
+            description="""
+                This item functions like the \\textit<belt of healing>, except that the bonus increases to +3.
+            """,
+            short_description="Grants more healing",
+        ),
+    ]
 
-    apparel.append(MagicItem(
-        name="Belt of Healing, Greater",
-        level=8,
-        material_type='Belt',
-        tags=[],
-        description="""
-            This item functions like the \\textit<belt of healing>, except that the bonus increases to +2.
-        """,
-        short_description="Grants more healing",
-    ))
+    apparel += [
+        MagicItem(
+            name="Lifekeeping Belt",
+            level=7,
+            material_type='Belt',
+            tags=[],
+            description="""
+                You gain a +1 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
+            """,
+            short_description="Grants +1 bonus to \\glossterm<vital rolls>",
+        ),
+        MagicItem(
+            name="Lifekeeping Belt, Greater",
+            level=13,
+            material_type='Belt',
+            tags=[],
+            description="""
+                You gain a +2 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
+            """,
+            short_description="Grants +2 bonus to \\glossterm<vital rolls>",
+        ),
+        MagicItem(
+            name="Lifekeeping Belt, Supreme",
+            level=19,
+            material_type='Belt',
+            tags=[],
+            description="""
+                You gain a +3 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
+            """,
+            short_description="Grants +3 bonus to \\glossterm<vital rolls>",
+        ),
+    ]
 
-    apparel.append(MagicItem(
-        name="Belt of Healing, Supreme",
-        level=14,
-        material_type='Belt',
-        tags=[],
-        description="""
-            This item functions like the \\textit<belt of healing>, except that the bonus increases to +3.
-        """,
-        short_description="Grants more healing",
-    ))
+    apparel += [
+        MagicItem(
+            name="Ocular Circlet",
+            level=3,
+            material_type='Circlet',
+            tags=['Scrying'],
+            description="""
+                As a \\glossterm<standard action>, you can concentrate to use this item.
+                If you do, a \\glossterm<scrying sensor> appears floating in the air in an unoccupied square within \\rngclose range.
+                As long as you \\glossterm<sustain> the effect as a standard action, you see through the sensor instead of from your body.
 
-    apparel.append(MagicItem(
-        name="Lifekeeping Belt",
-        level=7,
-        material_type='Belt',
-        tags=[],
-        description="""
-            You gain a +1 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
-        """,
-        short_description="Grants +1 bonus to \\glossterm<vital rolls>",
-    ))
+                While viewing through the sensor, your visual acuity is the same as your normal body,
+                    except that it does not share the benefits of any \\glossterm<magical> effects that improve your vision.
+                You otherwise act normally, though you may have difficulty moving or taking actions if the sensor cannot see your body or your intended targets, effectively making you \\blinded.
+            """,
+            short_description="Can allow you to see at a distance",
+        ),
+        MagicItem(
+            name="Ocular Circlet, Greater",
+            level=9,
+            material_type='Circlet',
+            tags=['Scrying'],
+            description="""
+                This item functions like the \\mitem<ocular circlet>, except that it only takes a \\glossterm<minor action> to activate and sustain the item's effect.
+                In addition, the sensor appears anywhere within \\rngmed range.
+            """,
+            short_description="Can allow you to see at a greater distance",
+        ),
+    ]
 
-    apparel.append(MagicItem(
-        name="Lifekeeping Belt, Greater",
-        level=13,
-        material_type='Belt',
-        tags=[],
-        description="""
-            You gain a +2 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
-        """,
-        short_description="Grants +2 bonus to \\glossterm<vital rolls>",
-    ))
+    apparel += [
+        MagicItem(
+            name="Gloves of Spell Investment",
+            level=7,
+            material_type='Gloves',
+            tags=[],
+            description="""
+                When you cast a spell that does not have the \\glossterm<AP>, \\glossterm<Attune>, \\glossterm<Sustain> tags,
+                    you can invest the magic of the spell in these gloves.
+                If you do, the spell does not have its normal effect.
 
-    apparel.append(MagicItem(
-        name="Lifekeeping Belt, Supreme",
-        level=19,
-        material_type='Belt',
-        tags=[],
-        description="""
-            You gain a +3 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
-        """,
-        short_description="Grants +3 bonus to \\glossterm<vital rolls>",
-    ))
+                As a standard action, you can activate these gloves.
+                When you do, you cause the effect of the last spell invested in the gloves.
+                This does not require \\glossterm<components>.
+                After you use a spell in this way, the energy in the gloves is spent, and you must invest a new spell to activate the gloves again.
 
-    apparel.append(MagicItem(
-        name="Ocular Circlet",
-        level=3,
-        material_type='Circlet',
-        tags=['Scrying'],
-        description="""
-            As a \\glossterm<standard action>, you can concentrate to use this item.
-            If you do, a \\glossterm<scrying sensor> appears floating in the air in an unoccupied square within \\rngclose range.
-            As long as you \\glossterm<sustain> the effect as a standard action, you see through the sensor instead of from your body.
+                If you remove either glove from your hand, the magic of the spell invested in the gloves is lost.
+            """,
+            short_description="Can invest a spell to cast later",
+        ),
+        MagicItem(
+            name="Gloves of Spell Investment, Greater",
+            level=13,
+            material_type='Gloves',
+            tags=[],
+            description="""
+                This item functions like the \\mitem<gloves of spell investment>, except that you can store up to two spells in the gloves.
+                When you activate the gauntlets, you choose which spell to use.
+            """,
+            short_description="Can invest two spells to cast later",
+        ),
+    ]
 
-            While viewing through the sensor, your visual acuity is the same as your normal body,
-                except that it does not share the benefits of any \\glossterm<magical> effects that improve your vision.
-            You otherwise act normally, though you may have difficulty moving or taking actions if the sensor cannot see your body or your intended targets, effectively making you \\blinded.
-        """,
-        short_description="Can allow you to see at a distance",
-    ))
-
-    apparel.append(MagicItem(
-        name="Ocular Circlet, Greater",
-        level=9,
-        material_type='Circlet',
-        tags=['Scrying'],
-        description="""
-            This item functions like the \\mitem<ocular circlet>, except that it only takes a \\glossterm<minor action> to activate and sustain the item's effect.
-            In addition, the sensor appears anywhere within \\rngmed range.
-        """,
-        short_description="Can allow you to see at a greater distance",
-    ))
-
-    apparel.append(MagicItem(
-        name="Gloves of Spell Investment",
-        level=7,
-        material_type='Gloves',
-        tags=[],
-        description="""
-            When you cast a spell that does not have the \\glossterm<AP>, \\glossterm<Attune>, \\glossterm<Sustain> tags,
-                you can invest the magic of the spell in these gloves.
-            If you do, the spell does not have its normal effect.
-
-            As a standard action, you can activate these gloves.
-            When you do, you cause the effect of the last spell invested in the gloves.
-            This does not require \\glossterm<components>.
-            After you use a spell in this way, the energy in the gloves is spent, and you must invest a new spell to activate the gloves again.
-
-            If you remove either glove from your hand, the magic of the spell invested in the gloves is lost.
-        """,
-        short_description="Can invest a spell to cast later",
-    ))
-
-    apparel.append(MagicItem(
-        name="Gloves of Spell Investment, Greater",
-        level=13,
-        material_type='Gloves',
-        tags=[],
-        description="""
-            This item functions like the \\mitem<gloves of spell investment>, except that you can store up to two spells in the gloves.
-            When you activate the gauntlets, you choose which spell to use.
-        """,
-        short_description="Can invest two spells to cast later",
-    ))
 
     apparel.append(MagicItem(
         name="Ring of Angel's Grace",
