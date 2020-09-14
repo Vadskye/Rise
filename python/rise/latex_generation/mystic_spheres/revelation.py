@@ -63,22 +63,22 @@ revelation=MysticSphere(
             \\rank<5> The bonus increases to +4.
             \\rank<7> The bonus increases to +5.
         """, tags=['Swift']),
-        Spell('Precognitive Offense', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Precognitive Offense', 3, 'Yourself', """
             The target gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with all attacks.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<5> The target also gains a +2 \\glossterm<magic bonus> to \\glossterm<initiative>.
-            \\rank<7> The accuracy bonus increases to +2.
+            \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<7> The bonus increases to +2.
         """, tags=['Attune (target)']),
-        Spell('Precognitive Defense', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Precognitive Defense', 2, 'Yourself', """
             The target gains a +1 \\glossterm<magic bonus> to Armor defense and Reflex defense.
 
             \\rankline
-            \\rank<3> The bonus to Reflex defense increases to +2.
-            \\rank<5> The bonus to Armor defense increases to +2.
-            \\rank<7> The bonus to Reflex defense increases to +3.
+            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<6> The bonus increases to +2.
+            \\rank<8> The bonus increases to +3.
         """, tags=['Attune (target)']),
         Spell('Discern Lies', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
@@ -89,12 +89,12 @@ revelation=MysticSphere(
             \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Sustain (minor)', 'Detection']),
-        Spell('Boon of Mastery', 3, 'Yourself', """
+        Spell('Boon of Mastery', 4, 'Yourself', """
             You gain a +2 \\glossterm<magic bonus> to all skills.
 
             \\rankline
-            \\rank<5> The bonus increases to +3.
-            \\rank<7> The bonus increases to +4.
+            \\rank<6> The bonus increases to +3.
+            \\rank<8> The bonus increases to +4.
         """, tags=['Attune (self)']),
         Spell('Boon of Many Eyes', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target reduces its \\glossterm<overwhelm penalties> by 2.
@@ -110,7 +110,7 @@ revelation=MysticSphere(
             \\rankline
             \\rank<6> The bonus increases to +6.
             \\rank<8> The bonus increases to +8.
-        """, tags=['Attune (target)']),
+        """, tags=['Attune (self)']),
         Spell('Third Eye', 4, 'Yourself', """
             You gain \\glossterm<blindsight> with a 50 foot range.
             This can allow it to see perfectly without any light, regardless of concealment or invisibility.

@@ -81,16 +81,16 @@ verdamancy=MysticSphere(
             \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
         """, tags=['Manifestation']),
-        Spell('Vine Tentacles', 1, 'Yourself', """
+        Spell('Vine Tentacles', 2, 'Yourself', """
             You grow vine tentacles from your body.
             The tentacles grant you a slam \\glossterm<natural weapon> (see \\tref<Natural Weapons>).
             The natural weapon deals +2d damage, as normal for a slam natural weapon.
             The natural weapon has the Reach \\glossterm<weapon tag> and does not require a \\glossterm<free hand> to use (see \\pcref<Weapon Tags>).
 
             \\rankline
-            \\rank<3> You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with attacks using the tentacles.
-            \\rank<5> You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with attacks using the tentacles.
-            \\rank<7> You gain a +5 bonus to \\glossterm<reach> with attacks using the tentacles.
+            \\rank<4> You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with attacks using the tentacles.
+            \\rank<6> You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with attacks using the tentacles.
+            \\rank<8> You gain a +5 bonus to \\glossterm<reach> with attacks using the tentacles.
         """, tags=['Attune (self)', 'Manifestation']),
         Spell('Poison -- Nitharit', 1, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
@@ -145,12 +145,13 @@ verdamancy=MysticSphere(
             \\rank<7> The number of additional successes increases to four.
         """, tags=['Sustain (minor)']),
         Spell('Barkskin', 1, 'Yourself', """
-            You gain a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical> damage.
+            The target gains a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical> damage.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<3> The bonus increases to +4.
+            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            In addition, the bonus increases to +4.
             \\rank<5> The bonus increases to be equal to half your \\glossterm<power>.
             \\rank<7> The bonus increases to be equal to your \\glossterm<power>.
         """, tags=['Attune (target)']),
@@ -247,7 +248,7 @@ verdamancy=MysticSphere(
             \\rank<6> The area increases to a \\arealarge radius.
             \\rank<8> The area increases to a \\areahuge radius.
         """, tags=['Attune (self)']),
-        Spell('Thornblade', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Thornblade', 3, 'Yourself', """
             All damage the target deals with \\glossterm<strikes> becomes piercing damage in addition to the attack's normal damage types.
             Whenever the target \\glossterm<wounds> a creature with a \\glossterm<strike>, thorns from the striking weapon enter the target's body.
             As a \\glossterm<condition>, the target unable to heal the \\glossterm<hit points> lost to the attack.
@@ -255,8 +256,10 @@ verdamancy=MysticSphere(
             This condition can be removed by the \\textit<treat condition> ability (see \\pcref<Treat Condition>).
             The \\glossterm<difficulty rating> of the check is equal to 5 \\add your \\glossterm<power>.
 
+            You can cast this spell as a \\glossterm<minor action>.
+
             \\rankline
-            \\rank<5> The difficulty rating of the check to remove the condition increases to 15 \\add your \\glossterm<power>.
+            \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<7> The condition cannot be removed without taking a \\glossterm<short rest>.
         """, tags=['Attune (target)']),
         Spell('Verdant Armor', 1, 'Yourself', """

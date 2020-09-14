@@ -27,15 +27,15 @@ fabrication=MysticSphere(
     ],
     lists=['Arcane', 'Pact'],
     spells=[
-        Spell('Shieldbearer', 1, 'Yourself', """
+        Spell('Shieldbearer', 2, 'Yourself', """
             You gain a +1 \\glossterm<magic bonus> to Armor defense.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<3> You are not considered \\glossterm<defenseless> as long as you are not \\glossterm<unaware>, even if you are not wielding a weapon or shield.
-            \\rank<5> The bonus increases to +2.
-            \\rank<7> You are not considered \\glossterm<defenseless> even if you are \\glossterm<unaware>.
+            \\rank<4> You are not considered \\glossterm<defenseless> as long as you are not \\glossterm<unaware>, even if you are not wielding a weapon or shield.
+            \\rank<6> The bonus increases to +2.
+            \\rank<8> The bonus increases to +3.
         """, tags=['Attune (self)', 'Manifestation']),
         Spell('Mystic Arrow', 1, 'One creature or object within \\rngmed range', """
             Make an attack vs. Armor against the target.

@@ -76,18 +76,18 @@ aeromancy = MysticSphere(
             \\rank<6> The distance increases to 1,000 feet.
             \\rank<8> The distance increases to 2,000 feet.
         """, tags=['Swift']),
-        Spell('Wind Screen', 1, 'Yourself', """
+        Spell('Wind Screen', 2, 'Yourself', """
             You gain a +1 \\glossterm<magic bonus> to Armor defense.
-            This bonus is increased to +4 against \\glossterm<mundane> ranged attacks from weapons or projectiles that are Small or smaller.
+            In addition, you gain a +2 bonus to defenses against \\glossterm<mundane> ranged attacks from weapons or projectiles that are Small or smaller.
 
             You can cast this spell as a \\glossterm<minor action>.
             Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.
 
             \\rankline
-            \\rank<3> The bonus against ranged attacks increases to +6.
-            \\rank<5> The bonus to Armor defense increases to +2.
-            \\rank<7> The bonus against ranged attacks increases to +8.
-        """, tags=['Attune (self)']),
+            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<6> The bonus to Armor defense increases to +2.
+            \\rank<8> The bonus to Armor defense increases to +3.
+        """, tags=['Attune (target)']),
         Spell('Windstrike', 1, 'One creature or object within \\rngmed range', """
             Make an attack vs. Armor against the target.
             \\hit The target takes bludgeoning \\glossterm<standard damage> +1d.
@@ -140,7 +140,7 @@ aeromancy = MysticSphere(
             \\rank<6> Each struck target is pushed 50 feet instead of 20 feet.
             \\rank<8> The area increases to a \\areaext, 15 ft. wide line from you.
         """, tags=[]),
-        Spell('Windblade', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Windblade', 3, 'Yourself', """
             Melee weapons wielded by the target gain +5 foot \\glossterm<magic bonus> to \\glossterm<reach>.
             Attacks that hit because of this reach deal bludgeoning damage instead of any other damage types.
             This has no effect on ranged attacks the target makes.
@@ -148,7 +148,7 @@ aeromancy = MysticSphere(
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<5> The target also gains a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities.
+            \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<7> The bonus to \\glossterm<reach> increases to +10 feet.
         """, tags=['Attune (target)']),
         Spell('Retributive Winds', 3, 'Yourself', """
@@ -164,12 +164,12 @@ aeromancy = MysticSphere(
         """, tags=['Attune (self)']),
         Spell('Air Walk', 6, 'Yourself', """
             You can walk on air as if it were solid ground as long as you are no more than 50 feet above solid ground.
-            The magic only affects your's legs and feet.
+            The magic only affects your legs and feet.
             By choosing when to treat the air as solid, you can traverse the air with ease.
 
             \\rankline
             \\rank<8> The maximum distance above solid ground increases to 300 feet.
-        """, tags=['Attune (target)']),
+        """, tags=['Attune (self)']),
         # Should this be a ritual?
         Spell('Control Weather', 4, None, """
             When you cast this spell, you choose a new weather pattern.

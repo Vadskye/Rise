@@ -108,25 +108,6 @@ Make an attack vs. Mental agains the target.
 
 
 
-\lowercase{\hypertarget{spell:Wind Screen}{}}\label{spell:Wind Screen}
-\begin{attuneability}[Rank 1]{\hypertarget{spell:Wind Screen}{Wind Screen}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\target{Yourself}
-You gain a \plus1 \glossterm{magic bonus} to Armor defense.
-This bonus is increased to \plus4 against \glossterm{mundane} ranged attacks from weapons or projectiles that are Small or smaller.
-
-You can cast this spell as a \glossterm{minor action}.
-Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.
-
-\rankline
-\rank{3} The bonus against ranged attacks increases to \plus6.
-\rank{5} The bonus to Armor defense increases to \plus2.
-\rank{7} The bonus against ranged attacks increases to \plus8.
-
-\end{attuneability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Windstrike}{}}\label{spell:Windstrike}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Windstrike}{Windstrike}}[\glossterm{Focus}]
 \target{One creature or object within \rngmed range}
@@ -207,6 +188,25 @@ Moving the target upwards costs twice the normal movement cost.
 \rank{8} The distance increases to 2,000 feet.
 
 \end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Wind Screen}{}}\label{spell:Wind Screen}
+\begin{attuneability}[Rank 2]{\hypertarget{spell:Wind Screen}{Wind Screen}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself}
+You gain a \plus1 \glossterm{magic bonus} to Armor defense.
+In addition, you gain a \plus2 bonus to defenses against \glossterm{mundane} ranged attacks from weapons or projectiles that are Small or smaller.
+
+You can cast this spell as a \glossterm{minor action}.
+Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.
+
+\rankline
+\rank{4} This spell can target an \glossterm{ally} within \rngmed range instead of you.
+\rank{6} The bonus to Armor defense increases to \plus2.
+\rank{8} The bonus to Armor defense increases to \plus3.
+
+\end{attuneability}
 \vspace{0.25em}
 
 
@@ -293,7 +293,7 @@ Any effect which increases this spell's range increases the range of this retali
 
 \lowercase{\hypertarget{spell:Windblade}{}}\label{spell:Windblade}
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Windblade}{Windblade}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
+\target{Yourself}
 Melee weapons wielded by the target gain \plus5 foot \glossterm{magic bonus} to \glossterm{reach}.
 Attacks that hit because of this reach deal bludgeoning damage instead of any other damage types.
 This has no effect on ranged attacks the target makes.
@@ -301,7 +301,7 @@ This has no effect on ranged attacks the target makes.
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{5} The target also gains a \plus2 \glossterm{magic bonus} to \glossterm{power} with \glossterm{mundane} abilities.
+\rank{5} This spell can target an \glossterm{ally} within \rngmed range instead of you.
 \rank{7} The bonus to \glossterm{reach} increases to \plus10 feet.
 
 \end{attuneability}
@@ -404,10 +404,10 @@ If you are above that height, you gain a 30 foot \glossterm{glide speed} instead
 
 
 \lowercase{\hypertarget{spell:Air Walk}{}}\label{spell:Air Walk}
-\begin{attuneability}[Rank 6]{\hypertarget{spell:Air Walk}{Air Walk}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\begin{attuneability}[Rank 6]{\hypertarget{spell:Air Walk}{Air Walk}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \target{Yourself}
 You can walk on air as if it were solid ground as long as you are no more than 50 feet above solid ground.
-The magic only affects your's legs and feet.
+The magic only affects your legs and feet.
 By choosing when to treat the air as solid, you can traverse the air with ease.
 
 \rankline
@@ -648,13 +648,13 @@ Everything in the area gain a bonus equal to your \glossterm{power} to \glosster
 
 \lowercase{\hypertarget{spell:Underwater Freedom}{}}\label{spell:Underwater Freedom}
 \begin{attuneability}[Rank 2]{\hypertarget{spell:Underwater Freedom}{Underwater Freedom}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
+\target{Yourself}
 The target suffers no penalties for acting underwater, except for those relating to using ranged weapons.
 
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{4} The target can also breathe water as if it was air.
+\rank{4} This spell can target an \glossterm{ally} within \rngmed range instead of you.
 \rank{6} The target also gains a swim speed equal to half its \glossterm{base speed}.
 \rank{8} The swim speed increases to be equal to the target's \glossterm{base speed}.
 
@@ -1381,32 +1381,16 @@ This cantrip functions like the \spell{mystic barrier} spell, except that its \g
 \subsubsection{Spells}
 
 
-\lowercase{\hypertarget{spell:Deflective Shield}{}}\label{spell:Deflective Shield}
-\begin{attuneability}[Rank 1]{\hypertarget{spell:Deflective Shield}{Deflective Shield}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} in \rngmed range}
-The target gains a \plus1 \glossterm{magic bonus} to Armor defense and Reflex defense.
-
-You can cast this spell as a \glossterm{minor action}.
-
-\rankline
-\rank{3} The bonus to Reflex defense increases to \plus2.
-\rank{5} The bonus to Armor defense increases to \plus2.
-\rank{7} The bonus to Reflex dfense increases to \plus3.
-
-\end{attuneability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Kinetic Shield}{}}\label{spell:Kinetic Shield}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Kinetic Shield}{Kinetic Shield}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} in \rngmed range}
+\target{Yourself}
 The target gains a \plus2 \glossterm{magic bonus} to \glossterm{resistances} against \glossterm{physical} damage.
 
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{3} The bonus increases to \plus4.
+\rank{3} This spell can target an \glossterm{ally} within \rngmed range instead of you.
+In addition, the bonus increases to \plus4.
 \rank{5} The bonus increases to be equal to half your \glossterm{power}.
 \rank{7} The bonus increases to be equal to your \glossterm{power}.
 
@@ -1462,13 +1446,14 @@ If another creature is in the target's space when this spell is cast, this spell
 
 \lowercase{\hypertarget{spell:Resist Energy}{}}\label{spell:Resist Energy}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Resist Energy}{Resist Energy}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} in \rngmed range}
+\target{Yourself}
 The target gains a \plus2 \glossterm{magic bonus} to \glossterm{resistances} against \glossterm{energy} damage.
 
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{3} The bonus increases to \plus4.
+\rank{3} This spell can target an \glossterm{ally} within \rngmed range instead of you.
+In addition, the bonus increases to \plus4.
 \rank{5} The bonus increases to be equal to half your \glossterm{power}.
 \rank{7} The bonus increases to be equal to your \glossterm{power}.
 
@@ -1496,6 +1481,23 @@ In addition, the \glossterm{vital resistance} of each 5-ft.\ square increases to
 
 
 
+\lowercase{\hypertarget{spell:Deflective Shield}{}}\label{spell:Deflective Shield}
+\begin{attuneability}[Rank 2]{\hypertarget{spell:Deflective Shield}{Deflective Shield}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself}
+The target gains a \plus1 \glossterm{magic bonus} to Armor defense and Reflex defense.
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{4} This spell can target an \glossterm{ally} within \rngmed range instead of you.
+\rank{6} The bonus increases to \plus2.
+\rank{8} The bonus increases to \plus3.
+
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Quickseal}{}}\label{spell:Quickseal}
 \begin{freeability}[Rank 2]{\hypertarget{spell:Quickseal}{Quickseal}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
 \target{One openable object within \rngmed range (see text)}
@@ -1516,11 +1518,12 @@ The field has a \glossterm{vital resistance} equal to twice your \glossterm{powe
 
 \lowercase{\hypertarget{spell:Universal Shield}{}}\label{spell:Universal Shield}
 \begin{attuneability}[Rank 2]{\hypertarget{spell:Universal Shield}{Universal Shield}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} in \rngmed range}
+\target{Yourself}
 The target gains a \plus2 \glossterm{magic bonus} to \glossterm{resistances} against all damage.
 
 \rankline
-\rank{4} The bonus increases to \plus4.
+\rank{4} This spell can target an \glossterm{ally} within \rngmed range instead of you.
+In addition, the bonus increases to \plus4.
 \rank{6} The bonus increases to be equal to half your \glossterm{power}.
 \rank{8} The bonus increases to be equal to your \glossterm{power}.
 
@@ -1893,13 +1896,13 @@ The target regains one lost \glossterm{hit point}.
 
 \lowercase{\hypertarget{spell:Enhanced Senses}{}}\label{spell:Enhanced Senses}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Enhanced Senses}{Enhanced Senses}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
+\target{Yourself}
 The target gains a \plus3 \glossterm{magic bonus} to the Awareness skill.
 
 \rankline
-\rank{3} The bonus increases to \plus4.
+\rank{3} This spell can target an \glossterm{ally} within \rngmed range instead of you.
 \rank{5} The bonus increases to \plus5.
-\rank{7} The bonus increases to \plus6.
+\rank{7} The bonus increases to \plus7.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -1960,16 +1963,16 @@ Make an attack vs. Fortitude against the target.
 
 \lowercase{\hypertarget{spell:Climber}{}}\label{spell:Climber}
 \begin{attuneability}[Rank 2]{\hypertarget{spell:Climber}{Climber}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
+\target{Yourself}
 The target gains a \glossterm{climb speed} equal to its \glossterm{base speed}.
 In addition, it gains a \plus2 \glossterm{magic bonus} to Climb checks.
 
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{4} The bonus increases to \plus4.
-\rank{6} The bonus increases to \plus6.
-\rank{8} The bonus increases to \plus8.
+\rank{4} This spell can target an \glossterm{ally} within \rngmed range instead of you.
+\rank{6} The bonus increases to \plus4.
+\rank{8} The bonus increases to \plus6.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -1996,13 +1999,13 @@ The poison gains an additional hit against the target, which can have varying ef
 
 \lowercase{\hypertarget{spell:Runner}{}}\label{spell:Runner}
 \begin{attuneability}[Rank 2]{\hypertarget{spell:Runner}{Runner}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
+\target{Yourself}
 The target gains a \plus10 foot \glossterm{magic bonus} to its \glossterm{land speed}.
 
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{4} The bonus increases to \plus15 feet.
+\rank{4} This spell can target an \glossterm{ally} within \rngmed range instead of you.
 \rank{6} The bonus increases to \plus20 feet.
 \rank{8} The bonus increases to \plus30 feet.
 
@@ -2013,16 +2016,16 @@ You can cast this spell as a \glossterm{minor action}.
 
 \lowercase{\hypertarget{spell:Swimmer}{}}\label{spell:Swimmer}
 \begin{attuneability}[Rank 2]{\hypertarget{spell:Swimmer}{Swimmer}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
+\target{Yourself}
 The target gains a \glossterm{swim speed} equal to its \glossterm{base speed}.
 In addition, it gains a \plus2 \glossterm{magic bonus} to Swim checks.
 
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{4} The bonus increases to \plus4.
-\rank{6} The bonus increases to \plus6.
-\rank{8} The bonus increases to \plus8.
+\rank{4} This spell can target an \glossterm{ally} within \rngmed range instead of you.
+\rank{6} The bonus increases to \plus4.
+\rank{8} The bonus increases to \plus6.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -2051,7 +2054,7 @@ This penalty increase stacks, and persists even if the target regains the lost h
 \lowercase{\hypertarget{spell:Acidic Blood}{}}\label{spell:Acidic Blood}
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Acidic Blood}{Acidic Blood}}[\glossterm{Attune} (target), \glossterm{Focus}]
 
-Primary target: Yourself or one \glossterm{ally} within \rngmed range
+Primary target: Yourself
 \par\noindent
 Secondary targets: Everything adjacent to the primary target
 
@@ -2061,8 +2064,8 @@ At the end of each round, if the primary target was \glossterm{wounded} during t
 \hit Each secondary target takes acid \glossterm{standard damage} \minus1d.
 
 \rankline
-\rank{5} The damage increases to \glossterm{standard damage}.
-\rank{7} The damage increases to \glossterm{standard damage} \plus1d.
+\rank{5} This spell can target an \glossterm{ally} within \rngmed range instead of you.
+\rank{7} The damage increases to \glossterm{standard damage}.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -2087,7 +2090,7 @@ Make an attack vs. Mental against the target.
 
 \lowercase{\hypertarget{spell:Enhanced Muscles}{}}\label{spell:Enhanced Muscles}
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Enhanced Muscles}{Enhanced Muscles}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
+\target{Yourself}
 The target gains a \plus2 \glossterm{magic bonus} to Strength-based checks.
 
 \rankline
@@ -2315,42 +2318,6 @@ This ritual takes 24 hours to perform, and it requires 72 \glossterm{fatigue poi
 \subsubsection{Spells}
 
 
-\lowercase{\hypertarget{spell:Blessing of Endurance}{}}\label{spell:Blessing of Endurance}
-\begin{attuneability}[Rank 1]{\hypertarget{spell:Blessing of Endurance}{Blessing of Endurance}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
-The target increases its current \glossterm{hit points} by 2.
-This can cause its current hit points to exceed its normal maximum hit points.
-When this ability ends, the target loses \glossterm{hit points} equal to the number of hit points it gained this way.
-
-You can cast this spell as a \glossterm{minor action}.
-
-\rankline
-\rank{3} The number of additional hit points increases to 3.
-\rank{5} The number of additional hit points increases to 4.
-\rank{7} The number of additional hit points increases to 5.
-
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Blessing of Might}{}}\label{spell:Blessing of Might}
-\begin{attuneability}[Rank 1]{\hypertarget{spell:Blessing of Might}{Blessing of Might}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
-The target gains a \plus2 \glossterm{magic bonus} to Strength for the purpose of determining its \glossterm{carrying capacity}.
-
-You can cast this spell as a \glossterm{minor action}.
-
-\rankline
-\rank{3} The bonus increases to \plus4.
-\rank{5} The bonus increases to \plus6.
-\rank{7} The bonus increases to \plus8.
-
-\end{attuneability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Blessing of Proficiency}{}}\label{spell:Blessing of Proficiency}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Blessing of Proficiency}{Blessing of Proficiency}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself or an \glossterm{ally} within \rngmed range}
@@ -2362,23 +2329,6 @@ The target becomes proficient with the chosen weapon group or usage class of arm
 \rank{3} If the target would already be proficient with a chosen weapon group, it also becomes proficient with exotic weapons from that weapon group.
 \rank{5} You may grant the target proficiency with an additional weapon group or usage class of armor.
 \rank{7} The target becomes proficient with exotic weapons from a chosen weapon group regardless of its prior proficiencies.
-
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Blessing of Protection}{}}\label{spell:Blessing of Protection}
-\begin{attuneability}[Rank 1]{\hypertarget{spell:Blessing of Protection}{Blessing of Protection}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
-The target gains a \plus1 \glossterm{magic bonus} to Armor defense and Mental defense.
-
-You can cast this spell as a \glossterm{minor action}.
-
-\rankline
-\rank{3} The bonus to Mental defense increases to \plus2.
-\rank{5} The bonus to Armor defense increases to \plus2.
-\rank{7} The bonus to Mental defense increases to \plus3.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -2419,10 +2369,27 @@ If you cast this spell on yourself, it affects the first strike you make until t
 
 
 
+\lowercase{\hypertarget{spell:Blessing of Might}{}}\label{spell:Blessing of Might}
+\begin{attuneability}[Rank 2]{\hypertarget{spell:Blessing of Might}{Blessing of Might}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself or an \glossterm{ally} within \rngmed range}
+The target gains a \plus2 \glossterm{magic bonus} to Strength for the purpose of determining its \glossterm{carrying capacity}.
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{4} The bonus increases to \plus4.
+\rank{6} The bonus increases to \plus6.
+\rank{8} The bonus increases to \plus8.
+
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Blessing of Purification}{}}\label{spell:Blessing of Purification}
 \begin{attuneability}[Rank 2]{\hypertarget{spell:Blessing of Purification}{Blessing of Purification}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself or an \glossterm{ally} within \rngmed range}
-The target gains a \plus4 \glossterm{magic bonus} to \glossterm{defenses} against \glossterm{poisons} and \glossterm{diseases}.
+The target gains a \plus4 bonus to \glossterm{defenses} against \glossterm{poisons} and \glossterm{diseases}.
 
 You can cast this spell as a \glossterm{minor action}.
 
@@ -2436,64 +2403,32 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 
+\lowercase{\hypertarget{spell:Blessing of Endurance}{}}\label{spell:Blessing of Endurance}
+\begin{attuneability}[Rank 3]{\hypertarget{spell:Blessing of Endurance}{Blessing of Endurance}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself or an \glossterm{ally} within \rngmed range}
+The target increases its current \glossterm{hit points} by 2.
+This can cause its current hit points to exceed its normal maximum hit points.
+When this ability ends, the target loses \glossterm{hit points} equal to the number of hit points it gained this way.
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{5} The number of additional hit points increases to 3.
+\rank{7} The number of additional hit points increases to 4.
+
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Blessing of Recovery}{}}\label{spell:Blessing of Recovery}
-\begin{attuneability}[Rank 2]{\hypertarget{spell:Blessing of Recovery}{Blessing of Recovery}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\begin{attuneability}[Rank 3]{\hypertarget{spell:Blessing of Recovery}{Blessing of Recovery}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself or an \glossterm{ally} within \rngmed range}
 The target gains a additional \plus5 bonus to a vital wound after a \glossterm{long rest} (see \pcref{Removing Vital Wounds}).
 
 \rankline
-\rank{4} The target gains two additional \plus5 bonuses.
-\rank{6} The target gains three additional \plus5 bonuses.
-\rank{8} The target gains four additional \plus5 bonuses.
-
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Blessing of Swiftness}{}}\label{spell:Blessing of Swiftness}
-\begin{attuneability}[Rank 2]{\hypertarget{spell:Blessing of Swiftness}{Blessing of Swiftness}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
-The target gains a \plus10 foot \glossterm{magic bonus} to its \glossterm{base speed}, up to a maximum of double its \glossterm{base speed}.
-
-You can cast this spell as a \glossterm{minor action}.
-
-\rankline
-\rank{4} The speed bonus increases to \plus15 feet.
-\rank{6} The speed bonus increases to \plus20 feet.
-\rank{8} The speed bonus increases to \plus30 feet.
-
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Battle Blessing}{}}\label{spell:Battle Blessing}
-\begin{attuneability}[Rank 3]{\hypertarget{spell:Battle Blessing}{Battle Blessing}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
-The target gains a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} with all attacks.
-
-You can cast this spell as a \glossterm{minor action}.
-
-\rankline
-\rank{5} The target also gains a \plus2 \glossterm{magic bonus} to \glossterm{power}.
-\rank{7} The accuracy increases to \plus2.
-
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Blessing of Mental Clarity}{}}\label{spell:Blessing of Mental Clarity}
-\begin{attuneability}[Rank 3]{\hypertarget{spell:Blessing of Mental Clarity}{Blessing of Mental Clarity}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
-The target gains a \plus4 \glossterm{magic bonus} to \glossterm{defenses} against \glossterm{Compulsion} and \glossterm{Emotion} effects.
-
-You can cast this spell as a \glossterm{minor action}.
-
-\rankline
-\rank{5} The bonus increases to \plus6.
-\rank{7} The bonus increases to \plus8.
+\rank{5} The target gains two additional \plus5 bonuses.
+\rank{7} The target gains three additional \plus5 bonuses.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -2511,6 +2446,22 @@ You can cast this spell as a \glossterm{minor action}.
 \rankline
 \rank{5} The spell can negate two conditions before ending.
 \rank{7} The spell can negate three conditions before ending.
+
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Blessing of Swiftness}{}}\label{spell:Blessing of Swiftness}
+\begin{attuneability}[Rank 3]{\hypertarget{spell:Blessing of Swiftness}{Blessing of Swiftness}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself or an \glossterm{ally} within \rngmed range}
+The target gains a \plus10 foot \glossterm{magic bonus} to its \glossterm{base speed}, up to a maximum of double its \glossterm{base speed}.
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{5} The speed bonus increases to \plus20 feet.
+\rank{7} The speed bonus increases to \plus30 feet.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -2547,8 +2498,40 @@ Because this ability has the \glossterm{Swift} tag, this improves the target's r
 
 
 
-\lowercase{\hypertarget{spell:Blessing of Persistence}{}}\label{spell:Blessing of Persistence}
-\begin{attuneability}[Rank 4]{\hypertarget{spell:Blessing of Persistence}{Blessing of Persistence}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\lowercase{\hypertarget{spell:Blessing of Mental Clarity}{}}\label{spell:Blessing of Mental Clarity}
+\begin{attuneability}[Rank 4]{\hypertarget{spell:Blessing of Mental Clarity}{Blessing of Mental Clarity}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself or an \glossterm{ally} within \rngmed range}
+The target gains a \plus4 bonus to \glossterm{defenses} against \glossterm{Compulsion} and \glossterm{Emotion} effects.
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{6} The bonus increases to \plus6.
+\rank{8} The bonus increases to \plus8.
+
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Blessing of Protection}{}}\label{spell:Blessing of Protection}
+\begin{attuneability}[Rank 4]{\hypertarget{spell:Blessing of Protection}{Blessing of Protection}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself or an \glossterm{ally} within \rngmed range}
+The target gains a \plus1 \glossterm{magic bonus} to Armor defense and Mental defense.
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{6} The bonus increases to \plus2.
+\rank{8} The bonus increases to \plus3.
+
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Blessing of Wakefulness}{}}\label{spell:Blessing of Wakefulness}
+\begin{attuneability}[Rank 4]{\hypertarget{spell:Blessing of Wakefulness}{Blessing of Wakefulness}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself or an \glossterm{ally} within \rngmed range}
 The target cannot fall asleep or be knocked unconscious, even by \glossterm{vital wounds}.
 If it is already unconscious for any reason, this spell wakes it up before it decides whether to attune to this spell.
@@ -2564,15 +2547,30 @@ If it is already unconscious for any reason, this spell wakes it up before it de
 
 
 
+\lowercase{\hypertarget{spell:Battle Blessing}{}}\label{spell:Battle Blessing}
+\begin{attuneability}[Rank 5]{\hypertarget{spell:Battle Blessing}{Battle Blessing}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself or an \glossterm{ally} within \rngmed range}
+The target gains a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} with all attacks.
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{7} The bonus increases to \plus2.
+
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Blessing of Freedom}{}}\label{spell:Blessing of Freedom}
 \begin{attuneability}[Rank 5]{\hypertarget{spell:Blessing of Freedom}{Blessing of Freedom}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
+\target{Yourself}
 The target cannot be \glossterm{slowed}, \glossterm{decelerated}, or \glossterm{immobilized}.
 
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{7} The bonus increases to \plus4.
+\rank{7} The target also cannot be \glossterm{paralyzed}.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -2879,23 +2877,6 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 
-\lowercase{\hypertarget{spell:Faithful Endurance}{}}\label{spell:Faithful Endurance}
-\begin{attuneability}[Rank 2]{\hypertarget{spell:Faithful Endurance}{Faithful Endurance}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\target{Yourself}
-You gain a \plus1 \glossterm{magic bonus} to \glossterm{vital rolls} (see \pcref{Vital Roll}).
-
-You can cast this spell as a \glossterm{minor action}.
-
-\rankline
-\rank{4} The bonus increases to \plus2.
-\rank{6} The bonus increases to \plus3.
-\rank{8} The bonus increases to \plus4.
-
-\end{attuneability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Judge Unworthy}{}}\label{spell:Judge Unworthy}
 \begin{freeability}[Rank 2]{\hypertarget{spell:Judge Unworthy}{Judge Unworthy}}[\glossterm{Focus}]
 \target{One creature within \rngmed range}
@@ -2954,7 +2935,7 @@ After you attack a creature this way, it becomes immune to this ability from you
 \hit Each target is \glossterm{shaken} by you as a \glossterm{condition}.
 
 \rankline
-\rank{5} You gain a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} with the attack.
+\rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
 \rank{7} The accuracy bonus increases to \plus2.
 
 \end{attuneability}
@@ -2991,6 +2972,22 @@ In addition, you gain a \plus4 bonus to \glossterm{accuracy} during the round af
 \rank{7} You can remove two conditions instead of one.
 
 \end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Faithful Endurance}{}}\label{spell:Faithful Endurance}
+\begin{attuneability}[Rank 3]{\hypertarget{spell:Faithful Endurance}{Faithful Endurance}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{Yourself}
+You gain a \plus1 \glossterm{magic bonus} to \glossterm{vital rolls} (see \pcref{Vital Roll}).
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{5} The bonus increases to \plus2.
+\rank{7} The bonus increases to \plus3.
+
+\end{attuneability}
 \vspace{0.25em}
 
 
@@ -3045,13 +3042,13 @@ Whenever a creature casts a divine spell in the area, if that creature does not 
 
 
 \lowercase{\hypertarget{spell:Agent of the Divine}{}}\label{spell:Agent of the Divine}
-\begin{attuneability}[Rank 5]{\hypertarget{spell:Agent of the Divine}{Agent of the Divine}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\begin{attuneability}[Rank 6]{\hypertarget{spell:Agent of the Divine}{Agent of the Divine}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \target{Yourself}
 You gain a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} and all \glossterm{defenses}.
 In addition, you gain a \plus2 \glossterm{magic bonus} to \glossterm{power}.
 
 \rankline
-\rank{7} The accuracy bonus increases to \plus2.
+\rank{8} The accuracy bonus increases to \plus2.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -3165,13 +3162,13 @@ You gain a \plus4 bonus to this check.
 
 \lowercase{\hypertarget{spell:Haste}{}}\label{spell:Haste}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Haste}{Haste}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
+\target{Yourself}
 The target gains a \plus10 foot \glossterm{magic bonus} to its \glossterm{base speed}, up to a maximum of double its \glossterm{base speed}.
 
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{3} The speed bonus increases to \plus15 feet.
+\rank{3} This spell can target an \glossterm{ally} within \rngmed range instead of you.
 \rank{5} The speed bonus increases to \plus20 feet.
 \rank{7} The speed bonus increases to \plus30 feet.
 
@@ -3357,11 +3354,11 @@ This effect lasts until the target takes a \glossterm{short rest}.
 \lowercase{\hypertarget{spell:Evasion}{}}\label{spell:Evasion}
 \begin{attuneability}[Rank 4]{\hypertarget{spell:Evasion}{Evasion}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \target{Yourself}
-When you are attacked by an ability that affects an area, you can use your Reflex defense in place of your armor against that attack.
+When you are attacked by an ability that affects an area, you can use your Reflex defense in place of your Armor defense against that attack.
 
 \rankline
-\rank{6} You also gain a \plus1 \glossterm{magic bonus} to Reflex defense.
-\rank{8} The defense bonus increases to \plus2.
+\rank{6} You also gain a \plus2 \glossterm{magic bonus} to Reflex defense.
+\rank{8} You can use your Reflex defense to replace any defense, not just Armor defense.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -4091,15 +4088,15 @@ When the last layer of ice is destroyed, this ability provides no further benefi
 
 \lowercase{\hypertarget{spell:Skate}{}}\label{spell:Skate}
 \begin{attuneability}[Rank 2]{\hypertarget{spell:Skate}{Skate}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
+\target{Yourself}
 The target can move on top of calm water as if it were land.
 It treats the water as \glossterm{difficult terrain}.
 
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{4} The target can also move on top of rough water.
-\rank{6} The target can also move on top of stormy water.
+\rank{4} This spell can target an \glossterm{ally} within \rngmed range instead of you.
+\rank{6} The target can also move on top of rough or stormy water.
 \rank{8} The target no longer treats the water as difficult terrain.
 
 \end{attuneability}
@@ -4387,13 +4384,13 @@ Make an attack vs. Mental against each target.
 
 \lowercase{\hypertarget{spell:Motivate}{}}\label{spell:Motivate}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Motivate}{Motivate}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or one \glossterm{ally} within \rngmed range}
+\target{Yourself}
 The target gains a \plus2 \glossterm{magic bonus} to Mental defense.
 
 \rankline
-\rank{3} The bonus increases to \plus3.
-\rank{5} The bonus increases to \plus4.
-\rank{7} The bonus increases to \plus5.
+\rank{3} This spell can target an \glossterm{ally} within \rngmed range instead of you.
+\rank{5} The bonus increases to \plus3.
+\rank{7} The bonus increases to \plus4.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -4746,13 +4743,13 @@ Make an attack vs. Fortitude against the target.
 
 \lowercase{\hypertarget{spell:Energize}{}}\label{spell:Energize}
 \begin{attuneability}[Rank 2]{\hypertarget{spell:Energize}{Energize}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
+\target{Yourself}
 The target gains a \plus10 foot \glossterm{magic bonus} to its \glossterm{base speed}, up to a maximum of double its \glossterm{base speed}.
 
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{4} The speed bonus increases to \plus15 feet.
+\rank{4} This spell can target an \glossterm{ally} within \rngmed range instead of you.
 \rank{6} The speed bonus increases to \plus20 feet.
 \rank{8} The speed bonus increases to \plus30 feet.
 
@@ -4848,14 +4845,14 @@ Make an attack vs. Reflex against each target.
 
 \lowercase{\hypertarget{spell:Magnetic Blade}{}}\label{spell:Magnetic Blade}
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Magnetic Blade}{Magnetic Blade}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
-Metal weapons wielded by the target gain a \plus2 \glossterm{magic bonus} to \glossterm{accuracy} against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
+\target{Yourself}
+Metal weapons wielded by the target gain a \plus1 bonus to \glossterm{accuracy} against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
 
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{5} The target is also immune to the \textit{disarm} ability and similar effects if it is wearing metal gauntlets.
-\rank{7} The accuracy bonus increases to \plus3.
+\rank{5} This spell can target an \glossterm{ally} within \rngmed range instead of you.
+\rank{7} The accuracy bonus increases to \plus2.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -5113,23 +5110,6 @@ This spell lasts until you use it again or until you \glossterm{dismiss} it as a
 
 
 
-\lowercase{\hypertarget{spell:Shieldbearer}{}}\label{spell:Shieldbearer}
-\begin{attuneability}[Rank 1]{\hypertarget{spell:Shieldbearer}{Shieldbearer}}[\glossterm{Attune} (self), \glossterm{Focus}, \glossterm{Manifestation}]
-\target{Yourself}
-You gain a \plus1 \glossterm{magic bonus} to Armor defense.
-
-You can cast this spell as a \glossterm{minor action}.
-
-\rankline
-\rank{3} You are not considered \glossterm{defenseless} as long as you are not \glossterm{unaware}, even if you are not wielding a weapon or shield.
-\rank{5} The bonus increases to \plus2.
-\rank{7} You are not considered \glossterm{defenseless} even if you are \glossterm{unaware}.
-
-\end{attuneability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Acid Rain}{}}\label{spell:Acid Rain}
 \begin{freeability}[Rank 2]{\hypertarget{spell:Acid Rain}{Acid Rain}}[\glossterm{Focus}, \glossterm{Manifestation}]
 \targets{Everything in a \areasmall radius within \rngclose range}
@@ -5180,6 +5160,23 @@ Caltrops may not be effective against creatures with an unusual anatomy.
 \rank{8} The number of additional squares you can affect increases to three.
 
 \end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Shieldbearer}{}}\label{spell:Shieldbearer}
+\begin{attuneability}[Rank 2]{\hypertarget{spell:Shieldbearer}{Shieldbearer}}[\glossterm{Attune} (self), \glossterm{Focus}, \glossterm{Manifestation}]
+\target{Yourself}
+You gain a \plus1 \glossterm{magic bonus} to Armor defense.
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{4} You are not considered \glossterm{defenseless} as long as you are not \glossterm{unaware}, even if you are not wielding a weapon or shield.
+\rank{6} The bonus increases to \plus2.
+\rank{8} The bonus increases to \plus3.
+
+\end{attuneability}
 \vspace{0.25em}
 
 
@@ -5459,25 +5456,6 @@ This effect lasts until you use it again or until you \glossterm{dismiss} it as 
 \subsubsection{Spells}
 
 
-\lowercase{\hypertarget{spell:Blur}{}}\label{spell:Blur}
-\begin{attuneability}[Rank 1]{\hypertarget{spell:Blur}{Blur}}[\glossterm{Attune} (target), \glossterm{Focus}, \glossterm{Sensation}, \glossterm{Visual}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
-The target's physical outline is distorted so it appears blurred, shifting, and wavering.
-It gains a \plus1 \glossterm{magic bonus} to Armor defense and a \plus2 \glossterm{magic bonus} to the Stealth skill.
-This effect provides no defensive benefit against creatures immune to \glossterm{Visual} abilities.
-
-You can cast this spell as a \glossterm{minor action}.
-
-\rankline
-\rank{3} The bonus to Stealth increases to \plus3.
-\rank{5} The bonus to Armor defense increases to \plus2.
-\rank{7} The bonus to Stealth increases to \plus4.
-
-\end{attuneability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Flash}{}}\label{spell:Flash}
 \begin{freeability}[Rank 1]{\hypertarget{spell:Flash}{Flash}}[\glossterm{Focus}, \glossterm{Sensation}, \glossterm{Visual}]
 \target{One creature within \rngmed range}
@@ -5539,6 +5517,25 @@ In addition, make an attack vs. Reflex with a \plus1 bonus to \glossterm{accurac
 
 
 
+\lowercase{\hypertarget{spell:Blur}{}}\label{spell:Blur}
+\begin{attuneability}[Rank 2]{\hypertarget{spell:Blur}{Blur}}[\glossterm{Attune} (target), \glossterm{Focus}, \glossterm{Sensation}, \glossterm{Visual}]
+\target{Yourself}
+The target's physical outline is distorted so it appears blurred, shifting, and wavering.
+It gains a \plus1 \glossterm{magic bonus} to Armor defense and the Stealth skill.
+This effect provides no defensive benefit against creatures immune to \glossterm{Visual} abilities.
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{4} This spell can target an \glossterm{ally} within \rngmed range instead of you.
+\rank{6} The bonus increases to \plus2.
+\rank{8} The bonus increases to \plus3.
+
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Illusory Twin}{}}\label{spell:Illusory Twin}
 \begin{freeability}[Rank 2]{\hypertarget{spell:Illusory Twin}{Illusory Twin}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
 \targetrule
@@ -5579,14 +5576,14 @@ It does not inhibit the passage of objects or creatures.
 
 \lowercase{\hypertarget{spell:Disguise Image}{}}\label{spell:Disguise Image}
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Disguise Image}{Disguise Image}}[\glossterm{Attune} (target), \glossterm{Focus}, \glossterm{Sensation}, \glossterm{Visual}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
+\target{Yourself}
 You make a Disguise check to alter the target's appearance (see \pcref{Disguise Creature}).
 You gain a \plus4 bonus on the check, and you can freely alter the appearance of the target's clothes and equipment, regardless of their original form.
 However, this effect is unable to alter the sound, smell, texture, or temperature of the target or its clothes and equipment.
 
 \rankline
-\rank{5} The bonus increases to \plus6.
-\rank{7} The bonus increases to \plus8.
+\rank{5} This spell can target an \glossterm{ally} within \rngmed range instead of you.
+\rank{7} The bonus increases to \plus6.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -5765,14 +5762,14 @@ Each time you cast this spell, you can accomplish work that would take up to two
 
 
 \lowercase{\hypertarget{spell:Camouflage}{}}\label{spell:Camouflage}
-\begin{attuneability}[Rank 1]{\hypertarget{spell:Camouflage}{Camouflage}}[\glossterm{Attune} (target), \glossterm{Focus}, \glossterm{Sensation}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Camouflage}{Camouflage}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself}
 The target gains a \plus3 \glossterm{magic bonus} to the Stealth skill.
 
 \rankline
-\rank{3} The bonus increases to \plus4.
+\rank{3} This spell can target an \glossterm{ally} within \rngmed range instead of you.
 \rank{5} The bonus increases to \plus5.
-\rank{7} The bonus increases to \plus6.
+\rank{7} The bonus increases to \plus7.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -5795,6 +5792,26 @@ For details, see \tref{Natural Weapons}.
 
 
 
+\lowercase{\hypertarget{spell:Shrink}{}}\label{spell:Shrink}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Shrink}{Shrink}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself}
+The target's size decreases by one \glossterm{size category}.
+This decreases its \glossterm{base speed} and improves its \glossterm{Stealth} skill.
+It may also decrease the target's \glossterm{reach} (see \pcref{Size in Combat}).
+However, its physical form is not altered fully to match its new size, and its Strength and Dexterity are unchanged.
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{3} This spell can target a Small or larger \glossterm{ally} within \rngmed range instead of you.
+\rank{5} The minimum size category is reduced to Diminuitive.
+\rank{7} You can decrease the target's size category by up to two size categories.
+
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Stoneskin}{}}\label{spell:Stoneskin}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Stoneskin}{Stoneskin}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself or an \glossterm{ally} in \rngmed range}
@@ -5803,7 +5820,8 @@ The target gains a \plus2 \glossterm{magic bonus} to \glossterm{resistances} aga
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{3} The bonus increases to \plus4.
+\rank{3} This spell can target an \glossterm{ally} within \rngmed range instead of you.
+In addition, the bonus increases to \plus4.
 \rank{5} The bonus increases to be equal to half your \glossterm{power}.
 \rank{7} The bonus increases to be equal to your \glossterm{power}.
 
@@ -5848,26 +5866,6 @@ Make a melee attack vs. Reflex against the target.
 
 
 
-\lowercase{\hypertarget{spell:Shrink}{}}\label{spell:Shrink}
-\begin{attuneability}[Rank 2]{\hypertarget{spell:Shrink}{Shrink}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\targets{Yourself or one Small or larger \glossterm{ally} within \rngmed range}
-The target's size decreases by one \glossterm{size category}.
-This decreases its \glossterm{base speed} and improves its \glossterm{Stealth} skill.
-It may also decrease the target's \glossterm{reach} (see \pcref{Size in Combat}).
-However, its physical form is not altered fully to match its new size, and its Strength and Dexterity are unchanged.
-
-You can cast this spell as a \glossterm{minor action}.
-
-\rankline
-\rank{4} The minimum size category is reduced to Diminuitive.
-\rank{6} You can decrease the target's size category by up to two size categories.
-\rank{8} The minimum size category is reduced to Fine.
-
-\end{attuneability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Absorb Object}{}}\label{spell:Absorb Object}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Absorb Object}{Absorb Object}}[\glossterm{Focus}]
 \targets{One Small or smaller \glossterm{unattended} object you touch}
@@ -5890,14 +5888,14 @@ When this effect ends, the object appears in a free hand, if you have one availa
 
 \lowercase{\hypertarget{spell:Alter Appearance}{}}\label{spell:Alter Appearance}
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Alter Appearance}{Alter Appearance}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or one large or smaller \glossterm{ally} within \rngmed range}
+\target{Yourself}
 You make a Disguise check to alter the target's appearance (see \pcref{Disguise Creature}).
 You gain a \plus4 bonus on the check, and you ignore penalties for changing the target's gender, species, subtype, or age.
 However, this effect is unable to alter the target's clothes or equipment in any way.
 
 \rankline
-\rank{5} The bonus increases to \plus6.
-\rank{7} The bonus increases to \plus8.
+\rank{5} This spell can target a Large or smaller \glossterm{ally} within \rngmed range instead of you.
+\rank{7} The bonus increases to \plus6.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -5961,7 +5959,7 @@ Its equipment is unaffected.
 
 \lowercase{\hypertarget{spell:Enlarge}{}}\label{spell:Enlarge}
 \begin{attuneability}[Rank 4]{\hypertarget{spell:Enlarge}{Enlarge}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or one Large or smaller \glossterm{ally} within \rngmed range}
+\target{Yourself}
 The target's size increases by one \glossterm{size category}.
 This increases its \glossterm{base speed} and reduces its \glossterm{Stealth} skill.
 It may also increase the target's \glossterm{reach} (see \pcref{Size in Combat}).
@@ -5970,7 +5968,7 @@ However, its physical form is not altered fully to match its new size, and its S
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{6} The target also gains a \plus2 \glossterm{magic bonus} to Strength.
+\rank{6} This spell can target a Large or smaller \glossterm{ally} within \rngmed range instead of you.
 \rank{8} You may increase the target by two size categories instead of one.
 
 \end{attuneability}
@@ -6400,16 +6398,14 @@ Make an attack vs. Reflex against each target.
 
 \lowercase{\hypertarget{spell:Flame Blade}{}}\label{spell:Flame Blade}
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Flame Blade}{Flame Blade}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
+\target{Yourself}
 All damage the target deals with \glossterm{strikes} becomes fire damage in addition to the attack's normal damage types.
 
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{5} Whenever the target \glossterm{vitally wounds} a creature with a \glossterm{strike}, the struck creature is also \glossterm{ignited} as a \glossterm{condition}.
-This condition can be removed if the target makes a \glossterm{difficulty rating} 10 Dexterity check as a \glossterm{move action} to put out the flames.
-Dropping \glossterm{prone} as part of this action gives a \plus5 bonus to this check.
-\rank{7} The condition cannot be removed with a \glossterm{move action}.
+\rank{5} This spell can target an \glossterm{ally} within \rngmed range instead of you.
+\rank{7} Whenever the target gets a \glossterm{critical hit} on a creature with a \glossterm{strike}, the struck creature is also \glossterm{ignited} as a \glossterm{condition}.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -6717,21 +6713,6 @@ It is \glossterm{dazzled} as a \glossterm{condition}.
 
 
 
-\lowercase{\hypertarget{spell:Precognitive Defense}{}}\label{spell:Precognitive Defense}
-\begin{attuneability}[Rank 1]{\hypertarget{spell:Precognitive Defense}{Precognitive Defense}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
-The target gains a \plus1 \glossterm{magic bonus} to Armor defense and Reflex defense.
-
-\rankline
-\rank{3} The bonus to Reflex defense increases to \plus2.
-\rank{5} The bonus to Armor defense increases to \plus2.
-\rank{7} The bonus to Reflex defense increases to \plus3.
-
-\end{attuneability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Proficiency}{}}\label{spell:Proficiency}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Proficiency}{Proficiency}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \target{One weapon within \rngmed range}
@@ -6809,6 +6790,21 @@ At the end of each round, if the sensor is does not have \glossterm{line of effe
 
 
 
+\lowercase{\hypertarget{spell:Precognitive Defense}{}}\label{spell:Precognitive Defense}
+\begin{attuneability}[Rank 2]{\hypertarget{spell:Precognitive Defense}{Precognitive Defense}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself}
+The target gains a \plus1 \glossterm{magic bonus} to Armor defense and Reflex defense.
+
+\rankline
+\rank{4} This spell can target an \glossterm{ally} within \rngmed range instead of you.
+\rank{6} The bonus increases to \plus2.
+\rank{8} The bonus increases to \plus3.
+
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Purge Invisibility}{}}\label{spell:Purge Invisibility}
 \begin{attuneability}[Rank 2]{\hypertarget{spell:Purge Invisibility}{Purge Invisibility}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \targets{Everything in a \arealarge radius \glossterm{emanation} from you}
@@ -6857,20 +6853,6 @@ The target reduces its \glossterm{overwhelm penalties} by 2.
 
 
 
-\lowercase{\hypertarget{spell:Boon of Mastery}{}}\label{spell:Boon of Mastery}
-\begin{attuneability}[Rank 3]{\hypertarget{spell:Boon of Mastery}{Boon of Mastery}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\target{Yourself}
-You gain a \plus2 \glossterm{magic bonus} to all skills.
-
-\rankline
-\rank{5} The bonus increases to \plus3.
-\rank{7} The bonus increases to \plus4.
-
-\end{attuneability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Discern Lies}{}}\label{spell:Discern Lies}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Discern Lies}{Discern Lies}}[\glossterm{Detection}, \glossterm{Focus}, \glossterm{Sustain} (minor)]
 \target{One creature within \rngmed range}
@@ -6889,14 +6871,14 @@ This ability does not reveal the truth, uncover unintentional inaccuracies, or n
 
 \lowercase{\hypertarget{spell:Precognitive Offense}{}}\label{spell:Precognitive Offense}
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Precognitive Offense}{Precognitive Offense}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
+\target{Yourself}
 The target gains a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} with all attacks.
 
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{5} The target also gains a \plus2 \glossterm{magic bonus} to \glossterm{initiative}.
-\rank{7} The accuracy bonus increases to \plus2.
+\rank{5} This spell can target an \glossterm{ally} within \rngmed range instead of you.
+\rank{7} The bonus increases to \plus2.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -6923,7 +6905,7 @@ If undisturbed, the sensor floats in the air in its position.
 
 
 \lowercase{\hypertarget{spell:Boon of Knowledge}{}}\label{spell:Boon of Knowledge}
-\begin{attuneability}[Rank 4]{\hypertarget{spell:Boon of Knowledge}{Boon of Knowledge}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\begin{attuneability}[Rank 4]{\hypertarget{spell:Boon of Knowledge}{Boon of Knowledge}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \target{Yourself}
 You gain a \plus4 \glossterm{magic bonus} to all Knowledge skills (see \pcref{Knowledge}).
 In addition, once per hour you may reroll one Knowledge check you make and take the higher result.
@@ -6931,6 +6913,20 @@ In addition, once per hour you may reroll one Knowledge check you make and take 
 \rankline
 \rank{6} The bonus increases to \plus6.
 \rank{8} The bonus increases to \plus8.
+
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Boon of Mastery}{}}\label{spell:Boon of Mastery}
+\begin{attuneability}[Rank 4]{\hypertarget{spell:Boon of Mastery}{Boon of Mastery}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{Yourself}
+You gain a \plus2 \glossterm{magic bonus} to all skills.
+
+\rankline
+\rank{6} The bonus increases to \plus3.
+\rank{8} The bonus increases to \plus4.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -7626,26 +7622,8 @@ Make an attack vs. Mental against each target.
 
 
 
-\lowercase{\hypertarget{spell:Reactive Deflection}{}}\label{spell:Reactive Deflection}
-\begin{attuneability}[Rank 1]{\hypertarget{spell:Reactive Deflection}{Reactive Deflection}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\target{Yourself}
-You gain a \plus1 \glossterm{magic bonus} to Armor defense.
-This bonus is increased to \plus4 against \glossterm{mundane} ranged attacks from weapons or projectiles that are Small or smaller.
-
-You can cast this spell as a \glossterm{minor action}.
-
-\rankline
-\rank{3} The bonus against ranged attacks increases to \plus6.
-\rank{5} The bonus to Armor defense increases to \plus2.
-\rank{7} The bonus against ranged attacks increases to \plus8.
-
-\end{attuneability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Telekinetic Lift}{}}\label{spell:Telekinetic Lift}
-\begin{attuneability}[Rank 1]{\hypertarget{spell:Telekinetic Lift}{Telekinetic Lift}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Telekinetic Lift}{Telekinetic Lift}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \target{Yourself or one Medium or smaller \glossterm{ally} or unattended object within \rngmed range}
 The target is reduced to half of its normal weight.
 This gives it a \plus4 \glossterm{magic bonus} to the Jump skill, if applicable, and makes it easier to lift and move.
@@ -7697,6 +7675,24 @@ The projectile flies directly toward the secondary target instead of originating
 \rank{8} The accuracy bonus increases to \plus4.
 
 \end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Reactive Deflection}{}}\label{spell:Reactive Deflection}
+\begin{attuneability}[Rank 2]{\hypertarget{spell:Reactive Deflection}{Reactive Deflection}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{Yourself}
+You gain a \plus1 \glossterm{magic bonus} to Armor defense.
+In addition, you gain a \plus2 bonus to defenses against \glossterm{mundane} ranged attacks from weapons or projectiles that are Small or smaller.
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{4} This spell can target an \glossterm{ally} within \rngmed range instead of you.
+\rank{6} The bonus to Armor defense increases to \plus2.
+\rank{8} The bonus to Armor defense increases to \plus3.
+
+\end{attuneability}
 \vspace{0.25em}
 
 
@@ -7796,14 +7792,14 @@ Any individual object or creature can only take damage once in this way, even if
 
 \lowercase{\hypertarget{spell:Force Extension}{}}\label{spell:Force Extension}
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Force Extension}{Force Extension}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
+\target{Yourself}
 Melee weapons wielded by the target gain \plus5 foot \glossterm{magic bonus} to \glossterm{reach}.
 This has no effect on ranged attacks the target makes.
 
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{5} The target also gains a \plus2 \glossterm{magic bonus} to \glossterm{power} with \glossterm{mundane} abilities.
+\rank{5} This spell can target an \glossterm{ally} within \rngmed range instead of you.
 \rank{7} The bonus to \glossterm{reach} increases to \plus10 feet.
 
 \end{attuneability}
@@ -8340,13 +8336,13 @@ This usually causes the target to disappear.
 
 \lowercase{\hypertarget{spell:Enhance Magic}{}}\label{spell:Enhance Magic}
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Enhance Magic}{Enhance Magic}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
+\target{Yourself}
 The target gains a \plus2 \glossterm{magic bonus} to \glossterm{power} with \glossterm{magical} abilities.
 
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{5} The target gains a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} with \glossterm{magical} abilities.
+\rank{5} This spell can target an \glossterm{ally} within \rngmed range instead of you.
 \rank{7} The bonus increases to \plus4.
 
 \end{attuneability}
@@ -8533,7 +8529,7 @@ If this damage does not \glossterm{wound} a target, it has no effect, and that t
 \lowercase{\hypertarget{spell:Absorb Magic}{}}\label{spell:Absorb Magic}
 \begin{attuneability}[Rank 6]{\hypertarget{spell:Absorb Magic}{Absorb Magic}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \target{Yourself}
-You gain a \plus2 \glossterm{magic bonus} to defenses against \glossterm{magical} effects.
+You gain a \plus2 bonus to defenses against \glossterm{magical} effects.
 In addition, the next time a \glossterm{magical} attack beats your defenses, it has no effect on you.
 When you negate an attack in this way, you regain one \glossterm{hit point} and this spell's effect ends.
 
@@ -8693,13 +8689,13 @@ You gain a \plus2 bonus to \glossterm{accuracy} with the attack if the target is
 
 \lowercase{\hypertarget{spell:Conceal}{}}\label{spell:Conceal}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Conceal}{Conceal}}[\glossterm{Attune} (target), \glossterm{Focus}, \glossterm{Sensation}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
+\target{Yourself}
 The target gains a \plus3 \glossterm{magic bonus} to the Stealth skill.
 
 \rankline
-\rank{3} The bonus increases to \plus4.
+\rank{3} This spell can target an \glossterm{ally} within \rngmed range instead of you.
 \rank{5} The bonus increases to \plus5.
-\rank{7} The bonus increases to \plus6.
+\rank{7} The bonus increases to \plus7.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -8736,23 +8732,6 @@ Any object or effect which blocks light also blocks this spell's effect.
 \rank{3} The maximum area increases to a \arealarge radius.
 \rank{5} The maximum area increases to a \areahuge radius.
 \rank{7} The maximum area increases to a \areaext radius.
-
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Shadow Mantle}{}}\label{spell:Shadow Mantle}
-\begin{attuneability}[Rank 1]{\hypertarget{spell:Shadow Mantle}{Shadow Mantle}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
-The target's physical form becomes blurred and shifts in and out of existence.
-This is not a mere trick of the light, but an alteration of reality to make its existence more ambiguous.
-The target gains a \plus1 \glossterm{magic bonus} to Armor defense and the Stealth skill.
-
-\rankline
-\rank{3} The defense bonus applies to all defenses.
-\rank{5} The bonus to Armor defense and Stealth increases to \plus2.
-\rank{7} The bonus to all defenses increases to \plus2.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -8835,12 +8814,12 @@ You gain a \plus2 bonus to \glossterm{accuracy} with the attack if the target is
 
 \lowercase{\hypertarget{spell:Darkvision}{}}\label{spell:Darkvision}
 \begin{attuneability}[Rank 2]{\hypertarget{spell:Darkvision}{Darkvision}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
+\target{Yourself}
 The target gains \glossterm{darkvision} with a 50 foot radius.
 
 \rankline
-\rank{4} The radius increases to 100 feet.
-\rank{6} The radius increases to 150 feet.
+\rank{4} This spell can target an \glossterm{ally} within \rngmed range instead of you.
+\rank{6} The radius increases to 100 feet.
 \rank{8} The radius increases to 200 feet.
 
 \end{attuneability}
@@ -8858,6 +8837,23 @@ This invisibility ends after you take any action.
 \rank{4} Moving during a round does not prevent you from becoming invisible at the end of the round.
 \rank{6} Taking \glossterm{minor actions} does not prevent you from becoming invisible at the end of the round.
 \rank{8} The invisibility lasts until the end of the round after you take an action, rather than ending immediately after the action.
+
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Shadow Mantle}{}}\label{spell:Shadow Mantle}
+\begin{attuneability}[Rank 2]{\hypertarget{spell:Shadow Mantle}{Shadow Mantle}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself}
+The target's physical form becomes blurred and shifts in and out of existence.
+This is not a mere trick of the light, but an alteration of reality to make its existence more ambiguous.
+The target gains a \plus1 \glossterm{magic bonus} to Armor defense and the Stealth skill.
+
+\rankline
+\rank{4} This spell can target an \glossterm{ally} within \rngmed range instead of you.
+\rank{6} The bonus increases to \plus2.
+\rank{8} The bonus increases to \plus3.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -9078,12 +9074,13 @@ Unlike most spells, this can affect only part of a larger object, and it only af
 \lowercase{\hypertarget{spell:Barkskin}{}}\label{spell:Barkskin}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Barkskin}{Barkskin}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself}
-You gain a \plus2 \glossterm{magic bonus} to \glossterm{resistances} against \glossterm{physical} damage.
+The target gains a \plus2 \glossterm{magic bonus} to \glossterm{resistances} against \glossterm{physical} damage.
 
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{3} The bonus increases to \plus4.
+\rank{3} This spell can target an \glossterm{ally} within \rngmed range instead of you.
+In addition, the bonus increases to \plus4.
 \rank{5} The bonus increases to be equal to half your \glossterm{power}.
 \rank{7} The bonus increases to be equal to your \glossterm{power}.
 
@@ -9170,24 +9167,6 @@ These plants are considered to be normal plants for the purpose of abilities tha
 \rank{3} You also gain a \plus1 bonus to Armor defense.
 \rank{5} The encumbrance penalty reduction is increased to 3.
 \rank{7} The bonus to Armor defense increases to \plus2.
-
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Vine Tentacles}{}}\label{spell:Vine Tentacles}
-\begin{attuneability}[Rank 1]{\hypertarget{spell:Vine Tentacles}{Vine Tentacles}}[\glossterm{Attune} (self), \glossterm{Focus}, \glossterm{Manifestation}]
-\target{Yourself}
-You grow vine tentacles from your body.
-The tentacles grant you a slam \glossterm{natural weapon} (see \tref{Natural Weapons}).
-The natural weapon deals \plus2d damage, as normal for a slam natural weapon.
-The natural weapon has the Reach \glossterm{weapon tag} and does not require a \glossterm{free hand} to use (see \pcref{Weapon Tags}).
-
-\rankline
-\rank{3} You gain a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} with attacks using the tentacles.
-\rank{5} You gain a \plus2 \glossterm{magic bonus} to \glossterm{power} with attacks using the tentacles.
-\rank{7} You gain a \plus5 bonus to \glossterm{reach} with attacks using the tentacles.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -9286,6 +9265,24 @@ A third failed attack ends the poison.
 
 
 
+\lowercase{\hypertarget{spell:Vine Tentacles}{}}\label{spell:Vine Tentacles}
+\begin{attuneability}[Rank 2]{\hypertarget{spell:Vine Tentacles}{Vine Tentacles}}[\glossterm{Attune} (self), \glossterm{Focus}, \glossterm{Manifestation}]
+\target{Yourself}
+You grow vine tentacles from your body.
+The tentacles grant you a slam \glossterm{natural weapon} (see \tref{Natural Weapons}).
+The natural weapon deals \plus2d damage, as normal for a slam natural weapon.
+The natural weapon has the Reach \glossterm{weapon tag} and does not require a \glossterm{free hand} to use (see \pcref{Weapon Tags}).
+
+\rankline
+\rank{4} You gain a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} with attacks using the tentacles.
+\rank{6} You gain a \plus2 \glossterm{magic bonus} to \glossterm{power} with attacks using the tentacles.
+\rank{8} You gain a \plus5 bonus to \glossterm{reach} with attacks using the tentacles.
+
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Entangle}{}}\label{spell:Entangle}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Entangle}{Entangle}}[\glossterm{Focus}, \glossterm{Manifestation}]
 \target{One Large or smaller creature within \rngclose range}
@@ -9345,7 +9342,7 @@ A third failed attack ends the poison.
 
 \lowercase{\hypertarget{spell:Thornblade}{}}\label{spell:Thornblade}
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Thornblade}{Thornblade}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
+\target{Yourself}
 All damage the target deals with \glossterm{strikes} becomes piercing damage in addition to the attack's normal damage types.
 Whenever the target \glossterm{wounds} a creature with a \glossterm{strike}, thorns from the striking weapon enter the target's body.
 As a \glossterm{condition}, the target unable to heal the \glossterm{hit points} lost to the attack.
@@ -9353,8 +9350,10 @@ As a \glossterm{condition}, the target unable to heal the \glossterm{hit points}
 This condition can be removed by the \textit{treat condition} ability (see \pcref{Treat Condition}).
 The \glossterm{difficulty rating} of the check is equal to 5 \add your \glossterm{power}.
 
+You can cast this spell as a \glossterm{minor action}.
+
 \rankline
-\rank{5} The difficulty rating of the check to remove the condition increases to 15 \add your \glossterm{power}.
+\rank{5} This spell can target an \glossterm{ally} within \rngmed range instead of you.
 \rank{7} The condition cannot be removed without taking a \glossterm{short rest}.
 
 \end{attuneability}
@@ -9584,15 +9583,15 @@ Make an attack vs. Fortitude against each target.
 
 \lowercase{\hypertarget{spell:Fortify Life}{}}\label{spell:Fortify Life}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Fortify Life}{Fortify Life}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or a living \glossterm{ally} within \rngmed range}
-The target gains a \plus3 \glossterm{magic bonus} to Fortitude defense.
+\target{Yourself or}
+The target gains a \plus2 \glossterm{magic bonus} to Fortitude defense.
 
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{3} The bonus increases to \plus4.
-\rank{5} The bonus increases to \plus5.
-\rank{7} The bonus increases to \plus6.
+\rank{3} This spell can target an \glossterm{ally} within \rngmed range instead of you.
+\rank{5} The bonus increases to \plus3.
+\rank{7} The bonus increases to \plus4.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -9601,7 +9600,7 @@ You can cast this spell as a \glossterm{minor action}.
 
 \lowercase{\hypertarget{spell:Lifegift}{}}\label{spell:Lifegift}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Lifegift}{Lifegift}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or a living \glossterm{ally} within \rngmed range}
+\target{Yourself}
 The target increases its current \glossterm{hit points} by 2.
 This can cause its current hit points to exceed its normal maximum hit points.
 When this spell ends, the target loses hit points equal to the number of hit points it gained this way.
@@ -9609,9 +9608,9 @@ When this spell ends, the target loses hit points equal to the number of hit poi
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{3} The number of additional hit points increases to 3.
-\rank{5} The number of additional hit points increases to 4.
-\rank{7} The number of additional hit points increases to 5.
+\rank{3} This spell can target a living \glossterm{ally} within \rngmed range instead of you.
+\rank{5} The number of additional hit points increases to 3.
+\rank{7} The number of additional hit points increases to 4.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -9735,13 +9734,31 @@ Make an attack vs. Fortitude against the target.
 
 
 
-\lowercase{\hypertarget{spell:Vital Persistence}{}}\label{spell:Vital Persistence}
-\begin{attuneability}[Rank 3]{\hypertarget{spell:Vital Persistence}{Vital Persistence}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or a living \glossterm{ally} within \rngmed range}
-The target ignores the vital wound effect of one of its \glossterm{vital wounds} (see \pcref{Vital Wounds}).
+\lowercase{\hypertarget{spell:Lifesteal Blade}{}}\label{spell:Lifesteal Blade}
+\begin{attuneability}[Rank 3]{\hypertarget{spell:Lifesteal Blade}{Lifesteal Blade}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself}
+Once per round, when the target \glossterm{vitally wounds} a living creature with a \glossterm{strike}, the target regains a lost \glossterm{hit point}.
+
+You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{5} You can cast this spell as a \glossterm{minor action}.
+\rank{5} This spell can target a living \glossterm{ally} within \rngmed range instead of you.
+\rank{7} This healing only requires the target to \glossterm{wound} a living creature with a strike.
+
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Vital Persistence}{}}\label{spell:Vital Persistence}
+\begin{attuneability}[Rank 3]{\hypertarget{spell:Vital Persistence}{Vital Persistence}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself}
+The target ignores the vital wound effect of one of its \glossterm{vital wounds} (see \pcref{Vital Wounds}).
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{5} This spell can target a living \glossterm{ally} within \rngmed range instead of you.
 \rank{7} The target can ignore the vital wound effect of two of its \glossterm{vital wounds} instead of only one.
 
 \end{attuneability}
@@ -9761,22 +9778,6 @@ In addition, as a \glossterm{condition}, the target is unable to regain hit poin
 \rank{8} The accuracy bonus increases to \plus2.
 
 \end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Lifesteal Blade}{}}\label{spell:Lifesteal Blade}
-\begin{attuneability}[Rank 4]{\hypertarget{spell:Lifesteal Blade}{Lifesteal Blade}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or a living \glossterm{ally} within \rngmed range}
-Once per round, when the target \glossterm{vitally wounds} a living creature with a \glossterm{strike}, the target regains a lost \glossterm{hit point}.
-
-You can cast this spell as a \glossterm{minor action}.
-
-\rankline
-\rank{6} This healing only requires the target to \glossterm{wound} a living creature with a strike.
-\rank{8} This healing only requires the target to deal damage to a living creature with a strike.
-
-\end{attuneability}
 \vspace{0.25em}
 
 

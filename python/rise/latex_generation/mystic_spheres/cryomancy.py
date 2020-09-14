@@ -111,15 +111,15 @@ cryomancy=MysticSphere(
             \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<8> The accuracy bonus increases to +2.
         """, tags=[]),
-        Spell('Skate', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Skate', 2, 'Yourself', """
             The target can move on top of calm water as if it were land.
             It treats the water as \\glossterm<difficult terrain>.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<4> The target can also move on top of rough water.
-            \\rank<6> The target can also move on top of stormy water.
+            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<6> The target can also move on top of rough or stormy water.
             \\rank<8> The target no longer treats the water as difficult terrain.
         """, tags=['Attune (target)']),
         Spell('Skyskate', 3, 'Yourself', """

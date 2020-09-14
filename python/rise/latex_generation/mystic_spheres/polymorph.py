@@ -61,7 +61,7 @@ polymorph=MysticSphere(
             \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=[]),
-        Spell('Shrink', 2, 'Yourself or one Small or larger \\glossterm<ally> within \\rngmed range', """
+        Spell('Shrink', 1, 'Yourself', """
             The target's size decreases by one \\glossterm<size category>.
             This decreases its \\glossterm<base speed> and improves its \\glossterm<Stealth> skill.
             It may also decrease the target's \\glossterm<reach> (see \\pcref<Size in Combat>).
@@ -70,9 +70,9 @@ polymorph=MysticSphere(
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<4> The minimum size category is reduced to Diminuitive.
-            \\rank<6> You can decrease the target's size category by up to two size categories.
-            \\rank<8> The minimum size category is reduced to Fine.
+            \\rank<3> This spell can target a Small or larger \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<5> The minimum size category is reduced to Diminuitive.
+            \\rank<7> You can decrease the target's size category by up to two size categories.
         """, tags=['Attune (target)']),
         Spell('Stoneskin', 1, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
             The target gains a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical> damage.
@@ -80,11 +80,12 @@ polymorph=MysticSphere(
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<3> The bonus increases to +4.
+            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            In addition, the bonus increases to +4.
             \\rank<5> The bonus increases to be equal to half your \\glossterm<power>.
             \\rank<7> The bonus increases to be equal to your \\glossterm<power>.
         """, tags=['Attune (target)']),
-        Spell('Enlarge', 4, 'Yourself or one Large or smaller \\glossterm<ally> within \\rngmed range', """
+        Spell('Enlarge', 4, 'Yourself', """
             The target's size increases by one \\glossterm<size category>.
             This increases its \\glossterm<base speed> and reduces its \\glossterm<Stealth> skill.
             It may also increase the target's \\glossterm<reach> (see \\pcref<Size in Combat>).
@@ -93,17 +94,17 @@ polymorph=MysticSphere(
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<6> The target also gains a +2 \\glossterm<magic bonus> to Strength.
+            \\rank<6> This spell can target a Large or smaller \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<8> You may increase the target by two size categories instead of one.
         """, tags=['Attune (target)']),
-        Spell('Alter Appearance', 3, 'Yourself or one large or smaller \\glossterm<ally> within \\rngmed range', """
+        Spell('Alter Appearance', 3, 'Yourself', """
             You make a Disguise check to alter the target's appearance (see \\pcref<Disguise Creature>).
             You gain a +4 bonus on the check, and you ignore penalties for changing the target's gender, species, subtype, or age.
             However, this effect is unable to alter the target's clothes or equipment in any way.
 
             \\rankline
-            \\rank<5> The bonus increases to +6.
-            \\rank<7> The bonus increases to +8.
+            \\rank<5> This spell can target a Large or smaller \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<7> The bonus increases to +6.
         """, tags=['Attune (target)']),
         Spell('Craft Object', 4, 'Any number of unattended, nonmagical objects within \\rngclose range', """
             You make a Craft check to transform the targets into a new item (or items) made of the same materials.
@@ -172,14 +173,14 @@ polymorph=MysticSphere(
             \\rank<6> The damage increases to \\glossterm<standard damage> -1d.
             \\rank<8> The damage increases to \\glossterm<standard damage>.
         """, tags=[]),
-        Spell('Camouflage', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Camouflage', 1, 'Yourself', """
             The target gains a +3 \\glossterm<magic bonus> to the Stealth skill.
 
             \\rankline
-            \\rank<3> The bonus increases to +4.
+            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<5> The bonus increases to +5.
-            \\rank<7> The bonus increases to +6.
-        """, tags=['Attune (target)', 'Sensation']),
+            \\rank<7> The bonus increases to +7.
+        """, tags=['Attune (target)']),
         Spell('Sludgeform', 8, 'One living creature within \\rngclose range', """
             Make an attack vs. Fortitude against the target.
             \\hit As a \\glossterm<condition>, the target's physical form loses coherence and partially collapses into a sludgelike mass.
