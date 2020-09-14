@@ -242,6 +242,7 @@ It defines how attributes work and explains how to make attacks in combat.
             \begin{itemize}
                 \item You gain a bonus (or penalty) to your \glossterm{hit points} equal to your base Constitution.
                 \item You gain a bonus (or penalty) to your Fortitude defense equal to your base Constitution.
+                \item You gain a bonus (or penalty) to your \glossterm{fatigue tolerance} equal to your base Constitution (see \pcref{Fatigue}).
                 \item Your base Constitution influences your \glossterm{resistances} (see \pcref{Resistances}).
                 \item You apply your base Constitution as a bonus or penalty to the Constitution-based \glossterm{skill}: Endurance (see \pcref{Skills}).
                 \item If your base Constitution is at least 2, you are automatically \glossterm{trained} with the Constitution-based skill.
@@ -717,10 +718,16 @@ It defines how attributes work and explains how to make attacks in combat.
     \subsection{Fatigue Points}\label{Fatigue Points}
         Your level of fatigue is measured with \glossterm{fatigue points}.
         A number of abilities and attacks can cause you to gain fatigue points.
-        You take a penalty to \glossterm{accuracy} and \glossterm{checks} equal to the number of fatigue points you have \sub your base Constitution.
-        This penalty is called your \glossterm{fatigue penalty}.
-        If you have a fatigue penalty of at least \minus1, you are \glossterm{fatigued}.
-        Some abilities can modify your fatigue penalty.
+
+        \subsubsection{Fatigue Tolerance}\label{Fatigue Tolerance}
+            You can gain a number of \glossterm{fatigue points} equal to 1 \add your base Constitution without suffering any consequences (minimum 0).
+            This value is called your \glossterm{fatigue tolerance}.
+            Some abilities can modify your fatigue tolerance.
+
+        \subsubsection{Fatigue Penalty}\label{Fatigue Penalty}
+            You take a penalty to \glossterm{accuracy} and \glossterm{checks} equal to the number of fatigue points you have \sub your \glossterm{fatigue tolerance}.
+            This penalty is called your \glossterm{fatigue penalty}.
+            If you have a fatigue penalty of at least \minus1, you are \glossterm{fatigued}.
 
     \subsection{Exhaustion}\label{Exhaustion}
         When your \glossterm{fatigue penalty} reaches \minus5, you fall \glossterm{unconscious} until your fatigue penalty is reduced below \minus5.
