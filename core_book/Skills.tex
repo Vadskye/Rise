@@ -1314,9 +1314,14 @@ This chapter describes each skill, including common uses for those skills.
 
         % TODO: add ability to identify that a creature is attuned to active effects.
 
+    \subsection{Notice Magical Effect}
+        As a \glossterm{free action}, you can notice magical effects around you.
+        The \glossterm{difficulty rating} is equal to 15 \sub the \glossterm{power} of the effect.
+        Extremely powerful effects are very easy to notice, but more difficult to identify.
+
     \subsection{Identify Magical Effect}
-        When you observe a magical effect, you can make a Spellsense check to identify its nature.
-        This grants you no special ability to notice hidden magical effects, but can allow you to understand magical effects you have already noticed.
+        When you notice a magical effect, you can make a Spellsense check to identify its nature.
+        Generally, you use the same Spellsense roll to both notice and identify a magical effect.
         The \glossterm{difficulty rating} is equal to 5 \add the \glossterm{power} of the effect.
         Success means you know in general terms what the effect does.
         Critical success means you know exactly what the effect does, and if it is a common effect, what ability caused it.
@@ -1359,6 +1364,32 @@ This chapter describes each skill, including common uses for those skills.
         Success means you identify the direction of the teleportation.
         Critical success means you also identify the distance.
         Failure means you learn no information about the teleportation.
+
+    \subsection{Modifiers}
+        All Spellsense checks share the same set of modifiers. These are noted on \trefnp{Spellsense Difficulty Modifiers}.
+
+        This table should not generally be consulted during a game. It is provided to make it easier to estimate a task's difficulty.
+
+        \begin{dtable}
+            \lcaption{Spellsense Difficulty Modifiers}
+            \begin{dtabularx}{\columnwidth}{X l}
+                \tb{Distance}                  & \tb{Difficulty Modifier\fn{1}} \tableheaderrule
+                Up to 20 feet away             & \plus0                   \\
+                21--100 feet away              & \plus2                   \\
+                101--500 feet away             & \plus5                   \\
+                501--2500 feet away            & \plus10                  \\
+                2500--10000 feet away          & \plus15                  \\
+                \tb{Number}                    & \tb{Difficulty Modifier} \\
+                1--4 magical sources      & \plus0                   \\
+                5--20 magical sources     & \minus5                  \\
+                21--100 magical sources   & \minus10                  \\
+                101--500 magical sources  & \minus15                 \\
+                \tb{Background}                & \tb{Difficulty Modifier} \\
+                Nothing similar                & 0                        \\
+                Many similar sensations        & \plus5                   \\
+                Many more intense sensations   & \plus10                  \\
+            \end{dtabularx}
+        \end{dtable}
 
 \newpage
 \skill{Stealth}{Dex}
