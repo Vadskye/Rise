@@ -122,7 +122,8 @@ def generate_implements():
             level=6,
             material_type='Staff',
             description="""
-                Whenever you use a \\glossterm<magical> ability that has a maximum size category for its targets, you increase that maximum by one size category, to a maximum of Colossal.
+                Whenever you use a \\glossterm<magical> ability that has a maximum size category for its targets or any objects it creates, you increase that maximum by one size category, to a maximum of Colossal.
+                This does not affect abilities that create creatures of a particular size.
             """,
             short_description="Increases maximum size category of abilities",
         ),
@@ -131,7 +132,7 @@ def generate_implements():
             level=12,
             material_type='Staff',
             description="""
-                Whenever you use a \\glossterm<magical> ability that has a maximum size category for its targets, you increase that maximum by two size categories, to a maximum of Colossal.
+                This implement functions like a \\mitem<staff of giants> implement, except that the maximum size category increases by two size categories.
             """,
             short_description="Significantly increaases maximum size category of abilities",
         ),
@@ -140,7 +141,7 @@ def generate_implements():
             level=18,
             material_type='Staff',
             description="""
-                Whenever you use a \\glossterm<magical> ability that has a maximum size category for its targets, you increase that maximum by three size categories, to a maximum of Colossal.
+                This implement functions like a \\mitem<staff of giants> implement, except that the maximum size category increases by three size categories.
             """,
             short_description="Drastically increaases maximum size category of abilities",
         ),
@@ -165,7 +166,7 @@ def generate_implements():
             material_type='Staff',
             tags=[],
             description="""
-                This weapon functions like a \\mitem<selective staff> implement, except that you can split the spell's area into two completely separate areas.
+                This implement functions like a \\mitem<selective staff> implement, except that you can split the spell's area into two completely separate areas.
                 If you do, each of those two areas must be independently contiguous.
             """,
             short_description="Allows excluding and splitting areas",
@@ -215,7 +216,7 @@ def generate_implements():
                 The ability takes effect as if you were in the chosen location.
                 This affects your \\glossterm<line of effect> for the ability, but not your \\glossterm<line of sight> (since you still see from your normal location).
                 % Wording?
-                Since an ability's range is measured from your location, this augment can allow you to affect targets outside your normal range.
+                Since an ability's range is measured from your location, this item can allow you to affect targets outside your normal range.
                 For example, a cone that normally bursts out from you would instead originate from your chosen location, potentially avoiding an obstacle between you and your target.
             """,
             short_description="Allows ability use from a short distance away",
@@ -247,18 +248,6 @@ def generate_implements():
             If the spell's effects depend on visual components, the spell may fail to work if you alter the spell's visuals too much.
         """,
         short_description="Makes spells hard to identify",
-    ))
-
-    implements.append(MagicItem(
-        name="Quickening Staff",
-        level=12,
-        material_type='Staff',
-        tags=[],
-        description="""
-            Once per round, you can cast a spell as a \\glossterm<minor action>.
-            If you do, you cannot take any actions during the \\glossterm<action phase> or \\glossterm<delayed action phase> of the next round.
-        """,
-        short_description="Allows casting spells very quickly",
     ))
 
     implements += [

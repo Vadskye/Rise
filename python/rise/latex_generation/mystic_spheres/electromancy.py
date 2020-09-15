@@ -127,7 +127,7 @@ spells=[
     Spell('Call Lightning', 3, 'Everything in a \\arealarge, 5 ft.\\ wide vertical line within \\rngmed range', """
         Make an attack vs. Reflex against each target.
         If you are outdoors in cloudy or stormy weather, you gain a +2 bonus to \\glossterm<accuracy> with the attack.
-        If this spell has its area increased, such as with the Widened \\glossterm<augment>, only the length of the line increases.
+        If this spell has its area increased, only the length of the line increases.
         \\hit Each target takes takes electricity \\glossterm<standard damage>.
 
 
