@@ -16,7 +16,8 @@ declare namespace Creature {
     | "sleight of hand"
     | "stealth"
 
-    // Constitution has no skills
+    // Constitution
+    | "endurance"
 
     // Intelligence
     | "craft"
