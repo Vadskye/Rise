@@ -785,18 +785,15 @@ This choice determines a great deal about your character's abilities.
             \parhead{Gift} You gain a \plus4 bonus to the Medicine skill (see \pcref{Medicine}).
             \parhead{Aspect} You gain a \plus1 bonus to \glossterm{vital rolls}.
             \parhead{Essence} At the end of each round, if you became \glossterm{unconscious} from a \glossterm{vital wound} that round, you can use one \glossterm{magical} ability you have that modifies \glossterm{vital rolls} or removes \glossterm{vital wounds} on yourself without taking an action.
-            \parhead{Mastery} You gain a \plus2 bonus to your base Constitution.
+            \parhead{Mastery} You gain a \plus1 bonus to your base Constitution.
 
         \subsubsection{Magic}
             If you choose this domain, you add the \sphere{thaumaturgy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
 
             \parhead{Gift} You gain a \plus1 bonus to \glossterm{power} with \glossterm{magical} abilities.
             \parhead{Aspect} You learn an additional \glossterm{spell} for a divine \glossterm{mystic sphere} you have access to.
-            \parhead{Essence} You learn an \glossterm{augment} (see \pcref{Augments}).
-            You can apply augments to spells to change their effects.
-            When you gain access to a new divine spell \glossterm{rank}, you may change which augments you know.
-            \parhead{Mastery} The power bonus from this domain's gift increases to \plus3.
-            You learn an additional \glossterm{augment} (see \pcref{Augments}).
+            \parhead{Essence} The power bonus from this domain's gift increases to \plus2.
+            \parhead{Mastery} The power bonus from this domain's gift increases to \plus5.
 
         \subsubsection{Protection}
             \parhead{Gift} You gain a \plus1 bonus to your level for the purpose of determining your \glossterm{resistances} (see \pcref{Resistances}).
@@ -856,9 +853,7 @@ This choice determines a great deal about your character's abilities.
         \subsubsection{War}
             \parhead{Gift} You gain proficiency with heavy armor and an additional \glossterm{weapon group} of your choice.
             \parhead{Aspect} You reduce your \glossterm{focus penalty} by 1.
-            \parhead{Essence} You learn one of the Legion, Selective, or Widened \glossterm{augments} (see \pcref{Augments}).
-            You can apply augments to spells to change their effects.
-            When you gain access to a new arcane spell \glossterm{rank}, you may change which augments you know, though this augment can only be one of the three listed.
+            \parhead{Essence} Whenever you deal damage to an ally with a \glossterm{magical} ability, that damage is considered \glossterm{environmental damage}.
             \parhead{Mastery} You gain a \plus1 bonus to \glossterm{accuracy} and \glossterm{power}.
 
         \subsubsection{Water}
@@ -3196,14 +3191,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Sorcerer Progression}
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Min Level} & \tb{Arcane Magic} & \tb{Arcane Spell Mastery} & \tb{Draconic Magic} & \tb{Innate Arcanist} & \tb{Wild Magic} \tableheaderrule
-            1 & 1  & Spellcasting, mage armor             & Mystic insight              & Draconic bloodline         & Innate magic             & Wildspell                                   \\
-            2 & 2  & Spell rank (2), spell knowledge      & Combat caster               & Draconic focus             & Mystic tolerance         & Chaotic miscast, wild soul                  \\
-            3 & 5  & Spell rank (3)                       & Wellspring of power         & Draconic precision         & Augment                  & Chaotic exertion                            \\
-            4 & 8  & Spell rank (4), greater mage armor   & Mystic insight              & Draconic hide              & Spell absorption         & Controlled chaos                            \\
-            5 & 11 & Spell rank (5), spell knowledge      & Greater combat caster       & Draconic heart             & Greater mystic tolerance & Greater chaotic miscast, greater wild  soul \\
-            6 & 14 & Spell rank (6)                       & Greater wellspring of power & Greater draconic precision & Augment                  & Greater chaotic exertion                    \\
-            7 & 17 & Spell rank (7), supreme mage armor   & Mystic insight              & Greater draconic hide      & Greater spell absorption & Greater controlled chaos                    \\
-            8 & 20 & Spell rank (8), epic spell knowledge & Epic arcane mastery         & Epic augmentation          & Epic wildspell           &                                             \\
+            1 & 1  & Spellcasting, mage armor             & Mystic insight              & Draconic bloodline         & Innate magic               & Wildspell                                   \\
+            2 & 2  & Spell rank (2), spell knowledge      & Combat caster               & Draconic focus             & Mystic tolerance           & Chaotic miscast, wild soul                  \\
+            3 & 5  & Spell rank (3)                       & Wellspring of power         & Draconic precision         & Innate enhancement         & Chaotic exertion                            \\
+            4 & 8  & Spell rank (4), greater mage armor   & Mystic insight              & Draconic hide              & Spell absorption           & Controlled chaos                            \\
+            5 & 11 & Spell rank (5), spell knowledge      & Greater combat caster       & Draconic heart             & Greater mystic tolerance   & Greater chaotic miscast, greater wild  soul \\
+            6 & 14 & Spell rank (6)                       & Greater wellspring of power & Greater draconic precision & Greater innate enhancement & Greater chaotic exertion                    \\
+            7 & 17 & Spell rank (7), supreme mage armor   & Mystic insight              & Greater draconic hide      & Greater spell absorption   & Greater controlled chaos                    \\
+            8 & 20 & Spell rank (8), epic spell knowledge & Epic arcane mastery         & Epic innate enhancement    & Epic wildspell             &                                             \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -3389,16 +3384,14 @@ This choice determines a great deal about your character's abilities.
         This archetype deepens your innate connection to arcane magic.
         You must have the Arcane Magic archetype from the sorcerer class to gain the abilities from this archetype.
 
-        \cf{Sor}[1]{Innate Magic} None of your spells have \glossterm{somatic components} or \glossterm{verbal components}.
+        \cf{Sor}[1]{Innate Magic} None of your arcane spells have \glossterm{somatic components} or \glossterm{verbal components}.
 
         \cf{Sor}[2]{Mystic Tolerance} You gain a bonus to \glossterm{resistances} against \glossterm{energy damage} equal to half your level.
 
-        \cf{Sor}[3]{Augment} You learn one \glossterm{augment} (see \pcref{Augments}).
-        You can apply augments to spells to change their effects.
-        When you gain access to a new arcane spell \glossterm{rank}, you may change which augments you know.
+        \cf{Sor}[3]{Innate Enhancement} You gain a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} and \glossterm{defenses}.
+        Because this is a magic bonus, it does not stack with other magic bonuses.
 
         \cf{Sor}[4]{Spell Absorption} Whenever another creature uses a spell to attack you, you gain the ability to cast the spell once.
-        The spell retains its original \glossterm{augments}, if any, and you cannot apply any \glossterm{augments} to it.
         When you cast the spell, you use your own \glossterm{accuracy}, \glossterm{power}, and abilities to determine the effects of the spell.
         Once you cast the spell, you expend the absorbed energy, and you cannot cast it again.
 
@@ -3407,13 +3400,12 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Sor}[5]{Greater Mystic Tolerance} The bonus from your \textit{mystic tolerance} ability increases to be equal to your level.
 
-        \cf*{Sor}[6]{Augment} You learn an additional \glossterm{augment}.
+        \cf*{Sor}[6]{Greater Innate Enhancement} The bonus from your \textit{personal enhancement} ability increases to \plus2.
 
         \cf{Sor}[7]{Greater Spell Absorption} You can store the ability to cast up to three spells with your \textit{spell absorption} ability.
         In addition, you can cast each stored spell twice before you lose the ability to cast it instead of only once.
 
-        \cf{Sor}[8]{Epic Augmentation} You can apply \glossterm{augments} to arcane as if you were able to cast rank 9 spells.
-        This does not give you access to rank 8 spells or rank 8 spell upgrades.
+        \cf{Sor}[8]{Epic Innate Enhancement} The bonus from your \textit{personal enhancement} ability increases to \plus4.
 
     \subsection{Wild Magic}
         This archetype makes the magic you cast more chaotic, generally increasing its power at the cost of your control over your magic.
@@ -3669,64 +3661,6 @@ This choice determines a great deal about your character's abilities.
         This gives you access to spells that require a minimum rank of 8 and can improve the effectiveness of your existing spells.
 
         \cf{War}[8]{Epic Spell Knowledge} You learn two additional pact spells.
-
-        % {
-        %     \augment{0}{Infernal Focus} You gain a \plus10 bonus to \glossterm{concentration} checks to cast the spell (see \pcref{Concentration}).
-
-        %     \augment{0}{Sickening} Make an attack vs. Fortitude against one creature targeted by the spell.
-        %     On a hit, the target is \glossterm{sickened} as a \glossterm{condition}.
-        %     \par This augment can be applied to any spell that targets at least one creature.
-
-        %     \augment{0}{Soulrending} When a creature is dealt damage by the spell, if it has no hit points remaining, it dies.
-        %     \par This augment can be applied to any spell that deals damage.
-
-        %     \augment{0}{Terrifying} Make an attack vs. Mental against one creature targeted by the spell.
-        %     On a hit, the target is \glossterm{shaken} by you as a \glossterm{condition}.
-        %     \par This augment can be applied to any spell that targets at least one creature.
-
-        %     \augment{1}{Dark Expansion} The spell's area is increased by one step, to a maximum of \areahuge.
-        %     The steps are, in order: \areasmall, \areamed, \arealarge, and \areahuge.
-        %     Normally, a Small or Medium line is 5 ft.\ wide, while a Large or Huge line is 10 ft.\ wide.
-        %     A line used to define a wall does not have a width.
-        %     \par This augment can be applied to any spell with an area that is one of the above areas.
-
-        %     \augment{1}{Untraceable} You do not need \glossterm{verbal components} or \glossterm{somatic components} to cast the spell.
-
-        %     \augment{2}{Abyssal Flame} Non-physical damage dealt by the spell becomes life damage in place of its other damage types.
-        %     In addition, you gain a \plus1d bonus to life damage dealt by the spell.
-        %     This does not change any other aspects of the spell's effects.
-        %     \par This augment can be applied to any spell that deals non-physical damage.
-
-        %     \augment{2}{Bloodreaving} When a creature takes damage from the spell, you heal hit points equal to the damage dealt.
-        %     \par This augment can be applied to any spell that deals damage.
-
-        %     % TODO: taking damage multiple times in the same round abuse?
-        %     \augment{2}{Exsanguinating} When a creature takes damage from the spell, it begins bleeding as a \glossterm{condition}.
-        %     At the end of each \glossterm{action phase}, a bleeding creature takes \glossterm{standard damage} \minus1d.
-        %     \par This augment can be applied to any spell that deals damage.
-
-        %     \augment{3}{Inevitable Doom} You gain a \plus2 bonus to \glossterm{accuracy} with the spell.
-        %     \par This augment can be applied to any spell that makes an attack.
-
-        %     \augment{3}{Infernal Potency} You gain a \plus4 bonus to \glossterm{power} with the spell.
-        %     \par This augment can be applied to any spell.
-
-        %     \augment{4}{Dark Miasma} When a creature takes damage from the spell, it becomes \glossterm{sickened} as a \glossterm{condition}.
-        %     \par This augment can be applied to any spell that deals damage.
-
-        %     \augment{4}{Unholy Terror} When a creature takes damage from the spell, it becomes \glossterm{shaken} by you as a \glossterm{condition}.
-        %     \par This augment can be applied to any spell that deals damage.
-
-        %     \augment{5}{Soulclaiming} When a creature takes damage from the spell, its soul becomes marked by your soulkeeper as a \glossterm{condition}.
-        %     It takes a \minus4 penalty to Mental defense.
-        %     If it dies, its soul is immediately claimed by your soulkeeper, preventing it from being resurrected by any means.
-
-        %     \augment{6}{Greater Inevitable Doom} You gain a \plus4 bonus to \glossterm{accuracy} with the spell.
-        %     \par This augment can be applied to any spell that makes an attack.
-
-        %     \augment{6}{Greater Infernal Potency} You gain a \plus8 bonus to \glossterm{power} with the spell.
-        %     \par This augment can be applied to any spell.
-        % }
 
     \subsection{Pact Spell Mastery}
         This archetype improves your ability to cast spells with the power of your dark pact.
@@ -4043,13 +3977,11 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Wiz}[4]{Greater Scholastic Lore} The bonuses from your \textit{scholastic lore} ability increase to \plus4.
 
-        \cf{Wiz}[5]{Contingency}  You learn the Contingency \glossterm{augment}, allowing you to prepare a spell so it takes effect automatically if specific circumstances arise.
-        Applying the Contingency \glossterm{augment} increases the \glossterm{rank} of the spell and all its upgrades by 2.
+        \cf{Wiz}[5]{Contingency} You gain the ability to prepare a spell so it takes effect automatically if specific circumstances arise.
         % If any spells take more than one standard action, they would need to be excluded from Contingency, but none exist
-        % You can apply this augment to any arcane spell that can be cast as a \glossterm{standard action} or \glossterm{minor action}.
-
-        Casting a spell with the Contingency augment takes 5 minutes.
-        When the casting is complete, the spell has no immediate effect.
+        % You can apply this ability to any arcane spell that can be cast as a \glossterm{standard action} or \glossterm{minor action}.
+        Preparing a spell with this ability takes 5 minutes.
+        When the preparation is complete, the spell has no immediate effect.
         Instead, it automatically takes effect when some specific circumstances arise.
         During the time required to cast the spell, you specify what circumstances cause the spell to take effect.
 
@@ -4063,8 +3995,8 @@ This choice determines a great deal about your character's abilities.
         Any spells which require decisions, such as the \spell{dimension door} spell, must have those decisions made at the time it is cast.
         You cannot alter those decisions when the contingency takes effect.
 
-        You can have only one spell with this augment active at a time.
-        If you use the augment again with a different spell, the old contingency is removed.
+        You can have only one spell with this ability active at a time.
+        If you use this ability again with a different spell, the old contingency is removed.
 
         \cf*{Wiz}[6]{Arcane Insight}[Magical]
         You learn an additional \textit{arcane insight}.
@@ -4076,7 +4008,6 @@ This choice determines a great deal about your character's abilities.
         Each contingency can have separate triggering conditions.
         Only one contigency can trigger each round.
         If multiple contingencies would activate simultaneously, choose one to activate randomly.
-        In addition, the Contingency augment no longer increases the rank of the spell it is applied to.
 
     \subsection{Arcane Spell Mastery}
         This archetype improves the arcane spells you cast.

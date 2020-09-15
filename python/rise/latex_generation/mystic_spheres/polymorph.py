@@ -111,9 +111,6 @@ polymorph=MysticSphere(
             You require none of the tools or time expenditure that would normally be necessary.
             The total size of all targets combined must be Large size or smaller.
 
-            You can apply the Giant \\glossterm<augment> to this spell.
-            If you do, it increases the maximum size of all targets combined.
-
             \\rankline
             \\rank<6> The maximum combined size is increased to Huge.
             \\rank<8> The maximum combined size is increased to Gargantuan.

@@ -189,15 +189,6 @@ thaumaturgy=MysticSphere(
             \\rank<6> The area increases to a \\areahuge radius \\glossterm<emanation>.
             \\rank<8> The area increases to a \\areaext radius \\glossterm<emanation>.
         """, tags=['Attune (self)']),
-        Spell('Augmented Spells', 5, 'Yourself', """
-            Choose one \\glossterm<augment> you know with a rank modifier of up to +2.
-            You can apply the augment once to spells you cast without increasing the minimum rank of those spells.
-            If the augment can be applied multiple times, you can apply it again to the same spell, increasing the spell's minimum rank normally.
-
-            \\rankline
-            \\rank<7> You can choose an additional \\glossterm<augment> you know with a rank modifier of up to +2.
-            Whenever you cast a spell, you can choose which augment to apply for free.
-        """, tags=['Attune (self)']),
         Spell('Disrupt Casting', 4, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit As a \\glossterm<condition>, the target has a 50\\% chance to \\glossterm<miscast> any spell it casts.

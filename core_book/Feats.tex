@@ -1088,6 +1088,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[4]{Alter Damage} Whenever you cast a spell that deals damage, you can change the type of damage it deals based on the \glossterm{mystic spheres} you have access to.
         You can use this ability to affect both spells that deal damage directly and spells that cause effects or summon creatures that later deal damage.
+        If you change a spell's damage type in this way, you change all damage done by the spell, even if the spell would originally deal damage of multiple types.
 
         The damage types for each mystic sphere are given in \trefnp{Mystic Sphere Damage Types}.
         Not all mystic spheres have associated damage types.
@@ -1123,9 +1124,14 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \end{dtabularx}
         \end{dtable}
 
-        \ff[7]{Augment} You learn one \glossterm{augment} (see \pcref{Augments}).
-        You can apply that augment to spells you cast and rituals you perform.
-        When you gain access to a new spell level, you may change which augments you know.
+        \ff[7]{Spell Fusion} You can use the \textit{spell fusion} ability as a \glossterm{standard action}.
+        \begin{freeability}{Spell Fusion}
+            Choose two spells that you know which do not have the \glossterm{Sustain} or \glossterm{Attune} tags.
+            You cast both spells simultaneously.
+            Both spells that you fuse in this way must have the exact same area and/or targeting restrictions, and you must choose the same targets and area for both spells, if applicable.
+
+            After you use this ability, you are unable to take any actions during the following round.
+        \end{freeability}
 
         % TODO: make this based on spheres known?
         \ff[10]{Alter Conditions} When you cast a spell that inflicts a \glossterm{condition} with a standard effect, you can change that effect to another effect of the same rank.
@@ -1144,13 +1150,13 @@ Feats also make the system more mechanically complex, so they are not necessaril
             2. The target wakes up if it takes a \glossterm{vital wound}, but cannot otherwise wake up during the condition.
         \end{dtable}
 
-        \ff[13]{Augment} You learn an additional \glossterm{augment}.
+        \ff[13]{Greater Spell Fusion} Using your \textit{spell fusion} ability does not prevent you from acting during the \glossterm{movement phase} of the following round.
 
         \ff[16]{Blend Damage} When you cast a spell that deals damage, you can change the damage type to have any combination of damage types provided by the \glossterm{mystic spheres} you have access to and the original spell's damage type.
         For example, if you cast a spell that deals fire damage and you have access to the \textit{cryomancy} \glossterm{mystic sphere}, you can change that spell's damage type to be either fire damage, cold damage, or both fire and cold damage simultaneously.
         You cannot remove a spell's damage type entirely.
 
-        \ff[19]{Augment} You learn an additional \glossterm{augment}.
+        \ff[19]{Supreme Spell Fusion} Using your \textit{spell fusion} ability does not prevent you from taking \glossterm{minor actions} during the following round.
     \end{feat}
 
     % TODO: replace with Wild Magic mage archetype
