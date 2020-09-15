@@ -17,7 +17,14 @@ export type WeaponInput = StandardWeaponInput | CustomWeaponInput;
 
 export type Weapon = Required<CustomWeaponInput>;
 
-export type WeaponTag = "keen" | "impact" | "sweeping 1" | "sweeping 2" | "forceful" | "long";
+export type WeaponTag =
+  | "keen"
+  | "impact"
+  | "sweeping 1"
+  | "sweeping 2"
+  | "forceful"
+  | "long"
+  | "grappling";
 
 export function parseWeaponInput(input: WeaponInput): Weapon {
   const weapon = {
@@ -40,6 +47,7 @@ export type StandardWeaponName =
   | "bite"
   | "claw"
   | "club"
+  | "constrict"
   | "greataxe"
   | "greatclub"
   | "greatsword"
@@ -73,6 +81,11 @@ export const standardWeapons: Record<StandardWeaponName, Omit<CustomWeaponInput,
   },
   "club": {
     damageTypes: ["bludgeoning"],
+  },
+  "constrict": {
+    damageTypes: ["bludgeoning"],
+    powerBonus: 4,
+    tags: ["grappling"],
   },
   "greataxe": {
     damageTypes: ["slashing"],
