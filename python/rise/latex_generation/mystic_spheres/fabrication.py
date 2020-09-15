@@ -174,7 +174,6 @@ fabrication=MysticSphere(
             You create a normal item of that type at the target location.
 
             The item cannot be constructed of any magical or extraordinary material.
-            % This should allow the Giant augment; is this worded to allow that?
             It is sized appropriately for you, up to a maximum of a Medium size item.
 
             \\rankline

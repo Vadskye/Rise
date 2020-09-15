@@ -155,7 +155,7 @@ aquamancy=MysticSphere(
         """, tags=[]),
         Spell('Geyser', 3, 'Everything in a \\arealarge, 5 ft.\\ wide vertical line within \\rngmed range', """
             Make an attack vs. Armor against each target.
-            If this spell has its area increased, such as with the Widened \\glossterm<augment>, only the length of the line increases.
+            If this spell has its area increased, only the length of the line increases.
             \\hit Each target takes takes bludgeoning \\glossterm<standard damage>.
 
             \\rankline
