@@ -11,7 +11,8 @@ export const skillAttributes: Record<keyof Creature.Skills, keyof Creature.Attri
   "sleight of hand": "dex",
   "stealth": "dex",
 
-  // Constitution has no skills
+  // Constitution
+  "endurance": "con",
 
   // Intelligence
   "craft": "int",

@@ -11,7 +11,8 @@ export const skills: Creature.Skill[] = [
   "sleight of hand",
   "stealth",
 
-  // Constitution has no skills
+  // Constitution
+  "endurance",
 
   // Intelligence
   "craft",

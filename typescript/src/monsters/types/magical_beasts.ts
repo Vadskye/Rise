@@ -149,6 +149,39 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
     startingAttributes: { str: 0, dex: 2, con: 1, int: -5, wil: 3 },
     weaponInput: [{ name: "bite" }],
   },
+  {
+    alignment: "Always true neutral",
+    armorInputs: [{ name: "thick skin" }],
+    challengeRating: 2,
+    description: `
+      Darkmantles hang from ceilings using a muscular "foot" at the top of their bodies.
+      They can look like a stalactite by holding their tentacles stiffly under themeselves, or like a lump of rock by spreading their tentacles so the membrane between them covers their bodies.
+      Their shell and skin usually resemble limestone, but a darkmantle can change its color to match almost any type of stony background.
+
+      A darkmantle attacks by dropping onto its prey and wrapping its tentacles around an opponent's head.
+      Once attached, it squeezes and tries to suffocate its foe.
+      A darkmantle that misses its initial attack often climbs up and tries to drop on the opponent again if there is a conveniently placed wall.
+      Otherwise, it tries to climb its opponent's body to suffocate its head.
+    `,
+    name: "Darkmantle",
+    level: 1,
+    passiveAbilities: [
+      {
+        description: `
+        Whenever the $name hits a creature with its tentacles, if the attack also beats the target's Fortitude and Reflex defense,
+        the target is \\glossterm{grappled} by the $name.
+      `,
+        name: "Latch On",
+      },
+      {
+        name: "Darkvision 100 ft.",
+      },
+    ],
+    speeds: { climb: 20 },
+    startingAttributes: { str: 3, dex: -1, con: 0, int: -8, per: 1, wil: 0 },
+    skillPoints: { stealth: 2 },
+    weaponInput: [{ name: "constrict" }, { name: "tentacle" }],
+  },
 ];
 
 export const magicalBeasts = addType("magical beast", magicalBeastInput);

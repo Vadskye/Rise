@@ -1,36 +1,143 @@
 import { poisonousWeapon } from "@src/passive_abilities";
 import { addType, TypelessMonsterInput } from "./add_type";
 
+// TODO: many animals should have the scent ability
 const animalInput: TypelessMonsterInput[] = [
   {
     alignment: "Always true neutral",
     armorInputs: [{ name: "fur" }],
-    challengeRating: 2,
+    challengeRating: 1,
     description: `
-      The black bear is a forest-dwelling omnivore that usually is not dangerous unless an interloper threatens its cubs or food supply.
-
-      Black bears can be pure black, blond, or cinnamon in color and are rarely more than 5 feet long.
+      Baboons are powerful and aggressive primates adapted to life on the ground.
+      They prefer open spaces but climb trees to find safe places to rest overnight.
+      A typical baboon is the size of a big dog.
     `,
-    level: 3,
-    name: "Black bear",
-    startingAttributes: { str: 3, con: 3, int: -8, wil: -1 },
+    level: 1,
+    name: "Baboon",
+    skillPoints: { awareness: 1, climb: 2 },
+    speeds: { climb: 30 },
+    startingAttributes: { str: 2, dex: 2, con: 1, int: -8, per: 1, wil: -1 },
     weaponInput: [{ name: "bite" }],
   },
   {
     alignment: "Always true neutral",
     armorInputs: [{ name: "fur" }],
+    challengeRating: 1,
+    description: `
+      Badgers are furry animals with squat, powerful bodies.
+      Their strong forelimbs are armed with long claws for digging.
+      An adult badger is 2 to 3 feet long and weighs 25 to 35 pounds.
+    `,
+    level: 1,
+    name: "Badger",
+    skillPoints: { flexibility: 2 },
+    size: "small",
+    speeds: { burrow: 10 },
+    startingAttributes: { str: -1, dex: 2, con: 2, int: -8, per: 1, wil: -1 },
+    weaponInput: [{ name: "bite" }],
+  },
+  {
+    alignment: "Always true neutral",
+    armorInputs: [{ name: "fur" }],
+    challengeRating: 0.5,
+    description: `
+      The statistics presented here describe a common housecat.
+    `,
+    level: 1,
+    name: "Cat",
+    skillPoints: { awareness: 2, climb: 2, stealth: 2 },
+    size: "tiny",
+    startingAttributes: { str: -7, dex: 3, con: -1, int: -7, per: 1, wil: -2 },
+    weaponInput: [{ name: "bite" }, { name: "claw" }],
+  },
+  {
+    alignment: "Always true neutral",
+    armorInputs: [{ name: "fur" }],
+    challengeRating: 1,
+    description: `
+       The statistics presented here describe a fairly small dog of about 20 to 50 pounds in weight.
+       They also can be used for small wild canines such as coyotes and jackals.
+    `,
+    level: 1,
+    name: "Dog",
+    skillPoints: { awareness: 2, jump: 2, swim: 2 },
+    size: "small",
+    startingAttributes: { str: 0, dex: 1, con: 0, int: -7, per: 1, wil: -1 },
+    weaponInput: [{ name: "bite" }],
+  },
+  {
+    // TODO: include carrying capacity in description without having to manually calculate it
+    alignment: "Always true neutral",
+    armorInputs: [{ name: "fur" }],
     challengeRating: 2,
     description: `
-      These massive omnivores are bad-tempered and territorial.
-      The brown bear's statistics can be used for almost any big bear, including the grizzly.
+      Camels are known for their ability to travel long distances without food or water.
     `,
-    level: 5,
-    height: "9 feet",
-    name: "Brown bear",
+    level: 1,
+    name: "Camel",
+    skillPoints: { awareness: 1, endurance: 2 },
     size: "large",
-    startingAttributes: { str: 4, con: 4, int: -8, wil: -1 },
+    startingAttributes: { str: 3, dex: 0, con: 3, int: -8, per: 1 },
+    weaponInput: [{ name: "bite", powerBonus: -4 }],
+  },
+  {
+    alignment: "Always true neutral",
+    armorInputs: [{ name: "fur" }],
+    challengeRating: 1,
+    description: `
+      Dire rats are omnivorous scavengers, but will attack to defend their nests and territories.
+      They can grow to be up to 4 feet long and weigh over 50 pounds.
+    `,
+    level: 1,
+    name: "Dire Rat",
+    // TODO: define diseases better so dire rats can inflict them
+    // passiveAbilities: [{
+    //   description: `
+    //   `,
+    //   name: "Disease",
+    // }],
+    skillPoints: { climb: 2, swim: 2 },
+    size: "small",
+    startingAttributes: { str: 0, dex: 3, con: 0, int: -9, per: 2, wil: -2 },
     weaponInput: [{ name: "bite" }],
-    weight: "1,800 pounds",
+  },
+  {
+    description: `
+      Bears are large, furry animals known for their strength and tenacity.
+    `,
+    name: "Bears",
+    monsters: [
+      {
+        alignment: "Always true neutral",
+        armorInputs: [{ name: "fur" }],
+        challengeRating: 2,
+        description: `
+        Black bears are forest-dwelling omnivores that are usually not dangerous unless an interloper threatens their cubs or food supply.
+
+        Black bears can be pure black, blond, or cinnamon in color and are rarely more than 5 feet long.
+      `,
+        level: 3,
+        name: "Black bear",
+        startingAttributes: { str: 3, con: 3, int: -8, wil: -1 },
+        weaponInput: [{ name: "bite" }],
+      },
+      {
+        alignment: "Always true neutral",
+        armorInputs: [{ name: "fur" }],
+        challengeRating: 2,
+        description: `
+          Brown bears tend to be bad-tempered and territorial.
+          A brown bear's statistics can be used for almost any big bear, including the grizzly.
+        `,
+        level: 5,
+        height: "9 feet",
+        name: "Brown bear",
+        size: "large",
+        startingAttributes: { str: 4, con: 4, int: -8, wil: -1 },
+        weaponInput: [{ name: "bite" }],
+        weight: "1,800 pounds",
+      },
+    ],
   },
   {
     alignment: "Always true neutral",
