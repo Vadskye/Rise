@@ -1,3 +1,4 @@
+import { passiveAbilities } from "@src/passive_abilities";
 import { addType, TypelessMonsterInput } from "./add_type";
 
 export const magicalBeastInput: TypelessMonsterInput[] = [
@@ -168,9 +169,9 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
     passiveAbilities: [
       {
         description: `
-        Whenever the $name hits a creature with its tentacles, if the attack also beats the target's Fortitude and Reflex defense,
-        the target is \\glossterm{grappled} by the $name.
-      `,
+          Whenever the $name hits a creature with its tentacles, if the attack also beats the target's Fortitude and Reflex defense,
+          the target is \\glossterm{grappled} by the $name.
+        `,
         name: "Latch On",
       },
       {
@@ -181,6 +182,37 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
     startingAttributes: { str: 3, dex: -1, con: 0, int: -8, per: 1, wil: 0 },
     skillPoints: { stealth: 2 },
     weaponInput: [{ name: "constrict" }, { name: "tentacle" }],
+  },
+  {
+    alignment: "Always true neutral",
+    armorInputs: [{ name: "feathers" }],
+    attackInputs: [
+      {
+        accuracyBonus: -2,
+        name: "Quick Slash",
+        powerBonus: -4,
+        preface: "The $name can use this ability as a \\glossterm{minor action}.\\par",
+        weaponName: "claw",
+      },
+    ],
+    challengeRating: 4,
+    description: `
+      Griffons are powerful, majestic creatures with the characteristics of both lions and eagles.
+      From nose to tail, an adult griffon can measure as much as 8 feet.
+      Neither males nor females are endowed with a mane.
+      A pair of broad, golden wings emerge from the creature’s back and span 25 feet or more.
+      A griffon weighs about 500 pounds.
+
+      Griffons cannot speak, but they understand Common.
+    `,
+    name: "Griffon",
+    level: 5,
+    passiveAbilities: [{ name: "Low-light vision" }, passiveAbilities.pounce],
+    size: "large",
+    speeds: { fly: 60 },
+    startingAttributes: { str: 3, dex: 3, con: 0, int: -5, per: 2, wil: 2 },
+    skillPoints: { awareness: 2 },
+    weaponInput: [{ name: "bite" }, { name: "claw" }],
   },
 ];
 
