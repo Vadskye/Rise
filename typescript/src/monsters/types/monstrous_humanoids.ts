@@ -77,6 +77,51 @@ export const monstrousHumanoidInput: TypelessMonsterInput[] = [
   },
 ];
 
+const baseOgre = {
+  alignment: "Usually chaotic evil",
+  armorInputs: [{ name: "thick skin" as const }, { name: "breastplate" as const }],
+  languages: ["Giant"],
+  size: "large" as const,
+  startingAttributes: { str: 4, dex: -1, con: 1, per: 0, wil: -1 },
+  weaponInput: [{ name: "greatclub" as const }, { name: "javelin" as const }],
+};
+
+monstrousHumanoidInput.push({
+  description: `
+    Ogres are huge, hideous humanoid creatures with a taste for human flesh.
+    If that is unavailable, they also enjoy the flesh of other humanoid creatures.
+    They lack the intelligence for complex plans, but they like lying in wait to ambush helpless travelers.
+    They are intelligent enough to throw their javelins first to soften up their foes before closing into melee, but ogre gangs and bands fight as unorganized individuals.
+
+    Adult ogres stand 9 to 10 feet tall and weigh 600 to 650 pounds.
+    Their skin color ranges from dull yellow to dull brown.
+    Their clothing consists of poorly cured furs and hides, which add to their naturally repellent odor.
+  `,
+  name: "Ogres",
+  monsters: [
+    {
+      ...baseOgre,
+      challengeRating: 1,
+      description: `
+        Ogre gangers are relatively weak or young ogres that tend to gather together in gangs for mutual protection.
+      `,
+      level: 3,
+      name: "Ogre Ganger",
+    },
+    {
+      ...baseOgre,
+      challengeRating: 3,
+      description: `
+        Ogre menaces are mature adult ogres that often terrorize small towns.
+        They tend to work alone or with goblin minions that they bully into submission.
+      `,
+      level: 4,
+      name: "Ogre Menace",
+      skillPoints: { intimidate: 2 },
+    },
+  ],
+});
+
 const baseGiant = {
   languages: ["Giant"],
   passiveAbilities: [
