@@ -1,3 +1,4 @@
+import { ActiveAbility } from "@src/active_abilities";
 import { CalculatedAttack, calculateStrike } from "@src/calculate";
 import { DamageType, damageTypes } from "@src/data";
 import * as format from "@src/latex/format";
@@ -158,6 +159,7 @@ function getAbilities(monster: MonsterBase) {
   if (monster.attacks.length > 0 || monster.passiveAbilities.length > 0) {
     return `
       ${getAttacks(monster)}
+      ${getActiveAbilities(monster)}
       ${getPassiveAbilities(monster)}
     `;
   } else {
@@ -170,6 +172,10 @@ function getAttacks(monster: MonsterBase) {
   return monster.calculatedAttacks.map(formatAttack).join("\n");
 }
 
+function getActiveAbilities(monster: MonsterBase) {
+  return monster.activeAbilities.map(formatActiveAbility).join("\n");
+}
+
 function formatAttack(attack: CalculatedAttack) {
   // TODO: add attack tags
   const tagText = "";
@@ -178,6 +184,19 @@ function formatAttack(attack: CalculatedAttack) {
     \\begin{freeability}{${titleCase(attack.name)}}${tagText}
       \\${targetTag}{${attack.target}}
       ${attack.preface.trim()} ${standardAttackEffect(attack).trim()}
+    \\end{freeability}
+  `;
+}
+
+function formatActiveAbility(activeAbility: ActiveAbility) {
+  // TODO: add active ability tags
+  const tagText = "";
+  const targetTag = activeAbility.target?.toLowerCase().startsWith("one") ? "target" : "targets";
+  const targetText = activeAbility.target ? `\\${targetTag}{${activeAbility.target}}` : "";
+  return `
+    \\begin{freeability}{${titleCase(activeAbility.name)}}${tagText}
+      ${targetText}
+      ${activeAbility.effect}
     \\end{freeability}
   `;
 }
