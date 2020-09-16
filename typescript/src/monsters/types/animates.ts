@@ -56,6 +56,8 @@ const baseTreant = {
         Treants avoid stranding trees in unsustainable locations except in desperate circumstances.
       `,
       name: "Animate Tree",
+      source: "magical" as const,
+      tags: ["Focus" as const],
       target: "One tree no larger than the treant (see text)",
     },
   ],

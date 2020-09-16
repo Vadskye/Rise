@@ -55,6 +55,7 @@ export type StandardWeaponName =
   | "gore"
   | "light crossbow"
   | "mace"
+  | "battleaxe"
   | "ram"
   | "smallsword"
   | "slam"
@@ -90,6 +91,11 @@ export const standardWeapons: Record<StandardWeaponName, Omit<CustomWeaponInput,
   "greataxe": {
     damageTypes: ["slashing"],
     powerBonus: 4,
+    tags: ["sweeping 1"],
+  },
+  "battleaxe": {
+    damageTypes: ["slashing"],
+    powerBonus: 0,
     tags: ["sweeping 1"],
   },
   "greatclub": {

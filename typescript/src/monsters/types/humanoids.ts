@@ -3,28 +3,6 @@ import { addType, TypelessMonsterInput } from "./add_type";
 export const humanoidInput: TypelessMonsterInput[] = [
   {
     alignment: "Usually lawful evil",
-    armorInputs: [{ name: "breastplate" }],
-    attackInputs: [
-      {
-        accuracyBonus: -2,
-        powerBonus: 4,
-        name: "Power Smash",
-        weaponName: "greataxe",
-      },
-    ],
-    description: `
-      Elite orcs are battle-hardened war veterans who are deadly at any range.
-      They tend to prioritize raw strength over subtlety.
-    `,
-    languages: ["Orc"],
-    level: 8,
-    name: "Orc, Elite",
-    resistanceBonuses: { physical: 3 },
-    startingAttributes: { str: 4, con: 2, int: -2, wil: -1 },
-    weaponInput: [{ name: "greataxe" }, { name: "light crossbow" }],
-  },
-  {
-    alignment: "Usually lawful evil",
     attackInputs: [{ name: "drain life" }],
     description: `
       Cultists may serve many masters.
@@ -97,6 +75,138 @@ humanoidInput.push({
   name: "Lizardfolk, Elite",
   startingAttributes: { str: 3, con: 2 },
   weaponInput: [{ damageTypes: ["piercing"], name: "spear" }],
+});
+
+const baseOrc = {
+  alignment: "Usually lawful evil",
+  languages: ["Orc"],
+};
+
+humanoidInput.push({
+  description: `
+      Orcs are green-skinned humanoids that are generally larger, stronger, and less intelligent than humans.
+      Most other humanoid races consider them ugly, though orcs would say the same about most other humanoid races.
+      Orc hierarchy and status is almost always determined by power, and chieftains can be deposed at specific intervals in a personal trial by combat.
+
+      Orcs have highly militaristic and regimented society that is divided into different clans, each of which is ruled by a powerful chieftain.
+      They tend to be selfish, but they adhere strictly to the particular orcish interpretation of honorable combat.
+      Honorable orc combat avoids sneak attacks or deception, allows enemies to surrender, and respects the distinction between civilians and combatants.
+      However, honorable orc combat does not require a great deal of warning before battle is joined, and they have no concept of "dirty fighting" - orcs fight brutally and with no reservations in combat.
+    `,
+  name: "Orcs",
+  monsters: [
+    {
+      ...baseOrc,
+      armorInputs: [{ name: "studded leather" }],
+      attackInputs: [
+        {
+          accuracyBonus: -2,
+          powerBonus: 6,
+          name: "Power Smash",
+          weaponName: "greataxe",
+        },
+      ],
+      challengeRating: 1,
+      description: `
+        Orc grunts are the standard warrior that orc clans field in battle.
+      `,
+      level: 2,
+      name: "Grunt",
+      startingAttributes: { str: 3, con: 1, int: -2, wil: -1 },
+      weaponInput: [{ name: "greataxe" }],
+    },
+    {
+      ...baseOrc,
+      armorInputs: [{ name: "leather" }],
+      challengeRating: 0.5,
+      description: `
+        Orc peons are the weakest warrior that orc clans field in battle.
+        They have the lowest status of any adult in orc society.
+      `,
+      level: 1,
+      name: "Peon",
+      startingAttributes: { str: 2, con: 1, int: -2, wil: -1 },
+      weaponInput: [{ name: "greataxe" }],
+    },
+    {
+      ...baseOrc,
+      armorInputs: [{ name: "breastplate" }, { name: "reinforced" }],
+      attackInputs: [
+        {
+          accuracyBonus: -2,
+          powerBonus: 6,
+          name: "Power Smash",
+          weaponName: "greataxe",
+        },
+        {
+          accuracyBonus: -2,
+          powerBonus: 6,
+          name: "Power Shot",
+          weaponName: "light crossbow",
+        },
+      ],
+      challengeRating: 2,
+      description: `
+        Orc veterans are battle-hardened elite warriors who are deadly at any range.
+        They often serve as bodyguards to orc chieftains or as devastating shock troops in battle.
+      `,
+      level: 6,
+      name: "Veteran",
+      startingAttributes: { str: 4, con: 2, int: -2, wil: -1 },
+      weaponInput: [{ name: "greataxe" }, { name: "light crossbow" }],
+    },
+    {
+      ...baseOrc,
+      armorInputs: [{ name: "breastplate" }, { name: "double reinforced" }],
+      attackInputs: [
+        {
+          accuracyBonus: -2,
+          powerBonus: 6,
+          name: "Power Smash",
+          weaponName: "greataxe",
+        },
+        {
+          accuracyBonus: -2,
+          powerBonus: 6,
+          name: "Power Shot",
+          weaponName: "light crossbow",
+        },
+      ],
+      challengeRating: 4,
+      description: `
+        Orc chieftains are the most powerful orc warriors.
+        Even the lowest chieftain commands hundreds of powerful orc warriors, plus at least as many noncombatants.
+      `,
+      level: 8,
+      name: "Veteran",
+      startingAttributes: { str: 4, con: 2, int: -2, wil: -1 },
+      weaponInput: [{ name: "greataxe" }, { name: "light crossbow" }],
+    },
+    {
+      // TODO: define the orc god(s)
+      ...baseOrc,
+      activeAbilityInputs: [
+        {
+          effect: `
+            The target regains one \\glossterm{hit point}.
+          `,
+          name: "Cure Wound",
+          target: "One \\glossterm{ally} within \\rngmed range",
+          tags: ["Focus"],
+        },
+      ],
+      armorInputs: [{ name: "studded leather" }],
+      attackInputs: [{ name: "drain life" }],
+      challengeRating: 2,
+      description: `
+        Orc shamans provide orc squads with divine magical support.
+      `,
+      level: 2,
+      name: "Shaman",
+      startingAttributes: { str: 1, con: 0, int: -1, wil: 2 },
+      weaponInput: [{ name: "battleaxe" }],
+    },
+  ],
 });
 
 export const humanoids = addType("humanoid", humanoidInput);
