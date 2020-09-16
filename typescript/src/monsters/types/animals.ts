@@ -1,4 +1,3 @@
-import { poisonousWeapon } from "@src/passive_abilities";
 import { addType, TypelessMonsterInput } from "./add_type";
 
 // TODO: many animals should have the scent ability
@@ -240,8 +239,13 @@ const animalInput: TypelessMonsterInput[] = [
     weaponInput: [{ name: "stinger" }],
     passiveAbilities: [
       {
-        description: poisonousWeapon("stinger", "\\glossterm{sickened}", "\\glossterm{paralyzed}"),
-        name: "Poison Sting",
+        description: `
+          Whenever the $name \\glossterm{wounds} a creature with its stinger,
+            the damaged creature becomes \\glossterm{poisoned} (see \\pcref{Poison}).
+          The poison's initial hit makes the target \\glossterm{sickened} as long as the poison lasts.
+          On the poison's third hit, the target becomes \\glossterm{paralyzed} as long as the poison lasts.
+        `,
+        name: "Paralyzing Sting",
       },
     ],
   },
@@ -271,12 +275,13 @@ const baseCentipede = {
   `,
   passiveAbilities: [
     {
-      description: poisonousWeapon(
-        "bite",
-        "lose a \\glossterm{hit point}",
-        "lose two \\glossterm{hit points}",
-      ),
-      name: "Poison Sting",
+      description: `
+        Whenever the $name \\glossterm{wounds} a creature with its bite,
+          the damaged creature becomes \\glossterm{poisoned} (see \\pcref{Poison}).
+        The poison's initial hit makes the target lose a \\glossterm{hit point}.
+        On the poison's third hit, the target loses two \\glossterm{hit points}.
+      `,
+      name: "Venom",
     },
   ],
   weaponInput: [{ name: "bite" as const }],
@@ -319,8 +324,13 @@ const spiderBase = {
   `,
   passiveAbilities: [
     {
-      description: poisonousWeapon("bite", "\\glossterm{sickened}", "\\glossterm{paralyzed}"),
-      name: "Poison Sting",
+      description: `
+        Whenever the $name \\glossterm{wounds} a creature with its bite,
+          the damaged creature becomes \\glossterm{poisoned} (see \\pcref{Poison}).
+        The poison's initial hit makes the target \\glossterm{sickened} as long as the poison lasts.
+        On the poison's third hit, the target becomes \\glossterm{paralyzed} as long as the poison lasts.
+      `,
+      name: "Paralyzing Venom",
     },
   ],
   weaponInput: [{ name: "bite" as const }],
