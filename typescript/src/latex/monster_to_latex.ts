@@ -177,8 +177,7 @@ function getActiveAbilities(monster: MonsterBase) {
 }
 
 function formatAttack(attack: CalculatedAttack) {
-  // TODO: add attack tags
-  const tagText = "";
+  const tagText = format.activeAbilityTags(attack.tags);
   const targetTag = attack.target.toLowerCase().startsWith("one") ? "target" : "targets";
   return `
     \\begin{freeability}{${titleCase(attack.name)}}${tagText}
@@ -189,8 +188,7 @@ function formatAttack(attack: CalculatedAttack) {
 }
 
 function formatActiveAbility(activeAbility: ActiveAbility) {
-  // TODO: add active ability tags
-  const tagText = "";
+  const tagText = format.activeAbilityTags(activeAbility.tags);
   const targetTag = activeAbility.target?.toLowerCase().startsWith("one") ? "target" : "targets";
   const targetText = activeAbility.target ? `\\${targetTag}{${activeAbility.target}}` : "";
   return `
