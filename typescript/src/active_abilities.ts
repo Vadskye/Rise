@@ -1,3 +1,5 @@
+import { AbilityTag } from "@src/ability_tags";
+
 interface StandardActiveAbilityInput {
   name: StandardActiveAbilityName;
 }
@@ -6,6 +8,7 @@ interface CustomActiveAbilityInput {
   effect: string;
   name: string;
   target: string;
+  tags: AbilityTag[];
   source?: "magical" | "mundane";
 }
 
@@ -25,6 +28,7 @@ const standardActiveAbilities: Record<StandardActiveAbilityName, Omit<ActiveAbil
   propulsion: {
     effect: "wheeee",
     source: "magical",
+    tags: [],
     target: "someone",
   },
 };

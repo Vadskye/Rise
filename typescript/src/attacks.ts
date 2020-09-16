@@ -86,12 +86,13 @@ const standardAttacks: Record<
     target: "One creature or object within \\rngmed range",
   },
   "drain life": {
-    damageTypes: [],
+    damageTypes: ["energy"],
     defense: "fortitude",
-    hit: "The target loses a \\glossterm{hit point}",
+    hit: "The target takes $damage.",
+    powerBonus: 2,
     source: "magical",
     tags: ["Focus"],
-    target: "One creature within \\rngmed range",
+    target: "One living creature within \\rngmed range",
   },
   "fireball": {
     damageTypes: ["fire"],
