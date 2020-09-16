@@ -147,6 +147,7 @@ export const standardWeapons: Record<StandardWeaponName, Omit<CustomWeaponInput,
     powerBonus: -2,
   },
   "stinger": {
+    accuracyBonus: 1,
     damageTypes: ["piercing"],
     powerBonus: 2,
   },
