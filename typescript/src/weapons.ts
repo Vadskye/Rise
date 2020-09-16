@@ -56,6 +56,7 @@ export type StandardWeaponName =
   | "light crossbow"
   | "mace"
   | "battleaxe"
+  | "javelin"
   | "ram"
   | "smallsword"
   | "slam"
@@ -120,6 +121,11 @@ export const standardWeapons: Record<StandardWeaponName, Omit<CustomWeaponInput,
   },
   "light crossbow": {
     damageTypes: ["piercing"],
+    rangeIncrement: 50,
+  },
+  "javelin": {
+    damageTypes: ["piercing"],
+    rangeIncrement: 30,
   },
   "mace": {
     damageTypes: ["bludgeoning"],
