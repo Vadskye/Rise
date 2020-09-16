@@ -1,3 +1,4 @@
+import { AbilityTag } from "@src/ability_tags";
 import { Attack } from "@src/attacks";
 import { DamageType } from "@src/data";
 import { MonsterBase } from "@src/monsters";
@@ -12,6 +13,7 @@ export interface CalculatedAttack {
   name: string;
   preface: string;
   power: number;
+  tags: AbilityTag[];
   target: string;
   weaponName?: string;
 }
@@ -31,6 +33,7 @@ export function calculateAttack(
     name: attack.name,
     power: monsterPower + attack.powerBonus,
     preface: attack.preface,
+    tags: attack.tags || [],
     target: attack.target,
     weaponName: attack.weaponName,
   };
