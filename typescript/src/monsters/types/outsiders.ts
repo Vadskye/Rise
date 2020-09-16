@@ -218,9 +218,9 @@ outsiderInput.push({
       passiveAbilities: [
         {
           description: `
-            Whenever the $name hits a creature with its stinger, if the attack result also beats the target's Fortitude defense, the target is \\glossterm{poisoned}.
+            Whenever the $name \\glossterm{wounds} a creature with its stinger, the damaged creature becomes \\glossterm{poisoned} (see \\pcref{Poison}).
             The creature loses a \\glossterm{hit point} from each hit with the poison.
-            On a third hit, the creature is \\glossterm{sickened} until the poison ends.
+            On the poison's third hit, the creature is \\glossterm{sickened} until the poison ends.
           `,
           name: "Poison Sting",
         },
