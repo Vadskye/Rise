@@ -25,7 +25,7 @@ function monsterGroupToLatex(monsterGroup: MonsterGroup) {
 
       ${monsterGroup.tactics || ""}
 
-      ${monsterGroup.monsters.map((m) => monsterBaseToLatex(m, { subsection: true }))}
+      ${monsterGroup.monsters.map((m) => monsterBaseToLatex(m, { subsection: true })).join("\n")}
   `;
 }
 
