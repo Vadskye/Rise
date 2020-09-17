@@ -2126,7 +2126,7 @@
       \pari \textbf{Alignment} Usually lawful evil
     \end{monsterfooter}
   \end{monsection}
-  \begin{freeability}{Drain Life}[\glossterm{Focus}]
+  \begin{freeability}{Drain Life}[\glossterm{Focus}, \glossterm{Spell}]
       \target{One living creature within \rngmed range}
        The cultist makes a \plus2 attack
         vs. Fortitude against the target.
@@ -2482,7 +2482,7 @@
       \pari \textbf{Alignment} Usually lawful evil
     \end{monsterfooter}
   \end{monsubsection}
-  \begin{freeability}{Drain Life}[\glossterm{Focus}]
+  \begin{freeability}{Drain Life}[\glossterm{Focus}, \glossterm{Spell}]
       \target{One living creature within \rngmed range}
        The shaman makes a \plus3 attack
         vs. Fortitude against the target.
@@ -2536,21 +2536,21 @@
       \pari \textbf{Alignment} Any
     \end{monsterfooter}
   \end{monsection}
-  \begin{freeability}{Combustion}[\glossterm{Focus}]
+  \begin{freeability}{Combustion}[\glossterm{Focus}, \glossterm{Spell}]
       \target{One creature or object within \rngmed range}
        The pyromancer makes a \plus5 attack
-        vs. Reflex against the target.
+        vs. Fortitude against the target.
     
     \hit The target takes 4d6 fire damage.
     \end{freeability}
   
 
-    \begin{freeability}{Fireball}[\glossterm{Focus}]
+    \begin{freeability}{Fireball}[\glossterm{Focus}, \glossterm{Spell}]
       \targets{Everything in a \areasmall radius within \rngmed range}
        The pyromancer makes a \plus5 attack
         vs. Armor against each target.
     
-    \hit Each target takes 2d8 fire damage.
+    \hit Each target takes 2d6 fire damage.
     \end{freeability}
   
         \section{Magical Beasts}
@@ -3015,8 +3015,8 @@
       \pari \textbf{Alignment} Usually chaotic evil
     \end{monsterfooter}
   \end{monsubsection}
-  \parhead{Massive Sweep} 
-        All melee weapons wielded by a giant gain the \glossterm{Sweeping} (2) tag (see \pcref{Weapon Tags)).
+  \parhead{Crushing Sweep} 
+        Bludgeoning melee weapons wielded by a giant gain the \glossterm{Sweeping} (2) tag (see \pcref{Weapon Tags)).
       
     \parhead{Rock Throwing} 
         A giant can throw objects up to two size categories smaller than itself with ease.
@@ -3066,8 +3066,8 @@
       \pari \textbf{Alignment} Usually true neutral
     \end{monsterfooter}
   \end{monsubsection}
-  \parhead{Massive Sweep} 
-        All melee weapons wielded by a giant gain the \glossterm{Sweeping} (2) tag (see \pcref{Weapon Tags)).
+  \parhead{Crushing Sweep} 
+        Bludgeoning melee weapons wielded by a giant gain the \glossterm{Sweeping} (2) tag (see \pcref{Weapon Tags)).
       
     \parhead{Rock Throwing} 
         A giant can throw objects up to two size categories smaller than itself with ease.
@@ -3129,6 +3129,7 @@
     If that is unavailable, they also enjoy the flesh of other humanoid creatures.
     They lack the intelligence for complex plans, but they like lying in wait to ambush helpless travelers.
     They are intelligent enough to throw their javelins first to soften up their foes before closing into melee, but ogre gangs and bands fight as unorganized individuals.
+    They use greatclubs in battle to tenderize their meat instead of wastefully hacking off bits.
 
     Adult ogres stand 9 to 10 feet tall and weigh 600 to 650 pounds.
     Their skin color ranges from dull yellow to dull brown.
@@ -3150,12 +3151,12 @@
     \begin{spellcontent}
       \begin{spelltargetinginfo}
         \pari \textbf{HP} 5 \monsep
-          \textbf{AD} 8 \monsep
+          \textbf{AD} 7 \monsep
           \textbf{Fort} 7 \monsep
           \textbf{Ref} 5 \monsep
           \textbf{Ment} 5
-        \pari \textbf{WR} Physical 11, Energy 9 \monsep
-        \textbf{VR} Physical 24, Energy 22
+        \pari \textbf{WR} Physical 8, Energy 9 \monsep
+        \textbf{VR} Physical 21, Energy 22
         \pari \textbf{Strikes:}
             Greatclub \plus3 (4d6 bludgeoning; Forceful);
 \par Javelin \plus3 (2d8 piercing; ; 30 ft. range)
@@ -3168,7 +3169,7 @@
       \pari \textbf{Awareness} \plus0
       \pari \textbf{Attributes}
         Str 6, Dex -1,
-        Con 2, Int 0,
+        Con 2, Int -3,
         Per 0, Wil -1
       \pari \textbf{Accuracy} 3 \monsep
         \textbf{Mundane Power} 7 \monsep
@@ -3184,7 +3185,7 @@
 
     
         Ogre menaces are mature adult ogres that often terrorize small towns.
-        They tend to work alone or with goblin minions that they bully into submission.
+        They tend to work alone or with minions like goblins that they bully into submission.
       
     
 
@@ -3198,7 +3199,7 @@
         \pari \textbf{WR} Physical 12, Energy 10 \monsep
         \textbf{VR} Physical 26, Energy 24
         \pari \textbf{Strikes:}
-            Greatclub \plus6 (4d8 bludgeoning; Forceful);
+            Greatclub \plus6 (4d8 bludgeoning; Sweeping 1);
 \par Javelin \plus6 (2d10 piercing; ; 30 ft. range)
       \end{spelltargetinginfo}
     \end{spellcontent}
@@ -3209,7 +3210,7 @@
       \pari \textbf{Awareness} \plus0
       \pari \textbf{Attributes}
         Str 7, Dex -1,
-        Con 3, Int 0,
+        Con 3, Int -3,
         Per 0, Wil -1
       \pari \textbf{Accuracy} 6 \monsep
         \textbf{Mundane Power} 8 \monsep
@@ -3217,7 +3218,108 @@
       \pari \textbf{Alignment} Usually chaotic evil
     \end{monsterfooter}
   \end{monsubsection}
+  \parhead{Crushing Sweep} 
+            Bludgeoning melee weapons wielded by an ogre menace gain the \glossterm{Sweeping} (1) tag (see \pcref{Weapon Tags)).
+  ,
+  \begin{monsubsection}{Ogre Mage}{5}[2]
+    \vspace{-1em}\spelltwocol{}{Large monstrous humanoid}\vspace{-1em}
+    \vspace{0em}
+
+    
+        Ogre mages are unusual ogres that have innate arcane magical talent.
+        They are generally identifiable as the only ogres who do not go into battle wearing armor.
+        They are more intelligent than other ogres, and more likely to use combat strategies like hiding behind their minions.
+      
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 9 \monsep
+          \textbf{AD} 10 \monsep
+          \textbf{Fort} 9 \monsep
+          \textbf{Ref} 8 \monsep
+          \textbf{Ment} 12
+        \pari \textbf{WR} Physical 9, Energy 11 \monsep
+        \textbf{VR} Physical 26, Energy 28
+        \pari \textbf{Strikes:}
+            Greatclub \plus6 (4d10 bludgeoning; Forceful);
+\par Javelin \plus6 (4d6 piercing; ; 30 ft. range)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 40 ft. \monsep
+        \textbf{Space} 10 ft. \monsep
+        \textbf{Reach} 10 ft.
+      \pari \textbf{Awareness} \plus0
+      \pari \textbf{Attributes}
+        Str 8, Dex -1,
+        Con 0, Int 0,
+        Per 0, Wil 7
+      \pari \textbf{Accuracy} 6 \monsep
+        \textbf{Mundane Power} 11 \monsep
+      \textbf{Magical Power} 10
+      \pari \textbf{Alignment} Usually chaotic evil
+    \end{monsterfooter}
+  \end{monsubsection}
+  \begin{freeability}{Fireball}[\glossterm{Focus}, \glossterm{Spell}]
+      \targets{Everything in a \areasmall radius within \rngmed range}
+       The ogre mage makes a \plus6 attack
+        vs. Armor against each target.
+    
+    \hit Each target takes 2d10 fire damage.
+    \end{freeability}
   
+
+    \begin{freeability}{Combustion}[\glossterm{Focus}, \glossterm{Spell}]
+      \target{One creature or object within \rngmed range}
+       The ogre mage makes a \plus6 attack
+        vs. Fortitude against the target.
+    
+    \hit The target takes 4d8 fire damage.
+    \end{freeability}
+  ,
+  \begin{monsubsection}{Ogre Skullclaimer}{6}[4]
+    \vspace{-1em}\spelltwocol{}{Large monstrous humanoid}\vspace{-1em}
+    \vspace{0em}
+
+    
+        Ogre skullclaimers are the leaders of large roaming bands of ogres.
+        They are named after their right to eat the most prized part of any humanoid the band kills: the head.
+        Ogre bands are often accompanied by goblins or other similar creatures that help the ogres in exchange for a share of the valuable items they find, since the ogres care more about the creatures they kill.
+      
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 44 \monsep
+          \textbf{AD} 14 \monsep
+          \textbf{Fort} 14 \monsep
+          \textbf{Ref} 11 \monsep
+          \textbf{Ment} 13
+        \pari \textbf{WR} Physical 15, Energy 13 \monsep
+        \textbf{VR} Physical 39, Energy 37
+        \pari \textbf{Strikes:}
+            Greatclub \plus9 (7d10 bludgeoning; Sweeping 1);
+\par Javelin \plus9 (5d10 piercing; ; 30 ft. range)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 40 ft. \monsep
+        \textbf{Space} 10 ft. \monsep
+        \textbf{Reach} 10 ft.
+      \pari \textbf{Awareness} \plus0
+      \pari \textbf{Attributes}
+        Str 10, Dex -1,
+        Con 7, Int 0,
+        Per 0, Wil 4
+      \pari \textbf{Accuracy} 9 \monsep
+        \textbf{Mundane Power} 17 \monsep
+      \textbf{Magical Power} 13
+      \pari \textbf{Alignment} Usually chaotic evil
+    \end{monsterfooter}
+  \end{monsubsection}
+  \parhead{Crushing Sweep} 
+            Bludgeoning melee weapons wielded by an ogre skullclaimer gain the \glossterm{Sweeping} (1) tag (see \pcref{Weapon Tags)).
   
   
         \section{Outsiders}

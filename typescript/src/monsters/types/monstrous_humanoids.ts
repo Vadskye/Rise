@@ -1,3 +1,4 @@
+import { energyDamageTypes } from "@src/data";
 import { WeaponInput } from "@src/weapons";
 import { addType, TypelessMonsterInput } from "./add_type";
 
@@ -82,7 +83,7 @@ const baseOgre = {
   armorInputs: [{ name: "thick skin" as const }, { name: "breastplate" as const }],
   languages: ["Giant"],
   size: "large" as const,
-  startingAttributes: { str: 4, dex: -1, con: 1, per: 0, wil: -1 },
+  startingAttributes: { str: 4, dex: -1, con: 1, int: -3, per: 0, wil: -1 },
   weaponInput: [{ name: "greatclub" as const }, { name: "javelin" as const }],
 };
 
@@ -92,6 +93,7 @@ monstrousHumanoidInput.push({
     If that is unavailable, they also enjoy the flesh of other humanoid creatures.
     They lack the intelligence for complex plans, but they like lying in wait to ambush helpless travelers.
     They are intelligent enough to throw their javelins first to soften up their foes before closing into melee, but ogre gangs and bands fight as unorganized individuals.
+    They use greatclubs in battle to tenderize their meat instead of wastefully hacking off bits.
 
     Adult ogres stand 9 to 10 feet tall and weigh 600 to 650 pounds.
     Their skin color ranges from dull yellow to dull brown.
@@ -101,6 +103,7 @@ monstrousHumanoidInput.push({
   monsters: [
     {
       ...baseOgre,
+      armorInputs: [{ name: "thick skin" }, { name: "studded leather" }],
       challengeRating: 1,
       description: `
         Ogre gangers are relatively weak or young ogres that tend to gather together in gangs for mutual protection.
@@ -113,11 +116,61 @@ monstrousHumanoidInput.push({
       challengeRating: 3,
       description: `
         Ogre menaces are mature adult ogres that often terrorize small towns.
-        They tend to work alone or with goblin minions that they bully into submission.
+        They tend to work alone or with minions like goblins that they bully into submission.
       `,
       level: 4,
       name: "Ogre Menace",
+      passiveAbilities: [
+        {
+          description: `
+            Bludgeoning melee weapons wielded by an ogre menace gain the \\glossterm{Sweeping} (1) tag (see \\pcref{Weapon Tags)).
+          `,
+          name: "Crushing Sweep",
+        },
+      ],
+      weaponInput: [{ name: "greatclub", tags: ["sweeping 1"] }, { name: "javelin" }],
       skillPoints: { intimidate: 2 },
+    },
+    {
+      ...baseOgre,
+      attackInputs: [{ name: "fireball" }, { name: "combustion" }],
+      armorInputs: [
+        { name: "thick skin" },
+        // This creature is low level, so mage armor has only its simple effects
+        { defenseBonuses: { armor: 2 }, name: "mage armor", resistanceBonuses: { energy: 2 } },
+      ],
+      challengeRating: 2,
+      description: `
+        Ogre mages are unusual ogres that have innate arcane magical talent.
+        They are generally identifiable as the only ogres who do not go into battle wearing armor.
+        They are more intelligent than other ogres, and more likely to use combat strategies like hiding behind their minions.
+      `,
+      level: 5,
+      name: "Ogre Mage",
+      skillPoints: { intimidate: 2 },
+      startingAttributes: { str: 4, dex: -1, con: 0, int: 0, per: 0, wil: 3 },
+    },
+    {
+      ...baseOgre,
+      challengeRating: 4,
+      description: `
+        Ogre skullclaimers are the leaders of large roaming bands of ogres.
+        They are named after their right to eat the most prized part of any humanoid the band kills: the head.
+        Ogre bands are often accompanied by goblins or other similar creatures that help the ogres in exchange for a share of the valuable items they find, since the ogres care more about the creatures they kill.
+      `,
+      level: 6,
+      name: "Ogre Skullclaimer",
+      passiveAbilities: [
+        {
+          description: `
+            Bludgeoning melee weapons wielded by an ogre skullclaimer gain the \\glossterm{Sweeping} (1) tag (see \\pcref{Weapon Tags)).
+          `,
+          name: "Crushing Sweep",
+        },
+      ],
+      weaponInput: [{ name: "greatclub", tags: ["sweeping 1"] }, { name: "javelin" }],
+      skillPoints: { intimidate: 2 },
+      startingAttributes: { str: 5, dex: -1, con: 2, per: 0, wil: 1 },
     },
   ],
 });
@@ -135,9 +188,9 @@ const baseGiant = {
     },
     {
       description: `
-        All melee weapons wielded by a giant gain the \\glossterm{Sweeping} (2) tag (see \\pcref{Weapon Tags)).
+        Bludgeoning melee weapons wielded by a giant gain the \\glossterm{Sweeping} (2) tag (see \\pcref{Weapon Tags)).
       `,
-      name: "Massive Sweep",
+      name: "Crushing Sweep",
     },
   ],
 };
