@@ -100,7 +100,7 @@ animateInput.push({
         Birch treants tend to be shy, and they to avoid conflict if at all possible.
       `,
       level: 5,
-      name: "Birth Treant",
+      name: "Birch Treant",
       size: "large",
       startingAttributes: { str: 2, dex: 0, con: 2, int: 1, per: 2, wil: -1 },
     },
