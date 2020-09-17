@@ -40,7 +40,7 @@ def generate_tools():
         material_type='Potion',
         tags=[],
         description="""
-            When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<wound roll> of -1, you treat that wound roll as a 0 instead (see \\pcref<Vital Wounds>).
+            When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<wound roll> of 0, you treat that wound roll as a 1 instead (see \\pcref<Vital Wounds>).
         """,
         short_description="Prevents death from barely lethal vital wounds",
     ))
@@ -52,7 +52,7 @@ def generate_tools():
         material_type='Potion',
         tags=[],
         description="""
-            When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<wound roll> of -1 or -2, you treat that wound roll as a 0 instead (see \\pcref<Vital Wounds>).
+            When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<wound roll> of 0 or -1, you treat that wound roll as a 1 instead (see \\pcref<Vital Wounds>).
         """,
         short_description="Prevents death from vital wounds",
     ))
@@ -64,15 +64,27 @@ def generate_tools():
         material_type='Potion',
         tags=[],
         description="""
-            When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<wound roll> of -1, -2, or -3, you treat that wound roll as a 0 instead (see \\pcref<Vital Wounds>).
+            When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<wound roll> of 0, -1, or -2, you treat that wound roll as a 1 instead (see \\pcref<Vital Wounds>).
         """,
         short_description="Prevents death from major vital wounds",
     ))
 
     tools.append(MagicItem(
         consumable=True,
+        name="Potion of Wound Closure, Epic",
+        level=19,
+        material_type='Potion',
+        tags=[],
+        description="""
+            When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<wound roll> of 0, -1, -2, or -3, you treat that wound roll as a 1 instead (see \\pcref<Vital Wounds>).
+        """,
+        short_description="Prevents death from almost any vital wound",
+    ))
+
+    tools.append(MagicItem(
+        consumable=True,
         name="Potion of Healing",
-        level=3,
+        level=1,
         material_type='Potion',
         tags=[],
         description="""
@@ -84,13 +96,25 @@ def generate_tools():
     tools.append(MagicItem(
         consumable=True,
         name="Potion of Healing, Greater",
-        level=15,
+        level=7,
         material_type='Potion',
         tags=[],
         description="""
             When you drink this \\glossterm<potion>, you heal two \\glossterm<hit points>.
         """,
         short_description="Restores two hit points",
+    ))
+
+    tools.append(MagicItem(
+        consumable=True,
+        name="Potion of Healing, Supreme",
+        level=16,
+        material_type='Potion',
+        tags=[],
+        description="""
+            When you drink this \\glossterm<potion>, you heal three \\glossterm<hit points>.
+        """,
+        short_description="Restores three hit points",
     ))
 
     # Alchemical items
