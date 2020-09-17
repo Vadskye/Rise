@@ -11,13 +11,13 @@ vivimancy=MysticSphere(
     name="Vivimancy",
     short_description="Manipulate life energy to aid allies or harm foes",
     cantrips=[
-        Effects('Ablate Vital Wound', 'Yourself or a living \\glossterm<ally> within \\rngmed range', """
-            If the target has a \\glossterm<vital wound> with a \\glossterm<vital roll> of -1, it treats that \\glossterm<vital roll> as a 0, preventing it from dying (see \\pcref<Vital Wounds>).
+        Effects('Ablate Vital Wound', 'Yourself or a living \\glossterm<ally> within \\glossterm<reach>', """
+            If the target has a \\glossterm<vital wound> with a \\glossterm<vital roll> of 0, it treats that \\glossterm<vital roll> as a 1, preventing it from dying (see \\pcref<Vital Wounds>).
 
             \\rankline
-            \\rank<3> The minimum \\glossterm<vital roll> you can mitigate decreases to -2.
-            \\rank<5> The minimum \\glossterm<vital roll> you can mitigate decreases to -3.
-            \\rank<7> The minimum \\glossterm<vital roll> you can mitigate decreases to -4.
+            \\rank<3> The range increases to \\rngmed range.
+            \\rank<5> The minimum \\glossterm<vital roll> you can mitigate decreases to -1.
+            \\rank<7> The minimum \\glossterm<vital roll> you can mitigate decreases to -2.
         """, tags=[]),
     ],
     lists=['Arcane', 'Divine', 'Pact'],
@@ -60,12 +60,13 @@ vivimancy=MysticSphere(
             \\rank<5> The number of hit points regained increases to two.
             \\rank<7> If the target is \\glossterm<bloodied>, it regains three hit points instead of two.
         """, tags=[]),
-        Spell('Triage', 4, 'Yourself or a living \\glossterm<ally> within \\rngmed range', """
-            If the target has a \\glossterm<vital wound> with a \\glossterm<vital roll> of -1, it treats that \\glossterm<vital roll> as a 0, preventing it from dying (see \\pcref<Vital Wounds>).
+        Spell('Triage', 2, 'Yourself or a living \\glossterm<ally> within \\rngmed range', """
+            If the target has a \\glossterm<vital wound> with a \\glossterm<vital roll> of 0, it treats that \\glossterm<vital roll> as a 1, preventing it from dying (see \\pcref<Vital Wounds>).
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
+            \\rank<4> The minimum \\glossterm<vital roll> you can mitigate decreases to -1.
             \\rank<6> The minimum \\glossterm<vital roll> you can mitigate decreases to -2.
             \\rank<8> The minimum \\glossterm<vital roll> you can mitigate decreases to -3.
         """, tags=[]),
