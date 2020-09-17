@@ -78,7 +78,7 @@ cryomancy=MysticSphere(
         """, tags=['Manifestation']),
         Spell('Freeze Poison', 1, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
             The target takes cold damage equal to your \\glossterm<power>.
-            In addition, it gains an additional success to resist a poison currently affecting it (see \\pcref<Poisons>).
+            In addition, it gains an additional success to resist a poison currently affecting it (see \\pcref<Poison>).
 
             \\rankline
             \\rank<3> The number of additional successes increases to two.

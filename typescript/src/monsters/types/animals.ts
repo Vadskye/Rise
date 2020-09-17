@@ -270,9 +270,7 @@ const baseCentipede = {
   alignment: "Always true neutral",
   armorInputs: [{ name: "carapace" as const }],
   challengeRating: 4 as const,
-  description: `
-    Monstrous centipedes tend to attack anything that resembles food, biting with their jaws and injecting their poison.
-  `,
+  description: ``,
   passiveAbilities: [
     {
       description: `
