@@ -671,25 +671,26 @@ It defines how attributes work and explains how to make attacks in combat.
         \subsubsection{Vital Rolls}\label{Vital Rolls}
             To make a \glossterm{vital roll}, roll 1d10 \sub the number of \glossterm{vital wounds} you already had, ignoring the vital wound you are rolling for.
             The result determines the effect of the \glossterm{vital wound}, as listed in \tref{Vital Wound Effects}.
+            Vital wound effects from vital rolls below 1 are lethal if untreated, but the Medicine skill can be used to prevent you from dying (see \pcref{Medicine}).
 
             \begin{dtable}
                 \lcaption{Vital Wound Effects}
                 \begin{dtabularx}{\textwidth}{l X}
                     \tb{Vital Roll} & \tb{Effect} \tableheaderrule
                     \minus6 or less & You immediately die \\
-                    \minus1--\minus5 & You are unconscious, and at the end of the next round you die   \\
-                    0                & You are unconscious                                             \\
-                    1                & You move at half speed                                          \\
-                    2                & You take a \minus2 penalty to \glossterm{accuracy}              \\
-                    3                & You take a \minus2 penalty to all \glossterm{defenses}          \\
-                    4                & You take a \minus2 penalty to future \glossterm{vital rolls}    \\
-                    5                & Your maximum \glossterm{hit points} are reduced by 2            \\
-                    6                & You take a \minus10 foot penalty to your \glossterm{base speed} \\
-                    7                & You take a \minus1 penalty to \glossterm{accuracy}              \\
-                    8                & You take a \minus1 penalty to all \glossterm{defenses}          \\
-                    9                & You take a \minus1 penalty to future \glossterm{vital rolls}    \\
-                    10               & Your maximum \glossterm{hit points} are reduced by 1            \\
-                    11 or more       & No effect                                                       \\
+                    \minus1--\minus5 & You are unconscious, and you die at the end of the next round \\
+                    0                & You are unconscious, and you die after one minute             \\
+                    1                & You are unconscious while \glossterm{bloodied}                \\
+                    2                & You take a \minus2 penalty to \glossterm{accuracy}            \\
+                    3                & You take a \minus2 penalty to all \glossterm{defenses}        \\
+                    4                & You take a \minus2 penalty to future \glossterm{vital rolls}  \\
+                    5                & Your maximum \glossterm{hit points} are reduced by 2          \\
+                    6                & You move at half speed while \glossterm{bloodied}             \\
+                    7                & You take a \minus1 penalty to \glossterm{accuracy}            \\
+                    8                & You take a \minus1 penalty to all \glossterm{defenses}        \\
+                    9                & You take a \minus1 penalty to future \glossterm{vital rolls}  \\
+                    10               & Your maximum \glossterm{hit points} are reduced by 1          \\
+                    11 or more       & No effect                                                     \\
                 \end{dtabularx}
             \end{dtable}
 
@@ -699,7 +700,7 @@ It defines how attributes work and explains how to make attacks in combat.
             This changes the effect of the vital wound, generally making it less severe.
             If this makes the total \glossterm{vital roll} for that vital wound 11 or more, the vital wound is removed completely.
 
-            If you have multiple vital wounds, the vital wounds heal in order from highest vital roll to lowest vital roll.
+            If you have multiple vital wounds, the vital wounds heal in order from lowest vital roll to highest vital roll.
 
     \subsection{Special Damage Types}\label{Special Damage Types}
 

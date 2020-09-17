@@ -122,13 +122,13 @@ def vital_wound_chart():
 def vital_roll_effect(roll):
     return {
         -1: 'Unconscious, die next round',
-        0: 'Unconscious',
-        1: 'Move at half speed',
+        0: 'Unconscious, die after a minute',
+        1: 'Unconscious while bloodied',
         2: '-2 accuracy',
         3: '-2 defenses',
         4: '-2 vital rolls',
         5: '-2 max hit points',
-        6: '-10 foot speed',
+        6: 'Half speed while bloodied',
         7: '-1 accuracy',
         8: '-1 defenses',
         9: '-1 vital rolls',
