@@ -287,41 +287,49 @@ const baseCentipede = {
   weaponInput: [{ name: "bite" as const }],
 };
 animalInput.push({
-  ...baseCentipede,
-  level: 4,
-  name: "Large Centipede",
-  size: "large",
-  startingAttributes: { str: 2, dex: -1, con: 2, int: -9 },
-});
-animalInput.push({
-  ...baseCentipede,
-  level: 7,
-  name: "Huge Centipede",
-  size: "huge",
-  startingAttributes: { str: 3, dex: -1, con: 3, int: -9 },
-});
-animalInput.push({
-  ...baseCentipede,
-  level: 10,
-  name: "Gargantuan Centipede",
-  size: "gargantuan",
-  startingAttributes: { str: 4, dex: -1, con: 4, int: -9 },
-});
-animalInput.push({
-  ...baseCentipede,
-  level: 13,
-  name: "Colossal Centipede",
-  size: "colossal",
-  startingAttributes: { str: 5, dex: -1, con: 5, int: -9 },
+  description: `
+    Centipedes can grow to enormous size.
+    They are omnivorous, and are just as likely to eat a long-dead corpse as they are to hunt living prey.
+    All centipedes use their poisonous bites to accelerate the death of their prey.
+  `,
+  name: "Centipedes",
+  monsters: [
+    {
+      ...baseCentipede,
+      level: 4,
+      name: "Large Centipede",
+      size: "large",
+      startingAttributes: { str: 2, dex: -1, con: 2, int: -9 },
+    },
+    {
+      ...baseCentipede,
+      level: 7,
+      name: "Huge Centipede",
+      size: "huge",
+      startingAttributes: { str: 4, dex: -1, con: 3, int: -9 },
+    },
+    {
+      ...baseCentipede,
+      level: 10,
+      name: "Gargantuan Centipede",
+      size: "gargantuan",
+      startingAttributes: { str: 6, dex: -1, con: 4, int: -9 },
+    },
+    {
+      ...baseCentipede,
+      level: 13,
+      name: "Colossal Centipede",
+      size: "colossal",
+      startingAttributes: { str: 8, dex: -1, con: 5, int: -9 },
+    },
+  ],
 });
 
-const spiderBase = {
+const baseSpider = {
   alignment: "Always true neutral",
   armorInputs: [{ name: "carapace" as const }],
   challengeRating: 4 as const,
-  description: `
-    All monstrous spiders are aggressive predators that use their poisonous bites to subdue or kill prey.
-  `,
+  description: ``,
   passiveAbilities: [
     {
       description: `
@@ -336,32 +344,43 @@ const spiderBase = {
   weaponInput: [{ name: "bite" as const }],
 };
 animalInput.push({
-  ...spiderBase,
-  level: 3,
-  name: "Spider, Large",
-  size: "large",
-  startingAttributes: { str: 1, dex: 3, int: -9, per: 2 },
-});
-animalInput.push({
-  ...spiderBase,
-  level: 6,
-  name: "Spider, Huge",
-  size: "huge",
-  startingAttributes: { str: 2, dex: 3, int: -9, per: 3 },
-});
-animalInput.push({
-  ...spiderBase,
-  level: 9,
-  name: "Spider, Gargantuan",
-  size: "gargantuan",
-  startingAttributes: { str: 3, dex: 4, int: -9, per: 3 },
-});
-animalInput.push({
-  ...spiderBase,
-  level: 12,
-  name: "Spider, Colossal",
-  size: "colossal",
-  startingAttributes: { str: 4, dex: 4, int: -9, per: 4 },
+  description: `
+    Spiders can grow to enormous size.
+    All spiders are able to spin entangling webs and use their paralyzing venom to subdue prey.
+    Some giant spiders are aggressive predators, wandering forests and similar areas in search of prey.
+    Others are patient lurkers, building webs and waiting for prey to stumble into them.
+  `,
+  name: "Spiders",
+  monsters: [
+    {
+      ...baseSpider,
+      level: 3,
+      name: "Large Spider",
+      size: "large",
+      startingAttributes: { str: 1, dex: 3, int: -9, per: 2 },
+    },
+    {
+      ...baseSpider,
+      level: 6,
+      name: "Huge Spider",
+      size: "huge",
+      startingAttributes: { str: 2, dex: 3, int: -9, per: 3 },
+    },
+    {
+      ...baseSpider,
+      level: 9,
+      name: "Gargantuan Spider",
+      size: "gargantuan",
+      startingAttributes: { str: 3, dex: 4, int: -9, per: 3 },
+    },
+    {
+      ...baseSpider,
+      level: 12,
+      name: "Colossal Spider",
+      size: "colossal",
+      startingAttributes: { str: 4, dex: 4, int: -9, per: 4 },
+    },
+  ],
 });
 
 export const animals = addType("animal", animalInput);
