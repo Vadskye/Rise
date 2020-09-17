@@ -106,7 +106,7 @@ verdamancy=MysticSphere(
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Poison -- Sassone Leaf', 2, 'One living creature within \\rngmed range', """
-            This spell functions like this \\spell<poison -- nitharit> spell, except that the target becomes poisoned with sassone leaf instead (see \\pcref<Poisons>).
+            This spell functions like this \\spell<poison -- nitharit> spell, except that the target becomes poisoned with sassone leaf instead (see \\pcref<Poison>).
             A creature poisoned by sassone leaf loses a \\glossterm<hit point> from each successful attack, including the first.
             A third successful attack causes the target to lose an additional hit point and ends the poison.
             A third failed attack ends the poison.
@@ -117,7 +117,7 @@ verdamancy=MysticSphere(
             \\rank<8> The accuracy bonus increases to +3.
         """, tags=[]),
         Spell('Poison -- Arsenic', 3, 'One living creature within \\rngmed range', """
-            This spell functions like this \\spell<poison -- nitharit> spell, except that the target becomes poisoned with arsenic instead (see \\pcref<Poisons>).
+            This spell functions like this \\spell<poison -- nitharit> spell, except that the target becomes poisoned with arsenic instead (see \\pcref<Poison>).
             A creature poisoned by arsenic loses a \\glossterm<hit point> from each successful attack, including the first.
             A third successful attack causes the target gain a \\glossterm<vital wound> and ends the poison.
             A third failed attack ends the poison.
@@ -127,7 +127,7 @@ verdamancy=MysticSphere(
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=[]),
         Spell('Poison -- Black Lotus', 4, 'One living creature within \\rngmed range', """
-            This spell functions like this \\spell<poison -- nitharit> spell, except that the target becomes poisoned with black lotus extract instead (see \\pcref<Poisons>).
+            This spell functions like this \\spell<poison -- nitharit> spell, except that the target becomes poisoned with black lotus extract instead (see \\pcref<Poison>).
             A creature poisoned by black lotus extract loses a \\glossterm<hit point> from each successful attack, including the first.
             A third successful attack causes the target to gain a \\glossterm<vital wound>.
             A third failed attack ends the poison.
@@ -137,7 +137,7 @@ verdamancy=MysticSphere(
             \\rank<8> The accuracy bonus increases to +2.
         """, tags=['Manifestation']),
         Spell('Herbal Antidote', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            The target gains an additional success to resist a poison currently affecting it (see \\pcref<Poisons>).
+            The target gains an additional success to resist a poison currently affecting it (see \\pcref<Poison>).
 
             \\rankline
             \\rank<3> The number of additional successes increases to two.
