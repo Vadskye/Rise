@@ -123,7 +123,7 @@ monstrousHumanoidInput.push({
       passiveAbilities: [
         {
           description: `
-            Bludgeoning melee weapons wielded by an ogre menace gain the \\glossterm{Sweeping} (1) tag (see \\pcref{Weapon Tags)).
+            Bludgeoning melee weapons wielded by an ogre menace gain the \\glossterm{Sweeping} (1) tag (see \\pcref{Weapon Tags}).
           `,
           name: "Crushing Sweep",
         },
@@ -163,7 +163,7 @@ monstrousHumanoidInput.push({
       passiveAbilities: [
         {
           description: `
-            Bludgeoning melee weapons wielded by an ogre skullclaimer gain the \\glossterm{Sweeping} (1) tag (see \\pcref{Weapon Tags)).
+            Bludgeoning melee weapons wielded by an ogre skullclaimer gain the \\glossterm{Sweeping} (1) tag (see \\pcref{Weapon Tags}).
           `,
           name: "Crushing Sweep",
         },
@@ -188,7 +188,7 @@ const baseGiant = {
     },
     {
       description: `
-        Bludgeoning melee weapons wielded by a giant gain the \\glossterm{Sweeping} (2) tag (see \\pcref{Weapon Tags)).
+        Bludgeoning melee weapons wielded by a giant gain the \\glossterm{Sweeping} (2) tag (see \\pcref{Weapon Tags}).
       `,
       name: "Crushing Sweep",
     },
