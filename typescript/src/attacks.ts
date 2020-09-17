@@ -78,11 +78,11 @@ const standardAttacks: Record<
   },
   "combustion": {
     damageTypes: ["fire"],
-    defense: "reflex",
+    defense: "fortitude",
     hit: "The target takes $damage.",
     powerBonus: 2,
     source: "magical",
-    tags: ["Focus"],
+    tags: ["Focus", "Spell"],
     target: "One creature or object within \\rngmed range",
   },
   "drain life": {
@@ -91,15 +91,16 @@ const standardAttacks: Record<
     hit: "The target takes $damage.",
     powerBonus: 2,
     source: "magical",
-    tags: ["Focus"],
+    tags: ["Focus", "Spell"],
     target: "One living creature within \\rngmed range",
   },
   "fireball": {
     damageTypes: ["fire"],
     defense: "armor",
     hit: "Each target takes $damage.",
+    powerBonus: -2,
     source: "magical",
-    tags: ["Focus"],
+    tags: ["Focus", "Spell"],
     target: "Everything in a \\areasmall radius within \\rngmed range",
   },
 };
