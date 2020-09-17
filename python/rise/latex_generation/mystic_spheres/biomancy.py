@@ -23,7 +23,7 @@ biomancy=MysticSphere(
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Poison -- Dragon Bile', 3, 'One living creature within \\rngmed range', """
-            This spell functions like this \\spell<poison -- nitharit> spell, except that the target becomes poisoned with sassone leaf instead (see \\pcref<Poisons>).
+            This spell functions like this \\spell<poison -- nitharit> spell, except that the target becomes poisoned with sassone leaf instead (see \\pcref<Poison>).
             A creature poisoned by sassone leaf immediately loses a \\glossterm<hit point> and is \\glossterm<sickened> as long as it is poisoned.
             A third successful attack causes the target to lose two \\glossterm<hit points> and become \\glossterm<nauseated> as long as it is poisoned.
             A third failed attack ends the poison.
@@ -33,7 +33,7 @@ biomancy=MysticSphere(
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=[]),
         Spell('Neutralize Poison', 1, 'Yourself or one target within \\rngmed range', """
-            The target gains an additional success to resist a poison currently affecting it (see \\pcref<Poisons>).
+            The target gains an additional success to resist a poison currently affecting it (see \\pcref<Poison>).
 
             \\rankline
             \\rank<3> The number of additional successes increases to two.
@@ -44,7 +44,7 @@ biomancy=MysticSphere(
             Make an attack vs. Fortitude with a +2 bonus to \\glossterm<accuracy> against the target.
             If the target is not currently poisoned, this ability has no effect.
             \\hit Choose a poison affecting the target.
-            The poison gains an additional hit against the target, which can have varying effects depending on the poison (see \\pcref<Poisons>).
+            The poison gains an additional hit against the target, which can have varying effects depending on the poison (see \\pcref<Poison>).
 
             \\rankline
             \\rank<4> The accuracy bonus increases to +3.
