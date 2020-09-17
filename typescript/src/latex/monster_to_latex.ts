@@ -221,7 +221,7 @@ function formatStrike(monster: MonsterBase, weapon: Weapon) {
   const formattedTags = weapon.tags ? weapon.tags.sort().map((t) => sentenceCase(t)) : [];
   const damageText = `${format.damageDice(strike.power)} ${damageTypeText}`;
   const tagsText = formattedTags.join(", ");
-  const rangeText = weapon.rangeIncrement ? `; ${weapon.rangeIncrement} ft. range` : "";
+  const rangeText = weapon.rangeIncrement ? `${weapon.rangeIncrement} ft. range` : "";
   const effectComponents = [damageText, rangeText, tagsText].filter(Boolean);
   return `${name} \\plus${strike.accuracy} (${effectComponents.join("; ")})`;
 }
