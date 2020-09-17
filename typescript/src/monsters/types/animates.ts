@@ -208,22 +208,22 @@ animateInput.push({
     {
       ...baseAirElemental,
       level: 5,
-      name: "Air Elemental, Large",
+      name: "Large Air Elemental",
       size: "large",
     },
     {
       ...baseAirElemental,
       level: 8,
-      name: "Air Elemental, Huge",
+      name: "Huge Air Elemental",
       size: "huge",
     },
     {
       ...baseAirElemental,
       challengeRating: 4,
       level: 11,
-      name: "Air Elemental, Elder",
+      name: "Elder Air Elemental",
       size: "huge",
-      startingAttributes: { str: 1, dex: 5, con: 1, int: 0, per: 3 },
+      startingAttributes: { str: 1, dex: 6, con: 1, int: 0, per: 3 },
     },
   ],
 });
