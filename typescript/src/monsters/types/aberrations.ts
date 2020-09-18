@@ -79,7 +79,8 @@ aberrationInput.push({
   name: "Aboleth",
   passiveAbilities: [
     {
-      name: "Telepathy (1,000 ft.)",
+      description: "1,000 ft.",
+      name: "Telepathy",
     },
     {
       description: (monster) => `

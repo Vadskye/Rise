@@ -49,10 +49,12 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
     level: 5,
     passiveAbilities: [
       {
-        name: "Darkvision (50 ft.)",
+        description: "50 ft.",
+        name: "Darkvision",
       },
       {
-        name: "Tremorsense (50 ft.)",
+        description: "50 ft.",
+        name: "Tremorsense",
       },
     ],
     name: "Ankheg",
@@ -187,7 +189,16 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
       `,
     },
     name: "Stygian Leech",
-    passiveAbilities: [{ name: "Darkvision (100 ft.)" }, { name: "Lifesense (100 ft.)" }],
+    passiveAbilities: [
+      {
+        description: "100 ft.",
+        name: "Darkvision",
+      },
+      {
+        description: "100 ft.",
+        name: "Lifesense",
+      },
+    ],
     skillPoints: { awareness: 1, climb: 2 },
     speeds: { climb: 30 },
     size: "medium",
@@ -224,7 +235,8 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
         name: "Latch On",
       },
       {
-        name: "Darkvision (100 ft.)",
+        description: "100 ft.",
+        name: "Darkvision",
       },
     ],
     speeds: { climb: 20 },
