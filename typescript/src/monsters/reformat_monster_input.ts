@@ -27,7 +27,9 @@ import _ from "lodash";
 import { MovementMode } from "@src/movement_modes";
 
 export interface MonsterGroupInput {
-  description: string;
+  description?: string;
+  knowledge: Record<number, string>;
+  level: number;
   monsters: Array<Omit<MonsterBaseInput, "monsterType">>;
   monsterType: MonsterType;
   name: string;
@@ -55,7 +57,7 @@ export interface MonsterBaseInput {
   challengeRating?: 0.5 | 1 | 2 | 3 | 4;
   defenseBonuses?: Partial<Record<DefenseType, number>>;
   delayedCalculations?: Array<(monster: MonsterBase) => void>;
-  description: ((monster: MonsterBase) => string) | string;
+  description?: string | null;
   height?: string | null;
   knowledge?: Record<number, string> | null;
   languages?: string[];
@@ -112,7 +114,6 @@ const monsterDefaults: Required<
     MonsterBaseInput,
     | "alignment"
     | "defenseBonuses"
-    | "description"
     | "level"
     | "monsterType"
     | "name"
@@ -139,6 +140,7 @@ const monsterDefaults: Required<
   challengeRating: 1,
   defenseBonuses: fromPairs(defenseTypes.map((d) => [d, 0])),
   delayedCalculations: [],
+  description: null,
   height: null,
   knowledge: null,
   languages: [],

@@ -53,13 +53,29 @@ aberrationInput.push({
       }
     },
   ],
-  description: `
-    The aboleth is a revolting fishlike amphibian found primarily in subterranean lakes and rivers.
-    It has a pink belly.
-    Four pulsating dark blue orifices line the bottom of its body and secrete gray slime that smells like rancid grease.
-    It uses its tail for propulsion in the water and drags itself along with its tentacles on land.
-  `,
-  languages: ["Aquan", "Undercommon"],
+  description: ``,
+  knowledge: {
+    "-10": `
+      Legends speak of revolting water-dwelling creatures called aboleths that lurk in the deepest caves.
+      They are said to have power over people's minds.
+    `,
+    "0": `
+      An aboleth is a Huge fishlike creature found primarily in subterranean lakes and rivers.
+      It has four tentacles and two vertically stacked eyes in the center of its ridged forehead.
+      It uses its powerful mental abilities to overwhelm the minds of its foes.
+    `,
+    "5": `
+      Four pulsating dark blue orifices line the bottom of an aboleth's body and secrete gray slime that smells like rancid grease.
+      This slime coats its tentacles, and creatures struck by the tentacles can have their skin transformed into a similar slime.
+      Aboleths are amphibious, and they are able to drag themselves along with their tentacles on land, though they are much faster in the water.
+      A typical aboleth weighs about 6,500 pounds.
+    `,
+    "10": `
+      Aboleths can completely dominate the minds of lesser creatures.
+      They sometimes use their minions as agents to spy in cities or otherwise further their sinister goals.
+    `,
+  },
+  languages: ["Aboleth", "Aquan", "Undercommon"],
   level: abolethLevel,
   name: "Aboleth",
   passiveAbilities: [
@@ -97,31 +113,6 @@ aberrationInput.push({
   speeds: { land: 10, swim: 50 },
   startingAttributes: { str: 4, dex: -1, con: 4, int: 3, per: 1, wil: 4 },
   weaponInput: [{ name: "tentacle" }],
-  weight: "6,500 pounds",
-});
-
-aberrationInput.push({
-  alignment: "Usually chaotic evil",
-  armorInputs: [{ name: "carapace" }],
-  attackInputs: [
-    {
-      crit: "Each target is \\glossterm{confused} as a \\glossterm{condition}.",
-      defense: "mental",
-      hit: "Each target is \\glossterm{dazed} as a \\glossterm{condition}.",
-      name: "Confusing Gaze",
-      source: "magical",
-      target: "Each creature within a \\areamed cone",
-    },
-  ],
-  challengeRating: 2,
-  description: `
-    An umber hulk is a massive insectoid creature with bulging compound eyes that it uses to
-    confuse nearby creatures. Umber hulks are simple-minded and easily manipulated.
-  `,
-  level: 12,
-  name: "Umber Hulk",
-  size: "gargantuan",
-  startingAttributes: { str: 4, dex: 0, con: 3, int: -3, per: 0, wil: -3 },
 });
 
 export const aberrations = addType("aberration", aberrationInput);

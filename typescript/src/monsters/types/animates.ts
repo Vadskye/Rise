@@ -26,14 +26,19 @@ const animateInput: TypelessMonsterInput[] = [
       },
     ],
     challengeRating: 4,
-    description: `
-      An darkwraith is a shadow disconnected from its host through strange umbramantic power.
-      Though it appears similar to a ghost, it is not undead.
-      Darkwraiths bear a hateful malevolence towards anything that brings light.
-      They instinctively seek out sources of warmth, including most living creatures, to suppress them with its chilling aura.
-      However, it will not attack directly unless provoked by light or damage.
-      Darkwraiths cannot speak or make noise of any kind.
-    `,
+    description: ``,
+    knowledge: {
+      0: `
+        An darkwraith is a shadow disconnected from its host through strange umbramantic power.
+        Though it appears similar to a ghost, it is not undead.
+        They instinctively seek out sources of warmth, including most living creatures, to suppress them with its chilling aura.
+      `,
+      5: `
+        Darkwraiths bear a hateful malevolence towards anything that brings light.
+        Although they swarm around sources of warmth, they will not attack directly with their dark grasp unless provoked by light or damage.
+        Darkwraiths cannot speak or make noise of any kind.
+      `,
+    },
     level: 9,
     name: "Darkwraith",
     passiveAbilities: [passiveAbilities.incorporeal],
@@ -82,23 +87,31 @@ const baseTreant = {
   weaponInput: [{ name: "slam" as const, tags: ["Sweeping 2"] }],
 };
 animateInput.push({
-  description: `
-    Treants are intelligent plant creatures that appear extremely similar to trees.
-    They are bipedal, but their legs fuse together when they rest or wish to hide, matching the appearance of a tree trunk.
-
-    A treant's appearance and attitude generally depends on the type of tree it resembles.
-    They they are generally both strong and durable, though they are vulnerable to fire and lack agility.
-    Virtually all treants share a strong affinity for nature and forests, and react angrily to those who would befoul nature.
-    In combat, they are almost always encountered in the company of a tree they animated to fight by their side.
-  `,
+  description: ``,
+  knowledge: {
+    0: `
+      Treants are intelligent plant creatures that appear extremely similar to trees.
+      They are bipedal, but their legs fuse together when they rest or wish to hide, matching the appearance of a tree trunk.
+      They they are generally both strong and durable, though they are vulnerable to fire and lack agility.
+    `,
+    5: `
+      A treant's appearance and attitude generally depends on the type of tree it resembles.
+      Virtually all treants share a strong affinity for nature and forests, and they react angrily to those who would befoul nature.
+      In combat, they are almost always encountered in the company of a tree they animated to fight by their side.
+    `,
+  },
+  level: 5,
   name: "Treants",
   monsters: [
     {
       ...baseTreant,
       alignment: "Usually true neutral",
-      description: `
-        Birch treants tend to be shy, and they to avoid conflict if at all possible.
-      `,
+      description: ``,
+      knowledge: {
+        0: `
+          Birch treants tend to be shy, and they to avoid conflict if at all possible.
+        `,
+      },
       level: 5,
       name: "Birch Treant",
       size: "large",
@@ -107,10 +120,13 @@ animateInput.push({
     {
       ...baseTreant,
       alignment: "Usually true neutral",
-      description: `
-        Chestnut treants tend to mischievous and outgoing.
-        They like playing small tricks on interesting creatures that pass by.
-      `,
+      description: ``,
+      knowledge: {
+        0: `
+          Chestnut treants tend to mischievous and outgoing.
+          They like playing small tricks on interesting creatures that pass by.
+        `,
+      },
       level: 6,
       name: "Maple Treant",
       size: "large",
@@ -119,10 +135,13 @@ animateInput.push({
     {
       ...baseTreant,
       alignment: "Usually true neutral",
-      description: `
-        Willow treants are the most agile treants, and they can twist and bend their bodies with surprising finesse.
-        Their attitudes tend to be similarly flexible, and they tend to be easily persuadable.
-      `,
+      description: ``,
+      knowledge: {
+        0: `
+          Willow treants are the most agile treants, and they can twist and bend their bodies with surprising finesse.
+          Their attitudes tend to be similarly flexible, and they tend to be easily persuadable.
+        `,
+      },
       level: 7,
       name: "Willow Treant",
       size: "large",
@@ -131,10 +150,13 @@ animateInput.push({
     {
       ...baseTreant,
       alignment: "Usually neutral evil",
-      description: `
-        Darkroot treants, unlike most other treants, primarily inhabit swamps and other grimy places.
-        Their bark is mottled with fungus, and they tend to have a more sinister demeanor than most treants.
-      `,
+      description: ``,
+      knowledge: {
+        0: `
+          Darkroot treants, unlike most other treants, primarily inhabit swamps and other grimy places.
+          Their bark is mottled with fungus, and they tend to have a more sinister demeanor than most treants.
+        `,
+      },
       level: 8,
       name: "Darkroot Treant",
       size: "huge",
@@ -143,10 +165,13 @@ animateInput.push({
     {
       ...baseTreant,
       alignment: "Usually neutral good",
-      description: `
-         Pine treants tend to be the most steadfast treants.
-         They are strong-willed, but while oak treants are stubborn, pine treants are resolutely benevolent, sheltering all who need aid.
-      `,
+      description: ``,
+      knowledge: {
+        0: `
+           Pine treants tend to be the most steadfast treants.
+           They are strong-willed, but while oak treants are stubborn, pine treants are resolutely benevolent, sheltering all who need aid.
+        `,
+      },
       level: 9,
       name: "Pine Treant",
       size: "huge",
@@ -155,9 +180,12 @@ animateInput.push({
     {
       ...baseTreant,
       alignment: "Usually true neutral",
-      description: `
-        Oak treants tend to be the most stubborn treants, and they brook no guff from wayward adventurers.
-      `,
+      description: ``,
+      knowledge: {
+        0: `
+          Oak treants tend to be the most stubborn treants, and they brook no guff from wayward adventurers.
+        `,
+      },
       level: 10,
       name: "Oak Treant",
       size: "huge",
@@ -166,10 +194,13 @@ animateInput.push({
     {
       ...baseTreant,
       alignment: "Usually true neutral",
-      description: `
-        Cyprus treants are the most durable of treants.
-        They are virtually indestructible, and are fearsome when roused to anger.
-      `,
+      description: ``,
+      knowledge: {
+        0: `
+          Cyprus treants are the most durable of treants.
+          They are virtually indestructible, and are fearsome when roused to anger.
+        `,
+      },
       level: 11,
       name: "Cyprus Treant",
       size: "huge",
@@ -199,10 +230,14 @@ const baseAirElemental = {
   weaponInput: [{ name: "slam" as const }],
 };
 animateInput.push({
-  description: `
-    Air elementals are the embodiment of the natural element of air.
-    Their rapid flying speed makes them useful on vast battlefields or in extended aerial combat.
-  `,
+  description: ``,
+  knowledge: {
+    0: `
+      Air elementals are the embodiment of the natural element of air.
+      Their rapid flying speed makes them useful on vast battlefields or in extended aerial combat.
+    `,
+  },
+  level: 5,
   name: "Air Elementals",
   monsters: [
     {
@@ -237,11 +272,19 @@ const baseAnimatedObject = {
   weaponInput: [{ name: "slam" as const }],
 };
 animateInput.push({
-  description: `
-    Animated objects come in all sizes, shapes, and colors. They owe their existence as creatures to magical effects.
-
-    Animated objects fight only as directed by the animator. They follow orders without question and to the best of their abilities. Since they do not need to breathe and never tire, they can be extremely capable minions.
-  `,
+  description: ``,
+  knowledge: {
+    0: `
+      Animated objects come in all sizes, shapes, and colors.
+      They owe their existence as creatures to magical effects.
+    `,
+    5: `
+      Animated objects fight only as directed by their animator.
+      They follow orders without question and to the best of their abilities.
+      Since they do not need to breathe and never tire, they can be extremely capable minions.
+    `,
+  },
+  level: 1,
   name: "Animated Objects",
   monsters: [
     {

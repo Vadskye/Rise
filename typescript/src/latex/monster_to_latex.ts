@@ -27,6 +27,7 @@ function monsterGroupToLatex(monsterGroup: MonsterGroup) {
   return `
     \\subsection{${monsterGroup.name}}
       ${monsterGroup.description}
+      ${formatKnowledge(monsterGroup)}
 
       ${monsterGroup.tactics || ""}
 
@@ -41,7 +42,7 @@ function monsterBaseToLatex(monster: MonsterBase, options?: { subsection?: Boole
     ${getTitleAndTypeHeader(monster).trim()}
     \\vspace{0em}
 
-    ${typeof monster.description === "string" ? monster.description : monster.description(monster)}
+    ${monster.description || ""}
     ${formatKnowledge(monster)}
     ${monster.tactics ? `\\parhead{Tactics} ${monster.tactics}` : ""}
 
@@ -54,7 +55,7 @@ function monsterBaseToLatex(monster: MonsterBase, options?: { subsection?: Boole
     .replace(/\$Name/g, sentenceCase(getMonsterName(monster)));
 }
 
-function formatKnowledge(monster: MonsterBase) {
+function formatKnowledge(monster: Pick<MonsterBase, "level" | "knowledge" | "monsterType">) {
   if (!monster.knowledge) {
     return "";
   }
@@ -64,6 +65,7 @@ function formatKnowledge(monster: MonsterBase) {
   return modifiers
     .map((modifier) => {
       const mod = Number(modifier);
+      // TODO: allow monsters to specify their own knowledge skill
       const knowledgeSkill = knowledgeSkillByMonsterType[monster.monsterType];
       return `\\parhead{Knowledge (${knowledgeSkill}) ${baseDifficulty + mod}} ${
         monster.knowledge![mod]
