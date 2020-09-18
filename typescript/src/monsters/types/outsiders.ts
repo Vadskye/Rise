@@ -22,7 +22,6 @@ const baseAngel = {
 };
 
 outsiderInput.push({
-  description: ``,
   knowledge: {
     0: `
       Angels are divine beings native to the good-aligned Outer Planes.
@@ -63,7 +62,6 @@ outsiderInput.push({
           weaponName: "greatmace",
         },
       ],
-      description: ``,
       knowledge: {
         0: `
           An astral deva is about 7 1/2 feet tall and weighs about 250 pounds.
@@ -129,7 +127,6 @@ outsiderInput.push({
     },
     {
       ...baseAngel,
-      description: ``,
       knowledge: {
         0: `
           A planetar is nearly 9 feet tall and weighs about 500 pounds.
@@ -145,7 +142,6 @@ outsiderInput.push({
     },
     {
       ...baseAngel,
-      description: ``,
       knowledge: {
         0: `
           A solar has a deep and commanding voice, and stands about 9 feet tall. It weighs about 500 pounds.
@@ -178,7 +174,6 @@ const baseFormian = {
 };
 
 outsiderInput.push({
-  description: ``,
   knowledge: {
     0: `
       Formians are ant-like inhabitants of Lawful planes.
@@ -205,7 +200,6 @@ outsiderInput.push({
       // skills is awkward to read.
       ...baseFormian,
       challengeRating: 0.5,
-      description: ``,
       knowledge: {
         0: `
           Workers are the basic building block of formian society.
@@ -230,7 +224,6 @@ outsiderInput.push({
     {
       ...baseFormian,
       challengeRating: 1,
-      description: ``,
       knowledge: {
         0: `
           Warriors are the basic fighting unit of formian society.

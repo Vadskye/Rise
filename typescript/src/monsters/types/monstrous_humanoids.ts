@@ -28,7 +28,6 @@ export const monstrousHumanoidInput: TypelessMonsterInput[] = [
     ],
     armorInputs: [{ name: "fur" }],
     challengeRating: 2,
-    description: ``,
     knowledge: {
       0: `
         A minotaur is a Large bull-headed creature.
@@ -66,7 +65,6 @@ export const monstrousHumanoidInput: TypelessMonsterInput[] = [
     ],
     armorInputs: [{ name: "fur" }],
     challengeRating: 1,
-    description: ``,
     knowledge: {
       0: `
         A choker is a Small vicious predator that delights in strangling its foes.
@@ -94,7 +92,6 @@ const baseOgre = {
 };
 
 monstrousHumanoidInput.push({
-  description: ``,
   knowledge: {
     0: `
       Ogres are Large, hideous humanoid creatures with a taste for human flesh.
@@ -117,7 +114,6 @@ monstrousHumanoidInput.push({
       ...baseOgre,
       armorInputs: [{ name: "thick skin" }, { name: "studded leather" }],
       challengeRating: 1,
-      description: ``,
       knowledge: {
         0: `
           Ogre gangers are relatively weak or young ogres that tend to gather together in gangs for mutual protection.
@@ -129,7 +125,6 @@ monstrousHumanoidInput.push({
     {
       ...baseOgre,
       challengeRating: 3,
-      description: ``,
       knowledge: {
         0: `
           Ogre menaces are mature adult ogres that often terrorize small towns.
@@ -158,7 +153,6 @@ monstrousHumanoidInput.push({
         { defenseBonuses: { armor: 2 }, name: "mage armor", resistanceBonuses: { energy: 2 } },
       ],
       challengeRating: 2,
-      description: ``,
       knowledge: {
         0: `
           Ogre mages are unusual ogres that have innate arcane magical talent.
@@ -174,7 +168,6 @@ monstrousHumanoidInput.push({
     {
       ...baseOgre,
       challengeRating: 4,
-      description: ``,
       knowledge: {
         0: `
           Ogre skullclaimers are the leaders of large roaming bands of ogres.
@@ -222,7 +215,6 @@ const baseGiant = {
 };
 
 monstrousHumanoidInput.push({
-  description: ``,
   knowledge: {
     0: `
       Giants are massive humanoid creatures that tower over lesser creatures.
@@ -237,7 +229,6 @@ monstrousHumanoidInput.push({
       alignment: "Usually chaotic evil",
       armorInputs: [{ name: "breastplate" }, { name: "thick skin" }],
       challengeRating: 3,
-      description: ``,
       knowledge: {
         0: `
           A hill giant is a Huge giant that is usually found in hilly areas.
@@ -266,7 +257,6 @@ monstrousHumanoidInput.push({
       alignment: "Usually true neutral",
       armorInputs: [{ name: "hide" }, { name: "thick skin" }],
       challengeRating: 3,
-      description: ``,
       knowledge: {
         0: `
           A stone giant is a Gargantuan giant that is usually found in mountainous regions.

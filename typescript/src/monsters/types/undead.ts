@@ -15,7 +15,6 @@ export const undeadInput: TypelessMonsterInput[] = [
       },
     ],
     challengeRating: 4,
-    description: ``,
     knowledge: {
       0: `
         An allip is a Medium incorporeal creature.
