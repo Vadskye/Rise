@@ -67,6 +67,7 @@ const baseTreant = {
   ],
   armorInputs: [{ name: "hide" } as const],
   challengeRating: 2 as const,
+  knowledgeSkills: ["nature"],
   languages: ["Common", "Sylvan"],
   passiveAbilities: [
     {
@@ -98,6 +99,7 @@ animateInput.push({
       In combat, they are almost always encountered in the company of a tree they animated to fight by their side.
     `,
   },
+  knowledgeSkills: ["nature"],
   level: 5,
   name: "Treants",
   monsters: [
@@ -214,6 +216,7 @@ const baseAirElemental = {
     },
   ],
   challengeRating: 2 as const,
+  knowledgeSkills: ["planes"],
   // TODO: give air elementals a unique description
   languages: ["Auran"],
   startingAttributes: { str: 1, dex: 4, con: 1, int: -2, per: 2 },
@@ -226,6 +229,7 @@ animateInput.push({
       Their rapid flying speed makes them useful on vast battlefields or in extended aerial combat.
     `,
   },
+  knowledgeSkills: ["planes"],
   level: 5,
   name: "Air Elementals",
   monsters: [
