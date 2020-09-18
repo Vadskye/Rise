@@ -1,4 +1,3 @@
-import { energyDamageTypes } from "@src/data";
 import { WeaponInput } from "@src/weapons";
 import { addType, TypelessMonsterInput } from "./add_type";
 
@@ -29,10 +28,14 @@ export const monstrousHumanoidInput: TypelessMonsterInput[] = [
     ],
     armorInputs: [{ name: "fur" }],
     challengeRating: 2,
-    description: `
-      Minotaurs are bull-headed creatures known for their poor sense of direction.
-      They can be cunning in battle, but have a tendency to become trapped in dungeons of even moderate complexity.
-    `,
+    description: ``,
+    knowledge: {
+      0: `
+        A minotaur is a Large bull-headed creature.
+        Minotaurs are known for their poor sense of direction.
+        They can be cunning in battle, but have a tendency to become trapped in dungeons of even moderate complexity.
+      `,
+    },
     languages: [],
     level: 6,
     name: "Minotaur",
@@ -63,11 +66,14 @@ export const monstrousHumanoidInput: TypelessMonsterInput[] = [
     ],
     armorInputs: [{ name: "fur" }],
     challengeRating: 1,
-    description: `
-      Chokers are vicious predators that delight in strangling their foes.
-      They live to hear the desperate gasping for breath and crunching of bones that their powerful arms can inflict on their prey.
-      They are bipedal, but their arms are inhumanly long and sinuous, terminating in hands with spiny pads to help them hold on tightly to walls and foes.
-    `,
+    description: ``,
+    knowledge: {
+      0: `
+        A choker is a Small vicious predator that delights in strangling its foes.
+        Chokers are bipedal, but their arms are inhumanly long and sinuous, terminating in hands with spiny pads to help them hold on tightly to walls and foes.
+        They live to hear the desperate gasping for breath and crunching of bones that their powerful arms can inflict on their prey.
+      `,
+    },
     languages: [],
     level: 5,
     name: "Choker",
@@ -88,36 +94,48 @@ const baseOgre = {
 };
 
 monstrousHumanoidInput.push({
-  description: `
-    Ogres are huge, hideous humanoid creatures with a taste for human flesh.
-    If that is unavailable, they also enjoy the flesh of other humanoid creatures.
-    They lack the intelligence for complex plans, but they like lying in wait to ambush helpless travelers.
-    They are intelligent enough to throw their javelins first to soften up their foes before closing into melee, but ogre gangs and bands fight as unorganized individuals.
-    They use greatclubs in battle to tenderize their meat instead of wastefully hacking off bits.
+  description: ``,
+  knowledge: {
+    0: `
+      Ogres are Large, hideous humanoid creatures with a taste for human flesh.
+      If that is unavailable, they also enjoy the flesh of other humanoid creatures.
+      They lack the intelligence for complex plans, but they like lying in wait to ambush helpless travelers.
+    `,
+    5: `
+      Ogres are intelligent enough to throw their javelins first to soften up their foes before closing into melee, but ogre gangs and bands fight as unorganized individuals.
+      They use greatclubs in battle to tenderize their meat instead of wastefully hacking off bits.
 
-    Adult ogres stand 9 to 10 feet tall and weigh 600 to 650 pounds.
-    Their skin color ranges from dull yellow to dull brown.
-    Their clothing consists of poorly cured furs and hides, which add to their naturally repellent odor.
-  `,
+      Adult ogres stand 9 to 10 feet tall and weigh 600 to 650 pounds.
+      Their skin color ranges from dull yellow to dull brown.
+      Their clothing consists of poorly cured furs and hides, which add to their naturally repellent odor.
+    `,
+  },
+  level: 3,
   name: "Ogres",
   monsters: [
     {
       ...baseOgre,
       armorInputs: [{ name: "thick skin" }, { name: "studded leather" }],
       challengeRating: 1,
-      description: `
-        Ogre gangers are relatively weak or young ogres that tend to gather together in gangs for mutual protection.
-      `,
+      description: ``,
+      knowledge: {
+        0: `
+          Ogre gangers are relatively weak or young ogres that tend to gather together in gangs for mutual protection.
+        `,
+      },
       level: 3,
       name: "Ogre Ganger",
     },
     {
       ...baseOgre,
       challengeRating: 3,
-      description: `
-        Ogre menaces are mature adult ogres that often terrorize small towns.
-        They tend to work alone or with minions like goblins that they bully into submission.
-      `,
+      description: ``,
+      knowledge: {
+        0: `
+          Ogre menaces are mature adult ogres that often terrorize small towns.
+          They tend to work alone or with minions like goblins that they bully into submission.
+        `,
+      },
       level: 4,
       name: "Ogre Menace",
       passiveAbilities: [
@@ -140,11 +158,14 @@ monstrousHumanoidInput.push({
         { defenseBonuses: { armor: 2 }, name: "mage armor", resistanceBonuses: { energy: 2 } },
       ],
       challengeRating: 2,
-      description: `
-        Ogre mages are unusual ogres that have innate arcane magical talent.
-        They are generally identifiable as the only ogres who do not go into battle wearing armor.
-        They are more intelligent than other ogres, and more likely to use combat strategies like hiding behind their minions.
-      `,
+      description: ``,
+      knowledge: {
+        0: `
+          Ogre mages are unusual ogres that have innate arcane magical talent.
+          They are generally identifiable as the only ogres who do not go into battle wearing armor.
+          They are more intelligent than other ogres, and more likely to use combat strategies like hiding behind their minions.
+        `,
+      },
       level: 5,
       name: "Ogre Mage",
       skillPoints: { intimidate: 2 },
@@ -153,11 +174,16 @@ monstrousHumanoidInput.push({
     {
       ...baseOgre,
       challengeRating: 4,
-      description: `
-        Ogre skullclaimers are the leaders of large roaming bands of ogres.
-        They are named after their right to eat the most prized part of any humanoid the band kills: the head.
-        Ogre bands are often accompanied by goblins or other similar creatures that help the ogres in exchange for a share of the valuable items they find, since the ogres care more about the creatures they kill.
-      `,
+      description: ``,
+      knowledge: {
+        0: `
+          Ogre skullclaimers are the leaders of large roaming bands of ogres.
+          Ogre bands are often accompanied by goblins or other similar creatures that help the ogres in exchange for a share of the valuable items they find, since the ogres care more about the creatures they kill.
+        `,
+        5: `
+          Ogre skullclaimers are named after their right to eat the most prized part of any humanoid the band kills: the head.
+        `,
+      },
       level: 6,
       name: "Ogre Skullclaimer",
       passiveAbilities: [
@@ -196,10 +222,14 @@ const baseGiant = {
 };
 
 monstrousHumanoidInput.push({
-  description: `
-    Giants are massive humanoid creatures that tower over lesser creatures.
-    All giants have immense strength and unimpressive agility - except when it comes to throwing and catching rocks, which they tend to excel at.
-  `,
+  description: ``,
+  knowledge: {
+    0: `
+      Giants are massive humanoid creatures that tower over lesser creatures.
+      All giants have immense strength and unimpressive agility - except when it comes to throwing and catching rocks, which they tend to excel at.
+    `,
+  },
+  level: 7,
   name: "Giants",
   monsters: [
     {
@@ -207,20 +237,28 @@ monstrousHumanoidInput.push({
       alignment: "Usually chaotic evil",
       armorInputs: [{ name: "breastplate" }, { name: "thick skin" }],
       challengeRating: 3,
-      description: `
-        Skin color among hill giants ranges from light tan to deep ruddy brown. Their hair is brown or black, with eyes the same color. Hill giants wear layers of crudely prepared hides with the fur left on. They seldom wash or repair their garments, preferring to simply add more hides as their old ones wear out.
+      description: ``,
+      knowledge: {
+        0: `
+          A hill giant is a Huge giant that is usually found in hilly areas.
+          They prefer to fight from high, rocky outcroppings, where they can pelt opponents with rocks and boulders while limiting the risk to themselves.
+          Skin color among hill giants ranges from light tan to deep ruddy brown.
+          Hill giants wear layers of crudely prepared hides with the fur left on.
+        `,
+        5: `
+          Hill giants lack the intelligence or desire to retreat if their enemies survive to approach them, and prefer to draw their massive clubs and enter melee.
+          If possible, they smash their foes off of cliffs.
 
-        Adults are about 15 feet tall. Hill giants can live to be 70 years old.
-      `,
+          The hair of hill giants is brown or black, with eyes the same color.
+          They seldom wash or repair their garments, preferring to simply add more hides as their old ones wear out.
+          Adult hill giants are about 15 feet tall.
+          They can live to be 70 years old.
+        `,
+      },
       level: 7,
       name: "Hill Giant",
       size: "huge",
       startingAttributes: { str: 5, dex: -2, con: 3, int: -2, per: -2, wil: -2 },
-      tactics: `
-        Hill giants prefer to fight from high, rocky outcroppings, where they can pelt opponents with rocks and boulders while limiting the risk to themselves.
-        They lack the intelligence or desire to retreat if their enemies survive to approach them, and prefer to draw their massive clubs and enter melee.
-        If possible, they smash their foes off of cliffs.
-      `,
       weaponInput: [{ name: "greatclub", tags: ["sweeping 2"] }, boulder],
     },
     {
@@ -228,19 +266,26 @@ monstrousHumanoidInput.push({
       alignment: "Usually true neutral",
       armorInputs: [{ name: "hide" }, { name: "thick skin" }],
       challengeRating: 3,
-      description: `
-        Stone giants prefer thick leather garments, dyed in shades of brown and gray to match the stone around them. Adults stand about 20 feet tall. Stone giants can live to be 300 years old.
-
-        Young stone giants can be capricious, hunting tiny creatures like goats and humanoids on a whim.
-        Elder stone giants tend to be wiser and more cautious, and avoid unnecessary conflict.
-      `,
+      description: ``,
+      knowledge: {
+        0: `
+          A stone giant is a Gargantuan giant that is usually found in mountainous regions.
+          Stone giants fight from a great distance whenever possible, using their ability to hurl stones up to 1,000 feet.
+          They prefer thick leather garments, dyed in shades of brown and gray to match the stone around them.
+        `,
+        5: `
+          Adult stone giants stand about 20 feet tall.
+          They can live to be 300 years old.
+          Young stone giants can be capricious, hunting tiny creatures like goats and humanoids on a whim.
+          Elder stone giants tend to be wiser and more cautious, and avoid unnecessary conflict.
+        `,
+      },
       languages: ["Common", "Giant"],
       level: 10,
       name: "Stone Giant",
       size: "gargantuan",
       startingAttributes: { str: 7, dex: -1, con: 3, int: 0, per: 0, wil: -2 },
       tactics: `
-        Stone giants fight from a great distance whenever possible, using their ability to hurl stones up to 1,000 feet.
       `,
       weaponInput: [
         { name: "greatclub", tags: ["sweeping 2"] },

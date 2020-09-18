@@ -8,12 +8,22 @@ const animalInput: TypelessMonsterInput[] = [
     challengeRating: 1,
     description: `
       Baboons are powerful and aggressive primates adapted to life on the ground.
-      They prefer open spaces but climb trees to find safe places to rest overnight.
-      A typical baboon is the size of a big dog.
+      They
     `,
+    knowledge: {
+      0: `
+        A baboon is a Small primate adapted to life on the ground.
+        A typical baboon is the size of a big dog.
+      `,
+      5: `
+        Baboons prefer open spaces but climb trees to find safe places to rest overnight.
+        They can be aggressive, though they avoid attacking creatures that seem too dangerous.
+      `,
+    },
     level: 1,
     name: "Baboon",
     skillPoints: { awareness: 1, climb: 2 },
+    size: "small",
     speeds: { climb: 30 },
     startingAttributes: { str: 2, dex: 2, con: 1, int: -8, per: 1, wil: -1 },
     weaponInput: [{ name: "bite" }],
@@ -22,11 +32,17 @@ const animalInput: TypelessMonsterInput[] = [
     alignment: "Always true neutral",
     armorInputs: [{ name: "fur" }],
     challengeRating: 1,
-    description: `
-      Badgers are furry animals with squat, powerful bodies.
-      Their strong forelimbs are armed with long claws for digging.
-      An adult badger is 2 to 3 feet long and weighs 25 to 35 pounds.
-    `,
+    description: ``,
+    knowledge: {
+      0: `
+        A badger is a Small furry animal with a squat, powerful body.
+        Badgers can be tenacious in combat.
+      `,
+      5: `
+        Badgers have strong forelimbs that are armed with long claws for digging.
+        A typical adult badger is 2 to 3 feet long and weighs 25 to 35 pounds.
+      `,
+    },
     level: 1,
     name: "Badger",
     skillPoints: { flexibility: 2 },
@@ -42,6 +58,11 @@ const animalInput: TypelessMonsterInput[] = [
     description: `
       The statistics presented here describe a common housecat.
     `,
+    knowledge: {
+      0: `
+        A cat is a Tiny feline creature.
+      `,
+    },
     level: 1,
     name: "Cat",
     skillPoints: { awareness: 2, climb: 2, stealth: 2 },
@@ -54,9 +75,14 @@ const animalInput: TypelessMonsterInput[] = [
     armorInputs: [{ name: "fur" }],
     challengeRating: 1,
     description: `
-       The statistics presented here describe a fairly small dog of about 20 to 50 pounds in weight.
-       They also can be used for small wild canines such as coyotes and jackals.
+     The statistics presented here describe a fairly small dog of about 20 to 50 pounds in weight.
+     They also can be used for small wild canines such as coyotes and jackals.
     `,
+    knowledge: {
+      0: `
+        A dog is a Small canine creature.
+      `,
+    },
     level: 1,
     name: "Dog",
     skillPoints: { awareness: 2, jump: 2, swim: 2 },
@@ -69,9 +95,12 @@ const animalInput: TypelessMonsterInput[] = [
     alignment: "Always true neutral",
     armorInputs: [{ name: "fur" }],
     challengeRating: 2,
-    description: `
-      Camels are known for their ability to travel long distances without food or water.
-    `,
+    description: ``,
+    knowledge: {
+      0: `
+        Camels are known for their ability to travel long distances without food or water.
+      `,
+    },
     level: 1,
     name: "Camel",
     skillPoints: { awareness: 1, endurance: 2 },
@@ -83,10 +112,16 @@ const animalInput: TypelessMonsterInput[] = [
     alignment: "Always true neutral",
     armorInputs: [{ name: "fur" }],
     challengeRating: 1,
-    description: `
-      Dire rats are omnivorous scavengers, but will attack to defend their nests and territories.
-      They can grow to be up to 4 feet long and weigh over 50 pounds.
-    `,
+    description: ``,
+    knowledge: {
+      0: `
+        A dire rat is a Small omnivorous scavenger that resembles an unusually large rat.
+        Dire rats are not generally aggressive, but will attack to defend their nests and territories.
+      `,
+      5: `
+        Dire rats can grow to be up to 4 feet long and weigh over 50 pounds.
+      `,
+    },
     level: 1,
     name: "Dire Rat",
     // TODO: define diseases better so dire rats can inflict them
@@ -101,20 +136,26 @@ const animalInput: TypelessMonsterInput[] = [
     weaponInput: [{ name: "bite" }],
   },
   {
-    description: `
-      Bears are large, furry animals known for their strength and tenacity.
-    `,
+    description: ``,
+    knowledge: {
+      0: `
+        Bears are large, furry animals known for their strength and tenacity.
+      `,
+    },
+    level: 1,
     name: "Bears",
     monsters: [
       {
         alignment: "Always true neutral",
         armorInputs: [{ name: "fur" }],
         challengeRating: 2,
-        description: `
-        Black bears are forest-dwelling omnivores that are usually not dangerous unless an interloper threatens their cubs or food supply.
-
-        Black bears can be pure black, blond, or cinnamon in color and are rarely more than 5 feet long.
-      `,
+        description: ``,
+        knowledge: {
+          0: `
+            Black bears are Large forest-dwelling omnivores that are usually not dangerous unless an interloper threatens their cubs or food supply.
+            Black bears can be pure black, blond, or cinnamon in color and are rarely more than 5 feet long.
+          `,
+        },
         level: 3,
         name: "Black bear",
         startingAttributes: { str: 3, con: 3, int: -8, wil: -1 },
@@ -125,9 +166,13 @@ const animalInput: TypelessMonsterInput[] = [
         armorInputs: [{ name: "fur" }],
         challengeRating: 2,
         description: `
-          Brown bears tend to be bad-tempered and territorial.
           A brown bear's statistics can be used for almost any big bear, including the grizzly.
         `,
+        knowledge: {
+          0: `
+            Brown bears tend to be bad-tempered and territorial.
+          `,
+        },
         level: 5,
         height: "9 feet",
         name: "Brown bear",
@@ -141,9 +186,12 @@ const animalInput: TypelessMonsterInput[] = [
   {
     alignment: "Always true neutral",
     armorInputs: [{ name: "fur" }],
-    description: `
-      Wolves are pack hunters known for their persistence and cunning.
-    `,
+    description: ``,
+    knowledge: {
+      0: `
+        Wolves are pack hunters known for their persistence and cunning.
+      `,
+    },
     level: 2,
     name: "Wolf",
     startingAttributes: { str: 1, dex: 2, con: 1, int: -7, wil: -1 },
@@ -154,9 +202,13 @@ const animalInput: TypelessMonsterInput[] = [
     armorInputs: [{ name: "hide" }],
     description: `
       The statistics presented here describe a small horse, under 5 feet tall at the shoulder.
-      Ponies are similar to light horses and cannot fight while carrying a rider.
-      A pony's maximum load is 120 pounds, and it can drag up to 800 pounds.
     `,
+    knowledge: {
+      0: `
+        Ponies are similar to light horses and cannot fight while carrying a rider.
+        A pony's maximum load is 120 pounds, and it can drag up to 600 pounds.
+      `,
+    },
     level: 2,
     name: "Pony",
     startingAttributes: { str: 1, con: 3, int: -7, wil: -1 },
@@ -166,15 +218,19 @@ const animalInput: TypelessMonsterInput[] = [
     alignment: "Always true neutral",
     armorInputs: [{ name: "feathers" }],
     challengeRating: 4,
-    description: `
-      Rocs are massive and incredibly strong birds with the ability to carry off horses.
-      It is typically 30 feet long from the beak to the base of the tail, with a wingspan as wide as 80 feet.
-      Its plumage is either dark brown or golden from head to tail.
-
-      A roc attacks from the air, swooping earthward to snatch prey in its powerful talons and carry it off for itself and its young to devour.
-      A solitary roc is typically hunting and will attack any Medium or larger creature that appears edible.
-      A mated pair of rocs attack in concert, fighting to the death to defend their nests or hatchlings.
-    `,
+    description: ``,
+    knowledge: {
+      0: `
+        A roc is an incredibly strong Gargantuan bird with the ability to carry off horses.
+        It is typically 30 feet long from the beak to the base of the tail, with a wingspan as wide as 80 feet.
+        Its plumage is either dark brown or golden from head to tail.
+      `,
+      5: `
+        A roc attacks from the air, swooping earthward to snatch prey in its powerful talons and carry it off for itself and its young to devour.
+        A solitary roc is typically hunting and will attack any Medium or larger creature that appears edible.
+        A mated pair of rocs attack in concert, fighting to the death to defend their nests or hatchlings.
+      `,
+    },
     level: 9,
     name: "Roc",
     size: "gargantuan",
@@ -185,24 +241,30 @@ const animalInput: TypelessMonsterInput[] = [
   {
     alignment: "Always true neutral",
     armorInputs: [{ name: "scales" }],
-    challengeRating: 2,
-    description: `
-      Vampire eels are large, slimy snakelike carnivores.
-      They swim through murky water, looking for edible creatures.
-    `,
+    challengeRating: 0.5,
+    description: ``,
+    knowledge: {
+      0: `
+        Vampire eels are Medium, slimy snakelike carnivores.
+        They swim through murky water, looking for edible creatures.
+      `,
+    },
     level: 6,
     name: "Vampire Eel",
-    size: "large",
     startingAttributes: { str: 3, dex: 3, con: 2, int: -8, per: 0, wil: -1 },
   },
   {
     alignment: "Always true neutral",
     armorInputs: [{ name: "fur" }],
     challengeRating: 2,
-    description: `
-      Dire wolves are efficient pack hunters that will kill anything they can catch.
-      Their fur is usually mottled gray or black.
-    `,
+    description: ``,
+    knowledge: {
+      0: `
+        A dire wolf is a Large wolf-like creature.
+        Their fur is usually mottled gray or black.
+        Dire wolves are efficient pack hunters that will kill anything they can catch.
+      `,
+    },
     level: 5,
     height: "9 feet",
     name: "Dire Wolf",
@@ -215,9 +277,14 @@ const animalInput: TypelessMonsterInput[] = [
     alignment: "Always true neutral",
     armorInputs: [{ name: "feathers" }],
     description: `
-      These glossy black birds are about 2 feet long and have wingspans of about 4 feet.
       The statistics presented here can describe most nonpredatory birds of similar size.
     `,
+    knowledge: {
+      0: `
+        A raven is a Tiny glossy black bird.
+        A typical raven is about 2 feet long and has a wingspan of about 4 feet.
+      `,
+    },
     level: 1,
     name: "raven",
     size: "tiny",
@@ -228,10 +295,16 @@ const animalInput: TypelessMonsterInput[] = [
     alignment: "Always true neutral",
     armorInputs: [{ name: "carapace" }],
     challengeRating: 2,
-    description: `
-      Giant wasps attack when hungry or threatened, stinging their prey to death.
-      They take dead or incapacitated opponents back to their lairs as food for their unhatched young.
-    `,
+    description: ``,
+    knowledge: {
+      0: `
+        A giant wasp is a Large insect resembling a normal wasp.
+        Giant wasps attack when hungry or threatened, stinging their prey to death.
+      `,
+      5: `
+        Giant wasps take dead or incapacitated opponents back to their lairs as food for their unhatched young.
+      `,
+    },
     level: 6,
     name: "Giant Wasp",
     size: "large",
@@ -254,10 +327,17 @@ const animalInput: TypelessMonsterInput[] = [
     armorInputs: [{ name: "carapace" }],
     attackInputs: [{ name: "acid breath" }],
     challengeRating: 2,
-    description: `
-      These creatures feed primarily on carrion and offal, gathering heaps of the stuff in which to build nests and lay eggs.
-      A giant bombardier beetle is about 6 feet long. Giant bombardier beetles normally attack only to defend themselves, their nests, or their eggs.
-    `,
+    description: ``,
+    knowledge: {
+      0: `
+        A giant bombardier beetle is a Large insect resembling a massive beetle.
+        They feed primarily on carrion and offal, gathering heaps of the stuff in which they build nests and lay eggs.
+      `,
+      5: `
+        A typical adult giant bombardier beetle is about 6 feet long.
+        Giant bombardier beetles normally attack only to defend themselves, their nests, or their eggs.
+      `,
+    },
     level: 7,
     name: "Giant Bombardier Beetle",
     size: "large",
@@ -285,11 +365,17 @@ const baseCentipede = {
   weaponInput: [{ name: "bite" as const }],
 };
 animalInput.push({
-  description: `
-    Centipedes can grow to enormous size.
-    They are omnivorous, and are just as likely to eat a long-dead corpse or a tasty plant as they are to hunt living prey.
-    All centipedes use their poisonous bites to accelerate the death of their prey.
-  `,
+  description: ``,
+  knowledge: {
+    0: `
+      Centipedes can grow to enormous size.
+      All giant centipedes use their poisonous bites to accelerate the death of their prey.
+    `,
+    5: `
+      Giant centipedes are omnivorous, and are just as likely to eat a long-dead corpse or a tasty plant as they are to hunt living prey.
+    `,
+  },
+  level: 4,
   name: "Centipedes",
   monsters: [
     {
@@ -342,12 +428,18 @@ const baseSpider = {
   weaponInput: [{ name: "bite" as const }],
 };
 animalInput.push({
-  description: `
-    Spiders can grow to enormous size.
-    All spiders are able to spin entangling webs and use their paralyzing venom to subdue prey.
-    Some giant spiders are aggressive predators, wandering forests and similar areas in search of prey.
-    Others are patient lurkers, building webs and waiting for prey to stumble into them.
-  `,
+  description: ``,
+  knowledge: {
+    0: `
+      Spiders can grow to enormous size.
+      All giant spiders are able to spin entangling webs and use their paralyzing venom to subdue prey.
+    `,
+    5: `
+      Some giant spiders are aggressive predators, wandering forests and similar areas in search of prey.
+      Others are patient lurkers, building webs and waiting for prey to stumble into them.
+    `,
+  },
+  level: 3,
   name: "Spiders",
   monsters: [
     {

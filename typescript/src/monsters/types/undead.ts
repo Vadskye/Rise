@@ -15,12 +15,17 @@ export const undeadInput: TypelessMonsterInput[] = [
       },
     ],
     challengeRating: 4,
-    description: `
-      An allip is the spectral remains of someone driven to suicide by a madness that afflicted it in life.
-      It craves only revenge and unrelentingly pursues those who tormented it in life and pushed it over the brink.
-
-      An allip cannot speak intelligibly.
-    `,
+    description: ``,
+    knowledge: {
+      0: `
+        An allip is a Medium incorporeal creature.
+        It cannot speak intelligibly, though it is known for its propensity for babbling incoherently as it attacks.
+      `,
+      5: `
+        An allip is spectral remains of someone driven to suicide by a madness that afflicted it in life.
+        It craves only revenge and unrelentingly pursues those who tormented it in life and pushed it over the brink.
+      `,
+    },
     level: 3,
     name: "allip",
     passiveAbilities: [
