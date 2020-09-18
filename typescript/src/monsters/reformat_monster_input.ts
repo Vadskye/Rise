@@ -57,6 +57,7 @@ export interface MonsterBaseInput {
   delayedCalculations?: Array<(monster: MonsterBase) => void>;
   description: ((monster: MonsterBase) => string) | string;
   height?: string | null;
+  knowledge?: Record<number, string> | null;
   languages?: string[];
   level: number;
   monsterType: MonsterType;
@@ -139,6 +140,7 @@ const monsterDefaults: Required<
   defenseBonuses: fromPairs(defenseTypes.map((d) => [d, 0])),
   delayedCalculations: [],
   height: null,
+  knowledge: null,
   languages: [],
   passiveAbilities: [],
   powerBonuses: {},
