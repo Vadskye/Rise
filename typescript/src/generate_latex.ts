@@ -13,6 +13,7 @@ function generateLatex(latexType: string): string {
       const pluralText = monsterType === "undead" ? "undead" : `${monsterType}s`;
       // TODO: handle weird plurals as necessary
       latex += `
+        \\newpage
         \\section{${titleCase(pluralText)}}
 
         All ${pluralText} have the following properties unless noted otherwise in their description:
