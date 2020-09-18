@@ -46,7 +46,6 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
         When they move on, they leave any valuable objects behind with their old tunnels.
       `,
     },
-    description: ``,
     level: 5,
     passiveAbilities: [
       {
@@ -89,7 +88,6 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
       },
     ],
     challengeRating: 2,
-    description: ``,
     knowledge: {
       0: `
         A nightcrawler is a Large worm imbued with umbramantic power.
@@ -135,7 +133,6 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
       },
     ],
     challengeRating: 2,
-    description: ``,
     knowledge: {
       0: `
         A hydra maggot is a Large maggot-like creature that wriggles across the ground in search of food.
@@ -201,7 +198,6 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
     alignment: "Always true neutral",
     armorInputs: [{ name: "thick skin" }],
     challengeRating: 2,
-    description: ``,
     knowledge: {
       0: `
         A darkmantle is a Small creature with a small body and a large number of strong tentacles.
@@ -249,7 +245,6 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
       },
     ],
     challengeRating: 4,
-    description: ``,
     knowledge: {
       0: `
         Griffons are powerful, majestic creatures with characteristics of both lions and eagles.

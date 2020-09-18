@@ -4,7 +4,6 @@ export const humanoidInput: TypelessMonsterInput[] = [
   {
     alignment: "Usually lawful evil",
     attackInputs: [{ name: "drain life" }],
-    description: ``,
     knowledge: {
       0: `
         Cultists may serve many masters.
@@ -19,7 +18,6 @@ export const humanoidInput: TypelessMonsterInput[] = [
   {
     alignment: "Any",
     attackInputs: [{ name: "combustion", powerBonus: 2 }, { name: "fireball" }],
-    description: ``,
     knowledge: {
       0: `
         Pyromancers wield powerful fire magic to attack their foes.
@@ -45,7 +43,6 @@ const lizardfolkBase = {
 };
 
 humanoidInput.push({
-  description: ``,
   knowledge: {
     0: `
       Lizardfolk are Medium bipedal creatures covered in reptilian scales.
@@ -67,7 +64,6 @@ humanoidInput.push({
     {
       ...lizardfolkBase,
       armorInputs: [{ name: "breastplate" }, { name: "hide" }, { name: "standard shield" }],
-      description: ``,
       resistanceBonuses: { physical: 4 },
       level: 3,
       name: "Grunt",
@@ -78,7 +74,6 @@ humanoidInput.push({
       ...lizardfolkBase,
       armorInputs: [{ name: "breastplate" }, { name: "hide" }, { name: "standard shield" }],
       challengeRating: 2,
-      description: ``,
       resistanceBonuses: { physical: 4 },
       level: 3,
       name: "Elite",
@@ -94,7 +89,6 @@ const baseOrc = {
 };
 
 humanoidInput.push({
-  description: ``,
   knowledge: {
     0: `
       Orcs are green-skinned humanoids that are generally larger, stronger, and less intelligent than humans.
@@ -127,7 +121,6 @@ humanoidInput.push({
         },
       ],
       challengeRating: 1,
-      description: ``,
       knowledge: {
         0: `
           Orc grunts are the standard warrior that orc clans field in battle.
@@ -142,7 +135,6 @@ humanoidInput.push({
       ...baseOrc,
       armorInputs: [{ name: "leather" }],
       challengeRating: 0.5,
-      description: ``,
       knowledge: {
         0: `
           Orc peons are the weakest warrior that orc clans field in battle.
@@ -172,7 +164,6 @@ humanoidInput.push({
         },
       ],
       challengeRating: 2,
-      description: ``,
       knowledge: {
         0: `
           Orc veterans are battle-hardened elite warriors who are deadly at any range.
@@ -202,7 +193,6 @@ humanoidInput.push({
         },
       ],
       challengeRating: 4,
-      description: ``,
       knowledge: {
         0: `
           Orc chieftains are the most powerful orc warriors.
@@ -230,7 +220,6 @@ humanoidInput.push({
       armorInputs: [{ name: "studded leather" }],
       attackInputs: [{ name: "drain life" }],
       challengeRating: 2,
-      description: ``,
       knowledge: {
         0: `
           Orc shamans provide orc squads with divine magical support.

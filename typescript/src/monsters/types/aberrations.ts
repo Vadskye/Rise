@@ -53,7 +53,6 @@ aberrationInput.push({
       }
     },
   ],
-  description: ``,
   knowledge: {
     "-10": `
       Legends speak of revolting water-dwelling creatures called aboleths that lurk in the deepest caves.

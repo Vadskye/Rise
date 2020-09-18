@@ -26,7 +26,6 @@ const animateInput: TypelessMonsterInput[] = [
       },
     ],
     challengeRating: 4,
-    description: ``,
     knowledge: {
       0: `
         An darkwraith is a shadow disconnected from its host through strange umbramantic power.
@@ -87,7 +86,6 @@ const baseTreant = {
   weaponInput: [{ name: "slam" as const, tags: ["Sweeping 2"] }],
 };
 animateInput.push({
-  description: ``,
   knowledge: {
     0: `
       Treants are intelligent plant creatures that appear extremely similar to trees.
@@ -106,7 +104,6 @@ animateInput.push({
     {
       ...baseTreant,
       alignment: "Usually true neutral",
-      description: ``,
       knowledge: {
         0: `
           Birch treants tend to be shy, and they to avoid conflict if at all possible.
@@ -120,7 +117,6 @@ animateInput.push({
     {
       ...baseTreant,
       alignment: "Usually true neutral",
-      description: ``,
       knowledge: {
         0: `
           Chestnut treants tend to mischievous and outgoing.
@@ -135,7 +131,6 @@ animateInput.push({
     {
       ...baseTreant,
       alignment: "Usually true neutral",
-      description: ``,
       knowledge: {
         0: `
           Willow treants are the most agile treants, and they can twist and bend their bodies with surprising finesse.
@@ -150,7 +145,6 @@ animateInput.push({
     {
       ...baseTreant,
       alignment: "Usually neutral evil",
-      description: ``,
       knowledge: {
         0: `
           Darkroot treants, unlike most other treants, primarily inhabit swamps and other grimy places.
@@ -165,7 +159,6 @@ animateInput.push({
     {
       ...baseTreant,
       alignment: "Usually neutral good",
-      description: ``,
       knowledge: {
         0: `
            Pine treants tend to be the most steadfast treants.
@@ -180,7 +173,6 @@ animateInput.push({
     {
       ...baseTreant,
       alignment: "Usually true neutral",
-      description: ``,
       knowledge: {
         0: `
           Oak treants tend to be the most stubborn treants, and they brook no guff from wayward adventurers.
@@ -194,7 +186,6 @@ animateInput.push({
     {
       ...baseTreant,
       alignment: "Usually true neutral",
-      description: ``,
       knowledge: {
         0: `
           Cyprus treants are the most durable of treants.
@@ -224,13 +215,11 @@ const baseAirElemental = {
   ],
   challengeRating: 2 as const,
   // TODO: give air elementals a unique description
-  description: ``,
   languages: ["Auran"],
   startingAttributes: { str: 1, dex: 4, con: 1, int: -2, per: 2 },
   weaponInput: [{ name: "slam" as const }],
 };
 animateInput.push({
-  description: ``,
   knowledge: {
     0: `
       Air elementals are the embodiment of the natural element of air.
@@ -272,7 +261,6 @@ const baseAnimatedObject = {
   weaponInput: [{ name: "slam" as const }],
 };
 animateInput.push({
-  description: ``,
   knowledge: {
     0: `
       Animated objects come in all sizes, shapes, and colors.

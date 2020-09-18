@@ -32,7 +32,6 @@ const animalInput: TypelessMonsterInput[] = [
     alignment: "Always true neutral",
     armorInputs: [{ name: "fur" }],
     challengeRating: 1,
-    description: ``,
     knowledge: {
       0: `
         A badger is a Small furry animal with a squat, powerful body.
@@ -95,7 +94,6 @@ const animalInput: TypelessMonsterInput[] = [
     alignment: "Always true neutral",
     armorInputs: [{ name: "fur" }],
     challengeRating: 2,
-    description: ``,
     knowledge: {
       0: `
         Camels are known for their ability to travel long distances without food or water.
@@ -112,7 +110,6 @@ const animalInput: TypelessMonsterInput[] = [
     alignment: "Always true neutral",
     armorInputs: [{ name: "fur" }],
     challengeRating: 1,
-    description: ``,
     knowledge: {
       0: `
         A dire rat is a Small omnivorous scavenger that resembles an unusually large rat.
@@ -136,7 +133,6 @@ const animalInput: TypelessMonsterInput[] = [
     weaponInput: [{ name: "bite" }],
   },
   {
-    description: ``,
     knowledge: {
       0: `
         Bears are large, furry animals known for their strength and tenacity.
@@ -149,7 +145,6 @@ const animalInput: TypelessMonsterInput[] = [
         alignment: "Always true neutral",
         armorInputs: [{ name: "fur" }],
         challengeRating: 2,
-        description: ``,
         knowledge: {
           0: `
             Black bears are Large forest-dwelling omnivores that are usually not dangerous unless an interloper threatens their cubs or food supply.
@@ -186,7 +181,6 @@ const animalInput: TypelessMonsterInput[] = [
   {
     alignment: "Always true neutral",
     armorInputs: [{ name: "fur" }],
-    description: ``,
     knowledge: {
       0: `
         Wolves are pack hunters known for their persistence and cunning.
@@ -218,7 +212,6 @@ const animalInput: TypelessMonsterInput[] = [
     alignment: "Always true neutral",
     armorInputs: [{ name: "feathers" }],
     challengeRating: 4,
-    description: ``,
     knowledge: {
       0: `
         A roc is an incredibly strong Gargantuan bird with the ability to carry off horses.
@@ -242,7 +235,6 @@ const animalInput: TypelessMonsterInput[] = [
     alignment: "Always true neutral",
     armorInputs: [{ name: "scales" }],
     challengeRating: 0.5,
-    description: ``,
     knowledge: {
       0: `
         Vampire eels are Medium, slimy snakelike carnivores.
@@ -257,7 +249,6 @@ const animalInput: TypelessMonsterInput[] = [
     alignment: "Always true neutral",
     armorInputs: [{ name: "fur" }],
     challengeRating: 2,
-    description: ``,
     knowledge: {
       0: `
         A dire wolf is a Large wolf-like creature.
@@ -295,7 +286,6 @@ const animalInput: TypelessMonsterInput[] = [
     alignment: "Always true neutral",
     armorInputs: [{ name: "carapace" }],
     challengeRating: 2,
-    description: ``,
     knowledge: {
       0: `
         A giant wasp is a Large insect resembling a normal wasp.
@@ -327,7 +317,6 @@ const animalInput: TypelessMonsterInput[] = [
     armorInputs: [{ name: "carapace" }],
     attackInputs: [{ name: "acid breath" }],
     challengeRating: 2,
-    description: ``,
     knowledge: {
       0: `
         A giant bombardier beetle is a Large insect resembling a massive beetle.
@@ -350,7 +339,6 @@ const baseCentipede = {
   alignment: "Always true neutral",
   armorInputs: [{ name: "carapace" as const }],
   challengeRating: 4 as const,
-  description: ``,
   passiveAbilities: [
     {
       description: `
@@ -365,7 +353,6 @@ const baseCentipede = {
   weaponInput: [{ name: "bite" as const }],
 };
 animalInput.push({
-  description: ``,
   knowledge: {
     0: `
       Centipedes can grow to enormous size.
@@ -413,7 +400,6 @@ const baseSpider = {
   alignment: "Always true neutral",
   armorInputs: [{ name: "carapace" as const }],
   challengeRating: 4 as const,
-  description: ``,
   passiveAbilities: [
     {
       description: `
@@ -428,7 +414,6 @@ const baseSpider = {
   weaponInput: [{ name: "bite" as const }],
 };
 animalInput.push({
-  description: ``,
   knowledge: {
     0: `
       Spiders can grow to enormous size.
