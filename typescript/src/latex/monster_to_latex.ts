@@ -26,7 +26,7 @@ export function monsterToLatex(monster: Monster): string {
 function monsterGroupToLatex(monsterGroup: MonsterGroup) {
   return `
     \\subsection{${monsterGroup.name}}
-      ${monsterGroup.description}
+      ${monsterGroup.description || ""}
       ${formatKnowledge(monsterGroup)}
 
       ${monsterGroup.tactics || ""}
