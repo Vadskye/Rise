@@ -54,15 +54,15 @@ function formatDefenseBonuses(monsterType: MonsterType) {
 }
 
 // Individual monsters may have different knowledge skills
-export const knowledgeSkillByMonsterType: Record<MonsterType, string> = {
-  "aberration": "dungeoneering",
-  "animal": "nature",
-  "animate": "arcana",
-  "humanoid": "local",
-  "magical beast": "arcana",
-  "monstrous humanoid": "local",
-  "outsider": "planes",
-  "undead": "religion",
+export const knowledgeSkillsByMonsterType: Record<MonsterType, string[]> = {
+  "aberration": ["dungeoneering"],
+  "animal": ["nature"],
+  "animate": ["arcana"],
+  "humanoid": ["local"],
+  "magical beast": ["arcana"],
+  "monstrous humanoid": ["nature"],
+  "outsider": ["planes"],
+  "undead": ["religion"],
 };
 
 export const typeDescriptions: Record<MonsterType, string | null> = {

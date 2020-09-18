@@ -275,8 +275,6 @@ monstrousHumanoidInput.push({
       name: "Stone Giant",
       size: "gargantuan",
       startingAttributes: { str: 7, dex: -1, con: 3, int: 0, per: 0, wil: -2 },
-      tactics: `
-      `,
       weaponInput: [
         { name: "greatclub", tags: ["sweeping 2"] },
         { ...boulder, rangeIncrement: 200 },

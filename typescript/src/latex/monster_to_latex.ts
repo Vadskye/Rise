@@ -7,7 +7,7 @@ import {
 import { DamageType, damageTypes } from "@src/data";
 import * as format from "@src/latex/format";
 import { Monster, MonsterBase, MonsterGroup, monsterIsMonsterGroup } from "@src/monsters";
-import { knowledgeSkillByMonsterType } from "@src/monsters/types";
+import { knowledgeSkillsByMonsterType } from "@src/monsters/types";
 import { movementModes } from "@src/movement_modes";
 import { PassiveAbility } from "@src/passive_abilities";
 import { Weapon } from "@src/weapons";
@@ -29,8 +29,6 @@ function monsterGroupToLatex(monsterGroup: MonsterGroup) {
       ${monsterGroup.description || ""}
       ${formatKnowledge(monsterGroup)}
 
-      ${monsterGroup.tactics || ""}
-
       ${monsterGroup.monsters.map((m) => monsterBaseToLatex(m, { subsection: true })).join("\n")}
   `;
 }
@@ -44,7 +42,6 @@ function monsterBaseToLatex(monster: MonsterBase, options?: { subsection?: Boole
 
     ${monster.description || ""}
     ${formatKnowledge(monster)}
-    ${monster.tactics ? `\\parhead{Tactics} ${monster.tactics}` : ""}
 
     ${getMainContent(monster).trim()}
     ${getFooter(monster).trim()}
@@ -55,7 +52,9 @@ function monsterBaseToLatex(monster: MonsterBase, options?: { subsection?: Boole
     .replace(/\$Name/g, sentenceCase(getMonsterName(monster)));
 }
 
-function formatKnowledge(monster: Pick<MonsterBase, "level" | "knowledge" | "monsterType">) {
+function formatKnowledge(
+  monster: Pick<MonsterBase, "level" | "knowledge" | "knowledgeSkills" | "monsterType">,
+) {
   if (!monster.knowledge) {
     return "";
   }
@@ -65,9 +64,10 @@ function formatKnowledge(monster: Pick<MonsterBase, "level" | "knowledge" | "mon
   return modifiers
     .map((modifier) => {
       const mod = Number(modifier);
-      // TODO: allow monsters to specify their own knowledge skill
-      const knowledgeSkill = knowledgeSkillByMonsterType[monster.monsterType];
-      return `\\parhead{Knowledge (${knowledgeSkill}) ${baseDifficulty + mod}} ${
+      // TODO: allow monsters to specify their own knowledge skill(s)
+      const knowledgeSkills =
+        monster.knowledgeSkills || knowledgeSkillsByMonsterType[monster.monsterType];
+      return `\\parhead{Knowledge (${knowledgeSkills.join(", ")}) ${baseDifficulty + mod}} ${
         monster.knowledge![mod]
       }`;
     })

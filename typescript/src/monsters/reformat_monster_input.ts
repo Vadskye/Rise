@@ -29,14 +29,16 @@ import { MovementMode } from "@src/movement_modes";
 export interface MonsterGroupInput {
   description?: string;
   knowledge: Record<number, string>;
+  knowledgeSkills?: string[] | null;
   level: number;
   monsters: Array<Omit<MonsterBaseInput, "monsterType">>;
   monsterType: MonsterType;
   name: string;
-  tactics?: string | null;
 }
 
-export type MonsterGroup = Omit<MonsterGroupInput, "monsters"> & { monsters: MonsterBase[] };
+export type MonsterGroup = Required<Omit<MonsterGroupInput, "monsters">> & {
+  monsters: MonsterBase[];
+};
 
 function monsterInputIsMonsterGroupInput(monster: MonsterInput): monster is MonsterGroupInput {
   return Boolean((monster as MonsterGroupInput).monsters);
@@ -62,6 +64,7 @@ export interface MonsterBaseInput {
   knowledge?: Record<number, string> | null;
   languages?: string[];
   level: number;
+  knowledgeSkills?: string[] | null;
   monsterType: MonsterType;
   name: string;
   passiveAbilities?: PassiveAbility[];
@@ -76,7 +79,6 @@ export interface MonsterBaseInput {
   space?: number;
   speeds?: Partial<Record<MovementMode, number | null>>;
   startingAttributes?: Partial<Creature.Attributes>;
-  tactics?: string | null;
   weaponInput?: WeaponInput[];
   weight?: string | null;
 }
@@ -122,16 +124,18 @@ const monsterDefaults: Required<
     | "resistanceBonuses"
     | keyof MonsterCalculatedValues
   >
-> & {
-  armors: Armor[];
-  defenseBonuses: Record<DefenseType, number>;
-  resistanceBonuses: Record<DamageType, number>;
-  passiveAbilities: PassiveAbility[];
-  skillPoints: Creature.Skills;
-  speeds: Record<MovementMode, number>;
-  startingAttributes: Creature.Attributes;
-  weapons: Weapon[];
-} = {
+> &
+  Pick<
+    MonsterCalculatedValues,
+    | "armors"
+    | "defenseBonuses"
+    | "passiveAbilities"
+    | "resistanceBonuses"
+    | "skillPoints"
+    | "speeds"
+    | "startingAttributes"
+    | "weapons"
+  > = {
   accuracyBonus: 0,
   activeAbilityInputs: [],
   attackInputs: [],
@@ -143,6 +147,7 @@ const monsterDefaults: Required<
   description: null,
   height: null,
   knowledge: null,
+  knowledgeSkills: null,
   languages: [],
   passiveAbilities: [],
   powerBonuses: {},
@@ -151,10 +156,14 @@ const monsterDefaults: Required<
   skillPoints: fromPairs(skills.map((s) => [s, 0])),
   speeds: { burrow: 0, climb: 0, fly: 0, land: 0, swim: 0 },
   startingAttributes: fromPairs(attributes.map((a) => [a, 0])),
-  tactics: null,
   weaponInput: [],
   weapons: [],
   weight: null,
+};
+
+const monsterGroupDefaults = {
+  description: "",
+  knowledgeSkills: null,
 };
 
 function calculateSkills(
@@ -183,6 +192,7 @@ export function processMonsterInput(monsterInput: MonsterBaseInput | MonsterGrou
 function generateMonsterGroup(monsterGroupInput: MonsterGroupInput): MonsterGroup {
   return {
     ...monsterGroupInput,
+    ...monsterGroupDefaults,
     monsters: monsterGroupInput.monsters.map((m) =>
       generateMonsterBase({
         ...m,
