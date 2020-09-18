@@ -287,7 +287,7 @@ const baseCentipede = {
 animalInput.push({
   description: `
     Centipedes can grow to enormous size.
-    They are omnivorous, and are just as likely to eat a long-dead corpse as they are to hunt living prey.
+    They are omnivorous, and are just as likely to eat a long-dead corpse or a tasty plant as they are to hunt living prey.
     All centipedes use their poisonous bites to accelerate the death of their prey.
   `,
   name: "Centipedes",

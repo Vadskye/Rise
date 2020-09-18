@@ -1,4 +1,5 @@
 export * from "./attributes_at_level";
+export * from "./calculate_base_knowledge_difficulty";
 export * from "./calculate_accuracy";
 export * from "./calculate_attack";
 export * from "./calculate_damage_dice";

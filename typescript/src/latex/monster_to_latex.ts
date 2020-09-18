@@ -1,8 +1,13 @@
 import { ActiveAbility } from "@src/active_abilities";
-import { CalculatedAttack, calculateStrike } from "@src/calculate";
+import {
+  calculateBaseKnowledgeDifficulty,
+  CalculatedAttack,
+  calculateStrike,
+} from "@src/calculate";
 import { DamageType, damageTypes } from "@src/data";
 import * as format from "@src/latex/format";
 import { Monster, MonsterBase, MonsterGroup, monsterIsMonsterGroup } from "@src/monsters";
+import { knowledgeSkillByMonsterType } from "@src/monsters/types";
 import { movementModes } from "@src/movement_modes";
 import { PassiveAbility } from "@src/passive_abilities";
 import { Weapon } from "@src/weapons";
@@ -37,6 +42,7 @@ function monsterBaseToLatex(monster: MonsterBase, options?: { subsection?: Boole
     \\vspace{0em}
 
     ${typeof monster.description === "string" ? monster.description : monster.description(monster)}
+    ${formatKnowledge(monster)}
     ${monster.tactics ? `\\parhead{Tactics} ${monster.tactics}` : ""}
 
     ${getMainContent(monster).trim()}
@@ -46,6 +52,24 @@ function monsterBaseToLatex(monster: MonsterBase, options?: { subsection?: Boole
   `
     .replace(/\$name/g, getMonsterName(monster).toLowerCase())
     .replace(/\$Name/g, sentenceCase(getMonsterName(monster)));
+}
+
+function formatKnowledge(monster: MonsterBase) {
+  if (!monster.knowledge) {
+    return "";
+  }
+
+  const baseDifficulty = calculateBaseKnowledgeDifficulty(monster);
+  const modifiers = _.sortBy(Object.keys(monster.knowledge), Number);
+  return modifiers
+    .map((modifier) => {
+      const mod = Number(modifier);
+      const knowledgeSkill = knowledgeSkillByMonsterType[monster.monsterType];
+      return `\\parhead{Knowledge (${knowledgeSkill}) ${baseDifficulty + mod}} ${
+        monster.knowledge![mod]
+      }`;
+    })
+    .join("\n");
 }
 
 function getMonsectionArgs(monster: MonsterBase) {
