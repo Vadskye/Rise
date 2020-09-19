@@ -233,7 +233,7 @@ const animalInput: TypelessMonsterInput[] = [
   },
   {
     alignment: "Always true neutral",
-    armorInputs: [{ name: "scales" }],
+    armorInputs: [{ name: "thick skin" }],
     challengeRating: 0.5,
     knowledge: {
       0: `
