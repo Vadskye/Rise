@@ -90,7 +90,7 @@ export const standardArmors: Record<StandardArmorName, Omit<CustomArmorInput, "n
   // Conflicts with body armor; equivalent to breastplate
   "scales": {
     defenseBonuses: { armor: 3 },
-    resistanceBonuses: { energy: 2, physical: 4 },
+    resistanceBonuses: { energy: 4, physical: 4 },
   },
   "hide": {
     defenseBonuses: { armor: 3 },

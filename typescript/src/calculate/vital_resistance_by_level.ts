@@ -27,6 +27,11 @@ const baseValues: Record<number, number> = {
   "23": 160,
   "24": 170,
   "25": 180,
+  "26": 190,
+  "27": 200,
+  "28": 210,
+  "29": 220,
+  "30": 230,
 };
 
 export function vitalResistanceByLevel(level: number, constitution: number | null) {

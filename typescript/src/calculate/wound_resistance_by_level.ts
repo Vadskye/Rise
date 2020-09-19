@@ -26,6 +26,11 @@ const baseValues: Record<number, number> = {
   "23": 65,
   "24": 70,
   "25": 75,
+  "26": 80,
+  "27": 85,
+  "28": 90,
+  "29": 95,
+  "30": 100,
 };
 
 export function damageResistanceByLevel(level: number, constitution: number | null) {
