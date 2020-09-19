@@ -25,7 +25,7 @@ export function monsterToLatex(monster: Monster): string {
 
 function monsterGroupToLatex(monsterGroup: MonsterGroup) {
   return `
-    \\subsection{${monsterGroup.name}}
+    \\subsection{${titleCase(monsterGroup.name)}}
       ${monsterGroup.description || ""}
       ${formatKnowledge(monsterGroup)}
 
@@ -259,13 +259,15 @@ function getPassiveAbilities(monster: MonsterBase) {
 }
 
 function formatPassiveAbility(ability: PassiveAbility, monster: MonsterBase) {
+  // Weirdly, we can't use `titleCase(ability.name)` here because it converts "low-light vision"
+  // into "Low Light Vision".
   if (ability.description) {
     const descriptionText =
       typeof ability.description === "string" ? ability.description : ability.description(monster);
     // TODO: indicate magical abilities somehow
-    return `\\parhead{${titleCase(ability.name)}} ${descriptionText}`;
+    return `\\parhead{${ability.name}} ${descriptionText}`;
   } else {
-    return `\\par \\textbf{${titleCase(ability.name)}}`;
+    return `\\par\\noindent\\textbf{${ability.name}}`;
   }
 }
 
