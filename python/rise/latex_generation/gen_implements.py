@@ -352,6 +352,31 @@ def generate_implements():
 
     implements += [
         MagicItem(
+            name="Staff of the Archmagi",
+            level=13,
+            material_type='Staff',
+            tags=[],
+            description="""
+                You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy>.
+                In addition, you gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<magical> abilities.
+            """,
+            short_description="Grants +1 accuracy, +2 \\glossterm<magical> power",
+        ),
+        MagicItem(
+            name="Staff of the Archmagi, Greater",
+            level=19,
+            material_type='Staff',
+            tags=[],
+            description="""
+                You gain a +2 \\glossterm<magic bonus> to \\glossterm<accuracy>.
+                In addition, you gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<magical> abilities.
+            """,
+            short_description="Grants +2 accuracy, +4 \\glossterm<magical> power",
+        ),
+    ]
+
+    implements += [
+        MagicItem(
             name="Staff of Precision",
             level=8,
             material_type='Staff',
