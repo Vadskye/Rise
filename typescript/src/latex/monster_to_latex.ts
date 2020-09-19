@@ -220,7 +220,7 @@ function formatActiveAbility(activeAbility: ActiveAbility) {
   return `
     \\begin{freeability}{${titleCase(activeAbility.name)}}${tagText}
       ${targetText}
-      ${activeAbility.effect}
+      ${activeAbility.effect.trim()}
     \\end{freeability}
   `;
 }
