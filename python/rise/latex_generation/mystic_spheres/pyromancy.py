@@ -301,7 +301,7 @@ pyromancy=MysticSphere(
             Even a thin barrier, such as a tent, is enough to protect locations from the effect of this ritual.
         """, tags=['Attune (self)'], ritual_time='one hour'),
         Spell('Pyrostorm', 8, None, """
-            This ritual functions like the \\spell<heat wave> ritual, except that the temperature in the area increases by 60 degrees, to a minimum of \\160 degrees.
+            This ritual functions like the \\spell<heat wave> ritual, except that the temperature in the area increases by 60 degrees, to a minimum of 160 degrees.
         """, tags=['Attune (self)'], ritual_time='one hour'),
     ],
     category='damage',
