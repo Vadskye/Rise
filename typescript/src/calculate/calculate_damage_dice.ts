@@ -1,5 +1,6 @@
 export interface DamageDice {
   count: number;
+  flatBonus: number;
   size: number;
 }
 
@@ -19,5 +20,11 @@ export function calculateDamageDice(power: number): DamageDice {
     }
   }
 
-  return { count, size };
+  let flatBonus = 0;
+  if (count > 8) {
+    flatBonus = (count - 8) * 10;
+    count = 8;
+  }
+
+  return { flatBonus, count, size };
 }
