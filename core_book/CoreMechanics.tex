@@ -156,7 +156,7 @@ It defines how attributes work and explains how to make attacks in combat.
     \subsection{Resolving Actions}\label{Resolving Actions}
 
         Within each phase, actions of all creatures are simultaneously resolved in the following order.
-        \glossterm{Allies} with the ability to communicate can freely coordinate their actions with each other, within reasonable limits.
+        All \glossterm{allies} with the ability to communicate can freely coordinate their actions with each other, within reasonable limits.
 
         \begin{enumerate*}
             \item Choose actions.
@@ -617,13 +617,15 @@ It defines how attributes work and explains how to make attacks in combat.
             For example, if you have a \glossterm{magic bonus} to resistances against energy damage and another \glossterm{magic bonus} to resistances against fire damage, you only use the higher of the two when you take fire damage.
 
     \subsection{Hit Points}\label{Hit Points}
-        Your \glossterm{hit points} measure how hard you are to kill.
-        You can't normally exceed your maximum hit points, even with magical healing.
+        Your \glossterm{hit points} measure how hard you are to seriously injure or kill.
+        You lose hit points when you take damage (see \pcref{Taking Damage}).
+        If you would lose a \glossterm{hit point} while you have no \glossterm{hit points} remaining, you gain a \glossterm{vital wound} instead.
+        This can cause you to die quickly.
 
         You normally have a number of \glossterm{hit points} equal to 9 \add your base Constitution.
         Some special abilities can give you additional \glossterm{hit points}.
+        You can't normally exceed your maximum hit points, even with magical healing.
 
-        If you would lose a \glossterm{hit point} while you have no \glossterm{hit points} remaining, you gain a \glossterm{vital wound} instead.
 
         \parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of the creature being damaged.
         When lose a single hit point from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight.
@@ -712,7 +714,7 @@ It defines how attributes work and explains how to make attacks in combat.
 
 \section{Fatigue}\label{Fatigue}
     Thoughout the day, you can become fatigued by your exertions both in and out of combat.
-    While \glossterm{hit points} are easy to restore, \glossterm{fatigue} generally requires a \glossterm{long rest} to remove.
+    While \glossterm{hit points} are easy to restore, \glossterm{fatigue points} generally require a \glossterm{long rest} to remove.
     Fatigue is still easier to recover from than \glossterm{vital wounds}.
 
     \subsection{Fatigue Points}\label{Fatigue Points}
@@ -1466,12 +1468,12 @@ It defines how attributes work and explains how to make attacks in combat.
         There are two types of abilities: magical abilities and mundane abilities.
 
         \parhead{Magical Abilities}\label{Magical Abilities} A \glossterm{magical} ability is an ability that has no physical explanation.
-        Examples include \glossterm{spells}, a medusa's petrifying gaze, and a cleric's domain invocations.
+        Examples include \glossterm{spells}, a dragon's breath weapon, and a paladin's ability to smite foes.
         Abilities that are magical in nature are indicated with a (Magical) indicator.
         Abilities that are not magical are \glossterm{mundane}.
 
-        \parhead{Mundane Abilities}\label{Mundane Abilities} A \glossterm{mundane} ability has a tangible component and some form of natural explanation.
-        Examples include weapon attacks, a dragon's breath weapon, and a barbarian's rage.
+        \parhead{Mundane Abilities}\label{Mundane Abilities} A \glossterm{mundane} ability has some form of natural explanation and does not fundamentally originate from a magical source.
+        Examples include weapon attacks, a dragon's frightful presence, and a barbarian's rage.
         Mundane attacks often target Armor defense.
         Unless otherwise indicated, all abilities are mundane in nature.
         Abilities that are not mundane are \glossterm{magical}.
@@ -1579,7 +1581,7 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \begin{freeability}{\labeltext{Desperate Exertion}}[\glossterm{Swift}]
             You reroll any \glossterm{attack} or \glossterm{check} you just made and gain a \plus2 bonus.
-            You must reroll the entire roll, not just one die from the roll (such as if the original roll \glossterm{exploded}).
+            You must reroll the entire roll, not just one die from the roll (such as if the original roll \glossterm{explodes}).
             You cannot use this to affect rolls that are not attacks or checks, such as \glossterm{vital rolls}.
             You cannot use this ability multiple times to affect the same roll.
 
@@ -1627,7 +1629,7 @@ It defines how attributes work and explains how to make attacks in combat.
         \end{freeability}
 
         \parhead{Offhand Strike}\label{Offhand Strike} As a \glossterm{minor action}, you can use the \textit{offhand strike} ability to quickly attack with an offhand weapon while you attack with a primary weapon.
-        \begin{freeability}{Offhand Strike}\label{Offhand Strike}
+        \begin{freeability}{Offhand Strike}
             Choose one weapon you wield.
             You cannot use this ability unless you also use a standard action during the same phase to make a \glossterm{strike} with a different weapon you are wielding.
 
@@ -1994,7 +1996,7 @@ It defines how attributes work and explains how to make attacks in combat.
         \end{dtabularx}
         1. This is your maximum rank in your class archetypes (see \pcref{Archetype Ranks}). \\
         2. This is the number of abilities you gain with your \glossterm{legacy item} (see \pcref{Legacy Items}). \\
-        3. This is the number of \glossterm{attumenent points} you have (see \pcref{Attunement Points}). \\
+        3. This is the number of \glossterm{attunenent points} you have (see \pcref{Attunement Points}). \\
     \end{dtable}
 
     \subsection{Leveling Up}
