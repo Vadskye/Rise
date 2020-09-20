@@ -248,7 +248,7 @@ biomancy=MysticSphere(
         Spell('Air Breathing', 3, 'One Medium or smaller ritual participant', """
             The target can breathe air as easily as a human breathes air, preventing it from suffocating above water if it can normally only breathe water or some other substance.
         """, tags=['Attune (ritual)'], ritual_time='one minute'),
-        Spell('Water Breathing', 3, 'One Medium or smaller ritual participant', """
+        Spell('Gills', 3, 'One Medium or smaller ritual participant', """
             The target can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
         """, tags=['Attune (ritual)'], ritual_time='one minute'),
     ],
