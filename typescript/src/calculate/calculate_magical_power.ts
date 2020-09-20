@@ -10,6 +10,6 @@ export function calculateMagicalPower({
   const crBonus = calculateChallengeRatingBonus(challengeRating);
   const monsterBonus = monsterPowerBonusByLevel(level);
   return (
-    level + (startingAttributes.wil ?? 0) + crBonus * monsterBonus + (powerBonuses?.magical || 0)
+    level + (startingAttributes.wil ?? 0) + crBonus + monsterBonus + (powerBonuses?.magical || 0)
   );
 }

@@ -22,11 +22,16 @@ const baseAngel = {
 };
 
 outsiderInput.push({
-  description: `
+  knowledge: {
+    0: `
       Angels are divine beings native to the good-aligned Outer Planes.
+    `,
+    10: `
       All angels have a striking and highly memorable appearance that evokes strong emotions in most viewers.
       Most angels evoke an overpowering sense of awe and beauty, but individual angels may have highly varied appearances.
     `,
+  },
+  level: 0,
   name: "Angels",
   monsters: [
     {
@@ -57,9 +62,11 @@ outsiderInput.push({
           weaponName: "greatmace",
         },
       ],
-      description: `
-         An astral deva is about 7 1/2 feet tall and weighs about 250 pounds.
+      knowledge: {
+        0: `
+          An astral deva is about 7 1/2 feet tall and weighs about 250 pounds.
         `,
+      },
       level: 12,
       name: "Astral Deva",
       passiveAbilities: [
@@ -120,9 +127,11 @@ outsiderInput.push({
     },
     {
       ...baseAngel,
-      description: `
+      knowledge: {
+        0: `
           A planetar is nearly 9 feet tall and weighs about 500 pounds.
         `,
+      },
       level: 16,
       name: "Planetar",
       // +half level to energy resistance
@@ -133,9 +142,11 @@ outsiderInput.push({
     },
     {
       ...baseAngel,
-      description: `
+      knowledge: {
+        0: `
           A solar has a deep and commanding voice, and stands about 9 feet tall. It weighs about 500 pounds.
         `,
+      },
       level: 20,
       name: "Solar",
       // +half level to energy resistance
@@ -163,19 +174,25 @@ const baseFormian = {
 };
 
 outsiderInput.push({
-  description: `
-    Formians are ant-like inhabitants of Lawful planes.
-    They often attempt to set up colonies in unclaimed locations on other planes to expand their influence, though they never attack civilizations or sentient creatures to do so.
-    Once they have established their colonies, they consider themselves to have a rightful claim to that land, and they can be highly territorial.
+  knowledge: {
+    0: `
+      Formians are ant-like inhabitants of Lawful planes.
+    `,
+    5: `,
+      Formians share a hive mind that allows telepathic communication at great distances.
+      Most formians are simple drones with no independent thought or agency; they act only as directed by their queen.
+      As a result, they fight with no concern for their own lives, serving only the greater good of the group.
+      They may still retreat to avoid expending unnecessary resources on a battle that is already lost.
+    `,
+    10: `
+      Formians often attempt to set up colonies in unclaimed locations on other planes to expand their influence, though they never attack civilizations or sentient creatures to do so.
+      Once they have established their colonies, they consider themselves to have a rightful claim to that land, and they can be highly territorial.
 
-    Formians share a hive mind that allows telepathic communication at great distances.
-    Most formians are simple drones with no independent thought or agency; they act only as directed by their queen.
-    As a result, they fight with no concern for their own lives, serving only the greater good of the group.
-    They may still retreat to avoid expending unnecessary resources on a battle that is already lost.
-
-    If a formian queen is killed, all formians it was controlling immediately become inert, taking no actions of any kind.
-    These isolated formians typically die of dehydration or similar causes, though in rare cases they may be claimed by another formian queen.
-  `,
+      If a formian queen is killed, all formians it was controlling immediately become inert, taking no actions of any kind.
+      These isolated formians typically die of dehydration or similar causes, though in rare cases they may be claimed by another formian queen.
+    `,
+  },
+  level: 2,
   name: "Formians",
   monsters: [
     {
@@ -183,17 +200,20 @@ outsiderInput.push({
       // skills is awkward to read.
       ...baseFormian,
       challengeRating: 0.5,
-      description: `
-        Workers are the basic building block of formian society.
-        Even the smallest colony typically has hundreds of workers, and larger colonies can have tens of thousands.
-        They are \\glossterm{mindless}, but they are given instructions by the hive mind.
-        Workers are generally given orders by a formian queen in groups of at least five, and it is rare to see an individual worker on its own.
-
-        A typical worker is about 3 feet long and about 2-1/2 feet high at the front.
-        It weighs about 60 pounds.
-        Its hands are suitable only for manual labor.
-      `,
-      level: 1,
+      knowledge: {
+        0: `
+          Workers are the basic building block of formian society.
+          A typical worker is about 3 feet long and about 2-1/2 feet high at the front.
+          It weighs about 60 pounds.
+          Its hands are suitable only for manual labor.
+        `,
+        5: `
+          Individual workers are \\glossterm{mindless}, but they are given instructions by the hive mind.
+          Even the smallest formian colony typically has hundreds of workers, and larger colonies can have tens of thousands.
+          Workers are generally given orders by a formian queen in groups of at least five, and it is rare to see an individual worker on its own.
+        `,
+      },
+      level: 2,
       name: "Worker",
       skillPoints: { climb: 2, craft: 2 },
       size: "small",
@@ -204,16 +224,19 @@ outsiderInput.push({
     {
       ...baseFormian,
       challengeRating: 1,
-      description: `
-        Warriors are the basic fighting unit of formian society.
-        Even the smallest colony typically has dozens of warriors, and larger colonies can have thousands.
-        They are \\glossterm{mindless}, but they are given instructions by the hive mind.
-        In combat, warriors use their high mobility to ruthlessly coordinate attacks on their most dangerous or most vulnerable foes.
-
-        A warrior is about is about 5 feet long and about 4-1/2 feet high at the front.
-        It weighs about 180 pounds.
-      `,
-      level: 3,
+      knowledge: {
+        0: `
+          Warriors are the basic fighting unit of formian society.
+          In combat, warriors use their high mobility to ruthlessly coordinate attacks on their most dangerous or most vulnerable foes.
+          A warrior is about is about 5 feet long and about 4-1/2 feet high at the front.
+          It weighs about 180 pounds.
+        `,
+        5: `
+          Even the smallest colony typically has dozens of warriors, and larger colonies can have thousands.
+          They are \\glossterm{mindless}, but they are given instructions by the hive mind.
+        `,
+      },
+      level: 5,
       name: "Warrior",
       passiveAbilities: [
         {

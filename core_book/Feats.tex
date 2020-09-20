@@ -300,8 +300,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
             Both targets must within that spell's range of you, and must be valid targets for the spell.
             You cannot target yourself with this ability.
 
-            If both targets are willing, and the new target spends an \glossterm{action point} to attune to the spell, the spell's effect is transferred from the first target to the second.
-            The spell's old target regains the \glossterm{action point} it spent to attune to the spell.
+            If both targets are willing, and the new target spends an \glossterm{attunement point} to attune to the spell, the spell's effect is transferred from the first target to the second.
+            The spell's old target immediately regains the \glossterm{attunement point} it spent to attune to the spell.
 
             \rankline
             \featlevel{13} You can use this ability as a \glossterm{minor action}.
@@ -313,16 +313,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[13]{Greater Boon Lore} The number of additional \glossterm{Attune} spells you gain from your \textit{boon lore} ability increases to two.
 
-        \ff[16]{Personal Boon} When you cast a spell with the \glossterm{Attune} (target) tag on yourself, you can use the \textit{personal boon} ability.
-        \begin{freeability}{Personal Boon}
-            You can attune to the spell you are casting without spending an \glossterm{action point}.
-
-            You can only use this ability on one spell at a time.
-            If you use this ability while it already affects another spell, you choose which spell is affected by the ability.
-            % This has a bizarre edge case involving you being one of multiple targets for a multi-attunement effect,
-            % but there is only one of those in the game and it's a ritual, so it's not worth worrying about.
-            Your attunement to the other spell is released, as the \textit{release attunement} ability (see \pcref{Attunement}).
-        \end{freeability}
+        \ff[16]{Personal Boon} You gain an additional \glossterm{attunement point}.
+        You can only use this attunement point to \glossterm{attune} to spells and rituals that you cast on yourself.
 
         \ff[19]{Supreme Share Boon} You can use your \textit{share boon} ability on up to three different spells at once.
     \end{feat}
@@ -429,13 +421,13 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \ff[13]{Item Attunement} You gain an additional \glossterm{action point}.
-        You can only use this \glossterm{action point} to \glossterm{attune} to the effects of items (see \pcref{Item Attunement}).
+        \ff[13]{Item Attunement} You gain an additional \glossterm{attunement point}.
+        You can only use this \glossterm{attunement point} to \glossterm{attune} to the effects of items (see \pcref{Item Attunement}).
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus9.
 
-        \ff[19]{Greater Item Attunement} You gain an additional \glossterm{action poin}.
-        You can only use this \glossterm{action point} to \glossterm{attune} to the effects of items (see \pcref{Item Attunement}).
+        \ff[19]{Greater Item Attunement} You gain an additional \glossterm{attunement point}.
+        You can only use this \glossterm{attunement point} to \glossterm{attune} to the effects of items (see \pcref{Item Attunement}).
     \end{feat}
 
     \begin{feat}{Creature Handling Specialization}{Skill}
@@ -497,11 +489,13 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \ff[13]{Deceive Magic}[\glossterm{Magical}] When you would be hit by a \glossterm{magical} attack, you can use this ability.
-        \begin{apability}{Deceive Magic}[\glossterm{Swift}]
+        \ff[13]{Deceive Magic}[\glossterm{Magical}] When you would be hit by a \glossterm{magical} attack, you can use this ability in response.
+        \begin{freeability}{Deceive Magic}[\glossterm{Swift}]
+            When you use this ability, you gain a \glossterm{fatigue point}.
+
             The attack takes a \minus10 penalty to accuracy.
             This can cause the attack to hit you instead of getting a \glossterm{critical hit}, or it can cause the attack to miss entirely.
-        \end{apability}
+        \end{freeability}
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus9.
     \end{feat}
@@ -669,7 +663,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[13]{Delay Vital Wound} Whenever you receive a \glossterm{vital wound}, you can make an Endurance check.
         The \glossterm{difficulty rating} starts at 20 and increases by 5 in each subsequent round.
         Success means that you do not suffer the effects of the vital wound.
-        It still counts against your total number of vital wounds for determining your penalties on \glossterm{vital rolls} (see \pcref{Vital Roll}).
+        It still counts against your total number of vital wounds for determining your penalties on \glossterm{vital rolls} (see \pcref{Vital Rolls}).
         You must repeat this check at the end of each subsequent round to continue to delay the effects of the vital wound.
         Failure means that the vital wound has its normal effect on you.
 
@@ -753,7 +747,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Power Attack} Whenever you make a strike with a weapon you wield in two hands, you may take a \minus1 penalty to \glossterm{accuracy}.
         If you do, you gain a \plus1d bonus to damage.
 
-        \ff[4]{Cleave} Whenever you wield a melee weapon in two hands, it gains the Sweeping (1) tag (see \pcref{Weapon tags}).
+        \ff[4]{Cleave} Whenever you wield a melee weapon in two hands, it gains the Sweeping (1) tag (see \pcref{Sweeping}).
         If the weapon already has the Sweeping tag, you increase the number of secondary targets by 1.
         In addition, you can choose secondary targets within 10 feet of the primary target instead of the normal 5 feet.
         Each secondary target must still be within your \glossterm{reach} with the weapon.
@@ -1094,6 +1088,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[4]{Alter Damage} Whenever you cast a spell that deals damage, you can change the type of damage it deals based on the \glossterm{mystic spheres} you have access to.
         You can use this ability to affect both spells that deal damage directly and spells that cause effects or summon creatures that later deal damage.
+        If you change a spell's damage type in this way, you change all damage done by the spell, even if the spell would originally deal damage of multiple types.
 
         The damage types for each mystic sphere are given in \trefnp{Mystic Sphere Damage Types}.
         Not all mystic spheres have associated damage types.
@@ -1129,9 +1124,14 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \end{dtabularx}
         \end{dtable}
 
-        \ff[7]{Augment} You learn one \glossterm{augment} (see \pcref{Augments}).
-        You can apply that augment to spells you cast and rituals you perform.
-        When you gain access to a new spell level, you may change which augments you know.
+        \ff[7]{Spell Fusion} You can use the \textit{spell fusion} ability as a \glossterm{standard action}.
+        \begin{freeability}{Spell Fusion}
+            Choose two spells that you know which do not have the \glossterm{Sustain} or \glossterm{Attune} tags.
+            You cast both spells simultaneously.
+            Both spells that you fuse in this way must have the exact same area and/or targeting restrictions, and you must choose the same targets and area for both spells, if applicable.
+
+            After you use this ability, you are unable to take any actions during the following round.
+        \end{freeability}
 
         % TODO: make this based on spheres known?
         \ff[10]{Alter Conditions} When you cast a spell that inflicts a \glossterm{condition} with a standard effect, you can change that effect to another effect of the same rank.
@@ -1150,13 +1150,13 @@ Feats also make the system more mechanically complex, so they are not necessaril
             2. The target wakes up if it takes a \glossterm{vital wound}, but cannot otherwise wake up during the condition.
         \end{dtable}
 
-        \ff[13]{Augment} You learn an additional \glossterm{augment}.
+        \ff[13]{Greater Spell Fusion} Using your \textit{spell fusion} ability does not prevent you from acting during the \glossterm{movement phase} of the following round.
 
         \ff[16]{Blend Damage} When you cast a spell that deals damage, you can change the damage type to have any combination of damage types provided by the \glossterm{mystic spheres} you have access to and the original spell's damage type.
         For example, if you cast a spell that deals fire damage and you have access to the \textit{cryomancy} \glossterm{mystic sphere}, you can change that spell's damage type to be either fire damage, cold damage, or both fire and cold damage simultaneously.
         You cannot remove a spell's damage type entirely.
 
-        \ff[19]{Augment} You learn an additional \glossterm{augment}.
+        \ff[19]{Supreme Spell Fusion} Using your \textit{spell fusion} ability does not prevent you from taking \glossterm{minor actions} during the following round.
     \end{feat}
 
     % TODO: replace with Wild Magic mage archetype
@@ -1212,7 +1212,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
             When you use your \textit{imbued shot} ability to attack with that projectile, the spell takes effect on the target of your \textit{imbued shot} ability.
             After the spell takes effect this way, your attunement to this ability ends.
-            The next time you take a \glossterm{short rest}, you regain the \glossterm{action point} you spent to attune to this ability.
         \end{attuneability}
 
         % \ff[7]{Missile Storm} You can use the \textit{missile storm} ability as a standard action.
@@ -1260,7 +1259,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \end{freeability}
 
         \ff[4]{Personal Legacy} You do not gain any legacy item upgrades (see \pcref{Legacy Items}).
-        Instead, each time you would gain a legacy item upgrade, you instead increase your \glossterm{action points} by 1 and increase the number of times you can use the \textit{recover} ability between \glossterm{short rests} by 1 (see \pcref{Recover}).
+        Instead, each time you would gain a legacy item upgrade, you instead gain a \plus2 bonus to your \glossterm{fatigue tolerance} and increase the number of times you can use the \textit{recover} ability between \glossterm{short rests} by 1 (see \pcref{Recover}).
 
         % clarify that it does not affect spells already in progress in the current phase?
         \ff[7]{Disruptive Presence} All enemies within an \areamed radius from you have a 50\% chance to \glossterm{miscast} any spell they cast.
@@ -1443,7 +1442,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[1]{Diehard} You gain a \plus2 bonus to \glossterm{vital rolls}.
 
-        \ff[4]{Regenerative Rest} When you take a \glossterm{short rest}, you can spend an \glossterm{action point}. If you do, you heal one \glossterm{vital wound}.
+        \ff[4]{Regenerative Rest} When you take a \glossterm{short rest}, you can remove a \glossterm{vital wound} affecting you.
+        If you do, you gain two \glossterm{fatigue points}.
 
         \ff[7]{Regenerative Recovery} You can use the \textit{regenerative recovery} ability as a standard action.
         \begin{freeability}{Regenerative Recovery}
@@ -1678,7 +1678,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
             When you use your \textit{imbued blow} ability to attack with that weapon, the spell takes effect on the target of your \textit{imbued blow} ability.
             After the spell takes effect this way, your attunement to this ability ends.
-            The next time you take a \glossterm{short rest}, you regain the \glossterm{action point} you spent to attune to this ability.
         \end{attuneability}
 
         \ff[10]{Personal Enhancement} You gain a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} and a \plus2 \glossterm{magic bonus} to \glossterm{power}.
@@ -1741,8 +1740,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[7]{Personal Updraft} You gain a \glossterm{glide speed} equal to your \glossterm{base speed} (see \pcref{Gliding}).
         If you already have a \glossterm{glide speed}, you can increase or decrease your glide speed whenever you glide by up to 20 feet (to a minimum of 10 feet).
 
-        \ff[10]{Personal Aeromancy} You gain an additional \glossterm{action point}.
-        You can only use this action point to \glossterm{attune} to spells and rituals from the \sphere{Aeromancy} \glossterm{mystic sphere}.
+        \ff[10]{Personal Aeromancy} You gain an additional \glossterm{attunement point}.
+        You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Aeromancy} \glossterm{mystic sphere}.
 
         \ff[13]{Greater Favorable Winds} The bonus from your \textit{favorable winds} ability increases to \plus2.
 
@@ -1764,8 +1763,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[7]{Slippery Escapist} You gain a \plus2 bonus to the Flexibility skill.
         In addition, you gain a \plus2 bonus to defenses against the \textit{grapple} ability (see \pcref{Grapple}).
 
-        \ff[10]{Personal Aquamancy} You gain an additional \glossterm{action point}.
-        You can only use this action point to \glossterm{attune} to spells and rituals from the \sphere{Aquamancy} \glossterm{mystic sphere}.
+        \ff[10]{Personal Aquamancy} You gain an additional \glossterm{attunement point}.
+        You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Aquamancy} \glossterm{mystic sphere}.
 
         \ff[13]{Greater Swim Familiarity} The Swim bonus from your \textit{swim familiarity} ability increases to \plus4.
         In addition, you take no penalties for acting underwater, except for those relating to using ranged weapons.
@@ -1789,8 +1788,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[7]{Astral Spell Transit} You double your range with abilities from the \sphere{Astromancy} \glossterm{mystic sphere}.
 
-        \ff[10]{Personal Astromancy} You gain an additional \glossterm{action point}.
-        You can only use this action point to \glossterm{attune} to spells and rituals from the \sphere{Astromancy} \glossterm{mystic sphere}.
+        \ff[10]{Personal Astromancy} You gain an additional \glossterm{attunement point}.
+        You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Astromancy} \glossterm{mystic sphere}.
 
         \ff[13]{Greater Efficient Transit} The difficulty rating increase from your \textit{efficient transit} effect increases to 20.
         In addition, whenever you fail to teleport a creature or object due to specifying an invalid destination, you may automatically change the target's destination to the closest valid location to your intended destination.
@@ -1799,8 +1798,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[16]{Spell} You learn a spell from the \sphere{Astromancy} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that mystic sphere.
 
-        \ff[19]{Greater Astral Spell Transit} When determining whether you have \glossterm{line of effect} to a particular location with abilites from the \sphere{Astromancy} \glossterm{mystic sphere}, you can ignore any number of physical obstacles with a combined depth of five feet or less.
-        This can allow you to use abilities through solid walls, though it does not grant you the ability to see through the wall.
+        \ff[19]{Greater Astral Spell Transit} The range increase from your \textit{astral spell transit} ability increases to be quadruple your normal range.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Barrier}{Casting, Magical}
@@ -1821,8 +1819,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[7]{Hardened Barriers} You gain a bonus equal to your \glossterm{power} to the \glossterm{vital resistance} of objects you create with the \sphere{Barrier} \glossterm{mystic sphere}.
 
-        \ff[10]{Personal Barrier} You gain an additional \glossterm{action point}.
-        You can only use this action point to \glossterm{attune} to spells and rituals from the \sphere{Barrier} \glossterm{mystic sphere}.
+        \ff[10]{Personal Barrier} You gain an additional \glossterm{attunement point}.
+        You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Barrier} \glossterm{mystic sphere}.
 
         \ff[13]{Innate Shield} You gain a \plus1 bonus to Armor defense.
 
@@ -1844,8 +1842,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[7]{Simple Blessing} Spells you cast from the Bless mystic sphere do not have the \glossterm{Focus} tag (see \pcref{Focus}).
 
-        \ff[10]{Personal Blessing} You gain an additional \glossterm{action point}.
-        You can only use this action point to attune to spells you cast from the \sphere{Bless} mystic sphere.
+        \ff[10]{Personal Blessing} You gain an additional \glossterm{attunement point}.
+        You can only use this attunement point to attune to spells you cast from the \sphere{Bless} mystic sphere.
 
         \ff[13]{Greater Inspiring Blessing} The number of hit points granted by your \textit{inspiring blessing} ability increases to two.
         In addition, the creature loses two hit points when the effect ends instead of one.
@@ -1853,7 +1851,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[16]{Spell} You learn a spell from the \sphere{Bless} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that mystic sphere.
 
-        \ff[19]{Greater Personal Blessing} The number of additional action points granted by your \textit{personal blessing} ability increases to two.
+        \ff[19]{Greater Personal Blessing} The number of additional attunement points granted by your \textit{personal blessing} ability increases to two.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Biomancy}{Casting, Magical}
@@ -1878,8 +1876,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{19} This ability can target any \glossterm{ally} within \rngmed range.
         \end{freeability}
 
-        \ff[10]{Personal Biomancy} You gain an additional \glossterm{action point}.
-        You can only use this action point to \glossterm{attune} to spells and rituals from the \sphere{Biomancy} \glossterm{mystic sphere}.
+        \ff[10]{Personal Biomancy} You gain an additional \glossterm{attunement point}.
+        You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Biomancy} \glossterm{mystic sphere}.
 
         \ff[13]{Greater Biological Control} The bonus from your \textit{biological control} ability increases to \plus4.
         In addition, the amount of rest and sleep you need each day is reduced to a quarter of the normal value.
@@ -1888,7 +1886,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[16]{Spell} You learn a spell from the \sphere{Biomancy} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that mystic sphere.
 
-        \ff[19]{Greater Personal Biomancy} The number of action points you gain from your \textit{personal biomancy} ability increases to 2.
+        \ff[19]{Greater Personal Biomancy} The number of attunement points you gain from your \textit{personal biomancy} ability increases to 2.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Channel Divinity}{Casting, Magical}
@@ -1901,18 +1899,18 @@ Feats also make the system more mechanically complex, so they are not necessaril
         This bonus stacks with the normal \plus2 bonus provided by that ability.
 
         % This is pretty weird
-        \ff[7]{Divine Servant} Once per \glossterm{long rest}, if you pray to your deity in an area sacred to your deity, you can regain a spent \glossterm{action point}.
+        \ff[7]{Divine Servant} Once per \glossterm{long rest}, if you pray to your deity in an area sacred to your deity, you can remove all of your \glossterm{fatigue points}.
         This takes a \glossterm{minor action}.
 
-        \ff[10]{Personal Channeling} You gain an additional \glossterm{action point}.
-        You can only use this action point to \glossterm{attune} to spells and rituals from the \sphere{Channel Divinity} \glossterm{mystic sphere}.
+        \ff[10]{Personal Channeling} You gain an additional \glossterm{attunement point}.
+        You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Channel Divinity} \glossterm{mystic sphere}.
 
         \ff[13]{Greater Divine Intervention} The bonus from your \textit{divine intervention} ability increases to \plus6.
 
         \ff[16]{Spell} You learn a spell from the \sphere{Channel Divinity} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that mystic sphere.
 
-        \ff[19]{Greater Personal Channeling} The number of action points you gain from your \textit{personal channeling} ability increases to 2.
+        \ff[19]{Greater Personal Channeling} The number of attunement points you gain from your \textit{personal channeling} ability increases to 2.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Chronomancy}{Casting, Magical}
@@ -1929,8 +1927,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
         This includes reading books, searching areas, identifying magical effects with the Spellsense skill, and other similar activities.
         It does not affect spellcasting, performing rituals, or other similar magical abilities.
 
-        \ff[10]{Personal Aquamancy} You gain an additional \glossterm{action point}.
-        You can only use this action point to \glossterm{attune} to spells and rituals from the \sphere{Aquamancy} \glossterm{mystic sphere}.
+        \ff[10]{Personal Aquamancy} You gain an additional \glossterm{attunement point}.
+        You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Aquamancy} \glossterm{mystic sphere}.
 
         \ff[13]{Greater Accelerated Movement} The speed bonus from your \textit{accelerated movement} ability increases to \plus10 feet.
 
@@ -1953,8 +1951,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[7]{Mental Dominance} You gain a \plus2 bonus to Mental defense and the Persuasion skill.
 
-        \ff[10]{Personal Aquamancy} You gain an additional \glossterm{action point}.
-        You can only use this action point to \glossterm{attune} to spells and rituals from the \sphere{Aquamancy} \glossterm{mystic sphere}.
+        \ff[10]{Personal Aquamancy} You gain an additional \glossterm{attunement point}.
+        You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Aquamancy} \glossterm{mystic sphere}.
 
         \ff[19]{Greater Mental Dominance} The bonus from your \textit{mental dominance} ability increases to \plus4.
 
@@ -1976,8 +1974,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[7]{Frozen Blood} You are immune to \glossterm{poisons}.
 
-        \ff[10]{Personal Cryomancy} You gain an additional \glossterm{action point}.
-        You can only use this action point to \glossterm{attune} to spells and rituals from the \sphere{Cryomancy} \glossterm{mystic sphere}.
+        \ff[10]{Personal Cryomancy} You gain an additional \glossterm{attunement point}.
+        You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Cryomancy} \glossterm{mystic sphere}.
 
         \ff[13]{Greater Cold Resistance} The bonus from your \textit{cold resistance} ability increases to twice your \glossterm{power}.
 
@@ -2002,8 +2000,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[7]{Persistent Delusion} Whenever a creature removes a \glossterm{condition} that you gave it with a spell from the \sphere{Delusion} \glossterm{mystic sphere}, the effects of the condition linger until the end of the next round after the condition was removed.
         This ability does not affect the duration of effects that are not \glossterm{conditions}.  
 
-        \ff[10]{Personal Delusion} You gain an additional \glossterm{action point}.
-        You can only use this action point to \glossterm{attune} to spells and rituals from the \sphere{Delusion} \glossterm{mystic sphere}.
+        \ff[10]{Personal Delusion} You gain an additional \glossterm{attunement point}.
+        You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Delusion} \glossterm{mystic sphere}.
 
         \ff[13]{Greater Subtle Influence} The accuracy bonus from your \textit{subtle influence} ability increases to \plus4.
         In addition, the \glossterm{difficulty rating} increase from your that ability increases to \plus10.
@@ -2026,8 +2024,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[7]{Energetic Rush} You gain a \plus2 bonus to Reflex defense and a \plus5 foot bonus to your \glossterm{base speed}.
 
-        \ff[10]{Personal Electromancy} You gain an additional \glossterm{action point}.
-        You can only use this action point to \glossterm{attune} to spells and rituals from the \sphere{Electromancy} \glossterm{mystic sphere}.
+        \ff[10]{Personal Electromancy} You gain an additional \glossterm{attunement point}.
+        You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Electromancy} \glossterm{mystic sphere}.
 
         \ff[13]{Greater Electricity Resistance} Your bonus from the \textit{electricity resistance} ability increases to twice your \glossterm{power}.
 
@@ -2050,8 +2048,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[7]{Persistent Manifestation} Once per round, you can \glossterm{sustain} a spell from the Fabrication mystic sphere as a \glossterm{free action}.
 
-        \ff[10]{Personal Fabrication} You gain an additional \glossterm{action point}.
-        You can only use this action point to \glossterm{attune} to spells and rituals from the \sphere{Fabrication} \glossterm{mystic sphere}.
+        \ff[10]{Personal Fabrication} You gain an additional \glossterm{attunement point}.
+        You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Fabrication} \glossterm{mystic sphere}.
 
         \ff[13]{Greater Crafting Familiarity} The Craft bonus from your \textit{crafting familiarity} ability increases to \plus4.
         In addition, the \glossterm{vital resistance} bonus increases to twice your \glossterm{power}.
@@ -2073,8 +2071,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[7]{Certain Sight} You are immune to being \glossterm{dazzled} and \glossterm{blinded}.
 
-        \ff[10]{Personal Photomancy} You gain an additional \glossterm{action point}.
-        You can only use this action point to \glossterm{attune} to spells and rituals from the \sphere{Photomancy} \glossterm{mystic sphere}.
+        \ff[10]{Personal Photomancy} You gain an additional \glossterm{attunement point}.
+        You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Photomancy} \glossterm{mystic sphere}.
 
         \ff[13]{Greater Augmented Vision} The bonus from your \textit{augmented vision} ability increases to \plus4.
         In addition, you can see through solid objects up to one inch thick.
@@ -2105,8 +2103,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[7]{Malleable Flesh} You gain a \plus5 bonus to defenses when determining whether a \glossterm{strike} gets a \glossterm{critical hit} against you instead of a normal hit.
 
-        \ff[10]{Personal Polymorph} You gain an additional \glossterm{action point}.
-        You can only use this action point to \glossterm{attune} to spells and rituals from the \sphere{Polymorph} \glossterm{mystic sphere}.
+        \ff[10]{Personal Polymorph} You gain an additional \glossterm{attunement point}.
+        You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Polymorph} \glossterm{mystic sphere}.
 
         \ff[13]{Greater Reshaper} When you use the \spell{alter object} cantrip, you can accomplish work that would take up to an hour with a normal Craft check.
         In addition, you can use the \textit{alter poison} ability as a standard action.
@@ -2139,8 +2137,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[7]{Friendly Fire} Whenever you deal fire damage to your \glossterm{allies}, you deal half damage, and that damage is treated as \glossterm{environmental damage}.
 
-        \ff[10]{Personal Pyromancy} You gain an additional \glossterm{action point}.
-        You can only use this action point to \glossterm{attune} to spells and rituals from the \sphere{Pyromancy} \glossterm{mystic sphere}.
+        \ff[10]{Personal Pyromancy} You gain an additional \glossterm{attunement point}.
+        You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Pyromancy} \glossterm{mystic sphere}.
 
         \ff[13]{Greater Fire Resistance} Your bonus from the \textit{fire resistance} ability increases to twice your \glossterm{power}.
 
@@ -2164,8 +2162,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[7]{Truesight} You gain the \glossterm{truesight} ability with a 50 foot range.
         If you already have the \glossterm{truesight} ability, you increase its range by 50 feet.
 
-        \ff[10]{Personal Revelation} You gain an additional \glossterm{action point}.
-        You can only use this action point to \glossterm{attune} to spells and rituals from the \sphere{Revelation} \glossterm{mystic sphere}.
+        \ff[10]{Personal Revelation} You gain an additional \glossterm{attunement point}.
+        You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Revelation} \glossterm{mystic sphere}.
 
         \ff[13]{Greater Truthsense} The bonus from your \textit{truthsense} ability increases to \plus4.
 
@@ -2184,31 +2182,26 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[4]{Fortified Summons} Creatures you create with the \sphere{Summoning} \glossterm{mystic sphere} have their maximum \glossterm{hit points} increased by 2.
 
-        \ff[4]{Resummon} You can use the \textit{resummon} ability as a \glossterm{minor action}.
+        \ff[7]{Resummon} You can use the \textit{resummon} ability as a \glossterm{minor action}.
         \begin{freeability}{Resummon}
             Choose one creature or object that you summoned with an ability from the \sphere{Summoning} \glossterm{mystic sphere}.
             You teleport the target into an unoccupied space on stable ground within \rngmed range of you.
+
+            \rankline
+            \featlevel{13} The range increases to \rnglong.
+            \featlevel{19} You can choose two creatures or objects to teleport in this way instead of only one.
+                Each chosen creature or object can be teleported to a different location within range.
         \end{freeability}
 
-        \ff[7]{Augmented Summons} Creatures you create with abilities from the \sphere{Summoning} spell gain an \glossterm{action point}.
-        Most summoned creatures cannot use the \textit{recover} action or similar abilities, since the actions they can take are listed in the description of the spell or ritual.
-        However, your summoned creatures can use this action point to \glossterm{attune} to abilities.
+        \ff[10]{Personal Summoning} You gain an additional \glossterm{attunement point}.
+        You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Summoning} \glossterm{mystic sphere}.
 
-        \ff[10]{Personal Summoning} You gain an additional \glossterm{action point}.
-        You can only use this action point to \glossterm{attune} to spells and rituals from the \sphere{Summoning} \glossterm{mystic sphere}.
-
-        \ff[13]{Greater Fortified Summons} The number of additional \glossterm{hit points} from your \textit{fortified summoning} ability increases to 3.
-
-        \ff[13]{Greater Resummon} The range of your \textit{resummon} ability increases to \rnglong.
-        In addition, you can choose up to two creatures to teleport instead of only one.
-        Each target can be teleported to a different location within range.
+        \ff[13]{Greater Fortified Summons} The number of additional \glossterm{hit points} from your \textit{fortified summoning} ability increases to 4.
 
         \ff[16]{Spell} You learn a spell from the \sphere{Summoning} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that mystic sphere.
 
-        \ff[19]{Greater Augmented Summons} The number of action points granted by your \textit{augmented summons} ability increases to two.
-        In addition, creatures you summon can use the \textit{recover} and \textit{cleanse} actions if you command them to.
-        They cannot use the \textit{recover} action more than once between \glossterm{short rests}.
+        \ff[19]{Augmented Summons} Creatures you create with abilities from the \sphere{Summoning} spell gain an \glossterm{attunement point}.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Telekinesis}{Casting, Magical}
@@ -2233,8 +2226,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
         In addition, as a \glossterm{free action}, you can slow your fall while falling.
         If you do, you fall at a rate of 50 feet per round, preventing you from taking falling damage when you hit the ground.
 
-        \ff[10]{Personal Telekinesis} You gain an additional \glossterm{action point}.
-        You can only use this action point to \glossterm{attune} to spells and rituals from the \sphere{Telekinesis} \glossterm{mystic sphere}.
+        \ff[10]{Personal Telekinesis} You gain an additional \glossterm{attunement point}.
+        You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Telekinesis} \glossterm{mystic sphere}.
 
         \ff[13]{Greater Distant Hand} Your range with the \spell{distant hand} cantrip increases to \rngmed.
         In addition, the distance you can move the target each round increases to 30 feet.
@@ -2256,8 +2249,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[7]{Earthen Alloys} You may treat iron, steel, and worked stone as if they earth for the purpose of spells from the \sphere{Terramancy} \glossterm{mystic sphere}.
 
-        \ff[10]{Personal Terramancy} You gain an additional \glossterm{action point}.
-        You can only use this action point to \glossterm{attune} to spells and rituals from the \sphere{Terramancy} \glossterm{mystic sphere}.
+        \ff[10]{Personal Terramancy} You gain an additional \glossterm{attunement point}.
+        You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Terramancy} \glossterm{mystic sphere}.
 
         \ff[13]{Body of Stone} You gain a \plus1 bonus to Armor defense.
 
@@ -2288,8 +2281,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[7]{Mystic Power} You gain a \plus1 bonus to \glossterm{power} with \glossterm{magical} abilities.
 
-        \ff[10]{Personal Thaumaturgy} You gain an additional \glossterm{action point}.
-        You can only use this action point to \glossterm{attune} to spells and rituals from the \sphere{Thaumaturgy} \glossterm{mystic sphere}.
+        \ff[10]{Personal Thaumaturgy} You gain an additional \glossterm{attunement point}.
+        You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Thaumaturgy} \glossterm{mystic sphere}.
 
         \ff[13]{Thaumatic Substitution} Whenever you cast a spell that deals damage, you may change the type of damage to energy damage.
         This does not change any other aspects of the spell.
@@ -2314,8 +2307,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[7]{Darkvision} You gain \glossterm{darkvision} with a 50 foot range, allowing you to see in complete darkness clearly.
         If you already have that ability, you increase its range by 50 feet.
 
-        \ff[10]{Personal Umbramancy} You gain an additional \glossterm{action point}.
-        You can only use this action point to \glossterm{attune} to spells and rituals from the \sphere{Umbramancy} \glossterm{mystic sphere}.
+        \ff[10]{Personal Umbramancy} You gain an additional \glossterm{attunement point}.
+        You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Umbramancy} \glossterm{mystic sphere}.
 
         \ff[13]{Greater Reflexive Concealment} The bonuses from your \textit{reflexive concealment} ability increase to \plus4.
 
@@ -2339,8 +2332,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[7]{Creative Genesis} You can cast spells from the \sphere{Verdamancy} \glossterm{mystic sphere} as if non-arable ground of any kind was arable earth.
 
-        \ff[10]{Personal Verdamancy} You gain an additional \glossterm{action point}.
-        You can only use this action point to \glossterm{attune} to spells and rituals from the \sphere{Verdamancy} \glossterm{mystic sphere}.
+        \ff[10]{Personal Verdamancy} You gain an additional \glossterm{attunement point}.
+        You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Verdamancy} \glossterm{mystic sphere}.
 
         \ff[13]{Greater Verdant Allies} You can ignore all \glossterm{cover} and \glossterm{concealment} from plants whenever doing so would be beneficial to you.
         For example, creatures cannot use plants to hide from you.
@@ -2362,8 +2355,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[7]{Life Suppression} You gain a \plus4 bonus to defenses against abilities that only affect living creatures.
 
-        \ff[10]{Personal Vivimancy} You gain an additional \glossterm{action point}.
-        You can only use this action point to \glossterm{attune} to spells and rituals from the \sphere{Vivimancy} \glossterm{mystic sphere}.
+        \ff[10]{Personal Vivimancy} You gain an additional \glossterm{attunement point}.
+        You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Vivimancy} \glossterm{mystic sphere}.
 
         \ff[13]{Greater Personal Vitality} The bonus to Fortitude defense from your \textit{fortified life} ability increases to \plus2.
         In addition, you are immune to being \glossterm{nauseated}.

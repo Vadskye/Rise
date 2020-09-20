@@ -204,6 +204,23 @@ astromancy=MysticSphere(
             \\rank<5> The maximum size increases to Huge.
             \\rank<7> The maximum size increases to Gargantuan.
         """, tags=[]),
+        Spell('Phasing Blade', 3, 'Yourself', """
+            Whenever the target makes a \\glossterm<strike>, its weapon or projectile can pass through a single physical obstacle up to one foot thick on its way to the strike's target.
+            This can allow the target to ignore \\glossterm<cover>, or even attack through solid walls.
+            It does not allow the target to ignore armor, shields, or or similar items used by the target of its attacks.
+
+            \\rankline
+            \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<7> The strike can penetrate through any number of physical obstacles with a combined thickness of ten feet or less.
+        """, tags=[]),
+        Spell('Phasing Spells', 4, 'Yourself', """
+            When determining whether you have \\glossterm<line of effect> to a particular location with spells, you can ignore a single physical obstacle up to one foot thick.
+            This can allow you to cast spells through solid walls, though it does not grant you the ability to see through the wall.
+
+            \\rankline
+            \\rank<6> The maximum thickness you can ignore increases to 5 feet.
+            \\rank<8> Your spells can penetrate any number of physical obstacles with a combined thickness of ten feet or less.
+        """, tags=['Attune (self)']),
     ],
 
     rituals=[
@@ -221,9 +238,7 @@ astromancy=MysticSphere(
             % TODO: Is this planar cosmology correct?
             The Astral Plane connects to every plane, but transit from other planes is usually more limited.
             From the Material Plane, you can only reach the Astral Plane.
-
-            This ritual takes one week to perform, and requires 98 action points from its participants.
-        """, tags=['AP', 'Sustain (standard)']),
+        """, tags=['Sustain (standard)'], ritual_time='one week'),
         Spell('Plane Shift', 4, ['Up to five Large or smaller ritual participants', 'One \\glossterm<planar rift> within \\rngmed range'], """
             The target creatures teleport to the unoccupied spaces closest to the other side of the target planar rift.
             For details about \\glossterm<planar rifts>, see \\pcref<Planar Rifts>.
@@ -231,24 +246,18 @@ astromancy=MysticSphere(
             % TODO: Is this planar cosmology correct?
             The Astral Plane connects to every plane, but transit from other planes is usually more limited.
             From the Material Plane, you can only reach the Astral Plane.
-
-            This ritual takes 24 hours to perform, and requires 18 action points from its participants.
-        """, tags=['AP']),
+        """, tags=[], ritual_time='24 hours'),
         Spell('Astral Projection', 5, 'Up to five Large or smaller ritual participants', """
             The targets teleport to a random location within the Inner Astral Plane (see \\pcref<The Astral Plane>).
 
             In addition, a localized \\glossterm<planar rift> appears at the destination area on the Astral Plane which leads back to the location where this ritual was performed.
             The rift can only be passed through by the targets of this effect.
             It lasts for one week before disappearing permanently, potentially stranding the targets in the Astral Plane if they have not yet returned.
-
-            This ritual takes 24 hours to perform, and requires 32 action points from its participants.
-        """, tags=['AP']),
+        """, tags=[], ritual_time='24 hours'),
         Spell('Homeward Shift', 6, 'Up to five Large or smaller ritual participants', """
             This ritual can only be performed on the Astral Plane.
             The targets teleport to the last spaces they occupied on their home planes.
-
-            This ritual takes 24 hours to perform, and requires 50 action points from its participants.
-        """, tags=['AP']),
+        """, tags=[], ritual_time='24 hours'),
         Spell('Overland Teleportation', 5, 'Up to five Medium or smaller ritual participants', """
             Choose a destination up to 100 miles away from you on your current plane.
             Each target is teleported to the chosen destination.
@@ -259,14 +268,10 @@ astromancy=MysticSphere(
             The new destination will be one that more closely resembles your mental image.
             If no such area exists, the ritual simply fails.
             % TODO: does this need more clarity about what teleportation works?
-
-            This ritual takes 24 hours to perform and requires 32 action points from its ritual participants.
-        """, tags=['AP']),
+        """, tags=[], ritual_time='24 hours'),
         Spell('Retrieve Legacy', 4, 'One ritual participant', """
             If the target's \\glossterm<legacy item> is on the same plane and \\glossterm<unattended>, it is teleported into the target's hand.
-
-            This ritual takes 24 hours to perform, and requires 18 action points from its ritual participants.
-        """, tags=['AP']),
+        """, tags=[], ritual_time='24 hours'),
     ],
     category='damage',
 )

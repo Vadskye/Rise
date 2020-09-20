@@ -21,6 +21,12 @@ export function defenseBonusesByMonsterType(monsterType: MonsterType): Record<De
       reflex: 3,
       mental: 3,
     },
+    "dragon": {
+      armor: 3,
+      fortitude: 3,
+      reflex: 3,
+      mental: 3,
+    },
     "humanoid": {
       // This is lower because humanoids are expected to wear armor
       armor: 0,

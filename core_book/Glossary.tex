@@ -9,9 +9,9 @@ For details, see \pcref{Ability Tags}.
 \glossdef{action phase} The action phase is the second of two \glossterm{phases} in a combat \glossterm{round}.
 During the action phase, creatures can \glossterm{attack}, cast \glossterm{spells}, and take other major combat actions.
 
-\glossdef{action point} Action points allow you to \glossterm{attune} to effects such as spells or items (see \pcref{Attunement}).
-In addition, you can use some special abilities by spending \glossterm{action points}.
-For details, see \pcref{Action Points}.
+\glossdef{attunement point} Attunement points allow you to \glossterm{attune} to effects such as spells or items (see \pcref{Attunement}).
+In addition, you can use some special abilities by spending \glossterm{attunement points}.
+For details, see \pcref{Attunement Points}.
 
 \glossdef{accuracy} The bonus added to an \glossterm{attack roll}.
 
@@ -21,9 +21,6 @@ For details, see \pcref{Alignment}.
 \glossdef{ally}[allies] Some beneficial abilities affect allies.
 An ally is any creature you consider an ally who also considers you an ally, not including yourself.
 For details, see \pcref{Allies and Enemies}.
-
-\glossdef{AP} An ability with the AP tag costs an \glossterm{action point} to use.
-For details, see \pcref{Ability Tags}.
 
 \glossdef{archetype}[archetypes] An archetype is a collection of related abilities from a particular class.
 Each class has three archetypes that members of that class normally have.
@@ -51,23 +48,16 @@ Some abilities can only affect \glossterm{unattended} items.
 \glossdef{attribute} A core representation of a character's capacity in a wide range of areas. There are six attributes: \glossterm{Strength}, \glossterm{Dexterity}, \glossterm{Constitution}, \glossterm{Intelligence}, \glossterm{Perception}, and \glossterm{Willpower}.
 
 \glossdef{attune}[attunement] Some abilities last as long as you attune to them.
-Attuning to an ability costs an \glossterm{action point} that you cannot recover as long as you maintain your attunement to that ability.
+Attuning to an ability costs an \glossterm{attunement point} that you cannot recover as long as you maintain your attunement to that ability.
 For details, see \pcref{Attunement}.
 
 \glossdef{Attune} An ability with this \glossterm{ability tag} lasts as long as a creature attunes to it.
 For details, see \pcref{Attunement}.
 
-\glossdef{attuned} If you are attuned to an ability, you have invested an \glossterm{action point} in it to maintain its effect.
+\glossdef{attuned} If you are attuned to an ability, you have invested an \glossterm{attunement point} in it to maintain its effect.
 For details, see \pcref{Attunement}.
 
 \glossdef{Auditory} See \pcref{Ability Tags}.
-
-\glossdef{augment}[augments] Many spells have augments.
-Each augment on a spell has a name, a level, and an effect.
-When you cast a spell or perform a ritual, can choose to apply any number of augments you know to the spell or ritual.
-For each augment you apply, you increase the minimum \glossterm{archetype rank} of the spell or ritual and all of its upgrades by an amount equal to the augment's level.
-In exchange, the ability gains the effects of that augment.
-For details, see \pcref{Augments}.
 
 \glossdef{base attribute}[base] Your base attribute is the value 
 
@@ -161,7 +151,7 @@ A creature or object with concealment from you gains a \plus2 bonus to Armor def
 For details, see \pcref{Concealment}.
 
 \glossdef{condition}[conditions] A condition is a negative effect on a creature.
-Conditions last until they are removed, such as by the \textit{cleanse} ability (see \pcref{Cleanse}).
+Conditions last until they are removed, such as by the \textit{recover} ability (see \pcref{Recover}).
 
 \glossdef{confused} A confused creature is unable to independently control its actions. \confusionexplanation
 
@@ -304,6 +294,21 @@ If you control your fall with a successful Agility or Jump check, you can reduce
 \glossdef{fascinated} A fascinated creature can take no actions. It remains in place, giving its total attention to some object, creature, or effect. It takes a \minus4 penalty to skill checks made as reactions, such as Awareness checks.
 If the creature notices any threat against it, such as an approaching enemy, it is no longer fascinated.
 
+\glossdef{fatigue penalty} You take a penalty to \glossterm{accuracy} and \glossterm{checks} equal to the number of fatigue points you have \sub your \glossterm{fatigue tolerance}.
+If you have a fatigue penalty of at least \minus1, you are considered \glossterm{fatigued}.
+When your fatigue penalty reaches \minus5, you fall \glossterm{unconscious} until your fatigue penalty is reduced below \minus5.
+For details, see \pcref{Fatigue Penalty}.
+
+\glossdef{fatigue point} Your level of fatigue is measured with fatigue points.
+You take a \glossterm{fatigue penalty} based on the number of fatigue points you have.
+For details, see \pcref{Fatigue Points}.
+
+\glossdef{fatigue tolerance} Your fatigue tolerance indicates the number of \glossterm{fatigue points} you can gain before you suffer a \glossterm{fatigue penalty}.
+For details, see \pcref{Fatigue Tolerance}.
+
+\glossdef{fatigued} You are fatigued if you have a \glossterm{fatigue penalty} of at least \minus1.
+For details, see \pcref{Fatigue}.
+
 \glossdef{fire} A kind of \glossterm{energy damage}.
 
 \glossdef{fly speed} A creature with a fly speed has the ability to fly through the air.
@@ -312,7 +317,7 @@ For details, see \pcref{Flying}.
 
 \glossdef{Focus} See \pcref{Ability Tags}.
 
-\glossdef{focus penalty} When you use a \glossterm{Focus} ability, you take a \minus4 penalty to Armor and Reflex defenses.
+\glossdef{focus penalty}[focus penalties] When you use a \glossterm{Focus} ability, you take a \minus4 penalty to Armor and Reflex defenses.
 This penalty is called your focus penalty.
 For details, see \pcref{Ability Tags}.
 
@@ -367,6 +372,11 @@ Paralyzed, bound, and unconscious creatures are helpless.
 You should not know the result of your check, or even that a check was made.
 For details, see \pcref{Hidden Tasks}.
 
+\glossdef{hit point} Your hit points measure how hard you are to seriously injure or kill.
+You lose hit points when you take damage.
+If you run out of hit points, you gain \glossterm{vital wounds} when you take damage instead, which can cause you to die quickly.
+For details, see \pcref{Hit Points}.
+
 \glossdef{hunting party} A hunting party is the group of allies affected by a ranger's \textit{quarry} ability (see \pcref{Quarry}).
 
 \glossdef{ignited} An ignited creature or object has been set on fire.
@@ -402,7 +412,7 @@ It can fight while partially inside an object, which grants it \glossterm{cover}
 \glossdef{initiative} When multiple creatures take mutually impossible actions simultaneously, such as racing to be the first one to a door, they must roll initiative checks to determine who completes the action first.
 For details, see \pcref{Initiative}.
 
-\glossdef{insight points} Insight points can be spent to learn additional abilities.
+\glossdef{insight point} Insight points can be spent to learn additional abilities.
 For details, see \pcref{Insight Points}.
 
 \glossdef{invisible} An invisible creature or object cannot be seen. Creatures unable to see an invisible creature are \defenseless against its attacks. Attackers suffer a 50\% miss chance even if they know the location of the invisible creature. See \pcref{Awareness}, and \pcref{Stealth}, for how to identify invisible creatures.
@@ -421,6 +431,9 @@ Some skills, such as Persuasion, do not have a key attribute.
 \glossdef{knockback} Knockback is a type of \glossterm{forced movement}.
 It represents being thrown backwards by a single large impact.
 If a creature being knocked back encounters an obstacle, it and the obstacle each take 1d6 \glossterm{environmental damage} \add 1d per 5 feet of movement remaining.
+
+\glossdef{land speed} A creature's land speed determines how fast it can walk on land.
+For details, see \pcref{Movement Mode}.
 
 \glossdef{legacy item} A legacy item is an item magically bonded to its bearer.
 As its bearer gains levels, it increases in power as well.
@@ -445,7 +458,7 @@ Line of sight is blocked by any obstacle that blocks sight.
 For details, see \pcref{Line of Sight}.
 
 \glossdef{long rest} A long rest represents eight hours of relaxation or sleep.
-It allows you to recover all of your spent \glossterm{action points} and make progress towards healing a \glossterm{vital wound}.
+It allows you to remove all of your \glossterm{fatigue points} and make progress towards healing a \glossterm{vital wound}.
 For details, see \pcref{Long Rest}.
 
 \glossdef{low-light vision} A creature with low-light vision can see more clearly in conditions of \glossterm{shadowy illumination}.
@@ -460,8 +473,8 @@ For details, see \pcref{Stacking Rules}.
 There are four magic sources: arcane, divine, nature, and pact.
 Mages cast arcane spells, clerics cast divine spells, druids cast nature spells, and warlocks cast pact spells.
 
-\glossdef{magical} A magical ability is an ability that has no physical explanation.
-Examples include spells, a medusa's petrifying gaze, and a cleric's domain invocations.
+\glossdef{magical}[Magical] A magical ability is an ability that has no physical explanation.
+Examples include \glossterm{spells}, a dragon's breath weapon, and a paladin's ability to smite foes.
 For details, see \pcref{Magical Abilities}.
 
 \glossdef{maneuver} A maneuver is a type \glossterm{mundane} ability that some classes grant access to.
@@ -513,7 +526,7 @@ Abilities that require a move action typically move you around the battlefield, 
 For details, see \pcref{Movement and Positioning}.
 
 \glossdef{movement mode}[movement modes] A movement mode is a method of moving from one location to another.
-The most common mode is a land speed.
+The most common mode is a \glossterm{land speed}.
 For details, see \pcref{Movement Modes}.
 
 \glossdef{movement phase} The movement phase is the first of two \glossterm{phases} in a combat \glossterm{round}.
@@ -524,8 +537,8 @@ The movement phase is followed by the \glossterm{action phase}.
 For details, see \pcref{Multiclass Characters}.
 
 \glossdef{mundane} Most abilities are considered mundane abilities.
-Mundane abilities have a tangible component and some form of natural explanation.
-Examples include \glossterm{strikes}, a dragon's breath weapon, and a barbarian's rage.
+Mundane abilities have some form of natural explanation and do not fundamentally originate from a magical source.
+Examples include weapon attacks, a dragon's frightful presence, and a barbarian's rage.
 Unless otherwise indicated, all abilities are mundane in nature.
 
 \glossdef{mystic sphere} A mystic sphere is a collection of thematically related magical effects that includes both \glossterm{spells} and \glossterm{rituals}.
@@ -595,7 +608,7 @@ For details, see \pcref{Planes}.
 For details, see \pcref{Area}.
 
 % TODO: better short description
-\glossdef{poison}[poisoned] For a description of poisons and how they work, see \pcref{Poisons}.
+\glossdef{poison}[poisoned] For a description of poisons and how they work, see \pcref{Poison}.
 
 \glossdef{Poison} See \pcref{Ability Tags}.
 
@@ -649,6 +662,9 @@ Long and Reach weapons may change your reach (see \pcref{Weapons}).
 Its \glossterm{resistances} are doubled against damage that is only of types that it is resistant to.
 When a creature takes damage of multiple types, it is considered resistant to the damage only if it is resistant to all of its damage types.
 
+\glossdef{resistance} You have two resistances: your \glossterm{wound resistance} and your \glossterm{vital resistance}.
+For details, see \pcref{Resistances}.
+
 \glossdef{ritual}[rituals] A ritual is a discrete \glossterm{magical} ability with esoteric effects.
 For details, see \pcref{Rituals}.
 
@@ -685,7 +701,7 @@ For details, see \pcref{Armor}.
 \glossdef{Shielding} See \pcref{Ability Tags}.
 
 \glossdef{short rest}[short rests] A short rest represents ten minutes of relaxation.
-It allows you to regain lost \glossterm{hit points} and any \glossterm{action points} you released from \glossterm{attunement}.
+It allows you to regain lost \glossterm{hit points} and any \glossterm{attunement points} you released from \glossterm{attunement}.
 For details, see \pcref{Short Rest}.
 
 \glossdef{shove} You can use the \textit{shove} ability to forcibly move a creature.
@@ -705,7 +721,7 @@ For example, the Climb skill represents how skilled you are at climbing.
 For details, see \pcref{Skills}.
 
 \glossdef{skill point}[skill points] You can spend skill points to gain training in skills (see \pcref{Skill Training}).
-You gain skill points from your class, from having a high Intelligence, and from taking penalties to your starting attributes (see \pcref{Impaired Attributes}).
+You gain skill points from your class, from having a high Intelligence, and from taking penalties to your starting attributes (see \pcref{Attribute Penalties}).
 For details, see \pcref{Skill Points}.
 
 \glossdef{slowed} A slowed creature moves at half speed and takes a \minus2 penalty to Reflex defense.
@@ -809,7 +825,7 @@ For deatils, see \pcref{Teleportation}.
 \glossdef{Temporal} See \pcref{Ability Tags}.
 
 \glossdef{threaten}[threatened] If you are using a \glossterm{melee} weapon, all enemies within your \glossterm{reach} with that weapon are threatened.
-A threatened creature may suffer \glossterm{overwhelm penalties} if there are multiple creatures threatening it (see \pcref{Overwhelm Penalties}).
+A threatened creature may suffer \glossterm{overwhelm penalties} if there are multiple creatures threatening it (see \pcref{Overwhelm}).
 
 \glossdef{thrown weapon}[thrown weapons] A thrown weapon is a weapon designed to be thrown at a target.
 For details about attacking with thrown weapons, see \pcref{Thrown Strike}.
@@ -852,6 +868,9 @@ Some abilities can only affect unattended items.
 \glossdef{unaware} An unaware creature does not know that it is being attacked.
 It takes a \minus5 penalty to Armor and Reflex defenses against attacks that it is unaware of.
 After being attacked, an unaware creature typically stops being unaware of future attacks, even if it cannot see or identify its attacker.
+
+\glossdef{unconscious} While you are unconscious, you are \glossterm{helpless} and completely unable to take any actions.
+Some sensory abilities, such as the Awareness and Spellsense skills, can be used while you are asleep, but not while you are forcibly knocked unconscious.
 
 \glossdef{undergrowth} The presence of a significant amount of roots, bushes, and similar plants that can obstruct movement is called undergrowth.
 There are two kinds of undergrowth: \glossterm{light undergrowth} and \glossterm{heavy undergrowth}.
