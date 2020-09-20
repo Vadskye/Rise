@@ -49,7 +49,7 @@ def generate_weapons():
             short_description="Deals fire damage, can ignite foes",
         ),
         MagicItem(
-            name="Flaming, Greater",
+            name="Flaming, Supreme",
             level=18,
             material_type='Weapon',
             tags=[],
@@ -221,7 +221,7 @@ def generate_weapons():
             short_description="Grants +2 Armor defense",
         ),
         MagicItem(
-            name="Protective, Greater",
+            name="Protective, Supreme",
             level=19,
             material_type='Weapon',
             tags=[],
@@ -466,7 +466,7 @@ def generate_weapons():
             short_description="Grants +2 accuracy bonus",
         ),
         MagicItem(
-            name="Surestrike, Greater",
+            name="Surestrike, Supreme",
             level=20,
             material_type='Weapon',
             tags=[],

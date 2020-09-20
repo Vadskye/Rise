@@ -84,7 +84,7 @@ bless=MysticSphere(
             \\rank<5> The bonus increases to be equal to three times your \\glossterm<power>.
             \\rank<7> The bonus increases to be equal to four times your \\glossterm<power>.
         """, tags=['Swift']),
-        Spell('Blessing of Purification', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Blessing of the Purified Body', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +4 bonus to \\glossterm<defenses> against \\glossterm<poisons> and \\glossterm<diseases>.
 
             You can cast this spell as a \\glossterm<minor action>.

@@ -20,7 +20,7 @@ summon=MysticSphere(
             If a summoned creature gains a \\glossterm<vital wound> or has no hit points remaining at the end of a phase, it disappears.
 
             \\begin<itemize>
-                \\item Its \\glossterm<wound resistance> and \\glossterm<vital resistance> are equal to the base values for your level (see \\pcref<Resistance Values>).
+                \\item Its \\glossterm<wound resistance> and \\glossterm<vital resistance> are equal to the base values for your level (see \\tref<Resistance Values>).
                 \\item It has 5 \\glossterm<hit points>.
                 \\item Each of its \\glossterm<defenses> is equal to 4 \\add your level.
                 \\item Its \\glossterm<accuracy> is equal to your \\glossterm<accuracy> \\sub 2.
@@ -59,7 +59,7 @@ summon=MysticSphere(
             This spell functions like the \\textit<summon monster> spell, with the following exceptions.
             The summoned creature takes the form of a melee weapon of your choice that you are proficient with.
             It is sized appropriately to be wielded by a creature of your size.
-            It floats three feet off the ground, and has a 30 foot \\glossterm<fly speed> instead of a \\glossterm<land speed>, with good \\glossterm<maneuverability> (see \\pcref<Fly Speed>).
+            It floats three feet off the ground, and has a 30 foot \\glossterm<fly speed> instead of a \\glossterm<land speed>, with good \\glossterm<maneuverability> (see \\pcref<Flying>).
             The weapon's maximum height above the ground is limited to 10 feet.
             The creature's accuracy and damage are modified appropriately for based on your chosen weapon, and it gains the effect of the weapon's normal tags (see \\pcref<Weapon Tags>).
             The weapon is considered to be held in two hands if possible, which can increase the damage dealt by medium weapons (see \\pcref<Weapon Usage Classes>).

@@ -160,7 +160,7 @@ channel_divinity=MysticSphere(
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Attune (self)', 'Emotion']),
         Spell('Faithful Endurance', 3, 'Yourself', """
-            You gain a +1 \\glossterm<magic bonus> to \\glossterm<vital rolls> (see \\pcref<Vital Roll>).
+            You gain a +1 \\glossterm<magic bonus> to \\glossterm<vital rolls> (see \\pcref<Vital Rolls>).
 
             You can cast this spell as a \\glossterm<minor action>.
 

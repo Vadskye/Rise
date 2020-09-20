@@ -137,7 +137,7 @@ It defines how attributes work and explains how to make attacks in combat.
             During the \glossterm{delayed action phase}, you can take a \glossterm{minor action}, a \glossterm{standard action}, or both if you did not use the corresponding action in the \glossterm{action phase}.
             Alternately, you can take a \glossterm{move action} or additional \glossterm{minor action} in place of a standard action.
             In addition, some abilities have effects during the delayed action phase instead of or in addition to their effects in the action phase.
-            For example, the \textit{spring attack} ability allows you to move during the action phase and again during the delayed action phase (see Agility, page \featpref{Agility}).
+            For example, the \textit{spring attack} \glossterm{maneuver} allows you to move during the action phase and again during the delayed action phase (see Spring Attack, \pref{maneuver:Spring Attack}).
 
         \subsubsection{Triggered Ability Timing}\label{Triggered Ability Timing}
             Some abilities trigger at the start or end of particular phases, or at the start or end of the round.
@@ -297,7 +297,7 @@ It defines how attributes work and explains how to make attacks in combat.
         If you change a base attribute, the total value for that attribute changes appropriately.
 
         \begin{dtable}
-            \lcaption{Increasing Attributes with Level}
+            \lcaption{Increasing Attributes With Level}
             \begin{dtabularx}{\columnwidth}{X X}
                 \tb{Base Attribute} & \tb{Bonus}                 \\
                 0 or lower          & 0                          \\
@@ -345,7 +345,7 @@ It defines how attributes work and explains how to make attacks in combat.
             \end{dtable}
         }
 
-        \subsubsection{Attribute Penalties}
+        \subsubsection{Attribute Penalties}\label{Attribute Penalties}
             Regardless of how you determine your attributes, you can voluntarily take penalties to your attributes.
             If you reduce an attribute to a total of \minus1, you gain an additional \glossterm{skill point}.
             If you reduce an attribute to a total of \minus2, you instead gain an additional \glossterm{insight point}.
@@ -774,7 +774,7 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \subsubsection{Reach}\label{Reach}
             A creature's \glossterm{reach} is the distance that its \glossterm{melee attacks} can reach.
-            Enemies within a creature's reach are considered \glossterm{threatened} (see \pcref{Overwhelm Penalties}).
+            Enemies within a creature's reach are considered \glossterm{threatened} (see \pcref{Overwhelm}).
 
         \subsubsection{Base Speed}\label{Base Speed}
             A creature's \glossterm{base speed} is the distance that it can usually move.
@@ -1272,7 +1272,7 @@ It defines how attributes work and explains how to make attacks in combat.
     \subsection{Conditions}\label{Conditions}
         Many abilities impose \glossterm{conditions} on their targets.
         A condition lasts until it is removed.
-        You can remove conditions by taking a \glossterm{short rest} or using the \textit{cleanse} ability (see \pcref{Cleanse}).
+        You can remove conditions by taking a \glossterm{short rest} or using the \textit{recover} ability (see \pcref{Recover}).
         There are several other abilities that can also remove conditions.
 
     \subsection{Attunement}\label{Attunement}
@@ -1626,7 +1626,7 @@ It defines how attributes work and explains how to make attacks in combat.
             For details, see \pcref{Grappling}.
         \end{freeability}
 
-        \parhead{Offhand Strike} As a \glossterm{minor action}, you can use the \textit{offhand strike} ability to quickly attack with an offhand weapon while you attack with a primary weapon.
+        \parhead{Offhand Strike}\label{Offhand Strike} As a \glossterm{minor action}, you can use the \textit{offhand strike} ability to quickly attack with an offhand weapon while you attack with a primary weapon.
         \begin{freeability}{Offhand Strike}\label{Offhand Strike}
             Choose one weapon you wield.
             You cannot use this ability unless you also use a standard action during the same phase to make a \glossterm{strike} with a different weapon you are wielding.
@@ -1881,7 +1881,7 @@ It defines how attributes work and explains how to make attacks in combat.
             The base \glossterm{difficulty rating} of an Awareness check to hear this sound for a Medium creature or object is 10.
             This difficulty rating changes based on the size of the teleported creature or object:
 
-            \begin{itemize*}
+            \begin{itemize}
                 \itemhead{Fine} 30
                 \itemhead{Diminutive} 25
                 \itemhead{Tiny} 20
@@ -1891,7 +1891,7 @@ It defines how attributes work and explains how to make attacks in combat.
                 \itemhead{Huge} 0
                 \itemhead{Gargantuan} \minus5
                 \itemhead{Colossal} \minus10
-            \end{itemize*}
+            \end{itemize}
 
         \subsubsection{Carrying Objects}
             When a creature is teleported, it can bring along equipment and held objects as long as two conditions are met.
@@ -2000,7 +2000,7 @@ It defines how attributes work and explains how to make attacks in combat.
     \subsection{Leveling Up}
         When you gain a level, the following things happen:
         \begin{itemize}
-            \item Your \glossterm{attributes} increase (see \pcref{Increasing Attributes})
+            \item Your \glossterm{attributes} increase (see \pcref{Increasing Attributes With Level})
             \item Your skill modifiers usually increase by 1 (see \pcref{Skill Modifier})
             \item Your \glossterm{power} with both \glossterm{mundane} and \glossterm{magical} abilities increases by 1 (see \pcref{Power}).
             \item Your \glossterm{wound resistance} and \glossterm{vital resistance} increase (see \tref{Resistance Values}).
