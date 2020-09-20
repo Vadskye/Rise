@@ -23,7 +23,7 @@ biomancy=MysticSphere(
             \\rank<7> The accuracy bonus increases to +3.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Poison -- Dragon Bile', 3, 'One living creature within \\rngmed range', """
-            This spell functions like this \\spell<poison -- nitharit> spell, except that the target becomes poisoned with sassone leaf instead (see \\pcref<Poisons>).
+            This spell functions like this \\spell<poison -- nitharit> spell, except that the target becomes poisoned with sassone leaf instead (see \\pcref<Poison>).
             A creature poisoned by sassone leaf immediately loses a \\glossterm<hit point> and is \\glossterm<sickened> as long as it is poisoned.
             A third successful attack causes the target to lose two \\glossterm<hit points> and become \\glossterm<nauseated> as long as it is poisoned.
             A third failed attack ends the poison.
@@ -33,7 +33,7 @@ biomancy=MysticSphere(
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=[]),
         Spell('Neutralize Poison', 1, 'Yourself or one target within \\rngmed range', """
-            The target gains an additional success to resist a poison currently affecting it (see \\pcref<Poisons>).
+            The target gains an additional success to resist a poison currently affecting it (see \\pcref<Poison>).
 
             \\rankline
             \\rank<3> The number of additional successes increases to two.
@@ -44,7 +44,7 @@ biomancy=MysticSphere(
             Make an attack vs. Fortitude with a +2 bonus to \\glossterm<accuracy> against the target.
             If the target is not currently poisoned, this ability has no effect.
             \\hit Choose a poison affecting the target.
-            The poison gains an additional hit against the target, which can have varying effects depending on the poison (see \\pcref<Poisons>).
+            The poison gains an additional hit against the target, which can have varying effects depending on the poison (see \\pcref<Poison>).
 
             \\rankline
             \\rank<4> The accuracy bonus increases to +3.
@@ -60,13 +60,14 @@ biomancy=MysticSphere(
             \\rank<7> If the target is \\glossterm<bloodied>, it regains three hit points instead of two.
         """, tags=[]),
         Spell('Vital Regeneration', 5, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            A the end of each round, the target can spend an \\glossterm<action point>.
-            If it does, it removes one of its \\glossterm<vital wounds>.
+            A the end of each round, the target can remove one of its \\glossterm<vital wounds>.
+            If it does, it gains two \\glossterm<fatigue points>.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<7> The target can remove up to two \\glossterm<vital wounds> for each action point spent instead of only one.
+            \\rank<7> The target can remove two \\glossterm<vital wounds> instead of one.
+            It gains two \\glossterm<fatigue points> per vital wound removed this way.
         """, tags=['Attune (target)']),
         Spell('Regeneration', 4, 'Yourself', """
             At the end of each round, if you did not lose a \\glossterm<hit point> that round, you regain a lost hit point.
@@ -77,52 +78,60 @@ biomancy=MysticSphere(
             \\rank<6> You also gain a +1 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
             \\rank<8> You regain two hit points instead of one.
         """, tags=['Attune (self)']),
-        Spell('Swimmer', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Swimmer', 2, 'Yourself', """
             The target gains a \\glossterm<swim speed> equal to its \\glossterm<base speed>.
             In addition, it gains a +2 \\glossterm<magic bonus> to Swim checks.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<4> The bonus increases to +4.
-            \\rank<6> The bonus increases to +6.
-            \\rank<8> The bonus increases to +8.
+            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<6> The bonus increases to +4.
+            \\rank<8> The bonus increases to +6.
         """, tags=['Attune (target)']),
-        Spell('Climber', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Climber', 2, 'Yourself', """
             The target gains a \\glossterm<climb speed> equal to its \\glossterm<base speed>.
             In addition, it gains a +2 \\glossterm<magic bonus> to Climb checks.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<4> The bonus increases to +4.
-            \\rank<6> The bonus increases to +6.
-            \\rank<8> The bonus increases to +8.
+            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<6> The bonus increases to +4.
+            \\rank<8> The bonus increases to +6.
         """, tags=['Attune (target)']),
-        Spell('Runner', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Runner', 2, 'Yourself', """
             The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<land speed>.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<4> The bonus increases to +15 feet.
+            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The bonus increases to +20 feet.
             \\rank<8> The bonus increases to +30 feet.
         """, tags=['Attune (target)']),
-        Spell('Enhanced Muscles', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Enhanced Muscles', 3, 'Yourself', """
             The target gains a +2 \\glossterm<magic bonus> to Strength-based checks.
 
             \\rankline
             \\rank<5> The bonus increases to +3.
             \\rank<7> The bonus increases to +4.
         """, tags=['Attune (self)']),
-        Spell('Enhanced Senses', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Longshot', 1, 'Yourself', """
+            The target reduces its penalties for \\glossterm<range increments> by 1.
+
+            \\rankline
+            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<5> The penalty reduction increases to 2.
+            \\rank<7> The penalty reduction increases to 3.
+        """, tags=['Attune (target)']),
+        Spell('Enhanced Senses', 1, 'Yourself', """
             The target gains a +3 \\glossterm<magic bonus> to the Awareness skill.
 
             \\rankline
-            \\rank<3> The bonus increases to +4.
+            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<5> The bonus increases to +5.
-            \\rank<7> The bonus increases to +6.
+            \\rank<7> The bonus increases to +7.
         """, tags=['Attune (target)']),
         Spell('Scent', 3, 'Yourself', """
             You gain the \\glossterm<scent> ability, giving you a +10 bonus to scent-based Awareness checks (see \\pcref<Senses>).
@@ -133,15 +142,15 @@ biomancy=MysticSphere(
             \\rank<5> The bonus increases to +15.
             \\rank<7> The bonus increases to +20.
         """, tags=['Attune (self)']),
-        Spell('Acidic Blood', 3, ['Yourself or one \\glossterm<ally> within \\rngmed range', 'Everything adjacent to the primary target'], """
+        Spell('Acidic Blood', 3, ['Yourself', 'Everything adjacent to the primary target'], """
             The primary target's blood becomes acidic.
             This does not harm it, but the blood can be dangerous to anything nearby when it bleeds.
             At the end of each round, if the primary target was \\glossterm<wounded> during that round, make an attack vs. Fortitude against everything adjacent to the target.
             \\hit Each secondary target takes acid \\glossterm<standard damage> -1d.
 
             \\rankline
-            \\rank<5> The damage increases to \\glossterm<standard damage>.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<7> The damage increases to \\glossterm<standard damage>.
         """, tags=['Attune (target)']),
         Spell('Dragon Breath', 4, 'Yourself (see text)', """
             You gain the ability to breath energy like a dragon.
@@ -234,19 +243,14 @@ biomancy=MysticSphere(
             Its maximum age increases to that of a human (rolled secretly).
             This effect is permanent.
 
-            This ritual takes 24 hours to perform, and requires 50 action points from its participants.
-            You can only learn this ritual if you know this mystic sphere through the nature \\glossterm<magic source>.
-        """, tags=['AP', ]),
+            You can only learn this ritual if you have access to this mystic sphere through the nature \\glossterm<magic source>.
+        """, tags=[], ritual_time='24 hours'),
         Spell('Air Breathing', 3, 'One Medium or smaller ritual participant', """
             The target can breathe air as easily as a human breathes air, preventing it from suffocating above water if it can normally only breathe water or some other substance.
-
-            This ritual takes one minute to perform.
-        """, tags=['Attune (ritual)']),
-        Spell('Water Breathing', 3, 'One Medium or smaller ritual participant', """
+        """, tags=['Attune (ritual)'], ritual_time='one minute'),
+        Spell('Gills', 3, 'One Medium or smaller ritual participant', """
             The target can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
-
-            This ritual takes one minute to perform.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one minute'),
     ],
     category='damage',
 )

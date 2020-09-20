@@ -47,12 +47,12 @@ channel_divinity=MysticSphere(
             \\rank<5> The bonus increases to +5.
             \\rank<7> The bonus increases to +6.
         """, tags=['Attune (self)']),
-        Spell('Agent of the Divine', 5, 'Yourself', """
+        Spell('Agent of the Divine', 6, 'Yourself', """
             You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> and all \\glossterm<defenses>.
             In addition, you gain a +2 \\glossterm<magic bonus> to \\glossterm<power>.
 
             \\rankline
-            \\rank<7> The accuracy bonus increases to +2.
+            \\rank<8> The accuracy bonus increases to +2.
         """, tags=['Attune (self)']),
         Spell('Endurance of the Faithful', 3, 'Yourself', """
             This spell does not have the \\glossterm<Focus> tag.
@@ -156,18 +156,17 @@ channel_divinity=MysticSphere(
             \\hit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<5> You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with the attack.
+            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Attune (self)', 'Emotion']),
-        Spell('Faithful Endurance', 2, 'Yourself', """
-            You gain a +1 \\glossterm<magic bonus> to \\glossterm<vital rolls> (see \\pcref<Vital Roll>).
+        Spell('Faithful Endurance', 3, 'Yourself', """
+            You gain a +1 \\glossterm<magic bonus> to \\glossterm<vital rolls> (see \\pcref<Vital Rolls>).
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<4> The bonus increases to +2.
-            \\rank<6> The bonus increases to +3.
-            \\rank<8> The bonus increases to +4.
+            \\rank<5> The bonus increases to +2.
+            \\rank<7> The bonus increases to +3.
         """, tags=['Attune (self)']),
         Spell('Divine Conduit', 2, 'Yourself', """
             You reduce your \\glossterm<focus penalty> with divine spells by 2.
@@ -220,9 +219,7 @@ channel_divinity=MysticSphere(
             The area within an \\arealarge radius \\glossterm<zone> from your location becomes sacred to your deity.
             % TODO: what cares about consecration?
             This has no tangible effects by itself, but some special abilities and monsters behave differently in consecrated areas.
-
-            This ritual takes 24 hours to perform and requires 8 action points from its ritual participants.
-        """, tags=['Attune (self)']),
+        """, tags=['Attune (self)'], ritual_time='24 hours'),
         Spell('Divine Transit', 5, 'Up to five Medium or smaller ritual participants', """
             Choose a destination up to 100 miles away from you on your current plane.
             Each target is teleported to the temple or equivalent holy site to your deity that is closest to the chosen destination.
@@ -233,9 +230,7 @@ channel_divinity=MysticSphere(
             The new destination will be one that more closely resembles your mental image.
             If no such area exists, the ritual simply fails.
             % TODO: does this need more clarity about what teleportation works?
-
-            This ritual takes 24 hours to perform and requires 32 action points from its ritual participants.
-        """, tags=['AP']),
+        """, tags=[], ritual_time='24 hours'),
     ],
     category='damage',
 )

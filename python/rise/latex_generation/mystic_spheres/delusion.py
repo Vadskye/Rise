@@ -170,13 +170,13 @@ delusion=MysticSphere(
             \\rank<6> The accuracy bonus increases to +7.
             \\rank<8> The accuracy bonus increases to +9.
         """, tags=['Emotion']),
-        Spell('Motivate', 1, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
+        Spell('Motivate', 1, 'Yourself', """
             The target gains a +2 \\glossterm<magic bonus> to Mental defense.
 
             \\rankline
-            \\rank<3> The bonus increases to +3.
-            \\rank<5> The bonus increases to +4.
-            \\rank<7> The bonus increases to +5.
+            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<5> The bonus increases to +3.
+            \\rank<7> The bonus increases to +4.
         """, tags=['Attune (target)']),
         Spell('Ominous Presence', 1, 'Yourself', """
             You gain a +3 \\glossterm<magic bonus> to the Intimidate skill.

@@ -165,14 +165,14 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Bbn}[1]{Battleforged Endurance} You increase your maximum \glossterm{hit points} by 2.
 
-        \cf{Bbn}[2]{Toughened Body} You gain a \plus2 bonus to Fortitude defense and a \plus1 bonus to \glossterm{vital rolls}.
+        \cf{Bbn}[2]{Toughened Body} You gain a \plus2 bonus to Fortitude defense and a \plus1 bonus to your \glossterm{fatigue tolerance} (see \pcref{Fatigue Tolerance}).
 
         \cf{Bbn}[3]{Battle-Scarred} You gain a bonus equal to half your level to your \glossterm{resistances} against \glossterm{physical damage}.
 
         \cf{Bbn}[4]{Greater Battleforged Endurance} The number of hit points granted by your \textit{battleforged endurance} ability increases to 4.
 
         \cf{Bbn}[5]{Greater Toughened Body} The Fortitude bonus from your \textit{toughened body} ability increases to \plus4.
-        In addition, the bonus to \glossterm{vital rolls} increases to \plus2.
+        In addition, the bonus to \glossterm{fatigue tolerance} increases to \plus2.
 
         \cf{Bbn}[6]{Greater Battle-Scarred}
         The bonus from your \textit{battle-scarred} ability increases to be equal to your level.
@@ -456,7 +456,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Clr}[1]{Mystic Insight}[Magical]
         You gain your choice of one of the following abilities.
         {
-            \parhead{Divine Guidance} Once per \glossterm{long rest}, you may use the \textit{desperate exertion} ability without spending an \glossterm{action point} to affect a divine spell you cast (see \pcref{Desperate Exertion}).
+            \parhead{Divine Guidance} Once per \glossterm{long rest}, you may use the \textit{desperate exertion} ability without gaining any \glossterm{fatigue points} to affect a divine spell you cast (see \pcref{Desperate Exertion}).
                 You cannot choose this ability multiple times.
             \parhead{Focused Caster} You reduce your \glossterm{focus penalty} by 1.
                 You cannot choose this ability multiple times.
@@ -575,35 +575,37 @@ This choice determines a great deal about your character's abilities.
         After you attack a living creature, you lose this bonus until the end of the next round.
 
         \cf{Clr}[3]{Divine Healing} You can use the \textit{divine healing} ability as a standard action.
-        \begin{apability}{Divine Healing}[\glossterm{Magical}]
+        \begin{freeability}{Divine Healing}[\glossterm{Magical}]
             \target{Yourself or a living \glossterm{ally} within \glossterm{reach}.}
-            The target gains a \plus5 bonus to the \glossterm{vital roll} for one of its \glossterm{vital wounds}.
-            This changes the effect of the vital wound, generally making it less severe.
-            If this makes the total \glossterm{vital roll} for that vital wound 11 or more, the vital wound is removed completely.
+            When you use this ability, you gain two \glossterm{fatigue points} (see \pcref{Fatigue}).
+
+            The target removes one of its \glossterm{vital wounds}.
 
             \rankline
-            \rank{5} The target removes an additional \glossterm{vital wound}.
-            \rank{7} The range increases to \rnglong.
-        \end{apability}
+            \rank{5} The target can remove an additional \glossterm{vital wound}.
+            \rank{7} The range increases to \rngmed.
+        \end{freeability}
 
         \cf{Clr}[4]{Reflexive Healing} During the \glossterm{action phase} of each round, if you are unconscious due to a \glossterm{vital wound}, you automatically use your \textit{divine healing} ability on yourself to remove that vital wound.
 
         \cf{Clr}[5]{Greater Healer's Grace} The bonus from your \textit{healer's grace} ability increases to \plus2.
 
         \cf{Clr}[6]{Revivify} You can use the \textit{revivify} ability as a standard action.
-        \begin{apability}{Revivify}
+        \begin{freeability}{Revivify}
+            When you use this ability, you gain three \glossterm{fatigue points} (see \pcref{Fatigue}).
+
             Choose a dead creature within \rngclose range.
             If it was dead for no more than 1 minute, it is restored to life, as the \ritual{resurrection} ritual.
             After using this ability, you cannot use it for 24 hours.
 
             \rankline
             \rank{8} You can use this ability again after 1 hour instead of after 24 hours.
-        \end{apability}
+        \end{freeability}
 
         % TODO: why 4? Ideally, this should correspond to some sort of ``half as strong'' benchmark.
         \cf{Clr}[7]{Wellspring of Health} When you use your \textit{divine healing} ability,
             if the target's level is at least four levels lower than your level,
-            you regain the \glossterm{action point} spent to use the ability.
+            you do not gain any \glossterm{fatigue points} from the ability.
 
         \cf{Clr}[8]{Epic Healer} The bonus from your \textit{healer's grace} ability increases to \plus4.
         In addition, the number of hit points regained by all of your abilities increases by one.
@@ -783,18 +785,15 @@ This choice determines a great deal about your character's abilities.
             \parhead{Gift} You gain a \plus4 bonus to the Medicine skill (see \pcref{Medicine}).
             \parhead{Aspect} You gain a \plus1 bonus to \glossterm{vital rolls}.
             \parhead{Essence} At the end of each round, if you became \glossterm{unconscious} from a \glossterm{vital wound} that round, you can use one \glossterm{magical} ability you have that modifies \glossterm{vital rolls} or removes \glossterm{vital wounds} on yourself without taking an action.
-            \parhead{Mastery} You gain a \plus2 bonus to your base Constitution.
+            \parhead{Mastery} You gain a \plus1 bonus to your base Constitution.
 
         \subsubsection{Magic}
             If you choose this domain, you add the \sphere{thaumaturgy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
 
             \parhead{Gift} You gain a \plus1 bonus to \glossterm{power} with \glossterm{magical} abilities.
             \parhead{Aspect} You learn an additional \glossterm{spell} for a divine \glossterm{mystic sphere} you have access to.
-            \parhead{Essence} You learn an \glossterm{augment} (see \pcref{Augments}).
-            You can apply augments to spells to change their effects.
-            When you gain access to a new divine spell \glossterm{rank}, you may change which augments you know.
-            \parhead{Mastery} The power bonus from this domain's gift increases to \plus3.
-            You learn an additional \glossterm{augment} (see \pcref{Augments}).
+            \parhead{Essence} The power bonus from this domain's gift increases to \plus2.
+            \parhead{Mastery} The power bonus from this domain's gift increases to \plus5.
 
         \subsubsection{Protection}
             \parhead{Gift} You gain a \plus1 bonus to your level for the purpose of determining your \glossterm{resistances} (see \pcref{Resistances}).
@@ -854,9 +853,7 @@ This choice determines a great deal about your character's abilities.
         \subsubsection{War}
             \parhead{Gift} You gain proficiency with heavy armor and an additional \glossterm{weapon group} of your choice.
             \parhead{Aspect} You reduce your \glossterm{focus penalty} by 1.
-            \parhead{Essence} You learn one of the Legion, Selective, or Widened \glossterm{augments} (see \pcref{Augments}).
-            You can apply augments to spells to change their effects.
-            When you gain access to a new arcane spell \glossterm{rank}, you may change which augments you know, though this augment can only be one of the three listed.
+            \parhead{Essence} Whenever you deal damage to an ally with a \glossterm{magical} ability, that damage is considered \glossterm{environmental damage}.
             \parhead{Mastery} You gain a \plus1 bonus to \glossterm{accuracy} and \glossterm{power}.
 
         \subsubsection{Water}
@@ -1038,7 +1035,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Drd}[2]{Spell Knowledge} You learn an additional nature \glossterm{spell}.
 
-        \cf{Drd}[3]{Spell Rank}[Magical] You become a rank 3 nature spellcaster.
+        \cf*{Drd}[3]{Spell Rank}[Magical] You become a rank 3 nature spellcaster.
         This gives you access to spells that require a minimum rank of 3 and can improve the effectiveness of your existing spells.
 
         \cf*{Drd}[4]{Spell Rank}[Magical] You become a rank 4 nature spellcaster.
@@ -1054,6 +1051,8 @@ This choice determines a great deal about your character's abilities.
 
         \cf*{Drd}[7]{Spell Rank}[Magical] You become a rank 7 nature spellcaster.
         This gives you access to spells that require a minimum rank of 7 and can improve the effectiveness of your existing spells.
+
+        \cf{Drd}[8]{Epic Spell Knowledge} You learn two additional divine spells.
 
         \cf*{Drd}[8]{Spell Rank}[Magical] You become a rank 8 nature spellcaster.
         This gives you access to spells that require a minimum rank of 8 and can improve the effectiveness of your existing spells.
@@ -1340,13 +1339,13 @@ This choice determines a great deal about your character's abilities.
             Your magical connection to the animal improves its resilience and strength in combat.
             The animal's statistics use the values below, except that each animal also gains a special ability based on the environment you are in.
             \begin{itemize}
-                \item Its \glossterm{wound resistance} and \glossterm{vital resistance} are equal to the base values for your level (see \pcref{Resistance Values}).
+                \item Its \glossterm{wound resistance} and \glossterm{vital resistance} are equal to the base values for your level (see \tref{Resistance Values}).
                 \item It has 10 \glossterm{hit points}.
                 \item Each of its \glossterm{defenses} is equal to 5 \add your level.
                 \item Its \glossterm{accuracy} is equal to your \glossterm{accuracy} \sub 1.
                 \item Its \glossterm{power} with its attacks is equal to your \glossterm{power}.
                 \item Its \glossterm{base speed} is the normal base speed for its size.
-                \item It has no \glossterm{action points}.
+                \item It has no \glossterm{attunement points}.
             \end{itemize}
         \end{attuneability}
 
@@ -1387,8 +1386,8 @@ This choice determines a great deal about your character's abilities.
         If you attack an animal or plant, this ability no longer provides protection against it and its \glossterm{allies}.
         This effect does not protect your allies from attack.
 
-        \cf{Drd}[4]{Greater Natural Servant}[Magical] Your \textit{natural servant} gains an \glossterm{action point}.
-        This action point is shared among any creatures you summon with your \textit{natural servant} ability, and is only recovered when you take a \glossterm{long rest}.
+        \cf{Drd}[4]{Greater Natural Servant}[Magical] Your \textit{natural servant} gains an \glossterm{attunement point}.
+        This attunement point is shared among any creatures you summon with your \textit{natural servant} ability, and is only recovered when you take a \glossterm{long rest}.
         In addition, you can summon an alternate \textit{natural servant} based on your local environment, as described below.
         \begin{itemize}
             \item Aquatic: A Medium shark appears that has a 40 foot \glossterm{swim speed} and no land speed.
@@ -1417,8 +1416,7 @@ This choice determines a great deal about your character's abilities.
         The protection ends if any target attacks an animal or plant instead of only if you attack.
         In addition, the \glossterm{difficulty rating} of the Creature Handling check increases to 20 \add your \glossterm{power}.
 
-        \cf{Drd}[7]{Supreme Natural Servant}[Magical] Your \textit{natural servant} gains two additional \glossterm{action points}.
-        These action points are shared among any creatures you summon with your \textit{natural servant} ability, and are only recovered when you take a \glossterm{long rest}.
+        \cf{Drd}[7]{Supreme Natural Servant}[Magical] Your \textit{natural servant} gains two additional \glossterm{attunement points}.
 
         \cf{Drd}[8]{Twin Servant} You may acquire an additional \textit{natural servant}, attuning to each ability separately.
 
@@ -1600,7 +1598,8 @@ This choice determines a great deal about your character's abilities.
         \end{freeability}
 
         \cf{Ftr}[2]{Enduring Discipline}
-        You increase your maximum \glossterm{hit points} by 2.
+        You increase your maximum \glossterm{hit points} by 1.
+        In addition, you gain a \plus1 bonus to your \glossterm{fatigue tolerance} (see \pcref{Fatigue Tolerance}).
 
         \cf{Ftr}[3]{Disciplined Power} You gain a \plus1 bonus to \glossterm{power} with \glossterm{mundane} abilities.
 
@@ -1610,7 +1609,8 @@ This choice determines a great deal about your character's abilities.
         In addition, you gain a \plus2 bonus to the Deception and Intimidate skills.
 
         \cf{Ftr}[5]{Greater Enduring Discipline}
-        The number of hit points you gain from your \textit{enduring discipline} ability increases to 4.
+        The number of hit points you gain from your \textit{enduring discipline} ability increases to 2.
+        In addition, the bonus to your fatigue tolerance increases to \plus2.
 
         \cf{Ftr}[6]{Greater Disciplined Power} The bonus from your \textit{disciplined power} ability increases to \plus2.
 
@@ -1640,8 +1640,8 @@ This choice determines a great deal about your character's abilities.
             \rank{8} You can use this ability as a \glossterm{minor action}.
         \end{freeability}
 
-        \cf{Ftr}[3]{Equipment Efficiency} You gain an additional \glossterm{action point}.
-        You can only use this action point to \glossterm{attune} to magic weapons and magic armor.
+        \cf{Ftr}[3]{Equipment Efficiency} You gain an additional \glossterm{attunement point}.
+        You can only use this attunement point to \glossterm{attune} to magic weapons and magic armor.
 
         \cf{Ftr}[4]{Greater Armor Expertise}
         The \glossterm{encumbrance} reduction from your \textit{armor expertise} ability increases to 2.
@@ -1649,7 +1649,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Ftr}[5]{Weapon Expertise} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{mundane} abilities.
 
-        \cf{Ftr}[6]{Greater Equipment Efficiency} The number of action points you gain from your \textit{efficient equipment} ability increases to two.
+        \cf{Ftr}[6]{Greater Equipment Efficiency} The number of attunement points you gain from your \textit{efficient equipment} ability increases to two.
         In addition, you can use the ability to attune to any magic item, not just weapons and armor.
 
         \cf{Ftr}[7]{Supreme Armor Expertise}
@@ -1657,7 +1657,7 @@ This choice determines a great deal about your character's abilities.
         In addition, you treat body armor as if it were an additional encumbrance category lighter than normal when doing so would be beneficial for you.
 
         \cf{Ftr}[8]{Equipment Supremacy} The bonus from your \textit{weapon expertise} ability increases to \plus2.
-        In addition, the number of action points you gain from your \textit{efficient equipment} ability increases to three.
+        In addition, the number of attunement points you gain from your \textit{efficient equipment} ability increases to three.
 
     \subsection{Martial Mastery}
         This archetype grants you special abilities to use in combat.
@@ -1880,7 +1880,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Mnk}[2]{Esoteric Maneuver} You learn an additional esoteric \glossterm{maneuver} (see \pcref{Esoteric Maneuvers}).
 
-        \cf{Mnk}[3]{Maneuver Rank} You become a rank 3 esoteric maneuverist.
+        \cf*{Mnk}[3]{Maneuver Rank} You become a rank 3 esoteric maneuverist.
         This gives you access to maneuvers that require a minimum rank of 3 and can improve the effectiveness of your existing maneuvers.
 
         \cf{Mnk}[3]{Esoteric Lore} You gain two additional \glossterm{skill points}.
@@ -1893,27 +1893,27 @@ This choice determines a great deal about your character's abilities.
         % \cf{Mnk}[6]{Intuitive Reaction}
         % You gain a \plus2 bonus to Reflex defense and \glossterm{initiative}.
 
-        \cf{Mnk}[4]{Maneuver Rank} You become a rank 4 esoteric maneuverist.
+        \cf*{Mnk}[4]{Maneuver Rank} You become a rank 4 esoteric maneuverist.
         This gives you access to maneuvers that require a minimum rank of 4 and can improve the effectiveness of your existing maneuvers.
 
         \cf{Mnk}[4]{Esoteric Fluidity} You gain a \plus1 bonus to Dexterity-based \glossterm{checks}, except \glossterm{initiative} checks.
 
-        \cf{Mnk}[5]{Maneuver Rank} You become a rank 5 esoteric maneuverist.
+        \cf*{Mnk}[5]{Maneuver Rank} You become a rank 5 esoteric maneuverist.
         This gives you access to maneuvers that require a minimum rank of 5 and can improve the effectiveness of your existing maneuvers.
 
         \cf*{Mnk}[5]{Esoteric Maneuver} You learn an additional esoteric \glossterm{maneuver} (see \pcref{Esoteric Maneuvers}).
 
-        \cf{Mnk}[6]{Maneuver Rank} You become a rank 6 esoteric maneuverist.
+        \cf*{Mnk}[6]{Maneuver Rank} You become a rank 6 esoteric maneuverist.
         This gives you access to maneuvers that require a minimum rank of 6 and can improve the effectiveness of your existing maneuvers.
 
         \cf{Mnk}[6]{Esoteric Agility} You gain a \plus2 bonus to Reflex defense.
 
-        \cf{Mnk}[7]{Maneuver Rank} You become a rank 7 esoteric maneuverist.
+        \cf*{Mnk}[7]{Maneuver Rank} You become a rank 7 esoteric maneuverist.
         This gives you access to maneuvers that require a minimum rank of 7 and can improve the effectiveness of your existing maneuvers.
 
         \cf{Mnk}[7]{Greater Esoteric Fluidity} The bonus from your \textit{esoteric fluidity} ability increases to \plus2.
 
-        \cf{Mnk}[8]{Maneuver Rank} You become a rank 8 esoteric maneuverist.
+        \cf*{Mnk}[8]{Maneuver Rank} You become a rank 8 esoteric maneuverist.
         This gives you access to maneuvers that require a minimum rank of 8 and can improve the effectiveness of your existing maneuvers.
 
         \cf{Mnk}[8]{Esoteric Supremacy} The bonus from your \textit{esoteric fluidity} ability increases to \plus5.
@@ -2241,7 +2241,7 @@ This choice determines a great deal about your character's abilities.
         The effect of your \textit{aligned aura} becomes stronger, as described below.
 
         \subparhead{Chaos} The effect applies to all attacks, not just \glossterm{strikes}.
-        \subparhead{Evil} When a target would remove a \glossterm{condition}, the condition instead remains unless it spends an additional \glossterm{action point}.
+        \subparhead{Evil} When a target removes a \glossterm{condition}, it gains a \glossterm{fatigue point}.
         \subparhead{Good} When a target loses a \glossterm{hit point}, you may lose that hit point instead.
         The target suffers any other effects of the attack normally.
         \subparhead{Law} The effect applies to all attacks, not just \glossterm{strikes}.
@@ -2290,9 +2290,9 @@ This choice determines a great deal about your character's abilities.
         \cf{Pal}[2]{Spell Rank}[Magical] You become a rank 2 divine spellcaster.
         This gives you access to spells that require a minimum rank of 2.
 
-        \cf{Pal}[2]{Spell Knowledge} You learn an additional divine \glossterm{spell} (see \pcref{Divine Spells}).
+        \cf{Pal}[2]{Spell Knowledge} You learn an additional divine \glossterm{spell}.
 
-        \cf{Pal}[3]{Spell Rank}[Magical] You become a rank 3 divine spellcaster.
+        \cf*{Pal}[3]{Spell Rank}[Magical] You become a rank 3 divine spellcaster.
         This gives you access to spells that require a minimum rank of 3 and can improve the effectiveness of your existing spells.
 
         \cf*{Pal}[4]{Spell Rank}[Magical] You become a rank 4 divine spellcaster.
@@ -2301,7 +2301,7 @@ This choice determines a great deal about your character's abilities.
         \cf*{Pal}[5]{Spell Rank}[Magical] You become a rank 5 divine spellcaster.
         This gives you access to spells that require a minimum rank of 5 and can improve the effectiveness of your existing spells.
 
-        \cf*{Pal}[5]{Spell Knowledge} You learn an additional divine \glossterm{spell} (see \pcref{Divine Spells}).
+        \cf*{Pal}[5]{Spell Knowledge} You learn an additional divine \glossterm{spell}.
 
         \cf*{Pal}[6]{Spell Rank}[Magical] You become a rank 6 divine spellcaster.
         This gives you access to spells that require a minimum rank of 6 and can improve the effectiveness of your existing spells.
@@ -2343,8 +2343,9 @@ This choice determines a great deal about your character's abilities.
             The target regains two \glossterm{hit points}.
 
             \rankline
-            \rank{3} Instead of regaining hit points, the target can choose to remove a \glossterm{condition} affecting it.
-            \rank{5} Instead of regaining hit points, the target can choose to spend an \glossterm{action point} to remove a \glossterm{vital wound} affecting it.
+            \rank{3} Instead of regaining hit points, you can cause the target to remove a \glossterm{condition} of its choice affecting it.
+            \rank{5} Instead of regaining hit points, you can cause the target remove one of its \glossterm{vital wounds}.
+            If it does, you gain two \glossterm{fatigue points}.
             \rank{7} If the target is \glossterm{bloodied}, it regains an additional hit point.
         \end{freeability}
 
@@ -2353,7 +2354,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Pal}[3]{Stalwart Resilience}
         You gain a \plus1 bonus to Fortitude and Mental defense.
-        In addition, you gain a \plus1 bonus to \glossterm{vital rolls}.
+        In addition, you gain a \plus1 bonus to \glossterm{fatigue tolerance} (see \pcref{Fatigue Tolerance}).
 
         \cf{Pal}[4]{Defender's Boon}
         Whenever you are attacked, you gain a \plus1 bonus to \glossterm{accuracy} until the end of the next round.
@@ -2451,12 +2452,12 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X > {\lcol}X}
             \tb{Rank} & \tb{Min Level} & \tb{Beastmaster}         & \tb{Huntmaster} & \tb{Keen Senses}    & \tb{Wilderness Warrior} \tableheaderrule
             1 & 1  & Animal companion         & Quarry                     & Keen vision               & Wild maneuvers                          \\
-            2 & 2  & Handling lore            & Hunting style              & Farsight                  & Maneuver rank (2), wild maneuver            \\
-            3 & 5  & Pack tactics             & Hunter's instincts         & Perceive weakness         & Maneuver rank (3), wild lore           \\
-            4 & 8  & Greater animal companion & Tracker                    & Blindsight                & Maneuver rank (4), wild senses        \\
-            5 & 11 & Greater handling lore    & Hunting style              & Greater farsight          & Maneuver rank (5), wild maneuver    \\
-            6 & 14 & Greater pack tactics     & Greater hunter's instincts & Greater perceive weakness & Maneuver rank (6), wild agility   \\
-            7 & 17 & Supreme animal companion & Greater tracker            & Greater blindsight        & Maneuver rank (7), greater wild senses        \\
+            2 & 2  & Handling lore            & Hunting style              & Farsight                  & Maneuver rank (2), wild maneuver        \\
+            3 & 5  & Pack tactics             & Hunter's instincts         & Perceive weakness         & Maneuver rank (3), wild lore            \\
+            4 & 8  & Greater animal companion & Endurance tracker          & Blindsight                & Maneuver rank (4), wild senses          \\
+            5 & 11 & Greater handling lore    & Hunting style              & Greater farsight          & Maneuver rank (5), wild maneuver        \\
+            6 & 14 & Greater pack tactics     & Greater hunter's instincts & Greater perceive weakness & Maneuver rank (6), wild agility         \\
+            7 & 17 & Supreme animal companion & Greater endurance tracker  & Greater blindsight        & Maneuver rank (7), greater wild senses  \\
             8 & 20 & Twin companion           & Dual quarry                & Epic senses               & Maneuver rank (8), wilderness supremacy \\
         \end{dtabularx}
     \end{dtable!*}
@@ -2506,7 +2507,7 @@ This choice determines a great deal about your character's abilities.
             If any of its statistics are higher than the normal values below, the animal uses its own statistics instead.
             All other aspects of the animal, such as its speed and natural weapons, are unchanged.
             \begin{itemize}
-                \item Its \glossterm{wound resistance} and \glossterm{vital resistance} are equal to the normal values based on your level \add your base Constitution (see \pcref{Resistance Values}).
+                \item Its \glossterm{wound resistance} and \glossterm{vital resistance} are equal to the normal values based on your level \add your base Constitution (see \tref{Resistance Values}).
                 \item It has 10 \glossterm{hit points}.
                 \item Each of its \glossterm{defenses} is normally equal to 5 \add your level.
                 \item Its \glossterm{accuracy} is normally equal to your \glossterm{accuracy}.
@@ -2519,14 +2520,14 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rgr}[3]{Pack Tactics} Any \glossterm{overwhelmed} creature that is \glossterm{threatened} by you or your animal companion takes a \minus1 penalty to \glossterm{accuracy}.
 
-        \cf{Rgr}[4]{Greater Animal Companion} Your \textit{animal companion} gains an \glossterm{action point}.
+        \cf{Rgr}[4]{Greater Animal Companion} Your \textit{animal companion} gains an \glossterm{attunement point}.
         In addition, it gains a \plus1 bonus to \glossterm{accuracy}, \glossterm{defenses}, and \glossterm{vital rolls}.
 
         \cf{Rgr}[5]{Greater Handling Lore} The bonus from your \textit{handling lore} ability increases to \plus6.
 
         \cf{Rgr}[6]{Greater Pack Tactics} The penalty from your \textit{pack tactics} ability increases to \minus2.
 
-        \cf{Rgr}[7]{Supreme Animal Companion} Your \textit{animal companion} gains an additional \glossterm{action point}.
+        \cf{Rgr}[7]{Supreme Animal Companion} Your \textit{animal companion} gains an additional \glossterm{attunement point}.
         In addition, the bonuses from your \textit{greater animal companion} ability increase to \plus2.
 
         \cf{Rgr}[8]{Twin Companion} You may acquire an additional \textit{animal companion}, attuning to each ability separately.
@@ -2698,8 +2699,8 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rgr}[3]{Hunter's Instincts} You gain a \plus2 bonus to \glossterm{initiative} checks and Reflex defense.
 
-        \cf{Rgr}[4]{Tracker} You gain two additional skill points.
-        In addition, you gain a \plus2 bonus to the Survival skill.
+        \cf{Rgr}[4]{Endurance Tracker} You gain a \plus1 bonus to your \glossterm{fatigue tolerance} (see \pcref{Fatigue Tolerance}).
+        In addition, you gain a \plus3 bonus to the Survival skill.
 
         \cf*{Rgr}[5]{Hunting Style}
         You learn an additional \textit{hunting style}.
@@ -2707,8 +2708,8 @@ This choice determines a great deal about your character's abilities.
         \cf{Rgr}[6]{Greater Hunter's Instincts}
         The bonus from your \textit{hunter's instincts} ability increases to \plus4.
 
-        \cf{Rgr}[7]{Greater Tracker} The bonus to the Survival skill from your \textit{tracker} ability increases to \plus6.
-        In addition, you can move at full speed while following tracks at no penalty.
+        \cf{Rgr}[7]{Greater Endurance Tracker} The bonus to your fatigue tolerance from your \textit{endurance tracker} ability increases to \plus2.
+        In addition, the bonus to the Survival skill increases to \plus6.
 
         \cf{Rgr}[8]{Dual Quarry} You can attune to two separate uses of your \textit{quarry} ability simultaneously.
         You can use different \textit{hunting style} abilities with each \textit{quarry}.
@@ -3127,7 +3128,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rog}[5]{Greater Dabbler} You gain an additional \glossterm{insight point}.
 
-        \cf{Rog}[6]{Versatile Power} The bonus from your \textit{versatile power} ability increases to \plus2.
+        \cf{Rog}[6]{Greater Versatile Power} The bonus from your \textit{versatile power} ability increases to \plus2.
 
         \cf{Rog}[7]{Greater Skill Exemplar} The skill bonus from your \textit{skill exemplar} ability increases to \plus3.
 
@@ -3192,14 +3193,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Sorcerer Progression}
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Min Level} & \tb{Arcane Magic} & \tb{Arcane Spell Mastery} & \tb{Draconic Magic} & \tb{Innate Arcanist} & \tb{Wild Magic} \tableheaderrule
-            1 & 1  & Spellcasting, mage armor             & Mystic insight              & Draconic bloodline         & Innate magic             & Wildspell                                   \\
-            2 & 2  & Spell rank (2), spell knowledge      & Combat caster               & Draconic focus             & Mystic tolerance         & Chaotic miscast, wild soul                  \\
-            3 & 5  & Spell rank (3)                       & Wellspring of power         & Draconic precision         & Augment                  & Chaotic exertion                            \\
-            4 & 8  & Spell rank (4), greater mage armor   & Mystic insight              & Draconic hide              & Spell absorption         & Controlled chaos                            \\
-            5 & 11 & Spell rank (5), spell knowledge      & Greater combat caster       & Draconic heart             & Greater mystic tolerance & Greater chaotic miscast, greater wild  soul \\
-            6 & 14 & Spell rank (6)                       & Greater wellspring of power & Greater draconic precision & Augment                  & Greater chaotic exertion                    \\
-            7 & 17 & Spell rank (7), supreme mage armor   & Mystic insight              & Greater draconic hide      & Greater spell absorption & Greater controlled chaos                    \\
-            8 & 20 & Spell rank (8), epic spell knowledge & Epic arcane mastery         & Epic augmentation          & Epic wildspell           &                                             \\
+            1 & 1  & Spellcasting, mage armor             & Mystic insight              & Draconic bloodline         & Innate magic               & Wildspell                                   \\
+            2 & 2  & Spell rank (2), spell knowledge      & Combat caster               & Draconic focus             & Mystic tolerance           & Chaotic miscast, wild soul                  \\
+            3 & 5  & Spell rank (3)                       & Wellspring of power         & Draconic precision         & Innate enhancement         & Chaotic exertion                            \\
+            4 & 8  & Spell rank (4), greater mage armor   & Mystic insight              & Draconic hide              & Spell absorption           & Controlled chaos                            \\
+            5 & 11 & Spell rank (5), spell knowledge      & Greater combat caster       & Draconic heart             & Greater mystic tolerance   & Greater chaotic miscast, greater wild  soul \\
+            6 & 14 & Spell rank (6)                       & Greater wellspring of power & Greater draconic precision & Greater innate enhancement & Greater chaotic exertion                    \\
+            7 & 17 & Spell rank (7), supreme mage armor   & Mystic insight              & Greater draconic hide      & Greater spell absorption   & Greater controlled chaos                    \\
+            8 & 20 & Spell rank (8), epic spell knowledge & Epic arcane mastery         & Epic innate enhancement    & Epic wildspell             &                                             \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -3268,7 +3269,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Sor}[2]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
 
-        \cf{Sor}[3]{Spell Rank}[Magical] You become a rank 3 arcane spellcaster.
+        \cf*{Sor}[3]{Spell Rank}[Magical] You become a rank 3 arcane spellcaster.
         This gives you access to spells that require a minimum rank of 3 and can improve the effectiveness of your existing spells.
 
         \cf*{Sor}[4]{Spell Rank}[Magical] You become a rank 4 arcane spellcaster.
@@ -3289,7 +3290,7 @@ This choice determines a great deal about your character's abilities.
         \cf*{Sor}[7]{Spell Rank}[Magical] You become a rank 7 arcane spellcaster.
         This gives you access to spells that require a minimum rank of 7 and can improve the effectiveness of your existing spells.
 
-        \cf{Sor}[7]{Greater Mage Armor}[Magical]
+        \cf{Sor}[7]{Supreme Mage Armor}[Magical]
         The defense bonus from the body armor created by your \textit{mage armor} ability increases to \plus3.
         In addition, the bonus to \glossterm{resistances} against \glossterm{energy damage} increases to be equal to your \glossterm{power}.
 
@@ -3342,13 +3343,13 @@ This choice determines a great deal about your character's abilities.
         This archetype deepens your magical connection to your draconic ancestor and enhances your spellcasting.
         You must have the Arcane Magic archetype from the sorcerer class to gain the abilities from this archetype.
 
-        \cf{Sor}[1]{Draconic Bloodline} Choose a type of dragon from among the dragons on \trefnp{Dragon Types}.
+        \cf{Sor}[1]{Draconic Bloodline} Choose a type of dragon from among the dragons on \trefnp{Draconic Bloodline Types}.
         You have the blood of that type of dragon in your veins.
         You gain a bonus equal to your level to your \glossterm{resistances} against the damage type dealt by that dragon's breath weapon.
         In addition, you learn an additional spell from the \glossterm{mystic sphere} associated with your dragon if you have access to that mystic sphere.
 
         \begin{dtable}
-            \lcaption{Dragon Types}
+            \lcaption{Draconic Bloodline Types}
             \begin{dtabularx}{\columnwidth}{l >{\lcol}X >{\lcol}X}
                 \tb{Dragon} & \tb{Damage Type} & \tb{Mystic Sphere} \tableheaderrule
                 Black       & Acid             & Vivimancy    \\
@@ -3385,16 +3386,14 @@ This choice determines a great deal about your character's abilities.
         This archetype deepens your innate connection to arcane magic.
         You must have the Arcane Magic archetype from the sorcerer class to gain the abilities from this archetype.
 
-        \cf{Sor}[1]{Innate Magic} None of your spells have \glossterm{somatic components} or \glossterm{verbal components}.
+        \cf{Sor}[1]{Innate Magic} None of your arcane spells have \glossterm{somatic components} or \glossterm{verbal components}.
 
         \cf{Sor}[2]{Mystic Tolerance} You gain a bonus to \glossterm{resistances} against \glossterm{energy damage} equal to half your level.
 
-        \cf{Sor}[3]{Augment} You learn one \glossterm{augment} (see \pcref{Augments}).
-        You can apply augments to spells to change their effects.
-        When you gain access to a new arcane spell \glossterm{rank}, you may change which augments you know.
+        \cf{Sor}[3]{Innate Enhancement} You gain a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} and \glossterm{defenses}.
+        Because this is a magic bonus, it does not stack with other magic bonuses.
 
         \cf{Sor}[4]{Spell Absorption} Whenever another creature uses a spell to attack you, you gain the ability to cast the spell once.
-        The spell retains its original \glossterm{augments}, if any, and you cannot apply any \glossterm{augments} to it.
         When you cast the spell, you use your own \glossterm{accuracy}, \glossterm{power}, and abilities to determine the effects of the spell.
         Once you cast the spell, you expend the absorbed energy, and you cannot cast it again.
 
@@ -3403,13 +3402,12 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Sor}[5]{Greater Mystic Tolerance} The bonus from your \textit{mystic tolerance} ability increases to be equal to your level.
 
-        \cf*{Sor}[6]{Augment} You learn an additional \glossterm{augment}.
+        \cf*{Sor}[6]{Greater Innate Enhancement} The bonus from your \textit{personal enhancement} ability increases to \plus2.
 
         \cf{Sor}[7]{Greater Spell Absorption} You can store the ability to cast up to three spells with your \textit{spell absorption} ability.
         In addition, you can cast each stored spell twice before you lose the ability to cast it instead of only once.
 
-        \cf{Sor}[8]{Epic Augmentation} You can apply \glossterm{augments} to arcane as if you were able to cast rank 9 spells.
-        This does not give you access to rank 8 spells or rank 8 spell upgrades.
+        \cf{Sor}[8]{Epic Innate Enhancement} The bonus from your \textit{personal enhancement} ability increases to \plus4.
 
     \subsection{Wild Magic}
         This archetype makes the magic you cast more chaotic, generally increasing its power at the cost of your control over your magic.
@@ -3444,7 +3442,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Sor}[2]{Wild Soul} You are immune to \glossterm{Compulsion} attacks.
 
-        \cf{Sor}[3]{Chaotic Exertion} Once per \glossterm{long rest}, you can use the \textit{desperate exertion} ability without spending an \glossterm{action point}.
+        \cf{Sor}[3]{Chaotic Exertion} Once per \glossterm{long rest}, you can use the \textit{desperate exertion} ability without gaining any \glossterm{fatigue points}.
         In addition, you gain a \plus1 bonus to the roll when you use the \textit{desperate exertion} ability.
         This bonus stacks with the normal \plus2 bonus provided by that ability.
 
@@ -3461,7 +3459,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Sor}[8]{Epic Wildspell} You replace your normal wild magic effects from your \textit{wildspell} ability with the effects from the table below.
         \begin{dtable}
-            \lcaption{Wild Magic Effects}
+            \lcaption{Epic Wild Magic Effects}
             \begin{dtabularx}{\textwidth}{l X}
                 \tb{Roll} & \tb{Effect} \tableheaderrule
                 1 or lower & The spell has its normal effect \\
@@ -3640,7 +3638,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{War}[2]{Spell Knowledge} You learn an additional pact \glossterm{spell}.
 
-        \cf{War}[3]{Spell Rank}[Magical] You become a rank 3 pact spellcaster.
+        \cf*{War}[3]{Spell Rank}[Magical] You become a rank 3 pact spellcaster.
         This gives you access to spells that require a minimum rank of 3 and can improve the effectiveness of your existing spells.
 
         \cf*{War}[4]{Spell Rank}[Magical] You become a rank 4 pact spellcaster.
@@ -3665,64 +3663,6 @@ This choice determines a great deal about your character's abilities.
         This gives you access to spells that require a minimum rank of 8 and can improve the effectiveness of your existing spells.
 
         \cf{War}[8]{Epic Spell Knowledge} You learn two additional pact spells.
-
-        % {
-        %     \augment{0}{Infernal Focus} You gain a \plus10 bonus to \glossterm{concentration} checks to cast the spell (see \pcref{Concentration}).
-
-        %     \augment{0}{Sickening} Make an attack vs. Fortitude against one creature targeted by the spell.
-        %     On a hit, the target is \glossterm{sickened} as a \glossterm{condition}.
-        %     \par This augment can be applied to any spell that targets at least one creature.
-
-        %     \augment{0}{Soulrending} When a creature is dealt damage by the spell, if it has no hit points remaining, it dies.
-        %     \par This augment can be applied to any spell that deals damage.
-
-        %     \augment{0}{Terrifying} Make an attack vs. Mental against one creature targeted by the spell.
-        %     On a hit, the target is \glossterm{shaken} by you as a \glossterm{condition}.
-        %     \par This augment can be applied to any spell that targets at least one creature.
-
-        %     \augment{1}{Dark Expansion} The spell's area is increased by one step, to a maximum of \areahuge.
-        %     The steps are, in order: \areasmall, \areamed, \arealarge, and \areahuge.
-        %     Normally, a Small or Medium line is 5 ft.\ wide, while a Large or Huge line is 10 ft.\ wide.
-        %     A line used to define a wall does not have a width.
-        %     \par This augment can be applied to any spell with an area that is one of the above areas.
-
-        %     \augment{1}{Untraceable} You do not need \glossterm{verbal components} or \glossterm{somatic components} to cast the spell.
-
-        %     \augment{2}{Abyssal Flame} Non-physical damage dealt by the spell becomes life damage in place of its other damage types.
-        %     In addition, you gain a \plus1d bonus to life damage dealt by the spell.
-        %     This does not change any other aspects of the spell's effects.
-        %     \par This augment can be applied to any spell that deals non-physical damage.
-
-        %     \augment{2}{Bloodreaving} When a creature takes damage from the spell, you heal hit points equal to the damage dealt.
-        %     \par This augment can be applied to any spell that deals damage.
-
-        %     % TODO: taking damage multiple times in the same round abuse?
-        %     \augment{2}{Exsanguinating} When a creature takes damage from the spell, it begins bleeding as a \glossterm{condition}.
-        %     At the end of each \glossterm{action phase}, a bleeding creature takes \glossterm{standard damage} \minus1d.
-        %     \par This augment can be applied to any spell that deals damage.
-
-        %     \augment{3}{Inevitable Doom} You gain a \plus2 bonus to \glossterm{accuracy} with the spell.
-        %     \par This augment can be applied to any spell that makes an attack.
-
-        %     \augment{3}{Infernal Potency} You gain a \plus4 bonus to \glossterm{power} with the spell.
-        %     \par This augment can be applied to any spell.
-
-        %     \augment{4}{Dark Miasma} When a creature takes damage from the spell, it becomes \glossterm{sickened} as a \glossterm{condition}.
-        %     \par This augment can be applied to any spell that deals damage.
-
-        %     \augment{4}{Unholy Terror} When a creature takes damage from the spell, it becomes \glossterm{shaken} by you as a \glossterm{condition}.
-        %     \par This augment can be applied to any spell that deals damage.
-
-        %     \augment{5}{Soulclaiming} When a creature takes damage from the spell, its soul becomes marked by your soulkeeper as a \glossterm{condition}.
-        %     It takes a \minus4 penalty to Mental defense.
-        %     If it dies, its soul is immediately claimed by your soulkeeper, preventing it from being resurrected by any means.
-
-        %     \augment{6}{Greater Inevitable Doom} You gain a \plus4 bonus to \glossterm{accuracy} with the spell.
-        %     \par This augment can be applied to any spell that makes an attack.
-
-        %     \augment{6}{Greater Infernal Potency} You gain a \plus8 bonus to \glossterm{power} with the spell.
-        %     \par This augment can be applied to any spell.
-        % }
 
     \subsection{Pact Spell Mastery}
         This archetype improves your ability to cast spells with the power of your dark pact.
@@ -3781,7 +3721,6 @@ This choice determines a great deal about your character's abilities.
                     You must follow the chosen behavior that round during the best of your ability.
                     If you are not in combat, your soulkeeper may influence your behavior in more subtle ways.
                 \item At the start of each round, if either you or your soulkeeper choose to end this ability, the ability ends.
-                    If the ability ends this way, you regain the \glossterm{action point} you spent to attune to this ability the next time you take a \glossterm{short rest}.
             \end{itemize}
         \end{attuneability}
 
@@ -3831,13 +3770,15 @@ This choice determines a great deal about your character's abilities.
 
         \cf{War}[6]{Exchange Vitality} Your connection to your soulkeeper deepens, allowing you to send a fragment of your vitality through the link.
         You can use the \textit{exchange vitality} ability as a \glossterm{standard action}.
-        \begin{apability}{Exchange Vitality}[\glossterm{Magical}]
-            You remove one \glossterm{vital wound} affecting you.
+        \begin{freeability}{Exchange Vitality}[\glossterm{Magical}]
+            When you use this ability, you gain two \glossterm{fatigue points}.
+
+            You remove one of your \glossterm{vital wounds}.
             This cannot remove a vital wound applied during the current round.
 
             \rankline
             \rank{8} You can use this ability as a \glossterm{minor action}.
-        \end{apability}
+        \end{freeability}
 
         \cf{War}[7]{Supreme Possession} The bonus to \glossterm{power} from your \textit{possession} ability increases to \plus6.
 
@@ -3850,13 +3791,13 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Wizard Progression}
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Min Level} & \tb{Alchemist}               & \tb{Arcane Magic}     & \tb{Arcane Scholar}   & \tb{Arcane Spell Mastery}   \tableheaderrule
-            1 & 1  & Portable workshop            & Spellcasting                         & Scholastic lore       & Mystic insight              \\
-            2 & 2  & Alchemical infusion          & Spell rank (2), mage armor           & Ritualist             & Insightful caster           \\
-            3 & 5  & Alchemical discovery         & Spell rank (3), spell knowledge      & Scholastic insight    & Wellspring of power         \\
-            4 & 8  & Alchemical expertise         & Spell rank (4)                       & Ritual expertise      & Mystic insight              \\
-            5 & 11 & Experienced quaffing         & Spell rank (5), greater mage armor   & Contingency           & Greater insightful caster   \\
-            6 & 14 & Alchemical discovery         & Spell rank (6), spell knowledge      & Scholastic insight    & Greater wellspring of power \\
-            7 & 17 & Greater alchemical expertise & Spell rank (7)                       & Malleable contingency & Mystic insight              \\
+            1 & 1  & Portable workshop            & Spellcasting, mage armor             & Scholastic lore       & Mystic insight              \\
+            2 & 2  & Alchemical infusion          & Spell rank (2), spell knowledge      & Ritualist             & Insightful caster           \\
+            3 & 5  & Alchemical discovery         & Spell rank (3)                       & Scholastic insight    & Wellspring of power         \\
+            4 & 8  & Alchemical expertise         & Spell rank (4), greater mage armor   & Ritual expertise      & Mystic insight              \\
+            5 & 11 & Experienced quaffing         & Spell rank (5), spell knowledge      & Contingency           & Greater insightful caster   \\
+            6 & 14 & Alchemical discovery         & Spell rank (6)                       & Scholastic insight    & Greater wellspring of power \\
+            7 & 17 & Greater alchemical expertise & Spell rank (7), supreme mage armor   & Malleable contingency & Mystic insight              \\
             8 & 20 & Epic alchemy                 & Spell rank (8), epic spell knowledge & Multiple contingency  & Epic arcane mastery         \\
         \end{dtabularx}
     \end{dtable!*}
@@ -3967,7 +3908,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Wiz}[2]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
 
-        \cf{Wiz}[3]{Spell Rank}[Magical] You become a rank 3 arcane spellcaster.
+        \cf*{Wiz}[3]{Spell Rank}[Magical] You become a rank 3 arcane spellcaster.
         This gives you access to spells that require a minimum rank of 3 and can improve the effectiveness of your existing spells.
 
         \cf*{Wiz}[4]{Spell Rank}[Magical] You become a rank 4 arcane spellcaster.
@@ -3988,7 +3929,7 @@ This choice determines a great deal about your character's abilities.
         \cf*{Wiz}[7]{Spell Rank}[Magical] You become a rank 7 arcane spellcaster.
         This gives you access to spells that require a minimum rank of 7 and can improve the effectiveness of your existing spells.
 
-        \cf{Wiz}[7]{Greater Mage Armor}[Magical]
+        \cf{Wiz}[7]{Supreme Mage Armor}[Magical]
         The defense bonus from the body armor created by your \textit{mage armor} ability increases to \plus3.
         In addition, the bonus to \glossterm{resistances} against \glossterm{energy damage} increases to be equal to your \glossterm{power}.
 
@@ -4032,19 +3973,17 @@ This choice determines a great deal about your character's abilities.
             \parhead{Memorized Sphere} % TODO: clarify you need to be high enough rank?
             Choose a \glossterm{mystic sphere} you have access to.
             You can perform rituals from that \glossterm{mystic sphere} without having them written in your ritual book.
-            If you lead a ritual from that \glossterm{mystic sphere}, it requires half the normal amount of time to perform and costs half the normal number of \glossterm{action points} (minimum 1).
+            If you lead a ritual from that \glossterm{mystic sphere}, it requires half the normal amount of time to perform and causes half the normal number of \glossterm{fatigue points}.
             \par You can choose this insight multiple times, choosing a different \glossterm{mystic sphere} each time.
         }
 
         \cf{Wiz}[4]{Greater Scholastic Lore} The bonuses from your \textit{scholastic lore} ability increase to \plus4.
 
-        \cf{Wiz}[5]{Contingency}  You learn the Contingency \glossterm{augment}, allowing you to prepare a spell so it takes effect automatically if specific circumstances arise.
-        Applying the Contingency \glossterm{augment} increases the \glossterm{rank} of the spell and all its upgrades by 2.
+        \cf{Wiz}[5]{Contingency} You gain the ability to prepare a spell so it takes effect automatically if specific circumstances arise.
         % If any spells take more than one standard action, they would need to be excluded from Contingency, but none exist
-        % You can apply this augment to any arcane spell that can be cast as a \glossterm{standard action} or \glossterm{minor action}.
-
-        Casting a spell with the Contingency augment takes 5 minutes.
-        When the casting is complete, the spell has no immediate effect.
+        % You can apply this ability to any arcane spell that can be cast as a \glossterm{standard action} or \glossterm{minor action}.
+        Preparing a spell with this ability takes 5 minutes.
+        When the preparation is complete, the spell has no immediate effect.
         Instead, it automatically takes effect when some specific circumstances arise.
         During the time required to cast the spell, you specify what circumstances cause the spell to take effect.
 
@@ -4058,8 +3997,8 @@ This choice determines a great deal about your character's abilities.
         Any spells which require decisions, such as the \spell{dimension door} spell, must have those decisions made at the time it is cast.
         You cannot alter those decisions when the contingency takes effect.
 
-        You can have only one spell with this augment active at a time.
-        If you use the augment again with a different spell, the old contingency is removed.
+        You can have only one spell with this ability active at a time.
+        If you use this ability again with a different spell, the old contingency is removed.
 
         \cf*{Wiz}[6]{Arcane Insight}[Magical]
         You learn an additional \textit{arcane insight}.
@@ -4071,7 +4010,6 @@ This choice determines a great deal about your character's abilities.
         Each contingency can have separate triggering conditions.
         Only one contigency can trigger each round.
         If multiple contingencies would activate simultaneously, choose one to activate randomly.
-        In addition, the Contingency augment no longer increases the rank of the spell it is applied to.
 
     \subsection{Arcane Spell Mastery}
         This archetype improves the arcane spells you cast.

@@ -1,5 +1,4 @@
 valid_tags = set([
-    'AP',
     'Attune (ritual)',
     'Attune (ritual; see text)',
     'Attune (self)',

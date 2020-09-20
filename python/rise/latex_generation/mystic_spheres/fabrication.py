@@ -27,15 +27,15 @@ fabrication=MysticSphere(
     ],
     lists=['Arcane', 'Pact'],
     spells=[
-        Spell('Shieldbearer', 1, 'Yourself', """
+        Spell('Shieldbearer', 2, 'Yourself', """
             You gain a +1 \\glossterm<magic bonus> to Armor defense.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<3> You are not considered \\glossterm<defenseless> as long as you are not \\glossterm<unaware>, even if you are not wielding a weapon or shield.
-            \\rank<5> The bonus increases to +2.
-            \\rank<7> You are not considered \\glossterm<defenseless> even if you are \\glossterm<unaware>.
+            \\rank<4> You are not considered \\glossterm<defenseless> as long as you are not \\glossterm<unaware>, even if you are not wielding a weapon or shield.
+            \\rank<6> The bonus increases to +2.
+            \\rank<8> The bonus increases to +3.
         """, tags=['Attune (self)', 'Manifestation']),
         Spell('Mystic Arrow', 1, 'One creature or object within \\rngmed range', """
             Make an attack vs. Armor against the target.
@@ -174,7 +174,6 @@ fabrication=MysticSphere(
             You create a normal item of that type at the target location.
 
             The item cannot be constructed of any magical or extraordinary material.
-            % This should allow the Giant augment; is this worded to allow that?
             It is sized appropriately for you, up to a maximum of a Medium size item.
 
             \\rankline
@@ -235,24 +234,23 @@ fabrication=MysticSphere(
             The object appears out of thin air in the target location.
             % TODO: add ability to create objects of other sizes/materials
             It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as wood or cloth.
-
-            This ritual takes one hour to perform.
-        """, tags=['Attune (ritual)', 'Manifestation']),
+        """, tags=['Attune (ritual)', 'Manifestation'], ritual_time='one hour'),
         Spell('Create Sustenance', 3, 'One unoccupied squre within \\rngclose range', """
             This ritual creates food and drink in that square that is sufficient to sustain two Medium creatures per \\glossterm<power> for 24 hours.
             The food that this ritual creates is simple fare of your choice -- highly nourishing, if rather bland.
-
-            This ritual takes one hour to perform.
-        """, tags=['AP', 'Creation']),
+        """, tags=['Creation'], ritual_time='one hour'),
         Spell('Copy Writing', 1, ['One Small or smaller written work within \\rngclose range', 'One Small or smaller set of blank pages within \\rngclose range'], """
             You copy the writing from the primary target onto the secondary target.
             The secondary target must have enough room for the writing.
             This ritual takes half the time required to copy the writing by hand, to a minimum of one minute, and does not require writing materials.
-        """, tags=[]),
+            It requires one \\glossterm<fatigue point> from its participants.
+        """, tags=[], ritual_time='special'),
         Spell('Greater Copy Writing', 4, ['One Medium or smaller written work within \\rngclose range', 'One Medium or smaller set of blank pages within \\rngclose range'], """
             This ritual functions like the \\spell<copy writing> ritual, except that it can target objects of Medium or smaller size.
+            % "This ritual takes" -- make checks happy
             In addition, the time required to perform this ritual decreases to one tenth of the time required to copy the writing by hand, to a minimum of one minute.
-        """, tags=[]),
+            It requires one \\glossterm<fatigue point> from its participants.
+        """, tags=[], ritual_time='special'),
     ],
     category='damage',
 )

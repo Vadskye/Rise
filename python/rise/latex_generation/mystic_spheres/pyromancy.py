@@ -211,16 +211,14 @@ pyromancy=MysticSphere(
             \\rank<6> The damage increases to \\glossterm<standard damage> -1d.
             \\rank<8> The damage increases to \\glossterm<standard damage>.
         """, tags=['Attune (self)']),
-        Spell('Flame Blade', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Flame Blade', 3, 'Yourself', """
             All damage the target deals with \\glossterm<strikes> becomes fire damage in addition to the attack's normal damage types.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<5> Whenever the target \\glossterm<vitally wounds> a creature with a \\glossterm<strike>, the struck creature is also \\glossterm<ignited> as a \\glossterm<condition>.
-            This condition can be removed if the target makes a \\glossterm<difficulty rating> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
-            Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
-            \\rank<7> The condition cannot be removed with a \\glossterm<move action>.
+            \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<7> Whenever the target gets a \\glossterm<critical hit> on a creature with a \\glossterm<strike>, the struck creature is also \\glossterm<ignited> as a \\glossterm<condition>.
         """, tags=['Attune (target)']),
         Spell('Wall of Fire', 4, 'Each creature that moves through the area (see text)', """
             You create a wall of fire in a 20 ft.\\ high, \\arealarge \\glossterm<wall> within \\rngmed range.
@@ -301,13 +299,10 @@ pyromancy=MysticSphere(
             Unlike normal, this effect does not require \\glossterm<line of effect> to you.
             Instead, it affects all outdoor locations within the area.
             Even a thin barrier, such as a tent, is enough to protect locations from the effect of this ritual.
-
-            This ritual takes one hour to perform.
-
-            \\rankline
-            \\rank<6> The temperature increases by 50 degrees, to a maximum of 140 degrees.
-            \\rank<8> The temperature increases by 60 degrees, to a maximum of 160 degrees.
-        """, tags=['Attune (self)']),
+        """, tags=['Attune (self)'], ritual_time='one hour'),
+        Spell('Pyrostorm', 8, None, """
+            This ritual functions like the \\spell<heat wave> ritual, except that the temperature in the area increases by 60 degrees, to a minimum of 160 degrees.
+        """, tags=['Attune (self)'], ritual_time='one hour'),
     ],
     category='damage',
 )

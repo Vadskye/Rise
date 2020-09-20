@@ -10,6 +10,6 @@ export function calculateMundanePower({
   const crBonus = calculateChallengeRatingBonus(challengeRating);
   const monsterBonus = monsterPowerBonusByLevel(level);
   return (
-    level + (startingAttributes.str ?? 0) + crBonus * monsterBonus + (powerBonuses?.magical || 0)
+    level + (startingAttributes.str ?? 0) + crBonus + monsterBonus + (powerBonuses?.magical || 0)
   );
 }

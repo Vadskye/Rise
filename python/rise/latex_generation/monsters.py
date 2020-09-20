@@ -65,7 +65,7 @@ def aberrations(sample_monsters):
             active_ability('Mind Crush', f"""
                 The aboleth makes a +{aboleth.accuracy()} vs. Mental attack against a creature in \\rnglong range.
                 \\hit The target takes {aboleth.standard_damage('magical') + 3} psionic damage and is \\glossterm<stunned> as a \\glossterm<condition>.
-                \\crit The aboleth can spend an \\glossterm<action point> to \\glossterm<attune> to this ability.
+                \\crit The aboleth can spend an \\glossterm<attunement point> to \\glossterm<attune> to this ability.
                 If it does, the target is \\glossterm<dominated> by the aboleth as long as the ability lasts.
                 Otherwise, the target takes double the damage of a non-critical hit.
             """, tags=['Compulsion']),
