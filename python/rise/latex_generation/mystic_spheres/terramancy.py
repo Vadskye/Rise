@@ -203,7 +203,7 @@ terramancy=MysticSphere(
             \\rank<6> The spell creates eight layers of rock.
             \\rank<8> The spell creates ten layers of rock.
         """, tags=['Attune (self)', 'Manifestation']),
-        Spell('Anchored', 2, 'Yourself', """
+        Spell('Earthen Anchor', 2, 'Yourself', """
             The target is immune to \\glossterm<knockback> or \\glossterm<push> effects from attacks, unless the effects come from an attack that scores a \\glossterm<critical hit>.
             This does not make it immune to \\glossterm<teleportation>, and does not affect movement effects used by its \\glossterm<allies>.
 
