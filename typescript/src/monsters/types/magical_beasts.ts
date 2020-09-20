@@ -86,7 +86,7 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
         name: "Dark Embrace",
         powerBonus: 2,
         source: "magical",
-        target: "One enemy within \\reach",
+        target: "One enemy within \\glossterm{reach}",
       },
     ],
     challengeRating: 2,
