@@ -19,25 +19,42 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
         // Accuracy bonus mimics size bonus from Shove and Str for accuracy
         accuracyBonus: 6,
         defense: "fortitude",
-        hit: `The ankheg \\glossterm{pushes} the target up to 30 feet.
+        hit: `The ankheg \\glossterm{pushes} the target up to 30 feet in any direction.
           It can move the same distance that it pushes the target.`,
         name: "Drag Prey",
         target: "One Medium or smaller creature or object within \\glossterm{reach}",
       },
     ],
     challengeRating: 2,
-    description: `
-      An ankheg is a burrowing monster with a taste for fresh meat. It has six legs, and some specimens are yellow rather than brown. It is about 10 feet long and weighs about 800 pounds.
-
-      An ankheg burrows with legs and mandibles. A burrowing ankheg usually does not make a usable tunnel, but can construct a tunnel; it burrows at half speed when it does so. It often digs a winding tunnel up to 40 feet below the surface in the rich soil of forests or farmlands. The tunnel is 5 feet tall and wide, and usually 60 to 150 feet long.
-    `,
+    knowledge: {
+      0: `
+        An ankheg is a Large burrowing ant-like creature with large mandibles and a taste for fresh meat.
+        It has six legs, and most ankhegs are brown.
+        In battle, they try to emerge briefly out of tunnels to ambush unwary foes and drag them underground.
+      `,
+      5: `
+        A typical adult ankheg is about 10 feet long and weighs about 800 pounds.
+        Ankhegs burrow quickly thanks to the powerful acid they naturally produce.
+        They are able spit that acid at foes up to 20 feet away.
+        When burrowing, they usually do not leave usable tunnels behind them.
+        They can choose to do so, though this halves their burrowing speed.
+      `,
+      10: `
+        When hunting, ankhegs usually dig a winding tunnel up to 40 feet below the surface in the rich soil of forests or farmlands.
+        The tunnel usually 5 feet tall and wide, and up to 150 feet long.
+        If they have been in an area for some time, they generally store the remains from previous kills at the end of the tunnel.
+        When they move on, they leave any valuable objects behind with their old tunnels.
+      `,
+    },
     level: 5,
     passiveAbilities: [
       {
-        name: "Darkvision (50 ft.)",
+        description: "50 ft.",
+        name: "Darkvision",
       },
       {
-        name: "Tremorsense (50 ft.)",
+        description: "50 ft.",
+        name: "Tremorsense",
       },
     ],
     name: "Ankheg",
@@ -69,17 +86,27 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
         name: "Dark Embrace",
         powerBonus: 2,
         source: "magical",
-        target: "One enemy within \\reach",
+        target: "One enemy within \\glossterm{reach}",
       },
     ],
     challengeRating: 2,
-    description: `
-      A nightcrawler is a large worm imbued with umbramantic power.
-      Its body is colored only in shades of gray.
-      It is about 9 feet long and weighs about 700 pounds.
-      Nightcrawlers move slowly, but they are surprisingly agile in combat.
-      They can easily contort their body to avoid attacks or wrap around the defenses of foes.
-    `,
+    knowledge: {
+      0: `
+        A nightcrawler is a Large worm imbued with umbramantic power.
+        Its body is colored only in shades of gray.
+        In battle, they wriggle towards their foes and try to eat them.
+      `,
+      5: `
+        A typical nightcrawler is about 9 feet long and weighs about 700 pounds.
+        They move slowly, but are surprisingly agile in combat.
+        They can easily contort their body to avoid attacks or wrap around the defenses of foes.
+        Nightcrawlers have several magical abilities that draw on their umbramantic power to inflict cold damage on nearby foes.
+      `,
+      10: `
+        Nightcrawlers hate and fear light.
+        They can be driven away by light, but if they have no escape, they ferociously attack any sources of light.
+      `,
+    },
     level: 7,
     name: "Nightcrawler",
     size: "large",
@@ -89,6 +116,7 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
       land: 20,
     },
     startingAttributes: { str: 1, dex: 3, con: 0, int: -8, per: 1, wil: 2 },
+    weaponInput: [{ name: "bite" }],
   },
   {
     alignment: "Always true neutral",
@@ -107,11 +135,17 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
       },
     ],
     challengeRating: 2,
-    description: `
-      A hydra maggot is a large maggot-like creature that wriggles across the ground in search of food.
-      Hydra maggots are named for the cluster of tentacles that sprout from their heads, which they use to grab foes.
-      They are carnivorous, but are not picky, and will feast on rotting carcasses just as happily as they will feast on fresh meat.
-    `,
+    knowledge: {
+      0: `
+        A hydra maggot is a Large maggot-like creature that wriggles across the ground in search of food.
+        It is named for the cluster of tentacles that sprout from their heads, which it uses to grab foes so it can eat them.
+      `,
+      5: `
+        Hydra maggots are carnivorous, but are not picky, and will feast on rotting carcasses just as happily as they will feast on fresh meat.
+        When hydra maggots attack, they can shape the tip of their tentacles into a point, allowing them to impale their foes.
+        Their tentacles are quite adept at slipping past defenses and through cracks in armor.
+      `,
+    },
     level: 7,
     name: "Hydra Maggot",
     size: "large",
@@ -137,33 +171,59 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
     ],
     challengeRating: 1,
     description: `
-      A stygian leech is a worm-like creature that feeds on life energy.
-      They have a rudimentary intelligence, and use their ability to crawl on walls and ceilings to drop on unsuspecting foes.
-      They instinctively avoid feeding on other stygian leeches, but will otherwise attempt to drain the life from any living creatures, regardless of danger.
-      Some non-living creatures, such as intelligent undead, gather stygian leeches to guard their homes, since the leeches ignore non-living creatures entirely unless severely provoked.
     `,
     level: 7,
+    knowledge: {
+      0: `
+        A stygian leech is a Medium worm-like creature that feeds on life energy.
+        It uses its ability to crawl on walls and ceilings to drop on unsuspecting foes.
+      `,
+      5: `
+        Stygian leeches instinctively avoid feeding on other stygian leeches, but will otherwise attempt to drain the life from any living creatures, regardless of danger.
+        They can instinctively sense the location of any living creatures nearby.
+        Their life-draining attacks can allow them to heal themselves.
+      `,
+      10: `
+        Stygian leeches ignore non-living creatures entirely unless severely provoked.
+        Some non-living creatures, such as intelligent undead, take advantage of this by gathering stygian leeches to guard their homes.
+      `,
+    },
     name: "Stygian Leech",
+    passiveAbilities: [
+      {
+        description: "100 ft.",
+        name: "Darkvision",
+      },
+      {
+        description: "100 ft.",
+        name: "Lifesense",
+      },
+    ],
     skillPoints: { awareness: 1, climb: 2 },
     speeds: { climb: 30 },
     size: "medium",
-    startingAttributes: { str: 0, dex: 2, con: 1, int: -5, wil: 3 },
+    startingAttributes: { str: 0, dex: 2, con: 1, int: -6, wil: 3 },
     weaponInput: [{ name: "bite" }],
   },
   {
     alignment: "Always true neutral",
     armorInputs: [{ name: "thick skin" }],
     challengeRating: 2,
-    description: `
-      Darkmantles hang from ceilings using a muscular "foot" at the top of their bodies.
-      They can look like a stalactite by holding their tentacles stiffly under themeselves, or like a lump of rock by spreading their tentacles so the membrane between them covers their bodies.
-      Their shell and skin usually resemble limestone, but a darkmantle can change its color to match almost any type of stony background.
-
-      A darkmantle attacks by dropping onto its prey and wrapping its tentacles around an opponent's head.
-      Once attached, it squeezes and tries to suffocate its foe.
-      A darkmantle that misses its initial attack often climbs up and tries to drop on the opponent again if there is a conveniently placed wall.
-      Otherwise, it tries to climb its opponent's body to suffocate its head.
-    `,
+    knowledge: {
+      0: `
+        A darkmantle is a Small creature with a small body and a large number of strong tentacles.
+        It hides itself on walls and ceilings and drops on its foes to strangle them to death.
+      `,
+      5: `
+        Darkmantles hang from ceilings using a muscular "foot" at the top of their bodies.
+        They can look like a stalactite by holding their tentacles stiffly under themeselves, or like a lump of rock by spreading their tentacles so the membrane between them covers their bodies.
+        Their shell and skin usually resemble limestone, but a darkmantle can change its color to match almost any type of stony background.
+      `,
+      10: `
+        A darkmantle that misses its initial attack often climbs away and tries to drop on the opponent again if there is a conveniently placed wall.
+        Otherwise, it tries to climb its opponent's body to suffocate its head.
+      `,
+    },
     name: "Darkmantle",
     level: 1,
     passiveAbilities: [
@@ -175,7 +235,8 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
         name: "Latch On",
       },
       {
-        name: "Darkvision 100 ft.",
+        description: "100 ft.",
+        name: "Darkvision",
       },
     ],
     speeds: { climb: 20 },
@@ -184,7 +245,7 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
     weaponInput: [{ name: "constrict" }, { name: "tentacle" }],
   },
   {
-    alignment: "Always true neutral",
+    alignment: "Usually true neutral",
     armorInputs: [{ name: "feathers" }],
     attackInputs: [
       {
@@ -196,21 +257,25 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
       },
     ],
     challengeRating: 4,
-    description: `
-      Griffons are powerful, majestic creatures with the characteristics of both lions and eagles.
-      From nose to tail, an adult griffon can measure as much as 8 feet.
-      Neither males nor females are endowed with a mane.
-      A pair of broad, golden wings emerge from the creature’s back and span 25 feet or more.
-      A griffon weighs about 500 pounds.
-
-      Griffons cannot speak, but they understand Common.
-    `,
+    knowledge: {
+      0: `
+        Griffons are powerful, majestic creatures with characteristics of both lions and eagles.
+        A pair of broad, golden wings emerge from the creature’s back that can span 25 feet or more.
+        In battle, they pounce on their foes like a lion.
+      `,
+      5: `
+        From nose to tail, an adult griffon can measure as much as 8 feet.
+        Neither males nor females are endowed with a mane.
+        A griffon weighs about 500 pounds.
+        Griffons cannot speak, but they understand Common.
+      `,
+    },
     name: "Griffon",
     level: 5,
     passiveAbilities: [{ name: "Low-light vision" }, passiveAbilities.pounce],
     size: "large",
     speeds: { fly: 60 },
-    startingAttributes: { str: 3, dex: 3, con: 0, int: -5, per: 2, wil: 2 },
+    startingAttributes: { str: 3, dex: 3, con: 0, int: -3, per: 2, wil: 2 },
     skillPoints: { awareness: 2 },
     weaponInput: [{ name: "bite" }, { name: "claw" }],
   },

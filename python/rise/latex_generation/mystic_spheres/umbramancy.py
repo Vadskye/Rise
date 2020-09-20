@@ -46,12 +46,12 @@ umbramancy=MysticSphere(
             \\rank<5> The maximum area increases to a \\areahuge radius.
             \\rank<7> The maximum area increases to a \\areaext radius.
         """, tags=['Attune (self)', 'Sensation']),
-        Spell('Darkvision', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Darkvision', 2, 'Yourself', """
             The target gains \\glossterm<darkvision> with a 50 foot radius.
 
             \\rankline
-            \\rank<4> The radius increases to 100 feet.
-            \\rank<6> The radius increases to 150 feet.
+            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<6> The radius increases to 100 feet.
             \\rank<8> The radius increases to 200 feet.
         """, tags=['Attune (target)']),
         Spell('Dark Miasma', 3, '\\glossterm<Enemies> in a \\areasmall radius from you', """
@@ -87,15 +87,15 @@ umbramancy=MysticSphere(
             \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
         """, tags=[]),
-        Spell('Shadow Mantle', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Shadow Mantle', 2, 'Yourself', """
             The target's physical form becomes blurred and shifts in and out of existence.
             This is not a mere trick of the light, but an alteration of reality to make its existence more ambiguous.
             The target gains a +1 \\glossterm<magic bonus> to Armor defense and the Stealth skill.
 
             \\rankline
-            \\rank<3> The defense bonus applies to all defenses.
-            \\rank<5> The bonus to Armor defense and Stealth increases to +2.
-            \\rank<7> The bonus to all defenses increases to +2.
+            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<6> The bonus increases to +2.
+            \\rank<8> The bonus increases to +3.
         """, tags=['Attune (target)']),
         Spell('Conceal Trail', 2, 'Yourself and up to five \\glossterm<allies>', """
             At the end of each round, the footprints, scent, and other tracks left by each target during that round are magically concealed.
@@ -152,13 +152,13 @@ umbramancy=MysticSphere(
             \\rank<5> The target also gains a +1 bonus to \\glossterm<accuracy> with the strike.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Sensation', 'Visual']),
-        Spell('Conceal', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Conceal', 1, 'Yourself', """
             The target gains a +3 \\glossterm<magic bonus> to the Stealth skill.
 
             \\rankline
-            \\rank<3> The bonus increases to +4.
+            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<5> The bonus increases to +5.
-            \\rank<7> The bonus increases to +6.
+            \\rank<7> The bonus increases to +7.
         """, tags=['Attune (target)', 'Sensation']),
         Spell('Shadowstep', 1, 'Yourself', """
             You teleport into an unoccupied destination on the ground within \\rngmed range.
@@ -251,12 +251,10 @@ umbramancy=MysticSphere(
         """, tags=['Sensation', 'Sustain (minor)']),
     ],
     rituals=[
-        Spell('Sunlight Ward', 3, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
+        Spell('Sunlight Ward', 3, 'One ritual participant', """
             The target is never considered to be in natural sunlight.
             This does not impair its vision, but protects it if it would otherwise suffer negative consequences for being in natural sunlight.
-
-            This ritual takes one hour to perform.
-        """, tags=['Attune (target)']),
+        """, tags=['Attune (target)'], ritual_time='one hour'),
     ],
     category='buff, defense',
 )

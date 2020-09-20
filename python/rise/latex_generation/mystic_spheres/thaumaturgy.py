@@ -82,7 +82,7 @@ thaumaturgy=MysticSphere(
             \\rank<7> The accuracy bonus increases to +4.
         """, tags=[]),
         Spell('Reattunement', 3, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
-            The target can reattune to one ability that it stopped being attuned to since the start of the last round without spending an additional action point.
+            The target can reattune to one ability that it stopped being attuned to since the start of the last round without spending an additional \\glossterm<attunement point>.
             Any choices and effects of the attuned ability are restored to their exact state before the attunement was broken.
 
             \\rankline
@@ -145,13 +145,13 @@ thaumaturgy=MysticSphere(
             You cannot voluntarily allow spells to affect you while this effect lasts.
             After you absorb three spells in this way, this effect ends.
         """, tags=['Attune (self)']),
-        Spell('Enhance Magic', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Enhance Magic', 3, 'Yourself', """
             The target gains a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<magical> abilities.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<5> The target gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with \\glossterm<magical> abilities.
+            \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<7> The bonus increases to +4.
         """, tags=['Attune (target)']),
         # Is this worth the complexity it adds to the system?
@@ -189,15 +189,6 @@ thaumaturgy=MysticSphere(
             \\rank<6> The area increases to a \\areahuge radius \\glossterm<emanation>.
             \\rank<8> The area increases to a \\areaext radius \\glossterm<emanation>.
         """, tags=['Attune (self)']),
-        Spell('Augmented Spells', 5, 'Yourself', """
-            Choose one \\glossterm<augment> you know with a rank modifier of up to +2.
-            You can apply the augment once to spells you cast without increasing the minimum rank of those spells.
-            If the augment can be applied multiple times, you can apply it again to the same spell, increasing the spell's minimum rank normally.
-
-            \\rankline
-            \\rank<7> You can choose an additional \\glossterm<augment> you know with a rank modifier of up to +2.
-            Whenever you cast a spell, you can choose which augment to apply for free.
-        """, tags=['Attune (self)']),
         Spell('Disrupt Casting', 4, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit As a \\glossterm<condition>, the target has a 50\\% chance to \\glossterm<miscast> any spell it casts.
@@ -208,7 +199,7 @@ thaumaturgy=MysticSphere(
             \\rank<8> The accuracy bonus increases to +2.
         """, tags=[]),
         Spell('Absorb Magic', 6, 'Yourself', """
-            You gain a +2 \\glossterm<magic bonus> to defenses against \\glossterm<magical> effects.
+            You gain a +2 bonus to defenses against \\glossterm<magical> effects.
             In addition, the next time a \\glossterm<magical> attack beats your defenses, it has no effect on you.
             When you negate an attack in this way, you regain one \\glossterm<hit point> and this spell's effect ends.
 
@@ -260,15 +251,27 @@ thaumaturgy=MysticSphere(
             \\rank<6> The area increases to a \\areamed radius.
             \\rank<8> The range increases to \\rnglong.
         """, tags=['Sustain (minor)']),
+        Spell('Cryptic Spells', 2, 'Yourself', """
+            Whenever the target casts a spell, they may choose a different spell they know.
+            If they do, the visual effects and magical aura of the spell they are casting change to match their chosen spell.
+            This affects inspection of the spell itself by any means, such as with the Spellsense skill (see \\pcref<Spellsense>).
+            However, it does not alter the mechanical effects of the spell in any way.
+
+            An observer can make a Spellsense check with a \\glossterm<difficulty rating> of 15 \\add your magical \\glossterm<power> to identify the spell's true nature.
+            If the spell's effects depend on visual components, the spell may fail to work if the target alters the spell's visuals too much.
+
+            \\rankline
+            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<6> The target also gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with spells.
+            \\rank<8> The accuracy bonus increases to +2.
+        """, tags=['Attune (target)']),
     ],
     rituals=[
-        Spell('Purge Curse', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Dispel Curse', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             All curses affecting the target are removed.
             This ritual cannot remove a curse that is part of the effect of an item the target has equipped.
             However, it can allow the target to remove any cursed items it has equipped.
-
-            This ritual takes 24 hours to perform, and requires 8 action points from its participants.
-        """, tags=['AP']),
+        """, tags=[], ritual_time='24 hours'),
     ],
     category='debuff, combat',
 )

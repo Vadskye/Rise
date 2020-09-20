@@ -20,13 +20,13 @@ summon=MysticSphere(
             If a summoned creature gains a \\glossterm<vital wound> or has no hit points remaining at the end of a phase, it disappears.
 
             \\begin<itemize>
-                \\item Its \\glossterm<wound resistance> and \\glossterm<vital resistance> are equal to the base values for your level (see \\pcref<Resistance Values>).
+                \\item Its \\glossterm<wound resistance> and \\glossterm<vital resistance> are equal to the base values for your level (see \\tref<Resistance Values>).
                 \\item It has 5 \\glossterm<hit points>.
                 \\item Each of its \\glossterm<defenses> is equal to 4 \\add your level.
                 \\item Its \\glossterm<accuracy> is equal to your \\glossterm<accuracy> \\sub 2.
                 \\item Its \\glossterm<power> with its attacks is equal to your \\glossterm<power>.
                 \\item Its \\glossterm<land speed> is 30 feet.
-                \\item It has no \\glossterm<action points>.
+                \\item It has no \\glossterm<attunement points>.
             \\end<itemize>
 
             Each round, you can choose the creature's actions by mentally commanding it as a \\glossterm<minor action>.
@@ -59,7 +59,7 @@ summon=MysticSphere(
             This spell functions like the \\textit<summon monster> spell, with the following exceptions.
             The summoned creature takes the form of a melee weapon of your choice that you are proficient with.
             It is sized appropriately to be wielded by a creature of your size.
-            It floats three feet off the ground, and has a 30 foot \\glossterm<fly speed> instead of a \\glossterm<land speed>, with good \\glossterm<maneuverability> (see \\pcref<Fly Speed>).
+            It floats three feet off the ground, and has a 30 foot \\glossterm<fly speed> instead of a \\glossterm<land speed>, with good \\glossterm<maneuverability> (see \\pcref<Flying>).
             The weapon's maximum height above the ground is limited to 10 feet.
             The creature's accuracy and damage are modified appropriately for based on your chosen weapon, and it gains the effect of the weapon's normal tags (see \\pcref<Weapon Tags>).
             The weapon is considered to be held in two hands if possible, which can increase the damage dealt by medium weapons (see \\pcref<Weapon Usage Classes>).
@@ -198,7 +198,7 @@ summon=MysticSphere(
             The creature appears in an unoccupied location within \\rngmed range.
             It comes with a bit and bridle and a riding saddle, and will only accept the target as a rider.
             It has the same statistics as a creature from the \\spell<summon monster> spell, except that it follows its rider's directions to the extent that a well-trained horse would and it cannot attack.
-        """, tags=['Attune (ritual)', 'Manifestation']),
+        """, tags=['Attune (ritual)', 'Manifestation'], ritual_time='one minute'),
     ],
     # What category does this belong to?
     category='buff, offense',

@@ -59,108 +59,6 @@
         % TODO: This may be more clear if minor + no miscast becomes a tag.
         \parhead{Minor Action Spells} Spells that require a \glossterm{minor action} to cast do not cause a \glossterm{miscast backlash}, even if they are \glossterm{miscast}.
 
-    \subsection{Augments}\label{Augments}
-        There are a number of \glossterm{augments} that can be applied to spells and rituals to increase their power.
-        Each augment has a name, a level, and an effect.
-        When you cast a spell or perform a ritual, can choose to apply any number of augments you know to the spell or ritual.
-        For each augment you apply, you increase the \glossterm{rank} of the spell or ritual and all of its upgrades by an amount equal to the augment's level.
-        In exchange, the ability gains the effects of that augment.
-        If an augment would increase the spell or ritual's \glossterm{rank} beyond your rank in the relevant archetype, you cannot apply the augment to that ability.
-
-        \parhead{Augments and Cantrips}
-        You can apply augments to \glossterm{cantrips}.
-        Cantrips are considered to have a \glossterm{rank} of 1 for this purpose.
-
-        \subsubsection{Augment Descriptions}\label{Augment Descriptions}
-
-            \augment{2}{Accelerated} The ritual takes half the normal amount of time to perform.
-            \par This augment can be applied to any ritual.
-
-            \augment{2}{Cryptic} The spell's visual effects and magical aura changes to mimic a different spell of your choice.
-            You may choose any combination of spells you know, along with any other augments, that result in a spell of the same \glossterm{rank} or lower as the spell you are casting.
-            This affects inspection of the spell itself by any means, such as with the Spellsense skill (see \pcref{Spellsense}).
-            However, it does not alter the mechanical effects of the spell in any way.
-            If the spell's effects depend on visual components, the spell may fail to work if you alter the spell's visuals too much. 
-
-            \augment{2}{Empowered} The ability's \glossterm{power} increases by 2.
-            This augment can be applied multiple times.
-            Its effects stack.
-            \par This augment can be applied to any spell or ritual.
-
-            % TODO: Too weak at 2?
-            \augment{2}{Extended} The ability's range increases by one step, to a maximum of \rngext.
-            The steps are, in order: \rngclose, \rngmed, \rnglong, and \rngext.
-            This augment can be applied multiple times.
-            Each time, the ability's range increases by an additional step.
-            \par This augment can be applied to any spell or ritual with a range that is one of the above ranges.
-
-            % Too weak at 2, weird narrative at 1?
-            \augment{2}{Giant} The ability can affect a target one size category larger.
-            This augment can be applied multiple times.
-            Its effects stack.
-            \par This augment can be applied to any spell or ritual that that has a maximum size category of targets that it can affect.
-
-            \augment{2}{Legion} If the spell would normally affect five or more specific targets, it instead affects five times that many targets.
-
-            \augment{2}{Precise} You gain a \plus1 bonus to accuracy with the ability.
-            This augment can be applied multiple times.
-            Its effects stack.
-            \par This augment can be applied to any spell or ritual that has an attack roll.
-
-            \augment{2}{Quickened} You can cast the spell as a \glossterm{minor action}.
-            In exchange, you cannot take any actions during the \glossterm{action phase} or \glossterm{delayed action phase} of the next round.
-            \par This augment can be applied to any spell.
-
-            \augment{2}{Reach} When you cast the spell, choose a location within \rngclose range.
-            The spell takes effect as if you were in the chosen location.
-            This affects your \glossterm{line of effect} for the spell, but not your \glossterm{line of sight} (since you still see from your normal location).
-            % Wording?
-            Since a spell's range is measured from your location, this augment can allow you to affect targets outside your normal range.
-            For example, a cone that normally bursts out from you would instead originate from your chosen location, potentially avoiding an obstacle between you and your target.
-            % Are there other edge cases that could cause problems?
-            \par This augment can be applied to any spell that does not create an \glossterm{emanation}.
-
-            \augment{2}{Selective} You may freely exclude any areas from the spell's effect.
-            However, all squares in the final area of the spell must be contiguous.
-            You cannot create split a spell's area into multiple completely separate areas.
-            \par This augment can be applied to any spell or ritual that affects an area.
-
-            \augment{2}{Silent} You do not need to use \glossterm{verbal components} to cast the spell.
-            \par This augment can be applied to any spell.
-
-            \augment{2}{Stilled} You do not need to use \glossterm{somatic components} to cast the spell.
-            \par This augment can be applied to any spell.
-
-            \augment{2}{Widened} The ability's area increases by one step, to a maximum of \areahuge.
-            The steps are, in order: \areasmall, \areamed, \arealarge, and \areahuge.
-            If you widen a line-shaped area, the line also increases in width by 5 feet.
-            A line used to define a wall does not have a width.
-            This augment can be applied multiple times.
-            Each time, the ability's area increases by an additional step.
-            \par This augment can be applied to any spell or ritual with an area that is one of the above areas.
-
-            % too weak at 4?
-            \augment{4}{Echoing} During the \glossterm{delayed action phase} of the next round, the spell's effect occurs again.
-            All choices you made for the original casting of the spell are made identically for the repeat casting.
-            It affects the same area, targets, and so on.
-
-            If the spell is now invalid, such as if all of its targets are out of range, the additional casting has no effect.
-            \par This augment can be applied to any spell that does not have the \glossterm{Attune} tag.
-
-            % too weak at 4?
-            \augment{4}{Phasing} When determining whether you have \glossterm{line of sight} and \glossterm{line of effect} to a particular location with the spell, you can ignore a single solid obstacle up to five feet thick.
-            This can allow you to cast spells through solid walls, though it does not grant you the ability to see through the wall.
-            \par This augment can be applied to any spell with a range.
-
-            \augment{4}{Simplified} The spell does not have the \glossterm{Focus} tag.
-
-            % \augment{4}{Dual} The spell targets an additional creature within range.
-            % This augment can be applied multiple times.
-            % Its effects stack.
-            % \par This augment can be applied to any spell that has a range and affects a single target of the caster's choice.
-            % It cannot be applied to spells that affect a single specific target, such as the caster.
-            % In addition, it cannot be applied to \glossterm{Attune} spells.
-
     \subsection{Dismissal}
         As a \glossterm{minor action}, you can dismiss any spells or rituals you used that have lasting effects.
         This requires the same casting components (verbal and somatic) as casting the spell or performing the ritual normally.
@@ -221,7 +119,7 @@
         Rituals are described in the body of the \glossterm{mystic sphere} they are associated with, following the description of spells from that mystic sphere.
 
     \subsection{Ritual Books}
-        A ritual book contains one or more rituals that you can use as frequently as you want, as long as you can spend the time and \glossterm{action points} to perform the ritual.
+        A ritual book contains one or more rituals that you can use as frequently as you want, as long as you can spend the time and \glossterm{fatigue points} to perform the ritual.
         Scribing a ritual in a ritual book costs an amount of precious inks.
 
     \subsection{Ritual Costs}\label{Ritual Costs}
@@ -230,7 +128,8 @@
             \lcaption{Ritual Costs}
             \begin{dtabularx}{\columnwidth}{X l l}
                 \tb{Ritual Rank} & \tb{Cost to Scribe} & \tb{Item Level} \tableheaderrule
-                1 & 125 gp     & 2nd  \\
+                1 & 50 gp     & 1st  \\
+                2 & 125 gp     & 2nd  \\
                 3 & 800 gp     & 5th  \\
                 4 & 2,750 gp   & 8th  \\
                 5 & 10,000 gp  & 11th \\
@@ -242,42 +141,42 @@
 
     \subsection{Performing Rituals}
         To perform a ritual, you must have a ritual book containing the ritual and the material components required for the ritual.
-        Unless otherwise specified, performing a ritual requires spending a single \glossterm{action point}.
-        Some rituals require multiple action points to complete.
-        Other creatures can supply action points to help you perform rituals; see Ritual Participants, below.
+        Some rituals cause the creatures performing them to gain \glossterm{fatigue points}, as indicated in their descriptions.
+        Other creatures can suffer this fatigue to help you perform rituals; see Ritual Participants, below.
 
-        % The action point cost for 24 hour rituals is equal to (ritual rank ^ 2) * 2.
+        % The fatigue point cost for 24 hour rituals is equal to (ritual rank ^ 2) * 2.
         % Should this be specified explicitly?
-
-        Rituals with the \glossterm{Attune} (ritual) tag do not cost action points to perform, but require a ritual participant to attune to the ritual's effect, which costs an action point.
-        For details, see \pcref{Attunement}.
 
         \subsubsection{Ritual Participants}
             Creatures can assist in the performance of rituals even if they are unable to perform rituals themselves.
             A creature that helps perform a ritual is called a ritual participant, and the creature performing the ritual is called the ritual leader.
-            A ritual participant may spend an action point in place of or in addition to the action point spent by the creature performing the ritual.
-            It may also \glossterm{attune} to the effect of the ritual in place of the creature performing the ritual.
-            Only one creature may attune to the ritual's effect in this way.
-            If multiple creatures are willing to spend action points or attune to effects, the ritual leader decides which creatures spend action points or attune to the ritual's effects.
+            A ritual participant may spend an fatigue point in place of or in addition to the fatigue point spent by the creature performing the ritual.
+            If multiple creatures are willing to gain fatigue points points or attune to effects, the ritual leader decides which creatures gain fatigue points or attune to the ritual's effects.
 
             The steps required to participate in rituals can be complex.
             Ritual participants must be given specific instructions for the actions they must perform during a ritual by a creature who knows how to perform the ritual.
             This instruction generally takes half the time required to perform the ritual.
             A creature cannot participate in rituals unless it has an Intelligence of at least 0, can speak at least one language, and has the fine motor control required to perform the \glossterm{somatic components} of rituals.
 
-            Normally, a ritual participant can only contribute one action point.
-            If the participant has access to the same \glossterm{magic source} as the ritual, they can contribute any number of action points.
+            Normally, a ritual participant can only contribute one \glossterm{fatigue point}.
+            If the participant has access to the same \glossterm{magic source} as the ritual, they can contribute any number of \glossterm{fatigue points} (until they drop unconscious).
+            Creatures willing to gain fatigue points generally gain them at a rate no faster than one fatigue point per ten minutes spent performing the ritual.
 
             \parhead{Changing Ritual Participation}
             Rituals are deeply complex magic, and they cannot be abandoned or paused partway through.
             If the number of ritual participants in a ritual decreases below its initial value, the ritual fails at the end of the next round if the number of participants is not restored.
             However, ritual participants can transfer their participation to other creatures without disrupting the ritual.
 
-            In order to transfer ritual participation, the new creature must be able to participate in the ritual, and must immediately spend the same number of action points as the creature that it is taking over from.
+            In order to transfer ritual participation, the new creature must be able to participate in the ritual.
             Similarly, the ritual leader can transfer their leadership to another creature.
             In addition to the requirements for transferring ritual participation, the new leader must know the ritual and be able to perform it themselves.
 
             Changing ritual participation and leadership is usually done when performing extraordinarily long or demanding rituals.
+
+            \parhead{Attunement Rituals}
+                Rituals with the \glossterm{Attune} (ritual) tag require a single ritual participant to \glossterm{attune} to the ritual's effect.
+                Any ritual participant can attune to the effect, but only one ritual participant can attune to the effect unless otherwise noted in the ritual's description.
+                For details, see \pcref{Attunement}.
 
     \subsection{Magical Writings}
         To record a spell in written form, a character uses complex notation that describes the magical forces involved in the spell.

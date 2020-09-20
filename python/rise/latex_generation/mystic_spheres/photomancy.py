@@ -133,26 +133,26 @@ photomancy=MysticSphere(
             \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<8> The accuracy bonus increases to +2.
         """, tags=['Compulsion', 'Sensation', 'Visual']),
-        Spell('Blur', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Blur', 2, 'Yourself', """
             The target's physical outline is distorted so it appears blurred, shifting, and wavering.
-            It gains a +1 \\glossterm<magic bonus> to Armor defense and a +2 \\glossterm<magic bonus> to the Stealth skill.
+            It gains a +1 \\glossterm<magic bonus> to Armor defense and the Stealth skill.
             This effect provides no defensive benefit against creatures immune to \\glossterm<Visual> abilities.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<3> The bonus to Stealth increases to +3.
-            \\rank<5> The bonus to Armor defense increases to +2.
-            \\rank<7> The bonus to Stealth increases to +4.
+            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<6> The bonus increases to +2.
+            \\rank<8> The bonus increases to +3.
         """, tags=['Attune (target)', 'Sensation', 'Visual']),
-        Spell('Disguise Image', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Disguise Image', 3, 'Yourself', """
             You make a Disguise check to alter the target's appearance (see \\pcref<Disguise Creature>).
             You gain a +4 bonus on the check, and you can freely alter the appearance of the target's clothes and equipment, regardless of their original form.
             However, this effect is unable to alter the sound, smell, texture, or temperature of the target or its clothes and equipment.
 
             \\rankline
-            \\rank<5> The bonus increases to +6.
-            \\rank<7> The bonus increases to +8.
+            \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<7> The bonus increases to +6.
         """, tags=['Attune (target)', 'Sensation', 'Visual']),
         Spell('Mirror Image', 1, 'Yourself', """
             Two illusory duplicates appear around you that mirror your every move.
@@ -191,14 +191,11 @@ photomancy=MysticSphere(
     rituals=[
         Spell('Continuous Light', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngmed range', """
             The target glows like a torch, shedding bright illumination in a \\areamed radius (and shadowy illumination for an additional 20 feet).
-
-            This ritual takes one minute to perform.
-        """, tags=['Attune (ritual)', 'Sensation']),
+        """, tags=['Attune (ritual)', 'Sensation'], ritual_time='one minute'),
         Spell('Permanent Light', 3, 'One Medium or smaller unattended object within \\rngclose range', """
             This ritual functions like the \\spell<continuous light> ritual, except that it loses the \\glossterm<Attune> (ritual) tag and the effect lasts permanently.
             In addition, it can only target objects.
-            This ritual takes 24 hours to perform, and it requires 8 action points from its participants.
-        """, tags=['AP', 'Sensation']),
+        """, tags=['Sensation'], ritual_time='24 hours'),
     ],
     category='debuff, combat',
 )

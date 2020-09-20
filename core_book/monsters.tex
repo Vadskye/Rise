@@ -21,18 +21,18 @@ This chapter describes the rules for monsters, and the combat statistics for a v
         \begin{dtable}
             \lcaption{Challenge Rating Effects}
             \begin{dtabularx}{\textwidth}{l X X X}
-                \tb{CR} & \tb{Hit Points} & \tb{Vital Wound Max} & \tb{Bonuses}\fn{1} \tableheaderrule
-                1/2     & \tdash\fn{2}    & 1                    & \plus0 \\
-                1       & \mult1/2        & 1                    & \plus0 \\
-                2       & \mult1          & 2                    & \plus1 \\
-                3       & \mult2          & 3                    & \plus2 \\
-                4       & \mult4          & 4                    & \plus3 \\
+                \tb{CR} & \tb{Hit Points} & \tb{Vital Wound Max} & \tb{Attunement Points} & \tb{Bonuses}\fn{1} \tableheaderrule
+                1/2     & \tdash\fn{2}    & 1                    & 0 & \plus0 \\
+                1       & \mult1/2        & 1                    & 0 & \plus0 \\
+                2       & \mult1          & 2                    & 1 & \plus1 \\
+                3       & \mult2          & 3                    & 2 & \plus2 \\
+                4       & \mult4          & 4                    & 3 & \plus3 \\
             \end{dtabularx}
             1. See \pcref{Monster CR Bonuses}. \\
             2. See \pcref{Half CR Monsters}. \\
         \end{dtable}
 
-        \subsubsection{Monster CR Bonuses}
+        \subsubsection{Monster CR Bonuses}\label{Monster CR Bonuses}
             For each challenge rating a monster has above 1, it gains a \plus1 bonus to \glossterm{accuracy}, \glossterm{defenses}, and \glossterm{power}.
 
         \subsubsection{Monster Vital Wounds}
@@ -47,21 +47,21 @@ This chapter describes the rules for monsters, and the combat statistics for a v
             Monsters with a CR of 1/2 have no \glossterm{hit points} or \glossterm{wound resistance}.
             In addition, their \glossterm{vital resistance} is one quarter of the normal value after taking into account all other modifiers.
 
-        \subsubsection{Condition Removal}
-            Monsters with a high challenge rating can remove conditions automatically.
+        \subsubsection{Spending Resources}
+            Monsters with a CR of 1 or less are unable to use abilities that cause them to lose \glossterm{hit points}, such as the \textit{sprint} ability (see \pcref{Sprint}).
+            Unless otherwise noted, all monsters are unable to use abilities that would cause them to gain \glossterm{fatigue points}, such as the \textit{desperate exertion} ability.
+
+        \subsubsection{Recovering Hit Points and Conditions}
+            Monsters cannot normally use the \textit{recover} ability.
+            However, monsters with a high challenge rating can remove conditions automatically.
             At the end of each round, monsters with CR of 1 or higher roll 1d10 \add their CR.
             If the result is 11 or higher, the monster removes one condition of its choice.
             This effect cannot remove a condition applied during the current round.
             Monsters without a sufficient understanding of the conditions affecting them generally choose randomly.
 
-        \subsubsection{Action Points and Attunement}
-            Monsters do not normally have \glossterm{action points}.
-            However, CR 2 or higher monsters can \glossterm{attune} to a number of abilities equal to their CR minus 1 without spending action points.
-            If the monster breaks its attunement to an ability, it can reattune after taking a \glossterm{short rest}.
-
         \subsubsection{Monster Actions}
             All monsters are able to take \glossterm{free actions}.
-            CR 1 or higher monsters can take \glossterm{minor actions}.
+            CR 1 or higher monsters can take \glossterm{minor actions}, though many monsters do not have any relevant minor actions to take.
             Some monsters, including many high CR monsters, can either take additional actions each round or use powerful abilities as minor actions.
             These special abilities are listed in their descriptions.
 
@@ -77,6 +77,12 @@ This chapter describes the rules for monsters, and the combat statistics for a v
         Fighting monsters of a higher level, or fighting monsters whose combined challenge rating is greater than the number of PCs, will yield an easier encounter.
 
         It is generally not a good idea for PCs to fight monsters more than three levels higher or lower than their own.
-        They may find that their attacks never miss, or always hit, and other aspects of the encounter may be similarly imbalanced in ways that are not easily remedied by simply changing the number of enemies.
+        They may find that their attacks always miss, or never miss, and other aspects of the encounter may be similarly imbalanced in ways that are not easily remedied by simply changing the number of enemies.
+
+    \subsection{Monster Knowledge}
+        You can remember relevant knowledge about monsters by making Knowledge checks (see \pcref{Knowledge}).
+        Each monster has a set of associated information that you can learn with a knowledge check of the listed \glossterm{difficulty rating}.
+        Most monsters have multiple tiers of information that you can learn depending on how good your Knowledge check is.
+        All information recorded in these descriptions is accurate, though lower check results may not provide full context for a monster's behavior or nature.
 
 \input{generated/monster_descriptions.tex}

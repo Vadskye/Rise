@@ -175,31 +175,34 @@ barrier=MysticSphere(
             Whenever an object, creature, or ability passes through the barrier from the chosen side, the barrier parts to allow it through.
             If it stops halfway, it can return to its side, but once it passes through fully it treats the barrier as impassable from the other side.
         """, tags=['Manifestation', 'Sustain (standard)']),
-        Spell('Kinetic Shield', 1, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
+        Spell('Kinetic Shield', 1, 'Yourself', """
             The target gains a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical> damage.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<3> The bonus increases to +4.
+            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            In addition, the bonus increases to +4.
             \\rank<5> The bonus increases to be equal to half your \\glossterm<power>.
             \\rank<7> The bonus increases to be equal to your \\glossterm<power>.
         """, tags=['Attune (target)']),
-        Spell('Resist Energy', 1, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
+        Spell('Resist Energy', 1, 'Yourself', """
             The target gains a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<energy> damage.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<3> The bonus increases to +4.
+            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            In addition, the bonus increases to +4.
             \\rank<5> The bonus increases to be equal to half your \\glossterm<power>.
             \\rank<7> The bonus increases to be equal to your \\glossterm<power>.
         """, tags=['Attune (target)']),
-        Spell('Universal Shield', 2, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
+        Spell('Universal Shield', 2, 'Yourself', """
             The target gains a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against all damage.
 
             \\rankline
-            \\rank<4> The bonus increases to +4.
+            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            In addition, the bonus increases to +4.
             \\rank<6> The bonus increases to be equal to half your \\glossterm<power>.
             \\rank<8> The bonus increases to be equal to your \\glossterm<power>.
         """, tags=['Attune (target)']),
@@ -234,15 +237,15 @@ barrier=MysticSphere(
             \\rankline
             \\rank<8> The range of the spell and the range of the reflection increase to \\rngmed.
         """, tags=['Attune (target)']),
-        Spell('Deflective Shield', 1, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
+        Spell('Deflective Shield', 2, 'Yourself', """
             The target gains a +1 \\glossterm<magic bonus> to Armor defense and Reflex defense.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<3> The bonus to Reflex defense increases to +2.
-            \\rank<5> The bonus to Armor defense increases to +2.
-            \\rank<7> The bonus to Reflex dfense increases to +3.
+            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<6> The bonus increases to +2.
+            \\rank<8> The bonus increases to +3.
         """, tags=['Attune (target)']),
         Spell('Antilife Shell', 6, '\\glossterm<Enemies> that enter the area (see text)', """
             This spell creates a repulsive field in a \\areamed radius \\glossterm<zone> from your location.
@@ -263,9 +266,7 @@ barrier=MysticSphere(
             It can exist comfortably in conditions between \minus50 and 140 degrees Fahrenheit.
             Its equipment, if any, is also protected.
             This does not protect the target from fire or cold damage.
-
-            This ritual takes one minute to perform.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one minute'),
         Spell('Mystic Lock', 3, 'One large or smaller closable, nonmagical object within \\rngclose range, such as a door or box', """
             The target object becomes magically locked.
             It can be unlocked with a Devices check against a \\glossterm<difficulty rating> equal to 20 \\add your \\glossterm<power>.
@@ -274,13 +275,11 @@ barrier=MysticSphere(
             You can freely pass your own \\ritual<mystic lock> as if the object were not locked.
             This effect lasts as long as you \\glossterm<attune> to it.
             If you use this ability multiple times, you can attune to it each time.
-
-            This ritual takes one minute to perform.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one minute'),
         Spell('Resilient Lock', 5, 'One large or smaller closable, nonmagical object within \\rngclose range, such as a door or box', f"""
             This ritual functions like the \\ritual<mystic lock> ritual, except that the \\glossterm<difficulty rating> to unlock the target with a Devices check is instead equal to 30 + your \\glossterm<power>.
             In addition, the \\glossterm<difficulty rating> to break it open increases by 20 instead of by 10.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one hour'),
         Spell('Explosive Runes', 4, 'One Small or smaller unattended object with writing on it within \\rngclose range', """
             % TODO: clarify how to identify that this is Explosive Runes instead of bad handwriting
             The writing on the target is altered by the runes in subtle ways, making it more difficult to read.
@@ -292,15 +291,12 @@ barrier=MysticSphere(
 
             After the target object explodes in this way, the ritual is \\glossterm<dismissed>.
             If the target is destroyed or rendered illegible, the ritual is dismissed without exploding.
-            This ritual takes one hour to perform.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one hour'),
         Spell('Scryward', 3, None, """
             This ritual creates a ward against scrying in a \\arealarge radius \\glossterm<zone> centered on your location.
             All \\glossterm<Scrying> effects fail to function in the area.
             This effect is permanent.
-
-            This ritual takes 24 hour to perform, and requires 8 action points from its participants.
-        """, tags=['AP']),
+        """, tags=[], ritual_time='24 hours'),
         Spell('Private Sanctum', 5, None, """
             This ritual creates a ward against any external perception in a \\arealarge radius \\glossterm<zone> centered on your location.
             This effect is permanent.
@@ -308,9 +304,7 @@ barrier=MysticSphere(
             Anyone observing the area from outside sees only a dark, silent void, regardless of darkvision and similar abilities.
             In addition, all \\glossterm<Scrying> effects fail to function in the area.
             Creatures inside the area can see within the area and outside of it without any difficulty.
-
-            This ritual takes 24 hours to perform, and requires 32 action points from its participants.
-        """, tags=['AP']),
+        """, tags=[], ritual_time='24 hours'),
     ],
     category='buff, defense',
 )

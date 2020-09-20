@@ -12,31 +12,29 @@ bless=MysticSphere(
     ],
     lists=['Divine'],
     spells=[
-        Spell('Blessing of Freedom', 5, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Blessing of Freedom', 5, 'Yourself', """
             The target cannot be \\glossterm<slowed>, \\glossterm<decelerated>, or \\glossterm<immobilized>.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<7> The bonus increases to +4.
+            \\rank<7> The target also cannot be \\glossterm<paralyzed>.
         """, tags=['Attune (target)']),
-        Spell('Blessing of Swiftness', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Blessing of Swiftness', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<base speed>, up to a maximum of double its \\glossterm<base speed>.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<4> The speed bonus increases to +15 feet.
-            \\rank<6> The speed bonus increases to +20 feet.
-            \\rank<8> The speed bonus increases to +30 feet.
+            \\rank<5> The speed bonus increases to +20 feet.
+            \\rank<7> The speed bonus increases to +30 feet.
         """, tags=['Attune (target)']),
-        Spell('Blessing of Recovery', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Blessing of Recovery', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a additional +5 bonus to a vital wound after a \\glossterm<long rest> (see \\pcref<Removing Vital Wounds>).
 
             \\rankline
-            \\rank<4> The target gains two additional +5 bonuses.
-            \\rank<6> The target gains three additional +5 bonuses.
-            \\rank<8> The target gains four additional +5 bonuses.
+            \\rank<5> The target gains two additional +5 bonuses.
+            \\rank<7> The target gains three additional +5 bonuses.
         """, tags=['Attune (target)']),
         Spell('Blessing of Regeneration', 7, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             At the end of each round, the target regains one lost \\glossterm<hit point>.
@@ -86,8 +84,8 @@ bless=MysticSphere(
             \\rank<5> The bonus increases to be equal to three times your \\glossterm<power>.
             \\rank<7> The bonus increases to be equal to four times your \\glossterm<power>.
         """, tags=['Swift']),
-        Spell('Blessing of Purification', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            The target gains a +4 \\glossterm<magic bonus> to \\glossterm<defenses> against \\glossterm<poisons> and \\glossterm<diseases>.
+        Spell('Blessing of the Purified Body', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            The target gains a +4 bonus to \\glossterm<defenses> against \\glossterm<poisons> and \\glossterm<diseases>.
 
             You can cast this spell as a \\glossterm<minor action>.
 
@@ -96,33 +94,31 @@ bless=MysticSphere(
             \\rank<6> The bonus increases to +8.
             \\rank<8> The bonus increases to +10.
         """, tags=['Attune (target)']),
-        Spell('Blessing of Mental Clarity', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            The target gains a +4 \\glossterm<magic bonus> to \\glossterm<defenses> against \\glossterm<Compulsion> and \\glossterm<Emotion> effects.
+        Spell('Blessing of Mental Clarity', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            The target gains a +4 bonus to \\glossterm<defenses> against \\glossterm<Compulsion> and \\glossterm<Emotion> effects.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<5> The bonus increases to +6.
-            \\rank<7> The bonus increases to +8.
+            \\rank<6> The bonus increases to +6.
+            \\rank<8> The bonus increases to +8.
         """, tags=['Attune (target)']),
-        Spell('Blessing of Protection', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Blessing of Protection', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +1 \\glossterm<magic bonus> to Armor defense and Mental defense.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<3> The bonus to Mental defense increases to +2.
-            \\rank<5> The bonus to Armor defense increases to +2.
-            \\rank<7> The bonus to Mental defense increases to +3.
+            \\rank<6> The bonus increases to +2.
+            \\rank<8> The bonus increases to +3.
         """, tags=['Attune (target)']),
-        Spell('Battle Blessing', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Battle Blessing', 5, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with all attacks.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<5> The target also gains a +2 \\glossterm<magic bonus> to \\glossterm<power>.
-            \\rank<7> The accuracy increases to +2.
+            \\rank<7> The bonus increases to +2.
         """, tags=['Attune (target)']),
         Spell('Blessing of Resilience', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             Whenever the target gains a \\glossterm<condition>, it can choose to negate that condition.
@@ -149,17 +145,17 @@ bless=MysticSphere(
             \\rankline
             \\rank<8> The area increases to a \\arealarge radius.
         """, tags=[]),
-        Spell('Blessing of Might', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Blessing of Might', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +2 \\glossterm<magic bonus> to Strength for the purpose of determining its \\glossterm<carrying capacity>.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<3> The bonus increases to +4.
-            \\rank<5> The bonus increases to +6.
-            \\rank<7> The bonus increases to +8.
+            \\rank<4> The bonus increases to +4.
+            \\rank<6> The bonus increases to +6.
+            \\rank<8> The bonus increases to +8.
         """, tags=['Attune (target)']),
-        Spell('Blessing of Endurance', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Blessing of Endurance', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target increases its current \\glossterm<hit points> by 2.
             This can cause its current hit points to exceed its normal maximum hit points.
             When this ability ends, the target loses \\glossterm<hit points> equal to the number of hit points it gained this way.
@@ -167,11 +163,10 @@ bless=MysticSphere(
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<3> The number of additional hit points increases to 3.
-            \\rank<5> The number of additional hit points increases to 4.
-            \\rank<7> The number of additional hit points increases to 5.
+            \\rank<5> The number of additional hit points increases to 3.
+            \\rank<7> The number of additional hit points increases to 4.
         """, tags=['Attune (target)']),
-        Spell('Blessing of Persistence', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Blessing of Wakefulness', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target cannot fall asleep or be knocked unconscious, even by \\glossterm<vital wounds>.
             If it is already unconscious for any reason, this spell wakes it up before it decides whether to attune to this spell.
 
@@ -190,48 +185,38 @@ bless=MysticSphere(
             The target gains a +5 \\glossterm<magic bonus> to \\glossterm<resistances>.
             If the target is moved, this effect ends.
             Otherwise, it lasts for one year.
-
-            This ritual takes one hour to perform.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one hour'),
         Spell('Enduring Fortification', 4, 'One unattended, nonmagical object or part of an object of up to Large size', """
             This ritual functions like the \\spell<blessing of fortification> ritual, except that the effect lasts for one hundred years.
-        """, tags=['AP']),
+        """, tags=[], ritual_time='24 hours'),
         Spell('Greater Enduring Fortification', 5,'Greater Fortification', """
             This ritual functions like the \\spell<greater fortification> ritual, except that the effect lasts for one hundred years.
-        """, tags=['AP']),
+        """, tags=[], ritual_time='24 hours'),
         Spell('Greater Fortification', 4, 'One unattended, nonmagical object or part of an object of up to Large size', """
             This ritual functions like the \\spell<blessing of fortification> ritual, except that the bonus to \\glossterm<resistances> increases to 10.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one hour'),
         Spell('Supreme Fortification', 7, 'One unattended, nonmagical object or part of an object of up to Large size', """
             This ritual functions like the \\spell<blessing of fortification> ritual, except that the bonus to \\glossterm<resistances> increases to 15.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one hour'),
         Spell('Bless Water', 1, 'One pint of unattended, nonmagical water within \\rngclose range', """
             The target becomes holy water.
             Holy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck undead creature or an evil outsider.
-
-            This ritual takes one minute to perform.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one minute'),
         Spell('Permanent Bless Water', 3, 'One pint of unattended, nonmagical water within \\rngclose range', """
             This ritual functions like the \\spell<bless water> ritual, except that it loses the \\glossterm<Attune> (ritual) tag and the effect lasts permanently.
-            This ritual takes one hour to perform.
-        """, tags=['AP']),
+        """, tags=[], ritual_time='one hour'),
         Spell('Curse Water', 1, 'One pint of unattended, nonmagical water within \\rngclose range', """
             The target becomes unholy water.
             Unholy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck good outsider.
-
-            This ritual takes one minute to perform.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one minute'),
         Spell('Permanent Curse Water', 3, 'One pint of unattended, nonmagical water within \\rngclose range', """
             This ritual functions like the \\spell<curse water> ritual, except that it loses the \\glossterm<Attune> (ritual) tag and the effect lasts permanently.
-            This ritual takes one hour to perform.
-        """, tags=['AP']),
+        """, tags=[], ritual_time='one hour'),
         Spell('Blessing of Purification', 1, 'All food and water in a single square within \\rngclose range', """
             The targets are purified.
             Spoiled, rotten, poisonous, or otherwise contaminated food and water becomes pure and suitable for eating and drinking.
             This does not prevent subsequent natural decay or spoiling.
-
-            This ritual takes one hour to perform.
-        """, tags=['AP']),
+        """, tags=[], ritual_time='one hour'),
     ],
     category='buff, offense',
 )

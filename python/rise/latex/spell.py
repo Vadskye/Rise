@@ -14,6 +14,7 @@ class Spell(object):
             tags,
             extra_text=None,
             focus=True,
+            ritual_time=None,
     ):
         if focus:
             tags += ['Focus']
@@ -24,8 +25,16 @@ class Spell(object):
         self.effect_text = effect_text
         self.tags = tags
         self.extra_text = extra_text
+        self.ritual_time = ritual_time
 
-        is_ritual = 'This ritual' in effect_text
+        is_ritual = bool(ritual_time)
+
+        if 'This ritual' in effect_text and not is_ritual:
+            logger.log(WARNING, f"Ritual {self.name} is missing ritual_time")
+        if is_ritual and ritual_time != 'special' and 'This ritual takes' in effect_text:
+            logger.log(WARNING, f"Ritual {self.name} has redundant ritual time")
+        if is_ritual and ritual_time == 'special' and 'This ritual takes' not in effect_text:
+            logger.log(WARNING, f"Ritual {self.name} is missing special ritual time")
 
         if (self.tags):
             for tag in self.tags:
@@ -42,11 +51,17 @@ class Spell(object):
             if (self.level in [2, 4, 6] and 'rank<8>' not in effect_text):
                 logger.log(WARNING, f"Spell {self.name} has wrong rank upgrade pattern")
 
+    def ritual_time_text(self):
+        if self.ritual_time == 'special' or not self.ritual_time:
+            return ''
+
+        fatigue_points_text = f"{(self.level ** 2) * 2} \\glossterm<fatigue points>" if self.ritual_time in ['24 hours', 'one week'] else 'one \\glossterm<fatigue point>'
+        return f"This ritual takes 24 hours to perform, and it requires {fatigue_points_text} from its participants."
 
     def __str__(self):
         tag_text = to_latex_tags(self.tags)
 
-        ability_type = 'attuneability' if 'Attune' in tag_text else ('apability' if 'AP' in self.tags else 'freeability')
+        ability_type = 'attuneability' if 'Attune' in tag_text else 'freeability'
 
         if isinstance(self.targets, str):
             target_tag = 'targets' if targets_are_plural(self.targets) else 'target'
@@ -69,6 +84,7 @@ class Spell(object):
             \\begin<{ability_type}>[Rank {self.level}]<\\hypertarget<spell:{self.name}><{self.name}>>{tag_text}
                 {target_text}
                 {self.effect_text.strip()}
+                {self.ritual_time_text()}
             \\end<{ability_type}>
             \\vspace<0.25em>
             {self.extra_text.strip() if self.extra_text else ""}

@@ -1,8 +1,13 @@
 import { ActiveAbility } from "@src/active_abilities";
-import { CalculatedAttack, calculateStrike } from "@src/calculate";
+import {
+  calculateBaseKnowledgeDifficulty,
+  CalculatedAttack,
+  calculateStrike,
+} from "@src/calculate";
 import { DamageType, damageTypes } from "@src/data";
 import * as format from "@src/latex/format";
 import { Monster, MonsterBase, MonsterGroup, monsterIsMonsterGroup } from "@src/monsters";
+import { knowledgeSkillsByMonsterType } from "@src/monsters/types";
 import { movementModes } from "@src/movement_modes";
 import { PassiveAbility } from "@src/passive_abilities";
 import { Weapon } from "@src/weapons";
@@ -20,12 +25,11 @@ export function monsterToLatex(monster: Monster): string {
 
 function monsterGroupToLatex(monsterGroup: MonsterGroup) {
   return `
-    \\subsection{${monsterGroup.name}}
-      ${monsterGroup.description}
+    \\subsection{${titleCase(monsterGroup.name)}}
+      ${monsterGroup.description || ""}
+      ${formatKnowledge(monsterGroup)}
 
-      ${monsterGroup.tactics || ""}
-
-      ${monsterGroup.monsters.map((m) => monsterBaseToLatex(m, { subsection: true }))}
+      ${monsterGroup.monsters.map((m) => monsterBaseToLatex(m, { subsection: true })).join("\n")}
   `;
 }
 
@@ -36,8 +40,8 @@ function monsterBaseToLatex(monster: MonsterBase, options?: { subsection?: Boole
     ${getTitleAndTypeHeader(monster).trim()}
     \\vspace{0em}
 
-    ${typeof monster.description === "string" ? monster.description : monster.description(monster)}
-    ${monster.tactics ? `\\parhead{Tactics} ${monster.tactics}` : ""}
+    ${monster.description || ""}
+    ${formatKnowledge(monster)}
 
     ${getMainContent(monster).trim()}
     ${getFooter(monster).trim()}
@@ -46,6 +50,28 @@ function monsterBaseToLatex(monster: MonsterBase, options?: { subsection?: Boole
   `
     .replace(/\$name/g, getMonsterName(monster).toLowerCase())
     .replace(/\$Name/g, sentenceCase(getMonsterName(monster)));
+}
+
+function formatKnowledge(
+  monster: Pick<MonsterBase, "level" | "knowledge" | "knowledgeSkills" | "monsterType">,
+) {
+  if (!monster.knowledge) {
+    return "";
+  }
+
+  const baseDifficulty = calculateBaseKnowledgeDifficulty(monster);
+  const modifiers = _.sortBy(Object.keys(monster.knowledge), Number);
+  return modifiers
+    .map((modifier) => {
+      const mod = Number(modifier);
+      // TODO: allow monsters to specify their own knowledge skill(s)
+      const knowledgeSkills =
+        monster.knowledgeSkills || knowledgeSkillsByMonsterType[monster.monsterType];
+      return `\\parhead{Knowledge (${knowledgeSkills.join(", ")}) ${baseDifficulty + mod}} ${
+        monster.knowledge![mod]
+      }`;
+    })
+    .join("\n");
 }
 
 function getMonsectionArgs(monster: MonsterBase) {
@@ -194,7 +220,7 @@ function formatActiveAbility(activeAbility: ActiveAbility) {
   return `
     \\begin{freeability}{${titleCase(activeAbility.name)}}${tagText}
       ${targetText}
-      ${activeAbility.effect}
+      ${activeAbility.effect.trim()}
     \\end{freeability}
   `;
 }
@@ -221,7 +247,7 @@ function formatStrike(monster: MonsterBase, weapon: Weapon) {
   const formattedTags = weapon.tags ? weapon.tags.sort().map((t) => sentenceCase(t)) : [];
   const damageText = `${format.damageDice(strike.power)} ${damageTypeText}`;
   const tagsText = formattedTags.join(", ");
-  const rangeText = weapon.rangeIncrement ? `; ${weapon.rangeIncrement} ft. range` : "";
+  const rangeText = weapon.rangeIncrement ? `${weapon.rangeIncrement} ft. range` : "";
   const effectComponents = [damageText, rangeText, tagsText].filter(Boolean);
   return `${name} \\plus${strike.accuracy} (${effectComponents.join("; ")})`;
 }
@@ -233,13 +259,15 @@ function getPassiveAbilities(monster: MonsterBase) {
 }
 
 function formatPassiveAbility(ability: PassiveAbility, monster: MonsterBase) {
+  // Weirdly, we can't use `titleCase(ability.name)` here because it converts "low-light vision"
+  // into "Low Light Vision".
   if (ability.description) {
     const descriptionText =
       typeof ability.description === "string" ? ability.description : ability.description(monster);
     // TODO: indicate magical abilities somehow
-    return `\\parhead{${titleCase(ability.name)}} ${descriptionText}`;
+    return `\\parhead{${ability.name}} ${descriptionText}`;
   } else {
-    return `\\par \\textbf{${titleCase(ability.name)}}`;
+    return `\\par\\noindent\\textbf{${ability.name}}`;
   }
 }
 

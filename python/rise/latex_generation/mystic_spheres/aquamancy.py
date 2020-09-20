@@ -133,13 +133,13 @@ aquamancy=MysticSphere(
             \\rank<6> The area of the wall increases to a \\areahuge line.
             \\rank<8> The area of the wall increases to a \\areaext line.
         """, tags=['Sustain (minor)', 'Manifestation']),
-        Spell('Underwater Freedom', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Underwater Freedom', 2, 'Yourself', """
             The target suffers no penalties for acting underwater, except for those relating to using ranged weapons.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<4> The target can also breathe water as if it was air.
+            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The target also gains a swim speed equal to half its \\glossterm<base speed>.
             \\rank<8> The swim speed increases to be equal to the target's \\glossterm<base speed>.
         """, tags=['Attune (target)']),
@@ -155,7 +155,7 @@ aquamancy=MysticSphere(
         """, tags=[]),
         Spell('Geyser', 3, 'Everything in a \\arealarge, 5 ft.\\ wide vertical line within \\rngmed range', """
             Make an attack vs. Armor against each target.
-            If this spell has its area increased, such as with the Widened \\glossterm<augment>, only the length of the line increases.
+            If this spell has its area increased, only the length of the line increases.
             \\hit Each target takes takes bludgeoning \\glossterm<standard damage>.
 
             \\rankline
@@ -282,14 +282,10 @@ aquamancy=MysticSphere(
     rituals=[
         Spell('Dampen', 1, 'Up to five ritual participants', """
             Each target gains a \\glossterm<magic bonus> equal to your \\glossterm<power> to \\glossterm<resistances> against fire damage.
-
-            This ritual takes one minute to perform.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one minute'),
         Spell('Water Breathing', 3, 'One ritual participant', """
             The target can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
-
-            This ritual takes one minute to perform.
-        """, tags=['Attune (ritual)']),
+        """, tags=['Attune (ritual)'], ritual_time='one minute'),
     ],
     category='damage',
 )
