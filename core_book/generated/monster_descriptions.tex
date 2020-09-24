@@ -833,6 +833,48 @@
   \end{monsection}
   
   
+  \begin{monsection}{Raven}{1}[1]
+    \vspace{-1em}\spelltwocol{}{Tiny animal}\vspace{-1em}
+    \vspace{0em}
+
+    
+      The statistics presented here can describe most nonpredatory birds of similar size.
+    
+    \parhead{Knowledge (nature) 6} 
+        A raven is a Tiny glossy black bird.
+        A typical raven is about 2 feet long and has a wingspan of about 4 feet.
+      
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 2 \monsep
+          \textbf{AD} 8 \monsep
+          \textbf{Fort} 1 \monsep
+          \textbf{Ref} 7 \monsep
+          \textbf{Ment} 3
+        \pari \textbf{WR} 3 \monsep
+        \textbf{VR} 14
+        \pari \textbf{Strike:}
+            Talon \plus4 (1d8 piercing and slashing)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 20 ft. \monsep
+        \textbf{Space} 2-1/2 ft. \monsep
+        \textbf{Reach} 0 ft.
+      \pari \textbf{Awareness} \plus1
+      \pari \textbf{Attributes}
+        Str -8, Dex 3,
+        Con -4, Int -6,
+        Per 2, Wil 0
+      \pari \textbf{Accuracy} 2 \monsep
+        \textbf{Mundane Power} -7 \monsep
+      \textbf{Magical Power} 1
+      \pari \textbf{Alignment} Always true neutral
+    \end{monsterfooter}
+  \end{monsection}
+  
+  
   \begin{monsection}{Roc}{9}[4]
     \vspace{-1em}\spelltwocol{}{Gargantuan animal}\vspace{-1em}
     \vspace{0em}
@@ -1131,48 +1173,6 @@
         Per 0, Wil -1
       \pari \textbf{Accuracy} 2 \monsep
         \textbf{Mundane Power} 3 \monsep
-      \textbf{Magical Power} 1
-      \pari \textbf{Alignment} Always true neutral
-    \end{monsterfooter}
-  \end{monsection}
-  
-  
-  \begin{monsection}{Raven}{1}[1]
-    \vspace{-1em}\spelltwocol{}{Tiny animal}\vspace{-1em}
-    \vspace{0em}
-
-    
-      The statistics presented here can describe most nonpredatory birds of similar size.
-    
-    \parhead{Knowledge (nature) 6} 
-        A raven is a Tiny glossy black bird.
-        A typical raven is about 2 feet long and has a wingspan of about 4 feet.
-      
-
-    \begin{spellcontent}
-      \begin{spelltargetinginfo}
-        \pari \textbf{HP} 2 \monsep
-          \textbf{AD} 8 \monsep
-          \textbf{Fort} 1 \monsep
-          \textbf{Ref} 7 \monsep
-          \textbf{Ment} 3
-        \pari \textbf{WR} 3 \monsep
-        \textbf{VR} 14
-        \pari \textbf{Strike:}
-            Talon \plus4 (1d8 piercing and slashing)
-      \end{spelltargetinginfo}
-    \end{spellcontent}
-    \begin{monsterfooter}
-      \pari \textbf{Speed} 20 ft. \monsep
-        \textbf{Space} 2-1/2 ft. \monsep
-        \textbf{Reach} 0 ft.
-      \pari \textbf{Awareness} \plus1
-      \pari \textbf{Attributes}
-        Str -8, Dex 3,
-        Con -4, Int -6,
-        Per 2, Wil 0
-      \pari \textbf{Accuracy} 2 \monsep
-        \textbf{Mundane Power} -7 \monsep
       \textbf{Magical Power} 1
       \pari \textbf{Alignment} Always true neutral
     \end{monsterfooter}
@@ -2150,7 +2150,7 @@
       
       \parhead{Knowledge (arcana) 8} 
       Black dragons are associated with death and decay.
-      They are the only dragon with an acidic breath.
+      They are the only type of dragon that commonly kills for no purpose other than sport, even if there is no treasure to be gained.
     
 \parhead{Knowledge (arcana) 13} 
       As black dragons age, the fleshy hide around their horns and face deteriorates, causing their heads to increasingly resemble a skull.
@@ -2195,7 +2195,7 @@
     \end{monsterfooter}
   \end{monsubsection}
   \begin{freeability}{Acid Breath}
-      \targets{Everything in a \areamed, 5 ft. wide line}
+      \targets{Everything in a \areasmall, 5 ft. wide line}
       A dragon can use its breath weapon as a \glossterm{minor action}.
       After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
       \par The wyrmling black dragon makes a \plus5 attack
@@ -2205,7 +2205,8 @@
     \end{freeability}
   
       
-      \parhead{Blindsense} 50 ft.
+      \parhead{Acid immunity} A black dragon is immune to acid damage.
+    \parhead{Blindsense} 50 ft.
     \parhead{Darkvision} 200 ft.
     \par\noindent\textbf{Low-light vision}
     \parhead{Underwater Freedom} 
@@ -2249,18 +2250,7 @@
       \pari \textbf{Alignment} Usually neutral evil
     \end{monsterfooter}
   \end{monsubsection}
-  \begin{freeability}{Acid Breath}
-      \targets{Everything in a \areamed, 10 ft. wide line}
-      A dragon can use its breath weapon as a \glossterm{minor action}.
-      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
-      \par The juvenile black dragon makes a \plus8 attack
-        vs. Reflex against each target.
-    
-    \hit Each target takes 2d10 acid damage.
-    \end{freeability}
-  
-
-    \begin{freeability}{Frightful Presence}
+  \begin{freeability}{Frightful Presence}
       \targets{Enemies within a \areasmall radius from the dragon}
       The dragon can use this ability once per round as a \glossterm{free action}.
       After it attacks a creature this way, the creature becomes immune to this ability until it takes a \glossterm{short rest}.
@@ -2270,8 +2260,20 @@
     \hit Each target is \glossterm{shaken} by the dragon as a \glossterm{condition}.
     \end{freeability}
   
+
+    \begin{freeability}{Acid Breath}
+      \targets{Everything in a \areamed, 5 ft. wide line}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The juvenile black dragon makes a \plus8 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 2d10 acid damage.
+    \end{freeability}
+  
       
-      \parhead{Blindsense} 50 ft.
+      \parhead{Acid immunity} A black dragon is immune to acid damage.
+    \parhead{Blindsense} 50 ft.
     \parhead{Darkvision} 200 ft.
     \par\noindent\textbf{Low-light vision}
     \parhead{Underwater Freedom} 
@@ -2315,18 +2317,7 @@
       \pari \textbf{Alignment} Usually neutral evil
     \end{monsterfooter}
   \end{monsubsection}
-  \begin{freeability}{Acid Breath}
-      \targets{Everything in a \arealarge, 10 ft. wide line}
-      A dragon can use its breath weapon as a \glossterm{minor action}.
-      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
-      \par The young adult black dragon makes a \plus12 attack
-        vs. Reflex against each target.
-    
-    \hit Each target takes 4d8 acid damage.
-    \end{freeability}
-  
-
-    \begin{freeability}{Frightful Presence}
+  \begin{freeability}{Frightful Presence}
       \targets{Enemies within a \areamed radius from the dragon}
       The dragon can use this ability once per round as a \glossterm{free action}.
       After it attacks a creature this way, the creature becomes immune to this ability until it takes a \glossterm{short rest}.
@@ -2336,8 +2327,20 @@
     \hit Each target is \glossterm{shaken} by the dragon as a \glossterm{condition}.
     \end{freeability}
   
+
+    \begin{freeability}{Acid Breath}
+      \targets{Everything in a \arealarge, 5 ft. wide line}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The young adult black dragon makes a \plus12 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 4d8 acid damage.
+    \end{freeability}
+  
       
-      \parhead{Blindsense} 50 ft.
+      \parhead{Acid immunity} A black dragon is immune to acid damage.
+    \parhead{Blindsense} 50 ft.
     \parhead{Darkvision} 200 ft.
     \par\noindent\textbf{Low-light vision}
     \parhead{Underwater Freedom} 
@@ -2381,18 +2384,7 @@
       \pari \textbf{Alignment} Usually neutral evil
     \end{monsterfooter}
   \end{monsubsection}
-  \begin{freeability}{Acid Breath}
-      \targets{Everything in a \arealarge, 10 ft. wide line}
-      A dragon can use its breath weapon as a \glossterm{minor action}.
-      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
-      \par The adult black dragon makes a \plus16 attack
-        vs. Reflex against each target.
-    
-    \hit Each target takes 7d10 acid damage.
-    \end{freeability}
-  
-
-    \begin{freeability}{Frightful Presence}
+  \begin{freeability}{Frightful Presence}
       \targets{Enemies within a \arealarge radius from the dragon}
       The dragon can use this ability once per round as a \glossterm{free action}.
       After it attacks a creature this way, the creature becomes immune to this ability until it takes a \glossterm{short rest}.
@@ -2402,8 +2394,20 @@
     \hit Each target is \glossterm{shaken} by the dragon as a \glossterm{condition}.
     \end{freeability}
   
+
+    \begin{freeability}{Acid Breath}
+      \targets{Everything in a \arealarge, 10 ft. wide line}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The adult black dragon makes a \plus16 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 7d10 acid damage.
+    \end{freeability}
+  
       
-      \parhead{Blindsense} 50 ft.
+      \parhead{Acid immunity} A black dragon is immune to acid damage.
+    \parhead{Blindsense} 50 ft.
     \parhead{Darkvision} 200 ft.
     \par\noindent\textbf{Low-light vision}
     \parhead{Underwater Freedom} 
@@ -2447,18 +2451,7 @@
       \pari \textbf{Alignment} Usually neutral evil
     \end{monsterfooter}
   \end{monsubsection}
-  \begin{freeability}{Acid Breath}
-      \targets{Everything in a \areahuge, 10 ft. wide line}
-      A dragon can use its breath weapon as a \glossterm{minor action}.
-      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
-      \par The old black dragon makes a \plus19 attack
-        vs. Reflex against each target.
-    
-    \hit Each target takes 8d10+10 acid damage.
-    \end{freeability}
-  
-
-    \begin{freeability}{Frightful Presence}
+  \begin{freeability}{Frightful Presence}
       \targets{Enemies within a \areahuge radius from the dragon}
       The dragon can use this ability once per round as a \glossterm{free action}.
       After it attacks a creature this way, the creature becomes immune to this ability until it takes a \glossterm{short rest}.
@@ -2468,8 +2461,20 @@
     \hit Each target is \glossterm{shaken} by the dragon as a \glossterm{condition}.
     \end{freeability}
   
+
+    \begin{freeability}{Acid Breath}
+      \targets{Everything in a \areahuge, 10 ft. wide line}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The old black dragon makes a \plus19 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 8d10+10 acid damage.
+    \end{freeability}
+  
       
-      \parhead{Blindsense} 50 ft.
+      \parhead{Acid immunity} A black dragon is immune to acid damage.
+    \parhead{Blindsense} 50 ft.
     \parhead{Darkvision} 200 ft.
     \par\noindent\textbf{Low-light vision}
     \parhead{Underwater Freedom} 
@@ -2513,18 +2518,7 @@
       \pari \textbf{Alignment} Usually neutral evil
     \end{monsterfooter}
   \end{monsubsection}
-  \begin{freeability}{Acid Breath}
-      \targets{Everything in a \areahuge, 15 ft. wide line}
-      A dragon can use its breath weapon as a \glossterm{minor action}.
-      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
-      \par The ancient black dragon makes a \plus23 attack
-        vs. Reflex against each target.
-    
-    \hit Each target takes 8d10+40 acid damage.
-    \end{freeability}
-  
-
-    \begin{freeability}{Frightful Presence}
+  \begin{freeability}{Frightful Presence}
       \targets{Enemies within a \areaext radius from the dragon}
       The dragon can use this ability once per round as a \glossterm{free action}.
       After it attacks a creature this way, the creature becomes immune to this ability until it takes a \glossterm{short rest}.
@@ -2534,8 +2528,20 @@
     \hit Each target is \glossterm{shaken} by the dragon as a \glossterm{condition}.
     \end{freeability}
   
+
+    \begin{freeability}{Acid Breath}
+      \targets{Everything in a \areahuge, 15 ft. wide line}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The ancient black dragon makes a \plus23 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 8d10+40 acid damage.
+    \end{freeability}
+  
       
-      \parhead{Blindsense} 50 ft.
+      \parhead{Acid immunity} A black dragon is immune to acid damage.
+    \parhead{Blindsense} 50 ft.
     \parhead{Darkvision} 200 ft.
     \par\noindent\textbf{Low-light vision}
     \parhead{Underwater Freedom} 
@@ -2579,18 +2585,7 @@
       \pari \textbf{Alignment} Usually neutral evil
     \end{monsterfooter}
   \end{monsubsection}
-  \begin{freeability}{Acid Breath}
-      \targets{Everything in a \areaext, 15 ft. wide line}
-      A dragon can use its breath weapon as a \glossterm{minor action}.
-      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
-      \par The wyrm black dragon makes a \plus27 attack
-        vs. Reflex against each target.
-    
-    \hit Each target takes 8d10+60 acid damage.
-    \end{freeability}
-  
-
-    \begin{freeability}{Frightful Presence}
+  \begin{freeability}{Frightful Presence}
       \targets{Enemies within a 500 ft. radius from the dragon}
       The dragon can use this ability once per round as a \glossterm{free action}.
       After it attacks a creature this way, the creature becomes immune to this ability until it takes a \glossterm{short rest}.
@@ -2600,8 +2595,20 @@
     \hit Each target is \glossterm{shaken} by the dragon as a \glossterm{condition}.
     \end{freeability}
   
+
+    \begin{freeability}{Acid Breath}
+      \targets{Everything in a \areaext, 15 ft. wide line}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The wyrm black dragon makes a \plus27 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 8d10+60 acid damage.
+    \end{freeability}
+  
       
-      \parhead{Blindsense} 50 ft.
+      \parhead{Acid immunity} A black dragon is immune to acid damage.
+    \parhead{Blindsense} 50 ft.
     \parhead{Darkvision} 200 ft.
     \par\noindent\textbf{Low-light vision}
     \parhead{Underwater Freedom} 
@@ -2645,18 +2652,7 @@
       \pari \textbf{Alignment} Usually neutral evil
     \end{monsterfooter}
   \end{monsubsection}
-  \begin{freeability}{Acid Breath}
-      \targets{Everything in a \areaext, 20 ft. wide line}
-      A dragon can use its breath weapon as a \glossterm{minor action}.
-      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
-      \par The great wyrm black dragon makes a \plus31 attack
-        vs. Reflex against each target.
-    
-    \hit Each target takes 8d10+90 acid damage.
-    \end{freeability}
-  
-
-    \begin{freeability}{Frightful Presence}
+  \begin{freeability}{Frightful Presence}
       \targets{Enemies within a 1,000 ft. radius from the dragon}
       The dragon can use this ability once per round as a \glossterm{free action}.
       After it attacks a creature this way, the creature becomes immune to this ability until it takes a \glossterm{short rest}.
@@ -2666,13 +2662,1556 @@
     \hit Each target is \glossterm{shaken} by the dragon as a \glossterm{condition}.
     \end{freeability}
   
+
+    \begin{freeability}{Acid Breath}
+      \targets{Everything in a \areaext, 20 ft. wide line}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The great wyrm black dragon makes a \plus31 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 8d10+90 acid damage.
+    \end{freeability}
+  
       
-      \parhead{Blindsense} 50 ft.
+      \parhead{Acid immunity} A black dragon is immune to acid damage.
+    \parhead{Blindsense} 50 ft.
     \parhead{Darkvision} 200 ft.
     \par\noindent\textbf{Low-light vision}
     \parhead{Underwater Freedom} 
         A black dragon can breathe underwater indefinitely.
         It suffers no penalties for fighting underwater, and its breath weapon functions at full strength underwater.
+  
+  
+    \subsection{Blue Dragons}
+      
+      \parhead{Knowledge (arcana) 8} 
+      Blue dragons are the most cunning and quick-thinking dragons.
+    
+
+      
+  \begin{monsubsection}{Wyrmling Blue Dragon}{2}[4]
+    \vspace{-1em}\spelltwocol{}{Tiny dragon}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 40 \monsep
+          \textbf{AD} 14 \monsep
+          \textbf{Fort} 9 \monsep
+          \textbf{Ref} 11 \monsep
+          \textbf{Ment} 7
+        \pari \textbf{WR} 7 \monsep
+        \textbf{VR} 19
+        \pari \textbf{Strikes:}
+            Bite \plus5 (2d6 bludgeoning and piercing);
+\par Claw \plus7 (1d8 piercing and slashing)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 20 ft. \monsep
+        \textbf{Space} 2-1/2 ft. \monsep
+        \textbf{Reach} 0 ft.
+      \pari \textbf{Awareness} \plus6
+      \pari \textbf{Attributes}
+        Str -2, Dex 4,
+        Con 2, Int 0,
+        Per 0, Wil -1
+      \pari \textbf{Accuracy} 5 \monsep
+        \textbf{Mundane Power} 3 \monsep
+      \textbf{Magical Power} 4
+      \pari \textbf{Alignment} Usually lawful evil
+    \end{monsterfooter}
+  \end{monsubsection}
+  \begin{freeability}{Electricity Breath}
+      \targets{Everything in a \areasmall, 5 ft. wide line}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The wyrmling blue dragon makes a \plus5 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 1d10 electricity damage.
+    \end{freeability}
+  
+      
+      \parhead{Blindsense} 50 ft.
+    \parhead{Darkvision} 200 ft.
+    \parhead{Electricity immunity} A blue dragon is immune to electricity damage.
+    \par\noindent\textbf{Low-light vision}
+  
+
+  \begin{monsubsection}{Juvenile Blue Dragon}{5}[4]
+    \vspace{-1em}\spelltwocol{}{Medium dragon}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 44 \monsep
+          \textbf{AD} 15 \monsep
+          \textbf{Fort} 13 \monsep
+          \textbf{Ref} 12 \monsep
+          \textbf{Ment} 12
+        \pari \textbf{WR} 11 \monsep
+        \textbf{VR} 31
+        \pari \textbf{Strikes:}
+            Bite \plus8 (4d10 bludgeoning and piercing);
+\par Claw \plus10 (4d6 piercing and slashing)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 30 ft. \monsep
+        \textbf{Space} 5 ft. \monsep
+        \textbf{Reach} 5 ft.
+      \pari \textbf{Awareness} \plus9
+      \pari \textbf{Attributes}
+        Str 7, Dex 3,
+        Con 6, Int 3,
+        Per 3, Wil 3
+      \pari \textbf{Accuracy} 8 \monsep
+        \textbf{Mundane Power} 13 \monsep
+      \textbf{Magical Power} 11
+      \pari \textbf{Alignment} Usually lawful evil
+    \end{monsterfooter}
+  \end{monsubsection}
+  \begin{freeability}{Frightful Presence}
+      \targets{Enemies within a \areasmall radius from the dragon}
+      The dragon can use this ability once per round as a \glossterm{free action}.
+      After it attacks a creature this way, the creature becomes immune to this ability until it takes a \glossterm{short rest}.
+      \par The juvenile blue dragon makes a \plus8 attack
+        vs. Mental against each target.
+    
+    \hit Each target is \glossterm{shaken} by the dragon as a \glossterm{condition}.
+    \end{freeability}
+  
+
+    \begin{freeability}{Electricity Breath}
+      \targets{Everything in a \areamed, 5 ft. wide line}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The juvenile blue dragon makes a \plus8 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 2d10 electricity damage.
+    \end{freeability}
+  
+      
+      \parhead{Blindsense} 50 ft.
+    \parhead{Darkvision} 200 ft.
+    \parhead{Electricity immunity} A blue dragon is immune to electricity damage.
+    \par\noindent\textbf{Low-light vision}
+  
+
+  \begin{monsubsection}{Young Adult Blue Dragon}{8}[4]
+    \vspace{-1em}\spelltwocol{}{Large dragon}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 44 \monsep
+          \textbf{AD} 17 \monsep
+          \textbf{Fort} 16 \monsep
+          \textbf{Ref} 14 \monsep
+          \textbf{Ment} 16
+        \pari \textbf{WR} 17 \monsep
+        \textbf{VR} 48
+        \pari \textbf{Strikes:}
+            Bite \plus12 (6d10 bludgeoning and piercing);
+\par Claw \plus14 (4d10 piercing and slashing)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 40 ft. \monsep
+        \textbf{Space} 10 ft. \monsep
+        \textbf{Reach} 10 ft.
+      \pari \textbf{Awareness} \plus13
+      \pari \textbf{Attributes}
+        Str 11, Dex 0,
+        Con 9, Int 9,
+        Per 9, Wil 9
+      \pari \textbf{Accuracy} 12 \monsep
+        \textbf{Mundane Power} 17 \monsep
+      \textbf{Magical Power} 15
+      \pari \textbf{Alignment} Usually lawful evil
+    \end{monsterfooter}
+  \end{monsubsection}
+  \begin{freeability}{Frightful Presence}
+      \targets{Enemies within a \areamed radius from the dragon}
+      The dragon can use this ability once per round as a \glossterm{free action}.
+      After it attacks a creature this way, the creature becomes immune to this ability until it takes a \glossterm{short rest}.
+      \par The young adult blue dragon makes a \plus12 attack
+        vs. Mental against each target.
+    
+    \hit Each target is \glossterm{shaken} by the dragon as a \glossterm{condition}.
+    \end{freeability}
+  
+
+    \begin{freeability}{Electricity Breath}
+      \targets{Everything in a \arealarge, 5 ft. wide line}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The young adult blue dragon makes a \plus12 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 4d8 electricity damage.
+    \end{freeability}
+  
+      
+      \parhead{Blindsense} 50 ft.
+    \parhead{Darkvision} 200 ft.
+    \parhead{Electricity immunity} A blue dragon is immune to electricity damage.
+    \par\noindent\textbf{Low-light vision}
+  
+
+  \begin{monsubsection}{Adult Blue Dragon}{11}[4]
+    \vspace{-1em}\spelltwocol{}{Huge dragon}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 48 \monsep
+          \textbf{AD} 20 \monsep
+          \textbf{Fort} 20 \monsep
+          \textbf{Ref} 17 \monsep
+          \textbf{Ment} 20
+        \pari \textbf{WR} 28 \monsep
+        \textbf{VR} 73
+        \pari \textbf{Strikes:}
+            Bite \plus16 (8d10+10 bludgeoning and piercing);
+\par Claw \plus18 (7d10 piercing and slashing)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 50 ft. \monsep
+        \textbf{Space} 15 ft. \monsep
+        \textbf{Reach} 15 ft.
+      \pari \textbf{Awareness} \plus17
+      \pari \textbf{Attributes}
+        Str 15, Dex 0,
+        Con 13, Int 13,
+        Per 13, Wil 13
+      \pari \textbf{Accuracy} 16 \monsep
+        \textbf{Mundane Power} 23 \monsep
+      \textbf{Magical Power} 21
+      \pari \textbf{Alignment} Usually lawful evil
+    \end{monsterfooter}
+  \end{monsubsection}
+  \begin{freeability}{Frightful Presence}
+      \targets{Enemies within a \arealarge radius from the dragon}
+      The dragon can use this ability once per round as a \glossterm{free action}.
+      After it attacks a creature this way, the creature becomes immune to this ability until it takes a \glossterm{short rest}.
+      \par The adult blue dragon makes a \plus16 attack
+        vs. Mental against each target.
+    
+    \hit Each target is \glossterm{shaken} by the dragon as a \glossterm{condition}.
+    \end{freeability}
+  
+
+    \begin{freeability}{Electricity Breath}
+      \targets{Everything in a \arealarge, 10 ft. wide line}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The adult blue dragon makes a \plus16 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 7d10 electricity damage.
+    \end{freeability}
+  
+      
+      \parhead{Blindsense} 50 ft.
+    \parhead{Darkvision} 200 ft.
+    \parhead{Electricity immunity} A blue dragon is immune to electricity damage.
+    \par\noindent\textbf{Low-light vision}
+  
+
+  \begin{monsubsection}{Old Blue Dragon}{14}[4]
+    \vspace{-1em}\spelltwocol{}{Gargantuan dragon}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 52 \monsep
+          \textbf{AD} 22 \monsep
+          \textbf{Fort} 24 \monsep
+          \textbf{Ref} 19 \monsep
+          \textbf{Ment} 23
+        \pari \textbf{WR} 42 \monsep
+        \textbf{VR} 106
+        \pari \textbf{Strikes:}
+            Bite \plus19 (8d10+30 bludgeoning and piercing);
+\par Claw \plus21 (8d10+10 piercing and slashing)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 60 ft. \monsep
+        \textbf{Space} 20 ft. \monsep
+        \textbf{Reach} 20 ft.
+      \pari \textbf{Awareness} \plus20
+      \pari \textbf{Attributes}
+        Str 19, Dex -1,
+        Con 17, Int 16,
+        Per 16, Wil 16
+      \pari \textbf{Accuracy} 19 \monsep
+        \textbf{Mundane Power} 27 \monsep
+      \textbf{Magical Power} 24
+      \pari \textbf{Alignment} Usually lawful evil
+    \end{monsterfooter}
+  \end{monsubsection}
+  \begin{freeability}{Frightful Presence}
+      \targets{Enemies within a \areahuge radius from the dragon}
+      The dragon can use this ability once per round as a \glossterm{free action}.
+      After it attacks a creature this way, the creature becomes immune to this ability until it takes a \glossterm{short rest}.
+      \par The old blue dragon makes a \plus19 attack
+        vs. Mental against each target.
+    
+    \hit Each target is \glossterm{shaken} by the dragon as a \glossterm{condition}.
+    \end{freeability}
+  
+
+    \begin{freeability}{Electricity Breath}
+      \targets{Everything in a \areahuge, 10 ft. wide line}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The old blue dragon makes a \plus19 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 8d10+10 electricity damage.
+    \end{freeability}
+  
+      
+      \parhead{Blindsense} 50 ft.
+    \parhead{Darkvision} 200 ft.
+    \parhead{Electricity immunity} A blue dragon is immune to electricity damage.
+    \par\noindent\textbf{Low-light vision}
+  
+
+  \begin{monsubsection}{Ancient Blue Dragon}{17}[4]
+    \vspace{-1em}\spelltwocol{}{Colossal dragon}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 52 \monsep
+          \textbf{AD} 25 \monsep
+          \textbf{Fort} 27 \monsep
+          \textbf{Ref} 22 \monsep
+          \textbf{Ment} 27
+        \pari \textbf{WR} 56 \monsep
+        \textbf{VR} 136
+        \pari \textbf{Strikes:}
+            Bite \plus23 (8d10+60 bludgeoning and piercing);
+\par Claw \plus25 (8d10+40 piercing and slashing)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 70 ft. \monsep
+        \textbf{Space} 30 ft. \monsep
+        \textbf{Reach} 30 ft.
+      \pari \textbf{Awareness} \plus24
+      \pari \textbf{Attributes}
+        Str 23, Dex -1,
+        Con 20, Int 20,
+        Per 20, Wil 20
+      \pari \textbf{Accuracy} 23 \monsep
+        \textbf{Mundane Power} 33 \monsep
+      \textbf{Magical Power} 30
+      \pari \textbf{Alignment} Usually lawful evil
+    \end{monsterfooter}
+  \end{monsubsection}
+  \begin{freeability}{Frightful Presence}
+      \targets{Enemies within a \areaext radius from the dragon}
+      The dragon can use this ability once per round as a \glossterm{free action}.
+      After it attacks a creature this way, the creature becomes immune to this ability until it takes a \glossterm{short rest}.
+      \par The ancient blue dragon makes a \plus23 attack
+        vs. Mental against each target.
+    
+    \hit Each target is \glossterm{shaken} by the dragon as a \glossterm{condition}.
+    \end{freeability}
+  
+
+    \begin{freeability}{Electricity Breath}
+      \targets{Everything in a \areahuge, 15 ft. wide line}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The ancient blue dragon makes a \plus23 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 8d10+40 electricity damage.
+    \end{freeability}
+  
+      
+      \parhead{Blindsense} 50 ft.
+    \parhead{Darkvision} 200 ft.
+    \parhead{Electricity immunity} A blue dragon is immune to electricity damage.
+    \par\noindent\textbf{Low-light vision}
+  
+
+  \begin{monsubsection}{Wyrm Blue Dragon}{20}[4]
+    \vspace{-1em}\spelltwocol{}{Colossal dragon}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 52 \monsep
+          \textbf{AD} 30 \monsep
+          \textbf{Fort} 30 \monsep
+          \textbf{Ref} 24 \monsep
+          \textbf{Ment} 31
+        \pari \textbf{WR} 73 \monsep
+        \textbf{VR} 168
+        \pari \textbf{Strikes:}
+            Bite \plus27 (8d10+80 bludgeoning and piercing);
+\par Claw \plus29 (8d10+60 piercing and slashing)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 70 ft. \monsep
+        \textbf{Space} 30 ft. \monsep
+        \textbf{Reach} 30 ft.
+      \pari \textbf{Awareness} \plus28
+      \pari \textbf{Attributes}
+        Str 27, Dex -2,
+        Con 23, Int 24,
+        Per 24, Wil 24
+      \pari \textbf{Accuracy} 27 \monsep
+        \textbf{Mundane Power} 37 \monsep
+      \textbf{Magical Power} 34
+      \pari \textbf{Alignment} Usually lawful evil
+    \end{monsterfooter}
+  \end{monsubsection}
+  \begin{freeability}{Frightful Presence}
+      \targets{Enemies within a 500 ft. radius from the dragon}
+      The dragon can use this ability once per round as a \glossterm{free action}.
+      After it attacks a creature this way, the creature becomes immune to this ability until it takes a \glossterm{short rest}.
+      \par The wyrm blue dragon makes a \plus27 attack
+        vs. Mental against each target.
+    
+    \hit Each target is \glossterm{shaken} by the dragon as a \glossterm{condition}.
+    \end{freeability}
+  
+
+    \begin{freeability}{Electricity Breath}
+      \targets{Everything in a \areaext, 15 ft. wide line}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The wyrm blue dragon makes a \plus27 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 8d10+60 electricity damage.
+    \end{freeability}
+  
+      
+      \parhead{Blindsense} 50 ft.
+    \parhead{Darkvision} 200 ft.
+    \parhead{Electricity immunity} A blue dragon is immune to electricity damage.
+    \par\noindent\textbf{Low-light vision}
+  
+
+  \begin{monsubsection}{Great Wyrm Blue Dragon}{23}[4]
+    \vspace{-1em}\spelltwocol{}{Colossal dragon}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 56 \monsep
+          \textbf{AD} 32 \monsep
+          \textbf{Fort} 34 \monsep
+          \textbf{Ref} 26 \monsep
+          \textbf{Ment} 35
+        \pari \textbf{WR} 93 \monsep
+        \textbf{VR} 208
+        \pari \textbf{Strikes:}
+            Bite \plus31 (8d10+120 bludgeoning and piercing);
+\par Claw \plus33 (8d10+100 piercing and slashing)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 70 ft. \monsep
+        \textbf{Space} 30 ft. \monsep
+        \textbf{Reach} 30 ft.
+      \pari \textbf{Awareness} \plus32
+      \pari \textbf{Attributes}
+        Str 32, Dex -3,
+        Con 27, Int 28,
+        Per 28, Wil 28
+      \pari \textbf{Accuracy} 31 \monsep
+        \textbf{Mundane Power} 44 \monsep
+      \textbf{Magical Power} 40
+      \pari \textbf{Alignment} Usually lawful evil
+    \end{monsterfooter}
+  \end{monsubsection}
+  \begin{freeability}{Frightful Presence}
+      \targets{Enemies within a 1,000 ft. radius from the dragon}
+      The dragon can use this ability once per round as a \glossterm{free action}.
+      After it attacks a creature this way, the creature becomes immune to this ability until it takes a \glossterm{short rest}.
+      \par The great wyrm blue dragon makes a \plus31 attack
+        vs. Mental against each target.
+    
+    \hit Each target is \glossterm{shaken} by the dragon as a \glossterm{condition}.
+    \end{freeability}
+  
+
+    \begin{freeability}{Electricity Breath}
+      \targets{Everything in a \areaext, 20 ft. wide line}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The great wyrm blue dragon makes a \plus31 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 8d10+90 electricity damage.
+    \end{freeability}
+  
+      
+      \parhead{Blindsense} 50 ft.
+    \parhead{Darkvision} 200 ft.
+    \parhead{Electricity immunity} A blue dragon is immune to electricity damage.
+    \par\noindent\textbf{Low-light vision}
+  
+  
+    \subsection{Green Dragons}
+      
+      \parhead{Knowledge (arcana) 8} 
+      Green dragons are the most jealous and greedy dragons.
+      Their lust for wealth, especially the wealth of others, is insatiable.
+      Towns near a green dragon may never know peace until it leaves.
+    
+\parhead{Knowledge (arcana) 13} 
+      Younger green dragons sometimes get themselves into trouble by trying to steal from more powerful creatures, or by pillaging cities with the resources to pay for a hefty bounty.
+      Green dragons that have survived to old age are usually more reasonable than the average green dragon, and recognize the necessity for other creatures to temporarily have nice things.
+    
+
+      
+  \begin{monsubsection}{Wyrmling Green Dragon}{2}[4]
+    \vspace{-1em}\spelltwocol{}{Tiny dragon}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 40 \monsep
+          \textbf{AD} 14 \monsep
+          \textbf{Fort} 9 \monsep
+          \textbf{Ref} 11 \monsep
+          \textbf{Ment} 7
+        \pari \textbf{WR} 7 \monsep
+        \textbf{VR} 19
+        \pari \textbf{Strikes:}
+            Bite \plus5 (2d6 bludgeoning and piercing);
+\par Claw \plus7 (1d8 piercing and slashing)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 20 ft. \monsep
+        \textbf{Space} 2-1/2 ft. \monsep
+        \textbf{Reach} 0 ft.
+      \pari \textbf{Awareness} \plus6
+      \pari \textbf{Attributes}
+        Str -2, Dex 4,
+        Con 2, Int 0,
+        Per 0, Wil -1
+      \pari \textbf{Accuracy} 5 \monsep
+        \textbf{Mundane Power} 3 \monsep
+      \textbf{Magical Power} 4
+      \pari \textbf{Alignment} Usually chaotic evil
+    \end{monsterfooter}
+  \end{monsubsection}
+  \begin{freeability}{Acid Breath}
+      \targets{Everything in a \areasmall cone}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The wyrmling green dragon makes a \plus5 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 1d10 acid damage.
+    \end{freeability}
+  
+      
+      \parhead{Acid immunity} A green dragon is immune to acid damage.
+    \parhead{Blindsense} 50 ft.
+    \parhead{Darkvision} 200 ft.
+    \par\noindent\textbf{Low-light vision}
+  
+
+  \begin{monsubsection}{Juvenile Green Dragon}{5}[4]
+    \vspace{-1em}\spelltwocol{}{Medium dragon}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 44 \monsep
+          \textbf{AD} 15 \monsep
+          \textbf{Fort} 13 \monsep
+          \textbf{Ref} 12 \monsep
+          \textbf{Ment} 12
+        \pari \textbf{WR} 11 \monsep
+        \textbf{VR} 31
+        \pari \textbf{Strikes:}
+            Bite \plus8 (4d10 bludgeoning and piercing);
+\par Claw \plus10 (4d6 piercing and slashing)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 30 ft. \monsep
+        \textbf{Space} 5 ft. \monsep
+        \textbf{Reach} 5 ft.
+      \pari \textbf{Awareness} \plus9
+      \pari \textbf{Attributes}
+        Str 7, Dex 3,
+        Con 6, Int 3,
+        Per 3, Wil 3
+      \pari \textbf{Accuracy} 8 \monsep
+        \textbf{Mundane Power} 13 \monsep
+      \textbf{Magical Power} 11
+      \pari \textbf{Alignment} Usually chaotic evil
+    \end{monsterfooter}
+  \end{monsubsection}
+  \begin{freeability}{Frightful Presence}
+      \targets{Enemies within a \areasmall radius from the dragon}
+      The dragon can use this ability once per round as a \glossterm{free action}.
+      After it attacks a creature this way, the creature becomes immune to this ability until it takes a \glossterm{short rest}.
+      \par The juvenile green dragon makes a \plus8 attack
+        vs. Mental against each target.
+    
+    \hit Each target is \glossterm{shaken} by the dragon as a \glossterm{condition}.
+    \end{freeability}
+  
+
+    \begin{freeability}{Acid Breath}
+      \targets{Everything in a \areamed cone}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The juvenile green dragon makes a \plus8 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 2d10 acid damage.
+    \end{freeability}
+  
+      
+      \parhead{Acid immunity} A green dragon is immune to acid damage.
+    \parhead{Blindsense} 50 ft.
+    \parhead{Darkvision} 200 ft.
+    \par\noindent\textbf{Low-light vision}
+  
+
+  \begin{monsubsection}{Young Adult Green Dragon}{8}[4]
+    \vspace{-1em}\spelltwocol{}{Large dragon}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 44 \monsep
+          \textbf{AD} 17 \monsep
+          \textbf{Fort} 16 \monsep
+          \textbf{Ref} 14 \monsep
+          \textbf{Ment} 16
+        \pari \textbf{WR} 17 \monsep
+        \textbf{VR} 48
+        \pari \textbf{Strikes:}
+            Bite \plus12 (6d10 bludgeoning and piercing);
+\par Claw \plus14 (4d10 piercing and slashing)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 40 ft. \monsep
+        \textbf{Space} 10 ft. \monsep
+        \textbf{Reach} 10 ft.
+      \pari \textbf{Awareness} \plus13
+      \pari \textbf{Attributes}
+        Str 11, Dex 0,
+        Con 9, Int 9,
+        Per 9, Wil 9
+      \pari \textbf{Accuracy} 12 \monsep
+        \textbf{Mundane Power} 17 \monsep
+      \textbf{Magical Power} 15
+      \pari \textbf{Alignment} Usually chaotic evil
+    \end{monsterfooter}
+  \end{monsubsection}
+  \begin{freeability}{Frightful Presence}
+      \targets{Enemies within a \areamed radius from the dragon}
+      The dragon can use this ability once per round as a \glossterm{free action}.
+      After it attacks a creature this way, the creature becomes immune to this ability until it takes a \glossterm{short rest}.
+      \par The young adult green dragon makes a \plus12 attack
+        vs. Mental against each target.
+    
+    \hit Each target is \glossterm{shaken} by the dragon as a \glossterm{condition}.
+    \end{freeability}
+  
+
+    \begin{freeability}{Acid Breath}
+      \targets{Everything in a \areamed cone}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The young adult green dragon makes a \plus12 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 4d8 acid damage.
+    \end{freeability}
+  
+      
+      \parhead{Acid immunity} A green dragon is immune to acid damage.
+    \parhead{Blindsense} 50 ft.
+    \parhead{Darkvision} 200 ft.
+    \par\noindent\textbf{Low-light vision}
+  
+
+  \begin{monsubsection}{Adult Green Dragon}{11}[4]
+    \vspace{-1em}\spelltwocol{}{Huge dragon}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 48 \monsep
+          \textbf{AD} 20 \monsep
+          \textbf{Fort} 20 \monsep
+          \textbf{Ref} 17 \monsep
+          \textbf{Ment} 20
+        \pari \textbf{WR} 28 \monsep
+        \textbf{VR} 73
+        \pari \textbf{Strikes:}
+            Bite \plus16 (8d10+10 bludgeoning and piercing);
+\par Claw \plus18 (7d10 piercing and slashing)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 50 ft. \monsep
+        \textbf{Space} 15 ft. \monsep
+        \textbf{Reach} 15 ft.
+      \pari \textbf{Awareness} \plus17
+      \pari \textbf{Attributes}
+        Str 15, Dex 0,
+        Con 13, Int 13,
+        Per 13, Wil 13
+      \pari \textbf{Accuracy} 16 \monsep
+        \textbf{Mundane Power} 23 \monsep
+      \textbf{Magical Power} 21
+      \pari \textbf{Alignment} Usually chaotic evil
+    \end{monsterfooter}
+  \end{monsubsection}
+  \begin{freeability}{Frightful Presence}
+      \targets{Enemies within a \arealarge radius from the dragon}
+      The dragon can use this ability once per round as a \glossterm{free action}.
+      After it attacks a creature this way, the creature becomes immune to this ability until it takes a \glossterm{short rest}.
+      \par The adult green dragon makes a \plus16 attack
+        vs. Mental against each target.
+    
+    \hit Each target is \glossterm{shaken} by the dragon as a \glossterm{condition}.
+    \end{freeability}
+  
+
+    \begin{freeability}{Acid Breath}
+      \targets{Everything in a \arealarge cone}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The adult green dragon makes a \plus16 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 7d10 acid damage.
+    \end{freeability}
+  
+      
+      \parhead{Acid immunity} A green dragon is immune to acid damage.
+    \parhead{Blindsense} 50 ft.
+    \parhead{Darkvision} 200 ft.
+    \par\noindent\textbf{Low-light vision}
+  
+
+  \begin{monsubsection}{Old Green Dragon}{14}[4]
+    \vspace{-1em}\spelltwocol{}{Gargantuan dragon}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 52 \monsep
+          \textbf{AD} 22 \monsep
+          \textbf{Fort} 24 \monsep
+          \textbf{Ref} 19 \monsep
+          \textbf{Ment} 23
+        \pari \textbf{WR} 42 \monsep
+        \textbf{VR} 106
+        \pari \textbf{Strikes:}
+            Bite \plus19 (8d10+30 bludgeoning and piercing);
+\par Claw \plus21 (8d10+10 piercing and slashing)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 60 ft. \monsep
+        \textbf{Space} 20 ft. \monsep
+        \textbf{Reach} 20 ft.
+      \pari \textbf{Awareness} \plus20
+      \pari \textbf{Attributes}
+        Str 19, Dex -1,
+        Con 17, Int 16,
+        Per 16, Wil 16
+      \pari \textbf{Accuracy} 19 \monsep
+        \textbf{Mundane Power} 27 \monsep
+      \textbf{Magical Power} 24
+      \pari \textbf{Alignment} Usually chaotic evil
+    \end{monsterfooter}
+  \end{monsubsection}
+  \begin{freeability}{Frightful Presence}
+      \targets{Enemies within a \areahuge radius from the dragon}
+      The dragon can use this ability once per round as a \glossterm{free action}.
+      After it attacks a creature this way, the creature becomes immune to this ability until it takes a \glossterm{short rest}.
+      \par The old green dragon makes a \plus19 attack
+        vs. Mental against each target.
+    
+    \hit Each target is \glossterm{shaken} by the dragon as a \glossterm{condition}.
+    \end{freeability}
+  
+
+    \begin{freeability}{Acid Breath}
+      \targets{Everything in a \arealarge cone}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The old green dragon makes a \plus19 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 8d10+10 acid damage.
+    \end{freeability}
+  
+      
+      \parhead{Acid immunity} A green dragon is immune to acid damage.
+    \parhead{Blindsense} 50 ft.
+    \parhead{Darkvision} 200 ft.
+    \par\noindent\textbf{Low-light vision}
+  
+
+  \begin{monsubsection}{Ancient Green Dragon}{17}[4]
+    \vspace{-1em}\spelltwocol{}{Colossal dragon}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 52 \monsep
+          \textbf{AD} 25 \monsep
+          \textbf{Fort} 27 \monsep
+          \textbf{Ref} 22 \monsep
+          \textbf{Ment} 27
+        \pari \textbf{WR} 56 \monsep
+        \textbf{VR} 136
+        \pari \textbf{Strikes:}
+            Bite \plus23 (8d10+60 bludgeoning and piercing);
+\par Claw \plus25 (8d10+40 piercing and slashing)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 70 ft. \monsep
+        \textbf{Space} 30 ft. \monsep
+        \textbf{Reach} 30 ft.
+      \pari \textbf{Awareness} \plus24
+      \pari \textbf{Attributes}
+        Str 23, Dex -1,
+        Con 20, Int 20,
+        Per 20, Wil 20
+      \pari \textbf{Accuracy} 23 \monsep
+        \textbf{Mundane Power} 33 \monsep
+      \textbf{Magical Power} 30
+      \pari \textbf{Alignment} Usually chaotic evil
+    \end{monsterfooter}
+  \end{monsubsection}
+  \begin{freeability}{Frightful Presence}
+      \targets{Enemies within a \areaext radius from the dragon}
+      The dragon can use this ability once per round as a \glossterm{free action}.
+      After it attacks a creature this way, the creature becomes immune to this ability until it takes a \glossterm{short rest}.
+      \par The ancient green dragon makes a \plus23 attack
+        vs. Mental against each target.
+    
+    \hit Each target is \glossterm{shaken} by the dragon as a \glossterm{condition}.
+    \end{freeability}
+  
+
+    \begin{freeability}{Acid Breath}
+      \targets{Everything in a \areahuge cone}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The ancient green dragon makes a \plus23 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 8d10+40 acid damage.
+    \end{freeability}
+  
+      
+      \parhead{Acid immunity} A green dragon is immune to acid damage.
+    \parhead{Blindsense} 50 ft.
+    \parhead{Darkvision} 200 ft.
+    \par\noindent\textbf{Low-light vision}
+  
+
+  \begin{monsubsection}{Wyrm Green Dragon}{20}[4]
+    \vspace{-1em}\spelltwocol{}{Colossal dragon}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 52 \monsep
+          \textbf{AD} 30 \monsep
+          \textbf{Fort} 30 \monsep
+          \textbf{Ref} 24 \monsep
+          \textbf{Ment} 31
+        \pari \textbf{WR} 73 \monsep
+        \textbf{VR} 168
+        \pari \textbf{Strikes:}
+            Bite \plus27 (8d10+80 bludgeoning and piercing);
+\par Claw \plus29 (8d10+60 piercing and slashing)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 70 ft. \monsep
+        \textbf{Space} 30 ft. \monsep
+        \textbf{Reach} 30 ft.
+      \pari \textbf{Awareness} \plus28
+      \pari \textbf{Attributes}
+        Str 27, Dex -2,
+        Con 23, Int 24,
+        Per 24, Wil 24
+      \pari \textbf{Accuracy} 27 \monsep
+        \textbf{Mundane Power} 37 \monsep
+      \textbf{Magical Power} 34
+      \pari \textbf{Alignment} Usually chaotic evil
+    \end{monsterfooter}
+  \end{monsubsection}
+  \begin{freeability}{Frightful Presence}
+      \targets{Enemies within a 500 ft. radius from the dragon}
+      The dragon can use this ability once per round as a \glossterm{free action}.
+      After it attacks a creature this way, the creature becomes immune to this ability until it takes a \glossterm{short rest}.
+      \par The wyrm green dragon makes a \plus27 attack
+        vs. Mental against each target.
+    
+    \hit Each target is \glossterm{shaken} by the dragon as a \glossterm{condition}.
+    \end{freeability}
+  
+
+    \begin{freeability}{Acid Breath}
+      \targets{Everything in a \areahuge cone}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The wyrm green dragon makes a \plus27 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 8d10+60 acid damage.
+    \end{freeability}
+  
+      
+      \parhead{Acid immunity} A green dragon is immune to acid damage.
+    \parhead{Blindsense} 50 ft.
+    \parhead{Darkvision} 200 ft.
+    \par\noindent\textbf{Low-light vision}
+  
+
+  \begin{monsubsection}{Great Wyrm Green Dragon}{23}[4]
+    \vspace{-1em}\spelltwocol{}{Colossal dragon}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 56 \monsep
+          \textbf{AD} 32 \monsep
+          \textbf{Fort} 34 \monsep
+          \textbf{Ref} 26 \monsep
+          \textbf{Ment} 35
+        \pari \textbf{WR} 93 \monsep
+        \textbf{VR} 208
+        \pari \textbf{Strikes:}
+            Bite \plus31 (8d10+120 bludgeoning and piercing);
+\par Claw \plus33 (8d10+100 piercing and slashing)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 70 ft. \monsep
+        \textbf{Space} 30 ft. \monsep
+        \textbf{Reach} 30 ft.
+      \pari \textbf{Awareness} \plus32
+      \pari \textbf{Attributes}
+        Str 32, Dex -3,
+        Con 27, Int 28,
+        Per 28, Wil 28
+      \pari \textbf{Accuracy} 31 \monsep
+        \textbf{Mundane Power} 44 \monsep
+      \textbf{Magical Power} 40
+      \pari \textbf{Alignment} Usually chaotic evil
+    \end{monsterfooter}
+  \end{monsubsection}
+  \begin{freeability}{Frightful Presence}
+      \targets{Enemies within a 1,000 ft. radius from the dragon}
+      The dragon can use this ability once per round as a \glossterm{free action}.
+      After it attacks a creature this way, the creature becomes immune to this ability until it takes a \glossterm{short rest}.
+      \par The great wyrm green dragon makes a \plus31 attack
+        vs. Mental against each target.
+    
+    \hit Each target is \glossterm{shaken} by the dragon as a \glossterm{condition}.
+    \end{freeability}
+  
+
+    \begin{freeability}{Acid Breath}
+      \targets{Everything in a \areaext cone}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The great wyrm green dragon makes a \plus31 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 8d10+90 acid damage.
+    \end{freeability}
+  
+      
+      \parhead{Acid immunity} A green dragon is immune to acid damage.
+    \parhead{Blindsense} 50 ft.
+    \parhead{Darkvision} 200 ft.
+    \par\noindent\textbf{Low-light vision}
+  
+  
+    \subsection{Red Dragons}
+      
+      \parhead{Knowledge (arcana) 8} 
+      Red dragons are the most aggressive dragons, and they are extremely confident in their own abilities.
+      This combination makes them the most feared type of dragon in most locations.
+    
+\parhead{Knowledge (arcana) 13} 
+      Red dragons are less intelligent and more impulsive than most dragons, though older red dragons are still far above average human intelligence.
+    
+\parhead{Knowledge (arcana) 18} 
+      Older red dragons know that their fire breath is hot enough to destroy valuable treasure, so they tend to avoid using it in fights that they expect to be both easy and profitable.
+    
+
+      
+  \begin{monsubsection}{Wyrmling Red Dragon}{2}[4]
+    \vspace{-1em}\spelltwocol{}{Tiny dragon}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 40 \monsep
+          \textbf{AD} 14 \monsep
+          \textbf{Fort} 9 \monsep
+          \textbf{Ref} 11 \monsep
+          \textbf{Ment} 9
+        \pari \textbf{WR} 7 \monsep
+        \textbf{VR} 19
+        \pari \textbf{Strikes:}
+            Bite \plus5 (2d6 bludgeoning and piercing);
+\par Claw \plus7 (1d8 piercing and slashing)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 20 ft. \monsep
+        \textbf{Space} 2-1/2 ft. \monsep
+        \textbf{Reach} 0 ft.
+      \pari \textbf{Awareness} \plus6
+      \pari \textbf{Attributes}
+        Str -2, Dex 4,
+        Con 2, Int -2,
+        Per 0, Wil 2
+      \pari \textbf{Accuracy} 5 \monsep
+        \textbf{Mundane Power} 3 \monsep
+      \textbf{Magical Power} 6
+      \pari \textbf{Alignment} Usually chaotic evil
+    \end{monsterfooter}
+  \end{monsubsection}
+  \begin{freeability}{Fire Breath}
+      \targets{Everything in a \areasmall cone}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The wyrmling red dragon makes a \plus5 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 2d6 fire damage.
+    \end{freeability}
+  
+      
+      \parhead{Blindsense} 50 ft.
+    \parhead{Darkvision} 200 ft.
+    \parhead{Fire immunity} A red dragon is immune to fire damage.
+    \par\noindent\textbf{Low-light vision}
+  
+
+  \begin{monsubsection}{Juvenile Red Dragon}{5}[4]
+    \vspace{-1em}\spelltwocol{}{Medium dragon}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 44 \monsep
+          \textbf{AD} 15 \monsep
+          \textbf{Fort} 13 \monsep
+          \textbf{Ref} 12 \monsep
+          \textbf{Ment} 14
+        \pari \textbf{WR} 11 \monsep
+        \textbf{VR} 31
+        \pari \textbf{Strikes:}
+            Bite \plus8 (4d10 bludgeoning and piercing);
+\par Claw \plus10 (4d6 piercing and slashing)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 30 ft. \monsep
+        \textbf{Space} 5 ft. \monsep
+        \textbf{Reach} 5 ft.
+      \pari \textbf{Awareness} \plus9
+      \pari \textbf{Attributes}
+        Str 7, Dex 3,
+        Con 6, Int -1,
+        Per 3, Wil 7
+      \pari \textbf{Accuracy} 8 \monsep
+        \textbf{Power} 13
+      \pari \textbf{Alignment} Usually chaotic evil
+    \end{monsterfooter}
+  \end{monsubsection}
+  \begin{freeability}{Frightful Presence}
+      \targets{Enemies within a \areasmall radius from the dragon}
+      The dragon can use this ability once per round as a \glossterm{free action}.
+      After it attacks a creature this way, the creature becomes immune to this ability until it takes a \glossterm{short rest}.
+      \par The juvenile red dragon makes a \plus8 attack
+        vs. Mental against each target.
+    
+    \hit Each target is \glossterm{shaken} by the dragon as a \glossterm{condition}.
+    \end{freeability}
+  
+
+    \begin{freeability}{Fire Breath}
+      \targets{Everything in a \areamed cone}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The juvenile red dragon makes a \plus8 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 4d6 fire damage.
+    \end{freeability}
+  
+      
+      \parhead{Blindsense} 50 ft.
+    \parhead{Darkvision} 200 ft.
+    \parhead{Fire immunity} A red dragon is immune to fire damage.
+    \par\noindent\textbf{Low-light vision}
+  
+
+  \begin{monsubsection}{Young Adult Red Dragon}{8}[4]
+    \vspace{-1em}\spelltwocol{}{Large dragon}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 44 \monsep
+          \textbf{AD} 17 \monsep
+          \textbf{Fort} 16 \monsep
+          \textbf{Ref} 14 \monsep
+          \textbf{Ment} 18
+        \pari \textbf{WR} 17 \monsep
+        \textbf{VR} 48
+        \pari \textbf{Strikes:}
+            Bite \plus12 (6d10 bludgeoning and piercing);
+\par Claw \plus14 (4d10 piercing and slashing)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 40 ft. \monsep
+        \textbf{Space} 10 ft. \monsep
+        \textbf{Reach} 10 ft.
+      \pari \textbf{Awareness} \plus13
+      \pari \textbf{Attributes}
+        Str 11, Dex 0,
+        Con 9, Int 0,
+        Per 9, Wil 11
+      \pari \textbf{Accuracy} 12 \monsep
+        \textbf{Power} 17
+      \pari \textbf{Alignment} Usually chaotic evil
+    \end{monsterfooter}
+  \end{monsubsection}
+  \begin{freeability}{Frightful Presence}
+      \targets{Enemies within a \areamed radius from the dragon}
+      The dragon can use this ability once per round as a \glossterm{free action}.
+      After it attacks a creature this way, the creature becomes immune to this ability until it takes a \glossterm{short rest}.
+      \par The young adult red dragon makes a \plus12 attack
+        vs. Mental against each target.
+    
+    \hit Each target is \glossterm{shaken} by the dragon as a \glossterm{condition}.
+    \end{freeability}
+  
+
+    \begin{freeability}{Fire Breath}
+      \targets{Everything in a \areamed cone}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The young adult red dragon makes a \plus12 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 4d10 fire damage.
+    \end{freeability}
+  
+      
+      \parhead{Blindsense} 50 ft.
+    \parhead{Darkvision} 200 ft.
+    \parhead{Fire immunity} A red dragon is immune to fire damage.
+    \par\noindent\textbf{Low-light vision}
+  
+
+  \begin{monsubsection}{Adult Red Dragon}{11}[4]
+    \vspace{-1em}\spelltwocol{}{Huge dragon}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 48 \monsep
+          \textbf{AD} 20 \monsep
+          \textbf{Fort} 20 \monsep
+          \textbf{Ref} 17 \monsep
+          \textbf{Ment} 22
+        \pari \textbf{WR} 28 \monsep
+        \textbf{VR} 73
+        \pari \textbf{Strikes:}
+            Bite \plus16 (8d10+10 bludgeoning and piercing);
+\par Claw \plus18 (7d10 piercing and slashing)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 50 ft. \monsep
+        \textbf{Space} 15 ft. \monsep
+        \textbf{Reach} 15 ft.
+      \pari \textbf{Awareness} \plus17
+      \pari \textbf{Attributes}
+        Str 15, Dex 0,
+        Con 13, Int 6,
+        Per 13, Wil 15
+      \pari \textbf{Accuracy} 16 \monsep
+        \textbf{Power} 23
+      \pari \textbf{Alignment} Usually chaotic evil
+    \end{monsterfooter}
+  \end{monsubsection}
+  \begin{freeability}{Frightful Presence}
+      \targets{Enemies within a \arealarge radius from the dragon}
+      The dragon can use this ability once per round as a \glossterm{free action}.
+      After it attacks a creature this way, the creature becomes immune to this ability until it takes a \glossterm{short rest}.
+      \par The adult red dragon makes a \plus16 attack
+        vs. Mental against each target.
+    
+    \hit Each target is \glossterm{shaken} by the dragon as a \glossterm{condition}.
+    \end{freeability}
+  
+
+    \begin{freeability}{Fire Breath}
+      \targets{Everything in a \arealarge cone}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The adult red dragon makes a \plus16 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 8d10 fire damage.
+    \end{freeability}
+  
+      
+      \parhead{Blindsense} 50 ft.
+    \parhead{Darkvision} 200 ft.
+    \parhead{Fire immunity} A red dragon is immune to fire damage.
+    \par\noindent\textbf{Low-light vision}
+  
+
+  \begin{monsubsection}{Old Red Dragon}{14}[4]
+    \vspace{-1em}\spelltwocol{}{Gargantuan dragon}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 52 \monsep
+          \textbf{AD} 22 \monsep
+          \textbf{Fort} 24 \monsep
+          \textbf{Ref} 19 \monsep
+          \textbf{Ment} 26
+        \pari \textbf{WR} 42 \monsep
+        \textbf{VR} 106
+        \pari \textbf{Strikes:}
+            Bite \plus19 (8d10+30 bludgeoning and piercing);
+\par Claw \plus21 (8d10+10 piercing and slashing)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 60 ft. \monsep
+        \textbf{Space} 20 ft. \monsep
+        \textbf{Reach} 20 ft.
+      \pari \textbf{Awareness} \plus20
+      \pari \textbf{Attributes}
+        Str 19, Dex -1,
+        Con 17, Int 15,
+        Per 16, Wil 19
+      \pari \textbf{Accuracy} 19 \monsep
+        \textbf{Power} 27
+      \pari \textbf{Alignment} Usually chaotic evil
+    \end{monsterfooter}
+  \end{monsubsection}
+  \begin{freeability}{Frightful Presence}
+      \targets{Enemies within a \areahuge radius from the dragon}
+      The dragon can use this ability once per round as a \glossterm{free action}.
+      After it attacks a creature this way, the creature becomes immune to this ability until it takes a \glossterm{short rest}.
+      \par The old red dragon makes a \plus19 attack
+        vs. Mental against each target.
+    
+    \hit Each target is \glossterm{shaken} by the dragon as a \glossterm{condition}.
+    \end{freeability}
+  
+
+    \begin{freeability}{Fire Breath}
+      \targets{Everything in a \arealarge cone}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The old red dragon makes a \plus19 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 8d10+20 fire damage.
+    \end{freeability}
+  
+      
+      \parhead{Blindsense} 50 ft.
+    \parhead{Darkvision} 200 ft.
+    \parhead{Fire immunity} A red dragon is immune to fire damage.
+    \par\noindent\textbf{Low-light vision}
+  
+
+  \begin{monsubsection}{Ancient Red Dragon}{17}[4]
+    \vspace{-1em}\spelltwocol{}{Colossal dragon}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 52 \monsep
+          \textbf{AD} 25 \monsep
+          \textbf{Fort} 27 \monsep
+          \textbf{Ref} 22 \monsep
+          \textbf{Ment} 30
+        \pari \textbf{WR} 56 \monsep
+        \textbf{VR} 136
+        \pari \textbf{Strikes:}
+            Bite \plus23 (8d10+60 bludgeoning and piercing);
+\par Claw \plus25 (8d10+40 piercing and slashing)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 70 ft. \monsep
+        \textbf{Space} 30 ft. \monsep
+        \textbf{Reach} 30 ft.
+      \pari \textbf{Awareness} \plus24
+      \pari \textbf{Attributes}
+        Str 23, Dex -1,
+        Con 20, Int 19,
+        Per 20, Wil 23
+      \pari \textbf{Accuracy} 23 \monsep
+        \textbf{Power} 33
+      \pari \textbf{Alignment} Usually chaotic evil
+    \end{monsterfooter}
+  \end{monsubsection}
+  \begin{freeability}{Frightful Presence}
+      \targets{Enemies within a \areaext radius from the dragon}
+      The dragon can use this ability once per round as a \glossterm{free action}.
+      After it attacks a creature this way, the creature becomes immune to this ability until it takes a \glossterm{short rest}.
+      \par The ancient red dragon makes a \plus23 attack
+        vs. Mental against each target.
+    
+    \hit Each target is \glossterm{shaken} by the dragon as a \glossterm{condition}.
+    \end{freeability}
+  
+
+    \begin{freeability}{Fire Breath}
+      \targets{Everything in a \areahuge cone}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The ancient red dragon makes a \plus23 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 8d10+50 fire damage.
+    \end{freeability}
+  
+      
+      \parhead{Blindsense} 50 ft.
+    \parhead{Darkvision} 200 ft.
+    \parhead{Fire immunity} A red dragon is immune to fire damage.
+    \par\noindent\textbf{Low-light vision}
+  
+
+  \begin{monsubsection}{Wyrm Red Dragon}{20}[4]
+    \vspace{-1em}\spelltwocol{}{Colossal dragon}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 52 \monsep
+          \textbf{AD} 30 \monsep
+          \textbf{Fort} 30 \monsep
+          \textbf{Ref} 24 \monsep
+          \textbf{Ment} 34
+        \pari \textbf{WR} 73 \monsep
+        \textbf{VR} 168
+        \pari \textbf{Strikes:}
+            Bite \plus27 (8d10+80 bludgeoning and piercing);
+\par Claw \plus29 (8d10+60 piercing and slashing)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 70 ft. \monsep
+        \textbf{Space} 30 ft. \monsep
+        \textbf{Reach} 30 ft.
+      \pari \textbf{Awareness} \plus28
+      \pari \textbf{Attributes}
+        Str 27, Dex -2,
+        Con 23, Int 23,
+        Per 24, Wil 27
+      \pari \textbf{Accuracy} 27 \monsep
+        \textbf{Power} 37
+      \pari \textbf{Alignment} Usually chaotic evil
+    \end{monsterfooter}
+  \end{monsubsection}
+  \begin{freeability}{Frightful Presence}
+      \targets{Enemies within a 500 ft. radius from the dragon}
+      The dragon can use this ability once per round as a \glossterm{free action}.
+      After it attacks a creature this way, the creature becomes immune to this ability until it takes a \glossterm{short rest}.
+      \par The wyrm red dragon makes a \plus27 attack
+        vs. Mental against each target.
+    
+    \hit Each target is \glossterm{shaken} by the dragon as a \glossterm{condition}.
+    \end{freeability}
+  
+
+    \begin{freeability}{Fire Breath}
+      \targets{Everything in a \areahuge cone}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The wyrm red dragon makes a \plus27 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 8d10+70 fire damage.
+    \end{freeability}
+  
+      
+      \parhead{Blindsense} 50 ft.
+    \parhead{Darkvision} 200 ft.
+    \parhead{Fire immunity} A red dragon is immune to fire damage.
+    \par\noindent\textbf{Low-light vision}
+  
+
+  \begin{monsubsection}{Great Wyrm Red Dragon}{23}[4]
+    \vspace{-1em}\spelltwocol{}{Colossal dragon}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 56 \monsep
+          \textbf{AD} 32 \monsep
+          \textbf{Fort} 34 \monsep
+          \textbf{Ref} 26 \monsep
+          \textbf{Ment} 38
+        \pari \textbf{WR} 93 \monsep
+        \textbf{VR} 208
+        \pari \textbf{Strikes:}
+            Bite \plus31 (8d10+120 bludgeoning and piercing);
+\par Claw \plus33 (8d10+100 piercing and slashing)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 70 ft. \monsep
+        \textbf{Space} 30 ft. \monsep
+        \textbf{Reach} 30 ft.
+      \pari \textbf{Awareness} \plus32
+      \pari \textbf{Attributes}
+        Str 32, Dex -3,
+        Con 27, Int 27,
+        Per 28, Wil 31
+      \pari \textbf{Accuracy} 31 \monsep
+        \textbf{Mundane Power} 44 \monsep
+      \textbf{Magical Power} 43
+      \pari \textbf{Alignment} Usually chaotic evil
+    \end{monsterfooter}
+  \end{monsubsection}
+  \begin{freeability}{Frightful Presence}
+      \targets{Enemies within a 1,000 ft. radius from the dragon}
+      The dragon can use this ability once per round as a \glossterm{free action}.
+      After it attacks a creature this way, the creature becomes immune to this ability until it takes a \glossterm{short rest}.
+      \par The great wyrm red dragon makes a \plus31 attack
+        vs. Mental against each target.
+    
+    \hit Each target is \glossterm{shaken} by the dragon as a \glossterm{condition}.
+    \end{freeability}
+  
+
+    \begin{freeability}{Fire Breath}
+      \targets{Everything in a \areaext cone}
+      A dragon can use its breath weapon as a \glossterm{minor action}.
+      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      \par The great wyrm red dragon makes a \plus31 attack
+        vs. Reflex against each target.
+    
+    \hit Each target takes 8d10+100 fire damage.
+    \end{freeability}
+  
+      
+      \parhead{Blindsense} 50 ft.
+    \parhead{Darkvision} 200 ft.
+    \parhead{Fire immunity} A red dragon is immune to fire damage.
+    \par\noindent\textbf{Low-light vision}
   
   
         \newpage
@@ -2847,7 +4386,7 @@
     
 
       
-  \begin{monsubsection}{Grunt}{2}[1]
+  \begin{monsubsection}{Orc Grunt}{2}[1]
     \vspace{-1em}\spelltwocol{}{Medium humanoid}\vspace{-1em}
     \vspace{0em}
 
@@ -2886,7 +4425,7 @@
   \end{monsubsection}
   \begin{freeability}{Power Smash}
       \target{One creature or object within \glossterm{reach}}
-       The grunt makes a \plus0
+       The orc grunt makes a \plus0
         \glossterm{strike} vs. Armor
         with its greataxe against the target.
     
@@ -2894,7 +4433,7 @@
     \end{freeability}
   
 
-  \begin{monsubsection}{Peon}{1}[0.5]
+  \begin{monsubsection}{Orc Peon}{1}[0.5]
     \vspace{-1em}\spelltwocol{}{Medium humanoid}\vspace{-1em}
     \vspace{0em}
 
@@ -2935,7 +4474,7 @@
   
   
 
-  \begin{monsubsection}{Veteran}{6}[2]
+  \begin{monsubsection}{Orc Veteran}{6}[2]
     \vspace{-1em}\spelltwocol{}{Medium humanoid}\vspace{-1em}
     \vspace{0em}
 
@@ -2976,7 +4515,7 @@
   \end{monsubsection}
   \begin{freeability}{Power Smash}
       \target{One creature or object within \glossterm{reach}}
-       The veteran makes a \plus5
+       The orc veteran makes a \plus5
         \glossterm{strike} vs. Armor
         with its greataxe against the target.
     
@@ -2986,7 +4525,7 @@
 
     \begin{freeability}{Power Shot}
       \target{One creature or object within \glossterm{reach}}
-       The veteran makes a \plus5
+       The orc veteran makes a \plus5
         \glossterm{strike} vs. Armor
         with its light crossbow against the target.
     
@@ -2994,7 +4533,7 @@
     \end{freeability}
   
 
-  \begin{monsubsection}{Veteran}{8}[4]
+  \begin{monsubsection}{Orc Chieftain}{8}[4]
     \vspace{-1em}\spelltwocol{}{Medium humanoid}\vspace{-1em}
     \vspace{0em}
 
@@ -3035,7 +4574,7 @@
   \end{monsubsection}
   \begin{freeability}{Power Smash}
       \target{One creature or object within \glossterm{reach}}
-       The veteran makes a \plus9
+       The orc chieftain makes a \plus9
         \glossterm{strike} vs. Armor
         with its greataxe against the target.
     
@@ -3045,7 +4584,7 @@
 
     \begin{freeability}{Power Shot}
       \target{One creature or object within \glossterm{reach}}
-       The veteran makes a \plus9
+       The orc chieftain makes a \plus9
         \glossterm{strike} vs. Armor
         with its light crossbow against the target.
     
@@ -3053,7 +4592,7 @@
     \end{freeability}
   
 
-  \begin{monsubsection}{Shaman}{2}[2]
+  \begin{monsubsection}{Orc Shaman}{2}[2]
     \vspace{-1em}\spelltwocol{}{Medium humanoid}\vspace{-1em}
     \vspace{0em}
 
@@ -3092,7 +4631,7 @@
   \end{monsubsection}
   \begin{freeability}{Drain Life}[\glossterm{Focus}, \glossterm{Spell}]
       \target{One living creature within \rngmed range}
-       The shaman makes a \plus3 attack
+       The orc shaman makes a \plus3 attack
         vs. Fortitude against the target.
     
     \hit The target takes 2d8 energy damage.
@@ -4385,4 +5924,286 @@
       The allip is \glossterm{incorporeal}.
       It does not have a tangible body, and is immune to \glossterm{physical damage}.
       It can enter or pass through solid objects.
+  
+    \subsection{Skeletons}
+      
+      \parhead{Knowledge (religion) 6} 
+      Skeleton are the reanimated corpses of once-living creatures.
+      They are one of the most basic forms of undead, though some skeletons are still quite powerful.
+      Creating a skeleton is generally regarded as a fundamentally evil act.
+    
+\parhead{Knowledge (religion) 11} 
+      Skeletons retain all of the \glossterm{mundane} abilities of the reanimated creature, but lose all \glossterm{magical} abilities.
+      They retain the ability to wield the same weapons and armor as the original creature.
+      In addition, skeletons are always more agile and less strong than the original creature.
+      All skeletons are \glossterm{vulnerable} to bludgeoning damage thanks to their exposed and easily crumpled bones.
+    
+\parhead{Knowledge (religion) 16} 
+      Creating a skeleton from a corpse requires fracturing the soul of the creature the corpse belonged to.
+      The soul splinter created this way is used to give the skeleton its agency.
+      This is unpleasant for the dead creature in its afterlife, though not dangerous.
+      Skeletons require a less intact corpse than zombies, so they are preferred for reanimating bodies in a greater state of decay.
+    
+
+      
+  \begin{monsubsection}{Skeleton Grunt}{3}[1]
+    \vspace{-1em}\spelltwocol{}{Medium undead}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 5 \monsep
+          \textbf{AD} 15 \monsep
+          \textbf{Fort} 7 \monsep
+          \textbf{Ref} 8 \monsep
+          \textbf{Ment} 7
+        \pari \textbf{WR} Physical 15, Energy 9 \monsep
+        \textbf{VR} Physical 29, Energy 23
+        \pari \textbf{Strikes:}
+            Spear \plus3 (1d10 piercing);
+\par Claw \plus5 (1d8 piercing and slashing)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 30 ft. \monsep
+        \textbf{Space} 5 ft. \monsep
+        \textbf{Reach} 5 ft.
+      \pari \textbf{Awareness} \plus0
+      \pari \textbf{Attributes}
+        Str 0, Dex 4,
+        Con 4, Int N/A,
+        Per 0, Wil 0
+      \pari \textbf{Accuracy} 3 \monsep
+        \textbf{Power} 3
+      \pari \textbf{Alignment} Always true neutral
+    \end{monsterfooter}
+  \end{monsubsection}
+  \parhead{Bludgeoning Vulnerability} 
+          Skeletons are \glossterm{vulnerable} to bludgeoning damage.
+        
+    \parhead{Hold Breath} A lizardfolk can hold its breath for ten times the normal length of time.
+  
+
+  \begin{monsubsection}{Skeleton Elite}{3}[2]
+    \vspace{-1em}\spelltwocol{}{Medium undead}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 11 \monsep
+          \textbf{AD} 16 \monsep
+          \textbf{Fort} 8 \monsep
+          \textbf{Ref} 9 \monsep
+          \textbf{Ment} 8
+        \pari \textbf{WR} Physical 15, Energy 9 \monsep
+        \textbf{VR} Physical 29, Energy 23
+        \pari \textbf{Strikes:}
+            Spear \plus4 (2d6 piercing);
+\par Claw \plus6 (1d10 piercing and slashing)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 30 ft. \monsep
+        \textbf{Space} 5 ft. \monsep
+        \textbf{Reach} 5 ft.
+      \pari \textbf{Awareness} \plus0
+      \pari \textbf{Attributes}
+        Str 2, Dex 4,
+        Con 4, Int N/A,
+        Per 0, Wil 0
+      \pari \textbf{Accuracy} 4 \monsep
+        \textbf{Mundane Power} 5 \monsep
+      \textbf{Magical Power} 4
+      \pari \textbf{Alignment} Always true neutral
+    \end{monsterfooter}
+  \end{monsubsection}
+  \parhead{Bludgeoning Vulnerability} 
+          Skeletons are \glossterm{vulnerable} to bludgeoning damage.
+        
+    \parhead{Hold Breath} A lizardfolk can hold its breath for ten times the normal length of time.
+  
+  
+    \subsection{Zombies}
+      
+      \parhead{Knowledge (religion) 6} 
+      Zombies are the reanimated corpses of once-living creatures.
+      They are one of the most basic forms of undead, though some zombies are still quite powerful.
+      Creating a zombie is generally regarded as a fundamentally evil act.
+    
+\parhead{Knowledge (religion) 11} 
+      Zombies retain all of the \glossterm{mundane} abilities of the reanimated creature, but lose all \glossterm{magical} abilities.
+      They also lose any ability to wield weapons, though they are often found in the same armor (if any) as the original creature.
+      In addition, zombies are always stronger and more durable than the original creature, though they are less agile.
+      All zombies are \glossterm{vulnerable} to slashing damage thanks to their exposed and rotting flesh.
+    
+\parhead{Knowledge (religion) 16} 
+      Creating a zombie from a corpse requires fracturing the soul of the creature the corpse belonged to.
+      The soul splinter created this way is used to give the zombie its agency.
+      This is unpleasant for the dead creature in its afterlife, though not dangerous.
+      Only corpses with the majority of their flesh intact can be reanimated as zombies.
+      Creatures with too little flesh cannot become zombies at all.
+    
+
+      
+  \begin{monsubsection}{Zombie Orc Grunt}{2}[1]
+    \vspace{-1em}\spelltwocol{}{Medium undead}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 6 \monsep
+          \textbf{AD} 4 \monsep
+          \textbf{Fort} 7 \monsep
+          \textbf{Ref} 3 \monsep
+          \textbf{Ment} 5
+        \pari \textbf{WR} Physical 6, Energy 7 \monsep
+        \textbf{VR} Physical 20, Energy 21
+        \pari \textbf{Strike:}
+            Slam \plus2 (4d6 bludgeoning)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 30 ft. \monsep
+        \textbf{Space} 5 ft. \monsep
+        \textbf{Reach} 5 ft.
+      \pari \textbf{Awareness} \plus0
+      \pari \textbf{Attributes}
+        Str 6, Dex -2,
+        Con 4, Int N/A,
+        Per 0, Wil -1
+      \pari \textbf{Accuracy} 2 \monsep
+        \textbf{Mundane Power} 7 \monsep
+      \textbf{Magical Power} 1
+      \pari \textbf{Alignment} Always true neutral
+    \end{monsterfooter}
+  \end{monsubsection}
+  \parhead{Slashing Vulnerability} 
+          Zombies are \glossterm{vulnerable} to slashing damage.
+  
+
+  \begin{monsubsection}{Zombie Orc Peon}{1}[0.5]
+    \vspace{-1em}\spelltwocol{}{Medium undead}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 0 \monsep
+          \textbf{AD} 3 \monsep
+          \textbf{Fort} 6 \monsep
+          \textbf{Ref} 2 \monsep
+          \textbf{Ment} 4
+        \pari \textbf{WR} Physical 2, Energy 3 \monsep
+        \textbf{VR} Physical 8.5, Energy 9.5
+        \pari \textbf{Strike:}
+            Slam \plus1 (2d10 bludgeoning)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 30 ft. \monsep
+        \textbf{Space} 5 ft. \monsep
+        \textbf{Reach} 5 ft.
+      \pari \textbf{Awareness} \plus0
+      \pari \textbf{Attributes}
+        Str 4, Dex -2,
+        Con 3, Int N/A,
+        Per 0, Wil -1
+      \pari \textbf{Accuracy} 1 \monsep
+        \textbf{Mundane Power} 5 \monsep
+      \textbf{Magical Power} 0
+      \pari \textbf{Alignment} Always true neutral
+    \end{monsterfooter}
+  \end{monsubsection}
+  \parhead{Slashing Vulnerability} 
+          Zombies are \glossterm{vulnerable} to slashing damage.
+  
+
+  \begin{monsubsection}{Zombie Orc Veteran}{6}[2]
+    \vspace{-1em}\spelltwocol{}{Medium undead}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 13 \monsep
+          \textbf{AD} 10 \monsep
+          \textbf{Fort} 13 \monsep
+          \textbf{Ref} 8 \monsep
+          \textbf{Ment} 10
+        \pari \textbf{WR} Physical 17, Energy 15 \monsep
+        \textbf{VR} Physical 48, Energy 46
+        \pari \textbf{Strike:}
+            Slam \plus7 (6d10 bludgeoning)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 30 ft. \monsep
+        \textbf{Space} 5 ft. \monsep
+        \textbf{Reach} 5 ft.
+      \pari \textbf{Awareness} \plus0
+      \pari \textbf{Attributes}
+        Str 11, Dex -2,
+        Con 9, Int N/A,
+        Per 0, Wil -1
+      \pari \textbf{Accuracy} 7 \monsep
+        \textbf{Mundane Power} 15 \monsep
+      \textbf{Magical Power} 8
+      \pari \textbf{Alignment} Always true neutral
+    \end{monsterfooter}
+  \end{monsubsection}
+  \parhead{Slashing Vulnerability} 
+          Zombies are \glossterm{vulnerable} to slashing damage.
+  
+
+  \begin{monsubsection}{Zombie Orc Chieftain}{8}[4]
+    \vspace{-1em}\spelltwocol{}{Medium undead}\vspace{-1em}
+    \vspace{0em}
+
+    
+    
+
+    \begin{spellcontent}
+      \begin{spelltargetinginfo}
+        \pari \textbf{HP} 52 \monsep
+          \textbf{AD} 14 \monsep
+          \textbf{Fort} 17 \monsep
+          \textbf{Ref} 12 \monsep
+          \textbf{Ment} 14
+        \pari \textbf{WR} Physical 23, Energy 21 \monsep
+        \textbf{VR} Physical 61, Energy 59
+        \pari \textbf{Strike:}
+            Slam \plus11 (8d10 bludgeoning)
+      \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{monsterfooter}
+      \pari \textbf{Speed} 30 ft. \monsep
+        \textbf{Space} 5 ft. \monsep
+        \textbf{Reach} 5 ft.
+      \pari \textbf{Awareness} \plus0
+      \pari \textbf{Attributes}
+        Str 13, Dex -2,
+        Con 11, Int N/A,
+        Per 0, Wil -1
+      \pari \textbf{Accuracy} 11 \monsep
+        \textbf{Mundane Power} 19 \monsep
+      \textbf{Magical Power} 12
+      \pari \textbf{Alignment} Always true neutral
+    \end{monsterfooter}
+  \end{monsubsection}
+  \parhead{Slashing Vulnerability} 
+          Zombies are \glossterm{vulnerable} to slashing damage.
+  
   
