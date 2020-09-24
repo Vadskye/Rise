@@ -7,7 +7,7 @@ export function generateMonsters(): Record<MonsterType, Monster[]> {
   return fromPairs(
     monsterTypes.map((t) => [
       t,
-      _.sortBy(monsterInputsByType[t], (m) => m.name).map(processMonsterInput),
+      _.sortBy(monsterInputsByType[t], (m) => m.name.toLowerCase()).map(processMonsterInput),
     ]),
   );
 }
