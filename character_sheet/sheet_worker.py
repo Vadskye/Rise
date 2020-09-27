@@ -70,7 +70,7 @@ def set_skill(a, s):
     misc = get_misc_variables(s, 3)
     if a == 'other':
         return js_wrapper(
-            ['level', f'{s}_points', *misc],
+            ['level', f'{s}_points', 'fatigue_penalty', *misc],
             f"""
                 var pointsModifier = 0;
                 var ranks = 0;
@@ -89,7 +89,7 @@ def set_skill(a, s):
                 setAttrs({{
                     {s}_attribute: 0,
                     {s}_ranks: ranks + pointsModifier,
-                    {s}_total: ranks + pointsModifier + {sum_variables(misc)},
+                    {s}_total: ranks + pointsModifier + {sum_variables(misc)} - fatigue_penalty,
                     {s}_training: training,
                 }});
             """
@@ -98,7 +98,7 @@ def set_skill(a, s):
         include_encumbrance = a in ['strength', 'dexterity']
         subtract_encumbrance = ' - encumbrance' if include_encumbrance else ""
         return js_wrapper(
-            ['level', f'{a}_starting', f'{s}_points', *misc, *(['encumbrance'] if include_encumbrance else [])],
+            ['level', f'{a}_starting', f'{s}_points', 'fatigue_penalty', *misc, *(['encumbrance'] if include_encumbrance else [])],
             f"""
                 var pointsModifier = 0;
                 var ranks = 0;
@@ -119,7 +119,7 @@ def set_skill(a, s):
 
                 setAttrs({{
                     {s}_ranks: ranks,
-                    {s}_total: ranks + pointsModifier + {a}_starting + {sum_variables(misc)} {subtract_encumbrance},
+                    {s}_total: ranks + pointsModifier + {a}_starting + {sum_variables(misc)} - fatigue_penalty {subtract_encumbrance},
                     {s}_training: training,
                 }});
             """
@@ -130,6 +130,8 @@ def core_statistics():
         accuracy(),
         base_speed(),
         encumbrance(),
+        fatigue_penalty(),
+        fatigue_tolerance(),
         focus_penalty(),
         hit_points(),
         initiative(),
@@ -169,11 +171,11 @@ def abilities_known():
 def accuracy():
     misc = get_misc_variables('accuracy', 2)
     return js_wrapper(
-        ['challenge_rating', 'level', 'perception_starting', *misc],
+        ['challenge_rating', 'level', 'perception_starting', 'fatigue_penalty', *misc],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             setAttrs({{
-                accuracy: level + Math.floor(perception_starting / 2)  + {sum_variables(misc)} + cr_mod,
+                accuracy: level + Math.floor(perception_starting / 2)  + {sum_variables(misc)} + cr_mod - fatigue_penalty,
             }});
         """
     )
@@ -273,11 +275,11 @@ def encumbrance():
 def initiative():
     misc = get_misc_variables('initiative', 3)
     return js_wrapper(
-        ['dexterity', 'perception', *misc],
+        ['dexterity', 'perception', 'fatigue_penalty', *misc],
         f"""
             var scaling = Math.max(dexterity, perception);
             setAttrs({{
-                initiative: scaling + {sum_variables(misc)},
+                initiative: scaling + {sum_variables(misc)} - fatigue_penalty,
                 initiative_scaling: scaling,
             }});
         """
@@ -304,6 +306,18 @@ def skill_points():
             }});
         """
     )
+
+def fatigue_tolerance():
+    misc = get_misc_variables('fatigue_tolerance', 2)
+    return js_wrapper(
+        ['level', 'constitution_starting', *misc],
+        f"""
+            setAttrs({{
+                fatigue_tolerance: 1 + constitution_starting + {sum_variables(misc)},
+            }});
+        """
+    )
+
 
 def focus_penalty():
     misc = get_misc_variables('focus_penalty', 3)
@@ -337,6 +351,17 @@ def hit_points():
             }});
         """
     )
+
+def fatigue_penalty():
+    return js_wrapper(
+        ['fatigue_points', 'fatigue_tolerance'],
+        f"""
+            setAttrs({{
+                fatigue_penalty: Math.max(0, fatigue_points - fatigue_tolerance),
+            }});
+        """
+    )
+
 
 def insight_points():
     misc = get_misc_variables('insight_points', 2)

@@ -43,6 +43,7 @@ def create_page(destination):
                 calc_base_speed(),
                 calc_carrying_capacity(),
                 calc_encumbrance(),
+                calc_fatigue_tolerance(),
                 calc_focus_penalty(),
                 # TODO: somehow make room for focus penalties
                 calc_hit_points(),
@@ -195,7 +196,7 @@ def abilities(name_prefix):
     ])
 
 def calc_carrying_capacity():
-    return flex_row([
+    return flex_row({'class': 'carrying-capacity'}, [
         div({'class': 'calc-header'}, 'Carrying Capacity'),
         underlabel(
             'Light',
@@ -334,6 +335,33 @@ def calc_energy_resistance_bonus():
                 'value': '(@{energy_resistance_bonus})',
             },
             result_label='Bonus'
+        ),
+    ])
+
+def calc_fatigue_tolerance():
+    return flex_row([
+        div({'class': 'calc-header'}, 'Fatigue Tolerance'),
+        equation(
+            [
+                underlabel('Base', number_input({
+                    'disabled': True,
+                    'name': 'fatigue_tolerance_base',
+                    'value': '1',
+                })),
+                plus(),
+                underlabel('(Con)', number_input({
+                    'disabled': True,
+                    'name': 'fatigue_tolerance_con',
+                    'value': '(@{constitution_starting})',
+                })),
+                plus(),
+                equation_misc_repeat('fatigue_tolerance', 2),
+            ],
+            result_attributes={
+                'disabled': True,
+                'name': 'fatigue_tolerance_display',
+                'value': '@{fatigue_tolerance}',
+            },
         ),
     ])
 
