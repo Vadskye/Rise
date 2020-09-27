@@ -119,24 +119,6 @@ def knowledge_skill_box(name):
         }),
     ])
 
-def resources():
-    return flex_col({'class': 'resources'}, [
-        flex_wrapper({'class': 'section-header'}, 'Resources'),
-        flex_wrapper({'class': 'action-point-header'}, 'Attunement points'),
-        flex_row({'class': 'action-point-wrapper'}, [
-            underlabel('Max', number_input({
-                'disabled': True,
-                'name': 'action_points_total_display',
-                'value': '@{action_points_total}',
-            })),
-            # This needs to be editable to support the Null feat
-            underlabel('Available', number_input({
-                'name': 'action_points_available',
-            })),
-            underlabel('Attuned', number_input({'name': 'action_points_attuned'})),
-        ]),
-    ])
-
 def statistics_header(destination):
     return ''.join([
         flex_row({'class': 'all-statistics'}, [
@@ -216,19 +198,16 @@ def vital_resistance():
 def core_statistics(destination):
     return flex_col({'class': 'core-statistics'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Core Statistics')),
-        labeled_number_input('Land speed', input_attributes={
-            'name': 'land_speed',
-            'value': '@{base_speed}',
-        }),
+        sidelabel('Attune points', number_input({
+            'name': 'attunement_points_display',
+        })),
+        sidelabel('Fatigue points', number_input({
+            'name': 'fatigue_points',
+        })),
         sidelabel('Hit points', number_input({
             'disabled': True,
             'name': 'hit_points_display',
             'value': '@{hit_points}',
-        })),
-        sidelabel('Attunement points', number_input({
-            'disabled': True,
-            'name': 'action_points_display',
-            'value': '@{action_points}',
         })),
         (
             sidelabel('Initiative', number_input({
