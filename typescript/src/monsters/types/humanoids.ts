@@ -115,7 +115,7 @@ humanoidInput.push({
       attackInputs: [
         {
           accuracyBonus: -2,
-          powerBonus: 6,
+          powerBonus: 4,
           name: "Power Smash",
           weaponName: "greataxe",
         },
@@ -152,13 +152,13 @@ humanoidInput.push({
       attackInputs: [
         {
           accuracyBonus: -2,
-          powerBonus: 6,
+          powerBonus: 4,
           name: "Power Smash",
           weaponName: "greataxe",
         },
         {
           accuracyBonus: -2,
-          powerBonus: 6,
+          powerBonus: 4,
           name: "Power Shot",
           weaponName: "light crossbow",
         },
@@ -181,13 +181,13 @@ humanoidInput.push({
       attackInputs: [
         {
           accuracyBonus: -2,
-          powerBonus: 6,
+          powerBonus: 4,
           name: "Power Smash",
           weaponName: "greataxe",
         },
         {
           accuracyBonus: -2,
-          powerBonus: 6,
+          powerBonus: 4,
           name: "Power Shot",
           weaponName: "light crossbow",
         },
