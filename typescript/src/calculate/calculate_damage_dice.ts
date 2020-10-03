@@ -6,7 +6,7 @@ export interface DamageDice {
 
 export function calculateDamageDice(power: number): DamageDice {
   let count = 1;
-  let size = 8;
+  let size = 6;
   for (let i = 2; i <= power; i += 2) {
     size += 2;
     if (size > 10) {
