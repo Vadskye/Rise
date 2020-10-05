@@ -4,6 +4,6 @@ export * from "./humanoids";
 export * from "./animates";
 export * from "./magical_beasts";
 export * from "./monstrous_humanoids";
-export * from "./outsiders";
+export * from "./planeforged";
 export * from "./undead";
 export * from "./types";

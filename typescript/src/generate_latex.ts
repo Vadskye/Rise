@@ -1,17 +1,24 @@
 import { monsterToLatex } from "@src/latex/monster_to_latex";
 import { monstersByType } from "@src/monsters";
-import { monsterTypes, typeDescriptions } from "@src/monsters/types";
+import { MonsterType, monsterTypes, typeDescriptions } from "@src/monsters/types";
 import { titleCase } from "change-case";
 import cli from "commander";
 import fs from "fs";
 import _ from "lodash";
 
+function formatPluralMonsterType(monsterType: MonsterType): string {
+  if (["planeforged", "undead"].includes(monsterType)) {
+    return monsterType;
+  } else {
+    return `${monsterType}s`;
+  }
+}
+
 function generateLatex(latexType: string): string {
   let latex = "";
   if (latexType === "monsters") {
     for (const monsterType of monsterTypes) {
-      const pluralText = monsterType === "undead" ? "undead" : `${monsterType}s`;
-      // TODO: handle weird plurals as necessary
+      const pluralText = formatPluralMonsterType(monsterType);
       latex += `
         \\newpage
         \\section{${titleCase(pluralText)}}

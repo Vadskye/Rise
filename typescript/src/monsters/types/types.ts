@@ -8,7 +8,7 @@ import { dragons } from "./dragons";
 import { humanoids } from "./humanoids";
 import { magicalBeasts } from "./magical_beasts";
 import { monstrousHumanoids } from "./monstrous_humanoids";
-import { outsiders } from "./outsiders";
+import { planeforged } from "./planeforged";
 import { undead } from "./undead";
 
 export type MonsterType =
@@ -19,7 +19,7 @@ export type MonsterType =
   | "humanoid"
   | "magical beast"
   | "monstrous humanoid"
-  | "outsider"
+  | "planeforged"
   | "undead";
 
 export const monsterTypes: MonsterType[] = [
@@ -30,7 +30,7 @@ export const monsterTypes: MonsterType[] = [
   "humanoid",
   "magical beast",
   "monstrous humanoid",
-  "outsider",
+  "planeforged",
   "undead",
 ];
 
@@ -42,7 +42,7 @@ export const monsterInputsByType: Record<MonsterType, MonsterInput[]> = {
   "humanoid": humanoids,
   "magical beast": magicalBeasts,
   "monstrous humanoid": monstrousHumanoids,
-  "outsider": outsiders,
+  "planeforged": planeforged,
   "undead": undead,
 };
 
@@ -66,7 +66,7 @@ export const knowledgeSkillsByMonsterType: Record<MonsterType, string[]> = {
   "humanoid": ["local"],
   "magical beast": ["arcana"],
   "monstrous humanoid": ["nature"],
-  "outsider": ["planes"],
+  "planeforged": ["planes"],
   "undead": ["religion"],
 };
 
@@ -136,13 +136,13 @@ export const typeDescriptions: Record<MonsterType, string | null> = {
   "monstrous humanoid": `
     ${formatDefenseBonuses("monstrous humanoid")}
   `,
-  "outsider": `
-    ${formatDefenseBonuses("outsider")}
-    \\parhead{Planar Essence} An outsider is fundamentally composed of the essence of its home plane.
-    When an outsider dies, its essence returns to its plane.
-    Weak outsiders lose their independent identity and become part of the core composition of the plane once more.
-    Strong outsiders can retain their identity and reform from that raw material given time, making them difficult or impossible to kill completely.
-    In either case, outsiders cannot be resurrected by mortal magic such as the \\spell{resurrection} spell.
+  "planeforged": `
+    ${formatDefenseBonuses("planeforged")}
+    \\parhead{Planar Essence} A planeforged is fundamentally composed of the essence of its home plane.
+    When a planeforged dies, its essence returns to its plane.
+    Weak planeforged lose their independent identity and become part of the core composition of the plane once more.
+    Strong planeforged can retain their identity and reform from that raw material given time, making them difficult or impossible to kill completely.
+    In either case, planeforged cannot be resurrected by mortal magic such as the \\spell{resurrection} spell.
   `,
   "undead": `
     ${formatDefenseBonuses("undead")}

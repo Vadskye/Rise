@@ -92,7 +92,7 @@ astromancy=MysticSphere(
             Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against the target.
             \\hit The target takes energy \\glossterm<standard damage>.
             \\crit The target takes double damage.
-            In addition, if it is an outsider not on its home plane, it is teleported to a random location on its home plane.
+            In addition, if it is a \\glossterm<planeforged> not on its home plane, it is teleported to a random location on its home plane.
             If it is a creature created by a \\glossterm<Manifestation> ability, it immediately disappears.
 
             \\rankline
