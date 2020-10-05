@@ -219,7 +219,7 @@ cryomancy=MysticSphere(
             Make an attack vs. Fortitude against the target.
             \\hit As a \\glossterm<condition>, the target is seared by painful cold.
             At the end of each round, it takes cold \\glossterm<standard damage> -1d per round since it became affected by this condition.
-            If this damage fails to \\glossterm<wound> the target, the condition is removed.
+            If this damage fails to make the target \\glossterm<bleed>, the condition is removed.
 
             \\rankline
             \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
