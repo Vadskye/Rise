@@ -258,11 +258,11 @@ def calc_base_resistances():
     return flex_row([
         div({'class': 'calc-header'}, 'Base Resistances'),
         underlabel(
-            'Wound',
+            'Bleed',
             number_input({
                 'disabled': True,
-                'name': 'base_wound_resistance_display',
-                'value': '(@{base_wound_resistance})',
+                'name': 'base_bleed_resistance_display',
+                'value': '(@{base_bleed_resistance})',
             }),
         ),
         equation_space,

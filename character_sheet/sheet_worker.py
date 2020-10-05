@@ -151,12 +151,12 @@ def defenses():
 
 def resistances():
     return [
-        base_wound_resistance(),
+        base_bleed_resistance(),
         base_vital_resistance(),
         all_resistance(),
         energy_resistance(),
         physical_resistance(),
-        wound_resistances(),
+        bleed_resistances(),
         vital_resistances(),
     ]
 
@@ -443,11 +443,11 @@ def blank_ability_known(i):
         """
     )
 
-def base_wound_resistance():
+def base_bleed_resistance():
     return js_wrapper(
         ['level', 'constitution_starting'],
         f"""
-            var base_wound_resistance = {{
+            var base_bleed_resistance = {{
                 '-1': 1 ,
                 0:    1 ,
                 1:    2 ,
@@ -477,7 +477,7 @@ def base_wound_resistance():
                 25:   75,
             }}[level + constitution_starting] || 1;
             setAttrs({{
-                base_wound_resistance,
+                base_bleed_resistance,
             }});
         """
     )
@@ -555,16 +555,16 @@ def physical_resistance():
         """
     )
 
-def wound_resistances():
+def bleed_resistances():
     return js_wrapper(
-        ['base_wound_resistance', 'all_resistance_bonus', 'energy_resistance_bonus', 'physical_resistance_bonus', 'challenge_rating'],
+        ['base_bleed_resistance', 'all_resistance_bonus', 'energy_resistance_bonus', 'physical_resistance_bonus', 'challenge_rating'],
         f"""
-            var global_wound_resistance = base_wound_resistance + all_resistance_bonus;
+            var global_bleed_resistance = base_bleed_resistance + all_resistance_bonus;
             var resistance_modifier = challenge_rating === 0.5 ? 0.5 : 1;
             setAttrs({{
-                global_wound_resistance: Math.floor(global_wound_resistance * resistance_modifier),
-                energy_wound_resistance: Math.floor((global_wound_resistance + energy_resistance_bonus) * resistance_modifier),
-                physical_wound_resistance: Math.floor((global_wound_resistance + physical_resistance_bonus) * resistance_modifier),
+                global_bleed_resistance: Math.floor(global_bleed_resistance * resistance_modifier),
+                energy_bleed_resistance: Math.floor((global_bleed_resistance + energy_resistance_bonus) * resistance_modifier),
+                physical_bleed_resistance: Math.floor((global_bleed_resistance + physical_resistance_bonus) * resistance_modifier),
             }})
         """
     )

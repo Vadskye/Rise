@@ -129,7 +129,7 @@ polymorph=MysticSphere(
         Spell('Malleable Body', 4, 'Yourself', """
             Your body and equipment becomes highly flexible and malleable, allowing you to compress your body or contort yourself into odd shapes.
             You gain a +8 \\glossterm<magic bonus> to the Flexibility skill, and are immune to \\glossterm<critical hits> from \\glossterm<strikes>.
-            However, your \\glossterm<wound resistance> against \\glossterm<physical damage> is halved.
+            However, your \\glossterm<bleed resistance> against \\glossterm<physical damage> is halved.
 
             \\rankline
             \\rank<6> The skill bonus increases to +12.

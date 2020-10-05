@@ -224,7 +224,7 @@ aquamancy=MysticSphere(
                 \\item You gain a \\glossterm<swim speed> equal to your \\glossterm<base speed>
                 \\item You gain a +8 \\glossterm<magic bonus> to the Flexibility skill
                 \\item You are immune to \\glossterm<critical hits> from \\glossterm<strikes>
-                \\item Your \\glossterm<wound resistance> against \\glossterm<physical damage> is halved.
+                \\item Your \\glossterm<bleed resistance> against \\glossterm<physical damage> is halved.
             \\end<itemize>
 
             \\rankline

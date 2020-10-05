@@ -1,5 +1,5 @@
+import { damageResistanceByLevel } from "@src/calculate/bleed_resistance_by_level";
 import { vitalResistanceByLevel } from "@src/calculate/vital_resistance_by_level";
-import { damageResistanceByLevel } from "@src/calculate/wound_resistance_by_level";
 import { DamageType, damageTypes } from "@src/data";
 import { MonsterBase } from "@src/monsters";
 

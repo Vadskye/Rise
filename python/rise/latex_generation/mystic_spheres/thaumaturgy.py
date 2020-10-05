@@ -25,7 +25,7 @@ thaumaturgy=MysticSphere(
         Spell('Magic Missile', 1, 'One creature within \\rngmed range', """
             You send an unerring projectile made of pure magical energy towards the target.
             The target takes energy \\glossterm<standard damage> -2d.
-            If this damage does not \\glossterm<wound> the target, it has no effect, and the target does not lose any \\glossterm<hit points>.
+            If this damage does not make the target \\glossterm<bleed>, it has no effect, and the target does not lose any \\glossterm<hit points>.
 
             \\rankline
             \\rank<3> The damage increases to \\glossterm<standard damage> -1d.
@@ -35,7 +35,7 @@ thaumaturgy=MysticSphere(
         Spell('Magic Missile Storm', 5, '\\glossterm<Enemies> in a \\areasmall radius within \\rngmed range', """
             You send an unerring projectile made of pure magical energy towards each target.
             Each target takes energy \\glossterm<standard damage> -2d.
-            If this damage does not \\glossterm<wound> a target, it has no effect, and that target does not lose any \\glossterm<hit points>.
+            If this damage does not make a target \\glossterm<bleed>, it has no effect, and that target does not lose any \\glossterm<hit points>.
 
             \\rankline
             \\rank<7> The area increases to a \\areamed radius.

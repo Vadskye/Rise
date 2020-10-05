@@ -16,7 +16,7 @@ def generate_weapons():
         description="""
             This weapon vibrates slightly in the hand.
             As a standard action, you can intensify the vibration, imbuing the weapon with concussive force.
-            When you \\glossterm<wound> a creature with a \\glossterm<strike> using this weapon, if the weapon is intensified,
+            When you make a creature \\glossterm<bleed> with a \\glossterm<strike> using this weapon, if the weapon is intensified,
                 the creature is \\glossterm<dazed> as a \\glossterm<condition> and the weapon stops being intensified.
         """,
         short_description="Can daze a foe",
@@ -41,7 +41,7 @@ def generate_weapons():
             tags=[],
             description="""
                 This weapon functions like a \\mitem<flaming> weapon, except that you can also kindle the flames as a standard action.
-                When you \\glossterm<wound> a creature with a \\glossterm<strike> using this weapon, if the weapon is kindled,
+                When you make a creature \\glossterm<bleed> with a \\glossterm<strike> using this weapon, if the weapon is kindled,
                     the creature is \\glossterm<ignited> as a \\glossterm<condition> and the weapon stops being kindled.
                 This condition can be removed if the target makes a \\glossterm<difficulty rating> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
                 Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
@@ -55,7 +55,7 @@ def generate_weapons():
             tags=[],
             description="""
                 This weapon functions like a \\mitem<flaming> weapon, except that the flames are constantly kindled.
-                When you \\glossterm<wound> a creature with a \\glossterm<strike> using this weapon,
+                When you make a creature \\glossterm<bleed> with a \\glossterm<strike> using this weapon,
                     the creature is \\glossterm<ignited> until the end of the next round.
                 This effect can be removed if the target makes a \\glossterm<difficulty rating> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
                 Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
@@ -113,7 +113,7 @@ def generate_weapons():
             tags=[],
             description="""
                 This weapon functions like a \\mitem<shocking> weapon, except that you can also intensify the electricity as a standard action.
-                When you \\glossterm<wound> a creature with a \\glossterm<strike> using this weapon, if the weapon is intensified,
+                When you make a creature \\glossterm<bleed> with a \\glossterm<strike> using this weapon, if the weapon is intensified,
                     the creature is \\dazed as a \\glossterm<condition> and the weapon stops being intensified.
             """,
             short_description="Deals electricity damage, can daze foes",
@@ -125,7 +125,7 @@ def generate_weapons():
             tags=[],
             description="""
                 This weapon functions like a \\mitem<shocking> weapon, except that the electricity is constantly intensified.
-                When you \\glossterm<wound> a creature with a \\glossterm<strike> using this weapon,
+                When you make a creature \\glossterm<bleed> with a \\glossterm<strike> using this weapon,
                     the creature is \\dazed until the end of the next round.
             """,
             short_description="Deals electicity damage, dazes foes",
@@ -150,7 +150,7 @@ def generate_weapons():
             tags=[],
             description="""
                 This weapon functions like a \\mitem<freezing> weapon, except that you can also intensify the cold as a standard action.
-                When you \\glossterm<wound> a creature with a \\glossterm<strike> using this weapon, if the weapon is intensified,
+                When you make a creature \\glossterm<bleed> with a \\glossterm<strike> using this weapon, if the weapon is intensified,
                     the creature is \\chilled as a \\glossterm<condition> and the weapon stops being intensified.
             """,
             short_description="Deals cold damage, can chill",
@@ -162,7 +162,7 @@ def generate_weapons():
             tags=[],
             description="""
                 This weapon functions like a \\mitem<freezing> weapon, except that the cold is constantly intensified.
-                When you \\glossterm<wound> a creature with a \\glossterm<strike> using this weapon,
+                When you make a creature \\glossterm<bleed> with a \\glossterm<strike> using this weapon,
                     the creature is \\chilled until the end of the next round.
             """,
             short_description="Deals cold damage, chills foes",
@@ -241,7 +241,7 @@ def generate_weapons():
             description="""
                 This weapon shimmers with a chaotic pattern of colors.
                 As a standard action, you can intensify the shimmering.
-                When you \\glossterm<wound> a creature with a \\glossterm<strike> using this weapon, if the weapon is intensified,
+                When you make a creature \\glossterm<bleed> with a \\glossterm<strike> using this weapon, if the weapon is intensified,
                     the creature is \\glossterm<disoriented> as a \\glossterm<condition> and the weapon stops being intensified.
             """,
             short_description="Can disorient struck foes",
@@ -253,8 +253,8 @@ def generate_weapons():
             tags=['Compulsion'],
             description="""
                 This weapon shimmers with a chaotic pattern of colors.
-                When you \\glossterm<wound> a creature with a \\glossterm<strike> using this weapon,
-                    the creature is it is \\disoriented until the end of the next round.
+                When you make a creature \\glossterm<bleed> with a \\glossterm<strike> using this weapon,
+                    the creature is \\disoriented until the end of the next round.
             """,
             short_description="Disorients struck foes",
         ),

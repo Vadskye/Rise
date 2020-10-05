@@ -126,7 +126,7 @@ function: crit A:d B:n {
 }
 ```
 
-### Wound resistance
+### Bleed resistance
 
 #### HDA vs low resistance target
 
@@ -138,7 +138,7 @@ To maintain 95% chance of wounding, the following values work:
 * output [crit 8d10+80 1d20] named "level 20 -- 111"
 
 Subtracting the current (1 + half level) assumption for minimal investment bonuses to resistances,
-that suggests base wound resistance values of:
+that suggests base bleed resistance values of:
 
 * level 1: 2
 * level 5: 6
@@ -148,7 +148,7 @@ that suggests base wound resistance values of:
 
 #### LDA vs low resistance target
 
-To maintain 50% chance of wounding at low damage values and squishy wound resistance values, the following values work:
+To maintain 50% chance of wounding at low damage values and squishy bleed resistance values, the following values work:
 
 * output [crit 1d8 1d20] named "level 1 -- 5"
 * output [crit 2d6 1d20] named "level 5 -- 8"
@@ -157,7 +157,7 @@ To maintain 50% chance of wounding at low damage values and squishy wound resist
 * output [crit 8d10+10 1d20] named "level 20 -- 55"
 
 Subtracting the current (1 + half level) assumption for minimal investment bonuses to resistances,
-that suggests base wound resistance values of:
+that suggests base bleed resistance values of:
 
 * level 1: 4
 * level 5: 5

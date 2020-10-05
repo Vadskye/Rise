@@ -187,7 +187,7 @@ vivimancy=MysticSphere(
 
             \\rankline
             \\rank<5> This spell can target a living \\glossterm<ally> within \\rngmed range instead of you.
-            \\rank<7> This healing only requires the target to \\glossterm<wound> a living creature with a strike.
+            \\rank<7> This healing only requires the target to make a living creature \\glossterm<bleed> with a strike.
         """, tags=['Attune (target)']),
         Spell('Corpse Explosion', 2, 'One Small or larger corpse within \\rngmed range (see text)', """
             You violently discharge the latent magical potential within the target corpse, causing it to explode.

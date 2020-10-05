@@ -20,7 +20,7 @@ summon=MysticSphere(
             If a summoned creature gains a \\glossterm<vital wound> or has no hit points remaining at the end of a phase, it disappears.
 
             \\begin<itemize>
-                \\item Its \\glossterm<wound resistance> and \\glossterm<vital resistance> are equal to the base values for your level (see \\tref<Resistance Values>).
+                \\item Its \\glossterm<bleed resistance> and \\glossterm<vital resistance> are equal to the base values for your level (see \\tref<Resistance Values>).
                 \\item It has 5 \\glossterm<hit points>.
                 \\item Each of its \\glossterm<defenses> is equal to 4 \\add your level.
                 \\item Its \\glossterm<accuracy> is equal to your \\glossterm<accuracy> \\sub 2.

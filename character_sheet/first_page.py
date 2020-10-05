@@ -124,7 +124,7 @@ def statistics_header(destination):
         flex_row({'class': 'all-statistics'}, [
             core_statistics(destination),
             defenses(),
-            wound_resistance(),
+            bleed_resistance(),
             vital_resistance(),
         ])
     ])
@@ -145,27 +145,27 @@ def defenses():
         ]),
     ])
 
-def wound_resistance():
+def bleed_resistance():
     return flex_col({'class': 'damage-resistances'}, [
-        flex_wrapper(div({'class': 'section-header'}, 'Wound Resist')),
+        flex_wrapper(div({'class': 'section-header'}, 'Bleed Resist')),
         "".join([
             sidelabel('Physical', number_input({
                 'disabled': True,
-                'name': 'physical_wound_resistance_display',
-                'value': '@{physical_wound_resistance}',
+                'name': 'physical_bleed_resistance_display',
+                'value': '@{physical_bleed_resistance}',
             })),
             sidelabel('Energy', number_input({
                 'disabled': True,
-                'name': 'energy_wound_resistance_display',
-                'value': '@{energy_wound_resistance}',
+                'name': 'energy_bleed_resistance_display',
+                'value': '@{energy_bleed_resistance}',
             })),
             freeform_number_input(
-                number_input_attributes={'name': 'wound_resistance_freeform'},
-                text_input_attributes={'name': 'wound_resistance_freeform_name'},
+                number_input_attributes={'name': 'bleed_resistance_freeform'},
+                text_input_attributes={'name': 'bleed_resistance_freeform_name'},
             ),
             freeform_number_input(
-                number_input_attributes={'name': 'wound_resistance_freeform_2'},
-                text_input_attributes={'name': 'wound_resistance_freeform_name_2'},
+                number_input_attributes={'name': 'bleed_resistance_freeform_2'},
+                text_input_attributes={'name': 'bleed_resistance_freeform_name_2'},
             ),
         ]),
     ])

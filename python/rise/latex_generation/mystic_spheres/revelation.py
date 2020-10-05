@@ -134,7 +134,7 @@ revelation=MysticSphere(
         Spell('Reveal Vulnerability', 4, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit As a \\glossterm<condition>, the target's vulnerabilities become clear for all to see.
-            Its \\glossterm<wound resistance> is halved.
+            Its \\glossterm<bleed resistance> is halved.
             \\crit As above, except that the target's \\glossterm<vital resistance> is also halved.
 
             \\rankline
