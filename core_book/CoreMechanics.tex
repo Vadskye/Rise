@@ -972,7 +972,7 @@ It defines how attributes work and explains how to make attacks in combat.
         While \glossterm{hit points} are easy to restore, \glossterm{fatigue points} generally require a \glossterm{long rest} to remove.
         Fatigue is still easier to recover from than \glossterm{vital wounds}.
 
-        \subsection{Fatigue Points}\label{Fatigue Points}
+        \subsubsection{Fatigue Points}\label{Fatigue Points}
             Your level of fatigue is measured with \glossterm{fatigue points}.
             A number of abilities and attacks can cause you to gain fatigue points.
 
@@ -986,11 +986,11 @@ It defines how attributes work and explains how to make attacks in combat.
                 This penalty is called your \glossterm{fatigue penalty}.
                 If you have a fatigue penalty of at least \minus1, you are \glossterm{fatigued}.
 
-        \subsection{Exhaustion}\label{Exhaustion}
+        \subsubsection{Exhaustion}\label{Exhaustion}
             When your \glossterm{fatigue penalty} reaches \minus5, you fall \glossterm{unconscious} until your fatigue penalty is reduced below \minus5.
             Generally, this means that you are unconscious for 8 hours.
 
-        \subsection{Recovering From Fatigue}
+        \subsubsection{Recovering From Fatigue}
             When you take a \glossterm{long rest}, you remove all of your \glossterm{fatigue points}.
 
     \subsection{Hit Points}\label{Hit Points}
@@ -1185,6 +1185,16 @@ It defines how attributes work and explains how to make attacks in combat.
             \parhead{Lowering Defenses} When you are subject to an attack that you are aware of, you can voluntarily lower your defenses against the attack.
             If you do, your defense is treated as 0 against the attack.
 
+    \subsection{Encumbrance}\label{Encumbrance}
+        Your encumbrance is a value that represents how much you are burdened by armor and weight.
+        You apply your encumbrance as a penalty to all Strength and Dexterity-based checks you make.
+        You can increase your encumbrance by wearing armor or by carrying an excessive weight (see \pcref{Carrying Capacity}).
+        In addition, you reduce your total encumbrance from \glossterm{armor} by an amount equal to your base Strength, to a minimum of 0.
+        You apply this reduction to the total encumbrance applied by all armor you wear, not individually for each piece of armor.
+
+        Sleeping in armor is difficult.
+        If you sleep while you have any encumbrance, only half the time you spend sleeping counts as sleep for the purpose of determining your fatigue (see \pcref{Sleep and Fatigue}).
+
     \subsection{Initiative}\label{Initiative}
         When multiple creatures take mutually impossible actions simultaneously, such as racing to be the first one to a door, they must roll initiative checks.
         For details, see \pcref{Conflicting Actions}.
@@ -1343,7 +1353,7 @@ It defines how attributes work and explains how to make attacks in combat.
             % Should this be two size categories larger, or be more dependent on creature anatomy?
             \parhead{Immunities} Creatures at least three size categories larger than you are difficult to fight. You cannot get a \glossterm{critical hit} with melee \glossterm{strikes} against such creatures. If you can reach a vulnerable point on the creature, such as by flying or by using ranged weapons, you can get critical hits normally.
 
-    \subsection{Arbitrary Modifiers}
+    \subsection{Circumstantial Modifiers}
 
         Circumstances frequently modify your odds of success when making attacks and checks, or when defending yourself from attacks.
         There are two kinds of circumstantial modifiers.
@@ -1442,49 +1452,47 @@ It defines how attributes work and explains how to make attacks in combat.
     \subsection{Surprise Attacks}\label{Surprise Attacks}
         Sometimes, creatures are not aware that combat is taking place when the combat starts. This most commonly happens with ambushes. Any creature that is not aware of the combat continues taking whatever actions it would normally be taking until it becomes aware of the combat. It is \unaware until that point.
 
-    \subsection{Stacking Rules}\label{Stacking Rules}
-        Usually, modifiers stack with each other, meaning that you add or subtract all of the modifiers to get the final result.
-        However, some modifiers do not stack with each other, as described below.
-        When bonuses don't stack with each other, you only apply the largest bonus.
-        Likewise, when penalties don't stack with each ather, you only apply the largest penalty.
+    \subsection{Unusual Combat Situations}
 
-        \parhead{Special Exceptions}
+        \subsection{Mounted Combat}\label{Mounted Combat}
+            \parhead{Horses in Combat} Warhorses and warponies can serve readily as combat steeds. Light horses, ponies, and heavy horses, however, are frightened by combat.
+            At the start of each round, you must make a \glossterm{difficulty rating} 10 Ride check to control such a horse.
+            Success means you can act normally that round, directing the horse's movements as if it was trained for combat.
+            Failure means that the horse acts of its own volition that round, usually fleeing in panic.
 
-        \begin{itemize}
-            \item Effects from the same source do not stack. Any ability with the same name has the same source.
-            \item Magic bonuses do not stack with each other.
-            \item If a creature gains the same condition multiple times, the effects do not stack, but each instance of the condition is tracked separately.
-                The creature must remove all instances of the condition before the effects are removed.
-            \item Multiple effects that change a creature's \glossterm{size category} do not stack.
-                If multiple effects both increase and decrease size, size increases offset size decreases on a one-for-one basis to determine the creature's final size.
-            \item If you have two separate abilities which let you add the same attribute to a given roll or statistic, the attribute is still only added once.
-        \end{itemize}
+            \parhead{Space} A horse (not a pony) is a Large creature, and thus takes up a space 10 feet (2 squares) across. While mounted, you share your mount's space completely. Anyone threatening your mount can attack either you or your mount. However, your reach is still that of a creature of your normal size. Thus, a Medium paladin would threaten all squares adjacent to their Large horse with a longsword, and all squares 10 feet away from their mount with a lance.
 
-        \subsubsection{Maximum Bonuses}\label{Ability Limits}
-            Some bonuses specify that they cannot increase the value beyond a given point.
-            These bonuses must always be applied last, and cannot be combined with other bonuses to exceed the maximum value.
-            If multiple bonuses specify different maximum values, use the lower maximum value.
-            If a bonus with a maximum value is applied to a value that already exceeds the maximum value the bonus can provide, simply ignore the bonus and its maximum value.
+            In the case of abnormally large mounts (two or more size categories larger than you), you may not completely share space. Such situations should be handled on a case-by-case basis, depending on the nature of the mount.
 
-    \subsection{Doubling}\label{Doubling}
-        If you double any in-game value twice, it becomes three times as large. An additional doubling would make it four times as large, and so on. For example, if you make an attack that deals double damage and you get a critical hit, you deal triple damage.
+            \parhead{Combat while Mounted} With a \glossterm{difficulty rating} 5 Ride check, you can guide your mount with your knees so as to use both hands to attack or defend yourself. This is a free action.
 
-        \parhead{Real-World Values} Values that are ``real'', such as movement and distance, are an exception.
-        Any real value has a unit that it measures, such as feet.
-        Abstract values, such as bonuses and penalties to attacks and checks, do not have units.
-        If you double a real-world value twice, it becomes four times as large.
+            If your mount is moving in the current phase, you gain a \plus1d bonus to damage with Mounted weapons (see \pcref{Mounted Weapon}).
+            You also take a \minus2 penalty to accuracy with ranged strikes.
+            If your mount uses the \textit{sprint} ability, this penalty increases to \minus4 (see \pcref{Sprint}).
 
-    \subsection{Changing Statistics}
+            \parhead{If Your Mount Falls in Battle} If your mount falls, you fall to the ground with it.
 
-        Your modifiers and defenses can change for many reasons.
-        In general, all changes take effect immediately, though some side effects of those changes may not happen until you rest or level up.
+            \parhead{If You Are Dropped} If you are knocked unconscious, you fall from your mount to the ground, which may cause you to take \glossterm{falling damage}.
+            If you have a military saddle, you stay on your mount instead.
+            In either case, the mount acts according to its nature.
+            Most mounts flee combat without a rider.
 
-        \parhead{Numerical Modifiers} Changes to numerical modifiers always take effect immediately.
-        For example, if a barbarian enters a rage, their damage and defenses are all adjusted immediately.
+        \subsection{Unarmed Combat}\label{Unarmed Combat}
+            Every creature can attack with its body using an unarmed attack.
+            You are not proficient with your unarmed attack, so you are usually \defenseless while unarmed.
+            In addition, an unarmed attack always deals \glossterm{subdual damage}.
+            You may use any appropriate part of your body to make an unarmed attack -- fists, feet, elbows, and so on.
+            However, you only have one unarmed attack.
+            You cannot dual-wield unarmed attacks as if you were fighting with two weapons at once unless you are \glossterm{proficient} with your unarmed attack (see \pcref{Strikes}).
 
-        \parhead{Skill Points} Effects that change a character's skill points take effect immediately.
-        However, the character cannot spend additional skill points on new skills until they level up.
-        If a character's total skill points are decreased below their currently spent skill points, they immediately lose training from skills until their spent skill points are equal to their total skill points.
+            An unarmed attack is a type of natural weapon.
+            Abilities that affect natural weapons can affect your unarmed attack.
+            Gauntlets can also be worn to attack with your fists, but attacks with gauntlets are not considered unarmed attacks.
+
+        \subsection{Underwater Combat}\label{Underwater Combat}
+            Land-based creatures have considerable difficulty when fighting in water.
+            You take a \minus4 penalty to \glossterm{accuracy} with \glossterm{mundane} attacks, Strength and Dexterity-based \glossterm{checks}, and Armor and Reflex defenses.
+            In addition, all ranged attacks with a \glossterm{range increment} are considered to have a \glossterm{range increment} of 5 feet, regardless of the attack's normal range increment or any other modifiers.
 
 \section{Universal Abilities}\label{Universal Abilities}
     All creatures can use the following abilities.
@@ -1718,80 +1726,6 @@ It defines how attributes work and explains how to make attacks in combat.
             On a hit, the target becomes \prone.
         \end{freeability}
 
-    \subsection{Resting}\label{Resting}
-        When you have a moment to relax, you can rest to regain some of your expended resources.
-        There are two main types of rests: a \glossterm{short rest} and a \glossterm{long rest}.
-        Resting is not actually an ability in the same sense as most other abilities.
-        You do not declare that you are using the ``short rest'' ability, and you do not have to differentiate between whether you intend to take a short rest or a long rest.
-        The benefits of taking a short rest or long rest happen automatically after you spend enough time avoiding strenuous activity.
-
-        \subsubsection{Short Rest}\label{Short Rest}
-            Resting for ten minutes is considered a \glossterm{short rest}.
-            When you take a short rest, you gain the following benefits.
-            \begin{itemize}
-                \item You regain all of your \glossterm{hit points}.
-                \item You regain any \glossterm{attunement points} you released from \glossterm{attuned} abilities (see \pcref{Attunement}).
-                \item You remove all \glossterm{conditions} affecting you (unless they cannot be removed normally).
-                \item Some other abilities have specific effects that last until you take a short rest.
-                    For example, a barbarian cannot use their \textit{rage} ability again after raging until after they take a short rest (see Rage, page \pref{Bbn:Rage}).
-            \end{itemize}
-
-        \subsubsection{Long Rest}\label{Long Rest}
-            Resting for eight hours is considered a \glossterm{long rest}.
-            When you take a long rest, you gain the following benefits.
-            \begin{itemize}
-                \item You make progress towards removing one of your vital wounds (see \pcref{Removing Vital Wounds}).
-                    The Medicine skill can increase this healing (see \pcref{Accelerate Recovery}).
-                \item You remove all of your \glossterm{fatigue points}.
-                \item Some other abilities have specific effects that last until you take a long rest.
-            \end{itemize}
-
-% TODO: This is a bad name; organize these better
-\section{Special Rules}
-
-    \subsection{Rounding}
-        In general, if you encounter a fractional number, you round it down.
-
-    \subsection{Multipliers}
-        Sometimes a rule makes you multiply a number or a die roll.
-        As long as you're applying a single multiplier, multiply the number normally.
-        When two or more multipliers apply to any abstract value (such as a modifier or a die roll), however, combine them into a single multiple, with each extra multiple adding 1 less than its value to the first multiple.
-        Thus, a double (\mult2) and a double (\mult2) applied to the same number results in a triple (\mult3, because 2 \add1 = 3).
-        Some other effects specifically multiply additively in this way.
-
-        When applying multipliers to real-world values (such as weight or distance), normal rules of math apply instead.
-        A creature whose size doubles (thus multiplying its weight by 8) and then is turned to stone (which would multiply its weight by a factor of roughly 3) now weighs about 24 times normal, not 10 times normal.
-        Similarly, a blinded creature attempting to negotiate \glossterm{difficult terrain} would need to spend 20 feet of movement to move 5 feet (doubling the cost twice, for a total multiplier of \mult4), rather than as 15 feet (adding 100\% twice).
-
-    \subsection{Allies and Enemies}\label{Allies and Enemies}
-        Each creature you interact with in Rise is either an \glossterm{ally}, an \glossterm{enemy}, or a \glossterm{neutral party}.
-        Some beneficial abilities only affect allies, and some offensive abilities only affect enemies.
-
-        You can choose how you consider each creature at the start of each \glossterm{phase}.
-        You cannot consider yourself an \glossterm{ally} or an \glossterm{enemy}.
-        While you are \glossterm{unconscious}, you treat all creatures as \glossterm{allies}.
-
-        \parhead{Allies} An ally is any creature you consider an ally who also considers you an ally.
-        If you consider someone an ally, but they do not consider you an ally, you treat them as a neutral party for the purpose of your abilities.
-        Allies can move through your \glossterm{space}.
-
-        \parhead{Enemies} An enemy is any creature who you consider to be an enemy.
-        Enemies cannot move through your \glossterm{space}.
-
-        \parhead{Neutral Parties} A neutral party is any creature who is neither an ally nor an enemy.
-        You treat all creatures you have not declared an opinion of as neutral parties.
-        Neutral parties can move through your \glossterm{space}.
-
-    \subsection{Encumbrance}\label{Encumbrance}
-        Your encumbrance is a value that represents how much you are burdened by armor and weight.
-        You apply your encumbrance as a penalty to all Strength and Dexterity-based checks you make.
-        You can increase your encumbrance by wearing armor or by carrying an excessive weight (see \pcref{Carrying Capacity}).
-        In addition, you reduce your total encumbrance from \glossterm{armor} by an amount equal to your base Strength, to a minimum of 0.
-        You apply this reduction to the total encumbrance applied by all armor you wear, not individually for each piece of armor.
-
-        Sleeping in armor is difficult.
-        If you sleep while you have any encumbrance, only half the time you spend sleeping counts as sleep for the purpose of determining your fatigue (see \pcref{Sleep and Fatigue}).
-
     \subsection{Grappling}\label{Grappling}
         A grappled creature is physically struggling with at least one other creature.
         While grappled, you suffer certain penalties and restrictions, as described below.
@@ -1863,45 +1797,116 @@ It defines how attributes work and explains how to make attacks in combat.
             You can release a creature that you are not grappled by as a \glossterm{free action}.
             If you do, the creatures stops being grappled by you.
 
-    \subsection{Unarmed Combat}\label{Unarmed Combat}
-        Every creature can attack with its body using an unarmed attack.
-        You are not proficient with your unarmed attack, so you are usually \defenseless while unarmed.
-        In addition, an unarmed attack always deals \glossterm{subdual damage}.
-        You may use any appropriate part of your body to make an unarmed attack -- fists, feet, elbows, and so on.
-        However, you only have one unarmed attack.
-        You cannot dual-wield unarmed attacks as if you were fighting with two weapons at once unless you are \glossterm{proficient} with your unarmed attack (see \pcref{Strikes}).
+    \subsection{Resting}\label{Resting}
+        When you have a moment to relax, you can rest to regain some of your expended resources.
+        There are two main types of rests: a \glossterm{short rest} and a \glossterm{long rest}.
+        Resting is not actually an ability in the same sense as most other abilities.
+        You do not declare that you are using the ``short rest'' ability, and you do not have to differentiate between whether you intend to take a short rest or a long rest.
+        The benefits of taking a short rest or long rest happen automatically after you spend enough time avoiding strenuous activity.
 
-        An unarmed attack is a type of natural weapon.
-        Abilities that affect natural weapons can affect your unarmed attack.
-        Gauntlets can also be worn to attack with your fists, but attacks with gauntlets are not considered unarmed attacks.
+        \subsubsection{Short Rest}\label{Short Rest}
+            Resting for ten minutes is considered a \glossterm{short rest}.
+            When you take a short rest, you gain the following benefits.
+            \begin{itemize}
+                \item You regain all of your \glossterm{hit points}.
+                \item You regain any \glossterm{attunement points} you released from \glossterm{attuned} abilities (see \pcref{Attunement}).
+                \item You remove all \glossterm{conditions} affecting you (unless they cannot be removed normally).
+                \item Some other abilities have specific effects that last until you take a short rest.
+                    For example, a barbarian cannot use their \textit{rage} ability again after raging until after they take a short rest (see Rage, page \pref{Bbn:Rage}).
+            \end{itemize}
 
-    \subsection{Mounted Combat}\label{Mounted Combat}
-        \parhead{Horses in Combat} Warhorses and warponies can serve readily as combat steeds. Light horses, ponies, and heavy horses, however, are frightened by combat.
-        At the start of each round, you must make a \glossterm{difficulty rating} 10 Ride check to control such a horse.
-        Success means you can act normally that round, directing the horse's movements as if it was trained for combat.
-        Failure means that the horse acts of its own volition that round, usually fleeing in panic.
+        \subsubsection{Long Rest}\label{Long Rest}
+            Resting for eight hours is considered a \glossterm{long rest}.
+            When you take a long rest, you gain the following benefits.
+            \begin{itemize}
+                \item You make progress towards removing one of your vital wounds (see \pcref{Removing Vital Wounds}).
+                    The Medicine skill can increase this healing (see \pcref{Accelerate Recovery}).
+                \item You remove all of your \glossterm{fatigue points}.
+                \item Some other abilities have specific effects that last until you take a long rest.
+            \end{itemize}
 
-        \parhead{Space} A horse (not a pony) is a Large creature, and thus takes up a space 10 feet (2 squares) across. While mounted, you share your mount's space completely. Anyone threatening your mount can attack either you or your mount. However, your reach is still that of a creature of your normal size. Thus, a Medium paladin would threaten all squares adjacent to their Large horse with a longsword, and all squares 10 feet away from their mount with a lance.
+% TODO: This is a bad name; organize these better
+\section{Special Rules}
 
-        In the case of abnormally large mounts (two or more size categories larger than you), you may not completely share space. Such situations should be handled on a case-by-case basis, depending on the nature of the mount.
+    \subsection{General Calculations}
 
-        \parhead{Combat while Mounted} With a \glossterm{difficulty rating} 5 Ride check, you can guide your mount with your knees so as to use both hands to attack or defend yourself. This is a free action.
+        \subsubsection{Stacking Rules}\label{Stacking Rules}
+            Usually, modifiers stack with each other, meaning that you add or subtract all of the modifiers to get the final result.
+            However, some modifiers do not stack with each other, as described below.
+            When bonuses don't stack with each other, you only apply the largest bonus.
+            Likewise, when penalties don't stack with each ather, you only apply the largest penalty.
 
-        If your mount is moving in the current phase, you gain a \plus1d bonus to damage with Mounted weapons (see \pcref{Mounted Weapon}).
-        You also take a \minus2 penalty to accuracy with ranged strikes.
-        If your mount uses the \textit{sprint} ability, this penalty increases to \minus4 (see \pcref{Sprint}).
+            \parhead{Special Exceptions}
 
-        \parhead{If Your Mount Falls in Battle} If your mount falls, you fall to the ground with it.
+            \begin{itemize}
+                \item Effects from the same source do not stack. Any ability with the same name has the same source.
+                \item Magic bonuses do not stack with each other.
+                \item If a creature gains the same condition multiple times, the effects do not stack, but each instance of the condition is tracked separately.
+                    The creature must remove all instances of the condition before the effects are removed.
+                \item Multiple effects that change a creature's \glossterm{size category} do not stack.
+                    If multiple effects both increase and decrease size, size increases offset size decreases on a one-for-one basis to determine the creature's final size.
+                \item If you have two separate abilities which let you add the same attribute to a given roll or statistic, the attribute is still only added once.
+            \end{itemize}
 
-        \parhead{If You Are Dropped} If you are knocked unconscious, you fall from your mount to the ground, which may cause you to take \glossterm{falling damage}.
-        If you have a military saddle, you stay on your mount instead.
-        In either case, the mount acts according to its nature.
-        Most mounts flee combat without a rider.
+        \subsubsection{Maximum Bonuses}\label{Ability Limits}
+            Some bonuses specify that they cannot increase the value beyond a given point.
+            These bonuses must always be applied last, and cannot be combined with other bonuses to exceed the maximum value.
+            If multiple bonuses specify different maximum values, use the lower maximum value.
+            If a bonus with a maximum value is applied to a value that already exceeds the maximum value the bonus can provide, simply ignore the bonus and its maximum value.
 
-    \subsection{Underwater Combat}\label{Underwater Combat}
-        Land-based creatures have considerable difficulty when fighting in water.
-        You take a \minus4 penalty to \glossterm{accuracy} with \glossterm{mundane} attacks, Strength and Dexterity-based \glossterm{checks}, and Armor and Reflex defenses.
-        In addition, all ranged attacks with a \glossterm{range increment} are considered to have a \glossterm{range increment} of 5 feet, regardless of the attack's normal range increment or any other modifiers.
+        \subsubsection{Doubling}\label{Doubling}
+            If you double any in-game value twice, it becomes three times as large. An additional doubling would make it four times as large, and so on. For example, if you make an attack that deals double damage and you get a critical hit, you deal triple damage.
+
+            \parhead{Real-World Values} Values that are ``real'', such as movement and distance, are an exception.
+            Any real value has a unit that it measures, such as feet.
+            Abstract values, such as bonuses and penalties to attacks and checks, do not have units.
+            If you double a real-world value twice, it becomes four times as large.
+
+        \subsubsection{Changing Statistics}
+
+            Your modifiers and defenses can change for many reasons.
+            In general, all changes take effect immediately, though some side effects of those changes may not happen until you rest or level up.
+
+            \parhead{Numerical Modifiers} Changes to numerical modifiers always take effect immediately.
+            For example, if a barbarian enters a rage, their damage and defenses are all adjusted immediately.
+
+            \parhead{Skill Points} Effects that change a character's skill points take effect immediately.
+            However, the character cannot spend additional skill points on new skills until they level up.
+            If a character's total skill points are decreased below their currently spent skill points, they immediately lose training from skills until their spent skill points are equal to their total skill points.
+
+        \subsubsection{Rounding}
+            In general, if you encounter a fractional number, you round it down.
+
+        \subsubsection{Multipliers}
+            Sometimes a rule makes you multiply a number or a die roll.
+            As long as you're applying a single multiplier, multiply the number normally.
+            When two or more multipliers apply to any abstract value (such as a modifier or a die roll), however, combine them into a single multiple, with each extra multiple adding 1 less than its value to the first multiple.
+            Thus, a double (\mult2) and a double (\mult2) applied to the same number results in a triple (\mult3, because 2 \add1 = 3).
+            Some other effects specifically multiply additively in this way.
+
+            When applying multipliers to real-world values (such as weight or distance), normal rules of math apply instead.
+            A creature whose size doubles (thus multiplying its weight by 8) and then is turned to stone (which would multiply its weight by a factor of roughly 3) now weighs about 24 times normal, not 10 times normal.
+            Similarly, a blinded creature attempting to negotiate \glossterm{difficult terrain} would need to spend 20 feet of movement to move 5 feet (doubling the cost twice, for a total multiplier of \mult4), rather than as 15 feet (adding 100\% twice).
+
+    \subsection{Allies and Enemies}\label{Allies and Enemies}
+        Each creature you interact with in Rise is either an \glossterm{ally}, an \glossterm{enemy}, or a \glossterm{neutral party}.
+        Some beneficial abilities only affect allies, and some offensive abilities only affect enemies.
+
+        You can choose how you consider each creature at the start of each \glossterm{phase}.
+        You cannot consider yourself an \glossterm{ally} or an \glossterm{enemy}.
+        While you are \glossterm{unconscious}, you treat all creatures as \glossterm{allies}.
+
+        \parhead{Allies} An ally is any creature you consider an ally who also considers you an ally.
+        If you consider someone an ally, but they do not consider you an ally, you treat them as a neutral party for the purpose of your abilities.
+        Allies can move through your \glossterm{space}.
+
+        \parhead{Enemies} An enemy is any creature who you consider to be an enemy.
+        Enemies cannot move through your \glossterm{space}.
+
+        \parhead{Neutral Parties} A neutral party is any creature who is neither an ally nor an enemy.
+        You treat all creatures you have not declared an opinion of as neutral parties.
+        Neutral parties can move through your \glossterm{space}.
+
 
     \subsection{Sleep and Fatigue}\label{Sleep and Fatigue}
         A typical creature needs a minimum of 6 hours of sleep for every 18 hours spent awake, and a minimum of 50 hours of sleep every week.
@@ -1945,19 +1950,6 @@ It defines how attributes work and explains how to make attacks in combat.
             Some planes have a curved primary surface.
             On those planes, "horizontal" teleportation isn't objectively horizontal.
             Instead, it is horizontal relative to the surface of the plane.
-
-    \subsection{Traps}\label{Traps}
-        Some abilities create \glossterm{traps}.
-        All abilities that create traps specify a condition or circumstance, such as opening a door, which triggers the trap.
-        When a trap is triggered, an additional effect to occurs, as defined in the ability.
-
-        No more than one \glossterm{trap} can be placed on the same object or in the same area.
-        Only the first trap placed has any effect.
-        It must be removed before any new traps can be placed.
-
-        \subsubsection{Detecting Traps}\label{Detecting Traps}
-            Unless otherwise noted, active \glossterm{traps} can be detected with the Awareness skill and disabled with the Devices skill before their effect triggers (see \pcref{Awareness}, and \pcref{Devices}).
-            Unless otherwise noted, The \glossterm{difficulty rating} to detect and disable a trap is equal to 20 \add the \glossterm{power} of the ability that created the trap.
 
     \subsection{Resolving Ambiguity}\label{Resolving Ambiguity}
         When the rules are ambiguous about how they apply to you and no other creature, you decide how to resolve that ambiguity.
