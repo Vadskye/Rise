@@ -198,6 +198,110 @@ It defines how attributes work and explains how to make attacks in combat.
         Objects are not normally subject to critical hits.
         Some creatures are also not subject to critical hits, as noted in their descriptions.
 
+\section{Damage}\label{Damage}
+    Many \glossterm{attacks} deal damage to their targets.
+    When you take damage, you lose a \glossterm{hit point} (see \pcref{Hit Points}).
+
+    If you take at least as much damage as your \glossterm{bleed resistance} from a single source, you \glossterm{bleed} (see \pcref{Bleed Resistance}).
+    Bleeding causes you to lose an additional hit point.
+    In addition, some special attacks have additional effects if they make you bleed.
+
+    If the attack deals at least as much damage as your \glossterm{vital resistance}, the attack \glossterm{vitally wounds} you (see \pcref{Vital Resistance}).
+    Being vitally wounded by an attack causes you to lose an additional hit point and causes you to gain a \glossterm{vital wound}.
+    Generally, an attack that vitally wounds you also makes you \glossterm{bleed}, which means you lose a total of three hit points from the attack.
+    In addition, some special attacks have additional effects when they vitally wound you.
+
+    \parhead{Extraordinary Damage}
+        In unusual circumstances, you may take damage in a single attack that is at least double your \glossterm{vital resistance}.
+        For each multiple of your vital resistance that you take from a single attack, you lose an additional \glossterm{hit point} and gain an additional \glossterm{vital wound}.
+
+    \subsection{Vital Wounds}\label{Vital Wounds}
+        A \glossterm{vital wound} represents serious damage to your body.
+        Each \glossterm{vital wound} has a specific detrimental effect on you.
+
+        To determine the effect of a \glossterm{vital wound}, make a \glossterm{vital roll} and find the corresponding effect in \trefnp{Vital Wound Effects}.
+        The effect of the vital wound lasts until you remove that vital wound.
+        The effects of vital wounds stack with each other, even if you roll the same effect twice for different \glossterm{vital wounds}.
+
+        \subsubsection{Vital Rolls}\label{Vital Rolls}
+            To make a \glossterm{vital roll}, roll 1d10 \sub the number of \glossterm{vital wounds} you already had, ignoring the vital wound you are rolling for.
+            The result determines the effect of the \glossterm{vital wound}, as listed in \tref{Vital Wound Effects}.
+            Vital wound effects from vital rolls below 1 are lethal if untreated, but the Medicine skill can be used to prevent you from dying (see \pcref{Medicine}).
+
+            \begin{dtable}
+                \lcaption{Vital Wound Effects}
+                \begin{dtabularx}{\textwidth}{l X}
+                    \tb{Vital Roll} & \tb{Effect} \tableheaderrule
+                    \minus6 or less & You immediately die \\
+                    \minus1--\minus5 & You are unconscious, and you die at the end of the next round \\
+                    0                & You are unconscious, and you die after one minute             \\
+                    1                & You are unconscious while \glossterm{bloodied}                \\
+                    2                & You take a \minus2 penalty to \glossterm{accuracy}            \\
+                    3                & You take a \minus2 penalty to all \glossterm{defenses}        \\
+                    4                & You take a \minus2 penalty to future \glossterm{vital rolls}  \\
+                    5                & Your maximum \glossterm{hit points} are reduced by 2          \\
+                    6                & You move at half speed while \glossterm{bloodied}             \\
+                    7                & You take a \minus1 penalty to \glossterm{accuracy}            \\
+                    8                & You take a \minus1 penalty to all \glossterm{defenses}        \\
+                    9                & You take a \minus1 penalty to future \glossterm{vital rolls}  \\
+                    10               & Your maximum \glossterm{hit points} are reduced by 1          \\
+                    11 or more       & No effect                                                     \\
+                \end{dtabularx}
+            \end{dtable}
+
+        \subsubsection{Removing Vital Wounds}\label{Removing Vital Wounds}
+            Vital wounds take time to heal.
+            Whenever you take a \glossterm{long rest}, you gain a \plus5 bonus to one \glossterm{vital roll} for one vital wound you have.
+            This changes the effect of the vital wound, generally making it less severe.
+            If this makes the total \glossterm{vital roll} for that vital wound 11 or more, the vital wound is removed completely.
+
+            If you have multiple vital wounds, the vital wounds heal in order from lowest vital roll to highest vital roll.
+
+    % TODO: different section?
+    \subsection{Damage Types}\label{Damage Types}
+        All damage falls into one of two categories: \glossterm{energy damage} or \glossterm{physical damage}.
+        Physical damage is the most common type of damage.
+        Energy damage is usually caused by \glossterm{magical} effects.
+
+        \subsubsection{Damage Subtypes}\label{Damage Subtypes}
+            Physical damage has four subtypes: acid damage, bludgeoning damage, piercing damage, and slashing damage.
+            Energy damage has three subtypes: cold damage, electricity damage, and fire damage.
+            Damage of a particular subtype is also considered damage of its primary type.
+            For example, if you have a bonus to your \glossterm{resistances} against \glossterm{physical damage}, that bonus applies against bludgeoning damage because bludgeoning damage is a subtype of \glossterm{physical damage}.
+
+            Some damage types have special properties, as described below.
+            \parhead{Cold} Abilities that deal cold damage can freeze liquids and have similar effects appropriate to a sudden drop in temperature.
+            \parhead{Electricity} Abilities that deal electricity damage can ignite nonmagical fires if they damage combustible objects.
+            \parhead{Energy} Abilities that deal energy damage deal half damage underwater.
+            \parhead{Fire} Abilities that deal fire damage do not function underwater.
+            In addition, they provide light equivalent to a torch for their duration.
+            Abilities without a duration create a brief burst of torchlight.
+
+        \subsubsection{Multiple Damage Types}\label{Multiple Damage Types}
+            Some attacks deal damage that has multiple damage types.
+            When you take damage with multiple damage types, you use your lowest applicable \glossterm{resistance} to defend against it.
+            Other abilities similarly apply only if they apply to all damage types dealt by the attack.
+
+            For example, a flaming longsword deals slashing and fire damage.
+            If you were hit with a strike with that longsword, you would use the lower of your \glossterm{bleed resistance} against \glossterm{physical damage} and your \glossterm{bleed resistance} against \glossterm{energy damage} to resist the damage.
+            An ability that gave you immunity to fire damage would not prevent you from taking damage from the attack unless you were also immune to slashing damage.
+
+    \subsection{Special Damage Types}\label{Special Damage Types}
+        These special damage types are separate from the standard damage types, like fire damage or energy damage.
+
+        \subsubsection{Subdual Damage}\label{Subdual Damage}
+            Some attacks and environmental effects deal subdual damage.
+            Subdual damage works in the same way as normal damage, except it cannot inflict \glossterm{vital wounds}.
+            If an attack that deals subdual damage would inflict a vital wound, the target gains two \glossterm{fatigue points} instead.
+
+        \subsubsection{Environmental Damage}\label{Environmental Damage}
+            Some abilities and environmental effects deal environmental damage.
+            Environmental damage is never dealt as the result of a successful attack roll.
+            Environmental damage works in the same way as normal damage, except that small amounts of environmental damage have no effect.
+            If a creature would take \glossterm{environmental damage} that is less than its \glossterm{bleed resistance}, it does not take the damage and does not lose any \glossterm{hit points}.
+
+            It is possible for damage to be both environmental damage and subdual damage.
+
 \section{Movement and Positioning}\label{Movement and Positioning}
 
     This section describes how creatures move and position themselves on a battlefield.
@@ -364,6 +468,22 @@ It defines how attributes work and explains how to make attacks in combat.
 
 \section{Ability Mechanics}\label{Ability Mechanics}
 
+    \subsection{Magical and Mundane Abilities}\label{Magical and Mundane Abilities}
+
+        There are two types of abilities: magical abilities and mundane abilities.
+
+        \parhead{Magical Abilities}\label{Magical Abilities} A \glossterm{magical} ability is an ability fundamentally composed of or fuelled by magic.
+        Magical abilities often have effects that would be impossible without magical intervention.
+        Examples include \glossterm{spells}, a dragon's breath weapon, and a paladin's ability to smite foes.
+        Abilities that are magical in nature are indicated with a (Magical) indicator.
+        Abilities that are not magical are \glossterm{mundane}.
+
+        \parhead{Mundane Abilities}\label{Mundane Abilities} A \glossterm{mundane} ability has some form of natural explanation and does not fundamentally originate from a magical source.
+        Examples include weapon attacks, a dragon's frightful presence, and a barbarian's rage.
+        Mundane attacks often target Armor defense.
+        Unless otherwise indicated, all abilities are mundane in nature.
+        Abilities that are not mundane are \glossterm{magical}.
+
     \subsection{Targets}\label{Targets}
         Almost all abilities affect targets.
         A target of an ability is a creature directly affected by the ability in some way.
@@ -511,73 +631,73 @@ It defines how attributes work and explains how to make attacks in combat.
         An ability's duration determines how long its effect lasts.
         Abilities can have one of several different kinds of durations.
 
-    \subsection{Conditions}\label{Conditions}
-        Many abilities impose \glossterm{conditions} on their targets.
-        A condition lasts until it is removed.
-        You can remove conditions by taking a \glossterm{short rest} or using the \textit{recover} ability (see \pcref{Recover}).
-        There are several other abilities that can also remove conditions.
+        \subsubsection{Conditions}\label{Conditions}
+            Many abilities impose \glossterm{conditions} on their targets.
+            A condition lasts until it is removed.
+            You can remove conditions by taking a \glossterm{short rest} or using the \textit{recover} ability (see \pcref{Recover}).
+            There are several other abilities that can also remove conditions.
 
-    \subsection{Attunement}\label{Attunement}
-        Many abilities last as long as a creature attunes to them.
-        Attuning to an ability costs an \glossterm{attunement point}.
-        As long as you remain attuned to that ability, you cannot recover that attunement point by any means.
-        After you stop being attuned to that ability, you can recover that attunement point when you take your next \glossterm{short rest}.
+        \subsubsection{Attunement}\label{Attunement}
+            Many abilities last as long as a creature attunes to them.
+            Attuning to an ability costs an \glossterm{attunement point}.
+            As long as you remain attuned to that ability, you cannot recover that attunement point by any means.
+            After you stop being attuned to that ability, you can recover that attunement point when you take your next \glossterm{short rest}.
 
-        As a \glossterm{free action}, you can use the \textit{release attunement} ability to stop being attuned an ability you have attuned to.
-        \begin{freeability}{Release Attunement}
-            You stop being attuned to one effect you have attuned to.
-        \end{freeability}
+            As a \glossterm{free action}, you can use the \textit{release attunement} ability to stop being attuned an ability you have attuned to.
+            \begin{freeability}{Release Attunement}
+                You stop being attuned to one effect you have attuned to.
+            \end{freeability}
 
-        Attuned abilities continue to work across any distance, but not across planar boundaries.
-        % TODO: wording
-        At the end of each round, your attunement to all abilities created by creatures on a different plane than your current plane ends.
-        Planar travel that does not last a full round, such as teleportation within a plane, does not interrupt your attunement.
-
-        \subsubsection{Attunement Types}\label{Attunement Types}
-            There are three types of attunement abilities: self, target, and ritual.
-
-            \parhead{Attune (self)} A self attunement ability requires the creature using the ability to attune to the effect.
-
-            \parhead{Attune (target)} A target attunement ability requires the target of the ability to attune to the effect.
-            If the ability targets multiple creatures, each creature must attune to the ability independently.
-
-            As a special case, if a target attunement ability targets an inanimate object, the creature using the ability must attune to the effect.
-
-            \parhead{Attune (ritual)} Only \glossterm{rituals} have the \glossterm{Attune} (ritual) tag.
-            A ritual attunement ability requires any participant in the ritual to attune to the effect.
-            In addition, ritual attunement abilities are not subject to the normal restrictions on multiple attunement.
+            Attuned abilities continue to work across any distance, but not across planar boundaries.
             % TODO: wording
-            You can maintain any number of activations of a particular ritual attunement ability at once.
+            At the end of each round, your attunement to all abilities created by creatures on a different plane than your current plane ends.
+            Planar travel that does not last a full round, such as teleportation within a plane, does not interrupt your attunement.
 
-        \subsubsection{Multiple Attunement}
-            You can attune to multiple \glossterm{Attune} (target) and \glossterm{Attune} (self) abilities, and multiple creatures can attune to different uses of the same \glossterm{Attune} (target) ability you have.
-            However, you cannot attune to the same ability more than once, regardless of whether it is \glossterm{Attune} (self) or \glossterm{Attune} (target).
+            \subsubsection{Attunement Types}\label{Attunement Types}
+                There are three types of attunement abilities: self, target, and ritual.
 
-    \subsection{Sustained Abilities}\label{Sustained Abilities}
-        Some abilities last as long as you take an action to sustain them each round.
-        The type of action required is always specified in the ability.
-        At the end of each round, the ability is dismissed unless you used the ability that phase or took the action to sustain the ability that phase.
-        Taking an action to sustain a spell is not a \glossterm{Focus} ability.
+                \parhead{Attune (self)} A self attunement ability requires the creature using the ability to attune to the effect.
 
-        % TODO: a more robust timing system would make stating this explicitly unnecessary
-        If a sustained ability has effects that trigger at the end of the action phase, it ends before having its effects if you fail to sustain the ability.
+                \parhead{Attune (target)} A target attunement ability requires the target of the ability to attune to the effect.
+                If the ability targets multiple creatures, each creature must attune to the ability independently.
 
-        Taking an action to sustain an ability only allows you to sustain a single use of that ability.
-        However, you can sustain multiple separate abilities at once if you have available actions.
+                As a special case, if a target attunement ability targets an inanimate object, the creature using the ability must attune to the effect.
 
-        You can normally only sustain an ability for up to 5 minutes.
-        After that time, the ability's effect is \glossterm{dismissed}.
+                \parhead{Attune (ritual)} Only \glossterm{rituals} have the \glossterm{Attune} (ritual) tag.
+                A ritual attunement ability requires any participant in the ritual to attune to the effect.
+                In addition, ritual attunement abilities are not subject to the normal restrictions on multiple attunement.
+                % TODO: wording
+                You can maintain any number of activations of a particular ritual attunement ability at once.
 
-    \subsection{Permanent}
-        Some abilities last permanently.
-        Such abilities never expire on their own, but can be \glossterm{dismissed} or removed by other abilities appropriately.
+            \subsubsection{Multiple Attunement}
+                You can attune to multiple \glossterm{Attune} (target) and \glossterm{Attune} (self) abilities, and multiple creatures can attune to different uses of the same \glossterm{Attune} (target) ability you have.
+                However, you cannot attune to the same ability more than once, regardless of whether it is \glossterm{Attune} (self) or \glossterm{Attune} (target).
+
+        \subsubsection{Sustained Abilities}\label{Sustained Abilities}
+            Some abilities last as long as you take an action to sustain them each round.
+            The type of action required is always specified in the ability.
+            At the end of each round, the ability is dismissed unless you used the ability that phase or took the action to sustain the ability that phase.
+            Taking an action to sustain a spell is not a \glossterm{Focus} ability.
+
+            % TODO: a more robust timing system would make stating this explicitly unnecessary
+            If a sustained ability has effects that trigger at the end of the action phase, it ends before having its effects if you fail to sustain the ability.
+
+            Taking an action to sustain an ability only allows you to sustain a single use of that ability.
+            However, you can sustain multiple separate abilities at once if you have available actions.
+
+            You can normally only sustain an ability for up to 5 minutes.
+            After that time, the ability's effect is \glossterm{dismissed}.
+
+        \subsubsection{Permanent}
+            Some abilities last permanently.
+            Such abilities never expire on their own, but can be \glossterm{dismissed} or removed by other abilities appropriately.
 
         % Is this necessary?
         % Should this clarify interactions with bursts/zones/emanations?
-    \subsection{Targeting and Durations}
-        If an ability targets creatures or objects directly, the effects travel with the targets for the ability's duration.
-        If an ability creates or summons objects or creatures, they last for the duration of the ability, and are capable of moving outside the ability's initial range.
-        Such effects can sometimes be destroyed prior to when their duration ends.
+        \subsubsection{Targeting and Durations}
+            If an ability targets creatures or objects directly, the effects travel with the targets for the ability's duration.
+            If an ability creates or summons objects or creatures, they last for the duration of the ability, and are capable of moving outside the ability's initial range.
+            Such effects can sometimes be destroyed prior to when their duration ends.
 
     \subsection{Combining Effects}
         Abilities do not generally affect the way another abilities function.
@@ -673,21 +793,6 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \parhead{Visual} Visual abilities use visible objects or forces to cause their effects.
         Creatures and objects that cannot see the effect are immune to it.
-
-    \subsection{Magical and Mundane Abilities}\label{Magical and Mundane Abilities}
-
-        There are two types of abilities: magical abilities and mundane abilities.
-
-        \parhead{Magical Abilities}\label{Magical Abilities} A \glossterm{magical} ability is an ability that has no physical explanation.
-        Examples include \glossterm{spells}, a dragon's breath weapon, and a paladin's ability to smite foes.
-        Abilities that are magical in nature are indicated with a (Magical) indicator.
-        Abilities that are not magical are \glossterm{mundane}.
-
-        \parhead{Mundane Abilities}\label{Mundane Abilities} A \glossterm{mundane} ability has some form of natural explanation and does not fundamentally originate from a magical source.
-        Examples include weapon attacks, a dragon's frightful presence, and a barbarian's rage.
-        Mundane attacks often target Armor defense.
-        Unless otherwise indicated, all abilities are mundane in nature.
-        Abilities that are not mundane are \glossterm{magical}.
 
 \section{Attributes}\label{Attributes}
 
@@ -845,93 +950,48 @@ It defines how attributes work and explains how to make attacks in combat.
         For example, a 20th level half-orc cleric with the Strength domain who spent 7 points on their base Strength would have a total base Strength of 6.
         Their Strength would be two higher than it would be with a base attribute of 4, for a total of 25.
 
-\section{Taking Damage}\label{Taking Damage}
+\section{Resources}\label{Resources}
 
-    When you take damage, you lose a \glossterm{hit point} (see \pcref{Hit Points}).
+    Characters have many resources that they can expend.
+    Insight points are spent during the character creation and leveling process, while all other resources are spent throughout the in-game time.
+    Many resources can be regained by resting (see \pcref{Resting}).
 
-    If you take at least as much damage as your \glossterm{bleed resistance} from a single source, you \glossterm{bleed}.
-    Bleeding causes you to lose an additional hit point.
-    In addition, some special attacks have additional effects if they make you bleed.
+    \subsection{Attunement Points}\label{Attunement Points}
+        You can use \glossterm{attunement points} to \glossterm{attune} to effects such as spells or items (see \pcref{Attunement}).
+        Abilities that require attunement have the \glossterm{Attune} tag (see \pcref{Ability Tags}).
 
-    If the attack deals at least as much damage as your \glossterm{vital resistance}, the attack \glossterm{vitally wounds} you.
-    Being vitally wounded by an attack causes you to lose an additional hit point and causes you to gain a \glossterm{vital wound}.
-    Generally, an attack that vitally wounds you also makes you \glossterm{bleed}, which means you lose a total of three hit points from the attack.
-    In addition, some special attacks have additional effects when they vitally wound you.
+        A 1st level character typically has 2 \glossterm{attunement points}.
+        At higher levels, you gain additional \glossterm{attunement points} (see \pcref{Character Advancement}).
+        A small number of abilities can also grant additional \glossterm{attunement points}.
 
-    \parhead{Extraordinary Damage}
-        In unusual circumstances, you may take damage in a single attack that is at least double your \glossterm{vital resistance}.
-        For each multiple of your vital resistance that you take from a single attack, you lose an additional \glossterm{hit point} and gain an additional \glossterm{vital wound}.
+        When you take a \glossterm{short rest}, you recover all \glossterm{attunement points} that you released from attuned effects.
+        For details, see \pcref{Resting}.
 
-    % TODO: this table is awkwardly wide, can it have more information?
-    \begin{dtable}
-        \lcaption{Resistance Values}
-        \begin{dtabularx}{\columnwidth}{l *{2}{>{\ccol}X}}
-            \tb{Total}\fn{1} & \tb{Bleed Resistance} & \tb{Vital Resistance} \tableheaderrule
-            \minus1 or lower & 1                     & 10     \\
-            0                & 1                     & 11     \\
-            1                & 2                     & 12     \\
-            2                & 3                     & 13     \\
-            3                & 4                     & 15     \\
-            4                & 5                     & 17     \\
-            5                & 6                     & 19     \\
-            6                & 7                     & 23     \\
-            7                & 8                     & 27     \\
-            8                & 10                    & 32     \\
-            9                & 12                    & 37     \\
-            10               & 14                    & 43     \\
-            11               & 17                    & 49     \\
-            12               & 20                    & 55     \\
-            13               & 23                    & 61     \\
-            14               & 26                    & 68     \\
-            15               & 29                    & 75     \\
-            16               & 32                    & 82     \\
-            17               & 36                    & 90     \\
-            18               & 40                    & 100    \\
-            19               & 45                    & 110    \\
-            20               & 50                    & 120    \\
-            21               & 55                    & 130    \\
-            22               & 60                    & 140    \\
-            23               & 65                    & 150    \\
-            24               & 70                    & 160    \\
-            25\plus\fn{3}    & \tdash                & \tdash \\
-        \end{dtabularx}
-        1. This is your level \add your base Constitution. \\
-        1. This is your \glossterm{bleed resistance} (see \pcref{Bleed Resistance}). \\
-        2. This is your \glossterm{vital resistance} (see \pcref{Vital Resistance}). \\
-        3. To calculate the bleed resistance for a creature with an epic Constitution, increase its bleed resistance by 5 per point, and its vital resistance by 10 per point.
-    \end{dtable}
+    \subsection{Fatigue}\label{Fatigue}
+        Thoughout the day, you can become fatigued by your exertions both in and out of combat.
+        While \glossterm{hit points} are easy to restore, \glossterm{fatigue points} generally require a \glossterm{long rest} to remove.
+        Fatigue is still easier to recover from than \glossterm{vital wounds}.
 
-    \subsection{Resistances}\label{Resistances}
+        \subsection{Fatigue Points}\label{Fatigue Points}
+            Your level of fatigue is measured with \glossterm{fatigue points}.
+            A number of abilities and attacks can cause you to gain fatigue points.
 
-        \subsubsection{Bleed Resistance}\label{Bleed Resistance}
-            Your \glossterm{bleed resistance} measures your ability to reduce the impact of minor damaging attacks.
-            It is based on your level \add your base Constitution, as defined in \tref{Resistance Values}.
-            Wearing \glossterm{armor} can increase your resistance against \glossterm{physical damage}, and some special abilities can also increase it.
+            \subsubsection{Fatigue Tolerance}\label{Fatigue Tolerance}
+                You can gain a number of \glossterm{fatigue points} equal to 1 \add your base Constitution without suffering any consequences (minimum 0).
+                This value is called your \glossterm{fatigue tolerance}.
+                Some abilities can modify your fatigue tolerance.
 
-            \parhead{Missing Bleed Resistance} An object or creature without a listed \glossterm{bleed resistance} loses a single \glossterm{hit point} from damaging attacks.
+            \subsubsection{Fatigue Penalty}\label{Fatigue Penalty}
+                You take a penalty to \glossterm{accuracy} and \glossterm{checks} equal to the number of fatigue points you have \sub your \glossterm{fatigue tolerance}.
+                This penalty is called your \glossterm{fatigue penalty}.
+                If you have a fatigue penalty of at least \minus1, you are \glossterm{fatigued}.
 
-            \parhead{Literal Blood} Many creatures that do not have blood in exact the same sense as humans still have a bleed resistance and are said to "bleed" from damaging attacks.
-            Those creatures still lose some important part of their life force or corporeal bodies when they take significant damage.
-            A rare few creatures are explicitly unable to bleed, as indicated in their descriptions.
+        \subsection{Exhaustion}\label{Exhaustion}
+            When your \glossterm{fatigue penalty} reaches \minus5, you fall \glossterm{unconscious} until your fatigue penalty is reduced below \minus5.
+            Generally, this means that you are unconscious for 8 hours.
 
-        \subsubsection{Vital Resistance}\label{Vital Resistance}
-            Your \glossterm{vital resistance} measures your ability to avoid gaining \glossterm{vital wounds} from dangerous attacks.
-            When you take damage from an attack, if the damage is at least as much as your \glossterm{vital resistance}, you gain a \glossterm{vital wound} (see \pcref{Vital Wounds}).
-
-            Your \glossterm{vital resistance} is based on your level \add your base Constitution, as defined in \tref{Resistance Values}.
-            Wearing \glossterm{armor} can increase your vital resistance against \glossterm{physical damage}, and some special abilities can also increase it.
-
-            \parhead{Missing Vital Resistance} An object or creature without a listed \glossterm{vital resistance} cannot gain \glossterm{vital wounds} from taking damage directly.
-            It can only gain \glossterm{vital wounds} from taking damage while it has no \glossterm{hit points} remaining.
-
-        \subsubsection{Damage Type Resistances}\label{Damage Type Resistances}
-            Each type of resistance is further divided into what type of damage it protects against.
-            Your \glossterm{bleed resistance} and \glossterm{vital resistance} apply against damage of any type.
-            Those are collectively called your \glossterm{resistances}.
-            Some effects increase your resistances against either \glossterm{physical damage} or \glossterm{energy damage}.
-
-            \parhead{Stacking Magic Bonuses} A \glossterm{magic bonus} to a specific type of resistance does not stack with a \glossterm{magic bonus} to a more general resistance if both apply.
-            For example, if you have a \glossterm{magic bonus} to resistances against energy damage and another \glossterm{magic bonus} to resistances against fire damage, you only use the higher of the two when you take fire damage.
+        \subsection{Recovering From Fatigue}
+            When you take a \glossterm{long rest}, you remove all of your \glossterm{fatigue points}.
 
     \subsection{Hit Points}\label{Hit Points}
         Your \glossterm{hit points} measure how hard you are to seriously injure or kill.
@@ -972,105 +1032,35 @@ It defines how attributes work and explains how to make attacks in combat.
             Instead, you would simply be at one hit point after both the healing and damage were applied.
             Similarly, if you were at your maximum hit points and both regained and lost two hit points simultaneously, you would still be at your maximum hit points.
 
-    \subsection{Vital Wounds}\label{Vital Wounds}
-        A \glossterm{vital wound} represents serious damage to your body.
-        Each \glossterm{vital wound} has a specific detrimental effect on you.
+    \subsection{Insight Points}\label{Insight Points}
+        You can spend \glossterm{insight points} to learn new special abilities.
+        You normally have a number of \glossterm{insight points} equal to 2 \add your base Intelligence.
+        Some abilities can also grant insight points.
 
-        To determine the effect of a \glossterm{vital wound}, make a \glossterm{vital roll} and find the corresponding effect in \trefnp{Vital Wound Effects}.
-        The effect of the vital wound lasts until you remove that vital wound.
-        The effects of vital wounds stack with each other, even if you roll the same effect twice for different \glossterm{vital wounds}.
-
-        \subsubsection{Vital Rolls}\label{Vital Rolls}
-            To make a \glossterm{vital roll}, roll 1d10 \sub the number of \glossterm{vital wounds} you already had, ignoring the vital wound you are rolling for.
-            The result determines the effect of the \glossterm{vital wound}, as listed in \tref{Vital Wound Effects}.
-            Vital wound effects from vital rolls below 1 are lethal if untreated, but the Medicine skill can be used to prevent you from dying (see \pcref{Medicine}).
-
-            \begin{dtable}
-                \lcaption{Vital Wound Effects}
-                \begin{dtabularx}{\textwidth}{l X}
-                    \tb{Vital Roll} & \tb{Effect} \tableheaderrule
-                    \minus6 or less & You immediately die \\
-                    \minus1--\minus5 & You are unconscious, and you die at the end of the next round \\
-                    0                & You are unconscious, and you die after one minute             \\
-                    1                & You are unconscious while \glossterm{bloodied}                \\
-                    2                & You take a \minus2 penalty to \glossterm{accuracy}            \\
-                    3                & You take a \minus2 penalty to all \glossterm{defenses}        \\
-                    4                & You take a \minus2 penalty to future \glossterm{vital rolls}  \\
-                    5                & Your maximum \glossterm{hit points} are reduced by 2          \\
-                    6                & You move at half speed while \glossterm{bloodied}             \\
-                    7                & You take a \minus1 penalty to \glossterm{accuracy}            \\
-                    8                & You take a \minus1 penalty to all \glossterm{defenses}        \\
-                    9                & You take a \minus1 penalty to future \glossterm{vital rolls}  \\
-                    10               & Your maximum \glossterm{hit points} are reduced by 1          \\
-                    11 or more       & No effect                                                     \\
-                \end{dtabularx}
-            \end{dtable}
-
-        \subsubsection{Removing Vital Wounds}\label{Removing Vital Wounds}
-            Vital wounds take time to heal.
-            Whenever you take a \glossterm{long rest}, you gain a \plus5 bonus to one \glossterm{vital roll} for one vital wound you have.
-            This changes the effect of the vital wound, generally making it less severe.
-            If this makes the total \glossterm{vital roll} for that vital wound 11 or more, the vital wound is removed completely.
-
-            If you have multiple vital wounds, the vital wounds heal in order from lowest vital roll to highest vital roll.
-
-    % TODO: different section?
-    \subsection{Damage Types}\label{Damage Types}
-        All damage falls into one of two categories: \glossterm{energy damage} or \glossterm{physical damage}.
-        Physical damage is the most common type of damage.
-        Energy damage is usually caused by \glossterm{magical} effects.
-
-        \subsubsection{Damage Subtypes}\label{Damage Subtypes}
-            Physical damage has four subtypes: acid damage, bludgeoning damage, piercing damage, and slashing damage.
-            Energy damage has three subtypes: cold damage, electricity damage, and fire damage.
-            Damage of a particular subtype is also considered damage of its primary type.
-            For example, if you have a bonus to your \glossterm{resistances} against \glossterm{physical damage}, that bonus applies against bludgeoning damage because bludgeoning damage is a subtype of \glossterm{physical damage}.
-
-            Some damage types have special properties, as described below.
-            \parhead{Cold} Abilities that deal cold damage can freeze liquids and have similar effects appropriate to a sudden drop in temperature.
-            \parhead{Electricity} Abilities that deal electricity damage can ignite nonmagical fires if they damage combustible objects.
-            \parhead{Energy} Abilities that deal energy damage deal half damage underwater.
-            \parhead{Fire} Abilities that deal fire damage do not function underwater.
-            In addition, they provide light equivalent to a torch for their duration.
-            Abilities without a duration create a brief burst of torchlight.
-
-        \subsubsection{Multiple Damage Types}\label{Multiple Damage Types}
-            Some attacks deal damage that has multiple damage types.
-            When you take damage with multiple damage types, you use your lowest applicable \glossterm{resistance} to defend against it.
-            Other abilities similarly apply only if they apply to all damage types dealt by the attack.
-
-            For example, a flaming longsword deals slashing and fire damage.
-            If you were hit with a strike with that longsword, you would use the lower of your \glossterm{bleed resistance} against \glossterm{physical damage} and your \glossterm{bleed resistance} against \glossterm{energy damage} to resist the damage.
-            An ability that gave you immunity to fire damage would not prevent you from taking damage from the attack unless you were also immune to slashing damage.
-
-    \subsection{Special Damage Types}\label{Special Damage Types}
-
-        \subsubsection{Subdual Damage}\label{Subdual Damage}
-            Some attacks and environmental effects deal subdual damage.
-            Subdual damage works in the same way as normal damage, except it cannot inflict \glossterm{vital wounds}.
-            If an attack that deals subdual damage would inflict a vital wound, the target gains two \glossterm{fatigue points} instead.
-
-        \subsubsection{Environmental Damage}\label{Environmental Damage}
-            Some abilities and environmental effects deal environmental damage.
-            Environmental damage is never dealt as the result of a successful attack roll.
-            Environmental damage works in the same way as normal damage, except that small amounts of environmental damage have no effect.
-            If a creature would take \glossterm{environmental damage} that is less than its \glossterm{bleed resistance}, it does not take the damage and does not lose any \glossterm{hit points}.
-
-            It is possible for damage to be both environmental damage and subdual damage.
+        Any character can spend insight points in any of the following ways.
+        \begin{itemize}
+            \item You can spend two \glossterm{insight points} to become a \glossterm{multiclass} character (see \pcref{Multiclass Characters}).
+            \item You can spend an \glossterm{insight point} to gain two \glossterm{skill points}.
+            \item You can spend an \glossterm{insight point} to gain proficiency in an additional \glossterm{usage class} of armor (light, medium, or heavy).
+            \item You can spend an \glossterm{insight point} to gain proficiency in an additional \glossterm{weapon group}.
+        \end{itemize}
+        In addition, every class has at least one way to spend \glossterm{insight points} to learn additional abilities.
+        The list of ways to spend \glossterm{insight points} on class abilities is given below.
+        \begin{itemize}
+            \item Barbarian: Primal maneuvers
+            \item Cleric: Divine spells
+            \item Druid: Nature spells, wild aspects
+            \item Fighter: Battle tactics, martial maneuvers
+            \item Mage: Arcane spells
+            \item Monk: Estoric maneuvers, ki manifestations
+            \item Paladin: Divine spells
+            \item Ranger: Hunting styles, wild maneuvers
+            \item Rogue: Trick maneuvers
+            \item Warlock: Pact spells
+        \end{itemize}
 
 \section{Character Statistics}
     This section explains how character statistics, such as how strong you are or how accurate your attacks are, should be calculated.
-
-    \subsection{Attunement Points}\label{Attunement Points}
-        You can use \glossterm{attunement points} to \glossterm{attune} to effects such as spells or items (see \pcref{Attunement}).
-        Abilities that require attunement have the \glossterm{Attune} tag (see \pcref{Ability Tags}).
-
-        A 1st level character typically has 2 \glossterm{attunement points}.
-        At higher levels, you gain additional \glossterm{attunement points} (see \pcref{Character Advancement}).
-        A small number of abilities can also grant additional \glossterm{attunement points}.
-
-        When you take a \glossterm{short rest}, you recover all \glossterm{attunement points} that you released from attuned effects.
-        For details, see \pcref{Resting}.
 
     \subsection{Accuracy}\label{Accuracy}
         Your accuracy with an \glossterm{attack} is the number that you add to the \glossterm{attack roll}.
@@ -1205,58 +1195,76 @@ It defines how attributes work and explains how to make attacks in combat.
         For every 5 feet of movement you would have available after completing your movement, you gain a \plus2 bonus to any initiative checks necessary to determine whether your movement succeeds.
         Regardless of whether your initiative check succeeds or fails, you cannot use that ``excess'' movement to move after making such an initiative check.
 
-    \subsection{Insight Points}\label{Insight Points}
-        You can spend \glossterm{insight points} to learn new special abilities.
-        You normally have a number of \glossterm{insight points} equal to 2 \add your base Intelligence.
-        Some abilities can also grant insight points.
+    \subsection{Resistances}\label{Resistances}
 
-        Any character can spend insight points in any of the following ways.
-        \begin{itemize}
-            \item You can spend two \glossterm{insight points} to become a \glossterm{multiclass} character (see \pcref{Multiclass Characters}).
-            \item You can spend an \glossterm{insight point} to gain two \glossterm{skill points}.
-            \item You can spend an \glossterm{insight point} to gain proficiency in an additional \glossterm{usage class} of armor (light, medium, or heavy).
-            \item You can spend an \glossterm{insight point} to gain proficiency in an additional \glossterm{weapon group}.
-        \end{itemize}
-        In addition, every class has at least one way to spend \glossterm{insight points} to learn additional abilities.
-        The list of ways to spend \glossterm{insight points} on class abilities is given below.
-        \begin{itemize}
-            \item Barbarian: Primal maneuvers
-            \item Cleric: Divine spells
-            \item Druid: Nature spells, wild aspects
-            \item Fighter: Battle tactics, martial maneuvers
-            \item Mage: Arcane spells
-            \item Monk: Estoric maneuvers, ki manifestations
-            \item Paladin: Divine spells
-            \item Ranger: Hunting styles, wild maneuvers
-            \item Rogue: Trick maneuvers
-            \item Warlock: Pact spells
-        \end{itemize}
+        % TODO: this table is awkwardly wide, can it have more information?
+        \begin{dtable}
+            \lcaption{Resistance Values}
+            \begin{dtabularx}{\columnwidth}{l *{2}{>{\ccol}X}}
+                \tb{Total}\fn{1} & \tb{Bleed Resistance} & \tb{Vital Resistance} \tableheaderrule
+                \minus1 or lower & 1                     & 10     \\
+                0                & 1                     & 11     \\
+                1                & 2                     & 12     \\
+                2                & 3                     & 13     \\
+                3                & 4                     & 15     \\
+                4                & 5                     & 17     \\
+                5                & 6                     & 19     \\
+                6                & 7                     & 23     \\
+                7                & 8                     & 27     \\
+                8                & 10                    & 32     \\
+                9                & 12                    & 37     \\
+                10               & 14                    & 43     \\
+                11               & 17                    & 49     \\
+                12               & 20                    & 55     \\
+                13               & 23                    & 61     \\
+                14               & 26                    & 68     \\
+                15               & 29                    & 75     \\
+                16               & 32                    & 82     \\
+                17               & 36                    & 90     \\
+                18               & 40                    & 100    \\
+                19               & 45                    & 110    \\
+                20               & 50                    & 120    \\
+                21               & 55                    & 130    \\
+                22               & 60                    & 140    \\
+                23               & 65                    & 150    \\
+                24               & 70                    & 160    \\
+                25\plus\fn{3}    & \tdash                & \tdash \\
+            \end{dtabularx}
+            1. This is your level \add your base Constitution. \\
+            1. This is your \glossterm{bleed resistance} (see \pcref{Bleed Resistance}). \\
+            2. This is your \glossterm{vital resistance} (see \pcref{Vital Resistance}). \\
+            3. To calculate the bleed resistance for a creature with an epic Constitution, increase its bleed resistance by 5 per point, and its vital resistance by 10 per point.
+        \end{dtable}
 
-\section{Fatigue}\label{Fatigue}
-    Thoughout the day, you can become fatigued by your exertions both in and out of combat.
-    While \glossterm{hit points} are easy to restore, \glossterm{fatigue points} generally require a \glossterm{long rest} to remove.
-    Fatigue is still easier to recover from than \glossterm{vital wounds}.
+        \subsubsection{Bleed Resistance}\label{Bleed Resistance}
+            Your \glossterm{bleed resistance} measures your ability to reduce the impact of minor damaging attacks.
+            It is based on your level \add your base Constitution, as defined in \tref{Resistance Values}.
+            Wearing \glossterm{armor} can increase your resistance against \glossterm{physical damage}, and some special abilities can also increase it.
 
-    \subsection{Fatigue Points}\label{Fatigue Points}
-        Your level of fatigue is measured with \glossterm{fatigue points}.
-        A number of abilities and attacks can cause you to gain fatigue points.
+            \parhead{Missing Bleed Resistance} An object or creature without a listed \glossterm{bleed resistance} loses a single \glossterm{hit point} from damaging attacks.
 
-        \subsubsection{Fatigue Tolerance}\label{Fatigue Tolerance}
-            You can gain a number of \glossterm{fatigue points} equal to 1 \add your base Constitution without suffering any consequences (minimum 0).
-            This value is called your \glossterm{fatigue tolerance}.
-            Some abilities can modify your fatigue tolerance.
+            \parhead{Literal Blood} Many creatures that do not have blood in exact the same sense as humans still have a bleed resistance and are said to "bleed" from damaging attacks.
+            Those creatures still lose some important part of their life force or corporeal bodies when they take significant damage.
+            A rare few creatures are explicitly unable to bleed, as indicated in their descriptions.
 
-        \subsubsection{Fatigue Penalty}\label{Fatigue Penalty}
-            You take a penalty to \glossterm{accuracy} and \glossterm{checks} equal to the number of fatigue points you have \sub your \glossterm{fatigue tolerance}.
-            This penalty is called your \glossterm{fatigue penalty}.
-            If you have a fatigue penalty of at least \minus1, you are \glossterm{fatigued}.
+        \subsubsection{Vital Resistance}\label{Vital Resistance}
+            Your \glossterm{vital resistance} measures your ability to avoid gaining \glossterm{vital wounds} from dangerous attacks.
+            When you take damage from an attack, if the damage is at least as much as your \glossterm{vital resistance}, you gain a \glossterm{vital wound} (see \pcref{Vital Wounds}).
 
-    \subsection{Exhaustion}\label{Exhaustion}
-        When your \glossterm{fatigue penalty} reaches \minus5, you fall \glossterm{unconscious} until your fatigue penalty is reduced below \minus5.
-        Generally, this means that you are unconscious for 8 hours.
+            Your \glossterm{vital resistance} is based on your level \add your base Constitution, as defined in \tref{Resistance Values}.
+            Wearing \glossterm{armor} can increase your vital resistance against \glossterm{physical damage}, and some special abilities can also increase it.
 
-    \subsection{Recovering From Fatigue}
-        When you take a \glossterm{long rest}, you remove all of your \glossterm{fatigue points}.
+            \parhead{Missing Vital Resistance} An object or creature without a listed \glossterm{vital resistance} cannot gain \glossterm{vital wounds} from taking damage directly.
+            It can only gain \glossterm{vital wounds} from taking damage while it has no \glossterm{hit points} remaining.
+
+        \subsubsection{Damage Type Resistances}\label{Damage Type Resistances}
+            Each type of resistance is further divided into what type of damage it protects against.
+            Your \glossterm{bleed resistance} and \glossterm{vital resistance} apply against damage of any type.
+            Those are collectively called your \glossterm{resistances}.
+            Some effects increase your resistances against either \glossterm{physical damage} or \glossterm{energy damage}.
+
+            \parhead{Stacking Magic Bonuses} A \glossterm{magic bonus} to a specific type of resistance does not stack with a \glossterm{magic bonus} to a more general resistance if both apply.
+            For example, if you have a \glossterm{magic bonus} to resistances against energy damage and another \glossterm{magic bonus} to resistances against fire damage, you only use the higher of the two when you take fire damage.
 
 \section{Circumstances, Bonuses, and Penalties}
 
@@ -1710,6 +1718,34 @@ It defines how attributes work and explains how to make attacks in combat.
             On a hit, the target becomes \prone.
         \end{freeability}
 
+    \subsection{Resting}\label{Resting}
+        When you have a moment to relax, you can rest to regain some of your expended resources.
+        There are two main types of rests: a \glossterm{short rest} and a \glossterm{long rest}.
+        Resting is not actually an ability in the same sense as most other abilities.
+        You do not declare that you are using the ``short rest'' ability, and you do not have to differentiate between whether you intend to take a short rest or a long rest.
+        The benefits of taking a short rest or long rest happen automatically after you spend enough time avoiding strenuous activity.
+
+        \subsubsection{Short Rest}\label{Short Rest}
+            Resting for ten minutes is considered a \glossterm{short rest}.
+            When you take a short rest, you gain the following benefits.
+            \begin{itemize}
+                \item You regain all of your \glossterm{hit points}.
+                \item You regain any \glossterm{attunement points} you released from \glossterm{attuned} abilities (see \pcref{Attunement}).
+                \item You remove all \glossterm{conditions} affecting you (unless they cannot be removed normally).
+                \item Some other abilities have specific effects that last until you take a short rest.
+                    For example, a barbarian cannot use their \textit{rage} ability again after raging until after they take a short rest (see Rage, page \pref{Bbn:Rage}).
+            \end{itemize}
+
+        \subsubsection{Long Rest}\label{Long Rest}
+            Resting for eight hours is considered a \glossterm{long rest}.
+            When you take a long rest, you gain the following benefits.
+            \begin{itemize}
+                \item You make progress towards removing one of your vital wounds (see \pcref{Removing Vital Wounds}).
+                    The Medicine skill can increase this healing (see \pcref{Accelerate Recovery}).
+                \item You remove all of your \glossterm{fatigue points}.
+                \item Some other abilities have specific effects that last until you take a long rest.
+            \end{itemize}
+
 % TODO: This is a bad name; organize these better
 \section{Special Rules}
 
@@ -1928,33 +1964,6 @@ It defines how attributes work and explains how to make attacks in combat.
         For example, if an ability causes you to remove one of your \glossterm{vital wounds}, and you have more than one vital wound, you choose which vital wound is removed.
         When the rules are ambiguous in any other situation, the GM decides how to resolve that ambiguity.
         This includes situations where multiple creatures are relevant and situations where no particular creature is relevant.
-
-\section{Daily Resources}
-
-    \subsection{Resting}\label{Resting}
-        When you have a moment to relax, you can rest to regain some of your expended abilities.
-        There are two main types of rests: a \glossterm{short rest} and a \glossterm{long rest}.
-
-        \subsubsection{Short Rest}\label{Short Rest}
-            Resting for ten minutes is considered a \glossterm{short rest}.
-            When you take a short rest, you gain the following benefits.
-            \begin{itemize}
-                \item You regain all of your \glossterm{hit points}.
-                \item You regain any \glossterm{attunement points} you released from \glossterm{attuned} abilities (see \pcref{Attunement}).
-                \item You remove all \glossterm{conditions} affecting you (unless they cannot be removed normally).
-                \item Some other abilities have specific effects that last until you take a short rest.
-                    For example, a barbarian cannot use their \textit{rage} ability again after raging until after they take a short rest (see Rage, page \pref{Bbn:Rage}).
-            \end{itemize}
-
-        \subsubsection{Long Rest}\label{Long Rest}
-            Resting for eight hours is considered a \glossterm{long rest}.
-            When you take a long rest, you gain the following benefits.
-            \begin{itemize}
-                \item You make progress towards removing one of your vital wounds (see \pcref{Removing Vital Wounds}).
-                    The Medicine skill can increase this healing (see \pcref{Accelerate Recovery}).
-                \item You remove all of your \glossterm{fatigue points}.
-                \item Some other abilities have specific effects that last until you take a long rest.
-            \end{itemize}
 
 \section{Character Advancement}\label{Character Advancement}
 
