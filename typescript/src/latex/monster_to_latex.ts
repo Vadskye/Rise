@@ -126,7 +126,7 @@ function getMainContent(monster: MonsterBase) {
           \\textbf{Fort} ${monster.defenses.fortitude} \\monsep
           \\textbf{Ref} ${monster.defenses.reflex} \\monsep
           \\textbf{Ment} ${monster.defenses.mental}
-        \\pari \\textbf{WR} ${
+        \\pari \\textbf{BR} ${
           extraDamageTypes.size > 0
             ? Array.from(extraDamageTypes)
                 .map((t: DamageType) => `${titleCase(t)} ${monster.resistances.damage[t]}`)
