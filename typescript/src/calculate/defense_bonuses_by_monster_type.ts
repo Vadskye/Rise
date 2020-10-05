@@ -46,7 +46,7 @@ export function defenseBonusesByMonsterType(monsterType: MonsterType): Record<De
       reflex: 3,
       mental: 3,
     },
-    "outsider": {
+    "planeforged": {
       armor: 3,
       fortitude: 3,
       reflex: 3,

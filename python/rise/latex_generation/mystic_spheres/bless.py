@@ -200,14 +200,14 @@ bless=MysticSphere(
         """, tags=['Attune (ritual)'], ritual_time='one hour'),
         Spell('Bless Water', 1, 'One pint of unattended, nonmagical water within \\rngclose range', """
             The target becomes holy water.
-            Holy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck undead creature or an evil outsider.
+            Holy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck \\glossterm<undead> or an evil \\glossterm<planeforged>.
         """, tags=['Attune (ritual)'], ritual_time='one minute'),
         Spell('Permanent Bless Water', 3, 'One pint of unattended, nonmagical water within \\rngclose range', """
             This ritual functions like the \\spell<bless water> ritual, except that it loses the \\glossterm<Attune> (ritual) tag and the effect lasts permanently.
         """, tags=[], ritual_time='one hour'),
         Spell('Curse Water', 1, 'One pint of unattended, nonmagical water within \\rngclose range', """
             The target becomes unholy water.
-            Unholy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck good outsider.
+            Unholy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck good \\glossterm<planeforged>.
         """, tags=['Attune (ritual)'], ritual_time='one minute'),
         Spell('Permanent Curse Water', 3, 'One pint of unattended, nonmagical water within \\rngclose range', """
             This ritual functions like the \\spell<curse water> ritual, except that it loses the \\glossterm<Attune> (ritual) tag and the effect lasts permanently.
