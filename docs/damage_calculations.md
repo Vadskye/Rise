@@ -61,11 +61,11 @@ hits 1% of the time and always dealt vital wounds on critical hits.
 Resistance bonuses can vary widely, but even with no meaningful investment we assume
 a flat bonus of at least 1 + half level, leaving base values:
 
-* level 1: 3 WR, 15 VR
-* level 5: 9 WR, 29 VR
-* level 10: 17 WR, 50 VR
-* level 15: 29 WR, 80 VR
-* level 20: 46 WR, 120 VR
+* level 1: 3 BR, 15 VR
+* level 5: 9 BR, 29 VR
+* level 10: 17 BR, 50 VR
+* level 15: 29 BR, 80 VR
+* level 20: 46 BR, 120 VR
 
 ### High damage attack
 Assume 3 starting Willpower and a single-target damage spell. Expected power at level 1 is:

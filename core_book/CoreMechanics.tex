@@ -534,15 +534,15 @@ It defines how attributes work and explains how to make attacks in combat.
 
 \section{Taking Damage}\label{Taking Damage}
 
-    When you are hit by a damaging attack, you lose a \glossterm{hit point} (see \pcref{Hit Points}).
+    When you take damage, you lose a \glossterm{hit point} (see \pcref{Hit Points}).
 
-    If the attack deals at least as much damage as your \glossterm{wound resistance}, the attack \glossterm{wounds} you.
-    Being wounded by an attack causes you to lose an additional hit point.
-    In addition, some special attacks have additional effects when they wound you.
+    If you take at least as much damage as your \glossterm{bleed resistance} from a single source, you \glossterm{bleed}.
+    Bleeding causes you to lose an additional hit point.
+    In addition, some special attacks have additional effects if they make you bleed.
 
     If the attack deals at least as much damage as your \glossterm{vital resistance}, the attack \glossterm{vitally wounds} you.
     Being vitally wounded by an attack causes you to lose an additional hit point and causes you to gain a \glossterm{vital wound}.
-    Generally, an attack that vitally wounds you also wounds you, which means you lose a total of three hit points from the attack.
+    Generally, an attack that vitally wounds you also makes you \glossterm{bleed}, which means you lose a total of three hit points from the attack.
     In addition, some special attacks have additional effects when they vitally wound you.
 
     \parhead{Extraordinary Damage}
@@ -553,7 +553,7 @@ It defines how attributes work and explains how to make attacks in combat.
     \begin{dtable}
         \lcaption{Resistance Values}
         \begin{dtabularx}{\columnwidth}{l *{2}{>{\ccol}X}}
-            \tb{Total}\fn{1} & \tb{Wound Resistance} & \tb{Vital Resistance} \tableheaderrule
+            \tb{Total}\fn{1} & \tb{Bleed Resistance} & \tb{Vital Resistance} \tableheaderrule
             \minus1 or lower & 1                     & 10     \\
             0                & 1                     & 11     \\
             1                & 2                     & 12     \\
@@ -583,19 +583,23 @@ It defines how attributes work and explains how to make attacks in combat.
             25\plus\fn{3}    & \tdash                & \tdash \\
         \end{dtabularx}
         1. This is your level \add your base Constitution. \\
-        1. This is your \glossterm{wound resistance} (see \pcref{Wound Resistance}). \\
+        1. This is your \glossterm{bleed resistance} (see \pcref{Bleed Resistance}). \\
         2. This is your \glossterm{vital resistance} (see \pcref{Vital Resistance}). \\
-        3. To calculate the wound resistance for a creature with an epic Constitution, increase its wound resistance by 5 per point, and its vital resistance by 10 per point.
+        3. To calculate the bleed resistance for a creature with an epic Constitution, increase its bleed resistance by 5 per point, and its vital resistance by 10 per point.
     \end{dtable}
 
     \subsection{Resistances}\label{Resistances}
 
-        \subsubsection{Wound Resistance}\label{Wound Resistance}
-            Your \glossterm{wound resistance} measures your ability to reduce the impact of minor damaging attacks.
+        \subsubsection{Bleed Resistance}\label{Bleed Resistance}
+            Your \glossterm{bleed resistance} measures your ability to reduce the impact of minor damaging attacks.
             It is based on your level \add your base Constitution, as defined in \tref{Resistance Values}.
             Wearing \glossterm{armor} can increase your resistance against \glossterm{physical damage}, and some special abilities can also increase it.
 
-            \parhead{Missing Wound Resistance} An object or creature without a listed \glossterm{wound resistance} loses a single \glossterm{hit point} from damaging attacks.
+            \parhead{Missing Bleed Resistance} An object or creature without a listed \glossterm{bleed resistance} loses a single \glossterm{hit point} from damaging attacks.
+
+            \parhead{Literal Blood} Many creatures that do not have blood in exact the same sense as humans still have a bleed resistance and are said to "bleed" from damaging attacks.
+            Those creatures still lose some important part of their life force or corporeal bodies when they take significant damage.
+            A rare few creatures are explicitly unable to bleed, as indicated in their descriptions.
 
         \subsubsection{Vital Resistance}\label{Vital Resistance}
             Your \glossterm{vital resistance} measures your ability to avoid gaining \glossterm{vital wounds} from dangerous attacks.
@@ -609,7 +613,7 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \subsubsection{Damage Type Resistances}\label{Damage Type Resistances}
             Each type of resistance is further divided into what type of damage it protects against.
-            Your \glossterm{wound resistance} and \glossterm{vital resistance} apply against damage of any type.
+            Your \glossterm{bleed resistance} and \glossterm{vital resistance} apply against damage of any type.
             Those are collectively called your \glossterm{resistances}.
             Some effects increase your resistances against either \glossterm{physical damage} or \glossterm{energy damage}.
 
@@ -632,7 +636,7 @@ It defines how attributes work and explains how to make attacks in combat.
         Instead, you avoided the worst of the blow, but it bruised you through your armor, the effort to dodge the blow fatigued you, or it barely nicked you through sheer luck -- and everyone's luck runs out eventually.
 
         \subsubsection{Missing Hit Points}\label{Missing Hit Points}
-            Most objects and some creatures have no \glossterm{hit points} or \glossterm{wound resistance}.
+            Most objects and some creatures have no \glossterm{hit points} or \glossterm{bleed resistance}.
             They ignore all damage less than their \glossterm{vital resistance}.
 
         \subsubsection{Becoming Bloodied}\label{Becoming Bloodied}
@@ -640,7 +644,7 @@ It defines how attributes work and explains how to make attacks in combat.
             At the end of each round, if you have half your maximum \glossterm{hit points} remaining or fewer (rounded down), you become \glossterm{bloodied}.
             Likewise, if you have more than half your maximum hit points remaining, you stop being \glossterm{bloodied}.
 
-            While you are bloodied, your \glossterm{vital resistance} is halved, to a minimum of your \glossterm{wound resistance} for each corresponding type of damage.
+            While you are bloodied, your \glossterm{vital resistance} is halved, to a minimum of your \glossterm{bleed resistance} for each corresponding type of damage.
 
         \subsubsection{Regaining Hit Points}\label{Regaining Hit Points}
             Some abilities cause you to regain lost hit points.
@@ -708,7 +712,7 @@ It defines how attributes work and explains how to make attacks in combat.
             Some abilities and environmental effects deal environmental damage.
             Environmental damage is never dealt as the result of a successful attack roll.
             Environmental damage works in the same way as normal damage, except that small amounts of environmental damage have no effect.
-            If a creature would take \glossterm{environmental damage} that is less than its \glossterm{wound resistance}, it does not take the damage and does not lose any \glossterm{hit points}.
+            If a creature would take \glossterm{environmental damage} that is less than its \glossterm{bleed resistance}, it does not take the damage and does not lose any \glossterm{hit points}.
 
             It is possible for damage to be both environmental damage and subdual damage.
 
@@ -1460,7 +1464,7 @@ It defines how attributes work and explains how to make attacks in combat.
             Other abilities similarly apply only if they apply to all damage types dealt by the attack.
 
             For example, a flaming longsword deals slashing and fire damage.
-            If you were hit with a strike with that longsword, you would use the lower of your \glossterm{wound resistance} against \glossterm{physical damage} and your \glossterm{wound resistance} against \glossterm{energy damage} to resist the damage.
+            If you were hit with a strike with that longsword, you would use the lower of your \glossterm{bleed resistance} against \glossterm{physical damage} and your \glossterm{bleed resistance} against \glossterm{energy damage} to resist the damage.
             An ability that gave you immunity to fire damage would not prevent you from taking damage from the attack unless you were also immune to slashing damage.
 
     \subsection{Magical and Mundane Abilities}\label{Magical and Mundane Abilities}
@@ -2005,7 +2009,7 @@ It defines how attributes work and explains how to make attacks in combat.
             \item Your \glossterm{attributes} increase (see \pcref{Increasing Attributes With Level})
             \item Your skill modifiers usually increase by 1 (see \pcref{Skill Modifier})
             \item Your \glossterm{power} with both \glossterm{mundane} and \glossterm{magical} abilities increases by 1 (see \pcref{Power}).
-            \item Your \glossterm{wound resistance} and \glossterm{vital resistance} increase (see \tref{Resistance Values}).
+            \item Your \glossterm{bleed resistance} and \glossterm{vital resistance} increase (see \tref{Resistance Values}).
             \item Your \glossterm{accuracy} increases by 1 (see \pcref{Accuracy})
             \item All of your \glossterm{defenses} increase by 1 (see \pcref{Defenses})
             \item You gain an additional \glossterm{archetype rank} (see \pcref{Archetypes})
