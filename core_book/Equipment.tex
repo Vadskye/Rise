@@ -581,19 +581,22 @@
 
         \begin{dtable!*}
             \lcaption{Armor Special Materials}
-            \begin{dtabularx}{\textwidth}{l c c c c c c >{\lcol}X c}
-                \tb{Material}     & \tb{Defense} & \tb{Physical Resist} & \tb{Energy Resist} & \tb{Encumbrance} & \tb{Speed} & \tb{Material} & \tb{Cost}              & \tb{Weight} \tableheaderrule
-                \tind Adamantine  & \tdash  & \mult2   & \mult2 & \plus2  & \tdash  & Metal   & \mult10, \plus10,000 gp & \mult2   \\
-                \tind Cold iron   & Special & \mult1/2 & \tdash & \tdash  & \tdash  & Metal   & \mult5, \plus2,000 gp   & \tdash   \\
-                \tind Dragonhide  & \tdash  & \tdash   & \mult2 & \tdash  & \tdash  & Leather & \mult5, \plus2,000 gp   & \tdash   \\
-                \tind Dragonscale & \tdash  & \tdash   & \mult2 & \tdash  & \tdash  & Metal   & \mult5, \plus2,000 gp   & \tdash   \\
-                \tind Ironwood    & \tdash  & \tdash   & \tdash & \tdash  & \tdash  & Metal   & \mult2, \plus400 gp    & \tdash   \\
-                \tind Mithral     & \tdash  & \tdash   & \tdash & \minus2 & Special & Metal   & \mult10, \plus10,000 gp   & \mult1/2 \\
-                \tind Starmetal   & \tdash  & \mult2   & \tdash & \tdash  & \tdash  & Metal   & \mult5, \plus2,000 gp   & \mult2   \\
+            \begin{dtabularx}{\textwidth}{l c c c c c >{\lcol}X c}
+                \tb{Material}     & \tb{Defense} & \tb{Physical Resist} & \tb{Energy Resist} & \tb{Encumbrance} & \tb{Material} & \tb{Cost}              & \tb{Weight} \tableheaderrule
+                \tind Adamantine           & \tdash  & \mult3   & \mult3 & \plus2  & Metal   & \mult10, \plus10,000 gp & \mult2   \\
+                \tind Cold iron            & Special & \mult1/2 & \tdash & \tdash  & Metal   & \mult5, \plus2,000 gp   & \tdash   \\
+                \tind Dragonhide           & \tdash  & \tdash   & \mult2 & \tdash  & Leather & \mult5, \plus2,000 gp   & \tdash   \\
+                \tind Dragonhide, ancient  & \tdash  & \tdash   & \mult3 & \tdash  & Leather & \mult10, \plus10,000 gp & \tdash   \\
+                \tind Dragonscale          & \tdash  & \tdash   & \mult2 & \tdash  & Metal   & \mult5, \plus2,000 gp   & \tdash   \\
+                \tind Dragonscale, ancient & \tdash  & \tdash   & \mult3 & \tdash  & Metal   & \mult5, \plus2,000 gp   & \tdash   \\
+                \tind Ironwood             & \tdash  & \tdash   & \tdash & \tdash  & Metal   & \mult2, \plus400 gp     & \tdash   \\
+                \tind Mithral              & \tdash  & \mult2   & \tdash & \minus2 & Metal   & \mult10, \plus10,000 gp & \mult1/2 \\
+                \tind Starmetal            & \tdash  & \mult2   & \tdash & \tdash  & Metal   & \mult5, \plus2,000 gp   & \mult2   \\
+                \tind Starmetal, pure      & \tdash  & \mult3   & \tdash & \tdash  & Metal   & \mult10, \plus10,000 gp & \mult2   \\
             \end{dtabularx}
         \end{dtable!*}
 
-        \parhead{Adamantine} Adamantine armor weighs twice as much and increases the \glossterm{encumbrance penalty} of the armor by 2, but it doubles the \glossterm{resistances} provided by the armor.
+        \parhead{Adamantine} Adamantine armor weighs twice as much and increases the \glossterm{encumbrance penalty} of the armor by 2, but it triples the \glossterm{resistances} provided by the armor.
         It costs ten times as much as armor of that type would normally cost, plus an additional 10,000 gp.
 
         \parhead{Cold Iron} Cold iron armor provides half the normal \glossterm{resistances} against \glossterm{physical damage}.
@@ -603,13 +606,19 @@
         \parhead{Dragonhide} Dragonhide body armor doubles the \glossterm{resistances} provided by the armor against \glossterm{energy damage}.
         It costs five times as much as armor of that type would normally cost, plus an additional 2,000 gp.
 
+        \parhead{Dragonhide, Ancient} Ancient dragonhide body armor triples the \glossterm{resistances} provided by the armor against \glossterm{energy damage}.
+        It costs ten times as much as armor of that type would normally cost, plus an additional 10,000 gp.
+
         \parhead{Dragonscale} Dragonscale body armor doubles the \glossterm{resistances} provided by the armor against \glossterm{energy damage}.
         It costs five times as much as armor of that type would normally cost, plus an additional 2,000 gp.
+
+        \parhead{Dragonscale, Ancient} Ancient dragonscale body armor triples the \glossterm{resistances} provided by the armor against \glossterm{energy damage}.
+        It costs ten times as much as armor of that type would normally cost, plus an additional 10,000 gp.
 
         \parhead{Ironwood} The most common special material is ironwood, which is made from wood magically treated using the \spell{ironwood} ritual to be as strong as steel. Ironwood armor functions exactly like  armor of the same type, except that it is made of wood.
         It costs twice as much as armor of that type would normally cost, plus an additional 400 gp.
 
-        \parhead{Mithral} Mithral armor weighs half as much, reduces the \glossterm{encumbrance penalty} of the armor by 2, and reduces any speed penalties the armor applies by 5 feet.
+        \parhead{Mithral} Mithral armor weighs half as much, reduces the \glossterm{encumbrance penalty} of the armor by 2, and doubles the \glossterm{resistances} provided by the armor against \glossterm{physical damage}.
         It costs ten times as much as armor of that type would normally cost, plus an additional 10,000 gp.
 
         \parhead{Starmetal} Starmetal body armor doubles the \glossterm{resistances} provided by the armor against \glossterm{physical damage}.
