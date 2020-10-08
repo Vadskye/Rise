@@ -346,13 +346,13 @@ def calc_fatigue_tolerance():
                 underlabel('Base', number_input({
                     'disabled': True,
                     'name': 'fatigue_tolerance_base',
-                    'value': '1',
+                    'value': '2',
                 })),
                 plus(),
-                underlabel('(Con)', number_input({
+                underlabel('(Wil)', number_input({
                     'disabled': True,
-                    'name': 'fatigue_tolerance_con',
-                    'value': '(@{constitution_starting})',
+                    'name': 'fatigue_tolerance_wil',
+                    'value': '(@{willpower_starting})',
                 })),
                 plus(),
                 equation_misc_repeat('fatigue_tolerance', 2),
