@@ -310,10 +310,10 @@ def skill_points():
 def fatigue_tolerance():
     misc = get_misc_variables('fatigue_tolerance', 2)
     return js_wrapper(
-        ['level', 'constitution_starting', *misc],
+        ['level', 'willpower_starting', *misc],
         f"""
             setAttrs({{
-                fatigue_tolerance: 1 + constitution_starting + {sum_variables(misc)},
+                fatigue_tolerance: 2 + willpower_starting + {sum_variables(misc)},
             }});
         """
     )
