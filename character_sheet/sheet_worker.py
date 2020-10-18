@@ -9,9 +9,10 @@ def generate_script():
         *defenses(),
         *resistances(),
         *abilities_known(),
-        action_points(),
+        attunement_points(),
         level_scaling(),
         skill_points_spent(),
+        unknown_statistic(),
         '</script>',
         ""
     ])
@@ -181,14 +182,28 @@ def accuracy():
     )
 
 
-def action_points():
+def attunement_points():
+    misc = get_misc_variables('attunement_points', 2)
     return js_wrapper(
-        ['level'],
+        ['level', *misc],
         f"""
-            var action_points = 3 + Math.floor(level / 3);
+            var attunement_points_from_level = 2 + Math.floor(level / 3);
+            var attunement_points = attunement_points_from_level + {sum_variables(misc)};
             setAttrs({{
-                action_points,
-                action_points_max: action_points,
+                attunement_points,
+                attunement_points_max: attunement_points,
+                attunement_points_from_level,
+            }});
+        """,
+    )
+
+def unknown_statistic():
+    misc = get_misc_variables('unknown_statistic', 4)
+    return js_wrapper(
+        [*misc],
+        f"""
+            setAttrs({{
+                unknown_statistic: {sum_variables(misc)},
             }});
         """,
     )

@@ -43,17 +43,17 @@ def create_page(destination):
                 calc_base_speed(),
                 calc_carrying_capacity(),
                 calc_encumbrance(),
-                calc_fatigue_tolerance(),
                 calc_focus_penalty(),
-                # TODO: somehow make room for focus penalties
-                calc_hit_points(),
                 calc_initiative(),
-                calc_insight_points(),
-                calc_skill_points(),
-                flex_wrapper(div({'class': 'section-header'}, 'Power')),
                 calc_magical_power(),
                 calc_mundane_power(),
-                *[calc_blank_power(i) for i in range(0)],
+                calc_unknown_statistic(),
+                flex_wrapper(div({'class': 'section-header'}, 'Resources')),
+                calc_attunement_points(),
+                calc_fatigue_tolerance(),
+                calc_hit_points(),
+                calc_insight_points(),
+                calc_skill_points(),
                 flex_wrapper(div({'class': 'section-header'}, 'Resistances')),
                 calc_base_resistances(),
                 calc_energy_resistance_bonus(),
@@ -315,6 +315,27 @@ def calc_physical_resistance_bonus():
         ),
     ])
 
+def calc_attunement_points():
+    return flex_row([
+        div({'class': 'calc-header'}, 'Attune Points'),
+        equation(
+            [
+                underlabel('Base', number_input({
+                    'disabled': True,
+                    'name': 'attunement_points_from_level_display',
+                    'value': '(@{attunement_points_from_level})',
+                })),
+                plus(),
+                equation_misc_repeat('attunement_points', 2),
+            ],
+            result_attributes={
+                'disabled': True,
+                'name': 'attunement_points_display',
+                'value': '@{attunement_points}',
+            },
+        ),
+    ])
+
 def calc_energy_resistance_bonus():
     return flex_row([
         div({'class': 'calc-header'}, 'Energy Damage'),
@@ -488,18 +509,17 @@ def calc_mundane_power():
         ),
     ])
 
-def calc_blank_power(i):
-    name = f'blank_power_{i}'
+def calc_unknown_statistic():
     return flex_row([
-        div({'class': 'calc-header'}, text_input({'name': name})),
+        div({'class': 'calc-header'}, text_input({'name': 'unknown_statistic_name'})),
         equation(
             [
-                equation_misc_repeat(name, 4),
+                equation_misc_repeat('unknown_statistic', 4),
             ],
             result_attributes={
                 'disabled': True,
-                'name': f'{name}_display',
-                'value': f'@{{{name}}}',
+                'name': f'unknown_statistic_display',
+                'value': '(@{unknown_statistic})',
             },
         ),
     ])

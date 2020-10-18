@@ -199,7 +199,9 @@ def core_statistics(destination):
     return flex_col({'class': 'core-statistics'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Core Statistics')),
         sidelabel('Attune points', number_input({
+            'disabled': True,
             'name': 'attunement_points_display',
+            'value': '@{attunement_points}',
         })),
         sidelabel('Fatigue points', number_input({
             'name': 'fatigue_points',
@@ -386,12 +388,10 @@ def attack(source):
                 'value': (
                     f"@{{character_name}} uses @{{attack0_name}}:"
                     + f" [[d10! + @{{accuracy}} + @{{attack0_accuracy}}]] vs @{{attack0_defense}}!"
-                    + (
-                        f" (@{{attack0_effect}})"
-                        if source == 'nondamaging' else
-                        f" ([[@{{attack0_dice}}]]; @{{attack0_effect}})"
-                    )
-                ),
+                    + f" (@{{attack0_effect}})"
+                    if source == 'nondamaging'
+                    else 'You must toggle your level up and down before this attack will roll damage. Blame Roll20.'
+                )
             },
             'Attack',
         ),
