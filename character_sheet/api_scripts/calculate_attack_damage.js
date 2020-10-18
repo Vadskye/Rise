@@ -48,7 +48,8 @@ const diceByPower = {
 function assert(test, message) {
     if (!test) {
         log(message);
-        throw new Error(message);
+        sendChat('Error', message);
+        // throw new Error(message);
     }
 }
 
@@ -92,7 +93,7 @@ on('change:attribute', (obj, oldObj) => {
     } else if (name === 'magical_power') {
        recalculateRepeatingDamageAttributes(characterId, 'magical');
     } else if (name.startsWith('repeating_') && name.endsWith('_attack0_damage')) {
-        const source = oldObj.name.includes('mundane') ? 'mundane' : 'magical';
+        const source = name.includes('mundane') ? 'mundane' : 'magical';
         setDamageDiceForAttack({
             attackDieBonus: obj.get('current'),
             attackName: oldObj.name,
