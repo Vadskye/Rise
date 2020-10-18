@@ -23,6 +23,14 @@ export function calculateAttack(
   monster: Pick<MonsterBase, "name" | "accuracy" | "magicalPower" | "mundanePower">,
 ): CalculatedAttack {
   const monsterPower = attack.source === "magical" ? monster.magicalPower : monster.mundanePower;
+  if (attack.hit && attack.hit.trim()[attack.hit.trim().length - 1] !== ".") {
+    throw new Error(
+      `Attack ${attack.name} from monster ${
+        monster.name
+      } should end in a period: '${attack.hit.trim()}'`,
+    );
+  }
+
   return {
     accuracy: attack.accuracyBonus + monster.accuracy,
     crit: attack.crit,

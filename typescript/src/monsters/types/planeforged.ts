@@ -158,6 +158,98 @@ planeforgedInput.push({
   ],
 });
 
+const baseDemon = {
+  alignment: "Always evil",
+  armorInputs: [{ name: "thick skin" as const }],
+  languages: ["Infernal"],
+};
+
+planeforgedInput.push({
+  knowledge: {
+    0: `
+      Demons are infernal beings native to the evil-aligned Aligned Planes.
+    `,
+  },
+  level: 0,
+  name: "Demons",
+  monsters: [
+    {
+      ...baseDemon,
+      attackInputs: [
+        {
+          damageTypes: ["piercing"],
+          defense: "armor",
+          hit: "The target takes $damage.",
+          name: "Retributive Barbs",
+          powerBonus: -2,
+          preface: `
+            Whenever a creature adjacent to the barbed demon makes a melee \\glossterm{strike} against it,
+            the barbed demon makes this attack against the attacker.
+            \\par
+          `,
+          source: "mundane",
+          target: "The attacking creature",
+        },
+        {
+          damageTypes: ["piercing"],
+          defense: "armor",
+          hit: `
+            The target takes $damage.
+            In addition, if this attack also beats Fortitude defense, the target is \\glossterm{grappled} by the $name.
+          `,
+          name: "Impale",
+          powerBonus: -4,
+          source: "mundane",
+          target: "One creature within \\glossterm{reach}",
+          weaponName: "tentacle",
+        },
+      ],
+      challengeRating: 1,
+      knowledge: {
+        0: `
+          Barbed demons are named for the dangerous spikes that protrude from all around their bodies.
+          They use the spikes to impale their foes.
+        `,
+        5: `
+          Attacking a barbed demon in close range is dangerous because of their spikes.
+          Careless attackers can easily hurt themselves more than the demon.
+        `,
+      },
+      level: 7,
+      name: "Barbed Demon",
+      startingAttributes: { str: 2, dex: 1, con: 0, int: -2, per: 2, wil: 2 },
+      weaponInput: [{ name: "stinger" }],
+    },
+    {
+      ...baseDemon,
+      attackInputs: [],
+      challengeRating: 1,
+      knowledge: {
+        0: `
+          Barbed demons are named for the dangerous spikes that protrude from all around their bodies.
+          They use the spikes to impale their foes.
+        `,
+        5: `
+          Attacking a barbed demon in close range is dangerous because of their spikes.
+          Careless attackers can easily hurt themselves more than the demon.
+        `,
+      },
+      level: 7,
+      name: "Barbed Demon",
+      passiveAbilities: [
+        {
+          description: `
+            Whenever the $name makes a creature \\glossterm{bleed} with a melee \\glossterm{strike}, the filth from its beard infects the target.
+          `,
+          name: "Vile Beard",
+        },
+      ],
+      startingAttributes: { str: 2, dex: 1, con: 0, int: -2, per: 2, wil: 2 },
+      weaponInput: [{ name: "stinger" }],
+    },
+  ],
+});
+
 const baseFormian = {
   alignment: "Always lawful neutral",
   armorInputs: [{ name: "carapace" as const }],

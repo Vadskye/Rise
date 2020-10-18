@@ -78,7 +78,7 @@ export interface MonsterBaseInput {
   skillPoints?: Partial<Creature.SkillPoints>;
   space?: number;
   speeds?: Partial<Record<MovementMode, number | null>>;
-  startingAttributes?: Partial<Creature.Attributes>;
+  startingAttributes: Partial<Creature.Attributes>;
   weaponInput?: WeaponInput[];
   weight?: string | null;
 }
