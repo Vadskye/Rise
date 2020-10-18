@@ -64,6 +64,22 @@ function setDamageDiceForAttack({attackName, attackDieBonus, characterId, source
     const diceName = attackName.replace('_attack0_damage', '_attack0_dice');
     const diceAttribute = getAttribute(characterId, diceName, true);
     diceAttribute.set('current', diceByPower[totalPower]);
+
+    const effectName = attackName.replace('_attack0_damage', '_attack0_effect');
+    const effectAttribute = getAttribute(characterId, effectName, true);
+    assert(effectAttribute, 'effectAttribute should exist')
+    const trimmed = (effectAttribute.get('current') || '').trim();
+    effectAttribute.set('current', trimmed === '' ? ' ' : trimmed);
+    
+    const buttonName = attackName.replace('_attack0_damage', '_roll_attack');
+    const buttonAttribute = getAttribute(characterId, buttonName, true);
+    assert(buttonAttribute, 'buttonAttribute should exist')
+    buttonAttribute.set(
+      'current', 
+      "@{character_name} uses @{attack0_name}:"
+      + " [[d10! + @{accuracy} + @{attack0_accuracy}]] vs @{attack0_defense}!"
+      + " ([[@{attack0_dice}]]; @{attack0_effect})"
+    );
     // sendChat('debug', `set ${diceName} based on base ${basePower} + ${attackDieBonus} (${getAttrByName(characterId, attackName)}): ${diceAttribute.get('current')}`);
 }
 
@@ -73,12 +89,13 @@ function recalculateRepeatingDamageAttributes(characterId, source) {
         type: 'attribute',
     }).filter((obj) => {
         const name = obj.get('name') || '';
-        return name.startsWith(`repeating_${source}attacks`) && name.endsWith('_attack0_damage');
+        return name.startsWith(`repeating_${source}attacks`) && name.endsWith('_attack0_name');
     });
     for (const attr of repeatingDamageAttributes) {
+        const damageAttr = getAttribute(characterId, attr.get('name').replace('_attack0_name', '_attack0_damage'), true);
         setDamageDiceForAttack({
-            attackDieBonus: attr.get('current'),
-            attackName: attr.get('name'),
+            attackDieBonus: damageAttr.get('current'),
+            attackName: damageAttr.get('name'),
             characterId,
             source,
         });
@@ -88,17 +105,22 @@ function recalculateRepeatingDamageAttributes(characterId, source) {
 on('change:attribute', (obj, oldObj) => {
     const name = oldObj.name;
     const characterId = oldObj._characterid;
-    if (name === 'mundane_power') {
-       recalculateRepeatingDamageAttributes(characterId, 'mundane');
-    } else if (name === 'magical_power') {
-       recalculateRepeatingDamageAttributes(characterId, 'magical');
-    } else if (name.startsWith('repeating_') && name.endsWith('_attack0_damage')) {
-        const source = name.includes('mundane') ? 'mundane' : 'magical';
-        setDamageDiceForAttack({
-            attackDieBonus: obj.get('current'),
-            attackName: oldObj.name,
-            characterId,
-            source,
-        });
+    try {
+      if (name === 'mundane_power') {
+         recalculateRepeatingDamageAttributes(characterId, 'mundane');
+      } else if (name === 'magical_power') {
+         recalculateRepeatingDamageAttributes(characterId, 'magical');
+      } else if (name.startsWith('repeating_') && name.endsWith('_attack0_damage')) {
+          const source = name.includes('mundane') ? 'mundane' : 'magical';
+          setDamageDiceForAttack({
+              attackDieBonus: obj.get('current') || '0',
+              attackName: oldObj.name,
+              characterId,
+              source,
+          });
+      }
+    } catch (err) {
+      sendChat('Error', err.message);
+      log('Error: ' + err.message);
     }
-});
+  });
