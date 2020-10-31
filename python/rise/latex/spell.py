@@ -42,13 +42,14 @@ class Spell(object):
                     logger.log(WARNING, f"Spell {self.name} has invalid tag {tag}")
 
         if (not is_ritual):
-            if (self.level < 7 and 'rankline' not in effect_text):
+            # TODO: use regex to find '\brank\b'
+            if (self.level < 7 and 'rankline' not in effect_text and 'rank' not in effect_text):
                 logger.log(WARNING, f"Spell {self.name} is missing rank upgrades or ritual timing")
 
             # Make sure that the rank upgrades match the spell's rank 
-            if (self.level in [1, 3, 5] and 'rank<7>' not in effect_text):
+            if (self.level in [1, 3, 5] and 'rankline' in effect_text and 'rank<7>' not in effect_text):
                 logger.log(WARNING, f"Spell {self.name} has wrong rank upgrade pattern")
-            if (self.level in [2, 4, 6] and 'rank<8>' not in effect_text):
+            if (self.level in [2, 4, 6] and 'rankline' in effect_text and 'rank<8>' not in effect_text):
                 logger.log(WARNING, f"Spell {self.name} has wrong rank upgrade pattern")
 
     def ritual_time_text(self):
