@@ -471,7 +471,7 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \subsubsection{Knockback Effects}\label{Knockback Effects}
             A creature affected by a \glossterm{knockback} effect is thrown backwards by a single point of impact.
-            If it encounters another creature or a solid obstacle during the movement, it and the obstacle each take 1d6 damage \add 1d per 5 feet of movement remaining.
+            If it encounters another creature or a solid obstacle during the movement, it and the obstacle each take 1d6 damage per 10 feet of movement remaining.
 
 \section{Ability Mechanics}\label{Ability Mechanics}
 
@@ -1116,10 +1116,10 @@ It defines how attributes work and explains how to make attacks in combat.
         If you make an attack with a weapon you are not proficient with, you take a \minus2 penalty to accuracy.
 
     \subsection{Power}\label{Power}
-        Many abilities have a \glossterm{power} which represents the overall strength of the ability.
-        This determines the ability's \glossterm{standard damage} (see \pcref{Standard Damage}).
-        Some abilities also have effects that explicitly depend on the ability's power.
-        Unless an ability specifies otherwise, its \glossterm{power} depends on whether it is \glossterm{magical} or \glossterm{mundane}.
+        Your \glossterm{power} with an ability is a general measure of how strong the ability's effect is.
+        Many abilities have stronger effects depending on your power, but not all.
+        Your power with an ability normally depends on whether it is \glossterm{magical} or \glossterm{mundane}.
+        Some abilities specify an unusual method of determining your power with them in their descriptions.
 
         \parhead{Magical Abilities}
         Your power with magical abilities is normally equal to your level \add your Willpower.
@@ -1402,8 +1402,7 @@ It defines how attributes work and explains how to make attacks in combat.
 
             \parhead{Combat while Mounted} With a \glossterm{difficulty rating} 5 Ride check, you can guide your mount with your knees so as to use both hands to attack or defend yourself. This is a free action.
 
-            If your mount is moving in the current phase, you gain a \plus1d bonus to damage with Mounted weapons (see \pcref{Mounted Weapon}).
-            You also take a \minus2 penalty to accuracy with ranged strikes.
+            If your mount is moving in the current phase, you take a \minus2 penalty to accuracy with ranged strikes.
             If your mount uses the \textit{sprint} ability, this penalty increases to \minus4 (see \pcref{Sprint}).
 
             \parhead{If Your Mount Falls in Battle} If your mount falls, you fall to the ground with it.
@@ -1481,9 +1480,10 @@ It defines how attributes work and explains how to make attacks in combat.
         \end{freeability}
 
         \subsubsection{Strike Damage}\label{Strike Damage}
-            The damage you deal with a single \glossterm{strike} is equal to \glossterm{standard damage} based on your \glossterm{power} with \glossterm{mundane} abilities (see \pcref{Standard Damage}), plus that weapon's damage modifier, if any (see \tref{Weapons}).
-            For example, if you had a \glossterm{power} of 4, your base damage on a strike would be 1d10.
-            If you then made a strike with a greatsword, which has a \plus1d damage modifier, your total damage would be 2d6.
+            The damage you deal with a single \glossterm{strike} is equal to the weapon's damage die \add your \glossterm{power} with the strike.
+            Many abilities modify the weapon damage die or the power you use to determine damage with strikes.
+            Weapon damage dice are defined in the Equipment chapter (see \pcref{Weapons}).
+            Almost all strikes are considered \glossterm{mundane} abilities, so you would use your \glossterm{power} with mundane abilities to determine their damage.
 
         \subsubsection{Secondary Strike Targets}\label{Secondary Strike Targets}
             Some abilities allow you to make strikes that affect secondary targets in addition to the primary target or targets.
