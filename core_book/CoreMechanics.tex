@@ -204,19 +204,10 @@ It defines how attributes work and explains how to make attacks in combat.
 
 \section{Damage}\label{Damage}
     Many \glossterm{attacks} deal damage to their targets.
-    When you take damage, you lose a \glossterm{hit point} (see \pcref{Hit Points}).
-
-    If you take at least as much damage as your \glossterm{bleed resistance} from a single source, you \glossterm{bleed} (see \pcref{Bleed Resistance}).
-    Bleeding causes you to lose a hit point.
-    This hit point loss is in addition to the normal hit point you lose whenever you take damage.
-    In addition, some special attacks have additional effects if they make you bleed.
-
-    If the attack deals at least as much damage as your \glossterm{vital resistance}, the attack causes you to gain a \glossterm{vital wound} (see \pcref{Vital Resistance}).
-    In addition, some special attacks have additional effects when they vitally wound you.
-
-    \parhead{Extraordinary Damage}
-        In unusual circumstances, you may take damage in a single attack that is at least double your \glossterm{vital resistance}.
-        For each multiple of your vital resistance that you take from a single attack, you gain an additional \glossterm{vital wound}.
+    When you would be dealt damage, you first reduce that damage with your relevant \glossterm{resistance} to that attack's damage type (see \pcref{Resistances}).
+    Any damage in excess of your resistance causes you to lose that many \glossterm{hit points} (see \pcref{Hit Points}).
+    Whenever you take damage that would reduce your hit points below 0, you gain a \glossterm{vital wound}.
+    If you take a very large amount of damage at once, you can gain vital wounds before your hit points reach 0 (see \pcref{Vital Threshold}).
 
     \subsection{Vital Wounds}\label{Vital Wounds}
         A \glossterm{vital wound} represents serious damage to your body.
@@ -260,6 +251,18 @@ It defines how attributes work and explains how to make attacks in combat.
 
             If you have multiple vital wounds, the vital wounds heal in order from lowest vital roll to highest vital roll.
 
+        \subsubsection{Vital Threshold}\label{Vital Threshold}
+            Extraordinarily powerful attacks can cause you to gain vital wounds before your hit points reach 0.
+            For each multiple of your \glossterm{vital resistance} that you take in damage from a single attack, you gain a \glossterm{vital wound}.
+            Any vital wounds you gain this way are applied in addition to the normal vital wound you gain from taking damage that would reduce your hit points below 0.
+
+            \parhead{Bloodied}\label{Bloodied}
+            As your hit points get lower, you become more vulnerable to vital wounds.
+            At the end of each round, if you have half your maximum \glossterm{hit points} remaining or fewer (rounded down), you become \glossterm{bloodied}.
+            Likewise, if you have more than half your maximum hit points remaining, you stop being \glossterm{bloodied}.
+
+            While you are bloodied, your \glossterm{vital threshold} is halved.
+
     % TODO: different section?
     \subsection{Damage Types}\label{Damage Types}
         All damage falls into one of two categories: \glossterm{energy damage} or \glossterm{physical damage}.
@@ -270,7 +273,7 @@ It defines how attributes work and explains how to make attacks in combat.
             Physical damage has four subtypes: acid damage, bludgeoning damage, piercing damage, and slashing damage.
             Energy damage has three subtypes: cold damage, electricity damage, and fire damage.
             Damage of a particular subtype is also considered damage of its primary type.
-            For example, if you have a bonus to your \glossterm{resistances} against \glossterm{physical damage}, that bonus applies against bludgeoning damage because bludgeoning damage is a subtype of \glossterm{physical damage}.
+            For example, if you have \glossterm{resistances} against \glossterm{physical damage}, those resistances apply against bludgeoning damage because bludgeoning damage is a subtype of \glossterm{physical damage}.
 
             Some damage types have special properties, as described below.
             \parhead{Cold} Abilities that deal cold damage can freeze liquids and have similar effects appropriate to a sudden drop in temperature.
@@ -286,10 +289,11 @@ It defines how attributes work and explains how to make attacks in combat.
             Other abilities similarly apply only if they apply to all damage types dealt by the attack.
 
             For example, a flaming longsword deals slashing and fire damage.
-            If you were hit with a strike with that longsword, you would use the lower of your \glossterm{bleed resistance} against \glossterm{physical damage} and your \glossterm{bleed resistance} against \glossterm{energy damage} to resist the damage.
+            If you were hit with a strike with that longsword, you would use the lower of your resistance against \glossterm{physical damage} and your resistance against \glossterm{energy damage} to resist the damage.
             An ability that gave you immunity to fire damage would not prevent you from taking damage from the attack unless you were also immune to slashing damage.
 
     \subsection{Special Damage Types}\label{Special Damage Types}
+
         These special damage types are separate from the standard damage types, like fire damage or energy damage.
 
         \subsubsection{Subdual Damage}\label{Subdual Damage}
@@ -300,8 +304,8 @@ It defines how attributes work and explains how to make attacks in combat.
         \subsubsection{Environmental Damage}\label{Environmental Damage}
             Some abilities and environmental effects deal environmental damage.
             Environmental damage is never dealt as the result of a successful attack roll.
-            Environmental damage works in the same way as normal damage, except that small amounts of environmental damage have no effect.
-            If a creature would take \glossterm{environmental damage} that is less than its \glossterm{bleed resistance}, it does not take the damage and does not lose any \glossterm{hit points}.
+            Environmental damage works in the same way as normal damage, except that environmental damage is reduced by \glossterm{resistances} without subtracting from the remaining value of those resistances.
+            Any environmental damage in excess of a creature's resistances is dealt as hit points like normal.
 
             It is possible for damage to be both environmental damage and subdual damage.
 
@@ -812,7 +816,7 @@ It defines how attributes work and explains how to make attacks in combat.
             It has the following effects:
             \begin{itemize}
                 \item Strength determines how much you can carry (see \tref{Carrying Capacity by Strength}).
-                \item You apply your base Strength as a bonus or penalty to \glossterm{power} with \glossterm{mundane} abilities, such as \glossterm{strikes} (see \pcref{Power}).
+                \item You gain a bonus (or penalty) to your \glossterm{power} with \glossterm{mundane} abilities, such as normal weapon attacks, equal to your Strength (see \pcref{Power}).
                 \item You reduce your total \glossterm{encumbrance} from \glossterm{armor} by an amount equal to your base Strength (see \pcref{Encumbrance}).
                 \item You apply your base Strength as a bonus or penalty to Strength-based \glossterm{skills}: Climb, Jump, and Swim (see \pcref{Skills}).
                 \item If your base Strength is at least 2, you are \glossterm{trained} with your Strength-based \glossterm{class skills} (see \pcref{Class Skills}.
@@ -835,9 +839,9 @@ It defines how attributes work and explains how to make attacks in combat.
             Constitution represents your health and stamina.
             It has the following effects:
             \begin{itemize}
-                \item You gain a bonus (or penalty) to your \glossterm{hit points} equal to your base Constitution.
+                \item You gain a bonus (or penalty) to your \glossterm{resistance} against \glossterm{physical damage} equal to your Constitution (see \pcref{Resistances}).
+                \item Your base Constitution influences your \glossterm{hit points} (see \pcref{Hit Points}).
                 \item You gain a bonus (or penalty) to your Fortitude defense equal to your base Constitution.
-                \item Your base Constitution influences your \glossterm{resistances} (see \pcref{Resistances}).
                 \item You apply your base Constitution as a bonus or penalty to the Constitution-based \glossterm{skill}: Endurance (see \pcref{Skills}).
                 \item If your base Constitution is at least 2, you are automatically \glossterm{trained} with your Constitution-based \glossterm{class skills} (see \pcref{Class Skills}.
             \end{itemize}
@@ -877,9 +881,10 @@ It defines how attributes work and explains how to make attacks in combat.
             Willpower represents your ability to endure mental hardships.
             It has the following effects:
             \begin{itemize}
+                \item You gain a bonus (or penalty) to your \glossterm{resistance} against \glossterm{energy damage} equal to your Willpower (see \pcref{Resistances}).
+                \item You gain a bonus (or penalty) to your \glossterm{power} with \glossterm{magical} abilities, such as spells, equal to your Willpower (see \pcref{Power}).
                 \item You gain a bonus (or penalty) to your Mental defense equal to your base Willpower.
                 \item You gain a bonus (or penalty) to your \glossterm{fatigue tolerance} equal to your base Willpower (see \pcref{Fatigue}).
-                \item You apply your base Willpower as a bonus or penalty to \glossterm{power} with \glossterm{magical} abilities, such as \glossterm{spells} (see \pcref{Power}).
             \end{itemize}
         }
 
@@ -893,11 +898,13 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \begin{dtable}
             \lcaption{Increasing Attributes With Level}
-            \begin{dtabularx}{\columnwidth}{X X}
-                \tb{Base Attribute} & \tb{Bonus}                 \\
-                0 or lower          & 0                          \\
-                1                   & \plus1 per even level      \\
-                2\add               & \plus1 per level after 1st \\
+            \begin{dtabularx}{\columnwidth}{l X}
+                \tb{Base Attribute} & \tb{Bonus}                                                               \\
+                0 or lower          & 0                                                                        \\
+                1                   & \plus1 at 4th level and every 4 levels thereafter                        \\
+                2                   & \plus1 at every even level                                               \\
+                3                   & \plus1 per level after 1st                                               \\
+                4\add               & \plus1 per level after 1st, and an additional \plus1 at every even level \\
             \end{dtabularx}
         \end{dtable}
 
@@ -930,12 +937,12 @@ It defines how attributes work and explains how to make attacks in combat.
             \begin{dtable}
                 \lcaption{Attribute Score Point Costs}
                 \begin{dtabularx}{\columnwidth}{X X l}
-                    \tb{Base Attribute Score} & \tb{Total Attribute Score} & \tb{Cumulative Point Cost} \tableheaderrule
-                    0                             & 0                          & 0                          \\
-                    1                             & 1 \add half level          & 1                          \\
-                    2                             & 1 \add level               & 3                          \\
-                    3                             & 2 \add level               & 5                          \\
-                    4                             & 3 \add level               & 7                          \\
+                    \tb{Base Attribute Score} & \tb{Total Attribute Score}  & \tb{Cumulative Point Cost} \tableheaderrule
+                    0                         & 0                           & 0 \\
+                    1                         & 1 \add one quarter level    & 1 \\
+                    2                         & 1 \add half level           & 3 \\
+                    3                         & 2 \add level                & 5 \\
+                    4                         & 3 \add one and a half level & 7 \\
                 \end{dtabularx}
             \end{dtable}
         }
@@ -998,29 +1005,57 @@ It defines how attributes work and explains how to make attacks in combat.
 
     \subsection{Hit Points}\label{Hit Points}
         Your \glossterm{hit points} measure how hard you are to seriously injure or kill.
-        You lose hit points when you take damage (see \pcref{Taking Damage}).
-        If you would lose a \glossterm{hit point} while you have no \glossterm{hit points} remaining, you gain a \glossterm{vital wound} instead.
-        This can cause you to die quickly.
+        Whenever you take damage, ignoring damage prevented by your \glossterm{resistances}, you lose that many hit points (see \pcref{Taking Damage}).
+        If you lose a lot of hit points at once, you can gain a \glossterm{vital wound} (see \pcref{Vital Threshold}).
+        Whenever you take damage that would reduce your hit points below 0, you gain a \glossterm{vital wound} and your hit points stay at 0.
+        Once you reach 0 hit points, you can die quickly from any additional damage.
 
-        You normally have a number of \glossterm{hit points} equal to 9 \add your base Constitution.
+        The number of hit points you have is based on the sum of your level and your base Constitution, as defined in \tref{Hit Points}.
         Some special abilities can give you additional \glossterm{hit points}.
         You can't normally exceed your maximum hit points, even with magical healing.
 
+        \begin{dtable}
+            \lcaption{Hit Points}
+            \begin{dtabularx}{\columnwidth}{l *{2}{>{\ccol}X}}
+                \tb{Level \add Base Con} & \tb{Hit Points} \tableheaderrule
+                \minus1 or lower & 10     \\
+                0                & 11     \\
+                1                & 12     \\
+                2                & 13     \\
+                3                & 15     \\
+                4                & 17     \\
+                5                & 19     \\
+                6                & 23     \\
+                7                & 27     \\
+                8                & 32     \\
+                9                & 37     \\
+                10               & 43     \\
+                11               & 49     \\
+                12               & 55     \\
+                13               & 61     \\
+                14               & 68     \\
+                15               & 75     \\
+                16               & 82     \\
+                17               & 90     \\
+                18               & 100    \\
+                19               & 110    \\
+                20               & 120    \\
+                21               & 130    \\
+                22               & 140    \\
+                23               & 150    \\
+                24               & 160    \\
+                25\plus\fn{3}    & \tdash & \tdash \\
+            \end{dtabularx}
+            1. This is your level \add your base Constitution. \\
+        \end{dtable}
 
         \parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of the creature being damaged.
         When lose a single hit point from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight.
         Instead, you avoided the worst of the blow, but it bruised you through your armor, the effort to dodge the blow fatigued you, or it barely nicked you through sheer luck -- and everyone's luck runs out eventually.
 
-        \subsubsection{Missing Hit Points}\label{Missing Hit Points}
-            Most objects and some creatures have no \glossterm{hit points} or \glossterm{bleed resistance}.
-            They ignore all damage less than their \glossterm{vital resistance}.
-
-        \subsubsection{Becoming Bloodied}\label{Becoming Bloodied}
-            As your hit points get lower, you become more vulnerable to damage.
-            At the end of each round, if you have half your maximum \glossterm{hit points} remaining or fewer (rounded down), you become \glossterm{bloodied}.
-            Likewise, if you have more than half your maximum hit points remaining, you stop being \glossterm{bloodied}.
-
-            While you are bloodied, your \glossterm{vital resistance} is halved, to a minimum of your \glossterm{bleed resistance} for each corresponding type of damage.
+        % \subsubsection{Missing Hit Points}\label{Missing Hit Points}
+        %     Most objects and some creatures have no \glossterm{hit points} or \glossterm{bleed resistance}.
+        %     They ignore all damage less than their \glossterm{vital resistance}.
 
         \subsubsection{Regaining Hit Points}\label{Regaining Hit Points}
             Some abilities cause you to regain lost hit points.
@@ -1087,77 +1122,20 @@ It defines how attributes work and explains how to make attacks in combat.
         Unless an ability specifies otherwise, its \glossterm{power} depends on whether it is \glossterm{magical} or \glossterm{mundane}.
 
         \parhead{Magical Abilities}
-        Your power with magical abilities is normally equal to your level \add your base Willpower.
+        Your power with magical abilities is normally equal to your level \add your Willpower.
 
         \parhead{Mundane Abilities}
-        Your power with mundane abilities is normally equal to your level \add your base Strength.
+        Your power with mundane abilities is normally equal to your level \add your Strength.
 
     \subsection{Damage}\label{Damage}
         Many attacks deal damage when they hit.
-        \subsubsection{Die Increments}\label{Die Increments}
-            Most attacks deal damage equal to the result rolled from a pool of dice.
-            Many abilities can increase or decrease your damage with abilities.
-            These modifiers always increase or decrease your damage by one \glossterm{die increment}.
-            Increasing by one die increment is written as \plus1d, and decreasing by one die increment is written as \minus1d.
-            A set of damage dice can increase in size in \glossterm{die increments}.
-            Damage dice change in size using the following pattern:
-            \begin{itemize}
-                \item 1 damage (minimum)
-                \item 1d2
-                \item 1d3
-                \item 1d4
-                \item 1d6
-                \item 1d8
-                \item 1d10
-                \item 2d6
-                \item 2d8
-                \item 2d10
-                \item 4d6
-                \item 4d8
-                \item 4d10
-                \item 5d10
-                \item 6d10
-            \end{itemize}
+        In general, most damaging attacks deal an amount of damage determined by rolling some number of dice and adding some multiplier of your power.
+        The details are given in each attack's description.
 
-            For each die increment that increases the damage, move one space down the list.
-            Likewise, for each die increment that decreases the damage, move one space up the list.
-            After the damage dice reach 4d10, each additional die increment simply adds an extra 1d10 of damage.
-
-        \subsubsection{Standard Damage}\label{Standard Damage}
-            Most damaging effects use \glossterm{standard damage} as a baseline to determine the damage they deal.
-            Your \glossterm{standard damage} with an ability is based on your \glossterm{power} with that ability (see \pcref{Power}).
-            Standard damage starts at 1d6 and increases by \plus1d per two power.
-            This is summarized on \trefnp{Standard Damage}.
-
-            \begin{dtable}
-                \lcaption{Standard Damage}
-                \begin{dtabularx}{\columnwidth}{l X}
-                    \tb{Power} & \tb{Damage} \\
-                    0--1   & 1d6  \\
-                    2--3   & 1d8 \\
-                    4--5   & 1d10  \\
-                    6--7   & 2d6  \\
-                    8--9   & 2d8 \\
-                    10--11 & 2d10  \\
-                    12--13 & 4d6  \\
-                    14--15 & 4d8 \\
-                    16--17 & 4d10 \\
-                    18--19 & 5d10 \\
-                    20--21 & 6d10 \\
-                    22--23 & 7d10 \\
-                    24--25\fn{1} & 8d10 \\
-                \end{dtabularx}
-                1. For every even value above 26, add a +10 bonus to the result instead of rolling additional dice.
-            \end{dtable}
-
-        \subsubsection{Power vs. Die Increments}\label{Power vs. Die Increments}
-            Many abilities specify that they deal damage based on some standard calculation, such as your \glossterm{standard damage} or your normal damage with a \glossterm{strike}, plus an additional modifier to the \glossterm{die increment}.
-            For example, the \textit{power strike} \glossterm{maneuver} deals \plus2d more damage than a normal \glossterm{strike}.
-            Other abilities modify your \glossterm{power} directly.
-            For example, the \textit{wellspring of power} wizard ability gives you a \plus1 bonus to \glossterm{power} with \glossterm{magical} abilities.
-
-            In general, active abilities do not modify their own \glossterm{power}, and instead increase damage with \glossterm{die increments}
-            Abilities that modify the effectivenes of other abilities, such as \textit{wellspring of power}, generally increase \glossterm{power} instead of increasing \glossterm{die increments} directly.
+        \parhead{Dealing vs. Taking Damage}
+        You deal damage whenever you hit with a damaging attack, regardless of whether the target prevents the damage with its \glossterm{resistances}.
+        The target of an attack only takes damage if the attack deals more damage than its remaining resistances.
+        Many special abilities require the target to take damage from your attacks, which does not happen if the damage is prevented by resistances..
 
     \subsection{Defenses}\label{Defenses}
         Usually, when you are attacked, the attacker has to make an \glossterm{attack roll} against a specific defense.
@@ -1215,75 +1193,24 @@ It defines how attributes work and explains how to make attacks in combat.
         Regardless of whether your initiative check succeeds or fails, you cannot use that ``excess'' movement to move after making such an initiative check.
 
     \subsection{Resistances}\label{Resistances}
+        Creatures can have resistances to particular damage types.
+        Whenever you would take damage, you first reduce that damage by an amount equal to your resistance against that damage type.
+        If you reduce damage to zero with your resistance, you completely prevent the damage, and you are not considered to have taken damage from the attack.
+        You reduce your remaining resistance by an amount equal to the damage prevented this way.
 
-        % TODO: this table is awkwardly wide, can it have more information?
-        \begin{dtable}
-            \lcaption{Resistance Values}
-            \begin{dtabularx}{\columnwidth}{l *{2}{>{\ccol}X}}
-                \tb{Total}\fn{1} & \tb{Bleed Resistance} & \tb{Vital Resistance} \tableheaderrule
-                \minus1 or lower & 1                     & 10     \\
-                0                & 1                     & 11     \\
-                1                & 2                     & 12     \\
-                2                & 3                     & 13     \\
-                3                & 4                     & 15     \\
-                4                & 5                     & 17     \\
-                5                & 6                     & 19     \\
-                6                & 7                     & 23     \\
-                7                & 8                     & 27     \\
-                8                & 10                    & 32     \\
-                9                & 12                    & 37     \\
-                10               & 14                    & 43     \\
-                11               & 17                    & 49     \\
-                12               & 20                    & 55     \\
-                13               & 23                    & 61     \\
-                14               & 26                    & 68     \\
-                15               & 29                    & 75     \\
-                16               & 32                    & 82     \\
-                17               & 36                    & 90     \\
-                18               & 40                    & 100    \\
-                19               & 45                    & 110    \\
-                20               & 50                    & 120    \\
-                21               & 55                    & 130    \\
-                22               & 60                    & 140    \\
-                23               & 65                    & 150    \\
-                24               & 70                    & 160    \\
-                25\plus\fn{3}    & \tdash                & \tdash \\
-            \end{dtabularx}
-            1. This is your level \add your base Constitution. \\
-            1. This is your \glossterm{bleed resistance} (see \pcref{Bleed Resistance}). \\
-            2. This is your \glossterm{vital resistance} (see \pcref{Vital Resistance}). \\
-            3. To calculate the bleed resistance for a creature with an epic Constitution, increase its bleed resistance by 5 per point, and its vital resistance by 10 per point.
-        \end{dtable}
+        Essentially, resistances function like extra hit points that are always subtracted before you start losing actual hit points.
+        Many attacks have speciifc consequences if you take damage from them, and resistances can protect you from those consequences.
 
-        \subsubsection{Bleed Resistance}\label{Bleed Resistance}
-            Your \glossterm{bleed resistance} measures your ability to reduce the impact of minor damaging attacks.
-            It is based on your level \add your base Constitution, as defined in \tref{Resistance Values}.
-            Wearing \glossterm{armor} can increase your resistance against \glossterm{physical damage}, and some special abilities can also increase it.
+        You restore all of your resistances to their full values whenever you take a \glossterm{short rest}.
+        Resistances cannot be restored by effects that cause creatures to regain hit points.
+        Some specific special abilities can restore resistances.
 
-            \parhead{Missing Bleed Resistance} An object or creature without a listed \glossterm{bleed resistance} loses a single \glossterm{hit point} from damaging attacks.
+        \parhead{Common Resistance Sources}
+        All creatures have a resistance to \glossterm{physical damage} equal to their Constitution, and a resistance to \glossterm{energy damage} equal to their Willpower.
+        Body armor provides additional resistance bonuses, and many special abilities also increase resistances.
 
-            \parhead{Literal Blood} Many creatures that do not have blood in exact the same sense as humans still have a bleed resistance and are said to "bleed" from damaging attacks.
-            Those creatures still lose some important part of their life force or corporeal bodies when they take significant damage.
-            A rare few creatures are explicitly unable to bleed, as indicated in their descriptions.
-
-        \subsubsection{Vital Resistance}\label{Vital Resistance}
-            Your \glossterm{vital resistance} measures your ability to avoid gaining \glossterm{vital wounds} from dangerous attacks.
-            When you take damage from an attack, if the damage is at least as much as your \glossterm{vital resistance}, you gain a \glossterm{vital wound} (see \pcref{Vital Wounds}).
-
-            Your \glossterm{vital resistance} is based on your level \add your base Constitution, as defined in \tref{Resistance Values}.
-            Wearing \glossterm{armor} can increase your vital resistance against \glossterm{physical damage}, and some special abilities can also increase it.
-
-            \parhead{Missing Vital Resistance} An object or creature without a listed \glossterm{vital resistance} cannot gain \glossterm{vital wounds} from taking damage directly.
-            It can only gain \glossterm{vital wounds} from taking damage while it has no \glossterm{hit points} remaining.
-
-        \subsubsection{Damage Type Resistances}\label{Damage Type Resistances}
-            Each type of resistance is further divided into what type of damage it protects against.
-            Your \glossterm{bleed resistance} and \glossterm{vital resistance} apply against damage of any type.
-            Those are collectively called your \glossterm{resistances}.
-            Some effects increase your resistances against either \glossterm{physical damage} or \glossterm{energy damage}.
-
-            \parhead{Stacking Magic Bonuses} A \glossterm{magic bonus} to a specific type of resistance does not stack with a \glossterm{magic bonus} to a more general resistance if both apply.
-            For example, if you have a \glossterm{magic bonus} to resistances against energy damage and another \glossterm{magic bonus} to resistances against fire damage, you only use the higher of the two when you take fire damage.
+        \parhead{Stacking Magic Bonuses} A \glossterm{magic bonus} to a specific type of resistance does not stack with a \glossterm{magic bonus} to a more general resistance if both apply.
+        For example, if you have a \glossterm{magic bonus} to resistances against energy damage and another \glossterm{magic bonus} to resistances against fire damage, you only use the higher of the two when you take fire damage.
 
 \section{Circumstances, Bonuses, and Penalties}
 
