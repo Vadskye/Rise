@@ -199,7 +199,7 @@ It defines how attributes work and explains how to make attacks in combat.
         Some creatures are also not subject to critical hits, as noted in their descriptions.
 
     \subsection{Glancing Blows}\label{Glancing Blows}
-        Many attacks have a reduced effect if they miss by 5 or less instead of having no effect at all.
+        Many attacks have a reduced effect if they miss by 2 or less instead of having no effect at all.
         This is called a glancing blow.
 
 \section{Damage}\label{Damage}
@@ -839,9 +839,10 @@ It defines how attributes work and explains how to make attacks in combat.
             Constitution represents your health and stamina.
             It has the following effects:
             \begin{itemize}
-                \item You gain a bonus (or penalty) to your \glossterm{resistance} against \glossterm{physical damage} equal to your Constitution (see \pcref{Resistances}).
-                \item Your base Constitution influences your \glossterm{hit points} (see \pcref{Hit Points}).
+                \item You gain a bonus (or penalty) to the number of hit points you gain each level equal to your base Constitution (see \pcref{Hit Points}).
                 \item You gain a bonus (or penalty) to your Fortitude defense equal to your base Constitution.
+                \item You gain a bonus (or penalty) to your \glossterm{resistance} against \glossterm{physical damage} equal to your Constitution (see \pcref{Resistances}).
+                \item You gain a bonus (or penalty) to your \glossterm{fatigue tolerance} equal to your base Willpower (see \pcref{Fatigue}).
                 \item You apply your base Constitution as a bonus or penalty to the Constitution-based \glossterm{skill}: Endurance (see \pcref{Skills}).
                 \item If your base Constitution is at least 2, you are automatically \glossterm{trained} with your Constitution-based \glossterm{class skills} (see \pcref{Class Skills}.
             \end{itemize}
@@ -987,7 +988,7 @@ It defines how attributes work and explains how to make attacks in combat.
             A number of abilities and attacks can cause you to gain fatigue points.
 
             \subsubsection{Fatigue Tolerance}\label{Fatigue Tolerance}
-                You can gain a number of \glossterm{fatigue points} equal to 2 \add your base Willpower without suffering any consequences (minimum 0).
+                You can gain a number of \glossterm{fatigue points} equal to 1 \add your base Constitution \add your base Willpower without suffering any consequences (minimum 0).
                 This value is called your \glossterm{fatigue tolerance}.
                 Some abilities can modify your fatigue tolerance.
 
@@ -1010,44 +1011,9 @@ It defines how attributes work and explains how to make attacks in combat.
         Whenever you take damage that would reduce your hit points below 0, you gain a \glossterm{vital wound} and your hit points stay at 0.
         Once you reach 0 hit points, you can die quickly from any additional damage.
 
-        The number of hit points you have is based on the sum of your level and your base Constitution, as defined in \tref{Hit Points}.
-        Some special abilities can give you additional \glossterm{hit points}.
-        You can't normally exceed your maximum hit points, even with magical healing.
-
-        \begin{dtable}
-            \lcaption{Hit Points}
-            \begin{dtabularx}{\columnwidth}{l *{2}{>{\ccol}X}}
-                \tb{Level \add Base Con} & \tb{Hit Points} \tableheaderrule
-                \minus1 or lower & 10     \\
-                0                & 11     \\
-                1                & 12     \\
-                2                & 13     \\
-                3                & 15     \\
-                4                & 17     \\
-                5                & 19     \\
-                6                & 23     \\
-                7                & 27     \\
-                8                & 32     \\
-                9                & 37     \\
-                10               & 43     \\
-                11               & 49     \\
-                12               & 55     \\
-                13               & 61     \\
-                14               & 68     \\
-                15               & 75     \\
-                16               & 82     \\
-                17               & 90     \\
-                18               & 100    \\
-                19               & 110    \\
-                20               & 120    \\
-                21               & 130    \\
-                22               & 140    \\
-                23               & 150    \\
-                24               & 160    \\
-                25\plus\fn{3}    & \tdash & \tdash \\
-            \end{dtabularx}
-            1. This is your level \add your base Constitution. \\
-        \end{dtable}
+        At 1st level, you have a number of hit points equal to 10 \add twice your base Constitution.
+        Each level after that, you gain a number of hit points equal to 5 \add your base Constitution.
+        Some special abilities can give you additional hit points.
 
         \parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of the creature being damaged.
         When lose a single hit point from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight.
@@ -1060,7 +1026,9 @@ It defines how attributes work and explains how to make attacks in combat.
         \subsubsection{Regaining Hit Points}\label{Regaining Hit Points}
             Some abilities cause you to regain lost hit points.
             For example, the \textit{recover} ability allows you to regain half your maximum hit points (see \pcref{Recover}).
+            You can't normally exceed your maximum hit points, even with magical healing.
 
+            % TODO: should this stay in the new HP system?
             \parhead{Limitations} Multiple effects that cause you to regain hit points in the same round do not stack.
             Instead, you only apply the highest total healing value.
             For example, if an effect caused you to regain one hit point during the action phase, and a second effect caused you to regain two hit points during the delayed action phase, you would regain one hit point during each phase for a total of two hit points.
@@ -1122,10 +1090,10 @@ It defines how attributes work and explains how to make attacks in combat.
         Some abilities specify an unusual method of determining your power with them in their descriptions.
 
         \parhead{Magical Abilities}
-        Your power with magical abilities is normally equal to your level \add your Willpower.
+        Your power with magical abilities is normally equal to your Willpower.
 
         \parhead{Mundane Abilities}
-        Your power with mundane abilities is normally equal to your level \add your Strength.
+        Your power with mundane abilities is normally equal to your Strength.
 
     \subsection{Damage}\label{Damage}
         Many attacks deal damage when they hit.
