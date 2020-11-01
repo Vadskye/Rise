@@ -1006,7 +1006,7 @@ It defines how attributes work and explains how to make attacks in combat.
 
     \subsection{Hit Points}\label{Hit Points}
         Your \glossterm{hit points} measure how hard you are to seriously injure or kill.
-        Whenever you take damage, ignoring damage prevented by your \glossterm{resistances}, you lose that many hit points (see \pcref{Taking Damage}).
+        Whenever you take damage that is not prevented b your \glossterm{resistances}, you lose that many hit points (see \pcref{Taking Damage}).
         If you lose a lot of hit points at once, you can gain a \glossterm{vital wound} (see \pcref{Vital Threshold}).
         Whenever you take damage that would reduce your hit points below 0, you gain a \glossterm{vital wound} and your hit points stay at 0.
         Once you reach 0 hit points, you can die quickly from any additional damage.
@@ -1100,10 +1100,11 @@ It defines how attributes work and explains how to make attacks in combat.
         In general, most damaging attacks deal an amount of damage determined by rolling some number of dice and adding some multiplier of your power.
         The details are given in each attack's description.
 
-        \parhead{Dealing vs. Taking Damage}
-        You deal damage whenever you hit with a damaging attack, regardless of whether the target prevents the damage with its \glossterm{resistances}.
-        The target of an attack only takes damage if the attack deals more damage than its remaining resistances.
-        Many special abilities require the target to take damage from your attacks, which does not happen if the damage is prevented by resistances..
+        \parhead{Dealing Damage, Taking Damage, and Losing Hit Points}
+        You deal damage whenever you hit with a damaging attack, regardless of whether the damage is \glossterm{resisted} by the target's \glossterm{resistances} (see \pcref{Resistances}).
+        Likewise, you take damage whenever anything deals damage to you.
+        However, you only lose hit points if the damage is not mitigated by your \glossterm{resistances}.
+        Many special abilities require the target to lose hit points from a damaging attack, which does not happen if the damage is resisted.
 
     \subsection{Defenses}\label{Defenses}
         Usually, when you are attacked, the attacker has to make an \glossterm{attack roll} against a specific defense.
@@ -1162,12 +1163,13 @@ It defines how attributes work and explains how to make attacks in combat.
 
     \subsection{Resistances}\label{Resistances}
         Creatures can have a resistance to particular damage types.
-        Whenever you would take damage, you first reduce that damage by an amount equal to your resistance against that damage type.
-        If you reduce damage to zero with your resistance, you completely prevent the damage, and you are not considered to have taken damage from the attack.
-        You reduce your remaining resistance by an amount equal to the damage prevented this way.
+        Whenever you take damage, you first apply that damage to your resistance against that damage type before applying it to your hit points.
+        You reduce your remaining resistance by an amount equal to the damage you take.
+        If the damage is less than your remaining resistance, the damage is \glossterm{resisted}, and you do not lose any hit points.
+        If the damage is more than your resistance, your resistance is reduced to 0 and you lose hit points equal to the excess damage.
 
         Essentially, resistances function like extra hit points that are always subtracted before you start losing actual hit points.
-        Many attacks have speciifc consequences if you take damage from them, and resistances can protect you from those consequences.
+        Many attacks have speciifc consequences if you lose hit points from them, and resistances can protect you from those consequences.
 
         You restore all of your resistances to their full values whenever you take a \glossterm{short rest}.
         Resistances cannot be restored by effects that cause creatures to regain hit points.

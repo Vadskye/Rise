@@ -112,7 +112,7 @@ def generate_maneuvers():
         effect_text="""
             Make a \\glossterm<strike>.
             You do not add your \\glossterm<power> to the strike's damage.
-            If the target takes damage from the strike, it is \\glossterm<shaken> by you as a \\glossterm<condition>.
+            If the target loses hit points from the strike, it is \\glossterm<shaken> by you as a \\glossterm<condition>.
         """,
         rank=3,
         rank_upgrades={
@@ -180,7 +180,7 @@ def generate_maneuvers():
         effect_text="""
             Make a \\glossterm<strike>.
             You do not add your \\glossterm<power> to the strike's damage.
-            If the target takes damage from the strike, it is \\glossterm<sickened> as a \\glossterm<condition>.
+            If the target loses hit points from the strike, it is \\glossterm<sickened> as a \\glossterm<condition>.
         """,
         rank=3,
         rank_upgrades={
@@ -314,7 +314,7 @@ def generate_maneuvers():
         effect_text="""
             Make a \\glossterm<strike>.
             You do not add your \\glossterm<power> to the strike's damage.
-            If the target takes damage from the strike, it takes a penalty equal to your rank to \\glossterm<accuracy> against creatures other than you as a \\glossterm<condition>.
+            If the target loses hit points from the strike, it takes a penalty equal to your rank to \\glossterm<accuracy> against creatures other than you as a \\glossterm<condition>.
             This condition is removed if another creature applies this condition to the same target.
         """,
         rank=2,
@@ -359,7 +359,7 @@ def generate_maneuvers():
         effect_text="""
             Make a \\glossterm<strike> using a slashing weapon.
             You do not add your \\glossterm<power> to the strike's damage.
-            If the target takes damage from the strike, it is \\glossterm<dazzled> as a \\glossterm<condition>.
+            If the target loses hit points from the strike, it is \\glossterm<dazzled> as a \\glossterm<condition>.
         """,
         rank=3,
         rank_upgrades={
@@ -377,7 +377,7 @@ def generate_maneuvers():
         effect_text="""
             Make a \\glossterm<strike> using a slashing weapon.
             You do not add your \\glossterm<power> to the strike's damage.
-            If the target takes damage from the strike, it is \\glossterm<slowed> as a \\glossterm<condition>.
+            If the target loses hit points from the strike, it is \\glossterm<slowed> as a \\glossterm<condition>.
         """,
         rank=3,
         rank_upgrades={
@@ -414,7 +414,7 @@ def generate_maneuvers():
         effect_text="""
             Make a \\glossterm<strike> using a bludgeoning weapon.
             You do not add your \\glossterm<power> to the strike's damage.
-            If the target takes damage from the strike, it is \\glossterm<dazed> as a \\glossterm<condition>.
+            If the target loses hit points from the strike, it is \\glossterm<dazed> as a \\glossterm<condition>.
         """,
         rank=3,
         rank_upgrades={
@@ -462,7 +462,7 @@ def generate_maneuvers():
         target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a \\glossterm<strike>.
-            If the target takes damage from the strike, it is \\glossterm<sickened> until the end of the next round.
+            If the target loses hit points from the strike, it is \\glossterm<sickened> until the end of the next round.
         """,
         rank=3,
         rank_upgrades={
@@ -480,7 +480,7 @@ def generate_maneuvers():
         effect_text="""
             Make a \\glossterm<strike>.
             You do not add your \\glossterm<power> to the strike's damage.
-            If the target takes damage from the strike, it stops being \\glossterm<attuned> to a number of effects equal to your rank.
+            If the target loses hit points from the strike, it stops being \\glossterm<attuned> to a number of effects equal to your rank.
             It can freely choose which effects it releases its attunement to.
         """,
         rank=2,
@@ -522,7 +522,7 @@ def generate_maneuvers():
         target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a \\glossterm<strike> using a shield.
-            If the target takes damage from the strike, it is \\glossterm<dazed> as a \\glossterm<condition>.
+            If the target loses hit points from the strike, it is \\glossterm<dazed> as a \\glossterm<condition>.
         """,
         rank=3,
         rank_upgrades={
@@ -539,7 +539,7 @@ def generate_maneuvers():
         target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a strike using an \\glossterm<unarmed attack>.
-            If the target takes damage from the strike, it is \\glossterm<sickened> as a \\glossterm<condition>.
+            If the target loses hit points from the strike, it is \\glossterm<sickened> as a \\glossterm<condition>.
         """,
         rank=3,
         rank_upgrades={
@@ -855,7 +855,7 @@ def generate_maneuvers():
         target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a \\glossterm<strike> using a piercing weapon.
-            If the target takes damage from the strike, you gain an accuracy bonus equal to your rank with injury-based poisons delivered with the strike.
+            If the target loses hit points from the strike, you gain an accuracy bonus equal to your rank with injury-based poisons delivered with the strike.
         """,
         rank=3,
         tags=[],
