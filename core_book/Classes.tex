@@ -20,8 +20,7 @@ This choice determines a great deal about your character's abilities.
             You have an \glossterm{archetype rank} associated with each archetype you have.
             Each ability from an archetype has a minimum rank required to gain the ability.
 
-            At 1st level, you are Rank 1 in each archetype.
-            This gives you the Rank 1 abilities from each of your archetypes.
+            At 1st level, you are Rank 1 in one archetype, and rank 0 in your other two archetypes.
             Every level thereafter, you increase your rank in one archetype of your choice.
             This gives you the abilities associated with that rank.
 
@@ -32,14 +31,13 @@ This choice determines a great deal about your character's abilities.
                 \lcaption{Archetype Ranks by Level}
                 \begin{dtabularx}{\columnwidth}{l >{\lcol}X}
                     \tb{Archetype Rank} & \tb{Minimum Level} \tableheaderrule
-                    1     & 1
-                    \\ 2  & 2
-                    \\ 3  & 5
-                    \\ 4  & 8
-                    \\ 5 & 11
-                    \\ 6 & 14
-                    \\ 7 & 17
-                    \\ 8 & 20
+                    1 & 1  \\
+                    2 & 4  \\
+                    3 & 7  \\
+                    4 & 10 \\
+                    5 & 13 \\
+                    6 & 16 \\
+                    7 & 19 \\
                 \end{dtabularx}
             \end{dtable}
 
@@ -163,23 +161,22 @@ This choice determines a great deal about your character's abilities.
     \subsection{Battleforged Resilience}
         This archetype improves your durability in combat.
 
-        \cf{Bbn}[1]{Battleforged Endurance} You increase your maximum \glossterm{hit points} by 2.
+        \cf{Bbn}[0]{Endurance} You gain a \plus1 bonus to your \glossterm{fatigue tolerance}.
 
-        \cf{Bbn}[2]{Toughened Body} You gain a \plus2 bonus to Fortitude defense and a \plus1 bonus to your \glossterm{fatigue tolerance} (see \pcref{Fatigue Tolerance}).
+        \cf{Bbn}[1]{Battle-Scarred} You gain a bonus equal to your level to your \glossterm{resistances} (see \pcref{Resistances}).
 
-        \cf{Bbn}[3]{Battle-Scarred} You gain a bonus equal to half your level to your \glossterm{resistances} against \glossterm{physical damage}.
+        \cf{Bbn}[2]{Unbattered Resilience} At the end of each round, if you did not resist any damage that round, you regain physical damage resistance equal to your level.
 
-        \cf{Bbn}[4]{Greater Battleforged Endurance} The number of hit points granted by your \textit{battleforged endurance} ability increases to 4.
+        \cf{Bbn}[3]{Toughened Body} You increase your maximum \glossterm{hit points} by an amount equal to your level.
+        In addition, the bonus from your \textit{endurance} ability increases to \plus2.
 
-        \cf{Bbn}[5]{Greater Toughened Body} The Fortitude bonus from your \textit{toughened body} ability increases to \plus4.
-        In addition, the bonus to \glossterm{fatigue tolerance} increases to \plus2.
+        \cf{Bbn}[4]{Greater Battle-Scarred} The bonus from your \textit{battle-scarred} ability increases to be equal to twice your level.
 
-        \cf{Bbn}[6]{Greater Battle-Scarred}
-        The bonus from your \textit{battle-scarred} ability increases to be equal to your level.
+        \cf{Bbn}[5]{Greater Unbattered Resilience} The amount of physical damage resistance you regain with your \textit{unbattered resilience} ability increases to twice your level.
 
-        \cf{Bbn}[7]{Supreme Battleforged Endurance} The number of hit points granted by your \textit{battleforged endurance} ability increases to 6.
+        \cf{Bbn}[6]{Greater Toughened Body} You gain a \plus1 bonus to your base Constitution (see \pcref{Constitution}).
 
-        \cf{Bbn}[8]{Epic Resilience} You gain a bonus equal to your level to \glossterm{resistances}.
+        \cf{Bbn}[7]{Supreme Battle-Scarred} The bonus from your \textit{battle-scarred} ability increases to be equal to three times your level.
 
     \subsection{Battlerager}\label{Rage}
         This archetype grants you a devastating rage, improving your combat prowess.
@@ -190,73 +187,71 @@ This choice determines a great deal about your character's abilities.
         % +4 Mental defense
         % -2 Armor and Reflex defenses
 
+        \cf{Bbn}[0]{Seething Anger} You gain a \plus2 bonus to the Intimidate skill and a \plus1 bonus to Mental defense.
+
         \cf{Bbn}[1]{Rage} You can use the \textit{rage} ability as a \glossterm{free action}.
         For most barbarians, this represents entering a furious rage.
         Some barbarians instead enter a joyous battle trance or undergo a partial physical transformation into a more fearsome form.
         \begin{attuneability}{Rage}[\glossterm{Emotion}, \glossterm{Attune} (self), \glossterm{Swift}]
-            You gain the following benefits and drawbacks:
+            For the duration of this ability, you gain the following benefits and drawbacks:
             \begin{itemize}
-                \item You increase your current \glossterm{hit points} by four.
-                    This can allow your current hit points to exceed your normal maximum hit points.
-                    When this ability ends, you lose four hit points.
-                \item You gain a \plus2 bonus to \glossterm{power} with \glossterm{mundane} abilities.
+                \item You gain a \plus4 bonus to your \glossterm{fatigue tolerance}.
+                \item You gain a bonus to \glossterm{power} equal to your level with \glossterm{mundane} abilities.
                 \item You take a \minus2 penalty to Armor and Reflex defenses.
                 \item You are unable to take \glossterm{standard actions} that do not cause you to make \glossterm{mundane} attacks.
                 \item You are unable to use \glossterm{Focus} abilities of any kind.
                 \item At the end of each round, if you did not make a \glossterm{mundane} attack that round, this ability ends.
             \end{itemize}
+            When this ability ends, you gain a \glossterm{fatigue point}.
         \end{attuneability}
 
-        \cf{Bbn}[2]{Seething Anger}
-        You gain a \plus2 bonus to the \glossterm{Intimidate} skill and to Mental defense.
+        \cf{Bbn}[2]{Insensible Anger} You reduce your maximum hit points by an amount equal to your level.
+        In exchange, you gain a bonus to your \glossterm{resistances} equal to your level.
 
-        \cf{Bbn}[3]{Powerful Anger} You gain a \plus1 bonus to \glossterm{power} with \glossterm{mundane} abilities.
+        \cf{Bbn}[3]{Powerful Anger} You gain a bonus to \glossterm{power} with \glossterm{mundane} abilities equal to half your level.
 
-        \cf{Bbn}[4]{Greater Rage} The bonus to \glossterm{power} from your \textit{rage} ability increases to \plus4.
+        \cf{Bbn}[4]{Greater Rage} You no longer gain a \glossterm{fatigue point} when your \textit{rage} ability ends.
 
-        \cf{Bbn}[5]{Greater Seething Anger} The bonuses from your \textit{seething anger} ability increase to \plus4.
+        \cf{Bbn}[5]{Greater Insensible Anger} The hit point reduction and resistance bonuses from your \textit{insensible anger} ability both increase to be equal to twice your level.
 
-        \cf{Bbn}[5]{Greater Powerful Anger} The bonus from your \textit{powerful anger} ability increases to \plus2.
+        \cf{Bbn}[6]{Greater Powerful Anger} You gain a \plus1 bonus to your base Strength (see \pcref{Strength}).
 
-        \cf{Bbn}[7]{Supreme Rage} The bonus to \glossterm{power} from your \textit{rage} ability increases to \plus6.
-
-        \cf{Bbn}[8]{Epic Rage} Your \textit{rage} ability loses the \glossterm{Attune} (self) tag and gains the \glossterm{Sustain} (free) tag, allowing you to more easily enter and exit your rage.
-        Your \textit{rage} ability also no longer imposes defense penalties.
+        \cf{Bbn}[7]{Supreme Rage} Your \textit{rage} ability loses the \glossterm{Attune} (self) tag and gains the \glossterm{Sustain} (free) tag, allowing you to more easily enter and exit your rage.
         In addition, when you use your \textit{rage} ability, you can grow by one \glossterm{size category}.
 
     \subsection{Outland Savage}
         This archetype improves your mobility and combat prowess with direct, brutal abilities.
 
-        \cf{Bbn}[1]{Exotic Weaponry} You gain proficiency with improvised weapons (see \pcref{Improvised Weapons}).
-        In addition, you gain proficiency with \glossterm{exotic weapons} from all weapon groups you are proficient with.
+        \cf{Bbn}[0]{Savage Instincts} You gain a \plus2 bonus to \glossterm{initiative} checks and a \plus1 bonus to Reflex defense.
 
-        \cf{Bbn}[2]{Fast Movement} You gain a \plus10 foot bonus to your \glossterm{base speed}.
+        \cf{Bbn}[1]{Fast Movement} You gain a \plus10 foot bonus to your \glossterm{base speed}.
 
-        \cf{Bbn}[3]{Savage Precision} You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{dirty trick}, \textit{disarm}, \textit{grapple}, \textit{overrun}, \textit{shove}, and \textit{trip} abilities (see \pcref{Special Combat Abilities}).
-        In addition, you gain a \plus2 bonus to \glossterm{accuracy} with grapple actions (see \pcref{Grapple Actions}).
+        \cf{Bbn}[2]{Savage Precision} You can use your Strength in place of your Perception to determine your \glossterm{accuracy} with the \textit{dirty trick}, \textit{disarm}, \textit{grapple}, \textit{overrun}, \textit{shove}, and \textit{trip} abilities, as well as with grapple actions (see \pcref{Special Combat Abilities}, and \pcref{Grapple Actions}).
+        In addition, you gain a \plus2 bonus to \glossterm{accuracy} with those abilities.
 
-        \cf{Bbn}[4]{Savage Instincts} You gain a \plus2 bonus to \glossterm{initiative} checks and Reflex defense.
+        \cf{Bbn}[3]{Savage Force} All \glossterm{strikes} you make gain bonus damage dice equal to your weapon's damage dice.
 
-        \cf{Bbn}[5]{Greater Fast Movement} The speed bonus from your \textit{fast movement} ability increases to \plus20 feet.
+        \cf{Bbn}[4]{Greater Fast Movement} The speed bonus from your \textit{fast movement} ability increases to \plus20 feet.
+        In addition, you gain a \plus2 bonus to Reflex defense.
 
-        \cf{Bbn}[6]{Greater Savage Precision} The bonuses from your \textit{savage precision} ability increase to \plus3.
+        \cf{Bbn}[5]{Greater Savage Precision} The accuracy bonus from your \textit{savage precision} ability increases to \plus4.
+        In addition, choose one of the following \glossterm{weapon tags} (see \pcref{Weapon Tags}): Disarming, Forceful, Grappling, or Tripping.
+        You may treat all weapons you wield as if they had your chosen weapon tag.
 
-        \cf{Bbn}[7]{Greater Savage Instincts} The bonuses from your \textit{savage instincts} ability increase to \plus4.
+        \cf{Bbn}[6]{Greater Savage Force} The bonus from your \textit{savage force} ability increases to be equal to twice your weapon's damage dice.
 
-        \cf{Bbn}[8]{Epic Savagery} The bonuses from your \textit{savage precision} and \textit{savage instincts} abilities increase to \plus6.
-        In addition, the speed bonus from your \textit{fast movement} ability increases to \plus30 feet.
+        \cf{Bbn}[7]{Supreme Fast Movement} The speed bonus from your \textit{fast movement} ability increases to \plus30 feet.
+        In addition, the Reflex defense bonus from your \textit{greater fast movement} ability increases to \plus4.
 
     \subsection{Primal Warrior}
         This archetype grants you abilities to use in combat and improves your physical skills.
-        % Rank 7 summary:
-        % Standard active abilities
-        % +2 skill points
-        % +2 Str/Dex checks
+
+        \cf{Bbn}[0]{Primal Might} You gain a \plus1 bonus to Strength-based \glossterm{checks} and Constitution-based \glossterm{checks}.
 
         {
             \cf{Bbn}[1]{Primal Maneuvers}
             You can channel your primal energy into ferocious attacks.
-            You learn one \glossterm{maneuver} from the primal maneuver list (see \pcref{Primal Maneuvers}).
+            You learn two \glossterm{maneuvers} from the primal maneuver list (see \pcref{Primal Maneuvers}).
             You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
             As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
 
@@ -269,52 +264,46 @@ This choice determines a great deal about your character's abilities.
             \cf{Bbn}[2]{Maneuver Rank} You become a rank 2 primal maneuverist.
             This gives you access to maneuvers that require a minimum rank of 2.
 
-            \cf{Bbn}[2]{Primal Maneuver}
-            You learn an additional primal \glossterm{maneuver} (see \pcref{Primal Maneuvers}).
+            \cf{Bbn}[2]{Primal Lore} You gain two additional \glossterm{skill points}.
         }
 
         {
             \cf*{Bbn}[3]{Maneuver Rank} You become a rank 3 primal maneuverist.
             This gives you access to maneuvers that require a minimum rank of 3 and can improve the effectiveness of your existing maneuvers.
 
-            \cf{Bbn}[3]{Primal Lore} You gain two additional \glossterm{skill points}.
+            \cf{Bbn}[3]{Greater Primal Might} The bonus from your \textit{primal might} ability increases to \plus2.
+
         }
 
         {
             \cf*{Bbn}[4]{Maneuver Rank} You become a rank 4 primal maneuverist.
             This gives you access to maneuvers that require a minimum rank of 4 and can improve the effectiveness of your existing maneuvers.
 
-            \cf{Bbn}[4]{Primal Force} You gain a \plus1 bonus to Strength-based \glossterm{checks} and Constitution-based \glossterm{checks}.
+            \cf{Bbn}[4]{Primal Maneuver}
+            You learn an additional primal \glossterm{maneuver} (see \pcref{Primal Maneuvers}).
         }
 
         {
             \cf*{Bbn}[5]{Maneuver Rank} You become a rank 5 primal maneuverist.
             This gives you access to maneuvers that require a minimum rank of 5 and can improve the effectiveness of your existing maneuvers.
 
-            \cf*{Bbn}[5]{Primal Maneuver}
-            You learn an additional primal \glossterm{maneuver} (see \pcref{Primal Maneuvers}).
+            \cf{Bbn}[5]{Primal Force} All \glossterm{strikes} you make gain bonus damage dice equal to your weapon's damage dice.
         }
 
         {
             \cf*{Bbn}[6]{Maneuver Rank} You become a rank 6 primal maneuverist.
             This gives you access to maneuvers that require a minimum rank of 6 and can improve the effectiveness of your existing maneuvers.
 
-            \cf{Bbn}[6]{Primal Endurance} You gain a +2 bonus to Fortitude defense.
+            \cf{Bbn}[6]{Supreme Primal Might} The bonuses from your \textit{primal might} ability increase to \plus3.
         }
 
         {
             \cf*{Bbn}[7]{Maneuver Rank} You become a rank 7 primal maneuverist.
             This gives you access to maneuvers that require a minimum rank of 7 and can improve the effectiveness of your existing maneuvers.
 
-            \cf{Bbn}[7]{Greater Primal Force} The bonuses from your \textit{primal force} ability increase to \plus2.
-        }
+            \cf*{Bbn}[7]{Primal Maneuver}
+            You learn an additional primal \glossterm{maneuver} (see \pcref{Primal Maneuvers}).
 
-        {
-            \cf*{Bbn}[8]{Maneuver Rank} You become a rank 8 primal maneuverist.
-            This gives you access to maneuvers that require a minimum rank of 8 and can improve the effectiveness of your existing maneuvers.
-
-            \cf{Bbn}[8]{Epic Primality} The bonuses from your \textit{primal force} ability increase to \plus5.
-            In addition, you learn an additional primal \glossterm{maneuver}.
         }
 
 
@@ -403,35 +392,35 @@ This choice determines a great deal about your character's abilities.
     \subsection{Divine Magic}
         This archetype grants you the ability to cast divine spells.
 
-        \cf{Clr}[1]{Spellcasting}[Magical]
+        \cf{Clr}[0]{Cantrips}[Magical]
         Your deity grants you the ability to use divine magic.
         You gain access to one divine \glossterm{mystic sphere} (see \pcref{Divine Mystic Spheres}).
-        You may spend \glossterm{insight points} to learn one additional \glossterm{mystic sphere} per two \glossterm{insight points}.
-        Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
-
+        You may spend \glossterm{insight points} to learn one additional divine \glossterm{mystic sphere} per two \glossterm{insight points}.
         You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
-        In addition, you learn one rank 1 \glossterm{spell} from your chosen \glossterm{mystic sphere}.
-        You can also spend \glossterm{insight points} to learn one additional divine spell per \glossterm{insight point}.
-        You cannot learn spells from mystic spheres you do not have access to.
-        Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
-
-        When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
-            you can exchange any number of spells you know for other spells,
-            including spells of the higher rank.
 
         Divine spells require \glossterm{verbal components} to cast (see \pcref{Casting Components}).
         For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
 
+        \cf{Clr}[1]{Spellcasting}[Magical]
+        You learn two rank 1 \glossterm{spells} from divine \glossterm{mystic spheres} you have access to.
+        You can also spend \glossterm{insight points} to learn one additional rank 1 spell per \glossterm{insight point}.
+        Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
+
+        When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
+            you can forget any number of spells you know to learn that many new spells in exchange,
+            including spells of the higher rank.
+        All of those spells must be from divine mystic spheres you have access to.
+
         \cf{Clr}[2]{Spell Rank}[Magical] You become a rank 2 divine spellcaster.
         This gives you access to spells that require a minimum rank of 2.
-
-        \cf{Clr}[2]{Spell Knowledge} You learn an additional divine \glossterm{spell}.
 
         \cf*{Clr}[3]{Spell Rank}[Magical] You become a rank 3 divine spellcaster.
         This gives you access to spells that require a minimum rank of 3 and can improve the effectiveness of your existing spells.
 
         \cf*{Clr}[4]{Spell Rank}[Magical] You become a rank 4 divine spellcaster.
         This gives you access to spells that require a minimum rank of 4 and can improve the effectiveness of your existing spells.
+
+        \cf{Clr}[4]{Spell Knowledge} You learn an additional divine \glossterm{spell}.
 
         \cf*{Clr}[5]{Spell Rank}[Magical] You become a rank 5 divine spellcaster.
         This gives you access to spells that require a minimum rank of 5 and can improve the effectiveness of your existing spells.
@@ -444,14 +433,13 @@ This choice determines a great deal about your character's abilities.
         \cf*{Clr}[7]{Spell Rank}[Magical] You become a rank 7 divine spellcaster.
         This gives you access to spells that require a minimum rank of 7 and can improve the effectiveness of your existing spells.
 
-        \cf{Clr}[8]{Epic Spell Knowledge} You learn two additional divine spells.
-
-        \cf*{Clr}[8]{Spell Rank}[Magical] You become a rank 8 divine spellcaster.
-        This gives you access to spells that require a minimum rank of 8 and can improve the effectiveness of your existing spells.
+        \cf*{Clr}[7]{Spell Knowledge} You learn an additional divine \glossterm{spell}.
 
     \subsection{Divine Spell Mastery}
         This archetype improves the divine spells you cast.
         You must have the Divine Magic archetype from the cleric class to gain the abilities from this archetype.
+
+        \cf{Clr}[0]{Wellspring of Power} You gain a \plus1 bonus to \glossterm{power} with \glossterm{magical} abilities.
 
         \cf{Clr}[1]{Mystic Insight}[Magical]
         You gain your choice of one of the following abilities.
@@ -476,27 +464,24 @@ This choice determines a great deal about your character's abilities.
         \cf{Clr}[2]{Insightful Caster} You gain access to an additional divine \glossterm{mystic sphere}, including all \glossterm{cantrips} from that sphere.
         In addition, you learn an additional divine \glossterm{spell}.
 
-        \cf{Clr}[3]{Wellspring of Power}[Magical]
-        You gain a \plus1 bonus to \glossterm{power} with \glossterm{magical} abilities.
+        \cf{Clr}[3]{Greater Wellspring of Power}[Magical]
+        The bonus from your \textit{wellspring of power} ability increases to be equal to half your level.
 
         \cf*{Clr}[4]{Mystic Insight}[Magical]
         You gain an additional \textit{mystic insight} ability.
 
         \cf{Clr}[5]{Greater Insightful Caster} You learn two additional divine \glossterm{spells}.
 
-        \cf{Clr}[6]{Greater Wellspring of Power}[Magical]
-        The bonus from your \textit{wellspring of power} ability increases to \plus2.
+        \cf{Clr}[6]{Supreme Wellspring of Power}[Magical]
+        The bonus from your \textit{wellspring of power} ability increases to be equal to your level.
 
         \cf*{Clr}[7]{Mystic Insight}[Magical]
         You gain an additional \textit{mystic insight} ability.
 
-        \cf{Clr}[8]{Epic Divine Mastery} The bonus from your \textit{wellspring of power} ability increases to \plus6.
-        In addition, you gain an additional \textit{mystic insight} ability.
-
     \subsection{Domain Influence}
         This archetype grants you divine influence over two domains of your choice.
 
-        \cf{Clr}[1]{Domains}
+        \cf{Clr}[0]{Domains}
         You choose two domains which represent your personal spiritual inclinations.
         You must choose your domains from among those your deity offers.
         The domains are listed below.
@@ -523,29 +508,29 @@ This choice determines a great deal about your character's abilities.
             \item{Wild}
         \end{itemize}
 
-        \cf{Clr}[1]{Domain Gift}[Magical]
+        \cf{Clr}[0]{Domain Gift}[Magical]
         Each domain has a corresponding \textit{domain gift}.
         You gain the \textit{domain gift} for one of your domains (see \pcref{Cleric Domain Abilities}).
 
-        \cf*{Clr}[2]{Domain Gift}[Magical]
+        \cf*{Clr}[1]{Domain Gift}[Magical]
         You gain the \textit{domain gift} for another one of your domains.
 
-        \cf{Clr}[3]{Domain Aspect}[Magical]
+        \cf{Clr}[2]{Domain Aspect}[Magical]
         Each domain has a corresponding \textit{domain aspect}.
         You gain the \textit{domain aspect} for one of your domains (see \pcref{Cleric Domain Abilities}).
 
-        \cf*{Clr}[4]{Domain Aspect}[Magical]
+        \cf*{Clr}[3]{Domain Aspect}[Magical]
         You gain the \textit{domain aspect} for another one of your domains.
 
-        \cf{Clr}[5]{Domain Essence}[Magical]
+        \cf{Clr}[4]{Domain Essence}[Magical]
         Each domain has a corresponding \textit{domain essence}.
         You gain the \textit{domain essence} for one of your domains (see \pcref{Cleric Domain Abilities}).
 
         % This seems weak
-        \cf*{Clr}[6]{Domain Essence}[Magical]
+        \cf*{Clr}[5]{Domain Essence}[Magical]
         You gain the \textit{domain essence} for another one of your domains.
 
-        \cf{Clr}[7]{Miracle}[Magical]
+        \cf{Clr}[6]{Miracle}[Magical]
         Once per week, you can request a miracle as a standard action.
         You mentally specify your request, and your deity fulfills that request in the manner it sees fit.
         This can emulate the effects of any spell or ritual, or have any other effect of a similar power level.
@@ -553,22 +538,19 @@ This choice determines a great deal about your character's abilities.
 
         If you perform an extraordinary service for your deity, you can gain the ability to request an additional miracle that week.
 
-        \cf{Clr}[8]{Domain Masteries}[Magical]
+        \cf{Clr}[7]{Domain Masteries}[Magical]
         Each domain has a corresponding \textit{domain mastery}.
         You gain the \textit{domain mastery} for both of your domains (see \pcref{Cleric Domain Abilities}).
 
     \subsection{Healer}
         This archetype grants you healing abilities.
 
+        \cf{Clr}[0]{Healer's Wisdom} You gain a \plus2 bonus to the Medicine skill and a \plus1 bonus to Mental defense.
+
         \cf{Clr}[1]{Restoration} You can use the \textit{restoration} ability as a standard action.
         \begin{freeability}{Restoration}[\glossterm{Magical}]
-            \target{Yourself or a living \glossterm{ally} within \glossterm{reach}}
-            The target regains two \glossterm{hit points}.
-
-            \rankline
-            \rank{3} The range increases to \rngclose.
-            \rank{5} If the target is \glossterm{bloodied}, it regains an additional hit point.
-            \rank{7} The range increases to \rngmed.
+            \target{One living \glossterm{ally} within \glossterm{reach}}
+            The target regains \glossterm{hit points} equal to half your \glossterm{power} \add 1d6 per rank.
         \end{freeability}
 
         \cf{Clr}[2]{Healer's Grace} You gain a \plus1 bonus to all defenses.
@@ -576,17 +558,19 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Clr}[3]{Divine Healing} You can use the \textit{divine healing} ability as a standard action.
         \begin{freeability}{Divine Healing}[\glossterm{Magical}]
-            \target{Yourself or a living \glossterm{ally} within \glossterm{reach}.}
+            \target{One living \glossterm{ally} within \glossterm{reach}.}
             When you use this ability, you gain two \glossterm{fatigue points} (see \pcref{Fatigue}).
 
             The target removes one of its \glossterm{vital wounds}.
 
             \rankline
-            \rank{5} The target can remove an additional \glossterm{vital wound}.
-            \rank{7} The range increases to \rngmed.
+            \rank{5} If the target's level is at least two levels lower than your level,
+                you do not gain fatigue points when you use this ability.
+            \rank{7} The target can remove an additional \glossterm{vital wound}.
         \end{freeability}
 
-        \cf{Clr}[4]{Reflexive Healing} During the \glossterm{action phase} of each round, if you are unconscious due to a \glossterm{vital wound}, you automatically use your \textit{divine healing} ability on yourself to remove that vital wound.
+        \cf{Clr}[4]{Greater Healer's Wisdom} The Medicine bonus from your \textit{healer's wisdom} increases to \plus4, and the bonus to Mental defense increases to \plus2.
+        In addition, the healing from your \textit{restoration} ability increases to be equal to half your \glossterm{power} \add 1d8 per rank.
 
         \cf{Clr}[5]{Greater Healer's Grace} The bonus from your \textit{healer's grace} ability increases to \plus2.
 
@@ -594,7 +578,7 @@ This choice determines a great deal about your character's abilities.
         \begin{freeability}{Revivify}
             When you use this ability, you gain three \glossterm{fatigue points} (see \pcref{Fatigue}).
 
-            Choose a dead creature within \rngclose range.
+            Choose a dead creature within \glossterm{reach}.
             If it was dead for no more than 1 minute, it is restored to life, as the \ritual{resurrection} ritual.
             After using this ability, you cannot use it for 24 hours.
 
@@ -602,14 +586,8 @@ This choice determines a great deal about your character's abilities.
             \rank{8} You can use this ability again after 1 hour instead of after 24 hours.
         \end{freeability}
 
-        % TODO: why 4? Ideally, this should correspond to some sort of ``half as strong'' benchmark.
-        \cf{Clr}[7]{Wellspring of Health} When you use your \textit{divine healing} ability,
-            if the target's level is at least four levels lower than your level,
-            you do not gain any \glossterm{fatigue points} from the ability.
-
-        \cf{Clr}[8]{Epic Healer} The bonus from your \textit{healer's grace} ability increases to \plus4.
-        In addition, the number of hit points regained by all of your abilities increases by one.
-        Each ability can only gain this benefit once, so abilities that automatically restore hit points each round only regain an additional hit point in the first round.
+        \cf{Clr}[7]{Healing Versatility} The range with your abilities from this archetype increases to \rngmed.
+        In addition, the healing from your \textit{restoration} ability increases to be equal to your \glossterm{power} \add 1d8 per rank.
 
     \subsection{Cleric Domain Abilities}\label{Cleric Domain Abilities}
         These domain abilities can be granted by the \textit{domain influence} cleric archetype.
@@ -619,7 +597,7 @@ This choice determines a great deal about your character's abilities.
             If you choose this domain, you add the \sphere{aeromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
             In addition, you add the Jump skill to your \glossterm{class skill} list.
 
-            \parhead{Gift} You gain a \plus4 \glossterm{magic bonus} to the Jump skill (see \pcref{Jump}).
+            \parhead{Gift} You gain a \plus2 bonus to the Jump skill (see \pcref{Jump}).
             In addition, you gain a \plus1 bonus to Reflex defense.
             \parhead{Aspect} You gain a \glossterm{glide speed} equal to your \glossterm{base speed} (see \pcref{Gliding}).
             \parhead{Essence} You can use the \textit{speak with air} ability as a standard action.
@@ -792,8 +770,8 @@ This choice determines a great deal about your character's abilities.
 
             \parhead{Gift} You gain a \plus1 bonus to \glossterm{power} with \glossterm{magical} abilities.
             \parhead{Aspect} You learn an additional \glossterm{spell} for a divine \glossterm{mystic sphere} you have access to.
-            \parhead{Essence} The power bonus from this domain's gift increases to \plus2.
-            \parhead{Mastery} The power bonus from this domain's gift increases to \plus5.
+            \parhead{Essence} The power bonus from this domain's gift increases to be equal to half your level.
+            \parhead{Mastery} The power bonus from this domain's gift increases to be equal to your level.
 
         \subsubsection{Protection}
             \parhead{Gift} You gain a \plus1 bonus to Armor defense.
@@ -860,7 +838,7 @@ This choice determines a great deal about your character's abilities.
             If you choose this domain, you add the \sphere{aquamancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
             In addition, you add the Flexibility and Swim skills to your cleric \glossterm{class skill} list.
 
-            \parhead{Gift} You gain a \plus4 \glossterm{magic bonus} to the Flexibility and Swim skills.
+            \parhead{Gift} You gain a \plus2 bonus to the Flexibility and Swim skills.
             \parhead{Aspect} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
             \parhead{Essence} You can use the \textit{speak with water} ability as a standard action.
             \begin{attuneability}{Speak with Water}[\glossterm{Attune} (self)]
@@ -914,7 +892,7 @@ This choice determines a great deal about your character's abilities.
 
     \classbasics{Alignment} Neutral good, lawful neutral, neutral, chaotic neutral, or neutral evil.
 
-    \classbasics{Archetypes} Druids have the Elementalist, Nature Spellcasting, Nature Spell Mastery, Shifter, and Wildspeaker \glossterm{archetypes}.
+    \classbasics{Archetypes} Druids have the Elementalist, Nature Magic, Nature Spell Mastery, Shifter, and Wildspeaker \glossterm{archetypes}.
 
     \subsection{Basic Class Abilities}
         If you are a druid, you gain the following abilities.
@@ -942,6 +920,8 @@ This choice determines a great deal about your character's abilities.
     \subsection{Elementalist}\label{Elementalist}
         This archetype grants you influence over four elements that define the natural world: air, earth, fire, and water.
 
+        \cf{Drd}[0]{Elemental Lore} You gain two skill points.
+
         \cf{Drd}[1]{Elemental Balance} You gain a small benefit from each of the four elements.
         \begin{itemize}
             \item Air: You gain a \plus2 bonus to the Jump skill.
@@ -958,8 +938,10 @@ This choice determines a great deal about your character's abilities.
         \begin{freeability}{Elemental Influence}[\glossterm{Sustain} (standard)]
             You can speak with air, earth, fire, and water within a \areahuge \glossterm{zone} from your location.
             You can ask the elements simple questions and understand their responses.
-            Each element is only able to give information based on what it touched, not any more subtle characteristics.
-            For example, air and water could tell you the size category and general shape (such as bipedal or four-legged) of a creature that passed through them recently, but not any details about color or subjective appearance.
+            Air, earth, and water are only able to give information about what they touch.
+            This includes the general shapes, sizes, and locations of creatures and objects they interacted with, but not any details about color or subjective appearance.
+            Fire is also able to give information about anything illuminated by its light, allowing it to report more detailed information like color.
+            It is still unable to make meaningful subjective judgments like a creature would.
             Each element has different limitations on its memory and awareness, as described below.
 
             \begin{itemize}
@@ -971,7 +953,7 @@ This choice determines a great deal about your character's abilities.
                 \item Fire: Fire can remember everything it touched and consumed since it started burning.
                     Individual pieces of a very large fire, such as a particular burning tree in a forest fire, are not aware of the behavior of the entirety of the fire.
                     However, the fire on burning tree could tell you how it got to the tree and everything it burned along the way, including the event that started the forest fire.
-                \item Water: Water can remember events up to a day ago in a very calm pool or only a few minutes ago in a rushing river.
+                \item Water: Water can remember events up to a day ago in a very calm pool or only a few minutes ago in a turbulent river.
                     Moving water is aware of events near where it moved through, not necessarily in your current location.
             \end{itemize}
         \end{freeability}
@@ -1005,41 +987,38 @@ This choice determines a great deal about your character's abilities.
             \item Water: You suffer no penalties for fighting underwater, and you can breathe water as if it was air.
         \end{itemize}
 
-        \cf{Drd}[8]{Avatar of Elements} You gain access to the three elemental \glossterm{mystic spheres} that you did not choose with your \textit{elemental magic} ability.
-        In addition, you learn one additional spell from each of those three mystic spheres.
-
     \subsection{Nature Magic}
         This archetype grants you the ability to cast nature spells.
 
-        \cf{Drd}[1]{Spellcasting}[Magical]
-        Your connection to nature grants you the ability to use nature magic.
+        \cf{Drd}[0]{Cantrips}[Magical]
+        Your deity grants you the ability to use nature magic.
         You gain access to one nature \glossterm{mystic sphere} (see \pcref{Nature Mystic Spheres}).
-        You may spend \glossterm{insight points} to learn one additional \glossterm{mystic sphere} per two \glossterm{insight points}.
-        Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
-
+        You may spend \glossterm{insight points} to learn one additional nature \glossterm{mystic sphere} per two \glossterm{insight points}.
         You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
-        In addition, you learn one rank 1 \glossterm{spell} from your chosen \glossterm{mystic sphere}.
-        You can also spend \glossterm{insight points} to learn one additional nature spell per \glossterm{insight point}.
-        You cannot learn spells from mystic spheres you do not have access to.
-        Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
-
-        When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
-            you can exchange any number of spells you know for other spells,
-            including spells of the higher rank.
 
         Nature spells require \glossterm{verbal components} to cast (see \pcref{Casting Components}).
         For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
 
+        \cf{Drd}[1]{Spellcasting}[Magical]
+        You learn two rank 1 \glossterm{spells} from nature \glossterm{mystic spheres} you have access to.
+        You can also spend \glossterm{insight points} to learn one additional rank 1 spell per \glossterm{insight point}.
+        Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
+
+        When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
+            you can forget any number of spells you know to learn that many new spells in exchange,
+            including spells of the higher rank.
+        All of those spells must be from nature mystic spheres you have access to.
+
         \cf{Drd}[2]{Spell Rank}[Magical] You become a rank 2 nature spellcaster.
         This gives you access to spells that require a minimum rank of 2.
-
-        \cf{Drd}[2]{Spell Knowledge} You learn an additional nature \glossterm{spell}.
 
         \cf*{Drd}[3]{Spell Rank}[Magical] You become a rank 3 nature spellcaster.
         This gives you access to spells that require a minimum rank of 3 and can improve the effectiveness of your existing spells.
 
         \cf*{Drd}[4]{Spell Rank}[Magical] You become a rank 4 nature spellcaster.
         This gives you access to spells that require a minimum rank of 4 and can improve the effectiveness of your existing spells.
+
+        \cf{Drd}[4]{Spell Knowledge} You learn an additional nature \glossterm{spell}.
 
         \cf*{Drd}[5]{Spell Rank}[Magical] You become a rank 5 nature spellcaster.
         This gives you access to spells that require a minimum rank of 5 and can improve the effectiveness of your existing spells.
@@ -1052,14 +1031,13 @@ This choice determines a great deal about your character's abilities.
         \cf*{Drd}[7]{Spell Rank}[Magical] You become a rank 7 nature spellcaster.
         This gives you access to spells that require a minimum rank of 7 and can improve the effectiveness of your existing spells.
 
-        \cf{Drd}[8]{Epic Spell Knowledge} You learn two additional divine spells.
-
-        \cf*{Drd}[8]{Spell Rank}[Magical] You become a rank 8 nature spellcaster.
-        This gives you access to spells that require a minimum rank of 8 and can improve the effectiveness of your existing spells.
+        \cf*{Drd}[7]{Spell Knowledge} You learn an additional nature \glossterm{spell}.
 
     \subsection{Nature Spell Mastery}
         This archetype improves the nature spells you cast.
         You must be able to cast nature spells to gain the abilities from this archetype.
+
+        \cf{Drd}[0]{Wellspring of Power} You gain a \plus1 bonus to \glossterm{power} with \glossterm{magical} abilities.
 
         \cf{Drd}[1]{Mystic Insight}
         You gain your choice of one of the following abilities.
@@ -1077,7 +1055,7 @@ This choice determines a great deal about your character's abilities.
                 You must have the Natural Spells \textit{mystic insight} ability to choose this ability.
                 You cannot choose this ability multiple times.
             \parhead{Rituals} You gain the ability to perform nature rituals to create unique magical effects (see \pcref{Rituals}).
-                The maximum \glossterm{rank} of nature ritual you can learn or perform is equal to the maximum rank of divine spell that you can cast.
+                The maximum \glossterm{rank} of nature ritual you can learn or perform is equal to the maximum rank of nature spell that you can cast.
                 You cannot choose this ability multiple times.
             \parhead{Spell Power} Choose a nature \glossterm{spell} you know.
                 You gain a \plus2 bonus to \glossterm{power} with that spell.
@@ -1089,16 +1067,16 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Drd}[2]{Combat Caster} You reduce your \glossterm{focus penalties} by 2.
 
-        \cf{Drd}[3]{Wellspring of Power}[Magical]
-        You gain a \plus1 bonus to \glossterm{power} with \glossterm{magical} abilities.
+        \cf{Drd}[3]{Greater Wellspring of Power}[Magical]
+        The bonus from your \textit{wellspring of power} ability increases to be equal to half your level.
 
         \cf*{Drd}[4]{Mystic Insight}[Magical]
         You gain an additional \textit{mystic insight} ability.
 
         \cf{Drd}[5]{Greater Combat Caster} You gain a \plus1 bonus to Armor defense.
 
-        \cf{Drd}[6]{Greater Wellspring of Power}[Magical]
-        The bonus from your \textit{wellspring of power} ability increases to \plus2.
+        \cf{Drd}[6]{Supreme Wellspring of Power}[Magical]
+        The bonus from your \textit{wellspring of power} ability increases to be equal to your level.
 
         \cf*{Drd}[7]{Mystic Insight}[Magical]
         You gain an additional \textit{mystic insight} ability.
@@ -1108,6 +1086,9 @@ This choice determines a great deal about your character's abilities.
 
     \subsection{Shifter}\label{Shifter}
         This archetype grants you the ability to embody aspects of the natural world in your own form.
+
+        \cf{Drd}[0]{Shifting Defense} You gain a \plus1 bonus to Fortitude, Reflex, or Mental defense.
+        You can change the defense this bonus applies to as a \glossterm{standard action}.
 
         \cf{Drd}[1]{Wild Aspects}[Magical]
         You gain the ability to embody an aspect of an animal or of nature itself.
@@ -1134,9 +1115,9 @@ This choice determines a great deal about your character's abilities.
                 The bite deals \plus0d damage, and the claws deal \minus1d damage.
 
                 \rankline
-                \rank{3} You gain a \plus2 bonus to \glossterm{power} with natural weapons.
+                \rank{3} You gain a bonus to damage with \glossterm{strikes} using natural weapons equal to the weapon's damage dice.
                 \rank{5} The Fortitude bonus increases to \plus4.
-                \rank{7} The bonus to \glossterm{power} increases to \plus4.
+                \rank{7} The bonus increases to twice the weapon's damage dice.
             \end{freeability}
 
             \begin{freeability}{Form of the Bull}
@@ -1247,9 +1228,9 @@ This choice determines a great deal about your character's abilities.
                 In addition, you gain a bite \glossterm{natural weapon} that deals \plus0d damage.
 
                 \rankline
-                \rank{3} You gain a \plus2 bonus to \glossterm{power} with \glossterm{natural weapons}.
+                \rank{3} You gain a bonus to damage with \glossterm{strikes} using natural weapons equal to the weapon's damage dice.
                 \rank{5} You are treated as one \glossterm{size category} larger for the purpose of determining \glossterm{overwhelm penalties} you inflict on other creatures.
-                \rank{7} The bonus to \glossterm{power} increases to \plus4.
+                \rank{7} The bonus increases to twice the weapon's damage dice.
             \end{freeability}
 
             \begin{freeability}{Myriad Form}
@@ -1280,26 +1261,24 @@ This choice determines a great deal about your character's abilities.
             \end{freeability}
         }
 
-        \cf{Drd}[2]{Shifting Defense} You gain a \plus1 bonus to Armor, Fortitude, Reflex, or Mental defense.
-        You can change the defense this bonus applies to as a \glossterm{standard action}.
+        \cf{Drd}[2]{Shift Body} You can use the \textit{shift body} ability whenever you finish a \glossterm{long rest}.
+        \begin{freeability}{Shift Body}[Attune (self)]
+            When you use this ability, choose a physical \glossterm{attribute}: Strength, Dexterity, or Constitution (see \pcref{Attributes}).
+            You gain a \plus1 bonus to the base value of that attribute.
+        \end{freeability}
 
-        \cf{Drd}[3]{Shift Body} You gain a \plus1 bonus to the base value of one physical \glossterm{attribute} of your choice: Strength, Dexterity, or Constitution.
-        You can change the attribute this bonus applies to whenever you take a \glossterm{long rest}.
-        If you change the attribute during a rest, the bonus does not apply to any attribute.
+        \cf{Drd}[3]{Greater Shifting Defense}
+        The bonus from your \textit{shifting defense} ability increases to \plus2.
 
         \cf{Drd}[4]{Wild Aspect}[Magical]
         You learn an additional \textit{wild aspect}.
 
-        \cf{Drd}[5]{Greater Shifting Defense}
-        The bonus from your \textit{shifting defense} ability increases to \plus2.
+        \cf{Drd}[5]{Greater Shift Body} The bonus from your \textit{shift body} ability increases to \plus2.
 
-        \cf{Drd}[6]{Greater Shift Body}
-        The bonus from your \textit{shift body} ability increases to \plus2.
+        \cf{Drd}[6]{Supreme Shifting Defense}
+        The bonus from your \textit{shifting defense} ability increases to \plus4.
 
-        \cf*{Drd}[7]{Wild Aspect}[Magical]
-        You learn an additional \textit{wild aspect}.
-
-        \cf{Drd}[8]{Wild Fusion} You can have two \textit{wild aspect} abilities active simultaneously.
+        \cf*{Drd}[7]{Wild Fusion} You can have two \textit{wild aspect} abilities active simultaneously.
         Whenever you use a new \textit{wild aspect} ability, you can choose which of your existing aspects to replace.
 
         % TODO: move this into a separate concept that is less archetype specific where each character can gain immortality
@@ -1326,6 +1305,11 @@ This choice determines a great deal about your character's abilities.
 
     \subsection{Wildspeaker}\label{Wildspeaker}
 
+        \cf{Drd}[0]{Nature's Ally} Wild animals will not willingly attack you.
+        They can be compelled to attack you with a Creature Handling check with a \glossterm{difficulty rating} equal to 10 \add your \glossterm{power}.
+        If you attack a creature you are protected from, this ability no longer provides protection against it and its \glossterm{allies}.
+        This effect does not protect your allies from attack, though it may give you time to make Creature Handling checks to avoid the attack.
+
         \cf{Drd}[1]{Natural Servant}[Magical]
         You can use the \textit{natural servant} ability.
         This ability requires spending 1 hour performing rituals in a natural area.
@@ -1340,7 +1324,7 @@ This choice determines a great deal about your character's abilities.
             The animal's statistics use the values below, except that each animal also gains a special ability based on the environment you are in.
             \begin{itemize}
                 \item Its \glossterm{bleed resistance} and \glossterm{vital resistance} are equal to the base values for your level (see \tref{Resistance Values}).
-                \item It has 10 \glossterm{hit points}.
+                \item It has 10 \glossterm{hit points}
                 \item Each of its \glossterm{defenses} is equal to 5 \add your level.
                 \item Its \glossterm{accuracy} is equal to your \glossterm{accuracy} \sub 1.
                 \item Its \glossterm{power} with its attacks is equal to your \glossterm{power}.
@@ -1381,10 +1365,9 @@ This choice determines a great deal about your character's abilities.
             Wary and cunning animals are likely to be terse and evasive, while stupid ones tend to make inane comments and are unlikely to say or understand anything of use.
         \end{attuneability}
 
-        \cf{Drd}[3]{Wild Guardian}[Magical] Wild animals and plants will not willingly attack you.
-        They can be compelled to attack you with a Creature Handling check with a \glossterm{difficulty rating} equal to 10 \add your \glossterm{power}.
-        If you attack an animal or plant, this ability no longer provides protection against it and its \glossterm{allies}.
-        This effect does not protect your allies from attack.
+        \cf{Drd}[3]{Greater Nature's Ally}[Magical] Your \glossterm{allies} within a \arealarge radius \glossterm{emanation} from you also gain the benefit of your \textit{nature's ally} ability.
+        The protection ends if any target attacks a creature you are protected from instead of only if you attack.
+        In addition, the \glossterm{difficulty rating} of the Creature Handling check increases to 20 \add your \glossterm{power}.
 
         \cf{Drd}[4]{Greater Natural Servant}[Magical] Your \textit{natural servant} gains an \glossterm{attunement point}.
         This attunement point is shared among any creatures you summon with your \textit{natural servant} ability, and is only recovered when you take a \glossterm{long rest}.
@@ -1412,13 +1395,12 @@ This choice determines a great deal about your character's abilities.
         \cf{Drd}[5]{Plant Speech}[Magical] When you use your \textit{animal speech} ability, you can target a plant instead of an animal.
         When you do, you can speak to and understand the speech of the target plant, and any other plants of the same species.
 
-        \cf{Drd}[6]{Greater Wild Guardian}[Magical] Your \glossterm{allies} within a \arealarge radius \glossterm{emanation} from you also gain the benefit of your \textit{wild guardian} ability.
-        The protection ends if any target attacks an animal or plant instead of only if you attack.
-        In addition, the \glossterm{difficulty rating} of the Creature Handling check increases to 20 \add your \glossterm{power}.
+        \cf{Drd}[6]{Supreme Nature's Ally}[Magical] Your \textit{nature's ally} ability also protects you and your allies from plant creatures and elementals.
+        In addition, all creatures that you are protected from with this ability automatically attempt to aid you and your allies if they observe you fighting.
+        Finally, the effect can no longer be bypassed with a Creature Handling check or any other form of control that does not first suppress this effect.
+        Even creatures summoned by enemies to fight you will immediately turn on their summoners.
 
         \cf{Drd}[7]{Supreme Natural Servant}[Magical] Your \textit{natural servant} gains two additional \glossterm{attunement points}.
-
-        \cf{Drd}[8]{Twin Servant} You may acquire an additional \textit{natural servant}, attuning to each ability separately.
 
         % \subcf{15th -- Air Mantle}
         % You are surrounded by a mantle of air.
@@ -2268,35 +2250,35 @@ This choice determines a great deal about your character's abilities.
     \subsection{Divine Magic}
         This archetype grants you the ability to cast divine spells.
 
-        \cf{Pal}[1]{Spellcasting}[Magical]
-        Your devotion to your alignment grants you the ability to use divine magic.
+        \cf{Pal}[0]{Cantrips}[Magical]
+        Your deity grants you the ability to use divine magic.
         You gain access to one divine \glossterm{mystic sphere} (see \pcref{Divine Mystic Spheres}).
-        You may spend \glossterm{insight points} to learn one additional \glossterm{mystic sphere} per two \glossterm{insight points}.
-        Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
-
+        You may spend \glossterm{insight points} to learn one additional divine \glossterm{mystic sphere} per two \glossterm{insight points}.
         You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
-        In addition, you learn one rank 1 \glossterm{spells} from your chosen \glossterm{mystic sphere}.
-        You can also spend \glossterm{insight points} to learn one additional divine spell per \glossterm{insight point}.
-        You cannot learn spells from mystic spheres you do not have access to.
-        Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
-
-        When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
-            you can exchange any number of spells you know for other spells,
-            including spells of the higher rank.
 
         Divine spells require \glossterm{verbal components} to cast (see \pcref{Casting Components}).
         For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
 
+        \cf{Pal}[1]{Spellcasting}[Magical]
+        You learn two rank 1 \glossterm{spells} from divine \glossterm{mystic spheres} you have access to.
+        You can also spend \glossterm{insight points} to learn one additional rank 1 spell per \glossterm{insight point}.
+        Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
+
+        When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
+            you can forget any number of spells you know to learn that many new spells in exchange,
+            including spells of the higher rank.
+        All of those spells must be from divine mystic spheres you have access to.
+
         \cf{Pal}[2]{Spell Rank}[Magical] You become a rank 2 divine spellcaster.
         This gives you access to spells that require a minimum rank of 2.
-
-        \cf{Pal}[2]{Spell Knowledge} You learn an additional divine \glossterm{spell}.
 
         \cf*{Pal}[3]{Spell Rank}[Magical] You become a rank 3 divine spellcaster.
         This gives you access to spells that require a minimum rank of 3 and can improve the effectiveness of your existing spells.
 
         \cf*{Pal}[4]{Spell Rank}[Magical] You become a rank 4 divine spellcaster.
         This gives you access to spells that require a minimum rank of 4 and can improve the effectiveness of your existing spells.
+
+        \cf{Pal}[4]{Spell Knowledge} You learn an additional divine \glossterm{spell}.
 
         \cf*{Pal}[5]{Spell Rank}[Magical] You become a rank 5 divine spellcaster.
         This gives you access to spells that require a minimum rank of 5 and can improve the effectiveness of your existing spells.
@@ -2309,7 +2291,7 @@ This choice determines a great deal about your character's abilities.
         \cf*{Pal}[7]{Spell Rank}[Magical] You become a rank 7 divine spellcaster.
         This gives you access to spells that require a minimum rank of 7 and can improve the effectiveness of your existing spells.
 
-        \cf{Pal}[8]{Divine Spell Conduit} You gain a \plus2 bonus to \glossterm{accuracy} with divine spells and a \plus4 bonus to \glossterm{power} with divine spells.
+        \cf*{Pal}[7]{Spell Knowledge} You learn an additional divine \glossterm{spell}.
 
     \subsection{Divine Spell Expertise}
         This archetype improves the divine spells you cast.
@@ -3232,30 +3214,20 @@ This choice determines a great deal about your character's abilities.
     \subsection{Arcane Magic}
         This archetype grants you the ability to cast arcane spells.
 
-        \cf{Sor}[1]{Spellcasting}[Magical]
-        You have the ability to use arcane magic.
+        \cf{Sor}[0]{Cantrips}[Magical]
+        Your deity grants you the ability to use arcane magic.
         You gain access to one arcane \glossterm{mystic sphere} (see \pcref{Arcane Mystic Spheres}).
-        You may spend \glossterm{insight points} to learn one additional \glossterm{mystic sphere} per two \glossterm{insight points}.
-        Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
-
+        You may spend \glossterm{insight points} to learn one additional arcane \glossterm{mystic sphere} per two \glossterm{insight points}.
         You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
-        In addition, you learn one rank 1 \glossterm{spell} from your chosen \glossterm{mystic sphere}.
-        You can also spend \glossterm{insight points} to learn one additional arcane spell per \glossterm{insight point}.
-        You cannot learn spells from mystic spheres you do not have access to.
-        Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
-
-        When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
-            you can exchange any number of spells you know for other spells,
-            including spells of the higher rank.
 
         Arcane spells require both \glossterm{verbal components} and \glossterm{somatic components} to cast (see \pcref{Casting Components}).
         For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
 
-        \cf{Sor}[1]{Mage Armor}[Magical] You can use the \textit{mage armor} ability as a standard action.
+        \cf{Sor}[0]{Mage Armor}[Magical] You can use the \textit{mage armor} ability as a standard action.
         \begin{freeability}{Mage Armor}
             You create a translucent suit of magical armor on your body and over your hands.
             This functions like body armor that provides a \plus2 bonus to Armor defense and has no \glossterm{encumbrance}.
-            It also provides a \plus2 bonus to \glossterm{resistances} against \glossterm{energy damage}.
+            It also provides a \plus2 bonus to \glossterm{resistance} against \glossterm{energy damage}.
             The body armor does not appear if you are wearing other body armor of any kind.
 
             As long as you have a free hand, the barrier also manifests as a shield that provides a \plus1 bonus to Armor defense.
@@ -3264,20 +3236,30 @@ This choice determines a great deal about your character's abilities.
             This ability lasts until you use it again or until you \glossterm{dismiss} it as a free action.
         \end{freeability}
 
+        \cf{Sor}[1]{Spellcasting}[Magical]
+        You learn two rank 1 \glossterm{spells} from arcane \glossterm{mystic spheres} you have access to.
+        You can also spend \glossterm{insight points} to learn one additional rank 1 spell per \glossterm{insight point}.
+        Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
+
+        When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
+            you can forget any number of spells you know to learn that many new spells in exchange,
+            including spells of the higher rank.
+        All of those spells must be from arcane mystic spheres you have access to.
+
         \cf{Sor}[2]{Spell Rank}[Magical] You become a rank 2 arcane spellcaster.
         This gives you access to spells that require a minimum rank of 2.
-
-        \cf{Sor}[2]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
 
         \cf*{Sor}[3]{Spell Rank}[Magical] You become a rank 3 arcane spellcaster.
         This gives you access to spells that require a minimum rank of 3 and can improve the effectiveness of your existing spells.
 
+        \cf{Sor}[3]{Greater Mage Armor}[Magical]
+        The defense bonus from the body armor created by your \textit{mage armor} ability increases to \plus3.
+        In addition, the bonus to \glossterm{resistance} against \glossterm{energy damage} increases to be equal to half your \glossterm{power}.
+
         \cf*{Sor}[4]{Spell Rank}[Magical] You become a rank 4 arcane spellcaster.
         This gives you access to spells that require a minimum rank of 4 and can improve the effectiveness of your existing spells.
 
-        \cf{Sor}[4]{Greater Mage Armor}[Magical]
-        The defense bonus from the body armor created by your \textit{mage armor} ability increases to \plus3.
-        In addition, the bonus to \glossterm{resistances} against \glossterm{energy damage} increases to be equal to half your \glossterm{power}.
+        \cf{Sor}[4]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
 
         \cf*{Sor}[5]{Spell Rank}[Magical] You become a rank 5 arcane spellcaster.
         This gives you access to spells that require a minimum rank of 5 and can improve the effectiveness of your existing spells.
@@ -3287,17 +3269,14 @@ This choice determines a great deal about your character's abilities.
         \cf*{Sor}[6]{Spell Rank}[Magical] You become a rank 6 arcane spellcaster.
         This gives you access to spells that require a minimum rank of 6 and can improve the effectiveness of your existing spells.
 
+        \cf{Sor}[6]{Supreme Mage Armor}[Magical]
+        The defense bonus from the body armor created by your \textit{mage armor} ability increases to \plus3.
+        In addition, the bonus to \glossterm{resistance} against \glossterm{energy damage} increases to be equal to your \glossterm{power}.
+
         \cf*{Sor}[7]{Spell Rank}[Magical] You become a rank 7 arcane spellcaster.
         This gives you access to spells that require a minimum rank of 7 and can improve the effectiveness of your existing spells.
 
-        \cf{Sor}[7]{Supreme Mage Armor}[Magical]
-        The defense bonus from the body armor created by your \textit{mage armor} ability increases to \plus3.
-        In addition, the bonus to \glossterm{resistances} against \glossterm{energy damage} increases to be equal to your \glossterm{power}.
-
-        \cf*{Sor}[8]{Spell Rank}[Magical] You become a rank 8 arcane spellcaster.
-        This gives you access to spells that require a minimum rank of 8 and can improve the effectiveness of your existing spells.
-
-        \cf{Sor}[8]{Epic Spell Knowledge} You learn two additional divine spells.
+        \cf*{Sor}[7]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
 
     \subsection{Arcane Spell Mastery}
         This archetype improves the arcane spells you cast.
@@ -3612,39 +3591,39 @@ This choice determines a great deal about your character's abilities.
         This archetype grants you the ability to cast pact spells.
         You must have a base Willpower of at least 1 to gain this archetype.
 
-        \cf{War}[1]{Spellcasting}[Magical]
-        Your soulkeeper grants you the ability to use pact magic.
+        \cf{War}[0]{Cantrips}[Magical]
+        Your deity grants you the ability to use pact magic.
         You gain access to one pact \glossterm{mystic sphere} (see \pcref{Pact Mystic Spheres}).
-        Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
-        You may spend \glossterm{insight points} to learn one additional \glossterm{mystic sphere} per two \glossterm{insight points}.
-
+        You may spend \glossterm{insight points} to learn one additional pact \glossterm{mystic sphere} per two \glossterm{insight points}.
         You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
-        In addition, you learn one rank 1 \glossterm{spell} from your chosen \glossterm{mystic sphere}.
-        You can also spend \glossterm{insight points} to learn one additional pact spell per \glossterm{insight point}.
-        You cannot learn spells from mystic spheres you do not have access to.
+
+        Pact spells require both \glossterm{verbal components} and \glossterm{somatic components} to cast (see \pcref{Casting Components}).
+        For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
+
+        \cf{War}[0]{Armor Tolerance} You reduce your \glossterm{encumbrance} by 2 when determining your \glossterm{somatic component failure}.
+
+        \cf{War}[1]{Spellcasting}[Magical]
+        You learn two rank 1 \glossterm{spells} from pact \glossterm{mystic spheres} you have access to.
+        You can also spend \glossterm{insight points} to learn one additional rank 1 spell per \glossterm{insight point}.
         Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
 
         When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
-            you can exchange any number of spells you know for other spells,
+            you can forget any number of spells you know to learn that many new spells in exchange,
             including spells of the higher rank.
-
-        Pact spells require require both \glossterm{verbal components} and \glossterm{somatic components} to cast (see \pcref{Casting Components}).
-        For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
-
-        \cf{War}[1]{Armor Tolerance} You reduce your \glossterm{encumbrance} by 2 when determining your \glossterm{somatic component failure}.
+        All of those spells must be from pact mystic spheres you have access to.
 
         \cf{War}[2]{Spell Rank}[Magical] You become a rank 2 pact spellcaster.
         This gives you access to spells that require a minimum rank of 2.
 
-        \cf{War}[2]{Spell Knowledge} You learn an additional pact \glossterm{spell}.
-
         \cf*{War}[3]{Spell Rank}[Magical] You become a rank 3 pact spellcaster.
         This gives you access to spells that require a minimum rank of 3 and can improve the effectiveness of your existing spells.
+
+        \cf{War}[3]{Greater Armor Tolerance}[Magical] The penalty reduction from your \textit{armor tolerance} ability increases to 3.
 
         \cf*{War}[4]{Spell Rank}[Magical] You become a rank 4 pact spellcaster.
         This gives you access to spells that require a minimum rank of 4 and can improve the effectiveness of your existing spells.
 
-        \cf{War}[4]{Greater Armor Tolerance}[Magical] The penalty reduction from your \textit{armor tolerance} ability increases to 3.
+        \cf{War}[4]{Spell Knowledge} You learn an additional pact \glossterm{spell}.
 
         \cf*{War}[5]{Spell Rank}[Magical] You become a rank 5 pact spellcaster.
         This gives you access to spells that require a minimum rank of 5 and can improve the effectiveness of your existing spells.
@@ -3654,15 +3633,12 @@ This choice determines a great deal about your character's abilities.
         \cf*{War}[6]{Spell Rank}[Magical] You become a rank 6 pact spellcaster.
         This gives you access to spells that require a minimum rank of 6 and can improve the effectiveness of your existing spells.
 
+        \cf{War}[6]{Supreme Armor Tolerance}[Magical] The penalty reduction from your \textit{armor tolerance} ability increases to 4.
+
         \cf*{War}[7]{Spell Rank}[Magical] You become a rank 7 pact spellcaster.
         This gives you access to spells that require a minimum rank of 7 and can improve the effectiveness of your existing spells.
 
-        \cf{War}[7]{Supreme Armor Tolerance}[Magical] The penalty reduction from your \textit{armor tolerance} ability increases to 4.
-
-        \cf*{War}[8]{Spell Rank}[Magical] You become a rank 8 pact spellcaster.
-        This gives you access to spells that require a minimum rank of 8 and can improve the effectiveness of your existing spells.
-
-        \cf{War}[8]{Epic Spell Knowledge} You learn two additional pact spells.
+        \cf*{War}[7]{Spell Knowledge} You learn an additional pact \glossterm{spell}.
 
     \subsection{Pact Spell Mastery}
         This archetype improves your ability to cast spells with the power of your dark pact.
@@ -3871,30 +3847,20 @@ This choice determines a great deal about your character's abilities.
     \subsection{Arcane Magic}
         This archetype grants you the ability to cast arcane spells.
 
-        \cf{Wiz}[1]{Spellcasting}[Magical]
-        You have the ability to use arcane magic.
+        \cf{Wiz}[0]{Cantrips}[Magical]
+        Your deity grants you the ability to use arcane magic.
         You gain access to one arcane \glossterm{mystic sphere} (see \pcref{Arcane Mystic Spheres}).
-        You may spend \glossterm{insight points} to learn one additional \glossterm{mystic sphere} per two \glossterm{insight points}.
-        Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
-
+        You may spend \glossterm{insight points} to learn one additional arcane \glossterm{mystic sphere} per two \glossterm{insight points}.
         You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
-        In addition, you learn one rank 1 \glossterm{spell} from your chosen \glossterm{mystic sphere}.
-        You can also spend \glossterm{insight points} to learn one additional arcane spell per \glossterm{insight point}.
-        You cannot learn spells from mystic spheres you do not have access to.
-        Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
-
-        When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
-            you can exchange any number of spells you know for other spells,
-            including spells of the higher rank.
 
         Arcane spells require both \glossterm{verbal components} and \glossterm{somatic components} to cast (see \pcref{Casting Components}).
         For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
 
-        \cf{Wiz}[1]{Mage Armor}[Magical] You can use the \textit{mage armor} ability as a standard action.
+        \cf{Wiz}[0]{Mage Armor}[Magical] You can use the \textit{mage armor} ability as a standard action.
         \begin{freeability}{Mage Armor}
             You create a translucent suit of magical armor on your body and over your hands.
             This functions like body armor that provides a \plus2 bonus to Armor defense and has no \glossterm{encumbrance}.
-            It also provides a \plus2 bonus to \glossterm{resistances} against \glossterm{energy damage}.
+            It also provides a \plus2 bonus to \glossterm{resistance} against \glossterm{energy damage}.
             The body armor does not appear if you are wearing other body armor of any kind.
 
             As long as you have a free hand, the barrier also manifests as a shield that provides a \plus1 bonus to Armor defense.
@@ -3903,20 +3869,30 @@ This choice determines a great deal about your character's abilities.
             This ability lasts until you use it again or until you \glossterm{dismiss} it as a free action.
         \end{freeability}
 
+        \cf{Wiz}[1]{Spellcasting}[Magical]
+        You learn two rank 1 \glossterm{spells} from arcane \glossterm{mystic spheres} you have access to.
+        You can also spend \glossterm{insight points} to learn one additional rank 1 spell per \glossterm{insight point}.
+        Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
+
+        When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
+            you can forget any number of spells you know to learn that many new spells in exchange,
+            including spells of the higher rank.
+        All of those spells must be from arcane mystic spheres you have access to.
+
         \cf{Wiz}[2]{Spell Rank}[Magical] You become a rank 2 arcane spellcaster.
         This gives you access to spells that require a minimum rank of 2.
-
-        \cf{Wiz}[2]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
 
         \cf*{Wiz}[3]{Spell Rank}[Magical] You become a rank 3 arcane spellcaster.
         This gives you access to spells that require a minimum rank of 3 and can improve the effectiveness of your existing spells.
 
+        \cf{Wiz}[3]{Greater Mage Armor}[Magical]
+        The defense bonus from the body armor created by your \textit{mage armor} ability increases to \plus3.
+        In addition, the bonus to \glossterm{resistance} against \glossterm{energy damage} increases to be equal to half your \glossterm{power}.
+
         \cf*{Wiz}[4]{Spell Rank}[Magical] You become a rank 4 arcane spellcaster.
         This gives you access to spells that require a minimum rank of 4 and can improve the effectiveness of your existing spells.
 
-        \cf{Wiz}[4]{Greater Mage Armor}[Magical]
-        The defense bonus from the body armor created by your \textit{mage armor} ability increases to \plus3.
-        In addition, the bonus to \glossterm{resistances} against \glossterm{energy damage} increases to be equal to half your \glossterm{power}.
+        \cf{Wiz}[4]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
 
         \cf*{Wiz}[5]{Spell Rank}[Magical] You become a rank 5 arcane spellcaster.
         This gives you access to spells that require a minimum rank of 5 and can improve the effectiveness of your existing spells.
@@ -3926,17 +3902,14 @@ This choice determines a great deal about your character's abilities.
         \cf*{Wiz}[6]{Spell Rank}[Magical] You become a rank 6 arcane spellcaster.
         This gives you access to spells that require a minimum rank of 6 and can improve the effectiveness of your existing spells.
 
+        \cf{Wiz}[6]{Supreme Mage Armor}[Magical]
+        The defense bonus from the body armor created by your \textit{mage armor} ability increases to \plus3.
+        In addition, the bonus to \glossterm{resistance} against \glossterm{energy damage} increases to be equal to your \glossterm{power}.
+
         \cf*{Wiz}[7]{Spell Rank}[Magical] You become a rank 7 arcane spellcaster.
         This gives you access to spells that require a minimum rank of 7 and can improve the effectiveness of your existing spells.
 
-        \cf{Wiz}[7]{Supreme Mage Armor}[Magical]
-        The defense bonus from the body armor created by your \textit{mage armor} ability increases to \plus3.
-        In addition, the bonus to \glossterm{resistances} against \glossterm{energy damage} increases to be equal to your \glossterm{power}.
-
-        \cf*{Wiz}[8]{Spell Rank}[Magical] You become a rank 8 arcane spellcaster.
-        This gives you access to spells that require a minimum rank of 8 and can improve the effectiveness of your existing spells.
-
-        \cf{Wiz}[8]{Epic Spell Knowledge} You learn two additional divine spells.
+        \cf*{Wiz}[7]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
 
     \subsection{Arcane Scholar}
         This archetype deepens your study of arcane magic.
