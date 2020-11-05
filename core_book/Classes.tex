@@ -167,14 +167,14 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Bbn}[2]{Unbattered Resilience} At the end of each round, if you did not resist any damage that round, you regain physical damage resistance equal to your level.
 
-        \cf{Bbn}[3]{Toughened Body} You increase your maximum \glossterm{hit points} by an amount equal to your level.
+        \cf{Bbn}[3]{Greater Endurance} You increase your maximum \glossterm{hit points} by an amount equal to your level.
         In addition, the bonus from your \textit{endurance} ability increases to \plus2.
 
         \cf{Bbn}[4]{Greater Battle-Scarred} The bonus from your \textit{battle-scarred} ability increases to be equal to twice your level.
 
         \cf{Bbn}[5]{Greater Unbattered Resilience} The amount of physical damage resistance you regain with your \textit{unbattered resilience} ability increases to twice your level.
 
-        \cf{Bbn}[6]{Greater Toughened Body} You gain a \plus1 bonus to your base Constitution (see \pcref{Constitution}).
+        \cf{Bbn}[6]{Toughened Body} You gain a \plus1 bonus to your base Constitution (see \pcref{Constitution}).
 
         \cf{Bbn}[7]{Supreme Battle-Scarred} The bonus from your \textit{battle-scarred} ability increases to be equal to three times your level.
 
@@ -208,7 +208,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Bbn}[2]{Insensible Anger} You reduce your maximum hit points by an amount equal to your level.
         In exchange, you gain a bonus to your \glossterm{resistances} equal to your level.
 
-        \cf{Bbn}[3]{Powerful Anger} You gain a bonus to \glossterm{power} with \glossterm{mundane} abilities equal to half your level.
+        \cf{Bbn}[3]{Powerful Anger} You gain a bonus to \glossterm{power} equal to half your level with \glossterm{mundane} abilities.
 
         \cf{Bbn}[4]{Greater Rage} You no longer gain a \glossterm{fatigue point} when your \textit{rage} ability ends.
 
@@ -256,8 +256,8 @@ This choice determines a great deal about your character's abilities.
             As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
 
             When you gain access to a new \glossterm{rank} in this archetype,
-            you can exchange any number of maneuvers you know for other maneuvers,
-            including maneuvers of the higher rank.
+                you can exchange any number of maneuvers you know for other maneuvers,
+                including maneuvers of the higher rank.
         }
 
         {
@@ -454,7 +454,8 @@ This choice determines a great deal about your character's abilities.
                 The maximum \glossterm{rank} of divine ritual you can learn or perform is equal to the maximum \glossterm{rank} of divine spell that you can cast.
                 You cannot choose this ability multiple times.
             \parhead{Spell Power} Choose an divine \glossterm{spell} you know.
-                You gain a \plus2 bonus to \glossterm{power} with that spell.
+                % TODO: half level or full level?
+                You gain a bonus to \glossterm{power} with that spell equal to your level.
                 You can choose this ability multiple times, choosing a different spell each time.
             \parhead{Spell Precision} Choose an divine \glossterm{spell} you know.
                 You gain a \plus1 bonus to \glossterm{accuracy} with that spell.
@@ -550,7 +551,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Clr}[1]{Restoration} You can use the \textit{restoration} ability as a standard action.
         \begin{freeability}{Restoration}[\glossterm{Magical}]
             \target{One living \glossterm{ally} within \glossterm{reach}}
-            The target regains \glossterm{hit points} equal to half your \glossterm{power} \add 1d6 per rank.
+            The target regains \glossterm{hit points} equal to half your \glossterm{power} \add 1d8 per rank.
         \end{freeability}
 
         \cf{Clr}[2]{Healer's Grace} You gain a \plus1 bonus to all defenses.
@@ -570,7 +571,7 @@ This choice determines a great deal about your character's abilities.
         \end{freeability}
 
         \cf{Clr}[4]{Greater Healer's Wisdom} The Medicine bonus from your \textit{healer's wisdom} increases to \plus4, and the bonus to Mental defense increases to \plus2.
-        In addition, the healing from your \textit{restoration} ability increases to be equal to half your \glossterm{power} \add 1d8 per rank.
+        In addition, the healing from your \textit{restoration} ability increases to be equal to your \glossterm{power} \add 1d8 per rank.
 
         \cf{Clr}[5]{Greater Healer's Grace} The bonus from your \textit{healer's grace} ability increases to \plus2.
 
@@ -581,13 +582,10 @@ This choice determines a great deal about your character's abilities.
             Choose a dead creature within \glossterm{reach}.
             If it was dead for no more than 1 minute, it is restored to life, as the \ritual{resurrection} ritual.
             After using this ability, you cannot use it for 24 hours.
-
-            \rankline
-            \rank{8} You can use this ability again after 1 hour instead of after 24 hours.
         \end{freeability}
 
         \cf{Clr}[7]{Healing Versatility} The range with your abilities from this archetype increases to \rngmed.
-        In addition, the healing from your \textit{restoration} ability increases to be equal to your \glossterm{power} \add 1d8 per rank.
+        In addition, the healing from your \textit{restoration} ability increases to be equal to your \glossterm{power} \add 1d10 per rank.
 
     \subsection{Cleric Domain Abilities}\label{Cleric Domain Abilities}
         These domain abilities can be granted by the \textit{domain influence} cleric archetype.
@@ -1567,6 +1565,8 @@ This choice determines a great deal about your character's abilities.
     \subsection{Combat Discipline}
         This archetype allows you to improve your defenses and resist conditions.
 
+        \cf{Ftr}[0]{Enduring Discipline} You gain a \plus1 bonus to your \glossterm{fatigue tolerance}.
+
         \cf{Ftr}[1]{Discipline} You can use the \textit{discipline} ability as a \glossterm{standard action}.
         \begin{freeability}{Discipline}
             Remove a \glossterm{condition} affecting you.
@@ -1605,11 +1605,9 @@ This choice determines a great deal about your character's abilities.
     \subsection{Equipment Training}
         This archetype improves your combat prowess with weapons and armor.
 
-        \cf{Ftr}[1]{Armor Expertise}
-        You gain a \plus1 bonus to Armor defense while wearing body armor.
-        In addition, you reduce the \glossterm{encumbrance} of body armor you wear by 1.
+        \cf{Ftr}[0]{Armor Expertise} You reduce the \glossterm{encumbrance} of body armor you wear by 1.
 
-        \cf{Ftr}[2]{Weapon Training} You can use the \textit{weapon training} ability by spending an hour training with a weapon.
+        \cf{Ftr}[1]{Weapon Training} You can use the \textit{weapon training} ability by spending an hour training with a weapon.
         You cannot use this ability with an \glossterm{exotic weapon} that is from a \glossterm{weapon group} you are not proficient with.
         \begin{freeability}{Weapon Training}
             You become proficient with the weapon you trained with.
@@ -1618,79 +1616,87 @@ This choice determines a great deal about your character's abilities.
 
             \rankline
             \rank{4} You can use this ability with only five minutes of training.
-            \rank{6} The effect is permanent.
-            \rank{8} You can use this ability as a \glossterm{minor action}.
+            \rank{6} You can use this ability as a \glossterm{minor action}.
         \end{freeability}
 
-        \cf{Ftr}[3]{Equipment Efficiency} You gain an additional \glossterm{attunement point}.
+        \cf{Ftr}[2]{Equipment Efficiency} You gain an additional \glossterm{attunement point}.
         You can only use this attunement point to \glossterm{attune} to magic weapons and magic armor.
 
-        \cf{Ftr}[4]{Greater Armor Expertise}
-        The \glossterm{encumbrance} reduction from your \textit{armor expertise} ability increases to 2.
-        In addition, you treat body armor were one encumbrance category lighter than normal when doing so would be beneficial for you.
+        \cf{Ftr}[3]{Greater Armor Expertise}
+        The penalty reduction from your \textit{armor expertise} ability increases to 2.
+        In addition, you treat body armor were one usage class lighter than normal when doing so would be beneficial for you (see \pcref{Armor Usage Classes}).
 
-        \cf{Ftr}[5]{Weapon Expertise} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{mundane} abilities.
+        \cf{Ftr}[4]{Weapon Expertise} All \glossterm{strikes} you make gain bonus damage dice equal to your weapon's damage dice.
 
-        \cf{Ftr}[6]{Greater Equipment Efficiency} The number of attunement points you gain from your \textit{efficient equipment} ability increases to two.
+        \cf{Ftr}[5]{Greater Equipment Efficiency} The number of attunement points you gain from your \textit{efficient equipment} ability increases to two.
         In addition, you can use the ability to attune to any magic item, not just weapons and armor.
 
-        \cf{Ftr}[7]{Supreme Armor Expertise}
+        \cf{Ftr}[6]{Supreme Armor Expertise}
         The \glossterm{encumbrance} reduction from your \textit{armor expertise} ability increases to 3.
-        In addition, you treat body armor as if it were an additional encumbrance category lighter than normal when doing so would be beneficial for you.
+        In addition, you treat body armor as if it were an additional usage class lighter than normal when doing so would be beneficial for you.
 
-        \cf{Ftr}[8]{Equipment Supremacy} The bonus from your \textit{weapon expertise} ability increases to \plus2.
-        In addition, the number of attunement points you gain from your \textit{efficient equipment} ability increases to three.
+        \cf{Ftr}[7]{Greater Weapon Expertise} The bonus from your \textit{weapon expertise} ability increases to be equal to twice your weapon's damage dice.
 
     \subsection{Martial Mastery}
         This archetype grants you special abilities to use in combat.
 
-        \cf{Ftr}[1]{Martial Maneuvers}
-        You can channel your martial prowess into devastating attacks.
-        You learn one \glossterm{maneuver} from the martial maneuver list (see \pcref{Martial Maneuvers}).
-        You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
-        As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
+        \cf{Ftr}[0]{Defensive Expertise} You gain a \plus1 bonus to Armor defense.
 
-        When you gain access to a new \glossterm{rank} in this archetype,
-            you can exchange any number of maneuvers you know for other maneuvers,
-            including maneuvers of the higher rank.
+        {
+            \cf{Ftr}[1]{Martial Maneuvers}
+            You can channel your martial prowess into a wide variety of dangerous attacks.
+            You learn one \glossterm{maneuver} from the martial maneuver list (see \pcref{Martial Maneuvers}).
+            You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
+            As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
 
-        \cf{Ftr}[2]{Maneuver Rank} You become a rank 2 martial maneuverist.
-        This gives you access to maneuvers that require a minimum rank of 2.
+            When you gain access to a new \glossterm{rank} in this archetype,
+                you can exchange any number of maneuvers you know for other maneuvers,
+                including maneuvers of the higher rank.
+        }
 
-        \cf{Ftr}[2]{Martial Maneuver}
-        You learn an additional martial \glossterm{maneuver} (see \pcref{Martial Maneuvers}).
+        {
+            \cf{Ftr}[2]{Maneuver Rank} You become a rank 2 martial maneuverist.
+            This gives you access to maneuvers that require a minimum rank of 2.
 
-        \cf*{Ftr}[3]{Maneuver Rank} You become a rank 3 martial maneuverist.
-        This gives you access to maneuvers that require a minimum rank of 3 and can improve the effectiveness of your existing maneuvers.
+            \cf{Ftr}[2]{Martial Lore} You gain two additional \glossterm{skill points}.
+        }
 
-        \cf{Ftr}[3]{Martial Endurance} You gain a \plus1 bonus to Fortitude and Mental defense.
+        {
+            \cf*{Ftr}[3]{Maneuver Rank} You become a rank 3 martial maneuverist.
+            This gives you access to maneuvers that require a minimum rank of 3 and can improve the effectiveness of your existing maneuvers.
 
-        \cf*{Ftr}[4]{Maneuver Rank} You become a rank 4 martial maneuverist.
-        This gives you access to maneuvers that require a minimum rank of 4 and can improve the effectiveness of your existing maneuvers.
+            \cf{Ftr}[3]{Greater Defensive Expertise} The bonus from your \textit{defensive expertise} ability increases to \plus2.
+        }
 
-        \cf{Ftr}[4]{Defensive Expertise} You gain a \plus1 bonus to Armor defense.
+        {
+            \cf*{Ftr}[4]{Maneuver Rank} You become a rank 4 martial maneuverist.
+            This gives you access to maneuvers that require a minimum rank of 4 and can improve the effectiveness of your existing maneuvers.
 
-        \cf*{Ftr}[5]{Maneuver Rank} You become a rank 5 martial maneuverist.
-        This gives you access to maneuvers that require a minimum rank of 5 and can improve the effectiveness of your existing maneuvers.
+            \cf{Ftr}[4]{Martial Maneuver}
+            You learn an additional martial \glossterm{maneuver} (see \pcref{Martial Maneuvers}).
+        }
 
-        \cf*{Ftr}[5]{Martial Maneuver}
-        You learn an additional martial \glossterm{maneuver} (see \pcref{Martial Maneuvers}).
+        {
+            \cf*{Ftr}[5]{Maneuver Rank} You become a rank 5 martial maneuverist.
+            This gives you access to maneuvers that require a minimum rank of 5 and can improve the effectiveness of your existing maneuvers.
 
-        \cf*{Ftr}[6]{Maneuver Rank} You become a rank 6 martial maneuverist.
-        This gives you access to maneuvers that require a minimum rank of 6 and can improve the effectiveness of your existing maneuvers.
+            \cf{Ftr}[5]{Martial Force} All \glossterm{strikes} you make gain bonus damage dice equal to your weapon's damage dice.
+        }
 
-        \cf{Ftr}[6]{Greater Martial Endurance} The bonus from your \textit{martial endurance} ability increases to \plus2.
+        {
+            \cf*{Ftr}[6]{Maneuver Rank} You become a rank 6 martial maneuverist.
+            This gives you access to maneuvers that require a minimum rank of 6 and can improve the effectiveness of your existing maneuvers.
 
-        \cf*{Ftr}[7]{Maneuver Rank} You become a rank 7 martial maneuverist.
-        This gives you access to maneuvers that require a minimum rank of 7 and can improve the effectiveness of your existing maneuvers.
+            \cf{Ftr}[6]{Supreme Defensive Expertise} The bonus from your \textit{defensive expertise} ability increase to \plus3.
+        }
 
-        \cf{Ftr}[7]{Greater Defensive Expertise} The bonus from your \textit{defensive expertise} ability increases to \plus2.
+        {
+            \cf*{Ftr}[7]{Maneuver Rank} You become a rank 7 martial maneuverist.
+            This gives you access to maneuvers that require a minimum rank of 7 and can improve the effectiveness of your existing maneuvers.
 
-        \cf*{Ftr}[8]{Maneuver Rank} You become a rank 8 martial maneuverist.
-        This gives you access to maneuvers that require a minimum rank of 8 and can improve the effectiveness of your existing maneuvers.
-
-        \cf{Ftr}[8]{Epic Martialist} The bonus from your \textit{defensive expertise} ability increases to \plus4.
-        In addition, you learn an additional martial \glossterm{maneuver}.
+            \cf*{Ftr}[7]{Martial Maneuver}
+            You learn an additional martial \glossterm{maneuver} (see \pcref{Martial Maneuvers}).
+        }
 
     \subsection{Tactician}
 
@@ -1778,9 +1784,8 @@ This choice determines a great deal about your character's abilities.
             During the current phase, the target gains a \plus2 bonus to \glossterm{accuracy} and rolls twice for any attacks it makes, keeping the better result.
 
             \rankline
-            \rank{4} The accuracy bonus increases to \plus2.
-            \rank{6} The accuracy bonus increases to \plus3.
-            \rank{8} The accuracy bonus increases to \plus4.
+            \rank{4} The accuracy bonus increases to \plus3.
+            \rank{6} The accuracy bonus increases to \plus4.
         \end{freeability}
 
         \cf{Ftr}[3]{Tactical Coordination} You gain a \plus1 bonus to \glossterm{accuracy} against \glossterm{overwhelmed} creatures.
@@ -1846,69 +1851,74 @@ This choice determines a great deal about your character's abilities.
         You are not proficient with any armor.
 
     \subsection{Esoteric Warrior}\label{Esoteric Warrior}
-        This archetype improves your combat prowess with unusual fighting styles like unarmed attacks and grappling.
+        This archetype improves your combat prowess with unusual abilities you can use in combat.
 
-        \cf{Mnk}[1]{Esoteric Maneuvers} 
-        You learn one \glossterm{maneuver} from the esoteric maneuver list (see \pcref{Esoteric Maneuvers}).
-        You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
-        As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
+        \cf{Mnk}[0]{Esoteric Fluidity} You gain a \plus1 bonus to Dexterity-based \glossterm{checks}, except \glossterm{initiative} checks.
 
-        When you gain access to a new \glossterm{rank} in this archetype,
-            you can exchange any number of maneuvers you know for other maneuvers,
-            including maneuvers of the higher rank.
+        {
+            \cf{Mnk}[1]{Esoteric Maneuvers}
+            You can use your esoteric combat style to perform unusual attacks.
+            You learn one \glossterm{maneuver} from the esoteric maneuver list (see \pcref{Esoteric Maneuvers}).
+            You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
+            As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
 
-        \cf{Mnk}[2]{Maneuver Rank} You become a rank 2 esoteric maneuverist.
-        This gives you access to maneuvers that require a minimum rank of 2.
+            When you gain access to a new \glossterm{rank} in this archetype,
+                you can exchange any number of maneuvers you know for other maneuvers,
+                including maneuvers of the higher rank.
+        }
 
-        \cf{Mnk}[2]{Esoteric Maneuver} You learn an additional esoteric \glossterm{maneuver} (see \pcref{Esoteric Maneuvers}).
+        {
+            \cf{Mnk}[2]{Maneuver Rank} You become a rank 2 esoteric maneuverist.
+            This gives you access to maneuvers that require a minimum rank of 2.
 
-        \cf*{Mnk}[3]{Maneuver Rank} You become a rank 3 esoteric maneuverist.
-        This gives you access to maneuvers that require a minimum rank of 3 and can improve the effectiveness of your existing maneuvers.
+            \cf{Mnk}[2]{Esoteric Lore} You gain two additional \glossterm{skill points}.
+        }
 
-        \cf{Mnk}[3]{Esoteric Lore} You gain two additional \glossterm{skill points}.
+        {
+            \cf*{Mnk}[3]{Maneuver Rank} You become a rank 3 esoteric maneuverist.
+            This gives you access to maneuvers that require a minimum rank of 3 and can improve the effectiveness of your existing maneuvers.
 
-        % TODO: wording?
-        % \cf{Mnk}[3]{Evasion} When you are attacked by an ability that affects an area, you can use your Reflex defense in place of any other defenses against that attack.
+            \cf{Mnk}[3]{Greater Esoteric Fluidity} The bonus from your \textit{esoteric fluidity} ability increases to \plus2.
+        }
 
-        % \cf{Mnk}[3]{Unfettered Athletics} You gain two additional skill points.
+        {
+            \cf*{Mnk}[4]{Maneuver Rank} You become a rank 4 esoteric maneuverist.
+            This gives you access to maneuvers that require a minimum rank of 4 and can improve the effectiveness of your existing maneuvers.
 
-        % \cf{Mnk}[6]{Intuitive Reaction}
-        % You gain a \plus2 bonus to Reflex defense and \glossterm{initiative}.
+            \cf{Mnk}[4]{Esoteric Maneuver}
+            You learn an additional esoteric \glossterm{maneuver} (see \pcref{Esoteric Maneuvers}).
+        }
 
-        \cf*{Mnk}[4]{Maneuver Rank} You become a rank 4 esoteric maneuverist.
-        This gives you access to maneuvers that require a minimum rank of 4 and can improve the effectiveness of your existing maneuvers.
+        {
+            \cf*{Mnk}[5]{Maneuver Rank} You become a rank 5 esoteric maneuverist.
+            This gives you access to maneuvers that require a minimum rank of 5 and can improve the effectiveness of your existing maneuvers.
 
-        \cf{Mnk}[4]{Esoteric Fluidity} You gain a \plus1 bonus to Dexterity-based \glossterm{checks}, except \glossterm{initiative} checks.
+            \cf{Mnk}[5]{Esoteric Force} All \glossterm{strikes} you make gain bonus damage dice equal to your weapon's damage dice.
+        }
 
-        \cf*{Mnk}[5]{Maneuver Rank} You become a rank 5 esoteric maneuverist.
-        This gives you access to maneuvers that require a minimum rank of 5 and can improve the effectiveness of your existing maneuvers.
+        {
+            \cf*{Mnk}[6]{Maneuver Rank} You become a rank 6 esoteric maneuverist.
+            This gives you access to maneuvers that require a minimum rank of 6 and can improve the effectiveness of your existing maneuvers.
 
-        \cf*{Mnk}[5]{Esoteric Maneuver} You learn an additional esoteric \glossterm{maneuver} (see \pcref{Esoteric Maneuvers}).
+            \cf{Mnk}[6]{Supreme Esoteric Fluidity} The bonus from your \textit{esoteric fluidity} ability increases to \plus3.
+        }
 
-        \cf*{Mnk}[6]{Maneuver Rank} You become a rank 6 esoteric maneuverist.
-        This gives you access to maneuvers that require a minimum rank of 6 and can improve the effectiveness of your existing maneuvers.
+        {
+            \cf*{Mnk}[7]{Maneuver Rank} You become a rank 7 esoteric maneuverist.
+            This gives you access to maneuvers that require a minimum rank of 7 and can improve the effectiveness of your existing maneuvers.
 
-        \cf{Mnk}[6]{Esoteric Agility} You gain a \plus2 bonus to Reflex defense.
-
-        \cf*{Mnk}[7]{Maneuver Rank} You become a rank 7 esoteric maneuverist.
-        This gives you access to maneuvers that require a minimum rank of 7 and can improve the effectiveness of your existing maneuvers.
-
-        \cf{Mnk}[7]{Greater Esoteric Fluidity} The bonus from your \textit{esoteric fluidity} ability increases to \plus2.
-
-        \cf*{Mnk}[8]{Maneuver Rank} You become a rank 8 esoteric maneuverist.
-        This gives you access to maneuvers that require a minimum rank of 8 and can improve the effectiveness of your existing maneuvers.
-
-        \cf{Mnk}[8]{Esoteric Supremacy} The bonus from your \textit{esoteric fluidity} ability increases to \plus5.
-        In addition, you learn an additional esoteric \glossterm{maneuver}.
+            \cf*{Mnk}[7]{Esoteric Maneuver}
+            You learn an additional esoteric \glossterm{maneuver} (see \pcref{Esoteric Maneuvers}).
+        }
 
     \subsection{Ki}
-        This archtype grants you abilities you can use in combat.
+        This archtype grants you unusual abilities based on tapping into your inner ki.
         If you have any \glossterm{encumbrance}, you lose the benefit of all abilities from this archetype.
 
-        \cf{Mnk}[1]{Ki Barrier}[Magical]
+        \cf{Mnk}[0]{Ki Barrier}[Magical]
         If you are not wearing armor, you gain a ki barrier around your body.
         This functions like body armor that provides a \plus2 bonus to Armor defense and has no \glossterm{encumbrance}.
-        It also provides a \plus2 bonus to \glossterm{resistances} against \glossterm{energy damage}.
+        It also provides a \plus2 bonus to \glossterm{resistance} against \glossterm{energy damage}.
         The armor has no \glossterm{encumbrance}.
 
         As long as you have a free hand, the barrier also manifests as a shield that provides a \plus1 bonus to Armor defense.
@@ -2034,55 +2044,47 @@ This choice determines a great deal about your character's abilities.
             % TODO: add more
         }
 
-        \cf{Mnk}[2]{Ki Strike} You can treat all strikes you make as \glossterm{magical}, allowing you to use your \glossterm{power} with magical abilities to determine their damage.
+        \cf{Mnk}[2]{Ki Self} You can treat all strikes you make as \glossterm{magical}, allowing you to use your \glossterm{power} with magical abilities to determine their damage.
+        In addition, the bonus to \glossterm{resistance} against \glossterm{energy damage} from your \textit{ki barrier} ability increases to be equal to half your \glossterm{power}.
 
-        \cf{Mnk}[3]{Ki Power} You gain a \plus1 bonus to \glossterm{power} with \glossterm{magical} abilities.
+        \cf{Mnk}[3]{Ki Power} You gain a bonus to \glossterm{power} with \glossterm{magical} abilities equal to half your level.
 
         \cf{Mnk}[4]{Ki Manifestation}[Magical]
         You learn an additional \textit{ki manifestation}.
 
-        \cf{Mnk}[4]{Greater Ki Barrier}[Magical] The defense bonus from the body armor provided by your \textit{ki barrier} ability increases to \plus3.
-        In addition, the bonus to \glossterm{resistances} against \glossterm{energy damage} increases to be equal to half your \glossterm{power}.
+        \cf{Mnk}[5]{Greater Ki Self} The defense bonus from the body armor provided by your \textit{ki barrier} ability increases to \plus3.
+        In addition, the bonus to \glossterm{resistance} against \glossterm{energy damage} increases to be equal to your \glossterm{power}.
 
-        \cf{Mnk}[5]{Ki Focus} You gain a \plus2 bonus to Mental defense.
+        \cf{Mnk}[6]{Ki Focus} You gain a \plus1 bonus to your base Willpower.
 
-        \cf{Mnk}[6]{Greater Ki Power} The bonus from your \textit{ki power} ability increases to \plus2.
-
-        \cf*{Mnk}[7]{Ki Manifestation}[Magical]
-        You learn an additional \textit{ki manifestation}.
-
-        \cf{Mnk}[7]{Supreme Ki Barrier}[Magical] The defense bonus from the body armor provided by your \textit{ki barrier} ability increases to \plus4.
-        In addition, the bonus to \glossterm{resistances} against \glossterm{energy damage} increases to be equal to your \glossterm{power}.
-
-        \cf{Mnk}[8]{Epic Ki}[Magical] The bonus from your \textit{ki power} ability increases to \plus6.
-        In addition, after using a \textit{ki manifestation} ability, you can use another one after the end of the current round instead of the end of the next round.
+        \cf{Mnk}[7]{Greater Ki Manifestation}[Magical] After using a \textit{ki manifestation} ability, you can use another one after the end of the current round instead of the end of the next round.
 
     \subsection{Perfected Form}
-        This archetype improves the perfection of your physical body through rigorous training.
+        This archetype improves the perfection of your physical body, including your unarmed attacks, through rigorous training.
 
-        \cf{Mnk}[1]{Fast Movement} You gain a \plus10 foot bonus to your \glossterm{base speed}.
-
-        \cf{Mnk}[1]{Unarmed Warrior} You become \glossterm{proficient} with the unarmed weapons \glossterm{weapon group} (see \pcref{Weapon Groups}).
+        \cf{Mnk}[0]{Unarmed Warrior} You become \glossterm{proficient} with the unarmed weapons \glossterm{weapon group} (see \pcref{Weapon Groups}).
         In addition, you gain a \plus2d bonus to damage with \glossterm{Unarmed} weapons.
         For details about how to fight while unarmed, see \pcref{Unarmed Combat}.
 
-        \cf{Mnk}[2]{Perfect Body} You gain a \plus1 bonus to the base value of one physical \glossterm{attribute} of your choice: Strength, Dexterity, or Constitution.
+        \cf{Mnk}[1]{Fast Movement} You gain a \plus10 foot bonus to your \glossterm{base speed}.
 
-        \cf{Mnk}[3]{Perfect Precision} You gain a \plus1 bonus to \glossterm{accuracy} with attacks using weapons from the monk weapons and unarmed weapons \glossterm{weapon groups}, and to any attack using a free hand.
-        In addition, you gain a \plus1 bonus to \glossterm{accuracy} with grapple actions (see \pcref{Grapple Actions}).
+        \cf{Mnk}[2]{Perfect Precision} You gain a \plus1 bonus to \glossterm{accuracy} with attacks using weapons from the monk weapons and unarmed weapons \glossterm{weapon groups}, and to any attack using one or more \glossterm{free hands}.
+
+        \cf{Mnk}[3]{Perfect Body} You gain a \plus1 bonus to the base value of one physical \glossterm{attribute} of your choice: Strength, Dexterity, or Constitution.
 
         \cf{Mnk}[4]{Greater Fast Movement} The speed bonus from your \textit{fast movement} ability increases to \plus20 feet.
 
-        \cf{Mnk}[5]{Greater Perfect Body} The bonus from your \textit{perfect body} ability applies to the base value of all physical attributes, not just the one you chose.
+        \cf{Mnk}[5]{Greater Perfect Precision} The bonuses from your \textit{perfect precision} ability increase to \plus2.
 
-        \cf{Mnk}[6]{Greater Perfect Precision} The bonuses from your \textit{perfect precision} ability increase to \plus2.
+        \cf{Mnk}[6]{Greater Perfect Body} The bonus from your \textit{perfect body} ability applies to the base value of all physical attributes, not just the one you chose.
 
         \cf{Mnk}[7]{Supreme Fast Movement} The speed bonus from your \textit{fast movement} ability increases to \plus30 feet.
 
-        \cf{Mnk}[8]{Perfection} You gain a \plus1 bonus to the base value of all of your \glossterm{attributes}.
-
     \subsection{Transcendent Sage}
         This archetype grants you abilities to resist or remove conditions.
+
+        \cf{Mnk}[0]{Transcend Frailty}[Magical]
+        You are immune to being \glossterm{sickened} and \glossterm{nauseated}.
 
         \cf{Mnk}[1]{Clear the Mind} You can use the \textit{clear the mind} ability as a standard action.
         \begin{freeability}{Clear the Mind}
@@ -2096,31 +2098,25 @@ This choice determines a great deal about your character's abilities.
             \rank{7} You can remove any number of \glossterm{conditions}.
         \end{freeability}
 
-        \cf{Mnk}[2]{Transcend Frailty}[Magical]
-        You are immune to being \glossterm{sickened} and \glossterm{nauseated}.
-
-        \cf{Mnk}[3]{Inner Peace} You are immune to \glossterm{Compulsion} and \glossterm{Emotion} attacks.
-
-        \cf{Mnk}[4]{Feel the Flow of Life}[Magical] You become so attuned to the natural energy of life that you can sense it even when sight fails you.
+        \cf{Mnk}[2]{Feel the Flow of Life}[Magical] You become so attuned to the natural energy of life that you can sense it even when sight fails you.
         You gain the \glossterm{lifesense} ability with a 100 foot range.
         In addition, you gain the \glossterm{lifesight} ability with a 20 foot range.
 
-        \cf{Mnk}[5]{Transcend Flesh}[Magical]
+        \cf{Mnk}[3]{Transcend Time} You are immune to being \glossterm{slowed} and \glossterm{decelerated}.
+
+        \cf{Mnk}[4]{Inner Peace} You are immune to \glossterm{Compulsion} and \glossterm{Emotion} attacks.
+
+        \cf{Mnk}[5]{Greater Feel the Flow of Life}[Magical]
+        The range of your \glossterm{lifesense} ability increases by 200 feet.
+        In addition, the range of your \glossterm{lifesight} ability increases by 80 feet.
+
+        \cf{Mnk}[6]{Transcend Mortality}[Magical]
         You are no longer considered a living creature for the purpose of attacks against you.
         This means that attacks which only affect living creatures have no effect against you.
         In addition, you no longer take penalties to your attributes for aging, and cannot be magically aged.
         You still die of old age when your time is up.
 
-        % TODO: what does this actually do?
-        \cf{Mnk}[6]{Greater Inner Peace}
-        You are no longer considered to have a mind for the purpose of attacks against you.
-        This means that attacks which only affect creatures with a mind have no effect against you.
-
-        \cf{Mnk}[7]{Greater Feel the Flow of Life}[Magical]
-        The range of your \glossterm{lifesense} ability increases by 200 feet.
-        In addition, the range of your \glossterm{lifesight} ability increases by 80 feet.
-
-        \cf{Mnk}[8]{Transcendence} You are immune to \glossterm{conditions}.
+        \cf{Mnk}[7]{Inner Transcendence} You are immune to \glossterm{conditions}.
 
         % TODO: move this out of an archetype and into a different subsystem
         % \cf{Mnk}[8]{Transcend Mortality}[Magical]
@@ -2191,6 +2187,8 @@ This choice determines a great deal about your character's abilities.
     \subsection{Devoted Paragon}
         This archetype deepens your connection to your alignment, granting you an aura and improving your combat abilities.
 
+        \cf{Pal}[0]{Devoted Mind} You gain a \plus2 bonus to Mental defense.
+
         \cf{Pal}[1]{Aligned Aura}[Magical]
         Your devotion to your alignment affects the world around you, bringing it closer to your ideals.
         You constantly radiate an aura in a \areamed radius \glossterm{emanation} from you.
@@ -2217,7 +2215,7 @@ This choice determines a great deal about your character's abilities.
         \subparhead{Law} You are immune to hostile \glossterm{Emotion} abilities.
 
         \cf{Pal}[3]{Paragon Power}
-        You gain a \plus1 bonus to \glossterm{power}.
+        You gain a bonus to \glossterm{power} with all abilities equal to half your level.
 
         \cf{Pal}[4]{Greater Aligned Aura}[Magical]
         The effect of your \textit{aligned aura} becomes stronger, as described below.
@@ -2228,15 +2226,15 @@ This choice determines a great deal about your character's abilities.
         The target suffers any other effects of the attack normally.
         \subparhead{Law} The effect applies to all attacks, not just \glossterm{strikes}.
 
-        \cf{Pal}[5]{Devoted Mind} You gain a \plus2 bonus to Mental defense.
+        \cf{Pal}[5]{Greater Devoted Mind} The bonus from your \textit{devoted mind} ability increases to \plus4.
 
-        \cf{Pal}[6]{Greater Paragon Power} The bonus from your \textit{paragon power} ability increases to \plus2.
+        \cf{Pal}[6]{Greater Paragon Power} The bonus from your \textit{paragon power} ability increases to be equal to your level.
 
         \cf{Pal}[7]{Supreme Aligned Aura}
         The area of your \textit{aligned aura} increases to a \arealarge radius \glossterm{emanation} from you.
 
-        \cf{Pal}[8]{Epic Devotion} The bonus from your \textit{paragon of power} ability increases to \plus6.
-        In addition, the bonus from your \textit{devoted mind} ability increases to \plus5.
+        % \cf{Pal}[8]{Epic Devotion} The bonus from your \textit{paragon of power} ability increases to \plus6.
+        % In addition, the bonus from your \textit{devoted mind} ability increases to \plus5.
 
         % TODO: move to non-archetype subsystem
         % \cf{Pal}[8]{Aligned Soul}[Magical]
@@ -2319,98 +2317,78 @@ This choice determines a great deal about your character's abilities.
     \subsection{Stalwart Guardian}
         This archetype grants you healing abilities and improves your defensive prowess.
 
+        \cf{Pal}[0]{Enduring Defender} You gain a \plus1 bonus to \glossterm{fatigue tolerance} (see \pcref{Fatigue Tolerance}).
+
         \cf{Pal}[1]{Lay on Hands}[Magical] You can use the \textit{lay on hands} ability as a standard action.
         \begin{freeability}{Lay on Hands}
             \target{Yourself or a living \glossterm{ally} within \glossterm{reach}}
-            The target regains two \glossterm{hit points}.
-
-            \rankline
-            \rank{3} Instead of regaining hit points, you can cause the target to remove a \glossterm{condition} of its choice affecting it.
-            \rank{5} Instead of regaining hit points, you can cause the target remove one of its \glossterm{vital wounds}.
-            If it does, you gain two \glossterm{fatigue points}.
-            \rank{7} If the target is \glossterm{bloodied}, it regains an additional hit point.
+            The target regains \glossterm{hit points} equal to half your \glossterm{power} \add 1d6 per rank.
         \end{freeability}
 
-        \cf{Pal}[2]{Enduring Defender}
-        You gain a \plus1 bonus to Fortitude and Mental defense.
-        In addition, you gain a \plus1 bonus to \glossterm{fatigue tolerance} (see \pcref{Fatigue Tolerance}).
+        \cf{Pal}[2]{Stalwart Resilience} You gain a bonus equal to your level to your \glossterm{resistances} (see \pcref{Resistances}).
 
-        \cf{Pal}[3]{Stalwart Resilience}
-        You gain a bonus to your \glossterm{resistances} against \glossterm{physical damage} equal to half your level.
+        \cf{Pal}[3]{Greater Enduring Defender} The bonus from your \textit{enduring defender} ability increases to \plus2.
+        In addition, you gain a \plus1 bonus to Fortitude and Mental defense.
 
-        \cf{Pal}[4]{Defender's Boon}
-        Whenever you are attacked, you gain a \plus1 bonus to \glossterm{accuracy} until the end of the next round.
-        This bonus does not stack with itself.
+        \cf{Pal}[4]{Greater Lay on Hands} The healing from your \textit{lay on hands} ability increases to be equal to half your power \add 1d8 per rank.
+        In addition, when you use that ability, you can choose to remove a \glossterm{condition} of the target's choice from it instead of restoring its hit points.
 
-        \cf{Pal}[5]{Greater Enduring Defender}
-        The bonuses from your \textit{enduring defender} ability increase to \plus2.
+        \cf{Pal}[5]{Greater Stalwart Resilience} The bonus from your \textit{stalwart resilience} ability increases to be equal to twice your level.
 
-        \cf{Pal}[6]{Greater Stalwart Resilience} The bonus from your \textit{stalwart resilience} ability increases to be equal to your level.
+        \cf{Pal}[6]{Supreme Stalwart Defender} The bonus from your \textit{enduring defender} ability increases to \plus3.
+        In addition, the bonus from your \textit{greater enduring defender} ability increases to \plus2.
+        Finally, you increase your maximum \glossterm{hit points} by an amount equal to your level.
 
-        \cf{Pal}[7]{Greater Defender's Boon}[Magical]
-        The bonus from your \textit{defender's boon} ability increase to \plus2.
-
-        \cf{Pal}[8]{Epic Guardian} Whenever you deal damage to a creature, that creature is \glossterm{goaded} by you as a \glossterm{condition}.
-        In addition, the bonuses from your \textit{stalwart resilience} ability increase to \plus3.
+        \cf{Pal}[7]{Supreme Lay on Hands}[Magical] The healing from your \textit{lay on hands} ability increases to be equal to half your power \add 1d10 per rank.
+        In addition, when you use that ability, you can choose to remove a \glossterm{vital wound} of the target's choice from it instead of restoring its hit points.
+        If you do, you gain two \glossterm{fatigue points}.
 
     \subsection{Zealous Warrior}
         This archetype improves your combat prowess, especially against foes who do not share your devoted alignment.
+
+        \cf{Pal}[0]{Zealous Exertion} You gain a \plus2 bonus to any roll that you use the \textit{desperate exertion} ability on.
+        This bonus stacks with the normal \plus2 bonus provided by that ability.
 
         \cf{Pal}[1]{Smite}[Magical] You can use the \textit{smite} ability as a standard action.
         \begin{freeability}{Smite}
             Make a \glossterm{strike}.
             Because this is a \glossterm{magical} ability, you use your \glossterm{power} with \glossterm{magical} abilities to determine your damage instead of your power with \glossterm{mundane} abilities.
             If your target shares your devoted alignment, the strike deals no damage.
-            Otherwise, the strike gains a \plus1d bonus to damage.
-
-            \rankline
-            \rank{3} The damage bonus increases to \plus2d.
-            \rank{5} The damage bonus increases to \plus3d. In addition, you may choose to have the smite deal half damage to targets that share your alignment.
-            \rank{7} The damage bonus increases to \plus4d. In addition, you may choose to have the smite deal full damage to targets that share your alignment.
+            Otherwise, you gain a bonus to your \glossterm{power} with the strike equal to your level.
         \end{freeability}
 
-        \cf{Pal}[2]{Zealous Offense} You gain a \plus1 bonus to \glossterm{accuracy}.
+        \cf{Pal}[2]{Zealous Fixation} Whenever you hit a creature with a \glossterm{strike}, you ignore \glossterm{concealment} and all \glossterm{miss chances} against that creature with your attacks until you take a \glossterm{short rest} or until you hit a different creature with a strike.
+        If you hit multiple creatures with the same strike, you may freely choose which creature to fixate on with this ability.
 
         \cf{Pal}[3]{Zealous Purge} You can use your \textit{zealous purge} ability as a standard action.
         \begin{freeability}{Zealous Purge}
             Make a \glossterm{strike}.
+            You add half your \glossterm{power} to damage with the strike instead of your full power.
             Because this is a \glossterm{magical} ability, you use your \glossterm{power} with \glossterm{magical} abilities to determine your damage instead of your power with \glossterm{mundane} abilities.
 
-            On a hit, the target stops being \glossterm{attuned} to one effect of its choice that it is currently attuned to.
-
-            On a \glossterm{critical hit}, the target stops being attuned to two abilities of its choice that it is currently attuned to.
-            In addition, as a \glossterm{condition}, it stops being able to attune to abilities.
-
-            \rankline
-            \rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the strike.
-            \rank{7} The accuracy bonus increases to \plus2.
+            If the target loses \glossterm{hit points} from the strike, it stops being \glossterm{attuned} to a number of effects equal to your rank.
+            It can freely choose which effects it releases its attunement to.
         \end{freeability}
 
-        \cf{Pal}[4]{Zealous Fixation} You roll twice for \glossterm{miss chances} and take your preferred result.
-        In addition, you gain a \plus2 bonus to any roll that you use the \textit{desperate exertion} ability on.
-        This bonus stacks with the normal \plus2 bonus provided by that ability.
+        \cf{Pal}[4]{Zealous Offense} You gain a \plus1 bonus to \glossterm{accuracy}.
 
-        \cf{Pal}[5]{Pass Judgment}[Magical] You can use the \textit{pass judgment} ability as a \glossterm{minor action}.
+        \cf{Pal}[5]{Greater Zealous Exertion} The bonus from your \textit{zealous exertion} ability increases to \plus5.
+
+        \cf{Pal}[6]{Pass Judgment}[Magical] You can use the \textit{pass judgment} ability as a \glossterm{minor action}.
         \begin{freeability}{Pass Judgment}
             \target{One creature within \rnglong range}
             The target is treated as if it had the alignment opposed to your devoted alignment for the purpose of all abilities.
             This only affects its alignment along the alignment axis your devoted alignment is on.
             For example, if your devoted alignment was evil, a chaotic neutral target would be treated as chaotic good.
-            This ability lasts until you use it again or until you \glossterm{dismiss} it as a \glossterm{free action}.
+            This ability lasts until you \glossterm{dismiss} it as a \glossterm{free action}.
 
             You can use this ability to do battle against foes who share your alignment, but you should exercise caution in doing so.
             Persecution of those who share your ideals can lead you to fall and become an ex-paladin.
-
-            \rankline
-            \rank{7} This ability does not end when you use it again, allowing you to pass judgment on any number of different creatures.
         \end{freeability}
 
-        \cf{Pal}[6]{Greater Zealous Offense} The bonus from your \textit{zealous offense} ability increases to \plus2.
+        \cf{Pal}[7]{Greater Zealous Offense} The bonus from your \textit{zealous offense} ability increases to \plus2.
 
-        \cf{Pal}[7]{Greater Zealous Fixation} Whenever you hit a creature with a \glossterm{strike}, you ignore all \glossterm{miss chances} against that creature with your attacks until you take a \glossterm{short rest}.
-
-        \cf{Pal}[8]{Epic Zeal} The bonus from your \textit{zealous offense} ability increases to \plus4.
-        In addition, the damage bonus from your \textit{smite} ability increases to \plus6d.
+        \cf{Pal}[7]{Greater Smite} The bonus to \glossterm{power} from your \textit{smite} ability increases to twice your level.
 
         % TODO: Doesn't work with new spell system
         % \cf{Pal}[20]{Martyr's Retribution}[Mag]
@@ -2475,6 +2453,8 @@ This choice determines a great deal about your character's abilities.
     \subsection{Beastmaster}
         This archetype improves your connection to animals, allowing you to control and command them in battle.
 
+        \cf{Rgr}[0]{Handling Lore} You gain two additional \glossterm{skill points}.
+
         \cf{Rgr}[1]{Animal Companion}
         You can use the \textit{animal companion} ability.
         This ability requires 8 hours of training and attunement which the target must actively parcipate in.
@@ -2497,25 +2477,26 @@ This choice determines a great deal about your character's abilities.
             \end{itemize}
         \end{attuneability}
 
-        \cf{Rgr}[2]{Handling Lore} You gain two additional \glossterm{skill points}.
-        In addition, you gain a \plus2 bonus to the Creature Handling skill (see \pcref{Creature Handling}).
+        \cf{Rgr}[2]{Pack Tactics} Any \glossterm{overwhelmed} creature that is \glossterm{threatened} by you or your animal companion takes a \minus1 penalty to \glossterm{accuracy}.
 
-        \cf{Rgr}[3]{Pack Tactics} Any \glossterm{overwhelmed} creature that is \glossterm{threatened} by you or your animal companion takes a \minus1 penalty to \glossterm{accuracy}.
+        \cf{Rgr}[3]{Beast Affinity} You gain a \plus3 bonus to the Creature Handling skill (see \pcref{Creature Handling}).
+        In addition, you gain a \plus1 bonus to \glossterm{accuracy} and \glossterm{defenses} against animals and magical beasts.
 
         \cf{Rgr}[4]{Greater Animal Companion} Your \textit{animal companion} gains an \glossterm{attunement point}.
         In addition, it gains a \plus1 bonus to \glossterm{accuracy}, \glossterm{defenses}, and \glossterm{vital rolls}.
 
-        \cf{Rgr}[5]{Greater Handling Lore} The bonus from your \textit{handling lore} ability increases to \plus6.
+        \cf{Rgr}[5]{Greater Pack Tactics} The penalty from your \textit{pack tactics} ability increases to \minus2.
 
-        \cf{Rgr}[6]{Greater Pack Tactics} The penalty from your \textit{pack tactics} ability increases to \minus2.
+        \cf{Rgr}[6]{Greater Beast Affinity} The bonus to the Creature Handling skill from your \textit{beast affinity} ability increases to \plus6.
+        In addition, the bonuses to accuracy and defenses from that ability increase to \plus2.
 
         \cf{Rgr}[7]{Supreme Animal Companion} Your \textit{animal companion} gains an additional \glossterm{attunement point}.
         In addition, the bonuses from your \textit{greater animal companion} ability increase to \plus2.
 
-        \cf{Rgr}[8]{Twin Companion} You may acquire an additional \textit{animal companion}, attuning to each ability separately.
+    \subsection{Scout}
+        This archetype improves your senses and overall scouting ability.
 
-    \subsection{Keen Senses}
-        This archetype improves your senses.
+        \cf{Rgr}[0]{Scouting Expertise} You gain a \plus2 bonus to the Awareness and Stealth skills.
 
         \cf{Rgr}[1]{Keen Vision}
         You gain \glossterm{low-light vision}, allowing you to treat sources of light as if they had double their normal illumination range.
@@ -2523,8 +2504,8 @@ This choice determines a great deal about your character's abilities.
         In addition, you gain \glossterm{darkvision} with a 50 foot range, allowing you to see in complete darkness clearly.
         If you already have that ability, you increase its range by 50 feet.
 
-        \cf{Rgr}[2]{Farsight} You reduce your \glossterm{range increment} penalties for attacking at long range by 1.
-        In addition, you gain a \plus2 bonus to the Awareness skill (see \pcref{Awareness}).
+        \cf{Rgr}[2]{Skirmisher} You gain a \plus5 foot bonus to your \glossterm{base speed}.
+        In addition, you reduce your \glossterm{range increment} penalties for attacking at long range by 1.
 
         \cf{Rgr}[3]{Perceive Weakness} You gain a \plus1 bonus to \glossterm{accuracy}.
 
@@ -2536,20 +2517,18 @@ This choice determines a great deal about your character's abilities.
         With this ability, you can fight just as well with your eyes closed as with them open.
         If you already have the blindsight ability, you increase its range by 20 feet.
 
-        \cf{Rgr}[5]{Greater Farsighted} The penalty reduction from your \textit{farsighted} ability increases to 2.
-        In addition, the Awareness bonus from that ability increases to \plus5.
+        \cf{Rgr}[5]{Greater Skirmisher} The speed bonus from your \textit{skirmisher} ability increases to \plus10 feet.
+        In addition, the penalty reduction from that ability increases to 2.
 
         \cf{Rgr}[6]{Greater Perceive Weakness} The bonus from your \textit{perceive weakness} ability increases to \plus2.
 
         \cf{Rgr}[7]{Greater Blindsight} The range of your \glossterm{blindsense} ability increases by 200 feet.
         In addition, the range of your \glossterm{blindsight} ability increases by 80 feet.
 
-        \cf{Rgr}[8]{Epic Senses} The bonus from your \textit{perceive weakness} ability increases to \plus4.
-        In addition, the Awareness bonus from your \textit{farsighted} ability increases to \plus10.
-        Finally, the range of your \glossterm{blindsight} and \glossterm{blindsense} abilities increase by 200 feet.
-
     \subsection{Huntmaster}
         This archetype grants you and your allies abilities to hunt down specific foes.
+
+        \cf{Rgr}[0]{Endurance Hunter} You gain a \plus2 bonus to the Survival skill and a \plus1 bonus to Fortitude defense.
 
         \cf{Rgr}[1]{Quarry}\label{Quarry} You can use the \textit{quarry} ability as a \glossterm{minor action}.
         \begin{attuneability}{Quarry}[\glossterm{Attune} (self)]
@@ -2557,6 +2536,7 @@ This choice determines a great deal about your character's abilities.
             The target becomes your quarry.
             You and your \glossterm{allies} within the same range are called your hunting party.
             Your hunting party gains a \plus1 bonus to \glossterm{accuracy} with \glossterm{mundane} attacks against your quarry.
+            If the target is \glossterm{defeated}, you may end this ability and regain the \glossterm{attunement point} you spent to attune to this ability.
         \end{attuneability}
 
         \cf{Rgr}[2]{Hunting Style}
@@ -2573,17 +2553,6 @@ This choice determines a great deal about your character's abilities.
                 \rankline
                 \rank{4} This effect instead applies if your quarry is within \rngmed range of at least two members of your hunting party.
                 \rank{6} This effect instead applies if your quarry is within \rnglong range of at least two members of your hunting party.
-                \rank{8} This effect instead applies if your quarry is within \rnglong range of any member of your hunting party.
-            \end{freeability}
-
-            \begin{freeability}{Brutal Assault}
-                The accuracy bonus from your \textit{quarry} ability is replaced with a \minus1 penalty to accuracy with \glossterm{mundane} attacks against your quarry.
-                In exchange, your hunting party gains a \plus2 bonus to \glossterm{power} with \glossterm{mundane} attacks against your quarry.
-
-                \rankline
-                \rank{4} The accuracy penalty is removed.
-                \rank{6} The power bonus applies to both \glossterm{mundane} and \glossterm{magical} attacks against your quarry.
-                \rank{8} The power bonus is increased to \plus4.
             \end{freeability}
 
             \begin{freeability}{Coordinated Stealth}
@@ -2591,9 +2560,8 @@ This choice determines a great deal about your character's abilities.
 
                 \rankline
                 % seems weak?
-                \rank{4} Your hunting party gains a \plus2 bonus to \glossterm{power} against your quarry if it is \unaware of every member of the hunting party.
+                \rank{4} The accuracy bonus from your \textit{quarry} ability increases to \plus2 if your quarry is \unaware of every member of the hunting party.
                 \rank{6} The Awareness penalty increases to \minus8.
-                \rank{8} The power bonus increases to \plus4.
             \end{freeability}
 
             \begin{freeability}{Cover Weaknesses}
@@ -2601,8 +2569,7 @@ This choice determines a great deal about your character's abilities.
 
                 \rankline
                 \rank{4} Your party's \glossterm{overwhelm penalties} are reduced by 2 against your quarry's attacks.
-                \rank{6} Your party ignores all \glossterm{overwhelm penalties} against your quarry's attacks.
-                \rank{8} The defense bonus increases to \plus2.
+                \rank{6} The defense bonus increases to \plus2.
             \end{freeability}
 
             \begin{freeability}{Decoy}
@@ -2611,7 +2578,6 @@ This choice determines a great deal about your character's abilities.
                 \rankline
                 \rank{4} The penalty increases to \minus3.
                 \rank{6} The penalty increases to \minus4.
-                \rank{8} The penalty increases to \minus5.
             \end{freeability}
 
             \begin{freeability}{Lifeseal}[Magical]
@@ -2620,7 +2586,6 @@ This choice determines a great deal about your character's abilities.
                 \rankline
                 \rank{4} This effect instead applies if the target is within \rngmed range of at least two members of your hunting party.
                 \rank{6} This effect instead applies if your quarry is within \rnglong range of at least two member of your hunting party.
-                \rank{8} This effect instead applies if your quarry is within \rnglong range of any member of your hunting party.
             \end{freeability}
 
             \begin{freeability}{Martial Suppression}
@@ -2629,7 +2594,6 @@ This choice determines a great deal about your character's abilities.
                 \rankline
                 \rank{4} The penalty increases to \minus2.
                 \rank{6} The penalty increases to \minus3.
-                \rank{8} The penalty increases to \minus4.
             \end{freeability}
 
             \begin{freeability}{Mystic Guidance}[Magical]
@@ -2638,7 +2602,6 @@ This choice determines a great deal about your character's abilities.
                 \rankline
                 \rank{4} Your hunting party gains a \plus1 bonus to Fortitude, Reflex, and Mental defenses against attacks from your quarry.
                 \rank{6} The accuracy bonus against your quarry is increased to \plus2.
-                \rank{8} The defense bonuses increase to \plus2.
             \end{freeability}
 
             \begin{freeability}{Mystic Suppression}
@@ -2647,7 +2610,6 @@ This choice determines a great deal about your character's abilities.
                 \rankline
                 \rank{4} The penalty increases to \minus2. 
                 \rank{6} The penalty increases to \minus3.
-                \rank{8} The penalty increases to \minus4.
             \end{freeability}
 
             \begin{freeability}{Solo Hunter}
@@ -2657,7 +2619,6 @@ This choice determines a great deal about your character's abilities.
                 \rankline
                 \rank{4} The accuracy bonus from your \textit{quarry} ability increases to \plus2.
                 \rank{6} The defense bonus increases to \plus2.
-                \rank{8} The accuracy bonus increases to \plus3.
             \end{freeability}
 
             \begin{freeability}{Swarm Hunter}
@@ -2666,7 +2627,6 @@ This choice determines a great deal about your character's abilities.
                 \rankline
                 \rank{4} You reduce your \glossterm{overwhelm penalties} by 1.
                 \rank{6} The penalty reduction applies to all members of your hunting party.
-                \rank{8} The penalty reduction increases to 2.
             \end{freeability}
 
             \begin{freeability}{Wolfpack}
@@ -2675,79 +2635,86 @@ This choice determines a great deal about your character's abilities.
                 \rankline
                 \rank{4} This effect instead applies if your quarry is within \rngmed range of at least two members of your hunting party.
                 \rank{6} This effect instead applies if your quarry is within \rnglong range of at least two members of your hunting party.
-                \rank{8} This effect instead applies if your quarry is within \rnglong range of any member of your hunting party.
             \end{freeability}
         }
 
-        \cf{Rgr}[3]{Hunter's Instincts} You gain a \plus2 bonus to \glossterm{initiative} checks and Reflex defense.
+        \cf{Rgr}[3]{Greater Endurance Hunter} The bonus to the Survival skill from your \textit{hunter's instincts} ability increases to \plus4.
+        In addition, the bonus to Fortitude defense from that ability increases to \plus2.
+        Finally, you gain a \plus1 bonus to your \glossterm{fatigue tolerance} (see \pcref{Fatigue Tolerance}).
 
-        \cf{Rgr}[4]{Endurance Tracker} You gain a \plus1 bonus to your \glossterm{fatigue tolerance} (see \pcref{Fatigue Tolerance}).
-        In addition, you gain a \plus3 bonus to the Survival skill.
+        \cf{Rgr}[4]{Greater Quarry} All \glossterm{strikes} you make against your \textit{quarry} gain bonus damage dice equal to your weapon's damage dice.
 
         \cf*{Rgr}[5]{Hunting Style}
         You learn an additional \textit{hunting style}.
 
-        \cf{Rgr}[6]{Greater Hunter's Instincts}
-        The bonus from your \textit{hunter's instincts} ability increases to \plus4.
+        \cf{Rgr}[6]{Supreme Endurance Hunter} The bonus to the Survival skill from your \textit{hunter's instincts} ability increases to \plus6.
+        In addition, the bonus to Fortitude defense from that ability increases to \plus3.
+        Finally, the bonus to your fatigue tolerance from that ability increases to \plus2.
 
-        \cf{Rgr}[7]{Greater Endurance Tracker} The bonus to your fatigue tolerance from your \textit{endurance tracker} ability increases to \plus2.
-        In addition, the bonus to the Survival skill increases to \plus6.
-
-        \cf{Rgr}[8]{Dual Quarry} You can attune to two separate uses of your \textit{quarry} ability simultaneously.
-        You can use different \textit{hunting style} abilities with each \textit{quarry}.
+        \cf{Rgr}[7]{Supreme Quarry} The bonus from your \textit{greater quarry} ability increases to be equal to twice your weapon's damage dice.
 
     % Would be nice to call this ``Hunter'' and the maneuvers ``Hunting'' maneuvers,
     % but that conflicts with the naming for Huntmaster
-    \subsection{Wilderness Warrior}
-        This archetype grants you abilities to use in combat and improves your wilderness skills.
+    \subsection{Wild Warrior}
+        This archetype grants you abilities to use in combat and improves your physical skills.
 
-        \cf{Rgr}[1]{Wild Maneuvers} 
-        You can channel your martial prowess into devastating attacks.
-        You learn one \glossterm{maneuver} from the wild maneuver list (see \pcref{Wild Maneuvers}).
-        You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
-        As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
+        \cf{Rgr}[0]{Wild Senses} You gain a \plus1 bonus to Perception-based checks, except \glossterm{initiative} checks.
 
-        When you gain access to a new \glossterm{rank} in this archetype,
-            you can exchange any number of maneuvers you know for other maneuvers,
-            including maneuvers of the higher rank.
+        {
+            \cf{Rgr}[1]{Wild Maneuvers}
+            You can channel your wild energy into ferocious attacks.
+            You learn two \glossterm{maneuvers} from the wild maneuver list (see \pcref{Wild Maneuvers}).
+            You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
+            As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
 
-        \cf{Rgr}[2]{Maneuver Rank} You become a rank 2 wild maneuverist.
-        This gives you access to maneuvers that require a minimum rank of 2.
+            When you gain access to a new \glossterm{rank} in this archetype,
+                you can exchange any number of maneuvers you know for other maneuvers,
+                including maneuvers of the higher rank.
+        }
 
-        \cf{Rgr}[2]{Wild Maneuver}
-        You learn an additional wild \glossterm{maneuver} (see \pcref{Wild Maneuvers}).
+        {
+            \cf{Rgr}[2]{Maneuver Rank} You become a rank 2 wild maneuverist.
+            This gives you access to maneuvers that require a minimum rank of 2.
 
-        \cf*{Rgr}[3]{Maneuver Rank} You become a rank 3 wild maneuverist.
-        This gives you access to maneuvers that require a minimum rank of 3 and can improve the effectiveness of your existing maneuvers.
+            \cf{Rgr}[2]{Wild Lore} You gain two additional \glossterm{skill points}.
+        }
 
-        \cf{Rgr}[3]{Wild Lore} You gain two additional \glossterm{skill points}.
+        {
+            \cf*{Rgr}[3]{Maneuver Rank} You become a rank 3 wild maneuverist.
+            This gives you access to maneuvers that require a minimum rank of 3 and can improve the effectiveness of your existing maneuvers.
 
-        \cf*{Rgr}[4]{Maneuver Rank} You become a rank 4 wild maneuverist.
-        This gives you access to maneuvers that require a minimum rank of 4 and can improve the effectiveness of your existing maneuvers.
+            \cf{Rgr}[3]{Greater Wild Senses} The bonus from your \textit{wild senses} ability increases to \plus2.
+        }
 
-        \cf{Rgr}[4]{Wild Senses} You gain a \plus1 bonus to Perception-based checks, except \glossterm{initiative} checks.
+        {
+            \cf*{Rgr}[4]{Maneuver Rank} You become a rank 4 wild maneuverist.
+            This gives you access to maneuvers that require a minimum rank of 4 and can improve the effectiveness of your existing maneuvers.
 
-        \cf*{Rgr}[5]{Maneuver Rank} You become a rank 5 wild maneuverist.
-        This gives you access to maneuvers that require a minimum rank of 5 and can improve the effectiveness of your existing maneuvers.
+            \cf{Rgr}[4]{Wild Maneuver}
+            You learn an additional wild \glossterm{maneuver} (see \pcref{Wild Maneuvers}).
+        }
 
-        \cf*{Rgr}[5]{Wild Maneuver}
-        You learn an additional wild \glossterm{maneuver} (see \pcref{Wild Maneuvers}).
+        {
+            \cf*{Rgr}[5]{Maneuver Rank} You become a rank 5 wild maneuverist.
+            This gives you access to maneuvers that require a minimum rank of 5 and can improve the effectiveness of your existing maneuvers.
 
-        \cf*{Rgr}[6]{Maneuver Rank} You become a rank 6 wild maneuverist.
-        This gives you access to maneuvers that require a minimum rank of 6 and can improve the effectiveness of your existing maneuvers.
+            \cf{Rgr}[5]{Wild Force} All \glossterm{strikes} you make gain bonus damage dice equal to your weapon's damage dice.
+        }
 
-        \cf{Rgr}[6]{Wild Agility} You gain a \plus2 bonus to Reflex defense.
+        {
+            \cf*{Rgr}[6]{Maneuver Rank} You become a rank 6 wild maneuverist.
+            This gives you access to maneuvers that require a minimum rank of 6 and can improve the effectiveness of your existing maneuvers.
 
-        \cf*{Rgr}[7]{Maneuver Rank} You become a rank 7 wild maneuverist.
-        This gives you access to maneuvers that require a minimum rank of 7 and can improve the effectiveness of your existing maneuvers.
+            \cf{Rgr}[6]{Supreme Wild Senses} The bonuses from your \textit{wild senses} ability increase to \plus3.
+        }
 
-        \cf{Rgr}[7]{Greater Wild Senses} The bonus from your \textit{wild senses} ability increases to \plus2.
+        {
+            \cf*{Rgr}[7]{Maneuver Rank} You become a rank 7 wild maneuverist.
+            This gives you access to maneuvers that require a minimum rank of 7 and can improve the effectiveness of your existing maneuvers.
 
-        \cf*{Rgr}[8]{Maneuver Rank} You become a rank 8 wild maneuverist.
-        This gives you access to maneuvers that require a minimum rank of 8 and can improve the effectiveness of your existing maneuvers.
-
-        \cf{Rgr}[8]{Wilderness Supremacy} The bonus from your \textit{wild senses} ability increases to \plus5.
-        In addition, you learn an additional wild \glossterm{maneuver}.
+            \cf*{Rgr}[7]{Wild Maneuver}
+            You learn an additional wild \glossterm{maneuver} (see \pcref{Wild Maneuvers}).
+        }
 
     % \subsection{Boundary Warden}
     %     This archetype grants you abilities improving your ability to guard the boundaries between civilization and nature.
@@ -2802,23 +2769,28 @@ This choice determines a great deal about your character's abilities.
     \subsection{Assassin}
         This archetype improves your agility, stealth, and combat prowess against unaware targets.
 
+        \cf{Rog}[0]{Stealthy Instincts} You gain a \plus2 bonus to the Stealth skill and a \plus1 bonus to Reflex defense.
+
+        % Unusually high scaling compensates for the light weapon limitation.
+        % Smite gives +20 damage at level 20, and this gives +21 damage at level 20 assuming a d6 die.
+        % Note that this makes it important that there should not exist a d8 light weapon.
+        % We want Sneak Attack to use damage dice instead of a flat bonus to work with Assassination.
         \cf{Rog}[1]{Sneak Attack} You can use the \textit{sneak attack} ability as a standard action.
         \begin{freeability}{Sneak Attack}
             Make a \glossterm{strike} with a \glossterm{light weapon} or a \glossterm{projectile weapon} against a creature within \rngclose range.
-            If the target is \unaware or is \glossterm{threatened} by one of your \glossterm{allies}, you gain a \plus2d bonus to damage with the strike.
+            If the target is \unaware or is \glossterm{threatened} by one of your \glossterm{allies}, the strike gains bonus damage dice equal to your weapon's damage dice.
             You do not gain this damage bonus against creatures who that you are unable to score a \glossterm{critical hit} against, such as excessively large creatures or oozes.
 
             \rankline
-            \rank{3} The damage bonus increases to \plus3d.
-            \rank{5} The damage bonus increases to \plus4d.
+            \rank{3} The bonus increases to twice your weapon's damage dice.
+            \rank{5} The bonus increases to four times your weapon's damage dice.
             In addition, the maximum range increases to \rngmed range.
-            \rank{7} The damage bonus increases to \plus5d.
+            \rank{7} The bonus increases to six times your weapon's damage dice.
             In addition, the maximum range increases to \rnglong range.
         \end{freeability}
 
-        % TODO: wording
-        \cf{Rog}[2]{Evasion} You gain a \plus2 bonus to your Reflex defense.
-        In addition, when you are attacked by an ability that affects an area, you can use your Reflex defense in place of your Armor defense against that attack.
+        \cf{Rog}[2]{Evasion} You take half damage from abilities that affect an area.
+        This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
 
         \cf*{Rog}[3]{Darkstalker}[Magical] You can use the \textit{darkstalker} ability as a standard action.
         \begin{attuneability}{Darkstalker}[\glossterm{Attune} (self)]
@@ -2838,7 +2810,8 @@ This choice determines a great deal about your character's abilities.
         Creatures observing you while you try to hide gain a \plus10 bonus to checks to notice you.
         You must still have cover or concealment to hide successfully.
 
-        \cf{Rog}[5]{Greater Evasion} You can use your Reflex defense in place of any other defense with your \textit{evasion} ability.
+        \cf{Rog}[5]{Greater Evasion} You can use your Reflex defense in place of any other defense against abilities that affect an area.
+        This does not protect you from abilities that affect multiple specific targets without affecting an area.
 
         \cf{Rog}[6]{Assassination} You can use the \textit{assassination} ability as a \glossterm{minor action}.
         \begin{freeability}{Assassination}[\glossterm{Swift}]
@@ -2846,13 +2819,13 @@ This choice determines a great deal about your character's abilities.
             Until the end of the next round, if you make a melee \glossterm{strike} against the target while it is \unaware, your attack deals maximum damage.
         \end{freeability}
 
-        \cf{Rog}[7]{Greater Hide in Plain Sight} Creatures observing you while you try to hide gain a \plus5 bonus to checks to notice you instead of a \plus10 bonus.
-
-        \cf{Rog}[8]{Epic Assassin}[Magical] When you use your \textit{darkstalker} ability, you become undetectable by any number of the listed senses, not just one.
-        In addition, you gain a \plus5 bonus to the Stealth skill.
+        \cf{Rog}[7]{Greater Darkstalker} When you use your \textit{darkstalker} ability, you become undetectable by any number of the listed senses, not just one.
 
     \subsection{Bard}
         This archetype grants you the ability to inspire your allies and impair your foes with musical performances.
+
+        \cf{Rog}[0]{Bardic Lore} You gain two additional skill points.
+        In addition, you gain all Knowledge skills as \glossterm{class skills}.
 
         \cf{Rog}[1]{Bardic Performances}
         You learn two \textit{bardic performances} from the list below.
@@ -3026,24 +2999,22 @@ This choice determines a great deal about your character's abilities.
             \end{freeability}
         }
 
-        \cf{Rog}[2]{Bardic Lore} You gain two additional skill points.
-        In addition, you gain a \plus2 bonus to all Knowledge skills and gain all Knowledge skills as \glossterm{class skills}.
+        \cf{Rog}[2]{Combat Performer} You gain a \plus2 bonus to all Perform skills and a \plus1 bonus to Armor defense.
 
-        \cf{Rog}[3]{Bardic Combat Training} You gain a \plus1 bonus to Armor defense.
+        \cf{Rog}[3]{Loremaster} You gain a \plus2 bonus to all Knowledge skills.
+        In addition, when can use the \textit{desperate exertion} ability to affect the result of a Knowledge skill check,
+            you only gain one \glossterm{fatigue point} instead of two.
 
         \cf{Rog}[4]{Bardic Performance}
         You learn an additional bardic performance.
 
-        \cf{Rog}[5]{Dual Performance}
+        \cf{Rog}[5]{Greater Combat Performer} The Perform skill bonus from your \textit{combat performer} ability increases to \plus4.
+        In addition, the Armor defense bonus from that ability increases to \plus2.
+
+        \cf{Rog}[6]{Greater Loremaster} The Knowledge skll bonus from your \textit{loremaster} ability increases to \plus5.
+
+        \cf{Rog}[7]{Dual Performance}
         Once per round, you can \glossterm{sustain} two bardic performances as a single \glossterm{minor action}.
-
-        \cf{Rog}[6]{Loremaster} The skill bonus from your \textit{bardic lore} ability increases to \plus5.
-
-        \cf*{Rog}[7]{Bardic Performance}
-        You learn an additional bardic performance.
-
-        \cf{Rog}[8]{Epic Bard} The range and area affected by all of your \textit{bardic performance} abilities is doubled.
-        In addition, you gain a \plus2 bonus to \glossterm{accuracy} with all of your \textit{bardic performance} abilities.
 
     \subsection{Combat Trickster}
         This archetype grants you abilities to use in combat and improves your combat prowess.
@@ -3096,26 +3067,85 @@ This choice determines a great deal about your character's abilities.
         \cf{Rog}[8]{Epic Trickster} The bonus from your \textit{tricky agility} ability increases to \plus5.
         In addition, you learn an additional trick \glossterm{maneuver}.
 
+        \cf{Rog}[0]{Tricky Finesse} You gain a \plus1 bonus to Dexterity-based \glossterm{checks}, except \glossterm{initiative} checks.
+
+        {
+            \cf{Rog}[1]{Trick Maneuvers}
+            You can confuse and confound your foes in combat.
+            You learn one \glossterm{maneuver} from the trick maneuver list (see \pcref{Trick Maneuvers}).
+            You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
+            As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
+
+            When you gain access to a new \glossterm{rank} in this archetype,
+                you can exchange any number of maneuvers you know for other maneuvers,
+                including maneuvers of the higher rank.
+        }
+
+        {
+            \cf{Rog}[2]{Maneuver Rank} You become a rank 2 trick maneuverist.
+            This gives you access to maneuvers that require a minimum rank of 2.
+
+            \cf{Rog}[2]{Trick Lore} You gain two additional \glossterm{skill points}.
+        }
+
+        {
+            \cf*{Rog}[3]{Maneuver Rank} You become a rank 3 trick maneuverist.
+            This gives you access to maneuvers that require a minimum rank of 3 and can improve the effectiveness of your existing maneuvers.
+
+            \cf{Rog}[3]{Greater Tricky Finesse} The bonus from your \textit{tricky finesse} ability increases to \plus2.
+        }
+
+        {
+            \cf*{Rog}[4]{Maneuver Rank} You become a rank 4 trick maneuverist.
+            This gives you access to maneuvers that require a minimum rank of 4 and can improve the effectiveness of your existing maneuvers.
+
+            \cf{Rog}[4]{Trick Maneuver}
+            You learn an additional trick \glossterm{maneuver} (see \pcref{Trick Maneuvers}).
+        }
+
+        {
+            \cf*{Rog}[5]{Maneuver Rank} You become a rank 5 trick maneuverist.
+            This gives you access to maneuvers that require a minimum rank of 5 and can improve the effectiveness of your existing maneuvers.
+
+            \cf{Rog}[5]{Tricky Force} All \glossterm{strikes} you make gain bonus damage dice equal to your weapon's damage dice.
+        }
+
+        {
+            \cf*{Rog}[6]{Maneuver Rank} You become a rank 6 trick maneuverist.
+            This gives you access to maneuvers that require a minimum rank of 6 and can improve the effectiveness of your existing maneuvers.
+
+            \cf{Rog}[6]{Supreme Tricky Finesse} The bonus from your \textit{tricky finesse} ability increases to \plus3.
+        }
+
+        {
+            \cf*{Rog}[7]{Maneuver Rank} You become a rank 7 trick maneuverist.
+            This gives you access to maneuvers that require a minimum rank of 7 and can improve the effectiveness of your existing maneuvers.
+
+            \cf*{Rog}[7]{Trick Maneuver}
+            You learn an additional trick \glossterm{maneuver} (see \pcref{Trick Maneuvers}).
+        }
+
     \subsection{Jack of All Trades}
         This archetype improves your skills.
 
-        \cf{Rog}[1]{Skill Lore} You gain three additional skill points.
+        \cf{Rog}[0]{Skill Lore} You gain two additional skill points.
+        In addition, choose any two skills.
+        You treat those skills as \glossterm{class skills} for you.
+
+        \cf{Rog}[1]{Skill Exemplar} You gain two additional skill points.
+        In addition, you gain a \plus1 bonus to all skills.
 
         \cf{Rog}[2]{Dabbler} You gain an additional \glossterm{insight point}.
 
-        \cf{Rog}[3]{Versatile Power} You gain a \plus1 bonus to \glossterm{power}.
+        \cf{Rog}[3]{Versatile Power} You gain a bonus to \glossterm{power} equal to half your level.
 
-        \cf{Rog}[4]{Skill Exemplar} You gain two additional skill points.
-        In addition, you gain a \plus1 bonus to all skills.
+        \cf{Rog}[4]{Greater Skill Exemplar} The skill bonus from your \textit{skill exemplar} ability increases to \plus3.
 
         \cf{Rog}[5]{Greater Dabbler} You gain an additional \glossterm{insight point}.
 
-        \cf{Rog}[6]{Greater Versatile Power} The bonus from your \textit{versatile power} ability increases to \plus2.
+        \cf{Rog}[6]{Greater Versatile Power} The bonus from your \textit{versatile power} ability increases to be equal to your level.
 
-        \cf{Rog}[7]{Greater Skill Exemplar} The skill bonus from your \textit{skill exemplar} ability increases to \plus3.
-
-        \cf{Rog}[8]{Master of All Trades} You gain six additional skill points.
-        In addition, the skill bonus from your \textit{skill exemplar} ability increases to \plus6.
+        \cf{Rog}[7]{Supreme Skill Exemplar} The skill bonus from your \textit{skill exemplar} ability increases to \plus5.
 
     % \subsection{Suave Scoundrel}
     %     This archetype improves your social manipulation abilities.
