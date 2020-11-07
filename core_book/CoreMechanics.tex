@@ -229,12 +229,12 @@ It defines how attributes work and explains how to make attacks in combat.
                     \minus6 or less & You immediately die \\
                     \minus1--\minus5 & You are unconscious, and you die at the end of the next round \\
                     0                & You are unconscious, and you die after one minute             \\
-                    1                & You are unconscious while \glossterm{bloodied}                \\
+                    1                & You are unconscious at less than full hit points              \\
                     2                & You take a \minus2 penalty to \glossterm{accuracy}            \\
                     3                & You take a \minus2 penalty to all \glossterm{defenses}        \\
                     4                & You take a \minus2 penalty to future \glossterm{vital rolls}  \\
                     5                & Your maximum \glossterm{hit points} are reduced by 2          \\
-                    6                & You move at half speed while \glossterm{bloodied}             \\
+                    6                & You move at half speed while at less than full hit points     \\
                     7                & You take a \minus1 penalty to \glossterm{accuracy}            \\
                     8                & You take a \minus1 penalty to all \glossterm{defenses}        \\
                     9                & You take a \minus1 penalty to future \glossterm{vital rolls}  \\
@@ -253,15 +253,10 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \subsubsection{Vital Threshold}\label{Vital Threshold}
             Extraordinarily powerful attacks can cause you to gain vital wounds before your hit points reach 0.
-            For each multiple of your \glossterm{vital resistance} that you take in damage from a single attack, you gain a \glossterm{vital wound}.
+            Your vital threshold is equal to half your maximum hit points.
+            If you lose at least as many hit points as your vital threshold from a single attack, you gain a \glossterm{vital wound}.
+            If you lose at least twice as many hit points as your vital threshold, you gain two vital wounds, and so on for additional multiples of your vital threshold.
             Any vital wounds you gain this way are applied in addition to the normal vital wound you gain from taking damage that would reduce your hit points below 0.
-
-            \parhead{Bloodied}\label{Bloodied}
-            As your hit points get lower, you become more vulnerable to vital wounds.
-            At the end of each round, if you have half your maximum \glossterm{hit points} remaining or fewer (rounded down), you become \glossterm{bloodied}.
-            Likewise, if you have more than half your maximum hit points remaining, you stop being \glossterm{bloodied}.
-
-            While you are bloodied, your \glossterm{vital threshold} is halved.
 
     % TODO: different section?
     \subsection{Damage Types}\label{Damage Types}
@@ -816,7 +811,7 @@ It defines how attributes work and explains how to make attacks in combat.
             It has the following effects:
             \begin{itemize}
                 \item Strength determines how much you can carry (see \tref{Carrying Capacity by Strength}).
-                \item You gain a bonus (or penalty) to your \glossterm{power} with \glossterm{mundane} abilities, such as normal weapon attacks, equal to your Strength (see \pcref{Power}).
+                \item You gain a bonus (or penalty) to your \glossterm{power} with \glossterm{mundane} abilities, such as normal weapon attacks, equal to half your Strength (see \pcref{Power}).
                 \item You reduce your total \glossterm{encumbrance} from \glossterm{armor} by an amount equal to your base Strength (see \pcref{Encumbrance}).
                 \item You apply your base Strength as a bonus or penalty to Strength-based \glossterm{skills}: Climb, Jump, and Swim (see \pcref{Skills}).
                 \item If your base Strength is at least 2, you are \glossterm{trained} with your Strength-based \glossterm{class skills} (see \pcref{Class Skills}.
@@ -883,7 +878,7 @@ It defines how attributes work and explains how to make attacks in combat.
             It has the following effects:
             \begin{itemize}
                 \item You gain a bonus (or penalty) to your \glossterm{resistance} against \glossterm{energy damage} equal to your Willpower (see \pcref{Resistances}).
-                \item You gain a bonus (or penalty) to your \glossterm{power} with \glossterm{magical} abilities, such as spells, equal to your Willpower (see \pcref{Power}).
+                \item You gain a bonus (or penalty) to your \glossterm{power} with \glossterm{magical} abilities, such as spells, equal to half your Willpower (see \pcref{Power}).
                 \item You gain a bonus (or penalty) to your Mental defense equal to your base Willpower.
                 \item You gain a bonus (or penalty) to your \glossterm{fatigue tolerance} equal to your base Willpower (see \pcref{Fatigue}).
             \end{itemize}
@@ -1006,14 +1001,48 @@ It defines how attributes work and explains how to make attacks in combat.
 
     \subsection{Hit Points}\label{Hit Points}
         Your \glossterm{hit points} measure how hard you are to seriously injure or kill.
-        Whenever you take damage that is not prevented b your \glossterm{resistances}, you lose that many hit points (see \pcref{Taking Damage}).
+        Whenever you take damage that is not prevented by your \glossterm{resistances}, you lose that many hit points (see \pcref{Taking Damage}).
         If you lose a lot of hit points at once, you can gain a \glossterm{vital wound} (see \pcref{Vital Threshold}).
         Whenever you take damage that would reduce your hit points below 0, you gain a \glossterm{vital wound} and your hit points stay at 0.
         Once you reach 0 hit points, you can die quickly from any additional damage.
 
-        At 1st level, you have a number of hit points equal to 10 \add twice your base Constitution.
-        Each level after that, you gain a number of hit points equal to 5 \add your base Constitution.
-        Some special abilities can give you additional hit points.
+        The number of hit points you have is based on the sum of your level and your base Constitution, as defined in \tref{Hit Points}.
+        Some special abilities can give you additional \glossterm{hit points}.
+
+        \begin{dtable}
+            \lcaption{Hit Points}
+            \begin{dtabularx}{\columnwidth}{l *{2}{>{\ccol}X}}
+                \tb{Level \add Base Con} & \tb{Hit Points} \tableheaderrule
+                \minus1 or lower & 9     \\
+                0                & 10     \\
+                1                & 11     \\
+                2                & 12     \\
+                3                & 13     \\
+                4                & 15     \\
+                5                & 17     \\
+                6                & 19     \\
+                7                & 22     \\
+                8                & 25     \\
+                9                & 28     \\
+                10               & 31     \\
+                11               & 35     \\
+                12               & 39     \\
+                13               & 44     \\
+                14               & 50     \\
+                15               & 56     \\
+                16               & 63     \\
+                17               & 70     \\
+                18               & 78    \\
+                19               & 88    \\
+                20               & 100    \\
+                21               & 112    \\
+                22               & 125    \\
+                23               & 140    \\
+                24               & 155    \\
+                25\plus\fn{1}    & \tdash & \tdash \\
+            \end{dtabularx}
+            1. For every point beyond 24, a creature increases its maximum hit points by 15.
+        \end{dtable}
 
         \parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of the creature being damaged.
         When lose a single hit point from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight.
@@ -1091,10 +1120,10 @@ It defines how attributes work and explains how to make attacks in combat.
         Some abilities specify an unusual method of determining your power with them in their descriptions.
 
         \parhead{Magical Abilities}
-        Your power with magical abilities is normally equal to your Willpower.
+        Your power with magical abilities is normally equal to half your Willpower.
 
         \parhead{Mundane Abilities}
-        Your power with mundane abilities is normally equal to your Strength.
+        Your power with mundane abilities is normally equal to half your Strength.
 
     \subsection{Damage}\label{Damage}
         Many attacks deal damage when they hit.
@@ -1106,6 +1135,37 @@ It defines how attributes work and explains how to make attacks in combat.
         Likewise, you take damage whenever anything deals damage to you.
         However, you only lose hit points if the damage is not mitigated by your \glossterm{resistances}.
         Many special abilities require the target to lose hit points from a damaging attack, which does not happen if the damage is resisted.
+
+        \subsubsection{Dice Increments}\label{Dice Increments}
+            Many attacks deal damage based on the result rolled from a pool of dice.
+            Many abilities can increase or decrease your damage.
+            Some modifiers add or subtract flat values from the damage you deal.
+            Others add or subtract \glossterm{dice increments}.
+            Increasing by one die increment is written as \plus1d, and decreasing by one die increment is written as \minus1d.
+            Damage dice change in size according to the following pattern:
+            \begin{itemize}
+                \item 1 damage (minimum)
+                \item 1d2
+                \item 1d3
+                \item 1d4
+                \item 1d6
+                \item 1d8
+                \item 1d10
+                \item 2d6
+                \item 2d8
+                \item 2d10
+                \item 4d6
+                \item 4d8
+                \item 4d10
+                \item 5d10
+                \item 6d10
+                \item 7d10
+                \item 8d10
+            \end{itemize}
+
+            For each die increment that increases the damage, move one space down the list.
+            Likewise, for each die increment that decreases the damage, move one space up the list.
+            After the damage dice reach 8d10, each additional die increment simply adds an additional 10 flat damage.
 
     \subsection{Defenses}\label{Defenses}
         Usually, when you are attacked, the attacker has to make an \glossterm{attack roll} against a specific defense.
@@ -1451,10 +1511,12 @@ It defines how attributes work and explains how to make attacks in combat.
         \end{freeability}
 
         \subsubsection{Strike Damage}\label{Strike Damage}
-            The damage you deal with a single \glossterm{strike} is equal to the weapon's damage die \add your \glossterm{power} with the strike.
-            Many abilities modify the weapon damage die or the power you use to determine damage with strikes.
+            When you deal damage with a strike, you roll your weapon's damage dice and add your \glossterm{power} with the strike to get the total damage.
+            Almost all strikes are considered \glossterm{mundane} abilities, so you would normally use your \glossterm{power} with mundane abilities to determine their damage.
+
             Weapon damage dice are defined in the Equipment chapter (see \pcref{Weapons}).
-            Almost all strikes are considered \glossterm{mundane} abilities, so you would use your \glossterm{power} with mundane abilities to determine their damage.
+            Some abilities modify your weapon damage dice with \glossterm{dice increments}, such as by granting you a \plus1d bonus to your weapon's damage dice.
+            For details about dice increments, see \pcref{Dice Increments}.
 
         \subsubsection{Secondary Strike Targets}\label{Secondary Strike Targets}
             Some abilities allow you to make strikes that affect secondary targets in addition to the primary target or targets.
@@ -1585,7 +1647,6 @@ It defines how attributes work and explains how to make attacks in combat.
             You regain half of your maximum \glossterm{hit points} (rounded down).
             In addition, you remove all \glossterm{conditions} affecting you.
             This cannot remove a condition applied during the current round.
-            If your new hit point total is at least half your maximum hit points, you immediately stop being \glossterm{bloodied}.
 
             After you use this ability, you cannot use it again until you take a \glossterm{short rest}.
             Because this is a \glossterm{Swift} ability, this healing and condition removal happens before you suffer the effects of attacks in the current phase.
@@ -1910,10 +1971,9 @@ It defines how attributes work and explains how to make attacks in combat.
         When you gain a level, the following things happen:
         \begin{itemize}
             \item Your \glossterm{attributes} increase (see \pcref{Increasing Attributes With Level})
-            \item Your skill modifiers usually increase by 1 (see \pcref{Skill Modifier})
-            \item Your \glossterm{power} with both \glossterm{mundane} and \glossterm{magical} abilities increases by 1 (see \pcref{Power}).
-            \item Your \glossterm{bleed resistance} and \glossterm{vital resistance} increase (see \tref{Resistance Values}).
+            \item Your \glossterm{hit points} increase (see \tref{Hit Points}).
             \item Your \glossterm{accuracy} increases by 1 (see \pcref{Accuracy})
             \item All of your \glossterm{defenses} increase by 1 (see \pcref{Defenses})
             \item You gain an additional \glossterm{archetype rank} (see \pcref{Archetypes})
+            \item Some of your skill modifiers increase by 1 (see \pcref{Skill Modifier})
         \end{itemize}
