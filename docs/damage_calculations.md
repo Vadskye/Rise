@@ -79,25 +79,23 @@ Assume 0 starting Willpower and a single-target damage spell.
 Assume 3 starting Willpower and a single-target damage spell.
 
 Standard power upgrade levels:
-* +2 at level 5 from rank 3 spells
-* +1 at level 6 from wellspring
-* +2 at level 9 from magic implement
-* +2 at level 11 from rank 5 spells
-* +1 at level 14 from wellspring
-* +2 at level 17 from rank 7 spells
-* +2 at level 18 from magic implement
-* +1 at level 20 to make even/odd work out better
- 
-so at level 20, a standard spellcaster would expect to have:
-(level1 6) + (levels 19) + (bonuses 12) = 37 effective power.
+* +2 at level 4 from magic implement
+* +half level at level 7 from wellspring
+* +3 at level 10 from magic implement (going to +5 total to stay at half level)
+* +half level at level 16 from greater wellspring (going to +level total)
+* +5 at level 19 from magic implement (going to +10 total)
+
+By 20th level, a high damage spellcaster adds their level * 2.5 to their power.
 
 We use the following standard checkpoints:
 
-* 1st level: 6 power = 2d6 damage
-* 5th level: 12 power = 4d6 damage
-* 10th level: 20 power = 6d10 damage
-* 15th level: 28 power = 8d10 + 20
-* 20th level: 38 power = 8d10 + 80
+* level 2: 7 = 1d10 + 2 + 0
+* level 5: 16 = 2d10 + 5 + 2
+* level 8: 24 = 3d10 + 8 + 6
+* level 11: 33 = 4d10 + 11 + 10
+* level 14: 41 = 5d10 + 14 + 12
+* level 17: 50 = 6d10 + 17 + 22
+* level 20: 58 = 7d10 + 20 + 30
 
 ### Low damage attack
 Assume 3 starting Willpower and an AOE damage spell (similar to Certain Strike, etc.). Expected power at level 1 is:
