@@ -235,7 +235,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Bbn}[2]{Savage Precision} You can use your Strength in place of your Perception to determine your \glossterm{accuracy} with the \textit{dirty trick}, \textit{disarm}, \textit{grapple}, \textit{overrun}, \textit{shove}, and \textit{trip} abilities, as well as with grapple actions (see \pcref{Special Combat Abilities}, and \pcref{Grapple Actions}).
         In addition, you gain a \plus2 bonus to \glossterm{accuracy} with those abilities.
 
-        \cf{Bbn}[3]{Savage Force} You gain a \plus1d bonus to your damage dice with all weapons.
+        \cf{Bbn}[3]{Savage Force} You gain a \plus1d bonus to your damage with all weapons.
 
         \cf{Bbn}[4]{Greater Fast Movement} The speed bonus from your \textit{fast movement} ability increases to \plus20 feet.
         In addition, you gain a \plus2 bonus to Reflex defense.
@@ -270,15 +270,15 @@ This choice determines a great deal about your character's abilities.
             \cf{Bbn}[2]{Maneuver Rank} You become a rank 2 primal maneuverist.
             This gives you access to maneuvers that require a minimum rank of 2.
 
-            \cf{Bbn}[2]{Primal Force} You gain a \plus1d bonus to your damage dice with all weapons.
+            \cf{Bbn}[2]{Primal Force} You gain a \plus1d bonus to your damage with all weapons.
         }
 
         {
             \cf*{Bbn}[3]{Maneuver Rank} You become a rank 3 primal maneuverist.
             This gives you access to maneuvers that require a minimum rank of 3 and can improve the effectiveness of your existing maneuvers.
 
-            \cf{Bbn}[3]{Greater Primal Might} The bonus from your \textit{primal might} ability increases to \plus2.
-
+            \cf{Bbn}[3]{Glancing Strikes} Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
+            This is called a \glossterm{glancing blow}.
         }
 
         {
@@ -300,7 +300,7 @@ This choice determines a great deal about your character's abilities.
             \cf*{Bbn}[6]{Maneuver Rank} You become a rank 6 primal maneuverist.
             This gives you access to maneuvers that require a minimum rank of 6 and can improve the effectiveness of your existing maneuvers.
 
-            \cf{Bbn}[6]{Supreme Primal Might} The bonuses from your \textit{primal might} ability increase to \plus3.
+            \cf{Bbn}[6]{Greater Primal Might} The bonuses from your \textit{primal might} ability increase to \plus2.
         }
 
         {
@@ -834,8 +834,9 @@ This choice determines a great deal about your character's abilities.
 
         \subsubsection{War}
             \parhead{Gift} You gain proficiency with heavy armor and an additional \glossterm{weapon group} of your choice.
-            \parhead{Aspect} You reduce your \glossterm{focus penalty} by 1.
-            \parhead{Essence} Whenever you deal damage to an ally with a \glossterm{magical} ability, that damage is considered \glossterm{environmental damage}.
+            \parhead{Aspect} Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
+            This is called a \glossterm{glancing blow}.
+            \parhead{Essence} You deal half damage to your allies with \glossterm{magical} abilities.
             \parhead{Mastery} You gain a bonus equal to your rank in this archetype to your \glossterm{power} with all abilities.
 
         \subsubsection{Water}
@@ -1107,10 +1108,10 @@ This choice determines a great deal about your character's abilities.
             \begin{freeability}{Form of the Bear}
                 You gain a \plus2 bonus to Fortitude defense.
                 In addition, your mouth and hands transform, granting you bite and claw \glossterm{natural weapons}.
-                The bite deals \plus0d damage, and the claws deal \minus1d damage.
+                The bite deals 1d8 damage, and the claws deal 1d6 damage.
 
                 \rankline
-                \rank{3} You gain a \plus1d bonus to your damage dice with natural weapons.
+                \rank{3} You gain a \plus1d bonus to your damage with natural weapons.
                 \rank{5} The Fortitude bonus increases to \plus4.
                 \rank{7} The bonus increases to \plus2d.
             \end{freeability}
@@ -1118,7 +1119,7 @@ This choice determines a great deal about your character's abilities.
             \begin{freeability}{Form of the Bull}
                 You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{shove} ability (see \pcref{Shove}, and \pcref{Overrun}).
                 In addition, your head transforms, granting you a ram \glossterm{natural weapon}.
-                The weapon deals \plus0d damage, and has the Forceful weapon tag (see \pcref{Weapon Tags}).
+                The weapon deals 1d8 damage, and has the Forceful weapon tag (see \pcref{Weapon Tags}).
 
                 \rankline
                 \rank{3} Your penalties to accuracy and defenses from the \textit{charge} ability are reduced by 1.
@@ -1130,7 +1131,7 @@ This choice determines a great deal about your character's abilities.
             \begin{freeability}{Form of the Constrictor}
                 You gain a \plus2 bonus to \glossterm{accuracy} with the Grapple ability and all grapple actions (see \pcref{Grapple}).
                 In addition, you gain a constrict \glossterm{natural weapon}.
-                This weapon deals \plus1d damage, and it has the Grappling weapon tag (see \pcref{Weapon Tags}).
+                This weapon deals 1d10 damage, and it has the Grappling weapon tag (see \pcref{Weapon Tags}).
                 It can only be used against a foe you are grappling with.
 
                 \rankline
@@ -1141,7 +1142,7 @@ This choice determines a great deal about your character's abilities.
 
             \begin{freeability}{Form of the Fish}
                 You gain a \glossterm{swim speed} equal to your \glossterm{base speed}.
-                In addition, you gain a bite \glossterm{natural weapon} that deals \plus0d damage.
+                In addition, you gain a bite \glossterm{natural weapon} that deals 1d8 damage.
 
                 \rankline
                 \rank{3} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
@@ -1163,7 +1164,7 @@ This choice determines a great deal about your character's abilities.
 
             \begin{freeability}{Form of the Hound}
                 You gain the \glossterm{scent} ability.
-                In addition, you gain a bite \glossterm{natural weapon} that deals \plus0d damage.
+                In addition, you gain a bite \glossterm{natural weapon} that deals 1d8 damage.
 
                 \rankline
                 \rank{3} You gain the ability to move on all four limbs.
@@ -1177,7 +1178,7 @@ This choice determines a great deal about your character's abilities.
             % Seems boring? What abilities would make sense?
             \begin{freeability}{Form of the Monkey}
                 You gain a \glossterm{climb speed} equal to your \glossterm{base speed}.
-                In addition, you gain a bite \glossterm{natural weapon} that deals \plus0d damage.
+                In addition, you gain a bite \glossterm{natural weapon} that deals 1d8 damage.
 
                 \rankline
                 \rank{3} You grow a tail that you can use as a free hand for the purpose of climbing.
@@ -1187,7 +1188,7 @@ This choice determines a great deal about your character's abilities.
 
             \begin{freeability}{Form of the Mouse}
                 You gain a \plus2 bonus to the Flexibility and Stealth skills.
-                In addition, you gain a bite \glossterm{natural weapon} that deals \plus0d damage.
+                In addition, you gain a bite \glossterm{natural weapon} that deals 1d8 damage.
                 
                 \rankline
                 \rank{3} When you use this wild aspect, you can choose to shrink by one \glossterm{size category}.
@@ -1207,7 +1208,7 @@ This choice determines a great deal about your character's abilities.
             \begin{freeability}{Form of the Viper}
                 You gain a \glossterm{climb speed} equal to half your \glossterm{base speed}.
                 You do not need to use your hands to climb in this way.
-                In addition, you gain a bite \glossterm{natural weapon} that deals \plus0d damage.
+                In addition, you gain a bite \glossterm{natural weapon} that deals 1d8 damage.
 
                 \rankline
                 \rank{3} When a creature takes damage from your bite \glossterm{natural weapon}, it is poisoned.
@@ -1220,12 +1221,12 @@ This choice determines a great deal about your character's abilities.
 
             \begin{freeability}{Form of the Wolf}
                 You gain a \plus1 bonus to \glossterm{accuracy} against \glossterm{overwhelmed} creatures.
-                In addition, you gain a bite \glossterm{natural weapon} that deals \plus0d damage.
+                In addition, you gain a bite \glossterm{natural weapon} that deals 1d8 damage.
 
                 \rankline
-                \rank{3} You gain a \plus1d bonus to your damage dice with natural weapons.
+                \rank{3} You gain a \plus1d bonus to your damage with natural weapons.
                 \rank{5} You are treated as one \glossterm{size category} larger for the purpose of determining \glossterm{overwhelm penalties} you inflict on other creatures.
-                \rank{7} The bonus increases to \plus2d.
+                \rank{7} The damage bonus increases to \plus2d.
             \end{freeability}
 
             \begin{freeability}{Myriad Form}
@@ -1264,6 +1265,9 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Drd}[3]{Greater Shifting Defense}
         The bonus from your \textit{shifting defense} ability increases to \plus2.
+
+        \cf{Drd}[3]{Glancing Strikes} Whenever you miss by 2 or less with a \glossterm{strike} using a \glossterm{natural weapon}, the target takes half damage from the strike.
+        This is called a \glossterm{glancing blow}.
 
         \cf{Drd}[4]{Wild Aspect}[Magical]
         You learn an additional \textit{wild aspect}.
@@ -1626,7 +1630,7 @@ This choice determines a great deal about your character's abilities.
         The penalty reduction from your \textit{armor expertise} ability increases to 2.
         In addition, you treat body armor were one usage class lighter than normal when doing so would be beneficial for you (see \pcref{Armor Usage Classes}).
 
-        \cf{Ftr}[4]{Weapon Expertise} You gain a \plus1d bonus to your damage dice with all weapons.
+        \cf{Ftr}[4]{Weapon Expertise} You gain a \plus1d bonus to your damage with all weapons.
 
         \cf{Ftr}[5]{Greater Equipment Efficiency} The number of attunement points you gain from your \textit{efficient equipment} ability increases to two.
         In addition, you can use the ability to attune to any magic item, not just weapons and armor.
@@ -1658,14 +1662,15 @@ This choice determines a great deal about your character's abilities.
             \cf{Ftr}[2]{Maneuver Rank} You become a rank 2 martial maneuverist.
             This gives you access to maneuvers that require a minimum rank of 2.
 
-            \cf{Ftr}[2]{Martial Force} You gain a \plus1d bonus to your weapon's damage dice.
+            \cf{Ftr}[2]{Martial Force} You gain a \plus1d bonus to your damage with all weapons.
         }
 
         {
             \cf*{Ftr}[3]{Maneuver Rank} You become a rank 3 martial maneuverist.
             This gives you access to maneuvers that require a minimum rank of 3 and can improve the effectiveness of your existing maneuvers.
 
-            \cf{Ftr}[3]{Greater Defensive Expertise} The bonus from your \textit{defensive expertise} ability increases to \plus2.
+            \cf{Ftr}[3]{Glancing Strikes} Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
+            This is called a \glossterm{glancing blow}.
         }
 
         {
@@ -1687,7 +1692,7 @@ This choice determines a great deal about your character's abilities.
             \cf*{Ftr}[6]{Maneuver Rank} You become a rank 6 martial maneuverist.
             This gives you access to maneuvers that require a minimum rank of 6 and can improve the effectiveness of your existing maneuvers.
 
-            \cf{Ftr}[6]{Supreme Defensive Expertise} The bonus from your \textit{defensive expertise} ability increase to \plus3.
+            \cf{Ftr}[6]{Greater Defensive Expertise} The bonus from your \textit{defensive expertise} ability increases to \plus2.
         }
 
         {
@@ -1871,14 +1876,15 @@ This choice determines a great deal about your character's abilities.
             \cf{Mnk}[2]{Maneuver Rank} You become a rank 2 esoteric maneuverist.
             This gives you access to maneuvers that require a minimum rank of 2.
 
-            \cf{Mnk}[2]{Esoteric Force} You gain a \plus1d bonus to your damage dice with all weapons.
+            \cf{Mnk}[2]{Esoteric Force} You gain a \plus1d bonus to your damage with all weapons.
         }
 
         {
             \cf*{Mnk}[3]{Maneuver Rank} You become a rank 3 esoteric maneuverist.
             This gives you access to maneuvers that require a minimum rank of 3 and can improve the effectiveness of your existing maneuvers.
 
-            \cf{Mnk}[3]{Greater Esoteric Fluidity} The bonus from your \textit{esoteric fluidity} ability increases to \plus2.
+            \cf{Mnk}[3]{Glancing Strikes} Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
+            This is called a \glossterm{glancing blow}.
         }
 
         {
@@ -1900,7 +1906,7 @@ This choice determines a great deal about your character's abilities.
             \cf*{Mnk}[6]{Maneuver Rank} You become a rank 6 esoteric maneuverist.
             This gives you access to maneuvers that require a minimum rank of 6 and can improve the effectiveness of your existing maneuvers.
 
-            \cf{Mnk}[6]{Supreme Esoteric Fluidity} The bonus from your \textit{esoteric fluidity} ability increases to \plus3.
+            \cf{Mnk}[6]{Greater Esoteric Fluidity} The bonus from your \textit{esoteric fluidity} ability increases to \plus2.
         }
 
         {
@@ -2361,10 +2367,15 @@ This choice determines a great deal about your character's abilities.
             Otherwise, you gain a bonus to your \glossterm{power} with the strike equal to twice your rank in this archetype.
         \end{freeability}
 
-        \cf{Pal}[2]{Zealous Fixation} Whenever you hit a creature with a \glossterm{strike}, you ignore \glossterm{concealment} and all \glossterm{miss chances} against that creature with your attacks until you take a \glossterm{short rest} or until you hit a different creature with a strike.
+        \cf{Pal}[2]{Zealous Offense} You gain a \plus1 bonus to \glossterm{accuracy}.
+
+        \cf{Pal}[3]{Glancing Strikes} Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
+        This is called a \glossterm{glancing blow}.
+
+        \cf{Pal}[3]{Zealous Fixation} Whenever you hit a creature with a \glossterm{strike}, you ignore \glossterm{concealment} and all \glossterm{miss chances} against that creature with your attacks until you take a \glossterm{short rest} or until you hit a different creature with a strike.
         If you hit multiple creatures with the same strike, you may freely choose which creature to fixate on with this ability.
 
-        \cf{Pal}[3]{Zealous Purge} You can use your \textit{zealous purge} ability as a standard action.
+        \cf{Pal}[4]{Zealous Purge} You can use your \textit{zealous purge} ability as a standard action.
         \begin{freeability}{Zealous Purge}
             Make a \glossterm{strike}.
             You add half your \glossterm{power} to damage with the strike instead of your full power.
@@ -2374,13 +2385,13 @@ This choice determines a great deal about your character's abilities.
             It can freely choose which effects it releases its attunement to.
         \end{freeability}
 
-        \cf{Pal}[4]{Zealous Offense} You gain a \plus1 bonus to \glossterm{accuracy}.
-        
-        \cf{Pal}[4]{Greater Smite} You gain a \plus1d bonus to damage with the strike from your \textit{smite} ability.
+        \cf{Pal}[4]{Greater Smite} You gain a \plus1d bonus to your damage with the strike from your \textit{smite} ability.
 
-        \cf{Pal}[5]{Greater Zealous Exertion} The bonus from your \textit{zealous exertion} ability increases to \plus5.
+        \cf{Pal}[5]{Greater Zealous Offense} The bonus from your \textit{zealous offense} ability increases to \plus2.
 
-        \cf{Pal}[6]{Pass Judgment}[Magical] You can use the \textit{pass judgment} ability as a \glossterm{minor action}.
+        \cf{Pal}[6]{Greater Zealous Exertion} The bonus from your \textit{zealous exertion} ability increases to \plus5.
+
+        \cf{Pal}[7]{Pass Judgment}[Magical] You can use the \textit{pass judgment} ability as a \glossterm{minor action}.
         \begin{freeability}{Pass Judgment}
             \target{One creature within \rnglong range}
             The target is treated as if it had the alignment opposed to your devoted alignment for the purpose of all abilities.
@@ -2392,7 +2403,6 @@ This choice determines a great deal about your character's abilities.
             Persecution of those who share your ideals can lead you to fall and become an ex-paladin.
         \end{freeability}
 
-        \cf{Pal}[7]{Greater Zealous Offense} The bonus from your \textit{zealous offense} ability increases to \plus2.
 
         \cf{Pal}[7]{Supreme Smite} The bonus from your \textit{greater smite} ability increases to \plus2d.
 
@@ -2653,7 +2663,7 @@ This choice determines a great deal about your character's abilities.
         In addition, the bonus to Fortitude defense from that ability increases to \plus2.
         Finally, you gain a \plus1 bonus to your \glossterm{fatigue tolerance} (see \pcref{Fatigue Tolerance}).
 
-        \cf{Rgr}[4]{Greater Quarry} You gain a \plus1d bonus to your damage dice with all weapons with \glossterm{strikes} against your \textit{quarry}.
+        \cf{Rgr}[4]{Greater Quarry} You gain a \plus1d bonus to your damage with \glossterm{strikes} against your \textit{quarry}.
 
         \cf*{Rgr}[5]{Hunting Style}
         You learn an additional \textit{hunting style}.
@@ -2694,7 +2704,8 @@ This choice determines a great deal about your character's abilities.
             \cf*{Rgr}[3]{Maneuver Rank} You become a rank 3 wild maneuverist.
             This gives you access to maneuvers that require a minimum rank of 3 and can improve the effectiveness of your existing maneuvers.
 
-            \cf{Rgr}[3]{Greater Wild Senses} The bonus from your \textit{wild senses} ability increases to \plus2.
+            \cf{Rgr}[3]{Glancing Strikes} Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
+            This is called a \glossterm{glancing blow}.
         }
 
         {
@@ -2716,7 +2727,7 @@ This choice determines a great deal about your character's abilities.
             \cf*{Rgr}[6]{Maneuver Rank} You become a rank 6 wild maneuverist.
             This gives you access to maneuvers that require a minimum rank of 6 and can improve the effectiveness of your existing maneuvers.
 
-            \cf{Rgr}[6]{Supreme Wild Senses} The bonuses from your \textit{wild senses} ability increase to \plus3.
+            \cf{Rgr}[6]{Greater Wild Senses} The bonus from your \textit{wild senses} ability increases to \plus2.
         }
 
         {
@@ -3055,7 +3066,8 @@ This choice determines a great deal about your character's abilities.
             \cf*{Rog}[3]{Maneuver Rank} You become a rank 3 trick maneuverist.
             This gives you access to maneuvers that require a minimum rank of 3 and can improve the effectiveness of your existing maneuvers.
 
-            \cf{Rog}[3]{Greater Tricky Finesse} The bonus from your \textit{tricky finesse} ability increases to \plus2.
+            \cf{Rog}[3]{Glancing Strikes} Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
+            This is called a \glossterm{glancing blow}.
         }
 
         {
@@ -3070,14 +3082,14 @@ This choice determines a great deal about your character's abilities.
             \cf*{Rog}[5]{Maneuver Rank} You become a rank 5 trick maneuverist.
             This gives you access to maneuvers that require a minimum rank of 5 and can improve the effectiveness of your existing maneuvers.
 
-            \cf{Rog}[5]{Tricky Force} All \glossterm{strikes} you make gain bonus damage dice equal to your weapon's damage dice.
+            \cf{Rog}[5]{Tricky Force} You gain a \plus1d bonus to your damage with all weapons.
         }
 
         {
             \cf*{Rog}[6]{Maneuver Rank} You become a rank 6 trick maneuverist.
             This gives you access to maneuvers that require a minimum rank of 6 and can improve the effectiveness of your existing maneuvers.
 
-            \cf{Rog}[6]{Supreme Tricky Finesse} The bonus from your \textit{tricky finesse} ability increases to \plus3.
+            \cf{Rog}[6]{Greater Tricky Finesse} The bonus from your \textit{tricky finesse} ability increases to \plus2.
         }
 
         {
