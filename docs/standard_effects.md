@@ -1,27 +1,75 @@
 # Standard spell and maneuver effects
 
-## Ability scaling
+## Philosophy and guidelines
 
-In general, automatic rank upgrades should be similar to to a normal spell of the higher level, but
-slightly weaker. In general, high level spells should come with additional narrative effects, small
-bonuses, and half-rank upgrades to make them more appealing and compensate for the downside of using
-abilities that can't be upgraded. This is especially true for damaging effects, since
-debuff abilities already have nonlinear scaling in a way that pure damage spells do not.
+### Rank upgrades and ability scaling
 
-This also means that some class abilities may need small scaling bumps to ensure that they stay
-relevant with high level spells and maneuvers. This mainly applies to pure damage abilities like
-Sneak Attack or Smite.
+#### Context
 
-## Range balancing
+In general, character power should increase nonlinearly over time. Part of this comes from damage,
+which should double every 6 levels. For this reason, the overall power of active abilities should
+increase nonlinearly over time in a way that's tricky to represent with automatic rank upgrades.
+
+In addition, players should feel excited about getting access to new abilities. If you use a rank 1
+spell from level 1 through level 20, you've lost some of the excitement of novelty from acquiring
+new abilities.
+
+More complex rank upgrades can solve this problem, but in general rank upgrades can be tricky. Each
+rank upgrades creates an unwritten new spell that comes from combining the original text of the
+spell with the text of the rank upgrade. If you layer multiple rank upgrades of even moderate
+complexity, it can be hard to understand the overall effect of the new spell.
+
+#### Scaling guidelines
+
+Each automatic rank upgrade should be enough to keep the spell interesting for the next
+few ranks, but it should gradually off in value over time relative to other options. Rank upgrades
+should be minimally complicated, and generally limited to increasing damage, area, and so on. If a
+spell has multiple explicit rank upgrades, each successive rank upgrade should revise the previous
+rank upgrade, rather than having each one layer on additional complexity to the effect.
+
+Each unique spell or ability should have an upgraded version either 2 or 3 ranks ahead to ensure a
+fairly consistent progression. These upgrades should avoid being simply "Foo, Greater"; they should
+push the effect in more specific and narratively interesting directions, since rank 1 effects tend
+to be fairly limited in scope and complexity by design. It's reasonable to have two different
+upgrades for the same basic effect that push it in different directions.
+
+Class abilities like Sneak Attack or Smite need unusually powerful rank upgrade mechanics to
+compensate for their lack of replacement abilities.
+
+#### Spell vs maneuver scaling
+
+Spells have very few mechanics for increasing their base damage dice in archetypes and feats. In
+general, their only scaling comes from the spells themselves, so the rank upgrades carry a lot of
+the weight for keeping them relevant. Therefore, they increase at +1d per rank.
+
+Maneuvers have a more complicated damage situation. They should feel different from spells, and
+there are several abilities that give ordinary strikes that should have some level of scaling into
+higher levels. Therefore, martial classes need to grant more static bonuses to damage with all
+strikes and mundane abilities. That leaves relatively little room for rank upgrades to damaging
+maneuvers.
+
+#### Rank text references
+
+References to your rank should be isolated to the rank upgrade text where possible. If abilities
+reference rank too directly in their core description, it can be hard to look at a new ability and
+figure out what its actual effect is.
+
+#### Cantrip scaling
+
+Cantrips often have weird narrative abilities that aren't a good fit for proper spells. No one wants
+invest a high level spell known into "Create Lots of Water". Therefore, cantrips should have more
+aggressive rank scaling to keep them relevant at higher levels.
+
+### Range balancing
 
 Standard range = Med range for spell, melee/ranged for martial
 
 Martials have five delivery options:
 * Sword and shield = +2 Armor
-* 2h sword = +1d damage
+* 2h melee = +1d damage, 1.5x power
+* Dual wield light = +2 accuracy, -1d, 1.5x power
 * Bow = Med+ range
 * Dual wield medium = +0.5 accuracy
-* Dual wield light = +2.5 accuracy, -1d damage
 
 This means that an effect martials can get at weapon range is equivalent to a Medium range spell.
 
@@ -35,31 +83,33 @@ The way the system currently represents this is by giving spells an extra +1 lev
 AOE effects.
 
 ### Radius from self effects
+
 Normally, a radius is a stronger effect than a line or cone because it hits a larger area.
 However, when using a radius from self, it's actually weaker because it removes your ability to avoid hitting allies.
 For this reason, all radius from self abilities can get the "exclude enemies" effect at no extra
 cost.
 
-## Accuracy vs. damage tradeoffs
+### Accuracy vs. damage tradeoffs
 
-In general, +1 accuracy = +1 damage. However, there are exceptions:
+Further testing is needed to compare accuracy and damage. It seems plausible that +1 accuracy = +2d
+damage in general. In any case, there are some exceptions:
 * For AOE damage effects, damage penalties can make them pointless, while accuracy penalties make
-  them still useful against swarms of weak enemies
+  them still useful against swarms of weak enemies. Therefore:
   * AOE damage effects should generally have accuracy penalties instead of damage penalties
   * AOE damage effects should generally gain damage bonuses instead of accuracy bonuses
 * For combination damage/condition effects, damage penalties still allow the condition to be
-  applied, while accuracy penalties make the whole ability likely to be useless
+  applied, while accuracy penalties make the whole ability likely to be useless. Therefore:
   * Damage/condition effects should generally have damage penalties instead of accuracy penalties
   * Damage/condition effects should generally have accuracy bonuses instead of damage bonuses
 
-## Focus spells vs maneuvers
+### Focus spells vs maneuvers
 
 Maneuvers pay a two-rank penalty in their effects to make up for the fact that they don't have the
 Focus tag.
 Spells cost +4 levels to remove the Focus tag, because if they were able to remove the Focus tag at
 no relative level cost then there would be no reason to have maneuvers.
 
-## Non-choice effects
+### Non-choice effects
 
 Non-choice effects gain a two-rank bonus to their effects relative to choice-based effects like
 spells and maneuvers.
@@ -69,7 +119,7 @@ invests an insight point or two into healing spells.
 Non-choice effects should generally not have the Focus tag, because the total +4 level difference
 could give access to powerful abilities dangerously early for dedicated characters.
 
-## Condition ranks
+### Condition ranks
 Note: This is duplicated in the Metacaster feat.
 
 * Rank 0
@@ -80,7 +130,7 @@ Note: This is duplicated in the Metacaster feat.
   * List: dazed, dazzled, sickened, slowed
 * Rank 2
   * Generally give -4 to a category (accuracy/defenses)
-  * List: exhausted, frightened, nauseated, generic -2 to all, ignited (move action to remove), stunned
+  * List: exhausted, frightened, nauseated, generic -2 to all, ignited (move action to remove), stunned, fighting underwater
 * Rank 3
   * Generally cause partial action denial
   * List: decelerated, confused, blinded, disoriented, ignited, immobilized, panicked
@@ -88,15 +138,71 @@ Note: This is duplicated in the Metacaster feat.
   * Generally cause complete action denial
   * List: Asleep, paralyzed
 
-### End of next round effects
+#### End of next round effects
 
 A enemies-only rank 1 debuff until eonr with the same rank 1 condition on a crit
 is -4 ranks relative to a standard damage attack.
 
+### Effect categories
+
+There are three basic types of effects:
+
+* Softener: These effects are designed to weaken strong targets so they are easier to defeat.
+They tend to have accuracy bonuses and deal small amounts of damage or apply debuffs that work
+through resistances.
+  * Examples: Certain Strike
+* Damage: These effects work at any stage of a fight. They reduce resistances and finish off weak
+  targets, but aren't as efficient at weakening strong targets as softener effects and they aren't
+  as efficient at finishing off weakened targets as finisher effects.
+* Finisher: These effects only work later in a fight, either due to lowered defenses or lowered
+  resistances. They may inflict strong debuffs or unusually high damage values, but with accuracy
+  penalties or, more commonly, requirements to only work on targets without resistances. Finisher
+  effects may deal incidental damage to check that the target has no resistances.
+
+### Standard damage categories
+
+There are three standard categories of damage: high, medium, and low.
+Broadly, Medium corresponds to 75% of the damage of High, and Low is about 50%.
+AOE attacks should use Medium, since splitting damage between multiple targets is tactically worse
+than doing the same amount of damage to a single target, and they're also useless in some
+situations.
+
+* Strike-based attacks:
+  * High: (weapon damage dice) + (power)
+  * Medium: (weapon damage dice) + (half power)
+    * This uses half power instead of -2d because large weapons feel like they should generally be
+      better at AOE. If the weapon damage dice were reduced but you still added full power, it would
+      be worse for large weapons than for small weapons, which seems odd. Large weapons should
+      generally be better for damage, including AOE, since small weapons are generally better for
+      applying conditions and special effects.
+  * Low: (weapon damage dice -2d) + (half power)
+* Non-strike-based attacks:
+  * High: (1d8 + 1d per rank) + (power)
+  * Medium: (1d6 + 1d per rank) + (half power)
+  * Low: (1d4 + 1d per rank)
+
+For spells, standard damage is equal to:
+
+
 ## Stock effects
 
-For effects that only deal damage, "deal standard damage" can be replaced with "inflict r1
-condition".
+### Strike-based
+
+Rank 1 Focus/non-upgrading, Rank 3 maneuver:
+* Softener:
+  * 
+* Finisher:
+  * -2d, half power: r2 condition if lose HP
+
+### Non-strike-based
+
+Rank 1 Focus/non-upgrading, Rank 3 maneuver:
+* Softener:
+  * 
+* Finisher:
+  * -2d, no power: r2 condition if lose HP
+
+
 
 Rank 1 non-Focus:
 * AOE:
@@ -217,6 +323,11 @@ Rank 8 Focus:
 * +1.5 levels: +1a/+1d
 * Shared:
 * +0 levels: trade -1a/-1d for minor benefit
+* +1 levels: add glancing blow mechanic
+  * Mathematically, this should be +2 levels to match +1 accuracy. However, at high levels the game
+    plays better if this effect is common, so discount it to incentivize people to choose it.
+  * This should not be found on spells below rank 3 to make sure the game plays differently at
+    different levels
 * +2 levels: +1a/+1d with other minor buff
 * +2 levels: +1 area size
 * +2 levels: +1 rank to condition
