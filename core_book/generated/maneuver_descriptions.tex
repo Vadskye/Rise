@@ -16,16 +16,15 @@ You take a \minus2d penalty to damage with the strike, and your \glossterm{power
 
 \lowercase{\hypertarget{maneuver:Demoralizing Battlecry}{}}\label{maneuver:Demoralizing Battlecry}
 \hypertarget{maneuver:Demoralizing Battlecry}{}
-\begin{freeability}[Rank 1]{Demoralizing Battlecry}[\glossterm{Emotion}]
-\targets{\glossterm{Enemies} in a \areamed radius from you.}
+\begin{freeability}[Rank 1]{Demoralizing Battlecry}[]
+\targets{\glossterm{Enemies} in a \areasmall radius from you.}
 Make an attack vs. Mental against each target.
-\hit Each target takes 1d6 sonic damage.
-Each target that loses hit points from this damage is \glossterm{frightened} by you as a \glossterm{condition}.
+\hit Each target takes a \minus2 penalty to defenses as a \glossterm{condition}.
 
 \rankline
-The damage increases by \plus1d for every rank beyond 1.
-
-
+\rank{3} The area increases to a \areamed radius.
+\rank{5} The area increases to a \arealarge radius.
+\rank{7} The area increases to a \areahuge radius.
 \parhead{Lists} Primal, Wild
 \end{freeability}
 \vspace{0.25em}
@@ -606,6 +605,25 @@ If the target has any \glossterm{resistance} against the strike, this strike dea
 
 
 
+\lowercase{\hypertarget{maneuver:Frightening Battlecry}{}}\label{maneuver:Frightening Battlecry}
+\hypertarget{maneuver:Frightening Battlecry}{}
+\begin{freeability}[Rank 3]{Frightening Battlecry}[\glossterm{Emotion}]
+\targets{\glossterm{Enemies} in a \areasmall radius from you.}
+Make an attack vs. Mental against each target.
+\hit Each target that has no remaining \glossterm{resistance} to sonic damage is \glossterm{frightened} by you as a \glossterm{condition}.
+\glance As above, except that the condition is removed at the end of the next round.
+
+\rankline
+\rank{5} The area increases to a \areamed radius.
+\rank{7} The area increases to a \arealarge radius.
+
+
+\parhead{Lists} Primal, Wild
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{maneuver:Ground Stomp}{}}\label{maneuver:Ground Stomp}
 \hypertarget{maneuver:Ground Stomp}{}
 \begin{freeability}[Rank 3]{Ground Stomp}[]
@@ -940,24 +958,6 @@ Make a melee \glossterm{strike} using a slashing or bludgeoning weapon against e
 
 
 
-\lowercase{\hypertarget{maneuver:Terrifying Battlecry}{}}\label{maneuver:Terrifying Battlecry}
-\hypertarget{maneuver:Terrifying Battlecry}{}
-\begin{freeability}[Rank 4]{Terrifying Battlecry}[\glossterm{Emotion}]
-\targets{\glossterm{Enemies} in a \areamed radius from you.}
-Make an attack vs. Mental against each target.
-\hit Each target takes 2d6 sonic damage.
-Each target that loses hit points from this damage is \glossterm{panicked} by you as a \glossterm{condition}.
-
-\rankline
-The damage increases by \plus1d for every rank beyond 4.
-
-
-\parhead{Lists} Primal, Wild
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{maneuver:Terrifying Blow}{}}\label{maneuver:Terrifying Blow}
 \hypertarget{maneuver:Terrifying Blow}{}
 \begin{freeability}[Rank 4]{Terrifying Blow}[\glossterm{Emotion}]
@@ -1001,24 +1001,6 @@ This strike costs one projectile per target.
 
 
 \parhead{Lists} Martial, Wild
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{maneuver:Demoralizing Bellow}{}}\label{maneuver:Demoralizing Bellow}
-\hypertarget{maneuver:Demoralizing Bellow}{}
-\begin{freeability}[Rank 5]{Demoralizing Bellow}[\glossterm{Emotion}]
-\targets{\glossterm{Enemies} in a \areahuge radius from you.}
-Make an attack vs. Mental against each target.
-\hit Each target takes 2d8 sonic damage.
-Each target that loses hit points from this damage is \glossterm{frightened} by you as a \glossterm{condition}.
-
-\rankline
-The damage increases by \plus1d for every rank beyond 5.
-
-
-\parhead{Lists} Primal, Wild
 \end{freeability}
 \vspace{0.25em}
 
@@ -1077,6 +1059,19 @@ It can freely choose which effect it releases its attunement to.
 
 
 \parhead{Lists} Esoteric, Trick
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{maneuver:Superior Strike}{}}\label{maneuver:Superior Strike}
+\hypertarget{maneuver:Superior Strike}{}
+\begin{freeability}[Rank 5]{Superior Strike}[]
+\targets{As chosen \glossterm{strike}}
+Make a \glossterm{strike} with a \plus1 bonus to \glossterm{accuracy} and a \plus1d bonus to damage.
+
+
+\parhead{Lists} Esoteric, Martial, Primal, Trick, Wild
 \end{freeability}
 \vspace{0.25em}
 
@@ -1160,6 +1155,21 @@ You take a \minus4 penalty to \glossterm{accuracy} with the strikes against any 
 \vspace{0.25em}
 
 
+
+\lowercase{\hypertarget{maneuver:Terrifying Battlecry}{}}\label{maneuver:Terrifying Battlecry}
+\hypertarget{maneuver:Terrifying Battlecry}{}
+\begin{freeability}[Rank 6]{Terrifying Battlecry}[\glossterm{Emotion}]
+\targets{\glossterm{Enemies} in a \areasmall radius from you.}
+Make an attack vs. Mental against each target.
+\hit Each target that has no remaining \glossterm{resistance} to sonic damage is \glossterm{panicked} by you as a \glossterm{condition}.
+\glance As above, except that the condition is removed at the end of the next round.
+
+
+\parhead{Lists} Primal, Wild
+\end{freeability}
+\vspace{0.25em}
+
+
 \subsection{Rank 7 Maneuvers}
 
 \lowercase{\hypertarget{maneuver:Earthshatter Stomp}{}}\label{maneuver:Earthshatter Stomp}
@@ -1174,6 +1184,19 @@ In addition, each Large or smaller creature is knocked \glossterm{prone}.
 
 
 \parhead{Lists} Primal
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{maneuver:Infallible Blow}{}}\label{maneuver:Infallible Blow}
+\hypertarget{maneuver:Infallible Blow}{}
+\begin{freeability}[Rank 7]{Infallible Blow}[]
+\targets{As chosen \glossterm{strike}}
+Make a \glossterm{strike} with a \plus3 bonus to \glossterm{accuracy}.
+
+
+\parhead{Lists} Esoteric, Martial, Primal, Trick, Wild
 \end{freeability}
 \vspace{0.25em}
 
@@ -1209,19 +1232,6 @@ If the target loses hit points from the strike, it loses additional hit points e
 
 
 
-\lowercase{\hypertarget{maneuver:Superior Strike}{}}\label{maneuver:Superior Strike}
-\hypertarget{maneuver:Superior Strike}{}
-\begin{freeability}[Rank 7]{Superior Strike}[]
-\targets{As chosen \glossterm{strike}}
-Make a \glossterm{strike} with a \plus1 bonus to \glossterm{accuracy} and a \plus1d bonus to damage.
-
-
-\parhead{Lists} Esoteric, Martial, Primal, Trick, Wild
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{maneuver:Thunderous Bellow}{}}\label{maneuver:Thunderous Bellow}
 \hypertarget{maneuver:Thunderous Bellow}{}
 \begin{freeability}[Rank 7]{Thunderous Bellow}[]
@@ -1242,6 +1252,19 @@ Make an attack vs. Fortitude against each target.
 \targets{As chosen \glossterm{strikes} (see text)}
 Make three melee \glossterm{strikes} with a \minus3 penalty to \glossterm{accuracy}.
 You take a \minus2d penalty to damage with all strikes, and your \glossterm{power} is \glossterm{halved}.
+
+
+\parhead{Lists} Esoteric, Martial, Primal, Trick, Wild
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{maneuver:Unstoppable Blow}{}}\label{maneuver:Unstoppable Blow}
+\hypertarget{maneuver:Unstoppable Blow}{}
+\begin{freeability}[Rank 7]{Unstoppable Blow}[]
+\targets{As chosen \glossterm{strike}}
+Make a \glossterm{strike} with a \plus3d bonus to damage.
 
 
 \parhead{Lists} Esoteric, Martial, Primal, Trick, Wild
