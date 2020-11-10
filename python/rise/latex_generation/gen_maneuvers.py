@@ -52,6 +52,7 @@ def generate_maneuvers():
             Make a \\glossterm<strike> with a +2 accuracy bonus.
             You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
         """,
+        rank=1,
         tags=[],
         lists=['Martial', 'Primal', 'Trick', 'Wild', 'Esoteric'],
     ))
@@ -62,6 +63,30 @@ def generate_maneuvers():
         target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a \\glossterm<strike> with a +1 bonus to \\glossterm<accuracy> and a +1d bonus to damage.
+        """,
+        rank=5,
+        tags=[],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Infallible Blow',
+        short_description='short_description',
+        target="As chosen \\glossterm<strike>",
+        effect_text="""
+            Make a \\glossterm<strike> with a +3 bonus to \\glossterm<accuracy>.
+        """,
+        rank=7,
+        tags=[],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Unstoppable Blow',
+        short_description='short_description',
+        target="As chosen \\glossterm<strike>",
+        effect_text="""
+            Make a \\glossterm<strike> with a +3d bonus to damage.
         """,
         rank=7,
         tags=[],
@@ -76,6 +101,7 @@ def generate_maneuvers():
             Make a \\glossterm<strike>.
             You can reroll any \\glossterm<miss chances>, such as when attacking \\glossterm<invisible> creatures, and take the better result.
         """,
+        rank=1,
         tags=[],
         lists=['Martial', 'Esoteric', 'Wild'],
     ))
@@ -180,6 +206,7 @@ def generate_maneuvers():
             You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
             If the target loses hit points from the strike, it is \\glossterm<frightened> by you as a \\glossterm<condition>.
         """,
+        rank=1,
         tags=['Emotion'],
         lists=['Primal', 'Martial', 'Trick', 'Esoteric'],
     ))
@@ -200,33 +227,35 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Demoralizing Battlecry',
-        short_description='Inflict fear on nearby enemies',
-        target="\\glossterm<Enemies> in a \\areamed radius from you.",
+        short_description='Lower morale of nearby enemies',
+        target="\\glossterm<Enemies> in a \\areasmall radius from you.",
         effect_text="""
             Make an attack vs. Mental against each target.
-            \\hit Each target takes 1d6 sonic damage.
-            Each target that loses hit points from this damage is \\glossterm<frightened> by you as a \\glossterm<condition>.
-
-            \\rankline
-            The damage increases by +1d for every rank beyond 1.
+            \\hit Each target takes a -2 penalty to defenses as a \\glossterm<condition>.
         """,
-        tags=['Emotion'],
+        rank_upgrades={
+            '3': 'The area increases to a \\areamed radius.',
+            '5': 'The area increases to a \\arealarge radius.',
+            '7': 'The area increases to a \\areahuge radius.',
+        },
+        tags=[],
         lists=['Primal', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
-        name='Demoralizing Bellow',
+        name='Frightening Battlecry',
         short_description='Inflict fear on nearby enemies',
-        target="\\glossterm<Enemies> in a \\areahuge radius from you.",
+        target="\\glossterm<Enemies> in a \\areasmall radius from you.",
         effect_text="""
             Make an attack vs. Mental against each target.
-            \\hit Each target takes 2d8 sonic damage.
-            Each target that loses hit points from this damage is \\glossterm<frightened> by you as a \\glossterm<condition>.
+            \\hit Each target that has no remaining \\glossterm<resistance> to sonic damage is \\glossterm<frightened> by you as a \\glossterm<condition>.
+            \\glance As above, except that the condition is removed at the end of the next round.
 
             \\rankline
-            The damage increases by +1d for every rank beyond 5.
+            \\rank<5> The area increases to a \\areamed radius.
+            \\rank<7> The area increases to a \\arealarge radius.
         """,
-        rank=5,
+        rank=3,
         tags=['Emotion'],
         lists=['Primal', 'Wild'],
     ))
@@ -234,16 +263,13 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Terrifying Battlecry',
         short_description='Inflict fear on nearby enemies',
-        target="\\glossterm<Enemies> in a \\areamed radius from you.",
+        target="\\glossterm<Enemies> in a \\areasmall radius from you.",
         effect_text="""
             Make an attack vs. Mental against each target.
-            \\hit Each target takes 2d6 sonic damage.
-            Each target that loses hit points from this damage is \\glossterm<panicked> by you as a \\glossterm<condition>.
-
-            \\rankline
-            The damage increases by +1d for every rank beyond 4.
+            \\hit Each target that has no remaining \\glossterm<resistance> to sonic damage is \\glossterm<panicked> by you as a \\glossterm<condition>.
+            \\glance As above, except that the condition is removed at the end of the next round.
         """,
-        rank=4,
+        rank=6,
         tags=['Emotion'],
         lists=['Primal', 'Wild'],
     ))
