@@ -48,6 +48,13 @@ higher levels. Therefore, martial classes need to grant more static bonuses to d
 strikes and mundane abilities. That leaves relatively little room for rank upgrades to damaging
 maneuvers.
 
+#### Finisher condition scaling
+Strike-based abilities that inflict finisher conditions do not have explicit scaling, so they
+implicitly scale their damage.
+Non-strike-based abilities that inflict finisher abilities don't really have any purpose to
+increasing their damage; that's not really the point of finisher abilities. Instead, they should
+scale their accuracy, area, or other benefits.
+
 #### Rank text references
 
 References to your rank should be isolated to the rank upgrade text where possible. If abilities
@@ -179,28 +186,90 @@ situations.
 * Non-strike-based attacks:
   * High: (1d8 + 1d per rank) + (power)
   * Medium: (1d6 + 1d per rank) + (half power)
-  * Low: (1d4 + 1d per rank)
-
-For spells, standard damage is equal to:
-
+  * Low: (1d3 + 1d per rank)
 
 ## Stock effects
 
+### Rank 1 standard effects
+
 ### Strike-based
 
-Rank 1 Focus/non-upgrading, Rank 3 maneuver:
+Rank 1 maneuver:
 * Softener:
-  * 
+  * Make a strike with +2a, low damage
+* Damage:
+  * Make a strike against Fort/Ref defense
+  * Make a strike with a highly circumstantial benefit (reroll miss chance)
 * Finisher:
-  * -2d, half power: r2 condition if lose HP
+  * low damage, r2 condition if lose HP
 
 ### Non-strike-based
 
 Rank 1 Focus/non-upgrading, Rank 3 maneuver:
 * Softener:
-  * 
+  * r1 condition in medium range
+* Damage:
+  * Med range: high damage
+  * Med cone from self: medium damage
+  * Med line, 10' wide, from self: medium damage
+  * Small radius from self: medium damage to enemies only
 * Finisher:
-  * -2d, no power: r2 condition if lose HP
+  * Med range: +1a, low damage, r2 condition if lose HP
+  * Med cone from self: r2 condition if no resistances
+  * Med line, 10' wide, from self: r2 condition if no resistances
+  * Small radius around self: low damage, r2 condition if lose HP
+
+### Standard level modifiers
+
+Note that these are used for determining the levels of new effects, not rank upgrades. Rank upgrades
+have their own logic which may differ significantly from this.
+
+* Both strike-based and non-strike-based:
+  * +0 levels: trade -1a for +1d or vice versa
+  * +0 levels: trade -1a/-1d for minor benefit
+  * +2 levels: +1 area size
+  * +2 levels: +1a/+1d (above standard rank progression, if any)
+  * +2 levels: convert condition to curse
+  * +3 levels: +1 rank to condition
+  * +3 levels: Add additional condition of the same rank removed at the same time as existing condition
+  * +3 levels: increase one damage tier (low -> medium -> high); only for Finisher attacks
+* Non-strikes only:
+  * +0 levels: add glancing blow mechanic
+    * Mathematically, this should be +2 levels to match +1 accuracy. However, at high levels the game
+      plays better if this effect is common, so it's just free for rank 3 or higher abilities.
+    * This should not be found on spells below rank 3 to make sure the game plays differently at
+      different levels, and to solve accuracy-related math.
+  * +1 levels: enemies only
+    * This is free for abilities around self, because those abilities would otherwise be
+      virtually useless
+  * +1 level: Add crit-only +2r condition that replaces existing condition
+  * +1 level: Add crit-only +1r condition in addition to existing condition
+  * +1 level: +1 range increment
+  * +1 level: Increase line width by 5'
+  * +1 level: Add additional -1r condition removed at the same time as existing condition
+* Strikes only:
+
+### Higher rank specific examples
+
+Rank 3 Focus/non-upgrading, Rank 5 maneuver:
+* Softener:
+  * r1 curse in medium range
+* Finisher:
+
+
+Rank 4 Focus/non-upgrading, Rank 6 maneuver:
+* Softener:
+  * Med range: r2 condition in medium range
+
+Rank 5 Focus/non-upgrading, Rank 7 maneuver:
+* Finisher:
+  * Med range: high damage, r2 condition if lose HP
+
+Rank 6 Focus/non-upgrading:
+* Softener:
+  * Med range: r2 curse
+* Finisher:
+
 
 
 
@@ -316,38 +385,6 @@ Rank 8 Focus:
 * Single-target:
   * r4 condition in close range
   * Deal std and r2 condition in std range
-
-## Standard level modifiers
-
-* Real costs
-* +1.5 levels: +1a/+1d
-* Shared:
-* +0 levels: trade -1a/-1d for minor benefit
-* +1 levels: add glancing blow mechanic
-  * Mathematically, this should be +2 levels to match +1 accuracy. However, at high levels the game
-    plays better if this effect is common, so discount it to incentivize people to choose it.
-  * This should not be found on spells below rank 3 to make sure the game plays differently at
-    different levels
-* +2 levels: +1a/+1d with other minor buff
-* +2 levels: +1 area size
-* +2 levels: +1 rank to condition
-* +2 level: Add additional +0r condition removed at the same time as existing condition
-* Spells only:
-* +1 level: Add crit-only +2r condition that replaces existing condition
-* +1 level: Add crit-only +1r condition in addition to existing condition
-* +1 level: selective targets instead of all targets
-* +1 level: remove -1 accuracy or damage penalty
-* +1 level: +1 range increment
-* +1 level: Increase line width by 5'
-* +1 level: Add additional -1r condition removed at the same time as existing condition
-* +1 level: Add Sustain (standard) to instant damaging effect
-* +2 levels: Add Sustain (minor) to instant damaging effect
-* +3 levels: +2a/+2d
-* +3 levels: Add r1 condition to damaging effect
-* Maneuvers only:
-* Assuming unrelated ability at +2 ranks:
-  * +4 ranks: +2a/+2d
-  * +4 ranks: Add r1 condition to damaging effect
 
 # Magic items
 
