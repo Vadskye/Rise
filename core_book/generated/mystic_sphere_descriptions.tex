@@ -13,7 +13,12 @@
 
 \begin{freeability}{Airborne Leap}
 \target{Yourself}
-You gain a bonus to your Jump skill equal to twice your rank until the end of the next round.
+You gain a \plus4 bonus to the Jump skill until the end of the next round.
+
+\rankline
+\rank{3} The bonus increases to \plus6.
+\rank{5} The bonus increases to \plus8.
+\rank{7} The bonus increases to \plus10.
 \end{freeability}
 
 
@@ -26,13 +31,6 @@ If you decrease the wind's speed to 0, you can increase it again with the remain
 \rank{3} The area increases to a \areahuge radius \glossterm{emanation}.
 \rank{5} You can change the wind speed by up to 20 miles per hour.
 \rank{7} The area increases to an \areaext radius \glossterm{emanation}.
-\end{freeability}
-
-
-\begin{freeability}{Buffet}
-\target{One creature or object within \rngclose range}
-Make an attack vs. Fortitude against the target.
-\hit The target takes bludgeoning damage equal to 1d6 per rank.
 \end{freeability}
 
 
@@ -50,26 +48,18 @@ This spell can detect air pockets with a minimum size of Fine.
 
 \begin{freeability}{Soften Landing}
 \target{Yourself or an \glossterm{ally} within \rnglong range}
-Until the end of the round, the target treats all falls as if they were 20 feet per rank shorter for the purpose of determining \glossterm{falling damage}.
+Until the end of the round, the target treats all falls as if they were 20 feet shorter for the purpose of determining \glossterm{falling damage}.
+
+\rankline
+\rank{3} The distance reduction increases to 50 feet.
+\rank{5} The distance reduction increases to 100 feet.
+\rank{7} The distance reduction increases to 200 feet.
 \end{freeability}
 
 \end{spellsection}
 
 
 \subsubsection{Spells}
-
-
-\lowercase{\hypertarget{spell:Buffeting Blast}{}}\label{spell:Buffeting Blast}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Buffeting Blast}{Buffeting Blast}}[\glossterm{Focus}]
-\target{One creature or object within \rngmed range}
-Make an attack vs. Fortitude against the target.
-\hit The target takes bludgeoning damage equal to half your \glossterm{power} \add 1d6 per rank.
-In addition, it is \glossterm{pushed} up to 20 feet per rank in any direction.
-Moving the target upwards costs twice the normal movement cost.
-
-\end{freeability}
-\vspace{0.25em}
-
 
 
 \lowercase{\hypertarget{spell:Curse of Arrow Attraction}{}}\label{spell:Curse of Arrow Attraction}
@@ -89,48 +79,17 @@ Make an attack vs. Mental against the target.
 
 
 
-\lowercase{\hypertarget{spell:Windstrike}{}}\label{spell:Windstrike}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Windstrike}{Windstrike}}[\glossterm{Focus}]
-\target{One creature or object within \rngmed range}
-Make an attack vs. Armor against the target.
-\hit The target takes bludgeoning damage equal to your \glossterm{power} \add 1d10 per rank.
-
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Dust Cloud}{}}\label{spell:Dust Cloud}
-\begin{freeability}[Rank 2]{\hypertarget{spell:Dust Cloud}{Dust Cloud}}[\glossterm{Focus}]
-\target{Creatures in a \areamed radius within \rngmed range}
-Make an attack vs. Reflex with an accuracy bonus bonus equal to your rank against each target.
+\begin{freeability}[Rank 1]{\hypertarget{spell:Dust Cloud}{Dust Cloud}}[\glossterm{Focus}]
+\targets{Creatures in a \areasmall radius within \rngmed range}
+Make an attack vs. Reflex against each target.
 \hit Each target is \glossterm{dazzled} until the end of the next round.
 \crit Each target is \glossterm{dazzled} as a \glossterm{condition}.
 
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Gust of Wind}{}}\label{spell:Gust of Wind}
-\begin{freeability}[Rank 2]{\hypertarget{spell:Gust of Wind}{Gust of Wind}}[\glossterm{Focus}]
-\targets{Everything in a 10 ft. wide line from you that extends 20 feet per rank}
-Make an attack vs. Fortitude against each target.
-\hit Each target takes bludgeoning damage equal to 1d6 per rank.
-In addition, each target is \glossterm{pushed} half the length of the line in the direction the line points away from you.
-Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
-
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Piercing Wind}{}}\label{spell:Piercing Wind}
-\begin{freeability}[Rank 2]{\hypertarget{spell:Piercing Wind}{Piercing Wind}}[\glossterm{Focus}]
-\target{One creature or object within \rngclose range}
-A rush of wind flows rapidly through the gaps in your foe's armor to pierce its heart.
-Make an attack vs. Reflex against the target.
-\hit The target takes piercing damage equal to your \glossterm{power} \add 1d10 per rank.
+\rankline
+\rank{3} You gain a \plus2 bonus to \glossterm{accuracy} with the attack.
+\rank{5} The accuracy bonus increases to \plus4.
+\rank{7} The accuracy bonus increases to \plus6.
 
 \end{freeability}
 \vspace{0.25em}
@@ -138,11 +97,29 @@ Make an attack vs. Reflex against the target.
 
 
 \lowercase{\hypertarget{spell:Propulsion}{}}\label{spell:Propulsion}
-\begin{freeability}[Rank 2]{\hypertarget{spell:Propulsion}{Propulsion}}[\glossterm{Focus}, \glossterm{Swift}]
+\begin{freeability}[Rank 1]{\hypertarget{spell:Propulsion}{Propulsion}}[\glossterm{Focus}]
 \target{Yourself or one Large or smaller \glossterm{ally} in \rngmed range}
-You \glossterm{push} the target up to 50 feet per rank in any direction.
+You \glossterm{push} the target up to 100 feet in any direction.
 You cannot change the direction of the movement partway through.
 Moving the target upwards costs twice the normal movement cost.
+
+\rankline
+\rank{4} The distance increases to 200 feet.
+\rank{6} The distance increases to 500 feet.
+
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Windstrike}{}}\label{spell:Windstrike}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Windstrike}{Windstrike}}[\glossterm{Focus}]
+\target{One creature or object within \rngmed range}
+Make an attack vs. Armor against the target.
+\hit The target takes bludgeoning damage equal to 1d10 plus your \glossterm{power}.
+
+\rankline
+The damage increases by \plus1d for each rank beyond 1.
 
 \end{freeability}
 \vspace{0.25em}
@@ -161,20 +138,8 @@ Any effect which increases the size of creature this spell can affect also incre
 \rankline
 \rank{4} This spell can target an \glossterm{ally} within \rngmed range instead of you.
 \rank{6} The bonus to Armor defense increases to \plus2.
-\rank{8} The bonus to Armor defense increases to \plus3.
 
 \end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Windsnipe}{}}\label{spell:Windsnipe}
-\begin{freeability}[Rank 2]{\hypertarget{spell:Windsnipe}{Windsnipe}}[\glossterm{Focus}]
-\target{One creature or object within \rnglong range}
-Make an attack vs. Armor with an accuracy bonus equal to your rank against the target.
-\hit The target takes bludgeoning damage equal to half your \glossterm{power} \add 1d6 per rank.
-
-\end{freeability}
 \vspace{0.25em}
 
 
@@ -182,14 +147,30 @@ Make an attack vs. Armor with an accuracy bonus equal to your rank against the t
 \lowercase{\hypertarget{spell:Windtheft}{}}\label{spell:Windtheft}
 \begin{freeability}[Rank 2]{\hypertarget{spell:Windtheft}{Windtheft}}[\glossterm{Focus}]
 \target{One creature or object within \rngmed range}
-Make an attack vs. Reflex against the target.
-\hit The target drops all items it is holding that are not well secured (such as a ring) or held in a hand.
-\crit As above, except that the target also drops items that are held a hand.
+Make an attack vs. Reflex with a \plus1 bonus to \glossterm{accuracy} against the target.
+\hit The target drops all items it has that are not well secured (such as a ring) or held in a hand.
+\crit As above, except that the target also drops items that are held in a single hand.
 
 \rankline
-\rank{4} Each dropped item is scattered 30 feet in a random horizontal direction.
-\rank{6} You can choose for the dropped items to fly towards you instead of being scattered randomly.
-\rank{8} The distance each dropped item flies increases to 100 feet.
+\rank{4} The accuracy bonus increases to \plus2.
+\rank{6} The accuracy bonus increases to \plus3.
+
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Buffeting Blast}{}}\label{spell:Buffeting Blast}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Buffeting Blast}{Buffeting Blast}}[\glossterm{Focus}]
+\target{One creature or object within \rngmed range}
+Make an attack vs. Fortitude against the target.
+\hit The target takes bludgeoning damage equal to 2d6 plus half your \glossterm{power}.
+In addition, it is \glossterm{pushed} up to 30 feet in any direction.
+Moving the target upwards costs twice the normal movement cost.
+\glance As above, except that that the target takes half damage.
+
+\rankline
+The damage increases by \plus1d for each rank beyond 3.
 
 \end{freeability}
 \vspace{0.25em}
@@ -200,7 +181,11 @@ Make an attack vs. Reflex against the target.
 \begin{freeability}[Rank 3]{\hypertarget{spell:Cyclone}{Cyclone}}[\glossterm{Focus}]
 \targets{Everything in a \areasmall radius within \rngmed range}
 Make an attack vs. Fortitude against each target.
-\hit Each target takes bludgeoning damage equal to half your \glossterm{power} \add 1d6 per rank.
+\hit Each target takes bludgeoning damage equal to 2d6 plus half your \glossterm{power}.
+\glance As above, except that that each target takes half damage.
+
+\rankline
+The damage increases by \plus1d for each rank beyond 1.
 
 \end{freeability}
 \vspace{0.25em}
@@ -221,14 +206,31 @@ You gain a 30 foot \glossterm{glide speed} (see \pcref{Gliding}).
 
 
 
+\lowercase{\hypertarget{spell:Piercing Wind}{}}\label{spell:Piercing Wind}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Piercing Wind}{Piercing Wind}}[\glossterm{Focus}]
+\target{One creature or object within \rngclose range}
+A rush of wind flows rapidly through the gaps in your foe's armor to pierce its heart.
+Make an attack vs. Reflex against the target.
+\hit The target takes piercing damage equal to 2d8 plus your \glossterm{power}.
+\glance As above, except that that the target takes half damage.
+
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Retributive Winds}{}}\label{spell:Retributive Winds}
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Retributive Winds}{Retributive Winds}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \target{Yourself}
 At the end of each phase, make an attack vs. Armor against each creature within \rngclose range that attacked you during that phase.
-\hit Each struck target takes bludgeoning damage equal to half your \glossterm{power} \add 1d6 per rank.
-Any individual creature can only be dealt damage in this way once per round.
-
 Any effect which increases this spell's range increases the range of this retaliation by the same amount.
+\hit Each struck target takes bludgeoning damage equal to 2d6 plus half your \glossterm{power}.
+Any individual creature can only be dealt damage in this way once per round.
+\glance As above, except that that each target takes half damage.
+
+
+\rankline
+The damage increases by \plus1d for each rank beyond 3.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -253,17 +255,50 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 
+\lowercase{\hypertarget{spell:Windseal}{}}\label{spell:Windseal}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Windseal}{Windseal}}[\glossterm{Focus}]
+\target{One Large or smaller creature within \rngmed range}
+Make an attack vs. Fortitude against the target.
+\hit As a \glossterm{condition}, the target is \glossterm{slowed} by incredibly fast winds that inhibit movement.
+At the end of each phase, if it moved during that phase, it takes bludgeoning damage equal to 2d8 plus half your \glossterm{power}
+\crit As above, except that that the target takes double damage.
+\glance As above, except that that the target takes half damage.
+
+\rankline
+\rank{5} The maximum size increases to Huge.
+\rank{7} The maximum size increases to Gargantuan.
+
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Windsnipe}{}}\label{spell:Windsnipe}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Windsnipe}{Windsnipe}}[\glossterm{Focus}]
+\target{One creature or object within \rnglong range}
+Make an attack vs. Armor against the target.
+\hit The target takes bludgeoning damage equal to 2d8 plus your \glossterm{power}.
+\glance As above, except that that the target takes half damage.
+
+\rankline
+The damage increases by \plus1d for each rank beyond 3.
+
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Buffeting Hurricane}{}}\label{spell:Buffeting Hurricane}
 \begin{freeability}[Rank 4]{\hypertarget{spell:Buffeting Hurricane}{Buffeting Hurricane}}[\glossterm{Focus}]
 \targets{\glossterm{Enemies} in a \areamed radius from you}
 Make an attack vs. Fortitude against each target.
-\hit Each target takes bludgeoning damage equal to 1d8 per rank.
+\hit Each target takes bludgeoning damage equal to 2d8 half plus your \glossterm{power}.
 In addition, each target is moved 20 feet clockwise around you.
 Each target's final position should be the same distance from you as its starting position.
+\glance As above, except that that each target takes half damage.
 
 \rankline
-\rank{6} The area increases to a \arealarge radius.
-\rank{8} The area increases to a \areahuge radius.
+The damage increases by \plus1d for each rank beyond 4.
 
 \end{freeability}
 \vspace{0.25em}
@@ -293,41 +328,23 @@ If another ability would magically manipulate the weather in the same area, the 
 
 \rankline
 \rank{6} You can shape the weather for up to fifteen minutes before it takes effect, increasing the intensity of the changes you can make.
-\rank{8} You can cause weather changes that are inappropriate for the climate and season of the area you are in.
-Making a weather change that is inappropriate for the local environment takes twice as long as making an appropriate change.
 
 \end{attuneability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Windseal}{}}\label{spell:Windseal}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Windseal}{Windseal}}[\glossterm{Focus}]
-\target{One Large or smaller creature within \rngmed range}
-Make an attack vs. Fortitude against the target.
-\hit As a \glossterm{condition}, the target is \glossterm{slowed} by incredibly fast winds that inhibit movement.
-At the end of each phase, if it moved during that phase, it takes bludgeoning \glossterm{standard damage} \minus2d.
-\crit As a \glossterm{condition}, the target is \glossterm{immobilized} by incredibly fast winds that inhibit movement.
-At the end of each phase, if it moved during that phase, it takes bludgeoning \glossterm{standard damage} \plus1d.
+\lowercase{\hypertarget{spell:Gust of Wind}{}}\label{spell:Gust of Wind}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Gust of Wind}{Gust of Wind}}[\glossterm{Focus}]
+\targets{Everything in a \arealarge, 10 ft. wide line from you}
+Make an attack vs. Fortitude against each target.
+\hit Each target takes 2d8 bludgeoning damage.
+In addition, each target is \glossterm{pushed} 20 feet in the direction the line points away from you.
+Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
+\glance As above, except that that each target takes half damage.
 
 \rankline
-\rank{6} The maximum size increases to Huge.
-\rank{8} The maximum size increases to Gargantuan.
-
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Dustblind}{}}\label{spell:Dustblind}
-\begin{freeability}[Rank 5]{\hypertarget{spell:Dustblind}{Dustblind}}[\glossterm{Focus}]
-\target{One creature within \rngmed range}
-If there is no dirt, dust, or collection of loose objects of similar size within 30 foot \glossterm{range} of the target's eyes, this spell is \glossterm{miscast}.
-Make an attack vs. Reflex against the target.
-\hit The target is \glossterm{blinded} as a \glossterm{condition}.
-
-\rankline
-\rank{7} The range increases to \rnglong.
+The damage increases by \plus1d for each rank beyond 4.
 
 \end{freeability}
 \vspace{0.25em}
@@ -337,8 +354,11 @@ Make an attack vs. Reflex against the target.
 \lowercase{\hypertarget{spell:Flight}{}}\label{spell:Flight}
 \begin{attuneability}[Rank 5]{\hypertarget{spell:Flight}{Flight}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \target{Yourself}
-You gain a 30 foot \glossterm{fly speed} as long as you are no more than 20 feet per rank above solid ground (see \pcref{Flying}).
+You gain a 30 foot \glossterm{fly speed} as long as you are no more than 100 feet above solid ground (see \pcref{Flying}).
 If you are above that height, you gain a 30 foot \glossterm{glide speed} instead.
+
+\rankline
+\rank{7} The maximum distance above the ground increases to 200 feet.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -348,7 +368,7 @@ If you are above that height, you gain a 30 foot \glossterm{glide speed} instead
 \lowercase{\hypertarget{spell:Air Walk}{}}\label{spell:Air Walk}
 \begin{attuneability}[Rank 6]{\hypertarget{spell:Air Walk}{Air Walk}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \target{Yourself}
-You can walk on air as if it were solid ground as long as you are no more than 20 feet per rank above solid ground.
+You can walk on air as if it were solid ground as long as you are no more than 100 feet above solid ground.
 The magic only affects your legs and feet.
 By choosing when to treat the air as solid, you can traverse the air with ease.
 
@@ -357,9 +377,22 @@ By choosing when to treat the air as solid, you can traverse the air with ease.
 
 
 
+\lowercase{\hypertarget{spell:Dustblind}{}}\label{spell:Dustblind}
+\begin{freeability}[Rank 6]{\hypertarget{spell:Dustblind}{Dustblind}}[\glossterm{Focus}]
+\target{One creature within \rngmed range}
+If there is no dirt, dust, or collection of loose objects of similar size within 30 foot \glossterm{range} of the target's eyes, this spell is \glossterm{miscast}.
+Make an attack vs. Reflex against the target.
+\hit The target is \glossterm{blinded} as a \glossterm{condition}.
+\glance As above, except that the condition is removed at the end of the next round.
+
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Blinding Dust Cloud}{}}\label{spell:Blinding Dust Cloud}
 \begin{freeability}[Rank 7]{\hypertarget{spell:Blinding Dust Cloud}{Blinding Dust Cloud}}[\glossterm{Focus}]
-\target{Creatures in a \areamed radius within \rngmed range}
+\targets{Creatures in a \areasmall radius within \rngmed range}
 Make an attack vs. Reflex against each target.
 \hit Each target is \glossterm{blinded} until the end of the next round.
 \crit Each target is \glossterm{blinded} as a \glossterm{condition}.
@@ -760,6 +793,22 @@ This has the following effects:
 
 
 
+\lowercase{\hypertarget{spell:Constraining Bubble}{}}\label{spell:Constraining Bubble}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Constraining Bubble}{Constraining Bubble}}[\glossterm{Focus}, \glossterm{Manifestation}]
+\target{One Large or smaller creature within \rngmed range}
+Make an attack vs. Reflex against the target.
+\hit As a \glossterm{condition}, the majority of the target's body is surrounded by a layer of water.
+This does not impede the target's ability to breathe, but it takes penalties as if it was fighting underwater (see \pcref{Underwater Combat}).
+\glance As above, except that the condition is removed at the end of the next round.
+
+\rankline
+\rank{6} The maximum size increases to Huge.
+
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Misty Shroud}{}}\label{spell:Misty Shroud}
 \begin{attuneability}[Rank 4]{\hypertarget{spell:Misty Shroud}{Misty Shroud}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \targetrule
@@ -781,26 +830,10 @@ Make an attack vs. Fortitude against each target.
 \hit Each target takes 2d8 bludgeoning damage.
 In addition, each target is \glossterm{pushed} 20 feet in the direction the line points away from you.
 Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
-\glance As above, except that that each target is not pushed.
+\glance As above, except that that each target takes half damage.
 
 \rankline
 The damage increases by \plus1d for each rank beyond 4.
-
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Constraining Bubble}{}}\label{spell:Constraining Bubble}
-\begin{freeability}[Rank 5]{\hypertarget{spell:Constraining Bubble}{Constraining Bubble}}[\glossterm{Focus}, \glossterm{Manifestation}]
-\target{One Large or smaller creature within \rngmed range}
-Make an attack vs. Reflex against the target.
-\hit As a \glossterm{condition}, the majority of the target's body is surrounded by a layer of water.
-This does not impede the target's ability to breathe, but it takes penalties as if it was fighting underwater (see \pcref{Underwater Combat}).
-\glance As above, except that the condition is removed at the end of the next round.
-
-\rankline
-\rank{7} The maximum size increases to Huge.
 
 \end{freeability}
 \vspace{0.25em}
@@ -815,7 +848,7 @@ Make an attack vs. Fortitude against the target.
 If it loses hit points from this damage, it is \glossterm{nauseated} as a \glossterm{condition}.
 
 \rankline
-The damage increases by \plus1d for every rank beyond 5.
+The damage increases by \plus1d for each rank beyond 5.
 
 \end{freeability}
 \vspace{0.25em}
@@ -862,8 +895,20 @@ This functions as if your attacks had the \glossterm{Sweeping} (7) tag, with no 
 
 
 
+\lowercase{\hypertarget{spell:Ring of Mist}{}}\label{spell:Ring of Mist}
+\begin{freeability}[Rank 6]{\hypertarget{spell:Ring of Mist}{Ring of Mist}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
+\targetrule
+Fog fills the air within a \arealarge radius \glossterm{zone} from your location.
+The fog partially obstructs sight, granting \glossterm{concealment} to anything seen through the fog (see \pcref{Concealment}).
+You can exclude an inner radius of any size from the area, allowing you to create fog that surrounds your location without blocking sight to things near to you.
+
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Sphere of Constraint}{}}\label{spell:Sphere of Constraint}
-\begin{freeability}[Rank 5]{\hypertarget{spell:Sphere of Constraint}{Sphere of Constraint}}[\glossterm{Focus}, \glossterm{Manifestation}]
+\begin{freeability}[Rank 6]{\hypertarget{spell:Sphere of Constraint}{Sphere of Constraint}}[\glossterm{Focus}, \glossterm{Manifestation}]
 \targets{All \glossterm{enemies} completely within a \areamed radius within \rngmed range}
 You create a sphere of water that contracts to stick to enemies in the area.
 Unlike most abilities, this ability only affects creatures whose entire space is within the area.
@@ -871,21 +916,6 @@ Make an attack vs. Reflex against each target.
 \hit Until the end of the next round, the majority of the target's body is surrounded by a layer of water.
 This does not impede the target's ability to breathe, but it takes penalties as if it was fighting underwater (see \pcref{Underwater Combat}).
 \crit As above, except that the effect is a \glossterm{condition} instead of lasting until the end of the next round.
-
-\rankline
-\rank{7} The area increases to a \arealarge radius.
-
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Ring of Mist}{}}\label{spell:Ring of Mist}
-\begin{freeability}[Rank 6]{\hypertarget{spell:Ring of Mist}{Ring of Mist}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
-\targetrule
-Fog fills the air within a \arealarge radius \glossterm{zone} from your location.
-The fog partially obstructs sight, granting \glossterm{concealment} to anything seen through the fog (see \pcref{Concealment}).
-You can exclude an inner radius of any size from the area, allowing you to create fog that surrounds your location without blocking sight to things near to you.
 
 \end{freeability}
 \vspace{0.25em}
@@ -899,7 +929,7 @@ Make an attack vs. Fortitude against each target.
 \hit Each target takes 4d8 bludgeoning damage.
 In addition, each target is \glossterm{pushed} 50 feet in the direction the line points away from you.
 Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
-\glance As above, except that that each target is not pushed.
+\glance As above, except that that each target takes half damage.
 
 \end{freeability}
 \vspace{0.25em}

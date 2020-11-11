@@ -60,27 +60,25 @@ aquamancy=MysticSphere(
             \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Curse']),
-        Spell('Sphere of Constraint', 5, 'All \\glossterm<enemies> completely within a \\areamed radius within \\rngmed range', """
+        Spell('Sphere of Constraint', 6, 'All \\glossterm<enemies> completely within a \\areamed radius within \\rngmed range', """
             You create a sphere of water that contracts to stick to enemies in the area.
             Unlike most abilities, this ability only affects creatures whose entire space is within the area.
             Make an attack vs. Reflex against each target.
             \\hit Until the end of the next round, the majority of the target's body is surrounded by a layer of water.
             This does not impede the target's ability to breathe, but it takes penalties as if it was fighting underwater (see \\pcref<Underwater Combat>).
             \\crit As above, except that the effect is a \\glossterm<condition> instead of lasting until the end of the next round.
-
-            \\rankline
-            \\rank<7> The area increases to a \\arealarge radius.
         """, tags=['Manifestation']),
         # fighting underwater is slightly more detrimental than the standard
-        # rank 2 condition, so this gets +1 level
-        Spell('Constraining Bubble', 5, 'One Large or smaller creature within \\rngmed range', """
+        # rank 2 condition, but Large or smaller is a significant restriction,
+        # so this stays +0
+        Spell('Constraining Bubble', 4, 'One Large or smaller creature within \\rngmed range', """
             Make an attack vs. Reflex against the target.
             \\hit As a \\glossterm<condition>, the majority of the target's body is surrounded by a layer of water.
             This does not impede the target's ability to breathe, but it takes penalties as if it was fighting underwater (see \\pcref<Underwater Combat>).
             \\glance As above, except that the condition is removed at the end of the next round.
 
             \\rankline
-            \\rank<7> The maximum size increases to Huge.
+            \\rank<6> The maximum size increases to Huge.
         """, tags=['Manifestation']),
         Spell('Crushing Wave', 1, 'Everything in a \\areamed, 10 ft.\\ wide line from you', """
             Make an attack vs. Reflex against each target.
@@ -158,7 +156,7 @@ aquamancy=MysticSphere(
             \\hit Each target takes 2d8 bludgeoning damage.
             In addition, each target is \\glossterm<pushed> 20 feet in the direction the line points away from you.
             Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
-            \\glance As above, except that that each target is not pushed.
+            \\glance As above, except that that each target takes half damage.
 
             \\rankline
             The damage increases by +1d for each rank beyond 4.
@@ -168,7 +166,7 @@ aquamancy=MysticSphere(
             \\hit Each target takes 4d8 bludgeoning damage.
             In addition, each target is \\glossterm<pushed> 50 feet in the direction the line points away from you.
             Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
-            \\glance As above, except that that each target is not pushed.
+            \\glance As above, except that that each target takes half damage.
         """, tags=['Manifestation']),
         Spell('Geyser', 3, 'Everything in a \\arealarge, 5 ft.\\ wide vertical line within \\rngmed range', """
             Make an attack vs. Armor against each target.
@@ -252,7 +250,7 @@ aquamancy=MysticSphere(
             If it loses hit points from this damage, it is \\glossterm<nauseated> as a \\glossterm<condition>.
 
             \\rankline
-            The damage increases by +1d for every rank beyond 5.
+            The damage increases by +1d for each rank beyond 5.
         """, tags=[]),
         Spell('Aqueous Form', 4, 'Yourself', """
             You transform your body and equipment into water, allowing you to compress your body or contort yourself into odd shapes.

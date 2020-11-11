@@ -36,6 +36,10 @@ upgrades for the same basic effect that push it in different directions.
 Class abilities like Sneak Attack or Smite need unusually powerful rank upgrade mechanics to
 compensate for their lack of replacement abilities.
 
+AOE softener abilities generally don't really do a lot even if they succeed, and they quickly scale
+out of being worth the action they take. For that reason, they get +2 accuracy bonuses with each
+rank upgrade instead of a more common +1.
+
 #### Spell vs maneuver scaling
 
 Spells have very few mechanics for increasing their base damage dice in archetypes and feats. In
@@ -216,16 +220,19 @@ Rank 1 Focus/non-upgrading, Rank 3 maneuver:
   * Large cone from self: r1 eonr, condition on crit
   * Large line, 10' wide, from self: r1 eonr, condition on crit
   * Enemies in Medium radius from self: r1 eonr, condition on crit
+  * Small radius in Med range: r1 eonr, condition on crit
 * Damage:
   * Med range: high damage
   * Med cone from self: medium damage
   * Med line, 10' wide, from self: medium damage
   * Enemies in small radius from self: medium damage
+  * Small radius in Med range: medium damage
 * Finisher:
   * Med range: +1a, low damage, r2 condition if lose HP
   * Med cone from self: r2 condition if no resistances
   * Med line, 10' wide, from self: r2 condition if no resistances
-  * Small radius around self: low damage, r2 condition if lose HP
+  * Small radius around self: r2 condition if no resistances
+  * Small radius in Med range: r2 condition if no resistances
 
 ### Standard level modifiers
 

@@ -228,17 +228,16 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Demoralizing Battlecry',
         short_description='Lower morale of nearby enemies',
-        target="\\glossterm<Enemies> in a \\areasmall radius from you.",
+        target="\\glossterm<Enemies> in a \\areamed radius from you.",
         effect_text="""
             Make an attack vs. Mental against each target.
             \\hit Each target takes a -2 penalty to defenses until the end of the next round.
             \\crit Each target takes a -2 penalty to defenses as a \\glossterm<condition>.
         """,
-        rank=1,
+        rank=3,
         rank_upgrades={
-            '3': 'The area increases to a \\areamed radius.',
-            '5': 'The area increases to a \\arealarge radius.',
-            '7': 'The area increases to a \\areahuge radius.',
+            '5': 'You gain a +2 bonus to \\glossterm<accuracy> with the attack.',
+            '7': 'The accuracy bonus increases to +4.',
         },
         tags=[],
         lists=['Primal', 'Wild'],
