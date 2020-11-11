@@ -57,8 +57,7 @@ aquamancy=MysticSphere(
             \\glance As above, except that the effect is removed at the end of the next round.
 
             \\rankline
-            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<7> The accuracy bonus increases to +2.
+            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 3.
         """, tags=['Curse']),
         Spell('Sphere of Constraint', 6, 'All \\glossterm<enemies> completely within a \\areamed radius within \\rngmed range', """
             You create a sphere of water that contracts to stick to enemies in the area.
@@ -67,6 +66,9 @@ aquamancy=MysticSphere(
             \\hit Until the end of the next round, the majority of the target's body is surrounded by a layer of water.
             This does not impede the target's ability to breathe, but it takes penalties as if it was fighting underwater (see \\pcref<Underwater Combat>).
             \\crit As above, except that the effect is a \\glossterm<condition> instead of lasting until the end of the next round.
+
+            \\rankline
+            You gain a +1 bonus to \glossterm<accuracy> with the attack for each rank beyond 6.
         """, tags=['Manifestation']),
         # fighting underwater is slightly more detrimental than the standard
         # rank 2 condition, but Large or smaller is a significant restriction,
@@ -78,7 +80,17 @@ aquamancy=MysticSphere(
             \\glance As above, except that the condition is removed at the end of the next round.
 
             \\rankline
-            \\rank<6> The maximum size increases to Huge.
+            You gain a +1 bonus to \glossterm<accuracy> with the attack for each rank beyond 4.
+        """, tags=['Manifestation']),
+        Spell('Drowning Bubble', 6, 'One creature within \\rngmed range', """
+            Make an attack vs. Reflex against the target.
+            \\hit As a \\glossterm<condition>, the majority of the target's body is surrounded by a layer of water.
+            It takes penalties as if it was fighting underwater (see \\pcref<Underwater Combat>).
+            In addition, it is unable to breathe air, though it can try to breathe the water surrounding it.
+            \\glance As above, except that the condition is removed at the end of the next round.
+
+            \\rankline
+            You gain a +1 bonus to \glossterm<accuracy> with the attack for each rank beyond 6.
         """, tags=['Manifestation']),
         Spell('Crushing Wave', 1, 'Everything in a \\areamed, 10 ft.\\ wide line from you', """
             Make an attack vs. Reflex against each target.
@@ -232,9 +244,7 @@ aquamancy=MysticSphere(
             If it loses hit points from this damage, it is \\glossterm<nauseated> as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<3> The accuracy bonus increases to +2.
-            \\rank<5> The accuracy bonus increases to +3.
-            \\rank<7> The accuracy bonus increases to +4.
+            You gain a +1 bonus to \glossterm<accuracy> with the attack for each rank beyond 1.
         """, tags=[]),
         Spell('Wave of Desiccation', 3, 'Creatures in a \\arealarge, 10 ft. wide line from you', """
             Make an attack vs. Fortitude against each target.
@@ -242,7 +252,7 @@ aquamancy=MysticSphere(
             \\glance As above, except that the condition is removed at the end of the next round.
 
             \\rankline
-            \\rank<6> The area increases to a \\areahuge, 10 ft. wide line.
+            You gain a +1 bonus to \glossterm<accuracy> with the attack for each rank beyond 3.
         """, tags=[]),
         Spell('Excsiccate', 5, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
