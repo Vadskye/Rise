@@ -332,7 +332,7 @@
         For example, if you try to break a stone wall with a wooden club, the club will break instead of the wall.
         % TODO: define hardness for creatures and their natural weapons; natural weapons should generally have higher hardness than creatures to avoid hardness reflection being common
 
-\section{Poison}
+\section{Poison}\label{Poison}
     Poisons can deal damage, weaken creatures, or even kill them.
     Some effects which are not literally poisonous, such as animal venom or fungal spores, are considered poisons.
     Unless otherwise noted, poisons are not \glossterm{conditions}, and cannot be removed by abilities that remove conditions (see \pcref{Conditions}).
@@ -342,11 +342,11 @@
 
         There are three ways that poisons can be contracted.
 
-        \parhead{Bleed} A bleed poison affects any creature that \glossterm{bleeds} from something carrying the poison.
-        Almost all bleed poisons take liquid form, and are typically used to coat weapons.
         \parhead{Contact} A contact poison affects any creature that touches it with bare skin.
         \parhead{Ingestion} An ingestion poison affects any creature that eats, drinks, or breathes it, depending on the type of poison.
-        Ingestion poisons have no effect when used to coat weapons.
+        Ingestion poisons have no effect when touched or used to coat weapons.
+        \parhead{Injury} An injury poison affects any creature loses \glossterm{hit points} from something bearing the poison.
+        Almost all injury poisons take liquid form, and are typically used to coat weapons.
 
     \subsection{Poison Forms}\label{Poison Forms}
 
@@ -369,7 +369,8 @@
         \parhead{Becoming Poisoned}
         All poisons have an base \glossterm{accuracy}.
         When a creature first comes into contact with a poison, the poison makes an attack roll using its accuracy against the Fortitude defense of the poisoned creature.
-        On a hit, the target becomes \glossterm{poisoned} and suffers the initial effect of the poison.
+        On a hit, the target becomes \glossterm{poisoned} and suffers the effects of the first stage of the poison.
+        On a critical hit, the target becomes \glossterm{poisoned} and suffers the effects of the two stages of the poison.
         On a miss, the target is not \glossterm{poisoned}.
 
         Some attacks make the target poisoned if they hit the target.
@@ -379,18 +380,18 @@
 
         \parhead{Poison Attacks}
         At the end of each subsequent round after the target becomes poisoned, the poison makes an attack roll against the Fortitude defense of the poisoned creature.
-        Some poisons have special effects on each hit with this attack.
-        For every 10 points by which the attack hits, it counts as an additional hit.
+        Each hit increases the \glossterm{poison stage} of the poison.
+        For every 10 points by which the attack hits, the poison progresses by an additional stage.
         On a miss, the creature gets closer to resisting the poison (see Resisting Poisons, below).
-        For every 10 points by which the attack misses, it counts as an additional miss for the purpose of resisting the poison.
 
         \parhead{Resisting Poisons}
         If a poison misses a creature three times with its attack at the end of each round, the creature stops being poisoned by that poison.
-        Some poisons may require more attacks to end the poison, as indicated in their description.
+        % Some poisons may require more attacks to end the poison, as indicated in their description.
 
         \parhead{Multiple Doses}
         A creature can be affected by multiple doses of the same poison.
-        This does not cause the same effect to occur multiple times, but each extra dose increases the accuracy of the poison by 2.
+        This does not cause the same effect to occur multiple times.
+        However, each extra dose increases the accuracy of the poison by 1, up to a maximum bonus of \plus10 more than the poison's normal accuracy.
 
         A poison is considered the same if it has the same name and comes from the same source.
         For example, a creature bitten multiple times by the same giant spider suffers multiple doses of the same poison.
