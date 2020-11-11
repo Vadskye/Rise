@@ -569,7 +569,7 @@ def generate_maneuvers():
         effect_text="""
             Make a \\glossterm<strike>.
             You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
-            If the target takes damage from the strike, it takes a penalty equal to your rank to \\glossterm<accuracy> against creatures other than you as a \\glossterm<condition>.
+            If the target takes damage from the strike, it takes a -2 penalty to \\glossterm<accuracy> against creatures other than you as a \\glossterm<condition>.
             This condition is removed if another creature applies this condition to the same target.
         """,
         rank=2,
@@ -960,7 +960,11 @@ def generate_maneuvers():
         target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a melee \\glossterm<strike>.
-            For each previous consecutive round that you used this ability, you gain a bonus to damage with the strike equal your rank, up to a maximum of three times your rank.
+            For each previous consecutive round that you used this ability, you gain a +1 bonus to damage with the strike, up to a maximum of +3.
+
+            \\rankline
+            The damage bonus for each consecutive round increases by 1 for each rank beyond 1.
+            In addition, the maximum damage bonus increases by 3 for each rank beyond 1.
         """,
         tags=[],
         lists=['Primal'],
