@@ -70,9 +70,7 @@ Make an attack vs. Mental against the target.
 \crit As above, except that the effect lasts until this curse is removed.
 
 \rankline
-\rank{3} The penalty increases to -3.
-\rank{5} The penalty increases to -4.
-\rank{7} The penalty increases to -5.
+You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
 
 \end{freeability}
 \vspace{0.25em}
@@ -87,9 +85,7 @@ Make an attack vs. Reflex against each target.
 \crit Each target is \glossterm{dazzled} as a \glossterm{condition}.
 
 \rankline
-\rank{3} You gain a \plus2 bonus to \glossterm{accuracy} with the attack.
-\rank{5} The accuracy bonus increases to \plus4.
-\rank{7} The accuracy bonus increases to \plus6.
+You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
 
 \end{freeability}
 \vspace{0.25em}
@@ -152,8 +148,7 @@ Make an attack vs. Reflex with a \plus1 bonus to \glossterm{accuracy} against th
 \crit As above, except that the target also drops items that are held in a single hand.
 
 \rankline
-\rank{4} The accuracy bonus increases to \plus2.
-\rank{6} The accuracy bonus increases to \plus3.
+You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 2.
 
 \end{freeability}
 \vspace{0.25em}
@@ -164,7 +159,7 @@ Make an attack vs. Reflex with a \plus1 bonus to \glossterm{accuracy} against th
 \begin{freeability}[Rank 3]{\hypertarget{spell:Buffeting Blast}{Buffeting Blast}}[\glossterm{Focus}]
 \target{One creature or object within \rngmed range}
 Make an attack vs. Fortitude against the target.
-\hit The target takes bludgeoning damage equal to 2d6 plus half your \glossterm{power}.
+\hit The target takes bludgeoning damage equal to 2d6 plus your \glossterm{power}.
 In addition, it is \glossterm{pushed} up to 30 feet in any direction.
 Moving the target upwards costs twice the normal movement cost.
 \glance As above, except that that the target takes half damage.
@@ -208,11 +203,14 @@ You gain a 30 foot \glossterm{glide speed} (see \pcref{Gliding}).
 
 \lowercase{\hypertarget{spell:Piercing Wind}{}}\label{spell:Piercing Wind}
 \begin{freeability}[Rank 3]{\hypertarget{spell:Piercing Wind}{Piercing Wind}}[\glossterm{Focus}]
-\target{One creature or object within \rngclose range}
+\target{One creature or object within \rngmed range}
 A rush of wind flows rapidly through the gaps in your foe's armor to pierce its heart.
 Make an attack vs. Reflex against the target.
 \hit The target takes piercing damage equal to 2d8 plus your \glossterm{power}.
 \glance As above, except that that the target takes half damage.
+
+\rankline
+The damage increases by \plus1d for each rank beyond 3.
 
 \end{freeability}
 \vspace{0.25em}
@@ -265,8 +263,7 @@ At the end of each phase, if it moved during that phase, it takes bludgeoning da
 \glance As above, except that that the target takes half damage.
 
 \rankline
-\rank{5} The maximum size increases to Huge.
-\rank{7} The maximum size increases to Gargantuan.
+The damage increases by \plus1d for each rank beyond 3.
 
 \end{freeability}
 \vspace{0.25em}
@@ -384,6 +381,9 @@ If there is no dirt, dust, or collection of loose objects of similar size within
 Make an attack vs. Reflex against the target.
 \hit The target is \glossterm{blinded} as a \glossterm{condition}.
 \glance As above, except that the condition is removed at the end of the next round.
+
+\rankline
+You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 6.
 
 \end{freeability}
 \vspace{0.25em}
@@ -520,9 +520,7 @@ Make an attack vs. Fortitude with a \plus1 bonus to \glossterm{accuracy} against
 If it loses hit points from this damage, it is \glossterm{nauseated} as a \glossterm{condition}.
 
 \rankline
-\rank{3} The accuracy bonus increases to \plus2.
-\rank{5} The accuracy bonus increases to \plus3.
-\rank{7} The accuracy bonus increases to \plus4.
+You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
 
 \end{freeability}
 \vspace{0.25em}
@@ -683,8 +681,7 @@ it stops being sickened for 10 minutes.
 \glance As above, except that the effect is removed at the end of the next round.
 
 \rankline
-\rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-\rank{7} The accuracy bonus increases to \plus2.
+You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 3.
 
 \end{freeability}
 \vspace{0.25em}
@@ -766,7 +763,7 @@ Make an attack vs. Fortitude against each target.
 \glance As above, except that the condition is removed at the end of the next round.
 
 \rankline
-\rank{6} The area increases to a \areahuge, 10 ft. wide line.
+You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 3.
 
 \end{freeability}
 \vspace{0.25em}
@@ -802,7 +799,7 @@ This does not impede the target's ability to breathe, but it takes penalties as 
 \glance As above, except that the condition is removed at the end of the next round.
 
 \rankline
-\rank{6} The maximum size increases to Huge.
+You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
 
 \end{freeability}
 \vspace{0.25em}
@@ -895,6 +892,23 @@ This functions as if your attacks had the \glossterm{Sweeping} (7) tag, with no 
 
 
 
+\lowercase{\hypertarget{spell:Drowning Bubble}{}}\label{spell:Drowning Bubble}
+\begin{freeability}[Rank 6]{\hypertarget{spell:Drowning Bubble}{Drowning Bubble}}[\glossterm{Focus}, \glossterm{Manifestation}]
+\target{One creature within \rngmed range}
+Make an attack vs. Reflex against the target.
+\hit As a \glossterm{condition}, the majority of the target's body is surrounded by a layer of water.
+It takes penalties as if it was fighting underwater (see \pcref{Underwater Combat}).
+In addition, it is unable to breathe air, though it can try to breathe the water surrounding it.
+\glance As above, except that the condition is removed at the end of the next round.
+
+\rankline
+You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 6.
+
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Ring of Mist}{}}\label{spell:Ring of Mist}
 \begin{freeability}[Rank 6]{\hypertarget{spell:Ring of Mist}{Ring of Mist}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
 \targetrule
@@ -916,6 +930,9 @@ Make an attack vs. Reflex against each target.
 \hit Until the end of the next round, the majority of the target's body is surrounded by a layer of water.
 This does not impede the target's ability to breathe, but it takes penalties as if it was fighting underwater (see \pcref{Underwater Combat}).
 \crit As above, except that the effect is a \glossterm{condition} instead of lasting until the end of the next round.
+
+\rankline
+You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 6.
 
 \end{freeability}
 \vspace{0.25em}
@@ -978,8 +995,8 @@ If the destination is invalid, this spell is \glossterm{miscast}.
 
 \rankline
 \rank{3} The range increases to 10 feet.
-\rank{5} The range increases to \rngclose feet.
-\rank{7} The range increases to \rngmed feet.
+\rank{5} The range increases to \rngclose.
+\rank{7} The range increases to \rngmed.
 \end{freeability}
 
 
@@ -1008,12 +1025,10 @@ You must have a \glossterm{free hand} to cast this spell.
 
 You partially teleport a touched target into the Astral Plane.
 Make a melee attack vs. Reflex against the target.
-\hit The target takes energy \glossterm{standard damage} \plus1d.
+\hit The target takes energy damage equal to 1d10 plus your \glossterm{power}.
 
 \rankline
-\rank{3} The damage increases to \glossterm{standard damage} \plus2d.
-\rank{5} The damage increases to \glossterm{standard damage} \plus3d.
-\rank{7} The damage increases to \glossterm{standard damage} \plus4d.
+The damage increases by \plus1d for each rank beyond 1.
 
 \end{freeability}
 \vspace{0.25em}
@@ -1025,12 +1040,10 @@ Make a melee attack vs. Reflex against the target.
 \target{One creature within \rngmed range}
 You partially teleport the target into the Astral Plane.
 Make an attack vs. Mental against the target.
-\hit The target takes energy \glossterm{standard damage} \plus1d.
+\hit The target takes energy damage equal to 1d10 plus your \glossterm{power}.
 
 \rankline
-\rank{3} The damage increases to \glossterm{standard damage} \plus2d.
-\rank{5} The damage increases to \glossterm{standard damage} \plus3d.
-\rank{7} The damage increases to \glossterm{standard damage} \plus4d.
+The damage increases by \plus1d for each rank beyond 1.
 
 \end{freeability}
 \vspace{0.25em}
@@ -1047,6 +1060,22 @@ If the destination is invalid, this spell is \glossterm{miscast}.
 \rank{3} The range increases to \rngmed.
 \rank{5} The range increases to \rnglong.
 \rank{7} The range increases to \rngext.
+
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Dimensional Jaunt -- Plane of Earth}{}}\label{spell:Dimensional Jaunt -- Plane of Earth}
+\begin{freeability}[Rank 2]{\hypertarget{spell:Dimensional Jaunt -- Plane of Earth}{Dimensional Jaunt -- Plane of Earth}}[\glossterm{Focus}]
+\target{One creature within \rngmed range}
+You partially teleport the target into the Plane of Earth.
+Make an attack vs. Mental against the target.
+\hit The target takes 1d8 bludgeoning damage.
+If it loses \glossterm{hit points} from this damage, it is \glossterm{immobilized} as a \glossterm{condition}.
+
+\rankline
+You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 2.
 
 \end{freeability}
 \vspace{0.25em}
@@ -1106,30 +1135,32 @@ You can choose any unoccupied location within \rngclose range from the location 
 \begin{freeability}[Rank 3]{\hypertarget{spell:Banishment}{Banishment}}[\glossterm{Focus}]
 \target{One creature within \rngmed range}
 Make an attack vs. Mental with a \plus2 bonus to \glossterm{accuracy} against the target.
-\hit The target takes energy \glossterm{standard damage}.
-\crit The target takes double damage.
+\hit The target takes energy damage equal to 2d6 plus half your \glossterm{power}.
+\glance As above, except that that the target takes half damage.
+\crit As above, except that that the target takes double damage.
 In addition, if it is a \glossterm{planeforged} not on its home plane, it is teleported to a random location on its home plane.
 If it is a creature created by a \glossterm{Manifestation} ability, it immediately disappears.
 
 \rankline
-\rank{5} The accuracy bonus increases to \plus3.
-\rank{7} The accuracy bonus increases to \plus4.
+The damage increases by \plus1d for each rank beyond 3.
 
 \end{freeability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Dimensional Jaunt -- Plane of Earth}{}}\label{spell:Dimensional Jaunt -- Plane of Earth}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Dimensional Jaunt -- Plane of Earth}{Dimensional Jaunt -- Plane of Earth}}[\glossterm{Focus}]
+\lowercase{\hypertarget{spell:Dimensional Jaunt -- Plane of Air}{}}\label{spell:Dimensional Jaunt -- Plane of Air}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Dimensional Jaunt -- Plane of Air}{Dimensional Jaunt -- Plane of Air}}[\glossterm{Focus}]
 \target{One creature within \rngmed range}
-You partially teleport the target into the Plane of Earth.
+You partially teleport the target into the Plane of Air.
 Make an attack vs. Mental against the target.
-\hit The target takes bludgeoning \glossterm{standard damage} \minus2d and is \glossterm{slowed} as a \glossterm{condition}.
+\hit The target takes bludgeoning damage equal to 2d6 plus your \glossterm{power}.
+In addition, it is \glossterm{pushed} up to 30 feet in any direction.
+Moving the target upwards costs twice the normal movement cost.
+\glance As above, except that that the target takes half damage.
 
 \rankline
-\rank{5} The damage increases to \glossterm{standard damage} \minus1d.
-\rank{7} The damage increases to \glossterm{standard damage}.
+The damage increases by \plus1d for each rank beyond 3.
 
 \end{freeability}
 \vspace{0.25em}
@@ -1174,8 +1205,29 @@ If either target is not standing on solid ground, this spell fails.
 If you hit both targets, they each teleport into each other's locations.
 
 \rankline
-\rank{5} The maximum size increases to Huge.
-\rank{7} The maximum size increases to Gargantuan.
+You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 3.
+
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Banishing Grasp}{}}\label{spell:Banishing Grasp}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Banishing Grasp}{Banishing Grasp}}[]
+\target{One creature or object within your \glossterm{reach}}
+This spell does not have the \glossterm{Focus} tag.
+You must have a \glossterm{free hand} to cast this spell.
+
+You partially teleport a touched target into the Astral Plane.
+Make a melee attack vs. Reflex against the target.
+\hit The target takes energy damage equal to 2d10 plus your \glossterm{power}.
+\glance As above, except that that the target takes half damage.
+\crit As above, except that that the target takes double damage.
+In addition, if it is a \glossterm{planeforged} not on its home plane, it is teleported to a random location on its home plane.
+If it is a creature created by a \glossterm{Manifestation} ability, it immediately disappears.
+
+\rankline
+The damage increases by \plus1d for each rank beyond 4.
 
 \end{freeability}
 \vspace{0.25em}
@@ -1205,7 +1257,6 @@ You must clearly visualize the destination's appearance, but you do not need \gl
 
 \rankline
 \rank{6} The range increases to \rngext feet.
-\rank{8} The range increases to 3,000 feet.
 
 \end{freeability}
 \vspace{0.25em}
@@ -1234,14 +1285,14 @@ You must be able to move to teleport in this way, so effects like being \glosste
 \target{One creature within \rngmed range}
 You partially teleport the target into the Plane of Fire.
 Make an attack vs. Mental against the target.
-\hit The target is \glossterm{ignited}.
+\hit The target takes fire damage equal to 2d8 plus half your \glossterm{power}.
+If it loses \glossterm{hit points} from this damage, it is \glossterm{ignited} as a \glossterm{condition}.
 This condition can also be removed if the target makes a \glossterm{difficulty rating} 10 Dexterity check as a \glossterm{move action} to put out the flames.
 Dropping \glossterm{prone} as part of this action gives a \plus5 bonus to this check.
-\crit As above, except that the condition cannot be removed with a \glossterm{move action}.
+\glance As above, except that that the target takes half damage.
 
 \rankline
-\rank{6} The condition cannot be removed with a \glossterm{move action}.
-\rank{8} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+The damage increases by \plus1d for each rank beyond 4.
 
 \end{freeability}
 \vspace{0.25em}
@@ -1268,10 +1319,12 @@ This can allow you to cast spells through solid walls, though it does not grant 
 \target{One creature within \rngmed range}
 You partially teleport the target through a number of planes in sequence.
 Make an attack vs. Mental against the target.
-\hit The target takes \glossterm{standard damage} \plus3d of all damage types.
+% note: \plus1d as part of the definition of this spell
+\hit The target takes damage of all damage types equal to 4d8 plus your \glossterm{power}.
+\glance As above, except that that the target takes half damage.
 
 \rankline
-\rank{7} The damage increases to \glossterm{standard damage} \plus4d.
+The damage increases by \plus1d for each rank beyond 5.
 
 \end{freeability}
 \vspace{0.25em}
@@ -1292,16 +1345,41 @@ If your \glossterm{line of effect} to your destination is blocked, or if this te
 
 
 
+\lowercase{\hypertarget{spell:Massive Transposition}{}}\label{spell:Massive Transposition}
+\begin{freeability}[Rank 5]{\hypertarget{spell:Massive Transposition}{Massive Transposition}}[\glossterm{Focus}]
+\target{Two Gargantuan or smaller creatures within \rngmed range}
+This spell functions like the \textit{transposition} spell, except that it can affect creatures with a maximum size of Gargantuan.
+
+\rankline
+You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 5.
+
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Jittering Curse}{}}\label{spell:Jittering Curse}
 \begin{freeability}[Rank 6]{\hypertarget{spell:Jittering Curse}{Jittering Curse}}[\glossterm{Curse}, \glossterm{Focus}]
 \target{One creature within \rngmed range}
 Make an attack vs. Mental against the target.
 \hit At the end of each \glossterm{movement phase}, the target teleports 10 feet in a random direction.
 This effect lasts until it takes a \glossterm{short rest}.
+\glance As above, except that the effect is removed at the end of the next round.
 \crit As above, except that the effect lasts until the curse is removed.
 
-\rankline
-\rank{8} The distance teleported increases to 20 feet.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Dimensional Jaunt -- Deep Astral Plane}{}}\label{spell:Dimensional Jaunt -- Deep Astral Plane}
+\begin{freeability}[Rank 7]{\hypertarget{spell:Dimensional Jaunt -- Deep Astral Plane}{Dimensional Jaunt -- Deep Astral Plane}}[\glossterm{Focus}]
+\target{One creature within \rngmed range}
+You partially teleport the target into the Deep Astral Plane.
+Make an attack vs. Mental against the target.
+\hit The target takes 4d6 energy damage.
+In addition, it is \glossterm{stunned} as a \glossterm{condition}.
+\glance As above, except that the condition is removed at the end of the next round.
 
 \end{freeability}
 \vspace{0.25em}
@@ -1315,19 +1393,8 @@ Make an attack vs. Mental against the target.
 \hit At the end of each round, the target teleports back to the location it was in
 when this spell was cast.
 This effect lasts until it takes a \glossterm{short rest}.
+\glance As above, except that the effect is removed at the end of the next round.
 \crit As above, except that the effect lasts until the curse is removed.
-
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Dimensional Jaunt -- Deep Astral Plane}{}}\label{spell:Dimensional Jaunt -- Deep Astral Plane}
-\begin{freeability}[Rank 8]{\hypertarget{spell:Dimensional Jaunt -- Deep Astral Plane}{Dimensional Jaunt -- Deep Astral Plane}}[\glossterm{Focus}]
-\target{One creature within \rngmed range}
-You partially teleport the target into the Deep Astral Plane.
-Make an attack vs. Mental against the target.
-\hit The target takes energy \glossterm{standard damage} \minus2d and is \glossterm{confused} as a \glossterm{condition}.
 
 \end{freeability}
 \vspace{0.25em}
@@ -1462,15 +1529,15 @@ This cantrip functions like the \spell{mystic barrier} spell, except that its \g
 \lowercase{\hypertarget{spell:Kinetic Shield}{}}\label{spell:Kinetic Shield}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Kinetic Shield}{Kinetic Shield}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself}
-The target gains a \plus2 \glossterm{magic bonus} to \glossterm{resistances} against \glossterm{physical} damage.
+The target gains a \plus2 \glossterm{magic bonus} to its \glossterm{resistance} against \glossterm{physical} damage.
 
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
 \rank{3} This spell can target an \glossterm{ally} within \rngmed range instead of you.
 In addition, the bonus increases to \plus4.
-\rank{5} The bonus increases to be equal to half your \glossterm{power}.
-\rank{7} The bonus increases to be equal to your \glossterm{power}.
+\rank{5} The bonus increases to \plus8.
+\rank{7} The bonus increases to \plus16.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -1486,15 +1553,15 @@ If you create the wall within a space too small to hold it, it fills as much of 
 This can allow you to completely block off small tunnels.
 The wall is visible as a shimmering magical membrane that does not block sight.
 Nothing can pass through the wall until it is destroyed.
-Each 5-ft.\ square of wall has a \glossterm{vital resistance} equal to twice your \glossterm{power}.
+Each 5-ft.\ square of wall has \glossterm{hit points} equal to twice your \glossterm{power}.
 
 When you cast this spell, you can \glossterm{attune} to it.
 If you do, it gains the \glossterm{Attune} (self) tag and loses the \glossterm{Sustain} (minor) tag.
 
 \rankline
-\rank{3} The \glossterm{vital resistance} of each 5-ft.\ square increases to be equal to three times your \glossterm{power}.
+\rank{3} The \glossterm{hit points} of each 5-ft.\ square increase to be equal to three times your \glossterm{power}.
 \rank{5} The area increases to a \arealarge line.
-\rank{7} The \glossterm{vital resistance} of each 5-ft.\ square increases to be equal to four times your \glossterm{power}.
+\rank{7} The \glossterm{hit points} of each 5-ft.\ square increase to be equal to four times your \glossterm{power}.
 
 \end{freeability}
 \vspace{0.25em}
@@ -1508,14 +1575,14 @@ You create a sphere of magical energy around the target in its space.
 The sphere is visible as a shimmering magical membrane that does not block sight.
 Nothing can pass through the field until it is destroyed.
 This prevents the target from having \glossterm{line of effect} to anything outside of the area.
-Each 5-ft.\ square of the field has a \glossterm{vital resistance} equal to twice your \glossterm{power}.
+Each 5-ft.\ square of the field has \glossterm{hit points} equal to twice your \glossterm{power}.
 
 If another creature is in the target's space when this spell is cast, this spell fails without effect.
 
 \rankline
-\rank{3} The \glossterm{vital resistance} of each 5-ft.\ square increases to be equal to three times your \glossterm{power}.
+\rank{3} The \glossterm{hit points} of each 5-ft.\ square increase to be equal to three times your \glossterm{power}.
 \rank{5} The maximum size of the target increases to Huge.
-\rank{7} The \glossterm{vital resistance} of each 5-ft.\ square increases to be equal to four times your \glossterm{power}.
+\rank{7} The \glossterm{hit points} of each 5-ft.\ square increase to be equal to four times your \glossterm{power}.
 
 \end{freeability}
 \vspace{0.25em}
@@ -1525,15 +1592,15 @@ If another creature is in the target's space when this spell is cast, this spell
 \lowercase{\hypertarget{spell:Resist Energy}{}}\label{spell:Resist Energy}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Resist Energy}{Resist Energy}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself}
-The target gains a \plus2 \glossterm{magic bonus} to \glossterm{resistances} against \glossterm{energy} damage.
+The target gains a \plus2 \glossterm{magic bonus} to its \glossterm{resistance} against \glossterm{energy} damage.
 
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
 \rank{3} This spell can target an \glossterm{ally} within \rngmed range instead of you.
 In addition, the bonus increases to \plus4.
-\rank{5} The bonus increases to be equal to half your \glossterm{power}.
-\rank{7} The bonus increases to be equal to your \glossterm{power}.
+\rank{5} The bonus increases to \plus8.
+\rank{7} The bonus increases to \plus16.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -1547,12 +1614,12 @@ This spell functions like the \spell{mystic barrier} spell, except that you can 
 There are two possibilities: fully sound-permeable, and fully sound-blocking like a normal \spell{mystic barrier}.
 You can change how much the barrier blocks sound as a \glossterm{minor action}.
 Exceptionally strong sounds, such as sonic attacks that deal energy damage, are blocked by the barrier like other damaging effects.
-In addition, the \glossterm{vital resistance} of each 5-ft.\ square increases to be equal to three times your \glossterm{power}.
+In addition, the \glossterm{hit points} of each 5-ft.\ square increase to be equal to three times your \glossterm{power}.
 
 \rankline
-\rank{4} The \glossterm{vital resistance} of each 5-ft.\ square increases to be equal to three times your \glossterm{power}.
+\rank{4} The \glossterm{hit points} of each 5-ft.\ square increase to be equal to three times your \glossterm{power}.
 \rank{6} The area increases to a \arealarge line.
-\rank{8} The \glossterm{vital resistance} of each 5-ft.\ square increases to be equal to four times your \glossterm{power}.
+\rank{8} The \glossterm{hit points} of each 5-ft.\ square increase to be equal to four times your \glossterm{power}.
 
 \end{freeability}
 \vspace{0.25em}
@@ -1569,7 +1636,6 @@ You can cast this spell as a \glossterm{minor action}.
 \rankline
 \rank{4} This spell can target an \glossterm{ally} within \rngmed range instead of you.
 \rank{6} The bonus increases to \plus2.
-\rank{8} The bonus increases to \plus3.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -1582,30 +1648,14 @@ You can cast this spell as a \glossterm{minor action}.
 You create a curved field of magical energy that blocks access to the target's opening mechanism.
 The opening mechanism must be Small or smaller in size.
 Nothing can pass through the field until it is destroyed.
-The field has a \glossterm{vital resistance} equal to twice your \glossterm{power}.
+The field has \glossterm{hit points} equal to twice your \glossterm{power}.
 
 \rankline
-\rank{4} The \glossterm{vital resistance} of the field increases to three times your \glossterm{power}.
-\rank{6} The \glossterm{vital resistance} of the field increases to four times your \glossterm{power}.
-\rank{8} The \glossterm{vital resistance} of the field increases to five times your \glossterm{power}.
+\rank{4} The \glossterm{hit points} of the field increase to three times your \glossterm{power}.
+\rank{6} The \glossterm{hit points} of the field increase to four times your \glossterm{power}.
+\rank{8} The \glossterm{hit points} of the field increase to five times your \glossterm{power}.
 
 \end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Universal Shield}{}}\label{spell:Universal Shield}
-\begin{attuneability}[Rank 2]{\hypertarget{spell:Universal Shield}{Universal Shield}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself}
-The target gains a \plus2 \glossterm{magic bonus} to \glossterm{resistances} against all damage.
-
-\rankline
-\rank{4} This spell can target an \glossterm{ally} within \rngmed range instead of you.
-In addition, the bonus increases to \plus4.
-\rank{6} The bonus increases to be equal to half your \glossterm{power}.
-\rank{8} The bonus increases to be equal to your \glossterm{power}.
-
-\end{attuneability}
 \vspace{0.25em}
 
 
@@ -1618,9 +1668,9 @@ There are three possibilities: fully invisible, barely visible like a normal \sp
 You can change the opacity of the barrier as a \glossterm{minor action}.
 
 \rankline
-\rank{4} The \glossterm{vital resistance} of each 5-ft.\ square increases to be equal to three times your \glossterm{power}.
+\rank{4} The \glossterm{hit points} of each 5-ft.\ square increase to be equal to three times your \glossterm{power}.
 \rank{6} The area increases to a \arealarge line.
-\rank{8} The \glossterm{vital resistance} of each 5-ft.\ square increases to be equal to four times your \glossterm{power}.
+\rank{8} The \glossterm{hit points} of each 5-ft.\ square increase to be equal to four times your \glossterm{power}.
 
 \end{freeability}
 \vspace{0.25em}
@@ -1634,11 +1684,11 @@ This spell functions like the \spell{mystic barrier} spell, except that it break
 Each object in the path of the wall takes energy \glossterm{standard damage}.
 Any object destroyed in this way does not block the barrier's area of effect.
 This does no damage to creatures, who block the path of the barrier like normal.
-In addition, the \glossterm{vital resistance} of each 5-ft.\ square increases to be equal to three times your \glossterm{power}.
+In addition, the \glossterm{hit points} of each 5-ft.\ square increase to be equal to three times your \glossterm{power}.
 
 \rankline
 \rank{5} The area increases to a \arealarge line.
-\rank{7} The \glossterm{vital resistance} of each 5-ft.\ square increases to be equal to four times your \glossterm{power}.
+\rank{7} The \glossterm{hit points} of each 5-ft.\ square increase to be equal to four times your \glossterm{power}.
 
 \end{freeability}
 \vspace{0.25em}
@@ -1653,7 +1703,7 @@ You can choose the dimensions of the field, up to a maximum of a \areamed length
 If you create the field within a space too small to hold it, it fills as much of the space as possible, allowing you to completely block off small vertical tunnels.
 The field is visible as a shimmering magical membrane that does not block sight.
 Nothing can pass through the field until it is destroyed.
-Each 5-ft.\ square of the field has a \glossterm{vital resistance} equal to twice your \glossterm{power}.
+Each 5-ft.\ square of the field has \glossterm{hit points} equal to twice your \glossterm{power}.
 
 \rankline
 \rank{5} The area increases to a \arealarge line.
@@ -1664,21 +1714,17 @@ Each 5-ft.\ square of the field has a \glossterm{vital resistance} equal to twic
 
 
 
-\lowercase{\hypertarget{spell:Repulsion Field}{}}\label{spell:Repulsion Field}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Repulsion Field}{Repulsion Field}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
-\targets{\glossterm{Enemies} that enter the area (see text)}
-This spell creates a repulsive field in a \areamed radius \glossterm{zone} from your location.
-When an enemy makes physical contact with the spell's area for the first time, you make an attack vs. Mental against it.
-\hit The target is unable to enter the spell's area with any part of its body.
-The rest of its movement in the current phase is cancelled.
-
-Creatures in the area at the time that the spell is cast are unaffected by the spell.
+\lowercase{\hypertarget{spell:Universal Shield}{}}\label{spell:Universal Shield}
+\begin{attuneability}[Rank 3]{\hypertarget{spell:Universal Shield}{Universal Shield}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself}
+The target gains a \plus2 \glossterm{magic bonus} to its \glossterm{resistances} against both \glossterm{physical damage} and \glossterm{energy damage}.
 
 \rankline
-\rank{5} The area increases to a \arealarge radius.
-\rank{7} The area increases to a \areahuge radius.
+\rank{5} This spell can target an \glossterm{ally} within \rngmed range instead of you.
+In addition, the bonus increases to \plus4.
+\rank{7} The bonus increases to \plus8.
 
-\end{freeability}
+\end{attuneability}
 \vspace{0.25em}
 
 
@@ -1689,32 +1735,11 @@ Creatures in the area at the time that the spell is cast are unaffected by the s
 You create a wall of magical energy in a 20 ft.\ high, \areamed line within \rngmed range.
 The wall is visible as a shimmering magical membrane that does not block sight.
 It does not impede passage for objects or creatures, but any ability that deals \glossterm{energy damage} treats the wall as an impassable barrier.
-Each 5-ft.\ square of wall has a \glossterm{vital resistance} equal to twice your \glossterm{power}.
+Each 5-ft.\ square of wall has \glossterm{hit points} equal to twice your \glossterm{power}.
 
 \rankline
 \rank{5} The area increases to a \arealarge line.
-\rank{7} The \glossterm{vital resistance} of each 5-ft.\ square increases to be equal to three times your \glossterm{power}.
-
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Entrapping Sphere}{}}\label{spell:Entrapping Sphere}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Entrapping Sphere}{Entrapping Sphere}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (standard)]
-\target{One Large or smaller creature or object within \rngmed range}
-Make an attack vs. Reflex against the target.
-\hit You create a sphere of magical energy around the target in its space.
-The sphere is visible as a shimmering magical membrane that does not block sight.
-Nothing can pass through the field until it is destroyed.
-This prevents the target from having \glossterm{line of effect} to anything outside of the area.
-Each 5-ft.\ square of the field has a \glossterm{vital resistance} equal to twice your \glossterm{power}.
-
-If another creature is in the target's space when this spell is cast, this spell fails without effect.
-
-\rankline
-\rank{6} The \glossterm{vital resistance} of each 5-ft.\ square increases to be equal to three times your \glossterm{power}.
-\rank{8} The maximum size of the target increases to Huge.
+\rank{7} The \glossterm{hit points} of each 5-ft.\ square increase to be equal to three times your \glossterm{power}.
 
 \end{freeability}
 \vspace{0.25em}
@@ -1727,11 +1752,29 @@ If another creature is in the target's space when this spell is cast, this spell
 This spell functions like the \spell{mystic barrier} spell, except that it reflects \glossterm{mundane} attacks against it.
 The barrier's defenses become equal to 5 + your level.
 Whenever a creature misses the barrier with a \glossterm{mundane} attack, it makes the same attack against itself, rolling a new attack roll against its own defenses.
-In addition, the \glossterm{vital resistance} of each 5-ft.\ square increases to be equal to three times your \glossterm{power}.
+In addition, the \glossterm{hit points} of each 5-ft.\ square increase to be equal to three times your \glossterm{power}.
 
 \rankline
 \rank{6} The area increases to a \arealarge line.
-\rank{8} The \glossterm{vital resistance} of each 5-ft.\ square increases to be equal to four times your \glossterm{power}.
+\rank{8} The \glossterm{hit points} of each 5-ft.\ square increase to be equal to four times your \glossterm{power}.
+
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Repulsion Field}{}}\label{spell:Repulsion Field}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Repulsion Field}{Repulsion Field}}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
+\targets{\glossterm{Enemies} that enter the area (see text)}
+This spell creates a repulsive field in a \areamed radius \glossterm{zone} from your location.
+When an enemy makes physical contact with the spell's area for the first time, you make an attack vs. Mental against it.
+\hit The target is unable to enter the spell's area with any part of its body.
+The rest of its movement in the current phase is cancelled.
+
+Creatures in the area at the time that the spell is cast are unaffected by the spell.
+
+\rankline
+You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
 
 \end{freeability}
 \vspace{0.25em}
@@ -1741,7 +1784,7 @@ In addition, the \glossterm{vital resistance} of each 5-ft.\ square increases to
 \lowercase{\hypertarget{spell:Energy Immunity}{}}\label{spell:Energy Immunity}
 \begin{attuneability}[Rank 5]{\hypertarget{spell:Energy Immunity}{Energy Immunity}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \target{Yourself}
-Choose a subtype of \glossterm{energy damage}: cold, electricity, or fire.
+Choose a subtype of \glossterm{energy damage}: cold, electricity, fire, or sonic.
 You become immune to damage of the chosen type.
 Attacks that deal damage of multiple types still inflict damage normally unless you are immune to all types of damage dealt.
 
@@ -1749,6 +1792,26 @@ Attacks that deal damage of multiple types still inflict damage normally unless 
 \rank{7} You may attune to this spell any number of times, choosing a different subtype of energy damage each time.
 
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Entrapping Sphere}{}}\label{spell:Entrapping Sphere}
+\begin{freeability}[Rank 5]{\hypertarget{spell:Entrapping Sphere}{Entrapping Sphere}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (standard)]
+\target{One Large or smaller creature or object within \rngmed range}
+Make an attack vs. Reflex against the target.
+\hit You create a sphere of magical energy around the target in its space.
+The sphere is visible as a shimmering magical membrane that does not block sight.
+Nothing can pass through the field until it is destroyed.
+This prevents the target from having \glossterm{line of effect} to anything outside of the area.
+Each 5-ft.\ square of the field has \glossterm{hit points} equal to twice your \glossterm{power}.
+
+If another creature is in the target's space when this spell is cast, this spell fails without effect.
+
+\rankline
+You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 5.
+
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -1761,12 +1824,30 @@ The sphere is visible as a shimmering magical membrane that does not block sight
 Nothing can pass through the field until it is destroyed.
 This prevents the target from having \glossterm{line of effect} to anything outside of the area.
 When you move, the sphere moves with you, though you cannot force it against another creature or object.
-Each 5-ft.\ square of the field has a \glossterm{vital resistance} equal to three times your \glossterm{power}.
+Each 5-ft.\ square of the field has \glossterm{hit points} equal to three times your \glossterm{power}.
 
 \rankline
-\rank{7} The \glossterm{vital resistance} of each 5-ft.\ square increases to be equal to four times your \glossterm{power}.
+\rank{7} The \glossterm{hit points} of each 5-ft.\ square increase to be equal to four times your \glossterm{power}.
 
 \end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Retributive Kinetic Shield}{}}\label{spell:Retributive Kinetic Shield}
+\begin{attuneability}[Rank 5]{\hypertarget{spell:Retributive Kinetic Shield}{Retributive Kinetic Shield}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{Yourself}
+You gain a \plus8 \glossterm{magic bonus} against \glossterm{physical damage}.
+In addition, whenever you resist physical damage, the attacker takes energy damage equal to half the damage resisted this way.
+If the attacker is beyond \rngclose range of you, this reflection fails.
+Any effect which increases this spell's range increases the range of this effect by the same amount.
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{7} The bonus increases to \plus16.
+
+\end{attuneability}
 \vspace{0.25em}
 
 
@@ -1777,7 +1858,7 @@ Each 5-ft.\ square of the field has a \glossterm{vital resistance} equal to thre
 You create a wall of magical energy in a 20 ft.\ high, \areamed line within \rngmed range.
 The wall is visible as a shimmering magical membrane that does not block sight.
 It does not impede passage for objects or creatures, but any \glossterm{magical} ability treats the wall as an impassable barrier.
-Each 5-ft.\ square of wall has a \glossterm{vital resistance} equal to three times your \glossterm{power}.
+Each 5-ft.\ square of wall has \glossterm{hit points} equal to three times your \glossterm{power}.
 
 \rankline
 \rank{7} The area increases to a \arealarge line.
@@ -1799,7 +1880,7 @@ The rest of its movement in the current phase is cancelled.
 Creatures in the area at the time that the spell is cast are unaffected by the spell.
 
 \rankline
-\rank{8} The area increases to a \arealarge radius.
+You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 6.
 
 \end{freeability}
 \vspace{0.25em}
@@ -1809,31 +1890,13 @@ Creatures in the area at the time that the spell is cast are unaffected by the s
 \lowercase{\hypertarget{spell:Invulnerable Barrier}{}}\label{spell:Invulnerable Barrier}
 \begin{freeability}[Rank 6]{\hypertarget{spell:Invulnerable Barrier}{Invulnerable Barrier}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
 \targetrule
-This spell functions like the \spell{mystic barrier} spell, except that each 5-ft.\ square of wall has a \glossterm{vital resistance} equal to four times your \glossterm{power}.
+This spell functions like the \spell{mystic barrier} spell, except that each 5-ft.\ square of wall has \glossterm{hit points} equal to four times your \glossterm{power}.
 In addition, the wall is \glossterm{resistant} to physical damage.
 
 \rankline
 \rank{8} The area increases to a \arealarge line.
 
 \end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Retributive Shield}{}}\label{spell:Retributive Shield}
-\begin{attuneability}[Rank 6]{\hypertarget{spell:Retributive Shield}{Retributive Shield}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} in \rngmed range}
-The target gains a \glossterm{magic bonus} equal to half your \glossterm{power} to \glossterm{resistances} against \glossterm{physical} damage.
-Whenever an attack that deals \glossterm{physical damage} fails to beat the target's \glossterm{bleed resistance}, the attacker takes that damage.
-If the attacker is beyond \rngclose range of the target, this reflection fails.
-Any effect which increases this spell's range increases the range of this effect by the same amount.
-
-You can cast this spell as a \glossterm{minor action}.
-
-\rankline
-\rank{8} The range of the spell and the range of the reflection increase to \rngmed.
-
-\end{attuneability}
 \vspace{0.25em}
 
 
