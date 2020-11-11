@@ -156,7 +156,12 @@ There are three basic types of effects:
 
 * Softener: These effects are designed to weaken strong targets so they are easier to defeat.
 They tend to have accuracy bonuses and deal small amounts of damage or apply debuffs that work
-through resistances.
+through resistances. In general, AOE softener effects are slightly oxymoronic - if you're fighting
+large groups of enemies, a softener isn't generally worth the effort. Therefore, AOE softeners
+shouldn't apply conditions, which are a hassle to track against large groups anyway. Instead, AOE
+softeners should apply debuffs that apply until the end of the next round. AOE softener effects also
+therefore are the one exception to the universal glancing blow rule, since it's hard to make those
+effects weaker than they already are.
   * Examples: Certain Strike
 * Damage: These effects work at any stage of a fight. They reduce resistances and finish off weak
   targets, but aren't as efficient at weakening strong targets as softener effects and they aren't
@@ -207,12 +212,15 @@ Rank 1 maneuver:
 
 Rank 1 Focus/non-upgrading, Rank 3 maneuver:
 * Softener:
-  * r1 condition in medium range
+  * Med range: r1 condition
+  * Large cone from self: r1 eonr, condition on crit
+  * Large line, 10' wide, from self: r1 eonr, condition on crit
+  * Enemies in Medium radius from self: r1 eonr, condition on crit
 * Damage:
   * Med range: high damage
   * Med cone from self: medium damage
   * Med line, 10' wide, from self: medium damage
-  * Small radius from self: medium damage to enemies only
+  * Enemies in small radius from self: medium damage
 * Finisher:
   * Med range: +1a, low damage, r2 condition if lose HP
   * Med cone from self: r2 condition if no resistances
