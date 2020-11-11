@@ -53,9 +53,7 @@ aeromancy = MysticSphere(
             \\crit As above, except that the effect lasts until this curse is removed.
 
             \\rankline
-            \\rank<3> The penalty increases to -3.
-            \\rank<5> The penalty increases to -4.
-            \\rank<7> The penalty increases to -5.
+            You gain a +1 bonus to \glossterm<accuracy> with the attack for each rank beyond 1.
         """, tags=['Curse']),
         Spell('Propulsion', 1, 'Yourself or one Large or smaller \\glossterm<ally> in \\rngmed range', """
             You \\glossterm<push> the target up to 100 feet in any direction.
@@ -94,7 +92,7 @@ aeromancy = MysticSphere(
         """, tags=[]),
         Spell('Buffeting Blast', 3, 'One creature or object within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
-            \\hit The target takes bludgeoning damage equal to 2d6 plus half your \\glossterm<power>.
+            \\hit The target takes bludgeoning damage equal to 2d6 plus your \\glossterm<power>.
             In addition, it is \\glossterm<pushed> up to 30 feet in any direction.
             Moving the target upwards costs twice the normal movement cost.
             \\glance As above, except that that the target takes half damage.
@@ -200,8 +198,7 @@ aeromancy = MysticSphere(
             \\crit As above, except that the target also drops items that are held in a single hand.
 
             \\rankline
-            \\rank<4> The accuracy bonus increases to +2.
-            \\rank<6> The accuracy bonus increases to +3.
+            You gain a +1 bonus to \glossterm<accuracy> with the attack for each rank beyond 2.
         """, tags=[]),
         Spell('Windseal', 3, 'One Large or smaller creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
@@ -211,8 +208,7 @@ aeromancy = MysticSphere(
             \\glance As above, except that that the target takes half damage.
 
             \\rankline
-            \\rank<5> The maximum size increases to Huge.
-            \\rank<7> The maximum size increases to Gargantuan.
+            The damage increases by +1d for each rank beyond 3.
         """, tags=[]),
         Spell('Dust Cloud', 1, 'Creatures in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Reflex against each target.
@@ -220,9 +216,7 @@ aeromancy = MysticSphere(
             \\crit Each target is \\glossterm<dazzled> as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<3> You gain a +2 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<5> The accuracy bonus increases to +4.
-            \\rank<7> The accuracy bonus increases to +6.
+            You gain a +1 bonus to \glossterm<accuracy> with the attack for each rank beyond 1.
         """, tags=[]),
         Spell('Blinding Dust Cloud', 7, 'Creatures in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Reflex against each target.
@@ -234,12 +228,18 @@ aeromancy = MysticSphere(
             Make an attack vs. Reflex against the target.
             \\hit The target is \\glossterm<blinded> as a \\glossterm<condition>.
             \\glance As above, except that the condition is removed at the end of the next round.
+
+            \\rankline
+            You gain a +1 bonus to \glossterm<accuracy> with the attack for each rank beyond 6.
         """, tags=[]),
-        Spell('Piercing Wind', 3, 'One creature or object within \\rngclose range', """
+        Spell('Piercing Wind', 3, 'One creature or object within \\rngmed range', """
             A rush of wind flows rapidly through the gaps in your foe's armor to pierce its heart.
             Make an attack vs. Reflex against the target.
             \\hit The target takes piercing damage equal to 2d8 plus your \\glossterm<power>.
             \\glance As above, except that that the target takes half damage.
+
+            \\rankline
+            The damage increases by +1d for each rank beyond 3.
         """, tags=[]),
     ],
     rituals=[

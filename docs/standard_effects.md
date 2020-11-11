@@ -36,9 +36,13 @@ upgrades for the same basic effect that push it in different directions.
 Class abilities like Sneak Attack or Smite need unusually powerful rank upgrade mechanics to
 compensate for their lack of replacement abilities.
 
-AOE softener abilities generally don't really do a lot even if they succeed, and they quickly scale
-out of being worth the action they take. For that reason, they get +2 accuracy bonuses with each
-rank upgrade instead of a more common +1.
+Debuff abilities get much better with higher tier conditions. It's hard to justify using a daze
+effect with +1 accuracy when you could use a stun effect instead. For that reason, debuffs get +1
+accuracy per rank instead of the "every two levels" scaling that buffs gain.
+
+An ability's rank scaling should always be relevant to its glancing blow effect. It would be a
+bad idea to have a spell with normal damage scaling use a glancing blow effect that does not
+reduce its damage.
 
 #### Spell vs maneuver scaling
 

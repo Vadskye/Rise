@@ -17,8 +17,8 @@ astromancy=MysticSphere(
 
             \\rankline
             \\rank<3> The range increases to 10 feet.
-            \\rank<5> The range increases to \\rngclose feet.
-            \\rank<7> The range increases to \\rngmed feet.
+            \\rank<5> The range increases to \\rngclose.
+            \\rank<7> The range increases to \\rngmed.
         """, tags=[]),
         Effects('Translocate Object', 'One Tiny or smaller unattended object within \\rngclose range', """
             The target teleports into an unoccupied location on a stable surface within range that can support the weight of the target.
@@ -38,38 +38,59 @@ astromancy=MysticSphere(
 
             You partially teleport a touched target into the Astral Plane.
             Make a melee attack vs. Reflex against the target.
-            \\hit The target takes energy \\glossterm<standard damage> +1d.
+            \\hit The target takes energy damage equal to 1d10 plus your \\glossterm<power>.
 
             \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
+            The damage increases by +1d for each rank beyond 1.
         """, tags=[], focus=False),
+        Spell('Banishing Grasp', 4, 'One creature or object within your \\glossterm<reach>', """
+            This spell does not have the \\glossterm<Focus> tag.
+            You must have a \\glossterm<free hand> to cast this spell.
+
+            You partially teleport a touched target into the Astral Plane.
+            Make a melee attack vs. Reflex against the target.
+            \\hit The target takes energy damage equal to 2d10 plus your \\glossterm<power>.
+            \\glance As above, except that that the target takes half damage.
+            \\crit As above, except that that the target takes double damage.
+            In addition, if it is a \\glossterm<planeforged> not on its home plane, it is teleported to a random location on its home plane.
+            If it is a creature created by a \\glossterm<Manifestation> ability, it immediately disappears.
+
+            \\rankline
+            The damage increases by +1d for each rank beyond 4.
+        """, tags=[], focus=False),
+        Spell('Banishment', 3, 'One creature within \\rngmed range', """
+            Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against the target.
+            \\hit The target takes energy damage equal to 2d6 plus half your \\glossterm<power>.
+            \\glance As above, except that that the target takes half damage.
+            \\crit As above, except that that the target takes double damage.
+            In addition, if it is a \\glossterm<planeforged> not on its home plane, it is teleported to a random location on its home plane.
+            If it is a creature created by a \\glossterm<Manifestation> ability, it immediately disappears.
+
+            \\rankline
+            The damage increases by +1d for each rank beyond 3.
+        """, tags=[]),
         Spell('Jittering Curse', 6, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit At the end of each \\glossterm<movement phase>, the target teleports 10 feet in a random direction.
             This effect lasts until it takes a \\glossterm<short rest>.
+            \\glance As above, except that the effect is removed at the end of the next round.
             \\crit As above, except that the effect lasts until the curse is removed.
-
-            \\rankline
-            \\rank<8> The distance teleported increases to 20 feet.
         """, tags=['Curse']),
         Spell('Curse of Stagnancy', 8, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit At the end of each round, the target teleports back to the location it was in
             when this spell was cast.
             This effect lasts until it takes a \\glossterm<short rest>.
+            \\glance As above, except that the effect is removed at the end of the next round.
             \\crit As above, except that the effect lasts until the curse is removed.
         """, tags=['Curse']),
         Spell('Dimensional Jaunt', 1, 'One creature within \\rngmed range', """
             You partially teleport the target into the Astral Plane.
             Make an attack vs. Mental against the target.
-            \\hit The target takes energy \\glossterm<standard damage> +1d.
+            \\hit The target takes energy damage equal to 1d10 plus your \\glossterm<power>.
 
             \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
+            The damage increases by +1d for each rank beyond 1.
         """, tags=[]),
         # TODO: target wording is awkward
         Spell('Translocation', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
@@ -88,45 +109,61 @@ astromancy=MysticSphere(
             \\rank<5> The range increases to \\rngmed.
             \\rank<7> The range increases to \\rnglong.
         """, tags=[]),
-        Spell('Banishment', 3, 'One creature within \\rngmed range', """
-            Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against the target.
-            \\hit The target takes energy \\glossterm<standard damage>.
-            \\crit The target takes double damage.
-            In addition, if it is a \\glossterm<planeforged> not on its home plane, it is teleported to a random location on its home plane.
-            If it is a creature created by a \\glossterm<Manifestation> ability, it immediately disappears.
-
-            \\rankline
-            \\rank<5> The accuracy bonus increases to +3.
-            \\rank<7> The accuracy bonus increases to +4.
-        """, tags=[]),
         Spell('Dimension Door', 4, 'Yourself', """
             You teleport to a location within \\rnglong range of you.
             You must clearly visualize the destination's appearance, but you do not need \\glossterm<line of sight> or \\glossterm<line of effect> to your destination.
 
             \\rankline
             \\rank<6> The range increases to \\rngext feet.
-            \\rank<8> The range increases to 3,000 feet.
         """, tags=[]),
-        Spell('Dimensional Jaunt -- Plane of Earth', 3, 'One creature within \\rngmed range', """
+        Spell('Dimensional Jaunt -- Plane of Earth', 2, 'One creature within \\rngmed range', """
             You partially teleport the target into the Plane of Earth.
             Make an attack vs. Mental against the target.
-            \\hit The target takes bludgeoning \\glossterm<standard damage> -2d and is \\glossterm<slowed> as a \\glossterm<condition>.
+            \\hit The target takes 1d8 bludgeoning damage.
+            If it loses \\glossterm<hit points> from this damage, it is \\glossterm<immobilized> as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<5> The damage increases to \\glossterm<standard damage> -1d.
-            \\rank<7> The damage increases to \\glossterm<standard damage>.
+            You gain a +1 bonus to \glossterm<accuracy> with the attack for each rank beyond 2.
+        """, tags=[]),
+        Spell('Dimensional Jaunt -- Plane of Air', 3, 'One creature within \\rngmed range', """
+            You partially teleport the target into the Plane of Air.
+            Make an attack vs. Mental against the target.
+            \\hit The target takes bludgeoning damage equal to 2d6 plus your \\glossterm<power>.
+            In addition, it is \\glossterm<pushed> up to 30 feet in any direction.
+            Moving the target upwards costs twice the normal movement cost.
+            \\glance As above, except that that the target takes half damage.
+
+            \\rankline
+            The damage increases by +1d for each rank beyond 3.
         """, tags=[]),
         Spell('Dimensional Jaunt -- Plane of Fire', 4,  'One creature within \\rngmed range', """
             You partially teleport the target into the Plane of Fire.
             Make an attack vs. Mental against the target.
-            \\hit The target is \\glossterm<ignited>.
+            \\hit The target takes fire damage equal to 2d8 plus half your \\glossterm<power>.
+            If it loses \\glossterm<hit points> from this damage, it is \\glossterm<ignited> as a \\glossterm<condition>.
             This condition can also be removed if the target makes a \\glossterm<difficulty rating> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
             Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
-            \\crit As above, except that the condition cannot be removed with a \\glossterm<move action>.
+            \\glance As above, except that that the target takes half damage.
 
             \\rankline
-            \\rank<6> The condition cannot be removed with a \\glossterm<move action>.
-            \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            The damage increases by +1d for each rank beyond 4.
+        """, tags=[]),
+        Spell('Dimensional Jaunt -- Myriad', 5, 'One creature within \\rngmed range', """
+            You partially teleport the target through a number of planes in sequence.
+            Make an attack vs. Mental against the target.
+            % note: +1d as part of the definition of this spell
+            \\hit The target takes damage of all damage types equal to 4d8 plus your \\glossterm<power>.
+            \\glance As above, except that that the target takes half damage.
+
+            \\rankline
+            The damage increases by +1d for each rank beyond 5.
+        """, tags=[]),
+        Spell('Dimensional Jaunt -- Deep Astral Plane', 7, 'One creature within \\rngmed range', """
+            You partially teleport the target into the Deep Astral Plane.
+            Make an attack vs. Mental against the target.
+            \\hit The target takes 4d6 energy damage.
+            In addition, it is \\glossterm<stunned> as a \\glossterm<condition>.
+            \\glance As above, except that the condition is removed at the end of the next round.
         """, tags=[]),
         Spell('Dimensional Jitter', 5, 'Yourself', """
             At the end of each \\glossterm<phase>, you may choose to teleport 10 feet in a random direction.
@@ -135,19 +172,6 @@ astromancy=MysticSphere(
             \\rankline
             \\rank<7> You can choose the direction of the teleportation.
         """, tags=['Attune (self)']),
-        Spell('Dimensional Jaunt -- Myriad', 5, 'One creature within \\rngmed range', """
-            You partially teleport the target through a number of planes in sequence.
-            Make an attack vs. Mental against the target.
-            \\hit The target takes \\glossterm<standard damage> +3d of all damage types.
-
-            \\rankline
-            \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
-        """, tags=[]),
-        Spell('Dimensional Jaunt -- Deep Astral Plane', 8, 'One creature within \\rngmed range', """
-            You partially teleport the target into the Deep Astral Plane.
-            Make an attack vs. Mental against the target.
-            \\hit The target takes energy \\glossterm<standard damage> -2d and is \\glossterm<confused> as a \\glossterm<condition>.
-        """, tags=[]),
         # TODO: target wording
         Spell('Dimensional Shuffle', 2, 'Up to five targets within \\rngmed range from among you and your \\glossterm<allies>', """
             Each target \\glossterm<teleports> into the location of a different target.
@@ -201,8 +225,13 @@ astromancy=MysticSphere(
             If you hit both targets, they each teleport into each other's locations.
 
             \\rankline
-            \\rank<5> The maximum size increases to Huge.
-            \\rank<7> The maximum size increases to Gargantuan.
+            You gain a +1 bonus to \glossterm<accuracy> with the attack for each rank beyond 3.
+        """, tags=[]),
+        Spell('Massive Transposition', 5, 'Two Gargantuan or smaller creatures within \\rngmed range', """
+            This spell functions like the \\textit<transposition> spell, except that it can affect creatures with a maximum size of Gargantuan.
+
+            \\rankline
+            You gain a +1 bonus to \glossterm<accuracy> with the attack for each rank beyond 5.
         """, tags=[]),
         Spell('Phasing Blade', 3, 'Yourself', """
             Whenever the target makes a \\glossterm<strike>, its weapon or projectile can pass through a single physical obstacle up to one foot thick on its way to the strike's target.
