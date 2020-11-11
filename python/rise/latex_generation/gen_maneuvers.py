@@ -231,8 +231,10 @@ def generate_maneuvers():
         target="\\glossterm<Enemies> in a \\areasmall radius from you.",
         effect_text="""
             Make an attack vs. Mental against each target.
-            \\hit Each target takes a -2 penalty to defenses as a \\glossterm<condition>.
+            \\hit Each target takes a -2 penalty to defenses until the end of the next round.
+            \\crit Each target takes a -2 penalty to defenses as a \\glossterm<condition>.
         """,
+        rank=1,
         rank_upgrades={
             '3': 'The area increases to a \\areamed radius.',
             '5': 'The area increases to a \\arealarge radius.',
