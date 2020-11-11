@@ -11,7 +11,12 @@ aeromancy = MysticSphere(
     short_description="Command air to protect allies and blast foes",
     cantrips=[
         Effects('Airborne Leap', 'Yourself', """
-            You gain a bonus to your Jump skill equal to twice your rank until the end of the next round.
+            You gain a +4 bonus to the Jump skill until the end of the next round.
+
+            \\rankline
+            \\rank<3> The bonus increases to +6.
+            \\rank<5> The bonus increases to +8.
+            \\rank<7> The bonus increases to +10.
         """, tags=[]),
         Effects('Breeze', 'Everything in a \\arealarge radius \\glossterm<emanation> from you', """
             You can increase or decrease the wind speed by up to 10 miles per hour in the area.
@@ -22,10 +27,6 @@ aeromancy = MysticSphere(
             \\rank<5> You can change the wind speed by up to 20 miles per hour.
             \\rank<7> The area increases to an \\areaext radius \\glossterm<emanation>.
         """, tags=['Sustain (free)']),
-        Effects('Buffet', 'One creature or object within \\rngclose range', """
-            Make an attack vs. Fortitude against the target.
-            \\hit The target takes bludgeoning damage equal to 1d6 per rank.
-        """, tags=[]),
         Effects('Detect Air', None, """
             You learn the approximate distance and direction to any air within \\rnglong \\glossterm<range> of you.
             This spell can detect air pockets with a minimum size of Fine.
@@ -36,7 +37,12 @@ aeromancy = MysticSphere(
             \\rank<7> The range increases to 5,000 feet.
         """, tags=['Detection']),
         Effects('Soften Landing', 'Yourself or an \\glossterm<ally> within \\rnglong range', """
-            Until the end of the round, the target treats all falls as if they were 20 feet per rank shorter for the purpose of determining \\glossterm<falling damage>.
+            Until the end of the round, the target treats all falls as if they were 20 feet shorter for the purpose of determining \\glossterm<falling damage>.
+
+            \\rankline
+            \\rank<3> The distance reduction increases to 50 feet.
+            \\rank<5> The distance reduction increases to 100 feet.
+            \\rank<7> The distance reduction increases to 200 feet.
         """, tags=[]),
     ],
     lists=['Nature'],
@@ -51,11 +57,15 @@ aeromancy = MysticSphere(
             \\rank<5> The penalty increases to -4.
             \\rank<7> The penalty increases to -5.
         """, tags=['Curse']),
-        Spell('Propulsion', 2, 'Yourself or one Large or smaller \\glossterm<ally> in \\rngmed range', """
-            You \\glossterm<push> the target up to 50 feet per rank in any direction.
+        Spell('Propulsion', 1, 'Yourself or one Large or smaller \\glossterm<ally> in \\rngmed range', """
+            You \\glossterm<push> the target up to 100 feet in any direction.
             You cannot change the direction of the movement partway through.
             Moving the target upwards costs twice the normal movement cost.
-        """, tags=['Swift']),
+
+            \\rankline
+            \\rank<4> The distance increases to 200 feet.
+            \\rank<6> The distance increases to 500 feet.
+        """, tags=[]),
         Spell('Wind Screen', 2, 'Yourself', """
             You gain a +1 \\glossterm<magic bonus> to Armor defense.
             In addition, you gain a +2 bonus to defenses against \\glossterm<mundane> ranged attacks from weapons or projectiles that are Small or smaller.
@@ -66,21 +76,31 @@ aeromancy = MysticSphere(
             \\rankline
             \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The bonus to Armor defense increases to +2.
-            \\rank<8> The bonus to Armor defense increases to +3.
         """, tags=['Attune (target)']),
         Spell('Windstrike', 1, 'One creature or object within \\rngmed range', """
             Make an attack vs. Armor against the target.
-            \\hit The target takes bludgeoning damage equal to your \\glossterm<power> + 1d10 per rank.
+            \\hit The target takes bludgeoning damage equal to 1d10 plus your \\glossterm<power>.
+
+            \\rankline
+            The damage increases by +1d for each rank beyond 1.
         """, tags=[]),
-        Spell('Windsnipe', 2, 'One creature or object within \\rnglong range', """
-            Make an attack vs. Armor with an accuracy bonus equal to your rank against the target.
-            \\hit The target takes bludgeoning damage equal to half your \\glossterm<power> + 1d6 per rank.
+        Spell('Windsnipe', 3, 'One creature or object within \\rnglong range', """
+            Make an attack vs. Armor against the target.
+            \\hit The target takes bludgeoning damage equal to 2d8 plus your \\glossterm<power>.
+            \\glance As above, except that that the target takes half damage.
+
+            \\rankline
+            The damage increases by +1d for each rank beyond 3.
         """, tags=[]),
-        Spell('Buffeting Blast', 1, 'One creature or object within \\rngmed range', """
+        Spell('Buffeting Blast', 3, 'One creature or object within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
-            \\hit The target takes bludgeoning damage equal to half your \\glossterm<power> + 1d6 per rank.
-            In addition, it is \\glossterm<pushed> up to 20 feet per rank in any direction.
+            \\hit The target takes bludgeoning damage equal to 2d6 plus half your \\glossterm<power>.
+            In addition, it is \\glossterm<pushed> up to 30 feet in any direction.
             Moving the target upwards costs twice the normal movement cost.
+            \\glance As above, except that that the target takes half damage.
+
+            \\rankline
+            The damage increases by +1d for each rank beyond 3.
         """, tags=[]),
         Spell('Gentle Descent', 3, 'Yourself', """
             You gain a 30 foot \\glossterm<glide speed> (see \\pcref<Gliding>).
@@ -90,14 +110,21 @@ aeromancy = MysticSphere(
             \\rank<7> You can reduce your \\glossterm<glide speed> to 20 feet or increase it to 60 feet during each phase that you glide.
         """, tags=['Attune (self)']),
         Spell('Flight', 5, 'Yourself', """
-            You gain a 30 foot \\glossterm<fly speed> as long as you are no more than 20 feet per rank above solid ground (see \\pcref<Flying>).
+            You gain a 30 foot \\glossterm<fly speed> as long as you are no more than 100 feet above solid ground (see \\pcref<Flying>).
             If you are above that height, you gain a 30 foot \\glossterm<glide speed> instead.
+
+            \\rankline
+            \\rank<7> The maximum distance above the ground increases to 200 feet.
         """, tags=['Attune (self)']),
-        Spell('Gust of Wind', 2, 'Everything in a 10 ft. wide line from you that extends 20 feet per rank', """
+        Spell('Gust of Wind', 4, 'Everything in a \\arealarge, 10 ft. wide line from you', """
             Make an attack vs. Fortitude against each target.
-            \\hit Each target takes bludgeoning damage equal to 1d6 per rank.
-            In addition, each target is \\glossterm<pushed> half the length of the line in the direction the line points away from you.
+            \\hit Each target takes 2d8 bludgeoning damage.
+            In addition, each target is \\glossterm<pushed> 20 feet in the direction the line points away from you.
             Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
+            \\glance As above, except that that each target takes half damage.
+
+            \\rankline
+            The damage increases by +1d for each rank beyond 4.
         """, tags=[]),
         Spell('Windblade', 3, 'Yourself', """
             Melee weapons wielded by the target gain +5 foot \\glossterm<magic bonus> to \\glossterm<reach>.
@@ -112,13 +139,17 @@ aeromancy = MysticSphere(
         """, tags=['Attune (target)']),
         Spell('Retributive Winds', 3, 'Yourself', """
             At the end of each phase, make an attack vs. Armor against each creature within \\rngclose range that attacked you during that phase.
-            \\hit Each struck target takes bludgeoning damage equal to half your \\glossterm<power> + 1d6 per rank.
-            Any individual creature can only be dealt damage in this way once per round.
-
             Any effect which increases this spell's range increases the range of this retaliation by the same amount.
+            \\hit Each struck target takes bludgeoning damage equal to 2d6 plus half your \\glossterm<power>.
+            Any individual creature can only be dealt damage in this way once per round.
+            \\glance As above, except that that each target takes half damage.
+
+
+            \\rankline
+            The damage increases by +1d for each rank beyond 3.
         """, tags=['Attune (self)']),
         Spell('Air Walk', 6, 'Yourself', """
-            You can walk on air as if it were solid ground as long as you are no more than 20 feet per rank above solid ground.
+            You can walk on air as if it were solid ground as long as you are no more than 100 feet above solid ground.
             The magic only affects your legs and feet.
             By choosing when to treat the air as solid, you can traverse the air with ease.
         """, tags=['Attune (self)']),
@@ -144,66 +175,71 @@ aeromancy = MysticSphere(
 
             \\rankline
             \\rank<6> You can shape the weather for up to fifteen minutes before it takes effect, increasing the intensity of the changes you can make.
-            \\rank<8> You can cause weather changes that are inappropriate for the climate and season of the area you are in.
-            Making a weather change that is inappropriate for the local environment takes twice as long as making an appropriate change.
         """, tags=['Attune (self)']),
         Spell('Cyclone', 3, 'Everything in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Fortitude against each target.
-            \\hit Each target takes bludgeoning damage equal to half your \\glossterm<power> + 1d6 per rank.
+            \\hit Each target takes bludgeoning damage equal to 2d6 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
+
+            \\rankline
+            The damage increases by +1d for each rank beyond 1.
         """, tags=[]),
         Spell('Buffeting Hurricane', 4, '\\glossterm<Enemies> in a \\areamed radius from you', """
             Make an attack vs. Fortitude against each target.
-            \\hit Each target takes bludgeoning damage equal to 1d8 per rank.
+            \\hit Each target takes bludgeoning damage equal to 2d8 half plus your \\glossterm<power>.
             In addition, each target is moved 20 feet clockwise around you.
             Each target's final position should be the same distance from you as its starting position.
+            \\glance As above, except that that each target takes half damage.
 
             \\rankline
-            \\rank<6> The area increases to a \\arealarge radius.
-            \\rank<8> The area increases to a \\areahuge radius.
+            The damage increases by +1d for each rank beyond 4.
         """, tags=[]),
         Spell('Windtheft', 2, 'One creature or object within \\rngmed range', """
-            Make an attack vs. Reflex against the target.
-            \\hit The target drops all items it is holding that are not well secured (such as a ring) or held in a hand.
-            \\crit As above, except that the target also drops items that are held a hand.
+            Make an attack vs. Reflex with a +1 bonus to \\glossterm<accuracy> against the target.
+            \\hit The target drops all items it has that are not well secured (such as a ring) or held in a hand.
+            \\crit As above, except that the target also drops items that are held in a single hand.
 
             \\rankline
-            \\rank<4> Each dropped item is scattered 30 feet in a random horizontal direction.
-            \\rank<6> You can choose for the dropped items to fly towards you instead of being scattered randomly.
-            \\rank<8> The distance each dropped item flies increases to 100 feet.
+            \\rank<4> The accuracy bonus increases to +2.
+            \\rank<6> The accuracy bonus increases to +3.
         """, tags=[]),
-        Spell('Windseal', 4, 'One Large or smaller creature within \\rngmed range', """
+        Spell('Windseal', 3, 'One Large or smaller creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit As a \\glossterm<condition>, the target is \\glossterm<slowed> by incredibly fast winds that inhibit movement.
-            At the end of each phase, if it moved during that phase, it takes bludgeoning \\glossterm<standard damage> -2d.
-            \\crit As a \\glossterm<condition>, the target is \\glossterm<immobilized> by incredibly fast winds that inhibit movement.
-            At the end of each phase, if it moved during that phase, it takes bludgeoning \\glossterm<standard damage> +1d.
+            At the end of each phase, if it moved during that phase, it takes bludgeoning damage equal to 2d8 plus half your \\glossterm<power>
+            \\crit As above, except that that the target takes double damage.
+            \\glance As above, except that that the target takes half damage.
 
             \\rankline
-            \\rank<6> The maximum size increases to Huge.
-            \\rank<8> The maximum size increases to Gargantuan.
+            \\rank<5> The maximum size increases to Huge.
+            \\rank<7> The maximum size increases to Gargantuan.
         """, tags=[]),
-        Spell('Dust Cloud', 2, 'Creatures in a \\areamed radius within \\rngmed range', """
-            Make an attack vs. Reflex with an accuracy bonus bonus equal to your rank against each target.
+        Spell('Dust Cloud', 1, 'Creatures in a \\areasmall radius within \\rngmed range', """
+            Make an attack vs. Reflex against each target.
             \\hit Each target is \\glossterm<dazzled> until the end of the next round.
             \\crit Each target is \\glossterm<dazzled> as a \\glossterm<condition>.
+
+            \\rankline
+            \\rank<3> You gain a +2 bonus to \\glossterm<accuracy> with the attack.
+            \\rank<5> The accuracy bonus increases to +4.
+            \\rank<7> The accuracy bonus increases to +6.
         """, tags=[]),
-        Spell('Blinding Dust Cloud', 7, 'Creatures in a \\areamed radius within \\rngmed range', """
+        Spell('Blinding Dust Cloud', 7, 'Creatures in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Reflex against each target.
             \\hit Each target is \\glossterm<blinded> until the end of the next round.
             \\crit Each target is \\glossterm<blinded> as a \\glossterm<condition>.
         """, tags=[]),
-        Spell('Dustblind', 5, 'One creature within \\rngmed range', """
+        Spell('Dustblind', 6, 'One creature within \\rngmed range', """
             If there is no dirt, dust, or collection of loose objects of similar size within 30 foot \\glossterm<range> of the target's eyes, this spell is \\glossterm<miscast>.
             Make an attack vs. Reflex against the target.
             \\hit The target is \\glossterm<blinded> as a \\glossterm<condition>.
-
-            \\rankline
-            \\rank<7> The range increases to \\rnglong.
+            \\glance As above, except that the condition is removed at the end of the next round.
         """, tags=[]),
-        Spell('Piercing Wind', 2, 'One creature or object within \\rngclose range', """
+        Spell('Piercing Wind', 3, 'One creature or object within \\rngclose range', """
             A rush of wind flows rapidly through the gaps in your foe's armor to pierce its heart.
             Make an attack vs. Reflex against the target.
-            \\hit The target takes piercing damage equal to your \\glossterm<power> + 1d10 per rank.
+            \\hit The target takes piercing damage equal to 2d8 plus your \\glossterm<power>.
+            \\glance As above, except that that the target takes half damage.
         """, tags=[]),
     ],
     rituals=[
