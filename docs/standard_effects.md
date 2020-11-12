@@ -37,8 +37,8 @@ Class abilities like Sneak Attack or Smite need unusually powerful rank upgrade 
 compensate for their lack of replacement abilities.
 
 Debuff abilities get much better with higher tier conditions. It's hard to justify using a daze
-effect with +1 accuracy when you could use a stun effect instead. For that reason, debuffs get +1
-accuracy per rank instead of the "every two levels" scaling that buffs gain.
+effect with +1 accuracy when you could use a stun effect instead. For that reason, non-damaging
+debuffs get +1 accuracy per rank instead of a +1 accuracy per two levels scaling.
 
 An ability's rank scaling should always be relevant to its glancing blow effect. It would be a
 bad idea to have a spell with normal damage scaling use a glancing blow effect that does not
@@ -203,41 +203,6 @@ situations.
 
 ## Stock effects
 
-### Rank 1 standard effects
-
-### Strike-based
-
-Rank 1 maneuver:
-* Softener:
-  * Make a strike with +2a, low damage
-* Damage:
-  * Make a strike against Fort/Ref defense
-  * Make a strike with a highly circumstantial benefit (reroll miss chance)
-* Finisher:
-  * low damage, r2 condition if lose HP
-
-### Non-strike-based
-
-Rank 1 Focus/non-upgrading, Rank 3 maneuver:
-* Softener:
-  * Med range: r1 condition
-  * Large cone from self: r1 eonr, condition on crit
-  * Large line, 10' wide, from self: r1 eonr, condition on crit
-  * Enemies in Medium radius from self: r1 eonr, condition on crit
-  * Small radius in Med range: r1 eonr, condition on crit
-* Damage:
-  * Med range: high damage
-  * Med cone from self: medium damage
-  * Med line, 10' wide, from self: medium damage
-  * Enemies in small radius from self: medium damage
-  * Small radius in Med range: medium damage
-* Finisher:
-  * Med range: +1a, low damage, r2 condition if lose HP
-  * Med cone from self: r2 condition if no resistances
-  * Med line, 10' wide, from self: r2 condition if no resistances
-  * Small radius around self: r2 condition if no resistances
-  * Small radius in Med range: r2 condition if no resistances
-
 ### Standard level modifiers
 
 Note that these are used for determining the levels of new effects, not rank upgrades. Rank upgrades
@@ -246,8 +211,10 @@ have their own logic which may differ significantly from this.
 * Both strike-based and non-strike-based:
   * +0 levels: trade -1a for +1d or vice versa
   * +0 levels: trade -1a/-1d for minor benefit
+  * +1 levels: +1a (non-damaging debuffs)
   * +2 levels: +1 area size
-  * +2 levels: +1a/+1d (above standard rank progression, if any)
+  * +2 levels: +1a (damaging attacks, damaging debuffs)
+  * +2 levels: +1d (above standard rank progression, if any)
   * +2 levels: convert condition to curse
   * +3 levels: +1 rank to condition
   * +3 levels: Add additional condition of the same rank removed at the same time as existing condition
@@ -255,7 +222,7 @@ have their own logic which may differ significantly from this.
 * Non-strikes only:
   * +0 levels: add glancing blow mechanic
     * Mathematically, this should be +2 levels to match +1 accuracy. However, at high levels the game
-      plays better if this effect is common, so it's just free for rank 3 or higher abilities.
+      plays better if this effect is common, so it's free.
     * This should not be found on spells below rank 3 to make sure the game plays differently at
       different levels, and to solve accuracy-related math.
   * +1 levels: enemies only
@@ -263,17 +230,61 @@ have their own logic which may differ significantly from this.
       virtually useless
   * +1 level: Add crit-only +2r condition that replaces existing condition
   * +1 level: Add crit-only +1r condition in addition to existing condition
-  * +1 level: +1 range increment
+  * +1 level: +1 range increment (None to Close, Close to Med)
   * +1 level: Increase line width by 5'
   * +1 level: Add additional -1r condition removed at the same time as existing condition
+  * +2 levels: +1 range increment (for increasing higher than Medium)
 * Strikes only:
+
+### Standard effects
+
+### Strike-based
+
+Rank 1 maneuver:
+* Strike-based:
+  * Softener:
+    * Make a strike with +2a, low damage
+  * Damage:
+    * Make a strike against Fort/Ref defense
+    * Make a strike with a highly circumstantial benefit (reroll miss chance)
+  * Finisher:
+    * low damage, r1 condition if lose HP (note: this is 1 level too weak)
+
+Rank 1 Focus/non-upgrading, Rank 3 maneuver:
+* Strike-based:
+  * Finisher:
+    * low damage, r2 condition if lose HP
+* Non-strike-based:
+  * Softener:
+    * Med range: r1 condition
+    * Large cone from self: r1 eonr, condition on crit
+    * Large line, 10' wide, from self: r1 eonr, condition on crit
+    * Enemies in Medium radius from self: r1 eonr, condition on crit
+  * Damage:
+    * Med range: high damage
+    * Med cone from self: medium damage
+    * Med line, 10' wide, from self: medium damage
+    * Enemies in small radius from self: medium damage
+  * Finisher:
+    * Med range: low damage, r2 condition if lose HP
+    * Med cone from self: r2 condition if no resistances
+    * Med line, 10' wide, from self: r2 condition if no resistances
+    * Small radius around self: r2 condition if no resistances
 
 ### Higher rank specific examples
 
 Rank 3 Focus/non-upgrading, Rank 5 maneuver:
-* Softener:
-  * r1 curse in medium range
-* Finisher:
+* Strike-based:
+  * Finisher:
+    * low damage, r2 condition
+* Non-strike-based:
+  * Softener:
+    * r1 curse in medium range
+    * Small radius in Med range: r1 eonr, condition on crit
+  * Damage:
+    * Small radius in Med range: medium damage
+  * Finisher:
+    * Small radius in Med range: r2 condition if no resistances
 
 
 Rank 4 Focus/non-upgrading, Rank 6 maneuver:

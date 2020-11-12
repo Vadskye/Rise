@@ -9,28 +9,27 @@ biomancy=MysticSphere(
     ],
     lists=['Arcane', 'Nature', 'Pact'],
     spells=[
-        Spell('Poison -- Asp Venom', 1, 'One living creature within \\rngmed range', """
+        Spell('Poison -- Asp Venom', 2, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
-            \\hit The target becomes \\glossterm<poisoned> with asp venom.
-            At the end of each subsequent round, you repeat this attack, as normal for poisons.
+            \\hit The target becomes \\glossterm<poisoned> by the first \\glossterm<poison stage> of asp venom.
+            At the end of each subsequent round, you repeat this attack, as normal for poisons (see \\pcref<Poison>).
             A creature poisoned by asp venom becomes \\glossterm<sickened> as long as it is poisoned.
-            A third successful attack causes the target to become \\glossterm<nauseated> as long as it is poisoned.
+            Reaching the third \\glossterm<poison stage> causes the target to become \\glossterm<nauseated> as long as it is poisoned.
             A third failed attack ends the poison.
+            \\crit As above, except that target reaches the second \\glossterm<poison stage>, as normal for poisons.
 
             \\rankline
-            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<5> The accuracy bonus increases to +2.
-            \\rank<7> The accuracy bonus increases to +3.
+            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 2.
         """, tags=['Manifestation', 'Sustain (minor)']),
-        Spell('Poison -- Dragon Bile', 3, 'One living creature within \\rngmed range', """
-            This spell functions like this \\spell<poison -- nitharit> spell, except that the target becomes poisoned with sassone leaf instead (see \\pcref<Poison>).
-            A creature poisoned by sassone leaf immediately loses a \\glossterm<hit point> and is \\glossterm<sickened> as long as it is poisoned.
-            A third successful attack causes the target to lose two \\glossterm<hit points> and become \\glossterm<nauseated> as long as it is poisoned.
+        Spell('Poison -- Dragon Bile', 4, 'One living creature within \\rngmed range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit The target becomes \\glossterm<poisoned> with dragon bile.
+            At the end of each subsequent round, you repeat this attack, as normal for poisons.
+            For each \\glossterm<poison stage>, including the initial stage, the target loses \\glossterm<hit points> equal to 1d10 plus half your \\glossterm<power>.
             A third failed attack ends the poison.
 
             \\rankline
-            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<7> The accuracy bonus increases to +2.
+            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 4.
         """, tags=[]),
         Spell('Neutralize Poison', 1, 'Yourself or one target within \\rngmed range', """
             The target gains an additional success to resist a poison currently affecting it (see \\pcref<Poison>).
@@ -47,17 +46,13 @@ biomancy=MysticSphere(
             The poison gains an additional hit against the target, which can have varying effects depending on the poison (see \\pcref<Poison>).
 
             \\rankline
-            \\rank<4> The accuracy bonus increases to +3.
-            \\rank<6> The accuracy bonus increases to +4.
-            \\rank<8> The accuracy bonus increases to +5.
+            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 2.
         """, tags=[]),
-        Spell('Brief Regeneration', 1, 'Yourself or one living \\glossterm<ally> within \\rngclose range', """
-            The target regains one lost \\glossterm<hit point>.
+        Spell('Brief Regeneration', 2, 'Yourself or one living \\glossterm<ally> within \\rngclose range', """
+            The target regains \\glossterm<hit points> equal to 1d6 plus half your \\glossterm<power>.
 
             \\rankline
-            \\rank<3> If the target is \\glossterm<bloodied>, it regains two hit points instead of one.
-            \\rank<5> The number of hit points regained increases to two.
-            \\rank<7> If the target is \\glossterm<bloodied>, it regains three hit points instead of two.
+            The healing increases by +1d for each rank beyond 2.
         """, tags=[]),
         Spell('Vital Regeneration', 5, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             A the end of each round, the target can remove one of its \\glossterm<vital wounds>.
@@ -70,13 +65,12 @@ biomancy=MysticSphere(
             It gains two \\glossterm<fatigue points> per vital wound removed this way.
         """, tags=['Attune (target)']),
         Spell('Regeneration', 4, 'Yourself', """
-            At the end of each round, if you did not lose a \\glossterm<hit point> that round, you regain a lost hit point.
+            At the end of each round, if you did not lose any \\glossterm<hit points> that round, you regain 1d10 \\glossterm<hit points>.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<6> You also gain a +1 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
-            \\rank<8> You regain two hit points instead of one.
+            The healing increases by +1d for each rank beyond 4.
         """, tags=['Attune (self)']),
         Spell('Swimmer', 2, 'Yourself', """
             The target gains a \\glossterm<swim speed> equal to its \\glossterm<base speed>.
@@ -145,8 +139,8 @@ biomancy=MysticSphere(
         Spell('Acidic Blood', 3, ['Yourself', 'Everything adjacent to the primary target'], """
             The primary target's blood becomes acidic.
             This does not harm it, but the blood can be dangerous to anything nearby when it bleeds.
-            At the end of each round, if the primary target was \\glossterm<wounded> during that round, make an attack vs. Fortitude against everything adjacent to the target.
-            \\hit Each secondary target takes acid \\glossterm<standard damage> -1d.
+            At the end of each round, if the primary target lost \\glossterm<hit points> during that round, make an attack vs. Fortitude against everything adjacent to the target.
+            \\hit Each secondary target takes acid damage equal to 2d6 plus half your \\glossterm<power>.
 
             \\rankline
             \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
@@ -157,13 +151,13 @@ biomancy=MysticSphere(
             When you cast this spell, choose a type of damage: acid, cold, electricity, or fire.
             As a standard action, you can breath a cone of that type of energy.
             When you do, make an attack vs. Reflex against everything within a \\arealarge cone from you.
-            \\hit Each target takes \\glossterm<standard damage> of the chosen type.
+            % note +1d as part of spell effect as consolation prize for attunement
+            \\hit Each target takes damage of the chosen type equal to 2d10 plus half your \\glossterm<power>.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<6> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<8> The damage increases to \\glossterm<standard damage> +2d.
+            The damage increases by +1d for each rank beyond 4.
         """, tags=['Attune (self)']),
         Spell('Withering', 2, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude with a +2 bonus to \\glossterm<accuracy> against the target.
@@ -173,9 +167,7 @@ biomancy=MysticSphere(
             This penalty increase stacks, and persists even if the target regains the lost hit points.
 
             \\rankline
-            \\rank<4> The accuracy bonus increases to +3.
-            \\rank<6> The accuracy bonus increases to +6.
-            \\rank<8> The accuracy bonus increases to +7.
+            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 2.
         """, tags=[]),
         Spell('Withering Curse', 4, 'One living creature within \\rngmed range', """
             Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against the target.
@@ -186,53 +178,47 @@ biomancy=MysticSphere(
             \\crit As above, except that the effect lasts until this curse is removed.
 
             \\rankline
-            \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<8> The accuracy bonus increases to +2.
+            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 4.
         """, tags=['Curse']),
-        Spell('Sickness', 1, 'One living creature within \\rngmed range', """
+        Spell('Sickness', 2, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target is \\glossterm<sickened> as a \\glossterm<condition>.
             \\crit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<5> The accuracy bonus increases to +2.
-            \\rank<7> The accuracy bonus increases to +3.
+            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 2.
         """, tags=[]),
         Spell('Curse of Sickness', 3, 'One living creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<sickened> until it takes a \\glossterm<short rest>.
             \\crit As above, except that the effect lasts until this curse is removed.
+            \\glance As above, except that the condition is removed at the end of the next round.
 
             \\rankline
-            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<7> The accuracy bonus increases to +2.
+            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 3.
         """, tags=['Curse']),
-        Spell('Eyebite', 5, 'One living creature within \\rngclose range', """
+        Spell('Eyebite', 4, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
-            \\hit The target is \\glossterm<blinded> as a \\glossterm<condition>.
+            \\hit The target takes 2d6 physical damage.
+            If it loses \\glossterm<hit points> from this damage, it is \\glossterm<blinded> as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<7> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            The damage increases by +1d for each rank beyond 1.
         """, tags=[]),
-        Spell('Eyebite Curse', 8, 'One living creature within \\rngclose range', """
-            Make an attack vs. Mental against the target.
-            \\hit The target is \\glossterm<blinded> until it takes a \\glossterm<short rest>.
-            \\crit As above, except that the effect lasts until this curse is removed.
-        """, tags=['Curse']),
-        Spell('Cripple', 6, 'One living creature within \\rngclose range', """
+        Spell('Organ Failure', 1, 'One living creature within \\rngmed range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit The target takes 1d6 physical damage.
+            If it loses \\glossterm<hit points> from this damage, it is \\glossterm<nauseated> as a \\glossterm<condition>.
+
+            \\rankline
+            The damage increases by +1d for each rank beyond 1.
+        """, tags=[]),
+        Spell('Cripple', 7, 'One living creature within \\rngclose range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target is \\glossterm<immobilized> as a \\glossterm<condition>.
+            \\glance As above, except that the condition is removed at the end of the next round.
             \\crit The target is \\glossterm<paralyzed> as a \\glossterm<condition>.
-
-            \\rankline
-            \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=[]),
-        Spell('Crippling Curse', 8, 'One living creature within \\rngclose range', """
-            Make an attack vs. Mental against the target.
-            \\hit The target is \\glossterm<immobilized> until it takes a \\glossterm<short rest>.
-            \\crit As above, except that the effect lasts until this curse is removed.
-        """, tags=['Curse']),
     ],
     rituals=[
         Spell('Awaken', 6, 'One Large or smaller \\glossterm<ally> within \\rngmed range', """
