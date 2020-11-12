@@ -238,15 +238,15 @@ aquamancy=MysticSphere(
             \\rank<4> You gain a +5 foot bonus to \\glossterm<reach> with attacks using the tentacle.
             \\rank<6> The bonus to reach increases to 10 feet.
         """, tags=['Attune (self)', 'Manifestation']),
-        Spell('Desiccate', 1, 'One creature within \\rngmed range', """
-            Make an attack vs. Fortitude with a +1 bonus to \\glossterm<accuracy> against the target.
+        Spell('Dehydrate', 1, 'One creature within \\rngmed range', """
+            Make an attack vs. Fortitude against the target.
             \\hit The target takes 1d6 physical damage.
             If it loses hit points from this damage, it is \\glossterm<nauseated> as a \\glossterm<condition>.
 
             \\rankline
-            You gain a +1 bonus to \glossterm<accuracy> with the attack for each rank beyond 1.
+            The damage increases by +1d for each rank beyond 1.
         """, tags=[]),
-        Spell('Wave of Desiccation', 3, 'Creatures in a \\arealarge, 10 ft. wide line from you', """
+        Spell('Wave of Dehydration', 3, 'Creatures in a \\arealarge, 10 ft. wide line from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target that has no remaining \\glossterm<resistance> to physical damage is \\glossterm<nauseated> by you as a \\glossterm<condition>.
             \\glance As above, except that the condition is removed at the end of the next round.
@@ -254,13 +254,20 @@ aquamancy=MysticSphere(
             \\rankline
             You gain a +1 bonus to \glossterm<accuracy> with the attack for each rank beyond 3.
         """, tags=[]),
-        Spell('Excsiccate', 5, 'One creature within \\rngmed range', """
+        Spell('Desiccate', 4, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
-            \\hit The target takes physical damage equal to 4d6 plus your \\glossterm<power>.
+            \\hit The target takes physical damage equal to 2d8 plus half your \\glossterm<power>.
             If it loses hit points from this damage, it is \\glossterm<nauseated> as a \\glossterm<condition>.
+            \\glance As above, except that that the target takes half damage.
 
             \\rankline
-            The damage increases by +1d for each rank beyond 5.
+            The damage increases by +1d for each rank beyond 4.
+        """, tags=[]),
+        Spell('Excsiccate', 7, 'One creature within \\rngmed range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit The target takes physical damage equal to 4d10 plus your \\glossterm<power>.
+            If it loses hit points from this damage, it is \\glossterm<nauseated> as a \\glossterm<condition>.
+            \\glance As above, except that that the target takes half damage.
         """, tags=[]),
         Spell('Aqueous Form', 4, 'Yourself', """
             You transform your body and equipment into water, allowing you to compress your body or contort yourself into odd shapes.

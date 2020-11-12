@@ -122,6 +122,24 @@ The damage increases by \plus1d for each rank beyond 1.
 
 
 
+\lowercase{\hypertarget{spell:Buffet}{}}\label{spell:Buffet}
+\begin{freeability}[Rank 2]{\hypertarget{spell:Buffet}{Buffet}}[\glossterm{Focus}]
+\target{One creature or object within \rngmed range}
+Make an attack vs. Fortitude against the target.
+% This is \plus1d over the normal damage to help split the difference since the effect isn't consistently t2 worthy.
+% Making this spell 2nd level also helps with the Dimensional Jaunt -- Plane of Air mirroring.
+\hit The target takes 1d10 bludgeoning damage.
+If it loses \glossterm{hit points} from this damage, you \glossterm{knockback} it up to 50 feet in any direction (see \pcref{Knockback Effects}).
+Moving the target upwards costs twice the normal movement cost.
+
+\rankline
+The damage increases by \plus1d for each rank beyond 2.
+
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Wind Screen}{}}\label{spell:Wind Screen}
 \begin{attuneability}[Rank 2]{\hypertarget{spell:Wind Screen}{Wind Screen}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself}
@@ -143,29 +161,12 @@ Any effect which increases the size of creature this spell can affect also incre
 \lowercase{\hypertarget{spell:Windtheft}{}}\label{spell:Windtheft}
 \begin{freeability}[Rank 2]{\hypertarget{spell:Windtheft}{Windtheft}}[\glossterm{Focus}]
 \target{One creature or object within \rngmed range}
-Make an attack vs. Reflex with a \plus1 bonus to \glossterm{accuracy} against the target.
+Make an attack vs. Reflex with a \plus2 bonus to \glossterm{accuracy} against the target.
 \hit The target drops all items it has that are not well secured (such as a ring) or held in a hand.
 \crit As above, except that the target also drops items that are held in a single hand.
 
 \rankline
 You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 2.
-
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Buffeting Blast}{}}\label{spell:Buffeting Blast}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Buffeting Blast}{Buffeting Blast}}[\glossterm{Focus}]
-\target{One creature or object within \rngmed range}
-Make an attack vs. Fortitude against the target.
-\hit The target takes bludgeoning damage equal to 2d6 plus your \glossterm{power}.
-In addition, it is \glossterm{pushed} up to 30 feet in any direction.
-Moving the target upwards costs twice the normal movement cost.
-\glance As above, except that that the target takes half damage.
-
-\rankline
-The damage increases by \plus1d for each rank beyond 3.
 
 \end{freeability}
 \vspace{0.25em}
@@ -197,6 +198,23 @@ You gain a 30 foot \glossterm{glide speed} (see \pcref{Gliding}).
 \rank{7} You can reduce your \glossterm{glide speed} to 20 feet or increase it to 60 feet during each phase that you glide.
 
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Gust of Wind}{}}\label{spell:Gust of Wind}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Gust of Wind}{Gust of Wind}}[\glossterm{Focus}]
+\targets{Everything in a \arealarge, 10 ft. wide line from you}
+Make an attack vs. Fortitude against each target.
+\hit Each target takes 1d10 bludgeoning damage.
+In addition, each target is \glossterm{pushed} 20 feet in the direction the line points away from you.
+Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
+\glance As above, except that that each target takes half damage.
+
+\rankline
+The damage increases by \plus1d for each rank beyond 3.
+
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -285,23 +303,6 @@ The damage increases by \plus1d for each rank beyond 3.
 
 
 
-\lowercase{\hypertarget{spell:Buffeting Hurricane}{}}\label{spell:Buffeting Hurricane}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Buffeting Hurricane}{Buffeting Hurricane}}[\glossterm{Focus}]
-\targets{\glossterm{Enemies} in a \areamed radius from you}
-Make an attack vs. Fortitude against each target.
-\hit Each target takes bludgeoning damage equal to 2d8 half plus your \glossterm{power}.
-In addition, each target is moved 20 feet clockwise around you.
-Each target's final position should be the same distance from you as its starting position.
-\glance As above, except that that each target takes half damage.
-
-\rankline
-The damage increases by \plus1d for each rank beyond 4.
-
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Control Weather}{}}\label{spell:Control Weather}
 \begin{attuneability}[Rank 4]{\hypertarget{spell:Control Weather}{Control Weather}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \targetrule
@@ -331,17 +332,34 @@ If another ability would magically manipulate the weather in the same area, the 
 
 
 
-\lowercase{\hypertarget{spell:Gust of Wind}{}}\label{spell:Gust of Wind}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Gust of Wind}{Gust of Wind}}[\glossterm{Focus}]
-\targets{Everything in a \arealarge, 10 ft. wide line from you}
+\lowercase{\hypertarget{spell:Hurricane}{}}\label{spell:Hurricane}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Hurricane}{Hurricane}}[\glossterm{Focus}]
+\targets{\glossterm{Enemies} in a \areamed radius from you}
 Make an attack vs. Fortitude against each target.
-\hit Each target takes 2d8 bludgeoning damage.
-In addition, each target is \glossterm{pushed} 20 feet in the direction the line points away from you.
-Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
+\hit Each target takes bludgeoning damage equal to 2d8 half plus your \glossterm{power}.
+In addition, each target is \glossterm{pushed} 20 feet clockwise around you.
+Each target's final position should be the same distance from you as its starting position.
 \glance As above, except that that each target takes half damage.
 
 \rankline
 The damage increases by \plus1d for each rank beyond 4.
+
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Buffeting Blast}{}}\label{spell:Buffeting Blast}
+\begin{freeability}[Rank 5]{\hypertarget{spell:Buffeting Blast}{Buffeting Blast}}[\glossterm{Focus}]
+\target{One creature or object within \rngmed range}
+Make an attack vs. Fortitude against the target.
+\hit The target takes bludgeoning damage equal to 2d10 plus half your \glossterm{power}.
+If it loses \glossterm{hit points} from this damage, you \glossterm{knockback} it up to 100 feet in any direction (see \pcref{Knockback Effects}).
+Moving the target upwards costs twice the normal movement cost.
+\glance As above, except that that the target takes half damage.
+
+\rankline
+The damage increases by \plus1d for each rank beyond 5.
 
 \end{freeability}
 \vspace{0.25em}
@@ -370,6 +388,23 @@ The magic only affects your legs and feet.
 By choosing when to treat the air as solid, you can traverse the air with ease.
 
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Blast of Wind}{}}\label{spell:Blast of Wind}
+\begin{freeability}[Rank 6]{\hypertarget{spell:Blast of Wind}{Blast of Wind}}[\glossterm{Focus}]
+\targets{Everything in a \areahuge, 10 ft. wide line from you}
+Make an attack vs. Fortitude against each target.
+\hit Each target takes 2d10 bludgeoning damage.
+In addition, each target is \glossterm{pushed} 50 feet in the direction the line points away from you.
+Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
+\glance As above, except that that each target takes half damage.
+
+\rankline
+The damage increases by \plus1d for each rank beyond 6.
+
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -512,15 +547,15 @@ The damage increases by \plus1d for each rank beyond 1.
 
 
 
-\lowercase{\hypertarget{spell:Desiccate}{}}\label{spell:Desiccate}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Desiccate}{Desiccate}}[\glossterm{Focus}]
+\lowercase{\hypertarget{spell:Dehydrate}{}}\label{spell:Dehydrate}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Dehydrate}{Dehydrate}}[\glossterm{Focus}]
 \target{One creature within \rngmed range}
-Make an attack vs. Fortitude with a \plus1 bonus to \glossterm{accuracy} against the target.
+Make an attack vs. Fortitude against the target.
 \hit The target takes 1d6 physical damage.
 If it loses hit points from this damage, it is \glossterm{nauseated} as a \glossterm{condition}.
 
 \rankline
-You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
+The damage increases by \plus1d for each rank beyond 1.
 
 \end{freeability}
 \vspace{0.25em}
@@ -755,8 +790,8 @@ Each five-foot square of wall has \glossterm{hit points} equal to three times yo
 
 
 
-\lowercase{\hypertarget{spell:Wave of Desiccation}{}}\label{spell:Wave of Desiccation}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Wave of Desiccation}{Wave of Desiccation}}[\glossterm{Focus}]
+\lowercase{\hypertarget{spell:Wave of Dehydration}{}}\label{spell:Wave of Dehydration}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Wave of Dehydration}{Wave of Dehydration}}[\glossterm{Focus}]
 \target{Creatures in a \arealarge, 10 ft. wide line from you}
 Make an attack vs. Fortitude against each target.
 \hit Each target that has no remaining \glossterm{resistance} to physical damage is \glossterm{nauseated} by you as a \glossterm{condition}.
@@ -806,6 +841,22 @@ You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank be
 
 
 
+\lowercase{\hypertarget{spell:Desiccate}{}}\label{spell:Desiccate}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Desiccate}{Desiccate}}[\glossterm{Focus}]
+\target{One creature within \rngmed range}
+Make an attack vs. Fortitude against the target.
+\hit The target takes physical damage equal to 2d8 plus half your \glossterm{power}.
+If it loses hit points from this damage, it is \glossterm{nauseated} as a \glossterm{condition}.
+\glance As above, except that that the target takes half damage.
+
+\rankline
+The damage increases by \plus1d for each rank beyond 4.
+
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Misty Shroud}{}}\label{spell:Misty Shroud}
 \begin{attuneability}[Rank 4]{\hypertarget{spell:Misty Shroud}{Misty Shroud}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \targetrule
@@ -831,21 +882,6 @@ Once a target leaves the area, it stops being moved and blocks any other targets
 
 \rankline
 The damage increases by \plus1d for each rank beyond 4.
-
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Excsiccate}{}}\label{spell:Excsiccate}
-\begin{freeability}[Rank 5]{\hypertarget{spell:Excsiccate}{Excsiccate}}[\glossterm{Focus}]
-\target{One creature within \rngmed range}
-Make an attack vs. Fortitude against the target.
-\hit The target takes physical damage equal to 4d6 plus your \glossterm{power}.
-If it loses hit points from this damage, it is \glossterm{nauseated} as a \glossterm{condition}.
-
-\rankline
-The damage increases by \plus1d for each rank beyond 5.
 
 \end{freeability}
 \vspace{0.25em}
@@ -933,6 +969,19 @@ This does not impede the target's ability to breathe, but it takes penalties as 
 
 \rankline
 You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 6.
+
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Excsiccate}{}}\label{spell:Excsiccate}
+\begin{freeability}[Rank 7]{\hypertarget{spell:Excsiccate}{Excsiccate}}[\glossterm{Focus}]
+\target{One creature within \rngmed range}
+Make an attack vs. Fortitude against the target.
+\hit The target takes physical damage equal to 4d10 plus your \glossterm{power}.
+If it loses hit points from this damage, it is \glossterm{nauseated} as a \glossterm{condition}.
+\glance As above, except that that the target takes half damage.
 
 \end{freeability}
 \vspace{0.25em}
@@ -1066,16 +1115,16 @@ If the destination is invalid, this spell is \glossterm{miscast}.
 
 
 
-\lowercase{\hypertarget{spell:Dimensional Jaunt -- Plane of Earth}{}}\label{spell:Dimensional Jaunt -- Plane of Earth}
-\begin{freeability}[Rank 2]{\hypertarget{spell:Dimensional Jaunt -- Plane of Earth}{Dimensional Jaunt -- Plane of Earth}}[\glossterm{Focus}]
-\target{One creature within \rngmed range}
-You partially teleport the target into the Plane of Earth.
-Make an attack vs. Mental against the target.
-\hit The target takes 1d8 bludgeoning damage.
-If it loses \glossterm{hit points} from this damage, it is \glossterm{immobilized} as a \glossterm{condition}.
+\lowercase{\hypertarget{spell:Dimensional Jaunt -- Plane of Air}{}}\label{spell:Dimensional Jaunt -- Plane of Air}
+\begin{freeability}[Rank 2]{\hypertarget{spell:Dimensional Jaunt -- Plane of Air}{Dimensional Jaunt -- Plane of Air}}[\glossterm{Focus}]
+\target{One creature or object within \rngmed range}
+Make an attack vs. Fortitude against the target.
+\hit The target takes 1d10 bludgeoning damage.
+If it loses \glossterm{hit points} from this damage, you \glossterm{knockback} it up to 50 feet in any direction (see \pcref{Knockback Effects}).
+Moving the target upwards costs twice the normal movement cost.
 
 \rankline
-You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 2.
+The damage increases by \plus1d for each rank beyond 3.
 
 \end{freeability}
 \vspace{0.25em}
@@ -1140,24 +1189,6 @@ Make an attack vs. Mental with a \plus2 bonus to \glossterm{accuracy} against th
 \crit As above, except that that the target takes double damage.
 In addition, if it is a \glossterm{planeforged} not on its home plane, it is teleported to a random location on its home plane.
 If it is a creature created by a \glossterm{Manifestation} ability, it immediately disappears.
-
-\rankline
-The damage increases by \plus1d for each rank beyond 3.
-
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Dimensional Jaunt -- Plane of Air}{}}\label{spell:Dimensional Jaunt -- Plane of Air}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Dimensional Jaunt -- Plane of Air}{Dimensional Jaunt -- Plane of Air}}[\glossterm{Focus}]
-\target{One creature within \rngmed range}
-You partially teleport the target into the Plane of Air.
-Make an attack vs. Mental against the target.
-\hit The target takes bludgeoning damage equal to 2d6 plus your \glossterm{power}.
-In addition, it is \glossterm{pushed} up to 30 feet in any direction.
-Moving the target upwards costs twice the normal movement cost.
-\glance As above, except that that the target takes half damage.
 
 \rankline
 The damage increases by \plus1d for each rank beyond 3.
@@ -1280,16 +1311,13 @@ You must be able to move to teleport in this way, so effects like being \glosste
 
 
 
-\lowercase{\hypertarget{spell:Dimensional Jaunt -- Plane of Fire}{}}\label{spell:Dimensional Jaunt -- Plane of Fire}
-\begin{freeability}[Rank 4]{\hypertarget{spell:Dimensional Jaunt -- Plane of Fire}{Dimensional Jaunt -- Plane of Fire}}[\glossterm{Focus}]
+\lowercase{\hypertarget{spell:Dimensional Jaunt -- Plane of Earth}{}}\label{spell:Dimensional Jaunt -- Plane of Earth}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Dimensional Jaunt -- Plane of Earth}{Dimensional Jaunt -- Plane of Earth}}[\glossterm{Focus}]
 \target{One creature within \rngmed range}
-You partially teleport the target into the Plane of Fire.
+You partially teleport the target into the Plane of Earth.
 Make an attack vs. Mental against the target.
-\hit The target takes fire damage equal to 2d8 plus half your \glossterm{power}.
-If it loses \glossterm{hit points} from this damage, it is \glossterm{ignited} as a \glossterm{condition}.
-This condition can also be removed if the target makes a \glossterm{difficulty rating} 10 Dexterity check as a \glossterm{move action} to put out the flames.
-Dropping \glossterm{prone} as part of this action gives a \plus5 bonus to this check.
-\glance As above, except that that the target takes half damage.
+\hit The target takes 2d6 bludgeoning damage.
+If it loses \glossterm{hit points} from this damage, it is \glossterm{immobilized} as a \glossterm{condition}.
 
 \rankline
 The damage increases by \plus1d for each rank beyond 4.
@@ -1352,6 +1380,25 @@ This spell functions like the \textit{transposition} spell, except that it can a
 
 \rankline
 You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 5.
+
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Dimensional Jaunt -- Plane of Fire}{}}\label{spell:Dimensional Jaunt -- Plane of Fire}
+\begin{freeability}[Rank 6]{\hypertarget{spell:Dimensional Jaunt -- Plane of Fire}{Dimensional Jaunt -- Plane of Fire}}[\glossterm{Focus}]
+\target{One creature within \rngmed range}
+You partially teleport the target into the Plane of Fire.
+Make an attack vs. Mental against the target.
+\hit The target takes fire damage equal to 4d6 plus half your \glossterm{power}.
+If it loses \glossterm{hit points} from this damage, it is \glossterm{ignited} as a \glossterm{condition}.
+This condition can also be removed if the target makes a \glossterm{difficulty rating} 10 Dexterity check as a \glossterm{move action} to put out the flames.
+Dropping \glossterm{prone} as part of this action gives a \plus5 bonus to this check.
+\glance As above, except that that the target takes half damage.
+
+\rankline
+The damage increases by \plus1d for each rank beyond 6.
 
 \end{freeability}
 \vspace{0.25em}
@@ -2020,21 +2067,6 @@ This ritual takes 24 hours to perform, and it requires one \glossterm{fatigue po
 \subsubsection{Spells}
 
 
-\lowercase{\hypertarget{spell:Brief Regeneration}{}}\label{spell:Brief Regeneration}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Brief Regeneration}{Brief Regeneration}}[\glossterm{Focus}]
-\target{Yourself or one living \glossterm{ally} within \rngclose range}
-The target regains one lost \glossterm{hit point}.
-
-\rankline
-\rank{3} If the target is \glossterm{bloodied}, it regains two hit points instead of one.
-\rank{5} The number of hit points regained increases to two.
-\rank{7} If the target is \glossterm{bloodied}, it regains three hit points instead of two.
-
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Enhanced Senses}{}}\label{spell:Enhanced Senses}
 \begin{attuneability}[Rank 1]{\hypertarget{spell:Enhanced Senses}{Enhanced Senses}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself}
@@ -2080,37 +2112,28 @@ The target gains an additional success to resist a poison currently affecting it
 
 
 
-\lowercase{\hypertarget{spell:Poison -- Asp Venom}{}}\label{spell:Poison -- Asp Venom}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Poison -- Asp Venom}{Poison -- Asp Venom}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
+\lowercase{\hypertarget{spell:Organ Failure}{}}\label{spell:Organ Failure}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Organ Failure}{Organ Failure}}[\glossterm{Focus}]
 \target{One living creature within \rngmed range}
 Make an attack vs. Fortitude against the target.
-\hit The target becomes \glossterm{poisoned} with asp venom.
-At the end of each subsequent round, you repeat this attack, as normal for poisons.
-A creature poisoned by asp venom becomes \glossterm{sickened} as long as it is poisoned.
-A third successful attack causes the target to become \glossterm{nauseated} as long as it is poisoned.
-A third failed attack ends the poison.
+\hit The target takes 1d6 physical damage.
+If it loses \glossterm{hit points} from this damage, it is \glossterm{nauseated} as a \glossterm{condition}.
 
 \rankline
-\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-\rank{5} The accuracy bonus increases to \plus2.
-\rank{7} The accuracy bonus increases to \plus3.
+The damage increases by \plus1d for each rank beyond 1.
 
 \end{freeability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Sickness}{}}\label{spell:Sickness}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Sickness}{Sickness}}[\glossterm{Focus}]
-\target{One living creature within \rngmed range}
-Make an attack vs. Fortitude against the target.
-\hit The target is \glossterm{sickened} as a \glossterm{condition}.
-\crit The target is \glossterm{nauseated} as a \glossterm{condition}.
+\lowercase{\hypertarget{spell:Brief Regeneration}{}}\label{spell:Brief Regeneration}
+\begin{freeability}[Rank 2]{\hypertarget{spell:Brief Regeneration}{Brief Regeneration}}[\glossterm{Focus}]
+\target{Yourself or one living \glossterm{ally} within \rngclose range}
+The target regains \glossterm{hit points} equal to 1d6 plus half your \glossterm{power}.
 
 \rankline
-\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-\rank{5} The accuracy bonus increases to \plus2.
-\rank{7} The accuracy bonus increases to \plus3.
+The healing increases by \plus1d for each rank beyond 2.
 
 \end{freeability}
 \vspace{0.25em}
@@ -2144,9 +2167,26 @@ If the target is not currently poisoned, this ability has no effect.
 The poison gains an additional hit against the target, which can have varying effects depending on the poison (see \pcref{Poison}).
 
 \rankline
-\rank{4} The accuracy bonus increases to \plus3.
-\rank{6} The accuracy bonus increases to \plus4.
-\rank{8} The accuracy bonus increases to \plus5.
+You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 2.
+
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Poison -- Asp Venom}{}}\label{spell:Poison -- Asp Venom}
+\begin{freeability}[Rank 2]{\hypertarget{spell:Poison -- Asp Venom}{Poison -- Asp Venom}}[\glossterm{Focus}, \glossterm{Manifestation}, \glossterm{Sustain} (minor)]
+\target{One living creature within \rngmed range}
+Make an attack vs. Fortitude against the target.
+\hit The target becomes \glossterm{poisoned} by the first \glossterm{poison stage} of asp venom.
+At the end of each subsequent round, you repeat this attack, as normal for poisons (see \pcref{Poison}).
+A creature poisoned by asp venom becomes \glossterm{sickened} as long as it is poisoned.
+Reaching the third \glossterm{poison stage} causes the target to become \glossterm{nauseated} as long as it is poisoned.
+A third failed attack ends the poison.
+\crit As above, except that target reaches the second \glossterm{poison stage}, as normal for poisons.
+
+\rankline
+You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 2.
 
 \end{freeability}
 \vspace{0.25em}
@@ -2166,6 +2206,21 @@ You can cast this spell as a \glossterm{minor action}.
 \rank{8} The bonus increases to \plus30 feet.
 
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Sickness}{}}\label{spell:Sickness}
+\begin{freeability}[Rank 2]{\hypertarget{spell:Sickness}{Sickness}}[\glossterm{Focus}]
+\target{One living creature within \rngmed range}
+Make an attack vs. Fortitude against the target.
+\hit The target is \glossterm{sickened} as a \glossterm{condition}.
+\crit The target is \glossterm{nauseated} as a \glossterm{condition}.
+
+\rankline
+You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 2.
+
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -2198,9 +2253,7 @@ Whenever it loses one or more \glossterm{hit points} from a single attack, this 
 This penalty increase stacks, and persists even if the target regains the lost hit points.
 
 \rankline
-\rank{4} The accuracy bonus increases to \plus3.
-\rank{6} The accuracy bonus increases to \plus6.
-\rank{8} The accuracy bonus increases to \plus7.
+You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 2.
 
 \end{freeability}
 \vspace{0.25em}
@@ -2216,8 +2269,8 @@ Secondary targets: Everything adjacent to the primary target
 
 The primary target's blood becomes acidic.
 This does not harm it, but the blood can be dangerous to anything nearby when it bleeds.
-At the end of each round, if the primary target was \glossterm{wounded} during that round, make an attack vs. Fortitude against everything adjacent to the target.
-\hit Each secondary target takes acid \glossterm{standard damage} \minus1d.
+At the end of each round, if the primary target lost \glossterm{hit points} during that round, make an attack vs. Fortitude against everything adjacent to the target.
+\hit Each secondary target takes acid damage equal to 2d6 plus half your \glossterm{power}.
 
 \rankline
 \rank{5} This spell can target an \glossterm{ally} within \rngmed range instead of you.
@@ -2234,10 +2287,10 @@ At the end of each round, if the primary target was \glossterm{wounded} during t
 Make an attack vs. Mental against the target.
 \hit The target is \glossterm{sickened} until it takes a \glossterm{short rest}.
 \crit As above, except that the effect lasts until this curse is removed.
+\glance As above, except that the condition is removed at the end of the next round.
 
 \rankline
-\rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-\rank{7} The accuracy bonus increases to \plus2.
+You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 3.
 
 \end{freeability}
 \vspace{0.25em}
@@ -2254,23 +2307,6 @@ The target gains a \plus2 \glossterm{magic bonus} to Strength-based checks.
 \rank{7} The bonus increases to \plus4.
 
 \end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Poison -- Dragon Bile}{}}\label{spell:Poison -- Dragon Bile}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Poison -- Dragon Bile}{Poison -- Dragon Bile}}[\glossterm{Focus}]
-\target{One living creature within \rngmed range}
-This spell functions like this \spell{poison -- nitharit} spell, except that the target becomes poisoned with sassone leaf instead (see \pcref{Poison}).
-A creature poisoned by sassone leaf immediately loses a \glossterm{hit point} and is \glossterm{sickened} as long as it is poisoned.
-A third successful attack causes the target to lose two \glossterm{hit points} and become \glossterm{nauseated} as long as it is poisoned.
-A third failed attack ends the poison.
-
-\rankline
-\rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-\rank{7} The accuracy bonus increases to \plus2.
-
-\end{freeability}
 \vspace{0.25em}
 
 
@@ -2298,15 +2334,47 @@ You gain the ability to breath energy like a dragon.
 When you cast this spell, choose a type of damage: acid, cold, electricity, or fire.
 As a standard action, you can breath a cone of that type of energy.
 When you do, make an attack vs. Reflex against everything within a \arealarge cone from you.
-\hit Each target takes \glossterm{standard damage} of the chosen type.
+% note \plus1d as part of spell effect as consolation prize for attunement
+\hit Each target takes damage of the chosen type equal to 2d10 plus half your \glossterm{power}.
 
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{6} The damage increases to \glossterm{standard damage} \plus1d.
-\rank{8} The damage increases to \glossterm{standard damage} \plus2d.
+The damage increases by \plus1d for each rank beyond 4.
 
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Eyebite}{}}\label{spell:Eyebite}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Eyebite}{Eyebite}}[\glossterm{Focus}]
+\target{One living creature within \rngmed range}
+Make an attack vs. Fortitude against the target.
+\hit The target takes 2d6 physical damage.
+If it loses \glossterm{hit points} from this damage, it is \glossterm{blinded} as a \glossterm{condition}.
+
+\rankline
+The damage increases by \plus1d for each rank beyond 1.
+
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Poison -- Dragon Bile}{}}\label{spell:Poison -- Dragon Bile}
+\begin{freeability}[Rank 4]{\hypertarget{spell:Poison -- Dragon Bile}{Poison -- Dragon Bile}}[\glossterm{Focus}]
+\target{One living creature within \rngmed range}
+Make an attack vs. Fortitude against the target.
+\hit The target becomes \glossterm{poisoned} with dragon bile.
+At the end of each subsequent round, you repeat this attack, as normal for poisons.
+For each \glossterm{poison stage}, including the initial stage, the target loses \glossterm{hit points} equal to 1d10 plus half your \glossterm{power}.
+A third failed attack ends the poison.
+
+\rankline
+You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
+
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -2314,13 +2382,12 @@ You can cast this spell as a \glossterm{minor action}.
 \lowercase{\hypertarget{spell:Regeneration}{}}\label{spell:Regeneration}
 \begin{attuneability}[Rank 4]{\hypertarget{spell:Regeneration}{Regeneration}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \target{Yourself}
-At the end of each round, if you did not lose a \glossterm{hit point} that round, you regain a lost hit point.
+At the end of each round, if you did not lose any \glossterm{hit points} that round, you regain 1d10 \glossterm{hit points}.
 
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{6} You also gain a \plus1 \glossterm{magic bonus} to \glossterm{vital rolls}.
-\rank{8} You regain two hit points instead of one.
+The healing increases by \plus1d for each rank beyond 4.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -2338,22 +2405,7 @@ This penalty increase stacks, and persists even if the target regains the lost h
 \crit As above, except that the effect lasts until this curse is removed.
 
 \rankline
-\rank{6} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-\rank{8} The accuracy bonus increases to \plus2.
-
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Eyebite}{}}\label{spell:Eyebite}
-\begin{freeability}[Rank 5]{\hypertarget{spell:Eyebite}{Eyebite}}[\glossterm{Focus}]
-\target{One living creature within \rngclose range}
-Make an attack vs. Fortitude against the target.
-\hit The target is \glossterm{blinded} as a \glossterm{condition}.
-
-\rankline
-\rank{7} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
+You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
 
 \end{freeability}
 \vspace{0.25em}
@@ -2378,38 +2430,12 @@ It gains two \glossterm{fatigue points} per vital wound removed this way.
 
 
 \lowercase{\hypertarget{spell:Cripple}{}}\label{spell:Cripple}
-\begin{freeability}[Rank 6]{\hypertarget{spell:Cripple}{Cripple}}[\glossterm{Focus}]
+\begin{freeability}[Rank 7]{\hypertarget{spell:Cripple}{Cripple}}[\glossterm{Focus}]
 \target{One living creature within \rngclose range}
 Make an attack vs. Fortitude against the target.
 \hit The target is \glossterm{immobilized} as a \glossterm{condition}.
+\glance As above, except that the condition is removed at the end of the next round.
 \crit The target is \glossterm{paralyzed} as a \glossterm{condition}.
-
-\rankline
-\rank{8} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Crippling Curse}{}}\label{spell:Crippling Curse}
-\begin{freeability}[Rank 8]{\hypertarget{spell:Crippling Curse}{Crippling Curse}}[\glossterm{Curse}, \glossterm{Focus}]
-\target{One living creature within \rngclose range}
-Make an attack vs. Mental against the target.
-\hit The target is \glossterm{immobilized} until it takes a \glossterm{short rest}.
-\crit As above, except that the effect lasts until this curse is removed.
-
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Eyebite Curse}{}}\label{spell:Eyebite Curse}
-\begin{freeability}[Rank 8]{\hypertarget{spell:Eyebite Curse}{Eyebite Curse}}[\glossterm{Curse}, \glossterm{Focus}]
-\target{One living creature within \rngclose range}
-Make an attack vs. Mental against the target.
-\hit The target is \glossterm{blinded} until it takes a \glossterm{short rest}.
-\crit As above, except that the effect lasts until this curse is removed.
 
 \end{freeability}
 \vspace{0.25em}

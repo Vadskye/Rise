@@ -90,15 +90,26 @@ aeromancy = MysticSphere(
             \\rankline
             The damage increases by +1d for each rank beyond 3.
         """, tags=[]),
-        Spell('Buffeting Blast', 3, 'One creature or object within \\rngmed range', """
+        Spell('Buffet', 2, 'One creature or object within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
-            \\hit The target takes bludgeoning damage equal to 2d6 plus your \\glossterm<power>.
-            In addition, it is \\glossterm<pushed> up to 30 feet in any direction.
+            % This is +1d over the normal damage to help split the difference since the effect isn't consistently t2 worthy.
+            % Making this spell 2nd level also helps with the Dimensional Jaunt -- Plane of Air mirroring.
+            \\hit The target takes 1d10 bludgeoning damage.
+            If it loses \\glossterm<hit points> from this damage, you \\glossterm<knockback> it up to 50 feet in any direction (see \\pcref<Knockback Effects>).
+            Moving the target upwards costs twice the normal movement cost.
+
+            \\rankline
+            The damage increases by +1d for each rank beyond 2.
+        """, tags=[]),
+        Spell('Buffeting Blast', 5, 'One creature or object within \\rngmed range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit The target takes bludgeoning damage equal to 2d10 plus half your \\glossterm<power>.
+            If it loses \\glossterm<hit points> from this damage, you \\glossterm<knockback> it up to 100 feet in any direction (see \\pcref<Knockback Effects>).
             Moving the target upwards costs twice the normal movement cost.
             \\glance As above, except that that the target takes half damage.
 
             \\rankline
-            The damage increases by +1d for each rank beyond 3.
+            The damage increases by +1d for each rank beyond 5.
         """, tags=[]),
         Spell('Gentle Descent', 3, 'Yourself', """
             You gain a 30 foot \\glossterm<glide speed> (see \\pcref<Gliding>).
@@ -114,15 +125,25 @@ aeromancy = MysticSphere(
             \\rankline
             \\rank<7> The maximum distance above the ground increases to 200 feet.
         """, tags=['Attune (self)']),
-        Spell('Gust of Wind', 4, 'Everything in a \\arealarge, 10 ft. wide line from you', """
+        Spell('Gust of Wind', 3, 'Everything in a \\arealarge, 10 ft. wide line from you', """
             Make an attack vs. Fortitude against each target.
-            \\hit Each target takes 2d8 bludgeoning damage.
+            \\hit Each target takes 1d10 bludgeoning damage.
             In addition, each target is \\glossterm<pushed> 20 feet in the direction the line points away from you.
             Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
             \\glance As above, except that that each target takes half damage.
 
             \\rankline
-            The damage increases by +1d for each rank beyond 4.
+            The damage increases by +1d for each rank beyond 3.
+        """, tags=[]),
+        Spell('Blast of Wind', 6, 'Everything in a \\areahuge, 10 ft. wide line from you', """
+            Make an attack vs. Fortitude against each target.
+            \\hit Each target takes 2d10 bludgeoning damage.
+            In addition, each target is \\glossterm<pushed> 50 feet in the direction the line points away from you.
+            Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
+            \\glance As above, except that that each target takes half damage.
+
+            \\rankline
+            The damage increases by +1d for each rank beyond 6.
         """, tags=[]),
         Spell('Windblade', 3, 'Yourself', """
             Melee weapons wielded by the target gain +5 foot \\glossterm<magic bonus> to \\glossterm<reach>.
@@ -182,10 +203,10 @@ aeromancy = MysticSphere(
             \\rankline
             The damage increases by +1d for each rank beyond 1.
         """, tags=[]),
-        Spell('Buffeting Hurricane', 4, '\\glossterm<Enemies> in a \\areamed radius from you', """
+        Spell('Hurricane', 4, '\\glossterm<Enemies> in a \\areamed radius from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes bludgeoning damage equal to 2d8 half plus your \\glossterm<power>.
-            In addition, each target is moved 20 feet clockwise around you.
+            In addition, each target is \\glossterm<pushed> 20 feet clockwise around you.
             Each target's final position should be the same distance from you as its starting position.
             \\glance As above, except that that each target takes half damage.
 
@@ -193,7 +214,7 @@ aeromancy = MysticSphere(
             The damage increases by +1d for each rank beyond 4.
         """, tags=[]),
         Spell('Windtheft', 2, 'One creature or object within \\rngmed range', """
-            Make an attack vs. Reflex with a +1 bonus to \\glossterm<accuracy> against the target.
+            Make an attack vs. Reflex with a +2 bonus to \\glossterm<accuracy> against the target.
             \\hit The target drops all items it has that are not well secured (such as a ring) or held in a hand.
             \\crit As above, except that the target also drops items that are held in a single hand.
 

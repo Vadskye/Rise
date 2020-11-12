@@ -116,37 +116,35 @@ astromancy=MysticSphere(
             \\rankline
             \\rank<6> The range increases to \\rngext feet.
         """, tags=[]),
-        Spell('Dimensional Jaunt -- Plane of Earth', 2, 'One creature within \\rngmed range', """
+        Spell('Dimensional Jaunt -- Plane of Earth', 4, 'One creature within \\rngmed range', """
             You partially teleport the target into the Plane of Earth.
             Make an attack vs. Mental against the target.
-            \\hit The target takes 1d8 bludgeoning damage.
+            \\hit The target takes 2d6 bludgeoning damage.
             If it loses \\glossterm<hit points> from this damage, it is \\glossterm<immobilized> as a \\glossterm<condition>.
 
             \\rankline
-            You gain a +1 bonus to \glossterm<accuracy> with the attack for each rank beyond 2.
+            The damage increases by +1d for each rank beyond 4.
         """, tags=[]),
-        Spell('Dimensional Jaunt -- Plane of Air', 3, 'One creature within \\rngmed range', """
-            You partially teleport the target into the Plane of Air.
-            Make an attack vs. Mental against the target.
-            \\hit The target takes bludgeoning damage equal to 2d6 plus your \\glossterm<power>.
-            In addition, it is \\glossterm<pushed> up to 30 feet in any direction.
+        Spell('Dimensional Jaunt -- Plane of Air', 2, 'One creature or object within \\rngmed range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit The target takes 1d10 bludgeoning damage.
+            If it loses \\glossterm<hit points> from this damage, you \\glossterm<knockback> it up to 50 feet in any direction (see \\pcref<Knockback Effects>).
             Moving the target upwards costs twice the normal movement cost.
-            \\glance As above, except that that the target takes half damage.
 
             \\rankline
             The damage increases by +1d for each rank beyond 3.
         """, tags=[]),
-        Spell('Dimensional Jaunt -- Plane of Fire', 4,  'One creature within \\rngmed range', """
+        Spell('Dimensional Jaunt -- Plane of Fire', 6,  'One creature within \\rngmed range', """
             You partially teleport the target into the Plane of Fire.
             Make an attack vs. Mental against the target.
-            \\hit The target takes fire damage equal to 2d8 plus half your \\glossterm<power>.
+            \\hit The target takes fire damage equal to 4d6 plus half your \\glossterm<power>.
             If it loses \\glossterm<hit points> from this damage, it is \\glossterm<ignited> as a \\glossterm<condition>.
             This condition can also be removed if the target makes a \\glossterm<difficulty rating> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
             Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
             \\glance As above, except that that the target takes half damage.
 
             \\rankline
-            The damage increases by +1d for each rank beyond 4.
+            The damage increases by +1d for each rank beyond 6.
         """, tags=[]),
         Spell('Dimensional Jaunt -- Myriad', 5, 'One creature within \\rngmed range', """
             You partially teleport the target through a number of planes in sequence.
