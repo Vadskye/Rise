@@ -37,7 +37,7 @@ channel_divinity=MysticSphere(
 
             \\rankline
             \\rank<5> The accuracy bonus increases to +5.
-            \\rank<7> You can remove two conditions instead of one.
+            \\rank<7> The accuracy bonus increases to +6.
         """, tags=[]),
         Spell('Divine Authority', 1, 'Yourself', """
             You gain a +3 \\glossterm<magic bonus> to the Persuasion skill.
@@ -50,9 +50,6 @@ channel_divinity=MysticSphere(
         Spell('Agent of the Divine', 6, 'Yourself', """
             You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> and all \\glossterm<defenses>.
             In addition, you gain a +2 \\glossterm<magic bonus> to \\glossterm<power>.
-
-            \\rankline
-            \\rank<8> The accuracy bonus increases to +2.
         """, tags=['Attune (self)']),
         Spell('Endurance of the Faithful', 3, 'Yourself', """
             This spell does not have the \\glossterm<Focus> tag.
@@ -63,32 +60,36 @@ channel_divinity=MysticSphere(
             \\rank<5> The bonus increases to be equal to three times your \\glossterm<power>.
             \\rank<7> The bonus increases to be equal to four times your \\glossterm<power>.
         """, tags=['Swift'], focus=False),
-        Spell('Divine Wrath', 1, 'One creature within \\rngmed range', """
+        Spell('Divine Judgment', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
-            \\hit The target takes energy \\glossterm<standard damage> +1d.
+            \\hit The target takes energy damage equal to 1d10 plus your \\glossterm<power>.
 
             \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
+            The damage increases by +1d for each rank beyond 1.
+        """, tags=[]),
+        Spell('Stunning Judgment', 1, 'One creature within \\rngmed range', """
+            Make an attack vs. Mental against the target.
+            \\hit The target is takes 1d6 energy damage.
+            If it loses \\glossterm<hit points> from this damage, it is \\glossterm<stunned> as a \\glossterm<condition>.
+
+            \\rankline
+            The damage increases by +1d for each rank beyond 1.
         """, tags=[]),
         Spell('Glimpse of Divinity', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<dazzled> as a \\glossterm<condition>.
-            \\crit The target is \\glossterm<blinded> as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<5> The accuracy bonus increases to +2.
-            \\rank<7> The accuracy bonus increases to +3.
+            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 1.
         """, tags=[]),
-        Spell('Face of Divinity', 6, 'One creature within \\rngmed range', """
+        Spell('Fear of the Divine', 5, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
-            \\hit The target is \\shaken by you as a \\glossterm<condition>.
+            \\hit The target is \\frightened by you as a \\glossterm<condition>.
+            \\glance As above, except that the condition is removed at the end of the next round.
             \\crit The target is \\glossterm<panicked> by you as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<8> The range increases to \\rnglong.
+            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 5.
         """, tags=[]),
         Spell('Judge Unworthy', 2, 'One creature within \\rngmed range', """
             Make an attack vs. Mental with a +2 bonus against the target.
@@ -96,36 +97,22 @@ channel_divinity=MysticSphere(
             \\crit As above, except that the penalty increases to -5.
 
             \\rankline
-            \\rank<4> The accuracy bonus increases to +4.
-            \\rank<6> The accuracy bonus increases to +6.
-            \\rank<8> The accuracy bonus increases to +8.
-        """, tags=[]),
-        Spell('Fear of the Divine', 1, 'One creature within \\rngclose range', """
-            Make an attack vs. Mental with a +1 bonus to \\glossterm<accuracy> against the target.
-            \\hit The target is \\shaken by you as a \\glossterm<condition>.
-            \\crit The target is \\glossterm<panicked> by you as a \\glossterm<condition>.
-
-            \\rankline
-            \\rank<3> The accuracy bonus increases to +2.
-            \\rank<5> The accuracy bonus increases to +3.
-            \\rank<7> The accuracy bonus increases to +4.
+            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 2.
         """, tags=[]),
         Spell('Word of Faith', 1, '\\glossterm<Enemies> in a \\areasmall radius from you', """
             Make an attack vs. Mental against each target.
-            \\hit Each target takes energy \\glossterm<standard damage> -1d.
+            \\hit Each target takes energy damage equal to 1d8 plus half your \\glossterm<power>.
 
             \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage>.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
+            The damage increases by +1d for each rank beyond 1.
         """, tags=[]),
-        Spell('Proclamation', 3, '\\glossterm<Enemies> in a \\areamed radius from you', """
+        Spell('Proclamation of Faith', 3, '\\glossterm<Enemies> in a \\areamed radius from you', """
             Make an attack vs. Mental against each target.
-            \\hit Each target takes energy \\glossterm<standard damage> -1d.
+            \\hit Each target takes energy damage equal to 2d6 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
 
             \\rankline
-            \\rank<5> The area increases to a \\arealarge radius.
-            \\rank<7> The area increases to a \\areahuge radius.
+            The damage increases by +1d for each rank beyond 1.
         """, tags=[]),
         Spell('Mantle of Faith', 1, 'Yourself', """
             You gain a +2 \\glossterm<magic bonus> to \\glossterm<resistances>.
@@ -134,8 +121,8 @@ channel_divinity=MysticSphere(
 
             \\rankline
             \\rank<3> The bonus increases to +4.
-            \\rank<5> The bonus increases to be equal to half your \\glossterm<power>.
-            \\rank<7> The bonus increases to be equal to your \\glossterm<power>.
+            \\rank<5> The bonus increases to +8.
+            \\rank<7> The bonus increases to +16.
         """, tags=['Attune (self)']),
         Spell('Divine Might', 4, 'Yourself', """
             You increase your size by one \\glossterm<size category>.
@@ -146,18 +133,16 @@ channel_divinity=MysticSphere(
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<6> You also gain a +2 \\glossterm<magic bonus> to Strength.
-            \\rank<8> You can increase your size by two size categories instead of one.
+            \\rank<6> You can increase your size by two size categories instead of one.
         """, tags=['Attune (self)']),
-        Spell('Divine Presence', 3, '\\glossterm<Enemies> in the area (see text)', """
+        Spell('Divine Presence', 4, '\\glossterm<Enemies> in the area (see text)', """
             You radiate an aura in a \\areasmall radius \\glossterm<emanation> from you that invokes a fear of your divine connection.
             When you attune to this spell, and during each \\glossterm<action phase> in subsequent rounds, make an attack vs. Mental against each target.
             After you attack a creature this way, it becomes immune to this ability from you until it takes a \\glossterm<short rest>.
             \\hit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<7> The accuracy bonus increases to +2.
+            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 4.
         """, tags=['Attune (self)', 'Emotion']),
         Spell('Faithful Endurance', 3, 'Yourself', """
             You gain a +1 \\glossterm<magic bonus> to \\glossterm<vital rolls> (see \\pcref<Vital Rolls>).
@@ -174,9 +159,9 @@ channel_divinity=MysticSphere(
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<4> You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with divine spells.
-            \\rank<6> You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with divine spells.
-            \\rank<8> The power bonus increases to +4.
+            \\rank<4> You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with divine spells.
+            % TODO: this number is weirdly arbitrary
+            \\rank<6> You gain a +3 \\glossterm<magic bonus> to \\glossterm<power> with divine spells.
         """, tags=['Attune (self)']),
         Spell('Divine Favor', 3, 'Yourself', """
             You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with all attacks.
@@ -187,23 +172,19 @@ channel_divinity=MysticSphere(
             \\rank<5> You also gain a +2 \\glossterm<magic bonus> to Mental defense.
             \\rank<7> The bonus to \\glossterm<accuracy> increases to +2.
         """, tags=['Attune (self)']),
-        Spell('Divine Power', 3, 'Yourself', """
-            You gain a +2 \\glossterm<magic bonus> to \\glossterm<power>.
+        Spell('Divine Power', 1, 'Yourself', """
+            You gain a +1 \\glossterm<magic bonus> to \\glossterm<power>.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<5> You also gain a +2 \\glossterm<magic bonus> to Fortitude defense.
-            \\rank<7> The bonus to \\glossterm<power> increases to +4.
+            The bonus increases by 1 for each rank beyond 3.
         """, tags=['Attune (self)']),
         Spell('Divine Offering', 6, 'Yourself', """
             When you cast this spell, you gain a \\glossterm<vital wound> that has no vital wound effect.
             In exchange, you gain a +4 \\glossterm<magic bonus> to \\glossterm<vital rolls> and become immune to \\glossterm<conditions>.
 
             You can cast this spell as a \\glossterm<minor action>.
-
-            \\rankline
-            \\rank<8> The bonus to \\glossterm<vital rolls> increases to +6.
         """, tags=['Sustain (free)']),
         Spell('Divine Seal', 4, 'Creatures in a \\areasmall radius \\glossterm<zone> within \\rngmed range', """
             You seal an area with divine power, limiting its connection to divine powers.

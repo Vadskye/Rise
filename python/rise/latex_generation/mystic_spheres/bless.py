@@ -12,13 +12,11 @@ bless=MysticSphere(
     ],
     lists=['Divine'],
     spells=[
-        Spell('Blessing of Freedom', 5, 'Yourself', """
-            The target cannot be \\glossterm<slowed>, \\glossterm<decelerated>, or \\glossterm<immobilized>.
-
-            You can cast this spell as a \\glossterm<minor action>.
+        Spell('Blessing of Freedom', 5, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            The target is immune to being \\glossterm<slowed>, \\glossterm<decelerated>, and \\glossterm<immobilized>.
 
             \\rankline
-            \\rank<7> The target also cannot be \\glossterm<paralyzed>.
+            \\rank<7> The target is also immune to being \\glossterm<paralyzed>.
         """, tags=['Attune (target)']),
         Spell('Blessing of Swiftness', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<base speed>, up to a maximum of double its \\glossterm<base speed>.
@@ -37,7 +35,7 @@ bless=MysticSphere(
             \\rank<7> The target gains three additional +5 bonuses.
         """, tags=['Attune (target)']),
         Spell('Blessing of Regeneration', 7, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            At the end of each round, the target regains one lost \\glossterm<hit point>.
+            At the end of each round, if the target did not lose any \\glossterm<hit points> that round, it regains 2d10 \\glossterm<hit points>.
         """, tags=['Attune (target)']),
         Spell('Blessing of Proficiency', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             When you cast this spell, choose a weapon group or usage class of armor.
@@ -60,12 +58,9 @@ bless=MysticSphere(
             \\rank<5> The bonus increases to +4.
             \\rank<7> The bonus increases to +5.
         """, tags=['Swift']),
-        Spell('Boon of Invulnerability', 6, 'One \\glossterm<ally> within \\rngmed range', """
-            The target becomes \\glossterm<resistant> to all damage until the end of the current round.
+        Spell('Boon of Invulnerability', 6, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
+            The target becomes takes half damage from all sources until the end of the current round.
             Because this ability has the \\glossterm<Swift> tag, it affects all damage the target takes during the current phase.
-
-            \\rankline
-            \\rank<8> The target also treats all damage it takes as \\glossterm<environmental damage>.
         """, tags=['Swift']),
         Spell('Boon of Avoidance', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +2 bonus to \\glossterm<defenses> until the end of the round.
@@ -76,14 +71,6 @@ bless=MysticSphere(
             \\rank<5> The bonus increases to +4.
             \\rank<7> The bonus increases to +5.
         """, tags=['Swift']),
-        Spell('Boon of Durability', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            The target gains a bonus equal to twice your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical damage> this round.
-            Because this ability has the \\glossterm<Swift> tag, this improves the target's resistances against damage it takes during the current phase.
-
-            \\rankline
-            \\rank<5> The bonus increases to be equal to three times your \\glossterm<power>.
-            \\rank<7> The bonus increases to be equal to four times your \\glossterm<power>.
-        """, tags=['Swift']),
         Spell('Blessing of the Purified Body', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +4 bonus to \\glossterm<defenses> against \\glossterm<poisons> and \\glossterm<diseases>.
 
@@ -92,7 +79,6 @@ bless=MysticSphere(
             \\rankline
             \\rank<4> The bonus increases to +6.
             \\rank<6> The bonus increases to +8.
-            \\rank<8> The bonus increases to +10.
         """, tags=['Attune (target)']),
         Spell('Blessing of Mental Clarity', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +4 bonus to \\glossterm<defenses> against \\glossterm<Compulsion> and \\glossterm<Emotion> effects.
@@ -101,7 +87,6 @@ bless=MysticSphere(
 
             \\rankline
             \\rank<6> The bonus increases to +6.
-            \\rank<8> The bonus increases to +8.
         """, tags=['Attune (target)']),
         Spell('Blessing of Protection', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +1 \\glossterm<magic bonus> to Armor defense and Mental defense.
@@ -120,7 +105,7 @@ bless=MysticSphere(
             \\rankline
             \\rank<7> The bonus increases to +2.
         """, tags=['Attune (target)']),
-        Spell('Blessing of Resilience', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Blessing of Perserverance', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             Whenever the target gains a \\glossterm<condition>, it can choose to negate that condition.
             After negating a condition in this way, this spell ends.
 
@@ -153,18 +138,17 @@ bless=MysticSphere(
             \\rankline
             \\rank<4> The bonus increases to +4.
             \\rank<6> The bonus increases to +6.
-            \\rank<8> The bonus increases to +8.
         """, tags=['Attune (target)']),
         Spell('Blessing of Endurance', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            The target increases its current \\glossterm<hit points> by 2.
+            The target increases its current \\glossterm<hit points> by 5.
             This can cause its current hit points to exceed its normal maximum hit points.
             When this ability ends, the target loses \\glossterm<hit points> equal to the number of hit points it gained this way.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<5> The number of additional hit points increases to 3.
-            \\rank<7> The number of additional hit points increases to 4.
+            \\rank<5> The number of additional hit points increases to 10.
+            \\rank<7> The number of additional hit points increases to 20.
         """, tags=['Attune (target)']),
         Spell('Blessing of Wakefulness', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target cannot fall asleep or be knocked unconscious, even by \\glossterm<vital wounds>.
@@ -174,7 +158,6 @@ bless=MysticSphere(
 
             \\rankline
             \\rank<6> The target is also immune to being \\glossterm<dazed> or \\glossterm<stunned>.
-            \\rank<8> The target is also immune to being \\glossterm<paralyzed>.
         """, tags=['Attune (target)']),
     ],
     rituals=[
@@ -182,7 +165,7 @@ bless=MysticSphere(
             Unlike most abilities, this ritual can affect individual parts of a whole object.
 
             % How should this affect Strength break difficulty ratings?
-            The target gains a +5 \\glossterm<magic bonus> to \\glossterm<resistances>.
+            The target gains a +5 \\glossterm<magic bonus> to its \\glossterm<resistance> to both \\glossterm<physical damage> and \\glossterm<energy damage>.
             If the target is moved, this effect ends.
             Otherwise, it lasts for one year.
         """, tags=['Attune (ritual)'], ritual_time='one hour'),
