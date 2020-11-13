@@ -2561,7 +2561,6 @@ You can cast this spell as a \glossterm{minor action}.
 \rankline
 \rank{4} The bonus increases to \plus4.
 \rank{6} The bonus increases to \plus6.
-\rank{8} The bonus increases to \plus8.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -2578,7 +2577,6 @@ You can cast this spell as a \glossterm{minor action}.
 \rankline
 \rank{4} The bonus increases to \plus6.
 \rank{6} The bonus increases to \plus8.
-\rank{8} The bonus increases to \plus10.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -2588,15 +2586,32 @@ You can cast this spell as a \glossterm{minor action}.
 \lowercase{\hypertarget{spell:Blessing of Endurance}{}}\label{spell:Blessing of Endurance}
 \begin{attuneability}[Rank 3]{\hypertarget{spell:Blessing of Endurance}{Blessing of Endurance}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself or an \glossterm{ally} within \rngmed range}
-The target increases its current \glossterm{hit points} by 2.
+The target increases its current \glossterm{hit points} by 5.
 This can cause its current hit points to exceed its normal maximum hit points.
 When this ability ends, the target loses \glossterm{hit points} equal to the number of hit points it gained this way.
 
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{5} The number of additional hit points increases to 3.
-\rank{7} The number of additional hit points increases to 4.
+\rank{5} The number of additional hit points increases to 10.
+\rank{7} The number of additional hit points increases to 20.
+
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Blessing of Perserverance}{}}\label{spell:Blessing of Perserverance}
+\begin{attuneability}[Rank 3]{\hypertarget{spell:Blessing of Perserverance}{Blessing of Perserverance}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself or an \glossterm{ally} within \rngmed range}
+Whenever the target gains a \glossterm{condition}, it can choose to negate that condition.
+After negating a condition in this way, this spell ends.
+
+You can cast this spell as a \glossterm{minor action}.
+
+\rankline
+\rank{5} The spell can negate two conditions before ending.
+\rank{7} The spell can negate three conditions before ending.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -2611,23 +2626,6 @@ The target gains a additional \plus5 bonus to a vital wound after a \glossterm{l
 \rankline
 \rank{5} The target gains two additional \plus5 bonuses.
 \rank{7} The target gains three additional \plus5 bonuses.
-
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Blessing of Resilience}{}}\label{spell:Blessing of Resilience}
-\begin{attuneability}[Rank 3]{\hypertarget{spell:Blessing of Resilience}{Blessing of Resilience}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
-Whenever the target gains a \glossterm{condition}, it can choose to negate that condition.
-After negating a condition in this way, this spell ends.
-
-You can cast this spell as a \glossterm{minor action}.
-
-\rankline
-\rank{5} The spell can negate two conditions before ending.
-\rank{7} The spell can negate three conditions before ending.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -2665,21 +2663,6 @@ This cannot remove a condition applied during the current round.
 
 
 
-\lowercase{\hypertarget{spell:Boon of Durability}{}}\label{spell:Boon of Durability}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Boon of Durability}{Boon of Durability}}[\glossterm{Focus}, \glossterm{Swift}]
-\target{Yourself or an \glossterm{ally} within \rngmed range}
-The target gains a bonus equal to twice your \glossterm{power} to \glossterm{resistances} against \glossterm{physical damage} this round.
-Because this ability has the \glossterm{Swift} tag, this improves the target's resistances against damage it takes during the current phase.
-
-\rankline
-\rank{5} The bonus increases to be equal to three times your \glossterm{power}.
-\rank{7} The bonus increases to be equal to four times your \glossterm{power}.
-
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Blessing of Mental Clarity}{}}\label{spell:Blessing of Mental Clarity}
 \begin{attuneability}[Rank 4]{\hypertarget{spell:Blessing of Mental Clarity}{Blessing of Mental Clarity}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself or an \glossterm{ally} within \rngmed range}
@@ -2689,7 +2672,6 @@ You can cast this spell as a \glossterm{minor action}.
 
 \rankline
 \rank{6} The bonus increases to \plus6.
-\rank{8} The bonus increases to \plus8.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -2722,7 +2704,6 @@ If it is already unconscious for any reason, this spell wakes it up before it de
 
 \rankline
 \rank{6} The target is also immune to being \glossterm{dazed} or \glossterm{stunned}.
-\rank{8} The target is also immune to being \glossterm{paralyzed}.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -2746,13 +2727,11 @@ You can cast this spell as a \glossterm{minor action}.
 
 \lowercase{\hypertarget{spell:Blessing of Freedom}{}}\label{spell:Blessing of Freedom}
 \begin{attuneability}[Rank 5]{\hypertarget{spell:Blessing of Freedom}{Blessing of Freedom}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{Yourself}
-The target cannot be \glossterm{slowed}, \glossterm{decelerated}, or \glossterm{immobilized}.
-
-You can cast this spell as a \glossterm{minor action}.
+\target{Yourself or an \glossterm{ally} within \rngmed range}
+The target is immune to being \glossterm{slowed}, \glossterm{decelerated}, and \glossterm{immobilized}.
 
 \rankline
-\rank{7} The target also cannot be \glossterm{paralyzed}.
+\rank{7} The target is also immune to being \glossterm{paralyzed}.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -2761,12 +2740,9 @@ You can cast this spell as a \glossterm{minor action}.
 
 \lowercase{\hypertarget{spell:Boon of Invulnerability}{}}\label{spell:Boon of Invulnerability}
 \begin{freeability}[Rank 6]{\hypertarget{spell:Boon of Invulnerability}{Boon of Invulnerability}}[\glossterm{Focus}, \glossterm{Swift}]
-\target{One \glossterm{ally} within \rngmed range}
-The target becomes \glossterm{resistant} to all damage until the end of the current round.
+\target{Yourself or one \glossterm{ally} within \rngmed range}
+The target becomes takes half damage from all sources until the end of the current round.
 Because this ability has the \glossterm{Swift} tag, it affects all damage the target takes during the current phase.
-
-\rankline
-\rank{8} The target also treats all damage it takes as \glossterm{environmental damage}.
 
 \end{freeability}
 \vspace{0.25em}
@@ -2790,7 +2766,7 @@ This cannot remove a condition applied during the current round.
 \lowercase{\hypertarget{spell:Blessing of Regeneration}{}}\label{spell:Blessing of Regeneration}
 \begin{attuneability}[Rank 7]{\hypertarget{spell:Blessing of Regeneration}{Blessing of Regeneration}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself or an \glossterm{ally} within \rngmed range}
-At the end of each round, the target regains one lost \glossterm{hit point}.
+At the end of each round, if the target did not lose any \glossterm{hit points} that round, it regains 2d10 \glossterm{hit points}.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -2817,7 +2793,7 @@ This ritual takes 24 hours to perform, and it requires one \glossterm{fatigue po
 Unlike most abilities, this ritual can affect individual parts of a whole object.
 
 % How should this affect Strength break difficulty ratings?
-The target gains a \plus5 \glossterm{magic bonus} to \glossterm{resistances}.
+The target gains a \plus5 \glossterm{magic bonus} to its \glossterm{resistance} to both \glossterm{physical damage} and \glossterm{energy damage}.
 If the target is moved, this effect ends.
 Otherwise, it lasts for one year.
 This ritual takes 24 hours to perform, and it requires one \glossterm{fatigue point} from its participants.
@@ -2959,35 +2935,31 @@ You gain a \plus3 \glossterm{magic bonus} to the Persuasion skill.
 
 
 
-\lowercase{\hypertarget{spell:Divine Wrath}{}}\label{spell:Divine Wrath}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Divine Wrath}{Divine Wrath}}[\glossterm{Focus}]
+\lowercase{\hypertarget{spell:Divine Judgment}{}}\label{spell:Divine Judgment}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Divine Judgment}{Divine Judgment}}[\glossterm{Focus}]
 \target{One creature within \rngmed range}
 Make an attack vs. Mental against the target.
-\hit The target takes energy \glossterm{standard damage} \plus1d.
+\hit The target takes energy damage equal to 1d10 plus your \glossterm{power}.
 
 \rankline
-\rank{3} The damage increases to \glossterm{standard damage} \plus2d.
-\rank{5} The damage increases to \glossterm{standard damage} \plus3d.
-\rank{7} The damage increases to \glossterm{standard damage} \plus4d.
+The damage increases by \plus1d for each rank beyond 1.
 
 \end{freeability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Fear of the Divine}{}}\label{spell:Fear of the Divine}
-\begin{freeability}[Rank 1]{\hypertarget{spell:Fear of the Divine}{Fear of the Divine}}[\glossterm{Focus}]
-\target{One creature within \rngclose range}
-Make an attack vs. Mental with a \plus1 bonus to \glossterm{accuracy} against the target.
-\hit The target is \shaken by you as a \glossterm{condition}.
-\crit The target is \glossterm{panicked} by you as a \glossterm{condition}.
+\lowercase{\hypertarget{spell:Divine Power}{}}\label{spell:Divine Power}
+\begin{attuneability}[Rank 1]{\hypertarget{spell:Divine Power}{Divine Power}}[\glossterm{Attune} (self), \glossterm{Focus}]
+\target{Yourself}
+You gain a \plus1 \glossterm{magic bonus} to \glossterm{power}.
+
+You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{3} The accuracy bonus increases to \plus2.
-\rank{5} The accuracy bonus increases to \plus3.
-\rank{7} The accuracy bonus increases to \plus4.
+The bonus increases by 1 for each rank beyond 3.
 
-\end{freeability}
+\end{attuneability}
 \vspace{0.25em}
 
 
@@ -2997,12 +2969,9 @@ Make an attack vs. Mental with a \plus1 bonus to \glossterm{accuracy} against th
 \target{One creature within \rngmed range}
 Make an attack vs. Mental against the target.
 \hit The target is \glossterm{dazzled} as a \glossterm{condition}.
-\crit The target is \glossterm{blinded} as a \glossterm{condition}.
 
 \rankline
-\rank{3} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-\rank{5} The accuracy bonus increases to \plus2.
-\rank{7} The accuracy bonus increases to \plus3.
+You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
 
 \end{freeability}
 \vspace{0.25em}
@@ -3018,10 +2987,25 @@ You can cast this spell as a \glossterm{minor action}.
 
 \rankline
 \rank{3} The bonus increases to \plus4.
-\rank{5} The bonus increases to be equal to half your \glossterm{power}.
-\rank{7} The bonus increases to be equal to your \glossterm{power}.
+\rank{5} The bonus increases to \plus8.
+\rank{7} The bonus increases to \plus16.
 
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Stunning Judgment}{}}\label{spell:Stunning Judgment}
+\begin{freeability}[Rank 1]{\hypertarget{spell:Stunning Judgment}{Stunning Judgment}}[\glossterm{Focus}]
+\target{One creature within \rngmed range}
+Make an attack vs. Mental against the target.
+\hit The target is takes 1d6 energy damage.
+If it loses \glossterm{hit points} from this damage, it is \glossterm{stunned} as a \glossterm{condition}.
+
+\rankline
+The damage increases by \plus1d for each rank beyond 1.
+
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -3030,12 +3014,10 @@ You can cast this spell as a \glossterm{minor action}.
 \begin{freeability}[Rank 1]{\hypertarget{spell:Word of Faith}{Word of Faith}}[\glossterm{Focus}]
 \targets{\glossterm{Enemies} in a \areasmall radius from you}
 Make an attack vs. Mental against each target.
-\hit Each target takes energy \glossterm{standard damage} \minus1d.
+\hit Each target takes energy damage equal to 1d8 plus half your \glossterm{power}.
 
 \rankline
-\rank{3} The damage increases to \glossterm{standard damage}.
-\rank{5} The damage increases to \glossterm{standard damage} \plus1d.
-\rank{7} The damage increases to \glossterm{standard damage} \plus2d.
+The damage increases by \plus1d for each rank beyond 1.
 
 \end{freeability}
 \vspace{0.25em}
@@ -3050,9 +3032,9 @@ You reduce your \glossterm{focus penalty} with divine spells by 2.
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{4} You gain a \plus2 \glossterm{magic bonus} to \glossterm{power} with divine spells.
-\rank{6} You gain a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} with divine spells.
-\rank{8} The power bonus increases to \plus4.
+\rank{4} You gain a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} with divine spells.
+% TODO: this number is weirdly arbitrary
+\rank{6} You gain a \plus3 \glossterm{magic bonus} to \glossterm{power} with divine spells.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -3067,9 +3049,7 @@ Make an attack vs. Mental with a \plus2 bonus against the target.
 \crit As above, except that the penalty increases to -5.
 
 \rankline
-\rank{4} The accuracy bonus increases to \plus4.
-\rank{6} The accuracy bonus increases to \plus6.
-\rank{8} The accuracy bonus increases to \plus8.
+You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 2.
 
 \end{freeability}
 \vspace{0.25em}
@@ -3086,39 +3066,6 @@ You can cast this spell as a \glossterm{minor action}.
 \rankline
 \rank{5} You also gain a \plus2 \glossterm{magic bonus} to Mental defense.
 \rank{7} The bonus to \glossterm{accuracy} increases to \plus2.
-
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Divine Power}{}}\label{spell:Divine Power}
-\begin{attuneability}[Rank 3]{\hypertarget{spell:Divine Power}{Divine Power}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\target{Yourself}
-You gain a \plus2 \glossterm{magic bonus} to \glossterm{power}.
-
-You can cast this spell as a \glossterm{minor action}.
-
-\rankline
-\rank{5} You also gain a \plus2 \glossterm{magic bonus} to Fortitude defense.
-\rank{7} The bonus to \glossterm{power} increases to \plus4.
-
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Divine Presence}{}}\label{spell:Divine Presence}
-\begin{attuneability}[Rank 3]{\hypertarget{spell:Divine Presence}{Divine Presence}}[\glossterm{Attune} (self), \glossterm{Emotion}, \glossterm{Focus}]
-\targets{\glossterm{Enemies} in the area (see text)}
-You radiate an aura in a \areasmall radius \glossterm{emanation} from you that invokes a fear of your divine connection.
-When you attune to this spell, and during each \glossterm{action phase} in subsequent rounds, make an attack vs. Mental against each target.
-After you attack a creature this way, it becomes immune to this ability from you until it takes a \glossterm{short rest}.
-\hit Each target is \glossterm{shaken} by you as a \glossterm{condition}.
-
-\rankline
-\rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-\rank{7} The accuracy bonus increases to \plus2.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -3151,7 +3098,7 @@ In addition, you gain a \plus4 bonus to \glossterm{accuracy} during the round af
 
 \rankline
 \rank{5} The accuracy bonus increases to \plus5.
-\rank{7} You can remove two conditions instead of one.
+\rank{7} The accuracy bonus increases to \plus6.
 
 \end{freeability}
 \vspace{0.25em}
@@ -3174,15 +3121,15 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 
-\lowercase{\hypertarget{spell:Proclamation}{}}\label{spell:Proclamation}
-\begin{freeability}[Rank 3]{\hypertarget{spell:Proclamation}{Proclamation}}[\glossterm{Focus}]
+\lowercase{\hypertarget{spell:Proclamation of Faith}{}}\label{spell:Proclamation of Faith}
+\begin{freeability}[Rank 3]{\hypertarget{spell:Proclamation of Faith}{Proclamation of Faith}}[\glossterm{Focus}]
 \targets{\glossterm{Enemies} in a \areamed radius from you}
 Make an attack vs. Mental against each target.
-\hit Each target takes energy \glossterm{standard damage} \minus1d.
+\hit Each target takes energy damage equal to 2d6 plus half your \glossterm{power}.
+\glance As above, except that that each target takes half damage.
 
 \rankline
-\rank{5} The area increases to a \arealarge radius.
-\rank{7} The area increases to a \areahuge radius.
+The damage increases by \plus1d for each rank beyond 1.
 
 \end{freeability}
 \vspace{0.25em}
@@ -3200,8 +3147,23 @@ However, your physical form is not altered fully to match its new size, and your
 You can cast this spell as a \glossterm{minor action}.
 
 \rankline
-\rank{6} You also gain a \plus2 \glossterm{magic bonus} to Strength.
-\rank{8} You can increase your size by two size categories instead of one.
+\rank{6} You can increase your size by two size categories instead of one.
+
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Divine Presence}{}}\label{spell:Divine Presence}
+\begin{attuneability}[Rank 4]{\hypertarget{spell:Divine Presence}{Divine Presence}}[\glossterm{Attune} (self), \glossterm{Emotion}, \glossterm{Focus}]
+\targets{\glossterm{Enemies} in the area (see text)}
+You radiate an aura in a \areasmall radius \glossterm{emanation} from you that invokes a fear of your divine connection.
+When you attune to this spell, and during each \glossterm{action phase} in subsequent rounds, make an attack vs. Mental against each target.
+After you attack a creature this way, it becomes immune to this ability from you until it takes a \glossterm{short rest}.
+\hit Each target is \glossterm{shaken} by you as a \glossterm{condition}.
+
+\rankline
+You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -3223,14 +3185,27 @@ Whenever a creature casts a divine spell in the area, if that creature does not 
 
 
 
+\lowercase{\hypertarget{spell:Fear of the Divine}{}}\label{spell:Fear of the Divine}
+\begin{freeability}[Rank 5]{\hypertarget{spell:Fear of the Divine}{Fear of the Divine}}[\glossterm{Focus}]
+\target{One creature within \rngmed range}
+Make an attack vs. Mental against the target.
+\hit The target is \frightened by you as a \glossterm{condition}.
+\glance As above, except that the condition is removed at the end of the next round.
+\crit The target is \glossterm{panicked} by you as a \glossterm{condition}.
+
+\rankline
+You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 5.
+
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Agent of the Divine}{}}\label{spell:Agent of the Divine}
 \begin{attuneability}[Rank 6]{\hypertarget{spell:Agent of the Divine}{Agent of the Divine}}[\glossterm{Attune} (self), \glossterm{Focus}]
 \target{Yourself}
 You gain a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} and all \glossterm{defenses}.
 In addition, you gain a \plus2 \glossterm{magic bonus} to \glossterm{power}.
-
-\rankline
-\rank{8} The accuracy bonus increases to \plus2.
 
 \end{attuneability}
 \vspace{0.25em}
@@ -3244,24 +3219,6 @@ When you cast this spell, you gain a \glossterm{vital wound} that has no vital w
 In exchange, you gain a \plus4 \glossterm{magic bonus} to \glossterm{vital rolls} and become immune to \glossterm{conditions}.
 
 You can cast this spell as a \glossterm{minor action}.
-
-\rankline
-\rank{8} The bonus to \glossterm{vital rolls} increases to \plus6.
-
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Face of Divinity}{}}\label{spell:Face of Divinity}
-\begin{freeability}[Rank 6]{\hypertarget{spell:Face of Divinity}{Face of Divinity}}[\glossterm{Focus}]
-\target{One creature within \rngmed range}
-Make an attack vs. Mental against the target.
-\hit The target is \shaken by you as a \glossterm{condition}.
-\crit The target is \glossterm{panicked} by you as a \glossterm{condition}.
-
-\rankline
-\rank{8} The range increases to \rnglong.
 
 \end{freeability}
 \vspace{0.25em}
