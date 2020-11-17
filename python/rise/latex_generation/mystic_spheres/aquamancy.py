@@ -184,7 +184,7 @@ aquamancy=MysticSphere(
             Make an attack vs. Armor against each target.
             If this spell has its area increased, only the length of the line increases.
             % Normal dice, but half power due to vertical line
-            \\hit Each target takes takes bludgeoning damage equal to 2d8 bludgeoning damage + half your \\glossterm<power>.
+            \\hit Each target takes takes bludgeoning damage equal to 2d8 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
 
             \\rankline
