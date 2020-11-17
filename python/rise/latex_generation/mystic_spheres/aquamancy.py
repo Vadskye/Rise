@@ -248,7 +248,7 @@ aquamancy=MysticSphere(
         """, tags=[]),
         Spell('Wave of Dehydration', 3, 'Creatures in a \\arealarge, 10 ft. wide line from you', """
             Make an attack vs. Fortitude against each target.
-            \\hit Each target that has no remaining \\glossterm<resistance> to physical damage is \\glossterm<nauseated> by you as a \\glossterm<condition>.
+            \\hit Each target that has no remaining \\glossterm<resistance> to physical damage is \\glossterm<nauseated> as a \\glossterm<condition>.
             \\glance As above, except that the condition is removed at the end of the next round.
 
             \\rankline
