@@ -48,7 +48,7 @@ class Spell(object):
             if (self.level < 6 and scaling is None):
                 logger.log(WARNING, f"Spell {self.name} is missing scaling rules")
 
-            if scaling and 'for each rank' not in scaling:
+            if scaling and scaling not in ['accuracy', 'damage'] and 'for each rank' not in scaling:
                 # Make sure that the rank upgrades match the spell's rank 
                 if (self.level in [1, 3, 5] and 'rank<7>' not in scaling):
                     logger.log(WARNING, f"Spell {self.name} has wrong rank upgrade pattern")

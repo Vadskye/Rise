@@ -28,45 +28,33 @@ cryomancy=MysticSphere(
 
             Make a melee attack vs. Reflex against the target.
             \\hit The target takes cold damage equal to 1d10 plus your \\glossterm<power>.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 1.
-        """, tags=[], focus=False),
+        """, scaling="damage", tags=[], focus=False),
         Spell('Cone of Cold', 1, 'Everything in a \\areamed cone from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes cold damage equal to 1d8 plus half your \\glossterm<power>.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 1.
-        """, tags=[]),
+        """, scaling="damage", tags=[]),
         Spell('Frozen Legs', 4, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target takes 2d6 cold damage.
             If it loses \\glossterm<hit points> from this damage, it is \\glossterm<immobilized> as a \\glossterm<condition>.
             \\glance As above, except that that the target takes half damage.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 4.
-        """, tags=[]),
+        """, scaling="damage", tags=[]),
         Spell('Mass Frozen Legs', 6, '\\glossterm<Enemies> in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target that has no remaining \\glossterm<resistance> to cold damage is \\glossterm<immobilized> as a \\glossterm<condition>.
             \\glance As above, except that the condition is removed at the end of the next round.
-        """, scaling="""
-            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 1.
-        """, tags=[]),
+        """, scaling="accuracy", tags=[]),
         Spell('Ice Lance', 3, 'Everything in a \\arealarge, 5 ft.\\ wide line from you', """
             Make an attack vs. Armor against each target.
             \\hit Each target takes piercing and cold damage equal to 1d8 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 3.
-        """, tags=['Manifestation']),
+        """, scaling="damage", tags=['Manifestation']),
         # +2 levels for cold + bludgeoning, which breaks resistances
         Spell('Ice Spike', 3, 'One creature or object within \\rngmed range', """
             Make an attack vs. Armor against the target.
             \\hit The target takes piercing and cold damage equal to 2d8 plus your \\glossterm<power>.
             \\glance As above, except that that the target takes half damage.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 1.
-        """, tags=['Manifestation']),
+        """, scaling="damage", tags=['Manifestation']),
         Spell('Freeze Poison', 2, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
             The target takes 1d6 cold damage.
             In addition, it gains an additional success to resist a poison currently affecting it (see \\pcref<Poison>).
@@ -79,23 +67,17 @@ cryomancy=MysticSphere(
             \\hit The target takes 2d6 cold damage.
             If it loses \\glossterm<hit points> from this damage, it is \\glossterm<vulnerable> to bludgeoning damage as a \\glossterm<condition>.
             \\glance As above, except that that the target takes half damage.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 3.
-        """, tags=[]),
+        """, scaling="damage", tags=[]),
         Spell('Chilled Mind', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target takes 1d6 cold damage.
             If it loses \\glossterm<hit points> from this damage, it is \\glossterm<stunned> as a \\glossterm<condition>.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 1.
-        """, tags=[]),
+        """, scaling="damage", tags=[]),
         Spell('Mass Chilled Mind', 5, '\\glossterm<Enemies> in a \\arealarge radius from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target that has no remaining \\glossterm<resistance> to cold damage is \\glossterm<stunned> as a \\glossterm<condition>.
             \\glance As above, except that the condition is removed at the end of the next round.
-        """, scaling="""
-            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 5.
-        """, tags=[]),
+        """, scaling="accuracy", tags=[]),
         Spell('Skate', 1, 'Yourself', """
             The target can move on top of calm water as if it were land.
             It treats the water as \\glossterm<difficult terrain>.
@@ -133,31 +115,23 @@ cryomancy=MysticSphere(
         Spell('Winterwave', 3, 'Everything in a \\arealarge cone from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes cold damage equal to 2d6 plus half your \\glossterm<power>.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 3.
-        """, tags=[]),
+        """, scaling="damage", tags=[]),
         Spell('Frostbite', 3, 'One creature or object within \\rngclose range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target takes cold damage equal to 2d8 plus your \\glossterm<power>.
             If it loses \\glossterm<hit points> from this damage, it is \\glossterm<slowed> as a \\glossterm<condition>.
             \\glance As above, except that that the target takes half damage.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 3.
-        """, tags=[]),
+        """, scaling="damage", tags=[]),
         # +2 levels for cold + bludgeoning, which breaks resistances
         Spell('Hailstorm', 5, 'Everything in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Armor against each target.
             \\hit Each target takes cold and bludgeoning damage equal to 2d10 plus half your \\glossterm<power>.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 5.
-        """, tags=[]),
+        """, scaling="damage", tags=[]),
         Spell('Blizzard', 3, '\\glossterm<Enemies> and objects in a \\areamed radius from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes cold damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 3.
-        """, tags=[]),
+        """, scaling="damage", tags=[]),
         Spell('Icecraft', 1, 'One pool of unattended, nonmagical water within \\rngclose range.', """
             This spell creates an icy weapon or a suit of icy armor from the target pool of water.
             You can create any weapon, shield, or body armor that you are proficient with, and which would normally be made entirely from metal, except for heavy armor.
@@ -186,9 +160,7 @@ cryomancy=MysticSphere(
             \\hit Each target takes cold damage equal to 2d10 plus half your \\glossterm<power>.
 
             You can cast this spell as a \\glossterm<minor action>.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 4.
-        """, tags=['Attune (self)']),
+        """, scaling="damage", tags=['Attune (self)']),
         Spell('Frostburn', 7, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit As a \\glossterm<condition>, the target is seared by painful cold.
