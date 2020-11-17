@@ -33,30 +33,25 @@ polymorph=MysticSphere(
             \\rank<5> You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with natural weapons.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Attune (self)']),
-        Spell('Piercing Grasp', 2, 'One creature you \\glossterm<threaten>', """
+        Spell('Piercing Grasp', 1, 'One creature within your \\glossterm<reach>', """
             This spell does not have the \\glossterm<Focus> tag.
             You must have a \\glossterm<free hand> to cast this spell.
 
             You twist your hand into a spike that bends past armor to injure your foe.
             Make a melee attack vs. Reflex against the target.
-            \\hit The target takes piercing \\glossterm<standard damage> +1d.
-        """, scaling="""
-            \\rank<4> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<6> The damage increases to \\glossterm<standard damage> +3d.
-            \\rank<8> The damage increases to \\glossterm<standard damage> +4d.
-        """, tags=[], focus=False),
-        Spell('Baleful Polymorph', 7, 'One creature within \\rngmed range', """
+            \\hit The target takes piercing damage equal to 1d10 plus your \\glossterm<power>.
+        """, scaling="damage", tags=[], focus=False),
+        # +1 level for shrinking two size categories
+        Spell('Baleful Polymorph', 5, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
-            \\hit As a \\glossterm<condition>, the target shrinks by two \\glossterm<size categories> and is \\glossterm<confused>.
-        """, tags=[]),
+            \\hit The target takes 2d8 physical damage.
+            If it loses \\glossterm<hit points> from this damage, it is balefully polymorphed as a \\glossterm<condition>.
+            It shrinks by two \\glossterm<size categories> and is \\glossterm<confused>.
+        """, scaling="damage", tags=[]),
         Spell('Twist Flesh', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
-            \\hit The target takes physical \\glossterm<standard damage> +1d.
-        """, scaling="""
-            \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
-        """, tags=[]),
+            \\hit The target takes physical damage equal to 1d10 plus your \\glossterm<power>.
+        """, scaling="damage", tags=[]),
         Spell('Shrink', 1, 'Yourself', """
             The target's size decreases by one \\glossterm<size category>.
             This decreases its \\glossterm<base speed> and improves its \\glossterm<Stealth> skill.
@@ -76,10 +71,10 @@ polymorph=MysticSphere(
         """, scaling="""
             \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             In addition, the bonus increases to +4.
-            \\rank<5> The bonus increases to be equal to half your \\glossterm<power>.
-            \\rank<7> The bonus increases to be equal to your \\glossterm<power>.
+            \\rank<5> The bonus increases to +8.
+            \\rank<7> The bonus increases to +16.
         """, tags=['Attune (target)']),
-        Spell('Enlarge', 4, 'Yourself', """
+        Spell('Enlarge', 3, 'Yourself', """
             The target's size increases by one \\glossterm<size category>.
             This increases its \\glossterm<base speed> and reduces its \\glossterm<Stealth> skill.
             It may also increase the target's \\glossterm<reach> (see \\pcref<Size in Combat>).
@@ -87,8 +82,8 @@ polymorph=MysticSphere(
 
             You can cast this spell as a \\glossterm<minor action>.
         """, scaling="""
-            \\rank<6> This spell can target a Large or smaller \\glossterm<ally> within \\rngmed range instead of you.
-            \\rank<8> You may increase the target by two size categories instead of one.
+            \\rank<5> This spell can target a Large or smaller \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<7> You can increase the target's size category by up to two size categories.
         """, tags=['Attune (target)']),
         Spell('Alter Appearance', 3, 'Yourself', """
             You make a Disguise check to alter the target's appearance (see \\pcref<Disguise Creature>).
@@ -98,42 +93,45 @@ polymorph=MysticSphere(
             \\rank<5> This spell can target a Large or smaller \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<7> The bonus increases to +6.
         """, tags=['Attune (target)']),
-        Spell('Craft Object', 4, 'Any number of unattended, nonmagical objects within \\rngclose range', """
+        Spell('Craft Object', 5, 'Any number of unattended, nonmagical objects within \\rngclose range', """
             You make a Craft check to transform the targets into a new item (or items) made of the same materials.
             You require none of the tools or time expenditure that would normally be necessary.
             The total size of all targets combined must be Large size or smaller.
         """, scaling="""
-            \\rank<6> The maximum combined size is increased to Huge.
-            \\rank<8> The maximum combined size is increased to Gargantuan.
+            \\rank<7> The maximum combined size is increased to Huge.
         """, tags=[]),
-        Spell('Disintegrate', 4, 'One creature within \\rngmed range', """
+        # +4 levels for +2d, disintegration is free?
+        Spell('Disintegrate', 5, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
-            \\hit The target takes physical \\glossterm<standard damage> +2d.
+            \\hit The target takes physical damage equal to 4d6 plus your \\glossterm<power>.
             In addition, if the target has no hit points remaining at the end of the current \\glossterm<phase>, it dies.
             Its body is completely disintegrated, leaving behind only a pinch of fine dust.
             Its equipment is unaffected.
-        """, scaling="""
-            \\rank<6> The damage increases to \\glossterm<standard damage> +3d.
-            \\rank<8> The damage increases to \\glossterm<standard damage> +4d.
-        """, tags=[]),
+        """, scaling="damage", tags=[]),
         Spell('Malleable Body', 4, 'Yourself', """
             Your body and equipment becomes highly flexible and malleable, allowing you to compress your body or contort yourself into odd shapes.
-            You gain a +8 \\glossterm<magic bonus> to the Flexibility skill, and are immune to \\glossterm<critical hits> from \\glossterm<strikes>.
-            However, your \\glossterm<bleed resistance> against \\glossterm<physical damage> is halved.
+            This has the following effects:
+            \\begin<itemize>
+                \\item You gain a \\glossterm<climb speed> equal to your \\glossterm<base speed>.
+                \\item You gain a +8 \\glossterm<magic bonus> to the Flexibility skill. In addition, the minimum size you can squeeze down to is reduced to one inch, which can dramatically improve your ability to squeeze through tight spaces.
+                \\item You are immune to \\glossterm<critical hits> from \\glossterm<strikes>.
+                \\item Your \\glossterm<resistance> to \\glossterm<physical damage> is reduced to 0.
+            \\end<itemize>
         """, scaling="""
-            \\rank<6> The skill bonus increases to +12.
-            \\rank<8> The skill bonus increases to +16.
+            \\rank<6> The bonus to Flexibility increases to +12.
         """, tags=['Attune (self)']),
-        Spell('Spikeform', 4, ['Yourself', '\\glossterm<Enemies> adjacent to you (see text)'], """
+        Spell('Spikeform', 3, ['Yourself', 'See text'], """
             You transform your body to have dangerous spikes.
+            At the end of each round, make an attack vs. Armor against each creature that either is \\glossterm<grappling> with you or that attacked you with a melee weapon that round.
+            % full dice, but half power
+            \\hit Each secondary target takes electricity damage equal to 2d8 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
+        """, scaling="damage", tags=['Attune (self)']),
+        Spell('Extruding Spikeform', 6, ['Yourself', '\\glossterm<Enemies> adjacent to you (see text)'], """
+            You transform your body to have dangerous spikes that you can consciously extrude to impale nearby foes.
             As a \\glossterm<minor action>, you can extend the spikes to make an attack vs. Armor against each creature adjacent to you.
-            \\hit Each secondary target takes piercing \\glossterm<standard damage> -2d.
-
-            You can cast this spell as a \\glossterm<minor action>.
-        """, scaling="""
-            \\rank<6> The damage increases to \\glossterm<standard damage> -1d.
-            \\rank<8> The damage increases to \\glossterm<standard damage>.
-        """, tags=['Attune (self)']),
+            \\hit Each secondary target takes piercing damage equal to 4d8 plus half your \\glossterm<power>.
+        """, scaling="damage", tags=['Attune (self)']),
         Spell('Absorb Object', 3, 'One Small or smaller \\glossterm<unattended> object you touch', """
             You absorb the target into your body.
             Your weight is increased by the weight of the object, but the object's presence cannot be otherwise physically detected.
@@ -146,16 +144,6 @@ polymorph=MysticSphere(
             \\rank<5> The maximum size of the object increases to Medium.
             \\rank<7> The maximum size of the object increases to Large.
         """, tags=[]),
-        Spell('Bleed', 4, 'One living creature within \\rngclose range', """
-            Make an attack vs. Fortitude against the target.
-            \\hit As a \\glossterm<condition>, the target begins bleeding.
-            At the end of each round, it takes physical \\glossterm<standard damage> -2d.
-            This damage is \\glossterm<subdual damage> (see \\pcref<Subdual Damage>).
-            \\crit As above, except that the damage is not \\glossterm<subdual damage>.
-        """, scaling="""
-            \\rank<6> The damage increases to \\glossterm<standard damage> -1d.
-            \\rank<8> The damage increases to \\glossterm<standard damage>.
-        """, tags=[]),
         Spell('Camouflage', 1, 'Yourself', """
             The target gains a +3 \\glossterm<magic bonus> to the Stealth skill.
         """, scaling="""
@@ -163,9 +151,10 @@ polymorph=MysticSphere(
             \\rank<5> The bonus increases to +5.
             \\rank<7> The bonus increases to +7.
         """, tags=['Attune (target)']),
-        Spell('Sludgeform', 8, 'One living creature within \\rngclose range', """
+        Spell('Sludgeform', 7, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
-            \\hit As a \\glossterm<condition>, the target's physical form loses coherence and partially collapses into a sludgelike mass.
+            \\hit The target takes 4d6 physical damage.
+            If it loses \\glossterm<hit points> from this damage, its physical form loses coherence and partially collapses into a sludgelike mass as a \\glossterm<condition>.
             It has no \\glossterm<free hands>, causing it to drop anything it is holding and making it unable to take any actions that require free hands.
             Its speed with all of its \\glossterm<mundane> movement modes are reduced to one quarter normal.
             It is also unable to speak normally or use verbal or somatic \\glossterm<components>.
@@ -175,7 +164,7 @@ polymorph=MysticSphere(
         # Should this also be a spell? Incredibly niche, but golem makers
         # would want it...
         Spell('Mending', 1, 'One \\glossterm<unattended> object within \\rngclose range', """
-            The target is regains one \\glossterm<hit point>.
+            The target is regains hit points equal to 1d6 plus half your \\glossterm<power>.
         """, tags=[], ritual_time='one minute'),
         Spell('Morph Weapon', 1, 'One unattended manufactured weapon', """
             The target changes into another weapon from the same weapon group.
