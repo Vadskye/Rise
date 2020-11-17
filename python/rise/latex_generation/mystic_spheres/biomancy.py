@@ -177,6 +177,15 @@ biomancy=MysticSphere(
             \\glance As above, except that the condition is removed at the end of the next round.
             \\crit The target is \\glossterm<paralyzed> as a \\glossterm<condition>.
         """, tags=[]),
+        Spell('Bleed', 1, 'One living creature within \\rngmed range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit The target takes 1d6 physical damage.
+            If it loses \\glossterm<hit points> from this damage, it begins bleeding as a \\glossterm<condition>.
+            At the end of each subsequent round, it takes 1d6 physical damage.
+            \\crit As above, except that that the target takes double damage from both the initial hit and the condition.
+        """, scaling="""
+            The damage dealt by both the initial hit and the condition increases by +1d for each rank beyond 1.
+        """, tags=[]),
     ],
     rituals=[
         Spell('Awaken', 6, 'One Large or smaller \\glossterm<ally> within \\rngmed range', """
