@@ -14,8 +14,7 @@ aquamancy=MysticSphere(
         Effects('Create Water', 'Any number of locations within \\rngclose range', """
             You create up to two gallons of wholesome, drinkable water at the target locations, allowing you to fill multiple small water containers.
             You must create a minimum of one ounce of water in each location.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The volume created increases to five gallons.
             \\rank<5> The volume created increases to ten gallons.
             \\rank<7> The volume created increases to twenty gallons.
@@ -23,8 +22,7 @@ aquamancy=MysticSphere(
         Effects('Detect Water', None, """
             You learn the approximate distance and direction to any bodies of water within \\rnglong \\glossterm<range> of you.
             This spell can detect bodies of water with a minimum size of Fine.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The range increases to \\rngext.
             \\rank<5> The range increases to 2,000 feet.
             \\rank<7> The range increases to 5,000 feet.
@@ -33,16 +31,14 @@ aquamancy=MysticSphere(
             You can separate out dirt, sand, and minor pollutants from the target water, moving the waste material to the edge of the water so falls out or can be easily removed.
             This does not remove poisons, magical effects, or contaminants heavier than half a pound.
             Using this on a very large body of water is difficult, since the waste material can easily mix with the water unaffected by a single casting of this spell.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The volume affected increases to ten gallons.
             \\rank<5> The volume affected increases to twenty gallons.
             \\rank<7> The volume affected increases to fifty gallons.
         """, tags=['Manifestation']),
         Effects('Slippery Escape', 'Yourself', """
             You gain a +4 bonus to the Flexibility skill until the end of the next round.
-
-            \\rankline
+        """, scaling="""
             For each rank beyond 1, the bonus increases by 1.
         """, tags=['Manifestation']),
     ],
@@ -55,8 +51,7 @@ aquamancy=MysticSphere(
                 it stops being sickened for 10 minutes.
             \\crit As above, except that the effect lasts until this curse is removed.
             \\glance As above, except that the effect is removed at the end of the next round.
-
-            \\rankline
+        """, scaling="""
             You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 3.
         """, tags=['Curse']),
         Spell('Sphere of Constraint', 6, 'All \\glossterm<enemies> completely within a \\areamed radius within \\rngmed range', """
@@ -66,8 +61,7 @@ aquamancy=MysticSphere(
             \\hit Until the end of the next round, the majority of the target's body is surrounded by a layer of water.
             This does not impede the target's ability to breathe, but it takes penalties as if it was fighting underwater (see \\pcref<Underwater Combat>).
             \\crit As above, except that the effect is a \\glossterm<condition> instead of lasting until the end of the next round.
-
-            \\rankline
+        """, scaling="""
             You gain a +1 bonus to \glossterm<accuracy> with the attack for each rank beyond 6.
         """, tags=['Manifestation']),
         # fighting underwater is slightly more detrimental than the standard
@@ -78,8 +72,7 @@ aquamancy=MysticSphere(
             \\hit As a \\glossterm<condition>, the majority of the target's body is surrounded by a layer of water.
             This does not impede the target's ability to breathe, but it takes penalties as if it was fighting underwater (see \\pcref<Underwater Combat>).
             \\glance As above, except that the condition is removed at the end of the next round.
-
-            \\rankline
+        """, scaling="""
             You gain a +1 bonus to \glossterm<accuracy> with the attack for each rank beyond 4.
         """, tags=['Manifestation']),
         Spell('Drowning Bubble', 6, 'One creature within \\rngmed range', """
@@ -88,23 +81,20 @@ aquamancy=MysticSphere(
             It takes penalties as if it was fighting underwater (see \\pcref<Underwater Combat>).
             In addition, it is unable to breathe air, though it can try to breathe the water surrounding it.
             \\glance As above, except that the condition is removed at the end of the next round.
-
-            \\rankline
+        """, scaling="""
             You gain a +1 bonus to \glossterm<accuracy> with the attack for each rank beyond 6.
         """, tags=['Manifestation']),
         Spell('Crushing Wave', 1, 'Everything in a \\areamed, 10 ft.\\ wide line from you', """
             Make an attack vs. Reflex against each target.
             \\hit Each target takes bludgeoning damage equal to 1d8 plus half your \\glossterm<power>.
-
-            \\rankline
+        """, scaling="""
             The damage increases by +1d for each rank beyond 1.
         """, tags=['Manifestation']),
         Spell('Crushing Tide', 3, 'Everything in a \\arealarge, 10 ft.\\ wide line from you', """
             Make an attack vs. Reflex against each target.
             \\hit Each target takes bludgeoning damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
-
-            \\rankline
+        """, scaling="""
             The damage increases by +1d for each rank beyond 3.
         """, tags=['Manifestation']),
         Spell('Water Jet', 1, 'One creature or object within \\rngmed range', """
@@ -112,8 +102,7 @@ aquamancy=MysticSphere(
             You may move up to 20 feet away from the target as the water propels you backwards.
             Moving yourself upwards costs twice the normal movement cost.
             \\hit The target takes bludgeoning damage equal to 1d8 plus your \\glossterm<power>.
-
-            \\rankline
+        """, scaling="""
             The damage increases by +1d for each rank beyond 1.
         """, tags=['Manifestation']),
         Spell('Aquajet Blast', 3, 'One creature or object within \\rngmed range', """
@@ -122,23 +111,20 @@ aquamancy=MysticSphere(
             Moving yourself upwards costs twice the normal movement cost.
             \\hit The target takes bludgeoning damage equal to 2d6 plus your \\glossterm<power>.
             \\glance As above, except that that the target takes half damage.
-
-            \\rankline
+        """, scaling="""
             The damage increases by +1d for each rank beyond 3.
         """, tags=['Manifestation']),
         Spell('Fountain', 1, '\\glossterm<Enemies> within a \\areasmall radius from you', """
             Make an attack vs. Armor against each target.
             \\hit Each target takes bludgeoning damage equal to 1d8 plus half your \\glossterm<power>.
-
-            \\rankline
+        """, scaling="""
             The damage increases by +1d for each rank beyond 1.
         """, tags=['Manifestation']),
         Spell('Great Fountain', 3, '\\glossterm<Enemies> within a \\areamed radius from you', """
             Make an attack vs. Armor against each target.
             \\hit Each target takes bludgeoning damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
-
-            \\rankline
+        """, scaling="""
             The damage increases by +1d for each rank beyond 3.
         """, tags=['Manifestation']),
         Spell('Wall of Water', 3, None, """
@@ -149,8 +135,7 @@ aquamancy=MysticSphere(
             Creatures can pass through the wall unharmed, though it costs five extra feet of movement to move through the wall.
 
             Each five-foot square of wall has \\glossterm<hit points> equal to three times your \\glossterm<power> and all of its defenses are 0.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> The area of the wall increases to a \\areahuge line.
             \\rank<7> The area of the wall increases to a \\areaext line.
         """, tags=['Sustain (minor)', 'Manifestation']),
@@ -158,8 +143,7 @@ aquamancy=MysticSphere(
             The target suffers no penalties for acting underwater, except for those relating to using ranged weapons.
 
             You can cast this spell as a \\glossterm<minor action>.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The target also gains a swim speed equal to half its \\glossterm<base speed>.
         """, tags=['Attune (target)']),
@@ -169,8 +153,7 @@ aquamancy=MysticSphere(
             In addition, each target is \\glossterm<pushed> 20 feet in the direction the line points away from you.
             Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
             \\glance As above, except that that each target takes half damage.
-
-            \\rankline
+        """, scaling="""
             The damage increases by +1d for each rank beyond 4.
         """, tags=['Manifestation']),
         Spell('Raging Flood', 7, 'Everything in a \\areahuge, 15 ft. wide line from you', """
@@ -186,24 +169,21 @@ aquamancy=MysticSphere(
             % Normal dice, but half power due to vertical line
             \\hit Each target takes takes bludgeoning damage equal to 2d8 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
-
-            \\rankline
+        """, scaling="""
             The damage increases by +1d for each rank beyond 3.
         """, tags=['Manifestation']),
         Spell('Rainstorm', 2, 'Everything in the area (see text)', f"""
             Torrential rain begins falling out of thin air within a \\arealarge radius \\glossterm<zone> from your location.
             The rain extinguishes minor fires such as campfires and torches on contact.
             Everything in the area gain a bonus equal to your \\glossterm<power> to \\glossterm<resistances> against fire damage.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> The area increases to a \\areahuge radius \\glossterm<zone>.
             \\rank<6> The area increases to a \\areaext radius \\glossterm<zone>.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Obscuring Mist', 2, None, """
             Fog fills the air within a \\areamed radius \\glossterm<zone> from your location.
             The fog partially obstructs sight, granting \\glossterm<concealment> to anything seen through the fog (see \\pcref<Concealment>).
-
-            \\rankline
+        """, scaling="""
             \\rank<4> The area increases to a \\arealarge radius \\glossterm<zone>.
             \\rank<6> The area increases to a \\areahuge radius \\glossterm<zone>.
         """, tags=['Sustain (minor)']),
@@ -215,16 +195,14 @@ aquamancy=MysticSphere(
         Spell('Misty Shroud', 4, None, """
             Fog fills the air within a \\areamed radius \\glossterm<emanation> from your location.
             The fog partially obstructs sight, granting \\glossterm<concealment> to anything seen through the fog (see \\pcref<Concealment>).
-
-            \\rankline
+        """, scaling="""
             \\rank<6> The area increases to a \\arealarge radius \\glossterm<emanation>.
         """, tags=['Attune (self)']),
         Spell('Octopus Tentacles', 5, 'Yourself', """
             This spell functions like the \\textit<aqueous tentacles> spell, except that you create eight tentacles that extend from your body.
             Whenever you make a \\glossterm<strike> with the tentacles, you can attack with all of the tentacles at once, with each tentacle attacking a different target.
             This functions as if your attacks had the \\glossterm<Sweeping> (7) tag, with no limit on how far each secondary target must be from the primary target (see \\pcref<Sweeping>).
-
-            \\rankline
+        """, scaling="""
             \\rank<7> You gain a +5 bonus to \\glossterm<reach> with attacks using the tentacles.
         """, tags=['Attune (self)']),
         Spell('Aqueous Tentacle', 2, 'Yourself', """
@@ -233,8 +211,7 @@ aquamancy=MysticSphere(
             The natural weapon deals 1d10 damage, as normal for a slam natural weapon.
             In addition, it has the Reach \\glossterm<weapon tag> (see \\pcref<Weapon Tags>).
             Strikes using the tentacle are considered \\glossterm<magical> abilities, which means you use your \\glossterm<power> with \\glossterm<magical> abilities to determine their damage.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> You gain a +5 foot bonus to \\glossterm<reach> with attacks using the tentacle.
             \\rank<6> The bonus to reach increases to 10 feet.
         """, tags=['Attune (self)', 'Manifestation']),
@@ -242,16 +219,14 @@ aquamancy=MysticSphere(
             Make an attack vs. Fortitude against the target.
             \\hit The target takes 1d6 physical damage.
             If it loses hit points from this damage, it is \\glossterm<nauseated> as a \\glossterm<condition>.
-
-            \\rankline
+        """, scaling="""
             The damage increases by +1d for each rank beyond 1.
         """, tags=[]),
         Spell('Wave of Dehydration', 3, 'Creatures in a \\arealarge, 10 ft. wide line from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target that has no remaining \\glossterm<resistance> to physical damage is \\glossterm<nauseated> as a \\glossterm<condition>.
             \\glance As above, except that the condition is removed at the end of the next round.
-
-            \\rankline
+        """, scaling="""
             You gain a +1 bonus to \glossterm<accuracy> with the attack for each rank beyond 3.
         """, tags=[]),
         Spell('Desiccate', 4, 'One creature within \\rngmed range', """
@@ -259,8 +234,7 @@ aquamancy=MysticSphere(
             \\hit The target takes physical damage equal to 2d8 plus half your \\glossterm<power>.
             If it loses hit points from this damage, it is \\glossterm<nauseated> as a \\glossterm<condition>.
             \\glance As above, except that that the target takes half damage.
-
-            \\rankline
+        """, scaling="""
             The damage increases by +1d for each rank beyond 4.
         """, tags=[]),
         Spell('Excsiccate', 7, 'One creature within \\rngmed range', """
@@ -278,8 +252,7 @@ aquamancy=MysticSphere(
                 \\item You are immune to \\glossterm<critical hits> from \\glossterm<strikes>.
                 \\item Your \\glossterm<resistance> to \\glossterm<physical damage> is reduced to 0.
             \\end<itemize>
-
-            \\rankline
+        """, scaling="""
             \\rank<6> The bonus to Flexibility increases to +12.
         """, tags=['Attune (self)']),
         Spell('Aquatic Propulsion', 1, 'Yourself', """
@@ -288,8 +261,7 @@ aquamancy=MysticSphere(
             You cannot change the direction of the movement partway through.
             Moving yourself upwards costs twice the normal movement cost.
             This movement is doubled underwater instead of being dramatically slowed like normal for forced movement.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The distance increases to 100 feet.
             \\rank<5> The distance increases to 200 feet.
             \\rank<7> The distance increases to 300 feet.
@@ -297,16 +269,14 @@ aquamancy=MysticSphere(
         Spell('Fog Cloud', 3, 'Everything in a \\areamed radius within \\rnglong range', """
             A cloud of fog appears in the area.
             All sight through the area is partially obscured, granting \\glossterm<concealment> to anything in the area and anything viewed through the area (see \\pcref<Concealment>).
-
-            \\rankline
+        """, scaling="""
             \\rank<5> The area increases to a \\arealarge radius.
             \\rank<7> The area increases to a \\areahuge radius.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Fog Wall', 1, None, """
             You create a wall of fog in a 20 ft.\\ high, \\arealarge \\glossterm<wall> within \\rngmed range.
             The fog makes it difficult to see through the wall, granting \\glossterm<concealment> to anything viewed through the wall (see \\pcref<Concealment>).
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The area increases to a \\arealarge line.
             \\rank<5> The area increases to a \\areahuge line.
             \\rank<7> The area increases to a \\areaext line.
@@ -324,8 +294,7 @@ aquamancy=MysticSphere(
             If the water is split, you may reform from anywhere the water has reached, to as little as a single ounce of water.
             If not even an ounce of water exists contiguously, your body reforms from all of the largest available sections of water, cut into pieces of appropriate size.
             This usually causes you to die.
-
-            \\rankline
+        """, scaling="""
             \\rank<7> You can transform to and from water any number of times during a single movement.
             You must still regain your normal form at the end of the movement.
         """, tags=['Attune (self)']),

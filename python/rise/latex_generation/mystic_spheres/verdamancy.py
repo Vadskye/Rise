@@ -15,8 +15,7 @@ verdamancy=MysticSphere(
             Choose any number of days up to a week.
             The target grows as if that many days had passed.
             When this spell ends, the plant returns to its original state.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> You can choose up to a month of time to grow.
             \\rank<5> You can choose up to three months months of time to grow.
             \\rank<7> You can choose up to a year of time to grow.
@@ -24,8 +23,7 @@ verdamancy=MysticSphere(
         Effects('Verdant Conduit', 'Yourself', """
             You are considered to be a source of unworked earth.
             This can allow you to cast spells from this sphere that require unworked earth without having other sources of unworked earth nearby.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> All components of Medium or larger solid objects within a \\areasmall \\glossterm<emanation> from you are also considered to be sources of unworked earth.
             Unlike most spells, this can affect only part of a larger object, and it only affects the part of the object within the radius.
             \\rank<5> The area of the emanation increases to a \\areamed radius.
@@ -42,8 +40,7 @@ verdamancy=MysticSphere(
             \\hit The target is \\glossterm<immobilized> as a \\glossterm<condition>.
             This condition can be removed if the target or a creature that can reach the target makes a \\glossterm<difficulty rating> 10 Strength check to break the target free of the plants.
             The target can make this check as a \\glossterm<move action>, while other creatures can make the check as a standard action.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> The condition cannot be removed with a check.
             \\rank<7> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=['Manifestation']),
@@ -52,8 +49,7 @@ verdamancy=MysticSphere(
             Make an attack vs. Armor against the target.
             You gain a +2 bonus to \\glossterm<accuracy> with this attack if the target is in standing in \\glossterm<undergrowth>.
             \\hit The target takes bludgeoning \\glossterm<standard damage> +1d.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
             \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
@@ -67,16 +63,14 @@ verdamancy=MysticSphere(
             This condition can be removed if the target or a creature that can reach the target makes a Strength check to break the target free of the vines.
             The \\glossterm<difficulty rating> of the check is equal to your \\glossterm<power>.
             The target can make this check as a \\glossterm<move action>, while other creatures can make the check as a standard action.
-
-            \\rankline
+        """, scaling="""
             \\rank<8> The \\glossterm<difficulty rating> to escape the condition increases by 5.
         """, tags=['Manifestation']),
         Spell('Vineburst', 1, '\\glossterm<Enemies> and objects in a \\areasmall radius from you', """
             Make an attack vs. Armor against each target that is within 10 feet of unworked earth or plants..
             You gain a +2 bonus to \\glossterm<accuracy> with this attack against targets standing in \\glossterm<undergrowth>.
             \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The damage increases to \\glossterm<standard damage>.
             \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
@@ -86,8 +80,7 @@ verdamancy=MysticSphere(
             The tentacles grant you a slam \\glossterm<natural weapon> (see \\tref<Natural Weapons>).
             The natural weapon deals +2d damage, as normal for a slam natural weapon.
             The natural weapon has the Reach \\glossterm<weapon tag> and does not require a \\glossterm<free hand> to use (see \\pcref<Weapon Tags>).
-
-            \\rankline
+        """, scaling="""
             \\rank<4> You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with attacks using the tentacles.
             \\rank<6> You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with attacks using the tentacles.
             \\rank<8> You gain a +5 bonus to \\glossterm<reach> with attacks using the tentacles.
@@ -99,8 +92,7 @@ verdamancy=MysticSphere(
             A creature poisoned by nitharit becomes \\glossterm<sickened> as long as it is poisoned.
             A third successful attack causes the target to become \\glossterm<nauseated> as long as it is poisoned.
             A third failed attack ends the poison.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
@@ -110,8 +102,7 @@ verdamancy=MysticSphere(
             A creature poisoned by sassone leaf loses a \\glossterm<hit point> from each successful attack, including the first.
             A third successful attack causes the target to lose an additional hit point and ends the poison.
             A third failed attack ends the poison.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<6> The accuracy bonus increases to +2.
             \\rank<8> The accuracy bonus increases to +3.
@@ -121,8 +112,7 @@ verdamancy=MysticSphere(
             A creature poisoned by arsenic loses a \\glossterm<hit point> from each successful attack, including the first.
             A third successful attack causes the target gain a \\glossterm<vital wound> and ends the poison.
             A third failed attack ends the poison.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=[]),
@@ -131,15 +121,13 @@ verdamancy=MysticSphere(
             A creature poisoned by black lotus extract loses a \\glossterm<hit point> from each successful attack, including the first.
             A third successful attack causes the target to gain a \\glossterm<vital wound>.
             A third failed attack ends the poison.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<8> The accuracy bonus increases to +2.
         """, tags=['Manifestation']),
         Spell('Herbal Antidote', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains an additional success to resist a poison currently affecting it (see \\pcref<Poison>).
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The number of additional successes increases to two.
             \\rank<5> The number of additional successes increases to three.
             \\rank<7> The number of additional successes increases to four.
@@ -148,8 +136,7 @@ verdamancy=MysticSphere(
             The target gains a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical> damage.
 
             You can cast this spell as a \\glossterm<minor action>.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             In addition, the bonus increases to +4.
             \\rank<5> The bonus increases to be equal to half your \\glossterm<power>.
@@ -159,8 +146,7 @@ verdamancy=MysticSphere(
             You throw a seed that embeds itself in a foe and grows painfully.
             Make an attack vs. Fortitude against the target.
             \\hit As a \\glossterm<condition>, the target takes physical \\glossterm<standard damage> at the end of each round.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<8> The accuracy bonus increases to +2.
         """, tags=[]),
@@ -172,8 +158,7 @@ verdamancy=MysticSphere(
             % Doesn't seem worth the complexity, and implicitly gives the fire seed surprisingly long range since objects are easy to hit.
             On impact, the acorn detonates, and you make an attack vs. Armor against everything within a \\areasmall radius of the struck creature or object.
             \\hit Each target takes fire \\glossterm<standard damage> -1d.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> The damage increases to \\glossterm<standard damage>.
             \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
         """, tags=['Sustain (free)']),
@@ -189,8 +174,7 @@ verdamancy=MysticSphere(
 
             Each five-foot square of wall has hit points equal to three times your \\glossterm<power>, and all of its defenses are 0.
             It is \\glossterm<vulnerable> to fire damage.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> The area increases to a \\arealarge shapeable line.
             \\rank<7> The damage increases to \\glossterm<standard damage>.
         """, tags=['Attune (self)']),
@@ -202,8 +186,7 @@ verdamancy=MysticSphere(
             If you choose for plants to diminish, all \\glossterm<heavy undergrowth> in the area is reduced to \\glossterm<light undergrowth>, and all \\glossterm<light undergrowth> is removed.
 
             When this spell's duration ends, the plants return to their natural size.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> The area increases to a \\arealarge radius.
             \\rank<6> The range increases to \\rnglong.
             \\rank<8> The area increases to a \\areahuge radius.
@@ -213,8 +196,7 @@ verdamancy=MysticSphere(
             % TODO: is this the right damage type?
             \\hit The target takes acid \\glossterm<standard damage> +1d.
             This damage is doubled if the target is a plant, including plant creatures.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> The damage increases to \\glossterm<standard damage> +2d.
             \\rank<6> The damage increases to \\glossterm<standard damage> +3d.
             \\rank<8> The damage increases to \\glossterm<standard damage> +4d.
@@ -223,16 +205,14 @@ verdamancy=MysticSphere(
             You transform the target into a club, greatclub, or quarterstaff, as you choose (see \\pcref<Weapons>).
             You cannot change the target's size by more than one size category.
             You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> on attacks with it.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> You also gain +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with the weapon.
             \\rank<5> The power bonus increases to +4.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Attune (self)']),
         Spell('Natural Camouflage', 1, 'Yourself', """
             You gain a +4 \\glossterm<magic bonus> to the Stealth skill while you have \\glossterm<cover> or \\glossterm<concealment> from plants.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The bonus increases to +6.
             \\rank<5> The bonus increases to +8.
             \\rank<7> The bonus increases to +10.
@@ -243,8 +223,7 @@ verdamancy=MysticSphere(
             When you do, that area becomes covered in \\glossterm<light undergrowth>.
             Whenever you move, the vines retreat back to your body.
             That prevents the vines from impeding your movement, though they do impede the movement of any other creatures that move simultaneously.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> The area increases to a \\arealarge radius.
             \\rank<8> The area increases to a \\areahuge radius.
         """, tags=['Attune (self)']),
@@ -257,8 +236,7 @@ verdamancy=MysticSphere(
             The \\glossterm<difficulty rating> of the check is equal to 5 \\add your \\glossterm<power>.
 
             You can cast this spell as a \\glossterm<minor action>.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<7> The condition cannot be removed without taking a \\glossterm<short rest>.
         """, tags=['Attune (target)']),
@@ -266,8 +244,7 @@ verdamancy=MysticSphere(
             When you cast this spell, you choose a type of armor you are proficient with that is not normally made from metal.
             Plants grow around your body, functioning like your chosen type of armor for you, except that the \\glossterm<encumbrance penalty> of the armor is reduced by 2.
             These plants are considered to be normal plants for the purpose of abilities that require plants to be near targets, such as spells from this mystic sphere.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> You also gain a +1 bonus to Armor defense.
             \\rank<5> The encumbrance penalty reduction is increased to 3.
             \\rank<7> The bonus to Armor defense increases to +2.

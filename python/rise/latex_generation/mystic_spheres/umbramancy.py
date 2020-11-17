@@ -15,8 +15,7 @@ umbramancy=MysticSphere(
             You can choose this spell's radius, up to a maximum of a \\areamed radius.
             Light within or passing through the area is dimmed to be no brighter than \\glossterm<shadowy illumination>.
             Any object or effect which blocks light also blocks this spell's effect.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The maximum area increases to a \\arealarge radius.
             \\rank<5> The range increases to \\rnglong.
             \\rank<7> The maximum area increases to a \\areaext radius.
@@ -30,8 +29,7 @@ umbramancy=MysticSphere(
             Light within or passing through the area is snuffed out.
             Any object or effect which blocks light also blocks this spell's effect.
             Darkvision and similar abilities which do not require light still function within the area.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> The maximum area increases to a \\arealarge radius.
             \\rank<7> The maximum area increases to a \\areaext radius.
         """, tags=['Sensation', 'Sustain (minor)']),
@@ -40,16 +38,14 @@ umbramancy=MysticSphere(
             You can choose the spell's radius, up to a maximum of a \\areamed radius.
             Light within or passing through the area is dimmed to be no brighter than \\glossterm<shadowy illumination>.
             Any object or effect which blocks light also blocks this spell's effect.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The maximum area increases to a \\arealarge radius.
             \\rank<5> The maximum area increases to a \\areahuge radius.
             \\rank<7> The maximum area increases to a \\areaext radius.
         """, tags=['Attune (self)', 'Sensation']),
         Spell('Darkvision', 2, 'Yourself', """
             The target gains \\glossterm<darkvision> with a 50 foot radius.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The radius increases to 100 feet.
             \\rank<8> The radius increases to 200 feet.
@@ -58,8 +54,7 @@ umbramancy=MysticSphere(
             Make an attack vs. Fortitude against each target.
             You gain a +2 bonus to \\glossterm<accuracy> with the attack against each target that is not in \\glossterm<bright illumination>.
             \\hit Each target takes cold \\glossterm<standard damage> -1d.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> The area increases to a \\areamed radius.
             \\rank<7> The area increases to a \\arealarge radius.
         """, tags=[]),
@@ -70,8 +65,7 @@ umbramancy=MysticSphere(
             Make a melee attack vs. Reflex against the target.
             You gain a +2 bonus to \\glossterm<accuracy> with the attack if the target is not in \\glossterm<bright illumination>.
             \\hit The target takes cold \\glossterm<standard damage>.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> The damage increases to \\glossterm<standard damage> +1d.
             \\rank<6> The damage increases to \\glossterm<standard damage> +2d.
             \\rank<8> The damage increases to \\glossterm<standard damage> +3d.
@@ -81,8 +75,7 @@ umbramancy=MysticSphere(
             You gain a +2 bonus to \\glossterm<accuracy> with the attack if the target is not in \\glossterm<bright illumination>.
 
             \\hit The target takes cold \\glossterm<standard damage>.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The damage increases to \\glossterm<standard damage> +1d.
             \\rank<5> The damage increases to \\glossterm<standard damage> +2d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +3d.
@@ -91,8 +84,7 @@ umbramancy=MysticSphere(
             The target's physical form becomes blurred and shifts in and out of existence.
             This is not a mere trick of the light, but an alteration of reality to make its existence more ambiguous.
             The target gains a +1 \\glossterm<magic bonus> to Armor defense and the Stealth skill.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The bonus increases to +2.
             \\rank<8> The bonus increases to +3.
@@ -101,8 +93,7 @@ umbramancy=MysticSphere(
             At the end of each round, the footprints, scent, and other tracks left by each target during that round are magically concealed.
             This increases the \\glossterm<difficulty rating> to follow the trail by 10, but does not prevent creatures from seeing or smelling each target normally in combat.
             At the end of each round, if any target is outside of \\rnglong range from you, the effect is broken for that target and its trail is revealed.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> The \\glossterm<difficulty rating> increase increases to 15.
             \\rank<6> The \\glossterm<difficulty rating> increase increases to 20.
             \\rank<8> The \\glossterm<difficulty rating> increase increases to 25.
@@ -110,8 +101,7 @@ umbramancy=MysticSphere(
         Spell('Fade Into Darkness', 2, 'Yourself', """
             At the end of each round, if you took no actions that round and are not in \\glossterm<bright illumination>, you become \\glossterm<invisible>.
             This invisibility ends after you take any action.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> Moving during a round does not prevent you from becoming invisible at the end of the round.
             \\rank<6> Taking \\glossterm<minor actions> does not prevent you from becoming invisible at the end of the round.
             \\rank<8> The invisibility lasts until the end of the round after you take an action, rather than ending immediately after the action.
@@ -121,8 +111,7 @@ umbramancy=MysticSphere(
             You gain a +2 bonus to \\glossterm<accuracy> with the attack if the target is not in \\glossterm<bright illumination>.
             \\hit As a \\glossterm<condition>, the target takes a -2 penalty to \\glossterm<accuracy> and visual Awareness checks.
             \\crit The target is \\glossterm<blinded> as a \\glossterm<condition>.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
@@ -131,8 +120,7 @@ umbramancy=MysticSphere(
             Make an attack vs. Mental against the target.
             You gain a +2 bonus to \\glossterm<accuracy> with the attack if the target is not in \\glossterm<bright illumination>.
             \\hit The target is \\glossterm<blinded> as a \\glossterm<condition>.
-
-            \\rankline
+        """, scaling="""
             \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=['Sensation', 'Visual']),
         Spell('Hidden Blade', 3, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
@@ -147,15 +135,14 @@ umbramancy=MysticSphere(
 
             This effect provides no offensive benefit against creatures immune to \\glossterm<Visual> abilities.
 
-            % TODO: this doesn't really sense narratively
-            \\rankline
+        
+    """, scaling="""% TODO: this doesn't really sense narratively
             \\rank<5> The target also gains a +1 bonus to \\glossterm<accuracy> with the strike.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Sensation', 'Visual']),
         Spell('Conceal', 1, 'Yourself', """
             The target gains a +3 \\glossterm<magic bonus> to the Stealth skill.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<5> The bonus increases to +5.
             \\rank<7> The bonus increases to +7.
@@ -164,8 +151,7 @@ umbramancy=MysticSphere(
             You teleport into an unoccupied destination on the ground within \\rngmed range.
             Unlike most teleportation effects, both your departure and arrival with this spell are silent.
             If you are in \\glossterm<bright illumination> and are not touching your shadow, this spell is \\glossterm<miscast>.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The teleporation range increases to \\rnglong.
             \\rank<5> The teleporation range increases to \\rngext.
             \\rank<7> The teleporation range increases to 2,000 feet.
@@ -173,8 +159,7 @@ umbramancy=MysticSphere(
         Spell('Shadowstrike', 4, 'Yourself', """
             This spell functions like the \\spell<shadowstep> spell, except that you can also make a \\glossterm<strike> at your destination.
             You take a -2 penalty to \\glossterm<accuracy> with the strike due to its rushed nature.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> The teleporation range increases to \\rnglong.
             \\rank<8> The teleporation range increases to \\rngext.
         """, tags=[]),
@@ -184,8 +169,7 @@ umbramancy=MysticSphere(
             If your \\glossterm<line of effect> to your destination is blocked, or if this teleportation would somehow place you inside a solid object, your teleportation is cancelled and you remain where you are that phase.
             Areas with \\glossterm<bright illumination> blocks line of effect for this spell, so you are unable to teleport into or past areas of bright illumination.
             You must be able to move to teleport in this way, so effects like being \\glossterm<immobilized> prevent this movement.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> You can also teleport vertically or diagonally in addition to horizontally.
             \\rank<8> You can teleport in this way even if you are unable to move, such as if you are \\glossterm<immobilized> or \\glossterm<paralyzed>.
         """, tags=['Attune (self)']),
@@ -196,8 +180,7 @@ umbramancy=MysticSphere(
             \\hit As a \\glossterm<condition>, the target is \\glossterm<slowed> and unable to fly or otherwise leave the ground under its own power.
             This does not prevent it from being carried or forcibly removed from the ground.
             \\crit As a \\glossterm<condition>, the target is \\glossterm<immobilized>.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
@@ -211,8 +194,7 @@ umbramancy=MysticSphere(
             You can cause it to use any of its normal movement modes, but you cannot force it to make skill checks or use abilities with a cost, such as sprinting.
             If the target tries to move on its own outside of the \\glossterm<movement phase>, it is \\glossterm<disoriented>.
             The target can otherwise act normally, and this does not prohibit it from taking other actions during the movement phase, such as drawing or sheathing weapons.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=[]),
@@ -231,8 +213,7 @@ umbramancy=MysticSphere(
             While you are in \\glossterm<bright illumination>, this effect is \\glossterm<suppressed>, and you return to your normal size and shape.
             If doing so is impossible, such as if you are in a space too small to contain your body, you gain a \\glossterm<vital wound> and this effect persists for the rest of the round.
             This form offers you no special immunity to damage, as creatures can simply attack the shadow.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> You can maintain the form in bright illumination for a full round before it is suppressed.
             \\rank<8> You can maintain the form in bright illumination for up to five minutes in a row before it is suppressed.
         """, tags=['Attune (self)']),
@@ -243,8 +224,7 @@ umbramancy=MysticSphere(
             The wall is visible as a solid block of darkness that blocks sight.
             Creatures with the \\glossterm<darkvision> ability can see through the wall normally.
             It does not inhibit the passage of objects or creatures.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The area increases to a \\arealarge line.
             \\rank<5> The range increases to \\rnglong.
             \\rank<7> The area increases to a \\areahuge line.
