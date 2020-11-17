@@ -44,84 +44,66 @@ photomancy=MysticSphere(
             \\rank<6> The area increases to a \\areahuge line.
             \\rank<8> The area increases to a \\areaext line.
         """, tags=['Sensation', 'Sustain (minor)']),
-        Spell('Flash', 1, 'One creature within \\rngmed range', """
+        Spell('Flash', 2, 'One creature within \\rngmed range', """
             A burst of light flashes in front of a creature's eyes.
             \\glossterm<Bright illumination> fills a 50 foot radius around a location in the target's space until the end of the next round.
             In addition, make an attack vs. Fortitude against the target.
             \\hit The target is \\glossterm<dazzled> as a \\glossterm<condition>.
             \\crit The target is \\glossterm<blinded> as a \\glossterm<condition>.
-        """, scaling="""
-            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<5> The accuracy bonus increases to +2.
-            \\rank<7> The accuracy bonus increases to +3.
-        """, tags=['Sensation', 'Visual']),
-        Spell('Searing Light', 1, 'One creature within \\rngmed range', """
-            A ray of light flashes between you and the target.
-            \\glossterm<Bright illumination> fills a 50 foot radius around the path the ray took until the end of the next round.
-            % This gives accuracy instead of the more common damage because photomancy isn't supposed to be
-            % a high-damage mystic sphere
-            In addition, make an attack vs. Reflex with a +1 bonus to \\glossterm<accuracy> against the target.
-            \\hit The target takes energy \\glossterm<standard damage>.
-        """, scaling="""
-            \\rank<3> The accuracy bonus increases to +2.
-            \\rank<5> The accuracy bonus increases to +3.
-            \\rank<7> The accuracy bonus increases to +4.
-        """, tags=['Sensation', 'Visual']),
-        Spell('Solar Ray', 5, 'One creature within \\rngmed range', """
-            A ray of light flashes between you and the target.
-            \\glossterm<Bright illumination> fills a 100 foot radius around the path the ray took until the end of the next round.
-            In addition, make an attack vs. Reflex with a +3 bonus to \\glossterm<accuracy> against the target.
-            \\hit The target takes energy \\glossterm<standard damage>.
-            In addition, the target suffers consequences as if it had been struck by a beam of true sunlight.
-        """, scaling="""
-            \\rank<7> The accuracy bonus increases to +4.
-        """, tags=['Sensation', 'Visual']),
-        Spell('Blinding Flash', 6, 'One creature within \\rngmed range', """
+        """, scaling="accuracy", tags=['Sensation', 'Visual']),
+        Spell('Blinding Flash', 7, 'One creature within \\rngmed range', """
             A burst of light flashes in front of a creature's eyes.
             \\glossterm<Bright illumination> fills a 50 foot radius around a location in the target's space until the end of the next round.
             In addition, make an attack vs. Fortitude against the target.
             \\hit The target is \\glossterm<blinded> as a \\glossterm<condition>.
-        """, scaling="""
-            \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
         """, tags=['Sensation', 'Visual']),
-        Spell('Lightburst', 3, 'All creatures in the area (see text)', """
-            A burst of light light fills a \\areasmall radius \\glossterm<zone> within \\rngmed range of you.
+        Spell('Searing Light', 1, 'One creature within \\rngmed range', """
+            A ray of light flashes between you and the target.
+            \\glossterm<Bright illumination> fills a 50 foot radius around the path the ray took until the end of the next round.
+            % This gives accuracy with lower damage because photomancy isn't narratively a high-damage mystic sphere
+            In addition, make an attack vs. Reflex with a +1 bonus to \\glossterm<accuracy> against the target.
+            \\hit The target takes energy damage equal to 1d8 plus half your \\glossterm<power>.
+        """, scaling="damage", tags=['Sensation', 'Visual']),
+        # +1 level for sunlight crit, +2 levels for +1a
+        Spell('Solar Ray', 4, 'One creature within \\rngmed range', """
+            A ray of light flashes between you and the target.
+            \\glossterm<Bright illumination> fills a 100 foot radius around the path the ray took until the end of the next round.
+            In addition, make an attack vs. Reflex with a +2 bonus to \\glossterm<accuracy> against the target.
+            \\hit The target takes energy damage equal to 2d8 plus half your \\glossterm<power>.
+            \\glance As above, except that that the target takes half damage.
+            \\crit As above, except that that the target takes double damage.
+            In addition, the target suffers consequences as if it had been struck by a beam of true sunlight.
+        """, scaling="damage", tags=['Sensation', 'Visual']),
+        Spell('Lightburst', 1, 'All creatures in the area (see text)', """
+            A burst of bright light fills a \\areasmall radius \\glossterm<zone> within \\rngmed range of you.
+            \\glossterm<Bright illumination> fills a 100 foot radius around the area until the end of the next round.
+            In addition, make an attack vs. Fortitude against each target.
+            \\hit Each target is \\dazzled until the end of the next round.
+            \\crit Each target is \\glossterm<dazzled> as a \\glossterm<condition>.
+        """, scaling="accuracy", tags=['Sensation', 'Visual']),
+        Spell('Sunburst', 7, 'All creatures in the area (see text)', """
+            A burst of sunlight fills a \\areasmall radius \\glossterm<zone> within \\rngmed range of you.
             \\glossterm<Bright illumination> fills a 100 foot radius around the area until the end of the next round.
             In addition, make an attack vs. Fortitude against each target creature.
-            \\hit Each target is \\dazzled as a \\glossterm<condition>.
+            \\hit Each target is \\glossterm<blinded> until the end of the next round.
             \\crit Each target is \\glossterm<blinded> as a \\glossterm<condition>.
-        """, scaling="""
-            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<7> The accuracy bonus increases to +2.
-        """, tags=['Sensation', 'Visual']),
-        Spell('Sunburst', 5, 'All creatures in the area (see text)', """
-            A burst of light light fills a \\areamed radius \\glossterm<zone> within \\rngmed range of you.
-            \\glossterm<Bright illumination> fills a 100 foot radius around the area until the end of the next round.
-            In addition, make an attack vs. Fortitude against each target creature.
-            \\hit Each target is \\glossterm<dazzled> as a \\glossterm<condition>.
             In addition, each target is affected as if it had entered natural sunlight.
-            \\crit As above, except that each target is \\glossterm<blinded> instead of \\glossterm<dazzled>.
-        """, scaling="""
-            \\rank<7> The area increases to a \\arealarge radius.
         """, tags=['Sensation', 'Visual']),
-        Spell('Pillars of Light', 5, 'All creatures in the area (see text)', """
-            A burst of light light fills up to five \\areasmall radius \\glossterm<zones> within \\rnglong range of you.
+        # +2 levels for long range, +1 for five zones
+        Spell('Pillars of Light', 4, 'All creatures in the area (see text)', """
+            A burst of bright light fills up to five \\areasmall radius, 100 ft.\\ high cylinder-shaped \\glossterm<zones> within \\rnglong range of you.
             \\glossterm<Bright illumination> fills a 100 foot radius around each area until the end of the next round.
             In addition, make an attack vs. Fortitude against each target creature.
-            \\hit Each target is \\dazzled as a \\glossterm<condition>.
-        """, scaling="""
-            \\rank<7> The area of each zone increases to an \\glossterm<areamed> radius.
-        """, tags=['Sensation', 'Visual']),
+            \\hit Each target is \\dazzled until the end of the next round.
+            \\crit Each target is \\glossterm<dazzled> as a \\glossterm<condition>.
+        """, scaling="accuracy", tags=['Sensation', 'Visual']),
         Spell('Kaleidoscopic Pattern', 4, 'All creatures in the area (see text)', """
-            This spell creates a brilliant, rapidly shifting rainbow of lights in a \\areamed radius within \\rngmed range of you.
+            This spell creates a brilliant, rapidly shifting rainbow of lights in a \\areasmall radius within \\rngmed range of you.
             They fill a 100 foot radius around the area with bright illumination until the end of the next round.
-            In addition, make an attack vs. Mental against each target creature.
+            In addition, make an attack vs. Mental against each target.
             \\hit Each target is \\glossterm<stunned> until the end of the next round.
             \\crit Each target is \\glossterm<stunned> as a \\glossterm<condition>.
-        """, scaling="""
-            \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<8> The accuracy bonus increases to +2.
-        """, tags=['Compulsion', 'Sensation', 'Visual']),
+        """, scaling="accuracy", tags=['Compulsion', 'Sensation', 'Visual']),
         Spell('Blur', 2, 'Yourself', """
             The target's physical outline is distorted so it appears blurred, shifting, and wavering.
             It gains a +1 \\glossterm<magic bonus> to Armor defense and the Stealth skill.
@@ -155,11 +137,11 @@ photomancy=MysticSphere(
             \\rank<5> The spell creates four duplicates.
             \\rank<7> The spell creates five duplicates.
         """, tags=['Attune (self)', 'Sensation', 'Visual']),
-        Spell('Displacement', 8, 'Yourself', """
+        Spell('Displacement', 6, 'Yourself', """
             Your image appears to be two to three feet from its real location.
-            \\glossterm<Mundane> \\glossterm<targeted> attacks against you suffer a 50\\% miss chance.
+            All \\glossterm<strikes> against you suffer a 20\\% miss chance.
             This ability provides no defensive benefit against creatures immune to \\glossterm<Visual> abilities.
-        """, tags=['Sensation', 'Visual']),
+        """, tags=['Attune (self)', 'Sensation', 'Visual']),
         Spell('Illusory Twin', 2, None, """
             You create an illusory duplicate of yourself overlayed on your body.
             Whenever you move, you may also move the illusory duplicate the same distance in any direction.
@@ -170,7 +152,6 @@ photomancy=MysticSphere(
         """, scaling="""
             \\rank<4> The maximum range increases to \\rnglong.
             \\rank<6> You can create a second duplicate of yourself.
-            \\rank<8> The maximum range increases to \\rngext.
         """, tags=['Sustain (minor)']),
     ],
     rituals=[
