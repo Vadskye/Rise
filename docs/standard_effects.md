@@ -215,10 +215,11 @@ have their own logic which may differ significantly from this.
   * +2 levels: +1 area size
   * +2 levels: +1a (damaging attacks, damaging debuffs)
   * +2 levels: +1d (above standard rank progression, if any)
-  * +2 levels: convert condition to curse
+  * +2 levels: convert condition to curse (including curse crit)
   * +3 levels: +1 rank to condition
   * +3 levels: Add additional condition of the same rank removed at the same time as existing condition
   * +3 levels: increase one damage tier (low -> medium -> high); only for Finisher attacks
+  * +3 levels: add r1 condition on losing HP to a high damage attack
 * Non-strikes only:
   * +0 levels: add glancing blow mechanic
     * Mathematically, this should be +2 levels to match +1 accuracy. However, at high levels the game
@@ -238,7 +239,7 @@ have their own logic which may differ significantly from this.
 
 ### Standard effects
 
-### Strike-based
+#### Rank 1 Effects
 
 Rank 1 maneuver:
 * Strike-based:
@@ -257,9 +258,10 @@ Rank 1 Focus/non-upgrading, Rank 3 maneuver:
 * Non-strike-based:
   * Softener:
     * Med range: r1 condition
-    * Large cone from self: r1 eonr, condition on crit
-    * Large line, 10' wide, from self: r1 eonr, condition on crit
+    * Enemies in Large cone from self: r1 eonr, condition on crit
+    * Enemies in Large line, 10' wide, from self: r1 eonr, condition on crit
     * Enemies in Medium radius from self: r1 eonr, condition on crit
+    * Enemies in Small radius in Med range: r1 eonr, condition on crit
   * Damage:
     * Med range: high damage
     * Med cone from self: medium damage
@@ -269,7 +271,7 @@ Rank 1 Focus/non-upgrading, Rank 3 maneuver:
     * Med range: low damage, r2 condition if lose HP
     * Med cone from self: r2 condition if no resistances
     * Med line, 10' wide, from self: r2 condition if no resistances
-    * Small radius around self: r2 condition if no resistances
+    * Enemies in Small radius from self: r2 condition if no resistances
 
 ### Higher rank specific examples
 
@@ -286,22 +288,22 @@ Rank 3 Focus/non-upgrading, Rank 5 maneuver:
   * Finisher:
     * Small radius in Med range: r2 condition if no resistances
 
-
 Rank 4 Focus/non-upgrading, Rank 6 maneuver:
 * Softener:
   * Med range: r2 condition in medium range
-
-Rank 5 Focus/non-upgrading, Rank 7 maneuver:
 * Finisher:
-  * Med range: high damage, r2 condition if lose HP
+  * Med range: high damage, r1 condition if lose HP
 
 Rank 6 Focus/non-upgrading:
 * Softener:
   * Med range: r2 curse
 * Finisher:
 
+Rank 7 Focus/non-upgrading:
+* Finisher:
+  * Med range: high damage, r2 condition if lose HP
 
-
+#### Old system; remove once everything has been moved over
 
 Rank 1 non-Focus:
 * AOE:
@@ -415,13 +417,3 @@ Rank 8 Focus:
 * Single-target:
   * r4 condition in close range
   * Deal std and r2 condition in std range
-
-# Magic items
-
-A magic item of a given level should generally function as if you had a tiny spellcaster nearby who
-was 3 levels lower than the magic item's level casting a relevant spell.
-
-This means that magic items can often mimic spell effects, but only Attune (target) effects, not
-Attune (self) effects. They should generally not have rank upgrades at all, and to the extent that
-they have rank upgrades, the upgrades should match those that a spellcaster 3 levels lower would
-have.
