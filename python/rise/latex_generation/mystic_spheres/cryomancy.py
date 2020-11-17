@@ -23,104 +23,100 @@ cryomancy=MysticSphere(
     ],
     lists=['Arcane', 'Nature', 'Pact'],
     spells=[
-        Spell('Freezing Grasp', 2, 'One creature or object within your \\glossterm<reach>', """
+        Spell('Freezing Grasp', 1, 'One creature or object within your \\glossterm<reach>', """
             This spell does not have the \\glossterm<Focus> tag.
             You must have a \\glossterm<free hand> to cast this spell.
 
             Make a melee attack vs. Reflex against the target.
-            \\hit The target takes cold \\glossterm<standard damage> +1d.
+            \\hit The target takes cold damage equal to 1d10 plus your \\glossterm<power>.
 
             \\rankline
-            \\rank<4> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<6> The damage increases to \\glossterm<standard damage> +3d.
-            \\rank<8> The damage increases to \\glossterm<standard damage> +4d.
+            The damage increases by +1d for each rank beyond 1.
         """, tags=[], focus=False),
         Spell('Cone of Cold', 1, 'Everything in a \\areamed cone from you', """
             Make an attack vs. Fortitude against each target.
-            \\hit Each target takes cold \\glossterm<standard damage> -1d.
+            \\hit Each target takes cold damage equal to 1d8 plus half your \\glossterm<power>.
 
             \\rankline
-            \\rank<3> The damage increases to \\glossterm<standard damage>.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
+            The damage increases by +1d for each rank beyond 1.
         """, tags=[]),
-        Spell('Frozen Legs', 5, 'One creature within \\rngclose range', """
+        Spell('Frozen Legs', 4, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
-            \\hit The target is \\glossterm<immobilized> as a \\glossterm<condition>.
+            \\hit The target takes 2d6 cold damage.
+            If it loses \\glossterm<hit points> from this damage, it is \\glossterm<immobilized> as a \\glossterm<condition>.
+            \\glance As above, except that that the target takes half damage.
 
             \\rankline
-            \\rank<7> The range increases to \\rngmed.
+            The damage increases by +1d for each rank beyond 4.
         """, tags=[]),
-        Spell('Mass Frozen Legs', 5, '\\glossterm<Enemies> in a \\areasmall radius within \\rngmed range', """
+        Spell('Mass Frozen Legs', 6, '\\glossterm<Enemies> in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Fortitude against each target.
-            \\hit Each target is \\glossterm<immobilized> until the end of the next round.
-            \\crit Each target is \\glossterm<immobilized> as a \\glossterm<condition>.
+            \\hit Each target that has no remaining \\glossterm<resistance> to cold damage is \\glossterm<immobilized> as a \\glossterm<condition>.
+            \\glance As above, except that the condition is removed at the end of the next round.
 
             \\rankline
-            \\rank<7> The area increases to a \\areamed radius.
+            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 1.
         """, tags=[]),
         Spell('Ice Lance', 3, 'Everything in a \\arealarge, 5 ft.\\ wide line from you', """
             Make an attack vs. Armor against each target.
-            \\hit Each target takes piercing and cold \\glossterm<standard damage> -1d.
+            \\hit Each target takes piercing and cold damage equal to 1d8 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
 
             \\rankline
-            \\rank<5> The damage increases to \\glossterm<standard damage>.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
+            The damage increases by +1d for each rank beyond 3.
         """, tags=['Manifestation']),
-        Spell('Ice Spike', 2, 'One creature or object within \\rngmed range', """
+        # +2 levels for cold + bludgeoning, which breaks resistances
+        Spell('Ice Spike', 3, 'One creature or object within \\rngmed range', """
             Make an attack vs. Armor against the target.
-            \\hit The target takes piercing and cold \\glossterm<standard damage>.
+            \\hit The target takes piercing and cold damage equal to 2d8 plus your \\glossterm<power>.
+            \\glance As above, except that that the target takes half damage.
 
             \\rankline
-            \\rank<4> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<6> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<8> The damage increases to \\glossterm<standard damage> +3d.
+            The damage increases by +1d for each rank beyond 1.
         """, tags=['Manifestation']),
-        Spell('Freeze Poison', 1, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
-            The target takes cold damage equal to your \\glossterm<power>.
+        Spell('Freeze Poison', 2, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
+            The target takes 1d6 cold damage.
             In addition, it gains an additional success to resist a poison currently affecting it (see \\pcref<Poison>).
 
             \\rankline
-            \\rank<3> The number of additional successes increases to two.
-            \\rank<5> The number of additional successes increases to three, which is enough to remove most poisons immediately.
-            \\rank<7> The target can also gain the same number of successes to remove an additional poison affecting it.
+            \\rank<4> The number of additional successes increases to two.
+            \\rank<6> The number of additional successes increases to three, which is enough to remove most poisons immediately.
         """, tags=[]),
-        Spell('Brittle Chill', 4, 'One creature or object within \\rngmed range', """
+        Spell('Brittle Chill', 3, 'One creature or object within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
-            \\hit The target takes cold \\glossterm<standard damage> -2d.
-            In addition, it becomes \\glossterm<vulnerable> to bludgeoning damage until the end of the round.
+            \\hit The target takes 2d6 cold damage.
+            If it loses \\glossterm<hit points> from this damage, it is \\glossterm<vulnerable> to bludgeoning damage as a \\glossterm<condition>.
+            \\glance As above, except that that the target takes half damage.
 
             \\rankline
-            \\rank<6> The vulnerability lasts until the end of the next round.
-            \\rank<8> The vulnerability lasts until the end of the next round.
+            The damage increases by +1d for each rank beyond 3.
         """, tags=[]),
-        Spell('Chilled Mind', 3, 'One creature within \\rngmed range', """
+        Spell('Chilled Mind', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
-            \\hit The target is \\glossterm<stunned> as a \\glossterm<condition>.
+            \\hit The target takes 1d6 cold damage.
+            If it loses \\glossterm<hit points> from this damage, it is \\glossterm<stunned> as a \\glossterm<condition>.
 
             \\rankline
-            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<7> The accuracy bonus increases to +2.
+            The damage increases by +1d for each rank beyond 1.
         """, tags=[]),
-        Spell('Mass Chilled Mind', 4, '\\glossterm<Enemies> in a \\areamed radius within \\rngmed range', """
+        Spell('Mass Chilled Mind', 5, '\\glossterm<Enemies> in a \\arealarge radius from you', """
             Make an attack vs. Fortitude against each target.
-            \\hit Each target is \\glossterm<stunned> until the end of the next round.
-            \\crit Each target is \\glossterm<stunned> as a \\glossterm<condition>.
+            \\hit Each target that has no remaining \\glossterm<resistance> to cold damage is \\glossterm<stunned> as a \\glossterm<condition>.
+            \\glance As above, except that the condition is removed at the end of the next round.
 
             \\rankline
-            \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<8> The accuracy bonus increases to +2.
+            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 5.
         """, tags=[]),
-        Spell('Skate', 2, 'Yourself', """
+        Spell('Skate', 1, 'Yourself', """
             The target can move on top of calm water as if it were land.
             It treats the water as \\glossterm<difficult terrain>.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
-            \\rank<6> The target can also move on top of rough or stormy water.
-            \\rank<8> The target no longer treats the water as difficult terrain.
+            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<5> The target can also move on top of rough or stormy water.
+            \\rank<7> The target no longer treats the water as difficult terrain.
         """, tags=['Attune (target)']),
         Spell('Skyskate', 3, 'Yourself', """
             Whenever you move, you can leave a trail of ice behind you.
@@ -150,37 +146,35 @@ cryomancy=MysticSphere(
         """, tags=['Attune (self)', 'Manifestation']),
         Spell('Winterwave', 3, 'Everything in a \\arealarge cone from you', """
             Make an attack vs. Fortitude against each target.
-            \\hit Each target takes cold \\glossterm<standard damage> -1d.
+            \\hit Each target takes cold damage equal to 2d6 plus half your \\glossterm<power>.
 
             \\rankline
-            \\rank<5> The area increases to a \\areahuge cone.
-            \\rank<7> The area increases to a \\areaext cone.
+            The damage increases by +1d for each rank beyond 3.
         """, tags=[]),
-        Spell('Frostbite', 3, 'One creature or object within \\rngmed range', """
+        Spell('Frostbite', 3, 'One creature or object within \\rngclose range', """
             Make an attack vs. Fortitude against the target.
-            \\hit The target takes cold \\glossterm<standard damage> -2d and is \\glossterm<slowed> as a \\glossterm<condition>.
+            \\hit The target takes cold damage equal to 2d8 plus your \\glossterm<power>.
+            If it loses \\glossterm<hit points> from this damage, it is \\glossterm<slowed> as a \\glossterm<condition>.
+            \\glance As above, except that that the target takes half damage.
 
             \\rankline
-            \\rank<5> The damage increases to \\glossterm<standard damage> -1d.
-            \\rank<7> The damage increases to \\glossterm<standard damage>.
+            The damage increases by +1d for each rank beyond 3.
         """, tags=[]),
-        # +1 level for cold + bludgeoning, which breaks resistances
-        Spell('Hailstorm', 4, 'Everything in a \\areasmall radius within \\rngmed range', """
+        # +2 levels for cold + bludgeoning, which breaks resistances
+        Spell('Hailstorm', 5, 'Everything in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Armor against each target.
-            \\hit Each target takes cold and bludgeoning \\glossterm<standard damage> -1d.
+            \\hit Each target takes cold and bludgeoning damage equal to 2d10 plus half your \\glossterm<power>.
 
             \\rankline
-            \\rank<6> The damage increases to \\glossterm<standard damage>.
-            \\rank<8> The damage increases to \\glossterm<standard damage> +1d.
+            The damage increases by +1d for each rank beyond 5.
         """, tags=[]),
-        Spell('Blizzard', 1, '\\glossterm<Enemies> and objects in a \\areasmall radius from you', """
+        Spell('Blizzard', 3, '\\glossterm<Enemies> and objects in a \\areamed radius from you', """
             Make an attack vs. Fortitude against each target.
-            \\hit Each target takes cold \\glossterm<standard damage> -1d.
+            \\hit Each target takes cold damage equal to 2d6 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
 
             \\rankline
-            \\rank<3> The area increases to a \\areamed radius.
-            \\rank<5> The area increases to a \\arealarge radius.
-            \\rank<7> The area increases to a \\areahuge radius.
+            The damage increases by +1d for each rank beyond 3.
         """, tags=[]),
         Spell('Icecraft', 1, 'One pool of unattended, nonmagical water within \\rngclose range.', """
             This spell creates an icy weapon or a suit of icy armor from the target pool of water.
@@ -207,22 +201,19 @@ cryomancy=MysticSphere(
         Spell('Frost Breath', 4, 'Yourself', """
             As a standard action, you can breathe cold like a dragon.
             When you do, make an attack vs. Fortitude against everything in a \\arealarge cone.
-            \\hit Each target takes cold \\glossterm<standard damage>.
+            % note +1d as part of spell effect as consolation prize for attunement
+            \\hit Each target takes cold damage equal to 2d10 plus half your \\glossterm<power>.
 
             You can cast this spell as a \\glossterm<minor action>.
 
             \\rankline
-            \\rank<6> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<8> The damage increases to \\glossterm<standard damage> +2d.
+            The damage increases by +1d for each rank beyond 4.
         """, tags=['Attune (self)']),
-        Spell('Frostburn', 6, 'One creature within \\rngmed range', """
+        Spell('Frostburn', 7, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit As a \\glossterm<condition>, the target is seared by painful cold.
-            At the end of each round, it takes cold \\glossterm<standard damage> -1d per round since it became affected by this condition.
-            If this damage fails to make the target \\glossterm<bleed>, the condition is removed.
-
-            \\rankline
-            \\rank<8> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
+            % TODO: standardize "ignite" damage
+            At the end of each round, it takes 4d10 cold damage.
         """, tags=[]),
     ],
     rituals=[
