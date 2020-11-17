@@ -98,34 +98,6 @@ fabrication=MysticSphere(
             \\rank<5> You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using the weapon.
             \\rank<7> The bonus to accuracy increases to +2.
         """, tags=['Manifestation']),
-        Spell('Acid Orb', 1, 'One creature or object within \\rngmed range', """
-            Make an attack vs. Fortitude against the target.
-            \\hit The target takes acid damage equal to 1d10 plus your \\glossterm<power>.
-        """, scaling="damage", tags=['Manifestation']),
-        Spell('Cone of Acid', 1, 'Everything in a \\areamed cone from you', """
-            Make an attack vs. Fortitude against each target.
-            \\hit Each target takes acid damage equal to 1d8 plus half your \\glossterm<power>.
-        """, scaling="damage", tags=['Manifestation']),
-        Spell('Acid Breath', 4, 'Yourself (see text)', """
-            As a standard action, you can breathe acid like a dragon.
-            When you do, make an attack vs. Fortitude against everything in a \\arealarge cone from you.
-            % note +1d as part of spell effect as consolation prize for attunement
-            \\hit Each target takes acid damage equal to 2d10 plus half your \\glossterm<power>.
-            \\glance As above, except that that each target takes half damage.
-
-            You can cast this spell as a \\glossterm<minor action>.
-        """, scaling="damage", tags=['Attune (self)']),
-        Spell('Corrosive Orb', 5, 'One creature or object within \\rngmed range', """
-            Make an attack vs. Fortitude against the target.
-            \\hit The target takes acid damage equal to 4d6 plus your \\glossterm<power>.
-            This attack deals double damage to objects.
-            \\glance As above, except that that the target takes half damage.
-        """, scaling="damage", tags=['Manifestation']),
-        Spell('Acid Rain', 3, 'Everything in a \\areasmall radius within \\rngmed range', """
-            Make an attack vs. Fortitude against each target.
-            \\hit Each target takes acid damage equal to 2d6 plus half your \\glossterm<power>.
-            \\glance As above, except that that each target takes half damage.
-        """, scaling="damage", tags=['Manifestation']),
         Spell('Forge', 1, 'One unoccupied square within \\rngclose range', """
             Choose a type of body armor, weapon, or shield that you are proficient with.
             You cannot create heavy armor.
@@ -167,6 +139,36 @@ fabrication=MysticSphere(
             Caltrops may not be effective against creatures with an unusual anatomy.
             \\hit The target takes piercing damage equal to 1d10 plus half your \\glossterm<power>.
         """, scaling="damage", tags=['Manifestation', 'Sustain (minor)']),
+
+        # TODO: move all of these acid spells to a different sphere
+        Spell('Acid Orb', 1, 'One creature or object within \\rngmed range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit The target takes acid damage equal to 1d10 plus your \\glossterm<power>.
+        """, scaling="damage", tags=['Manifestation']),
+        Spell('Cone of Acid', 1, 'Everything in a \\areamed cone from you', """
+            Make an attack vs. Fortitude against each target.
+            \\hit Each target takes acid damage equal to 1d8 plus half your \\glossterm<power>.
+        """, scaling="damage", tags=['Manifestation']),
+        Spell('Acid Breath', 4, 'Yourself (see text)', """
+            As a standard action, you can breathe acid like a dragon.
+            When you do, make an attack vs. Fortitude against everything in a \\arealarge cone from you.
+            % note +1d as part of spell effect as consolation prize for attunement
+            \\hit Each target takes acid damage equal to 2d10 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
+
+            You can cast this spell as a \\glossterm<minor action>.
+        """, scaling="damage", tags=['Attune (self)']),
+        Spell('Corrosive Orb', 5, 'One creature or object within \\rngmed range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit The target takes acid damage equal to 4d6 plus your \\glossterm<power>.
+            This attack deals double damage to objects.
+            \\glance As above, except that that the target takes half damage.
+        """, scaling="damage", tags=['Manifestation']),
+        Spell('Acid Rain', 3, 'Everything in a \\areasmall radius within \\rngmed range', """
+            Make an attack vs. Fortitude against each target.
+            \\hit Each target takes acid damage equal to 2d6 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
+        """, scaling="damage", tags=['Manifestation']),
     ],
     rituals=[
         Spell('Manifest Object', 3, 'One unoccupied square within \\rngclose range', """
