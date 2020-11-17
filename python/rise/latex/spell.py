@@ -55,6 +55,9 @@ class Spell(object):
                 if (self.level in [2, 4] and 'rank<6>' not in scaling):
                     logger.log(WARNING, f"Spell {self.name} has wrong rank upgrade pattern")
 
+            if scaling and 'rank<8>' in scaling:
+                logger.log(WARNING, f"Spell {self.name} has rank 8 upgrade")
+
     def ritual_time_text(self):
         if self.ritual_time == 'special' or not self.ritual_time:
             return ''
