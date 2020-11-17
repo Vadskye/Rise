@@ -13,8 +13,7 @@ vivimancy=MysticSphere(
     cantrips=[
         Effects('Ablate Vital Wound', 'Yourself or a living \\glossterm<ally> within \\glossterm<reach>', """
             If the target has a \\glossterm<vital wound> with a \\glossterm<vital roll> of 0, it treats that \\glossterm<vital roll> as a 1, preventing it from dying (see \\pcref<Vital Wounds>).
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The range increases to \\rngmed range.
             \\rank<5> The minimum \\glossterm<vital roll> you can mitigate decreases to -1.
             \\rank<7> The minimum \\glossterm<vital roll> you can mitigate decreases to -2.
@@ -26,8 +25,7 @@ vivimancy=MysticSphere(
             Make an attack vs. Fortitude against the target.
             \\hit The target loses two \\glossterm<hit points>.
             In addition, as a \\glossterm<condition>, the target is unable to regain hit points.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<8> The accuracy bonus increases to +2.
         """, tags=[]),
@@ -37,8 +35,7 @@ vivimancy=MysticSphere(
 
             Make a melee attack vs. Reflex against the target.
             \\hit The target takes energy \\glossterm<standard damage> +1d.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> The damage increases to \\glossterm<standard damage> +2d.
             \\rank<6> The damage increases to \\glossterm<standard damage> +3d.
             \\rank<8> The damage increases to \\glossterm<standard damage> +4d.
@@ -46,16 +43,14 @@ vivimancy=MysticSphere(
         Spell('Drain Life', 1, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target takes energy \\glossterm<standard damage> +1d.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
             \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=[]),
         Spell('Cure Wound', 1, 'Yourself or a living \\glossterm<ally> within \\rngclose range', """
             The target regains one lost \\glossterm<hit point>.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> If the target is \\glossterm<bloodied>, it regains two hit points instead of one.
             \\rank<5> The number of hit points regained increases to two.
             \\rank<7> If the target is \\glossterm<bloodied>, it regains three hit points instead of two.
@@ -64,8 +59,7 @@ vivimancy=MysticSphere(
             If the target has a \\glossterm<vital wound> with a \\glossterm<vital roll> of 0, it treats that \\glossterm<vital roll> as a 1, preventing it from dying (see \\pcref<Vital Wounds>).
 
             You can cast this spell as a \\glossterm<minor action>.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> The minimum \\glossterm<vital roll> you can mitigate decreases to -1.
             \\rank<6> The minimum \\glossterm<vital roll> you can mitigate decreases to -2.
             \\rank<8> The minimum \\glossterm<vital roll> you can mitigate decreases to -3.
@@ -74,8 +68,7 @@ vivimancy=MysticSphere(
             The target gains a +2 \\glossterm<magic bonus> to Fortitude defense.
 
             You can cast this spell as a \\glossterm<minor action>.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<5> The bonus increases to +3.
             \\rank<7> The bonus increases to +4.
@@ -86,23 +79,20 @@ vivimancy=MysticSphere(
             When this spell ends, the target loses hit points equal to the number of hit points it gained this way.
 
             You can cast this spell as a \\glossterm<minor action>.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> This spell can target a living \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<5> The number of additional hit points increases to 3.
             \\rank<7> The number of additional hit points increases to 4.
         """, tags=['Attune (target)']),
         Spell('Cure Vital Wound', 5, 'Yourself or a living \\glossterm<ally> within \\rngmed range', """
             The target removes one \\glossterm<vital wound>.
-
-            \\rankline
+        """, scaling="""
             \\rank<7> The target can remove two \\glossterm<vital wounds>.
         """, tags=[]),
         Spell('Inflict Wound', 3, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target loses two \\glossterm<hit points>.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=[]),
@@ -116,8 +106,7 @@ vivimancy=MysticSphere(
             \\hit The target takes energy \\glossterm<standard damage> +3d.
             If this damage \\glossterm<vitally wounds> the target, you can remove one of your \\glossterm<vital wounds>.
             When you do, you gain two \\glossterm<fatigue points>.
-
-            \\rankline
+        """, scaling="""
             \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=[]),
         # TODO: make "Undead Bane" spell after figuring out undead / life
@@ -126,8 +115,7 @@ vivimancy=MysticSphere(
             The target ignores the vital wound effect of one of its \\glossterm<vital wounds> (see \\pcref<Vital Wounds>).
 
             You can cast this spell as a \\glossterm<minor action>.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> This spell can target a living \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<7> The target can ignore the vital wound effect of two of its \\glossterm<vital wounds> instead of only one.
         """, tags=['Attune (target)']),
@@ -137,8 +125,7 @@ vivimancy=MysticSphere(
             \\hit The target loses a \\glossterm<hit point>.
             In addition, as a \\glossterm<condition>, the target is marked for death.
             It takes a penalty to its \\glossterm<vital resistance> equal to your \\glossterm<power> against all types of damage.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<6> The accuracy bonus increases to +2.
             \\rank<8> The accuracy bonus increases to +3.
@@ -146,15 +133,13 @@ vivimancy=MysticSphere(
         Spell('Circle of Death', 3, 'Living \\glossterm<enemies> in a \\areamed radius', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target loses one \\glossterm<hit point>.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> The area increases to a \\arealarge radius.
             \\rank<7> The area increases to a \\areahuge radius.
         """, tags=[]),
         Spell('Circle of Life', 5, 'Yourself and each living \\glossterm<ally> in a \\areamed radius', """
             Each target regains one lost \\glossterm<hit point>.
-
-            \\rankline
+        """, scaling="""
             \\rank<7> The area increases to a \\arealarge radius.
         """, tags=[]),
         Spell('Avasculate', 8, 'One living creature within \\rngclose range', """
@@ -166,8 +151,7 @@ vivimancy=MysticSphere(
             Make an attack vs. Fortitude against each target.
             \\hit Each target is \\glossterm<sickened> until the end of the next round.
             \\crit Each target is \\glossterm<sickened> as a \\glossterm<condition>.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
@@ -175,8 +159,7 @@ vivimancy=MysticSphere(
         Spell('Lifesteal', 3, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target loses a \\glossterm<hit point> and you regain a lost hit point.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=[]),
@@ -184,8 +167,7 @@ vivimancy=MysticSphere(
             Once per round, when the target \\glossterm<vitally wounds> a living creature with a \\glossterm<strike>, the target regains a lost \\glossterm<hit point>.
 
             You can cast this spell as a \\glossterm<minor action>.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> This spell can target a living \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<7> This healing only requires the target to make a living creature \\glossterm<bleed> with a strike.
         """, tags=['Attune (target)']),
@@ -193,8 +175,7 @@ vivimancy=MysticSphere(
             You violently discharge the latent magical potential within the target corpse, causing it to explode.
             Make an attack vs. Reflex against each creature within a \\areasmall radius from it.
             \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> The damage increases to \\glossterm<standard damage>.
             \\rank<6> The damage increases to \\glossterm<standard damage> +1d.
             \\rank<8> The damage increases to \\glossterm<standard damage> +2d.

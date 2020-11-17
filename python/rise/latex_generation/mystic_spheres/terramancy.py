@@ -25,8 +25,7 @@ terramancy=MysticSphere(
             If no such chunk can be extracted, this spell is \\glossterm<miscast>.
             Otherwise, make an attack vs. Armor against the target.
             \\hit The target takes bludgeoning \\glossterm<standard damage> +1d.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
             \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
@@ -36,8 +35,7 @@ terramancy=MysticSphere(
             If no such chunk can be extracted, this spell is \\glossterm<miscast>.
             Otherwise, make an attack vs. Reflex against each target.
             \\hit Each target takes bludgeoning and piercing \\glossterm<standard damage> -1d.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The damage increases to \\glossterm<standard damage>.
             \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
@@ -50,8 +48,7 @@ terramancy=MysticSphere(
 
             The item functions like a normal item of its type, except that it is twice as heavy.
             If the item loses all of its hit points, this effect is \\glossterm<dismissed>.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> You can also create heavy armor.
             \\rank<5> The item created is magically enhanced.
                 A weapon grants a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities,
@@ -63,8 +60,7 @@ terramancy=MysticSphere(
             Make an attack vs. Armor against the target.
             The target must be within 5 feet of a Small or larger body of earth or stone.
             \\hit The target takes piercing \\glossterm<standard damage> -2d and is \\glossterm<slowed> as a \\glossterm<condition>.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> The damage increases to \\glossterm<standard damage> -1d.
             \\rank<7> The damage increases to \\glossterm<standard damage>.
         """, tags=[]),
@@ -73,8 +69,7 @@ terramancy=MysticSphere(
             Make an attack vs. Reflex against the target.
             The target must be within 5 feet of a Small or larger body of earth or stone.
             \\hit The target is is \\glossterm<immobilized> as a \\glossterm<condition>.
-
-            \\rankline
+        """, scaling="""
             \\rank<8> The maximum size increases to Huge.
         """, tags=[]),
         Spell('Meld into Stone', 3, 'One stone object you can touch that is at least as large as your body', """
@@ -89,8 +84,7 @@ terramancy=MysticSphere(
 
             If this spell ends before you exit the stone, or if the stone stops being a valid target for the spell (such as if it is broken into pieces), you are forcibly expelled from the stone.
             When you are forcibly expelled from the stone, you take 4d10 bludgeoning damage and become \\glossterm<nauseated> as a \\glossterm<condition>.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> Exiting the stone does not cause this spell to end.
             You can repeatedly exit and re-enter the stone as long as you maintain attunement to the spell.
             \\rank<7> You can leave tiny tunnels carrying air through the stone as you move through it, allowing you to effectively breathe within the stone.
@@ -101,8 +95,7 @@ terramancy=MysticSphere(
             You create an highly localized tremor that rips through the ground.
             Make an attack vs. Reflex against each target.
             \\hit Each target is knocked \\glossterm<prone>.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +2.
@@ -112,8 +105,7 @@ terramancy=MysticSphere(
             Make an attack vs. Reflex against each target.
             \\hit Each target takes bludgeoning \\glossterm<standard damage> -2d.
             Ecah Large or smaller target is also knocked \\glossterm<prone>.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> The damage increases to \\glossterm<standard damage> -1d.
             \\rank<8> The damage increases to \\glossterm<standard damage>.
         """, tags=[]),
@@ -121,8 +113,7 @@ terramancy=MysticSphere(
             Make an attack vs. Reflex against each target.
             \\hit Each target takes bludgeoning \\glossterm<standard damage> -2d.
             Ecah Large or smaller target is also knocked \\glossterm<prone>.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> The area increases to a \\arealarge radius.
             \\rank<7> The area increases to a \\areahuge radius.
         """, tags=[]),
@@ -135,8 +126,7 @@ terramancy=MysticSphere(
             This immobilization can be removed by climbing out of the fissure, which requires a \\glossterm<difficulty rating> 10 Climb check as a \\glossterm<move action>.
             Alternately, any creature that can reach the target can make a Strength check against the same \\glossterm<difficulty rating> to pull the target out.
             Special movement abilities such as teleportation can also remove the target from the fissure.
-
-            \\rankline
+        """, scaling="""
             \\rank<8> The maximum size increases to Huge.
         """, tags=[]),
         Spell('Earthbind', 2, 'One creature within \\rngmed range that is within 100 feet of the ground', """
@@ -144,8 +134,7 @@ terramancy=MysticSphere(
             \\hit As a \\glossterm<condition>, the target is pulled towards the ground with great force, approximately quadrupling the gravity it experiences.
             This imposes a -2 penalty to \\glossterm<accuracy>, physical \\glossterm<checks>, and \\glossterm<defenses>.
             In addition, most flying creatures are unable to fly with this increased gravity and crash to the ground.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<6> The accuracy bonus increases to +2.
             \\rank<8> The accuracy bonus increases to +3.
@@ -156,8 +145,7 @@ terramancy=MysticSphere(
             The targets are softened into a thick sludge, creating a quagmire that is difficult to move through.
             The movement cost required to move out of each affected square within the area is quadrupled.
             This does not affect objects under significant structural stress, such as walls and support columns.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> The area increases to a \\arealarge radius.
             \\rank<8> The area increases to a \\areahuge radius.
         """, tags=['Sustain (minor)']),
@@ -172,8 +160,8 @@ terramancy=MysticSphere(
             The structure becomes complete at the end of the action phase in the next round after this spell is cast.
             This makes it difficult to trap creatures within structures formed.
 
-            % TODO: define hit points and resistances of stone and metal
-            \\rankline
+        
+    """, scaling="""% TODO: define hit points and resistances of stone and metal
             \\rank<6> You can also construct fortifications from stone.
             This makes them more resistant to attack and allows the construction of more complex structures.
             \\rank<8> You can also construct fortifications from metal.
@@ -181,8 +169,7 @@ terramancy=MysticSphere(
         Spell('Earthglide', 5, 'Yourself', """
             You can move through earth and unworked stone at a rate of 5 feet per round.
             This does not allow you to breathe while inside the earth or stone, so your ability to traverse long distances may be limited.
-
-            \\rankline
+        """, scaling="""
             \\rank<7> Your speed increases to be equal to half your \\glossterm<base speed>.
         """, tags=['Attune (self)']),
         Spell('Entomb', 8, 'One Large or smaller creature within \\rngmed range that is standing on unworked earth or stone', """
@@ -197,8 +184,7 @@ terramancy=MysticSphere(
             You are \\glossterm<resistant> to all \\glossterm<damage>.
             Whenever you take damage, one layer of rock is destroyed.
             When the last layer of rock is destroyed, this ability provides no further benefit.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> The spell creates six layers of rock.
             \\rank<6> The spell creates eight layers of rock.
             \\rank<8> The spell creates ten layers of rock.
@@ -206,8 +192,7 @@ terramancy=MysticSphere(
         Spell('Earthen Anchor', 2, 'Yourself', """
             The target is immune to \\glossterm<knockback> or \\glossterm<push> effects from attacks, unless the effects come from an attack that scores a \\glossterm<critical hit>.
             This does not make it immune to \\glossterm<teleportation>, and does not affect movement effects used by its \\glossterm<allies>.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The target is also immune to \\glossterm<teleport> effects from attacks that are not critical hits.
             \\rank<8> The immunities apply even against critical hits.

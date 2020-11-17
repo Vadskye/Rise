@@ -39,8 +39,7 @@ summon=MysticSphere(
 
             If you do not command the creature's actions, it will continue to obey its last instructions if possible or do nothing otherwise.
             Summoned creatures have no mind or agency, and will not act on their own even if attacked.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The creature gains a +1 bonus to \\glossterm<accuracy>.
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
@@ -51,8 +50,7 @@ summon=MysticSphere(
             If you do, during the \\glossterm<action phase> it cause one of your \\glossterm<allies> within \\rngclose range of it to regain one lost \\glossterm<hit point>.
             You can tell it which creature to heal.
             If you do not instruct it to heal a specific creature, it will automatically heal the ally closest to it that has lost at least one hit point.
-
-            \\rankline
+        """, scaling="""
             \\rank<8> The creature gains a +1 bonus to \\glossterm<accuracy>.
         """, tags=['Attune (self)', 'Manifestation']),
         Spell('Summon Weapon', 3, 'One unoccupied square within \\rngmed range', """
@@ -69,16 +67,14 @@ summon=MysticSphere(
             During the \\glossterm<action phase>, it makes a melee \\glossterm<strike> against a creature that it \\glossterm<threatens>.
             The weapon prefers to avoid accuracy and damage penalties that would be imposed by cover or special weapon grips.
             It choses randomly if all possible targets are equally easy to attack.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> The damage dealt by the weapon increases to \\glossterm<standard damage> -1d.
             \\rank<7> The damage dealt by the weapon increases to \\glossterm<standard damage>.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Aerial Weapon', 4, 'One unoccupied square within \\rngmed range', """
             This spell functions like the \\spell<summon weapon> spell, except that the weapon's maximum height above the ground is increased to 100 feet.
             This allows the weapon to fly up to fight airborne foes.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> The weapon has no maximum height above the ground.
             \\rank<8> The damage dealt by the weapon increases to \\glossterm<standard damage> -1d.
         """, tags=['Manifestation', 'Sustain (minor)']),
@@ -89,8 +85,7 @@ summon=MysticSphere(
             It cannot move, and makes ranged \\glossterm<strikes> instead of melee strikes.
             Its attacks have a maximum range of 100 feet and deal piercing damage.
             In addition, the ballista attacks the creature farthest from it, instead of the creature closest to it.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> The damage dealt by the ballista increases to \\glossterm<standard damage> -1d.
             \\rank<7> The ballista gains a second bolt track, allowing it to fire at two different targets.
             It canot fire at the same target twice.
@@ -103,8 +98,7 @@ summon=MysticSphere(
             This spell functions like the \\spell<summon monster> spell, except that the summoned creature appears to be an earth elemental.
             Its attacks deal bludgeoning damage.
             It has two additional \\glossterm<hit points>, a bonus to \\glossterm<resistances> against \\glossterm<physical damage> equal to half your \\glossterm<power>, and is immune to electricity damage.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> The creature gains a +1 bonus to \\glossterm<accuracy>.
             \\rank<8> The accuracy bonus increases to +2.
         """, tags=['Attune (self)', 'Manifestation']),
@@ -113,8 +107,7 @@ summon=MysticSphere(
             Its attacks deal bludgeoning damage.
             It has a 30 foot \\glossterm<swim speed>, and it suffers no penalties for fighting underwater (see \\pcref<Underwater Combat>).
             However, it is \\glossterm<vulnerable> to electricity damage.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> The creature gains a +1 bonus to \\glossterm<accuracy>.
             \\rank<6> The accuracy bonus increases to +2.
             \\rank<8> The accuracy bonus increases to +3.
@@ -123,8 +116,7 @@ summon=MysticSphere(
             This spell functions like the \\spell<summon monster> spell, except that the summoned creature appears to be an air elemental.
             Its attacks deal bludgeoning damage.
             It has a 30 foot \\glossterm<fly speed> with good \\glossterm<maneuverability>.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> The creature gains a +1 bonus to \\glossterm<accuracy>.
             \\rank<8> The accuracy bonus increases to +2.
         """, tags=['Attune (self)', 'Manifestation']),
@@ -137,8 +129,7 @@ summon=MysticSphere(
             The flames can also be extinguished if the target is drenched in water, takes at least 5 cold damage, or other similar effects.
 
             In addition, the fire elemental is immune to fire damage.
-
-            \\rankline
+        """, scaling="""
             \\rank<7> The creature gains a +1 bonus to \\glossterm<accuracy>.
         """, tags=['Attune (self)', 'Manifestation']),
         Spell('Summon Bear', 3, 'One unoccupied square on stable ground within \\rngmed range', """
@@ -146,8 +137,7 @@ summon=MysticSphere(
             Its attacks deal bludgeoning and slashing damage, and it suffers no penalty for attacking in a grapple.
             As a standard action, it can make a \\glossterm<grapple> attack against a creature it threatens.
             While grappling, the manifested creature can either make a strike or attempt to escape the grapple.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> The creature gains a +1 bonus to \\glossterm<accuracy>.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Attune (self)', 'Manifestation']),
@@ -156,8 +146,7 @@ summon=MysticSphere(
             The summoned creature appears to be either a Large horse or a Medium pony.
             It comes with a bit and bridle and a riding saddle, and will only accept the target as a rider.
             The creature follows its rider's directions to the extent that a well-trained horse would and it cannot attack.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> The creature gains a +1 bonus to its maximum \\glossterm<hit points>.
             \\rank<7> The hit point bonus increases to +2.
         """, tags=['Attune (target)', 'Manifestation']),
@@ -168,16 +157,14 @@ summon=MysticSphere(
             % TODO: wording?
             You must command the creatures as a group, rather than as individuals.
             Each creature obeys your command to the extent it can.
-
-            \\rankline
+        """, scaling="""
             \\rank<7> The creatures gain a +1 bonus to \\glossterm<accuracy>.
         """, tags=['Attune (self)', 'Manifestation']),
         Spell('Summon Pegasus', 5, 'One unoccupied location on stable ground within \\rngmed range', """
             This spell functions like the \\spell<summon mount> spell, except that the summoned creature appears to be either a Large or Medium pegasus.
             % TODO: wording of "trained as a mount"?
             It has a 30 foot \\glossterm<fly speed> and is trained as a mount.
-
-            \\rankline
+        """, scaling="""
             \\rank<7> The creature gains a +1 bonus to its maximum \\glossterm<hit points>.
         """, tags=['Attune (target)', 'Manifestation']),
         Spell('Summon Asp', 4, 'target', """
@@ -185,8 +172,7 @@ summon=MysticSphere(
             Whenever it \\glossterm<wounds> a living creature with a \\glossterm<strike>, the damaged creature becomes \\glossterm<poisoned> with asp venom (see \\tref{Typical Poisons}).
             It immediately loses a \\glossterm<hit point> and becomes \\glossterm<sickened> while the poison lasts.
             A third successful attack causes the target to become \\glossterm<nauseated> as long as it is poisoned.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> The creatures gain a +1 bonus to \\glossterm<accuracy>.
             \\rank<8> The accuracy bonus increases to +2.
         """, tags=['Attune (self)', 'Manifestation']),

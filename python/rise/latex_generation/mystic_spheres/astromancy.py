@@ -14,8 +14,7 @@ astromancy=MysticSphere(
         Effects('Dimension Hop', 'Yourself', """
             You teleport into an unoccupied destination within 5 foot \\glossterm<range>.
             If the destination is invalid, this spell is \\glossterm<miscast>.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The range increases to 10 feet.
             \\rank<5> The range increases to \\rngclose.
             \\rank<7> The range increases to \\rngmed.
@@ -23,8 +22,7 @@ astromancy=MysticSphere(
         Effects('Translocate Object', 'One Tiny or smaller unattended object within \\rngclose range', """
             The target teleports into an unoccupied location on a stable surface within range that can support the weight of the target.
             If the destination is invalid, the ability fails without effect.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The range increases to \\rngmed.
             \\rank<5> The maximum size of the target increases to Small.
             \\rank<7> The range increases to \\rnglong.
@@ -39,8 +37,7 @@ astromancy=MysticSphere(
             You partially teleport a touched target into the Astral Plane.
             Make a melee attack vs. Reflex against the target.
             \\hit The target takes energy damage equal to 1d10 plus your \\glossterm<power>.
-
-            \\rankline
+        """, scaling="""
             The damage increases by +1d for each rank beyond 1.
         """, tags=[], focus=False),
         Spell('Banishing Grasp', 4, 'One creature or object within your \\glossterm<reach>', """
@@ -54,8 +51,7 @@ astromancy=MysticSphere(
             \\crit As above, except that that the target takes double damage.
             In addition, if it is a \\glossterm<planeforged> not on its home plane, it is teleported to a random location on its home plane.
             If it is a creature created by a \\glossterm<Manifestation> ability, it immediately disappears.
-
-            \\rankline
+        """, scaling="""
             The damage increases by +1d for each rank beyond 4.
         """, tags=[], focus=False),
         Spell('Banishment', 3, 'One creature within \\rngmed range', """
@@ -65,8 +61,7 @@ astromancy=MysticSphere(
             \\crit As above, except that that the target takes double damage.
             In addition, if it is a \\glossterm<planeforged> not on its home plane, it is teleported to a random location on its home plane.
             If it is a creature created by a \\glossterm<Manifestation> ability, it immediately disappears.
-
-            \\rankline
+        """, scaling="""
             The damage increases by +1d for each rank beyond 3.
         """, tags=[]),
         Spell('Jittering Curse', 6, 'One creature within \\rngmed range', """
@@ -88,32 +83,28 @@ astromancy=MysticSphere(
             You partially teleport the target into the Astral Plane.
             Make an attack vs. Mental against the target.
             \\hit The target takes energy damage equal to 1d10 plus your \\glossterm<power>.
-
-            \\rankline
+        """, scaling="""
             The damage increases by +1d for each rank beyond 1.
         """, tags=[]),
         # TODO: target wording is awkward
         Spell('Translocation', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
             The target \\glossterm<teleports> into an unoccupied destination within range.
             If the destination is invalid, this spell is \\glossterm<miscast>.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The range increases to \\rngmed.
             \\rank<5> The range increases to \\rnglong.
             \\rank<7> The range increases to \\rngext.
         """, tags=[]),
         Spell('Silent Translocation', 3, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
             This spell functions like the \\textit<translocation> spell, except that the target's departure and arrival with this spell are silent.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> The range increases to \\rngmed.
             \\rank<7> The range increases to \\rnglong.
         """, tags=[]),
         Spell('Dimension Door', 4, 'Yourself', """
             You teleport to a location within \\rnglong range of you.
             You must clearly visualize the destination's appearance, but you do not need \\glossterm<line of sight> or \\glossterm<line of effect> to your destination.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> The range increases to \\rngext feet.
         """, tags=[]),
         Spell('Dimensional Jaunt -- Plane of Earth', 4, 'One creature within \\rngmed range', """
@@ -121,8 +112,7 @@ astromancy=MysticSphere(
             Make an attack vs. Mental against the target.
             \\hit The target takes 2d6 bludgeoning damage.
             If it loses \\glossterm<hit points> from this damage, it is \\glossterm<immobilized> as a \\glossterm<condition>.
-
-            \\rankline
+        """, scaling="""
             The damage increases by +1d for each rank beyond 4.
         """, tags=[]),
         Spell('Dimensional Jaunt -- Plane of Air', 2, 'One creature or object within \\rngmed range', """
@@ -130,8 +120,7 @@ astromancy=MysticSphere(
             \\hit The target takes 1d10 bludgeoning damage.
             If it loses \\glossterm<hit points> from this damage, you \\glossterm<knockback> it up to 50 feet in any direction (see \\pcref<Knockback Effects>).
             Moving the target upwards costs twice the normal movement cost.
-
-            \\rankline
+        """, scaling="""
             The damage increases by +1d for each rank beyond 3.
         """, tags=[]),
         Spell('Dimensional Jaunt -- Plane of Fire', 6,  'One creature within \\rngmed range', """
@@ -142,8 +131,7 @@ astromancy=MysticSphere(
             This condition can also be removed if the target makes a \\glossterm<difficulty rating> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
             Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
             \\glance As above, except that that the target takes half damage.
-
-            \\rankline
+        """, scaling="""
             The damage increases by +1d for each rank beyond 6.
         """, tags=[]),
         Spell('Dimensional Jaunt -- Myriad', 5, 'One creature within \\rngmed range', """
@@ -152,8 +140,7 @@ astromancy=MysticSphere(
             % note: +1d as part of the definition of this spell
             \\hit The target takes damage of all damage types equal to 4d8 plus your \\glossterm<power>.
             \\glance As above, except that that the target takes half damage.
-
-            \\rankline
+        """, scaling="""
             The damage increases by +1d for each rank beyond 5.
         """, tags=[]),
         Spell('Dimensional Jaunt -- Deep Astral Plane', 7, 'One creature within \\rngmed range', """
@@ -166,15 +153,13 @@ astromancy=MysticSphere(
         Spell('Dimensional Jitter', 5, 'Yourself', """
             At the end of each \\glossterm<phase>, you may choose to teleport 10 feet in a random direction.
             If your \\glossterm<line of effect> to your destination is blocked, or if this teleportation would somehow place you inside a solid object, your teleportation is cancelled and you remain where you are.
-
-            \\rankline
+        """, scaling="""
             \\rank<7> You can choose the direction of the teleportation.
         """, tags=['Attune (self)']),
         # TODO: target wording
         Spell('Dimensional Shuffle', 2, 'Up to five targets within \\rngmed range from among you and your \\glossterm<allies>', """
             Each target \\glossterm<teleports> into the location of a different target.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> The range increases to \\rnglong.
             \\rank<6> The range increases to \\rngext.
             \\rank<8> The maximum number of targets increases to ten.
@@ -184,8 +169,7 @@ astromancy=MysticSphere(
             Teleporting a given distance costs movement equal to that distance.
             If your \\glossterm<line of effect> to your destination is blocked, or if this teleportation would somehow place you inside a solid object, your teleportation is cancelled and you remain where you are that phase.
             You must be able to move to teleport in this way, so effects like being \\glossterm<immobilized> prevent this movement.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> You can also teleport vertically or diagonally in addition to horizontally.
             \\rank<8> You can teleport in this way even if you are unable to move, such as if you are \\glossterm<immobilized> or \\glossterm<paralyzed>.
         """, tags=['Attune (self)']),
@@ -193,8 +177,7 @@ astromancy=MysticSphere(
             You randomly flicker between your current plane and the Astral Plane.
             \\glossterm<Targeted> \\glossterm<strikes> against you have a 20\\% failure chance as you happen to be in the Astral Plane when the attack would hit.
             However, all of your attacks also have the same failure chance.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> The failure chance increases to 30\\%.
             \\rank<6> The failure chance increases to 40\\%.
             \\rank<8> The failure chance increases to 50\\%.
@@ -202,8 +185,7 @@ astromancy=MysticSphere(
         Spell('Controlled Flicker', 4, 'Yourself', """
             This spell functions like the \\textit<flicker> spell, except that you can choose at the start of each round to stop flickering for that round.
             If you do, your attacks do not have a failure chance, and attacks against you also do not have a failure chance.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> The failure chance increases to 30\\%.
             \\rank<8> The failure chance increases to 40\\%.
         """, tags=['Attune (self)']),
@@ -211,8 +193,7 @@ astromancy=MysticSphere(
             At the start of each phase, you may \\glossterm<teleport> into a random location in the Astral Plane.
             At the end of the round, you reappear in the location where you disappeared.
             If that space is occupied, you reappear in the closest available space.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> When you disappear, you can choose where you reappear.
             You can choose any unoccupied location within \\rngclose range from the location where you disappeared.
             \\rank<7> The distance you can reappear at increases to \\rngmed range.
@@ -221,30 +202,26 @@ astromancy=MysticSphere(
             Make an attack vs. Mental against each target.
             If either target is not standing on solid ground, this spell fails.
             If you hit both targets, they each teleport into each other's locations.
-
-            \\rankline
+        """, scaling="""
             You gain a +1 bonus to \glossterm<accuracy> with the attack for each rank beyond 3.
         """, tags=[]),
         Spell('Massive Transposition', 5, 'Two Gargantuan or smaller creatures within \\rngmed range', """
             This spell functions like the \\textit<transposition> spell, except that it can affect creatures with a maximum size of Gargantuan.
-
-            \\rankline
+        """, scaling="""
             You gain a +1 bonus to \glossterm<accuracy> with the attack for each rank beyond 5.
         """, tags=[]),
         Spell('Phasing Blade', 3, 'Yourself', """
             Whenever the target makes a \\glossterm<strike>, its weapon or projectile can pass through a single physical obstacle up to one foot thick on its way to the strike's target.
             This can allow the target to ignore \\glossterm<cover>, or even attack through solid walls.
             It does not allow the target to ignore armor, shields, or or similar items used by the target of its attacks.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<7> The strike can penetrate through any number of physical obstacles with a combined thickness of ten feet or less.
         """, tags=[]),
         Spell('Phasing Spells', 4, 'Yourself', """
             When determining whether you have \\glossterm<line of effect> to a particular location with spells, you can ignore a single physical obstacle up to one foot thick.
             This can allow you to cast spells through solid walls, though it does not grant you the ability to see through the wall.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> The maximum thickness you can ignore increases to 5 feet.
             \\rank<8> Your spells can penetrate any number of physical obstacles with a combined thickness of ten feet or less.
         """, tags=['Attune (self)']),

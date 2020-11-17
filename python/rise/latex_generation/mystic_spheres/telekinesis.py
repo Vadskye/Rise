@@ -16,8 +16,7 @@ telekinesis=MysticSphere(
 
             In addition, you can manipulate the target as if you were holding it in your hands.
             Any attacks you make with the object or checks you make to manipulate the object have a maximum bonus equal to your \\glossterm<power>.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> You can move the target up to ten feet in any direction.
             \\rank<5> The range increases to \\rngmed.
             \\rank<7> You can move the target up to thirty feet in any direction.
@@ -28,8 +27,7 @@ telekinesis=MysticSphere(
         Spell('Force Slam', 1, 'One creature or object within \\rngmed range', """
             Make an attack vs. Armor against the target.
             \\hit The target takes bludgeoning \\glossterm<standard damage> +1d.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
             \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
@@ -37,8 +35,7 @@ telekinesis=MysticSphere(
         Spell('Force Lance', 1, 'Everything in a \\areamed, 10 ft.\\ wide line from you', """
             Make an attack vs. Armor against each target.
             \\hit Each target takes piercing \\glossterm<standard damage> -1d.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The damage increases to \\glossterm<standard damage>.
             \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
@@ -48,8 +45,7 @@ telekinesis=MysticSphere(
             This has no effect on ranged attacks the target makes.
 
             You can cast this spell as a \\glossterm<minor action>.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<7> The bonus to \\glossterm<reach> increases to +10 feet.
         """, tags=['Attune (target)']),
@@ -57,8 +53,7 @@ telekinesis=MysticSphere(
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<slowed> as a \\glossterm<condition>.
             \\crit The target is \\glossterm<decelerated> as a \\glossterm<condition>.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
@@ -66,8 +61,7 @@ telekinesis=MysticSphere(
         Spell('Reload', 2, 'Yourself', """
             This spell does not have \\glossterm<somatic components>, and you can cast it as a \\glossterm<minor action>.
             You reload any projectile weapon you wield with ammunition easily accessible on your body.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> This spell no longer has the \\glossterm<Focus> tag.
             \\rank<6> You can cast this spell as a \\glossterm<free action>.
             However, you can only cast it once per round.
@@ -77,8 +71,7 @@ telekinesis=MysticSphere(
             Make an attack vs. Mental against each target.
             \\hit Each target is \\glossterm<slowed> until the end of the next round.
             \\crit Each target is \\glossterm<slowed> as a \\glossterm<condition>.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<5> The accuracy bonus increases to +2.
             \\rank<7> The accuracy bonus increases to +3.
@@ -89,8 +82,7 @@ telekinesis=MysticSphere(
             Moving a target upwards costs twice the normal movement cost.
             If the target impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgoning \\glossterm<standard damage> -2d.
             Any individual object or creature can only take damage once in this way, even if it is hit by multiple targets that are knocked flying.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> The area increases to a \\arealarge radius.
             \\rank<7> The area increases to a \\areahuge radius.
         """, tags=[]),
@@ -102,8 +94,7 @@ telekinesis=MysticSphere(
             \\hit You \\glossterm<knockback> the target up to 5 feet per \\glossterm<power> in a straight line directly away from you.
                 Moving the target upwards costs twice the normal movement cost.
                 If the target impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgeoning \\glossterm<standard damage>.
-
-            \\rankline
+            """, scaling="""
             \\rank<4> The damage increases to \\glossterm<standard damage> +1d.
             \\rank<6> The damage increases to \\glossterm<standard damage> +2d.
             \\rank<8> The damage increases to \\glossterm<standard damage> +3d.
@@ -113,8 +104,7 @@ telekinesis=MysticSphere(
             \\hit You \\glossterm<knockback> the target up to 5 feet per \\glossterm<power> in a straight line in any direction.
                 Moving the target upwards costs twice the normal movement cost.
                 If the target impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgeoning \\glossterm<standard damage> +1d.
-
-            \\rankline
+            """, scaling="""
             \\rank<4> The damage increases to \\glossterm<standard damage> +2d.
             \\rank<6> The damage increases to \\glossterm<standard damage> +3d.
             \\rank<8> The damage increases to \\glossterm<standard damage> +4d.
@@ -122,8 +112,7 @@ telekinesis=MysticSphere(
         Spell('Telekinetic Lift', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngmed range', """
             The target is reduced to half of its normal weight.
             This gives it a +4 \\glossterm<magic bonus> to the Jump skill, if applicable, and makes it easier to lift and move.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The bonus increases to +6.
             \\rank<5> The target is reduced to a quarter of its normal weight. In addition, the bonus increases to +8.
             \\rank<7> The bonus increases to +10.
@@ -132,8 +121,7 @@ telekinesis=MysticSphere(
             % TODO: Wording
             As long as you remain within 50 feet above a surface that could support its weight, it floats in midair, unaffected by gravity.
             During the movement phase, you can move yourself up to ten feet in any direction as a \\glossterm<move action>.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> The maximum height above the surface increases to 100 feet.
             \\rank<8> The distance you can move increases to 30 feet.
         """, tags=['Attune (self)']),
@@ -145,8 +133,7 @@ telekinesis=MysticSphere(
             The wall is visible as a shimmering magical field that does not block sight.
             Nothing can pass through the wall until it is destroyed.
             Each 5-ft.\\ square of wall has a \\glossterm<vital resistance> equal to twice your \\glossterm<power>.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to three times your \\glossterm<power>.
             \\rank<5> The area increases to a \\arealarge line.
             \\rank<7> The \\glossterm<vital resistance> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
@@ -163,24 +150,21 @@ telekinesis=MysticSphere(
             \\hit Unless the target is held in a creature's hand or otherwise well secured (such as an equipped ring or shield), it flies towards you, allowing you to catch it.
             If you are unable or unwilling to catch it, it falls to the ground in your space.
             \\crit As above, except that you can also pull objects that are held in the hand of an attending creature, but not objects that are well secured.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
             \\rank<6> The accuracy bonus increases to +2.
             \\rank<8> The accuracy bonus increases to +3.
         """, tags=[]),
         Spell('Animated Weapon', 4, 'Yourself', """
             As a \\glossterm<minor action>, you can make a \\glossterm<magical strike> with a -4 penalty to \\glossterm<accuracy> and a -2d penalty to damage.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> The accuracy penalty is reduced to -3.
             \\rank<8> The accuracy penalty is reduced to -2.
         """, tags=['Attune (self)']),
         Spell('Mind Arrow', 2, ['One Tiny or smaller \\glossterm<unattened> projectile within \\rngmed range', 'One creature or object within \\rngmed range'], """
             You make a \\glossterm<magical strike> with a +1 bonus to \\glossterm<accuracy> using the primary target against the secondary target.
             The projectile flies directly toward the secondary target instead of originating from your position, which may allow you to avoid \\glossterm<cover> and similar obstacles.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> The accuracy bonus increases to +2.
             \\rank<6> The accuracy bonus increases to +3.
             \\rank<8> The accuracy bonus increases to +4.
@@ -190,8 +174,7 @@ telekinesis=MysticSphere(
             In addition, you gain a +2 bonus to defenses against \\glossterm<mundane> ranged attacks from weapons or projectiles that are Small or smaller.
 
             You can cast this spell as a \\glossterm<minor action>.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The bonus to Armor defense increases to +2.
             \\rank<8> The bonus to Armor defense increases to +3.

@@ -17,8 +17,7 @@ polymorph=MysticSphere(
 
             % too short?
             Each time you cast this spell, you can accomplish work that would take up to two rounds with a normal Craft check.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The amount of work you accomplish with the spell increases to five rounds.
             \\rank<5> The amount of work you accomplish with the spell increases to one minute.
             \\rank<7> The amount of work you accomplish with the spell increases to two minutes.
@@ -29,8 +28,7 @@ polymorph=MysticSphere(
         Spell('Natural Weapon', 1, 'Yourself', """
             You gain your choice of one of the following \\glossterm<natural weapons>: bite, claw, constrict, gore, ram, slam, or talon.
             For details, see \\tref<Natural Weapons>.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with natural weapons.
             \\rank<5> You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with natural weapons.
             \\rank<7> The accuracy bonus increases to +2.
@@ -42,8 +40,7 @@ polymorph=MysticSphere(
             You twist your hand into a spike that bends past armor to injure your foe.
             Make a melee attack vs. Reflex against the target.
             \\hit The target takes piercing \\glossterm<standard damage> +1d.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> The damage increases to \\glossterm<standard damage> +2d.
             \\rank<6> The damage increases to \\glossterm<standard damage> +3d.
             \\rank<8> The damage increases to \\glossterm<standard damage> +4d.
@@ -55,8 +52,7 @@ polymorph=MysticSphere(
         Spell('Twist Flesh', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target takes physical \\glossterm<standard damage> +1d.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
             \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
@@ -68,8 +64,7 @@ polymorph=MysticSphere(
             However, its physical form is not altered fully to match its new size, and its Strength and Dexterity are unchanged.
 
             You can cast this spell as a \\glossterm<minor action>.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> This spell can target a Small or larger \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<5> The minimum size category is reduced to Diminuitive.
             \\rank<7> You can decrease the target's size category by up to two size categories.
@@ -78,8 +73,7 @@ polymorph=MysticSphere(
             The target gains a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical> damage.
 
             You can cast this spell as a \\glossterm<minor action>.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             In addition, the bonus increases to +4.
             \\rank<5> The bonus increases to be equal to half your \\glossterm<power>.
@@ -92,8 +86,7 @@ polymorph=MysticSphere(
             However, its physical form is not altered fully to match its new size, and its Strength and Dexterity are unchanged.
 
             You can cast this spell as a \\glossterm<minor action>.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> This spell can target a Large or smaller \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<8> You may increase the target by two size categories instead of one.
         """, tags=['Attune (target)']),
@@ -101,8 +94,7 @@ polymorph=MysticSphere(
             You make a Disguise check to alter the target's appearance (see \\pcref<Disguise Creature>).
             You gain a +4 bonus on the check, and you ignore penalties for changing the target's gender, species, subtype, or age.
             However, this effect is unable to alter the target's clothes or equipment in any way.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> This spell can target a Large or smaller \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<7> The bonus increases to +6.
         """, tags=['Attune (target)']),
@@ -110,8 +102,7 @@ polymorph=MysticSphere(
             You make a Craft check to transform the targets into a new item (or items) made of the same materials.
             You require none of the tools or time expenditure that would normally be necessary.
             The total size of all targets combined must be Large size or smaller.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> The maximum combined size is increased to Huge.
             \\rank<8> The maximum combined size is increased to Gargantuan.
         """, tags=[]),
@@ -121,8 +112,7 @@ polymorph=MysticSphere(
             In addition, if the target has no hit points remaining at the end of the current \\glossterm<phase>, it dies.
             Its body is completely disintegrated, leaving behind only a pinch of fine dust.
             Its equipment is unaffected.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> The damage increases to \\glossterm<standard damage> +3d.
             \\rank<8> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=[]),
@@ -130,8 +120,7 @@ polymorph=MysticSphere(
             Your body and equipment becomes highly flexible and malleable, allowing you to compress your body or contort yourself into odd shapes.
             You gain a +8 \\glossterm<magic bonus> to the Flexibility skill, and are immune to \\glossterm<critical hits> from \\glossterm<strikes>.
             However, your \\glossterm<bleed resistance> against \\glossterm<physical damage> is halved.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> The skill bonus increases to +12.
             \\rank<8> The skill bonus increases to +16.
         """, tags=['Attune (self)']),
@@ -141,8 +130,7 @@ polymorph=MysticSphere(
             \\hit Each secondary target takes piercing \\glossterm<standard damage> -2d.
 
             You can cast this spell as a \\glossterm<minor action>.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> The damage increases to \\glossterm<standard damage> -1d.
             \\rank<8> The damage increases to \\glossterm<standard damage>.
         """, tags=['Attune (self)']),
@@ -154,8 +142,7 @@ polymorph=MysticSphere(
 
             This effect lasts until you use it again, \\glossterm<dismiss> it as a \\glossterm<free action>, or fall unconscious.
             When this effect ends, the object appears in a free hand, if you have one available, or drops to the floor.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> The maximum size of the object increases to Medium.
             \\rank<7> The maximum size of the object increases to Large.
         """, tags=[]),
@@ -165,15 +152,13 @@ polymorph=MysticSphere(
             At the end of each round, it takes physical \\glossterm<standard damage> -2d.
             This damage is \\glossterm<subdual damage> (see \\pcref<Subdual Damage>).
             \\crit As above, except that the damage is not \\glossterm<subdual damage>.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> The damage increases to \\glossterm<standard damage> -1d.
             \\rank<8> The damage increases to \\glossterm<standard damage>.
         """, tags=[]),
         Spell('Camouflage', 1, 'Yourself', """
             The target gains a +3 \\glossterm<magic bonus> to the Stealth skill.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<5> The bonus increases to +5.
             \\rank<7> The bonus increases to +7.
