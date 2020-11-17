@@ -9,9 +9,8 @@ from rise.latex_generation.mystic_spheres.biomancy import biomancy
 from rise.latex_generation.mystic_spheres.bless import bless
 from rise.latex_generation.mystic_spheres.channel_divinity import channel_divinity
 from rise.latex_generation.mystic_spheres.chronomancy import chronomancy
-from rise.latex_generation.mystic_spheres.compel import compel
 from rise.latex_generation.mystic_spheres.cryomancy import cryomancy
-from rise.latex_generation.mystic_spheres.delusion import delusion
+from rise.latex_generation.mystic_spheres.enchantment import enchantment
 from rise.latex_generation.mystic_spheres.electromancy import electromancy
 from rise.latex_generation.mystic_spheres.fabrication import fabrication
 from rise.latex_generation.mystic_spheres.photomancy import photomancy
@@ -47,10 +46,9 @@ def generate_mystic_spheres():
     mystic_spheres.append(biomancy)
     mystic_spheres.append(channel_divinity)
     mystic_spheres.append(chronomancy)
-    mystic_spheres.append(compel)
     mystic_spheres.append(cryomancy)
-    mystic_spheres.append(delusion)
     mystic_spheres.append(electromancy)
+    mystic_spheres.append(enchantment)
     mystic_spheres.append(fabrication)
     mystic_spheres.append(photomancy)
     mystic_spheres.append(polymorph)
