@@ -129,9 +129,7 @@ barrier=MysticSphere(
             Each 5-ft.\\ square of the field has \\glossterm<hit points> equal to twice your \\glossterm<power>.
 
             If another creature is in the target's space when this spell is cast, this spell fails without effect.
-        """, scaling="""
-            You gain a +1 bonus to \glossterm<accuracy> with the attack for each rank beyond 5.
-        """, tags=['Manifestation', 'Sustain (standard)']),
+        """, scaling="accuracy", tags=['Manifestation', 'Sustain (standard)']),
         Spell('Invulnerable Barrier', 6, None, """
             This spell functions like the \\spell<mystic barrier> spell, except that each 5-ft.\\ square of wall has \\glossterm<hit points> equal to four times your \\glossterm<power>.
             In addition, the wall is \\glossterm<resistant> to physical damage.
@@ -204,9 +202,7 @@ barrier=MysticSphere(
             The rest of its movement in the current phase is cancelled.
 
             Creatures in the area at the time that the spell is cast are unaffected by the spell.
-        """, scaling="""
-            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 4.
-        """, tags=['Sustain (minor)']),
+        """, scaling="accuracy", tags=['Sustain (minor)']),
         Spell('Energy Immunity', 5, 'Yourself', """
             Choose a subtype of \\glossterm<energy damage>: cold, electricity, fire, or sonic.
             You become immune to damage of the chosen type.
@@ -230,9 +226,7 @@ barrier=MysticSphere(
             The rest of its movement in the current phase is cancelled.
 
             Creatures in the area at the time that the spell is cast are unaffected by the spell.
-        """, scaling="""
-            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 6.
-        """, tags=['Sustain (minor)']),
+        """, scaling="accuracy", tags=['Sustain (minor)']),
     ],
     rituals=[
         Spell('Endure Elements', 1, 'Yourself or an \\glossterm<ally> or unattended object within \\rngmed range', """

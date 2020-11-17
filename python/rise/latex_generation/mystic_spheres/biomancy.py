@@ -17,18 +17,14 @@ biomancy=MysticSphere(
             Reaching the third \\glossterm<poison stage> causes the target to become \\glossterm<nauseated> as long as it is poisoned.
             A third failed attack ends the poison.
             \\crit As above, except that target reaches the second \\glossterm<poison stage>, as normal for poisons.
-        """, scaling="""
-            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 2.
-        """, tags=['Manifestation', 'Sustain (minor)']),
+        """, scaling="accuracy", tags=['Manifestation', 'Sustain (minor)']),
         Spell('Poison -- Dragon Bile', 4, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target becomes \\glossterm<poisoned> with dragon bile.
             At the end of each subsequent round, you repeat this attack, as normal for poisons.
             For each \\glossterm<poison stage>, including the initial stage, the target loses \\glossterm<hit points> equal to 1d10 plus half your \\glossterm<power>.
             A third failed attack ends the poison.
-        """, scaling="""
-            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 4.
-        """, tags=[]),
+        """, scaling="accuracy", tags=[]),
         Spell('Neutralize Poison', 1, 'Yourself or one target within \\rngmed range', """
             The target gains an additional success to resist a poison currently affecting it (see \\pcref<Poison>).
         """, scaling="""
@@ -41,9 +37,7 @@ biomancy=MysticSphere(
             If the target is not currently poisoned, this ability has no effect.
             \\hit Choose a poison affecting the target.
             The poison gains an additional hit against the target, which can have varying effects depending on the poison (see \\pcref<Poison>).
-        """, scaling="""
-            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 2.
-        """, tags=[]),
+        """, scaling="accuracy", tags=[]),
         Spell('Brief Regeneration', 2, 'Yourself or one living \\glossterm<ally> within \\rngclose range', """
             The target regains \\glossterm<hit points> equal to 1d6 plus half your \\glossterm<power>.
         """, scaling="""
@@ -140,18 +134,14 @@ biomancy=MysticSphere(
             \\hit Each target takes damage of the chosen type equal to 2d10 plus half your \\glossterm<power>.
 
             You can cast this spell as a \\glossterm<minor action>.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 4.
-        """, tags=['Attune (self)']),
+        """, scaling="damage", tags=['Attune (self)']),
         Spell('Withering', 2, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude with a +2 bonus to \\glossterm<accuracy> against the target.
             \\hit As a \\glossterm<condition>, the target's body withers.
             It takes a -2 penalty to Fortitude defense.
             Whenever it loses one or more \\glossterm<hit points> from a single attack, this penalty increases by 1.
             This penalty increase stacks, and persists even if the target regains the lost hit points.
-        """, scaling="""
-            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 2.
-        """, tags=[]),
+        """, scaling="accuracy", tags=[]),
         Spell('Withering Curse', 4, 'One living creature within \\rngmed range', """
             Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against the target.
             \\hit The target becomes more vulnerable to injury until it takes a short rest.
@@ -159,38 +149,28 @@ biomancy=MysticSphere(
             Whenever it loses one or more \\glossterm<hit points> from a single attack, this penalty increases by 1.
             This penalty increase stacks, and persists even if the target regains the lost hit points.
             \\crit As above, except that the effect lasts until this curse is removed.
-        """, scaling="""
-            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 4.
-        """, tags=['Curse']),
+        """, scaling="accuracy", tags=['Curse']),
         Spell('Sickness', 2, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target is \\glossterm<sickened> as a \\glossterm<condition>.
             \\crit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
-        """, scaling="""
-            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 2.
-        """, tags=[]),
+        """, scaling="accuracy", tags=[]),
         Spell('Curse of Sickness', 3, 'One living creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<sickened> until it takes a \\glossterm<short rest>.
             \\crit As above, except that the effect lasts until this curse is removed.
             \\glance As above, except that the condition is removed at the end of the next round.
-        """, scaling="""
-            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 3.
-        """, tags=['Curse']),
+        """, scaling="accuracy", tags=['Curse']),
         Spell('Eyebite', 4, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target takes 2d6 physical damage.
             If it loses \\glossterm<hit points> from this damage, it is \\glossterm<blinded> as a \\glossterm<condition>.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 1.
-        """, tags=[]),
+        """, scaling="damage", tags=[]),
         Spell('Organ Failure', 1, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target takes 1d6 physical damage.
             If it loses \\glossterm<hit points> from this damage, it is \\glossterm<nauseated> as a \\glossterm<condition>.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 1.
-        """, tags=[]),
+        """, scaling="damage", tags=[]),
         Spell('Cripple', 7, 'One living creature within \\rngclose range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target is \\glossterm<immobilized> as a \\glossterm<condition>.

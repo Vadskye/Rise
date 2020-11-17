@@ -59,50 +59,36 @@ channel_divinity=MysticSphere(
         Spell('Divine Judgment', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target takes energy damage equal to 1d10 plus your \\glossterm<power>.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 1.
-        """, tags=[]),
+        """, scaling="damage", tags=[]),
         Spell('Stunning Judgment', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target is takes 1d6 energy damage.
             If it loses \\glossterm<hit points> from this damage, it is \\glossterm<stunned> as a \\glossterm<condition>.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 1.
-        """, tags=[]),
+        """, scaling="damage", tags=[]),
         Spell('Glimpse of Divinity', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<dazzled> as a \\glossterm<condition>.
-        """, scaling="""
-            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 1.
-        """, tags=[]),
+        """, scaling="accuracy", tags=[]),
         Spell('Fear of the Divine', 5, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\frightened by you as a \\glossterm<condition>.
             \\glance As above, except that the condition is removed at the end of the next round.
             \\crit The target is \\glossterm<panicked> by you as a \\glossterm<condition>.
-        """, scaling="""
-            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 5.
-        """, tags=[]),
+        """, scaling="accuracy", tags=[]),
         Spell('Judge Unworthy', 2, 'One creature within \\rngmed range', """
             Make an attack vs. Mental with a +2 bonus against the target.
             \\hit As a \\glossterm<condition>, the target takes a -2 penalty to Mental defense.
             \\crit As above, except that the penalty increases to -5.
-        """, scaling="""
-            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 2.
-        """, tags=[]),
+        """, scaling="accuracy", tags=[]),
         Spell('Word of Faith', 1, '\\glossterm<Enemies> in a \\areasmall radius from you', """
             Make an attack vs. Mental against each target.
             \\hit Each target takes energy damage equal to 1d8 plus half your \\glossterm<power>.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 1.
-        """, tags=[]),
+        """, scaling="damage", tags=[]),
         Spell('Proclamation of Faith', 3, '\\glossterm<Enemies> in a \\areamed radius from you', """
             Make an attack vs. Mental against each target.
             \\hit Each target takes energy damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 1.
-        """, tags=[]),
+        """, scaling="damage", tags=[]),
         Spell('Mantle of Faith', 1, 'Yourself', """
             You gain a +2 \\glossterm<magic bonus> to \\glossterm<resistances>.
 
@@ -127,9 +113,7 @@ channel_divinity=MysticSphere(
             When you attune to this spell, and during each \\glossterm<action phase> in subsequent rounds, make an attack vs. Mental against each target.
             After you attack a creature this way, it becomes immune to this ability from you until it takes a \\glossterm<short rest>.
             \\hit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
-        """, scaling="""
-            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 4.
-        """, tags=['Attune (self)', 'Emotion']),
+        """, scaling="accuracy", tags=['Attune (self)', 'Emotion']),
         Spell('Faithful Endurance', 3, 'Yourself', """
             You gain a +1 \\glossterm<magic bonus> to \\glossterm<vital rolls> (see \\pcref<Vital Rolls>).
 

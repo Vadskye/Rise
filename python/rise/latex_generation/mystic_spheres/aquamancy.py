@@ -51,9 +51,7 @@ aquamancy=MysticSphere(
                 it stops being sickened for 10 minutes.
             \\crit As above, except that the effect lasts until this curse is removed.
             \\glance As above, except that the effect is removed at the end of the next round.
-        """, scaling="""
-            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 3.
-        """, tags=['Curse']),
+        """, scaling="accuracy", tags=['Curse']),
         Spell('Sphere of Constraint', 6, 'All \\glossterm<enemies> completely within a \\areamed radius within \\rngmed range', """
             You create a sphere of water that contracts to stick to enemies in the area.
             Unlike most abilities, this ability only affects creatures whose entire space is within the area.
@@ -61,9 +59,7 @@ aquamancy=MysticSphere(
             \\hit Until the end of the next round, the majority of the target's body is surrounded by a layer of water.
             This does not impede the target's ability to breathe, but it takes penalties as if it was fighting underwater (see \\pcref<Underwater Combat>).
             \\crit As above, except that the effect is a \\glossterm<condition> instead of lasting until the end of the next round.
-        """, scaling="""
-            You gain a +1 bonus to \glossterm<accuracy> with the attack for each rank beyond 6.
-        """, tags=['Manifestation']),
+        """, scaling="accuracy", tags=['Manifestation']),
         # fighting underwater is slightly more detrimental than the standard
         # rank 2 condition, but Large or smaller is a significant restriction,
         # so this stays +0
@@ -72,61 +68,45 @@ aquamancy=MysticSphere(
             \\hit As a \\glossterm<condition>, the majority of the target's body is surrounded by a layer of water.
             This does not impede the target's ability to breathe, but it takes penalties as if it was fighting underwater (see \\pcref<Underwater Combat>).
             \\glance As above, except that the condition is removed at the end of the next round.
-        """, scaling="""
-            You gain a +1 bonus to \glossterm<accuracy> with the attack for each rank beyond 4.
-        """, tags=['Manifestation']),
+        """, scaling="accuracy", tags=['Manifestation']),
         Spell('Drowning Bubble', 6, 'One creature within \\rngmed range', """
             Make an attack vs. Reflex against the target.
             \\hit As a \\glossterm<condition>, the majority of the target's body is surrounded by a layer of water.
             It takes penalties as if it was fighting underwater (see \\pcref<Underwater Combat>).
             In addition, it is unable to breathe air, though it can try to breathe the water surrounding it.
             \\glance As above, except that the condition is removed at the end of the next round.
-        """, scaling="""
-            You gain a +1 bonus to \glossterm<accuracy> with the attack for each rank beyond 6.
-        """, tags=['Manifestation']),
+        """, scaling="accuracy", tags=['Manifestation']),
         Spell('Crushing Wave', 1, 'Everything in a \\areamed, 10 ft.\\ wide line from you', """
             Make an attack vs. Reflex against each target.
             \\hit Each target takes bludgeoning damage equal to 1d8 plus half your \\glossterm<power>.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 1.
-        """, tags=['Manifestation']),
+        """, scaling="damage", tags=['Manifestation']),
         Spell('Crushing Tide', 3, 'Everything in a \\arealarge, 10 ft.\\ wide line from you', """
             Make an attack vs. Reflex against each target.
             \\hit Each target takes bludgeoning damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 3.
-        """, tags=['Manifestation']),
+        """, scaling="damage", tags=['Manifestation']),
         Spell('Water Jet', 1, 'One creature or object within \\rngmed range', """
             Make an attack vs. Armor against the target.
             You may move up to 20 feet away from the target as the water propels you backwards.
             Moving yourself upwards costs twice the normal movement cost.
             \\hit The target takes bludgeoning damage equal to 1d8 plus your \\glossterm<power>.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 1.
-        """, tags=['Manifestation']),
+        """, scaling="damage", tags=['Manifestation']),
         Spell('Aquajet Blast', 3, 'One creature or object within \\rngmed range', """
             Make an attack vs. Armor against the target.
             You may move up to 50 feet away from the target as the water propels you backwards.
             Moving yourself upwards costs twice the normal movement cost.
             \\hit The target takes bludgeoning damage equal to 2d6 plus your \\glossterm<power>.
             \\glance As above, except that that the target takes half damage.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 3.
-        """, tags=['Manifestation']),
+        """, scaling="damage", tags=['Manifestation']),
         Spell('Fountain', 1, '\\glossterm<Enemies> within a \\areasmall radius from you', """
             Make an attack vs. Armor against each target.
             \\hit Each target takes bludgeoning damage equal to 1d8 plus half your \\glossterm<power>.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 1.
-        """, tags=['Manifestation']),
+        """, scaling="damage", tags=['Manifestation']),
         Spell('Great Fountain', 3, '\\glossterm<Enemies> within a \\areamed radius from you', """
             Make an attack vs. Armor against each target.
             \\hit Each target takes bludgeoning damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 3.
-        """, tags=['Manifestation']),
+        """, scaling="damage", tags=['Manifestation']),
         Spell('Wall of Water', 3, None, """
             You create a wall of water in a 20 ft.\\ high, \\arealarge line within \\rngmed range.
             The wall is four inches thick, and blocks \\glossterm<line of effect> for abilities.
@@ -153,9 +133,7 @@ aquamancy=MysticSphere(
             In addition, each target is \\glossterm<pushed> 20 feet in the direction the line points away from you.
             Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
             \\glance As above, except that that each target takes half damage.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 4.
-        """, tags=['Manifestation']),
+        """, scaling="damage", tags=['Manifestation']),
         Spell('Raging Flood', 7, 'Everything in a \\areahuge, 15 ft. wide line from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes 4d8 bludgeoning damage.
@@ -169,9 +147,7 @@ aquamancy=MysticSphere(
             % Normal dice, but half power due to vertical line
             \\hit Each target takes takes bludgeoning damage equal to 2d8 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 3.
-        """, tags=['Manifestation']),
+        """, scaling="damage", tags=['Manifestation']),
         Spell('Rainstorm', 2, 'Everything in the area (see text)', f"""
             Torrential rain begins falling out of thin air within a \\arealarge radius \\glossterm<zone> from your location.
             The rain extinguishes minor fires such as campfires and torches on contact.
@@ -219,24 +195,18 @@ aquamancy=MysticSphere(
             Make an attack vs. Fortitude against the target.
             \\hit The target takes 1d6 physical damage.
             If it loses hit points from this damage, it is \\glossterm<nauseated> as a \\glossterm<condition>.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 1.
-        """, tags=[]),
+        """, scaling="damage", tags=[]),
         Spell('Wave of Dehydration', 3, 'Creatures in a \\arealarge, 10 ft. wide line from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target that has no remaining \\glossterm<resistance> to physical damage is \\glossterm<nauseated> as a \\glossterm<condition>.
             \\glance As above, except that the condition is removed at the end of the next round.
-        """, scaling="""
-            You gain a +1 bonus to \glossterm<accuracy> with the attack for each rank beyond 3.
-        """, tags=[]),
+        """, scaling="accuracy", tags=[]),
         Spell('Desiccate', 4, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target takes physical damage equal to 2d8 plus half your \\glossterm<power>.
             If it loses hit points from this damage, it is \\glossterm<nauseated> as a \\glossterm<condition>.
             \\glance As above, except that that the target takes half damage.
-        """, scaling="""
-            The damage increases by +1d for each rank beyond 4.
-        """, tags=[]),
+        """, scaling="damage", tags=[]),
         Spell('Excsiccate', 7, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target takes physical damage equal to 4d10 plus your \\glossterm<power>.
