@@ -37,67 +37,52 @@ fabrication=MysticSphere(
         """, tags=['Attune (self)', 'Manifestation']),
         Spell('Mystic Arrow', 1, 'One creature or object within \\rngmed range', """
             Make an attack vs. Armor against the target.
-            \\hit The target takes piercing \\glossterm<standard damage> +1d.
-        """, scaling="""
-            \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
-        """, tags=['Manifestation']),
-        Spell('Mystic Blast Arrow', 4, 'One creature or object within \\rngmed range', """
+            \\hit The target takes piercing damage equal to 1d10 plus your \\glossterm<power>.
+        """, scaling="damage", tags=['Manifestation']),
+        Spell('Mystic Blast Arrow', 3, 'One creature or object within \\rngmed range', """
             Make an attack vs. Armor against the target.
-            \\hit The target takes piercing \\glossterm<standard damage> +2d.
-            If this attack \\glossterm<wounds> the target, it is knocked \\glossterm<prone>.
-        """, scaling="""
-            \\rank<6> The damage increases to \\glossterm<standard damage> +3d.
-            \\rank<8> The damage increases to \\glossterm<standard damage> +4d.
-        """, tags=['Manifestation']),
-        Spell('Bladestorm', 3, '\\glossterm<Enemies> adjacent to you', """
+            \\hit The target takes piercing damage equal to 2d8 plus your \\glossterm<power>.
+            If the target loses \\glossterm<hit points> from this damage, it is knocked \\glossterm<prone>.
+            \\glance As above, except that that the target takes half damage.
+        """, scaling="damage", tags=['Manifestation']),
+        Spell('Bladestorm', 3, '\\glossterm<Enemies> within a \\areasmall radius of you', """
             This spell does not have the \\glossterm<Focus> tag.
             Make an attack vs. Armor against each target.
-            \\hit Each target takes slashing \\glossterm<standard damage> -1d.
-        """, scaling="""
-            \\rank<5> The damage increases to \\glossterm<standard damage>.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
-        """, tags=['Manifestation'], focus=False),
-        Spell('Missile Storm', 3, '\\glossterm<Enemies> in a \\areamed radius from you', """
+            \\hit Each target takes slashing damage equal to 2d6 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
+        """, scaling="damage", tags=['Manifestation'], focus=False),
+        Spell('Missile Storm', 5, '\\glossterm<Enemies> in a \\arealarge radius from you', """
             Make an attack vs. Armor against each target.
-            \\hit Each target takes piercing \\glossterm<standard damage> -1d.
-        """, scaling="""
-            \\rank<5> The area increases to a \\arealarge radius.
-            \\rank<7> The area increases to a \\areahuge radius.
-        """, tags=['Manifestation']),
+            \\hit Each target takes piercing damage equal to 2d10 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
+        """, scaling="damage", tags=['Manifestation']),
         Spell('Hail of Arrows', 3, 'Everything in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Armor against each target.
-            \\hit Each target takes piercing \\glossterm<standard damage> -1d.
-        """, scaling="""
-            \\rank<5> The damage increases to \\glossterm<standard damage>.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
-        """, tags=['Manifestation']),
+            \\hit Each target takes piercing damage equal to 1d8 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
+        """, scaling="damage", tags=['Manifestation']),
         Spell('Blade Barrier', 2, 'Each creature that moves through the area (see text)', """
             A wall of whirling blades appears within \\rngmed range.
             The wall takes the form of a 20 ft.\\ high, \\arealarge line.
             The wall provides \\glossterm<cover> against attacks made through it.
             When a creature or object passes through the wall, make an attack vs. Armor against it.
-            \\hit The target takes slashing \\glossterm<standard damage> -1d.
-        """, scaling="""
-            \\rank<4> The damage increases to \\glossterm<standard damage>.
-            \\rank<6> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<8> The damage increases to \\glossterm<standard damage> +2d.
-        """, tags=['Sustain (minor)']),
-        Spell('Blade Perimeter', 4, 'Each creature that moves through the area (see text)', """
+            \\hit The target takes slashing damage equal to 1d10 plus half your \\glossterm<power>.
+        """, scaling="damage", tags=['Sustain (minor)']),
+        Spell('Blade Perimeter', 3, 'Each creature that moves through the area (see text)', """
             A wall of whirling blades appears within \\rngmed range.
             The wall takes the form of a 20 ft.\\ high, \\areamed radius line.
             The wall provides \\glossterm<cover> against attacks made through it.
             When a creature or object passes through the wall, make an attack vs. Armor against it.
-            \\hit The target takes slashing \\glossterm<standard damage> -1d.
-
-        
-    """, scaling="""% TODO: Clarify interaction with solid obstacles that block contraction?
-            \\rank<6> The wall's radius shrinks by 5 feet at the end of each round, dealing damage to everything it moves through.
-            When the wall shrinks to have no radius, this spell ends.
-            \\rank<8> After the wall shrinks to have no radius, it begins expanding again at a rate of 5 feet per round.
+            \\hit The target takes slashing damage equal to 2d6 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
+        """, scaling="damage", tags=['Sustain (minor)']),
+        Spell('Contracting Blade Perimeter', 6, 'Each creature that moves through the area (see text)', """
+            This spell functions like the \\textit<blade perimeter> spell, except that the damage is increased to 4d6 plus half your \\glossterm<power>.
+            % TODO: Clarify interaction with solid obstacles that block contraction?
+            In addition, the wall's radius shrinks by 5 feet at the end of each round, dealing damage to everything it moves through.
+            After the wall shrinks to have no radius, it begins expanding again at a rate of 5 feet per round.
             Once it expands back to its maximum radius, it begins shrinking again.
-        """, tags=['Sustain (minor)']),
+        """, scaling="damage", tags=[]),
         Spell('Personal Weapon', 1, 'Yourself', """
             Choose a type of weapon that you are proficient with.
             You create a normal item of that type in your hand.
@@ -115,45 +100,32 @@ fabrication=MysticSphere(
         """, tags=['Manifestation']),
         Spell('Acid Orb', 1, 'One creature or object within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
-            \\hit The target takes acid \\glossterm<standard damage> +1d.
-        """, scaling="""
-            \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
-        """, tags=['Manifestation']),
+            \\hit The target takes acid damage equal to 1d10 plus your \\glossterm<power>.
+        """, scaling="damage", tags=['Manifestation']),
         Spell('Cone of Acid', 1, 'Everything in a \\areamed cone from you', """
             Make an attack vs. Fortitude against each target.
-            \\hit Each target takes acid \\glossterm<standard damage> -1d.
-        """, scaling="""
-            \\rank<3> The damage increases to \\glossterm<standard damage>.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
-        """, tags=['Manifestation']),
+            \\hit Each target takes acid damage equal to 1d8 plus half your \\glossterm<power>.
+        """, scaling="damage", tags=['Manifestation']),
         Spell('Acid Breath', 4, 'Yourself (see text)', """
             As a standard action, you can breathe acid like a dragon.
             When you do, make an attack vs. Fortitude against everything in a \\arealarge cone from you.
-            \\hit Each target takes acid \\glossterm<standard damage>.
+            % note +1d as part of spell effect as consolation prize for attunement
+            \\hit Each target takes acid damage equal to 2d10 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
 
             You can cast this spell as a \\glossterm<minor action>.
-        """, scaling="""
-            \\rank<6> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<8> The damage increases to \\glossterm<standard damage> +2d.
-        """, tags=['Attune (self)']),
+        """, scaling="damage", tags=['Attune (self)']),
         Spell('Corrosive Orb', 5, 'One creature or object within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
-            \\hit The target takes acid \\glossterm<standard damage> +3d.
+            \\hit The target takes acid damage equal to 4d6 plus your \\glossterm<power>.
             This attack deals double damage to objects.
-        """, scaling="""
-            \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
-        """, tags=['Manifestation']),
-        Spell('Acid Rain', 2, 'Everything in a \\areasmall radius within \\rngclose range', """
+            \\glance As above, except that that the target takes half damage.
+        """, scaling="damage", tags=['Manifestation']),
+        Spell('Acid Rain', 3, 'Everything in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Fortitude against each target.
-            \\hit Each target takes acid \\glossterm<standard damage> -1d.
-        """, scaling="""
-            \\rank<4> The damage increases to \\glossterm<standard damage>.
-            \\rank<6> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<8> The damage increases to \\glossterm<standard damage> +2d.
-        """, tags=['Manifestation']),
+            \\hit Each target takes acid damage equal to 2d6 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
+        """, scaling="damage", tags=['Manifestation']),
         Spell('Forge', 1, 'One unoccupied square within \\rngclose range', """
             Choose a type of body armor, weapon, or shield that you are proficient with.
             You cannot create heavy armor.
@@ -168,47 +140,33 @@ fabrication=MysticSphere(
                     and armor grants a +1 \\glossterm<magic bonus> to Armor defense.
             \\rank<7> You can cast this spell with the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Attune> (self) tag.
         """, tags=['Attune (self)']),
-        Spell('Meteor', 5, 'Special', """
+        # +2 levels for fire + bludgeoning, which breaks resistances
+        # +1 level for meteor path
+        Spell('Meteor', 6, 'Special', """
             You create a meteor in midair within \\rngmed range that falls to the ground, crushing foes in its path.
             The meteor takes up a \\areasmall radius, and must be created in unoccupied space.
             After being summoned, it falls up to 100 feet before disappearing.
             Make an attack vs. Armor against everything in its path.
-            \\hit Each target takes bludgeoning and fire \\glossterm<standard damage> -1d.
-        """, scaling="""
-            \\rank<7> The damage increases to \\glossterm<standard damage>.
-        """, tags=['Manifestation']),
-        Spell('Meteor Swarm', 8, 'Special', f"""
-            You create up to five meteors in midair within \\rnglong range that each fall to the ground, crushing foes in their paths.
-            Each meteor takes up a \\areasmall radius, and must be created in unoccupied space.
-            The areas affected by two different meteors cannot overlap.
-            If one of the meteors is created in an invalid area, that meteor is not created, but the others are created and dealt their damage normally.
-
-            After being summoned, each meteor falls up to 100 feet before disappearing.
-            Make an attack vs. Armor against everything in the path of any meteor.
-            \\hit Each target takes bludgeoning and fire \\glossterm<standard damage> -1d.
-        """, tags=['Manifestation']),
-        Spell('Web', 3, 'All Large or smaller creatures in the area (see text)', """
+            \\hit Each target takes bludgeoning and fire damage equal to 4d6 plus half your \\glossterm<power>.
+        """, scaling="damage", tags=['Manifestation']),
+        # treated like r1 softener, +2 levels for leaving behind something, +1
+        # for crit effect
+        Spell('Web', 4, 'All Large or smaller creatures in the area (see text)', """
             You fill a \\areasmall radius \\glossterm<zone> within \\rngmed range with webs.
             The webs make the area \\glossterm<difficult terrain>.
             Each 5-ft.\\ square of webbing has a \\glossterm<vital resistance> equal to twice your \\glossterm<power> and is \\glossterm<vulnerable> to fire damage.
 
             In addition, make an attack vs. Reflex against each target.
-            \\hit Each secondary target is \\glossterm<immobilized> as long as it has webbing from this ability in its space.
-        """, scaling="""
-            \\rank<5> The webs are no longer \\glossterm<vulnerable> to fire damage.
-            \\rank<7> The vital resistance of each 5-ft.\\ square of webs increases to three times your \\glossterm<power>.
-        """, tags=['Manifestation', 'Sustain (minor)']),
+            \\hit Each secondary target is \\glossterm<slowed> as long as it has webbing from this ability in its space.
+            \\crit Each secondary target is \\glossterm<immobilized> as long as it has webbing from this ability in its space.
+        """, scaling="accuracy", tags=['Manifestation', 'Sustain (minor)']),
         Spell('Caltrops', 2, 'One 5 ft.\\ square within \\rngclose range (see text)', """
             You create exceptionally sharp caltrops in the target location.
             Whenever a creature moves into the area, unless the creature moves at one quarter speed to avoid the danger, you make an attack vs. Armor against them.
             Unlike most attacks, this attack can happen during the \\glossterm<movement phase>.
             Caltrops may not be effective against creatures with an unusual anatomy.
-            \\hit The target takes \\glossterm<standard damage>.
-        """, scaling="""
-            \\rank<4> You can affect an additional square within range.
-            \\rank<6> The number of additional squares you can affect increases to two.
-            \\rank<8> The number of additional squares you can affect increases to three.
-        """, tags=['Manifestation', 'Sustain (minor)']),
+            \\hit The target takes piercing damage equal to 1d10 plus half your \\glossterm<power>.
+        """, scaling="damage", tags=['Manifestation', 'Sustain (minor)']),
     ],
     rituals=[
         Spell('Manifest Object', 3, 'One unoccupied square within \\rngclose range', """
