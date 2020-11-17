@@ -18,10 +18,12 @@ class Effects(object):
             name,
             targets,
             effect_text,
+            scaling=None,
             tags=None,
     ):
         self.effect_text = effect_text
         self.name = name
+        self.scaling = scaling
         self.tags = tags
         self.targets = targets
 
@@ -40,12 +42,17 @@ class Effects(object):
 
         target_tag = 'targets' if targets_are_plural(self.targets) else 'target'
         target_text = f"\\{target_tag}<{self.targets}>" if self.targets else ""
+        scaling_text = f"""
+            \\rankline
+            {self.scaling}
+        """ if self.scaling else ""
 
         return join(
             f"""
                 \\begin<{ability_type}><{self.name}>{f"[{tag_text}]" if tag_text else ""}
                     {target_text}
                     {self.effect_text.strip()}
+                    {scaling_text}
                 \\end<{ability_type}>
             """
         )

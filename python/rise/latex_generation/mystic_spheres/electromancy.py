@@ -18,8 +18,7 @@ cantrips=[
     Effects('Spark', 'One creature or object within \\rngclose range', """
         Make an attack vs. Reflex against the target.
         \\hit The target takes 2 electricity damage.
-
-        \\rankline
+    """, scaling="""
         \\rank<3> The damage increases to 5.
         \\rank<5> The damage increases to 10.
         \\rank<7> The damage increases to 20.
@@ -31,8 +30,7 @@ spells=[
         Make an attack vs. Reflex against each target.
         \\hit Each target takes electricity damage equal to 2d6 plus half your \\glossterm<power>.
         \\glance As above, except that that each target takes half damage.
-
-        \\rankline
+    """, scaling="""
         The damage increases by +1d for each rank beyond 3.
     """, tags=[]),
     Spell('Shocking Grasp', 1, 'One creature or object within your \\glossterm<reach>', """
@@ -41,39 +39,34 @@ spells=[
 
         Make a melee attack vs. Reflex against the target.
         \\hit The target takes electricity damage equal to 1d10 plus your \\glossterm<power>.
-
-        \\rankline
+    """, scaling="""
         The damage increases by +1d for each rank beyond 1.
     """, tags=[], focus=False),
     Spell('Discharge', 1, '\\glossterm<Enemies> and objects in a \\areasmall radius from you', """
         Make an attack vs. Reflex against each target.
         \\hit Each target takes electricity damage equal to 1d8 plus half your \\glossterm<power>.
-
-        \\rankline
+    """, scaling="""
         The damage increases by +1d for each rank beyond 1.
     """, tags=[]),
     Spell('Stunning Discharge', 3, '\\glossterm<Enemies> in a \\areamed radius from you', """
         Make an attack vs. Fortitude against each target.
         \\hit Each target that has no remaining \\glossterm<resistance> to electricity damage is \\glossterm<stunned> as a \\glossterm<condition>.
         \\glance As above, except that the condition is removed at the end of the next round.
-
-        \\rankline
+    """, scaling="""
         You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 3.
     """, tags=[]),
     Spell('Lightning Storm', 5, '\\glossterm<Enemies> and objects in a \\arealarge radius from  you', """
         Make an attack vs. Reflex against each target.
         \\hit Each target takes electricity damage equal to 2d10 plus half your \\glossterm<power>.
         \\glance As above, except that that each target takes half damage.
-
-        \\rankline
+    """, scaling="""
         The damage increases by +1d for each rank beyond 5.
     """, tags=[]),
     Spell('Shock and Awe', 6, '\\glossterm<Enemies> in a \\areamed radius within \\rngmed range', """
          Make an attack vs. Fortitude against each target.
          \\hit Each target is \\glossterm<dazed> and \\glossterm<disoriented> until the end of the next round.
          \\crit Each target is \\glossterm<dazed> and \\glossterm<disoriented> as a single \\glossterm<condition>.
-
-         \\rankline
+        """, scaling="""
          You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 6.
     """, tags=[]),
     Spell('Electromagnetic Bolt', 4, 'Everything in a \\arealarge, 10 ft.\\ wide line from you', """
@@ -81,16 +74,14 @@ spells=[
         You gain a +2 bonus to accuracy against each target that is wearing metal armor or otherwise carrying or composed of a significant amount of metal.
         \\hit Each target takes electricity damage equal to 2d8 plus half your \\glossterm<power>.
         \\glance As above, except that that each target takes half damage.
-
-        \\rankline
+    """, scaling="""
         The damage increases by +1d for each rank beyond 4.
     """, tags=[]),
     Spell('Magnetic Blade', 3, 'Yourself', """
         Metal weapons wielded by the target gain a +1 bonus to \\glossterm<accuracy> against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
 
         You can cast this spell as a \\glossterm<minor action>.
-
-        \\rankline
+    """, scaling="""
         \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
         \\rank<7> The accuracy bonus increases to +2.
     """, tags=['Attune (target)']),
@@ -103,23 +94,20 @@ spells=[
         In addition, regardless of whether you hit the primary target, make an attack vs. Reflex against each secondary target.
         \\hit Each secondary target takes electricity damage equal to 2d10 plus half your \\glossterm<power>.
         \\glance As above, except that that each target takes half damage.
-
-        \\rankline
+    """, scaling="""
         The damage to both the primary and secondary targets increases by +1d for each rank beyond 5.
     """, tags=[]),
     Spell('Electric Jolt', 1, 'One creature or object within \\rngmed range', """
         Make an attack vs. Fortitude against the target.
         \\hit The target takes electricity damage equal to 1d10 plus your \\glossterm<power>.
-
-        \\rankline
+    """, scaling="""
         The damage increases by +1d for each rank beyond 1.
     """, tags=[]),
     Spell('Electroshock', 1, 'One creature within \\rngmed range', """
         Make an attack vs. Fortitude against the target.
         \\hit The target takes 1d6 electricity damage.
         If it loses \\glossterm<hit points> from this damage, it is \\glossterm<stunned> as a \\glossterm<condition>.
-
-        \\rankline
+    """, scaling="""
         The damage increases by +1d for each rank beyond 1.
     """, tags=[]),
     Spell('Disorienting Electroshock', 4, 'target', """
@@ -127,8 +115,7 @@ spells=[
         \\hit The target takes 2d6 electricity damage.
         If it loses \\glossterm<hit points> from this damage, it is \\glossterm<disoriented> as a \\glossterm<condition>.
         \\glance As above, except that that the target takes half damage.
-
-        \\rankline
+    """, scaling="""
         The damage increases by +1d for each rank beyond 4.
     """, tags=[]),
     Spell('Call Lightning', 3, 'Everything in a \\arealarge, 5 ft.\\ wide vertical line within \\rngmed range', """
@@ -138,16 +125,14 @@ spells=[
         % Normal dice, but half power due to vertical line
         \\hit Each target takes takes bludgeoning damage equal to 2d8 plus half your \\glossterm<power>.
         \\glance As above, except that that each target takes half damage.
-
-        \\rankline
+    """, scaling="""
         The damage increases by +1d for each rank beyond 3.
     """, tags=[]),
     Spell('Energize', 2, 'Yourself', """
         The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<base speed>, up to a maximum of double its \\glossterm<base speed>.
 
         You can cast this spell as a \\glossterm<minor action>.
-
-        \\rankline
+    """, scaling="""
         \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
         \\rank<6> The speed bonus increases to +20 feet.
         \\rank<8> The speed bonus increases to +30 feet.
@@ -159,8 +144,7 @@ spells=[
         \\hit Each target takes electricity damage equal to 2d10 plus half your \\glossterm<power>.
 
         You can cast this spell as a \\glossterm<minor action>.
-
-        \\rankline
+    """, scaling="""
         The damage increases by +1d for each rank beyond 4.
     """, tags=['Attune (self)']),
     Spell('Ball Lightning', 4, 'See text', """
@@ -171,8 +155,7 @@ spells=[
         Otherwise, make an attack vs. Reflex with a -2 penalty to accuracy against everything in its space.
         \\hit Each target in the ball's space takes 2d8 electricity damage.
         \\glance As above, except that that each target takes half damage.
-
-        \\rankline
+    """, scaling="""
         The damage increases by +1d for each rank beyond 4.
     """, tags=['Sustain (minor)']),
     Spell('Personal Conduction', 3, ['Yourself', 'See text'], """
@@ -181,8 +164,7 @@ spells=[
         % full dice, but half power
         \\hit Each secondary target takes electricity damage equal to 2d8 plus half your \\glossterm<power>.
         \\glance As above, except that that each target takes half damage.
-
-        \\rankline
+    """, scaling="""
         The damage increases by +1d for each rank beyond 3.
     """, tags=['Attune (self)']),
     Spell('Electrocute', 5, 'One creature within \\rngmed range', """
@@ -191,8 +173,7 @@ spells=[
         \\hit The target takes electricity damage equal to 4d10 plus your \\glossterm<power>.
         If this damage would inflict a \\glossterm<vital wound>, it inflicts an additional \\glossterm<vital wound>.
         \\glance As above, except that that the target takes half damage.
-
-        \\rankline
+    """, scaling="""
         The damage increases by +1d for each rank beyond 5.
     """, tags=[]),
 ],

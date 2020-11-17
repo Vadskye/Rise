@@ -18,8 +18,7 @@ fabrication=MysticSphere(
             At the end of each round, this spell ends if you are not within \\rngmed range of the item.
 
             This spell lasts until you use it again or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The maximum size of the object increases to Small.
             \\rank<5> The maximum size of the object increases to Medium.
             \\rank<7> The maximum size of the object increases to Large.
@@ -31,8 +30,7 @@ fabrication=MysticSphere(
             You gain a +1 \\glossterm<magic bonus> to Armor defense.
 
             You can cast this spell as a \\glossterm<minor action>.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> You are not considered \\glossterm<defenseless> as long as you are not \\glossterm<unaware>, even if you are not wielding a weapon or shield.
             \\rank<6> The bonus increases to +2.
             \\rank<8> The bonus increases to +3.
@@ -40,8 +38,7 @@ fabrication=MysticSphere(
         Spell('Mystic Arrow', 1, 'One creature or object within \\rngmed range', """
             Make an attack vs. Armor against the target.
             \\hit The target takes piercing \\glossterm<standard damage> +1d.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
             \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
@@ -50,8 +47,7 @@ fabrication=MysticSphere(
             Make an attack vs. Armor against the target.
             \\hit The target takes piercing \\glossterm<standard damage> +2d.
             If this attack \\glossterm<wounds> the target, it is knocked \\glossterm<prone>.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> The damage increases to \\glossterm<standard damage> +3d.
             \\rank<8> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=['Manifestation']),
@@ -59,24 +55,21 @@ fabrication=MysticSphere(
             This spell does not have the \\glossterm<Focus> tag.
             Make an attack vs. Armor against each target.
             \\hit Each target takes slashing \\glossterm<standard damage> -1d.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> The damage increases to \\glossterm<standard damage>.
             \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
         """, tags=['Manifestation'], focus=False),
         Spell('Missile Storm', 3, '\\glossterm<Enemies> in a \\areamed radius from you', """
             Make an attack vs. Armor against each target.
             \\hit Each target takes piercing \\glossterm<standard damage> -1d.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> The area increases to a \\arealarge radius.
             \\rank<7> The area increases to a \\areahuge radius.
         """, tags=['Manifestation']),
         Spell('Hail of Arrows', 3, 'Everything in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Armor against each target.
             \\hit Each target takes piercing \\glossterm<standard damage> -1d.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> The damage increases to \\glossterm<standard damage>.
             \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
         """, tags=['Manifestation']),
@@ -86,8 +79,7 @@ fabrication=MysticSphere(
             The wall provides \\glossterm<cover> against attacks made through it.
             When a creature or object passes through the wall, make an attack vs. Armor against it.
             \\hit The target takes slashing \\glossterm<standard damage> -1d.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> The damage increases to \\glossterm<standard damage>.
             \\rank<6> The damage increases to \\glossterm<standard damage> +1d.
             \\rank<8> The damage increases to \\glossterm<standard damage> +2d.
@@ -99,8 +91,8 @@ fabrication=MysticSphere(
             When a creature or object passes through the wall, make an attack vs. Armor against it.
             \\hit The target takes slashing \\glossterm<standard damage> -1d.
 
-            % TODO: Clarify interaction with solid obstacles that block contraction?
-            \\rankline
+        
+    """, scaling="""% TODO: Clarify interaction with solid obstacles that block contraction?
             \\rank<6> The wall's radius shrinks by 5 feet at the end of each round, dealing damage to everything it moves through.
             When the wall shrinks to have no radius, this spell ends.
             \\rank<8> After the wall shrinks to have no radius, it begins expanding again at a rate of 5 feet per round.
@@ -116,8 +108,7 @@ fabrication=MysticSphere(
 
             % Strange duration for a spell
             This spell lasts until you use it again or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with \\glossterm<strikes> using the weapon.
             \\rank<5> You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using the weapon.
             \\rank<7> The bonus to accuracy increases to +2.
@@ -125,8 +116,7 @@ fabrication=MysticSphere(
         Spell('Acid Orb', 1, 'One creature or object within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target takes acid \\glossterm<standard damage> +1d.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
             \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
@@ -134,8 +124,7 @@ fabrication=MysticSphere(
         Spell('Cone of Acid', 1, 'Everything in a \\areamed cone from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes acid \\glossterm<standard damage> -1d.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The damage increases to \\glossterm<standard damage>.
             \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
             \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
@@ -146,8 +135,7 @@ fabrication=MysticSphere(
             \\hit Each target takes acid \\glossterm<standard damage>.
 
             You can cast this spell as a \\glossterm<minor action>.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> The damage increases to \\glossterm<standard damage> +1d.
             \\rank<8> The damage increases to \\glossterm<standard damage> +2d.
         """, tags=['Attune (self)']),
@@ -155,15 +143,13 @@ fabrication=MysticSphere(
             Make an attack vs. Fortitude against the target.
             \\hit The target takes acid \\glossterm<standard damage> +3d.
             This attack deals double damage to objects.
-
-            \\rankline
+        """, scaling="""
             \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
         """, tags=['Manifestation']),
         Spell('Acid Rain', 2, 'Everything in a \\areasmall radius within \\rngclose range', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes acid \\glossterm<standard damage> -1d.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> The damage increases to \\glossterm<standard damage>.
             \\rank<6> The damage increases to \\glossterm<standard damage> +1d.
             \\rank<8> The damage increases to \\glossterm<standard damage> +2d.
@@ -175,8 +161,7 @@ fabrication=MysticSphere(
 
             The item cannot be constructed of any magical or extraordinary material.
             It is sized appropriately for you, up to a maximum of a Medium size item.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> You can also create heavy armor.
             \\rank<5> The item created is magically enhanced.
                 A weapon grants a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities,
@@ -189,8 +174,7 @@ fabrication=MysticSphere(
             After being summoned, it falls up to 100 feet before disappearing.
             Make an attack vs. Armor against everything in its path.
             \\hit Each target takes bludgeoning and fire \\glossterm<standard damage> -1d.
-
-            \\rankline
+        """, scaling="""
             \\rank<7> The damage increases to \\glossterm<standard damage>.
         """, tags=['Manifestation']),
         Spell('Meteor Swarm', 8, 'Special', f"""
@@ -210,8 +194,7 @@ fabrication=MysticSphere(
 
             In addition, make an attack vs. Reflex against each target.
             \\hit Each secondary target is \\glossterm<immobilized> as long as it has webbing from this ability in its space.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> The webs are no longer \\glossterm<vulnerable> to fire damage.
             \\rank<7> The vital resistance of each 5-ft.\\ square of webs increases to three times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
@@ -221,8 +204,7 @@ fabrication=MysticSphere(
             Unlike most attacks, this attack can happen during the \\glossterm<movement phase>.
             Caltrops may not be effective against creatures with an unusual anatomy.
             \\hit The target takes \\glossterm<standard damage>.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> You can affect an additional square within range.
             \\rank<6> The number of additional squares you can affect increases to two.
             \\rank<8> The number of additional squares you can affect increases to three.

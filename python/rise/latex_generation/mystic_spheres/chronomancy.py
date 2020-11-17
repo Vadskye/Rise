@@ -14,8 +14,7 @@ chronomancy=MysticSphere(
         Effects('Accelerated Reading', 'Yourself', """
             You can read at twice your normal speed.
             However, the mental effort imposes a -4 penalty to Mental defense.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> You can read at four times your normal speed.
             \\rank<5> You can read at six times your normal speed.
             \\rank<7> You can read at ten times your normal speed.
@@ -23,8 +22,7 @@ chronomancy=MysticSphere(
         Effects('Accelerated Search', 'Yourself', """
             Make an Awareness check to notice things in a single 10-ft.\\ squrae within 10 feet of you.
             You gain a +4 bonus to this check.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The bonus increases to +6.
             \\rank<5> The bonus increases to +8.
             \\rank<7> The bonus increases to +10.
@@ -37,8 +35,7 @@ chronomancy=MysticSphere(
             \\hit The target is \\glossterm<slowed> until it takes a \\glossterm<short rest>.
             \\glance As above, except that the effect is removed at the end of the next round.
             \\crit As above, except that the effect lasts until the curse is removed.
-
-            \\rankline
+        """, scaling="""
             You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 3.
         """, tags=['Curse']),
         Spell('Curse of Temporal Dislocation', 5, 'One creature within \\rngmed range', """
@@ -48,8 +45,7 @@ chronomancy=MysticSphere(
             This effect lasts until the target takes a \\glossterm<short rest>.
             \\glance As above, except that the effect is removed at the end of the next round.
             \\crit As above, except that the effect lasts until the curse is removed.
-
-            \\rankline
+        """, scaling="""
             You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 5.
         """, tags=['Curse']),
         Spell('Accelerated Timestream', 5, 'Everything within a \\areamed radius \\glossterm<zone> from your location', """
@@ -60,15 +56,13 @@ chronomancy=MysticSphere(
             It skips every other round, starting with the round after it becomes affected by this affect.
             In addition, it takes a -2 penalty to \\glossterm<accuracy> and \\glossterm<defenses> against creatures moving at normal speed.
             % No glance effect since idk what it should do
-
-            \\rankline
+        """, scaling="""
             You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 5.
         """, tags=[]),
         Spell('Slow', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<slowed> as a \\glossterm<condition>.
-
-            \\rankline
+        """, scaling="""
             You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 1.
         """, tags=[]),
         Spell('Decelerate', 7, 'One creature within \\rngmed range', """
@@ -80,32 +74,28 @@ chronomancy=MysticSphere(
             Make an attack vs. Mental against each target.
             \\hit Each target is \\glossterm<slowed> until the end of the next round.
             \\crit Each target is \\glossterm<slowed> as a \\glossterm<condition>.
-
-            \\rankline
+        """, scaling="""
             You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 3.
         """, tags=[]),
         Spell('Stutterstop', 2, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<slowed> as a \\glossterm<condition>.
             In addition, at the start of each round, it has a 50\\% chance to be \\glossterm<immobilized> during that round.
-
-            \\rankline
+        """, scaling="""
             You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 2.
         """, tags=[]),
         Spell('Mental Lag', 4, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<slowed> and \\glossterm<dazed> as a single \\glossterm<condition>.
             \\glance As above, except that the condition is removed at the end of the next round.
-
-            \\rankline
+        """, scaling="""
             You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 4.
         """, tags=[]),
         Spell('Haste', 1, 'Yourself', """
             The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<base speed>, up to a maximum of double its \\glossterm<base speed>.
 
             You can cast this spell as a \\glossterm<minor action>.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<5> The speed bonus increases to +20 feet.
             \\rank<7> The speed bonus increases to +30 feet.
@@ -113,8 +103,7 @@ chronomancy=MysticSphere(
         Spell('Accelerated Strike', 4, 'Yourself', """
             As a \\glossterm<minor action>, you can make a \\glossterm<strike> with a -2 penalty to \\glossterm<accuracy>.
             You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> The damage penalty is reduced to -1d.
         """, tags=['Attune (self)']),
         Spell('Temporal Duplicate', 5, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
@@ -130,8 +119,7 @@ chronomancy=MysticSphere(
             If this would reduce any of the target's resources below 0, it takes energy \\glossterm<standard damage> +4d from the paradox and becomes \\glossterm<stunned> as a \\glossterm<condition>.
 
             You can cast this spell as a \\glossterm<minor action>.
-
-            \\rankline
+        """, scaling="""
             \\rank<7> If you cast this spell as a standard action, you can choose to have the duplicate persist for two rounds instead of one.
                 If you do, the target disappears for two rounds at the same time as the duplicate.
         """, tags=[]),
@@ -145,16 +133,14 @@ chronomancy=MysticSphere(
             For example, if the location is occupied by a creature that walked into the area, the creature is relocated to the closest unoccupied space along the path it took to reach the target.
 
             You can cast this spell as a \\glossterm<minor action>.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> The maximum size of the target increases to Large.
             \\rank<6> The maximum size of the target increases to Huge.
             \\rank<8> The maximum size of the target increases to Gargantuan.
         """, tags=[]),
         Spell('Accelerated Reaction', 1, 'Yourself', """
             You gain a +2 \\glossterm<magic bonus> to Reflex defense and \\glossterm<initiative> checks.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<5> The bonuses increase to +3.
             \\rank<7> The bonuses increase to +4.
@@ -168,8 +154,7 @@ chronomancy=MysticSphere(
             If you use this ability on yourself, it instead lasts for a number of rounds you choose when you cast the spell, up to a maximum of five rounds.
 
             You can cast this spell as a \\glossterm<minor action>.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> The maximum size of the target increases to Large.
             \\rank<8> The maximum size of the target increases to Huge.
         """, tags=['Attune (self)']),
@@ -183,8 +168,7 @@ chronomancy=MysticSphere(
             This effect cannot restore \\glossterm<vital wounds>.
             This does not affect any other properties of the target, such as any resources expended.
             After you restore the target's state in this way, the spell ends.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> The restoration effect can also remove \\glossterm<vital wounds> gained since the target was locked.
         """, tags=['Sustain (minor)']),
         Spell('Time Stop', 7, 'Yourself', """
@@ -201,8 +185,7 @@ chronomancy=MysticSphere(
         Spell('Evasion', 4, 'Yourself', """
             You take half damage from abilities that affect an area.
             This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> You also gain a +2 \\glossterm<magic bonus> to Reflex defense.
         """, tags=['Attune (self)']),
         Spell('Greater Evasion', 7, 'Yourself', """
@@ -221,8 +204,7 @@ chronomancy=MysticSphere(
             These penalties are doubled if the target was already suffering age-related penalties.
             In addition, the target moves at half speed.
             \\glance As above, except that the condition is removed at the end of the next round.
-
-            \\rankline
+        """, scaling="""
             You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 5.
         """, tags=[]),
         Spell('Instant Analysis', 3, 'Yourself', """
@@ -235,8 +217,7 @@ chronomancy=MysticSphere(
             When this spell ends, time resumes in the same phase that it was originally frozen.
 
             After casting this spell, you cannot cast it again until you take a \\glossterm<short rest>.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> You can cast this spell as a \\glossterm<minor action>.
             \\rank<7> The length of frozen time increases to five minutes.
         """, tags=[]),
@@ -245,8 +226,7 @@ chronomancy=MysticSphere(
             Make an attack vs. Mental against the target.
             \\hit The target takes energy damage equal to 1d8 plus half your \\glossterm<power>.
             If it loses \\glossterm<hit points> from this damage, it is \\glossterm<slowed> as a \\glossterm<condition>.
-
-            \\rankline
+        """, scaling="""
             The damage increases by +1d for each rank beyond 1.
         """, tags=[]),
         Spell('Disjointed Deceleration', 4, 'target', """
@@ -255,8 +235,7 @@ chronomancy=MysticSphere(
             \\hit The target takes 2d6 energy damage.
             If it loses \\glossterm<hit points> from this damage, it is \\glossterm<decelerated> as a \\glossterm<condition>.
             \\glance As above, except that that the target takes half damage.
-
-            \\rankline
+        """, scaling="""
             The damage increases by +1d for each rank beyond 4.
         """, tags=[]),
     ],

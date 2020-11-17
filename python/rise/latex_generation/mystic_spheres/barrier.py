@@ -13,8 +13,7 @@ barrier=MysticSphere(
     cantrips=[
         Effects('Minor Barrier', None, """
             This cantrip functions like the \\spell<mystic barrier> spell, except that its \\glossterm<range> is \\rngclose and the maximum dimensions of the barrier are a 5 ft.\\ by 5 ft.\\ square.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The range increases to \\rngmed.
             \\rank<5> The maximum dimensions of the wall increase to a 5 ft.\\ by 10 ft.\\ rectangle.
             \\rank<7> The maximum dimensions of the wall increase to a 10 ft.\\ by 10 ft.\\ square.
@@ -27,8 +26,7 @@ barrier=MysticSphere(
             The barrier's defenses become equal to 5 + your level.
             Whenever a creature misses the barrier with a \\glossterm<mundane> attack, it makes the same attack against itself, rolling a new attack roll against its own defenses.
             In addition, the \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to three times your \\glossterm<power>.
-
-            \\rankline
+        """, scaling="""
             \\rank<6> The area increases to a \\arealarge line.
             \\rank<8> The \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to four times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
@@ -36,8 +34,7 @@ barrier=MysticSphere(
             This spell functions like the \\spell<mystic barrier> spell, except that you can choose the visibility of the barrier.
             There are three possibilities: fully invisible, barely visible like a normal \\spell<mystic barrier>, and visible as a deep black tht completely blocks sight.
             You can change the opacity of the barrier as a \\glossterm<minor action>.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> The \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to three times your \\glossterm<power>.
             \\rank<6> The area increases to a \\arealarge line.
             \\rank<8> The \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to four times your \\glossterm<power>.
@@ -48,8 +45,7 @@ barrier=MysticSphere(
             You can change how much the barrier blocks sound as a \\glossterm<minor action>.
             Exceptionally strong sounds, such as sonic attacks that deal energy damage, are blocked by the barrier like other damaging effects.
             In addition, the \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to three times your \\glossterm<power>.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> The \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to three times your \\glossterm<power>.
             \\rank<6> The area increases to a \\arealarge line.
             \\rank<8> The \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to four times your \\glossterm<power>.
@@ -60,8 +56,7 @@ barrier=MysticSphere(
             Any object destroyed in this way does not block the barrier's area of effect.
             This does no damage to creatures, who block the path of the barrier like normal.
             In addition, the \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to three times your \\glossterm<power>.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> The area increases to a \\arealarge line.
             \\rank<7> The \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to four times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
@@ -76,8 +71,7 @@ barrier=MysticSphere(
 
             When you cast this spell, you can \\glossterm<attune> to it.
             If you do, it gains the \\glossterm<Attune> (self) tag and loses the \\glossterm<Sustain> (minor) tag.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to three times your \\glossterm<power>.
             \\rank<5> The area increases to a \\arealarge line.
             \\rank<7> The \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to four times your \\glossterm<power>.
@@ -89,8 +83,7 @@ barrier=MysticSphere(
             The field is visible as a shimmering magical membrane that does not block sight.
             Nothing can pass through the field until it is destroyed.
             Each 5-ft.\\ square of the field has \\glossterm<hit points> equal to twice your \\glossterm<power>.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> The area increases to a \\arealarge line.
             \\rank<7> The area increases to be a \\areahuge, 20 ft.\\ wide line.
         """, tags=['Manifestation', 'Sustain (minor)']),
@@ -102,8 +95,7 @@ barrier=MysticSphere(
             Each 5-ft.\\ square of the field has \\glossterm<hit points> equal to twice your \\glossterm<power>.
 
             If another creature is in the target's space when this spell is cast, this spell fails without effect.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> The \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to three times your \\glossterm<power>.
             \\rank<5> The maximum size of the target increases to Huge.
             \\rank<7> The \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to four times your \\glossterm<power>.
@@ -113,8 +105,7 @@ barrier=MysticSphere(
             The opening mechanism must be Small or smaller in size.
             Nothing can pass through the field until it is destroyed.
             The field has \\glossterm<hit points> equal to twice your \\glossterm<power>.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> The \\glossterm<hit points> of the field increase to three times your \\glossterm<power>.
             \\rank<6> The \\glossterm<hit points> of the field increase to four times your \\glossterm<power>.
             \\rank<8> The \\glossterm<hit points> of the field increase to five times your \\glossterm<power>.
@@ -126,8 +117,7 @@ barrier=MysticSphere(
             This prevents the target from having \\glossterm<line of effect> to anything outside of the area.
             When you move, the sphere moves with you, though you cannot force it against another creature or object.
             Each 5-ft.\\ square of the field has \\glossterm<hit points> equal to three times your \\glossterm<power>.
-
-            \\rankline
+        """, scaling="""
             \\rank<7> The \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to four times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Entrapping Sphere', 5, 'One Large or smaller creature or object within \\rngmed range', """
@@ -139,15 +129,13 @@ barrier=MysticSphere(
             Each 5-ft.\\ square of the field has \\glossterm<hit points> equal to twice your \\glossterm<power>.
 
             If another creature is in the target's space when this spell is cast, this spell fails without effect.
-
-            \\rankline
+        """, scaling="""
             You gain a +1 bonus to \glossterm<accuracy> with the attack for each rank beyond 5.
         """, tags=['Manifestation', 'Sustain (standard)']),
         Spell('Invulnerable Barrier', 6, None, """
             This spell functions like the \\spell<mystic barrier> spell, except that each 5-ft.\\ square of wall has \\glossterm<hit points> equal to four times your \\glossterm<power>.
             In addition, the wall is \\glossterm<resistant> to physical damage.
-
-            \\rankline
+        """, scaling="""
             \\rank<8> The area increases to a \\arealarge line.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Wall of Energy Impedance', 3, None, """
@@ -155,8 +143,7 @@ barrier=MysticSphere(
             The wall is visible as a shimmering magical membrane that does not block sight.
             It does not impede passage for objects or creatures, but any ability that deals \\glossterm<energy damage> treats the wall as an impassable barrier.
             Each 5-ft.\\ square of wall has \\glossterm<hit points> equal to twice your \\glossterm<power>.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> The area increases to a \\arealarge line.
             \\rank<7> The \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to three times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
@@ -165,8 +152,7 @@ barrier=MysticSphere(
             The wall is visible as a shimmering magical membrane that does not block sight.
             It does not impede passage for objects or creatures, but any \\glossterm<magical> ability treats the wall as an impassable barrier.
             Each 5-ft.\\ square of wall has \\glossterm<hit points> equal to three times your \\glossterm<power>.
-
-            \\rankline
+        """, scaling="""
             \\rank<7> The area increases to a \\arealarge line.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('One-Way Barrier', 7, None, """
@@ -178,8 +164,7 @@ barrier=MysticSphere(
             The target gains a +2 \\glossterm<magic bonus> to its \\glossterm<resistance> against \\glossterm<physical> damage.
 
             You can cast this spell as a \\glossterm<minor action>.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             In addition, the bonus increases to +4.
             \\rank<5> The bonus increases to +8.
@@ -192,16 +177,14 @@ barrier=MysticSphere(
             Any effect which increases this spell's range increases the range of this effect by the same amount.
 
             You can cast this spell as a \\glossterm<minor action>.
-
-            \\rankline
+        """, scaling="""
             \\rank<7> The bonus increases to +16.
         """, tags=['Attune (self)']),
         Spell('Resist Energy', 1, 'Yourself', """
             The target gains a +2 \\glossterm<magic bonus> to its \\glossterm<resistance> against \\glossterm<energy> damage.
 
             You can cast this spell as a \\glossterm<minor action>.
-
-            \\rankline
+        """, scaling="""
             \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             In addition, the bonus increases to +4.
             \\rank<5> The bonus increases to +8.
@@ -209,8 +192,7 @@ barrier=MysticSphere(
         """, tags=['Attune (target)']),
         Spell('Universal Shield', 3, 'Yourself', """
             The target gains a +2 \\glossterm<magic bonus> to its \\glossterm<resistances> against both \\glossterm<physical damage> and \\glossterm<energy damage>.
-
-            \\rankline
+        """, scaling="""
             \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             In addition, the bonus increases to +4.
             \\rank<7> The bonus increases to +8.
@@ -222,24 +204,21 @@ barrier=MysticSphere(
             The rest of its movement in the current phase is cancelled.
 
             Creatures in the area at the time that the spell is cast are unaffected by the spell.
-
-            \\rankline
+        """, scaling="""
             You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 4.
         """, tags=['Sustain (minor)']),
         Spell('Energy Immunity', 5, 'Yourself', """
             Choose a subtype of \\glossterm<energy damage>: cold, electricity, fire, or sonic.
             You become immune to damage of the chosen type.
             Attacks that deal damage of multiple types still inflict damage normally unless you are immune to all types of damage dealt.
-
-            \\rankline
+        """, scaling="""
             \\rank<7> You may attune to this spell any number of times, choosing a different subtype of energy damage each time.
         """, tags=['Attune (self)']),
         Spell('Deflective Shield', 2, 'Yourself', """
             The target gains a +1 \\glossterm<magic bonus> to Armor defense and Reflex defense.
 
             You can cast this spell as a \\glossterm<minor action>.
-
-            \\rankline
+        """, scaling="""
             \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The bonus increases to +2.
         """, tags=['Attune (target)']),
@@ -251,8 +230,7 @@ barrier=MysticSphere(
             The rest of its movement in the current phase is cancelled.
 
             Creatures in the area at the time that the spell is cast are unaffected by the spell.
-
-            \\rankline
+        """, scaling="""
             You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 6.
         """, tags=['Sustain (minor)']),
     ],
