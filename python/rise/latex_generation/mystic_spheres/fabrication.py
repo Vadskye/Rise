@@ -152,8 +152,7 @@ fabrication=MysticSphere(
         Spell('Acid Breath', 4, 'Yourself (see text)', """
             As a standard action, you can breathe acid like a dragon.
             When you do, make an attack vs. Fortitude against everything in a \\arealarge cone from you.
-            % note +1d as part of spell effect as consolation prize for attunement
-            \\hit Each target takes acid damage equal to 2d10 plus half your \\glossterm<power>.
+            \\hit Each target takes acid damage equal to 2d8 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
 
             You can cast this spell as a \\glossterm<minor action>.

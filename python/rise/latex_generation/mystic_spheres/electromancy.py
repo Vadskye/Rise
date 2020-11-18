@@ -118,8 +118,7 @@ spells=[
     Spell('Lightning Breath', 4, 'Yourself (see text)', """
         As a standard action, you can breathe electricity like a dragon.
         When you do, make an attack vs. Reflex against everything within a \\arealarge cone.
-        % note +1d as part of spell effect as consolation prize for attunement
-        \\hit Each target takes electricity damage equal to 2d10 plus half your \\glossterm<power>.
+        \\hit Each target takes electricity damage equal to 2d8 plus half your \\glossterm<power>.
 
         You can cast this spell as a \\glossterm<minor action>.
     """, scaling="damage", tags=['Attune (self)']),
