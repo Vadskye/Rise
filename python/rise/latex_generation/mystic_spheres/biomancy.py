@@ -18,13 +18,15 @@ biomancy=MysticSphere(
             A third failed attack ends the poison.
             \\crit As above, except that target reaches the second \\glossterm<poison stage>, as normal for poisons.
         """, scaling="accuracy", tags=['Manifestation', 'Sustain (minor)']),
-        Spell('Poison -- Dragon Bile', 4, 'One living creature within \\rngmed range', """
+        Spell('Poison -- Dragon Bile', 3, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target becomes \\glossterm<poisoned> with dragon bile.
             At the end of each subsequent round, you repeat this attack, as normal for poisons.
-            For each \\glossterm<poison stage>, including the initial stage, the target loses \\glossterm<hit points> equal to 1d10 plus half your \\glossterm<power>.
+            For each \\glossterm<poison stage>, including the initial stage, the target loses 1d10 \\glossterm<hit points>.
             A third failed attack ends the poison.
-        """, scaling="accuracy", tags=[]),
+        """, scaling="""
+            The hit point loss from the poison increases by +1d for each rank beyond 3.
+        """, tags=[]),
         Spell('Neutralize Poison', 1, 'Yourself or one target within \\rngmed range', """
             The target gains an additional success to resist a poison currently affecting it (see \\pcref<Poison>).
         """, scaling="""
@@ -125,12 +127,13 @@ biomancy=MysticSphere(
             \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<7> The damage increases to \\glossterm<standard damage>.
         """, tags=['Attune (target)']),
-        Spell('Dragon Breath', 4, 'Yourself (see text)', """
+        # +1 level over other dragon breaths for damage choice, including both
+        # physical and energy
+        Spell('Dragon Breath', 5, 'Yourself (see text)', """
             You gain the ability to breath energy like a dragon.
             When you cast this spell, choose a type of damage: acid, cold, electricity, or fire.
             As a standard action, you can breath a cone of that type of energy.
             When you do, make an attack vs. Reflex against everything within a \\arealarge cone from you.
-            % note +1d as part of spell effect as consolation prize for attunement
             \\hit Each target takes damage of the chosen type equal to 2d10 plus half your \\glossterm<power>.
 
             You can cast this spell as a \\glossterm<minor action>.
@@ -179,13 +182,22 @@ biomancy=MysticSphere(
         """, tags=[]),
         Spell('Bleed', 1, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
-            \\hit The target takes 1d6 physical damage.
-            If it loses \\glossterm<hit points> from this damage, it begins bleeding as a \\glossterm<condition>.
-            At the end of each subsequent round, it takes 1d6 physical damage.
-            \\crit As above, except that that the target takes double damage from both the initial hit and the condition.
-        """, scaling="""
-            The damage dealt by both the initial hit and the condition increases by +1d for each rank beyond 1.
-        """, tags=[]),
+            \\hit The target begins bleeding as a \\glossterm<condition>.
+            At the end of each round, it takes 1d6 physical damage.
+            If the the target gains a \\glossterm<vital wound> from this damage, the condition ends.
+
+            This condition can be removed with the \\textit<treat condition> ability from the Medicine skill (see \\pcref<Medicine>).
+            The \\glossterm<difficulty rating> of the check is equal to 10.
+        """, scaling="damage", tags=[]),
+        Spell('Blood Fountain', 4, 'One living creature within \\rngmed range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit The target begins bleeding as a \\glossterm<condition>.
+            At the end of each round, it takes 2d6 physical damage.
+            If the the target gains a \\glossterm<vital wound> from this damage, the condition ends.
+
+            This condition can be removed with the \\textit<treat condition> ability from the Medicine skill (see \\pcref<Medicine>).
+            The \\glossterm<difficulty rating> of the check is equal to 20.
+        """, scaling="damage", tags=[]),
     ],
     rituals=[
         Spell('Awaken', 6, 'One Large or smaller \\glossterm<ally> within \\rngmed range', """
