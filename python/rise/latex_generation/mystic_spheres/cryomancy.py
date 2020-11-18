@@ -156,8 +156,7 @@ cryomancy=MysticSphere(
         Spell('Frost Breath', 4, 'Yourself', """
             As a standard action, you can breathe cold like a dragon.
             When you do, make an attack vs. Fortitude against everything in a \\arealarge cone.
-            % note +1d as part of spell effect as consolation prize for attunement
-            \\hit Each target takes cold damage equal to 2d10 plus half your \\glossterm<power>.
+            \\hit Each target takes cold damage equal to 2d8 plus half your \\glossterm<power>.
 
             You can cast this spell as a \\glossterm<minor action>.
         """, scaling="damage", tags=['Attune (self)']),

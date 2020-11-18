@@ -122,7 +122,7 @@ polymorph=MysticSphere(
         """, tags=['Attune (self)']),
         Spell('Spikeform', 3, ['Yourself', 'See text'], """
             You transform your body to have dangerous spikes.
-            At the end of each round, make an attack vs. Armor against each creature that either is \\glossterm<grappling> with you or that attacked you with a melee weapon that round.
+            At the end of each round, make an attack vs. Armor against each creature adjacent to you that either is \\glossterm<grappling> with you or that attacked you with a melee weapon that round.
             % full dice, but half power
             \\hit Each secondary target takes electricity damage equal to 2d8 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
