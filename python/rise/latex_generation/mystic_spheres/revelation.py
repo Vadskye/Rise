@@ -77,66 +77,52 @@ revelation=MysticSphere(
             Make an attack vs. Mental against the target.
             \\hit When you hear the target deliberately and knowingly speaks a lie, you know that the target was lying.
             This ability does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.
-        """, scaling="""
-            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<7> The accuracy bonus increases to +2.
-        """, tags=['Sustain (minor)', 'Detection']),
+        """, scaling="accuracy", tags=['Sustain (minor)', 'Detection']),
         Spell('Boon of Mastery', 4, 'Yourself', """
             You gain a +2 \\glossterm<magic bonus> to all skills.
         """, scaling="""
             \\rank<6> The bonus increases to +3.
             \\rank<8> The bonus increases to +4.
         """, tags=['Attune (self)']),
-        Spell('Boon of Many Eyes', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            The target reduces its \\glossterm<overwhelm penalties> by 2.
-        """, scaling="""
-            \\rank<5> The penalty reduction increases to 3.
-            \\rank<7> The penalty reduction increases to 4.
-        """, tags=['Attune (self)']),
+        # Spell('Boon of Many Eyes', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        #     The target reduces its \\glossterm<overwhelm penalties> by 2.
+        # """, scaling="""
+        #     \\rank<5> The penalty reduction increases to 3.
+        #     \\rank<7> The penalty reduction increases to 4.
+        # """, tags=['Attune (self)']),
         Spell('Boon of Knowledge', 4, 'Yourself', """
             You gain a +4 \\glossterm<magic bonus> to all Knowledge skills (see \\pcref<Knowledge>).
             In addition, once per hour you may reroll one Knowledge check you make and take the higher result.
         """, scaling="""
             \\rank<6> The bonus increases to +6.
-            \\rank<8> The bonus increases to +8.
         """, tags=['Attune (self)']),
         Spell('Third Eye', 4, 'Yourself', """
             You gain \\glossterm<blindsight> with a 50 foot range.
             This can allow it to see perfectly without any light, regardless of concealment or invisibility.
         """, scaling="""
             \\rank<6> The range increases to 100 feet.
-            \\rank<8> The range increases to 200 feet.
         """, tags=['Attune (self)']),
-        Spell('Reveal Weakness', 2, 'One creature within \\rngmed range', """
+        Spell('Reveal Weakness', 1, 'One creature within \\rngmed range', """
             When you cast this spell, choose one of the four defenses: Armor, Fortitude, Reflex, or Mental.
-            Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against the target.
             \\hit As a \\glossterm<condition>, the target's weaknesses are highlighted, and openings in its defenses are revealed to attackers moments before they exist.
             It takes a -2 penalty to the chosen defense.
             \\crit As above, except that the penalty is doubled.
-        """, scaling="""
-            \\rank<4> The accuracy bonus increases to +3.
-            \\rank<6> The accuracy bonus increases to +4.
-            \\rank<8> The accuracy bonus increases to +5.
-        """, tags=[]),
-        Spell('Reveal Vulnerability', 4, 'One creature within \\rngmed range', """
+        """, scaling="accuracy", tags=[]),
+        # TODO: figure out if this is balanced? it has a sort of arbitrary level
+        Spell('Reveal Vulnerability', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit As a \\glossterm<condition>, the target's vulnerabilities become clear for all to see.
-            Its \\glossterm<bleed resistance> is halved.
-            \\crit As above, except that the target's \\glossterm<vital resistance> is also halved.
-        """, scaling="""
-            \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<8> The accuracy bonus increases to +2.
-        """, tags=[]),
-        Spell('Myriad Visions', 1, 'One creature within \\rngmed range', """
+            Its \\glossterm<resistances> are reduced by an amount equal to your \\glossterm<power>.
+            When this effect ends, it regains resistances equal to the amount it lost this way.
+            \\glance As above, except that the condition is removed at the end of the next round.
+            \\crit As above, except that the reduction increases to twice your \\glossterm<power>.
+        """, scaling="accuracy", tags=[]),
+        Spell('Myriad Visions', 2, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target sees visions of possible futures that confuse its ability to determine reality.
             It is \\glossterm<dazzled> as a \\glossterm<condition>.
             \\crit The target is \\glossterm<blinded> as a \\glossterm<condition>.
-        """, scaling="""
-            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<5> The accuracy bonus increases to +2.
-            \\rank<7> The accuracy bonus increases to +3.
-        """, tags=[]),
+        """, scaling="accuracy", tags=[]),
         Spell('Stunning Truth', 5, 'One creature within \\rngmed range', """
             Choose a fact that you know and make an attack vs. Mental against the target.
             If the target does not already know that fact to be true or false,
@@ -146,9 +132,7 @@ revelation=MysticSphere(
             The fact does not have to be true to gain this bonus.
             \\hit The target's mind is overwhelmed by a total awareness of your chosen fact.
             It is \\glossterm<stunned> as a \\glossterm<condition>.
-        """, scaling="""
-            \\rank<7> The accuracy bonus increases to +3.
-        """, tags=[]),
+        """, scaling="accuracy", tags=[]),
         Spell('Alarm', 2, 'One unoccupied square within \\rngmed range', """
             A \\glossterm<scrying sensor> appears floating in the air in the target location.
             The sensor passively observes its surroundings.
@@ -212,10 +196,7 @@ revelation=MysticSphere(
             Whenever the target touches another creature, you can make an attack against the new creature.
             On a hit, the touched creature becomes the new target of this spell and the condition is transferred to it.
             On a miss, the condition remains on the previous creature.
-""", scaling="""
-            \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<8> The accuracy bonus increases to +2.
-        """, tags=['Sustain (standard)']),
+        """, scaling="accuracy", tags=['Sustain (standard)']),
         # spell to cast spells from the eye instead of from your body?
     ],
     rituals=[
