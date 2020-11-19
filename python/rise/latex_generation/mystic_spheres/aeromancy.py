@@ -76,7 +76,7 @@ aeromancy = MysticSphere(
             \\hit The target takes bludgeoning damage equal to 2d8 plus your \\glossterm<power>.
             \\glance As above, except that that the target takes half damage.
         """, scaling="damage", tags=[]),
-        Spell('Buffet', 2, 'One creature or object within \\rngmed range', """
+        Spell('Buffet', 2, 'One Large or smaller creature or object within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             % This is +1d over the normal damage to help split the difference since the effect isn't consistently t2 worthy.
             % Making this spell 2nd level also helps with the Dimensional Jaunt -- Plane of Air mirroring.
@@ -133,7 +133,7 @@ aeromancy = MysticSphere(
             \\hit Each struck target takes bludgeoning damage equal to 2d6 plus half your \\glossterm<power>.
             Any individual creature can only be dealt damage in this way once per round.
             \\glance As above, except that that each target takes half damage.
-""", scaling="damage", tags=['Attune (self)']),
+        """, scaling="damage", tags=['Attune (self)']),
         Spell('Air Walk', 6, 'Yourself', """
             You can walk on air as if it were solid ground as long as you are no more than 100 feet above solid ground.
             The magic only affects your legs and feet.
