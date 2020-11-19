@@ -36,7 +36,7 @@ upgrades for the same basic effect that push it in different directions.
 Class abilities like Sneak Attack or Smite need unusually powerful rank upgrade mechanics to
 compensate for their lack of replacement abilities.
 
-Debuff abilities get much better with higher tier conditions. It's hard to justify using a daze
+Debuff abilities get much better with higher tier debuffs. It's hard to justify using a daze
 effect with +1 accuracy when you could use a stun effect instead. For that reason, non-damaging
 debuffs get +1 accuracy per rank instead of a +1 accuracy per two levels scaling.
 
@@ -56,8 +56,8 @@ higher levels. Therefore, martial classes need to grant more static bonuses to d
 strikes and mundane abilities. That leaves relatively little room for rank upgrades to damaging
 maneuvers.
 
-#### Finisher condition scaling
-Strike-based abilities that inflict finisher conditions do not have explicit scaling, so they
+#### Finisher debuff scaling
+Strike-based abilities that inflict finisher debuffs do not have explicit scaling, so they
 implicitly scale their damage.
 Non-strike-based abilities that inflict finisher abilities don't really have any purpose to
 increasing their damage; that's not really the point of finisher abilities. Instead, they should
@@ -112,10 +112,10 @@ damage in general. In any case, there are some exceptions:
   them still useful against swarms of weak enemies. Therefore:
   * AOE damage effects should generally have accuracy penalties instead of damage penalties
   * AOE damage effects should generally gain damage bonuses instead of accuracy bonuses
-* For combination damage/condition effects, damage penalties still allow the condition to be
+* For combination damage/debuff effects, damage penalties still allow the debuff to be
   applied, while accuracy penalties make the whole ability likely to be useless. Therefore:
-  * Damage/condition effects should generally have damage penalties instead of accuracy penalties
-  * Damage/condition effects should generally have accuracy bonuses instead of damage bonuses
+  * Damage/debuff effects should generally have damage penalties instead of accuracy penalties
+  * Damage/debuff effects should generally have accuracy bonuses instead of damage bonuses
 
 ### Focus spells vs maneuvers
 
@@ -134,7 +134,7 @@ invests an insight point or two into healing spells.
 Non-choice effects should generally not have the Focus tag, because the total +4 level difference
 could give access to powerful abilities dangerously early for dedicated characters.
 
-### Condition ranks
+### Debuff ranks
 Note: This is duplicated in the Metacaster feat.
 
 * Rank 0
@@ -152,11 +152,6 @@ Note: This is duplicated in the Metacaster feat.
 * Rank 4
   * Generally cause complete action denial
   * List: Asleep, paralyzed
-
-#### End of next round effects
-
-A enemies-only rank 1 debuff until eonr with the same rank 1 condition on a crit
-is -4 ranks relative to a standard damage attack.
 
 ### Effect categories
 
@@ -194,7 +189,7 @@ situations.
       better at AOE. If the weapon damage dice were reduced but you still added full power, it would
       be worse for large weapons than for small weapons, which seems odd. Large weapons should
       generally be better for damage, including AOE, since small weapons are generally better for
-      applying conditions and special effects.
+      applying debuffs and special effects.
   * Low: (weapon damage dice -2d) + (half power)
 * Non-strike-based attacks:
   * High: (1d8 + 1d per rank) + (power)
@@ -211,18 +206,25 @@ have their own logic which may differ significantly from this.
 * Both strike-based and non-strike-based:
   * +0 levels: trade -1a for +1d or vice versa
   * +0 levels: trade -1a/-1d for minor benefit
+  * +0 level: add specific crit effect to non-damaging effect (min rank 2)
+    * The game plays better if critical effects are relatively common, but they are excluded from
+      rank 1 effects to minimize complexity at low levels.
+    * Standard crit effects include:
+      * +2 rank debuff that replaces existing debuff
+      * +1 rank debuff in addition to existing debuff, removed at the same time
+      * +0 rank debuff in addition to existing debuff, removed separately
   * +1 levels: +1a (non-damaging debuffs)
-  * +1 levels: convert condition to poison (including poison crit and +1r condition on third stage)
+  * +1 levels: convert condition to poison (including poison crit and +1r debuff on third stage)
   * +2 levels: +1 area size
   * +2 levels: +1a (damaging attacks, damaging debuffs)
   * +2 levels: +1d (above standard rank progression, if any)
   * +2 levels: convert condition to curse (including curse crit)
-  * +3 levels: +1 rank to condition
-  * +3 levels: Add additional condition of the same rank removed at the same time as existing condition
+  * +3 levels: +1 rank to debuff
+  * +3 levels: Add additional debuff of the same rank removed at the same time as existing debuff
   * +3 levels: increase one damage tier (low -> medium -> high); only for Finisher attacks
-  * +3 levels: add r1 condition on losing HP to a high damage attack
+  * +3 levels: add r1 debuff on losing HP to a high damage attack
 * Non-strikes only:
-  * +0 levels: add glancing blow mechanic
+  * +0 levels: add glancing blow mechanic (min rank 3)
     * Mathematically, this should be +2 levels to match +1 accuracy. However, at high levels the game
       plays better if this effect is common, so it's free.
     * This should not be found on spells below rank 3 to make sure the game plays differently at
@@ -230,11 +232,8 @@ have their own logic which may differ significantly from this.
   * +1 level: enemies only
     * This is free for abilities around self, because those abilities would otherwise be
       virtually useless
-  * +1 level: Add crit-only +2r condition that replaces existing condition
-  * +1 level: Add crit-only +1r condition in addition to existing condition
   * +1 level: +1 range increment (None to Close, Close to Med)
   * +1 level: Increase line width by 5'
-  * +1 level: Add additional -1r condition removed at the same time as existing condition
   * +1 level: convert ability to attunement, no-focus, no-component standard action
   * +2 levels: +1 range increment (for increasing higher than Medium)
 * Strikes only:
@@ -251,50 +250,50 @@ Rank 1 maneuver:
     * Make a strike against Fort/Ref defense
     * Make a strike with a highly circumstantial benefit (reroll miss chance)
   * Finisher:
-    * low damage, r1 condition if lose HP (note: this is 1 level too weak)
+    * low damage, r1 debuff condition if lose HP (note: this is 1 level too weak)
 
 Rank 1 Focus/non-upgrading, Rank 3 maneuver:
 * Strike-based:
   * Finisher:
-    * low damage, r2 condition if lose HP
+    * low damage, r2 debuff condition if lose HP
 * Non-strike-based:
   * Softener:
-    * Med range: r1 condition
-    * Enemies in Large cone from self: r1 eonr, condition on crit
-    * Enemies in Large line, 10' wide, from self: r1 eonr, condition on crit
-    * Enemies in Medium radius from self: r1 eonr, condition on crit
-    * Enemies in Small radius in Med range: r1 eonr, condition on crit
+    * Med range: r1 debuff condition
+    * Enemies in Large cone from self: r1 debuff eonr, condition on crit
+    * Enemies in Large line, 10' wide, from self: r1 debuff eonr, condition on crit
+    * Enemies in Medium radius from self: r1 debuff eonr, condition on crit
+    * Enemies in Small radius in Med range: r1 debuff eonr, condition on crit
   * Damage:
     * Med range: high damage
     * Med cone from self: medium damage
     * Med line, 10' wide, from self: medium damage
     * Enemies in small radius from self: medium damage
   * Finisher:
-    * Med range: low damage, r2 condition if lose HP
-    * Med cone from self: r2 condition if no resistances
-    * Med line, 10' wide, from self: r2 condition if no resistances
-    * Enemies in Small radius from self: r2 condition if no resistances
+    * Med range: low damage, r2 debuff condition if lose HP
+    * Med cone from self: r2 debuff condition if no resistances
+    * Med line, 10' wide, from self: r2 debuff condition if no resistances
+    * Enemies in Small radius from self: r2 debuff condition if no resistances
 
 ### Higher rank specific examples
 
 Rank 3 Focus/non-upgrading, Rank 5 maneuver:
 * Strike-based:
   * Finisher:
-    * low damage, r2 condition
+    * low damage, r2 debuff condition
 * Non-strike-based:
   * Softener:
     * r1 curse in medium range
-    * Small radius in Med range: r1 eonr, condition on crit
+    * Small radius in Med range: r1 debuff eonr, condition on crit
   * Damage:
     * Small radius in Med range: medium damage
   * Finisher:
-    * Small radius in Med range: r2 condition if no resistances
+    * Small radius in Med range: r2 debuff condition if no resistances
 
 Rank 4 Focus/non-upgrading, Rank 6 maneuver:
 * Softener:
-  * Med range: r2 condition in medium range
+  * Med range: r2 debuff condition in medium range
 * Finisher:
-  * Med range: high damage, r1 condition if lose HP
+  * Med range: high damage, r1 debuff condition if lose HP
 
 Rank 6 Focus/non-upgrading:
 * Softener:
@@ -303,7 +302,7 @@ Rank 6 Focus/non-upgrading:
 
 Rank 7 Focus/non-upgrading:
 * Finisher:
-  * Med range: high damage, r2 condition if lose HP
+  * Med range: high damage, r2 debuff condition if lose HP
 
 #### Old system; remove once everything has been moved over
 
