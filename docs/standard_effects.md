@@ -212,6 +212,7 @@ have their own logic which may differ significantly from this.
   * +0 levels: trade -1a for +1d or vice versa
   * +0 levels: trade -1a/-1d for minor benefit
   * +1 levels: +1a (non-damaging debuffs)
+  * +1 levels: convert condition to poison (including poison crit and +1r condition on third stage)
   * +2 levels: +1 area size
   * +2 levels: +1a (damaging attacks, damaging debuffs)
   * +2 levels: +1d (above standard rank progression, if any)
@@ -226,7 +227,7 @@ have their own logic which may differ significantly from this.
       plays better if this effect is common, so it's free.
     * This should not be found on spells below rank 3 to make sure the game plays differently at
       different levels, and to solve accuracy-related math.
-  * +1 levels: enemies only
+  * +1 level: enemies only
     * This is free for abilities around self, because those abilities would otherwise be
       virtually useless
   * +1 level: Add crit-only +2r condition that replaces existing condition
@@ -234,6 +235,7 @@ have their own logic which may differ significantly from this.
   * +1 level: +1 range increment (None to Close, Close to Med)
   * +1 level: Increase line width by 5'
   * +1 level: Add additional -1r condition removed at the same time as existing condition
+  * +1 level: convert ability to attunement, no-focus, no-component standard action
   * +2 levels: +1 range increment (for increasing higher than Medium)
 * Strikes only:
 
