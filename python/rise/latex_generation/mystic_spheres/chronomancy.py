@@ -87,10 +87,10 @@ chronomancy=MysticSphere(
             \\rank<7> The speed bonus increases to +30 feet.
         """, tags=['Attune (target)']),
         Spell('Accelerated Strike', 4, 'Yourself', """
-            As a \\glossterm<minor action>, you can make a \\glossterm<strike> with a -2 penalty to \\glossterm<accuracy>.
+            As a \\glossterm<minor action>, you can make a \\glossterm<strike> with a -3 penalty to \\glossterm<accuracy>.
             You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
         """, scaling="""
-            \\rank<6> The damage penalty is reduced to -1d.
+            \\rank<6> The accuracy penalty is reduced to -2.
         """, tags=['Attune (self)']),
         Spell('Temporal Duplicate', 5, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             You reach into a possible future and create a duplicate of the target.

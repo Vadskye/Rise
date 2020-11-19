@@ -157,7 +157,7 @@ pyromancy=MysticSphere(
             \\hit Each secondary target takes fire damage equal to 2d8 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Attune (self)']),
-        Spell('Flame Aura', 6, ['Yourself', 'Everything in a \\areasmall radius from you (see text)'], """
+        Spell('Flame Aura', 7, ['Yourself', 'Everything in a \\areasmall radius from you (see text)'], """
             Heat constantly radiates in a \\areasmall radius emanation from you.
             As a \\glossterm<minor action>, you can intensify the flames to make an attack vs. Fortitude against everything in the area.
             \\hit Each secondary target takes fire damage equal to 4d8 plus half your \\glossterm<power>.
