@@ -32,98 +32,84 @@ verdamancy=MysticSphere(
     ],
     lists=['Nature'],
     spells=[
-        Spell('Entangle', 3, 'One Large or smaller creature within \\rngclose range', """
+        Spell('Entangle', 2, 'One Large or smaller creature within \\rngmed range', """
             You cause plants to grow and trap a foe.
-            The target must be within 10 feet of unworked earth or plants.
             Make an attack vs. Reflex against the target.
             You gain a +2 bonus to \\glossterm<accuracy> with this attack if the target is in standing in \\glossterm<undergrowth>.
-            \\hit The target is \\glossterm<immobilized> as a \\glossterm<condition>.
-            This condition can be removed if the target or a creature that can reach the target makes a \\glossterm<difficulty rating> 10 Strength check to break the target free of the plants.
+            \\hit The target is \\glossterm<slowed> as a \\glossterm<condition>.
+            This condition can be removed if the target or a creature that can reach the target makes a \\glossterm<difficulty rating> 10 Strength check to break the target free of the plants around its body.
             The target can make this check as a \\glossterm<move action>, while other creatures can make the check as a standard action.
-        """, scaling="""
-            \\rank<5> The condition cannot be removed with a check.
-            \\rank<7> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-        """, tags=['Manifestation']),
-        Spell('Vine Whip', 1, 'One creature within \\rngmed range', """
-            The target must be within 30 feet of unworked earth or plants.
+            \\crit As above, except that the target also cannot move farther than 10 feet from its original location until it ends the effect.
+        """, scaling="accuracy", tags=['Manifestation']),
+        Spell('Vine Whip', 1, 'One creature within \\rngclose range', """
             Make an attack vs. Armor against the target.
             You gain a +2 bonus to \\glossterm<accuracy> with this attack if the target is in standing in \\glossterm<undergrowth>.
-            \\hit The target takes bludgeoning \\glossterm<standard damage> +1d.
-        """, scaling="""
-            \\rank<3> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +3d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +4d.
-        """, tags=['Manifestation']),
-        Spell('Strangling Vines', 6, 'One Large or smaller creature within \\rngclose range', """
-            The target must be within 10 feet of unworked earth or plants.
+            \\hit The target takes bludgeoning damage equal to 1d10 plus your \\glossterm<power>.
+        """, scaling="damage", tags=['Manifestation']),
+        Spell('Strangling Vines', 7, 'One Large or smaller creature within \\rngclose range', """
             Make an attack vs. Fortitude against the target.
             You gain a +2 bonus to \\glossterm<accuracy> with this attack if the target is in standing in \\glossterm<undergrowth>.
             \\hit The target is \\glossterm<immobilized> by a mass of vines as a \\glossterm<condition>.
-            In addition, it is unable to breathe, and it takes bludgeoning \\glossterm<standard damage> -3d at the end of each round.
-            This condition can be removed if the target or a creature that can reach the target makes a Strength check to break the target free of the vines.
-            The \\glossterm<difficulty rating> of the check is equal to your \\glossterm<power>.
+            In addition, it is unable to breathe.
+            This condition can be removed if the target or a creature that can reach the target makes a \\glossterm<difficulty rating> 15 Strength check to break the target free of the vines.
             The target can make this check as a \\glossterm<move action>, while other creatures can make the check as a standard action.
-        """, scaling="""
-            \\rank<8> The \\glossterm<difficulty rating> to escape the condition increases by 5.
         """, tags=['Manifestation']),
-        Spell('Vineburst', 1, '\\glossterm<Enemies> and objects in a \\areasmall radius from you', """
-            Make an attack vs. Armor against each target that is within 10 feet of unworked earth or plants..
+        Spell('Vineburst', 1, '\\glossterm<Enemies> in a \\areasmall radius from you', """
+            Make an attack vs. Armor against each target.
             You gain a +2 bonus to \\glossterm<accuracy> with this attack against targets standing in \\glossterm<undergrowth>.
-            \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
-        """, scaling="""
-            \\rank<3> The damage increases to \\glossterm<standard damage>.
-            \\rank<5> The damage increases to \\glossterm<standard damage> +1d.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +2d.
-        """, tags=['Manifestation']),
+            % -1d to compensate for +2a
+            \\hit Each target takes bludgeoning damage equal to 1d6 plus half your \\glossterm<power>.
+        """, scaling="damage", tags=['Manifestation']),
         Spell('Vine Tentacles', 2, 'Yourself', """
-            You grow vine tentacles from your body.
-            The tentacles grant you a slam \\glossterm<natural weapon> (see \\tref<Natural Weapons>).
-            The natural weapon deals +2d damage, as normal for a slam natural weapon.
-            The natural weapon has the Reach \\glossterm<weapon tag> and does not require a \\glossterm<free hand> to use (see \\pcref<Weapon Tags>).
+            You grow a massive vine tentacle from your body.
+            The tentacle grants you a slam \\glossterm<natural weapon> (see \\tref<Natural Weapons>).
+            The natural weapon deals 1d10 damage, as normal for a slam natural weapon.
+            In addition, it has the Reach \\glossterm<weapon tag> (see \\pcref<Weapon Tags>).
         """, scaling="""
-            \\rank<4> You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with attacks using the tentacles.
-            \\rank<6> You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with attacks using the tentacles.
-            \\rank<8> You gain a +5 bonus to \\glossterm<reach> with attacks using the tentacles.
+            \\rank<4> You gain a +5 foot bonus to \\glossterm<reach> with attacks using the tentacle.
+            \\rank<6> The bonus to reach increases to 10 feet.
         """, tags=['Attune (self)', 'Manifestation']),
-        Spell('Poison -- Nitharit', 1, 'One living creature within \\rngmed range', """
+        Spell('Poison -- Nitharit', 2, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
-            \\hit The target becomes \\glossterm<poisoned> with nitharit.
-            At the end of each subsequent round, you repeat this attack, as normal for poisons.
+            \\hit The target becomes \\glossterm<poisoned> by the first \\glossterm<poison stage> of nitharit.
+            At the end of each subsequent round, you repeat this attack, as normal for poisons (see \\pcref<Poison>).
             A creature poisoned by nitharit becomes \\glossterm<sickened> as long as it is poisoned.
-            A third successful attack causes the target to become \\glossterm<nauseated> as long as it is poisoned.
+            Reaching the third \\glossterm<poison stage> causes the target to become \\glossterm<nauseated> as long as it is poisoned.
             A third failed attack ends the poison.
+            \\crit As above, except that target immediately reaches the second \\glossterm<poison stage>, as normal for poisons.
+        """, scaling="accuracy", tags=['Manifestation']),
+        Spell('Poison -- Sassone Leaf', 1, 'One living creature within \\rngmed range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit The target becomes \\glossterm<poisoned> with sassone leaf.
+            At the end of each subsequent round, you repeat this attack, as normal for poisons.
+            For each \\glossterm<poison stage>, including the initial stage, the target loses 1d6 \\glossterm<hit points>.
+            Reaching the third \\glossterm<poison stage> ends the poison.
+            A third failed attack also ends the poison.
+            \\crit As above, except that target immediately reaches the second \\glossterm<poison stage>, as normal for poisons.
         """, scaling="""
-            \\rank<3> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<5> The accuracy bonus increases to +2.
-            \\rank<7> The accuracy bonus increases to +3.
-        """, tags=['Manifestation', 'Sustain (minor)']),
-        Spell('Poison -- Sassone Leaf', 2, 'One living creature within \\rngmed range', """
-            This spell functions like this \\spell<poison -- nitharit> spell, except that the target becomes poisoned with sassone leaf instead (see \\pcref<Poison>).
-            A creature poisoned by sassone leaf loses a \\glossterm<hit point> from each successful attack, including the first.
-            A third successful attack causes the target to lose an additional hit point and ends the poison.
-            A third failed attack ends the poison.
-        """, scaling="""
-            \\rank<4> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<6> The accuracy bonus increases to +2.
-            \\rank<8> The accuracy bonus increases to +3.
-        """, tags=[]),
+            The hit point loss from the poison increases by +1d for each rank beyond 1.
+        """, tags=['Manifestation']),
         Spell('Poison -- Arsenic', 3, 'One living creature within \\rngmed range', """
-            This spell functions like this \\spell<poison -- nitharit> spell, except that the target becomes poisoned with arsenic instead (see \\pcref<Poison>).
-            A creature poisoned by arsenic loses a \\glossterm<hit point> from each successful attack, including the first.
-            A third successful attack causes the target gain a \\glossterm<vital wound> and ends the poison.
-            A third failed attack ends the poison.
+            Make an attack vs. Fortitude against the target.
+            \\hit The target becomes \\glossterm<poisoned> with arsenic.
+            At the end of each subsequent round, you repeat this attack, as normal for poisons.
+            For each \\glossterm<poison stage>, including the initial stage, the target loses 1d10 \\glossterm<hit points>.
+            Reaching the third \\glossterm<poison stage> causes the target to gain a \\glossterm<vital wound> and ends the poison.
+            A third failed attack also ends the poison.
+            \\crit As above, except that target immediately reaches the second \\glossterm<poison stage>, as normal for poisons.
         """, scaling="""
-            \\rank<5> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<7> The accuracy bonus increases to +2.
-        """, tags=[]),
-        Spell('Poison -- Black Lotus', 4, 'One living creature within \\rngmed range', """
-            This spell functions like this \\spell<poison -- nitharit> spell, except that the target becomes poisoned with black lotus extract instead (see \\pcref<Poison>).
-            A creature poisoned by black lotus extract loses a \\glossterm<hit point> from each successful attack, including the first.
-            A third successful attack causes the target to gain a \\glossterm<vital wound>.
+            The hit point loss from the poison increases by +1d for each rank beyond 3.
+        """, tags=['Manifestation']),
+        Spell('Poison -- Black Lotus', 5, 'One living creature within \\rngmed range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit The target becomes \\glossterm<poisoned> with arsenic.
+            At the end of each subsequent round, you repeat this attack, as normal for poisons.
+            For each \\glossterm<poison stage>, including the initial stage, the target loses 2d8 \\glossterm<hit points>.
+            Reaching the third \\glossterm<poison stage> causes the target to gain a \\glossterm<vital wound>.
             A third failed attack ends the poison.
+            \\crit As above, except that target immediately reaches the second \\glossterm<poison stage>, as normal for poisons.
         """, scaling="""
-            \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<8> The accuracy bonus increases to +2.
+            The hit point loss from the poison increases by +1d for each rank beyond 5.
         """, tags=['Manifestation']),
         Spell('Herbal Antidote', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains an additional success to resist a poison currently affecting it (see \\pcref<Poison>).
@@ -139,29 +125,29 @@ verdamancy=MysticSphere(
         """, scaling="""
             \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             In addition, the bonus increases to +4.
-            \\rank<5> The bonus increases to be equal to half your \\glossterm<power>.
-            \\rank<7> The bonus increases to be equal to your \\glossterm<power>.
+            \\rank<5> The bonus increases to +8.
+            \\rank<7> The bonus increases to +16.
         """, tags=['Attune (target)']),
-        Spell('Embedded Growth', 4, 'One creature within \\rngclose range', """
+        Spell('Embedded Growth', 1, 'One creature within \\rngclose range', """
             You throw a seed that embeds itself in a foe and grows painfully.
             Make an attack vs. Fortitude against the target.
-            \\hit As a \\glossterm<condition>, the target takes physical \\glossterm<standard damage> at the end of each round.
-        """, scaling="""
-            \\rank<6> You gain a +1 bonus to \\glossterm<accuracy> with the attack.
-            \\rank<8> The accuracy bonus increases to +2.
-        """, tags=[]),
+            \\hit As a \\glossterm<condition>, the target takes 1d6 physical damage at the end of each round.
+            If the the target gains a \\glossterm<vital wound> from this damage, the condition ends.
+
+            This condition can be removed with the \\textit<treat condition> ability from the Medicine skill (see \\pcref<Medicine>).
+            The \\glossterm<difficulty rating> of the check is equal to 10.
+            \\crit As above, except that the damage from the condition is doubled.
+        """, scaling="damage", tags=[]),
         Spell('Fire Seeds', 3, 'One unattended acorn or similar seed structure you touch', """
             % Does "seed structure" make sense?
             You transform up to three unattended acorns or similar seed structures into small bombs.
-            As a standard action, you or another creature can throw the acorn anywhere within \\rngclose range.
+            As a standard action, you or another creature can throw the acorn up to 30 feet.
             % More accurate version: the acorn has a range increment of 10 feet to hit its target, but that accuracy roll is completely independent of the explosion.
             % Doesn't seem worth the complexity, and implicitly gives the fire seed surprisingly long range since objects are easy to hit.
             On impact, the acorn detonates, and you make an attack vs. Armor against everything within a \\areasmall radius of the struck creature or object.
-            \\hit Each target takes fire \\glossterm<standard damage> -1d.
-        """, scaling="""
-            \\rank<5> The damage increases to \\glossterm<standard damage>.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
-        """, tags=['Sustain (free)']),
+            \\hit Each target takes fire damage equal to 2d6 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
+        """, scaling="damage", tags=['Sustain (free)']),
         Spell('Wall of Thorns', 3, 'Each creature that moves through the area (see text)', """
             You create a wall of thorns in 20 ft.\\ high, \\areamed \\glossterm<wall> within \\rngmed range.
             The base of at least half of the wall must be in arable earth.
@@ -175,7 +161,7 @@ verdamancy=MysticSphere(
             Each five-foot square of wall has hit points equal to three times your \\glossterm<power>, and all of its defenses are 0.
             It is \\glossterm<vulnerable> to fire damage.
         """, scaling="""
-            \\rank<5> The area increases to a \\arealarge shapeable line.
+            \\rank<5> The area increases to a \\arealarge shapeable wall.
             \\rank<7> The damage increases to \\glossterm<standard damage>.
         """, tags=['Attune (self)']),
         Spell('Plant Growth', 2, 'All plants and arable earth in a \\areamed radius within \\rngmed range', """
@@ -188,19 +174,14 @@ verdamancy=MysticSphere(
             When this spell's duration ends, the plants return to their natural size.
         """, scaling="""
             \\rank<4> The area increases to a \\arealarge radius.
-            \\rank<6> The range increases to \\rnglong.
-            \\rank<8> The area increases to a \\areahuge radius.
+            \\rank<6> The area increases to a \\areahuge radius.
         """, tags=['Sustain (minor)']),
         Spell('Blight', 2, 'One living creature or plant within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             % TODO: is this the right damage type?
-            \\hit The target takes acid \\glossterm<standard damage> +1d.
+            \\hit The target takes acid damage equal to 2d6 plus your \\glossterm<power>.
             This damage is doubled if the target is a plant, including plant creatures.
-        """, scaling="""
-            \\rank<4> The damage increases to \\glossterm<standard damage> +2d.
-            \\rank<6> The damage increases to \\glossterm<standard damage> +3d.
-            \\rank<8> The damage increases to \\glossterm<standard damage> +4d.
-        """, tags=[]),
+        """, scaling="damage", tags=[]),
         Spell('Shillelagh', 1, 'One nonmagical stick of wood', """
             You transform the target into a club, greatclub, or quarterstaff, as you choose (see \\pcref<Weapons>).
             You cannot change the target's size by more than one size category.
@@ -225,11 +206,10 @@ verdamancy=MysticSphere(
             That prevents the vines from impeding your movement, though they do impede the movement of any other creatures that move simultaneously.
         """, scaling="""
             \\rank<6> The area increases to a \\arealarge radius.
-            \\rank<8> The area increases to a \\areahuge radius.
         """, tags=['Attune (self)']),
         Spell('Thornblade', 3, 'Yourself', """
             All damage the target deals with \\glossterm<strikes> becomes piercing damage in addition to the attack's normal damage types.
-            Whenever the target \\glossterm<wounds> a creature with a \\glossterm<strike>, thorns from the striking weapon enter the target's body.
+            Whenever the target causes a creature to lose \\glossterm<hit points> with a \\glossterm<strike>, thorns from the striking weapon enter the target's body.
             As a \\glossterm<condition>, the target unable to heal the \\glossterm<hit points> lost to the attack.
 
             This condition can be removed by the \\textit<treat condition> ability (see \\pcref<Treat Condition>).
