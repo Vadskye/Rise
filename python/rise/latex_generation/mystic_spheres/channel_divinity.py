@@ -149,7 +149,7 @@ channel_divinity=MysticSphere(
 
             You can cast this spell as a \\glossterm<minor action>.
         """, scaling="""
-            The bonus increases by 1 for each rank beyond 3.
+            The bonus increases by 1 for each rank beyond 1.
         """, tags=['Attune (self)']),
         Spell('Divine Offering', 6, 'Yourself', """
             When you cast this spell, you gain a \\glossterm<vital wound> that has no vital wound effect.
