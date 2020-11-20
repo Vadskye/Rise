@@ -112,7 +112,7 @@ enchantment=MysticSphere(
         # """, tags=['Compulsion']),
         Spell('Run', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Mental with a +4 bonus to \\glossterm<accuracy> against the target.
-            \\hit As a \\glossterm<condition>, the target must move its maximum movement speed in a straight line during each \\glossterm<movement phase>.
+            \\hit As a \\glossterm<condition>, the target must move a distance equal to its maximum movement speed in a straight line during each \\glossterm<movement phase>.
             It must use its movement mode with the highest speed to move this way.
             It is not required to use the \\textit<sprint> ability, or use any other special movement ability, though it may choose to do so.
             If it is unable to move its full speed without making a skill check or encountering a solid obstacle, it may choose to stop its movement after moving the maximum possible distance without doing so.
