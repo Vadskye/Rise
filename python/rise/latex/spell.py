@@ -48,12 +48,20 @@ class Spell(object):
             if (self.level < 6 and scaling is None):
                 logger.log(WARNING, f"Spell {self.name} is missing scaling rules")
 
-            if scaling and scaling not in ['accuracy', 'damage'] and 'for each rank' not in scaling:
-                # Make sure that the rank upgrades match the spell's rank 
-                if (self.level in [1, 3, 5] and 'rank<7>' not in scaling):
-                    logger.log(WARNING, f"Spell {self.name} has wrong rank upgrade pattern")
-                if (self.level in [2, 4] and 'rank<6>' not in scaling):
-                    logger.log(WARNING, f"Spell {self.name} has wrong rank upgrade pattern")
+            if self.level >= 3 and 'attack vs.' in effect_text and '\\glance' not in effect_text:
+                logger.log(WARNING, f"Spell {self.name} is missing glancing blow effect")
+
+            if scaling and scaling not in ['accuracy', 'damage']:
+                if 'for each rank' in scaling:
+                    # Make sure that the scaling starts from the spell's actual rank
+                    if f"for each rank beyond {self.level}" not in scaling:
+                        logger.log(WARNING, f"Spell {self.name} starts scaling from the wrong rank")
+                else:
+                    # Make sure that the custom rank upgrades match the spell's rank 
+                    if (self.level in [1, 3, 5] and 'rank<7>' not in scaling):
+                        logger.log(WARNING, f"Spell {self.name} has wrong rank upgrade pattern")
+                    if (self.level in [2, 4] and 'rank<6>' not in scaling):
+                        logger.log(WARNING, f"Spell {self.name} has wrong rank upgrade pattern")
 
             if scaling and 'rank<8>' in scaling:
                 logger.log(WARNING, f"Spell {self.name} has rank 8 upgrade")
