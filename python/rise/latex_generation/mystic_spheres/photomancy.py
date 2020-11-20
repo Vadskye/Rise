@@ -51,11 +51,12 @@ photomancy=MysticSphere(
             \\hit The target is \\glossterm<dazzled> as a \\glossterm<condition>.
             \\crit The target is \\glossterm<blinded> as a \\glossterm<condition>.
         """, scaling="accuracy", tags=['Sensation', 'Visual']),
-        Spell('Blinding Flash', 7, 'One creature within \\rngmed range', """
+        Spell('Blinding Flash', 7, 'One creature within \\rngclose range', """
             A burst of light flashes in front of a creature's eyes.
             \\glossterm<Bright illumination> fills a 50 foot radius around a location in the target's space until the end of the next round.
             In addition, make an attack vs. Fortitude against the target.
             \\hit The target is \\glossterm<blinded> as a \\glossterm<condition>.
+            \\crit As above, except that the condition must be removed twice before the effect ends.
         """, tags=['Sensation', 'Visual']),
         Spell('Searing Light', 1, 'One creature within \\rngmed range', """
             A ray of light flashes between you and the target.

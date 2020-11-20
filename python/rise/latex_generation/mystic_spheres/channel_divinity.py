@@ -65,9 +65,10 @@ channel_divinity=MysticSphere(
             \\hit The target is takes 1d6 energy damage.
             If it loses \\glossterm<hit points> from this damage, it is \\glossterm<stunned> as a \\glossterm<condition>.
         """, scaling="damage", tags=[]),
-        Spell('Glimpse of Divinity', 1, 'One creature within \\rngmed range', """
+        Spell('Glimpse of Divinity', 2, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<dazzled> as a \\glossterm<condition>.
+            \\crit The target is \\glossterm<dazzled> and \\glossterm<dazed> as a single \\glossterm<condition>.
         """, scaling="accuracy", tags=[]),
         Spell('Fear of the Divine', 5, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
@@ -76,7 +77,7 @@ channel_divinity=MysticSphere(
             \\crit The target is \\glossterm<panicked> by you as a \\glossterm<condition>.
         """, scaling="accuracy", tags=[]),
         Spell('Judge Unworthy', 2, 'One creature within \\rngmed range', """
-            Make an attack vs. Mental with a +2 bonus against the target.
+            Make an attack vs. Mental with a +3 bonus against the target.
             \\hit As a \\glossterm<condition>, the target takes a -2 penalty to Mental defense.
             \\crit As above, except that the penalty increases to -5.
         """, scaling="accuracy", tags=[]),
@@ -108,12 +109,16 @@ channel_divinity=MysticSphere(
         """, scaling="""
             \\rank<6> You can increase your size by two size categories instead of one.
         """, tags=['Attune (self)']),
-        Spell('Divine Presence', 4, '\\glossterm<Enemies> in the area (see text)', """
+        Spell('Divine Presence', 3, '\\glossterm<Enemies> in the area (see text)', """
             You radiate an aura in a \\areasmall radius \\glossterm<emanation> from you that invokes a fear of your divine connection.
             When you attune to this spell, and during each \\glossterm<action phase> in subsequent rounds, make an attack vs. Mental against each target.
             After you attack a creature this way, it becomes immune to this ability from you until it takes a \\glossterm<short rest>.
-            \\hit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
+            \\hit Each target is \\glossterm<shaken> by you until the end of the next round.
+            \\crit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
         """, scaling="accuracy", tags=['Attune (self)', 'Emotion']),
+        Spell('Divine Eminence', 7, '\\glossterm<Enemies> in the area (see text)', """
+            This spell functions like the \\textit<divine presence> spell, except that the area increases to a \\arealarge radius \\glossterm<emanation> from you.
+        """, tags=['Attune (self)', 'Emotion']),
         Spell('Faithful Endurance', 3, 'Yourself', """
             You gain a +1 \\glossterm<magic bonus> to \\glossterm<vital rolls> (see \\pcref<Vital Rolls>).
 

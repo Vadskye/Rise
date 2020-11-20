@@ -151,13 +151,14 @@ polymorph=MysticSphere(
             \\rank<5> The bonus increases to +5.
             \\rank<7> The bonus increases to +7.
         """, tags=['Attune (target)']),
-        Spell('Sludgeform', 7, 'One creature within \\rngmed range', """
+        Spell('Sludgeform', 7, 'One creature within \\rngclose range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target takes 4d6 physical damage.
             If it loses \\glossterm<hit points> from this damage, its physical form loses coherence and partially collapses into a sludgelike mass as a \\glossterm<condition>.
             It has no \\glossterm<free hands>, causing it to drop anything it is holding and making it unable to take any actions that require free hands.
             Its speed with all of its \\glossterm<mundane> movement modes are reduced to one quarter normal.
             It is also unable to speak normally or use verbal or somatic \\glossterm<components>.
+            \\crit As above, except that the condition must be removed twice before the effect ends.
         """, tags=[]),
     ],
     rituals=[

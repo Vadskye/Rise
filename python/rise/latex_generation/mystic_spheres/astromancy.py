@@ -65,7 +65,8 @@ astromancy=MysticSphere(
             \\glance As above, except that the effect is removed at the end of the next round.
             \\crit As above, except that the effect lasts until the curse is removed.
         """, tags=['Curse']),
-        Spell('Curse of Stagnancy', 8, 'One creature within \\rngmed range', """
+        # treat this as r2; it's similar to immobilized, but harder to cheese
+        Spell('Curse of Stagnancy', 7, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit At the end of each round, the target teleports back to the location it was in
             when this spell was cast.

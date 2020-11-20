@@ -58,6 +58,9 @@ class Spell(object):
             if scaling and 'rank<8>' in scaling:
                 logger.log(WARNING, f"Spell {self.name} has rank 8 upgrade")
 
+        if 'attack vs. ' in effect_text and not ('\\crit' in effect_text or 'damage' in effect_text):
+            logger.log(WARNING, f"Spell {self.name} is missing a critical effect")
+
     def ritual_time_text(self):
         if self.ritual_time == 'special' or not self.ritual_time:
             return ''

@@ -61,20 +61,15 @@ aquamancy=MysticSphere(
             \\crit As above, except that the effect is a \\glossterm<condition> instead of lasting until the end of the next round.
         """, scaling="accuracy", tags=['Manifestation']),
         # fighting underwater is slightly more detrimental than the standard
-        # rank 2 condition, but Large or smaller is a significant restriction,
-        # so this stays +0
-        Spell('Constraining Bubble', 4, 'One Large or smaller creature within \\rngmed range', """
+        # rank 2 condition, but Large or smaller is a significant restriction
+        # and the crit effect is irrelevant in many fights, so this stays +0
+        Spell('Constraining Bubble', 5, 'One Large or smaller creature within \\rngmed range', """
             Make an attack vs. Reflex against the target.
             \\hit As a \\glossterm<condition>, the majority of the target's body is surrounded by a layer of water.
             This does not impede the target's ability to breathe, but it takes penalties as if it was fighting underwater (see \\pcref<Underwater Combat>).
             \\glance As above, except that the condition is removed at the end of the next round.
-        """, scaling="accuracy", tags=['Manifestation']),
-        Spell('Drowning Bubble', 6, 'One creature within \\rngmed range', """
-            Make an attack vs. Reflex against the target.
-            \\hit As a \\glossterm<condition>, the majority of the target's body is surrounded by a layer of water.
-            It takes penalties as if it was fighting underwater (see \\pcref<Underwater Combat>).
-            In addition, it is unable to breathe air, though it can try to breathe the water surrounding it.
-            \\glance As above, except that the condition is removed at the end of the next round.
+            \\crit As above, except that the water also covers the target's face.
+            This does not meaningfully impede its sight, but it prevents it from breathing anything other than the water.
         """, scaling="accuracy", tags=['Manifestation']),
         Spell('Crushing Wave', 1, 'Everything in a \\areamed, 10 ft.\\ wide line from you', """
             Make an attack vs. Reflex against each target.

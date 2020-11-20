@@ -77,7 +77,7 @@ pyromancy=MysticSphere(
             Make an attack vs. Reflex against each target.
             \\hit Each target takes fire damage equal to 1d8 plus half your \\glossterm<power>.
         """, scaling="damage", tags=[]),
-        Spell('Ignition', 1, 'One creature within \\rngmed range', f"""
+        Spell('Ignition', 2, 'One creature within \\rngmed range', f"""
             Make an attack vs. Fortitude against the target.
             \\hit The target is ignited as a \\glossterm<condition>.
             At the end of each round, it takes 1d6 fire damage.
@@ -85,8 +85,9 @@ pyromancy=MysticSphere(
 
             This condition can be removed if the target makes a \\glossterm<difficulty rating> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
             Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
+            \\crit As above, except that the damage from the condition is doubled.
         """, scaling="damage", tags=[]),
-        Spell('Persistent Ignition', 4, 'One creature within \\rngmed range', f"""
+        Spell('Persistent Ignition', 5, 'One creature within \\rngmed range', f"""
             Make an attack vs. Fortitude against the target.
             \\hit The target is ignited as a \\glossterm<condition>.
             At the end of each round, it takes 2d6 fire damage.
@@ -95,6 +96,7 @@ pyromancy=MysticSphere(
             This condition can be removed if the target makes a \\glossterm<difficulty rating> 15 Dexterity check as a \\glossterm<move action> to put out the flames.
             Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
             \\glance As above, except that the condition is removed at the end of the next round.
+            \\crit As above, except that the damage from the condition is doubled.
         """, scaling="damage", tags=[]),
         Spell('Combustion', 2, 'One creature within \\rngclose range', """
             You set the target on fire from the inside out.

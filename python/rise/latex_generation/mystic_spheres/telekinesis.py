@@ -41,6 +41,7 @@ telekinesis=MysticSphere(
             \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<7> The bonus to \\glossterm<reach> increases to +10 feet.
         """, tags=['Attune (target)']),
+        # extra strong crit, but Large or smaller, so it sort of cancels out?
         Spell('Kinetic Impedance', 2, 'One Large or smaller target within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<slowed> as a \\glossterm<condition>.

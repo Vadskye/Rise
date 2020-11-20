@@ -53,29 +53,34 @@ chronomancy=MysticSphere(
             In addition, it takes a -2 penalty to \\glossterm<accuracy> and \\glossterm<defenses> against creatures moving at normal speed.
             % No glance effect since idk what it should do
         """, scaling="accuracy", tags=[]),
-        Spell('Slow', 1, 'One creature within \\rngmed range', """
+        Spell('Slow', 1, 'One creature within \\rngclose range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<slowed> as a \\glossterm<condition>.
+            \\crit As above, except that the condition must be removed twice before the effect ends.
         """, scaling="accuracy", tags=[]),
-        Spell('Decelerate', 7, 'One creature within \\rngmed range', """
+        Spell('Decelerate', 7, 'One creature within \\rngclose range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<decelerated> as a \\glossterm<condition>.
             \\glance As above, except that the condition is removed at the end of the next round.
+            \\crit As above, except that the condition must be removed twice before the effect ends.
         """, tags=[]),
         Spell('Mass Slow', 3, '\\glossterm<Enemies> in a \\areamed radius within \\rngmed range', """
             Make an attack vs. Mental against each target.
             \\hit Each target is \\glossterm<slowed> until the end of the next round.
             \\crit Each target is \\glossterm<slowed> as a \\glossterm<condition>.
         """, scaling="accuracy", tags=[]),
-        Spell('Stutterstop', 2, 'One creature within \\rngmed range', """
+        Spell('Stutterstop', 5, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
-            \\hit The target is \\glossterm<slowed> as a \\glossterm<condition>.
-            In addition, at the start of each round, it has a 50\\% chance to be \\glossterm<immobilized> during that round.
+            \\hit As a \\glossterm<condition>, the target is \\glossterm<slowed> and randomly \\glossterm<immobilized>.
+            At the start of each round, it has a 50\\% chance to be \\glossterm<immobilized> during that round.
+            \\glance As above, except that the condition is removed at the end of the next round.
+            \\crit The target is \\glossterm<slowed> and \\glossterm<immobilized> as a single condition.
         """, scaling="accuracy", tags=[]),
-        Spell('Mental Lag', 4, 'One creature within \\rngmed range', """
+        Spell('Mental Lag', 4, 'One creature within \\rngclose range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<slowed> and \\glossterm<dazed> as a single \\glossterm<condition>.
             \\glance As above, except that the condition is removed at the end of the next round.
+            \\crit The target is \\glossterm<slowed> and \\glossterm<stunned> as a single \\glossterm<condition>.
         """, scaling="accuracy", tags=[]),
         Spell('Haste', 1, 'Yourself', """
             The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<base speed>, up to a maximum of double its \\glossterm<base speed>.
@@ -183,13 +188,14 @@ chronomancy=MysticSphere(
             You cannot take the same minor action twice in the same round.
         """, tags=['Attune (self)']),
         # This is sort of a tier 2.5 condition
-        Spell('Accelerate Aging', 5, 'One creature within \\rngclose range', """
+        Spell('Accelerate Aging', 6, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit As a \\glossterm<condition>, the target's body temporarily ages to become extremely old.
             The target suffers a -4 penalty to \\glossterm<accuracy>, \\glossterm<checks>, Armor defense, Fortitude defense, and Reflex defense.
             These penalties are doubled if the target was already suffering age-related penalties.
             In addition, the target moves at half speed.
             \\glance As above, except that the condition is removed at the end of the next round.
+            \\crit As above, except that the penalties increase to -6, and the target moves at one quarter speed.
         """, scaling="accuracy", tags=[]),
         Spell('Instant Analysis', 3, 'Yourself', """
             You accelerate your mind to incredible speed, allowing you to process information quickly.
@@ -212,7 +218,7 @@ chronomancy=MysticSphere(
             If it loses \\glossterm<hit points> from this damage, it is \\glossterm<slowed> as a \\glossterm<condition>.
         """, scaling="damage", tags=[]),
         Spell('Disjointed Deceleration', 4, 'target', """
-            You wildly and inconsistently decelerate time within the target's body, weaponizing the accidental mishaps of inexperienced chronomancers.
+            You wildly and inconsistently decelerate time within the target's body, weaponizing the accidental mishaps of dangerously inexperienced chronomancers.
             Make an attack vs. Mental against the target.
             \\hit The target takes 2d6 energy damage.
             If it loses \\glossterm<hit points> from this damage, it is \\glossterm<decelerated> as a \\glossterm<condition>.

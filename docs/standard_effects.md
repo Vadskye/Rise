@@ -206,23 +206,23 @@ have their own logic which may differ significantly from this.
 * Both strike-based and non-strike-based:
   * +0 levels: trade -1a for +1d or vice versa
   * +0 levels: trade -1a/-1d for minor benefit
-  * +0 level: add specific crit effect to non-damaging effect (min rank 2)
-    * The game plays better if critical effects are relatively common, but they are excluded from
-      rank 1 effects to minimize complexity at low levels.
-    * Standard crit effects include:
-      * +2 rank debuff that replaces existing debuff
-      * +1 rank debuff in addition to existing debuff, removed at the same time
-      * +0 rank debuff in addition to existing debuff, removed separately
+  * +0 level: add specific crit effect to non-damaging effect; standard crit effects:
+    * +1 rank debuff that replaces existing debuff
+    * +0 rank debuff in addition to existing debuff, removed at the same time
+    * condition must be removed twice before it is gone
   * +1 levels: +1a (non-damaging debuffs)
   * +1 levels: convert condition to poison (including poison crit and +1r debuff on third stage)
+  * +1 level: convert condition to curse (including replacing crit effect)
+    * It's possible that this should be +2 levels, but the curse crit effect is worse than a
+      standard crit effect, so it might also be fine
   * +2 levels: +1 area size
   * +2 levels: +1a (damaging attacks, damaging debuffs)
   * +2 levels: +1d (above standard rank progression, if any)
-  * +2 levels: convert condition to curse (including curse crit)
   * +3 levels: +1 rank to debuff
   * +3 levels: Add additional debuff of the same rank removed at the same time as existing debuff
   * +3 levels: increase one damage tier (low -> medium -> high); only for Finisher attacks
   * +3 levels: add r1 debuff on losing HP to a high damage attack
+  * +4 levels: convert eonr area debuff to attuned autoattack with repeat immunity (Divine Presence)
 * Non-strikes only:
   * +0 levels: add glancing blow mechanic (min rank 3)
     * Mathematically, this should be +2 levels to match +1 accuracy. However, at high levels the game
@@ -258,7 +258,7 @@ Rank 1 Focus/non-upgrading, Rank 3 maneuver:
     * low damage, r2 debuff condition if lose HP
 * Non-strike-based:
   * Softener:
-    * Med range: r1 debuff condition
+    * *Close* range: r1 debuff condition + crit effect
     * Enemies in Large cone from self: r1 debuff eonr, condition on crit
     * Enemies in Large line, 10' wide, from self: r1 debuff eonr, condition on crit
     * Enemies in Medium radius from self: r1 debuff eonr, condition on crit
@@ -270,9 +270,9 @@ Rank 1 Focus/non-upgrading, Rank 3 maneuver:
     * Enemies in small radius from self: medium damage
   * Finisher:
     * Med range: low damage, r2 debuff condition if lose HP
-    * Med cone from self: r2 debuff condition if no resistances
-    * Med line, 10' wide, from self: r2 debuff condition if no resistances
-    * Enemies in Small radius from self: r2 debuff condition if no resistances
+    * Med cone from self: r2 debuff condition if no resistances + crit effect
+    * Med line, 10' wide, from self: r2 debuff condition if no resistances + crit effect
+    * Enemies in Small radius from self: r2 debuff condition if no resistances + crit effect
 
 ### Higher rank specific examples
 

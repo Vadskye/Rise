@@ -102,14 +102,14 @@ revelation=MysticSphere(
         """, scaling="""
             \\rank<6> The range increases to 100 feet.
         """, tags=['Attune (self)']),
-        Spell('Reveal Weakness', 1, 'One creature within \\rngmed range', """
+        Spell('Reveal Weakness', 2, 'One creature within \\rngmed range', """
             When you cast this spell, choose one of the four defenses: Armor, Fortitude, Reflex, or Mental.
             \\hit As a \\glossterm<condition>, the target's weaknesses are highlighted, and openings in its defenses are revealed to attackers moments before they exist.
             It takes a -2 penalty to the chosen defense.
             \\crit As above, except that the penalty is doubled.
         """, scaling="accuracy", tags=[]),
         # TODO: figure out if this is balanced? it has a sort of arbitrary level
-        Spell('Reveal Vulnerability', 3, 'One creature within \\rngmed range', """
+        Spell('Reveal Vulnerability', 4, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit As a \\glossterm<condition>, the target's vulnerabilities become clear for all to see.
             Its \\glossterm<resistances> are reduced by an amount equal to your \\glossterm<power>.
@@ -123,7 +123,7 @@ revelation=MysticSphere(
             It is \\glossterm<dazzled> as a \\glossterm<condition>.
             \\crit The target is \\glossterm<blinded> as a \\glossterm<condition>.
         """, scaling="accuracy", tags=[]),
-        Spell('Stunning Truth', 5, 'One creature within \\rngmed range', """
+        Spell('Stunning Truth', 6, 'One creature within \\rngmed range', """
             Choose a fact that you know and make an attack vs. Mental against the target.
             If the target does not already know that fact to be true or false,
                 and the target has sufficient cognitive ability to understand the fact,
@@ -132,6 +132,7 @@ revelation=MysticSphere(
             The fact does not have to be true to gain this bonus.
             \\hit The target's mind is overwhelmed by a total awareness of your chosen fact.
             It is \\glossterm<stunned> as a \\glossterm<condition>.
+            \\crit As above, except that the condition must be removed twice before the effect ends.
         """, scaling="accuracy", tags=[]),
         Spell('Alarm', 2, 'One unoccupied square within \\rngmed range', """
             A \\glossterm<scrying sensor> appears floating in the air in the target location.
