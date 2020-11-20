@@ -178,10 +178,11 @@ aeromancy = MysticSphere(
             \\hit The target drops all items it has that are not well secured (such as a ring) or held in a hand.
             \\crit As above, except that the target also drops items that are held in a single hand.
         """, scaling="accuracy", tags=[]),
+        # +1 levels for avoidable damage plus size limit
         Spell('Windseal', 3, 'One Large or smaller creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit As a \\glossterm<condition>, the target is \\glossterm<slowed> by incredibly fast winds that inhibit movement.
-            At the end of each phase, if it moved during that phase, it takes bludgeoning damage equal to 2d8 plus half your \\glossterm<power>
+            At the end of each phase, if it moved during that phase, it takes bludgeoning damage equal to 2d8 plus half your \\glossterm<power>.
             \\crit As above, except that that the target takes double damage.
             \\glance As above, except that that the target takes half damage.
         """, scaling="damage", tags=[]),
@@ -195,11 +196,12 @@ aeromancy = MysticSphere(
             \\hit Each target is \\glossterm<blinded> until the end of the next round.
             \\crit Each target is \\glossterm<blinded> as a \\glossterm<condition>.
         """, tags=[]),
-        Spell('Dustblind', 6, 'One creature within \\rngmed range', """
+        Spell('Dustblind', 6, 'One creature within \\rngclose range', """
             If there is no dirt, dust, or collection of loose objects of similar size within 30 foot \\glossterm<range> of the target's eyes, this spell is \\glossterm<miscast>.
             Make an attack vs. Reflex against the target.
             \\hit The target is \\glossterm<blinded> as a \\glossterm<condition>.
             \\glance As above, except that the condition is removed at the end of the next round.
+            \\crit As above, except that the condition must be removed twice before the effect ends.
         """, scaling="accuracy", tags=[]),
         Spell('Piercing Wind', 3, 'One creature or object within \\rngmed range', """
             A rush of wind flows rapidly through the gaps in your foe's armor to pierce its heart.

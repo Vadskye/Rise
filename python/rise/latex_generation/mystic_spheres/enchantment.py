@@ -47,7 +47,7 @@ enchantment=MysticSphere(
             This does not control what it talks about, so a reasonably savvy creature may be able to avoid revealing anything of great interest.
             In combat, most creatures with an intelligence of 0 or less will often talk about what they are planning on doing, which can help you predict their actions.
         """, scaling="accuracy", tags=['Compulsion']),
-        Spell('Dance', 1, 'One creature within \\rngmed range', """
+        Spell('Dance', 2, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit As a \\glossterm<condition>, the target is compelled to dance.
             It can spend a \\glossterm<move action> to dance, if it is physically capable of dancing.
@@ -61,37 +61,41 @@ enchantment=MysticSphere(
             \\crit As above, and as a \\glossterm<condition>, each target is unable to stand up.
             If a target is somehow brought into a standing position, it will immediately fall and become prone again.
         """, scaling="accuracy", tags=['Compulsion']),
-        Spell('Slow Down', 1, 'One creature within \\rngmed range', """
+        Spell('Slow Down', 1, 'One creature within \\rngclose range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<slowed> as a \\glossterm<condition>.
+            \\crit As above, except that the condition must be removed twice before the effect ends.
         """, scaling="accuracy", tags=['Compulsion']),
         Spell('Mass Slow Down', 3, '\\glossterm<Enemies> in a \\areamed radius within \\rngmed range', """
             Make an attack vs. Mental against each target.
             \\hit Each target is \\glossterm<slowed> until the end of the next round.
             \\crit Each target is \\glossterm<slowed> as a \\glossterm<condition>.
         """, scaling="accuracy", tags=[]),
-        Spell('Stop Moving', 7, 'One creature within \\rngmed range', """
+        Spell('Stop Moving', 7, 'One creature within \\rngclose range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<immobilized> as a \\glossterm<condition>.
             \\glance As above, except that the condition is removed at the end of the next round.
+            \\crit The target is \\glossterm<paralyzed> as a \\glossterm<condition>.
         """, tags=[]),
-        Spell('Confusion', 6, 'One creature within \\rngclose range', """
-            Make an attack vs. Mental against the target.
-            \\hit The target is \\confused as a \\glossterm<condition>.
-            \\glance As above, except that the condition is removed at the end of the next round.
-        """, scaling="accuracy", tags=['Compulsion']),
-        Spell('Mass Confusion', 7, '\\glossterm<Enemies> in a \\areasmall radius within \\rngmed range', """
+        # Spell('Confusion', 7, 'One creature within \\rngclose range', """
+        #     Make an attack vs. Mental against the target.
+        #     \\hit The target is \\confused as a \\glossterm<condition>.
+        #     \\glance As above, except that the condition is removed at the end of the next round.
+        #     \\crit As above, except that the condition must be removed twice before the effect ends.
+        # """, scaling="accuracy", tags=['Compulsion']),
+        Spell('Confusion', 6, '\\glossterm<Enemies> in a \\areasmall radius within \\rngclose range', """
             Make an attack vs. Mental against each target.
             \\hit Each target is \\confused until the end of the next round.
             \\crit Each target is \\glossterm<confused> as a \\glossterm<condition>.
         """, tags=['Compulsion']),
-        Spell('Dominate Person', 5, 'One creature within \\rngmed range', """
+        # +1 level for unusually strong crit effect
+        Spell('Dominate Person', 5, 'One creature within \\rngclose range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<stunned> as a \\glossterm<condition>.
             \\crit The target is \\glossterm<stunned> and \\glossterm<confused> as a single \\glossterm<condition>.
             If the target is humanoid and was already stunned and confused from a previous casting of this spell, it becomes \\glossterm<dominated> by you as long as you \\glossterm<attune> to this ability.
         """, scaling="accuracy", tags=['Compulsion']),
-        Spell('Dominate Monster', 7, 'One creature within \\rngmed range', """
+        Spell('Dominate Monster', 7, 'One creature within \\rngclose range', """
             This spell functions like the \\textit<dominate person> spell, except that you are also able to dominate non-humanoid creatures with its critical hit effect.
         """, tags=['Compulsion']),
         Spell('Sleep', 6, 'One creature within \\rngmed range', """
@@ -100,11 +104,12 @@ enchantment=MysticSphere(
             \\hit The falls asleep as a \\glossterm<condition>.
             It cannot be awakened while the condition lasts unless it takes a \\glossterm<vital wound>, which causes it to wake up and ends the sleeping part of the condition.
             After the condition ends, the target can wake up normally, though it continues to sleep until it would wake up naturally.
+            \\crit As above, except that the target does not wake up until it suffers two \\glossterm<vital wounds>.
         """, scaling="accuracy", tags=['Compulsion']),
-        Spell('Close Your Eyes', 7, 'One creature within \\rngmed range', """
-            Make an attack vs. Mental against the target.
-            \\hit The target is \\glossterm<blinded> as a \\glossterm<condition>.
-        """, tags=['Compulsion']),
+        # Spell('Close Your Eyes', 7, 'One creature within \\rngmed range', """
+        #     Make an attack vs. Mental against the target.
+        #     \\hit The target is \\glossterm<blinded> as a \\glossterm<condition>.
+        # """, tags=['Compulsion']),
         Spell('Run', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Mental with a +4 bonus to \\glossterm<accuracy> against the target.
             \\hit As a \\glossterm<condition>, the target must move its maximum movement speed in a straight line during each \\glossterm<movement phase>.
@@ -112,6 +117,7 @@ enchantment=MysticSphere(
             It is not required to use the \\textit<sprint> ability, or use any other special movement ability, though it may choose to do so.
             If it is unable to move its full speed without making a skill check or encountering a solid obstacle, it may choose to stop its movement after moving the maximum possible distance without doing so.
             \\glance As above, except that the condition is removed at the end of the next round.
+            \\crit As above, except that the condition must be removed twice before the effect ends.
         """, scaling="accuracy", tags=['Compulsion']),
         # Spell('Follow the Leader', 3, ['Yourself', '\\glossterm<Enemies> adjacent to you'], """
         #     You emanate an aura around you that compels creatures to follow you.
@@ -121,22 +127,25 @@ enchantment=MysticSphere(
         #     It is not compelled to sprint to keep up with you, though it may choose to (see \\pcref<Sprint>).
         #     If you do not move, or if you move with a movement mode that it is incapable of using, it is simply \\glossterm<immobilized> for that movement phase.
         # """, scaling="accuracy""", tags=['Attune (self)', 'Compulsion']),
-        Spell('Blink', 7, '\\glossterm<Enemies> in a \\areasmall radius within \\rngmed range', """
+        Spell('Dramatic Reveal', 4, '\\glossterm<Enemies> in a \\areamed radius from you', """
             Make an attack vs. Mental against each target.
-            \\hit Each target is \\glossterm<blinded> until the end of the next round.
-            \\crit Each target is \\glossterm<blinded> as a \\glossterm<condition>.
-        """, tags=['Compulsion']),
+            \\hit Until the end of the next round, each target is convinced that they just learned some phenomenal cosmic truth or life-changing revelation, making them \\glossterm<stunned>.
+            \\crit As above, except that the effect is a \\glossterm<condition> instead of ending at the end of the next round.
+        """, tags=['Delusion']),
         Spell('Heedless Rush', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental with a +4 bonus to \\glossterm<accuracy> against the target.
             \\hit As a \\glossterm<condition>, the target is forced to use the \\textit<sprint> action whenever it moves (see \\pcref<Sprint>).
             It can still stop before reaching its maximum movement speed, but it must pay the hit point cost if it moves from its current position.
+            \\crit As above, except that the condition must be removed twice before the effect ends.
         """, scaling="accuracy", tags=['Compulsion']),
         Spell('Selfstrike', 4, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit During the next \\glossterm<action phase>, the target is compelled to make a \\glossterm<strike> against itself instead of taking any other actions.
+            It cannot target any other creatures with the strike, even if it has a Sweeping weapon or similar abilities.
             If it has any weapons in hand or natural weapons at that time, it must use one of them.
             Otherwise, it uses its unarmed attack.
             This does not use up any of the creature's actions for the round, and it can take any unused actions during the \\glossterm<delayed action phase> of that round.
+            \\crit As above, except that the target takes a -4 penalty to its defenses against the strike.
         """, scaling="accuracy", tags=['Compulsion']),
         Spell('Discordant Song', 4, '\\glossterm<Enemies> in a \\areasmall radius from you', """
             Make an attack vs. Mental against each target.
@@ -146,24 +155,25 @@ enchantment=MysticSphere(
         Spell('Cause Fear', 2, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\shaken by you as a \\glossterm<condition>.
-            \\crit The target is \\glossterm<panicked> by you as a \\glossterm<condition>.
+            \\crit The target is \\glossterm<frightened> by you as a \\glossterm<condition>.
         """, scaling="accuracy", tags=['Emotion']),
         Spell('Mass Fear', 1, '\\glossterm<Enemies> in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Mental against each target.
             \\hit Each target is \\glossterm<shaken> by you until the end of the next round.
             \\crit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
         """, scaling="accuracy", tags=['Emotion']),
-        Spell('Frighten', 4, 'One creature within \\rngmed range', """
+        Spell('Frighten', 5, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<frightened> by you as a \\glossterm<condition>.
             \\glance As above, except that the condition is removed at the end of the next round.
+            \\crit The target is \\glossterm<panicked> by you as a \\glossterm<condition>.
         """, scaling="accuracy", tags=['Emotion']),
-        Spell('Fearsome Aura', 4, '\\glossterm<Enemies> in the area (see text)', """
+        Spell('Fearsome Aura', 3, '\\glossterm<Enemies> in the area (see text)', """
             You radiate an aura of fear in a \\areasmall radius \\glossterm<emanation> from you.
             When you attune to this spell, and during each \\glossterm<action phase> in subsequent rounds, make an attack vs. Mental against each target.
             After you attack a creature this way, it becomes immune to this ability from you until it takes a \\glossterm<short rest>.
-            \\hit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
-            \\glance As above, except that the condition is removed at the end of the next round.
+            \\hit Each target is \\glossterm<shaken> by you until the end of the next round.
+            \\crit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
         """, scaling="accuracy", tags=['Attune (self)', 'Emotion']),
         # Spell('Agony', 2, 'One creature within \\rngmed range', """
         #     Make an attack vs. Mental against the target.
@@ -173,22 +183,22 @@ enchantment=MysticSphere(
         # """, scaling="accuracy""", tags=['Emotion']),
         Spell('Cause Redirected Fear', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
-            \\hit The target is \\shaken by an \\glossterm<ally> of your choice within range as a \\glossterm<condition>.
+            \\hit The target is \\glossterm<shaken> by an \\glossterm<ally> of your choice within range as a \\glossterm<condition>.
             \\glance As above, except that the condition is removed at the end of the next round.
-            \\crit As above, except that the target is \\panicked instead of shaken.
+            \\crit The target is \\glossterm<frightened> by an \\glossterm<ally> of your choice within range as a \\glossterm<condition>.
         """, scaling="accuracy", tags=['Emotion']),
         Spell('Charm', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
+            You take a -5 penalty to \\glossterm<accuracy> with this attack against creatures who are engaged in combat during the current phase.
             \\hit The target is \\charmed by you.
-            Any act by you or by creatures that appear to be your allies that threatens or damages the charmed person breaks the effect.
+            Any act by you or by creatures that appear to be your allies that threatens or harms the charmed person breaks the effect.
+            Harming the target is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
             An observant target may interpret overt threats to its allies as a threat to itself.
             \\glance As above, except that the condition is removed at the end of the next round.
+            \\crit As above, except that acts that threaten the charmed person without harming them do not break the effect.
         """, scaling="accuracy", tags=['Sustain (minor)', 'Emotion', 'Subtle']),
         Spell('Amnesiac Charm', 6, 'One creature within \\rngmed range', """
-            Make an attack vs. Mental against the target.
-            \\hit The target is \\charmed by you.
-            Any act by you or by creatures that appear to be your allies that threatens or damages the \\spell<charmed> person breaks the effect.
-            When this effect ends, the target forgets all events that transpired during the spell's duration.
+            This spell functions like the \\spell<charm> spell, except that when the effect ends, the target forgets all events that transpired during the spell's duration.
             It becomes aware of its surroundings as if waking up from a daydream.
             The target is not directly aware of any magical influence on its mind, though unusually paranoid or perceptive creatures may deduce that their minds were affected.
         """, scaling="accuracy", tags=['Sustain (minor)', 'Emotion', 'Subtle']),
@@ -197,18 +207,22 @@ enchantment=MysticSphere(
             \\hit Each target has its emotions calmed.
             The effects of all other \\glossterm<Emotion> abilities on that target are \\glossterm<suppressed>.
             It cannot take violent actions (although it can defend itself) or do anything destructive.
-            If the target takes damage or feels that it is in danger, this effect is \\glossterm<dismissed>.
+            If the target is harmed or feels that it is in danger, this effect is \\glossterm<dismissed>.
+            Harming the target is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
+            \\crit As above, except that situations which cause the target to feel that it is in danger without harming it do not break the effect.
         """, scaling="accuracy", tags=['Emotion', 'Sustain (standard)']),
         Spell('Enrage', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental with a +4 bonus to \\glossterm<accuracy> against the target.
             \\hit As a \\glossterm<condition>, the target is unable to take any \\glossterm<standard actions> that do not cause it to make an attack.
             For example, it could make a \\glossterm<strike> or cast an offensive spell, but it could not heal itself or summon a creature.
+            \\crit As above, except that the condition must be removed twice before the effect ends.
         """, scaling="accuracy", tags=['Emotion']),
-        Spell('Deaden Emotions', 4, 'One creature within \\rngmed range', """
+        Spell('Deaden Emotions', 6, 'One creature within \\rngclose range', """
             Make an attack vs. Mental against the target.
-            \\hit As a \\glossterm<condition>, the target is unable to take any \\glossterm<standard actions> that it to make an attack.
-            If it loses any \\glossterm<hit points> or is otherwise harmed, including subjective pain or discomfort, this effect is automatically broken.
+            \\hit As a \\glossterm<condition>, the target is unable to take any \\glossterm<standard actions> that cause it to make an attack.
+            If it is harmed, either by taking damage or by experiencing significant subjective discomfort, this effect immediately ends.
             \\glance As above, except that the condition is removed at the end of the next round.
+            \\crit As above, except that the condition must be removed twice before the effect ends.
         """, scaling="accuracy", tags=['Emotion']),
         # Spell('Mass Enrage', 4, '\\glossterm<Enemies> in a \\areamed radius within \\rngmed range', """
         #     Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against each target.
@@ -260,12 +274,13 @@ enchantment=MysticSphere(
             \\rank<5> The bonus increases to +5.
             \\rank<7> The bonus increases to +6.
         """, tags=['Attune (self)']),
-        Spell('Solipsism', 7, 'One creature within \\rngmed range', """
+        Spell('Solipsism', 7, 'One creature within \\rngclose range', """
             Make an attack vs. Mental against the target.
-            \\hit As a \\glossterm<condition>, target believes that it is the only real creature, and the rest of the world is an illusion.
+            You take a -5 penalty to \\glossterm<accuracy> with this attack against creatures who are engaged in combat during the current phase.
+            \\hit As a \\glossterm<condition>, the target believes that it is the only real creature, and the rest of the world is an illusion.
             It may wander aimlessly, but generally takes no action to defend itself and does not perceive itself to be in danger from other creatures.
             It still avoids obvious environmental hazards, such as cliff edges or fires.
-            If it takes dany damage or is otherwise harmed, including subjective pain or discomfort, this effect is automatically broken.
+            If it takes any damage or is otherwise harmed, including significant subjective discomfort, this effect is automatically broken.
             \\glance As above, except that the condition is removed at the end of the next round.
         """, tags=['Subtle']),
     ],

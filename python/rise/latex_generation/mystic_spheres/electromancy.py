@@ -46,6 +46,7 @@ spells=[
         Make an attack vs. Fortitude against each target.
         \\hit Each target that has no remaining \\glossterm<resistance> to electricity damage is \\glossterm<stunned> as a \\glossterm<condition>.
         \\glance As above, except that the condition is removed at the end of the next round.
+        \\crit As above, except that the condition must be removed twice before the effect ends.
     """, scaling="accuracy", tags=[]),
     Spell('Lightning Storm', 5, '\\glossterm<Enemies> and objects in a \\arealarge radius from  you', """
         Make an attack vs. Reflex against each target.
