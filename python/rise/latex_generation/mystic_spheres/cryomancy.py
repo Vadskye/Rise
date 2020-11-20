@@ -44,9 +44,10 @@ cryomancy=MysticSphere(
             \\hit Each target that has no remaining \\glossterm<resistance> to cold damage is \\glossterm<immobilized> as a \\glossterm<condition>.
             \\glance As above, except that the condition is removed at the end of the next round.
         """, scaling="accuracy", tags=[]),
-        Spell('Ice Lance', 3, 'Everything in a \\arealarge, 5 ft.\\ wide line from you', """
+        # +2 levels for cold + bludgeoning, which breaks resistances
+        Spell('Ice Lance', 4, 'Everything in a \\arealarge, 5 ft.\\ wide line from you', """
             Make an attack vs. Armor against each target.
-            \\hit Each target takes piercing and cold damage equal to 1d8 plus half your \\glossterm<power>.
+            \\hit Each target takes piercing and cold damage equal to 2d8 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Manifestation']),
         # +2 levels for cold + bludgeoning, which breaks resistances
@@ -160,11 +161,12 @@ cryomancy=MysticSphere(
 
             You can cast this spell as a \\glossterm<minor action>.
         """, scaling="damage", tags=['Attune (self)']),
-        Spell('Frostburn', 7, 'One creature within \\rngmed range', """
+        Spell('Frostburn', 7, 'One creature within \\rngclose range', """
             Make an attack vs. Fortitude against the target.
             \\hit As a \\glossterm<condition>, the target is seared by painful cold.
             % TODO: standardize "ignite" damage
             At the end of each round, it takes 4d10 cold damage.
+            \\crit As above, except that the damage from the condition is doubled.
         """, tags=[]),
     ],
     rituals=[

@@ -120,7 +120,7 @@ barrier=MysticSphere(
         """, scaling="""
             \\rank<7> The \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to four times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
-        Spell('Entrapping Sphere', 5, 'One Large or smaller creature or object within \\rngmed range', """
+        Spell('Entrapping Sphere', 6, 'One Large or smaller creature or object within \\rngmed range', """
             Make an attack vs. Reflex against the target.
             \\hit You create a sphere of magical energy around the target in its space.
             The sphere is visible as a shimmering magical membrane that does not block sight.

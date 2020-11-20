@@ -118,15 +118,12 @@ biomancy=MysticSphere(
             \\rank<5> The bonus increases to +15.
             \\rank<7> The bonus increases to +20.
         """, tags=['Attune (self)']),
-        Spell('Acidic Blood', 3, ['Yourself', 'Everything adjacent to the primary target'], """
-            The primary target's blood becomes acidic.
-            This does not harm it, but the blood can be dangerous to anything nearby when it bleeds.
-            At the end of each round, if the primary target lost \\glossterm<hit points> during that round, make an attack vs. Fortitude against everything adjacent to the target.
+        Spell('Acidic Blood', 3, ['Yourself', 'Everything adjacent to you'], """
+            Your blood becomes acidic.
+            This does not harm you, but your blood can be dangerous to anything nearby when you bleed.
+            At the end of each round, if you lost \\glossterm<hit points> during that round, make an attack vs. Fortitude against everything adjacent to you.
             \\hit Each secondary target takes acid damage equal to 2d6 plus half your \\glossterm<power>.
-        """, scaling="""
-            \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
-            \\rank<7> The damage increases to \\glossterm<standard damage>.
-        """, tags=['Attune (target)']),
+        """, scaling="damage", tags=['Attune (target)']),
         # +1 level over other dragon breaths for damage choice, including both
         # physical and energy
         Spell('Dragon Breath', 5, 'Yourself (see text)', """
@@ -144,8 +141,9 @@ biomancy=MysticSphere(
             It takes a -2 penalty to Fortitude defense.
             Whenever it loses one or more \\glossterm<hit points> from a single attack, this penalty increases by 1.
             This penalty increase stacks, and persists even if the target regains the lost hit points.
+            \\crit As above, except that the penalty starts at -5.
         """, scaling="accuracy", tags=[]),
-        Spell('Withering Curse', 4, 'One living creature within \\rngmed range', """
+        Spell('Withering Curse', 3, 'One living creature within \\rngmed range', """
             Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against the target.
             \\hit The target becomes more vulnerable to injury until it takes a short rest.
             It takes a -2 penalty to Fortitude defense.
@@ -153,12 +151,12 @@ biomancy=MysticSphere(
             This penalty increase stacks, and persists even if the target regains the lost hit points.
             \\crit As above, except that the effect lasts until this curse is removed.
         """, scaling="accuracy", tags=['Curse']),
-        Spell('Sickness', 2, 'One living creature within \\rngmed range', """
+        Spell('Sickness', 1, 'One living creature within \\rngclose range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target is \\glossterm<sickened> as a \\glossterm<condition>.
             \\crit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
         """, scaling="accuracy", tags=[]),
-        Spell('Curse of Sickness', 3, 'One living creature within \\rngmed range', """
+        Spell('Sickening Curse', 2, 'One living creature within \\rngclose range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<sickened> until it takes a \\glossterm<short rest>.
             \\crit As above, except that the effect lasts until this curse is removed.
@@ -180,23 +178,25 @@ biomancy=MysticSphere(
             \\glance As above, except that the condition is removed at the end of the next round.
             \\crit The target is \\glossterm<paralyzed> as a \\glossterm<condition>.
         """, tags=[]),
-        Spell('Bleed', 1, 'One living creature within \\rngmed range', """
+        Spell('Bleed', 2, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target begins bleeding as a \\glossterm<condition>.
-            At the end of each round, it takes 1d6 physical damage.
+            At the end of each round, it takes 1d8 physical damage.
             If the the target gains a \\glossterm<vital wound> from this damage, the condition ends.
 
             This condition can be removed with the \\textit<treat condition> ability from the Medicine skill (see \\pcref<Medicine>).
             The \\glossterm<difficulty rating> of the check is equal to 10.
+            \\crit As above, except that the damage from the condition is doubled.
         """, scaling="damage", tags=[]),
-        Spell('Blood Fountain', 4, 'One living creature within \\rngmed range', """
+        Spell('Blood Fountain', 5, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target begins bleeding as a \\glossterm<condition>.
-            At the end of each round, it takes 2d6 physical damage.
+            At the end of each round, it takes 2d8 physical damage.
             If the the target gains a \\glossterm<vital wound> from this damage, the condition ends.
 
             This condition can be removed with the \\textit<treat condition> ability from the Medicine skill (see \\pcref<Medicine>).
             The \\glossterm<difficulty rating> of the check is equal to 20.
+            \\crit As above, except that the damage from the condition is doubled.
         """, scaling="damage", tags=[]),
     ],
     rituals=[
