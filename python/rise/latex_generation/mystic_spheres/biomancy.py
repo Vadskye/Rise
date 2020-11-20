@@ -16,17 +16,18 @@ biomancy=MysticSphere(
             A creature poisoned by asp venom becomes \\glossterm<sickened> as long as it is poisoned.
             Reaching the third \\glossterm<poison stage> causes the target to become \\glossterm<nauseated> as long as it is poisoned.
             A third failed attack ends the poison.
-            \\crit As above, except that target reaches the second \\glossterm<poison stage>, as normal for poisons.
-        """, scaling="accuracy", tags=['Manifestation', 'Sustain (minor)']),
+            \\crit As above, except that target immediately reaches the second \\glossterm<poison stage>, as normal for poisons.
+        """, scaling="accuracy", tags=['Manifestation']),
         Spell('Poison -- Dragon Bile', 3, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target becomes \\glossterm<poisoned> with dragon bile.
             At the end of each subsequent round, you repeat this attack, as normal for poisons.
             For each \\glossterm<poison stage>, including the initial stage, the target loses 1d10 \\glossterm<hit points>.
             A third failed attack ends the poison.
+            \\crit As above, except that target immediately reaches the second \\glossterm<poison stage>, as normal for poisons.
         """, scaling="""
             The hit point loss from the poison increases by +1d for each rank beyond 3.
-        """, tags=[]),
+        """, tags=['Manifestation']),
         Spell('Neutralize Poison', 1, 'Yourself or one target within \\rngmed range', """
             The target gains an additional success to resist a poison currently affecting it (see \\pcref<Poison>).
         """, scaling="""
