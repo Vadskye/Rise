@@ -24,6 +24,7 @@ biomancy=MysticSphere(
             At the end of each subsequent round, you repeat this attack, as normal for poisons.
             For each \\glossterm<poison stage>, including the initial stage, the target loses 1d10 \\glossterm<hit points>.
             A third failed attack ends the poison.
+            % No \\glance effect
             \\crit As above, except that target immediately reaches the second \\glossterm<poison stage>, as normal for poisons.
         """, scaling="""
             The hit point loss from the poison increases by +1d for each rank beyond 3.
@@ -39,7 +40,8 @@ biomancy=MysticSphere(
             Make an attack vs. Fortitude with a +2 bonus to \\glossterm<accuracy> against the target.
             If the target is not currently poisoned, this ability has no effect.
             \\hit Choose a poison affecting the target.
-            The poison gains an additional hit against the target, which can have varying effects depending on the poison (see \\pcref<Poison>).
+            The poison progresses by one stage against the target, which can have varying effects depending on the poison (see \\pcref<Poison>).
+            \\crit As above, except that the poison progresses by two stages instead of one.
         """, scaling="accuracy", tags=[]),
         Spell('Brief Regeneration', 2, 'Yourself or one living \\glossterm<ally> within \\rngclose range', """
             The target regains \\glossterm<hit points> equal to 1d6 plus half your \\glossterm<power>.
@@ -70,7 +72,6 @@ biomancy=MysticSphere(
         """, scaling="""
             \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The bonus increases to +4.
-            \\rank<8> The bonus increases to +6.
         """, tags=['Attune (target)']),
         Spell('Climber', 2, 'Yourself', """
             The target gains a \\glossterm<climb speed> equal to its \\glossterm<base speed>.
@@ -80,7 +81,6 @@ biomancy=MysticSphere(
         """, scaling="""
             \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The bonus increases to +4.
-            \\rank<8> The bonus increases to +6.
         """, tags=['Attune (target)']),
         Spell('Runner', 2, 'Yourself', """
             The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<land speed>.
@@ -89,7 +89,6 @@ biomancy=MysticSphere(
         """, scaling="""
             \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The bonus increases to +20 feet.
-            \\rank<8> The bonus increases to +30 feet.
         """, tags=['Attune (target)']),
         Spell('Enhanced Muscles', 3, 'Yourself', """
             The target gains a +2 \\glossterm<magic bonus> to Strength-based checks.
@@ -124,6 +123,7 @@ biomancy=MysticSphere(
             This does not harm you, but your blood can be dangerous to anything nearby when you bleed.
             At the end of each round, if you lost \\glossterm<hit points> during that round, make an attack vs. Fortitude against everything adjacent to you.
             \\hit Each secondary target takes acid damage equal to 2d6 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Attune (target)']),
         # +1 level over other dragon breaths for damage choice, including both
         # physical and energy
@@ -133,6 +133,7 @@ biomancy=MysticSphere(
             As a standard action, you can breath a cone of that type of energy.
             When you do, make an attack vs. Reflex against everything within a \\arealarge cone from you.
             \\hit Each target takes damage of the chosen type equal to 2d10 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
 
             You can cast this spell as a \\glossterm<minor action>.
         """, scaling="damage", tags=['Attune (self)']),
@@ -150,6 +151,7 @@ biomancy=MysticSphere(
             It takes a -2 penalty to Fortitude defense.
             Whenever it loses one or more \\glossterm<hit points> from a single attack, this penalty increases by 1.
             This penalty increase stacks, and persists even if the target regains the lost hit points.
+            \\glance As above, except that the condition is removed at the end of the next round.
             \\crit As above, except that the effect lasts until this curse is removed.
         """, scaling="accuracy", tags=['Curse']),
         Spell('Sickness', 1, 'One living creature within \\rngclose range', """
@@ -167,6 +169,7 @@ biomancy=MysticSphere(
             Make an attack vs. Fortitude against the target.
             \\hit The target takes 2d6 physical damage.
             If it loses \\glossterm<hit points> from this damage, it is \\glossterm<blinded> as a \\glossterm<condition>.
+            \\glance As above, except that that the target takes half damage.
         """, scaling="damage", tags=[]),
         Spell('Organ Failure', 1, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
@@ -197,6 +200,7 @@ biomancy=MysticSphere(
 
             This condition can be removed with the \\textit<treat condition> ability from the Medicine skill (see \\pcref<Medicine>).
             The \\glossterm<difficulty rating> of the check is equal to 20.
+            \\glance As above, except that the condition is removed at the end of the next round after its damage is dealt.
             \\crit As above, except that the damage from the condition is doubled.
         """, scaling="damage", tags=[]),
     ],

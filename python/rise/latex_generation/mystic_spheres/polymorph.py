@@ -47,6 +47,7 @@ polymorph=MysticSphere(
             \\hit The target takes 2d8 physical damage.
             If it loses \\glossterm<hit points> from this damage, it is balefully polymorphed as a \\glossterm<condition>.
             It shrinks by two \\glossterm<size categories> and is \\glossterm<confused>.
+            \\glance As above, except that the condition is removed at the end of the next round.
         """, scaling="damage", tags=[]),
         Spell('Twist Flesh', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
@@ -107,6 +108,7 @@ polymorph=MysticSphere(
             In addition, if the target has no hit points remaining at the end of the current \\glossterm<phase>, it dies.
             Its body is completely disintegrated, leaving behind only a pinch of fine dust.
             Its equipment is unaffected.
+            \\glance As above, except that that the target takes half damage.
         """, scaling="damage", tags=[]),
         Spell('Malleable Body', 4, 'Yourself', """
             Your body and equipment becomes highly flexible and malleable, allowing you to compress your body or contort yourself into odd shapes.
@@ -131,6 +133,7 @@ polymorph=MysticSphere(
             You transform your body to have dangerous spikes that you can consciously extrude to impale nearby foes.
             As a \\glossterm<minor action>, you can extend the spikes to make an attack vs. Armor against each creature adjacent to you.
             \\hit Each secondary target takes piercing damage equal to 4d8 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Attune (self)']),
         Spell('Absorb Object', 3, 'One Small or smaller \\glossterm<unattended> object you touch', """
             You absorb the target into your body.
@@ -158,6 +161,7 @@ polymorph=MysticSphere(
             It has no \\glossterm<free hands>, causing it to drop anything it is holding and making it unable to take any actions that require free hands.
             Its speed with all of its \\glossterm<mundane> movement modes are reduced to one quarter normal.
             It is also unable to speak normally or use verbal or somatic \\glossterm<components>.
+            \\glance As above, except that that the target takes half damage.
             \\crit As above, except that the condition must be removed twice before the effect ends.
         """, tags=[]),
     ],

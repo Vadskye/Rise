@@ -105,6 +105,7 @@ astromancy=MysticSphere(
             Make an attack vs. Mental against the target.
             \\hit The target takes 2d6 bludgeoning damage.
             If it loses \\glossterm<hit points> from this damage, it is \\glossterm<immobilized> as a \\glossterm<condition>.
+            \\glance As above, except that that the target takes half damage.
         """, scaling="damage", tags=[]),
         Spell('Dimensional Jaunt -- Plane of Air', 2, 'One creature or object within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
@@ -147,7 +148,6 @@ astromancy=MysticSphere(
         """, scaling="""
             \\rank<4> The range increases to \\rnglong.
             \\rank<6> The range increases to \\rngext.
-            \\rank<8> The maximum number of targets increases to ten.
         """, tags=[]),
         Spell('Dimension Walk', 4, 'Yourself', """
             You can teleport horizontally instead of moving normally.
@@ -156,7 +156,6 @@ astromancy=MysticSphere(
             You must be able to move to teleport in this way, so effects like being \\glossterm<immobilized> prevent this movement.
         """, scaling="""
             \\rank<6> You can also teleport vertically or diagonally in addition to horizontally.
-            \\rank<8> You can teleport in this way even if you are unable to move, such as if you are \\glossterm<immobilized> or \\glossterm<paralyzed>.
         """, tags=['Attune (self)']),
         Spell('Flicker', 2, 'Yourself', """
             You randomly flicker between your current plane and the Astral Plane.
@@ -165,14 +164,12 @@ astromancy=MysticSphere(
         """, scaling="""
             \\rank<4> The failure chance increases to 30\\%.
             \\rank<6> The failure chance increases to 40\\%.
-            \\rank<8> The failure chance increases to 50\\%.
         """, tags=['Attune (self)']),
         Spell('Controlled Flicker', 4, 'Yourself', """
             This spell functions like the \\textit<flicker> spell, except that you can choose at the start of each round to stop flickering for that round.
             If you do, your attacks do not have a failure chance, and attacks against you also do not have a failure chance.
         """, scaling="""
             \\rank<6> The failure chance increases to 30\\%.
-            \\rank<8> The failure chance increases to 40\\%.
         """, tags=['Attune (self)']),
         Spell('Astral Instability', 3, 'Yourself', """
             At the start of each phase, you may \\glossterm<teleport> into a random location in the Astral Plane.
@@ -187,6 +184,8 @@ astromancy=MysticSphere(
             Make an attack vs. Mental against each target.
             If either target is not standing on solid ground, this spell fails.
             If you hit both targets, they each teleport into each other's locations.
+            % No \\crit effect
+            % No \\glance effect
         """, scaling="accuracy", tags=[]),
         Spell('Massive Transposition', 5, 'Two Gargantuan or smaller creatures within \\rngmed range', """
             This spell functions like the \\textit<transposition> spell, except that it can affect creatures with a maximum size of Gargantuan.
@@ -204,7 +203,6 @@ astromancy=MysticSphere(
             This can allow you to cast spells through solid walls, though it does not grant you the ability to see through the wall.
         """, scaling="""
             \\rank<6> The maximum thickness you can ignore increases to 5 feet.
-            \\rank<8> Your spells can penetrate any number of physical obstacles with a combined thickness of ten feet or less.
         """, tags=['Attune (self)']),
     ],
 

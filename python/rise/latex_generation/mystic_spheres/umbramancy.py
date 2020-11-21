@@ -48,7 +48,6 @@ umbramancy=MysticSphere(
         """, scaling="""
             \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The radius increases to 100 feet.
-            \\rank<8> The radius increases to 200 feet.
         """, tags=['Attune (target)']),
         Spell('Dark Miasma', 2, '\\glossterm<Enemies> in a \\areasmall radius from you', """
             Make an attack vs. Fortitude against each target.
@@ -98,6 +97,7 @@ umbramancy=MysticSphere(
             Make an attack vs. Mental against the target.
             You gain a +2 bonus to \\glossterm<accuracy> with the attack if the target is not in \\glossterm<bright illumination>.
             \\hit As a \\glossterm<condition>, the target takes a -4 penalty to \\glossterm<accuracy> and visual Awareness checks.
+            \\glance As above, except that the condition is removed at the end of the next round.
             \\crit The target is \\glossterm<blinded> as a \\glossterm<condition>.
         """, scaling="accuracy", tags=['Sensation', 'Visual']),
         Spell('Dark Shroud', 2, '\\glossterm<Enemies> in a \\areasmall radius within \\rngmed range', """

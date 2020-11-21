@@ -33,7 +33,6 @@ fabrication=MysticSphere(
         """, scaling="""
             \\rank<4> You are not considered \\glossterm<defenseless> as long as you are not \\glossterm<unaware>, even if you are not wielding a weapon or shield.
             \\rank<6> The bonus increases to +2.
-            \\rank<8> The bonus increases to +3.
         """, tags=['Attune (self)', 'Manifestation']),
         Spell('Mystic Arrow', 1, 'One creature or object within \\rngmed range', """
             Make an attack vs. Armor against the target.
@@ -120,6 +119,7 @@ fabrication=MysticSphere(
             After being summoned, it falls up to 100 feet before disappearing.
             Make an attack vs. Armor against everything in its path.
             \\hit Each target takes bludgeoning and fire damage equal to 4d6 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Manifestation']),
         # treated like r1 softener, +2 levels for leaving behind something, +1
         # for crit effect
@@ -130,6 +130,7 @@ fabrication=MysticSphere(
 
             In addition, make an attack vs. Reflex against each target.
             \\hit Each secondary target is \\glossterm<slowed> as long as it has webbing from this ability in its space.
+            \\glance As above, except that the effect is removed at the end of the next round.
             \\crit Each secondary target is \\glossterm<immobilized> as long as it has webbing from this ability in its space.
         """, scaling="accuracy", tags=['Manifestation', 'Sustain (minor)']),
         Spell('Caltrops', 2, 'One 5 ft.\\ square within \\rngclose range (see text)', """
