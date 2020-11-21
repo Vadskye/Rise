@@ -114,12 +114,12 @@ spells=[
     """, scaling="""
         \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
         \\rank<6> The speed bonus increases to +20 feet.
-        \\rank<8> The speed bonus increases to +30 feet.
     """, tags=['Attune (target)']),
     Spell('Lightning Breath', 4, 'Yourself (see text)', """
         As a standard action, you can breathe electricity like a dragon.
         When you do, make an attack vs. Reflex against everything within a \\arealarge cone.
         \\hit Each target takes electricity damage equal to 2d8 plus half your \\glossterm<power>.
+        \\glance As above, except that that each target takes half damage.
 
         You can cast this spell as a \\glossterm<minor action>.
     """, scaling="damage", tags=['Attune (self)']),

@@ -28,7 +28,6 @@ barrier=MysticSphere(
             In addition, the \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to three times your \\glossterm<power>.
         """, scaling="""
             \\rank<6> The area increases to a \\arealarge line.
-            \\rank<8> The \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to four times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Visual Barrier', 2, None, """
             This spell functions like the \\spell<mystic barrier> spell, except that you can choose the visibility of the barrier.
@@ -37,7 +36,6 @@ barrier=MysticSphere(
         """, scaling="""
             \\rank<4> The \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to three times your \\glossterm<power>.
             \\rank<6> The area increases to a \\arealarge line.
-            \\rank<8> The \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to four times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Audible Barrier', 2, None, """
             This spell functions like the \\spell<mystic barrier> spell, except that you can choose how much the barrier blocks sound.
@@ -48,7 +46,6 @@ barrier=MysticSphere(
         """, scaling="""
             \\rank<4> The \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to three times your \\glossterm<power>.
             \\rank<6> The area increases to a \\arealarge line.
-            \\rank<8> The \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to four times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Forceful Barrier', 3, None, """
             This spell functions like the \\spell<mystic barrier> spell, except that it breaks objects in its area that obstruct its path.
@@ -108,7 +105,6 @@ barrier=MysticSphere(
         """, scaling="""
             \\rank<4> The \\glossterm<hit points> of the field increase to three times your \\glossterm<power>.
             \\rank<6> The \\glossterm<hit points> of the field increase to four times your \\glossterm<power>.
-            \\rank<8> The \\glossterm<hit points> of the field increase to five times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Personal Sphere', 5, 'Yourself', """
             You create a sphere of magical energy around yourself.
@@ -129,12 +125,12 @@ barrier=MysticSphere(
             Each 5-ft.\\ square of the field has \\glossterm<hit points> equal to twice your \\glossterm<power>.
 
             If another creature is in the target's space when this spell is cast, this spell fails without effect.
+            \\glance As above, except that the condition is removed at the end of the next round.
+            \\crit As above, except that the hit points of the sphere increase to four times your \\glossterm<power>.
         """, scaling="accuracy", tags=['Manifestation', 'Sustain (standard)']),
         Spell('Invulnerable Barrier', 6, None, """
             This spell functions like the \\spell<mystic barrier> spell, except that each 5-ft.\\ square of wall has \\glossterm<hit points> equal to four times your \\glossterm<power>.
             In addition, the wall is \\glossterm<resistant> to physical damage.
-        """, scaling="""
-            \\rank<8> The area increases to a \\arealarge line.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Wall of Energy Impedance', 3, None, """
             You create a wall of magical energy in a 20 ft.\\ high, \\areamed line within \\rngmed range.
@@ -200,6 +196,8 @@ barrier=MysticSphere(
             When an enemy makes physical contact with the spell's area for the first time, you make an attack vs. Mental against it.
             \\hit The target is unable to enter the spell's area with any part of its body.
             The rest of its movement in the current phase is cancelled.
+            \\glance As above, except that the effect is removed at the end of the next round, allowing the creature to freely enter the zone after that time.
+            % No \\crit effect
 
             Creatures in the area at the time that the spell is cast are unaffected by the spell.
         """, scaling="accuracy", tags=['Sustain (minor)']),
@@ -224,6 +222,8 @@ barrier=MysticSphere(
             You gain a +10 bonus to \\glossterm<accuracy> against living creatures.
             \\hit The target is unable to enter the spell's area with any part of its body.
             The rest of its movement in the current phase is cancelled.
+            \\glance As above, except that the effect is removed at the end of the next round, allowing the creature to freely enter the zone after that time.
+            % No \\crit effect
 
             Creatures in the area at the time that the spell is cast are unaffected by the spell.
         """, scaling="accuracy", tags=['Sustain (minor)']),

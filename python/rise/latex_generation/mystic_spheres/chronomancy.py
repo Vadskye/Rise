@@ -51,7 +51,8 @@ chronomancy=MysticSphere(
             \\hit Each target acts at half speed within the area.
             It skips every other round, starting with the round after it becomes affected by this affect.
             In addition, it takes a -2 penalty to \\glossterm<accuracy> and \\glossterm<defenses> against creatures moving at normal speed.
-            % No glance effect since idk what it should do
+            \\glance As above, except that the effect is removed at the end of the next round, allowing to creature to act normally in the zone after that time.
+            % No \\crit effect
         """, scaling="accuracy", tags=[]),
         Spell('Slow', 1, 'One creature within \\rngclose range', """
             Make an attack vs. Mental against the target.
@@ -127,7 +128,6 @@ chronomancy=MysticSphere(
         """, scaling="""
             \\rank<4> The maximum size of the target increases to Large.
             \\rank<6> The maximum size of the target increases to Huge.
-            \\rank<8> The maximum size of the target increases to Gargantuan.
         """, tags=[]),
         Spell('Accelerated Reaction', 1, 'Yourself', """
             You gain a +2 \\glossterm<magic bonus> to Reflex defense and \\glossterm<initiative> checks.
@@ -147,7 +147,6 @@ chronomancy=MysticSphere(
             You can cast this spell as a \\glossterm<minor action>.
         """, scaling="""
             \\rank<6> The maximum size of the target increases to Large.
-            \\rank<8> The maximum size of the target increases to Huge.
         """, tags=['Attune (self)']),
         Spell('Time Lock', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             You lock the state of the target's body in time.

@@ -86,7 +86,6 @@ bless=MysticSphere(
             You can cast this spell as a \\glossterm<minor action>.
         """, scaling="""
             \\rank<6> The bonus increases to +2.
-            \\rank<8> The bonus increases to +3.
         """, tags=['Attune (target)']),
         Spell('Battle Blessing', 5, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with all attacks.
@@ -115,7 +114,6 @@ bless=MysticSphere(
             Each target can remove a \\glossterm<condition>.
             This cannot remove a condition applied during the current round.
         """, scaling="""
-            \\rank<8> The area increases to a \\arealarge radius.
         """, tags=[]),
         Spell('Blessing of Might', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target gains a +2 \\glossterm<magic bonus> to Strength for the purpose of determining its \\glossterm<carrying capacity>.

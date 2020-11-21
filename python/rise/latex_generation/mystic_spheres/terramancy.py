@@ -61,6 +61,8 @@ terramancy=MysticSphere(
             Make an attack vs. Reflex against the target.
             The target must be within 5 feet of a Small or larger body of earth or stone.
             \\hit The target is is \\glossterm<immobilized> as a \\glossterm<condition>.
+            \\glance As above, except that the condition is removed at the end of the next round.
+            \\crit As above, except that the condition must be removed twice before the effect ends.
         """, scaling="accuracy", tags=[]),
         Spell('Meld into Stone', 3, 'One stone object you can touch that is at least as large as your body', """
             You and up to 100 pounds of nonliving equipment meld into the stone.
@@ -96,6 +98,7 @@ terramancy=MysticSphere(
             Make an attack vs. Reflex against each target.
             \\hit Each target takes bludgeoning damage equal to 2d8 plus half your \\glossterm<power>.
             Each Large or smaller target that loses \\glossterm<hit points> from this damage is also knocked \\glossterm<prone>.
+            \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=[]),
         # +3 levels for somewhat conditional prone effect,
         # -1 for "standing on" limitation that matters more at high levels
@@ -104,6 +107,7 @@ terramancy=MysticSphere(
             Make an attack vs. Reflex against each target.
             \\hit Each target takes bludgeoning damage equal to 4d8 plus your \\glossterm<power>.
             Ecah Large or smaller target that takes damage this way is also knocked \\glossterm<prone>.
+            \\glance As above, except that that each target takes half damage.
         """, tags=[]),
         Spell('Swallowed by Earth', 7, 'One creature within \\rngmed range that is standing on earth or unworked stone', """
             You open up a rift in the ground that swallows and traps a foe.
@@ -114,6 +118,7 @@ terramancy=MysticSphere(
             At the end of each subsequent round, it takes 4d6 bludgeoning damage as the earth grinds it into paste.
             If the earth or stone it is swallowed by is destroyed or otherwise rendered unable to contain the creature, this effect ends.
             Special movement abilities such as teleportation can also remove the target from the fissure.
+            \\glance As above, except that that the target takes half damage.
         """, tags=[]),
         # +1 level since it's stronger than a typical rank 1 debuff
         Spell('Earthbind', 3, 'One creature within \\rngmed range that is within 100 feet of the ground', """
@@ -171,7 +176,6 @@ terramancy=MysticSphere(
         """, scaling="""
             \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The target is also immune to \\glossterm<teleport> effects from attacks that are not critical hits.
-            \\rank<8> The immunities apply even against critical hits.
         """, tags=['Attune (target)']),
     ],
     rituals=[

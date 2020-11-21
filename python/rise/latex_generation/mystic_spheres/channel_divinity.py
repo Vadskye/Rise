@@ -162,7 +162,6 @@ channel_divinity=MysticSphere(
             Whenever a creature casts a divine spell in the area, if that creature does not share your deity (for clerics) or devoted alignment (for paladins), it has a 50\% chance to \\glossterm<miscast> the spell.
         """, scaling="""
             \\rank<6> The area increases to a \\areamed radius.
-            \\rank<8> The area increases to a \\arealarge radius.
         """, tags=['Sustain (minor)']),
     ],
     rituals=[

@@ -34,18 +34,24 @@ enchantment=MysticSphere(
         Spell('Drop', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target imediately drops anything it is holding in its hands.
+            % No \\glance effect
             \\crit As above, and as a \\glossterm<condition>, the target is unable to pick up the dropped items.
             It can still hold other items, but if the dropped items are placed in its hands, it will immediately drop them again.
         """, scaling="accuracy", tags=['Compulsion']),
-        Spell('Mass Drop', 6, '\\glossterm<Enemies> in a \\areasmall radius within \\rngmed range', """
+        Spell('Drop Everything', 6, '\\glossterm<Enemies> in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Mental gainst each target.
             \\hit Each target drops anything it is holding in its hands.
+            % No \\glance effect
+            \\crit As above, and as a \\glossterm<condition>, the target is unable to pick up the dropped items.
+            It can still hold other items, but if the dropped items are placed in its hands, it will immediately drop them again.
         """, tags=['Compulsion']),
         Spell('Monologue', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit As a \\glossterm<condition>, the target is forced to speak out loud constantly whenever it can.
             This does not control what it talks about, so a reasonably savvy creature may be able to avoid revealing anything of great interest.
             In combat, most creatures with an intelligence of 0 or less will often talk about what they are planning on doing, which can help you predict their actions.
+            \\glance As above, except that the condition is removed at the end of the next round.
+            \\crit As above, except that the condition must be removed twice before the effect ends.
         """, scaling="accuracy", tags=['Compulsion']),
         Spell('Dance', 2, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
@@ -92,6 +98,7 @@ enchantment=MysticSphere(
         Spell('Dominate Person', 5, 'One creature within \\rngclose range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<stunned> as a \\glossterm<condition>.
+            \\glance As above, except that the condition is removed at the end of the next round.
             \\crit The target is \\glossterm<stunned> and \\glossterm<confused> as a single \\glossterm<condition>.
             If the target is humanoid and was already stunned and confused from a previous casting of this spell, it becomes \\glossterm<dominated> by you as long as you \\glossterm<attune> to this ability.
         """, scaling="accuracy", tags=['Compulsion']),
@@ -104,6 +111,7 @@ enchantment=MysticSphere(
             \\hit The falls asleep as a \\glossterm<condition>.
             It cannot be awakened while the condition lasts unless it takes a \\glossterm<vital wound>, which causes it to wake up and ends the sleeping part of the condition.
             After the condition ends, the target can wake up normally, though it continues to sleep until it would wake up naturally.
+            % No \\glance effect since brief sleep still allows coup de grace
             \\crit As above, except that the target does not wake up until it suffers two \\glossterm<vital wounds>.
         """, scaling="accuracy", tags=['Compulsion']),
         # Spell('Close Your Eyes', 7, 'One creature within \\rngmed range', """
@@ -131,7 +139,7 @@ enchantment=MysticSphere(
             Make an attack vs. Mental against each target.
             \\hit Until the end of the next round, each target is convinced that they just learned some phenomenal cosmic truth or life-changing revelation, making them \\glossterm<stunned>.
             \\crit As above, except that the effect is a \\glossterm<condition> instead of ending at the end of the next round.
-        """, tags=['Delusion']),
+        """, scaling="accuracy", tags=['Emotion']),
         Spell('Heedless Rush', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental with a +4 bonus to \\glossterm<accuracy> against the target.
             \\hit As a \\glossterm<condition>, the target is forced to use the \\textit<sprint> action whenever it moves (see \\pcref<Sprint>).
@@ -145,6 +153,7 @@ enchantment=MysticSphere(
             If it has any weapons in hand or natural weapons at that time, it must use one of them.
             Otherwise, it uses its unarmed attack.
             This does not use up any of the creature's actions for the round, and it can take any unused actions during the \\glossterm<delayed action phase> of that round.
+            % No \\glance effect since it's already one round
             \\crit As above, except that the target takes a -4 penalty to its defenses against the strike.
         """, scaling="accuracy", tags=['Compulsion']),
         Spell('Discordant Song', 4, '\\glossterm<Enemies> in a \\areasmall radius from you', """
@@ -209,6 +218,7 @@ enchantment=MysticSphere(
             It cannot take violent actions (although it can defend itself) or do anything destructive.
             If the target is harmed or feels that it is in danger, this effect is \\glossterm<dismissed>.
             Harming the target is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
+            \\glance As above, except that the condition is removed at the end of the next round.
             \\crit As above, except that situations which cause the target to feel that it is in danger without harming it do not break the effect.
         """, scaling="accuracy", tags=['Emotion', 'Sustain (standard)']),
         Spell('Enrage', 1, 'One creature within \\rngmed range', """
@@ -230,7 +240,6 @@ enchantment=MysticSphere(
         #     For example, it could make a \\glossterm<strike> or cast an offensive spell, but it could not heal itself or summon a creature.
         # """, scaling="""
         #     \\rank<6> The range increases to \\rnglong.
-        #     \\rank<8> The area increases to a \\arealarge radius.
         # """, tags=['Emotion']),
         # Spell('Enticing Target', 3, '\\glossterm<Enemies> in the area (see text)', """
         #     You radiate an aura in a \\areasmall radius \\glossterm<emanation> from you that encourages your enemies to attack you.
@@ -289,6 +298,8 @@ enchantment=MysticSphere(
             Make an attack vs. Mental against each target.
 
             \\hit Each target is unable to say things it knows to be untrue.
+            % No \\glance effect
+            % No \\crit effect
         """, tags=['Attune (ritual)'], ritual_time='one minute'),
     ],
     category='debuff, combat',

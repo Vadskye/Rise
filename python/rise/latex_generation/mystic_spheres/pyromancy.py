@@ -64,10 +64,12 @@ pyromancy=MysticSphere(
             Make an attack vs. Reflex against each target.
             \\hit Each target takes fire damage equal to 2d10 plus half your \\glossterm<power>.
             In addition, if the target is a flammable object, it is \\glossterm<ignited>.
+            \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=[]),
         Spell('Fireball', 3, 'Everything in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Reflex against each target.
             \\hit Each target takes fire damage equal to 2d6 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=[]),
         Spell('Firebolt', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Armor against the target.
@@ -139,6 +141,7 @@ pyromancy=MysticSphere(
             As a \\glossterm<minor action>, you can fire an orb at a creature or object within \\rngclose range.
             When you do, make an attack vs. Armor against that target.
             \\hit The target takes fire damage equal to 2d8 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
 
             You can cast this spell as a \\glossterm<minor action>.
         """, scaling="damage", tags=['Attune (self)']),
@@ -151,6 +154,7 @@ pyromancy=MysticSphere(
         Spell('Flame Serpent', 4, 'Everything in a \\arealarge, 5 ft.\\ wide shapeable line that starts within \\rngclose range', f"""
             Make an attack vs. Reflex against each target.
             \\hit Each target takes fire damage equal to 2d8 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=[]),
         Spell('Personal Ignition', 3, ['Yourself', 'See text'], """
             You catch on fire.
@@ -163,6 +167,7 @@ pyromancy=MysticSphere(
             Heat constantly radiates in a \\areasmall radius emanation from you.
             As a \\glossterm<minor action>, you can intensify the flames to make an attack vs. Fortitude against everything in the area.
             \\hit Each secondary target takes fire damage equal to 4d8 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
 
             You can cast this spell as a \\glossterm<minor action>.
         """, scaling="damage", tags=['Attune (self)']),
@@ -211,6 +216,7 @@ pyromancy=MysticSphere(
             It can put out the fire by making a \\glossterm<difficulty rating> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
             Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
             Putting out the flames in this way does not remove this effect.
+            \\glance As above, except that the condition is removed at the end of the next round.
             \\crit As above, except that the effect lasts until the curse is removed.
         """, scaling="accuracy", tags=['Curse']),
         Spell('Kindled Fireburst', 2, 'One Tiny or larger active fire within \\rngmed range (see text)', """

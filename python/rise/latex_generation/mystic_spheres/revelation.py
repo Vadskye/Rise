@@ -46,7 +46,6 @@ revelation=MysticSphere(
         """, scaling="""
             \\rank<4> The area increases to a \\areahuge radius \\glossterm<emanation>.
             \\rank<6> The area increases to a \\areaext radius \\glossterm<emanation>.
-            \\rank<8> The area increases to a 500 foot radius \\glossterm<emanation>.
         """, tags=['Attune (self)']),
         Spell('True Strike', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The first time the target makes a \\glossterm<strike> this round,
@@ -71,18 +70,18 @@ revelation=MysticSphere(
         """, scaling="""
             \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The bonus increases to +2.
-            \\rank<8> The bonus increases to +3.
         """, tags=['Attune (target)']),
         Spell('Discern Lies', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit When you hear the target deliberately and knowingly speaks a lie, you know that the target was lying.
             This ability does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.
+            \\glance As above, except that the effect ends at the end of the next round.
+            % No \\crit effect
         """, scaling="accuracy", tags=['Sustain (minor)', 'Detection']),
         Spell('Boon of Mastery', 4, 'Yourself', """
             You gain a +2 \\glossterm<magic bonus> to all skills.
         """, scaling="""
             \\rank<6> The bonus increases to +3.
-            \\rank<8> The bonus increases to +4.
         """, tags=['Attune (self)']),
         # Spell('Boon of Many Eyes', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
         #     The target reduces its \\glossterm<overwhelm penalties> by 2.
@@ -132,6 +131,7 @@ revelation=MysticSphere(
             The fact does not have to be true to gain this bonus.
             \\hit The target's mind is overwhelmed by a total awareness of your chosen fact.
             It is \\glossterm<stunned> as a \\glossterm<condition>.
+            \\glance As above, except that the condition is removed at the end of the next round.
             \\crit As above, except that the condition must be removed twice before the effect ends.
         """, scaling="accuracy", tags=[]),
         Spell('Alarm', 2, 'One unoccupied square within \\rngmed range', """
@@ -145,7 +145,6 @@ revelation=MysticSphere(
         """, scaling="""
             \\rank<4> The sensor gains a +2 bonus to Awareness.
             \\rank<6> The Awareness bonus increases to +4.
-            \\rank<8> The Awareness bonus increases to +6.
         """, tags=['Attune (self)', 'Scrying']),
         Spell('Arcane Eye', 2, 'One unoccupied square within \\rngmed range', """
             A \\glossterm<scrying sensor> appears floating in the air in the target location.
@@ -160,7 +159,6 @@ revelation=MysticSphere(
         """, scaling="""
             \\rank<4> The sensor is not destroyed if you do not have \\glossterm<line of effect> to it.
             \\rank<6> You constantly receive sensory input from both your body and the sensor.
-            \\rank<8> The distance you can move the sensor during each movement phase increases to 100 feet.
         """, tags=['Sustain (minor)', 'Scrying']),
         Spell('Clairvoyance', 5, 'One unoccupied square within \\rngmed range (see text)', """
             You do not need \\glossterm<line of sight> or \\glossterm<line of effect> to target a location.
@@ -197,6 +195,8 @@ revelation=MysticSphere(
             Whenever the target touches another creature, you can make an attack against the new creature.
             On a hit, the touched creature becomes the new target of this spell and the condition is transferred to it.
             On a miss, the condition remains on the previous creature.
+            % No \\glance
+            % No \\crit
         """, scaling="accuracy", tags=['Sustain (standard)']),
         # spell to cast spells from the eye instead of from your body?
     ],
@@ -281,6 +281,7 @@ revelation=MysticSphere(
             This sensor functions like the sensor created by the \\spell<arcane eye> spell, except that you cannot move the sensor manually.
             Instead, it automatically tries to follow the target to stay in its space.
             At the end of each phase, if the sensor is not in the target's space, this effect is \\glossterm<dismissed>.
+            % No \\crit effect
         """, tags=['Scrying'], ritual_time='one hour'),
         Spell('Interplanar Scry Creature', 8, 'One creature on the same plane as you', """
             This ritual functions like the \\ritual<scry creature> ritual, except that the target does not have to be on the same plane as you.

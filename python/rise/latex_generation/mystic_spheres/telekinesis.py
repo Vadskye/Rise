@@ -66,6 +66,7 @@ telekinesis=MysticSphere(
             Moving a target upwards costs twice the normal movement cost.
             If the target impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgoning damage equal to 2d6 plus half your \\glossterm<power>.
             Any individual object or creature can only take damage once in this way, even if it is hit by multiple targets that are knocked flying.
+            \\glance As above, except that that each target moves half as far and takes half damage.
         """, scaling="damage", tags=[]),
         # Spell('Repulsive Grasp', 1, 'One creature or object you \\glossterm<threaten>', """
         #     This spell does not have the \\glossterm<Focus> tag.

@@ -42,7 +42,6 @@ photomancy=MysticSphere(
         """, scaling="""
             \\rank<4> The area increases to a \\arealarge line.
             \\rank<6> The area increases to a \\areahuge line.
-            \\rank<8> The area increases to a \\areaext line.
         """, tags=['Sensation', 'Sustain (minor)']),
         Spell('Flash', 2, 'One creature within \\rngmed range', """
             A burst of light flashes in front of a creature's eyes.
@@ -114,7 +113,6 @@ photomancy=MysticSphere(
         """, scaling="""
             \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The bonus increases to +2.
-            \\rank<8> The bonus increases to +3.
         """, tags=['Attune (target)', 'Sensation', 'Visual']),
         Spell('Disguise Image', 3, 'Yourself', """
             You make a Disguise check to alter the target's appearance (see \\pcref<Disguise Creature>).

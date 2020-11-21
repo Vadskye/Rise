@@ -111,11 +111,11 @@ cryomancy=MysticSphere(
         """, scaling="""
             \\rank<4> The spell creates six layers of ice.
             \\rank<6> The spell creates eight layers of ice.
-            \\rank<8> The spell creates ten layers of ice.
         """, tags=['Attune (self)', 'Manifestation']),
         Spell('Winterwave', 3, 'Everything in a \\arealarge cone from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes cold damage equal to 2d6 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=[]),
         Spell('Frostbite', 3, 'One creature or object within \\rngclose range', """
             Make an attack vs. Fortitude against the target.
@@ -127,6 +127,7 @@ cryomancy=MysticSphere(
         Spell('Hailstorm', 5, 'Everything in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Armor against each target.
             \\hit Each target takes cold and bludgeoning damage equal to 2d10 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=[]),
         Spell('Blizzard', 3, '\\glossterm<Enemies> and objects in a \\areamed radius from you', """
             Make an attack vs. Fortitude against each target.
@@ -158,6 +159,7 @@ cryomancy=MysticSphere(
             As a standard action, you can breathe cold like a dragon.
             When you do, make an attack vs. Fortitude against everything in a \\arealarge cone.
             \\hit Each target takes cold damage equal to 2d8 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
 
             You can cast this spell as a \\glossterm<minor action>.
         """, scaling="damage", tags=['Attune (self)']),
@@ -166,6 +168,7 @@ cryomancy=MysticSphere(
             \\hit As a \\glossterm<condition>, the target is seared by painful cold.
             % TODO: standardize "ignite" damage
             At the end of each round, it takes 4d10 cold damage.
+            \\glance As above, except that the condition is removed at the end of the next round after its damage is dealt.
             \\crit As above, except that the damage from the condition is doubled.
         """, tags=[]),
     ],

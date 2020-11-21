@@ -53,6 +53,8 @@ verdamancy=MysticSphere(
             In addition, it is unable to breathe.
             This condition can be removed if the target or a creature that can reach the target makes a \\glossterm<difficulty rating> 15 Strength check to break the target free of the vines.
             The target can make this check as a \\glossterm<move action>, while other creatures can make the check as a standard action.
+            \\glance As above, except that the condition is removed at the end of the next round.
+            \\crit As above, except that the condition must be removed twice before the effect ends.
         """, tags=['Manifestation']),
         Spell('Vineburst', 1, '\\glossterm<Enemies> in a \\areasmall radius from you', """
             Make an attack vs. Armor against each target.
@@ -96,6 +98,7 @@ verdamancy=MysticSphere(
             For each \\glossterm<poison stage>, including the initial stage, the target loses 1d10 \\glossterm<hit points>.
             Reaching the third \\glossterm<poison stage> causes the target to gain a \\glossterm<vital wound> and ends the poison.
             A third failed attack also ends the poison.
+            % No \\glance effect
             \\crit As above, except that target immediately reaches the second \\glossterm<poison stage>, as normal for poisons.
         """, scaling="""
             The hit point loss from the poison increases by +1d for each rank beyond 3.
@@ -107,6 +110,7 @@ verdamancy=MysticSphere(
             For each \\glossterm<poison stage>, including the initial stage, the target loses 2d8 \\glossterm<hit points>.
             Reaching the third \\glossterm<poison stage> causes the target to gain a \\glossterm<vital wound>.
             A third failed attack ends the poison.
+            % No \\glance effect
             \\crit As above, except that target immediately reaches the second \\glossterm<poison stage>, as normal for poisons.
         """, scaling="""
             The hit point loss from the poison increases by +1d for each rank beyond 5.
@@ -156,7 +160,8 @@ verdamancy=MysticSphere(
             Creatures can pass through the wall, though it costs five extra feet of movement to move through the wall.
             When a creature moves through the wall, make an attack vs. Armor against it.
             You can only make an attack in this way against a given creature once per \\glossterm<phase>.
-            \\hit The target takes piercing \\glossterm<standard damage> -1d.
+            \\hit The target takes piercing damage equal to 2d6 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
 
             Each five-foot square of wall has hit points equal to three times your \\glossterm<power>, and all of its defenses are 0.
             It is \\glossterm<vulnerable> to fire damage.
