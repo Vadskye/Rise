@@ -35,6 +35,7 @@ thaumaturgy=MysticSphere(
             \\hit One of the target's magic auras is altered (see \\pcref<Spellsense>).
             You can change the \\glossterm<ability tags> the aura has.
             In addition, you can decrease the \\glossterm<power> of the aura by up to half your power, or increase the power of the aura up to a maximum of your power.
+            % No \\crit effect
         """, scaling="accuracy", tags=['Attune (self)']),
         Spell('Suppress Item', 1, 'One Large or smaller magical object in \\rngmed range', """
             Make an attack vs. Mental against the target.
@@ -52,6 +53,7 @@ thaumaturgy=MysticSphere(
         Spell('Deattunement', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against the target.
             \\hit The target stops being \\glossterm<attuned> to one effect of its choice that it is currently attuned to.
+            % No \\glance effect
             \\crit The target stops being \\glossterm<attuned> to two abilities of its choice that it is currently attuned to.
             In addition, as a \\glossterm<condition>, it becomes unable to \\glossterm<attune> to any additional abilities.
         """, scaling="accuracy", tags=[]),
@@ -89,11 +91,13 @@ thaumaturgy=MysticSphere(
             The primary target must be currently affected by a \\glossterm<magical> \\glossterm<condition>.
             Make an attack vs. Mental against the secondary target.
             \\hit One magical condition of your choice is removed from the primary target and applied to the secondary target.
+            % No \\glance effect; weird shenanigans if you autoremove the conditions
             \\crit As above, except that you can transfer any number of magical conditions in this way.
         """, scaling="accuracy", tags=[]),
         Spell('Malign Confluence', 7, ['Yourself and each \\glossterm<ally> within \\rngmed range', 'One other creature within that range'], """
             Make an attack vs. Mental against the secondary target.
             \\hit One magical condition of your choice is removed from each primary target and applied to the secondary target.
+            % No \\glance effect; weird shenanigans if you autoremove the conditions
             \\crit As above, except that you can transfer any number of magical conditions from each primary target in this way.
         """, tags=[]),
         Spell('Spell Absoption', 7, 'Yourself', """
@@ -123,6 +127,7 @@ thaumaturgy=MysticSphere(
             Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against the target.
             \\hit The target is unable to travel extradimensionally.
             This prevents all \\glossterm<Manifestation> effects and effects that teleport the target or move it between planes.
+            \\glance As above, except that the effect ends at the end of the next round.
             % No relevant \\crit effect
         """, scaling="accuracy", tags=['Sustain (minor)']),
         Spell('Dimensional Lock', 5, None, """
@@ -141,6 +146,7 @@ thaumaturgy=MysticSphere(
         Spell('Disrupt Casting', 5, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit As a \\glossterm<condition>, the target has a 50\\% chance to \\glossterm<miscast> any spell it casts.
+            \\glance As above, except that the condition is removed at the end of the next round.
             \\crit As a \\glossterm<condition>, the target automatically \\glossterm<miscasts> any spell it casts.
         """, scaling="accuracy", tags=[]),
         Spell('Absorb Magic', 6, 'Yourself', """
