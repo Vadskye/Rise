@@ -913,25 +913,25 @@ It defines how attributes work and explains how to make attacks in combat.
     \subsection{Determining Attributes}
         There are several options for how to determine attribute scores.
 
-        \parhead{Predefined Attribute Scores} This is the simplest method.
-        Simply take the following set of attribute scores and distribute them as you choose among your attributes:
+        \subsubsection{Predefined Attribute Scores}
+            This is the simplest method.
+            Simply take the following set of attribute scores and distribute them as you choose among your attributes:
 
-        3, 2, 1, 1, 0, 0
+            3, 2, 2, 0, 0, 0
 
-        This set of attribute scores is called the ``elite array''.
-        For more extreme characters, you may use the ``savant array'':
+            This set of attribute scores is called the ``elite array''.
+            For more extreme characters, you may use the ``savant array'':
 
-        4, 2, 0, 0, 0, 0.
+            4, 2, 1, 0, 0, 0.
 
-        Finally, for more well-balanced characters, you may use the ``balanced array'':
+            Finally, for more well-balanced characters, you may use the ``balanced array'':
 
-        2, 2, 2, 1, 0, 0
+            2, 2, 2, 1, 1, 0
 
-        \parhead{Point Buy}
-        {
+        \subsubsection{Point Buy}
             With this method, you can fully control your attribute scores to match what you want to be able to do.
             All your attribute scores start at 0.
-            You get ten points to distribute among your attributes.
+            You get 11 points to distribute among your attributes.
             Attributes can be bought according to the costs on \trefnp{Attribute Score Point Costs}.
             The listed cost is the total cost required to gain the listed base attribute.
             You are 1st level when you start, which adds appropriately to your total attribute score.
@@ -947,13 +947,12 @@ It defines how attributes work and explains how to make attacks in combat.
                     4                         & 3 \add one and a half level & 7 \\
                 \end{dtabularx}
             \end{dtable}
-        }
 
         \subsubsection{Attribute Penalties}\label{Attribute Penalties}
             Regardless of how you determine your attributes, you can voluntarily take penalties to your attributes.
             If you reduce an attribute to a total of \minus1, you gain an additional \glossterm{skill point}.
             If you reduce an attribute to a total of \minus2, you instead gain an additional \glossterm{insight point}.
-            You cannot reduce more than two attributes below 0 in this way.
+            You cannot gain these benefits from reducing more than two attributes below 0 in this way.
 
     \subsection{Extraordinary Attributes}
         Some abilities can increase your base attributes above 4.
