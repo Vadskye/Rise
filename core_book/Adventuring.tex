@@ -263,41 +263,41 @@
     Alternately, you can attempt to sunder the object with sheer strength.
 
     \subsection{Damaging Objects}
-        An object's size and primary material determines the number of \glossterm{vital wounds} it can suffer before being destroyed.
-        The primary material it is constructed from determines its \glossterm{resistances}, and can modify the number of vital wounds it can take.
-        An object breaks it takes \glossterm{vital wounds} in excess of its maximum.
-        Objects do not have \glossterm{hit points} or a \glossterm{bleed resistance}, cannot be \glossterm{bloodied}, and do not make \glossterm{vital rolls}.
+        Objects have \glossterm{hit points} and \glossterm{resistances}, but their resistances do not function in the same way that they do for creatures.
+        The resistance of an object is not reduced by taking damage, and cannot be reduced by any other means.
+        If an object takes damage from an attack in excess of its resistance, it loses \glossterm{hit points} equal to the excess damage.
+        Otherwise, the attack has no effect.
+
+        An object becomes \glossterm{broken} if its \glossterm{hit points} are reduced to 0 (see \pcref{Broken and Destroyed Objects}).
+        Objects cannot gain \glossterm{vital wounds}.
         Objects are also not normally subject to \glossterm{critical hits}.
 
-    \subsection{Sundering Objects}
-        As a standard action, you can attempt to sunder an object you can touch.
-        This requires two hands.
-        An object's size and primary material determines the \glossterm{difficulty rating} of the check.
-        Success means that the object breaks.
-        Failure by 5 or less means you inflict a \glossterm{vital wound} on the object, but it does not break.
-        Failure by 6 or more means nothing happens.
+    \subsection{Object Statistics}
+        An object's size primarily influences the number of \glossterm{hit points} it has.
+        The primary material it is constructed from determines its \glossterm{resistances}, and can modify the number of hit points it has.
+        Details are given in \tref{Object Statistics By Size} and \tref{Object Statistics By Material}.
 
         \begin{dtable}
-            \lcaption{Object Defenses by Size}
+            \lcaption{Object Statistics By Size}
             \begin{dtabularx}{\textwidth}{l X X}
-                \tb{Size}  & \tb{Max Vital Wounds} & \tb{Sunder Difficulty Rating} \tableheaderrule
-                Fine       & 1                     & 1\fn{1} \\
-                Diminutive & 1                     & 2       \\
-                Tiny       & 2                     & 5       \\
-                Small      & 4                     & 10      \\
-                Medium     & 8                     & 15      \\
-                Large      & 16                    & 20      \\
-                Huge       & 32                    & 25      \\
-                Gargantuan & 64                    & 30      \\
-                Colossal   & 128                   & 35      \\
+                \tb{Size}  & \tb{Hit Points} & \tb{Sunder Difficulty Rating} \tableheaderrule
+                Fine       & 1               & 1\fn{1} \\
+                Diminutive & 2               & 2       \\
+                Tiny       & 5               & 5       \\
+                Small      & 10              & 10      \\
+                Medium     & 20              & 15      \\
+                Large      & 50              & 20      \\
+                Huge       & 100             & 25      \\
+                Gargantuan & 200             & 30      \\
+                Colossal   & 500             & 35      \\
             \end{dtabularx}
             1. Extremely small objects may be difficult to grip effectively, which can significantly increase the difficulty to sunder them.
         \end{dtable}
 
         \begin{dtable}
-            \lcaption{Object Defenses by Material}
+            \lcaption{Object Statistics By Material}
             \begin{dtabularx}{\textwidth}{l X X X}
-                \tb{Material}   & \tb{Vital Resistance} & \tb{Max Vital Wounds} & \tb{Sunder Modifier}  & \tableheaderrule
+                \tb{Material}   & \tb{Resistances}\fn{1} & \tb{Hit Points Multiplier}\fn{2} & \tb{Sunder Difficulty Rating Modifier}  & \tableheaderrule
                 Adamantine      & 30                    & \mult3                & \plus20              \\
                 Glass           & 5                     & \mult1/2              & \tdash               \\
                 Ice             & 1                     & \mult1/2              & \minus5              \\
@@ -309,11 +309,22 @@
                 Stone           & 8                     & \mult2                & \plus5               \\
                 Wood            & 5                     & \tdash                & \tdash               \\
             \end{dtabularx}
+            1. This indicates the object's resistance to both \glossterm{physical damage} and \glossterm{energy damage}. \\
+            2. Any value here modifies the number of hit points the object would normally have based on its size.
         \end{dtable}
 
+    \subsection{Sundering Objects}
+        As a standard action, you can attempt to sunder an object you can touch.
+        This requires two hands.
+        An object's size and primary material determines the \glossterm{difficulty rating} of the check.
+        The \glossterm{difficulty rating} of this check decreases by 2 if the object is below its maximum \glossterm{hit points}.
+        Success means that the object breaks.
+        Failure by 5 or less means you inflict a \glossterm{vital wound} on the object, but it does not break.
+        Failure by 6 or more means nothing happens.
+
     \subsection{Broken and Destroyed Objects}
-        An object that reaches its maximum vital wounds or is sundered becomes \glossterm{broken}.
-        You can destroy an object by inflicting ten times its maximum \glossterm{vital wounds}, or by succeeding at a check to sunder the object by 20.
+        An object that is reduced to 0 \glossterm{hit points} becomes \glossterm{broken}.
+        You can destroy an object by causing it to lose additional hit points equal to ten times its maximum hit points, or by succeeding at a check to sunder the object by 20.
 
         \parhead{Broken Objects}\label{Broken Objects}
         Broken objects cannot be used for their intended purpose, but still retain enough of their original form to be repaired without too much work.
