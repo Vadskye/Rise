@@ -113,17 +113,17 @@ This choice determines a great deal about your character's abilities.
 \section{Barbarian}\label{Barbarian}
     \begin{dtable!*}
         \lcaption{Barbarian Progression}
-        \begin{dtabularx}{\textwidth}{l l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Min Level} & \tb{Battleforged Resilience}   & \tb{Battlerager}       & \tb{Outland Savage}      & \tb{Primal Warrior}    \tableheaderrule
-            1 & 1  & Battleforged endurance         & Rage                   & Exotic weaponry          & Primal maneuvers                        \\
-            2 & 2  & Toughened body                 & Seething anger         & Fast movement            & Maneuver rank (2), primal maneuver      \\
-            3 & 5  & Battle-scarred                 & Powerful anger         & Savage precision         & Maneuver rank (3), primal lore          \\
-            4 & 8  & Greater battleforged endurance & Greater rage           & Savage instincts         & Maneuver rank (4), primal force         \\
-            5 & 11 & Greater toughened body         & Greater seething anger & Greater fast movement    & Maneuver rank (5), primal maneuver      \\
-            6 & 14 & Greater battle-scarred         & Greater powerful anger & Greater savage precision & Maneuver rank (6), primal endurance     \\
-            7 & 17 & Supreme battleforged endurance & Supreme rage           & Greater savage instincts & Maneuver rank (7), greater primal force \\
-            8 & 20 & Epic resilience                & Epic rage              & Epic savagery            & Maneuver rank (8), epic primality       \\
-        \end{dtabularx}
+\begin{dtabularx}{\textwidth}{l l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+    \tb{Rank} & \tb{Min Level} & \tb{Battleforged Resilience}   & \tb{Battlerager}       & \tb{Outland Savage}      & \tb{Primal Warrior}    \tableheaderrule
+    0 & \tdash & Endurance                     & Seething anger           & Savage instincts         & Primal might                            \\
+    1 & 1      & Battle-scarred                & Rage                     & Fast movement            & Primal maneuvers                        \\
+    2 & 4      & Unbattered resilience         & Insensible anger         & Savage precision         & Maneuver rank (2), primal force         \\
+    3 & 7      & Greater endurance             & Greater seething anger   & Savage force             & Maneuver rank (3), glancing strikes     \\
+    4 & 10     & Greater battle-scarred        & Greater rage             & Greater fast movement    & Maneuver rank (4), primal maneuver      \\
+    5 & 13     & Greater unbattered resilience & Greater insensible anger & Greater savage precision & Maneuver rank (5), greater primal force \\
+    6 & 16     & Supreme endurance             & Supreme seething anger   & Greater savage force     & Maneuver rank (6), greater primal might \\
+    7 & 19     & Supreme battle-scarred        & Supreme rage             & Supreme fast movement    & Maneuver rank (7), primal maneuver      \\
+\end{dtabularx}
     \end{dtable!*}
 
     Barbarians are primal warriors that draw power from the physical strength of their bodies.
@@ -198,7 +198,7 @@ This choice determines a great deal about your character's abilities.
             For the duration of this ability, you gain the following benefits and drawbacks:
             \begin{itemize}
                 \item You gain a \plus4 bonus to your \glossterm{fatigue tolerance}.
-                % TODO: is this too much?
+                % This is an aggressive scaling that prevents any direct upgrades later in the archetype
                 \item You gain a bonus equal to twice your rank in this archetype to your \glossterm{power} with \glossterm{mundane} abilities.
                 \item You take a \minus2 penalty to Armor and Reflex defenses.
                 \item You are unable to take \glossterm{standard actions} that do not cause you to make \glossterm{mundane} attacks.
@@ -214,7 +214,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Bbn}[3]{Greater Seething Anger} The Intimidate skill bonus from your \textit{seething anger} ability increases to \plus4.
         In addition, the Mental defense bonus from that ability increases to \plus2.
 
-        \cf{Bbn}[4]{Greater Rage} The \glossterm{power} bonus from your \textit{rage} ability increases to be equal to three times your rank in this archetype.
+        \cf{Bbn}[4]{Greater Rage} You also gain a \plus1 bonus to \glossterm{accuracy} during your \textit{rage} ability.
 
         \cf{Bbn}[5]{Greater Insensible Anger} The hit point reduction and resistance bonuses from your \textit{insensible anger} ability both increase to be equal to twice your rank in this archetype.
 
@@ -223,7 +223,7 @@ This choice determines a great deal about your character's abilities.
         Finally, you become immune to \glossterm{Compulsion} effects.
 
         \cf{Bbn}[7]{Supreme Rage} When you use your \textit{rage} ability, you can grow by one \glossterm{size category}.
-        In addition, the \glossterm{power} bonus from your \textit{rage} ability increases to be equal to four times your rank in this archetype.
+        In addition, the \glossterm{accuracy} bonus from your \textit{greater rage} ability increases to \plus2.
 
     \subsection{Outland Savage}
         This archetype improves your mobility and combat prowess with direct, brutal abilities.
@@ -317,17 +317,17 @@ This choice determines a great deal about your character's abilities.
 \section{Cleric}\label{Cleric}
     \begin{dtable!*}
         \lcaption{Cleric Progression}
-        \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Min Level} & \tb{Divine Magic} & \tb{Divine Spell Mastery}   & \tb{Domain Influence}  & \tb{Healer} \tableheaderrule
-            1 & 1  & Spellcasting                         & Mystic insight              & Domains, domain gift & Divine healing         \\
-            2 & 2  & Spell rank (2), spell knowledge      & Insightful caster           & Domain gift          & Vital healer           \\
-            3 & 5  & Spell rank (3)                       & Wellspring of power         & Domain aspect        & Divine cleanse         \\
-            4 & 8  & Spell rank (4)                       & Mystic insight              & Domain aspect        & Greater divine healing \\
-            5 & 11 & Spell rank (5), spell knowledge      & Greater insightful caster   & Domain essence       & Greater vital healer   \\
-            6 & 14 & Spell rank (6)                       & Greater wellspring of power & Domain essence       & Greater divine cleanse \\
-            7 & 17 & Spell rank (7)                       & Mystic insight              & Miracle              & Supreme divine healing \\
-            8 & 20 & Spell rank (8), epic spell knowledge & Epic divine mastery         & Domain masteries     & Epic healer            \\
-        \end{dtabularx}
+\begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+    \tb{Rank} & \tb{Min Level} & \tb{Divine Magic} & \tb{Divine Spell Mastery}   & \tb{Domain Influence}  & \tb{Healer} \tableheaderrule
+    0 & \tdash & Cantrips                             & Mystic training             & Domains, domain gift & Healer's wisdom                              \\
+    1 & 1      & Spellcasting                         & Insightful caster           & Domain gift          & Restoration                                  \\
+    2 & 4      & Spell rank (2)                       & Mystic insight              & Domain aspect        & Healer's grace                               \\
+    3 & 7      & Spell rank (3)                       & Wellspring of power         & Domain aspect        & Divine healing                               \\
+    4 & 10     & Spell rank (4), spell knowledge      & Mystic insight              & Domain essence       & Greater healer's wisdom, greater restoration \\
+    5 & 13     & Spell rank (5)                       & Greater insightful caster   & Domain essence       & Greater healer's grace                       \\
+    6 & 16     & Spell rank (6)                       & Mystic insight              & Miracle              & Revivify                                     \\
+    7 & 19     & Spell rank (7), spell knowledge & Greater wellspring of power & Domain masteries     & Healing versatility, supreme restoration     \\
+\end{dtabularx}
     \end{dtable!*}
 
     Clerics are divine spellcasters that draw power from their worship of a specific deity.
@@ -471,7 +471,7 @@ This choice determines a great deal about your character's abilities.
         }
 
         \cf{Clr}[3]{Wellspring of Power}[Magical]
-        You gain a bonus equal to your rank in this archetype to your \glossterm{power} with \glossterm{magical} abilities.
+        You gain a \plus2 bonus to your \glossterm{power} with \glossterm{magical} abilities.
 
         \cf*{Clr}[4]{Mystic Insight}[Magical]
         You gain an additional \textit{mystic insight} ability.
@@ -482,7 +482,7 @@ This choice determines a great deal about your character's abilities.
         You gain an additional \textit{mystic insight} ability.
 
         \cf{Clr}[7]{Greater Wellspring of Power}[Magical]
-        The bonus from your \textit{wellspring of power} ability increases to twice your rank in this archetype.
+        The bonus from your \textit{wellspring of power} ability increases to \plus8.
 
     \subsection{Domain Influence}
         This archetype grants you divine influence over two domains of your choice.
@@ -663,7 +663,7 @@ This choice determines a great deal about your character's abilities.
                 You may freely exclude any number of 5-ft\. cubes from the area, as long as the resulting area is still contiguous.
                 \hit For each target, if its \glossterm{resistance} against \glossterm{physical damage} is lower than your \glossterm{power}, it crumbles into a fine power and is irreparably \glossterm{destroyed}.
             \end{freeability}
-            \parhead{Mastery} You gain a bonus equal to your rank in this archetype to your \glossterm{power} with all abilities.
+            \parhead{Mastery} You gain a \plus4 bonus to your \glossterm{power} with all abilities.
 
         \subsubsection{Earth}
             If you choose this domain, you add the \sphere{terramancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
@@ -774,8 +774,8 @@ This choice determines a great deal about your character's abilities.
 
             \parhead{Gift} You gain a \plus4 bonus to the Spellcraft skill (see \pcref{Spellcraft}).
             \parhead{Aspect} You learn an additional \glossterm{spell} from a divine \glossterm{mystic sphere} you have access to.
-            \parhead{Essence} You gain a bonus equal to your rank in this archetype to your \glossterm{power} with \glossterm{magical} abilities.
-            \parhead{Mastery} The power bonus from this domain's essence increases to be equal to twice your rank in this archetype.
+            \parhead{Essence} You gain a \plus4 bonus to your \glossterm{power} with \glossterm{magical} abilities.
+            \parhead{Mastery} The power bonus from this domain's essence increases to \plus8.
 
         \subsubsection{Protection}
             \parhead{Gift} You gain a \plus1 bonus to Armor defense.
@@ -837,7 +837,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Aspect} Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
             This is called a \glossterm{glancing blow}.
             \parhead{Essence} You deal half damage to your allies with \glossterm{magical} abilities.
-            \parhead{Mastery} You gain a bonus equal to your rank in this archetype to your \glossterm{power} with all abilities.
+            \parhead{Mastery} You gain a \plus4 bonus to your \glossterm{power} with all abilities.
 
         \subsubsection{Water}
             If you choose this domain, you add the \sphere{aquamancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
@@ -876,17 +876,17 @@ This choice determines a great deal about your character's abilities.
 \section{Druid}\label{Druid}
     \begin{dtable!*}
         \lcaption{Druid Progression}
-        \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X l >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Min Level} & \tb{Elementalist}         & \tb{Nature Magic} & \tb{Nature Spell Mastery}   & \tb{Shifter}               & \tb{Wildspeaker}         \tableheaderrule
-            1 & 1  & Elemental balance         & Spellcasting                         & Mystic insight              & Wild aspects               & Natural servant         \\
-            2 & 2  & Elemental magic           & Spell rank (2), spell knowledge      & Combat caster               & Shifting defense           & Animal speech           \\
-            3 & 5  & Elemental influence       & Spell rank (3)                       & Wellspring of power         & Shift body                 & Wild guardian           \\
-            4 & 8  & Greater elemental balance & Spell rank (4)                       & Mystic insight              & Wild aspect                & Greater natural servant \\
-            5 & 11 & Elemental spell           & Spell rank (5), spell knowledge      & Greater combat caster       & Greater shifting defense   & Plant speech            \\
-            6 & 14 & Elemental control         & Spell rank (6)                       & Greater wellspring of power & Greater shift body         & Greater wild guardian   \\
-            7 & 17 & Supreme elemental balance & Spell rank (7)                       & Mystic insight              & Triple aspect, wild aspect & Supreme natural servant \\
-            8 & 20 & Avatar of elements        & Spell rank (8), epic spell knowledge & Epic nature mastery         & Wild fusion                & Twin servant            \\
-        \end{dtabularx}
+\begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X l >{\lcol}X >{\lcol}X}
+    \tb{Rank} & \tb{Min Level} & \tb{Elementalist}         & \tb{Nature Magic} & \tb{Nature Spell Mastery}   & \tb{Shifter}               & \tb{Wildspeaker}         \tableheaderrule
+    0 & \tdash & Elemental lore            & Cantrips                        & Natural training            & Shifting defense                                   & Nature's ally           \\
+    1 & 1      & Elemental balance         & Spellcasting                    & Combat caster               & Wild aspects                                       & Natural servant         \\
+    2 & 4      & Elemental magic           & Spell rank (2)                  & Mystic insight              & Shift body                                         & Animal speech           \\
+    3 & 7      & Elemental influence       & Spell rank (3)                  & Wellspring of power         & Greater shifting defense, glancing natural strikes & Greater nature's ally   \\
+    4 & 10     & Greater elemental balance & Spell rank (4), spell knowledge & Mystic insight              & Wild aspect                                        & Greater natural servant \\
+    5 & 13     & Elemental spell           & Spell rank (5)                  & Greater combat caster       & Greater shift body                                 & Plant speech            \\
+    6 & 16     & Elemental control         & Spell rank (6)                  & Mystic insight              & Supreme shifting defense                           & Supreme nature's ally   \\
+    7 & 19     & Supreme elemental balance & Spell rank (7), spell knowledge & Greater wellspring of power & Wild fusion                                        & Supreme natural servant \\
+\end{dtabularx}
     \end{dtable!*}
 
     Druids are nature spellcasters that draw power from their veneration of the natural world.
@@ -971,6 +971,7 @@ This choice determines a great deal about your character's abilities.
             \item Water: You gain a \glossterm{swim speed} equal to your \glossterm{base speed}.
         \end{itemize}
 
+        % Should this give two spells or another side benefit?
         \cf{Drd}[5]{Elemental Spell} You learn an additional spell from any of the spheres associated with the four elements: \sphere{aeromancy}, \sphere{aquamancy}, \sphere{pyromancy}, or \sphere{terramancy}.
 
         \cf{Drd}[6]{Elemental Control} When you use your \textit{elemental influence} ability, you can also command the elements to move as you desire.
@@ -1067,7 +1068,7 @@ This choice determines a great deal about your character's abilities.
         }
 
         \cf{Drd}[3]{Wellspring of Power}[Magical]
-        You gain a bonus equal to your rank in this archetype to your \glossterm{power} with \glossterm{magical} abilities.
+        You gain a \plus2 bonus to your \glossterm{power} with \glossterm{magical} abilities.
 
         \cf*{Drd}[4]{Mystic Insight}[Magical]
         You gain an additional \textit{mystic insight} ability.
@@ -1078,7 +1079,7 @@ This choice determines a great deal about your character's abilities.
         You gain an additional \textit{mystic insight} ability.
 
         \cf{Drd}[7]{Greater Wellspring of Power}[Magical]
-        The bonus from your \textit{wellspring of power} ability increases to twice your rank in this archetype.
+        The bonus from your \textit{wellspring of power} ability increases to \plus8.
 
     \subsection{Shifter}\label{Shifter}
         This archetype grants you the ability to embody aspects of the natural world in your own form.
@@ -1266,7 +1267,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Drd}[3]{Greater Shifting Defense}
         The bonus from your \textit{shifting defense} ability increases to \plus2.
 
-        \cf{Drd}[3]{Glancing Strikes} Whenever you miss by 2 or less with a \glossterm{strike} using a \glossterm{natural weapon}, the target takes half damage from the strike.
+        \cf{Drd}[3]{Glancing Natural Strikes} Whenever you miss by 2 or less with a \glossterm{strike} using a \glossterm{natural weapon}, the target takes half damage from the strike.
         This is called a \glossterm{glancing blow}.
 
         \cf{Drd}[4]{Wild Aspect}[Magical]
@@ -1521,17 +1522,17 @@ This choice determines a great deal about your character's abilities.
 \section{Fighter}\label{Fighter}
     \begin{dtable!*}
         \lcaption{Fighter Progression}
-        \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Min Level} & \tb{Combat Discipline}       & \tb{Equipment Training}      & \tb{Martial Mastery}   & \tb{Tactician} \tableheaderrule
-            1 & 1  & Discipline                  & Armor expertise              & Martial maneuvers                              & Battle tactics                \\
-            2 & 2  & Enduring discipline         & Weapon training              & Maneuver rank (2), martial maneuver            & Tactical advice               \\
-            3 & 5  & Disciplined power           & Equipment efficiency         & Maneuver rank (3), martial endurance           & Tactical coordination         \\
-            4 & 8  & Disciplined reaction        & Greater armor expertise      & Maneuver rank (4), defensive expertise         & Battle tactic                 \\
-            5 & 11 & Greater enduring discipline & Weapon expertise             & Maneuver rank (5), martial maneuver            & Greater battle tactics        \\
-            6 & 14 & Greater disciplined power   & Greater equipment efficiency & Maneuver rank (6), greater martial endurance   & Greater tactical coordination \\
-            7 & 17 & Disciplined vitality        & Supreme armor expertise      & Maneuver rank (7), greater defensive expertise & Battle tactic                 \\
-            8 & 20 & Epic discipline             & Equipment supremacy          & Maneuver rank (8), epic martialist             & Tactical fusion               \\
-        \end{dtabularx}
+\begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+    \tb{Rank} & \tb{Min Level} & \tb{Combat Discipline}       & \tb{Equipment Training}      & \tb{Martial Mastery}                           & \tb{Tactician} \tableheaderrule
+    0         & \tdash         & Enduring discipline          & Armor expertise              & Defensive expertise                            & Tactical insight              \\
+    1         & 1              & Discipline                   & Weapon training              & Martial maneuvers                              & Battle tactics                \\
+    2         & 4              & Disciplined force            & Equipment efficiency         & Maneuver rank (2), martial force               & Tactical coordination         \\
+    3         & 7              & Greater enduring discipline  & Greater armor expertise      & Maneuver rank (3), glancing strikes            & Tactical force                \\
+    4         & 10             & Disciplined reaction         & Weapon expertise             & Maneuver rank (4), martial maneuver            & Tactical insight              \\
+    5         & 13             & Greater disciplined force    & Greater equipment efficiency & Maneuver rank (5), greater martial force       & Greater tactical coordination \\
+    6         & 16             & Greater enduring discipline  & Supreme armor expertise      & Maneuver rank (6), greater defensive expertise & Greater tactical force        \\
+    7         & 19             & Greater disciplined reaction & Greater weapon expertise     & Maneuver rank (7), martial maneuver            & Tactical insight              \\
+\end{dtabularx}
     \end{dtable!*}
 
     Fighters are disciplined warriors that excel in all aspects of physical combat.
@@ -1582,29 +1583,28 @@ This choice determines a great deal about your character's abilities.
             \rank{7} You can remove any number of \glossterm{conditions}.
         \end{freeability}
 
-        \cf{Ftr}[2]{Enduring Discipline}
-        You increase your maximum \glossterm{hit points} by 1.
-        In addition, you gain a \plus1 bonus to your \glossterm{fatigue tolerance} (see \pcref{Fatigue Tolerance}).
+        \cf{Ftr}[2]{Disciplined Force}
+        You gain a \plus1d bonus to your damage with all weapons.
 
-        \cf{Ftr}[3]{Disciplined Power}
-        You gain a bonus equal to your rank in this archetype to your \glossterm{power} with \glossterm{mundane} abilities.
+        \cf{Ftr}[3]{Greater Enduring Discipline}
+        The bonus from your \textit{enduring discipline} ability increases to \plus2.
+        In addition, you gain a \plus2 bonus to Mental defense.
 
         \cf{Ftr}[4]{Disciplined Reaction}
         You do not suffer any effects from \glossterm{conditions} in the first round that they are applied.
         You suffer their normal effects in the following round.
         In addition, you gain a \plus2 bonus to the Deception and Intimidate skills.
 
-        \cf{Ftr}[5]{Greater Enduring Discipline}
-        The number of hit points you gain from your \textit{enduring discipline} ability increases to 2.
-        In addition, the bonus to your fatigue tolerance increases to \plus2.
+        \cf{Ftr}[5]{Greater Disciplined Force} The bonus from your \textit{disciplined force} ability increases to \plus2d.
 
-        \cf{Ftr}[6]{Greater Disciplined Power} The bonus from your \textit{disciplined power} ability increases to twice your rank in this archetype.
+        \cf{Ftr}[6]{Greater Enduring Discipline}
+        The bonus from your \textit{enduring discipline} ability increases to \plus3.
+        In addition, the bonus from your \textit{greater enduring discipline} ability increases to \plus4.
 
-        \cf{Ftr}[7]{Disciplined Vitality}
-        You do not suffer any effects from \glossterm{vital wounds} until the end of the next round after they are applied.
+        \cf{Ftr}[7]{Greater Disciplined Reaction}
+        You do not suffer any effects from \glossterm{conditions} until the end of the next round after they are applied.
         You suffer their normal effects after that time.
-
-        \cf{Ftr}[8]{Epic Discipline} You are immune to \glossterm{conditions}.
+        In addition, the skill bonuses from your \textit{disciplined reaction} ability increase to \plus4.
 
     \subsection{Equipment Training}
         This archetype improves your combat prowess with weapons and armor.
@@ -1639,7 +1639,7 @@ This choice determines a great deal about your character's abilities.
         The \glossterm{encumbrance} reduction from your \textit{armor expertise} ability increases to 3.
         In addition, you treat body armor as if it were an additional usage class lighter than normal when doing so would be beneficial for you.
 
-        \cf{Ftr}[7]{Greater Weapon Expertise} The bonus from your \textit{weapon expertise} ability increases to \plus2d.
+        \cf{Ftr}[7]{Greater Weapon Expertise} The bonus from your \textit{weapon expertise} ability increases to \plus3d.
 
     \subsection{Martial Mastery}
         This archetype grants you special abilities to use in combat.
@@ -1705,19 +1705,21 @@ This choice determines a great deal about your character's abilities.
 
     \subsection{Tactician}
 
+        \cf{Ftr}[0]{Tactical Insight} You gain an additional \glossterm{insight point}.
+
         \cf{Ftr}[1]{Battle Tactics}
         You can lead your allies using tactics appropriate for the situation.
         Choose a single battle tactic from the list below.
         You can also spend \glossterm{insight points} to learn one additional \textit{battle tactic} per \glossterm{insight point}.
 
         You can initiate a \textit{battle tactic} as a \glossterm{minor action}.
-        Your \textit{battle tactics} affect your \glossterm{allies} within a \arealarge radius emanation from you who can either see or hear you.
+        Your \textit{battle tactics} affect your \glossterm{allies} within a \areahuge radius \glossterm{emanation} from you who can either see or hear you.
 
         All \textit{battle tactics} have the \glossterm{Sustain} (free) tag, so they last as long as you \glossterm{sustain} them (see \pcref{Sustained Abilities}).
         You cannot sustain multiple battle tactics simultaneously.
 
         {
-            \begin{attuneability}{Break Through}[\glossterm{Attune} (self)]
+            \begin{freeability}{Break Through}[\glossterm{Sustain} (free)]
                 Each target that is adjacent to at least one other target
                     gains a \plus2 bonus to \glossterm{accuracy} with the \textit{overrun} and \textit{shove} abilities (see \pcref{Special Combat Abilities}).
 
@@ -1725,87 +1727,85 @@ This choice determines a great deal about your character's abilities.
                 \rank{3} The bonus increases to \plus3.
                 \rank{5} The bonus increases to \plus4.
                 \rank{7} The bonus increases to \plus4.
-            \end{attuneability}
+            \end{freeability}
 
-            \begin{attuneability}{Dogpile}[\glossterm{Attune} (self)]
+            \begin{freeability}{Dogpile}[\glossterm{Sustain} (free)]
                 Each target that is adjacent to at least one other target
-                gains a \plus2 bonus to \glossterm{accuracy} with the \textit{grapple} ability and with all grapple actions (see \pcref{Grapple}, and \pcref{Grapple Actions}).
+                    gains a \plus2 bonus to \glossterm{accuracy} with the \textit{grapple} ability and with all grapple actions (see \pcref{Grapple}, and \pcref{Grapple Actions}).
 
                 \rankline
                 \rank{3} The bonus increases to \plus3.
                 \rank{5} The bonus increases to \plus4.
                 \rank{7} The bonus increases to \plus5.
-            \end{attuneability}
+            \end{freeability}
 
-            \begin{attuneability}{Duck and Cover}[\glossterm{Attune} (self)]
+            \begin{freeability}{Duck and Cover}[\glossterm{Sustain} (free)]
                 Each target gains a \plus1 bonus to Armor defense against non-\glossterm{melee} attacks.
 
                 \rankline
                 \rank{3} The bonus increases to \plus2.
                 \rank{5} The bonus increases to \plus3.
-                \rank{7} The bonus increases to \plus7.
-            \end{attuneability}
+                \rank{7} The bonus increases to \plus4.
+            \end{freeability}
 
-            \begin{attuneability}{Group Up}[\glossterm{Attune} (self)]
+            \begin{freeability}{Group Up}[\glossterm{Sustain} (free)]
                 Each target that is adjacent to at least two other targets gains a \plus1 bonus to Armor defense.
 
                 \rankline
                 \rank{3} Each target affected by the Armor defense bonus also gains a \plus2 bonus to Mental defense.
                 \rank{5} The Armor defense bonus increases to \plus2.
                 \rank{7} The Mental defense bonus increases to \plus4.
-            \end{attuneability}
+            \end{freeability}
 
-            \begin{attuneability}{Hold Fast}[\glossterm{Attune} (self)]
-                Each target that ends the \glossterm{movement phase} without moving gains a \plus1 bonus to Armor defense until it moves.
+            \begin{freeability}{Hold The Line}[\glossterm{Sustain} (free)]
+                Your \glossterm{enemies} treat all areas \glossterm{threatened} by at least two targets as \glossterm{difficult terrain}.
 
                 \rankline
-                \rank{3} Each target affected by the Armor defense bonus also gains a \plus2 bonus to Fortitude defense.
-                \rank{5} The Armor defense bonus increases to \plus2.
-                \rank{7} The Fortitude defense bonus increases to \plus4.
-            \end{attuneability}
+                \rank{3} This ability affects areas threatened by each target rather than areas threatened by at least two targets.
+                \rank{5} Each area threatened by at least two targets is doubly difficult terrain, and costs quadruple the normal movement cost to move out of.
+                \rank{7} Each area threatened by each target is doubly difficult terrain.
+            \end{freeability}
 
-            \begin{attuneability}{Hustle}[\glossterm{Attune} (self)]
+            \begin{freeability}{Hustle}[\glossterm{Sustain} (free)]
                 Each target gains a \plus5 foot bonus to its \glossterm{base speed}.
 
                 \rankline
                 \rank{3} The speed bonus increases to \plus10 feet.
                 \rank{5} The speed bonus increases to \plus15 feet.
                 \rank{7} The speed bonus increases to \plus20 feet.
-            \end{attuneability}
+            \end{freeability}
 
-            \begin{attuneability}{Keep Moving}[\glossterm{Attune} (self)]
-                Each target that ends the \glossterm{movement phase} at least twenty feet away from where it started the round gains a \plus1 bonus to Armor defense until the end of the round.
+            \begin{freeability}{Keep Moving}[\glossterm{Sustain} (free)]
+                Each target that ends the \glossterm{movement phase} at least twenty feet away from where it started the round
+                    gains a \plus1 bonus to Armor defense until the end of the round.
 
                 \rankline
                 \rank{3} Each target affected by the Armor defense bonus also gains a \plus2 bonus to Reflex defense.
                 \rank{5} The Armor defense bonus increases to \plus2.
                 \rank{7} The Reflex defense bonus increases to \plus4.
-            \end{attuneability}
+            \end{freeability}
+
+            \begin{freeability}{Stand Your Ground}[\glossterm{Sustain} (free)]
+                Each target that ends the \glossterm{movement phase} without moving gains a \plus1 bonus to Armor defense until it moves.
+
+                \rankline
+                \rank{3} Each target affected by the Armor defense bonus also gains a \plus2 bonus to Fortitude defense.
+                \rank{5} The Armor defense bonus increases to \plus2.
+                \rank{7} The Fortitude defense bonus increases to \plus4.
+            \end{freeability}
         }
 
-        \cf{Ftr}[2]{Tactical Advice} You can use the \textit{tactical advice} ability as a standard action.
-        \begin{freeability}{Tactical Advice}[\glossterm{Swift}]
-            Choose an \glossterm{ally} within \rngmed range.
-            During the current phase, the target gains a \plus2 bonus to \glossterm{accuracy} and rolls twice for any attacks it makes, keeping the better result.
+        \cf{Ftr}[2]{Tactical Coordination} You gain a \plus1 bonus to \glossterm{accuracy} against \glossterm{overwhelmed} creatures.
 
-            \rankline
-            \rank{4} The accuracy bonus increases to \plus3.
-            \rank{6} The accuracy bonus increases to \plus4.
-        \end{freeability}
+        \cf{Ftr}[3]{Tactical Force} You gain a \plus1d bonus to damage with all weapons.
 
-        \cf{Ftr}[3]{Tactical Coordination} You gain a \plus1 bonus to \glossterm{accuracy} against \glossterm{overwhelmed} creatures.
+        \cf*{Ftr}[4]{Tactical Insight} You gain an additional \glossterm{insight point}.
 
-        \cf{Ftr}[4]{Battle Tactic} You learn an additional \textit{battle tactic}.
+        \cf{Ftr}[5]{Greater Tactical Coordination} The bonus from your \textit{tactical coordination} ability increases to \plus2.
 
-        \cf{Ftr}[5]{Greater Battle Tactics} The area affected by your \textit{battle tactics} increases to an \areahuge emanation.
-        In addition, if are attuned to a \textit{battle tactics} ability, you can change which tactic you are attuned to as a \glossterm{minor action}.
+        \cf{Ftr}[6]{Greater Tactical Force} The bonus from your \textit{tactical force} ability increases to \plus2d.
 
-        \cf{Ftr}[6]{Greater Tactical Coordination} The bonus from your \textit{tactical coordination} ability increases to \plus2.
-
-        \cf*{Ftr}[7]{Battle Tactic} You learn an additional \textit{battle tactic}.
-
-        \cf{Ftr}[8]{Tactical Fusion} You can have two \textit{battle tactics} abilities active simultaneously, and you can activate two tactics with the same action.
-        Whenever you use a new \textit{battle tactics} ability, you can choose which of your existing tactics to replace.
+        \cf*{Ftr}[7]{Tactical Insight} You gain an additional \glossterm{insight point}.
 
 \newpage
 \section{Monk}\label{Monk}
@@ -1813,14 +1813,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Monk Progression}
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Min Level} & \tb{Esoteric Warrior}               & \tb{Ki}                                & \tb{Perfected Form}        & \tb{Transcendent Sage} \tableheaderrule
-            1 & 1  & Esoteric maneuvers                           & Ki barrier, ki manifestations        & Fast movement, unarmed warrior & Clear the mind                \\
-            2 & 2  & Maneuver rank (2), esoteric maneuver         & Ki strike                            & Perfect body                   & Transcend frailty             \\
-            3 & 5  & Maneuver rank (3), esoteric lore             & Ki power                             & Perfect precision              & Inner peace                   \\
-            4 & 8  & Maneuver rank (4), esoteric fluidity         & Greater ki barrier, ki manifestation & Greater fast movement          & Feel the flow of life         \\
-            5 & 11 & Maneuver rank (5), esoteric maneuver         & Ki focus                             & Greater perfect body           & Transcend flesh               \\
-            6 & 14 & Maneuver rank (6), esoteric agility          & Greater ki power                     & Greater perfect precision      & Greater inner peace           \\
-            7 & 17 & Maneuver rank (7), greater esoteric fluidity & Supreme ki barrier, ki manifestation & Supreme fast movement          & Greater feel the flow of life \\
-            8 & 20 & Maneuver rank (8), esoteric supremacy        & Epic ki                              & Perfection                     & Transcendence                 \\
+            0 & \tdash  & Esoteric maneuvers                           & Ki barrier, ki manifestations        & Fast movement, unarmed warrior & Clear the mind                \\
+            1 & 1  & Maneuver rank (2), esoteric maneuver         & Ki strike                            & Perfect body                   & Transcend frailty             \\
+            2 & 4  & Maneuver rank (3), esoteric lore             & Ki power                             & Perfect precision              & Inner peace                   \\
+            3 & 7  & Maneuver rank (4), esoteric fluidity         & Greater ki barrier, ki manifestation & Greater fast movement          & Feel the flow of life         \\
+            4 & 10 & Maneuver rank (5), esoteric maneuver         & Ki focus                             & Greater perfect body           & Transcend flesh               \\
+            5 & 13 & Maneuver rank (6), esoteric agility          & Greater ki power                     & Greater perfect precision      & Greater inner peace           \\
+            6 & 16 & Maneuver rank (7), greater esoteric fluidity & Supreme ki barrier, ki manifestation & Supreme fast movement          & Greater feel the flow of life \\
+            7 & 19 & Maneuver rank (8), esoteric supremacy        & Epic ki                              & Perfection                     & Transcendence                 \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -2054,7 +2054,7 @@ This choice determines a great deal about your character's abilities.
         In addition, the bonus to \glossterm{resistance} against \glossterm{energy damage} from your \textit{ki barrier} ability increases to be equal to three times your rank in this archetype.
 
         \cf{Mnk}[3]{Ki Power}
-        You gain a bonus equal to your rank in this archetype to your \glossterm{power} with \glossterm{magical} abilities.
+        You gain a \plus2 bonus to your \glossterm{power} with \glossterm{magical} abilities.
 
         \cf{Mnk}[4]{Ki Manifestation}[Magical]
         You learn an additional \textit{ki manifestation}.
@@ -2062,7 +2062,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Mnk}[5]{Greater Ki Self} The defense bonus from the body armor provided by your \textit{ki barrier} ability increases to \plus3.
         In addition, the bonus to \glossterm{resistance} against \glossterm{energy damage} increases to be equal to four times your rank in this archetype.
 
-        \cf{Mnk}[6]{Greater Ki Power} The bonus from your \textit{ki power} ability increases to twice your rank in this archetype.
+        \cf{Mnk}[6]{Greater Ki Power} The bonus from your \textit{ki power} ability increases to \plus6.
 
         \cf{Mnk}[7]{Greater Ki Manifestation}[Magical] After using a \textit{ki manifestation} ability, you can use another one after the end of the current round instead of the end of the next round.
 
@@ -2144,15 +2144,15 @@ This choice determines a great deal about your character's abilities.
     \begin{dtable!*}
         \lcaption{Paladin Progression}
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Min Level} & \tb{Devoted Paragon}  & \tb{Divine Magic} & \tb{Divine Spell Expertise}   & \tb{Stalwart Guardian}      & \tb{Zealous Warrior}       \tableheaderrule
-            1 & 1  & Aligned aura          & Spellcasting                    & Insight point               & Lay on hands                & Smite                    \\
-            2 & 2  & Aligned immunity      & Spell rank (2), spell knowledge & Combat caster               & Enduring defender           & Zealous offense          \\
-            3 & 5  & Paragon power         & Spell rank (3)                  & Wellspring of power         & Stalwart resilience         & Zealous purge            \\
-            4 & 8  & Greater aligned aura  & Spell rank (4)                  & Insight point               & Defender's boon             & Zealous fixation         \\
-            5 & 11 & Devoted mind          & Spell rank (5), spell knowledge & Greater combat caster       & Greater enduring defender   & Pass judgment            \\
-            6 & 14 & Greater paragon power & Spell rank (6)                  & Greater wellspring of power & Greater stalwart resilience & Greater zealous offense  \\
-            7 & 17 & Supreme aligned aura  & Spell rank (7)                  & Insight point               & Greater defender's boon     & Greater zealous fixation \\
-            8 & 20 & Epic paragon          & Divine spell conduit            & Epic divine expertise       & Epic guardian               & Epic zeal                \\
+            \tb{Rank} & \tb{Min Level} & \tb{Devoted Paragon}  & \tb{Divine Magic}                          & \tb{Divine Spell Expertise} & \tb{Stalwart Guardian}      & \tb{Zealous Warrior}       \tableheaderrule
+            0         & \tdash         & Aligned aura          & Cantrips                             & Insight point               & Lay on hands                & Smite                    \\
+            1         & 1              & Aligned immunity      & Spellcasting                         & Combat caster               & Enduring defender           & Zealous offense          \\
+            2         & 4              & Paragon power         & Spell rank (2)                       & Wellspring of power         & Stalwart resilience         & Zealous purge            \\
+            3         & 7              & Greater aligned aura  & Spell rank (3)                       & Insight point               & Defender's boon             & Zealous fixation         \\
+            4         & 10             & Devoted mind          & Spell rank (4), spell knowledge      & Greater combat caster       & Greater enduring defender   & Pass judgment            \\
+            5         & 13             & Greater paragon power & Spell rank (5)                       & Greater wellspring of power & Greater stalwart resilience & Greater zealous offense  \\
+            6         & 16             & Supreme aligned aura  & Spell rank (6)                       & Insight point               & Greater defender's boon     & Greater zealous fixation \\
+            7         & 19             & Epic paragon          & Spell rank (7), spell knowledge & Epic divine expertise       & Epic guardian               & Epic zeal                \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -2222,7 +2222,7 @@ This choice determines a great deal about your character's abilities.
         \subparhead{Law} You are immune to hostile \glossterm{Emotion} abilities.
 
         \cf{Pal}[3]{Paragon Power}
-        You gain a bonus equal to your rank in this archetype to your \glossterm{power} with all abilities.
+        You gain a \plus2 bonus to your \glossterm{power} with all abilities.
 
         \cf{Pal}[4]{Greater Aligned Aura}[Magical]
         The effect of your \textit{aligned aura} becomes stronger, as described below.
@@ -2235,7 +2235,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Pal}[5]{Greater Devoted Mind} The bonus from your \textit{devoted mind} ability increases to \plus4.
 
-        \cf{Pal}[6]{Greater Paragon Power} The bonus from your \textit{paragon power} ability increases to twice your rank in this archetype.
+        \cf{Pal}[6]{Greater Paragon Power} The bonus from your \textit{paragon power} ability increases to \plus6.
 
         \cf{Pal}[7]{Supreme Aligned Aura}
         The area of your \textit{aligned aura} increases to a \areahuge radius \glossterm{emanation} from you.
@@ -2310,7 +2310,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Pal}[2]{Insight Point} You gain an additional \glossterm{insight point}.
 
         \cf{Pal}[3]{Wellspring of Power}[Magical]
-        You gain a bonus equal to your rank in this archetype to your \glossterm{power} with \glossterm{magical} abilities.
+        You gain a \plus2 bonus to your \glossterm{power} with \glossterm{magical} abilities.
 
         \cf*{Pal}[4]{Insight Point} You gain an additional \glossterm{insight point}.
 
@@ -2319,7 +2319,7 @@ This choice determines a great deal about your character's abilities.
         \cf*{Pal}[6]{Insight Point} You gain an additional \glossterm{insight point}.
 
         \cf{Pal}[7]{Greater Wellspring of Power}[Magical]
-        The bonus from your \textit{wellspring of power} ability increases to twice your rank in this archetype.
+        The bonus from your \textit{wellspring of power} ability increases to \plus8.
 
     \subsection{Stalwart Guardian}
         This archetype grants you healing abilities and improves your defensive prowess.
@@ -2403,7 +2403,6 @@ This choice determines a great deal about your character's abilities.
             Persecution of those who share your ideals can lead you to fall and become an ex-paladin.
         \end{freeability}
 
-
         \cf{Pal}[7]{Supreme Smite} The bonus from your \textit{greater smite} ability increases to \plus2d.
 
         % TODO: Doesn't work with new spell system
@@ -2427,14 +2426,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Ranger Progression}
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X > {\lcol}X}
             \tb{Rank} & \tb{Min Level} & \tb{Beastmaster}         & \tb{Huntmaster} & \tb{Keen Senses}    & \tb{Wilderness Warrior} \tableheaderrule
-            1 & 1  & Animal companion         & Quarry                     & Keen vision               & Wild maneuvers                          \\
-            2 & 2  & Handling lore            & Hunting style              & Farsight                  & Maneuver rank (2), wild maneuver        \\
-            3 & 5  & Pack tactics             & Hunter's instincts         & Perceive weakness         & Maneuver rank (3), wild lore            \\
-            4 & 8  & Greater animal companion & Endurance tracker          & Blindsight                & Maneuver rank (4), wild senses          \\
-            5 & 11 & Greater handling lore    & Hunting style              & Greater farsight          & Maneuver rank (5), wild maneuver        \\
-            6 & 14 & Greater pack tactics     & Greater hunter's instincts & Greater perceive weakness & Maneuver rank (6), wild agility         \\
-            7 & 17 & Supreme animal companion & Greater endurance tracker  & Greater blindsight        & Maneuver rank (7), greater wild senses  \\
-            8 & 20 & Twin companion           & Dual quarry                & Epic senses               & Maneuver rank (8), wilderness supremacy \\
+            0 & \tdash  & Animal companion         & Quarry                     & Keen vision               & Wild maneuvers                          \\
+            1 & 1  & Handling lore            & Hunting style              & Farsight                  & Maneuver rank (2), wild maneuver        \\
+            2 & 4  & Pack tactics             & Hunter's instincts         & Perceive weakness         & Maneuver rank (3), wild lore            \\
+            3 & 7  & Greater animal companion & Endurance tracker          & Blindsight                & Maneuver rank (4), wild senses          \\
+            4 & 10 & Greater handling lore    & Hunting style              & Greater farsight          & Maneuver rank (5), wild maneuver        \\
+            5 & 13 & Greater pack tactics     & Greater hunter's instincts & Greater perceive weakness & Maneuver rank (6), wild agility         \\
+            6 & 16 & Supreme animal companion & Greater endurance tracker  & Greater blindsight        & Maneuver rank (7), greater wild senses  \\
+            7 & 19 & Twin companion           & Dual quarry                & Epic senses               & Maneuver rank (8), wilderness supremacy \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -2659,7 +2658,7 @@ This choice determines a great deal about your character's abilities.
             \end{freeability}
         }
 
-        \cf{Rgr}[3]{Greater Endurance Hunter} The bonus to the Survival skill from your \textit{hunter's instincts} ability increases to \plus4.
+        \cf{Rgr}[3]{Greater Endurance Hunter} The bonus to the Survival skill from your \textit{endurance hunter} ability increases to \plus4.
         In addition, the bonus to Fortitude defense from that ability increases to \plus2.
         Finally, you gain a \plus1 bonus to your \glossterm{fatigue tolerance} (see \pcref{Fatigue Tolerance}).
 
@@ -2668,9 +2667,9 @@ This choice determines a great deal about your character's abilities.
         \cf*{Rgr}[5]{Hunting Style}
         You learn an additional \textit{hunting style}.
 
-        \cf{Rgr}[6]{Supreme Endurance Hunter} The bonus to the Survival skill from your \textit{hunter's instincts} ability increases to \plus6.
+        \cf{Rgr}[6]{Supreme Endurance Hunter} The bonus to the Survival skill from your \textit{endurance hunter} ability increases to \plus6.
         In addition, the bonus to Fortitude defense from that ability increases to \plus3.
-        Finally, the bonus to your fatigue tolerance from that ability increases to \plus2.
+        Finally, the bonus to your fatigue tolerance from your \textit{greater endurance hunter} ability increases to \plus2.
 
         \cf{Rgr}[7]{Supreme Quarry} The bonus from your \textit{greater quarry} ability increases to \plus2d.
 
@@ -2751,14 +2750,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Rogue Progression}
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Min Level} & \tb{Assassin}               & \tb{Bard}              & \tb{Combat Trickster} & \tb{Jack of All Trades} \tableheaderrule
-            1 & 1  & Sneak attack                & Bardic performances    & Tricky manuevers                          & Skill lore              \\
-            2 & 2  & Evasion                     & Bardic lore            & Maneuver rank (2), trick maneuver         & Dabbler                 \\
-            3 & 5  & Darkstalker                 & Bardic combat training & Maneuver rank (3), tricky lore            & Versatile power         \\
-            4 & 8  & Hide in plain sight         & Bardic performance     & Maneuver rank (4), tricky finesse         & Skill exemplar          \\
-            5 & 11 & Greater evasion             & Dual performance       & Maneuver rank (5), trick maneuver         & Greater dabbler         \\
-            6 & 14 & Assassination               & Loremaster             & Maneuver rank (6), tricky agility         & Greater versatile power \\
-            7 & 17 & Greater hide in plain sight & Bardic performance     & Maneuver rank (7), greater tricky finesse & Greater skill exemplar  \\
-            8 & 20 & Epic assassin               & Epic bardic            & Maneuver rank (8), epic trickster         & Master of all trades    \\
+            0 & \tdash  & Sneak attack                & Bardic performances    & Tricky manuevers                          & Skill lore              \\
+            1 & 1  & Evasion                     & Bardic lore            & Maneuver rank (2), trick maneuver         & Dabbler                 \\
+            2 & 4  & Darkstalker                 & Bardic combat training & Maneuver rank (3), tricky lore            & Versatile power         \\
+            3 & 7  & Hide in plain sight         & Bardic performance     & Maneuver rank (4), tricky finesse         & Skill exemplar          \\
+            4 & 10 & Greater evasion             & Dual performance       & Maneuver rank (5), trick maneuver         & Greater dabbler         \\
+            5 & 13 & Assassination               & Loremaster             & Maneuver rank (6), tricky agility         & Greater versatile power \\
+            6 & 16 & Greater hide in plain sight & Bardic performance     & Maneuver rank (7), greater tricky finesse & Greater skill exemplar  \\
+            7 & 19 & Epic assassin               & Epic bardic            & Maneuver rank (8), epic trickster         & Master of all trades    \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -3113,13 +3112,13 @@ This choice determines a great deal about your character's abilities.
         \cf{Rog}[2]{Dabbler} You gain an additional \glossterm{insight point}.
 
         \cf{Rog}[3]{Versatile Power}
-        You gain a bonus equal to your rank in this archetype to your \glossterm{power} with all abilities.
+        You gain a \plus2 bonus to your \glossterm{power} with all abilities.
 
         \cf{Rog}[4]{Greater Skill Exemplar} The skill bonus from your \textit{skill exemplar} ability increases to \plus3.
 
         \cf{Rog}[5]{Greater Dabbler} You gain an additional \glossterm{insight point}.
 
-        \cf{Rog}[6]{Greater Versatile Power} The bonus from your \textit{versatile power} ability increases to twice your rank in this archetype.
+        \cf{Rog}[6]{Greater Versatile Power} The bonus from your \textit{versatile power} ability increases to \plus6.
 
         \cf{Rog}[7]{Supreme Skill Exemplar} The skill bonus from your \textit{skill exemplar} ability increases to \plus5.
 
@@ -3181,14 +3180,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Sorcerer Progression}
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Min Level} & \tb{Arcane Magic} & \tb{Arcane Spell Mastery} & \tb{Draconic Magic} & \tb{Innate Arcanist} & \tb{Wild Magic} \tableheaderrule
-            1 & 1  & Spellcasting, mage armor             & Mystic insight              & Draconic bloodline         & Innate magic               & Wildspell                                   \\
-            2 & 2  & Spell rank (2), spell knowledge      & Combat caster               & Draconic focus             & Mystic tolerance           & Chaotic miscast, wild soul                  \\
-            3 & 5  & Spell rank (3)                       & Wellspring of power         & Draconic precision         & Innate enhancement         & Chaotic exertion                            \\
-            4 & 8  & Spell rank (4), greater mage armor   & Mystic insight              & Draconic hide              & Spell absorption           & Controlled chaos                            \\
-            5 & 11 & Spell rank (5), spell knowledge      & Greater combat caster       & Draconic heart             & Greater mystic tolerance   & Greater chaotic miscast, greater wild  soul \\
-            6 & 14 & Spell rank (6)                       & Greater wellspring of power & Greater draconic precision & Greater innate enhancement & Greater chaotic exertion                    \\
-            7 & 17 & Spell rank (7), supreme mage armor   & Mystic insight              & Greater draconic hide      & Greater spell absorption   & Greater controlled chaos                    \\
-            8 & 20 & Spell rank (8), epic spell knowledge & Epic arcane mastery         & Epic innate enhancement    & Epic wildspell             &                                             \\
+            0 & \tdash & Cantrips                             & Mystic insight              & Draconic bloodline         & Innate magic               & Wildspell                                   \\
+            1 & 1      & Spellcasting                         & Combat caster               & Draconic focus             & Mystic tolerance           & Chaotic miscast, wild soul                  \\
+            2 & 4      & Spell rank (2)                       & Wellspring of power         & Draconic precision         & Innate enhancement         & Chaotic exertion                            \\
+            3 & 7      & Spell rank (3)                       & Mystic insight              & Draconic hide              & Spell absorption           & Controlled chaos                            \\
+            4 & 10     & Spell rank (4), spell knowledge      & Greater combat caster       & Draconic heart             & Greater mystic tolerance   & Greater chaotic miscast, greater wild  soul \\
+            5 & 13     & Spell rank (5)                       & Greater wellspring of power & Greater draconic precision & Greater innate enhancement & Greater chaotic exertion                    \\
+            6 & 16     & Spell rank (6)                       & Mystic insight              & Greater draconic hide      & Greater spell absorption   & Greater controlled chaos                    \\
+            7 & 19     & Spell rank (7), spell knowledge & Epic arcane mastery         & Epic innate enhancement    & Epic wildspell             &                                             \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -3308,7 +3307,7 @@ This choice determines a great deal about your character's abilities.
         }
 
         \cf{Sor}[3]{Wellspring of Power}[Magical]
-        You gain a bonus equal to your rank in this archetype to your \glossterm{power} with \glossterm{magical} abilities.
+        You gain a \plus2 bonus to your \glossterm{power} with \glossterm{magical} abilities.
 
         \cf*{Sor}[4]{Mystic Insight}[Magical]
         You gain an additional \textit{mystic insight} ability.
@@ -3319,7 +3318,7 @@ This choice determines a great deal about your character's abilities.
         You gain an additional \textit{mystic insight} ability.
 
         \cf{Sor}[7]{Greater Wellspring of Power}[Magical]
-        The bonus from your \textit{wellspring of power} ability increases to twice your rank in this archetype.
+        The bonus from your \textit{wellspring of power} ability increases to \plus8.
 
     \subsection{Draconic Magic}
         Not all sorcerers know the reason for their innate connection to magic.
@@ -3459,14 +3458,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Warlock Progression}
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Min Level} & \tb{Blessings of the Abyss}  & \tb{Pact Magic} & \tb{Pact Spell Mastery}     & \tb{Soulkeeper's Chosen} \tableheaderrule
-            1 & 1  & Eldritch blast               & Spellcasting, armor tolerance           & Mystic insight              & Possession                  \\
-            2 & 2  & Fiendish resistance          & Spell rank (2), spell knowledge         & Combat caster               & Empowering whispers         \\
-            3 & 5  & Abyssal jaunt                & Spell rank (3)                          & Wellspring of power         & Exchange soul fragment      \\
-            4 & 8  & Abyssal substitution         & Spell rank (4), greater armor tolerance & Mystic insight              & Greater possession          \\
-            5 & 11 & Greater fiendish resistance  & Spell rank (5), spell knowledge         & Greater combat caster       & Greater empowering whispers \\
-            6 & 14 & Abyssal curse                & Spell rank (6)                          & Greater wellspring of power & Exchange vitality           \\
-            7 & 17 & Greater abyssal substitution & Spell rank (7), supreme armor tolerance & Mystic insight              & Supreme possession          \\
-            8 & 20 & Abyssal apotheosis           & Spell rank (8), epic spell knowledge    & Epic pact mastery           & Epic possession             \\
+            0 & \tdash & Eldritch blast               & Cantrips                                & Mystic insight              & Possession                  \\
+            1 & 1      & Fiendish resistance          & Spellcasting                            & Combat caster               & Empowering whispers         \\
+            2 & 4      & Abyssal jaunt                & Spell rank (2)                          & Wellspring of power         & Exchange soul fragment      \\
+            3 & 7      & Abyssal substitution         & Spell rank (3)                      nce & Mystic insight              & Greater possession          \\
+            4 & 10     & Greater fiendish resistance  & Spell rank (4), spell knowledge         & Greater combat caster       & Greater empowering whispers \\
+            5 & 13     & Abyssal curse                & Spell rank (5)                          & Greater wellspring of power & Exchange vitality           \\
+            6 & 16     & Greater abyssal substitution & Spell rank (6)                      nce & Mystic insight              & Supreme possession          \\
+            7 & 19     & Abyssal apotheosis           & Spell rank (7), spell knowledge    & Epic pact mastery           & Epic possession             \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -3566,7 +3565,7 @@ This choice determines a great deal about your character's abilities.
         \cf{War}[4]{Abyssal Substitution} Whenever you use an ability that deals \glossterm{energy damage} or any subtype of energy damage, you can change the type of the damage to fire damage.
         Any other aspects of the ability remain unchanged.
 
-        \cf{War}[4]{Hellfire} You gain a bonus equal to your rank in this archetype to \glossterm{power} with abilities that deal fire damage.
+        \cf{War}[4]{Hellfire} You gain a \plus4 bonus to \glossterm{power} with abilities that deal fire damage.
 
         \cf{War}[5]{Greater Fiendish Resistance}[Magical] The bonus from your \textit{fiendish resistance} ability increases to be equal to twice your level.
 
@@ -3579,7 +3578,7 @@ This choice determines a great deal about your character's abilities.
         \cf{War}[7]{Greater Abyssal Substitution} Whenever you use an ability that deals damage, you may change the type of damage it deals to be fire damage.
         Any other aspects of the ability remain unchanged.
 
-        \cf{War}[7]{Greater Hellfire} The power bonus from your \textit{hellfire} ability increases to twice your rank in this archetype.
+        \cf{War}[7]{Greater Hellfire} The power bonus from your \textit{hellfire} ability increases to \plus8.
 
     \subsection{Pact Magic}
         This archetype grants you the ability to cast pact spells.
@@ -3661,7 +3660,7 @@ This choice determines a great deal about your character's abilities.
         }
 
         \cf{War}[3]{Wellspring of Power}[Magical]
-        You gain a bonus equal to your rank in this archetype to your \glossterm{power} with \glossterm{magical} abilities.
+        You gain a \plus2 bonus to your \glossterm{power} with \glossterm{magical} abilities.
 
         \cf*{War}[4]{Mystic Insight}[Magical]
         You gain an additional \textit{mystic insight} ability.
@@ -3672,7 +3671,7 @@ This choice determines a great deal about your character's abilities.
         You gain an additional \textit{mystic insight} ability.
 
         \cf{War}[7]{Greater Wellspring of Power}[Magical]
-        The bonus from your \textit{wellspring of power} ability increases to twice your rank in this archetype.
+        The bonus from your \textit{wellspring of power} ability increases to \plus8.
 
     \subsection{Soulkeeper's Chosen}
         This archetype enhances your connection to your soulkeeper, granting you abilities relating to your pact.
@@ -3762,14 +3761,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Wizard Progression}
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Min Level} & \tb{Alchemist}               & \tb{Arcane Magic}     & \tb{Arcane Scholar}   & \tb{Arcane Spell Mastery}   \tableheaderrule
-            1 & 1  & Portable workshop            & Spellcasting, mage armor             & Scholastic lore       & Mystic insight              \\
-            2 & 2  & Alchemical infusion          & Spell rank (2), spell knowledge      & Ritualist             & Insightful caster           \\
-            3 & 5  & Alchemical discovery         & Spell rank (3)                       & Scholastic insight    & Wellspring of power         \\
-            4 & 8  & Alchemical expertise         & Spell rank (4), greater mage armor   & Ritual expertise      & Mystic insight              \\
-            5 & 11 & Experienced quaffing         & Spell rank (5), spell knowledge      & Contingency           & Greater insightful caster   \\
-            6 & 14 & Alchemical discovery         & Spell rank (6)                       & Scholastic insight    & Greater wellspring of power \\
-            7 & 17 & Greater alchemical expertise & Spell rank (7), supreme mage armor   & Malleable contingency & Mystic insight              \\
-            8 & 20 & Epic alchemy                 & Spell rank (8), epic spell knowledge & Multiple contingency  & Epic arcane mastery         \\
+            0 & \tdash & Portable workshop            & Cantrips                             & Scholastic lore       & Mystic insight              \\
+            1 & 1      & Alchemical infusion          & Spellcasting                         & Ritualist             & Insightful caster           \\
+            2 & 4      & Alchemical discovery         & Spell rank (2)                       & Scholastic insight    & Wellspring of power         \\
+            3 & 7      & Alchemical expertise         & Spell rank (3)                       & Ritual expertise      & Mystic insight              \\
+            4 & 10     & Experienced quaffing         & Spell rank (4), spell knowledge      & Contingency           & Greater insightful caster   \\
+            5 & 13     & Alchemical discovery         & Spell rank (5)                       & Scholastic insight    & Greater wellspring of power \\
+            6 & 16     & Greater alchemical expertise & Spell rank (6)                       & Malleable contingency & Mystic insight              \\
+            7 & 19     & Epic alchemy                 & Spell rank (7), spell knowledge & Multiple contingency  & Epic arcane mastery         \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -4007,7 +4006,7 @@ This choice determines a great deal about your character's abilities.
         }
 
         \cf{Wiz}[3]{Wellspring of Power}[Magical]
-        You gain a bonus equal to your rank in this archetype to your \glossterm{power} with \glossterm{magical} abilities.
+        You gain a \plus2 bonus to your \glossterm{power} with \glossterm{magical} abilities.
 
         \cf*{Wiz}[4]{Mystic Insight}[Magical]
         You gain an additional \textit{mystic insight} ability.
@@ -4018,4 +4017,4 @@ This choice determines a great deal about your character's abilities.
         You gain an additional \textit{mystic insight} ability.
 
         \cf{Wiz}[7]{Greater Wellspring of Power}[Magical]
-        The bonus from your \textit{wellspring of power} ability increases to twice your rank in this archetype.
+        The bonus from your \textit{wellspring of power} ability increases to \plus8.
