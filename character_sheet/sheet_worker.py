@@ -105,10 +105,6 @@ def set_skill(a, s):
                 var ranks = 0;
                 var training = '';
 
-                if ({a}_starting >= 2) {{
-                    {s}_points += 1
-                }}
-
                 if ({s}_points === 1) {{
                     ranks = Math.floor(level / 2) + 1;
                     training = 'T';
