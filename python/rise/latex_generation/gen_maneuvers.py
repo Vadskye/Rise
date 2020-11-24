@@ -127,7 +127,7 @@ def generate_maneuvers():
             Make a \\glossterm<strike>.
             You ignore all miss chance effects with the strike.
         """,
-        rank=5,
+        rank=4,
         tags=[],
         lists=['Martial', 'Esoteric', 'Wild'],
     ))
@@ -311,7 +311,7 @@ def generate_maneuvers():
             \\hit Each target takes sonic damage equal to 2d6 plus half your \\glossterm<power>.
 
             \\rankline
-            The damage increases by +1d for every rank beyond 3.
+            The damage increases by +1d for each rank beyond 3.
         """,
         rank=3,
         tags=[],
@@ -342,7 +342,7 @@ def generate_maneuvers():
             \\glance As above, except that that each target takes half damage and is not knocked prone.
 
             \\rankline
-            The damage increases by +1d for every rank beyond 3.
+            The damage increases by +1d for each rank beyond 3.
         """,
         rank=3,
         tags=[],
@@ -1002,12 +1002,16 @@ def generate_maneuvers():
         name='Leap Slam',
         short_description='Jump and slam into the ground',
         target="Everything within a \\areasmall radius from you that is on earth or unworked stone (see text)",
-        rank=3,
         effect_text="""
             You make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to your \\glossterm<base speed> (see \\pcref<Leap>).
             When you land, if the vertical distance in feet between the highest point of your leap and your landing point was at least ten feet, make an attack vs. Reflex against each target.
-            \\hit Each target takes bludgeoning damage equal to half your \\glossterm<power> + 1d6 per rank.
+            \\hit Each target takes bludgeoning damage equal to 2d8 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
+
+            \\rankline
+            The damage increases by +1d for each rank beyond 4.
         """,
+        rank=4,
         tags=[],
         lists=['Primal'],
     ))
@@ -1018,6 +1022,10 @@ def generate_maneuvers():
         target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a melee \\glossterm<strike>.
+            % This would be easier to write as +1d up to +3d, but that is very
+            % annoying to track in practice due to the different dice for each stage.
+            % A static damage bonus is more complex to write down, but much easier
+            % to actually make attacks with.
             For each previous consecutive round that you used this ability, you gain a +1 bonus to damage with the strike, up to a maximum of +3.
 
             \\rankline
@@ -1217,7 +1225,7 @@ def generate_maneuvers():
             For details, see \\pcref<Grappling>.
 
             \\rankline
-            The damage increases by +1d for every rank beyond 2.
+            The damage increases by +1d for each rank beyond 2.
         """,
         rank=2,
         tags=[],
