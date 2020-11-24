@@ -108,7 +108,7 @@ revelation=MysticSphere(
             \\crit As above, except that the penalty is doubled.
         """, scaling="accuracy", tags=[]),
         # TODO: figure out if this is balanced? it has a sort of arbitrary level
-        Spell('Reveal Vulnerability', 4, 'One creature within \\rngmed range', """
+        Spell('Reveal Vulnerability', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit As a \\glossterm<condition>, the target's vulnerabilities become clear for all to see.
             Its \\glossterm<resistances> are reduced by an amount equal to your \\glossterm<power>.
