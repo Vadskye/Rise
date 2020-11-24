@@ -42,13 +42,13 @@ pyromancy=MysticSphere(
             You can create it at any intensity, up to a maximum heat equivalent to a burning torch.
             At it most intense, it sheds \\glossterm<bright illumination> in a 20 foot radius and shadowy illumination in an 40 foot radius.
             As a standard action, you can make a melee attack vs. Reflex against a creature or object.
-            On a hit, the target takes fire \\glossterm<standard damage> -1d.
+            On a hit, the target takes 2 fire damage.
 
             This effect lasts until you use it again or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
         """, scaling="""
-            \\rank<3> The damage increases to \\glossterm<standard damage> -1d.
-            \\rank<5> The damage increases to \\glossterm<standard damage>.
-            \\rank<7> The damage increases to \\glossterm<standard damage> +1d.
+            \\rank<3> The damage increases to 5.
+            \\rank<5> The damage increases to 10.
+            \\rank<7> The damage increases to 20.
         """, tags=[]),
     ],
     lists=['Arcane', 'Nature', 'Pact'],

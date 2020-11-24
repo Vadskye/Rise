@@ -165,10 +165,7 @@ verdamancy=MysticSphere(
 
             Each five-foot square of wall has hit points equal to three times your \\glossterm<power>, and all of its defenses are 0.
             It is \\glossterm<vulnerable> to fire damage.
-        """, scaling="""
-            \\rank<5> The area increases to a \\arealarge shapeable wall.
-            \\rank<7> The damage increases to \\glossterm<standard damage>.
-        """, tags=['Attune (self)']),
+        """, scaling="damage", tags=['Attune (self)']),
         Spell('Plant Growth', 2, 'All plants and arable earth in a \\areamed radius within \\rngmed range', """
             Choose whether you want plants within the area to grow or diminish.
 

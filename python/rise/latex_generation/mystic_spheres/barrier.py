@@ -49,7 +49,7 @@ barrier=MysticSphere(
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Forceful Barrier', 3, None, """
             This spell functions like the \\spell<mystic barrier> spell, except that it breaks objects in its area that obstruct its path.
-            Each object in the path of the wall takes energy \\glossterm<standard damage>.
+            Each object in the path of the wall takes energy damage equal to 2d6 plus your \\glossterm<power>.
             Any object destroyed in this way does not block the barrier's area of effect.
             This does no damage to creatures, who block the path of the barrier like normal.
             In addition, the \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to three times your \\glossterm<power>.
@@ -255,7 +255,7 @@ barrier=MysticSphere(
             To read the writing, a creature must concentrate on reading it, which requires a standard action.
             If a creature reads the target, the target explodes.
             You make an attack vs. Reflex against everything within a \\areamed radius from the target.
-            Each struck target takes energy \\glossterm<standard damage> from the explosion.
+            Each struck target takes energy damage equal to 2d8 plus half your \\glossterm<power>.
 
             After the target object explodes in this way, the ritual is \\glossterm<dismissed>.
             If the target is destroyed or rendered illegible, the ritual is dismissed without exploding.
