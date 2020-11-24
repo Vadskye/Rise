@@ -63,7 +63,7 @@ pyromancy=MysticSphere(
         Spell('Pyroclasm', 5, 'Everything in a \\areamed radius within \\rngmed range', """
             Make an attack vs. Reflex against each target.
             \\hit Each target takes fire damage equal to 2d10 plus half your \\glossterm<power>.
-            In addition, if the target is a flammable object, it is \\glossterm<ignited>.
+            In addition, if the target is a flammable object, it catches on fire.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=[]),
         Spell('Fireball', 3, 'Everything in a \\areasmall radius within \\rngmed range', """
@@ -81,22 +81,19 @@ pyromancy=MysticSphere(
         """, scaling="damage", tags=[]),
         Spell('Ignition', 2, 'One creature within \\rngmed range', f"""
             Make an attack vs. Fortitude against the target.
-            \\hit The target is ignited as a \\glossterm<condition>.
+            \\hit The target catches on fire as a \\glossterm<condition>.
             At the end of each round, it takes 1d6 fire damage.
-            If the the target gains a \\glossterm<vital wound> from this damage, the condition ends.
 
-            This condition can be removed if the target makes a \\glossterm<difficulty rating> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
+            If the the target gains a \\glossterm<vital wound> from this damage, the condition ends.
+            The condition can also be removed if the target makes a \\glossterm<difficulty rating> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
             Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
             \\crit As above, except that the damage from the condition is doubled.
         """, scaling="damage", tags=[]),
         Spell('Persistent Ignition', 5, 'One creature within \\rngmed range', f"""
             Make an attack vs. Fortitude against the target.
-            \\hit The target is ignited as a \\glossterm<condition>.
+            \\hit The target catches on fire as a \\glossterm<condition>.
             At the end of each round, it takes 2d6 fire damage.
             If the the target gains a \\glossterm<vital wound> from this damage, the condition ends.
-
-            This condition can be removed if the target makes a \\glossterm<difficulty rating> 15 Dexterity check as a \\glossterm<move action> to put out the flames.
-            Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
             \\glance As above, except that the condition is removed at the end of the next round.
             \\crit As above, except that the damage from the condition is doubled.
         """, scaling="damage", tags=[]),
@@ -158,8 +155,8 @@ pyromancy=MysticSphere(
         """, scaling="damage", tags=[]),
         Spell('Personal Ignition', 3, ['Yourself', 'See text'], """
             You catch on fire.
-            You are immune to being \\glossterm<ignited>.
-            In addition, at the end of each round, make an attack vs. Reflex against each creature adjacent to you that either is \\glossterm<grappling> with you or that attacked you with a melee weapon that round.
+            This does not cause you any harm, as the flames burn around your body without burning you.
+            At the end of each round, make an attack vs. Reflex against each creature adjacent to you that either is \\glossterm<grappling> with you or that attacked you with a melee weapon that round.
             \\hit Each secondary target takes fire damage equal to 2d8 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Attune (self)']),
@@ -212,7 +209,8 @@ pyromancy=MysticSphere(
             Make an attack vs. Mental against the target.
             \\hit The target is highly flammable until it takes a \\glossterm<short rest>.
             Like dry wood or kindling, it catches on fire whenever it takes any fire damage.
-            While ignited, it takes 2d8 fire damage at the end of each round.
+            While ignited in this way, it takes 2d8 fire damage at the end of each round.
+
             It can put out the fire by making a \\glossterm<difficulty rating> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
             Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
             Putting out the flames in this way does not remove this effect.
