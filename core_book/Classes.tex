@@ -197,15 +197,16 @@ This choice determines a great deal about your character's abilities.
         \begin{attuneability}{Rage}[\glossterm{Emotion}, \glossterm{Attune} (self), \glossterm{Swift}]
             For the duration of this ability, you gain the following benefits and drawbacks:
             \begin{itemize}
-                \item You gain a \plus4 bonus to your \glossterm{fatigue tolerance}.
                 % This is an aggressive scaling that prevents any direct upgrades later in the archetype
                 \item You gain a bonus equal to twice your rank in this archetype to your \glossterm{power} with \glossterm{mundane} abilities.
+                \item Your current \glossterm{hit points} increase by an amount equal to three times your rank in this archetype.
+                    This can allow your current hit points to exceed your normal maximum hit points.
+                    When this effect ends, you take physical \glossterm{subdual damage} equal to the hit points you gained this way.
                 \item You take a \minus2 penalty to Armor and Reflex defenses.
                 \item You are unable to take \glossterm{standard actions} that do not cause you to make \glossterm{mundane} attacks.
                 \item You are unable to use \glossterm{Focus} abilities of any kind.
                 \item At the end of each round, if you did not make a \glossterm{mundane} attack that round, this ability ends.
             \end{itemize}
-            When this ability ends, you gain a \glossterm{fatigue point}.
         \end{attuneability}
 
         \cf{Bbn}[2]{Insensible Anger} You reduce your maximum hit points by an amount equal to your rank in this archetype.
@@ -214,7 +215,8 @@ This choice determines a great deal about your character's abilities.
         \cf{Bbn}[3]{Greater Seething Anger} The Intimidate skill bonus from your \textit{seething anger} ability increases to \plus4.
         In addition, the Mental defense bonus from that ability increases to \plus2.
 
-        \cf{Bbn}[4]{Greater Rage} You also gain a \plus1 bonus to \glossterm{accuracy} during your \textit{rage} ability.
+        \cf{Bbn}[4]{Greater Rage} You gain a \plus1 bonus to \glossterm{accuracy} during your \textit{rage} ability.
+        In addition, the number of hit points you gain from that ability increases to four times your rank in this archetype.
 
         \cf{Bbn}[5]{Greater Insensible Anger} The hit point reduction and resistance bonuses from your \textit{insensible anger} ability both increase to be equal to twice your rank in this archetype.
 
@@ -650,11 +652,18 @@ This choice determines a great deal about your character's abilities.
             \parhead{Mastery} Whenever you inflict a \glossterm{vital wound} on a living creature, you may cause that creature to immediately die.
 
         \subsubsection{Destruction}
-            % TODO: upgrade timing is a little weird
+            % This ability gets rank upgrades while maneuvers don't
+            % because maneuvers are upgraded into higher rank maneuvers,
+            % while this has no upgrades and should remain relevant alone.
             \parhead{Gift} You can use the \textit{destructive attack} ability as a standard action.
             \begin{freeability}{Destructive Attack}
                 Make a \glossterm{strike} with a \minus2 penalty to \glossterm{accuracy}.
-                You gain a bonus to your \glossterm{power} with the strike equal to twice your rank with this archetype.
+                You gain a \plus2d bonus damage with the strike.
+
+                \rankline
+                \rank{3} The damage bonus increases to \plus3d.
+                \rank{5} The damage bonus increases to \plus4d.
+                \rank{7} The damage bonus increases to \plus5d.
             \end{freeability}
             \parhead{Aspect} Your abilities deal double damage to objects.
             \parhead{Essence} You can use the \textit{lay waste} ability as a standard action.
@@ -1811,17 +1820,17 @@ This choice determines a great deal about your character's abilities.
 \section{Monk}\label{Monk}
     \begin{dtable!*}
         \lcaption{Monk Progression}
-        \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Min Level} & \tb{Esoteric Warrior}               & \tb{Ki}                                & \tb{Perfected Form}        & \tb{Transcendent Sage} \tableheaderrule
-            0 & \tdash & Esoteric fluidity                           & Ki barrier, ki manifestations        & Fast movement, unarmed warrior & Clear the mind                \\
-            1 & 1      & Maneuver rank (2), esoteric maneuver         & Ki strike                            & Perfect body                   & Transcend frailty             \\
-            2 & 4      & Maneuver rank (3), esoteric lore             & Ki power                             & Perfect precision              & Inner peace                   \\
-            3 & 7      & Maneuver rank (4), esoteric fluidity         & Greater ki barrier, ki manifestation & Greater fast movement          & Feel the flow of life         \\
-            4 & 10     & Maneuver rank (5), esoteric maneuver         & Ki focus                             & Greater perfect body           & Transcend flesh               \\
-            5 & 13     & Maneuver rank (6), esoteric agility          & Greater ki power                     & Greater perfect precision      & Greater inner peace           \\
-            6 & 16     & Maneuver rank (7), greater esoteric fluidity & Supreme ki barrier, ki manifestation & Supreme fast movement          & Greater feel the flow of life \\
-            7 & 19     & Maneuver rank (8), esoteric supremacy        & Epic ki                              & Perfection                     & Transcendence                 \\
-        \end{dtabularx}
+\begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+    \tb{Rank} & \tb{Min Level} & \tb{Esoteric Warrior}                        & \tb{Ki}                     & \tb{Perfected Form}       & \tb{Transcendent Sage} \tableheaderrule
+    0         & \tdash         & Esoteric fluidity                            & Ki barrier                  & Unarmed warrior           & Transcend frailty             \\
+    1         & 1              & Esoteric maneuvers                           & Ki manifestations           & Fast movement             & Clear the mind                \\
+    2         & 4              & Maneuver rank (2), esoteric force            & Ki self, greater ki barrier & Perfect precision         & Feel the flow of life         \\
+    3         & 7              & Maneuver rank (3), glancing strikes          & Ki power                    & Perfect body              & Transcend time                \\
+    4         & 10             & Maneuver rank (4), esoteric maneuver         & Ki manifestation            & Greater fast movement     & Inner peace                   \\
+    5         & 13             & Maneuver rank (5), greater esoteric force    & Supreme ki barrier          & Greater perfect precision & Greater feel the flow of life \\
+    6         & 16             & Maneuver rank (6), greater esoteric fluidity & Greater ki power            & Greater perfect body      & Transcend mortality           \\
+    7         & 19             & Maneuver rank (7), esoteric maneuver         & Greater ki manifestation    & Supreme fast movement     & Inner transcendence           \\
+\end{dtabularx}
     \end{dtable!*}
 
     Monks are agile warriors that use intensive training to move beyond the limits of their physical bodies.
@@ -2051,6 +2060,8 @@ This choice determines a great deal about your character's abilities.
         }
 
         \cf{Mnk}[2]{Ki Self} You can treat all strikes you make as \glossterm{magical} abilities, allowing you to use your \glossterm{power} with magical abilities to determine their damage.
+
+        \cf{Mnk}[2]{Greater Ki Barrier} 
         In addition, the bonus to \glossterm{resistance} against \glossterm{energy damage} from your \textit{ki barrier} ability increases to be equal to three times your rank in this archetype.
 
         \cf{Mnk}[3]{Ki Power}
@@ -2059,7 +2070,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Mnk}[4]{Ki Manifestation}[Magical]
         You learn an additional \textit{ki manifestation}.
 
-        \cf{Mnk}[5]{Greater Ki Self} The defense bonus from the body armor provided by your \textit{ki barrier} ability increases to \plus3.
+        \cf{Mnk}[5]{Supreme Ki Barrier} The defense bonus from the body armor provided by your \textit{ki barrier} ability increases to \plus3.
         In addition, the bonus to \glossterm{resistance} against \glossterm{energy damage} increases to be equal to four times your rank in this archetype.
 
         \cf{Mnk}[6]{Greater Ki Power} The bonus from your \textit{ki power} ability increases to \plus6.
@@ -2143,17 +2154,17 @@ This choice determines a great deal about your character's abilities.
 \section{Paladin}\label{Paladin}
     \begin{dtable!*}
         \lcaption{Paladin Progression}
-        \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Min Level} & \tb{Devoted Paragon}  & \tb{Divine Magic}                          & \tb{Divine Spell Expertise} & \tb{Stalwart Guardian}      & \tb{Zealous Warrior}       \tableheaderrule
-            0         & \tdash         & Aligned aura          & Cantrips                             & Insight point               & Lay on hands                & Smite                    \\
-            1         & 1              & Aligned immunity      & Spellcasting                         & Combat caster               & Enduring defender           & Zealous offense          \\
-            2         & 4              & Paragon power         & Spell rank (2)                       & Wellspring of power         & Stalwart resilience         & Zealous purge            \\
-            3         & 7              & Greater aligned aura  & Spell rank (3)                       & Insight point               & Defender's boon             & Zealous fixation         \\
-            4         & 10             & Devoted mind          & Spell rank (4), spell knowledge      & Greater combat caster       & Greater enduring defender   & Pass judgment            \\
-            5         & 13             & Greater paragon power & Spell rank (5)                       & Greater wellspring of power & Greater stalwart resilience & Greater zealous offense  \\
-            6         & 16             & Supreme aligned aura  & Spell rank (6)                       & Insight point               & Greater defender's boon     & Greater zealous fixation \\
-            7         & 19             & Epic paragon          & Spell rank (7), spell knowledge & Epic divine expertise       & Epic guardian               & Epic zeal                \\
-        \end{dtabularx}
+\begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+    \tb{Rank} & \tb{Min Level} & \tb{Devoted Paragon}  & \tb{Divine Magic}               & \tb{Divine Spell Expertise} & \tb{Stalwart Guardian}      & \tb{Zealous Warrior}       \tableheaderrule
+    0         & \tdash         & Devoted mind          & Cantrips                        & Divine training             & Enduring defender           & Zealous exertion                           \\
+    1         & 1              & Aligned aura          & Spellcasting                    & Combat caster               & Lay on hands                & Smite                                      \\
+    2         & 4              & Aligned immunity      & Spell rank (2)                  & Insight point               & Stalward resilience         & Zealous offense                            \\
+    3         & 7              & Paragon power         & Spell rank (3)                  & Wellspring of power         & Greater enduring defender   & Glancing strikes                           \\
+    4         & 10             & Greater aligned aura  & Spell rank (4), spell knowledge & Insight point               & Greater lay on hands        & Zealous purge               \\
+    5         & 13             & Greater devoted mind  & Spell rank (5)                  & Greater combat caster       & Greater stalwart resilience & Greater zealous offense                    \\
+    6         & 16             & Greater paragon power & Spell rank (6)                  & Insight point               & Supreme enduring defender   & Greater zealous exertion, zealous fixation \\
+    7         & 19             & Supreme aligned aura  & Spell rank (7), spell knowledge & Greater wellspring of power & Supreme lay on hands        & Pass judgment               \\
+\end{dtabularx}
     \end{dtable!*}
 
     \classbasics{Alignment} Any other than true neutral.
@@ -2360,11 +2371,19 @@ This choice determines a great deal about your character's abilities.
         This bonus stacks with the normal \plus2 bonus provided by that ability.
 
         \cf{Pal}[1]{Smite}[Magical] You can use the \textit{smite} ability as a standard action.
+        % This ability gets rank upgrades while maneuvers don't
+        % because maneuvers are upgraded into higher rank maneuvers,
+        % while this has no upgrades and should remain relevant alone.
         \begin{freeability}{Smite}
             Make a \glossterm{strike}.
             Because this is a \glossterm{magical} ability, you use your \glossterm{power} with \glossterm{magical} abilities to determine your damage instead of your power with \glossterm{mundane} abilities.
             If your target shares your devoted alignment, the strike deals no damage.
-            Otherwise, you gain a bonus to your \glossterm{power} with the strike equal to twice your rank in this archetype.
+            Otherwise, you gain a \plus1d bonus to damage with the strike.
+
+            \rankline
+            \rank{3} The damage bonus increases to \plus2d.
+            \rank{5} The damage bonus increases to \plus3d.
+            \rank{7} The damage bonus increases to \plus4d.
         \end{freeability}
 
         \cf{Pal}[2]{Zealous Offense} You gain a \plus1 bonus to \glossterm{accuracy}.
@@ -2372,24 +2391,25 @@ This choice determines a great deal about your character's abilities.
         \cf{Pal}[3]{Glancing Strikes} Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
         This is called a \glossterm{glancing blow}.
 
-        \cf{Pal}[3]{Zealous Fixation} Whenever you hit a creature with a \glossterm{strike}, you ignore \glossterm{concealment} and all \glossterm{miss chances} against that creature with your attacks until you take a \glossterm{short rest} or until you hit a different creature with a strike.
-        If you hit multiple creatures with the same strike, you may freely choose which creature to fixate on with this ability.
-
         \cf{Pal}[4]{Zealous Purge} You can use your \textit{zealous purge} ability as a standard action.
         \begin{freeability}{Zealous Purge}
             Make a \glossterm{strike}.
             You add half your \glossterm{power} to damage with the strike instead of your full power.
             Because this is a \glossterm{magical} ability, you use your \glossterm{power} with \glossterm{magical} abilities to determine your damage instead of your power with \glossterm{mundane} abilities.
 
-            If the target loses \glossterm{hit points} from the strike, it stops being \glossterm{attuned} to a number of effects equal to your rank.
-            It can freely choose which effects it releases its attunement to.
-        \end{freeability}
+            If the target takes damage from the strike, it stops being \glossterm{attuned} to one effect.
+            It can freely choose which effect it releases its attunement to.
 
-        \cf{Pal}[4]{Greater Smite} You gain a \plus1d bonus to your damage with the strike from your \textit{smite} ability.
+            \rankline
+            \rank{6} The target stops being attuned to two effects instead of one.
+        \end{freeability}
 
         \cf{Pal}[5]{Greater Zealous Offense} The bonus from your \textit{zealous offense} ability increases to \plus2.
 
         \cf{Pal}[6]{Greater Zealous Exertion} The bonus from your \textit{zealous exertion} ability increases to \plus5.
+
+        \cf{Pal}[6]{Zealous Fixation} Whenever you hit a creature with a \glossterm{strike}, you ignore \glossterm{concealment} and all \glossterm{miss chances} against that creature with your attacks until you take a \glossterm{short rest} or until you hit a different creature with a strike.
+        If you hit multiple creatures with the same strike, you may freely choose which creature to fixate on with this ability.
 
         \cf{Pal}[7]{Pass Judgment}[Magical] You can use the \textit{pass judgment} ability as a \glossterm{minor action}.
         \begin{freeability}{Pass Judgment}
@@ -2402,8 +2422,6 @@ This choice determines a great deal about your character's abilities.
             You can use this ability to do battle against foes who share your alignment, but you should exercise caution in doing so.
             Persecution of those who share your ideals can lead you to fall and become an ex-paladin.
         \end{freeability}
-
-        \cf{Pal}[7]{Supreme Smite} The bonus from your \textit{greater smite} ability increases to \plus2d.
 
         % TODO: Doesn't work with new spell system
         % \cf{Pal}[20]{Martyr's Retribution}[Mag]
@@ -2424,22 +2442,22 @@ This choice determines a great deal about your character's abilities.
 \section{Ranger}\label{Ranger}
     \begin{dtable!*}
         \lcaption{Ranger Progression}
-        \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X > {\lcol}X}
-            \tb{Rank} & \tb{Min Level} & \tb{Beastmaster}         & \tb{Huntmaster} & \tb{Keen Senses}    & \tb{Wilderness Warrior} \tableheaderrule
-            0 & \tdash  & Animal companion         & Quarry                     & Keen vision               & Wild maneuvers                          \\
-            1 & 1  & Handling lore            & Hunting style              & Farsight                  & Maneuver rank (2), wild maneuver        \\
-            2 & 4  & Pack tactics             & Hunter's instincts         & Perceive weakness         & Maneuver rank (3), wild lore            \\
-            3 & 7  & Greater animal companion & Endurance tracker          & Blindsight                & Maneuver rank (4), wild senses          \\
-            4 & 10 & Greater handling lore    & Hunting style              & Greater farsight          & Maneuver rank (5), wild maneuver        \\
-            5 & 13 & Greater pack tactics     & Greater hunter's instincts & Greater perceive weakness & Maneuver rank (6), wild agility         \\
-            6 & 16 & Supreme animal companion & Greater endurance tracker  & Greater blindsight        & Maneuver rank (7), greater wild senses  \\
-            7 & 19 & Twin companion           & Dual quarry                & Epic senses               & Maneuver rank (8), wilderness supremacy \\
-        \end{dtabularx}
+\begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X > {\lcol}X}
+    \tb{Rank} & \tb{Min Level} & \tb{Beastmaster}         & \tb{Huntmaster}          & \tb{Scout}                & \tb{Wilderness Warrior} \tableheaderrule
+    0 & \tdash & Handling lore            & Endurance hunter         & Scouting expertise        & Wild senses                            \\
+    1 & 1      & Animal companion         & Quarry                   & Keen vision               & Wild maneuvers                         \\
+    2 & 4      & Pack tactics             & Hunting style            & Skirmisher                & Maneuver rank (2), wild force          \\
+    3 & 7      & Beast affinity           & Greater endurance hunter & Perceive weakness         & Maneuver rank (3), glancing strikes    \\
+    4 & 10     & Greater animal companion & Greater quarry           & Blindsight                & Maneuver rank (4), wild maneuver       \\
+    5 & 13     & Greater pack tactics     & Hunting style            & Greater skirmisher        & Maneuver rank (5), greater wild force  \\
+    6 & 16     & Greater beast affinity   & Supreme endurance hunter & Greater perceive weakness & Maneuver rank (6), greater wild senses \\
+    7 & 19     & Supreme animal companion & Supreme quarry           & Greater blindsight        & Maneuver rank (7), wild maneuver       \\
+\end{dtabularx}
     \end{dtable!*}
 
     \classbasics{Alignment} Any.
 
-    \classbasics{Archetypes} Rangers have the Beastmaster, Huntmaster, Keen Senses, and Wilderness Warrior \glossterm{archetypes}.
+    \classbasics{Archetypes} Rangers have the Beastmaster, Huntmaster, Scout, and Wilderness Warrior \glossterm{archetypes}.
 
     \subsection{Basic Class Abilities}
         If you are a ranger, you gain the following abilities.
@@ -2512,38 +2530,6 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rgr}[7]{Supreme Animal Companion} Your \textit{animal companion} gains an additional \glossterm{attunement point}.
         In addition, the bonuses from your \textit{greater animal companion} ability increase to \plus2.
-
-    \subsection{Scout}
-        This archetype improves your senses and overall scouting ability.
-
-        \cf{Rgr}[0]{Scouting Expertise} You gain a \plus2 bonus to the Awareness and Stealth skills.
-
-        \cf{Rgr}[1]{Keen Vision}
-        You gain \glossterm{low-light vision}, allowing you to treat sources of light as if they had double their normal illumination range.
-        If you already have low-light vision, you double its benefit, allowing you to treat sources of light as if they had four times their normal illumination range.
-        In addition, you gain \glossterm{darkvision} with a 50 foot range, allowing you to see in complete darkness clearly.
-        If you already have that ability, you increase its range by 50 feet.
-
-        \cf{Rgr}[2]{Skirmisher} You gain a \plus5 foot bonus to your \glossterm{base speed}.
-        In addition, you reduce your \glossterm{range increment} penalties for attacking at long range by 1.
-
-        \cf{Rgr}[3]{Perceive Weakness} You gain a \plus1 bonus to \glossterm{accuracy}.
-
-        \cf{Rgr}[4]{Blindsight} Your perceptions are so finely honed that you can sense your enemies without seeing them.
-        You gain the \glossterm{blindsense} ability out to 100 feet.
-        This ability allows you to sense the presence and location of objects and foes within its range without seeing them.
-        If you already have the blindsense ability, you increase its range by 100 feet.
-        In addition, you gain the \glossterm{blindsight} ability out to 20 feet.
-        With this ability, you can fight just as well with your eyes closed as with them open.
-        If you already have the blindsight ability, you increase its range by 20 feet.
-
-        \cf{Rgr}[5]{Greater Skirmisher} The speed bonus from your \textit{skirmisher} ability increases to \plus10 feet.
-        In addition, the penalty reduction from that ability increases to 2.
-
-        \cf{Rgr}[6]{Greater Perceive Weakness} The bonus from your \textit{perceive weakness} ability increases to \plus2.
-
-        \cf{Rgr}[7]{Greater Blindsight} The range of your \glossterm{blindsense} ability increases by 200 feet.
-        In addition, the range of your \glossterm{blindsight} ability increases by 80 feet.
 
     \subsection{Huntmaster}
         This archetype grants you and your allies abilities to hunt down specific foes.
@@ -2673,6 +2659,38 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rgr}[7]{Supreme Quarry} The bonus from your \textit{greater quarry} ability increases to \plus2d.
 
+    \subsection{Scout}
+        This archetype improves your senses and overall scouting ability.
+
+        \cf{Rgr}[0]{Scouting Expertise} You gain a \plus2 bonus to the Awareness and Stealth skills.
+
+        \cf{Rgr}[1]{Keen Vision}
+        You gain \glossterm{low-light vision}, allowing you to treat sources of light as if they had double their normal illumination range.
+        If you already have low-light vision, you double its benefit, allowing you to treat sources of light as if they had four times their normal illumination range.
+        In addition, you gain \glossterm{darkvision} with a 50 foot range, allowing you to see in complete darkness clearly.
+        If you already have that ability, you increase its range by 50 feet.
+
+        \cf{Rgr}[2]{Skirmisher} You gain a \plus5 foot bonus to your \glossterm{base speed}.
+        In addition, you reduce your \glossterm{range increment} penalties for attacking at long range by 1.
+
+        \cf{Rgr}[3]{Perceive Weakness} You gain a \plus1 bonus to \glossterm{accuracy}.
+
+        \cf{Rgr}[4]{Blindsight} Your perceptions are so finely honed that you can sense your enemies without seeing them.
+        You gain the \glossterm{blindsense} ability out to 100 feet.
+        This ability allows you to sense the presence and location of objects and foes within its range without seeing them.
+        If you already have the blindsense ability, you increase its range by 100 feet.
+        In addition, you gain the \glossterm{blindsight} ability out to 20 feet.
+        With this ability, you can fight just as well with your eyes closed as with them open.
+        If you already have the blindsight ability, you increase its range by 20 feet.
+
+        \cf{Rgr}[5]{Greater Skirmisher} The speed bonus from your \textit{skirmisher} ability increases to \plus10 feet.
+        In addition, the penalty reduction from that ability increases to 2.
+
+        \cf{Rgr}[6]{Greater Perceive Weakness} The bonus from your \textit{perceive weakness} ability increases to \plus2.
+
+        \cf{Rgr}[7]{Greater Blindsight} The range of your \glossterm{blindsense} ability increases by 200 feet.
+        In addition, the range of your \glossterm{blindsight} ability increases by 80 feet.
+
     % Would be nice to call this ``Hunter'' and the maneuvers ``Hunting'' maneuvers,
     % but that conflicts with the naming for Huntmaster
     \subsection{Wild Warrior}
@@ -2696,7 +2714,7 @@ This choice determines a great deal about your character's abilities.
             \cf{Rgr}[2]{Maneuver Rank} You become a rank 2 wild maneuverist.
             This gives you access to maneuvers that require a minimum rank of 2.
 
-            \cf{Rgr}[2]{Wild Lore} You gain two additional \glossterm{skill points}.
+            \cf{Rgr}[2]{Wild Force} You gain a \plus1d bonus to your damage with all weapons.
         }
 
         {
@@ -2719,7 +2737,7 @@ This choice determines a great deal about your character's abilities.
             \cf*{Rgr}[5]{Maneuver Rank} You become a rank 5 wild maneuverist.
             This gives you access to maneuvers that require a minimum rank of 5 and can improve the effectiveness of your existing maneuvers.
 
-            \cf{Rgr}[5]{Wild Force} All \glossterm{strikes} you make gain bonus damage dice equal to your weapon's damage dice.
+            \cf{Rgr}[5]{Greater Wild Force} The bonus from your \textit{wild force} ability increases to \plus2d.
         }
 
         {
@@ -2748,17 +2766,17 @@ This choice determines a great deal about your character's abilities.
 \section{Rogue}\label{Rogue}
     \begin{dtable!*}
         \lcaption{Rogue Progression}
-        \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Min Level} & \tb{Assassin}               & \tb{Bard}              & \tb{Combat Trickster} & \tb{Jack of All Trades} \tableheaderrule
-            0 & \tdash  & Sneak attack                & Bardic performances    & Tricky manuevers                          & Skill lore              \\
-            1 & 1  & Evasion                     & Bardic lore            & Maneuver rank (2), trick maneuver         & Dabbler                 \\
-            2 & 4  & Darkstalker                 & Bardic combat training & Maneuver rank (3), tricky lore            & Versatile power         \\
-            3 & 7  & Hide in plain sight         & Bardic performance     & Maneuver rank (4), tricky finesse         & Skill exemplar          \\
-            4 & 10 & Greater evasion             & Dual performance       & Maneuver rank (5), trick maneuver         & Greater dabbler         \\
-            5 & 13 & Assassination               & Loremaster             & Maneuver rank (6), tricky agility         & Greater versatile power \\
-            6 & 16 & Greater hide in plain sight & Bardic performance     & Maneuver rank (7), greater tricky finesse & Greater skill exemplar  \\
-            7 & 19 & Epic assassin               & Epic bardic            & Maneuver rank (8), epic trickster         & Master of all trades    \\
-        \end{dtabularx}
+\begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+    \tb{Rank} & \tb{Min Level} & \tb{Assassin}       & \tb{Bard}                & \tb{Combat Trickster}                     & \tb{Jack of All Trades} \tableheaderrule
+    0         & \tdash         & Stealthy instincts  & Bardic lore              & Tricky finesse                            & Skill lore              \\
+    1         & 1              & Sneak attack        & Bardic performances      & Maneuver rank (1), trick lore             & Skill exemplar          \\
+    2         & 4              & Evasion             & Combat performer         & Maneuver rank (2), glancing strikes       & Dabbler                 \\
+    3         & 7              & Darkstalker         & Loremaster               & Maneuver rank (3), trick maneuver         & Versatile power         \\
+    4         & 10             & Hide in plain sight & Virtuoso                 & Maneuver rank (4), tricky force           & Greater skill exemplar  \\
+    5         & 13             & Greater evasion     & Greater combat performer & Maneuver rank (5), greater tricky finesse & Greater dabbler         \\
+    6         & 16             & Assassination       & Greater loremaster       & Maneuver rank (6), greater tricky finesse & Greater versatile power \\
+    7         & 19             & Greater darkstalker & Greater virtuoso         & Maneuver rank (7), trick maneuver         & Supreme skill exemplar  \\
+\end{dtabularx}
     \end{dtable!*}
 
     \classbasics{Alignment} Any.
@@ -2792,22 +2810,20 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rog}[0]{Stealthy Instincts} You gain a \plus2 bonus to the Stealth skill and a \plus1 bonus to Reflex defense.
 
-        % Unusually high scaling compensates for the light weapon limitation.
-        % Smite gives +20 damage at level 20, and this gives +21 damage at level 20 assuming a d6 die.
-        % Note that this makes it important that there should not exist a d8 light weapon.
-        % We want Sneak Attack to use damage dice instead of a flat bonus to work with Assassination.
-        \cf{Rog}[1]{Sneak Attack} You can use the \textit{sneak attack} ability as a standard action.
+        \cf{Rog}[1]{Sneak Attack}
+        You can use the \textit{sneak attack} ability as a standard action.
+        % This ability gets rank upgrades while maneuvers don't
+        % because maneuvers are upgraded into higher rank maneuvers,
+        % while this has no upgrades and should remain relevant alone.
         \begin{freeability}{Sneak Attack}
             Make a \glossterm{strike} with a \glossterm{light weapon} or a \glossterm{projectile weapon} against a creature within \rngclose range.
-            If the target is \unaware or is \glossterm{threatened} by one of your \glossterm{allies}, the strike gains bonus damage dice equal to your weapon's damage dice.
+            If the target is \unaware or is \glossterm{threatened} by one of your \glossterm{allies}, you gain a \plus2d bonus to damage with the strike.
             You do not gain this damage bonus against creatures who that you are unable to score a \glossterm{critical hit} against, such as excessively large creatures or oozes.
 
             \rankline
-            \rank{3} The bonus increases to twice your weapon's damage dice.
-            \rank{5} The bonus increases to four times your weapon's damage dice.
-            In addition, the maximum range increases to \rngmed range.
-            \rank{7} The bonus increases to six times your weapon's damage dice.
-            In addition, the maximum range increases to \rnglong range.
+            \rank{3} The damage bonus increases to \plus3d.
+            \rank{5} The damage bonus increases to \plus4d.
+            \rank{7} The damage bonus increases to \plus5d.
         \end{freeability}
 
         \cf{Rog}[2]{Evasion} You take half damage from abilities that affect an area.
@@ -2860,28 +2876,37 @@ This choice determines a great deal about your character's abilities.
 
         The names of bardic performances do not have to precisely match your actual performance.
         For example, you can use the \textit{palliative poem} ability with a gentle song using Perform (wind instruments) or a distracting joke using Perform (comedy) instead of a poem.
+
+        Many bardic performances require you to sustain the performance as a \glossterm{minor action}.
+        If the targets stop being able to see or hear you, depending on the nature of your performance, the effect ends for them as if you had stopped sustaining the performance.
+        However, targets do not stop being affected by your performance simply by travelling beyond the initial range of the bardic performance ability.
         {
+            % Bardic performance power guidelines:
+            % These generally start from the same rank 1 baseline effect as spells.
+            % Since there are no higher rank bardic performances, they need more aggressive rank scalings to ensure
+            % that a rank 7 bardic performance is comparable to a rank 7 spell. That is provided by the greater/supreme
+            % bardic performance class abilities, and doesn't need to be included in each individual performance.
+            % In general, bardsongs are likely to trade damage or accuracy for increased area.
+            %
+            % Bardsong debuffs are interesting, since they can't be removed like conditions, but also can't be stacked.
+            % For now, they're just ranked in the same way as conditions.
             \begin{freeability}{Ballad of Belligerence}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
-                \target{All \glossterm{enemies} in a \areasmall radius from you}
+                \target{All \glossterm{enemies} in a \arealarge radius from you}
                 Make an attack vs. Mental against the target.
                 \hit Each target is unable to take any \glossterm{standard actions} that do not cause it to make an attack.
                 For example, a target could make a \glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
 
                 \rankline
-                \rank{3} The area increases to a \areamed radius.
-                \rank{5} The area increases to a \arealarge radius.
-                \rank{7} The area increases to a \areahuge radius.
+                You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
             \end{freeability}
 
             \begin{freeability}{Cacaphony}[\glossterm{Auditory}]
-                \targets{All \glossterm{enemies} within a \areasmall radius from you}
+                \targets{All \glossterm{enemies} within a \areamed radius from you}
                 Make an attack vs. Fortitude against each target.
-                \hit Each target takes energy \glossterm{standard damage} \minus1d.
+                \hit Each target takes sonic damage equal to 1d6 plus half your \glossterm{power}.
 
                 \rankline
-                \rank{3} The area increases to a \areamed radius.
-                \rank{5} The area increases to a \arealarge radius.
-                \rank{7} The area increases to a \areahuge radius.
+                The damage increases by \plus1d for each rank beyond 1.
             \end{freeability}
 
             \begin{freeability}{Cadenza of Courage}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
@@ -2906,49 +2931,47 @@ This choice determines a great deal about your character's abilities.
             \end{freeability}
 
             \begin{freeability}{Dizzying Ditty}[\glossterm{Auditory}, \glossterm{Compulsion}, \glossterm{Sustain} (minor)]
-                \target{One creature within \rngmed range}
+                \target{One creature within \rngclose range}
                 Make an attack vs. Mental against the target.
                 \hit The target is \glossterm{dazed}.
+                \crit The target is \glossterm{stunned}.
 
                 \rankline
-                \rank{3} On a \glossterm{critical hit}, the target is \glossterm{stunned}.
-                \rank{5} The target is stunned instead of dazed.
-                \rank{7} On a critical hit, the target is \glossterm{confused}.
+                You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
             \end{freeability}
 
             \begin{freeability}{Dirge of Doom}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
                 \target{One creature within \rngmed range}
                 Make an attack vs. Mental against the target.
-                \hit The target is treated as having four fewer \glossterm{hit points} than normal for the purpose of determining whether it is \glossterm{bloodied}.
+                \hit The target's \glossterm{resistances} are reduced by an amount equal to your \glossterm{power}.
+                When this effect ends, it regains resistances equal to the amount it lost this way.
+                \crit As above, except that the reduction increases to twice your power.
 
                 \rankline
-                \rank{3} On a \glossterm{critical hit}, the target is \glossterm{bloodied} regardless of its hit point total.
-                \rank{5} The hit point reduction increases to eight.
-                \rank{7} The target is \glossterm{bloodied} regardless of its hit point total.
+                You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
             \end{freeability}
 
             \begin{freeability}{Frightening Fugue}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
                 \target{One creature within \rngmed range}
                 Make an attack vs. Mental against the target.
-                \hit The target is \glossterm{shaken}.
+                \hit The target takes 1d6 sonic damage.
+                If it loses \glossterm{hit points} from this damage, it is \glossterm{frightened} by you.
 
                 \rankline
-                \rank{3} On a \glossterm{critical hit}, the target is \glossterm{panicked}.
-                \rank{5} The target is frightened instead of shaken.
-                \rank{7} The target is panicked instead of shaken.
+                The damage increases by \plus1d for each rank beyond 1.
             \end{freeability}
 
             \begin{freeability}{Hypnotic Hymn}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
                 \target{One creature within \rngmed range}
+                You take a \minus5 penalty to \glossterm{accuracy} with this attack against creatures who are engaged in combat during the current phase.
                 \hit The target is \glossterm{charmed} by you.
-                Any act by you or by creatures that appear to be your allies that threatens or damages the \glossterm{charmed} person breaks the effect.
+                Any act by you or by creatures that appear to be your allies that threatens or harms the charmed person breaks the effect.
+                Harming the target is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
                 An observant target may interpret overt threats to its allies as a threat to itself.
                 This ability does not have the \glossterm{Subtle} tag, so an observant target may notice it is being influenced.
 
                 \rankline
-                \rank{3} The ability targets all creatures in a \areasmall radius within \rngmed range.
-                \rank{5} The area increases to a \areamed radius.
-                \rank{7} The area increases to a \arealarge radius.
+                You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
             \end{freeability}
 
             \begin{freeability}{Inspiring Intonation}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
@@ -2962,26 +2985,22 @@ This choice determines a great deal about your character's abilities.
             \end{freeability}
 
             \begin{freeability}{Mesmerizing Melody}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
-                \targets{All creatures in a \areasmall radius within \rngmed range}
+                \targets{All creatures in a \arealarge radius from you}
                 Make an attack vs. Mental against each target.
                 \hit Each target is \fascinated by you.
                 Any act by you or your apparent allies that damages a target or that causes it to feel that it is in danger breaks the effect for that creature.
                 An observant target may interpret overt threats to its allies as a threat to itself.
 
                 \rankline
-                \rank{3} The area increases to a \areamed radius.
-                \rank{5} The range increases to \rnglong.
-                \rank{7} The area increases to a \arealarge radius.
+                You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
             \end{freeability}
 
             \begin{freeability}{Palliative Poem}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
-                \targets{All \glossterm{allies} within a \areamed radius from you}
-                Each target is immune to being \glossterm{bloodied}.
+                \target{One \glossterm{ally} within \rngclose range}
+                The target regains \glossterm{hit points} equal to 1d6 plus half your \glossterm{power}.
 
                 \rankline
-                \rank{3} The area increases to a \arealarge radius.
-                \rank{5} The area increases to a \areahuge radius.
-                \rank{7} The area increases to a \areaext radius.
+                The healing increases by \plus1d for each rank beyond 1.
             \end{freeability}
 
             \begin{freeability}{Serenade of Serenity}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
@@ -2995,28 +3014,28 @@ This choice determines a great deal about your character's abilities.
             \end{freeability}
 
             \begin{freeability}{Tranquil Tune}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
-                \targets{All creatures within a \areamed radius from you}
+                \targets{All creatures within a \arealarge radius from you}
                 Make an attack vs. Mental against each target.
                 \hit Each target has its emotions calmed.
                 The effects of all other \glossterm{Emotion} abilities on that target are \glossterm{suppressed}.
                 It cannot take violent actions (although it can defend itself) or do anything destructive.
-                If the target takes damage or feels that it is in danger, this effect is \glossterm{dismissed}.
+                If the target is harmed or feels that it is in danger, this effect is \glossterm{dismissed}.
+                Harming the target is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
 
                 \rankline
-                \rank{3} The area increases to a \arealarge radius.
-                \rank{5} The area increases to a \areahuge radius.
-                \rank{7} The area increases to a \areaext radius.
+                You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
             \end{freeability}
 
             \begin{freeability}{Vigorous Verse}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
                 \target{One \glossterm{ally} within \rngmed range}
-                The target increases its maximum \glossterm{hit points} by 2 and regains that many hit points.
-                When this effect ends, the target loses hit points equal to the hit points it regained this way.
+                The target increases its current \glossterm{hit points} by 5.
+                This can allow its current hit points to exceed its normal maximum hit points.
+                When this effect ends, the target takes sonic \glossterm{subdual damage} equal to the hit points it gained this way.
 
                 \rankline
-                \rank{3} The number of additional hit points increases to 3.
-                \rank{5} The number of additional hit points increases to 4.
-                \rank{7} The number of additional hit points increases to 5.
+                \rank{3} The number of hit points increases to 10.
+                \rank{5} The number of hit points increases to 20.
+                \rank{7} The number of hit points increases to 40.
             \end{freeability}
         }
 
@@ -3026,16 +3045,16 @@ This choice determines a great deal about your character's abilities.
         In addition, when can use the \textit{desperate exertion} ability to affect the result of a Knowledge skill check,
             you only gain one \glossterm{fatigue point} instead of two.
 
-        \cf{Rog}[4]{Bardic Performance}
-        You learn an additional bardic performance.
+        \cf{Rog}[4]{Virtuoso} You learn an additional bardic performance.
+        In addition, the area and range of all of your bardic performances is doubled.
 
         \cf{Rog}[5]{Greater Combat Performer} The Perform skill bonus from your \textit{combat performer} ability increases to \plus4.
         In addition, the Armor defense bonus from that ability increases to \plus2.
 
         \cf{Rog}[6]{Greater Loremaster} The Knowledge skll bonus from your \textit{loremaster} ability increases to \plus5.
 
-        \cf{Rog}[7]{Dual Performance}
-        Once per round, you can \glossterm{sustain} two bardic performances as a single \glossterm{minor action}.
+        \cf{Rog}[7]{Greater Virtuoso} Once per round, you can \glossterm{sustain} two bardic performances as a single \glossterm{minor action}.
+        In addition, you gain a \plus1 bonus to \glossterm{accuracy} with your bardic performance abilities.
 
     \subsection{Combat Trickster}
         This archetype grants you abilities to use in combat and improves your combat prowess.
@@ -3178,17 +3197,17 @@ This choice determines a great deal about your character's abilities.
 \section{Sorcerer}\label{Mage}
     \begin{dtable!*}
         \lcaption{Sorcerer Progression}
-        \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Min Level} & \tb{Arcane Magic} & \tb{Arcane Spell Mastery} & \tb{Draconic Magic} & \tb{Innate Arcanist} & \tb{Wild Magic} \tableheaderrule
-            0 & \tdash & Cantrips                             & Mystic insight              & Draconic bloodline         & Innate magic               & Wildspell                                   \\
-            1 & 1      & Spellcasting                         & Combat caster               & Draconic focus             & Mystic tolerance           & Chaotic miscast, wild soul                  \\
-            2 & 4      & Spell rank (2)                       & Wellspring of power         & Draconic precision         & Innate enhancement         & Chaotic exertion                            \\
-            3 & 7      & Spell rank (3)                       & Mystic insight              & Draconic hide              & Spell absorption           & Controlled chaos                            \\
-            4 & 10     & Spell rank (4), spell knowledge      & Greater combat caster       & Draconic heart             & Greater mystic tolerance   & Greater chaotic miscast, greater wild  soul \\
-            5 & 13     & Spell rank (5)                       & Greater wellspring of power & Greater draconic precision & Greater innate enhancement & Greater chaotic exertion                    \\
-            6 & 16     & Spell rank (6)                       & Mystic insight              & Greater draconic hide      & Greater spell absorption   & Greater controlled chaos                    \\
-            7 & 19     & Spell rank (7), spell knowledge & Epic arcane mastery         & Epic innate enhancement    & Epic wildspell             &                                             \\
-        \end{dtabularx}
+\begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+    \tb{Rank} & \tb{Min Level} & \tb{Arcane Magic}                  & \tb{Arcane Spell Mastery}   & \tb{Draconic Magic}        & \tb{Innate Arcanist}         & \tb{Wild Magic} \tableheaderrule
+    0         & \tdash         & Cantrips, mage armor               & Mystic insight              & Draconic bloodline         & Arcane body                  & Chaotic exertion           \\
+    1         & 1              & Spellcasting                       & Combat caster               & Draconic focus             & Innate magic                 & Wildspell                  \\
+    2         & 4              & Spell rank (2)                     & Mystic insight              & Draconic hide              & Personal enhancement         & Chaotic miscast, wild soul \\
+    3         & 7              & Spell rank (3), greater mage armor & Wellspring of power         & Greater draconic bloodline & Mystic tolerance             & Greater chaotic exertion   \\
+    4         & 10             & Spell rank (4), spell knowledge    & Mystic insight              & Draconic precision         & Spell absorption             & Greater wildspell          \\
+    5         & 13             & Spell rank (5)                     & Greater combat caster       & Greater draconic hide      & Greater personal enhancement & Controlled chaos           \\
+    6         & 16             & Spell rank (6), supreme mage armor & Mystic insight              & Supreme draconic bloodline & Greater mystic tolerance     & Supreme chaotic exertion   \\
+    7         & 19             & Spell rank (7), spell knowledge    & Greater wellspring of power & Greater draconic precision & Greater spell absorption     & Supreme wildspell          \\
+\end{dtabularx}
     \end{dtable!*}
 
     \classbasics{Alignment} Any.
@@ -3456,17 +3475,17 @@ This choice determines a great deal about your character's abilities.
 \section{Warlock}\label{Warlock}
     \begin{dtable!*}
         \lcaption{Warlock Progression}
-        \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Min Level} & \tb{Blessings of the Abyss}  & \tb{Pact Magic} & \tb{Pact Spell Mastery}     & \tb{Soulkeeper's Chosen} \tableheaderrule
-            0 & \tdash & Eldritch blast               & Cantrips                                & Mystic insight              & Possession                  \\
-            1 & 1      & Fiendish resistance          & Spellcasting                            & Combat caster               & Empowering whispers         \\
-            2 & 4      & Abyssal jaunt                & Spell rank (2)                          & Wellspring of power         & Exchange soul fragment      \\
-            3 & 7      & Abyssal substitution         & Spell rank (3)                      nce & Mystic insight              & Greater possession          \\
-            4 & 10     & Greater fiendish resistance  & Spell rank (4), spell knowledge         & Greater combat caster       & Greater empowering whispers \\
-            5 & 13     & Abyssal curse                & Spell rank (5)                          & Greater wellspring of power & Exchange vitality           \\
-            6 & 16     & Greater abyssal substitution & Spell rank (6)                      nce & Mystic insight              & Supreme possession          \\
-            7 & 19     & Abyssal apotheosis           & Spell rank (7), spell knowledge    & Epic pact mastery           & Epic possession             \\
-        \end{dtabularx}
+\begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+    \tb{Rank} & \tb{Min Level} & \tb{Blessings of the Abyss}                    & \tb{Pact Magic}                         & \tb{Pact Spell Mastery}     & \tb{Soulkeeper's Chosen} \tableheaderrule
+    0         & \tdash         & Abyssal tolerance                              & Armor tolerance, cantrips               & Infernal training           & Empowering whispers         \\
+    1         & 1              & Eldritch blast                                 & Spellcasting                            & Combat caster               & Possesion                   \\
+    2         & 4              & Fiendish resistance                            & Spell rank (2)                          & Mystic insight              & Exchange soul fragment      \\
+    3         & 7              & Abyssal jaunt                                  & Spell rank (3), greater armor tolerance & Wellspring of power         & Greater empowering whispers \\
+    4         & 10             & Abyssal substitution, hellfire                 & Spell rank (4), spell knowledge         & Mystic insight              & Greater possession          \\
+    5         & 13             & Greater fiendish resistance                    & Spell rank (5)                          & Greater combat caster       & Exchange vitality           \\
+    6         & 16             & Abyssal curse                                  & Spell rank (6), supreme armor tolerance & Mystic insight              & Supreme empowering whispers \\
+    7         & 19             & Greater abyssal substitution, greater hellfire & Spell rank (7), spell knowledge         & Greater wellspring of power & Supreme possession          \\
+\end{dtabularx}
     \end{dtable!*}
 
     \classbasics{Alignment} Any.
@@ -3540,11 +3559,14 @@ This choice determines a great deal about your character's abilities.
 
         \cf{War}[1]{Eldritch Blast} You can use the \textit{eldritch blast} ability as a standard action.
         \begin{freeability}{Eldritch Blast}[\glossterm{Magical}]
-            Make an attack vs. Armor against one creature or object within \rngclose range.
+            Make an attack vs. Armor against one creature or object within \rngmed range.
             \hit The target takes fire damage equal to 1d10 plus your \glossterm{power}.
 
             \rankline
             The damage increases by \plus1d for each rank beyond 1.
+            \rank{3} On a \glossterm{glancing blow}, the target takes half damage.
+            \rank{5} The damage increases by an additional \plus1d.
+            \rank{7} The damage increases by an additional \plus1d.
         \end{freeability}
 
         \cf{War}[2]{Fiendish Resistance} You gain a bonus equal to your rank in this archetype to your \glossterm{resistance} against \glossterm{energy damage}.
@@ -3552,14 +3574,15 @@ This choice determines a great deal about your character's abilities.
         \cf{War}[3]{Abyssal Jaunt} You can use the \textit{abyssal jaunt} ability as a standard action.
         \begin{freeability}{Abyssal Jaunt}[\glossterm{Magical}]
             Make an attack vs. Mental against one creature or object within \rngclose range.
-            \hit The target is teleported briefly into the Abyss and takes fire \glossterm{standard damage}.
-            At the end of the round, it returns to its original location, or into the closest open space if that location is occupied.
-            \crit As above, except that the target takes double damage, and it does not return until the end of the next round.
+            \hit The target takes fire damage equal to 2d6 plus half your \glossterm{power}.
+            If it loses \glossterm{hit points} from this damage, it is briefly teleported into the Abyss.
+            At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
+            \glance As above, except that the target takes half damage.
 
             \rankline
+            The damage increases by \plus1d for each rank beyond 3.
             \rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
             \rank{7} The accuracy bonus increases to \plus2.
-                In addition, the range increases to \rngmed range.
         \end{freeability}
 
         \cf{War}[4]{Abyssal Substitution} Whenever you use an ability that deals \glossterm{energy damage} or any subtype of energy damage, you can change the type of the damage to fire damage.
@@ -3571,8 +3594,10 @@ This choice determines a great deal about your character's abilities.
 
         \cf{War}[6]{Abyssal Curse} You can use the \textit{abyssal curse} ability as a standard action.
         \begin{freeability}{Abyssal Curse}[\glossterm{Curse}, \glossterm{Magical}]
-            Make an attack vs. Fortitude against one creature or object within \rngclose range.
-            \hit The target is \glossterm{nauseated}.
+            Make an attack vs. Fortitude against one creature or object within \rngmed range.
+            \hit The target is \glossterm{nauseated} until it takes a \glossterm{short rest}.
+            \glance The target is nauseated until the end of the next round.
+            \crit The target is nauseated until this curse is removed.
         \end{freeability}
 
         \cf{War}[7]{Greater Abyssal Substitution} Whenever you use an ability that deals damage, you may change the type of damage it deals to be fire damage.
@@ -3676,25 +3701,7 @@ This choice determines a great deal about your character's abilities.
     \subsection{Soulkeeper's Chosen}
         This archetype enhances your connection to your soulkeeper, granting you abilities relating to your pact.
 
-        \cf{War}[1]{Possession} You can use the \textit{possession} ability as a \glossterm{free action} to allow your soulkeeper to directly control your actions.
-        Your soulkeeper's objectives may differ from your own, but except in very unusual circumstances, your soulkeeper is invested in continuing your life and ensuring your victory in difficult circumstances.
-        \begin{attuneability}{Possession}[\glossterm{Attune} (self)]
-            You gain the following benefits and drawbacks:
-            \begin{itemize}
-                \item You increase your current \glossterm{hit points} by four.
-                    This can allow your current hit points to exceed your normal maximum hit points.
-                    When this ability ends, you lose four hit points.
-                \item You gain a \plus2 bonus to \glossterm{power} with \glossterm{magical} abilities.
-                \item You take a \minus2 penalty to Mental defense.
-                \item You are unable to fully control your actions.
-                    At the start of each round, your soulkeeper chooses one of three behavior patterns: attack your enemies, protect your allies, or protect yourself.
-                    You must follow the chosen behavior that round during the best of your ability.
-                    If you are not in combat, your soulkeeper may influence your behavior in more subtle ways.
-                \item At the start of each round, if either you or your soulkeeper choose to end this ability, the ability ends.
-            \end{itemize}
-        \end{attuneability}
-
-        \cf{War}[2]{Empowering Whispers}[Magical]
+        \cf{War}[0]{Empowering Whispers}[Magical]
         You gain an ability based on the type of whispers you hear with your \textit{whispers of the lost} ability.
         {
             \subcf{Mentoring Whispers} You gain two additional \glossterm{skill points}.
@@ -3708,68 +3715,94 @@ This choice determines a great deal about your character's abilities.
             \subcf{Whispers of the Mighty} You gain a \plus2 bonus to Fortitude defense.
         }
 
-        \cf{War}[3]{Exchange Soul Fragment} Your connection to your soulkeeper deepens, allowing you to send a fragment of your experiences through the link.
+        \cf{War}[1]{Possession} You can use the \textit{possession} ability as a \glossterm{free action} to allow your soulkeeper to directly control your actions.
+        Your soulkeeper's objectives may differ from your own, but except in very unusual circumstances, your soulkeeper is invested in continuing your life and ensuring your victory in difficult circumstances.
+        \begin{attuneability}{Possession}[\glossterm{Attune} (self)]
+            You gain the following benefits and drawbacks:
+            \begin{itemize}
+                \item You increase your current \glossterm{hit points} by an amount equal to three times your rank in this archetype.
+                    This can allow your current hit points to exceed your normal maximum hit points.
+                    When this ability ends, you take energy \glossterm{subdual damage} equal to the hit points you gained this way.
+                % This is powerful, but not as strong as Rage, since this ability is less mechanically restrictive.
+                % It's also dangerous to make this ability too strong, given its extremely limiting narrative space.
+                \item You gain a bonus equal to your rank in this archetype to your \glossterm{power} with all abilities.
+                \item You gain a \plus4 bonus to your \glossterm{fatigue tolerance}.
+                \item You take a \minus2 penalty to Mental defense.
+                \item You are unable to fully control your actions.
+                    At the start of each round, your soulkeeper chooses one of three behavior patterns: attack your enemies, protect your allies, or protect yourself.
+                    You must follow the chosen behavior that round during the best of your ability.
+                    If you are not in combat, your soulkeeper may influence your behavior in more subtle ways.
+                \item At the start of each round, if either you or your soulkeeper choose to end this ability, the ability ends.
+            \end{itemize}
+        \end{attuneability}
+
+        \cf{War}[2]{Exchange Soul Fragment} Your connection to your soulkeeper deepens, allowing you to send a fragment of your experiences through the link.
         You can use the \textit{exchange soul fragment} ability as a \glossterm{minor action}.
-        \begin{freeability}{Exchange Soul Fragment}[\glossterm{Magical}]
-            You lose a \glossterm{hit point}.
+        \begin{freeability}{Exchange Soul Fragment}[\glossterm{Magical}, \glossterm{Swift}]
+            When you use this ability, you gain a \glossterm{fatigue point}.
+
             Remove a \glossterm{condition} affecting you.
             This cannot remove a condition applied during the current round.
-
-            \rankline
-            \rank{6} You can remove an additional \glossterm{condition}.
-            \rank{8} This ability gains the \glossterm{Swift} tag.
-            When you use it, the penalties from the removed conditions do not affect you during the current phase.
+            Because this ability has the \glossterm{Swift} tag, the penalties from the removed condition do not affect you during the current phase.
         \end{freeability}
 
-        \cf{War}[4]{Greater Possession} During your \textit{possession} ability, you can choose one behavior category at the start of each round.
-        Your soulkeeper cannot compel you to take the chosen behavior that round.
-        In addition, the bonus to \glossterm{power} from your \textit{possession} ability increases to \plus4.
-
-        \cf{War}[5]{Greater Empowering Whispers}[Magical] You gain an additional ability depending on the voices you chose with your \textit{whispers of the lost} ability.
+        \cf{War}[3]{Greater Empowering Whispers}[Magical] You gain an additional ability depending on the voices you chose with your \textit{whispers of the lost} ability.
         {
             \subcf{Mentoring Whispers} You gain an additional \glossterm{insight point}.
 
             \subcf{Spiteful Whispers} The bonus from your \textit{empowering whispers} ability increases to \plus2.
 
-            \subcf{Sycophantic Whispers} You are immune to being \glossterm{shaken}, \glossterm{frightened}, and \glossterm{panicked}.
+            \subcf{Sycophantic Whispers} The bonus from your \textit{empowering whispers} ability increases to \plus4.
+
+            \subcf{Warning Whispers} The bonuses from your \textit{empowering whispers} ability increases to \plus4.
+
+            \subcf{Whispers of the Mighty} The bonus from your \textit{empowering whispers} ability increases to \plus4.
+        }
+
+        \cf{War}[4]{Greater Possession} During your \textit{possession} ability, you can choose one behavior category at the start of each round.
+        Your soulkeeper cannot compel you to take the chosen behavior that round.
+        In addition, the number of hit points you gain from that ability increases to four times your rank in this archetype.
+
+        \cf{War}[5]{Exchange Vitality} Your connection to your soulkeeper deepens, allowing you to send a fragment of your vitality through the link.
+        You can use the \textit{exchange vitality} ability as a \glossterm{minor action}.
+        \begin{freeability}{Exchange Vitality}[\glossterm{Magical}, \glossterm{Swift}]
+            When you use this ability, you gain two \glossterm{fatigue points}.
+
+            Remove one of your \glossterm{vital wounds}.
+            This cannot remove a vital wound applied during the current round.
+            Because this ability has the \glossterm{Swift} tag, the penalties from the removed vital wound do not affect you during the current phase.
+        \end{freeability}
+
+        \cf{War}[6]{Supreme Empowering Whispers}[Magical] You gain an additional ability depending on the voices you chose with your \textit{whispers of the lost} ability.
+        {
+            \subcf{Mentoring Whispers} You gain an additional \glossterm{insight point}.
+
+            \subcf{Spiteful Whispers} The bonus from your \textit{empowering whispers} ability increases to \plus3.
+
+            \subcf{Sycophantic Whispers} You are immune to all \glossterm{Emotion} attacks.
 
             \subcf{Warning Whispers} You are never \glossterm{unaware}.
 
-            \subcf{Whispers of the Mighty} You are immune to being \glossterm{sickened} and \glossterm{nauseated}.
+            \subcf{Whispers of the Mighty} You gain a bonus to your \glossterm{resistances} equal to your rank in this archetype.
         }
 
-        \cf{War}[6]{Exchange Vitality} Your connection to your soulkeeper deepens, allowing you to send a fragment of your vitality through the link.
-        You can use the \textit{exchange vitality} ability as a \glossterm{standard action}.
-        \begin{freeability}{Exchange Vitality}[\glossterm{Magical}]
-            When you use this ability, you gain two \glossterm{fatigue points}.
-
-            You remove one of your \glossterm{vital wounds}.
-            This cannot remove a vital wound applied during the current round.
-
-            \rankline
-            \rank{8} You can use this ability as a \glossterm{minor action}.
-        \end{freeability}
-
-        \cf{War}[7]{Supreme Possession} The bonus to \glossterm{power} from your \textit{possession} ability increases to \plus6.
-
-        \cf{War}[8]{Epic Possession}[Magical] Your soulkeeper does not influence your actions during your \textit{possession} ability, and that ability no longer imposes a penalty to your Mental defense.
-        In addition, the bonus to \glossterm{power} from that ability increases to \plus8.
+        \cf{War}[7]{Supreme Possession} Your soulkeeper does not influence your actions during your \textit{possession} ability, and that ability no longer imposes a penalty to your Mental defense.
 
 \newpage
 \section{Wizard}\label{Wizard}
     \begin{dtable!*}
         \lcaption{Wizard Progression}
-        \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Min Level} & \tb{Alchemist}               & \tb{Arcane Magic}     & \tb{Arcane Scholar}   & \tb{Arcane Spell Mastery}   \tableheaderrule
-            0 & \tdash & Portable workshop            & Cantrips                             & Scholastic lore       & Mystic insight              \\
-            1 & 1      & Alchemical infusion          & Spellcasting                         & Ritualist             & Insightful caster           \\
-            2 & 4      & Alchemical discovery         & Spell rank (2)                       & Scholastic insight    & Wellspring of power         \\
-            3 & 7      & Alchemical expertise         & Spell rank (3)                       & Ritual expertise      & Mystic insight              \\
-            4 & 10     & Experienced quaffing         & Spell rank (4), spell knowledge      & Contingency           & Greater insightful caster   \\
-            5 & 13     & Alchemical discovery         & Spell rank (5)                       & Scholastic insight    & Greater wellspring of power \\
-            6 & 16     & Greater alchemical expertise & Spell rank (6)                       & Malleable contingency & Mystic insight              \\
-            7 & 19     & Epic alchemy                 & Spell rank (7), spell knowledge & Multiple contingency  & Epic arcane mastery         \\
-        \end{dtabularx}
+\begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+    \tb{Rank} & \tb{Min Level} & \tb{Alchemist}              & \tb{Arcane Magic}                  & \tb{Arcane Scholar}     & \tb{Arcane Spell Mastery}   \tableheaderrule
+    0         & \tdash         & Alchemical infusion         & Cantrips, mage armor               & Scholastic lore         & Mystic training             \\
+    1         & 1              & Portable workshop           & Spellcasting                       & Ritualist               & Insightful caster           \\
+    2         & 4              & Alchemical discovery        & Spell rank (2)                     & Scholastic insight      & Mystic insight              \\
+    3         & 7              & Greater alchemical infusion & Spell rank (3), greater mage armor & Greater scholastic lore & Wellspring of power         \\
+    4         & 10             & Experienced quaffing        & Spell rank (4), spell knowledge    & Contingency             & Mystic insight              \\
+    5         & 13             & Alchemical discovery        & Spell rank (5)                     & Arcane insight          & Greater insightful caster   \\
+    6         & 16             & Supreme alchemical infusion & Spell rank (6), supreme mage armor & Greater ritualist       & Mystic insight              \\
+    7         & 19             & Greater portable workshop   & Spell rank (7), spell knowledge    & Multiple contingency    & Greater wellspring of power \\
+\end{dtabularx}
     \end{dtable!*}
 
     \classbasics{Alignment} Any.
@@ -3800,6 +3833,9 @@ This choice determines a great deal about your character's abilities.
     \subsection{Alchemist}
         This archetype improves your ability to use achemy to create unusual concoctions to aid your allies and harm your foes.
 
+        \cf{Wiz}[0]{Alchemical Infusion} You gain a \plus2 bonus to Craft (alchemy) checks.
+        In addition, whenever you create or use an alchemical item, you may use your \glossterm{power} with \glossterm{magical} abilities in place of the item's normal power to determine its effects.
+
         \cf{Wiz}[1]{Portable Workshop} 
         You carry materials necessary to refine low-grade alchemical items wherever you are.
         Items created with this ability deteriorate and become useless after 24 hours or after you finish a long rest, whichever comes first.
@@ -3813,9 +3849,7 @@ This choice determines a great deal about your character's abilities.
 
         If you use this ability extensively without visiting civilization or some other area where you can restock your personal supplies for weeks, you may run low on supplies and your ability to use this ability may be limited.
 
-        \cf{Wiz}[2]{Alchemical Infusion} Whenever you create or use an alchemical item, you may use your \glossterm{power} with \glossterm{magical} abilities in place of the item's normal power to determine its effects.
-
-        \cf{Wiz}[3]{Alchemical Discovery} You gain your choice of one of the following benefits.
+        \cf{Wiz}[2]{Alchemical Discovery} You gain your choice of one of the following benefits.
         {
             \parhead{Complex Construction} You can use your portable workshop ability to create items with an item level up to two levels higher than your level.
             \parhead{Durable Construction} You double the range of alchemical items you create.
@@ -3827,16 +3861,17 @@ This choice determines a great deal about your character's abilities.
             \parhead{Safe Construction} Creatures who are not trained in Craft (alchemy) can use alchemical items you create without a mishap chance.
         }
 
-        \cf{Wiz}[4]{Alchemical Expertise} You gain a \plus3 bonus to the Craft (alchemy) skill and a \plus1 bonus to accuracy with alchemical items.
+        \cf{Wiz}[3]{Greater Alchemical Infusion} The skill bonus from your \textit{alchemical infusion} ability increases to \plus4.
+        In addition, you gain a \plus1 bonus to accuracy with alchemical items.
 
-        \cf{Wiz}[5]{Experienced Quaffing} You can drink up to two doses of potions, elixirs, and other drinkable alchemical items simultaneously with no mishap risk.
+        \cf{Wiz}[4]{Experienced Quaffing} You can drink up to two doses of potions, elixirs, and other drinkable alchemical items simultaneously with no mishap risk.
 
-        \cf*{Wiz}[6]{Alchemical Discovery} You gain an additional \textit{alchemical discovery} ability.
+        \cf*{Wiz}[5]{Alchemical Discovery} You gain an additional \textit{alchemical discovery} ability.
 
-        \cf{Wiz}[7]{Greater Alchemical Expertise} The skill bonus from your \textit{alchemical expertise} ability increases to \plus6 and the accuracy bonus increases to \plus2.
+        \cf{Wiz}[6]{Supreme Alchemical Infusion} The skill bonus from your \textit{alchemical infusion} ability increases to \plus6.
+        In addition, the accuracy bonus from your \textit{greater alchemical infusion} ability increases to \plus2.
 
-        \cf{Wiz}[8]{Epic Alchemy} The accuracy bonus from your \textit{alchemical expertise} ability increases to \plus4.
-        In addition, the difficulty rating to craft a new alchemical item with your \textit{portable workshop} ability does not increase with each successful craft.
+        \cf{Wiz}[7]{Greater Portable Workshop} The difficulty rating to craft a new alchemical item with your \textit{portable workshop} ability does not increase with each successful craft.
 
     \subsection{Arcane Magic}
         This archetype grants you the ability to cast arcane spells.
@@ -3909,22 +3944,26 @@ This choice determines a great deal about your character's abilities.
         This archetype deepens your study of arcane magic.
         You have the Arcane Magic archetype from the wizard class to gain the abilities from this archetype.
 
-        \cf{Wiz}[1]{Scholastic Lore} You gain a \plus2 bonus to the Spellsense skill and all Knowledge skills.
+        \cf{Wiz}[0]{Scholastic Lore} You gain a \plus2 bonus to the Spellsense skill and all Knowledge skills.
 
-        \cf{Wiz}[2]{Ritualist} You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
+        \cf{Wiz}[1]{Ritualist} You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
         The maximum \glossterm{rank} of arcane ritual you can learn or perform is equal to the maximum rank of arcane spell that you can cast.
+        If you have the ability to cast rank 1 arcane spells, you may immediately scribe one rank 1 ritual without paying the normal costs.
         In addition, whenever you gain access to a new spell rank, you can scribe one ritual of that rank or lower without paying the normal costs.
 
-        \cf{Wiz}[3]{Arcane Insight}[Magical]
+        \cf{Wiz}[2]{Scholastic Insight}[Magical]
         You gain one of the following insights.
         Some insights can be chosen multiple times, as indicated in their descriptions.
 
         {
+            \parhead{Esoteric Spell Knowledge} You learn a single spell from any arcane \glossterm{mystic sphere}.
+            You do not not need to have access to that mystic sphere.
+            This does not grant you access to that mystic sphere for any other purposes.
+            Whenever you gain access to a new mystic sphere or spell rank, you may choose a different spell with this ability.
+            \par You can choose this insight multiple times, learning an additional spell each time.
+
             \parhead{Expanded Sphere Access} You gain access to a new \glossterm{mystic sphere}.
             \par You cannot choose this insight multiple times.
-
-            \parhead{Expanded Spell Knowledge} You learn an additional \glossterm{spell}.
-            \par You can choose this insight multiple times, learning an additional spell each time.
 
             \parhead{Signature Spell} Choose a \glossterm{spell} you know.
             The spell loses the \glossterm{Focus} tag, allowing you to cast it without lowering your guard in combat.
@@ -3944,9 +3983,9 @@ This choice determines a great deal about your character's abilities.
             \par You can choose this insight multiple times, choosing a different \glossterm{mystic sphere} each time.
         }
 
-        \cf{Wiz}[4]{Greater Scholastic Lore} The bonuses from your \textit{scholastic lore} ability increase to \plus4.
+        \cf{Wiz}[3]{Greater Scholastic Lore} The bonuses from your \textit{scholastic lore} ability increase to \plus4.
 
-        \cf{Wiz}[5]{Contingency} You gain the ability to prepare a spell so it takes effect automatically if specific circumstances arise.
+        \cf{Wiz}[4]{Contingency} You gain the ability to prepare a spell so it takes effect automatically if specific circumstances arise.
         % If any spells take more than one standard action, they would need to be excluded from Contingency, but none exist
         % You can apply this ability to any arcane spell that can be cast as a \glossterm{standard action} or \glossterm{minor action}.
         Preparing a spell with this ability takes 5 minutes.
@@ -3967,13 +4006,12 @@ This choice determines a great deal about your character's abilities.
         You can have only one spell with this ability active at a time.
         If you use this ability again with a different spell, the old contingency is removed.
 
-        \cf*{Wiz}[6]{Arcane Insight}[Magical]
+        \cf*{Wiz}[5]{Arcane Insight}[Magical]
         You learn an additional \textit{arcane insight}.
 
-        \cf{Wiz}[7]{Malleable Contingency} If you have a \textit{contingency} active, you can change the conditions to trigger your \textit{contingency} as a standard action.
-        This does not allow you to change the spell stored in your \textit{contingency}.
+        \cf{Wiz}[6]{Greater Ritualist} Whenever you lead a ritual, it requires half the normal number of \glossterm{fatigue points} and half the normal time to complete.
 
-        \cf{Wiz}[8]{Multiple Contingency} You may have up to three separate \textit{contingency} abilities active at the same time.
+        \cf{Wiz}[7]{Multiple Contingency} You may have two separate \textit{contingency} abilities active at the same time.
         Each contingency can have separate triggering conditions.
         Only one contigency can trigger each round.
         If multiple contingencies would activate simultaneously, choose one to activate randomly.
