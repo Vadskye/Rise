@@ -106,9 +106,9 @@ chronomancy=MysticSphere(
             At the end of the following round, the target reappears in the place where it ceased to exist.
             If that space is occupied, it appears in the closest unoccupied space.
 
-            When the target reappears, its condition is unchanged from when it left, except that it loses \\glossterm<action points> equal to the amount used by its duplicate.
+            When the target reappears, its condition is unchanged from when it left, except that it gains \\glossterm<fatigue points> equal to the amount used by its duplicate.
             Its \\glossterm<hit points>, conditions, and all other statistics are unaffected, regardless of any damage or other negative effects suffered by the duplicate.
-            If this would reduce any of the target's resources below 0, it takes energy \\glossterm<standard damage> +4d from the paradox and becomes \\glossterm<stunned> as a \\glossterm<condition>.
+            If this would reduce any of the target's resources below 0, it takes 4d10 energy damage from the paradox and becomes \\glossterm<stunned> as a \\glossterm<condition>.
 
             You can cast this spell as a \\glossterm<minor action>.
         """, scaling="""
