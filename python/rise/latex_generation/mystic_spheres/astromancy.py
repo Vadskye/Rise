@@ -113,15 +113,22 @@ astromancy=MysticSphere(
             If it loses \\glossterm<hit points> from this damage, you \\glossterm<knockback> it up to 50 feet in any direction (see \\pcref<Knockback Effects>).
             Moving the target upwards costs twice the normal movement cost.
         """, scaling="damage", tags=[]),
+        # +2 levels for +1d
         Spell('Dimensional Jaunt -- Plane of Fire', 6,  'One creature within \\rngmed range', """
             You partially teleport the target into the Plane of Fire.
             Make an attack vs. Mental against the target.
-            \\hit The target takes fire damage equal to 4d6 plus half your \\glossterm<power>.
-            If it loses \\glossterm<hit points> from this damage, it is \\glossterm<ignited> as a \\glossterm<condition>.
-            This condition can also be removed if the target makes a \\glossterm<difficulty rating> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
+            \\hit The target takes fire damage equal to 4d8 plus half your \\glossterm<power>.
+            If it loses \\glossterm<hit points> from this damage, it catches on fire as a \\glossterm<condition>.
+            At the end of each subsequent round, it takes 4d6 fire damage.
+
+            If the the target gains a \\glossterm<vital wound> from this damage, the condition ends.
+            This condition can be removed if the target makes a \\glossterm<difficulty rating> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
             Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
             \\glance As above, except that that the target takes half damage.
-        """, scaling="damage", tags=[]),
+        """, scaling="""
+            The damage of both the initial hit and the subsequent condition increases by +1d for each rank beyond 6.
+        """, tags=[]),
+        # +2 levels for mixed damage types, +2 levels for +1d
         Spell('Dimensional Jaunt -- Myriad', 5, 'One creature within \\rngmed range', """
             You partially teleport the target through a number of planes in sequence.
             Make an attack vs. Mental against the target.
