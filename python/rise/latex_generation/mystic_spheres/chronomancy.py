@@ -84,9 +84,9 @@ chronomancy=MysticSphere(
             \\crit The target is \\glossterm<slowed> and \\glossterm<stunned> as a single \\glossterm<condition>.
         """, scaling="accuracy", tags=[]),
         Spell('Haste', 1, 'Yourself', """
-            The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<base speed>, up to a maximum of double its \\glossterm<base speed>.
-
             You can cast this spell as a \\glossterm<minor action>.
+
+            The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<base speed>, up to a maximum of double its \\glossterm<base speed>.
         """, scaling="""
             \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<5> The speed bonus increases to +20 feet.
@@ -99,6 +99,8 @@ chronomancy=MysticSphere(
             \\rank<6> The accuracy penalty is reduced to -2.
         """, tags=['Attune (self)']),
         Spell('Temporal Duplicate', 5, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            You can cast this spell as a \\glossterm<minor action>.
+
             You reach into a possible future and create a duplicate of the target.
             The duplicate is identical in all ways to the target when the spell resolves.
             The target and its duplicate can act during the next round.
@@ -109,13 +111,13 @@ chronomancy=MysticSphere(
             When the target reappears, its condition is unchanged from when it left, except that it gains \\glossterm<fatigue points> equal to the amount used by its duplicate.
             Its \\glossterm<hit points>, conditions, and all other statistics are unaffected, regardless of any damage or other negative effects suffered by the duplicate.
             If this would reduce any of the target's resources below 0, it takes 4d10 energy damage from the paradox and becomes \\glossterm<stunned> as a \\glossterm<condition>.
-
-            You can cast this spell as a \\glossterm<minor action>.
         """, scaling="""
             \\rank<7> If you cast this spell as a standard action, you can choose to have the duplicate persist for two rounds instead of one.
                 If you do, the target disappears for two rounds at the same time as the duplicate.
         """, tags=[]),
         Spell('Time Hop', 2, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngmed range', """
+            You can cast this spell as a \\glossterm<minor action>.
+
             You send the target into the future, causing it to temporarily cease to exist.
             When you cast this spell, you choose how many rounds the target ceases to exist for, up to a maximum of five rounds.
             At the end of the last round, it reappears in the same location where it disappeared.
@@ -123,8 +125,6 @@ chronomancy=MysticSphere(
             The area the target occupied can be physically crossed, but it is treated as an invalid destination for teleportation and other similar magic.
             When the target reappears, all of its surroundings are adjusted as if the object had retroactively always existed in its space.
             For example, if the location is occupied by a creature that walked into the area, the creature is relocated to the closest unoccupied space along the path it took to reach the target.
-
-            You can cast this spell as a \\glossterm<minor action>.
         """, scaling="""
             \\rank<4> The maximum size of the target increases to Large.
             \\rank<6> The maximum size of the target increases to Huge.
@@ -137,14 +137,14 @@ chronomancy=MysticSphere(
             \\rank<7> The bonuses increase to +4.
         """, tags=['Attune (target)']),
         Spell('Temporal Stasis', 4, 'Yourself or one Medium or smaller \\glossterm<ally> within \\rngmed range', """
+            You can cast this spell as a \\glossterm<minor action>.
+
             The target is placed into stasis, rendering it unconscious.
             While in stasis, it cannot take any actions and cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
 
             % TODO: wording
             This effect normally lasts as long as you \\glossterm<attune> to it, and until the end of the round when you release the attunement.
             If you use this ability on yourself, it instead lasts for a number of rounds you choose when you cast the spell, up to a maximum of five rounds.
-
-            You can cast this spell as a \\glossterm<minor action>.
         """, scaling="""
             \\rank<6> The maximum size of the target increases to Large.
         """, tags=['Attune (self)']),

@@ -49,43 +49,43 @@ biomancy=MysticSphere(
             The healing increases by +1d for each rank beyond 2.
         """, tags=[]),
         Spell('Vital Regeneration', 5, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            You can cast this spell as a \\glossterm<minor action>.
+
             A the end of each round, the target can remove one of its \\glossterm<vital wounds>.
             If it does, it gains two \\glossterm<fatigue points>.
-
-            You can cast this spell as a \\glossterm<minor action>.
         """, scaling="""
             \\rank<7> The target can remove two \\glossterm<vital wounds> instead of one.
             It gains two \\glossterm<fatigue points> per vital wound removed this way.
         """, tags=['Attune (target)']),
         Spell('Regeneration', 4, 'Yourself', """
-            At the end of each round, if you did not lose any \\glossterm<hit points> that round, you regain 1d10 \\glossterm<hit points>.
-
             You can cast this spell as a \\glossterm<minor action>.
+
+            At the end of each round, if you did not lose any \\glossterm<hit points> that round, you regain 1d10 \\glossterm<hit points>.
         """, scaling="""
             The healing increases by +1d for each rank beyond 4.
         """, tags=['Attune (self)']),
         Spell('Swimmer', 2, 'Yourself', """
+            You can cast this spell as a \\glossterm<minor action>.
+
             The target gains a \\glossterm<swim speed> equal to its \\glossterm<base speed>.
             In addition, it gains a +2 \\glossterm<magic bonus> to Swim checks.
-
-            You can cast this spell as a \\glossterm<minor action>.
         """, scaling="""
             \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The bonus increases to +4.
         """, tags=['Attune (target)']),
         Spell('Climber', 2, 'Yourself', """
+            You can cast this spell as a \\glossterm<minor action>.
+
             The target gains a \\glossterm<climb speed> equal to its \\glossterm<base speed>.
             In addition, it gains a +2 \\glossterm<magic bonus> to Climb checks.
-
-            You can cast this spell as a \\glossterm<minor action>.
         """, scaling="""
             \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The bonus increases to +4.
         """, tags=['Attune (target)']),
         Spell('Runner', 2, 'Yourself', """
-            The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<land speed>.
-
             You can cast this spell as a \\glossterm<minor action>.
+
+            The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<land speed>.
         """, scaling="""
             \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The bonus increases to +20 feet.
@@ -111,9 +111,9 @@ biomancy=MysticSphere(
             \\rank<7> The bonus increases to +7.
         """, tags=['Attune (target)']),
         Spell('Scent', 3, 'Yourself', """
-            You gain the \\glossterm<scent> ability, giving you a +10 bonus to scent-based Awareness checks (see \\pcref<Senses>).
-
             You can cast this spell as a \\glossterm<minor action>.
+
+            You gain the \\glossterm<scent> ability, giving you a +10 bonus to scent-based Awareness checks (see \\pcref<Senses>).
         """, scaling="""
             \\rank<5> The bonus increases to +15.
             \\rank<7> The bonus increases to +20.
@@ -128,14 +128,14 @@ biomancy=MysticSphere(
         # +1 level over other dragon breaths for damage choice, including both
         # physical and energy
         Spell('Dragon Breath', 5, 'Yourself (see text)', """
+            You can cast this spell as a \\glossterm<minor action>.
+
             You gain the ability to breath energy like a dragon.
             When you cast this spell, choose a type of damage: acid, cold, electricity, or fire.
             As a standard action, you can breath a cone of that type of energy.
             When you do, make an attack vs. Reflex against everything within a \\arealarge cone from you.
             \\hit Each target takes damage of the chosen type equal to 2d10 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
-
-            You can cast this spell as a \\glossterm<minor action>.
         """, scaling="damage", tags=['Attune (self)']),
         Spell('Withering', 2, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude with a +2 bonus to \\glossterm<accuracy> against the target.

@@ -58,9 +58,9 @@ revelation=MysticSphere(
             \\rank<7> The bonus increases to +5.
         """, tags=['Swift']),
         Spell('Precognitive Offense', 3, 'Yourself', """
-            The target gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with all attacks.
-
             You can cast this spell as a \\glossterm<minor action>.
+
+            The target gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with all attacks.
         """, scaling="""
             \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<7> The bonus increases to +2.

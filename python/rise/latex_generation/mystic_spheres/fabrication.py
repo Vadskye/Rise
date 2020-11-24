@@ -27,9 +27,9 @@ fabrication=MysticSphere(
     lists=['Arcane', 'Pact'],
     spells=[
         Spell('Shieldbearer', 2, 'Yourself', """
-            You gain a +1 \\glossterm<magic bonus> to Armor defense.
-
             You can cast this spell as a \\glossterm<minor action>.
+
+            You gain a +1 \\glossterm<magic bonus> to Armor defense.
         """, scaling="""
             \\rank<4> You are not considered \\glossterm<defenseless> as long as you are not \\glossterm<unaware>, even if you are not wielding a weapon or shield.
             \\rank<6> The bonus increases to +2.
@@ -151,12 +151,12 @@ fabrication=MysticSphere(
             \\hit Each target takes acid damage equal to 1d8 plus half your \\glossterm<power>.
         """, scaling="damage", tags=['Manifestation']),
         Spell('Acid Breath', 4, 'Yourself (see text)', """
+            You can cast this spell as a \\glossterm<minor action>.
+
             As a standard action, you can breathe acid like a dragon.
             When you do, make an attack vs. Fortitude against everything in a \\arealarge cone from you.
             \\hit Each target takes acid damage equal to 2d8 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
-
-            You can cast this spell as a \\glossterm<minor action>.
         """, scaling="damage", tags=['Attune (self)']),
         Spell('Corrosive Orb', 5, 'One creature or object within \\rngmed range', """
             Make an attack vs. Fortitude against the target.

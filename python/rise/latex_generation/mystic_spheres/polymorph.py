@@ -54,21 +54,21 @@ polymorph=MysticSphere(
             \\hit The target takes physical damage equal to 1d10 plus your \\glossterm<power>.
         """, scaling="damage", tags=[]),
         Spell('Shrink', 1, 'Yourself', """
+            You can cast this spell as a \\glossterm<minor action>.
+
             The target's size decreases by one \\glossterm<size category>.
             This decreases its \\glossterm<base speed> and improves its \\glossterm<Stealth> skill.
             It may also decrease the target's \\glossterm<reach> (see \\pcref<Size in Combat>).
             However, its physical form is not altered fully to match its new size, and its Strength and Dexterity are unchanged.
-
-            You can cast this spell as a \\glossterm<minor action>.
         """, scaling="""
             \\rank<3> This spell can target a Small or larger \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<5> The minimum size category is reduced to Diminuitive.
             \\rank<7> You can decrease the target's size category by up to two size categories.
         """, tags=['Attune (target)']),
         Spell('Stoneskin', 1, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
-            The target gains a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical> damage.
-
             You can cast this spell as a \\glossterm<minor action>.
+
+            The target gains a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical> damage.
         """, scaling="""
             \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             In addition, the bonus increases to +4.
@@ -76,12 +76,12 @@ polymorph=MysticSphere(
             \\rank<7> The bonus increases to +16.
         """, tags=['Attune (target)']),
         Spell('Enlarge', 3, 'Yourself', """
+            You can cast this spell as a \\glossterm<minor action>.
+
             The target's size increases by one \\glossterm<size category>.
             This increases its \\glossterm<base speed> and reduces its \\glossterm<Stealth> skill.
             It may also increase the target's \\glossterm<reach> (see \\pcref<Size in Combat>).
             However, its physical form is not altered fully to match its new size, and its Strength and Dexterity are unchanged.
-
-            You can cast this spell as a \\glossterm<minor action>.
         """, scaling="""
             \\rank<5> This spell can target a Large or smaller \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<7> You can increase the target's size category by up to two size categories.

@@ -118,19 +118,19 @@ pyromancy=MysticSphere(
             At the end of each round, it and anything touching it takes fire damage equal to 1d10 plus half your \\glossterm<power>.
         """, scaling="accuracy", tags=['Sustain (minor)']),
         Spell('Flame Breath', 4, 'Yourself (see text)', """
+            You can cast this spell as a \\glossterm<minor action>.
+
             As a standard action, you can breathe fire like a dragon.
             When you do, make an attack vs. Reflex against everything within a \\arealarge cone from you.
             \\hit Each target takes fire damage equal to 2d8 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
-
-            You can cast this spell as a \\glossterm<minor action>.
         """, scaling="damage", tags=['Attune (self)']),
         Spell('Eyes of Flame', 2, 'Yourself (see text)', """
+            You can cast this spell as a \\glossterm<minor action>.
+
             As a standard action, you can set something on fire simply by staring at it.
             When you do, make an attack vs. Fortitude against one creature or object within \\rngmed range from you.
             \\hit The target takes fire damage equal to 2d6 plus your \\glossterm<power>.
-
-            You can cast this spell as a \\glossterm<minor action>.
         """, scaling="damage", tags=['Attune (self)']),
         Spell('Flaming Spheres', 4, 'Yourself (see text)', """
             When you cast this spell, five flaming spheres appear over your head.

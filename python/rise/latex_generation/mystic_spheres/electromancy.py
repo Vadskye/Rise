@@ -65,9 +65,9 @@ spells=[
         \\glance As above, except that that each target takes half damage.
     """, scaling="damage", tags=[]),
     Spell('Magnetic Blade', 3, 'Yourself', """
-        Metal weapons wielded by the target gain a +1 bonus to \\glossterm<accuracy> against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
-
         You can cast this spell as a \\glossterm<minor action>.
+
+        Metal weapons wielded by the target gain a +1 bonus to \\glossterm<accuracy> against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
     """, scaling="""
         \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
         \\rank<7> The accuracy bonus increases to +2.
@@ -108,20 +108,20 @@ spells=[
         \\glance As above, except that that each target takes half damage.
     """, scaling="damage", tags=[]),
     Spell('Energize', 2, 'Yourself', """
-        The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<base speed>, up to a maximum of double its \\glossterm<base speed>.
-
         You can cast this spell as a \\glossterm<minor action>.
+
+        The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<base speed>, up to a maximum of double its \\glossterm<base speed>.
     """, scaling="""
         \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
         \\rank<6> The speed bonus increases to +20 feet.
     """, tags=['Attune (target)']),
     Spell('Lightning Breath', 4, 'Yourself (see text)', """
+        You can cast this spell as a \\glossterm<minor action>.
+
         As a standard action, you can breathe electricity like a dragon.
         When you do, make an attack vs. Reflex against everything within a \\arealarge cone.
         \\hit Each target takes electricity damage equal to 2d8 plus half your \\glossterm<power>.
         \\glance As above, except that that each target takes half damage.
-
-        You can cast this spell as a \\glossterm<minor action>.
     """, scaling="damage", tags=['Attune (self)']),
     Spell('Ball Lightning', 4, 'See text', """
         You create a Medium ball of lightning in one space within \\rngmed range.
