@@ -123,9 +123,9 @@ verdamancy=MysticSphere(
             \\rank<7> The number of additional successes increases to four.
         """, tags=['Sustain (minor)']),
         Spell('Barkskin', 1, 'Yourself', """
-            The target gains a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical> damage.
-
             You can cast this spell as a \\glossterm<minor action>.
+
+            The target gains a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical> damage.
         """, scaling="""
             \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             In addition, the bonus increases to +4.
@@ -210,14 +210,14 @@ verdamancy=MysticSphere(
             \\rank<6> The area increases to a \\arealarge radius.
         """, tags=['Attune (self)']),
         Spell('Thornblade', 3, 'Yourself', """
+            You can cast this spell as a \\glossterm<minor action>.
+
             All damage the target deals with \\glossterm<strikes> becomes piercing damage in addition to the attack's normal damage types.
             Whenever the target causes a creature to lose \\glossterm<hit points> with a \\glossterm<strike>, thorns from the striking weapon enter the target's body.
             As a \\glossterm<condition>, the target unable to heal the \\glossterm<hit points> lost to the attack.
 
             This condition can be removed by the \\textit<treat condition> ability (see \\pcref<Treat Condition>).
             The \\glossterm<difficulty rating> of the check is equal to 5 \\add your \\glossterm<power>.
-
-            You can cast this spell as a \\glossterm<minor action>.
         """, scaling="""
             \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<7> The condition cannot be removed without taking a \\glossterm<short rest>.

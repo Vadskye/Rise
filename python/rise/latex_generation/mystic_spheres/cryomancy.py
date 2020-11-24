@@ -80,10 +80,10 @@ cryomancy=MysticSphere(
             \\glance As above, except that the condition is removed at the end of the next round.
         """, scaling="accuracy", tags=[]),
         Spell('Skate', 1, 'Yourself', """
+            You can cast this spell as a \\glossterm<minor action>.
+
             The target can move on top of calm water as if it were land.
             It treats the water as \\glossterm<difficult terrain>.
-
-            You can cast this spell as a \\glossterm<minor action>.
         """, scaling="""
             \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<5> The target can also move on top of rough or stormy water.
@@ -156,12 +156,13 @@ cryomancy=MysticSphere(
             \\rank<7> The \\glossterm<vital resistance> of the item increases to four times your power.
         """, tags=[]),
         Spell('Frost Breath', 4, 'Yourself', """
+            You can cast this spell as a \\glossterm<minor action>.
+
             As a standard action, you can breathe cold like a dragon.
             When you do, make an attack vs. Fortitude against everything in a \\arealarge cone.
+
             \\hit Each target takes cold damage equal to 2d8 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
-
-            You can cast this spell as a \\glossterm<minor action>.
         """, scaling="damage", tags=['Attune (self)']),
         Spell('Frostburn', 7, 'One creature within \\rngclose range', """
             Make an attack vs. Fortitude against the target.

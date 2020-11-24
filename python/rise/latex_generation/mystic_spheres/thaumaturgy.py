@@ -107,9 +107,9 @@ thaumaturgy=MysticSphere(
             After you absorb three spells in this way, this effect ends.
         """, tags=['Attune (self)']),
         Spell('Enhance Magic', 1, 'Yourself', """
-            You gain a +1 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<magical> abilities.
-
             You can cast this spell as a \\glossterm<minor action>.
+
+            You gain a +1 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<magical> abilities.
         """, scaling="""
             The bonus increases by 1 for each rank beyond 1.
         """, tags=['Attune (self)']),
@@ -170,6 +170,8 @@ thaumaturgy=MysticSphere(
             \\crit As above, except that the effect ends after the target miscasts two spells instead of only one.
         """, scaling="accuracy", tags=[]),
         Spell('Delay Teleportation', 4, 'See text', """
+            You can cast this spell as a \\glossterm<minor action>.
+
             Whenever a creature or object would teleport into the area in a \\arealarge radius \\glossterm<emanation> from you, that teleportation is delayed by a round.
             The teleporting creature or object remains stuck in the Astral Plane and can take no actions during that time.
             Creatures delayed in this way do not experience a delay, though they may be able to deduce that they were delayed based on observable evidence.
@@ -177,8 +179,6 @@ thaumaturgy=MysticSphere(
             Whenever something is delayed in this way, you learn its approximate size and location within the area, allowing you to know which space or spaces it will occupy when it arrives.
             Creatures and objects delayed by this effect remain delayed even if you move such that their destination is no longer within the area of this effect.
             This does not affect teleportation away from the area unless that teleportation's destination lies within the area.
-
-            You can cast this spell as a \\glossterm<minor action>.
         """, scaling="""
             \\rank<6> The delay increases to two rounds.
         """, tags=['Attune (self)']),

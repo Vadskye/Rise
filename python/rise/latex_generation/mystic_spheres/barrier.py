@@ -155,9 +155,9 @@ barrier=MysticSphere(
             If it stops halfway, it can return to its side, but once it passes through fully it treats the barrier as impassable from the other side.
         """, tags=['Manifestation', 'Sustain (standard)']),
         Spell('Kinetic Shield', 1, 'Yourself', """
-            The target gains a +2 \\glossterm<magic bonus> to its \\glossterm<resistance> against \\glossterm<physical> damage.
-
             You can cast this spell as a \\glossterm<minor action>.
+
+            The target gains a +2 \\glossterm<magic bonus> to its \\glossterm<resistance> against \\glossterm<physical> damage.
         """, scaling="""
             \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             In addition, the bonus increases to +4.
@@ -165,19 +165,19 @@ barrier=MysticSphere(
             \\rank<7> The bonus increases to +16.
         """, tags=['Attune (target)']),
         Spell('Retributive Kinetic Shield', 5, 'Yourself', """
+            You can cast this spell as a \\glossterm<minor action>.
+
             You gain a +8 \\glossterm<magic bonus> against \\glossterm<physical damage>.
             In addition, whenever you resist physical damage, the attacker takes energy damage equal to half the damage resisted this way.
             If the attacker is beyond \\rngclose range of you, this reflection fails.
             Any effect which increases this spell's range increases the range of this effect by the same amount.
-
-            You can cast this spell as a \\glossterm<minor action>.
         """, scaling="""
             \\rank<7> The bonus increases to +16.
         """, tags=['Attune (self)']),
         Spell('Resist Energy', 1, 'Yourself', """
-            The target gains a +2 \\glossterm<magic bonus> to its \\glossterm<resistance> against \\glossterm<energy> damage.
-
             You can cast this spell as a \\glossterm<minor action>.
+
+            The target gains a +2 \\glossterm<magic bonus> to its \\glossterm<resistance> against \\glossterm<energy> damage.
         """, scaling="""
             \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             In addition, the bonus increases to +4.
@@ -209,9 +209,9 @@ barrier=MysticSphere(
             \\rank<7> You may attune to this spell any number of times, choosing a different subtype of energy damage each time.
         """, tags=['Attune (self)']),
         Spell('Deflective Shield', 2, 'Yourself', """
-            The target gains a +1 \\glossterm<magic bonus> to Armor defense and Reflex defense.
-
             You can cast this spell as a \\glossterm<minor action>.
+
+            The target gains a +1 \\glossterm<magic bonus> to Armor defense and Reflex defense.
         """, scaling="""
             \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The bonus increases to +2.
