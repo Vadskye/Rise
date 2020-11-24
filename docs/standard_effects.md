@@ -143,12 +143,14 @@ Note: This is duplicated in the Metacaster feat.
 * Rank 1
   * Generally give -2 to a category (accuracy/defenses)
   * List: dazed, dazzled, sickened, slowed
+  * Special: end of round low damage (remove if vital, DR 10 check to remove)
 * Rank 2
   * Generally give -4 to a category (accuracy/defenses)
-  * List: exhausted, frightened, nauseated, generic -2 to all, ignited (move action to remove), stunned, fighting underwater
+  * List: exhausted, frightened, nauseated, generic -2 to all, stunned, fighting underwater
+  * Special: end of round low damage (remove if vital)
 * Rank 3
   * Generally cause partial action denial
-  * List: decelerated, confused, blinded, disoriented, ignited, immobilized, panicked
+  * List: decelerated, confused, blinded, disoriented, immobilized, panicked
 * Rank 4
   * Generally cause complete action denial
   * List: Asleep, paralyzed
