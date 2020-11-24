@@ -44,17 +44,17 @@ vivimancy=MysticSphere(
             The healing increases by +1d for each rank beyond 2.
         """, tags=[]),
         Spell('Triage', 2, 'Yourself or a living \\glossterm<ally> within \\rngmed range', """
-            If the target has a \\glossterm<vital wound> with a \\glossterm<vital roll> of 0, it treats that \\glossterm<vital roll> as a 1, preventing it from dying (see \\pcref<Vital Wounds>).
-
             You can cast this spell as a \\glossterm<minor action>.
+
+            If the target has a \\glossterm<vital wound> with a \\glossterm<vital roll> of 0, it treats that \\glossterm<vital roll> as a 1, preventing it from dying (see \\pcref<Vital Wounds>).
         """, scaling="""
             \\rank<4> The minimum \\glossterm<vital roll> you can mitigate decreases to -1.
             \\rank<6> The minimum \\glossterm<vital roll> you can mitigate decreases to -2.
         """, tags=[]),
         Spell('Fortify Life', 1, 'Yourself or', """
-            The target gains a +2 \\glossterm<magic bonus> to Fortitude defense.
-
             You can cast this spell as a \\glossterm<minor action>.
+
+            The target gains a +2 \\glossterm<magic bonus> to Fortitude defense.
         """, scaling="""
             \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<5> The bonus increases to +3.
@@ -106,9 +106,9 @@ vivimancy=MysticSphere(
         # TODO: make "Undead Bane" spell after figuring out undead / life
         # damage interaction
         Spell('Vital Persistence', 3, 'Yourself', """
-            The target ignores the vital wound effect of one of its \\glossterm<vital wounds> (see \\pcref<Vital Wounds>).
-
             You can cast this spell as a \\glossterm<minor action>.
+
+            The target ignores the vital wound effect of one of its \\glossterm<vital wounds> (see \\pcref<Vital Wounds>).
         """, scaling="""
             \\rank<5> This spell can target a living \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<7> The target can ignore the vital wound effect of two of its \\glossterm<vital wounds> instead of only one.
@@ -149,9 +149,9 @@ vivimancy=MysticSphere(
             \\glance As above, except that that the target takes half damage.
         """, scaling="damage", tags=[]),
         Spell('Lifesteal Blade', 5, 'Yourself', """
-            Once per round, when the target causes a living creature to lose \\glossterm<hit points> with a \\glossterm<strike>, the target regains \\glossterm<hit points> equal to half the hit points the struck creature lost this way.
-
             You can cast this spell as a \\glossterm<minor action>.
+
+            Once per round, when the target causes a living creature to lose \\glossterm<hit points> with a \\glossterm<strike>, the target regains \\glossterm<hit points> equal to half the hit points the struck creature lost this way.
         """, scaling="""
             \\rank<7> This spell can target a living \\glossterm<ally> within \\rngmed range instead of you.
         """, tags=['Attune (target)']),

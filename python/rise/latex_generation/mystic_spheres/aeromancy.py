@@ -58,10 +58,10 @@ aeromancy = MysticSphere(
             \\rank<7> The distance increases to 500 feet.
         """, tags=[]),
         Spell('Wind Screen', 2, 'Yourself', """
+            You can cast this spell as a \\glossterm<minor action>.
+
             You gain a +1 \\glossterm<magic bonus> to Armor defense.
             In addition, you gain a +2 bonus to defenses against \\glossterm<mundane> ranged attacks from weapons or projectiles that are Small or smaller.
-
-            You can cast this spell as a \\glossterm<minor action>.
             Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.
         """, scaling="""
             \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
@@ -118,11 +118,11 @@ aeromancy = MysticSphere(
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=[]),
         Spell('Windblade', 3, 'Yourself', """
+            You can cast this spell as a \\glossterm<minor action>.
+
             Melee weapons wielded by the target gain +5 foot \\glossterm<magic bonus> to \\glossterm<reach>.
             Attacks that hit because of this reach deal bludgeoning damage instead of any other damage types.
             This has no effect on ranged attacks the target makes.
-
-            You can cast this spell as a \\glossterm<minor action>.
         """, scaling="""
             \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<7> The bonus to \\glossterm<reach> increases to +10 feet.

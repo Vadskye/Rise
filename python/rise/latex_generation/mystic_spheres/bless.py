@@ -18,9 +18,9 @@ bless=MysticSphere(
             \\rank<7> The target is also immune to being \\glossterm<paralyzed>.
         """, tags=['Attune (target)']),
         Spell('Blessing of Swiftness', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<base speed>, up to a maximum of double its \\glossterm<base speed>.
-
             You can cast this spell as a \\glossterm<minor action>.
+
+            The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<base speed>, up to a maximum of double its \\glossterm<base speed>.
         """, scaling="""
             \\rank<5> The speed bonus increases to +20 feet.
             \\rank<7> The speed bonus increases to +30 feet.
@@ -66,39 +66,39 @@ bless=MysticSphere(
             \\rank<7> The bonus increases to +5.
         """, tags=['Swift']),
         Spell('Blessing of the Purified Body', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            The target gains a +4 bonus to \\glossterm<defenses> against \\glossterm<poisons> and \\glossterm<diseases>.
-
             You can cast this spell as a \\glossterm<minor action>.
+
+            The target gains a +4 bonus to \\glossterm<defenses> against \\glossterm<poisons> and \\glossterm<diseases>.
         """, scaling="""
             \\rank<4> The bonus increases to +6.
             \\rank<6> The bonus increases to +8.
         """, tags=['Attune (target)']),
         Spell('Blessing of Mental Clarity', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            The target gains a +4 bonus to \\glossterm<defenses> against \\glossterm<Compulsion> and \\glossterm<Emotion> effects.
-
             You can cast this spell as a \\glossterm<minor action>.
+
+            The target gains a +4 bonus to \\glossterm<defenses> against \\glossterm<Compulsion> and \\glossterm<Emotion> effects.
         """, scaling="""
             \\rank<6> The bonus increases to +6.
         """, tags=['Attune (target)']),
         Spell('Blessing of Protection', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            The target gains a +1 \\glossterm<magic bonus> to Armor defense and Mental defense.
-
             You can cast this spell as a \\glossterm<minor action>.
+
+            The target gains a +1 \\glossterm<magic bonus> to Armor defense and Mental defense.
         """, scaling="""
             \\rank<6> The bonus increases to +2.
         """, tags=['Attune (target)']),
         Spell('Battle Blessing', 5, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            The target gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with all attacks.
-
             You can cast this spell as a \\glossterm<minor action>.
+
+            The target gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with all attacks.
         """, scaling="""
             \\rank<7> The bonus increases to +2.
         """, tags=['Attune (target)']),
         Spell('Blessing of Perserverance', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            You can cast this spell as a \\glossterm<minor action>.
+
             Whenever the target gains a \\glossterm<condition>, it can choose to negate that condition.
             After negating a condition in this way, this spell ends.
-
-            You can cast this spell as a \\glossterm<minor action>.
         """, scaling="""
             \\rank<5> The spell can negate two conditions before ending.
             \\rank<7> The spell can negate three conditions before ending.
@@ -116,19 +116,19 @@ bless=MysticSphere(
         """, scaling="""
         """, tags=[]),
         Spell('Blessing of Might', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            The target gains a +2 \\glossterm<magic bonus> to Strength for the purpose of determining its \\glossterm<carrying capacity>.
-
             You can cast this spell as a \\glossterm<minor action>.
+
+            The target gains a +2 \\glossterm<magic bonus> to Strength for the purpose of determining its \\glossterm<carrying capacity>.
         """, scaling="""
             \\rank<4> The bonus increases to +4.
             \\rank<6> The bonus increases to +6.
         """, tags=['Attune (target)']),
         Spell('Blessing of Endurance', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            You can cast this spell as a \\glossterm<minor action>.
+
             The target increases its current \\glossterm<hit points> by 5.
             This can cause its current hit points to exceed its normal maximum hit points.
             When this ability ends, the target loses \\glossterm<hit points> equal to the number of hit points it gained this way.
-
-            You can cast this spell as a \\glossterm<minor action>.
         """, scaling="""
             \\rank<5> The number of additional hit points increases to 10.
             \\rank<7> The number of additional hit points increases to 20.

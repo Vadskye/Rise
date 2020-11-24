@@ -33,10 +33,10 @@ telekinesis=MysticSphere(
             \\hit Each target takes piercing damage equal to 1d8 plus half your \\glossterm<power>.
         """, scaling="damage", tags=[]),
         Spell('Force Extension', 3, 'Yourself', """
+            You can cast this spell as a \\glossterm<minor action>.
+
             Melee weapons wielded by the target gain +5 foot \\glossterm<magic bonus> to \\glossterm<reach>.
             This has no effect on ranged attacks the target makes.
-
-            You can cast this spell as a \\glossterm<minor action>.
         """, scaling="""
             \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<7> The bonus to \\glossterm<reach> increases to +10 feet.
@@ -144,10 +144,10 @@ telekinesis=MysticSphere(
             \\rank<7> The range increases to \\rngext.
         """, tags=[]),
         Spell('Reactive Deflection', 2, 'Yourself', """
+            You can cast this spell as a \\glossterm<minor action>.
+
             You gain a +1 \\glossterm<magic bonus> to Armor defense.
             In addition, you gain a +2 bonus to defenses against \\glossterm<mundane> ranged attacks from weapons or projectiles that are Small or smaller.
-
-            You can cast this spell as a \\glossterm<minor action>.
         """, scaling="""
             \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The bonus to Armor defense increases to +2.
