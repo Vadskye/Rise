@@ -229,19 +229,19 @@ It defines how attributes work and explains how to make attacks in combat.
                 \begin{dtabularx}{\textwidth}{l X}
                     \tb{Vital Roll} & \tb{Effect} \tableheaderrule
                     \minus6 or less & You immediately die \\
-                    \minus1--\minus5 & You are unconscious, and you die at the end of the next round \\
-                    0                & You are unconscious, and you die after one minute             \\
-                    1                & You are unconscious at less than full hit points              \\
-                    2                & You take a \minus2 penalty to \glossterm{accuracy}            \\
-                    3                & You take a \minus2 penalty to all \glossterm{defenses}        \\
-                    4                & You take a \minus2 penalty to future \glossterm{vital rolls}  \\
-                    5                & Your maximum \glossterm{hit points} are reduced by 2          \\
-                    6                & You move at half speed while at less than full hit points     \\
-                    7                & You take a \minus1 penalty to \glossterm{accuracy}            \\
-                    8                & You take a \minus1 penalty to all \glossterm{defenses}        \\
-                    9                & You take a \minus1 penalty to future \glossterm{vital rolls}  \\
-                    10               & Your maximum \glossterm{hit points} are reduced by 1          \\
-                    11 or more       & No effect                                                     \\
+                    \minus1--\minus5 & You are unconscious, and you die at the end of the next round              \\
+                    0                & You are unconscious, and you die after one minute                          \\
+                    1                & You are unconscious while you have less than full hit points               \\
+                    2                & You take a \minus2 penalty to \glossterm{accuracy}                         \\
+                    3                & You take a \minus2 penalty to all \glossterm{defenses}                     \\
+                    4                & Your maximum \glossterm{hit points} and \glossterm{resistances} are halved \\
+                    5                & You take a \minus2 penalty to future \glossterm{vital rolls}               \\
+                    6                & You move at half speed while you have less than full hit points            \\
+                    7                & You take a \minus1 penalty to \glossterm{accuracy}                         \\
+                    8                & You take a \minus1 penalty to all \glossterm{defenses}                     \\
+                    9                & Your maximum \glossterm{resistances} are halved                            \\
+                    10               & You take a \minus1 penalty to future \glossterm{vital rolls}               \\
+                    11 or more       & No effect                                                                  \\
                 \end{dtabularx}
             \end{dtable}
 
@@ -1971,13 +1971,13 @@ It defines how attributes work and explains how to make attacks in combat.
             11th       & 1,550   & \tdash              & \tdash                 & 5      \\
             12th       & 2,200   & \tdash              & \tdash                 & \tdash \\
             13th       & 3,150   & 5                   & \tdash                 & \tdash \\
-            14th       & 4,450   & \tdash              & \tdash                 & 6      \\
+            14th       & 4,450   & \tdash              & \tdash                 & \tdash \\
             15th       & 6,350   & \tdash              & 3                      & \tdash \\
             16th       & 8,900   & 6                   & \tdash                 & \tdash \\
-            17th       & 13,000  & \tdash              & \tdash                 & 7      \\
+            17th       & 13,000  & \tdash              & \tdash                 & \tdash \\
             18th       & 18,000  & \tdash              & \tdash                 & \tdash \\
             19th       & 25,500  & 7                   & \tdash                 & \tdash \\
-            20th       & 36,000  & \tdash              & \tdash                 & 8      \\
+            20th       & 36,000  & \tdash              & \tdash                 & \tdash \\
             21st       & 60,000  & \tdash              & 4                      & \tdash \\
         \end{dtabularx}
         1. This is your maximum rank in your class archetypes (see \pcref{Archetype Ranks}). \\
