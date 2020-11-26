@@ -55,7 +55,6 @@ def create_page(destination):
                 calc_insight_points(),
                 calc_skill_points(),
                 flex_wrapper(div({'class': 'section-header'}, 'Resistances')),
-                calc_base_resistances(),
                 calc_energy_resistance_bonus(),
                 calc_physical_resistance_bonus(),
                 flex_wrapper(div({'class': 'section-header'}, 'Defenses')),
@@ -254,49 +253,20 @@ def calc_accuracy():
         ),
     ])
 
-def calc_base_resistances():
-    return flex_row([
-        div({'class': 'calc-header'}, 'Base Resistances'),
-        underlabel(
-            'Bleed',
-            number_input({
-                'disabled': True,
-                'name': 'base_bleed_resistance_display',
-                'value': '(@{base_bleed_resistance})',
-            }),
-        ),
-        equation_space,
-        underlabel(
-            'Vital',
-            number_input({
-                'disabled': True,
-                'name': 'base_vital_resistance_display',
-                'value': '(@{base_vital_resistance})',
-            }),
-        ),
-    ])
-
-def calc_all_resistance_bonus():
-    return flex_row([
-        div({'class': 'calc-header'}, 'All Damage'),
-        equation(
-            [
-                equation_misc_repeat('all_resistance_bonus', 4)
-            ],
-            result_attributes={
-                'disabled': 'true',
-                'name': 'all_resistance_bonus_display',
-                'value': '(@{all_resistance_bonus})',
-            },
-            result_label='Bonus'
-        ),
-    ])
-
 def calc_physical_resistance_bonus():
     return flex_row([
         div({'class': 'calc-header'}, 'Physical Damage'),
         equation(
             [
+                underlabel(
+                    'Con',
+                    number_input({
+                        'disabled': True,
+                        'name': 'physical_resistance_constitution',
+                        'value': '(@{constitution})',
+                    }),
+                ),
+                plus(),
                 underlabel(
                     'Armor',
                     number_input({
@@ -342,6 +312,15 @@ def calc_energy_resistance_bonus():
         equation(
             [
                 underlabel(
+                    'Wil',
+                    number_input({
+                        'disabled': True,
+                        'name': 'energy_resistance_willpower',
+                        'value': '(@{willpower})',
+                    }),
+                ),
+                plus(),
+                underlabel(
                     'Armor',
                     number_input({
                         'name': 'energy_resistance_bonus_armor',
@@ -368,6 +347,12 @@ def calc_fatigue_tolerance():
                     'disabled': True,
                     'name': 'fatigue_tolerance_base',
                     'value': '2',
+                })),
+                plus(),
+                underlabel('(Con)', number_input({
+                    'disabled': True,
+                    'name': 'fatigue_tolerance_con',
+                    'value': '(@{constitution_starting})',
                 })),
                 plus(),
                 underlabel('(Wil)', number_input({
@@ -415,16 +400,10 @@ def calc_hit_points():
                 underlabel('Base', number_input({
                     'disabled': True,
                     'name': 'hit_points_base',
-                    'value': '9',
+                    'value': '(@{hit_points_from_level})',
                 })),
                 plus(),
-                underlabel('(Con)', number_input({
-                    'disabled': True,
-                    'name': 'hit_points_constitution',
-                    'value': '(@{constitution_starting})',
-                })),
-                plus(),
-                equation_misc_repeat('hit_points', 2),
+                equation_misc_repeat('hit_points', 3),
             ],
             result_attributes={
                 'disabled': True,
@@ -460,19 +439,13 @@ def calc_magical_power():
         div({'class': 'calc-header'}, 'Magical Power'),
         equation(
             [
-                underlabel('Lvl', number_input({
-                    'disabled': True,
-                    'name': 'magical_power_scaling_display',
-                    'value': '@{level}',
-                })),
-                plus(),
-                underlabel('(Wil)', number_input({
+                underlabel('1/2 Wil', number_input({
                     'disabled': True,
                     'name': 'magical_power_willpower_display',
-                    'value': '@{willpower_starting}',
+                    'value': '@{willpower_power_scaling}',
                 })),
                 plus(),
-                equation_misc_repeat('magical_power', 2),
+                equation_misc_repeat('magical_power', 3),
             ],
             result_attributes={
                 'disabled': True,
@@ -487,19 +460,13 @@ def calc_mundane_power():
         div({'class': 'calc-header'}, 'Mundane Power'),
         equation(
             [
-                underlabel('Lvl', number_input({
-                    'disabled': True,
-                    'name': 'mundane_power_scaling_display',
-                    'value': '@{level}',
-                })),
-                plus(),
-                underlabel('(Str)', number_input({
+                underlabel('1/2 Str', number_input({
                     'disabled': True,
                     'name': 'magical_power_strength_display',
-                    'value': '@{strength_starting}',
+                    'value': '@{strength_power_scaling}',
                 })),
                 plus(),
-                equation_misc_repeat('mundane_power', 2),
+                equation_misc_repeat('mundane_power', 3),
             ],
             result_attributes={
                 'disabled': True,
@@ -653,15 +620,11 @@ def calc_maneuvers():
         div({'class': 'calc-header'}, 'Maneuvers'),
         equation(
             [
-                underlabel('Base', number_input({
-                    'name': 'maneuvers_known_base',
-                })),
-                plus(),
                 underlabel('Insight', number_input({
                     'name': 'maneuvers_known_insight_points',
                 })),
                 plus(),
-                equation_misc_repeat('maneuvers_known', 2)
+                equation_misc_repeat('maneuvers_known', 3)
             ],
             result_attributes={
                 'disabled': True,
@@ -676,15 +639,11 @@ def calc_spells():
         div({'class': 'calc-header'}, 'Spells'),
         equation(
             [
-                underlabel('Base', number_input({
-                    'name': 'spells_known_base',
-                })),
-                plus(),
                 underlabel('Insight', number_input({
                     'name': 'spells_known_insight_points',
                 })),
                 plus(),
-                equation_misc_repeat('spells_known', 2)
+                equation_misc_repeat('spells_known', 3)
             ],
             result_attributes={
                 'disabled': True,
@@ -699,15 +658,11 @@ def calc_spheres():
         div({'class': 'calc-header'}, 'Spheres'),
         equation(
             [
-                underlabel('Base', number_input({
-                    'name': 'spheres_known_base',
-                })),
-                plus(),
                 underlabel('1/2 Insight', number_input({
                     'name': 'spheres_known_insight_points',
                 })),
                 plus(),
-                equation_misc_repeat('spheres_known', 2)
+                equation_misc_repeat('spheres_known', 3)
             ],
             result_attributes={
                 'disabled': True,
@@ -723,15 +678,11 @@ def calc_blank_ability(i):
         div({'class': 'calc-header'}, text_input({'name': f'active_ability_name_{i}'})),
         equation(
             [
-                underlabel('Base', number_input({
-                    'name': f'{name}_base',
-                })),
-                plus(),
                 underlabel('Insight', number_input({
                     'name': f'{name}_insight_points',
                 })),
                 plus(),
-                equation_misc_repeat(name, 2)
+                equation_misc_repeat(name, 3)
             ],
             result_attributes={
                 'disabled': True,
@@ -793,11 +744,9 @@ def calc_armor():
                 plus(),
                 underlabel('Class', number_input({'name': 'armor_defense_class_bonus'})),
                 plus(),
-                underlabel('Body', number_input({'name': 'body_armor_defense_value'})),
+                underlabel('Armor', number_input({'name': 'body_armor_defense_value'})),
                 plus(),
-                underlabel('Shield', number_input({'name': 'shield_defense_value'})),
-                plus(),
-                equation_misc('armor_defense')
+                equation_misc_repeat('armor_defense', 2)
             ],
             result_attributes={
                 'disabled': 'true',
@@ -897,17 +846,13 @@ def calc_mental():
 
 def standard_damage():
     return flex_col({'class': 'standard-damage'}, [
-        div({'class': 'section-header'}, 'Standard Damage'),
+        div({'class': 'section-header'}, 'Dice Pools'),
         flex_row({'class': 'damage-chart'}, [
-            flex_col([
-                div({'class': 'header'}, 'Power'),
-                "".join([div(f"{i}-{i+1}") for i in range(0, 25, 2)])
-            ]),
             flex_col([
                 div({'class': 'header'}, 'Damage'),
                 "".join([
                     div(standard_damage_at_power(i))
-                    for i in range(0, 25, 2)
+                    for i in range(-4, 25, 2)
                 ]),
             ])
         ])
