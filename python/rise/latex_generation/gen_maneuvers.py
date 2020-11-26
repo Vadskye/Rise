@@ -708,7 +708,7 @@ def generate_maneuvers():
         target=None,
         effect_text="""
             Make a \\glossterm<strike> against a creature.
-            After making the strike, you gain a +1 bonus to \\glossterm<accuracy> against one target of the strike with all attacks.
+            After making the strike, you gain a +1 bonus to \\glossterm<accuracy> against one target of the strike with all future attacks.
             If the strike had multiple targets, you choose which target you gain the bonus against.
             This effect stacks with itself, up to a maximum of a +4 bonus.
             It lasts until you take a \\glossterm<short rest> or use this ability on a different creature.
