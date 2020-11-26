@@ -12,6 +12,7 @@ class Spell(object):
             targets,
             effect_text,
             tags,
+            scaling=None,
             extra_text=None,
             focus=True,
             ritual_time=None,
@@ -25,6 +26,7 @@ class Spell(object):
         self.effect_text = effect_text
         self.tags = tags
         self.extra_text = extra_text
+        self.scaling = scaling
         self.ritual_time = ritual_time
 
         is_ritual = bool(ritual_time)
@@ -42,14 +44,30 @@ class Spell(object):
                     logger.log(WARNING, f"Spell {self.name} has invalid tag {tag}")
 
         if (not is_ritual):
-            if (self.level < 7 and 'rankline' not in effect_text):
-                logger.log(WARNING, f"Spell {self.name} is missing rank upgrades or ritual timing")
+            # TODO: use regex to find '\brank\b'
+            if (self.level < 6 and scaling is None):
+                logger.log(WARNING, f"Spell {self.name} is missing scaling rules")
 
-            # Make sure that the rank upgrades match the spell's rank 
-            if (self.level in [1, 3, 5] and 'rank<7>' not in effect_text):
-                logger.log(WARNING, f"Spell {self.name} has wrong rank upgrade pattern")
-            if (self.level in [2, 4, 6] and 'rank<8>' not in effect_text):
-                logger.log(WARNING, f"Spell {self.name} has wrong rank upgrade pattern")
+            if self.level >= 3 and 'attack vs.' in effect_text and '\\glance' not in effect_text and 'end of the next round' not in effect_text:
+                logger.log(WARNING, f"Spell {self.name} is missing glancing blow effect")
+
+            if scaling and scaling not in ['accuracy', 'damage']:
+                if 'for each rank' in scaling:
+                    # Make sure that the scaling starts from the spell's actual rank
+                    if f"for each rank beyond {self.level}" not in scaling:
+                        logger.log(WARNING, f"Spell {self.name} starts scaling from the wrong rank")
+                else:
+                    # Make sure that the custom rank upgrades match the spell's rank 
+                    if (self.level in [1, 3, 5] and 'rank<7>' not in scaling):
+                        logger.log(WARNING, f"Spell {self.name} has wrong rank upgrade pattern")
+                    if (self.level in [2, 4] and 'rank<6>' not in scaling):
+                        logger.log(WARNING, f"Spell {self.name} has wrong rank upgrade pattern")
+
+            if scaling and 'rank<8>' in scaling:
+                logger.log(WARNING, f"Spell {self.name} has rank 8 upgrade")
+
+        if 'attack vs. ' in effect_text and not ('\\crit' in effect_text or 'damage' in effect_text):
+            logger.log(WARNING, f"Spell {self.name} is missing a critical effect")
 
     def ritual_time_text(self):
         if self.ritual_time == 'special' or not self.ritual_time:
@@ -57,6 +75,20 @@ class Spell(object):
 
         fatigue_points_text = f"{(self.level ** 2) * 2} \\glossterm<fatigue points>" if self.ritual_time in ['24 hours', 'one week'] else 'one \\glossterm<fatigue point>'
         return f"This ritual takes 24 hours to perform, and it requires {fatigue_points_text} from its participants."
+
+    def scaling_text(self):
+        if not self.scaling:
+            return ''
+
+        rank_upgrades = {
+            'accuracy': f"You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond {self.level}.",
+            'damage': f"The damage increases by +1d for each rank beyond {self.level}",
+        }.get(self.scaling, self.scaling)
+
+        return f"""
+            \\rankline
+            {rank_upgrades}
+        """ if self.scaling else ""
 
     def __str__(self):
         tag_text = to_latex_tags(self.tags)
@@ -85,6 +117,7 @@ class Spell(object):
                 {target_text}
                 {self.effect_text.strip()}
                 {self.ritual_time_text()}
+                {self.scaling_text()}
             \\end<{ability_type}>
             \\vspace<0.25em>
             {self.extra_text.strip() if self.extra_text else ""}

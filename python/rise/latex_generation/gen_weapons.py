@@ -8,66 +8,183 @@ from rise.latex.util import latexify, longtablify
 def generate_weapons():
     weapons = []
 
-    weapons.append(MagicItem(
-        name="Concussive",
-        level=6,
-        material_type='Weapon',
-        # tags=[tag],
-        description="""
-            This weapon vibrates slightly in the hand.
-            As a standard action, you can intensify the vibration, imbuing the weapon with concussive force.
-            When you make a creature \\glossterm<bleed> with a \\glossterm<strike> using this weapon, if the weapon is intensified,
-                the creature is \\glossterm<dazed> as a \\glossterm<condition> and the weapon stops being intensified.
-        """,
-        short_description="Can daze a foe",
-    ))
+    weapons += [
+        MagicItem(
+            name="Concussive",
+            level=5,
+            material_type='Weapon',
+            # tags=[tag],
+            description="""
+                This weapon vibrates slightly in the hand.
+                As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with concussive force.
+                Damage dealt by that strike is sonic damage in addition to its normal damage types.
+            """,
+            short_description="Can deal sonic damage and daze",
+        ),
+        MagicItem(
+            name="Concussive, Greater",
+            level=11,
+            material_type='Weapon',
+            # tags=[tag],
+            description="""
+                This weapon continuously emits a low-pitched rumbling noise and vibrates in the hand.
+                All damage dealt with it is sonic damage in addition to its normal damage types.
+
+                As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with concussive force.
+                If a creature loses \\glossterm<hit points> from that strike, it is \\glossterm<sickened> as a \\glossterm<condition>.
+            """,
+            short_description="Deals sonic damage, can sicken",
+        ),
+        MagicItem(
+            name="Concussive, Greater",
+            level=17,
+            material_type='Weapon',
+            # tags=[tag],
+            description="""
+                This weapon continuously emits a deep rumbling noise and vibrates in the hand.
+                All damage dealt with it is sonic damage in addition to its normal damage types.
+
+                As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with concussive force.
+                If a creature loses \\glossterm<hit points> from that strike, it is \\glossterm<nauseated> as a \\glossterm<condition>.
+            """,
+            short_description="Deals sonic damage, can nauseate",
+        ),
+    ]
 
     weapons += [
         MagicItem(
             name="Flaming",
-            level=6,
+            level=5,
+            material_type='Weapon',
+            tags=[],
+            description="""
+                This weapon smolders visibly and sheds light as a torch.
+                As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with fiery energy.
+                Damage dealt by that strike is fire damage in addition to its normal damage types.
+            """,
+            short_description="Can deal fire damage",
+        ),
+        MagicItem(
+            name="Flaming, Greater",
+            level=11,
             material_type='Weapon',
             tags=[],
             description="""
                 This weapon is on fire.
-                It sheds light as a torch, and all damage dealt with it is fire damage instead of its normal damage types.
+                It sheds light as a torch, and all damage dealt with it is fire damage in addition to its normal damage types.
+
+                As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with fiery energy.
+                You gain a +1d bonus to damage with the strike.
             """,
             short_description="Deals fire damage",
         ),
         MagicItem(
-            name="Flaming, Greater",
-            level=12,
+            name="Flaming, Supreme",
+            level=17,
             material_type='Weapon',
             tags=[],
             description="""
-                This weapon functions like a \\mitem<flaming> weapon, except that you can also kindle the flames as a standard action.
-                When you make a creature \\glossterm<bleed> with a \\glossterm<strike> using this weapon, if the weapon is kindled,
-                    the creature is \\glossterm<ignited> as a \\glossterm<condition> and the weapon stops being kindled.
-                This condition can be removed if the target makes a \\glossterm<difficulty rating> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
-                Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
+                This weapon is on fire.
+                It sheds light as a torch, and all damage dealt with it is fire damage in addition to its normal damage types.
+
+                As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with fiery energy.
+                You gain a +2d bonus to damage with the strike.
             """,
-            short_description="Deals fire damage, can ignite foes",
+            short_description="Deals major fire damage",
+        ),
+    ]
+
+    weapons += [
+        MagicItem(
+            name="Shocking",
+            level=5,
+            material_type='Weapon',
+            tags=[],
+            description="""
+                This weapon subtly crackles with electricity.
+                As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with electrical energy.
+                Damage dealt by that strike is electricity damage in addition to its normal damage types.
+            """,
+            short_description="Can deal electicity damage",
         ),
         MagicItem(
-            name="Flaming, Supreme",
-            level=18,
+            name="Shocking, Greater",
+            level=11,
             material_type='Weapon',
             tags=[],
             description="""
-                This weapon functions like a \\mitem<flaming> weapon, except that the flames are constantly kindled.
-                When you make a creature \\glossterm<bleed> with a \\glossterm<strike> using this weapon,
-                    the creature is \\glossterm<ignited> until the end of the next round.
-                This effect can be removed if the target makes a \\glossterm<difficulty rating> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
-                Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
+                This weapon continuously crackles with electricity.
+                All damage dealt with it is electricity damage in addition to its normal damage types.
+
+                As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with electrical energy.
+                If a creature loses \\glossterm<hit points> from that strike, it is \\glossterm<dazed> as a \\glossterm<condition>.
             """,
-            short_description="Deals fire damage, ignites foes",
+            short_description="Deals electricity damage, can daze",
+        ),
+        MagicItem(
+            name="Shocking, Supreme",
+            level=17,
+            material_type='Weapon',
+            tags=[],
+            description="""
+                This weapon continuously crackles with powerful electricity.
+                All damage dealt with it is electricity damage in addition to its normal damage types.
+
+                As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with electrical energy.
+                If a creature loses \\glossterm<hit points> from that strike, it is \\glossterm<stunned> as a \\glossterm<condition>.
+            """,
+            short_description="Deals electicity damage, can stun",
+        ),
+    ]
+
+    weapons += [
+        MagicItem(
+            name="Freezing",
+            level=5,
+            material_type='Weapon',
+            tags=[],
+            description="""
+                This weapon is frigid to the touch.
+                As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with cold energy.
+                Damage dealt by that strike is cold damage in addition to its normal damage types.
+            """,
+            short_description="Can deal cold damage",
+        ),
+        MagicItem(
+            name="Freezing, Greater",
+            level=11,
+            material_type='Weapon',
+            tags=[],
+            description="""
+                This weapon is bitterly cold to the touch.
+                All damage dealt with it is cold damage in addition to its normal damage types.
+
+                As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with cold energy.
+                If a creature loses \\glossterm<hit points> from that strike, it is \\glossterm<chilled> as a \\glossterm<condition>.
+            """,
+            short_description="Deals cold damage, can chill",
+        ),
+        MagicItem(
+            name="Freezing, Supreme",
+            level=17,
+            material_type='Weapon',
+            tags=[],
+            description="""
+                This weapon radiates an aura of bitter cold.
+                All damage dealt with it is cold damage in addition to its normal damage types.
+
+                As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with cold energy.
+                You gain a +1d bonus to damage with the strike.
+                If a creature loses \\glossterm<hit points> from that strike, it is \\glossterm<chilled> as a \\glossterm<condition>.
+            """,
+            short_description="Deals cold damage, can powerfully chill",
         ),
     ]
 
     weapons += [
         MagicItem(
             name="Potency",
-            level=8,
+            level=4,
             material_type='Weapon',
             description="""
                 You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities.
@@ -76,7 +193,7 @@ def generate_weapons():
         ),
         MagicItem(
             name="Potency, Greater",
-            level=14,
+            level=10,
             material_type='Weapon',
             description="""
                 You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities.
@@ -85,124 +202,20 @@ def generate_weapons():
         ),
         MagicItem(
             name="Potency, Supreme",
-            level=20,
+            level=16,
             material_type='Weapon',
             description="""
-                You gain a +6 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities.
+                You gain a +8 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities.
             """,
-            short_description="Grants +6 \\glossterm<mundane> power",
+            short_description="Grants +8 \\glossterm<mundane> power",
         ),
     ]
-
-    weapons += [
-        MagicItem(
-            name="Shocking",
-            level=6,
-            material_type='Weapon',
-            tags=[],
-            description="""
-                This weapon continuously crackles with electricity.
-                The constant sparks shed light as a torch, and all damage dealt with it is electricity damage instead of its normal damage types.
-            """,
-            short_description="Deals electicity damage",
-        ),
-        MagicItem(
-            name="Shocking, Greater",
-            level=12,
-            material_type='Weapon',
-            tags=[],
-            description="""
-                This weapon functions like a \\mitem<shocking> weapon, except that you can also intensify the electricity as a standard action.
-                When you make a creature \\glossterm<bleed> with a \\glossterm<strike> using this weapon, if the weapon is intensified,
-                    the creature is \\dazed as a \\glossterm<condition> and the weapon stops being intensified.
-            """,
-            short_description="Deals electricity damage, can daze foes",
-        ),
-        MagicItem(
-            name="Shocking, Supreme",
-            level=18,
-            material_type='Weapon',
-            tags=[],
-            description="""
-                This weapon functions like a \\mitem<shocking> weapon, except that the electricity is constantly intensified.
-                When you make a creature \\glossterm<bleed> with a \\glossterm<strike> using this weapon,
-                    the creature is \\dazed until the end of the next round.
-            """,
-            short_description="Deals electicity damage, dazes foes",
-        ),
-    ]
-
-    weapons += [
-        MagicItem(
-            name="Freezing",
-            level=6,
-            material_type='Weapon',
-            tags=[],
-            description="""
-                This weapon is bitterly cold, and all damage dealt with it is cold damage instead of its normal damage types.
-            """,
-            short_description="Deals cold damage",
-        ),
-        MagicItem(
-            name="Freezing, Greater",
-            level=12,
-            material_type='Weapon',
-            tags=[],
-            description="""
-                This weapon functions like a \\mitem<freezing> weapon, except that you can also intensify the cold as a standard action.
-                When you make a creature \\glossterm<bleed> with a \\glossterm<strike> using this weapon, if the weapon is intensified,
-                    the creature is \\chilled as a \\glossterm<condition> and the weapon stops being intensified.
-            """,
-            short_description="Deals cold damage, can chill",
-        ),
-        MagicItem(
-            name="Freezing, Supreme",
-            level=18,
-            material_type='Weapon',
-            tags=[],
-            description="""
-                This weapon functions like a \\mitem<freezing> weapon, except that the cold is constantly intensified.
-                When you make a creature \\glossterm<bleed> with a \\glossterm<strike> using this weapon,
-                    the creature is \\chilled until the end of the next round.
-            """,
-            short_description="Deals cold damage, chills foes",
-        ),
-    ]
-
-    # Restore this if sonic damage returns as a subtype
-    # weapons.append(MagicItem(
-    #     name="Thundering",
-    #     level=4,
-    #     material_type='Weapon',
-    #     tags=[],
-    #     description="""
-    #         This weapon constantly emits a low-pitched rumbling noise and vibrates slightly in your hand.
-    #         All damage dealt with it is sonic damage in addition to its other types.
-    #         As a standard action, you can intensify the vibration.
-    #         When you make a \\glossterm<strike> with this weapon, if the weapon is intensified and your attack result beats the target's Fortitude defense,
-    #             the target is \\deafened as a \\glossterm<condition> and the weapon stops being intensified.
-    #     """,
-    #     short_description="Deals sonic damage, can deafen",
-    # ))
-
-    # weapons.append(MagicItem(
-    #     name="Thundering, Greater",
-    #     level=14,
-    #     material_type='Weapon',
-    #     tags=[],
-    #     description="""
-    #         This weapon constantly emits a low-pitched rumbling noise and vibrates slightly in your hand.
-    #         All damage dealt with it is sonic damage in addition to its other types.
-    #         When you make a \\glossterm<strike> with this weapon, if your attack result beats the target's Fortitude defense, the target is \\deafened as a \\glossterm<condition>.
-    #     """,
-    #     short_description="Deals sonic damage, deafens foes",
-    # ))
 
     weapons += [
         MagicItem(
             name="Protective",
             # +2 level since weapon is secondary for this effect
-            level=7,
+            level=9,
             material_type='Weapon',
             tags=[],
             description="""
@@ -212,7 +225,7 @@ def generate_weapons():
         ),
         MagicItem(
             name="Protective, Greater",
-            level=13,
+            level=15,
             material_type='Weapon',
             tags=[],
             description="""
@@ -220,41 +233,32 @@ def generate_weapons():
             """,
             short_description="Grants +2 Armor defense",
         ),
-        MagicItem(
-            name="Protective, Supreme",
-            level=19,
-            material_type='Weapon',
-            tags=[],
-            description="""
-                You gain a +3 \\glossterm<magic bonus> to Armor defense.
-            """,
-            short_description="Grants +3 Armor defense",
-        ),
     ]
 
     weapons += [
         MagicItem(
-            name="Disorienting",
-            level=10,
+            name="Iridescent",
+            level=4,
             material_type='Weapon',
-            tags=['Compulsion'],
+            tags=[],
             description="""
                 This weapon shimmers with a chaotic pattern of colors.
-                As a standard action, you can intensify the shimmering.
-                When you make a creature \\glossterm<bleed> with a \\glossterm<strike> using this weapon, if the weapon is intensified,
-                    the creature is \\glossterm<disoriented> as a \\glossterm<condition> and the weapon stops being intensified.
+                As a standard action, you can make a flashy \\glossterm<strike> with this weapon that accentuates its bewildering effect.
+                You take a -2d penalty to damage with the strike.
+                If a creature loses a \\glossterm<hit point> from this strike, it is \\glossterm<dazzled> as a \\glossterm<condition>.
             """,
-            short_description="Can disorient struck foes",
+            short_description="Can dazzle struck foes",
         ),
         MagicItem(
-            name="Disorienting, Greater",
-            level=16,
+            name="Iridescent, Greater",
+            level=19,
             material_type='Weapon',
-            tags=['Compulsion'],
+            tags=[],
             description="""
-                This weapon shimmers with a chaotic pattern of colors.
-                When you make a creature \\glossterm<bleed> with a \\glossterm<strike> using this weapon,
-                    the creature is \\disoriented until the end of the next round.
+                This weapon shimmers with a blindingly chaotic pattern of colors.
+                As a standard action, you can make a flashy \\glossterm<strike> with this weapon that accentuates its bewildering effect.
+                You take a -2d penalty to damage with the strike.
+                If a creature loses a \\glossterm<hit point> from this strike, it is \\glossterm<blinded> as a \\glossterm<condition>.
             """,
             short_description="Disorients struck foes",
         ),
@@ -298,35 +302,22 @@ def generate_weapons():
             You can throw this weapon as if it was designed to be thrown.
             In addition, as a standard action, you can throw this weapon in a spinning arc.
             When you do, make a thrown \\glossterm<strike> against up to three targets within two \\glossterm<range increments>.
-            After attacking the last target, the weapon flies to your hand.
+            After attacking the last target, the weapon flies back to your hand.
         """,
         short_description="Can be thrown to strike multiple foes",
     ))
 
     weapons += [
         MagicItem(
-            name="Forceful",
-            level=4,
+            name="Hefty",
+            level=7,
             material_type='Weapon',
             description="""
                 This weapon feels heavy in the hand.
-                As a standard action, you can intensify the weapon's heft.
-                When you make a \\glossterm<strike> with this weapon, if you hit with the strike and the weapon is intensified,
-                    you also use your attack result as a \\glossterm<shove> attack against the target and the weapon stops being intensified.
-                You do not need to move with your foe to move it the full distance of the shove.
+                It gains the \\glossterm<Forceful> weapon tag (see \\pcref<Weapon Tags>).
+                If it already has that weapon tag, the distance that you can \\glossterm<knockback> the target increases to 20 feet.
             """,
-            short_description="Can shove struck foes",
-        ),
-        MagicItem(
-            name="Forceful, Greater",
-            level=13,
-            material_type='Weapon',
-            description="""
-                This weapon feels heavy in the hand.
-                When you make a \\glossterm<strike> with this weapon, you can choose to also use your attack result as a \\glossterm<shove> attack against the target.
-                You do not need to move with your foe to move it the full distance of the shove.
-            """,
-            short_description="Shoves struck foes",
+            short_description="Can knockback struck foes",
         ),
     ]
 
@@ -335,12 +326,13 @@ def generate_weapons():
         level=15,
         material_type='Weapon',
         description="""
-            When you make a \\glossterm<strike> with this weapon, you gain a +1 bonus to accuracy against the target.
+            When you make a \\glossterm<strike> with this weapon, you gain a +1 bonus to accuracy against one target of the strike with all future attacks.
+            If the strike had multiple targets, you choose which target you gain the bonus against.
             This bonus lasts until you make a strike with this weapon against a different target.
             This bonus can stack with itself, up to a maximum of +4.
             The bonus cannot increase more than once per \\glossterm<phase>.
         """,
-        short_description="Grants accuracy bonus against struck foe",
+        short_description="Grants accuracy bonus against attacked foe",
     ))
 
     weapons.append(MagicItem(
@@ -389,7 +381,7 @@ def generate_weapons():
             tags=[],
             description="""
                 After being thrown, this weapon teleports back into your hand at the end of the current phase.
-                Catching a rebounding weapon when it comes back is a free action.
+                Catching a returning weapon when it comes back is a free action.
                 If you can't catch it, the weapon drops to the ground in the square from which it was thrown.
             """,
             short_description="Teleports back to you after being thrown",
@@ -419,14 +411,13 @@ def generate_weapons():
             description="""
                 This weapon is transluscent and has no physical presence for anyone except you.
                 It has no effect on objects or constructs, and creatures do not feel any pain or even notice attacks from it.
-                Attacks with this weapon deal \\glossterm<energy> damage and ignore \\glossterm<resistances>, but the damage is delayed instead of being dealt immediately.
+                Attacks with this weapon ignore all \\glossterm<resistances>, but the damage is delayed instead of being dealt immediately.
                 Damage that would be dealt by the weapon can be delayed indefinitely.
                 While the damage is delayed, it cannot be removed by any means short of the destruction of this weapon or the creature's death.
 
                 As a \\glossterm<standard action>, you can cut yourself with this weapon to activate it.
                 This deals no damage to you.
-                When you do, each creature hit with the weapon takes \\glossterm<energy> damage equal to the total delayed damage built up by the weapon for that target.
-                The target applies its \\glossterm<resistances> as normal against this damage.
+                When you do, each creature hit with the weapon loses \\glossterm<hit points> equal to the total delayed damage built up by the weapon for that target.
                 Creatures farther than one mile away from the weapon are unaffected by this damage.
                 This ability expends all delayed damage built up by the weapon for all targets, including targets farther than one mile from the weapon.
             """,
@@ -447,7 +438,7 @@ def generate_weapons():
     weapons += [
         MagicItem(
             name="Surestrike",
-            level=8,
+            level=7,
             material_type='Weapon',
             tags=[],
             description="""
@@ -457,7 +448,7 @@ def generate_weapons():
         ),
         MagicItem(
             name="Surestrike, Greater",
-            level=14,
+            level=13,
             material_type='Weapon',
             tags=[],
             description="""
@@ -467,7 +458,7 @@ def generate_weapons():
         ),
         MagicItem(
             name="Surestrike, Supreme",
-            level=20,
+            level=19,
             material_type='Weapon',
             tags=[],
             description="""
