@@ -149,7 +149,7 @@ telekinesis=MysticSphere(
             You gain a +1 \\glossterm<magic bonus> to Armor defense.
             In addition, you gain a +2 bonus to defenses against \\glossterm<mundane> ranged attacks from weapons or projectiles that are Small or smaller.
         """, scaling="""
-            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<4> The bonus against ranged attacks increases to +4.
             \\rank<6> The bonus to Armor defense increases to +2.
         """, tags=['Attune (self)']),
     ],
