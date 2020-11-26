@@ -84,7 +84,7 @@ revelation=MysticSphere(
             \\rank<6> The bonus increases to +3.
         """, tags=['Attune (self)']),
         # Spell('Boon of Many Eyes', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-        #     The target reduces its \\glossterm<overwhelm penalties> by 2.
+        #     The target reduces its \\glossterm<overwhelm penalty> by 2.
         # """, scaling="""
         #     \\rank<5> The penalty reduction increases to 3.
         #     \\rank<7> The penalty reduction increases to 4.
