@@ -84,7 +84,7 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Infallible Blow',
-        short_description='short_description',
+        short_description='Make a strike with a large accuracy bonus',
         target=None,
         effect_text="""
             Make a \\glossterm<strike> with a +3 bonus to \\glossterm<accuracy>.
@@ -96,7 +96,7 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Unstoppable Blow',
-        short_description='short_description',
+        short_description='Make a strike with a large damage bonus',
         target=None,
         effect_text="""
             Make a \\glossterm<strike> with a +3d bonus to damage.
@@ -150,7 +150,7 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Counter Sweep',
-        short_description='short_description',
+        short_description='Make a strike against everyone who attacked you',
         target=None,
         effect_text="""
             You can only use this ability during the \\glossterm<action phase>.
@@ -167,7 +167,7 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Counter Flurry',
-        short_description='short_description',
+        short_description='Make two strikes with bonuses if attacked',
         target=None,
         effect_text="""
             You can only use this ability during the \\glossterm<action phase>.
@@ -197,7 +197,7 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Followup Flurry',
-        short_description='short_description',
+        short_description='Make two strikes with bonuses if you previously missed',
         target=None,
         effect_text="""
             Make two \\glossterm<strikes>.
@@ -512,7 +512,7 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Reaping Harvest',
-        short_description='short_description',
+        short_description='Make strikes while moving',
         target=None,
         effect_text="""
             Move up to your movement speed.
@@ -1251,10 +1251,10 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Flash Strike',
         target=None,
-        short_description='short_description',
+        short_description='Move quickly and make a strike along the way',
         effect_text="""
             Move up to your movement speed in a straight line.
-            You can make a melee \\glossterm<strike> against any one creature or object that was within your weapon's \\glossterm<reach> at any point during the movement.
+            You can make a melee \\glossterm<strike> at any point during the movement.
         """,
         rank=4,
         tags=[],
