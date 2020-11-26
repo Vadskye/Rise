@@ -133,14 +133,14 @@ pyromancy=MysticSphere(
             \\hit The target takes fire damage equal to 2d6 plus your \\glossterm<power>.
         """, scaling="damage", tags=['Attune (self)']),
         Spell('Flaming Spheres', 4, 'Yourself (see text)', """
+            You can cast this spell as a \\glossterm<minor action>.
+
             When you cast this spell, five flaming spheres appear over your head.
             Each sphere is approximately one foot in diameter.
             As a \\glossterm<minor action>, you can fire an orb at a creature or object within \\rngclose range.
             When you do, make an attack vs. Armor against that target.
             \\hit The target takes fire damage equal to 2d8 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
-
-            You can cast this spell as a \\glossterm<minor action>.
         """, scaling="damage", tags=['Attune (self)']),
         # Pyromancy specifically doesn't get "enemies only" self-radius
         # spells like most spheres do.
@@ -161,17 +161,18 @@ pyromancy=MysticSphere(
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Attune (self)']),
         Spell('Flame Aura', 7, ['Yourself', 'Everything in a \\areasmall radius from you (see text)'], """
+            You can cast this spell as a \\glossterm<minor action>.
+
             Heat constantly radiates in a \\areasmall radius emanation from you.
             As a \\glossterm<minor action>, you can intensify the flames to make an attack vs. Fortitude against everything in the area.
             \\hit Each secondary target takes fire damage equal to 4d8 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
-
-            You can cast this spell as a \\glossterm<minor action>.
         """, scaling="damage", tags=['Attune (self)']),
         Spell('Flame Blade', 3, 'Yourself', """
-            All damage the target deals with \\glossterm<strikes> becomes fire damage in addition to the attack's normal damage types.
-
             You can cast this spell as a \\glossterm<minor action>.
+
+            The target's weapons shed light like a torch.
+            In addition, all damage the target deals with \\glossterm<strikes> becomes fire damage in addition to the attack's normal damage types.
         """, scaling="""
             \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<7> The target also gains a +4 \\glossterm<magic bonus> to \\glossterm<power> with strikes.
