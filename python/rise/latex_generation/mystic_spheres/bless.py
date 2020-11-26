@@ -155,7 +155,7 @@ bless=MysticSphere(
             Unlike most abilities, this ritual can affect individual parts of a whole object.
 
             % How should this affect Strength break difficulty ratings?
-            The target gains a +5 \\glossterm<magic bonus> to its \\glossterm<resistance> to both \\glossterm<physical damage> and \\glossterm<energy damage>.
+            The target gains a +5 \\glossterm<magic bonus> to its \\glossterm<resistances> to both \\glossterm<physical damage> and \\glossterm<energy damage>.
             If the target is moved, this effect ends.
             Otherwise, it lasts for one year.
         """, tags=['Attune (ritual)'], ritual_time='one hour'),
