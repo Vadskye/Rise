@@ -30,7 +30,7 @@ def generate_maneuvers():
         short_description='Take half physical damage',
         target="Yourself",
         effect_text="""
-            You take half damage from \\glossterm<physical> damage this round.
+            You take half damage from \\glossterm<physical damage> this round.
             This halving is applied before \\glossterm<resistances> and similar abilities.
             Because this is a \\glossterm<Swift> ability, it affects damage you take during the current phase.
         """,
@@ -780,7 +780,7 @@ def generate_maneuvers():
         target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a \\glossterm<strike>.
-            You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
+            You take a -2d penalty to damage with the strike.
             If the target loses hit points from the strike, it stops being \\glossterm<attuned> to two effects.
             It can freely choose which effects it releases its attunement to.
         """,
