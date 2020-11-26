@@ -1,45 +1,41 @@
-# Standard damage estimation
-
-## Higher standard damage chart
-```
-0--1   & 1d6  \\
-2--3   & 1d8 \\
-4--5   & 1d10  \\
-6--7   & 2d6  \\
-8--9   & 2d8 \\
-10--11 & 2d10  \\
-12--13 & 4d6  \\
-14--15 & 4d8 \\
-16--17 & 4d10 \\
-18--19 & 5d10 \\
-20--21 & 6d10 \\
-22--23 & 7d10 \\
-24--25 & 8d10 \\
-26 & +10 \\
-28 & +20 \\
-30 & +30 \\
-32 & +40 \\
-34 & +50 \\
-36 & +60 \\
-38 & +70 \\
-40 & +80 \\
-42 & +90 \\
-```
+# Damage calculations
 
 ## Design goals
 
-### Wounds
+### Time to kill
+A typiecal combat should take about 5 rounds. That means that each attack should typically
+remove about 20% of the target's health on average. Assuming a 50% accuracy and a 20% chance of a
+glancing blow for half damage, that means that a typical attack inflicts about 60% of its
+listed damage per round. Therefore, each attack should normally deal a third of the target's
+maximum HP on a successful hit.
 
-A high damage attack should have about a 95% probability of inflicting a wound if it hits a squishy
-target.
+### Low level combat
+At low levels, combat should feel dangerous. It's also very difficult to build reasonable damage
+numbers for the system if a 1st level attack still deals only a third of a target's maximum HP on a
+successful hit. To solve this, low-level combat should have lower accuracy assumptions and no
+glancing blow mechanics. Higher level characters should generally have higher accuracy and the
+glancing blow mechanic. This can be represented by assuming a 40% accuracy at level 1 and scaling by
+5% every 3 levels until it reaches the expected 50% accuracy at level 7. We assume glancing blow for
+all attacks starting at level 10.
 
-It's still possible for it to fail, but that should be the exception rather than the rule,
-and high damage attacks should only fail to wound highly resistant targets. The main problem should
-be *hitting* with a high damage attack, not inflicting a wound.
+This suggests the following ratios:
 
-A high damage attack should have about a 50% probability of inflicting a wound on a high
-resistance target. Similarly, a low damage attack should have about a 50% probability of inflicting
-a wound on a low resistance target.
+
+### Doubling principles
+
+In general, overall character power should double approximately every 2 levels.
+Character power is measured across a wide range of dimensions, but it's easiest to think of it in
+terms of accuracy, defenses, hit points, and damage.
+If hit points and damage each double every 6 levels, the overall difference in character power would
+double approximately every 3 levels.
+Taking into account accuracy and defenses is slightly more annoying, but it seems reasonable to
+assume that it would make the extra difference between 3 and 2, so the goal should be to double
+damage every 2 levels.
+Doubling hit points is fairly easy, since it can be easily determined by an arbitrary chart.
+
+### Doubling damage
+The challenge with doubling damage is that nonlinear damage scaling is difficult to generate
+naturally using smoothly scaling values.
 
 ### Vital wounds
 
@@ -55,42 +51,51 @@ assume an accuracy of 50%. With a 50% chance to hit and a standard 10% chance to
 suggests that high damage attacks would be balanced if they dealt vital wounds on non-critical
 hits 1% of the time and always dealt vital wounds on critical hits.
 
-## Calculating current base values
+## Calculating current values
 
-### Squishy resistance values
-Resistance bonuses can vary widely, but even with no meaningful investment we assume
-a flat bonus of at least 1 + half level, leaving base values:
+### Reasonable hit points
+Assume 1 Con and studded leather
 
-* level 1: 3 BR, 15 VR
-* level 5: 9 BR, 29 VR
-* level 10: 17 BR, 50 VR
-* level 15: 29 BR, 80 VR
-* level 20: 46 BR, 120 VR
+* level 2: 17 = 15 HP + 2
+* level 5: 25 = 23 HP + 2
+* level 8: 39 = 37 HP + 2
+* level 11: 57 = 55 HP + 2
+* level 14: 77 = 75 HP + 2
+* level 17: 102 = 100 HP + 2
+* level 20: 132 = 130 HP + 2
+
+### Low damage attack
+Assume 0 starting Willpower and a single-target damage spell.
+
+* level 2: 7 = 1d10 + 2
+* level 5: 16 = 2d10 + 5
+* level 8: 24 = 3d10 + 8
+* level 11: 33 = 4d10 + 11
+* level 14: 41 = 5d10 + 14
+* level 17: 50 = 6d10 + 17
+* level 20: 58 = 7d10 + 20
 
 ### High damage attack
-Assume 3 starting Willpower and a single-target damage spell. Expected power at level 1 is:
-(level 1) + (willpower 3) + (spell 2) = 6.
+Assume 3 starting Willpower and a single-target damage spell.
 
 Standard power upgrade levels:
-* +2 at level 5 from rank 3 spells
-* +1 at level 6 from wellspring
-* +2 at level 9 from magic implement
-* +2 at level 11 from rank 5 spells
-* +1 at level 14 from wellspring
-* +2 at level 17 from rank 7 spells
-* +2 at level 18 from magic implement
-* +1 at level 20 to make even/odd work out better
- 
-so at level 20, a standard spellcaster would expect to have:
-(level1 6) + (levels 19) + (bonuses 12) = 37 effective power.
+* +2 at level 4 from magic implement
+* +half level at level 7 from wellspring
+* +3 at level 10 from magic implement (going to +5 total to stay at half level)
+* +half level at level 16 from greater wellspring (going to +level total)
+* +5 at level 19 from magic implement (going to +10 total)
+
+By 20th level, a high damage spellcaster adds their level * 2.5 to their power.
 
 We use the following standard checkpoints:
 
-* 1st level: 6 power = 2d6 damage
-* 5th level: 12 power = 4d6 damage
-* 10th level: 20 power = 6d10 damage
-* 15th level: 28 power = 8d10 + 20
-* 20th level: 38 power = 8d10 + 80
+* level 2: 7 = 1d10 + 2 + 0
+* level 5: 16 = 2d10 + 5 + 2
+* level 8: 24 = 3d10 + 8 + 6
+* level 11: 33 = 4d10 + 11 + 10
+* level 14: 41 = 5d10 + 14 + 12
+* level 17: 50 = 6d10 + 17 + 22
+* level 20: 58 = 7d10 + 20 + 30
 
 ### Low damage attack
 Assume 3 starting Willpower and an AOE damage spell (similar to Certain Strike, etc.). Expected power at level 1 is:

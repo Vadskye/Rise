@@ -226,10 +226,10 @@ For details, see \pcref{Destroyed Objects}.
 
 \glossdef{Detection} See \pcref{Ability Tags}.
 
-\glossdef{die increment}[die increments] A die increment is a single increase or decrease of the die size of a pool of dice.
+\glossdef{dice increment}[dice increments] A die increment is a single increase or decrease of the die size of a pool of dice.
 For example, a 1d8 that is increased by one die increment becomes a 1d10 die.
 Similarly, a 2d6 dice pool that is decreased by one die increment also becomes a 1d10 die.
-For details, see \pcref{Die Increments}.
+For details, see \pcref{Dice Increments}.
 
 \glossdef{difficult terrain} Difficult terrain costs double the normal movement cost to move out of.
 For details, see \pcref{Difficult Terrain}.
@@ -293,8 +293,10 @@ Some class abilities grant proficiency with exotic weapons.
 If it does, you roll it again and add the two results together to determine the total.
 For details, see \pcref{Exploding Attacks}.
 
+% Falling damage ignores the normal dice pool mechanics because adding large chains
+% of +1d modifiers on the fly is a huge hassle.
 \glossdef{falling damage} If you fall at least 5 feet, you and the object you land on take bludgeoning \glossterm{environmental damage}.
-This damage is called falling damage, and it is equal to 1d6 \add 1d per 5 feet you fell, up to a maximum of 8d10 damage.
+This damage is called falling damage, and it is equal to 1d10 per 10 feet you fell, up to a maximum of 20d10 damage.
 If you control your fall with a successful Agility or Jump check, you can reduce the falling damage you take (see \pcref{Agility}, and \pcref{Jump}).
 
 \glossdef{fascinated} A fascinated creature can take no actions. It remains in place, giving its total attention to some object, creature, or effect. It takes a \minus4 penalty to skill checks made as reactions, such as Awareness checks.
@@ -338,6 +340,11 @@ For details, see \pcref{Free Actions}.
 This does not stack with the \glossterm{shaken} or \glossterm{panicked} effects.
 
 If the source of a frightened creature's fear is a creature and is \glossterm{defeated}, this effect is broken.
+
+\glossdef{glancing blow} When you miss on an attack by 2 or less, it is called a glancing blow.
+Some attacks have effects when you get a glancing blow, as indicated in their descriptions or in other abilities.
+Glancing blow effects are always weaker than the effect of a successful hit, but they are always better than missing entirely.
+For details, see \pcref{Glancing Blows}.
 
 \glossdef{glide speed} A creature with a glide speed can glide through the air.
 It cannot fly upwards, but it can travel forward while it descends, and it descends at a significantly reduced rate.
@@ -385,18 +392,14 @@ For details, see \pcref{Hit Points}.
 
 \glossdef{hunting party} A hunting party is the group of allies affected by a ranger's \textit{quarry} ability (see \pcref{Quarry}).
 
-\glossdef{ignited} An ignited creature or object has been set on fire.
-At the end of each round, the creature or effect that ignited it deals it \glossterm{environmental} fire \glossterm{standard damage}.
-In subsequent rounds, this damage is reduced by \minus1d per round since the creature became ignited.
-If this damage is reduced below 1d6, the creature or object stops being ignited.
-The \glossterm{power} of this damage is equal to the \glossterm{power} of the ability that ignited it.
-If a creature or object is ignited from multiple effects, it only takes damage from the effect with the largest dice pool.
-% TODO: cold damage should put this out?
-
 \glossdef{immobilized} An immobilized creature can't move out of the space it was in when it became immobilized.
 Immobilized flying creatures that have the ability to hover can maintain their initial altitude.
 % TODO: Fix flying interaction; safest way to descend for non-good maneuverability
 All other flying creatures subjected to this condition descend at a rate of 20 feet per round until they reach the ground, taking no falling damage.
+
+\glossdef{impervious} A creature can be impervious to a type or subtype of damage.
+It takes half damage from damage of that type.
+When a creature takes damage of multiple types, it is considered impervious to the damage only if it is impervious to all of its damage types.
 
 \glossdef{improvised weapon}[improvised weapons] An improvised weapon is an object which could conceivably be used as a weapon, but which was not designed for that purpose.
 Common examples include doors and wine bottles.
@@ -566,11 +569,11 @@ For details, see \pcref{Alignment}.
 \glossdef{overrun} An overrun is a special movement that allows you to move directly through creatures.
 For details, see \pcref{Overrun}.
 
-\glossdef{overwhelm penalties} An creature \glossterm{threatened} by at least two creatures suffers penalties to Armor and Reflex defenses equal to the number of creatures threatening it.
-These penalties are called overwhelm penalties.
+\glossdef{overwhelm penalty} An creature \glossterm{threatened} by at least two creatures suffers a \minus2 penalty to Armor and Reflex defenses.
+This penalties are called an overwhelm penalty.
 For details, see \pcref{Overwhelm}.
 
-\glossdef{overwhelmed} A creature is overwhelmed if its \glossterm{overwhelm penalties} are at least \minus1.
+\glossdef{overwhelmed} A creature is overwhelmed if its \glossterm{overwhelm penalty} is at least \minus1.
 For details, see \pcref{Overwhelm}.
 
 \glossdef{panicked} While a panicked creature is within \rngmed range of the source of its fear, it takes a \minus4 penalty to Mental defense and must flee from the source of its fear by any means necessary.
@@ -617,12 +620,16 @@ For details, see \pcref{Area}.
 % TODO: better short description
 \glossdef{poison}[poisoned] For a description of poisons and how they work, see \pcref{Poison}.
 
+\glossdef{poison stage} Each \glossterm{poison} progresses in a series of stages.
+Each stage inflicts a particular negative effect on the poisoned creature according to the poison's description.
+For details, see \pcref{Poison}.
+
 \glossdef{Poison} See \pcref{Ability Tags}.
 
 \glossdef{Positive} See \pcref{Ability Tags}.
 
 \glossdef{power} The power of an \glossterm{ability} represents how strong the ability is.
-This determines the ability's \glossterm{standard damage}, and may determine other effects of the ability.
+Many abilities add your \glossterm{power} to the damage they deal, and it may also determine other effects of the ability.
 Your power with an ability depends on whether the ability is \glossterm{magical} or \glossterm{mundane}.
 Your power with magical abilities is normally equal to your level \add your base Willpower, and your power with mundane abilities is normally equal to your level \add your base Strength.
 For details, see \pcref{Power}.
@@ -665,11 +672,7 @@ They are described in \tref{Rare Languages}.
 A typical Medium creature has a five-foot reach.
 Long and Reach weapons may change your reach (see \pcref{Weapons}).
 
-\glossdef{resistant} A creature can be resistant to a type or subtype of damage.
-Its \glossterm{resistances} are doubled against damage that is only of types that it is resistant to.
-When a creature takes damage of multiple types, it is considered resistant to the damage only if it is resistant to all of its damage types.
-
-\glossdef{resistance} You have two resistances: your \glossterm{bleed resistance} and your \glossterm{vital resistance}.
+\glossdef{resistance} Whenever you take damage, you first apply that damage to your resistance against that damage type before applying it to your \glossterm{hit points}.
 For details, see \pcref{Resistances}.
 
 \glossdef{ritual}[rituals] A ritual is a discrete \glossterm{magical} ability with esoteric effects.
@@ -768,9 +771,6 @@ For details, see \pcref{Squeezing}.
 
 \glossdef{standard action}[standard actions] You can use a standard action to attack with a weapon, cast a spell, drink a potion, and do most other things that take concentration and effort.
 
-\glossdef{standard damage} A common damage value for abilities.
-For details, see \pcref{Standard Damage}.
-
 \glossdef{strike}[strikes] A strike is a single physical attack with a weapon.
 It is the most common type of attack.
 You can make a strike as a \glossterm{standard action} in the \glossterm{action phase}.
@@ -832,7 +832,7 @@ For deatils, see \pcref{Teleportation}.
 \glossdef{Temporal} See \pcref{Ability Tags}.
 
 \glossdef{threaten}[threatened] If you are using a \glossterm{melee} weapon, all enemies within your \glossterm{reach} with that weapon are threatened.
-A threatened creature may suffer \glossterm{overwhelm penalties} if there are multiple creatures threatening it (see \pcref{Overwhelm}).
+A threatened creature may suffer an \glossterm{overwhelm penalty} if there are multiple creatures threatening it (see \pcref{Overwhelm}).
 
 \glossdef{thrown weapon}[thrown weapons] A thrown weapon is a weapon designed to be thrown at a target.
 For details about attacking with thrown weapons, see \pcref{Thrown Strike}.
@@ -893,7 +893,7 @@ You gain a \glossterm{vital wound} if you take damage in excess of your \glosste
 For details, see \pcref{Vital Wounds}.
 
 \glossdef{vulnerable} A creature can be vulnerable to a type or subtype of damage.
-Its \glossterm{resistances} are halved against damage that is of any type that it is vulnerable to.
+It takes double damage from damage of the type that it is vulnerable to.
 When a creature takes damage of multiple types, it is considered vulnerable to the damage if it is vulnerable to any of its damage types.
 
 \glossdef{wall} A wall is an area shape that an ability can have (see \pcref{Area Shapes}).

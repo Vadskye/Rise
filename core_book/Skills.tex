@@ -37,7 +37,7 @@ This chapter describes each skill, including common uses for those skills.
     \subsection{Key Attributes With Skills}\label{Key Attributes With Skills}
         Most skills have a single \glossterm{key attribute} they are associated with.
         You gain a bonus or penalty to attacks and checks with each skill equal to your base value with that skill's key attribute.
-        In addition, if your base value for an attribute is at least 2, you are automatically trained in all of that attribute's skills.
+        In addition, if your base value for an attribute is at least 3, you are automatically trained in your \glossterm{class skills} associated with that attribute.
 
     \subsection{Class Skills}\label{Class Skills}
         Each class has a set of skills that members of that class are typically skilled at.
@@ -1040,11 +1040,14 @@ This chapter describes each skill, including common uses for those skills.
         You can accelerate the recovery of additional creatures during the same rest by taking a cumulative \minus2 penalty per additional creature.
 
     \subsection{First Aid}\label{First Aid}
-        As a standard action, you can make a Medicine check to prevent a willing creature from dying from a \glossterm{vital wound} with a negative \glossterm{vital roll}.
+        As a standard action, you can make a Medicine check to prevent yourself or an \glossterm{ally} from dying from a \glossterm{vital wound} with a negative \glossterm{vital roll}.
         The \glossterm{difficulty rating} is equal to 0 \add 10 for each point by which the vital roll is below 1.
         Success means that the target treats the \glossterm{vital roll} as a 1 instead of its original value.
         This changes the effect of the vital wound, generally preventing the target from dying.
         For details, see \pcref{Vital Wounds}.
+
+        You can use this ability to treat multiple creatures within your \glossterm{reach}.
+        You take a \minus5 penalty to the check for each additional target beyond the first.
 
     \subsection{Treat Condition}\label{Treat Condition}
         As a standard action, you can make a Medicine check to treat some specific conditions.
@@ -1158,6 +1161,7 @@ This chapter describes each skill, including common uses for those skills.
         Your check is modified by your relationship with the group and how favorable the deal is.
 
         \begin{dtable}
+            \lcaption{Relationship Modifiers}
             \begin{dtabularx}{\columnwidth}{>{\lcol}X r}
                 \tb{Relationship}                                                                                                                                                                 & \tb{Difficulty Modifier} \tableheaderrule
                 Intimate: Someone who with whom you have an implicit trust.
