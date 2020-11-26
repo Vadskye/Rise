@@ -49,10 +49,11 @@ def attribute_change(a):
         f"""
             var scaling = 0;
             if ({a}_starting === 1) {{
-                scaling = Math.floor(level / 2);
-            }} else if ({a}_starting > 1) {{
-                scaling = level - 1;
+                scaling = Math.floor(level / 4);
+            }} else if ({a}_starting >= 2) {{
+                scaling = Math.floor(({a}_starting-1)*0.5*(level - 1));
             }}
+
             setAttrs({{
                 {a}: {a}_starting + scaling + {sum_variables(misc)},
                 {a}_scaling: scaling,
@@ -148,13 +149,8 @@ def defenses():
 
 def resistances():
     return [
-        base_bleed_resistance(),
-        base_vital_resistance(),
-        all_resistance(),
         energy_resistance(),
         physical_resistance(),
-        bleed_resistances(),
-        vital_resistances(),
     ]
 
 def abilities_known():
@@ -183,7 +179,7 @@ def attunement_points():
     return js_wrapper(
         ['level', *misc],
         f"""
-            var attunement_points_from_level = 2 + Math.floor(level / 3);
+            var attunement_points_from_level = Math.min(1 + Math.floor((level + 1) / 3), 5);
             var attunement_points = attunement_points_from_level + {sum_variables(misc)};
             setAttrs({{
                 attunement_points,
@@ -321,10 +317,10 @@ def skill_points():
 def fatigue_tolerance():
     misc = get_misc_variables('fatigue_tolerance', 2)
     return js_wrapper(
-        ['level', 'willpower_starting', *misc],
+        ['level', 'constitution_starting', 'willpower_starting', *misc],
         f"""
             setAttrs({{
-                fatigue_tolerance: 2 + willpower_starting + {sum_variables(misc)},
+                fatigue_tolerance: 2 + constitution_starting + willpower_starting + {sum_variables(misc)},
             }});
         """
     )
@@ -343,13 +339,48 @@ def focus_penalty():
 
 
 def hit_points():
-    misc = get_misc_variables('hit_points', 2)
+    misc = get_misc_variables('hit_points', 3)
     return js_wrapper(
-        ['constitution_starting', 'challenge_rating', *misc],
+        ['level', 'constitution_starting', 'challenge_rating', *misc],
         f"""
-            var hit_points = 9 + constitution_starting + {sum_variables(misc)};
+            var hit_points_from_level = {{
+                '-1': 9  ,
+                0:    10 ,
+                1:    11 ,
+                2:    12 ,
+                3:    13 ,
+                4:    15 ,
+                5:    17 ,
+                6:    19 ,
+                7:    22 ,
+                8:    25 ,
+                9:    28 ,
+                10:   31 ,
+                11:   35 ,
+                12:   39 ,
+                13:   44 ,
+                14:   50 ,
+                15:   56 ,
+                16:   63 ,
+                17:   70 ,
+                18:   78 ,
+                19:   88 ,
+                20:   100,
+                21:   112,
+                22:   125,
+                23:   140,
+                24:   155,
+                25:   170,
+                26:   185,
+                27:   200,
+                28:   215,
+                29:   230,
+                30:   245,
+            }}[level + constitution_starting] || 1;
+
+            var hit_points = hit_points_from_level + {sum_variables(misc)};
             var cr_mod = {{
-                0.5: 0,
+                0.5: 0.25,
                 1: 0.5,
                 2: 1,
                 3: 2,
@@ -358,6 +389,7 @@ def hit_points():
             hit_points = Math.floor(hit_points * cr_mod)
             setAttrs({{
                 hit_points,
+                hit_points_from_level,
                 hit_points_max: hit_points,
             }});
         """
@@ -386,160 +418,72 @@ def insight_points():
     )
 
 def magical_power():
-    misc = get_misc_variables('magical_power', 2)
+    misc = get_misc_variables('magical_power', 3)
     return js_wrapper(
-        ['level', 'willpower_starting', 'challenge_rating', 'level_scaling', *misc],
+        ['willpower', *misc],
         f"""
-            var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
+            var willpower_power_scaling = Math.floor(willpower / 2);
             setAttrs({{
-                magical_power: level + willpower_starting + cr_mod + level_scaling * 2 + {sum_variables(misc)},
+                magical_power: willpower + {sum_variables(misc)},
+                willpower_power_scaling,
             }});
         """
     )
 
 def mundane_power():
-    misc = get_misc_variables('mundane_power', 2)
+    misc = get_misc_variables('mundane_power', 3)
     return js_wrapper(
-        ['level', 'strength_starting', 'challenge_rating', 'level_scaling', *misc],
+        ['strength', *misc],
         f"""
-            var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
+            var strength_power_scaling = Math.floor(strength / 2);
             setAttrs({{
-                mundane_power: level + strength_starting + cr_mod + level_scaling * 2 + {sum_variables(misc)},
+                mundane_power: strength + {sum_variables(misc)},
+                strength_power_scaling,
             }});
         """
     )
 
 def maneuvers_known():
-    misc = get_misc_variables('maneuvers_known', 2)
+    misc = get_misc_variables('maneuvers_known', 3)
     return js_wrapper(
-        ['maneuvers_known_base', 'maneuvers_known_insight_points', *misc],
+        ['maneuvers_known_insight_points', *misc],
         f"""
             setAttrs({{
-                maneuvers_known: maneuvers_known_base + maneuvers_known_insight_points + {sum_variables(misc)}
+                maneuvers_known: maneuvers_known_insight_points + {sum_variables(misc)}
             }});
         """
     )
 
 def spheres_known():
-    misc = get_misc_variables('spheres_known', 2)
+    misc = get_misc_variables('spheres_known', 3)
     return js_wrapper(
-        ['spheres_known_base', 'spheres_known_insight_points', *misc],
+        ['spheres_known_insight_points', *misc],
         f"""
             setAttrs({{
-                spheres_known: spheres_known_base + Math.floor(spheres_known_insight_points / 2) + {sum_variables(misc)}
+                spheres_known: Math.floor(spheres_known_insight_points / 2) + {sum_variables(misc)}
             }});
         """
     )
 
 def spells_known():
-    misc = get_misc_variables('spells_known', 2)
+    misc = get_misc_variables('spells_known', 3)
     return js_wrapper(
-        ['spells_known_base', 'spells_known_insight_points', *misc],
+        ['spells_known_insight_points', *misc],
         f"""
             setAttrs({{
-                spells_known: spells_known_base + spells_known_insight_points + {sum_variables(misc)}
+                spells_known: spells_known_insight_points + {sum_variables(misc)}
             }});
         """
     )
 
 def blank_ability_known(i):
     name = f'blank_ability_known_{i}'
-    misc = get_misc_variables(name, 2)
+    misc = get_misc_variables(name, 3)
     return js_wrapper(
-        [f'{name}_base', f'{name}_insight_points', *misc],
+        [f'{name}_insight_points', *misc],
         f"""
             setAttrs({{
-                {name}: {name}_base + {name}_insight_points + {sum_variables(misc)}
-            }});
-        """
-    )
-
-def base_bleed_resistance():
-    return js_wrapper(
-        ['level', 'constitution_starting'],
-        f"""
-            var base_bleed_resistance = {{
-                '-1': 1 ,
-                0:    1 ,
-                1:    2 ,
-                2:    3 ,
-                3:    4 ,
-                4:    5 ,
-                5:    6 ,
-                6:    7 ,
-                7:    8 ,
-                8:    10,
-                9:    12,
-                10:   14,
-                11:   17,
-                12:   20,
-                13:   23,
-                14:   26,
-                15:   29,
-                16:   32,
-                17:   36,
-                18:   40,
-                19:   45,
-                20:   50,
-                21:   55,
-                22:   60,
-                23:   65,
-                24:   70,
-                25:   75,
-            }}[level + constitution_starting] || 1;
-            setAttrs({{
-                base_bleed_resistance,
-            }});
-        """
-    )
-
-def base_vital_resistance():
-    return js_wrapper(
-        ['level', 'constitution', 'constitution_starting'],
-        f"""
-            var base_vital_resistance = {{
-                '-2':   10 ,
-                '-1':   11 ,
-                0:      12 ,
-                1:      13 ,
-                2:      15 ,
-                3:      17 ,
-                4:      19 ,
-                5:      23 ,
-                6:      27 ,
-                7:      32 ,
-                8:      37 ,
-                9:      43 ,
-                10:     49 ,
-                11:     55 ,
-                12:     61 ,
-                13:     68 ,
-                14:     75 ,
-                15:     82 ,
-                16:     90 ,
-                17:     100,
-                18:     110,
-                19:     120,
-                20:     130,
-                21:     140,
-                22:     150,
-                23:     160,
-                24:     170,
-                25:     180,
-            }}[level + constitution_starting] || 10;
-            setAttrs({{
-                base_vital_resistance,
-            }});
-        """
-    )
-
-def all_resistance():
-    misc = get_misc_variables('all_resistance_bonus', 4)
-    return js_wrapper(
-        misc,
-        f"""
-            setAttrs({{
-                all_resistance_bonus: {sum_variables(misc)},
+                {name}: {name}_insight_points + {sum_variables(misc)}
             }});
         """
     )
@@ -547,10 +491,10 @@ def all_resistance():
 def energy_resistance():
     misc = get_misc_variables('energy_resistance_bonus', 3)
     return js_wrapper(
-        ['energy_resistance_bonus_armor', *misc],
+        ['willpower', 'energy_resistance_bonus_armor', *misc],
         f"""
             setAttrs({{
-                energy_resistance_bonus: energy_resistance_bonus_armor + {sum_variables(misc)},
+                energy_resistance_bonus: willpower + energy_resistance_bonus_armor + {sum_variables(misc)},
             }});
         """
     )
@@ -558,39 +502,11 @@ def energy_resistance():
 def physical_resistance():
     misc = get_misc_variables('physical_resistance_bonus', 3)
     return js_wrapper(
-        ['physical_resistance_bonus_armor', *misc],
+        ['constitution', 'physical_resistance_bonus_armor', *misc],
         f"""
             setAttrs({{
-                physical_resistance_bonus: physical_resistance_bonus_armor + {sum_variables(misc)},
+                physical_resistance_bonus: constitution + physical_resistance_bonus_armor + {sum_variables(misc)},
             }});
-        """
-    )
-
-def bleed_resistances():
-    return js_wrapper(
-        ['base_bleed_resistance', 'all_resistance_bonus', 'energy_resistance_bonus', 'physical_resistance_bonus', 'challenge_rating'],
-        f"""
-            var global_bleed_resistance = base_bleed_resistance + all_resistance_bonus;
-            var resistance_modifier = challenge_rating === 0.5 ? 0.5 : 1;
-            setAttrs({{
-                global_bleed_resistance: Math.floor(global_bleed_resistance * resistance_modifier),
-                energy_bleed_resistance: Math.floor((global_bleed_resistance + energy_resistance_bonus) * resistance_modifier),
-                physical_bleed_resistance: Math.floor((global_bleed_resistance + physical_resistance_bonus) * resistance_modifier),
-            }})
-        """
-    )
-
-def vital_resistances():
-    return js_wrapper(
-        ['base_vital_resistance', 'all_resistance_bonus', 'energy_resistance_bonus', 'physical_resistance_bonus', 'challenge_rating'],
-        f"""
-            var global_vital_resistance = base_vital_resistance + all_resistance_bonus;
-            var resistance_modifier = challenge_rating === 0.5 ? 0.5 : 1;
-            setAttrs({{
-                global_vital_resistance: Math.floor(global_vital_resistance * resistance_modifier),
-                energy_vital_resistance: Math.floor((global_vital_resistance + energy_resistance_bonus) * resistance_modifier),
-                physical_vital_resistance: Math.floor((global_vital_resistance + physical_resistance_bonus) * resistance_modifier),
-            }})
         """
     )
 
@@ -612,18 +528,19 @@ def skill_points_spent():
 
 def standard_damage_at_power(power):
     return {
+        '-4': '1d3',
         '-2': '1d4',
-        0: '1d6',
-        2: '1d8',
-        4: '1d10',
-        6: '2d6',
-        8: '2d8',
-        10: '2d10',
-        12: '4d6',
-        14: '4d8',
-        16: '4d10',
-        18: '5d10',
-        20: '6d10',
-        22: '7d10',
-        24: '8d10',
-    }[power]
+        '0': '1d6',
+        '2': '1d8',
+        '4': '1d10',
+        '6': '2d6',
+        '8': '2d8',
+        '10': '2d10',
+        '12': '4d6',
+        '14': '4d8',
+        '16': '4d10',
+        '18': '5d10',
+        '20': '6d10',
+        '22': '7d10',
+        '24': '8d10',
+    }[str(power)]

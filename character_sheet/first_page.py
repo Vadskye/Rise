@@ -1,7 +1,7 @@
 from cgi_simple import (
     button, div, fieldset, flex_col, flex_row, flex_wrapper, freeform_number_input,
     labeled_number_input, labeled_text_input, number_input, sidelabel, span,
-    text_input, underlabel, underlabel_spaced, underlabeled_checkbox, labeled_textarea
+    text_input, underlabel, underlabel_spaced, underlabeled_checkbox, labeled_textarea, select, option
 )
 from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS
 
@@ -124,8 +124,7 @@ def statistics_header(destination):
         flex_row({'class': 'all-statistics'}, [
             core_statistics(destination),
             defenses(),
-            bleed_resistance(),
-            vital_resistance(),
+            resistances(),
         ])
     ])
 
@@ -145,52 +144,27 @@ def defenses():
         ]),
     ])
 
-def bleed_resistance():
+def resistances():
     return flex_col({'class': 'damage-resistances'}, [
-        flex_wrapper(div({'class': 'section-header'}, 'Bleed Resist')),
+        flex_wrapper(div({'class': 'section-header'}, 'Resistances')),
         "".join([
             sidelabel('Physical', number_input({
                 'disabled': True,
                 'name': 'physical_bleed_resistance_display',
-                'value': '@{physical_bleed_resistance}',
+                'value': '@{physical_resistance_bonus}',
             })),
             sidelabel('Energy', number_input({
                 'disabled': True,
                 'name': 'energy_bleed_resistance_display',
-                'value': '@{energy_bleed_resistance}',
+                'value': '@{energy_resistance_bonus}',
             })),
             freeform_number_input(
-                number_input_attributes={'name': 'bleed_resistance_freeform'},
-                text_input_attributes={'name': 'bleed_resistance_freeform_name'},
+                number_input_attributes={'name': 'resistance_freeform'},
+                text_input_attributes={'name': 'resistance_freeform_name'},
             ),
             freeform_number_input(
-                number_input_attributes={'name': 'bleed_resistance_freeform_2'},
-                text_input_attributes={'name': 'bleed_resistance_freeform_name_2'},
-            ),
-        ]),
-    ])
-
-def vital_resistance():
-    return flex_col({'class': 'vital-resistances'}, [
-        flex_wrapper(div({'class': 'section-header'}, 'Vital Resist')),
-        "".join([
-            sidelabel('Physical', number_input({
-                'disabled': True,
-                'name': 'physical_vital_resistance_display',
-                'value': '@{physical_vital_resistance}',
-            })),
-            sidelabel('Energy', number_input({
-                'disabled': True,
-                'name': 'energy_vital_resistance_display',
-                'value': '@{energy_vital_resistance}',
-            })),
-            freeform_number_input(
-                number_input_attributes={'name': 'vital_resistance_freeform'},
-                text_input_attributes={'name': 'vital_resistance_freeform_name'},
-            ),
-            freeform_number_input(
-                number_input_attributes={'name': 'vital_resistance_freeform_2'},
-                text_input_attributes={'name': 'vital_resistance_freeform_name_2'},
+                number_input_attributes={'name': 'resistance_freeform_2'},
+                text_input_attributes={'name': 'resistance_freeform_name_2'},
             ),
         ]),
     ])
@@ -358,23 +332,21 @@ def attack(source):
             }),
             {'class': 'attack-bonus'}
         ),
-        underlabel_spaced(
-            '+Dmg',
-            number_input({
-                'class': 'fake-text',
-                'name': 'attack0_damage',
-            }),
-            {'class': 'attack-bonus'}
-        ) if source != 'nondamaging' else '',
         labeled_text_input(
             'Defense',
             {'class': 'attack-defense'},
             {'name': 'attack0_defense'},
         ),
-        text_input({
-            'class': 'hidden',
-            'name': 'attack0_dice',
-        }),
+        labeled_text_input(
+            'Dmg',
+            {'class': 'attack-dice'},
+            {'name': 'attack0_dice'},
+        ) if source != 'nondamaging' else '',
+        underlabel('Power', select({'class': 'attack-power'}, [
+            option({'value': 'full'}, 'Full'),
+            option({'value': 'half'}, 'Half'),
+            option({'value': 'none'}, 'None'),
+        ])),
         labeled_textarea(
             'Effect',
             {'class': 'attack-effect'},

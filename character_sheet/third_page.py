@@ -1,6 +1,6 @@
 from cgi_simple import (
     div, ensure_valid_attributes_and_contents, flex_col, flex_row, flex_wrapper,
-    labeled_text_input, text_input,
+    labeled_text_input, text_input, underlabel, number_input
 )
 
 def create_page():
@@ -89,7 +89,13 @@ def archetypes():
     return div({'class': 'archetypes'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Archetypes')),
         *[
-            text_input({'name': f"archetypes_{i}"}) for i in range(3)
+            flex_row({'class': 'archetype'}, [
+                labeled_text_input('Name', {'class': 'archetype-name'}, {'name': f'archetype_name_{i}'}),
+                underlabel(
+                    'Rank',
+                    number_input({ 'name': f'archetype_rank_{i}' }),
+                ),
+            ]) for i in range(3)
         ]
     ])
 
@@ -123,12 +129,12 @@ def vital_roll_effect(roll):
     return {
         -1: 'Unconscious, die next round',
         0: 'Unconscious, die after a minute',
-        1: 'Unconscious while bloodied',
+        1: 'Unconscious below max HP',
         2: '-2 accuracy',
         3: '-2 defenses',
         4: '-2 vital rolls',
         5: '-2 max hit points',
-        6: 'Half speed while bloodied',
+        6: 'Half speed below max HP',
         7: '-1 accuracy',
         8: '-1 defenses',
         9: '-1 vital rolls',
