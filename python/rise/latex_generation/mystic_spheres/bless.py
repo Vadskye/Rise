@@ -87,12 +87,20 @@ bless=MysticSphere(
         """, scaling="""
             \\rank<6> The bonus increases to +2.
         """, tags=['Attune (target)']),
-        Spell('Battle Blessing', 5, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Blessing of Precision', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             You can cast this spell as a \\glossterm<minor action>.
 
             The target gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with all attacks.
         """, scaling="""
-            \\rank<7> The bonus increases to +2.
+            \\rank<6> The bonus increases to +2.
+        """, tags=['Attune (target)']),
+        Spell('Blessing of Power', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            You can cast this spell as a \\glossterm<minor action>.
+
+            The target gains a +2 \\glossterm<magic bonus> to \\glossterm<power> with all abilities.
+        """, scaling="""
+            \\rank<5> The bonus increases to +4.
+            \\rank<7> The bonus increases to +8.
         """, tags=['Attune (target)']),
         Spell('Blessing of Perserverance', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             You can cast this spell as a \\glossterm<minor action>.

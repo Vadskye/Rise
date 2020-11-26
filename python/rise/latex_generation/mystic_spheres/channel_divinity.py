@@ -44,17 +44,20 @@ channel_divinity=MysticSphere(
             \\rank<5> The bonus increases to +5.
             \\rank<7> The bonus increases to +6.
         """, tags=['Attune (self)']),
-        Spell('Agent of the Divine', 6, 'Yourself', """
+        Spell('Agent of the Divine', 5, 'Yourself', """
             You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> and all \\glossterm<defenses>.
-            In addition, you gain a +2 \\glossterm<magic bonus> to \\glossterm<power>.
-        """, tags=['Attune (self)']),
-        Spell('Endurance of the Faithful', 3, 'Yourself', """
+            In addition, you gain a +4 \\glossterm<magic bonus> to \\glossterm<power>.
+        """, scaling="""
+            \\rank<7> The power bonus increases to +8.
+        """,tags=['Attune (self)']),
+        Spell('Endurance of the Faithful', 2, 'Yourself', """
             This spell does not have the \\glossterm<Focus> tag.
-            You gain a bonus equal to twice your \\glossterm<power> to \\glossterm<resistances> this round.
+            You take half damage from \\glossterm<physical damage> this round.
+            This halving is applied before \\glossterm<resistances> and similar abilities.
             Because this ability has the \\glossterm<Swift> tag, this improves your resistances against damage you take during the current phase.
         """, scaling="""
-            \\rank<5> The bonus increases to be equal to three times your \\glossterm<power>.
-            \\rank<7> The bonus increases to be equal to four times your \\glossterm<power>.
+            \\rank<4> You also take half damage from \\glossterm<energy> damage this round.
+            \\rank<6> You also negate any \\glossterm<conditions> that you would gain this round.
         """, tags=['Swift'], focus=False),
         Spell('Divine Judgment', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
@@ -91,21 +94,21 @@ channel_divinity=MysticSphere(
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=[]),
         Spell('Mantle of Faith', 1, 'Yourself', """
-            You gain a +2 \\glossterm<magic bonus> to \\glossterm<resistances>.
-
             You can cast this spell as a \\glossterm<minor action>.
+
+            You gain a +2 \\glossterm<magic bonus> to your \\glossterm<resistances> to both \\glossterm<physical damage> and \\glossterm<energy damage>.
         """, scaling="""
             \\rank<3> The bonus increases to +4.
             \\rank<5> The bonus increases to +8.
             \\rank<7> The bonus increases to +16.
         """, tags=['Attune (self)']),
         Spell('Divine Might', 4, 'Yourself', """
+            You can cast this spell as a \\glossterm<minor action>.
+
             You increase your size by one \\glossterm<size category>.
             This increases your \\glossterm<base speed> and reduces your \\glossterm<Stealth> skill.
             It may also increase your \\glossterm<reach> (see \\pcref<Size in Combat>).
             However, your physical form is not altered fully to match its new size, and your Strength and Dexterity are unchanged.
-
-            You can cast this spell as a \\glossterm<minor action>.
         """, scaling="""
             \\rank<6> You can increase your size by two size categories instead of one.
         """, tags=['Attune (self)']),
@@ -120,42 +123,42 @@ channel_divinity=MysticSphere(
             This spell functions like the \\textit<divine presence> spell, except that the area increases to a \\arealarge radius \\glossterm<emanation> from you.
         """, tags=['Attune (self)', 'Emotion']),
         Spell('Faithful Endurance', 3, 'Yourself', """
-            You gain a +1 \\glossterm<magic bonus> to \\glossterm<vital rolls> (see \\pcref<Vital Rolls>).
-
             You can cast this spell as a \\glossterm<minor action>.
+
+            You gain a +1 \\glossterm<magic bonus> to \\glossterm<vital rolls> (see \\pcref<Vital Rolls>).
         """, scaling="""
             \\rank<5> The bonus increases to +2.
             \\rank<7> The bonus increases to +3.
         """, tags=['Attune (self)']),
         Spell('Divine Conduit', 2, 'Yourself', """
-            You reduce your \\glossterm<focus penalty> with divine spells by 2.
-
             You can cast this spell as a \\glossterm<minor action>.
+
+            You reduce your \\glossterm<focus penalty> with divine spells by 2.
         """, scaling="""
             \\rank<4> You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with divine spells.
-            % TODO: this number is weirdly arbitrary
-            \\rank<6> You gain a +3 \\glossterm<magic bonus> to \\glossterm<power> with divine spells.
+            \\rank<6> You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with divine spells.
         """, tags=['Attune (self)']),
-        Spell('Divine Favor', 3, 'Yourself', """
+        Spell('Divine Favor', 2, 'Yourself', """
+            You can cast this spell as a \\glossterm<minor action>.
+
             You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with all attacks.
-
-            You can cast this spell as a \\glossterm<minor action>.
         """, scaling="""
-            \\rank<5> You also gain a +2 \\glossterm<magic bonus> to Mental defense.
-            \\rank<7> The bonus to \\glossterm<accuracy> increases to +2.
+            \\rank<4> You also gain a +2 \\glossterm<magic bonus> to Mental defense.
+            \\rank<6> The bonus to \\glossterm<accuracy> increases to +2.
         """, tags=['Attune (self)']),
-        Spell('Divine Power', 1, 'Yourself', """
-            You gain a +1 \\glossterm<magic bonus> to \\glossterm<power>.
-
+        Spell('Divine Power', 2, 'Yourself', """
             You can cast this spell as a \\glossterm<minor action>.
+
+            You gain a +2 \\glossterm<magic bonus> to \\glossterm<power>.
         """, scaling="""
-            The bonus increases by 1 for each rank beyond 1.
+            \\rank<4> The bonus increases to +4.
+            \\rank<6> The bonus increases to +8.
         """, tags=['Attune (self)']),
         Spell('Divine Offering', 6, 'Yourself', """
+            You can cast this spell as a \\glossterm<minor action>.
+
             When you cast this spell, you gain a \\glossterm<vital wound> that has no vital wound effect.
             In exchange, you gain a +4 \\glossterm<magic bonus> to \\glossterm<vital rolls> and become immune to \\glossterm<conditions>.
-
-            You can cast this spell as a \\glossterm<minor action>.
         """, tags=['Sustain (free)']),
         Spell('Divine Seal', 4, 'Creatures in a \\areasmall radius \\glossterm<zone> within \\rngmed range', """
             You seal an area with divine power, limiting its connection to divine powers.

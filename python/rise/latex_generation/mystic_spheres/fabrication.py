@@ -94,7 +94,7 @@ fabrication=MysticSphere(
             This spell lasts until you use it again or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
         """, scaling="""
             \\rank<3> You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with \\glossterm<strikes> using the weapon.
-            \\rank<5> You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using the weapon.
+            \\rank<5> You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using the weapon.
             \\rank<7> The bonus to accuracy increases to +2.
         """, tags=['Manifestation']),
         Spell('Forge', 1, 'One unoccupied square within \\rngclose range', """
@@ -107,7 +107,7 @@ fabrication=MysticSphere(
         """, scaling="""
             \\rank<3> You can also create heavy armor.
             \\rank<5> The item created is magically enhanced.
-                A weapon grants a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities,
+                A weapon grants a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with \\glossterm<mundane> abilities,
                     and armor grants a +1 \\glossterm<magic bonus> to Armor defense.
             \\rank<7> You can cast this spell with the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Attune> (self) tag.
         """, tags=['Attune (self)']),

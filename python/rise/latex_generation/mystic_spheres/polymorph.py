@@ -29,9 +29,9 @@ polymorph=MysticSphere(
             You gain your choice of one of the following \\glossterm<natural weapons>: bite, claw, constrict, gore, ram, slam, or talon.
             For details, see \\tref<Natural Weapons>.
         """, scaling="""
-            \\rank<3> You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with natural weapons.
-            \\rank<5> You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with natural weapons.
-            \\rank<7> The accuracy bonus increases to +2.
+            \\rank<3> You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with natural weapons.
+            \\rank<5> The power bonus increases to +4.
+            \\rank<7> The power bonus increases to +8.
         """, tags=['Attune (self)']),
         Spell('Piercing Grasp', 1, 'One creature within your \\glossterm<reach>', """
             This spell does not have the \\glossterm<Focus> tag.
@@ -184,7 +184,7 @@ polymorph=MysticSphere(
             Unlike most abilities, this ritual can affect individual parts of a whole object.
 
             % How should this affect Strength break difficulty ratings?
-            The target gains a +5 \\glossterm<magic bonus> to \\glossterm<resistances>.
+            The target gains a +5 \\glossterm<magic bonus> to its \\glossterm<resistances> against \\glossterm<physical damage> and \\glossterm<energy damage>.
             If the target is moved, this effect ends.
             Otherwise, it lasts for one year.
         """, tags=['Attune (ritual)'], ritual_time='one hour'),

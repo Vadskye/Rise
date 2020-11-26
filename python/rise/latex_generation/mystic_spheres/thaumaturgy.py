@@ -109,9 +109,10 @@ thaumaturgy=MysticSphere(
         Spell('Enhance Magic', 1, 'Yourself', """
             You can cast this spell as a \\glossterm<minor action>.
 
-            You gain a +1 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<magical> abilities.
+            You gain a +2 \\glossterm<magic bonus> to \\glossterm<power>.
         """, scaling="""
-            The bonus increases by 1 for each rank beyond 1.
+            \\rank<4> The bonus increases to +4.
+            \\rank<6> The bonus increases to +8.
         """, tags=['Attune (self)']),
         # Is this worth the complexity it adds to the system?
         Spell('Antimagic Field', 7, 'Special', """

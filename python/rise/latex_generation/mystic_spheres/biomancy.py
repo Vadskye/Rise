@@ -91,7 +91,7 @@ biomancy=MysticSphere(
             \\rank<6> The bonus increases to +20 feet.
         """, tags=['Attune (target)']),
         Spell('Enhanced Muscles', 3, 'Yourself', """
-            The target gains a +2 \\glossterm<magic bonus> to Strength-based checks.
+            You gain a +2 \\glossterm<magic bonus> to Strength-based checks.
         """, scaling="""
             \\rank<5> The bonus increases to +3.
             \\rank<7> The bonus increases to +4.
