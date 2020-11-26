@@ -1559,23 +1559,23 @@ It defines how attributes work and explains how to make attacks in combat.
                 Grapple                  & Fort and Ref & Wrestle with a foe                   \\
                 Offhand Strike           & Armor        & Make a strike with an offhand weapon \\
                 Overrun\fn{1}            & Fort         & Move through foe's space             \\
-                Recover\fn{2}            & \tdash       & Regain hit points, remove conditions \\
+                Recover\fn{1}            & \tdash       & Regain hit points, remove conditions \\
                 Shove                    & Fort         & Move a foe                           \\
                 Sprint\fn{1}             & \tdash       & Move at double speed                 \\
                 Struggle                 & \tdash       & Move 5 feet regardless of penalties  \\
                 Total Defense            & \tdash       & Gain \plus2 to defenses              \\
                 Trip                     & Ref          & Trip a foe                           \\
             \end{dtabularx}
-            1. This ability costs a \glossterm{hit point} to use. \\
-            2. This ability gives you a \glossterm{fatigue point} when used. \\
+            1. This ability gives you a \glossterm{fatigue point} when used. \\
         \end{dtable}
 
         \parhead{Charge} You can use the \textit{charge} ability as a standard action.
 
         \begin{freeability}{\labeltext{Charge}}
-            When you use this ability, you lose a \glossterm{hit point}.
             Move up to your speed in a single straight line.
             At the end of your movement, if you are at least 10 feet from your original location, you can make a melee \glossterm{strike} from your new location.
+
+            After you use this ability, you gain a \glossterm{fatigue point}.
         \end{freeability}
 
         \parhead{Desperate Exertion} You can use the \textit{desperate exertion} ability to succeed at a critical moment when you would otherwise fail.
@@ -1646,7 +1646,6 @@ It defines how attributes work and explains how to make attacks in combat.
         \parhead{Overrun} As a \glossterm{move action}, you can use the \textit{overrun} ability to move through creatures in your way.
 
         \begin{freeability}{\labeltext{Overrun}}
-            When you use this ability, you lose a \glossterm{hit point}.
             Move up to your movement speed.
             You can try to move directly through creatures in your way during this movement.
             Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered.
@@ -1657,6 +1656,8 @@ It defines how attributes work and explains how to make attacks in combat.
             On a hit, you can move through each target's space, though you treat it as \glossterm{difficult terrain}.
             On a critical hit, each target is knocked \glossterm{prone}, and you do not treat its space as \glossterm{difficult terrain} when you move through it.
             On a miss, you fall \glossterm{prone} and end your movement immediately.
+
+            After you use this ability, you gain a \glossterm{fatigue point}.
         \end{freeability}
 
         \parhead{Recover} You can use the \textit{recover} ability as a standard action.
@@ -1686,8 +1687,8 @@ It defines how attributes work and explains how to make attacks in combat.
         \parhead{Sprint} As a \glossterm{move action}, you can use the \textit{sprint} ability to move more quickly.
 
         \begin{freeability}{\labeltext{Sprint}}
-            When you use this ability, you lose a \glossterm{hit point}.
             You move up to double your normal movement speed.
+            After you use this ability, you gain a \glossterm{fatigue point}.
         \end{freeability}
 
         \parhead{Struggle} As a standard action, you can use the \textit{struggle} ability to move despite movement impediments.
