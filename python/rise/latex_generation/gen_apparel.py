@@ -11,7 +11,7 @@ def generate_armor():
     apparel += [
         MagicItem(
             name="Protective Armor",
-            level=5,
+            level=7,
             material_type='Body armor',
             tags=[],
             description="""
@@ -21,7 +21,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Protective Armor, Greater",
-            level=11,
+            level=13,
             material_type='Body armor',
             tags=[],
             description="""
@@ -31,7 +31,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Protective Armor, Supreme",
-            level=17,
+            level=19,
             material_type='Body armor',
             tags=[],
             description="""
@@ -41,7 +41,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Protective Shield",
-            level=5,
+            level=7,
             material_type='Shield',
             tags=[],
             description="""
@@ -51,7 +51,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Protective Shield, Greater",
-            level=11,
+            level=13,
             material_type='Shield',
             tags=[],
             description="""
@@ -61,7 +61,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Protective Shield, Supreme",
-            level=17,
+            level=19,
             material_type='Shield',
             tags=[],
             description="""
@@ -74,23 +74,33 @@ def generate_armor():
     apparel += [
         MagicItem(
             name="Ring of Protection",
-            level=10,
-            material_type='Body armor',
+            level=7,
+            material_type='Ring',
             tags=[],
             description="""
-                You gain a +1 \\glossterm<magic bonus> to all defenses.
+                You gain a +1 \\glossterm<magic bonus> to Fortitude, Reflex, and Mental defense.
             """,
-            short_description="Grants +1 defenses",
+            short_description="Grants +1 non-Armor defenses",
         ),
         MagicItem(
             name="Ring of Protection, Greater",
-            level=16,
-            material_type='Body armor',
+            level=13,
+            material_type='Ring',
             tags=[],
             description="""
-                You gain a +2 \\glossterm<magic bonus> to all defenses.
+                You gain a +2 \\glossterm<magic bonus> to Fortitude, Reflex, and Mental defense.
             """,
-            short_description="Grants +2 defenses",
+            short_description="Grants +2 non-Armor defenses",
+        ),
+        MagicItem(
+            name="Ring of Protection, Greater",
+            level=19,
+            material_type='Ring',
+            tags=[],
+            description="""
+                You gain a +3 \\glossterm<magic bonus> to Fortitude, Reflex, and Mental defense.
+            """,
+            short_description="Grants +3 non-Armor defenses",
         ),
     ]
 
@@ -187,98 +197,98 @@ def generate_armor():
     apparel += [
         MagicItem(
             name="Shield of Bashing",
-            level=4,
+            level=3,
             material_type='Shield',
             description="""
                 You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using this shield.
             """,
-            short_description="Grants +2 power",
+            short_description="Grants +2 power with strikes",
         ),
         MagicItem(
             name="Shield of Bashing, Greater",
-            level=10,
+            level=9,
             material_type='Shield',
             description="""
                 You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using this shield.
             """,
-            short_description="Grants +4 power",
+            short_description="Grants +4 power with strikes",
         ),
         MagicItem(
             name="Shield of Bashing, Supreme",
-            level=16,
+            level=15,
             material_type='Shield',
             description="""
-                You gain a +6 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using this shield.
+                You gain a +8 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using this shield.
             """,
-            short_description="Grants +6 power",
+            short_description="Grants +8 power with strikes",
         ),
     ]
 
     apparel += [
         MagicItem(
             name="Armor of Energy Resistance",
-            level=2,
+            level=4,
             tags=[],
             material_type='Body armor',
             description="""
-                You gain a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<energy damage>.
+                You gain a +4 \\glossterm<magic bonus> to your \\glossterm<resistance> against \\glossterm<energy damage>.
                 When you resist energy damage, this item sheds light as a torch until the end of the next round.
                 The color of the light depends on the energy damage resisted: blue for cold, yellow for electricity, and red for fire.
             """,
-            short_description="Reduces energy damage",
+            short_description="Grants +4 energy resistance",
         ),
         MagicItem(
             name="Armor of Energy Resistance, Greater",
-            level=8,
+            level=10,
             tags=[],
             material_type='Body armor',
             description="""
-                This item functions like the \\mitem<armor of energy resistance> item, except that the bonus is equal to half your magical \\glossterm<power>, with a minimum bonus of +4.
+                This item functions like the \\mitem<armor of energy resistance> item, except that the bonus is equal to +8.
             """,
-            short_description="Significantly reduces energy damage",
+            short_description="Grants +8 energy resistance",
         ),
         MagicItem(
             name="Armor of Energy Resistance, Supreme",
-            level=14,
+            level=16,
             tags=[],
             material_type='Body armor',
             description="""
-                This item functions like the \\mitem<armor of energy resistance> item, except that the bonus is equal to your magical \\glossterm<power>, with a minimum bonus of +14.
+                This item functions like the \\mitem<armor of energy resistance> item, except that the bonus is equal to +16.
             """,
-            short_description="Significantly reduces energy damage",
+            short_description="Grants +16 energy resistance",
         ),
         MagicItem(
             name="Ring of Energy Resistance",
             # +2 level since ring is secondary for this effect
-            level=4,
+            level=6,
             tags=[],
             material_type='Ring',
             description="""
-                You gain a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<energy damage>.
+                You gain a +4 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<energy damage>.
                 When you resist energy damage, this item sheds light as a torch until the end of the next round.
                 The color of the light depends on the energy damage resisted: blue for cold, yellow for electricity, and red for fire.
             """,
-            short_description="Reduces energy damage",
+            short_description="Grants +4 energy resistance",
         ),
         MagicItem(
             name="Ring of Energy Resistance, Greater",
-            level=10,
+            level=12,
             tags=[],
             material_type='Ring',
             description="""
-                This item functions like the \\mitem<ring of energy resistance> item, except that the bonus is equal to half your magical \\glossterm<power>, with a minimum bonus of +5.
+                This item functions like the \\mitem<ring of energy resistance> item, except that the bonus is equal to +8.
             """,
-            short_description="Significantly reduces energy damage",
+            short_description="Grants +8 energy resistance",
         ),
         MagicItem(
             name="Ring of Energy Resistance, Supreme",
-            level=16,
+            level=18,
             tags=[],
             material_type='Ring',
             description="""
-                This item functions like the \\mitem<ring of energy resistance> item, except that the bonus is equal to your magical \\glossterm<power>, wiht a minimum bonus of +16.
+                This item functions like the \\mitem<ring of energy resistance> item, except that the bonus is equal to +16.
             """,
-            short_description="Significantly reduces energy damage",
+            short_description="Grants +16 energy resistance",
         ),
     ]
 
@@ -327,7 +337,7 @@ def generate_armor():
             level=17,
             material_type='Body armor',
             description="""
-                This item functions like the \\mitem<armor of fortification> item, except that the bonus increases to +8.
+                You gain a +8 bonus to defenses when determining whether a \\glossterm<strike> gets a \\glossterm<critical hit> against you instead of a normal hit.
             """,
             short_description="Drastically reduces critical hits from strikes",
         ),
@@ -336,7 +346,7 @@ def generate_armor():
             level=14,
             material_type='Body armor',
             description="""
-                This item functions like the \\mitem<armor of fortification> item, except that it applies against \\glossterm<magical> instead of against \\glossterm<strikes>.
+                You gain a +4 bonus to defenses when determining whether any attack gets a \\glossterm<critical hit> against you instead of a normal hit.
             """,
             short_description="Reduces critical hits from magical attacks",
         ),
@@ -374,64 +384,64 @@ def generate_armor():
     apparel += [
         MagicItem(
             name="Armor of Kinetic Absorption",
-            level=2,
+            level=4,
             tags=[],
             material_type='Body armor',
             description="""
-                You gain a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
+                You gain a +4 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
             """,
-            short_description="Reduces physical damage",
+            short_description="Grants +4 physical resistance",
         ),
         MagicItem(
             name="Armor of Kinetic Absorption, Greater",
-            level=8,
+            level=10,
             tags=[],
             material_type='Body armor',
             description="""
-                This item functions like the \\mitem<armor of kinetic absorption> item, except that the bonus is equal to half your magical \\glossterm<power>, with a minimum bonus of +4.
+                You gain a +8 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
             """,
-            short_description="Significantly reduces energy damage",
+            short_description="Grants +8 physical resistance",
         ),
         MagicItem(
             name="Armor of Kinetic Absorption, Supreme",
-            level=14,
+            level=16,
             tags=[],
             material_type='Body armor',
             description="""
-                This item functions like the \\mitem<armor of kinetic absorption> item, except that the bonus is equal to half your magical \\glossterm<power>, with a minimum bonus of +14.
+                You gain a +16 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
             """,
-            short_description="Drastically reduces energy damage",
+            short_description="Grants +16 physical resistance",
         ),
         MagicItem(
             name="Amulet of Kinetic Absorption",
             # +2 since amulet is secondary for this effect
-            level=4,
+            level=6,
             tags=[],
             material_type='Amulet',
             description="""
-                You gain a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
+                You gain a +4 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
             """,
-            short_description="Reduces physical damage",
+            short_description="Grants +4 physical resistance",
         ),
         MagicItem(
             name="Amulet of Kinetic Absorption, Greater",
-            level=10,
+            level=12,
             tags=[],
             material_type='Amulet',
             description="""
-                This item functions like the \\mitem<amulet of kinetic absorption> item, except that the bonus is equal to half your magical \\glossterm<power>, with a minimum bonus of +5.
+                You gain a +8 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
             """,
-            short_description="Significantly reduces energy damage",
+            short_description="Grants +8 physical resistance",
         ),
         MagicItem(
             name="Amulet of Kinetic Absorption, Supreme",
-            level=16,
+            level=18,
             tags=[],
             material_type='Amulet',
             description="""
-                This item functions like the \\mitem<amulet of kinetic absorption> item, except that the bonus is equal to half your magical \\glossterm<power>, with a minimum bonus of +16.
+                You gain a +16 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
             """,
-            short_description="Drastically reduces energy damage",
+            short_description="Grants +16 physical resistance",
         ),
     ]
 
@@ -442,9 +452,9 @@ def generate_armor():
             tags=[],
             material_type='Body armor',
             description="""
-                You gain a +3 \\glossterm<magic bonus> to \\glossterm<resistances>.
+                You gain a +4 \\glossterm<magic bonus> to your \\glossterm<resistances> to both \\glossterm<physical damage> and \\glossterm<energy damage>.
             """,
-            short_description="Reduces damage",
+            short_description="Grants +4 universal resistance",
         ),
         MagicItem(
             name="Armor of Invulnerability, Greater",
@@ -452,9 +462,9 @@ def generate_armor():
             tags=[],
             material_type='Body armor',
             description="""
-                This item functions like the \\mitem<armor of invulnerability> item, except that the bonus is equal to half your magical \\glossterm<power>, with a minimum bonus of +6.
+                You gain a +8 \\glossterm<magic bonus> to your \\glossterm<resistances> to both \\glossterm<physical damage> and \\glossterm<energy damage>.
             """,
-            short_description="Significantly reduces damage",
+            short_description="Grants +8 universal resistance",
         ),
         MagicItem(
             name="Armor of Invulnerability, Supreme",
@@ -462,9 +472,9 @@ def generate_armor():
             tags=[],
             material_type='Body armor',
             description="""
-                This item functions like the \\mitem<armor of invulnerability> item, except that the bonus is equal to your magical \\glossterm<power>, with a minimum bonus of +19.
+                You gain a +16 \\glossterm<magic bonus> to your \\glossterm<resistances> to both \\glossterm<physical damage> and \\glossterm<energy damage>.
             """,
-            short_description="Drastically reduces damage",
+            short_description="Grants +16 universal resistance",
         ),
     ]
 
@@ -496,13 +506,13 @@ def generate_armor():
 
     apparel.append(MagicItem(
         name="Acidic Armor",
-        level=5,
+        level=7,
         material_type='Body armor',
         tags=[],
         description="""
             At the end of each round, if this armor is making significant contact against a creature or object other than you and your equipment, make an attack vs. Fortitude against it.
             Generally, you can only affect another creature with this armor if you are \\glossterm<grappling> it.
-            On a hit, the target takes acid \\glossterm<standard damage>.
+            On a hit, the target takes 2d6 acid damage.
         """,
         short_description="Deals acid damage to anything it touches",
     ))
@@ -840,8 +850,8 @@ def generate_armor():
             This shield normally has a cloth covering its face.
             As a standard action, you can pull the cloth back and reveal the horrifying face emblazoned on the shield.
             When you do, make an attack vs. Fortitude against each creature within a \\areamed cone.
-            On a hit, each target is \\glossterm<nauseated> until the end of the next round.
-            On a \\glossterm<critical hit>, each target is \\glossterm<paralyzed> until the end of the next round.
+            On a hit, each target with no remaining \\glossterm<resistance> to \\glossterm<physical damage> is \\glossterm<nauseated> until the end of the next round.
+            On a \\glossterm<critical hit>, each target with no remaining \\glossterm<resistance> to \\glossterm<physical damage> is \\glossterm<paralyzed> until the end of the next round.
             In either case, each target is immune to this ability until it takes a \\glossterm<short rest>.
 
             If the cloth is prematurely pulled back, allowing creatures to see the shield without a dramatic reveal, the shield has no effect.
@@ -1732,7 +1742,7 @@ def generate_worn():
             material_type='Gloves',
             tags=[],
             description="""
-                When you cast a spell that does not have the \\glossterm<AP>, \\glossterm<Attune>, \\glossterm<Sustain> tags,
+                When you cast a spell that does not have the \\glossterm<Attune> or \\glossterm<Sustain> tags,
                     you can invest the magic of the spell in these gloves.
                 If you do, the spell does not have its normal effect.
 

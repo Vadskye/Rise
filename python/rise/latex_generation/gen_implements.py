@@ -11,18 +11,19 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Spell Wand, 1st",
-            level=5,
+            level=3,
             material_type='Wand',
             tags=[],
             description="""
                 This wand grants you knowledge of a single rank 1 spell.
+                Each wand is associated with a specific spell.
                 You must have access to the \\glossterm<mystic sphere> that spell belongs to.
             """,
             short_description="Grants knowledge of a rank 1 spell",
         ),
         MagicItem(
             name="Spell Wand, 2nd",
-            level=8,
+            level=6,
             material_type='Wand',
             tags=[],
             description="""
@@ -32,7 +33,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Spell Wand, 3rd",
-            level=11,
+            level=9,
             material_type='Wand',
             tags=[],
             description="""
@@ -42,7 +43,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Spell Wand, 4th",
-            level=14,
+            level=12,
             material_type='Wand',
             tags=[],
             description="""
@@ -52,7 +53,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Spell Wand, 5th",
-            level=17,
+            level=15,
             material_type='Wand',
             tags=[],
             description="""
@@ -254,7 +255,7 @@ def generate_implements():
         MagicItem(
             name="Protective Staff",
             # +2 level since staff is secondary for this effect
-            level=7,
+            level=9,
             material_type='Staff',
             tags=[],
             description="""
@@ -264,23 +265,13 @@ def generate_implements():
         ),
         MagicItem(
             name="Protective Staff, Greater",
-            level=13,
+            level=15,
             material_type='Staff',
             tags=[],
             description="""
                 You gain a +2 \\glossterm<magic bonus> to Armor defense.
             """,
             short_description="Grants +2 Armor defense",
-        ),
-        MagicItem(
-            name="Protective Staff, Supreme",
-            level=19,
-            material_type='Staff',
-            tags=[],
-            description="""
-                You gain a +3 \\glossterm<magic bonus> to Armor defense.
-            """,
-            short_description="Grants +3 Armor defense",
         ),
     ]
 
@@ -320,7 +311,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Staff of Power",
-            level=8,
+            level=4,
             material_type='Staff',
             tags=[],
             description="""
@@ -330,7 +321,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Power, Greater",
-            level=14,
+            level=10,
             material_type='Staff',
             tags=[],
             description="""
@@ -340,20 +331,20 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Power, Supreme",
-            level=20,
+            level=16,
             material_type='Staff',
             tags=[],
             description="""
-                You gain a +6 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<magical> abilities.
+                You gain a +8 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<magical> abilities.
             """,
-            short_description="Grants +6 \\glossterm<magical> power",
+            short_description="Grants +8 \\glossterm<magical> power",
         ),
     ]
 
     implements += [
         MagicItem(
             name="Staff of the Archmagi",
-            level=13,
+            level=10,
             material_type='Staff',
             tags=[],
             description="""
@@ -378,7 +369,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Staff of Precision",
-            level=8,
+            level=7,
             material_type='Staff',
             tags=[],
             description="""
@@ -388,7 +379,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Precision, Greater",
-            level=14,
+            level=13,
             material_type='Staff',
             tags=[],
             description="""
@@ -398,7 +389,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Precision, Supreme",
-            level=20,
+            level=19,
             material_type='Staff',
             tags=[],
             description="""

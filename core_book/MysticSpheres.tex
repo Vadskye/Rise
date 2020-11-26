@@ -50,7 +50,11 @@
         Instead, a wave of magical energy causes a \glossterm{miscast backlash}.
         When a mystic backlash occurs, make an attack against the Mental defense of yourself and all creatures in a 5 foot radius from you.
         Your \glossterm{power} with this ability is equal to your \glossterm{power} with the spell or ritual you tried to use.
-        On a hit, each target takes thaumatic \glossterm{standard damage} \minus1d.
+        % This breaks the normal dice pool patterns.
+        % However, not applying power makes it unlikely that this will be useful for optimized builds.
+        % Since it's hard to add a large number of +1d increments on the fly, it's annoying to play
+        % with a more standard damage progression like (1d6 +1d per rank plus half power).
+        On a hit, each target takes energy damage equal to 1d6 per rank of the spell or ritual (minimum 1d6).
 
         \parhead{Impossible Spells and Rituals} When you try to use a spell or ritual in an impossible way, the ability is \glossterm{miscast} instead.
         This most commonly happens if you attempt to declare an invalid target for a spell.
