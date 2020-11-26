@@ -47,7 +47,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Certain Strike',
         short_description='Make a strike that trades damage for accuracy',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike> with a +2 accuracy bonus.
             You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
@@ -60,7 +60,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Greater Certain Strike',
         short_description='Make a strike that trades damage for more accuracy',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike> with a +4 accuracy bonus.
             You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
@@ -73,7 +73,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Superior Strike',
         short_description='Make a strike with bonuses to accuracy and damage',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike> with a +1 bonus to \\glossterm<accuracy> and a +1d bonus to damage.
         """,
@@ -85,7 +85,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Infallible Blow',
         short_description='short_description',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike> with a +3 bonus to \\glossterm<accuracy>.
         """,
@@ -97,7 +97,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Unstoppable Blow',
         short_description='short_description',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike> with a +3d bonus to damage.
         """,
@@ -109,7 +109,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Seeking Strike',
         short_description='Make a strike that mitigates miss chances',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike>.
             You can reroll any \\glossterm<miss chances>, such as when attacking \\glossterm<invisible> creatures, and take the better result.
@@ -122,7 +122,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Unerring Strike',
         short_description='Make a strike that ignores miss chances',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike>.
             You ignore all miss chance effects with the strike.
@@ -135,14 +135,13 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Counterstrike',
         short_description='Make a strike with bonuses if attacked',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             You can only use this ability during the \\glossterm<action phase>.
             During that phase, you prepare to retaliate against any incoming attacks.
 
             During the \\glossterm<delayed action phase>, make a melee \\glossterm<strike>.
-            If the target of that strike attacked you during the action phase of this round,
-                you gain a +2 bonus to accuracy with the strike.
+            You gain a +2 bonus to \\glossterm<accuracy> with the strike against each creature that attacked you during the action phase of this round.
         """,
         rank=2,
         tags=[],
@@ -152,7 +151,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Counter Sweep',
         short_description='short_description',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             You can only use this ability during the \\glossterm<action phase>.
             During that phase, you prepare to retaliate against any incoming attacks.
@@ -169,7 +168,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Counter Flurry',
         short_description='short_description',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             You can only use this ability during the \\glossterm<action phase>.
             During that phase, you prepare to retaliate against any incoming attacks.
@@ -185,11 +184,11 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Followup Strike',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         short_description='Make a strike with bonuses if you previously missed',
         effect_text="""
             Make a \\glossterm<strike>.
-            If you missed the target with a \\glossterm<strike> last round, you gain a +2 bonus to \\glossterm<accuracy> with the strike.
+            You gain a +2 bonus to \\glossterm<accuracy> with the strike against each target that you missed with a \\glossterm<strike> last round.
         """,
         rank=2,
         tags=[],
@@ -199,7 +198,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Followup Flurry',
         short_description='short_description',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make two \\glossterm<strikes>.
             Your \\glossterm<power> with both strikes is halved.
@@ -213,11 +212,11 @@ def generate_maneuvers():
     # maneuvers.append(Maneuver(
     #     name='Fearsome Blow',
     #     short_description='Make a strike that inflicts fear',
-    #     target="As chosen \\glossterm<strike>",
+    #     target=None,
     #     effect_text="""
     #         Make a \\glossterm<strike>.
     #         You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
-    #         If the target loses hit points from the strike, it is \\glossterm<shaken> by you as a \\glossterm<condition>.
+    #         If a creature loses hit points from the strike, it is \\glossterm<shaken> by you as a \\glossterm<condition>.
     #     """,
     #     rank=1,
     #     tags=['Emotion'],
@@ -227,11 +226,11 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Frightening Blow',
         short_description='Make a strike that inflicts fear',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike>.
             You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
-            If the target loses hit points from the strike, it is \\glossterm<frightened> by you as a \\glossterm<condition>.
+            If a creature loses hit points from the strike, it is \\glossterm<frightened> by you as a \\glossterm<condition>.
         """,
         rank=3,
         tags=['Emotion'],
@@ -241,11 +240,11 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Terrifying Blow',
         short_description='Make a strike that inflicts fear',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike>.
             You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
-            If the target loses hit points from the strike, it is \\glossterm<panicked> by you as a \\glossterm<condition>.
+            If a creature loses hit points from the strike, it is \\glossterm<panicked> by you as a \\glossterm<condition>.
         """,
         rank=6,
         tags=['Emotion'],
@@ -368,10 +367,10 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Leaping Strike',
         short_description='Jump and make a strike',
-        target="One creature or object within your weapon's \\glossterm<reach> during movement (see text)",
+        target=None,
         effect_text="""
             You make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to half your \\glossterm<base speed> (see \\pcref<Leap>).
-            You can make a melee \\glossterm<strike> against the target from any location you occupy during the leap.
+            You can make a melee \\glossterm<strike> from any location you occupy during the leap.
         """,
         rank=3,
         tags=[],
@@ -381,11 +380,11 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Liver Shot',
         short_description='Make a weak strike that nauseates',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
-            Make a \\glossterm<strike> against the target's Fortitude defense using a bludgeoning weapon.
+            Make a \\glossterm<strike> against Fortitude defense using a bludgeoning weapon.
             You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
-            If the target loses hit points from the strike, it is \\glossterm<nauseated> as a \\glossterm<condition>.
+            If a creature loses hit points from the strike, it is \\glossterm<nauseated> as a \\glossterm<condition>.
         """,
         rank=3,
         tags=[],
@@ -395,11 +394,12 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Liver Crush',
         short_description='Make a strike that paralyzes',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
-            Make a \\glossterm<strike> against the target's Fortitude defense using a bludgeoning weapon.
+            Make a \\glossterm<strike> using a bludgeoning weapon.
+            The attack is made against each target's Fortitude defense instead of its Armor defense.
             Your \\glossterm<power> with the strike is halved.
-            If the target loses hit points from the strike, it is \\glossterm<nauseated> as a \\glossterm<condition>.
+            If a creature loses hit points from the strike, it is \\glossterm<nauseated> as a \\glossterm<condition>.
         """,
         rank=6,
         tags=[],
@@ -409,7 +409,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Power Strike',
         short_description='Make a strike that trades accuracy for damage',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike> with a -2 penalty to \\glossterm<accuracy>.
             You gain a +2d bonus to damage with the strike.
@@ -421,7 +421,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Greater Power Strike',
         short_description='Make a strike that trades accuracy for more damage',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike> with a -2 penalty to \\glossterm<accuracy>.
             You gain a +4d bonus to damage with the strike.
@@ -434,10 +434,10 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Pulverizing Smash',
         short_description='Make a strike against Fortitude defense',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike> using a bludgeoning weapon.
-            The attack is made against the target's Fortitude defense instead of its Armor defense.
+            The attack is made against each target's Fortitude defense instead of its Armor defense.
         """,
         tags=[],
         lists=['Primal', 'Martial', 'Wild'],
@@ -446,10 +446,10 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Pulverizing Power Smash',
         short_description='Make a powerful strike against Fortitude defense',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike> using a bludgeoning weapon with a -2 penalty to accuracy.
-            The attack is made against the target's Fortitude defense instead of its Armor defense.
+            The attack is made against each target's Fortitude defense instead of its Armor defense.
             You gain a +2d bonus to damage with the strike.
         """,
         rank=3,
@@ -460,7 +460,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Rapid Flurry',
         short_description='Make two strikes',
-        target="As chosen \\glossterm<strikes> (see text)",
+        target=None,
         effect_text="""
             Make two melee \\glossterm<strikes> with a -2 penalty to \\glossterm<accuracy>.
             You take a -2d penalty to damage with both strikes, and your \\glossterm<power> is \\glossterm<halved>.
@@ -473,7 +473,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Power Flurry',
         short_description='Make two powerful strikes with low accuracy',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make two \\glossterm<strikes> with a -4 penalty to \\glossterm<accuracy>.
         """,
@@ -485,7 +485,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Triple Flurry',
         short_description='Make three strikes',
-        target="As chosen \\glossterm<strikes> (see text)",
+        target=None,
         effect_text="""
             Make three melee \\glossterm<strikes> with a -3 penalty to \\glossterm<accuracy>.
             You take a -2d penalty to damage with all strikes, and your \\glossterm<power> is \\glossterm<halved>.
@@ -513,7 +513,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Reaping Harvest',
         short_description='short_description',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Move up to your movement speed.
             You can make a melee \\glossterm<strike> using a slashing or bludgeoning weapon.
@@ -528,11 +528,11 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Strip the Flesh',
         short_description='Make a strike that is exposes weaknesses',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike> using a slashing weapon.
             You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
-            If the target loses hit points from the strike, it becomes \\glossterm<vulnerable> to slashing damage as a \\glossterm<condition>.
+            If a creature loses hit points from the strike, it becomes \\glossterm<vulnerable> to slashing damage as a \\glossterm<condition>.
         """,
         rank=1,
         tags=[],
@@ -542,11 +542,11 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Fleshripping Slash',
         short_description='Make a strike that exposes more weaknesses',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike> using a slashing weapon.
             You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
-            If the target loses hit points from the strike, it becomes \\glossterm<vulnerable> to \\glossterm<physical damage> as a \\glossterm<condition>.
+            If a creature loses hit points from the strike, it becomes \\glossterm<vulnerable> to \\glossterm<physical damage> as a \\glossterm<condition>.
         """,
         rank=3,
         tags=[],
@@ -556,11 +556,11 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Strip the Armor',
         short_description='Make a strike that strips away resistances',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike> with a +2 bonus to \\glossterm<accuracy>.
             You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
-            If the target resists all damage from the strike, it takes the damage from this strike again.
+            If a creature resists all damage from the strike, it takes the damage from this strike again.
         """,
         rank=2,
         tags=[],
@@ -620,11 +620,11 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Challenging Strike',
         short_description='Make a strike and draw attention',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike>.
             You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
-            If the target takes damage from the strike, it takes a -2 penalty to \\glossterm<accuracy> against creatures other than you as a \\glossterm<condition>.
+            If a creature takes damage from the strike, it takes a -2 penalty to \\glossterm<accuracy> against creatures other than you as a \\glossterm<condition>.
             This condition is removed if another creature applies this condition to the same target.
         """,
         rank=2,
@@ -635,10 +635,10 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Penetrating Strike',
         short_description='Make a strike against Reflex defense',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike> using a piercing weapon.
-            The attack is made against the target's Reflex defense instead of its Armor defense.
+            The attack is made against each target's Reflex defense instead of its Armor defense.
         """,
         tags=[],
         lists=['Martial', 'Wild', 'Trick', 'Esoteric'],
@@ -647,10 +647,10 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Precise Penetrating Strike',
         short_description='Make an accurate strike against Reflex defense',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike> with a +2 bonus to \\glossterm<accuracy> using a piercing weapon.
-            The attack is made against the target's Reflex defense instead of its Armor defense.
+            The attack is made against each target's Reflex defense instead of its Armor defense.
         """,
         rank=5,
         tags=[],
@@ -677,11 +677,11 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Brow Gash',
         short_description="Make a strike that bleeds into the target's eyes",
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike> using a slashing weapon.
             You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
-            If the target loses hit points from the strike, it is \\glossterm<blinded> as a \\glossterm<condition>.
+            If a creature loses hit points from the strike, it is \\glossterm<blinded> as a \\glossterm<condition>.
         """,
         rank=6,
         tags=[],
@@ -691,11 +691,11 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Hamstring',
         short_description='Make a strike that slows',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike> using a slashing weapon.
             You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
-            If the target loses hit points from the strike, it is \\glossterm<decelerated> as a \\glossterm<condition>.
+            If a creature loses hit points from the strike, it is \\glossterm<decelerated> as a \\glossterm<condition>.
         """,
         rank=3,
         tags=[],
@@ -705,10 +705,11 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Hunting Strike',
         short_description='Make a strike and gain an accuracy bonus against the target',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike> against a creature.
-            After making the strike, you gain a +1 bonus to \\glossterm<accuracy> against the target with all attacks.
+            After making the strike, you gain a +1 bonus to \\glossterm<accuracy> against one target of the strike with all attacks.
+            If the strike had multiple targets, you choose which target you gain the bonus against.
             This effect stacks with itself, up to a maximum of a +4 bonus.
             It lasts until you take a \\glossterm<short rest> or use this ability on a different creature.
         """,
@@ -719,11 +720,11 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Stunning Headshot',
         short_description='Make a strike that stuns',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike> using a bludgeoning weapon.
             You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
-            If the target loses hit points from the strike, it is \\glossterm<stunned> as a \\glossterm<condition>.
+            If a creature loses hit points from the strike, it is \\glossterm<stunned> as a \\glossterm<condition>.
         """,
         rank=3,
         tags=['Emotion'],
@@ -733,11 +734,11 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Confusing Headshot',
         short_description='Make a strike that confuses',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike> using a bludgeoning weapon.
             You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
-            If the target loses hit points from the strike, it is \\glossterm<confused> as a \\glossterm<condition>.
+            If a creature loses hit points from the strike, it is \\glossterm<confused> as a \\glossterm<condition>.
         """,
         rank=6,
         tags=['Emotion'],
@@ -764,7 +765,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Distant Shot',
         short_description='Make a long-ranged strike',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a ranged \\glossterm<strike>.
             You reduce your penalties for \\glossterm<range increments> by 2.
@@ -777,11 +778,11 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Deattunement Strike',
         short_description="Make a strike to break a target's \\glossterm<attunement>",
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike>.
             You take a -2d penalty to damage with the strike.
-            If the target loses hit points from the strike, it stops being \\glossterm<attuned> to two effects.
+            If a creature loses hit points from the strike, it stops being \\glossterm<attuned> to two effects.
             It can freely choose which effects it releases its attunement to.
         """,
         rank=2,
@@ -792,11 +793,11 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Spellbreaker Strike',
         short_description="Make a strike to break a strong target's \\glossterm<attunement>",
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike>.
             You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
-            If the target takes damage from the strike, it stops being \\glossterm<attuned> to one effect.
+            If a creature takes damage from the strike, it stops being \\glossterm<attuned> to one effect.
             It can freely choose which effect it releases its attunement to.
         """,
         rank=5,
@@ -807,7 +808,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Spring Attack',
         short_description='Make a strike and continue moving',
-        target="As chosen \\glossterm<strike> (see text)",
+        target=None,
         effect_text="""
             Move up to half your movement speed and make a melee \\glossterm<strike>.
             Your \\glossterm<power> with the strike is halved.
@@ -821,7 +822,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name="Wanderer's Strike",
         short_description='Make a strike and move',
-        target="As chosen \\glossterm<strike> (see text)",
+        target=None,
         effect_text="""
             You can either move up to half your speed or make a \\glossterm<strike>.
             Your \\glossterm<power> with the strike is halved.
@@ -836,10 +837,10 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Shield Slam',
         short_description='Make a dazing strike with a shield',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike> using a shield.
-            If the target loses hit points from the strike, it is \\glossterm<stunned> as a \\glossterm<condition>.
+            If a creature loses hit points from the strike, it is \\glossterm<stunned> as a \\glossterm<condition>.
         """,
         rank=3,
         tags=[],
@@ -849,10 +850,10 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Stunning Fist',
         short_description='Make a sickening strike with an unarmed attack',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a strike using an \\glossterm<unarmed attack>.
-            If the target loses hit points from the strike, it is \\glossterm<stunned> as a \\glossterm<condition>.
+            If a creature loses hit points from the strike, it is \\glossterm<stunned> as a \\glossterm<condition>.
         """,
         rank=3,
         tags=[],
@@ -862,10 +863,10 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Quivering Palm',
         short_description='Make a devastating strike with an unarmed attack',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a strike using an \\glossterm<unarmed attack>.
-            If the target loses hit points from the strike, it loses additional hit points equal to half its maximum hit points.
+            If a creature loses hit points from the strike, it loses additional hit points equal to half its maximum hit points.
         """,
         rank=7,
         tags=[],
@@ -875,11 +876,12 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Feint',
         short_description='Fake an attack to take an opponent off guard',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
-            Make a melee \\glossterm<strike> with a +2 bonus to \\glossterm<accuracy> against the target's Reflex defense.
+            Make a melee \\glossterm<strike> with a +2 bonus to \\glossterm<accuracy>.
+            The attack is made against each target's Reflex defense instead of its Armor defense.
             The strike deals minimum damage, and your \\glossterm<power> is halved.
-            If the target takes damage from the strike, it takes a -2 penalty to Armor defense until the end of the next round.
+            If a creature takes damage from the strike, it takes a -2 penalty to Armor defense until the end of the next round.
         """,
         rank=2,
         tags=[],
@@ -889,7 +891,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Reckless Strike',
         short_description='Sacrifice defenses to make a powerful strike',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a melee \\glossterm<strike>.
             You gain a +1d bonus to damage with the strike.
@@ -903,7 +905,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Reckless Flurry',
         short_description='Sacrifices defenses to make two strike',
-        target="As chosen \\glossterm<strikes> (see text)",
+        target=None,
         effect_text="""
             Make two melee \\glossterm<strikes>.
             You take a -2d penalty to damage with both strikes, and your \\glossterm<power> is \\glossterm<halved>.
@@ -917,10 +919,11 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Knockdown',
         short_description='Knock a foe prone with brute force',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
-            Make a \\glossterm<strike> against the target's Fortitude defense using a bludgeoning weapon.
-            If the target loses hit points from the strike, it falls \\glossterm<prone>.
+            Make a \\glossterm<strike> using a bludgeoning weapon.
+            The attack is made against each target's Fortitude defense instead of its Armor defense.
+            If a creature loses hit points from the strike, it falls \\glossterm<prone>.
         """,
         rank=3,
         tags=[],
@@ -930,7 +933,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Defensive Strike',
         short_description='Make a careful strike without lowering your defenses',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a melee \\glossterm<strike>.
             Your \\glossterm<power> with the strike is halved.
@@ -945,7 +948,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Quickdraw',
         short_description='Rapidly draw a new weapon and attack with it',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             You draw a weapon into a single \\glossterm<free hand> and make a \\glossterm<strike> with the weapon.
         """,
@@ -956,10 +959,10 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Spellbane Strike',
         short_description='Attack vulnerabilities in focusing foes',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a melee \\glossterm<strike>.
-            If the target is using a \\glossterm<Focus> ability during the current phase, you gain a +2 bonus to \\glossterm<accuracy> with the strike.
+            You gain a +2 bonus to \\glossterm<accuracy> with the strike against each creature that is using a \\glossterm<Focus> ability during the current phase.
         """,
         rank=2,
         tags=[],
@@ -969,7 +972,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Spellbane Flurry',
         short_description='Make two strikes that exploit vulnerabilities in focusing foes',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make two melee \\glossterm<strikes>.
             Your \\glossterm<power> with both strikes is halved.
@@ -1019,7 +1022,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Frenzied Strike',
         short_description='Make a melee strike that becomes stronger when repeated',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a melee \\glossterm<strike>.
             % This would be easier to write as +1d up to +3d, but that is very
@@ -1039,9 +1042,9 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Retreating Strike',
         short_description='Make a strike and back away from your target',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
-            Make a melee \\glossterm<strike> and move up to half your movement speed in a straight line away from the target.
+            Make a melee \\glossterm<strike> and move up to half your movement speed in a straight line away from one target of the strike.
         """,
         rank=2,
         tags=[],
@@ -1051,7 +1054,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Barrage',
         short_description='Make rapid ranged strikes while staying in place',
-        target="As chosen \\glossterm<strikes> (see text)",
+        target=None,
         effect_text="""
             Make two ranged \\glossterm<strikes> with a -4 penalty to \\glossterm<accuracy>.
             Your \\glossterm<power> with the both strikes is halved.
@@ -1065,7 +1068,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Point Blank Shot',
         short_description='Make a projectile strike in melee range',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a ranged \\glossterm<strike> using a \\glossterm<projectile> weapon against a creature adjacent to you.
             You are not \\glossterm<defenseless> against that creature during the current phase.
@@ -1092,10 +1095,10 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Deathblow',
         short_description='Make a powerful strike to finish off weak foes',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike> with a +2d bonus to damage.
-            If the target has any \\glossterm<resistance> against the strike, this strike deals no damage.
+            If a target has any \\glossterm<resistance> against the strike, this strike deals no damage to that target.
         """,
         rank=3,
         tags=[],
@@ -1158,7 +1161,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Slipstrike',
         short_description='Make an enthusiastic melee strike and fall prone',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a melee \\glossterm<strike> with a +1d bonus to damage.
             After making the strike, you fall \\glossterm<prone>.
@@ -1187,10 +1190,10 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Injection',
         short_description='Make a strike that excels at injecting poison',
-        target="As chosen \\glossterm<strike>",
+        target=None,
         effect_text="""
             Make a \\glossterm<strike> using a piercing weapon.
-            If the target loses hit points from the strike, you gain a +5 accuracy bonus with injury-based poisons delivered with the strike.
+            If a creature loses hit points from the strike, you gain a +5 accuracy bonus with injury-based poisons delivered with the strike.
         """,
         rank=3,
         tags=[],
@@ -1215,8 +1218,8 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Strangle',
-        target="One creature within your \\glossterm<reach> with a free hand",
         short_description='Grapple a creature by the throat',
+        target="One creature within your \\glossterm<reach>",
         effect_text="""
             % Flipped defense order because it reads weirdly otherwise
             Make an melee attack with a free hand against the target's Fortitude and Reflex defenses.
@@ -1234,7 +1237,7 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Meteor Smash',
-        target="As chosen \\glossterm<strike> (see text)",
+        target=None,
         short_description='Make a strike with extra momentum from movement',
         effect_text="""
             Make a melee \\glossterm<strike> using a bludgeoning or piercing weapon.
@@ -1247,7 +1250,7 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Flash Strike',
-        target="As chosen \\glossterm<strike> (see text)",
+        target=None,
         short_description='short_description',
         effect_text="""
             Move up to your movement speed in a straight line.
