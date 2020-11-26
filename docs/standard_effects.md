@@ -142,7 +142,7 @@ Note: This is duplicated in the Metacaster feat.
   * List: deafened, prone
 * Rank 1
   * Generally give -2 to a category (accuracy/defenses)
-  * List: dazed, dazzled, sickened, slowed
+  * List: chilled, dazed, dazzled, sickened, slowed
   * Special: end of round low damage (remove if vital, DR 10 check to remove)
 * Rank 2
   * Generally give -4 to a category (accuracy/defenses)
