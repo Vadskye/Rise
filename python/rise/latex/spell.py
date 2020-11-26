@@ -87,7 +87,7 @@ class Spell(object):
 
         return f"""
             \\rankline
-            {rank_upgrades}
+            {rank_upgrades.strip()}
         """ if self.scaling else ""
 
     def __str__(self):
