@@ -106,10 +106,10 @@ thaumaturgy=MysticSphere(
             You cannot voluntarily allow spells to affect you while this effect lasts.
             After you absorb three spells in this way, this effect ends.
         """, tags=['Attune (self)']),
-        Spell('Enhance Magic', 1, 'Yourself', """
+        Spell('Enhance Magic', 2, 'Yourself', """
             You can cast this spell as a \\glossterm<minor action>.
 
-            You gain a +2 \\glossterm<magic bonus> to \\glossterm<power>.
+            You gain a +2 \\glossterm<magic bonus> to your \\glossterm<power> with \\glossterm<magical> abilities.
         """, scaling="""
             \\rank<4> The bonus increases to +4.
             \\rank<6> The bonus increases to +8.
