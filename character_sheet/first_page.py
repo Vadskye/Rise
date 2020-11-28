@@ -242,6 +242,18 @@ def ability(ability_number=None):
             {'class': 'active-ability-effect'},
             {'name': 'active_ability{0}_effect'.format(ability_number)},
         ),
+        button(
+            {
+                'class': 'attack-roll',
+                'name': "use_ability",
+                'type': 'roll',
+                'value': (
+                    f"@{{character_name}} uses @{{active_ability{ability_number}_name}}:"
+                    + f" @{{active_ability{ability_number}_effect}}"
+                )
+            },
+            'Use',
+        ),
     ])
 
 def passive_abilities():
@@ -342,11 +354,11 @@ def attack(source):
             {'class': 'attack-dice'},
             {'name': 'attack0_dice'},
         ) if source != 'nondamaging' else '',
-        underlabel('Power', select({'class': 'attack-power'}, [
+        underlabel('Power', select({'class': 'attack-power', 'name': 'attack0_power'}, [
             option({'value': 'full'}, 'Full'),
             option({'value': 'half'}, 'Half'),
             option({'value': 'none'}, 'None'),
-        ])),
+        ])) if source != 'nondamaging' else '',
         labeled_textarea(
             'Effect',
             {'class': 'attack-effect'},

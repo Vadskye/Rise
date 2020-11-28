@@ -462,7 +462,7 @@ def calc_mundane_power():
             [
                 underlabel('1/2 Str', number_input({
                     'disabled': True,
-                    'name': 'magical_power_strength_display',
+                    'name': 'mundane_power_strength_display',
                     'value': '@{strength_power_scaling}',
                 })),
                 plus(),
