@@ -104,7 +104,7 @@ polymorph=MysticSphere(
         # +4 levels for +2d, disintegration is free?
         Spell('Disintegrate', 5, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
-            \\hit The target takes physical damage equal to 4d6 plus your \\glossterm<power>.
+            \\hit The target takes physical damage equal to 4d10 plus your \\glossterm<power>.
             In addition, if the target has no hit points remaining at the end of the current \\glossterm<phase>, it dies.
             Its body is completely disintegrated, leaving behind only a pinch of fine dust.
             Its equipment is unaffected.
