@@ -5,24 +5,42 @@
     \subsection{Other Methods of Attribute Generation}
         Point buy offers the fairest and most customizable system for determining attribute scores, ensuring that players can be almost any character they want to be. However, some groups may wish to determine attribute scores differently. Other options are provided below.
 
-        \subsubsection{Semi-Randomized Point Buy}
+        \subsubsection{Simple Random Point Buy}
             With this method, you have only a small degree of control over your attribute scores, but all characters generated in this way are equally powerful.
             As with the point buy method, all your attribute scores start at 0, and you get 10 points to distribute among your attribute scores.
             However, you do not have full control over how to distribute those points.
 
-            Roll 4d6 for each attribute score, dropping a die of your choice with each roll. First roll for the attribute scores that you care about most, and save the least important attribute scores for last. After rolling for an attribute score, sum results on the three highest dice and consult \trefnp{Semi-Randomized Point Buy Results} and spend the appropriate number of points to yield an attribute score, as indicated by \trefnp{Attribute Score Point Costs}. If you do not have enough points remaining to spend the amount indicated by the die roll, spend as many as you can and move on to the next ability.
+            For each attribute, starting with the attributes you care about most, roll 1d6.
+            You spend that many points on that attribute, ignoring any extra points that can't be spent
+            For example, if you roll a 5, you spend 4 points on the attribute, causing you to start with a 3.
+            If you do not have enough points remaining to spend the amount indicated by the die roll, spend as many as you can and move on to the next attribute.
 
-            If you have points remaining after rolling all of your attribute scores, you may distribute the points freely among your abilities, using the normal point buy rules. You cannot increase any attribute above 3 during this stage.
+            If you have points remaining after rolling all of your attribute scores, you may distribute the points freely among your abilities, using the normal point buy rules.
+            You cannot increase the starting value of any individual attribute by more than 1 during this stage.
+            If any of your attributes start as a 0, you may choose to lower them to gain the normal benefits from having low attributes (see \pcref{Attribute Penalties}).
 
-            After all of your points have been spent, you may swap any two of your attribute scores.
+            To further limit your character creation options, you may choose to randomize the order in which you roll your attributes instead of rolling them in an order of your choice.
+
+        \subsubsection{Smoothed Random Point Buy}
+            This method functions like the Simple Random Point Buy method, except that the resulting attribute values have a smoother distribution, and you can randomly end up with attribute penalties.
+
+            For each attribute, starting with the attributes you care about most, roll 4d6.
+            Then, remove any one of the rolls after seeing the results.
+            Sum the results of the remaining three dice and spend the appropriate number of attribute points as indicated in \trefnp{Smoothed Random Point Buy Results}.
+            If you do not have enough points remaining to spend the amount indicated by the die roll, spend as many as you can and move on to the next ability.
+
+            If you have points remaining after rolling all of your attribute scores, you may distribute the points freely among your abilities, using the normal point buy rules.
+            You cannot increase the starting value of any individual attribute by more than 1 during this stage.
+
+            To further limit your character creation options, you may choose to randomize the order in which you roll your attributes instead of rolling them in an order of your choice.
 
             \begin{dtable}
-                \lcaption{Semi-Randomized Point Buy Results}
+                \lcaption{Smoothed Random Point Buy Results}
                 \begin{dtabularx}{\columnwidth}{X X X}
                     \tb{Roll} & \tb{Base Attribute} & \tb{Point Cost} \tableheaderrule
-                    3         & \minus2             & 0\fn{1} \\
-                    4         & \minus1             & 0\fn{2} \\
-                    5-8       & 0                   & 0       \\
+                    3-4       & \minus2             & 0\fn{1} \\
+                    5-6       & \minus1             & 0\fn{2} \\
+                    7-8       & 0                   & 0       \\
                     9-10      & 1                   & 1       \\
                     11-12     & 2                   & 2       \\
                     13-15     & 3                   & 4       \\
@@ -31,17 +49,6 @@
                 1 You gain one \glossterm{insight point}. \\
                 2 You gain one \glossterm{skill point}. \\
             \end{dtable}
-
-            For characters with more extreme attribute scores, use the following approach, starting with 10 points as normal:
-            \begin{enumerate}
-                \item For each attribute, roll 2d6
-                \item Take the average, rounding down, and subtract 2 from it
-                \item Spend that many points as indicated on \trefnp{Attribute Score Point Costs} until you have no points left.
-            \end{enumerate}
-
-        \subsubsection{Random Point Buy}
-            This method gives you no control over your character whatsoever, while still ensuring that all characters generated are equally powerful.
-            It functions like the semi-randomized point buy method, except that you also randomize the order in which the attribute scores are rolled.
 
         \subsubsection{Classic Hardcore}
 
