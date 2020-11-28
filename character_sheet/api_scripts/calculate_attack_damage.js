@@ -85,7 +85,11 @@ on('change:attribute', (obj, oldObj) => {
     const name = oldObj.name;
     const characterId = oldObj._characterid;
     try {
-      if (name === 'mundane_power') {
+      if (name === 'level') {
+         recalculateRepeatingDamageAttributes(characterId, 'mundane');
+         recalculateRepeatingDamageAttributes(characterId, 'magical');
+      } 
+      else if (name === 'mundane_power') {
          recalculateRepeatingDamageAttributes(characterId, 'mundane');
       } else if (name === 'magical_power') {
          recalculateRepeatingDamageAttributes(characterId, 'magical');
@@ -96,6 +100,16 @@ on('change:attribute', (obj, oldObj) => {
               attackDice: obj.get('current') || '1d2',
               attackName: oldObj.name.replace('_attack0_dice', '_attack0_name'),
               attackPower: powerAttr.get('current'),
+              characterId,
+              source,
+          });
+      } else if (name.startsWith('repeating_') && name.endsWith('_attack0_power')) {
+          const source = name.includes('mundane') ? 'mundane' : 'magical';
+          const diceAttr = getAttribute(characterId, oldObj.name.replace('_attack0_power', '_attack0_dice'), true);
+          setDamageForAttack({
+              attackDice: diceAttr.get('current') || '1d2',
+              attackName: oldObj.name.replace('_attack0_power', '_attack0_name'),
+              attackPower: obj.get('current'),
               characterId,
               source,
           });

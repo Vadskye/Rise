@@ -424,7 +424,7 @@ def magical_power():
         f"""
             var willpower_power_scaling = Math.floor(willpower / 2);
             setAttrs({{
-                magical_power: willpower + {sum_variables(misc)},
+                magical_power: willpower_power_scaling + {sum_variables(misc)},
                 willpower_power_scaling,
             }});
         """
@@ -437,7 +437,7 @@ def mundane_power():
         f"""
             var strength_power_scaling = Math.floor(strength / 2);
             setAttrs({{
-                mundane_power: strength + {sum_variables(misc)},
+                mundane_power: strength_power_scaling + {sum_variables(misc)},
                 strength_power_scaling,
             }});
         """
