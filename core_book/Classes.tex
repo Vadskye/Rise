@@ -567,14 +567,17 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Clr}[1]{Restoration} You can use the \textit{restoration} ability as a standard action.
         \begin{freeability}{Restoration}[\glossterm{Magical}]
-            \target{One living \glossterm{ally} within \glossterm{reach}}
-            The target regains \glossterm{hit points} equal to 1d6 plus your \glossterm{power}.
+            \target{Yourself or one living \glossterm{ally} within \glossterm{reach}}
+            The target regains 1d6 \glossterm{hit points}.
+            If the target is a creature other than yourself, they also regain hit points equal to your \glossterm{power}.
 
             \rankline
-            The healing increases by \plus1d for each rank beyond 1.
-            \rank{3} The healing increases by an additional \plus1d.
-            \rank{5} The healing increases by an additional \plus1d.
-            \rank{7} The healing increases by an additional \plus1d.
+            \rank{2} The healing increases to 1d8.
+            \rank{3} The healing increases to 2d6.
+            \rank{4} The healing increases to 2d8.
+            \rank{5} The healing increases to 4d6.
+            \rank{6} The healing increases to 4d8.
+            \rank{7} The healing increases to 5d10.
         \end{freeability}
 
         \cf{Clr}[2]{Healer's Grace} You gain a \plus1 bonus to all defenses.
@@ -2399,10 +2402,12 @@ This choice determines a great deal about your character's abilities.
             The target regains \glossterm{hit points} equal to 1d6 plus half your \glossterm{power}.
 
             \rankline
-            The healing increases by \plus1d for each rank beyond 1.
-            \rank{3} The healing increases by an additional \plus1d.
-            \rank{5} The healing increases by an additional \plus1d.
-            \rank{7} The healing increases by an additional \plus1d.
+            \rank{2} The healing increases to 1d8.
+            \rank{3} The healing increases to 2d6.
+            \rank{4} The healing increases to 2d8.
+            \rank{5} The healing increases to 4d6.
+            \rank{6} The healing increases to 4d8.
+            \rank{7} The healing increases to 5d10.
         \end{freeability}
 
         \cf{Pal}[2]{Stalwart Resilience} You gain a bonus equal to your rank in this archetype to your \glossterm{resistances} against both \glossterm{physical damage} and \glossterm{energy damage} (see \pcref{Resistances}).
@@ -3640,10 +3645,14 @@ This choice determines a great deal about your character's abilities.
             \hit The target takes fire damage equal to 1d10 plus your \glossterm{power}.
 
             \rankline
-            The damage increases by \plus1d for each rank beyond 1.
-            \rank{3} On a \glossterm{glancing blow}, the target takes half damage.
-            \rank{5} The damage increases by an additional \plus1d.
-            \rank{7} The damage increases by an additional \plus1d.
+            \rank{2} The damage increases to 2d6.
+            \rank{3} The damage increases to 2d8.
+                In addition, if you miss by 2 or less, the target takes half damage.
+                This is called a \glossterm{glancing blow}.
+            \rank{4} The damage increases to 2d10.
+            \rank{5} The damage increases to 4d8.
+            \rank{6} The damage increases to 4d10.
+            \rank{7} The damage increases to 6d10.
         \end{freeability}
 
         \cf{War}[2]{Fiendish Resistance} You gain a bonus equal to twice your rank in this archetype to your \glossterm{resistance} against \glossterm{energy damage}.
