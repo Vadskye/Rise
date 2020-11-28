@@ -137,7 +137,7 @@ vivimancy=MysticSphere(
             Unlike normal, this hit point loss is rounded up instead of down.
             \\glance As above, except that that the target takes half damage.
         """, tags=[]),
-        Spell('Draining Miasma', 1, 'Living \\glossterm<enemies> in a \\areamed radius within \\rngmed range', """
+        Spell('Draining Miasma', 1, 'Living \\glossterm<enemies> in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target is \\glossterm<sickened> until the end of the next round.
             \\crit Each target is \\glossterm<sickened> as a \\glossterm<condition>.
