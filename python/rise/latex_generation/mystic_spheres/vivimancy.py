@@ -51,7 +51,7 @@ vivimancy=MysticSphere(
             \\rank<4> The minimum \\glossterm<vital roll> you can mitigate decreases to -1.
             \\rank<6> The minimum \\glossterm<vital roll> you can mitigate decreases to -2.
         """, tags=[]),
-        Spell('Fortify Life', 1, 'Yourself or', """
+        Spell('Fortify Life', 1, 'Yourself', """
             You can cast this spell as a \\glossterm<minor action>.
 
             The target gains a +2 \\glossterm<magic bonus> to Fortitude defense.
