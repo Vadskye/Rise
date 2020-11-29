@@ -77,7 +77,9 @@ def sanity_check(mystic_spheres):
     def spell_count(sphere_name):
         return sum(sphere_spells_by_rank[sphere_name].values())
 
-    for sphere_name in sorted(sphere_spells_by_rank.keys(), key=spell_count):
+    sphere_names = sorted(sphere_spells_by_rank.keys(), key=spell_count)
+    sphere_names.reverse()
+    for sphere_name in sphere_names:
         print(f"{sphere_name}: {spell_count(sphere_name)}")
         rank_texts = [f"{sphere_spells_by_rank[sphere_name].get(rank, 0)}" for rank in [1, 2, 3, 4, 5, 6, 7, 8]]
         print(f"  {' | '.join(rank_texts)}")
