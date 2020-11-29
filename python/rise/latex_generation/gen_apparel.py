@@ -1104,8 +1104,8 @@ def generate_worn():
         ),
     ]
 
-    [
-        apparel.append(MagicItem(
+    apparel += [
+        MagicItem(
             name="Circlet of Persuasion",
             level=2,
             material_type='Circlet',
@@ -1113,8 +1113,8 @@ def generate_worn():
                 You gain a +2 \\glossterm<magic bonus> to the Persuasion skill (see \\pcref<Persuasion>).
             """,
             short_description="Grants +2 Persuasion",
-        )),
-        apparel.append(MagicItem(
+        ),
+        MagicItem(
             name="Circlet of Persuasion, Greater",
             level=8,
             material_type='Circlet',
@@ -1122,8 +1122,8 @@ def generate_worn():
                 You gain a +3 \\glossterm<magic bonus> to the Persuasion skill (see \\pcref<Persuasion>).
             """,
             short_description="Grants +3 Persuasion",
-        )),
-        apparel.append(MagicItem(
+        ),
+        MagicItem(
             name="Circlet of Persuasion, Supreme",
             level=14,
             material_type='Circlet',
@@ -1131,7 +1131,7 @@ def generate_worn():
                 You gain a +5 \\glossterm<magic bonus> to the Persuasion skill (see \\pcref<Persuasion>).
             """,
             short_description="Grants +5 Persuasion",
-        )),
+        ),
     ]
 
     apparel.append(MagicItem(
@@ -1156,8 +1156,8 @@ def generate_worn():
         short_description="Allows breathing in any environment",
     ))
 
-    [
-        apparel.append(MagicItem(
+    apparel += [
+        MagicItem(
             name="Crown of Flame",
             level=10,
             material_type='Crown',
@@ -1170,8 +1170,8 @@ def generate_worn():
                     gain a +8 bonus to their \\glossterm<resistance> against cold and fire damage.
             """,
             short_description="Grants nearby alies +8 cold and fire resistance",
-        ))
-        apparel.append(MagicItem(
+        ),
+        MagicItem(
             name="Crown of Flame, Greater",
             level=16,
             material_type='Crown',
@@ -1184,8 +1184,8 @@ def generate_worn():
                     gain a +16 bonus to their \\glossterm<resistance> against fire damage.
             """,
             short_description="Grants nearby alies +16 cold and fire resistance",
-        ))
-    ],
+        )
+    ]
 
     apparel.append(MagicItem(
         name="Crown of Lightning",
@@ -1411,8 +1411,8 @@ def generate_worn():
         short_description="Grants limited flight",
     ))
 
-    [
-        apparel.append(MagicItem(
+    apparel += [
+        MagicItem(
             name="Boots of Elvenkind",
             level=2,
             material_type='Boots',
@@ -1420,8 +1420,8 @@ def generate_worn():
                 You gain a +2 \\glossterm<magic bonus> to the Stealth skill (see \\pcref<Stealth>).
             """,
             short_description="Grants +2 Stealth",
-        )),
-        apparel.append(MagicItem(
+        ),
+        MagicItem(
             name="Boots of Elvenkind, Greater",
             level=8,
             material_type='Boots',
@@ -1429,8 +1429,8 @@ def generate_worn():
                 You gain a +3 \\glossterm<magic bonus> to the Stealth skill (see \\pcref<Stealth>).
             """,
             short_description="Grants +3 Stealth",
-        )),
-        apparel.append(MagicItem(
+        ),
+        MagicItem(
             name="Boots of Elvenkind, Supreme",
             level=14,
             material_type='Boots',
@@ -1438,8 +1438,8 @@ def generate_worn():
                 You gain a +4 \\glossterm<magic bonus> to the Stealth skill (see \\pcref<Stealth>).
             """,
             short_description="Grants +4 Stealth",
-        )),
-    ],
+        ),
+    ]
 
     # Rings
 
