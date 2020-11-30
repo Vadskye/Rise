@@ -950,7 +950,8 @@ def generate_maneuvers():
         short_description='Rapidly draw a new weapon and attack with it',
         target=None,
         effect_text="""
-            You draw a weapon into a single \\glossterm<free hand> and make a \\glossterm<strike> with the weapon.
+            You draw one or two weapons into your \\glossterm<free hands>.
+            Then, you can make a \\glossterm<strike> with any weapon you drew this way.
         """,
         tags=[],
         lists=['Esoteric', 'Martial', 'Trick', 'Primal', 'Wild'],
