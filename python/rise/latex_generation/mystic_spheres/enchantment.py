@@ -20,9 +20,10 @@ enchantment=MysticSphere(
         """, tags=['Emotion', 'Sustain (free)']),
         Effects('Repeat', 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
+            If the target is currently repeating its actions from this effect or a similar effect, this attack automatically fails.
             \\hit During the next round, the target must repeat all actions that it took this round.
             It can choose different targets or otherwise make different decisions about its action, but the action must be the same.
-            If it is unable to take the same action, it cannot is unable to take an action of that type.
+            If it is unable to take the same action, it unable to take any action of that action type.
             For example, if a creature moved during the round that you cast this spell and was \\glossterm<immobilized> or knocked \\glossterm<prone>, it cannot move at all during the following round.
         """, scaling="accuracy", tags=['Compulsion']),
     ],
