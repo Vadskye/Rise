@@ -1059,45 +1059,50 @@ def generate_worn():
             This does not improve your ability to throw items designed to be thrown, such as darts.
         """,
         short_description="Allows throwing any item accurately",
-    ))
+    ))\
 
     # Head
 
     apparel += [
+        # close range, +1d = rank 2 spell, so this is priced as rank 3
+        # This could be med range +0d, but that's weird as a legacy item choice
         MagicItem(
             name="Circlet of Blasting",
-            level=4,
+            level=7,
             material_type='Circlet',
             tags=[],
             description="""
                 As a standard action, you can activate this circlet.
-                If you do, make an attack vs. Armor against a creature or object within \\rngmed range.
-                \\hit The target takes 2d6+2 fire damage.
+                If you do, make an attack vs. Armor against a creature or object within \\rngclose range.
+                \\hit The target takes 2d10+3 fire damage.
+                \\glance As above, except that that the target takes half damage.
             """,
             short_description="Can blast foe with fire",
         ),
+        # close range, +2d = rank 4 spell, so this is priced as rank 5
         MagicItem(
             name="Circlet of Blasting, Greater",
-            level=10,
+            level=13,
             material_type='Circlet',
             tags=[],
             description="""
                 As a standard action, you can activate this circlet.
-                If you do, make an attack vs. Armor against a creature or object within \\rngmed range.
-                \\hit The target takes 4d6+5 fire damage.
+                If you do, make an attack vs. Armor against a creature or object within \\rngclose range.
+                \\hit The target takes 4d10+6 fire damage.
                 \\glance As above, except that that the target takes half damage.
             """,
             short_description="Can blast foe with intense fire",
         ),
+        # close range, +3d = rank 6 spell, so this is priced as rank 7
         MagicItem(
             name="Circlet of Blasting, Supreme",
-            level=16,
+            level=19,
             material_type='Circlet',
             tags=[],
             description="""
                 As a standard action, you can activate this circlet.
                 If you do, make an attack vs. Armor against a creature or object within \\rngmed range.
-                \\hit The target takes 5d10+8 fire damage.
+                \\hit The target takes 7d10+9 fire damage.
                 \\glance As above, except that that the target takes half damage.
             """,
             short_description="Can blast foe with supremely intense fire",
