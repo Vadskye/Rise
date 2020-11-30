@@ -19,7 +19,7 @@ def generate_weapons():
                 As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with concussive force.
                 Damage dealt by that strike is sonic damage in addition to its normal damage types.
             """,
-            short_description="Can deal sonic damage and daze",
+            short_description="Can deal sonic damage",
         ),
         MagicItem(
             name="Concussive, Greater",
