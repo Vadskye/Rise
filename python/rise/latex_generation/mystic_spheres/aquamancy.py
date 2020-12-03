@@ -263,7 +263,7 @@ aquamancy=MysticSphere(
         Spell('Water Breathing', 3, 'One ritual participant', """
             The target can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
         """, tags=['Attune (ritual)'], ritual_time='one minute'),
-        Effects('Detect Water', 1, None, """
+        Spell('Detect Water', 1, None, """
             You learn the approximate distance and direction to any bodies of water within \\rnglong \\glossterm<range> of you.
             Since this is a \\glossterm<Detection> ability, its range can penetrate some solid objects (see \\pcref<Detection>).
             This spell can detect bodies of water with a minimum size of Fine.
