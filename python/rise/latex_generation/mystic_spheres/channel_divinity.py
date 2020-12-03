@@ -93,14 +93,13 @@ channel_divinity=MysticSphere(
             \\hit Each target takes energy damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=[]),
-        Spell('Mantle of Faith', 1, 'Yourself', """
+        Spell('Mantle of Faith', 2, 'Yourself', """
             You can cast this spell as a \\glossterm<minor action>.
 
             You gain a +2 \\glossterm<magic bonus> to your \\glossterm<resistances> to both \\glossterm<physical damage> and \\glossterm<energy damage>.
         """, scaling="""
-            \\rank<3> The bonus increases to +4.
-            \\rank<5> The bonus increases to +8.
-            \\rank<7> The bonus increases to +16.
+            \\rank<4> The bonus increases to +4.
+            \\rank<6> The bonus increases to +8.
         """, tags=['Attune (self)']),
         Spell('Divine Might', 4, 'Yourself', """
             You can cast this spell as a \\glossterm<minor action>.
@@ -138,13 +137,14 @@ channel_divinity=MysticSphere(
             \\rank<4> You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with divine spells.
             \\rank<6> You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with divine spells.
         """, tags=['Attune (self)']),
-        Spell('Divine Favor', 2, 'Yourself', """
+        Spell('Divine Favor', 1, 'Yourself', """
             You can cast this spell as a \\glossterm<minor action>.
 
             You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with all attacks.
         """, scaling="""
-            \\rank<4> You also gain a +2 \\glossterm<magic bonus> to Mental defense.
-            \\rank<6> The bonus to \\glossterm<accuracy> increases to +2.
+            \\rank<3> You also gain a +2 \\glossterm<magic bonus> to Mental defense.
+            \\rank<5> The bonus to \\glossterm<accuracy> increases to +2.
+            \\rank<7> The bonus to \\glossterm<accuracy> increases to +3.
         """, tags=['Attune (self)']),
         Spell('Divine Power', 2, 'Yourself', """
             You can cast this spell as a \\glossterm<minor action>.

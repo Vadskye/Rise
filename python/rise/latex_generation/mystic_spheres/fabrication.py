@@ -26,13 +26,14 @@ fabrication=MysticSphere(
     ],
     lists=['Arcane', 'Pact'],
     spells=[
-        Spell('Shieldbearer', 2, 'Yourself', """
+        Spell('Shieldbearer', 1, 'Yourself', """
             You can cast this spell as a \\glossterm<minor action>.
 
             You gain a +1 \\glossterm<magic bonus> to Armor defense.
         """, scaling="""
-            \\rank<4> You are not considered \\glossterm<defenseless> as long as you are not \\glossterm<unaware>, even if you are not wielding a weapon or shield.
-            \\rank<6> The bonus increases to +2.
+            \\rank<3> You are not considered \\glossterm<defenseless> as long as you are not \\glossterm<unaware>, even if you are not wielding a weapon or shield.
+            \\rank<5> The bonus increases to +2.
+            \\rank<7> The bonus increases to +3.
         """, tags=['Attune (self)', 'Manifestation']),
         Spell('Mystic Arrow', 1, 'One creature or object within \\rngmed range', """
             Make an attack vs. Armor against the target.
@@ -95,7 +96,7 @@ fabrication=MysticSphere(
         """, scaling="""
             \\rank<3> You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with \\glossterm<strikes> using the weapon.
             \\rank<5> You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using the weapon.
-            \\rank<7> The bonus to accuracy increases to +2.
+            \\rank<7> The bonus to accuracy increases to +2, and the bonus to power increases to +8.
         """, tags=['Manifestation']),
         Spell('Forge', 1, 'One unoccupied square within \\rngclose range', """
             Choose a type of body armor, weapon, or shield that you are proficient with.
@@ -106,10 +107,11 @@ fabrication=MysticSphere(
             It is sized appropriately for you, up to a maximum of a Medium size item.
         """, scaling="""
             \\rank<3> You can also create heavy armor.
-            \\rank<5> The item created is magically enhanced.
-                A weapon grants a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with \\glossterm<mundane> abilities,
+            In addition, the item created is magically enhanced.
+                A weapon grants a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities,
                     and armor grants a +1 \\glossterm<magic bonus> to Armor defense.
-            \\rank<7> You can cast this spell with the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Attune> (self) tag.
+            \\rank<5> The magic bonus for a weapon increases to +4, and the magic bonus for armor increases to +2.
+            \\rank<7> The magic bonus for a weapon increases to +8, and the magic bonus for armor increases to +3.
         """, tags=['Attune (self)']),
         # +2 levels for fire + bludgeoning, which breaks resistances
         # +1 level for meteor path

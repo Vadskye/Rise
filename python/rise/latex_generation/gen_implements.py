@@ -344,7 +344,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Staff of the Archmagi",
-            level=10,
+            level=7,
             material_type='Staff',
             tags=[],
             description="""
@@ -355,7 +355,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of the Archmagi, Greater",
-            level=19,
+            level=16,
             material_type='Staff',
             tags=[],
             description="""
@@ -369,7 +369,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Staff of Precision",
-            level=7,
+            level=4,
             material_type='Staff',
             tags=[],
             description="""
@@ -379,7 +379,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Precision, Greater",
-            level=13,
+            level=10,
             material_type='Staff',
             tags=[],
             description="""
@@ -389,7 +389,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Precision, Supreme",
-            level=19,
+            level=16,
             material_type='Staff',
             tags=[],
             description="""

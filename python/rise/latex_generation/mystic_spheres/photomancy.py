@@ -104,15 +104,16 @@ photomancy=MysticSphere(
             \\hit Each target is \\glossterm<stunned> until the end of the next round.
             \\crit Each target is \\glossterm<stunned> as a \\glossterm<condition>.
         """, scaling="accuracy", tags=['Compulsion', 'Sensation', 'Visual']),
-        Spell('Blur', 2, 'Yourself', """
+        Spell('Blur', 1, 'Yourself', """
             You can cast this spell as a \\glossterm<minor action>.
 
             The target's physical outline is distorted so it appears blurred, shifting, and wavering.
             It gains a +1 \\glossterm<magic bonus> to Armor defense and the Stealth skill.
             This effect provides no defensive benefit against creatures immune to \\glossterm<Visual> abilities.
         """, scaling="""
-            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
-            \\rank<6> The bonus increases to +2.
+            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<5> The bonus increases to +2.
+            \\rank<7> The bonus increases to +3.
         """, tags=['Attune (target)', 'Sensation', 'Visual']),
         Spell('Disguise Image', 3, 'Yourself', """
             You make a Disguise check to alter the target's appearance (see \\pcref<Disguise Creature>).

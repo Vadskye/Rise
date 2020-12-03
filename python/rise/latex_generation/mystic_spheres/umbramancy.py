@@ -70,13 +70,14 @@ umbramancy=MysticSphere(
             % -1d to compensate for +2a
             \\hit The target takes cold damage equal to 1d8 plus your \\glossterm<power>.
         """, scaling="damage", tags=[]),
-        Spell('Shadow Mantle', 2, 'Yourself', """
+        Spell('Shadow Mantle', 1, 'Yourself', """
             The target's physical form becomes blurred and shifts in and out of existence.
             This is not a mere trick of the light, but an alteration of reality to make its existence more ambiguous.
             The target gains a +1 \\glossterm<magic bonus> to Armor defense and the Stealth skill.
         """, scaling="""
-            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
-            \\rank<6> The bonus increases to +2.
+            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<5> The bonus increases to +2.
+            \\rank<7> The bonus increases to +3.
         """, tags=['Attune (target)']),
         Spell('Conceal Trail', 2, 'Yourself and up to five \\glossterm<allies>', """
             At the end of each round, the footprints, scent, and other tracks left by each target during that round are magically concealed.

@@ -90,11 +90,12 @@ biomancy=MysticSphere(
             \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The bonus increases to +20 feet.
         """, tags=['Attune (target)']),
-        Spell('Enhanced Muscles', 3, 'Yourself', """
+        Spell('Enhanced Muscles', 2, 'Yourself', """
             You gain a +2 \\glossterm<magic bonus> to Strength-based checks.
+            In addition, you gain a +2 \\glossterm<magic bonus> to Strength for the purpose of determining your \\glossterm<carrying capacity>.
         """, scaling="""
-            \\rank<5> The bonus increases to +3.
-            \\rank<7> The bonus increases to +4.
+            \\rank<4> The bonus increases to +3.
+            \\rank<6> The bonus increases to +4.
         """, tags=['Attune (self)']),
         Spell('Longshot', 1, 'Yourself', """
             The target reduces its penalties for \\glossterm<range increments> by 1.

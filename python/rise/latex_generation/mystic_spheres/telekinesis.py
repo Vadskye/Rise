@@ -143,14 +143,15 @@ telekinesis=MysticSphere(
             \\rank<5> The range increases to \\rnglong.
             \\rank<7> The range increases to \\rngext.
         """, tags=[]),
-        Spell('Reactive Deflection', 2, 'Yourself', """
+        Spell('Reactive Deflection', 1, 'Yourself', """
             You can cast this spell as a \\glossterm<minor action>.
 
             You gain a +1 \\glossterm<magic bonus> to Armor defense.
             In addition, you gain a +2 bonus to defenses against \\glossterm<mundane> ranged attacks from weapons or projectiles that are Small or smaller.
         """, scaling="""
-            \\rank<4> The bonus against ranged attacks increases to +4.
-            \\rank<6> The bonus to Armor defense increases to +2.
+            \\rank<3> The bonus against ranged attacks increases to +4.
+            \\rank<5> The bonus to Armor defense increases to +2.
+            \\rank<7> The bonus to Armor defense increases to +3.
         """, tags=['Attune (self)']),
     ],
     category='debuff, combat',

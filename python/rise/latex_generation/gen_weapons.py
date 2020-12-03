@@ -323,7 +323,7 @@ def generate_weapons():
 
     weapons.append(MagicItem(
         name="Fixating",
-        level=15,
+        level=12,
         material_type='Weapon',
         description="""
             When you make a \\glossterm<strike> with this weapon, you gain a +1 bonus to accuracy against one target of the strike with all future attacks.
@@ -438,7 +438,7 @@ def generate_weapons():
     weapons += [
         MagicItem(
             name="Surestrike",
-            level=7,
+            level=4,
             material_type='Weapon',
             tags=[],
             description="""
@@ -448,7 +448,7 @@ def generate_weapons():
         ),
         MagicItem(
             name="Surestrike, Greater",
-            level=13,
+            level=10,
             material_type='Weapon',
             tags=[],
             description="""
@@ -458,7 +458,7 @@ def generate_weapons():
         ),
         MagicItem(
             name="Surestrike, Supreme",
-            level=19,
+            level=16,
             material_type='Weapon',
             tags=[],
             description="""

@@ -208,13 +208,14 @@ barrier=MysticSphere(
         """, scaling="""
             \\rank<7> You may attune to this spell any number of times, choosing a different subtype of energy damage each time.
         """, tags=['Attune (self)']),
-        Spell('Deflective Shield', 2, 'Yourself', """
+        Spell('Deflective Shield', 1, 'Yourself', """
             You can cast this spell as a \\glossterm<minor action>.
 
             The target gains a +1 \\glossterm<magic bonus> to Armor defense and Reflex defense.
         """, scaling="""
-            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
-            \\rank<6> The bonus increases to +2.
+            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<5> The bonus increases to +2.
+            \\rank<7> The bonus increases to +3.
         """, tags=['Attune (target)']),
         Spell('Antilife Shell', 6, '\\glossterm<Enemies> that enter the area (see text)', """
             This spell creates a repulsive field in a \\areamed radius \\glossterm<zone> from your location.

@@ -25,14 +25,6 @@ aeromancy = MysticSphere(
             \\rank<5> You can change the wind speed by up to 20 miles per hour.
             \\rank<7> The area increases to an \\areaext radius \\glossterm<emanation>.
         """, tags=['Sustain (free)']),
-        Effects('Detect Air', None, """
-            You learn the approximate distance and direction to any air within \\rnglong \\glossterm<range> of you.
-            This spell can detect air pockets with a minimum size of Fine.
-        """, scaling="""
-            \\rank<3> The range increases to \\rngext.
-            \\rank<5> The range increases to 2,000 feet.
-            \\rank<7> The range increases to 5,000 feet.
-        """, tags=['Detection']),
         Effects('Soften Landing', 'Yourself or an \\glossterm<ally> within \\rnglong range', """
             Until the end of the round, the target treats all falls as if they were 20 feet shorter for the purpose of determining \\glossterm<falling damage>.
         """, scaling="""
@@ -57,15 +49,16 @@ aeromancy = MysticSphere(
             \\rank<5> The distance increases to 300 feet.
             \\rank<7> The distance increases to 500 feet.
         """, tags=[]),
-        Spell('Wind Screen', 2, 'Yourself', """
+        Spell('Wind Screen', 1, 'Yourself', """
             You can cast this spell as a \\glossterm<minor action>.
 
             You gain a +1 \\glossterm<magic bonus> to Armor defense.
             In addition, you gain a +2 bonus to defenses against \\glossterm<mundane> ranged attacks from weapons or projectiles that are Small or smaller.
             Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.
         """, scaling="""
-            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
-            \\rank<6> The bonus to Armor defense increases to +2.
+            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<5> The bonus to Armor defense increases to +2.
+            \\rank<7> The bonus to Armor defense increases to +3.
         """, tags=['Attune (target)']),
         Spell('Windstrike', 1, 'One creature or object within \\rngmed range', """
             Make an attack vs. Armor against the target.
@@ -215,6 +208,17 @@ aeromancy = MysticSphere(
             The target can breathe clear, clean air regardless of its surroundings.
             This can allow it to breathe underwater and avoid air-based poisons.
         """, tags=['Attune (target)'], ritual_time='one minute'),
+        Spell('Detect Air', 1, None, """
+            You learn the approximate distance and direction to any air within \\rnglong \\glossterm<range> of you.
+            Since this is a \\glossterm<Detection> ability, its range can penetrate some solid objects (see \\pcref<Detection>).
+            This ritual can detect air pockets with a minimum size of Fine.
+        """, tags=['Detection'], ritual_time='one minute'),
+        Spell('Greater Detect Air', 3, None, """
+            This ritual functions like the \\spell<detect air> ritual, except that the range increases to \\rngext.
+        """, tags=['Detection'], ritual_time='one minute'),
+        Spell('Supreme Detect Air', 5, None, """
+            This ritual functions like the \\spell<detect air> ritual, except that the range increases to 2,000 feet.
+        """, tags=['Detection'], ritual_time='one minute'),
     ],
     category='buff, defense',
 )

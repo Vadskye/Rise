@@ -106,13 +106,14 @@ thaumaturgy=MysticSphere(
             You cannot voluntarily allow spells to affect you while this effect lasts.
             After you absorb three spells in this way, this effect ends.
         """, tags=['Attune (self)']),
-        Spell('Enhance Magic', 2, 'Yourself', """
+        Spell('Enhance Magic', 1, 'Yourself', """
             You can cast this spell as a \\glossterm<minor action>.
 
             You gain a +2 \\glossterm<magic bonus> to your \\glossterm<power> with \\glossterm<magical> abilities.
         """, scaling="""
-            \\rank<4> The bonus increases to +4.
-            \\rank<6> The bonus increases to +8.
+            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<5> The bonus increases to +4.
+            \\rank<7> The bonus increases to +8.
         """, tags=['Attune (self)']),
         # Is this worth the complexity it adds to the system?
         Spell('Antimagic Field', 7, 'Special', """
@@ -190,16 +191,16 @@ thaumaturgy=MysticSphere(
             \\rank<6> The area increases to a \\arealarge radius.
         """, tags=['Sustain (minor)']),
         Spell('Cryptic Spells', 2, 'Yourself', """
-            Whenever the target casts a spell, they may choose a different spell they know.
-            If they do, the visual effects and magical aura of the spell they are casting change to match their chosen spell.
+            Whenever you cast a spell, you may choose a different spell you know.
+            If you do, the visual effects and magical aura of the spell they are casting change to match your chosen spell.
             This affects inspection of the spell itself by any means, such as with the Spellsense skill (see \\pcref<Spellsense>).
             However, it does not alter the mechanical effects of the spell in any way.
 
             An observer can make a Spellsense check with a \\glossterm<difficulty rating> of 15 \\add your magical \\glossterm<power> to identify the spell's true nature.
             If the spell's effects depend on visual components, the spell may fail to work if the target alters the spell's visuals too much.
         """, scaling="""
-            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
-            \\rank<6> The target also gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with spells.
+            \\rank<4> You also gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with spells.
+            \\rank<6> The accuracy bonus increases to +2.
         """, tags=['Attune (target)']),
     ],
     rituals=[
