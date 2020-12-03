@@ -50,7 +50,7 @@ def generate_maneuvers():
         target=None,
         effect_text="""
             Make a \\glossterm<strike> with a +2 accuracy bonus.
-            You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
+            You take a -2d penalty to damage with the strike.
         """,
         rank=1,
         tags=[],
@@ -63,7 +63,7 @@ def generate_maneuvers():
         target=None,
         effect_text="""
             Make a \\glossterm<strike> with a +4 accuracy bonus.
-            You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
+            You take a -2d penalty to damage with the strike.
         """,
         rank=5,
         tags=[],
@@ -209,19 +209,19 @@ def generate_maneuvers():
         lists=['Esoteric', 'Martial'],
     ))
 
-    # maneuvers.append(Maneuver(
-    #     name='Fearsome Blow',
-    #     short_description='Make a strike that inflicts fear',
-    #     target=None,
-    #     effect_text="""
-    #         Make a \\glossterm<strike>.
-    #         You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
-    #         If a creature loses hit points from the strike, it is \\glossterm<shaken> by you as a \\glossterm<condition>.
-    #     """,
-    #     rank=1,
-    #     tags=['Emotion'],
-    #     lists=['Primal', 'Martial', 'Trick', 'Esoteric'],
-    # ))
+    maneuvers.append(Maneuver(
+        name='Fearsome Blow',
+        short_description='Make a strike that inflicts fear',
+        target=None,
+        effect_text="""
+            Make a \\glossterm<strike>.
+            You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
+            If a creature loses hit points from the strike, it is \\glossterm<shaken> by you as a \\glossterm<condition>.
+        """,
+        rank=1,
+        tags=['Emotion'],
+        lists=['Primal', 'Martial', 'Trick', 'Esoteric'],
+    ))
 
     maneuvers.append(Maneuver(
         name='Frightening Blow',
@@ -275,6 +275,7 @@ def generate_maneuvers():
         effect_text="""
             Make an attack vs. Mental against each target.
             \\hit Each target that has no remaining \\glossterm<resistance> to sonic damage is \\glossterm<shaken> by you as a \\glossterm<condition>.
+            \\crit Each target that has no remaining \\glossterm<resistance> to sonic damage is \\glossterm<frightened> by you as a \\glossterm<condition>.
 
             \\rankline
             You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 2.
@@ -292,6 +293,7 @@ def generate_maneuvers():
             Make an attack vs. Mental against each target.
             \\hit Each target that has no remaining \\glossterm<resistance> to sonic damage is \\glossterm<frightened> by you as a \\glossterm<condition>.
             \\glance As above, except that the condition is removed at the end of the next round.
+            \\crit Each target that has no remaining \\glossterm<resistance> to sonic damage is \\glossterm<panicked> by you as a \\glossterm<condition>.
 
             \\rankline
             You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 5.
@@ -384,6 +386,20 @@ def generate_maneuvers():
         effect_text="""
             Make a \\glossterm<strike> against Fortitude defense using a bludgeoning weapon.
             You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
+            If a creature loses hit points from the strike, it is \\glossterm<sickened> as a \\glossterm<condition>.
+        """,
+        rank=1,
+        tags=[],
+        lists=['Primal', 'Martial', 'Wild', 'Trick', 'Esoteric'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Nauseating Liver Shot',
+        short_description='Make a weak strike that nauseates',
+        target=None,
+        effect_text="""
+            Make a \\glossterm<strike> against Fortitude defense using a bludgeoning weapon.
+            You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
             If a creature loses hit points from the strike, it is \\glossterm<nauseated> as a \\glossterm<condition>.
         """,
         rank=3,
@@ -392,7 +408,7 @@ def generate_maneuvers():
     ))
 
     maneuvers.append(Maneuver(
-        name='Liver Crush',
+        name='Nauseating Liver Crush',
         short_description='Make a strike that paralyzes',
         target=None,
         effect_text="""
@@ -695,11 +711,25 @@ def generate_maneuvers():
         effect_text="""
             Make a \\glossterm<strike> using a slashing weapon.
             You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
-            If a creature loses hit points from the strike, it is \\glossterm<decelerated> as a \\glossterm<condition>.
+            If a creature loses hit points from the strike, it is \\glossterm<slowed> as a \\glossterm<condition>.
         """,
-        rank=3,
+        rank=1,
         tags=[],
-        lists=['Wild', 'Trick', 'Esoteric'],
+        lists=['Wild', 'Trick', 'Esoteric', 'Martial', 'Primal'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Greater Hamstring',
+        short_description='Make a strike that slows',
+        target=None,
+        effect_text="""
+            Make a \\glossterm<strike> using a slashing weapon.
+            You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
+            If a creature loses hit points from the strike, it is \\glossterm<immobilized> as a \\glossterm<condition>.
+        """,
+        rank=6,
+        tags=[],
+        lists=['Wild', 'Trick', 'Esoteric', 'Martial', 'Primal'],
     ))
 
     maneuvers.append(Maneuver(
@@ -718,6 +748,20 @@ def generate_maneuvers():
     ))
 
     maneuvers.append(Maneuver(
+        name='Headshot',
+        short_description='Make a strike that stuns',
+        target=None,
+        effect_text="""
+            Make a \\glossterm<strike> using a bludgeoning weapon.
+            You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
+            If a creature loses hit points from the strike, it is \\glossterm<dazed> as a \\glossterm<condition>.
+        """,
+        rank=1,
+        tags=[],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
+    ))
+
+    maneuvers.append(Maneuver(
         name='Stunning Headshot',
         short_description='Make a strike that stuns',
         target=None,
@@ -727,8 +771,8 @@ def generate_maneuvers():
             If a creature loses hit points from the strike, it is \\glossterm<stunned> as a \\glossterm<condition>.
         """,
         rank=3,
-        tags=['Emotion'],
-        lists=['Trick', 'Esoteric'],
+        tags=[],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -741,8 +785,8 @@ def generate_maneuvers():
             If a creature loses hit points from the strike, it is \\glossterm<confused> as a \\glossterm<condition>.
         """,
         rank=6,
-        tags=['Emotion'],
-        lists=['Trick', 'Esoteric'],
+        tags=[],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -787,7 +831,7 @@ def generate_maneuvers():
         """,
         rank=2,
         tags=[],
-        lists=['Esoteric', 'Trick'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -802,7 +846,7 @@ def generate_maneuvers():
         """,
         rank=5,
         tags=[],
-        lists=['Esoteric', 'Trick'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -831,7 +875,7 @@ def generate_maneuvers():
         """,
         rank=2,
         tags=[],
-        lists=['Primal', 'Wild', 'Esoteric'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -840,11 +884,40 @@ def generate_maneuvers():
         target=None,
         effect_text="""
             Make a \\glossterm<strike> using a shield.
-            If a creature loses hit points from the strike, it is \\glossterm<stunned> as a \\glossterm<condition>.
+            Your \\glossterm<power> with the strike is halved.
+            If a creature loses hit points from the strike, it is \\glossterm<sickened> as a \\glossterm<condition>.
+        """,
+        rank=1,
+        tags=[],
+        lists=['Martial', 'Primal'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Nauseating Shield Slam',
+        short_description='Make a dazing strike with a shield',
+        target=None,
+        effect_text="""
+            Make a \\glossterm<strike> using a shield.
+            Your \\glossterm<power> with the strike is halved.
+            If a creature loses hit points from the strike, it is \\glossterm<nauseated> as a \\glossterm<condition>.
         """,
         rank=3,
         tags=[],
         lists=['Martial', 'Primal'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Dazing Fist',
+        short_description='Make a sickening strike with an unarmed attack',
+        target=None,
+        effect_text="""
+            Make a strike using an \\glossterm<unarmed attack>.
+            Your \\glossterm<power> with the strike is halved.
+            If a creature loses hit points from the strike, it is \\glossterm<dazed> as a \\glossterm<condition>.
+        """,
+        rank=1,
+        tags=[],
+        lists=['Esoteric'],
     ))
 
     maneuvers.append(Maneuver(
@@ -853,6 +926,7 @@ def generate_maneuvers():
         target=None,
         effect_text="""
             Make a strike using an \\glossterm<unarmed attack>.
+            Your \\glossterm<power> with the strike is halved.
             If a creature loses hit points from the strike, it is \\glossterm<stunned> as a \\glossterm<condition>.
         """,
         rank=3,
@@ -866,6 +940,7 @@ def generate_maneuvers():
         target=None,
         effect_text="""
             Make a strike using an \\glossterm<unarmed attack>.
+            Your \\glossterm<power> with the strike is halved.
             If a creature loses hit points from the strike, it loses additional hit points equal to half its maximum hit points.
         """,
         rank=7,
@@ -883,9 +958,9 @@ def generate_maneuvers():
             The strike deals minimum damage, and your \\glossterm<power> is halved.
             If a creature takes damage from the strike, it takes a -2 penalty to Armor defense until the end of the next round.
         """,
-        rank=2,
+        rank=1,
         tags=[],
-        lists=['Esoteric', 'Martial', 'Trick'],
+        lists=['Esoteric', 'Martial', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -913,7 +988,7 @@ def generate_maneuvers():
         """,
         rank=5,
         tags=[],
-        lists=[],
+        lists=['Primal'],
     ))
 
     maneuvers.append(Maneuver(
@@ -923,9 +998,10 @@ def generate_maneuvers():
         effect_text="""
             Make a \\glossterm<strike> using a bludgeoning weapon.
             The attack is made against each target's Fortitude defense instead of its Armor defense.
+            Your \\glossterm<power> with the strike is halved.
             If a creature loses hit points from the strike, it falls \\glossterm<prone>.
         """,
-        rank=3,
+        rank=2,
         tags=[],
         lists=['Esoteric', 'Martial', 'Primal'],
     ))
@@ -951,7 +1027,7 @@ def generate_maneuvers():
         target=None,
         effect_text="""
             You draw one or two weapons into your \\glossterm<free hands>.
-            Then, you can make a \\glossterm<strike> with any weapon you drew this way.
+            Then, you can make a \\glossterm<strike>.
         """,
         tags=[],
         lists=['Esoteric', 'Martial', 'Trick', 'Primal', 'Wild'],
@@ -981,7 +1057,7 @@ def generate_maneuvers():
         """,
         rank=6,
         tags=[],
-        lists=[],
+        lists=['Esoteric', 'Martial', 'Trick', 'Primal', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -1037,7 +1113,7 @@ def generate_maneuvers():
             In addition, the maximum damage bonus increases by 3 for each rank beyond 1.
         """,
         tags=[],
-        lists=['Primal'],
+        lists=['Martial', 'Primal', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -1049,7 +1125,7 @@ def generate_maneuvers():
         """,
         rank=2,
         tags=[],
-        lists=['Esoteric', 'Martial', 'Trick', 'Wild'],
+        lists=['Esoteric', 'Martial', 'Trick', 'Primal', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -1103,7 +1179,7 @@ def generate_maneuvers():
         """,
         rank=3,
         tags=[],
-        lists=['Esoteric', 'Martial', 'Primal'],
+        lists=['Esoteric', 'Martial', 'Trick', 'Primal', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
