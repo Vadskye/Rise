@@ -42,10 +42,11 @@ terramancy=MysticSphere(
             If the item loses all of its hit points, this effect is \\glossterm<dismissed>.
         """, scaling="""
             \\rank<3> You can also create heavy armor.
-            \\rank<5> The item created is magically enhanced.
+            In addition, the item created is magically enhanced.
                 A weapon grants a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities,
                     and armor grants a +1 \\glossterm<magic bonus> to Armor defense.
-            \\rank<7> The item's weight is no greater than a normal item of its type.
+            \\rank<5> The magic bonus for a weapon increases to +4, and the magic bonus for armor increases to +2.
+            \\rank<7> The magic bonus for a weapon increases to +8, and the magic bonus for armor increases to +3.
         """, tags=['Attune (self)']),
         Spell('Earthspike', 4, 'One creature or object within \\rngmed range', """
             You create a spike of earth from the ground.

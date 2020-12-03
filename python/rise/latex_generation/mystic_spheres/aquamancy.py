@@ -19,14 +19,6 @@ aquamancy=MysticSphere(
             \\rank<5> The volume created increases to ten gallons.
             \\rank<7> The volume created increases to twenty gallons.
         """, tags=['Creation']),
-        Effects('Detect Water', None, """
-            You learn the approximate distance and direction to any bodies of water within \\rnglong \\glossterm<range> of you.
-            This spell can detect bodies of water with a minimum size of Fine.
-        """, scaling="""
-            \\rank<3> The range increases to \\rngext.
-            \\rank<5> The range increases to 2,000 feet.
-            \\rank<7> The range increases to 5,000 feet.
-        """, tags=['Detection']),
         Effects('Purify Water', 'Up to five gallons of water within \\rngclose range', """
             You can separate out dirt, sand, and minor pollutants from the target water, moving the waste material to the edge of the water so falls out or can be easily removed.
             This does not remove poisons, magical effects, or contaminants heavier than half a pound.
@@ -271,6 +263,17 @@ aquamancy=MysticSphere(
         Spell('Water Breathing', 3, 'One ritual participant', """
             The target can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
         """, tags=['Attune (ritual)'], ritual_time='one minute'),
+        Effects('Detect Water', 1, None, """
+            You learn the approximate distance and direction to any bodies of water within \\rnglong \\glossterm<range> of you.
+            Since this is a \\glossterm<Detection> ability, its range can penetrate some solid objects (see \\pcref<Detection>).
+            This spell can detect bodies of water with a minimum size of Fine.
+        """, tags=['Detection']),
+        Spell('Greater Detect Water', 3, None, """
+            This ritual functions like the \\spell<detect water> ritual, except that the range increases to \\rngext.
+        """, tags=['Detection'], ritual_time='one minute'),
+        Spell('Supreme Detect Water', 5, None, """
+            This ritual functions like the \\spell<detect water> ritual, except that the range increases to 2,000 feet.
+        """, tags=['Detection'], ritual_time='one minute'),
     ],
     category='damage',
 )

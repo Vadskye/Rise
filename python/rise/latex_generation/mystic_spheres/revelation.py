@@ -57,19 +57,21 @@ revelation=MysticSphere(
             \\rank<5> The bonus increases to +4.
             \\rank<7> The bonus increases to +5.
         """, tags=['Swift']),
-        Spell('Precognitive Offense', 2, 'Yourself', """
+        Spell('Precognitive Offense', 1, 'Yourself', """
             You can cast this spell as a \\glossterm<minor action>.
 
             The target gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with all attacks.
         """, scaling="""
-            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
-            \\rank<6> The bonus increases to +2.
+            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<5> The bonus increases to +2.
+            \\rank<7> The bonus increases to +3.
         """, tags=['Attune (target)']),
-        Spell('Precognitive Defense', 2, 'Yourself', """
+        Spell('Precognitive Defense', 1, 'Yourself', """
             The target gains a +1 \\glossterm<magic bonus> to Armor defense and Reflex defense.
         """, scaling="""
-            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
-            \\rank<6> The bonus increases to +2.
+            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<5> The bonus increases to +2.
+            \\rank<7> The bonus increases to +3.
         """, tags=['Attune (target)']),
         Spell('Discern Lies', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
@@ -77,11 +79,12 @@ revelation=MysticSphere(
             This ability does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.
             \\glance As above, except that the effect ends at the end of the next round.
             % No \\crit effect
-        """, scaling="accuracy", tags=['Sustain (minor)', 'Detection']),
-        Spell('Boon of Mastery', 4, 'Yourself', """
+        """, scaling="accuracy", tags=['Sustain (minor)']),
+        Spell('Boon of Mastery', 3, 'Yourself', """
             You gain a +2 \\glossterm<magic bonus> to all skills.
         """, scaling="""
-            \\rank<6> The bonus increases to +3.
+            \\rank<5> The bonus increases to +3.
+            \\rank<7> The bonus increases to +4.
         """, tags=['Attune (self)']),
         # Spell('Boon of Many Eyes', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
         #     The target reduces its \\glossterm<overwhelm penalty> by 2.
