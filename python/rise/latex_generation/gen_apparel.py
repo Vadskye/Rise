@@ -11,7 +11,7 @@ def generate_armor():
     apparel += [
         MagicItem(
             name="Protective Armor",
-            level=7,
+            level=4,
             material_type='Body armor',
             tags=[],
             description="""
@@ -21,7 +21,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Protective Armor, Greater",
-            level=13,
+            level=10,
             material_type='Body armor',
             tags=[],
             description="""
@@ -31,7 +31,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Protective Armor, Supreme",
-            level=19,
+            level=16,
             material_type='Body armor',
             tags=[],
             description="""
@@ -41,7 +41,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Protective Shield",
-            level=7,
+            level=4,
             material_type='Shield',
             tags=[],
             description="""
@@ -51,7 +51,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Protective Shield, Greater",
-            level=13,
+            level=10,
             material_type='Shield',
             tags=[],
             description="""
@@ -61,7 +61,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Protective Shield, Supreme",
-            level=19,
+            level=16,
             material_type='Shield',
             tags=[],
             description="""
@@ -74,7 +74,7 @@ def generate_armor():
     apparel += [
         MagicItem(
             name="Ring of Protection",
-            level=7,
+            level=4,
             material_type='Ring',
             tags=[],
             description="""
@@ -84,7 +84,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Ring of Protection, Greater",
-            level=13,
+            level=10,
             material_type='Ring',
             tags=[],
             description="""
@@ -94,7 +94,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Ring of Protection, Greater",
-            level=19,
+            level=16,
             material_type='Ring',
             tags=[],
             description="""
@@ -296,7 +296,7 @@ def generate_armor():
     apparel += [
         MagicItem(
             name="Featherlight Armor",
-            level=6,
+            level=5,
             material_type='Body armor',
             description="""
                 This armor's \\glossterm<encumbrance> is reduced by 1.
@@ -305,7 +305,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Featherlight Armor, Greater",
-            level=12,
+            level=11,
             material_type='Body armor',
             description="""
                 This armor's \\glossterm<encumbrance> is reduced by 2.
@@ -314,7 +314,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Featherlight Armor, Supreme",
-            level=18,
+            level=17,
             material_type='Body armor',
             description="""
                 This armor's \\glossterm<encumbrance> is reduced by 3.
@@ -495,7 +495,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Shield of Mystic Reflection, Greater",
-            level=16,
+            level=19,
             material_type='Shield',
             tags=[],
             description="""
@@ -521,7 +521,7 @@ def generate_armor():
     apparel += [
         MagicItem(
             name="Agile Boots",
-            level=2,
+            level=3,
             material_type='Boots',
             tags=[],
             description="""
@@ -531,7 +531,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Agile Boots, Greater",
-            level=8,
+            level=9,
             material_type='Boots',
             tags=[],
             description="""
@@ -541,7 +541,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Agile Boots, Supreme",
-            level=14,
+            level=15,
             material_type='Boots',
             tags=[],
             description="""
@@ -552,7 +552,7 @@ def generate_armor():
         MagicItem(
             name="Agile Armor",
             # +2 levels since armor is secondary for this effect
-            level=4,
+            level=5,
             material_type='Body armor',
             tags=[],
             description="""
@@ -562,7 +562,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Agile Armor, Greater",
-            level=10,
+            level=11,
             material_type='Body armor',
             tags=[],
             description="""
@@ -572,7 +572,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Agile Armor, Supreme",
-            level=16,
+            level=17,
             material_type='Body armor',
             tags=[],
             description="""
@@ -585,7 +585,7 @@ def generate_armor():
     apparel += [
         MagicItem(
             name="Fortified Belt",
-            level=2,
+            level=3,
             material_type='Belt',
             tags=[],
             description="""
@@ -595,7 +595,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Fortified Belt, Greater",
-            level=8,
+            level=9,
             material_type='Belt',
             tags=[],
             description="""
@@ -605,7 +605,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Fortified Belt, Supreme",
-            level=14,
+            level=15,
             material_type='Belt',
             tags=[],
             description="""
@@ -616,7 +616,7 @@ def generate_armor():
         MagicItem(
             name="Fortified Armor",
             # +2 levels since armor is secondary for this effect
-            level=4,
+            level=5,
             material_type='Body armor',
             tags=[],
             description="""
@@ -626,7 +626,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Fortified Armor, Greater",
-            level=10,
+            level=11,
             material_type='Body armor',
             tags=[],
             description="""
@@ -636,7 +636,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Fortified Armor, Supreme",
-            level=16,
+            level=17,
             material_type='Body armor',
             tags=[],
             description="""
@@ -649,7 +649,7 @@ def generate_armor():
     apparel += [
         MagicItem(
             name="Willguard Amulet",
-            level=2,
+            level=3,
             material_type='Amulet',
             tags=[],
             description="""
@@ -659,7 +659,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Willguard Amulet, Greater",
-            level=8,
+            level=9,
             material_type='Amulet',
             tags=[],
             description="""
@@ -669,7 +669,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Willguard Amulet, Supreme",
-            level=14,
+            level=15,
             material_type='Amulet',
             tags=[],
             description="""
@@ -680,7 +680,7 @@ def generate_armor():
         MagicItem(
             name="Willguard Armor",
             # +2 levels since armor is secondary for this effect
-            level=4,
+            level=5,
             material_type='Body armor',
             tags=[],
             description="""
@@ -690,7 +690,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Willguard Armor, Greater",
-            level=10,
+            level=11,
             material_type='Body armor',
             tags=[],
             description="""
@@ -700,7 +700,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Willguard Armor, Supreme",
-            level=16,
+            level=17,
             material_type='Body armor',
             tags=[],
             description="""
@@ -1282,17 +1282,6 @@ def generate_worn():
             short_description="description",
         ),
     ]
-
-    apparel.append(MagicItem(
-        name="Boots of Earth's Embrace",
-        level=4,
-        material_type='Boots',
-        tags=[],
-        description="""
-            While you are standing on solid ground, you are immune to \\glossterm<push> and \\glossterm<knockback> effects.
-        """,
-        short_description="Grants immunity to forced movement",
-    ))
 
     apparel.append(MagicItem(
         name="Boots of Freedom",

@@ -191,7 +191,7 @@ verdamancy=MysticSphere(
         """, scaling="""
             \\rank<3> You also gain +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with the weapon.
             \\rank<5> The power bonus increases to +4.
-            \\rank<7> The power bonus increases to +8.
+            \\rank<7> The accuracy bonus increases to +2, and the power bonus increases to +8.
         """, tags=['Attune (self)']),
         Spell('Natural Camouflage', 1, 'Yourself', """
             You gain a +4 \\glossterm<magic bonus> to the Stealth skill while you have \\glossterm<cover> or \\glossterm<concealment> from plants.

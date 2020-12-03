@@ -11,14 +11,6 @@ pyromancy=MysticSphere(
     name='Pyromancy',
     short_description="Create fire to incinerate foes",
     cantrips=[
-        Effects('Detect Flame', None, """
-            You learn the approximate distance and direction to any active fires within \\rnglong \\glossterm<range> of you.
-            This spell can sense fires as small as a candle flame, but no smaller.
-        """, scaling="""
-            \\rank<3> The range increases to \\rngext.
-            \\rank<5> The range increases to 2,000 feet.
-            \\rank<7> The range increases to 5,000 feet.
-        """, tags=['Detection']),
         Effects('Kindle', 'One creature or object within \\rngclose range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target takes 2 fire damage.
@@ -241,6 +233,17 @@ pyromancy=MysticSphere(
         Spell('Pyrostorm', 8, None, """
             This ritual functions like the \\spell<heat wave> ritual, except that the temperature in the area increases by 60 degrees, to a minimum of 160 degrees.
         """, tags=['Attune (self)'], ritual_time='one hour'),
+        Spell('Detect Flame', 1, None, """
+            You learn the approximate distance and direction to any active fires within \\rnglong \\glossterm<range> of you.
+            Since this is a \\glossterm<Detection> ability, its range can penetrate some solid objects (see \\pcref<Detection>).
+            This spell can sense fires as small as a candle flame, but no smaller.
+        """, tags=['Detection']),
+        Spell('Greater Detect Flame', 3, None, """
+            This ritual functions like the \\spell<detect flame> ritual, except that the range increases to \\rngext.
+        """, tags=['Detection'], ritual_time='one minute'),
+        Spell('Supreme Detect Flame', 5, None, """
+            This ritual functions like the \\spell<detect flame> ritual, except that the range increases to 2,000 feet.
+        """, tags=['Detection'], ritual_time='one minute'),
     ],
     category='damage',
 )
