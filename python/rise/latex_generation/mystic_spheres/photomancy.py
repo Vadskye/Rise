@@ -34,14 +34,48 @@ photomancy=MysticSphere(
     ],
     lists=['Arcane', 'Divine', 'Nature', 'Pact'],
     spells=[
-        Spell('Wall of Light', 2, None, """
+        Spell('Color Spray', 1, 'Each creature within a \\areamed cone from you', """
+            Make an attack vs. Mental against each target.
+            \\hit Each target at its maximum hit points is \\glossterm<dazed> until the end of the next round.
+            Each target that is at less than its maximum \\glossterm<hit points> is \\glossterm<stunned> instead of dazed.
+            \\crit As above, except that the effect is a \\glossterm<condition> that lasts until it is removed.
+        """, scaling='accuracy', tags=['Sensation', 'Visual']),
+        Spell('Color Blast', 3, 'Each creature within a \\arealarge cone from you', """
+            This spell functions like the \\spell<color spray> spell, except that the area is larger.
+        """, scaling='accuracy', tags=['Sensation', 'Visual']),
+        Spell('Prismatic Spray', 4, 'Each target within a \\areamed cone from you', """
+            Make an attack vs. Mental against each target.
+            \\hit Each target at its maximum hit points is \\glossterm<stunned> until the end of the next round.
+            Each target that is at less than its maximum \\glossterm<hit points> is \\glossterm<confused> instead of stunned.
+            \\crit As above, except that the effect is a \\glossterm<condition> that lasts until it is removed.
+        """, scaling='accuracy', tags=['Sensation', 'Visual']),
+        Spell('Army of Twins', 3, 'Up to five targets within \\rngmed range from among you and your \\glossterm<allies>', """
+            Choose one of the targets as the primary target.
+            You make a Disguise check to alter each target's appearance to exactly match the primary target (see \\pcref<Disguise Creature>).
+            You gain a +4 bonus on the check, and you can freely alter the appearance of the target's clothes and equipment, regardless of their original form.
+            However, this effect is unable to alter the sound, smell, texture, or temperature of the target or its clothes and equipment.
+        """, scaling="""
+            \\rank<5> The bonus increases to +6.
+            \\rank<7> The bonus increases to +8.
+        """, tags=['Sustain (free)', 'Sensation', 'Visual']),
+        Spell('Prismatic Blast', 6, 'Each target within a \\arealarge cone from you', """
+            This spell functions like the \\spell<prismatic spray> spell, except that the area is larger.
+        """, scaling='accuracy', tags=['Sensation', 'Visual']),
+        Spell('Blurred Motion', 2, 'Yourself', """
+            In any phase where you move at least 10 feet, you gain a +1 bonus to Armor and Reflex defenses.
+        """, scaling="""
+            \\rank<4> The bonus to Reflex defense increases to +2.
+            \\rank<6> The bonus to Armor defense increases to +2.
+        """, tags=['Attune (self)']),
+        Spell('Wall of Light', 1, None, """
             You create a wall of light in a 20 ft.\\ high, \\areamed line within \\rngmed range.
             If you create the wall within a space too small to hold it, it fills as much of the space as possible, allowing you to completely block off small tunnels.
             The wall is visible as a solid block of light that blocks sight.
             It does not inhibit the passage of objects or creatures.
         """, scaling="""
-            \\rank<4> The area increases to a \\arealarge line.
-            \\rank<6> The area increases to a \\areahuge line.
+            \\rank<3> The area increases to a \\arealarge line.
+            \\rank<5> The area increases to a 50 ft.\\ high \\areahuge line.
+            \\rank<7> The area increases to a 100 ft.\\ high, \\areaext line.
         """, tags=['Sensation', 'Sustain (minor)']),
         Spell('Flash', 2, 'One creature within \\rngmed range', """
             A burst of light flashes in front of a creature's eyes.
@@ -115,14 +149,19 @@ photomancy=MysticSphere(
             \\rank<5> The bonus increases to +2.
             \\rank<7> The bonus increases to +3.
         """, tags=['Attune (target)', 'Sensation', 'Visual']),
-        Spell('Disguise Image', 3, 'Yourself', """
+        Spell('Disguise Image', 2, 'Yourself', """
             You make a Disguise check to alter the target's appearance (see \\pcref<Disguise Creature>).
             You gain a +4 bonus on the check, and you can freely alter the appearance of the target's clothes and equipment, regardless of their original form.
             However, this effect is unable to alter the sound, smell, texture, or temperature of the target or its clothes and equipment.
         """, scaling="""
-            \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
-            \\rank<7> The bonus increases to +6.
+            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<6> The bonus increases to +6.
         """, tags=['Attune (target)', 'Sensation', 'Visual']),
+        Spell('Malleable Disguise', 4, 'Yourself', """
+            This spell functions like the \\textit<disguise image> spell, except that you can change the nature of the disguise as a \\glossterm<standard action>.
+        """, scaling="""
+            \\rank<6> The bonus increases to +6.
+        """, tags=['Attune (self)']),
         Spell('Mirror Image', 1, 'Yourself', """
             Two illusory duplicates appear around you that mirror your every move.
             The duplicates shift chaotically in your space, making it difficult to identify your real location.
@@ -153,11 +192,25 @@ photomancy=MysticSphere(
             \\rank<4> The maximum range increases to \\rnglong.
             \\rank<6> You can create a second duplicate of yourself.
         """, tags=['Sustain (minor)']),
+        Spell('False Wound', 1, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
+            You make a Disguise check to alter the target's appearance to make it appear wounded (see \\pcref<Disguise Creature>).
+            You can choose whether the target appears to be at less than its maximum hit points, whether it appears to have a vital wound, or both.
+            You gain a +10 bonus on the check, and you can freely alter the appearance of the target's clothes and equipment, regardless of their original form.
+            However, this effect is unable to alter the sound, smell, texture, or temperature of the target or its clothes and equipment.
+        """, scaling="""
+            \\rank<3> The bonus increases to +15.
+            \\rank<5> The bonus increases to +20.
+            \\rank<7> The bonus increases to +25.
+        """, tags=['Sustain (minor)']),
     ],
     rituals=[
         Spell('Continuous Light', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngmed range', """
             The target glows like a torch, shedding bright illumination in a \\areamed radius (and shadowy illumination for an additional 20 feet).
         """, tags=['Attune (ritual)', 'Sensation'], ritual_time='one minute'),
+        Spell('False Decrepify', 1, 'One Medium or smaller unattended object within \\rngclose range', """
+            The target appears old and worn down.
+            It may be appear dusty, have cracks and wrinkles from age, or otherwise appear undesirable and low quality.
+        """, tags=['Attune (ritual)', 'Sensation'], ritual_time='one hour'),
         Spell('Permanent Light', 3, 'One Medium or smaller unattended object within \\rngclose range', """
             This ritual functions like the \\spell<continuous light> ritual, except that it loses the \\glossterm<Attune> (ritual) tag and the effect lasts permanently.
             In addition, it can only target objects.
