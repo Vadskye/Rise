@@ -237,7 +237,7 @@ pyromancy=MysticSphere(
             You learn the approximate distance and direction to any active fires within \\rnglong \\glossterm<range> of you.
             Since this is a \\glossterm<Detection> ability, its range can penetrate some solid objects (see \\pcref<Detection>).
             This spell can sense fires as small as a candle flame, but no smaller.
-        """, tags=['Detection']),
+        """, tags=['Detection'], ritual_time='one minute'),
         Spell('Greater Detect Flame', 3, None, """
             This ritual functions like the \\spell<detect flame> ritual, except that the range increases to \\rngext.
         """, tags=['Detection'], ritual_time='one minute'),

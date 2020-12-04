@@ -267,7 +267,7 @@ aquamancy=MysticSphere(
             You learn the approximate distance and direction to any bodies of water within \\rnglong \\glossterm<range> of you.
             Since this is a \\glossterm<Detection> ability, its range can penetrate some solid objects (see \\pcref<Detection>).
             This spell can detect bodies of water with a minimum size of Fine.
-        """, tags=['Detection']),
+        """, tags=['Detection'], ritual_time='one minuate'),
         Spell('Greater Detect Water', 3, None, """
             This ritual functions like the \\spell<detect water> ritual, except that the range increases to \\rngext.
         """, tags=['Detection'], ritual_time='one minute'),
