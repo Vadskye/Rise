@@ -77,14 +77,6 @@ umbramancy=MysticSphere(
             \\rank<5> The bonus increases to +2.
             \\rank<7> The bonus increases to +3.
         """, tags=['Attune (target)']),
-        Spell('Conceal Trail', 2, 'Up to five targets within \\rngmed range from among you and your \\glossterm<allies>', """
-            At the end of each round, the footprints, scent, and other tracks left by each target during that round are magically concealed.
-            This increases the \\glossterm<difficulty rating> to follow the trail by 10, but does not prevent creatures from seeing or smelling each target normally in combat.
-            At the end of each round, if any target is outside of \\rnglong range from you, the effect is broken for that target and its trail is revealed.
-        """, scaling="""
-            \\rank<4> The \\glossterm<difficulty rating> increase increases to 15.
-            \\rank<6> The \\glossterm<difficulty rating> increase increases to 20.
-        """, tags=['Attune (self)']),
         Spell('Fade Into Darkness', 2, 'Yourself', """
             At the end of each round, if you took no actions that round and are not in \\glossterm<bright illumination>, you become \\glossterm<invisible>.
             This invisibility ends after you take any action.
@@ -217,6 +209,17 @@ umbramancy=MysticSphere(
             The target is never considered to be in natural sunlight.
             This does not impair its vision, but protects it if it would otherwise suffer negative consequences for being in natural sunlight.
         """, tags=['Attune (target)'], ritual_time='one hour'),
+        Spell('Conceal Trail', 2, 'Up to five targets within \\rngmed range from among you and your \\glossterm<allies>', """
+            At the end of each round, the footprints, scent, and other tracks left by each target during that round are magically concealed.
+            This increases the \\glossterm<difficulty rating> to follow the trail by 10, but does not prevent creatures from seeing or smelling each target normally in combat.
+            At the end of each round, if any target is outside of \\rnglong range from you, the effect is broken for that target and its trail is revealed.
+        """, tags=['Attune (ritual)'], ritual_time="one minute"),
+        Spell('Greater Conceal Trail', 4, 'Up to five targets within \\rngmed range from among you and your \\glossterm<allies>', """
+            This ritual functions like the \\spell<conceal trail> ritual, except that the difficulty rating increase changes to 20.
+        """, tags=['Attune (ritual)'], ritual_time='one minute'),
+        Spell('Supreme Conceal Trail', 6, 'Up to five targets within \\rngmed range from among you and your \\glossterm<allies>', """
+            This ritual functions like the \\spell<conceal trail> ritual, except that the difficulty rating increase changes to 30.
+        """, tags=['Attune (ritual)'], ritual_time='one minute'),
     ],
     category='buff, defense',
 )
