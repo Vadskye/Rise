@@ -10,7 +10,7 @@ def generate_maneuvers():
     maneuvers = []
 
     maneuvers.append(Maneuver(
-        name='Battle Cry',
+        name='Encouraging Battlecry',
         short_description='Inspire allies',
         target="All \\glossterm<allies> that can hear you",
         effect_text="""
@@ -22,7 +22,7 @@ def generate_maneuvers():
             '6': 'The accuracy bonus increases to +2.',
         },
         tags=[],
-        lists=['Primal'],
+        lists=['Primal', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -41,7 +41,7 @@ def generate_maneuvers():
             '6': 'You also negate any \\glossterm<conditions> that you would gain this round.',
         },
         tags=['Swift'],
-        lists=['Martial', 'Primal', 'Wild', 'Esoteric'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -54,7 +54,7 @@ def generate_maneuvers():
         """,
         rank=1,
         tags=[],
-        lists=['Martial', 'Primal', 'Trick', 'Wild', 'Esoteric'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -67,7 +67,7 @@ def generate_maneuvers():
         """,
         rank=5,
         tags=[],
-        lists=['Martial', 'Primal', 'Trick', 'Wild', 'Esoteric'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -116,7 +116,7 @@ def generate_maneuvers():
         """,
         rank=1,
         tags=[],
-        lists=['Martial', 'Esoteric', 'Wild'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -129,7 +129,7 @@ def generate_maneuvers():
         """,
         rank=4,
         tags=[],
-        lists=['Martial', 'Esoteric', 'Wild'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -145,7 +145,7 @@ def generate_maneuvers():
         """,
         rank=2,
         tags=[],
-        lists=['Esoteric', 'Martial', 'Primal'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -162,7 +162,7 @@ def generate_maneuvers():
         """,
         rank=4,
         tags=[],
-        lists=['Esoteric', 'Martial', 'Primal'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -179,7 +179,7 @@ def generate_maneuvers():
         """,
         rank=6,
         tags=[],
-        lists=['Esoteric', 'Martial', 'Primal'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -192,7 +192,7 @@ def generate_maneuvers():
         """,
         rank=2,
         tags=[],
-        lists=['Esoteric', 'Martial'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -206,7 +206,7 @@ def generate_maneuvers():
         """,
         rank=6,
         tags=[],
-        lists=['Esoteric', 'Martial'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -220,7 +220,7 @@ def generate_maneuvers():
         """,
         rank=1,
         tags=['Emotion'],
-        lists=['Primal', 'Martial', 'Trick', 'Esoteric'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -234,7 +234,7 @@ def generate_maneuvers():
         """,
         rank=3,
         tags=['Emotion'],
-        lists=['Primal', 'Martial', 'Trick', 'Esoteric'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -248,7 +248,7 @@ def generate_maneuvers():
         """,
         rank=6,
         tags=['Emotion'],
-        lists=['Primal', 'Martial', 'Trick', 'Esoteric'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -347,7 +347,7 @@ def generate_maneuvers():
         """,
         rank=3,
         tags=[],
-        lists=['Primal'],
+        lists=['Martial', 'Primal', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -363,7 +363,7 @@ def generate_maneuvers():
         """,
         rank=7,
         tags=[],
-        lists=['Primal'],
+        lists=['Martial', 'Primal', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -376,7 +376,7 @@ def generate_maneuvers():
         """,
         rank=3,
         tags=[],
-        lists=['Primal', 'Wild', 'Trick', 'Esoteric'],
+        lists=['Esoteric', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -390,7 +390,7 @@ def generate_maneuvers():
         """,
         rank=1,
         tags=[],
-        lists=['Primal', 'Martial', 'Wild', 'Trick', 'Esoteric'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -404,7 +404,7 @@ def generate_maneuvers():
         """,
         rank=3,
         tags=[],
-        lists=['Primal', 'Martial', 'Wild', 'Trick', 'Esoteric'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -419,7 +419,7 @@ def generate_maneuvers():
         """,
         rank=6,
         tags=[],
-        lists=['Primal', 'Martial', 'Wild', 'Trick', 'Esoteric'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -431,7 +431,7 @@ def generate_maneuvers():
             You gain a +2d bonus to damage with the strike.
         """,
         tags=[],
-        lists=['Esoteric', 'Primal', 'Martial', 'Trick', 'Wild'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -444,7 +444,7 @@ def generate_maneuvers():
         """,
         rank=5,
         tags=[],
-        lists=['Esoteric', 'Primal', 'Martial', 'Trick', 'Wild'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -456,7 +456,7 @@ def generate_maneuvers():
             The attack is made against each target's Fortitude defense instead of its Armor defense.
         """,
         tags=[],
-        lists=['Primal', 'Martial', 'Wild'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -470,7 +470,7 @@ def generate_maneuvers():
         """,
         rank=3,
         tags=[],
-        lists=['Primal', 'Martial', 'Wild'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -483,7 +483,7 @@ def generate_maneuvers():
         """,
         rank=3,
         tags=[],
-        lists=['Primal', 'Martial', 'Wild', 'Trick', 'Esoteric'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -495,7 +495,7 @@ def generate_maneuvers():
         """,
         rank=5,
         tags=[],
-        lists=['Esoteric', 'Primal', 'Martial', 'Trick', 'Wild'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -508,7 +508,7 @@ def generate_maneuvers():
         """,
         rank=7,
         tags=[],
-        lists=['Primal', 'Martial', 'Wild', 'Trick', 'Esoteric'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -523,7 +523,7 @@ def generate_maneuvers():
         """,
         rank=2,
         tags=[],
-        lists=['Primal', 'Martial', 'Wild', 'Esoteric'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -538,7 +538,7 @@ def generate_maneuvers():
         """,
         rank=6,
         tags=[],
-        lists=['Primal', 'Martial', 'Wild', 'Esoteric'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -552,7 +552,7 @@ def generate_maneuvers():
         """,
         rank=1,
         tags=[],
-        lists=['Primal', 'Martial', 'Wild'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -566,7 +566,7 @@ def generate_maneuvers():
         """,
         rank=3,
         tags=[],
-        lists=['Primal', 'Martial', 'Wild'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -580,7 +580,7 @@ def generate_maneuvers():
         """,
         rank=2,
         tags=[],
-        lists=['Primal', 'Martial', 'Wild'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -592,7 +592,7 @@ def generate_maneuvers():
             Your \\glossterm<power> with the strike is halved.
         """,
         tags=[],
-        lists=['Primal', 'Martial', 'Wild', 'Esoteric'],
+        lists=['Martial', 'Primal', 'Wild', 'Trick', 'Esoteric'],
     ))
 
     maneuvers.append(Maneuver(
@@ -604,7 +604,7 @@ def generate_maneuvers():
         """,
         rank=4,
         tags=[],
-        lists=[],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -615,9 +615,9 @@ def generate_maneuvers():
             Make a melee \\glossterm<strike> using a slashing weapon against each target.
             Your \\glossterm<power> with the strike is halved.
         """,
-        rank=3,
+        rank=2,
         tags=[],
-        lists=['Primal', 'Martial', 'Wild', 'Esoteric'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -630,7 +630,7 @@ def generate_maneuvers():
         """,
         rank=7,
         tags=[],
-        lists=['Primal', 'Martial', 'Wild', 'Esoteric'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -645,7 +645,7 @@ def generate_maneuvers():
         """,
         rank=2,
         tags=[],
-        lists=['Martial'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -657,7 +657,7 @@ def generate_maneuvers():
             The attack is made against each target's Reflex defense instead of its Armor defense.
         """,
         tags=[],
-        lists=['Martial', 'Wild', 'Trick', 'Esoteric'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -670,7 +670,7 @@ def generate_maneuvers():
         """,
         rank=5,
         tags=[],
-        lists=[],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -701,7 +701,7 @@ def generate_maneuvers():
         """,
         rank=6,
         tags=[],
-        lists=['Trick', 'Esoteric', 'Martial'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -715,7 +715,7 @@ def generate_maneuvers():
         """,
         rank=1,
         tags=[],
-        lists=['Wild', 'Trick', 'Esoteric', 'Martial', 'Primal'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -729,7 +729,7 @@ def generate_maneuvers():
         """,
         rank=6,
         tags=[],
-        lists=['Wild', 'Trick', 'Esoteric', 'Martial', 'Primal'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -860,7 +860,7 @@ def generate_maneuvers():
         """,
         rank=3,
         tags=[],
-        lists=['Esoteric', 'Trick', 'Wild'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -1003,7 +1003,7 @@ def generate_maneuvers():
         """,
         rank=2,
         tags=[],
-        lists=['Esoteric', 'Martial', 'Primal'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -1093,7 +1093,7 @@ def generate_maneuvers():
         """,
         rank=4,
         tags=[],
-        lists=['Primal'],
+        lists=['Primal', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -1139,7 +1139,7 @@ def generate_maneuvers():
         """,
         rank=4,
         tags=[],
-        lists=['Martial', 'Wild', 'Trick', 'Esoteric'],
+        lists=['Martial', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -1152,7 +1152,7 @@ def generate_maneuvers():
         """,
         rank=2,
         tags=[],
-        lists=['Martial', 'Wild'],
+        lists=['Martial', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -1166,7 +1166,7 @@ def generate_maneuvers():
         """,
         rank=2,
         tags=[],
-        lists=['Martial', 'Primal'],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -1188,8 +1188,9 @@ def generate_maneuvers():
         target="\\glossterm<Enemies> in a \\areasmall, 5 ft.\\ wide line from you",
         effect_text="""
             Make a melee \\glossterm<strike> using a piercing weapon against each target.
+            Your \\glossterm<power> with the strike is halved.
         """,
-        rank=2,
+        rank=1,
         tags=[],
         lists=['Martial', 'Primal', 'Wild', 'Trick', 'Esoteric'],
     ))
@@ -1203,23 +1204,23 @@ def generate_maneuvers():
             Your \\glossterm<power> with the strike is halved.
             This strike costs one projectile per target.
         """,
-        rank=3,
+        rank=5,
         tags=[],
-        lists=['Martial', 'Wild'],
+        lists=['Martial', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
         name='Arrowstorm',
         short_description='Fire a flurry of projectiles to blanket a large area',
-        target='Everything in a \\areamed radius within \\rngmed range.',
-        rank=5,
+        target='Each creature in a \\areamed radius within \\rngmed range.',
+        rank=7,
         effect_text="""
             Make a ranged \\glossterm<strike> using a projectile weapon against each target.
             Your \\glossterm<power> with the strike is halved.
             This strike costs one projectile per target.
         """,
         tags=[],
-        lists=['Martial', 'Wild'],
+        lists=['Martial', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -1232,7 +1233,7 @@ def generate_maneuvers():
         """,
         rank=4,
         tags=[],
-        lists=['Martial', 'Wild'],
+        lists=['Martial', 'Trick', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -1251,7 +1252,7 @@ def generate_maneuvers():
     ))
 
     maneuvers.append(Maneuver(
-        name='Titanic Slam',
+        name='Ground Slam',
         short_description='Slam your weapon into the ground to deal damage in a line',
         target='Everything on the ground in a \\areamed, 10 ft. wide line from you',
         effect_text="""
@@ -1265,16 +1266,30 @@ def generate_maneuvers():
     ))
 
     maneuvers.append(Maneuver(
+        name='Titanic Slam',
+        short_description='Slam your weapon into the ground to deal damage in a line',
+        target='Everything on the ground in a \\arealarge, 10 ft. wide line from you',
+        effect_text="""
+            Make a melee \\glossterm<strike> using a bludgeoning weapon against each target.
+            Your \\glossterm<power> with the strike is halved.
+            All damage dealt by this attack is bludgeoning damage instead of its normal types.
+        """,
+        rank=5,
+        tags=[],
+        lists=['Martial', 'Primal'],
+    ))
+
+    maneuvers.append(Maneuver(
         name='Injection',
         short_description='Make a strike that excels at injecting poison',
         target=None,
         effect_text="""
             Make a \\glossterm<strike> using a piercing weapon.
-            If a creature loses hit points from the strike, you gain a +5 accuracy bonus with injury-based poisons delivered with the strike.
+            If a creature loses hit points from the strike, you gain a +4 accuracy bonus with injury-based poisons delivered with the strike.
         """,
-        rank=3,
+        rank=2,
         tags=[],
-        lists=['Trick', 'Wild'],
+        lists=['Trick', 'Wild', 'Esoteric'],
     ))
 
     maneuvers.append(Maneuver(
@@ -1322,7 +1337,7 @@ def generate_maneuvers():
         """,
         rank=3,
         tags=[],
-        lists=['Primal', 'Wild'],
+        lists=['Primal', 'Martial', 'Esoteric', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
@@ -1335,7 +1350,7 @@ def generate_maneuvers():
         """,
         rank=4,
         tags=[],
-        lists=['Esoteric', 'Trick', 'Wild'],
+        lists=['Esoteric'],
     ))
 
     return maneuvers
