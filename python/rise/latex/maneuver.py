@@ -34,7 +34,7 @@ class Maneuver(object):
         # Make sure that the rank upgrades match the spell's rank 
         if (rank_upgrades and self.rank in [1, 3, 5] and '7' not in self.rank_upgrades.keys()):
             logger.log(WARNING, f"Maneuver {self.name} has wrong rank upgrade pattern")
-        if (rank_upgrades and self.rank in [2, 4, 6] and '8' not in self.rank_upgrades.keys()):
+        if (rank_upgrades and self.rank in [2, 4] and '6' not in self.rank_upgrades.keys()):
             logger.log(WARNING, f"Maneuver {self.name} has wrong rank upgrade pattern")
 
         for tag in self.tags:
