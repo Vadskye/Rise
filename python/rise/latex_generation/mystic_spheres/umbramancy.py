@@ -2,8 +2,6 @@ from rise.latex.mystic_sphere import MysticSphere
 from rise.latex.spell import Spell
 from rise.latex.effects import Effects
 
-
-
 # Primary: buff
 # Secondary: utility
 # None: damage, debuff
@@ -79,7 +77,7 @@ umbramancy=MysticSphere(
             \\rank<5> The bonus increases to +2.
             \\rank<7> The bonus increases to +3.
         """, tags=['Attune (target)']),
-        Spell('Conceal Trail', 2, 'Yourself and up to five \\glossterm<allies>', """
+        Spell('Conceal Trail', 2, 'Up to five targets within \\rngmed range from among you and your \\glossterm<allies>', """
             At the end of each round, the footprints, scent, and other tracks left by each target during that round are magically concealed.
             This increases the \\glossterm<difficulty rating> to follow the trail by 10, but does not prevent creatures from seeing or smelling each target normally in combat.
             At the end of each round, if any target is outside of \\rnglong range from you, the effect is broken for that target and its trail is revealed.
