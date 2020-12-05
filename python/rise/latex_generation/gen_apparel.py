@@ -1522,34 +1522,35 @@ def generate_worn():
 
     apparel += [
         MagicItem(
+            # +1 level since max HP has odd level scaling
             name="Amulet of Health",
             level=5,
             material_type='Amulet',
             description="""
-                You increase your maximum \\glossterm<hit points> by 5.
-                When this item stops affecting you, you lose 5 \\glossterm<hit points>.
+                You increase your maximum \\glossterm<hit points> by 8.
+                When this item stops affecting you, you lose 8 \\glossterm<hit points>.
             """,
-            short_description="Grants 5 additional hit points",
+            short_description="Grants 8 additional hit points",
         ),
         MagicItem(
             name="Amulet of Health, Greater",
             level=11,
             material_type='Amulet',
             description="""
-                You increase your maximum \\glossterm<hit points> by 10.
-                When this item stops affecting you, you lose 10 \\glossterm<hit points>.
+                You increase your maximum \\glossterm<hit points> by 16.
+                When this item stops affecting you, you lose 16 \\glossterm<hit points>.
             """,
-            short_description="Grants 10 additional hit points",
+            short_description="Grants 16 additional hit points",
         ),
         MagicItem(
             name="Amulet of Health, Supreme",
             level=17,
             material_type='Amulet',
             description="""
-                You increase your maximum \\glossterm<hit points> by 20.
-                When this item stops affecting you, you lose 20 \\glossterm<hit points>.
+                You increase your maximum \\glossterm<hit points> by 32.
+                When this item stops affecting you, you lose 32 \\glossterm<hit points>.
             """,
-            short_description="Grants 20 additional hit points",
+            short_description="Grants 32 additional hit points",
         ),
     ]
 
