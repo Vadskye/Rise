@@ -15,17 +15,17 @@ revelation=MysticSphere(
             Choose a sense, such as vision or hearing.
             You gain a +4 bonus to Awareness checks using that sense until the end of the next round.
         """, scaling="""
-            \\rank<3> The bonus increases to +6.
-            \\rank<5> The bonus increases to +8.
-            \\rank<7> The bonus increases to +10.
+            \\rank<2> The bonus increases to +6.
+            \\rank<4> The bonus increases to +8.
+            \\rank<6> The bonus increases to +10.
         """, tags=[]),
         Effects('Reveal Truth', 'Yourself', """
             You may reroll one Knowledge check you made last round.
             You can only cast this spell once per hour.
         """, scaling="""
-            \\rank<3> You also gain a +2 bonus to the Knowledge check.
-            \\rank<5> The bonus increases to +4.
-            \\rank<7> The bonus increases to +6.
+            \\rank<2> You also gain a +2 bonus to the Knowledge check.
+            \\rank<4> The bonus increases to +4.
+            \\rank<6> The bonus increases to +6.
         """, tags=[]),
         # Effects('Remote Sensing', 'One unoccupied location within \\rngmed range', """
         #     This cantrip functions like the \\spell<arcane eye> spell, except that it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune> (self) tag.",
@@ -137,18 +137,6 @@ revelation=MysticSphere(
             \\glance As above, except that the condition is removed at the end of the next round.
             \\crit As above, except that the condition must be removed twice before the effect ends.
         """, scaling="accuracy", tags=[]),
-        Spell('Alarm', 2, 'One unoccupied square within \\rngmed range', """
-            A \\glossterm<scrying sensor> appears floating in the air in the target location.
-            The sensor passively observes its surroundings.
-            As with other \\glossterm<Scrying> effects, its visual acuity is the same as yours.
-            You can choose the minimum size that the alarm will notify you for when you cast this spell.
-            If it sees a creature or object of that size or larger moving within 50 feet of it, it will trigger a mental "ping" that only you can notice.
-            You must be within 1 mile of the sensor to receive this mental alarm.
-            This mental sensation is strong enough to wake you from normal sleep, but does not otherwise disturb concentration.
-        """, scaling="""
-            \\rank<4> The sensor gains a +2 bonus to Awareness.
-            \\rank<6> The Awareness bonus increases to +4.
-        """, tags=['Attune (self)', 'Scrying']),
         Spell('Arcane Eye', 2, 'One unoccupied square within \\rngmed range', """
             A \\glossterm<scrying sensor> appears floating in the air in the target location.
             At the start of each round, you choose whether you see and hear from this sensor or from your body.
@@ -204,6 +192,39 @@ revelation=MysticSphere(
         # spell to cast spells from the eye instead of from your body?
     ],
     rituals=[
+        Spell('Augury', 2, None, """
+            You receive a limited glimpse into your immediate future.
+            When you perform this ritual, you specify a course of action that you could hypothetically take during the next hour.
+            You can be as broad or as detailed as you want in your description of your plan, though more specific and plausible plans generally yield more accurate results.
+            The GM specifies one of four possible outcomes for the augury based on what is most likely to occur if you follow your plan.
+            This is not a guarantee of success or failure, especially for plans that have some intrinsic randomness or chance of failure (such as planning to defeat a monster in combat).
+            \\begin<itemize>
+                \\itemhead<Weal>: The plan is likely to yield good outcomes for you.
+                \\itemhead<Woe>: The plan is likely to yield bad outcomes for you.
+                \\itemhead<Weal and Woe>: The plan is likely to yield a mixture of good and bad outcomes for you.
+                \\itemhead<None>: Either plan is unlikely to to have any significant outcomes, or the outcomes of the plan are too vague to accurately predict.
+            \\end<itemize>
+
+            This ritual only yields accurate results once for any given situation.
+            If you perform the ritual again in a situation that has not meaningfully changed, the augury always has no outcome regardless of the plan you specify.
+            For example, if you are presented with seven doorways, with one doorway leading to a magnificent treasure and all other doorways leading to certain death, you cannot simply perform this ritual six times to determine the correct doorway.
+        """, tags=[], ritual_time='one hour'),
+        Spell('Greater Augury', 4, None, """
+            This spell functions like the \\spell<augury> spell, except that the augury considers events up to 4 hours into your future when evaluating the outcomes of your plan.
+        """, tags=[], ritual_time='one hour'),
+        Spell('Supreme Augury', 6, None, """
+            This spell functions like the \\spell<augury> spell, except that the augury considers events up to 12 hours into your future when evaluating the outcomes of your plan.
+        """, tags=[], ritual_time='one hour'),
+        Spell('Alarm', 1, 'One unoccupied square within \\rngmed range', """
+            A \\glossterm<scrying sensor> appears floating in the air in the target location.
+            The sensor passively observes its surroundings.
+            As with other \\glossterm<Scrying> effects, its visual acuity is the same as yours.
+            You can choose the minimum size category that the alarm will notify you for when you cast this spell.
+            If it sees a creature or object of that size or larger moving within 50 feet of it, it will trigger an alarm.
+            When you perform this ritual, you choose whether the alarm causes the sound of a ringing bell or a mental "ping" that only you can notice.
+            You must be within 1 mile of the sensor to receive this mental alarm.
+            This mental sensation is strong enough to wake you from normal sleep, but does not otherwise disturb concentration.
+        """, tags=['Attune (self)', 'Scrying'], ritual_time='one minute'),
         Spell('Locate Creature', 3, None, """
             When you perform this ritual, choose a creature.
             You must have seen the chosen creature in person and either be able to clearly visualize its appearance or know its proper name to find it with this ritual.

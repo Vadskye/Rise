@@ -136,12 +136,12 @@ bless=MysticSphere(
         Spell('Blessing of Endurance', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             You can cast this spell as a \\glossterm<minor action>.
 
-            The target increases its current \\glossterm<hit points> by 5.
+            The target increases its current \\glossterm<hit points> by 8.
             This can cause its current hit points to exceed its normal maximum hit points.
             When this ability ends, the target loses \\glossterm<hit points> equal to the number of hit points it gained this way.
         """, scaling="""
-            \\rank<5> The number of additional hit points increases to 10.
-            \\rank<7> The number of additional hit points increases to 20.
+            \\rank<5> The number of additional hit points increases to 16.
+            \\rank<7> The number of additional hit points increases to 32.
         """, tags=['Attune (target)']),
         Spell('Blessing of Wakefulness', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target cannot fall asleep or be knocked unconscious, even by \\glossterm<vital wounds>.
