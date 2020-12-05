@@ -394,7 +394,7 @@ Silent
     \frightened \shaken \sickened \nauseated \panicked \impaired \unaware \defenseless \staggered \dazed \immobilized \disoriented  \stunned \severelyimpaired \goaded \taunted \confused \slowed \partiallyblinded \confusionexplanation \deafened \charmed \dominated \fascinated \helpless \blinded \grappled \petrified \disabled \paralyzed \prone
     \degree
     \durshort \durmed \durlong \durext \durbrief \durpersonallong
-    \rngclose \rngmed \rnglong \rngext
+    \rngshort \rngmed \rnglong \rngext
     \featpre \featpres \featben \stylereq
     \miscastyou \miscastrandom \miscastretarget \miscastexplode
     \taburowcolors

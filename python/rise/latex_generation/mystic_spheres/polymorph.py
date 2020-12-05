@@ -149,7 +149,7 @@ polymorph=MysticSphere(
             \\rank<5> The bonus increases to +5.
             \\rank<7> The bonus increases to +7.
         """, tags=['Attune (target)']),
-        Spell('Sludgeform', 7, 'One creature within \\rngclose range', """
+        Spell('Sludgeform', 7, 'One creature within \\rngshort range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target takes 4d6 physical damage.
             If it loses \\glossterm<hit points> from this damage, its physical form loses coherence and partially collapses into a sludgelike mass as a \\glossterm<condition>.
@@ -161,22 +161,22 @@ polymorph=MysticSphere(
         """, tags=[]),
     ],
     rituals=[
-        Spell('Craft Object', 3, 'Any number of unattended, nonmagical objects within \\rngclose range', """
+        Spell('Craft Object', 3, 'Any number of unattended, nonmagical objects within \\rngshort range', """
             You make a Craft check to transform the targets into a new item (or items) made of the same materials.
             You require none of the tools that would normally be necessary, such as an anvil and furnace.
             The total size of all targets combined must be Medium size or smaller.
 
             The time required to perform this ritual is equal to one tenth of the time that would normally be required to craft the object, to a minimum of one hour.
         """, tags=[]),
-        Spell('Craft Large Object', 5, 'Any number of unattended, nonmagical objects within \\rngclose range', """
+        Spell('Craft Large Object', 5, 'Any number of unattended, nonmagical objects within \\rngshort range', """
             This ritual functions like the \\spell<craft object> ritual, except that the maximum combined size of all targets increases to Large.
         """, tags=[]),
-        Spell('Craft Huge Object', 7, 'Any number of unattended, nonmagical objects within \\rngclose range', """
+        Spell('Craft Huge Object', 7, 'Any number of unattended, nonmagical objects within \\rngshort range', """
             This ritual functions like the \\spell<craft object> ritual, except that the maximum combined size of all targets increases to Huge.
         """, tags=[]),
         # Should this also be a spell? Incredibly niche, but golem makers
         # would want it...
-        Spell('Mending', 1, 'One \\glossterm<unattended> object within \\rngclose range', """
+        Spell('Mending', 1, 'One \\glossterm<unattended> object within \\rngshort range', """
             The target is regains hit points equal to 1d6 plus half your \\glossterm<power>.
         """, tags=[], ritual_time='one minute'),
         Spell('Morph Weapon', 1, 'One unattended manufactured weapon', """
@@ -208,12 +208,12 @@ polymorph=MysticSphere(
         Spell('Supreme Fortify', 7, 'One \\glossterm<unattended>, nonmagical object or part of an object of up to Large size.', """
             This ritual functions like the \\spell<fortify> ritual, except that the bonus to \\glossterm<resistances> increases to 15.
         """, tags=['Attune (ritual)'], ritual_time='one hour'),
-        Spell('Ironwood', 4, 'One Small or smaller unattended, nonmagical wooden object within \\rngclose range', """
+        Spell('Ironwood', 4, 'One Small or smaller unattended, nonmagical wooden object within \\rngshort range', """
             The target is transformed into ironwood.
             While remaining natural wood in almost every way, ironwood is as strong, heavy, and resistant to fire as iron.
             Metallic armor and weapons, such as full plate, can be crafted from ironwood.
         """, tags=[], ritual_time='24 hours'),
-        Spell('Purify Sustenance', 1, 'All food and water in a single square within \\rngclose range', """
+        Spell('Purify Sustenance', 1, 'All food and water in a single square within \\rngshort range', """
             The targets are purified.
             Spoiled, rotten, poisonous, or otherwise contaminated food and water becomes pure and suitable for eating and drinking.
             This does not prevent subsequent natural decay or spoiling.

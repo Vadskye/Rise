@@ -98,7 +98,7 @@ fabrication=MysticSphere(
             \\rank<5> You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using the weapon.
             \\rank<7> The bonus to accuracy increases to +2, and the bonus to power increases to +8.
         """, tags=['Manifestation']),
-        Spell('Forge', 1, 'One unoccupied square within \\rngclose range', """
+        Spell('Forge', 1, 'One unoccupied square within \\rngshort range', """
             Choose a type of body armor, weapon, or shield that you are proficient with.
             You cannot create heavy armor.
             You create a normal item of that type at the target location.
@@ -135,7 +135,7 @@ fabrication=MysticSphere(
             \\glance As above, except that the effect is removed at the end of the next round.
             \\crit Each secondary target is \\glossterm<immobilized> as long as it has webbing from this ability in its space.
         """, scaling="accuracy", tags=['Manifestation', 'Sustain (minor)']),
-        Spell('Caltrops', 2, 'One 5 ft.\\ square within \\rngclose range (see text)', """
+        Spell('Caltrops', 2, 'One 5 ft.\\ square within \\rngshort range (see text)', """
             You create exceptionally sharp caltrops in the target location.
             Whenever a creature moves into the area, unless the creature moves at one quarter speed to avoid the danger, you make an attack vs. Armor against them.
             Unlike most attacks, this attack can happen during the \\glossterm<movement phase>.
@@ -185,23 +185,23 @@ fabrication=MysticSphere(
         """, scaling="damage", tags=['Manifestation']),
     ],
     rituals=[
-        Spell('Manifest Object', 3, 'One unoccupied square within \\rngclose range', """
+        Spell('Manifest Object', 3, 'One unoccupied square within \\rngshort range', """
             Make a Craft check to create an object of Small size or smaller.
             The object appears out of thin air in the target location.
             % TODO: add ability to create objects of other sizes/materials
             It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as wood or cloth.
         """, tags=['Attune (ritual)', 'Manifestation'], ritual_time='one hour'),
-        Spell('Create Sustenance', 3, 'One unoccupied squre within \\rngclose range', """
+        Spell('Create Sustenance', 3, 'One unoccupied squre within \\rngshort range', """
             This ritual creates food and drink in that square that is sufficient to sustain two Medium creatures per \\glossterm<power> for 24 hours.
             The food that this ritual creates is simple fare of your choice -- highly nourishing, if rather bland.
         """, tags=['Creation'], ritual_time='one hour'),
-        Spell('Copy Writing', 1, ['One Small or smaller written work within \\rngclose range', 'One Small or smaller set of blank pages within \\rngclose range'], """
+        Spell('Copy Writing', 1, ['One Small or smaller written work within \\rngshort range', 'One Small or smaller set of blank pages within \\rngshort range'], """
             You copy the writing from the primary target onto the secondary target.
             The secondary target must have enough room for the writing.
             This ritual takes half the time required to copy the writing by hand, to a minimum of one minute, and does not require writing materials.
             It requires one \\glossterm<fatigue point> from its participants.
         """, tags=[], ritual_time='special'),
-        Spell('Greater Copy Writing', 4, ['One Medium or smaller written work within \\rngclose range', 'One Medium or smaller set of blank pages within \\rngclose range'], """
+        Spell('Greater Copy Writing', 4, ['One Medium or smaller written work within \\rngshort range', 'One Medium or smaller set of blank pages within \\rngshort range'], """
             This ritual functions like the \\spell<copy writing> ritual, except that it can target objects of Medium or smaller size.
             % "This ritual takes" -- make checks happy
             In addition, the time required to perform this ritual decreases to one tenth of the time required to copy the writing by hand, to a minimum of one minute.

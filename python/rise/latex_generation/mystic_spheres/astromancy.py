@@ -16,10 +16,10 @@ astromancy=MysticSphere(
             If the destination is invalid, this spell is \\glossterm<miscast>.
         """, scaling="""
             \\rank<2> The range increases to 10 feet.
-            \\rank<4> The range increases to \\rngclose.
+            \\rank<4> The range increases to \\rngshort.
             \\rank<6> The range increases to \\rngmed.
         """, tags=[]),
-        Effects('Translocate Object', 'One Tiny or smaller unattended object within \\rngclose range', """
+        Effects('Translocate Object', 'One Tiny or smaller unattended object within \\rngshort range', """
             The target teleports into an unoccupied location on a stable surface within range that can support the weight of the target.
             If the destination is invalid, the ability fails without effect.
         """, scaling="""
@@ -80,7 +80,7 @@ astromancy=MysticSphere(
             \\hit The target takes energy damage equal to 1d10 plus your \\glossterm<power>.
         """, scaling="damage", tags=[]),
         # TODO: target wording is awkward
-        Spell('Translocation', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
+        Spell('Translocation', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngshort range', """
             The target \\glossterm<teleports> into an unoccupied destination within range.
             If the destination is invalid, this spell is \\glossterm<miscast>.
         """, scaling="""
@@ -88,7 +88,7 @@ astromancy=MysticSphere(
             \\rank<5> The range increases to \\rnglong.
             \\rank<7> The range increases to \\rngext.
         """, tags=[]),
-        Spell('Silent Translocation', 3, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
+        Spell('Silent Translocation', 3, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngshort range', """
             This spell functions like the \\textit<translocation> spell, except that the target's departure and arrival with this spell are silent.
         """, scaling="""
             \\rank<5> The range increases to \\rngmed.
@@ -184,7 +184,7 @@ astromancy=MysticSphere(
             If that space is occupied, you reappear in the closest available space.
         """, scaling="""
             \\rank<5> When you disappear, you can choose where you reappear.
-            You can choose any unoccupied location within \\rngclose range from the location where you disappeared.
+            You can choose any unoccupied location within \\rngshort range from the location where you disappeared.
             \\rank<7> The distance you can reappear at increases to \\rngmed range.
         """, tags=['Attune (self)']),
         Spell('Transposition', 3, 'Two Large or smaller creatures within \\rngmed range', """

@@ -11,7 +11,7 @@ verdamancy=MysticSphere(
     name="Verdamancy",
     short_description="Animate and manipulate plants",
     cantrips=[
-        Effects('Rapid Growth', 'Small or smaller inanimate plant within \\rngclose range', """
+        Effects('Rapid Growth', 'Small or smaller inanimate plant within \\rngshort range', """
             Choose any number of days up to a week.
             The target grows as if that many days had passed.
             When this spell ends, the plant returns to its original state.
@@ -41,12 +41,12 @@ verdamancy=MysticSphere(
             The target can make this check as a \\glossterm<move action>, while other creatures can make the check as a standard action.
             \\crit As above, except that the target also cannot move farther than 10 feet from its original location until it ends the effect.
         """, scaling="accuracy", tags=['Manifestation']),
-        Spell('Vine Whip', 1, 'One creature within \\rngclose range', """
+        Spell('Vine Whip', 1, 'One creature within \\rngshort range', """
             Make an attack vs. Armor against the target.
             You gain a +2 bonus to \\glossterm<accuracy> with this attack if the target is in standing in \\glossterm<undergrowth>.
             \\hit The target takes bludgeoning damage equal to 1d10 plus your \\glossterm<power>.
         """, scaling="damage", tags=['Manifestation']),
-        Spell('Strangling Vines', 7, 'One Large or smaller creature within \\rngclose range', """
+        Spell('Strangling Vines', 7, 'One Large or smaller creature within \\rngshort range', """
             Make an attack vs. Fortitude against the target.
             You gain a +2 bonus to \\glossterm<accuracy> with this attack if the target is in standing in \\glossterm<undergrowth>.
             \\hit The target is \\glossterm<immobilized> by a mass of vines as a \\glossterm<condition>.
@@ -132,7 +132,7 @@ verdamancy=MysticSphere(
             \\rank<5> The bonus increases to +8.
             \\rank<7> The bonus increases to +16.
         """, tags=['Attune (target)']),
-        Spell('Embedded Growth', 1, 'One creature within \\rngclose range', """
+        Spell('Embedded Growth', 1, 'One creature within \\rngshort range', """
             You throw a seed that embeds itself in a foe and grows painfully.
             Make an attack vs. Fortitude against the target.
             \\hit As a \\glossterm<condition>, the target takes 1d6 physical damage at the end of each round.

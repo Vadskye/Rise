@@ -12,7 +12,7 @@ barrier=MysticSphere(
     short_description="Construct barriers to shield allies and areas from hostile forces",
     cantrips=[
         Effects('Minor Barrier', None, """
-            This cantrip functions like the \\spell<mystic barrier> spell, except that its \\glossterm<range> is \\rngclose and the maximum dimensions of the barrier are a 5 ft.\\ by 5 ft.\\ square.
+            This cantrip functions like the \\spell<mystic barrier> spell, except that its \\glossterm<range> is \\rngshort and the maximum dimensions of the barrier are a 5 ft.\\ by 5 ft.\\ square.
         """, scaling="""
             \\rank<2> The range increases to \\rngmed.
             \\rank<4> The maximum dimensions of the wall increase to a 5 ft.\\ by 10 ft.\\ rectangle.
@@ -26,7 +26,7 @@ barrier=MysticSphere(
             \\rank<2> The halving applies to all damage, not just energy damage.
             \\rank<4> You also gain a +1 bonus to all defenses.
             \\rank<6> The defense bonus increases to +2.
-        """, focus=False),
+        """),
     ],
     lists=['Arcane', 'Divine', 'Nature'],
     spells=[
@@ -178,7 +178,7 @@ barrier=MysticSphere(
 
             You gain a +8 \\glossterm<magic bonus> against \\glossterm<physical damage>.
             In addition, whenever you resist physical damage, the attacker takes energy damage equal to half the damage resisted this way.
-            If the attacker is beyond \\rngclose range of you, this reflection fails.
+            If the attacker is beyond \\rngshort range of you, this reflection fails.
             Any effect which increases this spell's range increases the range of this effect by the same amount.
         """, scaling="""
             \\rank<7> The bonus increases to +16.
@@ -245,7 +245,7 @@ barrier=MysticSphere(
             Its equipment, if any, is also protected.
             This does not protect the target from fire or cold damage.
         """, tags=['Attune (ritual)'], ritual_time='one minute'),
-        Spell('Mystic Lock', 2, 'One large or smaller closable, nonmagical object within \\rngclose range, such as a door or box', """
+        Spell('Mystic Lock', 2, 'One large or smaller closable, nonmagical object within \\rngshort range, such as a door or box', """
             The target object becomes magically locked.
             It can be unlocked with a Devices check against a \\glossterm<difficulty rating> equal to 20 \\add your \\glossterm<power>.
             The \\glossterm<difficulty rating> to break it open forcibly increases by 10.
@@ -254,11 +254,11 @@ barrier=MysticSphere(
             This effect lasts as long as you \\glossterm<attune> to it.
             If you use this ability multiple times, you can attune to it each time.
         """, tags=['Attune (ritual)'], ritual_time='one minute'),
-        Spell('Resilient Lock', 4, 'One large or smaller closable, nonmagical object within \\rngclose range, such as a door or box', f"""
+        Spell('Resilient Lock', 4, 'One large or smaller closable, nonmagical object within \\rngshort range, such as a door or box', f"""
             This ritual functions like the \\ritual<mystic lock> ritual, except that the \\glossterm<difficulty rating> to unlock the target with a Devices check is instead equal to 30 + your \\glossterm<power>.
             In addition, the \\glossterm<difficulty rating> to break it open increases by 20 instead of by 10.
         """, tags=['Attune (ritual)'], ritual_time='one hour'),
-        Spell('Explosive Runes', 4, 'One Small or smaller unattended object with writing on it within \\rngclose range', """
+        Spell('Explosive Runes', 4, 'One Small or smaller unattended object with writing on it within \\rngshort range', """
             % TODO: clarify how to identify that this is Explosive Runes instead of bad handwriting
             The writing on the target is altered by the runes in subtle ways, making it more difficult to read.
             It becomes a \\glossterm<trap>.

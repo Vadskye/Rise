@@ -15,7 +15,7 @@ electromancy=MysticSphere(
 name="Electromancy",
 short_description='Create electricity to injure and stun foes',
 cantrips=[
-    Effects('Spark', 'One creature or object within \\rngclose range', """
+    Effects('Spark', 'One creature or object within \\rngshort range', """
         Make an attack vs. Reflex against the target.
         \\hit The target takes 2 electricity damage.
     """, scaling="""

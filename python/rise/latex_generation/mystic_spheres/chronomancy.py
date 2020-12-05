@@ -54,12 +54,12 @@ chronomancy=MysticSphere(
             \\glance As above, except that the effect is removed at the end of the next round, allowing to creature to act normally in the zone after that time.
             % No \\crit effect
         """, scaling="accuracy", tags=[]),
-        Spell('Slow', 1, 'One creature within \\rngclose range', """
+        Spell('Slow', 1, 'One creature within \\rngshort range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<slowed> as a \\glossterm<condition>.
             \\crit As above, except that the condition must be removed twice before the effect ends.
         """, scaling="accuracy", tags=[]),
-        Spell('Decelerate', 7, 'One creature within \\rngclose range', """
+        Spell('Decelerate', 7, 'One creature within \\rngshort range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<decelerated> as a \\glossterm<condition>.
             \\glance As above, except that the condition is removed at the end of the next round.
@@ -77,7 +77,7 @@ chronomancy=MysticSphere(
             \\glance As above, except that the condition is removed at the end of the next round.
             \\crit The target is \\glossterm<slowed> and \\glossterm<immobilized> as a single condition.
         """, scaling="accuracy", tags=[]),
-        Spell('Mental Lag', 4, 'One creature within \\rngclose range', """
+        Spell('Mental Lag', 4, 'One creature within \\rngshort range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<slowed> and \\glossterm<dazed> as a single \\glossterm<condition>.
             \\glance As above, except that the condition is removed at the end of the next round.
@@ -225,7 +225,7 @@ chronomancy=MysticSphere(
         """, scaling="damage", tags=[]),
     ],
     rituals=[
-        Spell('Gentle Repose', 3, 'One unattended, nonmagical object within \\rngclose range', """
+        Spell('Gentle Repose', 3, 'One unattended, nonmagical object within \\rngshort range', """
             Time does not pass for the target, preventing it from decaying or spoiling.
             This can extend the time a poison or similar item lasts before becoming inert.
             % What effects have an explicit time limit?

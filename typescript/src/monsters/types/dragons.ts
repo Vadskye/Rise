@@ -57,7 +57,7 @@ const baseDragonBySize = {
   },
   ancient: {
     armorInputs: [{ name: "scales" as const }, { name: "double reinforced" as const }],
-    attackInputs: [frightfulPresence("\\areaext")],
+    attackInputs: [frightfulPresence("\\areagarg")],
     level: 17,
     size: "colossal" as const,
     name: "Ancient",
@@ -173,12 +173,12 @@ function lineBreathWeapon(age: AgeCategory, damageType: DamageType): AttackInput
       name,
     }),
     wyrm: standardBreathWeapon({
-      area: "\\areaext, 15 ft. wide line",
+      area: "\\areagarg, 15 ft. wide line",
       damageType,
       name,
     }),
     greatWyrm: standardBreathWeapon({
-      area: "\\areaext, 20 ft. wide line",
+      area: "\\areagarg, 20 ft. wide line",
       damageType,
       name,
     }),
@@ -227,7 +227,7 @@ function coneBreathWeapon(age: AgeCategory, damageType: DamageType): AttackInput
       name,
     }),
     greatWyrm: standardBreathWeapon({
-      area: "\\areaext cone",
+      area: "\\areagarg cone",
       damageType,
       name,
     }),
