@@ -142,7 +142,7 @@ barrier=MysticSphere(
             In addition, the wall is \\glossterm<impervious> to physical damage.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Wall of Energy Impedance', 3, None, """
-            You create a wall of magical energy in a 20 ft.\\ high, \\areamed line within \\rngmed range.
+            You create a wall of magical energy in a 15 ft.\\ high, \\areamed line within \\rngmed range.
             The wall is visible as a shimmering magical membrane that does not block sight.
             It does not impede passage for objects or creatures, but any ability that deals \\glossterm<energy damage> treats the wall as an impassable barrier.
             Each 5-ft.\\ square of wall has \\glossterm<hit points> equal to twice your \\glossterm<power>.
@@ -151,7 +151,7 @@ barrier=MysticSphere(
             \\rank<7> The \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to three times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Wall of Magic Impedance', 5, None, """
-            You create a wall of magical energy in a 20 ft.\\ high, \\areamed line within \\rngmed range.
+            You create a wall of magical energy in a 15 ft.\\ high, \\areamed line within \\rngmed range.
             The wall is visible as a shimmering magical membrane that does not block sight.
             It does not impede passage for objects or creatures, but any \\glossterm<magical> ability treats the wall as an impassable barrier.
             Each 5-ft.\\ square of wall has \\glossterm<hit points> equal to three times your \\glossterm<power>.

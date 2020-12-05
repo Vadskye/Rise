@@ -98,11 +98,12 @@ revelation=MysticSphere(
         """, scaling="""
             \\rank<6> The bonus increases to +6.
         """, tags=['Attune (self)']),
-        Spell('Third Eye', 4, 'Yourself', """
-            You gain \\glossterm<blindsight> with a 50 foot range.
+        Spell('Third Eye', 2, 'Yourself', """
+            You gain \\glossterm<blindsight> with a 15 foot range.
             This can allow it to see perfectly without any light, regardless of concealment or invisibility.
         """, scaling="""
-            \\rank<6> The range increases to 100 feet.
+            \\rank<4> The range increases to 30 feet.
+            \\rank<6> The range increases to 60 feet.
         """, tags=['Attune (self)']),
         Spell('Reveal Weakness', 2, 'One creature within \\rngmed range', """
             When you cast this spell, choose one of the four defenses: Armor, Fortitude, Reflex, or Mental.
