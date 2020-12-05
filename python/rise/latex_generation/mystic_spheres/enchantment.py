@@ -68,7 +68,7 @@ enchantment=MysticSphere(
             \\crit As above, and as a \\glossterm<condition>, each target is unable to stand up.
             If a target is somehow brought into a standing position, it will immediately fall and become prone again.
         """, scaling="accuracy", tags=['Compulsion']),
-        Spell('Slow Down', 1, 'One creature within \\rngclose range', """
+        Spell('Slow Down', 1, 'One creature within \\rngshort range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<slowed> as a \\glossterm<condition>.
             \\crit As above, except that the condition must be removed twice before the effect ends.
@@ -78,32 +78,32 @@ enchantment=MysticSphere(
             \\hit Each target is \\glossterm<slowed> until the end of the next round.
             \\crit Each target is \\glossterm<slowed> as a \\glossterm<condition>.
         """, scaling="accuracy", tags=[]),
-        Spell('Stop Moving', 7, 'One creature within \\rngclose range', """
+        Spell('Stop Moving', 7, 'One creature within \\rngshort range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<immobilized> as a \\glossterm<condition>.
             \\glance As above, except that the condition is removed at the end of the next round.
             \\crit The target is \\glossterm<paralyzed> as a \\glossterm<condition>.
         """, tags=[]),
-        # Spell('Confusion', 7, 'One creature within \\rngclose range', """
+        # Spell('Confusion', 7, 'One creature within \\rngshort range', """
         #     Make an attack vs. Mental against the target.
         #     \\hit The target is \\confused as a \\glossterm<condition>.
         #     \\glance As above, except that the condition is removed at the end of the next round.
         #     \\crit As above, except that the condition must be removed twice before the effect ends.
         # """, scaling="accuracy", tags=['Compulsion']),
-        Spell('Confusion', 6, '\\glossterm<Enemies> in a \\areasmall radius within \\rngclose range', """
+        Spell('Confusion', 6, '\\glossterm<Enemies> in a \\areasmall radius within \\rngshort range', """
             Make an attack vs. Mental against each target.
             \\hit Each target is \\confused until the end of the next round.
             \\crit Each target is \\glossterm<confused> as a \\glossterm<condition>.
         """, tags=['Compulsion']),
         # +1 level for unusually strong crit effect
-        Spell('Dominate Person', 5, 'One creature within \\rngclose range', """
+        Spell('Dominate Person', 5, 'One creature within \\rngshort range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<stunned> as a \\glossterm<condition>.
             \\glance As above, except that the condition is removed at the end of the next round.
             \\crit The target is \\glossterm<stunned> and \\glossterm<confused> as a single \\glossterm<condition>.
             If the target is humanoid and was already stunned and confused from a previous casting of this spell, it becomes \\glossterm<dominated> by you as long as you \\glossterm<attune> to this ability.
         """, scaling="accuracy", tags=['Compulsion']),
-        Spell('Dominate Monster', 7, 'One creature within \\rngclose range', """
+        Spell('Dominate Monster', 7, 'One creature within \\rngshort range', """
             This spell functions like the \\textit<dominate person> spell, except that you are also able to dominate non-humanoid creatures with its critical hit effect.
         """, tags=['Compulsion']),
         Spell('Sleep', 6, 'One creature within \\rngmed range', """
@@ -228,7 +228,7 @@ enchantment=MysticSphere(
             For example, it could make a \\glossterm<strike> or cast an offensive spell, but it could not heal itself or summon a creature.
             \\crit As above, except that the condition must be removed twice before the effect ends.
         """, scaling="accuracy", tags=['Emotion']),
-        Spell('Deaden Emotions', 6, 'One creature within \\rngclose range', """
+        Spell('Deaden Emotions', 6, 'One creature within \\rngshort range', """
             Make an attack vs. Mental against the target.
             \\hit As a \\glossterm<condition>, the target is unable to take any \\glossterm<standard actions> that cause it to make an attack.
             If it is harmed, either by taking damage or by experiencing significant subjective discomfort, this effect immediately ends.
@@ -284,7 +284,7 @@ enchantment=MysticSphere(
             \\rank<5> The bonus increases to +5.
             \\rank<7> The bonus increases to +6.
         """, tags=['Attune (self)']),
-        Spell('Solipsism', 7, 'One creature within \\rngclose range', """
+        Spell('Solipsism', 7, 'One creature within \\rngshort range', """
             Make an attack vs. Mental against the target.
             You take a -5 penalty to \\glossterm<accuracy> with this attack against creatures who are engaged in combat during the current phase.
             \\hit As a \\glossterm<condition>, the target believes that it is the only real creature, and the rest of the world is an illusion.

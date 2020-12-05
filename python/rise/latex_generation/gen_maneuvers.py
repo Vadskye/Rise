@@ -1063,7 +1063,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Focused Strike',
         short_description='You concentrate to strike a critical blow',
-        target="One creature within \\rngclose range",
+        target="One creature within \\rngshort range",
         effect_text="""
             You can only use this ability during the \\glossterm<action phase>.
             During that phase, you concentrate on your target.
@@ -1158,7 +1158,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Ricochet',
         short_description='Make a thrown strike that hits multiple targets',
-        target="Up to three creatures or objects in a \\areamed radius within \\rngclose range (see text)",
+        target="Up to three creatures or objects in a \\areamed radius within \\rngshort range (see text)",
         effect_text="""
             Make a thrown \\glossterm<strike> using a single weapon that deals slashing or bludgeoning damage against each target.
             Your \\glossterm<power> with the strike is halved.

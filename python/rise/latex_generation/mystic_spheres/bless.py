@@ -173,21 +173,21 @@ bless=MysticSphere(
         Spell('Supreme Fortification', 7, 'One unattended, nonmagical object or part of an object of up to Large size', """
             This ritual functions like the \\spell<blessing of fortification> ritual, except that the bonus to \\glossterm<resistances> increases to 15.
         """, tags=['Attune (ritual)'], ritual_time='one hour'),
-        Spell('Bless Water', 1, 'One pint of unattended, nonmagical water within \\rngclose range', """
+        Spell('Bless Water', 1, 'One pint of unattended, nonmagical water within \\rngshort range', """
             The target becomes holy water.
             Holy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck \\glossterm<undead> or an evil \\glossterm<planeforged>.
         """, tags=['Attune (ritual)'], ritual_time='one minute'),
-        Spell('Permanent Bless Water', 3, 'One pint of unattended, nonmagical water within \\rngclose range', """
+        Spell('Permanent Bless Water', 3, 'One pint of unattended, nonmagical water within \\rngshort range', """
             This ritual functions like the \\spell<bless water> ritual, except that it loses the \\glossterm<Attune> (ritual) tag and the effect lasts permanently.
         """, tags=[], ritual_time='one hour'),
-        Spell('Curse Water', 1, 'One pint of unattended, nonmagical water within \\rngclose range', """
+        Spell('Curse Water', 1, 'One pint of unattended, nonmagical water within \\rngshort range', """
             The target becomes unholy water.
             Unholy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck good \\glossterm<planeforged>.
         """, tags=['Attune (ritual)'], ritual_time='one minute'),
-        Spell('Permanent Curse Water', 3, 'One pint of unattended, nonmagical water within \\rngclose range', """
+        Spell('Permanent Curse Water', 3, 'One pint of unattended, nonmagical water within \\rngshort range', """
             This ritual functions like the \\spell<curse water> ritual, except that it loses the \\glossterm<Attune> (ritual) tag and the effect lasts permanently.
         """, tags=[], ritual_time='one hour'),
-        Spell('Blessing of Purification', 1, 'All food and water in a single square within \\rngclose range', """
+        Spell('Blessing of Purification', 1, 'All food and water in a single square within \\rngshort range', """
             The targets are purified.
             Spoiled, rotten, poisonous, or otherwise contaminated food and water becomes pure and suitable for eating and drinking.
             This does not prevent subsequent natural decay or spoiling.

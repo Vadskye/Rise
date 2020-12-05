@@ -11,7 +11,7 @@ aquamancy=MysticSphere(
     name="Aquamancy",
     short_description="Command water to crush and drown foes",
     cantrips=[
-        Effects('Create Water', 'Any number of locations within \\rngclose range', """
+        Effects('Create Water', 'Any number of locations within \\rngshort range', """
             You create up to two gallons of wholesome, drinkable water at the target locations, allowing you to fill multiple small water containers.
             You must create a minimum of one ounce of water in each location.
         """, scaling="""
@@ -19,7 +19,7 @@ aquamancy=MysticSphere(
             \\rank<4> The volume created increases to ten gallons.
             \\rank<6> The volume created increases to twenty gallons.
         """, tags=['Creation']),
-        Effects('Purify Water', 'Up to five gallons of water within \\rngclose range', """
+        Effects('Purify Water', 'Up to five gallons of water within \\rngshort range', """
             You can separate out dirt, sand, and minor pollutants from the target water, moving the waste material to the edge of the water so falls out or can be easily removed.
             This does not remove poisons, magical effects, or contaminants heavier than half a pound.
             Using this on a very large body of water is difficult, since the waste material can easily mix with the water unaffected by a single casting of this spell.
@@ -106,7 +106,7 @@ aquamancy=MysticSphere(
             Each five-foot square of wall has \\glossterm<hit points> equal to three times your \\glossterm<power> and all of its defenses are 0.
         """, scaling="""
             \\rank<5> The area of the wall increases to a \\areahuge line.
-            \\rank<7> The area of the wall increases to a \\areaext line.
+            \\rank<7> The area of the wall increases to a \\areagarg line.
         """, tags=['Sustain (minor)', 'Manifestation']),
         Spell('Underwater Freedom', 2, 'Yourself', """
             You can cast this spell as a \\glossterm<minor action>.
@@ -143,7 +143,7 @@ aquamancy=MysticSphere(
             Everything in the area gain a bonus equal to your \\glossterm<power> to \\glossterm<resistances> against fire damage.
         """, scaling="""
             \\rank<4> The area increases to a \\areahuge radius \\glossterm<zone>.
-            \\rank<6> The area increases to a \\areaext radius \\glossterm<zone>.
+            \\rank<6> The area increases to a \\areagarg radius \\glossterm<zone>.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Obscuring Mist', 2, None, """
             Fog fills the air within a \\areamed radius \\glossterm<zone> from your location.
@@ -238,7 +238,7 @@ aquamancy=MysticSphere(
         """, scaling="""
             \\rank<3> The area increases to a \\arealarge line.
             \\rank<5> The area increases to a \\areahuge line.
-            \\rank<7> The area increases to a \\areaext line.
+            \\rank<7> The area increases to a \\areagarg line.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Fluid Motion', 5, 'Yourself', """
             When you move, you can transform yourself into a rushing flow of water with a volume roughly equal to your normal volume until your movement is complete.
@@ -271,7 +271,7 @@ aquamancy=MysticSphere(
             This spell can detect bodies of water with a minimum size of Fine.
         """, tags=['Detection'], ritual_time='one minuate'),
         Spell('Greater Detect Water', 3, None, """
-            This ritual functions like the \\spell<detect water> ritual, except that the range increases to \\rngext.
+            This ritual functions like the \\spell<detect water> ritual, except that the range increases to \\rngdist.
         """, tags=['Detection'], ritual_time='one minute'),
         Spell('Supreme Detect Water', 5, None, """
             This ritual functions like the \\spell<detect water> ritual, except that the range increases to 2,000 feet.

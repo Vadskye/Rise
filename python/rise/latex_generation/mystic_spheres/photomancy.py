@@ -75,7 +75,7 @@ photomancy=MysticSphere(
         """, scaling="""
             \\rank<3> The area increases to a \\arealarge line.
             \\rank<5> The area increases to a 30 ft.\\ high \\areahuge line.
-            \\rank<7> The area increases to a 60 ft.\\ high, \\areaext line.
+            \\rank<7> The area increases to a 60 ft.\\ high, \\areagarg line.
         """, tags=['Sensation', 'Sustain (minor)']),
         Spell('Flash', 2, 'One creature within \\rngmed range', """
             A burst of light flashes in front of a creature's eyes.
@@ -84,7 +84,7 @@ photomancy=MysticSphere(
             \\hit The target is \\glossterm<dazzled> as a \\glossterm<condition>.
             \\crit The target is \\glossterm<blinded> as a \\glossterm<condition>.
         """, scaling="accuracy", tags=['Sensation', 'Visual']),
-        Spell('Blinding Flash', 7, 'One creature within \\rngclose range', """
+        Spell('Blinding Flash', 7, 'One creature within \\rngshort range', """
             A burst of light flashes in front of a creature's eyes.
             \\glossterm<Bright illumination> fills a 60 foot radius around a location in the target's space until the end of the next round.
             In addition, make an attack vs. Fortitude against the target.
@@ -207,11 +207,11 @@ photomancy=MysticSphere(
         Spell('Continuous Light', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngmed range', """
             The target glows like a torch, shedding bright illumination in a \\areamed radius (and shadowy illumination for an additional 20 feet).
         """, tags=['Attune (ritual)', 'Sensation'], ritual_time='one minute'),
-        Spell('False Decrepify', 1, 'One Medium or smaller unattended object within \\rngclose range', """
+        Spell('False Decrepify', 1, 'One Medium or smaller unattended object within \\rngshort range', """
             The target appears old and worn down.
             It may be appear dusty, have cracks and wrinkles from age, or otherwise appear undesirable and low quality.
         """, tags=['Attune (ritual)', 'Sensation'], ritual_time='one hour'),
-        Spell('Permanent Light', 3, 'One Medium or smaller unattended object within \\rngclose range', """
+        Spell('Permanent Light', 3, 'One Medium or smaller unattended object within \\rngshort range', """
             This ritual functions like the \\spell<continuous light> ritual, except that it loses the \\glossterm<Attune> (ritual) tag and the effect lasts permanently.
             In addition, it can only target objects.
         """, tags=['Sensation'], ritual_time='24 hours'),

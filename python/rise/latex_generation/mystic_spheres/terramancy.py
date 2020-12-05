@@ -57,7 +57,7 @@ terramancy=MysticSphere(
             \\glance As above, except that that the target takes half damage.
         """, scaling="damage", tags=[]),
         # -1 level for Large or smaller + earth or stone
-        Spell('Earthcage', 6, 'One Large or smaller creature or object within \\rngclose range', """
+        Spell('Earthcage', 6, 'One Large or smaller creature or object within \\rngshort range', """
             You create a cage of solid earth from the ground.
             Make an attack vs. Reflex against the target.
             The target must be within 5 feet of a Small or larger body of earth or stone.

@@ -16,7 +16,7 @@ umbramancy=MysticSphere(
         """, scaling="""
             \\rank<2> The maximum area increases to a \\arealarge radius.
             \\rank<4> The range increases to \\rnglong.
-            \\rank<6> The maximum area increases to a \\areaext radius.
+            \\rank<6> The maximum area increases to a \\areagarg radius.
         """, tags=['Sustain (minor)']),
     ],
     lists=['Arcane', 'Pact'],
@@ -29,9 +29,9 @@ umbramancy=MysticSphere(
             Darkvision and similar abilities which do not require light still function within the area.
         """, scaling="""
             \\rank<5> The maximum area increases to a \\arealarge radius.
-            \\rank<7> The maximum area increases to a \\areaext radius.
+            \\rank<7> The maximum area increases to a \\areagarg radius.
         """, tags=['Sensation', 'Sustain (minor)']),
-        Spell('Darklantern', 1, 'One Small or smaller unattended object within \\rngclose range', """
+        Spell('Darklantern', 1, 'One Small or smaller unattended object within \\rngshort range', """
             This spell suppresses light in an \\glossterm<emanation> from the target.
             You can choose the spell's radius, up to a maximum of a \\areamed radius.
             Light within or passing through the area is dimmed to be no brighter than \\glossterm<shadowy illumination>.
@@ -39,7 +39,7 @@ umbramancy=MysticSphere(
         """, scaling="""
             \\rank<3> The maximum area increases to a \\arealarge radius.
             \\rank<5> The maximum area increases to a \\areahuge radius.
-            \\rank<7> The maximum area increases to a \\areaext radius.
+            \\rank<7> The maximum area increases to a \\areagarg radius.
         """, tags=['Attune (self)', 'Sensation']),
         Spell('Darkvision', 2, 'Yourself', """
             The target gains \\glossterm<darkvision> with a 60 foot radius.
@@ -84,7 +84,7 @@ umbramancy=MysticSphere(
             \\rank<4> Moving during a round does not prevent you from becoming invisible at the end of the round.
             \\rank<6> Taking \\glossterm<minor actions> does not prevent you from becoming invisible at the end of the round.
         """, tags=['Attune (self)']),
-        Spell('Shrouded Vision', 5, 'One creature within \\rngclose range', """
+        Spell('Shrouded Vision', 5, 'One creature within \\rngshort range', """
             Make an attack vs. Mental against the target.
             You gain a +2 bonus to \\glossterm<accuracy> with the attack if the target is not in \\glossterm<bright illumination>.
             \\hit As a \\glossterm<condition>, the target takes a -4 penalty to \\glossterm<accuracy> and visual Awareness checks.
@@ -126,7 +126,7 @@ umbramancy=MysticSphere(
             If you are in \\glossterm<bright illumination> and are not touching your shadow, this spell is \\glossterm<miscast>.
         """, scaling="""
             \\rank<3> The teleporation range increases to \\rnglong.
-            \\rank<5> The teleporation range increases to \\rngext.
+            \\rank<5> The teleporation range increases to \\rngdist.
             \\rank<7> The teleporation range increases to 2,000 feet.
         """, tags=[]),
         Spell('Shadowstrike', 4, 'Yourself', """
