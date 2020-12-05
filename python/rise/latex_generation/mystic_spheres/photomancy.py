@@ -123,8 +123,8 @@ photomancy=MysticSphere(
             \\crit Each target is \\glossterm<blinded> as a \\glossterm<condition>.
             In addition, each target is affected as if it had entered natural sunlight.
         """, tags=['Sensation', 'Visual']),
-        # +2 levels for long range, +1 for five zones
-        Spell('Pillars of Light', 4, 'All creatures in the area (see text)', """
+        # +1 level for long range, +1 for five zones
+        Spell('Pillars of Light', 3, 'All creatures in the area (see text)', """
             A burst of bright light fills up to five \\areasmall radius, 120 ft.\\ high cylinder-shaped \\glossterm<zones> within \\rnglong range of you.
             \\glossterm<Bright illumination> fills a 120 foot radius around each area until the end of the next round.
             In addition, make an attack vs. Fortitude against each target creature.
@@ -189,7 +189,7 @@ photomancy=MysticSphere(
             At the end of each round, if the duplicate is outside of \\rngmed range from you, it is destroyed.
             This effect ends when there are no duplicates remaining.
         """, scaling="""
-            \\rank<4> The maximum range increases to \\rnglong.
+            \\rank<4> The maximum range increases to \\rngdist.
             \\rank<6> You can create a second duplicate of yourself.
         """, tags=['Sustain (minor)']),
         Spell('False Wound', 1, 'Yourself or one \\glossterm<ally> within \\rngmed range', """

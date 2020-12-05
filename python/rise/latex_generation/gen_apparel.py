@@ -796,7 +796,7 @@ def generate_armor():
             description="""
                 This item functions like the \\mitem<boots of translocation> item, except that the range increases to \\rngmed.
             """,
-            short_description="Grants ability to teleport up to 100 feet",
+            short_description="Grants ability to teleport up to 60 feet",
         ),
         MagicItem(
             name="Boots of Translocation, Supreme",
@@ -806,7 +806,7 @@ def generate_armor():
             description="""
                 This item functions like the \\mitem<boots of translocation> item, except that the range increases to \\rnglong.
             """,
-            short_description="Grants ability to teleport up to 300 feet",
+            short_description="Grants ability to teleport up to 120 feet",
         ),
         MagicItem(
             name="Armor of Translocation",
@@ -828,17 +828,17 @@ def generate_armor():
             description="""
                 This item functions like the \\mitem<armor of translocation> item, except that the range increases to \\rngmed.
             """,
-            short_description="Grants ability to teleport up to 100 feet",
+            short_description="Grants ability to teleport up to 60 feet",
         ),
         MagicItem(
             name="Armor of Translocation, Supreme",
-            level=18,
+            level=19,
             material_type='Body armor',
             tags=[],
             description="""
                 This item functions like the \\mitem<armor of translocation> item, except that the range increases to \\rnglong.
             """,
-            short_description="Grants ability to teleport up to 300 feet",
+            short_description="Grants ability to teleport up to 120 feet",
         ),
     ]
 
