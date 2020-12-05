@@ -15,8 +15,8 @@ umbramancy=MysticSphere(
             Any object or effect which blocks light also blocks this spell's effect.
         """, scaling="""
             \\rank<2> The maximum area increases to a \\arealarge radius.
-            \\rank<4> The range increases to \\rnglong.
-            \\rank<6> The maximum area increases to a \\areagarg radius.
+            \\rank<4> The range increases to \\rngdist.
+            \\rank<6> The maximum area increases to a \\areahuge radius.
         """, tags=['Sustain (minor)']),
     ],
     lists=['Arcane', 'Pact'],
@@ -127,13 +127,13 @@ umbramancy=MysticSphere(
         """, scaling="""
             \\rank<3> The teleporation range increases to \\rnglong.
             \\rank<5> The teleporation range increases to \\rngdist.
-            \\rank<7> The teleporation range increases to 2,000 feet.
+            \\rank<7> The teleporation range increases to \\rngext.
         """, tags=[]),
         Spell('Shadowstrike', 4, 'Yourself', """
             This spell functions like the \\spell<shadowstep> spell, except that you can also make a \\glossterm<strike> at your destination.
             You take a -2 penalty to \\glossterm<accuracy> with the strike due to its rushed nature.
         """, scaling="""
-            \\rank<6> The teleporation range increases to \\rnglong.
+            \\rank<6> The teleporation range increases to \\rngdist.
         """, tags=[]),
         Spell('Walk the Shadow Roads', 4, 'Yourself', """
             You can teleport horizontally between shadows instead of moving normally.
@@ -200,7 +200,7 @@ umbramancy=MysticSphere(
             It does not inhibit the passage of objects or creatures.
         """, scaling="""
             \\rank<3> The area increases to a \\arealarge line.
-            \\rank<5> The range increases to \\rnglong.
+            \\rank<5> The range increases to \\rngdist.
             \\rank<7> The area increases to a \\areahuge line.
         """, tags=['Sensation', 'Sustain (minor)']),
     ],

@@ -168,7 +168,7 @@ revelation=MysticSphere(
 
             % The use of attune (self) is intentional to make the "scout the dungeon exclusively using clairvoyance" plan improbably difficult to pull off
         """, tags=['Attune (self)', 'Scrying']),
-        Spell('Reverse Scrying', 3, 'One magical sensor within \\rngmed range', """
+        Spell('Reverse Scrying', 3, 'One magical sensor within \\rngshort range', """
             A \\glossterm<scrying sensor> appears at the location of the source of the the ability that created the target sensor.
             At the start of each round, you choose whether you see and hear from this sensor or from your body.
             While viewing through the sensor, your observation ability is the same as your normal body, except that it does not share the benefits of any \\glossterm<magical> effects that improve your vision.
@@ -177,7 +177,7 @@ revelation=MysticSphere(
             If undisturbed, the sensor floats in the air in its position.
         """, scaling="""
             \\rank<5> The range increases to \\rnglong.
-            \\rank<7> The range increases to \\rngdist.
+            \\rank<7> The range increases to \\rngext.
         """, tags=['Sustain (minor)', 'Scrying']),
         Spell('Sensory Chain', 4, 'One creature within \\rngmed range (see text)', """
             Make an attack vs. Mental against the target.
