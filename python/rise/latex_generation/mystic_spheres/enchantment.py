@@ -14,9 +14,9 @@ enchantment=MysticSphere(
         Effects('Cheer', 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target's mood improves and it feels more cheerful.
         """, scaling="""
-            \\rank<3> The range increases to \\rngmed.
-            \\rank<5> You may target an additional ally within range.
-            \\rank<7> The range increases to \\rnglong.
+            \\rank<2> The range increases to \\rngmed.
+            \\rank<4> You may target an additional ally within range.
+            \\rank<6> The range increases to \\rnglong.
         """, tags=['Emotion', 'Sustain (free)']),
         Effects('Repeat', 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
@@ -293,8 +293,37 @@ enchantment=MysticSphere(
             If it takes any damage or is otherwise harmed, including significant subjective discomfort, this effect is automatically broken.
             \\glance As above, except that the condition is removed at the end of the next round.
         """, tags=['Subtle']),
+        Spell('Friend to Animals', 1, 'Yourself', """
+            You gain a +3 \\glossterm<magic bonus> to the Creature Handling skill.
+        """, scaling="""
+            \\rank<3> The bonus increases to +4.
+            \\rank<5> The bonus increases to +5.
+            \\rank<7> The bonus increases to +6.
+        """, tags=['Attune (self)']),
+        Spell('Dull the Senses', 1, 'One creature within \\rngmed range', """
+            This spell has no \\glossterm<verbal components>.
+
+            Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against the target.
+            \\hit The target takes a -4 penalty to Awareness, Social Insight, and \\glossterm<initiative> checks as a \\glossterm<condition>.
+            \\crit As above, except that the penalty increases to -8.
+        """, scaling='accuracy', tags=['Subtle']),
     ],
     rituals=[
+        Spell('Animal Messenger', 2, 'One Small or Tiny animal within \\rngmed range', """
+            Make an attack vs. Mental against the target.
+            You take a -10 penalty to \\glossterm<accuracy> with the attack if the target is currently in combat.
+            \\hit The target is compelled to deliver a message for you.
+            You can give the animal a small piece of parchment or similarly sized item containing up to 25 words.
+            In addition, choose a destination that you can clearly visualize.
+            You must have a general idea of the direction and distance to that location from your current location.
+            You must also visualize what a valid recipient for the message looks like.
+            You can leave this description vague, such as "any humanoid creature", or be more specific, like "a hawk-nosed human wearing a red cloak".
+
+            The animal will attempt to travel to that destination to the best of its ability, following the directions you have given it.
+            It will not willingly part with its message until it reaches its destination.
+            Once it reaches its destination, it will wait until it observes a valid recipient, leaving the destination only briefly as necessary to sustain itself.
+            When the animal has delivered its message, this effect ends, allowing you to know that the message has been delivered.
+        """, tags=['Attune (self)'], ritual_time='one minute'),
         Spell('Tell the Truth', 4, 'Up to five creatures within \\rngmed range', """
             Make an attack vs. Mental against each target.
 
@@ -302,6 +331,25 @@ enchantment=MysticSphere(
             % No \\glance effect
             % No \\crit effect
         """, tags=['Attune (ritual)'], ritual_time='one minute'),
+        Spell('Antipathy', 4, ['One Large or smaller object within \\rngmed range', 'Creatures near the target (see text)'], """
+            When you perform this ritual, choose a creature type: aberration, animal, animate, dragon, humanoid, magical beast, monstrous humanoid, planeforged, or undead.
+            Whenever a creature of the chosen type enters a \\areahuge radius \\glossterm<emanation> from the target, make an attack vs. Mental against it.
+            After you make this attack against a particular creature, you do not make this attack against that creature again until it takes a \\glossterm<short rest>.
+            \\hit The creature is \\glossterm<frightened> by the primary target as a \\glossterm<condition>.
+            \\glance As above, except that the condition is removed at the end of the next round.
+            \\crit The creature is \\glossterm<panicked> by the primary target as a \\glossterm<condition>.
+        """, tags=['Attune (ritual)', 'Emotion'], ritual_time='24 hours'),
+        Spell('Sympathy', 4, ['One Large or smaller object within \\rngmed range', 'Creatures near the target (see text)'], """
+            When you perform this ritual, choose a creature type: aberration, animal, animate, dragon, humanoid, magical beast, monstrous humanoid, planeforged, or undead.
+            Whenever a creature of the chosen type enters a \\areahuge radius \\glossterm<emanation> from the target, make an attack vs. Mental against it.
+            After you make this attack against a particular creature, you do not make this attack against that creature again until it takes a \\glossterm<short rest>.
+            \\hit The creature is \\glossterm<fascinated> by the primary target as a \\glossterm<condition>.
+            Any act by you or by creatures that appear to be your allies that threatens or harms the creature breaks the effect.
+            Harming the creature is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
+            An observant creature may interpret overt threats to its allies as a threat to itself.
+            \\glance As above, except that the condition is removed at the end of the next round.
+            \\crit As above, and the creature is compelled to get as close as possible to the primary target to admire it in greater detail.
+        """, tags=['Attune (ritual)', 'Emotion'], ritual_time='24 hours'),
     ],
     category='debuff, combat',
 )

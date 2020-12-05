@@ -16,18 +16,18 @@ verdamancy=MysticSphere(
             The target grows as if that many days had passed.
             When this spell ends, the plant returns to its original state.
         """, scaling="""
-            \\rank<3> You can choose up to a month of time to grow.
-            \\rank<5> You can choose up to three months months of time to grow.
-            \\rank<7> You can choose up to a year of time to grow.
+            \\rank<2> You can choose up to a month of time to grow.
+            \\rank<4> You can choose up to three months months of time to grow.
+            \\rank<6> You can choose up to a year of time to grow.
         """, tags=['Sustain (minor)']),
         Effects('Verdant Conduit', 'Yourself', """
             You are considered to be a source of unworked earth.
             This can allow you to cast spells from this sphere that require unworked earth without having other sources of unworked earth nearby.
         """, scaling="""
-            \\rank<3> All components of Medium or larger solid objects within a \\areasmall \\glossterm<emanation> from you are also considered to be sources of unworked earth.
+            \\rank<2> All components of Medium or larger solid objects within a \\areasmall \\glossterm<emanation> from you are also considered to be sources of unworked earth.
             Unlike most spells, this can affect only part of a larger object, and it only affects the part of the object within the radius.
-            \\rank<5> The area of the emanation increases to a \\areamed radius.
-            \\rank<7> The area of the emanation increases to a \\arealarge radius.
+            \\rank<4> The area of the emanation increases to a \\areamed radius.
+            \\rank<6> The area of the emanation increases to a \\arealarge radius.
         """, tags=['Attune (self)']),
     ],
     lists=['Nature'],

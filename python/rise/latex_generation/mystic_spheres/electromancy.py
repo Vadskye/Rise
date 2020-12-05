@@ -19,9 +19,9 @@ cantrips=[
         Make an attack vs. Reflex against the target.
         \\hit The target takes 2 electricity damage.
     """, scaling="""
-        \\rank<3> The damage increases to 5.
-        \\rank<5> The damage increases to 10.
-        \\rank<7> The damage increases to 20.
+        \\rank<2> The damage increases to 5.
+        \\rank<4> The damage increases to 10.
+        \\rank<6> The damage increases to 20.
     """, tags=[]),
 ],
 lists=['Arcane', 'Nature', 'Pact'],
@@ -133,6 +133,8 @@ spells=[
         \\glance As above, except that that each target takes half damage.
     """, scaling="damage", tags=['Sustain (minor)']),
     Spell('Personal Conduction', 3, ['Yourself', 'See text'], """
+        You can cast this spell as a \\glossterm<minor action>.
+
         You conduct electricity through your body.
         At the end of each round, make an attack vs. Fortitude against each creature that either is \\glossterm<grappling> with you or that attacked you with a metal melee weapon that round.
         % full dice, but half power

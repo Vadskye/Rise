@@ -19,9 +19,9 @@ fabrication=MysticSphere(
 
             This spell lasts until you use it again or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
         """, scaling="""
-            \\rank<3> The maximum size of the object increases to Small.
-            \\rank<5> The maximum size of the object increases to Medium.
-            \\rank<7> The maximum size of the object increases to Large.
+            \\rank<2> The maximum size of the object increases to Small.
+            \\rank<4> The maximum size of the object increases to Medium.
+            \\rank<6> The maximum size of the object increases to Large.
         """, tags=['Attune (self)', 'Manifestation']),
     ],
     lists=['Arcane', 'Pact'],
@@ -142,6 +142,18 @@ fabrication=MysticSphere(
             Caltrops may not be effective against creatures with an unusual anatomy.
             \\hit The target takes piercing damage equal to 1d10 plus half your \\glossterm<power>.
         """, scaling="damage", tags=['Manifestation', 'Sustain (minor)']),
+        Spell('Instant Ammunition', 2, 'Yourself', """
+            You can cast this spell as a \\glossterm<minor action>.
+
+            You create a nonmagical arrow or crossbow bolt in a bow or crossbow that you are holding.
+            The ammunition can be blunted, but you cannot create other forms of special ammunition like fire arrows or repeating bolts.
+            The object persists until the end of the round, at which point it disappears.
+            Because this spell has the \\glossterm<Swift> tag, you can fire the created projectile from the weapon in the same phase that you cast this spell.
+        """, scaling="""
+            \\rankline
+            \\rank<4> You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with any \\glossterm<strike> using ammunition created with this spell.
+            \\rank<6> The accuracy bonus increases to +2.
+        """, tags=['Manifestation', 'Swift']),
 
         # TODO: move all of these acid spells to a different sphere
         Spell('Acid Orb', 1, 'One creature or object within \\rngmed range', """
@@ -195,6 +207,11 @@ fabrication=MysticSphere(
             In addition, the time required to perform this ritual decreases to one tenth of the time required to copy the writing by hand, to a minimum of one minute.
             It requires one \\glossterm<fatigue point> from its participants.
         """, tags=[], ritual_time='special'),
+        Spell('Ammunition Stockpile', 3, None, """
+            You create a Large pile of either nonmagical arrows or crossbow bolts in any unoccupied location adjacent to you.
+            You can choose to create blunted ammunition, but you cannot create other forms of special ammunition like fire arrows or repeating bolts.
+            Any creature may take ammunition from the pile to use.
+        """, tags=['Attune (ritual)', 'Manifestation'], ritual_time='one hour'),
     ],
     category='damage',
 )

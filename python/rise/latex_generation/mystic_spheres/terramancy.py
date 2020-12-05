@@ -164,7 +164,7 @@ terramancy=MysticSphere(
         Spell('Rocky Shell', 2, 'Yourself', """
             You cover your body with four overlapping layers of rock that crumple when they take damage.
             The rock does not cover your joints, allowing you to move, though the shell increases your \\glossterm<encumbrance> by 2.
-            You are \\glossterm<resistant> to all \\glossterm<damage>.
+            You are \\glossterm<impervious> to all \\glossterm<damage>.
             Whenever you take damage, one layer of rock is destroyed.
             When the last layer of rock is destroyed, this ability provides no further benefit.
         """, scaling="""

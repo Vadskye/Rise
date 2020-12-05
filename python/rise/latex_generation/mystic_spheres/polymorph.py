@@ -13,14 +13,14 @@ polymorph=MysticSphere(
     cantrips=[
         Effects('Alter Object', 'Unattended, nonmagical object you can touch', """
             You make a Craft check to alter the target (see \\pcref<Craft>), except that you do not need any special tools to make the check (such as an anvil and furnace).
-            The maximum \\glossterm<vital resistance> of a material you can affect with this ability is equal to your \\glossterm<power>.
+            The maximum \\glossterm<resistance> of a material you can affect with this ability is equal to your \\glossterm<power>.
 
             % too short?
             Each time you cast this spell, you can accomplish work that would take up to two rounds with a normal Craft check.
         """, scaling="""
-            \\rank<3> The amount of work you accomplish with the spell increases to five rounds.
-            \\rank<5> The amount of work you accomplish with the spell increases to one minute.
-            \\rank<7> The amount of work you accomplish with the spell increases to two minutes.
+            \\rank<2> The amount of work you accomplish with the spell increases to five rounds.
+            \\rank<4> The amount of work you accomplish with the spell increases to one minute.
+            \\rank<6> The amount of work you accomplish with the spell increases to two minutes.
         """, tags=[]),
     ],
     lists=['Arcane', 'Nature', 'Pact'],
@@ -86,21 +86,14 @@ polymorph=MysticSphere(
             \\rank<5> This spell can target a Large or smaller \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<7> You can increase the target's size category by up to two size categories.
         """, tags=['Attune (target)']),
-        Spell('Alter Appearance', 3, 'Yourself', """
+        Spell('Alter Appearance', 2, 'Yourself', """
             You make a Disguise check to alter the target's appearance (see \\pcref<Disguise Creature>).
             You gain a +4 bonus on the check, and you ignore penalties for changing the target's gender, species, subtype, or age.
             However, this effect is unable to alter the target's clothes or equipment in any way.
         """, scaling="""
-            \\rank<5> This spell can target a Large or smaller \\glossterm<ally> within \\rngmed range instead of you.
-            \\rank<7> The bonus increases to +6.
+            \\rank<4> This spell can target a Large or smaller \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<6> The bonus increases to +6.
         """, tags=['Attune (target)']),
-        Spell('Craft Object', 5, 'Any number of unattended, nonmagical objects within \\rngclose range', """
-            You make a Craft check to transform the targets into a new item (or items) made of the same materials.
-            You require none of the tools or time expenditure that would normally be necessary.
-            The total size of all targets combined must be Large size or smaller.
-        """, scaling="""
-            \\rank<7> The maximum combined size is increased to Huge.
-        """, tags=[]),
         # +4 levels for +2d, disintegration is free?
         Spell('Disintegrate', 5, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
@@ -123,6 +116,8 @@ polymorph=MysticSphere(
             \\rank<6> The bonus to Flexibility increases to +12.
         """, tags=['Attune (self)']),
         Spell('Spikeform', 3, ['Yourself', 'See text'], """
+            You can cast this spell as a \\glossterm<minor action>.
+
             You transform your body to have dangerous spikes.
             At the end of each round, make an attack vs. Armor against each creature adjacent to you that either is \\glossterm<grappling> with you or that attacked you with a melee weapon that round.
             % full dice, but half power
@@ -166,6 +161,19 @@ polymorph=MysticSphere(
         """, tags=[]),
     ],
     rituals=[
+        Spell('Craft Object', 3, 'Any number of unattended, nonmagical objects within \\rngclose range', """
+            You make a Craft check to transform the targets into a new item (or items) made of the same materials.
+            You require none of the tools that would normally be necessary, such as an anvil and furnace.
+            The total size of all targets combined must be Medium size or smaller.
+
+            The time required to perform this ritual is equal to one tenth of the time that would normally be required to craft the object, to a minimum of one hour.
+        """, tags=[]),
+        Spell('Craft Large Object', 5, 'Any number of unattended, nonmagical objects within \\rngclose range', """
+            This ritual functions like the \\spell<craft object> ritual, except that the maximum combined size of all targets increases to Large.
+        """, tags=[]),
+        Spell('Craft Huge Object', 7, 'Any number of unattended, nonmagical objects within \\rngclose range', """
+            This ritual functions like the \\spell<craft object> ritual, except that the maximum combined size of all targets increases to Huge.
+        """, tags=[]),
         # Should this also be a spell? Incredibly niche, but golem makers
         # would want it...
         Spell('Mending', 1, 'One \\glossterm<unattended> object within \\rngclose range', """

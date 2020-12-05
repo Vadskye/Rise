@@ -17,13 +17,20 @@ telekinesis=MysticSphere(
             In addition, you can manipulate the target as if you were holding it in your hands.
             Any attacks you make with the object or checks you make to manipulate the object have a maximum bonus equal to your \\glossterm<power>.
         """, scaling="""
-            \\rank<3> You can move the target up to ten feet in any direction.
-            \\rank<5> The range increases to \\rngmed.
-            \\rank<7> You can move the target up to thirty feet in any direction.
+            \\rank<2> You can move the target up to ten feet in any direction.
+            \\rank<4> The range increases to \\rngmed.
+            \\rank<6> You can move the target up to thirty feet in any direction.
         """, tags=['Sustain (standard)']),
     ],
     lists=['Arcane', 'Pact'],
     spells=[
+        Spell('Interposing Force', 1, 'One creature within \\rngmed range', """
+            Make an attack vs. Mental against the target.
+            \\hit The target is unable to move closer to you without effort.
+            This does not impede its movement unless its movement would decrease the distance between you and it.
+            As part of movement, it can make a Strength check with a \\glossterm<difficulty rating> of 10.
+            If it succeeds, it can move towards you at half speed.
+        """, scaling='accuracy', tags=['Sustain (minor)']),
         Spell('Force Slam', 1, 'One creature or object within \\rngmed range', """
             Make an attack vs. Armor against the target.
             \\hit The target takes bludgeoning damage equal to 1d10 plus your \\glossterm<power>.

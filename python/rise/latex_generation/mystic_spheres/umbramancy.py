@@ -14,9 +14,9 @@ umbramancy=MysticSphere(
             Light within or passing through the area is dimmed to be no brighter than \\glossterm<shadowy illumination>.
             Any object or effect which blocks light also blocks this spell's effect.
         """, scaling="""
-            \\rank<3> The maximum area increases to a \\arealarge radius.
-            \\rank<5> The range increases to \\rnglong.
-            \\rank<7> The maximum area increases to a \\areaext radius.
+            \\rank<2> The maximum area increases to a \\arealarge radius.
+            \\rank<4> The range increases to \\rnglong.
+            \\rank<6> The maximum area increases to a \\areaext radius.
         """, tags=['Sustain (minor)']),
     ],
     lists=['Arcane', 'Pact'],

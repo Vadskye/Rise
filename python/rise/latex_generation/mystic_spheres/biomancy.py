@@ -36,6 +36,21 @@ biomancy=MysticSphere(
             \\rank<5> The number of additional successes increases to three, which is enough to remove most poisons immediately.
             \\rank<7> The target can also gain the same number of successes to remove an additional poison affecting it.
         """, tags=[]),
+        Spell('Poison Transferance', 3, ['Yourself or an \\glossterm<ally> within \\rngmed range', 'One other living creature within that range'], """
+            The primary target must be currently affected by a poison.
+            Make an attack vs. Fortitude against the secondary target.
+            \\hit The primary target gains an additional success to resist a poison currently affecting it.
+            In addition, the secondary target becomes \\glossterm<poisoned> by that same poison, and immediately suffers the effect of the poison's first \\glossterm<poison stage>.
+            % No \\glance effect; weird shenanigans if you autoremove the poison
+            \\crit As above, except that the primary target gains two successes to resist its poison.
+            In addition, the secondary target immediately reaches the poison's second poison stage.
+        """, scaling="accuracy", tags=[]),
+        Spell('Poison Immunity', 4, 'Yourself', """
+            You become immune to all \\glossterm<poisons>.
+            You stop being poisoned by any poisons currently affecting you, and new poisons cannot be applied to you.
+        """, scaling="""
+            \\rank<6> You can cast this spell as a \\glossterm<minor action>.
+        """, tags=['Attune (self)']),
         Spell('Intensify Poison', 2, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude with a +2 bonus to \\glossterm<accuracy> against the target.
             If the target is not currently poisoned, this ability has no effect.
@@ -219,7 +234,7 @@ biomancy=MysticSphere(
         Spell('Air Breathing', 3, 'One Medium or smaller ritual participant', """
             The target can breathe air as easily as a human breathes air, preventing it from suffocating above water if it can normally only breathe water or some other substance.
         """, tags=['Attune (ritual)'], ritual_time='one minute'),
-        Spell('Gills', 3, 'One Medium or smaller ritual participant', """
+        Spell('Water Breathing', 3, 'One Medium or smaller ritual participant', """
             The target can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
         """, tags=['Attune (ritual)'], ritual_time='one minute'),
     ],

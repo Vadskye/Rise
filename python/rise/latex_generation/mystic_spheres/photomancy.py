@@ -18,18 +18,18 @@ photomancy=MysticSphere(
 
             This ability lasts until you use it again.
         """, scaling="""
-            \\rank<3> The bonus increases to +6.
-            \\rank<5> The bonus increases to +8.
-            \\rank<7> The bonus increases to +10.
+            \\rank<2> The bonus increases to +6.
+            \\rank<4> The bonus increases to +8.
+            \\rank<6> The bonus increases to +10.
         """, tags=['Sensation', 'Visual']),
         Effects('Illuminate', 'One location within \\rngmed range', """
             A glowing light appears in midair in the target location.
             It creates \\glossterm<bright illumination> in a radius of your choice, up to a 20 foot radius, and \\glossterm<shadowy illumination> in twice that radius.
             This effect lasts until you use it again or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
         """, scaling="""
-            \\rank<3> The maximum radius of bright illumination increases to 50 feet.
-            \\rank<5> The maximum radius of bright illumination increases to 100 feet.
-            \\rank<7> The maximum radius of bright illumination increases to 200 feet.
+            \\rank<2> The maximum radius of bright illumination increases to 50 feet.
+            \\rank<4> The maximum radius of bright illumination increases to 100 feet.
+            \\rank<6> The maximum radius of bright illumination increases to 200 feet.
         """, tags=['Sensation', 'Visual']),
     ],
     lists=['Arcane', 'Divine', 'Nature', 'Pact'],

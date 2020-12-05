@@ -15,17 +15,17 @@ chronomancy=MysticSphere(
             You can read at twice your normal speed.
             However, the mental effort imposes a -4 penalty to Mental defense.
         """, scaling="""
-            \\rank<3> You can read at four times your normal speed.
-            \\rank<5> You can read at six times your normal speed.
-            \\rank<7> You can read at ten times your normal speed.
+            \\rank<2> You can read at four times your normal speed.
+            \\rank<4> You can read at six times your normal speed.
+            \\rank<6> You can read at ten times your normal speed.
         """, tags=['Sustain (free)']),
         Effects('Accelerated Search', 'Yourself', """
             Make an Awareness check to notice things in a single 10-ft.\\ squrae within 10 feet of you.
             You gain a +4 bonus to this check.
         """, scaling="""
-            \\rank<3> The bonus increases to +6.
-            \\rank<5> The bonus increases to +8.
-            \\rank<7> The bonus increases to +10.
+            \\rank<2> The bonus increases to +6.
+            \\rank<4> The bonus increases to +8.
+            \\rank<6> The bonus increases to +10.
         """, tags=[]),
     ],
     lists=['Arcane', 'Pact'],

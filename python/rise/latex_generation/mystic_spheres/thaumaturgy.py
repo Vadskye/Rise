@@ -14,9 +14,9 @@ thaumaturgy=MysticSphere(
         Effects('Sense Magic', 'Yourself', """
             You gain a +4 bonus to the Spellsense skill until the end of the next round.
         """, scaling="""
-            \\rank<3> The bonus increases to +6.
-            \\rank<5> The bonus increases to +8.
-            \\rank<7> The bonus increases to +10.
+            \\rank<2> The bonus increases to +6.
+            \\rank<4> The bonus increases to +8.
+            \\rank<6> The bonus increases to +10.
         """, tags=[]),
     ],
     lists=['Arcane'],
