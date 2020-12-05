@@ -23,7 +23,7 @@ aeromancy = MysticSphere(
         """, scaling="""
             \\rank<2> The area increases to a \\areahuge radius \\glossterm<emanation>.
             \\rank<4> You can change the wind speed by up to 20 miles per hour.
-            \\rank<6> The area increases to an \\areaext radius \\glossterm<emanation>.
+            \\rank<6> The area increases to an \\areagarg radius \\glossterm<emanation>.
         """, tags=['Sustain (free)']),
         Effects('Soften Landing', 'Yourself or an \\glossterm<ally> within \\rnglong range', """
             Until the end of the round, the target treats all falls as if they were 20 feet shorter for the purpose of determining \\glossterm<falling damage>.
@@ -121,7 +121,7 @@ aeromancy = MysticSphere(
             \\rank<7> The bonus to \\glossterm<reach> increases to +10 feet.
         """, tags=['Attune (target)']),
         Spell('Retributive Winds', 3, 'Yourself', """
-            At the end of each phase, make an attack vs. Armor against each creature within \\rngclose range that attacked you during that phase.
+            At the end of each phase, make an attack vs. Armor against each creature within \\rngshort range that attacked you during that phase.
             Any effect which increases this spell's range increases the range of this retaliation by the same amount.
             \\hit Each struck target takes bludgeoning damage equal to 2d6 plus half your \\glossterm<power>.
             Any individual creature can only be dealt damage in this way once per round.
@@ -189,7 +189,7 @@ aeromancy = MysticSphere(
             \\hit Each target is \\glossterm<blinded> until the end of the next round.
             \\crit Each target is \\glossterm<blinded> as a \\glossterm<condition>.
         """, tags=[]),
-        Spell('Dustblind', 6, 'One creature within \\rngclose range', """
+        Spell('Dustblind', 6, 'One creature within \\rngshort range', """
             If there is no dirt, dust, or collection of loose objects of similar size within 30 foot \\glossterm<range> of the target's eyes, this spell is \\glossterm<miscast>.
             Make an attack vs. Reflex against the target.
             \\hit The target is \\glossterm<blinded> as a \\glossterm<condition>.
@@ -214,7 +214,7 @@ aeromancy = MysticSphere(
             This ritual can detect air pockets with a minimum size of Fine.
         """, tags=['Detection'], ritual_time='one minute'),
         Spell('Greater Detect Air', 3, None, """
-            This ritual functions like the \\spell<detect air> ritual, except that the range increases to \\rngext.
+            This ritual functions like the \\spell<detect air> ritual, except that the range increases to \\rngdist.
         """, tags=['Detection'], ritual_time='one minute'),
         Spell('Supreme Detect Air', 5, None, """
             This ritual functions like the \\spell<detect air> ritual, except that the range increases to 2,000 feet.

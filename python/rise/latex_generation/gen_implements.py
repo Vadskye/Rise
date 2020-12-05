@@ -213,7 +213,7 @@ def generate_implements():
             level=12,
             material_type='Staff',
             description="""
-                Whenever you use a \\glossterm<magical> ability that does not have the \\glossterm<Sustain> or \\glossterm<Attune> tags, you may choose a location within \\rngclose range.
+                Whenever you use a \\glossterm<magical> ability that does not have the \\glossterm<Sustain> or \\glossterm<Attune> tags, you may choose a location within \\rngshort range.
                 The ability takes effect as if you were in the chosen location.
                 This affects your \\glossterm<line of effect> for the ability, but not your \\glossterm<line of sight> (since you still see from your normal location).
                 % Wording?

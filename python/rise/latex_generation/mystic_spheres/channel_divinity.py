@@ -14,7 +14,7 @@ channel_divinity=MysticSphere(
         Effects('Testament', 'Yourself', """
             The magical essence of your deity or alignment is overlayed on your body as an aura.
             This represents your deity if you are a cleric, or your alignment if you are a paladin.
-            In either case, you gain the ability to see the auras of other creatures using this spell if they are within \\rngclose range.
+            In either case, you gain the ability to see the auras of other creatures using this spell if they are within \\rngshort range.
             If you see another creature with the same aura as you, this spell grants you the unerring knowledge of that similarity.
             This can allow you to identify other followers of your deity or alignment with certainty.
 

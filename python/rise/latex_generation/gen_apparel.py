@@ -783,7 +783,7 @@ def generate_armor():
             material_type='Boots',
             tags=[],
             description="""
-                As a standard action, you can \\glossterm<teleport> yourself into an unoccupied destination within \\rngclose range.
+                As a standard action, you can \\glossterm<teleport> yourself into an unoccupied destination within \\rngshort range.
                 If the destination is invalid, this ability has no effect.
             """,
             short_description="Grants ability to teleport up to 30 feet",
@@ -815,7 +815,7 @@ def generate_armor():
             material_type='Body armor',
             tags=[],
             description="""
-                As a standard action, you can \\glossterm<teleport> yourself into an unoccupied destination within \\rngclose range.
+                As a standard action, you can \\glossterm<teleport> yourself into an unoccupied destination within \\rngshort range.
                 If the destination is invalid, this ability has no effect.
             """,
             short_description="Grants ability to teleport up to 30 feet",
@@ -1073,7 +1073,7 @@ def generate_worn():
             tags=[],
             description="""
                 As a standard action, you can activate this circlet.
-                If you do, make an attack vs. Armor against a creature or object within \\rngclose range.
+                If you do, make an attack vs. Armor against a creature or object within \\rngshort range.
                 \\hit The target takes 2d10+3 fire damage.
                 \\glance As above, except that that the target takes half damage.
             """,
@@ -1087,7 +1087,7 @@ def generate_worn():
             tags=[],
             description="""
                 As a standard action, you can activate this circlet.
-                If you do, make an attack vs. Armor against a creature or object within \\rngclose range.
+                If you do, make an attack vs. Armor against a creature or object within \\rngshort range.
                 \\hit The target takes 4d10+6 fire damage.
                 \\glance As above, except that that the target takes half damage.
             """,
@@ -1817,7 +1817,7 @@ def generate_worn():
             tags=['Scrying'],
             description="""
                 As a \\glossterm<standard action>, you can concentrate to use this item.
-                If you do, a \\glossterm<scrying sensor> appears floating in the air in an unoccupied square within \\rngclose range.
+                If you do, a \\glossterm<scrying sensor> appears floating in the air in an unoccupied square within \\rngshort range.
                 As long as you \\glossterm<sustain> the effect as a standard action, you see through the sensor instead of from your body.
 
                 While viewing through the sensor, your visual acuity is the same as your normal body,

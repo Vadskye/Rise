@@ -126,7 +126,7 @@ def generate_tools():
         material_type='Alchemy',
         tags=[],
         description="""
-            As a standard action, you can throw this item at a creature or object within \\rngclose range.
+            As a standard action, you can throw this item at a creature or object within \\rngshort range.
             When you do, make an attack vs. Armor against the target.
             On a hit, the target takes fire \\glossterm<standard damage>.
         """,
@@ -140,7 +140,7 @@ def generate_tools():
         material_type='Alchemy',
         tags=[],
         description="""
-            As a standard action, you can activate this item and optionally throw it anywhere within \\rngclose range.
+            As a standard action, you can activate this item and optionally throw it anywhere within \\rngshort range.
             When you do, it immediately creates a cloud of smoke in a \\areasmall radius from its location.
             Looking through 10 feet of smoke is enough to completely block line of sight.
             The cloud of smoke dissipates normally after it is created.
@@ -182,7 +182,7 @@ def generate_tools():
         material_type='Alchemy',
         tags=[],
         description="""
-            As a standard action, you can throw this item at a creature within \\rngclose range.
+            As a standard action, you can throw this item at a creature within \\rngshort range.
             When you do, make an attack vs. Fortitude against the target.
             On a hit, the target is \\glossterm<deafened> as a \\glossterm<condition>.
         """,
@@ -196,7 +196,7 @@ def generate_tools():
         material_type='Alchemy',
         tags=[],
         description="""
-            As a standard action, you can throw this item at a creature or object within \\rngclose range.
+            As a standard action, you can throw this item at a creature or object within \\rngshort range.
             When you do, make an attack vs. Fortitude against the target.
             On a hit, the target takes cold \\glossterm<standard damage>.
         """,
@@ -261,7 +261,7 @@ def generate_tools():
         material_type='Alchemy',
         tags=[],
         description="""
-            As a standard action, you can throw this item at a creature within \\rngclose range.
+            As a standard action, you can throw this item at a creature within \\rngshort range.
             When you do, make an attack vs. Reflex against the target.
             On a hit, the target is \\glossterm<slowed> as a \\glossterm<condition>.
 
@@ -291,7 +291,7 @@ def generate_tools():
         material_type='Alchemy',
         tags=[],
         description="""
-            As a standard action, you can throw this item at a creature or object within \\rngclose range.
+            As a standard action, you can throw this item at a creature or object within \\rngshort range.
             When you do, make an attack vs. Armor against the target.
             On a hit, the target takes acid \\glossterm<standard damage>.
         """,

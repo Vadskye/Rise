@@ -38,7 +38,7 @@ vivimancy=MysticSphere(
             Make an attack vs. Fortitude against the target.
             \\hit The target takes energy damage equal to 1d10 plus your \\glossterm<power>.
         """, scaling="damage", tags=[]),
-        Spell('Cure Wound', 2, 'Yourself or a living \\glossterm<ally> within \\rngclose range', """
+        Spell('Cure Wound', 2, 'Yourself or a living \\glossterm<ally> within \\rngshort range', """
             The target regains \\glossterm<hit points> equal to 1d6 plus half your \\glossterm<power>.
         """, scaling="""
             The healing increases by +1d for each rank beyond 2.
@@ -227,7 +227,7 @@ vivimancy=MysticSphere(
             All of the target's hit points, \\glossterm<subdual damage>, and \\glossterm<vital damage> are healed.
             In addition, any of the target's severed body parts or missing organs grow back by the end of the next round.
         """, tags=[], ritual_time='24 hours'),
-        Spell('Resurrection', 4, 'One intact humanoid corpse within \\rngclose range', """
+        Spell('Resurrection', 4, 'One intact humanoid corpse within \\rngshort range', """
             The target returns to life.
             It must not have died due to old age.
 
@@ -244,7 +244,7 @@ vivimancy=MysticSphere(
 
             This ritual can only be learned through the divine \\glossterm<magic source>.
         """, tags=[], ritual_time='24 hours'),
-        Spell('Complete Resurrection', 6, 'One Diminuitive or larger piece of a humanoid corpse within \\rngclose range', """
+        Spell('Complete Resurrection', 6, 'One Diminuitive or larger piece of a humanoid corpse within \\rngshort range', """
             This ritual functions like the \\ritual<resurrection> ritual, except that it does not have to target a fully intact corpse.
             The target must have been part of the original creature's body at the time of death.
             The resurrected creature's body is fully restored to its healthy state before dying, including regenerating all missing or damaged body parts.
@@ -258,7 +258,7 @@ vivimancy=MysticSphere(
 
             This ritual can only be learned through the divine \\glossterm<magic source>.
         """, tags=['Creation'], ritual_time='24 hours'),
-        Spell('Soul Bind', 6, 'One intact corpse within \\rngclose range', """
+        Spell('Soul Bind', 6, 'One intact corpse within \\rngshort range', """
             % Is this clear enough that you can't use the same gem for this ritual twice?
             Choose a nonmagical gem you hold that is worth at least 1,000 gp.
             A fragment of the soul of the creature that the target corpse belongs to is imprisoned in the chosen gem.
@@ -267,7 +267,7 @@ vivimancy=MysticSphere(
             A creature holding the gem may still resurrect or reanimate the creature.
             If the gem is shattered, the fragment of the creature's soul returns to its body.
         """, tags=[], ritual_time='one hour'),
-        Spell('Animate Dead', 3, 'Any number of corpses within \\rngclose range', """
+        Spell('Animate Dead', 3, 'Any number of corpses within \\rngshort range', """
             The combined levels of all targets cannot exceed your \\glossterm<power>.
             The target becomes an undead creature that obeys your spoken commands.
             You choose whether to create a skeleton or a zombie.

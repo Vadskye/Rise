@@ -11,7 +11,7 @@ pyromancy=MysticSphere(
     name='Pyromancy',
     short_description="Create fire to incinerate foes",
     cantrips=[
-        Effects('Kindle', 'One creature or object within \\rngclose range', """
+        Effects('Kindle', 'One creature or object within \\rngshort range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target takes 2 fire damage.
             If the target is highly flammable, such as a torch or campfire, it ignites.
@@ -89,7 +89,7 @@ pyromancy=MysticSphere(
             \\glance As above, except that the condition is removed at the end of the next round.
             \\crit As above, except that the damage from the condition is doubled.
         """, scaling="damage", tags=[]),
-        Spell('Combustion', 2, 'One creature within \\rngclose range', """
+        Spell('Combustion', 2, 'One creature within \\rngshort range', """
             You set the target on fire from the inside out.
             Make an attack vs. Fortitude against the target.
             \\hit The target takes fire damage equal to 2d8 plus your \\glossterm<power>.
@@ -129,7 +129,7 @@ pyromancy=MysticSphere(
 
             When you cast this spell, five flaming spheres appear over your head.
             Each sphere is approximately one foot in diameter.
-            As a \\glossterm<minor action>, you can fire an orb at a creature or object within \\rngclose range.
+            As a \\glossterm<minor action>, you can fire an orb at a creature or object within \\rngshort range.
             When you do, make an attack vs. Armor against that target.
             \\hit The target takes fire damage equal to 2d8 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
@@ -140,7 +140,7 @@ pyromancy=MysticSphere(
             Make an attack vs. Reflex against each target.
             \\hit Each target takes fire damage equal to 1d8 plus half your \\glossterm<power>.
         """, scaling="damage", tags=[]),
-        Spell('Flame Serpent', 4, 'Everything in a \\arealarge, 5 ft.\\ wide shapeable line that starts within \\rngclose range', f"""
+        Spell('Flame Serpent', 4, 'Everything in a \\arealarge, 5 ft.\\ wide shapeable line that starts within \\rngshort range', f"""
             Make an attack vs. Reflex against each target.
             \\hit Each target takes fire damage equal to 2d8 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.

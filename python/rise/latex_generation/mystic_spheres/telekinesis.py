@@ -11,7 +11,7 @@ telekinesis=MysticSphere(
     name="Telekinesis",
     short_description="Manipulate kinetic energy at a distance",
     cantrips=[
-        Effects('Distant Hand', 'Medium or smaller unattended object within \\rngclose range', """
+        Effects('Distant Hand', 'Medium or smaller unattended object within \\rngshort range', """
             You can move the target up to five feet in any direction within range, using your \\glossterm<power> instead of your Strength to determine your maximum carrying capacity.
 
             In addition, you can manipulate the target as if you were holding it in your hands.
@@ -142,13 +142,13 @@ telekinesis=MysticSphere(
         """, scaling="""
             \\rank<6> The accuracy penalty is reduced to -2.
         """, tags=['Attune (self)']),
-        Spell('Mind Arrow', 1, ['One Tiny or smaller \\glossterm<unattened> projectile within \\rngclose range', 'One creature or object within \\rngclose range'], """
+        Spell('Mind Arrow', 1, ['One Tiny or smaller \\glossterm<unattened> projectile within \\rngshort range', 'One creature or object within \\rngshort range'], """
             You make a \\glossterm<magical strike> using the primary target against the secondary target.
             The projectile flies directly toward the secondary target instead of originating from your position, which may allow you to avoid \\glossterm<cover> and similar obstacles.
         """, scaling="""
             \\rank<3> The range increases to \\rngmed.
             \\rank<5> The range increases to \\rnglong.
-            \\rank<7> The range increases to \\rngext.
+            \\rank<7> The range increases to \\rngdist.
         """, tags=[]),
         Spell('Reactive Deflection', 1, 'Yourself', """
             You can cast this spell as a \\glossterm<minor action>.

@@ -58,7 +58,7 @@ biomancy=MysticSphere(
             The poison progresses by one stage against the target, which can have varying effects depending on the poison (see \\pcref<Poison>).
             \\crit As above, except that the poison progresses by two stages instead of one.
         """, scaling="accuracy", tags=[]),
-        Spell('Brief Regeneration', 2, 'Yourself or one living \\glossterm<ally> within \\rngclose range', """
+        Spell('Brief Regeneration', 2, 'Yourself or one living \\glossterm<ally> within \\rngshort range', """
             The target regains \\glossterm<hit points> equal to 1d6 plus half your \\glossterm<power>.
         """, scaling="""
             The healing increases by +1d for each rank beyond 2.
@@ -170,12 +170,12 @@ biomancy=MysticSphere(
             \\glance As above, except that the condition is removed at the end of the next round.
             \\crit As above, except that the effect lasts until this curse is removed.
         """, scaling="accuracy", tags=['Curse']),
-        Spell('Sickness', 1, 'One living creature within \\rngclose range', """
+        Spell('Sickness', 1, 'One living creature within \\rngshort range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target is \\glossterm<sickened> as a \\glossterm<condition>.
             \\crit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
         """, scaling="accuracy", tags=[]),
-        Spell('Sickening Curse', 2, 'One living creature within \\rngclose range', """
+        Spell('Sickening Curse', 2, 'One living creature within \\rngshort range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<sickened> until it takes a \\glossterm<short rest>.
             \\crit As above, except that the effect lasts until this curse is removed.
@@ -192,7 +192,7 @@ biomancy=MysticSphere(
             \\hit The target takes 1d6 physical damage.
             If it loses \\glossterm<hit points> from this damage, it is \\glossterm<nauseated> as a \\glossterm<condition>.
         """, scaling="damage", tags=[]),
-        Spell('Cripple', 7, 'One living creature within \\rngclose range', """
+        Spell('Cripple', 7, 'One living creature within \\rngshort range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target is \\glossterm<immobilized> as a \\glossterm<condition>.
             \\glance As above, except that the condition is removed at the end of the next round.

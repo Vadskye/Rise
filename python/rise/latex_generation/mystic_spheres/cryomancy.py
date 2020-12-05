@@ -11,7 +11,7 @@ cryomancy=MysticSphere(
     name='Cryomancy',
     short_description='Drain heat to injure and freeze foes',
     cantrips=[
-        Effects('Chill', 'One creature or object within \\rngclose range', """
+        Effects('Chill', 'One creature or object within \\rngshort range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target takes 2 cold damage.
         """, scaling="""
@@ -117,7 +117,7 @@ cryomancy=MysticSphere(
             \\hit Each target takes cold damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=[]),
-        Spell('Frostbite', 3, 'One creature or object within \\rngclose range', """
+        Spell('Frostbite', 3, 'One creature or object within \\rngshort range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target takes cold damage equal to 2d8 plus your \\glossterm<power>.
             If it loses \\glossterm<hit points> from this damage, it is \\glossterm<slowed> as a \\glossterm<condition>.
@@ -134,7 +134,7 @@ cryomancy=MysticSphere(
             \\hit Each target takes cold damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=[]),
-        Spell('Icecraft', 1, 'One pool of unattended, nonmagical water within \\rngclose range.', """
+        Spell('Icecraft', 1, 'One pool of unattended, nonmagical water within \\rngshort range.', """
             This spell creates an icy weapon or a suit of icy armor from the target pool of water.
             You can create any weapon, shield, or body armor that you are proficient with, and which would normally be made entirely from metal, except for heavy armor.
             The pool of water targeted must be at least as large as the item you create.
@@ -158,7 +158,7 @@ cryomancy=MysticSphere(
             \\hit Each target takes cold damage equal to 2d8 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Attune (self)']),
-        Spell('Frostburn', 7, 'One creature within \\rngclose range', """
+        Spell('Frostburn', 7, 'One creature within \\rngshort range', """
             Make an attack vs. Fortitude against the target.
             \\hit As a \\glossterm<condition>, the target is seared by painful cold.
             % TODO: standardize "ignite" damage
