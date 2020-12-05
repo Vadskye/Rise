@@ -15,17 +15,17 @@ astromancy=MysticSphere(
             You teleport into an unoccupied destination within 5 foot \\glossterm<range>.
             If the destination is invalid, this spell is \\glossterm<miscast>.
         """, scaling="""
-            \\rank<3> The range increases to 10 feet.
-            \\rank<5> The range increases to \\rngclose.
-            \\rank<7> The range increases to \\rngmed.
+            \\rank<2> The range increases to 10 feet.
+            \\rank<4> The range increases to \\rngclose.
+            \\rank<6> The range increases to \\rngmed.
         """, tags=[]),
         Effects('Translocate Object', 'One Tiny or smaller unattended object within \\rngclose range', """
             The target teleports into an unoccupied location on a stable surface within range that can support the weight of the target.
             If the destination is invalid, the ability fails without effect.
         """, scaling="""
-            \\rank<3> The range increases to \\rngmed.
-            \\rank<5> The maximum size of the target increases to Small.
-            \\rank<7> The range increases to \\rnglong.
+            \\rank<2> The range increases to \\rngmed.
+            \\rank<4> The maximum size of the target increases to Small.
+            \\rank<6> The range increases to \\rnglong.
         """, tags=[]),
     ],
     lists=['Arcane', 'Pact'],

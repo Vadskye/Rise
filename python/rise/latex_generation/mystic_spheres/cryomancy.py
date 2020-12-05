@@ -15,9 +15,9 @@ cryomancy=MysticSphere(
             Make an attack vs. Fortitude against the target.
             \\hit The target takes 2 cold damage.
         """, scaling="""
-            \\rank<3> The damage increases to 5.
-            \\rank<5> The damage increases to 10.
-            \\rank<7> The damage increases to 20.
+            \\rank<2> The damage increases to 5.
+            \\rank<4> The damage increases to 10.
+            \\rank<6> The damage increases to 20.
         """, tags=[]),
     ],
     lists=['Arcane', 'Nature', 'Pact'],
@@ -105,7 +105,7 @@ cryomancy=MysticSphere(
         Spell('Icy Shell', 2, 'Yourself', """
             You cover your body with four overlapping layers of ice that crumple when they take damage.
             The ice does not cover your joints, allowing you to move freely.
-            You are \\glossterm<resistant> to \\glossterm<physical damage> and \\glossterm<fire damage>.
+            You are \\glossterm<impervious> to \\glossterm<physical damage> and \\glossterm<fire damage>.
             Whenever you take physical damage or fire damage, one layer of ice is destroyed.
             When the last layer of ice is destroyed, this ability provides no further benefit.
         """, scaling="""
@@ -166,6 +166,15 @@ cryomancy=MysticSphere(
             \\glance As above, except that the condition is removed at the end of the next round after its damage is dealt.
             \\crit As above, except that the damage from the condition is doubled.
         """, tags=[]),
+        Spell('Frigid Aura', 3, ['Yourself', 'See text'], """
+            You can cast this spell as a \\glossterm<minor action>.
+
+            You radiate a small aura of cold.
+            At the end of each round, make an attack vs. Fortitude against each creature adjacent to you that either is \\glossterm<grappling> with you or that attacked you with a melee weapon that round.
+            % full dice, but half power
+            \\hit Each secondary target takes cold damage equal to 2d8 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
+        """, scaling='damage', tags=['Attune (self)']),
     ],
     rituals=[
         Spell('Frostfall', 4, None, """

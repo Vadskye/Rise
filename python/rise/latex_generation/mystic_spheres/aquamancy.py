@@ -15,23 +15,25 @@ aquamancy=MysticSphere(
             You create up to two gallons of wholesome, drinkable water at the target locations, allowing you to fill multiple small water containers.
             You must create a minimum of one ounce of water in each location.
         """, scaling="""
-            \\rank<3> The volume created increases to five gallons.
-            \\rank<5> The volume created increases to ten gallons.
-            \\rank<7> The volume created increases to twenty gallons.
+            \\rank<2> The volume created increases to five gallons.
+            \\rank<4> The volume created increases to ten gallons.
+            \\rank<6> The volume created increases to twenty gallons.
         """, tags=['Creation']),
         Effects('Purify Water', 'Up to five gallons of water within \\rngclose range', """
             You can separate out dirt, sand, and minor pollutants from the target water, moving the waste material to the edge of the water so falls out or can be easily removed.
             This does not remove poisons, magical effects, or contaminants heavier than half a pound.
             Using this on a very large body of water is difficult, since the waste material can easily mix with the water unaffected by a single casting of this spell.
         """, scaling="""
-            \\rank<3> The volume affected increases to ten gallons.
-            \\rank<5> The volume affected increases to twenty gallons.
-            \\rank<7> The volume affected increases to fifty gallons.
+            \\rank<2> The volume affected increases to ten gallons.
+            \\rank<4> The volume affected increases to twenty gallons.
+            \\rank<6> The volume affected increases to fifty gallons.
         """, tags=['Manifestation']),
         Effects('Slippery Escape', 'Yourself', """
             You gain a +4 bonus to the Flexibility skill until the end of the next round.
         """, scaling="""
-            For each rank beyond 1, the bonus increases by 1.
+            \\rank<2> The bonus increases to +6.
+            \\rank<4> The bonus increases to +8.
+            \\rank<6> The bonus increases to +10.
         """, tags=['Manifestation']),
     ],
     lists=['Nature'],

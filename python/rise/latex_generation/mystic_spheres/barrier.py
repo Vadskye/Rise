@@ -14,10 +14,19 @@ barrier=MysticSphere(
         Effects('Minor Barrier', None, """
             This cantrip functions like the \\spell<mystic barrier> spell, except that its \\glossterm<range> is \\rngclose and the maximum dimensions of the barrier are a 5 ft.\\ by 5 ft.\\ square.
         """, scaling="""
-            \\rank<3> The range increases to \\rngmed.
-            \\rank<5> The maximum dimensions of the wall increase to a 5 ft.\\ by 10 ft.\\ rectangle.
-            \\rank<7> The maximum dimensions of the wall increase to a 10 ft.\\ by 10 ft.\\ square.
+            \\rank<2> The range increases to \\rngmed.
+            \\rank<4> The maximum dimensions of the wall increase to a 5 ft.\\ by 10 ft.\\ rectangle.
+            \\rank<6> The maximum dimensions of the wall increase to a 10 ft.\\ by 10 ft.\\ square.
         """, tags=[]),
+        Effects('Burst Ward', 'Yourself', """
+            You take half damage from \\glossterm<energy damage> this round.
+            This halving is applied before \\glossterm<resistances> and similar abilities.
+            Because this is a \\glossterm<Swift> ability, it affects damage you take during the current phase.
+        """, scaling="""
+            \\rank<2> The halving applies to all damage, not just energy damage.
+            \\rank<4> You also gain a +1 bonus to all defenses.
+            \\rank<6> The defense bonus increases to +2.
+        """, focus=False),
     ],
     lists=['Arcane', 'Divine', 'Nature'],
     spells=[
@@ -130,7 +139,7 @@ barrier=MysticSphere(
         """, scaling="accuracy", tags=['Manifestation', 'Sustain (standard)']),
         Spell('Invulnerable Barrier', 6, None, """
             This spell functions like the \\spell<mystic barrier> spell, except that each 5-ft.\\ square of wall has \\glossterm<hit points> equal to four times your \\glossterm<power>.
-            In addition, the wall is \\glossterm<resistant> to physical damage.
+            In addition, the wall is \\glossterm<impervious> to physical damage.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Wall of Energy Impedance', 3, None, """
             You create a wall of magical energy in a 20 ft.\\ high, \\areamed line within \\rngmed range.
@@ -236,7 +245,7 @@ barrier=MysticSphere(
             Its equipment, if any, is also protected.
             This does not protect the target from fire or cold damage.
         """, tags=['Attune (ritual)'], ritual_time='one minute'),
-        Spell('Mystic Lock', 3, 'One large or smaller closable, nonmagical object within \\rngclose range, such as a door or box', """
+        Spell('Mystic Lock', 2, 'One large or smaller closable, nonmagical object within \\rngclose range, such as a door or box', """
             The target object becomes magically locked.
             It can be unlocked with a Devices check against a \\glossterm<difficulty rating> equal to 20 \\add your \\glossterm<power>.
             The \\glossterm<difficulty rating> to break it open forcibly increases by 10.
@@ -245,7 +254,7 @@ barrier=MysticSphere(
             This effect lasts as long as you \\glossterm<attune> to it.
             If you use this ability multiple times, you can attune to it each time.
         """, tags=['Attune (ritual)'], ritual_time='one minute'),
-        Spell('Resilient Lock', 5, 'One large or smaller closable, nonmagical object within \\rngclose range, such as a door or box', f"""
+        Spell('Resilient Lock', 4, 'One large or smaller closable, nonmagical object within \\rngclose range, such as a door or box', f"""
             This ritual functions like the \\ritual<mystic lock> ritual, except that the \\glossterm<difficulty rating> to unlock the target with a Devices check is instead equal to 30 + your \\glossterm<power>.
             In addition, the \\glossterm<difficulty rating> to break it open increases by 20 instead of by 10.
         """, tags=['Attune (ritual)'], ritual_time='one hour'),

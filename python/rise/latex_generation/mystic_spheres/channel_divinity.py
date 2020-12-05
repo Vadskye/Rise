@@ -20,10 +20,10 @@ channel_divinity=MysticSphere(
 
             This spell lasts until you use it again or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
         """, scaling="""
-            \\rank<3> The range increases to \\rngmed.
-            \\rank<5> If you are a cleric, you can also unerringly see an aura around creatures who worship your deity.
+            \\rank<2> The range increases to \\rngmed.
+            \\rank<4> If you are a cleric, you can also unerringly see an aura around creatures who worship your deity.
                 If you are a paladin, you can also unerringly see an aura around creatures who share your devoted alignment.
-            \\rank<7> The range increases to \\rngext.
+            \\rank<6> The range increases to \\rnglong.
         """, tags=[]),
     ],
     lists=['Divine'],
@@ -166,6 +166,24 @@ channel_divinity=MysticSphere(
         """, scaling="""
             \\rank<6> The area increases to a \\areamed radius.
         """, tags=['Sustain (minor)']),
+        Spell('Banish Anathema', 3, 'One creature within \\rngmed range', """
+            Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against the target.
+            \\hit The target takes energy damage equal to 2d6 plus half your \\glossterm<power>.
+            \\glance As above, except that that the target takes half damage.
+            \\crit As above, except that that the target takes double damage.
+            In addition, if it is a \\glossterm<planeforged> not on its home plane, it is teleported to a random location on its home plane.
+            If it is a creature created by a \\glossterm<Manifestation> ability, it immediately disappears.
+        """, scaling="damage", tags=[]),
+        Spell('Astral Refuge', 2, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngmed range', """
+            You can cast this spell as a \\glossterm<minor action>.
+
+            You send the target into a random safe location in the Astral Plane, causing it to temporarily disappear.
+            When you cast this spell, you choose how many rounds the target spends in the Astral Plane, up to a maximum of five rounds.
+            At the end of the last round, it reappears in the same location where it disappeared, or in the closest unoccupied space if that location is occupied.
+        """, scaling="""
+            \\rank<4> The maximum size of the target increases to Large.
+            \\rank<6> The maximum size of the target increases to Huge.
+        """, tags=[]),
     ],
     rituals=[
         Spell('Consecrate', 3, None, """

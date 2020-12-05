@@ -13,24 +13,24 @@ aeromancy = MysticSphere(
         Effects('Airborne Leap', 'Yourself', """
             You gain a +4 bonus to the Jump skill until the end of the next round.
         """, scaling="""
-            \\rank<3> The bonus increases to +6.
-            \\rank<5> The bonus increases to +8.
-            \\rank<7> The bonus increases to +10.
+            \\rank<2> The bonus increases to +6.
+            \\rank<4> The bonus increases to +8.
+            \\rank<6> The bonus increases to +10.
         """, tags=[]),
         Effects('Breeze', 'Everything in a \\arealarge radius \\glossterm<emanation> from you', """
             You can increase or decrease the wind speed by up to 10 miles per hour in the area.
             If you decrease the wind's speed to 0, you can increase it again with the remainder of your speed change and choose any direction for it to travel.
         """, scaling="""
-            \\rank<3> The area increases to a \\areahuge radius \\glossterm<emanation>.
-            \\rank<5> You can change the wind speed by up to 20 miles per hour.
-            \\rank<7> The area increases to an \\areaext radius \\glossterm<emanation>.
+            \\rank<2> The area increases to a \\areahuge radius \\glossterm<emanation>.
+            \\rank<4> You can change the wind speed by up to 20 miles per hour.
+            \\rank<6> The area increases to an \\areaext radius \\glossterm<emanation>.
         """, tags=['Sustain (free)']),
         Effects('Soften Landing', 'Yourself or an \\glossterm<ally> within \\rnglong range', """
             Until the end of the round, the target treats all falls as if they were 20 feet shorter for the purpose of determining \\glossterm<falling damage>.
         """, scaling="""
-            \\rank<3> The distance reduction increases to 50 feet.
-            \\rank<5> The distance reduction increases to 100 feet.
-            \\rank<7> The distance reduction increases to 200 feet.
+            \\rank<2> The distance reduction increases to 50 feet.
+            \\rank<4> The distance reduction increases to 100 feet.
+            \\rank<6> The distance reduction increases to 200 feet.
         """, tags=[]),
     ],
     lists=['Nature'],

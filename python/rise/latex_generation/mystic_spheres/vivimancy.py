@@ -14,9 +14,9 @@ vivimancy=MysticSphere(
         Effects('Ablate Vital Wound', 'Yourself or a living \\glossterm<ally> within \\glossterm<reach>', """
             If the target has a \\glossterm<vital wound> with a \\glossterm<vital roll> of 0, it treats that \\glossterm<vital roll> as a 1, preventing it from dying (see \\pcref<Vital Wounds>).
         """, scaling="""
-            \\rank<3> The range increases to \\rngmed range.
-            \\rank<5> The minimum \\glossterm<vital roll> you can mitigate decreases to -1.
-            \\rank<7> The minimum \\glossterm<vital roll> you can mitigate decreases to -2.
+            \\rank<2> The range increases to \\rngmed range.
+            \\rank<4> The minimum \\glossterm<vital roll> you can mitigate decreases to -1.
+            \\rank<6> The minimum \\glossterm<vital roll> you can mitigate decreases to -2.
         """, tags=[]),
     ],
     lists=['Arcane', 'Divine', 'Pact'],
@@ -60,17 +60,6 @@ vivimancy=MysticSphere(
             \\rank<5> The bonus increases to +3.
             \\rank<7> The bonus increases to +4.
         """, tags=['Attune (target)']),
-        # Spell('Lifegift', 1, 'Yourself', """
-        #     The target increases its current \\glossterm<hit points> by an amount equal to your \\glossterm<power>.
-        #     This can cause its current hit points to exceed its normal maximum hit points.
-        #     When this spell ends, the target loses hit points equal to the number of hit points it gained this way.
-
-        #     You can cast this spell as a \\glossterm<minor action>.
-        # """, scaling="""
-        #     \\rank<3> This spell can target a living \\glossterm<ally> within \\rngmed range instead of you.
-        #     \\rank<5> The number of additional hit points increases to 3.
-        #     \\rank<7> The number of additional hit points increases to 4.
-        # """, tags=['Attune (target)']),
         Spell('Cure Vital Wound', 5, 'Yourself or a living \\glossterm<ally> within \\rngmed range', """
             The target removes one \\glossterm<vital wound>.
             It gains two \\glossterm<fatigue points> for each vital wound removed this way.
@@ -130,6 +119,24 @@ vivimancy=MysticSphere(
         """, scaling="""
             The healing increases by +1d for each rank beyond 5.
         """, tags=[]),
+        Spell('Lifegift', 1, 'Yourself', """
+            You can cast this spell as a \\glossterm<minor action>.
+
+            The target increases its current \\glossterm<hit points> by 4.
+            This can cause its current hit points to exceed its normal maximum hit points.
+            When this ability ends, the target loses \\glossterm<hit points> equal to the number of hit points it gained this way.
+        """, scaling="""
+            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            In addition, the number of additional hit points increases to 8.
+            \\rank<5> The number of additional hit points increases to 16.
+            \\rank<7> The number of additional hit points increases to 32.
+        """, tags=['Attune (target)']),
+        Spell('Wellspring of Life', 2, 'Yourself', """
+            Once per round, when the target would regain hit points, it regains additional hit points equal to your \\glossterm<power>.
+        """, scaling="""
+            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<6> The additional healing increases to twice your \\glossterm<power>.
+        """, tags=['Attune (target)']),
         Spell('Avasculate', 7, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target takes 4d6 energy damage.
