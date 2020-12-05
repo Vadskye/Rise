@@ -86,7 +86,7 @@ astromancy=MysticSphere(
         """, scaling="""
             \\rank<3> The range increases to \\rngmed.
             \\rank<5> The range increases to \\rnglong.
-            \\rank<7> The range increases to \\rngext.
+            \\rank<7> The range increases to \\rngdist.
         """, tags=[]),
         Spell('Silent Translocation', 3, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngshort range', """
             This spell functions like the \\textit<translocation> spell, except that the target's departure and arrival with this spell are silent.
@@ -95,8 +95,9 @@ astromancy=MysticSphere(
             \\rank<7> The range increases to \\rnglong.
         """, tags=[]),
         Spell('Dimension Door', 4, 'Yourself', """
-            You teleport to a location within \\rnglong range of you.
-            You must clearly visualize the destination's appearance, but you do not need \\glossterm<line of sight> or \\glossterm<line of effect> to your destination.
+            You teleport to a location within \\rngdist range of you.
+            You must clearly visualize the destination's appearance and have an approximate knowledge of its direction and distance from you.
+            However, you do not need \\glossterm<line of sight> or \\glossterm<line of effect> to your destination.
         """, scaling="""
             \\rank<6> The range increases to \\rngext feet.
         """, tags=[]),
@@ -154,7 +155,7 @@ astromancy=MysticSphere(
             Each target \\glossterm<teleports> into the location of a different target.
         """, scaling="""
             \\rank<4> The range increases to \\rnglong.
-            \\rank<6> The range increases to \\rngext.
+            \\rank<6> The range increases to \\rngdist.
         """, tags=[]),
         Spell('Dimension Walk', 4, 'Yourself', """
             You can teleport horizontally instead of moving normally.

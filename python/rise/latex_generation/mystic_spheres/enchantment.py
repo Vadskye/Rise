@@ -14,9 +14,9 @@ enchantment=MysticSphere(
         Effects('Cheer', 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target's mood improves and it feels more cheerful.
         """, scaling="""
-            \\rank<2> The range increases to \\rngmed.
+            \\rank<2> You may target an additional ally within range.
             \\rank<4> You may target an additional ally within range.
-            \\rank<6> The range increases to \\rnglong.
+            \\rank<6> You may target an additional ally within range.
         """, tags=['Emotion', 'Sustain (free)']),
         Effects('Repeat', 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.

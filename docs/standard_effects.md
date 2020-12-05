@@ -234,10 +234,10 @@ have their own logic which may differ significantly from this.
   * +1 level: enemies only
     * This is free for abilities around self, because those abilities would otherwise be
       virtually useless
-  * +1 level: +1 range increment (None to Close, Close to Med)
+  * +1 level: +1 range increment (not applicable to effects that intrinsically scale with range, like teleportation)
   * +1 level: Increase line width by 5'
   * +1 level: convert ability to attunement, no-focus, no-component standard action
-  * +2 levels: +1 range increment (for increasing higher than Medium)
+  * +2 level: +1 range increment (for effects that intrinsically scale with range, like teleportation)
 * Strikes only:
 
 ### Standard effects

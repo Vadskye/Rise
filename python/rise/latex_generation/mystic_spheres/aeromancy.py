@@ -64,7 +64,7 @@ aeromancy = MysticSphere(
             Make an attack vs. Armor against the target.
             \\hit The target takes bludgeoning damage equal to 1d10 plus your \\glossterm<power>.
         """, scaling="damage", tags=[]),
-        Spell('Windsnipe', 3, 'One creature or object within \\rnglong range', """
+        Spell('Windsnipe', 3, 'One creature or object within \\rngdist range', """
             Make an attack vs. Armor against the target.
             \\hit The target takes bludgeoning damage equal to 2d8 plus your \\glossterm<power>.
             \\glance As above, except that that the target takes half damage.
@@ -214,7 +214,7 @@ aeromancy = MysticSphere(
             This ritual can detect air pockets with a minimum size of Fine.
         """, tags=['Detection'], ritual_time='one minute'),
         Spell('Greater Detect Air', 3, None, """
-            This ritual functions like the \\spell<detect air> ritual, except that the range increases to \\rngdist.
+            This ritual functions like the \\spell<detect air> ritual, except that the range increases to \\rngext.
         """, tags=['Detection'], ritual_time='one minute'),
         Spell('Supreme Detect Air', 5, None, """
             This ritual functions like the \\spell<detect air> ritual, except that the range increases to 2,000 feet.
