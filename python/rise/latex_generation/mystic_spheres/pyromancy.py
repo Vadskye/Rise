@@ -31,8 +31,8 @@ pyromancy=MysticSphere(
         """, tags=[]),
         Effects('Personal Torch', 'Yourself', """
             You create a flame in your hand.
-            You can create it at any intensity, up to a maximum heat equivalent to a burning torch.
-            At it most intense, it sheds \\glossterm<bright illumination> in a 20 foot radius and shadowy illumination in an 40 foot radius.
+            You can create it at any intensity, up to a maximum heat equivalent to a roaring campfire.
+            At it most intense, it sheds \\glossterm<bright illumination> in a 30 foot radius and shadowy illumination in an 60 foot radius.
             As a standard action, you can make a melee attack vs. Reflex against a creature or object.
             On a hit, the target takes 2 fire damage.
 
@@ -172,7 +172,7 @@ pyromancy=MysticSphere(
             \\rank<7> The target also gains a +4 \\glossterm<magic bonus> to \\glossterm<power> with strikes.
         """, tags=['Attune (target)']),
         Spell('Wall of Fire', 3, 'Each creature that moves through the area (see text)', """
-            You create a wall of fire in a 20 ft.\\ high, \\arealarge \\glossterm<wall> within \\rngmed range.
+            You create a wall of fire in a 15 ft.\\ high, \\arealarge \\glossterm<wall> within \\rngmed range.
             The flames and heat make it difficult to see through the wall, granting \\glossterm<concealment> to targets on the opposite side of the wall.
             When a creature passes through the wall, you make an attack vs. Reflex against that creature.
             You can only make an attack in this way against a given creature once per \\glossterm<phase>.
@@ -218,7 +218,7 @@ pyromancy=MysticSphere(
             \\hit Each target takes fire damage equal to 1d10 plus half your \\glossterm<power>.
         """, scaling="damage", tags=[]),
         Spell('Wings of the Phoenix', 5, 'Yourself', """
-            You gain a 25 foot \\glossterm<fly speed> as long as you are no more than 50 feet above solid ground (see \\pcref<Flying>).
+            You gain a 30 foot \\glossterm<fly speed> as long as you are no more than 60 feet above solid ground (see \\pcref<Flying>).
             If you are above that height, you gain a 30 foot \\glossterm<glide speed> instead.
         """, scaling="""
             \\rank<7> The maximum distance above the ground increases to 100 feet.

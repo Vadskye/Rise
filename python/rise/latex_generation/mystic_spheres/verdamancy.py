@@ -153,7 +153,7 @@ verdamancy=MysticSphere(
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Sustain (free)']),
         Spell('Wall of Thorns', 3, 'Each creature that moves through the area (see text)', """
-            You create a wall of thorns in 20 ft.\\ high, \\areamed \\glossterm<wall> within \\rngmed range.
+            You create a wall of thorns in 15 ft.\\ high, \\areamed \\glossterm<wall> within \\rngmed range.
             The base of at least half of the wall must be in arable earth.
             The wall is four inches thick, but permeable.
             It provides \\glossterm<cover> to attacks made through the wall.

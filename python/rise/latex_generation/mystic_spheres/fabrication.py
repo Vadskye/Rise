@@ -63,14 +63,14 @@ fabrication=MysticSphere(
         """, scaling="damage", tags=['Manifestation']),
         Spell('Blade Barrier', 2, 'Each creature that moves through the area (see text)', """
             A wall of whirling blades appears within \\rngmed range.
-            The wall takes the form of a 20 ft.\\ high, \\arealarge line.
+            The wall takes the form of a 15 ft.\\ high, \\arealarge line.
             The wall provides \\glossterm<cover> against attacks made through it.
             When a creature or object passes through the wall, make an attack vs. Armor against it.
             \\hit The target takes slashing damage equal to 1d10 plus half your \\glossterm<power>.
         """, scaling="damage", tags=['Sustain (minor)']),
         Spell('Blade Perimeter', 3, 'Each creature that moves through the area (see text)', """
             A wall of whirling blades appears within \\rngmed range.
-            The wall takes the form of a 20 ft.\\ high, \\areamed radius line.
+            The wall takes the form of a 15 ft.\\ high, \\areamed radius line.
             The wall provides \\glossterm<cover> against attacks made through it.
             When a creature or object passes through the wall, make an attack vs. Armor against it.
             \\hit The target takes slashing damage equal to 2d6 plus half your \\glossterm<power>.

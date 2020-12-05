@@ -109,7 +109,7 @@ telekinesis=MysticSphere(
         """, tags=['Attune (self)']),
         Spell('Wall of Force', 1, None, """
             You create a wall of magical energy within \\rngmed range.
-            You can choose the dimensions of the wall, up to a maximum of a 20 ft.\\ high, \\areamed length line.
+            You can choose the dimensions of the wall, up to a maximum of a 15 ft.\\ high, \\areamed length line.
             If you create the wall within a space too small to hold it, it fills as much of the space as possible, starting from the middle of the chosen space.
             This can allow you to completely block off small tunnels.
             The wall is visible as a shimmering magical field that does not block sight.
