@@ -97,7 +97,7 @@ aquamancy=MysticSphere(
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Manifestation']),
         Spell('Wall of Water', 3, None, """
-            You create a wall of water in a 20 ft.\\ high, \\arealarge line within \\rngmed range.
+            You create a wall of water in a 15 ft.\\ high, \\arealarge line within \\rngmed range.
             The wall is four inches thick, and blocks \\glossterm<line of effect> for abilities.
             Sight through the wall is possible, though distorted.
             The wall provides both \\glossterm<cover> and \\glossterm<concealment> to targets on the opposite side of the wall, for a total of a +4 bonus to Armor defense.
@@ -233,7 +233,7 @@ aquamancy=MysticSphere(
             \\rank<7> The area increases to a \\areahuge radius.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Fog Wall', 1, None, """
-            You create a wall of fog in a 20 ft.\\ high, \\arealarge \\glossterm<wall> within \\rngmed range.
+            You create a wall of fog in a 15 ft.\\ high, \\arealarge \\glossterm<wall> within \\rngmed range.
             The fog makes it difficult to see through the wall, granting \\glossterm<concealment> to anything viewed through the wall (see \\pcref<Concealment>).
         """, scaling="""
             \\rank<3> The area increases to a \\arealarge line.

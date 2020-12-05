@@ -49,11 +49,11 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
     level: 5,
     passiveAbilities: [
       {
-        description: "50 ft.",
+        description: "60 ft.",
         name: "Darkvision",
       },
       {
-        description: "50 ft.",
+        description: "60 ft.",
         name: "Tremorsense",
       },
     ],
@@ -191,11 +191,11 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
     name: "Stygian Leech",
     passiveAbilities: [
       {
-        description: "100 ft.",
+        description: "120 ft.",
         name: "Darkvision",
       },
       {
-        description: "100 ft.",
+        description: "120 ft.",
         name: "Lifesense",
       },
     ],
@@ -215,7 +215,7 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
         It hides itself on walls and ceilings and drops on its foes to strangle them to death.
       `,
       5: `
-        Darkmantles hang from ceilings using a muscular "foot" at the top of their bodies.
+        Darkmantles hang from ceilings using a muscular "120" at the top of their bodies.
         They can look like a stalactite by holding their tentacles stiffly under themeselves, or like a lump of rock by spreading their tentacles so the membrane between them covers their bodies.
         Their shell and skin usually resemble limestone, but a darkmantle can change its color to match almost any type of stony background.
       `,
@@ -235,7 +235,7 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
         name: "Latch On",
       },
       {
-        description: "100 ft.",
+        description: "120 ft.",
         name: "Darkvision",
       },
     ],

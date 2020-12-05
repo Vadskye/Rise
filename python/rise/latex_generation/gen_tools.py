@@ -169,7 +169,7 @@ def generate_tools():
         tags=[],
         description="""
             As a standard action, you can throw this powder in the air in your location.
-            When you do, it emits a burst of \\glossterm<bright illumination> in a 50 foot radius and \\glossterm<shadowy illumination> in a 100 foot radius.
+            When you do, it emits a burst of \\glossterm<bright illumination> in a 60 foot radius and \\glossterm<shadowy illumination> in a 120 foot radius.
             The light lasts until the end of the round.
         """,
         short_description="Emits burst of bright light",
@@ -237,7 +237,7 @@ def generate_tools():
         tags=[],
         description="""
             As a standard action, you can activate this item.
-            When you do, it creates \\glossterm<bright illumination> in a 50 foot radius and \\glossterm<shadowy illumination> in a 100 foot radius for 5 minutes.
+            When you do, it creates \\glossterm<bright illumination> in a 60 foot radius and \\glossterm<shadowy illumination> in a 120 foot radius for 5 minutes.
         """,
         short_description="Emits bright illumination continuously",
     ))

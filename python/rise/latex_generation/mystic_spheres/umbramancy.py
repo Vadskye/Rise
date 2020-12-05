@@ -42,7 +42,7 @@ umbramancy=MysticSphere(
             \\rank<7> The maximum area increases to a \\areaext radius.
         """, tags=['Attune (self)', 'Sensation']),
         Spell('Darkvision', 2, 'Yourself', """
-            The target gains \\glossterm<darkvision> with a 50 foot radius.
+            The target gains \\glossterm<darkvision> with a 60 foot radius.
         """, scaling="""
             \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The radius increases to 100 feet.
@@ -192,7 +192,7 @@ umbramancy=MysticSphere(
             \\rank<6> You can maintain the form in bright illumination for a full round before it is suppressed.
         """, tags=['Attune (self)']),
         Spell('Wall of Darkness', 1, None, """
-            You create a wall of darkness in a 20 ft.\\ high, \\areamed line within \\rngmed range.
+            You create a wall of darkness in a 15 ft.\\ high, \\areamed line within \\rngmed range.
             If you create the wall within a space too small to hold it, it fills as much of the space as possible, starting from the middle of the chosen space.
             This can allow you to completely block off small tunnels.
             The wall is visible as a solid block of darkness that blocks sight.

@@ -65,7 +65,7 @@ const baseDragonBySize = {
   },
   wyrm: {
     armorInputs: [{ name: "scales" as const }, { name: "scales" as const }],
-    attackInputs: [frightfulPresence("500 ft.")],
+    attackInputs: [frightfulPresence("600 ft.")],
     level: 20,
     size: "colossal" as const,
     name: "Wyrm",
@@ -73,7 +73,7 @@ const baseDragonBySize = {
   },
   greatWyrm: {
     armorInputs: [{ name: "scales" as const }, { name: "scales" as const }],
-    attackInputs: [frightfulPresence("1,000 ft.")],
+    attackInputs: [frightfulPresence("1,200 ft.")],
     level: 23,
     size: "colossal" as const,
     name: "Great Wyrm",
@@ -240,8 +240,8 @@ const baseDragon = {
   challengeRating: 4 as const,
   passiveAbilities: [
     { name: "Low-light vision" },
-    { name: "Darkvision", description: "200 ft." },
-    { name: "Blindsense", description: "50 ft." },
+    { name: "Darkvision", description: "240 ft." },
+    { name: "Blindsense", description: "60 ft." },
   ],
   skillPoints: { awareness: 2, intimidate: 2, persuasion: 2, socialInsight: 2 },
   weaponInput: [{ name: "bite" as const }, { name: "claw" as const }],
