@@ -248,6 +248,7 @@ Tier 0 areas:
 
 Tier 1 areas:
 * Small cone from self
+* Medium line, 5' wide from self
 * Small line, 10' wide from self
 * Small radius from self
   * This is obviously a larger area than a cone or line, but is also much harder to aim to only hit enemies
