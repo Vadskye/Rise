@@ -65,7 +65,7 @@ enchantment=MysticSphere(
         """, scaling="accuracy", tags=['Compulsion']),
         # level as r1 eonr debuff; normal hit is a little worse than r1, but
         # crit is better
-        Spell('Collapse', 2, 'Creatures in a \\areasmall radius within \\rngmed range', """
+        Spell('Collapse', 3, '\\glossterm<Enemies> in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Mental against each target.
             \\hit Each target falls \\glossterm<prone>.
             \\crit As above, and as a \\glossterm<condition>, each target is unable to stand up.
