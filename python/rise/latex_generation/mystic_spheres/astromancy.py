@@ -15,7 +15,7 @@ astromancy=MysticSphere(
             You teleport into an unoccupied destination within 5 foot \\glossterm<range>.
             If the destination is invalid, this spell is \\glossterm<miscast>.
         """, scaling="""
-            \\rank<2> The range increases to 10 feet.
+            \\rank<2> The range increases to 15 feet.
             \\rank<4> The range increases to \\rngshort.
             \\rank<6> The range increases to \\rngmed.
         """, tags=[]),
@@ -154,7 +154,7 @@ astromancy=MysticSphere(
         Spell('Dimensional Shuffle', 2, 'Up to five targets within \\rngmed range from among you and your \\glossterm<allies>', """
             Each target \\glossterm<teleports> into the location of a different target.
         """, scaling="""
-            \\rank<4> The range increases to \\rngdist.
+            \\rank<4> The range increases to \\rnglong.
             \\rank<6> The maximum number of targets increases to ten.
         """, tags=[]),
         Spell('Dimension Walk', 4, 'Yourself', """

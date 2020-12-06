@@ -14,7 +14,7 @@ vivimancy=MysticSphere(
         Effects('Ablate Vital Wound', 'Yourself or a living \\glossterm<ally> within \\glossterm<reach>', """
             If the target has a \\glossterm<vital wound> with a \\glossterm<vital roll> of 0, it treats that \\glossterm<vital roll> as a 1, preventing it from dying (see \\pcref<Vital Wounds>).
         """, scaling="""
-            \\rank<2> The range increases to \\rngmed range.
+            \\rank<2> The range increases to \\rngshort range.
             \\rank<4> The minimum \\glossterm<vital roll> you can mitigate decreases to -1.
             \\rank<6> The minimum \\glossterm<vital roll> you can mitigate decreases to -2.
         """, tags=[]),
@@ -84,8 +84,8 @@ vivimancy=MysticSphere(
         """, scaling="""
             The hit point loss increases by +1d for each rank beyond 6.
         """, tags=[]),
-        # +4 levels for +2d, +1 level for vital wound effect, -1 for close
-        Spell('Steal Vitality', 5, 'One living creature within \\rngcloes range', """
+        # +4 levels for +2d, +1 level for vital wound effect, -1 for short
+        Spell('Steal Vitality', 5, 'One living creature within \\rngshort range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target takes energy damage equal to 4d10 plus your \\glossterm<power>.
             If this damage \\glossterm<vitally wounds> the target, you can remove one of your \\glossterm<vital wounds>.
@@ -109,12 +109,12 @@ vivimancy=MysticSphere(
             If it loses \\glossterm<hit points> from this damage, it is marked for death as a \\glossterm<condition>.
             If it reaches 0 hit points during this effect, it immediately dies.
         """, scaling="damage", tags=[]),
-        Spell('Circle of Death', 3, 'Living \\glossterm<enemies> in a \\areasmall radius from you', """
+        Spell('Circle of Death', 3, 'Living \\glossterm<enemies> in a \\areamed radius from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes energy damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=[]),
-        Spell('Circle of Life', 5, 'Yourself and each living \\glossterm<ally> in a \\areasmall radius', """
+        Spell('Circle of Life', 5, 'Yourself and each living \\glossterm<ally> in a \\areamed radius from you', """
             Each target regains 2d8 \\glossterm<hit points>.
         """, scaling="""
             The healing increases by +1d for each rank beyond 5.
@@ -144,7 +144,7 @@ vivimancy=MysticSphere(
             Unlike normal, this hit point loss is rounded up instead of down.
             \\glance As above, except that that the target takes half damage.
         """, tags=[]),
-        Spell('Draining Miasma', 1, 'Living \\glossterm<enemies> in a \\areatiny radius within \\rngmed range', """
+        Spell('Draining Miasma', 2, 'Living creatures in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target is \\glossterm<sickened> until the end of the next round.
             \\crit Each target is \\glossterm<sickened> as a \\glossterm<condition>.
@@ -164,7 +164,7 @@ vivimancy=MysticSphere(
         """, tags=['Attune (target)']),
         Spell('Corpse Explosion', 2, 'One Small or larger corpse within \\rngmed range (see text)', """
             You violently discharge the latent magical potential within the target corpse, causing it to explode.
-            Make an attack vs. Reflex against each creature within a \\areatiny radius from it.
+            Make an attack vs. Reflex against each creature within a \\areasmall radius from it.
             \\hit Each target takes bludgeoning damage equal to 1d10 plus half your \\glossterm<power>.
         """, scaling="damage", tags=[]),
     ],

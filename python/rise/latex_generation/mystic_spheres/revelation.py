@@ -176,8 +176,8 @@ revelation=MysticSphere(
 
             If undisturbed, the sensor floats in the air in its position.
         """, scaling="""
-            \\rank<5> The range increases to \\rnglong.
-            \\rank<7> The range increases to \\rngext.
+            \\rank<5> The range increases to \\rngmed.
+            \\rank<7> The range increases to \\rnglong.
         """, tags=['Sustain (minor)', 'Scrying']),
         Spell('Sensory Chain', 4, 'One creature within \\rngmed range (see text)', """
             Make an attack vs. Mental against the target.

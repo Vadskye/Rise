@@ -69,7 +69,8 @@ photomancy=MysticSphere(
         """, tags=['Attune (self)']),
         Spell('Wall of Light', 1, None, """
             You create a wall of light in a 15 ft.\\ high, \\areamed line within \\rngmed range.
-            If you create the wall within a space too small to hold it, it fills as much of the space as possible, allowing you to completely block off small tunnels.
+            If you create the wall within a space too small to hold it, it fills as much of the space as possible, starting from the middle of the chosen space.
+            This can allow you to completely block off small tunnels.
             The wall is visible as a solid block of light that blocks sight.
             It does not inhibit the passage of objects or creatures.
         """, scaling="""
@@ -189,7 +190,7 @@ photomancy=MysticSphere(
             At the end of each round, if the duplicate is outside of \\rngmed range from you, it is destroyed.
             This effect ends when there are no duplicates remaining.
         """, scaling="""
-            \\rank<4> The maximum range increases to \\rngdist.
+            \\rank<4> The maximum range increases to \\rnglong.
             \\rank<6> You can create a second duplicate of yourself.
         """, tags=['Sustain (minor)']),
         Spell('False Wound', 1, 'Yourself or one \\glossterm<ally> within \\rngmed range', """

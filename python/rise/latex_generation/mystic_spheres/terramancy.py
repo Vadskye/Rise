@@ -86,7 +86,9 @@ terramancy=MysticSphere(
         # The tremor/fissure/earthquake line of spells only require "solid
         # ground" since they're just shaking things around, not doing weird
         # stuff like sealing people inside the ground.
-        Spell('Tremor', 1, 'Large or smaller creatures in a \\areatiny radius within \\rngmed range that are standing on solid ground', """
+        # level as r1 eonr debuff; normal hit is a little worse than r1, but
+        # crit is better
+        Spell('Tremor', 2, 'Large or smaller creatures in a \\areasmall radius within \\rngmed range that are standing on solid ground', """
             You create an highly localized tremor that rips through the ground.
             Make an attack vs. Reflex against each target.
             \\hit Each target is knocked \\glossterm<prone>.
@@ -94,7 +96,7 @@ terramancy=MysticSphere(
         """, scaling="accuracy", tags=[]),
         # +1.5 level for highly conditional prone effect,
         # -0.5 for "standing on" limitation
-        Spell('Fissure', 4, 'Everything in a \\areatiny radius within \\rngmed range that is standing on solid ground', """
+        Spell('Fissure', 4, 'Everything in a \\areasmall radius within \\rngmed range that is standing on solid ground', """
             You create an intense but highly localized tremor that rips through the ground.
             Make an attack vs. Reflex against each target.
             \\hit Each target takes bludgeoning damage equal to 2d8 plus half your \\glossterm<power>.
@@ -103,7 +105,7 @@ terramancy=MysticSphere(
         """, scaling="damage", tags=[]),
         # +3 levels for somewhat conditional prone effect,
         # -1 for "standing on" limitation that matters more at high levels
-        Spell('Earthquake', 7, 'Everything in a \\areasmall radius within \\rngmed range that is standing on solid ground', """
+        Spell('Earthquake', 7, 'Everything in a \\areamed radius within \\rnglong range that is standing on solid ground', """
             You create an intense tremor that rips through the ground.
             Make an attack vs. Reflex against each target.
             \\hit Each target takes bludgeoning damage equal to 4d8 plus your \\glossterm<power>.
