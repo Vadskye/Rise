@@ -29,11 +29,11 @@ cryomancy=MysticSphere(
             Make a melee attack vs. Reflex against the target.
             \\hit The target takes cold damage equal to 1d10 plus your \\glossterm<power>.
         """, scaling="damage", tags=[], focus=False),
-        Spell('Cone of Cold', 1, 'Everything in a \\areamed cone from you', """
+        Spell('Cone of Cold', 1, 'Everything in a \\areasmall cone from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes cold damage equal to 1d8 plus half your \\glossterm<power>.
         """, scaling="damage", tags=[]),
-        Spell('Cone of Winter', 4, 'Everything in a \\areagarg cone from you', """
+        Spell('Cone of Winter', 4, 'Everything in a \\areahuge cone from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes cold damage equal to 2d8 plus half your \\glossterm<power>.
         """, scaling='damage', tags=[]),
@@ -43,13 +43,13 @@ cryomancy=MysticSphere(
             If it loses \\glossterm<hit points> from this damage, it is \\glossterm<immobilized> as a \\glossterm<condition>.
             \\glance As above, except that that the target takes half damage.
         """, scaling="damage", tags=[]),
-        Spell('Mass Frozen Legs', 6, 'Creatures in a \\areamed radius within \\rngmed range', """
+        Spell('Mass Frozen Legs', 6, 'Creatures in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target that has no remaining \\glossterm<resistance> to cold damage is \\glossterm<immobilized> as a \\glossterm<condition>.
             \\glance As above, except that the condition is removed at the end of the next round.
         """, scaling="accuracy", tags=[]),
         # +2 levels for cold + bludgeoning, which breaks resistances
-        Spell('Ice Lance', 4, 'Everything in a \\arealarge, 10 ft.\\ wide line from you', """
+        Spell('Ice Lance', 4, 'Everything in a \\areamed, 10 ft.\\ wide line from you', """
             Make an attack vs. Armor against each target.
             \\hit Each target takes piercing and cold damage equal to 2d8 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
@@ -78,7 +78,7 @@ cryomancy=MysticSphere(
             \\hit The target takes 1d6 cold damage.
             If it loses \\glossterm<hit points> from this damage, it is \\glossterm<stunned> as a \\glossterm<condition>.
         """, scaling="damage", tags=[]),
-        Spell('Mass Chilled Mind', 4, '\\glossterm<Enemies> in a \\areahuge radius from you', """
+        Spell('Mass Chilled Mind', 4, '\\glossterm<Enemies> in a \\arealarge radius from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target that has no remaining \\glossterm<resistance> to cold damage is \\glossterm<stunned> as a \\glossterm<condition>.
             \\glance As above, except that the condition is removed at the end of the next round.
@@ -123,12 +123,12 @@ cryomancy=MysticSphere(
             \\glance As above, except that that the target takes half damage.
         """, scaling="damage", tags=[]),
         # +2 levels for cold + bludgeoning, which breaks resistances
-        Spell('Hailstorm', 5, 'Everything in a \\areasmall radius within \\rngmed range', """
+        Spell('Hailstorm', 5, 'Everything in a \\areatiny radius within \\rngmed range', """
             Make an attack vs. Armor against each target.
             \\hit Each target takes cold and bludgeoning damage equal to 2d10 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=[]),
-        Spell('Blizzard', 3, '\\glossterm<Enemies> and objects in a \\areamed radius from you', """
+        Spell('Blizzard', 3, '\\glossterm<Enemies> and objects in a \\areasmall radius from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes cold damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
@@ -152,7 +152,7 @@ cryomancy=MysticSphere(
             You can cast this spell as a \\glossterm<minor action>.
 
             As a standard action, you can breathe cold like a dragon.
-            When you do, make an attack vs. Fortitude against everything in a \\arealarge cone.
+            When you do, make an attack vs. Fortitude against everything in a \\areamed cone.
 
             \\hit Each target takes cold damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.

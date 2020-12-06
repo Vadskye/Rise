@@ -60,7 +60,7 @@
 //     damageTypes: ["fire"],
 //     defense: "armor",
 //     source: "magical",
-//     target: "Everything in a \\areasmall radius within \\rngshort range",
+//     target: "Everything in a \\areatiny radius within \\rngshort range",
 //   },
 // };
 

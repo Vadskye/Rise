@@ -413,7 +413,7 @@ def magical_beasts(sample_monsters):
         behir,
         active_abilities=[
             active_ability('Electric Breath', f"""
-                The behir makes a +{behir.accuracy()} vs. Armor attack against everything in a \\areamed cone.
+                The behir makes a +{behir.accuracy()} vs. Armor attack against everything in a \\areasmall cone.
                 \\hit Each target takes {behir.standard_damage() + 1} electricity damage, and is \\glossterm<dazed> as a \\glossterm<condition>.
             """),
             active_ability('Natural Grab', f"""
@@ -475,12 +475,12 @@ def magical_beasts(sample_monsters):
         immunities=['cold'],
         active_abilities=[
             active_ability('Frost Breath', f"""
-                The frost worm makes a +{frost_worm.accuracy()} vs. Fortitude attack against everything in a \\arealarge cone from it.
+                The frost worm makes a +{frost_worm.accuracy()} vs. Fortitude attack against everything in a \\areamed cone from it.
                 \\hit Each target takes {frost_worm.standard_damage() + 2} cold damage.
             """, tags=['Cold']),
             active_ability('Trill', f"""
                 The frost worm emits a piercing noise that compels prey to stay still.
-                It makes a +{frost_worm.accuracy()} vs. Mental attack against creatures in a \\areahuge radius from it.
+                It makes a +{frost_worm.accuracy()} vs. Mental attack against creatures in a \\arealarge radius from it.
                 This area can pass through solid objects, including the ground, but every 5 feet of solid obstacle counts as 20 feet of distance.
                 \\hit Each target is \\glossterm<dazed> and \\glossterm<immobilized> as two separate \\glossterm<conditions>.
                 \\crit Each target is \\glossterm<stunned> and \\glossterm<immobilized> as two separate \\glossterm<conditions>.
@@ -492,7 +492,7 @@ def magical_beasts(sample_monsters):
             """),
             passive_ability('Death Throes', f"""
                 When a frost worm is killed, its corpse turns to ice and shatters in a violent explosion.
-                It makes a +{frost_worm.accuracy()} vs. Fortitude attack against everything in a \\areahuge radius from it.
+                It makes a +{frost_worm.accuracy()} vs. Fortitude attack against everything in a \\arealarge radius from it.
                 \\hit Each target takes {frost_worm.standard_damage() + 4} cold and piercing damage.
             """),
         ],
@@ -906,13 +906,13 @@ def undead(sample_monsters):
         corrupted_mage,
         active_abilities=[
             active_ability('Cone of Cold', f"""
-                The mage makes a {corrupted_mage.accuracy()} vs. Fortitude attack against everything in a \\areamed cone from it.
+                The mage makes a {corrupted_mage.accuracy()} vs. Fortitude attack against everything in a \\areasmall cone from it.
                 \\hit Each target takes {corrupted_mage.standard_damage('magical')} cold damage.
             """),
             active_ability('Frost Bombs', f"""
                 The mage creates three orbs of cold energy at locations of its choice within \\rngmed range.
                 At the end of the next round's \\glossterm<action phase>,
-                the mage makes a {corrupted_mage.accuracy()} vs. Fortitude attack against everything in a \\areasmall radius burst around each orb.
+                the mage makes a {corrupted_mage.accuracy()} vs. Fortitude attack against everything in a \\areatiny radius burst around each orb.
                 If a target is in the area of multiple orbs, it is only affected once.
                 \\hit Each target takes {corrupted_mage.standard_damage('magical') + 1} cold damage.
             """),

@@ -26,7 +26,7 @@ terramancy=MysticSphere(
             Otherwise, make an attack vs. Armor against the target.
             \\hit The target takes bludgeoning damage equal to 1d10 plus your \\glossterm<power>.
         """, scaling="damage", tags=['Manifestation']),
-        Spell('Shrapnel Blast', 1, 'Everything in a \\areamed cone from you', """
+        Spell('Shrapnel Blast', 1, 'Everything in a \\areasmall cone from you', """
             You extract a Tiny chunk from a body of earth or unworked stone within 5 feet of you and blast it at your foes.
             If no such chunk can be extracted, this spell is \\glossterm<miscast>.
             Otherwise, make an attack vs. Reflex against each target.
@@ -86,7 +86,7 @@ terramancy=MysticSphere(
         # The tremor/fissure/earthquake line of spells only require "solid
         # ground" since they're just shaking things around, not doing weird
         # stuff like sealing people inside the ground.
-        Spell('Tremor', 1, 'Large or smaller creatures in a \\areasmall radius within \\rngmed range that are standing on solid ground', """
+        Spell('Tremor', 1, 'Large or smaller creatures in a \\areatiny radius within \\rngmed range that are standing on solid ground', """
             You create an highly localized tremor that rips through the ground.
             Make an attack vs. Reflex against each target.
             \\hit Each target is knocked \\glossterm<prone>.
@@ -94,7 +94,7 @@ terramancy=MysticSphere(
         """, scaling="accuracy", tags=[]),
         # +1.5 level for highly conditional prone effect,
         # -0.5 for "standing on" limitation
-        Spell('Fissure', 4, 'Everything in a \\areasmall radius within \\rngmed range that is standing on solid ground', """
+        Spell('Fissure', 4, 'Everything in a \\areatiny radius within \\rngmed range that is standing on solid ground', """
             You create an intense but highly localized tremor that rips through the ground.
             Make an attack vs. Reflex against each target.
             \\hit Each target takes bludgeoning damage equal to 2d8 plus half your \\glossterm<power>.
@@ -103,7 +103,7 @@ terramancy=MysticSphere(
         """, scaling="damage", tags=[]),
         # +3 levels for somewhat conditional prone effect,
         # -1 for "standing on" limitation that matters more at high levels
-        Spell('Earthquake', 7, 'Everything in a \\areamed radius within \\rngmed range that is standing on solid ground', """
+        Spell('Earthquake', 7, 'Everything in a \\areasmall radius within \\rngmed range that is standing on solid ground', """
             You create an intense tremor that rips through the ground.
             Make an attack vs. Reflex against each target.
             \\hit Each target takes bludgeoning damage equal to 4d8 plus your \\glossterm<power>.
@@ -131,14 +131,14 @@ terramancy=MysticSphere(
             \\crit As above, except that the force of gravity is increased by approximately four times instead.
             This increases the penalties to -4.
         """, scaling="accuracy", tags=[]),
-        Spell('Quagmire', 4, 'All earth and unworked stone in a \\areamed radius within \\rnglong range', """
+        Spell('Quagmire', 4, 'All earth and unworked stone in a \\areasmall radius within \\rnglong range', """
             % TODO: wording to allow it to affect smaller parts of larger objects
             % TODO: define maximum resistance
             The targets are softened into a thick sludge, creating a quagmire that is difficult to move through.
             The movement cost required to move out of each affected square within the area is quadrupled.
             This does not affect objects under significant structural stress, such as walls and support columns.
         """, scaling="""
-            \\rank<6> The area increases to a \\arealarge radius.
+            \\rank<6> The area increases to a \\areamed radius.
         """, tags=['Sustain (minor)']),
         Spell('Earthen Fortification', 4, None, """
             You construct a fortification made of packed earth within \\rngmed range.

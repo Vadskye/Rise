@@ -38,7 +38,7 @@ spells=[
         Make a melee attack vs. Reflex against the target.
         \\hit The target takes electricity damage equal to 1d10 plus your \\glossterm<power>.
     """, scaling="damage", tags=[], focus=False),
-    Spell('Discharge', 1, '\\glossterm<Enemies> and objects in a \\areasmall radius from you', """
+    Spell('Discharge', 1, 'Everything in a \\areasmall radius from you', """
         Make an attack vs. Reflex against each target.
         \\hit Each target takes electricity damage equal to 1d8 plus half your \\glossterm<power>.
     """, scaling="damage", tags=[]),
@@ -48,17 +48,18 @@ spells=[
         \\glance As above, except that the condition is removed at the end of the next round.
         \\crit As above, except that the condition must be removed twice before the effect ends.
     """, scaling="accuracy", tags=[]),
-    Spell('Lightning Storm', 5, '\\glossterm<Enemies> and objects in a \\arealarge radius from  you', """
+    Spell('Lightning Storm', 4, '\\glossterm<Enemies> and objects in a \\arealarge radius from  you', """
         Make an attack vs. Reflex against each target.
-        \\hit Each target takes electricity damage equal to 2d10 plus half your \\glossterm<power>.
+        \\hit Each target takes electricity damage equal to 2d8 plus half your \\glossterm<power>.
         \\glance As above, except that that each target takes half damage.
     """, scaling="damage", tags=[]),
-    Spell('Shock and Awe', 6, '\\glossterm<Enemies> in a \\areamed radius within \\rngmed range', """
+    Spell('Shock and Awe', 5, 'Creatures in a \\areasmall radius within \\rngmed range', """
          Make an attack vs. Fortitude against each target.
          \\hit Each target is \\glossterm<dazed> and \\glossterm<disoriented> until the end of the next round.
          \\crit Each target is \\glossterm<dazed> and \\glossterm<disoriented> as a single \\glossterm<condition>.
         """, scaling="accuracy", tags=[]),
-    Spell('Electromagnetic Bolt', 4, 'Everything in a \\arealarge, 10 ft.\\ wide line from you', """
+    # +2 levels for metal accuracy
+    Spell('Electromagnetic Bolt', 4, 'Everything in a \\areamed, 10 ft.\\ wide line from you', """
         Make an attack vs. Reflex against each target.
         You gain a +2 bonus to accuracy against each target that is wearing metal armor or otherwise carrying or composed of a significant amount of metal.
         \\hit Each target takes electricity damage equal to 2d8 plus half your \\glossterm<power>.
@@ -99,7 +100,7 @@ spells=[
         If it loses \\glossterm<hit points> from this damage, it is \\glossterm<disoriented> as a \\glossterm<condition>.
         \\glance As above, except that that the target takes half damage.
     """, scaling="damage", tags=[]),
-    Spell('Call Lightning', 3, 'Everything in a \\arealarge, 5 ft.\\ wide vertical line within \\rngmed range', """
+    Spell('Call Lightning', 3, 'Everything in a \\areamed, 5 ft.\\ wide vertical line within \\rngmed range', """
         Make an attack vs. Reflex against each target.
         If you are outdoors in cloudy or stormy weather, you gain a +2 bonus to \\glossterm<accuracy> with the attack.
         If this spell has its area increased, only the length of the line increases.
@@ -119,7 +120,7 @@ spells=[
         You can cast this spell as a \\glossterm<minor action>.
 
         As a standard action, you can breathe electricity like a dragon.
-        When you do, make an attack vs. Reflex against everything within a \\arealarge cone.
+        When you do, make an attack vs. Reflex against everything within a \\areamed cone.
         \\hit Each target takes electricity damage equal to 2d6 plus half your \\glossterm<power>.
         \\glance As above, except that that each target takes half damage.
     """, scaling="damage", tags=['Attune (self)']),

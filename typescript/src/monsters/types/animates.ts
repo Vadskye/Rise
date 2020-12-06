@@ -22,7 +22,7 @@ const animateInput: TypelessMonsterInput[] = [
         `,
         name: "Chilling Aura",
         powerBonus: -2,
-        target: "Each \\glossterm{enemy} within a \\areasmall radius \\glossterm{emanation}",
+        target: "Each \\glossterm{enemy} within a \\areatiny radius \\glossterm{emanation}",
       },
     ],
     challengeRating: 4,

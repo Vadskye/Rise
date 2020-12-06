@@ -44,7 +44,7 @@ chronomancy=MysticSphere(
             \\glance As above, except that the effect is removed at the end of the next round.
             \\crit As above, except that the effect lasts until the curse is removed.
         """, scaling="accuracy", tags=['Curse']),
-        Spell('Accelerated Timestream', 5, 'Everything within a \\areamed radius \\glossterm<zone> from your location', """
+        Spell('Accelerated Timestream', 5, 'Everything within a \\areasmall radius \\glossterm<zone> from your location', """
             Make an attack vs. Mental against each target.
             Whenever a creature enters the area, you make this attack against them.
             A creature that leaves the area and re-enters it uses the original attack result against it.
@@ -65,7 +65,7 @@ chronomancy=MysticSphere(
             \\glance As above, except that the condition is removed at the end of the next round.
             \\crit As above, except that the condition must be removed twice before the effect ends.
         """, tags=[]),
-        Spell('Mass Slow', 3, '\\glossterm<Enemies> in a \\arealarge radius within \\rngmed range', """
+        Spell('Mass Slow', 3, '\\glossterm<Enemies> in a \\areamed radius within \\rngmed range', """
             Make an attack vs. Mental against each target.
             \\hit Each target is \\glossterm<slowed> until the end of the next round.
             \\crit Each target is \\glossterm<slowed> as a \\glossterm<condition>.

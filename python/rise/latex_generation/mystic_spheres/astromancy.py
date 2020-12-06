@@ -218,7 +218,7 @@ astromancy=MysticSphere(
         Spell('Gate', 8, 'Special', """
             Choose a plane that connects to your current plane, and a location within that plane.
             This ritual creates an interdimensional connection between your current plane and the location you choose, allowing travel between those two planes in either direction.
-            The gate takes the form of a \\areasmall radius circular disk, oriented a direction you choose (typically vertical).
+            The gate takes the form of a \\areatiny radius circular disk, oriented a direction you choose (typically vertical).
             It is a two-dimensional window looking into the plane you specified when casting the spell, and anyone or anything that moves through it is shunted instantly to the other location.
             The gate cannot be \\glossterm<sustained> for more than 5 rounds, and is automatically dismissed at the end of that time.
 

@@ -74,7 +74,7 @@ const standardAttacks: Record<
     defense: "armor",
     hit: "Each target takes $damage.",
     source: "mundane",
-    target: "Everything in a \\areamed cone",
+    target: "Everything in a \\areasmall cone",
   },
   "combustion": {
     damageTypes: ["fire"],
@@ -101,7 +101,7 @@ const standardAttacks: Record<
     powerBonus: -2,
     source: "magical",
     tags: ["Focus", "Spell"],
-    target: "Everything in a \\areasmall radius within \\rngmed range",
+    target: "Everything in a \\areatiny radius within \\rngmed range",
   },
 };
 
