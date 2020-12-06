@@ -33,19 +33,23 @@ cryomancy=MysticSphere(
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes cold damage equal to 1d8 plus half your \\glossterm<power>.
         """, scaling="damage", tags=[]),
+        Spell('Cone of Winter', 4, 'Everything in a \\areagarg cone from you', """
+            Make an attack vs. Fortitude against each target.
+            \\hit Each target takes cold damage equal to 2d8 plus half your \\glossterm<power>.
+        """, scaling='damage', tags=[]),
         Spell('Frozen Legs', 4, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target takes 2d6 cold damage.
             If it loses \\glossterm<hit points> from this damage, it is \\glossterm<immobilized> as a \\glossterm<condition>.
             \\glance As above, except that that the target takes half damage.
         """, scaling="damage", tags=[]),
-        Spell('Mass Frozen Legs', 6, '\\glossterm<Enemies> in a \\areasmall radius within \\rngmed range', """
+        Spell('Mass Frozen Legs', 6, 'Creatures in a \\areamed radius within \\rngmed range', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target that has no remaining \\glossterm<resistance> to cold damage is \\glossterm<immobilized> as a \\glossterm<condition>.
             \\glance As above, except that the condition is removed at the end of the next round.
         """, scaling="accuracy", tags=[]),
         # +2 levels for cold + bludgeoning, which breaks resistances
-        Spell('Ice Lance', 4, 'Everything in a \\arealarge, 5 ft.\\ wide line from you', """
+        Spell('Ice Lance', 4, 'Everything in a \\arealarge, 10 ft.\\ wide line from you', """
             Make an attack vs. Armor against each target.
             \\hit Each target takes piercing and cold damage equal to 2d8 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
@@ -74,7 +78,7 @@ cryomancy=MysticSphere(
             \\hit The target takes 1d6 cold damage.
             If it loses \\glossterm<hit points> from this damage, it is \\glossterm<stunned> as a \\glossterm<condition>.
         """, scaling="damage", tags=[]),
-        Spell('Mass Chilled Mind', 5, '\\glossterm<Enemies> in a \\arealarge radius from you', """
+        Spell('Mass Chilled Mind', 4, '\\glossterm<Enemies> in a \\areahuge radius from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target that has no remaining \\glossterm<resistance> to cold damage is \\glossterm<stunned> as a \\glossterm<condition>.
             \\glance As above, except that the condition is removed at the end of the next round.
@@ -112,11 +116,6 @@ cryomancy=MysticSphere(
             \\rank<4> The spell creates six layers of ice.
             \\rank<6> The spell creates eight layers of ice.
         """, tags=['Attune (self)', 'Manifestation']),
-        Spell('Winterwave', 3, 'Everything in a \\arealarge cone from you', """
-            Make an attack vs. Fortitude against each target.
-            \\hit Each target takes cold damage equal to 2d6 plus half your \\glossterm<power>.
-            \\glance As above, except that that each target takes half damage.
-        """, scaling="damage", tags=[]),
         Spell('Frostbite', 3, 'One creature or object within \\rngshort range', """
             Make an attack vs. Fortitude against the target.
             \\hit The target takes cold damage equal to 2d8 plus your \\glossterm<power>.
@@ -149,13 +148,13 @@ cryomancy=MysticSphere(
             \\rank<5> The magic bonus for a weapon increases to +4, and the magic bonus for armor increases to +2.
             \\rank<7> The magic bonus for a weapon increases to +8, and the magic bonus for armor increases to +3.
         """, tags=['Attune (self)']),
-        Spell('Frost Breath', 4, 'Yourself', """
+        Spell('Frost Breath', 3, 'Yourself', """
             You can cast this spell as a \\glossterm<minor action>.
 
             As a standard action, you can breathe cold like a dragon.
             When you do, make an attack vs. Fortitude against everything in a \\arealarge cone.
 
-            \\hit Each target takes cold damage equal to 2d8 plus half your \\glossterm<power>.
+            \\hit Each target takes cold damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Attune (self)']),
         Spell('Frostburn', 7, 'One creature within \\rngshort range', """

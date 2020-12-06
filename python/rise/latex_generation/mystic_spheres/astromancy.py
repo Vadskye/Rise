@@ -154,8 +154,8 @@ astromancy=MysticSphere(
         Spell('Dimensional Shuffle', 2, 'Up to five targets within \\rngmed range from among you and your \\glossterm<allies>', """
             Each target \\glossterm<teleports> into the location of a different target.
         """, scaling="""
-            \\rank<4> The range increases to \\rnglong.
-            \\rank<6> The range increases to \\rngdist.
+            \\rank<4> The range increases to \\rngdist.
+            \\rank<6> The maximum number of targets increases to ten.
         """, tags=[]),
         Spell('Dimension Walk', 4, 'Yourself', """
             You can teleport horizontally instead of moving normally.
