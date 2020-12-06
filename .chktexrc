@@ -388,13 +388,13 @@ Silent
     \toprule \midrule \bottomrule \tableheaderrule
 
     \add \sub \tind \concealment
-    \areatiny \areasmall \areamed \arealarge
+    \areatiny \areasmall \areamed \arealarge \areahuge \areagarg
     \spellsuccess \spellfailure \spelleffect \spelldur \spellcritical \spellspecial
     \spellnotes \norepeatspellnotes \physicalspellnotes \forcespellnotes \dismissable \norepeatnotes \destructivespellnotes \subtlespellnotes \cursespellnotes \spelltime \sizingspellnotes \firespellnotes \fogspellnotes \fogwindspellnotes \sensorspellnotes
     \frightened \shaken \sickened \nauseated \panicked \impaired \unaware \defenseless \staggered \dazed \immobilized \disoriented  \stunned \severelyimpaired \goaded \taunted \confused \slowed \partiallyblinded \confusionexplanation \deafened \charmed \dominated \fascinated \helpless \blinded \grappled \petrified \disabled \paralyzed \prone
     \degree
     \durshort \durmed \durlong \durext \durbrief \durpersonallong
-    \rngshort \rngmed \rnglong \rngdist
+    \rngshort \rngmed \rnglong \rngdist \rngext
     \featpre \featpres \featben \stylereq
     \miscastyou \miscastrandom \miscastretarget \miscastexplode
     \taburowcolors
