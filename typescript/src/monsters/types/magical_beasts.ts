@@ -13,7 +13,7 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
         name: "Spit Acid",
         powerBonus: -2,
         source: "mundane",
-        target: "Everything in a \\areasmall line",
+        target: "Everything in a \\areamed, 5 ft. wide line",
       },
       {
         // Accuracy bonus mimics size bonus from Shove and Str for accuracy
@@ -215,7 +215,7 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
         It hides itself on walls and ceilings and drops on its foes to strangle them to death.
       `,
       5: `
-        Darkmantles hang from ceilings using a muscular "120" at the top of their bodies.
+        Darkmantles hang from ceilings using a muscular "foot" at the top of their bodies.
         They can look like a stalactite by holding their tentacles stiffly under themeselves, or like a lump of rock by spreading their tentacles so the membrane between them covers their bodies.
         Their shell and skin usually resemble limestone, but a darkmantle can change its color to match almost any type of stony background.
       `,
