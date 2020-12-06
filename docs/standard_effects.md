@@ -142,11 +142,11 @@ Note: This is duplicated in the Metacaster feat.
   * List: deafened, prone
 * Rank 1
   * Generally give -2 to a category (accuracy/defenses)
-  * List: chilled, dazed, dazzled, sickened, slowed
+  * List: Dazed, dazzled, sickened, slowed
   * Special: end of round low damage (remove if vital, DR 10 check to remove)
 * Rank 2
   * Generally give -4 to a category (accuracy/defenses)
-  * List: exhausted, frightened, nauseated, generic -2 to all, stunned, fighting underwater
+  * List: frightened, nauseated, generic -2 to all, stunned, fighting underwater
   * Special: end of round low damage (remove if vital)
 * Rank 3
   * Generally cause partial action denial
