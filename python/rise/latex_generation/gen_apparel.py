@@ -121,7 +121,7 @@ def generate_armor():
             level=11,
             material_type='Shield',
             description="""
-                This item functions like the \\mitem<shield of arrow catching> item, except that it affects a \\areamed radius from you.
+                This item functions like the \\mitem<shield of arrow catching> item, except that it affects a \\arealarge radius from you.
                 In addition, the item only redirects projectiles away from \\glossterm<allies> within the area, not all creatures.
             """,
             short_description="Selectively redirects small projectiles to hit you",
