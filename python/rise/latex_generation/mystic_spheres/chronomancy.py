@@ -65,7 +65,7 @@ chronomancy=MysticSphere(
             \\glance As above, except that the condition is removed at the end of the next round.
             \\crit As above, except that the condition must be removed twice before the effect ends.
         """, tags=[]),
-        Spell('Mass Slow', 3, '\\glossterm<Enemies> in a \\areamed radius within \\rngmed range', """
+        Spell('Mass Slow', 3, '\\glossterm<Enemies> in a \\arealarge radius within \\rngmed range', """
             Make an attack vs. Mental against each target.
             \\hit Each target is \\glossterm<slowed> until the end of the next round.
             \\crit Each target is \\glossterm<slowed> as a \\glossterm<condition>.

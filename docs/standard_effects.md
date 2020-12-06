@@ -217,7 +217,6 @@ have their own logic which may differ significantly from this.
   * +1 level: convert condition to curse (including replacing crit effect)
     * It's possible that this should be +2 levels, but the curse crit effect is worse than a
       standard crit effect, so it might also be fine
-  * +2 levels: +1 area size
   * +2 levels: +1a (damaging attacks, damaging debuffs)
   * +2 levels: +1d (above standard rank progression, if any)
   * +3 levels: +1 rank to debuff
@@ -234,11 +233,68 @@ have their own logic which may differ significantly from this.
   * +1 level: enemies only
     * This is free for abilities around self, because those abilities would otherwise be
       virtually useless
+  * +1 level: +1 area size
   * +1 level: +1 range increment (not applicable to effects that intrinsically scale with range, like teleportation)
   * +1 level: Increase line width by 5'
   * +1 level: convert ability to attunement, no-focus, no-component standard action
   * +2 level: +1 range increment (for effects that intrinsically scale with range, like teleportation)
 * Strikes only:
+
+### Standard areas:
+Tier 0 areas:
+* Small radius from self
+* Med line, 5' wide from self
+
+Tier 1 areas:
+* Med cone from self
+* Med line, 10' wide from self
+* Med radius from self
+  * This is obviously a larger area than a cone or line, but is also much harder to aim to only hit enemies
+* Enemies in Small radius from self
+* Small radius in Short range
+  * This should be rare, since it's more flexible than other tier 1 ranges but is too weak for tier 2
+
+Tier 2 areas:
+* Large cone from self
+* Large line, 10' wide from self
+* Large radius from self
+* Enemies in Medium radius from self
+* Small radius in Med range
+* Med radius in Short range
+
+Tier 3 areas:
+* Huge cone from self
+* Huge line, 10' wide from self
+* Large line, 15' wide from self
+* Huge radius from self
+* Enemies in Large radius from self
+* Med radius in Med range
+
+Tier 4 areas:
+* Gargantuan cone from self
+* Gargantuan line, 10' wide from self
+* Huge line, 15' wide from self
+* Gargantuan radius from self
+* Enemies in Huge radius from self
+* Large radius in Med range
+* Med radius in Long range
+* Small radius in Distant range
+
+Tier 5 areas:
+* Gargantuan line, 15' wide from self
+* Enemies in Gargantuan radius from self
+* Large radius in Long range
+* Med radius in Distant range
+* Small radius in Long range
+
+Tier 6 areas:
+* Gargantuan radius in Long range
+* Large radius in Distant range
+* Med radius in Extreme range
+
+Tier 7 areas:
+* Gargantuan radius in Distant range
+* Large radius in Extreme range
 
 ### Standard effects
 
@@ -260,21 +316,14 @@ Rank 1 Focus/non-upgrading, Rank 3 maneuver:
     * low damage, r2 debuff condition if lose HP
 * Non-strike-based:
   * Softener:
-    * *Close* range: r1 debuff condition + crit effect
-    * Enemies in Large cone from self: r1 debuff eonr, condition on crit
-    * Enemies in Large line, 10' wide, from self: r1 debuff eonr, condition on crit
-    * Enemies in Medium radius from self: r1 debuff eonr, condition on crit
-    * Enemies in Small radius in Med range: r1 debuff eonr, condition on crit
+    * *Short* range: r1 debuff condition + crit effect
+    * t2 area: r1 debuff eonr, condition on crit
   * Damage:
     * Med range: high damage
-    * Med cone from self: medium damage
-    * Med line, 10' wide, from self: medium damage
-    * Enemies in small radius from self: medium damage
+    * t1 area: medium damage
   * Finisher:
     * Med range: low damage, r2 debuff condition if lose HP
-    * Med cone from self: r2 debuff condition if no resistances + crit effect
-    * Med line, 10' wide, from self: r2 debuff condition if no resistances + crit effect
-    * Enemies in Small radius from self: r2 debuff condition if no resistances + crit effect
+    * t1 area: r2 debuff condition if no resistances + crit effect
 
 ### Higher rank specific examples
 
@@ -285,15 +334,17 @@ Rank 3 Focus/non-upgrading, Rank 5 maneuver:
 * Non-strike-based:
   * Softener:
     * r1 curse in medium range
-    * Small radius in Med range: r1 debuff eonr, condition on crit
+    * t4 area: r1 debuff eonr, condition on crit
   * Damage:
-    * Small radius in Med range: medium damage
+    * Dist range: high damage
+    * t3 area: medium damage
   * Finisher:
-    * Small radius in Med range: r2 debuff condition if no resistances
+    * t3 area: r2 debuff condition if no resistances + crit effect
 
 Rank 4 Focus/non-upgrading, Rank 6 maneuver:
 * Softener:
   * Med range: r2 debuff condition in medium range
+  * t2 area: r2 debuff eonr, condition on crit
 * Finisher:
   * Med range: high damage, r1 debuff condition if lose HP
 
@@ -351,8 +402,8 @@ Rank 2 Focus/non-choice; Rank 4 non-Focus:
   * Deal std +2d to 1 in melee range
 * AOE:
   * Deal std -1d to all within Large/5 line from you
-  * Deal std -1d to all within Med/5 line entirely within Close range
-  * Deal std -1d to all within Small radius in Close range
+  * Deal std -1d to all within Med/5 line entirely within Short range
+  * Deal std -1d to all within Small radius in Short range
 
 Rank 3 Focus/non-choice; Rank 5 non-Focus:
 * Spells only:
@@ -376,7 +427,7 @@ Rank 4 Focus/non-choice; Rank 6 non-Focus:
   * Remove condition from non-self in Med radius from you
   * Deal std -1d to all within Large/15 line from you
   * Deal std -1d to all within Large/5 line entirely within Med range
-  * Deal std -1d to all within Med radius in Close range
+  * Deal std -1d to all within Med radius in Short range
   * r2 condition until eonr or r2 condition on crit vs enemies in Medium radius in std range
 * Maneuvers only:
 * AOE: see 3rd level spell AOE
