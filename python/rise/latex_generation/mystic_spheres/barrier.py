@@ -36,7 +36,7 @@ barrier=MysticSphere(
             Whenever a creature misses the barrier with a \\glossterm<mundane> attack, it makes the same attack against itself, rolling a new attack roll against its own defenses.
             In addition, the \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to three times your \\glossterm<power>.
         """, scaling="""
-            \\rank<6> The area increases to a \\arealarge line.
+            \\rank<6> The area increases to a \\areamed line.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Visual Barrier', 2, None, """
             This spell functions like the \\spell<mystic barrier> spell, except that you can choose the visibility of the barrier.
@@ -44,7 +44,7 @@ barrier=MysticSphere(
             You can change the opacity of the barrier as a \\glossterm<minor action>.
         """, scaling="""
             \\rank<4> The \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to three times your \\glossterm<power>.
-            \\rank<6> The area increases to a \\arealarge line.
+            \\rank<6> The area increases to a \\areamed line.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Audible Barrier', 2, None, """
             This spell functions like the \\spell<mystic barrier> spell, except that you can choose how much the barrier blocks sound.
@@ -54,7 +54,7 @@ barrier=MysticSphere(
             In addition, the \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to three times your \\glossterm<power>.
         """, scaling="""
             \\rank<4> The \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to three times your \\glossterm<power>.
-            \\rank<6> The area increases to a \\arealarge line.
+            \\rank<6> The area increases to a \\areamed line.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Forceful Barrier', 3, None, """
             This spell functions like the \\spell<mystic barrier> spell, except that it breaks objects in its area that obstruct its path.
@@ -63,12 +63,12 @@ barrier=MysticSphere(
             This does no damage to creatures, who block the path of the barrier like normal.
             In addition, the \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to three times your \\glossterm<power>.
         """, scaling="""
-            \\rank<5> The area increases to a \\arealarge line.
+            \\rank<5> The area increases to a \\areamed line.
             \\rank<7> The \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to four times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Mystic Barrier', 1, None, """
             You create a wall of magical energy within \\rngmed range.
-            You can choose the dimensions of the wall, up to a maximum of a 20 ft.\\ high, \\areamed length line.
+            You can choose the dimensions of the wall, up to a maximum of a 20 ft.\\ high, \\areasmall length line.
             If you create the wall within a space too small to hold it, it fills as much of the space as possible, starting from the middle of the chosen space.
             This can allow you to completely block off small tunnels.
             The wall is visible as a shimmering magical membrane that does not block sight.
@@ -79,19 +79,19 @@ barrier=MysticSphere(
             If you do, it gains the \\glossterm<Attune> (self) tag and loses the \\glossterm<Sustain> (minor) tag.
         """, scaling="""
             \\rank<3> The \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to three times your \\glossterm<power>.
-            \\rank<5> The area increases to a \\arealarge line.
+            \\rank<5> The area increases to a \\areamed line.
             \\rank<7> The \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to four times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Mystic Bridge', 3, None, """
             You create a horizontal field of magical energy within \\rngmed range.
-            You can choose the dimensions of the field, up to a maximum of a \\areamed length, 10 ft.\\ width line.
+            You can choose the dimensions of the field, up to a maximum of a \\areasmall length, 10 ft.\\ width line.
             If you create the field within a space too small to hold it, it fills as much of the space as possible, allowing you to completely block off small vertical tunnels.
             The field is visible as a shimmering magical membrane that does not block sight.
             Nothing can pass through the field until it is destroyed.
             Each 5-ft.\\ square of the field has \\glossterm<hit points> equal to twice your \\glossterm<power>.
         """, scaling="""
-            \\rank<5> The area increases to a \\arealarge line.
-            \\rank<7> The area increases to be a \\areahuge, 20 ft.\\ wide line.
+            \\rank<5> The area increases to a \\areamed line.
+            \\rank<7> The area increases to be a \\arealarge, 20 ft.\\ wide line.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Protective Sphere', 1, 'Yourself or one Large or smaller \\glossterm<ally> within \\rngmed range', """
             You create a sphere of magical energy around the target in its space.
@@ -142,21 +142,21 @@ barrier=MysticSphere(
             In addition, the wall is \\glossterm<impervious> to physical damage.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Wall of Energy Impedance', 3, None, """
-            You create a wall of magical energy in a 15 ft.\\ high, \\areamed line within \\rngmed range.
+            You create a wall of magical energy in a 15 ft.\\ high, \\areasmall line within \\rngmed range.
             The wall is visible as a shimmering magical membrane that does not block sight.
             It does not impede passage for objects or creatures, but any ability that deals \\glossterm<energy damage> treats the wall as an impassable barrier.
             Each 5-ft.\\ square of wall has \\glossterm<hit points> equal to twice your \\glossterm<power>.
         """, scaling="""
-            \\rank<5> The area increases to a \\arealarge line.
+            \\rank<5> The area increases to a \\areamed line.
             \\rank<7> The \\glossterm<hit points> of each 5-ft.\\ square increase to be equal to three times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Wall of Magic Impedance', 5, None, """
-            You create a wall of magical energy in a 15 ft.\\ high, \\areamed line within \\rngmed range.
+            You create a wall of magical energy in a 15 ft.\\ high, \\areasmall line within \\rngmed range.
             The wall is visible as a shimmering magical membrane that does not block sight.
             It does not impede passage for objects or creatures, but any \\glossterm<magical> ability treats the wall as an impassable barrier.
             Each 5-ft.\\ square of wall has \\glossterm<hit points> equal to three times your \\glossterm<power>.
         """, scaling="""
-            \\rank<7> The area increases to a \\arealarge line.
+            \\rank<7> The area increases to a \\areamed line.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('One-Way Barrier', 7, None, """
             This spell functions like the \\spell<mystic barrier> spell, except that you choose one side of the barrier when you cast the spell.
@@ -201,7 +201,7 @@ barrier=MysticSphere(
             \\rank<7> The bonus increases to +8.
         """, tags=['Attune (target)']),
         Spell('Repulsion Field', 4, '\\glossterm<Enemies> that enter the area (see text)', """
-            This spell creates a repulsive field in a \\areamed radius \\glossterm<zone> from your location.
+            This spell creates a repulsive field in a \\areasmall radius \\glossterm<zone> from your location.
             When an enemy makes physical contact with the spell's area for the first time, you make an attack vs. Mental against it.
             \\hit The target is unable to enter the spell's area with any part of its body.
             The rest of its movement in the current phase is cancelled.
@@ -227,7 +227,7 @@ barrier=MysticSphere(
             \\rank<7> The bonus increases to +3.
         """, tags=['Attune (target)']),
         Spell('Antilife Shell', 6, '\\glossterm<Enemies> that enter the area (see text)', """
-            This spell creates a repulsive field in a \\areamed radius \\glossterm<zone> from your location.
+            This spell creates a repulsive field in a \\areasmall radius \\glossterm<zone> from your location.
             When an enemy makes physical contact with the spell's area for the first time, you make an attack vs. Mental against it.
             You gain a +10 bonus to \\glossterm<accuracy> against living creatures.
             \\hit The target is unable to enter the spell's area with any part of its body.
@@ -264,19 +264,19 @@ barrier=MysticSphere(
             It becomes a \\glossterm<trap>.
             To read the writing, a creature must concentrate on reading it, which requires a standard action.
             If a creature reads the target, the target explodes.
-            You make an attack vs. Reflex against everything within a \\areamed radius from the target.
+            You make an attack vs. Reflex against everything within a \\areasmall radius from the target.
             Each struck target takes energy damage equal to 2d8 plus half your \\glossterm<power>.
 
             After the target object explodes in this way, the ritual is \\glossterm<dismissed>.
             If the target is destroyed or rendered illegible, the ritual is dismissed without exploding.
         """, tags=['Attune (ritual)'], ritual_time='one hour'),
         Spell('Scryward', 3, None, """
-            This ritual creates a ward against scrying in a \\arealarge radius \\glossterm<zone> centered on your location.
+            This ritual creates a ward against scrying in a \\areamed radius \\glossterm<zone> centered on your location.
             All \\glossterm<Scrying> effects fail to function in the area.
             This effect is permanent.
         """, tags=[], ritual_time='24 hours'),
         Spell('Private Sanctum', 5, None, """
-            This ritual creates a ward against any external perception in a \\arealarge radius \\glossterm<zone> centered on your location.
+            This ritual creates a ward against any external perception in a \\areamed radius \\glossterm<zone> centered on your location.
             This effect is permanent.
             Everything in the area is completely imperceptible from outside the area.
             Anyone observing the area from outside sees only a dark, silent void, regardless of darkvision and similar abilities.

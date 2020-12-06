@@ -45,32 +45,33 @@ fabrication=MysticSphere(
             If the target loses \\glossterm<hit points> from this damage, it is knocked \\glossterm<prone>.
             \\glance As above, except that that the target takes half damage.
         """, scaling="damage", tags=['Manifestation']),
-        Spell('Bladestorm', 3, '\\glossterm<Enemies> within a \\areasmall radius of you', """
+        # +2 levels for no focus
+        Spell('Bladestorm', 3, '\\glossterm<Enemies> adjacent to you', """
             This spell does not have the \\glossterm<Focus> tag.
             Make an attack vs. Armor against each target.
             \\hit Each target takes slashing damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Manifestation'], focus=False),
-        Spell('Missile Storm', 5, '\\glossterm<Enemies> in a \\arealarge radius from you', """
+        Spell('Missile Storm', 5, '\\glossterm<Enemies> in a \\areahuge radius from you', """
             Make an attack vs. Armor against each target.
             \\hit Each target takes piercing damage equal to 2d10 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Manifestation']),
         Spell('Hail of Arrows', 3, 'Everything in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Armor against each target.
-            \\hit Each target takes piercing damage equal to 1d8 plus half your \\glossterm<power>.
+            \\hit Each target takes piercing damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Manifestation']),
         Spell('Blade Barrier', 2, 'Each creature that moves through the area (see text)', """
             A wall of whirling blades appears within \\rngmed range.
-            The wall takes the form of a 15 ft.\\ high, \\arealarge line.
+            The wall takes the form of a 15 ft.\\ high, \\areamed wall.
             The wall provides \\glossterm<cover> against attacks made through it.
             When a creature or object passes through the wall, make an attack vs. Armor against it.
             \\hit The target takes slashing damage equal to 1d10 plus half your \\glossterm<power>.
         """, scaling="damage", tags=['Sustain (minor)']),
         Spell('Blade Perimeter', 3, 'Each creature that moves through the area (see text)', """
             A wall of whirling blades appears within \\rngmed range.
-            The wall takes the form of a 15 ft.\\ high, \\areamed radius line.
+            The wall takes the form of a 15 ft.\\ high, \\areasmall radius wall.
             The wall provides \\glossterm<cover> against attacks made through it.
             When a creature or object passes through the wall, make an attack vs. Armor against it.
             \\hit The target takes slashing damage equal to 2d6 plus half your \\glossterm<power>.
@@ -126,7 +127,7 @@ fabrication=MysticSphere(
         # treated like r1 softener, +2 levels for leaving behind something, +1
         # for crit effect
         Spell('Web', 4, 'All Large or smaller creatures in the area (see text)', """
-            You fill a \\areasmall radius \\glossterm<zone> within \\rngmed range with webs.
+            You fill a \\areasmall radius \\glossterm<zone> within \\rngshort range with webs.
             The webs make the area \\glossterm<difficult terrain>.
             Each 5-ft.\\ square of webbing has a \\glossterm<vital resistance> equal to twice your \\glossterm<power> and is \\glossterm<vulnerable> to fire damage.
 
@@ -135,12 +136,12 @@ fabrication=MysticSphere(
             \\glance As above, except that the effect is removed at the end of the next round.
             \\crit Each secondary target is \\glossterm<immobilized> as long as it has webbing from this ability in its space.
         """, scaling="accuracy", tags=['Manifestation', 'Sustain (minor)']),
-        Spell('Caltrops', 2, 'One 5 ft.\\ square within \\rngshort range (see text)', """
+        Spell('Caltrops', 1, 'One 5 ft.\\ square within \\rngshort range (see text)', """
             You create exceptionally sharp caltrops in the target location.
             Whenever a creature moves into the area, unless the creature moves at one quarter speed to avoid the danger, you make an attack vs. Armor against them.
             Unlike most attacks, this attack can happen during the \\glossterm<movement phase>.
             Caltrops may not be effective against creatures with an unusual anatomy.
-            \\hit The target takes piercing damage equal to 1d10 plus half your \\glossterm<power>.
+            \\hit The target takes piercing damage equal to 1d8 plus half your \\glossterm<power>.
         """, scaling="damage", tags=['Manifestation', 'Sustain (minor)']),
         Spell('Instant Ammunition', 2, 'Yourself', """
             You can cast this spell as a \\glossterm<minor action>.
@@ -160,7 +161,7 @@ fabrication=MysticSphere(
             Make an attack vs. Fortitude against the target.
             \\hit The target takes acid damage equal to 1d10 plus your \\glossterm<power>.
         """, scaling="damage", tags=['Manifestation']),
-        Spell('Cone of Acid', 1, 'Everything in a \\areamed cone from you', """
+        Spell('Cone of Acid', 1, 'Everything in a \\areasmall cone from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes acid damage equal to 1d8 plus half your \\glossterm<power>.
         """, scaling="damage", tags=['Manifestation']),
@@ -168,7 +169,7 @@ fabrication=MysticSphere(
             You can cast this spell as a \\glossterm<minor action>.
 
             As a standard action, you can breathe acid like a dragon.
-            When you do, make an attack vs. Fortitude against everything in a \\arealarge cone from you.
+            When you do, make an attack vs. Fortitude against everything in a \\areamed cone from you.
             \\hit Each target takes acid damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Attune (self)']),

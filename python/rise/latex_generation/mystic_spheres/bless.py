@@ -120,7 +120,7 @@ bless=MysticSphere(
             \\rank<5> The target can remove two conditions.
             \\rank<7> The target can remove three conditions.
         """, tags=[]),
-        Spell('Cleansing Benediction', 6, 'You and each of your \\glossterm<allies> within a \\areamed radius from you', """
+        Spell('Cleansing Benediction', 6, 'You and each of your \\glossterm<allies> within a \\areasmall radius from you', """
             Each target can remove a \\glossterm<condition>.
             This cannot remove a condition applied during the current round.
         """, scaling="""

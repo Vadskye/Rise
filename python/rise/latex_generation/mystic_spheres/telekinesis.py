@@ -35,7 +35,7 @@ telekinesis=MysticSphere(
             Make an attack vs. Armor against the target.
             \\hit The target takes bludgeoning damage equal to 1d10 plus your \\glossterm<power>.
         """, scaling="damage", tags=[]),
-        Spell('Force Lance', 1, 'Everything in a \\areamed, 10 ft.\\ wide line from you', """
+        Spell('Force Lance', 1, 'Everything in a \\areasmall, 10 ft.\\ wide line from you', """
             Make an attack vs. Armor against each target.
             \\hit Each target takes piercing damage equal to 1d8 plus half your \\glossterm<power>.
         """, scaling="damage", tags=[]),
@@ -62,12 +62,12 @@ telekinesis=MysticSphere(
             \\rank<6> You can cast this spell as a \\glossterm<free action>.
             However, you can only cast it once per round.
         """, tags=[]),
-        Spell('Mass Kinetic Impedance', 1, 'Large or smaller \\glossterm<enemies> in a \\areasmall radius within \\rngmed range', """
+        Spell('Mass Kinetic Impedance', 1, 'Large or smaller \\glossterm<enemies> in a \\areatiny radius within \\rngmed range', """
             Make an attack vs. Mental against each target.
             \\hit Each target is \\glossterm<slowed> until the end of the next round.
             \\crit Each target is \\glossterm<slowed> as a \\glossterm<condition>.
         """, scaling="accuracy", tags=['Compulsion']),
-        Spell('Blastwave', 3, '\\glossterm<Enemies> and objects in a \\areamed radius from you', """
+        Spell('Blastwave', 3, '\\glossterm<Enemies> and objects in a \\areasmall radius from you', """
             Make an attack vs. Mental against each target.
             \\hit You move each target up to 30 feet in a straight line away from you.
             Moving a target upwards costs twice the normal movement cost.
@@ -109,7 +109,7 @@ telekinesis=MysticSphere(
         """, tags=['Attune (self)']),
         Spell('Wall of Force', 1, None, """
             You create a wall of magical energy within \\rngmed range.
-            You can choose the dimensions of the wall, up to a maximum of a 15 ft.\\ high, \\areamed length line.
+            You can choose the dimensions of the wall, up to a maximum of a 15 ft.\\ high, \\areasmall length line.
             If you create the wall within a space too small to hold it, it fills as much of the space as possible, starting from the middle of the chosen space.
             This can allow you to completely block off small tunnels.
             The wall is visible as a shimmering magical field that does not block sight.
@@ -117,7 +117,7 @@ telekinesis=MysticSphere(
             Each 5-ft.\\ square of wall has \\glossterm<hit points> equal to twice your \\glossterm<power>.
         """, scaling="""
             \\rank<3> The \\glossterm<hit points> of each 5-ft.\\ square increases to be equal to three times your \\glossterm<power>.
-            \\rank<5> The area increases to a \\arealarge line.
+            \\rank<5> The area increases to a \\areamed line.
             \\rank<7> The \\glossterm<hit points> of each 5-ft.\\ square increases to be equal to four times your \\glossterm<power>.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Forcecage', 7, None, """

@@ -41,11 +41,11 @@ revelation=MysticSphere(
             \\rank<5> You also gain \\glossterm<exotic proficiency> with the chosen weapon group.
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Attune (self)']),
-        Spell('Purge Invisibility', 2, 'Everything in a \\arealarge radius \\glossterm<emanation> from you', """
+        Spell('Purge Invisibility', 2, 'Everything in a \\areamed radius \\glossterm<emanation> from you', """
             All invisibility effects are \\glossterm<suppressed> on all targets in the area.
         """, scaling="""
-            \\rank<4> The area increases to a \\areahuge radius \\glossterm<emanation>.
-            \\rank<6> The area increases to a \\areagarg radius \\glossterm<emanation>.
+            \\rank<4> The area increases to a \\arealarge radius \\glossterm<emanation>.
+            \\rank<6> The area increases to a \\areahuge radius \\glossterm<emanation>.
         """, tags=['Attune (self)']),
         Spell('True Strike', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The first time the target makes a \\glossterm<strike> this round,

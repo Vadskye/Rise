@@ -40,7 +40,7 @@ aberrationInput.push({
         "Each target takes $damage. Any target \\glossterm{wounded} by this damage is \\glossterm{dazed} as a \\glossterm{condition}.",
       powerBonus: -2,
       preface: "An aboleth can use this ability as a \\glossterm{minor action}.",
-      target: "Each enemy in a \\arealarge cone from the aboleth",
+      target: "Each enemy in a \\areamed cone from the aboleth",
     },
   ],
   challengeRating: 4,

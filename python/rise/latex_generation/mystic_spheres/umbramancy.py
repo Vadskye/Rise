@@ -10,36 +10,36 @@ umbramancy=MysticSphere(
     short_description="Manipulate shadows and darkness to conceal allies and inhibit foes",
     cantrips=[
         Effects('Suppress Light', 'One \\glossterm<zone> within \\rngmed range', """
-            You can choose this spell's radius, up to a maximum of a \\areamed radius.
+            You can choose this spell's radius, up to a maximum of a \\areasmall radius.
             Light within or passing through the area is dimmed to be no brighter than \\glossterm<shadowy illumination>.
             Any object or effect which blocks light also blocks this spell's effect.
         """, scaling="""
-            \\rank<2> The maximum area increases to a \\arealarge radius.
+            \\rank<2> The maximum area increases to a \\areamed radius.
             \\rank<4> The range increases to \\rngdist.
-            \\rank<6> The maximum area increases to a \\areahuge radius.
+            \\rank<6> The maximum area increases to a \\arealarge radius.
         """, tags=['Sustain (minor)']),
     ],
     lists=['Arcane', 'Pact'],
     spells=[
         Spell('Banish Light', 3, 'One \\glossterm<zone> within \\rngmed range', """
-            You can choose this spell's radius, up to a maximum of a \\areamed radius.
+            You can choose this spell's radius, up to a maximum of a \\areasmall radius.
             All light within the area is suppressed.
             Light within or passing through the area is snuffed out.
             Any object or effect which blocks light also blocks this spell's effect.
             Darkvision and similar abilities which do not require light still function within the area.
         """, scaling="""
-            \\rank<5> The maximum area increases to a \\arealarge radius.
-            \\rank<7> The maximum area increases to a \\areagarg radius.
+            \\rank<5> The maximum area increases to a \\areamed radius.
+            \\rank<7> The maximum area increases to a \\areahuge radius.
         """, tags=['Sensation', 'Sustain (minor)']),
         Spell('Darklantern', 1, 'One Small or smaller unattended object within \\rngshort range', """
             This spell suppresses light in an \\glossterm<emanation> from the target.
-            You can choose the spell's radius, up to a maximum of a \\areamed radius.
+            You can choose the spell's radius, up to a maximum of a \\areasmall radius.
             Light within or passing through the area is dimmed to be no brighter than \\glossterm<shadowy illumination>.
             Any object or effect which blocks light also blocks this spell's effect.
         """, scaling="""
-            \\rank<3> The maximum area increases to a \\arealarge radius.
-            \\rank<5> The maximum area increases to a \\areahuge radius.
-            \\rank<7> The maximum area increases to a \\areagarg radius.
+            \\rank<3> The maximum area increases to a \\areamed radius.
+            \\rank<5> The maximum area increases to a \\arealarge radius.
+            \\rank<7> The maximum area increases to a \\areahuge radius.
         """, tags=['Attune (self)', 'Sensation']),
         Spell('Darkvision', 2, 'Yourself', """
             The target gains \\glossterm<darkvision> with a 60 foot radius.
@@ -47,7 +47,7 @@ umbramancy=MysticSphere(
             \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The radius increases to 100 feet.
         """, tags=['Attune (target)']),
-        Spell('Dark Miasma', 2, '\\glossterm<Enemies> in a \\areasmall radius from you', """
+        Spell('Dark Miasma', 2, '\\glossterm<Enemies> in a \\areatiny radius from you', """
             Make an attack vs. Fortitude against each target.
             You gain a +2 bonus to \\glossterm<accuracy> with the attack against each target that is not in \\glossterm<bright illumination>.
             \\hit Each target takes cold damage equal to 1d10 plus half your \\glossterm<power>.
@@ -91,7 +91,7 @@ umbramancy=MysticSphere(
             \\glance As above, except that the condition is removed at the end of the next round.
             \\crit The target is \\glossterm<blinded> as a \\glossterm<condition>.
         """, scaling="accuracy", tags=['Sensation', 'Visual']),
-        Spell('Dark Shroud', 2, '\\glossterm<Enemies> in a \\areasmall radius within \\rngmed range', """
+        Spell('Dark Shroud', 2, '\\glossterm<Enemies> in a \\areatiny radius within \\rngmed range', """
             Make an attack vs. Mental against each target.
             You gain a +2 bonus to \\glossterm<accuracy> with the attack against each target that is not in \\glossterm<bright illumination>.
             \\hit Each target takes a -2 penalty to \\glossterm<accuracy> and visual Awareness checks until the end of the next round.
@@ -192,16 +192,16 @@ umbramancy=MysticSphere(
             \\rank<6> You can maintain the form in bright illumination for a full round before it is suppressed.
         """, tags=['Attune (self)']),
         Spell('Wall of Darkness', 1, None, """
-            You create a wall of darkness in a 15 ft.\\ high, \\areamed line within \\rngmed range.
+            You create a wall of darkness in a 15 ft.\\ high, \\areasmall line within \\rngmed range.
             If you create the wall within a space too small to hold it, it fills as much of the space as possible, starting from the middle of the chosen space.
             This can allow you to completely block off small tunnels.
             The wall is visible as a solid block of darkness that blocks sight.
             Creatures with the \\glossterm<darkvision> ability can see through the wall normally.
             It does not inhibit the passage of objects or creatures.
         """, scaling="""
-            \\rank<3> The area increases to a \\arealarge line.
+            \\rank<3> The area increases to a \\areamed line.
             \\rank<5> The range increases to \\rngdist.
-            \\rank<7> The area increases to a \\areahuge line.
+            \\rank<7> The area increases to a \\arealarge line.
         """, tags=['Sensation', 'Sustain (minor)']),
     ],
     rituals=[

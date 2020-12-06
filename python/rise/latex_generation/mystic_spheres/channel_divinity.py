@@ -84,11 +84,11 @@ channel_divinity=MysticSphere(
             \\hit As a \\glossterm<condition>, the target takes a -2 penalty to Mental defense.
             \\crit As above, except that the penalty increases to -5.
         """, scaling="accuracy", tags=[]),
-        Spell('Word of Faith', 1, '\\glossterm<Enemies> in a \\areasmall radius from you', """
+        Spell('Word of Faith', 1, '\\glossterm<Enemies> in a \\areatiny radius from you', """
             Make an attack vs. Mental against each target.
             \\hit Each target takes energy damage equal to 1d8 plus half your \\glossterm<power>.
         """, scaling="damage", tags=[]),
-        Spell('Proclamation of Faith', 3, '\\glossterm<Enemies> in a \\arealarge radius from you', """
+        Spell('Proclamation of Faith', 3, '\\glossterm<Enemies> in a \\areamed radius from you', """
             Make an attack vs. Mental against each target.
             \\hit Each target takes energy damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
@@ -112,14 +112,14 @@ channel_divinity=MysticSphere(
             \\rank<6> You can increase your size by two size categories instead of one.
         """, tags=['Attune (self)']),
         Spell('Divine Presence', 3, '\\glossterm<Enemies> in the area (see text)', """
-            You radiate an aura in a \\areasmall radius \\glossterm<emanation> from you that invokes a fear of your divine connection.
+            You radiate an aura in a \\areatiny radius \\glossterm<emanation> from you that invokes a fear of your divine connection.
             When you attune to this spell, and during each \\glossterm<action phase> in subsequent rounds, make an attack vs. Mental against each target.
             After you attack a creature this way, it becomes immune to this ability from you until it takes a \\glossterm<short rest>.
             \\hit Each target is \\glossterm<shaken> by you until the end of the next round.
             \\crit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
         """, scaling="accuracy", tags=['Attune (self)', 'Emotion']),
         Spell('Divine Eminence', 6, '\\glossterm<Enemies> in the area (see text)', """
-            This spell functions like the \\textit<divine presence> spell, except that the area increases to a \\areahuge radius \\glossterm<emanation> from you.
+            This spell functions like the \\textit<divine presence> spell, except that the area increases to a \\arealarge radius \\glossterm<emanation> from you.
         """, tags=['Attune (self)', 'Emotion']),
         Spell('Faithful Endurance', 3, 'Yourself', """
             You can cast this spell as a \\glossterm<minor action>.
@@ -160,12 +160,12 @@ channel_divinity=MysticSphere(
             When you cast this spell, you gain a \\glossterm<vital wound> that has no vital wound effect.
             In exchange, you gain a +4 \\glossterm<magic bonus> to \\glossterm<vital rolls> and become immune to \\glossterm<conditions>.
         """, tags=['Sustain (free)']),
-        Spell('Divine Seal', 3, 'Creatures in a \\areamed radius \\glossterm<zone> within \\rngmed range', """
+        Spell('Divine Seal', 3, 'Creatures in a \\areasmall radius \\glossterm<zone> within \\rngmed range', """
             You seal an area with divine power, limiting its connection to divine powers.
             Whenever a creature casts a divine spell in the area, if that creature does not share your deity (for clerics) or devoted alignment (for paladins), it has a 50\\% chance to \\glossterm<miscast> the spell.
         """, scaling="""
+            \\rank<5> The area increases to a \\areamed radius.
             \\rank<5> The area increases to a \\arealarge radius.
-            \\rank<5> The area increases to a \\areahuge radius.
         """, tags=['Sustain (minor)']),
         Spell('Banish Anathema', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against the target.
@@ -188,7 +188,7 @@ channel_divinity=MysticSphere(
     ],
     rituals=[
         Spell('Consecrate', 3, None, """
-            The area within an \\arealarge radius \\glossterm<zone> from your location becomes sacred to your deity.
+            The area within an \\areamed radius \\glossterm<zone> from your location becomes sacred to your deity.
             % TODO: what cares about consecration?
             This has no tangible effects by itself, but some special abilities and monsters behave differently in consecrated areas.
         """, tags=['Attune (self)'], ritual_time='24 hours'),

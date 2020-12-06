@@ -25,7 +25,7 @@ thaumaturgy=MysticSphere(
             You send an unerring projectile made of pure magical energy towards the target.
             The target takes 1d6 energy damage.
         """, scaling="damage", tags=[]),
-        Spell('Magic Missile Storm', 4, '\\glossterm<Enemies> in a \\areasmall radius within \\rngmed range', """
+        Spell('Magic Missile Storm', 4, '\\glossterm<Enemies> in a \\areatiny radius within \\rngmed range', """
             You send an unerring projectile made of pure magical energy towards each target.
             Each target takes 1d10 energy damage.
             \\glance As above, except that that each target takes half damage.
@@ -117,7 +117,7 @@ thaumaturgy=MysticSphere(
         """, tags=['Attune (self)']),
         # Is this worth the complexity it adds to the system?
         Spell('Antimagic Field', 7, 'Special', """
-            All other magical abilities and objects are \\glossterm<suppressed> within a \\areamed radius \\glossterm<emanation> from you.
+            All other magical abilities and objects are \\glossterm<suppressed> within a \\areasmall radius \\glossterm<emanation> from you.
             % How much of this is redundant with suppression?
             Creatures within the area cannot activate, sustain, or dismiss magical abilities.
             % TODO: wording
@@ -133,17 +133,17 @@ thaumaturgy=MysticSphere(
             % No relevant \\crit effect
         """, scaling="accuracy", tags=['Sustain (minor)']),
         Spell('Dimensional Lock', 5, None, """
-            This spell creates a dimensional lock in a \\arealarge radius \\glossterm<zone> from your location.
+            This spell creates a dimensional lock in a \\areamed radius \\glossterm<zone> from your location.
             Extraplanar travel into or out of the area is impossible.
             This prevents all \\glossterm<Manifestation> effects and effects teleport targets or move them between planes.
         """, scaling="""
-            \\rank<7> The area increases to a \\areahuge radius \\glossterm<zone>.
+            \\rank<7> The area increases to a \\arealarge radius \\glossterm<zone>.
         """, tags=['Attune (self)']),
-        Spell('Teleportation Ward', 4, 'Everything in a \\arealarge radius \\glossterm<emanation> from you (see text)', """
+        Spell('Teleportation Ward', 4, 'Everything in a \\areamed radius \\glossterm<emanation> from you (see text)', """
             Teleportation into and out of the area is impossible.
             Any abilities which would cause creatures to teleport within the area have no effect.
         """, scaling="""
-            \\rank<6> The area increases to a \\areahuge radius \\glossterm<emanation>.
+            \\rank<6> The area increases to a \\arealarge radius \\glossterm<emanation>.
         """, tags=['Attune (self)']),
         Spell('Disrupt Casting', 5, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
@@ -174,7 +174,7 @@ thaumaturgy=MysticSphere(
         Spell('Delay Teleportation', 4, 'See text', """
             You can cast this spell as a \\glossterm<minor action>.
 
-            Whenever a creature or object would teleport into the area in a \\arealarge radius \\glossterm<emanation> from you, that teleportation is delayed by a round.
+            Whenever a creature or object would teleport into the area in a \\areamed radius \\glossterm<emanation> from you, that teleportation is delayed by a round.
             The teleporting creature or object remains stuck in the Astral Plane and can take no actions during that time.
             Creatures delayed in this way do not experience a delay, though they may be able to deduce that they were delayed based on observable evidence.
 
@@ -184,11 +184,11 @@ thaumaturgy=MysticSphere(
         """, scaling="""
             \\rank<6> The delay increases to two rounds.
         """, tags=['Attune (self)']),
-        Spell('Spellward', 4, 'Creatures in a \\areamed radius \\glossterm<zone> within \\rngmed range', """
+        Spell('Spellward', 4, 'Creatures in a \\areasmall radius \\glossterm<zone> within \\rngmed range', """
             You seal off an area's connection to magic.
             Whenever a creature casts a spell in the area, it has a 50\\% chance to \\glossterm<miscast> the spell.
         """, scaling="""
-            \\rank<6> The area increases to a \\arealarge radius.
+            \\rank<6> The area increases to a \\areamed radius.
         """, tags=['Sustain (minor)']),
         Spell('Cryptic Spells', 2, 'Yourself', """
             Whenever you cast a spell, you may choose a different spell you know.

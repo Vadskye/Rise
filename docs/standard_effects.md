@@ -238,63 +238,64 @@ have their own logic which may differ significantly from this.
   * +1 level: Increase line width by 5'
   * +1 level: convert ability to attunement, no-focus, no-component standard action
   * +2 level: +1 range increment (for effects that intrinsically scale with range, like teleportation)
+  * +2 level: remove Focus tag (dangerous; only for narratively relevant spells)
 * Strikes only:
 
 ### Standard areas:
 Tier 0 areas:
-* Small radius from self
-* Med line, 5' wide from self
+* Tiny radius from self
+* Small line, 5' wide from self
 
 Tier 1 areas:
-* Med cone from self
-* Med line, 10' wide from self
-* Med radius from self
+* Small cone from self
+* Small line, 10' wide from self
+* Small radius from self
   * This is obviously a larger area than a cone or line, but is also much harder to aim to only hit enemies
-* Enemies in Small radius from self
-* Small radius in Short range
+* Enemies in Tiny radius from self
+* Tiny radius in Short range
   * This should be rare, since it's more flexible than other tier 1 ranges but is too weak for tier 2
 
 Tier 2 areas:
+* Medium cone from self
+* Large line, 5' wide from self
+* Medium line, 10' wide from self
+* Medium radius from self
+* Enemies in Small radius from self
+* Tiny radius in Med range
+* Small radius in Short range
+
+Tier 3 areas:
 * Large cone from self
 * Large line, 10' wide from self
 * Large radius from self
 * Enemies in Medium radius from self
 * Small radius in Med range
-* Med radius in Short range
 
-Tier 3 areas:
+Tier 4 areas:
 * Huge cone from self
 * Huge line, 10' wide from self
 * Large line, 15' wide from self
 * Huge radius from self
 * Enemies in Large radius from self
-* Med radius in Med range
-
-Tier 4 areas:
-* Gargantuan cone from self
-* Gargantuan line, 10' wide from self
-* Huge line, 15' wide from self
-* Gargantuan radius from self
-* Enemies in Huge radius from self
-* Large radius in Med range
-* Med radius in Long range
-* Small radius in Distant range
+* Medium radius in Med range
+* Small radius in Long range
+* Tiny radius in Distant range
 
 Tier 5 areas:
-* Gargantuan line, 15' wide from self
-* Enemies in Gargantuan radius from self
-* Large radius in Long range
-* Med radius in Distant range
-* Small radius in Long range
+* Huge line, 15' wide from self
+* Enemies in Huge radius from self
+* Medium radius in Long range
+* Small radius in Distant range
+* Tiny radius in Long range
 
 Tier 6 areas:
-* Gargantuan radius in Long range
-* Large radius in Distant range
-* Med radius in Extreme range
+* Huge radius in Long range
+* Medium radius in Distant range
+* Small radius in Extreme range
 
 Tier 7 areas:
-* Gargantuan radius in Distant range
-* Large radius in Extreme range
+* Huge radius in Distant range
+* Medium radius in Extreme range
 
 ### Standard effects
 
@@ -335,6 +336,7 @@ Rank 3 Focus/non-upgrading, Rank 5 maneuver:
   * Softener:
     * r1 curse in medium range
     * t4 area: r1 debuff eonr, condition on crit
+    * t1 area: r2 debuff eonr, condition on crit
   * Damage:
     * Dist range: high damage
     * t3 area: medium damage
@@ -351,123 +353,9 @@ Rank 4 Focus/non-upgrading, Rank 6 maneuver:
 Rank 6 Focus/non-upgrading:
 * Softener:
   * Med range: r2 curse
+  * t1 area: r3 debuff eonr, condition on crit
 * Finisher:
 
 Rank 7 Focus/non-upgrading:
 * Finisher:
   * Med range: high damage, r2 debuff condition if lose HP
-
-#### Old system; remove once everything has been moved over
-
-Rank 1 non-Focus:
-* AOE:
-  * Deal std -1d to all in Small cone
-  * Deal std -1d to all within Small/5 line
-  * Deal std to 2 in reach
-  * Deal std -1a to any number in reach
-  * Deal std -1a/-1d to all within Med cone or Med/10 line
-  * r1 condition until eonr or r1 condition on crit vs enemies in Medium radius from you
-
-Rank 2 non-Focus:
-* AOE:
-  * Deal std -1d to all within Med/5 line
-  * Deal std -1d to all within Small radius from you?
-
-Rank 1 Focus/non-choice; Rank 3 non-Focus:
-* Self-only:
-  * Remove condition
-  * Take half damage
-* Single-target:
-  * Deal std +1d/+1a in std range
-  * Deal conditional std +2d/+2a in std range
-  * Heal one hit point in close range
-  * r1 condition with r3 crit-only condition in std range
-  * Deal std in long range
-* AOE:
-  * r1 condition until eonr or r1 condition on crit vs enemies in Medium radius in std range
-  * Deal std -1d to all within Med/10 line from you
-  * Deal std -1d to all within Med cone from you
-  * Deal std -1d to enemies within Small radius from you
-
-Rank 2 Focus/non-choice; Rank 4 non-Focus:
-* Special notes
-* No actual rank 2 spells or maneuvers should exist, because they are insufficiently different
-  from rank 1 abilities. This is more of an abstract concept that guides leveling.
-* Shared:
-* Single-target:
-  * Remove condition in close range
-  * r2 condition in close range
-* Spells only:
-* Single-target:
-  * Deal std +2d to 1 in melee range
-* AOE:
-  * Deal std -1d to all within Large/5 line from you
-  * Deal std -1d to all within Med/5 line entirely within Short range
-  * Deal std -1d to all within Small radius in Short range
-
-Rank 3 Focus/non-choice; Rank 5 non-Focus:
-* Spells only:
-* Single-target:
-  * Deal std -2d in std range and apply r1 condition
-  * Deal std in extreme range
-  * r2 condition in std range
-* AOE:
-  * Heal one hit point to allies in Med radius from you
-  * Deal std -1d to all within Large/10 line from you
-  * Deal std -1d to all within Large cone from you
-  * Deal std -1d to all within Small radius in Med range
-  * Deal std -1d to enemies within Med radius from you
-
-Rank 4 Focus/non-choice; Rank 6 non-Focus:
-* Shared:
-* Single-target:
-  * Deal std damage -1d and r1 condition with r3 crit-only condition in std range
-  * r2 condition with r4 crit-only condition in std range
-* AOE:
-  * Remove condition from non-self in Med radius from you
-  * Deal std -1d to all within Large/15 line from you
-  * Deal std -1d to all within Large/5 line entirely within Med range
-  * Deal std -1d to all within Med radius in Short range
-  * r2 condition until eonr or r2 condition on crit vs enemies in Medium radius in std range
-* Maneuvers only:
-* AOE: see 3rd level spell AOE
-
-Rank 5 Focus/non-choice; Rank 7 non-Focus:
-* Spells only:
-* Single-target:
-  * Deal std -1d in std range and apply r1 condition
-  * r3 condition in close range
-* AOE:
-  * Heal two hit points to ally in Med range
-  * Deal std -1d to all within Huge/10 line from you
-  * Deal std -1d to all within Huge cone from you
-  * Deal std -1d to enemies within Large radius from you
-  * Deal std -1d to all within Med radius in Med range
-  * r3 condition until eonr or r3 condition on crit vs enemies in Small radius in std range
-
-Rank 6 Focus/non-choice; Rank 8 non-Focus:
-* Shared:
-* Single-target:
-  * Deal std damage -1d and r2 condition in std range
-  * r3 condition in std range
-* AOE:
-  * Deal std -1d to all within Huge radius from you
-  * Deal std -1d to all within Huge/15 line from you
-
-Rank 7 Focus:
-* Shared:
-* Single-target:
-  * Deal std in std range and apply r1 condition
-* AOE:
-  * Deal std -1d to all within Huge/20 line from you
-  * Deal std -1d to all within Ext/10 line from you
-  * Deal std -1d to all within Med radius in Long range
-  * Deal std -1d to all within Large radius in Med range
-  * Deal std -1d to enemies within Huge radius from you
-  * r3 condition until eonr or r3 condition on crit vs enemies in Medium radius in std range
-
-Rank 8 Focus:
-* Shared:
-* Single-target:
-  * r4 condition in close range
-  * Deal std and r2 condition in std range

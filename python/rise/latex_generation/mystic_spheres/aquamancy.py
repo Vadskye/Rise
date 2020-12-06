@@ -46,7 +46,7 @@ aquamancy=MysticSphere(
             \\crit As above, except that the effect lasts until this curse is removed.
             \\glance As above, except that the effect is removed at the end of the next round.
         """, scaling="accuracy", tags=['Curse']),
-        Spell('Sphere of Constraint', 5, 'All \\glossterm<enemies> completely within a \\areamed radius within \\rngmed range', """
+        Spell('Sphere of Constraint', 5, 'All \\glossterm<enemies> completely within a \\areasmall radius within \\rngmed range', """
             You create a sphere of water that contracts to stick to enemies in the area.
             Unlike most abilities, this ability only affects creatures whose entire space is within the area.
             Make an attack vs. Reflex against each target.
@@ -65,11 +65,11 @@ aquamancy=MysticSphere(
             \\crit As above, except that the water also covers the target's face.
             This does not meaningfully impede its sight, but it prevents it from breathing anything other than the water.
         """, scaling="accuracy", tags=['Manifestation']),
-        Spell('Crushing Wave', 1, 'Everything in a \\areamed, 10 ft.\\ wide line from you', """
+        Spell('Crushing Wave', 1, 'Everything in a \\areasmall, 10 ft.\\ wide line from you', """
             Make an attack vs. Reflex against each target.
             \\hit Each target takes bludgeoning damage equal to 1d8 plus half your \\glossterm<power>.
         """, scaling="damage", tags=['Manifestation']),
-        Spell('Crushing Tide', 3, 'Everything in a \\areahuge, 10 ft.\\ wide line from you', """
+        Spell('Crushing Tide', 3, 'Everything in a \\arealarge, 10 ft.\\ wide line from you', """
             Make an attack vs. Reflex against each target.
             \\hit Each target takes bludgeoning damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
@@ -87,17 +87,17 @@ aquamancy=MysticSphere(
             \\hit The target takes bludgeoning damage equal to 2d6 plus your \\glossterm<power>.
             \\glance As above, except that that the target takes half damage.
         """, scaling="damage", tags=['Manifestation']),
-        Spell('Fountain', 1, 'Everything within a \\areamed radius from you', """
+        Spell('Fountain', 1, 'Everything within a \\areasmall radius from you', """
             Make an attack vs. Armor against each target.
             \\hit Each target takes bludgeoning damage equal to 1d8 plus half your \\glossterm<power>.
         """, scaling="damage", tags=['Manifestation']),
-        Spell('Great Fountain', 3, '\\glossterm<Enemies> within a \\arealarge radius from you', """
+        Spell('Great Fountain', 3, '\\glossterm<Enemies> within a \\areamed radius from you', """
             Make an attack vs. Armor against each target.
             \\hit Each target takes bludgeoning damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Manifestation']),
         Spell('Wall of Water', 3, None, """
-            You create a wall of water in a 15 ft.\\ high, \\arealarge line within \\rngmed range.
+            You create a wall of water in a 15 ft.\\ high, \\areamed line within \\rngmed range.
             The wall is four inches thick, and blocks \\glossterm<line of effect> for abilities.
             Sight through the wall is possible, though distorted.
             The wall provides both \\glossterm<cover> and \\glossterm<concealment> to targets on the opposite side of the wall, for a total of a +4 bonus to Armor defense.
@@ -105,8 +105,8 @@ aquamancy=MysticSphere(
 
             Each five-foot square of wall has \\glossterm<hit points> equal to three times your \\glossterm<power> and all of its defenses are 0.
         """, scaling="""
-            \\rank<5> The area of the wall increases to a \\areahuge line.
-            \\rank<7> The area of the wall increases to a \\areagarg line.
+            \\rank<5> The area of the wall increases to a \\arealarge line.
+            \\rank<7> The area of the wall increases to a \\areahuge line.
         """, tags=['Sustain (minor)', 'Manifestation']),
         Spell('Underwater Freedom', 2, 'Yourself', """
             You can cast this spell as a \\glossterm<minor action>.
@@ -117,7 +117,7 @@ aquamancy=MysticSphere(
             \\rank<6> The target also gains a swim speed equal to half its \\glossterm<base speed>.
         """, tags=['Attune (target)']),
         # +2 levels for push
-        Spell('Raging River', 4, 'Everything in a \\arealarge, 10 ft. wide line from you', """
+        Spell('Raging River', 4, 'Everything in a \\areamed, 10 ft. wide line from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes 2d8 bludgeoning damage.
             In addition, each target is \\glossterm<pushed> 20 feet in the direction the line points away from you.
@@ -125,14 +125,14 @@ aquamancy=MysticSphere(
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Manifestation']),
         # +3 levels for push
-        Spell('Raging Flood', 7, 'Everything in a \\areahuge, 15 ft. wide line from you', """
+        Spell('Raging Flood', 7, 'Everything in a \\arealarge, 15 ft. wide line from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes 4d8 bludgeoning damage.
             In addition, each target is \\glossterm<pushed> 50 feet in the direction the line points away from you.
             Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
             \\glance As above, except that that each target takes half damage.
         """, tags=['Manifestation']),
-        Spell('Geyser', 3, 'Everything in a \\arealarge, 5 ft.\\ wide vertical line within \\rngmed range', """
+        Spell('Geyser', 3, 'Everything in a \\areamed, 5 ft.\\ wide vertical line within \\rngmed range', """
             Make an attack vs. Armor against each target.
             If this spell has its area increased, only the length of the line increases.
             % Normal dice, but half power due to vertical line
@@ -140,30 +140,30 @@ aquamancy=MysticSphere(
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Manifestation']),
         Spell('Rainstorm', 2, 'Everything in the area (see text)', f"""
-            Torrential rain begins falling out of thin air within a \\arealarge radius \\glossterm<zone> from your location.
+            Torrential rain begins falling out of thin air within a \\areamed radius \\glossterm<zone> from your location.
             The rain extinguishes minor fires such as campfires and torches on contact.
             Everything in the area gain a bonus equal to your \\glossterm<power> to \\glossterm<resistances> against fire damage.
         """, scaling="""
-            \\rank<4> The area increases to a \\areahuge radius \\glossterm<zone>.
-            \\rank<6> The area increases to a \\areagarg radius \\glossterm<zone>.
-        """, tags=['Manifestation', 'Sustain (minor)']),
-        Spell('Obscuring Mist', 2, None, """
-            Fog fills the air within a \\areamed radius \\glossterm<zone> from your location.
-            The fog partially obstructs sight, granting \\glossterm<concealment> to anything seen through the fog (see \\pcref<Concealment>).
-        """, scaling="""
             \\rank<4> The area increases to a \\arealarge radius \\glossterm<zone>.
             \\rank<6> The area increases to a \\areahuge radius \\glossterm<zone>.
+        """, tags=['Manifestation', 'Sustain (minor)']),
+        Spell('Obscuring Mist', 2, None, """
+            Fog fills the air within a \\areasmall radius \\glossterm<zone> from your location.
+            The fog partially obstructs sight, granting \\glossterm<concealment> to anything seen through the fog (see \\pcref<Concealment>).
+        """, scaling="""
+            \\rank<4> The area increases to a \\areamed radius \\glossterm<zone>.
+            \\rank<6> The area increases to a \\arealarge radius \\glossterm<zone>.
         """, tags=['Sustain (minor)']),
         Spell('Ring of Mist', 6, None, """
-            Fog fills the air within a \\arealarge radius \\glossterm<zone> from your location.
+            Fog fills the air within a \\areamed radius \\glossterm<zone> from your location.
             The fog partially obstructs sight, granting \\glossterm<concealment> to anything seen through the fog (see \\pcref<Concealment>).
             You can exclude an inner radius of any size from the area, allowing you to create fog that surrounds your location without blocking sight to things near to you.
         """, tags=['Sustain (minor)']),
         Spell('Misty Shroud', 4, None, """
-            Fog fills the air within a \\areamed radius \\glossterm<emanation> from your location.
+            Fog fills the air within a \\areasmall radius \\glossterm<emanation> from your location.
             The fog partially obstructs sight, granting \\glossterm<concealment> to anything seen through the fog (see \\pcref<Concealment>).
         """, scaling="""
-            \\rank<6> The area increases to a \\arealarge radius \\glossterm<emanation>.
+            \\rank<6> The area increases to a \\areamed radius \\glossterm<emanation>.
         """, tags=['Attune (self)']),
         Spell('Octopus Tentacles', 5, 'Yourself', """
             This spell functions like the \\textit<aqueous tentacles> spell, except that you create eight tentacles that extend from your body.
@@ -187,7 +187,7 @@ aquamancy=MysticSphere(
             \\hit The target takes 1d6 physical damage.
             If it loses hit points from this damage, it is \\glossterm<nauseated> as a \\glossterm<condition>.
         """, scaling="damage", tags=[]),
-        Spell('Wave of Dehydration', 3, 'Creatures in a \\areahuge, 10 ft. wide line from you', """
+        Spell('Wave of Dehydration', 3, 'Creatures in a \\arealarge, 10 ft. wide line from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target that has no remaining \\glossterm<resistance> to physical damage is \\glossterm<nauseated> as a \\glossterm<condition>.
             \\glance As above, except that the condition is removed at the end of the next round.
@@ -227,19 +227,19 @@ aquamancy=MysticSphere(
             \\rank<5> The distance increases to 200 feet.
             \\rank<7> The distance increases to 300 feet.
         """, tags=[]),
-        Spell('Fog Cloud', 3, 'Everything in a \\arealarge radius within \\rnglong range', """
+        Spell('Fog Cloud', 3, 'Everything in a \\areamed radius within \\rnglong range', """
             A cloud of fog appears in the area.
             All sight through the area is partially obscured, granting \\glossterm<concealment> to anything in the area and anything viewed through the area (see \\pcref<Concealment>).
         """, scaling="""
-            \\rank<5> The area increases to a \\areahuge radius.
-            \\rank<7> The area increases to a \\areagarg radius.
+            \\rank<5> The area increases to a \\arealarge radius.
+            \\rank<7> The area increases to a \\areahuge radius.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Fog Wall', 1, None, """
-            You create a wall of fog in a 15 ft.\\ high, \\arealarge \\glossterm<wall> within \\rngmed range.
+            You create a wall of fog in a 15 ft.\\ high, \\areamed \\glossterm<wall> within \\rngmed range.
             The fog makes it difficult to see through the wall, granting \\glossterm<concealment> to anything viewed through the wall (see \\pcref<Concealment>).
         """, scaling="""
-            \\rank<3> The area increases to a 30 foot high, \\areahuge line.
-            \\rank<5> The area increases to a 60 foot high, \\areagarg line.
+            \\rank<3> The area increases to a 30 foot high, \\arealarge line.
+            \\rank<5> The area increases to a 60 foot high, \\areahuge line.
             \\rank<7> The area increases to a 120 foot high, 240 foot line.
         """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Fluid Motion', 5, 'Yourself', """

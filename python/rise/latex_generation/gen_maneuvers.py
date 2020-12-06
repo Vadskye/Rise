@@ -254,7 +254,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Demoralizing Battlecry',
         short_description='Lower morale of nearby enemies',
-        target="\\glossterm<Enemies> in a \\areamed radius from you.",
+        target="\\glossterm<Enemies> in a \\areasmall radius from you.",
         effect_text="""
             Make an attack vs. Mental against each target.
             \\hit Each target takes a -2 penalty to defenses until the end of the next round.
@@ -271,7 +271,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Fearsome Battlecry',
         short_description='Inflict fear on nearby enemies',
-        target="\\glossterm<Enemies> in a \\areamed radius from you.",
+        target="\\glossterm<Enemies> in a \\areasmall radius from you.",
         effect_text="""
             Make an attack vs. Mental against each target.
             \\hit Each target that has no remaining \\glossterm<resistance> to sonic damage is \\glossterm<shaken> by you as a \\glossterm<condition>.
@@ -288,7 +288,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Frightening Battlecry',
         short_description='Inflict fear on nearby enemies',
-        target="\\glossterm<Enemies> in a \\areamed radius from you.",
+        target="\\glossterm<Enemies> in a \\areasmall radius from you.",
         effect_text="""
             Make an attack vs. Mental against each target.
             \\hit Each target that has no remaining \\glossterm<resistance> to sonic damage is \\glossterm<frightened> by you as a \\glossterm<condition>.
@@ -306,7 +306,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Thunderous Shout',
         short_description='Deal damage in a cone',
-        target="Everything in a \\areamed cone from you",
+        target="Everything in a \\areasmall cone from you",
         effect_text="""
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes sonic damage equal to 2d6 plus half your \\glossterm<power>.
@@ -322,7 +322,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Thunderous Bellow',
         short_description='Deal damage in a cone',
-        target="Everything in a \\areahuge cone from you",
+        target="Everything in a \\arealarge cone from you",
         effect_text="""
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes sonic damage equal to 4d8 plus half your \\glossterm<power>.
@@ -335,7 +335,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Ground Stomp',
         short_description='Stomp the ground to knock down nearby creatures',
-        target='Everything in a \\areasmall radius from you that is on solid ground',
+        target='Everything in a \\areatiny radius from you that is on solid ground',
         effect_text="""
             Make an attack vs. Reflex against each target.
             \\hit Each target takes bludgeoning damage equal to 2d6 plus half your \\glossterm<power>.
@@ -353,7 +353,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Earthshatter Stomp',
         short_description='Stomp the ground to knock down your foes',
-        target="Everything in a \\arealarge radius from you that is on solid ground",
+        target="Everything in a \\areamed radius from you that is on solid ground",
         effect_text="""
             Make an attack vs. Reflex against each target.
             You take a -4 penalty to accuracy with this attack against your \\glossterm<allies>.
@@ -676,15 +676,15 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Rally the Troops',
         short_description='Suppress conditions on allies',
-        target="You and your \\glossterm<allies> within a \\areamed radius from you",
+        target="You and your \\glossterm<allies> within a \\areasmall radius from you",
         effect_text="""
             Each target can ignore any effects from one \\glossterm<condition> it is already affected by until the end of the next round.
             Because this ability has the \\glossterm<Swift> tag, it allows your allies to ignore conditions they would be affected by during the current phase.
         """,
         rank=2,
         rank_upgrades={
-            '4': 'The area increases to a \\arealarge radius from you.',
-            '6': 'The area increases to a \\areahuge radius from you.',
+            '4': 'The area increases to a \\areamed radius from you.',
+            '6': 'The area increases to a \\arealarge radius from you.',
         },
         tags=['Swift'],
         lists=['Martial'],
@@ -1081,7 +1081,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Leap Slam',
         short_description='Jump and slam into the ground',
-        target="Everything within a \\areasmall radius from you that is on earth or unworked stone (see text)",
+        target="Everything within a \\areatiny radius from you that is on earth or unworked stone (see text)",
         effect_text="""
             You make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to your \\glossterm<base speed> (see \\pcref<Leap>).
             When you land, if the vertical distance in feet between the highest point of your leap and your landing point was at least ten feet, make an attack vs. Reflex against each target.
@@ -1158,7 +1158,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Ricochet',
         short_description='Make a thrown strike that hits multiple targets',
-        target="Up to three creatures or objects in a \\areamed radius within \\rngshort range (see text)",
+        target="Up to three creatures or objects in a \\areasmall radius within \\rngshort range (see text)",
         effect_text="""
             Make a thrown \\glossterm<strike> using a single weapon that deals slashing or bludgeoning damage against each target.
             Your \\glossterm<power> with the strike is halved.
@@ -1185,7 +1185,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Lunge',
         short_description='Strike foes in a line',
-        target="\\glossterm<Enemies> in a \\areasmall, 5 ft.\\ wide line from you",
+        target="\\glossterm<Enemies> in a \\areatiny, 5 ft.\\ wide line from you",
         effect_text="""
             Make a melee \\glossterm<strike> using a piercing weapon against each target.
             Your \\glossterm<power> with the strike is halved.
@@ -1198,7 +1198,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Volley Fire',
         short_description='Fire a flurry of projectiles to blanket an area',
-        target="Each creature in a \\areasmall radius within \\rngmed range.",
+        target="Each creature in a \\areatiny radius within \\rngmed range.",
         effect_text="""
             Make a ranged \\glossterm<strike> using a projectile weapon against each target.
             Your \\glossterm<power> with the strike is halved.
@@ -1212,7 +1212,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Arrowstorm',
         short_description='Fire a flurry of projectiles to blanket a large area',
-        target='Each creature in a \\areamed radius within \\rngmed range.',
+        target='Each creature in a \\areasmall radius within \\rngmed range.',
         rank=7,
         effect_text="""
             Make a ranged \\glossterm<strike> using a projectile weapon against each target.
@@ -1226,7 +1226,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Penetrating Shot',
         short_description='Fire a powerful projectile in a line',
-        target='Everything in a \\arealarge, 5 ft.\\ wide line from you',
+        target='Everything in a \\areamed, 5 ft.\\ wide line from you',
         effect_text="""
             Make a ranged \\glossterm<strike> against each target.
             Your \\glossterm<power> with the strike is halved.
@@ -1254,7 +1254,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Ground Slam',
         short_description='Slam your weapon into the ground to deal damage in a line',
-        target='Everything on the ground in a \\areamed, 10 ft. wide line from you',
+        target='Everything on the ground in a \\areasmall, 10 ft. wide line from you',
         effect_text="""
             Make a melee \\glossterm<strike> using a bludgeoning weapon against each target.
             Your \\glossterm<power> with the strike is halved.
@@ -1268,7 +1268,7 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Titanic Slam',
         short_description='Slam your weapon into the ground to deal damage in a line',
-        target='Everything on the ground in a \\arealarge, 10 ft. wide line from you',
+        target='Everything on the ground in a \\areamed, 10 ft. wide line from you',
         effect_text="""
             Make a melee \\glossterm<strike> using a bludgeoning weapon against each target.
             Your \\glossterm<power> with the strike is halved.

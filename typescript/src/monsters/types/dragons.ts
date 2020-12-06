@@ -25,7 +25,7 @@ const baseDragonBySize = {
   },
   juvenile: {
     armorInputs: [{ name: "scales" as const }],
-    attackInputs: [frightfulPresence("\\areasmall")],
+    attackInputs: [frightfulPresence("\\areatiny")],
     level: 5,
     size: "medium" as const,
     name: "Juvenile",
@@ -33,7 +33,7 @@ const baseDragonBySize = {
   },
   youngAdult: {
     armorInputs: [{ name: "scales" as const }, { name: "reinforced" as const }],
-    attackInputs: [frightfulPresence("\\areamed")],
+    attackInputs: [frightfulPresence("\\areasmall")],
     level: 8,
     size: "large" as const,
     name: "Young Adult",
@@ -41,7 +41,7 @@ const baseDragonBySize = {
   },
   adult: {
     armorInputs: [{ name: "scales" as const }, { name: "reinforced" as const }],
-    attackInputs: [frightfulPresence("\\arealarge")],
+    attackInputs: [frightfulPresence("\\areamed")],
     level: 11,
     size: "huge" as const,
     name: "Adult",
@@ -49,7 +49,7 @@ const baseDragonBySize = {
   },
   old: {
     armorInputs: [{ name: "scales" as const }, { name: "double reinforced" as const }],
-    attackInputs: [frightfulPresence("\\areahuge")],
+    attackInputs: [frightfulPresence("\\arealarge")],
     level: 14,
     size: "gargantuan" as const,
     name: "Old",
@@ -57,7 +57,7 @@ const baseDragonBySize = {
   },
   ancient: {
     armorInputs: [{ name: "scales" as const }, { name: "double reinforced" as const }],
-    attackInputs: [frightfulPresence("\\areagarg")],
+    attackInputs: [frightfulPresence("\\areahuge")],
     level: 17,
     size: "colossal" as const,
     name: "Ancient",
@@ -140,45 +140,45 @@ function lineBreathWeapon(age: AgeCategory, damageType: DamageType): AttackInput
   const name = titleCase(`${damageType} Breath`);
   return {
     wyrmling: standardBreathWeapon({
-      area: "\\areasmall, 5 ft. wide line",
+      area: "\\areatiny, 5 ft. wide line",
       damageType,
       name,
       powerBonus: -2,
     }),
     juvenile: standardBreathWeapon({
-      area: "\\areamed, 5 ft. wide line",
+      area: "\\areasmall, 5 ft. wide line",
       damageType,
       name,
       powerBonus: -2,
     }),
     youngAdult: standardBreathWeapon({
-      area: "\\arealarge, 5 ft. wide line",
+      area: "\\areamed, 5 ft. wide line",
       damageType,
       name,
       powerBonus: -2,
     }),
     adult: standardBreathWeapon({
-      area: "\\arealarge, 10 ft. wide line",
+      area: "\\areamed, 10 ft. wide line",
       damageType,
       name,
     }),
     old: standardBreathWeapon({
-      area: "\\areahuge, 10 ft. wide line",
+      area: "\\arealarge, 10 ft. wide line",
       damageType,
       name,
     }),
     ancient: standardBreathWeapon({
-      area: "\\areahuge, 15 ft. wide line",
+      area: "\\arealarge, 15 ft. wide line",
       damageType,
       name,
     }),
     wyrm: standardBreathWeapon({
-      area: "\\areagarg, 15 ft. wide line",
+      area: "\\areahuge, 15 ft. wide line",
       damageType,
       name,
     }),
     greatWyrm: standardBreathWeapon({
-      area: "\\areagarg, 20 ft. wide line",
+      area: "\\areahuge, 20 ft. wide line",
       damageType,
       name,
     }),
@@ -189,45 +189,45 @@ function coneBreathWeapon(age: AgeCategory, damageType: DamageType): AttackInput
   const name = titleCase(`${damageType} Breath`);
   return {
     wyrmling: standardBreathWeapon({
-      area: "\\areasmall cone",
+      area: "\\areatiny cone",
       damageType,
       name,
       powerBonus: -2,
     }),
     juvenile: standardBreathWeapon({
-      area: "\\areamed cone",
+      area: "\\areasmall cone",
       damageType,
       name,
       powerBonus: -2,
     }),
     youngAdult: standardBreathWeapon({
-      area: "\\areamed cone",
+      area: "\\areasmall cone",
       damageType,
       name,
       powerBonus: -2,
     }),
     adult: standardBreathWeapon({
-      area: "\\arealarge cone",
+      area: "\\areamed cone",
       damageType,
       name,
     }),
     old: standardBreathWeapon({
-      area: "\\arealarge cone",
+      area: "\\areamed cone",
       damageType,
       name,
     }),
     ancient: standardBreathWeapon({
-      area: "\\areahuge cone",
+      area: "\\arealarge cone",
       damageType,
       name,
     }),
     wyrm: standardBreathWeapon({
-      area: "\\areahuge cone",
+      area: "\\arealarge cone",
       damageType,
       name,
     }),
     greatWyrm: standardBreathWeapon({
-      area: "\\areagarg cone",
+      area: "\\areahuge cone",
       damageType,
       name,
     }),

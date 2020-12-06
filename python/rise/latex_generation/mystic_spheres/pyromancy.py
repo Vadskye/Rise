@@ -52,7 +52,8 @@ pyromancy=MysticSphere(
             Make a melee attack vs. Reflex against the target.
             \\hit The target takes fire damage equal to 1d10 plus your \\glossterm<power>.
         """, scaling="damage", tags=[], focus=False),
-        Spell('Pyroclasm', 5, 'Everything in a \\areamed radius within \\rngmed range', """
+        # +0 levels for catching objects on fire
+        Spell('Pyroclasm', 5, 'Everything in a \\areamed radius within \\rnglong range', """
             Make an attack vs. Reflex against each target.
             \\hit Each target takes fire damage equal to 2d10 plus half your \\glossterm<power>.
             In addition, if the target is a flammable object, it catches on fire.
@@ -67,9 +68,14 @@ pyromancy=MysticSphere(
             Make an attack vs. Armor against the target.
             \\hit The target takes fire damage equal to 1d10 plus your \\glossterm<power>.
         """, scaling="damage", tags=[]),
-        Spell('Cone of Fire', 1, 'Everything in a \\areamed cone from you', f"""
+        Spell('Cone of Fire', 1, 'Everything in a \\areasmall cone from you', f"""
             Make an attack vs. Reflex against each target.
             \\hit Each target takes fire damage equal to 1d8 plus half your \\glossterm<power>.
+        """, scaling="damage", tags=[]),
+        Spell('Cone of Conflagration', 3, 'Everything in a \\arealarge cone from you', f"""
+            Make an attack vs. Reflex against each target.
+            \\hit Each target takes fire damage equal to 1d8 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=[]),
         Spell('Ignition', 2, 'One creature within \\rngmed range', f"""
             Make an attack vs. Fortitude against the target.
@@ -89,6 +95,7 @@ pyromancy=MysticSphere(
             \\glance As above, except that the condition is removed at the end of the next round.
             \\crit As above, except that the damage from the condition is doubled.
         """, scaling="damage", tags=[]),
+        # +2 levels for +1d
         Spell('Combustion', 2, 'One creature within \\rngshort range', """
             You set the target on fire from the inside out.
             Make an attack vs. Fortitude against the target.
@@ -113,7 +120,7 @@ pyromancy=MysticSphere(
             You can cast this spell as a \\glossterm<minor action>.
 
             As a standard action, you can breathe fire like a dragon.
-            When you do, make an attack vs. Reflex against everything within a \\arealarge cone from you.
+            When you do, make an attack vs. Reflex against everything within a \\areamed cone from you.
             \\hit Each target takes fire damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Attune (self)']),
@@ -136,11 +143,13 @@ pyromancy=MysticSphere(
         """, scaling="damage", tags=['Attune (self)']),
         # Pyromancy specifically doesn't get "enemies only" self-radius
         # spells like most spheres do.
-        Spell('Inferno', 2, 'Everything in a \\areamed radius from you', """
+        Spell('Inferno', 1, 'Everything in a \\areasmall radius from you', """
             Make an attack vs. Reflex against each target.
             \\hit Each target takes fire damage equal to 1d8 plus half your \\glossterm<power>.
         """, scaling="damage", tags=[]),
-        Spell('Flame Serpent', 4, 'Everything in a \\arealarge, 5 ft.\\ wide shapeable line that starts within \\rngshort range', f"""
+        # level as an enemies-only medium radius; ability to extend farther
+        # beyond range compensates for lower maximum target count
+        Spell('Flame Serpent', 4, 'Everything in a \\areamed, 5 ft.\\ wide shapeable line that starts within \\rngmed range', f"""
             Make an attack vs. Reflex against each target.
             \\hit Each target takes fire damage equal to 2d8 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
@@ -172,7 +181,7 @@ pyromancy=MysticSphere(
             \\rank<7> The target also gains a +4 \\glossterm<magic bonus> to \\glossterm<power> with strikes.
         """, tags=['Attune (target)']),
         Spell('Wall of Fire', 3, 'Each creature that moves through the area (see text)', """
-            You create a wall of fire in a 15 ft.\\ high, \\arealarge \\glossterm<wall> within \\rngmed range.
+            You create a wall of fire in a 15 ft.\\ high, \\areamed \\glossterm<wall> within \\rngmed range.
             The flames and heat make it difficult to see through the wall, granting \\glossterm<concealment> to targets on the opposite side of the wall.
             When a creature passes through the wall, you make an attack vs. Reflex against that creature.
             You can only make an attack in this way against a given creature once per \\glossterm<phase>.

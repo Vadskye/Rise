@@ -13,7 +13,7 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
         name: "Spit Acid",
         powerBonus: -2,
         source: "mundane",
-        target: "Everything in a \\areamed line",
+        target: "Everything in a \\areasmall line",
       },
       {
         // Accuracy bonus mimics size bonus from Shove and Str for accuracy
@@ -78,7 +78,7 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
         name: "Crawling Darkness",
         powerBonus: -2,
         source: "magical",
-        target: "Enemies in a \\areamed radius",
+        target: "Enemies in a \\areasmall radius",
       },
       {
         damageTypes: ["cold"],

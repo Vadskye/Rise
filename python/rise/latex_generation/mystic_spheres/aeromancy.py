@@ -17,13 +17,13 @@ aeromancy = MysticSphere(
             \\rank<4> The bonus increases to +8.
             \\rank<6> The bonus increases to +10.
         """, tags=[]),
-        Effects('Breeze', 'Everything in a \\arealarge radius \\glossterm<emanation> from you', """
+        Effects('Breeze', 'Everything in a \\areamed radius \\glossterm<emanation> from you', """
             You can increase or decrease the wind speed by up to 10 miles per hour in the area.
             If you decrease the wind's speed to 0, you can increase it again with the remainder of your speed change and choose any direction for it to travel.
         """, scaling="""
-            \\rank<2> The area increases to a \\areahuge radius \\glossterm<emanation>.
+            \\rank<2> The area increases to a \\arealarge radius \\glossterm<emanation>.
             \\rank<4> You can change the wind speed by up to 20 miles per hour.
-            \\rank<6> The area increases to an \\areagarg radius \\glossterm<emanation>.
+            \\rank<6> The area increases to an \\areahuge radius \\glossterm<emanation>.
         """, tags=['Sustain (free)']),
         Effects('Soften Landing', 'Yourself or an \\glossterm<ally> within \\rnglong range', """
             Until the end of the round, the target treats all falls as if they were 20 feet shorter for the purpose of determining \\glossterm<falling damage>.
@@ -97,7 +97,7 @@ aeromancy = MysticSphere(
             \\rank<7> The maximum distance above the ground increases to 200 feet.
         """, tags=['Attune (self)']),
         # no level diff for lower damage + push
-        Spell('Gust of Wind', 3, 'Everything in a \\areahuge, 10 ft. wide line from you', """
+        Spell('Gust of Wind', 3, 'Everything in a \\arealarge, 10 ft. wide line from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes 1d10 bludgeoning damage.
             In addition, each target is \\glossterm<pushed> 20 feet in the direction the line points away from you.
@@ -105,7 +105,7 @@ aeromancy = MysticSphere(
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=[]),
         # +1 level for farther push
-        Spell('Blast of Wind', 5, 'Everything in a \\areagarg, 10 ft. wide line from you', """
+        Spell('Blast of Wind', 5, 'Everything in a \\areahuge, 10 ft. wide line from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes 2d10 bludgeoning damage.
             In addition, each target is \\glossterm<pushed> 50 feet in the direction the line points away from you.
@@ -156,13 +156,13 @@ aeromancy = MysticSphere(
         """, scaling="""
             \\rank<6> You can shape the weather for up to fifteen minutes before it takes effect, increasing the intensity of the changes you can make.
         """, tags=['Attune (self)']),
-        Spell('Cyclone', 3, 'Everything in a \\areamed radius within \\rngmed range', """
+        Spell('Cyclone', 3, 'Everything in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes bludgeoning damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=[]),
         # +2 levels for push
-        Spell('Hurricane', 5, '\\glossterm<Enemies> in a \\arealarge radius from you', """
+        Spell('Hurricane', 5, '\\glossterm<Enemies> in a \\areamed radius from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes bludgeoning damage equal to 2d8 half plus your \\glossterm<power>.
             In addition, each target is \\glossterm<pushed> 20 feet clockwise around you.
@@ -182,17 +182,17 @@ aeromancy = MysticSphere(
             \\crit As above, except that that the target takes double damage.
             \\glance As above, except that that the target takes half damage.
         """, scaling="damage", tags=[]),
-        Spell('Dust Cloud', 1, 'Creatures in a \\areamed radius within \\rngshort range', """
+        Spell('Dust Cloud', 1, 'Creatures in a \\areasmall radius within \\rngshort range', """
             Make an attack vs. Reflex against each target.
             \\hit Each target is \\glossterm<dazzled> until the end of the next round.
             \\crit Each target is \\glossterm<dazzled> as a \\glossterm<condition>.
         """, scaling="accuracy", tags=[]),
-        Spell('Duststorm', 4, 'Creatures in a \\arealarge radius within \\rnglong range', """
+        Spell('Duststorm', 4, 'Creatures in a \\areamed radius within \\rnglong range', """
             Make an attack vs. Reflex against each target.
             \\hit Each target is \\glossterm<dazzled> until the end of the next round.
             \\crit Each target is \\glossterm<dazzled> as a \\glossterm<condition>.
         """, scaling="accuracy", tags=[]),
-        Spell('Blinding Dust Cloud', 7, 'Creatures in a \\areamed radius within \\rngshort range', """
+        Spell('Blinding Dust Cloud', 7, 'Creatures in a \\areasmall radius within \\rngshort range', """
             Make an attack vs. Reflex against each target.
             \\hit Each target is \\glossterm<blinded> until the end of the next round.
             \\crit Each target is \\glossterm<blinded> as a \\glossterm<condition>.

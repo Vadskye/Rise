@@ -34,7 +34,7 @@ photomancy=MysticSphere(
     ],
     lists=['Arcane', 'Divine', 'Nature', 'Pact'],
     spells=[
-        Spell('Color Spray', 1, 'Each creature within a \\areamed cone from you', """
+        Spell('Color Spray', 1, 'Each creature within a \\areasmall cone from you', """
             Make an attack vs. Mental against each target.
             \\hit Each target at its maximum hit points is \\glossterm<dazed> until the end of the next round.
             Each target that is at less than its maximum \\glossterm<hit points> is \\glossterm<stunned> instead of dazed.
@@ -43,11 +43,14 @@ photomancy=MysticSphere(
         Spell('Color Blast', 3, 'Each creature within a \\arealarge cone from you', """
             This spell functions like the \\spell<color spray> spell, except that the area is larger.
         """, scaling='accuracy', tags=['Sensation', 'Visual']),
-        Spell('Prismatic Spray', 4, 'Each target within a \\areamed cone from you', """
+        Spell('Prismatic Spray', 4, 'Each target within a \\areasmall cone from you', """
             Make an attack vs. Mental against each target.
             \\hit Each target at its maximum hit points is \\glossterm<stunned> until the end of the next round.
             Each target that is at less than its maximum \\glossterm<hit points> is \\glossterm<confused> instead of stunned.
             \\crit As above, except that the effect is a \\glossterm<condition> that lasts until it is removed.
+        """, scaling='accuracy', tags=['Sensation', 'Visual']),
+        Spell('Prismatic Blast', 6, 'Each target within a \\arealarge cone from you', """
+            This spell functions like the \\spell<prismatic spray> spell, except that the area is larger.
         """, scaling='accuracy', tags=['Sensation', 'Visual']),
         Spell('Army of Twins', 3, 'Up to five targets within \\rngmed range from among you and your \\glossterm<allies>', """
             Choose one of the targets as the primary target.
@@ -58,9 +61,6 @@ photomancy=MysticSphere(
             \\rank<5> The bonus increases to +6.
             \\rank<7> The bonus increases to +8.
         """, tags=['Sustain (free)', 'Sensation', 'Visual']),
-        Spell('Prismatic Blast', 6, 'Each target within a \\arealarge cone from you', """
-            This spell functions like the \\spell<prismatic spray> spell, except that the area is larger.
-        """, scaling='accuracy', tags=['Sensation', 'Visual']),
         Spell('Blurred Motion', 2, 'Yourself', """
             In any phase where you move at least 10 feet, you gain a +1 bonus to Armor and Reflex defenses.
         """, scaling="""
@@ -108,15 +108,15 @@ photomancy=MysticSphere(
             \\crit As above, except that that the target takes double damage.
             In addition, the target suffers consequences as if it had been struck by a beam of true sunlight.
         """, scaling="damage", tags=['Sensation', 'Visual']),
-        Spell('Lightburst', 1, 'All creatures in the area (see text)', """
-            A burst of bright light fills a \\areasmall radius \\glossterm<zone> within \\rngmed range of you.
+        Spell('Lightburst', 1, 'Creatures in the area (see text)', """
+            A burst of bright light fills a \\areatiny radius \\glossterm<zone> within \\rngmed range of you.
             \\glossterm<Bright illumination> fills a 120 foot radius around the area until the end of the next round.
             In addition, make an attack vs. Fortitude against each target.
             \\hit Each target is \\dazzled until the end of the next round.
             \\crit Each target is \\glossterm<dazzled> as a \\glossterm<condition>.
         """, scaling="accuracy", tags=['Sensation', 'Visual']),
-        Spell('Sunburst', 7, 'All creatures in the area (see text)', """
-            A burst of sunlight fills a \\areasmall radius \\glossterm<zone> within \\rngmed range of you.
+        Spell('Sunburst', 7, 'Creatures in the area (see text)', """
+            A burst of sunlight fills a \\areatiny radius \\glossterm<zone> within \\rngmed range of you.
             \\glossterm<Bright illumination> fills a 120 foot radius around the area until the end of the next round.
             In addition, make an attack vs. Fortitude against each target creature.
             \\hit Each target is \\glossterm<blinded> until the end of the next round.
@@ -124,14 +124,14 @@ photomancy=MysticSphere(
             In addition, each target is affected as if it had entered natural sunlight.
         """, tags=['Sensation', 'Visual']),
         # +1 level for long range, +1 for five zones
-        Spell('Pillars of Light', 3, 'All creatures in the area (see text)', """
-            A burst of bright light fills up to five \\areasmall radius, 120 ft.\\ high cylinder-shaped \\glossterm<zones> within \\rnglong range of you.
+        Spell('Pillars of Light', 3, 'Creatures in the area (see text)', """
+            A burst of bright light fills up to five \\areatiny radius, 60 ft.\\ high cylinder-shaped \\glossterm<zones> within \\rnglong range of you.
             \\glossterm<Bright illumination> fills a 120 foot radius around each area until the end of the next round.
             In addition, make an attack vs. Fortitude against each target creature.
             \\hit Each target is \\dazzled until the end of the next round.
             \\crit Each target is \\glossterm<dazzled> as a \\glossterm<condition>.
         """, scaling="accuracy", tags=['Sensation', 'Visual']),
-        Spell('Kaleidoscopic Pattern', 4, 'All creatures in the area (see text)', """
+        Spell('Kaleidoscopic Pattern', 5, 'Creatures in the area (see text)', """
             This spell creates a brilliant, rapidly shifting rainbow of lights in a \\areasmall radius within \\rngmed range of you.
             They fill a 120 foot radius around the area with bright illumination until the end of the next round.
             In addition, make an attack vs. Mental against each target.
@@ -205,7 +205,7 @@ photomancy=MysticSphere(
     ],
     rituals=[
         Spell('Continuous Light', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngmed range', """
-            The target glows like a torch, shedding bright illumination in a \\areamed radius (and shadowy illumination for an additional 20 feet).
+            The target glows like a torch, shedding bright illumination in a \\areasmall radius (and shadowy illumination for an additional 20 feet).
         """, tags=['Attune (ritual)', 'Sensation'], ritual_time='one minute'),
         Spell('False Decrepify', 1, 'One Medium or smaller unattended object within \\rngshort range', """
             The target appears old and worn down.
