@@ -110,7 +110,7 @@ def generate_armor():
             level=5,
             material_type='Shield',
             description="""
-                When a creature within a \\areasmall radius emanation from you would be attacked by a ranged weapon, the attack is redirected to target you instead.
+                When a creature within a \\areamed radius emanation from you would be attacked by a ranged weapon, the attack is redirected to target you instead.
                 Resolve the attack as if it had initially targeted you, except that the attack is not affected by cover or concealment.
                 This item can only affect projectiles and thrown objects that are Small or smaller.
             """,
@@ -121,7 +121,7 @@ def generate_armor():
             level=11,
             material_type='Shield',
             description="""
-                This item functions like the \\mitem<shield of arrow catching> item, except that it affects a \\arealarge radius from you.
+                This item functions like the \\mitem<shield of arrow catching> item, except that it affects a \\areahuge radius from you.
                 In addition, the item only redirects projectiles away from \\glossterm<allies> within the area, not all creatures.
             """,
             short_description="Selectively redirects small projectiles to hit you",
@@ -946,21 +946,21 @@ def generate_worn():
             description="""
                 As a standard action, you can activate these bracers.
                 When you do, they emit a telekinetic burst of force.
-                Make an attack vs. Fortitude against everything within a \\areatiny radius burst from you.
+                Make an attack vs. Fortitude against everything within a \\areasmall radius burst from you.
                 If you use this item during the \\glossterm<delayed action phase>,
                     you gain a +4 bonus to \\glossterm<accuracy> with this attack against any creature that attacked you during the \\glossterm<action phase>.
-                On a hit, you \\glossterm<knockback> each target up to 20 feet.
+                On a hit, you \\glossterm<knockback> each target up to 20 feet in a straight line directly away from you.
             """,
             short_description="Can knock nearby creatures back",
         ),
         MagicItem(
             name="Bracers of Repulsion, Greater",
-            level=19,
+            level=16,
             material_type='Bracers',
             description="""
-                This item functions like the \\mitem<bracers of repulsion> item, except that it targets everything within a \\areamed radius burst.
+                This item functions like the \\mitem<bracers of repulsion> item, except that it targets your \\glossterm<enemies> within a \\arealarge radius burst.
             """,
-            short_description="Can knock many nearby creatures back",
+            short_description="Can knock enemies back",
         ),
     ]
 
@@ -1202,11 +1202,11 @@ def generate_worn():
             The constant sparks shed light as a torch.
 
             As a standard action, you can intensify the crown's energy to shock nearby enemies.
-            When you do, make an attack vs. Fortitude against all \\glossterm<enemies> within a \\areasmall radius from you.
+            When you do, make an attack vs. Fortitude against your \\glossterm<enemies> within a \\areasmall radius from you.
             On a hit, each target takes 2d6+1 electricity damage.
             On a \\glossterm<glancing blow>, each target takes half damage.
         """,
-        short_description="Can damages nearby enemies",
+        short_description="Can damage nearby enemies",
     ))
 
     apparel.append(MagicItem(
@@ -1234,7 +1234,7 @@ def generate_worn():
         description="""
             The crown constantly emits a low-pitched rumbling.
             To you and your \\glossterm<allies>, the sound is barely perceptible.
-            However, all other creatures within a \\areamed radius emanation from you hear the sound as a deafening, continuous roll of thunder.
+            However, all other creatures within a \\arealarge radius emanation from you hear the sound as a deafening, continuous roll of thunder.
             The noise blocks out all other sounds quieter than thunder, causing them to be \\deafened while they remain in the area.
         """,
         short_description="Continously deafens nearby enemies",
@@ -1248,7 +1248,7 @@ def generate_worn():
         material_type='Boots',
         description="""
             % This only works if you only take falling damage during the movement phase, which seems possible?
-            When you take \\glossterm<falling damage>, make an attack vs Reflex against everything within a \\areatiny radius from you.
+            When you take \\glossterm<falling damage>, make an attack vs Reflex against everything within a \\areasmall radius from you.
             \\hit Each target takes bludgeoning damage equal to the damage you took from falling.
             \\crit As above, and each target is knocked \\glossterm<prone>.
             This does not deal double damage on a critical hit.
@@ -1669,7 +1669,7 @@ def generate_worn():
             material_type='Cloak',
             tags=['Manifestation'],
             description="""
-                Fog constantly fills a \\areasmall radius emanation from you.
+                Fog constantly fills a \\areamed radius emanation from you.
 
                 If a 5-foot square of fog takes at least 4 fire damage from a single attack, the fog disappears from that area until the end of the next round.
                 This fog does not fully block sight, but it provides \\concealment.
@@ -1682,7 +1682,7 @@ def generate_worn():
             material_type='Cloak',
             tags=['Manifestation'],
             description="""
-                A thick fog constantly fills a \\areasmall radius emanation from you.
+                A thick fog constantly fills a \\areamed radius emanation from you.
                 This fog completely blocks sight beyond 10 feet.
 
                 If a 5-foot square of fog takes at least 16 fire damage from a single attack, the fog disappears from that area until the end of the next round.
