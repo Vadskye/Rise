@@ -166,14 +166,16 @@ polymorph=MysticSphere(
             You require none of the tools that would normally be necessary, such as an anvil and furnace.
             The total size of all targets combined must be Medium size or smaller.
 
-            The time required to perform this ritual is equal to one tenth of the time that would normally be required to craft the object, to a minimum of one hour.
-        """, tags=[]),
+            This ritual takes time equal to one tenth of the time that would normally be required to craft the object, to a minimum of one hour.
+        """, tags=[], ritual_time='special'),
         Spell('Craft Large Object', 5, 'Any number of unattended, nonmagical objects within \\rngshort range', """
             This ritual functions like the \\spell<craft object> ritual, except that the maximum combined size of all targets increases to Large.
-        """, tags=[]),
+            % No "This ritual takes", since this functions like another ritual
+        """, tags=[], ritual_time='special'),
         Spell('Craft Huge Object', 7, 'Any number of unattended, nonmagical objects within \\rngshort range', """
             This ritual functions like the \\spell<craft object> ritual, except that the maximum combined size of all targets increases to Huge.
-        """, tags=[]),
+            % No "This ritual takes", since this functions like another ritual
+        """, tags=[], ritual_time='special'),
         # Should this also be a spell? Incredibly niche, but golem makers
         # would want it...
         Spell('Mending', 1, 'One \\glossterm<unattended> object within \\rngshort range', """

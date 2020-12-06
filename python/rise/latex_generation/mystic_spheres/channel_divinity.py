@@ -165,7 +165,7 @@ channel_divinity=MysticSphere(
             Whenever a creature casts a divine spell in the area, if that creature does not share your deity (for clerics) or devoted alignment (for paladins), it has a 50\\% chance to \\glossterm<miscast> the spell.
         """, scaling="""
             \\rank<5> The area increases to a \\areamed radius.
-            \\rank<5> The area increases to a \\arealarge radius.
+            \\rank<7> The area increases to a \\arealarge radius.
         """, tags=['Sustain (minor)']),
         Spell('Banish Anathema', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against the target.

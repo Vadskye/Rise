@@ -46,7 +46,7 @@ enchantment=MysticSphere(
             % No \\glance effect
             \\crit As above, and as a \\glossterm<condition>, the target is unable to pick up the dropped items.
             It can still hold other items, but if the dropped items are placed in its hands, it will immediately drop them again.
-        """, tags=['Compulsion']),
+        """, scaling='accuracy', tags=['Compulsion']),
         Spell('Monologue', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit As a \\glossterm<condition>, the target is forced to speak out loud constantly whenever it can.
@@ -326,6 +326,7 @@ enchantment=MysticSphere(
             It will not willingly part with its message until it reaches its destination.
             Once it reaches its destination, it will wait until it observes a valid recipient, leaving the destination only briefly as necessary to sustain itself.
             When the animal has delivered its message, this effect ends, allowing you to know that the message has been delivered.
+            % No \\crit effect
         """, tags=['Attune (self)'], ritual_time='one minute'),
         Spell('Tell the Truth', 4, 'Up to five creatures within \\rngmed range', """
             Make an attack vs. Mental against each target.
