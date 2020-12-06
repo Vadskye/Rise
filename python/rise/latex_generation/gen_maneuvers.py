@@ -591,6 +591,7 @@ def generate_maneuvers():
             Make a melee \\glossterm<strike> using a slashing or bludgeoning weapon against each target.
             Your \\glossterm<power> with the strike is halved.
         """,
+        rank=2,
         tags=[],
         lists=['Martial', 'Primal', 'Wild', 'Trick', 'Esoteric'],
     ))
@@ -602,7 +603,7 @@ def generate_maneuvers():
         effect_text="""
             Make a melee \\glossterm<strike> using a slashing or bludgeoning weapon against each target.
         """,
-        rank=4,
+        rank=5,
         tags=[],
         lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
@@ -612,7 +613,7 @@ def generate_maneuvers():
         short_description='Make strikes against all nearby foes',
         target="All \\glossterm<enemies> within your weapon's \\glossterm<reach>",
         effect_text="""
-            Make a melee \\glossterm<strike> using a slashing weapon against each target.
+            Make a melee \\glossterm<strike> using a light or medium slashing weapon against each target.
             Your \\glossterm<power> with the strike is halved.
         """,
         rank=2,
@@ -625,7 +626,7 @@ def generate_maneuvers():
         short_description='Make strikes against all nearby foes',
         target="All \\glossterm<enemies> within your weapon's \\glossterm<reach>",
         effect_text="""
-            Make two melee \\glossterm<strikes> with a -2 penalty to \\glossterm<accuracy> using a slashing weapon against each target.
+            Make two melee \\glossterm<strikes> with a -2 penalty to \\glossterm<accuracy> using a light or medium slashing weapon against each target.
             You take a -2d penalty to damage with both strikes, and your \\glossterm<power> is halved.
         """,
         rank=7,
@@ -1185,8 +1186,11 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Lunge',
         short_description='Strike foes in a line',
-        target="\\glossterm<Enemies> in a \\areatiny, 5 ft.\\ wide line from you",
+        target="\\glossterm<Enemies> in a 10 ft. long, 5 ft.\\ wide line from you",
         effect_text="""
+            The line for this effect must point directly away from you.
+            Only one of the spaces in the line can be adjacent to you.
+
             Make a melee \\glossterm<strike> using a piercing weapon against each target.
             Your \\glossterm<power> with the strike is halved.
         """,
