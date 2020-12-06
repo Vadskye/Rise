@@ -213,7 +213,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         % TODO: clarify stacking with existing senses
         \ff[3]{Extraordinary Senses} You gain one of the following senses: \glossterm{blindsense} (30 ft.), \glossterm{darkvision} (60 ft.), \glossterm{low-light vision}, \glossterm{scent}, or \glossterm{tremorsense} (30 ft.).
 
-        \ff[6]{Quick Scan} When you use the \textit{search} ability, you can notice things in a \areatiny radius within \rngshort range (see \pcref{Search}).
+        \ff[6]{Quick Scan} When you use the \textit{search} ability, you can notice things in a \areasmall radius within \rngshort range (see \pcref{Search}).
 
         \ff[9]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
@@ -569,12 +569,12 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \rankline
             The damage increases by \plus1d at 6th level and every 3 levels thereafter.
             \featlevel{9} The area affected by your breath weapon increases.
-                A line breath weapon becomes a \arealarge, 15 ft.\ wide line.
-                A cone breath weapon becomes a \areamed cone.
+                A line breath weapon becomes a \arealarge, 10 ft.\ wide line.
+                A cone breath weapon becomes a \arealarge cone.
             \featlevel{15} You gain a \plus1d bonus to damage.
                 In addition, the area affected by your breath weapon increases again.
-                A line breath weapon becomes a \arealarge, 20 ft.\ wide line.
-                A cone breath weapon becomes a \arealarge cone.
+                A line breath weapon becomes a \areagarg, 10 ft.\ wide line.
+                A cone breath weapon becomes a \areagarg cone.
         \end{freeability}
 
         \ff[6]{Draconic Wings} You gain scaly wings that sprout from your back.
@@ -600,11 +600,11 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \lcaption{Dragon Types}
         \begin{dtabularx}{\columnwidth}{l >{\lcol}X >{\lcol}X}
             \tb{Dragon} & \tb{Damage Type} & \tb{Breath Weapon} \tableheaderrule
-            Black & Acid & \areasmall, 10 ft. wide line \\
-            Blue & Electricity & \areasmall, 10 ft. wide line \\
-            Brass & Fire & \areasmall, 10 ft. wide line \\
-            Bronze & Electricity & \areasmall, 10 ft. wide line \\
-            Copper & Acid & \areasmall, 10 ft. wide line \\
+            Black & Acid & \areamed, 5 ft. wide line \\
+            Blue & Electricity & \areamed, 5 ft. wide line \\
+            Brass & Fire & \areamed, 5 ft. wide line \\
+            Bronze & Electricity & \areamed, 5 ft. wide line \\
+            Copper & Acid & \areamed, 5 ft. wide line \\
             Gold & Fire & \areasmall cone \\
             Green & Acid & \areasmall cone \\
             Red & Fire & \areasmall cone \\
@@ -699,7 +699,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{18} Both circumstantial damage bonuses increase to \plus2d.
         \end{freeability}
 
-        \ff[3]{Blood Sense}[Magical] You automatically know the location of all creatures that are \textit{marked for execution} within 50 feet of you, regardless of concealment or invisibility.
+        \ff[3]{Blood Sense}[Magical] You automatically know the location of all creatures that are \textit{marked for execution} within 60 feet of you, regardless of concealment or invisibility.
         You must have \glossterm{line of effect} to a creature to sense it in this way, but you do not need \glossterm{line of sight}.
 
         \ff[6]{Purge the Weak} You gain a \plus1 bonus to \glossterm{accuracy} against creatures that are \textit{marked for execution}.
@@ -712,7 +712,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[15]{Greater Purge the Weak} The bonus from your \textit{purge the weak} ability increases to \plus2.
 
-        \ff[15]{Supreme Blood Sense}[Magical] The range of your \textit{blood sense} ability increases to 200 feet.
+        \ff[15]{Supreme Blood Sense}[Magical] The range of your \textit{blood sense} ability increases to 240 feet.
     \end{feat}
 
     \begin{feat}{Flexibility Specialization}{Skill}
@@ -1276,7 +1276,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[12]{Supreme Nullify Magic} The bonus to defenses from your \textit{nullify magic} ability increases to \plus8.
 
-        \ff[15]{Greater Disruptive Presence} Your \textit{disruptive presence} ability affects all enemies in a \areamed radius \glossterm{emanation} from you.
+        \ff[15]{Greater Disruptive Presence} Your \textit{disruptive presence} ability affects all enemies in a \arealarge radius \glossterm{emanation} from you.
 
         \ff[18]{True Null} You are unaffected by all \glossterm{magical} abilities.
 
@@ -2171,7 +2171,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             You teleport the target into an unoccupied space on stable ground within \rngmed range of you.
 
             \rankline
-            \featlevel{12} The range increases to \rnglong.
+            \featlevel{12} The range increases to \rngdist.
             \featlevel{18} You can choose two creatures or objects to teleport in this way instead of only one.
                 Each chosen creature or object can be teleported to a different location within range.
         \end{freeability}
@@ -2286,8 +2286,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[3]{Greater Suppress Light} You can cast the \spell{suppress light} \glossterm{cantrip} from the Umbramancy mystic sphere as a \glossterm{minor action}.
         In addition, that cantrip no longer has the \glossterm{Focus} keyword for you.
 
-        \ff[6]{Darkvision} You gain \glossterm{darkvision} with a 50 foot range, allowing you to see in complete darkness clearly.
-        If you already have that ability, you increase its range by 50 feet.
+        \ff[6]{Darkvision} You gain \glossterm{darkvision} with a 60 foot range, allowing you to see in complete darkness clearly.
+        If you already have that ability, you increase its range by 60 feet.
 
         \ff[9]{Personal Umbramancy} You gain an additional \glossterm{attunement point}.
         You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Umbramancy} \glossterm{mystic sphere}.
@@ -2299,7 +2299,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[15]{Spell} You learn a spell from the \sphere{Umbramancy} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that mystic sphere.
 
-        \ff[18]{Darksight} The range of your \glossterm{darkvision} ability increases by 200 feet.
+        \ff[18]{Darksight} The range of your \glossterm{darkvision} ability increases by 240 feet.
         In addition, your darkvision is not disabled by being in \glossterm{bright illumination}.
     \end{feat}
 
