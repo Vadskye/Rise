@@ -134,12 +134,13 @@ pyromancy=MysticSphere(
         Spell('Flaming Spheres', 4, 'Yourself (see text)', """
             You can cast this spell as a \\glossterm<minor action>.
 
-            When you cast this spell, five flaming spheres appear over your head.
+            When you cast this spell, a cluster of flaming spheres appears over your head.
             Each sphere is approximately one foot in diameter.
             As a \\glossterm<minor action>, you can fire an orb at a creature or object within \\rngshort range.
             When you do, make an attack vs. Armor against that target.
-            \\hit The target takes fire damage equal to 2d8 plus half your \\glossterm<power>.
-            \\glance As above, except that that each target takes half damage.
+            After the sphere deals damage, it disappears and another sphere appears in the cluster.
+            \\hit The target takes 2d6 fire damage.
+            \\glance As above, except that that the target takes half damage.
         """, scaling="damage", tags=['Attune (self)']),
         # Pyromancy specifically doesn't get "enemies only" self-radius
         # spells like most spheres do.

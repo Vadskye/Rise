@@ -121,13 +121,15 @@ polymorph=MysticSphere(
             You transform your body to have dangerous spikes.
             At the end of each round, make an attack vs. Armor against each creature adjacent to you that either is \\glossterm<grappling> with you or that attacked you with a melee weapon that round.
             % full dice, but half power
-            \\hit Each secondary target takes electricity damage equal to 2d8 plus half your \\glossterm<power>.
+            \\hit Each secondary target takes piercing damage equal to 2d8 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Attune (self)']),
-        Spell('Extruding Spikeform', 7, ['Yourself', '\\glossterm<Enemies> adjacent to you (see text)'], """
+        Spell('Extruding Spikeform', 6, ['Yourself', '\\glossterm<Enemies> adjacent to you (see text)'], """
+            You can cast this spell as a \\glossterm<minor action>.
+
             You transform your body to have dangerous spikes that you can consciously extrude to impale nearby foes.
             As a \\glossterm<minor action>, you can extend the spikes to make an attack vs. Armor against each creature adjacent to you.
-            \\hit Each secondary target takes piercing damage equal to 4d8 plus half your \\glossterm<power>.
+            \\hit Each secondary target takes piercing damage equal to 4d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Attune (self)']),
         Spell('Absorb Object', 3, 'One Small or smaller \\glossterm<unattended> object you touch', """

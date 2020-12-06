@@ -203,6 +203,13 @@ photomancy=MysticSphere(
             \\rank<5> The bonus increases to +20.
             \\rank<7> The bonus increases to +25.
         """, tags=['Sustain (minor)']),
+        # +1 level for random condition, which makes it easy to stack debuffs on
+        # the same target
+        Spell('Chromatic Orb', 2, 'One creature within \\rngmed range', """
+            Make an attack vs. Reflex against the target.
+            \\hit The target takes 1d8 energy damage.
+            If it loses \\glossterm<hit points> from this damage, it suffers one of the following effects as a \\glossterm<condition>, chosen randomly: \\glossterm<frightened> by you, \\glossterm<nauseated>, \\glossterm<stunned>, or knocked \\glossterm<prone>.
+        """, scaling='damage', tags=[]),
     ],
     rituals=[
         Spell('Continuous Light', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngmed range', """

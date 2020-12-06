@@ -203,6 +203,16 @@ channel_divinity=MysticSphere(
             If no such area exists, the ritual simply fails.
             % TODO: does this need more clarity about what teleportation works?
         """, tags=[], ritual_time='24 hours'),
+        Spell('Commune', 5, None, """
+            You ask your source of divine power a single yes or no question.
+            You receive a correct answer to that question to the limit of that source's knowledge, which is usually quite extensive.
+            The answer is typically given as "yes" or "no", but it may answer "unclear" if the source does not know the answer.
+            In cases where a one-word answer would be misleading or contrary to the source's interests, a short phrase may be given as an answer instead.
+
+            This ritual only yields accurate results once for any given situation.
+            If you perform the ritual again in a situation that has not meaningfully changed, you receive no answer regardless of your question.
+            For example, if you are presented with seven doorways, with one doorway leading to a magnificent treasure and all other doorways leading to certain death, you cannot simply perform this ritual six times to determine the correct doorway.
+        """, tags=[], ritual_time='24 hours'),
     ],
     category='damage',
 )
