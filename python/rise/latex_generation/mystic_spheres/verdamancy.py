@@ -13,22 +13,13 @@ verdamancy=MysticSphere(
     cantrips=[
         Effects('Rapid Growth', 'Small or smaller inanimate plant within \\rngshort range', """
             Choose any number of days up to a week.
-            The target grows as if that many days had passed.
+            The target grows as if much time had passed, assuming that it received adequate nutrition during that time.
             When this spell ends, the plant returns to its original state.
         """, scaling="""
             \\rank<2> You can choose up to a month of time to grow.
-            \\rank<4> You can choose up to three months months of time to grow.
+            \\rank<4> You can choose up to three months of time to grow.
             \\rank<6> You can choose up to a year of time to grow.
         """, tags=['Sustain (minor)']),
-        Effects('Verdant Conduit', 'Yourself', """
-            You are considered to be a source of unworked earth.
-            This can allow you to cast spells from this sphere that require unworked earth without having other sources of unworked earth nearby.
-        """, scaling="""
-            \\rank<2> All components of Medium or larger solid objects within a \\areatiny \\glossterm<emanation> from you are also considered to be sources of unworked earth.
-            Unlike most spells, this can affect only part of a larger object, and it only affects the part of the object within the radius.
-            \\rank<4> The area of the emanation increases to a \\areasmall radius.
-            \\rank<6> The area of the emanation increases to a \\areamed radius.
-        """, tags=['Attune (self)']),
     ],
     lists=['Nature'],
     spells=[
@@ -41,7 +32,8 @@ verdamancy=MysticSphere(
             The target can make this check as a \\glossterm<move action>, while other creatures can make the check as a standard action.
             \\crit As above, except that the target also cannot move farther than 10 feet from its original location until it ends the effect.
         """, scaling="accuracy", tags=['Manifestation']),
-        Spell('Vine Whip', 1, 'One creature within \\rngshort range', """
+        # no level modifier for accuracy bonus due to its rarity
+        Spell('Vine Whip', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Armor against the target.
             You gain a +2 bonus to \\glossterm<accuracy> with this attack if the target is in standing in \\glossterm<undergrowth>.
             \\hit The target takes bludgeoning damage equal to 1d10 plus your \\glossterm<power>.
@@ -56,11 +48,17 @@ verdamancy=MysticSphere(
             \\glance As above, except that the condition is removed at the end of the next round.
             \\crit As above, except that the condition must be removed twice before the effect ends.
         """, tags=['Manifestation']),
-        Spell('Vineburst', 1, '\\glossterm<Enemies> in a \\areatiny radius from you', """
+        # no level modifier for accuracy bonus due to its rarity
+        Spell('Vineburst', 1, 'Creatures in a \\areasmall radius from you', """
             Make an attack vs. Armor against each target.
             You gain a +2 bonus to \\glossterm<accuracy> with this attack against targets standing in \\glossterm<undergrowth>.
-            % -1d to compensate for +2a
             \\hit Each target takes bludgeoning damage equal to 1d6 plus half your \\glossterm<power>.
+        """, scaling="damage", tags=['Manifestation']),
+        Spell('Vinestorm', 4, '\\glossterm<Enemies> in a \\arealarge radius from you', """
+            Make an attack vs. Armor against each target.
+            You gain a +2 bonus to \\glossterm<accuracy> with this attack against targets standing in \\glossterm<undergrowth>.
+            \\hit Each target takes bludgeoning damage equal to 2d6 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Manifestation']),
         Spell('Vine Tentacles', 2, 'Yourself', """
             You grow a massive vine tentacle from your body.
@@ -148,7 +146,7 @@ verdamancy=MysticSphere(
             As a standard action, you or another creature can throw the acorn up to 30 feet.
             % More accurate version: the acorn has a range increment of 10 feet to hit its target, but that accuracy roll is completely independent of the explosion.
             % Doesn't seem worth the complexity, and implicitly gives the fire seed surprisingly long range since objects are easy to hit.
-            On impact, the acorn detonates, and you make an attack vs. Armor against everything within a \\areatiny radius of the struck creature or object.
+            On impact, the acorn detonates, and you make an attack vs. Reflex against everything within a \\areasmall radius of the struck creature or object.
             \\hit Each target takes fire damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Sustain (free)']),
@@ -166,7 +164,7 @@ verdamancy=MysticSphere(
             Each five-foot square of wall has hit points equal to three times your \\glossterm<power>, and all of its defenses are 0.
             It is \\glossterm<vulnerable> to fire damage.
         """, scaling="damage", tags=['Attune (self)']),
-        Spell('Plant Growth', 2, 'All plants and arable earth in a \\areasmall radius within \\rngmed range', """
+        Spell('Plant Growth', 1, 'All plants and arable earth in a \\areasmall radius within \\rngmed range', """
             Choose whether you want plants within the area to grow or diminish.
 
             If you choose for plants to grow, all arable earth within the area becomes \\glossterm<light undergrowth>.
@@ -175,8 +173,9 @@ verdamancy=MysticSphere(
 
             When this spell's duration ends, the plants return to their natural size.
         """, scaling="""
-            \\rank<4> The area increases to a \\areamed radius.
-            \\rank<6> The area increases to a \\arealarge radius.
+            \\rank<3> The area increases to a \\areamed radius.
+            \\rank<5> The area increases to a \\arealarge radius.
+            \\rank<7> The area increases to a \\areahuge radius.
         """, tags=['Sustain (minor)']),
         Spell('Blight', 2, 'One living creature or plant within \\rngmed range', """
             Make an attack vs. Fortitude against the target.

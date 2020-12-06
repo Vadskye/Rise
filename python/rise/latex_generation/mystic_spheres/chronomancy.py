@@ -27,6 +27,15 @@ chronomancy=MysticSphere(
             \\rank<4> The bonus increases to +8.
             \\rank<6> The bonus increases to +10.
         """, tags=[]),
+        Effects('Rapid Aging', 'Small or smaller inanimate object within \\rngshort range', """
+            Choose any number of hours, up to 24 hours.
+            The target ages as if that much time had passed.
+            When this spell ends, the object returns to its original state.
+        """, scaling="""
+            \\rank<2> You can choose to age the target by up to a week.
+            \\rank<4> You can choose to age the target by up to a month.
+            \\rank<6> You can choose to age the target by up to three months.
+        """, tags=['Sustain (minor)']),
     ],
     lists=['Arcane', 'Pact'],
     spells=[

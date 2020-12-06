@@ -73,7 +73,7 @@ summon=MysticSphere(
             The ballista functions like any other weapon, with the following exceptions.
 
             It cannot move, and makes ranged \\glossterm<strikes> instead of melee strikes.
-            Its attacks have a maximum range of 100 feet and deal piercing damage.
+            Its attacks have a maximum range of 120 feet and deal piercing damage.
             In addition, the ballista attacks the creature farthest from it, instead of the creature closest to it.
         """, scaling="damage", tags=['Manifestation', 'Sustain (minor)']),
         Spell('Summon Earth Elemental', 5, 'One unoccupied square on stable ground within \\rngmed range', """

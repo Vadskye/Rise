@@ -20,10 +20,10 @@ channel_divinity=MysticSphere(
 
             This spell lasts until you use it again or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
         """, scaling="""
-            \\rank<2> The range increases to \\rnglong.
+            \\rank<2> The range increases to \\rngmed.
             \\rank<4> If you are a cleric, you can also unerringly see an aura around creatures who worship your deity.
                 If you are a paladin, you can also unerringly see an aura around creatures who share your devoted alignment.
-            \\rank<6> The range increases to \\rngext.
+            \\rank<6> The range increases to \\rnglong.
         """, tags=[]),
     ],
     lists=['Divine'],
