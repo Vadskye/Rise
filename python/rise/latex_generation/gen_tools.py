@@ -141,9 +141,9 @@ def generate_tools():
         tags=[],
         description="""
             As a standard action, you can activate this item and optionally throw it anywhere within \\rngshort range.
-            When you do, it immediately creates a cloud of smoke in a \\areatiny radius from its location.
+            When you do, it immediately creates a cloud of smoke in a \\areasmall radius from its location.
             Looking through 10 feet of smoke is enough to completely block line of sight.
-            The cloud of smoke dissipates normally after it is created.
+            The cloud of smoke dissipates normally after it is created, which generally takes about a minute.
         """,
         short_description="Creates a cloud of smoke",
     ))

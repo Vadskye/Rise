@@ -101,7 +101,7 @@ const standardAttacks: Record<
     powerBonus: -2,
     source: "magical",
     tags: ["Focus", "Spell"],
-    target: "Everything in a \\areatiny radius within \\rngmed range",
+    target: "Everything in a \\areasmall radius within \\rngmed range",
   },
 };
 
