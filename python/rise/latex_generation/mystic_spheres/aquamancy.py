@@ -46,7 +46,7 @@ aquamancy=MysticSphere(
             \\crit As above, except that the effect lasts until this curse is removed.
             \\glance As above, except that the effect is removed at the end of the next round.
         """, scaling="accuracy", tags=['Curse']),
-        Spell('Sphere of Constraint', 5, 'All \\glossterm<enemies> completely within a \\areasmall radius within \\rngmed range', """
+        Spell('Sphere of Constraint', 5, 'All creatures completely within a \\areasmall radius within \\rngmed range', """
             You create a sphere of water that contracts to stick to enemies in the area.
             Unlike most abilities, this ability only affects creatures whose entire space is within the area.
             Make an attack vs. Reflex against each target.
