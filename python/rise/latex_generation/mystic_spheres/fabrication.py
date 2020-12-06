@@ -155,6 +155,22 @@ fabrication=MysticSphere(
             \\rank<4> You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with any \\glossterm<strike> using ammunition created with this spell.
             \\rank<6> The accuracy bonus increases to +2.
         """, tags=['Manifestation', 'Swift']),
+        Spell('Daggerswarm', 4, 'Yourself (see text)', """
+            You can cast this spell as a \\glossterm<minor action>.
+
+            When you cast this spell, a small swarm of daggers appears floating over your head.
+            As a \\glossterm<minor action>, you can fling one dagger at a creature or object within \\rngshort range.
+            When you do, make an attack vs. Armor against that target.
+            After the dagger deals damage, it disappears and another dagger appears in the swarm.
+            \\hit The target takes 2d6 piercing damage.
+            \\glance As above, except that that the target takes half damage.
+        """, scaling="damage", tags=['Attune (self)']),
+        # +2 levels because it sticks around
+        Spell('Daggercloud', 4, 'Everything in a \\areatiny radius \\glossterm<zone> within \\rngmed range (see text)', """
+            At the end of each round, make an attack vs. Armor against each target in the area.
+            \\hit Each target takes piercing damage equal to 2d8 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
+        """, scaling="damage", tags=['Manifestation', 'Sustain (minor)']),
 
         # TODO: move all of these acid spells to a different sphere
         Spell('Acid Orb', 1, 'One creature or object within \\rngmed range', """

@@ -149,6 +149,16 @@ spells=[
         If this damage would inflict a \\glossterm<vital wound>, it inflicts an additional \\glossterm<vital wound>.
         \\glance As above, except that that the target takes half damage.
     """, scaling="damage", tags=[]),
+    # like an automatic end of round damage condition, but +3 levels for more
+    # damage and a minor action requirement
+    Spell('Lightning Rod', 4, 'One creature or object within \\rngmed range', """
+        Make an attack vs. Reflex against the target.
+        \\hit As a \\glossterm<condition>, the target attracts lightning.
+        As a \\glossterm<minor action>, you can call a bolt of lightning to strike the target.
+        When you do, the target takes electricity damage equal to 2d8 plus half your \\glossterm<power>.
+        \\glance As above, except that the condition is removed at the end of the next round.
+        \\crit As above, except that each bolt deals double damage.
+    """, scaling="damage", tags=['Attune (self)']),
 ],
 category='damage',
 )
