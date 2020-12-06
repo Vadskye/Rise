@@ -24,10 +24,10 @@ verdamancy=MysticSphere(
             You are considered to be a source of unworked earth.
             This can allow you to cast spells from this sphere that require unworked earth without having other sources of unworked earth nearby.
         """, scaling="""
-            \\rank<2> All components of Medium or larger solid objects within a \\areasmall \\glossterm<emanation> from you are also considered to be sources of unworked earth.
+            \\rank<2> All components of Medium or larger solid objects within a \\areatiny \\glossterm<emanation> from you are also considered to be sources of unworked earth.
             Unlike most spells, this can affect only part of a larger object, and it only affects the part of the object within the radius.
-            \\rank<4> The area of the emanation increases to a \\areamed radius.
-            \\rank<6> The area of the emanation increases to a \\arealarge radius.
+            \\rank<4> The area of the emanation increases to a \\areasmall radius.
+            \\rank<6> The area of the emanation increases to a \\areamed radius.
         """, tags=['Attune (self)']),
     ],
     lists=['Nature'],
@@ -56,7 +56,7 @@ verdamancy=MysticSphere(
             \\glance As above, except that the condition is removed at the end of the next round.
             \\crit As above, except that the condition must be removed twice before the effect ends.
         """, tags=['Manifestation']),
-        Spell('Vineburst', 1, '\\glossterm<Enemies> in a \\areasmall radius from you', """
+        Spell('Vineburst', 1, '\\glossterm<Enemies> in a \\areatiny radius from you', """
             Make an attack vs. Armor against each target.
             You gain a +2 bonus to \\glossterm<accuracy> with this attack against targets standing in \\glossterm<undergrowth>.
             % -1d to compensate for +2a
@@ -148,12 +148,12 @@ verdamancy=MysticSphere(
             As a standard action, you or another creature can throw the acorn up to 30 feet.
             % More accurate version: the acorn has a range increment of 10 feet to hit its target, but that accuracy roll is completely independent of the explosion.
             % Doesn't seem worth the complexity, and implicitly gives the fire seed surprisingly long range since objects are easy to hit.
-            On impact, the acorn detonates, and you make an attack vs. Armor against everything within a \\areasmall radius of the struck creature or object.
+            On impact, the acorn detonates, and you make an attack vs. Armor against everything within a \\areatiny radius of the struck creature or object.
             \\hit Each target takes fire damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Sustain (free)']),
         Spell('Wall of Thorns', 3, 'Each creature that moves through the area (see text)', """
-            You create a wall of thorns in 15 ft.\\ high, \\areamed \\glossterm<wall> within \\rngmed range.
+            You create a wall of thorns in 15 ft.\\ high, \\areasmall \\glossterm<wall> within \\rngmed range.
             The base of at least half of the wall must be in arable earth.
             The wall is four inches thick, but permeable.
             It provides \\glossterm<cover> to attacks made through the wall.
@@ -166,7 +166,7 @@ verdamancy=MysticSphere(
             Each five-foot square of wall has hit points equal to three times your \\glossterm<power>, and all of its defenses are 0.
             It is \\glossterm<vulnerable> to fire damage.
         """, scaling="damage", tags=['Attune (self)']),
-        Spell('Plant Growth', 2, 'All plants and arable earth in a \\areamed radius within \\rngmed range', """
+        Spell('Plant Growth', 2, 'All plants and arable earth in a \\areasmall radius within \\rngmed range', """
             Choose whether you want plants within the area to grow or diminish.
 
             If you choose for plants to grow, all arable earth within the area becomes \\glossterm<light undergrowth>.
@@ -175,8 +175,8 @@ verdamancy=MysticSphere(
 
             When this spell's duration ends, the plants return to their natural size.
         """, scaling="""
-            \\rank<4> The area increases to a \\arealarge radius.
-            \\rank<6> The area increases to a \\areahuge radius.
+            \\rank<4> The area increases to a \\areamed radius.
+            \\rank<6> The area increases to a \\arealarge radius.
         """, tags=['Sustain (minor)']),
         Spell('Blight', 2, 'One living creature or plant within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
@@ -202,12 +202,12 @@ verdamancy=MysticSphere(
         """, tags=['Sustain (minor)']),
         Spell('Flourishing Vines', 4, 'Yourself', """
             Long, thin vines continuously grow and writhe on your body.
-            At the end of each round, you may choose to cause the vines to extend out onto the ground in a \\areamed radius around you.
+            At the end of each round, you may choose to cause the vines to extend out onto the ground in a \\areasmall radius around you.
             When you do, that area becomes covered in \\glossterm<light undergrowth>.
             Whenever you move, the vines retreat back to your body.
             That prevents the vines from impeding your movement, though they do impede the movement of any other creatures that move simultaneously.
         """, scaling="""
-            \\rank<6> The area increases to a \\arealarge radius.
+            \\rank<6> The area increases to a \\areamed radius.
         """, tags=['Attune (self)']),
         Spell('Thornblade', 3, 'Yourself', """
             You can cast this spell as a \\glossterm<minor action>.

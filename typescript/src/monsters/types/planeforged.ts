@@ -44,7 +44,7 @@ planeforgedInput.push({
           name: "Proclamation",
           powerBonus: -2,
           source: "magical",
-          target: "\\glossterm{Enemies} within a \\arealarge radius from the $name",
+          target: "\\glossterm{Enemies} within a \\areamed radius from the $name",
         },
         {
           accuracyBonus: 2,
