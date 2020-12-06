@@ -632,12 +632,15 @@ This choice determines a great deal about your character's abilities.
             \parhead{Aspect} You gain a \glossterm{glide speed} equal to your \glossterm{base speed} (see \pcref{Gliding}).
             \parhead{Essence} You can use the \textit{speak with air} ability as a standard action.
             \begin{attuneability}{Speak with Air}[\glossterm{Attune} (self)]
-                You can speak with and command air within a \arealarge \glossterm{zone} from your location.
+                You can speak with and command air within a \areahuge radius \glossterm{zone} from your location.
                 You can ask the air simple questions and understand its responses.
                 If you command the air to perform a task, it will do so do the best of its ability until this effect ends.
                 You cannot compel the air to move faster than 50 mph.
 
                 After you use this ability on a particular area of air, you cannot use it again on that same area for 24 hours.
+
+                \rankline
+                \rank{6} The area increases to a \areagarg radius.
             \end{attuneability}
             \parhead{Mastery} As long as you are within 1,000 feet of the ground, you gain a \glossterm{fly speed} equal to your \glossterm{base speed} (see \pcref{Flying}).
 
@@ -688,12 +691,12 @@ This choice determines a great deal about your character's abilities.
             \parhead{Aspect} Your abilities deal double damage to objects.
             \parhead{Essence} You can use the \textit{lay waste} ability as a standard action.
             \begin{freeability}{Lay Waste}
-                You make an attack vs. Fortitude against all unattended objects in a \areasmall radius.
+                You make an attack vs. Fortitude against all unattended objects in a \areamed radius.
                 You may freely exclude any number of 5-ft\. cubes from the area, as long as the resulting area is still contiguous.
                 \hit For each target, if its \glossterm{resistance} against \glossterm{physical damage} is lower than your \glossterm{power}, it crumbles into a fine power and is irreparably \glossterm{destroyed}.
 
                 \rankline
-                \rank{6} The area increases to a \areamed radius.
+                \rank{6} The area increases to a \arealarge radius.
             \end{freeability}
             \parhead{Mastery} You gain a \plus4 bonus to your \glossterm{power} with all abilities.
 
@@ -704,10 +707,13 @@ This choice determines a great deal about your character's abilities.
             \parhead{Aspect} You increase your maximum \glossterm{hit points} by 2.
             \parhead{Essence} You can use the \textit{speak with earth} ability as a standard action.
             \begin{attuneability}{Speak with Earth}[\glossterm{Attune} (self)]
-                You can speak with earth within a \arealarge \glossterm{zone} from your location.
+                You can speak with earth within a \areahuge radius \glossterm{zone} from your location.
                 You can ask the earth simple questions and understand its responses.
 
                 After you use this ability on a particular area of earth, you cannot use it again on that same area for 24 hours.
+
+                \rankline
+                \rank{6} The area increases to a \areagarg radius.
             \end{attuneability}
             \parhead{Mastery} The bonus from this domain's gift increases to \plus5, and the number of hit points you gain from its aspect increases to 5.
 
@@ -737,7 +743,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Aspect} Your abilities cannot deal fire damage to your \glossterm{allies}.
             \parhead{Essence} You can use the \textit{speak with fire} ability as a standard action.
             \begin{attuneability}{Speak with Fire}[\glossterm{Attune} (self)]
-                You can speak with and command fire within a \arealarge radius \glossterm{zone} from your location.
+                You can speak with and command fire within a \areahuge radius \glossterm{zone} from your location.
                 You can ask the fire simple questions and understand its responses.
                 If you command the fire to perform a task, it will do so do the best of its ability until this effect ends.
                 You cannot compel the fire to move farther than 30 feet in a single round.
@@ -745,6 +751,9 @@ This choice determines a great deal about your character's abilities.
 
                 After you use this ability on a particular area of fire, you cannot use it again on that same area for 24 hours.
                 % TODO: What does an ``area of fire'' mean?
+
+                \rankline
+                \rank{6} The area increases to a \areagarg radius.
             \end{attuneability}
             \parhead{Mastery} Whenever you deal fire damage, you also treat that damage as being pure energy damage.
             This can help you deal damage to enemies that are highly resistant to fire damage.
@@ -754,7 +763,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Gift} Whenever an adjacent \glossterm{ally} suffers a \glossterm{vital wound}, you may gain a \glossterm{vital wound} instead.
             You gain a \plus2 bonus to the \glossterm{vital roll} of each \glossterm{vital wound} you gain this way.
             The original target suffers any other effects of the attack normally.
-            \parhead{Aspect} This domain's domain gift affects any \glossterm{ally} within a \areasmall radius \glossterm{emanation} from you.
+            \parhead{Aspect} This domain's domain gift affects any \glossterm{ally} within a \areamed radius \glossterm{emanation} from you.
             \parhead{Essence} You can use the \textit{compel good} ability as a standard action.
             \begin{freeability}{Compel Good}[\glossterm{Compulsion}]
                 Make an attack vs. Mental against a creature within \rngmed range.
@@ -766,8 +775,8 @@ This choice determines a great deal about your character's abilities.
                 \rankline
                 You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
             \end{freeability}
-            \parhead{Mastery} Once per round, when an \glossterm{ally} within a \arealarge radius \glossterm{emanation} from you loses one or more \glossterm{hit points}, you may lose a single hit point instead.
-            The target suffers any other effects of the attack normally.
+            \parhead{Mastery} Once per round, when an \glossterm{ally} within a \areamed radius \glossterm{emanation} from you would lose \glossterm{hit points}, you may lose those hit points instead.
+            The target suffers any other effects of the attack normally, though it is not treated as if it lost hit points from the attack for the purpose of special attack effects.
 
         \subsubsection{Knowledge}
             If you choose this domain, you add all Knowledge skills to your cleric \glossterm{class skill} list.
@@ -777,7 +786,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Essence} You can use the \textit{share knowledge} ability as a standard action.
             \begin{freeability}{Share Knowledge}
                 You make a Knowledge check of any kind.
-                You and your \glossterm{allies} within a \areamed radius learn the results of your check.
+                You and your \glossterm{allies} within a \arealarge radius learn the results of your check.
                 Creatures believe the information gained in this way to be true as if they it had seen it with their own eyes.
 
                 You cannot alter the knowledge you gain with this check in any way, such as by adding or withholding information.
@@ -901,12 +910,15 @@ This choice determines a great deal about your character's abilities.
             \parhead{Aspect} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
             \parhead{Essence} You can use the \textit{speak with water} ability as a standard action.
             \begin{attuneability}{Speak with Water}[\glossterm{Attune} (self)]
-                You can speak with and command water within a \arealarge \glossterm{zone} from your location.
+                You can speak with and command water within a \areahuge \glossterm{zone} from your location.
                 You can ask the water simple questions and understand its responses.
                 If you command the water to perform a task, it will do so do the best of its ability until this effect ends.
                 You cannot compel the water to move faster than 30 feet per round.
 
                 After you use this ability on a particular area of water, you cannot use it again on that same area for 24 hours.
+
+                \rankline
+                \rank{6} The area increases to a \areagarg radius.
             \end{attuneability}
             \parhead{Mastery} Your body becomes partially aquatic, allowing you to manipulate it more easily.
             The bonuses from this domain's gift increase to \plus10.
@@ -996,7 +1008,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Drd}[3]{Elemental Influence} You can use the \textit{elemental influence} ability as a standard action.
         \begin{freeability}{Elemental Influence}[\glossterm{Sustain} (standard)]
-            You can speak with air, earth, fire, and water within a \arealarge \glossterm{zone} from your location.
+            You can speak with air, earth, fire, and water within a \areahuge \glossterm{zone} from your location.
             You can ask the elements simple questions and understand their responses.
             Air, earth, and water are only able to give information about what they touch.
             This includes the general shapes, sizes, and locations of creatures and objects they interacted with, but not any details about color or subjective appearance.
@@ -1313,7 +1325,7 @@ This choice determines a great deal about your character's abilities.
 
                 \rankline
                 \rank{3} You gain a \plus1 bonus to Armor and Reflex defenses while standing in \glossterm{undergrowth}.
-                \rank{5} The movement penalties from \glossterm{undergrowth} are doubled for enemies within a \arealarge radius emanation from you.
+                \rank{5} The movement penalties from \glossterm{undergrowth} are doubled for enemies within a \areahuge radius emanation from you.
                 \rank{7} The bonus to Armor and Reflex defenses increases to \plus2.
             \end{freeability}
         }
@@ -1428,7 +1440,7 @@ This choice determines a great deal about your character's abilities.
             Wary and cunning animals are likely to be terse and evasive, while stupid ones tend to make inane comments and are unlikely to say or understand anything of use.
         \end{attuneability}
 
-        \cf{Drd}[3]{Greater Nature's Ally}[Magical] Your \glossterm{allies} within a \areamed radius \glossterm{emanation} from you also gain the benefit of your \textit{nature's ally} ability.
+        \cf{Drd}[3]{Greater Nature's Ally}[Magical] Your \glossterm{allies} within a \arealarge radius \glossterm{emanation} from you also gain the benefit of your \textit{nature's ally} ability.
         The protection ends if any target attacks a creature you are protected from instead of only if you attack.
         In addition, the \glossterm{difficulty rating} of the Creature Handling check increases to 20 \add twice your rank in this archetype.
 
@@ -1778,7 +1790,7 @@ This choice determines a great deal about your character's abilities.
         You can also spend \glossterm{insight points} to learn one additional \textit{battle tactic} per \glossterm{insight point}.
 
         You can initiate a \textit{battle tactic} as a \glossterm{minor action}.
-        Your \textit{battle tactics} affect your \glossterm{allies} within a \arealarge radius \glossterm{emanation} from you who can either see or hear you.
+        Your \textit{battle tactics} affect your \glossterm{allies} within a \areahuge radius \glossterm{emanation} from you who can either see or hear you.
 
         All \textit{battle tactics} have the \glossterm{Sustain} (free) tag, so they last as long as you \glossterm{sustain} them (see \pcref{Sustained Abilities}).
         You cannot sustain multiple battle tactics simultaneously.
@@ -2270,7 +2282,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Pal}[1]{Aligned Aura}[Magical]
         Your devotion to your alignment affects the world around you, bringing it closer to your ideals.
-        You constantly radiate an aura in a \areasmall radius \glossterm{emanation} from you.
+        You constantly radiate an aura in a \areamed radius \glossterm{emanation} from you.
         You can freely choose whether yourself and your \glossterm{allies}, \glossterm{enemies}, and other creatures are affected by the aura.
         The effect of the aura depends on your devoted alignment, as described below.
         You can suppress or resume the aura as a \glossterm{minor action}.
@@ -2300,9 +2312,9 @@ This choice determines a great deal about your character's abilities.
         The effect of your \textit{aligned aura} becomes stronger, as described below.
 
         \subparhead{Chaos} The effect applies to all attacks, not just \glossterm{strikes}.
-        \subparhead{Evil} When a target removes a \glossterm{condition}, it gains a \glossterm{fatigue point}.
-        \subparhead{Good} When a target loses a \glossterm{hit point}, you may lose that hit point instead.
-        The target suffers any other effects of the attack normally.
+        \subparhead{Evil} When a target removes a \glossterm{condition}, it gains two \glossterm{fatigue points}.
+        \subparhead{Good} When a target would lose \glossterm{hit points}, you may lose those hit points instead.
+        The target suffers any other effects of the attack normally, though it is not treated as if it lost hit points from the attack for the purpose of special attack effects.
         \subparhead{Law} The effect applies to all attacks, not just \glossterm{strikes}.
 
         \cf{Pal}[5]{Greater Devoted Mind} The bonus from your \textit{devoted mind} ability increases to \plus4.
@@ -2310,7 +2322,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Pal}[6]{Greater Paragon Power} The bonus from your \textit{paragon power} ability increases to \plus6.
 
         \cf{Pal}[7]{Supreme Aligned Aura}
-        The area of your \textit{aligned aura} increases to a \arealarge radius \glossterm{emanation} from you.
+        The area of your \textit{aligned aura} increases to a \areahuge radius \glossterm{emanation} from you.
 
         % \cf{Pal}[8]{Epic Devotion} The bonus from your \textit{paragon of power} ability increases to \plus6.
         % In addition, the bonus from your \textit{devoted mind} ability increases to \plus5.
@@ -2956,6 +2968,7 @@ This choice determines a great deal about your character's abilities.
         Many bardic performances require you to sustain the performance as a \glossterm{minor action}.
         If the targets stop being able to see or hear you, depending on the nature of your performance, the effect ends for them as if you had stopped sustaining the performance.
         However, targets do not stop being affected by your performance simply by travelling beyond the initial range of the bardic performance ability.
+        Using a bardic performance ability with an immediate effect does not interfere with your ability to sustain other bardic performance abilities.
         {
             % Bardic performance power guidelines:
             % These generally start from the same rank 1 baseline effect as spells.
@@ -3080,18 +3093,19 @@ This choice determines a great deal about your character's abilities.
             \end{freeability}
 
             \begin{freeability}{Serenade of Serenity}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
-                \targets{All \glossterm{allies} within a \areamed radius \glossterm{emanation} from you}
+                \targets{All \glossterm{allies} within a \arealarge radius \glossterm{emanation} from you}
                 Each target gains a \plus4 bonus to defenses against hostile \glossterm{Compulsion} and \glossterm{Emotion} effects.
 
                 \rankline
                 \rank{3} At the end of each round, each target removes all \glossterm{conditions} caused by Compulsion and Emotion effects that were not applied during that round.
-                \rank{5} The area increases to a \arealarge radius.
+                \rank{5} The area increases to a \areahuge radius.
                 \rank{7} Each target is immune to hostile Compulsion and Emotion effects.
             \end{freeability}
 
             \begin{freeability}{Tranquil Tune}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
-                \targets{All creatures within a \areamed radius from you}
+                \targets{Creatures within a \arealarge radius from you}
                 Make an attack vs. Mental against each target.
+                You take a \minus5 penalty to \glossterm{accuracy} with this attack against creatures who are engaged in combat during the current phase.
                 \hit Each target has its emotions calmed.
                 The effects of all other \glossterm{Emotion} abilities on that target are \glossterm{suppressed}.
                 It cannot take violent actions (although it can defend itself) or do anything destructive.
