@@ -30,6 +30,7 @@ telekinesis=MysticSphere(
             This does not impede its movement unless its movement would decrease the distance between you and it.
             As part of movement, it can make a Strength check with a \\glossterm<difficulty rating> of 10.
             If it succeeds, it can move towards you at half speed.
+            \\crit As above, except that the difficulty rating of the Strength check increases by 10.
         """, scaling='accuracy', tags=['Sustain (minor)']),
         Spell('Force Slam', 1, 'One creature or object within \\rngmed range', """
             Make an attack vs. Armor against the target.

@@ -36,6 +36,7 @@ cryomancy=MysticSphere(
         Spell('Cone of Winter', 4, 'Everything in a \\areahuge cone from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes cold damage equal to 2d8 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
         """, scaling='damage', tags=[]),
         Spell('Frozen Legs', 4, 'One creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.

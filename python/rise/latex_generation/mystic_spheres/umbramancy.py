@@ -58,6 +58,7 @@ umbramancy=MysticSphere(
             Make an attack vs. Fortitude against each target.
             You gain a +2 bonus to \\glossterm<accuracy> with the attack against each target that is not in \\glossterm<bright illumination>.
             \\hit Each target takes cold damage equal to 2d6 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
         """, scaling='damage', tags=[]),
         Spell('Dark Grasp', 1, 'One creature or object within your \\glossterm<reach>', """
             This spell does not have the \\glossterm<Focus> tag.
