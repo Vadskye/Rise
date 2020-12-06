@@ -25,10 +25,13 @@ thaumaturgy=MysticSphere(
             You send an unerring projectile made of pure magical energy towards the target.
             The target takes 1d6 energy damage.
         """, scaling="damage", tags=[]),
-        Spell('Magic Missile Storm', 4, '\\glossterm<Enemies> in a \\areatiny radius within \\rngmed range', """
+        Spell('Magic Missile Flurry', 3, 'Creatures in a \\areasmall radius within \\rngmed range', """
             You send an unerring projectile made of pure magical energy towards each target.
-            Each target takes 1d10 energy damage.
-            \\glance As above, except that that each target takes half damage.
+            Each target takes 1d8 energy damage.
+        """, scaling="damage", tags=[]),
+        Spell('Magic Missile Storm', 6, '\\glossterm<Enemies> in a \\areamed radius within \\rnglong range', """
+            You send an unerring projectile made of pure magical energy towards each target.
+            Each target takes 2d8 energy damage.
         """, scaling="damage", tags=[]),
         Spell('Alter Magic Aura', 1, 'One Large or smaller magical object in \\rngmed range', """
             Make an attack vs. Mental against the target.
@@ -184,11 +187,11 @@ thaumaturgy=MysticSphere(
         """, scaling="""
             \\rank<6> The delay increases to two rounds.
         """, tags=['Attune (self)']),
-        Spell('Spellward', 4, 'Creatures in a \\areasmall radius \\glossterm<zone> within \\rngmed range', """
+        Spell('Spellward', 4, 'Creatures in a \\areamed radius \\glossterm<zone> within \\rngmed range', """
             You seal off an area's connection to magic.
             Whenever a creature casts a spell in the area, it has a 50\\% chance to \\glossterm<miscast> the spell.
         """, scaling="""
-            \\rank<6> The area increases to a \\areamed radius.
+            \\rank<6> The area increases to a \\arealarge radius.
         """, tags=['Sustain (minor)']),
         Spell('Cryptic Spells', 2, 'Yourself', """
             Whenever you cast a spell, you may choose a different spell you know.
