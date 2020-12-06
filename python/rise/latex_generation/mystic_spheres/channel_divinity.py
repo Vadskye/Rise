@@ -88,7 +88,7 @@ channel_divinity=MysticSphere(
             Make an attack vs. Mental against each target.
             \\hit Each target takes energy damage equal to 1d8 plus half your \\glossterm<power>.
         """, scaling="damage", tags=[]),
-        Spell('Proclamation of Faith', 3, '\\glossterm<Enemies> in a \\areamed radius from you', """
+        Spell('Proclamation of Faith', 3, '\\glossterm<Enemies> in a \\arealarge radius from you', """
             Make an attack vs. Mental against each target.
             \\hit Each target takes energy damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
@@ -118,8 +118,8 @@ channel_divinity=MysticSphere(
             \\hit Each target is \\glossterm<shaken> by you until the end of the next round.
             \\crit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
         """, scaling="accuracy", tags=['Attune (self)', 'Emotion']),
-        Spell('Divine Eminence', 7, '\\glossterm<Enemies> in the area (see text)', """
-            This spell functions like the \\textit<divine presence> spell, except that the area increases to a \\arealarge radius \\glossterm<emanation> from you.
+        Spell('Divine Eminence', 6, '\\glossterm<Enemies> in the area (see text)', """
+            This spell functions like the \\textit<divine presence> spell, except that the area increases to a \\areahuge radius \\glossterm<emanation> from you.
         """, tags=['Attune (self)', 'Emotion']),
         Spell('Faithful Endurance', 3, 'Yourself', """
             You can cast this spell as a \\glossterm<minor action>.
@@ -160,11 +160,12 @@ channel_divinity=MysticSphere(
             When you cast this spell, you gain a \\glossterm<vital wound> that has no vital wound effect.
             In exchange, you gain a +4 \\glossterm<magic bonus> to \\glossterm<vital rolls> and become immune to \\glossterm<conditions>.
         """, tags=['Sustain (free)']),
-        Spell('Divine Seal', 4, 'Creatures in a \\areasmall radius \\glossterm<zone> within \\rngmed range', """
+        Spell('Divine Seal', 3, 'Creatures in a \\areamed radius \\glossterm<zone> within \\rngmed range', """
             You seal an area with divine power, limiting its connection to divine powers.
-            Whenever a creature casts a divine spell in the area, if that creature does not share your deity (for clerics) or devoted alignment (for paladins), it has a 50\% chance to \\glossterm<miscast> the spell.
+            Whenever a creature casts a divine spell in the area, if that creature does not share your deity (for clerics) or devoted alignment (for paladins), it has a 50\\% chance to \\glossterm<miscast> the spell.
         """, scaling="""
-            \\rank<6> The area increases to a \\areamed radius.
+            \\rank<5> The area increases to a \\arealarge radius.
+            \\rank<5> The area increases to a \\areahuge radius.
         """, tags=['Sustain (minor)']),
         Spell('Banish Anathema', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against the target.

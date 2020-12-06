@@ -96,14 +96,16 @@ aeromancy = MysticSphere(
         """, scaling="""
             \\rank<7> The maximum distance above the ground increases to 200 feet.
         """, tags=['Attune (self)']),
-        Spell('Gust of Wind', 3, 'Everything in a \\arealarge, 10 ft. wide line from you', """
+        # no level diff for lower damage + push
+        Spell('Gust of Wind', 3, 'Everything in a \\areahuge, 10 ft. wide line from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes 1d10 bludgeoning damage.
             In addition, each target is \\glossterm<pushed> 20 feet in the direction the line points away from you.
             Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=[]),
-        Spell('Blast of Wind', 6, 'Everything in a \\areahuge, 10 ft. wide line from you', """
+        # +1 level for farther push
+        Spell('Blast of Wind', 5, 'Everything in a \\areagarg, 10 ft. wide line from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes 2d10 bludgeoning damage.
             In addition, each target is \\glossterm<pushed> 50 feet in the direction the line points away from you.
@@ -128,7 +130,7 @@ aeromancy = MysticSphere(
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Attune (self)']),
         Spell('Air Walk', 6, 'Yourself', """
-            You can walk on air as if it were solid ground as long as you are no more than 100 feet above solid ground.
+            You can walk on air as if it were solid ground as long as you are no more than 120 feet above solid ground.
             The magic only affects your legs and feet.
             By choosing when to treat the air as solid, you can traverse the air with ease.
         """, tags=['Attune (self)']),
@@ -154,12 +156,13 @@ aeromancy = MysticSphere(
         """, scaling="""
             \\rank<6> You can shape the weather for up to fifteen minutes before it takes effect, increasing the intensity of the changes you can make.
         """, tags=['Attune (self)']),
-        Spell('Cyclone', 3, 'Everything in a \\areasmall radius within \\rngmed range', """
+        Spell('Cyclone', 3, 'Everything in a \\areamed radius within \\rngmed range', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes bludgeoning damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=[]),
-        Spell('Hurricane', 4, '\\glossterm<Enemies> in a \\areamed radius from you', """
+        # +2 levels for push
+        Spell('Hurricane', 5, '\\glossterm<Enemies> in a \\arealarge radius from you', """
             Make an attack vs. Fortitude against each target.
             \\hit Each target takes bludgeoning damage equal to 2d8 half plus your \\glossterm<power>.
             In addition, each target is \\glossterm<pushed> 20 feet clockwise around you.
@@ -179,12 +182,17 @@ aeromancy = MysticSphere(
             \\crit As above, except that that the target takes double damage.
             \\glance As above, except that that the target takes half damage.
         """, scaling="damage", tags=[]),
-        Spell('Dust Cloud', 1, 'Creatures in a \\areasmall radius within \\rngmed range', """
+        Spell('Dust Cloud', 1, 'Creatures in a \\areamed radius within \\rngshort range', """
             Make an attack vs. Reflex against each target.
             \\hit Each target is \\glossterm<dazzled> until the end of the next round.
             \\crit Each target is \\glossterm<dazzled> as a \\glossterm<condition>.
         """, scaling="accuracy", tags=[]),
-        Spell('Blinding Dust Cloud', 7, 'Creatures in a \\areasmall radius within \\rngmed range', """
+        Spell('Duststorm', 4, 'Creatures in a \\arealarge radius within \\rnglong range', """
+            Make an attack vs. Reflex against each target.
+            \\hit Each target is \\glossterm<dazzled> until the end of the next round.
+            \\crit Each target is \\glossterm<dazzled> as a \\glossterm<condition>.
+        """, scaling="accuracy", tags=[]),
+        Spell('Blinding Dust Cloud', 7, 'Creatures in a \\areamed radius within \\rngshort range', """
             Make an attack vs. Reflex against each target.
             \\hit Each target is \\glossterm<blinded> until the end of the next round.
             \\crit Each target is \\glossterm<blinded> as a \\glossterm<condition>.
@@ -196,6 +204,7 @@ aeromancy = MysticSphere(
             \\glance As above, except that the condition is removed at the end of the next round.
             \\crit As above, except that the condition must be removed twice before the effect ends.
         """, scaling="accuracy", tags=[]),
+        # +2 levels for single-target Reflex defense, which is unusual
         Spell('Piercing Wind', 3, 'One creature or object within \\rngmed range', """
             A rush of wind flows rapidly through the gaps in your foe's armor to pierce its heart.
             Make an attack vs. Reflex against the target.

@@ -141,16 +141,17 @@ biomancy=MysticSphere(
             \\hit Each secondary target takes acid damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Attune (target)']),
+        # +1 level for damage -> attuned std action
         # +1 level over other dragon breaths for damage choice, including both
         # physical and energy
-        Spell('Dragon Breath', 5, 'Yourself (see text)', """
+        Spell('Dragon Breath', 4, 'Yourself (see text)', """
             You can cast this spell as a \\glossterm<minor action>.
 
             You gain the ability to breath energy like a dragon.
             When you cast this spell, choose a type of damage: acid, cold, electricity, or fire.
             As a standard action, you can breath a cone of that type of energy.
             When you do, make an attack vs. Reflex against everything within a \\arealarge cone from you.
-            \\hit Each target takes damage of the chosen type equal to 2d10 plus half your \\glossterm<power>.
+            \\hit Each target takes damage of the chosen type equal to 2d8 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Attune (self)']),
         Spell('Withering', 2, 'One living creature within \\rngmed range', """
@@ -175,7 +176,7 @@ biomancy=MysticSphere(
             \\hit The target is \\glossterm<sickened> as a \\glossterm<condition>.
             \\crit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
         """, scaling="accuracy", tags=[]),
-        Spell('Sickening Curse', 2, 'One living creature within \\rngshort range', """
+        Spell('Sickening Curse', 3, 'One living creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<sickened> until it takes a \\glossterm<short rest>.
             \\crit As above, except that the effect lasts until this curse is removed.

@@ -109,12 +109,12 @@ pyromancy=MysticSphere(
             \\hit The target object becomes burning hot to the touch.
             At the end of each round, it and anything touching it takes fire damage equal to 1d10 plus half your \\glossterm<power>.
         """, scaling="accuracy", tags=['Sustain (minor)']),
-        Spell('Flame Breath', 4, 'Yourself (see text)', """
+        Spell('Flame Breath', 3, 'Yourself (see text)', """
             You can cast this spell as a \\glossterm<minor action>.
 
             As a standard action, you can breathe fire like a dragon.
             When you do, make an attack vs. Reflex against everything within a \\arealarge cone from you.
-            \\hit Each target takes fire damage equal to 2d8 plus half your \\glossterm<power>.
+            \\hit Each target takes fire damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Attune (self)']),
         Spell('Eyes of Flame', 2, 'Yourself (see text)', """
