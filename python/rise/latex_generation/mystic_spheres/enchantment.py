@@ -215,8 +215,9 @@ enchantment=MysticSphere(
             It becomes aware of its surroundings as if waking up from a daydream.
             The target is not directly aware of any magical influence on its mind, though unusually paranoid or perceptive creatures may deduce that their minds were affected.
         """, scaling="accuracy", tags=['Sustain (minor)', 'Emotion', 'Subtle']),
-        Spell('Calm Emotions', 3, 'Creatures within a \\arealarge radius from you', """
+        Spell('Calm Emotions', 2, 'Creatures within a \\arealarge radius from you', """
             Make an attack vs. Mental against each target.
+            You take a -5 penalty to \\glossterm<accuracy> with this attack against creatures who are engaged in combat during the current phase.
             \\hit Each target has its emotions calmed.
             The effects of all other \\glossterm<Emotion> abilities on that target are \\glossterm<suppressed>.
             It cannot take violent actions (although it can defend itself) or do anything destructive.
