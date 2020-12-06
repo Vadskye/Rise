@@ -160,7 +160,7 @@ def generate_weapons():
                 All damage dealt with it is cold damage in addition to its normal damage types.
 
                 As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with cold energy.
-                If a creature loses \\glossterm<hit points> from that strike, it is \\glossterm<chilled> as a \\glossterm<condition>.
+                If a creature loses \\glossterm<hit points> from that strike, it is \\glossterm<slowed> as a \\glossterm<condition>.
             """,
             short_description="Deals cold damage, can chill",
         ),
@@ -175,7 +175,7 @@ def generate_weapons():
 
                 As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with cold energy.
                 You gain a +1d bonus to damage with the strike.
-                If a creature loses \\glossterm<hit points> from that strike, it is \\glossterm<chilled> as a \\glossterm<condition>.
+                If a creature loses \\glossterm<hit points> from that strike, it is \\glossterm<slowed> as a \\glossterm<condition>.
             """,
             short_description="Deals cold damage, can powerfully chill",
         ),
