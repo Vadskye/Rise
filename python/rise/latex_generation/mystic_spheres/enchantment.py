@@ -181,7 +181,7 @@ enchantment=MysticSphere(
             \\glance As above, except that the condition is removed at the end of the next round.
             \\crit The target is \\glossterm<panicked> by you as a \\glossterm<condition>.
         """, scaling="accuracy", tags=['Emotion']),
-        Spell('Fearsome Aura', 2, '\\glossterm<Enemies> in the area (see text)', """
+        Spell('Fearsome Aura', 3, '\\glossterm<Enemies> in the area (see text)', """
             You radiate an aura of fear in a \\areasmall radius \\glossterm<emanation> from you.
             When you attune to this spell, and during each \\glossterm<action phase> in subsequent rounds, make an attack vs. Mental against each target.
             After you attack a creature this way, it becomes immune to this ability from you until it takes a \\glossterm<short rest>.
