@@ -128,7 +128,7 @@ def generate_tools():
         description="""
             As a standard action, you can throw this item at a creature or object within \\rngshort range.
             When you do, make an attack vs. Armor against the target.
-            On a hit, the target takes fire \\glossterm<standard damage>.
+            On a hit, the target takes 1d6 fire damage.
         """,
         short_description="Throw to deal fire damage",
     ))
@@ -198,7 +198,7 @@ def generate_tools():
         description="""
             As a standard action, you can throw this item at a creature or object within \\rngshort range.
             When you do, make an attack vs. Fortitude against the target.
-            On a hit, the target takes cold \\glossterm<standard damage>.
+            On a hit, the target takes 1d8 cold damage.
         """,
         short_description="Throw to deal cold damage",
     ))
@@ -293,7 +293,7 @@ def generate_tools():
         description="""
             As a standard action, you can throw this item at a creature or object within \\rngshort range.
             When you do, make an attack vs. Armor against the target.
-            On a hit, the target takes acid \\glossterm<standard damage>.
+            On a hit, the target takes 1d6 acid damage.
         """,
         short_description="Throw to deal acid damage",
     ))
