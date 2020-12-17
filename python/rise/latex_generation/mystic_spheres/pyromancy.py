@@ -192,9 +192,16 @@ pyromancy=MysticSphere(
             Each five-foot square of wall has hit points equal to twice your \\glossterm<power>, and all of its defenses are 0.
             It is immune to most forms of attack, but it can be destroyed by \\glossterm<cold damage> and similar effects that can destroy water.
         """, scaling="damage", tags=['Sustain (minor)']),
+        # +1 level because pyromancy isn't supposed to be a Mental attack debuff
+        # sphere. Also because it's less picky than a normal shaken condition.
         Spell('Pyrophobia', 2, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<shaken> by you and all other sources of fire as a \\glossterm<condition>.
+            \\crit The target is \\glossterm<frightened> by you and all other sources of fire as a \\glossterm<condition>.
+        """, scaling="accuracy", tags=['Emotion']),
+        Spell('Primal Pyrophobia', 5, 'One creature within \\rngmed range', """
+            Make an attack vs. Mental against the target.
+            \\hit The target is \\glossterm<frightened> by you and all other sources of fire as a \\glossterm<condition>.
             \\crit The target is \\glossterm<panicked> by you and all other sources of fire as a \\glossterm<condition>.
         """, scaling="accuracy", tags=['Emotion']),
         # Pyromancy gets medium damage / r1 instead of low damage / r2 to

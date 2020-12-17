@@ -215,10 +215,10 @@ def generate_maneuvers():
         target=None,
         effect_text="""
             Make a \\glossterm<strike>.
-            You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
+            You take a -2d penalty to damage with the strike.
             If a creature loses hit points from the strike, it is \\glossterm<shaken> by you as a \\glossterm<condition>.
         """,
-        rank=1,
+        rank=2,
         tags=['Emotion'],
         lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
@@ -229,10 +229,10 @@ def generate_maneuvers():
         target=None,
         effect_text="""
             Make a \\glossterm<strike>.
-            You take a -2d penalty to damage with the strike, and your \\glossterm<power> is halved.
+            You take a -2d penalty to damage with the strike.
             If a creature loses hit points from the strike, it is \\glossterm<frightened> by you as a \\glossterm<condition>.
         """,
-        rank=3,
+        rank=5,
         tags=['Emotion'],
         lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
