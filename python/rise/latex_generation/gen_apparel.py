@@ -1387,7 +1387,7 @@ def generate_worn():
             As a standard action, you can activate these boots.
             When you do, you gain a \\glossterm<fatigue point> and teleport horizontally exactly 25 miles in a direction you specify.
             If this would place you within a solid object or otherwise impossible space, the boots will shunt you up to 1,000 feet in any direction to the closest available space.
-            If there is no available space within 1,000 feet of your intended destination, the effect fails and you take \\glossterm<standard damage> -1d.
+            If there is no available space within 1,000 feet of your intended destination, the effect fails and you take 4d6 energy damage.
         """,
         short_description="Teleport seven leages with a step",
     ))
