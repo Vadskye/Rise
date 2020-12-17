@@ -53,7 +53,7 @@ spells=[
         \\hit Each target takes electricity damage equal to 2d8 plus half your \\glossterm<power>.
         \\glance As above, except that that each target takes half damage.
     """, scaling="damage", tags=[]),
-    Spell('Shock and Awe', 5, 'Creatures in a \\areasmall radius within \\rngmed range', """
+    Spell('Shock and Awe', 4, 'Creatures in a \\areasmall radius within \\rngmed range', """
          Make an attack vs. Fortitude against each target.
          \\hit Each target is \\glossterm<dazed> and \\glossterm<disoriented> until the end of the next round.
          \\crit Each target is \\glossterm<dazed> and \\glossterm<disoriented> as a single \\glossterm<condition>.

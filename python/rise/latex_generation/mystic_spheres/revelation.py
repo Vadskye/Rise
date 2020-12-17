@@ -115,10 +115,9 @@ revelation=MysticSphere(
         Spell('Reveal Vulnerability', 1, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit As a \\glossterm<condition>, the target's vulnerabilities become clear for all to see.
-            Its \\glossterm<resistances> are reduced by an amount equal to your \\glossterm<power>.
+            Its \\glossterm<resistances> are reduced by an amount equal to twice your \\glossterm<power>.
             When this effect ends, it regains resistances equal to the amount it lost this way.
-            \\glance As above, except that the condition is removed at the end of the next round.
-            \\crit As above, except that the reduction increases to twice your \\glossterm<power>.
+            \\crit As above, except that the reduction increases to four times your \\glossterm<power>.
         """, scaling="accuracy", tags=[]),
         Spell('Myriad Visions', 2, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
