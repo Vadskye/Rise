@@ -51,12 +51,12 @@ biomancy=MysticSphere(
         """, scaling="""
             \\rank<6> You can cast this spell as a \\glossterm<minor action>.
         """, tags=['Attune (self)']),
-        Spell('Intensify Poison', 2, 'One living creature within \\rngmed range', """
-            Make an attack vs. Fortitude with a +2 bonus to \\glossterm<accuracy> against the target.
+        Spell('Intensify Poison', 1, 'One living creature within \\rngmed range', """
+            Make an attack vs. Fortitude with a +4 bonus to \\glossterm<accuracy> against the target.
             If the target is not currently poisoned, this ability has no effect.
             \\hit Choose a poison affecting the target.
-            The poison progresses by one stage against the target, which can have varying effects depending on the poison (see \\pcref<Poison>).
-            \\crit As above, except that the poison progresses by two stages instead of one.
+            The poison progresses by two stages against the target, which can have varying effects depending on the poison (see \\pcref<Poison>).
+            \\crit As above, except that the poison progresses by four stages instead of two.
         """, scaling="accuracy", tags=[]),
         Spell('Brief Regeneration', 2, 'Yourself or one living \\glossterm<ally> within \\rngshort range', """
             The target regains \\glossterm<hit points> equal to 1d6 plus half your \\glossterm<power>.
