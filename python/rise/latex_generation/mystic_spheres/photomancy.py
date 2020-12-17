@@ -110,29 +110,29 @@ photomancy=MysticSphere(
             In addition, the target suffers consequences as if it had been struck by a beam of true sunlight.
         """, scaling="damage", tags=['Sensation', 'Visual']),
         Spell('Lightburst', 1, 'Creatures in the area (see text)', """
-            A burst of bright light fills a \\areatiny radius \\glossterm<zone> within \\rngmed range of you.
+            A burst of bright light fills a \\areasmall radius \\glossterm<zone> within \\rngmed range of you.
             \\glossterm<Bright illumination> fills a 120 foot radius around the area until the end of the next round.
             In addition, make an attack vs. Fortitude against each target.
             \\hit Each target is \\dazzled until the end of the next round.
             \\crit Each target is \\glossterm<dazzled> as a \\glossterm<condition>.
         """, scaling="accuracy", tags=['Sensation', 'Visual']),
         Spell('Sunburst', 7, 'Creatures in the area (see text)', """
-            A burst of sunlight fills a \\areatiny radius \\glossterm<zone> within \\rngmed range of you.
+            A burst of sunlight fills a \\areasmall radius \\glossterm<zone> within \\rngmed range of you.
             \\glossterm<Bright illumination> fills a 120 foot radius around the area until the end of the next round.
             In addition, make an attack vs. Fortitude against each target creature.
             \\hit Each target is \\glossterm<blinded> until the end of the next round.
             \\crit Each target is \\glossterm<blinded> as a \\glossterm<condition>.
             In addition, each target is affected as if it had entered natural sunlight.
         """, tags=['Sensation', 'Visual']),
-        # +1 level for long range, +1 for five zones
-        Spell('Pillars of Light', 3, 'Creatures in the area (see text)', """
+        # +1 level for five zones instead of one
+        Spell('Pillars of Light', 2, 'Creatures in the area (see text)', """
             A burst of bright light fills up to five \\areatiny radius, 60 ft.\\ high cylinder-shaped \\glossterm<zones> within \\rnglong range of you.
             \\glossterm<Bright illumination> fills a 120 foot radius around each area until the end of the next round.
             In addition, make an attack vs. Fortitude against each target creature.
             \\hit Each target is \\dazzled until the end of the next round.
             \\crit Each target is \\glossterm<dazzled> as a \\glossterm<condition>.
         """, scaling="accuracy", tags=['Sensation', 'Visual']),
-        Spell('Kaleidoscopic Pattern', 5, 'Creatures in the area (see text)', """
+        Spell('Kaleidoscopic Pattern', 4, 'Creatures in the area (see text)', """
             This spell creates a brilliant, rapidly shifting rainbow of lights in a \\areasmall radius within \\rngmed range of you.
             They fill a 120 foot radius around the area with bright illumination until the end of the next round.
             In addition, make an attack vs. Mental against each target.

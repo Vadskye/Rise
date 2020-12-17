@@ -142,15 +142,15 @@ Note: This is duplicated in the Metacaster feat.
   * List: deafened, prone
 * Rank 1
   * Generally give -2 to a category (accuracy/defenses)
-  * List: Dazed, dazzled, sickened, slowed
+  * List: Dazed, dazzled, shaken (-1 level due to proximity), sickened, slowed
   * Special: end of round low damage (remove if vital, DR 10 check to remove)
 * Rank 2
   * Generally give -4 to a category (accuracy/defenses)
-  * List: frightened, nauseated, generic -2 to all, stunned, fighting underwater
+  * List: frightened (-1 level due to proximity), nauseated, generic -2 to all, stunned, fighting underwater
   * Special: end of round low damage (remove if vital)
 * Rank 3
   * Generally cause partial action denial
-  * List: decelerated, confused, blinded, disoriented, immobilized, panicked
+  * List: decelerated, confused, blinded, disoriented, immobilized, panicked (-1 level due to proximity)
 * Rank 4
   * Generally cause complete action denial
   * List: Asleep, paralyzed
@@ -279,6 +279,7 @@ Tier 4 areas:
 * Huge radius from self
 * Enemies in Large radius from self
 * Medium radius in Med range
+* Enemies in Small radius in Med range
 * Small radius in Long range
 * Tiny radius in Distant range
 
@@ -319,7 +320,7 @@ Rank 1 Focus/non-upgrading, Rank 3 maneuver:
 * Non-strike-based:
   * Softener:
     * *Short* range: r1 debuff condition + crit effect
-    * t2 area: r1 debuff eonr, condition on crit
+    * t3 area: r1 debuff eonr, condition on crit
   * Damage:
     * Med range: high damage
     * t1 area: medium damage
@@ -336,8 +337,8 @@ Rank 3 Focus/non-upgrading, Rank 5 maneuver:
 * Non-strike-based:
   * Softener:
     * r1 curse in medium range
-    * t4 area: r1 debuff eonr, condition on crit
-    * t1 area: r2 debuff eonr, condition on crit
+    * t5 area: r1 debuff eonr, condition on crit
+    * t2 area: r2 debuff eonr, condition on crit
   * Damage:
     * Dist range: high damage
     * t3 area: medium damage
@@ -347,14 +348,20 @@ Rank 3 Focus/non-upgrading, Rank 5 maneuver:
 Rank 4 Focus/non-upgrading, Rank 6 maneuver:
 * Softener:
   * Med range: r2 debuff condition in medium range
-  * t2 area: r2 debuff eonr, condition on crit
+  * t3 area: r2 debuff eonr, condition on crit
 * Finisher:
   * Med range: high damage, r1 debuff condition if lose HP
+
+Rank 5 Focus/non-upgrading:
+* Softener:
+  * Med range: r2 curse
+  * t1 area: r3 debuff eonr, condition on crit
+* Finisher:
 
 Rank 6 Focus/non-upgrading:
 * Softener:
   * Med range: r2 curse
-  * t1 area: r3 debuff eonr, condition on crit
+  * t2 area: r3 debuff eonr, condition on crit
 * Finisher:
 
 Rank 7 Focus/non-upgrading:

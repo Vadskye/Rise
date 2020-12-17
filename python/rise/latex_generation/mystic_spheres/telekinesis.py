@@ -63,7 +63,7 @@ telekinesis=MysticSphere(
             \\rank<6> You can cast this spell as a \\glossterm<free action>.
             However, you can only cast it once per round.
         """, tags=[]),
-        Spell('Mass Kinetic Impedance', 2, 'Large or smaller creatures in a \\areasmall radius within \\rngmed range', """
+        Spell('Mass Kinetic Impedance', 1, 'Large or smaller creatures in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Mental against each target.
             \\hit Each target is \\glossterm<slowed> until the end of the next round.
             \\crit Each target is \\glossterm<slowed> as a \\glossterm<condition>.

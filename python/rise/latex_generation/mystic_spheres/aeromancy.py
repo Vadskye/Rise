@@ -182,17 +182,17 @@ aeromancy = MysticSphere(
             \\crit As above, except that that the target takes double damage.
             \\glance As above, except that that the target takes half damage.
         """, scaling="damage", tags=[]),
-        Spell('Dust Cloud', 1, 'Creatures in a \\areasmall radius within \\rngshort range', """
+        Spell('Dust Cloud', 1, 'Creatures in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Reflex against each target.
             \\hit Each target is \\glossterm<dazzled> until the end of the next round.
             \\crit Each target is \\glossterm<dazzled> as a \\glossterm<condition>.
         """, scaling="accuracy", tags=[]),
-        Spell('Duststorm', 4, 'Creatures in a \\areamed radius within \\rnglong range', """
+        Spell('Duststorm', 4, 'Creatures in a \\arealarge radius within \\rnglong range', """
             Make an attack vs. Reflex against each target.
             \\hit Each target is \\glossterm<dazzled> until the end of the next round.
             \\crit Each target is \\glossterm<dazzled> as a \\glossterm<condition>.
         """, scaling="accuracy", tags=[]),
-        Spell('Blinding Dust Cloud', 7, 'Creatures in a \\areasmall radius within \\rngshort range', """
+        Spell('Blinding Dust Cloud', 7, 'Creatures in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Reflex against each target.
             \\hit Each target is \\glossterm<blinded> until the end of the next round.
             \\crit Each target is \\glossterm<blinded> as a \\glossterm<condition>.

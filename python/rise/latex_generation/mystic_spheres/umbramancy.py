@@ -100,7 +100,7 @@ umbramancy=MysticSphere(
             \\crit The target is \\glossterm<blinded> as a \\glossterm<condition>.
         """, scaling="accuracy", tags=['Sensation', 'Visual']),
         # +1 level for +2a
-        Spell('Dark Shroud', 2, 'Creatures in a \\areasmall radius within \\rngshort range', """
+        Spell('Dark Shroud', 2, 'Creatures in a \\areasmall radius within \\rngmed range', """
             Make an attack vs. Mental against each target.
             You gain a +2 bonus to \\glossterm<accuracy> with the attack against each target that is not in \\glossterm<bright illumination>.
             \\hit Each target takes a -2 penalty to \\glossterm<accuracy> and visual Awareness checks until the end of the next round.
