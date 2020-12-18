@@ -309,6 +309,35 @@ enchantment=MysticSphere(
             \\hit The target takes a -4 penalty to Awareness, Social Insight, and \\glossterm<initiative> checks as a \\glossterm<condition>.
             \\crit As above, except that the penalty increases to -8.
         """, scaling='accuracy', tags=['Subtle']),
+        Spell('Agony', 1, 'One creature within \\rngmed range', """
+            Make an attack vs. Mental against the target.
+            \\hit As a \\glossterm<condition>, the target feels excruciating pain from even minor injuries.
+            As long as it is at less than its maximum \\glossterm<hit points>, it is \\glossterm<nauseated>.
+            \\crit As above, except that the condition must be removed twice before the effect ends.
+        """, scaling='accuracy', tags=['Emotion']),
+        # lasting for one round + granting immunity might make this balanced?
+        # hopefully?
+        Spell('Friend to Foe', 2, 'One creature within \\rngmed range', """
+            Make an attack vs. Mental against the target.
+            \\hit During the next round, the target sees all creatures as its \\glossterm<enemies>.
+            It is compelled to attack the creature closest to it, choosing randomly between equally close creatures.
+            After this effect ends, it becomes immune to this spell until it takes a \\glossterm<short rest>.
+            \\crit As above, except that the effect becomes a \\glossterm<condition> that lasts until it is removed.
+        """, scaling='accuracy', tags=['Compulsion']),
+        Spell('Distraction', 2, 'One creature within \\rngmed range', """
+            Make an attack vs. Mental with a +4 bonus to \\glossterm<accuracy> against the target.
+            \\hit As a \\glossterm<condition>, the target's \\glossterm<focus penalty> is increased by 4.
+            \\crit As above, except that the condition must be removed twice before the effect ends.
+        """, scaling='accuracy', tags=['Emotion']),
+        Spell('Delayed Distraction', 3, 'One creature within \\rngmed range', """
+            Make an attack vs. Mental against the target.
+            \\hit As a \\glossterm<condition>, the target's mind is primed for distration.
+            When it uses a \\glossterm<Focus> ability, the distraction triggers, wrenching the target's attention away.
+            Its \\glossterm<focus penalty> is increased by 4, and it fails to use the ability, wasting its action.
+            After the distraction is triggered this way, the condition ends.
+            \\glance As above, except that the condition is removed at the end of the next round.
+            \\crit As above, except that the condition must be removed twice before the effect ends.
+        """, scaling='accuracy', tags=['Emotion', 'Subtle']),
     ],
     rituals=[
         Spell('Animal Messenger', 2, 'One Small or Tiny animal within \\rngmed range', """

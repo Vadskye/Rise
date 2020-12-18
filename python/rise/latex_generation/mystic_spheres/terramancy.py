@@ -180,6 +180,13 @@ terramancy=MysticSphere(
             \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The target is also immune to \\glossterm<teleport> effects from attacks that are not critical hits.
         """, tags=['Attune (target)']),
+        # +2 levels for fire + bludgeoning, which breaks resistances
+        Spell('Volcano', 5, 'Everything in a \\areasmall radius from a point on solid ground within \\rngmed range', """
+            You create a small volcano that bursts forth, showing nearby creatures in burning shrapnel.
+            Make an attack vs. Reflex against each target.
+            \\hit Each target takes bludgeoning and fire damage equal to 2d10 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
+        """, scaling='damage', tags=['Manifestation']),
     ],
     rituals=[
     ],
