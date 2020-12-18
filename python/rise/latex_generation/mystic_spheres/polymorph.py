@@ -28,7 +28,7 @@ polymorph=MysticSphere(
         Spell('Reforge Armor', 3, 'One suit of body armor', """
             When you cast this spell, you choose one of the following special materials: dragonhide, dragonscale, ironwood, mithral, or starmetal.
             The target changes to be composed of that material, and gains all properties and benefits of that material instead of its original properties.
-            For details about armor special materials, see \\lcaption<Armor Special Materials>.
+            For details about armor special materials, see \\tref<Armor Special Materials>.
 
             You can only change the target into a special material appropriate for its base composition of either leather or metal.
             For example, you cannot create mithral hide armor with this spell.
