@@ -25,6 +25,17 @@ polymorph=MysticSphere(
     ],
     lists=['Arcane', 'Nature', 'Pact'],
     spells=[
+        Spell('Reforge Armor', 3, 'One suit of body armor', """
+            When you cast this spell, you choose one of the following special materials: dragonhide, dragonscale, ironwood, mithral, or starmetal.
+            The target changes to be composed of that material, and gains all properties and benefits of that material instead of its original properties.
+            For details about armor special materials, see \\lcaption<Armor Special Materials>.
+
+            You can only change the target into a special material appropriate for its base composition of either leather or metal.
+            For example, you cannot create mithral hide armor with this spell.
+        """, scaling="""
+            \\rank<5> You can also choose one of the following special materials: adamantine, deepforged, diamondsteel, or elvenweave.
+            \\rank<7> You can also choose one of the following special materials: ancient dragonhide, ancient dragonscale, pure mithral, or pure starmetal.
+        """, tags=['Attune (self)']),
         Spell('Natural Weapon', 1, 'Yourself', """
             You gain your choice of one of the following \\glossterm<natural weapons>: bite, claw, constrict, gore, ram, slam, or talon.
             For details, see \\tref<Natural Weapons>.
@@ -163,6 +174,10 @@ polymorph=MysticSphere(
         """, tags=[]),
     ],
     rituals=[
+        Spell('Create Handholds', 1, 'One inanimate wall up to 50 feet high and 10 feet wide within \\rngmed range', """
+            You shape handholds into the target object, making it easier to climb.
+            This reduces the \\glossterm<difficulty rating> to climb the object by 10.
+        """, tags=['Attune (ritual)'], ritual_time='one minute'),
         Spell('Craft Object', 3, 'Any number of unattended, nonmagical objects within \\rngshort range', """
             You make a Craft check to transform the targets into a new item (or items) made of the same materials.
             You require none of the tools that would normally be necessary, such as an anvil and furnace.

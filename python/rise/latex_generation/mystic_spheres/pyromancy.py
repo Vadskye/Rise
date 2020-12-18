@@ -202,6 +202,7 @@ pyromancy=MysticSphere(
         Spell('Primal Pyrophobia', 5, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
             \\hit The target is \\glossterm<frightened> by you and all other sources of fire as a \\glossterm<condition>.
+            \\glance As above, except that the condition is removed at the end of the next round.
             \\crit The target is \\glossterm<panicked> by you and all other sources of fire as a \\glossterm<condition>.
         """, scaling="accuracy", tags=['Emotion']),
         # Pyromancy gets medium damage / r1 instead of low damage / r2 to
