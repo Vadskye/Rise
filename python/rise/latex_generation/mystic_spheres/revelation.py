@@ -192,6 +192,9 @@ revelation=MysticSphere(
         # spell to cast spells from the eye instead of from your body?
     ],
     rituals=[
+        Spell('Reveal True Form', 3, 'One creature within \\rngshort range', """
+            You can see the target's true form, regardless of any shapechanging or illusion effects.
+        """, tags=['Attune (self)'], ritual_time='one hour'),
         Spell('Augury', 2, None, """
             You receive a limited glimpse into your immediate future.
             When you perform this ritual, you specify a course of action that you could hypothetically take during the next hour.

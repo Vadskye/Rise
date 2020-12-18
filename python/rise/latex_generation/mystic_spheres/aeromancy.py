@@ -211,6 +211,16 @@ aeromancy = MysticSphere(
             \\hit The target takes piercing damage equal to 2d8 plus your \\glossterm<power>.
             \\glance As above, except that that the target takes half damage.
         """, scaling="damage", tags=[]),
+        # +1 level since it's stronger than a typical rank 1 debuff
+        Spell('Downdraft', 3, 'One creature within \\rngmed range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit As a \\glossterm<condition>, air buffets the target downward, pushing it towards the ground with great force.
+            This approximately doubling the gravity it experiences, which imposes a -2 penalty to \\glossterm<accuracy>, physical \\glossterm<checks>, and \\glossterm<defenses>.
+            In addition, most flying creatures are unable to fly under the onslaught of wind and crash to the ground.
+            \\glance As above, except that the condition is removed at the end of the next round.
+            \\crit As above, except that the effective force of gravity is increased by approximately four times instead.
+            This increases the penalties to -4.
+        """, scaling='accuracy', tags=[]),
     ],
     rituals=[
         Spell('Air Bubble', 3, 'One ritual participant', """

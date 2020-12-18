@@ -4,7 +4,7 @@ from rise.latex.effects import Effects
 
 biomancy=MysticSphere(
     name="Biomancy",
-    short_description="Manipulate the biological nature of creatures",
+    short_description="Manipulate the inner biology of creatures",
     cantrips=[
     ],
     lists=['Arcane', 'Nature', 'Pact'],
@@ -105,9 +105,10 @@ biomancy=MysticSphere(
             \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The bonus increases to +20 feet.
         """, tags=['Attune (target)']),
-        Spell('Enhanced Muscles', 2, 'Yourself', """
-            You gain a +2 \\glossterm<magic bonus> to Strength-based checks.
-            In addition, you gain a +2 \\glossterm<magic bonus> to Strength for the purpose of determining your \\glossterm<carrying capacity>.
+        Spell('Biological Enhancement', 2, 'Yourself', """
+            When you cast this spell, choose a physical attribute: Strength, Dexterity, or Constitution.
+            You gain a +2 \\glossterm<magic bonus> to checks using the chosen attribute.
+            In addition, you if you choose Strength, you gain a +2 \\glossterm<magic bonus> to Strength for the purpose of determining your \\glossterm<carrying capacity>.
         """, scaling="""
             \\rank<4> The bonus increases to +3.
             \\rank<6> The bonus increases to +4.
@@ -220,6 +221,19 @@ biomancy=MysticSphere(
             \\glance As above, except that the condition is removed at the end of the next round after its damage is dealt.
             \\crit As above, except that the damage from the condition is doubled.
         """, scaling="damage", tags=[]),
+        Spell('Eyes of Darksight', 2, 'Yourself', """
+            The target gains \\glossterm<darkvision> with a 60 foot radius.
+        """, scaling="""
+            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<6> The radius increases to 120 feet.
+        """, tags=['Attune (target)']),
+        Spell('Draconic Senses', 4, 'Yourself', """
+            You gain \\glossterm<darkvision> with a 60 foot radius, \\glossterm<low-light vision>, and \\glossterm<blindsense> with a 30 foot radius.
+            If you already have darkvision or blindsense, the range of that ability increases by the given amount instead.
+            If you already have low-light vision, you double its effectiveness, allowing you to treat sources of light as if they had four times their normal illumination range.
+        """, scaling="""
+            \\rank<6> The radius of the darkvision increases by 60 feet, and the radius of the blindsense increases by 30 feet.
+        """, tags=['Attune (self)']),
     ],
     rituals=[
         Spell('Awaken', 6, 'One Large or smaller \\glossterm<ally> within \\rngmed range', """
