@@ -225,11 +225,11 @@
                 \tind Sap                          & Light  & \plus2  & 1d6    & Bludgeoning              & 1 gp    & 2 lb.   & Subdual                         \\
 
                 Crossbows                          &        &         &        &                          &         &         &                                 \\
-                \tind Hand crossbow\fn{2}          & Light  & \plus0  & 1d6    & Piercing                 & 100 gp  & 2 lb.   & Projectile (60 ft.)             \\
-                \tind Heavy crossbow\fn{2}         & Heavy  & \plus0  & 1d10   & Piercing                 & 50 gp   & 8 lb.   & Projectile (90 ft.)            \\
-                \tind Light crossbow\fn{2}         & Medium & \plus0  & 1d8    & Piercing                 & 40 gp   & 4 lb.   & Projectile (60 ft.)             \\
-                \tind Crossbow bolts (10)          & \tdash & \plus0  & \tdash & \tdash                   & 1 gp    & 1 lb.   & Ammunition                      \\
-                \tind Blunted crossbow bolts (10)  & \tdash & \minus1 & \tdash & \tdash                   & 5 gp    & 1 lb.   & Ammunition, Subdual             \\
+                \tind Hand crossbow\fn{2}          & Light  & \plus0  & 1d6    & \tdash                 & 100 gp  & 2 lb.   & Projectile (60 ft.)             \\
+                \tind Heavy crossbow\fn{2}         & Heavy  & \plus0  & 1d10   & \tdash                 & 50 gp   & 8 lb.   & Projectile (90 ft.)            \\
+                \tind Light crossbow\fn{2}         & Medium & \plus0  & 1d8    & \tdash                 & 40 gp   & 4 lb.   & Projectile (60 ft.)             \\
+                \tind Crossbow bolts (10)          & \tdash & \plus0  & \tdash & Piercing                   & 1 gp    & 1 lb.   & Ammunition                      \\
+                \tind Blunted crossbow bolts (10)  & \tdash & \minus1 & \tdash & Piercing                   & 5 gp    & 1 lb.   & Ammunition, Subdual             \\
 
                 Flexible weapons                   &        &         &        &                          &         &         &                                 \\
                 \tind Flail                        & Medium & \plus0  & 1d8    & Bludgeoning              & 8 gp    & 5 lb.   & Tripping, Versatile Grip        \\
@@ -270,7 +270,8 @@
                 Simple weapons                     &        &         &        &                          &         &         &                                 \\
                 \tind Club                         & Medium & \plus0  & 1d8    & Bludgeoning              & \tdash  & 3 lb.   & Versatile Grip                  \\
                 \tind Dagger                       & Light  & \plus2  & 1d4    & Piercing or slashing     & 2 gp    & 1 lb.   & Compact, Thrown (10 ft.)        \\
-                \tind Light crossbow\fn{2}         & Medium & \plus0  & 1d8    & Piercing                 & 40 gp   & 4 lb.   & Projectile (60 ft.)             \\
+                \tind Light crossbow\fn{2}         & Medium & \plus0  & 1d8    & \tdash                 & 40 gp   & 4 lb.   & Projectile (60 ft.)             \\
+                \tind Crossbow bolts (10)          & \tdash & \plus0  & \tdash & Piercing                   & 1 gp    & 1 lb.   & Ammunition                      \\
                 \tind Quarterstaff                 & Heavy  & \plus1  & 1d8    & Bludgeoning              & \tdash  & 4 lb.   & Reach                           \\
 
                 Spears                             &        &         &        &                          &         &         &                                 \\
@@ -319,9 +320,9 @@
                 \tind Takedown bow\fn{2}             & Special & \plus0 & 1d8       & \tdash               & 200 gp & 4 lb.  & Projectile (90 ft. or 50 ft.)  \\
                 Club-like weapons                    &         &        &           &                      &        &        &                                 \\
                 Crossbows                            &         &        &           &                      &        &        &                                 \\
-                \tind Repeating heavy crossbow\fn{2} & Heavy   & \plus0 & 1d10      & Piercing             & 400 gp & 12 lb. & Projectile (90 ft.)            \\
-                \tind Repeating light crossbow\fn{2} & Medium  & \plus0 & 1d8       & Piercing             & 250 gp & 6 lb.  & Projectile (60 ft.)             \\
-                \tind Repeating bolts (5)            & \tdash  & \plus0 & 1d8       & \tdash               & 1 gp   & 1 lb.  & Ammunition                      \\
+                \tind Repeating heavy crossbow\fn{2} & Heavy   & \plus0 & 1d10      & \tdash             & 400 gp & 12 lb. & Projectile (90 ft.)            \\
+                \tind Repeating light crossbow\fn{2} & Medium  & \plus0 & 1d8       & \tdash             & 250 gp & 6 lb.  & Projectile (60 ft.)             \\
+                \tind Repeating bolts (5)            & \tdash  & \plus0 & 1d8       & Piercing               & 1 gp   & 1 lb.  & Ammunition                      \\
                 Flexible weapons                     &         &        &           &                      &        &        &                                 \\
                 \tind Three-section staff            & Heavy   & \plus0 & 1d10      & Slashing             & 40 gp  & 6 lb.  & Disarming, Reach, Tripping      \\
                 Headed weapons                       &         &        &           &                      &        &        &                                 \\
@@ -591,23 +592,25 @@
 
         \begin{dtable!*}
             \lcaption{Armor Special Materials}
-            \begin{dtabularx}{\textwidth}{l c c c c c >{\lcol}X c}
-                \tb{Material}     & \tb{Defense} & \tb{Physical Resist} & \tb{Energy Resist} & \tb{Encumbrance} & \tb{Material} & \tb{Cost}              & \tb{Weight} \tableheaderrule
-                \tind Adamantine           & \tdash  & \mult3   & \mult3 & \plus2  & Metal   & \mult10, \plus10,000 gp  & \mult2   \\
-                \tind Adamantine, pure     & \tdash  & \mult5   & \mult5 & \plus3  & Metal   & \mult50, \plus250,000 gp & \mult3   \\
-                \tind Cold iron            & Special & \mult1/2 & \tdash & \tdash  & Metal   & \mult5, \plus2,000 gp    & \tdash   \\
-                \tind Deepforged           & \tdash  & \mult2   & \mult2 & \tdash  & Metal   & \mult10, \plus10,000 gp  & \tdash   \\
-                \tind Dragonhide           & \tdash  & \tdash   & \mult2 & \tdash  & Leather & \mult5, \plus2,000 gp    & \tdash   \\
-                \tind Dragonhide, ancient  & \tdash  & \mult2   & \mult4 & \tdash  & Leather & \mult20, \plus50,000 gp  & \tdash   \\
-                \tind Dragonscale          & \tdash  & \tdash   & \mult2 & \tdash  & Metal   & \mult5, \plus2,000 gp    & \tdash   \\
-                \tind Dragonscale, ancient & \tdash  & \tdash   & \mult4 & \tdash  & Metal   & \mult20, \plus50,000 gp  & \tdash   \\
-                \tind Elvenweave           & \tdash  & \mult2   & \mult2 & \tdash  & Leather & \mult10, \plus10,000 gp  & \tdash   \\
-                \tind Ironwood             & \tdash  & \tdash   & \tdash & \tdash  & Metal   & \mult2, \plus400 gp      & \tdash   \\
-                \tind Mithral              & \tdash  & \tdash   & \tdash & \minus2 & Metal   & \mult5, \plus2,000 gp    & \mult1/2 \\
-                \tind Mithral, pure        & \tdash  & \mult2   & \mult2 & \minus3 & Metal   & \mult20, \plus50,000 gp  & \mult1/2 \\
-                \tind Starmetal            & \tdash  & \mult2   & \tdash & \tdash  & Metal   & \mult5, \plus2,000 gp    & \tdash   \\
-                \tind Starmetal, pure      & \tdash  & \mult4   & \mult2 & \tdash  & Metal   & \mult20, \plus50,000 gp  & \tdash   \\
-            \end{dtabularx}
+\begin{dtabularx}{\textwidth}{l c c c c c >{\lcol}X c}
+    \tb{Material}     & \tb{Defense} & \tb{Physical Resist} & \tb{Energy Resist} & \tb{Encumbrance} & \tb{Material} & \tb{Cost}              & \tb{Weight} \tableheaderrule
+    \tind Adamantine           & \tdash  & \mult3   & \mult3 & \plus2  & Metal   & \mult10, \plus10,000 gp  & \mult2   \\
+    \tind Adamantine, pure     & \tdash  & \mult5   & \mult5 & \plus3  & Metal   & \mult50, \plus250,000 gp & \mult3   \\
+    \tind Cold iron            & Special & \mult1/2 & \tdash & \tdash  & Metal   & \mult5, \plus2,000 gp    & \tdash   \\
+    \tind Diamondsteel         & \tdash  & \tdash   & \mult3 & \tdash  & Metal   & \mult10, \plus10,000 gp  & \tdash   \\
+    \tind Diamondsteel, pure   & \tdash  & \mult2   & \mult5 & \tdash  & Metal   & \mult50, \plus250,000 gp & \tdash   \\
+    \tind Deepforged           & \tdash  & \mult2   & \mult2 & \tdash  & Metal   & \mult10, \plus10,000 gp  & \tdash   \\
+    \tind Dragonhide           & \tdash  & \tdash   & \mult2 & \tdash  & Leather & \mult5, \plus2,000 gp    & \tdash   \\
+    \tind Dragonhide, ancient  & \tdash  & \mult2   & \mult4 & \tdash  & Leather & \mult20, \plus50,000 gp  & \tdash   \\
+    \tind Dragonscale          & \tdash  & \tdash   & \mult2 & \tdash  & Metal   & \mult5, \plus2,000 gp    & \tdash   \\
+    \tind Dragonscale, ancient & \tdash  & \tdash   & \mult4 & \tdash  & Metal   & \mult20, \plus50,000 gp  & \tdash   \\
+    \tind Elvenweave           & \tdash  & \mult2   & \mult2 & \tdash  & Leather & \mult10, \plus10,000 gp  & \tdash   \\
+    \tind Ironwood             & \tdash  & \tdash   & \tdash & \tdash  & Metal   & \mult2, \plus400 gp      & \tdash   \\
+    \tind Mithral              & \tdash  & \tdash   & \tdash & \minus2 & Metal   & \mult5, \plus2,000 gp    & \mult1/2 \\
+    \tind Mithral, pure        & \tdash  & \mult2   & \mult2 & \minus3 & Metal   & \mult20, \plus50,000 gp  & \mult1/2 \\
+    \tind Starmetal            & \tdash  & \mult2   & \tdash & \tdash  & Metal   & \mult5, \plus2,000 gp    & \tdash   \\
+    \tind Starmetal, pure      & \tdash  & \mult4   & \mult2 & \tdash  & Metal   & \mult20, \plus50,000 gp  & \tdash   \\
+\end{dtabularx}
         \end{dtable!*}
 
         \parhead{Adamantine} Adamantine armor weighs twice as much and increases the \glossterm{encumbrance penalty} of the armor by 2, but it triples the \glossterm{resistance} provided by the armor against both \glossterm{physical damage} and \glossterm{energy damage}.
@@ -622,6 +625,13 @@
 
         \parhead{Deepforged} Deepforged body armor doubles the \glossterm{resistance} provided by the armor against both \glossterm{physical damage} and \glossterm{energy damage}.
         It costs ten times as much as armor of that type would normally cost, plus an additional 10,000 gp.
+
+        \parhead{Diamondsteel} Diamondsteel body armor triples the \glossterm{resistance} provided by the armor against \glossterm{energy damage}.
+        It costs ten times as much as armor of that type would normally cost, plus an additional 10,000 gp.
+
+        \parhead{Diamondsteel, Pure} Pure diamondsteel body armor quintuples the \glossterm{resistance} provided by the armor against \glossterm{energy damage}.
+        In addition, it double the \glossterm{resistance} provided by the armor against \glossterm{physical damage}.
+        It costs fifty times as much as armor of that type would normally cost, plus an additional 250,000 gp.
 
         \parhead{Dragonhide} Dragonhide body armor doubles the \glossterm{resistance} provided by the armor against \glossterm{energy damage}.
         It costs five times as much as armor of that type would normally cost, plus an additional 2,000 gp.
