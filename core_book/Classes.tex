@@ -948,10 +948,10 @@ This choice determines a great deal about your character's abilities.
     0 & \tdash & Elemental lore            & Cantrips                        & Natural training            & Shifting defense                                   & Nature's ally           \\
     1 & 1      & Elemental balance         & Spellcasting                    & Combat caster               & Wild aspects                                       & Natural servant         \\
     2 & 4      & Elemental magic           & Spell rank (2)                  & Mystic insight              & Shift body                                         & Animal speech           \\
-    3 & 7      & Elemental influence       & Spell rank (3)                  & Wellspring of power         & Greater shifting defense, glancing natural strikes & Greater nature's ally   \\
+    3 & 7      & Elemental influence       & Spell rank (3)                  & Wellspring of power         & Glancing natural strikes, greater shifting defense & Greater nature's ally   \\
     4 & 10     & Greater elemental balance & Spell rank (4), spell knowledge & Mystic insight              & Wild aspect                                        & Greater natural servant \\
     5 & 13     & Elemental spell           & Spell rank (5)                  & Greater combat caster       & Greater shift body                                 & Plant speech            \\
-    6 & 16     & Elemental control         & Spell rank (6)                  & Mystic insight              & Supreme shifting defense                           & Supreme nature's ally   \\
+    6 & 16     & Elemental control         & Spell rank (6)                  & Mystic insight              & Natural force, supreme shifting defense                           & Supreme nature's ally   \\
     7 & 19     & Supreme elemental balance & Spell rank (7), spell knowledge & Greater wellspring of power & Wild fusion                                        & Supreme natural servant \\
 \end{dtabularx}
     \end{dtable!*}
@@ -1042,6 +1042,7 @@ This choice determines a great deal about your character's abilities.
         % Should this give two spells or another side benefit?
         \cf{Drd}[5]{Elemental Spell} You learn an additional spell from any of the spheres associated with the four elements: \sphere{aeromancy}, \sphere{aquamancy}, \sphere{pyromancy}, or \sphere{terramancy}.
 
+        % This should probably be granted before rank 6
         \cf{Drd}[6]{Elemental Control} When you use your \textit{elemental influence} ability, you can also command the elements to move as you desire.
         Each element has different limitations on its ability to move, as described below.
         \begin{itemize}
@@ -1192,14 +1193,14 @@ This choice determines a great deal about your character's abilities.
 
             \begin{freeability}{Form of the Bull}
                 You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{shove} ability (see \pcref{Shove}, and \pcref{Overrun}).
-                In addition, your head transforms, granting you a ram \glossterm{natural weapon}.
-                The weapon deals 1d8 damage, and has the Forceful weapon tag (see \pcref{Weapon Tags}).
+                In addition, your head transforms, granting you a gore \glossterm{natural weapon}.
+                The weapon deals 1d8 piercing damage, and has the Impact weapon tag (see \pcref{Weapon Tags}).
 
                 \rankline
-                \rank{3} Your penalties to accuracy and defenses from the \textit{charge} ability are reduced by 1.
+                \rank{3} The gore natural weapon also gains the Forceful weapon tag.
                 \rank{5} Your \textit{shove} ability moves the target as a \glossterm{knockback} instead of as a \glossterm{push}.
                 In addition, the accuracy bonus increases to \plus4.
-                \rank{7} Your penalties to accuracy and defenses from the \textit{charge} ability are removed.
+                \rank{7} You can use the \textit{charge} ability without gaining a \glossterm{fatigue point}.
             \end{freeability}
 
             \begin{freeability}{Form of the Constrictor}
@@ -1338,16 +1339,18 @@ This choice determines a great deal about your character's abilities.
             You gain a \plus1 bonus to the base value of that attribute.
         \end{freeability}
 
-        \cf{Drd}[3]{Greater Shifting Defense}
-        The bonus from your \textit{shifting defense} ability increases to \plus2.
-
         \cf{Drd}[3]{Glancing Natural Strikes} Whenever you miss by 2 or less with a \glossterm{strike} using a \glossterm{natural weapon}, the target takes half damage from the strike.
         This is called a \glossterm{glancing blow}.
+
+        \cf{Drd}[3]{Greater Shifting Defense}
+        The bonus from your \textit{shifting defense} ability increases to \plus2.
 
         \cf{Drd}[4]{Wild Aspect}[Magical]
         You learn an additional \textit{wild aspect}.
 
         \cf{Drd}[5]{Greater Shift Body} The bonus from your \textit{shift body} ability increases to \plus2.
+
+        \cf{Drd}[6]{Natural Force} You gain a \plus1d bonus to your damage with natural weapons.
 
         \cf{Drd}[6]{Supreme Shifting Defense}
         The bonus from your \textit{shifting defense} ability increases to \plus4.
