@@ -331,7 +331,7 @@ enchantment=MysticSphere(
         """, scaling='accuracy', tags=['Emotion']),
         Spell('Delayed Distraction', 3, 'One creature within \\rngmed range', """
             Make an attack vs. Mental against the target.
-            \\hit As a \\glossterm<condition>, the target's mind is primed for distration.
+            \\hit As a \\glossterm<condition>, the target's mind is primed for distraction.
             When it uses a \\glossterm<Focus> ability, the distraction triggers, wrenching the target's attention away.
             Its \\glossterm<focus penalty> is increased by 4, and it fails to use the ability, wasting its action.
             After the distraction is triggered this way, the condition ends.
