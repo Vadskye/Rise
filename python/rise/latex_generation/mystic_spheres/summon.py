@@ -22,7 +22,7 @@ summon=MysticSphere(
             \\begin<itemize>
                 \\item Its \\glossterm<hit points> are equal to half the base value for your level (see \\tref<Hit Points>).
                 \\item Each of its \\glossterm<defenses> is equal to 4 \\add your level.
-                \\item Its \\glossterm<accuracy> is equal to your \\glossterm<accuracy> \\sub 2.
+                \\item Its \\glossterm<accuracy> is equal to your level \\add half your base Perception \\add your \\glossterm<magic bonuses> to accuracy \\sub 2.
                 \\item Its \\glossterm<land speed> is 30 feet.
                 \\item It has no \\glossterm<attunement points>.
             \\end<itemize>
