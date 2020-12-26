@@ -24,12 +24,12 @@ photomancy=MysticSphere(
         """, tags=['Sensation', 'Visual']),
         Effects('Illuminate', 'One location within \\rngmed range', """
             A glowing light appears in midair in the target location.
-            It creates \\glossterm<bright illumination> in a radius of your choice, up to a 20 foot radius, and \\glossterm<shadowy illumination> in twice that radius.
+            It creates \\glossterm<bright illumination> in a radius of your choice, up to a 15 foot radius, and \\glossterm<shadowy illumination> in twice that radius.
             This effect lasts until you use it again or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
         """, scaling="""
-            \\rank<2> The maximum radius of bright illumination increases to 50 feet.
-            \\rank<4> The maximum radius of bright illumination increases to 100 feet.
-            \\rank<6> The maximum radius of bright illumination increases to 200 feet.
+            \\rank<2> The maximum radius of bright illumination increases to 30 feet.
+            \\rank<4> The maximum radius of bright illumination increases to 60 feet.
+            \\rank<6> The maximum radius of bright illumination increases to 120 feet.
         """, tags=['Sensation', 'Visual']),
     ],
     lists=['Arcane', 'Divine', 'Nature', 'Pact'],
@@ -80,21 +80,21 @@ photomancy=MysticSphere(
         """, tags=['Sensation', 'Sustain (minor)']),
         Spell('Flash', 2, 'One creature within \\rngmed range', """
             A burst of light flashes in front of a creature's eyes.
-            \\glossterm<Bright illumination> fills a 60 foot radius around a location in the target's space until the end of the next round.
+            \\glossterm<Brilliant illumination> fills a 60 foot radius around a location in the target's space until the end of the next round.
             In addition, make an attack vs. Fortitude against the target.
             \\hit The target is \\glossterm<dazzled> as a \\glossterm<condition>.
             \\crit The target is \\glossterm<blinded> as a \\glossterm<condition>.
         """, scaling="accuracy", tags=['Sensation', 'Visual']),
         Spell('Blinding Flash', 7, 'One creature within \\rngshort range', """
             A burst of light flashes in front of a creature's eyes.
-            \\glossterm<Bright illumination> fills a 60 foot radius around a location in the target's space until the end of the next round.
+            \\glossterm<Brilliant illumination> fills a 60 foot radius around a location in the target's space until the end of the next round.
             In addition, make an attack vs. Fortitude against the target.
             \\hit The target is \\glossterm<blinded> as a \\glossterm<condition>.
             \\crit As above, except that the condition must be removed twice before the effect ends.
         """, tags=['Sensation', 'Visual']),
         Spell('Searing Light', 1, 'One creature within \\rngmed range', """
             A ray of light flashes between you and the target.
-            \\glossterm<Bright illumination> fills a 60 foot radius around the path the ray took until the end of the next round.
+            \\glossterm<Brilliant illumination> fills a 60 foot radius around the path the ray took until the end of the next round.
             % This gives accuracy with lower damage because photomancy isn't narratively a high-damage mystic sphere
             In addition, make an attack vs. Reflex with a +1 bonus to \\glossterm<accuracy> against the target.
             \\hit The target takes energy damage equal to 1d8 plus half your \\glossterm<power>.
@@ -102,7 +102,7 @@ photomancy=MysticSphere(
         # +1 level for sunlight crit, +2 levels for +1a
         Spell('Solar Ray', 4, 'One creature within \\rngmed range', """
             A ray of light flashes between you and the target.
-            \\glossterm<Bright illumination> fills a 120 foot radius around the path the ray took until the end of the next round.
+            \\glossterm<Brilliant illumination> fills a 120 foot radius around the path the ray took until the end of the next round.
             In addition, make an attack vs. Reflex with a +2 bonus to \\glossterm<accuracy> against the target.
             \\hit The target takes energy damage equal to 2d8 plus half your \\glossterm<power>.
             \\glance As above, except that that the target takes half damage.
@@ -110,15 +110,15 @@ photomancy=MysticSphere(
             In addition, the target suffers consequences as if it had been struck by a beam of true sunlight.
         """, scaling="damage", tags=['Sensation', 'Visual']),
         Spell('Lightburst', 1, 'Creatures in the area (see text)', """
-            A burst of bright light fills a \\areasmall radius \\glossterm<zone> within \\rngmed range of you.
-            \\glossterm<Bright illumination> fills a 120 foot radius around the area until the end of the next round.
+            A burst of brilliant light fills a \\areasmall radius \\glossterm<zone> within \\rngmed range of you.
+            \\glossterm<Brilliant illumination> fills a 120 foot radius around the area until the end of the next round.
             In addition, make an attack vs. Fortitude against each target.
             \\hit Each target is \\dazzled until the end of the next round.
             \\crit Each target is \\glossterm<dazzled> as a \\glossterm<condition>.
         """, scaling="accuracy", tags=['Sensation', 'Visual']),
         Spell('Sunburst', 7, 'Creatures in the area (see text)', """
             A burst of sunlight fills a \\areasmall radius \\glossterm<zone> within \\rngmed range of you.
-            \\glossterm<Bright illumination> fills a 120 foot radius around the area until the end of the next round.
+            \\glossterm<Brilliant illumination> fills a 120 foot radius around the area until the end of the next round.
             In addition, make an attack vs. Fortitude against each target creature.
             \\hit Each target is \\glossterm<blinded> until the end of the next round.
             \\crit Each target is \\glossterm<blinded> as a \\glossterm<condition>.
@@ -126,15 +126,15 @@ photomancy=MysticSphere(
         """, tags=['Sensation', 'Visual']),
         # +1 level for five zones instead of one
         Spell('Pillars of Light', 2, 'Creatures in the area (see text)', """
-            A burst of bright light fills up to five \\areatiny radius, 60 ft.\\ high cylinder-shaped \\glossterm<zones> within \\rnglong range of you.
-            \\glossterm<Bright illumination> fills a 120 foot radius around each area until the end of the next round.
+            A burst of brilliant light fills up to five \\areatiny radius, 60 ft.\\ high cylinder-shaped \\glossterm<zones> within \\rnglong range of you.
+            \\glossterm<Brilliant illumination> fills a 120 foot radius around each area until the end of the next round.
             In addition, make an attack vs. Fortitude against each target creature.
             \\hit Each target is \\dazzled until the end of the next round.
             \\crit Each target is \\glossterm<dazzled> as a \\glossterm<condition>.
         """, scaling="accuracy", tags=['Sensation', 'Visual']),
         Spell('Kaleidoscopic Pattern', 4, 'Creatures in the area (see text)', """
             This spell creates a brilliant, rapidly shifting rainbow of lights in a \\areasmall radius within \\rngmed range of you.
-            They fill a 120 foot radius around the area with bright illumination until the end of the next round.
+            They fill a 120 foot radius around the area with \\glossterm<brilliant illumination> until the end of the next round.
             In addition, make an attack vs. Mental against each target.
             \\hit Each target is \\glossterm<stunned> until the end of the next round.
             \\crit Each target is \\glossterm<stunned> as a \\glossterm<condition>.
@@ -213,7 +213,7 @@ photomancy=MysticSphere(
     ],
     rituals=[
         Spell('Continuous Light', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngmed range', """
-            The target glows like a torch, shedding bright illumination in a \\areasmall radius (and shadowy illumination for an additional 20 feet).
+            The target glows like a torch, shedding \\glossterm<bright illumination> in a \\areasmall radius (and shadowy illumination for an additional 20 feet).
         """, tags=['Attune (ritual)', 'Sensation'], ritual_time='one minute'),
         Spell('False Decrepify', 1, 'One Medium or smaller unattended object within \\rngshort range', """
             The target appears old and worn down.
