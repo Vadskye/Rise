@@ -341,6 +341,7 @@ def generate_weapons():
         material_type='Weapon',
         description="""
             This weapon deals \\glossterm<subdual damage>.
+            As a \\glossterm<minor action>, you can toggle this effect on or off, allowing you to deal non-subdual damage with this weapon if you desire.
         """,
         short_description="Deals subdual damage",
     ))
