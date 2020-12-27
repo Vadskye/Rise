@@ -294,7 +294,7 @@ revelation=MysticSphere(
             This ritual functions like the \\ritual<telepathic bond> ritual, except that the effect works at any distance and across planes.
             It gains the \\glossterm<Planar> tag in addition to the tags from the \\ritual<telepathic bond> ritual.
         """, tags=['Attune (ritual; see text)'], ritual_time='one minute'),
-        Spell('Seek Legacy', 3, 'One ritual participant', """
+        Spell('Seek Legacy', 2, 'One ritual participant', """
             The target learns the precise distance and direction to their \\glossterm<legacy item>, if it is on the same plane.
         """, tags=[], ritual_time='24 hours'),
         Spell('Scry Creature', 5, 'One creature on the same plane as you', """
