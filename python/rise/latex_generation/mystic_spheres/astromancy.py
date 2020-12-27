@@ -215,7 +215,7 @@ astromancy=MysticSphere(
     ],
 
     rituals=[
-        Spell('Gate', 8, 'Special', """
+        Spell('Gate', 7, 'Special', """
             Choose a plane that connects to your current plane, and a location within that plane.
             This ritual creates an interdimensional connection between your current plane and the location you choose, allowing travel between those two planes in either direction.
             The gate takes the form of a \\areatiny radius circular disk, oriented a direction you choose (typically vertical).
@@ -239,13 +239,13 @@ astromancy=MysticSphere(
             From the Material Plane, you can only reach the Astral Plane.
         """, tags=[], ritual_time='24 hours'),
         Spell('Astral Projection', 5, 'Up to five Large or smaller ritual participants', """
-            The targets teleport to a random location within the Inner Astral Plane (see \\pcref<The Astral Plane>).
+            The targets teleport to a single random location within the Inner Astral Plane (see \\pcref<The Astral Plane>).
 
             In addition, a localized \\glossterm<planar rift> appears at the destination area on the Astral Plane which leads back to the location where this ritual was performed.
             The rift can only be passed through by the targets of this effect.
             It lasts for one week before disappearing permanently, potentially stranding the targets in the Astral Plane if they have not yet returned.
         """, tags=[], ritual_time='24 hours'),
-        Spell('Homeward Shift', 6, 'Up to five Large or smaller ritual participants', """
+        Spell('Homeward Shift', 5, 'Up to five Large or smaller ritual participants', """
             This ritual can only be performed on the Astral Plane.
             The targets teleport to the last spaces they occupied on their home planes.
         """, tags=[], ritual_time='24 hours'),
@@ -260,7 +260,7 @@ astromancy=MysticSphere(
             If no such area exists, the ritual simply fails.
             % TODO: does this need more clarity about what teleportation works?
         """, tags=[], ritual_time='24 hours'),
-        Spell('Retrieve Legacy', 4, 'One ritual participant', """
+        Spell('Retrieve Legacy', 3, 'One ritual participant', """
             If the target's \\glossterm<legacy item> is on the same plane and \\glossterm<unattended>, it is teleported into the target's hand.
         """, tags=[], ritual_time='24 hours'),
     ],
