@@ -1333,14 +1333,27 @@ def generate_maneuvers():
     ))
 
     maneuvers.append(Maneuver(
-        name='Meteor Smash',
+        name='Momentum Smash',
         target=None,
-        short_description='Make a strike with extra momentum from movement',
+        short_description='Make a strike with extra power from your movement',
         effect_text="""
             Make a melee \\glossterm<strike> using a bludgeoning or piercing weapon.
             If your movement during the \\glossterm<movement phase> consisted entirely of moving at least 20 feet in a straight line towards your target, you gain a +1d bonus to damage with the strike.
         """,
-        rank=3,
+        rank=1,
+        tags=[],
+        lists=['Primal', 'Martial', 'Esoteric', 'Wild'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Meteor Smash',
+        target=None,
+        short_description='Make a strike with extra power from your movement',
+        effect_text="""
+            Make a melee \\glossterm<strike> using a bludgeoning or piercing weapon.
+            If your movement during the \\glossterm<movement phase> consisted entirely of moving at least 20 feet in a straight line towards your target, you gain a +3d bonus to damage with the strike.
+        """,
+        rank=5,
         tags=[],
         lists=['Primal', 'Martial', 'Esoteric', 'Wild'],
     ))
