@@ -178,6 +178,20 @@ revelation=MysticSphere(
             \\rank<5> The range increases to \\rngmed.
             \\rank<7> The range increases to \\rnglong.
         """, tags=['Sustain (minor)', 'Scrying']),
+        Spell('Longshot', 1, 'Yourself', """
+            The target reduces its penalties for \\glossterm<range increments> by 1.
+        """, scaling="""
+            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<5> The penalty reduction increases to 2.
+            \\rank<7> The penalty reduction increases to 3.
+        """, tags=['Attune (target)']),
+        Spell('Enhanced Senses', 1, 'Yourself', """
+            The target gains a +3 \\glossterm<magic bonus> to the Awareness skill.
+        """, scaling="""
+            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<5> The bonus increases to +5.
+            \\rank<7> The bonus increases to +7.
+        """, tags=['Attune (target)']),
         Spell('Sensory Chain', 4, 'One creature within \\rngmed range (see text)', """
             Make an attack vs. Mental against the target.
             Whenever you attack a creature with this spell, any additional attacks from this spell automatically fail until the spell ends.
