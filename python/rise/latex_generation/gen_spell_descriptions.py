@@ -5,7 +5,6 @@ from rise.latex_generation.mystic_spheres.aeromancy import aeromancy
 from rise.latex_generation.mystic_spheres.aquamancy import aquamancy
 from rise.latex_generation.mystic_spheres.astromancy import astromancy
 from rise.latex_generation.mystic_spheres.barrier import barrier
-from rise.latex_generation.mystic_spheres.biomancy import biomancy
 from rise.latex_generation.mystic_spheres.bless import bless
 from rise.latex_generation.mystic_spheres.channel_divinity import channel_divinity
 from rise.latex_generation.mystic_spheres.chronomancy import chronomancy
@@ -21,6 +20,7 @@ from rise.latex_generation.mystic_spheres.summon import summon
 from rise.latex_generation.mystic_spheres.telekinesis import telekinesis
 from rise.latex_generation.mystic_spheres.terramancy import terramancy
 from rise.latex_generation.mystic_spheres.thaumaturgy import thaumaturgy
+from rise.latex_generation.mystic_spheres.toxicology import toxicology
 from rise.latex_generation.mystic_spheres.umbramancy import umbramancy
 from rise.latex_generation.mystic_spheres.verdamancy import verdamancy
 from rise.latex_generation.mystic_spheres.vivimancy import vivimancy
@@ -43,7 +43,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(astromancy)
     mystic_spheres.append(barrier)
     mystic_spheres.append(bless)
-    mystic_spheres.append(biomancy)
     mystic_spheres.append(channel_divinity)
     mystic_spheres.append(chronomancy)
     mystic_spheres.append(cryomancy)
@@ -58,6 +57,7 @@ def generate_mystic_spheres():
     mystic_spheres.append(telekinesis)
     mystic_spheres.append(terramancy)
     mystic_spheres.append(thaumaturgy)
+    mystic_spheres.append(toxicology)
     mystic_spheres.append(umbramancy)
     mystic_spheres.append(verdamancy)
     mystic_spheres.append(vivimancy)
