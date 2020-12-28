@@ -110,7 +110,7 @@ def generate_armor():
             level=5,
             material_type='Shield',
             description="""
-                When a creature within a \\areamed radius emanation from you would be attacked by a ranged weapon, the attack is redirected to target you instead.
+                When an \\glossterm<ally> within a \\areasmall radius emanation from you would be attacked by a ranged weapon, the attack is redirected to target you instead.
                 Resolve the attack as if it had initially targeted you, except that the attack is not affected by cover or concealment.
                 This item can only affect projectiles and thrown objects that are Small or smaller.
             """,
@@ -121,10 +121,9 @@ def generate_armor():
             level=11,
             material_type='Shield',
             description="""
-                This item functions like the \\mitem<shield of arrow catching> item, except that it affects a \\areahuge radius from you.
-                In addition, the item only redirects projectiles away from \\glossterm<allies> within the area, not all creatures.
+                This item functions like the \\mitem<shield of arrow catching> item, except that it affects a \\arealarge radius from you.
             """,
-            short_description="Selectively redirects small projectiles to hit you",
+            short_description="Redirects small projectiles to hit you",
         ),
         MagicItem(
             name='Shield of Boulder Catching',
