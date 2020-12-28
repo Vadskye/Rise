@@ -172,6 +172,23 @@ vivimancy=MysticSphere(
             Make an attack vs. Reflex against each creature within a \\areasmall radius from it.
             \\hit Each target takes bludgeoning damage equal to 1d10 plus half your \\glossterm<power>.
         """, scaling="damage", tags=[]),
+        Spell('Withering', 2, 'One living creature within \\rngmed range', """
+            Make an attack vs. Fortitude with a +2 bonus to \\glossterm<accuracy> against the target.
+            \\hit As a \\glossterm<condition>, the target's body withers.
+            It takes a -2 penalty to Fortitude defense.
+            Whenever it loses one or more \\glossterm<hit points> from a single attack, this penalty increases by 1.
+            This penalty increase stacks, and persists even if the target regains the lost hit points.
+            \\crit As above, except that the penalty starts at -5.
+        """, scaling="accuracy", tags=[]),
+        Spell('Withering Curse', 3, 'One living creature within \\rngmed range', """
+            Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against the target.
+            \\hit The target becomes more vulnerable to injury until it takes a short rest.
+            It takes a -2 penalty to Fortitude defense.
+            Whenever it loses one or more \\glossterm<hit points> from a single attack, this penalty increases by 1.
+            This penalty increase stacks, and persists even if the target regains the lost hit points.
+            \\glance As above, except that the condition is removed at the end of the next round.
+            \\crit As above, except that the effect lasts until this curse is removed.
+        """, scaling="accuracy", tags=['Curse']),
     ],
     rituals=[
         Spell('Remove Disease', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """

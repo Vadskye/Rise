@@ -172,6 +172,133 @@ polymorph=MysticSphere(
             \\glance As above, except that that the target takes half damage.
             \\crit As above, except that the condition must be removed twice before the effect ends.
         """, tags=[]),
+        Spell('Brief Regeneration', 2, 'Yourself or one living \\glossterm<ally> within \\rngshort range', """
+            The target regains \\glossterm<hit points> equal to 1d6 plus half your \\glossterm<power>.
+        """, scaling="""
+            The healing increases by +1d for each rank beyond 2.
+        """, tags=[]),
+        Spell('Vital Regeneration', 5, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            You can cast this spell as a \\glossterm<minor action>.
+
+            A the end of each round, the target can remove one of its \\glossterm<vital wounds>.
+            If it does, it gains two \\glossterm<fatigue points>.
+        """, scaling="""
+            \\rank<7> The target can remove two \\glossterm<vital wounds> instead of one.
+            It gains two \\glossterm<fatigue points> per vital wound removed this way.
+        """, tags=['Attune (target)']),
+        Spell('Regeneration', 4, 'Yourself', """
+            You can cast this spell as a \\glossterm<minor action>.
+
+            At the end of each round, if you did not lose any \\glossterm<hit points> that round, you regain 1d10 \\glossterm<hit points>.
+        """, scaling="""
+            The healing increases by +1d for each rank beyond 4.
+        """, tags=['Attune (self)']),
+        Spell('Physical Enhancement', 2, 'Yourself', """
+            When you cast this spell, choose a physical attribute: Strength, Dexterity, or Constitution.
+            You gain a +2 \\glossterm<magic bonus> to checks using the chosen attribute.
+            In addition, you if you choose Strength, you gain a +2 \\glossterm<magic bonus> to Strength for the purpose of determining your \\glossterm<carrying capacity>.
+        """, scaling="""
+            \\rank<4> The bonus increases to +3.
+            \\rank<6> The bonus increases to +4.
+        """, tags=['Attune (self)']),
+        Spell('Scent', 3, 'Yourself', """
+            You can cast this spell as a \\glossterm<minor action>.
+
+            You gain the \\glossterm<scent> ability, giving you a +10 bonus to scent-based Awareness checks (see \\pcref<Senses>).
+        """, scaling="""
+            \\rank<5> The bonus increases to +15.
+            \\rank<7> The bonus increases to +20.
+        """, tags=['Attune (self)']),
+        Spell('Eyebite', 4, 'One living creature within \\rngmed range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit The target takes 2d6 physical damage.
+            If it loses \\glossterm<hit points> from this damage, it is \\glossterm<blinded> as a \\glossterm<condition>.
+            \\glance As above, except that that the target takes half damage.
+        """, scaling="damage", tags=[]),
+        Spell('Organ Failure', 1, 'One living creature within \\rngmed range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit The target takes 1d6 physical damage.
+            If it loses \\glossterm<hit points> from this damage, it is \\glossterm<nauseated> as a \\glossterm<condition>.
+        """, scaling="damage", tags=[]),
+        Spell('Cripple', 7, 'One living creature within \\rngshort range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit The target is \\glossterm<immobilized> as a \\glossterm<condition>.
+            \\glance As above, except that the condition is removed at the end of the next round.
+            \\crit The target is \\glossterm<paralyzed> as a \\glossterm<condition>.
+        """, tags=[]),
+        Spell('Bleed', 2, 'One living creature within \\rngmed range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit The target begins bleeding as a \\glossterm<condition>.
+            At the end of each round, it takes 1d8 physical damage.
+            If the the target gains a \\glossterm<vital wound> from this damage, the condition ends.
+
+            This condition can be removed with the \\textit<treat condition> ability from the Medicine skill (see \\pcref<Medicine>).
+            The \\glossterm<difficulty rating> of the check is equal to 10.
+            \\crit As above, except that the damage from the condition is doubled.
+        """, scaling="damage", tags=[]),
+        Spell('Blood Fountain', 5, 'One living creature within \\rngmed range', """
+            Make an attack vs. Fortitude against the target.
+            \\hit The target begins bleeding as a \\glossterm<condition>.
+            At the end of each round, it takes 2d8 physical damage.
+            If the the target gains a \\glossterm<vital wound> from this damage, the condition ends.
+
+            This condition can be removed with the \\textit<treat condition> ability from the Medicine skill (see \\pcref<Medicine>).
+            The \\glossterm<difficulty rating> of the check is equal to 20.
+            \\glance As above, except that the condition is removed at the end of the next round after its damage is dealt.
+            \\crit As above, except that the damage from the condition is doubled.
+        """, scaling="damage", tags=[]),
+        Spell('Eyes of Darksight', 2, 'Yourself', """
+            The target gains \\glossterm<darkvision> with a 60 foot radius.
+        """, scaling="""
+            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<6> The radius increases to 120 feet.
+        """, tags=['Attune (target)']),
+        Spell('Draconic Senses', 4, 'Yourself', """
+            You gain \\glossterm<darkvision> with a 60 foot radius, \\glossterm<low-light vision>, and \\glossterm<blindsense> with a 30 foot radius.
+            If you already have darkvision or blindsense, the range of that ability increases by the given amount instead.
+            If you already have low-light vision, you double its effectiveness, allowing you to treat sources of light as if they had four times their normal illumination range.
+        """, scaling="""
+            \\rank<6> The radius of the darkvision increases by 60 feet, and the radius of the blindsense increases by 30 feet.
+        """, tags=['Attune (self)']),
+        Spell('Swimmer', 2, 'Yourself', """
+            You can cast this spell as a \\glossterm<minor action>.
+
+            The target gains a \\glossterm<swim speed> equal to its \\glossterm<base speed>.
+            In addition, it gains a +2 \\glossterm<magic bonus> to Swim checks.
+        """, scaling="""
+            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<6> The bonus increases to +4.
+        """, tags=['Attune (target)']),
+        Spell('Climber', 2, 'Yourself', """
+            You can cast this spell as a \\glossterm<minor action>.
+
+            The target gains a \\glossterm<climb speed> equal to its \\glossterm<base speed>.
+            In addition, it gains a +2 \\glossterm<magic bonus> to Climb checks.
+        """, scaling="""
+            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<6> The bonus increases to +4.
+        """, tags=['Attune (target)']),
+        Spell('Runner', 2, 'Yourself', """
+            You can cast this spell as a \\glossterm<minor action>.
+
+            The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<land speed>.
+        """, scaling="""
+            \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<6> The bonus increases to +20 feet.
+        """, tags=['Attune (target)']),
+        # +1 level for damage -> attuned std action
+        # +1 level over other dragon breaths for damage choice, including both
+        # physical and energy
+        Spell('Dragon Breath', 4, 'Yourself (see text)', """
+            You can cast this spell as a \\glossterm<minor action>.
+
+            You gain the ability to breath energy like a dragon.
+            When you cast this spell, choose a type of damage: acid, cold, electricity, or fire.
+            As a standard action, you can breath a cone of that type of energy.
+            When you do, make an attack vs. Reflex against everything within a \\areamed cone from you.
+            \\hit Each target takes damage of the chosen type equal to 2d8 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
+        """, scaling="damage", tags=['Attune (self)']),
     ],
     rituals=[
         Spell('Create Handholds', 1, 'One inanimate wall up to 50 feet high and 10 feet wide within \\rngmed range', """
@@ -237,6 +364,22 @@ polymorph=MysticSphere(
             Spoiled, rotten, poisonous, or otherwise contaminated food and water becomes pure and suitable for eating and drinking.
             This does not prevent subsequent natural decay or spoiling.
         """, tags=[], ritual_time='one hour'),
+        Spell('Awaken', 6, 'One Large or smaller \\glossterm<ally> within \\rngmed range', """
+            The target becomes sentient.
+            Its Intelligence becomes 1d6 - 5.
+            Its type changes from animal to magical beast.
+            It gains the ability to speak and understand one language that you know of your choice.
+            Its maximum age increases to that of a human (rolled secretly).
+            This effect is permanent.
+
+            You can only learn this ritual if you have access to this mystic sphere through the nature \\glossterm<magic source>.
+        """, tags=[], ritual_time='24 hours'),
+        Spell('Air Breathing', 3, 'One Medium or smaller ritual participant', """
+            The target can breathe air as easily as a human breathes air, preventing it from suffocating above water if it can normally only breathe water or some other substance.
+        """, tags=['Attune (ritual)'], ritual_time='one minute'),
+        Spell('Water Breathing', 3, 'One Medium or smaller ritual participant', """
+            The target can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
+        """, tags=['Attune (ritual)'], ritual_time='one minute'),
     ],
     category='damage',
 )
