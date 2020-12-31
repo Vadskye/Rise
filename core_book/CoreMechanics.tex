@@ -1727,10 +1727,12 @@ It defines how attributes work and explains how to make attacks in combat.
         \subsubsection{Being In A Grapple}
             While grappling, you suffer certain penalties and restrictions, as described below. Other than these restrictions, you can act normally. You can also take certain actions in a grapple, as described in \pcref{Grapple Actions}
             \begin{itemize}
-                \item You must use a free hand (or equivalent limbs) to grapple, preventing you from taking any actions which would require having two free hands.
+                \item You must use a free hand (or equivalent limb) to grapple, preventing you from taking any actions which would require having two free hands.
                     If you cannot free a hand, you suffer a \minus10 penalty to accuracy with all \glossterm{mundane} attacks and grapple actions until you have a free hand.
+                \item You are \defenseless against creatures who are not grappled by you.
+                \item The creature you are grappling with provides \glossterm{cover} for you against non-\glossterm{melee} attacks (see \pcref{Cover}).
                 \item You take a \minus4 penalty to accuracy with weapons that are not \glossterm{light weapons}, since they are too large and cumbersome to be used effectively in a grapple.
-                \item Spellcasting is extremely difficult. You cannot cast \glossterm{spells} or perform \glossterm{rituals} with \glossterm{somatic components}.
+                \item You cannot use abilities that have \glossterm{somatic components}, such as spells or rituals.
                 \item You cannot normally move from your location (but see the \textit{move grapple} ability, below).
             \end{itemize}
 
@@ -1758,9 +1760,10 @@ It defines how attributes work and explains how to make attacks in combat.
 
             \begin{freeability}{Escape Grapple}
                 Make an attack vs. Reflex against every creature that you are grappled by.
+                You may use the Flexibility skill in place of your normal \glossterm{accuracy} with this attack (see \pcref{Flexibility}).
 
                 % TODO: awkward wording
-                \hit You are not grappled by each target, and each target is not grappled by you.
+                \hit You stop being grappled by each target, and each target stops being grappled by you.
             \end{freeability}
 
             \parhead{Move Grapple} As a \glossterm{move action}, you can use the \textit{move grapple} ability to move yourself and all creatures you are grappling with.
@@ -1770,7 +1773,7 @@ It defines how attributes work and explains how to make attacks in combat.
                 If a target also uses this ability to affect you during the same phase, you compare your attack result against its attack result instead of against its Fortitude defense.
 
                 % how to word ``hit or beat''?
-                If you hit every target or beat every target's attack result, you can move yourself and all other creatures grappled by you a distance up to half your speed.
+                If you hit every defense and beat every attack result, you can move yourself and all other creatures grappled by you a distance up to half your speed.
             \end{freeability}
 
             \parhead{Pin}\label{Pin} As a standard action, you can use the \textit{pin} ability to further restrict the actions of a creature you are grappling with.
