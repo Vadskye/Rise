@@ -91,7 +91,7 @@ telekinesis=MysticSphere(
             % This is +1d over the normal damage to help split the difference since the effect isn't consistently t2 worthy.
             % Making this spell 2nd level also helps with the Dimensional Jaunt -- Plane of Air mirroring.
             \\hit The target takes 1d10 bludgeoning damage.
-            If it loses \\glossterm<hit points> from this damage, you \\glossterm<knockback> it up to 50 feet in any direction (see \\pcref<Knockback Effects>).
+            If it loses \\glossterm<hit points> from this damage, you \\glossterm<push> it up to 50 feet in any direction (see \\pcref<Push Effects>).
             Moving the target upwards costs twice the normal movement cost.
         """, scaling="damage", tags=[]),
         Spell('Telekinetic Lift', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngmed range', """
