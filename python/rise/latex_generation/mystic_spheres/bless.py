@@ -9,13 +9,28 @@ bless=MysticSphere(
     name='Bless',
     short_description="Grant divine blessings to aid allies and improve combat prowess",
     cantrips=[
+        Effects('Boon of Competence', 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            The target gains a +1 bonus to \\glossterm<accuracy> and \\glossterm<checks> during the next round.
+        """, scaling="""
+            \\rank<2> The bonus increases to +2.
+            \\rank<4> The bonus increases to +3.
+            \\rank<6> The bonus increases to +4.
+        """, tags=[]),
+        Effects('Boon of Protection', 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            The target gains a +1 bonus to \\glossterm<defenses> during the next round.
+        """, scaling="""
+            \\rank<2> The bonus increases to +2.
+            \\rank<4> The bonus increases to +3.
+            \\rank<6> The bonus increases to +4.
+        """, tags=[]),
     ],
     lists=['Divine'],
     spells=[
-        Spell('Blessing of Freedom', 5, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            The target is immune to being \\glossterm<slowed>, \\glossterm<decelerated>, and \\glossterm<immobilized>.
+        Spell('Blessing of Freedom', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            The target is immune to being \\glossterm<slowed>, \\glossterm<decelerated>, \\glossterm<immobilized>, and \\glossterm<paralyzed>.
         """, scaling="""
-            \\rank<7> The target is also immune to being \\glossterm<paralyzed>.
+            \\rank<5> The target also gains a +4 bonus to the \\textit<escape grapple> ability (see \\pcref<Grapple Actions>).
+            \\rank<7> The bonus increases to +8.
         """, tags=['Attune (target)']),
         Spell('Blessing of Swiftness', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             You can cast this spell as a \\glossterm<minor action>.

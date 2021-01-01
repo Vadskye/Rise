@@ -19,6 +19,17 @@ cryomancy=MysticSphere(
             \\rank<4> The damage increases to 10.
             \\rank<6> The damage increases to 20.
         """, tags=[]),
+        Effects('Chill Air', None, """
+            The temperatuture of the air within a \\areamed radius \\glossterm<emanation> from you is reduced by an amount of your choice, to a maximum reduction of 20 degrees Fahrenheit.
+            You cannot reduce the temperature below 0 degrees in this way.
+            This typically imposes no direct penalties on other creatures, but it may make them more or less comfortable depending on their preferred temperature.
+
+            This ability lasts until you use it again or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
+        """, scaling="""
+            \\rank<2> The area increases to a \\arealarge radius \\glossterm<emanation>, and the maximum temperature reduction increases to 30 degrees.
+            \\rank<4> The area increases to a \\areahuge radius \\glossterm<emanation>, and the maximum temperature reduction increases to 40 degrees.
+            \\rank<6> The area increases to a \\areagarg radius \\glossterm<emanation>, and the maximum temperature reduction increases to 50 degrees.
+        """, tags=[]),
     ],
     lists=['Arcane', 'Nature', 'Pact'],
     spells=[
@@ -108,14 +119,14 @@ cryomancy=MysticSphere(
             \\rank<7> Your ice trail lasts until the end of the next round after your movement.
         """, tags=['Attune (self)', 'Manifestation']),
         Spell('Icy Shell', 2, 'Yourself', """
-            You cover your body with four overlapping layers of ice that crumple when they take damage.
+            You cover your body with three overlapping layers of ice that crumple when they take damage.
             The ice does not cover your joints, allowing you to move freely.
             You are \\glossterm<impervious> to \\glossterm<physical damage> and \\glossterm<fire damage>.
             Whenever you take physical damage or fire damage, one layer of ice is destroyed.
             When the last layer of ice is destroyed, this ability provides no further benefit.
         """, scaling="""
-            \\rank<4> The spell creates six layers of ice.
-            \\rank<6> The spell creates eight layers of ice.
+            \\rank<4> The spell creates four layers of ice.
+            \\rank<6> The spell creates five layers of ice.
         """, tags=['Attune (self)', 'Manifestation']),
         Spell('Frostbite', 3, 'One creature or object within \\rngshort range', """
             Make an attack vs. Fortitude against the target.

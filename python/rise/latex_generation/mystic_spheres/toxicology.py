@@ -6,6 +6,20 @@ toxicology=MysticSphere(
     name="Toxicology",
     short_description="Create and manipulate poisons and acids",
     cantrips=[
+        Effects('Intensify Poison', 'One living creature within \\rngmed range', """
+            Make an attack vs. Fortitude with a +4 bonus to \\glossterm<accuracy> against the target.
+            If the target is not currently poisoned, this ability has no effect.
+            \\hit Choose a poison affecting the target.
+            The poison progresses by one stage against the target, which can have varying effects depending on the poison (see \\pcref<Poison>).
+            \\crit As above, except that the poison progresses by two stages instead of one.
+        """, scaling="accuracy", tags=[]),
+        Effects('Neutralize Poison', 'Yourself or one target within \\rngmed range', """
+            The target gains an additional success to resist a poison currently affecting it (see \\pcref<Poison>).
+        """, scaling="""
+            \\rank<3> The number of additional successes increases to two.
+            \\rank<5> The number of additional successes increases to three, which is enough to remove most poisons immediately.
+            \\rank<7> The target can also gain the same number of successes to remove an additional poison affecting it.
+        """, tags=[]),
     ],
     lists=['Arcane', 'Nature', 'Pact'],
     spells=[
@@ -29,13 +43,6 @@ toxicology=MysticSphere(
         """, scaling="""
             The hit point loss from the poison increases by +1d for each rank beyond 3.
         """, tags=['Manifestation']),
-        Spell('Neutralize Poison', 1, 'Yourself or one target within \\rngmed range', """
-            The target gains an additional success to resist a poison currently affecting it (see \\pcref<Poison>).
-        """, scaling="""
-            \\rank<3> The number of additional successes increases to two.
-            \\rank<5> The number of additional successes increases to three, which is enough to remove most poisons immediately.
-            \\rank<7> The target can also gain the same number of successes to remove an additional poison affecting it.
-        """, tags=[]),
         Spell('Poison Transferance', 3, ['Yourself or an \\glossterm<ally> within \\rngmed range', 'One other living creature within that range'], """
             The primary target must be currently affected by a poison.
             Make an attack vs. Fortitude against the secondary target.
@@ -51,13 +58,6 @@ toxicology=MysticSphere(
         """, scaling="""
             \\rank<6> You can cast this spell as a \\glossterm<minor action>.
         """, tags=['Attune (self)']),
-        Spell('Intensify Poison', 1, 'One living creature within \\rngmed range', """
-            Make an attack vs. Fortitude with a +4 bonus to \\glossterm<accuracy> against the target.
-            If the target is not currently poisoned, this ability has no effect.
-            \\hit Choose a poison affecting the target.
-            The poison progresses by two stages against the target, which can have varying effects depending on the poison (see \\pcref<Poison>).
-            \\crit As above, except that the poison progresses by four stages instead of two.
-        """, scaling="accuracy", tags=[]),
         Spell('Acidic Blood', 3, ['Yourself', 'Everything adjacent to you'], """
             Your blood becomes acidic.
             This does not harm you, but your blood can be dangerous to anything nearby when you bleed.

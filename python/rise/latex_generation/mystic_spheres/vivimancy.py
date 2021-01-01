@@ -11,12 +11,19 @@ vivimancy=MysticSphere(
     name="Vivimancy",
     short_description="Manipulate life energy to aid allies or harm foes",
     cantrips=[
-        Effects('Ablate Vital Wound', 'Yourself or a living \\glossterm<ally> within \\glossterm<reach>', """
+        Effects('Ablate Vital Wound', 'Yourself or a living \\glossterm<ally> within your \\glossterm<reach>', """
             If the target has a \\glossterm<vital wound> with a \\glossterm<vital roll> of 0, it treats that \\glossterm<vital roll> as a 1, preventing it from dying (see \\pcref<Vital Wounds>).
         """, scaling="""
             \\rank<2> The range increases to \\rngshort range.
             \\rank<4> The minimum \\glossterm<vital roll> you can mitigate decreases to -1.
             \\rank<6> The minimum \\glossterm<vital roll> you can mitigate decreases to -2.
+        """, tags=[]),
+        Effects('Minor Life Infusion', 'Yourself or a living \\glossterm<ally> within \\rngmed range', """
+            The target regains one \\glossterm<hit point>.
+        """, scaling="""
+            \\rank<3> The healing increases to two \\glossterm<hit points>.
+            \\rank<5> The healing increases to four \\glossterm<hit points>.
+            \\rank<7> The healing increases to eight \\glossterm<hit points>.
         """, tags=[]),
     ],
     lists=['Arcane', 'Divine', 'Pact'],

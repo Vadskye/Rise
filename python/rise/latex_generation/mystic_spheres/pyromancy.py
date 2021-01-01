@@ -42,6 +42,17 @@ pyromancy=MysticSphere(
             \\rank<4> The damage increases to 10.
             \\rank<6> The damage increases to 20.
         """, tags=[]),
+        Effects('Heat Air', None, """
+            The temperatuture of the air within a \\areamed radius \\glossterm<emanation> from you is increased by an amount of your choice, to a maximum increase of 20 degrees Fahrenheit.
+            You cannot increase the temperature above 100 degrees in this way.
+            This typically imposes no direct penalties on other creatures, but it may make them more or less comfortable depending on their preferred temperature.
+
+            This ability lasts until you use it again or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
+        """, scaling="""
+            \\rank<2> The area increases to a \\arealarge radius \\glossterm<emanation>, and the maximum temperature increase increases to 30 degrees.
+            \\rank<4> The area increases to a \\areahuge radius \\glossterm<emanation>, and the maximum temperature increase increases to 40 degrees.
+            \\rank<6> The area increases to a \\areagarg radius \\glossterm<emanation>, and the maximum temperature increase increases to 50 degrees.
+        """, tags=[]),
     ],
     lists=['Arcane', 'Nature', 'Pact'],
     spells=[

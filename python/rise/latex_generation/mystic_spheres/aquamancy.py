@@ -19,6 +19,18 @@ aquamancy=MysticSphere(
             \\rank<4> The volume created increases to ten gallons.
             \\rank<6> The volume created increases to twenty gallons.
         """, tags=['Creation']),
+        Effects('Manipulate Water', None, """
+            You can manipulate water within \\rngshort range of you.
+            This allows you to increase or decrease the speed it travels by up to 5 miles per hour in any contiguous area within that range.
+            If you decrease the water's speed to 0, you can increase it again with the remainder of your speed change and choose any direction for it to travel.
+
+            In addition to allowing you to change the direction of currents within large bodies of water, you can also use this to propel water across surfaces.
+            Generally, moving water uphill requires at least 5 miles per hour of speed for every foot of elevation that you are trying to climb, which can limit your ability to move water up large distances.
+        """, scaling="""
+            \\rank<2> The range increases to \\rngmed, and the maximum speed change increases to 10 miles per hour.
+            \\rank<4> The range increases to \\rnglong, and the maximum speed change increases to 20 miles per hour.
+            \\rank<6> The range increases to \\rngdist, and the maximum speed change increases to 40 miles per hour.
+        """, tags=['Sustain (minor)']),
         Effects('Purify Water', 'Up to five gallons of water within \\rngshort range', """
             You can separate out dirt, sand, and minor pollutants from the target water, moving the waste material to the edge of the water so falls out or can be easily removed.
             This does not remove poisons, magical effects, or contaminants heavier than half a pound.

@@ -17,14 +17,15 @@ aeromancy = MysticSphere(
             \\rank<4> The bonus increases to +8.
             \\rank<6> The bonus increases to +10.
         """, tags=[]),
-        Effects('Breeze', 'Everything in a \\areamed radius \\glossterm<emanation> from you', """
-            You can increase or decrease the wind speed by up to 10 miles per hour in the area.
+        Effects('Manipulate Air', None, """
+            You can manipulate air within \\rngshort range of you.
+            This allows you to increase or decrease the air speed by up to 10 miles per hour in any contiguous area within that range.
             If you decrease the wind's speed to 0, you can increase it again with the remainder of your speed change and choose any direction for it to travel.
         """, scaling="""
-            \\rank<2> The area increases to a \\arealarge radius \\glossterm<emanation>.
-            \\rank<4> You can change the wind speed by up to 20 miles per hour.
-            \\rank<6> The area increases to an \\areahuge radius \\glossterm<emanation>.
-        """, tags=['Sustain (free)']),
+            \\rank<2> The range increases to \\rngmed, and the maximum speed change increases to 20 miles per hour.
+            \\rank<4> The range increases to \\rnglong, and the maximum speed change increases to 40 miles per hour.
+            \\rank<6> The range increases to \\rngdist, and the maximum speed change increases to 80 miles per hour.
+        """, tags=['Sustain (minor)']),
         Effects('Soften Landing', 'Yourself or an \\glossterm<ally> within \\rnglong range', """
             Until the end of the round, the target treats all falls as if they were 20 feet shorter for the purpose of determining \\glossterm<falling damage>.
         """, scaling="""

@@ -16,7 +16,19 @@ from rise.latex.effects import Effects
 terramancy=MysticSphere(
     name="Terramancy",
     short_description="Manipulate earth to crush foes",
-    cantrips=[],
+    cantrips=[
+        Effects('Shape Earth', 'One unattended, nonmagical body of earth or unworked stone you touch', """
+            You make a Craft check to alter the target (see \\pcref<Craft>), except that you do not need any special tools to make the check (such as a shovel or hammer and chisel).
+            The maximum \\glossterm<resistance> of a material you can affect with this ability is equal to your \\glossterm<power>.
+
+            % should be longer than polymorph's alter object ability
+            Each time you cast this spell, you can accomplish work that would take up to five rounds with a normal Craft check.
+        """, scaling="""
+            \\rank<2> The amount of work you accomplish with the spell increases to one minute.
+            \\rank<4> The amount of work you accomplish with the spell increases to two minutes.
+            \\rank<6> The amount of work you accomplish with the spell increases to five minutes.
+        """, tags=[]),
+    ],
     lists=['Arcane', 'Nature'],
     spells=[
         Spell('Rock Throw', 1, 'One creature or object within \\rngmed range', """

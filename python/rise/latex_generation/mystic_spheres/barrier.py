@@ -24,8 +24,8 @@ barrier=MysticSphere(
             This cantrip functions like the \\spell<mystic barrier> spell, except that its \\glossterm<range> is \\rngshort and the maximum dimensions of the barrier are a 5 ft.\\ by 5 ft.\\ square.
         """, scaling="""
             \\rank<2> The range increases to \\rngmed.
-            \\rank<4> The maximum dimensions of the wall increase to a 5 ft.\\ by 10 ft.\\ rectangle.
-            \\rank<6> The maximum dimensions of the wall increase to a 10 ft.\\ by 10 ft.\\ square.
+            \\rank<4> The maximum dimensions of the wall increase to a 5 ft.\\ by 10 ft.\\ rectangle, and the hit points of each square increase to 8.
+            \\rank<6> The maximum dimensions of the wall increase to a 10 ft.\\ by 10 ft.\\ square, and the hit points of each square increase to 16.
         """, tags=['Manifestation', 'Sustain (minor)']),
     ],
     lists=['Arcane', 'Divine', 'Nature'],

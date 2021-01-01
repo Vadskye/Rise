@@ -12,15 +12,29 @@ telekinesis=MysticSphere(
     short_description="Manipulate kinetic energy at a distance",
     cantrips=[
         Effects('Distant Hand', 'Medium or smaller unattended object within \\rngshort range', """
-            You can move the target up to five feet in any direction within range, using your \\glossterm<power> instead of your Strength to determine your maximum carrying capacity.
-
-            In addition, you can manipulate the target as if you were holding it in your hands.
+            You can telekinetically control the target object as if you were holding it in an extra hand.
             Any attacks you make with the object or checks you make to manipulate the object have a maximum bonus equal to your \\glossterm<power>.
+            At the end of each round, if the target is outside of this ability's range, this ability ends.
+
+            During the movement phase, you can move the target up to five feet in any direction.
+            You use your \\glossterm<power> instead of your Strength to determine your maximum carrying capacity when moving objects in this way.
         """, scaling="""
             \\rank<2> You can move the target up to ten feet in any direction.
             \\rank<4> The range increases to \\rngmed.
             \\rank<6> You can move the target up to thirty feet in any direction.
-        """, tags=['Sustain (standard)']),
+        """, tags=['Sustain (minor)']),
+        Effects('Gentle Force', None, """
+            You can exert minor force on objects and creatures around you.
+            As part of the action you take to sustain this spell, you may choose any object or creature within \\rngmed range of you.
+            That object or creature feels a push in a direction of your choice.
+            The force is sufficient to lift a 1 lb\\. object, or to push a 5 lb\\. object across the ground.
+            Generally, the force exerted by this ability is insufficient to physically move or even meaningfully impede any creature, but it can influence their actions.
+        """, scaling="""
+            \\rankline
+            \\rank<2> The force increases to lift a 2 lb.\\ object, or to push a 10 lb\\. object.
+            \\rank<4> The force increases to lift a 4 lb.\\ object, or to push a 20 lb\\. object.
+            \\rank<6> The force increases to lift a 8 lb.\\ object, or to push a 40 lb\\. object.
+        """, tags=['Sustain (minor)']),
     ],
     lists=['Arcane', 'Pact'],
     spells=[

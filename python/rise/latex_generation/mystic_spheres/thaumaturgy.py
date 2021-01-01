@@ -18,6 +18,15 @@ thaumaturgy=MysticSphere(
             \\rank<4> The bonus increases to +8.
             \\rank<6> The bonus increases to +10.
         """, tags=[]),
+        Effects('Sense Magical Potential', 'One creature within \\rngshort range', """
+            You discern whether the target has any \\glossterm<magical> abilities.
+            This does not give you any information about the nature of those magical abilities.
+        """, scaling="""
+            \\rankline
+            \\rank<2> You can also discern whether the target has the ability to cast spells of any kind.
+            \\rank<4> You can also discern which \\glossterm<magic sources> the target has access to, if they have access to any.
+            \\rank<6> You can also discern which \\glossterm<mystic spheres> the target has access to, if they have access to any.
+        """, tags=[]),
     ],
     lists=['Arcane'],
     spells=[

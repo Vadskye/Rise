@@ -9,6 +9,9 @@ summon=MysticSphere(
     name="Summoning",
     short_description="Summon creatures to fight with you",
     cantrips=[
+        Effects('Minor Summoning', None, """
+            This spell functions like the \\textit<summon monster> spell, except that it has the \\glossterm<Sustain> (standard) tag instead of the \\glossterm<Attune> (self) tag.
+        """, scaling="damage", tags=['Sustain (standard)', 'Manifestation']),
     ],
     lists=['Arcane', 'Divine', 'Nature'],
     spells=[
