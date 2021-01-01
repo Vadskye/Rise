@@ -469,6 +469,42 @@ def generate_weapons():
         ),
     ]
 
+    weapons += [
+        MagicItem(
+            name="Blessed",
+            level=3,
+            material_type='Weapon',
+            tags=[],
+            description="""
+                When you use the \\textit<desperate exertion> to affect a strike with this weapon, you gain a +3 bonus to the reroll.
+                This stacks with the normal +2 bonus from the \\textit<desperate exertion> ability.
+            """,
+            short_description="Grants +3 bonus with \\textit<desperate exertion>",
+        ),
+        MagicItem(
+            name="Blessed, Greater",
+            level=9,
+            material_type='Weapon',
+            tags=[],
+            description="""
+                When you use the \\textit<desperate exertion> to affect a strike with this weapon, you gain a +5 bonus to the reroll.
+                This stacks with the normal +2 bonus from the \\textit<desperate exertion> ability.
+            """,
+            short_description="Grants +5 bonus with \\textit<desperate exertion>",
+        ),
+        MagicItem(
+            name="Blessed, Supreme",
+            level=15,
+            material_type='Weapon',
+            tags=[],
+            description="""
+                When you use the \\textit<desperate exertion> to affect a strike with this weapon, you gain a +7 bonus to the reroll.
+                This stacks with the normal +2 bonus from the \\textit<desperate exertion> ability.
+            """,
+            short_description="Grants +7 bonus with \\textit<desperate exertion>",
+        ),
+    ]
+
     weapons.append(MagicItem(
         name="Heartseeker",
         level=20,
