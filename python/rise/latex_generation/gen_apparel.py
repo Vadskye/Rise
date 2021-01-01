@@ -870,6 +870,39 @@ def generate_worn():
 
     apparel += [
         MagicItem(
+            name="Mystic Gloves",
+            # +2 since gloves are secondary for power
+            level=6,
+            material_type='Glove',
+            description="""
+                You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<magical> abilities.
+            """,
+            short_description="Grants +2 \\glossterm<magical> power",
+        ),
+        MagicItem(
+            name="Mystic Gloves, Greater",
+            # +2 since gloves are secondary for power
+            level=12,
+            material_type='Gauntlet',
+            description="""
+                You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<magical> abilities.
+            """,
+            short_description="Grants +4 \\glossterm<magical> power",
+        ),
+        MagicItem(
+            name="Mystic Gloves, Supreme",
+            # +2 since gloves are secondary for power
+            level=18,
+            material_type='Gauntlet',
+            description="""
+                You gain a +8 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<magical> abilities.
+            """,
+            short_description="Grants +8 \\glossterm<magical> power",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
             name="Titan Gauntlets",
             # +2 since gauntlets are secondary for power
             level=6,
@@ -898,6 +931,38 @@ def generate_worn():
                 You gain a +8 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities.
             """,
             short_description="Grants +8 \\glossterm<mundane> power",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Gauntlets of Defense",
+            level=7,
+            material_type='Gauntlet',
+            description="""
+                You gain a +1 \\glossterm<magic bonus> to Armor defense.
+                In addition, when you would be \\glossterm<defenseless>, these gauntlets manifest a glowing shield that helps protect you from attack.
+                This prevents you from ever being \\glossterm<defenseless>.
+            """,
+            short_description="Grants +1 Armor defense, cannot be defenseless",
+        ),
+        MagicItem(
+            name="Gauntlets of Defense, Greater",
+            level=13,
+            material_type='Gauntlet',
+            description="""
+                These gauntlets functions \\mitem<gauntlets of defense>, except that the bonus increases to +2.
+            """,
+            short_description="Grants +2 Armor defense, cannot be defenseless",
+        ),
+        MagicItem(
+            name="Gauntlets of Defense, Supreme",
+            level=19,
+            material_type='Gauntlet',
+            description="""
+                These gauntlets functions \\mitem<gauntlets of defense>, except that the bonus increases to +3.
+            """,
+            short_description="Grants +3 Armor defense, cannot be defenseless",
         ),
     ]
 
@@ -1147,6 +1212,19 @@ def generate_worn():
             This does not grant you the ability to breathe other liquids.
         """,
         short_description="Allows breathing water like air",
+    ))
+
+    apparel.append(MagicItem(
+        name="Amulet of Breath",
+        level=1,
+        material_type='Amulet',
+        tags=[],
+        description="""
+            As a \\glossterm<minor action>, you can spend a \\glossterm<fatigue point> to activate this item.
+            When you do, you can breathe in clean, fresh air until the end of the next round, regardless of your environment.
+            This can be used in emergencies to save yourself from drowning or other perils.
+        """,
+        short_description="Allows limited breathing",
     ))
 
     apparel.append(MagicItem(
@@ -1447,6 +1525,146 @@ def generate_worn():
         """,
         short_description="Grants tolerance of temperature extremes",
     ))
+
+
+    apparel += [
+        MagicItem(
+            name="Amulet of the True Form",
+            level=3,
+            material_type='Amulet',
+            tags=[],
+            description="""
+                You gain a +4 bonus to defenses against abilities from the \\sphere<polymorph> sphere.
+                This bonus also applies against other attacks that significantly alter your physical form, such as an aboleth's slime.
+            """,
+            short_description="Grants +4 defenses vs form-altering attacks",
+        ),
+        MagicItem(
+            name="Amulet of the True Form, Greater",
+            level=9,
+            material_type='Amulet',
+            tags=[],
+            description="""
+                You gain a +8 bonus to defenses against abilities from the \\textit<polymorph> sphere.
+                This bonus also applies against other attacks that significantly alter your physical form, such as an aboleth's slime.
+            """,
+            short_description="Grants +8 defenses vs form-altering attacks",
+        ),
+        MagicItem(
+            name="Amulet of the True Form, Supreme",
+            level=15,
+            material_type='Amulet',
+            tags=[],
+            description="""
+                You are immune to attacks from the \\textit<polymorph> sphere.
+                This immunity also applies against other attacks that significantly alter your physical form, such as an aboleth's slime.
+            """,
+            short_description="Grants immunity to form-altering attacks",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Amulet of Honeyed Words",
+            level=5,
+            material_type='Amulet',
+            tags=[],
+            description="""
+                You gain a +2 \\glossterm<magic bonus> to the Deception, Intimidate and Persuasion skills.
+            """,
+            short_description="Grants +2 to social skills",
+        ),
+        MagicItem(
+            name="Amulet of Honeyed Words, Greater",
+            level=11,
+            material_type='Amulet',
+            tags=[],
+            description="""
+                You gain a +4 \\glossterm<magic bonus> to the Deception, Intimidate and Persuasion skills.
+            """,
+            short_description="Grants +4 to social skills",
+        ),
+        MagicItem(
+            name="Amulet of Honeyed Words, Supreme",
+            level=17,
+            material_type='Amulet',
+            tags=[],
+            description="""
+                You gain a +6 \\glossterm<magic bonus> to the Deception, Intimidate and Persuasion skills.
+            """,
+            short_description="Grants +6 to social skills",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Periapt of Proof Against Poison",
+            level=2,
+            material_type='Amulet',
+            tags=[],
+            description="""
+                You gain a +4 bonus to defenses against \\glossterm<poisons>.
+            """,
+            short_description="Grants +4 defenses vs poisons",
+        ),
+        MagicItem(
+            name="Periapt of Proof Against Poison, Greater",
+            level=8,
+            material_type='Amulet',
+            tags=[],
+            description="""
+                You gain a +8 bonus to defenses against \\glossterm<poisons>.
+            """,
+            short_description="Grants +8 defenses vs poisons",
+        ),
+        MagicItem(
+            name="Periapt of Proof Against Poison, Supreme",
+            level=14,
+            material_type='Amulet',
+            tags=[],
+            description="""
+                You are immune to \\glossterm<poisons>.
+            """,
+            short_description="Grants immunity to poisons",
+        ),
+    ]
+
+
+    apparel += [
+        MagicItem(
+            name="Ring of Blessed Protection",
+            level=5,
+            material_type='Ring',
+            tags=[],
+            description="""
+                Whenever you are hit by a \\glossterm<critical hit> from a \\glossterm<strike>, you may spend two \\glossterm<fatigue points> to activate this item.
+                If you do, the attacker rerolls the attack against you, which may prevent the attack from getting a critical hit against you.
+                This does not protect any other targets of the attack.
+                You can choose to use this item after you learn the effects that the critical hit would have, but you must do so during the phase that the attack was made.
+            """,
+            short_description="Can protect against critical strikes",
+        ),
+        MagicItem(
+            name="Ring of Blessed Protection, Greater",
+            level=11,
+            material_type='Ring',
+            tags=[],
+            description="""
+                This item functions like a \\textit<ring of blessed protection>, except that it protects against any \\glossterm<mundane> attack, not just strikes.
+            """,
+            short_description="Can protect against critical mundane attacks",
+        ),
+        MagicItem(
+            name="Ring of Blessed Protection, Supreme",
+            level=17,
+            material_type='Ring',
+            tags=[],
+            description="""
+                This item functions like a \\textit<ring of blessed protection>, except that it protects against any attack, not just strikes.
+            """,
+            short_description="Can protect against critical attacks",
+        ),
+    ]
 
     apparel += [
         MagicItem(
@@ -1772,6 +1990,41 @@ def generate_worn():
                 As a standard action, you can use this belt to regain 4d6+4 hit points.
             """,
             short_description="Grants more healing",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Belt of Vital Persistence",
+            level=1,
+            material_type='Belt',
+            tags=[],
+            description="""
+                When you make a \\glossterm<vital roll>, you can spend a \\glossterm<fatigue point> (see \\pcref<Vital Rolls>).
+                If you do, you gain a +1 bonus to the vital roll.
+                You can use this ability after you see the result of the vital roll.
+            """,
+            short_description="Can grant +1 to a vital roll",
+        ),
+        MagicItem(
+            name="Belt of Vital Persistence, Greater",
+            level=7,
+            material_type='Belt',
+            tags=[],
+            description="""
+                This item functions like the \\textit<belt of vital persistence>, except that the bonus it grants increases to +3.
+            """,
+            short_description="Can grant +3 to a vital roll",
+        ),
+        MagicItem(
+            name="Belt of Vital Persistence, Supreme",
+            level=13,
+            material_type='Belt',
+            tags=[],
+            description="""
+                This item functions like the \\textit<belt of vital persistence>, except that the bonus it grants increases to +5.
+            """,
+            short_description="Can grant +5 to a vital roll",
         ),
     ]
 
