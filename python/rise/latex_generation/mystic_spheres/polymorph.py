@@ -11,7 +11,7 @@ polymorph=MysticSphere(
     name="Polymorph",
     short_description="Change the physical shape or outward form of objects and creatures",
     cantrips=[
-        Effects('Alter Object', 'Unattended, nonmagical object you can touch', """
+        Effects('Alter Object', 'One unattended, nonmagical object you touch', """
             You make a Craft check to alter the target (see \\pcref<Craft>), except that you do not need any special tools to make the check (such as an anvil and furnace).
             The maximum \\glossterm<resistance> of a material you can affect with this ability is equal to your \\glossterm<power>.
 
@@ -21,6 +21,17 @@ polymorph=MysticSphere(
             \\rank<2> The amount of work you accomplish with the spell increases to five rounds.
             \\rank<4> The amount of work you accomplish with the spell increases to one minute.
             \\rank<6> The amount of work you accomplish with the spell increases to two minutes.
+        """, tags=[]),
+        Effects('Alter Appearance', 'Yourself', """
+            You alter your appearance in minor ways.
+            This functions like the \\textit<disguise creature>  ability with a +4 bonus, except that you cannot change the appearance of your equipment, species, creature type, or number of limbs (see \\pcref<Disguise Creature>).
+            This ability is commonly used to hide blemishes or to appear younger or older than one's true age.
+
+            This ability lasts until you use it again or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
+        """, scaling="""
+            \\rank<2> The bonus increases to +6.
+            \\rank<4> The bonus increases to +8.
+            \\rank<6> The bonus increases to +10.
         """, tags=[]),
     ],
     lists=['Arcane', 'Nature', 'Pact'],
@@ -97,10 +108,10 @@ polymorph=MysticSphere(
             \\rank<5> This spell can target a Large or smaller \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<7> You can increase the target's size category by up to two size categories.
         """, tags=['Attune (target)']),
-        Spell('Alter Appearance', 2, 'Yourself', """
+        Spell('Reshape Appearance', 2, 'Yourself', """
             You make a Disguise check to alter the target's appearance (see \\pcref<Disguise Creature>).
             You gain a +4 bonus on the check, and you ignore penalties for changing the target's gender, species, subtype, or age.
-            However, this effect is unable to alter the target's clothes or equipment in any way.
+            However, this effect is unable to alter the target's equipment in any way.
         """, scaling="""
             \\rank<4> This spell can target a Large or smaller \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<6> The bonus increases to +6.
