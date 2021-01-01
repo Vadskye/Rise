@@ -65,6 +65,31 @@ def generate_implements():
 
     implements += [
         MagicItem(
+            name="Staff of Shared Healing",
+            level=5,
+            material_type='Staff',
+            tags=[],
+            description="""
+                Once per round, when you cause a creature other yourself to regain \\glossterm<hit points> using a \\glossterm<magical> ability, you can activate this item as a \\glossterm<free action>.
+                When you do, you also regain half that many hit points.
+            """,
+            short_description="Heals you when you heal others",
+        ),
+        MagicItem(
+            name="Staff of Shared Healing, Greater",
+            level=14,
+            material_type='Staff',
+            tags=[],
+            description="""
+                Once per round, when you cause a creature other yourself to regain \\glossterm<hit points> using a \\glossterm<magical> ability, you can activate this item as a \\glossterm<free action>.
+                When you do, you also regain that many hit points.
+            """,
+            short_description="Significantly heals you when you heal others",
+        ),
+    ]
+
+    implements += [
+        MagicItem(
             name="Staff of Transit",
             level=6,
             material_type='Staff',
