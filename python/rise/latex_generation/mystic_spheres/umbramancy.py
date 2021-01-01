@@ -130,19 +130,21 @@ umbramancy=MysticSphere(
             \\rank<7> The bonus increases to +7.
         """, tags=['Attune (target)', 'Sensation']),
         Spell('Shadowstep', 1, 'Yourself', """
-            You teleport into an unoccupied destination on the ground within \\rngmed range.
+            This spell has no \\glossterm<verbal components>.
+
+            You teleport into an unoccupied destination on the ground within \\rngclose range.
             Unlike most teleportation effects, both your departure and arrival with this spell are silent.
             If you are in \\glossterm<bright illumination> and are not touching your shadow, this spell is \\glossterm<miscast>.
         """, scaling="""
-            \\rank<3> The teleporation range increases to \\rnglong.
-            \\rank<5> The teleporation range increases to \\rngdist.
-            \\rank<7> The teleporation range increases to \\rngext.
+            \\rank<3> The teleporation range increases to \\rngmed.
+            \\rank<5> The teleporation range increases to \\rnglong.
+            \\rank<7> The teleporation range increases to \\rngdist.
         """, tags=[]),
         Spell('Shadowstrike', 4, 'Yourself', """
             This spell functions like the \\spell<shadowstep> spell, except that you can also make a \\glossterm<strike> at your destination.
             You take a -2 penalty to \\glossterm<accuracy> with the strike due to its rushed nature.
         """, scaling="""
-            \\rank<6> The teleporation range increases to \\rnglong.
+            \\rank<6> The teleporation range increases to \\rngmed.
         """, tags=[]),
         Spell('Walk the Shadow Roads', 4, 'Yourself', """
             You can teleport horizontally between shadows instead of moving normally.
