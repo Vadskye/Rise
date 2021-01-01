@@ -121,7 +121,7 @@ def generate_armor():
             level=11,
             material_type='Shield',
             description="""
-                This item functions like the \\mitem<shield of arrow catching> item, except that it affects a \\arealarge radius from you.
+                This item functions like a \\mitem<shield of arrow catching>, except that it affects a \\arealarge radius from you.
             """,
             short_description="Redirects small projectiles to hit you",
         ),
@@ -130,7 +130,7 @@ def generate_armor():
             level=8,
             material_type='Shield',
             description="""
-                This item functions like the \\mitem<shield of arrow catching> item, except that it can affect projectile and thrown objects of up to Large size.
+                This item functions like a \\mitem<shield of arrow catching>, except that it can affect projectile and thrown objects of up to Large size.
             """,
             short_description="Redirects large nearby projectiles to hit you",
         ),
@@ -139,7 +139,7 @@ def generate_armor():
             level=14,
             material_type='Shield',
             description="""
-                This item functions like the \\mitem<greater shield of arrow catching> item, except that it can affect projectile and thrown objects of up to Large size.
+                This item functions like a \\mitem<greater shield of arrow catching>, except that it can affect projectile and thrown objects of up to Large size.
             """,
             short_description="Redirects large projectiles to hit you",
         ),
@@ -178,7 +178,7 @@ def generate_armor():
             level=8,
             material_type='Shield',
             description="""
-                This item functions like the \\mitem<shield of arrow deflection> item, except that it can affect weapons and projectiles of up to Large size.
+                This item functions like a \\mitem<shield of arrow deflection>, except that it can affect weapons and projectiles of up to Large size.
             """,
             short_description="Grants +2 defenses vs projectiles",
         ),
@@ -187,7 +187,7 @@ def generate_armor():
             level=14,
             material_type='Shield',
             description="""
-                This item functions like the \\mitem<greater shield of arrow deflection> item, except that it can affect weapons and projectiles of up to Large size.
+                This item functions like a \\mitem<greater shield of arrow deflection>, except that it can affect weapons and projectiles of up to Large size.
             """,
             short_description="Grants +4 defenses vs projectiles",
         ),
@@ -243,7 +243,7 @@ def generate_armor():
             tags=[],
             material_type='Body armor',
             description="""
-                This item functions like the \\mitem<armor of energy resistance> item, except that the bonus is equal to +8.
+                This item functions like \\mitem<armor of energy resistance>, except that the bonus is equal to +8.
             """,
             short_description="Grants +8 energy resistance",
         ),
@@ -253,7 +253,7 @@ def generate_armor():
             tags=[],
             material_type='Body armor',
             description="""
-                This item functions like the \\mitem<armor of energy resistance> item, except that the bonus is equal to +16.
+                This item functions like \\mitem<armor of energy resistance>, except that the bonus is equal to +16.
             """,
             short_description="Grants +16 energy resistance",
         ),
@@ -276,7 +276,7 @@ def generate_armor():
             tags=[],
             material_type='Ring',
             description="""
-                This item functions like the \\mitem<ring of energy resistance> item, except that the bonus is equal to +8.
+                This item functions like a \\mitem<ring of energy resistance>, except that the bonus is equal to +8.
             """,
             short_description="Grants +8 energy resistance",
         ),
@@ -286,7 +286,7 @@ def generate_armor():
             tags=[],
             material_type='Ring',
             description="""
-                This item functions like the \\mitem<ring of energy resistance> item, except that the bonus is equal to +16.
+                This item functions like a \\mitem<ring of energy resistance>, except that the bonus is equal to +16.
             """,
             short_description="Grants +16 energy resistance",
         ),
@@ -375,7 +375,7 @@ def generate_armor():
             material_type='Body armor',
             tags=['Sensation'],
             description="""
-                This item functions like the \\mitem<hidden armor> item, except that the item also makes sound appropriate to its disguised form while disguised.
+                This item functions like \\mitem<hidden armor>, except that the item also makes sound appropriate to its disguised form while disguised.
             """,
             short_description="Can look and sound like normal clothing",
         ),
@@ -498,7 +498,7 @@ def generate_armor():
             material_type='Shield',
             tags=[],
             description="""
-                This item functions like the \\mitem<shield of mystic reflection> item, except that it also affects all \\glossterm<allies> in a \\areasmall radius from you.
+                This item functions like a \\mitem<shield of mystic reflection>, except that it also affects all \\glossterm<allies> in a \\areasmall radius from you.
             """,
             short_description="React to reflect magical attacks against allies",
         ),
@@ -728,7 +728,7 @@ def generate_armor():
             material_type='Body armor',
             tags=[],
             description="""
-                This item functions like the \\mitem<anchoring armor> item, except that you are also immune to \\glossterm<teleport> effects from attacks that are not critical hits.
+                This item functions like \\mitem<anchoring armor>, except that you are also immune to \\glossterm<teleport> effects from attacks that are not critical hits.
             """,
             short_description="Protects you from most forced movement and teleportation attacks",
         ),
@@ -738,7 +738,7 @@ def generate_armor():
             material_type='Body armor',
             tags=[],
             description="""
-                This item functions like the \\mitem<anchoring armor> item, except that the immunities apply even against critical hits.
+                This item functions like \\mitem<anchoring armor>, except that the immunities apply even against critical hits.
             """,
             short_description="Protects you from all forced movement and teleportation attacks",
         ),
@@ -759,7 +759,7 @@ def generate_armor():
             material_type='Boots',
             tags=[],
             description="""
-                This item functions like the \\mitem<anchoring boots> item, except that you are also immune to \\glossterm<teleport> effects from attacks that are not critical hits.
+                These boots function like \\mitem<anchoring boots>, except that you are also immune to \\glossterm<teleport> effects from attacks that are not critical hits.
             """,
             short_description="Protects you from most forced movement and teleportation attacks",
         ),
@@ -769,7 +769,7 @@ def generate_armor():
             material_type='Boots',
             tags=[],
             description="""
-                This item functions like the \\mitem<anchoring boots> item, except that the immunities apply even against critical hits.
+                These boots function like \\mitem<anchoring boots>, except that the immunities apply even against critical hits.
             """,
             short_description="Protects you from all forced movement and teleportation attacks",
         ),
@@ -793,7 +793,7 @@ def generate_armor():
             material_type='Boots',
             tags=[],
             description="""
-                This item functions like the \\mitem<boots of translocation> item, except that the range increases to \\rngmed.
+                These boots function like \\mitem<boots of translocation>, except that the range increases to \\rngmed.
             """,
             short_description="Grants ability to teleport up to 60 feet",
         ),
@@ -803,7 +803,7 @@ def generate_armor():
             material_type='Boots',
             tags=[],
             description="""
-                This item functions like the \\mitem<boots of translocation> item, except that the range increases to \\rnglong.
+                These boots function like \\mitem<boots of translocation>, except that the range increases to \\rnglong.
             """,
             short_description="Grants ability to teleport up to 120 feet",
         ),
@@ -825,7 +825,7 @@ def generate_armor():
             material_type='Body armor',
             tags=[],
             description="""
-                This item functions like the \\mitem<armor of translocation> item, except that the range increases to \\rngmed.
+                This item functions like \\mitem<armor of translocation>, except that the range increases to \\rngmed.
             """,
             short_description="Grants ability to teleport up to 60 feet",
         ),
@@ -835,7 +835,7 @@ def generate_armor():
             material_type='Body armor',
             tags=[],
             description="""
-                This item functions like the \\mitem<armor of translocation> item, except that the range increases to \\rnglong.
+                This item functions like \\mitem<armor of translocation>, except that the range increases to \\rnglong.
             """,
             short_description="Grants ability to teleport up to 120 feet",
         ),
@@ -1022,7 +1022,7 @@ def generate_worn():
             level=16,
             material_type='Bracers',
             description="""
-                This item functions like the \\mitem<bracers of repulsion> item, except that it targets your \\glossterm<enemies> within a \\arealarge radius burst.
+                These bracers function like \\mitem<bracers of repulsion>, except that it targets your \\glossterm<enemies> within a \\arealarge radius burst.
             """,
             short_description="Can knock enemies back",
         ),
@@ -1353,7 +1353,7 @@ def generate_worn():
             material_type='Boots',
             tags=['Swift'],
             description="""
-                This item functions like the \\magicitem<boots of the skydancer>, except that the ability lasts until the end of the round.
+                These boots function like \\magicitem<boots of the skydancer>, except that the ability lasts until the end of the round.
                 In addition, you can use this item twice before the boots touch the ground.
             """,
             short_description="description",
@@ -1942,7 +1942,7 @@ def generate_worn():
             material_type='Amulet',
             tags=[],
             description="""
-                This item functions like the \\mitem<hexward amulet> item, except that the bonus increases to +2.
+                This item functions like a \\mitem<hexward amulet>, except that the bonus increases to +2.
             """,
             short_description="Grants +2 defenses against targeted spells",
         ),
@@ -1952,7 +1952,7 @@ def generate_worn():
             material_type='Amulet',
             tags=[],
             description="""
-                This item functions like the \\mitem<hexward amulet> item, except that the bonus increases to +3.
+                This item functions like a \\mitem<hexward amulet>, except that the bonus increases to +3.
             """,
             short_description="Grants +3 defenses against targeted spells",
         ),
@@ -2012,7 +2012,7 @@ def generate_worn():
             material_type='Belt',
             tags=[],
             description="""
-                This item functions like the \\textit<belt of vital persistence>, except that the bonus it grants increases to +3.
+                This item functions like a \\textit<belt of vital persistence>, except that the bonus it grants increases to +3.
             """,
             short_description="Can grant +3 to a vital roll",
         ),
@@ -2022,7 +2022,7 @@ def generate_worn():
             material_type='Belt',
             tags=[],
             description="""
-                This item functions like the \\textit<belt of vital persistence>, except that the bonus it grants increases to +5.
+                This item functions like a \\textit<belt of vital persistence>, except that the bonus it grants increases to +5.
             """,
             short_description="Can grant +5 to a vital roll",
         ),
@@ -2084,7 +2084,7 @@ def generate_worn():
             material_type='Circlet',
             tags=['Scrying'],
             description="""
-                This item functions like the \\mitem<ocular circlet>, except that it only takes a \\glossterm<minor action> to activate and sustain the item's effect.
+                This item functions like a \\mitem<ocular circlet>, except that it only takes a \\glossterm<minor action> to activate and sustain the item's effect.
                 In addition, the sensor appears anywhere within \\rngmed range.
             """,
             short_description="Can allow you to see at a greater distance",
@@ -2117,7 +2117,7 @@ def generate_worn():
             material_type='Gloves',
             tags=[],
             description="""
-                This item functions like the \\mitem<gloves of spell investment>, except that you can store up to two spells in the gloves.
+                This item functions like a \\mitem<gloves of spell investment>, except that you can store up to two spells in the gloves.
                 When you activate the gauntlets, you choose which spell to use.
             """,
             short_description="Can invest two spells to cast later",
