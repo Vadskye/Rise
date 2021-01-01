@@ -505,6 +505,29 @@ def generate_weapons():
         ),
     ]
 
+    weapons += [
+        MagicItem(
+            name="Wolfpack",
+            level=9,
+            material_type='Weapon',
+            tags=[],
+            description="""
+                At the start of each phase, each \\glossterm<overwhelmed> creature that you \\glossterm<threaten> with this weapon takes a -1 penalty to Armor and Reflex defenses during that phase.
+            """,
+            short_description="Imposes -1 defense penalty on overwhelmed creatures",
+        ),
+        MagicItem(
+            name="Wolfpack, Greater",
+            level=18,
+            material_type='Weapon',
+            tags=[],
+            description="""
+                At the start of each phase, each \\glossterm<overwhelmed> creature that you \\glossterm<threaten> with this weapon takes a -2 penalty to Armor and Reflex defenses during that phase.
+            """,
+            short_description="Imposes -2 defense penalty on overwhelmed creatures",
+        ),
+    ]
+
     weapons.append(MagicItem(
         name="Heartseeker",
         level=20,
