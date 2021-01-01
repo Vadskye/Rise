@@ -22,7 +22,7 @@ fabrication=MysticSphere(
             \\rank<2> The maximum size of the object increases to Small.
             \\rank<4> The maximum size of the object increases to Medium.
             \\rank<6> The maximum size of the object increases to Large.
-        """, tags=['Attune (self)', 'Manifestation']),
+        """, tags=['Manifestation']),
     ],
     lists=['Arcane', 'Pact'],
     spells=[

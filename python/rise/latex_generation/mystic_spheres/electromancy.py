@@ -1,4 +1,5 @@
 from rise.latex.mystic_sphere import MysticSphere
+
 from rise.latex.spell import Spell
 from rise.latex.effects import Effects
 
@@ -23,6 +24,16 @@ cantrips=[
         \\rank<4> The damage increases to 10.
         \\rank<6> The damage increases to 20.
     """, tags=[]),
+    Effects('Magnetize', 'One Tiny or smaller unattended metal object within \\rngmed range', """
+        The target pulls itself toward metal objects within 1 foot of it.
+        Smaller objects are typically pulled towards the target, while it moves itself towards larger objects.
+        Once it becomes affixed to another metal object, it takes a \\glossterm<difficulty rating> 10 Strength check to separate the two objects.
+    """, scaling="""
+        \\rankline
+        \\rank<2> The maximum size increases to Small.
+        \\rank<4> The maximum size increases to Medium.
+        \\rank<6> The maximum size increases to Large.
+    """, tags=['Sustain (minor)']),
 ],
 lists=['Arcane', 'Nature', 'Pact'],
 spells=[

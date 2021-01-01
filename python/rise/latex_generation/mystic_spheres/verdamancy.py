@@ -11,7 +11,16 @@ verdamancy=MysticSphere(
     name="Verdamancy",
     short_description="Animate and manipulate plants",
     cantrips=[
-        Effects('Rapid Growth', 'Small or smaller inanimate plant within \\rngshort range', """
+        Effects('Fertile Patch', 'One unattended, nonmagical 1-ft.\\ square of earth', """
+            The soil in the target becomes suffused with plant-sustaining nutrients, making it fertile ground for plants.
+            This effect lasts for one year.
+        """, scaling="""
+            \\rankline
+            \\rank<2> The area increases to a 2-ft.\\ square.
+            \\rank<4> The area increases to a 5-ft.\\ square.
+            \\rank<6> The area increases to a 10-ft.\\ square.
+        """, tags=[]),
+        Effects('Rapid Growth', 'One Large or smaller inanimate plant within \\rngshort range', """
             Choose any number of days up to a week.
             The target grows as if much time had passed, assuming that it received adequate nutrition during that time.
             When this spell ends, the plant returns to its original state.

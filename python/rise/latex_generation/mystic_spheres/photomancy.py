@@ -13,10 +13,10 @@ photomancy=MysticSphere(
     cantrips=[
         Effects('Beautify', 'Yourself', """
             You alter your appearance in minor ways.
-            This functions like the \\textit<disguise creature>  ability with a +4 bonus, except that you cannot change the appearance of your equipment, species, creature type, or number of limbs (see \pcref{Disguise Creature}).
+            This functions like the \\textit<disguise creature>  ability with a +4 bonus, except that you cannot change the appearance of your equipment, species, creature type, or number of limbs (see \\pcref<Disguise Creature>).
             This ability is commonly used to hide blemishes or to appear younger or older than one's true age.
 
-            This ability lasts until you use it again.
+            This ability lasts until you use it again or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
         """, scaling="""
             \\rank<2> The bonus increases to +6.
             \\rank<4> The bonus increases to +8.
@@ -24,7 +24,8 @@ photomancy=MysticSphere(
         """, tags=['Sensation', 'Visual']),
         Effects('Illuminate', 'One location within \\rngmed range', """
             A glowing light appears in midair in the target location.
-            It creates \\glossterm<bright illumination> in a radius of your choice, up to a 15 foot radius, and \\glossterm<shadowy illumination> in twice that radius.
+            It creates \\glossterm<bright illumination> in a radius of your choice, up to a maximum of 15 feet, and \\glossterm<shadowy illumination> in twice that radius.
+            You can freely choose the color of the light, but it is unchanging once created.
             This effect lasts until you use it again or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
         """, scaling="""
             \\rank<2> The maximum radius of bright illumination increases to 30 feet.

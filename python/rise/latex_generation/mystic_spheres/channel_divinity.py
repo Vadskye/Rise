@@ -25,6 +25,17 @@ channel_divinity=MysticSphere(
                 If you are a paladin, you can also unerringly see an aura around creatures who share your devoted alignment.
             \\rank<6> The range increases to \\rnglong.
         """, tags=[]),
+        Effects('Divine Radiance', 'Yourself', """
+            You call on the majesty of your deity or alignment to radiate into the world.
+            You create \\glossterm<bright illumination> in a radius of your choice, up to a maximum of 15 feet, and \\glossterm<shadowy illumination> in twice that radius.
+            The color of the light depends on the nature of your deity or alignment.
+            Each deity has their own color or color combination.
+            Typically, good is yellow, evil is purple, law is white, and chaos is a myriad of ever-changing colors.
+        """, scaling="""
+            \\rank<2> The maximum radius of bright illumination increases to 30 feet.
+            \\rank<4> The maximum radius of bright illumination increases to 60 feet.
+            \\rank<6> The maximum radius of bright illumination increases to 120 feet.
+        """, tags=['Sustain (minor)']),
     ],
     lists=['Divine'],
     spells=[

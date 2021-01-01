@@ -9,6 +9,15 @@ umbramancy=MysticSphere(
     name="Umbramancy",
     short_description="Manipulate shadows and darkness to conceal allies and inhibit foes",
     cantrips=[
+        Effects('Shadowcloak', 'Yourself', """
+            This spell has no \\glossterm<verbal components>.
+
+            You gain a +2 bonus to the Stealth skill until the end of the next round.
+        """, scaling="""
+            \\rank<2> The bonus increases to +4.
+            \\rank<4> The bonus increases to +6.
+            \\rank<6> The bonus increases to +8.
+        """, tags=[]),
         Effects('Suppress Light', 'One \\glossterm<zone> within \\rngmed range', """
             You can choose this spell's radius, up to a maximum of a \\areasmall radius.
             Light within or passing through the area is dimmed to be no brighter than \\glossterm<shadowy illumination>.
