@@ -340,7 +340,7 @@ def generate_implements():
             material_type='Staff',
             tags=[],
             description="""
-                You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<magical> abilities.
+                You gain a +2 \\glossterm<magic bonus> to your \\glossterm<magical> \\glossterm<power>.
             """,
             short_description="Grants +2 \\glossterm<magical> power",
         ),
@@ -350,7 +350,7 @@ def generate_implements():
             material_type='Staff',
             tags=[],
             description="""
-                You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<magical> abilities.
+                You gain a +4 \\glossterm<magic bonus> to your \\glossterm<magical> \\glossterm<power>.
             """,
             short_description="Grants +4 \\glossterm<magical> power",
         ),
@@ -360,7 +360,7 @@ def generate_implements():
             material_type='Staff',
             tags=[],
             description="""
-                You gain a +8 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<magical> abilities.
+                You gain a +8 \\glossterm<magic bonus> to your \\glossterm<magical> \\glossterm<power>.
             """,
             short_description="Grants +8 \\glossterm<magical> power",
         ),
@@ -374,7 +374,7 @@ def generate_implements():
             tags=[],
             description="""
                 You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy>.
-                In addition, you gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<magical> abilities.
+                In addition, you gain a +2 \\glossterm<magic bonus> to your \\glossterm<magical> \\glossterm<power>.
             """,
             short_description="Grants +1 accuracy, +2 \\glossterm<magical> power",
         ),
@@ -385,7 +385,7 @@ def generate_implements():
             tags=[],
             description="""
                 You gain a +2 \\glossterm<magic bonus> to \\glossterm<accuracy>.
-                In addition, you gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<magical> abilities.
+                In addition, you gain a +4 \\glossterm<magic bonus> to your \\glossterm<magical> \\glossterm<power>.
             """,
             short_description="Grants +2 accuracy, +4 \\glossterm<magical> power",
         ),

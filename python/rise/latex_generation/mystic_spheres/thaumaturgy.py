@@ -121,7 +121,7 @@ thaumaturgy=MysticSphere(
         Spell('Enhance Magic', 1, 'Yourself', """
             You can cast this spell as a \\glossterm<minor action>.
 
-            You gain a +2 \\glossterm<magic bonus> to your \\glossterm<power> with \\glossterm<magical> abilities.
+            You gain a +2 \\glossterm<magic bonus> to your \\glossterm<magical> \\glossterm<power>.
         """, scaling="""
             \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<5> The bonus increases to +4.
