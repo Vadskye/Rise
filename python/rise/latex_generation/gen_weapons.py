@@ -565,7 +565,7 @@ def generate_weapons():
             material_type='Weapon',
             tags=[],
             description="""
-                This weapon functions like the \\mitem<thieving> weapon, except that the maximum size category of object it can absorb is one size category larger than the weapon.
+                This weapon functions like a \\mitem<thieving> weapon, except that the maximum size category of object it can absorb is one size category larger than the weapon.
             """,
             short_description="Can absorb large items",
         ),
