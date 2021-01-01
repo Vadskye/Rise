@@ -875,7 +875,7 @@ def generate_worn():
             level=6,
             material_type='Glove',
             description="""
-                You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<magical> abilities.
+                You gain a +2 \\glossterm<magic bonus> to your \\glossterm<magical> \\glossterm<power>.
             """,
             short_description="Grants +2 \\glossterm<magical> power",
         ),
@@ -885,7 +885,7 @@ def generate_worn():
             level=12,
             material_type='Gauntlet',
             description="""
-                You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<magical> abilities.
+                You gain a +4 \\glossterm<magic bonus> to your \\glossterm<magical> \\glossterm<power>.
             """,
             short_description="Grants +4 \\glossterm<magical> power",
         ),
@@ -895,7 +895,7 @@ def generate_worn():
             level=18,
             material_type='Gauntlet',
             description="""
-                You gain a +8 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<magical> abilities.
+                You gain a +8 \\glossterm<magic bonus> to your \\glossterm<magical> \\glossterm<power>.
             """,
             short_description="Grants +8 \\glossterm<magical> power",
         ),
@@ -908,7 +908,7 @@ def generate_worn():
             level=6,
             material_type='Gauntlet',
             description="""
-                You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities.
+                You gain a +2 \\glossterm<magic bonus> to your \\glossterm<mundane> \\glossterm<power>.
             """,
             short_description="Grants +2 \\glossterm<mundane> power",
         ),
@@ -918,7 +918,7 @@ def generate_worn():
             level=12,
             material_type='Gauntlet',
             description="""
-                You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities.
+                You gain a +4 \\glossterm<magic bonus> to your \\glossterm<mundane> \\glossterm<power>.
             """,
             short_description="Grants +4 \\glossterm<mundane> power",
         ),
@@ -928,7 +928,7 @@ def generate_worn():
             level=18,
             material_type='Gauntlet',
             description="""
-                You gain a +8 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities.
+                You gain a +8 \\glossterm<magic bonus> to your \\glossterm<mundane> \\glossterm<power>.
             """,
             short_description="Grants +8 \\glossterm<mundane> power",
         ),

@@ -55,7 +55,7 @@ terramancy=MysticSphere(
         """, scaling="""
             \\rank<3> You can also create heavy armor.
             In addition, the item created is magically enhanced.
-                A weapon grants a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities,
+                A weapon grants a +2 \\glossterm<magic bonus> to your \\glossterm<mundane> \\glossterm<power>,
                     and armor grants a +1 \\glossterm<magic bonus> to Armor defense.
             \\rank<5> The magic bonus for a weapon increases to +4, and the magic bonus for armor increases to +2.
             \\rank<7> The magic bonus for a weapon increases to +8, and the magic bonus for armor increases to +3.

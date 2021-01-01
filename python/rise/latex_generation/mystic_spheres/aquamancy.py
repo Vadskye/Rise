@@ -189,7 +189,7 @@ aquamancy=MysticSphere(
             The tentacle grants you a slam \\glossterm<natural weapon> (see \\tref<Natural Weapons>).
             The natural weapon deals 1d10 damage, as normal for a slam natural weapon.
             In addition, it has the Reach \\glossterm<weapon tag> (see \\pcref<Weapon Tags>).
-            Strikes using the tentacle are considered \\glossterm<magical> abilities, which means you use your \\glossterm<power> with \\glossterm<magical> abilities to determine their damage.
+            Strikes using the tentacle are considered \\glossterm<magical> abilities, which means you use your \\glossterm<magical> \\glossterm<power> to determine their damage.
         """, scaling="""
             \\rank<4> You gain a +5 foot bonus to \\glossterm<reach> with attacks using the tentacle.
             \\rank<6> The bonus to reach increases to 10 feet.
