@@ -5,6 +5,7 @@ import cgi_simple as cgi
 import first_page
 import re
 import second_page
+import header_bar
 import sheet_worker
 import third_page
 import ability_cards as generate_ability_cards
@@ -28,7 +29,13 @@ def main(ability_cards, destination):
         with open('first_page.html', 'w') as fh:
             fh.write(''.join([
                 debug_stylesheets('first_page', destination),
-                debug_html_wrapper(first_page.create_page(destination), destination),
+                debug_html_wrapper(
+                    ''.join([
+                        header_bar.create_page(destination),
+                        first_page.create_page(destination)
+                    ]),
+                    destination,
+                ),
             ]) + '\n')
 
         with open('second_page.html', 'w') as fh:
@@ -60,9 +67,11 @@ def main(ability_cards, destination):
     else:
         with open('roll20.html', 'w') as fh:
             fh.write(sheet_worker.generate_script())
-            fh.write(cgi.div({'class': 'first-page'}, first_page.create_page(cgi.DESTINATION)))
-            fh.write(cgi.div({'class': 'second-page'}, second_page.create_page(cgi.DESTINATION)))
-            fh.write(cgi.div({'class': 'third-page'}, third_page.create_page()))
+            fh.write(header_bar.create_page(cgi.DESTINATION))
+            fh.write(''.join(header_bar.nav_row()))
+            fh.write(first_page.create_page(cgi.DESTINATION))
+            fh.write(second_page.create_page(cgi.DESTINATION))
+            fh.write(third_page.create_page())
 
         class_pattern = re.compile(r'\.([a-z\-]+)\b')
         with open('roll20.less', 'w') as output_file:

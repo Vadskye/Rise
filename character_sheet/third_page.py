@@ -4,7 +4,7 @@ from cgi_simple import (
 )
 
 def create_page():
-    return flex_row({'class': 'third-page'}, [
+    return flex_row({'class': 'page third-page'}, [
         flex_col({'class': 'sidebar'}, [
             basic_info(),
             archetypes(),
