@@ -6,13 +6,11 @@ from cgi_simple import (
 from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS
 
 def create_page(destination):
-    return flex_row({'class': 'first-page'}, [
+    return flex_row({'class': 'page first-page'}, [
         flex_col({'class': 'sidebar'}, [
-            rise_title(),
             attributes_and_skills(),
         ]),
         flex_col({'class': 'main-body'}, [
-            boring_stuff(destination),
             statistics_header(destination),
             attacks(destination),
             abilities(destination),
@@ -20,26 +18,6 @@ def create_page(destination):
         ]),
     ])
 
-def boring_stuff(destination):
-    return div({'class': 'boring-stuff'}, [
-        flex_row({'class': 'boring-row'}, [
-            labeled_text_input('Character name', input_attributes={'name': 'character_name'}),
-            labeled_text_input('Player name', input_attributes={'name': 'player_name'}),
-            labeled_text_input('Concept', input_attributes={'name': 'concept'}),
-            underlabel_spaced(
-                'Level',
-                number_input({'class': 'fake-text', 'name': 'level'}),
-                attributes={'class': 'level-input'},
-            ),
-            *([
-                underlabel_spaced(
-                    'CR',
-                    number_input({'class': 'fake-text', 'name': 'challenge_rating'}),
-                    attributes={'class': 'challenge-rating-input'},
-                ),
-            ] if destination == 'roll20' else []),
-        ]),
-    ])
 
 def attributes_and_skills():
     return flex_col({'class': 'attributes-and-skills'}, [
@@ -430,10 +408,3 @@ def vital_wound():
             {'name': 'vital_wound_effect'},
         ),
     ])
-
-
-def rise_title():
-    return div(
-        {'class': 'rise-title'},
-        'Rise'
-    )
