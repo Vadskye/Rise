@@ -130,8 +130,9 @@ input[type=text] {
 .rise-title {
     font-family: "Old English Text MT";
     text-align: center;
-    font-size: 3.5em;
+    font-size: 3em;
     margin-top: 0;
+    margin-left: 0.1em;
     margin-bottom: -5px; /* no dropping letters makes this work */
 }
 
@@ -145,4 +146,30 @@ input[type=number].fake-text {
     border-bottom: 1px solid black;
     padding-top: 0.75em;
     width: 100%;
+}
+
+.boring-stuff {
+    flex-grow: 1;
+    margin-left: 0.5em;
+}
+
+.header-bar {
+    align-items: flex-end;
+}
+
+.boring-row {
+    .labeled-text-input {
+        flex-grow: 1;
+    }
+    .species-input, .description-input {
+        flex-grow: 2;
+    }
+    .level-input {
+        flex-basis: 2em;
+        flex-grow: 0;
+    }
+    .challenge-rating-input {
+        flex-basis: 3em;
+        flex-grow: 0;
+    }
 }

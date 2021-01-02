@@ -168,6 +168,14 @@ def text_input(attributes=None):
         attributes['value'] = ""
     return html_tag('input', attributes)
 
+def radio_input(attributes, text):
+    attributes = attributes or dict()
+    attributes['type'] = 'radio'
+    if DESTINATION == 'paper' and 'value' in attributes:
+        # Hide "default" attributes from the paper sheet
+        attributes['value'] = ""
+    return html_tag('input', attributes, text)
+
 def textarea(attributes=None):
     attributes = attributes or dict()
     attributes['rows'] = attributes.get('rows', '1')
@@ -356,3 +364,7 @@ def underlabeled_checkbox(label_text, attributes=None, input_attributes=None):
             label_text,
         ),
     ]))
+
+def label(attributes, text):
+    attributes = attributes or dict()
+    return html_tag('label', attributes, text)

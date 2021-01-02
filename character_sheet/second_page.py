@@ -26,7 +26,7 @@ def equation_misc_repeat(name, count=1, joiner=plus):
     ])
 
 def create_page(destination):
-    return flex_row({'class': 'second-page'}, [
+    return flex_row({'class': 'page second-page'}, [
         flex_col({'class': 'sidebar'}, [
             level_chart(),
             flex_wrapper(div({'class': 'section-header abilities-known-header'}, 'Abilities Known')),

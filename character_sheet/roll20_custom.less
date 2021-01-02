@@ -13,11 +13,9 @@ input {
     font-size: 1em;
 }
 
-.first-page {
-    .boring-row {
-        .level-input {
-            flex-basis: 3em;
-        }
+.boring-row {
+    .level-input {
+        flex-basis: 3em;
     }
 }
 
@@ -65,4 +63,12 @@ textarea {
     margin: 0;
     padding-right: 0;
     resize: none;
+}
+
+.page {
+    display: none;
+}
+
+input[type=radio].nav-button-page1:checked ~ .first-page, input[type=radio].nav-button-page2:checked ~ .second-page, input[type=radio].nav-button-page3:checked ~ .third-page {
+    display: flex;
 }
