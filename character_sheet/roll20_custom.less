@@ -93,17 +93,22 @@ input.nav-button, .nav-button-label {
 .nav-button-label {
     background: #FFF0C8;
     border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 6px;
     font-weight: 600;
     font-size: 1.25em;
     margin-left: -4em;
     text-align: center;
 }
 
+.nav-button:hover + .nav-button-label {
+    background: #f0c860;
+}
+
 .header-bar {
     margin-bottom: 0.5em;
 }
 
-.full-sheet {
-    text-align: center;
-}
+// center alignment looks nicer, but causes weird cascade effects
+// .full-sheet {
+//     text-align: center;
+// }

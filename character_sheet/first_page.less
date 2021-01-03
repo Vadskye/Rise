@@ -1,9 +1,16 @@
 .skill-box {
     width: 100%;
     align-items: center;
+    justify-content: flex-end;
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
 
     .knowledge-type {
         width: 4em;
+    }
+
+    .skill-button {
+        font-size: 1em;
     }
 }
 
@@ -82,19 +89,6 @@
     margin-left: 0.5em;
 }
 
-.attribute {
-    align-items: end;
-    justify-content: space-between;
-
-    .attribute-header  {
-        font-size: 1.25em;
-        font-weight: 600;
-    }
-
-    .underlabeled {
-        margin-left: 0.5em;
-    }
-}
 
 .other-skills {
     .attribute {
@@ -120,6 +114,21 @@
 
 .attribute-section {
     margin-bottom: 0.25em;
+
+    .attribute {
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+
+        .attribute-header  {
+            font-size: 1.25em;
+            font-weight: 600;
+        }
+
+        .underlabeled {
+            margin-left: 0.5em;
+        }
+    }
 }
 .attribute-section:nth-child(4) {
     margin-bottom: 0.4em;
@@ -139,6 +148,11 @@
 .core-statistics > .flex-row, .defenses > .flex-row, .resources > .flex-row, .damage-resistances > .flex-row, .vital-resistances > .flex-row {
     margin-top: 0.2em;
     margin-bottom: 0.2em;
+}
+
+.core-initiative {
+    flex-grow: 1;
+    text-align: center;
 }
 
 .attack-info {
