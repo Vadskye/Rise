@@ -1,14 +1,3 @@
-.first-page, .second-page, .third-page {
-    font-size: 13px;
-    overflow: visible;
-    font-family: Open Sans;
-    margin-bottom: 1em;
-
-    input[type=number] {
-        width: 2.9em
-    }
-}
-
 input {
     font-size: 1em;
 }
@@ -16,6 +5,12 @@ input {
 .boring-row {
     .level-input {
         flex-basis: 3em;
+    }
+}
+
+.first-page {
+    .sidebar {
+        margin-right: 0.25em;
     }
 }
 
@@ -66,9 +61,49 @@ textarea {
 }
 
 .page {
+    margin-top: 0.5em;
     display: none;
+    font-size: 13px;
+    overflow: visible;
+    font-family: Open Sans;
+    margin-bottom: 1em;
+
+    input[type=number] {
+        width: 2.9em
+    }
 }
 
 input[type=radio].nav-button-page1:checked ~ .first-page, input[type=radio].nav-button-page2:checked ~ .second-page, input[type=radio].nav-button-page3:checked ~ .third-page {
     display: flex;
+}
+
+input.nav-button {
+    border: 0;
+    opacity: 0;
+    z-index: 2;
+}
+
+input.nav-button, .nav-button-label {
+    height: 2em;
+    width: 4em;
+    padding: 0.25em;
+    margin-right: 1em;
+}
+
+.nav-button-label {
+    background: #FFF0C8;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1.25em;
+    margin-left: -4em;
+    text-align: center;
+}
+
+.header-bar {
+    margin-bottom: 0.5em;
+}
+
+.full-sheet {
+    text-align: center;
 }

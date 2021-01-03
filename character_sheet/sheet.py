@@ -67,11 +67,13 @@ def main(ability_cards, destination):
     else:
         with open('roll20.html', 'w') as fh:
             fh.write(sheet_worker.generate_script())
-            fh.write(header_bar.create_page(cgi.DESTINATION))
-            fh.write(''.join(header_bar.nav_row()))
-            fh.write(first_page.create_page(cgi.DESTINATION))
-            fh.write(second_page.create_page(cgi.DESTINATION))
-            fh.write(third_page.create_page())
+            fh.write(cgi.div({'class': 'full-sheet'}, [
+                header_bar.create_page(cgi.DESTINATION),
+                ''.join(header_bar.nav_row()),
+                first_page.create_page(cgi.DESTINATION),
+                second_page.create_page(cgi.DESTINATION),
+                third_page.create_page(),
+            ]))
 
         class_pattern = re.compile(r'\.([a-z\-]+)\b')
         with open('roll20.less', 'w') as output_file:
