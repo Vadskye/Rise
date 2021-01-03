@@ -100,11 +100,15 @@ def set_skill(a, s):
         include_encumbrance = a in ['strength', 'dexterity']
         subtract_encumbrance = ' - encumbrance' if include_encumbrance else ""
         return js_wrapper(
-            ['level', f'{a}_starting', f'{s}_points', 'fatigue_penalty', *misc, *(['encumbrance'] if include_encumbrance else [])],
+            ['level', f'{a}_starting', f'{s}_points', f'{s}_class_skill', 'fatigue_penalty', *misc, *(['encumbrance'] if include_encumbrance else [])],
             f"""
                 var pointsModifier = 0;
                 var ranks = 0;
                 var training = '';
+
+                if ({a}_starting >= 3 && {s}_class_skill !== 0) {{
+                    {s}_points += 1;
+                }}
 
                 if ({s}_points === 1) {{
                     ranks = Math.floor(level / 2) + 1;
