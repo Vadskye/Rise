@@ -274,7 +274,7 @@ def calc_physical_resistance_bonus():
                     }),
                 ),
                 plus(),
-                equation_misc_repeat('physical_resistance_bonus', 3)
+                equation_misc_repeat('physical_resistance_bonus', 4)
             ],
             result_attributes={
                 'disabled': 'true',
@@ -327,7 +327,7 @@ def calc_energy_resistance_bonus():
                     }),
                 ),
                 plus(),
-                equation_misc_repeat('energy_resistance_bonus', 3)
+                equation_misc_repeat('energy_resistance_bonus', 4)
             ],
             result_attributes={
                 'disabled': 'true',
@@ -746,7 +746,7 @@ def calc_armor():
                 plus(),
                 underlabel('Armor', number_input({'name': 'body_armor_defense_value'})),
                 plus(),
-                equation_misc_repeat('armor_defense', 2)
+                equation_misc_repeat('armor_defense', 3)
             ],
             result_attributes={
                 'disabled': 'true',
@@ -775,7 +775,7 @@ def calc_fort():
                 plus(),
                 underlabel('Class', number_input({'name': 'fortitude_class', 'value': '4'})),
                 plus(),
-                equation_misc_repeat('fortitude', 3)
+                equation_misc_repeat('fortitude', 4)
             ],
             result_attributes={
                 'disabled': 'true',
@@ -804,7 +804,7 @@ def calc_ref():
                 plus(),
                 underlabel('Class', number_input({'name': 'reflex_class', 'value': '4'})),
                 plus(),
-                equation_misc_repeat('reflex', 3)
+                equation_misc_repeat('reflex', 4)
             ],
             result_attributes={
                 'disabled': 'true',
@@ -833,7 +833,7 @@ def calc_mental():
                 plus(),
                 underlabel('Class', number_input({'name': 'mental_class', 'value': '4'})),
                 plus(),
-                equation_misc_repeat('mental', 3)
+                equation_misc_repeat('mental', 4)
             ],
             result_attributes={
                 'disabled': 'true',
