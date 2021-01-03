@@ -37,16 +37,10 @@ def boring_stuff(destination):
 
 def nav_row():
     return [
-        radio_input(
-            {'class': 'nav-button-page1', 'checked': 'checked', 'name': 'navrow', 'value': "page1"},
-            'Core',
-        ),
-        radio_input(
-            {'class': 'nav-button-page2', 'name': 'navrow', 'value': "page2"},
-            'Stats',
-        ),
-        radio_input(
-            {'class': 'nav-button-page3', 'name': 'navrow', 'value': "page3"},
-            'Misc',
-        ),
+        radio_input({'class': 'nav-button nav-button-page1', 'checked': 'checked', 'name': 'navrow', 'value': "page1"}),
+        span({'class': 'nav-button-label'}, 'Core'),
+        radio_input({'class': 'nav-button nav-button-page2', 'name': 'navrow', 'value': "page2"}),
+        span({'class': 'nav-button-label'}, 'Calcs'),
+        radio_input({'class': 'nav-button nav-button-page3', 'name': 'navrow', 'value': "page3"}),
+        span({'class': 'nav-button-label'}, 'Misc'),
     ]

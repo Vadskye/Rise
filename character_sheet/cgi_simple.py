@@ -4,7 +4,7 @@ input_name_prefix = None
 DESTINATION = 'paper'
 
 def html_separator():
-    return '\n' if is_pretty else ''
+    return '\n' if is_pretty and DESTINATION == 'paper' else ''
 
 # we're going to get really fancy and assert that attributes should always
 # be a dict, and contents should always be in an array or None.
@@ -23,7 +23,7 @@ def ensure_valid_attributes_and_contents(attributes=None, contents=None):
     if contents is None:
         contents = list()
     if isinstance(contents, str):
-        contents = [contents]
+        contents = [contents.strip()]
     return attributes, contents
 
 def html_tag(tag_name, attributes=None, contents=None):
@@ -168,13 +168,13 @@ def text_input(attributes=None):
         attributes['value'] = ""
     return html_tag('input', attributes)
 
-def radio_input(attributes, text):
+def radio_input(attributes):
     attributes = attributes or dict()
     attributes['type'] = 'radio'
     if DESTINATION == 'paper' and 'value' in attributes:
         # Hide "default" attributes from the paper sheet
         attributes['value'] = ""
-    return html_tag('input', attributes, text)
+    return html_tag('input', attributes)
 
 def textarea(attributes=None):
     attributes = attributes or dict()
