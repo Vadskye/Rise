@@ -1,6 +1,6 @@
 from cgi_simple import (
     div, fieldset, equation, flex_col, flex_row, flex_wrapper, labeled_text_input, minus, number_input,
-    plus, span, text_input, underlabel
+    plus, span, text_input, underlabel, checkbox
 )
 from sheet_data import ATTRIBUTE_SHORTHAND, ATTRIBUTE_SKILLS, ATTRIBUTES, ROLL20_CALC
 from sheet_worker import standard_damage_at_power
@@ -118,9 +118,10 @@ def calc_skills(destination):
 
 def skill_labels():
     return flex_row({'class': 'skill-labels'}, [
-        div({'class': 'skill-label'}, 'Points'),
-        div({'class': 'skill-label'}, 'Train'),
-        div({'class': 'skill-label misc'}, 'Misc'),
+        div({'class': 'skill-label skill-label-points'}, 'Points'),
+        div({'class': 'skill-label skill-label-training'}, 'T/M'),
+        div({'class': 'skill-label skill-label-class'}, 'Class?'),
+        div({'class': 'skill-label skill-label-misc'}, 'Misc'),
     ])
 
 def calc_skill(skill_name, attribute=None, blank_input=False):
@@ -138,13 +139,21 @@ def calc_skill(skill_name, attribute=None, blank_input=False):
             ],
         ),
         number_input({'class': 'skill-points', 'name': skill_parsable + '_points'}),
-        text_input({
-            'class': 'skill-training',
-            'disabled': True,
-            'name': skill_parsable + '_training_display',
-            'value': '@{' + skill_parsable + '_training}',
-        }),
-        equation_misc_repeat(skill_parsable, 3, lambda: '')
+        flex_wrapper(
+            text_input({
+                'class': 'skill-training',
+                'disabled': True,
+                'name': f'${skill_parsable}_training_display',
+                'value': '@{' + skill_parsable + '_training}',
+            }),
+        ),
+        flex_wrapper(
+            checkbox({
+                'class': 'is-class-skill',
+                'name': skill_parsable + '_class_skill',
+            }),
+        ),
+        equation_misc_repeat(skill_parsable, 3, lambda: ''),
     ])
 
 def calc_attributes():

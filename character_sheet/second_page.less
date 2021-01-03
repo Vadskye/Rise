@@ -128,17 +128,24 @@
 }
 
 .skill-row {
+    justify-content: space-between;
+
     .underlabeled {
         padding-bottom: 0;
     }
 
-    .skill-training {
-        padding-top: 0;
-        width: 2.5em;
-    }
-
     .knowledge-type {
         width: 4em;
+    }
+
+    .is-class-skill {
+        margin-left: 1em;
+        margin-right: 0.5em;
+        transform: scale(1.5);
+    }
+
+    .skill-points {
+        margin-right: 0.5em;
     }
 }
 
@@ -148,22 +155,33 @@
   align-items: flex-start;
 }
 .skill-labels {
-  margin-top: 0;
-  padding-left: 9em;
-  margin-bottom: 0;
-}
-.skill-label {
-    margin-right:1em;
-  font-size: 0.7em;
-  text-align: center;
+    padding-left: 10em;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    .skill-label {
+      font-size: 0.7em;
+      text-align: center;
+      margin-left: 0.4em;
+      margin-right: 0.4em;
+    }
+
+    .skill-label-points {
+        margin-left: 0;
+    }
+
+    .skill-label-misc {
+        flex-grow: 1;
+    }
 }
 
 .skill-attribute {
   font-weight: 600;
 }
 .skill-name {
-  text-align: right;
-  width: 10em;
+    flex-basis: 10em;
+    text-align: center;
+    width: 10em;
 }
 .skill-attribute {
   font-weight: 600;
