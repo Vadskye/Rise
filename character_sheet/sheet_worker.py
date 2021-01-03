@@ -215,7 +215,7 @@ def level_scaling():
 
 
 def armor_defense():
-    misc = get_misc_variables('armor_defense', 1)
+    misc = get_misc_variables('armor_defense', 3)
     return js_wrapper(
         ['level', 'dexterity_starting', 'armor_defense_class_bonus', 'body_armor_defense_value', 'shield_defense_value', *misc, 'challenge_rating'],
         f"""
@@ -229,7 +229,7 @@ def armor_defense():
     )
 
 def fortitude():
-    misc = get_misc_variables('fortitude', 3)
+    misc = get_misc_variables('fortitude', 4)
     return js_wrapper(
         ['level', 'constitution_starting', 'fortitude_class', 'challenge_rating', *misc],
         f"""
@@ -241,7 +241,7 @@ def fortitude():
     )
 
 def reflex():
-    misc = get_misc_variables('reflex', 3)
+    misc = get_misc_variables('reflex', 4)
     return js_wrapper(
         ['level', 'dexterity_starting', 'reflex_class', 'challenge_rating', *misc],
         f"""
@@ -253,7 +253,7 @@ def reflex():
     )
 
 def mental():
-    misc = get_misc_variables('mental', 3)
+    misc = get_misc_variables('mental', 4)
     return js_wrapper(
         ['level', 'willpower_starting', 'mental_class', 'challenge_rating', *misc],
         f"""
@@ -489,7 +489,7 @@ def blank_ability_known(i):
     )
 
 def energy_resistance():
-    misc = get_misc_variables('energy_resistance_bonus', 3)
+    misc = get_misc_variables('energy_resistance_bonus', 4)
     return js_wrapper(
         ['willpower', 'energy_resistance_bonus_armor', *misc],
         f"""
@@ -500,7 +500,7 @@ def energy_resistance():
     )
 
 def physical_resistance():
-    misc = get_misc_variables('physical_resistance_bonus', 3)
+    misc = get_misc_variables('physical_resistance_bonus', 4)
     return js_wrapper(
         ['constitution', 'physical_resistance_bonus_armor', *misc],
         f"""
