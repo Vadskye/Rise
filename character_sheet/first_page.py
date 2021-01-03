@@ -58,7 +58,7 @@ def skill_box(name):
     return flex_row({'class': 'skill-box'}, [
         button(
             {
-                'class': 'number-label',
+                'class': 'skill-button',
                 'name': f"roll_skill_{formatted_skill}",
                 'type': 'roll',
                 'value': f"@{{character_name}} uses {name}: [[d10 + @{{{formatted_skill}_total}}]]",
@@ -77,7 +77,7 @@ def knowledge_skill_box(name):
     return flex_row({'class': 'skill-box'}, [
         button(
             {
-                'class': 'number-label',
+                'class': 'skill-button',
                 'name': f"roll_skill_{formatted_skill}",
                 'type': 'roll',
                 'value': f"@{{character_name}} uses Knowledge (@{{{formatted_skill}_type}}): [[d10 + @{{{formatted_skill}_total}}]]",
@@ -171,14 +171,16 @@ def core_statistics(destination):
             }))
             if destination == 'paper' else
             flex_row({'class': 'labeled-number-input'}, [
-                button(
-                    {
-                        'class': 'number-label',
-                        'name': 'roll_initiative',
-                        'type': 'roll',
-                        'value': f"@{{character_name}} rolls initiative: [[d10+@{{initiative}}]]",
-                    },
-                    'Initiative',
+                flex_wrapper(
+                    {'class': 'core-initiative'},
+                    button(
+                        {
+                            'name': 'roll_initiative',
+                            'type': 'roll',
+                            'value': f"@{{character_name}} rolls initiative: [[d10+@{{initiative}}]]",
+                        },
+                        'Initiative',
+                    ),
                 ),
                 number_input({
                     'disabled': True,
