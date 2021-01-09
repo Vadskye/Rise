@@ -186,11 +186,12 @@ revelation=MysticSphere(
             \\rank<7> The penalty reduction increases to 3.
         """, tags=['Attune (target)']),
         Spell('Enhanced Senses', 1, 'Yourself', """
-            The target gains a +3 \\glossterm<magic bonus> to the Awareness skill.
+            You gain a +3 \\glossterm<magic bonus> to the Awareness skill.
+            In addition, you are treated as being \\glossterm<trained> in that skill if you would otherwise be untrained.
         """, scaling="""
-            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<3> The bonus increases to +4.
             \\rank<5> The bonus increases to +5.
-            \\rank<7> The bonus increases to +7.
+            \\rank<7> The bonus increases to +6.
         """, tags=['Attune (target)']),
         Spell('Sensory Chain', 4, 'One creature within \\rngmed range (see text)', """
             Make an attack vs. Mental against the target.

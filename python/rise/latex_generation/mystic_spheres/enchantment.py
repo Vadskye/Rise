@@ -274,6 +274,7 @@ enchantment=MysticSphere(
         """, tags=['Attune (target)']),
         Spell('Ominous Presence', 1, 'Yourself', """
             You gain a +3 \\glossterm<magic bonus> to the Intimidate skill.
+            In addition, you are treated as being \\glossterm<trained> in that skill if you would otherwise be untrained.
         """, scaling="""
             \\rank<3> The bonus increases to +4.
             \\rank<5> The bonus increases to +5.
@@ -281,6 +282,7 @@ enchantment=MysticSphere(
         """, tags=['Attune (self)']),
         Spell('Alluring Presence', 1, 'Yourself', """
             You gain a +3 \\glossterm<magic bonus> to the Persuasion skill.
+            In addition, you are treated as being \\glossterm<trained> in that skill if you would otherwise be untrained.
         """, scaling="""
             \\rank<3> The bonus increases to +4.
             \\rank<5> The bonus increases to +5.
@@ -297,6 +299,7 @@ enchantment=MysticSphere(
         """, tags=['Subtle']),
         Spell('Friend to Animals', 1, 'Yourself', """
             You gain a +3 \\glossterm<magic bonus> to the Creature Handling skill.
+            In addition, you are treated as being \\glossterm<trained> in that skill if you would otherwise be untrained.
         """, scaling="""
             \\rank<3> The bonus increases to +4.
             \\rank<5> The bonus increases to +5.

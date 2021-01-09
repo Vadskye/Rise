@@ -203,10 +203,11 @@ verdamancy=MysticSphere(
         """, tags=['Attune (self)']),
         Spell('Natural Camouflage', 1, 'Yourself', """
             You gain a +4 \\glossterm<magic bonus> to the Stealth skill while you have \\glossterm<cover> or \\glossterm<concealment> from plants.
+            In addition, you are treated as being \\glossterm<trained> in that skill if you would otherwise be untrained.
         """, scaling="""
-            \\rank<3> The bonus increases to +6.
-            \\rank<5> The bonus increases to +8.
-            \\rank<7> The bonus increases to +10.
+            \\rank<3> The bonus increases to +5.
+            \\rank<5> The bonus increases to +6.
+            \\rank<7> The bonus increases to +7.
         """, tags=['Sustain (minor)']),
         Spell('Flourishing Vines', 4, 'Yourself', """
             Long, thin vines continuously grow and writhe on your body.

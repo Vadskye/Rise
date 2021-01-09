@@ -1176,7 +1176,7 @@ def generate_worn():
     apparel += [
         MagicItem(
             name="Circlet of Persuasion",
-            level=2,
+            level=1,
             material_type='Circlet',
             description="""
                 You gain a +2 \\glossterm<magic bonus> to the Persuasion skill (see \\pcref<Persuasion>).
@@ -1185,7 +1185,7 @@ def generate_worn():
         ),
         MagicItem(
             name="Circlet of Persuasion, Greater",
-            level=8,
+            level=7,
             material_type='Circlet',
             description="""
                 You gain a +3 \\glossterm<magic bonus> to the Persuasion skill (see \\pcref<Persuasion>).
@@ -1194,12 +1194,12 @@ def generate_worn():
         ),
         MagicItem(
             name="Circlet of Persuasion, Supreme",
-            level=14,
+            level=13,
             material_type='Circlet',
             description="""
-                You gain a +5 \\glossterm<magic bonus> to the Persuasion skill (see \\pcref<Persuasion>).
+                You gain a +4 \\glossterm<magic bonus> to the Persuasion skill (see \\pcref<Persuasion>).
             """,
-            short_description="Grants +5 Persuasion",
+            short_description="Grants +4 Persuasion",
         ),
     ]
 
@@ -1485,7 +1485,7 @@ def generate_worn():
     apparel += [
         MagicItem(
             name="Boots of Elvenkind",
-            level=2,
+            level=1,
             material_type='Boots',
             description="""
                 You gain a +2 \\glossterm<magic bonus> to the Stealth skill (see \\pcref<Stealth>).
@@ -1494,7 +1494,7 @@ def generate_worn():
         ),
         MagicItem(
             name="Boots of Elvenkind, Greater",
-            level=8,
+            level=7,
             material_type='Boots',
             description="""
                 You gain a +3 \\glossterm<magic bonus> to the Stealth skill (see \\pcref<Stealth>).
@@ -1503,7 +1503,7 @@ def generate_worn():
         ),
         MagicItem(
             name="Boots of Elvenkind, Supreme",
-            level=14,
+            level=13,
             material_type='Boots',
             description="""
                 You gain a +4 \\glossterm<magic bonus> to the Stealth skill (see \\pcref<Stealth>).
@@ -1566,7 +1566,7 @@ def generate_worn():
     apparel += [
         MagicItem(
             name="Amulet of Honeyed Words",
-            level=5,
+            level=4,
             material_type='Amulet',
             tags=[],
             description="""
@@ -1576,23 +1576,23 @@ def generate_worn():
         ),
         MagicItem(
             name="Amulet of Honeyed Words, Greater",
-            level=11,
+            level=10,
+            material_type='Amulet',
+            tags=[],
+            description="""
+                You gain a +3 \\glossterm<magic bonus> to the Deception, Intimidate and Persuasion skills.
+            """,
+            short_description="Grants +3 to social skills",
+        ),
+        MagicItem(
+            name="Amulet of Honeyed Words, Supreme",
+            level=16,
             material_type='Amulet',
             tags=[],
             description="""
                 You gain a +4 \\glossterm<magic bonus> to the Deception, Intimidate and Persuasion skills.
             """,
             short_description="Grants +4 to social skills",
-        ),
-        MagicItem(
-            name="Amulet of Honeyed Words, Supreme",
-            level=17,
-            material_type='Amulet',
-            tags=[],
-            description="""
-                You gain a +6 \\glossterm<magic bonus> to the Deception, Intimidate and Persuasion skills.
-            """,
-            short_description="Grants +6 to social skills",
         ),
     ]
 
