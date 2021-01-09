@@ -1438,11 +1438,35 @@ It defines how attributes work and explains how to make attacks in combat.
         % TODO: make this less awkward
         A helpless creature does not take additional defense penalties for being \glossterm{unaware}.
 
-    \subsection{Invisibility}\label{Invisibility}
-        If it is impossible to see your target, you can't attack him normally. However, you can attack a square that you think it occupies. An attack into a square occupied by an invisible enemy has a 50\% miss chance. If an adjacent invisible creature strikes you, you can automatically identify the square it occupied when it struck you.
+    \subsection{Awareness and Surprise}\label{Awareness and Suprise}
+        In combat, creatures are sometimes not fully aware of danger, which makes them less able to defend against it.
+        A creature can be described as either \glossterm{aware}, \glossterm{unaware}, or \glossterm{partially unaware} of an attack against it.
+        Normally, creatures are aware of all attacks against them in combat.
+        This causes no special bonuses or penalties.
 
-    \subsection{Surprise Attacks}\label{Surprise Attacks}
-        Sometimes, creatures are not aware that combat is taking place when the combat starts. This most commonly happens with ambushes. Any creature that is not aware of the combat continues taking whatever actions it would normally be taking until it becomes aware of the combat. It is \unaware until that point.
+        Sometimes, creatures are fully \glossterm{unaware} that they are in danger from attack.
+        This typically happens as a result of stealth, but it can also happen as a result of sudden treachery.
+        A creature takes a \minus5 penalty to Armor and Reflex defenses against attacks that it is unaware of.
+        After being attacked, an unaware creature typically stops being fully unaware of future attacks.
+        If it cannot see or identify its attacker, it becomes \glossterm{partially unaware.}
+
+        A creature that knows that it is in danger and is attempting to defend itself, but does not know the exact location or nature of its attackers, is \glossterm{partially unaware}.
+        For example, a creature that is already in combat that is attacked by a previously unseen foe is partially unaware of the attack.
+        Similarly, a creature that just barely fails to beat an opponent's Stealth check may hear an ominous sound that makes it partially aware of danger without knowing the exact location of any attackers.
+        A creature takes a \minus2 penalty to Armor and Reflex defenses against attacks that it is partially unaware of.
+
+        \subsubsection{Surprise Attacks}\label{Surprise Attacks}
+            Sometimes, creatures are not aware that combat is taking place when the combat starts.
+            This most commonly happens with ambushes.
+            Any creature that is not aware of the combat continues taking whatever actions it would normally be taking until it becomes aware of the combat.
+            It is usually \glossterm{unaware} of all until that point, though unusually vigilant or perceptive creatures may be \glossterm{partially unaware}.
+
+        \subsubsection{Invisibility}\label{Invisibility}
+            If it is impossible to see your target, you can't attack them normally.
+            However, you can attack a square that you think it occupies.
+            An attack into a square occupied by an invisible enemy has a 50\% miss chance.
+            If an adjacent invisible creature strikes you, you can automatically identify the square it occupied when it struck you.
+            Even if you know the existence and location of an invisible creature, you are still \glossterm{partially unaware} of any attacks it makes.
 
     \subsection{Unusual Combat Situations}
 
