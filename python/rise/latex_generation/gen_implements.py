@@ -11,19 +11,21 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Spell Wand, 1st",
-            level=3,
+            level=2,
             material_type='Wand',
             tags=[],
             description="""
-                This wand grants you knowledge of a single rank 1 spell.
-                Each wand is associated with a specific spell.
-                You must have access to the \\glossterm<mystic sphere> that spell belongs to.
+                This wand grants you knowledge of a single rank 1 spell that does not have the \\glossterm<Attune> tag.
+                Each wand is associated with a specific spell, and a single \\glossterm<magic source> that can grant access to that spell.
+                You must have the ability to cast spells of the given rank from the same \\glossterm<magic source> as the wand.
+                However, you do not need to have access to the \\glossterm<mystic sphere> that the spell belongs to.
+                Spells you know because of a spell wand gain any rank upgrades appropriate to your rank with that form of spellcasting.
             """,
             short_description="Grants knowledge of a rank 1 spell",
         ),
         MagicItem(
             name="Spell Wand, 2nd",
-            level=6,
+            level=5,
             material_type='Wand',
             tags=[],
             description="""
@@ -33,7 +35,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Spell Wand, 3rd",
-            level=9,
+            level=8,
             material_type='Wand',
             tags=[],
             description="""
@@ -43,7 +45,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Spell Wand, 4th",
-            level=12,
+            level=11,
             material_type='Wand',
             tags=[],
             description="""
@@ -53,13 +55,33 @@ def generate_implements():
         ),
         MagicItem(
             name="Spell Wand, 5th",
-            level=15,
+            level=14,
             material_type='Wand',
             tags=[],
             description="""
                 This item functions like a \\mitem<spell wand>, except that it grants knowledge of a single rank 5 spell.
             """,
             short_description="Grants knowledge of a rank 5 spell",
+        ),
+        MagicItem(
+            name="Spell Wand, 6th",
+            level=17,
+            material_type='Wand',
+            tags=[],
+            description="""
+                This item functions like a \\mitem<spell wand>, except that it grants knowledge of a single rank 6 spell.
+            """,
+            short_description="Grants knowledge of a rank 6 spell",
+        ),
+        MagicItem(
+            name="Spell Wand, 7th",
+            level=20,
+            material_type='Wand',
+            tags=[],
+            description="""
+                This item functions like a \\mitem<spell wand>, except that it grants knowledge of a single rank 7 spell.
+            """,
+            short_description="Grants knowledge of a rank 7 spell",
         ),
     ]
 
