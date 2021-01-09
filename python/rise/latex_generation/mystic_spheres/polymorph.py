@@ -167,11 +167,12 @@ polymorph=MysticSphere(
             \\rank<7> The maximum size of the object increases to Large.
         """, tags=[]),
         Spell('Camouflage', 1, 'Yourself', """
-            The target gains a +3 \\glossterm<magic bonus> to the Stealth skill.
+            You gain a +3 \\glossterm<magic bonus> to the Stealth skill.
+            In addition, you are treated as being \\glossterm<trained> in that skill if you would otherwise be untrained.
         """, scaling="""
-            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<3> The bonus increases to +4.
             \\rank<5> The bonus increases to +5.
-            \\rank<7> The bonus increases to +7.
+            \\rank<7> The bonus increases to +6.
         """, tags=['Attune (target)']),
         Spell('Sludgeform', 7, 'One creature within \\rngshort range', """
             Make an attack vs. Fortitude against the target.

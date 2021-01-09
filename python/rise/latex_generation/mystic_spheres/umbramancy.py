@@ -132,16 +132,17 @@ umbramancy=MysticSphere(
             \\rank<7> The accuracy bonus increases to +2.
         """, tags=['Sensation', 'Visual']),
         Spell('Conceal', 1, 'Yourself', """
-            The target gains a +3 \\glossterm<magic bonus> to the Stealth skill.
+            You gain a +3 \\glossterm<magic bonus> to the Stealth skill.
+            In addition, you are treated as being \\glossterm<trained> in that skill if you would otherwise be untrained.
         """, scaling="""
-            \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<3> The bonus increases to +4.
             \\rank<5> The bonus increases to +5.
-            \\rank<7> The bonus increases to +7.
-        """, tags=['Attune (target)', 'Sensation']),
+            \\rank<7> The bonus increases to +6.
+        """, tags=['Attune (self)', 'Sensation']),
         Spell('Shadowstep', 1, 'Yourself', """
             This spell has no \\glossterm<verbal components>.
 
-            You teleport into an unoccupied destination on the ground within \\rngclose range.
+            You teleport into an unoccupied destination on the ground within \\rngshort range.
             Unlike most teleportation effects, both your departure and arrival with this spell are silent.
             If you are in \\glossterm<bright illumination> and are not touching your shadow, this spell is \\glossterm<miscast>.
         """, scaling="""
