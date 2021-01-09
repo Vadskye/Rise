@@ -50,6 +50,7 @@ channel_divinity=MysticSphere(
         """, tags=[]),
         Spell('Divine Authority', 1, 'Yourself', """
             You gain a +3 \\glossterm<magic bonus> to the Persuasion skill.
+            In addition, you are treated as being \\glossterm<trained> in that skill if you would otherwise be untrained.
         """, scaling="""
             \\rank<3> The bonus increases to +4.
             \\rank<5> The bonus increases to +5.
