@@ -21,19 +21,18 @@ This chapter describes the rules for monsters, and the combat statistics for a v
         \begin{dtable}
             \lcaption{Challenge Rating Effects}
             \begin{dtabularx}{\textwidth}{l X X X}
-                \tb{CR} & \tb{Hit Points} & \tb{Vital Wound Max} & \tb{Attunement Points} & \tb{Bonuses}\fn{1} \tableheaderrule
-                1/2     & \tdash\fn{2}    & 1                    & 0 & \plus0 \\
-                1       & \mult1/2        & 1                    & 0 & \plus0 \\
-                2       & \mult1          & 2                    & 1 & \plus1 \\
-                3       & \mult2          & 3                    & 2 & \plus2 \\
-                4       & \mult4          & 4                    & 3 & \plus3 \\
+                \tb{CR} & \tb{Hit Points} & \tb{Resistances} & \tb{Vital Wound Max} & \tb{Attunement Points} & \tb{Bonuses}\fn{1} \tableheaderrule
+                1/2     & \mult1/2        & \tdash           & 1                    & 0                      & \plus0 \\
+                1       & \mult1          & \tdash           & 1                    & 1                      & \plus0 \\
+                2       & \mult1          & \mult1           & 2                    & 1                      & \plus1 \\
+                3       & \mult2          & \mult2           & 3                    & 2                      & \plus2 \\
+                4       & \mult4          & \mult4           & 4                    & 3                      & \plus3 \\
             \end{dtabularx}
             1. See \pcref{Monster CR Bonuses}. \\
-            2. See \pcref{Half CR Monsters}. \\
         \end{dtable}
 
         \subsubsection{Monster CR Bonuses}\label{Monster CR Bonuses}
-            For each challenge rating a monster has above 1, it gains a \plus1 bonus to \glossterm{accuracy}, \glossterm{defenses}, and \glossterm{power}.
+            For each challenge rating a monster has above 1, it gains a \plus1 bonus to \glossterm{accuracy} and \glossterm{defenses}.
 
         \subsubsection{Monster Vital Wounds}
             Monsters do not normally make \glossterm{vital rolls} like player characters do.
@@ -43,15 +42,11 @@ This chapter describes the rules for monsters, and the combat statistics for a v
             Some monsters have specific mechanics for what happens if they gain \glossterm{vital wounds}.
             Unless otherwise specified on the monster's description, \glossterm{vital wounds} have no negative effects on monsters.
 
-        \subsubsection{Half CR Monsters}\label{Half CR Monsters}
-            Monsters with a CR of 1/2 have no \glossterm{hit points} or \glossterm{bleed resistance}.
-            Their \glossterm{vital resistance} is one quarter of the normal value after taking into account all other modifiers, so they are generally dispatched in a single blow.
-            In addition, sum all damage they take from different sources in the same phase before comparing the result to their \glossterm{vital resistance}.
-            This is rarely necessary, but monsters with a CR of 1/2 are not intended to be difficult to kill, and certain characters with a flurry of very low-damage attacks may have difficulty killing them without this rule.
+            Monsters do suffer vital wounds from taking at least half their maximum hit points in damage from a single attack.
+            This generally makes CR 1/2 and CR 1 monsters easy to quickly dispatch with strong attacks.
 
         \subsubsection{Spending Resources}
-            Monsters with a CR of 1 or less are unable to use abilities that cause them to lose \glossterm{hit points}, such as the \textit{sprint} ability (see \pcref{Sprint}).
-            Unless otherwise noted, all monsters are unable to use abilities that would cause them to gain \glossterm{fatigue points}, such as the \textit{desperate exertion} ability.
+            Unless otherwise noted in their description, all monsters are unable to use abilities that would cause them to gain \glossterm{fatigue points}, such as the \textit{desperate exertion} ability.
 
         \subsubsection{Recovering Hit Points and Conditions}
             Monsters cannot normally use the \textit{recover} ability.
