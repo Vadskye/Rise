@@ -1017,43 +1017,9 @@ It defines how attributes work and explains how to make attacks in combat.
         Whenever you take damage that would reduce your hit points below 0, you gain a \glossterm{vital wound} and your hit points stay at 0.
         Once you reach 0 hit points, you can die quickly from any additional damage.
 
-        The number of hit points you have is based on your level, as defined in \tref{Base Hit Points and Resistances}.
+        The number of hit points you have is based on your level, as defined in \tref{Character Advancement}.
         In addition, each creature gains a bonus (or penalty) to its hit points equal to its Constitution.
         Some special abilities can give you additional \glossterm{hit points}.
-
-        \begin{dtable}
-            \lcaption{Base Hit Points and Resistances}
-            \begin{dtabularx}{\columnwidth}{l X X}
-                \tb{Level}    & \tb{Hit Points}  & \tb{Resistances}\fn{1} \tableheaderrule
-                1             & 11               & 2  \\
-                2             & 12               & 3  \\
-                3             & 13               & 3  \\
-                4             & 15               & 3  \\
-                5             & 17               & 4  \\
-                6             & 19               & 4  \\
-                7             & 22               & 5  \\
-                8             & 25               & 6  \\
-                9             & 28               & 7  \\
-                10            & 31               & 8  \\
-                11            & 35               & 9  \\
-                12            & 39               & 10 \\
-                13            & 44               & 11 \\
-                14            & 50               & 12 \\
-                15            & 56               & 14 \\
-                16            & 63               & 15 \\
-                17            & 70               & 17 \\
-                18            & 78               & 19 \\
-                19            & 88               & 22 \\
-                20            & 100              & 25 \\
-                21            & 112              & 28 \\
-                22            & 125             & 31 \\
-                23            & 140             & 35 \\
-                24            & 155             & 39 \\
-                25\plus\fn{2} & \tdash          & \tdash\\
-            \end{dtabularx}
-            1. This bonus applies to both your \glossterm{resistance} to \glossterm{physical damage} and your resistance to \glossterm{energy damage}.
-            2. For each level beyond 25, a creature increases its maximum hit points by 15 and its maximum resistances by 4.
-        \end{dtable}
 
         \parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of the creature being damaged.
         When lose a single hit point from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight.
@@ -1247,7 +1213,7 @@ It defines how attributes work and explains how to make attacks in combat.
         Resistances cannot be restored by effects that cause creatures to regain hit points.
         Some specific special abilities can restore resistances.
 
-        The base value of your resistances is based on your level, as defined in \tref{Base Hit Points and Resistances}.
+        The base value of both of your resistances is based on your level, as defined in \tref{Character Advancement}.
         In addition, all creatures gain a bonus to their resistance to \glossterm{physical damage} equal to their Constitution, and a bonus to their resistance to \glossterm{energy damage} equal to their Willpower.
         Body armor provides additional resistance bonuses, and many special abilities also increase resistances.
 
@@ -1993,39 +1959,41 @@ It defines how attributes work and explains how to make attacks in combat.
 
     \begin{dtable}
         \lcaption{Character Advancement}
-        \begin{dtabularx}{\columnwidth}{*{2}{>{\lcol}l} *{3}{>{\lcol}X}}
-            \tb{Level} & \tb{XP} & \tb{Max Rank}\fn{1} & \tb{Legacy Item}\fn{2} & \tb{Attunement Points}\fn{3} \tableheaderrule
-            1st        & 0       & 1                   & \tdash                 & 1      \\
-            2nd        & 20      & \tdash              & \tdash                 & 2      \\
-            3rd        & 50      & \tdash              & 1                      & \tdash \\
-            4th        & 90      & 2                   & \tdash                 & \tdash \\
-            5th        & 150     & \tdash              & \tdash                 & 3      \\
-            6th        & 230     & \tdash              & \tdash                 & \tdash \\
-            7th        & 350     & 3                   & \tdash                 & \tdash \\
-            8th        & 510     & \tdash              & \tdash                 & 4      \\
-            9th        & 750     & \tdash              & 2                      & \tdash \\
-            10th       & 1,050   & 4                   & \tdash                 & \tdash \\
-            11th       & 1,550   & \tdash              & \tdash                 & 5      \\
-            12th       & 2,200   & \tdash              & \tdash                 & \tdash \\
-            13th       & 3,150   & 5                   & \tdash                 & \tdash \\
-            14th       & 4,450   & \tdash              & \tdash                 & \tdash \\
-            15th       & 6,350   & \tdash              & 3                      & \tdash \\
-            16th       & 8,900   & 6                   & \tdash                 & \tdash \\
-            17th       & 13,000  & \tdash              & \tdash                 & \tdash \\
-            18th       & 18,000  & \tdash              & \tdash                 & \tdash \\
-            19th       & 25,500  & 7                   & \tdash                 & \tdash \\
-            20th       & 36,000  & \tdash              & \tdash                 & \tdash \\
-            21st       & 60,000  & \tdash              & 4                      & \tdash \\
+        \begin{dtabularx}{\columnwidth}{l >{\lcol}X l l >{\lcol}X l l}
+            \tb{Level} & \tb{Max Rank}\fn{1} & \tb{HP}   & \tb{Resistances}\fn{2} & \tb{Legacy Item}\fn{3} & \tb{AP}\fn{4} & \tb{XP} \tableheaderrule
+            1st        & 1                   & 11        & 2                      & \tdash                 & 1             & 0      \\
+            2nd        & \tdash              & 12        & 3                      & \tdash                 & 2             & 20     \\
+            3rd        & \tdash              & 13        & 3                      & 1                      & \tdash        & 50     \\
+            4th        & 2                   & 15        & 3                      & \tdash                 & \tdash        & 90     \\
+            5th        & \tdash              & 17        & 4                      & \tdash                 & 3             & 150    \\
+            6th        & \tdash              & 19        & 4                      & \tdash                 & \tdash        & 230    \\
+            7th        & 3                   & 22        & 5                      & \tdash                 & \tdash        & 350    \\
+            8th        & \tdash              & 25        & 6                      & \tdash                 & 4             & 510    \\
+            9th        & \tdash              & 28        & 7                      & 2                      & \tdash        & 750    \\
+            10th       & 4                   & 31        & 8                      & \tdash                 & \tdash        & 1,050  \\
+            11th       & \tdash              & 35        & 9                      & \tdash                 & 5             & 1,550  \\
+            12th       & \tdash              & 39        & 10                     & \tdash                 & \tdash        & 2,200  \\
+            13th       & 5                   & 44        & 11                     & \tdash                 & \tdash        & 3,150  \\
+            14th       & \tdash              & 50        & 12                     & \tdash                 & \tdash        & 4,450  \\
+            15th       & \tdash              & 56        & 14                     & 3                      & \tdash        & 6,350  \\
+            16th       & 6                   & 63        & 15                     & \tdash                 & \tdash        & 8,900  \\
+            17th       & \tdash              & 70        & 17                     & \tdash                 & \tdash        & 13,000 \\
+            18th       & \tdash              & 78        & 19                     & \tdash                 & \tdash        & 18,000 \\
+            19th       & 7                   & 88        & 22                     & \tdash                 & \tdash        & 25,500 \\
+            20th       & \tdash              & 100       & 25                     & \tdash                 & \tdash        & 36,000 \\
+            21st       & \tdash              & 112\fn{5} & 28                     & 4                      & \tdash        & 60,000 \\
         \end{dtabularx}
-        1. This is your maximum rank in your class archetypes (see \pcref{Archetype Ranks}). \\
-        2. This is the number of abilities you gain with your \glossterm{legacy item} (see \pcref{Legacy Items}). \\
-        3. This is the number of \glossterm{attunenent points} you have (see \pcref{Attunement Points}). \\
+        1. See \pcref{Archetype Ranks}. \\
+        2. See \pcref{Resistances}. \\
+        3. See \pcref{Legacy Items}. \\
+        4. See \pcref{Attunement Points}. \\
+        5. For each level beyond 21, a creature increases its maximum hit points by 15 and its maximum resistances by 4. \\
     \end{dtable}
 
     \subsection{Leveling Up}
         When you gain a level, the following things happen:
         \begin{itemize}
-            \item Your \glossterm{hit points} and \glossterm{resistances} increase (see \tref{Base Hit Points and Resistances}).
+            \item Your \glossterm{hit points} and \glossterm{resistances} increase (see \tref{Character Advancement}).
             \item Your \glossterm{accuracy} increases by 1 (see \pcref{Accuracy})
             \item All of your \glossterm{defenses} increase by 1 (see \pcref{Defenses})
             \item You gain an additional \glossterm{archetype rank} (see \pcref{Archetypes})
