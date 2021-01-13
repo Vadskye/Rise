@@ -260,7 +260,7 @@ revelation=MysticSphere(
             This can allow you to read ritual books and similar objects created by other creatures.
             After you have read an inscription in this way, you are able to read that particular writing without the use of this ritual.
         """, tags=['Attune (ritual)'], ritual_time='one minute'),
-        Spell('Discern Location', 5, None, """
+        Spell('Discern Location', 4, None, """
             When you perform this ritual, choose a creature or object.
             You must have seen the chosen creature or object in person and either be able to clearly visualize its appearance or know its proper name to find it with this ritual.
             A creature or object without a proper name cannot be identified by name in this way.
@@ -271,11 +271,11 @@ revelation=MysticSphere(
             If there is no corresponding information about an aspect of the target's location, such as if the target is in a location which is not part of a recognized country,
                 you learn only that that that aspect of the information is missing.
         """, tags=[], ritual_time='24 hours'),
-        Spell('Interplanar Discern Location', 7, 'Any creature or object on the same plane as you', """
+        Spell('Interplanar Discern Location', 6, 'Any creature or object on the same plane as you', """
             This ritual functions like the \\ritual<discern location> ritual, except that the target does not have to be on the same plane as you.
             It gains the \\glossterm<Planar> tag in addition to the tags from the \\ritual<discern location> ritual.
         """, tags=[], ritual_time='24 hours'),
-        Spell('Sending', 4, 'Any creature on the same plane as you', """
+        Spell('Sending', 3, 'Any creature on the same plane as you', """
             You do not need \\glossterm<line of sight> or \\glossterm<line of effect> to the target.
             However,  must specify your target with a precise mental image of its appearance.
             The image does not have to be perfect, but it must unambiguously identify the target.
@@ -291,7 +291,7 @@ revelation=MysticSphere(
             This ritual functions like the \\ritual<sending> ritual, except that the target does not have to be on the same plane as you.
             It gains the \\glossterm<Planar> tag in addition to the tags from the \\ritual<sending> ritual.
         """, tags=['Sustain (standard)'], ritual_time='one hour'),
-        Spell('Telepathic Bond', 4, 'Up to five ritual participants', """
+        Spell('Telepathic Bond', 3, 'Up to five ritual participants', """
             Each target can communicate mentally through telepathy with each other target.
             This communication is instantaneous, though it cannot reach more than 100 miles or across planes.
 
@@ -301,11 +301,11 @@ revelation=MysticSphere(
             However, the effect continues as long as at least one target attunes to it.
             If you \\glossterm<dismiss> the ritual, the effect ends for all targets.
         """, tags=['Attune (ritual; see text)'], ritual_time='one minute'),
-        Spell('Long-Distance Bond', 6, 'Up to five ritual participants', """
+        Spell('Long-Distance Bond', 5, 'Up to five ritual participants', """
             This ritual functions like the \\ritual<telepathic bond> ritual, except that the effect works at any distance.
             The communication still does not function across planes.
         """, tags=['Attune (ritual; see text)'], ritual_time='one minute'),
-        Spell('Planar Bond', 8, 'Up to five ritual participants', """
+        Spell('Planar Bond', 7, 'Up to five ritual participants', """
             This ritual functions like the \\ritual<telepathic bond> ritual, except that the effect works at any distance and across planes.
             It gains the \\glossterm<Planar> tag in addition to the tags from the \\ritual<telepathic bond> ritual.
         """, tags=['Attune (ritual; see text)'], ritual_time='one minute'),
@@ -325,7 +325,7 @@ revelation=MysticSphere(
             At the end of each phase, if the sensor is not in the target's space, this effect is \\glossterm<dismissed>.
             % No \\crit effect
         """, tags=['Scrying'], ritual_time='one hour'),
-        Spell('Interplanar Scry Creature', 8, 'One creature on the same plane as you', """
+        Spell('Interplanar Scry Creature', 7, 'One creature on the same plane as you', """
             This ritual functions like the \\ritual<scry creature> ritual, except that the target does not have to be on the same plane as you.
             It gains the \\glossterm<Planar> tag in addition to the tags from the \\ritual<scry creature> ritual.
         """, tags=['Scrying'], ritual_time='one hour'),
