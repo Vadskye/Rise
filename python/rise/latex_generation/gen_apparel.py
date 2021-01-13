@@ -1450,7 +1450,19 @@ def generate_worn():
         description="""
             You can travel across snow and ice without slipping or suffering movement penalties for the terrain.
             % TODO: degree symbol?
-            In addition, the boots keep you warn, protecting you in environments as cold as -50 Fahrenheit.
+            In addition, the boots keep you warm, protecting you in environments as cold as -50 degrees Fahrenheit.
+        """,
+        short_description="Eases travel in cold areas",
+    ))
+
+    apparel.append(MagicItem(
+        name="Boots of the Desertlands",
+        level=2,
+        material_type='Boots',
+        description="""
+            You can travel across sand, including quicksand, without slipping or suffering movement penalties for the terrain.
+            % TODO: degree symbol?
+            In addition, the boots keep you cool, protecting you in environments as warm as 100 degrees Fahrenheit.
         """,
         short_description="Eases travel in cold areas",
     ))
