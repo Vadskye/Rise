@@ -24,7 +24,7 @@ summon=MysticSphere(
 
             \\begin<itemize>
                 \item Its \\glossterm<fatigue tolerance> is 0, and it cannot choose to take actions that would give it \\glossterm<fatigue points>.
-                \\item Its \\glossterm<hit points> are equal to half the base value for your level (see \\tref<Base Hit Points and Resistances>).
+                \\item Its \\glossterm<hit points> are equal to half the base value for your level (see \\tref<Character Advancement>).
                 \\item Taking damage in excess of half its maximum hit points does not cause it to gain a \\glossterm<vital wound>.
                 \\item It has no \\glossterm<resistances>.
                 \\item Each of its \\glossterm<defenses> is equal to 4 \\add your level.
