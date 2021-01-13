@@ -77,7 +77,7 @@ class Spell(object):
             return ''
 
         fatigue_points_text = f"{(self.level ** 2) * 2} \\glossterm<fatigue points>" if self.ritual_time in ['24 hours', 'one week'] else 'one \\glossterm<fatigue point>'
-        return f"This ritual takes 24 hours to perform, and it requires {fatigue_points_text} from its participants."
+        return f"This ritual takes {self.ritual_time} to perform, and it requires {fatigue_points_text} from its participants."
 
     def scaling_text(self):
         if not self.scaling:
