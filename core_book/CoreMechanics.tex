@@ -846,10 +846,10 @@ It defines how attributes work and explains how to make attacks in combat.
             Constitution represents your health and stamina.
             It has the following effects:
             \begin{itemize}
-                \item You gain a bonus (or penalty) to your Fortitude defense equal to your base Constitution.
+                \item You gain a bonus (or penalty) to your \glossterm{hit points} equal to your Constitution.
                 \item You gain a bonus (or penalty) to your \glossterm{resistance} against \glossterm{physical damage} equal to your Constitution (see \pcref{Resistances}).
+                \item You gain a bonus (or penalty) to your Fortitude defense equal to your base Constitution.
                 \item You gain a bonus (or penalty) to your \glossterm{fatigue tolerance} equal to your base Constitution (see \pcref{Fatigue}).
-                \item Your Constitution influences your \glossterm{hit points} (see \pcref{Hit Points}).
                 \item You apply your base Constitution as a bonus or penalty to the Constitution-based \glossterm{skill}: Endurance (see \pcref{Skills}).
                 \item If your base Constitution is at least 3, you are automatically \glossterm{trained} with your Constitution-based \glossterm{class skills} (see \pcref{Class Skills}.
             \end{itemize}
@@ -1017,42 +1017,42 @@ It defines how attributes work and explains how to make attacks in combat.
         Whenever you take damage that would reduce your hit points below 0, you gain a \glossterm{vital wound} and your hit points stay at 0.
         Once you reach 0 hit points, you can die quickly from any additional damage.
 
-        The number of hit points you have is based on the sum of your level and your base Constitution, as defined in \tref{Hit Points}.
+        The number of hit points you have is based on your level, as defined in \tref{Base Hit Points and Resistances}.
+        In addition, each creature gains a bonus (or penalty) to its hit points equal to its Constitution.
         Some special abilities can give you additional \glossterm{hit points}.
 
         \begin{dtable}
-            \lcaption{Hit Points}
-            \begin{dtabularx}{\columnwidth}{l X}
-                \tb{Level \add Base Con} & \tb{Hit Points} \tableheaderrule
-                \minus1 or lower & 9      \\
-                0                & 10     \\
-                1                & 11     \\
-                2                & 12     \\
-                3                & 13     \\
-                4                & 15     \\
-                5                & 17     \\
-                6                & 19     \\
-                7                & 22     \\
-                8                & 25     \\
-                9                & 28     \\
-                10               & 31     \\
-                11               & 35     \\
-                12               & 39     \\
-                13               & 44     \\
-                14               & 50     \\
-                15               & 56     \\
-                16               & 63     \\
-                17               & 70     \\
-                18               & 78     \\
-                19               & 88     \\
-                20               & 100    \\
-                21               & 112    \\
-                22               & 125    \\
-                23               & 140    \\
-                24               & 155    \\
-                25\plus\fn{1}    & \tdash \\
+            \lcaption{Base Hit Points and Resistances}
+            \begin{dtabularx}{\columnwidth}{l X X}
+                \tb{Level}    & \tb{Hit Points}  & \tb{Resistances}\fn{1} \tableheaderrule
+                1             & 11               & 2  \\
+                2             & 12               & 3  \\
+                3             & 13               & 3  \\
+                4             & 15               & 3  \\
+                5             & 17               & 4  \\
+                6             & 19               & 4  \\
+                7             & 22               & 5  \\
+                8             & 25               & 6  \\
+                9             & 28               & 7  \\
+                10            & 31               & 8  \\
+                11            & 35               & 9  \\
+                12            & 39               & 10 \\
+                13            & 44               & 11 \\
+                14            & 50               & 12 \\
+                15            & 56               & 14 \\
+                16            & 63               & 15 \\
+                17            & 70               & 17 \\
+                18            & 78               & 19 \\
+                19            & 88               & 22 \\
+                20            & 100              & 25 \\
+                21            & 112              & 28 \\
+                22            & 125             & 31 \\
+                23            & 140             & 35 \\
+                24            & 155             & 39 \\
+                25\plus\fn{2} & \tdash          & \tdash\\
             \end{dtabularx}
-            1. For each point beyond 24, a creature increases its maximum hit points by 15.
+            1. This bonus applies to both your \glossterm{resistance} to \glossterm{physical damage} and your resistance to \glossterm{energy damage}.
+            2. For each level beyond 25, a creature increases its maximum hit points by 15 and its maximum resistances by 4.
         \end{dtable}
 
         \parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of the creature being damaged.
@@ -1247,6 +1247,10 @@ It defines how attributes work and explains how to make attacks in combat.
         Resistances cannot be restored by effects that cause creatures to regain hit points.
         Some specific special abilities can restore resistances.
 
+        The base value of your resistances is based on your level, as defined in \tref{Base Hit Points and Resistances}.
+        In addition, all creatures gain a bonus to their resistance to \glossterm{physical damage} equal to their Constitution, and a bonus to their resistance to \glossterm{energy damage} equal to their Willpower.
+        Body armor provides additional resistance bonuses, and many special abilities also increase resistances.
+
         \parhead{Noticing Resistances}
         In general, it is impossible to determine whether a creature has resistances simply by observing them unless there are obvious visual cues like armor.
         However, when a creature takes damage from an attack, an observer can determine the result of the attack with an Awareness check with a base \glossterm{difficulty rating} of 10 (before applying the normal modifiers for distance, visibility, and so on).
@@ -1260,8 +1264,6 @@ It defines how attributes work and explains how to make attacks in combat.
         \end{itemize}
 
         \parhead{Common Resistance Sources}
-        All creatures have a resistance to \glossterm{physical damage} equal to their Constitution, and a resistance to \glossterm{energy damage} equal to their Willpower.
-        Body armor provides additional resistance bonuses, and many special abilities also increase resistances.
 
         \parhead{Stacking Magic Bonuses} A \glossterm{magic bonus} to a specific type of resistance does not stack with a \glossterm{magic bonus} to a more general resistance if both apply.
         For example, if you have a \glossterm{magic bonus} to resistances against energy damage and another \glossterm{magic bonus} to resistances against fire damage, you only use the higher of the two when you take fire damage.
@@ -2023,7 +2025,7 @@ It defines how attributes work and explains how to make attacks in combat.
     \subsection{Leveling Up}
         When you gain a level, the following things happen:
         \begin{itemize}
-            \item Your \glossterm{hit points} increase (see \tref{Hit Points}).
+            \item Your \glossterm{hit points} and \glossterm{resistances} increase (see \tref{Base Hit Points and Resistances}).
             \item Your \glossterm{accuracy} increases by 1 (see \pcref{Accuracy})
             \item All of your \glossterm{defenses} increase by 1 (see \pcref{Defenses})
             \item You gain an additional \glossterm{archetype rank} (see \pcref{Archetypes})
