@@ -4,14 +4,14 @@ Monsters are all of the various non-humanoid creatures that exist in the world o
 Many of them are dangerous, and adventurers may need to fight them.
 This chapter describes the rules for monsters, and the combat statistics for a variety of monsters.
 
-\section{Monster Mechanics}
+\section{Monster Statistics}
     Like player characters, monsters have levels, attributes, and abilities.
     However, they do not have classes, legacy items, or many other elements of characters.
     This section defines how monsters function.
 
     \subsection{Level}
         Each monster has a level that indicates its approximate strength.
-        This has all of the same effects as the level for a player character, except that monsters do not gain any of the benefits described in \tref{Character Advancement}.
+        This has all of the same effects as the level for a player character, except that monsters do not gain legacy items or attunement points as described in \tref{Character Advancement}.
 
     \subsection{Challenge Rating}\label{Challenge Rating}
         Each monster has a \glossterm{challenge rating} that indicates its approximate strength within its level, ranging from 1/2 to 4.
@@ -20,19 +20,24 @@ This chapter describes the rules for monsters, and the combat statistics for a v
 
         \begin{dtable}
             \lcaption{Challenge Rating Effects}
-            \begin{dtabularx}{\textwidth}{l X X X}
-                \tb{CR} & \tb{Hit Points} & \tb{Resistances} & \tb{Vital Wound Max} & \tb{Attunement Points} & \tb{Bonuses}\fn{1} \tableheaderrule
-                1/2     & \mult1/2        & \tdash           & 1                    & 0                      & \plus0 \\
-                1       & \mult1          & \tdash           & 1                    & 1                      & \plus0 \\
-                2       & \mult1          & \mult1           & 2                    & 1                      & \plus1 \\
-                3       & \mult2          & \mult2           & 3                    & 2                      & \plus2 \\
-                4       & \mult4          & \mult4           & 4                    & 3                      & \plus3 \\
+            \begin{dtabularx}{\textwidth}{l l l X l l l}
+                \tb{CR} & \tb{HP}  & \tb{Resists} & \tb{Vital Wound Max} & \tb{AP} & \tb{Accuracy} & \tb{Defenses} \tableheaderrule
+                1/2     & \mult1/2 & \mult0           & 1                    & 0       & \plus0        & \plus0 \\
+                1       & \mult1   & \mult0           & 1                    & 1       & \plus0        & \plus0 \\
+                2       & \mult1   & \mult1           & 2                    & 1       & \plus1        & \plus1 \\
+                3       & \mult2   & \mult2           & 3                    & 2       & \plus2        & \plus2 \\
+                4       & \mult2   & \mult2\fn{1}     & 4                    & 3       & \plus3        & \plus3 \\
             \end{dtabularx}
-            1. See \pcref{Monster CR Bonuses}. \\
+            1. CR 4 monsters also have a universal damage resistance equal to their HP (see \pcref{Monster Universal Resistance}). \\
         \end{dtable}
 
-        \subsubsection{Monster CR Bonuses}\label{Monster CR Bonuses}
-            For each challenge rating a monster has above 1, it gains a \plus1 bonus to \glossterm{accuracy} and \glossterm{defenses}.
+        \subsection{Monster Universal Resistance}
+            CR 4 monsters have a special universal resistance to damage of all types equal to their maximum \glossterm{hit points}.
+            This resistance is independent of their specific resistances to physical damage or energy damage, and is applied after their more specific resistances have been expended.
+            A small number of monsters that are not CR 4 can also gain universal damage resistance as indicated in their descriptions.
+
+            This resistance ensures that CR 4 monsters are appropriately durable in combat without requiring all damage they take be of any particular type.
+            It should take multiple rounds of combat before they start losing hit points, since losing hit points makes them vulnerable to powerful detrimental effects.
 
         \subsubsection{Monster Vital Wounds}
             Monsters do not normally make \glossterm{vital rolls} like player characters do.
@@ -56,17 +61,70 @@ This chapter describes the rules for monsters, and the combat statistics for a v
             This effect cannot remove a condition applied during the current round.
             Monsters without a sufficient understanding of the conditions affecting them generally choose randomly.
 
-        \subsubsection{Monster Actions}
-            All monsters are able to take \glossterm{free actions}.
-            CR 1 or higher monsters can take \glossterm{minor actions}, though many monsters do not have any relevant minor actions to take.
-            Some monsters, including many high CR monsters, can either take additional actions each round or use powerful abilities as minor actions.
-            These special abilities are listed in their descriptions.
-
     \subsection{Attributes}
         Each of a monster's base attributes can range from \minus9 to 3, as appropriate for the type of monster.
         A monster's attributes scale with level in the same way as character attributes.
         A monster can also have up to two attributes starting at 4 or 5.
         In general, a monster with higher starting attributes will be slightly stronger, but not all monsters need to start with the same starting attribute total.
+
+    \subsection{Level Scaling}
+        Monster level scaling is described in \tref{Monster Advancement}.
+        This summarizes the following effects:
+        \begin{itemize}
+            \item A \plus1 bonus to all defenses at 3rd level and every 6 levels thereafter
+            \item A \plus1 bonus to power with all abilities at 3rd level that gradually increases every 3 levels thereafter
+            \item A \plus1d bonus to damage with strikes at 4th level and every 3 levels thereafter
+            \item A \plus1 bonus to accuracy at 5th level and every 6 levels thereafter
+        \end{itemize}
+        These scaling values are designed to keep monsters at a similar power level to player characters without having to repetitively define specific bonuses for each monster.
+        In general, monsters that are designed to have unusually high or low values for any particular statistic define that with their attributes, though some monsters have more specific abilities.
+
+    \begin{dtable*}
+        \lcaption{Monster Advancement}
+        \begin{dtabularx}{\textwidth}{l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+            \tb{Level} & \tb{HP}   & \tb{Resistances} & \tb{Defenses} & \tb{Power} & \tb{Strike Damage} & \tb{Accuracy} \tableheaderrule
+            1st        & 11        & 2                & \dash         & \dash      & \tdash             & \dash  \\
+            2nd        & 12        & 3                & \dash         & \dash      & \tdash             & \dash  \\
+            3rd        & 13        & 3                & \plus1        & \plus1     & \tdash             & \dash  \\
+            4th        & 15        & 3                & \plus1        & \plus1     & \plus1d            & \dash  \\
+            5th        & 17        & 4                & \plus1        & \plus1     & \plus1d            & \plus1 \\
+            6th        & 19        & 4                & \plus1        & \plus2     & \plus1d            & \plus1 \\
+            7th        & 22        & 5                & \plus1        & \plus2     & \plus2d            & \plus1 \\
+            8th        & 25        & 6                & \plus1        & \plus2     & \plus2d            & \plus1 \\
+            9th        & 28        & 7                & \plus2        & \plus3     & \plus2d            & \plus1 \\
+            10th       & 31        & 8                & \plus2        & \plus3     & \plus3d            & \plus1 \\
+            11th       & 35        & 9                & \plus2        & \plus3     & \plus3d            & \plus2 \\
+            12th       & 39        & 10               & \plus2        & \plus4     & \plus3d            & \plus2 \\
+            13th       & 44        & 11               & \plus2        & \plus4     & \plus4d            & \plus2 \\
+            14th       & 50        & 12               & \plus2        & \plus4     & \plus4d            & \plus2 \\
+            15th       & 56        & 14               & \plus3        & \plus6     & \plus4d            & \plus2 \\
+            16th       & 63        & 15               & \plus3        & \plus6     & \plus5d            & \plus2 \\
+            17th       & 70        & 17               & \plus3        & \plus6     & \plus5d            & \plus3 \\
+            18th       & 78        & 19               & \plus3        & \plus8     & \plus5d            & \plus3 \\
+            19th       & 88        & 22               & \plus3        & \plus8     & \plus6d            & \plus3 \\
+            20th       & 100       & 25               & \plus3        & \plus8     & \plus6d            & \plus3 \\
+            21st       & 115\fn{5} & 28               & \plus4        & \plus12    & \plus6d            & \plus3 \\
+        \end{dtabularx}
+        1. For each level beyond 21, a creature increases its maximum hit points by 15 and its maximum resistances by 4. \\
+    \end{dtable*}
+
+    \subsection{Monster Armor}
+        In general, monsters gain Armor Defense bonuses from armor in the same way that player characters do.
+        Of course, not all monsters wear physical armor.
+        However, their statistics are modified in a similar way.
+        The narrative justification is that the bonus is caused by their scales, an unusually tough hide, or similar effects.
+
+        Monster resistances are generally calculated more simply than player resistances from armor, however.
+        At higher levels, player resistances are heavily influenced by special materials, and calculating monster resistances in the same way would require annoying bookkeeping and lead to oddly large gaps between resistances at similar levels.
+        Instead, many monsters have special abilities indicating that they double their base resistance bonus for physical damage, energy damage, or both, depending on the monster's narrative.
+
+\section{Monster Combat Mechanics}
+
+    \subsection{Monster Actions}
+        All monsters are able to take \glossterm{free actions}.
+        CR 1 or higher monsters can take \glossterm{minor actions}, though many monsters do not have any relevant minor actions to take.
+        Some monsters, including many high CR monsters, can either take additional actions each round or use powerful abilities as minor actions.
+        These special abilities are listed in their descriptions.
 
     \subsection{Encounter Balancing}\label{Encounter Balancing}
         In general, a group of PCs of a given level will have an appropriate challenge from fighting monsters of the same level with a combined challenge rating equal to the number of PCs.
