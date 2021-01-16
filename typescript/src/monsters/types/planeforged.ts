@@ -11,10 +11,8 @@ const baseAngel = {
   challengeRating: 4 as const,
   delayedCalculations: [
     (monster: MonsterBase) => {
-      for (const resistanceType of ["damage" as const, "vital" as const]) {
-        for (const damageType of damageTypes) {
-          monster.resistances[resistanceType][damageType] += Math.floor(monster.magicalPower / 2);
-        }
+      for (const damageType of damageTypes) {
+        monster.resistances[damageType] += Math.floor(monster.magicalPower / 2);
       }
     },
   ],
