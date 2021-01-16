@@ -1,56 +1,49 @@
-import { damageResistanceByLevel } from "@src/calculate/bleed_resistance_by_level";
-import { vitalResistanceByLevel } from "@src/calculate/vital_resistance_by_level";
+import { baseResistanceByLevel } from "@src/calculate/base_resistance_by_level";
 import { DamageType, damageTypes } from "@src/data";
 import { MonsterBase } from "@src/monsters";
 
-export interface Resistances {
-  damage: Record<DamageType, number>;
-  vital: Record<DamageType, number>;
-}
+export type Resistances = Record<DamageType, number>;
 
-export function calculateResistances(
-  {
-    challengeRating,
-    level,
-    resistanceBonuses,
-  }: Pick<MonsterBase, "challengeRating" | "level" | "resistanceBonuses">,
-  attributes: Creature.Attributes,
-): Resistances {
-  const dr = damageResistanceByLevel(level, attributes.con);
-  const wr = vitalResistanceByLevel(level, attributes.con);
+export function calculateResistances({
+  attributes,
+  challengeRating,
+  hitPoints,
+  level,
+  resistanceBonuses,
+}: Pick<
+  MonsterBase,
+  "attributes" | "challengeRating" | "hitPoints" | "level" | "resistanceBonuses"
+>): Resistances {
+  const dr = baseResistanceByLevel(level);
+  const physicalDr = dr + resistanceBonuses.physical + (attributes.con || 0);
+  const energyDr = dr + resistanceBonuses.energy + (attributes.wil || 0);
   const resistances: Resistances = {
-    damage: {
-      physical: dr + resistanceBonuses.physical,
-      acid: dr + resistanceBonuses.physical + resistanceBonuses.acid,
-      bludgeoning: dr + resistanceBonuses.physical + resistanceBonuses.bludgeoning,
-      piercing: dr + resistanceBonuses.physical + resistanceBonuses.piercing,
-      slashing: dr + resistanceBonuses.physical + resistanceBonuses.slashing,
+    physical: physicalDr,
+    acid: physicalDr + resistanceBonuses.acid,
+    bludgeoning: physicalDr + resistanceBonuses.bludgeoning,
+    piercing: physicalDr + resistanceBonuses.piercing,
+    slashing: physicalDr + resistanceBonuses.slashing,
 
-      energy: dr + resistanceBonuses.energy,
-      cold: dr + resistanceBonuses.energy + resistanceBonuses.cold,
-      electricity: dr + resistanceBonuses.energy + resistanceBonuses.electricity,
-      fire: dr + resistanceBonuses.energy + resistanceBonuses.fire,
-    },
-    vital: {
-      physical: wr + resistanceBonuses.physical,
-      acid: wr + resistanceBonuses.physical + resistanceBonuses.acid,
-      bludgeoning: wr + resistanceBonuses.physical + resistanceBonuses.bludgeoning,
-      piercing: wr + resistanceBonuses.physical + resistanceBonuses.piercing,
-      slashing: wr + resistanceBonuses.physical + resistanceBonuses.slashing,
+    energy: energyDr,
+    cold: energyDr + resistanceBonuses.cold,
+    electricity: energyDr + resistanceBonuses.electricity,
+    fire: energyDr + resistanceBonuses.fire,
+    sonic: energyDr + resistanceBonuses.sonic,
 
-      energy: wr + resistanceBonuses.energy,
-      cold: wr + resistanceBonuses.energy + resistanceBonuses.cold,
-      electricity: wr + resistanceBonuses.energy + resistanceBonuses.electricity,
-      fire: wr + resistanceBonuses.energy + resistanceBonuses.fire,
-    },
+    // Note that this is not multiplied by crMultiplier since 'universal' is not a standard damage
+    // type
+    universal: challengeRating === 4 ? hitPoints : 0,
   };
 
-  if (challengeRating === 0.5) {
-    for (const category of ["damage" as const, "vital" as const]) {
-      for (const damageType of damageTypes) {
-        resistances[category][damageType] *= 0.5;
-      }
-    }
+  const crMultiplier = {
+    0.5: 0,
+    1: 0,
+    2: 1,
+    3: 2,
+    4: 2,
+  }[challengeRating];
+  for (const damageType of damageTypes) {
+    resistances[damageType] *= crMultiplier;
   }
 
   return resistances;
