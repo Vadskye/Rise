@@ -3,7 +3,6 @@ import { parseAttack } from "@src/attacks";
 import { MonsterBaseInput } from "@src/monsters/reformat_monster_input";
 import { MonsterGroupInput } from "@src/monsters/reformat_monster_input";
 import { passiveAbilities } from "@src/passive_abilities";
-import _ from "lodash";
 import { addType, TypelessMonsterInput } from "./add_type";
 import { humanoids } from "./humanoids";
 
