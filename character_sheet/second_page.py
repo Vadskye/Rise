@@ -751,7 +751,7 @@ def calc_armor():
                     'value': '@{dexterity_starting}',
                 })),
                 plus(),
-                underlabel('Class', number_input({'name': 'armor_defense_class_bonus'})),
+                underlabel('Class', number_input({'name': 'armor_defense_class_bonus', 'value': '2'})),
                 plus(),
                 underlabel('Armor', number_input({'name': 'body_armor_defense_value'})),
                 plus(),
