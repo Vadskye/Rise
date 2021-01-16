@@ -109,7 +109,7 @@ aberrationInput.push({
   ],
   size: "huge",
   speeds: { land: 10, swim: 50 },
-  startingAttributes: { str: 4, dex: -1, con: 4, int: 3, per: 1, wil: 4 },
+  startingAttributes: { str: 3, dex: -1, con: 4, int: 3, per: 1, wil: 4 },
   weaponInput: [{ name: "tentacle" }],
 });
 
