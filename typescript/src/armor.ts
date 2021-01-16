@@ -72,7 +72,8 @@ export function isStandardArmorInput(input: ArmorInput): input is StandardArmorI
 export const standardArmors: Record<StandardArmorName, Omit<CustomArmorInput, "name">> = {
   "full plate": {
     defenseBonuses: { armor: 4 },
-    resistanceBonuses: { energy: 3, physical: 6 },
+    resistanceBonuses: {},
+    // resistanceBonuses: { energy: 3, physical: 6 },
   },
   "standard shield": {
     defenseBonuses: { armor: 2 },
@@ -80,49 +81,60 @@ export const standardArmors: Record<StandardArmorName, Omit<CustomArmorInput, "n
   },
   "breastplate": {
     defenseBonuses: { armor: 3 },
-    resistanceBonuses: { energy: 2, physical: 4 },
+    resistanceBonuses: {},
+    // resistanceBonuses: { energy: 2, physical: 4 },
   },
   // Conflicts with body armor; equivalent to hide
   "fur": {
     defenseBonuses: { armor: 3 },
-    resistanceBonuses: { energy: 3, physical: 3 },
+    resistanceBonuses: {},
+    // resistanceBonuses: { energy: 3, physical: 3 },
   },
   // Conflicts with body armor; equivalent to breastplate
   "scales": {
     defenseBonuses: { armor: 3 },
-    resistanceBonuses: { energy: 4, physical: 4 },
+    resistanceBonuses: {},
+    // resistanceBonuses: { energy: 4, physical: 4 },
   },
   "hide": {
     defenseBonuses: { armor: 3 },
-    resistanceBonuses: { energy: 2, physical: 2 },
+    resistanceBonuses: {},
+    // resistanceBonuses: { energy: 2, physical: 2 },
   },
   "feathers": {
     defenseBonuses: { armor: 2 },
-    resistanceBonuses: { energy: 1, physical: 1 },
+    resistanceBonuses: {},
+    // resistanceBonuses: { energy: 1, physical: 1 },
   },
   // Conflicts with body armor; equivalent to full plate
   "carapace": {
     defenseBonuses: { armor: 4 },
-    resistanceBonuses: { energy: 3, physical: 6 },
+    resistanceBonuses: {},
+    // resistanceBonuses: { energy: 3, physical: 6 },
   },
   "thick skin": {
     defenseBonuses: { armor: 1 },
-    resistanceBonuses: { energy: 3, physical: 3 },
+    resistanceBonuses: {},
+    // resistanceBonuses: { energy: 3, physical: 3 },
   },
   "reinforced": {
     defenseBonuses: {},
-    resistanceBonuses: { energy: 1, physical: 1 },
+    resistanceBonuses: {},
+    // resistanceBonuses: { energy: 1, physical: 1 },
   },
   "double reinforced": {
     defenseBonuses: {},
-    resistanceBonuses: { energy: 2, physical: 2 },
+    resistanceBonuses: {},
+    // resistanceBonuses: { energy: 2, physical: 2 },
   },
   "leather": {
     defenseBonuses: { armor: 2 },
-    resistanceBonuses: { energy: 2, physical: 0 },
+    resistanceBonuses: {},
+    // resistanceBonuses: { energy: 2, physical: 0 },
   },
   "studded leather": {
     defenseBonuses: { armor: 2 },
-    resistanceBonuses: { energy: 2, physical: 1 },
+    resistanceBonuses: {},
+    // resistanceBonuses: { energy: 2, physical: 1 },
   },
 };
