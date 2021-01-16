@@ -1,6 +1,6 @@
 import { DamageType } from "@src/data";
 
-export function damageTypes(types: DamageType[]) {
+export function damageTypes(types: DamageType[]): string {
   if (types.length <= 2) {
     return types.join(" and ");
   }

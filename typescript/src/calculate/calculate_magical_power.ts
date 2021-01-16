@@ -1,15 +1,14 @@
 import { MonsterBase } from "@src/monsters";
-import { calculateChallengeRatingBonus, monsterPowerBonusByLevel } from ".";
+import { monsterPowerBonusByLevel } from ".";
 
 export function calculateMagicalPower({
-  challengeRating,
+  attributes,
   level,
   powerBonuses,
-  startingAttributes,
-}: Pick<MonsterBase, "challengeRating" | "level" | "powerBonuses" | "startingAttributes">) {
-  const crBonus = calculateChallengeRatingBonus(challengeRating);
+}: Pick<
+  MonsterBase,
+  "attributes" | "challengeRating" | "level" | "powerBonuses" | "startingAttributes"
+>): number {
   const monsterBonus = monsterPowerBonusByLevel(level);
-  return (
-    level + (startingAttributes.wil ?? 0) + crBonus + monsterBonus + (powerBonuses?.magical || 0)
-  );
+  return Math.floor((attributes.wil ?? 0) / 2) + monsterBonus + (powerBonuses?.magical || 0);
 }

@@ -2,7 +2,7 @@ import { AbilityTag } from "@src/ability_tags";
 
 const tagPattern = /([^(]+)( \([^)]\))?/;
 
-export function abilityTag(tag: AbilityTag) {
+export function abilityTag(tag: AbilityTag): string {
   const match = tag.match(tagPattern);
   if (!match) {
     throw new Error(`Unable to parse tag '${tag}'`);
@@ -13,6 +13,6 @@ export function abilityTag(tag: AbilityTag) {
   return parenthetical ? `\\glossterm{${tagName}} (${parenthetical})` : `\\glossterm{${tagName}}`;
 }
 
-export function activeAbilityTags(tags: AbilityTag[]) {
+export function activeAbilityTags(tags: AbilityTag[]): string {
   return tags.length > 0 ? `[${tags.map(abilityTag).join(", ")}]` : "";
 }
