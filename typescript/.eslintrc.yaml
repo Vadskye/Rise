@@ -1,0 +1,10 @@
+parser: '@typescript-eslint/parser'
+extends:
+  - "eslint:recommended"
+  - 'plugin:@typescript-eslint/eslint-recommended'
+  - 'plugin:@typescript-eslint/recommended'
+env:
+  mocha: true
+  node: true
+rules:
+  '@typescript-eslint/no-non-null-assertion': 0
