@@ -10,7 +10,6 @@ def generate_script():
         *resistances(),
         *abilities_known(),
         attunement_points(),
-        level_scaling(),
         skill_points_spent(),
         unknown_statistic(),
         '</script>',
@@ -171,8 +170,9 @@ def accuracy():
         ['challenge_rating', 'level', 'perception_starting', 'fatigue_penalty', *misc],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
+            var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 1) / 6)) : 0;
             setAttrs({{
-                accuracy: level + Math.floor(perception_starting / 2)  + {sum_variables(misc)} + cr_mod - fatigue_penalty,
+                accuracy: level + Math.floor(perception_starting / 2)  + {sum_variables(misc)} + cr_mod + level_scaling - fatigue_penalty,
             }});
         """
     )
@@ -204,27 +204,14 @@ def unknown_statistic():
         """,
     )
 
-
-# This only applies to monsters, which is defined as creatures with CR !== 0
-def level_scaling():
-    return js_wrapper(
-        ['challenge_rating', 'level'],
-        f"""
-            var level_scaling = challenge_rating === 0 ? 0 : Math.floor((level + 1) / 6);
-            setAttrs({{
-                level_scaling,
-            }});
-        """,
-    )
-
-
 def armor_defense():
     misc = get_misc_variables('armor_defense', 3)
     return js_wrapper(
         ['level', 'dexterity_starting', 'armor_defense_class_bonus', 'body_armor_defense_value', 'shield_defense_value', *misc, 'challenge_rating'],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
-            var before_equipment = level + dexterity_starting + cr_mod + armor_defense_class_bonus;
+            var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 3) / 6)) : 0;
+            var before_equipment = level + dexterity_starting + cr_mod + level_scaling + armor_defense_class_bonus;
             var total = before_equipment + body_armor_defense_value + shield_defense_value + {sum_variables(misc)};
             setAttrs({{
                 armor_defense: total,
@@ -238,8 +225,9 @@ def fortitude():
         ['level', 'constitution_starting', 'fortitude_class', 'challenge_rating', *misc],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
+            var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 3) / 6)) : 0;
             setAttrs({{
-                fortitude: level + constitution_starting + fortitude_class + cr_mod + {sum_variables(misc)},
+                fortitude: level + constitution_starting + fortitude_class + cr_mod + level_scaling + {sum_variables(misc)},
             }});
         """
     )
@@ -250,8 +238,9 @@ def reflex():
         ['level', 'dexterity_starting', 'reflex_class', 'challenge_rating', *misc],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
+            var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 3) / 6)) : 0;
             setAttrs({{
-                reflex: level + dexterity_starting + reflex_class + cr_mod + {sum_variables(misc)},
+                reflex: level + dexterity_starting + reflex_class + cr_mod + level_scaling + {sum_variables(misc)},
             }});
         """
     )
@@ -262,8 +251,9 @@ def mental():
         ['level', 'willpower_starting', 'mental_class', 'challenge_rating', *misc],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
+            var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 3) / 6)) : 0;
             setAttrs({{
-                mental: level + willpower_starting + mental_class + cr_mod + {sum_variables(misc)},
+                mental: level + willpower_starting + mental_class + cr_mod + level_scaling + {sum_variables(misc)},
             }});
         """
     )
@@ -324,7 +314,7 @@ def fatigue_tolerance():
         ['level', 'constitution_starting', 'willpower_starting', *misc],
         f"""
             setAttrs({{
-                fatigue_tolerance: 2 + constitution_starting + willpower_starting + {sum_variables(misc)},
+                fatigue_tolerance: Math.max(0, 2 + constitution_starting + willpower_starting + {sum_variables(misc)}),
             }});
         """
     )
@@ -345,7 +335,7 @@ def focus_penalty():
 def hit_points():
     misc = get_misc_variables('hit_points', 3)
     return js_wrapper(
-        ['level', 'constitution_starting', 'challenge_rating', *misc],
+        ['level', 'constitution', 'challenge_rating', *misc],
         f"""
             var hit_points_from_level = {{
                 '-1': 9  ,
@@ -370,27 +360,30 @@ def hit_points():
                 18:   78 ,
                 19:   88 ,
                 20:   100,
-                21:   112,
-                22:   125,
-                23:   140,
-                24:   155,
-                25:   170,
-                26:   185,
-                27:   200,
-                28:   215,
-                29:   230,
-                30:   245,
-            }}[level + constitution_starting] || 1;
+                21:   115,
+                22:   130,
+                23:   145,
+                24:   160,
+                25:   175,
+                26:   190,
+                27:   205,
+                28:   230,
+                29:   245,
+                30:   260,
+            }}[level] || 1;
 
-            var hit_points = hit_points_from_level + {sum_variables(misc)};
-            var cr_mod = {{
+            var hit_points = hit_points_from_level + constitution + {sum_variables(misc)};
+            var cr_multiplier = {{
+                0: 1,
                 0.5: 0.25,
                 1: 0.5,
                 2: 1,
                 3: 2,
-                4: 4,
-            }}[challenge_rating] || 1;
-            hit_points = Math.floor(hit_points * cr_mod)
+                // TODO: represent universal resistance in the roll20 sheet.
+                // For now, just going through the HP bar twice works well enough.
+                4: 2,
+            }}[challenge_rating || 0];
+            hit_points = Math.floor(hit_points * cr_multiplier)
             setAttrs({{
                 hit_points,
                 hit_points_from_level,
@@ -424,11 +417,24 @@ def insight_points():
 def magical_power():
     misc = get_misc_variables('magical_power', 3)
     return js_wrapper(
-        ['willpower', *misc],
+        ['willpower', 'level', 'challenge_rating', *misc],
         f"""
             var willpower_power_scaling = Math.floor(willpower / 2);
+            var level_scaling = challenge_rating
+                ? {{
+                    0: 0,
+                    1: 1,
+                    2: 2,
+                    3: 3,
+                    4: 4,
+                    5: 6,
+                    6: 8,
+                    7: 12,
+                    8: 16,
+                }}[Math.floor(level / 3)]
+                : 0;
             setAttrs({{
-                magical_power: willpower_power_scaling + {sum_variables(misc)},
+                magical_power: willpower_power_scaling + level_scaling + {sum_variables(misc)},
                 willpower_power_scaling,
             }});
         """
@@ -437,11 +443,24 @@ def magical_power():
 def mundane_power():
     misc = get_misc_variables('mundane_power', 3)
     return js_wrapper(
-        ['strength', *misc],
+        ['strength', 'level', 'challenge_rating', *misc],
         f"""
             var strength_power_scaling = Math.floor(strength / 2);
+            var level_scaling = challenge_rating
+                ? {{
+                    0: 0,
+                    1: 1,
+                    2: 2,
+                    3: 3,
+                    4: 4,
+                    5: 6,
+                    6: 8,
+                    7: 12,
+                    8: 16,
+                }}[Math.floor(level / 3)]
+                : 0;
             setAttrs({{
-                mundane_power: strength_power_scaling + {sum_variables(misc)},
+                mundane_power: strength_power_scaling + level_scaling + {sum_variables(misc)},
                 strength_power_scaling,
             }});
         """
@@ -495,10 +514,53 @@ def blank_ability_known(i):
 def energy_resistance():
     misc = get_misc_variables('energy_resistance_bonus', 4)
     return js_wrapper(
-        ['willpower', 'energy_resistance_bonus_armor', *misc],
+        ['willpower', 'level', 'challenge_rating', 'energy_resistance_bonus_armor', *misc],
         f"""
+            var resistance_from_level = {{
+                0:    0 ,
+                1:    2 ,
+                2:    3 ,
+                3:    3 ,
+                4:    3 ,
+                5:    4 ,
+                6:    4 ,
+                7:    5 ,
+                8:    6 ,
+                9:    7 ,
+                10:   8 ,
+                11:   9 ,
+                12:   10,
+                13:   11,
+                14:   12,
+                15:   14,
+                16:   15,
+                17:   17,
+                18:   19,
+                19:   22,
+                20:   25,
+                21:   28,
+                22:   32,
+                23:   36,
+                24:   40,
+                25:   44,
+                26:   48,
+                27:   52,
+                28:   56,
+                29:   60,
+                30:   64,
+            }}[level] || 0;
+            var cr_multiplier = {{
+                0: 1,
+                0.5: 0,
+                1: 0,
+                2: 1,
+                3: 2,
+                // TODO: represent universal resistance in the roll20 sheet.
+                // For now, just going through the HP bar twice works well enough.
+                4: 2,
+            }}[challenge_rating || 0];
             setAttrs({{
-                energy_resistance_bonus: willpower + energy_resistance_bonus_armor + {sum_variables(misc)},
+                energy_resistance_bonus: (resistance_from_level + willpower + energy_resistance_bonus_armor + {sum_variables(misc)}) * cr_multiplier,
             }});
         """
     )
@@ -506,10 +568,53 @@ def energy_resistance():
 def physical_resistance():
     misc = get_misc_variables('physical_resistance_bonus', 4)
     return js_wrapper(
-        ['constitution', 'physical_resistance_bonus_armor', *misc],
+        ['constitution', 'level', 'challenge_rating', 'physical_resistance_bonus_armor', *misc],
         f"""
+            var resistance_from_level = {{
+                0:    0 ,
+                1:    2 ,
+                2:    3 ,
+                3:    3 ,
+                4:    3 ,
+                5:    4 ,
+                6:    4 ,
+                7:    5 ,
+                8:    6 ,
+                9:    7 ,
+                10:   8 ,
+                11:   9 ,
+                12:   10,
+                13:   11,
+                14:   12,
+                15:   14,
+                16:   15,
+                17:   17,
+                18:   19,
+                19:   22,
+                20:   25,
+                21:   28,
+                22:   32,
+                23:   36,
+                24:   40,
+                25:   44,
+                26:   48,
+                27:   52,
+                28:   56,
+                29:   60,
+                30:   64,
+            }}[level] || 0;
+            var cr_multiplier = {{
+                0: 1,
+                0.5: 0,
+                1: 0,
+                2: 1,
+                3: 2,
+                // TODO: represent universal resistance in the roll20 sheet.
+                // For now, just going through the HP bar twice works well enough.
+                4: 2,
+            }}[challenge_rating || 0];
             setAttrs({{
-                physical_resistance_bonus: constitution + physical_resistance_bonus_armor + {sum_variables(misc)},
+                physical_resistance_bonus: (resistance_from_level + constitution + physical_resistance_bonus_armor + {sum_variables(misc)}) * cr_multiplier,
             }});
         """
     )
