@@ -4,12 +4,16 @@
     "@types/lodash": "^4.14.136",
     "@types/mocha": "^8.0.3",
     "@types/node": "10",
+    "@typescript-eslint/eslint-plugin": "^4.13.0",
+    "@typescript-eslint/parser": "^4.13.0",
     "chai": "^4.2.0",
+    "eslint": "^7.17.0",
+    "eslint-config-prettier": "^7.1.0",
     "mocha": "^8.1.3",
     "prettier": "^1.19.1",
     "tsconfig-paths": "^3.8.0",
     "tslint": "^5.20.1",
-    "typescript": "^4.0.2"
+    "typescript": "^4.1.3"
   },
   "dependencies": {
     "change-case": "^3.1.0",
@@ -24,6 +28,6 @@
   "scripts": {
     "clean": "rm src/*.js && rm src/**/*.js",
     "script": "node -r tsconfig-paths/register",
-    "test": "tsc --incremental && mocha src/**/*.test.js"
+    "test": "tsc --incremental && mocha src/**/*_test.js"
   }
 }
