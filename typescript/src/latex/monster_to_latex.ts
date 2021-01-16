@@ -4,7 +4,7 @@ import {
   CalculatedAttack,
   calculateStrike,
 } from "@src/calculate";
-import { DamageType, damageTypes } from "@src/data";
+import { DamageType, energyDamageTypes, physicalDamageTypes } from "@src/data";
 import * as format from "@src/latex/format";
 import { Monster, MonsterBase, MonsterGroup, monsterIsMonsterGroup } from "@src/monsters";
 import { knowledgeSkillsByMonsterType } from "@src/monsters/types";
@@ -33,7 +33,7 @@ function monsterGroupToLatex(monsterGroup: MonsterGroup) {
   `;
 }
 
-function monsterBaseToLatex(monster: MonsterBase, options?: { subsection?: Boolean }) {
+function monsterBaseToLatex(monster: MonsterBase, options?: { subsection?: boolean }) {
   const sectionTag = options?.subsection ? "monsubsection" : "monsection";
   return `
   \\begin{${sectionTag}}${getMonsectionArgs(monster)}
@@ -107,15 +107,19 @@ function getMonsterNameHeader({ name }: MonsterBase): string {
 }
 
 function getMainContent(monster: MonsterBase) {
-  const extraDamageTypes = new Set<DamageType>();
-  for (const damageType of damageTypes) {
-    if (!["physical", "energy"].includes(damageType) && monster.resistanceBonuses[damageType]) {
-      extraDamageTypes.add(damageType);
+  const displayedDamageTypes = new Set<DamageType>(["physical", "energy"]);
+  for (const damageType of physicalDamageTypes) {
+    if (monster.resistances[damageType] !== monster.resistances.physical) {
+      displayedDamageTypes.add(damageType);
     }
   }
-  if (monster.resistanceBonuses.physical !== monster.resistanceBonuses.energy) {
-    extraDamageTypes.add("physical");
-    extraDamageTypes.add("energy");
+  for (const damageType of energyDamageTypes) {
+    if (monster.resistances[damageType] !== monster.resistances.energy) {
+      displayedDamageTypes.add(damageType);
+    }
+  }
+  if (monster.challengeRating === 4) {
+    displayedDamageTypes.add("universal");
   }
 
   return `
@@ -126,20 +130,9 @@ function getMainContent(monster: MonsterBase) {
           \\textbf{Fort} ${monster.defenses.fortitude} \\monsep
           \\textbf{Ref} ${monster.defenses.reflex} \\monsep
           \\textbf{Ment} ${monster.defenses.mental}
-        \\pari \\textbf{BR} ${
-          extraDamageTypes.size > 0
-            ? Array.from(extraDamageTypes)
-                .map((t: DamageType) => `${titleCase(t)} ${monster.resistances.damage[t]}`)
-                .join(", ")
-            : monster.resistances.damage.physical
-        } \\monsep
-        \\textbf{VR} ${
-          extraDamageTypes.size > 0
-            ? Array.from(extraDamageTypes)
-                .map((t) => `${titleCase(t)} ${monster.resistances.vital[t]}`)
-                .join(", ")
-            : monster.resistances.vital.physical
-        }
+        \\pari \\textbf{Resists} ${Array.from(displayedDamageTypes)
+          .map((t: DamageType) => `${titleCase(t)} ${monster.resistances[t]}`)
+          .join(", ")} \\monsep
         ${getStrikes(monster)}
       \\end{spelltargetinginfo}
     \\end{spellcontent}

@@ -1,17 +1,19 @@
 import { MonsterBase } from "@src/monsters";
+import { monsterAccuracyBonusByLevel } from ".";
 import { calculateChallengeRatingBonus } from "./calculate_challenge_rating_bonus";
 
 export function calculateAccuracy({
   accuracyBonus,
   challengeRating,
   level,
-  attributes,
-}: Pick<MonsterBase, "accuracyBonus" | "attributes" | "challengeRating" | "level">): number {
+  startingAttributes,
+}: Pick<
+  MonsterBase,
+  "accuracyBonus" | "challengeRating" | "level" | "startingAttributes"
+>): number {
   const crBonus = calculateChallengeRatingBonus(challengeRating);
+  const levelScaling = monsterAccuracyBonusByLevel(level);
   return (
-    Math.max(level, attributes.per ?? 0) +
-    accuracyBonus +
-    crBonus +
-    Math.min(0, attributes.per ?? 0)
+    level + Math.floor((startingAttributes.per ?? 0) / 2), accuracyBonus + crBonus + levelScaling
   );
 }

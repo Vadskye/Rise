@@ -238,29 +238,30 @@ function generateMonsterBase(monsterInput: MonsterBaseInput): MonsterBase {
     }
   }
 
-  const attributeModifiers = attributesAtLevel({ level: monster.level, startingAttributes });
-  const accuracy = calculateAccuracy({ ...monster, attributes: attributeModifiers });
-  const magicalPower = calculateMagicalPower({ ...monster, startingAttributes });
-  const mundanePower = calculateMundanePower({ ...monster, startingAttributes });
+  const attributes = attributesAtLevel({ level: monster.level, startingAttributes });
+  const accuracy = calculateAccuracy({ ...monster, startingAttributes });
+  const magicalPower = calculateMagicalPower({ ...monster, attributes });
+  const mundanePower = calculateMundanePower({ ...monster, attributes });
   const activeAbilities = monster.activeAbilityInputs.map(parseActiveAbility);
   const weapons = monster.weaponInput.map(parseWeaponInput);
   const attacks = monster.attackInputs.map(parseAttack);
+  const hitPoints = calculateHitPoints({ ...monster, attributes });
   const monsterBase: MonsterBase = {
     ...monster,
     accuracy,
     activeAbilities,
     armors,
     attacks,
-    attributes: attributeModifiers,
+    attributes,
     calculatedAttacks: attacks.map((a) => {
       return calculateAttack(a, { ...monster, accuracy, magicalPower, mundanePower });
     }),
     defenses: calculateDefenses(monster),
-    hitPoints: calculateHitPoints(monster),
+    hitPoints,
     magicalPower,
     mundanePower,
     reach: reachBySize(monster.size),
-    resistances: calculateResistances(monster, attributeModifiers),
+    resistances: calculateResistances({ ...monster, attributes, hitPoints }),
     space: spaceBySize(monster.size),
     speeds: {
       burrow: monsterInput.speeds?.burrow || 0,
@@ -269,7 +270,7 @@ function generateMonsterBase(monsterInput: MonsterBaseInput): MonsterBase {
       land: monsterInput.speeds?.land === null ? 0 : speedBySize(monster.size),
       swim: monsterInput.speeds?.swim || 0,
     },
-    skills: calculateSkills(attributeModifiers, skillPoints, monster),
+    skills: calculateSkills(attributes, skillPoints, monster),
     weapons,
   };
 
