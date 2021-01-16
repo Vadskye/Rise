@@ -17,14 +17,14 @@ export function attributesAtLevel({
   };
 }
 
-function attributeAtLevel(startingAttribute: number | null, level: number): number | null {
+export function attributeAtLevel(startingAttribute: number | null, level: number): number | null {
   if (startingAttribute === null) {
     return null;
   } else if (startingAttribute <= 0) {
     return startingAttribute;
   } else if (startingAttribute === 1) {
-    return startingAttribute + Math.floor(level / 2);
+    return startingAttribute + Math.floor(level / 4);
   } else {
-    return startingAttribute + (level - 1);
+    return startingAttribute + Math.ceil(((level - 1) * (startingAttribute - 1)) / 2);
   }
 }
