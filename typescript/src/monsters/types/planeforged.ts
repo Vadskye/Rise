@@ -335,8 +335,8 @@ planeforgedInput.push({
       passiveAbilities: [
         {
           description: `
-            Whenever the $name \\glossterm{wounds} a creature with its stinger, the damaged creature becomes \\glossterm{poisoned} (see \\pcref{Poison}).
-            The creature loses a \\glossterm{hit point} from each hit with the poison.
+            Whenever the $name makes a creature lose hit points with its stinger, the damaged creature becomes \\glossterm{poisoned} (see \\pcref{Poison}).
+            The creature loses 1d6 \\glossterm{hit points} from each hit with the poison.
             On the poison's third hit, the creature is \\glossterm{sickened} until the poison ends.
           `,
           name: "Poison Sting",
