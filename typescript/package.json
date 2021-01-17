@@ -28,6 +28,6 @@
   "scripts": {
     "clean": "rm src/*.js && rm src/**/*.js",
     "script": "node -r tsconfig-paths/register",
-    "test": "tsc --incremental && mocha src/**/*_test.js"
+    "test": "tsc --incremental && mocha src/**/*.test.js"
   }
 }
