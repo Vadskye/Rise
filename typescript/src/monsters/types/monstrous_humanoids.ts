@@ -2,9 +2,9 @@ import { WeaponInput } from "@src/weapons";
 import { addType, TypelessMonsterInput } from "./add_type";
 
 const boulder: WeaponInput = {
+  baseDamageDie: "1d10",
   damageTypes: ["bludgeoning"],
   name: "boulder",
-  powerBonus: 2,
   rangeIncrement: 100,
 };
 
@@ -13,12 +13,13 @@ export const monstrousHumanoidInput: TypelessMonsterInput[] = [
     alignment: "Usually chaotic evil",
     attackInputs: [
       {
+        baseDamageDie: "1d6",
         // Uses str for accuracy instead of per
         accuracyBonus: 2,
         defense: "fortitude",
         hit: `The target is knocked back 10 feet and takes $damage.`,
         name: "Forceful Shove",
-        powerBonus: -6,
+        powerMultiplier: 0.5,
         preface: `
           For each size category larger or smaller than the target that the minotaur is, it gains a +4 bonus or penalty to \\glossterm{accuracy}.
         `,
@@ -50,15 +51,17 @@ export const monstrousHumanoidInput: TypelessMonsterInput[] = [
         hit: `
           The target takes $damage.
           If this attack also beats the target's Fortitude defense, it is \\glossterm{grappled} by the $name.
-      `,
+        `,
+        powerMultiplier: 1,
         name: "Snatch",
         weaponName: "tentacle",
       },
       {
+        baseDamageDie: "1d10",
         defense: "fortitude",
         hit: `The target takes $damage and is \\glossterm{grappled} by the $name.`,
         name: "Choke",
-        powerBonus: 6,
+        powerMultiplier: 1,
         target: "One creature \\glossterm{grappled} by the $name",
         weaponName: "tentacle",
       },

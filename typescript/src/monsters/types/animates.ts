@@ -6,14 +6,16 @@ const animateInput: TypelessMonsterInput[] = [
     alignment: "Always neutral evil",
     attackInputs: [
       {
+        baseDamageDie: "1d10",
         damageTypes: ["cold"],
         defense: "reflex",
+        powerMultiplier: 1,
         name: "Dark Grasp",
-        powerBonus: 4,
         source: "magical",
         target: "One creature within \\glossterm{reach}",
       },
       {
+        baseDamageDie: "1d8",
         damageTypes: ["cold"],
         defense: "fortitude",
         preface: `
@@ -21,7 +23,7 @@ const animateInput: TypelessMonsterInput[] = [
           \\par
         `,
         name: "Chilling Aura",
-        powerBonus: -2,
+        powerMultiplier: 0.5,
         target: "Each \\glossterm{enemy} within a \\areatiny radius \\glossterm{emanation}",
       },
     ],

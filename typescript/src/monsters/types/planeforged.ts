@@ -36,11 +36,12 @@ planeforgedInput.push({
       ...baseAngel,
       attackInputs: [
         {
+          baseDamageDie: "1d8",
           damageTypes: ["energy"],
           defense: "mental",
           hit: "Each target takes $damage.",
           name: "Proclamation",
-          powerBonus: -2,
+          powerMultiplier: 0.5,
           source: "magical",
           target: "\\glossterm{Enemies} within a \\areamed radius from the $name",
         },
@@ -55,8 +56,9 @@ planeforgedInput.push({
         },
         {
           hit:
-            "The target takes $damage. If the target is \\glossterm{wounded} by the attack, it is \\glossterm{stunned} as a \\glossterm{condition}.",
+            "The target takes $damage. If the target loses \\glossterm{hit points} from the attack, it is \\glossterm{stunned} as a \\glossterm{condition}.",
           name: "Stunning Smash",
+          powerMultiplier: 1,
           weaponName: "greatmace",
         },
       ],
@@ -175,11 +177,12 @@ planeforgedInput.push({
       ...baseDemon,
       attackInputs: [
         {
+          baseDamageDie: "1d8",
           damageTypes: ["piercing"],
           defense: "armor",
           hit: "The target takes $damage.",
           name: "Retributive Barbs",
-          powerBonus: -2,
+          powerMultiplier: 0.5,
           preface: `
             Whenever a creature adjacent to the barbed demon makes a melee \\glossterm{strike} against it,
             the barbed demon makes this attack against the attacker.
@@ -189,14 +192,15 @@ planeforgedInput.push({
           target: "The attacking creature",
         },
         {
+          baseDamageDie: "1d10",
           damageTypes: ["piercing"],
           defense: "armor",
           hit: `
             The target takes $damage.
-            In addition, if this attack also beats Fortitude defense, the target is \\glossterm{grappled} by the $name.
+            In addition, if the target loses \\glossterm{hit points} from this attack, it is \\glossterm{grappled} by the $name.
           `,
           name: "Impale",
-          powerBonus: -4,
+          powerMultiplier: 1,
           source: "mundane",
           target: "One creature within \\glossterm{reach}",
           weaponName: "tentacle",
@@ -356,6 +360,7 @@ const baseAirElemental = {
     {
       hit: "Each target takes $damage.",
       name: "Whirlwind",
+      powerMultiplier: 0.5 as const,
       target: "Each \\glossterm{enemy} within reach",
       weaponName: "slam" as const,
     },
