@@ -7,11 +7,12 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
     armorInputs: [{ name: "carapace" }],
     attackInputs: [
       {
+        baseDamageDie: "1d8",
         damageTypes: ["acid"],
         defense: "reflex",
         hit: "Each target takes $damage.",
         name: "Spit Acid",
-        powerBonus: -2,
+        powerMultiplier: 0.5,
         source: "mundane",
         target: "Everything in a \\areamed, 5 ft. wide line",
       },
@@ -73,18 +74,20 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
     armorInputs: [{ name: "thick skin" }],
     attackInputs: [
       {
+        baseDamageDie: "1d8",
         damageTypes: ["cold"],
         defense: "fortitude",
         name: "Crawling Darkness",
-        powerBonus: -2,
+        powerMultiplier: 0.5,
         source: "magical",
         target: "Enemies in a \\areasmall radius",
       },
       {
+        baseDamageDie: "1d10",
         damageTypes: ["cold"],
         defense: "reflex",
         name: "Dark Embrace",
-        powerBonus: 2,
+        powerMultiplier: 1,
         source: "magical",
         target: "One enemy within \\glossterm{reach}",
       },
@@ -157,6 +160,7 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
     armorInputs: [{ name: "thick skin" }],
     attackInputs: [
       {
+        baseDamageDie: "1d10",
         damageTypes: ["energy"],
         defense: "fortitude",
         hit: `
@@ -164,7 +168,7 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
           If this attack \\glossterm{wounds} the target, the $name regains one lost hit point.
         `,
         name: "Leech Life",
-        powerBonus: 4,
+        powerMultiplier: 1,
         source: "magical",
         target: "One living creature within \\glossterm{reach}",
       },
@@ -250,8 +254,9 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
     attackInputs: [
       {
         accuracyBonus: -2,
+        baseDamageDie: "1d6",
         name: "Quick Slash",
-        powerBonus: -4,
+        powerMultiplier: 1,
         preface: "The $name can use this ability as a \\glossterm{minor action}.\\par",
         weaponName: "claw",
       },

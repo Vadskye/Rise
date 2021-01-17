@@ -39,7 +39,7 @@ export function calculateAttack(
     hit: attack.hit,
     monsterName: monster.name,
     name: attack.name,
-    power: monsterPower + (attack.powerBonus || 0),
+    power: monsterPower,
     preface: attack.preface,
     tags: attack.tags || [],
     target: attack.target,

@@ -17,7 +17,7 @@ export const humanoidInput: TypelessMonsterInput[] = [
   },
   {
     alignment: "Any",
-    attackInputs: [{ name: "combustion", powerBonus: 2 }, { name: "fireball" }],
+    attackInputs: [{ name: "combustion" }, { name: "fireball" }],
     knowledge: {
       0: `
         Pyromancers wield powerful fire magic to attack their foes.
@@ -114,9 +114,10 @@ humanoidInput.push({
       armorInputs: [{ name: "studded leather" }],
       attackInputs: [
         {
+          baseDamageDie: "2d10",
           accuracyBonus: -2,
-          powerBonus: 4,
           name: "Power Smash",
+          powerMultiplier: 1,
           weaponName: "greataxe",
         },
       ],
@@ -152,14 +153,16 @@ humanoidInput.push({
       attackInputs: [
         {
           accuracyBonus: -2,
-          powerBonus: 4,
+          baseDamageDie: "2d10",
           name: "Power Smash",
+          powerMultiplier: 1,
           weaponName: "greataxe",
         },
         {
           accuracyBonus: -2,
-          powerBonus: 4,
+          baseDamageDie: "2d6",
           name: "Power Shot",
+          powerMultiplier: 1,
           weaponName: "light crossbow",
         },
       ],
@@ -181,14 +184,16 @@ humanoidInput.push({
       attackInputs: [
         {
           accuracyBonus: -2,
-          powerBonus: 4,
+          baseDamageDie: "2d10",
           name: "Power Smash",
+          powerMultiplier: 1,
           weaponName: "greataxe",
         },
         {
           accuracyBonus: -2,
-          powerBonus: 4,
+          baseDamageDie: "2d6",
           name: "Power Shot",
+          powerMultiplier: 1,
           weaponName: "light crossbow",
         },
       ],

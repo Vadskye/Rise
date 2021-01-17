@@ -113,19 +113,18 @@ function standardBreathWeapon({
   area,
   damageType,
   name,
-  powerBonus,
 }: {
   area: string;
   damageType: DamageType;
   name: string;
-  powerBonus?: number;
 }): AttackInput {
   return {
+    baseDamageDie: "1d8",
     damageTypes: [damageType],
     defense: "reflex" as const,
     name,
     hit: `Each target takes $damage.`,
-    powerBonus,
+    powerMultiplier: 0.5,
     preface: `
       A dragon can use its breath weapon as a \\glossterm{minor action}.
       After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
@@ -143,19 +142,16 @@ function lineBreathWeapon(age: AgeCategory, damageType: DamageType): AttackInput
       area: "\\areasmall, 5 ft. wide line",
       damageType,
       name,
-      powerBonus: -2,
     }),
     juvenile: standardBreathWeapon({
       area: "\\areamed, 5 ft. wide line",
       damageType,
       name,
-      powerBonus: -2,
     }),
     youngAdult: standardBreathWeapon({
       area: "\\arealarge, 5 ft. wide line",
       damageType,
       name,
-      powerBonus: -2,
     }),
     adult: standardBreathWeapon({
       area: "\\arealarge, 10 ft. wide line",
@@ -192,19 +188,16 @@ function coneBreathWeapon(age: AgeCategory, damageType: DamageType): AttackInput
       area: "\\areasmall cone",
       damageType,
       name,
-      powerBonus: -2,
     }),
     juvenile: standardBreathWeapon({
       area: "\\areamed cone",
       damageType,
       name,
-      powerBonus: -2,
     }),
     youngAdult: standardBreathWeapon({
       area: "\\areamed cone",
       damageType,
       name,
-      powerBonus: -2,
     }),
     adult: standardBreathWeapon({
       area: "\\arealarge cone",
