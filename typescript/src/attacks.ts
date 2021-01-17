@@ -48,6 +48,9 @@ export type Attack = Required<Omit<CustomAttackInput, "baseDamageDie">> & {
   weaponName?: string;
 };
 
+export type DamagingAttack = Omit<Attack, "baseDamageDie" | "powerMultiplier"> &
+  Required<Pick<Attack, "baseDamageDie" | "powerMultiplier">>;
+
 type StandardAttackName = "acid breath" | "drain life" | "fireball" | "combustion";
 
 function hasStandardWeaponName(input: AttackInput): input is WeaponAttackInput {
@@ -165,6 +168,12 @@ export function parseAttack(input: AttackInput): Attack {
       ...input,
     };
   }
+}
+
+export function attackIsDamaging(attack: Attack | DamagingAttack): attack is DamagingAttack {
+  return Boolean(
+    attack.powerMultiplier !== null && attack.powerMultiplier !== undefined && attack.baseDamageDie,
+  );
 }
 
 // export function calculateAttacks(monster: MonsterBase) {

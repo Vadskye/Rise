@@ -303,7 +303,7 @@ const animalInput: TypelessMonsterInput[] = [
     passiveAbilities: [
       {
         description: `
-          Whenever the $name \\glossterm{wounds} a creature with its stinger,
+          Whenever the $name makes a creature lose hit points with its stinger,
             the damaged creature becomes \\glossterm{poisoned} (see \\pcref{Poison}).
           The poison's initial hit makes the target \\glossterm{sickened} as long as the poison lasts.
           On the poison's third hit, the target becomes \\glossterm{paralyzed} as long as the poison lasts.
@@ -341,11 +341,12 @@ const baseCentipede = {
   challengeRating: 4 as const,
   passiveAbilities: [
     {
+      // TODO: scale poison damage with level
       description: `
-        Whenever the $name \\glossterm{wounds} a creature with its bite,
+        Whenever the $name makes a creature lose hit points with its bite,
           the damaged creature becomes \\glossterm{poisoned} (see \\pcref{Poison}).
-        The poison's initial hit makes the target lose a \\glossterm{hit point}.
-        On the poison's third hit, the target loses two \\glossterm{hit points}.
+        The poison's initial hit makes the target lose 1d6 \\glossterm{hit points}.
+        On the poison's third hit, the target loses 2d6 \\glossterm{hit points}.
       `,
       name: "Venom",
     },
@@ -403,7 +404,7 @@ const baseSpider = {
   passiveAbilities: [
     {
       description: `
-        Whenever the $name \\glossterm{wounds} a creature with its bite,
+        Whenever the $name makes a creature lose hit points with its bite,
           the damaged creature becomes \\glossterm{poisoned} (see \\pcref{Poison}).
         The poison's initial hit makes the target \\glossterm{sickened} as long as the poison lasts.
         On the poison's third hit, the target becomes \\glossterm{paralyzed} as long as the poison lasts.

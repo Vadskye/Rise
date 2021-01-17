@@ -3,14 +3,19 @@ import * as format from "@src/latex/format";
 import { titleCase } from "change-case";
 
 export function standardAttackEffect(attack: CalculatedAttack): string {
-  return `
+  let effect = `
     ${accuracyText(attack)}
     ${attack.hit ? `\\hit ${attack.hit}` : ""}
     ${attack.crit ? `\\crit ${attack.crit}` : ""}
-  `.replace(
-    "$damage",
-    `${format.damageDice(attack.power)} ${format.damageTypes(attack.damageTypes)} damage`,
-  );
+  `;
+
+  if (attack.damageDice) {
+    effect = effect.replace(
+      "$damage",
+      `${format.damageDice(attack.damageDice)} ${format.damageTypes(attack.damageTypes)} damage`,
+    );
+  }
+  return effect;
 }
 
 function primaryMonsterName(name: string) {

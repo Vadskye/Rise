@@ -1,7 +1,6 @@
-import { calculateDamageDice } from "@src/calculate";
+import { DamageDice } from "@src/calculate";
 
-export function damageDice(power: number): string {
-  const { flatBonus, count, size } = calculateDamageDice(power);
+export function damageDice({ count, flatBonus, size }: DamageDice): string {
   if (flatBonus) {
     return `${count}d${size}+${flatBonus}`;
   } else {
