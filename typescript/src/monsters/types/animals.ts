@@ -104,7 +104,7 @@ const animalInput: TypelessMonsterInput[] = [
     skillPoints: { awareness: 1, endurance: 2 },
     size: "large",
     startingAttributes: { str: 3, dex: 0, con: 3, int: -8, per: 1 },
-    weaponInput: [{ name: "bite", powerBonus: -4 }],
+    weaponInput: [{ baseDamageDie: "1d6", name: "bite" }],
   },
   {
     alignment: "Always true neutral",
@@ -206,7 +206,7 @@ const animalInput: TypelessMonsterInput[] = [
     level: 2,
     name: "Pony",
     startingAttributes: { str: 1, con: 3, int: -7, wil: -1 },
-    weaponInput: [{ powerBonus: -2, name: "bite" }],
+    weaponInput: [{ baseDamageDie: "1d6", name: "bite" }],
   },
   {
     alignment: "Always true neutral",

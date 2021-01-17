@@ -6,9 +6,9 @@ interface StandardWeaponInput {
 
 interface CustomWeaponInput {
   accuracyBonus?: number;
+  baseDamageDie: string;
   damageTypes: DamageType[];
   name: string;
-  powerBonus?: number;
   rangeIncrement?: number | null;
   tags?: WeaponTag[];
 }
@@ -29,11 +29,13 @@ export type WeaponTag =
 export function parseWeaponInput(input: WeaponInput): Weapon {
   const weapon = {
     accuracyBonus: 0,
+    baseDamageDie: isStandardWeaponInput(input)
+      ? standardWeapons[input.name].baseDamageDie
+      : input.baseDamageDie,
     damageTypes: [],
-    powerBonus: 0,
     rangeIncrement: null,
     tags: [],
-    ...(isStandardWeaponName(input.name) && standardWeapons[input.name]),
+    ...(isStandardWeaponInput(input) && standardWeapons[input.name]),
     ...input,
   };
   weapon.damageTypes.sort();
@@ -65,6 +67,10 @@ export type StandardWeaponName =
   | "talon"
   | "tentacle";
 
+export function isStandardWeaponInput(input: WeaponInput): input is StandardWeaponInput {
+  return isStandardWeaponName(input.name);
+}
+
 export function isStandardWeaponName(
   name: StandardWeaponName | string | null | undefined,
 ): name is StandardWeaponName {
@@ -73,94 +79,99 @@ export function isStandardWeaponName(
 
 export const standardWeapons: Record<StandardWeaponName, Omit<CustomWeaponInput, "name">> = {
   "bite": {
+    baseDamageDie: "1d8",
     damageTypes: ["bludgeoning", "piercing"],
-    powerBonus: 2,
   },
   "claw": {
     accuracyBonus: 2,
-    powerBonus: -2,
+    baseDamageDie: "1d6",
     damageTypes: ["slashing", "piercing"],
   },
   "club": {
+    baseDamageDie: "1d8",
     damageTypes: ["bludgeoning"],
   },
   "constrict": {
+    baseDamageDie: "1d10",
     damageTypes: ["bludgeoning"],
-    powerBonus: 4,
     tags: ["grappling"],
   },
   "greataxe": {
+    baseDamageDie: "2d6",
     damageTypes: ["slashing"],
-    powerBonus: 4,
     tags: ["sweeping 1"],
   },
   "battleaxe": {
+    baseDamageDie: "1d8",
     damageTypes: ["slashing"],
-    powerBonus: 0,
     tags: ["sweeping 1"],
   },
   "greatclub": {
-    powerBonus: 4,
+    baseDamageDie: "2d6",
     damageTypes: ["bludgeoning"],
     tags: ["forceful"],
   },
   "greatmace": {
+    baseDamageDie: "2d6",
     damageTypes: ["bludgeoning"],
-    powerBonus: 4,
     tags: ["impact"],
   },
   "greatsword": {
+    baseDamageDie: "1d10",
     damageTypes: ["slashing"],
-    powerBonus: 2,
     tags: ["sweeping 2"],
   },
   "gore": {
+    baseDamageDie: "1d8",
     damageTypes: ["piercing"],
-    powerBonus: 2,
     tags: ["impact"],
   },
   "light crossbow": {
+    baseDamageDie: "1d8",
     damageTypes: ["piercing"],
-    rangeIncrement: 50,
+    rangeIncrement: 60,
   },
   "javelin": {
+    baseDamageDie: "1d6",
     damageTypes: ["piercing"],
     rangeIncrement: 30,
   },
   "mace": {
+    baseDamageDie: "1d8",
     damageTypes: ["bludgeoning"],
   },
   "ram": {
+    baseDamageDie: "1d8",
     damageTypes: ["bludgeoning"],
-    powerBonus: 2,
     tags: ["forceful"],
   },
   "slam": {
+    baseDamageDie: "1d10",
     damageTypes: ["bludgeoning"],
-    powerBonus: 4,
   },
   "smallsword": {
     accuracyBonus: 2,
+    baseDamageDie: "1d6",
     damageTypes: ["slashing"],
-    powerBonus: -2,
     tags: ["keen"],
   },
   "spear": {
+    baseDamageDie: "1d8",
     damageTypes: ["piercing"],
   },
   "tentacle": {
     accuracyBonus: 1,
+    baseDamageDie: "1d8",
     damageTypes: ["bludgeoning"],
-    powerBonus: -2,
   },
   "talon": {
     accuracyBonus: 2,
+    baseDamageDie: "1d6",
     damageTypes: ["piercing", "slashing"],
-    powerBonus: -2,
   },
   "stinger": {
     accuracyBonus: 1,
+    baseDamageDie: "1d8",
     damageTypes: ["piercing"],
-    powerBonus: 2,
   },
 };
