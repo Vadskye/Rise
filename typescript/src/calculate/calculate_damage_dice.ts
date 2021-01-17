@@ -4,10 +4,15 @@ export interface DamageDice {
   size: number;
 }
 
-export function calculateDamageDice(power: number): DamageDice {
-  let count = 1;
-  let size = 6;
-  for (let i = 2; i <= power; i += 2) {
+export function calculateDamageDice(
+  baseDamageDie: string,
+  level: number,
+  flatBonus: number,
+): DamageDice {
+  let [count, size] = baseDamageDie.split("d").map(Number);
+  // +1d at 4/7/10, just like player abilities
+  const bonusIncrements = Math.floor((level - 1) / 3);
+  for (let i = 0; i < bonusIncrements; i += 1) {
     size += 2;
     if (size > 10) {
       if (count < 4) {
@@ -20,11 +25,5 @@ export function calculateDamageDice(power: number): DamageDice {
     }
   }
 
-  let flatBonus = 0;
-  if (count > 8) {
-    flatBonus = (count - 8) * 10;
-    count = 8;
-  }
-
-  return { flatBonus, count, size };
+  return { count, flatBonus, size };
 }

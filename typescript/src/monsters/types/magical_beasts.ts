@@ -165,7 +165,7 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
         defense: "fortitude",
         hit: `
           The target takes $damage.
-          If this attack \\glossterm{wounds} the target, the $name regains one lost hit point.
+          If the target loses hit points from this attack, the $name regains that many hit points.
         `,
         name: "Leech Life",
         powerMultiplier: 1,
@@ -283,6 +283,57 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
     startingAttributes: { str: 3, dex: 3, con: 0, int: -3, per: 2, wil: 2 },
     skillPoints: { awareness: 2 },
     weaponInput: [{ name: "bite" }, { name: "claw" }],
+  },
+  {
+    alignment: "Usually true neutral",
+    armorInputs: [{ name: "hide" }],
+    attackInputs: [
+      {
+        baseDamageDie: "1d8",
+        damageTypes: ["sonic"],
+        defense: "fortitude",
+        hit: "Each target takes $damage.",
+        name: "Sonic Lance",
+        powerMultiplier: 0.5,
+        source: "magical",
+        target: "Everything in a \\arealarge, 10 ft. wide line",
+      },
+      {
+        // TODO: clarify timing of this (should be once per round but only if it takes
+        // damage)
+        baseDamageDie: "1d6",
+        damageTypes: ["sonic"],
+        defense: "fortitude",
+        hit: "Each target takes $damage.",
+        name: "Thunderous Hide",
+        powerMultiplier: 0,
+        source: "magical",
+        target: "Everything adjacent to the $name",
+      },
+    ],
+    challengeRating: 4,
+    level: 6,
+    name: "Yrthak",
+    passiveAbilities: [
+      {
+        description: "120 ft.",
+        name: "Blindsight",
+      },
+      {
+        description: `
+          Yrthaks are virtually blind.
+          They can "see" in a short range around them with their blindsight ability, which relies on their incredible hearing.
+          Beyond that range, they cannot see, though they can still identify the existence and location of creatures at great range by hearing with their Awareness skill.
+        `,
+        name: "Blindness",
+      },
+    ],
+    size: "huge",
+    // TODO: give a large bonus to Awareness
+    skillPoints: { awareness: 2 },
+    speeds: { fly: 40, land: 20 },
+    startingAttributes: { str: 3, dex: -1, con: 2, int: -4, per: 4, wil: 0 },
+    weaponInput: [{ name: "bite" }],
   },
 ];
 
