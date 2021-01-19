@@ -388,6 +388,7 @@ def hit_points():
                 hit_points,
                 hit_points_from_level,
                 hit_points_max: hit_points,
+                hit_points_maximum: hit_points,
             }});
         """
     )
@@ -512,7 +513,7 @@ def blank_ability_known(i):
     )
 
 def energy_resistance():
-    misc = get_misc_variables('energy_resistance_bonus', 4)
+    misc = get_misc_variables('energy_resistance_bonus', 3)
     return js_wrapper(
         ['willpower', 'level', 'challenge_rating', 'energy_resistance_bonus_armor', *misc],
         f"""
@@ -560,13 +561,14 @@ def energy_resistance():
                 4: 2,
             }}[challenge_rating || 0];
             setAttrs({{
+                energy_resistance_from_level: resistance_from_level * cr_multiplier,
                 energy_resistance_bonus: (resistance_from_level + willpower + energy_resistance_bonus_armor + {sum_variables(misc)}) * cr_multiplier,
             }});
         """
     )
 
 def physical_resistance():
-    misc = get_misc_variables('physical_resistance_bonus', 4)
+    misc = get_misc_variables('physical_resistance_bonus', 3)
     return js_wrapper(
         ['constitution', 'level', 'challenge_rating', 'physical_resistance_bonus_armor', *misc],
         f"""
@@ -614,6 +616,7 @@ def physical_resistance():
                 4: 2,
             }}[challenge_rating || 0];
             setAttrs({{
+                physical_resistance_from_level: resistance_from_level * cr_multiplier,
                 physical_resistance_bonus: (resistance_from_level + constitution + physical_resistance_bonus_armor + {sum_variables(misc)}) * cr_multiplier,
             }});
         """

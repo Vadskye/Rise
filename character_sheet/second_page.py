@@ -263,8 +263,8 @@ def calc_accuracy():
     ])
 
 def calc_physical_resistance_bonus():
-    return flex_row([
-        div({'class': 'calc-header'}, 'Physical Damage'),
+    return flex_row({'class': 'resistance-row'}, [
+        div({'class': 'calc-header'}, 'Physical'),
         equation(
             [
                 underlabel(
@@ -283,7 +283,16 @@ def calc_physical_resistance_bonus():
                     }),
                 ),
                 plus(),
-                equation_misc_repeat('physical_resistance_bonus', 4)
+                underlabel(
+                    'Base',
+                    number_input({
+                        'disabled': True,
+                        'name': 'physical_resistance_from_level_display',
+                        'value': '(@{physical_resistance_from_level})',
+                    }),
+                ),
+                plus(),
+                equation_misc_repeat('physical_resistance_bonus', 3)
             ],
             result_attributes={
                 'disabled': 'true',
@@ -316,8 +325,8 @@ def calc_attunement_points():
     ])
 
 def calc_energy_resistance_bonus():
-    return flex_row([
-        div({'class': 'calc-header'}, 'Energy Damage'),
+    return flex_row({'class': 'resistance-row'}, [
+        div({'class': 'calc-header'}, 'Energy'),
         equation(
             [
                 underlabel(
@@ -336,7 +345,16 @@ def calc_energy_resistance_bonus():
                     }),
                 ),
                 plus(),
-                equation_misc_repeat('energy_resistance_bonus', 4)
+                underlabel(
+                    'Base',
+                    number_input({
+                        'disabled': True,
+                        'name': 'energy_resistance_from_level_display',
+                        'value': '(@{energy_resistance_from_level})',
+                    }),
+                ),
+                plus(),
+                equation_misc_repeat('energy_resistance_bonus', 3)
             ],
             result_attributes={
                 'disabled': 'true',
@@ -412,12 +430,18 @@ def calc_hit_points():
                     'value': '(@{hit_points_from_level})',
                 })),
                 plus(),
+                underlabel('Con', number_input({
+                    'disabled': True,
+                    'name': 'hit_points_from_constitution',
+                    'value': '(@{constitution})',
+                })),
+                plus(),
                 equation_misc_repeat('hit_points', 3),
             ],
             result_attributes={
                 'disabled': True,
                 'name': 'hit_points_display',
-                'value': '@{hit_points}',
+                'value': '@{hit_points_maximum}',
             },
         ),
     ])
@@ -767,7 +791,7 @@ def calc_armor():
 
 def calc_fort():
     return flex_row([
-        div({'class': 'calc-header'}, 'Fortitude'),
+        div({'class': 'calc-header'}, 'Fort'),
         equation(
             [
                 underlabel('Lvl', number_input({
@@ -796,7 +820,7 @@ def calc_fort():
 
 def calc_ref():
     return flex_row([
-        div({'class': 'calc-header'}, 'Reflex'),
+        div({'class': 'calc-header'}, 'Ref'),
         equation(
             [
                 underlabel('Lvl', number_input({
@@ -825,7 +849,7 @@ def calc_ref():
 
 def calc_mental():
     return flex_row([
-        div({'class': 'calc-header'}, 'Mental'),
+        div({'class': 'calc-header'}, 'Ment'),
         equation(
             [
                 underlabel('Lvl', number_input({
