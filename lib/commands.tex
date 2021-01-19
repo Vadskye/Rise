@@ -32,7 +32,7 @@
 \newcommand{\tind}{\hspace{1em}}
 
 \newcommand{\spelldesc}[1]{\par\noindent \textit{#1}}
-\newcommand{\spelltwocol}[2]{\spelltabularcompressed #1 & \makecell{#2}\end{tabularx}}
+\newcommand{\spelltwocol}[2]{\spelltabularcompressed #1 & #2\end{tabularx}}
 
 \newcommand{\rngpers}{Personal}
 \newcommand{\rngtouch}{Touch}
@@ -213,7 +213,7 @@
 {
     \renewcommand{\arraystretch}{0.5}
     \par\noindent
-    \begin{tabularx}{\linewidth}{@{} >{\lcol}X l @{}}
+    \begin{tabularx}{\linewidth}{@{}~>{\lcol}X~l~@{}}
 }
 
 % args:
