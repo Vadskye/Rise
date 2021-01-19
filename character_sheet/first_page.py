@@ -161,7 +161,7 @@ def core_statistics(destination):
         sidelabel('Hit points', number_input({
             'disabled': True,
             'name': 'hit_points_display',
-            'value': '@{hit_points}',
+            'value': '@{hit_points_maximum}',
         })),
         (
             sidelabel('Initiative', number_input({
