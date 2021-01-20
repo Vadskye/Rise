@@ -1489,7 +1489,7 @@ def generate_worn():
             You gain a \\glossterm<fly speed> equal to your \\glossterm<base speed>.
             However, the boots are not strong enough to keep you aloft indefinitely.
             At the end of each round, if you are not standing on solid ground, the magic of the boots fails and you fall normally.
-            The boots begin working again at the end of the next round, even if you have not yet hit the ground.
+            They do not function again until you land on solid ground.
         """,
         short_description="Grants limited flight",
     ))

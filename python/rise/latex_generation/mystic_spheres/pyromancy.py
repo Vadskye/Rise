@@ -247,10 +247,11 @@ pyromancy=MysticSphere(
             \\hit Each target takes fire damage equal to 1d10 plus half your \\glossterm<power>.
         """, scaling="damage", tags=[]),
         Spell('Wings of the Phoenix', 5, 'Yourself', """
-            You gain a 30 foot \\glossterm<fly speed> as long as you are no more than 60 feet above solid ground (see \\pcref<Flying>).
+            You gain a 30 foot \\glossterm<fly speed> (see \\pcref<Flying>).
+            This fly speed only functions while you are within 30 feet of a solid object beneath you that is at least two size categories larger than you.
             If you are above that height, you gain a 30 foot \\glossterm<glide speed> instead.
         """, scaling="""
-            \\rank<7> The maximum distance above the ground increases to 100 feet.
+            \\rank<7> The maximum height increases to 60 feet.
         """, tags=['Attune (self)']),
     ],
     rituals=[

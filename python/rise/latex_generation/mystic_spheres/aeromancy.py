@@ -92,10 +92,11 @@ aeromancy = MysticSphere(
             \\rank<7> You can reduce your \\glossterm<glide speed> to 20 feet or increase it to 60 feet during each phase that you glide.
         """, tags=['Attune (self)']),
         Spell('Flight', 5, 'Yourself', """
-            You gain a 30 foot \\glossterm<fly speed> as long as you are no more than 120 feet above solid ground (see \\pcref<Flying>).
+            You gain a 30 foot \\glossterm<fly speed> (see \\pcref<Flying>).
+            This fly speed only functions while you are within 60 feet of a solid object beneath you that is at least two size categories larger than you.
             If you are above that height, you gain a 30 foot \\glossterm<glide speed> instead.
         """, scaling="""
-            \\rank<7> The maximum distance above the ground increases to 200 feet.
+            \\rank<7> The maximum distance above the ground increases to 120 feet.
         """, tags=['Attune (self)']),
         # no level diff for lower damage + push
         Spell('Gust of Wind', 3, 'Everything in a \\arealarge, 10 ft. wide line from you', """
