@@ -560,21 +560,31 @@ You cannot gain the same feat twice.
         \ff[1]{Draconic Weapons} You gain a bite natural weapon and two claw natural weapons, one on each arm.
         For details, see \pcref{Natural Weapons}.
 
+        % Uses rank 1 area, not rank 2. Also uses weird line vs cone scaling.
         \ff[3]{Breath Weapon} You can use the \textit{breath weapon} ability as a \glossterm{standard action}.
         \begin{freeability}{Breath Weapon}
-            Make an attack vs. Reflex against everything in the area defined by your \textit{draconic ancestry} ability (see \trefnp{Dragon Types}).
-            You can use your Constitution in place of your Strength to determine your \glossterm{power} with this ability.
+            Make an attack vs. Reflex against everything in the area defined by the type of dragon from your \textit{draconic ancestry} ability (see \trefnp{Dragon Types}).
+            You may use your Constitution in place of your Strength to determine your \glossterm{power} with this ability.
             \hit Each target takes damage equal to 1d10 plus half your \glossterm{power}.
             The damage type is defined by your \textit{draconic ancestry} ability.
 
             \rankline
-            The damage increases by \plus1d at 6th level and every 3 levels thereafter.
-            \featlevel{9} The area affected by your breath weapon increases.
-                A line breath weapon becomes a \arealarge, 10 ft.\ wide line.
+            \featlevel{6} The damage increases to 1d10.
+                In addition, the area affected by your breath weapon increases.
+                A line breath weapon becomes a \arealarge, 5 ft.\ wide line.
+                A cone breath weapon becomes a \areamed cone.
+            \featlevel{9} The damage increases to 2d6.
+                In addition, if you miss by 2 or less, the target takes half damage.
+                This is called a \glossterm{glancing blow}.
+            \featlevel{12} The damage increases to 2d8.
+                In addition, the area affected by your breath weapon increases.
+                A line breath weapon becomes a \areahuge, 10 ft.\ wide line.
                 A cone breath weapon becomes a \arealarge cone.
-            \featlevel{15} The area affected by your breath weapon increases again.
-                A line breath weapon becomes a \areagarg, 10 ft.\ wide line.
-                A cone breath weapon becomes a \areagarg cone.
+            \featlevel{15} The damage increases to 2d10.
+            \featlevel{18} The damage increases to 4d6.
+                In addition, the area affected by your breath weapon increases.
+                A line breath weapon becomes a \areagarg, 15 ft.\ wide line.
+                A cone breath weapon becomes a \areahuge cone.
         \end{freeability}
 
         \ff[6]{Draconic Wings} You gain scaly wings that sprout from your back.
@@ -583,7 +593,7 @@ You cannot gain the same feat twice.
 
         \ff[9]{Draconic Scales} You gain a \plus1 bonus to Armor defense.
 
-        \ff[12]{Draconic Flight}[Magical] You can use the \textit{draconic flight} ability as a \glossterm{free action}.
+        \ff[12]{Draconic Flight}[Magical] You gain leathery wings that sprout from your back.
         \begin{freeability}{Draconic Flight}
             You gain a \glossterm{fly speed} equal to your \glossterm{base speed} until the end of the round (see \pcref{Flying}).
             If you have used this ability since you last landed on the ground, you also gain a \glossterm{fatigue point}.

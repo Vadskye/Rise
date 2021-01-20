@@ -1756,7 +1756,7 @@ def generate_worn():
             level=5,
             material_type='Amulet',
             description="""
-                You increase your maximum \\glossterm<hit points> by 8.
+                You gain a +8 bonus to your maximum \\glossterm<hit points>.
                 When this item stops affecting you, you lose 8 \\glossterm<hit points>.
             """,
             short_description="Grants 8 additional hit points",
@@ -1766,7 +1766,7 @@ def generate_worn():
             level=11,
             material_type='Amulet',
             description="""
-                You increase your maximum \\glossterm<hit points> by 16.
+                You gain a +16 bonus to your maximum \\glossterm<hit points>.
                 When this item stops affecting you, you lose 16 \\glossterm<hit points>.
             """,
             short_description="Grants 16 additional hit points",
@@ -1776,7 +1776,7 @@ def generate_worn():
             level=17,
             material_type='Amulet',
             description="""
-                You increase your maximum \\glossterm<hit points> by 32.
+                You gain a +32 bonus to your maximum \\glossterm<hit points>.
                 When this item stops affecting you, you lose 32 \\glossterm<hit points>.
             """,
             short_description="Grants 32 additional hit points",
