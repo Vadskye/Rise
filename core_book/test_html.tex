@@ -1,0 +1,35 @@
+\documentclass[twocolumn,oneside,letterpaper]{book} % consider draft option
+
+\input{../lib/packages.tex}
+\input{../lib/commands.tex}
+\input{../lib/environments.tex}
+\input{../lib/formatting.tex}
+
+\pagestyle{fancy}
+\lhead{\nouppercase\leftmark}
+\chead{\bfseries \large Rise}
+\rhead{\nouppercase\rightmark}
+\lfoot{Kevin Johnson}
+\cfoot{\thepage}
+\rfoot{v. 6.2.0}
+
+% \includeonly{monsters}
+
+\setcounter{tocdepth}{1}
+
+\begin{document}
+\setcounter{chapter}{-1}
+\tableofcontents
+
+% \include{Introduction}
+
+\begin{freeability}{name}
+    hey look a thing
+\end{freeability}
+
+% \spelltwocol{one}{two}
+
+\begin{saferspelltwocol}
+\end{saferspelltwocol}
+
+\end{document}
