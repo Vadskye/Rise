@@ -1033,12 +1033,13 @@ It defines how attributes work and explains how to make attacks in combat.
         %     Most objects and some creatures have no \glossterm{hit points} or \glossterm{bleed resistance}.
         %     They ignore all damage less than their \glossterm{vital resistance}.
 
-        \subsubsection{Regaining Hit Points}\label{Regaining Hit Points}
-            Some abilities cause you to regain lost hit points.
+        \subsubsection{Regaining Hit Points and Resistances}\label{Regaining Hit Points and Resistances}
+            Some abilities cause you to regain lost hit points or or resistances.
             For example, the \textit{recover} ability allows you to regain half your maximum hit points (see \pcref{Recover}).
-            You can't normally exceed your maximum hit points, even with magical healing.
+            You can't normally exceed your maximum hit points or maximum resistances, even with magical abilities.
 
             \parhead{Timing} If you regain hit points and lose hit points in the same phase, the two values offset before checking other effects or limitations on the healing or damage.
+            The same applies to regaining and losing resistances.
             For example, if you were at five hit point and both regained six hit points and lost six hit points simultaneously, you would not receive a vital wound for dropping below 0 HP.
             Instead, you would simply be at one hit point after both the healing and damage were applied.
             Similarly, if you were at your maximum hit points and both regained and lost two hit points simultaneously, you would still be at your maximum hit points.
@@ -1227,8 +1228,6 @@ It defines how attributes work and explains how to make attacks in combat.
                 This means that the target's resistance was reduced to 0 during this phase.
             \item The creature did not resist any damage from your attack, and took all damage from the attack from their hit points.
         \end{itemize}
-
-        \parhead{Common Resistance Sources}
 
         \parhead{Stacking Magic Bonuses} A \glossterm{magic bonus} to a specific type of resistance does not stack with a \glossterm{magic bonus} to a more general resistance if both apply.
         For example, if you have a \glossterm{magic bonus} to resistances against energy damage and another \glossterm{magic bonus} to resistances against fire damage, you only use the higher of the two when you take fire damage.
