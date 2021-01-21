@@ -97,8 +97,7 @@ summon=MysticSphere(
             This spell functions like the \\textit<summon monster> spell, with the following exceptions.
             The summoned creature takes the form of a melee weapon of your choice that you are proficient with.
             It is sized appropriately to be wielded by a creature of your size.
-            It floats three feet off the ground, and has a 30 foot \\glossterm<fly speed> instead of a \\glossterm<land speed>, with good \\glossterm<maneuverability> (see \\pcref<Flying>).
-            The weapon's maximum height above the ground is limited to 10 feet.
+            It floats three feet off the ground, and has a 30 foot \\glossterm<fly speed> instead of a \\glossterm<land speed>, with good \\glossterm<maneuverability> and a maximum height of 15 feet (see \\pcref<Flying>).
             The creature's accuracy and damage are based on your chosen weapon, and it gains the effect of the weapon's normal tags (see \\pcref<Weapon Tags>).
             It adds half your \\glossterm<power> to damage.
             The weapon is considered to be held in two hands if possible, which can increase the damage dealt by Versatile Grip weapons (see \\pcref<Weapon Tags>).
@@ -110,7 +109,7 @@ summon=MysticSphere(
             It choses randomly if all possible targets are equally easy to attack.
         """, scaling="damage", tags=['Manifestation', 'Sustain (minor)']),
         Spell('Aerial Weapon', 4, 'One unoccupied square within \\rngmed range', """
-            This spell functions like the \\spell<summon weapon> spell, except that the weapon's maximum height above the ground is increased to 100 feet.
+            This spell functions like the \\spell<summon weapon> spell, except that the weapon's maximum height above the ground is increased to 240 feet.
             This allows the weapon to fly up to fight airborne foes.
             In addition, the weapon's damage bonus is increased to +3d.
         """, scaling="damage", tags=['Manifestation', 'Sustain (minor)']),
@@ -172,7 +171,7 @@ summon=MysticSphere(
         Spell('Summon Pegasus', 5, 'One unoccupied location on stable ground within \\rngmed range', """
             This spell functions like the \\spell<summon mount> spell, except that the summoned creature appears to be either a Large or Medium pegasus.
             % TODO: wording of "trained as a mount"?
-            It has a 30 foot \\glossterm<fly speed> and is trained as a mount.
+            It has a 30 foot \\glossterm<fly speed>, a maximum height of 120 feet, and is trained as a mount (see \\pcref<Flying>).
         """, scaling="""
             \\rank<7> The creature gains a +1 bonus to its defenses.
         """, tags=['Attune (target)', 'Manifestation']),
