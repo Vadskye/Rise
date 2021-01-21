@@ -307,7 +307,9 @@ polymorph=MysticSphere(
             You gain the ability to breath energy like a dragon.
             When you cast this spell, choose a type of damage: acid, cold, electricity, or fire.
             As a standard action, you can breath a cone of that type of energy.
-            When you do, make an attack vs. Reflex against everything within a \\areamed cone from you.
+            When you do, make an attack vs. Reflex against everything within a \\arealarge cone from you.
+            After you use this ability, you cannot use it again until after the end of the next round.
+
             \\hit Each target takes damage of the chosen type equal to 2d8 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Attune (self)']),
