@@ -131,7 +131,9 @@ pyromancy=MysticSphere(
             You can cast this spell as a \\glossterm<minor action>.
 
             As a standard action, you can breathe fire like a dragon.
-            When you do, make an attack vs. Reflex against everything within a \\areamed cone from you.
+            When you do, make an attack vs. Reflex against everything within a \\arealarge cone from you.
+            After you use this ability, you cannot use it again until after the end of the next round.
+
             \\hit Each target takes fire damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Attune (self)']),

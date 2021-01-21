@@ -131,7 +131,9 @@ spells=[
         You can cast this spell as a \\glossterm<minor action>.
 
         As a standard action, you can breathe electricity like a dragon.
-        When you do, make an attack vs. Reflex against everything within a \\areamed cone.
+        When you do, make an attack vs. Reflex against everything within a \\arealarge cone.
+        After you use this ability, you cannot use it again until after the end of the next round.
+
         \\hit Each target takes electricity damage equal to 2d6 plus half your \\glossterm<power>.
         \\glance As above, except that that each target takes half damage.
     """, scaling="damage", tags=['Attune (self)']),

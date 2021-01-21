@@ -164,7 +164,8 @@ cryomancy=MysticSphere(
             You can cast this spell as a \\glossterm<minor action>.
 
             As a standard action, you can breathe cold like a dragon.
-            When you do, make an attack vs. Fortitude against everything in a \\areamed cone.
+            When you do, make an attack vs. Fortitude against everything in a \\arealarge cone.
+            After you use this ability, you cannot use it again until after the end of the next round.
 
             \\hit Each target takes cold damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.

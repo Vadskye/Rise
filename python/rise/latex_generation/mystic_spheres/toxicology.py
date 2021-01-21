@@ -99,7 +99,9 @@ toxicology=MysticSphere(
             You can cast this spell as a \\glossterm<minor action>.
 
             As a standard action, you can breathe acid like a dragon.
-            When you do, make an attack vs. Fortitude against everything in a \\areamed cone from you.
+            When you do, make an attack vs. Fortitude against everything in a \\arealarge cone from you.
+            After you use this ability, you cannot use it again until after the end of the next round.
+
             \\hit Each target takes acid damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Attune (self)']),
