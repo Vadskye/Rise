@@ -31,6 +31,7 @@ def basic_info():
         labeled_text_input('Weapon groups', input_attributes={'name': 'weapon_proficiencies_1'}),
         text_input({'name': 'weapon_proficiencies_2'}),
         labeled_text_input('Languages known', input_attributes={'name': 'language_proficiencies'}),
+        labeled_text_input('Size', input_attributes={'name': f'size'}),
         labeled_text_input('Alignment', input_attributes={'name': f'alignment'}),
         labeled_text_input('Deity', input_attributes={'name': f'deity'}),
         labeled_text_input('Experience points', input_attributes={'name': 'experience'}),
