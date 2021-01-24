@@ -445,6 +445,7 @@ This chapter describes each skill, including common uses for those skills.
                 20                     & Rough surface with no holds                    & Weathered natural rock, well-made stone wall                            \\
                 30                     & Bracing between two opposite smooth surfaces   & Parallel glass windows                                                  \\
                 35                     & Smooth surface                                 & Glass window                                                            \\
+                40                     & Smooth ceiling                                 & Glass ceiling                                                            \\
             \end{dtabularx}
         \end{dtable}
 
@@ -498,7 +499,7 @@ This chapter describes each skill, including common uses for those skills.
 
         Wallrunning on a ceiling is impossible.
 
-    \subsection{Creature Climb}
+    \subsection{Creature Climb}\label{Creature Climb}
         As a standard action, you can make an attack vs. Reflex against a creature adjacent to you.
         Your \glossterm{accuracy} is equal to your Climb skill.
         The creature must be three or more size categories larger than you.
@@ -946,10 +947,16 @@ This chapter describes each skill, including common uses for those skills.
         If an insufficiently long jump would cause you to fall into a gap, you can attempt to stop your fall (see \pcref{Stop Fall}) if you can reach the wall.
 
     \subsection{Rebounding Leap}\label{Rebounding Leap}
-        While in midair, if you make contact with a solid object that can support your weight, you can jump off of that object, as the \textit{leap} ability.
+        While in midair, if you make contact with a solid object or \glossterm{ally} that can support your weight, you can jump off of it, as the \textit{leap} ability.
         You are not considered to have a running start.
         In addition, you take a \minus5 penalty to the check (in addition to the penalty for not having a running start), because rebounding off of an object in midair is difficult.
         You must travel at least 10 feet in the air between each rebounding jump.
+
+    \subsection{Share Impact}
+        As a standard action, you can make a precise leap to land on an enemy, forcing them to share your falling damage.
+        This functions like the \textit{leap} ability, except that you also make an attack vs. Reflex against one creature in a space at the end of your motion, including both your initial jump and your fall afterwards (if any).
+        Your \glossterm{accuracy} is equal to your Jump skill.
+        On a hit, the target takes half of the \glossterm{falling damage} that you would normally take based on the height of the jump, ignoring any of your abilities that reduce that damage.
 
 \newpage
 \skill{Knowledge}{Int}
