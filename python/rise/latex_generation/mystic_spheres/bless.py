@@ -26,17 +26,26 @@ bless=MysticSphere(
     ],
     lists=['Divine'],
     spells=[
-        Spell('Blessing of Freedom', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Blessing of Freedom', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            You can cast this spell as a \\glossterm<minor action>.
+            You can only have one casting of this spell active at once.
+            When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
+
             The target is immune to being \\glossterm<slowed>, \\glossterm<decelerated>, \\glossterm<immobilized>, and \\glossterm<paralyzed>.
         """, scaling="""
-            \\rank<5> The target also gains a +4 bonus to the \\textit<escape grapple> ability (see \\pcref<Grapple Actions>).
-            \\rank<7> The bonus increases to +8.
+            \\rank<4> Casting this spell does not remove previous attunements to this spell.
+                In addition, you can choose to cast this spell with the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Attune> (target) tag.
+            \\rank<6> The target also gains a +4 bonus to the \\textit<escape grapple> ability (see \\pcref<Grapple Actions>).
         """, tags=['Attune (target)']),
-        Spell('Blessing of Swiftness', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Blessing of Swiftness', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             You can cast this spell as a \\glossterm<minor action>.
+            You can only have one casting of this spell active at once.
+            When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
 
             The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<base speed>, up to a maximum of double its \\glossterm<base speed>.
         """, scaling="""
+            \\rank<3> Casting this spell does not remove previous attunements to this spell.
+                In addition, you can choose to cast this spell with the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Attune> (target) tag.
             \\rank<5> The speed bonus increases to +20 feet.
             \\rank<7> The speed bonus increases to +30 feet.
         """, tags=['Attune (target)']),
@@ -46,17 +55,29 @@ bless=MysticSphere(
             \\rank<5> The target gains two additional +5 bonuses.
             \\rank<7> The target gains three additional +5 bonuses.
         """, tags=['Attune (target)']),
-        Spell('Blessing of Regeneration', 7, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Blessing of Regeneration', 5, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            You can cast this spell as a \\glossterm<minor action>.
+            You can only have one casting of this spell active at once.
+            When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
+
             At the end of each round, if the target did not lose any \\glossterm<hit points> that round, it regains 2d10 \\glossterm<hit points>.
+        """, scaling="""
+            \\rankline
+            \\rank<7> Casting this spell does not remove previous attunements to this spell.
+                In addition, you can choose to cast this spell with the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Attune> (target) tag.
         """, tags=['Attune (target)']),
         Spell('Blessing of Proficiency', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-            When you cast this spell, choose a weapon group or usage class of armor.
-            If you choose armor, the target must be proficient with all lighter usage classes of armor.
-            The target becomes proficient with the chosen weapon group or usage class of armor.
+            You can cast this spell as a \\glossterm<minor action>.
+            You can only have one casting of this spell active at once.
+            When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
+
+            The target becomes proficient with all standard weapon groups and all types of armor.
+            This does not grant proficiency with exotic weapons or improvised weapons.
         """, scaling="""
-            \\rank<3> If the target would already be proficient with a chosen weapon group, it also becomes proficient with exotic weapons from that weapon group.
-            \\rank<5> You may grant the target proficiency with an additional weapon group or usage class of armor.
-            \\rank<7> The target becomes proficient with exotic weapons from a chosen weapon group regardless of its prior proficiencies.
+            \\rank<3> Casting this spell does not remove previous attunements to this spell.
+                In addition, you can choose to cast this spell with the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Attune> (target) tag.
+            \\rank<5> The target also gains proficiency with all exotic weapons from weapon groups that it would be proficient with without the effects of this spell.
+            \\rank<7> The target becomes proficient with all exotic weapons regardless of its prior proficiencies.
         """, tags=['Attune (target)']),
         Spell('Boon of Precision', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The first time the target makes a \\glossterm<strike> this round,
@@ -82,51 +103,75 @@ bless=MysticSphere(
         """, tags=['Swift']),
         Spell('Blessing of the Purified Body', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             You can cast this spell as a \\glossterm<minor action>.
+            You can only have one casting of this spell active at once.
+            When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
 
             The target gains a +4 bonus to \\glossterm<defenses> against \\glossterm<poisons> and \\glossterm<diseases>.
+            In addition, at the end of each round, it automatically gains one success to resist an active poison or disease affecting it that was not applied during that round.
         """, scaling="""
-            \\rank<4> The bonus increases to +6.
+            \\rank<4> Casting this spell does not remove previous attunements to this spell.
+                In addition, you can choose to cast this spell with the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Attune> (target) tag.
             \\rank<6> The bonus increases to +8.
         """, tags=['Attune (target)']),
-        Spell('Blessing of Mental Clarity', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Blessing of Mental Clarity', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             You can cast this spell as a \\glossterm<minor action>.
+            You can only have one casting of this spell active at once.
+            When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
 
             The target gains a +4 bonus to \\glossterm<defenses> against \\glossterm<Compulsion> and \\glossterm<Emotion> effects.
+            In addition, at the end of each round, it automatically removes one \\glossterm<condition> from a Compulsion or Emotion effect that was not applied during that round.
         """, scaling="""
+            \\rank<4> Casting this spell does not remove previous attunements to this spell.
+                In addition, you can choose to cast this spell with the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Attune> (target) tag.
             \\rank<6> The bonus increases to +6.
         """, tags=['Attune (target)']),
-        Spell('Blessing of Protection', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Blessing of Protection', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             You can cast this spell as a \\glossterm<minor action>.
+            You can only have one casting of this spell active at once.
+            When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
 
             The target gains a +1 \\glossterm<magic bonus> to Armor defense and Mental defense.
         """, scaling="""
+            \\rank<3> Casting this spell does not remove previous attunements to this spell.
+                In addition, you can choose to cast this spell with the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Attune> (target) tag.
             \\rank<5> The bonus increases to +2.
             \\rank<7> The bonus increases to +3.
         """, tags=['Attune (target)']),
-        Spell('Blessing of Precision', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Blessing of Precision', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             You can cast this spell as a \\glossterm<minor action>.
+            You can only have one casting of this spell active at once.
+            When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
 
             The target gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with all attacks.
         """, scaling="""
+            \\rank<3> Casting this spell does not remove previous attunements to this spell.
+                In addition, you can choose to cast this spell with the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Attune> (target) tag.
             \\rank<5> The bonus increases to +2.
             \\rank<7> The bonus increases to +3.
         """, tags=['Attune (target)']),
-        Spell('Blessing of Power', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Blessing of Power', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             You can cast this spell as a \\glossterm<minor action>.
+            You can only have one casting of this spell active at once.
+            When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
 
             The target gains a +2 \\glossterm<magic bonus> to \\glossterm<power> with all abilities.
         """, scaling="""
+            \\rank<3> Casting this spell does not remove previous attunements to this spell.
+                In addition, you can choose to cast this spell with the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Attune> (target) tag.
             \\rank<5> The bonus increases to +4.
             \\rank<7> The bonus increases to +8.
         """, tags=['Attune (target)']),
-        Spell('Blessing of Perserverance', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Blessing of Perserverance', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             You can cast this spell as a \\glossterm<minor action>.
+            You can only have one casting of this spell active at once.
+            When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
 
-            Whenever the target gains a \\glossterm<condition>, it can choose to negate that condition.
-            After negating a condition in this way, this spell ends.
+            Whenever the target would gain a \\glossterm<condition>, it can choose to negate that condition.
+            After negating two conditions in this way, this spell ends.
         """, scaling="""
-            \\rank<5> The spell can negate two conditions before ending.
-            \\rank<7> The spell can negate three conditions before ending.
+            \\rank<4> Casting this spell does not remove previous attunements to this spell.
+                In addition, you can choose to cast this spell with the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Attune> (target) tag.
+            \\rank<6> The spell can negate three conditions before ending.
         """, tags=['Attune (target)']),
         Spell('Boon of Cleansing', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             The target can remove a \\glossterm<condition>.
@@ -138,33 +183,89 @@ bless=MysticSphere(
         Spell('Cleansing Benediction', 6, 'You and each of your \\glossterm<allies> within a \\areasmall radius from you', """
             Each target can remove a \\glossterm<condition>.
             This cannot remove a condition applied during the current round.
-        """, scaling="""
         """, tags=[]),
-        Spell('Blessing of Might', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Blessing of Physical Prowess', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             You can cast this spell as a \\glossterm<minor action>.
+            You can only have one casting of this spell active at once.
+            When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
 
-            The target gains a +2 \\glossterm<magic bonus> to Strength-based checks.
-            In addition, it gains a +2 \\glossterm<magic bonus> to Strength for the purpose of determining its \\glossterm<carrying capacity>.
+            When you cast this spell, choose a physical attribute: Strength, Dexterity, or Constitution.
+            The target gains a +2 \\glossterm<magic bonus> to checks using the chosen attribute.
+            In addition, if you choose Strength, the target gains a +2 \\glossterm<magic bonus> to Strength for the purpose of determining its \\glossterm<carrying capacity>.
         """, scaling="""
+            \\rank<4> Casting this spell does not remove previous attunements to this spell.
+                In addition, you can choose to cast this spell with the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Attune> (target) tag.
             \\rank<6> The bonus increases to +3.
         """, tags=['Attune (target)']),
-        Spell('Blessing of Endurance', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Blessing of Endurance', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             You can cast this spell as a \\glossterm<minor action>.
+            You can only have one casting of this spell active at once.
+            When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
 
-            The target increases its current \\glossterm<hit points> by 8.
+            The target increases its current \\glossterm<hit points> by 4.
             This can cause its current hit points to exceed its normal maximum hit points.
             When this ability ends, the target loses \\glossterm<hit points> equal to the number of hit points it gained this way.
         """, scaling="""
+            \\rank<3> Casting this spell does not remove previous attunements to this spell.
+                In addition, you can choose to cast this spell with the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Attune> (target) tag.
+                Finally, the number of additional hit points increases to 8.
             \\rank<5> The number of additional hit points increases to 16.
             \\rank<7> The number of additional hit points increases to 32.
         """, tags=['Attune (target)']),
-        Spell('Blessing of Wakefulness', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Blessing of Wakefulness', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            % This spell intentionally can't be cast as a minor action to avoid making waking creatures too easy
+            You can only have one casting of this spell active at once.
+            When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
+
             The target cannot fall asleep or be knocked unconscious, even by \\glossterm<vital wounds>.
             If it is already unconscious for any reason, this spell wakes it up before it decides whether to attune to this spell.
-
-            % This spell intentionally can't be cast as a minor action to avoid making waking creatures too easy
         """, scaling="""
+            \\rank<4> Casting this spell does not remove previous attunements to this spell.
+                In addition, you can choose to cast this spell with the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Attune> (target) tag.
             \\rank<6> The target is also immune to being \\glossterm<dazed> or \\glossterm<stunned>.
+        """, tags=['Attune (target)']),
+        Spell('Blessing of Mastery', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+            You can cast this spell as a \\glossterm<minor action>.
+            You can only have one casting of this spell active at once.
+            When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
+
+            The target gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy>, \\glossterm<checks>, and \\glossterm<defenses>.
+        """, scaling="""
+            \\rank<5> Casting this spell does not remove previous attunements to this spell.
+                In addition, you can choose to cast this spell with the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Attune> (target) tag.
+            \\rank<7> The bonus increases to +2.
+        """, tags=['Attune (target)']),
+        Spell('Blessing of Resilience', 2, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
+            You can cast this spell as a \\glossterm<minor action>.
+            You can only have one casting of this spell active at once.
+            When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
+
+            The target gains a +2 \\glossterm<magic bonus> to its \\glossterm<resistances> against both \\glossterm<physical> damage and \\glossterm<energy> damage.
+        """, scaling="""
+            \\rank<4> Casting this spell does not remove previous attunements to this spell.
+                In addition, you can choose to cast this spell with the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Attune> (target) tag.
+                Finally, the bonus increases to +4.
+            \\rank<6> The bonus increases to +8.
+        """, tags=['Attune (target)']),
+        Spell('Blessing of Vitality', 4, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
+            You can cast this spell as a \\glossterm<minor action>.
+            You can only have one casting of this spell active at once.
+            When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
+
+            Whenever the target would gain a \\glossterm<vital wound>, it can choose to negate that vital wound.
+            After negating a vital wound in this way, this spell ends.
+        """, scaling="""
+            \\rank<6> Casting this spell does not remove previous attunements to this spell.
+                In addition, you can choose to cast this spell with the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Attune> (target) tag.
+        """, tags=['Attune (target)']),
+        Spell('Blessing of Resurrection', 7, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
+            You can only have one casting of this spell active at once.
+            When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
+
+            When the target dies, it automatically returns to life at the end of the following round.
+            It returns in the same state in which it died, except that all of its \\glossterm<vital rolls> for its vital rolls that were 0 or lower become 1, preventing it from dying again immediately.
+            In addition, it gains four \\glossterm<fatigue points> from the trauma of the experience.
+            After the target is returned to life this way, this spell ends.
         """, tags=['Attune (target)']),
     ],
     rituals=[
