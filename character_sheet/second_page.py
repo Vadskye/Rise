@@ -319,7 +319,7 @@ def calc_attunement_points():
             result_attributes={
                 'disabled': True,
                 'name': 'attunement_points_display',
-                'value': '@{attunement_points}',
+                'value': '@{attunement_points_maximum}',
             },
         ),
     ])
