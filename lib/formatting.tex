@@ -99,12 +99,12 @@
     skipbelow=0,
 }
 
+%Control chapter headers
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername \: \thechapter \: - \: #1}{}}
+
 \ExplSyntaxOff
 
 \sisetup{group-minimum-digits = 4,group-separator = {,}}
-
-%Control chapter headers
-\renewcommand{\chaptermark}[1]{\markboth{\chaptername \thechapter #1}{}}
 
 % fix headheight warning
 \setlength{\headheight}{14pt}
