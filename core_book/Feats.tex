@@ -382,22 +382,19 @@ You cannot gain the same feat twice.
 
         \ff[1]{Specialization} You gain a \plus3 bonus to the Climb skill.
 
-        \ff[3]{Climb Speed} You gain a \glossterm{climb speed} equal to half your \glossterm{base speed}.
+        \ff[3]{Climb Speed} You gain a \glossterm{climb speed} equal to your \glossterm{base speed}.
+        If you already have a climb speed, you gain a \plus10 foot bonus to your climb speed.
         A successful Climb check to move allows you to travel a distance equal to your climb speed.
 
-        \ff[6]{Damage Tolerance} Taking damage while climbing does not force you to make an additional Climb check to avoid falling.
+        \ff[6]{Creature Climber} You can use the \textit{creature climb} ability against creatures two or more size categories larger than you instead of three (see \pcref{Creature Climb}).
 
         \ff[9]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \ff[12]{Greater Climb Speed} Your \glossterm{climb speed} increases to be equal to your \glossterm{base speed}.
-
-        \ff[12]{Impossible Climber} You can climb surfaces that are perfectly smooth.
-        The \glossterm{difficulty rating} is 30 for perfectly smooth vertical surfaces, and 40 to climb on a perfectly smooth ceiling.
-        In addition, you can climb with no free hands if you take a \minus10 penalty to the Climb check.
+        \ff[12]{Greater Creature Climber} You can use the \textit{creature climb} ability against creatures one or more size categories larger than you.
 
         \ff[15]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus9.
 
-        \ff[18]{Greater Impossible Climber} You take no penalty for climbing with no free hands.
+        \ff[18]{Supreme Creature Climber} You can use the \textit{creature climb} ability against creatures of the same size category as you or larger.
     \end{feat}
 
     \begin{feat}{Craft Specialization}{Skill}
@@ -902,23 +899,18 @@ You cannot gain the same feat twice.
 
         \ff[1]{Specialization} You gain a \plus3 bonus to the Jump skill.
 
-        \ff[3]{Featherlight Leap} You can use the \textit{featherlight leap} ability as a \glossterm{free action}.
-        \begin{freeability}{Featherlight Leap}[\glossterm{Swift}]
-            When you use this ability, you lose a \glossterm{hit point}.
-            Your maximum height for jumps during the current phase is equal to your Jump check result, rather than half your Jump check result.
-            This does not affect the forward distance you can reach with your jumps.
-        \end{freeability}
+        \ff[3]{Instant Leap} You suffer no penalty for jumping without a running start (see \pcref{Running Start}).
 
-        \ff[6]{Instant Leap} You suffer no penalty for jumping without a running start (see \pcref{Running Start}).
+        \ff[6]{Featherlight Leap} When you leap, your maximum height is equal to your Jump check result, rather than half your Jump check result.
+        This does not affect the forward distance you can reach with your jumps.
 
         \ff[9]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \ff[12]{Impact Tolerance} You are immune to \glossterm{falling damage}.
+        \ff[12]{Impact Tolerance} You take half damage from \glossterm{falling damage}.
 
         \ff[15]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus9.
 
-        \ff[18]{Greater Featherlight Leap} Your maximum height for jumps is always equal to your Jump check result.
-        When you use your \textit{featherlight leap} ability, your maximum height increases to be equal to twice your Jump check result.
+        \ff[18]{Impact Tolerance} You are immune to \glossterm{falling damage}.
     \end{feat}
 
     \begin{feat}{Knowledge Specialization}{Skill}
@@ -2415,10 +2407,10 @@ You cannot gain the same feat twice.
 
         \ff[1]{Specialization} You gain a \plus3 bonus to the Stealth skill.
 
-        \ff[3]{Ambush the Unwary} You gain a \plus2 bonus to \glossterm{power} against \glossterm{unaware} creatures.
-
-        \ff[6]{Movement Tolerance} Your penalties for moving while hiding are reduced by 5.
+        \ff[3]{Movement Tolerance} Your penalties for moving while hiding are reduced by 5.
         This allows you to move at half speed without penalty.
+
+        \ff[6]{Ambush the Unwary} You gain a \plus2 bonus to \glossterm{power} against \glossterm{unaware} creatures.
 
         \ff[9]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
@@ -2427,7 +2419,7 @@ You cannot gain the same feat twice.
 
         \ff[15]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus9.
 
-        \ff[18]{Greater Hide in Plain Sight} Creatures observing you while you try to hide gain a \plus5 bonus to checks to notice you instead of a \plus10 bonus.
+        \ff[18]{Greater Ambush the Unwary} The bonus from your \textit{ambush the unwary} ability increases to \plus8.
     \end{feat}
 
     \begin{feat}{Survival Specialization}{Skill}
@@ -2487,11 +2479,11 @@ You cannot gain the same feat twice.
         \ff[1]{Specialization} You gain a \plus3 bonus to the Swim skill.
         % Maybe add burrow speed? The book needs a description of fighting underwater penalties.
 
-        \ff[3]{Underwater Tolerance} You reduce your penalties for fighting underwater by 2, except for penalties to \glossterm{mundane} ranged attacks (see \pcref{Underwater Combat}).
-
-        \ff[6]{Swim Speed} You gain a \glossterm{swim speed} equal to your \glossterm{base speed}.
+        \ff[3]{Swim Speed} You gain a \glossterm{swim speed} equal to your \glossterm{base speed}.
         If you already have a swim speed, you gain a \plus10 foot bonus to your swim speed.
         A successful Swim check to move allows you to move a distance equal to your swim speed.
+
+        \ff[6]{Underwater Tolerance} You reduce your penalties for fighting underwater by 2, except for penalties to \glossterm{mundane} ranged attacks (see \pcref{Underwater Combat}).
 
         \ff[9]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
