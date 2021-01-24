@@ -90,7 +90,7 @@ polymorph=MysticSphere(
         Spell('Stoneskin', 1, 'Yourself or an \\glossterm<ally> in \\rngmed range', """
             You can cast this spell as a \\glossterm<minor action>.
 
-            The target gains a +2 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical> damage.
+            The target gains a +2 \\glossterm<magic bonus> to its \\glossterm<resistance> against \\glossterm<physical> damage.
         """, scaling="""
             \\rank<3> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             In addition, the bonus increases to +4.
@@ -206,9 +206,11 @@ polymorph=MysticSphere(
             The healing increases by +1d for each rank beyond 4.
         """, tags=['Attune (self)']),
         Spell('Physical Enhancement', 2, 'Yourself', """
+            You can cast this spell as a \\glossterm<minor action>.
+
             When you cast this spell, choose a physical attribute: Strength, Dexterity, or Constitution.
             You gain a +2 \\glossterm<magic bonus> to checks using the chosen attribute.
-            In addition, you if you choose Strength, you gain a +2 \\glossterm<magic bonus> to Strength for the purpose of determining your \\glossterm<carrying capacity>.
+            In addition, if you choose Strength, you gain a +2 \\glossterm<magic bonus> to Strength for the purpose of determining your \\glossterm<carrying capacity>.
         """, scaling="""
             \\rank<4> The bonus increases to +3.
             \\rank<6> The bonus increases to +4.
