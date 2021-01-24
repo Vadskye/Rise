@@ -329,7 +329,7 @@ Rank 1 Focus/non-upgrading, Rank 3 maneuver:
     * Med range: r2 debuff condition while at less than max HP
       * This is worse than a damage + debuff in that it doesn't deal damage, but better in that you
         can pre-cast it and have the full effect become active later
-    * t1 area: r2 debuff condition if no resistances + crit effect
+    * t1 area: r2 debuff condition if no resistances / below max hp + crit effect
 
 ### Higher rank specific examples
 
