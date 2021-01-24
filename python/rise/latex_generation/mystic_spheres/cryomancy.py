@@ -63,13 +63,13 @@ cryomancy=MysticSphere(
         # +2 levels for cold + bludgeoning, which breaks resistances
         Spell('Ice Lance', 4, 'Everything in a \\areamed, 10 ft.\\ wide line from you', """
             Make an attack vs. Armor against each target.
-            \\hit Each target takes piercing and cold damage equal to 2d8 plus half your \\glossterm<power>.
+            \\hit Each target takes piercing and cold damage equal to 2d8 plus half your \\glossterm<power> (see \\pcref<Multiple Damage Types>).
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=['Manifestation']),
         # +2 levels for cold + bludgeoning, which breaks resistances
         Spell('Ice Spike', 3, 'One creature or object within \\rngmed range', """
             Make an attack vs. Armor against the target.
-            \\hit The target takes piercing and cold damage equal to 2d8 plus your \\glossterm<power>.
+            \\hit The target takes piercing and cold damage equal to 2d8 plus your \\glossterm<power> (see \\pcref<Multiple Damage Types>).
             \\glance As above, except that that the target takes half damage.
         """, scaling="damage", tags=['Manifestation']),
         Spell('Freeze Poison', 2, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
@@ -137,7 +137,7 @@ cryomancy=MysticSphere(
         # +2 levels for cold + bludgeoning, which breaks resistances
         Spell('Hailstorm', 5, 'Everything in a \\areatiny radius within \\rngmed range', """
             Make an attack vs. Armor against each target.
-            \\hit Each target takes cold and bludgeoning damage equal to 2d10 plus half your \\glossterm<power>.
+            \\hit Each target takes bludgeoning and cold damage equal to 2d10 plus half your \\glossterm<power> (see \\pcref<Multiple Damage Types>).
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=[]),
         Spell('Blizzard', 3, '\\glossterm<Enemies> and objects in a \\areasmall radius from you', """
