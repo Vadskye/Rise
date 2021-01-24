@@ -1798,7 +1798,7 @@ This choice determines a great deal about your character's abilities.
 
         You can initiate a \textit{battle tactic} as a \glossterm{minor action}.
         When you initiate a battle tactic, you choose whether to use visual cues like gestures, auditory cues like shouts, or both to communicate your tactic with your allies.
-        Your \textit{battle tactics} affect your \glossterm{allies} within a \areahuge radius \glossterm{emanation} from you who can either see or hear your chosen communication style.
+        Your \textit{battle tactics} affect yourself and your \glossterm{allies} within a \areahuge radius \glossterm{emanation} from you who can either see or hear your chosen communication style.
 
         All \textit{battle tactics} have the \glossterm{Sustain} (free) tag, so they last as long as you \glossterm{sustain} them (see \pcref{Sustained Abilities}).
         You cannot sustain multiple battle tactics simultaneously.
@@ -2980,6 +2980,17 @@ This choice determines a great deal about your character's abilities.
         However, targets do not stop being affected by your performance simply by travelling beyond the initial range of the bardic performance ability.
         Using a bardic performance ability with an immediate effect does not interfere with your ability to sustain other bardic performance abilities.
         {
+            \begin{freeability}{Aria of Alacrity}
+                \targets{Yourself and all \glossterm{allies} within a \arealarge radius from you}
+                For the duration of your performance, each target gains a \plus5 foot bonus to its \glossterm{base speed}.
+                You can use this ability as a \glossterm{minor action}.
+
+                \rankline
+                \rank{3} The speed bonus increases to \plus10 feet.
+                \rank{5} The speed bonus increases to \plus15 feet.
+                \rank{7} The speed bonus increases to \plus20 feet.
+            \end{freeability}
+
             % Bardic performance power guidelines:
             % These generally start from the same rank 1 baseline effect as spells.
             % Since there are no higher rank bardic performances, they need more aggressive rank scalings to ensure
@@ -2997,6 +3008,16 @@ This choice determines a great deal about your character's abilities.
 
                 \rankline
                 You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
+            \end{freeability}
+
+            \begin{freeability}{Boastful Bravura}
+                \targets{\glossterm{Enemies} within a \arealarge radius from you}
+                During the next round, you gain a \plus4 bonus to \glossterm{accuracy} with \textit{bardic performance} abilities against each target.
+
+                \rankline
+                \rank{3} The bonus increases to \plus6.
+                \rank{5} The bonus increases to \plus8.
+                \rank{7} The bonus increases to \plus10.
             \end{freeability}
 
             \begin{freeability}{Cacaphony}[\glossterm{Auditory}]
@@ -3020,6 +3041,18 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} The bonus to Mental defense increases to \plus4.
             \end{freeability}
 
+            \begin{freeability}{Cantata of Caution}
+                \target{Yourself or one \glossterm{ally} within \rngmed range}
+                You can use this ability as a \glossterm{minor action}.
+
+                For the duration of your performance, the target gains a \plus1 bonus to Armor and Reflex defenses.
+
+                \rankline
+                \rank{3} The bonus applies to all defenses.
+                \rank{5} The bonus to Armor and Reflex defenses increases to \plus2.
+                \rank{7} The bonus to Fortitude and Mental defenses also increases to \plus2.
+            \end{freeability}
+
             \begin{freeability}{Cleansing Counterpoint}[\glossterm{Auditory}]
                 \target{Yourself or one \glossterm{ally} within \rngmed range}
                 The target can remove a \glossterm{condition}.
@@ -3029,6 +3062,25 @@ This choice determines a great deal about your character's abilities.
                 \rank{3} The target can remove a condition applied during any previous round, but not during the current round.
                 \rank{5} The target can remove two conditions.
                 \rank{7} The target can remove three conditions.
+            \end{freeability}
+
+            \begin{freeability}{Dazzling Discordance}
+                \targets{\glossterm{Enemies} within a \areamed radius from you}
+                Make an attack vs. Mental against each target.
+                \hit Each target is \glossterm{dazzled} until the end of the next round.
+                \crit Each target is \glossterm{dazzled} as a \glossterm{condition}.
+
+                \rankline
+                The damage increases by \plus1d for each rank beyond 1.
+            \end{freeability}
+
+            \begin{freeability}{Dirge of Doom}[\glossterm{Auditory}, \glossterm{Emotion}]
+                \target{One creature within \rngmed range}
+                Make an attack vs. Mental against the target.
+                \hit The target takes sonic damage equal to 1d10 plus your \glossterm{power}.
+
+                \rankline
+                The damage increases by \plus1d for each rank beyond 1.
             \end{freeability}
 
             \begin{freeability}{Dizzying Ditty}[\glossterm{Auditory}, \glossterm{Compulsion}, \glossterm{Sustain} (minor)]
@@ -3041,20 +3093,12 @@ This choice determines a great deal about your character's abilities.
                 You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
             \end{freeability}
 
-            \begin{freeability}{Dirge of Doom}[\glossterm{Auditory}, \glossterm{Emotion}]
-                \target{One creature within \rngmed range}
-                Make an attack vs. Mental against the target.
-                \hit The target takes sonic damage equal to 1d10 plus your \glossterm{power}.
-
-                \rankline
-                The damage increases by \plus1d for each rank beyond 1.
-            \end{freeability}
-
             \begin{freeability}{Frightening Fugue}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
                 \target{One creature within \rngmed range}
                 Make an attack vs. Mental against the target.
                 \hit The target takes 1d6 sonic damage.
                 If it loses \glossterm{hit points} from this damage, it is \glossterm{frightened} by you for the duration of your performance.
+                Unlike normal, the target continues to suffer the penalties of being frightened while it is beyond \rngmed range from you as long as it is still affected by your performance.
 
                 \rankline
                 The damage increases by \plus1d for each rank beyond 1.
@@ -3106,8 +3150,18 @@ This choice determines a great deal about your character's abilities.
                 The healing increases by \plus1d for each rank beyond 1.
             \end{freeability}
 
+            \begin{freeability}{Partita of Provocation}[\glossterm{Auditory}, \glossterm{Emotion}]
+                \target{\glossterm{Enemies} within a \arealarge radius from you}
+                Make an attack vs. Mental against each target.
+                \hit For the duration of your performance, each target takes a \minus2 penalty to \glossterm{accuracy} against creatures other than you as a \glossterm{condition}.
+                \crit As above, except that the penalty increases to \minus4.
+
+                \rankline
+                The healing increases by \plus1d for each rank beyond 1.
+            \end{freeability}
+
             \begin{freeability}{Serenade of Serenity}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
-                \targets{Yourself and all \glossterm{allies} within a \arealarge radius \glossterm{emanation} from you}
+                \targets{Yourself and all \glossterm{allies} within a \arealarge radius from you}
                 You can use this ability as a \glossterm{minor action}.
 
                 For the duration of your performance, each target gains a \plus4 bonus to defenses against hostile \glossterm{Compulsion} and \glossterm{Emotion} effects.
