@@ -422,34 +422,8 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \parhead{Flying}\label{Flying}
         A creature with a \glossterm{fly speed} can fly through the air at the indicated speed.
-        It must not be carrying weight in excess of its maximum carrying capacity (see \pcref{Carrying Capacity}).
-        Flying normally has the \glossterm{Focus} tag, so a creature that flies during the movement phase takes \glossterm{focus penalties} for the rest of the round (see \pcref{Focus}).
-
-        Some abilities that grant a fly speed also have a height limit for the maximum height you can reach with that fly speed.
-        This height measures your maximum distance directly above an object at least two size categories larger than you that is free-standing and capable of supporting your weight.
-        You can fly above surfaces like water as long as they are thick enough to support your weight.
-
-        Each creature with a fly speed also has a maneuverability: good, average, poor, or special.
-        Unless otherwise specified, a creature with a fly speed has average maneuverability.
-
-        Normally, a flying creature must move forward by at least half its fly speed each round. If it does not, it falls.
-        Turning by 90 degrees costs 5 feet of movement, and it can't turn in the same place by more than 90 degrees.
-        It can move up by only one square vertically per square traveled horizontally, but it can fly directly down if it chooses.
-        The creature can fly up at half speed, but can fly down twice as fast.
-
-        \parhead{Maneuverability}\label{Maneuverability} Some creatures have fly speeds with special maneuverability rules.
-
-        \subparhead{Good Maneuverability} If a creature has good maneuverability while flying, it gains four benefits while flying.
-        \begin{itemize}
-            \item The creature does not need to move forward to maintain its flight, allowing it to hover.
-            \item The creature can turn in place without spending movement.
-            \item The creature can move up at the same speed as it moves horizontally.
-            \item The creature's flight does not have the \glossterm{Focus} tag, so it takes no penalties for flying.
-        \end{itemize}
-
-        \parhead{Poor Maneuverability} If a creature has poor maneuverability while flying, it must spend five feet of movement to turn by 45 degrees, and it can't turn in the same place by more than 45 degrees. In addition, it can only descend by up to one square vertically per square traveled horizontally without falling.
-
-        \parhead{Falling} If a flying creature loses control, usually by failing to maintain its minimum forward speed, or loses the ability to fly, it falls just like any other creature would in midair. As long as it still has the ability to fly, it can regain control of its fall as a standard action, causing it to resume flying normally.
+        Flying is more complicated than some other movement speeds.
+        For detail, see \pcref{Flying Mechanics}.
 
         \parhead{Gliding}\label{Gliding}
         A creature with a glide speed can glide through the air at the indicated speed
@@ -461,6 +435,48 @@ It defines how attributes work and explains how to make attacks in combat.
         \parhead{Land}
         A creature with a land speed can move across the ground at the indicated speed.
         Most creatures have a land speed.
+
+    \subsection{Flying Mechanics}
+        A creature with a fly speed cannot fly while it has an \glossterm{encumbrance penalty}, either from armor or from carrying weight in excess of its maximum carrying capacity (see \pcref{Carrying Capacity}).
+
+        \parhead{Maximum Height} Some abilities that grant a fly speed also have a height limit for the maximum height you can reach with that fly speed.
+        This height measures your maximum distance directly above an object at least two size categories larger than you that is free-standing and capable of supporting your weight.
+        You can fly above surfaces like water as long as they are thick enough to support your weight.
+
+        \parhead{Falling} If a flying creature loses control, usually by failing to maintain its minimum forward speed, or loses the ability to fly, it falls just like any other creature would in midair. As long as it still has the ability to fly, it can regain control of its fall as a standard action, causing it to resume flying normally.
+
+        \subsubsection{Flying Maneuverability}\label{Flying Maneuverability}
+        Each creature with a fly speed also has a maneuverability: good, average, or poor.
+        Unless otherwise specified, a creature with a fly speed has average maneuverability.
+
+            \parhead{Good Maneuverability}
+            \begin{itemize}
+                \item Minimum speed: The creature does not need to move forward to maintain its flight, allowing it to hover.
+                \item Turning: The creature can turn in place without spending movement.
+                \item Vertical movement: The creature can move up or down at the same speed as it moves horizontally.
+            \end{itemize}
+
+            \parhead{Average Maneuverability}
+            \begin{itemize}
+                \item Defense penalties: Whenever the creature flies, it takes a \minus2 penalty to Armor and Reflex defenses until the end of the round.
+                    This is a \glossterm{Swift} effect, so it affects attacks made against the creature during the phase that it flies.
+                \item Minimum speed: The creature must move forward by at least half its fly speed each round. If it does not, it falls.
+                \item Turning: Turning by 90 degrees costs 5 feet of movement, and the creature can't turn in the same place by more than 90 degrees.
+                \item Vertical movement: The creature can move up by only one square vertically per square traveled horizontally, but it can fly directly down if it chooses.
+                    The creature can fly up at half speed, but can fly down twice as fast.
+            \end{itemize}
+
+            \parhead{Poor Maneuverability}
+            \begin{itemize}
+                \item Defense penalties: Whenever the creature flies, it takes a \minus4 penalty to Armor and Reflex defenses until the end of the round.
+                    This is a \glossterm{Swift} effect, so it affects attacks made against the creature during the phase that it flies.
+                \item Minimum speed: The creature must move forward by at least half its fly speed each round. If it does not, it falls.
+                \item Turning: Turning by 45 degrees costs 5 feet of movement, and the creature can't turn in the same place by more than 45 degrees.
+                \item Vertical movement: The creature can move up or down by only one square vertically per square traveled horizontally.
+                    The creature can fly up at half speed, but can fly down twice as fast.
+            \end{itemize}
+
+        
 
     \subsection{Forced Movement}\label{Forced Movement}
         Some abilities can physically move you against your will.
