@@ -1697,9 +1697,11 @@ It defines how attributes work and explains how to make attacks in combat.
             Make a melee attack with a free hand against a creature's Fortitude defense.
             You use your Strength in place of your Perception to determine your \glossterm{accuracy} with this attack.
             In addition, for each size category larger or smaller than the target that you are, you gain a \plus4 bonus or penalty to \glossterm{accuracy}.
+            If you are not able to use any of your movement speeds, such as if you are being carried by a flying creature, you automatically fail when you try to use this ability, and your defense is treated as 0 against this ability.
 
             On a hit, you \glossterm{push} the target up half to your movement speed.
             You can move the same distance that you push the target.
+            On a critical hit, you push the target up to your movement speed instead.
         \end{freeability}
 
         \parhead{Sprint} As a \glossterm{move action}, you can use the \textit{sprint} ability to move more quickly.
@@ -1783,12 +1785,14 @@ It defines how attributes work and explains how to make attacks in combat.
 
             \begin{freeability}{Move Grapple}
                 Make an attack vs. Fortitude against every creature grappled by you.
-                If a target also uses this ability to affect you during the same phase, you compare your attack result against its attack result instead of against its Fortitude defense.
+                You use your Strength in place of your Perception to determine your \glossterm{accuracy} with this attack.
+                In addition, for each size category larger or smaller than the target that you are, you gain a \plus4 bonus or penalty to \glossterm{accuracy}.
                 If you are not able to use any of your movement speeds, such as if you are being carried by a flying creature, you automatically fail when you try to use this ability, and your defense is treated as 0 against this ability.
+                If a target also uses this ability to affect you during the same phase, you compare your attack result against its attack result instead of against its Fortitude defense.
 
                 % how to word ``hit or beat''?
                 If you hit every defense and beat every attack result, you can move yourself and all creatures grappled by you a distance up to half your speed.
-                On a critical hit, you move yourself and all creatures grappled by you a distance up to your speed.
+                If you get a critical hit against every defense and beat every attack result by 10, you instead move yourself and all creatures grappled by you a distance up to your speed.
             \end{freeability}
 
             \parhead{Pin}\label{Pin} As a standard action, you can use the \textit{pin} ability to further restrict the actions of a creature you are grappling with.
