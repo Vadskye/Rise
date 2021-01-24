@@ -321,15 +321,13 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \subsubsection{Multiple Damage Types}\label{Multiple Damage Types}
             Some attacks deal damage that has multiple damage types.
-            When you take damage with multiple damage types, you use your lowest applicable \glossterm{resistance} to defend against it.
-            For this purpose, an immunity is considered the highest possible resistance.
-            The higher resistance is not used to defend against the attack.
-            If both of your relevant resistances are the same, you choose which resistance to use.
-            Other abilities similarly apply only if they apply to all damage types dealt by the attack.
+            When you take damage with multiple damage types, it reduces all relevant resistances equally.
+            If you take damage in excess of any of those resistances this way, you lose hit points equal to the excess damage.
+            Defensive abilities other than resistances and immunities apply only if they apply to all damage types dealt by the attack.
 
-            For example, a flaming longsword deals slashing and fire damage.
-            If you were hit with a strike with that longsword, you would use the lower of your resistance against \glossterm{physical damage} and your resistance against \glossterm{energy damage} to resist the damage.
-            An ability that gave you immunity to fire damage would not prevent you from taking damage from the attack unless you were also immune to slashing damage.
+            For example, suppose that you have 2 remaining physical damage resistance and 5 remaining energy damage resistance, and you take 4 damage from a flaming longsword that deals both slashing and fire damage.
+            Your physical damage resistance would be reduced to 0, your energy damage resistance would be reduced to 1, and you would lose 2 hit points.
+            If you were immune to fire damage, your physical damage resistance would still be reduced to 0 and you would still lose 2 hit points, but your energy damage resistance would remain at 5.
 
     \subsection{Special Damage Types}\label{Special Damage Types}
 
