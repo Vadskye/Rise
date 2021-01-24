@@ -17,7 +17,7 @@ def generate_weapons():
             description="""
                 This weapon vibrates slightly in the hand.
                 As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with concussive force.
-                Damage dealt by that strike is sonic damage in addition to its normal damage types.
+                Damage dealt by that strike is sonic damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
             """,
             short_description="Can deal sonic damage",
         ),
@@ -28,7 +28,7 @@ def generate_weapons():
             # tags=[tag],
             description="""
                 This weapon continuously emits a low-pitched rumbling noise and vibrates in the hand.
-                All damage dealt with it is sonic damage in addition to its normal damage types.
+                All damage dealt with it is sonic damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
                 As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with concussive force.
                 If a creature loses \\glossterm<hit points> from that strike, it is \\glossterm<sickened> as a \\glossterm<condition>.
@@ -42,7 +42,7 @@ def generate_weapons():
             # tags=[tag],
             description="""
                 This weapon continuously emits a deep rumbling noise and vibrates in the hand.
-                All damage dealt with it is sonic damage in addition to its normal damage types.
+                All damage dealt with it is sonic damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
                 As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with concussive force.
                 If a creature loses \\glossterm<hit points> from that strike, it is \\glossterm<nauseated> as a \\glossterm<condition>.
@@ -60,7 +60,7 @@ def generate_weapons():
             description="""
                 This weapon smolders visibly and sheds light as a torch.
                 As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with fiery energy.
-                Damage dealt by that strike is fire damage in addition to its normal damage types.
+                Damage dealt by that strike is fire damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
             """,
             short_description="Can deal fire damage",
         ),
@@ -71,7 +71,7 @@ def generate_weapons():
             tags=[],
             description="""
                 This weapon is on fire.
-                It sheds light as a torch, and all damage dealt with it is fire damage in addition to its normal damage types.
+                It sheds light as a torch, and all damage dealt with it is fire damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
                 As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with fiery energy.
                 You gain a +1d bonus to damage with the strike.
@@ -85,7 +85,7 @@ def generate_weapons():
             tags=[],
             description="""
                 This weapon is on fire.
-                It sheds light as a torch, and all damage dealt with it is fire damage in addition to its normal damage types.
+                It sheds light as a torch, and all damage dealt with it is fire damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
                 As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with fiery energy.
                 You gain a +2d bonus to damage with the strike.
@@ -103,7 +103,7 @@ def generate_weapons():
             description="""
                 This weapon subtly crackles with electricity.
                 As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with electrical energy.
-                Damage dealt by that strike is electricity damage in addition to its normal damage types.
+                Damage dealt by that strike is electricity damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
             """,
             short_description="Can deal electicity damage",
         ),
@@ -114,7 +114,7 @@ def generate_weapons():
             tags=[],
             description="""
                 This weapon continuously crackles with electricity.
-                All damage dealt with it is electricity damage in addition to its normal damage types.
+                All damage dealt with it is electricity damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
                 As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with electrical energy.
                 If a creature loses \\glossterm<hit points> from that strike, it is \\glossterm<dazed> as a \\glossterm<condition>.
@@ -128,7 +128,7 @@ def generate_weapons():
             tags=[],
             description="""
                 This weapon continuously crackles with powerful electricity.
-                All damage dealt with it is electricity damage in addition to its normal damage types.
+                All damage dealt with it is electricity damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
                 As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with electrical energy.
                 If a creature loses \\glossterm<hit points> from that strike, it is \\glossterm<stunned> as a \\glossterm<condition>.
@@ -146,7 +146,7 @@ def generate_weapons():
             description="""
                 This weapon is frigid to the touch.
                 As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with cold energy.
-                Damage dealt by that strike is cold damage in addition to its normal damage types.
+                Damage dealt by that strike is cold damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
             """,
             short_description="Can deal cold damage",
         ),
@@ -157,7 +157,7 @@ def generate_weapons():
             tags=[],
             description="""
                 This weapon is bitterly cold to the touch.
-                All damage dealt with it is cold damage in addition to its normal damage types.
+                All damage dealt with it is cold damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
                 As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with cold energy.
                 If a creature loses \\glossterm<hit points> from that strike, it is \\glossterm<slowed> as a \\glossterm<condition>.
@@ -171,7 +171,7 @@ def generate_weapons():
             tags=[],
             description="""
                 This weapon radiates an aura of bitter cold.
-                All damage dealt with it is cold damage in addition to its normal damage types.
+                All damage dealt with it is cold damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
                 As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with cold energy.
                 You gain a +1d bonus to damage with the strike.
