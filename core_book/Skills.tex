@@ -408,9 +408,13 @@ This chapter describes each skill, including common uses for those skills.
     The Climb skill represents your ability to climb obstacles.
 
     \subsection{Climb}
-        You can make a Climb check as a \glossterm{move action} to move up, down, or across a slope, a wall, or some other steep incline (or even a ceiling with handholds). Success means you move a number of feet equal to the size of your space, as described on \trefnp{Climb Speeds}. Critical success means you move at twice that speed. Failure means your action is wasted and you do not move. Critical failure means you fall.
+        You can make a Climb check as a \glossterm{free action} while you are touching a slope, a wall, or some other steep incline (or even a ceiling with handholds).
+        The \glossterm{difficulty rating} of the check depends on the difficulty of the task and the conditions of the climbing surface, as shown on \trefnp{Climb Difficulty Ratings} and \trefnp{Climb Difficulty Modifiers}.
 
-        You need both hands free to climb, but you may cling to a wall with one hand while you cast a spell or take some other action that requires only one hand.
+        Success means you gain a \glossterm{climb speed} equal to the size of your space during the current phase, as described on \trefnp{Climb Speeds}.
+        Critical success means the climb speed you gain is doubled.
+        Failure means your action is wasted and you do not move.
+        Critical failure means you fall.
 
         \begin{dtable}
             \lcaption{Climb Speeds}
@@ -427,8 +431,6 @@ This chapter describes each skill, including common uses for those skills.
                 Colossal    & 25\add ft. \\
             \end{dtabularx}
         \end{dtable}
-
-        The \glossterm{difficulty rating} of the check depends on the difficulty of the task and the conditions of the climbing surface, as shown on \trefnp{Climb Difficulty Ratings} and \trefnp{Climb Difficulty Modifiers}.
 
         \begin{dtable}
             \lcaption{Climb Difficulty Ratings}
@@ -462,10 +464,6 @@ This chapter describes each skill, including common uses for those skills.
 
         \parhead{Climbing Distractions}
         If you take damage while climbing, suddenly acquire significantly more weight (such as by catching a falling character), or otherwise are significantly distracted, you must make another Climb check against the wall's \glossterm{difficulty rating} to avoid falling.
-
-        \parhead{Climb Speed}\label{Climb Speed}
-            A creature with a climb speed can move a distance equal to its climb speed with a successful Climb check.
-            However, it does not move double its speed if it gets a critical success on a Climb check.
 
     \subsubsection{Grab Edge}\label{Grab Edge}
         If you are next to the edge of a wall or cliff, you can grab it.
@@ -507,6 +505,11 @@ This chapter describes each skill, including common uses for those skills.
         Success means you can climb the creature as if it were a solid object with a Climb \glossterm{difficulty rating} equal to its Reflex defense.
         The creature takes a \minus4 penalty to \glossterm{accuracy} with \glossterm{mundane} attacks against you, but is not otherwise encumbered by your presence unless it cannot support your weight.
         It can attempt to remove you by dealing damage to you or with an appropriate ability, such as the \textit{shove} ability (see \pcref{Shove}).
+
+    \subsection{Climb Speed}\label{Climb Speed}
+        Some creatures have a listed climb speed.
+        A creature with a passive climb speed must still make a Climb check to climb on surfaces.
+        However, the distance it can move if it succeeds on the Climb check is equal to its listed climb speed, regardless of its size or whether it gets a critical success.
 
 \newpage
 \skill{Craft}{Int}
@@ -1557,7 +1560,12 @@ This chapter describes each skill, including common uses for those skills.
         The Swim skill represents your ability to swim.
 
     \subsection{Swimming}
-        You can make a Swim check to move through water as a \glossterm{move action}. The \glossterm{difficulty rating} depends on the turbulence of the water, as shown on \trefnp{Swim Difficulty Ratings}. Success means you move forward by up to one-quarter your speed. Critical success means you move twice as fast. Failure means you make no progress through the water.
+        You can make a Swim check as a \glossterm{free action} while you are in water or some other thick liquid that allows swimming.
+        The \glossterm{difficulty rating} depends on the turbulence of the water, as shown on \trefnp{Swim Difficulty Ratings}.
+
+        Success means you gain a \glossterm{swim speed} equal to one quarter of your \glossterm{base speed}.
+        Critical success means the swim speed you gain is equal to half your base speed.
+        Failure means your action is wasted and you do not move.
 
         \begin{dtable}
             \lcaption{Swim Difficulty Ratings}
@@ -1573,5 +1581,6 @@ This chapter describes each skill, including common uses for those skills.
         You can swim underwater just like you can above water. If you are underwater, either because you failed a Swim check or because you are swimming underwater intentionally, you must hold your breath. You can hold your breath for a number of rounds equal to 5 \add your Constitution. After that period of time, you must make a \glossterm{difficulty rating} 10 Constitution check every round to continue holding your breath. Each round, the \glossterm{difficulty rating} for the check increases by 5. If you fail, you begin to drown.
 
     \subsection{Swim Speed}\label{Swim Speed}
-        A creature with a swim speed can move a distance equal to its swim speed with a successful Swim check.
-        In addition, it gains a \plus10 bonus to any Swim checks it makes.
+        Some creatures have a listed swim speed.
+        A creature with a passive swim speed must still make a Swim check to swim through liquid.
+        However, the distance it can move if it succeeds on the Swim check is equal to its listed swim speed, regardless of its size or whether it gets a critical success on the check.
