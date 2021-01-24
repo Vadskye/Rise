@@ -254,7 +254,7 @@ enchantment=MysticSphere(
         #     \\rank<7> The area increases to a \\areamed radius \\glossterm<emanation>.
         # """, tags=['Attune (self)', 'Emotion']),
         Spell('Curse of Phobia', 3, 'One creature within \\rngmed range', """
-            When you cast this spell, choose one of the following fears: blood (including any \\glossterm<bloodied> creature, even the target), darkness (any location that does not have \\glossterm<bright illumination>), heights (any drop more 10 feet high), insects, snakes, or water.
+            When you cast this spell, choose one of the following fears: blood (including any creature with a \\glossterm<vital wound>, even the target), darkness (any location that does not have \\glossterm<bright illumination>), heights (any drop more 10 feet high), insects, snakes, or water.
             Make an attack vs. Mental against the target.
             \\hit The is \\glossterm<shaken> by all sources of your chosen fear until it takes a \\glossterm<short rest>.
             \\glance As above, except that the effect is removed at the end of the next round.
