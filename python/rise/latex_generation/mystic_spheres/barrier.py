@@ -19,7 +19,7 @@ barrier=MysticSphere(
             \\rank<2> The halving applies to all damage, not just energy damage.
             \\rank<4> You also gain a +1 bonus to all defenses.
             \\rank<6> The defense bonus increases to +2.
-        """),
+        """, tags=['Swift']),
         Effects('Minor Barrier', None, """
             This cantrip functions like the \\spell<mystic barrier> spell, except that its \\glossterm<range> is \\rngshort and the maximum dimensions of the barrier are a 5 ft.\\ by 5 ft.\\ square.
         """, scaling="""
