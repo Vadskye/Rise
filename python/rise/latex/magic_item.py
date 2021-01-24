@@ -12,7 +12,7 @@ class MagicItem(object):
             'Alchemy': ['alchemy'],
             'Amulet': ['jewelry'],
             'Belt': ['leather', 'textiles'],
-            'Body armor': ['bone', 'metal'],
+            'Body armor': ['bone', 'leather', 'metal'],
             'Boots': ['bone', 'leather', 'metal'],
             'Bracers': ['bone', 'leather', 'metal', 'wood'],
             'Circlet': ['bone', 'metal'],
