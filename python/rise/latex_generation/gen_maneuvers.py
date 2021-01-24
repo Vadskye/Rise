@@ -373,9 +373,23 @@ def generate_maneuvers():
         target=None,
         effect_text="""
             You make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to half your \\glossterm<base speed> (see \\pcref<Leap>).
-            You can make a melee \\glossterm<strike> from any location you occupy during the leap.
+            You can make a melee \\glossterm<strike> from any location you occupy during the motion, including both your initial leap and your fall afterwards (if any).
         """,
         rank=3,
+        tags=[],
+        lists=['Esoteric', 'Primal', 'Trick', 'Wild'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Leaping Impact Strike',
+        short_description='Jump and make a strike that shares falling damage',
+        target=None,
+        effect_text="""
+            You make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to half your \\glossterm<base speed> (see \\pcref<Leap>).
+            You can make a melee \\glossterm<strike> from any location you occupy during the motion, including both your initial leap and your fall afterwards (if any).
+            If you hit with the strike, the target takes half of the \\glossterm<falling damage> that you would normally take based on the height of the jump, ignoring any of your abilities that reduce that damage.
+        """,
+        rank=6,
         tags=[],
         lists=['Esoteric', 'Primal', 'Trick', 'Wild'],
     ))
