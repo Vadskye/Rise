@@ -188,6 +188,7 @@ def attunement_points():
             setAttrs({{
                 attunement_points,
                 attunement_points_max: attunement_points,
+                attunement_points_maximum: attunement_points,
                 attunement_points_from_level,
             }});
         """,
@@ -560,9 +561,12 @@ def energy_resistance():
                 // For now, just going through the HP bar twice works well enough.
                 4: 2,
             }}[challenge_rating || 0];
+            const energy_resistance = (resistance_from_level + willpower + energy_resistance_bonus_armor + {sum_variables(misc)}) * cr_multiplier;
             setAttrs({{
+                energy_resistance,
                 energy_resistance_from_level: resistance_from_level * cr_multiplier,
-                energy_resistance_bonus: (resistance_from_level + willpower + energy_resistance_bonus_armor + {sum_variables(misc)}) * cr_multiplier,
+                energy_resistance_max: energy_resistance,
+                energy_resistance_maximum: energy_resistance,
             }});
         """
     )
@@ -615,9 +619,12 @@ def physical_resistance():
                 // For now, just going through the HP bar twice works well enough.
                 4: 2,
             }}[challenge_rating || 0];
+            const physical_resistance = (resistance_from_level + constitution + physical_resistance_bonus_armor + {sum_variables(misc)}) * cr_multiplier;
             setAttrs({{
+                physical_resistance,
                 physical_resistance_from_level: resistance_from_level * cr_multiplier,
-                physical_resistance_bonus: (resistance_from_level + constitution + physical_resistance_bonus_armor + {sum_variables(misc)}) * cr_multiplier,
+                physical_resistance_max: physical_resistance,
+                physical_resistance_maximum: physical_resistance,
             }});
         """
     )

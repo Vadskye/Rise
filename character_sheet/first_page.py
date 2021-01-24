@@ -126,16 +126,30 @@ def resistances():
     return flex_col({'class': 'damage-resistances'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Resistances')),
         "".join([
-            sidelabel('Physical', number_input({
-                'disabled': True,
-                'name': 'physical_bleed_resistance_display',
-                'value': '@{physical_resistance_bonus}',
-            })),
-            sidelabel('Energy', number_input({
-                'disabled': True,
-                'name': 'energy_bleed_resistance_display',
-                'value': '@{energy_resistance_bonus}',
-            })),
+            sidelabel('Physical', flex_row({'class': 'core-statistics-split'}, [
+                number_input({
+                    'name': 'physical_resistance',
+                    'value': '@{physical_resistance}',
+                }),
+                span({'class': 'core-statistics-separator'}, '/'),
+                number_input({
+                    'disabled': True,
+                    'name': 'physical_resistance_maximum_display',
+                    'value': '@{physical_resistance_maximum}',
+                }),
+            ])),
+            sidelabel('Energy', flex_row({'class': 'core-statistics-split'}, [
+                number_input({
+                    'name': 'energy_resistance',
+                    'value': '@{energy_resistance}',
+                }),
+                span({'class': 'core-statistics-separator'}, '/'),
+                number_input({
+                    'disabled': True,
+                    'name': 'energy_resistance_maximum_display',
+                    'value': '@{energy_resistance_maximum}',
+                }),
+            ])),
             freeform_number_input(
                 number_input_attributes={'name': 'resistance_freeform'},
                 text_input_attributes={'name': 'resistance_freeform_name'},
@@ -150,19 +164,42 @@ def resistances():
 def core_statistics(destination):
     return flex_col({'class': 'core-statistics'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Core Statistics')),
-        sidelabel('Attune points', number_input({
-            'disabled': True,
-            'name': 'attunement_points_display',
-            'value': '@{attunement_points}',
-        })),
-        sidelabel('Fatigue points', number_input({
-            'name': 'fatigue_points',
-        })),
-        sidelabel('Hit points', number_input({
-            'disabled': True,
-            'name': 'hit_points_display',
-            'value': '@{hit_points_maximum}',
-        })),
+        sidelabel('Attune points', flex_row({'class': 'core-statistics-split'}, [
+            number_input({
+                'name': 'attunement_points',
+                'value': '@{attunement_points}',
+            }),
+            span({'class': 'core-statistics-separator'}, '/'),
+            number_input({
+                'disabled': True,
+                'name': 'attunement_points_maximum_display',
+                'value': '@{attunement_points_maximum}',
+            }),
+        ])),
+        sidelabel('Fatigue points', flex_row({'class': 'core-statistics-split'}, [
+            number_input({
+                'name': 'fatigue_points',
+                'value': '@{fatigue_points}',
+            }),
+            span({'class': 'core-statistics-separator'}, '/'),
+            number_input({
+                'disabled': True,
+                'name': 'fatigue_tolerance_display_first_page',
+                'value': '@{fatigue_tolerance}',
+            }),
+        ])),
+        sidelabel('Hit points', flex_row({'class': 'core-statistics-split'}, [
+            number_input({
+                'name': 'hit_points',
+                'value': '@{hit_points}',
+            }),
+            span({'class': 'core-statistics-separator'}, '/'),
+            number_input({
+                'disabled': True,
+                'name': 'hit_points_maximum_display',
+                'value': '@{hit_points_maximum}',
+            }),
+        ])),
         (
             sidelabel('Initiative', number_input({
                 'disabled': True,
