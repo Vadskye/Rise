@@ -81,7 +81,7 @@ astromancy=MysticSphere(
         """, scaling="damage", tags=[]),
         # TODO: target wording is awkward
         Spell('Translocation', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngshort range', """
-            The target \\glossterm<teleports> into an unoccupied destination within range.
+            The target \\glossterm<teleports> into an unoccupied destination on a stable surface within range.
             If the destination is invalid, this spell is \\glossterm<miscast>.
         """, scaling="""
             \\rank<3> The range increases to \\rngmed.
@@ -95,7 +95,7 @@ astromancy=MysticSphere(
             \\rank<7> The range increases to \\rnglong.
         """, tags=[]),
         Spell('Dimension Door', 4, 'Yourself', """
-            You teleport to a location within \\rngdist range of you.
+            You teleport to an unoccupied destination on a stable surfce within \\rngdist range of you.
             You must clearly visualize the destination's appearance and have an approximate knowledge of its direction and distance from you.
             However, you do not need \\glossterm<line of sight> or \\glossterm<line of effect> to your destination.
         """, scaling="""
@@ -145,7 +145,7 @@ astromancy=MysticSphere(
             \\glance As above, except that the condition is removed at the end of the next round.
         """, tags=[]),
         Spell('Dimensional Jitter', 5, 'Yourself', """
-            At the end of each \\glossterm<phase>, you may choose to teleport 10 feet in a random direction.
+            At the end of each \\glossterm<phase>, you may choose to \\glossterm<teleport> 10 feet horizontally in a random direction.
             If your \\glossterm<line of effect> to your destination is blocked, or if this teleportation would somehow place you inside a solid object, your teleportation is cancelled and you remain where you are.
         """, scaling="""
             \\rank<7> You can choose the direction of the teleportation.
@@ -158,12 +158,12 @@ astromancy=MysticSphere(
             \\rank<6> The maximum number of targets increases to ten.
         """, tags=[]),
         Spell('Dimension Walk', 4, 'Yourself', """
-            You can teleport horizontally instead of moving normally.
+            Once per round, you can teleport horizontally instead of moving normally.
             Teleporting a given distance costs movement equal to that distance.
             If your \\glossterm<line of effect> to your destination is blocked, or if this teleportation would somehow place you inside a solid object, your teleportation is cancelled and you remain where you are that phase.
             You must be able to move to teleport in this way, so effects like being \\glossterm<immobilized> prevent this movement.
         """, scaling="""
-            \\rank<6> You can also teleport vertically or diagonally in addition to horizontally.
+            \\rank<6> You can teleport in this way any number of times each round, allowing you to break up your teleportation between movements.
         """, tags=['Attune (self)']),
         Spell('Flicker', 2, 'Yourself', """
             You randomly flicker between your current plane and the Astral Plane.
@@ -237,7 +237,7 @@ astromancy=MysticSphere(
             % TODO: Is this planar cosmology correct?
             The Astral Plane connects to every plane, but transit from other planes is usually more limited.
             From the Material Plane, you can only reach the Astral Plane.
-        """, tags=[], ritual_time='24 hours'),
+        """, tags=[], ritual_time='1 hour'),
         Spell('Astral Projection', 5, 'Up to five Large or smaller ritual participants', """
             The targets teleport to a single random location within the Inner Astral Plane (see \\pcref<The Astral Plane>).
 
