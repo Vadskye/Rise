@@ -32,7 +32,7 @@ export function calculateResistances({
 
     // Note that this is not multiplied by crMultiplier since 'universal' is not a standard damage
     // type
-    universal: challengeRating === 4 ? hitPoints : 0,
+    universal: challengeRating === 4 ? Math.floor(hitPoints / 2) : 0,
   };
 
   const crMultiplier = {
