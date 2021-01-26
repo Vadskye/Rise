@@ -278,7 +278,7 @@ def generate_maneuvers():
             \\crit Each target that has no remaining \\glossterm<resistance> to sonic damage is \\glossterm<frightened> by you as a \\glossterm<condition>.
 
             \\rankline
-            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 2.
+            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 1.
         """,
         rank=1,
         tags=['Emotion'],
@@ -296,7 +296,7 @@ def generate_maneuvers():
             \\crit Each target that has no remaining \\glossterm<resistance> to sonic damage is \\glossterm<panicked> by you as a \\glossterm<condition>.
 
             \\rankline
-            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 5.
+            You gain a +1 bonus to \\glossterm<accuracy> with the attack for each rank beyond 4.
         """,
         rank=4,
         tags=['Emotion'],
