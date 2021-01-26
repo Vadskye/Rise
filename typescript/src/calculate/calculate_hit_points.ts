@@ -45,7 +45,7 @@ export function calculateHitPoints({
     1: 0.5,
     2: 1,
     3: 2,
-    4: 2,
+    4: 4,
   }[challengeRating];
   const hpFromLevel = hpByLevel[level];
   return Math.floor(crMult * (hpFromLevel + (attributes.con || 0)));
