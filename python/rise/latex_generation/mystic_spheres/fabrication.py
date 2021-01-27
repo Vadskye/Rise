@@ -179,8 +179,18 @@ fabrication=MysticSphere(
             % TODO: add ability to create objects of other sizes/materials
             It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as wood or cloth.
         """, tags=['Attune (ritual)', 'Manifestation'], ritual_time='one hour'),
-        Spell('Create Sustenance', 3, 'One unoccupied squre within \\rngshort range', """
-            This ritual creates food and drink in that square that is sufficient to sustain two Medium creatures per \\glossterm<power> for 24 hours.
+        Spell('Fabricate Water', 1, None, """
+            You create up to two gallons of wholesome, drinkable water at any number of locations within \\rngshort range, allowing you to fill multiple small water containers.
+            You must create a minimum of one ounce of water in each location.
+        """, tags=['Creation'], ritual_time='one minute'),
+        Spell('Fabricate Sustenance', 2, None, """
+            This ritual creates food and drink in one unoccupied square within \\rngshort range that is sufficient to sustain five Medium creatures for 24 hours.
+            It also creates basic receptacles to hold the food and drink.
+            The food that this ritual creates is simple fare of your choice -- highly nourishing, if rather bland.
+        """, tags=['Creation'], ritual_time='one hour'),
+        Spell('Fabricate Feast', 3, None, """
+            This ritual creates food and drink in any number of unoccupied squares within \\rngshort range that is sufficient to sustain twenty Medium creatures for 24 hours.
+            It also creates basic receptacles to hold the food and drink.
             The food that this ritual creates is simple fare of your choice -- highly nourishing, if rather bland.
         """, tags=['Creation'], ritual_time='one hour'),
         Spell('Copy Writing', 1, ['One Small or smaller written work within \\rngshort range', 'One Small or smaller set of blank pages within \\rngshort range'], """
