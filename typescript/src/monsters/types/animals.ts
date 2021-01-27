@@ -90,6 +90,28 @@ const animalInput: TypelessMonsterInput[] = [
     weaponInput: [{ name: "bite" }],
   },
   {
+    alignment: "Always true neutral",
+    armorInputs: [{ name: "fur" }],
+    challengeRating: 1,
+    description: `
+      The statistics presented here describe a fairly large dog.
+    `,
+    knowledge: {
+      0: `
+        A riding dog is a Medium canine creature.
+        They are bred for speed and endurance.
+        Riding dogs are sometimes used as battle mounts by Small creatures such as halflings and gnomes.
+      `,
+    },
+    level: 2,
+    name: "Riding Dog",
+    skillPoints: { awareness: 2, jump: 2, swim: 2 },
+    size: "medium",
+    speeds: { land: 35 },
+    startingAttributes: { str: 1, dex: 1, con: 1, int: -7, per: 1, wil: -1 },
+    weaponInput: [{ name: "bite" }],
+  },
+  {
     // TODO: include carrying capacity in description without having to manually calculate it
     alignment: "Always true neutral",
     armorInputs: [{ name: "fur" }],
@@ -194,18 +216,36 @@ const animalInput: TypelessMonsterInput[] = [
   {
     alignment: "Always true neutral",
     armorInputs: [{ name: "hide" }],
+    challengeRating: 2,
+    knowledge: {
+      // TODO: add carrying capacity to knowledge result
+      0: `
+        Horses are widely domesticated for riding and as beasts of burden.
+      `,
+    },
+    level: 2,
+    name: "Horse",
+    size: "large",
+    speeds: { land: 50 },
+    startingAttributes: { str: 2, dex: 1, con: 3, int: -7, wil: -2 },
+    // TODO: add powerMultiplier to weaponInput
+    weaponInput: [{ baseDamageDie: "1d6", name: "bite" }],
+  },
+  {
+    alignment: "Always true neutral",
+    armorInputs: [{ name: "hide" }],
     description: `
       The statistics presented here describe a small horse, under 5 feet tall at the shoulder.
     `,
     knowledge: {
+      // TODO: add carrying capacity to knowledge result
       0: `
         Ponies are similar to light horses and cannot fight while carrying a rider.
-        A pony's maximum load is 120 pounds, and it can drag up to 600 pounds.
       `,
     },
     level: 2,
     name: "Pony",
-    startingAttributes: { str: 1, con: 3, int: -7, wil: -1 },
+    startingAttributes: { str: 1, con: 3, int: -7, wil: -2 },
     weaponInput: [{ baseDamageDie: "1d6", name: "bite" }],
   },
   {
