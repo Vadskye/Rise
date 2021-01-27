@@ -324,6 +324,41 @@ def generate_armor():
 
     apparel += [
         MagicItem(
+            name="Armor of Retribution",
+            level=4,
+            material_type='Body armor',
+            description="""
+                At the end of each round, make an attack vs. Fortitude against each creature adjacent to you that made you lose \\glossterm<hit points> with an attack that round.
+                \\hit Each target takes 1d10+1 energy damage.
+            """
+            short_description="Deals retributive damage when you lose HP",
+        ),
+        MagicItem(
+            name="Armor of Retribution, Greater",
+            level=10,
+            material_type='Body armor',
+            description="""
+                At the end of each round, make an attack vs. Fortitude against each creature adjacent to you that attacked you that round.
+                \\hit Each target takes 2d8+2 energy damage.
+                \\glance As above, except that that each target takes half damage.
+            """
+            short_description="Deals retributive damage when adjacent foes attack",
+        ),
+        MagicItem(
+            name="Armor of Retribution, Supreme",
+            level=16,
+            material_type='Body armor',
+            description="""
+                At the end of each round, make an attack vs. Fortitude against each creature within a \\areamed radius \\glossterm<emanation> from you that attacked you that round.
+                \\hit Each target takes 4d6+4 energy damage.
+                \\glance As above, except that that each target takes half damage.
+            """
+            short_description="Deals retributive damage when nearby foes attack",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
             name="Armor of Fortification",
             level=8,
             material_type='Body armor',
