@@ -381,8 +381,8 @@ def hit_points():
                 2: 1,
                 3: 2,
                 // TODO: represent universal resistance in the roll20 sheet.
-                // For now, just going through the HP bar twice works well enough.
-                4: 2,
+                // For now, just going through the HP bar 1.5x times works... okay
+                4: 4,
             }}[challenge_rating || 0];
             hit_points = Math.floor(hit_points * cr_multiplier)
             setAttrs({{
