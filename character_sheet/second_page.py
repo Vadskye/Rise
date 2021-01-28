@@ -297,7 +297,7 @@ def calc_physical_resistance_bonus():
             result_attributes={
                 'disabled': 'true',
                 'name': 'physical_resistance_bonus_display',
-                'value': '(@{physical_resistance_bonus})',
+                'value': '(@{physical_resistance_maximum})',
             },
             result_label='Bonus'
         ),
@@ -359,7 +359,7 @@ def calc_energy_resistance_bonus():
             result_attributes={
                 'disabled': 'true',
                 'name': 'energy_resistance_bonus_display',
-                'value': '(@{energy_resistance_bonus})',
+                'value': '(@{energy_resistance_maximum})',
             },
             result_label='Bonus'
         ),
