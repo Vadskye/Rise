@@ -73,24 +73,20 @@ vivimancy=MysticSphere(
         """, scaling="""
             \\rank<7> The target can remove two \\glossterm<vital wounds>.
         """, tags=[]),
-        Spell('Inflict Wound', 3, 'One living creature within \\rngmed range', """
+        Spell('Inflict Wound', 1, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
-            \\hit The target loses \\glossterm<hit points> equal to 2d8 plus your \\glossterm<power>.
-            \\glance As above, except that that the hit point loss is halved.
-            \\crit As above, except that the hit point loss is doubled.
-        """, scaling="""
-            The hit point loss increases by +1d for each rank beyond 3.
-        """, tags=[]),
+            \\hit The target takes energy damage equal to 1d8 plus half your \\glossterm<power>.
+            If the target would lose \\glossterm<hit points> from this damage, it loses twice that many hit points instead.
+        """, scaling="damage", tags=[]),
         # +2 levels for +1d, +1 level for fancy crit
-        Spell('Inflict Vital Wound', 6, 'One living creature within \\rngmed range', """
+        Spell('Inflict Vital Wound', 4, 'One living creature within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
-            \\hit The target loses \\glossterm<hit points> equal to 4d10 plus your \\glossterm<power>.
-            \\glance As above, except that that the hit point loss is halved.
-            \\crit As above, except that the hit point loss is doubled.
+            \\hit The target takes energy damage equal to 2d10 plus half your \\glossterm<power>.
+            If the target would lose \\glossterm<hit points> from this damage, it loses twice that many hit points instead.
+            \\glance As above, except that that the target takes half damage.
+            \\crit As above, except that the damage is doubled.
             In addition, if the target did not already gain a \\glossterm<vital wound> from that loss of hit points, it gains a \\glossterm<vital wound>.
-        """, scaling="""
-            The hit point loss increases by +1d for each rank beyond 6.
-        """, tags=[]),
+        """, scaling="damage", tags=[]),
         # +4 levels for +2d, +1 level for vital wound effect, -1 for short
         Spell('Steal Vitality', 5, 'One living creature within \\rngshort range', """
             Make an attack vs. Fortitude against the target.
