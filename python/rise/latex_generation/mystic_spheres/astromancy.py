@@ -212,6 +212,13 @@ astromancy=MysticSphere(
         """, scaling="""
             \\rank<6> The maximum thickness you can ignore increases to 5 feet.
         """, tags=['Attune (self)']),
+        Spell('Phasestep', 3, 'Yourself', """
+            The target can move through creatures freely.
+            This does not allow it to move through inanimate objects.
+        """, scaling="""
+            \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
+            \\rank<7> The target also ignores all sources of \\glossterm<difficult terrain>.
+        """, tags=['Attune (target)']),
     ],
 
     rituals=[

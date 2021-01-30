@@ -141,7 +141,7 @@ umbramancy=MysticSphere(
             \\rank<5> The bonus increases to +5.
             \\rank<7> The bonus increases to +6.
         """, tags=['Attune (self)', 'Sensation']),
-        Spell('Shadowstep', 1, 'Yourself', """
+        Spell('Shadowstep', 1, None, """
             This spell has no \\glossterm<verbal components>.
 
             You teleport into an unoccupied destination on a stable surface within \\rngshort range.
@@ -152,7 +152,7 @@ umbramancy=MysticSphere(
             \\rank<5> The teleporation range increases to \\rnglong.
             \\rank<7> The teleporation range increases to \\rngdist.
         """, tags=[]),
-        Spell('Shadowstrike', 4, 'Yourself', """
+        Spell('Shadowstrike', 4, None, """
             This spell functions like the \\spell<shadowstep> spell, except that you can also make a \\glossterm<strike> at your destination.
             You take a -2 penalty to \\glossterm<accuracy> with the strike due to its rushed nature.
         """, scaling="""

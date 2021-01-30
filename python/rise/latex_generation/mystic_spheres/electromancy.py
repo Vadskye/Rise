@@ -172,6 +172,20 @@ spells=[
         \\glance As above, except that the condition is removed at the end of the next round.
         \\crit As above, except that each bolt deals double damage.
     """, scaling="damage", tags=['Attune (self)']),
+    Spell('Thunderdash', 3, 'Everything in the area (see text)', """
+        You teleport into an unoccupied destination on a stable surface within \\rngshort range.
+        Both your departure and arrival with this spell sound like a clap of thunder.
+        In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
+        \\hit Each target takes electricity damage equal to 2d6 plus half your \\glossterm<power>.
+        \\glance As above, except that that each target takes half damage.
+    """, scaling="damage", tags=[]),
+    Spell('Greater Thunderdash', 6, 'Everything in the area (see text)', """
+        You teleport into an unoccupied destination on a stable surface within \\rngdist range.
+        Both your departure and arrival with this spell sound like a clap of thunder.
+        In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
+        \\hit Each target takes electricity damage equal to 4d6 plus half your \\glossterm<power>.
+        \\glance As above, except that that each target takes half damage.
+    """, scaling="damage", tags=[]),
 ],
 category='damage',
 )
