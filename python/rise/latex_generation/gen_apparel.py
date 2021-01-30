@@ -746,6 +746,42 @@ def generate_armor():
 
     apparel += [
         MagicItem(
+            name="Belt of Hill Giant's Strength",
+            level=8,
+            material_type='Belt',
+            tags=[],
+            description="""
+                You gain a +1 bonus to Strength-based \\glossterm<checks>, and you gain a +1 bonus to Strength for the purpose of determining your \\glossterm<carrying capacity> (see \\pcref<Carrying Capacity>).
+                In addition, you reduce your \\glossterm<encumbrance> by 1.
+            """,
+            short_description="Grants +1 Strength for specific purposes",
+        ),
+        MagicItem(
+            name="Belt of Stone Giant's Strength",
+            level=14,
+            material_type='Belt',
+            tags=[],
+            description="""
+                You gain a +2 bonus to Strength-based \\glossterm<checks>, and you gain a +2 bonus to Strength for the purpose of determining your \\glossterm<carrying capacity> (see \\pcref<Carrying Capacity>).
+                In addition, you reduce your \\glossterm<encumbrance> by 2.
+            """,
+            short_description="Grants +2 Strength for specific purposes",
+        ),
+        MagicItem(
+            name="Belt of Storm Giant's Strength",
+            level=20,
+            material_type='Belt',
+            tags=[],
+            description="""
+                You gain a +3 bonus to Strength-based \\glossterm<checks>, and you gain a +3 bonus to Strength for the purpose of determining your \\glossterm<carrying capacity> (see \\pcref<Carrying Capacity>).
+                In addition, you reduce your \\glossterm<encumbrance> by 3.
+            """,
+            short_description="Grants +3 Strength for specific purposes",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
             name="Anchoring Armor",
             # +2 levels since armor is secondary for this effect
             level=7,
@@ -873,6 +909,152 @@ def generate_armor():
                 This item functions like \\mitem<armor of translocation>, except that the range increases to \\rnglong.
             """,
             short_description="Grants ability to teleport up to 120 feet",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Boots of Reliable Motion",
+            level=2,
+            material_type='Boots',
+            tags=[],
+            description="""
+                Whenever you roll a 1 on an attack or check using the Agility, Climb, Jump, or Swim skills, you may reroll and take the higher result.
+                You can only reroll any individual roll once in this way.
+            """,
+            short_description="Can reroll 1s with movement-based skills",
+        ),
+        MagicItem(
+            name="Boots of Reliable Motion, Greater",
+            level=8,
+            material_type='Boots',
+            tags=[],
+            description="""
+                Whenever you roll a 1 on an attack or check using the Agility, Climb, Jump, or Swim skills, you may reroll and take the higher result.
+                You can only reroll any individual roll once in this way.
+                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to gain one \\glossterm<fatigue point> instead of two (see \\pcref<desperate exertion>).
+            """,
+            short_description="Can reroll 1s and exert more easily with movement-based skills",
+        ),
+        MagicItem(
+            name="Boots of Reliable Motion, Supreme",
+            level=14,
+            material_type='Boots',
+            tags=[],
+            description="""
+                Whenever you roll a 1 or 2 on an attack or check using the Agility, Climb, Jump, or Swim skills, you may reroll and take the higher result.
+                You can only reroll any individual roll once in this way.
+                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to gain one \\glossterm<fatigue point> instead of two (see \\pcref<desperate exertion>).
+            """,
+            short_description="Can reroll 1s and 2s and exert more easily with movement-based skills",
+        ),
+        MagicItem(
+            name="Gloves of Reliable Finesse",
+            level=2,
+            material_type='Gloves',
+            tags=[],
+            description="""
+                Whenever you roll a 1 on an attack or check using the Craft, Devices, Flexibility, or Sleight of Hand skills, you may reroll and take the higher result.
+                You can only reroll any individual roll once in this way.
+            """,
+            short_description="Can reroll 1s with finesse-based skills",
+        ),
+        MagicItem(
+            name="Gloves of Reliable Finesse, Greater",
+            level=8,
+            material_type='Gloves',
+            tags=[],
+            description="""
+                Whenever you roll a 1 on an attack or check using the Craft, Devices, Flexibility, or Sleight of Hand skills, you may reroll and take the higher result.
+                You can only reroll any individual roll once in this way.
+                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to gain one \\glossterm<fatigue point> instead of two (see \\pcref<desperate exertion>).
+            """,
+            short_description="Can reroll 1s and exert more easily with finesse-based skills",
+        ),
+        MagicItem(
+            name="Gloves of Reliable Finesse, Supreme",
+            level=14,
+            material_type='Gloves',
+            tags=[],
+            description="""
+                Whenever you roll a 1 or 2 on an attack or check using the Craft, Devices, Medicine, or Sleight of Hand skills, you may reroll and take the higher result.
+                You can only reroll any individual roll once in this way.
+                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to gain one \\glossterm<fatigue point> instead of two (see \\pcref<desperate exertion>).
+            """,
+            short_description="Can reroll 1s and 2s and exert more easily with finesse-based skills",
+        ),
+        MagicItem(
+            name="Circlet of Reliable Observation",
+            level=2,
+            material_type='Circlet',
+            tags=[],
+            description="""
+                Whenever you roll a 1 on an attack or check using the Awareness, Deduction, Social Insight, or Spellsense skills, you may reroll and take the higher result.
+                You can only reroll any individual roll once in this way.
+            """,
+            short_description="Can reroll 1s with observation-based skills",
+        ),
+        MagicItem(
+            name="Circlet of Reliable Observation, Greater",
+            level=8,
+            material_type='Circlet',
+            tags=[],
+            description="""
+                Whenever you roll a 1 on an attack or check using the Awareness, Deduction, Social Insight, or Spellsense skills, you may reroll and take the higher result.
+                You can only reroll any individual roll once in this way.
+                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to gain one \\glossterm<fatigue point> instead of two (see \\pcref<desperate exertion>).
+            """,
+            short_description="Can reroll 1s and exert more easily with observation-based skills",
+        ),
+        MagicItem(
+            name="Circlet of Reliable Observation, Supreme",
+            level=14,
+            material_type='Circlet',
+            tags=[],
+            description="""
+                Whenever you roll a 1 or 2 on an attack or check using the Awareness, Deduction, Social Insight, or Spellsense skills, you may reroll and take the higher result.
+                You can only reroll any individual roll once in this way.
+                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to gain one \\glossterm<fatigue point> instead of two (see \\pcref<desperate exertion>).
+            """,
+            short_description="Can reroll 1s and 2s and exert more easily with observation-based skills",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Blindfold of the Third Eye",
+            # Blindsight is a rank 2 self-only spell, so this would be level 7
+            # if it followed that model normally. It gets +2 levels for also
+            # granting blindsense and -1 level for requiring blindness.
+            level=8,
+            material_type='Fabric',
+            tags=[],
+            description="""
+                While you wear this blindfold covering your eyes, you gain \\glossterm<blindsight> with a 30 foot range and \\glossterm<blindsense> with a 120 foot range.
+                You are also blind, as normal for wearing a blindfold.
+                Shifting this blindfold to cover or stop covering your eyes is a \\glossterm<free action> that requires a \\glossterm<free hand>.
+            """,
+            short_description="Grants blindsight and blindsense",
+        ),
+        MagicItem(
+            name="Blindfold of the Third Eye, Greater",
+            level=14,
+            material_type='Fabric',
+            tags=[],
+            description="""
+                This blindfold functions like the \\mitem<blindfold of the third eye>, except that the range of the blindsight increases to 60 feet and the range of the blindsense increases to 240 feet.
+            """,
+            short_description="Grants distant blindsight and blindsense",
+        ),
+        MagicItem(
+            name="Blindfold of the Third Eye, Supreme",
+            level=20,
+            material_type='Fabric',
+            tags=[],
+            description="""
+                This blindfold functions like the \\mitem<blindfold of the third eye>, except that the range of the blindsight increases to 120 feet and the range of the blindsense increases to 480 feet.
+            """,
+            short_description="Grants very distant blindsight and blindsense",
         ),
     ]
 
@@ -1026,14 +1208,73 @@ def generate_worn():
     apparel += [
         MagicItem(
             name="Bracers of Armor",
-            level=2,
+            level=3,
             material_type='Bracers',
             tags=[],
             description="""
-                You gain a +2 bonus to Armor defense.
-                The protection from these bracers is treated as body armor, and it does not stack with any other body armor you wear.
+                You have a translucent suit of magical armor on your body and over your hands.
+                This functions like body armor that provides a +2 bonus to Armor defense and has no \\glossterm<encumbrance>.
+                The body armor does not appear if you are wearing other body armor of any kind.
+
+                As long as you have a free hand, the barrier also manifests as a shield that provides a +1 bonus to Armor defense.
+                This bonus is considered to come from a shield, and does not stack with the benefits of using a physical shield.
             """,
-            short_description="Grants invisible armor",
+            short_description="Grants encumbrance-free +2 armor",
+        ),
+        MagicItem(
+            name="Bracers of Armor, Greater",
+            level=9,
+            material_type='Bracers',
+            tags=[],
+            description="""
+                These bracers function like \\textit<bracers of armor>, except that the defense bonus from the body armor increases to +3.
+            """,
+            short_description="Grants encumbrance-free +3 armor",
+        ),
+        MagicItem(
+            name="Bracers of Armor, Supreme",
+            level=15,
+            material_type='Bracers',
+            tags=[],
+            description="""
+                These bracers function like \\textit<bracers of armor>, except that the defense bonus from the body armor increases to +4.
+            """,
+            short_description="Grants encumbrance-free +4 armor",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Shieldburst Bracers",
+            level=3,
+            material_type='Bracers',
+            tags=['Swift'],
+            description="""
+                As a \\glossterm<free action>, you can gain a \\glossterm<fatigue point> to activate these bracers.
+                If you do, you gain a +2 bonus to Armor defense until the end of the round.
+                This ability has the \\glossterm<Swift> tag, so it protects you against attacks against you during the current phase.
+            """,
+            short_description="Can grant brief +2 Armor defense",
+        ),
+        MagicItem(
+            name="Shieldburst Bracers, Greater",
+            level=9,
+            material_type='Bracers',
+            tags=[],
+            description="""
+                These bracers function like \\textit<shieldburst bracers>, except that the defense bonus increases to +3.
+            """,
+            short_description="Can grant brief +3 Armor defense",
+        ),
+        MagicItem(
+            name="Shieldburst Bracers, Supreme",
+            level=15,
+            material_type='Bracers',
+            tags=[],
+            description="""
+                These bracers function like \\textit<shieldburst bracers>, except that the defense bonus increases to +4.
+            """,
+            short_description="Can grant brief +4 Armor defense",
         ),
     ]
 
@@ -1238,6 +1479,27 @@ def generate_worn():
         ),
     ]
 
+    apparel += [
+        MagicItem(
+            name="Circlet of Many Eyes",
+            level=10,
+            material_type='Circlet',
+            description="""
+                You reduce your \\glossterm<overwhelm penalty> by 1.
+            """,
+            short_description="Reduces \\glossterm<overwhelm penalty> by 1",
+        ),
+        MagicItem(
+            name="Circlet of Many Eyes, Greater",
+            level=16,
+            material_type='Circlet',
+            description="""
+                You reduce your \\glossterm<overwhelm penalty> by 2.
+            """,
+            short_description="Reduces \\glossterm<overwhelm penalty> by 2",
+        ),
+    ]
+
     apparel.append(MagicItem(
         name="Mask of Water Breathing",
         level=4,
@@ -1255,7 +1517,7 @@ def generate_worn():
         material_type='Amulet',
         tags=[],
         description="""
-            As a \\glossterm<minor action>, you can spend a \\glossterm<fatigue point> to activate this item.
+            As a \\glossterm<minor action>, you can gain a \\glossterm<fatigue point> to activate this item.
             When you do, you can breathe in clean, fresh air until the end of the next round, regardless of your environment.
             This can be used in emergencies to save yourself from drowning or other perils.
         """,
@@ -1276,6 +1538,20 @@ def generate_worn():
     apparel += [
         MagicItem(
             name="Crown of Flame",
+            level=4,
+            material_type='Crown',
+            tags=[],
+            description="""
+                This crown is continuously on fire.
+                The flame sheds light as a torch.
+
+                You and your \\glossterm<allies> within a \\areamed radius emanation from you
+                    gain a +4 bonus to their \\glossterm<resistance> against cold and fire damage.
+            """,
+            short_description="Grants nearby alies +4 cold and fire resistance",
+        ),
+        MagicItem(
+            name="Crown of Flame, Greater",
             level=10,
             material_type='Crown',
             tags=[],
@@ -1289,7 +1565,7 @@ def generate_worn():
             short_description="Grants nearby alies +8 cold and fire resistance",
         ),
         MagicItem(
-            name="Crown of Flame, Greater",
+            name="Crown of Flame, Supreme",
             level=16,
             material_type='Crown',
             tags=[],
@@ -1367,6 +1643,44 @@ def generate_worn():
         """,
         short_description="Deals your falling damage to enemies",
     ))
+
+    apparel += [
+        MagicItem(
+            name="Phasestep Boots",
+            level=4,
+            material_type='Boots',
+            tags=['Swift'],
+            description="""
+                As a \\glossterm<free action>, you can gain a \\glossterm<fatigue point> to activate these boots.
+                When you do, you may move through creatures freely until the end of the round.
+                This does not allow you to move through inanimate objects.
+            """,
+            short_description="Can grant ability to move through creatures",
+        ),
+        MagicItem(
+            name="Phasestep Boots, Greater",
+            level=10,
+            material_type='Boots',
+            tags=['Swift'],
+            description="""
+                You can move through creatures freely.
+                This does not allow you to move through inanimate objects.
+            """,
+            short_description="Grants ability to move through creatures",
+        ),
+        MagicItem(
+            name="Phasestep Boots, Supreme",
+            level=16,
+            material_type='Boots',
+            tags=['Swift'],
+            description="""
+                You can move through creatures freely.
+                In addition, you ignore all sources of \\glossterm<difficult terrain>.
+                This does not allow you to move through inanimate objects.
+            """,
+            short_description="Grants ability to move through creatures and some terrain",
+        ),
+    ]
 
     apparel += [
         MagicItem(
@@ -1684,7 +1998,7 @@ def generate_worn():
             material_type='Ring',
             tags=[],
             description="""
-                Whenever you are hit by a \\glossterm<critical hit> from a \\glossterm<strike>, you may spend two \\glossterm<fatigue points> to activate this item.
+                Whenever you are hit by a \\glossterm<critical hit> from a \\glossterm<strike>, you may gain two \\glossterm<fatigue points> to activate this item.
                 If you do, the attacker rerolls the attack against you, which may prevent the attack from getting a critical hit against you.
                 This does not protect any other targets of the attack.
                 You can choose to use this item after you learn the effects that the critical hit would have, but you must do so during the phase that the attack was made.
@@ -2042,12 +2356,154 @@ def generate_worn():
 
     apparel += [
         MagicItem(
+            name="Enlarging Belt",
+            level=10,
+            material_type='Belt',
+            tags=[],
+            description="""
+                As a standard action, you can activate this belt.
+                If you do, your size increases by one \\glossterm<size category>, to a maximum of Huge.
+                This increases your \\glossterm<base speed> and reduces your \\glossterm<Stealth> skill.
+                It may also increase your \\glossterm<reach> and make you harder to \\glossterm<overwhelm> (see \\pcref<Size in Combat>).
+                This effect lasts until you activate the belt again, which returns you to your original size.
+            """,
+            short_description="Increases your size",
+        ),
+        MagicItem(
+            name="Enlarging Belt, Greater",
+            level=16,
+            material_type='Belt',
+            tags=[],
+            description="""
+                This belt functions like an \\mitem<enlarging belt>, except that your size increases by two size categories instead of one.
+            """,
+            short_description="Greatly increases your size",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Shrinking Belt",
+            level=7,
+            material_type='Belt',
+            tags=[],
+            description="""
+                As a standard action, you can activate this belt.
+                If you do, your size increases by one \\glossterm<size category>, to a minimum of Tiny.
+                This decreases your \\glossterm<base speed> and improves your \\glossterm<Stealth> skill.
+                It may also decrease your \\glossterm<reach> and make you easier to \\glossterm<overwhelm> (see \\pcref<Size in Combat>).
+                This effect lasts until you activate the belt again, which returns you to your original size.
+            """,
+            short_description="Reduces your size",
+        ),
+        MagicItem(
+            name="Shrinking Belt, Greater",
+            level=13,
+            material_type='Belt',
+            tags=[],
+            description="""
+                This belt functions like a \\mitem<shrinking belt>, except that your size decreases by two size categories instead of one.
+            """,
+            short_description="Greatly reduces your size",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Utility Belt",
+            level=6,
+            material_type='Belt',
+            tags=[],
+            description="""
+                This belt contains five pockets, each of which is larger on the inside than the outside.
+                The inside of each pocket is a six inch cube.
+                You can put anything you want in each pocket, but you still carry the weight of anything in the pockets.
+                If you put reactive objects in a pocket, such as acid or burning alchemist's fire, it may destroy the pocket until the belt is repaired.
+
+                As long as each pocket is no more than half full, or is full of completely interchangeable items, you can reach into any pocket just as easily as you can reach into a nonmagical pocket.
+                Overstuffed pockets may take more time to sift through to find the specific item you want, just like rummaging through a backpack.
+            """,
+            short_description="Contains five large pockets",
+        ),
+        MagicItem(
+            name="Utility Belt, Greater",
+            level=13,
+            material_type='Belt',
+            tags=[],
+            description="""
+                This belt functions like a \\mitem<utility belt>, except that the belt has ten pockets, each of which is a one foot cube on the inside.
+            """,
+            short_description="Contains ten very large pcokets",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Frenzied Gloves",
+            level=9,
+            material_type='Gloves',
+            tags=[],
+            description="""
+                Whenever you make a \\glossterm<strike>, you gain a +1 bonus to \\glossterm<accuracy> with \\glossterm<strikes> during the next round.
+                As normal, this bonus does not stack with itself.
+            """,
+            short_description="Grants +1 accuracy to continuous strikes",
+        ),
+        MagicItem(
+            name="Frenzied Gloves, Greater",
+            level=15,
+            material_type='Gloves',
+            tags=[],
+            description="""
+                Whenever you make a \\glossterm<strike>, you gain a +2 bonus to \\glossterm<accuracy> with \\glossterm<strikes> during the next round.
+                As normal, this bonus does not stack with itself.
+            """,
+            short_description="Grants +2 accuracy to continuous strikes",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Gloves of Infused Force",
+            level=6,
+            material_type='Gloves',
+            tags=[],
+            description="""
+                As a standard action, you can activate these gloves to infuse them with power.
+                When you hit with a \\glossterm<strike> while these gloves are infused, you gain a +4 bonus to \\glossterm<power> with the strike and the gloves stop being infused.
+            """,
+            short_description="Grants +4 power to next strike",
+        ),
+        MagicItem(
+            name="Gloves of Infused Force, Greater",
+            level=12,
+            material_type='Gloves',
+            tags=[],
+            description="""
+                These gloves function like \\mitem<gloves of infused force>, except that the power bonus increases to +8.
+            """,
+            short_description="Grants +8 power to next strike",
+        ),
+        MagicItem(
+            name="Gloves of Infused Force, Greater",
+            level=18,
+            material_type='Gloves',
+            tags=[],
+            description="""
+                These gloves function like \\mitem<gloves of infused force>, except that the power bonus increases to +16.
+            """,
+            short_description="Grants +16 power to next strike",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
             name="Belt of Vital Persistence",
             level=1,
             material_type='Belt',
             tags=[],
             description="""
-                When you make a \\glossterm<vital roll>, you can spend a \\glossterm<fatigue point> (see \\pcref<Vital Rolls>).
+                When you make a \\glossterm<vital roll>, you can gain a \\glossterm<fatigue point> (see \\pcref<Vital Rolls>).
                 If you do, you gain a +1 bonus to the vital roll.
                 You can use this ability after you see the result of the vital roll.
             """,

@@ -21,6 +21,7 @@ class MagicItem(object):
             'Gauntlet': ['bone', 'metal', 'wood'],
             'Glove': ['leather'],
             'Gloves': ['leather'],
+            'Fabric': ['textiles'],
             'Mask': ['textiles'],
             'Potion': ['alchemy'],
             'Ring': ['bone', 'jewelry', 'metal', 'wood'],
