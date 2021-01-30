@@ -283,7 +283,6 @@ revelation=MysticSphere(
         """, tags=[], ritual_time='24 hours'),
         Spell('Interplanar Discern Location', 6, 'Any creature or object on the same plane as you', """
             This ritual functions like the \\ritual<discern location> ritual, except that the target does not have to be on the same plane as you.
-            It gains the \\glossterm<Planar> tag in addition to the tags from the \\ritual<discern location> ritual.
         """, tags=[], ritual_time='24 hours'),
         Spell('Sending', 3, 'Any creature within 100 miles of you', """
             You do not need \\glossterm<line of sight> or \\glossterm<line of effect> to the target.
@@ -303,8 +302,7 @@ revelation=MysticSphere(
         """, tags=['Sustain (standard)'], ritual_time='one hour'),
         Spell('Interplanar Sending', 7, 'Any creature', """
             This ritual functions like the \\ritual<distant sending> ritual, except that the target does not have to be on the same plane as you.
-            It gains the \\glossterm<Planar> tag in addition to the tags from the \\ritual<sending> ritual.
-        """, tags=['Planar', 'Sustain (standard)'], ritual_time='one hour'),
+        """, tags=['Sustain (standard)'], ritual_time='one hour'),
         Spell('Telepathic Bond', 3, 'Up to five ritual participants', """
             Each target can communicate mentally through telepathy with each other target.
             This communication is instantaneous, though it cannot reach more than 100 miles or across planes.
