@@ -468,6 +468,7 @@ def generate_maneuvers():
         target=None,
         effect_text="""
             Make a \\glossterm<strike> using a bludgeoning weapon.
+            You take -1d penalty to damage with the strike.
             The attack is made against each target's Fortitude defense instead of its Armor defense.
         """,
         tags=[],
@@ -481,7 +482,7 @@ def generate_maneuvers():
         effect_text="""
             Make a \\glossterm<strike> using a bludgeoning weapon with a -2 penalty to accuracy.
             The attack is made against each target's Fortitude defense instead of its Armor defense.
-            You gain a +2d bonus to damage with the strike.
+            You gain a +1d bonus to damage with the strike.
         """,
         rank=3,
         tags=[],
@@ -670,6 +671,7 @@ def generate_maneuvers():
         target=None,
         effect_text="""
             Make a \\glossterm<strike> using a piercing weapon.
+            You take a -1d penalty to damage with the strike.
             The attack is made against each target's Reflex defense instead of its Armor defense.
         """,
         tags=[],
@@ -682,6 +684,7 @@ def generate_maneuvers():
         target=None,
         effect_text="""
             Make a \\glossterm<strike> with a +2 bonus to \\glossterm<accuracy> using a piercing weapon.
+            You take a -1d penalty to damage with the strike.
             The attack is made against each target's Reflex defense instead of its Armor defense.
         """,
         rank=5,
