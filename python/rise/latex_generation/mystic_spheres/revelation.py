@@ -266,22 +266,26 @@ revelation=MysticSphere(
             This can allow you to read ritual books and similar objects created by other creatures.
             After you have read an inscription in this way, you are able to read that particular writing without the use of this ritual.
         """, tags=['Attune (ritual)'], ritual_time='one minute'),
-        Spell('Discern Location', 4, None, """
+        Spell('Discern Location', 2, None, """
             When you perform this ritual, choose a creature or object.
             You must have seen the chosen creature or object in person and either be able to clearly visualize its appearance or know its proper name to find it with this ritual.
             A creature or object without a proper name cannot be identified by name in this way.
             If you specify the chosen creature or object's appearance incorrectly, or if it has significantly changed its appearance, you may accidentally affect a different creature, or the ritual may simply fail.
 
-            If the chosen creature or object on the same plane as you, you learn the location (place, name, business name, or the like), community, country, and continent where the target was at when you started performing this ritual.
+            If the chosen creature or object is within 100 miles of you, you learn the location (place, name, business name, or the like), community, country, and continent where the target was at when you started performing this ritual.
             % Wording?
             If there is no corresponding information about an aspect of the target's location, such as if the target is in a location which is not part of a recognized country,
                 you learn only that that that aspect of the information is missing.
+        """, tags=[], ritual_time='24 hours'),
+        Spell('Distant Discern Location', 4, None, """
+            This ritual functions like the \\ritual<discern location> ritual, except that there is no distance limitation.
+            The creature or object must simply be on the same plane as you.
         """, tags=[], ritual_time='24 hours'),
         Spell('Interplanar Discern Location', 6, 'Any creature or object on the same plane as you', """
             This ritual functions like the \\ritual<discern location> ritual, except that the target does not have to be on the same plane as you.
             It gains the \\glossterm<Planar> tag in addition to the tags from the \\ritual<discern location> ritual.
         """, tags=[], ritual_time='24 hours'),
-        Spell('Sending', 3, 'Any creature on the same plane as you', """
+        Spell('Sending', 3, 'Any creature within 100 miles of you', """
             You do not need \\glossterm<line of sight> or \\glossterm<line of effect> to the target.
             However,  must specify your target with a precise mental image of its appearance.
             The image does not have to be perfect, but it must unambiguously identify the target.
@@ -293,10 +297,14 @@ revelation=MysticSphere(
             After the the target receives the message, it may reply with a message of the same length as long as the ritual's effect continues.
             Once it speaks twenty-five words, or you stop sustaining the effect, the ritual is \\glossterm<dismissed>.
         """, tags=['Sustain (standard)'], ritual_time='one hour'),
-        Spell('Interplanar Sending', 7, 'Any creature on the same plane as you', """
-            This ritual functions like the \\ritual<sending> ritual, except that the target does not have to be on the same plane as you.
-            It gains the \\glossterm<Planar> tag in addition to the tags from the \\ritual<sending> ritual.
+        Spell('Distant Sending', 5, 'Any creature on the same plane as you', """
+            This ritual functions like the \\ritual<sending> ritual, except that there is no distance limitation.
+            The target must simply be on the same plane as you.
         """, tags=['Sustain (standard)'], ritual_time='one hour'),
+        Spell('Interplanar Sending', 7, 'Any creature', """
+            This ritual functions like the \\ritual<distant sending> ritual, except that the target does not have to be on the same plane as you.
+            It gains the \\glossterm<Planar> tag in addition to the tags from the \\ritual<sending> ritual.
+        """, tags=['Planar', 'Sustain (standard)'], ritual_time='one hour'),
         Spell('Telepathic Bond', 3, 'Up to five ritual participants', """
             Each target can communicate mentally through telepathy with each other target.
             This communication is instantaneous, though it cannot reach more than 100 miles or across planes.
@@ -318,7 +326,7 @@ revelation=MysticSphere(
         Spell('Seek Legacy', 2, 'One ritual participant', """
             The target learns the precise distance and direction to their \\glossterm<legacy item>, if it is on the same plane.
         """, tags=[], ritual_time='24 hours'),
-        Spell('Scry Creature', 5, 'One creature on the same plane as you', """
+        Spell('Scry Creature', 4, 'One creature on the same plane as you', """
             Make an attack vs. Mental against the target.
             You do not need \\glossterm<line of sight> or \\glossterm<line of effect> to the target.
             However,  must specify your target with a precise mental image of its appearance.
@@ -331,7 +339,7 @@ revelation=MysticSphere(
             At the end of each phase, if the sensor is not in the target's space, this effect is \\glossterm<dismissed>.
             % No \\crit effect
         """, tags=['Scrying'], ritual_time='one hour'),
-        Spell('Interplanar Scry Creature', 7, 'One creature on the same plane as you', """
+        Spell('Interplanar Scry Creature', 6, 'One creature on the same plane as you', """
             This ritual functions like the \\ritual<scry creature> ritual, except that the target does not have to be on the same plane as you.
             It gains the \\glossterm<Planar> tag in addition to the tags from the \\ritual<scry creature> ritual.
         """, tags=['Scrying'], ritual_time='one hour'),
