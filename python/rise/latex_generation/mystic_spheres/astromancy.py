@@ -252,7 +252,7 @@ astromancy=MysticSphere(
             The rift can only be passed through by the targets of this effect.
             It lasts for one week before disappearing permanently, potentially stranding the targets in the Astral Plane if they have not yet returned.
         """, tags=[], ritual_time='24 hours'),
-        Spell('Homeward Shift', 5, 'Up to five Large or smaller ritual participants', """
+        Spell('Homeward Shift', 4, 'Up to five Large or smaller ritual participants', """
             This ritual can only be performed on the Astral Plane.
             The targets teleport to the last spaces they occupied on their home planes.
         """, tags=[], ritual_time='24 hours'),
@@ -266,6 +266,10 @@ astromancy=MysticSphere(
             The new destination will be one that more closely resembles your mental image.
             If no such area exists, the ritual simply fails.
             % TODO: does this need more clarity about what teleportation works?
+        """, tags=[], ritual_time='24 hours'),
+        Spell('Distant Overland Teleportation', 7, None, """
+            This ritual functions like the \\ritual<overland teleportation> ritual, except that there is no distance limitation.
+            The dstination must simply be on the same plane as you.
         """, tags=[], ritual_time='24 hours'),
         Spell('Retrieve Legacy', 3, 'One ritual participant', """
             If the target's \\glossterm<legacy item> is on the same plane and \\glossterm<unattended>, it is teleported into the target's hand.
