@@ -254,6 +254,18 @@ pyromancy=MysticSphere(
         """, scaling="""
             \\rank<7> The maximum height increases to 60 feet.
         """, tags=['Attune (self)']),
+        Spell('Flame Dash', 3, 'Everything in the area (see text)', """
+            You teleport into an unoccupied destination on a stable surface within \\rngshort range.
+            In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
+            \\hit Each target takes fire damage equal to 2d6 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
+        """, scaling="damage", tags=[]),
+        Spell('Greater Flame Dash', 6, 'Everything in the area (see text)', """
+            You teleport into an unoccupied destination on a stable surface within \\rngdist range.
+            In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
+            \\hit Each target takes fire damage equal to 4d6 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
+        """, scaling="damage", tags=[]),
     ],
     rituals=[
         Spell('Heat Wave', 4, None, """

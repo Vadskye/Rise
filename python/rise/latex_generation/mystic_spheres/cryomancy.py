@@ -187,6 +187,18 @@ cryomancy=MysticSphere(
             \\hit Each secondary target takes cold damage equal to 2d8 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling='damage', tags=['Attune (self)']),
+        Spell('Chillwind Dash', 3, 'Everything in the area (see text)', """
+            You teleport into an unoccupied destination on a stable surface within \\rngshort range.
+            In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
+            \\hit Each target takes cold damage equal to 2d6 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
+        """, scaling="damage", tags=[]),
+        Spell('Greater Chillwind Dash', 6, 'Everything in the area (see text)', """
+            You teleport into an unoccupied destination on a stable surface within \\rngdist range.
+            In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
+            \\hit Each target takes cold damage equal to 4d6 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
+        """, scaling="damage", tags=[]),
     ],
     rituals=[
         Spell('Frostfall', 4, None, """

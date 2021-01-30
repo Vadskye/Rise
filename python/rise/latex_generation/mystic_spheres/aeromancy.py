@@ -222,6 +222,13 @@ aeromancy = MysticSphere(
             \\crit As above, except that the effective force of gravity is increased by approximately four times instead.
             This increases the penalties to -4.
         """, scaling='accuracy', tags=[]),
+        Spell('Mistform', 4, 'Yourself', """
+            You can move through creatures freely.
+            This does not allow you to move through inanimate objects.
+            In addition, you gain a \\glossterm<glide speed> equal to your \\glossterm<base speed>.
+        """, scaling="""
+            \\rank<6> You also ignore all sources of \\glossterm<difficult terrain>.
+        """, tags=['Attune (self)']),
     ],
     rituals=[
         Spell('Air Bubble', 3, 'One ritual participant', """

@@ -211,6 +211,20 @@ photomancy=MysticSphere(
             \\hit The target takes 1d8 energy damage.
             If it loses \\glossterm<hit points> from this damage, it suffers one of the following effects as a \\glossterm<condition>, chosen randomly: \\glossterm<frightened> by you, \\glossterm<nauseated>, \\glossterm<stunned>, or knocked \\glossterm<prone>.
         """, scaling='damage', tags=[]),
+        Spell('Lightbeam Dash', 3, 'Everything in the area (see text)', """
+            You teleport into an unoccupied destination on a stable surface within \\rngshort range.
+            \\glossterm<Brilliant illumination> fills a 60 foot radius around both your starting location and your ending location.
+            In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
+            \\hit Each target takes electricity damage equal to 2d6 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
+        """, scaling="damage", tags=[]),
+        Spell('Greater Lightbeam Dash', 6, 'Everything in the area (see text)', """
+            You teleport into an unoccupied destination on a stable surface within \\rngdist range.
+            Both your departure and arrival with this spell sound like a clap of thunder.
+            In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
+            \\hit Each target takes electricity damage equal to 4d6 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
+        """, scaling="damage", tags=[]),
     ],
     rituals=[
         Spell('Continuous Light', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngmed range', """
