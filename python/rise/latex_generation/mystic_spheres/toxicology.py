@@ -43,7 +43,7 @@ toxicology=MysticSphere(
             Make an attack vs. Fortitude against the target.
             \\hit The target becomes \\glossterm<poisoned> with dragon bile.
             At the end of each subsequent round, you repeat this attack, as normal for poisons.
-            For each \\glossterm<poison stage>, including the initial stage, the target loses 1d10 \\glossterm<hit points>.
+            For each \\glossterm<poison stage>, including the initial stage, the target takes 1d10 physical damage.
             A third failed attack ends the poison.
             % No \\glance effect
             \\crit As above, except that target immediately reaches the second \\glossterm<poison stage>, as normal for poisons.
