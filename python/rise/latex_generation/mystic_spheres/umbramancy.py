@@ -19,6 +19,8 @@ umbramancy=MysticSphere(
             \\rank<6> The bonus increases to +8.
         """, tags=[]),
         Effects('Suppress Light', 'One \\glossterm<zone> within \\rngmed range', """
+            This spell has no \\glossterm<verbal components>.
+
             You can choose this spell's radius, up to a maximum of a \\areasmall radius.
             Light within or passing through the area is dimmed to be no brighter than \\glossterm<shadowy illumination>.
             Any object or effect which blocks light also blocks this spell's effect.
