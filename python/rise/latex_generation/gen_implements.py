@@ -145,6 +145,52 @@ def generate_implements():
 
     implements += [
         MagicItem(
+            name="Fearful Staff",
+            level=10,
+            material_type='Staff',
+            tags=['Emotion'],
+            description="""
+                Whenever you cause an \\glossterm<enemy> to lose \\glossterm<hit points> with a \\glossterm<magical> ability, that creature becomes \\glossterm<shaken> by you until the end of the next round.
+            """,
+            short_description="Makes wounded creatures briefly shaken",
+        ),
+        MagicItem(
+            name="Fearful Staff, Greater",
+            level=16,
+            material_type='Staff',
+            tags=['Emotion'],
+            description="""
+                Whenever you cause an \\glossterm<enemy> to lose \\glossterm<hit points> with a \\glossterm<magical> ability, that creature becomes \\glossterm<shaken> by you as a \\glossterm<condition>.
+            """,
+            short_description="Makes wounded creatures shaken",
+        ),
+    ]
+
+    implements += [
+        MagicItem(
+            name="Dazing Staff",
+            level=13,
+            material_type='Staff',
+            tags=[],
+            description="""
+                Whenever you cause an \\glossterm<enemy> to lose \\glossterm<hit points> with a \\glossterm<magical> ability, that creature becomes \\glossterm<dazed> until the end of the next round.
+            """,
+            short_description="Makes wounded creatures briefly dazed",
+        ),
+        MagicItem(
+            name="Dazing Staff, Greater",
+            level=19,
+            material_type='Staff',
+            tags=[],
+            description="""
+                Whenever you cause an \\glossterm<enemy> to lose \\glossterm<hit points> with a \\glossterm<magical> ability, that creature becomes \\glossterm<dazed> as a \\glossterm<condition>.
+            """,
+            short_description="Makes wounded creatures dazed",
+        ),
+    ]
+
+    implements += [
+        MagicItem(
             name="Extending Staff",
             level=9,
             material_type='Staff',
@@ -167,7 +213,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Staff of Giants",
-            level=6,
+            level=4,
             material_type='Staff',
             description="""
                 Whenever you use a \\glossterm<magical> ability that has a maximum size category for its targets or any objects it creates, you increase that maximum by one size category, to a maximum of Colossal.
@@ -177,7 +223,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Giants, Greater",
-            level=12,
+            level=10,
             material_type='Staff',
             description="""
                 This implement functions like a \\mitem<staff of giants> implement, except that the maximum size category increases by two size categories.
@@ -186,7 +232,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Giants, Supreme",
-            level=18,
+            level=16,
             material_type='Staff',
             description="""
                 This implement functions like a \\mitem<staff of giants> implement, except that the maximum size category increases by three size categories.
