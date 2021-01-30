@@ -226,6 +226,36 @@ def generate_armor():
 
     apparel += [
         MagicItem(
+            name="Covering Shield",
+            level=2,
+            material_type='Shield',
+            description="""
+                When you take the \\textit<total defense> action with this shield, you gain a +4 bonus to Armor defense in addition to the normal bonuses from taking that action (see \\pcref<Total Defense.).
+            """,
+            short_description="Grants +4 Armor defense during total defense",
+        ),
+        MagicItem(
+            name="Covering Shield, Greater",
+            level=8,
+            material_type='Shield',
+            description="""
+                This shield functions like a \\mitem<covering shield>, except that the defense bonus increases to +6.
+            """,
+            short_description="Grants +6 Armor defense during total defense",
+        ),
+        MagicItem(
+            name="Covering Shield, Supreme",
+            level=14,
+            material_type='Shield',
+            description="""
+                This shield functions like a \\mitem<covering shield>, except that the defense bonus increases to +8.
+            """,
+            short_description="Grants +8 Armor defense during total defense",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
             name="Armor of Energy Resistance",
             level=4,
             tags=[],
@@ -856,7 +886,7 @@ def generate_armor():
                 As a standard action, you can \\glossterm<teleport> yourself into an unoccupied destination within \\rngshort range.
                 If the destination is invalid, this ability has no effect.
             """,
-            short_description="Grants ability to teleport up to 30 feet",
+            short_description="Can teleport up to 30 feet",
         ),
         MagicItem(
             name="Boots of Translocation, Greater",
@@ -866,7 +896,7 @@ def generate_armor():
             description="""
                 These boots function like \\mitem<boots of translocation>, except that the range increases to \\rngmed.
             """,
-            short_description="Grants ability to teleport up to 60 feet",
+            short_description="Can teleport up to 60 feet",
         ),
         MagicItem(
             name="Boots of Translocation, Supreme",
@@ -876,7 +906,7 @@ def generate_armor():
             description="""
                 These boots function like \\mitem<boots of translocation>, except that the range increases to \\rnglong.
             """,
-            short_description="Grants ability to teleport up to 120 feet",
+            short_description="Can teleport up to 120 feet",
         ),
         MagicItem(
             name="Armor of Translocation",
@@ -888,7 +918,7 @@ def generate_armor():
                 As a standard action, you can \\glossterm<teleport> yourself into an unoccupied destination within \\rngshort range.
                 If the destination is invalid, this ability has no effect.
             """,
-            short_description="Grants ability to teleport up to 30 feet",
+            short_description="Can teleport up to 30 feet",
         ),
         MagicItem(
             name="Armor of Translocation, Greater",
@@ -898,7 +928,7 @@ def generate_armor():
             description="""
                 This item functions like \\mitem<armor of translocation>, except that the range increases to \\rngmed.
             """,
-            short_description="Grants ability to teleport up to 60 feet",
+            short_description="Can teleport up to 60 feet",
         ),
         MagicItem(
             name="Armor of Translocation, Supreme",
@@ -908,7 +938,7 @@ def generate_armor():
             description="""
                 This item functions like \\mitem<armor of translocation>, except that the range increases to \\rnglong.
             """,
-            short_description="Grants ability to teleport up to 120 feet",
+            short_description="Can teleport up to 120 feet",
         ),
     ]
 
@@ -1058,6 +1088,79 @@ def generate_armor():
         ),
     ]
 
+
+    apparel += [
+        MagicItem(
+            name="Charging Boots",
+            level=10,
+            material_type='Boots',
+            tags=[],
+            description="""
+                Using the \\textit<charge> action does not cause you to gain a \\glossterm<fatigue point> (see \\pcref<Charge>).
+            """,
+            short_description="Can charge freely",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Sprinting Boots",
+            level=16,
+            material_type='Boots',
+            tags=[],
+            description="""
+                Once per round, you can use the \\textit<sprint> action without gaining a \\glossterm<fatigue point> (see \\pcref<Sprint>).
+            """,
+            short_description="Can sprint freely",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Boots of Transportation",
+            level=11,
+            material_type='Boots',
+            tags=[],
+            description="""
+                All \\glossterm<magical> abilities that \\glossterm<teleport> you have the maximum distance they can teleport you doubled.
+            """,
+            short_description="Doubles distance you can teleport",
+        ),
+        MagicItem(
+            name="Boots of Transportation, Greater",
+            level=17,
+            material_type='Boots',
+            tags=[],
+            description="""
+                All \\glossterm<magical> abilities that \\glossterm<teleport> you have the maximum distance they can teleport you tripled.
+            """,
+            short_description="Triples distance you can teleport",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Boots of Desperate Flight",
+            level=6,
+            material_type='Boots',
+            tags=[],
+            description="""
+                When you use the \\textit<recover> action, you can also move up to your normal movement speed.
+            """,
+            short_description="Can move when you recover",
+        ),
+        MagicItem(
+            name="Boots of Desperate Flight, Greater",
+            level=12,
+            material_type='Boots',
+            tags=[],
+            description="""
+                When you use the \\textit<recover> action, you can also move up to twice your normal movement speed.
+            """,
+            short_description="Can sprint when you recover",
+        ),
+    ]
+
     apparel.append(MagicItem(
         name="Shield of Medusa",
         level=8,
@@ -1073,7 +1176,7 @@ def generate_armor():
 
             If the cloth is prematurely pulled back, allowing creatures to see the shield without a dramatic reveal, the shield has no effect.
         """,
-        short_description="Grants ability to briefly nauseate nearby foes",
+        short_description="Can briefly nauseate nearby foes",
     ))
 
     # Other
@@ -1655,7 +1758,7 @@ def generate_worn():
                 When you do, you may move through creatures freely until the end of the round.
                 This does not allow you to move through inanimate objects.
             """,
-            short_description="Can grant ability to move through creatures",
+            short_description="Can briefly move through creatures",
         ),
         MagicItem(
             name="Phasestep Boots, Greater",
@@ -1666,7 +1769,7 @@ def generate_worn():
                 You can move through creatures freely.
                 This does not allow you to move through inanimate objects.
             """,
-            short_description="Grants ability to move through creatures",
+            short_description="Can move through creatures",
         ),
         MagicItem(
             name="Phasestep Boots, Supreme",
@@ -1678,7 +1781,7 @@ def generate_worn():
                 In addition, you ignore all sources of \\glossterm<difficult terrain>.
                 This does not allow you to move through inanimate objects.
             """,
-            short_description="Grants ability to move through creatures and some terrain",
+            short_description="Can move through creatures and some terrain",
         ),
     ]
 
@@ -1694,7 +1797,7 @@ def generate_worn():
                 You may selectively choose when to treat the air as solid ground, allowing you to walk or jump on air freely.
                 After using this ability, you cannot use it again until these boots touch the ground.
             """,
-            short_description="Can walk on air",
+            short_description="Can very briefly walk on air",
         ),
         MagicItem(
             name="Boots of the Skydancer, Greater",
@@ -1705,7 +1808,7 @@ def generate_worn():
                 These boots function like \\magicitem<boots of the skydancer>, except that the ability lasts until the end of the round.
                 In addition, you can use this item twice before the boots touch the ground.
             """,
-            short_description="description",
+            short_description="Can briefly walk on air",
         ),
     ]
 
@@ -2627,6 +2730,40 @@ def generate_worn():
         ),
     ]
 
+    apparel += [
+        MagicItem(
+            name="Gloves of Spell Freedom",
+            level=1,
+            material_type='Gloves',
+            tags=['Swift'],
+            description="""
+                You may activate these bracers as a \\glossterm<free action>.
+                When you do, you can cast spells without using \\glossterm<somatic components> or \\glossterm<verbal components> until the end of the round.
+                This ability has the \\glossterm<Swift> tag, so this affects spells you cast during the same phase.
+            """,
+            short_description="Can very briefly cast spells without components",
+        ),
+        MagicItem(
+            name="Gloves of Spell Freedom, Greater",
+            level=7,
+            material_type='Gloves',
+            tags=[],
+            description="""
+                These gloves function like a \\mitem<gloves of spell freedom>, except that the effect lasts for 5 minutes.
+            """,
+            short_description="Can briefly cast spells without components",
+        ),
+        MagicItem(
+            name="Gloves of Spell Freedom, Supreme",
+            level=13,
+            material_type='Gloves',
+            tags=[],
+            description="""
+                You do not need \\glossterm<somatic components> or \\glossterm<verbal components> to cast spells.
+            """,
+            short_description="Can cast spells without components",
+        ),
+    ]
 
     apparel.append(MagicItem(
         name="Ring of Angel's Grace",
