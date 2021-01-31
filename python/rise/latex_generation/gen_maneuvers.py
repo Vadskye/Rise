@@ -426,7 +426,7 @@ def generate_maneuvers():
     ))
 
     maneuvers.append(Maneuver(
-        name='Nauseating Liver Crush',
+        name='Greater Nauseating Liver Shot',
         short_description='Make a strike that paralyzes',
         target=None,
         effect_text="""
@@ -1338,16 +1338,26 @@ def generate_maneuvers():
         short_description='Grapple a creature by the throat',
         target="One creature within your \\glossterm<reach>",
         effect_text="""
-            % Flipped defense order because it reads weirdly otherwise
-            Make an melee attack with a free hand against the target's Fortitude and Reflex defenses.
-            On a hit against both defenses, the target takes bludgeoning damage equal to 1d10 plus your \\glossterm<power>.
-            In addition, you and the target are \\glossterm<grappled> by each other.
-            For details, see \\pcref<Grappling>.
+            This maneuver functions like the \\textit<grapple> ability, except that the target also takes bludgeoning damage equal to 1d10 plus half your \\glossterm<power>.
+            Any accuracy bonuses you have that apply specifically to the \\textit<grapple> ability also apply to this ability.
 
             \\rankline
             The damage increases by +1d for each rank beyond 2.
         """,
         rank=2,
+        tags=[],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Pin',
+        short_description='Grapple a creature and instantly pin it',
+        target="One creature within your \\glossterm<reach>",
+        effect_text="""
+            This maneuver functions like the \\textit<grapple> ability, except that it requires two \\glossterm<free hands> to use, and the target is immediately pinned (see \\pcref<Pin>).
+            Any accuracy bonuses you have that apply specifically to the \\textit<grapple> ability also apply to this ability.
+        """,
+        rank=7,
         tags=[],
         lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
@@ -1381,12 +1391,25 @@ def generate_maneuvers():
     maneuvers.append(Maneuver(
         name='Flash Strike',
         target=None,
-        short_description='Move impossibly fast and make a strike',
+        short_description='Move impossibly fast and make a strike along the way',
         effect_text="""
             You \\glossterm<teleport> into an unoccupied destination on a stable surface within \\rngshort range.
             In addition, you can make a melee \\glossterm<strike> against any single creature within a 5 ft.\\ wide line between your starting location and your ending location.
         """,
         rank=5,
+        tags=[],
+        lists=['Esoteric'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Flash Charge',
+        target=None,
+        short_description='Move impossibly fast and make a strike on arrival',
+        effect_text="""
+            You \\glossterm<teleport> into an unoccupied destination on a stable surface within \\rngshort range.
+            In addition, you can make a melee \\glossterm<strike> at your destination.
+        """,
+        rank=4,
         tags=[],
         lists=['Esoteric'],
     ))
@@ -1406,7 +1429,7 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Flintspark Strike',
-        short_description='Make a strike that deals fire damage to armored foes',
+        short_description='Make a strike that deals fire damage to metallic foes',
         target="As chosen \\glossterm<strike>",
         effect_text="""
             Make a strike using a slashing weapon.
@@ -1443,6 +1466,114 @@ def generate_maneuvers():
         rank=4,
         tags=[],
         lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Cleansing Strike',
+        short_description='Make a weak strike and remove a condition',
+        target="As chosen \\glossterm<strike>",
+        effect_text="""
+            Make a strike.
+            You take a -2d penalty to damage with the strike.
+
+            In addition, you may remove a \\glossterm<condition> affecting you.
+            This cannot remove a condition applied during the current round.
+            The penalties from the condition still affect you when you make the strike.
+        """,
+        rank=4,
+        tags=[],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Cleansing Smash',
+        short_description='Make a strike and remove a condition',
+        target="As chosen \\glossterm<strike>",
+        effect_text="""
+            Make a strike.
+            In addition, you may remove a \\glossterm<condition> affecting you.
+            This cannot remove a condition applied during the current round.
+            The penalties from the condition still affect you when you make the strike.
+        """,
+        rank=7,
+        tags=[],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Knockback Shove',
+        short_description='Shove a foe far away from you',
+        target="One creature within your \\glossterm<reach>",
+        effect_text="""
+            This maneuver functions like the \\textit<shove> ability, except that you \\glossterm<knockback> the target up to 15 feet instead of push it.
+            On a critical hit, you knockback the target 30 feet instead.
+            Any accuracy bonuses you have that apply specifically to the \\textit<shove> ability also apply to this ability.
+        """,
+        rank=2,
+        rank_upgrades={
+            '4': 'The distance you knockback the target increases to 30 feet, or 60 feet on a critical hit.',
+            '6': 'The distance you knockback the target increases to 60 feet, or 120 feet on a critical hit.',
+        },
+        tags=[],
+        lists=['Esoteric', 'Martial', 'Primal', 'Wild'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Knockback Sweep',
+        short_description='Shove a foe far away from you',
+        target="Up to three creatures within your \\glossterm<reach>",
+        effect_text="""
+            Each target of this ability after the first must be adjacent to another target.
+
+            This maneuver functions like the \\textit<shove> ability, except that it affects each target, and you can \\glossterm<knockback> each target up to 30 feet instead of push it.
+            On a critical hit, you knockback the target 60 feet instead.
+            Any accuracy bonuses you have that apply specifically to the \\textit<shove> ability also apply to this ability.
+        """,
+        rank=5,
+        tags=[],
+        lists=['Esoteric', 'Martial', 'Primal', 'Wild'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Disarm Weapon',
+        short_description='Disarm an item, including held items',
+        target="One creature within your \\glossterm<reach>",
+        effect_text="""
+            This maneuver functions like the \\textit<disarm> ability, except that you can also knock loose objects held in a single hand.
+            On a critical hit, you can also knock loose an object held in two hands.
+            Any accuracy bonuses you have that apply specifically to the \\textit<disarm> ability also apply to this ability.
+        """,
+        rank=2,
+        tags=[],
+        lists=['Esoteric', 'Martial', 'Trick', 'Wild'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Steal Weapon',
+        short_description='Disarm an item, including held items, and steal it',
+        target="One creature within your \\glossterm<reach>",
+        effect_text="""
+            This maneuver functions like the \\textit<disarm weapon> ability, except that you can immediately grab a disarmed object if you have a \\glossterm<free hand> available, including a hand you used for this ability.
+            Any accuracy bonuses you have that apply specifically to the \\textit<disarm> ability also apply to this ability.
+        """,
+        rank=4,
+        tags=[],
+        lists=['Esoteric', 'Martial', 'Trick', 'Wild'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Greater Steal Weapon',
+        short_description='Disarm an item, including held items, and steal it',
+        target="One creature within your \\glossterm<reach>",
+        effect_text="""
+            This maneuver functions like the \\textit<disarm weapon> ability, except that you can immediately grab a disarmed object if you have a \\glossterm<free hand> available, including a hand you used for this ability.
+            Any accuracy bonuses you have that apply specifically to the \\textit<disarm> ability also apply to this ability.
+
+            In addition, if you use this ability during the \\glossterm<action phase>, you can make a \\glossterm<strike> with the stolen weapon during the \\glossterm<delayed action phase>.
+        """,
+        rank=7,
+        tags=[],
+        lists=['Esoteric', 'Martial', 'Trick', 'Wild'],
     ))
 
     return maneuvers
