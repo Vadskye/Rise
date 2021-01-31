@@ -1338,7 +1338,7 @@ def generate_maneuvers():
         short_description='Grapple a creature by the throat',
         target="One creature within your \\glossterm<reach>",
         effect_text="""
-            This maneuver functions like the \\textit<grapple> ability, except that the target also takes bludgeoning damage equal to 1d10 plus half your \\glossterm<power>.
+            This maneuver functions like the \\textit<grapple> ability, except that the target also takes bludgeoning damage equal to 1d8 plus your \\glossterm<power>.
             Any accuracy bonuses you have that apply specifically to the \\textit<grapple> ability also apply to this ability.
 
             \\rankline
@@ -1424,6 +1424,26 @@ def generate_maneuvers():
         """,
         rank=2,
         tags=[],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Parry',
+        short_description='Parry incoming attacks to set up openings next round',
+        target=None,
+        effect_text="""
+            You gain a +4 bonus to Armor defense until the end of the round.
+            Whenever a creature misses you with a melee \\glossterm<strike> this round, that creature takes a -2 penalty to Armor defense during the next round.
+            As normal, this bonus does not stack with itself, even if the same creature misses you with multiple melee attacks.
+            This ability is \\glossterm<Swift>, so it protects you from attacks in the current phase.
+
+            \\rankline
+            \\rank<3> The defense penalty increases to -3.
+            \\rank<5> The defense penalty increases to -4.
+            \\rank<7> The defense penalty increases to -5.
+        """,
+        rank=1,
+        tags=['Swift'],
         lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
     ))
 
@@ -1525,11 +1545,14 @@ def generate_maneuvers():
         effect_text="""
             Each target of this ability after the first must be adjacent to another target.
 
-            This maneuver functions like the \\textit<shove> ability, except that it affects each target, and you can \\glossterm<knockback> each target up to 30 feet instead of push it.
-            On a critical hit, you knockback the target 60 feet instead.
+            This maneuver functions like the \\textit<shove> ability, except that it affects each target, and you can \\glossterm<knockback> each target up to 15 feet instead of push it.
+            On a critical hit, you knockback the target 30 feet instead.
             Any accuracy bonuses you have that apply specifically to the \\textit<shove> ability also apply to this ability.
         """,
-        rank=5,
+        rank=4,
+        rank_upgrades={
+            '6': 'The distance you knockback the target increases to 30 feet, or 60 feet on a critical hit.',
+        },
         tags=[],
         lists=['Esoteric', 'Martial', 'Primal', 'Wild'],
     ))
@@ -1571,9 +1594,87 @@ def generate_maneuvers():
 
             In addition, if you use this ability during the \\glossterm<action phase>, you can make a \\glossterm<strike> with the stolen weapon during the \\glossterm<delayed action phase>.
         """,
-        rank=7,
+        rank=6,
         tags=[],
         lists=['Esoteric', 'Martial', 'Trick', 'Wild'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Sunder',
+        short_description='Disarm an item, dealing extra damage',
+        target="One creature within your \\glossterm<reach>",
+        effect_text="""
+            This maneuver functions like the \\textit<disarm> ability, except that you gain a +1d bonus to damage with the strike.
+            Any accuracy bonuses you have that apply specifically to the \\textit<disarm> ability also apply to this ability.
+        """,
+        rank=1,
+        tags=[],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Sundering Followthrough',
+        short_description='Disarm an item, dealing extra damage',
+        target="One creature within your \\glossterm<reach>",
+        effect_text="""
+            This maneuver functions like the \\textit<disarm> ability, except that you gain a +1d bonus to damage with the strike.
+            In addition, if you disarm an attended item and your attack result also beats the attending creature's Armor defense, you may choose to deal damage to the attending creature in addition to its item.
+            Any accuracy bonuses you have that apply specifically to the \\textit<disarm> ability also apply to this ability.
+        """,
+        rank=4,
+        tags=[],
+        lists=['Esoteric', 'Martial', 'Primal', 'Trick', 'Wild'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Battering Ram',
+        short_description='Move through creatures, dealing damage along the way',
+        target="Each creature in the area (see text)",
+        effect_text="""
+            This maneuver functions like the \\textit<overrun> ability, except that it requires a standard action to use and does not cause you to gain a \\glossterm<fatigue point>.
+            In addition, creatures cannot choose to avoid you and each creature that you move through takes bludgeoning damage equal to 2d6 plus half your \\glossterm<power>, or double that damage on a critical hit.
+            Any accuracy bonuses you have that apply specifically to the \\textit<overrun> ability also apply to this ability.
+
+            \\rankline
+            The damage increases by +1d for each rank beyond 3.
+        """,
+        rank=3,
+        tags=[],
+        lists=['Martial', 'Primal', 'Wild'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Battering Rush',
+        short_description='Move quickly through creatures, dealing damage along the way',
+        target="Each creature in the area (see text)",
+        effect_text="""
+            This maneuver functions like the \\textit<battering ram> ability, except that you do not treat the space occupied by creatures you move through as difficult terrain.
+            In addition, missing an attack does not cause you to fall prone, though it still ends your movement.
+            The damage also increases to 4d6 plus half your \\glossterm<power>.
+            Any accuracy bonuses you have that apply specifically to the \\textit<overrun> ability also apply to this ability.
+
+            \\rankline
+            The damage increases by +1d for each rank beyond 6.
+        """,
+        rank=6,
+        tags=[],
+        lists=['Martial', 'Primal', 'Wild'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Revitalizing Strike',
+        short_description='Make a strike and regain hit points',
+        target="As chosen \\glossterm<strike>",
+        effect_text="""
+            Make a strike.
+            In addition, you regain 1d10 hit points.
+
+            \\rankline
+            The healing increases by +1d for each rank beyond 4.
+        """,
+        rank=4,
+        tags=[],
+        lists=['Esoteric', 'Martial', 'Primal', 'Wild'],
     ))
 
     return maneuvers
