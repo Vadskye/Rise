@@ -2863,15 +2863,15 @@ This choice determines a great deal about your character's abilities.
     \begin{dtable!*}
         \lcaption{Rogue Progression}
 \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-    \tb{Rank} & \tb{Min Level} & \tb{Assassin}       & \tb{Bard}                & \tb{Combat Trickster}                     & \tb{Jack of All Trades} \tableheaderrule
-    0         & \tdash         & Stealthy instincts  & Bardic lore              & Tricky finesse                            & Skill lore              \\
-    1         & 1              & Sneak attack        & Bardic performances      & Maneuver rank (1), tricky force           & Skill exemplar          \\
-    2         & 4              & Evasion             & Combat performer         & Maneuver rank (2), glancing strikes       & Dabbler                 \\
-    3         & 7              & Darkstalker         & Loremaster               & Maneuver rank (3), trick maneuver         & Versatile power         \\
-    4         & 10             & Hide in plain sight & Virtuoso                 & Maneuver rank (4), greater tricky force   & Greater skill exemplar  \\
-    5         & 13             & Greater evasion     & Greater combat performer & Maneuver rank (5), greater tricky finesse & Greater dabbler         \\
-    6         & 16             & Assassination       & Greater loremaster       & Maneuver rank (6), greater tricky finesse & Greater versatile power \\
-    7         & 19             & Greater darkstalker & Greater virtuoso         & Maneuver rank (7), trick maneuver         & Supreme skill exemplar  \\
+    \tb{Rank} & \tb{Min Level} & \tb{Assassin}       & \tb{Bard}                             & \tb{Combat Trickster}                     & \tb{Jack of All Trades} \tableheaderrule
+    0         & \tdash         & Stealthy instincts  & Bardic lore                           & Tricky finesse                            & Skill lore              \\
+    1         & 1              & Sneak attack        & Bardic performances                   & Maneuver rank (1), tricky force           & Skill exemplar          \\
+    2         & 4              & Evasion             & Combat performer                      & Maneuver rank (2), glancing strikes       & Dabbler                 \\
+    3         & 7              & Darkstalker         & Bardic perormance, loremaster         & Maneuver rank (3), trick maneuver         & Versatile power         \\
+    4         & 10             & Hide in plain sight & Virtuoso                              & Maneuver rank (4), greater tricky force   & Greater skill exemplar  \\
+    5         & 13             & Greater evasion     & Greater combat performer              & Maneuver rank (5), greater tricky finesse & Greater dabbler         \\
+    6         & 16             & Assassination       & Bardic perormance, greater loremaster & Maneuver rank (6), greater tricky finesse & Greater versatile power \\
+    7         & 19             & Greater darkstalker & Greater virtuoso                      & Maneuver rank (7), trick maneuver         & Supreme skill exemplar  \\
 \end{dtabularx}
     \end{dtable!*}
 
@@ -3147,8 +3147,8 @@ This choice determines a great deal about your character's abilities.
             \end{freeability}
 
             \begin{freeability}{Palliative Poem}[\glossterm{Auditory}, \glossterm{Emotion}]
-                \target{Yourself or one \glossterm{ally} within \rngshort range}
-                The target regains 1d6 \glossterm{hit points}.
+                \target{One living \glossterm{ally} within \rngshort range}
+                The target regains \glossterm{hit points} equal to 1d6 plus half your \glossterm{power}.
 
                 \rankline
                 The healing increases by \plus1d for each rank beyond 1.
@@ -3193,20 +3193,26 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rog}[2]{Combat Performer} You gain a \plus2 bonus to all Perform skills and a \plus1 bonus to Armor defense.
 
+        \cf{Rog}[3]{Bardic Performance} You learn an additional bardic performance.
+
         \cf{Rog}[3]{Loremaster} You gain a \plus2 bonus to all Knowledge skills.
         In addition, when can use the \textit{desperate exertion} ability to affect the result of a Knowledge skill check,
             you only gain one \glossterm{fatigue point} instead of two.
 
-        \cf{Rog}[4]{Virtuoso} You learn an additional bardic performance.
-        In addition, the area and range of all of your bardic performances is doubled.
+        \cf{Rog}[4]{Virtuoso} The range and area of all of your \textit{bardic performance} abilities doubles.
+        You gain a bonus to \glossterm{power} with your \textit{bardic performance} abilities equal to your rank in this archetype.
+        In addition, once per round you can \glossterm{sustain} two bardic performances as a single \glossterm{minor action}.
 
         \cf{Rog}[5]{Greater Combat Performer} The Perform skill bonus from your \textit{combat performer} ability increases to \plus4.
         In addition, the Armor defense bonus from that ability increases to \plus2.
 
-        \cf{Rog}[6]{Greater Loremaster} The Knowledge skll bonus from your \textit{loremaster} ability increases to \plus5.
+        \cf*{Rog}[6]{Bardic Performance} You learn an additional bardic performance.
 
-        \cf{Rog}[7]{Greater Virtuoso} Once per round, you can \glossterm{sustain} two bardic performances as a single \glossterm{minor action}.
-        In addition, you gain a \plus1 bonus to \glossterm{accuracy} with your bardic performance abilities.
+        \cf{Rog}[6]{Greater Loremaster} The Knowledge skill bonus from your \textit{loremaster} ability increases to \plus5.
+
+        \cf{Rog}[7]{Greater Virtuoso} You learn an additional bardic performance.
+        The power bonus from your \textit{virtuoso} ability increases to twice your rank in this archetype.
+        In addition, the number of bardic performances you can sustain with your \textit{virtuoso} ability increases to three.
 
     \newpage
     \subsection{Combat Trickster}
@@ -3729,13 +3735,13 @@ This choice determines a great deal about your character's abilities.
 
             \rankline
             \rank{2} The damage increases to 2d6.
-            \rank{3} The damage increases to 2d8.
+            \rank{3} The damage increases to 2d10.
                 In addition, if you miss by 2 or less, the target takes half damage.
                 This is called a \glossterm{glancing blow}.
-            \rank{4} The damage increases to 2d10.
-            \rank{5} The damage increases to 4d8.
-            \rank{6} The damage increases to 4d10.
-            \rank{7} The damage increases to 6d10.
+            \rank{4} The damage increases to 4d6.
+            \rank{5} The damage increases to 4d10.
+            \rank{6} The damage increases to 5d10.
+            \rank{7} The damage increases to 7d10.
         \end{freeability}
 
         \cf{War}[2]{Fiendish Resistance} You gain a bonus equal to twice your rank in this archetype to your \glossterm{resistance} against \glossterm{energy damage}.
