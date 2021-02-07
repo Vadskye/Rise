@@ -21,7 +21,7 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
         accuracyBonus: 6,
         defense: "fortitude",
         hit: `The ankheg \\glossterm{pushes} the target up to 30 feet in any direction.
-          It can move the same distance that it pushes the target.`,
+          It moves the same distance that it pushes the target.`,
         name: "Drag Prey",
         target: "One Medium or smaller creature or object within \\glossterm{reach}",
       },
@@ -89,7 +89,7 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
         name: "Dark Embrace",
         powerMultiplier: 1,
         source: "magical",
-        target: "One enemy within \\glossterm{reach}",
+        target: "One creature within \\glossterm{reach}",
       },
     ],
     challengeRating: 2,
