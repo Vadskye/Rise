@@ -1578,6 +1578,7 @@ It defines how attributes work and explains how to make attacks in combat.
                 Sprint\fn{1}             & \tdash       & Move at double speed                 \\
                 Struggle                 & \tdash       & Move 5 feet regardless of penalties  \\
                 Total Defense            & \tdash       & Gain \plus2 to defenses              \\
+                Throw                    & \tdash       & Throw a held object                  \\
                 Trip                     & Ref          & Trip a foe                           \\
             \end{dtabularx}
             1. This ability gives you a \glossterm{fatigue point} when used. \\
@@ -1713,6 +1714,23 @@ It defines how attributes work and explains how to make attacks in combat.
             Until the end of the current phase, your land speed becomes five feet, regardless of all other effects that would modify your land speed.
             In addition, you can move a distance up to your land speed.
             This does not allow you to pass obstacles unrelated to movement speed penalties, such as walls.
+        \end{freeability}
+
+        \parhead{Throw} As a standard action, you can use the \textit{throw} ability to throw an object.
+        As long as you have a Strength of at least \minus2, you do not have to use this ability to throw weapons that are sized appropriately for you and which are designed to be thrown.
+        Instead, you can simply use the \glossterm{range increment} for those weapons.
+
+        \begin{freeability}{\labeltext{Throw}}
+            Make a Strength check to throw an object you hold in at least one hand.
+            The base \glossterm{difficulty rating} of this check is 0.
+            For each size category larger or smaller than the target that you are, you gain a \plus10 bonus or penalty to the check.
+            In addition, if the object's weight exceeds your light carrying capacity, you take a \minus10 penalty with the check (see \pcref{Carrying Capacity}).
+            You cannot throw an object whose weight exceeds your maximum carrying capacity.
+
+            If you succeed, you throw the object five feet.
+            For every 5 points by which you succeed, you double the distance you throw the object: ten feet, twenty feet, and so on.
+            If you throw the object at a creature or object, you can make an attack roll to hit it with the thrown object, as the \textit{thrown strike} ability.
+            That attack roll is rolled separately from the Strength check you make to use this ability.
         \end{freeability}
 
         \parhead{Total Defense} As a standard action, you can use the \textit{total defense} ability to focus entirely on defending yourself.
