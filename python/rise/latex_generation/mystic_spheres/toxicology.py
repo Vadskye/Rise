@@ -121,6 +121,11 @@ toxicology=MysticSphere(
             \\hit Each target takes acid damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=[]),
+        Spell('Healing Salve', 2, 'Yourself or one \\glossterm<ally> within your \\glossterm<reach>', """
+            The target regains \\glossterm<hit points> equal to 1d6 plus half your \\glossterm<power>.
+        """, scaling="""
+            The healing increases by +1d for each rank beyond 2.
+        """, tags=[]),
     ],
     rituals=[
     ],
