@@ -40,6 +40,7 @@ export const undeadInput: TypelessMonsterInput[] = [
           within an \\areamed radius \\glossterm{emanation} from it.
           After it attacks a creature this way, that creature becomes immune to this allip's \\textit{babble} ability until it takes a \\glossterm{short rest}.
           \\hit Each target is \\glossterm{dazed} as a \\glossterm{condition}.
+          \\crit Each target is \\glossterm{confused} as a \\glossterm{condition}.
         `,
         name: "Babble",
       },
