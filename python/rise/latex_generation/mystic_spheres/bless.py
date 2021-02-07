@@ -55,7 +55,7 @@ bless=MysticSphere(
             \\rank<5> The target gains two additional +5 bonuses.
             \\rank<7> The target gains three additional +5 bonuses.
         """, tags=['Attune (target)']),
-        Spell('Blessing of Regeneration', 5, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Blessing of Regeneration', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             You can cast this spell as a \\glossterm<minor action>.
             You can only have one casting of this spell active at once.
             When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
@@ -63,7 +63,7 @@ bless=MysticSphere(
             At the end of each round, if the target did not lose any \\glossterm<hit points> that round, it regains 2d10 \\glossterm<hit points>.
         """, scaling="""
             \\rankline
-            \\rank<7> Casting this spell does not remove previous attunements to this spell.
+            \\rank<6> Casting this spell does not remove previous attunements to this spell.
                 In addition, you can choose to cast this spell with the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Attune> (target) tag.
         """, tags=['Attune (target)']),
         Spell('Blessing of Proficiency', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
