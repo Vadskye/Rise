@@ -1,6 +1,7 @@
 from cgi_simple import (
     button, div, fieldset, flex_col, flex_row, flex_wrapper, freeform_number_input,
     labeled_number_input, labeled_text_input, number_input, sidelabel, span,
+    label, checkbox,
     text_input, underlabel, underlabel_spaced, underlabeled_checkbox, labeled_textarea, select, option
 )
 from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS
@@ -413,6 +414,8 @@ def tracking(destination):
                 {'class': f'repeating_vitalwounds'},
                 vital_wound(),
             ),
+            flex_wrapper(div({'class': 'section-header'}, 'Debuffs')),
+            debuffs(),
         ])
 
 def attunement():
@@ -445,5 +448,43 @@ def vital_wound():
             'Effect',
             {'class': 'vital-wound-effect'},
             {'name': 'vital_wound_effect'},
+        ),
+    ])
+
+def debuffs():
+    return flex_col({'class': 'debuffs'}, [
+        flex_row([
+            debuff('dazed'),
+            debuff('dazzled'),
+            debuff('prone', False),
+            debuff('shaken'),
+            debuff('sickened'),
+            debuff('slowed'),
+        ]),
+        flex_row([
+            debuff('frightened'),
+            debuff('nauseated'),
+            debuff('stunned'),
+            debuff('underwater'),
+        ]),
+        flex_row([
+            debuff('blinded', False),
+            debuff('confused', False),
+            debuff('decelerated'),
+            debuff('disoriented', False),
+            debuff('immobilized', False),
+            debuff('panicked'),
+        ]),
+        flex_row([
+            debuff('helpless'),
+        ]),
+    ])
+
+def debuff(name, representable=True):
+    return label({'class': 'debuff-active-label'}, [
+        checkbox({'name': name}),
+        span(
+            {'class': 'representable-debuff' if representable else 'unrepresentable-debuff'},
+            name.capitalize() + '?'
         ),
     ])

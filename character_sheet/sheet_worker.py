@@ -12,6 +12,7 @@ def generate_script():
         attunement_points(),
         skill_points_spent(),
         unknown_statistic(),
+        debuffs(),
         '</script>',
         ""
     ])
@@ -22,7 +23,7 @@ def js_wrapper(variables, function_body):
     variables_with_level = sorted(list(set(variables + ['level'])))
     change_string = ' '.join([f'change:{var}' for var in variables_with_level])
     get_attrs_string = ', '.join([f'"{var}"' for var in variables])
-    set_variables_string = ';\n    '.join([f'var {stringify_variable_name(var)} = Number(v["{var}"] || 0)' for var in variables]) + ';'
+    set_variables_string = ';\n    '.join([f'var {stringify_variable_name(var)} = v["{var}"] === "on" ? true : Number(v["{var}"] || 0)' for var in variables]) + ';'
     return f"""
         on("{change_string}", function(eventInfo) {{
             getAttrs([{get_attrs_string}], function(v) {{
@@ -167,12 +168,12 @@ def abilities_known():
 def accuracy():
     misc = get_misc_variables('accuracy', 2)
     return js_wrapper(
-        ['challenge_rating', 'level', 'perception_starting', 'fatigue_penalty', *misc],
+        ['challenge_rating', 'level', 'perception_starting', 'fatigue_penalty', 'accuracy_debuff_modifier', *misc],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 1) / 6)) : 0;
             setAttrs({{
-                accuracy: level + Math.floor(perception_starting / 2)  + {sum_variables(misc)} + cr_mod + level_scaling - fatigue_penalty,
+                accuracy: level + Math.floor(perception_starting / 2)  + {sum_variables(misc)} + cr_mod + level_scaling - fatigue_penalty + accuracy_debuff_modifier,
             }});
         """
     )
@@ -208,12 +209,12 @@ def unknown_statistic():
 def armor_defense():
     misc = get_misc_variables('armor_defense', 3)
     return js_wrapper(
-        ['level', 'dexterity_starting', 'armor_defense_class_bonus', 'body_armor_defense_value', 'shield_defense_value', *misc, 'challenge_rating'],
+        ['level', 'dexterity_starting', 'armor_defense_class_bonus', 'body_armor_defense_value', 'shield_defense_value', 'armor_debuff_modifier', *misc, 'challenge_rating'],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 3) / 6)) : 0;
             var before_equipment = level + dexterity_starting + cr_mod + level_scaling + armor_defense_class_bonus;
-            var total = before_equipment + body_armor_defense_value + shield_defense_value + {sum_variables(misc)};
+            var total = before_equipment + body_armor_defense_value + shield_defense_value + armor_debuff_modifier + {sum_variables(misc)};
             setAttrs({{
                 armor_defense: total,
             }});
@@ -223,12 +224,12 @@ def armor_defense():
 def fortitude():
     misc = get_misc_variables('fortitude', 4)
     return js_wrapper(
-        ['level', 'constitution_starting', 'fortitude_class', 'challenge_rating', *misc],
+        ['level', 'constitution_starting', 'fortitude_class', 'challenge_rating', 'fortitude_debuff_modifier', *misc],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 3) / 6)) : 0;
             setAttrs({{
-                fortitude: level + constitution_starting + fortitude_class + cr_mod + level_scaling + {sum_variables(misc)},
+                fortitude: level + constitution_starting + fortitude_class + cr_mod + level_scaling + fortitude_debuff_modifier + {sum_variables(misc)},
             }});
         """
     )
@@ -236,12 +237,12 @@ def fortitude():
 def reflex():
     misc = get_misc_variables('reflex', 4)
     return js_wrapper(
-        ['level', 'dexterity_starting', 'reflex_class', 'challenge_rating', *misc],
+        ['level', 'dexterity_starting', 'reflex_class', 'challenge_rating', 'reflex_debuff_modifier', *misc],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 3) / 6)) : 0;
             setAttrs({{
-                reflex: level + dexterity_starting + reflex_class + cr_mod + level_scaling + {sum_variables(misc)},
+                reflex: level + dexterity_starting + reflex_class + cr_mod + level_scaling + reflex_debuff_modifier + {sum_variables(misc)},
             }});
         """
     )
@@ -249,12 +250,12 @@ def reflex():
 def mental():
     misc = get_misc_variables('mental', 4)
     return js_wrapper(
-        ['level', 'willpower_starting', 'mental_class', 'challenge_rating', *misc],
+        ['level', 'willpower_starting', 'mental_class', 'challenge_rating', 'mental_debuff_modifier', *misc],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 3) / 6)) : 0;
             setAttrs({{
-                mental: level + willpower_starting + mental_class + cr_mod + level_scaling + {sum_variables(misc)},
+                mental: level + willpower_starting + mental_class + cr_mod + level_scaling + mental_debuff_modifier + {sum_variables(misc)},
             }});
         """
     )
@@ -663,3 +664,94 @@ def standard_damage_at_power(power):
         '22': '7d10',
         '24': '8d10',
     }[str(power)]
+
+def debuffs():
+    return js_wrapper(
+        [
+            # rank 1 debuffs
+            'dazed', 'dazzled', 'prone', 'shaken', 'sickened', 'slowed',
+            # rank 2 debuffs
+            'frightened', 'nauseated', 'stunned', 'underwater',
+            # rank 3 debuffs
+            'decelerated', 'confused', 'blinded', 'disoriented', 'immobilized', 'panicked',
+            # rank 4 debuffs
+            'asleep', 'helpless', 'paralyzed',
+            # other calculations
+            'dexterity_starting'
+        ],
+        f"""
+            let accuracy = 0;
+            let armor = 0;
+            let fortitude = 0;
+            let mental = 0;
+            let reflex = 0;
+
+            // rank 1 debuffs
+            if (dazed && !stunned) {{
+                armor -= 2;
+                fortitude -= 2;
+                reflex -= 2;
+                mental -= 2;
+            }}
+            if (dazzled) {{
+                accuracy -= 2;
+            }}
+            if (prone) {{
+                // TODO: figure out how to represent this
+            }}
+            if (shaken && !frightened && !panicked) {{
+                accuracy -= 2;
+                mental -= 2;
+            }}
+            if (sickened && !nauseated) {{
+                accuracy -= 2;
+                fortitude -= 2;
+            }}
+            if (slowed) {{
+                armor -= 2;
+                reflex -= 2;
+            }}
+
+            // rank 2 debuffs
+            if (frightened && !panicked) {{
+                accuracy -= 4;
+                mental -= 4;
+            }}
+            if (nauseated) {{
+                accuracy -= 4;
+                mental -= 4;
+            }}
+            if (stunned) {{
+                armor -= 4;
+                fortitude -= 4;
+                reflex -= 4;
+                mental -= 4;
+            }}
+            if (underwater) {{
+                accuracy -= 4;
+                armor -= 4;
+                reflex -= 4;
+            }}
+
+            // rank 3 debuffs
+            if (decelerated) {{
+                armor -= 4;
+                reflex -= 4;
+            }}
+            if (panicked) {{
+                mental -= 4;
+            }}
+            if (asleep || helpless || paralyzed) {{
+                armor -= (10 + dexterity_starting);
+                reflex -= (10 + dexterity_starting);
+            }}
+
+            setAttrs({{
+                accuracy_debuff_modifier: accuracy,
+                armor_debuff_modifier: armor,
+                fortitude_debuff_modifier: fortitude,
+                mental_debuff_modifier: mental,
+                reflex_debuff_modifier: reflex,
+            }});
+        """
+    )
