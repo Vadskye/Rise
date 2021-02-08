@@ -1775,8 +1775,7 @@ It defines how attributes work and explains how to make attacks in combat.
             \end{itemize}
 
         \subsubsection{Grapple Actions}\label{Grapple Actions}
-            While grappled, you can use four special abilities to try to affect the grapple.
-            For all grapple actions, you can use your Strength in place of your Perception to determine your \glossterm{accuracy}.
+            While grappled, you can use five special abilities to try to affect the grapple.
 
             \parhead{Bind Foe} As a standard action, you can use the \textit{bind foe} ability to bind a foe you are grappling in restraints.
 
@@ -1799,10 +1798,18 @@ It defines how attributes work and explains how to make attacks in combat.
             \begin{freeability}{\labeltext{Escape Grapple}}
                 Make an attack against any number of creatures that you are grappled by.
                 You may use the Flexibility skill in place of your normal \glossterm{accuracy} with this attack (see \pcref{Flexibility}).
-                If you do, the attack is made against each target's Reflex defense.
-                Otherwise, the attack is made against each target's Fortitude defense.
+                The defense of each creature is equal to the result of the attack it made with its \textit{maintain grapple} ability.
+                If a creature did not use that ability during the current round, its defense against this ability is 0.
                 % TODO: awkward wording
                 For each target, if you hit that target with this attack, it stops being grappled by you and you stop being grappled by it.
+            \end{freeability}
+
+            \parhead{Maintain Grapple} As a \glossterm{free action}, you can use the \textit{maintain grapple} ability to maintain a grapple that you are part of.
+            If you do not use this ability while you are in a grapple, then creatures can easily escape the grapple with the \textit{escape grapple} ability.
+            \begin{freeability}{Maintain Grapple}[Swift]
+                Make an attack using a \glossterm{free hand}.
+                This attack has no immediate effect.
+                The attack result determines how difficult it is for a creature to escape the grapple during the current round using the \textit{escape grapple} ability.
             \end{freeability}
 
             \parhead{Move Grapple} As a \glossterm{move action}, you can use the \textit{move grapple} ability to move yourself and all creatures you are grappling with.
