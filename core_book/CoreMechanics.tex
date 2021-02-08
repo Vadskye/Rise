@@ -1101,12 +1101,12 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \subsubsection{Regaining Hit Points and Resistances}\label{Regaining Hit Points and Resistances}
             Some abilities cause you to regain lost hit points or or resistances.
-            For example, the \textit{recover} ability allows you to regain half your maximum hit points (see \pcref{Recover}).
+            For example, the \textit{recover} ability allows you to regain all of your lost hit points (see \pcref{Recover}).
             You can't normally exceed your maximum hit points or maximum resistances, even with magical abilities.
 
             \parhead{Timing} If you regain hit points and lose hit points in the same phase, the two values offset before checking other effects or limitations on the healing or damage.
             The same applies to regaining and losing resistances.
-            For example, if you were at five hit point and both regained six hit points and lost six hit points simultaneously, you would not receive a vital wound for dropping below 0 HP.
+            For example, if you were at five hit point and both regained six hit points and lost six hit points simultaneously, you would not receive a vital wound for dropping below 0 hit points.
             Instead, you would simply be at one hit point after both the healing and damage were applied.
             Similarly, if you were at your maximum hit points and both regained and lost two hit points simultaneously, you would still be at your maximum hit points.
 
@@ -1686,7 +1686,7 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \parhead{Recover} You can use the \textit{recover} ability as a standard action.
         As long as you are conscious, no effect can prevent you from using this ability, even effects that prohibit using any other abilities.
-        \begin{freeability}{\labeltext{Recover}}[\glossterm{Swift}]
+        \begin{freeability}{\labeltext{Recover}}
             When you use this ability, you gain a \glossterm{fatigue point} (see \pcref{Fatigue}).
 
             You regain hit points equal to your maximum \glossterm{hit points}.
@@ -1694,7 +1694,7 @@ It defines how attributes work and explains how to make attacks in combat.
             This cannot remove a condition applied during the current round.
 
             After you use this ability, you cannot use it again until you take a \glossterm{short rest}.
-            Because this is a \glossterm{Swift} ability, this healing and condition removal happens before you suffer the effects of attacks in the current phase.
+            If you take damage in the same phase that you use this ability, the healing and damage offset, which can prevent you from gaining vital wounds from dropping below 0 hit points (see \pcref{Regaining Hit Points and Resistances}).
         \end{freeability}
 
         \parhead{Shove} As a standard action, you can use the \textit{shove} ability to physically move a creature.
