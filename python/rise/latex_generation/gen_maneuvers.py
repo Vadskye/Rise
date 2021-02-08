@@ -816,12 +816,12 @@ def generate_maneuvers():
         short_description='Recover hit points',
         target='Yourself',
         effect_text="""
-            When you use this ability, you gain one \\glossterm<fatigue point>.
+            When you use this ability, you gain a \\glossterm<fatigue point>.
 
             You regain hit points equal to your maximum \\glossterm<hit points>.
-            After you use this ability, you cannot use it again until you take a \\glossterm<short rest>.
+            If you take damage in the same phase that you use this ability, the healing and damage offset, which can prevent you from gaining vital wounds from dropping below 0 hit points (see \pcref{Regaining Hit Points and Resistances}).
 
-            Because this is a \\glossterm<Swift> ability, this healing happens before you suffer the effects of attacks in the current phase.
+            After you use this ability, you cannot use it again until you take a \\glossterm<short rest>.
         """,
         rank=4,
         tags=['Swift'],
