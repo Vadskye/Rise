@@ -2469,6 +2469,7 @@ def generate_worn():
                 If you do, your size increases by one \\glossterm<size category>, to a maximum of Huge.
                 This increases your \\glossterm<base speed> and reduces your \\glossterm<Stealth> skill.
                 It may also increase your \\glossterm<reach> and make you harder to \\glossterm<overwhelm> (see \\pcref<Size in Combat>).
+                However, your physical form is not altered fully to match your new size, and your Strength and Dexterity are unchanged.
                 This effect lasts until you activate the belt again, which returns you to your original size.
             """,
             short_description="Increases your size",
