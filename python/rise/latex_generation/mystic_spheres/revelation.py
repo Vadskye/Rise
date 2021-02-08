@@ -74,12 +74,14 @@ revelation=MysticSphere(
             \\rank<7> The bonus increases to +3.
         """, tags=['Attune (target)']),
         Spell('Discern Lies', 3, 'One creature within \\rngmed range', """
+            This spell has no \\glossterm<verbal components>.
+
             Make an attack vs. Mental against the target.
             \\hit When you hear the target deliberately and knowingly speaks a lie, you know that the target was lying.
             This ability does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.
             \\glance As above, except that the effect ends at the end of the next round.
             % No \\crit effect
-        """, scaling="accuracy", tags=['Sustain (minor)']),
+        """, scaling="accuracy", tags=['Subtle', 'Sustain (minor)']),
         Spell('Boon of Mastery', 3, 'Yourself', """
             You gain a +2 \\glossterm<magic bonus> to all skills.
         """, scaling="""
