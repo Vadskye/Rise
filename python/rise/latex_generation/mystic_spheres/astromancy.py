@@ -20,7 +20,7 @@ astromancy=MysticSphere(
             \\rank<6> The range increases to \\rngmed.
         """, tags=[]),
         Effects('Translocate Object', 'One Tiny or smaller unattended object within \\rngshort range', """
-            The target teleports into an unoccupied location on a stable surface within range that can support the weight of the target.
+            The target teleports into an unoccupied location within range on a stable surface that can support its weight.
             If the destination is invalid, the ability fails without effect.
         """, scaling="""
             \\rank<2> The range increases to \\rngmed.
@@ -81,7 +81,7 @@ astromancy=MysticSphere(
         """, scaling="damage", tags=[]),
         # TODO: target wording is awkward
         Spell('Translocation', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngshort range', """
-            The target \\glossterm<teleports> into an unoccupied destination on a stable surface within range.
+            The target \\glossterm<teleports> into an unoccupied location within range on a stable surface that can support its weight.
             If the destination is invalid, this spell is \\glossterm<miscast>.
         """, scaling="""
             \\rank<3> The range increases to \\rngmed.

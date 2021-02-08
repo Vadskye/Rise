@@ -883,7 +883,7 @@ def generate_armor():
             material_type='Boots',
             tags=[],
             description="""
-                As a standard action, you can \\glossterm<teleport> yourself into an unoccupied destination within \\rngshort range.
+                As a standard action, you can \\glossterm<teleport> yourself into an unoccupied location within \\rngshort range on a stable surface that can support your weight.
                 If the destination is invalid, this ability has no effect.
             """,
             short_description="Can teleport up to 30 feet",
@@ -915,7 +915,7 @@ def generate_armor():
             material_type='Body armor',
             tags=[],
             description="""
-                As a standard action, you can \\glossterm<teleport> yourself into an unoccupied destination within \\rngshort range.
+                As a standard action, you can \\glossterm<teleport> yourself into an unoccupied location within \\rngshort range on a stable surface that can support your weight.
                 If the destination is invalid, this ability has no effect.
             """,
             short_description="Can teleport up to 30 feet",
@@ -1876,6 +1876,7 @@ def generate_worn():
         description="""
             When you move, you can teleport the same distance instead.
             This does not change the total distance you can move, but you can teleport in any direction, even vertically.
+            You must teleport onto a stable surface that can support your weight.
             You cannot teleport to locations you do not have \\glossterm<line of sight> and \\glossterm<line of effect> to.
         """,
         short_description="Allows teleporting instead of moving",

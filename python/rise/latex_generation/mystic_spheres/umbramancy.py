@@ -144,7 +144,7 @@ umbramancy=MysticSphere(
         Spell('Shadowstep', 1, None, """
             This spell has no \\glossterm<verbal components>.
 
-            You teleport into an unoccupied destination on a stable surface within \\rngshort range.
+            You teleport into an unoccupied location within \\rngshort range on a stable surface that can support your weight.
             Unlike most teleportation effects, both your departure and arrival with this spell are silent.
             If you are in \\glossterm<bright illumination> and are not touching your shadow, this spell is \\glossterm<miscast>.
         """, scaling="""
