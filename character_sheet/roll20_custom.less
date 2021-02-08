@@ -106,3 +106,16 @@ input.nav-button, .nav-button-label {
 // .full-sheet {
 //     text-align: center;
 // }
+
+.subtle-button > button[type=roll], .invisible-button > button[type=roll] {
+    background: none;
+    border: 0;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    text-shadow: none;
+}
+
+.invisible-button > button[type=roll]:before {
+    content: none;
+}
