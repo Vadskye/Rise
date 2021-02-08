@@ -85,7 +85,7 @@ pyromancy=MysticSphere(
         """, scaling="damage", tags=[]),
         Spell('Cone of Conflagration', 3, 'Everything in a \\arealarge cone from you', f"""
             Make an attack vs. Reflex against each target.
-            \\hit Each target takes fire damage equal to 1d8 plus half your \\glossterm<power>.
+            \\hit Each target takes fire damage equal to 2d6 plus half your \\glossterm<power>.
             \\glance As above, except that that each target takes half damage.
         """, scaling="damage", tags=[]),
         Spell('Ignition', 2, 'One creature within \\rngmed range', f"""
