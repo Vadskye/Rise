@@ -1,7 +1,7 @@
 from cgi_simple import (
     button, div, fieldset, flex_col, flex_row, flex_wrapper, freeform_number_input,
     labeled_number_input, labeled_text_input, number_input, sidelabel, span,
-    label, checkbox,
+    label, checkbox, subtlebutton, invisiblebutton,
     text_input, underlabel, underlabel_spaced, underlabeled_checkbox, labeled_textarea, select, option
 )
 from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS
@@ -36,7 +36,17 @@ def attributes_and_skills():
 def attribute_section(attribute):
     return flex_col({'class': f'{attribute} attribute-section'}, [
         flex_row({'class': 'attribute'}, [
-            span({'class': 'attribute-header number-label'}, attribute.capitalize()),
+            span(
+                {'class': 'attribute-header number-label'},
+                invisiblebutton(
+                    {
+                        'name': f'roll_{attribute}',
+                        'type': 'roll',
+                        'value': f"@{{character_name}} rolls {attribute.capitalize()}: [[d10+@{{{attribute}}}]]",
+                    },
+                    attribute.capitalize()
+                ),
+            ),
             underlabel('Base', number_input({
                 'disabled': True,
                 'name': f"{attribute}_base_display",
@@ -57,7 +67,7 @@ def skill_box(name):
 
     formatted_skill = name.lower().replace(' ', '_')
     return flex_row({'class': 'skill-box'}, [
-        button(
+        subtlebutton(
             {
                 'class': 'skill-button',
                 'name': f"roll_skill_{formatted_skill}",
@@ -76,7 +86,7 @@ def skill_box(name):
 def knowledge_skill_box(name):
     formatted_skill = name.lower().replace(' ', '_')
     return flex_row({'class': 'skill-box'}, [
-        button(
+        subtlebutton(
             {
                 'class': 'skill-button',
                 'name': f"roll_skill_{formatted_skill}",
@@ -211,7 +221,7 @@ def core_statistics(destination):
             flex_row({'class': 'labeled-number-input'}, [
                 flex_wrapper(
                     {'class': 'core-initiative'},
-                    button(
+                    subtlebutton(
                         {
                             'name': 'roll_initiative',
                             'type': 'roll',

@@ -84,6 +84,12 @@ def convert_html_attributes(attributes=None):
 def button(attributes=None, contents=None):
     return html_tag('button', attributes, contents)
 
+def subtlebutton(attributes=None, contents=None):
+    return span({'class': 'subtle-button'}, html_tag('button', attributes, contents))
+
+def invisiblebutton(attributes=None, contents=None):
+    return span({'class': 'invisible-button'}, html_tag('button', attributes, contents))
+
 def div(attributes=None, contents=None):
     return html_tag('div', attributes, contents)
 
