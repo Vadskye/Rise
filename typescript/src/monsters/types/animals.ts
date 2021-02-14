@@ -228,8 +228,7 @@ const animalInput: TypelessMonsterInput[] = [
     size: "large",
     speeds: { land: 50 },
     startingAttributes: { str: 2, dex: 1, con: 3, int: -7, wil: -2 },
-    // TODO: add powerMultiplier to weaponInput
-    weaponInput: [{ baseDamageDie: "1d6", name: "bite" }],
+    weaponInput: [{ baseDamageDie: "1d6", name: "bite", powerMultiplier: 0.5 }],
   },
   {
     alignment: "Always true neutral",
@@ -246,7 +245,7 @@ const animalInput: TypelessMonsterInput[] = [
     level: 2,
     name: "Pony",
     startingAttributes: { str: 1, con: 3, int: -7, wil: -2 },
-    weaponInput: [{ baseDamageDie: "1d6", name: "bite" }],
+    weaponInput: [{ baseDamageDie: "1d6", name: "bite", powerMultiplier: 0.5 }],
   },
   {
     alignment: "Always true neutral",

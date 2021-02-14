@@ -7,7 +7,7 @@ export function calculateStrike(monster: MonsterBase, weapon: Weapon): Calculate
   const attack = parseAttack({
     baseDamageDie: weapon.baseDamageDie,
     name: weapon.name,
-    powerMultiplier: 1,
+    powerMultiplier: weapon.powerMultiplier,
     weaponName: weapon.name as StandardWeaponName,
   });
   if (attackIsDamaging(attack)) {
