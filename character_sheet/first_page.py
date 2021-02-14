@@ -114,6 +114,7 @@ def statistics_header(destination):
             core_statistics(destination),
             defenses(),
             resistances(),
+            movement(),
         ])
     ])
 
@@ -243,10 +244,11 @@ def movement():
     return flex_col({'class': 'movement'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Movement')),
         "".join([
-            labeled_number_input(movement_type)
+            labeled_number_input(movement_type, input_attributes={
+                'name': f"{movement_type.lower()}_display",
+            })
             for movement_type in 'Land Climb Fly Swim'.split()
         ]),
-        freeform_number_input(),
     ])
 
 def abilities(destination):
