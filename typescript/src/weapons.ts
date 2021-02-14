@@ -9,6 +9,7 @@ interface CustomWeaponInput {
   baseDamageDie: string;
   damageTypes: DamageType[];
   name: string;
+  powerMultiplier?: 0 | 0.5 | 1;
   rangeIncrement?: number | null;
   tags?: WeaponTag[];
 }
@@ -33,6 +34,7 @@ export function parseWeaponInput(input: WeaponInput): Weapon {
       ? standardWeapons[input.name].baseDamageDie
       : input.baseDamageDie,
     damageTypes: [],
+    powerMultiplier: 1 as const,
     rangeIncrement: null,
     tags: [],
     ...(isStandardWeaponInput(input) && standardWeapons[input.name]),
