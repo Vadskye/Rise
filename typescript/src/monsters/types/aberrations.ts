@@ -115,4 +115,60 @@ aberrationInput.push({
   weaponInput: [{ name: "tentacle" }],
 });
 
+aberrationInput.push({
+  // Required
+  alignment: "Always true neutral",
+  armorInputs: [],
+  knowledge: {
+    0: `
+      A gibbering mouther is a horrible creature seemingly drawn from a lunatic's nightmares.
+      They are named for their tendency for speak gibberish to baffle the minds of their prey.
+      It is about 3 feet across and 3 to 4 feet high, and weighs about 200 pounds.
+    `,
+    5: `
+      Although gibbering mouthers are not intelligent enough to be actively evil, they thirst after bodily fluids and seem to prefer the blood of intelligent creatures.
+      They speak their gibberish in Common, but cannot understand it.
+    `,
+  },
+  level: 4,
+  name: "gibbering mouther",
+  size: "medium",
+  startingAttributes: { str: 0, dex: 1, con: 4, int: -6, per: 1, wil: 0 },
+  weaponInput: [{ name: "bite", powerMultiplier: 0.5, tags: ["sweeping 1"] }],
+
+  // Optional
+  attackInputs: [
+    {
+      crit: `
+        The target is is \\glossterm{confused} until the end of the next round.
+      `,
+      defense: "mental",
+      hit: `
+        If the target is at its maximum \\glossterm{hit points}, it is \\glossterm{dazed} until the end of the next round.
+        Otherwise, it is \\glossterm{confused} until the end of the next round.
+      `,
+      name: "Gibber",
+      preface: "The $name can use this ability as a \\glossterm{minor action}.",
+      // source: "magical",
+      target: "All creatures within a \\areamed radius from the $name",
+    },
+  ],
+  challengeRating: 4,
+  // delayedCalculations: [],
+  // description: "",
+  languages: ["Common"],
+  passiveAbilities: [
+    {
+      description: `
+        A $name has many mouths.
+        It can make two bite attacks as a single standard action.
+        In addition, its bite attacks have the Sweeping (1) tag.
+      `,
+      name: "Many-Mouthed",
+    },
+  ],
+  // skillPoints: {},
+  // speeds: {},
+});
+
 export const aberrations = addType("aberration", aberrationInput);
