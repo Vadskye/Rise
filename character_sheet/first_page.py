@@ -466,9 +466,15 @@ def vital_wound():
 def debuffs():
     return flex_col({'class': 'debuffs'}, [
         flex_row([
+            debuff('overwhelmed'),
+            debuff('surrounded'),
+            debuff('flying'),
+            debuff('flying poorly'),
+            debuff('prone', False),
+        ]),
+        flex_row([
             debuff('dazed'),
             debuff('dazzled'),
-            debuff('prone', False),
             debuff('shaken'),
             debuff('sickened'),
             debuff('slowed'),
@@ -494,7 +500,7 @@ def debuffs():
 
 def debuff(name, representable=True):
     return label({'class': 'debuff-active-label'}, [
-        checkbox({'name': name}),
+        checkbox({'name': name.replace(' ', '_')}),
         span(
             {'class': 'representable-debuff' if representable else 'unrepresentable-debuff'},
             name.capitalize() + '?'

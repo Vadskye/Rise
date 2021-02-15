@@ -668,8 +668,10 @@ def standard_damage_at_power(power):
 def debuffs():
     return js_wrapper(
         [
+            # conditional debuffs
+            'overwhelmed', 'surrounded', 'flying', 'flying_poorly', 'prone',
             # rank 1 debuffs
-            'dazed', 'dazzled', 'prone', 'shaken', 'sickened', 'slowed',
+            'dazed', 'dazzled', 'shaken', 'sickened', 'slowed',
             # rank 2 debuffs
             'frightened', 'nauseated', 'stunned', 'underwater',
             # rank 3 debuffs
@@ -686,6 +688,27 @@ def debuffs():
             let mental = 0;
             let reflex = 0;
 
+            // circumstantial effects
+            if (overwhelmed && !surrounded) {{
+                armor -= 2;
+                reflex -= 2;
+            }}
+            if (surrounded) {{
+                armor -= 4;
+                reflex -= 4;
+            }}
+            if (flying && !flying_poorly) {{
+                armor -= 2;
+                reflex -= 2;
+            }}
+            if (flying_poorly) {{
+                armor -= 4;
+                reflex -= 4;
+            }}
+            if (prone) {{
+                // TODO: represent maybe?
+            }}
+
             // rank 1 debuffs
             if (dazed && !stunned) {{
                 armor -= 2;
@@ -695,9 +718,6 @@ def debuffs():
             }}
             if (dazzled) {{
                 accuracy -= 2;
-            }}
-            if (prone) {{
-                // TODO: figure out how to represent this
             }}
             if (shaken && !frightened && !panicked) {{
                 accuracy -= 2;
