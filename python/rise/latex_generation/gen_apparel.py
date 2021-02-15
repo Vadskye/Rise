@@ -74,7 +74,7 @@ def generate_armor():
     apparel += [
         MagicItem(
             name="Ring of Protection",
-            level=4,
+            level=6,
             material_type='Ring',
             tags=[],
             description="""
@@ -84,7 +84,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Ring of Protection, Greater",
-            level=10,
+            level=12,
             material_type='Ring',
             tags=[],
             description="""
@@ -94,7 +94,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Ring of Protection, Greater",
-            level=16,
+            level=18,
             material_type='Ring',
             tags=[],
             description="""
@@ -677,37 +677,6 @@ def generate_armor():
             """,
             short_description="Grants +4 Fortitude defense",
         ),
-        MagicItem(
-            name="Fortified Armor",
-            # +2 levels since armor is secondary for this effect
-            level=5,
-            material_type='Body armor',
-            tags=[],
-            description="""
-                You gain a +2 \\glossterm<magic bonus> to Fortitude defense.
-            """,
-            short_description="Grants +2 Fortitude defense",
-        ),
-        MagicItem(
-            name="Fortified Armor, Greater",
-            level=11,
-            material_type='Body armor',
-            tags=[],
-            description="""
-                You gain a +3 \\glossterm<magic bonus> to Fortitude defense.
-            """,
-            short_description="Grants +3 Fortitude defense",
-        ),
-        MagicItem(
-            name="Fortified Armor, Supreme",
-            level=17,
-            material_type='Body armor',
-            tags=[],
-            description="""
-                You gain a +4 \\glossterm<magic bonus> to Fortitude defense.
-            """,
-            short_description="Grants +4 Fortitude defense",
-        ),
     ]
 
     apparel += [
@@ -735,37 +704,6 @@ def generate_armor():
             name="Willguard Amulet, Supreme",
             level=15,
             material_type='Amulet',
-            tags=[],
-            description="""
-                You gain a +4 \\glossterm<magic bonus> to Mental defense.
-            """,
-            short_description="Grants +4 Mental defense",
-        ),
-        MagicItem(
-            name="Willguard Armor",
-            # +2 levels since armor is secondary for this effect
-            level=5,
-            material_type='Body armor',
-            tags=[],
-            description="""
-                You gain a +2 \\glossterm<magic bonus> to Mental defense.
-            """,
-            short_description="Grants +2 Mental defense",
-        ),
-        MagicItem(
-            name="Willguard Armor, Greater",
-            level=11,
-            material_type='Body armor',
-            tags=[],
-            description="""
-                You gain a +3 \\glossterm<magic bonus> to Mental defense.
-            """,
-            short_description="Grants +3 Mental defense",
-        ),
-        MagicItem(
-            name="Willguard Armor, Supreme",
-            level=17,
-            material_type='Body armor',
             tags=[],
             description="""
                 You gain a +4 \\glossterm<magic bonus> to Mental defense.
