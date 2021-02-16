@@ -273,7 +273,7 @@ def humanoids(sample_monsters):
         active_abilities=[
             active_ability('Sneeky Stab', f"""
                 The stabber makes a shortsword strike.
-                If the target is defenseless, overwhelmed, or unaware, the damage becomes {goblin_stabber.weapon_damage(Weapon('shortsword')) + 2}.
+                If the target is \\glossterm<defenseless>, \\glossterm<surrounded>, or \\glossterm<unaware>, the damage becomes {goblin_stabber.weapon_damage(Weapon('shortsword')) + 2}.
             """),
         ],
         behavior='Attack lowest Strength',

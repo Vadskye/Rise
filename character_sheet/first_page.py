@@ -466,7 +466,6 @@ def vital_wound():
 def debuffs():
     return flex_col({'class': 'debuffs'}, [
         flex_row([
-            debuff('overwhelmed'),
             debuff('surrounded'),
             debuff('flying'),
             debuff('flying poorly'),
