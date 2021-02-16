@@ -88,12 +88,6 @@ revelation=MysticSphere(
             \\rank<5> The bonus increases to +3.
             \\rank<7> The bonus increases to +4.
         """, tags=['Attune (self)']),
-        # Spell('Boon of Many Eyes', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-        #     The target reduces its \\glossterm<overwhelm penalty> by 2.
-        # """, scaling="""
-        #     \\rank<5> The penalty reduction increases to 3.
-        #     \\rank<7> The penalty reduction increases to 4.
-        # """, tags=['Attune (self)']),
         Spell('Boon of Knowledge', 4, 'Yourself', """
             You gain a +4 \\glossterm<magic bonus> to all Knowledge skills (see \\pcref<Knowledge>).
             In addition, once per hour you may reroll one Knowledge check you make and take the higher result.
@@ -108,10 +102,11 @@ revelation=MysticSphere(
             \\rank<6> The range increases to 120 feet.
         """, tags=['Attune (self)']),
         Spell('Boon of Many Eyes', 3, 'Yourself', """
-            The target reduces its \\glossterm<overwhelm penalty> by 1.
+            The target reduces its penalties for being \\glossterm<surrounded> by 1.
         """, scaling="""
             \\rank<5> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
             \\rank<7> The the penalty reduction increases to 2.
+            You are still considered to be surrounded for the purpose of other abilities, even this reduces your penalties to 0.
         """, tags=['Attune (self)']),
         Spell('Reveal Weakness', 2, 'One creature within \\rngmed range', """
             When you cast this spell, choose one of the four defenses: Armor, Fortitude, Reflex, or Mental.

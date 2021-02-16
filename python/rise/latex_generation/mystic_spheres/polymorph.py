@@ -80,7 +80,7 @@ polymorph=MysticSphere(
 
             The target's size decreases by one \\glossterm<size category>, to a minimum of Tiny.
             This decreases its \\glossterm<base speed> and improves its \\glossterm<Stealth> skill.
-            It may also decrease the target's \\glossterm<reach> and make it easier to \\glossterm<overwhelm> (see \\pcref<Size in Combat>).
+            It may also decrease the target's \\glossterm<reach> (see \\pcref<Size in Combat>).
             However, its physical form is not altered fully to match its new size, and its Strength and Dexterity are unchanged.
         """, scaling="""
             \\rank<4> This spell can target an \\glossterm<ally> within \\rngmed range instead of you.
@@ -97,13 +97,13 @@ polymorph=MysticSphere(
             \\rank<7> The bonus increases to +16.
         """, tags=['Attune (target)']),
         # This has to be relatively high level if only because large creatures
-        # are so hard to overwhelm
+        # are so hard to surround
         Spell('Enlarge', 3, 'Yourself', """
             You can cast this spell as a \\glossterm<minor action>.
 
             The target's size increases by one \\glossterm<size category>, to a maximum of Huge.
             This increases its \\glossterm<base speed> and reduces its \\glossterm<Stealth> skill.
-            It may also increase the target's \\glossterm<reach> and make it harder to \\glossterm<overwhelm> (see \\pcref<Size in Combat>).
+            It may also increase the target's \\glossterm<reach> (see \\pcref<Size in Combat>).
             However, its physical form is not altered fully to match its new size, and its Strength and Dexterity are unchanged.
         """, scaling="""
             \\rank<5> This spell can target a Large or smaller \\glossterm<ally> within \\rngmed range instead of you.
