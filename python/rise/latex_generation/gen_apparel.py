@@ -1562,18 +1562,19 @@ def generate_worn():
             level=10,
             material_type='Circlet',
             description="""
-                You reduce your \\glossterm<overwhelm penalty> by 1.
+                You reduce your penalties for being \\glossterm<surrounded> by 1.
             """,
-            short_description="Reduces \\glossterm<overwhelm penalty> by 1",
+            short_description="Reduces penalty for being \\glossterm<surrounded> by 1",
         ),
         MagicItem(
             name="Circlet of Many Eyes, Greater",
             level=16,
             material_type='Circlet',
             description="""
-                You reduce your \\glossterm<overwhelm penalty> by 2.
+                You reduce your penalties for being \\glossterm<surrounded> by 2.
+                You are still considered to be surrounded for the purpose of other abilities, even this reduces your penalties to 0.
             """,
-            short_description="Reduces \\glossterm<overwhelm penalty> by 2",
+            short_description="Reduces penalty for being \\glossterm<surrounded> by 2",
         ),
     ]
 
@@ -2442,7 +2443,7 @@ def generate_worn():
                 As a standard action, you can activate this belt.
                 If you do, your size increases by one \\glossterm<size category>, to a maximum of Huge.
                 This increases your \\glossterm<base speed> and reduces your \\glossterm<Stealth> skill.
-                It may also increase your \\glossterm<reach> and make you harder to \\glossterm<overwhelm> (see \\pcref<Size in Combat>).
+                It may also increase your \\glossterm<reach> (see \\pcref<Size in Combat>).
                 However, your physical form is not altered fully to match your new size, and your Strength and Dexterity are unchanged.
                 This effect lasts until you activate the belt again, which returns you to your original size.
             """,
@@ -2470,7 +2471,7 @@ def generate_worn():
                 As a standard action, you can activate this belt.
                 If you do, your size increases by one \\glossterm<size category>, to a minimum of Tiny.
                 This decreases your \\glossterm<base speed> and improves your \\glossterm<Stealth> skill.
-                It may also decrease your \\glossterm<reach> and make you easier to \\glossterm<overwhelm> (see \\pcref<Size in Combat>).
+                It may also decrease your \\glossterm<reach> (see \\pcref<Size in Combat>).
                 This effect lasts until you activate the belt again, which returns you to your original size.
             """,
             short_description="Reduces your size",

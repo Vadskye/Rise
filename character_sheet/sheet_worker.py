@@ -669,7 +669,7 @@ def debuffs():
     return js_wrapper(
         [
             # conditional debuffs
-            'overwhelmed', 'surrounded', 'flying', 'flying_poorly', 'prone',
+            'surrounded', 'flying', 'flying_poorly', 'prone',
             # rank 1 debuffs
             'dazed', 'dazzled', 'shaken', 'sickened', 'slowed',
             # rank 2 debuffs
@@ -689,13 +689,9 @@ def debuffs():
             let reflex = 0;
 
             // circumstantial effects
-            if (overwhelmed && !surrounded) {{
+            if (surrounded) {{
                 armor -= 2;
                 reflex -= 2;
-            }}
-            if (surrounded) {{
-                armor -= 4;
-                reflex -= 4;
             }}
             if (flying && !flying_poorly) {{
                 armor -= 2;

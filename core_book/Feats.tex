@@ -626,8 +626,8 @@ You cannot gain the same feat twice.
         \ff[1]{Duelist Strike} You can use the \textit{duelist strike} ability as a standard action.
         \begin{freeability}{Duelist Strike}
             Make a melee \glossterm{strike}.
-            If you are not \glossterm{threatened} by more than one creature, you gain a \plus1 bonus to \glossterm{accuracy} with the strike.
-            If the target is not \glossterm{overwhelmed}, you gain a \plus1d bonus to damage with the strike.
+            If you are not \glossterm{surrounded}, you gain a \plus1 bonus to \glossterm{accuracy} with the strike.
+            If the target is not \glossterm{surrounded}, you gain a \plus1d bonus to damage with the strike.
 
             \rankline
             \featlevel{6} The accuracy bonus increases to \plus2.
@@ -635,15 +635,16 @@ You cannot gain the same feat twice.
             \featlevel{18} The accuracy bonus increases to \plus4.
         \end{freeability}
 
-        \ff[3]{Defensive Stance} You gain a \plus1 bonus to Armor defense as long as you wield a melee weapon and are not \glossterm{threatened} by more than one creature.
+        \ff[3]{Defensive Stance} You gain a \plus1 bonus to Armor defense as long as you wield a melee weapon and are not \glossterm{surrounded}.
 
-        \ff[6]{Duel Focus} You are treated as being \glossterm{threatened} by one fewer creature than you actually are for the purpose of determining your \glossterm{overwhelm penalty} and your abilities from this feat.
+        \ff[6]{Duel Focus} At the start of each round, you may choose a creature you can see.
+        During that round, you gain a \plus1 bonus to Armor and Reflex defenses against that creature.
 
-        \ff[9]{Riposte} You gain a \plus1 bonus to \glossterm{accuracy} with melee \glossterm{strikes} as long as you are not \glossterm{threatened} by more than one creature.
+        \ff[9]{Riposte} You gain a \plus1 bonus to \glossterm{accuracy} with melee \glossterm{strikes} as long as you are not \glossterm{surrounded}.
 
         \ff[12]{Greater Defensive Stance} The bonus from your \textit{defensive stance} ability increases to \plus2.
 
-        \ff[15]{Greater Duel Focus} The reduction in number of creatures threatening you from your \textit{duel focus} ability increases to two creatures.
+        \ff[15]{Greater Duel Focus} The bonus from your \textit{duel focus} ability increases to \plus2.
 
         \ff[18]{Greater Riposte} The bonus from your \textit{riposte} ability increases to \plus2.
     \end{feat}
@@ -866,7 +867,7 @@ You cannot gain the same feat twice.
         \ff[3]{Greater Demoralize} When you use the \textit{demoralize} ability, the target is \glossterm{shaken} by you as a \glossterm{condition} instead of being shaken the end of the next round.
         For details, see \pcref{Demoralize}.
 
-        \ff[6]{Threatening Presence} You are considered to be \glossterm{threatening} each \glossterm{enemy} within a \areamed emanation from you for the purpose of determining their \glossterm{overwhelm penalty}. 
+        \ff[6]{Threatening Presence} You are considered to be adjacent to all spaces within a 10 foot radius \glossterm{emanation} from you for the purpose of determining whether your \glossterm{enemies} are \glossterm{surrounded} (see \pcref{Being Surrounded})
 
         \ff[9]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
@@ -874,8 +875,8 @@ You cannot gain the same feat twice.
 
         \ff[15]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus9.
 
-        \ff[18]{Fearsome Foe} You are considered an additional creature for the purpose of determining the \glossterm{overwhelm penalty} you inflict on other creatures.
-        This can allow you to overwhelm creatures by yourself.
+        \ff[18]{Greater Threatening} The area of your \textit{threatening presence} ability increases to a \areasmall radius \glossterm{emanation}.
+        This can allow you to surround creatures by yourself.
     \end{feat}
 
     \begin{feat}{Iron Will}{General}
@@ -2580,7 +2581,7 @@ You cannot gain the same feat twice.
         After moving through that creature's space, other creatures block you as normal for the remainder of your movement.
         Certain unusual creatures that occupy their entire space, such as gelatinous cubes, may be immune to this ability.
 
-        \ff[9]{Eye of the Storm} You reduce your \glossterm{overwhelm penalty} by 1.
+        \ff[9]{Eye of the Storm} You reduce your penalties for being \glossterm{surrounded} by 1 (see \pcref{Being Surrounded}).
 
         \ff[12]{Greater Wind Dance} The bonus from your \textit{wind dance} ability increases to \plus2.
 
