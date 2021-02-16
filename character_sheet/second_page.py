@@ -779,7 +779,7 @@ def calc_armor():
                 plus(),
                 underlabel('Armor', number_input({'name': 'body_armor_defense_value'})),
                 plus(),
-                equation_misc_repeat('armor_defense', 3)
+                equation_misc_repeat('armor_defense', 2)
             ],
             result_attributes={
                 'disabled': 'true',
