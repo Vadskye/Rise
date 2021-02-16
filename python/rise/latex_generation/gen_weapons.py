@@ -512,7 +512,7 @@ def generate_weapons():
             material_type='Weapon',
             tags=[],
             description="""
-                At the start of each phase, each \\glossterm<surrounded> creature that you \\glossterm<threaten> with this weapon takes a -1 penalty to Armor and Reflex defenses during that phase.
+                At the start of each phase, each \\glossterm<surrounded> creature that is within your \\glossterm<reach> with this weapon takes a -1 penalty to Armor and Reflex defenses during that phase.
             """,
             short_description="Imposes -1 defense penalty on surrounded creatures",
         ),
@@ -522,7 +522,7 @@ def generate_weapons():
             material_type='Weapon',
             tags=[],
             description="""
-                At the start of each phase, each \\glossterm<surrounded> creature that you \\glossterm<threaten> with this weapon takes a -2 penalty to Armor and Reflex defenses during that phase.
+                At the start of each phase, each \\glossterm<surrounded> creature that is within your \\glossterm<reach> with this weapon takes a -2 penalty to Armor and Reflex defenses during that phase.
             """,
             short_description="Imposes -2 defense penalty on surrounded creatures",
         ),
