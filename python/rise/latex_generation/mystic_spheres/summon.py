@@ -36,7 +36,7 @@ summon=MysticSphere(
             Each round, you can choose the creature's actions by mentally commanding it as a \\glossterm<minor action>.
             There are only two actions it can take.
             As a \\glossterm<move action>, it can move as you direct.
-            As a standard action, it can make a melee \\glossterm<strike> against a creature it threatens.
+            As a standard action, it can make a melee \\glossterm<strike> against a creature within its \\glossterm<reach>.
             If it hits, it deals physical damage equal to 1d6 plus half your \\glossterm<power>.
             The subtypes of damage dealt by this attack depend on the creature's appearance, but are limited to bludgeoning, piercing, and slashing damage.
             Most animals bite or claw their foes, which deals bludgeoning and slashing damage.
@@ -147,7 +147,7 @@ summon=MysticSphere(
             This spell functions like the \\spell<summon monster> spell, except that the creature appears to be a Medium bear.
             Its attacks deal bludgeoning and slashing damage equal to 1d10 plus half your \\glossterm<power>.
             In addition, it suffers no penalty for attacking in a grapple.
-            As a standard action, it can make a \\glossterm<grapple> attack against a creature it threatens.
+            As a standard action, it can make a \\glossterm<grapple> attack against a creature within its \\glossterm<reach>.
             While grappling, the manifested creature can either make a strike or attempt to escape the grapple.
         """, scaling="damage", tags=['Attune (self)', 'Manifestation']),
         Spell('Summon Mount', 2, 'One unoccupied square on stable ground within \\rngmed range', """

@@ -91,7 +91,7 @@ telekinesis=MysticSphere(
             Any individual object or creature can only take damage once in this way, even if it is hit by multiple targets that are knocked flying.
             \\glance As above, except that that each target moves half as far and takes half damage.
         """, scaling="damage", tags=[]),
-        # Spell('Repulsive Grasp', 1, 'One creature or object you \\glossterm<threaten>', """
+        # Spell('Repulsive Grasp', 1, 'One creature or object within your \\glossterm<reach>', """
         #     This spell does not have the \\glossterm<Focus> tag.
         #     You must have a \\glossterm<free hand> to cast this spell.
 
