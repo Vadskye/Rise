@@ -73,6 +73,42 @@ def generate_armor():
 
     apparel += [
         MagicItem(
+            name="Lifebond Retribution Armor",
+            level=5,
+            material_type='Body armor',
+            tags=[],
+            description="""
+                At the end of each round, make an attack vs. Fortitude against each creature adjacent to you that caused you to lose \\glossterm<hit points> that round.
+                \\hit Each target takes 1d8+1 energy damage.
+            """,
+            short_description="Grants +1 Armor defense",
+        ),
+        MagicItem(
+            name="Lifebond Retribution Armor, Greater",
+            level=11,
+            material_type='Body armor',
+            tags=[],
+            description="""
+                At the end of each round, make an attack vs. Fortitude against each creature within a \\areamed radius of you that caused you to lose \\glossterm<hit points> that round.
+                \\hit Each target takes 2d6+2 energy damage.
+            """,
+            short_description="Grants +2 Armor defense",
+        ),
+        MagicItem(
+            name="Lifebond Retribution Armor, Supreme",
+            level=17,
+            material_type='Body armor',
+            tags=[],
+            description="""
+                At the end of each round, make an attack vs. Fortitude against each creature within a \\areahuge radius of you that caused you to lose \\glossterm<hit points> that round.
+                \\hit Each target takes 2d10+4 energy damage.
+            """,
+            short_description="Grants +3 Armor defense",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
             name="Ring of Protection",
             level=6,
             material_type='Ring',

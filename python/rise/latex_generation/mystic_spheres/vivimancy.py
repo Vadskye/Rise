@@ -192,6 +192,15 @@ vivimancy=MysticSphere(
             \\glance As above, except that the condition is removed at the end of the next round.
             \\crit As above, except that the effect lasts until this curse is removed.
         """, scaling="accuracy", tags=['Curse']),
+        Spell('Retributive Lifebond', 1, ['Yourself', 'see text'], """
+            At the end of each round, make an attack vs. Fortitude against each creature adjacent to you that caused you to lose \\glossterm<hit points> that round.
+            \\hit Each secondary target takes energy damage equal to 1d8 plus half your \\glossterm<power>.
+        """, scaling='damage', tags=['Attune (self)']),
+        Spell('Greater Retributive Lifebond', 4, ['Yourself', 'see text'], """
+            At the end of each round, make an attack vs. Fortitude against each creature within a \\areamed radius from you that caused you to lose \\glossterm<hit points> that round.
+            \\hit Each secondary target takes energy damage equal to 4d10 plus half your \\glossterm<power>.
+            \\glance As above, except that that each target takes half damage.
+        """, scaling='damage', tags=['Attune (self)']),
     ],
     rituals=[
         Spell('Remove Disease', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
