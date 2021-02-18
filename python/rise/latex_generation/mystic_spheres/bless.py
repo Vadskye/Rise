@@ -100,7 +100,7 @@ bless=MysticSphere(
             \\rank<3> The bonus increases to +3.
             \\rank<5> The bonus increases to +4.
             \\rank<7> The bonus increases to +5.
-        """, tags=['Swift']),
+        """, tags=['Swift'], focus=False),
         Spell('Blessing of the Purified Body', 2, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
             You can cast this spell as a \\glossterm<minor action>.
             You can only have one casting of this spell active at once.
