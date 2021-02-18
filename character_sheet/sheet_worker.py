@@ -43,20 +43,30 @@ def sum_variables(variables):
     return '+'.join(variables)
 
 def attribute_change(a):
-    misc = get_misc_variables(a, 1)
+    misc = get_misc_variables(a + '_starting', 2)
     return js_wrapper(
-        ['level', f'{a}_starting', *misc],
+        ['level', f'{a}_point_buy', *misc],
         f"""
+            var starting = {a}_point_buy > 0
+                ? {{
+                    1: 1,
+                    2: 2,
+                    4: 3,
+                    6: 4,
+                }}[{a}_point_buy]
+                : {a}_point_buy;
+            starting += {sum_variables(misc)};
             var scaling = 0;
-            if ({a}_starting === 1) {{
+            if (starting === 1) {{
                 scaling = Math.floor(level / 4);
-            }} else if ({a}_starting >= 2) {{
-                scaling = Math.floor(({a}_starting-1)*0.5*(level - 1));
+            }} else if (starting >= 2) {{
+                scaling = Math.floor((starting-1)*0.5*(level - 1));
             }}
 
             setAttrs({{
-                {a}: {a}_starting + scaling + {sum_variables(misc)},
+                {a}: starting + scaling,
                 {a}_scaling: scaling,
+                {a}_starting: starting,
             }});
         """
     )

@@ -159,38 +159,40 @@ def calc_skill(skill_name, attribute=None, blank_input=False):
 def calc_attributes():
     return flex_col({'class': 'calc-attributes'}, [
         flex_wrapper(div({'class': 'section-header attributes-header'}, 'Attributes')),
-        ''.join([calc_attribute(attribute.lower()) for attribute in ATTRIBUTES]),
+        ''.join([calc_attribute(attribute) for attribute in ATTRIBUTES]),
     ])
 
 def calc_attribute(attribute_name):
+    attribute_lower = attribute_name.lower()
     return ''.join([
-        equation(
-            [
-                underlabel('(Base)', number_input({
-                    'name': attribute_name + '_starting',
-                })),
-                plus(),
-                underlabel('Lvl mod', number_input({
-                    'disabled': True,
-                    'name': attribute_name + '_scaling_display',
-                    'value': '(@{' + attribute_name + '_scaling})',
-                })),
-                plus(),
-                equation_misc(attribute_name),
-            ],
-            result_attributes={
-                'disabled': 'true',
-                'name': attribute_name + '_display',
-                'value': '(@{' + attribute_name + '})',
-            },
-            result_label=ATTRIBUTE_SHORTHAND[attribute_name],
-            underlabel_attributes={'class': 'attribute-name'},
-        )
+        flex_row({'class': 'attribute-calc'}, [
+            underlabel('Total', number_input({
+                'disabled': True,
+                'name': attribute_lower + '_total_display',
+                'value': '(@{' + attribute_lower + '})',
+            })),
+            div({'class': 'calc-header'}, attribute_name),
+            equation(
+                [
+                    underlabel('Points', number_input({
+                        'name': attribute_lower + '_point_buy',
+                    })),
+                    plus(),
+                    equation_misc_repeat(attribute_lower + '_starting', 2),
+                ],
+                result_attributes={
+                    'disabled': 'true',
+                    'name': attribute_lower + '_starting_display',
+                    'value': '(@{' + attribute_lower + '_starting})',
+                },
+                result_label='(Base)',
+            )
+        ]),
     ])
 
 def level_chart():
     return flex_row([
-        standard_damage(),
+        # standard_damage(),
         calc_attributes(),
     ])
 
