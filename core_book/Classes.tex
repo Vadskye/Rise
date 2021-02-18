@@ -329,7 +329,7 @@ This choice determines a great deal about your character's abilities.
     \tb{Rank} & \tb{Min Level} & \tb{Divine Magic} & \tb{Divine Spell Mastery}   & \tb{Domain Influence}  & \tb{Healer} \tableheaderrule
     0 & \tdash & Cantrips                        & Mystic training             & Domains, domain gift & Healer's wisdom         \\
     1 & 1      & Spellcasting                    & Insightful caster           & Domain gift          & Restoration             \\
-    2 & 4      & Spell rank (2)                  & Mystic insight              & Domain aspect        & Healer's grace          \\
+    2 & 4      & Spell rank (2), spell knowledge & Mystic insight              & Domain aspect        & Healer's grace          \\
     3 & 7      & Spell rank (3)                  & Wellspring of power         & Domain aspect        & Divine healing          \\
     4 & 10     & Spell rank (4), spell knowledge & Mystic insight              & Domain essence       & Greater healer's wisdom \\
     5 & 13     & Spell rank (5)                  & Greater insightful caster   & Domain essence       & Greater healer's grace  \\
@@ -438,18 +438,18 @@ This choice determines a great deal about your character's abilities.
         \cf{Clr}[2]{Spell Rank}[Magical] You become a rank 2 divine spellcaster.
         This gives you access to spells that require a minimum rank of 2.
 
+        \cf{Clr}[2]{Spell Knowledge} You learn an additional divine \glossterm{spell}.
+
         \cf*{Clr}[3]{Spell Rank}[Magical] You become a rank 3 divine spellcaster.
         This gives you access to spells that require a minimum rank of 3 and can improve the effectiveness of your existing spells.
 
         \cf*{Clr}[4]{Spell Rank}[Magical] You become a rank 4 divine spellcaster.
         This gives you access to spells that require a minimum rank of 4 and can improve the effectiveness of your existing spells.
 
-        \cf{Clr}[4]{Spell Knowledge} You learn an additional divine \glossterm{spell}.
+        \cf*{Clr}[4]{Spell Knowledge} You learn an additional divine \glossterm{spell}.
 
         \cf*{Clr}[5]{Spell Rank}[Magical] You become a rank 5 divine spellcaster.
         This gives you access to spells that require a minimum rank of 5 and can improve the effectiveness of your existing spells.
-
-        \cf*{Clr}[5]{Spell Knowledge} You learn an additional divine \glossterm{spell}.
 
         \cf*{Clr}[6]{Spell Rank}[Magical] You become a rank 6 divine spellcaster.
         This gives you access to spells that require a minimum rank of 6 and can improve the effectiveness of your existing spells.
@@ -949,12 +949,12 @@ This choice determines a great deal about your character's abilities.
     \tb{Rank} & \tb{Min Level} & \tb{Elementalist}         & \tb{Nature Magic} & \tb{Nature Spell Mastery}   & \tb{Shifter}               & \tb{Wildspeaker}         \tableheaderrule
     0 & \tdash & Elemental lore            & Cantrips                        & Natural training            & Shifting defense                                   & Nature's ally           \\
     1 & 1      & Elemental balance         & Spellcasting                    & Combat caster               & Wild aspects                                       & Natural servant         \\
-    2 & 4      & Elemental magic           & Spell rank (2)                  & Mystic insight              & Shift body                                         & Animal speech           \\
+    2 & 4      & Elemental magic           & Spell rank (2), spell knowledge & Mystic insight              & Shift body                                         & Animal speech           \\
     3 & 7      & Elemental influence       & Spell rank (3)                  & Wellspring of power         & Glancing natural strikes, greater shifting defense & Greater nature's ally   \\
     4 & 10     & Greater elemental balance & Spell rank (4), spell knowledge & Mystic insight              & Wild aspect                                        & Greater natural servant \\
     5 & 13     & Elemental spell           & Spell rank (5)                  & Greater combat caster       & Greater shift body                                 & Plant speech            \\
-    6 & 16     & Elemental control         & Spell rank (6)                  & Mystic insight              & Natural force, supreme shifting defense                           & Supreme nature's ally   \\
-    7 & 19     & Supreme elemental balance & Spell rank (7), spell knowledge & Greater wellspring of power & Wild adaptability                                        & Supreme natural servant \\
+    6 & 16     & Elemental control         & Spell rank (6)                  & Mystic insight              & Natural force, supreme shifting defense            & Supreme nature's ally   \\
+    7 & 19     & Supreme elemental balance & Spell rank (7), spell knowledge & Greater wellspring of power & Wild adaptability                                  & Supreme natural servant \\
 \end{dtabularx}
     \end{dtable!*}
 
@@ -1093,18 +1093,18 @@ This choice determines a great deal about your character's abilities.
         \cf{Drd}[2]{Spell Rank}[Magical] You become a rank 2 nature spellcaster.
         This gives you access to spells that require a minimum rank of 2.
 
+        \cf{Drd}[2]{Spell Knowledge} You learn an additional nature \glossterm{spell}.
+
         \cf*{Drd}[3]{Spell Rank}[Magical] You become a rank 3 nature spellcaster.
         This gives you access to spells that require a minimum rank of 3 and can improve the effectiveness of your existing spells.
 
         \cf*{Drd}[4]{Spell Rank}[Magical] You become a rank 4 nature spellcaster.
         This gives you access to spells that require a minimum rank of 4 and can improve the effectiveness of your existing spells.
 
-        \cf{Drd}[4]{Spell Knowledge} You learn an additional nature \glossterm{spell}.
+        \cf*{Drd}[4]{Spell Knowledge} You learn an additional nature \glossterm{spell}.
 
         \cf*{Drd}[5]{Spell Rank}[Magical] You become a rank 5 nature spellcaster.
         This gives you access to spells that require a minimum rank of 5 and can improve the effectiveness of your existing spells.
-
-        \cf*{Drd}[5]{Spell Knowledge} You learn an additional nature \glossterm{spell}.
 
         \cf*{Drd}[6]{Spell Rank}[Magical] You become a rank 6 nature spellcaster.
         This gives you access to spells that require a minimum rank of 6 and can improve the effectiveness of your existing spells.
@@ -2240,12 +2240,12 @@ This choice determines a great deal about your character's abilities.
     \tb{Rank} & \tb{Min Level} & \tb{Devoted Paragon}  & \tb{Divine Magic}               & \tb{Divine Spell Expertise} & \tb{Stalwart Guardian}      & \tb{Zealous Warrior}       \tableheaderrule
     0         & \tdash         & Devoted mind          & Cantrips                        & Divine training             & Enduring defender           & Zealous exertion                           \\
     1         & 1              & Aligned aura          & Spellcasting                    & Combat caster               & Lay on hands                & Smite                                      \\
-    2         & 4              & Aligned immunity      & Spell rank (2)                  & Insight point               & Stalward resilience         & Zealous offense                            \\
+    2         & 4              & Aligned immunity      & Spell rank (2), spell knowledge & Insight point               & Stalward resilience         & Zealous offense                            \\
     3         & 7              & Paragon power         & Spell rank (3)                  & Wellspring of power         & Greater enduring defender   & Glancing strikes                           \\
-    4         & 10             & Greater aligned aura  & Spell rank (4), spell knowledge & Insight point               & Greater lay on hands        & Zealous purge               \\
+    4         & 10             & Greater aligned aura  & Spell rank (4), spell knowledge & Insight point               & Greater lay on hands        & Zealous purge                              \\
     5         & 13             & Greater devoted mind  & Spell rank (5)                  & Greater combat caster       & Greater stalwart resilience & Greater zealous offense                    \\
     6         & 16             & Greater paragon power & Spell rank (6)                  & Insight point               & Supreme enduring defender   & Greater zealous exertion, zealous fixation \\
-    7         & 19             & Supreme aligned aura  & Spell rank (7), spell knowledge & Greater wellspring of power & Supreme lay on hands        & Pass judgment               \\
+    7         & 19             & Supreme aligned aura  & Spell rank (7), spell knowledge & Greater wellspring of power & Supreme lay on hands        & Pass judgment                              \\
 \end{dtabularx}
     \end{dtable!*}
 
@@ -2374,18 +2374,18 @@ This choice determines a great deal about your character's abilities.
         \cf{Pal}[2]{Spell Rank}[Magical] You become a rank 2 divine spellcaster.
         This gives you access to spells that require a minimum rank of 2.
 
+        \cf{Pal}[2]{Spell Knowledge} You learn an additional divine \glossterm{spell}.
+
         \cf*{Pal}[3]{Spell Rank}[Magical] You become a rank 3 divine spellcaster.
         This gives you access to spells that require a minimum rank of 3 and can improve the effectiveness of your existing spells.
 
         \cf*{Pal}[4]{Spell Rank}[Magical] You become a rank 4 divine spellcaster.
         This gives you access to spells that require a minimum rank of 4 and can improve the effectiveness of your existing spells.
 
-        \cf{Pal}[4]{Spell Knowledge} You learn an additional divine \glossterm{spell}.
+        \cf*{Pal}[4]{Spell Knowledge} You learn an additional divine \glossterm{spell}.
 
         \cf*{Pal}[5]{Spell Rank}[Magical] You become a rank 5 divine spellcaster.
         This gives you access to spells that require a minimum rank of 5 and can improve the effectiveness of your existing spells.
-
-        \cf*{Pal}[5]{Spell Knowledge} You learn an additional divine \glossterm{spell}.
 
         \cf*{Pal}[6]{Spell Rank}[Magical] You become a rank 6 divine spellcaster.
         This gives you access to spells that require a minimum rank of 6 and can improve the effectiveness of your existing spells.
@@ -3361,7 +3361,7 @@ This choice determines a great deal about your character's abilities.
     \tb{Rank} & \tb{Min Level} & \tb{Arcane Magic}                  & \tb{Arcane Spell Mastery}   & \tb{Draconic Magic}        & \tb{Innate Arcanist}         & \tb{Wild Magic} \tableheaderrule
     0         & \tdash         & Cantrips, mage armor               & Mystic insight              & Draconic bloodline         & Arcane body                  & Chaotic exertion           \\
     1         & 1              & Spellcasting                       & Combat caster               & Draconic focus             & Innate magic                 & Wildspell                  \\
-    2         & 4              & Spell rank (2)                     & Mystic insight              & Draconic hide              & Personal enhancement         & Chaotic miscast, wild soul \\
+    2         & 4              & Spell rank (2), spell knowledge    & Mystic insight              & Draconic hide              & Personal enhancement         & Chaotic miscast, wild soul \\
     3         & 7              & Spell rank (3), greater mage armor & Wellspring of power         & Greater draconic bloodline & Mystic tolerance             & Greater chaotic exertion   \\
     4         & 10             & Spell rank (4), spell knowledge    & Mystic insight              & Draconic precision         & Spell absorption             & Greater wildspell          \\
     5         & 13             & Spell rank (5)                     & Greater combat caster       & Greater draconic hide      & Greater personal enhancement & Controlled chaos           \\
@@ -3436,6 +3436,8 @@ This choice determines a great deal about your character's abilities.
         \cf{Sor}[2]{Spell Rank}[Magical] You become a rank 2 arcane spellcaster.
         This gives you access to spells that require a minimum rank of 2.
 
+        \cf{Sor}[2]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
+
         \cf*{Sor}[3]{Spell Rank}[Magical] You become a rank 3 arcane spellcaster.
         This gives you access to spells that require a minimum rank of 3 and can improve the effectiveness of your existing spells.
 
@@ -3446,12 +3448,10 @@ This choice determines a great deal about your character's abilities.
         \cf*{Sor}[4]{Spell Rank}[Magical] You become a rank 4 arcane spellcaster.
         This gives you access to spells that require a minimum rank of 4 and can improve the effectiveness of your existing spells.
 
-        \cf{Sor}[4]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
+        \cf*{Sor}[4]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
 
         \cf*{Sor}[5]{Spell Rank}[Magical] You become a rank 5 arcane spellcaster.
         This gives you access to spells that require a minimum rank of 5 and can improve the effectiveness of your existing spells.
-
-        \cf*{Sor}[5]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
 
         \cf*{Sor}[6]{Spell Rank}[Magical] You become a rank 6 arcane spellcaster.
         This gives you access to spells that require a minimum rank of 6 and can improve the effectiveness of your existing spells.
@@ -3648,8 +3648,8 @@ This choice determines a great deal about your character's abilities.
 \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
     \tb{Rank} & \tb{Min Level} & \tb{Blessings of the Abyss}                    & \tb{Pact Magic}                         & \tb{Pact Spell Mastery}     & \tb{Soulkeeper's Chosen} \tableheaderrule
     0         & \tdash         & Abyssal tolerance                              & Armor tolerance, cantrips               & Infernal training           & Empowering whispers         \\
-    1         & 1              & Eldritch blast                                 & Spellcasting                            & Combat caster               & Possession                   \\
-    2         & 4              & Fiendish resistance                            & Spell rank (2)                          & Mystic insight              & Exchange soul fragment      \\
+    1         & 1              & Eldritch blast                                 & Spellcasting                            & Combat caster               & Possession                  \\
+    2         & 4              & Fiendish resistance                            & Spell rank (2), spell knowledge         & Mystic insight              & Exchange soul fragment      \\
     3         & 7              & Abyssal jaunt                                  & Spell rank (3), greater armor tolerance & Wellspring of power         & Greater empowering whispers \\
     4         & 10             & Abyssal substitution, hellfire                 & Spell rank (4), spell knowledge         & Mystic insight              & Greater possession          \\
     5         & 13             & Greater fiendish resistance                    & Spell rank (5)                          & Greater combat caster       & Exchange vitality           \\
@@ -3815,6 +3815,8 @@ This choice determines a great deal about your character's abilities.
         \cf{War}[2]{Spell Rank}[Magical] You become a rank 2 pact spellcaster.
         This gives you access to spells that require a minimum rank of 2.
 
+        \cf{War}[2]{Spell Knowledge} You learn an additional pact \glossterm{spell}.
+
         \cf*{War}[3]{Spell Rank}[Magical] You become a rank 3 pact spellcaster.
         This gives you access to spells that require a minimum rank of 3 and can improve the effectiveness of your existing spells.
 
@@ -3823,12 +3825,10 @@ This choice determines a great deal about your character's abilities.
         \cf*{War}[4]{Spell Rank}[Magical] You become a rank 4 pact spellcaster.
         This gives you access to spells that require a minimum rank of 4 and can improve the effectiveness of your existing spells.
 
-        \cf{War}[4]{Spell Knowledge} You learn an additional pact \glossterm{spell}.
+        \cf*{War}[4]{Spell Knowledge} You learn an additional pact \glossterm{spell}.
 
         \cf*{War}[5]{Spell Rank}[Magical] You become a rank 5 pact spellcaster.
         This gives you access to spells that require a minimum rank of 5 and can improve the effectiveness of your existing spells.
-
-        \cf*{War}[5]{Spell Knowledge} You learn an additional pact \glossterm{spell}.
 
         \cf*{War}[6]{Spell Rank}[Magical] You become a rank 6 pact spellcaster.
         This gives you access to spells that require a minimum rank of 6 and can improve the effectiveness of your existing spells.
@@ -3980,7 +3980,7 @@ This choice determines a great deal about your character's abilities.
     \tb{Rank} & \tb{Min Level} & \tb{Alchemist}              & \tb{Arcane Magic}                  & \tb{Arcane Scholar}     & \tb{Arcane Spell Mastery}   \tableheaderrule
     0         & \tdash         & Alchemical infusion         & Cantrips, mage armor               & Scholastic lore         & Mystic training             \\
     1         & 1              & Portable workshop           & Spellcasting                       & Ritualist               & Insightful caster           \\
-    2         & 4              & Alchemical discovery        & Spell rank (2)                     & Scholastic insight      & Mystic insight              \\
+    2         & 4              & Alchemical discovery        & Spell rank (2), spell knowledge    & Scholastic insight      & Mystic insight              \\
     3         & 7              & Greater alchemical infusion & Spell rank (3), greater mage armor & Greater scholastic lore & Wellspring of power         \\
     4         & 10             & Experienced quaffing        & Spell rank (4), spell knowledge    & Contingency             & Mystic insight              \\
     5         & 13             & Alchemical discovery        & Spell rank (5)                     & Arcane insight          & Greater insightful caster   \\
@@ -4099,6 +4099,8 @@ This choice determines a great deal about your character's abilities.
         \cf{Wiz}[2]{Spell Rank}[Magical] You become a rank 2 arcane spellcaster.
         This gives you access to spells that require a minimum rank of 2.
 
+        \cf{Wiz}[2]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
+
         \cf*{Wiz}[3]{Spell Rank}[Magical] You become a rank 3 arcane spellcaster.
         This gives you access to spells that require a minimum rank of 3 and can improve the effectiveness of your existing spells.
 
@@ -4109,12 +4111,10 @@ This choice determines a great deal about your character's abilities.
         \cf*{Wiz}[4]{Spell Rank}[Magical] You become a rank 4 arcane spellcaster.
         This gives you access to spells that require a minimum rank of 4 and can improve the effectiveness of your existing spells.
 
-        \cf{Wiz}[4]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
+        \cf*{Wiz}[4]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
 
         \cf*{Wiz}[5]{Spell Rank}[Magical] You become a rank 5 arcane spellcaster.
         This gives you access to spells that require a minimum rank of 5 and can improve the effectiveness of your existing spells.
-
-        \cf*{Wiz}[5]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
 
         \cf*{Wiz}[6]{Spell Rank}[Magical] You become a rank 6 arcane spellcaster.
         This gives you access to spells that require a minimum rank of 6 and can improve the effectiveness of your existing spells.
