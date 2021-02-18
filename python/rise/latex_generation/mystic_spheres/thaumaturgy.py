@@ -63,7 +63,7 @@ thaumaturgy=MysticSphere(
             % No relevant \\crit effect
         """, scaling="accuracy", tags=[]),
         Spell('Deattunement', 3, 'One creature within \\rngmed range', """
-            Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against the target.
+            Make an attack vs. Fortitude with a +2 bonus to \\glossterm<accuracy> against the target.
             \\hit The target stops being \\glossterm<attuned> to one effect of its choice that it is currently attuned to.
             % No \\glance effect
             \\crit The target stops being \\glossterm<attuned> to two abilities of its choice that it is currently attuned to.
@@ -178,7 +178,7 @@ thaumaturgy=MysticSphere(
             \\rank<6> Whenever you sustain an ability with this effect, you can also make any relevant choices as part of sustaining the ability.
         """, tags=['Attune (self)']),
         Spell('Spellseal', 2, 'One creature within \\rngmed range', """
-            Make an attack vs. Mental against the target.
+            Make an attack vs. Fortitude with a +2 bonus to \\glossterm<accuracy> against the target.
             \\hit As a \\glossterm<condition>, the next time the target tries to cast a spell, it \\glossterm<miscasts> that spell instead.
             When the target miscasts a spell, this effect ends.
             \\crit As above, except that the effect ends after the target miscasts two spells instead of only one.
