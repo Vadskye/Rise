@@ -69,6 +69,7 @@ def main(ability_cards, destination):
         call(['lessc', 'first_page.less', 'first_page.css'])
         call(['lessc', 'second_page.less', 'second_page.css'])
         call(['lessc', 'third_page.less', 'third_page.css'])
+        call(['lessc', 'reference_page.less', 'reference_page.css'])
         call(['lessc', 'sheet.less', 'sheet.css'])
         call(['lessc', 'paper_sheet.less', 'paper_sheet.css'])
     else:
@@ -85,14 +86,14 @@ def main(ability_cards, destination):
 
         class_pattern = re.compile(r'\.([a-z\-]+)\b')
         with open('roll20.less', 'w') as output_file:
-            for filename in ['sheet', 'first_page', 'second_page', 'third_page', 'roll20_custom']:
+            for filename in ['sheet', 'first_page', 'second_page', 'third_page', 'roll20_custom', 'reference_page']:
                 with open(filename + '.less', 'r') as input_file:
-                    if filename in ['first_page', 'second_page', 'third_page']:
+                    if filename in ['first_page', 'second_page', 'third_page', 'reference_page']:
                         output_file.write(f".sheet-{filename.replace('_', '-')} {{\n")
                     for line in input_file:
                         line = class_pattern.sub(r'.sheet-\1', line)
                         output_file.write(line)
-                    if filename in ['first_page', 'second_page', 'third_page']:
+                    if filename in ['first_page', 'second_page', 'third_page', 'reference_page']:
                         output_file.write("\n}")
                 output_file.write('\n\n')
 
