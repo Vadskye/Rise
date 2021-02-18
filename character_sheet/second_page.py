@@ -877,18 +877,3 @@ def calc_mental():
             },
         ),
     ])
-
-
-def standard_damage():
-    return flex_col({'class': 'standard-damage'}, [
-        div({'class': 'section-header'}, 'Dice Pools'),
-        flex_row({'class': 'damage-chart'}, [
-            flex_col([
-                div({'class': 'header'}, 'Damage'),
-                "".join([
-                    div(standard_damage_at_power(i))
-                    for i in range(-4, 25, 2)
-                ]),
-            ])
-        ])
-    ])

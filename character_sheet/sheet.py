@@ -8,6 +8,7 @@ import second_page
 import header_bar
 import sheet_worker
 import third_page
+import reference_page
 import ability_cards as generate_ability_cards
 from subprocess import call
 import sys
@@ -50,6 +51,12 @@ def main(ability_cards, destination):
                 debug_html_wrapper(third_page.create_page(), destination),
             ]) + '\n')
 
+        with open('reference_page.html', 'w') as fh:
+            fh.write(''.join([
+                debug_stylesheets('reference_page', destination),
+                debug_html_wrapper(reference_page.create_page(), destination),
+            ]) + '\n')
+
         if ability_cards:
             with open('ability_cards.html', 'w') as fh:
                 fh.write(''.join([
@@ -73,6 +80,7 @@ def main(ability_cards, destination):
                 first_page.create_page(cgi.DESTINATION),
                 second_page.create_page(cgi.DESTINATION),
                 third_page.create_page(),
+                reference_page.create_page(),
             ]))
 
         class_pattern = re.compile(r'\.([a-z\-]+)\b')
