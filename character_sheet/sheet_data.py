@@ -17,7 +17,7 @@ ATTRIBUTE_SKILLS = {
     'intelligence': ['Craft _________', 'Deduction', 'Devices', 'Disguise', 'Knowledge1', 'Knowledge2', 'Linguistics', 'Medicine'],
     'perception': ['Awareness', 'Creature Handling', 'Social Insight', 'Spellsense', 'Survival'],
     'willpower': [],
-    'other': ['Deception', 'Intimidate', 'Perform _________', 'Persuasion'],
+    'other': ['Deception', 'Intimidate', 'Perform _________', 'Persuasion', 'Profession'],
 }
 
 ALL_SKILLS = ['Awareness', 'Balance', 'Deception', 'Climb', 'Craft', 'Creature Handling',
