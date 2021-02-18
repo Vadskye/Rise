@@ -175,7 +175,7 @@ barrier=MysticSphere(
         Spell('Retributive Kinetic Shield', 5, 'Yourself', """
             You can cast this spell as a \\glossterm<minor action>.
 
-            You gain a +8 \\glossterm<magic bonus> against \\glossterm<physical damage>.
+            You gain a +8 \\glossterm<magic bonus> to \\glossterm<resistance> against \\glossterm<physical damage>.
             In addition, whenever you resist physical damage, the attacker takes energy damage equal to half the damage resisted this way.
             If the attacker is beyond \\rngshort range of you, this reflection fails.
             Any effect which increases this spell's range increases the range of this effect by the same amount.
