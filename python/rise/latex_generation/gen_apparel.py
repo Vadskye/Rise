@@ -1909,18 +1909,28 @@ def generate_worn():
         short_description="Teleport seven leages with a step",
     ))
 
-    apparel.append(MagicItem(
-        name="Winged Boots",
-        level=10,
-        material_type='Boots',
-        description="""
-            You gain a \\glossterm<fly speed> equal to your \\glossterm<base speed>.
-            However, the boots are not strong enough to keep you aloft indefinitely.
-            At the end of each round, if you are not standing on solid ground, the magic of the boots fails and you fall normally.
-            They do not function again until you land on solid ground.
-        """,
-        short_description="Grants limited flight",
-    ))
+    apparel += [
+        MagicItem(
+            name="Winged Boots",
+            level=13,
+            material_type='Boots',
+            description="""
+                You gain a \\glossterm<fly speed> equal to your \\glossterm<base speed> with a maximum height of 15 feet (see \\pcref<Flying>).
+                If you are above that height, you gain a \\glossterm<glide speed> equal to your base speed instead.
+            """,
+            short_description="Grants flight up to 15 feet high",
+        ),
+        MagicItem(
+            name="Winged Boots, Greater",
+            level=19,
+            material_type='Boots',
+            description="""
+                You gain a \\glossterm<fly speed> equal to your \\glossterm<base speed> with a maximum height of 30 feet (see \\pcref<Flying>).
+                If you are above that height, you gain a \\glossterm<glide speed> equal to your base speed instead.
+            """,
+            short_description="Grants flight up to 30 feet high",
+        ),
+    ]
 
     apparel += [
         MagicItem(
