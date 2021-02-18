@@ -72,12 +72,14 @@ cryomancy=MysticSphere(
             \\hit The target takes piercing and cold damage equal to 2d8 plus your \\glossterm<power> (see \\pcref<Multiple Damage Types>).
             \\glance As above, except that that the target takes half damage.
         """, scaling="damage", tags=['Manifestation']),
-        Spell('Freeze Poison', 2, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
-            The target takes 1d6 cold damage.
+        Spell('Freeze Poison', 1, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
+            The target takes 1d4 cold damage.
             In addition, it gains an additional success to resist a poison currently affecting it (see \\pcref<Poison>).
         """, scaling="""
-            \\rank<4> The number of additional successes increases to two.
-            \\rank<6> The number of additional successes increases to three, which is enough to remove most poisons immediately.
+            \\rank<3> The number of additional successes increases to two.
+            The target can split these successes among any number of different poisons affecting it.
+            \\rank<5> The number of additional successes increases to three.
+            \\rank<7> The number of additional successes increases to four.
         """, tags=[]),
         Spell('Brittle Chill', 3, 'One creature or object within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
