@@ -353,7 +353,8 @@ You cannot gain the same feat twice.
         \parhead{Special} You can only have one Bloodline feat.
 
         \ff[1]{Holy Smite} You can use the \textit{holy smite} ability as a standard action.
-        \begin{freeability}{Smite}[Magical]
+        In addition, if you have the \textit{smite} paladin ability and your \textit{devoted alignment} is good, you gain a \plus2 bonus to \glossterm{power} with the \textit{holy smite} ability.
+        \begin{freeability}{Holy Smite}[Magical]
             Make a \glossterm{strike}.
             Because this is a \glossterm{magical} ability, you use your \glossterm{magical} \glossterm{power} to determine your damage instead of your \glossterm{mundane} power.
             If your target is good, the strike deals no damage.
@@ -2072,6 +2073,7 @@ You cannot gain the same feat twice.
 
         \ff[3]{Augmented Vision} You gain a \plus2 bonus to the Awareness skill.
         In addition, you gain the \glossterm{low-light vision} ability, allowing you to treat sources of light as if they had double their normal illumination range.
+        If you already have low-light vision, you double its benefit, allowing you to treat sources of light as if they had four times their normal illumination range.
 
         \ff[6]{Certain Sight} You are immune to being \glossterm{dazzled} and \glossterm{blinded}.
 
@@ -2136,9 +2138,9 @@ You cannot gain the same feat twice.
 
         \ff[3]{Friendly Fire} Whenever you deal fire damage to your \glossterm{allies}, you deal half damage, and that damage is treated as \glossterm{environmental damage}.
 
-        \ff[6]{Lingering Flame} Whenever you make a creature lose \glossterm{hit points} with fire damage, that creature takes 1d8 fire damage at the end of the next round.
+        \ff[6]{Lingering Flame} Whenever you make a creature lose \glossterm{hit points} with fire damage, that creature takes 1d10 fire damage at the end of the next round.
         That creature then becomes immune to this effect until it takes a \glossterm{short rest}.
-        This damage increases by \plus1d at 6th level and every 3 levels thereafter.
+        This damage increases by \plus1d at 9th level and every 3 levels thereafter.
 
         \ff[9]{Personal Pyromancy} You gain an additional \glossterm{attunement point}.
         You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Pyromancy} \glossterm{mystic sphere}.
@@ -2373,21 +2375,23 @@ You cannot gain the same feat twice.
         When you gain access to a new spell level, you can change which spell you know from that \glossterm{mystic sphere}.
 
         \ff[3]{Verdant Allies} Your speed is not reduced when moving in light or heavy \glossterm{undergrowth}.
-        In addition, you can ignore \glossterm{concealment} from plants when attacking.
+        In addition, you can ignore \glossterm{cover} and \glossterm{concealment} (but not \glossterm{total cover}) from plants whenever doing so would be beneficial to you, as the plants move out of the way to help you.
+        This prevents you from suffering penalties on your attacks, and also prevents creatures from using cover or concealment from plants to hide from you.
 
-        \ff[6]{Creative Genesis} You can cast spells from the \sphere{Verdamancy} \glossterm{mystic sphere} as if non-arable ground of any kind was arable earth.
+        \ff[6]{Residual Undergrowth} Whenever you cast a spell from the \textit{verdamancy} sphere, you may create \glossterm{light undergrowth} in the area of the spell.
+        The undergrowth appears on the ground within the area for area spells, or on the ground in all spaces occupied by each target of the spell for targeted spells.
+        It persists until the end of the next round.
 
         \ff[9]{Personal Verdamancy} You gain an additional \glossterm{attunement point}.
         You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Verdamancy} \glossterm{mystic sphere}.
 
-        \ff[12]{Greater Verdant Allies} You can ignore all \glossterm{cover} and \glossterm{concealment} from plants whenever doing so would be beneficial to you.
-        For example, creatures cannot use plants to hide from you.
+        \ff[12]{Greater Residual Undergrowth} You can choose to create either \glossterm{heavy undergrowth} or \glossterm{light undergrowth} with your \textit{residual undergrowth} ability.
 
         \ff[15]{Spell} You learn a spell from the \sphere{Verdamancy} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that mystic sphere.
 
         % Seems weird for an 19th level; should stay in sync with the druid wild aspect
-        \ff[18]{Supreme Verdant Allies} You treat all living creatures as if they were plants for the purpose of abilities from this feat and abilities from the \sphere{Verdamancy} \glossterm{mystic sphere}.
+        \ff[18]{Greater Verdant Allies} You treat all living creatures as if they were plants for the purpose of abilities from this feat and abilities from the \sphere{Verdamancy} \glossterm{mystic sphere}.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Vivimancy}{Casting, Magical}
