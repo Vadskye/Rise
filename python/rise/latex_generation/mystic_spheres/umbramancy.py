@@ -117,21 +117,18 @@ umbramancy=MysticSphere(
             \\hit Each target takes a -2 penalty to \\glossterm<accuracy> and visual Awareness checks until the end of the next round.
             \\crit Each target takes a -2 penalty to \\glossterm<accuracy> and visual Awareness checks as a \\glossterm<condition>.
         """, scaling="accuracy", tags=[]),
-        Spell('Hidden Blade', 3, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
+        Spell('Hidden Blade', 1, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
             The target's weapons become shrouded in darkness, making them virtually impossible to see.
             Its next melee \\glossterm<strike> is treated as if it came from an invisible creature.
             This effect ends at the end of the next round if the target has not made a strike by that time.
 
-            The first attack from an invisible creature generally causes a creature to be \\glossterm<unaware> of the attack, imposing a -5 penalty to Armor and Reflex defenses.
-            % TODO: wording
-            After a creature has been hit by a strike from an invisible creature in this way, it is generally aware of the danger.
-            As a result, it is usually \\glossterm<defenseless> instead of \\glossterm<unaware>, which only imposes a -2 penalty to Armor defense.
-
+            Most creatures are at least \\glossterm<partially unaware> of attacks from invisible creatures, even if they are already actively engaged in combat, causing them to suffer a -2 penalty to Armor and Reflex defenses against the attack.
             This effect provides no offensive benefit against creatures immune to \\glossterm<Visual> abilities.
         """, scaling="""
             % TODO: this doesn't really sense narratively
-            \\rank<5> The target also gains a +1 bonus to \\glossterm<accuracy> with the strike.
-            \\rank<7> The accuracy bonus increases to +2.
+            \\rank<3> The target also gains a +1 bonus to \\glossterm<accuracy> with the strike.
+            \\rank<5> The accuracy bonus increases to +2.
+            \\rank<7> The accuracy bonus increases to +3.
         """, tags=['Sensation', 'Visual']),
         Spell('Conceal', 1, 'Yourself', """
             You gain a +3 \\glossterm<magic bonus> to the Stealth skill.
