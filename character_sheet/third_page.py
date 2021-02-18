@@ -11,7 +11,6 @@ def create_page():
             feats_summary(),
             div({'class': 'section-header goals-and-flaws'}, 'Goals and Flaws'),
             "".join([div(text_input({'name': f'goals_and_flaws_{i}'})) for i in range(3)]),
-            vital_wound_chart(),
         ]),
         flex_col({'class': 'main-body'}, [
             equipment(),
@@ -107,41 +106,6 @@ def inventory():
             text_input({'name': f"inventory_{i}"}) for i in range(7)
         ]
     ])
-
-def vital_wound_chart():
-    return flex_col({'class': 'vital-wound-effects'}, [
-        div({'class': 'section-header'}, 'Vital Wound Effects'),
-        flex_row({'class': 'vital-wound-chart'}, [
-            flex_col([
-                div({'class': 'header'}, 'Roll'),
-                "".join([div(f"{i}") for i in [*range(-1, 11), '11+']])
-            ]),
-            flex_col([
-                div({'class': 'header'}, 'Effect'),
-                "".join([
-                    div(vital_roll_effect(i))
-                    for i in [*range(-1, 11), '11+']
-                ]),
-            ])
-        ])
-    ])
-
-def vital_roll_effect(roll):
-    return {
-        -1: 'Unconscious, die next round',
-        0: 'Unconscious, die after a minute',
-        1: 'Unconscious below max HP',
-        2: 'Half max HP and resistances',
-        3: '-2 accuracy',
-        4: '-2 defenses',
-        5: '-2 vital rolls',
-        6: 'Half speed below max HP',
-        7: 'Half max resistances',
-        8: '-1 accuracy',
-        9: '-1 defenses',
-        10: '-1 vital rolls',
-        '11+': 'No effect',
-    }[roll]
 
 def misc_equipment(body_slot, body_slot_html=None):
     if body_slot_html is None:
