@@ -82,7 +82,7 @@ def set_skill(a, s):
                     ranks = Math.floor(level / 2);
                     pointsModifier = 1;
                     training = 'T';
-                }} else if (v.{s}_points >= 3 || (v.{s}_points === 2 && v.{s}_class_skill)) {{
+                }} else if ({s}_points >= 3 || (({s}_points === 2) && {s}_class_skill)) {{
                     ranks = level
                     pointsModifier = 3;
                     training = 'M';
@@ -106,14 +106,14 @@ def set_skill(a, s):
                 var ranks = 0;
                 var training = '';
 
-                if ({a}_starting >= 3 && {s}_class_skill !== 0) {{
+                if ({a}_starting >= 3 && {s}_class_skill) {{
                     {s}_points += 1;
                 }}
 
                 if ({s}_points === 1) {{
                     ranks = Math.floor(level / 2) + 1;
                     training = 'T';
-                }} else if (v.{s}_points >= 3 || (v.{s}_points === 2 && v.{s}_class_skill)) {{
+                }} else if ({s}_points >= 3 || (({s}_points === 2) && {s}_class_skill)) {{
                     ranks = level
                     pointsModifier = 3;
                     training = 'M';
