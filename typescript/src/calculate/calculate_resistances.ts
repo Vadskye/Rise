@@ -19,12 +19,12 @@ export function calculateResistances({
   const energyDr = dr + resistanceBonuses.energy + (attributes.wil || 0);
   const resistances: Resistances = {
     physical: physicalDr,
-    acid: physicalDr + resistanceBonuses.acid,
     bludgeoning: physicalDr + resistanceBonuses.bludgeoning,
     piercing: physicalDr + resistanceBonuses.piercing,
     slashing: physicalDr + resistanceBonuses.slashing,
 
     energy: energyDr,
+    acid: energyDr + resistanceBonuses.acid,
     cold: energyDr + resistanceBonuses.cold,
     electricity: energyDr + resistanceBonuses.electricity,
     fire: energyDr + resistanceBonuses.fire,
