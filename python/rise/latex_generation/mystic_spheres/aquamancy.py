@@ -32,7 +32,7 @@ aquamancy=MysticSphere(
             \\rank<6> The range increases to \\rngdist, and the maximum speed change increases to 40 miles per hour.
         """, tags=['Sustain (minor)']),
         Effects('Purify Water', 'Up to five gallons of water within \\rngshort range', """
-            You can separate out dirt, sand, and minor pollutants from the target water, moving the waste material to the edge of the water so falls out or can be easily removed.
+            You can separate out dirt, sand, salt, and similar minor pollutants from the target water, moving the waste material to the edge of the water so falls out or can be easily removed.
             This does not remove poisons, magical effects, or contaminants heavier than half a pound.
             Using this on a very large body of water is difficult, since the waste material can easily mix with the water unaffected by a single casting of this spell.
         """, scaling="""
