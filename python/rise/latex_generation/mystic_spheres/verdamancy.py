@@ -209,7 +209,7 @@ verdamancy=MysticSphere(
             \\rank<3> The bonus increases to +5.
             \\rank<5> The bonus increases to +6.
             \\rank<7> The bonus increases to +7.
-        """, tags=['Sustain (minor)']),
+        """, tags=['Attune (self)']),
         Spell('Flourishing Vines', 4, 'Yourself', """
             Long, thin vines continuously grow and writhe on your body.
             At the end of each round, you may choose to cause the vines to extend out onto the ground in a \\areasmall radius around you.
