@@ -61,7 +61,7 @@ verdamancy=MysticSphere(
         Spell('Vineburst', 1, 'Creatures in a \\areasmall radius from you', """
             Make an attack vs. Armor against each target.
             You gain a +2 bonus to \\glossterm<accuracy> with this attack against targets standing in \\glossterm<undergrowth>.
-            \\hit Each target takes bludgeoning damage equal to 1d6 plus half your \\glossterm<power>.
+            \\hit Each target takes bludgeoning damage equal to 1d8 plus half your \\glossterm<power>.
         """, scaling="damage", tags=['Manifestation']),
         Spell('Vinestorm', 4, '\\glossterm<Enemies> in a \\arealarge radius from you', """
             Make an attack vs. Armor against each target.
@@ -122,10 +122,11 @@ verdamancy=MysticSphere(
         """, scaling="""
             The hit point loss from the poison increases by +1d for each rank beyond 5.
         """, tags=['Manifestation']),
-        Spell('Herbal Antidote', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
+        Spell('Herbal Antidote', 1, 'Yourself or one \\glossterm<ally> within \\rngmed range', """
             The target gains an additional success to resist a poison currently affecting it (see \\pcref<Poison>).
         """, scaling="""
             \\rank<3> The number of additional successes increases to two.
+            The target can split these successes among any number of different poisons affecting it.
             \\rank<5> The number of additional successes increases to three.
             \\rank<7> The number of additional successes increases to four.
         """, tags=['Sustain (minor)']),
@@ -173,10 +174,10 @@ verdamancy=MysticSphere(
             Each five-foot square of wall has hit points equal to three times your \\glossterm<power>, and all of its defenses are 0.
             It is \\glossterm<vulnerable> to fire damage.
         """, scaling="damage", tags=['Attune (self)']),
-        Spell('Plant Growth', 1, 'All plants and arable earth in a \\areasmall radius within \\rngmed range', """
+        Spell('Plant Growth', 1, 'All plants, earth, and unworked stone in a \\areasmall radius within \\rngmed range', """
             Choose whether you want plants within the area to grow or diminish.
 
-            If you choose for plants to grow, all arable earth within the area becomes \\glossterm<light undergrowth>.
+            If you choose for plants to grow, all earth and unworked stone within the area becomes overrun with \\glossterm<light undergrowth>.
             Light undergrowth within the area is increased in density to \\glossterm<heavy undergrowth>.
             If you choose for plants to diminish, all \\glossterm<heavy undergrowth> in the area is reduced to \\glossterm<light undergrowth>, and all \\glossterm<light undergrowth> is removed.
 
@@ -185,7 +186,7 @@ verdamancy=MysticSphere(
             \\rank<3> The area increases to a \\areamed radius.
             \\rank<5> The area increases to a \\arealarge radius.
             \\rank<7> The area increases to a \\areahuge radius.
-        """, tags=['Sustain (minor)']),
+        """, tags=['Manifestation', 'Sustain (minor)']),
         Spell('Blight', 2, 'One living creature or plant within \\rngmed range', """
             Make an attack vs. Fortitude against the target.
             % TODO: is this the right damage type?
