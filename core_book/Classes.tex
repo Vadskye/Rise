@@ -163,35 +163,30 @@ This choice determines a great deal about your character's abilities.
     \subsection{Battleforged Resilience}
         This archetype improves your durability in combat.
 
-        \cf{Bbn}[0]{Endurance} You gain a \plus1 bonus to your \glossterm{fatigue tolerance}.
+        \cf{Bbn}[0]{Unbattered Resilience} At the end of each round, if you did not resist any physical damage that round, you regain physical damage resistance equal to your rank in this archetype (minimum 1).
 
         \cf{Bbn}[1]{Battle-Scarred} You gain a bonus equal to twice your rank in this archetype to your \glossterm{resistance} against \glossterm{physical damage} (see \pcref{Resistances}).
 
-        \cf{Bbn}[2]{Unbattered Resilience} At the end of each round, if you did not resist any physical damage that round, you regain physical damage resistance equal to your rank in this archetype.
+        \cf{Bbn}[2]{Endurance} You gain a \plus1 bonus to your \glossterm{fatigue tolerance}, and a \plus1 bonus to \glossterm{vital rolls}.
 
-        \cf{Bbn}[3]{Greater Endurance} The bonus from your \textit{endurance} ability increases to \plus2.
-        In addition, you gain a \plus1 bonus to \glossterm{vital rolls} (see \pcref{Vital Rolls}).
+        \cf{Bbn}[3]{Greater Unbattered Resilience} The amount of physical damage resistance you regain with your \textit{unbattered resilience} ability increases to twice your rank in this archetype.
 
         \cf{Bbn}[4]{Greater Battle-Scarred} The bonus from your \textit{battle-scarred} ability increases to be equal to three times your rank in this archetype.
+        In addition, you gain a bonus equal to your rank in this archetype to your \glossterm{resistance} against energy damage.
 
-        \cf{Bbn}[5]{Greater Unbattered Resilience} The amount of physical damage resistance you regain with your \textit{unbattered resilience} ability increases to twice your rank in this archetype.
+        \cf{Bbn}[5]{Greater Endurance} The bonuses from your \textit{endurance} ability increases to \plus2.
 
-        \cf{Bbn}[6]{Supreme Endurance} The bonus from your \textit{endurance} ability increases to \plus3.
-        In addition, the bonus from your \textit{greater endurance} ability increases to \plus2.
+        \cf{Bbn}[6]{Supreme Unbattered Resilience} At the end of each round, if you did not resist any energy damage that round, you regain energy damage resistance equal to your rank in this archetype.
 
         \cf{Bbn}[7]{Supreme Battle-Scarred} The bonus from your \textit{battle-scarred} ability increases to be equal to four times your rank in this archetype.
+        In addition, the bonus from your \textit{greater battle-scarred} ability increases to be equal to twice your rank in this archetype.
 
     \newpage
     \subsection{Battlerager}\label{Rage}
         This archetype grants you a devastating rage, improving your combat prowess.
-        % Rank 7 summary:
-        % +4 power with mundane abilities
-        % +2x level to physical resistances
-        % +4 intimidate
-        % +4 Mental defense
-        % -2 Armor and Reflex defenses
 
-        \cf{Bbn}[0]{Seething Anger} You gain a \plus2 bonus to the Intimidate skill and a \plus1 bonus to Mental defense.
+        \cf{Bbn}[0]{Insensible Anger} You reduce your maximum hit points by an amount equal to twice your rank in this archetype (minimum 1).
+        In exchange, you gain the same bonus to your \glossterm{resistances} against both \glossterm{physical damage} and \glossterm{energy damage} (see \pcref{Resistances}).
 
         \cf{Bbn}[1]{Rage} You can use the \textit{rage} ability as a \glossterm{free action}.
         For most barbarians, this represents entering a furious rage.
@@ -213,20 +208,24 @@ This choice determines a great deal about your character's abilities.
             \end{itemize}
         \end{attuneability}
 
-        \cf{Bbn}[2]{Insensible Anger} You reduce your maximum hit points by an amount equal to twice your rank in this archetype.
-        In exchange, you gain a bonus equal twice to your rank in this archetype to your \glossterm{resistances} against both \glossterm{physical damage} and \glossterm{energy damage} (see \pcref{Resistances}).
+        \cf{Bbn}[2]{Enraged Strike} As a standard action, you can use the \textit{enraged strike} ability.
+        \begin{freeability}{Enraged Strike}
+            Make a melee \glossterm{strike}.
+            If the target of the strike dealt damage to you during the previous round, you gain a \plus2 bonus to \glossterm{accuracy} with the strike and a \plus2d bonus to damage.
 
-        \cf{Bbn}[3]{Greater Seething Anger} The Intimidate skill bonus from your \textit{seething anger} ability increases to \plus4.
-        In addition, the Mental defense bonus from that ability increases to \plus2.
+            \rankline
+            \rank{4} The damage bonus increases to \plus3d.
+            \rank{6} The damage bonus increases to \plus4d.
+        \end{freeability}
+
+        \cf{Bbn}[3]{Greater Insensible Anger} The hit point reduction and resistance bonuses from your \textit{insensible anger} ability both increase to be equal to three times your rank in this archetype.
 
         \cf{Bbn}[4]{Greater Rage} You gain a \plus1 bonus to \glossterm{accuracy} during your \textit{rage} ability.
         In addition, the number of hit points you gain from that ability increases to four times your rank in this archetype.
 
-        \cf{Bbn}[5]{Greater Insensible Anger} The hit point reduction and resistance bonuses from your \textit{insensible anger} ability both increase to be equal to three times your rank in this archetype.
+        \cf{Bbn}[5]{Immutable Anger} You become immune to hostile \glossterm{Emotion} effects.
 
-        \cf{Bbn}[6]{Supreme Seething Anger} The Intimidate skill bonus from your \textit{seething anger} ability increases to \plus6.
-        In addition, the Mental defense bonus from that ability increases to \plus3.
-        Finally, you become immune to \glossterm{Compulsion} effects.
+        \cf{Bbn}[6]{Greater Insensible Anger} The hit point reduction and resistance bonuses from your \textit{insensible anger} ability both increase to be equal to four times your rank in this archetype.
 
         \cf{Bbn}[7]{Supreme Rage} When you use your \textit{rage} ability, you can grow by one \glossterm{size category}.
         In addition, the \glossterm{accuracy} bonus from your \textit{greater rage} ability increases to \plus2.
@@ -235,7 +234,8 @@ This choice determines a great deal about your character's abilities.
     \subsection{Outland Savage}
         This archetype improves your mobility and combat prowess with direct, brutal abilities.
 
-        \cf{Bbn}[0]{Savage Instincts} You gain a \plus2 bonus to \glossterm{initiative} checks and a \plus1 bonus to Reflex defense.
+        \cf{Bbn}[0]{Savage Rush} When you use the \textit{sprint} ability, you can move through spaces occupied by enemies during that movement.
+        You treat those spaces as \glossterm{difficult terrain}, which causes to you to move at half speed.
 
         \cf{Bbn}[1]{Fast Movement} You gain a \plus10 foot bonus to your \glossterm{base speed}.
 
@@ -245,7 +245,8 @@ This choice determines a great deal about your character's abilities.
         \cf{Bbn}[3]{Savage Force} You gain a \plus1d bonus to your damage with all weapons.
 
         \cf{Bbn}[4]{Greater Fast Movement} The speed bonus from your \textit{fast movement} ability increases to \plus20 feet.
-        In addition, you gain a \plus2 bonus to Reflex defense.
+
+        \cf{Bbn}[4]{Greater Savage Rush} Your \textit{savage rush} ability no longer causes you to treat spaces occupied by enemies as difficult terrain.
 
         \cf{Bbn}[5]{Greater Savage Precision} The accuracy and defense bonuses from your \textit{savage precision} ability increase to \plus3.
         In addition, choose one of the following \glossterm{weapon tags} (see \pcref{Weapon Tags}): Disarming, Forceful, Grappling, or Tripping.
@@ -254,7 +255,9 @@ This choice determines a great deal about your character's abilities.
         \cf{Bbn}[6]{Greater Savage Force} The bonus from your \textit{savage force} ability increases to \plus2d.
 
         \cf{Bbn}[7]{Supreme Fast Movement} The speed bonus from your \textit{fast movement} ability increases to \plus30 feet.
-        In addition, the Reflex defense bonus from your \textit{greater fast movement} ability increases to \plus4.
+
+        \cf{Bbn}[7]{Supreme Savage Rush} You can move through spaces occupied by enemies at all times.
+        You treat spaces occupied by enemies as being \glossterm{difficult terrain} unless your movement is accelerated by the \textit{sprint} ability.
 
     \newpage
     \subsection{Primal Warrior}
