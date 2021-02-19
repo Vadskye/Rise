@@ -3644,9 +3644,9 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Warlock Progression}
 \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
     \tb{Rank} & \tb{Min Level} & \tb{Blessings of the Abyss}                    & \tb{Pact Magic}                         & \tb{Pact Spell Mastery}     & \tb{Soulkeeper's Chosen} \tableheaderrule
-    0         & \tdash         & Abyssal tolerance                              & Armor tolerance, cantrips               & Infernal training           & Empowering whispers         \\
-    1         & 1              & Eldritch blast                                 & Spellcasting                            & Combat caster               & Possession                  \\
-    2         & 4              & Fiendish resistance                            & Spell rank (2), spell knowledge         & Mystic insight              & Exchange soul fragment      \\
+    0         & \tdash         & Fiendish resistance                            & Armor tolerance, cantrips               & Infernal training           & Empowering whispers         \\
+    1         & 1              & Abyssal blast                                  & Spellcasting                            & Combat caster               & Possession                  \\
+    2         & 4              & Abyssal sphere                                 & Spell rank (2), spell knowledge         & Mystic insight              & Exchange soul fragment      \\
     3         & 7              & Abyssal jaunt                                  & Spell rank (3), greater armor tolerance & Wellspring of power         & Greater empowering whispers \\
     4         & 10             & Abyssal substitution, hellfire                 & Spell rank (4), spell knowledge         & Mystic insight              & Greater possession          \\
     5         & 13             & Greater fiendish resistance                    & Spell rank (5)                          & Greater combat caster       & Exchange vitality           \\
@@ -3674,23 +3674,24 @@ This choice determines a great deal about your character's abilities.
             \item \subparhead{Other} Deception, Intimidate, Persuasion, Profession.
         \end{itemize}
 
-        \cf{War}{Weapon Proficiencies} 
+        \cf{War}{Weapon Proficiencies}
         You are proficient with simple weapons.
 
         \cf{War}{Armor Proficiencies}
         You are proficient with light armor.
         Encumbrance from armor interferes with the gestures you make to cast spells, which can cause your spells with \glossterm{somatic components} to fail (see \pcref{Somatic Component Failure}).
 
-        \cf{War}{Infernal Pact}[Magical]
-        To become a warlock, you must make a pact with a powerful demon or devil.
-        % TODO: wording; intended to prevent Null warlocks who have no pact
-        If you somehow lose this ability, you lose all other warlock abilities.
-        You must make a dark sacrifice, the details of which are subject to negotiation, and offer a part of your immortal soul.
+        \cf{War}{Soul Pact}
+        To become a warlock, you must make a pact with a creature capable of sharing its power with you.
+        Generally, such a creature must be at least 20th level, and must be a planeforged from a plane other than your own.
+        You must make a sacrifice, the details of which are subject to negotiation, and offer a part of your immortal soul.
         In exchange, you gain the powers of a warlock.
         The creature you make the pact with is called your soulkeeper.
+        Most warlocks make pacts with demons or devils, though other soulkeepers are possible.
 
         Offering your soul to an entity in this way grants it the ability to communicate with you in limited ways.
         This communication typically manifests as unnatural emotional urges or whispered voices audible only to you.
+        demon or devil.
 
         Your pact specifies how much of your soul is granted to your soulkeeper, and the circumstances of the transfer.
         The most common arrangement is for a soulkeeper to gain possession of your soul immediately after you die.
@@ -3700,11 +3701,11 @@ This choice determines a great deal about your character's abilities.
         However, other arrangements are possible, and each warlock's pact can be unique.
 
         The longer you spend in an afterlife that is not your own, the more likely you are to lose your sense of self and become subsumed by the plane you are on.
-        Only a soul of extraordinary strength can maintain its integrity after decades or centuries in the Abyss.
-        Many warlocks seek power zealously while mortal to gain the mental fortitude necessary to keep their soul after death.
+        Only a soul of extraordinary strength can maintain its integrity after decades or centuries in any plane.
+        Many warlocks seek power zealously while mortal to gain the mental fortitude necessary to keep their soul intact after death.
 
         \cf{War}{Whispers of the Lost}[Magical]
-        You hear the voices of souls lost to the Abyss, linked to you through your soulkeeper.
+        You hear the voices of souls that inhabit your soulkeeper's plane, linked to you through your soulkeeper.
         Choose one of the following types of whispers that you hear.
         {
             \subcf{Mentoring Whispers} You hear the voice of a dead warlock whose soul is bound to the same soulkeeper as yours.
@@ -3721,12 +3722,13 @@ This choice determines a great deal about your character's abilities.
 
     \newpage
     \subsection{Blessings of the Abyss}
+        You can only choose this archetype if your soulkeeper is a demon or devil.
         This archetype enhances your connection to the Abyss and allows you to channel its sinister power more directly.
 
-        \cf{War}[0]{Abyssal Tolerance} You gain a \plus1 bonus to Fortitude defense and a \plus1 bonus to Mental defense.
+        \cf{War}[0]{Fiendish Resistance} You gain a bonus equal to twice your rank in this archetype to your \glossterm{resistance} against \glossterm{energy damage}, to a minimum bonus of 1.
 
-        \cf{War}[1]{Eldritch Blast} You can use the \textit{eldritch blast} ability as a standard action.
-        \begin{freeability}{Eldritch Blast}[\glossterm{Magical}]
+        \cf{War}[1]{Abyssal Blast} You can use the \textit{eldritch blast} ability as a standard action.
+        \begin{freeability}{Abyssal Blast}[\glossterm{Magical}]
             Make an attack vs. Armor against one creature or object within \rngmed range.
             \hit The target takes fire damage equal to 1d10 plus your \glossterm{power}.
 
@@ -3741,7 +3743,7 @@ This choice determines a great deal about your character's abilities.
             \rank{7} The damage increases to 7d10.
         \end{freeability}
 
-        \cf{War}[2]{Fiendish Resistance} You gain a bonus equal to twice your rank in this archetype to your \glossterm{resistance} against \glossterm{energy damage}.
+        \cf{War}[2]{Abyssal Sphere} You gain access to your choice of one of the following \textit{mystic spheres}: \sphere{astromancy}, \sphere{pyromancy}, or \sphere{summoning}.
 
         \cf{War}[3]{Abyssal Jaunt} You can use the \textit{abyssal jaunt} ability as a standard action.
         \begin{freeability}{Abyssal Jaunt}[\glossterm{Magical}]
@@ -3758,7 +3760,7 @@ This choice determines a great deal about your character's abilities.
             \rank{7} The accuracy bonus increases to \plus2.
         \end{freeability}
 
-        \cf{War}[4]{Abyssal Substitution} Whenever you use an ability that deals \glossterm{energy damage} or any subtype of energy damage, you can change the type of the damage to fire damage.
+        \cf{War}[4]{Abyssal Substitution} Whenever you use an ability that deals \glossterm{energy damage} or any subtype of energy damage, you can change the type of the damage to be fire damage in place of all of its normal damage types.
         Any other aspects of the ability remain unchanged.
 
         \cf{War}[4]{Hellfire} You gain a \plus4 bonus to \glossterm{power} with abilities that deal fire damage.
@@ -3776,7 +3778,7 @@ This choice determines a great deal about your character's abilities.
             You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 6.
         \end{freeability}
 
-        \cf{War}[7]{Greater Abyssal Substitution} Whenever you use an ability that deals damage, you may change the type of damage it deals to be fire damage.
+        \cf{War}[7]{Abyssal Fusion} Whenever you use an ability that deals \glossterm{energy damage} or any subtype of energy damage, you can choose to have it deal fire damage in addition to its normal damage types.
         Any other aspects of the ability remain unchanged.
 
         \cf{War}[7]{Greater Hellfire} The power bonus from your \textit{hellfire} ability increases to \plus8.
