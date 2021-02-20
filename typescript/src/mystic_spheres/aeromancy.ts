@@ -71,7 +71,7 @@ export const aeromancy: MysticSphere = {
         hit: `
           The subject takes a -2 penalty to defenses against \\glossterm{mundane} ranged attacks from weapons or projectiles that are Small or smaller until it takes a \\glossterm{short rest}.
         `,
-        target: "Make an attack vs. Mental against anything within \\longrange of you.",
+        target: "Make an attack vs. Mental against anything within \\longrange.",
       },
       narrative: `
         The air around your foe ripples with hidden air currents that seem to guide the flight of arrows, ensuring that they strike true.
@@ -92,7 +92,7 @@ export const aeromancy: MysticSphere = {
         hit: `
           The subject takes a -4 penalty to defenses against \\glossterm{mundane} ranged attacks from weapons or projectiles that are Medium or smaller until it takes a \\glossterm{short rest}.
         `,
-        target: "Make an attack vs. Mental against anything within \\longrange of you.",
+        target: "Make an attack vs. Mental against anything within \\longrange.",
       },
       narrative: `
         The air around your foe ripples with hidden air currents that seem to guide the flight of arrows, ensuring that they strike true.
@@ -399,7 +399,7 @@ export const aeromancy: MysticSphere = {
           Each subject takes 2d6 \\add half \\glossterm{power} bludgeoning damage.
         `,
         target: `
-          At the end of each phase, make an attack vs. Armor against each creature within \\shortrange of you that attacked you during that phase.
+          At the end of each phase, make an attack vs. Armor against each creature within \\shortrange that attacked you during that phase.
           Any effect which increases this spell's range increases the range of this retaliation by the same amount.
         `,
       },
@@ -487,7 +487,7 @@ export const aeromancy: MysticSphere = {
           You can use a \\glossterm{free hand} to catch the object if it reaches you.
         `,
         target: `
-          Make an attack vs. Reflex against one Small or smaller object within \\medrange range of you.
+          Make an attack vs. Reflex against one Small or smaller object within \\medrange range.
           If the object is attended by a creature, the attack must also beat the attending creature's Reflex defense.
           If it is held in two hands or well secured, this attack automatically fails.
         `,
@@ -588,7 +588,7 @@ export const aeromancy: MysticSphere = {
           The subject is \\glossterm{blinded} as a \\glossterm{condition}.
         `,
         target: `
-          Make an attack vs. Reflex against one creature within \\shortrange of you.
+          Make an attack vs. Reflex against one creature within \\shortrange.
           If there is no dirt, dust, or collection of loose objects of similar size within 30 foot \\glossterm{range} of the subject's eyes, this attack automatically fails.
         `,
       },
@@ -626,7 +626,7 @@ export const aeromancy: MysticSphere = {
           This approximately doubles the gravity it experiences, which imposes a -2 penalty to \\glossterm{accuracy}, physical \\glossterm{checks}, and \\glossterm{defenses}.
         `,
         target: `
-          Make an attack vs. Fortitude against one creature within \\medrange of you.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
       // narrative: '',
@@ -649,6 +649,59 @@ export const aeromancy: MysticSphere = {
         6: "You also ignore all sources of \\glossterm{difficult terrain}.",
       },
       type: "Attune (self)",
+    },
+  ],
+
+  rituals: [
+    {
+      name: "Air Bubble",
+
+      castingTime: "one minute",
+      effect: `
+        One ritual participant gains the ability to breathe clear, clean air regardless of its surroundings.
+        This can allow it to breathe underwater and avoid air-based poisons.
+      `,
+      // narrative: '',
+      rank: 3,
+      type: "Attune (target)",
+    },
+    {
+      name: "Detect Air",
+
+      castingTime: "one minute",
+      effect: `
+        You learn the approximate distance and direction to any air within \\rnglong \\glossterm<range> of you.
+        Since this is a \\glossterm<Detection> ability, its range can penetrate some solid objects (see \\pcref<Detection>).
+        This ritual can detect air pockets with a minimum size of Fine.
+      `,
+      // narrative: '',
+      rank: 1,
+      tags: ["Detection"],
+      type: "Instant",
+    },
+    {
+      name: "Greater Detect Air",
+
+      castingTime: "one minute",
+      functionsLike: {
+        exceptThat: "the range increases to \\extrange.",
+        spell: "detect air",
+      },
+      // narrative: '',
+      rank: 3,
+      type: "Instant",
+    },
+    {
+      name: "Supreme Detect Air",
+
+      castingTime: "one minute",
+      functionsLike: {
+        exceptThat: "the range increases to 2,000 feet.",
+        spell: "detect air",
+      },
+      // narrative: '',
+      rank: 5,
+      type: "Instant",
     },
   ],
 };
