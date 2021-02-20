@@ -35,7 +35,7 @@ export interface Spell extends Cantrip {
   rank: 1 | 2 | 3 | 4 | 5 | 6 | 7;
 }
 
-export interface Ritual extends Spell {
+export interface Ritual extends Omit<Spell, "scaling"> {
   castingTime: string;
 }
 
