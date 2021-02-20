@@ -32,7 +32,7 @@
         Unless otherwise noted, all spells and rituals require both \glossterm{verbal components} to cast or perform.
         In addition, arcane spells, pact spells, and all rituals require \glossterm{somatic components}.
         You cannot start casting a spell or performing a ritual without all required components.
-        If you lose those components before the ability resolves, it is \glossterm{miscast}.
+        If you lose those components before the ability resolves, the spell fails with no effect.
 
         To provide the verbal component for a spell or ritual, you must speak in a strong voice with a volume at least as loud as ordinary conversation.
         To provide the somatic component for a spell or ritual, you must make a measured and precise movement of at least one free hand.
@@ -40,28 +40,8 @@
         \subsubsection{Somatic Component Failure}\label{Somatic Component Failure}
             Encumbrance from armor interferes with the \glossterm{somatic components} required to perform arcane spells, pact spells, and all rituals.
             When you cast a spell or perform a ritual that requires \glossterm{somatic components} while you have an \glossterm{encumbrance}, you must roll 1d10.
-            If your result is less than or equal to your \glossterm{encumbrance}, you \glossterm{miscast} the ability (see \pcref{Miscasting}).
+            If your result is less than or equal to your \glossterm{encumbrance}, the spell fails with no effect.
             When you perform a ritual, this roll must be repeated at the end of each round during the ritual.
-
-    \subsection{Miscasting}\label{Miscasting}
-
-        If you start using a spell or ritual and fail to complete it successfully for any reason, you miscast it.
-        A miscast spell or ritual does not have its normal effect.
-        Instead, a wave of magical energy causes a \glossterm{miscast backlash}.
-        When a mystic backlash occurs, make an attack against the Mental defense of yourself and all creatures in a 5 foot radius from you.
-        Your \glossterm{power} with this ability is equal to your \glossterm{power} with the spell or ritual you tried to use.
-        % This breaks the normal dice pool patterns.
-        % However, not applying power makes it unlikely that this will be useful for optimized builds.
-        % Since it's hard to add a large number of +1d increments on the fly, it's annoying to play
-        % with a more standard damage progression like (1d6 +1d per rank plus half power).
-        On a hit, each target takes energy damage equal to 1d6 per rank of the spell or ritual (minimum 1d6).
-
-        \parhead{Impossible Spells and Rituals} When you try to use a spell or ritual in an impossible way, the ability is \glossterm{miscast} instead.
-        This most commonly happens if you attempt to declare an invalid target for a spell.
-        For example, if you try to cast a spell that only affects living creatures on a creature that is undead, the spell would be miscast.
-
-        % TODO: This may be more clear if minor + no miscast becomes a tag.
-        \parhead{Minor Action Spells} Spells that require a \glossterm{minor action} to cast do not cause a \glossterm{miscast backlash}, even if they are \glossterm{miscast}.
 
     \subsection{Dismissal}
         As a \glossterm{minor action}, you can dismiss any spells or rituals you used that have lasting effects.
@@ -92,6 +72,10 @@
         Many spells and rituals say they "function like" some other spell or ritual, often with some noted changes.
         Except as otherwise noted, they retain all of the original effects and targets of the spell.
         However, they do not have the same rank upgrades as the original spell or ritual.
+
+    \subsection{Impossible Spells and Rituals}
+        When you try to use a spell or ritual in an impossible way, the ability fails with no effect.
+        This most commonly happens if you attempt to declare an invalid target for a spell.
 
 \section{Spells}\label{Spells}
     % TODO: better description
