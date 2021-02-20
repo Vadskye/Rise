@@ -5,6 +5,7 @@ from rise.latex_generation.book_path import book_path
 from rise.latex.magic_item import MagicItem
 from rise.latex.util import latexify, longtablify
 
+
 def generate_implements():
     implements = []
 
@@ -12,7 +13,7 @@ def generate_implements():
         MagicItem(
             name="Spell Wand, 1st",
             level=2,
-            material_type='Wand',
+            material_type="Wand",
             tags=[],
             description="""
                 This wand grants you knowledge of a single rank 1 spell that does not have the \\glossterm<Attune> tag.
@@ -26,7 +27,7 @@ def generate_implements():
         MagicItem(
             name="Spell Wand, 2nd",
             level=5,
-            material_type='Wand',
+            material_type="Wand",
             tags=[],
             description="""
                 This item functions like a \\mitem<spell wand>, except that it grants knowledge of a single rank 2 spell.
@@ -36,7 +37,7 @@ def generate_implements():
         MagicItem(
             name="Spell Wand, 3rd",
             level=8,
-            material_type='Wand',
+            material_type="Wand",
             tags=[],
             description="""
                 This item functions like a \\mitem<spell wand>, except that it grants knowledge of a single rank 3 spell.
@@ -46,7 +47,7 @@ def generate_implements():
         MagicItem(
             name="Spell Wand, 4th",
             level=11,
-            material_type='Wand',
+            material_type="Wand",
             tags=[],
             description="""
                 This item functions like a \\mitem<spell wand>, except that it grants knowledge of a single rank 4 spell.
@@ -56,7 +57,7 @@ def generate_implements():
         MagicItem(
             name="Spell Wand, 5th",
             level=14,
-            material_type='Wand',
+            material_type="Wand",
             tags=[],
             description="""
                 This item functions like a \\mitem<spell wand>, except that it grants knowledge of a single rank 5 spell.
@@ -66,7 +67,7 @@ def generate_implements():
         MagicItem(
             name="Spell Wand, 6th",
             level=17,
-            material_type='Wand',
+            material_type="Wand",
             tags=[],
             description="""
                 This item functions like a \\mitem<spell wand>, except that it grants knowledge of a single rank 6 spell.
@@ -76,7 +77,7 @@ def generate_implements():
         MagicItem(
             name="Spell Wand, 7th",
             level=20,
-            material_type='Wand',
+            material_type="Wand",
             tags=[],
             description="""
                 This item functions like a \\mitem<spell wand>, except that it grants knowledge of a single rank 7 spell.
@@ -89,7 +90,7 @@ def generate_implements():
         MagicItem(
             name="Staff of Shared Healing",
             level=5,
-            material_type='Staff',
+            material_type="Staff",
             tags=[],
             description="""
                 Once per round, when you cause a creature other yourself to regain \\glossterm<hit points> using a \\glossterm<magical> ability, you can activate this item as a \\glossterm<free action>.
@@ -100,7 +101,7 @@ def generate_implements():
         MagicItem(
             name="Staff of Shared Healing, Greater",
             level=14,
-            material_type='Staff',
+            material_type="Staff",
             tags=[],
             description="""
                 Once per round, when you cause a creature other yourself to regain \\glossterm<hit points> using a \\glossterm<magical> ability, you can activate this item as a \\glossterm<free action>.
@@ -114,7 +115,7 @@ def generate_implements():
         MagicItem(
             name="Staff of Transit",
             level=6,
-            material_type='Staff',
+            material_type="Staff",
             tags=[],
             description="""
                 Your \\glossterm<magical> abilities have the maximum distance they can \\glossterm<teleport> targets doubled.
@@ -124,7 +125,7 @@ def generate_implements():
         MagicItem(
             name="Staff of Transit, Greater",
             level=12,
-            material_type='Staff',
+            material_type="Staff",
             tags=[],
             description="""
                 Your \\glossterm<magical> abilities have the maximum distance they can \\glossterm<teleport> targets tripled.
@@ -134,21 +135,21 @@ def generate_implements():
         MagicItem(
             name="Staff of Transit, Supreme",
             level=18,
-            material_type='Staff',
+            material_type="Staff",
             tags=[],
             description="""
                 Your \\glossterm<magical> abilities have the maximum distance they can \\glossterm<teleport> targets quadrupled.
             """,
             short_description="Quadruples your teleportation distance",
-        )
+        ),
     ]
 
     implements += [
         MagicItem(
             name="Fearful Staff",
             level=10,
-            material_type='Staff',
-            tags=['Emotion'],
+            material_type="Staff",
+            tags=["Emotion"],
             description="""
                 Whenever you cause an \\glossterm<enemy> to lose \\glossterm<hit points> with a \\glossterm<magical> ability, that creature becomes \\glossterm<shaken> by you until the end of the next round.
             """,
@@ -157,8 +158,8 @@ def generate_implements():
         MagicItem(
             name="Fearful Staff, Greater",
             level=16,
-            material_type='Staff',
-            tags=['Emotion'],
+            material_type="Staff",
+            tags=["Emotion"],
             description="""
                 Whenever you cause an \\glossterm<enemy> to lose \\glossterm<hit points> with a \\glossterm<magical> ability, that creature becomes \\glossterm<shaken> by you as a \\glossterm<condition>.
             """,
@@ -170,7 +171,7 @@ def generate_implements():
         MagicItem(
             name="Dazing Staff",
             level=13,
-            material_type='Staff',
+            material_type="Staff",
             tags=[],
             description="""
                 Whenever you cause an \\glossterm<enemy> to lose \\glossterm<hit points> with a \\glossterm<magical> ability, that creature becomes \\glossterm<dazed> until the end of the next round.
@@ -180,7 +181,7 @@ def generate_implements():
         MagicItem(
             name="Dazing Staff, Greater",
             level=19,
-            material_type='Staff',
+            material_type="Staff",
             tags=[],
             description="""
                 Whenever you cause an \\glossterm<enemy> to lose \\glossterm<hit points> with a \\glossterm<magical> ability, that creature becomes \\glossterm<dazed> as a \\glossterm<condition>.
@@ -193,7 +194,7 @@ def generate_implements():
         MagicItem(
             name="Extending Staff",
             level=9,
-            material_type='Staff',
+            material_type="Staff",
             description="""
                 You double the range of your \\glossterm<magical> abilities.
             """,
@@ -202,7 +203,7 @@ def generate_implements():
         MagicItem(
             name="Extending Staff, Greater",
             level=15,
-            material_type='Staff',
+            material_type="Staff",
             description="""
                 You triple the range of your \\glossterm<magical> abilities.
             """,
@@ -214,7 +215,7 @@ def generate_implements():
         MagicItem(
             name="Staff of Giants",
             level=4,
-            material_type='Staff',
+            material_type="Staff",
             description="""
                 Whenever you use a \\glossterm<magical> ability that has a maximum size category for its targets or any objects it creates, you increase that maximum by one size category, to a maximum of Colossal.
                 This does not affect abilities that create creatures of a particular size.
@@ -224,7 +225,7 @@ def generate_implements():
         MagicItem(
             name="Staff of Giants, Greater",
             level=10,
-            material_type='Staff',
+            material_type="Staff",
             description="""
                 This implement functions like a \\mitem<staff of giants> implement, except that the maximum size category increases by two size categories.
             """,
@@ -233,7 +234,7 @@ def generate_implements():
         MagicItem(
             name="Staff of Giants, Supreme",
             level=16,
-            material_type='Staff',
+            material_type="Staff",
             description="""
                 This implement functions like a \\mitem<staff of giants> implement, except that the maximum size category increases by three size categories.
             """,
@@ -245,7 +246,7 @@ def generate_implements():
         MagicItem(
             name="Selective Staff",
             level=9,
-            material_type='Staff',
+            material_type="Staff",
             tags=[],
             description="""
                 Whenever you use a \\glossterm<magical> ability that affects an area and does not have the \\glossterm<Sustain> or \\glossterm<Attune> tags, you can freely exclude any areas from the ability's effect.
@@ -257,21 +258,21 @@ def generate_implements():
         MagicItem(
             name="Selective Staff, Greater",
             level=15,
-            material_type='Staff',
+            material_type="Staff",
             tags=[],
             description="""
                 This implement functions like a \\mitem<selective staff> implement, except that you can split the spell's area into two completely separate areas.
                 If you do, each of those two areas must be independently contiguous.
             """,
             short_description="Allows excluding and splitting areas",
-        )
+        ),
     ]
 
     implements += [
         MagicItem(
             name="Staff of Silence",
             level=9,
-            material_type='Staff',
+            material_type="Staff",
             tags=[],
             description="""
                 You can cast spells without using \\glossterm<verbal components>.
@@ -281,7 +282,7 @@ def generate_implements():
         MagicItem(
             name="Staff of Stillness",
             level=9,
-            material_type='Staff',
+            material_type="Staff",
             tags=[],
             description="""
                 You can cast spells without using \\glossterm<somatic components>.
@@ -291,7 +292,7 @@ def generate_implements():
         MagicItem(
             name="Staff of Tranquility",
             level=15,
-            material_type='Staff',
+            material_type="Staff",
             tags=[],
             description="""
                 You can cast spells without using \\glossterm<verbal components> or \\glossterm<somatic components>.
@@ -304,7 +305,7 @@ def generate_implements():
         MagicItem(
             name="Reaching Staff",
             level=12,
-            material_type='Staff',
+            material_type="Staff",
             description="""
                 Whenever you use a \\glossterm<magical> ability that does not have the \\glossterm<Sustain> or \\glossterm<Attune> tags, you may choose a location within \\rngshort range.
                 The ability takes effect as if you were in the chosen location.
@@ -318,7 +319,7 @@ def generate_implements():
         MagicItem(
             name="Reaching Staff, Greater",
             level=18,
-            material_type='Staff',
+            material_type="Staff",
             description="""
                 This implement functions like a \\textit<reaching staff> implement, except that the range increases to \\rngmed range.
             """,
@@ -326,13 +327,13 @@ def generate_implements():
         ),
     ]
 
-
-    implements.append(MagicItem(
-        name="Cryptic Staff",
-        level=8,
-        material_type='Staff',
-        tags=[],
-        description="""
+    implements.append(
+        MagicItem(
+            name="Cryptic Staff",
+            level=8,
+            material_type="Staff",
+            tags=[],
+            description="""
             Whenever you cast a spell, you may choose a different spell you know.
             If you do, the visual effects and magical aura of the spell you are casting change to match your chosen spell.
             This affects inspection of the spell itself by any means, such as with the Spellsense skill (see \\pcref<Spellsense>).
@@ -341,15 +342,16 @@ def generate_implements():
             An observer can make a Spellsense check with a \\glossterm<difficulty rating> of 15 \\add your magical \\glossterm<power> to identify the spell's true nature, with a minimum \\glossterm<difficulty rating> of 23.
             If the spell's effects depend on visual components, the spell may fail to work if you alter the spell's visuals too much.
         """,
-        short_description="Makes spells hard to identify",
-    ))
+            short_description="Makes spells hard to identify",
+        )
+    )
 
     implements += [
         MagicItem(
             name="Protective Staff",
             # +2 level since staff is secondary for this effect
             level=9,
-            material_type='Staff',
+            material_type="Staff",
             tags=[],
             description="""
                 You gain a +1 \\glossterm<magic bonus> to Armor defense.
@@ -359,7 +361,7 @@ def generate_implements():
         MagicItem(
             name="Protective Staff, Greater",
             level=15,
-            material_type='Staff',
+            material_type="Staff",
             tags=[],
             description="""
                 You gain a +2 \\glossterm<magic bonus> to Armor defense.
@@ -372,7 +374,7 @@ def generate_implements():
         MagicItem(
             name="Widening Staff",
             level=12,
-            material_type='Staff',
+            material_type="Staff",
             tags=[],
             description="""
                 Whenever you use a \\glossterm<magical> ability that affects an area and does not have the \\glossterm<Attune> or \\glossterm<Sustain> tags, you may double its area.
@@ -382,7 +384,7 @@ def generate_implements():
         MagicItem(
             name="Widening Staff, Greater",
             level=18,
-            material_type='Staff',
+            material_type="Staff",
             tags=[],
             description="""
                 This implement functions like a \\textit<widening staff> implement, except that it triples the area instead of doubling it.
@@ -391,21 +393,23 @@ def generate_implements():
         ),
     ]
 
-    implements.append(MagicItem(
-        name="Staff of Focus",
-        level=5,
-        material_type='Staff',
-        description="""
+    implements.append(
+        MagicItem(
+            name="Staff of Focus",
+            level=5,
+            material_type="Staff",
+            description="""
             You reduce your \\glossterm<focus penalty> by 1.
         """,
-        short_description="Reduces \\glossterm<focus penalty> by 1",
-    ))
+            short_description="Reduces \\glossterm<focus penalty> by 1",
+        )
+    )
 
     implements += [
         MagicItem(
             name="Staff of Power",
             level=4,
-            material_type='Staff',
+            material_type="Staff",
             tags=[],
             description="""
                 You gain a +2 \\glossterm<magic bonus> to your \\glossterm<magical> \\glossterm<power>.
@@ -415,7 +419,7 @@ def generate_implements():
         MagicItem(
             name="Staff of Power, Greater",
             level=10,
-            material_type='Staff',
+            material_type="Staff",
             tags=[],
             description="""
                 You gain a +4 \\glossterm<magic bonus> to your \\glossterm<magical> \\glossterm<power>.
@@ -425,7 +429,7 @@ def generate_implements():
         MagicItem(
             name="Staff of Power, Supreme",
             level=16,
-            material_type='Staff',
+            material_type="Staff",
             tags=[],
             description="""
                 You gain a +8 \\glossterm<magic bonus> to your \\glossterm<magical> \\glossterm<power>.
@@ -438,7 +442,7 @@ def generate_implements():
         MagicItem(
             name="Staff of the Archmagi",
             level=7,
-            material_type='Staff',
+            material_type="Staff",
             tags=[],
             description="""
                 You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy>.
@@ -449,7 +453,7 @@ def generate_implements():
         MagicItem(
             name="Staff of the Archmagi, Greater",
             level=16,
-            material_type='Staff',
+            material_type="Staff",
             tags=[],
             description="""
                 You gain a +2 \\glossterm<magic bonus> to \\glossterm<accuracy>.
@@ -463,7 +467,7 @@ def generate_implements():
         MagicItem(
             name="Staff of Precision",
             level=4,
-            material_type='Staff',
+            material_type="Staff",
             tags=[],
             description="""
                 You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy>.
@@ -473,7 +477,7 @@ def generate_implements():
         MagicItem(
             name="Staff of Precision, Greater",
             level=10,
-            material_type='Staff',
+            material_type="Staff",
             tags=[],
             description="""
                 You gain a +2 \\glossterm<magic bonus> to \\glossterm<accuracy>.
@@ -483,7 +487,7 @@ def generate_implements():
         MagicItem(
             name="Staff of Precision, Supreme",
             level=16,
-            material_type='Staff',
+            material_type="Staff",
             tags=[],
             description="""
                 You gain a +3 \\glossterm<magic bonus> to \\glossterm<accuracy>.
@@ -494,8 +498,10 @@ def generate_implements():
 
     return implements
 
+
 def sanity_check(implements):
     pass
+
 
 def generate_implement_latex(check=False):
     implements = sorted(generate_implements(), key=lambda implements: implements.name)
@@ -509,35 +515,38 @@ def generate_implement_latex(check=False):
         except Exception as e:
             raise Exception(f"Error converting item '{item.name}' to LaTeX") from e
 
-    text = '\n'.join(texts)
+    text = "\n".join(texts)
     return latexify(text)
+
 
 def generate_implement_table():
     implements = sorted(
         sorted(generate_implements(), key=lambda item: item.name),
-        key=lambda item: item.level
+        key=lambda item: item.level,
     )
     rows = [item.latex_table_row() for item in implements]
-    row_text = '\n'.join(rows)
-    return longtablify(f"""
+    row_text = "\n".join(rows)
+    return longtablify(
+        f"""
         \\lcaption<Implement Items> \\\\
         \\tb<Name> & \\tb<Level> & \\tb<Typical Price> & \\tb<Description> & \\tb<Page> \\tableheaderrule
         {row_text}
-    """)
+    """
+    )
 
 
 def write_to_file():
     implement_latex = generate_implement_latex()
     implement_table = generate_implement_table()
-    with open(book_path('implements.tex'), 'w') as implement_description_file:
+    with open(book_path("implements.tex"), "w") as implement_description_file:
         implement_description_file.write(implement_latex)
-    with open(book_path('implements_table.tex'), 'w') as implement_table_file:
+    with open(book_path("implements_table.tex"), "w") as implement_table_file:
         implement_table_file.write(implement_table)
 
 
 @click.command()
-@click.option('-c', '--check/--no-check', default=False)
-@click.option('-o', '--output/--no-output', default=False)
+@click.option("-c", "--check/--no-check", default=False)
+@click.option("-o", "--output/--no-output", default=False)
 def main(output, check):
     if output:
         write_to_file()

@@ -9,6 +9,7 @@ import rise.latex_generation.gen_tools as gen_tools
 import rise.latex_generation.gen_weapons as gen_weapons
 import rise.latex_generation.monsters as monsters
 
+
 def main():
     gen_apparel.write_to_file()
     gen_implements.write_to_file()
