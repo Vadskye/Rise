@@ -1,4 +1,5 @@
 import { Spell } from "@src/mystic_spheres";
+import { sentenceCase } from "change-case";
 
 export function spellTypePrefix(
   spell: Pick<Spell, "castingTime" | "focus" | "tags" | "type">,
@@ -21,7 +22,7 @@ export function spellTypePrefix(
       spell.castingTime === "minor action"
         ? `One \\glossterm{${spell.castingTime}}`
         : spell.castingTime;
-    return `${tagLine}\n\\noindent Casting time: ${castingTime}`;
+    return `${tagLine}\n\\noindent Casting time: ${sentenceCase(castingTime)}`;
   } else {
     return tagLine;
   }
