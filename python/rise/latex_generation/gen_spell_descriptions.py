@@ -28,12 +28,18 @@ from rise.latex_generation.book_path import book_path
 from rise.latex.util import latexify
 import rise.statistics.rise_data as rise_data
 from logging import getLogger, WARNING
+
 # from pprint import pformat
 logger = getLogger(__name__)
+
+
 def log(*args):
     logger.log(*args)
+
+
 def warn(*args):
     logger.log(WARNING, *args)
+
 
 def generate_mystic_spheres():
     mystic_spheres = []
@@ -81,7 +87,10 @@ def sanity_check(mystic_spheres):
     sphere_names.reverse()
     for sphere_name in sphere_names:
         print(f"{sphere_name}: {spell_count(sphere_name)}")
-        rank_texts = [f"{sphere_spells_by_rank[sphere_name].get(rank, 0)}" for rank in [1, 2, 3, 4, 5, 6, 7, 8]]
+        rank_texts = [
+            f"{sphere_spells_by_rank[sphere_name].get(rank, 0)}"
+            for rank in [1, 2, 3, 4, 5, 6, 7, 8]
+        ]
         print(f"  {' | '.join(rank_texts)}")
 
 
@@ -94,24 +103,29 @@ def generate_mystic_sphere_latex(check=False):
         try:
             mystic_sphere_texts.append(mystic_sphere.to_latex())
         except Exception as e:
-            raise Exception(f"Error converting mystic sphere '{mystic_sphere.name}' to LaTeX") from e
-    return latexify('\n\\newpage'.join(mystic_sphere_texts))
+            raise Exception(
+                f"Error converting mystic sphere '{mystic_sphere.name}' to LaTeX"
+            ) from e
+    return latexify("\n\\newpage".join(mystic_sphere_texts))
 
 
 def write_to_file(check=None):
     mystic_sphere_latex = generate_mystic_sphere_latex(check)
-    with open(book_path('mystic_sphere_descriptions.tex'), 'w') as mystic_sphere_descriptions_file:
+    with open(
+        book_path("mystic_sphere_descriptions.tex"), "w"
+    ) as mystic_sphere_descriptions_file:
         mystic_sphere_descriptions_file.write(mystic_sphere_latex)
 
 
 @click.command()
-@click.option('-c', '--check/--no-check', default=False)
-@click.option('-o', '--output/--no-output', default=False)
+@click.option("-c", "--check/--no-check", default=False)
+@click.option("-o", "--output/--no-output", default=False)
 def main(output, check):
     if output:
         write_to_file(check)
     else:
         print(generate_mystic_sphere_latex(check))
+
 
 if __name__ == "__main__":
     main()

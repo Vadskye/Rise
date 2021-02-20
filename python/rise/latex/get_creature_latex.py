@@ -2,14 +2,14 @@ from rise.latex.util import join
 
 # from rise.statistics.creature
 def get_creature_latex(
-        creature,
-        actions=None,
-        active_abilities=None,
-        behavior=None,
-        immunities=None,
-        passive_abilities=None,
-        resistances=None,
-        speed=None,
+    creature,
+    actions=None,
+    active_abilities=None,
+    behavior=None,
+    immunities=None,
+    passive_abilities=None,
+    resistances=None,
+    speed=None,
 ):
     return get_latex(
         # use a different calculation for monster AP
@@ -44,37 +44,38 @@ def get_creature_latex(
         resistances=resistances,
     )
 
+
 def get_latex(
-        armor_defense,
-        constitution,
-        dexterity,
-        fatigue_threshold,
-        fortitude_defense,
-        intelligence,
-        level,
-        mental_defense,
-        name,
-        perception,
-        species,
-        strength,
-        strikes,
-        reflex_defense,
-        willpower,
-        wound_threshold,
-        actions=None,
-        active_abilities=None,
-        behavior=None,
-        challenge_rating=1,
-        immunities=None,
-        name_suffix=None,
-        passive_abilities=None,
-        resistances=None,
-        size='medium',
-        space=5,
-        speed=30,
-        reach=5,
+    armor_defense,
+    constitution,
+    dexterity,
+    fatigue_threshold,
+    fortitude_defense,
+    intelligence,
+    level,
+    mental_defense,
+    name,
+    perception,
+    species,
+    strength,
+    strikes,
+    reflex_defense,
+    willpower,
+    wound_threshold,
+    actions=None,
+    active_abilities=None,
+    behavior=None,
+    challenge_rating=1,
+    immunities=None,
+    name_suffix=None,
+    passive_abilities=None,
+    resistances=None,
+    size="medium",
+    space=5,
+    speed=30,
+    reach=5,
 ):
-    behavior = behavior or 'Attack highest Strength'
+    behavior = behavior or "Attack highest Strength"
     return join(
         f"""
             \\begin<monsection><{name}>{name_suffix_text(name_suffix)}<{level}>[{challenge_rating}]
@@ -134,31 +135,35 @@ def actions_text(challenge_rating):
         4: "One in action phase, one in delayed action phase",
     }[challenge_rating]
 
+
 def active_abilities_text(active_abilities):
-    return (
-        '\n\\vspace<0.5em>'.join(active_abilities)
-        if active_abilities else ""
-    )
+    return "\n\\vspace<0.5em>".join(active_abilities) if active_abilities else ""
+
 
 def passive_abilities_text(passive_abilities):
-    return (
-        '\n\\vspace<0.5em>'.join(passive_abilities)
-        if passive_abilities else ""
-    )
+    return "\n\\vspace<0.5em>".join(passive_abilities) if passive_abilities else ""
+
 
 def immunity_text(immunities):
     return f"\\pari \\textbf<Immune> {', '.join(immunities)}" if immunities else ""
 
+
 def name_suffix_text(name_suffix):
     return f"[{name_suffix}]" if name_suffix else ""
+
 
 def resistance_text(resistances):
     return f"\\pari \\textbf<Resist> {', '.join(resistances)}" if resistances else ""
 
+
 def strike_text(strikes):
     strike_texts = []
     for strike in strikes:
-        defense_text = f" vs. {strike.defense.title()}" if strike.defense != 'Armor' else ""
-        strike_texts.append(f"{strike.name} +{strike.accuracy}{defense_text} ({strike.damage})")
+        defense_text = (
+            f" vs. {strike.defense.title()}" if strike.defense != "Armor" else ""
+        )
+        strike_texts.append(
+            f"{strike.name} +{strike.accuracy}{defense_text} ({strike.damage})"
+        )
     text = " or ".join(strike_texts)
     return text[0].upper() + text[1:]

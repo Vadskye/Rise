@@ -1,6 +1,7 @@
 import random
 import re
 
+
 class DicePool(object):
     def __init__(self, size, count=1):
         self.count = count
@@ -102,7 +103,7 @@ class DicePool(object):
     def from_string(cls, die_name):
         # First check the number of dice
         # http://stackoverflow.com/questions/3845423/remove-empty-strings-from-a-list-of-strings
-        die_split = list(filter(bool, re.split('d', die_name)))
+        die_split = list(filter(bool, re.split("d", die_name)))
         if len(die_split) > 1:
             count = int(die_split[0])
             size = int(die_split[1])
@@ -113,15 +114,16 @@ class DicePool(object):
         return cls(size=size, count=count)
 
     def __repr__(self):
-        text = 'DicePool({0}d{1})'.format(self.count, self.size)
+        text = "DicePool({0}d{1})".format(self.count, self.size)
         return text
 
     def __str__(self):
-        text = '{0}d{1}'.format(self.count, self.size)
+        text = "{0}d{1}".format(self.count, self.size)
         return text
 
     def __eq__(self, die):
         return self.size == die.size and self.count == die.count
+
 
 def standard_damage(statistic):
     return DicePool(8) + statistic // 2
