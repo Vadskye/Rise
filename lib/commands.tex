@@ -40,11 +40,11 @@
 \newcommand{\rngdist}{Distant \reminder{240 ft.}\xspace}
 \newcommand{\rngext}{Extreme \reminder{480 ft.}\xspace}
 
-\newcommand{\shortrange}{30 feet\xspace}
-\newcommand{\medrange}{60 feet\xspace}
-\newcommand{\longrange}{120 feet\xspace}
-\newcommand{\distrange}{240 feet\xspace}
-\newcommand{\extrange}{480 feet\xspace}
+\newcommand{\shortrange}{Short \reminder{30 ft.} range\xspace}
+\newcommand{\medrange}{Medium \reminder{60 ft.} range\xspace}
+\newcommand{\longrange}{Long \reminder{120 ft.} range\xspace}
+\newcommand{\distrange}{Distant \reminder{240 ft.} range\xspace}
+\newcommand{\extrange}{Extreme \reminder{480 ft.} range\xspace}
 
 \newcommand{\areatiny}{Tiny \reminder{5 ft.}\xspace}
 \newcommand{\areasmall}{Small \reminder{15 ft.}\xspace}
@@ -53,12 +53,12 @@
 \newcommand{\areahuge}{Huge \reminder{120 ft.}\xspace}
 \newcommand{\areagarg}{Gargantuan \reminder{240 ft.}\xspace}
 
-\newcommand{\tinyarea}{5 foot\xspace}
-\newcommand{\smallarea}{15 foot\xspace}
-\newcommand{\medarea}{30 foot\xspace}
-\newcommand{\largearea}{60 foot\xspace}
-\newcommand{\hugearea}{120 foot\xspace}
-\newcommand{\gargarea}{240 foot\xspace}
+\newcommand{\tinyarea}{Tiny \reminder{5 ft.}\xspace}
+\newcommand{\smallarea}{Small \reminder{15 ft.}\xspace}
+\newcommand{\medarea}{Medium \reminder{30 ft.}\xspace}
+\newcommand{\largearea}{Large \reminder{60 ft.}\xspace}
+\newcommand{\hugearea}{Huge \reminder{120 ft.}\xspace}
+\newcommand{\gargarea}{Gargantuan \reminder{240 ft.}\xspace}
 
 \newcommand{\confusionexplanation}{A confused creature cannot take actions normally. If it is attacked, it automatically attacks a random attacker. Otherwise, at the beginning of each round, it randomly decides to take one of four actions that round: babble incoherently, flee from the caster as if panicked, attack the nearest creature, or act normally. A confused character who can't carry out the indicated action does nothing but babble incoherently.\xspace}
 
@@ -123,10 +123,19 @@
     {\textbf{#2}~[#3]:}\xspace
 }
 
+\DeclareDocumentCommand{\parheadindent}{s m o}
+{
+    \vspace{0.25em}
+    \par
+    \IfNoValueTF{#3}
+    {\textbf{#2}:}
+    {\textbf{#2}~[#3]:}\xspace
+}
+
 \DeclareDocumentCommand{\rank}{m}
 {
     \par \noindent
-    \textit{Rank~#1}:
+    Rank~#1:\xspace
 }
 
 \DeclareDocumentCommand{\featlevel}{m}
@@ -361,23 +370,23 @@
 
 \DeclareDocumentCommand{\hit}{}
 {
-    \subparhead{Hit}\xspace
+    \par \textbf{Hit}:\xspace
 }
 
 \DeclareDocumentCommand{\glance}{}
 {
-    \subparhead{Glancing~Blow}\xspace
+    \par \textbf{Glancing~blow}:\xspace
 }
 
 
 \DeclareDocumentCommand{\crit}{}
 {
-    \subparhead{Critical~Hit}\xspace
+    \par \textbf{Critical~hit}:\xspace
 }
 
 \DeclareDocumentCommand{\miss}{}
 {
-    \subparhead{Miss}\xspace
+    \par \textbf{Miss}:\xspace
 }
 
 \DeclareDocumentCommand{\tableheaderrule}{}
