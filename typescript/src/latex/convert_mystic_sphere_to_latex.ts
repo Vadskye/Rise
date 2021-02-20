@@ -22,14 +22,7 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
 
       \\subsubsection{Spells}
         ${sortSpells(sphere.spells)
-          .map((spell) => {
-            try {
-              return convertSpellToLatex(spell);
-            } catch (err) {
-              err.message = `Error converting spell ${spell.name} to LaTeX: ${err.message}`;
-              throw err;
-            }
-          })
+          .map(convertSpellToLatex)
           .join("\n")}
 
       ${
@@ -59,6 +52,7 @@ function convertSpellToLatex(spell: SpellLike): string {
   return `
     \\begin{${abilityType}}{${spell.name}}${rankText}
       ${internalComponents.join("\n\\rankline\n\n\\noindent ")}
+      \\vspace{0.1em}
     \\end{${abilityType}}
   `;
 }
