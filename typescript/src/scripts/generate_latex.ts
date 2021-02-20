@@ -1,10 +1,10 @@
-import { monsterToLatex } from "@src/latex/monster_to_latex";
+import { convertMysticSphereToLatex, monsterToLatex } from "@src/latex";
 import { monstersByType } from "@src/monsters";
 import { MonsterType, monsterTypes, typeDescriptions } from "@src/monsters/types";
+import { mysticSpheres } from "@src/mystic_spheres";
 import { titleCase } from "change-case";
 import cli from "commander";
 import fs from "fs";
-import _ from "lodash";
 
 function formatPluralMonsterType(monsterType: MonsterType): string {
   if (["planeforged", "undead"].includes(monsterType)) {
@@ -30,6 +30,12 @@ function generateLatex(latexType: string): string {
         latex += monsterToLatex(monster);
       }
     }
+  } else if (latexType === "mystic_spheres") {
+    for (const mysticSphere of mysticSpheres) {
+      latex += convertMysticSphereToLatex(mysticSphere);
+    }
+  } else {
+    throw new Error(`Unrecognized latexType: '${latexType}'`);
   }
   return latex;
 }

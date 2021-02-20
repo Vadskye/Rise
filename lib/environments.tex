@@ -84,7 +84,7 @@
 {
     \begin{thesamepage}
     \spelltwocol{
-        \textit{#2}
+        {\normalsize \textbf{#2}}
         \IfValueTF{#1}{~--~#1}{}
     }{
         \IfValueTF{#3}{#3}{}
@@ -111,7 +111,10 @@
 \DeclareDocumentEnvironment{attuneability}{o m o}
 {
     \begin{thesamepage}
-        \spelltwocol{\textit{#2}\IfValueTF{#1}{~--~#1}{}}{#3}
+        \spelltwocol{
+            {\normalsize \textbf{#2}}
+            \IfValueTF{#1}{~--~#1}{}
+        }{#3}
 }
 {
     \end{thesamepage}
