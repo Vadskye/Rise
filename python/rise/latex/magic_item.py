@@ -2,47 +2,48 @@ from logging import getLogger, WARNING
 from rise.latex.util import join
 from rise.statistics.rise_data import consumable_item_prices, item_prices
 from rise.latex.tags import is_valid_tag
+
 logger = getLogger(__name__)
 
-class MagicItem(object):
 
+class MagicItem(object):
     @classmethod
     def automatic_materials(cls, material_type):
         return {
-            'Alchemy': ['alchemy'],
-            'Amulet': ['jewelry'],
-            'Belt': ['leather', 'textiles'],
-            'Body armor': ['bone', 'leather', 'metal'],
-            'Boots': ['bone', 'leather', 'metal'],
-            'Bracers': ['bone', 'leather', 'metal', 'wood'],
-            'Circlet': ['bone', 'metal'],
-            'Cloak': ['textiles'],
-            'Crown': ['bone', 'metal'],
-            'Gauntlet': ['bone', 'metal', 'wood'],
-            'Glove': ['leather'],
-            'Gloves': ['leather'],
-            'Fabric': ['textiles'],
-            'Mask': ['textiles'],
-            'Potion': ['alchemy'],
-            'Ring': ['bone', 'jewelry', 'metal', 'wood'],
-            'Shield': ['bone', 'metal', 'wood'],
-            'Staff': ['bone', 'wood'],
-            'Wand': ['bone', 'wood'],
-            'Weapon': ['as weapon'],
+            "Alchemy": ["alchemy"],
+            "Amulet": ["jewelry"],
+            "Belt": ["leather", "textiles"],
+            "Body armor": ["bone", "leather", "metal"],
+            "Boots": ["bone", "leather", "metal"],
+            "Bracers": ["bone", "leather", "metal", "wood"],
+            "Circlet": ["bone", "metal"],
+            "Cloak": ["textiles"],
+            "Crown": ["bone", "metal"],
+            "Gauntlet": ["bone", "metal", "wood"],
+            "Glove": ["leather"],
+            "Gloves": ["leather"],
+            "Fabric": ["textiles"],
+            "Mask": ["textiles"],
+            "Potion": ["alchemy"],
+            "Ring": ["bone", "jewelry", "metal", "wood"],
+            "Shield": ["bone", "metal", "wood"],
+            "Staff": ["bone", "wood"],
+            "Wand": ["bone", "wood"],
+            "Weapon": ["as weapon"],
         }[material_type]
 
     def __init__(
-            self,
-            description,
-            level,
-            name,
-            short_description,
-            consumable=False,
-            effects=None,
-            material_type=None,
-            materials=None,
-            tags=None,
-            targeting=None,
+        self,
+        description,
+        level,
+        name,
+        short_description,
+        consumable=False,
+        effects=None,
+        material_type=None,
+        materials=None,
+        tags=None,
+        targeting=None,
     ):
         self.consumable = consumable
         self.description = description
@@ -56,10 +57,12 @@ class MagicItem(object):
         try:
             self.materials = materials or MagicItem.automatic_materials(material_type)
         except KeyError:
-            raise Exception(f"Item '{self.name}' has unknown material_type {material_type}")
+            raise Exception(
+                f"Item '{self.name}' has unknown material_type {material_type}"
+            )
         self.targeting = targeting
 
-        if (self.tags):
+        if self.tags:
             for tag in self.tags:
                 if not is_valid_tag(tag):
                     logger.log(WARNING, f"Magic item {self.name} has invalid tag {tag}")
@@ -76,7 +79,11 @@ class MagicItem(object):
             return None
 
     def latex_tags(self):
-        return ', '.join([f"\\glossterm<{tag}>" for tag in sorted(self.tags)]) if self.tags else ""
+        return (
+            ", ".join([f"\\glossterm<{tag}>" for tag in sorted(self.tags)])
+            if self.tags
+            else ""
+        )
 
     def price(self):
         if self.consumable:

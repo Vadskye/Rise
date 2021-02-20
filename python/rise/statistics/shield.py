@@ -2,13 +2,13 @@
 # The order is [Defense bonus, encumbrance, accuracy modifier].
 def properties_from_armor_name(name):
     return {
-        'light': [1, 0, 0],
-        'heavy': [2, 0, 0],
-        'tower': [3, 2, -2],
+        "light": [1, 0, 0],
+        "heavy": [2, 0, 0],
+        "tower": [3, 2, -2],
     }[name]
 
-class Shield(object):
 
+class Shield(object):
     def __init__(self, name):
         self.name = name
         properties = properties_from_armor_name(name)

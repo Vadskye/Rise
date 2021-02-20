@@ -8,7 +8,7 @@ class Attack(object):
 
     @property
     def defense(self):
-        return self._defense or 'Armor'
+        return self._defense or "Armor"
 
     def __str__(self):
         return (

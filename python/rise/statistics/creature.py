@@ -5,6 +5,7 @@ from rise.statistics.size import Size
 from rise.statistics.weapon import Weapon
 import rise.statistics.rise_data as rise_data
 
+
 def calculate_attribute(starting_value, level):
     if starting_value == 1:
         return level // 2 + 1
@@ -13,27 +14,28 @@ def calculate_attribute(starting_value, level):
     else:
         return starting_value
 
+
 class Creature(object):
     def __init__(
-            self,
-            character_class,
-            level,
-            name,
-            species,
-            # For brevity, take an array of starting attributes as ints.
-            # The order is str, dex, con, int, per, wil
-            starting_attributes,
-            weapons,  # Array of Weapon objects
-            armor=None,
-            challenge_rating=1,
-            name_suffix=None,
-            natural_armor=0,
-            shield=None,
-            size=None,
-            accuracy_modifier=0,
-            active_abilities=None,
-            attuned_ability_count=0,
-            weapon_damage_modifier=0,
+        self,
+        character_class,
+        level,
+        name,
+        species,
+        # For brevity, take an array of starting attributes as ints.
+        # The order is str, dex, con, int, per, wil
+        starting_attributes,
+        weapons,  # Array of Weapon objects
+        armor=None,
+        challenge_rating=1,
+        name_suffix=None,
+        natural_armor=0,
+        shield=None,
+        size=None,
+        accuracy_modifier=0,
+        active_abilities=None,
+        attuned_ability_count=0,
+        weapon_damage_modifier=0,
     ):
         self.character_class = character_class
         self.level = level
@@ -98,7 +100,7 @@ class Creature(object):
         )
 
     def is_character(self):
-        return self.character_class.class_type == 'character'
+        return self.character_class.class_type == "character"
 
     @property
     def magical_power(self):
@@ -110,13 +112,15 @@ class Creature(object):
 
     @property
     def armor_defense(self):
-        return sum([
-            self.armor.defense_bonus if self.armor else 0,
-            self.shield.defense_bonus if self.shield else 0,
-            self.starting_dexterity,
-            self.natural_armor,
-            self.cr_mod,
-        ])
+        return sum(
+            [
+                self.armor.defense_bonus if self.armor else 0,
+                self.shield.defense_bonus if self.shield else 0,
+                self.starting_dexterity,
+                self.natural_armor,
+                self.cr_mod,
+            ]
+        )
 
     @property
     def special_attacks(self):
@@ -146,20 +150,22 @@ class Creature(object):
     @property
     def dexterity(self):
         dex = calculate_attribute(self.starting_dexterity, self.level)
-        if (self.armor and self.armor.encumbrance_category == Armor.HEAVY):
+        if self.armor and self.armor.encumbrance_category == Armor.HEAVY:
             dex = dex // 2
         return dex
 
     @property
     def fortitude_defense(self):
-        return sum([
-            self.fortitude_defense_misc,
-            self.starting_constitution,
-            max(self.level, self.constitution),
-            self.character_class.fortitude_defense_bonus,
-            self.species.fortitude_defense_bonus,
-            self.cr_mod,
-        ])
+        return sum(
+            [
+                self.fortitude_defense_misc,
+                self.starting_constitution,
+                max(self.level, self.constitution),
+                self.character_class.fortitude_defense_bonus,
+                self.species.fortitude_defense_bonus,
+                self.cr_mod,
+            ]
+        )
 
     @property
     def fatigue_threshold(self):
@@ -179,14 +185,16 @@ class Creature(object):
 
     @property
     def mental_defense(self):
-        return sum([
-            self.mental_defense_misc,
-            self.starting_willpower,
-            max(self.level, self.willpower),
-            self.character_class.mental_defense_bonus,
-            self.species.mental_defense_bonus,
-            self.cr_mod,
-        ])
+        return sum(
+            [
+                self.mental_defense_misc,
+                self.starting_willpower,
+                max(self.level, self.willpower),
+                self.character_class.mental_defense_bonus,
+                self.species.mental_defense_bonus,
+                self.cr_mod,
+            ]
+        )
 
     @property
     def perception(self):
@@ -198,15 +206,17 @@ class Creature(object):
 
     @property
     def reflex_defense(self):
-        return sum([
-            self.reflex_defense_misc,
-            self.starting_dexterity,
-            max(self.level, self.dexterity),
-            self.character_class.reflex_defense_bonus,
-            self.species.reflex_defense_bonus,
-            self.size.reflex_defense_modifier,
-            self.cr_mod,
-        ])
+        return sum(
+            [
+                self.reflex_defense_misc,
+                self.starting_dexterity,
+                max(self.level, self.dexterity),
+                self.character_class.reflex_defense_bonus,
+                self.species.reflex_defense_bonus,
+                self.size.reflex_defense_modifier,
+                self.cr_mod,
+            ]
+        )
 
     @property
     def strength(self):
@@ -216,12 +226,14 @@ class Creature(object):
     def strikes(self):
         strikes = []
         for weapon in self.weapons:
-            strikes.append(Attack(
-                accuracy=self.weapon_accuracy(weapon),
-                damage=self.weapon_damage(weapon),
-                defense=weapon.defense,
-                name=weapon.name,
-            ))
+            strikes.append(
+                Attack(
+                    accuracy=self.weapon_accuracy(weapon),
+                    damage=self.weapon_damage(weapon),
+                    defense=weapon.defense,
+                    name=weapon.name,
+                )
+            )
         return strikes
 
     @property
@@ -238,7 +250,9 @@ class Creature(object):
 
     def take_wound(self):
         self.vital_wounds += 1
-        wound_roll = DicePool(10).roll() - self.vital_wounds + self.starting_constitution
+        wound_roll = (
+            DicePool(10).roll() - self.vital_wounds + self.starting_constitution
+        )
         self.is_conscious = self.is_conscious and wound_roll >= 2
 
     def take_damage(self, damage):
@@ -251,44 +265,52 @@ class Creature(object):
 
     def accuracy(self, attribute=None):
         # Perception is normally used except in unusual situations
-        return sum([
-            max(
-                self.level,
-                getattr(self, attribute or 'perception'),
-            ),
-            self.accuracy_modifier,
-            self.cr_mod,
-        ])
+        return sum(
+            [
+                max(
+                    self.level,
+                    getattr(self, attribute or "perception"),
+                ),
+                self.accuracy_modifier,
+                self.cr_mod,
+            ]
+        )
 
     def weapon_accuracy(self, weapon):
         """Return the accuracy with the given weapon"""
-        return sum([
-            max(
-                self.level,
-                self.perception,
-                self.dexterity if weapon.encumbrance_category == Weapon.LIGHT else 0,
-            ),
-            self.shield.accuracy_modifier if self.shield else 0,
-            self.accuracy_modifier,
-            self.cr_mod,
-        ])
+        return sum(
+            [
+                max(
+                    self.level,
+                    self.perception,
+                    self.dexterity
+                    if weapon.encumbrance_category == Weapon.LIGHT
+                    else 0,
+                ),
+                self.shield.accuracy_modifier if self.shield else 0,
+                self.accuracy_modifier,
+                self.cr_mod,
+            ]
+        )
 
     def weapon_damage(self, weapon):
         """Return the DicePool for damage with the given Weapon"""
         power = max(
             self.level,
-            self.willpower if weapon.damage_type == 'magical' else self.strength,
+            self.willpower if weapon.damage_type == "magical" else self.strength,
         )
         standard = standard_damage(power)
-        standard += sum([
-            weapon.damage_modifier,
-            self.weapon_damage_modifier,
-        ])
+        standard += sum(
+            [
+                weapon.damage_modifier,
+                self.weapon_damage_modifier,
+            ]
+        )
         return standard
 
     def active_ability_damage(self, active_ability):
         """Return the DicePool for damage with the given ActiveAbility"""
-        if active_ability.damage_type == 'strike':
+        if active_ability.damage_type == "strike":
             # Default to the first weapon, assuming that it is the primary weapon
             weapon = active_ability.weapon or self.weapons[0]
             damage_modifier = (
@@ -299,24 +321,32 @@ class Creature(object):
             return self.weapon_damage(weapon) + damage_modifier
 
         standard = DicePool(8)
-        standard += sum([
-            max(
-                self.level,
-                self.willpower if active_ability.damage_type == 'magical' else self.strength
-            ) // 2,
-            active_ability.damage_modifier,
-            self.cr_mod,
-        ])
+        standard += sum(
+            [
+                max(
+                    self.level,
+                    self.willpower
+                    if active_ability.damage_type == "magical"
+                    else self.strength,
+                )
+                // 2,
+                active_ability.damage_modifier,
+                self.cr_mod,
+            ]
+        )
         return standard
 
-    def standard_damage(self, ability_type='physical'):
+    def standard_damage(self, ability_type="physical"):
         attribute = {
-            'magical': self.willpower,
-            'physical': self.strength,
+            "magical": self.willpower,
+            "physical": self.strength,
         }[ability_type]
-        return standard_damage(
-            max(self.level, attribute),
-        ) + self.cr_mod
+        return (
+            standard_damage(
+                max(self.level, attribute),
+            )
+            + self.cr_mod
+        )
 
     def expected_monster_points(self):
         # Having a high CR gives static benefits, but it also allows more
@@ -327,7 +357,7 @@ class Creature(object):
         points = 0
         # Add points from starting attributes; same as PC calcs
         for attribute_name in rise_data.attributes:
-            attribute_value = getattr(self, 'starting_' + attribute_name)
+            attribute_value = getattr(self, "starting_" + attribute_name)
             if attribute_value > 1:
                 points += attribute_value * 2 - 1
             elif attribute_value == 1:
@@ -343,17 +373,17 @@ class Creature(object):
             points += 2
 
         # Add points from size; +4 per size above Medium, +2 per size below Small
-        large_sizes = ['large', 'huge', 'gargantuan', 'colossal']
+        large_sizes = ["large", "huge", "gargantuan", "colossal"]
         if self.size.name in large_sizes:
             points += 4 * (large_sizes.index(self.size.name) + 1)
-        small_sizes = ['tiny', 'diminuitive', 'fine']
+        small_sizes = ["tiny", "diminuitive", "fine"]
         if self.size.name in small_sizes:
             points += 2 * (small_sizes.index(self.size.name) + 1)
 
         return points
 
     def __str__(self):
-        return '{0} {1} {2}\n{3}\n{4}{5}\n{6}\n{7}'.format(
+        return "{0} {1} {2}\n{3}\n{4}{5}\n{6}\n{7}".format(
             self.species.name if self.species else self.monster_type.name,
             self.name,
             self.level,
@@ -365,24 +395,32 @@ class Creature(object):
         )
 
     def _to_string_levels(self):
-        text = ", ".join(sorted([
-            "{} {}".format(name.capitalize() if name == self.class_name else name, level)
-            for name, level in self.levels.items()
-        ]))
+        text = ", ".join(
+            sorted(
+                [
+                    "{} {}".format(
+                        name.capitalize() if name == self.class_name else name, level
+                    )
+                    for name, level in self.levels.items()
+                ]
+            )
+        )
         if self.challenge_rating != 1:
             text += f" [CR {self.challenge_rating}]"
         return text
 
     def _to_string_defenses(self):
-        text = '; '.join([
-            f"[FT] {self.fatigue_threshold}, [WT] {self.wound_threshold}",
-            f"[Defs] {self.armor_defense}/{self.fortitude_defense}/{self.reflex_defense}/{self.mental_defense}",
-            f"[AP] {self.recovery_action_points}/{self.reserve_action_points}",
-        ])
+        text = "; ".join(
+            [
+                f"[FT] {self.fatigue_threshold}, [WT] {self.wound_threshold}",
+                f"[Defs] {self.armor_defense}/{self.fortitude_defense}/{self.reflex_defense}/{self.mental_defense}",
+                f"[AP] {self.recovery_action_points}/{self.reserve_action_points}",
+            ]
+        )
         return text
 
     def _to_string_strikes(self):
-        text = '[Atk] ' + '; '.join(
+        text = "[Atk] " + "; ".join(
             "{0}: +{1} vs {2} ({3})".format(
                 strike.name.title(),
                 strike.accuracy,
@@ -396,7 +434,7 @@ class Creature(object):
     def _to_string_special_attacks(self):
         if len(self.active_abilities) == 0:
             return ""
-        text = '\n  ' + '; '.join(
+        text = "\n  " + "; ".join(
             "{0}: +{1} vs {2} ({3})".format(
                 attack.name.title(),
                 attack.accuracy,
@@ -408,13 +446,13 @@ class Creature(object):
         return text
 
     def _to_string_attributes(self):
-        text = '[Attr]'
+        text = "[Attr]"
         for attribute in rise_data.attributes:
-            text += ' ' + str(getattr(self, attribute))
+            text += " " + str(getattr(self, attribute))
         return text
 
     def _to_string_core(self):
-        return '[Space] {0}, [Reach] {1}, [Speed] {2}'.format(
+        return "[Space] {0}, [Reach] {1}, [Speed] {2}".format(
             self.space,
             self.reach,
             self.speed,
