@@ -1,7 +1,7 @@
 import { MysticSphere } from ".";
 
 export const astromancy: MysticSphere = {
-  name: "Aeromancy",
+  name: "Astromancy",
   shortDescription: "Transport creatures and objects instantly through space.",
 
   cantrips: [
@@ -506,6 +506,7 @@ export const astromancy: MysticSphere = {
     {
       name: "Mass Phasestep",
 
+      castingTime: "minor action",
       functionsLike: {
         mass: true,
         spell: "phasestep",
