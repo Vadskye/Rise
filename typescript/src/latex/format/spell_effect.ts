@@ -11,12 +11,13 @@ export function spellEffect(
 ): string | null {
   try {
     if (spell.attack) {
-      assertEndsWithPeriod(spell.attack.target);
+      assertEndsWithPeriod(spell.attack.targeting);
       assertEndsWithPeriod(spell.attack.hit);
       assertEndsWithPeriod(spell.attack.glance);
       assertEndsWithPeriod(spell.attack.crit);
+      // The terminal % prevents a double-space in weird edge cases
       return `
-        ${spell.attack.target.trim()}
+        ${spell.attack.targeting.trim()}%
         \\vspace{0.25em}
         \\hit ${spell.attack.hit.trim()}
         ${spell.attack.glance ? `\\glance ${spell.attack.glance.trim()}` : ""}
