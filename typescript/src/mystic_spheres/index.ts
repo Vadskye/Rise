@@ -1,4 +1,5 @@
 import { aeromancy } from "./aeromancy";
+import { aquamancy } from "./aquamancy";
 
 export interface MysticSphere {
   cantrips?: Cantrip[];
@@ -14,7 +15,8 @@ export interface Cantrip {
   effect?: string;
   focus?: boolean;
   functionsLike?: {
-    exceptThat: string;
+    exceptThat?: string;
+    mass?: boolean;
     spell: string;
   };
   name: string;
@@ -26,6 +28,7 @@ export interface Cantrip {
     | "Duration"
     | "Attune (self)"
     | "Attune (target)"
+    | "Attune (ritual)"
     | "Sustain (free)"
     | "Sustain (minor)"
     | "Sustain (standard)";
@@ -51,4 +54,4 @@ interface SpellAttack {
   target: string;
 }
 
-export const mysticSpheres = [aeromancy];
+export const mysticSpheres = [aeromancy, aquamancy];

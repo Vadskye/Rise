@@ -3,16 +3,14 @@ import { MysticSphere, Spell, SpellLike } from "@src/mystic_spheres";
 import _ from "lodash";
 
 export function convertMysticSphereToLatex(sphere: MysticSphere): string {
-  return `
-    \\begin{spellsection}{${sphere.name}}
-      \\begin{spellheader}
-        \\spelldesc{${sphere.shortDescription}}
-      \\end{spellheader}
+  return format.latexify(`
+    \\section{${sphere.name}}\\label{spell:${sphere.name}}
+      \\textit{${sphere.shortDescription}}
 
       ${
         sphere.cantrips
           ? `
-            \\subsubsection{Cantrips}
+            \\subsection{Cantrips}
             ${sortSpells(sphere.cantrips)
               .map(convertSpellToLatex)
               .join("\n")}
@@ -20,7 +18,7 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
           : ""
       }
 
-      \\subsubsection{Spells}
+      \\subsection{Spells}
         ${sortSpells(sphere.spells)
           .map(convertSpellToLatex)
           .join("\n")}
@@ -28,16 +26,14 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
       ${
         sphere.rituals
           ? `
-            \\subsubsection{Rituals}
+            \\subsection{Rituals}
             ${sortSpells(sphere.rituals)
               .map(convertSpellToLatex)
               .join("\n")}
           `
           : ""
       }
-
-    \\end{spellsection}
-  `;
+  `);
 }
 
 function convertSpellToLatex(spell: SpellLike): string {
