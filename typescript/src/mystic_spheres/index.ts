@@ -1,5 +1,6 @@
 import { aeromancy } from "./aeromancy";
 import { aquamancy } from "./aquamancy";
+import { astromancy } from "./astromancy";
 
 export interface MysticSphere {
   cantrips?: Cantrip[];
@@ -21,7 +22,7 @@ export interface Cantrip {
   };
   name: string;
   narrative?: string;
-  scaling?: "accuracy" | "damage" | Record<number, string>;
+  scaling?: "accuracy" | "damage" | Record<string, string>;
   tags?: string[];
   type:
     | "Instant"
@@ -51,7 +52,7 @@ interface SpellAttack {
   crit?: string;
   glance?: string;
   hit: string;
-  target: string;
+  targeting: string;
 }
 
-export const mysticSpheres = [aeromancy, aquamancy];
+export const mysticSpheres = [aeromancy, aquamancy, astromancy];

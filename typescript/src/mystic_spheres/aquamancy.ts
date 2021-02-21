@@ -88,7 +88,7 @@ export const aquamancy: MysticSphere = {
             the subject stops being sickened for 10 minutes.
           This effect lasts until the subject takes a \\glossterm{short rest}.
         `,
-        target: `
+        targeting: `
           Make an attack vs. Mental against one creature within \\rngmed range.
         `,
       },
@@ -109,7 +109,7 @@ export const aquamancy: MysticSphere = {
           Until the end of the next round, the majority of each subject's body is surrounded by a layer of water.
           This does not impede its ability to breathe, but it takes penalties as if it was fighting underwater (see \\pcref{Underwater Combat}).
         `,
-        target: `
+        targeting: `
           Make an attack vs. Reflex against all creatures completely within a \\smallarea radius within \\rngmed range.
           This attack automatically fails against creatures whose entire space is not within the area.
         `,
@@ -138,7 +138,7 @@ export const aquamancy: MysticSphere = {
           As a \\glossterm{condition}, the majority of the subject's body is surrounded by a layer of water.
           This does not impede its ability to breathe, but it takes penalties as if it was fighting underwater (see \\pcref{Underwater Combat}).
         `,
-        target: `
+        targeting: `
           Make an attack vs. Reflex against a Large or smaller creature within \\medrange.
         `,
       },
@@ -156,7 +156,7 @@ export const aquamancy: MysticSphere = {
         hit: `
           Each subject takes 1d8 + half \\glossterm{power} bludgeoning damage.
         `,
-        target: `
+        targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea long, 10 ft. wide line from you.
         `,
       },
@@ -174,7 +174,7 @@ export const aquamancy: MysticSphere = {
         hit: `
           Each subject takes 2d6 + half \\glossterm{power} bludgeoning damage.
         `,
-        target: `
+        targeting: `
           Make an attack vs. Reflex against everything in a \\largearea long, 10 ft. wide line from you.
         `,
       },
@@ -192,7 +192,7 @@ export const aquamancy: MysticSphere = {
         hit: `
           The subject takes 1d8 + \\glossterm{power} bludgeoning damage.
         `,
-        target: `
+        targeting: `
           Make an attack vs. Armor against anything within \\medrange.
           Whether you hit or miss, you may \\glossterm{push} yourself up to 20 feet away from the target as the water propels you backwards.
           Moving yourself upwards costs twice the normal movement cost.
@@ -212,7 +212,7 @@ export const aquamancy: MysticSphere = {
         hit: `
           The subject takes 2d6 + \\glossterm{power} bludgeoning damage.
         `,
-        target: `
+        targeting: `
           Make an attack vs. Armor against anything within \\medrange.
           Whether you hit or miss, you may \\glossterm{push} yourself up to 50 feet away from the target as the water propels you backwards.
           Moving yourself upwards costs twice the normal movement cost.
@@ -232,7 +232,7 @@ export const aquamancy: MysticSphere = {
         hit: `
           Each subject takes 1d8 + half \\glossterm{power} bludgeoning damage.
         `,
-        target: `
+        targeting: `
           Make an attack vs. Armor against everything within a \\smallarea radius from you.
         `,
       },
@@ -250,7 +250,7 @@ export const aquamancy: MysticSphere = {
         hit: `
           Each subject takes 2d6 + half \\glossterm{power} bludgeoning damage.
         `,
-        target: `
+        targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} within a \\medarea radius from you.
         `,
       },
@@ -268,8 +268,8 @@ export const aquamancy: MysticSphere = {
         hit: `
           Each subject takes 4d8 + half \\glossterm{power} bludgeoning damage.
         `,
-        target: `
-          Make an attack vs. Armor against all \\glossterm{enemies} within a \\large radius from you.
+        targeting: `
+          Make an attack vs. Armor against all \\glossterm{enemies} within a \\largearea radius from you.
         `,
       },
       rank: 6,
@@ -280,7 +280,7 @@ export const aquamancy: MysticSphere = {
     {
       name: "Wall of Water",
 
-      // target: None,
+      // targeting: None,
       effect: `
           You create a wall of water in a 15 ft.\\ high, \\medarea long line within \\medrange.
           The wall is four inches thick, and blocks \\glossterm{line of effect} for abilities.
@@ -330,14 +330,14 @@ export const aquamancy: MysticSphere = {
     {
       name: "Raging River",
 
-      // target: "Everything in a \\medarea, 10 ft. wide line from you",
+      // targeting: "Everything in a \\medarea, 10 ft. wide line from you",
       attack: {
         // crit: '',
         // glance: '',
         hit: `
           Each subject takes 2d8 bludgeoning damage.
         `,
-        target: `
+        targeting: `
           Make an attack vs. Fortitude against everything in a \\medarea long, 10 ft. wide line from you.
           In addition, each subject is \\glossterm{pushed} 20 feet in the direction the line points away from you.
           Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
@@ -358,7 +358,7 @@ export const aquamancy: MysticSphere = {
         hit: `
           Each subject takes 2d8 + half \\glossterm{power} bludgeoning damage.
         `,
-        target: `
+        targeting: `
           Make an attack vs. Reflex against everything in a \\medarea long, 5 ft.\\ wide vertical line within \\longrange.
           If this spell has its area increased, only the length of the line increases.
         `,
@@ -378,7 +378,7 @@ export const aquamancy: MysticSphere = {
         hit: `
           Each subject takes 4d10 + half \\glossterm{power} bludgeoning damage.
         `,
-        target: `
+        targeting: `
           Make an attack vs. Reflex against everything in a \\largearea long, 5 ft.\\ wide vertical line within \\distrange.
           If this spell has its area increased, only the length of the line increases.
         `,
@@ -488,7 +488,7 @@ export const aquamancy: MysticSphere = {
           The subject takes 1d6 physical damage.
           If it loses hit points from this damage, it is \\glossterm{nauseated} as a \\glossterm{condition}.
         `,
-        target: `
+        targeting: `
           Make an attack vs. Fortitude against one living creature within \\rngmed range.
         `,
       },
@@ -506,7 +506,7 @@ export const aquamancy: MysticSphere = {
           The subject takes 2d8 + half \\glossterm{power} physical damage.
           If it loses hit points from this damage, it is \\glossterm{nauseated} as a \\glossterm{condition}.
         `,
-        target: `
+        targeting: `
           Make an attack vs. Fortitude against one living creature within \\rngmed range.
         `,
       },
@@ -524,7 +524,7 @@ export const aquamancy: MysticSphere = {
           The subject takes 4d10 + \\glossterm{power} physical damage.
           If it loses hit points from this damage, it is \\glossterm{nauseated} as a \\glossterm{condition}.
         `,
-        target: `
+        targeting: `
           Make an attack vs. Fortitude against one living creature within \\rngmed range.
         `,
       },
@@ -539,7 +539,7 @@ export const aquamancy: MysticSphere = {
         hit: `
           Each subject that has no remaining \\glossterm{resistance} to physical damage is \\glossterm{nauseated} as a \\glossterm{condition}.
         `,
-        target: `
+        targeting: `
           Make an attack vs. Fortitude against all living creatures in a \\medarea long, 10 ft. wide line from you.
         `,
       },
@@ -556,7 +556,7 @@ export const aquamancy: MysticSphere = {
         hit: `
           Each subject that has no remaining \\glossterm{resistance} to physical damage is \\glossterm{nauseated} as a \\glossterm{condition}.
         `,
-        target: `
+        targeting: `
           Make an attack vs. Fortitude against all living \\glossterm{enemies} in a \\gargarea long, 10 ft. wide line from you.
         `,
       },

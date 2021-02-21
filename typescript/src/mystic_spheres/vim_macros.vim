@@ -16,3 +16,7 @@ o€ku/scalingO€kra€kb: /tags\+€kb=oU€kra€kb: €k7
 /rank:.*\n.*\/\/ target:dd€ku€@7€kd€kdkp€k7
 /\<rh<}
 /\\\\areaov€kr€kr€krdOp
+/tat€kbgs: ..(attune|sustain)rwtypeoe€kb€kb'€kb"€@7€kl€kb€kd
+
+" Fix incorrect "scaling" parsing:
+/scaling: """lr${/"""rn}50@l

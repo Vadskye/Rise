@@ -69,7 +69,7 @@ export const aeromancy: MysticSphere = {
         hit: `
           The subject takes a -2 penalty to defenses against \\glossterm{mundane} ranged attacks from weapons or projectiles that are Small or smaller until it takes a \\glossterm{short rest}.
         `,
-        target: "Make an attack vs. Mental against anything within \\longrange.",
+        targeting: "Make an attack vs. Mental against anything within \\longrange.",
       },
       narrative: `
         The air around your foe ripples with hidden air currents that seem to guide the flight of arrows, ensuring that they strike true.
@@ -90,7 +90,7 @@ export const aeromancy: MysticSphere = {
         hit: `
           The subject takes a -4 penalty to defenses against \\glossterm{mundane} ranged attacks from weapons or projectiles that are Medium or smaller until it takes a \\glossterm{short rest}.
         `,
-        target: "Make an attack vs. Mental against anything within \\longrange.",
+        targeting: "Make an attack vs. Mental against anything within \\longrange.",
       },
       narrative: `
         The air around your foe ripples with hidden air currents that seem to guide the flight of arrows, ensuring that they strike true.
@@ -174,7 +174,7 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: "The subject takes 1d10 + \\glossterm{power} bludgeoning damage.",
-        target: "Make an attack vs. Armor against anything within \\medrange.",
+        targeting: "Make an attack vs. Armor against anything within \\medrange.",
       },
       // narrative: '',
       rank: 1,
@@ -188,7 +188,7 @@ export const aeromancy: MysticSphere = {
         // crit: '',
         glance: "Half damage.",
         hit: "The subject takes 2d8 \\add \\glossterm{power} bludgeoning damage.",
-        target: "Make an attack vs. Armor against anything within \\distrange.",
+        targeting: "Make an attack vs. Armor against anything within \\distrange.",
       },
       // narrative: '',
       rank: 3,
@@ -207,7 +207,8 @@ export const aeromancy: MysticSphere = {
           If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 30 feet in any direction (see \\pcref{Knockback Effects}).
           Moving the subject upwards costs twice the normal movement cost.
         `,
-        target: "Make an attack vs. Fortitude against anything Large or smaller within \\medrange.",
+        targeting:
+          "Make an attack vs. Fortitude against anything Large or smaller within \\medrange.",
       },
       // narrative: '',
       rank: 2,
@@ -226,7 +227,8 @@ export const aeromancy: MysticSphere = {
           If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 60 feet in any direction (see \\pcref{Knockback Effects}).
           Moving the subject upwards costs twice the normal movement cost.
         `,
-        target: "Make an attack vs. Fortitude against anything Huge or smaller within \\medrange.",
+        targeting:
+          "Make an attack vs. Fortitude against anything Huge or smaller within \\medrange.",
       },
       // narrative: '',
       rank: 5,
@@ -321,7 +323,7 @@ export const aeromancy: MysticSphere = {
           In addition, each subject is \\glossterm{pushed} 20 feet in the direction the line points away from you.
           Once a subject leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
-        target: `
+        targeting: `
           Make an attack vs. Fortitude against everything in a \\largearea long, 5 ft. wide line from you.
         `,
       },
@@ -343,7 +345,7 @@ export const aeromancy: MysticSphere = {
           In addition, each subject is \\glossterm{pushed} 50 feet in the direction the line points away from you.
           Once a subject leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
-        target: `
+        targeting: `
           Make an attack vs. Fortitude against everything in a \\hugearea long, 10 ft. wide line from you.
         `,
       },
@@ -393,7 +395,7 @@ export const aeromancy: MysticSphere = {
         hit: `
           Each subject takes 2d6 \\add half \\glossterm{power} bludgeoning damage.
         `,
-        target: `
+        targeting: `
           At the end of each phase, make an attack vs. Armor against each creature within \\shortrange that attacked you during that phase.
           Any effect which increases this spell's range increases the range of this retaliation by the same amount.
         `,
@@ -442,7 +444,7 @@ export const aeromancy: MysticSphere = {
         hit: `
           Each subject takes 2d6 \\add half \\glossterm{power} bludgeoning damage.
         `,
-        target: `
+        targeting: `
           Make an attack vs. Fortitude against everything in a \\smallarea radius within \\medrange.
         `,
       },
@@ -462,7 +464,7 @@ export const aeromancy: MysticSphere = {
           In addition, each subject is \\glossterm{pushed} 20 feet clockwise around you.
           Each subject's final position should be the same distance from you as its starting position.
         `,
-        target: `
+        targeting: `
           Make an attack vs. Fortitude against \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
@@ -481,7 +483,7 @@ export const aeromancy: MysticSphere = {
           You \\glossterm{knockback} the object up to 60 feet towards you.
           You can use a \\glossterm{free hand} to catch the object if it reaches you.
         `,
-        target: `
+        targeting: `
           Make an attack vs. Reflex against one Small or smaller object within \\medrange range.
           If the object is attended by a creature, the attack must also beat the attending creature's Reflex defense.
           If it is held in two hands or well secured, this attack automatically fails.
@@ -503,7 +505,7 @@ export const aeromancy: MysticSphere = {
           As a \\glossterm{condition}, the subject is \\glossterm{slowed} by incredibly fast winds that inhibit movement.
           At the end of each phase, if it moved voluntarily during that phase, it takes 2d6 bludgeoning damage.
         `,
-        target: `
+        targeting: `
           Make an attack vs. Fortitude against one Large or smaller creature within \\medrange.
         `,
       },
@@ -524,7 +526,7 @@ export const aeromancy: MysticSphere = {
         hit: `
           Each subject is \\glossterm{dazzled} until the end of the next round.
         `,
-        target: `
+        targeting: `
           Make an attack vs. Reflex against all creatures in a \\smallarea radius within \\medrange from you.
         `,
       },
@@ -544,7 +546,7 @@ export const aeromancy: MysticSphere = {
         hit: `
           Each subject is \\glossterm{dazzled} until the end of the next round.
         `,
-        target: `
+        targeting: `
           Make an attack vs. Reflex against all creatures in a \\largearea radius within \\longrange from you.
         `,
       },
@@ -564,7 +566,7 @@ export const aeromancy: MysticSphere = {
         hit: `
           Each subject is \\glossterm{blinded} until the end of the next round.
         `,
-        target: `
+        targeting: `
           Make an attack vs. Reflex against all creatures in a \\smallarea radius within \\medrange from you.
         `,
       },
@@ -582,7 +584,7 @@ export const aeromancy: MysticSphere = {
         hit: `
           The subject is \\glossterm{blinded} as a \\glossterm{condition}.
         `,
-        target: `
+        targeting: `
           Make an attack vs. Reflex against one creature within \\shortrange.
           If there is no dirt, dust, or collection of loose objects of similar size within 30 foot \\glossterm{range} of the subject's eyes, this attack automatically fails.
         `,
@@ -598,7 +600,7 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: "The subject takes 2d8 \\add \\glossterm{power} piercing damage.",
-        target: "Make an attack vs. Reflex against anything within \\medrange.",
+        targeting: "Make an attack vs. Reflex against anything within \\medrange.",
       },
       narrative: `
         A rush of wind flows rapidly through the gaps in your foe's armor to pierce its heart.
@@ -620,7 +622,7 @@ export const aeromancy: MysticSphere = {
           As a \\glossterm{condition}, air buffets the subject downward, pushing it towards the ground with great force.
           This approximately doubles the gravity it experiences, which imposes a -2 penalty to \\glossterm{accuracy}, physical \\glossterm{checks}, and \\glossterm{defenses}.
         `,
-        target: `
+        targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
