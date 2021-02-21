@@ -260,7 +260,6 @@ export const astromancy: MysticSphere = {
           If the the target gains a \\glossterm{vital wound} from this damage, the condition ends.
           This condition can be removed if the target makes a \\glossterm{difficulty rating} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
           Dropping \\glossterm{prone} as part of this action gives a +5 bonus to this check.
-          \\glance As above, except that that the target takes half damage.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
