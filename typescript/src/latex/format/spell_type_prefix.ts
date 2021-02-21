@@ -21,8 +21,8 @@ export function spellTypePrefix(
     const castingTime =
       spell.castingTime === "minor action"
         ? `One \\glossterm{${spell.castingTime}}`
-        : spell.castingTime;
-    return `${tagLine}\n\\noindent Casting time: ${sentenceCase(castingTime)}`;
+        : sentenceCase(spell.castingTime);
+    return `${tagLine}\n\\noindent Casting time: ${castingTime}`;
   } else {
     return tagLine;
   }

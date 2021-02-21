@@ -36,8 +36,18 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
   `);
 }
 
+function determineAbilityType(spell: Pick<SpellLike, "type">): string {
+  if (spell.type === "Instant") {
+    return "instantability";
+  } else if (spell.type.includes("Attune")) {
+    return "attuneability";
+  } else {
+    return "freeability";
+  }
+}
+
 function convertSpellToLatex(spell: SpellLike): string {
-  const abilityType = spell.type.includes("Attune") ? "attuneability" : "freeability";
+  const abilityType = determineAbilityType(spell);
   const rankText = (spell as Spell).rank ? `[Rank ${spell.rank}]` : "";
   const internalComponents = [
     format.spellTypePrefix(spell),
