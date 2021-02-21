@@ -25,11 +25,17 @@ export function spellEffect(
     } else if (spell.effect) {
       return spell.effect;
     } else if (spell.functionsLike) {
-      assertEndsWithPeriod(spell.functionsLike.exceptThat);
+      const exceptThat = spell.functionsLike.mass
+        ? "it affects up to five creatures of your choice from among yourself and your \\glossterm{allies} within \\medrange."
+        : spell.functionsLike.exceptThat;
+      assertEndsWithPeriod(exceptThat);
+      if (!exceptThat) {
+        throw new Error(`Must have a defined 'exceptThat' in a 'functionsLike'`);
+      }
       return `
         This spell functions like the \\spell{${
           spell.functionsLike.spell
-        }} spell, except that ${spell.functionsLike.exceptThat.trim()}
+        }} spell, except that ${exceptThat.trim()}
       `;
     } else {
       return null;
