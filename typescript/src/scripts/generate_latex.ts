@@ -31,9 +31,7 @@ function generateLatex(latexType: string): string {
       }
     }
   } else if (latexType === "mystic_spheres") {
-    for (const mysticSphere of mysticSpheres) {
-      latex += convertMysticSphereToLatex(mysticSphere);
-    }
+    latex += mysticSpheres.map(convertMysticSphereToLatex).join("\n\\newpage\n");
   } else {
     throw new Error(`Unrecognized latexType: '${latexType}'`);
   }

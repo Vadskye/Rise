@@ -37,7 +37,7 @@ export const aeromancy: MysticSphere = {
       scaling: {
         2: "The area increases to a \\largearea radius, and the maximum speed change increases to 20 miles per hour.",
         4: "The area increases to a \\hugearea radius, and the maximum speed change increases to 40 miles per hour.",
-        6: "The area increases to a \\extarea radius, and the maximum speed change increases to 80 miles per hour.",
+        6: "The area increases to a \\gargarea radius, and the maximum speed change increases to 80 miles per hour.",
       },
       type: "Sustain (minor)",
     },
@@ -65,9 +65,7 @@ export const aeromancy: MysticSphere = {
       name: "Curse of Arrow Attraction",
 
       attack: {
-        crit: `
-          The effect lasts until this curse is removed.
-        `,
+        crit: "The effect lasts until this curse is removed.",
         hit: `
           The subject takes a -2 penalty to defenses against \\glossterm{mundane} ranged attacks from weapons or projectiles that are Small or smaller until it takes a \\glossterm{short rest}.
         `,
@@ -159,8 +157,7 @@ export const aeromancy: MysticSphere = {
 
       castingTime: "minor action",
       functionsLike: {
-        exceptThat:
-          "it affects up to five creatures of your choice from among yourself and your \\glossterm{allies} within \\medrange.",
+        mass: true,
         spell: "wind screen",
       },
       // narrative: "",
@@ -176,7 +173,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         // crit: '',
-        hit: "The subject takes 1d10 \\add \\glossterm{power} bludgeoning damage.",
+        hit: "The subject takes 1d10 + \\glossterm{power} bludgeoning damage.",
         target: "Make an attack vs. Armor against anything within \\medrange.",
       },
       // narrative: '',
@@ -252,8 +249,7 @@ export const aeromancy: MysticSphere = {
       name: "Mass Gentle Descent",
 
       functionsLike: {
-        exceptThat:
-          "it affects up to five creatures of your choice from among yourself and your \\glossterm{allies} within \\medrange.",
+        mass: true,
         spell: "gentle descent",
       },
       // narrative: '',
@@ -378,8 +374,7 @@ export const aeromancy: MysticSphere = {
 
       castingTime: "minor action",
       functionsLike: {
-        exceptThat:
-          "it affects up to five creatures of your choice from among yourself and your \\glossterm{allies} within \\medrange.",
+        mass: true,
         spell: "windblade",
       },
       // narrative: '',
@@ -543,7 +538,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         crit: `
-          Each subject is also \\glossterm{dazzled} as a \\glossterm{condition}.
+          The effect becomes a \\glossterm{condition}.
         `,
         // glance: '',
         hit: `
@@ -670,8 +665,8 @@ export const aeromancy: MysticSphere = {
 
       castingTime: "one minute",
       effect: `
-        You learn the approximate distance and direction to any air within \\rnglong \\glossterm<range> of you.
-        Since this is a \\glossterm<Detection> ability, its range can penetrate some solid objects (see \\pcref<Detection>).
+        You learn the approximate distance and direction to any air within \\rnglong \\glossterm{range} of you.
+        Since this is a \\glossterm{Detection} ability, its range can penetrate some solid objects (see \\pcref{Detection}).
         This ritual can detect air pockets with a minimum size of Fine.
       `,
       // narrative: '',
