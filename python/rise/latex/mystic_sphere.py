@@ -36,6 +36,28 @@ class MysticSphere(object):
     def cantrip_latex(self):
         return "\n".join([str(c) for c in self.cantrips])
 
+    def generate_typescript(self):
+        spells_typescript = '\n'.join(map(lambda spell: spell.generate_typescript(), self.spells))
+        rituals_typescript = '\n'.join(map(lambda ritual: ritual.generate_typescript(), self.rituals))
+
+        return f"""
+            import {{ MysticSphere }} from ".";
+
+            export const {self.name.lower()}: MysticSphere = {{
+                name: "{self.name}",
+                shortDescription: "{self.short_description}.",
+
+                cantrips: [],
+                spells: [
+                    {spells_typescript}
+                ],
+                rituals: [
+                    {rituals_typescript}
+                ],
+                rituals: [],
+            }};
+        """
+
     def to_latex(self):
         # Sort by level as primary, name as secondary
         sorted_spells = sorted(
