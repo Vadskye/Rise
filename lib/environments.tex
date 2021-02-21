@@ -134,6 +134,34 @@
     innerbottommargin=0.25em,
 ]{attuneability}
 
+\DeclareDocumentEnvironment{instantability}{o m o}
+{
+    \begin{thesamepage}
+    \spelltwocol{
+        {\normalsize \textbf{#2}}
+        \IfValueTF{#1}{~--~#1}{}
+    }{
+        \IfValueTF{#3}{#3}{}
+    }
+}
+{
+    \end{thesamepage}
+}
+\surroundwithmdframed[
+    backgroundcolor=MintCream,
+    leftline=true,
+    topline=true,
+    rightline=true,
+    bottomline=true,
+    roundcorner=4pt,
+    skipabove=0.25em,
+    skipbelow=0.5em,
+    innerleftmargin=0.25em,
+    innerrightmargin=0.5em,
+    innertopmargin=-0.1em,  % using thesamepage gives it a top margin
+    innerbottommargin=0.25em,
+]{instantability}
+
 \newmdenv[
     style=colorenv,
     backgroundcolor=LightCyan,
