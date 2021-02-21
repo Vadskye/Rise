@@ -1,4 +1,5 @@
 from logging import getLogger, WARNING
+import re
 from rise.latex.effects import targets_are_plural
 from rise.latex.tags import is_valid_tag, to_latex_tags
 
@@ -127,6 +128,93 @@ class Spell(object):
             if self.scaling
             else ""
         )
+
+    def generate_typescript(self):
+        type_tag = next(
+            (tag for tag in self.tags if "Attune" in tag or "Sustain" in tag), None
+        )
+        duration_text_exists = (
+            "condition" in self.effect_text or "until" in self.effect_text
+        )
+        spell_type = (
+            type_tag
+            if type_tag
+            else ("Duration" if duration_text_exists else "Instant")
+        )
+
+        if self.scaling is None:
+            scaling_text = ""
+        elif "\\rank" in self.scaling:
+            scaling_text = (
+                "{"
+                + re.sub(
+                    ".(\n +\\d:|$)",
+                    ".`,\\1",
+                    re.sub(r"\\rank<(\d+)> ", r"\1: `", self.scaling.strip()),
+                )
+                + "}"
+            ).replace("\\", "\\\\")
+        elif self.scaling == "damage":
+            scaling_text = '"' + self.scaling + '"'
+        elif self.scaling == "accuracy":
+            scaling_text = '"' + self.scaling + '"'
+        else:
+            scaling_text = f'{{special: "{self.scaling.strip()}"}}'
+        if scaling_text:
+            scaling_text = f"scaling: {scaling_text},"
+
+        nontype_tags = [
+            tag for tag in self.tags if "Attune" not in tag and "Sustain" not in tag
+        ]
+        tags_text = f"tags: {nontype_tags}," if len(nontype_tags) > 0 else ""
+
+        casting_time_text = (
+            f'castingTime: "minor action",'
+            if "You can cast this spell as a \\\\glossterm<minor action"
+            in self.effect_text
+            else ""
+        )
+        casting_time_text = (
+            f'castingTime: "{self.ritual_time}",'
+            if self.ritual_time
+            else casting_time_text
+        )
+
+        functions_like_matches = re.search('functions like the \\\\(spell|textit|ritual)<([^>]+)>', self.effect_text)
+        if functions_like_matches:
+            referenced_spell = functions_like_matches[2]
+            if (not referenced_spell):
+                raise Exception(f"Spell ${self.name} has confusing 'functions like' text: '{self.effect_text}'")
+            except_that_text = re.sub('This (spell|ritual) functions like the \\\\spell<[^>]+> spell, except that', '', self.effect_text.strip())
+            functions_like_text = f"""
+                functionsLike: {{
+                    exceptThat: `
+                        {except_that_text}
+                    `,
+                    spell: "{referenced_spell}",
+                }},
+            """.replace('\\', '\\\\')
+            effect_text = ''
+        else:
+            functions_like_text = ''
+            effect_text = 'effect: `\n' + self.effect_text.strip().replace("\\", "\\\\") + '\n`,'
+
+        targets_text = f"// original targets: {self.targets}" if self.targets else ''
+
+        return f"""
+            {{
+                name: "{self.name}",
+
+                {targets_text}
+                {casting_time_text}
+                {effect_text}
+                {functions_like_text}
+                rank: {self.level},
+                {scaling_text}
+                {tags_text}
+                type: "{spell_type}",
+            }},
+        """
 
     def __str__(self):
         tag_text = to_latex_tags(self.tags)
