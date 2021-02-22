@@ -132,7 +132,7 @@ export const astromancy: MysticSphere = {
         crit: "The effect lasts until the curse is removed.",
         glance: "The effect lasts until the end of the next round.",
         hit: `
-          At the end of each round, the target teleports back to the location it was in
+          At the end of each round, the subject teleports back to the location it was in
           when this spell was cast.
           This effect lasts until it takes a \\glossterm{short rest}.
         `,
@@ -149,7 +149,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d10 + \\glossterm{power} energy damage.
+          The subject takes 1d10 + \\glossterm{power} energy damage.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
@@ -181,7 +181,7 @@ export const astromancy: MysticSphere = {
       name: "Silent Translocation",
 
       functionsLike: {
-        exceptThat: "the target's departure and arrival with this spell are silent.",
+        exceptThat: "the subject's departure and arrival with this spell are silent.",
         spell: "translocation",
       },
       rank: 3,
@@ -233,7 +233,7 @@ export const astromancy: MysticSphere = {
         hit: `
           The subject takes 1d10 bludgeoning damage.
           If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 50 feet in any direction (see \\pcref{Knockback Effects}).
-          Moving the target upwards costs twice the normal movement cost.
+          Moving the subject upwards costs twice the normal movement cost.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
@@ -257,8 +257,8 @@ export const astromancy: MysticSphere = {
           If it loses \\glossterm{hit points} from this damage, it catches on fire as a \\glossterm{condition}.
           At the end of each subsequent round, it takes 4d6 fire damage.
 
-          If the the target gains a \\glossterm{vital wound} from this damage, the condition ends.
-          This condition can be removed if the target makes a \\glossterm{difficulty rating} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
+          If the the subject gains a \\glossterm{vital wound} from this damage, the condition ends.
+          This condition can be removed if the subject makes a \\glossterm{difficulty rating} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
           Dropping \\glossterm{prone} as part of this action gives a +5 bonus to this check.
         `,
         targeting: `
@@ -307,8 +307,8 @@ export const astromancy: MysticSphere = {
         `,
       },
       effect: `
-          Make an attack vs. Mental against the target.
-          \\hit The target takes 4d6 energy damage.
+          Make an attack vs. Mental against the subject.
+          \\hit The subject takes 4d6 energy damage.
           In addition, it is \\glossterm{stunned} as a \\glossterm{condition}.
           \\glance As above, except that the condition is removed at the end of the next round:
       `,
@@ -545,7 +545,7 @@ export const astromancy: MysticSphere = {
       rank: 4,
       effect: `
         Choose a \\glossterm{planar rift} within \\medrange and up to five Large or smaller ritual participants.
-        Each creature teleports to the unoccupied spaces closest to the other side of the target planar rift.
+        Each creature teleports to the unoccupied spaces closest to the other side of the planar rift.
         For details about \\glossterm{planar rifts}, see \\pcref{Planar Rifts}.
 
         % TODO: Is this planar cosmology correct?
@@ -559,9 +559,8 @@ export const astromancy: MysticSphere = {
     {
       name: "Astral Projection",
 
-      // target: "Up to five Large or smaller ritual participants",
       effect: `
-        Choose up to 5 Large or smaller ritual participants.
+        Choose up to five Large or smaller ritual participants.
         Each creature teleports to a single random location within the Inner Astral Plane (see \\pcref{The Astral Plane}).
 
         In addition, a localized \\glossterm{planar rift} appears at the destination area on the Astral Plane which leads back to the location where this ritual was performed.
@@ -576,11 +575,10 @@ export const astromancy: MysticSphere = {
     {
       name: "Homeward Shift",
 
-      // target: "Up to five Large or smaller ritual participants",
       effect: `
         This ritual can only be performed on the Astral Plane.
 
-        Choose up to 5 Large or smaller ritual participants.
+        Choose up to five Large or smaller ritual participants.
         Each creature teleports to the last spaces they occupied on their home planes.
       `,
       rank: 4,
@@ -609,7 +607,6 @@ export const astromancy: MysticSphere = {
     {
       name: "Distant Overland Teleportation",
 
-      // target: None,
       functionsLike: {
         exceptThat: `
         there is no distance limitation.
