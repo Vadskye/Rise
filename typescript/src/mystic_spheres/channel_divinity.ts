@@ -4,7 +4,47 @@ export const channelDivinity: MysticSphere = {
   name: "Channel Divinity",
   shortDescription: "Invoke divine power to smite foes and gain power.",
 
-  cantrips: [],
+  cantrips: [
+    {
+      effect: `
+        The magical essence of your deity or alignment is overlayed on your body as an aura.
+        This represents your deity if you are a cleric, or your alignment if you are a paladin.
+        In either case, you gain the ability to see the auras of other creatures using this spell if they are within \\rngshort range.
+        If you see another creature with the same aura as you, this spell grants you the unerring knowledge of that similarity.
+        This can allow you to identify other followers of your deity or alignment with certainty.
+
+        This spell lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
+      `,
+      name: "Testament",
+      scaling: {
+        2: "The range increases to \\rngmed.",
+        4: `
+          If you are a cleric, you can also unerringly see an aura around creatures who worship your deity.
+          If you are a paladin, you can also unerringly see an aura around creatures who share your devoted alignment.
+        `,
+        6: "The range increases to \\rnglong.",
+      },
+      type: "Duration",
+    },
+    {
+      effect: `
+        You emit \\glossterm{bright illumination} in a radius of your choice, up to a maximum of 15 feet, and \\glossterm{shadowy illumination} in twice that radius.
+        The color of the light depends on the nature of your deity or alignment.
+        Each deity has their own color or color combination.
+        Typically, good is yellow, evil is purple, law is white, and chaos is a myriad of ever-changing colors.
+      `,
+      name: "Divine Radiance",
+      narrative: `
+        You call on the majesty of your deity or alignment to radiate into the world.
+      `,
+      scaling: {
+        2: "The maximum radius of bright illumination increases to 30 feet.",
+        4: "The maximum radius of bright illumination increases to 60 feet.",
+        6: "The maximum radius of bright illumination increases to 120 feet.",
+      },
+      type: "Sustain (minor)",
+    },
+  ],
   spells: [
     {
       name: "Faith Rewarded",
@@ -214,10 +254,13 @@ export const channelDivinity: MysticSphere = {
         Your size increases by one \\glossterm{size category}.
         This increases your \\glossterm{base speed} and reduces your \\glossterm{Stealth} skill.
         It may also increase your \\glossterm{reach} (see \\pcref{Size in Combat}).
-        However, your physical form is not altered fully to match its new size, and your Strength and Dexterity are unchanged.
+        However, your physical form is not altered fully to match your new size, and your Strength and Dexterity are unchanged.
       `,
-      rank: 4,
-      scaling: { 6: `You can increase your size by two size categories instead of one.` },
+      rank: 3,
+      scaling: {
+        5: `You gain a +2 bonus to Strength-based checks, and you gain a +2 bonus to strength for the purpose of determining your carrying capacity.`,
+        7: "You can increase your size category by up to two size categories",
+      },
       type: "Attune (self)",
     },
 

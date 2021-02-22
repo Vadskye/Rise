@@ -9,9 +9,9 @@ export const barrier: MysticSphere = {
       name: "Burst Ward",
 
       effect: `
-        You take half damage from \\glossterm<energy damage> this round.
-        This halving is applied before \\glossterm<resistances> and similar abilities.
-        Because this is a \\glossterm<Swift> ability, it affects damage you take during the current phase.
+        You take half damage from \\glossterm{energy damage} this round.
+        This halving is applied before \\glossterm{resistances} and similar abilities.
+        Because this is a \\glossterm{Swift} ability, it affects damage you take during the current phase.
       `,
       // narrative: '',
       scaling: {
@@ -25,13 +25,13 @@ export const barrier: MysticSphere = {
     {
       functionsLike: {
         exceptThat: `
-          its \\glossterm<range> is \\rngshort and the maximum dimensions of the barrier are a 5 ft.\\ by 5 ft.\\ square.
+          its \\glossterm{range} is \\shortrange and the maximum dimensions of the barrier are a 5 ft.\\ by 5 ft.\\ square.
         `,
         spell: "mystic barrier",
       },
       name: "Minor Barrier",
       scaling: {
-        2: "The range increases to \\rngmed.",
+        2: "The range increases to \\medrange.",
         4: "The maximum dimensions of the wall increase to a 5 ft.\\ by 10 ft.\\ rectangle, and the hit points of each square increase to 8.",
         6: "The maximum dimensions of the wall increase to a 10 ft.\\ by 10 ft.\\ square, and the hit points of each square increase to 16.",
       },
@@ -87,9 +87,10 @@ export const barrier: MysticSphere = {
         exceptThat: `
           you can choose how much the barrier blocks sound.
             There are three possibilities: fully sound-permeable, fully sound-blocking like a normal \\spell{mystic barrier}, and sound-dampening.
+            You can change how much the barrier blocks sound as part of the action you use to sustain this spell, or as a \\glossterm{minor action} if you attune to this spell.
+
             A sound-dampening barrier increases the \\glossterm{difficulty rating} of sound-based Awareness checks by 20.
             Sound-permeable and sound-dampening barriers do not block \\glossterm{line of effect} for effects that deal \\glossterm{sonic damage}, but a sound-dampening barrier makes everything \\glossterm{impervious} to \\glossterm{sonic damage} that originates from the other side of the barrier.
-            You can change how much the barrier blocks sound as part of the action you use to sustain this spell, or as a \\glossterm{minor action} if you attune to this spell.
         `,
         spell: "mystic barrier",
       },
@@ -513,7 +514,7 @@ export const barrier: MysticSphere = {
       name: "Antilife Shell",
 
       functionsLike: {
-        exceptThat: "you gain a +10 bonus to \\glossterm{accuracy} against living creatures",
+        exceptThat: "you gain a +10 bonus to \\glossterm{accuracy} against living creatures.",
         spell: "repulsion field",
       },
       rank: 6,
