@@ -330,17 +330,16 @@ export const aquamancy: MysticSphere = {
     {
       name: "Raging River",
 
-      // targeting: "Everything in a \\medarea, 10 ft. wide line from you",
       attack: {
         // crit: '',
         // glance: '',
         hit: `
           Each subject takes 2d8 bludgeoning damage.
+          In addition, each subject is \\glossterm{pushed} 20 feet in the direction the line points away from you.
+          Once a subject leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\medarea long, 10 ft. wide line from you.
-          In addition, each subject is \\glossterm{pushed} 20 feet in the direction the line points away from you.
-          Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
       },
       rank: 4,
