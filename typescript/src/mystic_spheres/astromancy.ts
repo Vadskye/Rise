@@ -41,7 +41,6 @@ export const astromancy: MysticSphere = {
     {
       name: "Dimensional Grasp",
 
-      rank: 1,
       attack: {
         // crit: '',
         // glance: '',
@@ -55,8 +54,9 @@ export const astromancy: MysticSphere = {
           Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
         `,
       },
-      scaling: "damage",
       focus: false,
+      rank: 1,
+      scaling: "damage",
       type: "Instant",
     },
     {
