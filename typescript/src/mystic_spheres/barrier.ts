@@ -558,7 +558,7 @@ export const barrier: MysticSphere = {
       castingTime: "one hour",
       functionsLike: {
         exceptThat: `
-          This ritual functions like the \\ritual{mystic lock} ritual, except that the \\glossterm{difficulty rating} to unlock the object with a Devices check is instead equal to 30 + your \\glossterm{power}.
+          the \\glossterm{difficulty rating} to unlock the object with a Devices check is instead equal to 30 + your \\glossterm{power}.
             In addition, the \\glossterm{difficulty rating} to break it open increases by 20 instead of by 10.
         `,
         spell: "mystic lock",
