@@ -550,33 +550,23 @@ def generate_armor():
     apparel += [
         MagicItem(
             name="Armor of Invulnerability",
-            level=7,
+            level=10,
             tags=[],
             material_type="Body armor",
             description="""
-                You gain a +4 \\glossterm<magic bonus> to your \\glossterm<resistances> to both \\glossterm<physical damage> and \\glossterm<energy damage>.
+                You gain a +6 \\glossterm<magic bonus> to your \\glossterm<resistances> to both \\glossterm<physical damage> and \\glossterm<energy damage>.
             """,
-            short_description="Grants +4 universal resistance",
+            short_description="Grants +6 universal resistance",
         ),
         MagicItem(
             name="Armor of Invulnerability, Greater",
-            level=13,
+            level=16,
             tags=[],
             material_type="Body armor",
             description="""
-                You gain a +8 \\glossterm<magic bonus> to your \\glossterm<resistances> to both \\glossterm<physical damage> and \\glossterm<energy damage>.
+                You gain a +12 \\glossterm<magic bonus> to your \\glossterm<resistances> to both \\glossterm<physical damage> and \\glossterm<energy damage>.
             """,
-            short_description="Grants +8 universal resistance",
-        ),
-        MagicItem(
-            name="Armor of Invulnerability, Supreme",
-            level=19,
-            tags=[],
-            material_type="Body armor",
-            description="""
-                You gain a +16 \\glossterm<magic bonus> to your \\glossterm<resistances> to both \\glossterm<physical damage> and \\glossterm<energy damage>.
-            """,
-            short_description="Grants +16 universal resistance",
+            short_description="Grants +12 universal resistance",
         ),
     ]
 
