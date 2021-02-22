@@ -99,7 +99,7 @@ export const astromancy: MysticSphere = {
         `,
         // +2 accuracy in exchange for +1 level and -half power
         targeting: `
-          Make a melee attack vs. Mental with a +2 \\glossterm{accuracy} bonus against anything within \\medrange.
+          Make an attack vs. Mental with a +2 \\glossterm{accuracy} bonus against anything within \\medrange.
         `,
       },
       rank: 3,
