@@ -164,14 +164,49 @@ class Spell(object):
             scaling_text = f"scaling: {scaling_text},"
 
         nontype_tags = [
-            tag for tag in self.tags if "Attune" not in tag and "Sustain" not in tag
+            tag
+            for tag in self.tags
+            if "Attune" not in tag and "Sustain" not in tag and "Focus" not in tag
         ]
         tags_text = f"tags: {nontype_tags}," if len(nontype_tags) > 0 else ""
+
+        functions_like_matches = re.search(
+            "functions like the \\\\(spell|textit|ritual)<([^>]+)>", self.effect_text
+        )
+        if functions_like_matches:
+            referenced_spell = functions_like_matches[2]
+            if not referenced_spell:
+                raise Exception(
+                    f"Spell ${self.name} has confusing 'functions like' text: '{self.effect_text}'"
+                )
+            except_that_text = re.sub(
+                "This (spell|ritual) functions like the \\\\spell<[^>]+> spell, except that",
+                "",
+                self.effect_text.strip(),
+            )
+            functions_like_text = f"""
+      functionsLike: {{
+        exceptThat: `
+          {except_that_text.strip()}
+        `,
+        spell: "{referenced_spell}",
+      }},
+            """.replace(
+                "\\", "\\\\"
+            )
+            effect_text = ""
+        else:
+            functions_like_text = ""
+            effect_text = (
+                "effect: `\n" + self.effect_text.strip().replace("\\", "\\\\") + "\n`,"
+            )
+        # Standardize indentation
+        effect_text = re.sub('^ *', '        ', effect_text, flags=re.MULTILINE)
 
         casting_time_text = (
             f'castingTime: "minor action",'
             if "You can cast this spell as a \\\\glossterm<minor action"
-            in self.effect_text
+            in effect_text
             else ""
         )
         casting_time_text = (
@@ -180,39 +215,41 @@ class Spell(object):
             else casting_time_text
         )
 
-        functions_like_matches = re.search('functions like the \\\\(spell|textit|ritual)<([^>]+)>', self.effect_text)
-        if functions_like_matches:
-            referenced_spell = functions_like_matches[2]
-            if (not referenced_spell):
-                raise Exception(f"Spell ${self.name} has confusing 'functions like' text: '{self.effect_text}'")
-            except_that_text = re.sub('This (spell|ritual) functions like the \\\\spell<[^>]+> spell, except that', '', self.effect_text.strip())
-            functions_like_text = f"""
-                functionsLike: {{
-                    exceptThat: `
-                        {except_that_text}
-                    `,
-                    spell: "{referenced_spell}",
-                }},
-            """.replace('\\', '\\\\')
-            effect_text = ''
-        else:
-            functions_like_text = ''
-            effect_text = 'effect: `\n' + self.effect_text.strip().replace("\\", "\\\\") + '\n`,'
+        targets_text = f"// original targets: {self.targets}" if self.targets else ""
 
-        targets_text = f"// original targets: {self.targets}" if self.targets else ''
+        elements_text = "\n".join(
+            map(
+                lambda x: x.strip(),
+                filter(
+                    lambda x: x,
+                    [
+                        targets_text,
+                        casting_time_text,
+                        effect_text,
+                        functions_like_text,
+                        f"rank: {self.level},",
+                        scaling_text,
+                        tags_text,
+                        f'type: "{spell_type}",',
+                    ],
+                ),
+            )
+        )
+
+        areas = ["tiny", "small", "med", "large", "huge", "garg"]
+        ranges = ["short", "med", "long", "dist", "ext"]
+        for area in areas:
+            elements_text = elements_text.replace(f"\\\\area{area}", f"\\\\{area}area")
+            elements_text = elements_text.replace(f"\\\\{area}area line", f"\\\\{area}area long line")
+        for r in ranges:
+            elements_text = re.sub(f'\\\\rng{r}( range)?', f"\\\\{r}range", elements_text)
+        elements_text = elements_text.replace('<', '{').replace('>', '}')
 
         return f"""
             {{
                 name: "{self.name}",
 
-                {targets_text}
-                {casting_time_text}
-                {effect_text}
-                {functions_like_text}
-                rank: {self.level},
-                {scaling_text}
-                {tags_text}
-                type: "{spell_type}",
+                {elements_text}
             }},
         """
 
