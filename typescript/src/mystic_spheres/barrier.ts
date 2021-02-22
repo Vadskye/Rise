@@ -172,7 +172,6 @@ export const barrier: MysticSphere = {
     {
       name: "Protective Sphere",
 
-      // original targets: Yourself or one Large or smaller \glossterm{ally} within \medrange
       effect: `
         Choose yourself or one Large or smaller \\glossterm{ally} within \\medrange.
         You create a sphere of magical energy around the subject in its space.
@@ -219,7 +218,7 @@ export const barrier: MysticSphere = {
         You create a sphere of magical energy around yourself.
         The sphere is visible as a shimmering magical membrane that does not block sight.
         Nothing can pass through the field until it is destroyed.
-        This prevents the target from having \\glossterm{line of effect} to anything outside of the area.
+        This prevents you from having \\glossterm{line of effect} to anything outside of the area.
         When you move, the sphere moves with you, though you cannot force it against another creature or object.
         Each 5-ft.\\ square of the field has \\glossterm{hit points} equal to three times your \\glossterm{power}.
         `,
@@ -241,10 +240,10 @@ export const barrier: MysticSphere = {
           A sphere of magical energy appears around the subject in its space.
           The sphere is visible as a shimmering magical membrane that does not block sight.
           Nothing can pass through the sphere until it is destroyed.
-          This prevents the target from having \\glossterm{line of effect} to anything outside of the area.
+          This prevents the subject from having \\glossterm{line of effect} to anything outside of the area.
           Each 5-ft.\\ square of the field has \\glossterm{hit points} equal to twice your \\glossterm{power}.
 
-          If another creature is in the target's space when this spell is cast, this spell fails without effect.
+          If another creature is in the subject's space when this spell is cast, this spell fails without effect.
         `,
         targeting: `
           Make an attack vs. Reflex against anything Large or smaller within \\medrange.
@@ -532,7 +531,7 @@ export const barrier: MysticSphere = {
         The subject suffers no harm from being in a hot or cold environment.
         It can exist comfortably in conditions between \\minus50 and 140 degrees Fahrenheit.
         Its equipment, if any, is also protected.
-        This does not protect the target from fire or cold damage.
+        This does not protect the subject from fire or cold damage.
       `,
       rank: 1,
       type: "Attune (ritual)",
@@ -559,7 +558,7 @@ export const barrier: MysticSphere = {
       castingTime: "one hour",
       functionsLike: {
         exceptThat: `
-          This ritual functions like the \\ritual{mystic lock} ritual, except that the \\glossterm{difficulty rating} to unlock the target with a Devices check is instead equal to 30 + your \\glossterm{power}.
+          This ritual functions like the \\ritual{mystic lock} ritual, except that the \\glossterm{difficulty rating} to unlock the object with a Devices check is instead equal to 30 + your \\glossterm{power}.
             In addition, the \\glossterm{difficulty rating} to break it open increases by 20 instead of by 10.
         `,
         spell: "mystic lock",
@@ -571,19 +570,19 @@ export const barrier: MysticSphere = {
     {
       name: "Explosive Runes",
 
-      // original targets: One Small or smaller unattended object with writing on it within \shortrange
       castingTime: "one hour",
       effect: `
         % TODO: clarify how to identify that this is Explosive Runes instead of bad handwriting
-        The writing on the target is altered by the runes in subtle ways, making it more difficult to read.
+        Choose one Small or smaller \\glossterm{unattended} object with writing on it within \\shortrange.
+        The writing on the object is altered by the runes in subtle ways, making it more difficult to read.
         It becomes a \\glossterm{trap}.
         To read the writing, a creature must concentrate on reading it, which requires a standard action.
-        If a creature reads the target, the target explodes.
-        You make an attack vs. Reflex against everything within a \\smallarea radius from the target.
-        Each struck target takes energy damage equal to 2d8 plus half your \\glossterm{power}.
+        If a creature reads the object, the object explodes.
+        You make an attack vs. Reflex against everything within a \\smallarea radius from the object.
+        Each struck subject takes 2d8 + half \\glossterm{power} energy damage.
 
-        After the target object explodes in this way, the ritual is \\glossterm{dismissed}.
-        If the target is destroyed or rendered illegible, the ritual is dismissed without exploding.
+        After the object explodes in this way, the ritual is \\glossterm{dismissed}.
+        If the object is destroyed or rendered illegible, the ritual is dismissed without exploding.
         `,
       rank: 4,
       type: "Attune (ritual)",
