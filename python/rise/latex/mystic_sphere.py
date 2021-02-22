@@ -54,7 +54,6 @@ class MysticSphere(object):
                 rituals: [
                     {rituals_typescript}
                 ],
-                rituals: [],
             }};
         """
 
