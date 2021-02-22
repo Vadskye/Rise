@@ -2217,9 +2217,8 @@ def generate_worn():
 
     apparel += [
         MagicItem(
-            # +1 level since max HP has odd level scaling
             name="Amulet of Health",
-            level=5,
+            level=4,
             material_type="Amulet",
             description="""
                 You gain a +4 \\glossterm<magic bonus> to your maximum \\glossterm<hit points>.
@@ -2229,7 +2228,7 @@ def generate_worn():
         ),
         MagicItem(
             name="Amulet of Health, Greater",
-            level=11,
+            level=10,
             material_type="Amulet",
             description="""
                 You gain a +8 \\glossterm<magic bonus> to your maximum \\glossterm<hit points>.
@@ -2239,7 +2238,7 @@ def generate_worn():
         ),
         MagicItem(
             name="Amulet of Health, Supreme",
-            level=17,
+            level=16,
             material_type="Amulet",
             description="""
                 You gain a +16 \\glossterm<magic bonus> to your maximum \\glossterm<hit points>.
