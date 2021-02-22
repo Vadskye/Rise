@@ -1,6 +1,11 @@
 import { aeromancy } from "./aeromancy";
 import { aquamancy } from "./aquamancy";
 import { astromancy } from "./astromancy";
+import { barrier } from "./barrier";
+import { bless } from "./bless";
+import { channelDivinity } from "./channel_divinity";
+
+export const mysticSpheres = [aeromancy, aquamancy, astromancy, barrier, bless, channelDivinity];
 
 export interface MysticSphere {
   cantrips?: Cantrip[];
@@ -54,5 +59,3 @@ interface SpellAttack {
   hit: string;
   targeting: string;
 }
-
-export const mysticSpheres = [aeromancy, aquamancy, astromancy];

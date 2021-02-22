@@ -4,19 +4,46 @@ export const bless: MysticSphere = {
   name: "Bless",
   shortDescription: "Grant divine blessings to aid allies and improve combat prowess.",
 
-  cantrips: [],
+  cantrips: [
+    {
+      effect: `
+        Choose yourself or one \\glossterm{ally} within \\medrange.
+        The subject gains a +1 bonus to \\glossterm{accuracy} and \\glossterm{checks} during the next round.
+      `,
+      name: "Boon of Competence",
+      scaling: {
+        2: "The bonus increases to +2.",
+        4: "The bonus increases to +3.",
+        6: "The bonus increases to +4.",
+      },
+      type: "Duration",
+    },
+    {
+      effect: `
+        Choose yourself or one \\glossterm{ally} within \\medrange.
+        The subject gains a +1 bonus to \\glossterm{defenses} during the next round.
+      `,
+      name: "Boon of Protection",
+      scaling: {
+        2: "The bonus increases to +2.",
+        4: "The bonus increases to +3.",
+        6: "The bonus increases to +4.",
+      },
+      type: "Duration",
+    },
+  ],
   spells: [
     {
       name: "Blessing of Freedom",
 
       castingTime: "minor action",
       effect: `
-        You can only have one casting of this spell active at once.
-        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
-
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The subject is immune to being \\glossterm{slowed}, \\glossterm{decelerated}, \\glossterm{immobilized}, and \\glossterm{paralyzed}.
-        `,
+
+        You can only have one casting of this spell active at once.
+        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
+      `,
       rank: 2,
       scaling: {
         4: `Casting this spell does not remove previous attunements to this spell.
@@ -31,13 +58,12 @@ export const bless: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You can cast this spell as a \\glossterm{minor action}.
-        You can only have one casting of this spell active at once.
-        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
-
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The subject gains a +10 foot \\glossterm{magic bonus} to its \\glossterm{base speed}, up to a maximum of double its \\glossterm{base speed}.
-        `,
+
+        You can only have one casting of this spell active at once.
+        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
+      `,
       rank: 1,
       scaling: {
         3: `Casting this spell does not remove previous attunements to this spell.
@@ -68,13 +94,12 @@ export const bless: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You can cast this spell as a \\glossterm{minor action}.
-        You can only have one casting of this spell active at once.
-        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
-
         Choose yourself or an \\glossterm{ally} within \\medrange.
         At the end of each round, if the subject did not lose any \\glossterm{hit points} that round, it regains 2d10 \\glossterm{hit points}.
-        `,
+
+        You can only have one casting of this spell active at once.
+        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
+      `,
       rank: 4,
       scaling: {
         6: `Casting this spell does not remove previous attunements to this spell.
@@ -88,14 +113,13 @@ export const bless: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You can cast this spell as a \\glossterm{minor action}.
-        You can only have one casting of this spell active at once.
-        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
-
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The subject becomes proficient with all standard weapon groups and all types of armor.
         This does not grant proficiency with exotic weapons or improvised weapons.
-        `,
+
+        You can only have one casting of this spell active at once.
+        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
+      `,
       rank: 1,
       scaling: {
         3: `Casting this spell does not remove previous attunements to this spell.
@@ -162,14 +186,13 @@ export const bless: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You can cast this spell as a \\glossterm{minor action}.
-        You can only have one casting of this spell active at once.
-        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
-
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The subject gains a +4 bonus to \\glossterm{defenses} against \\glossterm{poisons} and \\glossterm{diseases}.
         In addition, at the end of each round, it automatically gains one success to resist an active poison or disease affecting it that was not applied during that round.
-        `,
+
+        You can only have one casting of this spell active at once.
+        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
+      `,
       rank: 2,
       scaling: {
         4: `Casting this spell does not remove previous attunements to this spell.
@@ -184,14 +207,13 @@ export const bless: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You can cast this spell as a \\glossterm{minor action}.
-        You can only have one casting of this spell active at once.
-        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
-
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The subject gains a +4 bonus to \\glossterm{defenses} against \\glossterm{Compulsion} and \\glossterm{Emotion} effects.
         In addition, at the end of each round, it automatically removes one \\glossterm{condition} from a Compulsion or Emotion effect that was not applied during that round.
-        `,
+
+        You can only have one casting of this spell active at once.
+        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
+      `,
       rank: 2,
       scaling: {
         4: `Casting this spell does not remove previous attunements to this spell.
@@ -206,13 +228,12 @@ export const bless: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You can cast this spell as a \\glossterm{minor action}.
-        You can only have one casting of this spell active at once.
-        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
-
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The subject gains a +1 \\glossterm{magic bonus} to Armor defense and Mental defense.
-        `,
+
+        You can only have one casting of this spell active at once.
+        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
+      `,
       rank: 1,
       scaling: {
         3: `Casting this spell does not remove previous attunements to this spell.
@@ -228,13 +249,12 @@ export const bless: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You can cast this spell as a \\glossterm{minor action}.
-        You can only have one casting of this spell active at once.
-        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
-
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The subject gains a +1 \\glossterm{magic bonus} to \\glossterm{accuracy} with all attacks.
-        `,
+
+        You can only have one casting of this spell active at once.
+        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
+      `,
       rank: 1,
       scaling: {
         3: `Casting this spell does not remove previous attunements to this spell.
@@ -250,13 +270,12 @@ export const bless: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You can cast this spell as a \\glossterm{minor action}.
-        You can only have one casting of this spell active at once.
-        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
-
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The subject gains a +2 \\glossterm{magic bonus} to \\glossterm{power} with all abilities.
-        `,
+
+        You can only have one casting of this spell active at once.
+        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
+      `,
       rank: 1,
       scaling: {
         3: `Casting this spell does not remove previous attunements to this spell.
@@ -272,14 +291,13 @@ export const bless: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You can cast this spell as a \\glossterm{minor action}.
-        You can only have one casting of this spell active at once.
-        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
-
         Choose yourself or one \\glossterm{ally} within \\medrange.
         Whenever the subject would gain a \\glossterm{condition}, it can choose to negate that condition.
         After negating two conditions in this way, this spell ends.
-        `,
+
+        You can only have one casting of this spell active at once.
+        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
+      `,
       rank: 2,
       scaling: {
         4: `Casting this spell does not remove previous attunements to this spell.
@@ -301,7 +319,7 @@ export const bless: MysticSphere = {
         5: `The subject can remove two conditions.`,
         7: `The subject can remove three conditions.`,
       },
-      type: "Duration",
+      type: "Instant",
     },
 
     {
@@ -312,7 +330,7 @@ export const bless: MysticSphere = {
         This cannot remove a condition applied during the current round.
       `,
       rank: 6,
-      type: "Duration",
+      type: "Instant",
     },
 
     {
@@ -320,15 +338,14 @@ export const bless: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You can cast this spell as a \\glossterm{minor action}.
-        You can only have one casting of this spell active at once.
-        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
-
         Choose yourself or one \\glossterm{ally} within \\medrange.
         When you cast this spell, choose a physical attribute: Strength, Dexterity, or Constitution.
         The subject gains a +2 \\glossterm{magic bonus} to checks using the chosen attribute.
         In addition, if you choose Strength, the subject gains a +2 \\glossterm{magic bonus} to Strength for the purpose of determining its \\glossterm{carrying capacity}.
-        `,
+
+        You can only have one casting of this spell active at once.
+        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
+      `,
       rank: 2,
       scaling: {
         4: `Casting this spell does not remove previous attunements to this spell.
@@ -343,15 +360,14 @@ export const bless: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You can cast this spell as a \\glossterm{minor action}.
-        You can only have one casting of this spell active at once.
-        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
-
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The subject gains a +4 \\glossterm{magic bonus} to its maximum \\glossterm{hit points}.
         In addition, it immediately gains 4 hit points.
         When this ability ends, the subject loses \\glossterm{hit points} equal to the number of hit points it gained this way.
-        `,
+
+        You can only have one casting of this spell active at once.
+        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
+      `,
       rank: 1,
       scaling: {
         3: `Casting this spell does not remove previous attunements to this spell.
@@ -365,15 +381,15 @@ export const bless: MysticSphere = {
     {
       name: "Blessing of Wakefulness",
 
+      // This spell intentionally can't be cast as a minor action to avoid making waking creatures too easy
       effect: `
-        % This spell intentionally can't be cast as a minor action to avoid making waking creatures too easy
-        You can only have one casting of this spell active at once.
-        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
-
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The subject cannot fall asleep or be knocked unconscious, even by \\glossterm{vital wounds}.
         If it is already unconscious for any reason, this spell wakes it up before it decides whether to attune to this spell.
-        `,
+
+        You can only have one casting of this spell active at once.
+        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
+      `,
       rank: 2,
       scaling: {
         4: `Casting this spell does not remove previous attunements to this spell.
@@ -388,13 +404,12 @@ export const bless: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You can cast this spell as a \\glossterm{minor action}.
-        You can only have one casting of this spell active at once.
-        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
-
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The subject gains a +1 \\glossterm{magic bonus} to \\glossterm{accuracy}, \\glossterm{checks}, and \\glossterm{defenses}.
-        `,
+
+        You can only have one casting of this spell active at once.
+        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
+      `,
       rank: 3,
       scaling: {
         5: `Casting this spell does not remove previous attunements to this spell.
@@ -409,13 +424,12 @@ export const bless: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You can cast this spell as a \\glossterm{minor action}.
-        You can only have one casting of this spell active at once.
-        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
-
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The subject gains a +6 \\glossterm{magic bonus} to its \\glossterm{resistances} against both \\glossterm{physical} damage and \\glossterm{energy} damage.
-        `,
+
+        You can only have one casting of this spell active at once.
+        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
+      `,
       rank: 3,
       scaling: {
         5: `Casting this spell does not remove previous attunements to this spell.
@@ -428,16 +442,15 @@ export const bless: MysticSphere = {
     {
       name: "Blessing of Vitality",
 
-      // original targets: Yourself or an \glossterm{ally} in \medrange
       castingTime: "minor action",
       effect: `
-        You can cast this spell as a \\glossterm{minor action}.
-        You can only have one casting of this spell active at once.
-        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
-
+        Choose yourself or one \\glossterm{ally} within \\medrange.
         Whenever the subject would gain a \\glossterm{vital wound}, it can choose to negate that vital wound.
         After negating a vital wound in this way, this spell ends.
-        `,
+
+        You can only have one casting of this spell active at once.
+        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
+      `,
       rank: 4,
       scaling: {
         6: `Casting this spell does not remove previous attunements to this spell.
@@ -449,16 +462,16 @@ export const bless: MysticSphere = {
     {
       name: "Blessing of Resurrection",
 
-      // original targets: Yourself or an \glossterm{ally} in \medrange
       effect: `
-        You can only have one casting of this spell active at once.
-        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
-
+        Choose yourself or one \\glossterm{ally} within \\medrange.
         When the subject dies, it automatically returns to life at the end of the following round.
         It returns in the same state in which it died, except that all of its \\glossterm{vital rolls} for its vital rolls that were 0 or lower become 1, preventing it from dying again immediately.
         In addition, it gains four \\glossterm{fatigue points} from the trauma of the experience.
         After the subject is returned to life this way, this spell ends.
-        `,
+
+        You can only have one casting of this spell active at once.
+        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
+      `,
       rank: 7,
       type: "Attune (target)",
     },
