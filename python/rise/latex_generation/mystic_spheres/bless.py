@@ -100,7 +100,6 @@ bless = MysticSphere(
             At the end of each round, if the target did not lose any \\glossterm<hit points> that round, it regains 2d10 \\glossterm<hit points>.
         """,
             scaling="""
-            \\rankline
             \\rank<6> Casting this spell does not remove previous attunements to this spell.
                 In addition, you can choose to cast this spell with the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Attune> (target) tag.
         """,
