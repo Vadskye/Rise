@@ -3,6 +3,7 @@ import { MysticSphere } from ".";
 export const cryomancy: MysticSphere = {
   name: "Cryomancy",
   shortDescription: "Drain heat to injure and freeze foes.",
+  sources: ["arcane", "nature", "pact"],
 
   cantrips: [
     {
