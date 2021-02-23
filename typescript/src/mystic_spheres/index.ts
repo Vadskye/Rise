@@ -7,7 +7,7 @@ import { channelDivinity } from "./channel_divinity";
 import { chronomancy } from "./chronomancy";
 import { cryomancy } from "./cryomancy";
 
-export const mysticSpheres = [
+export const mysticSpheres: MysticSphere[] = [
   aeromancy,
   aquamancy,
   astromancy,
@@ -18,10 +18,13 @@ export const mysticSpheres = [
   cryomancy,
 ];
 
+export type Source = "arcane" | "divine" | "nature" | "pact";
+
 export interface MysticSphere {
   cantrips?: Cantrip[];
   name: string;
   rituals?: Ritual[];
+  sources: Source[];
   shortDescription: string;
   spells: Spell[];
 }

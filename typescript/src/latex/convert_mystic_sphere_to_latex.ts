@@ -4,6 +4,7 @@ import _ from "lodash";
 
 export function convertMysticSphereToLatex(sphere: MysticSphere): string {
   return format.latexify(`
+    \\newpage
     \\section{${sphere.name}}\\label{spell:${sphere.name}}
       \\textit{${sphere.shortDescription}}
 
