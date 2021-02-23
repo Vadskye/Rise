@@ -275,7 +275,7 @@ export const channelDivinity: MysticSphere = {
           Each subject is \\glossterm{shaken} by you until the end of the next round.
         `,
         targeting: `
-          At the end of each round, make an attack vs. Mental against each \\glossterm{enemy} in a \\smallarea radius \\glossterm{emanation} from you.
+          At the end of each round, make an attack vs. Mental against your \\glossterm{enemies} in a \\smallarea radius \\glossterm{emanation} from you.
           After you attack a creature this way, it becomes immune to this ability from you until it takes a \\glossterm{short rest}.
         `,
       },
