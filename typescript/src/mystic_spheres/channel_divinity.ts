@@ -206,7 +206,7 @@ export const channelDivinity: MysticSphere = {
           Each subject takes 1d10 + half \\glossterm{power} energy damage.
         `,
         targeting: `
-          Make an attack vs. Mental against \\glossterm{enemies} in a \\smallarea radius from you.
+          Make an attack vs. Mental against your \\glossterm{enemies} in a \\smallarea radius from you.
         `,
       },
       rank: 2,
@@ -223,7 +223,7 @@ export const channelDivinity: MysticSphere = {
           Each subject takes 2d8 + half \\glossterm{power} energy damage.
         `,
         targeting: `
-          Make an attack vs. Mental against \\glossterm{enemies} in a \\largearea radius from you.
+          Make an attack vs. Mental against your \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
       rank: 4,

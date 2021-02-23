@@ -251,7 +251,7 @@ export const aquamancy: MysticSphere = {
           Each subject takes 2d6 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
-          Make an attack vs. Armor against all \\glossterm{enemies} within a \\medarea radius from you.
+          Make an attack vs. Armor against your \\glossterm{enemies} within a \\medarea radius from you.
         `,
       },
       rank: 3,
@@ -269,7 +269,7 @@ export const aquamancy: MysticSphere = {
           Each subject takes 4d8 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
-          Make an attack vs. Armor against all \\glossterm{enemies} within a \\largearea radius from you.
+          Make an attack vs. Armor against your \\glossterm{enemies} within a \\largearea radius from you.
         `,
       },
       rank: 6,
@@ -556,7 +556,7 @@ export const aquamancy: MysticSphere = {
           Each subject that has no remaining \\glossterm{resistance} to physical damage is \\glossterm{nauseated} as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against all living \\glossterm{enemies} in a \\gargarea long, 10 ft. wide line from you.
+          Make an attack vs. Fortitude against your living \\glossterm{enemies} in a \\gargarea long, 10 ft. wide line from you.
         `,
       },
       rank: 5,

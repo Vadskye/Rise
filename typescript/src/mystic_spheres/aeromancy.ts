@@ -465,7 +465,7 @@ export const aeromancy: MysticSphere = {
           Each subject's final position should be the same distance from you as its starting position.
         `,
         targeting: `
-          Make an attack vs. Fortitude against \\glossterm{enemies} in a \\medarea radius from you.
+          Make an attack vs. Fortitude against your \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
       // narrative: '',
