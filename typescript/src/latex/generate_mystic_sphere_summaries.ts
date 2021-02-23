@@ -20,7 +20,11 @@ function generateMysticSphereSummary(sphere: MysticSphere): string {
       .map((rank) => generateSpellsSummary(`Rank ${rank}`, sortSpells(spellsByRank[rank])))
       .filter(Boolean)
       .join("\n")}
-    ${generateSpellsSummary("Rituals", _.sortBy(sphere.rituals, "name"))}
+    ${
+      sphere.rituals && sphere.rituals.length > 0
+        ? generateSpellsSummary("Rituals", _.sortBy(sphere.rituals, "name"))
+        : ""
+    }
     }
   `;
 }
