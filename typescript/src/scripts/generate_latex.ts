@@ -1,4 +1,8 @@
-import { convertMysticSphereToLatex, monsterToLatex } from "@src/latex";
+import {
+  convertMysticSphereToLatex,
+  generateMysticSphereSummaries,
+  monsterToLatex,
+} from "@src/latex";
 import { monstersByType } from "@src/monsters";
 import { MonsterType, monsterTypes, typeDescriptions } from "@src/monsters/types";
 import { mysticSpheres } from "@src/mystic_spheres";
@@ -30,8 +34,10 @@ function generateLatex(latexType: string): string {
         latex += monsterToLatex(monster);
       }
     }
-  } else if (latexType === "mystic_spheres") {
-    latex += mysticSpheres.map(convertMysticSphereToLatex).join("\n\\newpage\n");
+  } else if (latexType === "mystic_sphere_summaries") {
+    latex = generateMysticSphereSummaries();
+  } else if (latexType === "mystic_sphere_descriptions") {
+    latex = mysticSpheres.map(convertMysticSphereToLatex).join("\n\\newpage\n");
   } else {
     throw new Error(`Unrecognized latexType: '${latexType}'`);
   }
