@@ -231,6 +231,10 @@ class Spell(object):
             .replace("each target", "each subject")
             .replace("The target", "The subject")
             .replace("the target", "the subject")
+            .replace(
+                "As above, except that that each subject takes half damage.",
+                "Half damage.",
+            )
         )
 
         return f"""
@@ -320,7 +324,7 @@ def generate_effect_text(original_effect_text, targets):
         crit_match = re.search(
             "\\\\crit (.*)$", original_effect_text.strip(), re.DOTALL
         )
-        hit_text = f"hit: `{hit_match[1].strip()}`,"
+        hit_text = f"hit: `{hit_match[1].strip()}.`,"
         glance_text = f"glance: `{glance_match[1].strip()}`," if glance_match else ""
         crit_text = f"crit: `{crit_match[1].strip()}`," if crit_match else ""
 
@@ -334,6 +338,21 @@ def generate_effect_text(original_effect_text, targets):
                 `,
             }},
         """
+        damage_match = re.search("takes (.+) damage equal to ([^.]+)\.", effect_text)
+        if damage_match:
+            damage_calculation = (
+                damage_match[2]
+                .replace(
+                    "plus half your \\glossterm<power>", "+ half \\\\glossterm{power}"
+                )
+                .replace("plus your \\glossterm<power>", "+ \\\\glossterm{power}")
+            )
+            effect_text = re.sub(
+                "takes (.*) damage equal to ([^.]+)\.",
+                f"takes {damage_calculation} {damage_match[1]} damage",
+                effect_text,
+            )
+
         functions_like_text = ""
     else:
         functions_like_text = ""

@@ -39,7 +39,6 @@ electromancy = MysticSphere(
         Once it becomes affixed to another metal object, it takes a \\glossterm<difficulty rating> 10 Strength check to separate the two objects.
     """,
             scaling="""
-        \\rankline
         \\rank<2> The maximum size increases to Small.
         \\rank<4> The maximum size increases to Medium.
         \\rank<6> The maximum size increases to Large.
