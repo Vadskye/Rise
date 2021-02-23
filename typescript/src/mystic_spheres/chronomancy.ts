@@ -157,7 +157,7 @@ export const chronomancy: MysticSphere = {
       name: "Mass Slow",
 
       attack: {
-        crit: `Each target is \\glossterm{slowed} as a \\glossterm{condition}.`,
+        crit: `The effect becomes a \\glossterm{condition} on each subject.`,
         hit: `Each target is \\glossterm{slowed} until the end of the next round.`,
         targeting: `
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange.
@@ -190,7 +190,7 @@ export const chronomancy: MysticSphere = {
       name: "Mental Lag",
 
       attack: {
-        crit: `The subject is \\glossterm{slowed} and \\glossterm{stunned} as a single \\glossterm{condition}.`,
+        crit: `The subject \\glossterm{stunned} instead of dazed.`,
         glance: `As above, except that the condition is removed at the end of the next round.`,
         hit: `The subject is \\glossterm{slowed} and \\glossterm{dazed} as a single \\glossterm{condition}.`,
         targeting: `
