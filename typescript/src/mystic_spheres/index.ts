@@ -4,8 +4,19 @@ import { astromancy } from "./astromancy";
 import { barrier } from "./barrier";
 import { bless } from "./bless";
 import { channelDivinity } from "./channel_divinity";
+import { chronomancy } from "./chronomancy";
+import { cryomancy } from "./cryomancy";
 
-export const mysticSpheres = [aeromancy, aquamancy, astromancy, barrier, bless, channelDivinity];
+export const mysticSpheres = [
+  aeromancy,
+  aquamancy,
+  astromancy,
+  barrier,
+  bless,
+  channelDivinity,
+  chronomancy,
+  cryomancy,
+];
 
 export interface MysticSphere {
   cantrips?: Cantrip[];
