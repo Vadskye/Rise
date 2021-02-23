@@ -6,6 +6,7 @@ import { bless } from "./bless";
 import { channelDivinity } from "./channel_divinity";
 import { chronomancy } from "./chronomancy";
 import { cryomancy } from "./cryomancy";
+import { electromancy } from "./electromancy";
 
 export const mysticSpheres: MysticSphere[] = [
   aeromancy,
@@ -16,6 +17,7 @@ export const mysticSpheres: MysticSphere[] = [
   channelDivinity,
   chronomancy,
   cryomancy,
+  electromancy,
 ];
 
 export type Source = "arcane" | "divine" | "nature" | "pact";
