@@ -6,7 +6,7 @@ export function spellScaling(spell: Pick<SpellLike, "name" | "scaling" | "rank">
   }
 
   if (spell.scaling === "accuracy") {
-    return `You gain a +1 bonus to \\glossterm{accuracy} with the attack for each rank beyond ${spell.rank}.`;
+    return `The attack's \\glossterm{accuracy} increases by +1 for each rank beyond ${spell.rank}.`;
   } else if (spell.scaling === "damage") {
     return `The damage increases by +1d for each rank beyond ${spell.rank}.`;
   } else if (spell.scaling.special) {
