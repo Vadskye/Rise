@@ -124,6 +124,7 @@
             \parhead{Compact} This weapon is unusually small.
             It is one size category smaller than normal for a light weapon (that is, three size categories smaller than the creature it is intended for).
             This makes it easier to conceal (see \pcref{Sleight of Hand}).
+            You only take a \minus5 penalty to Stealth when trying to conceal strikes with the weapon instead of the normal \minus10 penalty for concealing a strike (see \pcref{Stealth}).
             In addition, you can draw or sheathe this weapon so quickly that you can also take another action in the same phase with that hand.
             For example, you can draw this weapon and attack with it in the same phase.
             \parhead{Disarming} When you use the \textit{disarm} ability with this weapon, you can knock loose objects that are held in a single hand, but not objects that are held in two hands or well secured (see \pcref{Disarm}).
@@ -150,6 +151,9 @@
             However, you are unable to attack enemies adjacent to you, and you take a \minus2 penalty to \glossterm{accuracy} with the weapon.
             You can change your grip as a \glossterm{free action} that requires the hand or hands used to hold the weapon.
             As normal, you cannot combine that action with other actions using the same hands, so you cannot change your grip and attack with the weapon in the same phase.
+            \parhead{Stealthy}
+            A stealthy weapon is smaller, quieter, or otherwise less noticeable than most weapons.
+            You only take a \minus5 penalty to Stealth when trying to conceal strikes with a stealthy weapon instead of the normal \minus10 or \minus20 penalty for concealing a strike (see \pcref{Stealth}).
             \parhead{Sweeping}\label{Sweeping} When you make a \glossterm{melee} \glossterm{strike} with this weapon, you may also target one or more secondary creatures or objects within your \glossterm{reach} with that weapon.
             Each secondary target must be within 5 feet of a primary target, and must not already be a target of the strike.
             The strike affects each secondary target in the same way as the primary targets.
@@ -209,7 +213,7 @@
 
                 Bows                               &        &         &        &                          &         &         &                                 \\
                 \tind Longbow\fn{2}                & Heavy  & \plus0  & 1d8    & \tdash                   & 40 gp   & 3 lb.   & Projectile (90 ft.)            \\
-                \tind Shortbow\fn{2}               & Medium & \plus0  & 1d6    & \tdash                   & 30 gp   & 2 lb.   & Projectile (60 ft.)             \\
+                \tind Shortbow\fn{2}               & Medium & \plus0  & 1d6    & \tdash                   & 30 gp   & 2 lb.   & Projectile (60 ft.), Stealthy             \\
                 \tind Arrows (20)                  & \tdash & \plus0  & \tdash & Piercing                 & 1 gp    & 3 lb.   & Ammunition                      \\
                 \tind Blunted arrows (20)          & \tdash & \minus1 & \tdash & Bludgeoning              & 5 gp    & 3 lb.   & Ammunition, Subdual             \\
                 \tind Fire arrows (20)\fn{2}       & \tdash & \minus2 & \tdash & Piercing and fire        & 40 gp   & 3 lb.   & Ammunition                      \\
@@ -221,10 +225,10 @@
                 \tind Mace                         & Medium & \plus0  & 1d8    & Bludgeoning              & 8 gp    & 4 lb.   & Impact, Versatile Grip          \\
                 \tind Flanged mace                 & Medium & \plus0  & 1d10   & Bludgeoning              & 8 gp    & 4 lb.   & Versatile Grip                  \\
                 \tind Morning star                 & Medium & \plus0  & 1d10   & Bludgeoning and piercing & 12 gp   & 6 lb.   & Versatile Grip                  \\
-                \tind Sap                          & Light  & \plus2  & 1d6    & Bludgeoning              & 1 gp    & 2 lb.   & Subdual                         \\
+                \tind Sap                          & Light  & \plus2  & 1d6    & Bludgeoning              & 1 gp    & 2 lb.   & Stealthy, Subdual                         \\
 
                 Crossbows                          &        &         &        &                          &         &         &                                 \\
-                \tind Hand crossbow\fn{2}          & Light  & \plus0  & 1d6    & \tdash                 & 100 gp  & 2 lb.   & Projectile (60 ft.)             \\
+                \tind Hand crossbow\fn{2}          & Light  & \plus0  & 1d6    & \tdash                 & 100 gp  & 2 lb.   & Projectile (60 ft.), Stealthy             \\
                 \tind Heavy crossbow\fn{2}         & Heavy  & \plus0  & 1d10   & \tdash                 & 50 gp   & 8 lb.   & Projectile (90 ft.)            \\
                 \tind Light crossbow\fn{2}         & Medium & \plus0  & 1d8    & \tdash                 & 40 gp   & 4 lb.   & Projectile (60 ft.)             \\
                 \tind Crossbow bolts (10)          & \tdash & \plus0  & \tdash & Piercing                   & 1 gp    & 1 lb.   & Ammunition                      \\
@@ -268,7 +272,7 @@
 
                 Simple weapons                     &        &         &        &                          &         &         &                                 \\
                 \tind Club                         & Medium & \plus0  & 1d8    & Bludgeoning              & \tdash  & 3 lb.   & Versatile Grip                  \\
-                \tind Dagger                       & Light  & \plus2  & 1d4    & Piercing or slashing     & 2 gp    & 1 lb.   & Compact, Thrown (10 ft.)        \\
+                \tind Dagger                       & Light  & \plus2  & 1d4    & Piercing or slashing     & 2 gp    & 1 lb.   & Compact, Stealthy, Thrown (10 ft.)        \\
                 \tind Light crossbow\fn{2}         & Medium & \plus0  & 1d8    & \tdash                 & 40 gp   & 4 lb.   & Projectile (60 ft.)             \\
                 \tind Crossbow bolts (10)          & \tdash & \plus0  & \tdash & Piercing                   & 1 gp    & 1 lb.   & Ammunition                      \\
                 \tind Quarterstaff                 & Heavy  & \plus1  & 1d8    & Bludgeoning              & \tdash  & 4 lb.   & Reach                           \\
@@ -283,9 +287,9 @@
                 \tind Spear\fn{2}                  & Medium & \plus0  & 1d8    & Piercing                 & 2 gp    & 6 lb.   & Thrown (20 ft.), Versatile Grip \\
 
                 Thrown weapons                     &        &         &        &                          &         &         &                                 \\
-                \tind Dagger                       & Light  & \plus2  & 1d4    & Piercing or slashing     & 2 gp    & 1 lb.   & Compact, Thrown (10 ft.)        \\
+                \tind Dagger                       & Light  & \plus2  & 1d4    & Piercing or slashing     & 2 gp    & 1 lb.   & Compact, Stealthy, Thrown (10 ft.)        \\
                 \tind Dart (5)                     & Light  & \plus1  & 1d4    & Piercing                 & 1 gp    & 1/2 lb. & Ammunition, Thrown (20 ft.)     \\
-                \tind Handaxe                      & Light  & \plus1  & 1d6    & Slashing                 & 4 gp    & 2 lb.   & Thrown (20 ft.)               \\
+                \tind Handaxe                      & Light  & \plus2  & 1d6    & Slashing                 & 4 gp    & 2 lb.   & Thrown (20 ft.)               \\
                 \tind Light hammer                 & Light  & \plus1  & 1d6    & Bludgeoning              & 2 gp    & 2 lb.   & Forceful, Thrown (20 ft.)               \\
                 \tind Javelin                      & Medium & \plus1  & 1d6    & Piercing                 & 1 gp    & 2 lb.   & Thrown (30 ft.)                 \\
                 \tind Shuriken (5)                 & Light  & \plus2  & 1d6    & Piercing and slashing    & 1 gp    & 1/2 lb. & Ammunition, Thrown (10 ft.)     \\
@@ -309,7 +313,7 @@
                 \tb{Exotic Weapons}           & \tb{Usage Class} & \tb{Accuracy} & \tb{Damage} & \tb{Damage Type\fn{1}} & \tb{Cost} & \tb{Weight} & \tb{Special} \tableheaderrule
                 Armor                                &         &        &           &                      &        &        &                                 \\
                 Blades                               &         &        &           &                      &        &        &                                 \\
-                \tind Boot dagger\fn{2}              & Light   & \plus2 & 1d6       & Piercing             & 20 gp  & 2 lb.  & Compact                         \\
+                \tind Boot dagger\fn{2}              & Light   & \plus2 & 1d6       & Piercing             & 20 gp  & 2 lb.  & Compact, Quiet                         \\
                 \tind Falchion                       & Medium  & \plus0 & 1d8       & Slashing             & 15 gp  & 4 lb.  & Sweeping (2), Versatile Grip    \\
                 \tind Katana                         & Heavy   & \plus1 & 1d10      & Slashing             & 75 gp  & 6 lb.  & Keen, Sweeping (1)              \\
                 \tind Kukri                          & Light   & \plus2 & 1d6       & Slashing             & 8 gp   & 2 lb.  & Keen, Sweeping (1)              \\
