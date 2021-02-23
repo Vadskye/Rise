@@ -56,14 +56,14 @@ function convertSpellToLatex(spell: SpellLike): string {
     format.spellNarrative(spell),
   ].filter(Boolean);
   return `
-    \\begin{${abilityType}}{${spell.name}}${rankText}
+    \\begin{${abilityType}}{${spell.name}\\label{spell:${spell.name.toLowerCase()}}}${rankText}
       ${internalComponents.join("\n\\rankline\n\n\\noindent ")}
       \\vspace{0.1em}
     \\end{${abilityType}}
   `;
 }
 
-function sortSpells<T extends SpellLike>(spells: T[]): T[] {
+export function sortSpells<T extends SpellLike>(spells: T[]): T[] {
   // Sort by level as primary, name as secondary
   return _.sortBy(
     _.sortBy(spells, (s) => s.name),
