@@ -3,6 +3,7 @@ import { MysticSphere } from ".";
 export const astromancy: MysticSphere = {
   name: "Astromancy",
   shortDescription: "Transport creatures and objects instantly through space.",
+  sources: ["arcane", "pact"],
 
   cantrips: [
     {

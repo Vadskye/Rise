@@ -3,6 +3,7 @@ import { MysticSphere } from ".";
 export const chronomancy: MysticSphere = {
   name: "Chronomancy",
   shortDescription: "Manipulate the passage of time to inhibit foes and aid allies.",
+  sources: ["arcane", "pact"],
 
   cantrips: [
     {

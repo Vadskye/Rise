@@ -3,6 +3,7 @@ import { MysticSphere } from ".";
 export const bless: MysticSphere = {
   name: "Bless",
   shortDescription: "Grant divine blessings to aid allies and improve combat prowess.",
+  sources: ["divine"],
 
   cantrips: [
     {

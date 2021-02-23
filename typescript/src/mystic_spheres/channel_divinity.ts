@@ -3,6 +3,7 @@ import { MysticSphere } from ".";
 export const channelDivinity: MysticSphere = {
   name: "Channel Divinity",
   shortDescription: "Invoke divine power to smite foes and gain power.",
+  sources: ["divine"],
 
   cantrips: [
     {

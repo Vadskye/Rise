@@ -3,6 +3,7 @@ import { MysticSphere } from ".";
 export const aquamancy: MysticSphere = {
   name: "Aquamancy",
   shortDescription: "Command water to crush and drown foes.",
+  sources: ["nature"],
 
   cantrips: [
     {

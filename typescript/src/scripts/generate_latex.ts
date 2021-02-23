@@ -1,5 +1,6 @@
 import {
   convertMysticSphereToLatex,
+  generateMysticSphereLists,
   generateMysticSphereSummaries,
   monsterToLatex,
 } from "@src/latex";
@@ -34,6 +35,8 @@ function generateLatex(latexType: string): string {
         latex += monsterToLatex(monster);
       }
     }
+  } else if (latexType === "mystic_sphere_lists") {
+    latex = generateMysticSphereLists();
   } else if (latexType === "mystic_sphere_summaries") {
     latex = generateMysticSphereSummaries();
   } else if (latexType === "mystic_sphere_descriptions") {

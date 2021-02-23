@@ -3,6 +3,7 @@ import { MysticSphere } from ".";
 export const barrier: MysticSphere = {
   name: "Barrier",
   shortDescription: "Construct barriers to shield allies and areas from hostile forces.",
+  sources: ["arcane", "divine", "nature"],
 
   cantrips: [
     {
