@@ -325,6 +325,7 @@ export const photomancy: MysticSphere = {
     {
       name: "Mass Blur",
 
+      castingTime: "minor action",
       functionsLike: {
         mass: true,
         spell: "Blur",
@@ -358,6 +359,7 @@ export const photomancy: MysticSphere = {
     {
       name: "Mass Disguise Image",
 
+      castingTime: "minor action",
       functionsLike: {
         mass: true,
         spell: "Disguise Image",

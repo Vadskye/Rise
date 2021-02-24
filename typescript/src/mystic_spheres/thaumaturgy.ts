@@ -269,6 +269,7 @@ export const thaumaturgy: MysticSphere = {
     {
       name: "Mass Enhance Magic",
 
+      castingTime: "minor action",
       functionsLike: {
         mass: true,
         spell: "Enhance Magic",

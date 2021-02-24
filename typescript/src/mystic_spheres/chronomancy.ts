@@ -315,6 +315,7 @@ export const chronomancy: MysticSphere = {
     {
       name: "Mass Accelerated Reaction",
 
+      castingTime: "minor action",
       functionsLike: {
         mass: true,
         spell: "Accelerated Reaction",
