@@ -261,7 +261,6 @@ fabrication = MysticSphere(
             Because this spell has the \\glossterm<Swift> tag, you can fire the created projectile from the weapon in the same phase that you cast this spell.
         """,
             scaling="""
-            \\rankline
             \\rank<4> You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with any \\glossterm<strike> using ammunition created with this spell.
             \\rank<6> The accuracy bonus increases to +2.
         """,

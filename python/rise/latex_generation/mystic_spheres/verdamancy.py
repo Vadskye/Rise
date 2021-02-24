@@ -19,7 +19,6 @@ verdamancy = MysticSphere(
             This effect lasts for one year.
         """,
             scaling="""
-            \\rankline
             \\rank<2> The area increases to a 2-ft.\\ square.
             \\rank<4> The area increases to a 5-ft.\\ square.
             \\rank<6> The area increases to a 10-ft.\\ square.
