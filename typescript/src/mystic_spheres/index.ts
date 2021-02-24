@@ -15,6 +15,7 @@ import { pyromancy } from "./pyromancy";
 import { revelation } from "./revelation";
 import { summoning } from "./summoning";
 import { telekinesis } from "./telekinesis";
+import { terramancy } from "./terramancy";
 import { umbramancy } from "./umbramancy";
 
 export const mysticSpheres: MysticSphere[] = [
@@ -35,6 +36,7 @@ export const mysticSpheres: MysticSphere[] = [
   revelation,
   summoning,
   telekinesis,
+  terramancy,
   umbramancy,
 ];
 
