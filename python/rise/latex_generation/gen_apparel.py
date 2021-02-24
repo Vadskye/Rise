@@ -75,36 +75,38 @@ def generate_armor():
     apparel += [
         MagicItem(
             name="Lifebond Retribution Armor",
-            level=5,
+            level=4,
             material_type="Body armor",
             tags=[],
             description="""
                 At the end of each round, make an attack vs. Fortitude against each creature adjacent to you that caused you to lose \\glossterm<hit points> that round.
-                \\hit Each target takes 1d8+1 energy damage.
+                \\hit Each target takes 1d10 energy damage.
             """,
-            short_description="Grants +1 Armor defense",
+            short_description="Damages adjacent attackers when you lose HP",
         ),
         MagicItem(
             name="Lifebond Retribution Armor, Greater",
-            level=11,
+            level=10,
             material_type="Body armor",
             tags=[],
             description="""
                 At the end of each round, make an attack vs. Fortitude against each creature within a \\areamed radius of you that caused you to lose \\glossterm<hit points> that round.
-                \\hit Each target takes 2d6+2 energy damage.
+                \\hit Each target takes 2d8 energy damage.
+                \\glance Half damage.
             """,
-            short_description="Grants +2 Armor defense",
+            short_description="Damages nearby attackers when you lose HP",
         ),
         MagicItem(
             name="Lifebond Retribution Armor, Supreme",
-            level=17,
+            level=16,
             material_type="Body armor",
             tags=[],
             description="""
                 At the end of each round, make an attack vs. Fortitude against each creature within a \\areahuge radius of you that caused you to lose \\glossterm<hit points> that round.
-                \\hit Each target takes 2d10+4 energy damage.
+                \\hit Each target takes 4d6 energy damage.
+                \\glance Half damage.
             """,
-            short_description="Grants +3 Armor defense",
+            short_description="Damages attackers when you lose HP",
         ),
     ]
 
@@ -392,24 +394,14 @@ def generate_armor():
     apparel += [
         MagicItem(
             name="Armor of Retribution",
-            level=4,
-            material_type="Body armor",
-            description="""
-                At the end of each round, make an attack vs. Fortitude against each creature adjacent to you that made you lose \\glossterm<hit points> with an attack that round.
-                \\hit Each target takes 1d10+1 energy damage.
-            """,
-            short_description="Deals retributive damage when you lose HP",
-        ),
-        MagicItem(
-            name="Armor of Retribution, Greater",
             level=10,
             material_type="Body armor",
             description="""
                 At the end of each round, make an attack vs. Fortitude against each creature adjacent to you that attacked you that round.
-                \\hit Each target takes 2d8+2 energy damage.
-                \\glance As above, except that that each target takes half damage.
+                \\hit Each target takes 2d6 energy damage.
+                \\glance Half damage.
             """,
-            short_description="Deals retributive damage when adjacent foes attack",
+            short_description="Damages adjacent attackers",
         ),
         MagicItem(
             name="Armor of Retribution, Supreme",
@@ -417,10 +409,10 @@ def generate_armor():
             material_type="Body armor",
             description="""
                 At the end of each round, make an attack vs. Fortitude against each creature within a \\areamed radius \\glossterm<emanation> from you that attacked you that round.
-                \\hit Each target takes 4d6+4 energy damage.
-                \\glance As above, except that that each target takes half damage.
+                \\hit Each target takes 2d10 energy damage.
+                \\glance Half damage.
             """,
-            short_description="Deals retributive damage when nearby foes attack",
+            short_description="Damages nearby attackers",
         ),
     ]
 
