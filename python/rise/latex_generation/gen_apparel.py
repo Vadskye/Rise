@@ -130,7 +130,7 @@ def generate_armor():
             short_description="Grants +2 non-Armor defenses",
         ),
         MagicItem(
-            name="Ring of Protection, Greater",
+            name="Ring of Protection, Supreme",
             level=18,
             material_type="Ring",
             tags=[],
@@ -2608,7 +2608,7 @@ def generate_worn():
             short_description="Grants +8 power to next strike",
         ),
         MagicItem(
-            name="Gloves of Infused Force, Greater",
+            name="Gloves of Infused Force, Supreme",
             level=18,
             material_type="Gloves",
             tags=[],
