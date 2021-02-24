@@ -32,7 +32,6 @@ thaumaturgy = MysticSphere(
             This does not give you any information about the nature of those magical abilities.
         """,
             scaling="""
-            \\rankline
             \\rank<2> You can also discern whether the target has the ability to cast spells of any kind.
             \\rank<4> You can also discern which \\glossterm<magic sources> the target has access to, if they have access to any.
             \\rank<6> You can also discern which \\glossterm<mystic spheres> the target has access to, if they have access to any.

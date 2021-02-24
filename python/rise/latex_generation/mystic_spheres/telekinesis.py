@@ -40,7 +40,6 @@ telekinesis = MysticSphere(
             Generally, the force exerted by this ability is insufficient to physically move or even meaningfully impede any creature, but it can influence their actions.
         """,
             scaling="""
-            \\rankline
             \\rank<2> The force increases to lift a 2 lb.\\ object, or to push a 10 lb\\. object.
             \\rank<4> The force increases to lift a 4 lb.\\ object, or to push a 20 lb\\. object.
             \\rank<6> The force increases to lift a 8 lb.\\ object, or to push a 40 lb\\. object.
