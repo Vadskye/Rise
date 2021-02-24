@@ -251,6 +251,7 @@ export const aeromancy: MysticSphere = {
     {
       name: "Mass Gentle Descent",
 
+      castingTime: "minor action",
       functionsLike: {
         mass: true,
         spell: "gentle descent",

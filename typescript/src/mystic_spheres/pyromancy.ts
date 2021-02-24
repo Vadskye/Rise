@@ -442,6 +442,7 @@ export const pyromancy: MysticSphere = {
     {
       name: "Mass Flame Blade",
 
+      castingTime: "minor action",
       functionsLike: {
         mass: true,
         spell: "Flame Blade",

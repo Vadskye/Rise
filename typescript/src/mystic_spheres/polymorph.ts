@@ -89,6 +89,7 @@ export const polymorph: MysticSphere = {
     {
       name: "Mass Natural Weapon",
 
+      castingTime: "minor action",
       functionsLike: {
         mass: true,
         spell: "Natural Weapon",
@@ -209,6 +210,7 @@ export const polymorph: MysticSphere = {
     {
       name: "Mass Stoneskin",
 
+      castingTime: "minor action",
       functionsLike: {
         mass: true,
         spell: "Stoneskin",
@@ -275,6 +277,7 @@ export const polymorph: MysticSphere = {
     {
       name: "Mass Reshape Appearance",
 
+      castingTime: "minor action",
       functionsLike: {
         mass: true,
         spell: "Reshape Appearance",
@@ -479,6 +482,7 @@ export const polymorph: MysticSphere = {
     {
       name: "Mass Physical Enhancement",
 
+      castingTime: "minor action",
       functionsLike: {
         mass: true,
         spell: "Physical Enhancement",
@@ -506,6 +510,7 @@ export const polymorph: MysticSphere = {
     {
       name: "Mass Scent",
 
+      castingTime: "minor action",
       functionsLike: {
         mass: true,
         spell: "Scent",
@@ -623,6 +628,7 @@ export const polymorph: MysticSphere = {
     {
       name: "Mass Eyes of Darksight",
 
+      castingTime: "minor action",
       functionsLike: {
         mass: true,
         spell: "Eyes of Darksight",
@@ -653,6 +659,7 @@ export const polymorph: MysticSphere = {
     {
       name: "Mass Draconic Senses",
 
+      castingTime: "minor action",
       functionsLike: {
         mass: true,
         spell: "Draconic Senses",
@@ -680,6 +687,7 @@ export const polymorph: MysticSphere = {
     {
       name: "Mass Swimmer",
 
+      castingTime: "minor action",
       functionsLike: {
         mass: true,
         spell: "Swimmer",
@@ -710,6 +718,7 @@ export const polymorph: MysticSphere = {
     {
       name: "Mass Climber",
 
+      castingTime: "minor action",
       functionsLike: {
         mass: true,
         spell: "Climber",
@@ -740,6 +749,7 @@ export const polymorph: MysticSphere = {
     {
       name: "Mass Runner",
 
+      castingTime: "minor action",
       functionsLike: {
         mass: true,
         spell: "Runner",

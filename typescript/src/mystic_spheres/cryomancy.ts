@@ -271,6 +271,7 @@ export const cryomancy: MysticSphere = {
     {
       name: "Mass Skate",
 
+      castingTime: "minor action",
       functionsLike: {
         mass: true,
         spell: "Skate",

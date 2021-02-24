@@ -98,6 +98,7 @@ export const umbramancy: MysticSphere = {
     {
       name: "Mass Darkvision",
 
+      castingTime: "minor action",
       functionsLike: {
         mass: true,
         spell: "Darkvision",
@@ -197,6 +198,7 @@ export const umbramancy: MysticSphere = {
     {
       name: "Mass Shadow Mantle",
 
+      castingTime: "minor action",
       functionsLike: {
         mass: true,
         spell: "Shadow Mantle",

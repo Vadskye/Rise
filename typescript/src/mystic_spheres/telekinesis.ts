@@ -116,6 +116,7 @@ export const telekinesis: MysticSphere = {
     {
       name: "Mass Force Extension",
 
+      castingTime: "minor action",
       functionsLike: {
         mass: true,
         spell: "Force Extension",
