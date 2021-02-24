@@ -37,7 +37,7 @@ def generate_weapons():
             short_description="Deals sonic damage, can sicken",
         ),
         MagicItem(
-            name="Concussive, Greater",
+            name="Concussive, Supreme",
             level=17,
             material_type="Weapon",
             # tags=[tag],
