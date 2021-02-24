@@ -452,7 +452,7 @@ export const aquamancy: MysticSphere = {
           Whenever you make a \\glossterm{strike} with the tentacles, you can attack with all of the tentacles at once, with each tentacle attacking a different target.
           This functions as if your attacks had the \\glossterm{Sweeping} (7) tag, with no limit on how far each secondary target must be from the primary target (see \\pcref{Sweeping}).
         `,
-        spell: "aqueous tentacles",
+        spell: "aqueous tentacle",
       },
       rank: 5,
       scaling: {
