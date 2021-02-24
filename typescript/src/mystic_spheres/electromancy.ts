@@ -15,6 +15,7 @@ export const electromancy: MysticSphere = {
           Make an attack vs. Reflex against anything within \\shortrange.
         `,
       },
+      focus: false,
       scaling: {
         2: `The damage increases to 5.`,
         4: `The damage increases to 10.`,
@@ -32,6 +33,7 @@ export const electromancy: MysticSphere = {
         Smaller objects are typically pulled towards the subject, while it moves itself towards larger objects.
         Once it becomes affixed to another metal object, it takes a \\glossterm{difficulty rating} 10 Strength check to separate the two objects.
       `,
+      focus: false,
       scaling: {
         2: `The maximum size increases to Small.`,
         4: `The maximum size increases to Medium.`,

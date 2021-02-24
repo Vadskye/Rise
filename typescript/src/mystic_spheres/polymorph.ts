@@ -17,6 +17,7 @@ export const polymorph: MysticSphere = {
         % too short?
         Each time you cast this spell, you can accomplish work that would take up to two rounds with a normal Craft check.
       `,
+      focus: false,
       scaling: {
         2: `The amount of work you accomplish with the spell increases to five rounds.`,
         4: `The amount of work you accomplish with the spell increases to one minute.`,
@@ -38,6 +39,7 @@ export const polymorph: MysticSphere = {
         `,
         spell: "disguise creature",
       },
+      focus: false,
       scaling: {
         2: `The bonus increases to +6.`,
         4: `The bonus increases to +8.`,

@@ -13,6 +13,7 @@ export const revelation: MysticSphere = {
         Choose a sense, such as vision or hearing.
         You gain a +4 bonus to Awareness checks using that sense until the end of the next round.
       `,
+      focus: false,
       scaling: {
         2: `The bonus increases to +6.`,
         4: `The bonus increases to +8.`,
@@ -28,6 +29,7 @@ export const revelation: MysticSphere = {
         You may reroll one Knowledge check you made last round.
         You can only cast this spell once per hour.
       `,
+      focus: false,
       scaling: {
         2: `You also gain a +2 bonus to the Knowledge check.`,
         4: `The bonus increases to +4.`,

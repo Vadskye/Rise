@@ -16,6 +16,7 @@ export const pyromancy: MysticSphere = {
           Make an attack vs. Fortitude against anything within \\shortrange.
         `,
       },
+      focus: false,
       scaling: {
         2: `The damage increases to 5.`,
         4: `The damage increases to 10.`,
@@ -35,6 +36,7 @@ export const pyromancy: MysticSphere = {
           Otherwise, the attack automatically hits.
         `,
       },
+      focus: false,
       scaling: {
         2: `The maximum size increases to Large.`,
         4: `The maximum size increases to Huge.`,
@@ -55,6 +57,7 @@ export const pyromancy: MysticSphere = {
 
         This effect lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
       `,
+      focus: false,
       scaling: {
         2: `The damage increases to 5.`,
         4: `The damage increases to 10.`,
@@ -73,6 +76,7 @@ export const pyromancy: MysticSphere = {
 
         This ability lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
       `,
+      focus: false,
       scaling: {
         2: `The area increases to a \\largearea radius \\glossterm{emanation}, and the maximum temperature increase increases to 30 degrees.`,
         4: `The area increases to a \\hugearea radius \\glossterm{emanation}, and the maximum temperature increase increases to 40 degrees.`,

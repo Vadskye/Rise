@@ -17,6 +17,7 @@ export const cryomancy: MysticSphere = {
           Make an attack vs. Fortitude against anything within \\shortrange.
         `,
       },
+      focus: false,
       scaling: {
         2: "The damage increases to 5.",
         4: "The damage increases to 10.",
@@ -34,6 +35,7 @@ export const cryomancy: MysticSphere = {
 
         This ability lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
       `,
+      focus: false,
       scaling: {
         2: "The area increases to a \\largearea radius \\glossterm{emanation}, and the maximum temperature reduction increases to 30 degrees.",
         4: "The area increases to a \\hugearea radius \\glossterm{emanation}, and the maximum temperature reduction increases to 40 degrees.",

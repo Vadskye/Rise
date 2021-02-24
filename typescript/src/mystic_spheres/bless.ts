@@ -11,6 +11,7 @@ export const bless: MysticSphere = {
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The subject gains a +1 bonus to \\glossterm{accuracy} and \\glossterm{checks} during the next round.
       `,
+      focus: false,
       name: "Boon of Competence",
       scaling: {
         2: "The bonus increases to +2.",
@@ -24,6 +25,7 @@ export const bless: MysticSphere = {
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The subject gains a +1 bonus to \\glossterm{defenses} during the next round.
       `,
+      focus: false,
       name: "Boon of Protection",
       scaling: {
         2: "The bonus increases to +2.",

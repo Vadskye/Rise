@@ -13,6 +13,7 @@ export const aquamancy: MysticSphere = {
         You create up to two gallons of wholesome, drinkable water divided among any number of locations within \\shortrange, allowing you to fill multiple small water containers.
         You must create a minimum of one ounce of water in each location.
       `,
+      focus: false,
       // narrative: '',
       scaling: {
         2: "The volume created increases to five gallons.",
@@ -33,6 +34,7 @@ export const aquamancy: MysticSphere = {
         In addition to allowing you to change the direction of currents within large bodies of water, you can also use this to propel water across surfaces.
         Generally, moving water uphill requires at least 5 miles per hour of speed for every foot of elevation that you are trying to climb, which can limit your ability to move water up large distances.
       `,
+      focus: false,
       // narrative: '',
       scaling: {
         2: "The area increases to a \\largearea radius, and the maximum speed change increases to 10 miles per hour.",
@@ -50,6 +52,7 @@ export const aquamancy: MysticSphere = {
         This does not remove poisons, magical effects, or contaminants heavier than half a pound.
         Using this on a very large body of water is difficult, since the waste material can easily mix with the water unaffected by a single casting of this spell.
       `,
+      focus: false,
       // narrative: '',
       scaling: {
         2: "The volume affected increases to ten gallons.",
@@ -64,6 +67,7 @@ export const aquamancy: MysticSphere = {
       effect: `
         You gain a +4 bonus to the Flexibility skill until the end of the next round.
       `,
+      focus: false,
       narrative: `
         A thin layer of water covers you, allowing you to slip through the grasp of your foes more easily.
       `,

@@ -16,6 +16,7 @@ export const channelDivinity: MysticSphere = {
 
         This spell lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
       `,
+      focus: false,
       name: "Testament",
       scaling: {
         2: "The range increases to \\rngmed.",
@@ -34,6 +35,7 @@ export const channelDivinity: MysticSphere = {
         Each deity has their own color or color combination.
         Typically, good is yellow, evil is purple, law is white, and chaos is a myriad of ever-changing colors.
       `,
+      focus: false,
       name: "Divine Radiance",
       narrative: `
         You call on the majesty of your deity or alignment to radiate into the world.

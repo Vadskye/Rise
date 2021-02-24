@@ -49,7 +49,7 @@ export interface MysticSphere {
   spells: Spell[];
 }
 
-export interface Cantrip {
+interface BaseSpellLike {
   attack?: SpellAttack;
   castingTime?: string;
   effect?: string;
@@ -74,7 +74,11 @@ export interface Cantrip {
     | "Sustain (standard)";
 }
 
-export interface Spell extends Cantrip {
+export interface Cantrip extends BaseSpellLike {
+  focus: false;
+}
+
+export interface Spell extends BaseSpellLike {
   rank: 1 | 2 | 3 | 4 | 5 | 6 | 7;
 }
 
@@ -82,7 +86,7 @@ export interface Ritual extends Omit<Spell, "scaling"> {
   castingTime: string;
 }
 
-export interface SpellLike extends Cantrip {
+export interface SpellLike extends BaseSpellLike {
   castingTime?: string;
   rank?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | null;
 }
