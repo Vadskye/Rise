@@ -365,7 +365,7 @@ export const bless: MysticSphere = {
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The subject gains a +4 \\glossterm{magic bonus} to its maximum \\glossterm{hit points}.
-        In addition, it immediately gains 4 hit points.
+        In addition, it immediately gains that many hit points.
         When this ability ends, the subject loses \\glossterm{hit points} equal to the number of hit points it gained this way.
 
         You can only have one casting of this spell active at once.

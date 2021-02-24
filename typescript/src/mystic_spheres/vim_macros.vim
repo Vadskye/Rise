@@ -22,4 +22,6 @@ o€ku/scalingO€kra€kb: /tags\+€kb=oU€kra€kb: €k7
 /scaling: """lr${/"""rn}50@l
 
 " fix attacks by referencing original target
-/against (the|each) subject?original targetsllc~€kr$lvOOdcP/\\e\
+/against (the|each) subject?original targetsllc$lvOOdcP/\\e\
+" alternate version
+/against the subjectI€kull~€krc$nld$cpa.€kh/\\e\

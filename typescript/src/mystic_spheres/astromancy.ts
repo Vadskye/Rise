@@ -231,7 +231,6 @@ export const astromancy: MysticSphere = {
     {
       name: "Dimensional Jaunt -- Plane of Air",
 
-      // targeting: "One creature or object within \\rngmed range",
       attack: {
         hit: `
           The subject takes 1d10 bludgeoning damage.
