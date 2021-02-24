@@ -151,7 +151,7 @@ export const terramancy: MysticSphere = {
         crit: `Each subject is also unable to stand up as a \\glossterm{condition}.`,
         hit: `Each subject is knocked \\glossterm{prone}.`,
         targeting: `
-          Make an attack vs. Reflex against all Large or smaller creatures in a \\smallradius within \\medrange that are on a stable surface.
+          Make an attack vs. Reflex against all Large or smaller creatures in a \\smallarea within \\medrange that are on a stable surface.
           This attack gains a +2 \\glossterm{accuracy} bonus against each target that is on a Medium or larger body of stone.
         `,
       },
@@ -171,7 +171,7 @@ export const terramancy: MysticSphere = {
         hit: `Each subject takes 2d8 + half \\glossterm{power} bludgeoning damage.
         Each Large or smaller target that loses \\glossterm{hit points} from this damage is also knocked \\glossterm{prone}.`,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\smallradius within \\medrange that is on a stable surface.
+          Make an attack vs. Reflex against everything in a \\smallarea within \\medrange that is on a stable surface.
           This attack gains a +2 \\glossterm{accuracy} bonus against each target that is on a Medium or larger body of stone.
         `,
       },
