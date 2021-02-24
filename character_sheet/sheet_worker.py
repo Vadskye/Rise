@@ -718,7 +718,8 @@ def debuffs():
                 reflex -= 4;
             }}
             if (prone) {{
-                // TODO: represent maybe?
+                armor -= 2;
+                reflex -= 2;
             }}
 
             // rank 1 debuffs
