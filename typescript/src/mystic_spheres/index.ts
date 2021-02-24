@@ -8,6 +8,14 @@ import { chronomancy } from "./chronomancy";
 import { cryomancy } from "./cryomancy";
 import { electromancy } from "./electromancy";
 import { enchantment } from "./enchantment";
+import { fabrication } from "./fabrication";
+import { photomancy } from "./photomancy";
+import { polymorph } from "./polymorph";
+import { pyromancy } from "./pyromancy";
+import { revelation } from "./revelation";
+import { summoning } from "./summoning";
+import { telekinesis } from "./telekinesis";
+import { umbramancy } from "./umbramancy";
 
 export const mysticSpheres: MysticSphere[] = [
   aeromancy,
@@ -20,6 +28,14 @@ export const mysticSpheres: MysticSphere[] = [
   cryomancy,
   electromancy,
   enchantment,
+  fabrication,
+  photomancy,
+  polymorph,
+  pyromancy,
+  revelation,
+  summoning,
+  telekinesis,
+  umbramancy,
 ];
 
 export type Source = "arcane" | "divine" | "nature" | "pact";

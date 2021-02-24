@@ -96,7 +96,7 @@ export const electromancy: MysticSphere = {
       attack: {
         hit: `Each subject takes 1d10 + half \\glossterm{power} electricity damage.`,
         targeting: `
-        Make an attack vs. Reflex against your \\glossterm{enemies} in a \\areasmall radius from you.
+        Make an attack vs. Reflex against all \\glossterm{enemies} in a \\areasmall radius from you.
         `,
       },
       rank: 2,
@@ -111,7 +111,7 @@ export const electromancy: MysticSphere = {
         glance: `Half damage.`,
         hit: `Each subject takes 2d10 + half \\glossterm{power} electricity damage.`,
         targeting: `
-          Make an attack vs. Reflex against your \\glossterm{enemies} in a \\hugearea radius from you.
+          Make an attack vs. Reflex against all \\glossterm{enemies} in a \\hugearea radius from you.
         `,
       },
       rank: 5,
@@ -176,7 +176,7 @@ export const electromancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
-          In addition, regardless of whether you hit that creature, make an attack vs. Reflex against your \\glossterm{enemies} within a \\smallarea radius from that creature.
+          In addition, regardless of whether you hit that creature, make an attack vs. Reflex against all \\glossterm{enemies} within a \\smallarea radius from that creature.
         `,
       },
       rank: 5,
@@ -326,7 +326,7 @@ export const electromancy: MysticSphere = {
         hit: `Each subject takes 2d8 + half \\glossterm{power} electricity damage.`,
         targeting: `
           For the duration of this spell, you can breathe electricity like a dragon as a standard action.
-          When you do, make an attack vs. Reflex against everything within a \\largearea cone.
+          When you do, make an attack vs. Reflex against everything within a \\largearea cone from you.
           After you use this ability, you cannot use it again until after the end of the next round.
         `,
       },
@@ -375,7 +375,7 @@ export const electromancy: MysticSphere = {
       name: "Electrocute",
 
       attack: {
-        glance: `As above, except that that the subject takes half damage.`,
+        glance: `Half damage.`,
         // +2d from level, add trivial extra benefit for fun
         hit: `The subject takes 4d10 + \\glossterm{power} electricity damage.
         If this damage would inflict a \\glossterm{vital wound}, it inflicts an additional \\glossterm{vital wound}.`,
@@ -393,8 +393,8 @@ export const electromancy: MysticSphere = {
       name: "Lightning Rod",
 
       attack: {
-        crit: `As above, except that each bolt deals double damage.`,
-        glance: `As above, except that the condition is removed at the end of the next round.`,
+        crit: `Each bolt deals double damage.`,
+        glance: "The effect lasts until the end of the next round.",
         hit: `As a \\glossterm{condition}, the subject attracts lightning.
           As a \\glossterm{minor action}, you can call a bolt of lightning to strike the subject.
           When you do, the subject takes 2d8 electricity damage.

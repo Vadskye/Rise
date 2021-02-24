@@ -207,7 +207,7 @@ export const channelDivinity: MysticSphere = {
           Each subject takes 1d10 + half \\glossterm{power} energy damage.
         `,
         targeting: `
-          Make an attack vs. Mental against your \\glossterm{enemies} in a \\smallarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
         `,
       },
       rank: 2,
@@ -224,7 +224,7 @@ export const channelDivinity: MysticSphere = {
           Each subject takes 2d8 + half \\glossterm{power} energy damage.
         `,
         targeting: `
-          Make an attack vs. Mental against your \\glossterm{enemies} in a \\largearea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
       rank: 4,
@@ -259,7 +259,7 @@ export const channelDivinity: MysticSphere = {
       `,
       rank: 3,
       scaling: {
-        5: `You gain a +2 bonus to Strength-based checks, and you gain a +2 bonus to strength for the purpose of determining your carrying capacity.`,
+        5: `You also gain a +2 bonus to Strength-based checks, and you gain a +2 bonus to Strength for the purpose of determining your carrying capacity.`,
         7: "You can increase your size category by up to two size categories",
       },
       type: "Attune (self)",
@@ -275,7 +275,7 @@ export const channelDivinity: MysticSphere = {
           Each subject is \\glossterm{shaken} by you until the end of the next round.
         `,
         targeting: `
-          At the end of each round, make an attack vs. Mental against your \\glossterm{enemies} in a \\smallarea radius \\glossterm{emanation} from you.
+          At the end of each round, make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius \\glossterm{emanation} from you.
           After you attack a creature this way, it becomes immune to this ability from you until it takes a \\glossterm{short rest}.
         `,
       },

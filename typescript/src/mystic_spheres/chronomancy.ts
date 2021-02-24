@@ -191,7 +191,7 @@ export const chronomancy: MysticSphere = {
 
       attack: {
         crit: `The subject \\glossterm{stunned} instead of dazed.`,
-        glance: `As above, except that the condition is removed at the end of the next round.`,
+        glance: "The effect lasts until the end of the next round.",
         hit: `The subject is \\glossterm{slowed} and \\glossterm{dazed} as a single \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.

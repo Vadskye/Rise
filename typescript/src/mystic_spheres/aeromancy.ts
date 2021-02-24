@@ -466,7 +466,7 @@ export const aeromancy: MysticSphere = {
           Each subject's final position should be the same distance from you as its starting position.
         `,
         targeting: `
-          Make an attack vs. Fortitude against your \\glossterm{enemies} in a \\medarea radius from you.
+          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
       // narrative: '',
@@ -485,7 +485,7 @@ export const aeromancy: MysticSphere = {
           You can use a \\glossterm{free hand} to catch the object if it reaches you.
         `,
         targeting: `
-          Make an attack vs. Reflex against one Small or smaller object within \\medrange range.
+          Make an attack vs. Reflex against one Small or smaller object within \\medrange.
           If the object is attended by a creature, the attack must also beat the attending creature's Reflex defense.
           If it is held in two hands or well secured, this attack automatically fails.
         `,

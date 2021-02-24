@@ -307,12 +307,6 @@ export const astromancy: MysticSphere = {
           Make an attack vs. Mental against anything within \\medrange.
         `,
       },
-      effect: `
-          Make an attack vs. Mental against the subject.
-          \\hit The subject takes 4d6 energy damage.
-          In addition, it is \\glossterm{stunned} as a \\glossterm{condition}.
-          \\glance As above, except that the condition is removed at the end of the next round:
-      `,
       narrative: `
         Your foe briefly teleports into the Deep Astral Plane.
         The distance of the journey, combined with the bizarre destination, is deeply unsettling.

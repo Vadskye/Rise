@@ -140,7 +140,7 @@ export const enchantment: MysticSphere = {
         If it is somehow brought into a standing position, it will immediately fall and become prone again.`,
         hit: `Each subject falls \\glossterm{prone}.`,
         targeting: `
-          Make an attack vs. Mental against your \\glossterm{enemies} in a \\smallarea radius within \\medrange.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\medrange.
         `,
       },
       rank: 2,
@@ -269,8 +269,8 @@ export const enchantment: MysticSphere = {
       name: "Run",
 
       attack: {
-        crit: `As above, except that the condition must be removed twice before the effect ends.`,
-        glance: `As above, except that the condition is removed at the end of the next round.`,
+        crit: `The condition must be removed twice before the effect ends.`,
+        glance: "The effect lasts until the end of the next round.",
         hit: `As a \\glossterm{condition}, the subject must move a distance equal to its maximum movement speed in a straight line during each \\glossterm{movement phase}.
         It must use its movement mode with the highest speed to move this way.
         It is not required to use the \\textit{sprint} ability, or use any other special movement ability, though it may choose to do so.
@@ -293,7 +293,7 @@ export const enchantment: MysticSphere = {
         crit: `The effect becomes a \\glossterm{condition} on each subject.`,
         hit: `Until the end of the next round, each subject is convinced that they just learned some phenomenal cosmic truth or life-changing revelation, making them \\glossterm{stunned}.`,
         targeting: `
-          Make an attack vs. Mental against your \\glossterm{enemies} in a \\medarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
       rank: 4,
@@ -348,7 +348,7 @@ export const enchantment: MysticSphere = {
         crit: `The effect becomes a \\glossterm{condition} on each subject.`,
         hit: `Each subject is \\dazed until the end of the next round.`,
         targeting: `
-          Make an attack vs. Mental against your \\glossterm{enemies} in a \\hugearea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\hugearea radius from you.
         `,
       },
       rank: 3,
@@ -380,7 +380,7 @@ export const enchantment: MysticSphere = {
         crit: `The effect becomes a \\glossterm{condition} on each subject.`,
         hit: `Each subject is \\glossterm{shaken} by you until the end of the next round.`,
         targeting: `
-        Make an attack vs. Mental against your \\glossterm{enemies} in a \\smallarea radius within \\medrange.
+        Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\medrange.
         `,
       },
       rank: 1,
@@ -413,7 +413,7 @@ export const enchantment: MysticSphere = {
         crit: "The effect becomes a \\glossterm{condition} on each subject.",
         hit: `Each subject is \\glossterm{shaken} by you until the end of the next round.`,
         targeting: `
-          At the end of each round, make an attack vs. Mental against your \\glossterm{enemies} in a \\smallarea radius \\glossterm{emanation} from you.
+          At the end of each round, make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius \\glossterm{emanation} from you.
           After you attack a creature this way, you do not make this attack against it again until it takes a \\glossterm{short rest}.
         `,
       },
@@ -634,7 +634,7 @@ export const enchantment: MysticSphere = {
       name: "Solipsism",
 
       attack: {
-        glance: `As above, except that the condition is removed at the end of the next round.`,
+        glance: "The effect lasts until the end of the next round.",
         hit: `As a \\glossterm{condition}, the subject believes that it is the only real creature, and the rest of the world is an illusion.
         It may wander aimlessly, but generally takes no action to defend itself and does not perceive itself to be in danger from other creatures.
         It still avoids obvious environmental hazards, such as cliff edges or fires.
@@ -738,8 +738,8 @@ export const enchantment: MysticSphere = {
       name: "Delayed Distraction",
 
       attack: {
-        crit: `As above, except that the condition must be removed twice before the effect ends.`,
-        glance: `As above, except that the condition is removed at the end of the next round.`,
+        crit: `The condition must be removed twice before the effect ends.`,
+        glance: "The effect lasts until the end of the next round.",
         hit: `As a \\glossterm{condition}, the subject's mind is primed for distraction.
         When it uses a \\glossterm{Focus} ability, the distraction triggers, wrenching the subject's attention away.
         Its \\glossterm{focus penalty} is increased by 4, and it fails to use the ability, wasting its action.
