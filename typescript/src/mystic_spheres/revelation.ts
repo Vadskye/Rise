@@ -352,7 +352,7 @@ export const revelation: MysticSphere = {
 
       // original targets: one unoccupied square within \medrange (see text)
       effect: `
-        A \\glossterm{scrying sensor} appears floating in the air in any unoccupied square within \\medragen.
+        A \\glossterm{scrying sensor} appears floating in the air in any unoccupied square within \\medrange.
         You do not need \\glossterm{line of sight} or \\glossterm{line of effect} to target a location.
         You must specify a distance and direction to target a location you cannot see.
         This can allow you to cast the spell beyond walls and similar obstacles.
