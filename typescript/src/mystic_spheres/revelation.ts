@@ -157,7 +157,7 @@ export const revelation: MysticSphere = {
       attack: {
         glance: "The effect lasts until the end of the next round.",
         hit: `When you hear the subject deliberately and knowingly speaks a lie, you know that the subject was lying.
-        This ability does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions..`,
+        This ability does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.`,
         targeting: `
         This spell has no \\glossterm{verbal components}.
 
@@ -311,7 +311,7 @@ export const revelation: MysticSphere = {
         crit: `The condition must be removed twice before the effect ends.`,
         glance: "The effect lasts until the end of the next round.",
         hit: `The subject's mind is overwhelmed by a total awareness of your chosen fact.
-        It is \\glossterm{stunned} as a \\glossterm{condition}..`,
+        It is \\glossterm{stunned} as a \\glossterm{condition}.`,
         targeting: `
         Choose a fact that you know and make an attack vs. Mental against one creature within \\medrange.
         If the subject does not already know that fact to be true or false,

@@ -16,7 +16,11 @@ import { revelation } from "./revelation";
 import { summoning } from "./summoning";
 import { telekinesis } from "./telekinesis";
 import { terramancy } from "./terramancy";
+import { thaumaturgy } from "./thaumaturgy";
+import { toxicology } from "./toxicology";
 import { umbramancy } from "./umbramancy";
+import { verdamancy } from "./verdamancy";
+import { vivimancy } from "./vivimancy";
 
 export const mysticSpheres: MysticSphere[] = [
   aeromancy,
@@ -37,7 +41,11 @@ export const mysticSpheres: MysticSphere[] = [
   summoning,
   telekinesis,
   terramancy,
+  thaumaturgy,
+  toxicology,
   umbramancy,
+  verdamancy,
+  vivimancy,
 ];
 
 export type Source = "arcane" | "divine" | "nature" | "pact";
