@@ -1538,7 +1538,7 @@ def generate_maneuvers():
 
     maneuvers.append(
         Maneuver(
-            name="Pin",
+            name="Instant Pin",
             short_description="Grapple a creature and instantly pin it",
             target="One creature within your \\glossterm<reach>",
             effect_text="""
