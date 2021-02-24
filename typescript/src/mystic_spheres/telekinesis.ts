@@ -18,6 +18,7 @@ export const telekinesis: MysticSphere = {
         During the movement phase, you can move the subject up to five feet in any direction.
         You use your \\glossterm{power} instead of your Strength to determine your maximum carrying capacity when moving objects in this way.
       `,
+      focus: false,
       scaling: {
         2: `You can move the subject up to ten feet in any direction.`,
         4: `The range increases to \\medrange.`,
@@ -36,6 +37,7 @@ export const telekinesis: MysticSphere = {
         The force is sufficient to lift a 1 lb\\. object, or to push a 5 lb\\. object across the ground.
         Generally, the force exerted by this ability is insufficient to physically move or even meaningfully impede any creature, but it can influence their actions.
       `,
+      focus: false,
       scaling: {
         2: `The force increases to lift a 2 lb.\\ object, or to push a 10 lb\\. object.`,
         4: `The force increases to lift a 4 lb.\\ object, or to push a 20 lb\\. object.`,

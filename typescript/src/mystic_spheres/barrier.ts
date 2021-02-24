@@ -14,6 +14,7 @@ export const barrier: MysticSphere = {
         This halving is applied before \\glossterm{resistances} and similar abilities.
         Because this is a \\glossterm{Swift} ability, it affects damage you take during the current phase.
       `,
+      focus: false,
       // narrative: '',
       scaling: {
         2: "The halving applies to all damage, not just energy damage.",
@@ -30,6 +31,7 @@ export const barrier: MysticSphere = {
         `,
         spell: "mystic barrier",
       },
+      focus: false,
       name: "Minor Barrier",
       scaling: {
         2: "The range increases to \\medrange.",

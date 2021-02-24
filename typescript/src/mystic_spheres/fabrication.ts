@@ -17,6 +17,7 @@ export const fabrication: MysticSphere = {
 
         This spell lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
       `,
+      focus: false,
       scaling: {
         2: `The maximum size of the object increases to Small.`,
         4: `The maximum size of the object increases to Medium.`,

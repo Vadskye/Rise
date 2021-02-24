@@ -14,6 +14,7 @@ export const umbramancy: MysticSphere = {
 
         You gain a +2 bonus to the Stealth skill until the end of the next round.
       `,
+      focus: false,
       scaling: {
         2: `The bonus increases to +4.`,
         4: `The bonus increases to +6.`,
@@ -32,6 +33,7 @@ export const umbramancy: MysticSphere = {
         You can choose this spell's radius, up to a maximum of a \\smallarea radius.
         Any object or effect which blocks light also blocks this spell's effect.
       `,
+      focus: false,
       scaling: {
         2: `The maximum area increases to a \\medarea radius.`,
         4: `The range increases to \\longrange.`,

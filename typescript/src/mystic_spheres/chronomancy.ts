@@ -13,6 +13,7 @@ export const chronomancy: MysticSphere = {
         You can read at twice your normal speed.
         However, the mental effort imposes a -4 penalty to Mental defense.
       `,
+      focus: false,
       scaling: {
         2: "You can read at four times your normal speed.",
         4: "You can read at six times your normal speed.",
@@ -27,6 +28,7 @@ export const chronomancy: MysticSphere = {
         Make an Awareness check to notice things in a single 10-ft.\\ squrae within 10 feet of you.
         You gain a +4 bonus to this check.
       `,
+      focus: false,
       scaling: {
         2: "The bonus increases to +6.",
         4: "The bonus increases to +8.",
@@ -42,6 +44,7 @@ export const chronomancy: MysticSphere = {
         The target ages as if that much time had passed.
         When this spell ends, the object returns to its original state.
       `,
+      focus: false,
       scaling: {
         2: "You can choose to age the target by up to a week.",
         4: "You can choose to age the target by up to a month.",
