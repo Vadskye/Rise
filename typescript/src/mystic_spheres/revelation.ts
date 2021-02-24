@@ -107,6 +107,7 @@ export const revelation: MysticSphere = {
     {
       name: "Mass Precognitive Offense",
 
+      castingTime: "minor action",
       functionsLike: {
         mass: true,
         spell: "Precognitive Offense",
@@ -138,6 +139,7 @@ export const revelation: MysticSphere = {
     {
       name: "Mass Precognitive Defense",
 
+      castingTime: "minor action",
       functionsLike: {
         mass: true,
         spell: "Precognitive Defense",
@@ -209,6 +211,7 @@ export const revelation: MysticSphere = {
     {
       name: "Mass Blindsight",
 
+      castingTime: "minor action",
       functionsLike: {
         mass: true,
         spell: "Blindsight",
@@ -240,6 +243,7 @@ export const revelation: MysticSphere = {
     {
       name: "Mass Boon of Many Eyes",
 
+      castingTime: "minor action",
       functionsLike: {
         mass: true,
         spell: "Boon of Many Eyes",
@@ -413,6 +417,7 @@ export const revelation: MysticSphere = {
     {
       name: "Mass Longshot",
 
+      castingTime: "minor action",
       functionsLike: {
         mass: true,
         spell: "Longshot",

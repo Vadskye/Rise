@@ -586,6 +586,7 @@ export const enchantment: MysticSphere = {
     {
       name: "Mass Motivate",
 
+      castingTime: "minor action",
       functionsLike: {
         mass: true,
         spell: "Motivate",
