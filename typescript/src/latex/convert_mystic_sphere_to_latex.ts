@@ -5,7 +5,8 @@ import _ from "lodash";
 export function convertMysticSphereToLatex(sphere: MysticSphere): string {
   return format.latexify(`
     \\newpage
-    \\section{${sphere.name}}\\label{spell:${sphere.name}}
+    \\hypertarget{spell:${sphere.name.toLowerCase()}}{}\\label{${sphere.name}}
+    \\section{{${sphere.name}}}
       \\textit{${sphere.shortDescription}}
 
       ${
@@ -57,7 +58,8 @@ function convertSpellToLatex(spell: SpellLike): string {
     format.spellNarrative(spell),
   ].filter(Boolean);
   return `
-    \\begin{${abilityType}}{${spell.name}\\label{spell:${spell.name.toLowerCase()}}}${rankText}
+    \\hypertarget{spell:${spell.name.toLowerCase()}}{}\\label{${spell.name}}
+    \\begin{${abilityType}}{${spell.name}}${rankText}
       ${internalComponents.join("\n\\rankline\n\n\\noindent ")}
       \\vspace{0.1em}
     \\end{${abilityType}}
