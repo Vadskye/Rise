@@ -35,9 +35,9 @@ export const cryomancy: MysticSphere = {
         This ability lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
       `,
       scaling: {
-        2: "The area increases to a \\arealarge radius \\glossterm{emanation}, and the maximum temperature reduction increases to 30 degrees.",
-        4: "The area increases to a \\areahuge radius \\glossterm{emanation}, and the maximum temperature reduction increases to 40 degrees.",
-        6: "The area increases to a \\areagarg radius \\glossterm{emanation}, and the maximum temperature reduction increases to 50 degrees.",
+        2: "The area increases to a \\largearea radius \\glossterm{emanation}, and the maximum temperature reduction increases to 30 degrees.",
+        4: "The area increases to a \\hugearea radius \\glossterm{emanation}, and the maximum temperature reduction increases to 40 degrees.",
+        6: "The area increases to a \\gargarea radius \\glossterm{emanation}, and the maximum temperature reduction increases to 50 degrees.",
       },
       type: "Duration",
     },
@@ -138,12 +138,11 @@ export const cryomancy: MysticSphere = {
     {
       name: "Ice Lance",
 
-      // original targets: Everything in a \areamed, 10 ft.\ wide line from you
       attack: {
-        glance: `As above, except that that each subject takes half damage.`,
+        glance: `Half damage.`,
         hit: `Each subject takes piercing and cold damage equal to 2d8 plus half your \\glossterm{power} (see \\pcref{Multiple Damage Types}).`,
         targeting: `
-        Make an attack vs. Armor against each subject.
+        Make an attack vs. Armor against everything in a \\medarea long, 10 ft. wide line from you.
         `,
       },
 
@@ -242,7 +241,7 @@ export const cryomancy: MysticSphere = {
         glance: "The effect lasts until the end of the next round.",
         hit: `Each subject that has no remaining \\glossterm{resistance} to cold damage is \\glossterm{stunned} as a \\glossterm{condition}.`,
         targeting: `
-          Make an attack vs. Fortitude against your \\glossterm{enemies} in a \\arealarge radius from you.
+          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\arealarge radius from you.
         `,
       },
       rank: 4,
@@ -438,7 +437,7 @@ export const cryomancy: MysticSphere = {
         hit: `Each subject takes 2d8 + half \\glossterm{power} cold damage.`,
         targeting: `
           For the duration of this spell, you can breathe cold like a dragon as a standard action.
-          When you do, make an attack vs. Fortitude against everything in a \\largearea cone.
+          When you do, make an attack vs. Fortitude against everything in a \\largearea cone from you.
           After you use this ability, you cannot use it again until after the end of the next round.
         `,
       },
@@ -539,7 +538,7 @@ export const cryomancy: MysticSphere = {
       castingTime: "one hour",
       functionsLike: {
         exceptThat: `
-          This ritual functions like the \\spell{frostfall} ritual, except that the temperature in the area decreases by 60 degrees, to a minimum of \\minus70 degrees.
+          the temperature in the area decreases by 60 degrees, to a minimum of \\minus70 degrees.
         `,
         spell: "frostfall",
       },

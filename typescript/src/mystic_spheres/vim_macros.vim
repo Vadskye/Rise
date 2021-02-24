@@ -20,3 +20,6 @@ o€ku/scalingO€kra€kb: /tags\+€kb=oU€kra€kb: €k7
 
 " Fix incorrect "scaling" parsing:
 /scaling: """lr${/"""rn}50@l
+
+" fix attacks by referencing original target
+/against (the|each) subject?original targetsllc~€kr$lvOOdcP/\\e\

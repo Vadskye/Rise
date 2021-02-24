@@ -483,9 +483,9 @@ export const bless: MysticSphere = {
 
       castingTime: "one hour",
       effect: `
+        Choose one \\glossterm{unattended}, nonmagical object or part of an object of up to Large size.
         Unlike most abilities, this ritual can affect individual parts of a whole object.
 
-        Choose one \\glossterm{unattended}, nonmagical object or part of an object of up to Large size.
         % How should this affect Strength break difficulty ratings?
         The subject gains a +5 \\glossterm{magic bonus} to its \\glossterm{resistances} to both \\glossterm{physical damage} and \\glossterm{energy damage}.
         If the subject is moved, this effect ends.
@@ -501,7 +501,7 @@ export const bless: MysticSphere = {
       castingTime: "24 hours",
       functionsLike: {
         exceptThat: `
-          This ritual functions like the \\spell{blessing of fortification} ritual, except that the effect lasts for one hundred years.
+          the effect lasts for one hundred years.
         `,
         spell: "blessing of fortification",
       },
@@ -515,7 +515,7 @@ export const bless: MysticSphere = {
       castingTime: "24 hours",
       functionsLike: {
         exceptThat: `
-          This ritual functions like the \\spell{greater fortification} ritual, except that the effect lasts for one hundred years.
+          the effect lasts for one hundred years.
         `,
         spell: "greater fortification",
       },
@@ -529,7 +529,7 @@ export const bless: MysticSphere = {
       castingTime: "one hour",
       functionsLike: {
         exceptThat: `
-          This ritual functions like the \\spell{blessing of fortification} ritual, except that the bonus to \\glossterm{resistances} increases to 10.
+          the bonus to \\glossterm{resistances} increases to 10.
         `,
         spell: "blessing of fortification",
       },
@@ -543,7 +543,7 @@ export const bless: MysticSphere = {
       castingTime: "one hour",
       functionsLike: {
         exceptThat: `
-          This ritual functions like the \\spell{blessing of fortification} ritual, except that the bonus to \\glossterm{resistances} increases to 15.
+          the bonus to \\glossterm{resistances} increases to 15.
         `,
         spell: "blessing of fortification",
       },
@@ -569,7 +569,7 @@ export const bless: MysticSphere = {
       castingTime: "one hour",
       functionsLike: {
         exceptThat: `
-          This ritual functions like the \\spell{bless water} ritual, except that it loses the \\glossterm{Attune} (ritual) tag and the effect lasts permanently.
+          it loses the \\glossterm{Attune} (ritual) tag and the effect lasts permanently.
         `,
         spell: "bless water",
       },
@@ -595,7 +595,7 @@ export const bless: MysticSphere = {
       castingTime: "one hour",
       functionsLike: {
         exceptThat: `
-          This ritual functions like the \\spell{curse water} ritual, except that it loses the \\glossterm{Attune} (ritual) tag and the effect lasts permanently.
+          it loses the \\glossterm{Attune} (ritual) tag and the effect lasts permanently.
         `,
         spell: "curse water",
       },
