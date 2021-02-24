@@ -7,7 +7,7 @@ function assertEndsWithPeriod(text: string | null | undefined) {
 }
 
 export function spellEffect(
-  spell: Pick<Spell, "attack" | "effect" | "functionsLike" | "name">,
+  spell: Pick<Spell, "attack" | "castingTime" | "effect" | "functionsLike" | "name">,
 ): string | null {
   try {
     if (spell.attack) {
@@ -33,10 +33,14 @@ export function spellEffect(
       if (!exceptThat) {
         throw new Error(`Must have a defined 'exceptThat' in a 'functionsLike'`);
       }
+
+      const spellCategory =
+        spell.castingTime && spell.castingTime !== "minor action" ? "ritual" : "spell";
+
       return `
-        This spell functions like the \\spell{${
-          spell.functionsLike.spell
-        }} spell, except that ${exceptThat.trim()}
+        This ${spellCategory} functions like the \\${spellCategory}{${
+        spell.functionsLike.spell
+      }} ${spellCategory}, except that ${exceptThat.trim()}
       `;
     } else {
       return null;
