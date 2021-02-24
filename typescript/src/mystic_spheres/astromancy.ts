@@ -13,6 +13,7 @@ export const astromancy: MysticSphere = {
         You teleport into an unoccupied destination within 5 foot \\glossterm{range}.
         If the destination is invalid, this spell fails with no effect.
       `,
+      focus: false,
       // narrative: '',
       scaling: {
         2: "The range increases to 15 feet.",
@@ -29,6 +30,7 @@ export const astromancy: MysticSphere = {
         It teleports into your hand or into an unccupied location within \\shortrange.
         If the destination is invalid, this spell fails with no effect.
       `,
+      focus: false,
       // narrative: '',
       scaling: {
         2: "The range increases to \\rngmed.",

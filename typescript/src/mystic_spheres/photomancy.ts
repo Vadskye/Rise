@@ -19,6 +19,7 @@ export const photomancy: MysticSphere = {
         `,
         spell: "disguise creature",
       },
+      focus: false,
       scaling: {
         2: `The bonus increases to +6.`,
         4: `The bonus increases to +8.`,
@@ -37,6 +38,7 @@ export const photomancy: MysticSphere = {
         You can freely choose the color of the light, but it is unchanging once created.
         This effect lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
       `,
+      focus: false,
       scaling: {
         2: `The maximum radius of bright illumination increases to 30 feet.`,
         4: `The maximum radius of bright illumination increases to 60 feet.`,

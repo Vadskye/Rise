@@ -13,6 +13,7 @@ export const enchantment: MysticSphere = {
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The subject's mood improves and it feels more cheerful.
       `,
+      focus: false,
       scaling: {
         2: `You may target an additional ally within range.`,
         4: `You may target an additional ally within range.`,
@@ -35,7 +36,7 @@ export const enchantment: MysticSphere = {
           If the subject is currently repeating its actions from this effect or a similar effect, this attack automatically fails.
         `,
       },
-
+      focus: false,
       scaling: "accuracy",
       tags: ["Compulsion"],
       type: "Instant",
