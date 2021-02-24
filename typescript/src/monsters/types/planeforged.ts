@@ -222,33 +222,6 @@ planeforgedInput.push({
       startingAttributes: { str: 2, dex: 1, con: 0, int: -2, per: 2, wil: 2 },
       weaponInput: [{ name: "stinger" }],
     },
-    {
-      ...baseDemon,
-      attackInputs: [],
-      challengeRating: 1,
-      knowledge: {
-        0: `
-          Barbed demons are named for the dangerous spikes that protrude from all around their bodies.
-          They use the spikes to impale their foes.
-        `,
-        5: `
-          Attacking a barbed demon in close range is dangerous because of their spikes.
-          Careless attackers can easily hurt themselves more than the demon.
-        `,
-      },
-      level: 7,
-      name: "Barbed Demon",
-      passiveAbilities: [
-        {
-          description: `
-            Whenever the $name makes a creature \\glossterm{bleed} with a melee \\glossterm{strike}, the filth from its beard infects the target.
-          `,
-          name: "Vile Beard",
-        },
-      ],
-      startingAttributes: { str: 2, dex: 1, con: 0, int: -2, per: 2, wil: 2 },
-      weaponInput: [{ name: "stinger" }],
-    },
   ],
 });
 
