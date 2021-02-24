@@ -106,6 +106,7 @@ class Effects(object):
                         casting_time_text,
                         effect_text,
                         functions_like_text,
+                        'focus: false,',
                         scaling_text,
                         tags_text,
                         f'type: "{spell_type}",',
