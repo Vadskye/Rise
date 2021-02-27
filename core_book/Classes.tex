@@ -846,6 +846,11 @@ This choice determines a great deal about your character's abilities.
         \subsubsection{Protection}
             \parhead{Gift} You gain a bonus equal to twice your rank in this archetype to your \glossterm{resistance} against \glossterm{energy damage}.
             \parhead{Aspect} Your \glossterm{allies} adjacent to you gain a \plus1 bonus to all defenses.
+            A creature that sees an attack against an ally protected in this way can observe that you are the cause of the protection with a \glossterm{difficulty rating} 5 Awareness check.
+
+            While this ability is active, you cannot gain a defense bonus from this ability, even if another cleric with this ability is adjacent to you.
+            You can \glossterm{suppress} or \glossterm{resume} this ability as a \glossterm{free action}, which can allow you to be protected by another cleric with this ability.
+
             \parhead{Essence} The bonus from this domain's gift increases to be equal to three times your rank in this archetype.
             \parhead{Mastery} The bonus from this domain's aspect increases to \plus2.
 
@@ -1905,15 +1910,15 @@ This choice determines a great deal about your character's abilities.
     \begin{dtable!*}
         \lcaption{Monk Progression}
 \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-    \tb{Rank} & \tb{Min Level} & \tb{Esoteric Warrior}                        & \tb{Ki}                     & \tb{Perfected Form}       & \tb{Transcendent Sage} \tableheaderrule
-    0         & \tdash         & Esoteric fluidity                            & Ki barrier                  & Unarmed warrior           & Transcend frailty             \\
-    1         & 1              & Esoteric maneuvers                           & Ki manifestations           & Fast movement             & Clear the mind                \\
-    2         & 4              & Maneuver rank (2), esoteric force            & Ki self, greater ki barrier & Perfect precision         & Feel the flow of life         \\
-    3         & 7              & Maneuver rank (3), glancing strikes          & Ki power                    & Perfect body              & Transcend time                \\
-    4         & 10             & Maneuver rank (4), esoteric maneuver         & Ki manifestation            & Greater fast movement     & Inner peace                   \\
-    5         & 13             & Maneuver rank (5), greater esoteric force    & Supreme ki barrier          & Greater perfect precision & Greater feel the flow of life \\
-    6         & 16             & Maneuver rank (6), greater esoteric fluidity & Greater ki power            & Greater perfect body      & Transcend mortality           \\
-    7         & 19             & Maneuver rank (7), esoteric maneuver         & Greater ki manifestation    & Supreme fast movement     & Inner transcendence           \\
+    \tb{Rank} & \tb{Min Level} & \tb{Esoteric Warrior}                        & \tb{Ki}                  & \tb{Perfected Form}       & \tb{Transcendent Sage} \tableheaderrule
+    0         & \tdash         & Esoteric fluidity                            & Ki barrier, ki energy    & Unarmed warrior           & Transcend frailty             \\
+    1         & 1              & Esoteric maneuvers                           & Ki manifestations        & Fast movement             & Clear the mind                \\
+    2         & 4              & Maneuver rank (2), esoteric force            & Greater ki barrier       & Perfect precision         & Feel the flow of life         \\
+    3         & 7              & Maneuver rank (3), glancing strikes          & Ki power                 & Perfect body              & Transcend time                \\
+    4         & 10             & Maneuver rank (4), esoteric maneuver         & Ki manifestation         & Greater fast movement     & Inner peace                   \\
+    5         & 13             & Maneuver rank (5), greater esoteric force    & Supreme ki barrier       & Greater perfect precision & Greater feel the flow of life \\
+    6         & 16             & Maneuver rank (6), greater esoteric fluidity & Greater ki power         & Greater perfect body      & Transcend mortality           \\
+    7         & 19             & Maneuver rank (7), esoteric maneuver         & Greater ki manifestation & Supreme fast movement     & Inner transcendence           \\
 \end{dtabularx}
     \end{dtable!*}
 
@@ -2154,7 +2159,7 @@ This choice determines a great deal about your character's abilities.
         In addition, its bonus to \glossterm{resistance} against \glossterm{energy damage} increases to be equal to three times your rank in this archetype, and its bonus to resistance against \glossterm{physical damage} changes to be equal to your rank in this archetype.
 
         \cf{Mnk}[3]{Ki Power}
-        You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
+        You gain a \plus2 bonus to your \glossterm{power} with all abilities.
 
         \cf{Mnk}[4]{Ki Manifestation}[Magical]
         You learn an additional \textit{ki manifestation}.
@@ -2248,15 +2253,15 @@ This choice determines a great deal about your character's abilities.
     \begin{dtable!*}
         \lcaption{Paladin Progression}
 \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-    \tb{Rank} & \tb{Min Level} & \tb{Devoted Paragon}  & \tb{Divine Magic}               & \tb{Divine Spell Expertise} & \tb{Stalwart Guardian}      & \tb{Zealous Warrior}       \tableheaderrule
-    0         & \tdash         & Devoted mind          & Cantrips                        & Divine training             & Enduring defender           & Zealous exertion                           \\
-    1         & 1              & Aligned aura          & Spellcasting                    & Combat caster               & Lay on hands                & Smite                                      \\
-    2         & 4              & Aligned immunity      & Spell rank (2), spell knowledge & Insight point               & Stalward resilience         & Zealous offense                            \\
-    3         & 7              & Paragon power         & Spell rank (3)                  & Wellspring of power         & Greater enduring defender   & Glancing strikes                           \\
-    4         & 10             & Greater aligned aura  & Spell rank (4), spell knowledge & Insight point               & Greater lay on hands        & Zealous purge                              \\
-    5         & 13             & Greater devoted mind  & Spell rank (5)                  & Greater combat caster       & Greater stalwart resilience & Greater zealous offense                    \\
-    6         & 16             & Greater paragon power & Spell rank (6)                  & Insight point               & Supreme enduring defender   & Greater zealous exertion, zealous fixation \\
-    7         & 19             & Supreme aligned aura  & Spell rank (7), spell knowledge & Greater wellspring of power & Supreme lay on hands        & Pass judgment                              \\
+    \tb{Rank} & \tb{Min Level} & \tb{Devoted Paragon}     & \tb{Divine Magic}               & \tb{Divine Spell Expertise} & \tb{Stalwart Guardian}      & \tb{Zealous Warrior}       \tableheaderrule
+    0 & \tdash & Devoted endurance        & Cantrips                        & Combat caster               & Divine guardian             & Zealous exertion                \\
+    1 & 1      & Aligned aura             & Spellcasting                    & Insight point               & Lay on hands                & Smite                           \\
+    2 & 4      & Aligned immunity         & Spell rank (2), spell knowledge & Greater combat caster       & Stalwart resilience         & Zealous offense                 \\
+    3 & 7      & Paragon power            & Spell rank (3)                  & Wellspring of power         & Greater divine guardian     & Glancing strikes                \\
+    4 & 10     & Greater aligned aura     & Spell rank (4), spell knowledge & Insight point               & Greater lay on hands        & Zealous purge                   \\
+    5 & 13     & Greater aligned immunity & Spell rank (5)                  & Supreme combat caster       & Greater stalwart resilience & Greater zealous offense         \\
+    6 & 16     & Greater paragon power    & Spell rank (6)                  & Greater wellspring of power & Supreme divine guardian     & Greater zealous exertion        \\
+    7 & 19     & Supreme aligned aura     & Spell rank (7), spell knowledge & Insight point               & Supreme lay on hands        & Pass judgment, zealous fixation \\
 \end{dtabularx}
     \end{dtable!*}
 
@@ -2299,7 +2304,7 @@ This choice determines a great deal about your character's abilities.
     \subsection{Devoted Paragon}
         This archetype deepens your connection to your alignment, granting you an aura and improving your combat abilities.
 
-        \cf{Pal}[0]{Devoted Mind} You gain a \plus2 bonus to Mental defense.
+        \cf{Pal}[0]{Devoted Endurance} You gain \plus2 bonus to your \glossterm{fatigue tolerance}.
 
         \cf{Pal}[1]{Aligned Aura}[Magical]
         Your devotion to your alignment affects the world around you, bringing it closer to your ideals.
@@ -2319,12 +2324,12 @@ This choice determines a great deal about your character's abilities.
         This does not affect bonus dice rolled for exploding attacks (see \pcref{Exploding Attacks}).
 
         \cf{Pal}[2]{Aligned Immunity}[Magical]
-        Your ability to resist attacks based on your alignment improves.
+        Your devotion to your alignment grants you immunities.
 
-        \subparhead{Chaos} You are immune to hostile \glossterm{Compulsion} abilities.
+        \subparhead{Chaos} You are immune to the \glossterm{slowed}, \glossterm{decelerated}, and \glossterm{immobilized} effects.
         \subparhead{Evil} You are immune to poisons and diseases.
-        \subparhead{Good} You are immune to being \glossterm{shaken}, \glossterm{frightened}, and \glossterm{panicked}.
-        \subparhead{Law} You are immune to hostile \glossterm{Emotion} abilities.
+        \subparhead{Good} You are immune to the \glossterm{shaken}, \glossterm{frightened}, and \glossterm{panicked} effects.
+        \subparhead{Law} You are immune to the \glossterm{dazed}, \glossterm{stunned}, \glossterm{disoriented}, and \glossterm{confused} effects.
 
         \cf{Pal}[3]{Paragon Power}
         You gain a \plus2 bonus to your \glossterm{power} with all abilities.
@@ -2338,12 +2343,13 @@ This choice determines a great deal about your character's abilities.
         The target suffers any other effects of the attack normally, though it is not treated as if it lost hit points from the attack for the purpose of special attack effects.
         \subparhead{Law} The effect applies to all attacks, not just \glossterm{strikes}.
 
-        \cf{Pal}[5]{Greater Devoted Mind} The bonus from your \textit{devoted mind} ability increases to \plus4.
+        \cf{Pal}[5]{Greater Aligned Immunity}
+        The effect of your \textit{aligned immunity} ability is shared with your \glossterm{allies} within the area of your \textit{aligned aura}.
 
         \cf{Pal}[6]{Greater Paragon Power} The bonus from your \textit{paragon power} ability increases to \plus6.
 
         \cf{Pal}[7]{Supreme Aligned Aura}
-        The area of your \textit{aligned aura} increases to a \areahuge radius \glossterm{emanation} from you.
+        The area affected by your \textit{aligned aura} ability increases to a \gargarea radius \glossterm{emanation} from you.
 
         % \cf{Pal}[8]{Epic Devotion} The bonus from your \textit{paragon of power} ability increases to \plus6.
         % In addition, the bonus from your \textit{devoted mind} ability increases to \plus5.
@@ -2411,30 +2417,33 @@ This choice determines a great deal about your character's abilities.
         This archetype improves the divine spells you cast.
         You must have the Divine Magic archetype from the paladin class to gain the abilities from this archetype.
 
-        % TODO: this is a very loose fit for this archetype
-        \cf{Pal}[0]{Divine Training} You gain a \plus1 bonus to Fortitude defense and Mental defense.
+        \cf{Pal}[0]{Combat Caster} You reduce your \glossterm{focus penalty} by 2.
 
-        \cf{Pal}[1]{Combat Caster} You reduce your \glossterm{focus penalty} by 2.
+        \cf{Pal}[1]{Insight Point} You gain an additional \glossterm{insight point}.
 
-        \cf{Pal}[2]{Insight Point} You gain an additional \glossterm{insight point}.
+        \cf{Pal}[2]{Greater Combat Caster} The penalty reduction from your \textit{combat caster} ability increases to 4.
 
         \cf{Pal}[3]{Wellspring of Power}[Magical]
         You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
 
         \cf*{Pal}[4]{Insight Point} You gain an additional \glossterm{insight point}.
 
-        \cf{Pal}[5]{Greater Combat Caster} You gain a \plus1 bonus to Armor defense.
+        \cf{Pal}[5]{Supreme Combat Caster} You gain a \plus1 bonus to Armor defense.
 
-        \cf*{Pal}[6]{Insight Point} You gain an additional \glossterm{insight point}.
+        \cf{Pal}[6]{Greater Wellspring of Power}[Magical]
+        The bonus from your \textit{wellspring of power} ability increases to \plus6.
 
-        \cf{Pal}[7]{Greater Wellspring of Power}[Magical]
-        The bonus from your \textit{wellspring of power} ability increases to \plus8.
+        \cf*{Pal}[7]{Insight Point} You gain an additional \glossterm{insight point}.
 
     \newpage
     \subsection{Stalwart Guardian}
         This archetype grants you healing abilities and improves your defensive prowess.
 
-        \cf{Pal}[0]{Enduring Defender} You gain a \plus1 bonus to \glossterm{fatigue tolerance} (see \pcref{Fatigue Tolerance}).
+        \cf{Pal}[0]{Divine Guardian} Your \glossterm{allies} adjacent to you gain a \plus1 bonus to all defenses.
+        A creature that sees an attack against an ally protected in this way can observe that you are the cause of the protection with a \glossterm{difficulty rating} 5 Awareness check.
+
+        While this ability is active, you cannot gain a defense bonus from this ability, even if another paladin with this ability is adjacent to you.
+        You can \glossterm{suppress} or \glossterm{resume} this ability as a \glossterm{free action}, which can allow you to be protected by another paladin with this ability.
 
         \cf{Pal}[1]{Lay on Hands}[Magical] You can use the \textit{lay on hands} ability as a standard action.
         \begin{freeability}{Lay on Hands}
@@ -2452,19 +2461,18 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Pal}[2]{Stalwart Resilience} You gain a bonus equal to your rank in this archetype to your \glossterm{resistances} against both \glossterm{physical damage} and \glossterm{energy damage} (see \pcref{Resistances}).
 
-        \cf{Pal}[3]{Greater Enduring Defender} The bonus from your \textit{enduring defender} ability increases to \plus2.
-        In addition, you gain a \plus1 bonus to Fortitude and Mental defense.
+        \cf{Pal}[3]{Greater Divine Guardian} The bonus from your \textit{divine guardian} ability increases to \plus2.
 
         \cf{Pal}[4]{Greater Lay on Hands} When you use your \textit{lay on hands} ability, you can choose to remove a \glossterm{condition} of the target's choice from it instead of restoring its hit points.
+        Alternately, you can choose to remove a \glossterm{vital wound} of the target's choice from it.
+        If a vital wound is removed in this way, you gain two \glossterm{fatigue points}.
 
         \cf{Pal}[5]{Greater Stalwart Resilience} The resistance bonuses from your \textit{stalwart resilience} ability both increase to be equal to twice your rank in this archetype.
 
-        \cf{Pal}[6]{Supreme Enduring Defender} The bonus from your \textit{enduring defender} ability increases to \plus3.
-        In addition, the bonus from your \textit{greater enduring defender} ability increases to \plus2.
+        \cf{Pal}[6]{Supreme Divine Guardian} The bonus from your \textit{divine guardian} ability increases to \plus3.
 
-        \cf{Pal}[7]{Supreme Lay on Hands}[Magical] When you use your \textit{lay on hands} ability, you both remove a condition from the target and restore its hit points instead of having to choose between the two.
-        In addition, you can also choose to remove a \glossterm{vital wound} of the target's choice from it.
-        If you do, you gain two \glossterm{fatigue points}.
+        \cf{Pal}[7]{Supreme Lay on Hands}[Magical] When you use your \textit{lay on hands} ability, you and the target each gain a \plus1 bonus to all defenses during the current phase.
+        This is a \glossterm{Swift} effect, so it protects against attacks made during the same phase.
 
     \newpage
     \subsection{Zealous Warrior}
@@ -2511,9 +2519,6 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Pal}[6]{Greater Zealous Exertion} The bonus from your \textit{zealous exertion} ability increases to \plus5.
 
-        \cf{Pal}[6]{Zealous Fixation} Whenever you hit a creature with a \glossterm{strike}, you ignore \glossterm{concealment} and all \glossterm{miss chances} against that creature with your attacks until you take a \glossterm{short rest} or until you hit a different creature with a strike.
-        If you hit multiple creatures with the same strike, you may freely choose which creature to fixate on with this ability.
-
         \cf{Pal}[7]{Pass Judgment}[Magical] You can use the \textit{pass judgment} ability as a \glossterm{minor action}.
         \begin{freeability}{Pass Judgment}
             \target{One creature within \rnglong range}
@@ -2525,6 +2530,9 @@ This choice determines a great deal about your character's abilities.
             You can use this ability to do battle against foes who share your alignment, but you should exercise caution in doing so.
             Persecution of those who share your ideals can lead you to fall and become an ex-paladin.
         \end{freeability}
+
+        \cf{Pal}[7]{Zealous Fixation} Whenever you hit a creature with a \glossterm{strike}, you ignore \glossterm{concealment} and all \glossterm{miss chances} against that creature with your attacks until you take a \glossterm{short rest} or until you hit a different creature with a strike.
+        If you hit multiple creatures with the same strike, you may freely choose which creature to fixate on with this ability.
 
         % TODO: Doesn't work with new spell system
         % \cf{Pal}[20]{Martyr's Retribution}[Mag]
