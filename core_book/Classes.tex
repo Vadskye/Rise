@@ -191,15 +191,16 @@ This choice determines a great deal about your character's abilities.
         \cf{Bbn}[1]{Rage} You can use the \textit{rage} ability as a \glossterm{free action}.
         For most barbarians, this represents entering a furious rage.
         Some barbarians instead enter a joyous battle trance or undergo a partial physical transformation into a more fearsome form.
-        \begin{attuneability}{Rage}[\glossterm{Emotion}, \glossterm{Attune} (self), \glossterm{Swift}]
+        \begin{attuneability}{Rage}[\glossterm{Emotion}, \glossterm{Sustain} (free), \glossterm{Swift}]
             For the duration of this ability, you gain the following benefits and drawbacks:
             \begin{itemize}
                 % This is an aggressive scaling that prevents any direct upgrades later in the archetype
                 \item You gain a bonus equal to twice your rank in this archetype to your \glossterm{mundane} \glossterm{power}.
-                \item Your current \glossterm{hit points} increase by an amount equal to three times your rank in this archetype.
-                    This can allow your current hit points to exceed your normal maximum hit points.
-                    When this effect ends, you lose hit points equal to the hit points you gained this way.
-                    If this hit point loss would cause you to gain a \glossterm{vital wound}, you gain one \glossterm{fatigue point} instead.
+                \item Your current \glossterm{hit points} and maximum hit points are reduced to 0.
+                    This hit point loss does not cause you to gain a \glossterm{vital wound}, and you are always considered to be at your maximum hit points.
+                    In exchange, you gain \glossterm{universal resistance} equal to the current hit points you lost this way.
+                    Universal resistance functions similarly to hit points, but you are less vulnerable to attacks that have special effects if they cause you to lose hit points.
+                    When this ability ends, your maximum hit points return to normal, your remaining universal resistance from this ability is removed, and your current hit points become equal to the universal resistance you lost this way.
                 \item You gain a \plus1 bonus to \glossterm{vital rolls}.
                 \item You take a \minus2 penalty to Armor and Reflex defenses.
                 \item You are unable to take \glossterm{standard actions} that do not cause you to make \glossterm{mundane} attacks.
@@ -221,7 +222,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Bbn}[3]{Greater Insensible Anger} The hit point reduction and resistance bonuses from your \textit{insensible anger} ability both increase to be equal to three times your rank in this archetype.
 
         \cf{Bbn}[4]{Greater Rage} You gain a \plus1 bonus to \glossterm{accuracy} during your \textit{rage} ability.
-        In addition, the number of hit points you gain from that ability increases to four times your rank in this archetype.
+        In addition, the bonus to resistances you gain from that ability increases to four times your rank in this archetype.
 
         \cf{Bbn}[5]{Immutable Anger} You become immune to hostile \glossterm{Emotion} effects.
 
