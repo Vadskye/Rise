@@ -110,7 +110,7 @@ export const telekinesis: MysticSphere = {
         5: `The bonus increases to +10 feet.`,
         7: `The bonus increases to +15 feet.`,
       },
-      type: "Attune (target)",
+      type: "Attune (self)",
     },
 
     {

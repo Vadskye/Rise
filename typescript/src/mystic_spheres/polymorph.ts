@@ -170,7 +170,7 @@ export const polymorph: MysticSphere = {
         4: `You also gain a +2 bonus to Dexterity-based checks.`,
         6: `You can decrease your size category by up to two size categories.`,
       },
-      type: "Attune (target)",
+      type: "Attune (self)",
     },
 
     {
@@ -192,7 +192,6 @@ export const polymorph: MysticSphere = {
     {
       name: "Stoneskin",
 
-      // original targets: Yourself or an \glossterm{ally} in \medrange
       castingTime: "minor action",
       effect: `
         You gain a +4 \\glossterm{magic bonus} to your \\glossterm{resistance} against \\glossterm{physical} damage.
@@ -204,7 +203,7 @@ export const polymorph: MysticSphere = {
         5: `The bonus increases to +16.`,
         7: `The bonus increases to +32.`,
       },
-      type: "Attune (target)",
+      type: "Attune (self)",
     },
 
     {
@@ -239,7 +238,7 @@ export const polymorph: MysticSphere = {
         5: `You also gain a +2 bonus to Strength-based checks, and you gain a +2 bonus to strength for the purpose of determining your carrying capacity.`,
         7: "You can increase your size category by up to two size categories",
       },
-      type: "Attune (target)",
+      type: "Attune (self)",
     },
 
     {
@@ -271,7 +270,7 @@ export const polymorph: MysticSphere = {
         4: `The bonus increases to +6.`,
         6: `The bonus increases to +8.`,
       },
-      type: "Attune (target)",
+      type: "Attune (self)",
     },
 
     {
@@ -401,7 +400,7 @@ export const polymorph: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
-      type: "Attune (target)",
+      type: "Attune (self)",
     },
 
     {
@@ -712,7 +711,7 @@ export const polymorph: MysticSphere = {
         4: `You also gain a +2 \\glossterm{magic bonus} to Climb checks.`,
         6: `The bonus increases to +4.`,
       },
-      type: "Attune (target)",
+      type: "Attune (self)",
     },
 
     {
@@ -743,7 +742,7 @@ export const polymorph: MysticSphere = {
         4: `The bonus increases to +20 feet.`,
         6: `The bonus increases to +30 feet.`,
       },
-      type: "Attune (target)",
+      type: "Attune (self)",
     },
 
     {
