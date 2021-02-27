@@ -1569,7 +1569,7 @@ It defines how attributes work and explains how to make attacks in combat.
                 \tb{Ability}             & \tb{Defense} & \tb{Brief Description} \tableheaderrule
                 Charge\fn{1}             & Armor        & Move and attack                      \\
                 Desperate Exertion\fn{2} & \tdash       & Gain a bonus on a single roll        \\
-                Dirty Trick              & Any          & Impose penalty on a foe              \\
+                Dirty Trick              & Fort or Ref  & Impose penalty on a foe              \\
                 Disarm                   & Ref          & Attack item, knocking it free        \\
                 Grapple                  & Fort and Ref & Wrestle with a foe                   \\
                 Offhand Strike           & Armor        & Make a strike with an offhand weapon \\
@@ -1619,8 +1619,10 @@ It defines how attributes work and explains how to make attacks in combat.
             Make a melee attack with a free hand against the target's Fortitude or Reflex defense.
             The target uses whichever defense is appropriate to the nature of the trick you describe.
 
-            On a hit, as a \glossterm{condition}, the target suffers a \minus2 penalty to one of the following statistics:
+            On a hit, the target suffers a \minus2 penalty to one of the following statistics:
             \glossterm{accuracy} with \glossterm{mundane} abilities, Armor defense, Fortitude defense, Reflex defense, or Mental defense.
+            If the target is at its maximum hit points, this effect lasts until the end of the next round.
+            Otherwise, this effect is a \glossterm{condition}.
         \end{freeability}
 
         \parhead{Disarm} As a standard action, you can use the \textit{disarm} ability to knock an item out of a foe's hands.
