@@ -119,7 +119,7 @@ This choice determines a great deal about your character's abilities.
     1 & 1      & Battle-scarred                & Rage                     & Fast movement                              & Primal maneuvers                        \\
     2 & 4      & Endurance                     & Enraged strike           & Savage precision                           & Maneuver rank (2), primal force         \\
     3 & 7      & Greater unbattered resilience & Greater insensible anger & Savage force                               & Maneuver rank (3), glancing strikes     \\
-    4 & 10     & Greater battle-scarred        & Greater rage             & Greater fast movement                      & Maneuver rank (4), primal maneuver      \\
+    4 & 10     & Greater battle-scarred        & Greater rage             & Greater fast movement, greater savage rush & Maneuver rank (4), primal maneuver      \\
     5 & 13     & Greater endurance             & Immutable anger          & Greater savage precision                   & Maneuver rank (5), greater primal force \\
     6 & 16     & Supreme unbattered resilience & Supreme insensible anger & Greater savage force                       & Maneuver rank (6), greater primal might \\
     7 & 19     & Supreme battle-scarred        & Supreme rage             & Supreme fast movement, supreme savage rush & Maneuver rank (7), primal maneuver      \\
@@ -197,7 +197,7 @@ This choice determines a great deal about your character's abilities.
                 % This is an aggressive scaling that prevents any direct upgrades later in the archetype
                 \item You gain a bonus equal to twice your rank in this archetype to your \glossterm{mundane} \glossterm{power}.
                 \item Your current \glossterm{hit points} and maximum hit points are reduced to 0.
-                    This hit point loss does not cause you to gain a \glossterm{vital wound}, and you are always considered to be at your maximum hit points.
+                    This hit point loss does not cause you to gain a \glossterm{vital wound}.
                     In exchange, you gain \glossterm{universal resistance} equal to the current hit points you lost this way.
                     Universal resistance functions similarly to hit points, but you are less vulnerable to attacks that have special effects if they cause you to lose hit points.
                     When this ability ends, your maximum hit points return to normal, your remaining universal resistance from this ability is removed, and your current hit points become equal to the universal resistance you lost this way.
@@ -331,14 +331,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Cleric Progression}
 \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
     \tb{Rank} & \tb{Min Level} & \tb{Divine Magic} & \tb{Divine Spell Mastery}   & \tb{Domain Influence}  & \tb{Healer} \tableheaderrule
-    0 & \tdash & Cantrips                        & Mystic sphere               & Domains, domain gift & Healer's wisdom         \\
-    1 & 1      & Spellcasting                    & Mystic insight              & Domain gift          & Restoration             \\
-    2 & 4      & Spell rank (2), spell knowledge & Divine guidance             & Domain aspect        & Healer's grace          \\
-    3 & 7      & Spell rank (3)                  & Wellspring of power         & Domain aspect        & Divine healing          \\
-    4 & 10     & Spell rank (4), spell knowledge & Mystic insight              & Domain essence       & Greater healer's wisdom \\
-    5 & 13     & Spell rank (5)                  & Greater divine guidance     & Domain essence       & Greater healer's grace  \\
-    6 & 16     & Spell rank (6)                  & Greater wellspring of power & Miracle              & Revivify                \\
-    7 & 19     & Spell rank (7), spell knowledge & Mystic insight              & Domain masteries     & Healing versatility     \\
+    0 & \tdash & Cantrips                        & Mystic sphere               & Domains, domain gift & Desperate healing           \\
+    1 & 1      & Spellcasting                    & Mystic insight              & Domain gift          & Restoration                 \\
+    2 & 4      & Spell rank (2), spell knowledge & Divine guidance             & Domain aspect        & Healer's grace              \\
+    3 & 7      & Spell rank (3)                  & Wellspring of power         & Domain aspect        & Divine healing              \\
+    4 & 10     & Spell rank (4), spell knowledge & Mystic insight              & Domain essence       & Called to the needy         \\
+    5 & 13     & Spell rank (5)                  & Greater divine guidance     & Domain essence       & Greater healer's grace      \\
+    6 & 16     & Spell rank (6)                  & Greater wellspring of power & Miracle              & Revivify                    \\
+    7 & 19     & Spell rank (7), spell knowledge & Mystic insight              & Domain masteries     & Greater called to the needy \\
 \end{dtabularx}
     \end{dtable!*}
 
@@ -954,13 +954,13 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Druid Progression}
 \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X l >{\lcol}X >{\lcol}X}
     \tb{Rank} & \tb{Min Level} & \tb{Elementalist}         & \tb{Nature Magic} & \tb{Nature Spell Mastery}   & \tb{Shifter}               & \tb{Wildspeaker}         \tableheaderrule
-    0 & \tdash & Elemental lore            & Cantrips                        & Mystic sphere               & Shifting defense                                   & Nature's ally           \\
-    1 & 1      & Elemental balance         & Spellcasting                    & Mystic insight              & Wild aspects                                       & Natural servant         \\
-    2 & 4      & Elemental magic           & Spell rank (2), spell knowledge & Natural guidance             & Shift body                                         & Animal speech           \\
-    3 & 7      & Elemental influence       & Spell rank (3)                  & Wellspring of power         & Glancing natural strikes, greater shifting defense & Greater nature's ally   \\
-    4 & 10     & Greater elemental balance & Spell rank (4), spell knowledge & Mystic insight              & Wild aspect                                        & Greater natural servant \\
-    5 & 13     & Elemental spell           & Spell rank (5)                  & Greater natural guidance     & Greater shift body                                 & Plant speech            \\
-    6 & 16     & Elemental control         & Spell rank (6)                  & Greater wellspring of power & Natural force, supreme shifting defense            & Supreme nature's ally   \\
+    0 & \tdash & Elemental balance         & Cantrips                        & Combat caster               & Shifting defense                                   & Animal speech           \\
+    1 & 1      & Elemental magic           & Spellcasting                    & Mystic insight              & Wild aspects                                       & Natural servant         \\
+    2 & 4      & Elemental influence       & Spell rank (2), spell knowledge & Natural guidance            & Shift body                                         & Nature's ally           \\
+    3 & 7      & Greater elemental balance & Spell rank (3)                  & Wellspring of power         & Glancing natural strikes, greater shifting defense & Plant speech   \\
+    4 & 10     & Elemental versatility     & Spell rank (4), spell knowledge & Mystic insight              & Wild aspect                                        & Greater natural servant \\
+    5 & 13     & Elemental control         & Spell rank (5)                  & Greater natural guidance    & Greater shift body                                 & Greater nature's ally            \\
+    6 & 16     & Elemental versatility     & Spell rank (6)                  & Greater wellspring of power & Natural force, supreme shifting defense            & Universal speech \\
     7 & 19     & Supreme elemental balance & Spell rank (7), spell knowledge & Mystic insight              & Wild adaptability                                  & Supreme natural servant \\
 \end{dtabularx}
     \end{dtable!*}
@@ -1061,7 +1061,7 @@ This choice determines a great deal about your character's abilities.
                 If you reduce the water's speed to 0 and then increase it again, you can change the direction the water flows.
         \end{itemize}
 
-        \cf{Drd}[6]{Greater Elemental Versatility} You learn an additional spell with your \textit{elemental versatility} ability.
+        \cf*{Drd}[6]{Elemental Versatility} You learn an additional spell with your \textit{elemental versatility} ability.
 
         \cf{Drd}[7]{Supreme Elemental Balance} The bonuses from your \textit{elemental balance} ability improve.
         \begin{itemize}
@@ -1397,10 +1397,14 @@ This choice determines a great deal about your character's abilities.
     \newpage
     \subsection{Wildspeaker}\label{Wildspeaker}
 
-        \cf{Drd}[0]{Nature's Ally} Wild animals will not willingly attack you.
-        They can be compelled to attack you with a Creature Handling check with a \glossterm{difficulty rating} equal to 10 \add twice your rank in this archetype.
-        If you attack a creature you are protected from, this ability no longer provides protection against it and its \glossterm{allies}.
-        This effect does not protect your allies from attack, though it may give you time to make Creature Handling checks to avoid the attack.
+        \cf{Drd}[0]{Animal Speech}[Magical] You can use the \textit{animal speech} ability as a standard action.
+        \begin{attuneability}{Animal Speech}[\glossterm{Sustain} (minor)]
+            Choose an animal within \rnglong range.
+            You can speak to and understand the speech of the target animal, and any other animals of the same species.
+
+            This ability does not make the target any more friendly or cooperative than normal.
+            Wary and cunning animals are likely to be terse and evasive, while stupid ones tend to make inane comments and are unlikely to say or understand anything of use.
+        \end{attuneability}
 
         \cf{Drd}[1]{Natural Servant}[Magical]
         You can use the \textit{natural servant} ability.
@@ -1449,18 +1453,12 @@ This choice determines a great deal about your character's abilities.
                 It has a bite \glossterm{natural weapon}.
         \end{itemize}
 
-        \cf{Drd}[2]{Animal Speech}[Magical] You can use the \textit{animal speech} ability as a standard action.
-        \begin{attuneability}{Animal Speech}[\glossterm{Sustain} (minor)]
-            Choose an animal within \rnglong range.
-            You can speak to and understand the speech of the target animal, and any other animals of the same species.
+        \cf{Drd}[2]{Nature's Ally} Wild animals will not willingly attack you or your \glossterm{allies} within a \largearea radius \glossterm{emanation} from you.
+        They can be compelled to attack despite this protection with a Creature Handling check against a \glossterm{difficulty rating} equal to 10 \add twice your rank in this archetype.
+        If any subject attacks a creature that this ability protects you from, this ability is \glossterm{suppressed} until you take a \glossterm{short rest}.
 
-            This ability does not make the target any more friendly or cooperative than normal.
-            Wary and cunning animals are likely to be terse and evasive, while stupid ones tend to make inane comments and are unlikely to say or understand anything of use.
-        \end{attuneability}
-
-        \cf{Drd}[3]{Greater Nature's Ally}[Magical] Your \glossterm{allies} within a \arealarge radius \glossterm{emanation} from you also gain the benefit of your \textit{nature's ally} ability.
-        The protection ends if any target attacks a creature you are protected from instead of only if you attack.
-        In addition, the \glossterm{difficulty rating} of the Creature Handling check increases to 20 \add twice your rank in this archetype.
+        \cf{Drd}[3]{Plant Speech}[Magical] When you use your \textit{animal speech} ability, you can choose a plant instead of an animal.
+        When you do, you can speak to and understand the speech of the target plant, and any other plants of the same species.
 
         \cf{Drd}[4]{Greater Natural Servant}[Magical] Your \textit{natural servant} gains an \glossterm{attunement point}.
         This attunement point is shared among any creatures you summon with your \textit{natural servant} ability, and is only recovered when you take a \glossterm{long rest}.
@@ -1485,15 +1483,16 @@ This choice determines a great deal about your character's abilities.
                 It has a bite \glossterm{natural weapon}.
         \end{itemize}
 
-        \cf{Drd}[5]{Plant Speech}[Magical] When you use your \textit{animal speech} ability, you can target a plant instead of an animal.
-        When you do, you can speak to and understand the speech of the target plant, and any other plants of the same species.
-
-        \cf{Drd}[6]{Supreme Nature's Ally}[Magical] Your \textit{nature's ally} ability also protects you and your allies from plant creatures and elementals.
+        \cf{Drd}[5]{Greater Nature's Ally}[Magical] Your \textit{nature's ally} ability also protects you and your allies from plant creatures and elementals.
         In addition, all creatures that you are protected from with this ability automatically attempt to aid you and your allies if they observe you fighting.
         Finally, the effect can no longer be bypassed with a Creature Handling check or any other form of control that does not first suppress this effect.
-        Even creatures summoned by enemies to fight you will immediately turn on their summoners.
+        Even creatures summoned by enemies to fight you will immediately turn on their summoners or otherwise avoid attacking you.
+
+        \cf{Drd}[6]{Universal Speech} When you use your \textit{animal speech} ability, you can choose any living creature that knows at least one language.
+        When you do, you can speak in and understand that creature's native language.
 
         \cf{Drd}[7]{Supreme Natural Servant}[Magical] Your \textit{natural servant} gains two additional \glossterm{attunement points}.
+        In addition, you may choose a natural servant from any environment that is within a 50 mile walking distance from your current location, rather than only gaining a natural servant from your current environment.
 
         % \subcf{15th -- Air Mantle}
         % You are surrounded by a mantle of air.
