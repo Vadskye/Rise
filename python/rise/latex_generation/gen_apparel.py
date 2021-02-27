@@ -232,7 +232,7 @@ def generate_armor():
         ),
     ]
 
-    weapons += [
+    apparel += [
         MagicItem(
             name="Gloves of Precision",
             # +2 levels since gloves are secondary for accuracy
