@@ -1627,7 +1627,6 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \parhead{Disarm} As a standard action, you can use the \textit{disarm} ability to knock an item out of a foe's hands.
 
-        % Somewhat oddly? dual wielding is significantly better at disarming than two-handing
         \begin{freeability}{Disarm}\label{Disarm}
             Make a melee \glossterm{strike} against an object.
             Unlike most abilities, this ability can target specific items \glossterm{attended} by creatures.
@@ -1764,32 +1763,16 @@ It defines how attributes work and explains how to make attacks in combat.
             While grappling, you suffer certain penalties and restrictions, as described below. Other than these restrictions, you can act normally. You can also take certain actions in a grapple, as described in \pcref{Grapple Actions}
             \begin{itemize}
                 \item You must use a free hand (or equivalent limb) to grapple, preventing you from taking any actions which would require having two free hands.
-                    If you cannot free a hand, you suffer a \minus10 penalty to accuracy with all \glossterm{mundane} attacks and grapple actions until you have a free hand.
+                    If you do not have a free hand, you suffer a \minus10 penalty to accuracy with all \glossterm{mundane} attacks and grapple actions until you have a free hand.
                 \item You are \defenseless against creatures who are not grappled by you.
                 \item The creature you are grappling with provides \glossterm{cover} for you against non-\glossterm{melee} attacks (see \pcref{Cover}).
                 \item You take a \minus4 penalty to accuracy with weapons that are not \glossterm{light weapons}, since they are too large and cumbersome to be used effectively in a grapple.
-                \item You cannot use abilities that have \glossterm{somatic components}, such as spells or rituals.
-                \item You cannot normally move from your location (but see the \textit{move grapple} ability, below).
+                \item Abilities that have \glossterm{somatic components}, such as spells or rituals, have a 50\% chance to fail with no effect when used.
+                \item You cannot move unless you \glossterm{push} all creatures grappling you, such as with the \textit{shove} ability (see \pcref{Shove}).
             \end{itemize}
 
         \subsubsection{Grapple Actions}\label{Grapple Actions}
-            While grappled, you can use five special abilities to try to affect the grapple.
-
-            \parhead{Bind Foe} As a standard action, you can use the \textit{bind foe} ability to bind a foe you are grappling in restraints.
-
-            \begin{freeability}{Bind Foe}
-                You must have physical restraints, such as rope, in hand to use this ability (in addition to the free hand required to grapple).
-
-                Make an attack vs. Fortitude and Reflex against a creature who is grappled by you.
-                If you have the time, you can \glossterm{take 10} on this attack to secure bindings on a helpless foe, including a foe rendered helpless through this attack.
-
-                \hit The target is bound, rendering it \glossterm{helpless} and effectively \glossterm{paralyzed}.
-                % TODO: clarify how to escape/break bindings?
-                The only physical actions a bound creature can take are to escape or break the bindings.
-                % TODO: clarify "an attack"
-                Escaping the bindings requires an attack or Flexibility check which beats the attack result made to bind the creature.
-                Breaking the bindings requires making a Strength check sufficient to break the item used to bind the creature.
-            \end{freeability}
+            While grappled, you can use three special abilities to try to affect the grapple.
 
             \parhead{Escape Grapple} As a standard action, you can use the \textit{escape grapple} ability to try to stop being grappled.
 
@@ -1810,27 +1793,16 @@ It defines how attributes work and explains how to make attacks in combat.
                 The attack result determines how difficult it is for a creature to escape the grapple during the current round using the \textit{escape grapple} ability.
             \end{freeability}
 
-            \parhead{Move Grapple} As a \glossterm{move action}, you can use the \textit{move grapple} ability to move yourself and all creatures you are grappling with.
-
-            \begin{freeability}{Move Grapple}
-                Make an attack vs. Fortitude against every creature grappled by you.
-                You use your Strength in place of your Perception to determine your \glossterm{accuracy} with this attack.
-                In addition, for each size category larger or smaller than the target that you are, you gain a \plus4 bonus or penalty to \glossterm{accuracy}.
-                If you are not able to use any of your movement speeds, such as if you are being carried by a flying creature, you automatically fail when you try to use this ability, and your defense is treated as 0 against this ability.
-                If a target also uses this ability to affect you during the same phase, you compare your attack result against its attack result instead of against its Fortitude defense.
-
-                % how to word ``hit or beat''?
-                If you hit every defense and beat every attack result, you can move yourself and all creatures grappled by you a distance up to half your speed.
-                If you get a critical hit against every defense and beat every attack result by 10, you instead move yourself and all creatures grappled by you a distance up to your speed.
-            \end{freeability}
-
             \parhead{Pin}\label{Pin} As a standard action, you can use the \textit{pin} ability to further restrict the actions of a creature you are grappling with.
 
             \begin{freeability}{Pin}
                 Make an attack vs. Fortitude and Reflex against a creature who is grappled by you.
-                This ability requires two free hands to use.
+                Using this ability requires one free hand and one hand that is either free or holding a physical restraint such as a rope or handcuffs.
 
-                \hit The target is completely immobile as long as you use two free hands to hold it still.
+                \hit The target is \glossterm{helpless}.
+                % TODO: link to rules explaining restraints
+                If you have restraints in hand, you can use them to bind the creature, and this ability lasts until it breaks or escapes those restraints.
+                Otherwise, this ability lasts as long as you use two free hands to hold the target.
                 The only physical action the target can take is the \textit{escape grapple} ability (see above), though it can take mental actions.
                 At your discretion, you can cover the mouth of a pinned creature to prevent it from speaking.
                 You may release the target as a \glossterm{free action}, ending this effect.
