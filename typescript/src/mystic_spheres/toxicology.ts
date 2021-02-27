@@ -148,7 +148,7 @@ export const toxicology: MysticSphere = {
       `,
       rank: 3,
       scaling: "damage",
-      type: "Attune (target)",
+      type: "Attune (self)",
     },
 
     {

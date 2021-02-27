@@ -436,7 +436,7 @@ export const pyromancy: MysticSphere = {
         5: `You also gain a +4 \\glossterm{magic bonus} to \\glossterm{power} with strikes.`,
         7: `The bonus increases to +8.`,
       },
-      type: "Attune (target)",
+      type: "Attune (self)",
     },
 
     {
