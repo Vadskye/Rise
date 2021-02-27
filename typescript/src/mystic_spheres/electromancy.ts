@@ -315,7 +315,7 @@ export const electromancy: MysticSphere = {
         4: `The speed bonus increases to +20 feet.`,
         6: `The speed bonus increases to +30 feet.`,
       },
-      type: "Attune (target)",
+      type: "Attune (self)",
     },
 
     {

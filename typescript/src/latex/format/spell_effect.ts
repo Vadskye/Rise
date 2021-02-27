@@ -52,9 +52,7 @@ export function spellEffect(
       }
 
       return `
-        This ${spellCategory} functions like the \\${spellCategory}{${
-        spell.functionsLike.spell
-      }} ${spellCategory}, except that ${exceptThat.trim()}
+        This ${spellCategory} functions like the \\${spellCategory}{${spell.functionsLike.spell.toLowerCase()}} ${spellCategory}, except that ${exceptThat.trim()}
         ${fatiguePointsText}
       `.trim();
     } else {

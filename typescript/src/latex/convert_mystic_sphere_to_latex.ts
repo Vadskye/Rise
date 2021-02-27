@@ -57,13 +57,20 @@ function convertSpellToLatex(spell: SpellLike): string {
     format.spellScaling(spell),
     format.spellNarrative(spell),
   ].filter(Boolean);
-  return `
+
+  const latex = `
     \\hypertarget{spell:${spell.name.toLowerCase()}}{}\\label{${spell.name}}
     \\begin{${abilityType}}{${spell.name}}${rankText}
       ${internalComponents.join("\n\\rankline\n\n\\noindent ")}
       \\vspace{0.1em}
     \\end{${abilityType}}
   `;
+
+  // if (spell.type === "Attune (target)" && (latex.includes("you ") || latex.includes("your "))) {
+  //   console.log(`Spell ${spell.name} has inconsistent you/target`);
+  // }
+
+  return latex;
 }
 
 export function sortSpells<T extends SpellLike>(spells: T[]): T[] {

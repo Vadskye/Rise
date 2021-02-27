@@ -315,7 +315,7 @@ export const aquamancy: MysticSphere = {
         4: "You also gain a swim speed equal to half your \\glossterm{base speed}.",
         6: "The swim speed increases to be equal to your \\glossterm{base speed}.",
       },
-      type: "Attune (target)",
+      type: "Attune (self)",
     },
     {
       name: "Mass Underwater Freedom",

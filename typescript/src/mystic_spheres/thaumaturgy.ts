@@ -425,7 +425,7 @@ export const thaumaturgy: MysticSphere = {
 
       effect: `
         Whenever you cast a spell, you may choose a different spell you know.
-        If you do, the visual effects and magical aura of the spell they are casting change to match your chosen spell.
+        If you do, the visual effects and magical aura of the spell you are casting change to match your chosen spell.
         This affects inspection of the spell itself by any means, such as with the Spellsense skill (see \\pcref{Spellsense}).
         However, it does not alter the mechanical effects of the spell in any way.
 
@@ -437,7 +437,7 @@ export const thaumaturgy: MysticSphere = {
         4: `You also gain a +1 \\glossterm{magic bonus} to \\glossterm{accuracy} with spells.`,
         6: `The accuracy bonus increases to +2.`,
       },
-      type: "Attune (target)",
+      type: "Attune (self)",
     },
   ],
   rituals: [
