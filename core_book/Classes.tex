@@ -2555,14 +2555,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Ranger Progression}
 \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X > {\lcol}X}
     \tb{Rank} & \tb{Min Level} & \tb{Beastmaster}         & \tb{Huntmaster}          & \tb{Scout}                & \tb{Wilderness Warrior} \tableheaderrule
-    0 & \tdash & Handling lore            & Endurance hunter         & Scouting expertise        & Wild senses                            \\
-    1 & 1      & Animal companion         & Quarry                   & Keen vision               & Wild maneuvers                         \\
-    2 & 4      & Pack tactics             & Hunting style            & Skirmisher                & Maneuver rank (2), wild force          \\
-    3 & 7      & Beast affinity           & Greater endurance hunter & Perceive weakness         & Maneuver rank (3), glancing strikes    \\
-    4 & 10     & Greater animal companion & Greater quarry           & Blindsight                & Maneuver rank (4), wild maneuver       \\
-    5 & 13     & Greater pack tactics     & Hunting style            & Greater skirmisher        & Maneuver rank (5), greater wild force  \\
-    6 & 16     & Greater beast affinity   & Supreme endurance hunter & Greater perceive weakness & Maneuver rank (6), greater wild senses \\
-    7 & 19     & Supreme animal companion & Supreme quarry           & Greater blindsight        & Maneuver rank (7), wild maneuver       \\
+    0 & \tdash & Beast affinity           & Huntmaster               & Keen vision               & Wild senses                            \\
+    1 & 1      & Animal companion         & Quarry                   & Skirmisher                & Wild maneuvers                         \\
+    2 & 4      & Pack tactics             & Hunting style            & Perceive weakness         & Maneuver rank (2), wild force          \\
+    3 & 7      & Power of beasts          & Endurance hunter         & Blindsight                & Maneuver rank (3), glancing strikes    \\
+    4 & 10     & Greater animal companion & Greater quarry           & Greater skirmisher        & Maneuver rank (4), wild maneuver       \\
+    5 & 13     & Greater pack tactics     & Hunting style            & Greater perceive weakness & Maneuver rank (5), greater wild force  \\
+    6 & 16     & Greater power of beasts  & Greater endurance hunter & Greater blindsight        & Maneuver rank (6), greater wild senses \\
+    7 & 19     & Supreme animal companion & Supreme quarry           & Supreme skirmisher        & Maneuver rank (7), wild maneuver       \\
 \end{dtabularx}
     \end{dtable!*}
 
@@ -2598,7 +2598,8 @@ This choice determines a great deal about your character's abilities.
     \subsection{Beastmaster}
         This archetype improves your connection to animals, allowing you to control and command them in battle.
 
-        \cf{Rgr}[0]{Handling Lore} You gain two additional \glossterm{skill points}.
+        \cf{Rgr}[0]{Beast Affinity} You gain a \plus3 bonus to the Creature Handling skill (see \pcref{Creature Handling}).
+        In addition, you gain a \plus1 bonus to \glossterm{accuracy} and \glossterm{defenses} against animals and magical beasts.
 
         \cf{Rgr}[1]{Animal Companion}
         You can use the \textit{animal companion} ability.
@@ -2629,13 +2630,14 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rgr}[2]{Pack Tactics} Any \glossterm{surrounded} \glossterm{enemy} that is adjacent to you or your animal companion takes a \minus1 penalty to \glossterm{accuracy}.
 
-        \cf{Rgr}[3]{Beast Affinity} You gain a \plus3 bonus to the Creature Handling skill (see \pcref{Creature Handling}).
-        In addition, you gain a \plus1 bonus to \glossterm{accuracy} and \glossterm{defenses} against animals and magical beasts.
+        \cf{Rgr}[3]{Power of Beasts} You and your \textit{animal companion} gain a \plus1d bonus to damage with all weapons.
 
         \cf{Rgr}[4]{Greater Animal Companion} Your \textit{animal companion} gains an \glossterm{attunement point}.
         In addition, it gains a \plus1 bonus to \glossterm{accuracy}, \glossterm{defenses}, and \glossterm{vital rolls}.
 
-        \cf{Rgr}[5]{Greater Pack Tactics} The penalty from your \textit{pack tactics} ability increases to \minus2.
+        \cf{Rgr}[5]{Greater Pack Tactics} The penalty from your \textit{pack tactics} ability applies to any creature that is adjacent to you or your animal companion, regardless of whether it is surrounded.
+
+        \cf{Rgr}[6]{Greater Power of Beasts} The bonus from your \textit{power of beasts} ability increases to \plus2d.
 
         \cf{Rgr}[6]{Greater Beast Affinity} The bonus to the Creature Handling skill from your \textit{beast affinity} ability increases to \plus6.
         In addition, the bonuses to accuracy and defenses from that ability increase to \plus2.
@@ -2647,7 +2649,8 @@ This choice determines a great deal about your character's abilities.
     \subsection{Huntmaster}
         This archetype grants you and your allies abilities to hunt down specific foes.
 
-        \cf{Rgr}[0]{Endurance Hunter} You gain a \plus2 bonus to the Survival skill and a \plus1 bonus to Fortitude defense.
+        \cf{Rgr}[0]{Tracker} You gain a \plus4 bonus to the Survival skill.
+        In addition using the \textit{desperate exertion} ability on a Survival roll to follow tracks only causes you to gain one \glossterm{fatigue point} instead of two.
 
         \cf{Rgr}[1]{Quarry}\label{Quarry} You can use the \textit{quarry} ability as a \glossterm{minor action}.
         \begin{attuneability}{Quarry}[\glossterm{Attune} (self)]
@@ -2670,8 +2673,8 @@ This choice determines a great deal about your character's abilities.
                 This prevents all \glossterm{Manifestation}, \glossterm{Planar}, and \glossterm{Teleportation} effects.
 
                 \rankline
-                \rank{4} This effect instead applies if your quarry is within \rngmed range of at least two members of your hunting party.
-                \rank{6} This effect instead applies if your quarry is within \rnglong range of at least two members of your hunting party.
+                \rank{4} This effect instead applies if your quarry is within \medrange of at least two members of your hunting party.
+                \rank{6} This effect instead applies if your quarry is within \medrange of any member of your hunting party.
             \end{freeability}
 
             \begin{freeability}{Coordinated Stealth}
@@ -2757,18 +2760,14 @@ This choice determines a great deal about your character's abilities.
             \end{freeability}
         }
 
-        \cf{Rgr}[3]{Greater Endurance Hunter} The bonus to the Survival skill from your \textit{endurance hunter} ability increases to \plus4.
-        In addition, the bonus to Fortitude defense from that ability increases to \plus2.
-        Finally, you gain a \plus1 bonus to your \glossterm{fatigue tolerance} (see \pcref{Fatigue Tolerance}).
+        \cf{Rgr}[3]{Endurance Hunter} You gain a \plus2 bonus to your \glossterm{fatigue tolerance}.
 
         \cf{Rgr}[4]{Greater Quarry} You gain a \plus1d bonus to your damage with \glossterm{strikes} against your \textit{quarry}.
 
         \cf*{Rgr}[5]{Hunting Style}
         You learn an additional \textit{hunting style}.
 
-        \cf{Rgr}[6]{Supreme Endurance Hunter} The bonus to the Survival skill from your \textit{endurance hunter} ability increases to \plus6.
-        In addition, the bonus to Fortitude defense from that ability increases to \plus3.
-        Finally, the bonus to your fatigue tolerance from your \textit{greater endurance hunter} ability increases to \plus2.
+        \cf{Rgr}[6]{Greater Endurance Hunter} The obnus from your \textit{endurance hunter} ability increases to \plus4.
 
         \cf{Rgr}[7]{Supreme Quarry} The bonus from your \textit{greater quarry} ability increases to \plus2d.
 
@@ -2776,20 +2775,18 @@ This choice determines a great deal about your character's abilities.
     \subsection{Scout}
         This archetype improves your senses and overall scouting ability.
 
-        \cf{Rgr}[0]{Scouting Expertise} You gain a \plus2 bonus to the Awareness and Stealth skills.
-
-        \cf{Rgr}[1]{Keen Vision}
+        \cf{Rgr}[0]{Keen Vision}
         You gain \glossterm{low-light vision}, allowing you to treat sources of light as if they had double their normal illumination range.
         If you already have low-light vision, you double its benefit, allowing you to treat sources of light as if they had four times their normal illumination range.
         In addition, you gain \glossterm{darkvision} with a 60 foot range, allowing you to see in complete darkness clearly.
         If you already have that ability, you increase its range by 60 feet.
 
-        \cf{Rgr}[2]{Skirmisher} You gain a \plus5 foot bonus to your \glossterm{base speed}.
+        \cf{Rgr}[1]{Skirmisher} You gain a \plus5 foot bonus to your \glossterm{base speed}.
         In addition, you reduce your \glossterm{range increment} penalties for attacking at long range by 1.
 
-        \cf{Rgr}[3]{Perceive Weakness} You gain a \plus1 bonus to \glossterm{accuracy}.
+        \cf{Rgr}[2]{Perceive Weakness} You gain a \plus1 bonus to \glossterm{accuracy}.
 
-        \cf{Rgr}[4]{Blindsight} Your perceptions are so finely honed that you can sense your enemies without seeing them.
+        \cf{Rgr}[3]{Blindsight} Your perceptions are so finely honed that you can sense your enemies without seeing them.
         You gain the \glossterm{blindsense} ability out to 100 feet.
         This ability allows you to sense the presence and location of objects and foes within its range without seeing them.
         If you already have the blindsense ability, you increase its range by 100 feet.
@@ -2797,13 +2794,16 @@ This choice determines a great deal about your character's abilities.
         With this ability, you can fight just as well with your eyes closed as with them open.
         If you already have the blindsight ability, you increase its range by 20 feet.
 
-        \cf{Rgr}[5]{Greater Skirmisher} The speed bonus from your \textit{skirmisher} ability increases to \plus10 feet.
+        \cf{Rgr}[4]{Greater Skirmisher} The speed bonus from your \textit{skirmisher} ability increases to \plus10 feet.
         In addition, the penalty reduction from that ability increases to 2.
 
-        \cf{Rgr}[6]{Greater Perceive Weakness} The bonus from your \textit{perceive weakness} ability increases to \plus2.
+        \cf{Rgr}[5]{Greater Perceive Weakness} The bonus from your \textit{perceive weakness} ability increases to \plus2.
 
-        \cf{Rgr}[7]{Greater Blindsight} The range of your \glossterm{blindsense} ability increases by 200 feet.
+        \cf{Rgr}[6]{Greater Blindsight} The range of your \glossterm{blindsense} ability increases by 200 feet.
         In addition, the range of your \glossterm{blindsight} ability increases by 80 feet.
+
+        \cf{Rgr}[7]{Supreme Skirmisher} The speed bonus from your \textit{skirmisher} ability increases to \plus20 feet.
+        In addition, the penalty reduction from that ability increases to 3.
 
     % Would be nice to call this ``Hunter'' and the maneuvers ``Hunting'' maneuvers,
     % but that conflicts with the naming for Huntmaster
