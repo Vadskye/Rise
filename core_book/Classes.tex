@@ -2555,13 +2555,13 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Ranger Progression}
 \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X > {\lcol}X}
     \tb{Rank} & \tb{Min Level} & \tb{Beastmaster}         & \tb{Huntmaster}          & \tb{Scout}                & \tb{Wilderness Warrior} \tableheaderrule
-    0 & \tdash & Beast affinity           & Huntmaster               & Keen vision               & Wild senses                            \\
-    1 & 1      & Animal companion         & Quarry                   & Skirmisher                & Wild maneuvers                         \\
-    2 & 4      & Pack tactics             & Hunting style            & Perceive weakness         & Maneuver rank (2), wild force          \\
-    3 & 7      & Power of beasts          & Endurance hunter         & Blindsight                & Maneuver rank (3), glancing strikes    \\
-    4 & 10     & Greater animal companion & Greater quarry           & Greater skirmisher        & Maneuver rank (4), wild maneuver       \\
-    5 & 13     & Greater pack tactics     & Hunting style            & Greater perceive weakness & Maneuver rank (5), greater wild force  \\
-    6 & 16     & Greater power of beasts  & Greater endurance hunter & Greater blindsight        & Maneuver rank (6), greater wild senses \\
+    0 & \tdash & Beast affinity           & Huntmaster               & Keen vision        & Wild senses                            \\
+    1 & 1      & Animal companion         & Quarry                   & Skirmisher               & Wild maneuvers                         \\
+    2 & 4      & Pack tactics             & Hunting style            & Perceive weakness                & Maneuver rank (2), wild force          \\
+    3 & 7      & Power of beasts          & Endurance hunter         & Blindsight         & Maneuver rank (3), glancing strikes    \\
+    4 & 10     & Greater animal companion & Greater quarry           & Greater skirmisher                & Maneuver rank (4), wild maneuver       \\
+    5 & 13     & Greater pack tactics     & Hunting style            & Greater perceive weakness        & Maneuver rank (5), greater wild force  \\
+    6 & 16     & Greater power of beasts  & Greater endurance hunter & Greater blindsight & Maneuver rank (6), greater wild senses \\
     7 & 19     & Supreme animal companion & Supreme quarry           & Supreme skirmisher        & Maneuver rank (7), wild maneuver       \\
 \end{dtabularx}
     \end{dtable!*}
@@ -2649,8 +2649,8 @@ This choice determines a great deal about your character's abilities.
     \subsection{Huntmaster}
         This archetype grants you and your allies abilities to hunt down specific foes.
 
-        \cf{Rgr}[0]{Tracker} You gain a \plus4 bonus to the Survival skill.
-        In addition using the \textit{desperate exertion} ability on a Survival roll to follow tracks only causes you to gain one \glossterm{fatigue point} instead of two.
+        \cf{Rgr}[0]{Tracker} You gain a \plus4 bonus to Survival checks to follow tracks.
+        In addition, using the \textit{desperate exertion} ability on a Survival check to follow tracks only causes you to gain one \glossterm{fatigue point} instead of two.
 
         \cf{Rgr}[1]{Quarry}\label{Quarry} You can use the \textit{quarry} ability as a \glossterm{minor action}.
         \begin{attuneability}{Quarry}[\glossterm{Attune} (self)]
@@ -2883,14 +2883,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Rogue Progression}
 \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
     \tb{Rank} & \tb{Min Level} & \tb{Assassin}       & \tb{Bardic Music}                             & \tb{Combat Trickster}                     & \tb{Jack of All Trades} \tableheaderrule
-    0         & \tdash         & Stealthy instincts  & Bardic lore                           & Tricky finesse                            & Skill lore              \\
-    1         & 1              & Sneak attack        & Bardic performances                   & Maneuver rank (1), tricky force           & Skill exemplar          \\
-    2         & 4              & Evasion             & Combat performer                      & Maneuver rank (2), glancing strikes       & Dabbler                 \\
-    3         & 7              & Darkstalker         & Bardic perormance, loremaster         & Maneuver rank (3), trick maneuver         & Versatile power         \\
-    4         & 10             & Hide in plain sight & Virtuoso                              & Maneuver rank (4), greater tricky force   & Greater skill exemplar  \\
-    5         & 13             & Greater evasion     & Greater combat performer              & Maneuver rank (5), greater tricky finesse & Greater dabbler         \\
-    6         & 16             & Assassination       & Bardic perormance, greater loremaster & Maneuver rank (6), greater tricky finesse & Greater versatile power \\
-    7         & 19             & Greater darkstalker & Greater virtuoso                      & Maneuver rank (7), trick maneuver         & Supreme skill exemplar  \\
+    0 & \tdash & Stealthy instincts  & Bardic lore                            & Tricky finesse                            & Dabbler              \\
+    1 & 1      & Sneak attack        & Bardic performances                    & Maneuver rank (1), tricky force           & Skill exemplar          \\
+    2 & 4      & Evasion             & Combat inspiration                     & Maneuver rank (2), glancing strikes       & Greater dabbler                 \\
+    3 & 7      & Darkstalker         & Bardic performance, loremaster         & Maneuver rank (3), trick maneuver         & Versatile power         \\
+    4 & 10     & Hide in plain sight & Virtuoso                               & Maneuver rank (4), greater tricky force   & Greater skill exemplar  \\
+    5 & 13     & Greater evasion     & Greater combat inspiration             & Maneuver rank (5), greater tricky finesse & Supreme dabbler         \\
+    6 & 16     & Assassination       & Bardic performance, greater loremaster & Maneuver rank (6), greater tricky finesse & Greater versatile power \\
+    7 & 19     & Greater darkstalker & Greater virtuoso                       & Maneuver rank (7), trick maneuver         & Supreme skill exemplar  \\
 \end{dtabularx}
     \end{dtable!*}
 
@@ -2924,7 +2924,8 @@ This choice determines a great deal about your character's abilities.
     \subsection{Assassin}
         This archetype improves your agility, stealth, and combat prowess against unaware targets.
 
-        \cf{Rog}[0]{Stealthy Instincts} You gain a \plus2 bonus to the Stealth skill and a \plus1 bonus to Reflex defense.
+        \cf{Rog}[0]{Unseen Assassin} You gain a \plus2 bonus to the Stealth skill.
+        In addition, using the \textit{desperate exertion} ability on a Stealth check only causes you to gain one \glossterm{fatigue point} instead of two.
 
         \cf{Rog}[1]{Sneak Attack}
         You can use the \textit{sneak attack} ability as a standard action.
@@ -3210,24 +3211,22 @@ This choice determines a great deal about your character's abilities.
             \end{freeability}
         }
 
-        \cf{Rog}[2]{Combat Performer} You gain a \plus2 bonus to all Perform skills and a \plus1 bonus to Armor defense.
+        \cf{Rog}[2]{Combat Inspiration} Once per round, when you make a Perform check, you may choose an \glossterm{ally} that can see or hear your performance.
+        During the next round, that ally gains a \plus1 bonus to \glossterm{accuracy}.
 
         \cf{Rog}[3]{Bardic Performance} You learn an additional bardic performance.
 
         \cf{Rog}[3]{Loremaster} You gain a \plus2 bonus to all Knowledge skills.
-        In addition, when can use the \textit{desperate exertion} ability to affect the result of a Knowledge skill check,
-            you only gain one \glossterm{fatigue point} instead of two.
 
         \cf{Rog}[4]{Virtuoso} The range and area of all of your \textit{bardic performance} abilities doubles.
         You gain a bonus to \glossterm{power} with your \textit{bardic performance} abilities equal to your rank in this archetype.
         In addition, once per round you can \glossterm{sustain} two bardic performances as a single \glossterm{minor action}.
 
-        \cf{Rog}[5]{Greater Combat Performer} The Perform skill bonus from your \textit{combat performer} ability increases to \plus4.
-        In addition, the Armor defense bonus from that ability increases to \plus2.
+        \cf{Rog}[5]{Greater Combat Inspiration} The bonus from your \textit{combat inspiration} ability increases to \plus2.
 
         \cf*{Rog}[6]{Bardic Performance} You learn an additional bardic performance.
 
-        \cf{Rog}[6]{Greater Loremaster} The Knowledge skill bonus from your \textit{loremaster} ability increases to \plus5.
+        \cf{Rog}[6]{Greater Loremaster} The Knowledge skill bonus from your \textit{loremaster} ability increases to \plus4.
 
         \cf{Rog}[7]{Greater Virtuoso} You learn an additional bardic performance.
         The power bonus from your \textit{virtuoso} ability increases to twice your rank in this archetype.
@@ -3300,21 +3299,21 @@ This choice determines a great deal about your character's abilities.
     \subsection{Jack of All Trades}
         This archetype improves your skills.
 
-        \cf{Rog}[0]{Skill Lore} You gain two additional skill points.
+        \cf{Rog}[0]{Dabbler} You gain an additional \glossterm{insight point}.
         In addition, choose any two skills.
         You treat those skills as \glossterm{class skills} for you.
 
         \cf{Rog}[1]{Skill Exemplar} You gain two additional skill points.
         In addition, you gain a \plus1 bonus to all skills.
 
-        \cf{Rog}[2]{Dabbler} You gain an additional \glossterm{insight point}.
+        \cf{Rog}[2]{Greater Dabbler} You gain an additional \glossterm{insight point}.
 
         \cf{Rog}[3]{Versatile Power}
         You gain a \plus2 bonus to your \glossterm{power} with all abilities.
 
         \cf{Rog}[4]{Greater Skill Exemplar} The skill bonus from your \textit{skill exemplar} ability increases to \plus3.
 
-        \cf{Rog}[5]{Greater Dabbler} You gain an additional \glossterm{insight point}.
+        \cf{Rog}[5]{Supreme Dabbler} You gain an additional \glossterm{insight point}.
 
         \cf{Rog}[6]{Greater Versatile Power} The bonus from your \textit{versatile power} ability increases to \plus6.
 
