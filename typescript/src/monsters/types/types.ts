@@ -82,7 +82,7 @@ export const typeDescriptions: Record<MonsterType, string | null> = {
     \\parhead{Animated Life} Animates are living creatures that are fundamentally composed of inanimate matter.
     They are considered to be both objects and creatures, and are affected equally by abilities that affect both.
     \\parhead{Nonsentient} Animates may have an intelligence of a sort, depending on the nature of their animation, but they are fundamentally not sentient creatures.
-    All animates are immune to \\glossterm{Compulsion} and \\glossterm{Delusion} abilities.
+    All animates are immune to \\glossterm{Compulsion} and \\glossterm{Emotion} abilities.
   `,
   "dragon": `
     ${formatDefenseBonuses("dragon")}
