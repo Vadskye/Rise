@@ -3772,7 +3772,9 @@ This choice determines a great deal about your character's abilities.
             \rank{7} The damage increases to 7d10.
         \end{freeability}
 
-        \cf{War}[2]{Abyssal Sphere} You gain access to your choice of one of the following \textit{mystic spheres}: \sphere{astromancy}, \sphere{pyromancy}, or \sphere{summoning}.
+        \cf{War}[2]{Abyssal Sphere} Choose one of the following \glossterm{mystic spheres}: \sphere{aeromancy}, \sphere{aquamancy}, \sphere{pyromancy}, or \sphere{terramancy}.
+        If you already have access to that mystic sphere, you learn two spells from that sphere.
+        Otherwise, you gain access to that mystic sphere, including all \glossterm{cantrips} from that sphere.
 
         \cf{War}[3]{Abyssal Jaunt} You can use the \textit{abyssal jaunt} ability as a standard action.
         \begin{freeability}{Abyssal Jaunt}[\glossterm{Magical}]
@@ -4002,14 +4004,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Wizard Progression}
 \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
     \tb{Rank} & \tb{Min Level} & \tb{Alchemist}              & \tb{Arcane Magic}                  & \tb{Arcane Scholar}     & \tb{Arcane Spell Mastery}   \tableheaderrule
-    0 & \tdash & Alchemical infusion         & Cantrips, mage armor               & Scholastic lore         & Mystic sphere               \\
-    1 & 1      & Portable workshop           & Spellcasting                       & Ritualist               & Mystic insight              \\
-    2 & 4      & Alchemical discovery        & Spell rank (2), spell knowledge    & Scholastic insight      & Arcane attunement           \\
-    3 & 7      & Greater alchemical infusion & Spell rank (3), greater mage armor & Greater scholastic lore & Wellspring of power         \\
-    4 & 10     & Experienced quaffing        & Spell rank (4), spell knowledge    & Contingency             & Mystic insight              \\
-    5 & 13     & Alchemical discovery        & Spell rank (5)                     & Arcane insight          & Greater arcane attunement   \\
-    6 & 16     & Supreme alchemical infusion & Spell rank (6), supreme mage armor & Greater ritualist       & Greater wellspring of power \\
-    7 & 19     & Greater portable workshop   & Spell rank (7), spell knowledge    & Multiple contingency    & Mystic insight              \\
+    0 & \tdash & Alchemical infusion         & Cantrips, mage armor               & Deep knowledge       & Mystic sphere               \\
+    1 & 1      & Portable workshop           & Spellcasting                       & Ritualist            & Mystic insight              \\
+    2 & 4      & Alchemical discovery        & Spell rank (2), spell knowledge    & Scholastic insight   & Arcane attunement           \\
+    3 & 7      & Greater alchemical infusion & Spell rank (3), greater mage armor & Contingency          & Wellspring of power         \\
+    4 & 10     & Experienced quaffing        & Spell rank (4), spell knowledge    & Scholastic insight   & Mystic insight              \\
+    5 & 13     & Alchemical discovery        & Spell rank (5)                     & Greater ritualist    & Greater arcane attunement   \\
+    6 & 16     & Supreme alchemical infusion & Spell rank (6), supreme mage armor & Scholastic insight   & Greater wellspring of power \\
+    7 & 19     & Greater portable workshop   & Spell rank (7), spell knowledge    & Multiple contingency & Mystic insight              \\
 \end{dtabularx}
     \end{dtable!*}
 
@@ -4064,7 +4066,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Durable Construction} You double the range of alchemical items you create.
             \parhead{Efficient Crafting} It takes you half the normal time and material components to craft alchemical items.
             \parhead{Explosive Construction} You double the area affected by alchemical items you create.
-            \parhead{Potent Construction} Alchemical items you create gain a \plus2 bonus to power.
+            \parhead{Potent Construction} Alchemical items you create gain a bonus to power equal to your rank in this archetype.
             \parhead{Repetitive Construction} Whenever you use your portable workshop ability, you can create two copies of the same alchemical item.
             This only counts as one item for the purpose of determining the increase to your crafting difficulty.
             \parhead{Safe Construction} Creatures who are not trained in Craft (alchemy) can use alchemical items you create without a mishap chance.
@@ -4157,7 +4159,8 @@ This choice determines a great deal about your character's abilities.
         This archetype deepens your study of arcane magic.
         You have the Arcane Magic archetype from the wizard class to gain the abilities from this archetype.
 
-        \cf{Wiz}[0]{Scholastic Lore} You gain a \plus2 bonus to the Spellsense skill and all Knowledge skills.
+        \cf{Wiz}[0]{Deep Knowledge} You gain a \plus2 bonus to all Knowledge skills.
+        In addition, using the \textit{desperate exertion} ability on a Knowledge check only causes you to gain one \glossterm{fatigue point} instead of two.
 
         \cf{Wiz}[1]{Ritualist} You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
         The maximum \glossterm{rank} of arcane ritual you can learn or perform is equal to the maximum rank of arcane spell that you can cast.
@@ -4192,9 +4195,7 @@ This choice determines a great deal about your character's abilities.
             \par You can choose this insight multiple times, choosing a different \glossterm{mystic sphere} each time.
         }
 
-        \cf{Wiz}[3]{Greater Scholastic Lore} The bonuses from your \textit{scholastic lore} ability increase to \plus4.
-
-        \cf{Wiz}[4]{Contingency} You gain the ability to prepare a spell so it takes effect automatically if specific circumstances arise.
+        \cf{Wiz}[3]{Contingency} You gain the ability to prepare a spell so it takes effect automatically if specific circumstances arise.
         % If any spells take more than one standard action, they would need to be excluded from Contingency, but none exist
         % You can apply this ability to any arcane spell that can be cast as a \glossterm{standard action} or \glossterm{minor action}.
         Preparing a spell with this ability takes 5 minutes.
@@ -4215,10 +4216,13 @@ This choice determines a great deal about your character's abilities.
         You can have only one spell with this ability active at a time.
         If you use this ability again with a different spell, the old contingency is removed.
 
-        \cf*{Wiz}[5]{Arcane Insight}[Magical]
-        You learn an additional \textit{arcane insight}.
+        \cf*{Wiz}[4]{Scholastic Insight}[Magical]
+        You learn an additional \textit{scholastic insight}.
 
-        \cf{Wiz}[6]{Greater Ritualist} Whenever you lead a ritual, it requires half the normal number of \glossterm{fatigue points} and half the normal time to complete.
+        \cf{Wiz}[5]{Greater Ritualist} Whenever you lead a ritual, it requires half the normal number of \glossterm{fatigue points} and half the normal time to complete, to a minimum of zero fatigue points.
+
+        \cf*{Wiz}[6]{Scholastic Insight}[Magical]
+        You learn an additional \textit{scholastic insight}.
 
         \cf{Wiz}[7]{Multiple Contingency} You may have two separate \textit{contingency} abilities active at the same time.
         Each contingency can have separate triggering conditions.
