@@ -3,7 +3,7 @@ import { MysticSphere } from ".";
 export const terramancy: MysticSphere = {
   name: "Terramancy",
   shortDescription: "Manipulate earth to crush foes.",
-  sources: ["arcane", "nature"],
+  sources: ["arcane", "domain", "nature"],
 
   cantrips: [
     {
