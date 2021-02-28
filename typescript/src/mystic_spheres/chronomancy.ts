@@ -501,6 +501,30 @@ export const chronomancy: MysticSphere = {
       scaling: "damage",
       type: "Duration",
     },
+    {
+      name: "Timeseal",
+
+      // effect: '',
+      // narrative: '',
+      attack: {
+        // crit: '',
+        // glance: '',
+        hit: `
+          The target takes 1d10 energy damage.
+          If it loses \\glossterm{hit points} from this damage, it is briefly frozen in time.
+          Until the end of the next round, it is completely immune to all damage, attacks, and effects of any kind.
+          In addition, it is \\glossterm{unconscious} and cannot act in any way.
+          At the end of the next round, it returns to normal, with no awareness of the intervening time.
+          After this effect ends, the subject becomes immune to this spell until it takes a \\glossterm{short rest}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\medrange.
+        `,
+      },
+      rank: 3,
+      scaling: "damage",
+      type: "Duration",
+    },
   ],
   rituals: [
     {
