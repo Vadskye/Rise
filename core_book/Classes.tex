@@ -3376,15 +3376,15 @@ This choice determines a great deal about your character's abilities.
     \begin{dtable!*}
         \lcaption{Sorcerer Progression}
 \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-    \tb{Rank} & \tb{Min Level} & \tb{Arcane Magic}                  & \tb{Arcane Spell Mastery}   & \tb{Draconic Magic}        & \tb{Innate Arcanist}         & \tb{Wild Magic} \tableheaderrule
-    0         & \tdash         & Cantrips, mage armor               & Combat caster               & Draconic bloodline         & Arcane body                  & Chaotic exertion           \\
-    1         & 1              & Spellcasting                       & Mystic insight              & Draconic focus             & Innate magic                 & Wildspell                  \\
-    2         & 4              & Spell rank (2), spell knowledge    & Arcane attunement           & Draconic hide              & Personal enhancement         & Chaotic insight \\
-    3         & 7              & Spell rank (3), greater mage armor & Wellspring of power         & Greater draconic bloodline & Mystic tolerance             & Greater chaotic exertion   \\
-    4         & 10             & Spell rank (4), spell knowledge    & Mystic insight              & Draconic precision         & Spell absorption             & Greater wildspell          \\
-    5         & 13             & Spell rank (5)                     & Greater arcane attunement   & Greater draconic hide      & Greater personal enhancement & Greater chaotic insight           \\
-    6         & 16             & Spell rank (6), supreme mage armor & Greater wellspring of power & Supreme draconic bloodline & Greater mystic tolerance     & Supreme chaotic exertion   \\
-    7         & 19             & Spell rank (7), spell knowledge    & Mystic insight              & Greater draconic precision & Greater spell absorption     & Supreme wildspell          \\
+    \tb{Rank} & \tb{Min Level} & \tb{Arcane Magic}                  & \tb{Arcane Spell Mastery}   & \tb{Draconic Magic}                                & \tb{Innate Arcanist}                                   & \tb{Wild Magic} \tableheaderrule
+    0         & \tdash         & Cantrips, mage armor               & Combat caster               & Draconic bloodline, draconic focus                 & Innate magic                                           & Chaotic exertion         \\
+    1         & 1              & Spellcasting                       & Mystic insight              & Draconic spells                                    & Mystic tolerance                                       & Wildspell                \\
+    2         & 4              & Spell rank (2), spell knowledge    & Arcane attunement           & Greater draconic focus, greater draconic bloodline & Personal enhancement                                   & Chaotic insight          \\
+    3         & 7              & Spell rank (3), greater mage armor & Wellspring of power         & Draconic hide                                      & Spell absorption                                       & Greater chaotic exertion \\
+    4         & 10             & Spell rank (4), spell knowledge    & Mystic insight              & Draconic precision                                 & Greater mystic tolerance, greater personal enhancement & Greater wildspell        \\
+    5         & 13             & Spell rank (5)                     & Greater arcane attunement   & Draconic spell, energy immunity                    & Greater spell absorpion                                & Greater chaotic insight  \\
+    6         & 16             & Spell rank (6), supreme mage armor & Greater wellspring of power & Greater draconic hide                              & Supreme personal enhancement                           & Supreme chaotic exertion \\
+    7         & 19             & Spell rank (7), spell knowledge    & Mystic insight              & Greater draconic precision                         & Supreme mystic tolerance, supreme spell absorption     & Supreme wildspell        \\
 \end{dtabularx}
     \end{dtable!*}
 
@@ -3541,7 +3541,7 @@ This choice determines a great deal about your character's abilities.
                 \tb{Dragon} & \tb{Damage Type} & \tb{Mystic Sphere} \tableheaderrule
                 Black       & Acid             & Vivimancy    \\
                 Blue        & Electricity      & Electromancy \\
-                Brass       & Fire             & Delusion     \\
+                Brass       & Fire             & Enchantment  \\
                 Bronze      & Electricity      & Revelation   \\
                 Copper      & Acid             & Terramancy   \\
                 Gold        & Fire             & Photomancy   \\
@@ -3552,51 +3552,59 @@ This choice determines a great deal about your character's abilities.
             \end{dtabularx}
         \end{dtable}
 
-        \cf{Sor}[1]{Draconic Focus} You reduce your \glossterm{focus penalties} by 1.
+        \cf{Sor}[0]{Draconic Focus} You reduce your \glossterm{focus penalties} by 1.
 
-        \cf{Sor}[2]{Draconic Hide} You gain a bonus to your \glossterm{resistance} against \glossterm{physical damage} equal to your rank in this archetype.
-        In addition, you gain a \plus1 bonus to Fortitude defense.
+        \cf{Sor}[1]{Draconic Spells} If you already have access to your dragon's mystic sphere, you learn two spells from that sphere.
+        Otherwise, you gain access to that mystic sphere, including all \glossterm{cantrips} from that sphere.
 
-        \cf{Sor}[3]{Greater Draconic Bloodline} You learn a spell from the mystic sphere associated with your dragon.
-        In addition, the bonus to \glossterm{resistance} from your \textit{draconic bloodline} ability increases to be equal to three times your rank in this archetype.
+        \cf{Sor}[2]{Greater Draconic Focus} The focus penalty reduction from your \textit{draconic focus} ability increases to 2.
+
+        \cf{Sor}[2]{Greater Draconic Bloodline} The bonus to \glossterm{resistance} from your \textit{draconic bloodline} ability increases to be equal to four times your rank in this archetype.
+
+        \cf{Sor}[3]{Draconic Hide} You gain a bonus equal to your rank in this archetype to your \glossterm{resistances} against both \glossterm{physical damage} and \glossterm{energy damage} (see \pcref{Resistances}).
 
         \cf{Sor}[4]{Draconic Precision} You gain a \plus1 bonus to \glossterm{accuracy} with any spell that either deals damage of your dragon's damage type or is from your dragon's \glossterm{mystic sphere}.
 
-        \cf{Sor}[5]{Greater Draconic Hide} The resistance bonus from your \textit{draconic hide} ability increases to be equal to twice your rank in this archetype.
-        In addition, the defense bonus increases to \plus2.
+        \cf{Sor}[5]{Draconic Spell} You learn an additional spell from your dragon's mystic sphere.
 
-        \cf{Sor}[6]{Supreme Draconic Bloodline} You learn an additional spell from the mystic sphere associated with your dragon.
-        In addition, the bonus to \glossterm{resistance} from your \textit{draconic bloodline} ability increases to be equal to four times your rank in this archetype.
+        \cf{Sor}[5]{Energy Immunity} You become immune to your dragon's damage type.
+
+        \cf{Sor}[6]{Greater Draconic Hide} The resistance bonuses from your \textit{stalwart resilience} ability both increase to be equal to twice your rank in this archetype.
 
         \cf{Sor}[7]{Greater Draconic Precision} The bonus from your \textit{draconic precision} ability increases to \plus2.
 
     \newpage
     \subsection{Innate Arcanist}
-        This archetype deepens your innate connection to arcane magic.
+        This archetype deepens your innate connection to arcane magic and improves your ability to defeat other spellcasters.
         You must have the Arcane Magic archetype from the sorcerer class to gain the abilities from this archetype.
 
-        \cf{Sor}[0]{Arcane Body} You gain a \plus2 bonus to the Spellsense skill and a \plus1 bonus to Fortitude defense.
+        \cf{Sor}[0]{Innate Magic} None of your arcane spells have \glossterm{somatic components} or \glossterm{verbal components}.
 
-        \cf{Sor}[1]{Innate Magic} None of your arcane spells have \glossterm{somatic components} or \glossterm{verbal components}.
+        \cf{Sor}[1]{Mystic Tolerance} You gain a bonus equal to twice your rank in this archetype to your \glossterm{resistance} against \glossterm{energy damage}.
 
-        \cf{Sor}[2]{Mystic Tolerance} You gain a bonus equal to twice your rank in this archetype to your \glossterm{resistance} against \glossterm{energy damage}.
-
-        \cf{Sor}[3]{Personal Enhancement} You gain a \plus1 \glossterm{magic bonus} to \glossterm{accuracy}, \glossterm{defenses}, and \glossterm{power}.
+        \cf{Sor}[2]{Personal Enhancement} You gain a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} and \glossterm{defenses}.
         Because this is a magic bonus, it does not stack with other magic bonuses (see \pcref{Stacking Rules}).
 
-        \cf{Sor}[4]{Spell Absorption} Whenever another creature uses a spell to attack you, you gain the ability to cast the spell once.
+        \cf{Sor}[3]{Spell Absorption} Whenever another creature uses a spell to attack you, you can choose to absorb its energy.
+        This does not reduce the spell's effect on you, but it grants you the ability to cast the spell once.
         When you cast the spell, you use your own \glossterm{accuracy}, \glossterm{power}, and abilities to determine the effects of the spell.
         Once you cast the spell, you expend the absorbed energy, and you cannot cast it again.
 
         Whenever you are attacked by a new spell, if you already have the ability to cast a spell with this ability, you choose which spell you gain the ability to cast.
         When you take a \glossterm{long rest}, you lose the ability to cast any spells you have stored with this ability.
 
-        \cf{Sor}[5]{Greater Mystic Tolerance} The bonus from your \textit{mystic tolerance} ability increases to be equal to three times your rank in this archetype.
+        \cf{Sor}[4]{Greater Mystic Tolerance} The bonus from your \textit{mystic tolerance} ability increases to be equal to three times your rank in this archetype.
 
-        \cf{Sor}[6]{Greater Personal Enhancement} The bonuses from your \textit{personal enhancement} ability increase to \plus2.
+        \cf{Sor}[4]{Greater Personal Enhancement} The bonuses from your \textit{personal enhancement} ability increase to \plus2.
 
-        \cf{Sor}[7]{Greater Spell Absorption} You can store the ability to cast up to three spells with your \textit{spell absorption} ability.
+        \cf{Sor}[5]{Greater Spell Absorption} You can store the ability to cast up to three spells with your \textit{spell absorption} ability.
         In addition, you can cast each stored spell twice before you lose the ability to cast it instead of only once.
+
+        \cf{Sor}[6]{Supreme Personal Enhancement} The bonuses from your \textit{personal enhancement} ability increase to \plus3.
+
+        \cf{Sor}[7]{Supreme Mystic Tolerance} The bonus from your \textit{mystic tolerance} ability increases to be equal to four times your rank in this archetype.
+
+        \cf{Sor}[7]{Supreme Spell Absorption} Whenever you absorb a spell with your \textit{spell absorption} ability, you take half damage from the spell.
 
     \newpage
     \subsection{Wild Magic}
