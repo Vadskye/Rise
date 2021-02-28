@@ -1,5 +1,9 @@
 from rise.latex.tags import is_valid_tag, to_latex_tags
+import re
+from rise.latex.spell import generate_effect_text
+import sys
 from logging import getLogger, WARNING
+import json
 
 logger = getLogger(__name__)
 
@@ -53,6 +57,95 @@ class Maneuver(object):
         for tag in self.tags:
             if not is_valid_tag(tag):
                 logger.log(WARNING, f"Maneuver {self.name} has invalid tag {tag}")
+
+    def generate_typescript(self):
+        type_tag = next(
+            (tag for tag in self.tags if "Attune" in tag or "Sustain" in tag), None
+        )
+        duration_text_exists = (
+            "condition" in self.effect_text or "until" in self.effect_text
+        )
+        spell_type = (
+            type_tag
+            if type_tag
+            else ("Duration" if duration_text_exists else "Instant")
+        )
+
+        if self.rank_upgrades is None:
+            scaling_text = ""
+        else:
+            scaling_text = f"""
+                scaling: {json.dumps(self.rank_upgrades)},
+            """
+
+        nontype_tags = [
+            tag
+            for tag in self.tags
+            if "Attune" not in tag and "Sustain" not in tag and "Focus" not in tag
+        ]
+        tags_text = f"tags: {nontype_tags}," if len(nontype_tags) > 0 else ""
+
+        try:
+            effect_or_functions_like_text = generate_effect_text(
+                self.effect_text, self.target
+            )
+            functions_like_text = effect_or_functions_like_text[0]
+            effect_text = effect_or_functions_like_text[1]
+        except:
+            err = sys.exc_info()[0]
+            raise Exception(f"Unable to parse maneuver {self.name}: {err}")
+
+        targets_text = f"// original targets: {self.target}" if self.target and self.target != 'As chosen \\glossterm<strike>' else ""
+
+        elements_text = "\n".join(
+            map(
+                lambda x: x.strip(),
+                filter(
+                    lambda x: x,
+                    [
+                        targets_text,
+                        effect_text,
+                        functions_like_text,
+                        f"rank: {self.rank},",
+                        scaling_text,
+                        tags_text,
+                        f'type: "{spell_type}",',
+                    ],
+                ),
+            )
+        )
+
+        areas = ["tiny", "small", "med", "large", "huge", "garg"]
+        ranges = ["short", "med", "long", "dist", "ext"]
+        for area in areas:
+            elements_text = elements_text.replace(f"\\\\area{area}", f"\\\\{area}area")
+            elements_text = elements_text.replace(
+                f"\\\\{area}area line", f"\\\\{area}area long line"
+            )
+        for r in ranges:
+            elements_text = re.sub(
+                f"\\\\rng{r}( range)?", f"\\\\{r}range", elements_text
+            )
+        elements_text = (
+            elements_text.replace("<", "{")
+            .replace(">", "}")
+            .replace("Each target", "Each subject")
+            .replace("each target", "each subject")
+            .replace("The target", "The subject")
+            .replace("the target", "the subject")
+            .replace(
+                "As above, except that that each subject takes half damage.",
+                "Half damage.",
+            )
+        )
+
+        return f"""
+            {{
+                name: "{self.name}",
+
+                {elements_text}
+            }},
+        """
 
     def to_latex(self):
         tag_text = to_latex_tags(self.tags)
