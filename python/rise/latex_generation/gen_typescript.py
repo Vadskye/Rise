@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
+from rise.statistics.rise_data import maneuver_sources
 from rise.latex_generation.gen_spell_descriptions import generate_mystic_spheres
+from rise.latex_generation.gen_maneuvers import generate_maneuvers, group_by_source
 from rise.latex_generation.book_path import book_path
 
 def main():
@@ -11,6 +13,15 @@ def main():
             book_path(f"typescript/{sphere.name.lower()}.ts"), "w"
         ) as sphere_file:
             sphere_file.write(sphere_typescript)
+
+    maneuvers_by_source = group_by_source(generate_maneuvers())
+    for source in maneuver_sources:
+        with open(
+                book_path(f"typescript/{source.lower()}.ts"), "w"
+        ) as maneuver_file:
+            for maneuver in maneuvers_by_source[source]:
+                maneuver_typescript = maneuver.generate_typescript()
+                maneuver_file.write(maneuver_typescript)
 
 if __name__ == "__main__":
     main()
