@@ -48,7 +48,7 @@ export const mysticSpheres: MysticSphere[] = [
   vivimancy,
 ];
 
-export type Source = "arcane" | "divine" | "nature" | "pact";
+export type Source = "arcane" | "divine" | "domain" | "nature" | "pact";
 
 export interface MysticSphere {
   cantrips?: Cantrip[];

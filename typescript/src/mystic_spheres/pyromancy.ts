@@ -3,7 +3,7 @@ import { MysticSphere } from ".";
 export const pyromancy: MysticSphere = {
   name: "Pyromancy",
   shortDescription: "Create fire to incinerate foes.",
-  sources: ["arcane", "nature", "pact"],
+  sources: ["arcane", "domain", "nature", "pact"],
 
   cantrips: [
     {

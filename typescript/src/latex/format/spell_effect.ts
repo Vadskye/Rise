@@ -1,6 +1,6 @@
 import { SpellLike } from "@src/mystic_spheres";
 
-function assertEndsWithPeriod(text: string | null | undefined) {
+export function assertEndsWithPeriod(text: string | null | undefined): void {
   if (text && !text.trim().endsWith(".")) {
     throw new Error(`Text should end with period: ${text}`);
   }
