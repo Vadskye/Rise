@@ -3,7 +3,7 @@ import { MysticSphere } from ".";
 export const thaumaturgy: MysticSphere = {
   name: "Thaumaturgy",
   shortDescription: "Suppress and manipulate magical effects.",
-  sources: ["arcane"],
+  sources: ["arcane", "domain"],
 
   cantrips: [
     {

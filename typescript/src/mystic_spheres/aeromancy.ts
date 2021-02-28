@@ -2,8 +2,8 @@ import { MysticSphere } from ".";
 
 export const aeromancy: MysticSphere = {
   name: "Aeromancy",
-  shortDescription: "Command air to protect allies and blast foes",
-  sources: ["nature"],
+  shortDescription: "Command air to protect allies and blast foes.",
+  sources: ["nature", "domain"],
 
   cantrips: [
     {

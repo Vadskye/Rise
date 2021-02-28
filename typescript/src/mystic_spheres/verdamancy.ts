@@ -3,7 +3,7 @@ import { MysticSphere } from ".";
 export const verdamancy: MysticSphere = {
   name: "Verdamancy",
   shortDescription: "Animate and manipulate plants.",
-  sources: ["nature"],
+  sources: ["domain", "nature"],
 
   cantrips: [
     {
