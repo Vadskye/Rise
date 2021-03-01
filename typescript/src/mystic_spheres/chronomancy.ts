@@ -395,7 +395,7 @@ export const chronomancy: MysticSphere = {
         This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
       `,
       rank: 4,
-      scaling: { 6: `You also gain a +2 \\glossterm{magic bonus} to Reflex defense.` },
+      scaling: { 6: `You also gain a +3 \\glossterm{magic bonus} to Reflex defense.` },
       type: "Attune (self)",
     },
 
