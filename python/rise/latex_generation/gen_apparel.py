@@ -640,95 +640,64 @@ def generate_armor():
     apparel += [
         MagicItem(
             name="Agile Boots",
-            level=3,
+            level=4,
             material_type="Boots",
             tags=[],
             description="""
-                You gain a +2 \\glossterm<magic bonus> to Reflex defense.
+                You gain a +3 \\glossterm<magic bonus> to Reflex defense.
             """,
-            short_description="Grants +2 Reflex defense",
+            short_description="Grants +3 Reflex defense",
         ),
         MagicItem(
             name="Agile Boots, Greater",
-            level=9,
+            level=10,
             material_type="Boots",
             tags=[],
             description="""
-                You gain a +3 \\glossterm<magic bonus> to Reflex defense.
+                You gain a +4 \\glossterm<magic bonus> to Reflex defense.
             """,
-            short_description="Grants +3 Reflex defense",
+            short_description="Grants +4 Reflex defense",
         ),
         MagicItem(
             name="Agile Boots, Supreme",
-            level=15,
+            level=16,
             material_type="Boots",
             tags=[],
             description="""
-                You gain a +4 \\glossterm<magic bonus> to Reflex defense.
+                You gain a +5 \\glossterm<magic bonus> to Reflex defense.
             """,
-            short_description="Grants +4 Reflex defense",
-        ),
-        MagicItem(
-            name="Agile Armor",
-            # +2 levels since armor is secondary for this effect
-            level=5,
-            material_type="Body armor",
-            tags=[],
-            description="""
-                You gain a +2 \\glossterm<magic bonus> to Reflex defense.
-            """,
-            short_description="Grants +2 Reflex defense",
-        ),
-        MagicItem(
-            name="Agile Armor, Greater",
-            level=11,
-            material_type="Body armor",
-            tags=[],
-            description="""
-                You gain a +3 \\glossterm<magic bonus> to Reflex defense.
-            """,
-            short_description="Grants +3 Reflex defense",
-        ),
-        MagicItem(
-            name="Agile Armor, Supreme",
-            level=17,
-            material_type="Body armor",
-            tags=[],
-            description="""
-                You gain a +4 \\glossterm<magic bonus> to Reflex defense.
-            """,
-            short_description="Grants +4 Reflex defense",
+            short_description="Grants +5 Reflex defense",
         ),
     ]
 
     apparel += [
         MagicItem(
             name="Fortified Belt",
-            level=3,
-            material_type="Belt",
-            tags=[],
-            description="""
-                You gain a +2 \\glossterm<magic bonus> to Fortitude defense.
-            """,
-            short_description="Grants +2 Fortitude defense",
-        ),
-        MagicItem(
-            name="Fortified Belt, Greater",
-            level=9,
+            level=4,
             material_type="Belt",
             tags=[],
             description="""
                 You gain a +3 \\glossterm<magic bonus> to Fortitude defense.
             """,
-            short_description="Grants +3 Fortitude defense",
+            short_description="Grants +2 Fortitude defense",
         ),
         MagicItem(
-            name="Fortified Belt, Supreme",
-            level=15,
+            name="Fortified Belt, Greater",
+            level=10,
             material_type="Belt",
             tags=[],
             description="""
                 You gain a +4 \\glossterm<magic bonus> to Fortitude defense.
+            """,
+            short_description="Grants +3 Fortitude defense",
+        ),
+        MagicItem(
+            name="Fortified Belt, Supreme",
+            level=16,
+            material_type="Belt",
+            tags=[],
+            description="""
+                You gain a +5 \\glossterm<magic bonus> to Fortitude defense.
             """,
             short_description="Grants +4 Fortitude defense",
         ),
@@ -737,31 +706,31 @@ def generate_armor():
     apparel += [
         MagicItem(
             name="Willguard Amulet",
-            level=3,
-            material_type="Amulet",
-            tags=[],
-            description="""
-                You gain a +2 \\glossterm<magic bonus> to Mental defense.
-            """,
-            short_description="Grants +2 Mental defense",
-        ),
-        MagicItem(
-            name="Willguard Amulet, Greater",
-            level=9,
+            level=4,
             material_type="Amulet",
             tags=[],
             description="""
                 You gain a +3 \\glossterm<magic bonus> to Mental defense.
             """,
-            short_description="Grants +3 Mental defense",
+            short_description="Grants +2 Mental defense",
         ),
         MagicItem(
-            name="Willguard Amulet, Supreme",
-            level=15,
+            name="Willguard Amulet, Greater",
+            level=10,
             material_type="Amulet",
             tags=[],
             description="""
                 You gain a +4 \\glossterm<magic bonus> to Mental defense.
+            """,
+            short_description="Grants +3 Mental defense",
+        ),
+        MagicItem(
+            name="Willguard Amulet, Supreme",
+            level=16,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                You gain a +5 \\glossterm<magic bonus> to Mental defense.
             """,
             short_description="Grants +4 Mental defense",
         ),
@@ -2818,11 +2787,11 @@ def generate_worn():
             material_type="Ring",
             tags=[],
             description="""
-            You gain +2 \\glossterm<magic bonus> to Mental defense.
+            You gain +3 \\glossterm<magic bonus> to Mental defense.
             In addition, if you fall at least 20 feet, ephemeral angel wings spring from your back.
             The wings slow your fall to a rate of 60 feet per round, preventing you from taking \\glossterm<falling damage>.
         """,
-            short_description="Grants +2 Mental and slows falls",
+            short_description="Grants +3 Mental and slows falls",
         )
     )
 

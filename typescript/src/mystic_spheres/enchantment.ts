@@ -572,13 +572,13 @@ export const enchantment: MysticSphere = {
       name: "Motivate",
 
       effect: `
-        You gain a +2 \\glossterm{magic bonus} to Mental defense.
+        You gain a +3 \\glossterm{magic bonus} to Mental defense.
       `,
       rank: 1,
       scaling: {
-        3: `The bonus increases to +3.`,
-        5: `The bonus increases to +4.`,
-        7: `The bonus increases to +5.`,
+        3: `The bonus increases to +4.`,
+        5: `The bonus increases to +5.`,
+        7: `The bonus increases to +6.`,
       },
       type: "Attune (target)",
     },
@@ -594,8 +594,8 @@ export const enchantment: MysticSphere = {
       // narrative: '',
       rank: 3,
       scaling: {
-        5: `The bonus increases to +3.`,
-        7: `The bonus increases to +4.`,
+        5: `The bonus increases to +4.`,
+        7: `The bonus increases to +5.`,
       },
       type: "Attune (target)",
     },
