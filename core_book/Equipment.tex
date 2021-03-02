@@ -18,21 +18,22 @@
             \begin{dtable!*}
                 \lcaption{Weapon Groups}
                 \begin{dtabularx}{\textwidth}{l >{\lcol}X >{\lcol}X}
-                    \tb{Group}         & \tb{Weapons}                                                                         & \tb{Exotic Weapons} \tableheaderrule
-                    Armor weapons      & Armor spikes, Standard shield (and spiked)                                           &                                                \\
-                    Blades             & Broadsword, dagger, estoc, greatsword, rapier, sabre, smallsword                     & Boot dagger, falchion, katana, kukri           \\
-                    Bows               & Longbow, shortbow                                                                    & Flatbow, heartseeker arrows, takedown bow      \\
-                    Club-like weapons  & Club, greatclub, greatmace, mace, morning star, sap                                  &                                                \\
-                    Crossbows          & Hand crossbow, heavy crossbow, light crossbow                                        & Repeating crossbows                            \\
-                    Flexible Weapons   & Flail, heavy flail, nunchaku, slapjack, whip                                         &                                                \\
-                    Headed weapons     & Battleaxe, greataxe, handaxe, light hammer, pick, sickle, sledgehammer, warhammer & Dwarven throwing axe, dwarven waraxe, heavy pick, orcish greataxe \\
-                    Improvised weapons & \tdash                                                                               & \tdash                                         \\
-                    Monk weapons       & Jitte, hama, nunchaku, quarterstaff, sai, shuriken                                   &                                                \\
-                    Polearms           & Bardiche, glaive, halberd, longhammer, pollaxe, quarterstaff, scythe, swordstaff     & Fauchard, war scythe                           \\
-                    Simple weapons     & Club, dagger, light crossbow, quarterstaff, unarmed strike                           &                                                \\
-                    Spears             & Greatspear, javelin, lance, longspear, ranseur, partisan, spear                      & Pike                                           \\
-                    Thrown weapons     & Dagger, dart, handaxe, javelin, light hammer, shuriken, sling                        & Bolas, dwarven throwing axe, dwarven waraxe, net                                     \\
-                    Unarmed weapons    & Claw sheath, gauntlet, spiked gauntlet, unarmed strike                               &                                                \\
+                    \tb{Group}         & \tb{Weapons}                                                                     & \tb{Exotic Weapons} \tableheaderrule
+                    Armor weapons      & Armor spikes, Standard shield (and spiked)                                       &                                                       \\
+                    Axes               & Battleaxe, broadaxe, greataxe, handaxe, pollaxe, shepherd's axe                  & Dwarven throwing axe, dwarven waraxe, orcish greataxe \\
+                    Blades             & Broadsword, dagger, estoc, greatsword, rapier, sabre, smallsword                 & Boot dagger, falchion, katana, kukri                  \\
+                    Bows               & Longbow, shortbow                                                                & Flatbow, heartseeker arrows, takedown bow             \\
+                    Club-like weapons  & Club, greatclub, greatmace, mace, morning star, sap                              &                                                       \\
+                    Crossbows          & Hand crossbow, heavy crossbow, light crossbow                                    & Repeating crossbows                                   \\
+                    Flexible Weapons   & Flail, heavy flail, nunchaku, slapjack, whip                                     &                                                       \\
+                    Headed weapons     & Light hammer, pick, sickle, sledgehammer, warhammer                              & Heavy pick                                            \\
+                    Improvised weapons & \tdash                                                                           & \tdash                                                \\
+                    Monk weapons       & Jitte, hama, nunchaku, quarterstaff, sai, shuriken                               &                                                       \\
+                    Polearms           & Bardiche, glaive, halberd, longhammer, pollaxe, quarterstaff, scythe, swordstaff & Fauchard, war scythe                                  \\
+                    Simple weapons     & Club, dagger, light crossbow, quarterstaff, unarmed strike                       &                                                       \\
+                    Spears             & Greatspear, javelin, lance, longspear, ranseur, partisan, spear                  & Pike                                                  \\
+                    Thrown weapons     & Dagger, dart, handaxe, javelin, light hammer, shuriken, sling                    & Bolas, dwarven throwing axe, dwarven waraxe, net      \\
+                    Unarmed weapons    & Claw sheath, gauntlet, spiked gauntlet, unarmed strike                           &                                                       \\
                 \end{dtabularx}
             \end{dtable!*}
 
@@ -201,9 +202,17 @@
                 \tind Standard shield\fn{2}        & Medium & \plus0  & 1d4    & Bludgeoning              & special & special & Forceful        \\
                 \tind Standard spiked shield\fn{2} & Medium & \plus0  & 1d6    & Piercing                 & special & special & Forceful        \\
 
+                Axes                             &        &         &        &                          &         &         &                                 \\
+                \tind Battleaxe                    & Medium & \plus0  & 1d8    & Slashing                 & 10 gp   & 6 lb.   & Sweeping (1), Versatile Grip    \\
+                \tind Broadaxe                     & Medium & \plus0  & 1d8    & Slashing                 & 12 gp   & 8 lb.   & Impact, Versatile Grip    \\
+                \tind Greataxe                     & Heavy  & \plus0  & 2d6    & Slashing                 & 20 gp   & 12 lb.  & Sweeping (1)                    \\
+                \tind Handaxe                      & Light  & \plus2  & 1d6    & Slashing                 & 4 gp    & 2 lb.   & Thrown (20 ft.)               \\
+                \tind Pollaxe                      & Heavy  & \plus0  & 1d10   & Piercing or slashing     & 15 gp   & 10 lb.  & Impact, Tripping               \\
+                \tind Shepherd's axe               & Light  & \plus2  & 1d6    & Bludgeoning or slashing  & 6 gp    & 3 lb.   & Reach               \\
+
                 Blades                             &        &         &        &                          &         &         &                                 \\
                 \tind Broadsword                   & Medium & \plus0  & 1d8    & Slashing                 & 15 gp   & 4 lb.   & Sweeping (1), Versatile Grip    \\
-                \tind Dagger                       & Light  & \plus2  & 1d4    & Piercing or slashing     & 2 gp    & 1 lb.   & Compact, Thrown (10 ft.)      \\
+                \tind Dagger                       & Light  & \plus2  & 1d4    & Piercing or slashing     & 2 gp    & 1 lb.   & Compact, Thrown (10 ft.), Stealthy      \\
                 \tind Estoc                        & Medium & \plus0  & 1d8    & Piercing                 & 20 gp   & 4 lb.   & Reach, Versatile Grip           \\
                 \tind Greatsword                   & Heavy  & \plus0  & 1d10   & Slashing                 & 25 gp   & 8 lb.   & Sweeping (2)                    \\
                 \tind Parrying dagger              & Light  & \plus2  & 1d6    & Piercing                 & 10 gp   & 2 lb.   & Parrying                        \\
@@ -243,11 +252,8 @@
                 \tind Whip\fn{2}                   & Light  & \plus1  & 1d4    & Bludgeoning                 & 1 gp    & 2 lb.   & Disarming, Subdual, Tripping    \\
 
                 Headed weapons                     &        &         &        &                          &         &         &                                 \\
-                \tind Battleaxe                    & Medium & \plus0  & 1d8    & Slashing                 & 10 gp   & 6 lb.   & Sweeping (1), Versatile Grip    \\
-                \tind Greataxe                     & Heavy  & \plus0  & 2d6    & Slashing                 & 20 gp   & 12 lb.  & Sweeping (1)                    \\
-                \tind Handaxe                      & Light  & \plus2  & 1d6    & Slashing                 & 4 gp    & 2 lb.   & Thrown (20 ft.)               \\
                 \tind Light hammer                 & Light  & \plus1  & 1d6    & Bludgeoning              & 2 gp    & 2 lb.   & Forceful, Thrown (20 ft.)     \\
-                \tind Pick                      & Medium & \plus0  & 1d8    & Piercing                 & 8 gp    & 6 lb.   & Impact, Versatile Grip          \\
+                \tind Pick                         & Medium & \plus0  & 1d8    & Piercing                 & 8 gp    & 6 lb.   & Impact, Versatile Grip          \\
                 \tind Sickle                       & Light  & \plus1  & 1d6    & Slashing                 & 6 gp    & 2 lb.   & Sweeping (1), Tripping          \\
                 \tind Sledgehammer                 & Heavy  & \plus0  & 2d6    & Bludgeoning              & 12 gp   & 5 lb.   & Forceful                        \\
                 \tind Warhammer                    & Medium & \plus0  & 1d8    & Bludgeoning              & 12 gp   & 5 lb.   & Forceful, Versatile Grip        \\
@@ -265,7 +271,6 @@
                 \tind Glaive                       & Heavy  & \plus0  & 1d10   & Slashing                 & 8 gp    & 10 lb.  & Long, Sweeping (1)              \\
                 \tind Halberd                      & Heavy  & \plus0  & 1d10   & Piercing or slashing     & 10 gp   & 12 lb.  & Long, Tripping                  \\
                 \tind Longhammer                   & Heavy  & \plus0  & 1d10   & Bludgeoning              & 10 gp   & 12 lb.  & Impact, Long                    \\
-                \tind Pollaxe                      & Heavy  & \plus0  & 1d10   & Piercing or slashing     & 10 gp   & 12 lb.  & Impact, Tripping                \\
                 \tind Quarterstaff                 & Heavy  & \plus1  & 1d8    & Bludgeoning              & \tdash  & 4 lb.   & Reach                           \\
                 \tind Scythe                       & Heavy  & \plus0  & 1d10   & Slashing                 & 18 gp   & 10 lb.  & Sweeping (2)                    \\
                 \tind Swordstaff                   & Heavy  & \plus0  & 1d10   & Slashing                 & 12 gp   & 11 lb.  & Keen, Reach                     \\
@@ -312,6 +317,10 @@
             \begin{dtabularx}{\textwidth}{p{12em} c c c >{\ccol}p{10em} c c >{\ccol}X}
                 \tb{Exotic Weapons}           & \tb{Usage Class} & \tb{Accuracy} & \tb{Damage} & \tb{Damage Type\fn{1}} & \tb{Cost} & \tb{Weight} & \tb{Special} \tableheaderrule
                 Armor                                &         &        &           &                      &        &        &                                 \\
+                Axes                               &         &        &           &                      &        &        &                                 \\
+                \tind Dwarven throwing axe           & Light   & \plus2 & 1d6       & Slashing             & 8 gp   & 3 lb.  & Impact, Thrown (20 ft.)       \\
+                \tind Dwarven waraxe                 & Medium  & \plus0 & 1d10      & Slashing             & 75 gp  & 8 lb.  & Thrown (20 ft.), Versatile Grip \\
+                \tind Orcish greataxe                & Heavy   & \plus0 & 2d6       & Slashing             & 60 gp  & 10 lb. & Impact, Sweeping (1)            \\
                 Blades                               &         &        &           &                      &        &        &                                 \\
                 \tind Boot dagger\fn{2}              & Light   & \plus2 & 1d6       & Piercing             & 20 gp  & 2 lb.  & Compact, Stealthy                         \\
                 \tind Falchion                       & Medium  & \plus0 & 1d8       & Slashing             & 15 gp  & 4 lb.  & Sweeping (2), Versatile Grip    \\
@@ -329,10 +338,7 @@
                 Flexible weapons                     &         &        &           &                      &        &        &                                 \\
                 \tind Three-section staff            & Heavy   & \plus0 & 1d10      & Bludgeoning             & 40 gp  & 6 lb.  & Disarming, Reach, Tripping      \\
                 Headed weapons                       &         &        &           &                      &        &        &                                 \\
-                \tind Dwarven throwing axe           & Light   & \plus2 & 1d6       & Slashing             & 8 gp   & 3 lb.  & Impact, Thrown (20 ft.)       \\
-                \tind Dwarven waraxe                 & Medium  & \plus0 & 1d10      & Slashing             & 75 gp  & 8 lb.  & Thrown (20 ft.), Versatile Grip \\
                 \tind Heavy pick                  & Heavy   & \plus0 & 2d6       & Piercing             & 40 gp  & 10 lb. & Keen, Impact                    \\
-                \tind Orcish greataxe                & Heavy   & \plus0 & 2d6       & Slashing             & 60 gp  & 10 lb. & Impact, Sweeping (1)            \\
                 Monk weapons                         &         &        &           &                      &        &        &                                 \\
                 Polearms                             &         &        &           &                      &        &        &                                 \\
                 \tind Fauchard                       & Heavy   & \plus0 & 1d10      & Slashing             & 25 gp  & 12 lb. & Long, Sweeping (2)              \\
