@@ -393,7 +393,8 @@ export const pyromancy: MysticSphere = {
       castingTime: "minor action",
       attack: {
         glance: `Half damage.`,
-        hit: `Each subject takes 2d8 + half \\glossterm{power} fire damage.`,
+        // AOE dice, but no power
+        hit: `Each subject takes 2d6 fire damage.`,
         targeting: `
           You catch on fire.
           This does not cause you any harm, as the flames burn around your body without burning you.
