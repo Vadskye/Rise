@@ -539,13 +539,13 @@ def generate_weapons():
 
     weapons.append(
         MagicItem(
-            name="Heartseeker",
+            name="Truestriking",
             level=20,
             material_type="Weapon",
             tags=[],
             description="""
-            The first time you you make a \\glossterm<strike> with this weapon each round, you can roll twice and take the higher result.
-        """,
+                The first time you you make a \\glossterm<strike> with this weapon each round, you can roll twice and take the higher result.
+            """,
             short_description="Rolls attacks twice",
         )
     )
