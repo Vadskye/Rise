@@ -392,7 +392,7 @@ export const thaumaturgy: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        Whenever a creature or object would teleport into a \\largearea radius \\glossterm{emanation} from you, that teleportation is delayed by a round.
+        Whenever a creature or object would teleport into a \\largearea radius \\glossterm{emanation} from you from outside of that area, that teleportation is delayed by a round.
         The teleporting creature or object remains stuck in the Astral Plane and can take no actions during that time.
         Creatures delayed in this way do not experience a delay, though they may be able to deduce that they were delayed based on observable evidence.
 
