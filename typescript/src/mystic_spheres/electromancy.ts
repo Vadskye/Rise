@@ -362,8 +362,8 @@ export const electromancy: MysticSphere = {
       castingTime: "minor action",
       attack: {
         glance: `Half damage.`,
-        // full dice, but half power
-        hit: `Each subject takes 2d8 + half \\glossterm{power} electricity damage.`,
+        // AOE dice, but no power
+        hit: `Each subject takes 2d6 electricity damage.`,
         targeting: `
           At the end of each round, make an attack vs. Fortitude against each creature that either is \\glossterm{grappling} with you or that attacked you with a metal melee weapon that round.
         `,

@@ -475,8 +475,8 @@ export const cryomancy: MysticSphere = {
       castingTime: "minor action",
       attack: {
         glance: `Half damage.`,
-        // full dice, but half power
-        hit: `Each subject takes 2d8 + half \\glossterm{power} cold damage.`,
+        // AOE dice, no power
+        hit: `Each subject takes 2d6 cold damage.`,
         targeting: `
         At the end of each round, make an attack vs. Fortitude against each creature adjacent to you that either is \\glossterm{grappling} with you or that attacked you with a melee weapon that round.
         `,

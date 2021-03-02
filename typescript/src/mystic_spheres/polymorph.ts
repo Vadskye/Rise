@@ -333,8 +333,8 @@ export const polymorph: MysticSphere = {
       castingTime: "minor action",
       attack: {
         glance: `Half damage.`,
-        // full dice, but half power
-        hit: `Each secondary target takes 2d8 + half \\glossterm{power} piercing damage.`,
+        // AOE dice, no power
+        hit: `Each subject takes 2d6 piercing damage.`,
         targeting: `
           At the end of each round, make an attack vs. Armor against each creature adjacent to you that either is \\glossterm{grappling} with you or that attacked you with a melee weapon that round.
         `,
