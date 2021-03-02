@@ -183,9 +183,9 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         glance: `Half damage, and each subject moves half as far.`,
-        hit: `You move each subject up to 30 feet in a straight line away from you.
+        hit: `You \\glossterm{knockback} each subject up to 30 feet in a straight line away from you.
         Moving a target upwards costs twice the normal movement cost.
-        If the subject impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgoning damage equal to 2d6 plus half your \\glossterm{power}.
+        If the subject impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgoning damage equal to 2d6 plus half your \\glossterm{power} instead of the normal knockback damage.
         Any individual object or creature can only take damage once in this way, even if it is hit by multiple targets that are knocked flying.`,
         targeting: `
         Make an attack vs. Mental against everything in a \\areasmall radius from you.
