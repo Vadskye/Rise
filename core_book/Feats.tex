@@ -690,7 +690,7 @@ You cannot gain the same feat twice.
     \begin{feat}{Executioner}{Combat}
         \featpres Base Strength of 1, base Perception of 2.
 
-        \ff[1]{Marked for Execution} You consider living creatures that either have a \glossterm{vital wound} or have less than their \glossterm{maximum hit points} to be \textit{marked for execution}.
+        \ff[1]{Marked for Execution} You consider living creatures that either have a \glossterm{vital wound}, have less than their \glossterm{maximum hit points}, or have no remaining \glossterm{resistances} of any kind to be \textit{marked for execution}.
         Several abilities from this feat affect creatures \textit{marked for execution}.
 
         % This ability is melee-only because it makes some of the questions around ``is this creature marked''
@@ -698,14 +698,12 @@ You cannot gain the same feat twice.
         \ff[1]{Execution} You can use the \textit{execution} ability as a standard action.
         \begin{freeability}{Execution}
             Make a melee \glossterm{strike}.
-            If the target is \textit{marked for execution}, you gain a \plus1d bonus to damage.
-            If the target has a \glossterm{vital wound}, you gain a \plus1d bonus to damage.
-            These bonuses stack.
+            If the target is \textit{marked for execution}, you gain a \plus2d bonus to damage.
 
             \rankline
-            \featlevel{6} You gain a \plus1d bonus to damage with the strike.
-            \featlevel{12} The automatic damage bonus increases to \plus2d.
-            \featlevel{18} Both circumstantial damage bonuses increase to \plus2d.
+            \featlevel{6} You gain a \plus1 \glossterm{accuracy} bonus with the strike.
+            \featlevel{12} The accuracy bonus increases to \plus2.
+            \featlevel{18} The accuracy bonus increases to \plus3.
         \end{freeability}
 
         \ff[3]{Blood Sense}[Magical] You automatically know the location of all creatures that are \textit{marked for execution} within 60 feet of you, regardless of concealment or invisibility.
