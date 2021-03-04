@@ -1,10 +1,12 @@
 is_pretty = True
 input_name_prefix = None
 
-DESTINATION = 'paper'
+DESTINATION = "paper"
+
 
 def html_separator():
-    return '\n' if is_pretty and DESTINATION == 'paper' else ''
+    return "\n" if is_pretty and DESTINATION == "paper" else ""
+
 
 # we're going to get really fancy and assert that attributes should always
 # be a dict, and contents should always be in an array or None.
@@ -19,43 +21,48 @@ def ensure_valid_attributes_and_contents(attributes=None, contents=None):
             attributes = dict()
         else:
             # if we have both contents and attributes, something has gone wrong
-            raise Exception("Both attributes ({0}) and contents ({1}) are defined".format(attributes, contents))
+            raise Exception(
+                "Both attributes ({0}) and contents ({1}) are defined".format(
+                    attributes, contents
+                )
+            )
     if contents is None:
         contents = list()
     if isinstance(contents, str):
         contents = [contents.strip()]
     return attributes, contents
 
+
 def html_tag(tag_name, attributes=None, contents=None):
     attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
 
-    if DESTINATION == 'roll20':
-        if tag_name == 'input' and 'name' not in attributes:
-            raise Exception('Input must have name')
+    if DESTINATION == "roll20":
+        if tag_name == "input" and "name" not in attributes:
+            raise Exception("Input must have name")
 
-        if 'name' in attributes:
+        if "name" in attributes:
             # Standarize on lowercase
-            if attributes['name'] != attributes['name'].lower():
-                raise Exception('Name must be lowercase: ' + attributes['name'])
+            if attributes["name"] != attributes["name"].lower():
+                raise Exception("Name must be lowercase: " + attributes["name"])
 
             # Standardize on only underscores
-            if ' ' in attributes['name']:
-                raise Exception('Name must not have spaces: ' + attributes['name'])
-            if '-' in attributes['name']:
-                raise Exception('Name must not have dashes: ' + attributes['name'])
+            if " " in attributes["name"]:
+                raise Exception("Name must not have spaces: " + attributes["name"])
+            if "-" in attributes["name"]:
+                raise Exception("Name must not have dashes: " + attributes["name"])
 
     # An "attr_" prefix is required by roll20
-    if 'name' in attributes:
-        attributes['name'] = 'attr_' + attributes['name']
+    if "name" in attributes:
+        attributes["name"] = "attr_" + attributes["name"]
 
     if contents is None:
-        return '<{0}{1} />'.format(
+        return "<{0}{1} />".format(
             tag_name,
             convert_html_attributes(attributes),
         )
     else:
         try:
-            return '<{0}{1}>{2}{3}{4}</{0}>'.format(
+            return "<{0}{1}>{2}{3}{4}</{0}>".format(
                 tag_name,
                 convert_html_attributes(attributes),
                 html_separator(),
@@ -63,62 +70,77 @@ def html_tag(tag_name, attributes=None, contents=None):
                 html_separator(),
             )
         except TypeError as e:
-            print('{0}\n\tAttributes: {1}\n\tContents: {2}'.format(
-                e,
-                attributes,
-                contents,
-            ))
+            print(
+                "{0}\n\tAttributes: {1}\n\tContents: {2}".format(
+                    e,
+                    attributes,
+                    contents,
+                )
+            )
+
 
 def convert_html_attributes(attributes=None):
     if attributes is None:
-        return ''
-    attributes_text = ''
+        return ""
+    attributes_text = ""
     for attribute_name in sorted(attributes.keys()):
         if attributes.get(attribute_name) is not None:
             attributes_text += ' {0}="{1}"'.format(
-                attribute_name,
-                attributes.get(attribute_name)
+                attribute_name, attributes.get(attribute_name)
             )
     return attributes_text
 
+
 def button(attributes=None, contents=None):
-    return html_tag('button', attributes, contents)
+    return html_tag("button", attributes, contents)
+
 
 def subtlebutton(attributes=None, contents=None):
-    return span({'class': 'subtle-button'}, html_tag('button', attributes, contents))
+    return span({"class": "subtle-button"}, html_tag("button", attributes, contents))
+
 
 def invisiblebutton(attributes=None, contents=None):
-    return span({'class': 'invisible-button'}, html_tag('button', attributes, contents))
+    return span({"class": "invisible-button"}, html_tag("button", attributes, contents))
+
 
 def div(attributes=None, contents=None):
-    return html_tag('div', attributes, contents)
+    return html_tag("div", attributes, contents)
+
 
 def fieldset(attributes, contents=None):
-    if not (attributes['class'] and 'repeating' in attributes['class']):
-        raise Exception('Fieldset must have repeating class name')
+    if not (attributes["class"] and "repeating" in attributes["class"]):
+        raise Exception("Fieldset must have repeating class name")
     # oddity: the section name cannot have underscores. Not currently asserting.
-    return html_tag('fieldset', attributes, contents)
+    return html_tag("fieldset", attributes, contents)
+
 
 def form(attributes=None, contents=None):
-    return html_tag('form', attributes, contents)
+    return html_tag("form", attributes, contents)
+
 
 def h1(attributes=None, contents=None):
-    return html_tag('h1', attributes, contents)
+    return html_tag("h1", attributes, contents)
+
 
 def h2(attributes=None, contents=None):
-    return html_tag('h2', attributes, contents)
+    return html_tag("h2", attributes, contents)
+
 
 def head(attributes=None, contents=None):
-    return html_tag('head', attributes, contents)
+    return html_tag("head", attributes, contents)
+
 
 def link(attributes=None, contents=None):
-    return html_tag('link', attributes, contents)
+    return html_tag("link", attributes, contents)
+
 
 def span(attributes=None, contents=None):
-    return html_tag('span', attributes, contents)
+    return html_tag("span", attributes, contents)
+
 
 def style(attributes=None, contents=None):
-    return html_tag('style', attributes, contents)
+    return html_tag("style", attributes, contents)
+
 
 # input:
 # [
@@ -131,246 +153,316 @@ def style(attributes=None, contents=None):
 #   ...
 # ],
 def table(attributes=None, contents=None):
-    inner_html = ''
+    inner_html = ""
     for row in contents:
         inner_html += tr([td(col) for col in row])
 
-    return html_tag('table', attributes, inner_html)
+    return html_tag("table", attributes, inner_html)
+
 
 def td(attributes=None, contents=None):
-    return html_tag('td', attributes, contents)
+    return html_tag("td", attributes, contents)
+
 
 def tr(attributes=None, contents=None):
-    return html_tag('tr', attributes, contents)
+    return html_tag("tr", attributes, contents)
+
 
 def card(attributes, contents):
-    if 'class' in attributes:
-        attributes['class'] += 'card'
+    if "class" in attributes:
+        attributes["class"] += "card"
     else:
-        attributes['class'] = 'card'
+        attributes["class"] = "card"
     return div(attributes, contents)
+
 
 def hidden_input(attributes=None):
     attributes = attributes or dict()
-    attributes['type'] = 'hidden'
-    return html_tag('input', attributes)
+    attributes["type"] = "hidden"
+    return html_tag("input", attributes)
+
 
 def number_input(attributes=None):
     attributes = attributes or dict()
-    attributes['type'] = 'number'
-    if DESTINATION == 'roll20' and 'value' not in attributes:
-        attributes['value'] = '0'
-    elif DESTINATION == 'paper' and 'value' in attributes and not attributes.get('disabled'):
+    attributes["type"] = "number"
+    if DESTINATION == "roll20" and "value" not in attributes:
+        attributes["value"] = "0"
+    elif (
+        DESTINATION == "paper"
+        and "value" in attributes
+        and not attributes.get("disabled")
+    ):
         # Hide "default" attributes from the paper sheet
-        attributes['value'] = ""
-    return html_tag('input', attributes)
+        attributes["value"] = ""
+    return html_tag("input", attributes)
+
 
 def text_input(attributes=None):
     attributes = attributes or dict()
-    attributes['type'] = 'text'
-    attributes['size'] = attributes.get('size', '1')
-    if DESTINATION == 'paper' and 'value' in attributes:
+    attributes["type"] = "text"
+    attributes["size"] = attributes.get("size", "1")
+    if DESTINATION == "paper" and "value" in attributes:
         # Hide "default" attributes from the paper sheet
-        attributes['value'] = ""
-    return html_tag('input', attributes)
+        attributes["value"] = ""
+    return html_tag("input", attributes)
+
 
 def radio_input(attributes):
     attributes = attributes or dict()
-    attributes['type'] = 'radio'
-    if DESTINATION == 'paper' and 'value' in attributes:
+    attributes["type"] = "radio"
+    if DESTINATION == "paper" and "value" in attributes:
         # Hide "default" attributes from the paper sheet
-        attributes['value'] = ""
-    return html_tag('input', attributes)
+        attributes["value"] = ""
+    return html_tag("input", attributes)
+
 
 def textarea(attributes=None):
     attributes = attributes or dict()
-    attributes['rows'] = attributes.get('rows', '1')
-    attributes['cols'] = attributes.get('cols', '10')
-    if DESTINATION == 'paper' and 'value' in attributes:
+    attributes["rows"] = attributes.get("rows", "1")
+    attributes["cols"] = attributes.get("cols", "10")
+    if DESTINATION == "paper" and "value" in attributes:
         # Hide "default" attributes from the paper sheet
-        attributes['value'] = ""
-    return html_tag('textarea', attributes, attributes.get('value', None))
+        attributes["value"] = ""
+    return html_tag("textarea", attributes, attributes.get("value", None))
+
 
 # less simple
 
+
 def space_join(values):
-    return ' '.join(filter(None, values))
+    return " ".join(filter(None, values))
+
 
 def space_append(dictionary, key, value):
     dictionary[key] = space_join([value, dictionary.get(key)])
 
+
 def flex_row(attributes=None, contents=None):
     attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
-    space_append(attributes, 'class', 'flex-row')
+    space_append(attributes, "class", "flex-row")
     return div(attributes, contents)
+
 
 def flex_col(attributes=None, contents=None):
     attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
-    space_append(attributes, 'class', 'flex-col')
+    space_append(attributes, "class", "flex-col")
     return div(attributes, contents)
+
 
 def flex_wrapper(attributes=None, contents=None):
     attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
-    space_append(attributes, 'class', 'flex-wrapper')
+    space_append(attributes, "class", "flex-wrapper")
     return div(attributes, contents)
+
 
 def labeled_text_input(label_name, attributes=None, input_attributes=None):
     attributes = attributes or dict()
-    space_append(attributes, 'class', 'labeled-text-input')
-    return div(attributes, flex_col([
-        text_input(input_attributes),
-        span(
-            {'class': 'under-label'},
-            label_name
+    space_append(attributes, "class", "labeled-text-input")
+    return div(
+        attributes,
+        flex_col(
+            [
+                text_input(input_attributes),
+                span({"class": "under-label"}, label_name),
+            ]
         ),
-    ]))
+    )
+
 
 def labeled_textarea(label_name, attributes=None, input_attributes=None):
     attributes = attributes or dict()
-    space_append(attributes, 'class', 'labeled-text-input')
-    return div(attributes, flex_col([
-        textarea(input_attributes),
-        span(
-            {'class': 'under-label'},
-            label_name
+    space_append(attributes, "class", "labeled-text-input")
+    return div(
+        attributes,
+        flex_col(
+            [
+                textarea(input_attributes),
+                span({"class": "under-label"}, label_name),
+            ]
         ),
-    ]))
+    )
 
-def labeled_number_input(label_name, input_name=None, attributes=None, input_attributes=None):
+
+def labeled_number_input(
+    label_name, input_name=None, attributes=None, input_attributes=None
+):
     attributes = attributes or dict()
-    space_append(attributes, 'class', 'labeled-number-input')
+    space_append(attributes, "class", "labeled-number-input")
     input_name = input_name or label_name.lower()
 
     if input_attributes is None:
-        input_attributes = {'name': input_name}
+        input_attributes = {"name": input_name}
     else:
-        input_attributes['name'] = input_attributes.get('name') or input_name
+        input_attributes["name"] = input_attributes.get("name") or input_name
 
-    return flex_row(attributes, [
-        span(
-            {'class': 'number-label'},
-            label_name
-        ),
-        number_input(input_attributes),
-    ])
+    return flex_row(
+        attributes,
+        [
+            span({"class": "number-label"}, label_name),
+            number_input(input_attributes),
+        ],
+    )
 
-def freeform_number_input(attributes=None, text_input_attributes=None, number_input_attributes=None):
+
+def freeform_number_input(
+    attributes=None, text_input_attributes=None, number_input_attributes=None
+):
     attributes = attributes or dict()
-    space_append(attributes, 'class', 'freeform-number-input')
-    return flex_row(attributes, [
-        text_input(text_input_attributes),
-        number_input(number_input_attributes),
-    ])
+    space_append(attributes, "class", "freeform-number-input")
+    return flex_row(
+        attributes,
+        [
+            text_input(text_input_attributes),
+            number_input(number_input_attributes),
+        ],
+    )
+
 
 def labeled_dual_input(label_name, text_input_name, number_input_name):
-    return div({'class': 'labeled-dual-input'}, [
-        labeled_text_input(label_name, text_input_name),
-        number_input({
-            'name': number_input_name,
-        }),
-    ])
+    return div(
+        {"class": "labeled-dual-input"},
+        [
+            labeled_text_input(label_name, text_input_name),
+            number_input(
+                {
+                    "name": number_input_name,
+                }
+            ),
+        ],
+    )
+
 
 def value_sum(values):
-    return '(' + '+'.join(['@{' + value + '}' for value in values]) + ')'
+    return "(" + "+".join(["@{" + value + "}" for value in values]) + ")"
+
 
 def equation(
-        attributes=None, contents=None, result_attributes=None, input_type=None, result_label='Total', underlabel_attributes=None,
+    attributes=None,
+    contents=None,
+    result_attributes=None,
+    input_type=None,
+    result_label="Total",
+    underlabel_attributes=None,
 ):
     attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
-    space_append(attributes, 'class', 'equation')
+    space_append(attributes, "class", "equation")
     result_attributes = result_attributes or dict()
     input_type = input_type or number_input
 
-    return flex_row(attributes, [
-        underlabel(result_label, input_type(result_attributes), underlabel_attributes),
-        equals(),
-        ''.join(contents),
-    ])
+    return flex_row(
+        attributes,
+        [
+            underlabel(
+                result_label, input_type(result_attributes), underlabel_attributes
+            ),
+            equals(),
+            "".join(contents),
+        ],
+    )
+
 
 def this_or_that(options):
     return flex_row(
-        {'class': 'two-choices'},
-        flex_col({'class': 'equation-glue'}, 'or').join(options)
+        {"class": "two-choices"},
+        flex_col({"class": "equation-glue"}, "or").join(options),
     )
+
 
 def equals():
-    return flex_col({'class': 'equation-glue'}, div({'class': 'equation-math'}, '='))
+    return flex_col({"class": "equation-glue"}, div({"class": "equation-math"}, "="))
+
 
 def plus():
-    return flex_col({'class': 'equation-glue'}, div({'class': 'equation-math'}, '+'))
+    return flex_col({"class": "equation-glue"}, div({"class": "equation-math"}, "+"))
+
 
 def minus():
-    return flex_col({'class': 'equation-glue'}, div({'class': 'equation-math'}, '-'))
+    return flex_col({"class": "equation-glue"}, div({"class": "equation-math"}, "-"))
+
 
 def times():
-    return flex_col({'class': 'equation-glue'}, div({'class': 'equation-math'}, 'x'))
+    return flex_col({"class": "equation-glue"}, div({"class": "equation-math"}, "x"))
+
 
 def half(text):
-    return span({'class': 'half'}, '&frac12 ') + text
+    return span({"class": "half"}, "&frac12 ") + text
+
 
 def rise_title():
-    return div(
-        {'class': 'rise-title'},
-        'Rise'
-    )
+    return div({"class": "rise-title"}, "Rise")
+
 
 def underlabel(label_name, input_html, attributes=None):
     attributes = attributes or dict()
-    space_append(attributes, 'class', 'underlabeled')
+    space_append(attributes, "class", "underlabeled")
 
-    return flex_col(attributes, [
-        input_html,
-        div(
-            {'class': 'under-label'},
-            label_name
-        ),
-    ])
+    return flex_col(
+        attributes,
+        [
+            input_html,
+            div({"class": "under-label"}, label_name),
+        ],
+    )
+
 
 def underlabel_spaced(label_name, input_html, attributes=None):
     attributes = attributes or dict()
-    space_append(attributes, 'class', 'labeled-text-input'),
-    return div(attributes, flex_col([
-        input_html,
-        span(
-            {'class': 'under-label'},
-            label_name
+    space_append(attributes, "class", "labeled-text-input"),
+    return div(
+        attributes,
+        flex_col(
+            [
+                input_html,
+                span({"class": "under-label"}, label_name),
+            ]
         ),
-    ]))
+    )
+
 
 def sidelabel(label_name, input_html, attributes=None):
     attributes = attributes or dict()
-    space_append(attributes, 'class', 'labeled-number-input')
+    space_append(attributes, "class", "labeled-number-input")
 
-    return flex_row(attributes, [
-        span(
-            {'class': 'number-label'},
-            label_name
-        ),
-        input_html,
-    ])
+    return flex_row(
+        attributes,
+        [
+            span({"class": "number-label"}, label_name),
+            input_html,
+        ],
+    )
+
 
 def select(attributes=None, contents=None):
-    return html_tag('select', attributes, contents)
+    return html_tag("select", attributes, contents)
+
 
 def option(attributes=None, contents=None):
-    return html_tag('option', attributes, contents)
+    return html_tag("option", attributes, contents)
+
 
 def checkbox(attributes=None):
     attributes = attributes or dict()
-    attributes['type'] = 'checkbox'
-    return html_tag('input', attributes)
+    attributes["type"] = "checkbox"
+    return html_tag("input", attributes)
+
 
 def underlabeled_checkbox(label_text, attributes=None, input_attributes=None):
     attributes = attributes or dict()
-    space_append(attributes, 'class', 'labeled-text-input')
-    return div(attributes, flex_col([
-        checkbox(input_attributes),
-        span(
-            {'class': 'under-label'},
-            label_text,
+    space_append(attributes, "class", "labeled-text-input")
+    return div(
+        attributes,
+        flex_col(
+            [
+                checkbox(input_attributes),
+                span(
+                    {"class": "under-label"},
+                    label_text,
+                ),
+            ]
         ),
-    ]))
+    )
+
 
 def label(attributes, text):
     attributes = attributes or dict()
-    return html_tag('label', attributes, text)
+    return html_tag("label", attributes, text)
