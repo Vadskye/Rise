@@ -304,7 +304,7 @@ def generate_tools():
             When you do, make an attack vs. Reflex against the target.
             On a hit, the target is \\glossterm<slowed> as a \\glossterm<condition>.
 
-            Whenever the target takes a \\glossterm<move action>, it can make a Strength check as part of the movement.
+            Whenever the target moves using one of its movement speeds, it can make a Strength check as part of the movement.
             If it beats a \\glossterm<difficulty rating> equal to 2 \\add this item's power, the condition is removed after the movement is complete.
         """,
             short_description="Slows a foe",

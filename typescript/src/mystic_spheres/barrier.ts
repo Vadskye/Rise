@@ -223,7 +223,7 @@ export const barrier: MysticSphere = {
         The sphere is visible as a shimmering magical membrane that does not block sight.
         Nothing can pass through the field until it is destroyed.
         This prevents you from having \\glossterm{line of effect} to anything outside of the area.
-        When you move, the sphere moves with you, though you cannot force it against another creature or object.
+        When you move using one of your movement speeds, the sphere moves with you, though you cannot force it against another creature or object.
         Each 5-ft.\\ square of the field has \\glossterm{hit points} equal to three times your \\glossterm{power}.
         `,
       rank: 5,
