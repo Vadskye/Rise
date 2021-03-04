@@ -151,6 +151,7 @@ def core_statistics():
         magical_power(),
         mundane_power(),
         skill_points(),
+        vital_rolls(),
     ]
 
 def defenses():
@@ -787,4 +788,15 @@ def debuffs():
                 reflex_debuff_modifier: reflex,
             }});
         """
+    )
+
+def vital_rolls():
+    misc = get_misc_variables('vital_rolls', 3)
+    return js_wrapper(
+        ['level', 'vital_wound_count', *misc],
+        f"""
+            setAttrs({{
+                vital_rolls: {sum_variables(misc)} - vital_wound_count,
+            }});
+        """,
     )

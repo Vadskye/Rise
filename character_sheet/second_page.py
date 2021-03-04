@@ -47,6 +47,7 @@ def create_page(destination):
                 calc_initiative(),
                 calc_magical_power(),
                 calc_mundane_power(),
+                calc_vital_rolls(),
                 calc_unknown_statistic(),
                 flex_wrapper(div({'class': 'section-header'}, 'Resources')),
                 calc_attunement_points(),
@@ -251,7 +252,7 @@ def calc_accuracy():
                 underlabel('1/2 (Per)', number_input({
                     'disabled': True,
                     'name': 'accuracy_perception_display',
-                    'value': '(@{perception_starting} / 2)',
+                    'value': '(floor(@{perception_starting} / 2))',
                 })),
                 plus(),
                 equation_misc_repeat('accuracy', 2),
@@ -507,6 +508,25 @@ def calc_mundane_power():
                 'disabled': True,
                 'name': 'mundane_power_display',
                 'value': '@{mundane_power}',
+            },
+        ),
+    ])
+
+def calc_vital_rolls():
+    return flex_row([
+        div({'class': 'calc-header'}, 'Vital Rolls'),
+        equation(
+            [
+                equation_misc_repeat('vital_rolls', 3),
+                minus(),
+                underlabel('Wounds', number_input({
+                    'name': 'vital_wound_count',
+                })),
+            ],
+            result_attributes={
+                'disabled': True,
+                'name': 'vital_rolls_display',
+                'value': '@{vital_rolls}',
             },
         ),
     ])
