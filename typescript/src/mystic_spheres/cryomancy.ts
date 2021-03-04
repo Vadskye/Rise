@@ -289,7 +289,7 @@ export const cryomancy: MysticSphere = {
       name: "Skyskate",
 
       effect: `
-        Whenever you move, you can leave a trail of ice behind you.
+        Whenever you move using one of your movement speeds, you can leave a trail of ice behind you.
         The ice lasts until the end of the round before disappearing.
 
         While you are leaving a trail of ice behind you, you can move into thin air by walking on your own ice trail, just as if it was solid ground.
