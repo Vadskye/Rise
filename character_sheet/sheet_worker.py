@@ -1,29 +1,41 @@
 from sheet_data import ATTRIBUTES, ATTRIBUTE_SKILLS
 
+
 def generate_script():
-    return "\n".join([
-        '<script type="text/worker">',
-        *[attribute_change(a.lower()) for a in ATTRIBUTES],
-        *[attribute_skills(a.lower()) for a in ATTRIBUTE_SKILLS],
-        *core_statistics(),
-        *defenses(),
-        *resistances(),
-        *abilities_known(),
-        attunement_points(),
-        skill_points_spent(),
-        unknown_statistic(),
-        debuffs(),
-        '</script>',
-        ""
-    ])
+    return "\n".join(
+        [
+            '<script type="text/worker">',
+            *[attribute_change(a.lower()) for a in ATTRIBUTES],
+            *[attribute_skills(a.lower()) for a in ATTRIBUTE_SKILLS],
+            *core_statistics(),
+            *defenses(),
+            *resistances(),
+            *abilities_known(),
+            attunement_points(),
+            skill_points_spent(),
+            unknown_statistic(),
+            debuffs(),
+            "</script>",
+            "",
+        ]
+    )
+
 
 def js_wrapper(variables, function_body):
     # not everything actually depends on level, but it's convenient to make
     # everything recalculate when level changes
-    variables_with_level = sorted(list(set(variables + ['level'])))
-    change_string = ' '.join([f'change:{var}' for var in variables_with_level])
-    get_attrs_string = ', '.join([f'"{var}"' for var in variables])
-    set_variables_string = ';\n    '.join([f'var {stringify_variable_name(var)} = v["{var}"] === "on" ? true : Number(v["{var}"] || 0)' for var in variables]) + ';'
+    variables_with_level = sorted(list(set(variables + ["level"])))
+    change_string = " ".join([f"change:{var}" for var in variables_with_level])
+    get_attrs_string = ", ".join([f'"{var}"' for var in variables])
+    set_variables_string = (
+        ";\n    ".join(
+            [
+                f'var {stringify_variable_name(var)} = v["{var}"] === "on" ? true : Number(v["{var}"] || 0)'
+                for var in variables
+            ]
+        )
+        + ";"
+    )
     return f"""
         on("{change_string}", function(eventInfo) {{
             getAttrs([{get_attrs_string}], function(v) {{
@@ -33,19 +45,23 @@ def js_wrapper(variables, function_body):
         }});
     """
 
+
 def stringify_variable_name(varname):
-    return varname.replace('$', '')
+    return varname.replace("$", "")
+
 
 def get_misc_variables(variable_name, count):
-    return [f'{variable_name}_misc_{i}' for i in range(count)]
+    return [f"{variable_name}_misc_{i}" for i in range(count)]
+
 
 def sum_variables(variables):
-    return '+'.join(variables)
+    return "+".join(variables)
+
 
 def attribute_change(a):
-    misc = get_misc_variables(a + '_starting', 2)
+    misc = get_misc_variables(a + "_starting", 2)
     return js_wrapper(
-        ['level', f'{a}_point_buy', *misc],
+        ["level", f"{a}_point_buy", *misc],
         f"""
             var starting = {a}_point_buy > 0
                 ? {{
@@ -68,21 +84,24 @@ def attribute_change(a):
                 {a}_scaling: scaling,
                 {a}_starting: starting,
             }});
-        """
+        """,
     )
 
+
 def attribute_skills(attribute):
-    return '\n'.join([
-        set_skill(attribute, skill.lower().replace(' ', '_'))
-        for skill in ATTRIBUTE_SKILLS[attribute]
-    ])
+    return "\n".join(
+        [
+            set_skill(attribute, skill.lower().replace(" ", "_"))
+            for skill in ATTRIBUTE_SKILLS[attribute]
+        ]
+    )
 
 
 def set_skill(a, s):
     misc = get_misc_variables(s, 3)
-    if a == 'other':
+    if a == "other":
         return js_wrapper(
-            ['level', f'{s}_points', f'{s}_class_skill', 'fatigue_penalty', *misc],
+            ["level", f"{s}_points", f"{s}_class_skill", "fatigue_penalty", *misc],
             f"""
                 var pointsModifier = 0;
                 var ranks = 0;
@@ -104,13 +123,21 @@ def set_skill(a, s):
                     {s}_total: ranks + pointsModifier + {sum_variables(misc)} - fatigue_penalty,
                     {s}_training: training,
                 }});
-            """
+            """,
         )
     else:
-        include_encumbrance = a in ['strength', 'dexterity']
-        subtract_encumbrance = ' - encumbrance' if include_encumbrance else ""
+        include_encumbrance = a in ["strength", "dexterity"]
+        subtract_encumbrance = " - encumbrance" if include_encumbrance else ""
         return js_wrapper(
-            ['level', f'{a}_starting', f'{s}_points', f'{s}_class_skill', 'fatigue_penalty', *misc, *(['encumbrance'] if include_encumbrance else [])],
+            [
+                "level",
+                f"{a}_starting",
+                f"{s}_points",
+                f"{s}_class_skill",
+                "fatigue_penalty",
+                *misc,
+                *(["encumbrance"] if include_encumbrance else []),
+            ],
             f"""
                 var pointsModifier = 0;
                 var ranks = 0;
@@ -134,8 +161,9 @@ def set_skill(a, s):
                     {s}_total: ranks + pointsModifier + {a}_starting + {sum_variables(misc)} - fatigue_penalty {subtract_encumbrance},
                     {s}_training: training,
                 }});
-            """
+            """,
         )
+
 
 def core_statistics():
     return [
@@ -154,6 +182,7 @@ def core_statistics():
         vital_rolls(),
     ]
 
+
 def defenses():
     return [
         armor_defense(),
@@ -162,38 +191,48 @@ def defenses():
         reflex(),
     ]
 
+
 def resistances():
     return [
         energy_resistance(),
         physical_resistance(),
     ]
 
+
 def abilities_known():
     return [
         maneuvers_known(),
         spells_known(),
         spheres_known(),
-        *[blank_ability_known(i) for i in range(1)]
+        *[blank_ability_known(i) for i in range(1)],
     ]
 
+
 def accuracy():
-    misc = get_misc_variables('accuracy', 2)
+    misc = get_misc_variables("accuracy", 2)
     return js_wrapper(
-        ['challenge_rating', 'level', 'perception_starting', 'fatigue_penalty', 'accuracy_debuff_modifier', *misc],
+        [
+            "challenge_rating",
+            "level",
+            "perception_starting",
+            "fatigue_penalty",
+            "accuracy_debuff_modifier",
+            *misc,
+        ],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 1) / 6)) : 0;
             setAttrs({{
                 accuracy: level + Math.floor(perception_starting / 2)  + {sum_variables(misc)} + cr_mod + level_scaling - fatigue_penalty + accuracy_debuff_modifier,
             }});
-        """
+        """,
     )
 
 
 def attunement_points():
-    misc = get_misc_variables('attunement_points', 2)
+    misc = get_misc_variables("attunement_points", 2)
     return js_wrapper(
-        ['level', *misc],
+        ["level", *misc],
         f"""
             var attunement_points_from_level = Math.min(level, 5);
             if (level >= 11) {{
@@ -212,8 +251,9 @@ def attunement_points():
         """,
     )
 
+
 def unknown_statistic():
-    misc = get_misc_variables('unknown_statistic', 4)
+    misc = get_misc_variables("unknown_statistic", 4)
     return js_wrapper(
         [*misc],
         f"""
@@ -223,10 +263,20 @@ def unknown_statistic():
         """,
     )
 
+
 def armor_defense():
-    misc = get_misc_variables('armor_defense', 3)
+    misc = get_misc_variables("armor_defense", 3)
     return js_wrapper(
-        ['level', 'dexterity_starting', 'armor_defense_class_bonus', 'body_armor_defense_value', 'shield_defense_value', 'armor_debuff_modifier', *misc, 'challenge_rating'],
+        [
+            "level",
+            "dexterity_starting",
+            "armor_defense_class_bonus",
+            "body_armor_defense_value",
+            "shield_defense_value",
+            "armor_debuff_modifier",
+            *misc,
+            "challenge_rating",
+        ],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 3) / 6)) : 0;
@@ -235,52 +285,77 @@ def armor_defense():
             setAttrs({{
                 armor_defense: total,
             }});
-        """
+        """,
     )
 
+
 def fortitude():
-    misc = get_misc_variables('fortitude', 4)
+    misc = get_misc_variables("fortitude", 4)
     return js_wrapper(
-        ['level', 'constitution_starting', 'fortitude_class', 'challenge_rating', 'fortitude_debuff_modifier', *misc],
+        [
+            "level",
+            "constitution_starting",
+            "fortitude_class",
+            "challenge_rating",
+            "fortitude_debuff_modifier",
+            *misc,
+        ],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 3) / 6)) : 0;
             setAttrs({{
                 fortitude: level + constitution_starting + fortitude_class + cr_mod + level_scaling + fortitude_debuff_modifier + {sum_variables(misc)},
             }});
-        """
+        """,
     )
 
+
 def reflex():
-    misc = get_misc_variables('reflex', 4)
+    misc = get_misc_variables("reflex", 4)
     return js_wrapper(
-        ['level', 'dexterity_starting', 'reflex_class', 'challenge_rating', 'reflex_debuff_modifier', *misc],
+        [
+            "level",
+            "dexterity_starting",
+            "reflex_class",
+            "challenge_rating",
+            "reflex_debuff_modifier",
+            *misc,
+        ],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 3) / 6)) : 0;
             setAttrs({{
                 reflex: level + dexterity_starting + reflex_class + cr_mod + level_scaling + reflex_debuff_modifier + {sum_variables(misc)},
             }});
-        """
+        """,
     )
 
+
 def mental():
-    misc = get_misc_variables('mental', 4)
+    misc = get_misc_variables("mental", 4)
     return js_wrapper(
-        ['level', 'willpower_starting', 'mental_class', 'challenge_rating', 'mental_debuff_modifier', *misc],
+        [
+            "level",
+            "willpower_starting",
+            "mental_class",
+            "challenge_rating",
+            "mental_debuff_modifier",
+            *misc,
+        ],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 3) / 6)) : 0;
             setAttrs({{
                 mental: level + willpower_starting + mental_class + cr_mod + level_scaling + mental_debuff_modifier + {sum_variables(misc)},
             }});
-        """
+        """,
     )
 
+
 def encumbrance():
-    misc = get_misc_variables('encumbrance', 2)
+    misc = get_misc_variables("encumbrance", 2)
     return js_wrapper(
-        ['level', 'body_armor_encumbrance', 'strength_starting', *misc],
+        ["level", "body_armor_encumbrance", "strength_starting", *misc],
         f"""
             setAttrs({{
                 encumbrance: Math.max(
@@ -292,69 +367,73 @@ def encumbrance():
         """,
     )
 
+
 def initiative():
-    misc = get_misc_variables('initiative', 3)
+    misc = get_misc_variables("initiative", 3)
     return js_wrapper(
-        ['dexterity', 'perception', 'fatigue_penalty', *misc],
+        ["dexterity", "perception", "fatigue_penalty", *misc],
         f"""
             var scaling = Math.max(dexterity, perception);
             setAttrs({{
                 initiative: scaling + {sum_variables(misc)} - fatigue_penalty,
                 initiative_scaling: scaling,
             }});
-        """
+        """,
     )
 
+
 def base_speed():
-    misc = get_misc_variables('speed', 2)
+    misc = get_misc_variables("speed", 2)
     return js_wrapper(
-        ['level', 'speed_size', 'speed_armor', *misc],
+        ["level", "speed_size", "speed_armor", *misc],
         f"""
             setAttrs({{
                 base_speed: speed_size - speed_armor + {sum_variables(misc)}
             }});
-        """
+        """,
     )
 
+
 def skill_points():
-    misc = get_misc_variables('skill_points', 2)
+    misc = get_misc_variables("skill_points", 2)
     return js_wrapper(
-        ['level', 'intelligence_starting', *misc],
+        ["level", "intelligence_starting", *misc],
         f"""
             setAttrs({{
                 skill_points: 6 + intelligence_starting * 2 + {sum_variables(misc)}
             }});
-        """
+        """,
     )
 
+
 def fatigue_tolerance():
-    misc = get_misc_variables('fatigue_tolerance', 2)
+    misc = get_misc_variables("fatigue_tolerance", 2)
     return js_wrapper(
-        ['level', 'constitution_starting', 'willpower_starting', *misc],
+        ["level", "constitution_starting", "willpower_starting", *misc],
         f"""
             setAttrs({{
                 fatigue_tolerance: Math.max(0, 2 + constitution_starting + willpower_starting + {sum_variables(misc)}),
             }});
-        """
+        """,
     )
 
 
 def focus_penalty():
-    misc = get_misc_variables('focus_penalty', 3)
+    misc = get_misc_variables("focus_penalty", 3)
     return js_wrapper(
-        ['level', *misc],
+        ["level", *misc],
         f"""
             setAttrs({{
                 focus_penalty: 4 - ({sum_variables(misc)}),
             }});
-        """
+        """,
     )
 
 
 def hit_points():
-    misc = get_misc_variables('hit_points', 3)
+    misc = get_misc_variables("hit_points", 3)
     return js_wrapper(
-        ['level', 'constitution', 'challenge_rating', *misc],
+        ["level", "constitution", "challenge_rating", *misc],
         f"""
             var hit_points_from_level = {{
                 '-1': 9  ,
@@ -409,35 +488,37 @@ def hit_points():
                 hit_points_max: hit_points,
                 hit_points_maximum: hit_points,
             }});
-        """
+        """,
     )
+
 
 def fatigue_penalty():
     return js_wrapper(
-        ['fatigue_points', 'fatigue_tolerance'],
+        ["fatigue_points", "fatigue_tolerance"],
         f"""
             setAttrs({{
                 fatigue_penalty: Math.max(0, fatigue_points - fatigue_tolerance),
             }});
-        """
+        """,
     )
 
 
 def insight_points():
-    misc = get_misc_variables('insight_points', 2)
+    misc = get_misc_variables("insight_points", 2)
     return js_wrapper(
-        ['intelligence_starting', *misc],
+        ["intelligence_starting", *misc],
         f"""
             setAttrs({{
                 insight_points: 2 + intelligence_starting + {sum_variables(misc)}
             }});
-        """
+        """,
     )
 
+
 def magical_power():
-    misc = get_misc_variables('magical_power', 3)
+    misc = get_misc_variables("magical_power", 3)
     return js_wrapper(
-        ['willpower', 'level', 'challenge_rating', *misc],
+        ["willpower", "level", "challenge_rating", *misc],
         f"""
             var willpower_power_scaling = Math.floor(willpower / 2);
             var level_scaling = challenge_rating
@@ -457,13 +538,14 @@ def magical_power():
                 magical_power: willpower_power_scaling + level_scaling + {sum_variables(misc)},
                 willpower_power_scaling,
             }});
-        """
+        """,
     )
 
+
 def mundane_power():
-    misc = get_misc_variables('mundane_power', 3)
+    misc = get_misc_variables("mundane_power", 3)
     return js_wrapper(
-        ['strength', 'level', 'challenge_rating', *misc],
+        ["strength", "level", "challenge_rating", *misc],
         f"""
             var strength_power_scaling = Math.floor(strength / 2);
             var level_scaling = challenge_rating
@@ -483,58 +565,69 @@ def mundane_power():
                 mundane_power: strength_power_scaling + level_scaling + {sum_variables(misc)},
                 strength_power_scaling,
             }});
-        """
+        """,
     )
 
+
 def maneuvers_known():
-    misc = get_misc_variables('maneuvers_known', 3)
+    misc = get_misc_variables("maneuvers_known", 3)
     return js_wrapper(
-        ['maneuvers_known_insight_points', *misc],
+        ["maneuvers_known_insight_points", *misc],
         f"""
             setAttrs({{
                 maneuvers_known: maneuvers_known_insight_points + {sum_variables(misc)}
             }});
-        """
+        """,
     )
 
+
 def spheres_known():
-    misc = get_misc_variables('spheres_known', 3)
+    misc = get_misc_variables("spheres_known", 3)
     return js_wrapper(
-        ['spheres_known_insight_points', *misc],
+        ["spheres_known_insight_points", *misc],
         f"""
             setAttrs({{
                 spheres_known: Math.floor(spheres_known_insight_points / 2) + {sum_variables(misc)}
             }});
-        """
+        """,
     )
 
+
 def spells_known():
-    misc = get_misc_variables('spells_known', 3)
+    misc = get_misc_variables("spells_known", 3)
     return js_wrapper(
-        ['spells_known_insight_points', *misc],
+        ["spells_known_insight_points", *misc],
         f"""
             setAttrs({{
                 spells_known: spells_known_insight_points + {sum_variables(misc)}
             }});
-        """
+        """,
     )
 
+
 def blank_ability_known(i):
-    name = f'blank_ability_known_{i}'
+    name = f"blank_ability_known_{i}"
     misc = get_misc_variables(name, 3)
     return js_wrapper(
-        [f'{name}_insight_points', *misc],
+        [f"{name}_insight_points", *misc],
         f"""
             setAttrs({{
                 {name}: {name}_insight_points + {sum_variables(misc)}
             }});
-        """
+        """,
     )
 
+
 def energy_resistance():
-    misc = get_misc_variables('energy_resistance_bonus', 3)
+    misc = get_misc_variables("energy_resistance_bonus", 3)
     return js_wrapper(
-        ['willpower', 'level', 'challenge_rating', 'energy_resistance_bonus_armor', *misc],
+        [
+            "willpower",
+            "level",
+            "challenge_rating",
+            "energy_resistance_bonus_armor",
+            *misc,
+        ],
         f"""
             var resistance_from_level = {{
                 0:    0 ,
@@ -586,13 +679,20 @@ def energy_resistance():
                 energy_resistance_max: energy_resistance,
                 energy_resistance_maximum: energy_resistance,
             }});
-        """
+        """,
     )
 
+
 def physical_resistance():
-    misc = get_misc_variables('physical_resistance_bonus', 3)
+    misc = get_misc_variables("physical_resistance_bonus", 3)
     return js_wrapper(
-        ['constitution', 'level', 'challenge_rating', 'physical_resistance_bonus_armor', *misc],
+        [
+            "constitution",
+            "level",
+            "challenge_rating",
+            "physical_resistance_bonus_armor",
+            *misc,
+        ],
         f"""
             var resistance_from_level = {{
                 0:    0 ,
@@ -644,12 +744,15 @@ def physical_resistance():
                 physical_resistance_max: physical_resistance,
                 physical_resistance_maximum: physical_resistance,
             }});
-        """
+        """,
     )
 
+
 def skill_points_spent():
-    skill_names = [skill_name for skills in ATTRIBUTE_SKILLS.values() for skill_name in skills]
-    skill_names = [skill_name.lower().replace(' ', '_') for skill_name in skill_names]
+    skill_names = [
+        skill_name for skills in ATTRIBUTE_SKILLS.values() for skill_name in skills
+    ]
+    skill_names = [skill_name.lower().replace(" ", "_") for skill_name in skill_names]
     skill_points_names = [f"{skill_name}_points" for skill_name in skill_names]
 
     return js_wrapper(
@@ -660,43 +763,62 @@ def skill_points_spent():
             setAttrs({{
                 skill_points_spent,
             }});
-        """
+        """,
     )
+
 
 def standard_damage_at_power(power):
     return {
-        '-4': '1d3',
-        '-2': '1d4',
-        '0': '1d6',
-        '2': '1d8',
-        '4': '1d10',
-        '6': '2d6',
-        '8': '2d8',
-        '10': '2d10',
-        '12': '4d6',
-        '14': '4d8',
-        '16': '4d10',
-        '18': '5d10',
-        '20': '6d10',
-        '22': '7d10',
-        '24': '8d10',
+        "-4": "1d3",
+        "-2": "1d4",
+        "0": "1d6",
+        "2": "1d8",
+        "4": "1d10",
+        "6": "2d6",
+        "8": "2d8",
+        "10": "2d10",
+        "12": "4d6",
+        "14": "4d8",
+        "16": "4d10",
+        "18": "5d10",
+        "20": "6d10",
+        "22": "7d10",
+        "24": "8d10",
     }[str(power)]
+
 
 def debuffs():
     return js_wrapper(
         [
             # conditional debuffs
-            'surrounded', 'flying', 'flying_poorly', 'prone',
+            "surrounded",
+            "flying",
+            "flying_poorly",
+            "prone",
             # rank 1 debuffs
-            'dazed', 'dazzled', 'shaken', 'sickened', 'slowed',
+            "dazed",
+            "dazzled",
+            "shaken",
+            "sickened",
+            "slowed",
             # rank 2 debuffs
-            'frightened', 'nauseated', 'stunned', 'underwater',
+            "frightened",
+            "nauseated",
+            "stunned",
+            "underwater",
             # rank 3 debuffs
-            'decelerated', 'confused', 'blinded', 'disoriented', 'immobilized', 'panicked',
+            "decelerated",
+            "confused",
+            "blinded",
+            "disoriented",
+            "immobilized",
+            "panicked",
             # rank 4 debuffs
-            'asleep', 'helpless', 'paralyzed',
+            "asleep",
+            "helpless",
+            "paralyzed",
             # other calculations
-            'dexterity_starting'
+            "dexterity_starting",
         ],
         f"""
             let accuracy = 0;
@@ -787,13 +909,14 @@ def debuffs():
                 mental_debuff_modifier: mental,
                 reflex_debuff_modifier: reflex,
             }});
-        """
+        """,
     )
 
+
 def vital_rolls():
-    misc = get_misc_variables('vital_rolls', 3)
+    misc = get_misc_variables("vital_rolls", 3)
     return js_wrapper(
-        ['level', 'vital_wound_count', *misc],
+        ["level", "vital_wound_count", *misc],
         f"""
             setAttrs({{
                 vital_rolls: {sum_variables(misc)} - vital_wound_count,
