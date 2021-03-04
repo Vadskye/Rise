@@ -189,7 +189,7 @@ def textarea(attributes=None):
     if DESTINATION == 'paper' and 'value' in attributes:
         # Hide "default" attributes from the paper sheet
         attributes['value'] = ""
-    return html_tag('textarea', attributes)
+    return html_tag('textarea', attributes, attributes.get('value', None))
 
 # less simple
 

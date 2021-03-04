@@ -15,7 +15,6 @@ def create_page(destination):
             statistics_header(destination),
             attacks(destination),
             abilities(destination),
-            tracking(destination),
         ]),
     ])
 
@@ -34,6 +33,7 @@ def attributes_and_skills():
     ])
 
 def attribute_section(attribute):
+    attribute_modifier = f"(@{{{attribute}}} - @{{encumbrance}})" if attribute in ['strength', 'dexterity'] else f"@{{{attribute}}}"
     return flex_col({'class': f'{attribute} attribute-section'}, [
         flex_row({'class': 'attribute'}, [
             span(
@@ -42,7 +42,7 @@ def attribute_section(attribute):
                     {
                         'name': f'roll_{attribute}',
                         'type': 'roll',
-                        'value': f"@{{character_name}} rolls {attribute.capitalize()}: [[d10+@{{{attribute}}}]]",
+                        'value': f"@{{character_name}} rolls {attribute.capitalize()}: [[d10+{attribute_modifier}]]"
                     },
                     attribute.capitalize()
                 ),
@@ -361,34 +361,40 @@ def paper_attack():
 # source: 'magical', 'mundane', 'nondamaging'
 def attack(source):
     return flex_row({'class': 'attack'}, [
-        labeled_text_input(
-            'Name',
-            {'class': 'attack-name'},
-            {'name': 'attack0_name'},
-        ),
-        underlabel_spaced(
-            '+Acc',
-            number_input({
-                'class': 'fake-text',
-                'name': 'attack0_accuracy',
-            }),
-            {'class': 'attack-bonus'}
-        ),
-        labeled_text_input(
-            'Defense',
-            {'class': 'attack-defense'},
-            {'name': 'attack0_defense'},
-        ),
-        labeled_text_input(
-            'Dmg',
-            {'class': 'attack-dice'},
-            {'name': 'attack0_dice'},
-        ) if source != 'nondamaging' else '',
-        underlabel('Power', select({'class': 'attack-power', 'name': 'attack0_power'}, [
-            option({'value': 'full'}, 'Full'),
-            option({'value': 'half'}, 'Half'),
-            option({'value': 'none'}, 'None'),
-        ])) if source != 'nondamaging' else '',
+        flex_col({'class': 'attack-prefix'}, [
+            flex_wrapper(
+                labeled_text_input(
+                    'Name',
+                    {'class': 'attack-name'},
+                    {'name': 'attack0_name'},
+                ),
+            ),
+            flex_row({'class': 'attack-calcs'}, [
+                underlabel_spaced(
+                    '+Acc',
+                    number_input({
+                        'class': 'fake-text',
+                        'name': 'attack0_accuracy',
+                    }),
+                    {'class': 'attack-bonus'}
+                ),
+                labeled_text_input(
+                    'Defense',
+                    {'class': 'attack-defense'},
+                    {'name': 'attack0_defense'},
+                ),
+                labeled_text_input(
+                    'Dmg',
+                    {'class': 'attack-dice'},
+                    {'name': 'attack0_dice'},
+                ) if source != 'nondamaging' else '',
+                underlabel('Power', select({'class': 'attack-power', 'name': 'attack0_power'}, [
+                    option({'value': 'full'}, 'Full'),
+                    option({'value': 'half'}, 'Half'),
+                    option({'value': 'none'}, 'None'),
+                ])) if source != 'nondamaging' else '',
+            ]),
+        ]),
         labeled_textarea(
             'Effect',
             {'class': 'attack-effect'},
@@ -408,100 +414,5 @@ def attack(source):
                 )
             },
             'Attack',
-        ),
-    ])
-
-def tracking(destination):
-    if destination == 'paper':
-        return div()
-    else:
-        return flex_col({'class': 'tracking'}, [
-            flex_wrapper(div({'class': 'section-header'}, 'Attuned Effects')),
-            fieldset(
-                {'class': f'repeating_attunements'},
-                attunement(),
-            ),
-            flex_wrapper(div({'class': 'section-header'}, 'Vital Wounds')),
-            fieldset(
-                {'class': f'repeating_vitalwounds'},
-                vital_wound(),
-            ),
-            flex_wrapper(div({'class': 'section-header'}, 'Debuffs')),
-            debuffs(),
-        ])
-
-def attunement():
-    return flex_row({'class': 'attunement'}, [
-        labeled_text_input(
-            'Name',
-            {'class': 'attunement-name'},
-            {'name': 'attunement_name'},
-        ),
-        labeled_text_input(
-            'Effect',
-            {'class': 'attunement-effect'},
-            {'name': 'attunement_effect'},
-        ),
-        underlabeled_checkbox(
-            'Active?',
-            None,
-            {'class': 'attunement-active', 'name': 'attunement_active'},
-        ),
-    ])
-
-def vital_wound():
-    return flex_row({'class': 'vital-wound'}, [
-        underlabel_spaced(
-            'Vital Roll',
-            number_input({'class': 'fake-text', 'name': 'vital_wound_roll'}),
-            {'class': 'vital-wound-roll'}
-        ),
-        labeled_text_input(
-            'Effect',
-            {'class': 'vital-wound-effect'},
-            {'name': 'vital_wound_effect'},
-        ),
-    ])
-
-def debuffs():
-    return flex_col({'class': 'debuffs'}, [
-        flex_row([
-            debuff('surrounded'),
-            debuff('flying'),
-            debuff('flying poorly'),
-            debuff('prone', False),
-        ]),
-        flex_row([
-            debuff('dazed'),
-            debuff('dazzled'),
-            debuff('shaken'),
-            debuff('sickened'),
-            debuff('slowed'),
-        ]),
-        flex_row([
-            debuff('frightened'),
-            debuff('nauseated'),
-            debuff('stunned'),
-            debuff('underwater'),
-        ]),
-        flex_row([
-            debuff('blinded', False),
-            debuff('confused', False),
-            debuff('decelerated'),
-            debuff('disoriented', False),
-            debuff('immobilized', False),
-            debuff('panicked'),
-        ]),
-        flex_row([
-            debuff('helpless'),
-        ]),
-    ])
-
-def debuff(name, representable=True):
-    return label({'class': 'debuff-active-label'}, [
-        checkbox({'name': name.replace(' ', '_')}),
-        span(
-            {'class': 'representable-debuff' if representable else 'unrepresentable-debuff'},
-            name.capitalize() + '?'
         ),
     ])

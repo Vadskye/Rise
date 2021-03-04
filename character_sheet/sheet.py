@@ -9,7 +9,7 @@ import header_bar
 import sheet_worker
 import third_page
 import reference_page
-import ability_cards as generate_ability_cards
+import status_page
 from subprocess import call
 import sys
 
@@ -20,9 +20,8 @@ except IndexError:
     pass
 
 @click.command()
-@click.option('-a', '--ability-cards/--no-ability-cards', default=False)
 @click.option('-d', '--destination', default='paper')
-def main(ability_cards, destination):
+def main(destination):
 
     cgi.DESTINATION = destination
 
@@ -57,15 +56,14 @@ def main(ability_cards, destination):
                 debug_html_wrapper(reference_page.create_page(), destination),
             ]) + '\n')
 
-        if ability_cards:
-            with open('ability_cards.html', 'w') as fh:
-                fh.write(''.join([
-                    debug_stylesheets('ability_cards', destination),
-                    debug_html_wrapper(generate_ability_cards.create_page(), destination),
-                ]) + '\n')
+        with open('status_page.html', 'w') as fh:
+            fh.write(''.join([
+                debug_stylesheets('status_page', destination),
+                debug_html_wrapper(status_page.create_page(), destination),
+            ]) + '\n')
 
         # Compile LESS
-        call(['lessc', 'ability_cards.less', 'ability_cards.css'])
+        call(['lessc', 'status_page.less', 'status_page.css'])
         call(['lessc', 'first_page.less', 'first_page.css'])
         call(['lessc', 'second_page.less', 'second_page.css'])
         call(['lessc', 'third_page.less', 'third_page.css'])
@@ -81,19 +79,20 @@ def main(ability_cards, destination):
                 first_page.create_page(cgi.DESTINATION),
                 second_page.create_page(cgi.DESTINATION),
                 third_page.create_page(),
+                status_page.create_page(),
                 reference_page.create_page(),
             ]))
 
         class_pattern = re.compile(r'\.([a-z\-]+)\b')
         with open('roll20.less', 'w') as output_file:
-            for filename in ['sheet', 'first_page', 'second_page', 'third_page', 'roll20_custom', 'reference_page']:
+            for filename in ['sheet', 'first_page', 'second_page', 'third_page', 'roll20_custom', 'reference_page', 'status_page']:
                 with open(filename + '.less', 'r') as input_file:
-                    if filename in ['first_page', 'second_page', 'third_page', 'reference_page']:
+                    if filename in ['first_page', 'second_page', 'third_page', 'reference_page', 'status_page']:
                         output_file.write(f".sheet-{filename.replace('_', '-')} {{\n")
                     for line in input_file:
                         line = class_pattern.sub(r'.sheet-\1', line)
                         output_file.write(line)
-                    if filename in ['first_page', 'second_page', 'third_page', 'reference_page']:
+                    if filename in ['first_page', 'second_page', 'third_page', 'reference_page', 'status_page']:
                         output_file.write("\n}")
                 output_file.write('\n\n')
 

@@ -1,6 +1,6 @@
 from cgi_simple import (
     div, ensure_valid_attributes_and_contents, flex_col, flex_row, flex_wrapper,
-    labeled_text_input, text_input, underlabel, number_input
+    labeled_text_input, text_input, underlabel, number_input, fieldset, textarea, labeled_textarea
 )
 
 def create_page():
@@ -43,19 +43,16 @@ def feats_summary():
     ])
 
 def abilities_summary():
-    return flex_col({'class': 'abilities'}, [
-        flex_wrapper(div({'class': 'section-header'}, 'Abilities')),
-        *[
-            flex_row([
-                labeled_text_input('Name', {'class': 'ability-name'}, input_attributes={
-                    'name': f'ability_name_{i}',
-                }),
-                labeled_text_input('Effects', {'class': 'ability-effects'}, input_attributes={
-                    'name': f'ability_effects_{i}',
-                }),
-            ])
-            for i in range(10)
-        ],
+    return div({'class': 'abilities'}, [
+        div({'class': 'section-header'}, 'Passive Abilities'),
+        fieldset({'class': 'repeating_passiveabilities'}, flex_row([
+            labeled_text_input('Name', {'class': 'ability-name'}, input_attributes={
+                'name': f'ability_name',
+            }),
+            labeled_text_input('Effects', {'class': 'ability-effects'}, input_attributes={
+                'name': f'ability_effects',
+            }),
+        ])),
     ])
 
 def feat_row(i):
@@ -74,15 +71,12 @@ def subsection_header(attributes=None, contents=None):
     return flex_col(attributes, contents)
 
 def equipment():
-    return flex_col({'class': 'equipment'}, [
-        flex_wrapper(div({'class': 'section-header'}, 'Equipment')),
-        *[
-            flex_row([
-                labeled_text_input('Name', {'class': 'equipment-name'}, {'name': f'equipment_name_{i}'}),
-                labeled_text_input('Effects', {'class': 'equipment-effects'}, {'name': f'equipment_effects_{i}'}),
-            ])
-            for i in range(6)
-        ],
+    return div({'class': 'equipment'}, [
+        div({'class': 'section-header'}, 'Equipment'),
+        fieldset({'class': 'repeating_equipment'}, flex_row([
+            labeled_text_input('Name', {'class': 'equipment-name'}, {'name': f'equipment_name'}),
+            labeled_text_input('Effects', {'class': 'equipment-effects'}, {'name': f'equipment_effects'}),
+        ])),
     ])
 
 def archetypes():
@@ -101,10 +95,8 @@ def archetypes():
 
 def inventory():
     return div({'class': 'inventory'}, [
-        flex_wrapper(div({'class': 'section-header'}, 'Inventory')),
-        *[
-            text_input({'name': f"inventory_{i}"}) for i in range(7)
-        ]
+        div({'class': 'section-header'}, 'Inventory'),
+        fieldset({'class': 'repeating_inventory'}, text_input({'name': f"inventory"}))
     ])
 
 def misc_equipment(body_slot, body_slot_html=None):
@@ -117,7 +109,7 @@ def misc_equipment(body_slot, body_slot_html=None):
     ])
 
 def personality():
-    return flex_col({'class': 'personality'}, [
+    return div([
         div({'class': 'section-header'}, 'Personality and Background'),
-        "".join([div(text_input({'name': f'personality_and_background_{i}'})) for i in range(4)]),
+        textarea({'class': 'personality', 'name': 'personality_and_background'}),
     ])
