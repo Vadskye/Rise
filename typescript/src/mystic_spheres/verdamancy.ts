@@ -441,7 +441,7 @@ export const verdamancy: MysticSphere = {
         Long, thin vines continuously grow and writhe on your body.
         At the end of each round, you may choose to cause the vines to extend out onto the ground in a \\smallarea radius around you.
         When you do, that area becomes covered in \\glossterm{light undergrowth}.
-        Whenever you move, the vines retreat back to your body.
+        Whenever your location changes by any means, the vines retreat back to your body.
         That prevents the vines from impeding your movement, though they do impede the movement of any other creatures that move simultaneously.
       `,
       rank: 4,
