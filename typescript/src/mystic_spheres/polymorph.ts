@@ -578,7 +578,8 @@ export const polymorph: MysticSphere = {
         If the the subject gains a \\glossterm{vital wound} from this damage, the condition ends.
 
         This condition can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
-        The \\glossterm{difficulty rating} of the check is equal to 10.`,
+        The \\glossterm{difficulty rating} of the check is equal to 10.
+        `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\medrange.
         `,

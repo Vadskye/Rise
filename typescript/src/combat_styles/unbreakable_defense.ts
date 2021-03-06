@@ -136,5 +136,44 @@ export const unbreakableDefense: CombatStyle = {
       rank: 3,
       type: "Instant",
     },
+
+    {
+      name: "Bracing Strike",
+
+      effect: `
+        Make a strike.
+        In addition, you gain a +1 bonus to \\glossterm{vital rolls} until the end of the round.
+        This bonus is a \\glossterm{Swift} effect, so it affects any vital wounds you gain during the current phase.
+      `,
+      rank: 1,
+      tags: ["\\glossterm{Swift} (see text)"],
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Bracing Strike",
+
+      functionsLike: {
+        abilityType: "maneuver",
+        exceptThat: "the bonus increases to +2.",
+        name: "Bracing Strike",
+      },
+      rank: 3,
+      tags: ["\\glossterm{Swift} (see text)"],
+      type: "Duration",
+    },
+
+    {
+      name: "Supreme Bracing Strike",
+
+      functionsLike: {
+        abilityType: "maneuver",
+        exceptThat: "the bonus increases to +3.",
+        name: "Bracing Strike",
+      },
+      rank: 5,
+      tags: ["\\glossterm{Swift} (see text)"],
+      type: "Duration",
+    },
   ],
 };
