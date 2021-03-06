@@ -137,7 +137,7 @@
 
             Long weapons can held using a different grip to strike nearby foes.
             This is called ``short hafting''.
-            While short hafting a Long weapon, you ignore the weapon's Long property, but you take a \minus1 penalty to accuracy with it.
+            While short hafting a Long weapon, you ignore the weapon's Long property.
             You can change your grip as a \glossterm{free action} that requires the hand or hands used to hold the weapon.
             As normal, you cannot combine that action with other actions using the same hands, so you cannot change your grip and attack with the weapon in the same phase.
             However, you can change your grip during the \glossterm{action phase} and then attack with your new grip during the \glossterm{delayed action phase}.
@@ -145,13 +145,6 @@
             \parhead{Parrying} If a creature misses you with a \glossterm{strike} while you wield this weapon, you gain a \plus2 bonus to \glossterm{accuracy} with strikes using this weapon against that creature during the next round.
             \parhead{Projectile} This weapon fires projectiles at range. Projectile weapons have a \glossterm{range increment} listed in their description, which indicates the distance they can be easily fired. Projectile weapons must be reloaded. The time required to reload a projectile weapon is given in the weapon description.
             Unless otherwise noted, projectile weapons cannot be used while \prone.
-            \parhead{Reach}\label{Reach Weapon} This weapon can be held in an extended grip to strike more distant creatures.
-            This is called ``reaching''.
-            While reaching with a Reach weapon, you can attack enemies 5 feet farther away than you would otherwise be able to attack.
-            However, you take a \minus1 penalty to \glossterm{accuracy} with the weapon.
-            You can change your grip as a \glossterm{free action} that requires the hand or hands used to hold the weapon.
-            As normal, you cannot combine that action with other actions using the same hands, so you cannot change your grip and attack with the weapon in the same phase.
-            However, you can change your grip during the \glossterm{action phase} and then attack with your new grip during the \glossterm{delayed action phase}.
             \parhead{Stealthy}
             A stealthy weapon is smaller, quieter, or otherwise less noticeable than most weapons.
             You only take a \minus5 penalty to Stealth when trying to conceal strikes with a stealthy weapon instead of the normal \minus10 or \minus20 penalty for concealing a strike (see \pcref{Stealth}).
@@ -208,12 +201,12 @@
                 \tind Greataxe                     & Heavy  & \plus0  & 2d6    & Slashing                 & 20 gp   & 12 lb.  & Sweeping (1)                    \\
                 \tind Handaxe                      & Light  & \plus2  & 1d6    & Slashing                 & 4 gp    & 2 lb.   & Thrown (20 ft.)               \\
                 \tind Pollaxe                      & Heavy  & \plus0  & 1d10   & Piercing or slashing     & 15 gp   & 10 lb.  & Impact, Tripping               \\
-                \tind Shepherd's axe               & Light  & \plus2  & 1d6    & Bludgeoning or slashing  & 6 gp    & 3 lb.   & Reach               \\
+                \tind Shepherd's axe               & Light  & \plus2  & 1d6    & Bludgeoning or slashing  & 6 gp    & 3 lb.   & Long               \\
 
                 Blades                             &        &         &        &                          &         &         &                                 \\
                 \tind Broadsword                   & Medium & \plus0  & 1d8    & Slashing                 & 15 gp   & 4 lb.   & Sweeping (1), Versatile Grip    \\
                 \tind Dagger                       & Light  & \plus2  & 1d4    & Piercing or slashing     & 2 gp    & 1 lb.   & Compact, Thrown (10 ft.), Stealthy      \\
-                \tind Estoc                        & Medium & \plus0  & 1d8    & Piercing                 & 20 gp   & 4 lb.   & Reach, Versatile Grip           \\
+                \tind Estoc                        & Medium & \plus0  & 1d8    & Piercing                 & 20 gp   & 4 lb.   & Long, Versatile Grip           \\
                 \tind Greatsword                   & Heavy  & \plus0  & 1d10   & Slashing                 & 25 gp   & 8 lb.   & Sweeping (2)                    \\
                 \tind Parrying dagger              & Light  & \plus2  & 1d6    & Piercing                 & 10 gp   & 2 lb.   & Parrying                        \\
                 \tind Rapier                       & Light  & \plus2  & 1d6    & Piercing                 & 20 gp   & 2 lb.   & Disarming                       \\
@@ -263,7 +256,7 @@
                 \tind Jitte                        & Light  & \plus2  & 1d6    & Piercing                 & 2 gp    & 2 lb.   & Disarming                       \\
                 \tind Kama                         & Light  & \plus2  & 1d6    & Slashing                 & 2 gp    & 2 lb.   & Tripping                        \\
                 \tind Nunchaku                     & Light  & \plus0  & 1d6    & Bludgeoning              & 2 gp    & 2 lb.   & Disarming, Subdual, Tripping    \\
-                \tind Quarterstaff                 & Heavy  & \plus1  & 1d8    & Bludgeoning              & \tdash  & 4 lb.   & Reach                           \\
+                \tind Quarterstaff                 & Heavy  & \plus1  & 1d8    & Bludgeoning              & \tdash  & 4 lb.   & Long                           \\
                 \tind Sai                          & Light  & \plus1  & 1d6    & Piercing or bludgeoning  & 1 gp    & 1 lb.   & Disarming, Parrying             \\
                 \tind Shuriken (5)                 & Light  & \plus2  & 1d6    & Piercing and slashing    & 1 gp    & 1/2 lb. & Ammunition, Thrown (10 ft.), Stealthy     \\
 
@@ -273,24 +266,24 @@
                 \tind Halberd                      & Heavy  & \plus0  & 1d10   & Piercing or slashing     & 10 gp   & 12 lb.  & Long, Tripping                  \\
                 \tind Longhammer                   & Heavy  & \plus0  & 1d10   & Bludgeoning              & 10 gp   & 12 lb.  & Impact, Long                    \\
                 \tind Pollaxe                      & Heavy  & \plus0  & 1d10   & Piercing or slashing     & 15 gp   & 10 lb.  & Impact, Tripping               \\
-                \tind Quarterstaff                 & Heavy  & \plus1  & 1d8    & Bludgeoning              & \tdash  & 4 lb.   & Reach                           \\
+                \tind Quarterstaff                 & Heavy  & \plus1  & 1d8    & Bludgeoning              & \tdash  & 4 lb.   & Long                           \\
                 \tind Scythe                       & Heavy  & \plus0  & 1d10   & Slashing                 & 18 gp   & 10 lb.  & Sweeping (2)                    \\
-                \tind Swordstaff                   & Heavy  & \plus0  & 1d10   & Slashing                 & 12 gp   & 11 lb.  & Keen, Reach                     \\
+                \tind Swordstaff                   & Heavy  & \plus0  & 1d10   & Slashing                 & 12 gp   & 11 lb.  & Keen, Long                     \\
 
                 Simple weapons                     &        &         &        &                          &         &         &                                 \\
                 \tind Club                         & Medium & \plus0  & 1d8    & Bludgeoning              & \tdash  & 3 lb.   & Versatile Grip                  \\
                 \tind Dagger                       & Light  & \plus2  & 1d4    & Piercing or slashing     & 2 gp    & 1 lb.   & Compact, Stealthy, Thrown (10 ft.)        \\
                 \tind Light crossbow\fn{2}         & Medium & \plus0  & 1d8    & \tdash                 & 40 gp   & 4 lb.   & Projectile (60 ft.)             \\
                 \tind Crossbow bolts (10)          & \tdash & \plus0  & \tdash & Piercing                   & 1 gp    & 1 lb.   & Ammunition                      \\
-                \tind Quarterstaff                 & Heavy  & \plus1  & 1d8    & Bludgeoning              & \tdash  & 4 lb.   & Reach                           \\
+                \tind Quarterstaff                 & Heavy  & \plus1  & 1d8    & Bludgeoning              & \tdash  & 4 lb.   & Long                           \\
 
                 Spears                             &        &         &        &                          &         &         &                                 \\
-                \tind Greatspear                   & Heavy  & \plus0  & 2d6    & Piercing                 & 15 gp   & 12 lb.  & Reach                           \\
+                \tind Greatspear                   & Heavy  & \plus0  & 2d6    & Piercing                 & 15 gp   & 12 lb.  & Long                           \\
                 \tind Javelin                      & Medium & \plus1  & 1d6    & Piercing                 & 1 gp    & 2 lb.   & Thrown (30 ft.)                 \\
                 \tind Lance                        & Heavy  & \plus0  & 1d10   & Piercing                 & 10 gp   & 10 lb.  & Long, Mounted                   \\
                 \tind Longspear                    & Heavy  & \plus0  & 2d6    & Piercing                 & 5 gp    & 9 lb.   & Long                            \\
                 \tind Ranseur                      & Heavy  & \plus0  & 1d10   & Piercing                 & 10 gp   & 12 lb.  & Disarming, Long                 \\
-                \tind Partisan                     & Heavy  & \plus0  & 1d10   & Piercing                 & 10 gp   & 8 lb.   & Parrying, Reach                 \\
+                \tind Partisan                     & Heavy  & \plus0  & 1d10   & Piercing                 & 10 gp   & 8 lb.   & Parrying, Long                 \\
                 \tind Spear\fn{2}                  & Medium & \plus0  & 1d8    & Piercing                 & 2 gp    & 6 lb.   & Thrown (20 ft.), Versatile Grip \\
 
                 Thrown weapons                     &        &         &        &                          &         &         &                                 \\
@@ -338,7 +331,7 @@
                 \tind Repeating light crossbow\fn{2} & Medium  & \plus0 & 1d8       & \tdash             & 250 gp & 6 lb.  & Projectile (60 ft.)             \\
                 \tind Repeating bolts (5)            & \tdash  & \plus0 & \tdash    & Piercing               & 1 gp   & 1 lb.  & Ammunition                      \\
                 Flexible weapons                     &         &        &           &                      &        &        &                                 \\
-                \tind Three-section staff            & Heavy   & \plus0 & 1d10      & Bludgeoning             & 40 gp  & 6 lb.  & Disarming, Reach, Tripping      \\
+                \tind Three-section staff            & Heavy   & \plus0 & 1d10      & Bludgeoning             & 40 gp  & 6 lb.  & Disarming, Long, Tripping      \\
                 Headed weapons                       &         &        &           &                      &        &        &                                 \\
                 \tind Heavy pick                     & Heavy   & \plus0 & 2d6       & Piercing             & 40 gp  & 10 lb. & Keen, Impact                    \\
                 Monk weapons                         &         &        &           &                      &        &        &                                 \\
@@ -347,7 +340,7 @@
                 \tind War scythe                     & Heavy   & \plus0 & 2d6       & Slashing or piercing & 35 gp  & 14 lb. & Sweeping (2)                    \\
                 Simple weapons                       &         &        &           &                      &        &        &                                 \\
                 Spear                                &         &        &           &                      &        &        &                                 \\
-                \tind Pike\fn{2}                     & Heavy   & \plus0 & 2d6       & Piercing             & 15 gp. & 10 lb. & Long, Reach                     \\
+                \tind Pike\fn{2}                     & Heavy   & \plus0 & 2d6       & Piercing             & 15 gp. & 10 lb. & Long                     \\
                 Thrown weapons                       &         &        &           &                      &        &        &                                 \\
                 \tind Bolas                          & Light   & \plus2 & 1d4       & Bludgeoning          & 5 gp   & 2 lb.  & Thrown (10 ft.), Tripping       \\
                 \tind Dwarven throwing axe           & Light   & \plus2 & 1d6       & Slashing             & 8 gp   & 3 lb.  & Impact, Thrown (20 ft.)       \\
@@ -417,7 +410,8 @@
         \par A netted creature can escape with a \glossterm{difficulty rating} 10 Flexibility check (normally a standard action). The net has (2/10) and can be burst with a \glossterm{difficulty rating} 10 Strength check as a standard action.
         \par A net is useful only against creatures within one size category of you.
         \par A net must be folded to be thrown effectively. The first time you throw your net in a fight, you make a normal ranged touch attack roll. After the net is unfolded, you take a \minus4 penalty to accuracy with it. It takes 2 standard actions for a proficient user to fold a net and twice that many for a nonproficient one to do so.
-        \parhead{Pike} Unlike other Long weapons, a pike cannot be short hafted (see \pcref{Long Weapon}).
+        \parhead{Pike} A pike's reach starts 5 feet away from your body, even when it is short hafted.
+        This allows it to reach foes 15 feet away from you while you are not short hafting it, but makes it impossible to attack an adjacent foe regardless of your grip.
         \parhead{Shield, Standard} You can bash with a shield in addition to defending with it. See Armor for details.
         \parhead{Shortbow} You need both hands to fire a bow, regardless of its size. One hand is free when not firing the bow. Loading a bow is a free action that requires one \glossterm{free hand} while holding the shortbow in another hand.
         \parhead{Sling} You can fire, but not load, a sling with one hand. Loading a sling is a free action that requires both hands.
