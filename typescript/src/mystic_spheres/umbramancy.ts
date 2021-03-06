@@ -440,7 +440,7 @@ export const umbramancy: MysticSphere = {
       name: "Wall of Darkness",
 
       effect: `
-        You create a wall of darkness in a 15 ft.\\ high, \\medarea long line within \\medrange.
+        You create a wall of darkness in a 15 ft.\\ high, \\medarealong line within \\medrange.
         If you create the wall within a space too small to hold it, it fills as much of the space as possible, starting from the middle of the chosen space.
         This can allow you to completely block off small tunnels.
         The wall is visible as a solid block of darkness that blocks sight.
@@ -449,9 +449,9 @@ export const umbramancy: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: `The area increases to a \\largearea long line.`,
-        5: `The area increases to a 30 ft.\\ high \\hugearea long line.`,
-        7: `The area increases to a 60 ft.\\ high, \\gargarea long line.`,
+        3: `The area increases to a \\largearealong line.`,
+        5: `The area increases to a 30 ft.\\ high \\hugearealong line.`,
+        7: `The area increases to a 60 ft.\\ high, \\gargarealong line.`,
       },
       tags: ["Sensation"],
       type: "Sustain (minor)",

@@ -130,7 +130,7 @@ export const summoning: MysticSphere = {
       attack: {
         hit: `Each subject takes 1d8 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
-        Make an attack vs. Reflex against everything on solid ground in a \\areamed long, 5 ft. wide line from you.
+        Make an attack vs. Reflex against everything on solid ground in a \\medarealong, 5 ft. wide line from you.
         You summon a Medium creature that tramples through the area before disappearing.
         The length of this spell's area is affected by \\glossterm{difficult terrain} and similar movement impediments.
         `,
@@ -148,7 +148,7 @@ export const summoning: MysticSphere = {
         glance: `Half damage.`,
         hit: `Each subject takes 2d6 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
-          Make an attack vs. Reflex against everythong on solid ground in a \\largearea long, 10 ft. wide line from you.
+          Make an attack vs. Reflex against everythong on solid ground in a \\largearealong, 10 ft. wide line from you.
           You summon a Large creature that tramples through the area before disappearing.
           The length of this spell's area is affected by \\glossterm{difficult terrain} and similar movement impediments.
         `,
@@ -166,7 +166,7 @@ export const summoning: MysticSphere = {
         glance: `Half damage.`,
         hit: `Each subject takes 4d6 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
-          Make an attack vs. Reflex against everything on solid ground in a \\hugearea long, 20 ft. wide line from you.
+          Make an attack vs. Reflex against everything on solid ground in a \\hugearealong, 20 ft. wide line from you.
           You summon a horde of creatures that trample through the area before disappearing.
           The length of this spell's area is affected by \\glossterm{difficult terrain} and similar movement impediments.
         `,

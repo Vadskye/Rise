@@ -326,7 +326,7 @@ export const aeromancy: MysticSphere = {
           Once a subject leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
         targeting: `
-          Make an attack vs. Fortitude against everything in a \\largearea long, 5 ft. wide line from you.
+          Make an attack vs. Fortitude against everything in a \\largearealong, 5 ft. wide line from you.
         `,
       },
       // effect: '',
@@ -348,7 +348,7 @@ export const aeromancy: MysticSphere = {
           Once a subject leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
         targeting: `
-          Make an attack vs. Fortitude against everything in a \\hugearea long, 10 ft. wide line from you.
+          Make an attack vs. Fortitude against everything in a \\hugearealong, 10 ft. wide line from you.
         `,
       },
       // narrative: '',

@@ -57,7 +57,7 @@ export const barrier: MysticSphere = {
       },
       rank: 4,
       scaling: {
-        6: `The maximum area increases to a \\medarea long line, and the hit points of each square increase to 16.`,
+        6: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 16.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -76,8 +76,8 @@ export const barrier: MysticSphere = {
       },
       rank: 2,
       scaling: {
-        4: `The maximum area increases to a \\medarea long line, and the hit points of each square increase to 8.`,
-        6: `The maximum area increases to a \\largearea long line, and the hit points of each square increase to 16.`,
+        4: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 8.`,
+        6: `The maximum area increases to a \\largearealong line, and the hit points of each square increase to 16.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -99,8 +99,8 @@ export const barrier: MysticSphere = {
       },
       rank: 2,
       scaling: {
-        4: `The maximum area increases to a \\medarea long line, and the hit points of each square increase to 8.`,
-        6: `The maximum area increases to a \\largearea long line, and the hit points of each square increase to 16.`,
+        4: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 8.`,
+        6: `The maximum area increases to a \\largearealong line, and the hit points of each square increase to 16.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -121,9 +121,9 @@ export const barrier: MysticSphere = {
       },
       rank: 3,
       scaling: {
-        5: `The maximum area increases to a \\medarea long line, and the hit points of each square increase to 16.
+        5: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 16.
             In addition, the damage increases to 2d8 plus your \\glossterm{power}.`,
-        7: `The maximum area increases to a \\largearea long line, and the hit points of each square increase to 32.
+        7: `The maximum area increases to a \\largearealong line, and the hit points of each square increase to 32.
             In addition, the damage increases to 2d10 plus your \\glossterm{power}.`,
       },
       tags: ["Manifestation"],
@@ -147,9 +147,9 @@ export const barrier: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: `The maximum area increases to a \\medarea long line, and the hit points of each square increase to 8.`,
-        5: `The maximum area increases to a \\largearea long line, and the hit points of each square increase to 16.`,
-        7: `The maximum area increases to a \\hugearea long line, and the hit points of each square increase to 32.`,
+        3: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 8.`,
+        5: `The maximum area increases to a \\largearealong line, and the hit points of each square increase to 16.`,
+        7: `The maximum area increases to a \\hugearealong line, and the hit points of each square increase to 32.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -166,8 +166,8 @@ export const barrier: MysticSphere = {
       },
       rank: 2,
       scaling: {
-        4: `The maximum area increases to a \\medarea long line, and the hit points of each square increase to 8.`,
-        6: `The maximum area increases to a \\largearea long line, and the hit points of each square increase to 16.`,
+        4: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 8.`,
+        6: `The maximum area increases to a \\largearealong line, and the hit points of each square increase to 16.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -271,7 +271,7 @@ export const barrier: MysticSphere = {
       },
       rank: 5,
       scaling: {
-        7: `The maximum area increases to a \\medarea long line, and the hit points of each square increase to 32.`,
+        7: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 32.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -281,14 +281,14 @@ export const barrier: MysticSphere = {
       name: "Wall of Energy Impedance",
 
       effect: `
-        You create a wall of magical energy in a 15 ft.\\ high, \\smallarea long line within \\medrange.
+        You create a wall of magical energy in a 15 ft.\\ high, \\smallarealong line within \\medrange.
         The wall is visible as a shimmering magical membrane that does not block sight.
         It does not impede passage for objects or creatures, but any ability that deals \\glossterm{energy damage} treats the wall as an impassable barrier.
         Each 5-ft.\\ square of wall has \\glossterm{hit points} equal to twice your \\glossterm{power}.
         `,
       rank: 3,
       scaling: {
-        5: `The area increases to a \\medarea long line.`,
+        5: `The area increases to a \\medarealong line.`,
         7: `The \\glossterm{hit points} of each 5-ft.\\ square increase to be equal to three times your \\glossterm{power}.`,
       },
       tags: ["Manifestation"],
@@ -308,7 +308,7 @@ export const barrier: MysticSphere = {
       },
       rank: 4,
       scaling: {
-        6: `The maximum area increases to a \\medarea long line, and the hit points of each square increase to 16.`,
+        6: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 16.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",

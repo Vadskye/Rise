@@ -87,7 +87,7 @@ export const telekinesis: MysticSphere = {
       attack: {
         hit: `Each subject takes 1d8 + half \\glossterm{power} piercing damage.`,
         targeting: `
-        Make an attack vs. Armor against everything in a \\medarea long, 5 ft. wide line from you.
+        Make an attack vs. Armor against everything in a \\medarealong, 5 ft. wide line from you.
         `,
       },
 
@@ -260,7 +260,7 @@ export const telekinesis: MysticSphere = {
       rank: 1,
       scaling: {
         3: `The \\glossterm{hit points} of each 5-ft.\\ square increases to be equal to three times your \\glossterm{power}.`,
-        5: `The area increases to a \\medarea long line.`,
+        5: `The area increases to a \\medarealong line.`,
         7: `The \\glossterm{hit points} of each 5-ft.\\ square increases to be equal to four times your \\glossterm{power}.`,
       },
       tags: ["Manifestation"],
