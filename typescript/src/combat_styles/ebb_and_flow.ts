@@ -15,8 +15,7 @@ export const ebbAndFlow: CombatStyle = {
 
         During the \\glossterm{delayed action phase}, make a melee \\glossterm{strike}.
         You gain a +2 bonus to \\glossterm{accuracy} with the strike against each creature that attacked you during the action phase of this round.
-        `,
-
+      `,
       rank: 2,
       type: "Instant",
     },
@@ -47,8 +46,7 @@ export const ebbAndFlow: CombatStyle = {
         During the \\glossterm{delayed action phase}, make two melee \\glossterm{strikes}.
         Your \\glossterm{power} with both strikes is halved.
         You take a -4 penalty to \\glossterm{accuracy} with the strikes against any target that did not attack you during the action phase of this round.
-        `,
-
+      `,
       rank: 6,
       type: "Instant",
     },
@@ -58,9 +56,8 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You gain a +2 bonus to \\glossterm{accuracy} with the strike against each subject that you missed with a \\glossterm{strike} last round.
-        `,
-
+        You gain a +2 bonus to \\glossterm{accuracy} with the strike against each creature that you missed with a \\glossterm{strike} last round.
+      `,
       rank: 2,
       type: "Instant",
     },
@@ -71,9 +68,8 @@ export const ebbAndFlow: CombatStyle = {
       effect: `
         Make two \\glossterm{strikes}.
         Your \\glossterm{power} with both strikes is halved.
-        You take a -4 penalty to accuracy with the strikes against all targets except creatures that you missed with a \\glossterm{strike} last round.
-        `,
-
+        You take a -4 penalty to accuracy with the strikes against anything other than creatures that you missed with a \\glossterm{strike} last round.
+      `,
       rank: 6,
       type: "Instant",
     },
@@ -86,8 +82,7 @@ export const ebbAndFlow: CombatStyle = {
         The attack is made against each subject's Reflex defense instead of its Armor defense.
         The strike deals minimum damage, and your \\glossterm{power} is halved.
         If a creature takes damage from the strike, it takes a -2 penalty to Armor defense until the end of the next round.
-        `,
-
+      `,
       rank: 1,
       type: "Duration",
     },
@@ -102,12 +97,13 @@ export const ebbAndFlow: CombatStyle = {
         % A static damage bonus is more complex to write down, but much easier
         % to actually make attacks with.
         For each previous consecutive round that you used this ability, you gain a +1 bonus to damage with the strike, up to a maximum of +3.
-
-        \\rankline
-        The damage bonus for each consecutive round increases by 1 for each rank beyond 1.
-        In addition, the maximum damage bonus increases by 3 for each rank beyond 1.
+      `,
+      scaling: {
+        special: `
+          The damage bonus for each consecutive round increases by 1 for each rank beyond 1.
+          In addition, the maximum damage bonus increases by 3 for each rank beyond 1.
         `,
-
+      },
       rank: 1,
       type: "Instant",
     },
@@ -119,8 +115,7 @@ export const ebbAndFlow: CombatStyle = {
         Make a melee \\glossterm{strike}.
         You gain a +1d bonus to damage with the strike.
         During the next round, you take a -2 penalty to all defenses.
-        `,
-
+      `,
       rank: 2,
       type: "Instant",
     },
@@ -132,8 +127,7 @@ export const ebbAndFlow: CombatStyle = {
         Make two melee \\glossterm{strikes}.
         You take a -2d penalty to damage with both strikes, and your \\glossterm{power} is \\glossterm{halved}.
         During the next round, you take a -2 penalty to all defenses.
-        `,
-
+      `,
       rank: 5,
       type: "Instant",
     },
@@ -144,8 +138,7 @@ export const ebbAndFlow: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         If your movement during the \\glossterm{movement phase} consisted entirely of moving at least 20 feet in a straight line towards your target, you gain a +1d bonus to damage with the strike.
-        `,
-
+      `,
       rank: 1,
       type: "Instant",
     },
@@ -156,8 +149,7 @@ export const ebbAndFlow: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         If your movement during the \\glossterm{movement phase} consisted entirely of moving at least 20 feet in a straight line towards your target, you gain a +3d bonus to damage with the strike.
-        `,
-
+      `,
       rank: 5,
       type: "Instant",
     },
@@ -168,8 +160,7 @@ export const ebbAndFlow: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} with a +2 accuracy bonus.
         You take a -2d penalty to damage with the strike.
-        `,
-
+      `,
       rank: 1,
       type: "Instant",
     },
@@ -213,17 +204,17 @@ export const ebbAndFlow: CombatStyle = {
     {
       name: "Focused Strike",
 
-      // original targets: One creature within \shortrange
       effect: `
         You can only use this ability during the \\glossterm{action phase}.
-        During that phase, you concentrate on your target.
+        Choose one creature within \\shortrange.
+        During the action phase, you concentrate on your target.
         You only suffer a \\glossterm{focus penalty} for this attack during the action phase.
 
         During the \\glossterm{delayed action phase}, you can make a melee \\glossterm{strike} against the subject.
-        Your \\glossterm{power} with the strike is halved.
+        You take a -1d penalty to damage with the strike.
         The attack roll \\glossterm{explodes} regardless of what you roll.
-        `,
-
+      `,
+      focus: true,
       rank: 2,
       type: "Instant",
     },
@@ -254,6 +245,17 @@ export const ebbAndFlow: CombatStyle = {
         `,
 
       rank: 2,
+      type: "Instant",
+    },
+
+    {
+      name: "Deathblow",
+
+      effect: `
+        Make a \\glossterm{strike} with a +2d bonus to damage.
+        If a target has any \\glossterm{resistance} against the strike, this strike deals no damage to that target.
+      `,
+      rank: 3,
       type: "Instant",
     },
   ],
