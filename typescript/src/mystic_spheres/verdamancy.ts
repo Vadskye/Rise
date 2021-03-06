@@ -141,7 +141,7 @@ export const verdamancy: MysticSphere = {
       effect: `
         You gain a slam \\glossterm{natural weapon} (see \\tref{Natural Weapons}).
         The natural weapon deals 1d10 damage, as normal for a slam natural weapon.
-        In addition, it has the Reach \\glossterm{weapon tag} (see \\pcref{Weapon Tags}).
+        In addition, it has the Long \\glossterm{weapon tag} (see \\pcref{Weapon Tags}).
       `,
       rank: 2,
       narrative: `
