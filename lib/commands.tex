@@ -11,8 +11,11 @@
 \newcommand{\mult}{x}
 \newcommand{\x}{x\xspace}
 %NOTED BUG: Spell names with mixed capitalization (Dispel magic) will not work properly.
+\newcommand{\combatstyle}[1]{\emph{\mbox{\hyperlink{style:#1}{#1}}}}    %Italicize combat styles
 \newcommand{\sphere}[1]{\emph{\mbox{\hyperlink{spell:#1}{#1}}}}    %Italicize mystic spheres
 \newcommand{\spell}[1]{\emph{\mbox{\hyperlink{spell:#1}{#1}}}}    %Italicize spells
+\newcommand{\maneuver}[1]{\emph{\mbox{\hyperlink{maneuver:#1}{#1}}}}    %Italicize maneuvers
+\newcommand{\stance}[1]{\emph{\mbox{\hyperlink{stance:#1}{#1}}}}    %Italicize maneuvers
 \newcommand{\spellindirect}[2]{\emph{\hyperlink{spell:#1}{#2}}}
 \newcommand{\ritual}[1]{\emph{#1}}    %Italicize spells
 \newcommand{\subcf}[1]{\parhead{#1}}    %Bold sub-class-feature headers

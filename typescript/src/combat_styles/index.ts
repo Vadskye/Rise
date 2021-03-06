@@ -1,4 +1,4 @@
-import { FunctionsLike, StandardAttack } from "@src/mystic_spheres";
+import { Spell } from "@src/mystic_spheres";
 import { bluntForce } from "./blunt_force";
 import { dirtyFighting } from "./dirty_fighting";
 import { ebbAndFlow } from "./ebb_and_flow";
@@ -24,25 +24,13 @@ export const combatStyles = [
 export type Source = "primal" | "martial" | "trick" | "esoteric" | "wild";
 
 export interface CombatStyle {
-  name: string;
   maneuvers: Maneuver[];
+  name: string;
+  shortDescription: string;
   sources: Source[];
   stances?: Stance[];
 }
 
-export interface Maneuver {
-  attack?: StandardAttack;
-  effect?: string;
-  focus?: boolean;
-  functionsLike?: FunctionsLike;
-  name: string;
-  narrative?: string;
-  rank: number;
-  scaling?: "accuracy" | "damage" | Record<string, string>;
-  tags?: string[];
-  type: "Instant" | "Duration";
-}
+export type Maneuver = Spell;
 
-export interface Stance {
-  name: string;
-}
+export type Stance = Spell;

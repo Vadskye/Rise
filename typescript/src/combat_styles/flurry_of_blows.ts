@@ -2,6 +2,7 @@ import { CombatStyle } from ".";
 
 export const flurryOfBlows: CombatStyle = {
   name: "Flurry of Blows",
+  shortDescription: "Attack rapidly at any range.",
   sources: ["esoteric", "wild"],
 
   maneuvers: [
