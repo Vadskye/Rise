@@ -11,7 +11,7 @@ function generateSourceList(source: MysticSphereSource): string {
   return `
     {
     \\RaggedRight
-    \\subsection{${titleCase(source)}}\\label{${titleCase(source)}}
+    \\subsection{${titleCase(source)} Mystic Spheres}\\label{${titleCase(source)} Mystic Spheres}
 
     ${sourceSpheres.map(formatSphere).join("\n")}
     ${
