@@ -144,7 +144,7 @@ export const cryomancy: MysticSphere = {
         glance: `Half damage.`,
         hit: `Each subject takes piercing and cold damage equal to 2d8 plus half your \\glossterm{power} (see \\pcref{Multiple Damage Types}).`,
         targeting: `
-        Make an attack vs. Armor against everything in a \\medarea long, 10 ft. wide line from you.
+        Make an attack vs. Armor against everything in a \\medarealong, 10 ft. wide line from you.
         `,
       },
 

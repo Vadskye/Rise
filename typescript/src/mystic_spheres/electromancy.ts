@@ -50,7 +50,7 @@ export const electromancy: MysticSphere = {
         glance: `Half damage.`,
         hit: `Each subject takes 2d6 + half \\glossterm{power} electricity damage.`,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\largearea long, 10 ft. wide line from you.
+          Make an attack vs. Reflex against everything in a \\largearealong, 10 ft. wide line from you.
         `,
       },
       rank: 3,
@@ -143,7 +143,7 @@ export const electromancy: MysticSphere = {
         glance: `Half damage.`,
         hit: `Each subject takes 2d8 + half \\glossterm{power} electricity damage.`,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\medarea long, 10 ft. wide line from you.
+          Make an attack vs. Reflex against everything in a \\medarealong, 10 ft. wide line from you.
           You gain a +2 bonus to accuracy against each subject that is wearing metal armor or otherwise carrying or composed of a significant amount of metal.
         `,
       },
@@ -270,7 +270,7 @@ export const electromancy: MysticSphere = {
         // +1d from normal AOE due to weird area that probably just hits one person
         hit: `Each subject takes 2d8 + half \\glossterm{power} electricity damage.`,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\medarea long, 5 ft. wide vertical line within \\longrange.
+          Make an attack vs. Reflex against everything in a \\medarealong, 5 ft. wide vertical line within \\longrange.
           If you are outdoors in cloudy or stormy weather, you gain a +2 bonus to \\glossterm{accuracy} with the attack.
           If this spell has its area increased, only the length of the line increases.
         `,
@@ -291,7 +291,7 @@ export const electromancy: MysticSphere = {
           Each subject takes 4d10 + half \\glossterm{power} electricity damage.
         `,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\largearea long, 5 ft.\\ wide vertical line within \\distrange.
+          Make an attack vs. Reflex against everything in a \\largearealong, 5 ft.\\ wide vertical line within \\distrange.
           If you are outdoors in cloudy or stormy weather, you gain a +2 bonus to \\glossterm{accuracy} with the attack.
           If this spell has its area increased, only the length of the line increases.
         `,

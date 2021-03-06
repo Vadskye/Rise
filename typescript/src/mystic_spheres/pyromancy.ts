@@ -379,7 +379,7 @@ export const pyromancy: MysticSphere = {
         glance: `Half damage.`,
         hit: `Each subject takes 2d8 + half \\glossterm{power} fire damage.`,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\medarea long, 5 ft. wide shapeable line that starts within \\medrange.
+          Make an attack vs. Reflex against everything in a \\medarealong, 5 ft. wide shapeable line that starts within \\medrange.
         `,
       },
       rank: 4,
