@@ -297,8 +297,8 @@ export const aquamancy: MysticSphere = {
       `,
       rank: 3,
       scaling: {
-        5: "The area of the wall increases to a \\largearea line.",
-        7: "The area of the wall increases to a \\hugearea line.",
+        5: "The area of the wall increases to a \\largearealong line.",
+        7: "The area of the wall increases to a \\hugearealong line.",
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
