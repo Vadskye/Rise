@@ -303,7 +303,7 @@ def generate_armor():
             level=2,
             material_type="Shield",
             description="""
-                When you take the \\textit<total defense> action with this shield, you gain a +4 bonus to Armor defense in addition to the normal bonuses from taking that action (see \\pcref<Total Defense.).
+                When you take the \\textit<total defense> action with this shield, you gain a +4 bonus to Armor defense in addition to the normal bonuses from taking that action (see \\pcref<Total Defense>.).
             """,
             short_description="Grants +4 Armor defense during total defense",
         ),

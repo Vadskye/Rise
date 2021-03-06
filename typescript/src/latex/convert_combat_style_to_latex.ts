@@ -34,7 +34,9 @@ function convertManeuverToLatex(maneuver: Maneuver): string {
   ].filter(Boolean);
 
   const latex = `
-    \\hypertarget{maneuver:${maneuver.name.toLowerCase()}}{}\\label{${maneuver.name}}
+    \\hypertarget{maneuver:${maneuver.name}}{}%
+    \\hypertarget{maneuver:${maneuver.name.toLowerCase()}}{}%
+    \\label{${maneuver.name}}%
     \\begin{${abilityType}}{${maneuver.name}}${rankText}
       ${internalComponents.join("\n\\rankline\n\n\\noindent ")}
       \\vspace{0.1em}

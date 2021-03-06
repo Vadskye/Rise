@@ -63,7 +63,9 @@ function convertSpellToLatex(spell: SpellLike): string {
   ].filter(Boolean);
 
   const latex = `
-    \\hypertarget{spell:${spell.name.toLowerCase()}}{}\\label{${spell.name}}
+    \\hypertarget{spell:${spell.name}}{}%
+    \\hypertarget{spell:${spell.name.toLowerCase()}}{}%
+    \\label{${spell.name}}%
     \\begin{${abilityType}}{${spell.name}}${rankText}
       ${internalComponents.join("\n\\rankline\n\n\\noindent ")}
       \\vspace{0.1em}

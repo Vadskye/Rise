@@ -568,6 +568,20 @@ export const vivimancy: MysticSphere = {
         If this would reduce a creature's maximum attunement points below 0, the creature cannot be resurrected.
 
         This ritual can only be learned through the nature \\glossterm{magic source}.
+
+        \\begin{dtable}
+            \\lcaption{Humanoid Reincarnations}
+            \\begin{dtabularx}{\\columnwidth}{l X}
+                \\tb{d\\%} & \\tb{Incarnation} \\tableheaderrule
+                01--13 & Dwarf \\\\
+                14--26 & Elf \\\\
+                27--40 & Gnome \\\\
+                41--52 & Half-elf \\\\
+                53--62 & Half-orc \\\\
+                63--74 & Halfling \\\\
+                75--100 & Human \\\\
+            \\end{dtabularx}
+        \\end{dtable}
       `,
       rank: 4,
       tags: ["Creation"],

@@ -482,7 +482,7 @@ It defines how attributes work and explains how to make attacks in combat.
         A creature with a land speed can move across the ground at the indicated speed.
         Most creatures have a land speed.
 
-    \subsection{Flying Mechanics}
+    \subsection{Flying Mechanics}\label{Flying Mechanics}
         A creature with a fly speed cannot fly while it has \glossterm{encumbrance}, either from armor or from carrying weight in excess of its maximum carrying capacity (see \pcref{Carrying Capacity}).
 
         \parhead{Maximum Height} Some abilities that grant a fly speed also have a height limit for the maximum height you can reach with that fly speed.
@@ -1123,7 +1123,8 @@ It defines how attributes work and explains how to make attacks in combat.
     \subsection{Skill Points}\label{Skill Points}
         You can spend \glossterm{skill points} to gain training in skills (see \pcref{Skills}).
         You normally have a number of \glossterm{skill points} equal to 6 \add twice your base Intelligence.
-        Some other abilities, such as the rogue \textit{skill lore} ability, can grant additional skill points (see Skill Lore, page \pref{Rog:Skill Lore}).
+        You can spend \glossterm{insight points} to gain skill points at a rate of two skill points per insight point (see \pcref{Insight Points}).
+        In addition, some abilities can grant additional skill points.
 
 \section{Character Statistics}
     This section explains how character statistics, such as how strong you are or how accurate your attacks are, should be calculated.
@@ -1407,7 +1408,7 @@ It defines how attributes work and explains how to make attacks in combat.
         % TODO: make this less awkward
         A helpless creature does not take additional defense penalties for being \glossterm{unaware}.
 
-    \subsection{Awareness and Surprise}\label{Awareness and Suprise}
+    \subsection{Awareness and Surprise}\label{Awareness and Surprise}
         In combat, creatures are sometimes not fully aware of danger, which makes them less able to defend against it.
         A creature can be described as either \glossterm{aware}, \glossterm{unaware}, or \glossterm{partially unaware} of an attack against it.
         Normally, creatures are aware of all attacks against them in combat.
@@ -1579,7 +1580,7 @@ It defines how attributes work and explains how to make attacks in combat.
             At the end of your movement, you can make a melee \glossterm{strike} from your new location.
         \end{freeability}
 
-        \parhead{Desperate Exertion} You can use the \textit{desperate exertion} ability to succeed at a critical moment when you would otherwise fail.
+        \parhead{Desperate Exertion}\label{desperate exertion} You can use the \textit{desperate exertion} ability to succeed at a critical moment when you would otherwise fail.
         Using this ability is not an action, and can be done at any time.
         You can decide to use this ability after you learn whether the original roll succeeded or failed.
         You can even use it after you learn what the effects of a successful attack or check would be, if that is information you could normally learn if it succeeded.
@@ -1848,7 +1849,7 @@ It defines how attributes work and explains how to make attacks in combat.
     \subsection{Mystic Spheres}
         A \glossterm{mystic sphere} is a collection of thematically related magical effects that includes both \glossterm{spells} and \glossterm{rituals}.
         Each \glossterm{mystic sphere} can be associated with any number of \glossterm{magic sources}.
-        The mystic spheres are listed at \pcref{Mystic Sphere Lists}.
+        The mystic spheres are listed at \pcref{Mystic Spheres}.
 
 \section{Spell and Ritual Mechanics}\label{Spell and Ritual Mechanics}
 
@@ -2192,6 +2193,6 @@ It defines how attributes work and explains how to make attacks in combat.
             \item Your \glossterm{accuracy} increases by 1 (see \pcref{Accuracy})
             \item All of your \glossterm{defenses} increase by 1 (see \pcref{Defenses})
             \item You gain an additional \glossterm{archetype rank} (see \pcref{Archetypes})
-            \item Some of your \glossterm{attributes} increase (see \pcref{Increasing Attributes With Level})
+            \item Some of your \glossterm{attributes} increase (see \tref{Increasing Attributes With Level})
             \item Some of your skill modifiers increase by 1 (see \pcref{Skill Modifier})
         \end{itemize}
