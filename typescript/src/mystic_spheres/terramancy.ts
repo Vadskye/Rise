@@ -339,7 +339,7 @@ export const terramancy: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Earthen Anchor",
+        name: "Earthen Anchor",
       },
       // narrative: '',
       rank: 4,

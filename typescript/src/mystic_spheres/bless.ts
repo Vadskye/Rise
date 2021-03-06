@@ -505,7 +505,7 @@ export const bless: MysticSphere = {
         exceptThat: `
           the effect lasts for one hundred years.
         `,
-        spell: "blessing of fortification",
+        name: "blessing of fortification",
       },
       rank: 4,
       type: "Instant",
@@ -519,7 +519,7 @@ export const bless: MysticSphere = {
         exceptThat: `
           the effect lasts for one hundred years.
         `,
-        spell: "greater fortification",
+        name: "greater fortification",
       },
       rank: 5,
       type: "Instant",
@@ -533,7 +533,7 @@ export const bless: MysticSphere = {
         exceptThat: `
           the bonus to \\glossterm{resistances} increases to 10.
         `,
-        spell: "blessing of fortification",
+        name: "blessing of fortification",
       },
       rank: 4,
       type: "Attune (ritual)",
@@ -547,7 +547,7 @@ export const bless: MysticSphere = {
         exceptThat: `
           the bonus to \\glossterm{resistances} increases to 15.
         `,
-        spell: "blessing of fortification",
+        name: "blessing of fortification",
       },
       rank: 7,
       type: "Attune (ritual)",
@@ -573,7 +573,7 @@ export const bless: MysticSphere = {
         exceptThat: `
           it loses the \\glossterm{Attune} (ritual) tag and the effect lasts permanently.
         `,
-        spell: "bless water",
+        name: "bless water",
       },
       rank: 3,
       type: "Instant",
@@ -599,7 +599,7 @@ export const bless: MysticSphere = {
         exceptThat: `
           it loses the \\glossterm{Attune} (ritual) tag and the effect lasts permanently.
         `,
-        spell: "curse water",
+        name: "curse water",
       },
       rank: 3,
       type: "Instant",

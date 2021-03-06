@@ -282,7 +282,7 @@ export const verdamancy: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Barkskin",
+        name: "Barkskin",
       },
       // narrative: '',
       rank: 3,
@@ -475,7 +475,7 @@ export const verdamancy: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Thornblade",
+        name: "Thornblade",
       },
       // narrative: '',
       rank: 5,
