@@ -77,31 +77,29 @@ export const bluntForce: CombatStyle = {
       name: "Ground Stomp",
 
       attack: {
-        glance: `Half damage.`,
-        hit: `Each subject takes 2d6 + half \\glossterm{power} bludgeoning damage
-        Each Large or smaller creature that loses \\glossterm{hit points} from this damage is knocked \\glossterm{prone}..`,
+        hit: `Each subject takes 1d10 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Reflex against everything adjacent to you that is on the same stable surface as you.
         `,
       },
       scaling: "damage",
-      rank: 3,
+      rank: 2,
       type: "Instant",
     },
 
     {
-      name: "Earthshatter Stomp",
+      name: "Greater Ground Stomp",
 
       attack: {
         glance: `Half damage.`,
-        hit: `Each subject takes 4d6 + half \\glossterm{power} bludgeoning damage
+        hit: `Each subject takes 2d10 + half \\glossterm{power} bludgeoning damage
         Each Large or smaller creature that loses \\glossterm{hit points} from this damage is knocked \\glossterm{prone}..`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarea radius from you that is on the same stable surface as you.
           You take a -4 penalty to accuracy with this attack against your \\glossterm{allies}.
         `,
       },
-      rank: 6,
+      rank: 5,
       type: "Instant",
     },
 
@@ -218,6 +216,19 @@ export const bluntForce: CombatStyle = {
         Make a thrown \\glossterm{strike} using a bludgeoning weapon against up to three creatures or objects in a \\smallarea radius within \\shortrange.
         Your \\glossterm{power} with the strike is halved.
         If you choose yourself as one of the subjects, you can catch the weapon instead of taking damage from it.
+      `,
+      rank: 2,
+      type: "Instant",
+    },
+
+    {
+      name: "Knockdown",
+
+      effect: `
+        Make a \\glossterm{strike} using a bludgeoning weapon.
+        The attack is made against each target's Fortitude defense instead of its Armor defense.
+        You take a -1d penalty to damage with the strike.
+        If a creature loses hit points from the strike, it falls \\glossterm{prone}.
       `,
       rank: 2,
       type: "Instant",

@@ -7,7 +7,83 @@ export const flurryOfBlows: CombatStyle = {
 
   maneuvers: [
     {
-      name: "Rapid Flurry",
+      name: "Twinstrike",
+
+      effect: `
+        Make a \\glossterm{strike}.
+        You take a -2d penalty to damage with the strike.
+        In exchange, you roll to hit twice and take the higher result.
+      `,
+      rank: 1,
+      type: "Instant",
+    },
+
+    {
+      name: "Rapid Quaff",
+
+      effect: `
+        Make a \\glossterm{strike}.
+        You take a -1d penalty to damage with the strike.
+        In addition, you can drink a potion.
+        You must still have a free hand to hold and drink the potion that is not being used to make the strike.
+      `,
+      rank: 2,
+      type: "Instant",
+    },
+
+    {
+      name: "Desperate Flurry",
+
+      effect: `
+        When you use this ability, you gain two \\glossterm{fatigue points}.
+
+        Make two \\glossterm{strikes}.
+        You cannot use the \\textit{desperate exertion} ability to affect these strikes.
+      `,
+      rank: 1,
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Desperate Flurry",
+
+      effect: `
+        When you use this ability, you gain one \\glossterm{fatigue point}.
+
+        Make two \\glossterm{strikes}.
+        You cannot use the \\textit{desperate exertion} ability to affect these strikes.
+      `,
+      rank: 5,
+      type: "Instant",
+    },
+
+    {
+      name: "Rebounding Flurry",
+
+      effect: `
+        You can only use this ability during the \\glossterm{action phase}.
+        Make a \\glossterm{strike}.
+        If all damage from the strike is resisted, you can make an additional strike during the \\glossterm{delayed action phase}.
+        You take a -2d penalty to damage with both strikes.
+      `,
+      rank: 2,
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Rebounding Flurry",
+
+      effect: `
+        You can only use this ability during the \\glossterm{action phase}.
+        Make a \\glossterm{strike}.
+        If all damage from the strike is resisted, you can make an additional strike during the \\glossterm{delayed action phase}.
+      `,
+      rank: 6,
+      type: "Instant",
+    },
+
+    {
+      name: "Strike Flurry",
 
       effect: `
         Make two \\glossterm{strikes} with a -2 penalty to \\glossterm{accuracy}.
@@ -19,7 +95,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Power Flurry",
+      name: "Powerful Strike Flurry",
 
       effect: `
         Make two \\glossterm{strikes} with a -4 penalty to \\glossterm{accuracy}.
@@ -30,13 +106,12 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Triple Flurry",
+      name: "Triple Strike Flurry",
 
       effect: `
-        Make three melee \\glossterm{strikes} with a -3 penalty to \\glossterm{accuracy}.
-        You take a -2d penalty to damage with all strikes, and your \\glossterm{power} is \\glossterm{halved}.
-        `,
-
+        Make three melee \\glossterm{strikes} with a -2 penalty to \\glossterm{accuracy}.
+        You take a -3d penalty to damage with all strikes, and your \\glossterm{power} is \\glossterm{halved}.
+      `,
       rank: 7,
       type: "Instant",
     },
@@ -45,7 +120,7 @@ export const flurryOfBlows: CombatStyle = {
       name: "Whirlwind",
 
       effect: `
-        Make a melee \\glossterm{strike} using a light or medium slashing weapon against all \\glossterm{enemies} within your weapon's \\glossterm{reach}.
+        Make a melee \\glossterm{strike} using a light or medium slashing or bludgeoning weapon against all \\glossterm{enemies} within your weapon's \\glossterm{reach}.
         Your \\glossterm{power} with the strike is halved.
       `,
       rank: 2,
@@ -56,7 +131,7 @@ export const flurryOfBlows: CombatStyle = {
       name: "Whirlwind Flurry",
 
       effect: `
-        Make two melee \\glossterm{strikes} with a -2 penalty to \\glossterm{accuracy} using a light or medium slashing weapon against all \\glossterm{enemies} within your weapon's \\glossterm{reach}.
+        Make two melee \\glossterm{strikes} with a -2 penalty to \\glossterm{accuracy} using a light or medium slashing or bludgeoning weapon against all \\glossterm{enemies} within your weapon's \\glossterm{reach}.
         You take a -2d penalty to damage with both strikes, and your \\glossterm{power} is halved.
       `,
       rank: 7,
