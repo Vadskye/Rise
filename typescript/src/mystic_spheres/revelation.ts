@@ -281,8 +281,9 @@ export const revelation: MysticSphere = {
       attack: {
         crit: `The reduction increases to four times your \\glossterm{power}.`,
         hit: `As a \\glossterm{condition}, the subject's vulnerabilities become clear for all to see.
-        Its \\glossterm{resistances} are reduced by an amount equal to twice your \\glossterm{power}.
-        When this effect ends, it regains resistances equal to the amount it lost this way.`,
+        Its \\glossterm{physical resistance} and \\glossterm{energy resistance} are each reduced by an amount equal to twice your \\glossterm{power}.
+        Any other resistances, such as an extra resistance to fire damage or \\glossterm{universal resistance}, are unaffected by this spell.
+        When this effect ends, the subject regains resistances equal to the amount it lost this way.`,
         targeting: `
           Make an attack vs. Mental with a +4 \\glossterm{accuracy} bonus against one creature within \\longrange.
         `,
