@@ -2,6 +2,7 @@ import { CombatStyle } from ".";
 
 export const bluntForce: CombatStyle = {
   name: "Blunt Force",
+  shortDescription: "Smash foes with bludgeoning weapons and raw power.",
   sources: ["martial", "primal"],
 
   maneuvers: [
@@ -220,6 +221,19 @@ export const bluntForce: CombatStyle = {
       },
 
       rank: 4,
+      type: "Instant",
+    },
+
+    {
+      name: "Ricochet",
+
+      // original targets: Up to three creatures or objects in a \areasmall radius within \shortrange (see text)
+      effect: `
+        Make a thrown \\glossterm{strike} using a bludgeoning weapon against each subject.
+        Your \\glossterm{power} with the strike is halved.
+        If you choose yourself as one of the subjects, you can catch the weapon instead of taking damage from it.
+      `,
+      rank: 2,
       type: "Instant",
     },
   ],

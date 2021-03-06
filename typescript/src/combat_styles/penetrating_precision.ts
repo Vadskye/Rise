@@ -2,6 +2,7 @@ import { CombatStyle } from ".";
 
 export const penetratingPrecision: CombatStyle = {
   name: "Penetrating Precision",
+  shortDescription: "Stab foes with carefully aimed piercing weapons.",
   sources: ["trick", "wild"],
 
   maneuvers: [

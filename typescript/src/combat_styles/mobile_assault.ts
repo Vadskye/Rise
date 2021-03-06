@@ -2,6 +2,7 @@ import { CombatStyle } from ".";
 
 export const mobileAssault: CombatStyle = {
   name: "Mobile Assault",
+  shortDescription: "Move around the battlefield with ease to avoid threats or hunt weak foes.",
   sources: ["esoteric", "trick", "wild", "primal"],
 
   maneuvers: [
