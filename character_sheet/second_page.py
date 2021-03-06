@@ -59,6 +59,7 @@ def create_page(destination):
                             "Abilities Known",
                         )
                     ),
+                    calc_combat_styles(),
                     calc_maneuvers(),
                     calc_spells(),
                     calc_spheres(),
@@ -975,6 +976,32 @@ def calc_skill_points():
                     "disabled": "true",
                     "name": "skill_points_display",
                     "value": "(@{skill_points})",
+                },
+            ),
+        ]
+    )
+
+def calc_combat_styles():
+    return flex_row(
+        [
+            div({"class": "calc-header"}, "Combat Styles"),
+            equation(
+                [
+                    underlabel(
+                        "Insight",
+                        number_input(
+                            {
+                                "name": "combat_styles_known_insight_points",
+                            }
+                        ),
+                    ),
+                    plus(),
+                    equation_misc_repeat("combat_styles_known", 3),
+                ],
+                result_attributes={
+                    "disabled": True,
+                    "name": "combat_styles_known_display",
+                    "value": "@{combat_styles_known}",
                 },
             ),
         ]
