@@ -21,13 +21,13 @@ export const combatStyles = [
   unbreakableDefense,
 ];
 
-export type Source = "primal" | "martial" | "trick" | "esoteric" | "wild";
+export type CombatStyleSource = "primal" | "martial" | "trick" | "esoteric" | "wild";
 
 export interface CombatStyle {
   maneuvers: Maneuver[];
   name: string;
   shortDescription: string;
-  sources: Source[];
+  sources: CombatStyleSource[];
   stances?: Stance[];
 }
 

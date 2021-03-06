@@ -1,12 +1,12 @@
-import { CombatStyle, combatStyles, Source } from "@src/combat_styles";
+import { CombatStyle, combatStyles, CombatStyleSource } from "@src/combat_styles";
 import { titleCase } from "change-case";
 
 export function generateCombatStyleLists(): string {
-  const sources: Source[] = ["esoteric", "martial", "primal", "trick", "wild"];
+  const sources: CombatStyleSource[] = ["esoteric", "martial", "primal", "trick", "wild"];
   return sources.map(generateSourceList).join("\n");
 }
 
-function generateSourceList(source: Source): string {
+function generateSourceList(source: CombatStyleSource): string {
   const sourceSpheres = combatStyles.filter((style) => style.sources.includes(source));
   return `
     {
