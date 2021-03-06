@@ -17,7 +17,7 @@ export const photomancy: MysticSphere = {
 
         This ability lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
         `,
-        spell: "disguise creature",
+        name: "disguise creature",
       },
       focus: false,
       scaling: {
@@ -73,7 +73,7 @@ export const photomancy: MysticSphere = {
         exceptThat: `
           the area increases to a \\largearea cone from you.
         `,
-        spell: "color spray",
+        name: "color spray",
       },
       rank: 3,
       scaling: "accuracy",
@@ -106,7 +106,7 @@ export const photomancy: MysticSphere = {
         exceptThat: `
           the area increases to a \\hugearea cone from you.
         `,
-        spell: "prismatic spray",
+        name: "prismatic spray",
       },
       rank: 7,
       tags: ["Sensation", "Visual"],
@@ -328,7 +328,7 @@ export const photomancy: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Blur",
+        name: "Blur",
       },
       // narrative: '',
       rank: 3,
@@ -362,7 +362,7 @@ export const photomancy: MysticSphere = {
       castingTime: "minor ation",
       functionsLike: {
         mass: true,
-        spell: "Disguise Image",
+        name: "Disguise Image",
       },
       // narrative: '',
       rank: 4,
@@ -379,7 +379,7 @@ export const photomancy: MysticSphere = {
         exceptThat: `
           you can change the nature of the disguise as a \\glossterm{standard action}.
         `,
-        spell: "disguise image",
+        name: "disguise image",
       },
       rank: 4,
       scaling: { 6: `The bonus increases to +6.` },
@@ -480,7 +480,7 @@ export const photomancy: MysticSphere = {
 
       functionsLike: {
         exceptThat: "the damage increases to 2d10 + half \\glossterm{power}.",
-        spell: "chromatic orb",
+        name: "chromatic orb",
       },
       rank: 5,
       scaling: "damage",
@@ -558,7 +558,7 @@ export const photomancy: MysticSphere = {
           it loses the \\glossterm{Attune} (ritual) tag and the effect lasts permanently.
           In addition, it can only target objects.
         `,
-        spell: "continuous light",
+        name: "continuous light",
       },
       rank: 3,
       tags: ["Sensation"],

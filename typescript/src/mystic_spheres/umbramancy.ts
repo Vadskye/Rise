@@ -101,7 +101,7 @@ export const umbramancy: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Darkvision",
+        name: "Darkvision",
       },
       // narrative: '',
       rank: 4,
@@ -201,7 +201,7 @@ export const umbramancy: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Shadow Mantle",
+        name: "Shadow Mantle",
       },
       // narrative: '',
       rank: 3,
@@ -330,7 +330,7 @@ export const umbramancy: MysticSphere = {
           you can also make a \\glossterm{strike} at your destination.
           You take a -2 penalty to \\glossterm{accuracy} with the strike due to its rushed nature.
         `,
-        spell: "shadowstep",
+        name: "shadowstep",
       },
       rank: 4,
       scaling: { 6: `The teleportation range increases to \\medrange.` },
@@ -492,7 +492,7 @@ export const umbramancy: MysticSphere = {
         exceptThat: `
           the difficulty rating increase changes to 20.
         `,
-        spell: "conceal trail",
+        name: "conceal trail",
       },
       rank: 4,
       type: "Attune (ritual)",
@@ -506,7 +506,7 @@ export const umbramancy: MysticSphere = {
         exceptThat: `
           the difficulty rating increase changes to 30.
         `,
-        spell: "conceal trail",
+        name: "conceal trail",
       },
       rank: 6,
       type: "Attune (ritual)",

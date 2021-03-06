@@ -1,4 +1,4 @@
-import { sortSpells } from "@src/latex/convert_mystic_sphere_to_latex";
+import { sortByRankAndLevel } from "@src/latex/convert_mystic_sphere_to_latex";
 import { MysticSphere, mysticSpheres, SpellLike } from "@src/mystic_spheres";
 import _ from "lodash";
 
@@ -7,7 +7,7 @@ export function generateMysticSphereSummaries(): string {
 }
 
 function generateMysticSphereSummary(sphere: MysticSphere): string {
-  const spells = sortSpells(sphere.spells);
+  const spells = sortByRankAndLevel(sphere.spells);
   const ranks = [1, 2, 3, 4, 5, 6, 7];
   const spellsByRank = _.groupBy(spells, (s) => s.rank);
   return `
@@ -17,7 +17,7 @@ function generateMysticSphereSummary(sphere: MysticSphere): string {
 
     ${generateSpellsSummary("Cantrips", _.sortBy(sphere.cantrips, "name"))}
     ${ranks
-      .map((rank) => generateSpellsSummary(`Rank ${rank}`, sortSpells(spellsByRank[rank])))
+      .map((rank) => generateSpellsSummary(`Rank ${rank}`, sortByRankAndLevel(spellsByRank[rank])))
       .filter(Boolean)
       .join("\n")}
     ${

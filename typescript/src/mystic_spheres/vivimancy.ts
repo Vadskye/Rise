@@ -137,7 +137,7 @@ export const vivimancy: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Fortify Life",
+        name: "Fortify Life",
       },
       // narrative: '',
       rank: 3,
@@ -235,7 +235,7 @@ export const vivimancy: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Vital Persistence",
+        name: "Vital Persistence",
       },
       // narrative: '',
       rank: 5,
@@ -313,7 +313,7 @@ export const vivimancy: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Lifegift",
+        name: "Lifegift",
       },
       // narrative: '',
       rank: 3,
@@ -421,7 +421,7 @@ export const vivimancy: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Lifesteal Blade",
+        name: "Lifesteal Blade",
       },
       // narrative: '',
       rank: 7,
@@ -582,7 +582,7 @@ export const vivimancy: MysticSphere = {
         exceptThat: `
           the subject is reincarnated as its original species instead of as a random species.
         `,
-        spell: "reincarnation",
+        name: "reincarnation",
       },
       rank: 6,
       tags: ["Creation"],
@@ -651,7 +651,7 @@ export const vivimancy: MysticSphere = {
         The subject must have been part of the original creature's body at the time of death.
         The resurrected creature's body is fully restored to its healthy state before dying, including regenerating all missing or damaged body parts.
         `,
-        spell: "resurrection",
+        name: "resurrection",
       },
       rank: 6,
       tags: ["Creation"],
@@ -670,7 +670,7 @@ export const vivimancy: MysticSphere = {
         Instead, you must explicitly and unambiguously specify the identity of the creature being resurrected.
         The resurrected creature's body is fully restored to its healthy state before dying, including regenerating all missing or damaged body parts.
         `,
-        spell: "resurrection",
+        name: "resurrection",
       },
       rank: 7,
       tags: ["Creation"],

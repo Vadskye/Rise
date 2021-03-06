@@ -48,27 +48,23 @@ export const mysticSpheres: MysticSphere[] = [
   vivimancy,
 ];
 
-export type Source = "arcane" | "divine" | "domain" | "nature" | "pact";
+export type MysticSphereSource = "arcane" | "divine" | "domain" | "nature" | "pact";
 
 export interface MysticSphere {
   cantrips?: Cantrip[];
   name: string;
   rituals?: Ritual[];
-  sources: Source[];
+  sources: MysticSphereSource[];
   shortDescription: string;
   spells: Spell[];
 }
 
 interface BaseSpellLike {
-  attack?: SpellAttack;
+  attack?: StandardAttack;
   castingTime?: string;
   effect?: string;
   focus?: boolean;
-  functionsLike?: {
-    exceptThat?: string;
-    mass?: boolean;
-    spell: string;
-  };
+  functionsLike?: FunctionsLike;
   name: string;
   narrative?: string;
   scaling?: "accuracy" | "damage" | Record<string, string>;
@@ -101,9 +97,16 @@ export interface SpellLike extends BaseSpellLike {
   rank?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | null;
 }
 
-interface SpellAttack {
+export interface StandardAttack {
   crit?: string;
   glance?: string;
   hit: string;
   targeting: string;
+}
+
+export interface FunctionsLike {
+  abilityType?: "spell" | "maneuver" | "ability" | "ritual";
+  exceptThat?: string;
+  mass?: boolean;
+  name: string;
 }

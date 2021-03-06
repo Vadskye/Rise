@@ -7,7 +7,9 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
   assertEndsWithPeriod(sphere.shortDescription);
   return format.latexify(`
     \\newpage
-    \\hypertarget{spell:${sphere.name.toLowerCase()}}{}\\label{${sphere.name}}
+    \\hypertarget{spell:${sphere.name}}{}%
+    \\hypertarget{spell:${sphere.name.toLowerCase()}}{}%
+    \\label{${sphere.name}}%
     \\section{{${sphere.name}}}
       \\textit{${sphere.shortDescription}}
 
@@ -15,7 +17,7 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
         sphere.cantrips
           ? `
             \\subsection{Cantrips}
-            ${sortSpells(sphere.cantrips)
+            ${sortByRankAndLevel(sphere.cantrips)
               .map(convertSpellToLatex)
               .join("\n")}
           `
@@ -23,7 +25,7 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
       }
 
       \\subsection{Spells}
-        ${sortSpells(sphere.spells)
+        ${sortByRankAndLevel(sphere.spells)
           .map(convertSpellToLatex)
           .join("\n")}
 
@@ -31,7 +33,7 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
         sphere.rituals
           ? `
             \\subsection{Rituals}
-            ${sortSpells(sphere.rituals)
+            ${sortByRankAndLevel(sphere.rituals)
               .map(convertSpellToLatex)
               .join("\n")}
           `
@@ -40,7 +42,7 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
   `);
 }
 
-function determineAbilityType(spell: Pick<SpellLike, "type">): string {
+export function determineAbilityType(spell: Pick<SpellLike, "type">): string {
   if (spell.type === "Instant") {
     return "instantability";
   } else if (spell.type.includes("Attune")) {
@@ -75,7 +77,7 @@ function convertSpellToLatex(spell: SpellLike): string {
   return latex;
 }
 
-export function sortSpells<T extends SpellLike>(spells: T[]): T[] {
+export function sortByRankAndLevel<T extends Pick<SpellLike, "name" | "rank">>(spells: T[]): T[] {
   // Sort by level as primary, name as secondary
   return _.sortBy(
     _.sortBy(spells, (s) => s.name),

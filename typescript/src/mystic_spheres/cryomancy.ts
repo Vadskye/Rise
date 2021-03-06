@@ -274,7 +274,7 @@ export const cryomancy: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Skate",
+        name: "Skate",
       },
       // narrative: '',
       rank: 3,
@@ -543,7 +543,7 @@ export const cryomancy: MysticSphere = {
         exceptThat: `
           the temperature in the area decreases by 60 degrees, to a minimum of \\minus70 degrees.
         `,
-        spell: "frostfall",
+        name: "frostfall",
       },
       rank: 7,
       type: "Attune (self)",
