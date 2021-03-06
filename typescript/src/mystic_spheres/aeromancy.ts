@@ -159,7 +159,7 @@ export const aeromancy: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "wind screen",
+        name: "wind screen",
       },
       // narrative: "",
       rank: 3,
@@ -254,7 +254,7 @@ export const aeromancy: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "gentle descent",
+        name: "gentle descent",
       },
       // narrative: '',
       rank: 4,
@@ -379,7 +379,7 @@ export const aeromancy: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "windblade",
+        name: "windblade",
       },
       // narrative: '',
       rank: 5,
@@ -684,7 +684,7 @@ export const aeromancy: MysticSphere = {
       castingTime: "one minute",
       functionsLike: {
         exceptThat: "the range increases to \\extrange.",
-        spell: "detect air",
+        name: "detect air",
       },
       // narrative: '',
       rank: 3,
@@ -696,7 +696,7 @@ export const aeromancy: MysticSphere = {
       castingTime: "one minute",
       functionsLike: {
         exceptThat: "the range increases to 2,000 feet.",
-        spell: "detect air",
+        name: "detect air",
       },
       // narrative: '',
       rank: 5,

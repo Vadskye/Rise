@@ -50,7 +50,7 @@ export const enchantment: MysticSphere = {
         exceptThat: `
           it affects all creatures in a \\smallarea radius within \\medrange.
         `,
-        spell: "repeat",
+        name: "repeat",
       },
       rank: 2,
       scaling: "accuracy",
@@ -238,7 +238,7 @@ export const enchantment: MysticSphere = {
         exceptThat: `
           you are also able to dominate non-humanoid creatures with its critical hit effect.
         `,
-        spell: "dominate person",
+        name: "dominate person",
       },
       rank: 7,
       tags: ["Compulsion"],
@@ -470,7 +470,7 @@ export const enchantment: MysticSphere = {
         It becomes aware of its surroundings as if waking up from a daydream.
         The subject is not directly aware of any magical influence on its mind, though unusually paranoid or perceptive creatures may deduce that their minds were affected.
         `,
-        spell: "charm",
+        name: "charm",
       },
       rank: 6,
       scaling: "accuracy",
@@ -589,7 +589,7 @@ export const enchantment: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Motivate",
+        name: "Motivate",
       },
       // narrative: '',
       rank: 3,

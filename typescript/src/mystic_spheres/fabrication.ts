@@ -176,7 +176,7 @@ export const fabrication: MysticSphere = {
           After the wall shrinks to have no radius, it begins expanding again at a rate of 5 feet per round.
           Once it expands back to its maximum radius, it begins shrinking again.
         `,
-        spell: "blade perimeter",
+        name: "blade perimeter",
       },
       rank: 6,
       scaling: "damage",
@@ -425,7 +425,7 @@ export const fabrication: MysticSphere = {
           In addition, the time required to perform this ritual decreases to one tenth of the time required to copy the writing by hand, to a minimum of one minute.
           It requires one \\glossterm{fatigue point} from its participants.
         `,
-        spell: "copy writing",
+        name: "copy writing",
       },
       rank: 4,
       type: "Instant",

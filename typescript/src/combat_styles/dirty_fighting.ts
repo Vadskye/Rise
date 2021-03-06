@@ -13,8 +13,7 @@ export const dirtyFighting: CombatStyle = {
         Make a strike using an \\glossterm{unarmed attack}.
         Your \\glossterm{power} with the strike is halved.
         If a creature loses hit points from the strike, it is \\glossterm{dazed} as a \\glossterm{condition}.
-        `,
-
+      `,
       rank: 1,
       type: "Duration",
     },
@@ -48,33 +47,29 @@ export const dirtyFighting: CombatStyle = {
     {
       name: "Strangle",
 
-      // original targets: One creature within your \glossterm{reach}
-
       functionsLike: {
+        abilityType: "ability",
         exceptThat: `
-        This maneuver functions like the \\textit{grapple} ability, except that the subject also takes bludgeoning damage equal to 1d8 plus your \\glossterm{power}.
-        Any accuracy bonuses you have that apply specifically to the \\textit{grapple} ability also apply to this ability.
-
-        \\rankline
-        The damage increases by +1d for each rank beyond 2.
+          the subject also takes 1d8 + half \\glossterm{power} bludgeoning damage.
+          Any accuracy bonuses you have that apply specifically to the \\textit{grapple} ability also apply to this ability.
         `,
-        spell: "grapple",
+        name: "grapple",
       },
       rank: 2,
+      scaling: "damage",
       type: "Instant",
     },
 
     {
       name: "Instant Pin",
 
-      // original targets: One creature within your \glossterm{reach}
-
       functionsLike: {
+        abilityType: "ability",
         exceptThat: `
-        This maneuver functions like the \\textit{grapple} ability, except that it requires two \\glossterm{free hands} to use, and the subject is immediately pinned (see \\pcref{Pin}).
-        Any accuracy bonuses you have that apply specifically to the \\textit{grapple} ability also apply to this ability.
+          it requires two \\glossterm{free hands} to use, and the subject is immediately pinned (see \\pcref{Pin}).
+          Any accuracy bonuses you have that apply specifically to the \\textit{grapple} ability also apply to this ability.
         `,
-        spell: "grapple",
+        name: "grapple",
       },
       rank: 7,
       type: "Instant",
@@ -85,11 +80,10 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        The attack is made against each subject's Fortitude defense instead of its Armor defense.
-        Your \\glossterm{power} with the strike is halved.
+        The attack is made against each target's Fortitude defense instead of its Armor defense.
+        You take a -1d penalty to damage with the strike.
         If a creature loses hit points from the strike, it falls \\glossterm{prone}.
-        `,
-
+      `,
       rank: 2,
       type: "Instant",
     },
@@ -97,15 +91,14 @@ export const dirtyFighting: CombatStyle = {
     {
       name: "Knockback Shove",
 
-      // original targets: One creature within your \glossterm{reach}
-
       functionsLike: {
+        abilityType: "ability",
         exceptThat: `
-        This maneuver functions like the \\textit{shove} ability, except that you \\glossterm{knockback} the subject up to 15 feet instead of push it.
-        On a critical hit, you knockback the subject 30 feet instead.
-        Any accuracy bonuses you have that apply specifically to the \\textit{shove} ability also apply to this ability.
+          you \\glossterm{knockback} the subject up to 15 feet instead of pushing it.
+          On a critical hit, you knockback the subject 30 feet instead.
+          Any accuracy bonuses you have that apply specifically to the \\textit{shove} ability also apply to this ability.
         `,
-        spell: "shove",
+        name: "shove",
       },
       rank: 2,
       scaling: {
@@ -118,17 +111,15 @@ export const dirtyFighting: CombatStyle = {
     {
       name: "Knockback Sweep",
 
-      // original targets: Up to three creatures within your \glossterm{reach}
-
       functionsLike: {
+        abilityType: "ability",
         exceptThat: `
-        Each subject of this ability after the first must be adjacent to another target.
-
-        This maneuver functions like the \\textit{shove} ability, except that it affects each subject, and you can \\glossterm{knockback} each subject up to 15 feet instead of push it.
-        On a critical hit, you knockback the subject 30 feet instead.
-        Any accuracy bonuses you have that apply specifically to the \\textit{shove} ability also apply to this ability.
+          it affects up to three creatures within your \\glossterm{reach} instead of only one.
+          In addition, you \\glossterm{knockback} each subject up to 15 feet instead of pushing it.
+          On a critical hit, you knockback each subject 30 feet instead.
+          Any accuracy bonuses you have that apply specifically to the \\textit{shove} ability also apply to this ability.
         `,
-        spell: "shove",
+        name: "shove",
       },
       rank: 4,
       scaling: {
@@ -140,15 +131,14 @@ export const dirtyFighting: CombatStyle = {
     {
       name: "Disarm Weapon",
 
-      // original targets: One creature within your \glossterm{reach}
-
       functionsLike: {
+        abilityType: "ability",
         exceptThat: `
-        This maneuver functions like the \\textit{disarm} ability, except that you can also knock loose objects held in a single hand.
-        On a critical hit, you can also knock loose an object held in two hands.
-        Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
+          you can also knock loose objects held in a single hand.
+          On a critical hit, you can also knock loose an object held in two hands.
+          Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
         `,
-        spell: "disarm",
+        name: "disarm",
       },
       rank: 2,
       type: "Instant",
@@ -160,11 +150,12 @@ export const dirtyFighting: CombatStyle = {
       // original targets: One creature within your \glossterm{reach}
 
       functionsLike: {
+        abilityType: "maneuver",
         exceptThat: `
-        This maneuver functions like the \\textit{disarm weapon} ability, except that you can immediately grab a disarmed object if you have a \\glossterm{free hand} available, including a hand you used for this ability.
-        Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
+          you can immediately grab a disarmed object if you have a \\glossterm{free hand} available, including a hand you used for this ability.
+          Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
         `,
-        spell: "disarm weapon",
+        name: "disarm weapon",
       },
       rank: 4,
       type: "Instant",
@@ -176,13 +167,14 @@ export const dirtyFighting: CombatStyle = {
       // original targets: One creature within your \glossterm{reach}
 
       functionsLike: {
+        abilityType: "maneuver",
         exceptThat: `
         This maneuver functions like the \\textit{disarm weapon} ability, except that you can immediately grab a disarmed object if you have a \\glossterm{free hand} available, including a hand you used for this ability.
         Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
 
         In addition, if you use this ability during the \\glossterm{action phase}, you can make a \\glossterm{strike} with the stolen weapon during the \\glossterm{delayed action phase}.
         `,
-        spell: "disarm weapon",
+        name: "disarm weapon",
       },
       rank: 6,
       type: "Instant",
@@ -194,11 +186,12 @@ export const dirtyFighting: CombatStyle = {
       // original targets: One creature within your \glossterm{reach}
 
       functionsLike: {
+        abilityType: "ability",
         exceptThat: `
         This maneuver functions like the \\textit{disarm} ability, except that you gain a +1d bonus to damage with the strike.
         Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
         `,
-        spell: "disarm",
+        name: "disarm",
       },
       rank: 1,
       type: "Instant",
@@ -210,12 +203,13 @@ export const dirtyFighting: CombatStyle = {
       // original targets: One creature within your \glossterm{reach}
 
       functionsLike: {
+        abilityType: "ability",
         exceptThat: `
         This maneuver functions like the \\textit{disarm} ability, except that you gain a +1d bonus to damage with the strike.
         In addition, if you disarm an attended item and your attack result also beats the attending creature's Armor defense, you may choose to deal damage to the attending creature in addition to its item.
         Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
         `,
-        spell: "disarm",
+        name: "disarm",
       },
       rank: 4,
       type: "Instant",
@@ -227,6 +221,7 @@ export const dirtyFighting: CombatStyle = {
       // original targets: Each creature in the area (see text)
 
       functionsLike: {
+        abilityType: "ability",
         exceptThat: `
         This maneuver functions like the \\textit{overrun} ability, except that it requires a standard action to use and does not cause you to gain a \\glossterm{fatigue point}.
         In addition, creatures cannot choose to avoid you and each creature that you move through takes bludgeoning damage equal to 2d6 plus half your \\glossterm{power}, or double that damage on a critical hit.
@@ -235,7 +230,7 @@ export const dirtyFighting: CombatStyle = {
         \\rankline
         The damage increases by +1d for each rank beyond 3.
         `,
-        spell: "overrun",
+        name: "overrun",
       },
       rank: 3,
       type: "Instant",
@@ -247,6 +242,7 @@ export const dirtyFighting: CombatStyle = {
       // original targets: Each creature in the area (see text)
 
       functionsLike: {
+        abilityType: "maneuver",
         exceptThat: `
         This maneuver functions like the \\textit{battering ram} ability, except that you do not treat the space occupied by creatures you move through as difficult terrain.
         In addition, missing an attack does not cause you to fall prone, though it still ends your movement.
@@ -256,7 +252,7 @@ export const dirtyFighting: CombatStyle = {
         \\rankline
         The damage increases by +1d for each rank beyond 6.
         `,
-        spell: "battering ram",
+        name: "battering ram",
       },
       rank: 6,
       type: "Instant",

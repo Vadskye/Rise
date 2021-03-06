@@ -29,7 +29,7 @@ export const barrier: MysticSphere = {
         exceptThat: `
           its \\glossterm{range} is \\shortrange and the maximum dimensions of the barrier are a 5 ft.\\ by 5 ft.\\ square.
         `,
-        spell: "mystic barrier",
+        name: "mystic barrier",
       },
       focus: false,
       name: "Minor Barrier",
@@ -53,7 +53,7 @@ export const barrier: MysticSphere = {
             Whenever a creature misses the barrier with a \\glossterm{mundane} attack, it makes the same attack against itself, rolling a new attack roll against its own defenses.
             In addition, the \\glossterm{hit points} of each 5-ft.\\ square increase to 8.
         `,
-        spell: "mystic barrier",
+        name: "mystic barrier",
       },
       rank: 4,
       scaling: {
@@ -72,7 +72,7 @@ export const barrier: MysticSphere = {
             There are three possibilities: fully invisible, barely visible like a normal \\spell{mystic barrier}, and visible as a deep black that completely blocks sight.
             You can change the opacity of the barrier as part of the action you use to sustain this spell, or as a \\glossterm{minor action} if you attune to this spell.
         `,
-        spell: "mystic barrier",
+        name: "mystic barrier",
       },
       rank: 2,
       scaling: {
@@ -95,7 +95,7 @@ export const barrier: MysticSphere = {
             A sound-dampening barrier increases the \\glossterm{difficulty rating} of sound-based Awareness checks by 20.
             Sound-permeable and sound-dampening barriers do not block \\glossterm{line of effect} for effects that deal \\glossterm{sonic damage}, but a sound-dampening barrier makes everything \\glossterm{impervious} to \\glossterm{sonic damage} that originates from the other side of the barrier.
         `,
-        spell: "mystic barrier",
+        name: "mystic barrier",
       },
       rank: 2,
       scaling: {
@@ -117,7 +117,7 @@ export const barrier: MysticSphere = {
             This does no damage to creatures, who block the path of the barrier like normal.
             In addition, the \\glossterm{hit points} of each 5-ft.\\ square increase to 8.
         `,
-        spell: "mystic barrier",
+        name: "mystic barrier",
       },
       rank: 3,
       scaling: {
@@ -162,7 +162,7 @@ export const barrier: MysticSphere = {
         exceptThat: `
           the wall is aligned horizontally instead of vertically.
         `,
-        spell: "mystic barrier",
+        name: "mystic barrier",
       },
       rank: 2,
       scaling: {
@@ -267,7 +267,7 @@ export const barrier: MysticSphere = {
           the wall is \\glossterm{impervious} to physical damage.
           In addition, each 5-ft.\\ square of wall has 16 \\glossterm{hit points}.
         `,
-        spell: "mystic barrier",
+        name: "mystic barrier",
       },
       rank: 5,
       scaling: {
@@ -304,7 +304,7 @@ export const barrier: MysticSphere = {
             Objects, creatures, and \\glossterm{mundane} abilities can pass through the wall freely, but any \\glossterm{magical} ability treats the wall as an impassable barrier.
             In addition, each 5-ft.\\ square of wall has 8 \\glossterm{hit points}.
         `,
-        spell: "mystic barrier",
+        name: "mystic barrier",
       },
       rank: 4,
       scaling: {
@@ -324,7 +324,7 @@ export const barrier: MysticSphere = {
             If it stops halfway, it can return to its side, but once it passes through fully it treats the barrier as impassable from the other side.
             In addition, each 5-ft.\\ square of wall has 16 \\glossterm{hit points}.
         `,
-        spell: "mystic barrier",
+        name: "mystic barrier",
       },
       rank: 7,
       tags: ["Manifestation"],
@@ -353,7 +353,7 @@ export const barrier: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "kinetic shield",
+        name: "kinetic shield",
       },
       rank: 3,
       scaling: {
@@ -401,7 +401,7 @@ export const barrier: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "resist energy",
+        name: "resist energy",
       },
       rank: 3,
       scaling: {
@@ -431,7 +431,7 @@ export const barrier: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "universal shield",
+        name: "universal shield",
       },
       rank: 5,
       scaling: {
@@ -503,7 +503,7 @@ export const barrier: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "deflective shield",
+        name: "deflective shield",
       },
       rank: 3,
       scaling: {
@@ -518,7 +518,7 @@ export const barrier: MysticSphere = {
 
       functionsLike: {
         exceptThat: "you gain a +10 bonus to \\glossterm{accuracy} against living creatures.",
-        spell: "repulsion field",
+        name: "repulsion field",
       },
       rank: 6,
       scaling: "accuracy",
@@ -565,7 +565,7 @@ export const barrier: MysticSphere = {
           the \\glossterm{difficulty rating} to unlock the object with a Devices check is instead equal to 30 + your \\glossterm{power}.
             In addition, the \\glossterm{difficulty rating} to break it open increases by 20 instead of by 10.
         `,
-        spell: "mystic lock",
+        name: "mystic lock",
       },
       rank: 4,
       type: "Attune (ritual)",

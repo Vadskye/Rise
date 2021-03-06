@@ -110,7 +110,7 @@ export const revelation: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Precognitive Offense",
+        name: "Precognitive Offense",
       },
       // narrative: '',
       rank: 3,
@@ -142,7 +142,7 @@ export const revelation: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Precognitive Defense",
+        name: "Precognitive Defense",
       },
       // narrative: '',
       rank: 3,
@@ -214,7 +214,7 @@ export const revelation: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Blindsight",
+        name: "Blindsight",
       },
       // narrative: '',
       rank: 4,
@@ -246,7 +246,7 @@ export const revelation: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Boon of Many Eyes",
+        name: "Boon of Many Eyes",
       },
       // narrative: '',
       rank: 5,
@@ -421,7 +421,7 @@ export const revelation: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Longshot",
+        name: "Longshot",
       },
       // narrative: '',
       rank: 3,
@@ -515,7 +515,7 @@ export const revelation: MysticSphere = {
         exceptThat: `
         the augury considers events up to 4 hours into your future when evaluating the outcomes of your plan.
         `,
-        spell: "augury",
+        name: "augury",
       },
       rank: 4,
       type: "Instant",
@@ -530,7 +530,7 @@ export const revelation: MysticSphere = {
         exceptThat: `
         the augury considers events up to 12 hours into your future when evaluating the outcomes of your plan.
         `,
-        spell: "augury",
+        name: "augury",
       },
       rank: 6,
       type: "Instant",
@@ -584,7 +584,7 @@ export const revelation: MysticSphere = {
         it locates objects instead of creatures.
         Objects currently being worn or carried by creatures cannot be found by this ritual.
         `,
-        spell: "locate creature",
+        name: "locate creature",
       },
       rank: 3,
       type: "Instant",
@@ -635,7 +635,7 @@ export const revelation: MysticSphere = {
         there is no distance limitation.
         The creature or object must simply be on the same plane as you.
         `,
-        spell: "discern location",
+        name: "discern location",
       },
       rank: 4,
       type: "Instant",
@@ -651,7 +651,7 @@ export const revelation: MysticSphere = {
         exceptThat: `
         the subject does not have to be on the same plane as you.
         `,
-        spell: "discern location",
+        name: "discern location",
       },
       rank: 6,
       type: "Instant",
@@ -690,7 +690,7 @@ export const revelation: MysticSphere = {
         there is no distance limitation.
         The subject must simply be on the same plane as you.
         `,
-        spell: "sending",
+        name: "sending",
       },
       rank: 5,
       type: "Sustain (standard)",
@@ -706,7 +706,7 @@ export const revelation: MysticSphere = {
         exceptThat: `
         the subject does not have to be on the same plane as you.
         `,
-        spell: "distant sending",
+        name: "distant sending",
       },
       rank: 7,
       type: "Sustain (standard)",
@@ -742,7 +742,7 @@ export const revelation: MysticSphere = {
         the effect works at any distance.
         The communication still does not function across planes.
         `,
-        spell: "telepathic bond",
+        name: "telepathic bond",
       },
       rank: 5,
       type: "Attune (ritual)",
@@ -759,7 +759,7 @@ export const revelation: MysticSphere = {
         the effect works at any distance and across planes.
         It gains the \\glossterm{Planar} tag in addition to the tags from the \\ritual{telepathic bond} ritual.
         `,
-        spell: "telepathic bond",
+        name: "telepathic bond",
       },
       rank: 7,
       type: "Attune (ritual)",
@@ -808,7 +808,7 @@ export const revelation: MysticSphere = {
         the subject does not have to be on the same plane as you.
         It gains the \\glossterm{Planar} tag in addition to the tags from the \\ritual{scry creature} ritual.
         `,
-        spell: "scry creature",
+        name: "scry creature",
       },
       rank: 6,
       tags: ["Scrying"],

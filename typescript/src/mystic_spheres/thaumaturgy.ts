@@ -194,7 +194,7 @@ export const thaumaturgy: MysticSphere = {
           on a hit, the effect ends completely instead of being suppressed.
           If the effect required attunement, that attunement is broken.
         `,
-        spell: "suppress magic",
+        name: "suppress magic",
       },
       rank: 4,
       scaling: "accuracy",
@@ -272,7 +272,7 @@ export const thaumaturgy: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Enhance Magic",
+        name: "Enhance Magic",
       },
       // narrative: '',
       rank: 3,
