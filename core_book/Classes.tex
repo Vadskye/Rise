@@ -116,13 +116,13 @@ This choice determines a great deal about your character's abilities.
 \begin{dtabularx}{\textwidth}{l l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
     \tb{Rank} & \tb{Min Level} & \tb{Battleforged Resilience}  & \tb{Battlerager}         & \tb{Outland Savage}                        & \tb{Primal Warrior}    \tableheaderrule
     0 & \tdash & Unbattered resilience         & Insensible anger         & Savage rush                                & Primal might                            \\
-    1 & 1      & Battle-scarred                & Rage                     & Fast movement                              & Primal maneuvers                        \\
-    2 & 4      & Endurance                     & Enraged strike           & Savage precision                           & Maneuver rank (2), primal force         \\
-    3 & 7      & Greater unbattered resilience & Greater insensible anger & Savage force                               & Maneuver rank (3), glancing strikes     \\
-    4 & 10     & Greater battle-scarred        & Greater rage             & Greater fast movement, greater savage rush & Maneuver rank (4), primal maneuver      \\
-    5 & 13     & Greater endurance             & Immutable anger          & Greater savage precision                   & Maneuver rank (5), greater primal force \\
-    6 & 16     & Supreme unbattered resilience & Supreme insensible anger & Greater savage force                       & Maneuver rank (6), greater primal might \\
-    7 & 19     & Supreme battle-scarred        & Supreme rage             & Supreme fast movement, supreme savage rush & Maneuver rank (7), primal maneuver      \\
+    1 & 1      & Battle-scarred                & Rage                     & Fast movement                              & Primal combat style                        \\
+    2 & 4      & Endurance                     & Enraged strike           & Savage precision                           & Combat style rank (2), primal force         \\
+    3 & 7      & Greater unbattered resilience & Greater insensible anger & Savage force                               & Combat style rank (3), glancing strikes     \\
+    4 & 10     & Greater battle-scarred        & Greater rage             & Greater fast movement, greater savage rush & Combat style rank (4), primal maneuver      \\
+    5 & 13     & Greater endurance             & Immutable anger          & Greater savage precision                   & Combat style rank (5), greater primal force \\
+    6 & 16     & Supreme unbattered resilience & Supreme insensible anger & Greater savage force                       & Combat style rank (6), greater primal might \\
+    7 & 19     & Supreme battle-scarred        & Supreme rage             & Supreme fast movement, supreme savage rush & Combat style rank (7), primal maneuver      \\
 \end{dtabularx}
     \end{dtable!*}
 
@@ -262,11 +262,14 @@ This choice determines a great deal about your character's abilities.
         \cf{Bbn}[0]{Primal Might} You gain a \plus1 bonus to Strength-based \glossterm{checks} and Constitution-based \glossterm{checks}.
 
         {
-            \cf{Bbn}[1]{Primal Maneuvers}
+            \cf{Bbn}[1]{Primal Combat Style}
             You can channel your primal energy into ferocious attacks.
-            You learn two \glossterm{maneuvers} from the primal maneuver list (see \pcref{Primal Maneuvers}).
-            You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
-            As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
+            You gain access to one primal \glossterm{combat style} (see \pcref{Primal Combat Styles}).
+            You may spend \glossterm{insight points} to gain access to one additional primal combat style per insight point.
+
+            In addition, you learn two rank 1 \glossterm{maneuvers} from primal combat styles you have access to.
+            You may spend \glossterm{insight points} to learn to one additional maneuver per insight point.
+            Unless otherwise noted in an ability's description, using a maneuver requires a \glossterm{standard action}.
 
             When you gain access to a new \glossterm{rank} in this archetype,
                 you can exchange any number of maneuvers you know for other maneuvers,
@@ -274,14 +277,14 @@ This choice determines a great deal about your character's abilities.
         }
 
         {
-            \cf{Bbn}[2]{Maneuver Rank} You become a rank 2 primal maneuverist.
+            \cf{Bbn}[2]{Combat Style Rank} You become a rank 2 primal combat style user.
             This gives you access to maneuvers that require a minimum rank of 2.
 
             \cf{Bbn}[2]{Primal Force} You gain a \plus1d bonus to your damage with all weapons.
         }
 
         {
-            \cf*{Bbn}[3]{Maneuver Rank} You become a rank 3 primal maneuverist.
+            \cf*{Bbn}[3]{Combat Style Rank} You become a rank 3 primal combat style user.
             This gives you access to maneuvers that require a minimum rank of 3 and can improve the effectiveness of your existing maneuvers.
 
             \cf{Bbn}[3]{Glancing Strikes} Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
@@ -289,33 +292,33 @@ This choice determines a great deal about your character's abilities.
         }
 
         {
-            \cf*{Bbn}[4]{Maneuver Rank} You become a rank 4 primal maneuverist.
+            \cf*{Bbn}[4]{Combat Style Rank} You become a rank 4 primal combat style user.
             This gives you access to maneuvers that require a minimum rank of 4 and can improve the effectiveness of your existing maneuvers.
 
             \cf{Bbn}[4]{Primal Maneuver}
-            You learn an additional primal \glossterm{maneuver} (see \pcref{Primal Maneuvers}).
+            You learn an additional \glossterm{maneuver} from a primal combat style you have access to (see \pcref{Primal Combat Styles}).
         }
 
         {
-            \cf*{Bbn}[5]{Maneuver Rank} You become a rank 5 primal maneuverist.
+            \cf*{Bbn}[5]{Combat Style Rank} You become a rank 5 primal combat style user.
             This gives you access to maneuvers that require a minimum rank of 5 and can improve the effectiveness of your existing maneuvers.
 
             \cf{Bbn}[5]{Greater Primal Force} The bonus from your \textit{primal force} ability increases to \plus2d.
         }
 
         {
-            \cf*{Bbn}[6]{Maneuver Rank} You become a rank 6 primal maneuverist.
+            \cf*{Bbn}[6]{Combat Style Rank} You become a rank 6 primal combat style user.
             This gives you access to maneuvers that require a minimum rank of 6 and can improve the effectiveness of your existing maneuvers.
 
             \cf{Bbn}[6]{Greater Primal Might} The bonuses from your \textit{primal might} ability increase to \plus2.
         }
 
         {
-            \cf*{Bbn}[7]{Maneuver Rank} You become a rank 7 primal maneuverist.
+            \cf*{Bbn}[7]{Combat Style Rank} You become a rank 7 primal combat style user.
             This gives you access to maneuvers that require a minimum rank of 7 and can improve the effectiveness of your existing maneuvers.
 
             \cf*{Bbn}[7]{Primal Maneuver}
-            You learn an additional primal \glossterm{maneuver} (see \pcref{Primal Maneuvers}).
+            You learn an additional \glossterm{maneuver} from a primal combat style you have access to (see \pcref{Primal Combat Styles}).
 
         }
 
@@ -416,7 +419,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Clr}[0]{Cantrips}[Magical]
         Your deity grants you the ability to use divine magic.
         You gain access to one divine \glossterm{mystic sphere} (see \pcref{Divine Mystic Spheres}).
-        You may spend \glossterm{insight points} to learn one additional divine \glossterm{mystic sphere} per two \glossterm{insight points}.
+        You may spend \glossterm{insight points} to gain access to one additional divine \glossterm{mystic sphere} per two \glossterm{insight points}.
         You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
         You do not yet gain access to any other spells from those mystic spheres.
 
@@ -1616,12 +1619,12 @@ This choice determines a great deal about your character's abilities.
     \tb{Rank} & \tb{Min Level} & \tb{Combat Discipline}       & \tb{Equipment Training}      & \tb{Martial Mastery}                           & \tb{Tactician} \tableheaderrule
     0         & \tdash         & Enduring discipline          & Armor expertise              & Defensive expertise                            & Tactical insight           \\
     1         & 1              & Discipline                   & Weapon training              & Martial maneuvers                              & Battle tactics             \\
-    2         & 4              & Greater enduring discipline  & Equipment efficiency         & Maneuver rank (2), martial force               & Tactical precision         \\
-    3         & 7              & Disciplined force            & Greater armor expertise      & Maneuver rank (3), glancing strikes            & Tactical insight           \\
-    4         & 10             & Disciplined reaction         & Weapon expertise             & Maneuver rank (4), martial maneuver            & Reactive tactics           \\
-    5         & 13             & Supreme enduring discipline  & Greater equipment efficiency & Maneuver rank (5), greater martial force       & Greater tactical precision \\
-    6         & 16             & Greater disciplined force    & Supreme armor expertise      & Maneuver rank (6), greater defensive expertise & Tactical insight           \\
-    7         & 19             & Greater disciplined reaction & Greater weapon expertise     & Maneuver rank (7), martial maneuver            & Greater reactive tactics   \\
+    2         & 4              & Greater enduring discipline  & Equipment efficiency         & Combat style rank (2), martial force               & Tactical precision         \\
+    3         & 7              & Disciplined force            & Greater armor expertise      & Combat style rank (3), glancing strikes            & Tactical insight           \\
+    4         & 10             & Disciplined reaction         & Weapon expertise             & Combat style rank (4), martial maneuver            & Reactive tactics           \\
+    5         & 13             & Supreme enduring discipline  & Greater equipment efficiency & Combat style rank (5), greater martial force       & Greater tactical precision \\
+    6         & 16             & Greater disciplined force    & Supreme armor expertise      & Combat style rank (6), greater defensive expertise & Tactical insight           \\
+    7         & 19             & Greater disciplined reaction & Greater weapon expertise     & Combat style rank (7), martial maneuver            & Greater reactive tactics   \\
 \end{dtabularx}
     \end{dtable!*}
 
@@ -1739,11 +1742,14 @@ This choice determines a great deal about your character's abilities.
         \cf{Ftr}[0]{Defensive Expertise} You gain a \plus1 bonus to Armor defense.
 
         {
-            \cf{Ftr}[1]{Martial Maneuvers}
+            \cf{Ftr}[1]{Martial Combat Style}
             You can channel your martial prowess into a wide variety of dangerous attacks.
-            You learn two \glossterm{maneuvers} from the martial maneuver list (see \pcref{Martial Maneuvers}).
-            You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
-            As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
+            You gain access to one martial \glossterm{combat style} (see \pcref{Martial Combat Styles}).
+            You may spend \glossterm{insight points} to gain access to one additional martial combat style per insight point.
+
+            In addition, you learn two rank 1 \glossterm{maneuvers} from martial combat styles you have access to.
+            You may spend \glossterm{insight points} to learn to one additional maneuver per insight point.
+            Unless otherwise noted in an ability's description, using a maneuver requires a \glossterm{standard action}.
 
             When you gain access to a new \glossterm{rank} in this archetype,
                 you can exchange any number of maneuvers you know for other maneuvers,
@@ -1751,14 +1757,14 @@ This choice determines a great deal about your character's abilities.
         }
 
         {
-            \cf{Ftr}[2]{Maneuver Rank} You become a rank 2 martial maneuverist.
+            \cf{Ftr}[2]{Combat Style Rank} You become a rank 2 martial combat style user.
             This gives you access to maneuvers that require a minimum rank of 2.
 
             \cf{Ftr}[2]{Martial Force} You gain a \plus1d bonus to your damage with all weapons.
         }
 
         {
-            \cf*{Ftr}[3]{Maneuver Rank} You become a rank 3 martial maneuverist.
+            \cf*{Ftr}[3]{Combat Style Rank} You become a rank 3 martial combat style user.
             This gives you access to maneuvers that require a minimum rank of 3 and can improve the effectiveness of your existing maneuvers.
 
             \cf{Ftr}[3]{Glancing Strikes} Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
@@ -1766,33 +1772,33 @@ This choice determines a great deal about your character's abilities.
         }
 
         {
-            \cf*{Ftr}[4]{Maneuver Rank} You become a rank 4 martial maneuverist.
+            \cf*{Ftr}[4]{Combat Style Rank} You become a rank 4 martial combat style user.
             This gives you access to maneuvers that require a minimum rank of 4 and can improve the effectiveness of your existing maneuvers.
 
             \cf{Ftr}[4]{Martial Maneuver}
-            You learn an additional martial \glossterm{maneuver} (see \pcref{Martial Maneuvers}).
+            You learn an additional \glossterm{maneuver} from a martial combat style you have access to (see \pcref{Martial Combat Styles}).
         }
 
         {
-            \cf*{Ftr}[5]{Maneuver Rank} You become a rank 5 martial maneuverist.
+            \cf*{Ftr}[5]{Combat Style Rank} You become a rank 5 martial combat style user.
             This gives you access to maneuvers that require a minimum rank of 5 and can improve the effectiveness of your existing maneuvers.
 
             \cf{Ftr}[5]{Greater Martial Force} The bonus from your \textit{martial force} ability increases to \plus2d.
         }
 
         {
-            \cf*{Ftr}[6]{Maneuver Rank} You become a rank 6 martial maneuverist.
+            \cf*{Ftr}[6]{Combat Style Rank} You become a rank 6 martial combat style user.
             This gives you access to maneuvers that require a minimum rank of 6 and can improve the effectiveness of your existing maneuvers.
 
             \cf{Ftr}[6]{Greater Defensive Expertise} The bonus from your \textit{defensive expertise} ability increases to \plus2.
         }
 
         {
-            \cf*{Ftr}[7]{Maneuver Rank} You become a rank 7 martial maneuverist.
+            \cf*{Ftr}[7]{Combat Style Rank} You become a rank 7 martial combat style user.
             This gives you access to maneuvers that require a minimum rank of 7 and can improve the effectiveness of your existing maneuvers.
 
             \cf*{Ftr}[7]{Martial Maneuver}
-            You learn an additional martial \glossterm{maneuver} (see \pcref{Martial Maneuvers}).
+            You learn an additional \glossterm{maneuver} from a martial combat style you have access to (see \pcref{Martial Combat Styles}).
         }
 
     \newpage
@@ -1910,12 +1916,12 @@ This choice determines a great deal about your character's abilities.
     \tb{Rank} & \tb{Min Level} & \tb{Esoteric Warrior}                        & \tb{Ki}                  & \tb{Perfected Form}       & \tb{Transcendent Sage} \tableheaderrule
     0         & \tdash         & Esoteric fluidity                            & Ki barrier, ki energy    & Unarmed warrior           & Transcend frailty             \\
     1         & 1              & Esoteric maneuvers                           & Ki manifestations        & Fast movement             & Clear the mind                \\
-    2         & 4              & Maneuver rank (2), esoteric force            & Greater ki barrier       & Perfect precision         & Feel the flow of life         \\
-    3         & 7              & Maneuver rank (3), glancing strikes          & Ki power                 & Perfect body              & Transcend time                \\
-    4         & 10             & Maneuver rank (4), esoteric maneuver         & Ki manifestation         & Greater fast movement     & Inner peace                   \\
-    5         & 13             & Maneuver rank (5), greater esoteric force    & Supreme ki barrier       & Greater perfect precision & Greater feel the flow of life \\
-    6         & 16             & Maneuver rank (6), greater esoteric fluidity & Greater ki power         & Greater perfect body      & Transcend mortality           \\
-    7         & 19             & Maneuver rank (7), esoteric maneuver         & Greater ki manifestation & Supreme fast movement     & Inner transcendence           \\
+    2         & 4              & Combat style rank (2), esoteric force            & Greater ki barrier       & Perfect precision         & Feel the flow of life         \\
+    3         & 7              & Combat style rank (3), glancing strikes          & Ki power                 & Perfect body              & Transcend time                \\
+    4         & 10             & Combat style rank (4), esoteric maneuver         & Ki manifestation         & Greater fast movement     & Inner peace                   \\
+    5         & 13             & Combat style rank (5), greater esoteric force    & Supreme ki barrier       & Greater perfect precision & Greater feel the flow of life \\
+    6         & 16             & Combat style rank (6), greater esoteric fluidity & Greater ki power         & Greater perfect body      & Transcend mortality           \\
+    7         & 19             & Combat style rank (7), esoteric maneuver         & Greater ki manifestation & Supreme fast movement     & Inner transcendence           \\
 \end{dtabularx}
     \end{dtable!*}
 
@@ -1957,11 +1963,14 @@ This choice determines a great deal about your character's abilities.
         \cf{Mnk}[0]{Esoteric Fluidity} You gain a \plus1 bonus to Dexterity-based \glossterm{checks}, except \glossterm{initiative} checks.
 
         {
-            \cf{Mnk}[1]{Esoteric Maneuvers}
-            You can use your esoteric combat style to perform unusual attacks.
-            You learn two \glossterm{maneuvers} from the esoteric maneuver list (see \pcref{Esoteric Maneuvers}).
-            You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
-            As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
+            \cf{Mnk}[1]{Esoteric Combat Style}
+            You can perform a wide variety of unusual attacks.
+            You gain access to one esoteric \glossterm{combat style} (see \pcref{Esoteric Combat Styles}).
+            You may spend \glossterm{insight points} to gain access to one additional esoteric combat style per insight point.
+
+            In addition, you learn two rank 1 \glossterm{maneuvers} from esoteric combat styles you have access to.
+            You may spend \glossterm{insight points} to learn to one additional maneuver per insight point.
+            Unless otherwise noted in an ability's description, using a maneuver requires a \glossterm{standard action}.
 
             When you gain access to a new \glossterm{rank} in this archetype,
                 you can exchange any number of maneuvers you know for other maneuvers,
@@ -1969,14 +1978,14 @@ This choice determines a great deal about your character's abilities.
         }
 
         {
-            \cf{Mnk}[2]{Maneuver Rank} You become a rank 2 esoteric maneuverist.
+            \cf{Mnk}[2]{Combat Style Rank} You become a rank 2 esoteric combat style user.
             This gives you access to maneuvers that require a minimum rank of 2.
 
             \cf{Mnk}[2]{Esoteric Force} You gain a \plus1d bonus to your damage with all weapons.
         }
 
         {
-            \cf*{Mnk}[3]{Maneuver Rank} You become a rank 3 esoteric maneuverist.
+            \cf*{Mnk}[3]{Combat Style Rank} You become a rank 3 esoteric combat style user.
             This gives you access to maneuvers that require a minimum rank of 3 and can improve the effectiveness of your existing maneuvers.
 
             \cf{Mnk}[3]{Glancing Strikes} Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
@@ -1984,33 +1993,33 @@ This choice determines a great deal about your character's abilities.
         }
 
         {
-            \cf*{Mnk}[4]{Maneuver Rank} You become a rank 4 esoteric maneuverist.
+            \cf*{Mnk}[4]{Combat Style Rank} You become a rank 4 esoteric combat style user.
             This gives you access to maneuvers that require a minimum rank of 4 and can improve the effectiveness of your existing maneuvers.
 
             \cf{Mnk}[4]{Esoteric Maneuver}
-            You learn an additional esoteric \glossterm{maneuver} (see \pcref{Esoteric Maneuvers}).
+            You learn an additional \glossterm{maneuver} from an esoteric combat style you have access to (see \pcref{Esoteric Combat Styles}).
         }
 
         {
-            \cf*{Mnk}[5]{Maneuver Rank} You become a rank 5 esoteric maneuverist.
+            \cf*{Mnk}[5]{Combat Style Rank} You become a rank 5 esoteric combat style user.
             This gives you access to maneuvers that require a minimum rank of 5 and can improve the effectiveness of your existing maneuvers.
 
             \cf{Mnk}[5]{Greater Esoteric Force} The bonus from your \textit{esoteric force} ability increases to \plus2.
         }
 
         {
-            \cf*{Mnk}[6]{Maneuver Rank} You become a rank 6 esoteric maneuverist.
+            \cf*{Mnk}[6]{Combat Style Rank} You become a rank 6 esoteric combat style user.
             This gives you access to maneuvers that require a minimum rank of 6 and can improve the effectiveness of your existing maneuvers.
 
             \cf{Mnk}[6]{Greater Esoteric Fluidity} The bonus from your \textit{esoteric fluidity} ability increases to \plus2.
         }
 
         {
-            \cf*{Mnk}[7]{Maneuver Rank} You become a rank 7 esoteric maneuverist.
+            \cf*{Mnk}[7]{Combat Style Rank} You become a rank 7 esoteric combat style user.
             This gives you access to maneuvers that require a minimum rank of 7 and can improve the effectiveness of your existing maneuvers.
 
             \cf*{Mnk}[7]{Esoteric Maneuver}
-            You learn an additional esoteric \glossterm{maneuver} (see \pcref{Esoteric Maneuvers}).
+            You learn an additional \glossterm{maneuver} from an esoteric combat style you have access to (see \pcref{Esoteric Combat Styles}).
         }
 
     \newpage
@@ -2552,12 +2561,12 @@ This choice determines a great deal about your character's abilities.
     \tb{Rank} & \tb{Min Level} & \tb{Beastmaster}         & \tb{Huntmaster}          & \tb{Scout}                & \tb{Wilderness Warrior} \tableheaderrule
     0 & \tdash & Beast affinity           & Huntmaster               & Keen vision        & Wild senses                            \\
     1 & 1      & Animal companion         & Quarry                   & Skirmisher               & Wild maneuvers                         \\
-    2 & 4      & Pack tactics             & Hunting style            & Perceive weakness                & Maneuver rank (2), wild force          \\
-    3 & 7      & Power of beasts          & Endurance hunter         & Blindsight         & Maneuver rank (3), glancing strikes    \\
-    4 & 10     & Greater animal companion & Greater quarry           & Greater skirmisher                & Maneuver rank (4), wild maneuver       \\
-    5 & 13     & Greater pack tactics     & Hunting style            & Greater perceive weakness        & Maneuver rank (5), greater wild force  \\
-    6 & 16     & Greater power of beasts  & Greater endurance hunter & Greater blindsight & Maneuver rank (6), greater wild senses \\
-    7 & 19     & Supreme animal companion & Supreme quarry           & Supreme skirmisher        & Maneuver rank (7), wild maneuver       \\
+    2 & 4      & Pack tactics             & Hunting style            & Perceive weakness                & Combat style rank (2), wild force          \\
+    3 & 7      & Power of beasts          & Endurance hunter         & Blindsight         & Combat style rank (3), glancing strikes    \\
+    4 & 10     & Greater animal companion & Greater quarry           & Greater skirmisher                & Combat style rank (4), wild maneuver       \\
+    5 & 13     & Greater pack tactics     & Hunting style            & Greater perceive weakness        & Combat style rank (5), greater wild force  \\
+    6 & 16     & Greater power of beasts  & Greater endurance hunter & Greater blindsight & Combat style rank (6), greater wild senses \\
+    7 & 19     & Supreme animal companion & Supreme quarry           & Supreme skirmisher        & Combat style rank (7), wild maneuver       \\
 \end{dtabularx}
     \end{dtable!*}
 
@@ -2809,11 +2818,14 @@ This choice determines a great deal about your character's abilities.
         \cf{Rgr}[0]{Wild Senses} You gain a \plus1 bonus to Perception-based checks, except \glossterm{initiative} checks.
 
         {
-            \cf{Rgr}[1]{Wild Maneuvers}
+            \cf{Rgr}[1]{Wild Combat Style}
             You can channel your wild energy into ferocious attacks.
-            You learn two \glossterm{maneuvers} from the wild maneuver list (see \pcref{Wild Maneuvers}).
-            You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
-            As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
+            You gain access to one wild \glossterm{combat style} (see \pcref{Wild Combat Styles}).
+            You may spend \glossterm{insight points} to gain access to one additional wild combat style per insight point.
+
+            In addition, you learn two rank 1 \glossterm{maneuvers} from wild combat styles you have access to.
+            You may spend \glossterm{insight points} to learn to one additional maneuver per insight point.
+            Unless otherwise noted in an ability's description, using a maneuver requires a \glossterm{standard action}.
 
             When you gain access to a new \glossterm{rank} in this archetype,
                 you can exchange any number of maneuvers you know for other maneuvers,
@@ -2821,14 +2833,14 @@ This choice determines a great deal about your character's abilities.
         }
 
         {
-            \cf{Rgr}[2]{Maneuver Rank} You become a rank 2 wild maneuverist.
+            \cf{Rgr}[2]{Combat Style Rank} You become a rank 2 wild combat style user.
             This gives you access to maneuvers that require a minimum rank of 2.
 
             \cf{Rgr}[2]{Wild Force} You gain a \plus1d bonus to your damage with all weapons.
         }
 
         {
-            \cf*{Rgr}[3]{Maneuver Rank} You become a rank 3 wild maneuverist.
+            \cf*{Rgr}[3]{Combat Style Rank} You become a rank 3 wild combat style user.
             This gives you access to maneuvers that require a minimum rank of 3 and can improve the effectiveness of your existing maneuvers.
 
             \cf{Rgr}[3]{Glancing Strikes} Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
@@ -2836,33 +2848,33 @@ This choice determines a great deal about your character's abilities.
         }
 
         {
-            \cf*{Rgr}[4]{Maneuver Rank} You become a rank 4 wild maneuverist.
+            \cf*{Rgr}[4]{Combat Style Rank} You become a rank 4 wild combat style user.
             This gives you access to maneuvers that require a minimum rank of 4 and can improve the effectiveness of your existing maneuvers.
 
             \cf{Rgr}[4]{Wild Maneuver}
-            You learn an additional wild \glossterm{maneuver} (see \pcref{Wild Maneuvers}).
+            You learn an additional \glossterm{maneuver} from a wild combat style you have access to (see \pcref{Wild Combat Styles}).
         }
 
         {
-            \cf*{Rgr}[5]{Maneuver Rank} You become a rank 5 wild maneuverist.
+            \cf*{Rgr}[5]{Combat Style Rank} You become a rank 5 wild combat style user.
             This gives you access to maneuvers that require a minimum rank of 5 and can improve the effectiveness of your existing maneuvers.
 
             \cf{Rgr}[5]{Greater Wild Force} The bonus from your \textit{wild force} ability increases to \plus2d.
         }
 
         {
-            \cf*{Rgr}[6]{Maneuver Rank} You become a rank 6 wild maneuverist.
+            \cf*{Rgr}[6]{Combat Style Rank} You become a rank 6 wild combat style user.
             This gives you access to maneuvers that require a minimum rank of 6 and can improve the effectiveness of your existing maneuvers.
 
             \cf{Rgr}[6]{Greater Wild Senses} The bonus from your \textit{wild senses} ability increases to \plus2.
         }
 
         {
-            \cf*{Rgr}[7]{Maneuver Rank} You become a rank 7 wild maneuverist.
+            \cf*{Rgr}[7]{Combat Style Rank} You become a rank 7 wild combat style user.
             This gives you access to maneuvers that require a minimum rank of 7 and can improve the effectiveness of your existing maneuvers.
 
             \cf*{Rgr}[7]{Wild Maneuver}
-            You learn an additional wild \glossterm{maneuver} (see \pcref{Wild Maneuvers}).
+            You learn an additional \glossterm{maneuver} from a wild combat style you have access to (see \pcref{Wild Combat Styles}).
         }
 
     % \subsection{Boundary Warden}
@@ -2879,13 +2891,13 @@ This choice determines a great deal about your character's abilities.
 \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
     \tb{Rank} & \tb{Min Level} & \tb{Assassin}       & \tb{Bardic Music}                             & \tb{Combat Trickster}                     & \tb{Jack of All Trades} \tableheaderrule
     0 & \tdash & Stealthy instincts  & Bardic lore                            & Tricky finesse                            & Dabbler              \\
-    1 & 1      & Sneak attack        & Bardic performances                    & Maneuver rank (1), tricky force           & Skill exemplar          \\
-    2 & 4      & Evasion             & Combat inspiration                     & Maneuver rank (2), glancing strikes       & Greater dabbler                 \\
-    3 & 7      & Darkstalker         & Bardic performance, loremaster         & Maneuver rank (3), trick maneuver         & Versatile power         \\
-    4 & 10     & Hide in plain sight & Virtuoso                               & Maneuver rank (4), greater tricky force   & Greater skill exemplar  \\
-    5 & 13     & Greater evasion     & Greater combat inspiration             & Maneuver rank (5), greater tricky finesse & Supreme dabbler         \\
-    6 & 16     & Assassination       & Bardic performance, greater loremaster & Maneuver rank (6), greater tricky finesse & Greater versatile power \\
-    7 & 19     & Greater darkstalker & Greater virtuoso                       & Maneuver rank (7), trick maneuver         & Supreme skill exemplar  \\
+    1 & 1      & Sneak attack        & Bardic performances                    & Combat style rank (1), tricky force           & Skill exemplar          \\
+    2 & 4      & Evasion             & Combat inspiration                     & Combat style rank (2), glancing strikes       & Greater dabbler                 \\
+    3 & 7      & Darkstalker         & Bardic performance, loremaster         & Combat style rank (3), trick maneuver         & Versatile power         \\
+    4 & 10     & Hide in plain sight & Virtuoso                               & Combat style rank (4), greater tricky force   & Greater skill exemplar  \\
+    5 & 13     & Greater evasion     & Greater combat inspiration             & Combat style rank (5), greater tricky finesse & Supreme dabbler         \\
+    6 & 16     & Assassination       & Bardic performance, greater loremaster & Combat style rank (6), greater tricky finesse & Greater versatile power \\
+    7 & 19     & Greater darkstalker & Greater virtuoso                       & Combat style rank (7), trick maneuver         & Supreme skill exemplar  \\
 \end{dtabularx}
     \end{dtable!*}
 
@@ -3236,9 +3248,12 @@ This choice determines a great deal about your character's abilities.
         {
             \cf{Rog}[1]{Trick Maneuvers}
             You can confuse and confound your foes in combat.
-            You learn two \glossterm{maneuvers} from the trick maneuver list (see \pcref{Trick Maneuvers}).
-            You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
-            As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
+            You gain access to one trick \glossterm{combat style} (see \pcref{Trick Combat Styles}).
+            You may spend \glossterm{insight points} to gain access to one additional trick combat style per insight point.
+
+            In addition, you learn two rank 1 \glossterm{maneuvers} from trick combat styles you have access to.
+            You may spend \glossterm{insight points} to learn to one additional maneuver per insight point.
+            Unless otherwise noted in an ability's description, using a maneuver requires a \glossterm{standard action}.
 
             When you gain access to a new \glossterm{rank} in this archetype,
                 you can exchange any number of maneuvers you know for other maneuvers,
@@ -3246,14 +3261,14 @@ This choice determines a great deal about your character's abilities.
         }
 
         {
-            \cf{Rog}[2]{Maneuver Rank} You become a rank 2 trick maneuverist.
+            \cf{Rog}[2]{Combat Style Rank} You become a rank 2 trick combat style user.
             This gives you access to maneuvers that require a minimum rank of 2.
 
             \cf{Rog}[2]{Tricky Force} You gain a \plus1d bonus to your damage with all weapons.
         }
 
         {
-            \cf*{Rog}[3]{Maneuver Rank} You become a rank 3 trick maneuverist.
+            \cf*{Rog}[3]{Combat Style Rank} You become a rank 3 trick combat style user.
             This gives you access to maneuvers that require a minimum rank of 3 and can improve the effectiveness of your existing maneuvers.
 
             \cf{Rog}[3]{Glancing Strikes} Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
@@ -3261,33 +3276,33 @@ This choice determines a great deal about your character's abilities.
         }
 
         {
-            \cf*{Rog}[4]{Maneuver Rank} You become a rank 4 trick maneuverist.
+            \cf*{Rog}[4]{Combat Style Rank} You become a rank 4 trick combat style user.
             This gives you access to maneuvers that require a minimum rank of 4 and can improve the effectiveness of your existing maneuvers.
 
             \cf{Rog}[4]{Trick Maneuver}
-            You learn an additional trick \glossterm{maneuver} (see \pcref{Trick Maneuvers}).
+            You learn an additional \glossterm{maneuver} from a trick combat style you have access to (see \pcref{Trick Combat Styles}).
         }
 
         {
-            \cf*{Rog}[5]{Maneuver Rank} You become a rank 5 trick maneuverist.
+            \cf*{Rog}[5]{Combat Style Rank} You become a rank 5 trick combat style user.
             This gives you access to maneuvers that require a minimum rank of 5 and can improve the effectiveness of your existing maneuvers.
 
             \cf{Rog}[5]{Greater Tricky Force} The damage bonus from your \textit{tricky force} ability increases to \plus2d.
         }
 
         {
-            \cf*{Rog}[6]{Maneuver Rank} You become a rank 6 trick maneuverist.
+            \cf*{Rog}[6]{Combat Style Rank} You become a rank 6 trick combat style user.
             This gives you access to maneuvers that require a minimum rank of 6 and can improve the effectiveness of your existing maneuvers.
 
             \cf{Rog}[6]{Greater Tricky Finesse} The bonus from your \textit{tricky finesse} ability increases to \plus2.
         }
 
         {
-            \cf*{Rog}[7]{Maneuver Rank} You become a rank 7 trick maneuverist.
+            \cf*{Rog}[7]{Combat Style Rank} You become a rank 7 trick combat style user.
             This gives you access to maneuvers that require a minimum rank of 7 and can improve the effectiveness of your existing maneuvers.
 
             \cf*{Rog}[7]{Trick Maneuver}
-            You learn an additional trick \glossterm{maneuver} (see \pcref{Trick Maneuvers}).
+            You learn an additional \glossterm{maneuver} from a trick combat style you have access to (see \pcref{Trick Combat Styles}).
         }
 
     \newpage
