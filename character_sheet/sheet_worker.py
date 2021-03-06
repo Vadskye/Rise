@@ -201,6 +201,7 @@ def resistances():
 
 def abilities_known():
     return [
+        combat_styles_known(),
         maneuvers_known(),
         spells_known(),
         spheres_known(),
@@ -564,6 +565,17 @@ def mundane_power():
             setAttrs({{
                 mundane_power: strength_power_scaling + level_scaling + {sum_variables(misc)},
                 strength_power_scaling,
+            }});
+        """,
+    )
+
+def combat_styles_known():
+    misc = get_misc_variables("combat_styles_known", 3)
+    return js_wrapper(
+        ["combat_styles_known_insight_points", *misc],
+        f"""
+            setAttrs({{
+                combat_styles_known: combat_styles_known_insight_points + {sum_variables(misc)}
             }});
         """,
     )

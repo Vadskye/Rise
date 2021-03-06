@@ -323,7 +323,7 @@ export const aquamancy: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "underwater freedom",
+        name: "underwater freedom",
       },
       rank: 4,
       scaling: {
@@ -456,7 +456,7 @@ export const aquamancy: MysticSphere = {
           Whenever you make a \\glossterm{strike} with the tentacles, you can attack with all of the tentacles at once, with each tentacle attacking a different target.
           This functions as if your attacks had the \\glossterm{Sweeping} (7) tag, with no limit on how far each secondary target must be from the primary target (see \\pcref{Sweeping}).
         `,
-        spell: "aqueous tentacle",
+        name: "aqueous tentacle",
       },
       rank: 5,
       scaling: {
@@ -471,7 +471,7 @@ export const aquamancy: MysticSphere = {
         You grow a massive watery tentacle that extends from your body.
         The tentacle grants you a slam \\glossterm{natural weapon} (see \\tref{Natural Weapons}).
         The natural weapon deals 1d10 damage, as normal for a slam natural weapon.
-        In addition, it has the Reach \\glossterm{weapon tag} (see \\pcref{Weapon Tags}).
+        In addition, it has the Long \\glossterm{weapon tag} (see \\pcref{Weapon Tags}).
         Strikes using the tentacle are considered \\glossterm{magical} abilities, which means you use your \\glossterm{magical} \\glossterm{power} to determine their damage.
       `,
       rank: 2,
@@ -702,7 +702,7 @@ export const aquamancy: MysticSphere = {
 
       functionsLike: {
         exceptThat: "the range increases to \\extrange.",
-        spell: "detect water",
+        name: "detect water",
       },
       rank: 3,
       tags: ["Detection"],
@@ -714,7 +714,7 @@ export const aquamancy: MysticSphere = {
 
       functionsLike: {
         exceptThat: "the range increases to 2,000 foot range.",
-        spell: "detect air",
+        name: "detect air",
       },
       rank: 5,
       tags: ["Detection"],

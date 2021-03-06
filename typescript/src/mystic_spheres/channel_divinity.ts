@@ -294,7 +294,7 @@ export const channelDivinity: MysticSphere = {
         exceptThat: `
           the area increases to a \\largearea radius \\glossterm{emanation} from you.
         `,
-        spell: "divine presence",
+        name: "divine presence",
       },
       rank: 6,
       tags: ["Emotion"],

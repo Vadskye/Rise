@@ -14,14 +14,13 @@ def main():
         ) as sphere_file:
             sphere_file.write(sphere_typescript)
 
-    maneuvers_by_source = group_by_source(generate_maneuvers())
-    for source in maneuver_sources:
-        with open(
-                book_path(f"typescript/{source.lower()}.ts"), "w"
-        ) as maneuver_file:
-            for maneuver in maneuvers_by_source[source]:
-                maneuver_typescript = maneuver.generate_typescript()
-                maneuver_file.write(maneuver_typescript)
+    maneuvers = generate_maneuvers()
+    with open(
+            book_path(f"typescript/maneuvers.ts"), "w"
+    ) as maneuver_file:
+        for maneuver in maneuvers:
+            maneuver_typescript = maneuver.generate_typescript()
+            maneuver_file.write(maneuver_typescript)
 
 if __name__ == "__main__":
     main()

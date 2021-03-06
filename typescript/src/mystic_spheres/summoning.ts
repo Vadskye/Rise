@@ -13,7 +13,7 @@ export const summoning: MysticSphere = {
         exceptThat: `
           it has the \\glossterm{Sustain} (standard) tag instead of the \\glossterm{Attune} (self) tag.
         `,
-        spell: "summon monster",
+        name: "summon monster",
       },
       focus: false,
       scaling: "damage",
@@ -67,7 +67,7 @@ export const summoning: MysticSphere = {
           the summoned creature is more offensively inclined.
           It gains a +1d bonus to damage with its attacks, but its \\glossterm{hit points} are halved and it takes a -1 penalty to \\glossterm{defenses}.
         `,
-        spell: "summon monster",
+        name: "summon monster",
       },
       rank: 1,
       scaling: "damage",
@@ -83,7 +83,7 @@ export const summoning: MysticSphere = {
         the summoned creature is more defensively inclined.
         It gains a +1 bonus to defenses, but it takes a -2d penalty to damage with its attacks.
         `,
-        spell: "summon monster",
+        name: "summon monster",
       },
       rank: 1,
       scaling: "damage",
@@ -188,7 +188,7 @@ export const summoning: MysticSphere = {
         You can tell it which creature to heal.
         If you do not instruct it to heal a specific creature, it will automatically heal the ally closest to it that has lost at least one hit point.
         `,
-        spell: "summon defensive monster",
+        name: "summon defensive monster",
       },
       rank: 6,
       scaling: { special: "The damage and healing both increase by +1d for each rank beyond 6." },
@@ -216,7 +216,7 @@ export const summoning: MysticSphere = {
         The weapon prefers to avoid accuracy and damage penalties that would be imposed by cover or special weapon grips.
         It choses randomly if all possible targets are equally easy to attack.
         `,
-        spell: "summon monster",
+        name: "summon monster",
       },
       rank: 2,
       scaling: "damage",
@@ -233,7 +233,7 @@ export const summoning: MysticSphere = {
           This allows the weapon to fly up to fight airborne foes.
           In addition, the weapon's damage bonus is increased to +3d.
         `,
-        spell: "summon weapon",
+        name: "summon weapon",
       },
       rank: 4,
       scaling: "damage",
@@ -253,7 +253,7 @@ export const summoning: MysticSphere = {
           Its attacks have a maximum range of 120 feet and deal piercing damage.
           In addition, the ballista attacks the creature farthest from it, instead of the creature closest to it.
         `,
-        spell: "summon weapon",
+        name: "summon weapon",
       },
       rank: 3,
       scaling: "damage",
@@ -270,7 +270,7 @@ export const summoning: MysticSphere = {
         Its attacks deal 2d8 + half \\glossterm{power} bludgeoning damage.
         It has a \\glossterm{resistance} to \\glossterm{physical damage} equal to half its maximum \\glossterm{hit points}.
         `,
-        spell: "summon monster",
+        name: "summon monster",
       },
       rank: 5,
       scaling: "damage",
@@ -290,7 +290,7 @@ export const summoning: MysticSphere = {
         It has a 30 foot \\glossterm{swim speed}, and it suffers no penalties for fighting underwater (see \\pcref{Underwater Combat}).
         However, it is \\glossterm{vulnerable} to electricity damage.
         `,
-        spell: "summon monster",
+        name: "summon monster",
       },
       rank: 2,
       scaling: "damage",
@@ -309,7 +309,7 @@ export const summoning: MysticSphere = {
         Its attacks deal 2d6 + half \\glossterm{power} bludgeoning damage.
         It has a 30 foot \\glossterm{fly speed} with good \\glossterm{maneuverability}.
         `,
-        spell: "summon monster",
+        name: "summon monster",
       },
       rank: 4,
       scaling: "damage",
@@ -328,7 +328,7 @@ export const summoning: MysticSphere = {
         Its attacks deal 1d8 + half \\glossterm{power} fire damage.
         In addition, it is immune to fire damage.
         `,
-        spell: "summon monster",
+        name: "summon monster",
       },
       rank: 3,
       scaling: "damage",
@@ -349,7 +349,7 @@ export const summoning: MysticSphere = {
         As a standard action, it can make a \\glossterm{grapple} attack against a creature within its \\glossterm{reach}.
         While grappling, the manifested creature can either make a strike or attempt to escape the grapple.
         `,
-        spell: "summon monster",
+        name: "summon monster",
       },
       rank: 3,
       scaling: "damage",
@@ -369,7 +369,7 @@ export const summoning: MysticSphere = {
         It comes with a bit and bridle and a riding saddle, and will only accept the subject as a rider.
         The creature follows its rider's directions to the extent that a well-trained horse would and it cannot attack.
         `,
-        spell: "summon monster",
+        name: "summon monster",
       },
       rank: 2,
       scaling: {
@@ -395,7 +395,7 @@ export const summoning: MysticSphere = {
         You must command the creatures as a group, rather than as individuals.
         Each creature obeys your command to the extent it can.
         `,
-        spell: "summon monster",
+        name: "summon monster",
       },
       rank: 7,
       tags: ["Manifestation"],
@@ -413,7 +413,7 @@ export const summoning: MysticSphere = {
         % TODO: wording of "trained as a mount"?
         It has a 30 foot \\glossterm{fly speed}, a maximum height of 120 feet, and is trained as a mount (see \\pcref{Flying}).
         `,
-        spell: "summon mount",
+        name: "summon mount",
       },
       rank: 5,
       scaling: { 7: `The creature gains a +1 bonus to its defenses.` },
@@ -432,7 +432,7 @@ export const summoning: MysticSphere = {
         It immediately is \\glossterm{sickened} while it is poisoned.
         The poison's third stage causes the subject to become \\glossterm{nauseated} as long as it is poisoned.
         `,
-        spell: "summon creature",
+        name: "summon creature",
       },
       rank: 4,
       scaling: "damage",
