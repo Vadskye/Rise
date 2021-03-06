@@ -2,7 +2,8 @@ import { CombatStyle } from ".";
 
 export const ripAndTear: CombatStyle = {
   name: "Rip and Tear",
-  sources: ["wild"],
+  shortDescription: "Rip apart foes with slashing weapons.",
+  sources: ["esoteric", "martial", "primal", "trick", "wild"],
 
   maneuvers: [
     {
@@ -129,6 +130,20 @@ export const ripAndTear: CombatStyle = {
     `,
 
       rank: 5,
+      type: "Instant",
+    },
+
+    {
+      name: "Sweeping Throw",
+
+      // original targets: Up to three creatures or objects in a \areasmall radius within \shortrange (see text)
+      effect: `
+        Make a thrown \\glossterm{strike} using a slashing weapon.
+        The strike also targets up to two creatures or objects within 5 feet of the strike's primary target.
+        Your \\glossterm{power} with the strike is halved.
+        If you choose yourself as one of the targets, you can catch the weapon instead of taking damage from it.
+      `,
+      rank: 2,
       type: "Instant",
     },
   ],
