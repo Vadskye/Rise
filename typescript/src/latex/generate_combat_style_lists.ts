@@ -11,7 +11,7 @@ function generateSourceList(source: CombatStyleSource): string {
   return `
     {
     \\RaggedRight
-    \\subsection{${titleCase(source)}}\\label{${titleCase(source)}}
+    \\subsection{${titleCase(source)} Combat Styles}\\label{${titleCase(source)} Combat Styles}
 
     ${sourceSpheres.map(formatCombatStyle).join("\n")}
   `;
