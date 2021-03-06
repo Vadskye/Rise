@@ -162,7 +162,7 @@ export const aquamancy: MysticSphere = {
           Each subject takes 1d8 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\smallarea long, 10 ft. wide line from you.
+          Make an attack vs. Reflex against everything in a \\smallarealong, 10 ft. wide line from you.
         `,
       },
       rank: 1,
@@ -180,7 +180,7 @@ export const aquamancy: MysticSphere = {
           Each subject takes 2d6 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\largearea long, 10 ft. wide line from you.
+          Make an attack vs. Reflex against everything in a \\largearealong, 10 ft. wide line from you.
         `,
       },
       rank: 3,
@@ -287,7 +287,7 @@ export const aquamancy: MysticSphere = {
 
       // targeting: None,
       effect: `
-          You create a wall of water in a 15 ft.\\ high, \\medarea long line within \\medrange.
+          You create a wall of water in a 15 ft.\\ high, \\medarealong line within \\medrange.
           The wall is four inches thick, and blocks \\glossterm{line of effect} for abilities.
           Sight through the wall is possible, though distorted.
           The wall provides both \\glossterm{cover} and \\glossterm{concealment} to targets on the opposite side of the wall, for a total of a +4 bonus to Armor defense.
@@ -344,7 +344,7 @@ export const aquamancy: MysticSphere = {
           Once a subject leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
         targeting: `
-          Make an attack vs. Fortitude against everything in a \\medarea long, 10 ft. wide line from you.
+          Make an attack vs. Fortitude against everything in a \\medarealong, 10 ft. wide line from you.
         `,
       },
       rank: 4,
@@ -363,7 +363,7 @@ export const aquamancy: MysticSphere = {
           Each subject takes 2d8 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\medarea long, 5 ft.\\ wide vertical line within \\longrange.
+          Make an attack vs. Reflex against everything in a \\medarealong, 5 ft.\\ wide vertical line within \\longrange.
           If this spell has its area increased, only the length of the line increases.
         `,
       },
@@ -383,7 +383,7 @@ export const aquamancy: MysticSphere = {
           Each subject takes 4d10 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\largearea long, 5 ft.\\ wide vertical line within \\distrange.
+          Make an attack vs. Reflex against everything in a \\largearealong, 5 ft.\\ wide vertical line within \\distrange.
           If this spell has its area increased, only the length of the line increases.
         `,
       },
@@ -544,7 +544,7 @@ export const aquamancy: MysticSphere = {
           Each subject that has no remaining \\glossterm{resistance} to physical damage is \\glossterm{nauseated} as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against all living creatures in a \\medarea long, 10 ft. wide line from you.
+          Make an attack vs. Fortitude against all living creatures in a \\medarealong, 10 ft. wide line from you.
         `,
       },
       rank: 2,
@@ -561,7 +561,7 @@ export const aquamancy: MysticSphere = {
           Each subject that has no remaining \\glossterm{resistance} to physical damage is \\glossterm{nauseated} as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against all living \\glossterm{enemies} in a \\gargarea long, 10 ft. wide line from you.
+          Make an attack vs. Fortitude against all living \\glossterm{enemies} in a \\gargarealong, 10 ft. wide line from you.
         `,
       },
       rank: 5,
@@ -624,13 +624,13 @@ export const aquamancy: MysticSphere = {
       name: "Fog Wall",
 
       effect: `
-        You create a wall of fog in a 15 ft.\\ high, \\medarea long \\glossterm{wall} within \\rngmed range.
+        You create a wall of fog in a 15 ft.\\ high, \\medarealong \\glossterm{wall} within \\rngmed range.
         The fog makes it difficult to see through the wall, granting \\glossterm{concealment} to anything viewed through the wall (see \\pcref{Concealment}).
       `,
       rank: 1,
       scaling: {
-        3: "The area increases to a 30 foot high, \\largearea long line.",
-        5: "The area increases to a 60 foot high, \\hugearea long line.",
+        3: "The area increases to a 30 foot high, \\largearealong line.",
+        5: "The area increases to a 60 foot high, \\hugearealong line.",
         7: "The area increases to a 120 foot high, 240 foot long line.",
       },
       tags: ["Manifestation"],
