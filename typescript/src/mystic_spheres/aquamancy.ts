@@ -471,7 +471,7 @@ export const aquamancy: MysticSphere = {
         You grow a massive watery tentacle that extends from your body.
         The tentacle grants you a slam \\glossterm{natural weapon} (see \\tref{Natural Weapons}).
         The natural weapon deals 1d10 damage, as normal for a slam natural weapon.
-        In addition, it has the Reach \\glossterm{weapon tag} (see \\pcref{Weapon Tags}).
+        In addition, it has the Long \\glossterm{weapon tag} (see \\pcref{Weapon Tags}).
         Strikes using the tentacle are considered \\glossterm{magical} abilities, which means you use your \\glossterm{magical} \\glossterm{power} to determine their damage.
       `,
       rank: 2,
