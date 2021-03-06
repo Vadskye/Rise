@@ -25,7 +25,7 @@ export const flurryOfBlows: CombatStyle = {
         Make a \\glossterm{strike}.
         You take a -1d penalty to damage with the strike.
         In addition, you can drink a potion.
-        You must still have a free hand to hold and drink the potion that is not being used to make the strike.
+        You must still have a free hand that is not being used to make the strike to hold and drink the potion.
       `,
       rank: 2,
       type: "Instant",
