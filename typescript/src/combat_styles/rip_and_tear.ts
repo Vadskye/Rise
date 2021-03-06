@@ -144,5 +144,31 @@ export const ripAndTear: CombatStyle = {
       rank: 2,
       type: "Instant",
     },
+
+    {
+      name: "Bloodletting Strike",
+
+      effect: `
+        Make a \\glossterm{strike} using a slashing weapon.
+        Each creature that loses hit points from the strike begins bleeding as a \\glossterm{condition}.
+        It loses \\glossterm{hit points} equal to your \\glossterm{power} with that strike at the end of each round until the condition is removed.
+        The condition can be removed with the \\textit{treat condition} ability (see \\pcref{Treat Condition}).
+        The \\glossterm{difficulty rating} of the check is equal to 5.
+      `,
+      rank: 3,
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Bloodletting Strike",
+
+      functionsLike: {
+        abilityType: "maneuver",
+        exceptThat: "the condition cannot be removed with the \\textit{treat condition} ability.",
+        name: "Bloodletting Strike",
+      },
+      rank: 6,
+      type: "Duration",
+    },
   ],
 };
