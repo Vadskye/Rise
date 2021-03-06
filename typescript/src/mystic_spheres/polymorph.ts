@@ -37,7 +37,7 @@ export const polymorph: MysticSphere = {
 
         This ability lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
         `,
-        spell: "disguise creature",
+        name: "disguise creature",
       },
       focus: false,
       scaling: {
@@ -92,7 +92,7 @@ export const polymorph: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Natural Weapon",
+        name: "Natural Weapon",
       },
       // narrative: '',
       rank: 3,
@@ -179,7 +179,7 @@ export const polymorph: MysticSphere = {
       functionsLike: {
         exceptThat:
           "it affects up to five creatures of your choice from among yourself and your Small or larger \\glossterm{allies} within \\medrange.",
-        spell: "Shrink",
+        name: "Shrink",
       },
       // narrative: '',
       rank: 4,
@@ -212,7 +212,7 @@ export const polymorph: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Stoneskin",
+        name: "Stoneskin",
       },
       // narrative: '',
       rank: 3,
@@ -247,7 +247,7 @@ export const polymorph: MysticSphere = {
       functionsLike: {
         exceptThat:
           "it affects up to five creatures of your choice from among yourself and your Large or smaller \\glossterm{allies} within \\medrange.",
-        spell: "Enlarge",
+        name: "Enlarge",
       },
       // narrative: '',
       rank: 5,
@@ -279,7 +279,7 @@ export const polymorph: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Reshape Appearance",
+        name: "Reshape Appearance",
       },
       // narrative: '',
       rank: 4,
@@ -484,7 +484,7 @@ export const polymorph: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Physical Enhancement",
+        name: "Physical Enhancement",
       },
       // narrative: '',
       rank: 4,
@@ -512,7 +512,7 @@ export const polymorph: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Scent",
+        name: "Scent",
       },
       // narrative: '',
       rank: 5,
@@ -630,7 +630,7 @@ export const polymorph: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Eyes of Darksight",
+        name: "Eyes of Darksight",
       },
       // narrative: '',
       rank: 4,
@@ -661,7 +661,7 @@ export const polymorph: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Draconic Senses",
+        name: "Draconic Senses",
       },
       // narrative: '',
       rank: 6,
@@ -689,7 +689,7 @@ export const polymorph: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Swimmer",
+        name: "Swimmer",
       },
       // narrative: '',
       rank: 4,
@@ -720,7 +720,7 @@ export const polymorph: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Climber",
+        name: "Climber",
       },
       // narrative: '',
       rank: 4,
@@ -751,7 +751,7 @@ export const polymorph: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Runner",
+        name: "Runner",
       },
       // narrative: '',
       rank: 4,
@@ -819,7 +819,7 @@ export const polymorph: MysticSphere = {
         exceptThat: `
           the maximum combined size of all targets increases to Large.
         `,
-        spell: "Craft Object",
+        name: "Craft Object",
       },
       rank: 5,
       type: "Instant",
@@ -833,7 +833,7 @@ export const polymorph: MysticSphere = {
         exceptThat: `
           the maximum combined size of all targets increases to Huge.
         `,
-        spell: "craft object",
+        name: "craft object",
       },
       rank: 7,
       type: "Instant",
@@ -872,7 +872,7 @@ export const polymorph: MysticSphere = {
       castingTime: "one minute",
       functionsLike: {
         exceptThat: `you can also change the subject into an exotic weapon.`,
-        spell: "morph weapon",
+        name: "morph weapon",
       },
       rank: 3,
       type: "Attune (ritual)",
@@ -904,7 +904,7 @@ export const polymorph: MysticSphere = {
         exceptThat: `
           the effect lasts for one hundred years.
         `,
-        spell: "fortify",
+        name: "fortify",
       },
       rank: 4,
       type: "Instant",
@@ -919,7 +919,7 @@ export const polymorph: MysticSphere = {
         exceptThat: `
           the effect lasts for one hundred years.
         `,
-        spell: "greater fortify",
+        name: "greater fortify",
       },
       rank: 5,
       type: "Instant",
@@ -933,7 +933,7 @@ export const polymorph: MysticSphere = {
         exceptThat: `
           the bonus to \\glossterm{resistances} increases to 10.
         `,
-        spell: "fortify",
+        name: "fortify",
       },
       rank: 4,
       type: "Attune (ritual)",
@@ -947,7 +947,7 @@ export const polymorph: MysticSphere = {
         exceptThat: `
           the bonus to \\glossterm{resistances} increases to 15.
         `,
-        spell: "fortify",
+        name: "fortify",
       },
       rank: 7,
       type: "Attune (ritual)",

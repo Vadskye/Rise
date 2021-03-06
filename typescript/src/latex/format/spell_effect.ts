@@ -51,8 +51,10 @@ export function spellEffect(
         throw new Error(`Must have a defined 'exceptThat' in a 'functionsLike'`);
       }
 
+      const referencedCategory = spell.functionsLike.abilityType || spellCategory;
+
       return `
-        This ${spellCategory} functions like the \\${spellCategory}{${spell.functionsLike.spell.toLowerCase()}} ${spellCategory}, except that ${exceptThat.trim()}
+        This ${spellCategory} functions like the \\${referencedCategory}{${spell.functionsLike.name.toLowerCase()}} ${referencedCategory}, except that ${exceptThat.trim()}
         ${fatiguePointsText}
       `.trim();
     } else {
