@@ -10,7 +10,9 @@ export function convertCombatStyleToLatex(style: CombatStyle): string {
   assertEndsWithPeriod(style.shortDescription);
   return format.latexify(`
     \\newpage
-    \\hypertarget{style:${style.name.toLowerCase()}}{}\\label{${style.name}}
+    \\hypertarget{style:${style.name.toLowerCase()}}{}%
+    \\hypertarget{style:${style.name}}{}%
+    \\label{${style.name}}%
     \\section{{${style.name}}}
       \\textit{${style.shortDescription}}
 
@@ -25,7 +27,7 @@ function convertManeuverToLatex(maneuver: Maneuver): string {
   const abilityType = determineAbilityType(maneuver);
   const rankText = maneuver.rank ? `[Rank ${maneuver.rank}]` : "";
   const internalComponents = [
-    format.spellTypePrefix(maneuver),
+    format.spellTypePrefix({ ...maneuver, focus: maneuver.focus ?? false }),
     format.spellEffect(maneuver),
     format.spellScaling(maneuver),
     format.spellNarrative(maneuver),

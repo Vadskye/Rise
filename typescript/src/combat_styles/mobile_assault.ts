@@ -9,14 +9,12 @@ export const mobileAssault: CombatStyle = {
     {
       name: "Reaping Charge",
 
-      // original targets: See text
       effect: `
         Move up to half your movement speed in a straight line.
         You can make a melee \\glossterm{strike} using a slashing or bludgeoning weapon.
         Your \\glossterm{power} with the strike is halved.
         The strike targets any number of creatures and objects within your \\glossterm{reach} at any point during your movement, except for the space you start in and the space you end in.
-        `,
-
+      `,
       rank: 2,
       type: "Instant",
     },
@@ -29,8 +27,7 @@ export const mobileAssault: CombatStyle = {
         You can make a melee \\glossterm{strike} using a slashing or bludgeoning weapon.
         Your \\glossterm{power} with the strike is halved.
         The strike targets any number of creatures and objects within your \\glossterm{reach} at any point during your movement, except for the space you start in and the space you end in.
-        `,
-
+      `,
       rank: 6,
       type: "Instant",
     },
@@ -39,11 +36,10 @@ export const mobileAssault: CombatStyle = {
       name: "Spring Attack",
 
       effect: `
-        Move up to half your movement speed and make a melee \\glossterm{strike}.
-        Your \\glossterm{power} with the strike is halved.
+        Move up to half your movement speed and make a \\glossterm{strike}.
+        You take a -1d penalty to damage with the strike.
         If you use this ability during the \\glossterm{action phase}, you may use the other half of your movement during the \\glossterm{delayed action phase}.
-        `,
-
+      `,
       rank: 3,
       type: "Instant",
     },
@@ -53,7 +49,7 @@ export const mobileAssault: CombatStyle = {
 
       effect: `
         You can either move up to half your speed or make a \\glossterm{strike}.
-        Your \\glossterm{power} with the strike is halved.
+        You take a -1d penalty to damage with the strike.
         %TODO: wording
         During the \\glossterm{delayed action phase}, you can take the action you did not take during the \\glossterm{action phase}.
         `,
@@ -66,9 +62,8 @@ export const mobileAssault: CombatStyle = {
       name: "Retreating Strike",
 
       effect: `
-        Make a melee \\glossterm{strike} and move up to half your movement speed in a straight line away from one target of the strike.
-        `,
-
+        Make a \\glossterm{strike} and move up to half your movement speed in a straight line away from one target of the strike.
+      `,
       rank: 2,
       type: "Instant",
     },
@@ -79,8 +74,7 @@ export const mobileAssault: CombatStyle = {
       effect: `
         You \\glossterm{teleport} into an unoccupied destination on a stable surface within \\shortrange.
         In addition, you can make a melee \\glossterm{strike} against any single creature within a 5 ft.\\ wide line between your starting location and your ending location.
-        `,
-
+      `,
       rank: 5,
       type: "Instant",
     },
@@ -91,8 +85,7 @@ export const mobileAssault: CombatStyle = {
       effect: `
         You \\glossterm{teleport} into an unoccupied destination on a stable surface within \\shortrange.
         In addition, you can make a melee \\glossterm{strike} at your destination.
-        `,
-
+      `,
       rank: 4,
       type: "Instant",
     },
@@ -103,8 +96,7 @@ export const mobileAssault: CombatStyle = {
       effect: `
         You make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to half your \\glossterm{base speed} (see \\pcref{Leap}).
         You can make a melee \\glossterm{strike} from any location you occupy during the motion, including both your initial leap and your fall afterwards (if any).
-        `,
-
+      `,
       rank: 3,
       type: "Instant",
     },
@@ -125,15 +117,14 @@ export const mobileAssault: CombatStyle = {
     {
       name: "Vault Over",
 
-      // original targets: One creature adjacent to you no more than one size category larger than you
       effect: `
-        Make a Jump attack against the subject's Reflex defense.
-        If you hit, you leap up over its body, using its body as a springboard if necessary, and land in any space adjacent to it.
+        Make an attack vs. Reflex against one creature adjacent to you that is no more than one size category larger than you.
+        Your \\glossterm{accuracy} with this attack is equal to your Jump skill.
+        If you hit, you leap up over the subject's body, using its body as a springboard if necessary, and land in any space adjacent to it.
         % TODO: wording
         Your final destination cannot be more distant from your starting location than your \\glossterm{land speed}.
         You can make a \\glossterm{strike} from any location you occupy during the leap.
-        `,
-
+      `,
       rank: 4,
       type: "Instant",
     },

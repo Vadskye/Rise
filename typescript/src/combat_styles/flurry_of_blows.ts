@@ -10,9 +10,9 @@ export const flurryOfBlows: CombatStyle = {
       name: "Rapid Flurry",
 
       effect: `
-        Make two melee \\glossterm{strikes} with a -2 penalty to \\glossterm{accuracy}.
-        You take a -2d penalty to damage with both strikes, and your \\glossterm{power} is \\glossterm{halved}.
-        `,
+        Make two \\glossterm{strikes} with a -2 penalty to \\glossterm{accuracy}.
+        You take a -2d penalty to damage with both strikes, and your \\glossterm{power} is halved.
+      `,
 
       rank: 3,
       type: "Instant",
@@ -23,8 +23,8 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make two \\glossterm{strikes} with a -4 penalty to \\glossterm{accuracy}.
-        `,
-
+        Your \\glossterm{power} with each strike is halved.
+      `,
       rank: 5,
       type: "Instant",
     },
@@ -44,12 +44,10 @@ export const flurryOfBlows: CombatStyle = {
     {
       name: "Whirlwind",
 
-      // original targets: All \glossterm{enemies} within your weapon's \glossterm{reach}
       effect: `
-        Make a melee \\glossterm{strike} using a light or medium slashing weapon against each subject.
+        Make a melee \\glossterm{strike} using a light or medium slashing weapon against all \\glossterm{enemies} within your weapon's \\glossterm{reach}.
         Your \\glossterm{power} with the strike is halved.
-        `,
-
+      `,
       rank: 2,
       type: "Instant",
     },
@@ -57,12 +55,10 @@ export const flurryOfBlows: CombatStyle = {
     {
       name: "Whirlwind Flurry",
 
-      // original targets: All \glossterm{enemies} within your weapon's \glossterm{reach}
       effect: `
-        Make two melee \\glossterm{strikes} with a -2 penalty to \\glossterm{accuracy} using a light or medium slashing weapon against each subject.
+        Make two melee \\glossterm{strikes} with a -2 penalty to \\glossterm{accuracy} using a light or medium slashing weapon against all \\glossterm{enemies} within your weapon's \\glossterm{reach}.
         You take a -2d penalty to damage with both strikes, and your \\glossterm{power} is halved.
-        `,
-
+      `,
       rank: 7,
       type: "Instant",
     },
@@ -72,10 +68,9 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make two ranged \\glossterm{strikes} with a -4 penalty to \\glossterm{accuracy}.
-        Your \\glossterm{power} with the both strikes is halved.
+        Your \\glossterm{power} with both strikes is halved.
         For each previous round that you used this ability without moving, you reduce the accuracy penalty by 1.
-        `,
-
+      `,
       rank: 4,
       type: "Instant",
     },
@@ -83,27 +78,23 @@ export const flurryOfBlows: CombatStyle = {
     {
       name: "Volley Fire",
 
-      // original targets: Each creature in a \areasmall radius within \medrange.
       effect: `
-        Make a ranged \\glossterm{strike} using a projectile weapon against each subject.
+        Make a ranged \\glossterm{strike} using a projectile weapon against each creature in a \\smallarea radius within \\medrange.
         Your \\glossterm{power} with the strike is halved.
-        This strike costs one projectile per target.
-        `,
-
+        This strike costs five projectiles.
+      `,
       rank: 5,
       type: "Instant",
     },
 
     {
-      name: "Arrowstorm",
+      name: "Greater Volley Fire",
 
-      // original targets: Each creature in a \areamed radius within \longrange.
       effect: `
-        Make a ranged \\glossterm{strike} using a projectile weapon against each subject.
+        Make a ranged \\glossterm{strike} using a projectile weapon against each creature in a \\medarea radius within \\longrange.
         Your \\glossterm{power} with the strike is halved.
-        This strike costs one projectile per target.
-        `,
-
+        This strike costs ten projectiles.
+      `,
       rank: 7,
       type: "Instant",
     },
@@ -114,8 +105,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         You draw one or two weapons into your \\glossterm{free hands}.
         Then, you can make a \\glossterm{strike}.
-        `,
-
+      `,
       rank: 1,
       type: "Instant",
     },
@@ -126,8 +116,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a ranged \\glossterm{strike} using a \\glossterm{projectile} weapon against a creature adjacent to you.
         You are not \\glossterm{defenseless} against that creature during the current phase.
-        `,
-
+      `,
       rank: 2,
       type: "Instant",
     },

@@ -7,7 +7,9 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
   assertEndsWithPeriod(sphere.shortDescription);
   return format.latexify(`
     \\newpage
-    \\hypertarget{spell:${sphere.name.toLowerCase()}}{}\\label{${sphere.name}}
+    \\hypertarget{spell:${sphere.name}}{}%
+    \\hypertarget{spell:${sphere.name.toLowerCase()}}{}%
+    \\label{${sphere.name}}%
     \\section{{${sphere.name}}}
       \\textit{${sphere.shortDescription}}
 
