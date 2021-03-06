@@ -7,7 +7,7 @@ export const mobileAssault: CombatStyle = {
 
   maneuvers: [
     {
-      name: "Reaping Charge",
+      name: "Reaping Harvest",
 
       effect: `
         Move up to half your movement speed in a straight line.
@@ -20,7 +20,7 @@ export const mobileAssault: CombatStyle = {
     },
 
     {
-      name: "Reaping Harvest",
+      name: "Greater Reaping Harvest",
 
       effect: `
         Move up to your movement speed.
@@ -54,15 +54,65 @@ export const mobileAssault: CombatStyle = {
         During the \\glossterm{delayed action phase}, you can take the action you did not take during the \\glossterm{action phase}.
         `,
 
+      rank: 1,
+      type: "Instant",
+    },
+
+    {
+      name: "Push Through",
+
+      effect: `
+        Make a \\glossterm{strike} with a -1d penalty to damage.
+        During the next round, you can move through the space of any creatures that took damage from this strike.
+      `,
+      rank: 1,
+      type: "Duration",
+    },
+
+    {
+      name: "Sprinting Charge",
+
+      functionsLike: {
+        abilityType: "ability",
+        exceptThat: "you can move up to twice your speed instead of up to your speed.",
+        name: "charge",
+      },
+      rank: 1,
+      type: "Instant",
+    },
+
+    {
+      name: "Reckless Charge",
+
+      functionsLike: {
+        abilityType: "ability",
+        exceptThat: `
+          it does not cost a \\glossterm{fatigue point} to use.
+          In exchange, you take a -2 penalty to Armor and Reflex defenses during the next round.
+        `,
+        name: "charge",
+      },
       rank: 2,
       type: "Instant",
+    },
+
+    {
+      name: "Prepared Sprint",
+
+      effect: `
+        During the next round, your movement speed is doubled.
+        You cannot use the \\textit{sprint} ability during that round.
+      `,
+      rank: 1,
+      type: "Duration",
     },
 
     {
       name: "Retreating Strike",
 
       effect: `
-        Make a \\glossterm{strike} and move up to half your movement speed in a straight line away from one target of the strike.
+        Make a \\glossterm{strike} with a -1d penalty to damage.
+        In addition, you can move up to half your movement speed in a straight line away from one target of the strike.
       `,
       rank: 2,
       type: "Instant",

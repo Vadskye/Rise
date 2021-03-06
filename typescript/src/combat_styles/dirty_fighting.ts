@@ -76,19 +76,6 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: "Knockdown",
-
-      effect: `
-        Make a \\glossterm{strike} using a bludgeoning weapon.
-        The attack is made against each target's Fortitude defense instead of its Armor defense.
-        You take a -1d penalty to damage with the strike.
-        If a creature loses hit points from the strike, it falls \\glossterm{prone}.
-      `,
-      rank: 2,
-      type: "Instant",
-    },
-
-    {
       name: "Knockback Shove",
 
       functionsLike: {
@@ -288,6 +275,18 @@ export const dirtyFighting: CombatStyle = {
         You take a -4 penalty to \\glossterm{accuracy} with the strikes against any target that is not using a \\glossterm{Focus} ability during the current phase.
       `,
       rank: 6,
+      type: "Instant",
+    },
+
+    {
+      name: "Alchemical Strike",
+
+      effect: `
+        Make a melee \\glossterm{strike} with a -1d penalty to damage.
+        In addition, you can throw a tanglefoot bag, vial of alchemist's fire, or similar small object at a target of the strike.
+        You must still have a free hand that is not being used to make the strike to throw the object.
+      `,
+      rank: 3,
       type: "Instant",
     },
   ],
