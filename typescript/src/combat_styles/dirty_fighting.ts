@@ -147,8 +147,6 @@ export const dirtyFighting: CombatStyle = {
     {
       name: "Steal Weapon",
 
-      // original targets: One creature within your \glossterm{reach}
-
       functionsLike: {
         abilityType: "maneuver",
         exceptThat: `
@@ -164,15 +162,13 @@ export const dirtyFighting: CombatStyle = {
     {
       name: "Greater Steal Weapon",
 
-      // original targets: One creature within your \glossterm{reach}
-
       functionsLike: {
         abilityType: "maneuver",
         exceptThat: `
-        This maneuver functions like the \\textit{disarm weapon} ability, except that you can immediately grab a disarmed object if you have a \\glossterm{free hand} available, including a hand you used for this ability.
-        Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
+          you can immediately grab a disarmed object if you have a \\glossterm{free hand} available, including a hand you used for this ability.
+          Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
 
-        In addition, if you use this ability during the \\glossterm{action phase}, you can make a \\glossterm{strike} with the stolen weapon during the \\glossterm{delayed action phase}.
+          In addition, if you use this ability during the \\glossterm{action phase}, you can make a \\glossterm{strike} with a weapon you stole this way during the \\glossterm{delayed action phase}.
         `,
         name: "disarm weapon",
       },
@@ -183,13 +179,11 @@ export const dirtyFighting: CombatStyle = {
     {
       name: "Sunder",
 
-      // original targets: One creature within your \glossterm{reach}
-
       functionsLike: {
         abilityType: "ability",
         exceptThat: `
-        This maneuver functions like the \\textit{disarm} ability, except that you gain a +1d bonus to damage with the strike.
-        Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
+          you gain a +1d bonus to damage with the strike.
+          Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
         `,
         name: "disarm",
       },
@@ -198,16 +192,14 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: "Sundering Followthrough",
-
-      // original targets: One creature within your \glossterm{reach}
+      name: "Greater Sunder",
 
       functionsLike: {
         abilityType: "ability",
         exceptThat: `
-        This maneuver functions like the \\textit{disarm} ability, except that you gain a +1d bonus to damage with the strike.
-        In addition, if you disarm an attended item and your attack result also beats the attending creature's Armor defense, you may choose to deal damage to the attending creature in addition to its item.
-        Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
+          you gain a +1d bonus to damage with the strike.
+          In addition, if you disarm an attended item and your attack result also beats the attending creature's Armor defense, you may choose to deal damage to the attending creature in addition to its item.
+          Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
         `,
         name: "disarm",
       },
@@ -218,42 +210,34 @@ export const dirtyFighting: CombatStyle = {
     {
       name: "Battering Ram",
 
-      // original targets: Each creature in the area (see text)
-
       functionsLike: {
         abilityType: "ability",
+        // This is basically a 30' line of standard AOE damage, -1d because it's easier to optimize
         exceptThat: `
-        This maneuver functions like the \\textit{overrun} ability, except that it requires a standard action to use and does not cause you to gain a \\glossterm{fatigue point}.
-        In addition, creatures cannot choose to avoid you and each creature that you move through takes bludgeoning damage equal to 2d6 plus half your \\glossterm{power}, or double that damage on a critical hit.
-        Any accuracy bonuses you have that apply specifically to the \\textit{overrun} ability also apply to this ability.
-
-        \\rankline
-        The damage increases by +1d for each rank beyond 3.
+          it requires a standard action to use and does not cause you to gain a \\glossterm{fatigue point}.
+          In addition, creatures cannot choose to avoid you and each creature that you move through takes 1d10 + half \\glossterm{power} bludgeoning damage.
+          Any accuracy bonuses you have that apply specifically to the \\textit{overrun} ability also apply to this ability.
         `,
         name: "overrun",
       },
+      scaling: "damage",
       rank: 3,
       type: "Instant",
     },
 
     {
-      name: "Battering Rush",
-
-      // original targets: Each creature in the area (see text)
+      name: "Greater Battering Ram",
 
       functionsLike: {
         abilityType: "maneuver",
         exceptThat: `
-        This maneuver functions like the \\textit{battering ram} ability, except that you do not treat the space occupied by creatures you move through as difficult terrain.
-        In addition, missing an attack does not cause you to fall prone, though it still ends your movement.
-        The damage also increases to 4d6 plus half your \\glossterm{power}.
-        Any accuracy bonuses you have that apply specifically to the \\textit{overrun} ability also apply to this ability.
-
-        \\rankline
-        The damage increases by +1d for each rank beyond 6.
+          you do not treat the space occupied by creatures you move through as difficult terrain.
+          In addition, the damage increases to 4d6 + half \\glossterm{power}.
+          Any accuracy bonuses you have that apply specifically to the \\textit{overrun} ability also apply to this ability.
         `,
         name: "battering ram",
       },
+      scaling: "damage",
       rank: 6,
       type: "Instant",
     },
@@ -266,8 +250,7 @@ export const dirtyFighting: CombatStyle = {
         You take a -2d penalty to damage with the strike.
         If a creature loses hit points from the strike, it stops being \\glossterm{attuned} to two effects.
         It can freely choose which effects it releases its attunement to.
-        `,
-
+      `,
       rank: 2,
       type: "Instant",
     },
@@ -280,8 +263,7 @@ export const dirtyFighting: CombatStyle = {
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
         If a creature takes damage from the strike, it stops being \\glossterm{attuned} to one effect.
         It can freely choose which effect it releases its attunement to.
-        `,
-
+      `,
       rank: 5,
       type: "Instant",
     },
@@ -292,8 +274,7 @@ export const dirtyFighting: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         You gain a +2 bonus to \\glossterm{accuracy} with the strike against each creature that is using a \\glossterm{Focus} ability during the current phase.
-        `,
-
+      `,
       rank: 2,
       type: "Instant",
     },
@@ -305,8 +286,7 @@ export const dirtyFighting: CombatStyle = {
         Make two melee \\glossterm{strikes}.
         Your \\glossterm{power} with both strikes is halved.
         You take a -4 penalty to \\glossterm{accuracy} with the strikes against any target that is not using a \\glossterm{Focus} ability during the current phase.
-        `,
-
+      `,
       rank: 6,
       type: "Instant",
     },
