@@ -1,12 +1,12 @@
-import { MysticSphere, mysticSpheres, Source } from "@src/mystic_spheres";
+import { MysticSphere, mysticSpheres, MysticSphereSource } from "@src/mystic_spheres";
 import { titleCase } from "change-case";
 
 export function generateMysticSphereLists(): string {
-  const sources: Source[] = ["arcane", "divine", "nature", "pact"];
+  const sources: MysticSphereSource[] = ["arcane", "divine", "nature", "pact"];
   return sources.map(generateSourceList).join("\n");
 }
 
-function generateSourceList(source: Source): string {
+function generateSourceList(source: MysticSphereSource): string {
   const sourceSpheres = mysticSpheres.filter((sphere) => sphere.sources.includes(source));
   return `
     {
