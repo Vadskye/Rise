@@ -228,7 +228,7 @@ export const chronomancy: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "haste",
+        name: "haste",
       },
       rank: 3,
       scaling: {
@@ -318,7 +318,7 @@ export const chronomancy: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Accelerated Reaction",
+        name: "Accelerated Reaction",
       },
       // narrative: '',
       rank: 3,

@@ -185,7 +185,7 @@ export const astromancy: MysticSphere = {
 
       functionsLike: {
         exceptThat: "the subject's departure and arrival with this spell are silent.",
-        spell: "translocation",
+        name: "translocation",
       },
       rank: 3,
       scaling: {
@@ -382,7 +382,7 @@ export const astromancy: MysticSphere = {
           you can choose at the start of each round to stop flickering for that round.
           If you do, your attacks do not have a failure chance, and attacks against you also do not have a failure chance.
         `,
-        spell: "flicker",
+        name: "flicker",
       },
       rank: 4,
       scaling: {
@@ -431,7 +431,7 @@ export const astromancy: MysticSphere = {
 
       functionsLike: {
         exceptThat: "it can affect creatures with a maximum size of Gargantuan.",
-        spell: "transposition",
+        name: "transposition",
       },
       rank: 5,
       scaling: "accuracy",
@@ -459,7 +459,7 @@ export const astromancy: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "phasing blade",
+        name: "phasing blade",
       },
       // narrative: '',
       rank: 5,
@@ -504,7 +504,7 @@ export const astromancy: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "phasestep",
+        name: "phasestep",
       },
       // narrative: '',
       rank: 5,
@@ -608,7 +608,7 @@ export const astromancy: MysticSphere = {
         there is no distance limitation.
         The destination must simply be on the same plane as you.
         `,
-        spell: "overland teleportation",
+        name: "overland teleportation",
       },
       rank: 7,
       tags: [],

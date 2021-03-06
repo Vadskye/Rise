@@ -446,7 +446,7 @@ export const pyromancy: MysticSphere = {
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        spell: "Flame Blade",
+        name: "Flame Blade",
       },
       // narrative: '',
       rank: 5,
@@ -654,7 +654,7 @@ export const pyromancy: MysticSphere = {
         exceptThat: `
           the temperature in the area increases by 60 degrees, to a minimum of 160 degrees.
         `,
-        spell: "heat wave",
+        name: "heat wave",
       },
       rank: 7,
       type: "Attune (self)",
@@ -683,7 +683,7 @@ export const pyromancy: MysticSphere = {
         exceptThat: `
           the range increases to \\extrange.
         `,
-        spell: "detect flame",
+        name: "detect flame",
       },
       rank: 3,
       tags: ["Detection"],
@@ -699,7 +699,7 @@ export const pyromancy: MysticSphere = {
         exceptThat: `
           the range increases to 2,000 feet.
         `,
-        spell: "detect flame",
+        name: "detect flame",
       },
       rank: 5,
       tags: ["Detection"],
