@@ -146,6 +146,18 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
+      name: "Ricochet",
+
+      effect: `
+        Make a thrown \\glossterm{strike} using a slashing or bludgeoning weapon against up to three creatures or objects in a \\smallarea radius within \\shortrange.
+        Your \\glossterm{power} with the strike is halved.
+        If you choose yourself as one of the subjects, you can catch the weapon instead of taking damage from it.
+      `,
+      rank: 4,
+      type: "Instant",
+    },
+
+    {
       name: "Bloodletting Strike",
 
       effect: `
