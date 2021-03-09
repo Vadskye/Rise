@@ -303,7 +303,7 @@ def generate_weapons():
             description="""
             You can throw this weapon as if it was designed to be thrown.
             In addition, as a standard action, you can throw this weapon in a spinning arc.
-            When you do, make a thrown \\glossterm<strike> against up to three targets within two \\glossterm<range increments>.
+            When you do, make a thrown \\glossterm<strike> against up to two targets within one \\glossterm<range increment>.
             After attacking the last target, the weapon flies back to your hand.
         """,
             short_description="Can be thrown to strike multiple foes",
