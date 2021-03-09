@@ -180,6 +180,7 @@ def custom_statistic(i):
                 option({'value': 'accuracy'}, 'Accuracy'),
                 option({'value': 'all_defenses'}, 'All defenses'),
                 option({'value': 'armor_defense'}, 'Armor'),
+                option({'value': 'encumbrance'}, 'Encumbrance'),
                 option({'value': 'fortitude'}, 'Fortitude'),
                 option({'value': 'magical_power'}, 'Magical power'),
                 option({'value': 'mental'}, 'Mental'),
