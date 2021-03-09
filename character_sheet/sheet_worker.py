@@ -52,7 +52,20 @@ def stringify_variable_name(varname):
 
 
 def get_misc_variables(variable_name, count):
-    return [f"{variable_name}_misc_{i}" for i in range(count)]
+    misc = [f"{variable_name}_misc_{i}" for i in range(count)]
+    if variable_name in [
+            'accuracy',
+            'all_defenses',
+            'armor_defense',
+            'fortitude',
+            'magical_power',
+            'mental',
+            'mundane_power',
+            'reflex',
+            'vital_rolls',
+    ]:
+        misc += [variable_name + '_custom_modifier']
+    return misc
 
 
 def sum_variables(variables):
@@ -220,7 +233,6 @@ def accuracy():
             "fatigue_penalty",
             "accuracy_debuff_modifier",
             *misc,
-            "accuracy_custom_modifier",
         ],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
@@ -234,7 +246,6 @@ def accuracy():
                     + level_scaling
                     - fatigue_penalty
                     + accuracy_debuff_modifier
-                    + accuracy_custom_modifier
                 ),
             }});
         """,
@@ -288,12 +299,20 @@ def armor_defense():
             "armor_debuff_modifier",
             *misc,
             "challenge_rating",
+            "all_defenses_custom_modifier",
         ],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 3) / 6)) : 0;
             var before_equipment = level + dexterity_starting + cr_mod + level_scaling + armor_defense_class_bonus;
-            var total = before_equipment + body_armor_defense_value + shield_defense_value + armor_debuff_modifier + {sum_variables(misc)};
+            var total = (
+                before_equipment
+                + body_armor_defense_value
+                + shield_defense_value
+                + armor_debuff_modifier
+                + {sum_variables(misc)}
+                + all_defenses_custom_modifier
+            );
             setAttrs({{
                 armor_defense: total,
             }});
@@ -311,12 +330,22 @@ def fortitude():
             "challenge_rating",
             "fortitude_debuff_modifier",
             *misc,
+            "all_defenses_custom_modifier",
         ],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 3) / 6)) : 0;
             setAttrs({{
-                fortitude: level + constitution_starting + fortitude_class + cr_mod + level_scaling + fortitude_debuff_modifier + {sum_variables(misc)},
+                fortitude: (
+                    level
+                    + constitution_starting
+                    + fortitude_class
+                    + cr_mod
+                    + level_scaling
+                    + fortitude_debuff_modifier
+                    + {sum_variables(misc)}
+                    + all_defenses_custom_modifier
+                ),
             }});
         """,
     )
@@ -332,12 +361,22 @@ def reflex():
             "challenge_rating",
             "reflex_debuff_modifier",
             *misc,
+            "all_defenses_custom_modifier",
         ],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 3) / 6)) : 0;
             setAttrs({{
-                reflex: level + dexterity_starting + reflex_class + cr_mod + level_scaling + reflex_debuff_modifier + {sum_variables(misc)},
+                reflex: (
+                    level
+                    + dexterity_starting
+                    + reflex_class
+                    + cr_mod
+                    + level_scaling
+                    + reflex_debuff_modifier
+                    + {sum_variables(misc)}
+                    + all_defenses_custom_modifier
+                ),
             }});
         """,
     )
@@ -353,12 +392,22 @@ def mental():
             "challenge_rating",
             "mental_debuff_modifier",
             *misc,
+            "all_defenses_custom_modifier",
         ],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 3) / 6)) : 0;
             setAttrs({{
-                mental: level + willpower_starting + mental_class + cr_mod + level_scaling + mental_debuff_modifier + {sum_variables(misc)},
+                mental: (
+                    level
+                    + willpower_starting
+                    + mental_class
+                    + cr_mod
+                    + level_scaling
+                    + mental_debuff_modifier
+                    + {sum_variables(misc)}
+                    + all_defenses_custom_modifier
+                ),
             }});
         """,
     )
@@ -530,7 +579,7 @@ def insight_points():
 def magical_power():
     misc = get_misc_variables("magical_power", 3)
     return js_wrapper(
-        ["willpower", "level", "challenge_rating", *misc, 'magical_power_custom_modifier'],
+        ["willpower", "level", "challenge_rating", *misc],
         f"""
             var willpower_power_scaling = Math.floor(willpower / 2);
             var level_scaling = challenge_rating
@@ -551,7 +600,6 @@ def magical_power():
                     willpower_power_scaling
                     + level_scaling
                     + {sum_variables(misc)}
-                    + magical_power_custom_modifier
                 ),
                 willpower_power_scaling,
             }});
@@ -562,7 +610,7 @@ def magical_power():
 def mundane_power():
     misc = get_misc_variables("mundane_power", 3)
     return js_wrapper(
-        ["strength", "level", "challenge_rating", *misc, "mundane_power_custom_modifier"],
+        ["strength", "level", "challenge_rating", *misc],
         f"""
             var strength_power_scaling = Math.floor(strength / 2);
             var level_scaling = challenge_rating
@@ -583,7 +631,6 @@ def mundane_power():
                     strength_power_scaling
                     + level_scaling
                     + {sum_variables(misc)}
-                    + mundane_power_custom_modifier
                 ),
                 strength_power_scaling,
             }});
@@ -975,25 +1022,27 @@ def custom_modifiers():
                     }
                 }
                 getAttrs(fullAttributeIds, (values) => {
-                    const totalCustomModifiers = {
-                        accuracy: 0,
-                        magical_power: 0,
-                        mundane_power: 0,
-                    };
+                    const totalCustomModifiers = {};
                     for (const id of repeatingSectionIds) {
                         const isActive = values[formatIsActiveId(id)];
                         if (isActive === 'on') {
                             for (let i=0; i < nestedCustomStatisticCount; i++) {
                                 const modifiedStatistic = values[formatStatisticId(id, i)];
                                 const value = Number(values[formatValueId(id, i)]) || 0;
-                                totalCustomModifiers[modifiedStatistic] += value;
+                                totalCustomModifiers[modifiedStatistic] = (totalCustomModifiers[modifiedStatistic] || 0) + value;
                             }
                         }
                     };
                     setAttrs({
-                        accuracy_custom_modifier: totalCustomModifiers.accuracy,
-                        magical_power_custom_modifier: totalCustomModifiers.magical_power,
-                        mundane_power_custom_modifier: totalCustomModifiers.mundane_power,
+                        accuracy_custom_modifier: totalCustomModifiers.accuracy || 0,
+                        all_defenses_custom_modifier: totalCustomModifiers.all_defenses || 0,
+                        armor_defense_custom_modifier: totalCustomModifiers.armor_defense || 0,
+                        fortitude_custom_modifier: totalCustomModifiers.fortitude || 0,
+                        magical_power_custom_modifier: totalCustomModifiers.magical_power || 0,
+                        mental_custom_modifier: totalCustomModifiers.mental || 0,
+                        mundane_power_custom_modifier: totalCustomModifiers.mundane_power || 0,
+                        reflex_custom_modifier: totalCustomModifiers.reflex || 0,
+                        vital_rolls_custom_modifier: totalCustomModifiers.vital_rolls || 0,
                     });
                 });
             });
