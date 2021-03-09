@@ -102,7 +102,7 @@ export const heraldOfWar: CombatStyle = {
       name: "Rally the Troops",
 
       effect: `
-        You and your \\glossterm{allies} within a \\medarea radius from you can each ignore any effects from one \\glossterm{condition} they area already affected by until the end of the next round.
+        You and your \\glossterm{allies} within a \\medarea radius from you can each ignore any effects from one \\glossterm{condition} they are already affected by until the end of the next round.
         Because this ability has the \\glossterm{Swift} tag, it removes any relevant penalties from those conditions during the current phase.
       `,
       rank: 2,
