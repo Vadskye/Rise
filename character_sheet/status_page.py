@@ -181,6 +181,7 @@ def custom_statistic(i):
                 option({'value': 'encumbrance'}, 'Encumbrance'),
                 option({'value': 'energy_resistance_bonus'}, 'Energy resist'),
                 option({'value': 'fortitude'}, 'Fortitude'),
+                option({'value': 'hit_points'}, 'Hit points'),
                 option({'value': 'magical_power'}, 'Magical power'),
                 option({'value': 'mental'}, 'Mental'),
                 option({'value': 'mundane_power'}, 'Mundane power'),
