@@ -27,8 +27,23 @@ def create_page():
     return flex_col(
         {"class": "page status-page"},
         [
-            flex_wrapper(div({"class": "section-header"}, "Debuffs")),
-            debuffs(),
+            flex_row({'class': 'standard-modifiers'}, [
+                flex_col([
+                    div({"class": "section-header"}, "Circumstances"),
+                    circumstances(),
+                ]),
+                flex_col([
+                    div({"class": "section-header"}, "Debuffs"),
+                    debuffs(),
+                ]),
+                flex_col({'class': 'vital-wounds'}, [
+                    flex_wrapper(div({"class": "section-header"}, "Vital Wounds")),
+                    fieldset(
+                        {"class": f"repeating_vitalwounds"},
+                        vital_wound(),
+                    ),
+                ]),
+            ]),
             flex_wrapper(div({"class": "section-header"}, "Custom Modifiers")),
             fieldset(
                 {'class': 'repeating_custommodifiers'},
@@ -38,11 +53,6 @@ def create_page():
             fieldset(
                 {"class": f"repeating_attunements"},
                 attunement(),
-            ),
-            flex_wrapper(div({"class": "section-header"}, "Vital Wounds")),
-            fieldset(
-                {"class": f"repeating_vitalwounds"},
-                vital_wound(),
             ),
         ],
     )
@@ -88,49 +98,37 @@ def vital_wound():
         ],
     )
 
+def circumstances():
+    return ''.join([
+        debuff("flying"),
+        debuff("flying poorly"),
+        debuff("helpless"),
+        debuff("prone"),
+        debuff("surrounded"),
+        debuff("underwater"),
+    ])
+
 
 def debuffs():
-    return flex_col(
-        {"class": "debuffs"},
+    return flex_row({'class': 'debuffs'},
         [
-            flex_row(
-                [
-                    debuff("surrounded"),
-                    debuff("flying"),
-                    debuff("flying poorly"),
-                    debuff("prone"),
-                ]
-            ),
-            flex_row(
-                [
-                    debuff("dazed"),
-                    debuff("dazzled"),
-                    debuff("shaken"),
-                    debuff("sickened"),
-                    debuff("slowed"),
-                ]
-            ),
-            flex_row(
-                [
-                    debuff("frightened"),
-                    debuff("nauseated"),
-                    debuff("stunned"),
-                    debuff("underwater"),
-                ]
-            ),
-            flex_row(
-                [
-                    debuff("blinded", False),
-                    debuff("confused", False),
-                    debuff("decelerated"),
-                    debuff("disoriented", False),
-                    debuff("immobilized", False),
-                    debuff("panicked"),
-                ]
-            ),
-            flex_row(
-                [
-                    debuff("helpless"),
+            flex_col([
+                debuff("blinded", False),
+                debuff("confused", False),
+                debuff("dazed"),
+                debuff("dazzled"),
+                debuff("decelerated"),
+                debuff("disoriented", False),
+                debuff("frightened"),
+            ]),
+            flex_col([
+                debuff("immobilized", False),
+                debuff("nauseated"),
+                debuff("panicked"),
+                debuff("shaken"),
+                debuff("sickened"),
+                debuff("slowed"),
+                debuff("stunned"),
                 ]
             ),
         ],
