@@ -1158,7 +1158,7 @@ def calc_armor():
                     underlabel(
                         "Class",
                         number_input(
-                            {"name": "armor_defense_class_bonus", "value": "2"}
+                            {"name": "armor_defense_class_bonus", "value": "1"}
                         ),
                     ),
                     plus(),
