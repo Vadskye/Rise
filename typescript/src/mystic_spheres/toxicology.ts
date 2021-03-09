@@ -47,16 +47,38 @@ export const toxicology: MysticSphere = {
       attack: {
         hit: `The subject takes 1d10 + \\glossterm{power} acid damage.`,
         targeting: `
-        This spell does not have the \\glossterm{Focus} tag.
-        You must have a \\glossterm{free hand} to cast this spell.
+          This spell does not have the \\glossterm{Focus} tag.
+          You must have a \\glossterm{free hand} to cast this spell.
 
-        Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
+          Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
         `,
       },
       focus: false,
       rank: 1,
       scaling: "damage",
       type: "Instant",
+    },
+
+    {
+      name: "Greater Corrosive Grasp",
+
+      attack: {
+        glance: "Half damage.",
+        hit: `
+          The subject takes 2d10 + \\glossterm{power} acid damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{sickened} as a \\glossterm{condition}.
+        `,
+        targeting: `
+          This spell does not have the \\glossterm{Focus} tag.
+          You must have a \\glossterm{free hand} to cast this spell.
+
+          Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
+        `,
+      },
+      focus: false,
+      rank: 4,
+      scaling: "damage",
+      type: "Duration",
     },
 
     {

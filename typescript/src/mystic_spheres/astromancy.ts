@@ -62,18 +62,16 @@ export const astromancy: MysticSphere = {
       scaling: "damage",
       type: "Instant",
     },
+
     {
       name: "Banishing Grasp",
 
       attack: {
-        crit: `
-          Double damage.
-          In addition, if the subject is a \\glossterm{planeforged} not on its home plane, it is teleported to a random location on its home plane.
-          If it is a creature created by a \\glossterm{Manifestation} ability, it immediately disappears.
-        `,
         glance: "Half damage.",
         hit: `
           The subject takes 2d10 + \\glossterm{power} energy damage.
+          If it loses \\glossterm{hit points} from this damage, and it was created by a \\glossterm{Manifesation} ability or is a \\glossterm{planeforged} not on its home plane, it immediately disappears.
+          A planeforged creature is \\glossterm{teleported} to a random location on its home plane.
         `,
         targeting: `
           This spell does not have the \\glossterm{Focus} tag.
@@ -91,18 +89,14 @@ export const astromancy: MysticSphere = {
       name: "Banishment",
 
       attack: {
-        crit: `
-          Double damage.
-          In addition, if the subject is a \\glossterm{planeforged} not on its home plane, it is teleported to a random location on its home plane.
-          If it is a creature created by a \\glossterm{Manifestation} ability, it immediately disappears.
-        `,
         glance: "Half damage.",
         hit: `
           The subject takes 2d6 + half \\glossterm{power} energy damage.
+          If it loses \\glossterm{hit points} from this damage, and it was created by a \\glossterm{Manifesation} ability or is a \\glossterm{planeforged} not on its home plane, it immediately disappears.
+          A planeforged creature is \\glossterm{teleported} to a random location on its home plane.
         `,
-        // +2 accuracy in exchange for +1 level and -half power
         targeting: `
-          Make an attack vs. Mental with a +2 \\glossterm{accuracy} bonus against anything within \\medrange.
+          Make an attack vs. Mental against anything within \\medrange.
         `,
       },
       rank: 3,

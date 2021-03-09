@@ -74,6 +74,28 @@ export const vivimancy: MysticSphere = {
     },
 
     {
+      name: "Lifesteal Grasp",
+
+      attack: {
+        glance: "Half damage.",
+        hit: `
+          The subject takes 2d8 + \\glossterm{power} energy damage.
+          If it loses \\glossterm{hit points} from this damage, you regain hit points equal to half the damage it took this way.
+        `,
+        targeting: `
+          This spell does not have the \\glossterm{Focus} tag.
+          You must have a \\glossterm{free hand} to cast this spell.
+
+          Make a melee attack vs. Reflex against one living creature within your \\glossterm{reach}.
+        `,
+      },
+      focus: false,
+      rank: 3,
+      scaling: "damage",
+      type: "Duration",
+    },
+
+    {
       name: "Drain Life",
 
       attack: {

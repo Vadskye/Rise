@@ -125,6 +125,31 @@ export const polymorph: MysticSphere = {
     },
 
     {
+      name: "Greater Piercing Grasp",
+
+      attack: {
+        glance: "Half damage.",
+        hit: `
+          The subject takes 2d10 + \\glossterm{power} piercing damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{slowed} as a \\glossterm{condition}.
+        `,
+        targeting: `
+          This spell does not have the \\glossterm{Focus} tag.
+          You must have a \\glossterm{free hand} to cast this spell.
+
+          Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
+        `,
+      },
+      focus: false,
+      narrative: `
+        You twist your hand into a spike that bends past armor to impale your foe.
+      `,
+      rank: 4,
+      scaling: "damage",
+      type: "Duration",
+    },
+
+    {
       name: "Baleful Polymorph",
 
       attack: {
