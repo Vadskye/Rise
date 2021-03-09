@@ -10,7 +10,9 @@ from cgi_simple import (
     label,
     labeled_text_input,
     number_input,
+    option,
     plus,
+    select,
     sidelabel,
     span,
     textarea,
@@ -27,6 +29,11 @@ def create_page():
         [
             flex_wrapper(div({"class": "section-header"}, "Debuffs")),
             debuffs(),
+            flex_wrapper(div({"class": "section-header"}, "Custom Modifiers")),
+            fieldset(
+                {'class': 'repeating_custommodifiers'},
+                custom_modifier(),
+            ),
             flex_wrapper(div({"class": "section-header"}, "Attuned Effects")),
             fieldset(
                 {"class": f"repeating_attunements"},
@@ -145,3 +152,23 @@ def debuff(name, representable=True):
             ),
         ],
     )
+
+def custom_modifier():
+    return flex_row(
+        {'class': 'custom-modifier'},
+        [
+            select(
+                {'name': 'custom_modifier_statistic'},
+                [
+                    option({'value': 'accuracy'}, 'Accuracy'),
+                    option({'value': 'magical_power'}, 'Magical Power'),
+                    option({'value': 'mundane_power'}, 'Mundane Power'),
+                ],
+            ),
+            underlabel_spaced(
+                "Value",
+                number_input({"name": "custom_modifier_value"}),
+                {"class": "custom-modifier-value"},
+            ),
+        ],
+    ),
