@@ -266,24 +266,15 @@ export const umbramancy: MysticSphere = {
       name: "Hidden Blade",
 
       effect: `
-        Choose yourself or one \\glossterm{ally} within \\medrange.
-        The subject's weapons become shrouded in darkness, making them virtually impossible to see.
-        Its next melee \\glossterm{strike} is treated as if it came from an invisible creature.
-        This effect ends at the end of the next round if the subject has not made a strike by that time.
+        Your weapons become become shrouded in darkness, making them virtually impossible to see.
+        Your melee \\glossterm{strikes} are treated as if they came from an invisible creature.
 
         Most creatures are at least \\glossterm{partially unaware} of attacks from invisible creatures, even if they are already actively engaged in combat, causing them to suffer a -2 penalty to Armor and Reflex defenses against the attack.
         This effect provides no offensive benefit against creatures immune to \\glossterm{Visual} abilities.
       `,
-
-      rank: 1,
-      scaling: {
-        // TODO: this doesn't really make sense narratively
-        3: `The subject also gains a +1 bonus to \\glossterm{accuracy} with the strike.`,
-        5: `The accuracy bonus increases to +2.`,
-        7: `The accuracy bonus increases to +3.`,
-      },
+      rank: 6,
       tags: ["Sensation", "Visual"],
-      type: "Instant",
+      type: "Attune (self)",
     },
 
     {
