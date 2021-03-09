@@ -933,8 +933,8 @@ def debuffs():
             if (dazed && !stunned) {{
                 armor -= 2;
                 fortitude -= 2;
-                reflex -= 2;
                 mental -= 2;
+                reflex -= 2;
             }}
             if (dazzled) {{
                 accuracy -= 2;
@@ -944,8 +944,10 @@ def debuffs():
                 mental -= 2;
             }}
             if (sickened && !nauseated) {{
-                accuracy -= 2;
+                armor -= 2;
                 fortitude -= 2;
+                mental -= 2;
+                reflex -= 2;
             }}
             if (slowed) {{
                 armor -= 2;
@@ -958,7 +960,9 @@ def debuffs():
                 mental -= 4;
             }}
             if (nauseated) {{
-                accuracy -= 4;
+                armor -= 4;
+                fortitude -= 4;
+                reflex -= 4;
                 mental -= 4;
             }}
             if (stunned) {{
