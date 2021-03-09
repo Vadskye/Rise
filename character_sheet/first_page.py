@@ -23,7 +23,8 @@ from cgi_simple import (
     underlabeled_checkbox,
     underlabel_spaced,
 )
-from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS
+from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, SUBSKILLS
+import re
 
 
 def create_page(destination):
@@ -126,8 +127,8 @@ def attribute_section(attribute):
 
 
 def skill_box(name):
-    if "Knowledge" in name:
-        return knowledge_skill_box(name)
+    if name in SUBSKILLS:
+        return subskill_box(name)
 
     formatted_skill = name.lower().replace(" ", "_")
     return flex_row(
@@ -153,8 +154,9 @@ def skill_box(name):
     )
 
 
-def knowledge_skill_box(name):
+def subskill_box(name):
     formatted_skill = name.lower().replace(" ", "_")
+    visible_skill_name = re.sub('\\d', '', name).title()
     return flex_row(
         {"class": "skill-box"},
         [
@@ -163,13 +165,13 @@ def knowledge_skill_box(name):
                     "class": "skill-button",
                     "name": f"roll_skill_{formatted_skill}",
                     "type": "roll",
-                    "value": f"@{{character_name}} uses Knowledge (@{{{formatted_skill}_type}}): [[d10 + @{{{formatted_skill}_total}}]]",
+                    "value": f"@{{character_name}} uses {visible_skill_name} (@{{{formatted_skill}_type}}): [[d10 + @{{{formatted_skill}_total}}]]",
                 },
-                "Knowledge",
+                visible_skill_name,
             ),
             text_input(
                 {
-                    "class": "knowledge-type",
+                    "class": "subskill-type",
                     "disabled": True,
                     "name": f"{formatted_skill}_type_display",
                     "value": f"@{{{formatted_skill}_type}}",
