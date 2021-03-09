@@ -14,8 +14,9 @@ from cgi_simple import (
     text_input,
     underlabel,
 )
-from sheet_data import ATTRIBUTE_SHORTHAND, ATTRIBUTE_SKILLS, ATTRIBUTES, ROLL20_CALC
+from sheet_data import ATTRIBUTE_SHORTHAND, ATTRIBUTE_SKILLS, ATTRIBUTES, ROLL20_CALC, SUBSKILLS
 from sheet_worker import standard_damage_at_power
+import re
 
 equation_space = flex_col(
     {"class": "equation-glue"}, div({"class": "equation-math"}, " ")
@@ -177,12 +178,7 @@ def calc_skills(destination):
                 skill_labels(),
                 *[
                     calc_skill(skill_name)
-                    for skill_name in [
-                        "Deception",
-                        "Intimidate",
-                        "Perform _________",
-                        "Persuasion",
-                    ]
+                    for skill_name in ATTRIBUTE_SKILLS["other"]
                 ],
                 flex_row(
                     {"class": "skill-row"},
@@ -226,7 +222,7 @@ def skill_labels():
 
 
 def calc_skill(skill_name, attribute=None, blank_input=False):
-    visible_skill_name = "Knowledge" if "Knowledge" in skill_name else skill_name
+    visible_skill_name = re.sub('\\d', '', skill_name).title()
     skill_parsable = skill_name.lower().replace(" ", "_")
     return flex_row(
         {"class": "skill-row"},
@@ -237,11 +233,11 @@ def calc_skill(skill_name, attribute=None, blank_input=False):
                     visible_skill_name,
                     text_input(
                         {
-                            "class": "knowledge-type",
+                            "class": "subskill-type",
                             "name": f"{skill_parsable}_type",
                         }
                     )
-                    if "Knowledge" in skill_name
+                    if skill_name in SUBSKILLS
                     else "",
                 ],
             ),
