@@ -98,10 +98,41 @@ export const pyromancy: MysticSphere = {
         Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
         `,
       },
-
+      focus: false,
       rank: 1,
       scaling: "damage",
       type: "Instant",
+    },
+
+    {
+      name: "Greater Burning Grasp",
+
+      attack: {
+        glance: "Half damage from the initial hit.",
+        hit: `
+          The subject takes 2d10 + \\glossterm{power} fire damage.
+          If it loses \\glossterm{hit points} from this damage, it catches on fire as a \\glossterm{condition}.
+          At the end of each round, it takes 1d10 fire damage.
+
+          If the the subject gains a \\glossterm{vital wound} from this damage, the condition ends.
+          The condition can also be removed if the subject makes a \\glossterm{difficulty rating} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
+          Dropping \\glossterm{prone} as part of this action gives a +5 bonus to this check.
+        `,
+        targeting: `
+          This spell does not have the \\glossterm{Focus} tag.
+          You must have a \\glossterm{free hand} to cast this spell.
+
+          Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
+        `,
+      },
+      focus: false,
+      rank: 4,
+      scaling: {
+        special: `
+          The damage from both the initial hit and the condition increases by +1d for each rank beyond 4.
+        `,
+      },
+      type: "Duration",
     },
 
     {

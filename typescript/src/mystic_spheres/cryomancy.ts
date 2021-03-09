@@ -64,6 +64,28 @@ export const cryomancy: MysticSphere = {
     },
 
     {
+      name: "Greater Freezing Grasp",
+
+      attack: {
+        glance: "Half damage.",
+        hit: `
+          The subject takes 2d10 + \\glossterm{power} cold damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{slowed} as a \\glossterm{condition}.
+        `,
+        targeting: `
+          This spell does not have the \\glossterm{Focus} tag.
+          You must have a \\glossterm{free hand} to cast this spell.
+
+          Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
+        `,
+      },
+      focus: false,
+      rank: 4,
+      scaling: "damage",
+      type: "Duration",
+    },
+
+    {
       name: "Cone of Cold",
 
       attack: {
