@@ -157,6 +157,11 @@ def custom_modifier():
     return flex_row(
         {'class': 'custom-modifier'},
         [
+            labeled_text_input(
+                "Name",
+                {"class": "name"},
+                {"name": "name"},
+            ),
             ''.join([custom_statistic(str(i)) for i in range(0, 4)]),
             underlabeled_checkbox(
                 "Active?",
@@ -173,8 +178,14 @@ def custom_statistic(i):
             [
                 option({'value': 'none'}, ''),
                 option({'value': 'accuracy'}, 'Accuracy'),
-                option({'value': 'magical_power'}, 'Magical Power'),
-                option({'value': 'mundane_power'}, 'Mundane Power'),
+                option({'value': 'all_defenses'}, 'All defenses'),
+                option({'value': 'armor_defense'}, 'Armor'),
+                option({'value': 'fortitude'}, 'Fortitude'),
+                option({'value': 'magical_power'}, 'Magical power'),
+                option({'value': 'mental'}, 'Mental'),
+                option({'value': 'mundane_power'}, 'Mundane power'),
+                option({'value': 'reflex'}, 'Reflex'),
+                option({'value': 'vital_rolls'}, 'Vital rolls'),
             ],
         ),
         underlabel_spaced(
