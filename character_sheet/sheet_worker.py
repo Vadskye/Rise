@@ -960,13 +960,19 @@ def vital_rolls():
 def custom_modifiers():
     return """
         on("change:repeating_custommodifiers remove:repeating_custommodifiers", function(eventInfo) {
-            const formatStatisticId = (id) => `repeating_custommodifiers_${id}_custom_modifier_statistic`;
-            const formatValueId = (id) => `repeating_custommodifiers_${id}_custom_modifier_value`;
+            const nestedCustomStatisticCount = 4;
+            const formatStatisticId = (id, i) => `repeating_custommodifiers_${id}_statistic${i}`;
+            const formatValueId = (id, i) => `repeating_custommodifiers_${id}_value${i}`;
+            const formatIsActiveId = (id) => `repeating_custommodifiers_${id}_is_active`;
+
             getSectionIDs("repeating_custommodifiers", (repeatingSectionIds) => {
                 const fullAttributeIds = [];
                 for (const id of repeatingSectionIds) {
-                    fullAttributeIds.push(formatStatisticId(id));
-                    fullAttributeIds.push(formatValueId(id));
+                    fullAttributeIds.push(formatIsActiveId(id));
+                    for (let i=0; i < nestedCustomStatisticCount; i++) {
+                        fullAttributeIds.push(formatStatisticId(id, i));
+                        fullAttributeIds.push(formatValueId(id, i));
+                    }
                 }
                 getAttrs(fullAttributeIds, (values) => {
                     const totalCustomModifiers = {
@@ -975,9 +981,14 @@ def custom_modifiers():
                         mundane_power: 0,
                     };
                     for (const id of repeatingSectionIds) {
-                        const modifiedStatistic = values[formatStatisticId(id)];
-                        const value = values[formatValueId(id)];
-                        totalCustomModifiers[modifiedStatistic] += value;
+                        const isActive = values[formatIsActiveId(id)];
+                        if (isActive === 'on') {
+                            for (let i=0; i < nestedCustomStatisticCount; i++) {
+                                const modifiedStatistic = values[formatStatisticId(id, i)];
+                                const value = Number(values[formatValueId(id, i)]) || 0;
+                                totalCustomModifiers[modifiedStatistic] += value;
+                            }
+                        }
                     };
                     setAttrs({
                         accuracy_custom_modifier: totalCustomModifiers.accuracy,

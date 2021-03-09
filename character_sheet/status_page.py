@@ -65,7 +65,7 @@ def attunement():
             underlabeled_checkbox(
                 "Active?",
                 None,
-                {"class": "attunement-active", "name": "attunement_active"},
+                {"class": "is-active", "name": "attunement_active"},
             ),
         ],
     )
@@ -157,18 +157,29 @@ def custom_modifier():
     return flex_row(
         {'class': 'custom-modifier'},
         [
-            select(
-                {'name': 'custom_modifier_statistic'},
-                [
-                    option({'value': 'accuracy'}, 'Accuracy'),
-                    option({'value': 'magical_power'}, 'Magical Power'),
-                    option({'value': 'mundane_power'}, 'Mundane Power'),
-                ],
-            ),
-            underlabel_spaced(
-                "Value",
-                number_input({"name": "custom_modifier_value"}),
-                {"class": "custom-modifier-value"},
+            ''.join([custom_statistic(str(i)) for i in range(0, 4)]),
+            underlabeled_checkbox(
+                "Active?",
+                None,
+                {"class": "is-active", "name": "is_active"},
             ),
         ],
     ),
+
+def custom_statistic(i):
+    return flex_row([
+        select(
+            {'name': 'statistic' + i},
+            [
+                option({'value': 'none'}, ''),
+                option({'value': 'accuracy'}, 'Accuracy'),
+                option({'value': 'magical_power'}, 'Magical Power'),
+                option({'value': 'mundane_power'}, 'Mundane Power'),
+            ],
+        ),
+        underlabel_spaced(
+            "Value",
+            number_input({"name": "value" + i}),
+            {"class": "custom-modifier-value"},
+        ),
+    ])
