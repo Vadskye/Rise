@@ -603,10 +603,9 @@ def generate_armor():
             tags=[],
             material_type="Shield",
             description="""
-                As a standard action, you can activate this shield.
-                When you do, any \\glossterm<targeted> \\glossterm<magical> abilities that would target you this round are redirected to target the creature using that ability instead of you.
+                Whenever you use the \\textit<total defense> action, any \\glossterm<targeted> \\glossterm<magical> abilities that would target you until the end of the round are redirected to target the creature using that ability instead of you.
                 Any other targets of the ability are affected normally.
-                This is a \\glossterm<Swift> ability, so it affects any abilities targeting you in the phase you activate the item.
+                This is a \\glossterm<Swift> ability, so it affects any abilities targeting you in the phase you take the total defense action.
             """,
             short_description="React to reflect magical attacks",
         ),
