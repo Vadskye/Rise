@@ -102,39 +102,6 @@ def create_page(destination):
                             calc_defenses(),
                         ],
                     ),
-                    flex_wrapper(
-                        div(
-                            {"class": "section-header skill-modifiers"},
-                            "Skill Modifiers",
-                        )
-                    ),
-                    flex_row(
-                        {"class": "skill-modifier-reminder"},
-                        [
-                            flex_col(
-                                [
-                                    div(
-                                        {"class": "skill-modifier-reminder-header"},
-                                        "Training Level",
-                                    ),
-                                    div("Untrained"),
-                                    div("Trained"),
-                                    div("Mastered"),
-                                ]
-                            ),
-                            flex_col(
-                                [
-                                    div(
-                                        {"class": "skill-modifier-reminder-header"},
-                                        "Modifier",
-                                    ),
-                                    div("Base attribute"),
-                                    div("1 + half level + base attribute"),
-                                    div("3 + level + base attribute"),
-                                ]
-                            ),
-                        ],
-                    ),
                 ],
             ),
         ],
