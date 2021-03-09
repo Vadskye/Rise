@@ -14,6 +14,7 @@ def generate_script():
             attunement_points(),
             skill_points_spent(),
             unknown_statistic(),
+            custom_modifiers(),
             debuffs(),
             "</script>",
             "",
@@ -219,12 +220,22 @@ def accuracy():
             "fatigue_penalty",
             "accuracy_debuff_modifier",
             *misc,
+            "accuracy_custom_modifier",
         ],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 1) / 6)) : 0;
             setAttrs({{
-                accuracy: level + Math.floor(perception_starting / 2)  + {sum_variables(misc)} + cr_mod + level_scaling - fatigue_penalty + accuracy_debuff_modifier,
+                accuracy: (
+                    level
+                    + Math.floor(perception_starting / 2)
+                    + {sum_variables(misc)}
+                    + cr_mod
+                    + level_scaling
+                    - fatigue_penalty
+                    + accuracy_debuff_modifier
+                    + accuracy_custom_modifier
+                ),
             }});
         """,
     )
@@ -519,7 +530,7 @@ def insight_points():
 def magical_power():
     misc = get_misc_variables("magical_power", 3)
     return js_wrapper(
-        ["willpower", "level", "challenge_rating", *misc],
+        ["willpower", "level", "challenge_rating", *misc, 'magical_power_custom_modifier'],
         f"""
             var willpower_power_scaling = Math.floor(willpower / 2);
             var level_scaling = challenge_rating
@@ -536,7 +547,12 @@ def magical_power():
                 }}[Math.floor(level / 3)]
                 : 0;
             setAttrs({{
-                magical_power: willpower_power_scaling + level_scaling + {sum_variables(misc)},
+                magical_power: (
+                    willpower_power_scaling
+                    + level_scaling
+                    + {sum_variables(misc)}
+                    + magical_power_custom_modifier
+                ),
                 willpower_power_scaling,
             }});
         """,
@@ -546,7 +562,7 @@ def magical_power():
 def mundane_power():
     misc = get_misc_variables("mundane_power", 3)
     return js_wrapper(
-        ["strength", "level", "challenge_rating", *misc],
+        ["strength", "level", "challenge_rating", *misc, "mundane_power_custom_modifier"],
         f"""
             var strength_power_scaling = Math.floor(strength / 2);
             var level_scaling = challenge_rating
@@ -563,7 +579,12 @@ def mundane_power():
                 }}[Math.floor(level / 3)]
                 : 0;
             setAttrs({{
-                mundane_power: strength_power_scaling + level_scaling + {sum_variables(misc)},
+                mundane_power: (
+                    strength_power_scaling
+                    + level_scaling
+                    + {sum_variables(misc)}
+                    + mundane_power_custom_modifier
+                ),
                 strength_power_scaling,
             }});
         """,
@@ -935,3 +956,35 @@ def vital_rolls():
             }});
         """,
     )
+
+def custom_modifiers():
+    return """
+        on("change:repeating_custommodifiers remove:repeating_custommodifiers", function(eventInfo) {
+            const formatStatisticId = (id) => `repeating_custommodifiers_${id}_custom_modifier_statistic`;
+            const formatValueId = (id) => `repeating_custommodifiers_${id}_custom_modifier_value`;
+            getSectionIDs("repeating_custommodifiers", (repeatingSectionIds) => {
+                const fullAttributeIds = [];
+                for (const id of repeatingSectionIds) {
+                    fullAttributeIds.push(formatStatisticId(id));
+                    fullAttributeIds.push(formatValueId(id));
+                }
+                getAttrs(fullAttributeIds, (values) => {
+                    const totalCustomModifiers = {
+                        accuracy: 0,
+                        magical_power: 0,
+                        mundane_power: 0,
+                    };
+                    for (const id of repeatingSectionIds) {
+                        const modifiedStatistic = values[formatStatisticId(id)];
+                        const value = values[formatValueId(id)];
+                        totalCustomModifiers[modifiedStatistic] += value;
+                    };
+                    setAttrs({
+                        accuracy_custom_modifier: totalCustomModifiers.accuracy,
+                        magical_power_custom_modifier: totalCustomModifiers.magical_power,
+                        mundane_power_custom_modifier: totalCustomModifiers.mundane_power,
+                    });
+                });
+            });
+        });
+    """
