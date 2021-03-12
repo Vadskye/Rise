@@ -268,8 +268,14 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \subsubsection{Vital Rolls}\label{Vital Rolls}
             To make a \glossterm{vital roll}, roll 1d10 \sub the number of \glossterm{vital wounds} you already had, ignoring the vital wound you are rolling for.
+            This includes vital wounds that have no specific vital wound effect.
             The result determines the effect of the \glossterm{vital wound}, as listed in \tref{Vital Wound Effects}.
             Vital wound effects from vital rolls below 1 are lethal if untreated, but the Medicine skill can be used to prevent you from dying (see \pcref{Medicine}).
+
+            \parhead{Delaying Death} Vital wounds with a vital roll below 1 can kill you.
+            While you are dying in this way, if you receive healing that causes you to regain hit points, you delay your death by one round.
+            This benefit applies even if you are already at full hit points.
+            You cannot delay your death in this way by more than 5 rounds.
 
             \begin{dtable}
                 \lcaption{Vital Wound Effects}
@@ -288,7 +294,7 @@ It defines how attributes work and explains how to make attacks in combat.
                     8                & You take a \minus1 penalty to \glossterm{accuracy}                         \\
                     9                & You take a \minus1 penalty to all \glossterm{defenses}                     \\
                     10               & You take a \minus1 penalty to future \glossterm{vital rolls}               \\
-                    11 or more       & No vital wound effect                                                      \\
+                    11 or more       & No extra vital wound effect                                                \\
                 \end{dtabularx}
             \end{dtable}
 
