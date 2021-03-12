@@ -759,7 +759,7 @@ def energy_resistance():
             const energy_resistance = (resistance_from_level + willpower + energy_resistance_bonus_armor + {sum_variables(misc)}) * cr_multiplier;
             setAttrs({{
                 energy_resistance,
-                energy_resistance_from_level: resistance_from_level * cr_multiplier,
+                energy_resistance_from_level: resistance_from_level,
                 energy_resistance_max: energy_resistance,
                 energy_resistance_maximum: energy_resistance,
             }});
@@ -824,7 +824,7 @@ def physical_resistance():
             const physical_resistance = (resistance_from_level + constitution + physical_resistance_bonus_armor + {sum_variables(misc)}) * cr_multiplier;
             setAttrs({{
                 physical_resistance,
-                physical_resistance_from_level: resistance_from_level * cr_multiplier,
+                physical_resistance_from_level: resistance_from_level,
                 physical_resistance_max: physical_resistance,
                 physical_resistance_maximum: physical_resistance,
             }});
