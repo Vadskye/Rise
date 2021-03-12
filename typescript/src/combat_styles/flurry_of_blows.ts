@@ -86,10 +86,9 @@ export const flurryOfBlows: CombatStyle = {
       name: "Strike Flurry",
 
       effect: `
-        Make two \\glossterm{strikes} with a -2 penalty to \\glossterm{accuracy}.
+        Make two \\glossterm{strikes}.
         You take a -2d penalty to damage with both strikes, and your \\glossterm{power} is halved.
       `,
-
       rank: 3,
       type: "Instant",
     },
@@ -99,18 +98,16 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make two \\glossterm{strikes} with a -4 penalty to \\glossterm{accuracy}.
-        Your \\glossterm{power} with each strike is halved.
       `,
       rank: 5,
       type: "Instant",
     },
 
     {
-      name: "Triple Strike Flurry",
+      name: "Greater Strike Flurry",
 
       effect: `
-        Make three melee \\glossterm{strikes} with a -2 penalty to \\glossterm{accuracy}.
-        You take a -3d penalty to damage with all strikes, and your \\glossterm{power} is \\glossterm{halved}.
+        Make two \\glossterm{strikes}.
       `,
       rank: 7,
       type: "Instant",
