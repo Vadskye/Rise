@@ -154,6 +154,7 @@ export const enchantment: MysticSphere = {
       name: "Slow Down",
 
       attack: {
+        glance: "The effect lasts until the end of the next round.",
         crit: `The condition must be removed twice before the effect ends.`,
         hit: `The subject is \\glossterm{slowed} as a \\glossterm{condition}.`,
         targeting: `
