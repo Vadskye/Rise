@@ -238,7 +238,7 @@ export const terramancy: MysticSphere = {
         In addition, most flying creatures are unable to fly with this increased gravity and crash to the ground.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange that is no more than 120 feet above a stable surface that could support its weight.
-          This attack gains a +2 \\glossterm{accuracy} bonus if that surface a Medium or larger body of stone.
+          This attack gains a +2 \\glossterm{accuracy} bonus if that surface is a Medium or larger body of stone.
         `,
       },
 
