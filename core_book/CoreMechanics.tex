@@ -218,8 +218,7 @@ It defines how attributes work and explains how to make attacks in combat.
 
     When you would be dealt damage, you first reduce your relevant \glossterm{resistance} to that attack's damage type (see \pcref{Resistances}).
     Any damage in excess of your remaining resistance causes you to lose that many \glossterm{hit points} (see \pcref{Hit Points}).
-    Whenever you take damage that would reduce your hit points below 0, you gain a \glossterm{vital wound}.
-    If you take a very large amount of damage at once, you can gain vital wounds before your hit points reach 0 (see \pcref{Vital Threshold}).
+    Whenever you take damage that would reduce your hit points below 0, you gain one or more \glossterm{vital wounds} (see \pcref{Reaching Zero Hit Points}).
 
     \parhead{Dealing Damage, Taking Damage, and Losing Hit Points}
     You deal damage whenever you hit with a damaging attack, regardless of whether the damage is \glossterm{resisted} by the target's \glossterm{resistances} (see \pcref{Resistances}).
@@ -261,6 +260,7 @@ It defines how attributes work and explains how to make attacks in combat.
     \subsection{Vital Wounds}\label{Vital Wounds}
         A \glossterm{vital wound} represents serious damage to your body.
         Each \glossterm{vital wound} has a specific detrimental effect on you.
+        You gain vital wounds by taking damage in excess of your remaining \glossterm{hit points} (see \pcref{Reaching Zero Hit Points}).
 
         To determine the effect of a \glossterm{vital wound}, make a \glossterm{vital roll} and find the corresponding effect in \trefnp{Vital Wound Effects}.
         The effect of the vital wound lasts until you remove that vital wound.
@@ -299,13 +299,6 @@ It defines how attributes work and explains how to make attacks in combat.
             If this makes the total \glossterm{vital roll} for that vital wound 11 or more, the vital wound is removed completely.
 
             If you have multiple vital wounds, the vital wounds heal in order from lowest vital roll to highest vital roll.
-
-        \subsubsection{Vital Threshold}\label{Vital Threshold}
-            Extraordinarily powerful attacks can cause you to gain vital wounds before your hit points reach 0.
-            Your vital threshold is equal to half your maximum hit points.
-            If you lose at least as many hit points as your vital threshold from a single damage roll, you gain a \glossterm{vital wound}.
-            If you lose at least twice as many hit points as your vital threshold, you gain two vital wounds, and so on for additional multiples of your vital threshold.
-            Any vital wounds you gain this way are applied in addition to the normal vital wound you gain from taking damage that would reduce your hit points below 0.
 
     % TODO: different section?
     \subsection{Damage Types}\label{Damage Types}
@@ -1082,13 +1075,16 @@ It defines how attributes work and explains how to make attacks in combat.
     \subsection{Hit Points}\label{Hit Points}
         Your \glossterm{hit points} measure how hard you are to seriously injure or kill.
         Whenever you take damage that is not prevented by your \glossterm{resistances}, you lose that many hit points (see \pcref{Damage}).
-        If you lose a lot of hit points at once, you can gain a \glossterm{vital wound} (see \pcref{Vital Threshold}).
-        Whenever you take damage that would reduce your hit points below 0, you gain a \glossterm{vital wound} and your hit points stay at 0.
-        Once you reach 0 hit points, you can die quickly from any additional damage.
+        When you run out of hit points, you start gaining vital wounds instead (see \pcref{Reaching Zero Hit Points}).
 
         The number of hit points you have is based on your level, as defined in \tref{Character Advancement}.
         In addition, each creature gains a bonus (or penalty) to its hit points equal to its Constitution.
         Some special abilities can give you additional \glossterm{hit points}.
+
+        \parhead{Reaching Zero Hit Points}\label{Reaching Zero Hit Points}
+        Whenever you take damage that exceeds your remaining hit points, you gain a \glossterm{vital wound} and your hit points are set to 0.
+        If the excess damage from a single damage roll is greater than half your maximum hit points, you gain an additional vital wound.
+        You gain an additional vital wound for each each increment of half your maximum hit points that you take in excess damage.
 
         \parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of the creature being damaged.
         When lose a single hit point from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight.
