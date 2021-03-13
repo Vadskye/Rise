@@ -3,11 +3,15 @@ from rise.latex_generation.book_path import book_path
 from rise.latex.magic_item import MagicItem
 from rise.latex.util import latexify, longtablify
 
-
+# In general, a rank X potion or alchemical item should be one rank behind an
+# equivalent spell. They require no attunement and can be used by anyone, so
+# it's dangerous to make them too powerful. However, they also have
+# poor/nonexistent level scaling, so they also have to be fairly impactful when
+# acquired to worth using at all.
 def generate_tools():
     tools = []
 
-    tools.append(
+    tools += [
         MagicItem(
             consumable=True,
             name="Cleansing Potion",
@@ -19,10 +23,7 @@ def generate_tools():
                 This cannot remove a condition applied during the current round.
             """,
             short_description="Removes a condition",
-        )
-    )
-
-    tools.append(
+        ),
         MagicItem(
             consumable=True,
             name="Cleansing Potion, Greater",
@@ -34,10 +35,10 @@ def generate_tools():
                 This cannot remove a condition applied during the current round.
             """,
             short_description="Removes two conditions",
-        )
-    )
+        ),
+    ]
 
-    tools.append(
+    tools += [
         MagicItem(
             consumable=True,
             name="Potion of Wound Closure",
@@ -48,10 +49,7 @@ def generate_tools():
                 When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<wound roll> of 0, you treat that wound roll as a 1 instead (see \\pcref<Vital Wounds>).
             """,
             short_description="Prevents death from barely lethal vital wounds",
-        )
-    )
-
-    tools.append(
+        ),
         MagicItem(
             consumable=True,
             name="Potion of Wound Closure, Greater",
@@ -59,13 +57,10 @@ def generate_tools():
             material_type="Potion",
             tags=[],
             description="""
-            When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<wound roll> of 0 or -1, you treat that wound roll as a 1 instead (see \\pcref<Vital Wounds>).
-        """,
+                When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<wound roll> of 0 or -1, you treat that wound roll as a 1 instead (see \\pcref<Vital Wounds>).
+            """,
             short_description="Prevents death from vital wounds",
-        )
-    )
-
-    tools.append(
+        ),
         MagicItem(
             consumable=True,
             name="Potion of Wound Closure, Supreme",
@@ -73,13 +68,10 @@ def generate_tools():
             material_type="Potion",
             tags=[],
             description="""
-            When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<wound roll> of 0, -1, or -2, you treat that wound roll as a 1 instead (see \\pcref<Vital Wounds>).
-        """,
+                When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<wound roll> of 0, -1, or -2, you treat that wound roll as a 1 instead (see \\pcref<Vital Wounds>).
+            """,
             short_description="Prevents death from major vital wounds",
-        )
-    )
-
-    tools.append(
+        ),
         MagicItem(
             consumable=True,
             name="Potion of Wound Closure, Epic",
@@ -87,53 +79,58 @@ def generate_tools():
             material_type="Potion",
             tags=[],
             description="""
-            When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<wound roll> of 0, -1, -2, or -3, you treat that wound roll as a 1 instead (see \\pcref<Vital Wounds>).
-        """,
+                When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<wound roll> of 0, -1, -2, or -3, you treat that wound roll as a 1 instead (see \\pcref<Vital Wounds>).
+            """,
             short_description="Prevents death from almost any vital wound",
-        )
-    )
+        ),
+    ]
 
-    tools.append(
+    tools += [
         MagicItem(
             consumable=True,
             name="Potion of Healing",
-            level=1,
+            level=0.5,
             material_type="Potion",
             tags=[],
             description="""
                 When you drink this \\glossterm<potion>, you heal 1d6 \\glossterm<hit points>.
             """,
             short_description="Restores 1d6 hit points",
-        )
-    )
-
-    tools.append(
+        ),
         MagicItem(
             consumable=True,
             name="Potion of Healing, Greater",
-            level=7,
+            level=6,
             material_type="Potion",
             tags=[],
             description="""
-            When you drink this \\glossterm<potion>, you heal 2d6+1 \\glossterm<hit points>.
-        """,
+                When you drink this \\glossterm<potion>, you heal 2d6+1 \\glossterm<hit points>.
+            """,
             short_description="Restores 1d10+1 hit points",
-        )
-    )
-
-    tools.append(
+        ),
         MagicItem(
             consumable=True,
             name="Potion of Healing, Supreme",
-            level=16,
+            level=12,
             material_type="Potion",
             tags=[],
             description="""
-            When you drink this \\glossterm<potion>, you heal 4d6+4 \\glossterm<hit points>.
-        """,
-            short_description="Restores 4d6+4 hit points",
-        )
-    )
+                When you drink this \\glossterm<potion>, you heal 4d6+3 \\glossterm<hit points>.
+            """,
+            short_description="Restores 4d6+3 hit points",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Potion of Healing, Epic",
+            level=18,
+            material_type="Potion",
+            tags=[],
+            description="""
+                When you drink this \\glossterm<potion>, you heal 5d10+4 \\glossterm<hit points>.
+            """,
+            short_description="Restores 5d10+4 hit points",
+        ),
+    ]
 
     # Alchemical items
 
@@ -141,41 +138,54 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Alchemist's Fire",
-            level=0.5,
+            level=1,
             material_type="Alchemy",
             tags=[],
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Armor against anything within \\rngshort range.
-                On a hit, the subject takes 1d6 fire damage.
+                On a hit, the subject takes 1d10 fire damage.
             """,
-            short_description="Throw to deal 1d6 fire damage",
+            short_description="Throw to deal 1d10 fire damage",
         ),
         MagicItem(
             consumable=True,
             name="Alchemist's Fire, Greater",
-            level=6,
+            level=7,
             material_type="Alchemy",
             tags=[],
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Armor against anything within \\rngshort range.
-                On a hit, the subject takes 2d6+3 fire damage.
+                On a hit, the subject takes 2d10+3 fire damage.
             """,
-            short_description="Throw to deal 2d6+3 fire damage",
+            short_description="Throw to deal 2d10+3 fire damage",
         ),
         MagicItem(
             consumable=True,
             name="Alchemist's Fire, Supreme",
-            level=12,
+            level=13,
             material_type="Alchemy",
             tags=[],
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Armor against anything within \\rngshort range.
-                On a hit, the subject takes 4d6+6 fire damage.
+                On a hit, the subject takes 4d10+6 fire damage.
             """,
-            short_description="Throw to deal 4d6+6 fire damage",
+            short_description="Throw to deal 4d10+6 fire damage",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Alchemist's Fire, Epic",
+            level=19,
+            material_type="Alchemy",
+            tags=[],
+            description="""
+                You can throw this item as a standard action.
+                When you do, make an attack vs. Armor against anything within \\rngshort range.
+                On a hit, the subject takes 7d10+9 fire damage.
+            """,
+            short_description="Throw to deal 7d10+9 fire damage",
         ),
     ]
 
@@ -189,9 +199,9 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against anything within \\shortrange.
-                On a hit, the subject takes 1d6+1 acid damage.
+                On a hit, the subject takes 1d10+1 acid damage.
             """,
-            short_description="Throw to deal 1d6+1 acid damage",
+            short_description="Throw to deal 1d10+1 acid damage",
         ),
         MagicItem(
             consumable=True,
@@ -202,9 +212,9 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against anything within \\shortrange.
-                On a hit, the subject takes 2d6+4 acid damage.
+                On a hit, the subject takes 2d10+4 acid damage.
             """,
-            short_description="Throw to deal 2d6+4 acid damage",
+            short_description="Throw to deal 2d10+4 acid damage",
         ),
         MagicItem(
             consumable=True,
@@ -215,9 +225,53 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against anything within \\shortrange.
-                On a hit, the subject takes 4d6+7 acid damage.
+                On a hit, the subject takes 4d10+7 acid damage.
             """,
-            short_description="Throw to deal 4d6+7 acid damage",
+            short_description="Throw to deal 4d10+7 acid damage",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Acid Flask, Epic",
+            level=20,
+            material_type="Alchemy",
+            tags=[],
+            description="""
+                You can throw this item as a standard action.
+                When you do, make an attack vs. Fortitude against anything within \\shortrange.
+                On a hit, the subject takes 7d10+10 acid damage.
+            """,
+            short_description="Throw to deal 7d10+10 acid damage",
+        ),
+    ]
+
+    tools += [
+        MagicItem(
+            consumable=True,
+            name="Corrosive Flask",
+            level=5,
+            material_type="Alchemy",
+            tags=[],
+            description="""
+                You can throw this item as a standard action.
+                When you do, make an attack vs. Fortitude against anything within \\shortrange.
+                On a hit, the subject takes 1d8+1 acid damage.
+                If a creature loses \\glossterm<hit points> from this damage, it is \\glossterm<sickened> as a \\glossterm<condition>.
+            """,
+            short_description="Throw to deal 1d8+1 acid damage and sicken",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Corrosive Flask, Greater",
+            level=14,
+            material_type="Alchemy",
+            tags=[],
+            description="""
+                You can throw this item as a standard action.
+                When you do, make an attack vs. Fortitude against anything within \\shortrange.
+                On a hit, the subject takes 2d8+3 acid damage.
+                If a creature loses \\glossterm<hit points> from this damage, it is \\glossterm<nauseated> as a \\glossterm<condition>.
+            """,
+            short_description="Throw to deal 2d8+3 acid damage and nauseate",
         ),
     ]
 
@@ -231,9 +285,9 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Armor against everything in a \\smallarea radius within \\rngshort range.
-                On a hit, each subject takes 1d8+1 fire damage.
+                On a hit, each subject takes 1d10+1 fire damage.
             """,
-            short_description="Throw to deal 1d8+1 fire damage in an area",
+            short_description="Throw to deal 1d10+1 fire damage in an area",
         ),
         MagicItem(
             consumable=True,
@@ -244,9 +298,9 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Armor against everything in a \\smallarea radius within \\rngshort range.
-                On a hit, each subject takes 2d8+2 fire damage.
+                On a hit, each subject takes 2d10+2 fire damage.
             """,
-            short_description="Throw to deal 2d8+2 fire damage in an area",
+            short_description="Throw to deal 2d10+2 fire damage in an area",
         ),
         MagicItem(
             consumable=True,
@@ -257,9 +311,9 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Armor against everything in a \\smallarea radius within \\rngshort range.
-                On a hit, each subject takes 4d8+4 fire damage.
+                On a hit, each subject takes 4d10+4 fire damage.
             """,
-            short_description="Throw to deal 4d8+4 fire damage in an area",
+            short_description="Throw to deal 4d10+4 fire damage in an area",
         ),
     ]
 
@@ -315,41 +369,44 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Thunderstone",
-            level=2,
+            level=3,
             material_type="Alchemy",
             tags=[],
             description="""
                 You can throw this item as a standard action.
-                When you do, make an attack vs. Fortitude against one creature within \\rngshort range.
-                On a hit, the subject is \\glossterm<deafened> as a \\glossterm<condition>.
+                When you do, make an attack vs. Fortitude against everything in a \\tinyarea radius within \\rngshort range.
+                On a hit, each subject takes 1d6+1 sonic damage.
+                Each creature that loses \\glossterm<hit points> from this damage is \\glossterm<deafened> as a \\glossterm<condition>.
             """,
-            short_description="Deafens a foe",
+            short_description="Throw to deal 1d6+1 sonic damage and deafen",
         ),
         MagicItem(
             consumable=True,
             name="Thunderstone, Greater",
-            level=8,
+            level=9,
             material_type="Alchemy",
             tags=[],
             description="""
                 You can throw this item as a standard action.
-                When you do, make an attack vs. Fortitude against one creature within \\rngshort range.
-                On a hit, the subject is \\glossterm<deafened> and \\glossterm<dazed> as a \\glossterm<condition>.
+                When you do, make an attack vs. Fortitude against everything in a \\tinyarea radius within \\rngshort range.
+                On a hit, each subject takes 1d10+2 sonic damage.
+                Each creature that loses \\glossterm<hit points> from this damage is \\glossterm<deafened> and \\glossterm<dazed> as a single \\glossterm<condition>.
             """,
-            short_description="Deafens and dazes a foe",
+            short_description="Throw to deal 1d10+2 sonic damage, deafen, and daze",
         ),
         MagicItem(
             consumable=True,
             name="Thunderstone, Supreme",
-            level=14,
+            level=15,
             material_type="Alchemy",
             tags=[],
             description="""
                 You can throw this item as a standard action.
-                When you do, make an attack vs. Fortitude against one creature within \\rngshort range.
-                On a hit, the subject is \\glossterm<deafened> and \\glossterm<stunned> as a \\glossterm<condition>.
+                When you do, make an attack vs. Fortitude against everything in a \\tinyarea radius within \\rngshort range.
+                On a hit, each subject takes 2d8+3 sonic damage.
+                Each creature that loses \\glossterm<hit points> from this damage is \\glossterm<deafened> and \\glossterm<stunned> as a single \\glossterm<condition>.
             """,
-            short_description="Deafens and stuns a foe",
+            short_description="Throw to deal 2d8+3 sonic damage, deafen, and stun",
         )
     ]
 
@@ -357,30 +414,30 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Snowball",
-            level=3,
+            level=4,
             material_type="Alchemy",
             tags=[],
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against anything within \\shortrange.
                 On a hit, the subject takes 1d8+1 cold damage.
-                If it loses \\glossterm<hit points> from this damage, it is \\glossterm<slowed> as a \\glossterm<condition>.
+                If a creature loses \\glossterm<hit points> from this damage, it is \\glossterm<slowed> as a \\glossterm<condition>.
             """,
             short_description="Throw to deal 1d8+1 cold damage and slow",
         ),
         MagicItem(
             consumable=True,
             name="Snowball, Greater",
-            level=12,
+            level=13,
             material_type="Alchemy",
             tags=[],
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against anything within \\shortrange.
-                On a hit, the subject takes 2d8+6 cold damage.
-                If it loses \\glossterm<hit points> from this damage, it is \\glossterm<decelerated> as a \\glossterm<condition>.
+                On a hit, the subject takes 2d8+3 cold damage.
+                If a creature loses \\glossterm<hit points> from this damage, it is \\glossterm<decelerated> as a \\glossterm<condition>.
             """,
-            short_description="Throw to deal 2d8+6 cold damage and decelerate",
+            short_description="Throw to deal 2d8+3 cold damage and decelerate",
         ),
     ]
 
@@ -441,7 +498,23 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Tanglefoot Bag",
-            level=3,
+            level=1,
+            material_type="Alchemy",
+            tags=[],
+            description="""
+                You can throw this item as a standard action.
+                When you do, make an attack vs. Reflex against one creature within \\shortrange.
+                On a hit, the subject is \\glossterm<slowed> as a \\glossterm<condition>.
+
+                Whenever the target moves using one of its movement speeds, it can make a \\glossterm<difficulty rating> 5 Strength check as part of the movement.
+                If it succeeds, the condition is removed after the movement is complete.
+            """,
+            short_description="Slows a foe, though it is easily removable",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Tanglefoot Bag, Greater",
+            level=4,
             material_type="Alchemy",
             tags=[],
             description="""
@@ -453,8 +526,8 @@ def generate_tools():
         ),
         MagicItem(
             consumable=True,
-            name="Tanglefoot Bag, Greater",
-            level=12,
+            name="Tanglefoot Bag, Supreme",
+            level=13,
             material_type="Alchemy",
             tags=[],
             description="""
@@ -474,12 +547,51 @@ def generate_tools():
             material_type="Alchemy",
             tags=[],
             description="""
-            As a standard action, you can activate this item.
-            When you do, it sheds light like a torch for a week.
-        """,
+                As a standard action, you can activate this item.
+                When you do, it sheds light like a torch for a week.
+            """,
             short_description="Emits light like a torch for a week",
         )
     )
+
+    tools += [
+        MagicItem(
+            consumable=True,
+            name="Potion of Strength",
+            level=3,
+            material_type="Alchemy",
+            tags=[],
+            description="""
+                When you drink this \\glossterm<potion>, you gain a +3 \\glossterm<magic bonus> to your Strength for the purpose of determining your \\glossterm<carrying capacity> (see \\pcref<Carrying Capacity>).
+                This effect lasts for five minutes.
+            """,
+            short_description="Briefly increases carrying capacity",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Potion of Strength, Greater",
+            level=9,
+            material_type="Alchemy",
+            tags=[],
+            description="""
+                When you drink this \\glossterm<potion>, you gain a +4 \\glossterm<magic bonus> to your Strength for the purpose of determining your \\glossterm<carrying capacity> (see \\pcref<Carrying Capacity>).
+                This effect lasts for one hour.
+            """,
+            short_description="Increases carrying capacity",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Potion of Strength, Supreme",
+            level=15,
+            material_type="Alchemy",
+            tags=[],
+            description="""
+                When you drink this \\glossterm<potion>, you gain a +5 \\glossterm<magic bonus> to your Strength for the purpose of determining your \\glossterm<carrying capacity> (see \\pcref<Carrying Capacity>).
+                This effect lasts for eight hours.
+            """,
+            short_description="Increases carrying capacity for an extended time",
+        ),
+    ]
 
     return tools
 
