@@ -2563,13 +2563,13 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Ranger Progression}
 \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X > {\lcol}X}
     \tb{Rank} & \tb{Min Level} & \tb{Beastmaster}         & \tb{Huntmaster}          & \tb{Scout}                & \tb{Wilderness Warrior} \tableheaderrule
-    0 & \tdash & Beast affinity           & Huntmaster               & Keen vision        & Wild senses                            \\
-    1 & 1      & Animal companion         & Quarry                   & Skirmisher               & Wild maneuvers                         \\
-    2 & 4      & Pack tactics             & Hunting style            & Perceive weakness                & Combat style rank (2), wild force          \\
-    3 & 7      & Power of beasts          & Endurance hunter         & Blindsight         & Combat style rank (3), glancing strikes    \\
-    4 & 10     & Greater animal companion & Greater quarry           & Greater skirmisher                & Combat style rank (4), wild maneuver       \\
-    5 & 13     & Greater pack tactics     & Hunting style            & Greater perceive weakness        & Combat style rank (5), greater wild force  \\
-    6 & 16     & Greater power of beasts  & Greater endurance hunter & Greater blindsight & Combat style rank (6), greater wild senses \\
+    0 & \tdash & Beast affinity           & Tracker                  & Keen vision               & Wild senses                                \\
+    1 & 1      & Animal companion         & Quarry                   & Skirmisher                & Wild maneuvers                             \\
+    2 & 4      & Pack tactics             & Hunting style            & Perceive weakness         & Combat style rank (2), wild force          \\
+    3 & 7      & Power of beasts          & Hunter's prowess         & Blindsight                & Combat style rank (3), glancing strikes    \\
+    4 & 10     & Greater animal companion & Greater quarry           & Greater skirmisher        & Combat style rank (4), wild maneuver       \\
+    5 & 13     & Greater pack tactics     & Hunting style            & Greater perceive weakness & Combat style rank (5), greater wild force  \\
+    6 & 16     & Greater power of beasts  & Greater hunter's prowess & Greater blindsight        & Combat style rank (6), greater wild senses \\
     7 & 19     & Supreme animal companion & Supreme quarry           & Supreme skirmisher        & Combat style rank (7), wild maneuver       \\
 \end{dtabularx}
     \end{dtable!*}
@@ -2677,21 +2677,20 @@ This choice determines a great deal about your character's abilities.
         Each \textit{hunting style} ability lasts as long as the \textit{quarry} ability you used it with.
         {
             \begin{freeability}{Anchoring}[Magical]
-                As long as your quarry is adjacent to at least two members of your hunting party, it cannot travel extradimensionally.
+                As long as your quarry is adjacent to any member of your hunting party, it cannot travel extradimensionally.
                 This prevents all \glossterm{Manifestation}, \glossterm{Planar}, and \glossterm{Teleportation} effects.
 
                 \rankline
-                \rank{4} This effect instead applies if your quarry is within \medrange of at least two members of your hunting party.
-                \rank{6} This effect instead applies if your quarry is within \medrange of any member of your hunting party.
+                \rank{4} This effect instead applies if your quarry is within \medrange of any member of your hunting party.
+                \rank{6} This effect instead applies if your quarry is within \distrange of any member of your hunting party.
             \end{freeability}
 
             \begin{freeability}{Coordinated Stealth}
                 Your quarry takes a \minus4 penalty to Awareness checks to notice members of your hunting party.
 
                 \rankline
-                % seems weak?
-                \rank{4} The accuracy bonus from your \textit{quarry} ability increases to \plus2 if your quarry is \unaware of every member of the hunting party.
-                \rank{6} The Awareness penalty increases to \minus8.
+                \rank{4} The Awareness penalty increases to \minus8.
+                \rank{6} The Awareness penalty increases to \minus12.
             \end{freeability}
 
             \begin{freeability}{Cover Weaknesses}
@@ -2711,11 +2710,11 @@ This choice determines a great deal about your character's abilities.
             \end{freeability}
 
             \begin{freeability}{Lifeseal}[Magical]
-                As long as your quarry is adjacent to at least two members of your \glossterm{hunting party}, it cannot regain \glossterm{hit points}.
+                As long as your quarry is adjacent to any member of your \glossterm{hunting party}, it cannot regain \glossterm{hit points}.
 
                 \rankline
-                \rank{4} This effect instead applies if the target is within \rngmed range of at least two members of your hunting party.
-                \rank{6} This effect instead applies if your quarry is within \rnglong range of at least two member of your hunting party.
+                \rank{4} This effect instead applies if the target is within \rngmed range of any member of your hunting party.
+                \rank{6} This effect instead applies if your quarry is within \rngdist range of any member of your hunting party.
             \end{freeability}
 
             \begin{freeability}{Martial Suppression}
@@ -2747,7 +2746,7 @@ This choice determines a great deal about your character's abilities.
                 In exchange, you gain a \plus1 bonus to defenses against your quarry.
 
                 \rankline
-                \rank{4} The accuracy bonus from your \textit{quarry} ability increases to \plus2.
+                \rank{4} You gain an additional \plus1 bonus to accuracy against your quarry.
                 \rank{6} The defense bonus increases to \plus2.
             \end{freeability}
 
@@ -2755,29 +2754,31 @@ This choice determines a great deal about your character's abilities.
                 When you use your \textit{quarry} ability, you can target any number of creatures to be your quarry.
 
                 \rankline
-                \rank{4} You reduce your penalties for being \glossterm{surrounded} by 1 (see \pcref{Being Surrounded}).
-                \rank{6} The penalty reduction applies to all members of your hunting party.
+                \rank{4} Your \glossterm{hunting party} reduces their penalties for being \glossterm{surrounded} by 1.
+                \rank{6} The penalty reduction increases to 2.
             \end{freeability}
 
             \begin{freeability}{Wolfpack}
                 At the start of each \glossterm{phase}, if your quarry is adjacent to at least two members of your hunting party, it is \glossterm{slowed} until the end of that phase.
 
                 \rankline
-                \rank{4} This effect instead applies if your quarry is within \rngmed range of at least two members of your hunting party.
-                \rank{6} This effect instead applies if your quarry is within \rnglong range of at least two members of your hunting party.
+                \rank{4} This effect instead applies if your quarry is adjacent to any member of your hunting party.
+                \rank{6} Your quarry is \glossterm{decelerated} instead of slowed.
             \end{freeability}
         }
 
-        \cf{Rgr}[3]{Endurance Hunter} You gain a \plus2 bonus to your \glossterm{fatigue tolerance}.
+        \cf{Rgr}[3]{Hunter's Prowess} You gain a \plus1d bonus to your damage with all weapons.
 
-        \cf{Rgr}[4]{Greater Quarry} You gain a \plus1d bonus to your damage with \glossterm{strikes} against your \textit{quarry}.
+        \cf{Rgr}[4]{Greater Quarry} You can use your \textit{quarry} ability with the \glossterm{Sustain} (free) tag instead of the \glossterm{Attune} (self) tag.
+        If you originally use your \textit{quarry} ability as a sustained ability, you can attune to the same quarry as a free action, even if your quarry is no longer in sight.
+        In addition, you gain a \plus10 bonus to follow tracks left by your quarry.
 
         \cf*{Rgr}[5]{Hunting Style}
         You learn an additional \textit{hunting style}.
 
-        \cf{Rgr}[6]{Greater Endurance Hunter} The obnus from your \textit{endurance hunter} ability increases to \plus4.
+        \cf{Rgr}[6]{Greater Hunter's Prowess} The bonus from your \textit{hunter's prowess} ability increases to \plus2d.
 
-        \cf{Rgr}[7]{Supreme Quarry} The bonus from your \textit{greater quarry} ability increases to \plus2d.
+        \cf{Rgr}[7]{Supreme Quarry} The accuracy bonus from your \textit{quarry} ability increases to \plus2.
 
     \newpage
     \subsection{Scout}
