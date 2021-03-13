@@ -4023,11 +4023,11 @@ This choice determines a great deal about your character's abilities.
     0 & \tdash & Alchemical infusion          & Cantrips, mage armor               & Deep knowledge       & Mystic sphere               \\
     1 & 1      & Portable workshop            & Spellcasting                       & Ritualist            & Mystic insight              \\
     2 & 4      & Alchemical discovery         & Spell rank (2), spell knowledge    & Scholastic insight   & Arcane attunement           \\
-    3 & 7      & Alchemical precision         & Spell rank (3), greater mage armor & Contingency          & Wellspring of power         \\
-    4 & 10     & Experienced quaffing         & Spell rank (4), spell knowledge    & Scholastic insight   & Mystic insight              \\
-    5 & 13     & Alchemical discovery         & Spell rank (5)                     & Greater ritualist    & Greater arcane attunement   \\
-    6 & 16     & Greater alchemical precision & Spell rank (6), supreme mage armor & Scholastic insight   & Greater wellspring of power \\
-    7 & 19     & Greater portable workshop    & Spell rank (7), spell knowledge    & Multiple contingency & Mystic insight              \\
+    3 & 7      & Experienced quaffing         & Spell rank (3), greater mage armor & Contingency          & Wellspring of power         \\
+    4 & 10     & Alchemical discovery         & Spell rank (4), spell knowledge    & Scholastic insight   & Mystic insight              \\
+    5 & 13     & Greater portable workshop    & Spell rank (5)                     & Greater ritualist    & Greater arcane attunement   \\
+    6 & 16     & Alchemical discovery         & Spell rank (6), supreme mage armor & Scholastic insight   & Greater wellspring of power \\
+    7 & 19     & Greater experienced quaffing & Spell rank (7), spell knowledge    & Multiple contingency & Mystic insight              \\
 \end{dtabularx}
     \end{dtable!*}
 
@@ -4060,47 +4060,53 @@ This choice determines a great deal about your character's abilities.
     \subsection{Alchemist}
         This archetype improves your ability to use alchemy to create unusual concoctions to aid your allies and harm your foes.
 
-        \cf{Wiz}[0]{Alchemical Infusion} Whenever you create or use an alchemical item, you may use your \glossterm{magical} \glossterm{power} in place of the item's normal power to determine its effects.
-        In addition, you may add your magical power to the damage dealt by any alchemical items you use in place of the item's normal damage modifier.
-        This does not affect the damage dice rolled by the item.
+        \cf{Wiz}[0]{Alchemical Infusion}[Magical] Whenever you create or use an alchemical item, you may use your \glossterm{magical} \glossterm{power} in place of the item's normal power to determine its effects.
+        % TODO: what if alchemical items deal damage over time?
+        In addition, you may add half your magical power to the damage dealt by any alchemical items you use.
 
-        \cf{Wiz}[1]{Portable Workshop} 
+        \cf{Wiz}[1]{Portable Workshop}[Magical]
         You carry materials necessary to refine low-grade alchemical items wherever you are.
-        Items created with this ability deteriorate and become useless after 24 hours or after you finish a long rest, whichever comes first.
+        Where you lack material components, you fill in with some of your own magic, allowing you to create items more easily.
         The items are just as effective when used as items created normally.
-        You can use this ability create alchemical items with a item level up to your level (see \pcref{Item Levels}).
+        However, they are less durable, since they are partially sustained by your magic.
+        Items created with this ability deteriorate and become useless after 24 hours or after you finish a long rest, whichever comes first.
 
+        You can use this ability to create alchemical items with a item level up to your level (see \pcref{Item Levels}).
         Creating an item in this way functions in the same way as crafting alchemical items normally, with the following changes.
         First, you do not require any raw materials.
-        Second, the difficulty rating goes up by 5 after each successful craft.
-        Third, if you fail to craft an item in this way, you cannot try again until you destroy all items crafted with this ability and finish a short rest.
+        Second, the maximum duration of any item created with this ability is five minutes.
+        Third, you can only maintain the existence of three items with this ability at once.
+        If you try to create a fourth item, you must stop maintaining the existence of another item created.
+        You can do this as a \glossterm{free action} regardless of distance.
+        This removes any lingering effects from the removed item, such as the protective qualities of an \textit{antitoxin elixir}.
 
-        If you use this ability extensively without visiting civilization or some other area where you can restock your personal supplies for weeks, you may run low on supplies and your ability to use this ability may be limited.
-
-        \cf{Wiz}[2]{Alchemical Discovery} You gain your choice of one of the following benefits.
+        \cf{Wiz}[2]{Alchemical Discovery} You learn how to create alchemical items more effectively.
+        You gain your choice of one of the following benefits.
+        Each benefit can only be chosen once.
         {
+            \parhead{Aerodynamic Construction} The range of thrown alchemical items you create increases by 30 feet.
+                This does not affect alchemical items that are not designed to be thrown.
             \parhead{Complex Construction} You can use your portable workshop ability to create items with an item level up to two levels higher than your level.
-            \parhead{Durable Construction} You double the range of alchemical items you create.
-            \parhead{Efficient Crafting} It takes you half the normal time and material components to craft alchemical items.
-            \parhead{Explosive Construction} You double the area affected by alchemical items you create.
-            \parhead{Potent Construction} Alchemical items you create gain a bonus to power equal to your rank in this archetype.
-            \parhead{Repetitive Construction} Whenever you use your portable workshop ability, you can create two copies of the same alchemical item.
-            This only counts as one item for the purpose of determining the increase to your crafting difficulty.
+            \parhead{Efficient Crafting} It takes you half the normal time and material components to craft alchemical items without using your \textit{portable workshop} ability.
+            \parhead{Enduring Construction} The duration of any alchemical item you create is doubled.
+                % TODO: wording
+                In addition, alchemical items that last for a fixed number of uses have their number of uses doubled.
+            \parhead{Explosive Construction} The area affected by any alchemical item you create is doubled.
+            \parhead{Potent Construction} The damage dealt by any alchemical item you create gains a bonus equal to your rank in this archetype.
+            \parhead{Repetitive Construction} Whenever you use your \textit{portable workshop} ability, you can create two copies of the same alchemical item.
+            This only counts as one item for the purpose of determining the number of items you can maintain with that ability.
             \parhead{Safe Construction} Creatures who are not trained in Craft (alchemy) can use alchemical items you create without a mishap chance.
         }
 
-        \cf{Wiz}[3]{Alchemical Precision} You gain a \plus1 bonus to accuracy with alchemical items.
-        In addition, increase the distance that you can throw any thrown alchemical item by 30 feet.
-        This does not affect alchemical items that are not designed to be thrown.
+        \cf{Wiz}[3]{Experienced Quaffing} You can drink up to two doses of potions, elixirs, and other drinkable alchemical items as part of the same standard action.
 
-        \cf{Wiz}[4]{Experienced Quaffing} You can drink up to two doses of potions, elixirs, and other drinkable alchemical items simultaneously with no mishap risk.
+        \cf*{Wiz}[4]{Alchemical Discovery} You gain an additional \textit{alchemical discovery} ability.
 
-        \cf*{Wiz}[5]{Alchemical Discovery} You gain an additional \textit{alchemical discovery} ability.
+        \cf{Wiz}[5]{Greater Portable Workshop}[Magical] The number of items you can maintain with your \textit{portable workshop} ability increases to 5.
 
-        \cf{Wiz}[6]{Greater Alchemical Precision} The accuracy bonus from your \textit{greater alchemical infusion} ability increases to \plus2.
-        In addition, the distance increase from your \textit{alchemical precision} ability increases to 60 feet.
+        \cf*{Wiz}[6]{Alchemical Discovery} You gain an additional \textit{alchemical discovery} ability.
 
-        \cf{Wiz}[7]{Greater Portable Workshop} The difficulty rating to craft a new alchemical item with your \textit{portable workshop} ability does not increase with each successful craft.
+        \cf{Wiz}[7]{Greater Experienced Quaffing} You can drink a single dose of a potion, elixir, or other drinkable alchemical item as a \glossterm{minor action}.
 
     \newpage
     \subsection{Arcane Magic}
