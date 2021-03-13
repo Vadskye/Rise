@@ -10,7 +10,7 @@ export const vivimancy: MysticSphere = {
       name: "Ablate Vital Wound",
 
       effect: `
-        Choose yourself or a living \\glossterm{ally} within your \\glossterm{reach}.
+        Choose a living \\glossterm{ally} within your \\glossterm{reach}.
         If the subject has a \\glossterm{vital wound} with a \\glossterm{vital roll} of 0, it treats that \\glossterm{vital roll} as a 1, preventing it from dying (see \\pcref{Vital Wounds}).
       `,
       focus: false,
@@ -126,7 +126,7 @@ export const vivimancy: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        Choose yourself or a living \\glossterm{ally} within \\medrange.
+        Choose a living \\glossterm{ally} within \\longrange.
         If the subject has a \\glossterm{vital wound} with a \\glossterm{vital roll} of 0, it treats that \\glossterm{vital roll} as a 1, preventing it from dying (see \\pcref{Vital Wounds}).
       `,
       rank: 2,
