@@ -2539,6 +2539,9 @@ def generate_worn():
 
                 As long as each pocket is no more than half full, or is full of completely interchangeable items, you can reach into any pocket just as easily as you can reach into a nonmagical pocket.
                 Overstuffed pockets may take more time to sift through to find the specific item you want, just like rummaging through a backpack.
+
+                If you take of this belt or stop attuning to this ability, the items in the belt become inaccessible.
+                If this belt is destroyed, the items within it become lost in the Astral Plane.
             """,
             short_description="Contains five large pockets",
         ),
