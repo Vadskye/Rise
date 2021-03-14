@@ -582,7 +582,7 @@ def generate_armor():
             description="""
                 You gain a +6 \\glossterm<magic bonus> to your \\glossterm<resistances> to both \\glossterm<physical damage> and \\glossterm<energy damage>.
             """,
-            short_description="Grants +6 universal resistance",
+            short_description="Grants +6 energy and physical resistance",
         ),
         MagicItem(
             name="Armor of Invulnerability, Greater",
@@ -592,7 +592,7 @@ def generate_armor():
             description="""
                 You gain a +12 \\glossterm<magic bonus> to your \\glossterm<resistances> to both \\glossterm<physical damage> and \\glossterm<energy damage>.
             """,
-            short_description="Grants +12 universal resistance",
+            short_description="Grants +12 energy and physical resistance",
         ),
     ]
 
