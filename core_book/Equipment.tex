@@ -66,6 +66,15 @@
             If you have a Strength of 5 or higher, you can wield a heavy weapon in one hand, but you take a \minus1 penalty to \glossterm{accuracy} and a \minus1d penalty to damage with the weapon while doing so.
             Changing grips to hold it in one hand or two hands can be done as a \glossterm{free action} that requires both hands.
 
+            \parhead{Physical Size} Like all objects and creatures, weapons have a size category that represents how physically large they are. In general, light and medium weapons are one size category smaller than the wielder, while heavy weapons are the same size category as the wielder.
+            All weapons are \glossterm{lightweight} unless otherwise noted.
+
+            \parhead{Inappropriately Sized Weapons}\label{Inappropriately Sized Weapons} A weapon's \glossterm{usage class} is altered by one step for each size category of difference between the wielder's size and the size of the creature for which the weapon was designed.
+            For example, a light weapon sized for a Large creature can be used by a Medium creature as if it had a medium usage class.
+            The weapon's damage die gains a \plus1d bonus per size category if the weapon is unusually large, or takes a \minus1d penalty per size category if the weapon is unusually small.
+            In addition, the wielder takes a \minus2 penalty to accuracy with the weapon per size category of difference.
+            If a weapon's usage class would be changed to something other than light, medium, or heavy by this alteration, the creature can't wield the weapon at all.
+
         \subsubsection{Melee Weapons}
             Melee weapons are used for making melee attacks against foes within your reach (see \pcref{Reach}). Most weapons are melee weapons.
 
@@ -88,14 +97,6 @@
                 You take a \minus4 penalty to accuracy with medium and large ranged weapons against creatures adjacent to you. In addition, you are usually \defenseless while using ranged weapons.
 
                 \parhead{Thrown Weapons in Melee}\label{Thrown Weapons in Melee} You cannot defend yourself with a weapon you are throwing, which can cause you to be \defenseless. To avoid this, you can attempt to use the weapon as a melee weapon. Some thrown weapon are not designed for use in melee, such as shurikens. When using such a weapon as a melee weapon, you are always treated as nonproficient with it, which means you cannot defend yourself with it.
-
-                \parhead{Physical Size} Like all objects and creatures, weapons have a size category that represents how physically large they are. In general, a light weapon is an object two size categories smaller than the wielder, a medium weapon is an object one size category smaller than the wielder, and a heavy weapon is an object of the same size category as the wielder.
-
-                \parhead{Inappropriately Sized Weapons}\label{Inappropriately Sized Weapons} A weapon's \glossterm{usage class} is altered by one step for each size category of difference between the wielder's size and the size of the creature for which the weapon was designed.
-                For example, a light weapon sized for a Large creature can be used by a Medium creature as if it had a medium usage class.
-                The weapon's damage die gains a \plus1d bonus per size category if the weapon is unusually large, or takes a \minus1d penalty per size category if the weapon is unusually small.
-                In addition, the wielder takes a \minus2 penalty to accuracy with the weapon per size category of difference.
-                If a weapon's usage class would be changed to something other than light, medium, or heavy by this alteration, the creature can't wield the weapon at all.
 
         \subsubsection{Improvised Weapons}\label{Improvised Weapons}
             Sometimes objects not crafted to be weapons nonetheless see use in combat.
@@ -121,7 +122,7 @@
             Some weapons found on \trefnp{Weapons} have tags that indicate that they have special abilities. The list of abilities that weapons can have is given below.
             \parhead{Ammunition} This weapon is designed to thrown or fired by a projectile weapon in large quantities. It is cheaper to buy and craft, but ammunition is usually \glossterm{broken} after being fired.
             \parhead{Compact} This weapon is unusually small.
-            It is one size category smaller than normal for a light weapon (that is, three size categories smaller than the creature it is intended for).
+            It is one size category smaller than normal for a light weapon (that is, two size categories smaller than the creature it is intended for), though it is not \glossterm{lightweight} for that size.
             This makes it easier to conceal (see \pcref{Sleight of Hand}).
             In addition, you can draw or sheathe this weapon so quickly that you can also take another action in the same phase with that hand.
             For example, you can draw this weapon and attack with it in the same phase.
@@ -131,7 +132,7 @@
             In addition, it is treated as a light weapon for the purpose of determining whether you take accuracy penalties when attacking with it in a grapple.
             \parhead{Impact} When you get a \glossterm{critical hit} with this weapon, you deal triple damage instead of double damage.
             \parhead{Keen} You gain a \plus3 bonus to \glossterm{accuracy} with \glossterm{strikes} using this weapon for the purpose of determining whether you get a \glossterm{critical hit}.
-            \parhead{Long}\label{Long Weapon} This weapon can be used to attack at double your natural \glossterm{reach} (so 10 feet for a typical Small or Medium creature).
+            \parhead{Long}\label{Long Weapon} This weapon can be used to attack at double your natural \glossterm{reach} (so 10 feet for a typical Medium creature).
             However, it cannot attack a creature within your natural reach.
 
             Long weapons can held using a different grip to strike nearby foes.
@@ -178,9 +179,7 @@
         In other cases, a weapon can deal either of two types of damage. In a situation when the damage type is significant, the wielder can choose which type of damage to deal with such a weapon.
 
         \parhead{Cost} This value is the weapon's cost in gold pieces (gp) or silver pieces (sp). The cost includes miscellaneous gear that goes with the weapon.
-        \par This cost is the same for a Small or Medium version of the weapon. A Large version costs twice the listed price.
-
-        \parhead{Weight} This column gives the weight of a Medium version of the weapon. Halve this number for Small weapons, and double it for Large weapons.
+        \par A Small or Large version costs twice the listed price.
 
         \parhead{Special} Some weapons have special properties. See the weapon
             descriptions for details.
@@ -475,13 +474,13 @@
                 \begin{dtabularx}{\columnwidth}{>{\lcol}X c c c c}
                     & \multicolumn{2}{c}{\tb{Humanoid}} & \multicolumn{2}{c}{\tb{Nonhumanoid}} \tableheaderrule
                     \tb{Size} & \tb{Cost} & \tb{Weight} & \tb{Cost} & \tb{Weight} \\
-                    Tiny or smaller & \mult1/2 & \mult1/10 & \mult1 & \mult1/10 \\
-                    Small & \mult1 & \mult1/2 & \mult2 & \mult1/2 \\
-                    Medium & \mult1 & \mult1 & \mult2 & \mult1 \\
-                    Large & \mult2 & \mult2 & \mult4 & \mult2 \\
-                    Huge & \mult4 & \mult4 & \mult8 & \mult4 \\
-                    Gargantuan & \mult8 & \mult8 & \mult16 & \mult8 \\
-                    Colossal & \mult16 & \mult12 & \mult32 & \mult12 \\
+                    Tiny or smaller & \mult2 & \mult1/64 & \mult4  & \mult1/64 \\
+                    Small           & \mult1   & \mult1/8  & \mult2  & \mult1/8  \\
+                    Medium          & \mult1   & \mult1    & \mult2  & \mult1    \\
+                    Large           & \mult2   & \mult2    & \mult4  & \mult2    \\
+                    Huge            & \mult4   & \mult4    & \mult8  & \mult4    \\
+                    Gargantuan      & \mult8   & \mult8    & \mult16 & \mult8    \\
+                    Colossal        & \mult16  & \mult12   & \mult32 & \mult12   \\
                 \end{dtabularx}
             \end{dtable}
 
@@ -503,13 +502,14 @@
         \parhead{Dex} Some armor halves your current and base Dexterity while being used.
         If your Dexterity or base Dexterity are negative, they are not halved.
 
-        \parhead{Cost} The cost of the armor for Small or Medium humanoid creatures.
+        \parhead{Cost} The cost of the armor for Medium humanoid creatures.
         See \trefnp{Armor for Unusual Creatures}, below, for armor prices for other creatures.
         \parhead{Armor/Shield Bonus} Both body armor and shields improve your Armor defense.
         Wearing multiple suits of armor or wielding multiple shields does not improve your defenses any further.
 
-        \parhead{Weight} This value indicates the weight of armor sized for a Medium creature.
-        Armor fitted for Small creatures weighs half as much, and armor for Large creatures weighs twice as much.
+        \parhead{Weight and Size} The size category of body armor is the same as the size category of the creature it is sized for.
+        Bucklers and standard are one size category smaller than the creature they are sized for, while tower shields are the same size category as the creature they are sized for.
+        All armor and shields except for heavy body armor are \glossterm{lightweight} objects.
 
         \begin{dtable!*}
             \lcaption{Armor and Shields}
@@ -570,7 +570,7 @@
         You cannot attack with a tower shield, and you cannot use your shield hand for anything else.
 
         While wielding a tower shield, you take a \minus1 penalty to \glossterm{accuracy} with \glossterm{strikes} because of the shield's unwieldy nature.
-        \parhead{Shield Spikes} When added to your shield, these spikes turn it into a piercing weapon that increases the damage dealt by a shield bash as if the shield were designed for a creature one size category larger than you. You can't put spikes on a buckler or a tower shield. Otherwise, attacking with a spiked shield is like making a shield bash attack (see above).
+        \parhead{Shield Spikes} When added to your shield, these spikes turn it into a piercing weapon that increases the damage dealt by a shield bash by \plus1d. You can't put spikes on a buckler or a tower shield. Otherwise, attacking with a spiked shield is like making a shield bash attack (see above).
         \parhead{Studded Leather} Only the studs on studded leather are made of metal.
         Studded leather armor made with studs from special materials does not grant the wearer the properties of the special material.
 
@@ -842,7 +842,7 @@
 
         \par Flying creatures can't fly in barding that gives them an \glossterm{encumbrance penalty} (see \pcref{Flying Mechanics}).
         \par Removing and fitting barding takes five times as long as the figures given on \tref{Donning Armor}. A barded animal cannot be used to carry any load other than the rider and normal saddlebags.
-        \parhead{Dog, Riding} This Medium dog is specially trained to carry a Small humanoid rider. It is brave in combat like a warhorse. You take no damage when you fall from a riding dog.
+        \parhead{Dog, Riding} This Medium dog is specially trained to carry short-statured humanoid riders like halflings and gnomes. It is brave in combat like a warhorse. You take no damage when you fall from a riding dog.
         \parhead{Donkey or Mule} Donkeys and mules are stolid in the face of danger, hardy, surefooted, and capable of carrying heavy loads over vast distances. Unlike a horse, a donkey or a mule is willing (though not eager) to enter dungeons and other strange or threatening places.
         \parhead{Feed} Horses, donkeys, mules, and ponies can graze to sustain themselves, but providing feed for them is much better. If you have a riding dog, you have to feed it at least some meat.
         \parhead{Horse} A horse (other than a pony) is suitable as a mount for a human, dwarf, elf, half-elf, or half-orc. A pony is smaller than a horse and is a suitable mount for a gnome or halfling.

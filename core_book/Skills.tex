@@ -502,7 +502,7 @@ This chapter describes each skill, including common uses for those skills.
     \subsection{Creature Climb}\label{Creature Climb}
         As a standard action, you can make an attack vs. Reflex against a creature adjacent to you.
         Your \glossterm{accuracy} is equal to your Climb skill.
-        The creature must be three or more size categories larger than you.
+        The creature must be two or more size categories larger than you.
         Success means you can climb the creature as if it were a solid object with a Climb \glossterm{difficulty rating} equal to its Reflex defense.
         The creature takes a \minus4 penalty to \glossterm{accuracy} with \glossterm{mundane} attacks against you, but is not otherwise encumbered by your presence unless it cannot support your weight.
         It can attempt to remove you by dealing damage to you or with an appropriate ability, such as the \textit{shove} ability (see \pcref{Shove}).
@@ -755,7 +755,7 @@ This chapter describes each skill, including common uses for those skills.
     \subsection{Improvise}\label{Improvise}
         You can construct ad-hoc devices from available materials.
         It takes five minutes to make a device of up to Tiny size.
-        You can make a Small device in the time required to make two Tiny devices, a Medium device in the time required to make two Small devices, and so on.
+        You can make a Small device in the time required to make four Tiny devices, a Medium device in the time required to make four Small devices, and so on.
         You make a Devices check against the \glossterm{difficulty rating} required to craft the item normally.
         Success means you create a device that lasts long enough for a single use before breaking.
         For every 5 points by which you succeed, the device lasts for an additional use.
@@ -779,7 +779,8 @@ This chapter describes each skill, including common uses for those skills.
 
     \subsection{Conceal Object}
         As a standard action, you can make a Disguise check to conceal a creature or object on your person.
-        The target must be at least two size categories smaller than you are.
+        The target must be at least one size category smaller than you are.
+        If it is only one size category smaller than you, you take a \minus10 penalty to the check.
         A creature must be an \glossterm{ally}, and an object must be unattended.
 
         Your Disguise check is opposed by the Awareness check of anyone observing you.
@@ -1316,7 +1317,14 @@ This chapter describes each skill, including common uses for those skills.
         Nonhumanoid creatures without hands and arms may conceal actions using different parts of their body. Large movements can never be concealed with this ability; see the Stealth skill.
 
     \subsection{Conceal Object}
-        You can make a Sleight of Hand check as a standard action to conceal an item on your person. The object must be at least two size categories smaller than you are. Your Sleight of Hand check is opposed by the Awareness check of anyone observing you. Success means they fail to notice the item. A creature directly interacting you to search for the object, such as by frisking you, gains a \plus5 bonus to its Awareness check.
+        As a standard action, you can make a Sleight of Hand check to conceal a creature or object on your person.
+        The target must be at least one size category smaller than you are.
+        If it is only one size category smaller than you, you take a \minus10 penalty to the check.
+        This penalty is separate from the normal modifier based on the object's size.
+        A creature must be an \glossterm{ally}, and an object must be unattended.
+
+        Your Sleight of Hand check is opposed by the Awareness check of anyone observing you.
+        Success means they fail to notice the item. A creature directly interacting you to search for the object, such as by frisking you, gains a \plus5 bonus to its Awareness check.
 
     \subsection{Pickpocket}
         You can make a Sleight of Hand check as a standard action to steal an object from another creature. The object must be loose and accessible, such as in a pocket. The \glossterm{difficulty rating} depends on whether the creature notices your attempt using Awareness. If the creature's Awareness check exceeds your Sleight of Hand check, the creature notices your attempt and the \glossterm{difficulty rating} is equal to the creature's Reflex defense. Otherwise, the creature does not notice your attempt, and the \glossterm{difficulty rating} is 10. Success means you successfully steal the object. Failure means you do not steal the object.

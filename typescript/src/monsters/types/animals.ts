@@ -12,7 +12,7 @@ const animalInput: TypelessMonsterInput[] = [
     `,
     knowledge: {
       0: `
-        A baboon is a Small primate adapted to life on the ground.
+        A baboon is a primate adapted to life on the ground.
         A typical baboon is the size of a big dog.
       `,
       5: `
@@ -23,7 +23,7 @@ const animalInput: TypelessMonsterInput[] = [
     level: 1,
     name: "Baboon",
     skillPoints: { awareness: 1, climb: 2 },
-    size: "small",
+    size: "medium",
     speeds: { climb: 30 },
     startingAttributes: { str: 2, dex: 2, con: 1, int: -8, per: 1, wil: -1 },
     weaponInput: [{ name: "bite" }],

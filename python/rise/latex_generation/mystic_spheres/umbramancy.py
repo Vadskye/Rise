@@ -64,7 +64,7 @@ umbramancy = MysticSphere(
         Spell(
             "Darklantern",
             1,
-            "One Small or smaller unattended object within \\rngshort range",
+            "One Medium or smaller \\glossterm<unattended> object within \\rngshort range",
             """
             This spell suppresses light in an \\glossterm<emanation> from the target.
             You can choose the spell's radius, up to a maximum of a \\areasmall radius.

@@ -202,7 +202,7 @@ const baseGiant = {
   passiveAbilities: [
     {
       description: `
-        A giant can throw objects up to two size categories smaller than itself with ease.
+        A giant can throw objects no larger than two size categories smaller than itself with ease.
         Giants prefer to throw boulders, but in a pinch they can throw almost anything.
         Their \\glossterm{range increment} with objects other than boulders is generally half their range increment with boulders, and depending on the construction of the object it may also deal less damage than a boulder.
       `,

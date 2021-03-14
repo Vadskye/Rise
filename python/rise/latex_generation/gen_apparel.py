@@ -2506,7 +2506,7 @@ def generate_worn():
             tags=[],
             description="""
                 As a standard action, you can activate this belt.
-                If you do, your size increases by one \\glossterm<size category>, to a minimum of Tiny.
+                If you do, your size decreases by one \\glossterm<size category>, to a minimum of Tiny.
                 This decreases your \\glossterm<base speed> and improves your \\glossterm<Stealth> skill.
                 It may also decrease your \\glossterm<reach> (see \\pcref<Size in Combat>).
                 This effect lasts until you activate the belt again, which returns you to your original size.

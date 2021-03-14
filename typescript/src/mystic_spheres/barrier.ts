@@ -202,7 +202,7 @@ export const barrier: MysticSphere = {
       effect: `
         Choose one \\glossterm{unattended} openable object within \\medrange.
         You create a curved field of magical energy that blocks access to the subject's opening mechanism.
-        The opening mechanism must be Small or smaller in size.
+        The opening mechanism must be Medium or smaller in size.
         Nothing can pass through the field until it is destroyed.
         The field has 8 \\glossterm{hit points}.
       `,
@@ -577,7 +577,7 @@ export const barrier: MysticSphere = {
       castingTime: "one hour",
       effect: `
         % TODO: clarify how to identify that this is Explosive Runes instead of bad handwriting
-        Choose one Small or smaller \\glossterm{unattended} object with writing on it within \\shortrange.
+        Choose one Medium or smaller \\glossterm{unattended} object with writing on it within \\shortrange.
         The writing on the object is altered by the runes in subtle ways, making it more difficult to read.
         It becomes a \\glossterm{trap}.
         To read the writing, a creature must concentrate on reading it, which requires a standard action.

@@ -283,7 +283,7 @@ planeforgedInput.push({
       level: 2,
       name: "Worker",
       skillPoints: { climb: 2, craft: 2 },
-      size: "small",
+      size: "medium",
       speeds: { land: 30 },
       startingAttributes: { str: 1, dex: 2, con: 1, int: null, per: 0, wil: 0 },
       weaponInput: [{ name: "bite" }],

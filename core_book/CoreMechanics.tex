@@ -1258,19 +1258,19 @@ It defines how attributes work and explains how to make attacks in combat.
             \lcaption{Size in Combat}
             \begin{dtabularx}{\textwidth}{l l l l p{4.5em} p{5em} X}
                 \tb{Size}         & \tb{Space}\fn{1} & \tb{Reach}\fn{1} & \tb{Base Speed} & \tb{Strength Modifier}\fn{2} & \tb{Dexterity Modifier}\fn{2} & \tb{Example Creature} \tableheaderrule
-                Fine              & 1/2 ft.          & 0                & 10 ft.          & \minus4                      & \plus4                        & Fly                      \\
-                Diminutive        & 1 ft.            & 0                & 15 ft.          & \minus3                      & \plus3                        & Toad                     \\
-                Tiny              & 2-1/2 ft.        & 0                & 20 ft.          & \minus2                      & \plus2                        & Cat                      \\
-                Small             & 5 ft.            & 5 ft.            & 25 ft.          & \minus1                      & \plus1                        & Halfling                 \\
-                Medium            & 5 ft.            & 5 ft.            & 30 ft.          & \tdash                       & \tdash                        & Human                    \\
-                Large (tall)      & 10 ft.           & 10 ft.           & 40 ft.          & \plus1                       & \minus1                       & Ogre                     \\
-                Large (long)      & 10 ft.           & 5 ft.            & 40 ft.          & \plus1                       & \minus1                       & Horse                    \\
-                Huge (tall)       & 15 ft.           & 15 ft.           & 50 ft.          & \plus2                       & \minus2                       & Cloud giant              \\
-                Huge (long)       & 15 ft.           & 10 ft.           & 50 ft.          & \plus2                       & \minus2                       & Bulette                  \\
-                Gargantuan (tall) & 20 ft.           & 20 ft.           & 60 ft.          & \plus3                       & \minus3                       & 50-ft.\ animated statue  \\
-                Gargantuan (long) & 20 ft.           & 15 ft.           & 60 ft.          & \plus3                       & \minus3                       & Kraken                   \\
-                Colossal (tall)   & 25\add ft.       & 25\add ft.       & 70 ft.          & \plus4                       & \minus4                       & Colossal animated object \\
-                Colossal (long)   & 25\add ft.       & 25\add ft.       & 70 ft.          & \plus4                       & \minus4                       & Great wyrm red dragon    \\
+                Fine              & 1/4 ft.    & 0          & 5 ft.  & \minus8 & \plus4  & Fly                      \\
+                Diminuitive       & 1/2 ft.    & 0          & 10 ft. & \minus6 & \plus3  & Mouse                    \\
+                Tiny              & 1 ft.      & 0          & 15 ft. & \minus4 & \plus2  & Rat                      \\
+                Small             & 2-1/2 ft.  & 0          & 20 ft. & \minus2 & \plus1  & Cat                      \\
+                Medium            & 5 ft.      & 5 ft.      & 30 ft. & \tdash  & \tdash  & Human                    \\
+                Large (tall)      & 10 ft.     & 10 ft.     & 40 ft. & \plus1  & \minus1 & Ogre                     \\
+                Large (long)      & 10 ft.     & 5 ft.      & 40 ft. & \plus1  & \minus1 & Horse                    \\
+                Huge (tall)       & 20 ft.     & 15 ft.     & 50 ft. & \plus2  & \minus2 & Cloud giant              \\
+                Huge (long)       & 20 ft.     & 10 ft.     & 50 ft. & \plus2  & \minus2 & Bulette                  \\
+                Gargantuan (tall) & 40 ft.     & 40 ft.     & 60 ft. & \plus3  & \minus3 & 50-ft.\ animated statue  \\
+                Gargantuan (long) & 40 ft.     & 20 ft.     & 60 ft. & \plus3  & \minus3 & Kraken                   \\
+                Colossal (tall)   & 80\add ft. & 80\add ft. & 70 ft. & \plus4  & \minus4 & Colossal animated object \\
+                Colossal (long)   & 80\add ft. & 40\add ft. & 70 ft. & \plus4  & \minus4 & Great wyrm red dragon    \\
             \end{dtabularx}
             1 Creatures can vary in space and reach.  These are simply typical values.  \\
             2. Applies to base attribute value. These modifiers only apply to creature that naturally have the given size, without any temporary modifiers. \\
@@ -1302,13 +1302,15 @@ It defines how attributes work and explains how to make attacks in combat.
             Unusually large or small creatures also have other special rules apply to them, as described below.
 
         \subsubsection{Very Small Creatures}
-            \parhead{Space} If a creature takes up less than a single square of space, you can fit multiple creatures in that square. You can fit four Tiny creatures in a square, twenty-five Diminuitive creatures, or 100 Fine creatures.
+            \parhead{Space} If a creature takes up less than a single square of space, you can fit multiple creatures in that square.
+            Ignoring flight, you can fit four Small creatures in a square, twenty-five Tiny creatures, 100 Diminuitive creatures, or 400 Fine creatures.
+            If the creatures can fly, the number of creatures that can fit into a space increases drastically.
 
             \parhead{Reach} Creatures that take up less than 1 square of space typically have a natural reach of 0 feet, meaning they can't reach into adjacent squares. They must enter an opponent's square to attack in melee. You can attack into your own square if you need to, so you can attack such creatures normally.
 
             If a creature without a natural reach uses a Long weapon, it gains no benefits or penalties (see \pcref{Long Weapon}).
 
-            \parhead{Movement} Creatures three size categories smaller than you are not considered obstacles and do not hinder your movement.
+            \parhead{Movement} Creatures two size categories smaller than you are not considered obstacles and do not hinder your movement.
 
         \subsubsection{Very Large Creatures}
             \parhead{Space} Very large creatures take up multiple squares. Anything which affects a single square the creature occupies affects the creature.
@@ -1317,10 +1319,10 @@ It defines how attributes work and explains how to make attacks in combat.
 
             Creatures with a large natural reach using Long weapons can strike at up to double their natural reach but can't strike at their natural reach or less, just like Medium sized creatures (see \pcref{Long Weapon}).
 
-            \parhead{Movement} Creatures three size categories larger than you are not considered obstacles and do not hinder your movement.
+            \parhead{Movement} Creatures two size categories larger than you are not considered obstacles and do not hinder your movement.
 
             % Should this be two size categories larger, or be more dependent on creature anatomy?
-            \parhead{Immunities} Creatures at least three size categories larger than you are difficult to fight. You cannot get a \glossterm{critical hit} with melee \glossterm{strikes} against such creatures. If you can reach a vulnerable point on the creature, such as by flying or by using ranged weapons, you can get critical hits normally.
+            \parhead{Immunities} Creatures at least two size categories larger than you are difficult to fight. You cannot get a \glossterm{critical hit} with melee \glossterm{strikes} against such creatures. If you can reach a vulnerable point on the creature, such as by flying or by using ranged weapons, you can get critical hits normally.
 
     \subsection{Circumstantial Modifiers}
 
