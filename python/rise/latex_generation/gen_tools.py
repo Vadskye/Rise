@@ -593,6 +593,43 @@ def generate_tools():
         ),
     ]
 
+    tools += [
+        MagicItem(
+            name="Bag of Shrinking",
+            level=6,
+            material_type="textiles",
+            tags=[],
+            description="""
+                This bag appears to be a common Small cloth sack.
+                However, it reduces the size of any \\glossterm<unattended> objects placed inside of it by two size categories, allowing it to hold items of up to Large size.
+                This reduction does not affect the weight of those objects.
+
+                If this bag is destroyed, the items within it return to their original size.
+            """,
+            short_description="Shrinks contained items by two size categories",
+        ),
+        MagicItem(
+            name="Bag of Shrinking, Greater",
+            level=12,
+            material_type="textiles",
+            tags=[],
+            description="""
+                This bag functions like a \\mitem<bag of shrinking>, except that it reduces the size of contained objects by three size categories instead of two.
+            """,
+            short_description="Shrinks contained items by three size categories",
+        ),
+        MagicItem(
+            name="Bag of Shrinking, Greater",
+            level=18,
+            material_type="textiles",
+            tags=[],
+            description="""
+                This bag functions like a \\mitem<bag of shrinking>, except that it reduces the size of contained objects by four size categories instead of two.
+            """,
+            short_description="Shrinks contained items by four size categories",
+        ),
+    ]
+
     return tools
 
 
