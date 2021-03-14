@@ -1624,7 +1624,7 @@ def generate_worn():
                 You and your \\glossterm<allies> within a \\areamed radius emanation from you
                     gain a +4 bonus to their \\glossterm<resistance> against cold and fire damage.
             """,
-            short_description="Grants nearby alies +4 cold and fire resistance",
+            short_description="Grants nearby allies +4 cold and fire resistance",
         ),
         MagicItem(
             name="Crown of Flame, Greater",
@@ -1638,7 +1638,7 @@ def generate_worn():
                 You and your \\glossterm<allies> within a \\areamed radius emanation from you
                     gain a +8 bonus to their \\glossterm<resistance> against cold and fire damage.
             """,
-            short_description="Grants nearby alies +8 cold and fire resistance",
+            short_description="Grants nearby allies +8 cold and fire resistance",
         ),
         MagicItem(
             name="Crown of Flame, Supreme",
@@ -1652,7 +1652,7 @@ def generate_worn():
                 You and your \\glossterm<allies> within a \\areamed radius emanation from you
                     gain a +16 bonus to their \\glossterm<resistance> against fire damage.
             """,
-            short_description="Grants nearby alies +16 cold and fire resistance",
+            short_description="Grants nearby allies +16 cold and fire resistance",
         ),
     ]
 
