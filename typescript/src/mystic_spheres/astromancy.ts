@@ -26,7 +26,7 @@ export const astromancy: MysticSphere = {
       name: "Translocate Object",
 
       effect: `
-        Choose one Tiny or smaller \\glossterm{unattended} object within \\shortrange.
+        Choose one Small or smaller \\glossterm{unattended} object within \\shortrange.
         It teleports into your hand or into an unccupied location within \\shortrange.
         If the destination is invalid, this spell fails with no effect.
       `,
@@ -34,7 +34,7 @@ export const astromancy: MysticSphere = {
       // narrative: '',
       scaling: {
         2: "The range increases to \\rngmed.",
-        4: "The maximum size increases to Small.",
+        4: "The maximum size increases to Medium.",
         6: "The range increases to \\rnglong.",
       },
       type: "Instant",

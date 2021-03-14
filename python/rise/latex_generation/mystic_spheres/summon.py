@@ -296,7 +296,7 @@ summon = MysticSphere(
             7,
             "One unoccupied square on stable ground within \\rngmed range",
             """
-            This spell functions like the \\spell<summon monster> spell, except that it summons a pack of four Small wolf-shaped creatures instead of a single creature.
+            This spell functions like the \\spell<summon monster> spell, except that it summons a pack of four Medium wolf-shaped creatures instead of a single creature.
             Their attacks deal 2d10 bludgeoning and piercing damage.
             Each creature has a -2 penalty to \\glossterm<accuracy> and \\glossterm<defenses> compared to a normal summoned creature.
             In addition, each creature has half the hit points of a normal summoned creature.

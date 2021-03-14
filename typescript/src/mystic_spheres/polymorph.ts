@@ -395,8 +395,10 @@ export const polymorph: MysticSphere = {
     {
       name: "Absorb Object",
 
+      // This intentionally uses a fixed size category instead of referencing your original size
+      // category to allow interaction with items like a Staff of Giants.
       effect: `
-        You absorb one Small or smaller \\glossterm{unattended} object into your body.
+        You absorb Medium or smaller \\glossterm{unattended} object into your body.
         Your weight is increased by the weight of the object, but the object's presence cannot be otherwise physically detected.
         A reactive object, such as alchemist's fire or poison, continues reacting inside your body, which may be harmful to you.
         You cannot absorb only part of a larger object.
@@ -406,8 +408,8 @@ export const polymorph: MysticSphere = {
       `,
       rank: 3,
       scaling: {
-        5: `The maximum size of the object increases to Medium.`,
-        7: `The maximum size of the object increases to Large.`,
+        5: `The maximum size of the object increases to Large.`,
+        7: `The maximum size of the object increases to Huge.`,
       },
       type: "Duration",
     },
@@ -984,7 +986,7 @@ export const polymorph: MysticSphere = {
 
       castingTime: "24 hours",
       effect: `
-        One Small or smaller \\glossterm{unattended}, nonmagical wooden object within \\shortrange is transformed into ironwood.
+        One Medium or smaller \\glossterm{unattended}, nonmagical wooden object within \\shortrange is transformed into ironwood.
         While remaining natural wood in almost every way, ironwood is as strong, heavy, and resistant to fire as iron.
         Metallic armor and weapons, such as full plate, can be crafted from ironwood.
       `,

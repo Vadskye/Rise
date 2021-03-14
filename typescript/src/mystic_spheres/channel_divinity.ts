@@ -262,7 +262,7 @@ export const channelDivinity: MysticSphere = {
       rank: 3,
       scaling: {
         5: `You also gain a +2 bonus to Strength-based checks, and you gain a +2 bonus to Strength for the purpose of determining your carrying capacity.`,
-        7: "You can increase your size category by up to two size categories",
+        7: "You can increase your size by up to two size categories",
       },
       type: "Attune (self)",
     },

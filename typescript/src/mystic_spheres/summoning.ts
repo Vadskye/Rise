@@ -387,7 +387,7 @@ export const summoning: MysticSphere = {
 
       functionsLike: {
         exceptThat: `
-        it summons a pack of four Small wolf-shaped creatures instead of a single creature.
+        it summons a pack of four Medium wolf-shaped creatures instead of a single creature.
         Their attacks deal 2d10 bludgeoning and piercing damage.
         Each creature has a -2 penalty to \\glossterm{accuracy} and \\glossterm{defenses} compared to a normal summoned creature.
         In addition, each creature has half the hit points of a normal summoned creature.

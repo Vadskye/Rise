@@ -597,7 +597,7 @@ def generate_tools():
         MagicItem(
             name="Bag of Shrinking",
             level=6,
-            material_type="textiles",
+            materials="textiles",
             tags=[],
             description="""
                 This bag appears to be a common Small cloth sack.
@@ -611,7 +611,7 @@ def generate_tools():
         MagicItem(
             name="Bag of Shrinking, Greater",
             level=12,
-            material_type="textiles",
+            materials="textiles",
             tags=[],
             description="""
                 This bag functions like a \\mitem<bag of shrinking>, except that it reduces the size of contained objects by three size categories instead of two.
@@ -621,7 +621,7 @@ def generate_tools():
         MagicItem(
             name="Bag of Shrinking, Greater",
             level=18,
-            material_type="textiles",
+            materials="textiles",
             tags=[],
             description="""
                 This bag functions like a \\mitem<bag of shrinking>, except that it reduces the size of contained objects by four size categories instead of two.
