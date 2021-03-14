@@ -16,7 +16,7 @@ export const telekinesis: MysticSphere = {
         At the end of each round, if the subject is outside of this ability's range, this ability ends.
 
         During the movement phase, you can move the subject up to five feet in any direction.
-        You use your \\glossterm{power} instead of your Strength to determine your maximum carrying capacity when moving objects in this way.
+        You use your \\glossterm{power} instead of your Strength to determine your \\glossterm{carrying capacity} when moving objects in this way (see \\pcref{Weight Limits}).
       `,
       focus: false,
       scaling: {
