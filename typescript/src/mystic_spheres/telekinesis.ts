@@ -32,7 +32,7 @@ export const telekinesis: MysticSphere = {
 
       effect: `
         You can exert minor force on objects and creatures around you.
-        As part of the action you take to sustain this spell, you may choose any object or creature within \\closerange of you.
+        As part of the action you take to sustain this spell, you may choose any object or creature within \\shortrange of you.
         That object or creature feels a push in a direction of your choice.
         The force is sufficient to lift an object with a Diminuitive \\glossterm{weight category}, or to push an object with a Tiny weight category across the ground.
         Generally, the force exerted by this ability is insufficient to physically move or even meaningfully impede any creature, but it can be perceived.
