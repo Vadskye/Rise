@@ -400,6 +400,7 @@ export const polymorph: MysticSphere = {
       effect: `
         You absorb Medium or smaller \\glossterm{unattended} object into your body.
         Your weight is increased by the weight of the object, but the object's presence cannot be otherwise physically detected.
+        You must bear the weight of the object as if you were carrying it, not as if it was part of your body.
         A reactive object, such as alchemist's fire or poison, continues reacting inside your body, which may be harmful to you.
         You cannot absorb only part of a larger object.
 
