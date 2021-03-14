@@ -678,7 +678,7 @@ def generate_armor():
             description="""
                 You gain a +3 \\glossterm<magic bonus> to Fortitude defense.
             """,
-            short_description="Grants +2 Fortitude defense",
+            short_description="Grants +3 Fortitude defense",
         ),
         MagicItem(
             name="Fortified Belt, Greater",
@@ -688,7 +688,7 @@ def generate_armor():
             description="""
                 You gain a +4 \\glossterm<magic bonus> to Fortitude defense.
             """,
-            short_description="Grants +3 Fortitude defense",
+            short_description="Grants +4 Fortitude defense",
         ),
         MagicItem(
             name="Fortified Belt, Supreme",
@@ -698,7 +698,7 @@ def generate_armor():
             description="""
                 You gain a +5 \\glossterm<magic bonus> to Fortitude defense.
             """,
-            short_description="Grants +4 Fortitude defense",
+            short_description="Grants +5 Fortitude defense",
         ),
     ]
 
@@ -711,7 +711,7 @@ def generate_armor():
             description="""
                 You gain a +3 \\glossterm<magic bonus> to Mental defense.
             """,
-            short_description="Grants +2 Mental defense",
+            short_description="Grants +3 Mental defense",
         ),
         MagicItem(
             name="Willguard Amulet, Greater",
@@ -721,7 +721,7 @@ def generate_armor():
             description="""
                 You gain a +4 \\glossterm<magic bonus> to Mental defense.
             """,
-            short_description="Grants +3 Mental defense",
+            short_description="Grants +4 Mental defense",
         ),
         MagicItem(
             name="Willguard Amulet, Supreme",
@@ -731,7 +731,7 @@ def generate_armor():
             description="""
                 You gain a +5 \\glossterm<magic bonus> to Mental defense.
             """,
-            short_description="Grants +4 Mental defense",
+            short_description="Grants +5 Mental defense",
         ),
     ]
 
