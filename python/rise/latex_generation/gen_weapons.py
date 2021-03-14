@@ -559,10 +559,10 @@ def generate_weapons():
             description="""
                 As a \\glossterm<standard action>, you can activate this weapon.
                 If you do, make a \\glossterm<strike> or a \\glossterm<disarm> attack.
-                If your disarm succeeds, or if your strike hit an unattended object, this weapon can absorb the struck object.
-                The object must be at least one size category smaller than the weapon.
+                If your disarm succeeds, or if your strike hit an \\glossterm<unattended> object, this weapon can absorb the struck object.
+                The object's size category must be no larger than the weapon's size category.
 
-                An absorbed object leaves no trace that it ever existed
+                An absorbed object leaves no trace that it ever existed.
                 This weapon can hold no more than three objects at once.
                 If you attempt to absorb an object while the weapon is full, the attempt fails.
                 As a standard action, you can retrieve the last item absorbed by the weapon.
@@ -577,8 +577,20 @@ def generate_weapons():
             tags=[],
             description="""
                 This weapon functions like a \\mitem<thieving> weapon, except that the maximum size category of object it can absorb is one size category larger than the weapon.
+                In addition, you gain a +1 bonus to \\glossterm<accuracy> with the \\textit<disarm> ability using the weapon.
             """,
             short_description="Can absorb large items",
+        ),
+        MagicItem(
+            name="Thieving, Supreme",
+            level=19,
+            material_type="Weapon",
+            tags=[],
+            description="""
+                This weapon functions like a \\mitem<thieving> weapon, except that the maximum size category of object it can absorb is two size categories larger than the weapon.
+                In addition, you gain a +2 bonus to \\glossterm<accuracy> with the \\textit<disarm> ability using the weapon.
+            """,
+            short_description="Can absorb huge items",
         ),
     ]
 

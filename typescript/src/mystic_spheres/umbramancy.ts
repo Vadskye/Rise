@@ -66,7 +66,7 @@ export const umbramancy: MysticSphere = {
       name: "Darklantern",
 
       effect: `
-        Choose one Small or smaller \\glossterm{unattended} object within \\shortrange.
+        Choose one Medium or smaller \\glossterm{unattended} object within \\shortrange.
         Light within or passing through an \\glossterm{emanation} from that object is dimmed to be no brighter than \\glossterm{shadowy illumination}.
         You can choose the spell's radius, up to a maximum of a \\smallarea radius.
         Any object or effect which blocks light also blocks this spell's effect.

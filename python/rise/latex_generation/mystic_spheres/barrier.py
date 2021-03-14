@@ -169,7 +169,7 @@ barrier = MysticSphere(
             "One openable object within \\rngmed range (see text)",
             """
             You create a curved field of magical energy that blocks access to the target's opening mechanism.
-            The opening mechanism must be Small or smaller in size.
+            The opening mechanism must be Medium or smaller in size.
             Nothing can pass through the field until it is destroyed.
             The field has \\glossterm<hit points> equal to twice your \\glossterm<power>.
         """,
@@ -445,7 +445,7 @@ barrier = MysticSphere(
         Spell(
             "Explosive Runes",
             4,
-            "One Small or smaller unattended object with writing on it within \\rngshort range",
+            "One Medium or smaller \\glossterm<unattended> object with writing on it within \\rngshort range",
             """
             % TODO: clarify how to identify that this is Explosive Runes instead of bad handwriting
             The writing on the target is altered by the runes in subtle ways, making it more difficult to read.

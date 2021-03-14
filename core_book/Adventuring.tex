@@ -2,62 +2,78 @@
 
 \section{Carrying Capacity}\label{Carrying Capacity}
 
+    \subsection{Weight Categories}\label{Weight Categories}
+        Weight is generally measured in \glossterm{weight categories} rather than pounds or kilograms.
+        Weight categories use the same terms as \glossterm{size categories}, as shown in \tref{Weight Categories}.
+        In general, a creature's weight category is the same as its size category.
+        Objects tend to vary more widely based on their composition.
+
+        Objects and creatures can modify their weight category in four ways very lightweight, lightweight, heavyweight, and very heavyweight.
+        \begin{itemize}
+            \item Very lightweight objects have a weight category that is two categories smaller than their size category.
+            \item Lightweight objects have a weight category that is one category smaller than their size category.
+            \item Heavyweight objects have a weight category that is one category larger than their size category.
+            \item Very heavyweight objects have a weight category that is two categories larger than their size category.
+        \end{itemize}
+
+        \begin{dtable}
+            \lcaption{Weight Categories}
+            \begin{dtabularx}{\textwidth}{l X}
+                \tb{Weight Category} & \tb{Average Weight} & \tableheaderrule
+                Fine & 1 oz. \\
+                Diminuitive & 1/2 lb. \\
+                Tiny & 2 lb. \\
+                Small & 15 lb. \\
+                Medium & 125 lb. \\
+                Large & 1,000 lb. \\
+                Huge & 8,000 lb. \\
+                Gargantuan & 64,000 lb. \\
+                Colossal & 512,000 lb. \\
+            \end{dtabularx}
+        \end{dtable}
+
     \begin{dtable}
         \lcaption{Carrying Capacity by Strength}
         \setlength{\tabcolsep}{4pt}
         \begin{dtabularx}{\columnwidth}{X l l l l}
-            \tb{Strength} & \tb{Light} & \tb{Maximum} & \tb{Overloaded} & \tb{Push/Drag} \tableheaderrule
-            -9 & 6 lb. & 12 lb. & 18 lb. & 60 lb. \\
-            -8 & 7     & 14     & 21     & 70     \\
-            -7 & 9     & 18     & 27     & 90     \\
-            -6 & 12    & 24     & 36     & 120    \\
-            -5 & 15    & 30     & 45     & 150    \\
-            -4 & 20    & 40     & 60     & 200    \\
-            -3 & 25    & 50     & 75     & 250    \\
-            -2 & 30    & 60     & 90     & 300    \\
-            -1 & 40    & 80     & 120    & 400    \\
-            0  & 50    & 100    & 150    & 500    \\
-            1  & 60    & 120    & 180    & 600    \\
-            2  & 80    & 160    & 240    & 800    \\
-            3  & 100   & 200    & 300    & 1,000  \\
-            4  & 120   & 240    & 360    & 1,200  \\
-            5  & 160   & 320    & 480    & 1,600  \\
-            6  & 200   & 400    & 600    & 2,000  \\
-            7  & 250   & 500    & 750    & 2,500  \\
-            8  & 320   & 640    & 960    & 3,200  \\
-            9  & 400   & 800    & 1,200  & 4,000  \\
-            10 & 500   & 1,000  & 1,500  & 5,000  \\
-            11 & 630   & 1,260  & 1,890  & 6,300  \\
-            12 & 800   & 1,600  & 2,400  & 8,000  \\
-            13 & 1,000 & 2,000  & 3,000  & 10,000 \\
-            14 & 1,300 & 2,600  & 3,900  & 13,000 \\
-            15 & 1,600 & 3,200  & 4,800  & 16,000 \\
-            16 & 2,000 & 4,000  & 6,000  & 20,000 \\
-            17 & 2,500 & 5,000  & 7,500  & 25,000 \\
-            18 & 3,200 & 6,400  & 9,600  & 32,000 \\
-            19 & 4,000 & 8,000  & 12,000 & 40,000 \\
-            20 & 5,000 & 10,000 & 15,000 & 50,000 \\
-            21\plus\fn{1} & \tdash & \tdash & \tdash & \tdash \\
+            \tb{Strength} & \tb{Maximum} & \tb{Push/Drag} \tableheaderrule
+            -9            & Fine x4        & Diminuitive x4 \\
+            -8            & Diminuitive    & Tiny           \\
+            -7            & Diminuitive x2 & Tiny x2        \\
+            -6            & Diminuitive x4 & Tiny x4        \\
+            -5            & Tiny           & Small          \\
+            -4            & Tiny x2        & Small x2       \\
+            -3            & Tiny x4        & Small x4       \\
+            -2            & Small          & Medium         \\
+            -1            & Small x2       & Medium x2      \\
+            0 -- 2        & Small x4       & Medium x4      \\
+            3 -- 5        & Medium         & Large          \\
+            6 -- 8        & Medium x2      & Large x2       \\
+            9 -- 11       & Medium x4      & Large x4       \\
+            12 -- 14      & Large          & Huge           \\
+            15 -- 17      & Large x2       & Huge x2        \\
+            18 -- 20      & Large x4       & Huge x4        \\
+            21 -- 23      & Huge           & Gargantuan     \\
+            24 -- 26      & Huge x2        & Gargantuan x2  \\
+            27 -- 29      & Huge x4        & Gargantuan x4  \\
+            30 -- 32      & Gargantuan     & Colossal       \\
+            33 -- 35      & Gargantuan x2  & Colossal x2    \\
+            36 -- 38      & Gargantuan x4  & Colossal x4    \\
+            39 -- 41      & Colossal       & Colossal x8    \\
+            42 -- 44      & Colossal x2    & Colossal x16   \\
+            45 -- 47      & Colossal x4    & Colossal x32   \\
+            48\plus\fn{1} & \tdash         & \tdash          & \tdash & \tdash \\
         \end{dtabularx}
-        1 To calculate the carrying capacity for a creature with epic Strength, double its carrying capacity every 3 Strength.
+        1 To calculate the carrying capacity for a creature with epic Strength, double the number of objects it can carry and drag for every 3 Strength beyond 45.
     \end{dtable}
 
-    A creature's Strength determines how much weight it can carry, as shown in \trefnp{Carrying Capacity by Strength}.
-    A creature can carry weight up to its light carrying capacity without any penalty.
-    If it carries more than that, but less than its maximum carrying capacity, it increases its \glossterm{encumbrance} by 4.
-    This stacks with the encumbrance from any armor the creature wears.
+    Your Strength determines how much weight you can carry, as shown in \trefnp{Carrying Capacity by Strength}.
+    You can carry weight up to your maximum carrying capacity without any penalty.
+    Beind that, you can push or drag weight up your pushing and dragging limit as a standard action.
+    When you do, you move the weight 5 feet.
 
-    \parhead{Lifting and Dragging} You can lift as much as your maximum carrying capacity over your head.
-
-    You can lift as much as 1-1/2 your maximum carrying capacity off the ground (the sum of your light and maximum weight limits).
-    While overloaded in this way, you increase your \glossterm{encumbrance} by 10, you take a \minus10 penalty to \glossterm{accuracy} with \glossterm{mundane} attacks, and you can only move by spending a \glossterm{standard action} to move 5 feet.
-    This replaces the encumbrance from carrying more than your light carrying capacity.
-
-    You can generally push or drag along the ground as much as five times your maximum carrying capacity.
-
-    \parhead{Multi-Legged Creatures} The figures on \trefnp{Carrying Capacity by Strength} are for bipedal creatures. A creature with four or more legs can carry 50\% more weight than a bipedal creature of the same Strength.
-
-    \parhead{Tremendous Strength} For Strength scores not shown on \trefnp{Carrying Capacity by Strength}, subtract 3 from its Strength until you find a Strength value shown on the chart. For each time you subtracted in this way, double the weight limits listed on the chart.
+    \parhead{Multi-Legged Creatures} The figures on \trefnp{Carrying Capacity by Strength} are for bipedal creatures.
+    A creature with four or more legs can carry, push, or drag twice as much weight than a bipedal creature of the same Strength.
 
 \section{Movement}
 

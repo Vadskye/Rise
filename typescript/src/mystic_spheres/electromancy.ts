@@ -28,16 +28,16 @@ export const electromancy: MysticSphere = {
       name: "Magnetize",
 
       effect: `
-        Choose one Tiny or smaller unattended metal object within \\medrange.
+        Choose one Small or smaller unattended metal object within \\medrange.
         It pulls itself toward metal objects within 1 foot of it.
         Smaller objects are typically pulled towards the subject, while it moves itself towards larger objects.
         Once it becomes affixed to another metal object, it takes a \\glossterm{difficulty rating} 10 Strength check to separate the two objects.
       `,
       focus: false,
       scaling: {
-        2: `The maximum size increases to Small.`,
-        4: `The maximum size increases to Medium.`,
-        6: `The maximum size increases to Large.`,
+        2: `The maximum size increases to Medium.`,
+        4: `The maximum size increases to Large.`,
+        6: `The maximum size increases to Huge.`,
       },
       type: "Sustain (minor)",
     },
