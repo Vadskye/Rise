@@ -214,7 +214,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Staff of Giants",
-            level=4,
+            level=7,
             material_type="Staff",
             description="""
                 Whenever you use a \\glossterm<magical> ability that has a maximum size category for its targets or any objects it creates, you increase that maximum by one size category, to a maximum of Colossal.
@@ -224,21 +224,12 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Giants, Greater",
-            level=10,
+            level=16,
             material_type="Staff",
             description="""
                 This implement functions like a \\mitem<staff of giants> implement, except that the maximum size category increases by two size categories.
             """,
             short_description="Significantly increaases maximum size category of abilities",
-        ),
-        MagicItem(
-            name="Staff of Giants, Supreme",
-            level=16,
-            material_type="Staff",
-            description="""
-                This implement functions like a \\mitem<staff of giants> implement, except that the maximum size category increases by three size categories.
-            """,
-            short_description="Drastically increaases maximum size category of abilities",
         ),
     ]
 
