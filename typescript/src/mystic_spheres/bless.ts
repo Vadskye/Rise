@@ -344,7 +344,7 @@ export const bless: MysticSphere = {
         Choose yourself or one \\glossterm{ally} within \\medrange.
         When you cast this spell, choose a physical attribute: Strength, Dexterity, or Constitution.
         The subject gains a +2 \\glossterm{magic bonus} to checks using the chosen attribute.
-        In addition, if you choose Strength, the subject gains a +2 \\glossterm{magic bonus} to Strength for the purpose of determining its \\glossterm{carrying capacity}.
+        In addition, if you choose Strength, the subject gains a +2 \\glossterm{magic bonus} to Strength for the purpose of determining its weight limits (see \\pcref{Weight Limits}).
 
         You can only have one casting of this spell active at once.
         When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.

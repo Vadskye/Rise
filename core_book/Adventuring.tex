@@ -1,6 +1,6 @@
 \chapter{Adventuring}
 
-\section{Carrying Capacity}\label{Carrying Capacity}
+\section{Weight Limits}\label{Weight Limits}
 
     \subsection{Weight Categories}\label{Weight Categories}
         Weight is generally measured in \glossterm{weight categories} rather than pounds or kilograms.
@@ -8,8 +8,8 @@
         In general, a creature's weight category is the same as its size category.
 
         Objects and creatures can also be either \glossterm{lightweight} or \glossterm{heavyweight}.
-        Lightweight objects and creatures have a weight category that is one category smaller than their size category.
-        Heavyweight objects and creatures have a weight category that is one category larger than their size category.
+        Lightweight objects and creatures have a weight category that is one category lighter than their size category.
+        Heavyweight objects and creatures have a weight category that is one category heavier than their size category.
 
         Objects that occupy only a small percentage of the space appropriate for their size category, such as swords, are usually lightweight.
         Objects that fully occupy the space appropriate for their size category, like boulders, are usually heavyweight.
@@ -31,47 +31,51 @@
         \end{dtable}
 
     \begin{dtable}
-        \lcaption{Carrying Capacity by Strength}
+        \lcaption{Weight Limits by Strength}
         \setlength{\tabcolsep}{4pt}
         \begin{dtabularx}{\columnwidth}{X l l l l}
             \tb{Strength} & \tb{Maximum} & \tb{Push/Drag} \tableheaderrule
-            -9            & Fine x4        & Diminuitive x4 \\
-            -8            & Diminuitive    & Tiny           \\
-            -7            & Diminuitive x2 & Tiny x2        \\
-            -6            & Diminuitive x4 & Tiny x4        \\
-            -5            & Tiny           & Small          \\
-            -4            & Tiny x2        & Small x2       \\
-            -3            & Tiny x4        & Small x4       \\
-            -2            & Small          & Medium         \\
-            -1            & Small x2       & Medium x2      \\
-            0 -- 2        & Small x4       & Medium x4      \\
-            3 -- 5        & Medium         & Large          \\
-            6 -- 8        & Medium x2      & Large x2       \\
-            9 -- 11       & Medium x4      & Large x4       \\
-            12 -- 14      & Large          & Huge           \\
-            15 -- 17      & Large x2       & Huge x2        \\
-            18 -- 20      & Large x4       & Huge x4        \\
-            21 -- 23      & Huge           & Gargantuan     \\
-            24 -- 26      & Huge x2        & Gargantuan x2  \\
-            27 -- 29      & Huge x4        & Gargantuan x4  \\
-            30 -- 32      & Gargantuan     & Colossal       \\
-            33 -- 35      & Gargantuan x2  & Colossal x2    \\
-            36 -- 38      & Gargantuan x4  & Colossal x4    \\
-            39 -- 41      & Colossal       & Colossal x8    \\
-            42 -- 44      & Colossal x2    & Colossal x16   \\
-            45 -- 47      & Colossal x4    & Colossal x32   \\
-            48\plus\fn{1} & \tdash         & \tdash          & \tdash & \tdash \\
+            -9            & Diminuitive    & Diminuitive x4 \\
+            -8            & Diminuitive x2 & Tiny           \\
+            -7            & Diminuitive x4 & Tiny x2        \\
+            -6            & Tiny           & Tiny x4        \\
+            -5            & Tiny x2        & Small          \\
+            -4            & Tiny x4        & Small x2       \\
+            -3            & Small          & Small x4       \\
+            -2            & Small x2       & Medium         \\
+            -1            & Small x4       & Medium x2      \\
+            0 -- 2        & Medium         & Medium x4      \\
+            3 -- 5        & Medium x2      & Large          \\
+            6 -- 8        & Medium x4      & Large x2       \\
+            9 -- 11       & Large          & Large x4       \\
+            12 -- 14      & Large x2       & Huge           \\
+            15 -- 17      & Large x4       & Huge x2        \\
+            18 -- 20      & Huge           & Huge x4        \\
+            21 -- 23      & Huge x2        & Gargantuan     \\
+            24 -- 26      & Huge x4        & Gargantuan x2  \\
+            27 -- 29      & Gargantuan     & Gargantuan x4  \\
+            30 -- 32      & Gargantuan x2  & Colossal       \\
+            33 -- 35      & Gargantuan x4  & Colossal x2    \\
+            36 -- 38      & Colossal       & Colossal x4    \\
+            39 -- 41      & Colossal x2    & Colossal x8    \\
+            42 -- 44      & Colossal x4    & Colossal x16   \\
+            45\plus\fn{1} & \tdash         & \tdash          & \tdash & \tdash \\
         \end{dtabularx}
-        1 To calculate the carrying capacity for a creature with epic Strength, double the number of objects it can carry and drag for every 3 Strength beyond 45.
+        1 To calculate the weight limits for a creature with epic Strength, double the number of objects it can carry and drag for every 3 Strength beyond 42.
     \end{dtable}
 
-    Your Strength determines how much weight you can carry, as shown in \trefnp{Carrying Capacity by Strength}.
-    You can carry weight up to your maximum carrying capacity without any penalty.
-    Beind that, you can push or drag weight up your pushing and dragging limit as a standard action.
+    Your Strength determines how much you can carry or push, as shown in \trefnp{Weight Limits by Strength}.
+    Your weight limits are measured in terms of how many objects or creatures of a given \glossterm{weight category} that you can carry or push at once.
+    Instead of carrying one object of a given weight category, you can carry eight objects that are one weight category lighter.
+    In general, it is not meaningful to consider the weight of any objects two weight categories lighter than your maximum weight category.
+
+    You can carry objects or creatures up to your maximum carrying capacity without any penalty.
+    This is called your \glossterm{carrying capacity}.
+    Beyond that, you can push or drag objects or creatures up your pushing and dragging limit as a standard action.
     When you do, you move the weight 5 feet.
 
-    \parhead{Multi-Legged Creatures} The figures on \trefnp{Carrying Capacity by Strength} are for bipedal creatures.
-    A creature with four or more legs can carry, push, or drag twice as much weight than a bipedal creature of the same Strength.
+    \parhead{Multi-Legged Creatures} The figures on \trefnp{Weight Limits by Strength} are for bipedal creatures.
+    A creature with four or more legs can carry, push, or drag twice as many objects as a bipedal creature of the same Strength.
 
 \section{Movement}
 
@@ -164,16 +168,15 @@
                 \tind Dog, riding & 3 miles & 30 miles \\
                 \tind Cart or wagon & 2 miles & 20 miles \\
                 \tb{Ship} &  &  \\
-                \tind Raft or barge (poled or towed)\fn{2} & 1/2 mile & 5 miles \\
-                \tind Keelboat (rowed)\fn{2} & 1 mile & 10 miles \\
-                \tind Rowboat (rowed)\fn{2} & 1-1/2 miles & 15 miles \\
+                \tind Raft or barge (poled or towed)\fn{1} & 1/2 mile & 5 miles \\
+                \tind Keelboat (rowed)\fn{1} & 1 mile & 10 miles \\
+                \tind Rowboat (rowed)\fn{1} & 1-1/2 miles & 15 miles \\
                 \tind Sailing ship (sailed) & 2 miles & 48 miles \\
                 \tind Warship (sailed and rowed) & 2-1/2 miles & 60 miles \\
                 \tind Longship (sailed and rowed) & 3 miles & 72 miles \\
                 \tind Galley (rowed and sailed) & 4 miles & 96 miles \\
             \end{dtabularx}
-            1 Quadrupeds, such as horses, can carry heavier loads than characters can. See \tref{Carrying Capacity by Strength}, for more information. \\
-            2 Rafts, barges, keelboats, and rowboats are used on lakes and rivers.
+            1 Rafts, barges, keelboats, and rowboats are used on lakes and rivers.
             If going downstream, add the speed of the current (typically 3 miles per hour) to the speed of the vehicle. In addition to 10 hours of being rowed, the vehicle can also float an additional 14 hours, if someone can guide it, so add an additional 42 miles to the daily distance traveled. These vehicles can't be rowed against any significant current, but they can be pulled upstream by draft animals on the shores.
         \end{dtable}
 

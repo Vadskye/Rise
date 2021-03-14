@@ -472,7 +472,7 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \parhead{Gliding}\label{Gliding}
         A creature with a glide speed can glide through the air at the indicated speed
-        It must not be carrying weight in excess of its maximum carrying capacity (see \pcref{Carrying Capacity}).
+        It must not be carrying weight in excess of its maximum carrying capacity (see \pcref{Weight Limits}).
         Whenever a creature glides, it takes a \minus2 penalty to Armor and Reflex defenses until the end of the round.
 
         While in the air, a creature with a glide speed can control its fall as a \glossterm{move action}. This allows it to move up to its speed horizontally in a direction of its choice while moving only five feet down. If it desires, it can move half as far horizontally and fall down twice as fast. It takes no falling damage if it touches the ground while gliding.
@@ -482,7 +482,8 @@ It defines how attributes work and explains how to make attacks in combat.
         Most creatures have a land speed.
 
     \subsection{Flying Mechanics}\label{Flying Mechanics}
-        A creature with a fly speed cannot fly while it has \glossterm{encumbrance}, either from armor or from carrying weight in excess of its maximum carrying capacity (see \pcref{Carrying Capacity}).
+        A creature with a fly speed cannot fly while it is carrying weight in excess of its maximum carrying capacity (see \pcref{Weight Limits}).
+        In addition, it cannot fly while it has \glossterm{encumbrance}.
 
         \parhead{Maximum Height} Some abilities that grant a fly speed also have a height limit for the maximum height you can reach with that fly speed.
         This height measures your maximum distance directly above an object at least two size categories larger than you that is free-standing and capable of supporting your weight.
@@ -886,7 +887,7 @@ It defines how attributes work and explains how to make attacks in combat.
             Strength measures muscle and physical power.
             It has the following effects:
             \begin{itemize}
-                \item Strength determines how much you can carry (see \tref{Carrying Capacity by Strength}).
+                \item Strength determines how much you can carry (see \tref{Weight Limits by Strength}).
                 \item You gain a bonus (or penalty) to your \glossterm{power} with \glossterm{mundane} abilities, such as normal weapon attacks, equal to half your Strength (see \pcref{Power}).
                 \item You reduce your total \glossterm{encumbrance} from \glossterm{armor} by an amount equal to your base Strength (see \pcref{Encumbrance}).
                 \item You apply your base Strength as a bonus or penalty to Strength-based \glossterm{skills}: Climb, Jump, and Swim (see \pcref{Skills}).
@@ -1190,7 +1191,7 @@ It defines how attributes work and explains how to make attacks in combat.
     \subsection{Encumbrance}\label{Encumbrance}
         Your encumbrance is a value that represents how much you are burdened by armor and weight.
         You apply your encumbrance as a penalty to all Strength and Dexterity-based checks you make.
-        You can increase your encumbrance by wearing armor or by carrying an excessive weight (see \pcref{Carrying Capacity}).
+        You can increase your encumbrance by wearing armor.
         In addition, you reduce your total encumbrance from \glossterm{armor} by an amount equal to your base Strength, to a minimum of 0.
         You apply this reduction to the total encumbrance applied by all armor you wear, not individually for each piece of armor.
 
@@ -1723,8 +1724,7 @@ It defines how attributes work and explains how to make attacks in combat.
             Make a Strength check to throw an object you hold in at least one hand.
             The base \glossterm{difficulty rating} of this check is 0.
             For each size category larger or smaller than the target that you are, you gain a \plus10 bonus or penalty to the check.
-            In addition, if the object's weight exceeds your light carrying capacity, you take a \minus10 penalty with the check (see \pcref{Carrying Capacity}).
-            You cannot throw an object whose weight exceeds your maximum carrying capacity.
+            You cannot throw an object whose weight exceeds your maximum carrying capacity (see \pcref{Weight Limits}).
 
             If you succeed, you throw the object five feet.
             For every 5 points by which you succeed, you double the distance you throw the object: ten feet, twenty feet, and so on.
@@ -2126,7 +2126,7 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \subsubsection{Carrying Objects}
             When a creature is teleported, it can bring along equipment and held objects as long as two conditions are met.
-            First, the combined weight of the objects cannot exceed the creature's maximum carrying capacity (see \pcref{Carrying Capacity}).
+            First, the combined weight of the objects cannot exceed the creature's maximum carrying capacity (see \pcref{Weight Limits}).
             If a creature is teleported while carrying more than its maximum carrying capacity, all excess objects are left behind, starting with the heaviest object and proceeding in order of weight.
 
             Second, no object can extend more than two feet away from the creature's body.
