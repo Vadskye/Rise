@@ -2,13 +2,16 @@ from cgi_simple import (
     div,
     flex_col,
     flex_row,
-    labeled_text_input,
-    underlabel_spaced,
-    number_input,
-    radio_input,
-    span,
-    label,
     flex_wrapper,
+    label,
+    labeled_text_input,
+    number_input,
+    option,
+    radio_input,
+    select,
+    span,
+    underlabel_spaced,
+    underlabel,
 )
 
 
@@ -16,15 +19,9 @@ def create_page(destination):
     return flex_row(
         {"class": "header-bar"},
         [
-            rise_title(),
             boring_stuff(destination),
         ],
     )
-
-
-def rise_title():
-    return div({"class": "rise-title"}, "Rise")
-
 
 def boring_stuff(destination):
     return div(
@@ -54,6 +51,20 @@ def boring_stuff(destination):
                                 ),
                                 attributes={"class": "challenge-rating-input"},
                             ),
+                            underlabel("Chat color", select(
+                                {"class": "chat-color", "name": "chat_color"},
+                                [
+                                    option({"value": "black"}, "Black"),
+                                    option({"value": "blue"}, "Blue"),
+                                    option({"value": "bluegreen"}, "Bluegreen"),
+                                    option({"value": "brown"}, "Brown"),
+                                    option({"value": "gold"}, "Gold"),
+                                    option({"value": "gray"}, "Gray"),
+                                    option({"value": "green"}, "Green"),
+                                    option({"value": "orange"}, "Orange"),
+                                    option({"value": "purple"}, "Purple"),
+                                ],
+                            ))
                         ]
                         if destination == "roll20"
                         else []
