@@ -433,29 +433,30 @@ def abilities(destination):
         {"class": "abilities"},
         [
             flex_wrapper(div({"class": "section-header"}, "Abilities")),
-            "".join([ability(i) for i in range(13)])
+            "".join([ability() for i in range(13)])
             if destination == "paper"
             else fieldset(
                 {"class": f"repeating_abilities"},
-                ability(0),
+                ability(),
             ),
         ],
     )
 
-
-def ability(ability_number=None):
+def ability():
+    # TODO: make this legacy less dumb
+    ability_number = 0
     return flex_row(
         {"class": "ability"},
         [
             labeled_text_input(
                 "Name",
                 {"class": "active-ability-name"},
-                {"name": "active_ability{0}_name".format(ability_number)},
+                {"name": "active_ability0_name"},
             ),
             labeled_textarea(
                 "Effect",
                 {"class": "active-ability-effect"},
-                {"name": "active_ability{0}_effect".format(ability_number)},
+                {"name": "active_ability0_effect"},
             ),
             button(
                 {
@@ -463,8 +464,11 @@ def ability(ability_number=None):
                     "name": "use_ability",
                     "type": "roll",
                     "value": (
-                        f"@{{character_name}} uses @{{active_ability{ability_number}_name}}:"
-                        + f" @{{active_ability{ability_number}_effect}}"
+                        "&{template:custom}"
+                        + " {{title=@{active_ability0_name}}}"
+                        + " {{subtitle=@{character_name}}}"
+                        + " {{color=@{chat_color}}}"
+                        + " {{desc=@{active_ability0_effect}}}"
                     ),
                 },
                 "Use",
@@ -618,9 +622,9 @@ def attack(source):
                                 select(
                                     {"class": "attack-power", "name": "attack0_power"},
                                     [
-                                        option({"value": "full"}, "Full"),
-                                        option({"value": "half"}, "Half"),
-                                        option({"value": "none"}, "None"),
+                                        option({"value": "1"}, "Full"),
+                                        option({"value": "0.5"}, "Half"),
+                                        option({"value": "0"}, "None"),
                                     ],
                                 ),
                             )
@@ -640,13 +644,6 @@ def attack(source):
                     "class": "attack-roll",
                     "name": f"roll_attack",
                     "type": "roll",
-                    "value": (
-                        f"@{{character_name}} uses @{{attack0_name}}:"
-                        + f" [[d10! + @{{accuracy}} + @{{attack0_accuracy}}]] vs @{{attack0_defense}}!"
-                        + f" (@{{attack0_effect}})"
-                        if source == "nondamaging"
-                        else "You must toggle your level up and down before this attack will roll damage. Blame Roll20."
-                    ),
                 },
                 "Attack",
             ),

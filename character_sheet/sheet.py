@@ -3,6 +3,7 @@
 import click
 import cgi_simple as cgi
 import first_page
+import rolltemplate
 import re
 import second_page
 import header_bar
@@ -81,6 +82,7 @@ def main(destination):
                 third_page.create_page(),
                 status_page.create_page(),
                 reference_page.create_page(),
+                rolltemplate.rolltemplate_html(),
             ]))
 
         class_pattern = re.compile(r'\.([a-z\-]+)\b')
@@ -95,6 +97,8 @@ def main(destination):
                     if filename in ['first_page', 'second_page', 'third_page', 'reference_page', 'status_page']:
                         output_file.write("\n}")
                 output_file.write('\n\n')
+            output_file.write(rolltemplate.rolltemplate_css())
+            output_file.write('\n')
 
         call(['lessc', 'roll20.less', 'roll20.css'])
 

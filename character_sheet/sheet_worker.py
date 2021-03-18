@@ -1,4 +1,5 @@
 from sheet_data import ATTRIBUTES, ATTRIBUTE_SKILLS
+import re
 
 
 def generate_script():
@@ -16,23 +17,36 @@ def generate_script():
             unknown_statistic(),
             custom_modifiers(),
             debuffs(),
+            attack_buttons(),
             "</script>",
             "",
         ]
     )
 
+def formatChangeString(varName):
+    if 'repeating_' in varName:
+        return re.sub(r'repeating_([^_]+)_(.*)', r'change:repeating_\1:\2', varName)
+    else:
+        return 'change:' + varName
 
-def js_wrapper(variables, function_body):
+
+def js_wrapper(variables, function_body, boolean_variables=[], include_level=True):
     # not everything actually depends on level, but it's convenient to make
     # everything recalculate when level changes
-    variables_with_level = sorted(list(set(variables + ["level"])))
-    change_string = " ".join([f"change:{var}" for var in variables_with_level])
+    if include_level:
+        variables = variables + ["level"]
+    variables_with_level = sorted(list(set(variables)))
+    change_string = " ".join([formatChangeString(var) for var in variables_with_level])
     get_attrs_string = ", ".join([f'"{var}"' for var in variables])
     set_variables_string = (
         ";\n    ".join(
             [
-                f'var {stringify_variable_name(var)} = v["{var}"] === "on" ? true : Number(v["{var}"] || 0)'
+                f'var {stringify_variable_name(var)} = Number(v["{var}"] || 0);'
                 for var in variables
+            ] +
+            [
+                f'var {stringify_variable_name(var)} = v["{var}"] === "on" ? true : false;'
+                for var in boolean_variables
             ]
         )
         + ";"
@@ -54,21 +68,21 @@ def stringify_variable_name(varname):
 def get_misc_variables(variable_name, count):
     misc = [f"{variable_name}_misc_{i}" for i in range(count)]
     if variable_name in [
-            'accuracy',
-            'all_defenses',
-            'armor_defense',
-            'encumbrance',
-            'energy_resistance_bonus',
-            'fortitude',
-            'hit_points',
-            'magical_power',
-            'mental',
-            'mundane_power',
-            'physical_resistance_bonus',
-            'reflex',
-            'vital_rolls',
+        "accuracy",
+        "all_defenses",
+        "armor_defense",
+        "encumbrance",
+        "energy_resistance_bonus",
+        "fortitude",
+        "hit_points",
+        "magical_power",
+        "mental",
+        "mundane_power",
+        "physical_resistance_bonus",
+        "reflex",
+        "vital_rolls",
     ]:
-        misc += [variable_name + '_custom_modifier']
+        misc += [variable_name + "_custom_modifier"]
     return misc
 
 
@@ -641,6 +655,7 @@ def mundane_power():
         """,
     )
 
+
 def combat_styles_known():
     misc = get_misc_variables("combat_styles_known", 3)
     return js_wrapper(
@@ -873,7 +888,8 @@ def standard_damage_at_power(power):
 
 def debuffs():
     return js_wrapper(
-        [
+        [],
+        boolean_variables=[
             # conditional debuffs
             "surrounded",
             "flying",
@@ -904,7 +920,7 @@ def debuffs():
             # other calculations
             "dexterity_starting",
         ],
-        f"""
+        function_body=f"""
             let accuracy = 0;
             let armor = 0;
             let fortitude = 0;
@@ -1012,6 +1028,7 @@ def vital_rolls():
         """,
     )
 
+
 def custom_modifiers():
     return """
         on("change:repeating_custommodifiers remove:repeating_custommodifiers", function(eventInfo) {
@@ -1060,3 +1077,61 @@ def custom_modifiers():
             });
         });
     """
+
+
+def attack_buttons():
+    attack_groups = [
+        "repeating_magicalattacks",
+        "repeating_mundaneattacks",
+        "repeating_attacks",
+    ]
+    return "\n".join(
+        [
+            js_wrapper(
+                [
+                    f"{attack_group}_attack0_name",
+                    f"{attack_group}_attack0_accuracy",
+                    f"{attack_group}_attack0_defense",
+                    f"{attack_group}_attack0_dice",
+                    f"{attack_group}_attack0_power",
+                    f"{attack_group}_attack0_effect",
+                ],
+                f"""
+                    getAttrs(["challenge_rating"], (values) => {{
+                        const challengeRating = Number(values.challenge_rating) || 0;
+                        const color = challengeRating > 0 ? "monster" : null;
+                        setAttrs({{
+                            {attack_group}_roll_attack: `{attack_button_text(attack_group)}`
+                        }});
+                    }})
+                """,
+                include_level=False,
+            )
+            for attack_group in attack_groups
+        ]
+    )
+
+
+def attack_button_text(attack_group):
+    damage = {
+        'repeating_attacks': '',
+        'repeating_magicalattacks': '[[@{attack0_dice}+floor(@{magical_power}*@{attack0_power})]]',
+        'repeating_mundaneattacks': '[[@{attack0_dice}+floor(@{mundane_power}*@{attack0_power})]]',
+    }[attack_group]
+    damage_text = " {{Damage=" + damage + "}}" if damage else ""
+
+    color = {
+        'repeating_attacks': 'nondamaging',
+        'repeating_magicalattacks': 'magical',
+        'repeating_mundaneattacks': 'mundane',
+    }[attack_group]
+
+    return (
+        "&{template:custom}"
+        + " {{title=@{attack0_name}}}"
+        + " {{subtitle=@{character_name}}}"
+        + " {{Attack=[[d10!+@{accuracy}+@{attack0_accuracy}]] vs @{attack0_defense}}}"
+        + damage_text
+        + " {{color=${color || '@{chat_color}'}}}"
+        + " {{desc=@{attack0_effect}}}"
+    )
