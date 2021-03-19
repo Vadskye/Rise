@@ -1909,7 +1909,7 @@ def generate_worn():
             % TODO: degree symbol?
             In addition, the boots keep you cool, protecting you in environments as warm as 100 degrees Fahrenheit.
         """,
-            short_description="Eases travel in cold areas",
+            short_description="Eases travel in deserts",
         )
     )
 
