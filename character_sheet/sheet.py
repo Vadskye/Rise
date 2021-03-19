@@ -90,9 +90,8 @@ def main(destination):
             for filename in ['sheet', 'first_page', 'second_page', 'third_page', 'roll20_custom', 'reference_page', 'status_page']:
                 with open(filename + '.less', 'r') as input_file:
                     if filename in ['first_page', 'second_page', 'third_page', 'reference_page', 'status_page']:
-                        output_file.write(f".sheet-{filename.replace('_', '-')} {{\n")
+                        output_file.write(f"div.page.{filename.replace('_', '-')} {{\n")
                     for line in input_file:
-                        line = class_pattern.sub(r'.sheet-\1', line)
                         output_file.write(line)
                     if filename in ['first_page', 'second_page', 'third_page', 'reference_page', 'status_page']:
                         output_file.write("\n}")
