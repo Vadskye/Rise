@@ -373,7 +373,7 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: "Extruding Spikeform",
+      name: "Extruding Spikes",
 
       castingTime: "minor action",
       attack: {
