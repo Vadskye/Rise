@@ -1,119 +1,127 @@
-input {
-    font-size: 1em;
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-.chat-color {
-    margin-bottom: 4px;
-    width: 8em;
-}
+div.full-sheet {
 
-.boring-row {
-    .level-input {
-        flex-basis: 3em;
+    input {
+        font-size: 1em;
     }
-}
 
-.first-page {
-    .sidebar {
-        margin-right: 0.25em;
+    .chat-color {
+        margin-bottom: 4px;
+        width: 8em;
     }
-}
 
-.second-page {
-    .calc-header {
-        width: 9em;
-    }
-    .skill-labels {
-        .skill-label {
-            font-size: 1em;
+    .boring-row {
+        .level-input {
+            flex-basis: 3em;
         }
+    }
 
-        .skill-row {
-            .skill-training {
-                width: 1em;
-                padding: 0;
+    .first-page {
+        .sidebar {
+            margin-right: 0.25em;
+        }
+    }
+
+    .second-page {
+        .calc-header {
+            width: 9em;
+        }
+        .skill-labels {
+            .skill-label {
+                font-size: 1em;
+            }
+
+            .skill-row {
+                .skill-training {
+                    width: 1em;
+                    padding: 0;
+                }
             }
         }
     }
-}
 
-input[type=number]:disabled::-webkit-inner-spin-button,
-input[type=number]:disabled::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    display: none;
-    margin: 0;
-}
-
-input[type=number]:disabled {
-    -moz-appearance: textfield;
-}
-
-.under-label {
-    font-size: 0.8em;
-}
-
-.page {
-    margin-top: 0.5em;
-    display: none;
-    font-size: 13px;
-    overflow: visible;
-    font-family: Open Sans;
-    margin-bottom: 1em;
-
-    input[type=number] {
-        width: 2.9em
+    input[type=number]:disabled::-webkit-inner-spin-button,
+    input[type=number]:disabled::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        display: none;
+        margin: 0;
     }
-}
 
-input[type=radio].nav-button-page1:checked ~ .first-page, input[type=radio].nav-button-page2:checked ~ .second-page, input[type=radio].nav-button-page3:checked ~ .third-page, input[type=radio].nav-button-page4:checked ~ .status-page, input[type=radio].nav-button-page5:checked ~ .reference-page {
-    display: flex;
-}
+    input[type=number]:disabled {
+        -moz-appearance: textfield;
+    }
 
-input.nav-button {
-    border: 0;
-    opacity: 0;
-    z-index: 2;
-}
+    .under-label {
+        font-size: 0.8em;
+    }
 
-input.nav-button, .nav-button-label {
-    height: 2em;
-    width: 4em;
-    padding: 0.25em;
-    margin-right: 1em;
-}
+    .page {
+        margin-top: 0.5em;
+        display: none;
+        font-size: 13px;
+        overflow: visible;
+        font-family: Open Sans;
+        margin-bottom: 1em;
 
-.nav-button-label {
-    background: #FFF0C8;
-    border: 1px solid black;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 1.25em;
-    margin-left: -4em;
-    text-align: center;
-}
+        input[type=number] {
+            width: 2.9em
+        }
+    }
 
-.nav-button:hover + .nav-button-label {
-    background: #f0c860;
-}
+    input[type=radio].nav-button-page1:checked ~ .first-page, input[type=radio].nav-button-page2:checked ~ .second-page, input[type=radio].nav-button-page3:checked ~ .third-page, input[type=radio].nav-button-page4:checked ~ .status-page, input[type=radio].nav-button-page5:checked ~ .reference-page {
+        display: flex;
+    }
 
-.header-bar {
-    margin-bottom: 0.5em;
-}
+    input.nav-button {
+        border: 0;
+        opacity: 0;
+        z-index: 2;
+    }
 
-// center alignment looks nicer, but causes weird cascade effects
-// .full-sheet {
-//     text-align: center;
-// }
+    input.nav-button, .nav-button-label {
+        height: 2em;
+        width: 4em;
+        padding: 0.25em;
+        margin-right: 1em;
+    }
 
-.subtle-button > button[type=roll], .invisible-button > button[type=roll] {
-    background: none;
-    border: 0;
-    box-shadow: none;
-    margin: 0;
-    padding: 0;
-    text-shadow: none;
-}
+    .nav-button-label {
+        background: #FFF0C8;
+        border: 1px solid black;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 1.25em;
+        margin-left: -4em;
+        text-align: center;
+    }
 
-.invisible-button > button[type=roll]:before {
-    content: none;
+    .nav-button:hover + .nav-button-label {
+        background: #f0c860;
+    }
+
+    .header-bar {
+        margin-bottom: 0.5em;
+    }
+
+    // center alignment looks nicer, but causes weird cascade effects
+    // .full-sheet {
+    //     text-align: center;
+    // }
+
+    .subtle-button > button[type=roll], .invisible-button > button[type=roll] {
+        background: none;
+        border: 0;
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+        text-shadow: none;
+    }
+
+    .invisible-button > button[type=roll]:before {
+        content: none;
+    }
+
 }
