@@ -85,6 +85,7 @@ export const flurryOfBlows: CombatStyle = {
     {
       name: "Strike Flurry",
 
+      // basically +1d
       effect: `
         Make two \\glossterm{strikes}.
         You take a -2d penalty to damage with both strikes, and your \\glossterm{power} is halved.
@@ -94,22 +95,50 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Powerful Strike Flurry",
+      name: "Greater Strike Flurry",
 
+      // basically +3d
       effect: `
-        Make two \\glossterm{strikes} with a -4 penalty to \\glossterm{accuracy}.
+        Make two \\glossterm{strikes}.
+        You take a -1d penalty to damage with both strikes, and your \\glossterm{power} is halved.
       `,
       rank: 5,
       type: "Instant",
     },
 
     {
-      name: "Greater Strike Flurry",
+      name: "Supreme Strike Flurry",
 
+      // basically +3d
       effect: `
         Make two \\glossterm{strikes}.
+        Your \\glossterm{power} is halved with both strikes.
       `,
       rank: 7,
+      type: "Instant",
+    },
+
+    {
+      name: "Power Flurry",
+
+      // basically +3d, -3a
+      effect: `
+        Make two \\glossterm{strikes} with a -3 penalty to \\glossterm{accuracy}.
+        Your \\glossterm{power} is halved with both strikes.
+      `,
+      rank: 2,
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Power Flurry",
+
+      // basically +3d, -2a
+      effect: `
+        Make two \\glossterm{strikes} with a -2 penalty to \\glossterm{accuracy}.
+        You gain a +1d bonus to damage with both strikes, but your \\glossterm{power} is halved.
+      `,
+      rank: 6,
       type: "Instant",
     },
 
