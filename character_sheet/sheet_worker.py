@@ -37,7 +37,7 @@ def js_wrapper(variables, function_body, boolean_variables=[], include_level=Tru
         variables = variables + ["level"]
     variables_with_level = sorted(list(set(variables)))
     change_string = " ".join([formatChangeString(var) for var in variables_with_level])
-    get_attrs_string = ", ".join([f'"{var}"' for var in variables])
+    get_attrs_string = ", ".join([f'"{var}"' for var in variables + boolean_variables])
     set_variables_string = (
         ";\n    ".join(
             [
@@ -133,8 +133,11 @@ def set_skill(a, s):
     misc = get_misc_variables(s, 3)
     if a == "other":
         return js_wrapper(
-            ["level", f"{s}_points", f"{s}_class_skill", "fatigue_penalty", *misc],
-            f"""
+            ["level", f"{s}_points", "fatigue_penalty", *misc],
+            boolean_variables=[
+                f"{s}_class_skill",
+            ],
+            function_body=f"""
                 var pointsModifier = 0;
                 var ranks = 0;
                 var training = '';
@@ -143,8 +146,8 @@ def set_skill(a, s):
                     ranks = Math.floor(level / 2);
                     pointsModifier = 1;
                     training = 'T';
-                }} else if ({s}_points >= 3 || (({s}_points === 2) && {s}_class_skill)) {{
-                    ranks = level
+                }} else if (({s}_points >= 3) || (({s}_points === 2) && {s}_class_skill)) {{
+                    ranks = level;
                     pointsModifier = 3;
                     training = 'M';
                 }}
@@ -165,12 +168,14 @@ def set_skill(a, s):
                 "level",
                 f"{a}_starting",
                 f"{s}_points",
-                f"{s}_class_skill",
                 "fatigue_penalty",
                 *misc,
                 *(["encumbrance"] if include_encumbrance else []),
             ],
-            f"""
+            boolean_variables=[
+                f"{s}_class_skill",
+            ],
+            function_body=f"""
                 var pointsModifier = 0;
                 var ranks = 0;
                 var training = '';
@@ -182,8 +187,8 @@ def set_skill(a, s):
                 if ({s}_points === 1) {{
                     ranks = Math.floor(level / 2) + 1;
                     training = 'T';
-                }} else if ({s}_points >= 3 || (({s}_points === 2) && {s}_class_skill)) {{
-                    ranks = level
+                }} else if (({s}_points >= 3) || (({s}_points === 2) && {s}_class_skill)) {{
+                    ranks = level;
                     pointsModifier = 3;
                     training = 'M';
                 }}
