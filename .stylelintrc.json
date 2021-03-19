@@ -1,0 +1,8 @@
+{
+  "extends": "stylelint-config-recommended",
+  "rules": {
+    "no-duplicate-selectors": null,
+    "no-descending-specificity": null,
+    "font-family-no-missing-generic-family-keyword": null
+  }
+}
