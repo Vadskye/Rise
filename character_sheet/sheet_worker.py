@@ -900,6 +900,7 @@ def debuffs():
             "flying",
             "flying_poorly",
             "prone",
+            "squeezing",
             # rank 1 debuffs
             "dazed",
             "dazzled",
@@ -933,6 +934,11 @@ def debuffs():
             let reflex = 0;
 
             // circumstantial effects
+            if (squeezing) {{
+                accuracy -= 2;
+                armor -= 2;
+                reflex -= 2;
+            }}
             if (surrounded) {{
                 armor -= 2;
                 reflex -= 2;

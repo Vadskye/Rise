@@ -104,6 +104,7 @@ def circumstances():
         debuff("flying poorly"),
         debuff("helpless"),
         debuff("prone"),
+        debuff("squeezing"),
         debuff("surrounded"),
         debuff("underwater"),
     ])
