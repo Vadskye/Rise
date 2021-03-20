@@ -146,7 +146,7 @@ export const heraldOfWar: CombatStyle = {
       effect: `
         Make a \\glossterm{strike}.
         You take a -2d penalty to damage with the strike.
-        Each creature that loses hit points from the strike is \\glossterm{frightened} by you as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{frightened} by you as a \\glossterm{condition}.
       `,
       rank: 5,
       tags: ["Emotion"],

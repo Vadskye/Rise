@@ -12,7 +12,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
-        Each creature that loses hit points from the strike becomes \\glossterm{vulnerable} to slashing damage as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike becomes \\glossterm{vulnerable} to slashing damage as a \\glossterm{condition}.
       `,
       rank: 2,
       type: "Duration",
@@ -24,7 +24,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
-        Each creature that loses hit points from the strike becomes \\glossterm{vulnerable} to \\glossterm{physical damage} as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike becomes \\glossterm{vulnerable} to \\glossterm{physical damage} as a \\glossterm{condition}.
       `,
       rank: 4,
       type: "Duration",
@@ -70,7 +70,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
-        Each creature that loses hit points from the strike is \\glossterm{blinded} as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{blinded} as a \\glossterm{condition}.
       `,
       rank: 6,
       type: "Duration",
@@ -82,7 +82,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
-        Each creature loses hit points from the strike is \\glossterm{slowed} as a \\glossterm{condition}.
+        Each creature loses \\glossterm{hit points} from the strike is \\glossterm{slowed} as a \\glossterm{condition}.
       `,
       rank: 1,
       type: "Duration",
@@ -94,7 +94,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
-        Each creature that loses hit points from the strike is \\glossterm{immobilized} as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{immobilized} as a \\glossterm{condition}.
       `,
       rank: 6,
       type: "Duration",
@@ -184,7 +184,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        Each creature that loses hit points from the strike begins bleeding as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike begins bleeding as a \\glossterm{condition}.
         It loses \\glossterm{hit points} equal to your \\glossterm{power} with that strike at the end of each round until the condition is removed.
         The condition can be removed with the \\textit{treat condition} ability (see \\pcref{Treat Condition}).
         The \\glossterm{difficulty rating} of the check is equal to 5.
