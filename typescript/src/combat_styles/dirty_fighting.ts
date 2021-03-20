@@ -12,7 +12,7 @@ export const dirtyFighting: CombatStyle = {
       effect: `
         Make a strike using an \\glossterm{unarmed attack}.
         Your \\glossterm{power} with the strike is halved.
-        If a creature loses hit points from the strike, it is \\glossterm{dazed} as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{dazed} as a \\glossterm{condition}.
       `,
       rank: 1,
       type: "Duration",
@@ -24,7 +24,7 @@ export const dirtyFighting: CombatStyle = {
       effect: `
         Make a strike using an \\glossterm{unarmed attack}.
         Your \\glossterm{power} with the strike is halved.
-        If a creature loses hit points from the strike, it is \\glossterm{stunned} as a \\glossterm{condition}.
+        Each creature that loses hit points from the strike is \\glossterm{stunned} as a \\glossterm{condition}.
         `,
 
       rank: 3,
@@ -37,7 +37,7 @@ export const dirtyFighting: CombatStyle = {
       effect: `
         Make a strike using an \\glossterm{unarmed attack}.
         Your \\glossterm{power} with the strike is halved.
-        If a creature loses hit points from the strike, it loses additional hit points equal to half its maximum hit points.
+        Each creature that loses hit points from the strike loses additional hit points equal to half its maximum hit points.
         `,
 
       rank: 7,
@@ -235,7 +235,7 @@ export const dirtyFighting: CombatStyle = {
       effect: `
         Make a \\glossterm{strike}.
         You take a -2d penalty to damage with the strike.
-        If a creature loses hit points from the strike, it stops being \\glossterm{attuned} to two effects.
+        Each creature that loses hit points from the strike stops being \\glossterm{attuned} to two effects.
         It can freely choose which effects it releases its attunement to.
       `,
       rank: 2,
