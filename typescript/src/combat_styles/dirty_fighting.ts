@@ -291,18 +291,6 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: "Alchemical Strike",
-
-      effect: `
-        Make a melee \\glossterm{strike} with a -1d penalty to damage.
-        In addition, you can throw a tanglefoot bag, vial of alchemist's fire, or similar small object at a target of the strike.
-        You must still have a free hand that is not being used to make the strike to throw the object.
-      `,
-      rank: 3,
-      type: "Instant",
-    },
-
-    {
       name: "Slipstrike",
 
       effect: `
