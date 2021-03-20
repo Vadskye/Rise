@@ -308,7 +308,7 @@ Rank 1 maneuver:
   * Softener:
     * Make a strike with +2a, low damage
   * Damage:
-    * Make a strike against Fort/Ref defense
+    * Make a strike against Fort/Ref defense with -1d damage
     * Make a strike with a highly circumstantial benefit (reroll miss chance)
   * Finisher:
     * low damage, r1 debuff condition if lose HP (note: this is 1 level too weak)
