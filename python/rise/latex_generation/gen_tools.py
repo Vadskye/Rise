@@ -619,7 +619,7 @@ def generate_tools():
             short_description="Shrinks contained items by three size categories",
         ),
         MagicItem(
-            name="Bag of Shrinking, Greater",
+            name="Bag of Shrinking, Supreme",
             level=18,
             materials="textiles",
             tags=[],
