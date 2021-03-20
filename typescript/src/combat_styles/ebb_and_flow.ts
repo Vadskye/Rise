@@ -21,6 +21,17 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
+      name: "Greater Counterstrike",
+
+      functionsLike: {
+        exceptThat: "the accuracy bonus increases to +4",
+        name: "counterstrike",
+      },
+      rank: 5,
+      type: "Instant",
+    },
+
+    {
       name: "Counter Sweep",
 
       effect: `
@@ -47,7 +58,7 @@ export const ebbAndFlow: CombatStyle = {
         Your \\glossterm{power} with both strikes is halved.
         You take a -4 penalty to \\glossterm{accuracy} with the strikes against any target that did not attack you during the action phase of this round.
       `,
-      rank: 6,
+      rank: 5,
       type: "Instant",
     },
 
@@ -228,34 +239,44 @@ export const ebbAndFlow: CombatStyle = {
         If the strike had multiple targets, you choose which target you gain the bonus against.
         This effect stacks with itself, up to a maximum of a +4 bonus.
         It lasts until you take a \\glossterm{short rest} or use this ability on a different creature.
-        `,
-
+      `,
       rank: 1,
       type: "Duration",
     },
 
     {
-      name: "Slipstrike",
+      name: "Greater Hunting Strike",
+
+      functionsLike: {
+        exceptThat: "the accuracy bonus from each strike increases to +2",
+        name: "hunting strike",
+      },
+      rank: 4,
+      type: "Duration",
+    },
+
+    {
+      name: "Punish Inattention",
 
       effect: `
-        Make a melee \\glossterm{strike} with a +1d bonus to damage.
-        After making the strike, you fall \\glossterm{prone}.
-        % TODO: This is obviously a hack
-        If you use this ability during the \\glossterm{delayed action phase}, you cannot move during the \\glossterm{movement phase} of the following round.
-        `,
+        You can only use this ability during the \\glossterm{action phase}.
+        During that phase, you prepare to strike against creatures who do not force you back.
 
-      rank: 2,
+        During the \\glossterm{delayed action phase}, make a melee \\glossterm{strike}.
+        You gain a +2 bonus to \\glossterm{accuracy} with the strike against each creature that did not attack you during the action phase of this round.
+      `,
+      rank: 3,
       type: "Instant",
     },
 
     {
-      name: "Deathblow",
+      name: "Greater Punish Inattention",
 
-      effect: `
-        Make a \\glossterm{strike} with a +2d bonus to damage.
-        If a target has any \\glossterm{resistance} against the strike, this strike deals no damage to that target.
-      `,
-      rank: 3,
+      functionsLike: {
+        exceptThat: "the accuracy bonus increases to +4",
+        name: "punish inattention",
+      },
+      rank: 6,
       type: "Instant",
     },
   ],
