@@ -120,7 +120,7 @@ export const heraldOfWar: CombatStyle = {
       effect: `
         Make a \\glossterm{strike}.
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
-        Each creature that takes damage from the strike takes a -2 penalty to \\glossterm{accuracy} against creatures other than you as a \\glossterm{condition}.
+        Each creature dealt damage by the strike takes a -2 penalty to \\glossterm{accuracy} against creatures other than you as a \\glossterm{condition}.
         This condition is removed if another creature applies this condition to the same target.
       `,
       rank: 2,
