@@ -24,7 +24,7 @@ export const ebbAndFlow: CombatStyle = {
       name: "Greater Counterstrike",
 
       functionsLike: {
-        exceptThat: "the accuracy bonus increases to +4",
+        exceptThat: "the accuracy bonus increases to +4.",
         name: "counterstrike",
       },
       rank: 5,
@@ -248,7 +248,7 @@ export const ebbAndFlow: CombatStyle = {
       name: "Greater Hunting Strike",
 
       functionsLike: {
-        exceptThat: "the accuracy bonus from each strike increases to +2",
+        exceptThat: "the accuracy bonus from each strike increases to +2.",
         name: "hunting strike",
       },
       rank: 4,
@@ -273,7 +273,7 @@ export const ebbAndFlow: CombatStyle = {
       name: "Greater Punish Inattention",
 
       functionsLike: {
-        exceptThat: "the accuracy bonus increases to +4",
+        exceptThat: "the accuracy bonus increases to +4.",
         name: "punish inattention",
       },
       rank: 6,
