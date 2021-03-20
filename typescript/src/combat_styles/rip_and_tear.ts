@@ -14,7 +14,7 @@ export const ripAndTear: CombatStyle = {
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
         Each creature that loses hit points from the strike becomes \\glossterm{vulnerable} to slashing damage as a \\glossterm{condition}.
       `,
-      rank: 1,
+      rank: 2,
       type: "Duration",
     },
 
@@ -26,7 +26,7 @@ export const ripAndTear: CombatStyle = {
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
         Each creature that loses hit points from the strike becomes \\glossterm{vulnerable} to \\glossterm{physical damage} as a \\glossterm{condition}.
       `,
-      rank: 3,
+      rank: 4,
       type: "Duration",
     },
 
@@ -43,12 +43,34 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
+      name: "Rend the Hide",
+
+      effect: `
+        Make a \\glossterm{strike} using a slashing weapon.
+        Each creature dealt damage by the strike that is not wearing metal armor takes a -2 penalty to Armor defense until the end of the next round.
+      `,
+      rank: 1,
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Rend the Hide",
+
+      effect: `
+        Make a \\glossterm{strike} using a slashing weapon.
+        You gain a +2 bonus to \\glossterm{accuracy} with the strike against creatures that are not wearing metal armor.
+      `,
+      rank: 3,
+      type: "Instant",
+    },
+
+    {
       name: "Brow Gash",
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
-        If a creature loses hit points from the strike, it is \\glossterm{blinded} as a \\glossterm{condition}.
+        Each creature that loses hit points from the strike is \\glossterm{blinded} as a \\glossterm{condition}.
       `,
       rank: 6,
       type: "Duration",
@@ -60,7 +82,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
-        If a creature loses hit points from the strike, it is \\glossterm{slowed} as a \\glossterm{condition}.
+        Each creature loses hit points from the strike is \\glossterm{slowed} as a \\glossterm{condition}.
       `,
       rank: 1,
       type: "Duration",
@@ -72,7 +94,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
-        If a creature loses hit points from the strike, it is \\glossterm{immobilized} as a \\glossterm{condition}.
+        Each creature that loses hit points from the strike is \\glossterm{immobilized} as a \\glossterm{condition}.
       `,
       rank: 6,
       type: "Duration",
@@ -85,7 +107,7 @@ export const ripAndTear: CombatStyle = {
         Make a melee strike using a slashing weapon.
         At the end of this phase, each creature that you hit during this phase with both that strike and the \\textit{offhand strike} ability takes slashing damage equal to half your \\glossterm{power}.
       `,
-      rank: 2,
+      rank: 1,
       type: "Instant",
     },
 
@@ -181,6 +203,30 @@ export const ripAndTear: CombatStyle = {
       },
       rank: 6,
       type: "Duration",
+    },
+
+    {
+      name: "Cleaving Strike",
+
+      effect: `
+        Make a thrown \\glossterm{strike} using a slashing or bludgeoning weapon against up to three creatures or objects in a \\smallarea radius within \\shortrange.
+        Your \\glossterm{power} with the strike is halved.
+        If you choose yourself as one of the subjects, you can catch the weapon instead of taking damage from it.
+      `,
+      rank: 4,
+      type: "Instant",
+    },
+
+    {
+      name: "Ricochet",
+
+      effect: `
+        Make a thrown \\glossterm{strike} using a slashing or bludgeoning weapon against up to three creatures or objects in a \\smallarea radius within \\shortrange.
+        Your \\glossterm{power} with the strike is halved.
+        If you choose yourself as one of the subjects, you can catch the weapon instead of taking damage from it.
+      `,
+      rank: 4,
+      type: "Instant",
     },
   ],
 };

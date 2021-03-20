@@ -47,7 +47,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        If a creature loses hit points from the strike, you gain a +4 accuracy bonus with injury-based poisons delivered with the strike.
+        You gain a +4 accuracy bonus with injury-based poisons delivered with the strike against each creature that loses \\glossterm{hit points} from the strike.
       `,
       rank: 2,
       type: "Instant",
@@ -58,7 +58,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a +2 \\glossterm{accuracy} bonus using a piercing weapon.
-        If a creature loses hit points from the strike, you gain a +6 accuracy bonus with injury-based poisons delivered with the strike.
+        You gain a +6 accuracy bonus with injury-based poisons delivered with the strike against each creature that loses \\glossterm{hit points} from the strike.
       `,
       rank: 6,
       type: "Instant",
