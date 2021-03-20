@@ -47,7 +47,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        Each creature dealt damage by the strike that is not wearing metal armor takes a -2 penalty to Armor defense until the end of the next round.
+        Each creature dealt damage by the strike that is not wearing metal armor takes a -1 penalty to Armor defense until the end of the next round.
       `,
       rank: 1,
       type: "Instant",
@@ -58,9 +58,20 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        You gain a +2 bonus to \\glossterm{accuracy} with the strike against creatures that are not wearing metal armor.
+        Each creature dealt damage by the strike that is not wearing metal armor takes a -2 penalty to Armor defense until the end of the next round.
       `,
-      rank: 3,
+      rank: 4,
+      type: "Instant",
+    },
+
+    {
+      name: "Supreme Rend the Hide",
+
+      effect: `
+        Make a \\glossterm{strike} using a slashing weapon.
+        Each creature dealt damage by the strike that is not wearing metal armor takes a -4 penalty to Armor defense until the end of the next round.
+      `,
+      rank: 7,
       type: "Instant",
     },
 
@@ -218,14 +229,51 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
-      name: "Ricochet",
+      name: "Spinning Slash",
 
       effect: `
-        Make a thrown \\glossterm{strike} using a slashing or bludgeoning weapon against up to three creatures or objects in a \\smallarea radius within \\shortrange.
+        Make a melee \\glossterm{strike} using a slashing weapon against any number of creatures or objects within your weapon's \\glossterm{reach}.
         Your \\glossterm{power} with the strike is halved.
-        If you choose yourself as one of the subjects, you can catch the weapon instead of taking damage from it.
+        In addition, you take no penalties for being \\glossterm{surrounded} until the end of the current round.
+        This penalty removal is a \\glossterm{Swift} effect, so it affects attacks against you during the current round.
       `,
       rank: 4,
+      type: "Instant",
+    },
+
+    {
+      name: "Twinslash",
+
+      // basically +1d
+      effect: `
+        Make two melee \\glossterm{strikes} using a slashing weapon.
+        You take a -2d penalty to damage with both strikes, and your \\glossterm{power} is halved.
+      `,
+      rank: 3,
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Twinslash",
+
+      // basically +1d
+      effect: `
+        Make two melee \\glossterm{strikes} using a slashing weapon.
+        You take a -1d penalty to damage with both strikes, and your \\glossterm{power} is halved.
+      `,
+      rank: 5,
+      type: "Instant",
+    },
+
+    {
+      name: "Supreme Twinslash",
+
+      // basically +1d
+      effect: `
+        Make two melee \\glossterm{strikes} using a slashing weapon.
+        Your \\glossterm{power} is halved with both strikes.
+      `,
+      rank: 7,
       type: "Instant",
     },
   ],
