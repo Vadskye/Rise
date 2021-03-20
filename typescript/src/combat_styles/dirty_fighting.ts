@@ -289,5 +289,50 @@ export const dirtyFighting: CombatStyle = {
       rank: 3,
       type: "Instant",
     },
+
+    {
+      name: "Alchemical Strike",
+
+      effect: `
+        Make a melee \\glossterm{strike} with a -1d penalty to damage.
+        In addition, you can throw a tanglefoot bag, vial of alchemist's fire, or similar small object at a target of the strike.
+        You must still have a free hand that is not being used to make the strike to throw the object.
+      `,
+      rank: 3,
+      type: "Instant",
+    },
+
+    {
+      name: "Slipstrike",
+
+      effect: `
+        Make a melee \\glossterm{strike} with a +1d bonus to damage.
+        After making the strike, you fall \\glossterm{prone}, and you cannot stand up until after the next \\glossterm{movement phase}.
+      `,
+      rank: 1,
+      type: "Instant",
+    },
+
+    {
+      name: "Unbalancing Strike",
+
+      effect: `
+        Make a \\glossterm{strike}.
+        Each creature dealt damage by the strike takes a -2 penalty to Reflex defense until the end of the next round.
+      `,
+      rank: 1,
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Unbalancing Strike",
+
+      effect: `
+        Make a \\glossterm{strike}.
+        Each creature dealt damage by the strike takes a -4 penalty to Reflex defense until the end of the next round.
+      `,
+      rank: 4,
+      type: "Instant",
+    },
   ],
 };

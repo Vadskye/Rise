@@ -276,5 +276,16 @@ export const ripAndTear: CombatStyle = {
       rank: 7,
       type: "Instant",
     },
+
+    {
+      name: "Tear Exposed Flesh",
+
+      effect: `
+        Make a \\glossterm{strike} using a slashing weapon.
+        If the target does not have any \\glossterm{resistance} to the attack, your \\glossterm{power} with the strike is doubled.
+      `,
+      rank: 3,
+      type: "Instant",
+    },
   ],
 };

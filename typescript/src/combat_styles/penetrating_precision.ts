@@ -143,5 +143,27 @@ export const penetratingPrecision: CombatStyle = {
       rank: 1,
       type: "Instant",
     },
+
+    {
+      name: "Arrowguide",
+
+      effect: `
+        Make a ranged \\glossterm{strike} using a piercing weapon.
+        You gain a +2 bonus to \\glossterm{accuracy} against each creature dealt damage by that strike until the end of the next round.
+      `,
+      rank: 3,
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Arrowguide",
+
+      effect: `
+        Make a ranged \\glossterm{strike} using a piercing weapon.
+        You gain a +4 bonus to \\glossterm{accuracy} against each creature dealt damage by that strike until the end of the next round.
+      `,
+      rank: 6,
+      type: "Instant",
+    },
   ],
 };
