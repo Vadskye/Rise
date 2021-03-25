@@ -121,7 +121,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a bludgeoning weapon against a stable surface.
-        The strike targets everything on that surface in a \\smallarealong, 10 ft. wide line from you.
+        The strike targets everything on that surface in a \\largearealong, 10 ft. wide line from you.
         Your \\glossterm{power} with the strike is halved.
         All damage dealt by this attack is bludgeoning damage instead of its normal types.
       `,
