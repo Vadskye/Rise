@@ -35,7 +35,7 @@ def js_wrapper(variables, function_body, boolean_variables=[], include_level=Tru
     # everything recalculate when level changes
     if include_level:
         variables = variables + ["level"]
-    variables_with_level = sorted(list(set(variables)))
+    variables_with_level = sorted(list(set(variables + boolean_variables)))
     change_string = " ".join([formatChangeString(var) for var in variables_with_level])
     get_attrs_string = ", ".join([f'"{var}"' for var in variables + boolean_variables])
     set_variables_string = (
