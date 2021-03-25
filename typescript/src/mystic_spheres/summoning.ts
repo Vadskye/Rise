@@ -3,7 +3,7 @@ import { MysticSphere } from ".";
 export const summoning: MysticSphere = {
   name: "Summoning",
   shortDescription: "Summon creatures to fight with you.",
-  sources: ["arcane", "divine", "nature"],
+  sources: ["arcane", "divine", "nature", "pact"],
 
   cantrips: [
     {
