@@ -1283,10 +1283,12 @@ def generate_worn():
             description="""
                 You have a translucent suit of magical armor on your body and over your hands.
                 This functions like body armor that provides a +2 bonus to Armor defense and has no \\glossterm<encumbrance>.
-                The body armor does not appear if you are wearing other body armor of any kind.
+                It also provides a +4 bonus to \\glossterm{resistance} against \\glossterm{energy damage}, and a +2 bonus to \\glossterm{resistance} against \\glossterm{physical damage}.
 
                 As long as you have a free hand, the barrier also manifests as a shield that provides a +1 bonus to Armor defense.
-                This bonus is considered to come from a shield, and does not stack with the benefits of using a physical shield.
+                This bonus is considered to come from a shield, and does not stack with the benefits of using any other shield.
+
+                The armor and shield provided from this ability are dismissed if you have other body armor of any kind.
             """,
             short_description="Grants encumbrance-free +2 armor",
         ),
