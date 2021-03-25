@@ -333,10 +333,10 @@ This choice determines a great deal about your character's abilities.
     1 & 1      & Spellcasting                    & Mystic insight              & Domain gift          & Restoration                 \\
     2 & 4      & Spell rank (2), spell knowledge & Divine guidance             & Domain aspect        & Healer's grace              \\
     3 & 7      & Spell rank (3)                  & Wellspring of power         & Domain aspect        & Divine healing              \\
-    4 & 10     & Spell rank (4), spell knowledge & Mystic insight              & Domain essence       & Called to the needy         \\
-    5 & 13     & Spell rank (5)                  & Greater divine guidance     & Domain essence       & Greater healer's grace      \\
-    6 & 16     & Spell rank (6)                  & Greater wellspring of power & Miracle              & Revivify                    \\
-    7 & 19     & Spell rank (7), spell knowledge & Mystic insight              & Domain masteries     & Greater called to the needy \\
+    4 & 10     & Spell rank (4), spell knowledge & Mystic insight              & Domain essences       & Called to the needy         \\
+    5 & 13     & Spell rank (5)                  & Greater divine guidance     & Miracle       & Greater healer's grace      \\
+    6 & 16     & Spell rank (6)                  & Greater wellspring of power & Domain mastery              & Revivify                    \\
+    7 & 19     & Spell rank (7), spell knowledge & Mystic insight              & Domain mastery     & Greater called to the needy \\
 \end{dtabularx}
     \end{dtable!*}
 
@@ -539,6 +539,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Clr}[0]{Domain Gift}[Magical]
         Each domain has a corresponding \textit{domain gift}.
+        A domain gift is a passive ability that reinforces your ability to embody your domain.
         You gain the \textit{domain gift} for one of your domains (see \pcref{Cleric Domain Abilities}).
 
         \cf*{Clr}[1]{Domain Gift}[Magical]
@@ -546,20 +547,17 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Clr}[2]{Domain Aspect}[Magical]
         Each domain has a corresponding \textit{domain aspect}.
-        You gain the \textit{domain aspect} for one of your domains (see \pcref{Cleric Domain Abilities}).
+        A domain aspect is an active ability that allows you to exert the influence of your domain in the world.
+        You gain the \textit{domain aspect} ability for one of your domains (see \pcref{Cleric Domain Abilities}).
 
         \cf*{Clr}[3]{Domain Aspect}[Magical]
         You gain the \textit{domain aspect} for another one of your domains.
 
         \cf{Clr}[4]{Domain Essence}[Magical]
         Each domain has a corresponding \textit{domain essence}.
-        You gain the \textit{domain essence} for one of your domains (see \pcref{Cleric Domain Abilities}).
+        You gain the \textit{domain essence} for both of your domains (see \pcref{Cleric Domain Abilities}).
 
-        % This seems weak
-        \cf*{Clr}[5]{Domain Essence}[Magical]
-        You gain the \textit{domain essence} for another one of your domains.
-
-        \cf{Clr}[6]{Miracle}[Magical]
+        \cf{Clr}[5]{Miracle}[Magical]
         Once per week, you can request a miracle as a standard action.
         You mentally specify your request, and your deity fulfills that request in the manner it sees fit.
         This can emulate the effects of any spell or ritual, or have any other effect of a similar power level.
@@ -567,9 +565,12 @@ This choice determines a great deal about your character's abilities.
 
         If you perform an extraordinary service for your deity, you can gain the ability to request an additional miracle that week.
 
-        \cf{Clr}[7]{Domain Masteries}[Magical]
+        \cf{Clr}[6]{Domain Mastery}[Magical]
         Each domain has a corresponding \textit{domain mastery}.
-        You gain the \textit{domain mastery} for both of your domains (see \pcref{Cleric Domain Abilities}).
+        You gain the \textit{domain mastery} for one of your domains (see \pcref{Cleric Domain Abilities}).
+
+        \cf*{Clr}[7]{Domain Mastery}[Magical]
+        You gain the \textit{domain mastery} for another one of your domains.
 
     \newpage
     \subsection{Healer}
