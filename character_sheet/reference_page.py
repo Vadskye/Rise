@@ -92,13 +92,12 @@ def vital_roll_effect(roll):
         2: "Half max HP and resistances",
         3: "-2 accuracy",
         4: "-2 defenses",
-        5: "-2 vital rolls",
+        5: "-1 vital rolls",
         6: "Half speed below max HP",
         7: "Half max resistances",
         8: "-1 accuracy",
         9: "-1 defenses",
-        10: "-1 vital rolls",
-        "11+": "No effect",
+        "10+": "No effect",
     }[roll]
 
 def skill_modifiers():
