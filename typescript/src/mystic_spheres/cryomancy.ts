@@ -227,22 +227,6 @@ export const cryomancy: MysticSphere = {
     },
 
     {
-      name: "Brittle Chill",
-
-      attack: {
-        glance: `Half damage.`,
-        hit: `The subject takes 2d6 cold damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\glossterm{vulnerable} to bludgeoning damage as a \\glossterm{condition}.`,
-        targeting: `
-          Make an attack vs. Fortitude against anything within \\medrange.
-        `,
-      },
-      rank: 3,
-      scaling: "damage",
-      type: "Duration",
-    },
-
-    {
       name: "Chilled Mind",
 
       attack: {
