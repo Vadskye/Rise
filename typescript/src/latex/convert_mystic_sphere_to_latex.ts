@@ -57,7 +57,7 @@ function convertSpellToLatex(spell: SpellLike): string {
   const rankText = (spell as Spell).rank ? `[Rank ${spell.rank}]` : "";
   const internalComponents = [
     format.spellTypePrefix(spell),
-    format.spellEffect(spell),
+    format.spellEffect(spell, "spell"),
     format.spellScaling(spell),
     format.spellNarrative(spell),
   ].filter(Boolean);

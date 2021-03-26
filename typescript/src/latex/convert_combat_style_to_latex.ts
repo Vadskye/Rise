@@ -28,7 +28,7 @@ function convertManeuverToLatex(maneuver: Maneuver): string {
   const rankText = maneuver.rank ? `[Rank ${maneuver.rank}]` : "";
   const internalComponents = [
     format.spellTypePrefix({ ...maneuver, focus: maneuver.focus ?? false }),
-    format.spellEffect(maneuver),
+    format.spellEffect(maneuver, "maneuver"),
     format.spellScaling(maneuver),
     format.spellNarrative(maneuver),
   ].filter(Boolean);
