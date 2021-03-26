@@ -7,11 +7,14 @@ from cgi_simple import (
     flex_row,
     flex_wrapper,
     labeled_text_input,
+    li,
     minus,
     number_input,
+    ol,
     plus,
     span,
     text_input,
+    ul,
     underlabel,
 )
 from sheet_worker import standard_damage_at_power
@@ -20,11 +23,14 @@ from sheet_worker import standard_damage_at_power
 def create_page():
     return flex_col(
         {"class": "page reference-page"},
-        flex_row({'class': 'reference-row'}, [
-            standard_damage(),
-            vital_wound_chart(),
-            skill_modifiers(),
-        ]),
+        [
+            flex_row({'class': 'reference-row'}, [
+                standard_damage(),
+                vital_wound_chart(),
+                skill_modifiers(),
+            ]),
+            character_creation(),
+        ],
     )
 
 
@@ -73,7 +79,7 @@ def vital_wound_chart():
                             "".join(
                                 [
                                     div(vital_roll_effect(i))
-                                    for i in [*range(-1, 11), "11+"]
+                                    for i in [*range(-1, 10), "10+"]
                                 ]
                             ),
                         ]
@@ -135,4 +141,61 @@ def skill_modifiers():
                 ),
             ],
         ),
+    ])
+
+def character_creation():
+    return ''.join([
+        div(
+            {"class": "section-header character-creation-header"},
+            "Character Creation",
+        ),
+        ol({'class': 'character-creation'}, [
+            li([
+                "Increase your level to at least 1.",
+                ul([
+                    li("A lot of the sheet calculations don't work if your level is 0. In general, if your sheet isn't calculating something correctly, increasing your level and then reducing it will fix the problem - unless Roll20 itself is having trouble."),
+                ]),
+            ]),
+            li([
+                'Choose narrative aspects of your character.',
+                ul([
+                    li('Your fundamental character concept are written near the top of the Core tab.'),
+                    li('Your personality, backstory, alignment, and deity are written in the Misc tab. You can fill out as many or as few of those fields as you want.'),
+                ]),
+            ]),
+            li([
+                'Choose your attributes.',
+                ul([
+                    li('Your attributes are written in the section on the top left of the Calcs tab with an "Attributes" header.'),
+                    li('If you are using point buy, fill in the number of points you want to spend for each attribute in the box labeled "Points". If you are rolling your attributes, fill in your exact base attributes in a box to the right of the "Points" box.'),
+                ]),
+            ]),
+            li([
+                'Choose your species.',
+                ul([
+                    li('Your chosen species is written in the top left of the "Misc" tab in the text box labeled "Species".'),
+                    li('Your species determines your size. Your size is written on the left side of the "Misc" tab in the text box labeled "Size".'),
+                    li('Your species determines your automatic languages. Your languages are written on the left side of the "Misc" tab in the text box labeled "Languages known".'),
+                    li('Many species modify your base attributes. You can write those modifiers in the section of the Calcs tab with an "Attributes" header. They should be written in one of the boxes to the right of the "Points" boxes. You can fill in the name of your species below the attribute modifier to remind yourself later why that attribute modifier exists.'),
+                    li("""All species grant special abilities of some sort. Passive numeric abilities, like a halfling's bonus to Armor defense, are generally recorded by finding the appropriate calculation in the Calcs tab and adding a new modifier. Other abilities, like a dwarf's darkvision, are generally recorded by adding a new Ability on the Core tab to remind yourself that the ability exists."""),
+                ]),
+            ]),
+            li([
+                'Choose your class and archetypes.',
+                ul([
+                    li('Your chosen class is written in the top left of the "Misc" tab in the text box labeled "Class".'),
+                    li('Your chosen archetypes are written in the bottom left of the "Misc" tab in the section with an "Archetypes" header. You can note your rank in each archetype with the numeric input labeled "Rank".'),
+                    li('Your class determines your armor and weapon proficiencies. Those are written on the left side of the "Misc" tab in the text boxes labeled "Armor proficiencies" and "Weapon groups".'),
+                ]),
+            ]),
+            li([
+                'Fill in various complicated abilities from your species and archetypes.',
+                ul([
+                    li("""<b>Passive numeric abilities</b>, like a halfling's bonus to Armor defense, are best recorded by finding the appropriate calculation in the Calcs tab and adding a new modifier. Every numeric modifier has a text label underneath it for you to fill in. Giving the modifier an appropriate name can help you remember why that modifier exists."""),
+                    li("""<b>Situtational numeric abilities</b>, like a barbarian's rage, are best recorded as a new "Custom Modifier" in the Status page. That page offers a toggling checkbox to allow you to turn the ability's effects on and off, making it easy to start or stop using the ability without needing to track down all of the places that the ability affects."""),
+                    li("""<b>Choices</b> that have no direct gameplay effect, like the set of combat styles or mystic spheres that your character knows, are best recorded in the "Passive Abilities" section of the Misc tab. You could put them on the Core tab with your other non-numeric abilities, but you don't really need to see them very often, so they are better recorded on a page you are less likely to be looking at during gameplay."""),
+                    li("""<b>Non-numeric abilities</b>, like a dwarf's darkvision or a spell you can cast, are best recorded by adding the ability to the appropriate section on the Core tab. Each ability on the Core tab can be clicked as a button with a fancy output format, so you can safely record the entire text of the ability to remind yourself exactly what it does."""),
+                ]),
+            ]),
+        ]),
     ])
