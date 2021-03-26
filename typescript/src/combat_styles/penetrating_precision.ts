@@ -165,5 +165,27 @@ export const penetratingPrecision: CombatStyle = {
       rank: 6,
       type: "Instant",
     },
+
+    {
+      name: "Deathblow",
+
+      effect: `
+        Make a \\glossterm{strike} using a piercing weapon with a +2d bonus to damage.
+        Each target that has any \\glossterm{resistance} against the strike's damage takes no damage from the strike.
+      `,
+      rank: 3,
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Deathblow",
+
+      effect: `
+        Make a \\glossterm{strike} using a piercing weapon with a +3d bonus to damage.
+        Each target that has any \\glossterm{resistance} against the strike's damage takes half damage from the strike.
+      `,
+      rank: 6,
+      type: "Instant",
+    },
   ],
 };
