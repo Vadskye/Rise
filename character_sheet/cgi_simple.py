@@ -466,3 +466,13 @@ def underlabeled_checkbox(label_text, attributes=None, input_attributes=None):
 def label(attributes, text):
     attributes = attributes or dict()
     return html_tag("label", attributes, text)
+
+
+def ol(attributes=None, contents=None):
+    return html_tag("ol", attributes, contents)
+
+def ul(attributes=None, contents=None):
+    return html_tag("ul", attributes, contents)
+
+def li(attributes=None, contents=None):
+    return html_tag("li", attributes, contents)
