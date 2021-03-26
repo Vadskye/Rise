@@ -12,19 +12,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
-        Each creature that loses \\glossterm{hit points} from the strike becomes \\glossterm{vulnerable} to slashing damage as a \\glossterm{condition}.
-      `,
-      rank: 2,
-      type: "Duration",
-    },
-
-    {
-      name: "Greater Strip the Flesh",
-
-      effect: `
-        Make a \\glossterm{strike} using a slashing weapon.
-        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
-        Each creature that loses \\glossterm{hit points} from the strike becomes \\glossterm{vulnerable} to \\glossterm{physical damage} as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike becomes \\glossterm{vulnerable} to all damage as a \\glossterm{condition}.
       `,
       rank: 4,
       type: "Duration",
