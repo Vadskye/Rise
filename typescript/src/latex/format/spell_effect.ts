@@ -8,10 +8,12 @@ export function assertEndsWithPeriod(text: string | null | undefined): void {
 
 export function spellEffect(
   spell: Pick<SpellLike, "attack" | "castingTime" | "effect" | "functionsLike" | "rank" | "name">,
+  spellCategory: "spell" | "maneuver" | "ritual",
 ): string | null {
   try {
-    const spellCategory =
-      spell.castingTime && spell.castingTime !== "minor action" ? "ritual" : "spell";
+    if (spell.castingTime && spell.castingTime !== "minor action") {
+      spellCategory = "ritual";
+    }
 
     let fatiguePointsText = "";
     if (spellCategory === "ritual") {
