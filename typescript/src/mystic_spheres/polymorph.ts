@@ -30,12 +30,12 @@ export const polymorph: MysticSphere = {
       name: "Alter Appearance",
 
       functionsLike: {
+        abilityType: "ability",
         exceptThat: `
-        You alter your appearance in minor ways.
-        This functions like the \\textit{disguise creature}  ability with a +4 bonus, except that you cannot change the appearance of your equipment, species, creature type, or number of limbs (see \\pcref{Disguise Creature}).
-        This ability is commonly used to hide blemishes or to appear younger or older than one's true age.
+          that you gain a +4 bonus and you cannot change the appearance of your equipment, species, creature type, or number of limbs (see \\pcref{Disguise Creature}).
+          This ability is commonly used to hide blemishes or to appear younger or older than one's true age.
 
-        This ability lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
+          This ability lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
         `,
         name: "disguise creature",
       },
