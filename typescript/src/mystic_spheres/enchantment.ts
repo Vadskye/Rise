@@ -581,7 +581,7 @@ export const enchantment: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
-      type: "Attune (target)",
+      type: "Attune (self)",
     },
 
     {
