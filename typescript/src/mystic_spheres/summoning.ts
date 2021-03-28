@@ -33,8 +33,7 @@ export const summoning: MysticSphere = {
 
         \\begin{itemize}
           \\item Its \\glossterm{fatigue tolerance} is 0, and it cannot choose to take actions that would give it \\glossterm{fatigue points}.
-          \\item Its \\glossterm{hit points} are equal to half the base value for your level (see \\tref{Character Advancement}).
-          \\item Taking damage in excess of half its maximum hit points does not cause it to gain a \\glossterm{vital wound}.
+          \\item Its \\glossterm{hit points} are equal to the base value for your level (see \\tref{Character Advancement}).
           \\item It has no \\glossterm{resistances}.
           \\item Each of its \\glossterm{defenses} is equal to 4 \\add your level.
           \\item Its \\glossterm{accuracy} is equal to your level \\add half your base Perception \\add your \\glossterm{magic bonuses} to accuracy \\sub 2.
@@ -46,7 +45,7 @@ export const summoning: MysticSphere = {
         There are only two actions it can take.
         As a \\glossterm{move action}, it can move as you direct.
         As a standard action, it can make a melee \\glossterm{strike} against a creature within its \\glossterm{reach}.
-        If it hits, it deals physical damage equal to 1d6 plus half your \\glossterm{power}.
+        If it hits, it deals 1d6 physical damage.
         The subtypes of damage dealt by this attack depend on the creature's appearance, but are limited to bludgeoning, piercing, and slashing damage.
         Most animals bite or claw their foes, which deals bludgeoning and slashing damage.
 
