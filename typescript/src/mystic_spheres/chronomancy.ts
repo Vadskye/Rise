@@ -40,8 +40,9 @@ export const chronomancy: MysticSphere = {
       name: "Rapid Aging",
 
       effect: `
-        Choose any number of hours, up to 24 hours.
-        The target ages as if that much time had passed.
+        Choose one Large or smaller \\glossterm{unattended}, nonmagical object within \\medrange.
+        In addition, choose any number of hours, up to 24 hours.
+        The subject ages as if that much time had passed.
         When this spell ends, the object returns to its original state.
       `,
       focus: false,
