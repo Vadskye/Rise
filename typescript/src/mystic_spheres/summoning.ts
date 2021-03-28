@@ -64,11 +64,43 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature is more offensively inclined.
-          It gains a +1d bonus to damage with its attacks, but its \\glossterm{hit points} are halved and it takes a -1 penalty to \\glossterm{defenses}.
+          It gains a +1 \\glossterm{accuracy} bonus and a +2d bonus to damage with its attacks, but its \\glossterm{hit points} are halved and it takes a -1 penalty to all \\glossterm{defenses}.
         `,
         name: "summon monster",
       },
-      rank: 1,
+      rank: 2,
+      scaling: "damage",
+      tags: ["Manifestation"],
+      type: "Attune (self)",
+    },
+
+    {
+      name: "Greater Summon Offensive Monster",
+
+      functionsLike: {
+        exceptThat: `
+          the summoned creature is more offensively inclined.
+          It gains a +2 \\glossterm{accuracy} bonus and a +4d bonus to damage with its attacks, but its \\glossterm{hit points} are halved and it takes a -1 penalty to all \\glossterm{defenses}.
+        `,
+        name: "summon monster",
+      },
+      rank: 4,
+      scaling: "damage",
+      tags: ["Manifestation"],
+      type: "Attune (self)",
+    },
+
+    {
+      name: "Supreme Summon Offensive Monster",
+
+      functionsLike: {
+        exceptThat: `
+          the summoned creature is more offensively inclined.
+          It gains a +3 \\glossterm{accuracy} bonus and a +6d bonus to damage with its attacks, but its \\glossterm{hit points} are halved and it takes a -1 penalty to all \\glossterm{defenses}.
+        `,
+        name: "summon monster",
+      },
+      rank: 6,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Attune (self)",
@@ -79,12 +111,44 @@ export const summoning: MysticSphere = {
 
       functionsLike: {
         exceptThat: `
-        the summoned creature is more defensively inclined.
-        It gains a +1 bonus to defenses, but it takes a -2d penalty to damage with its attacks.
+          the summoned creature is more defensively inclined.
+          It gains a +1 bonus to all defenses.
         `,
         name: "summon monster",
       },
-      rank: 1,
+      rank: 2,
+      scaling: "damage",
+      tags: ["Manifestation"],
+      type: "Attune (self)",
+    },
+
+    {
+      name: "Greater Summon Defensive Monster",
+
+      functionsLike: {
+        exceptThat: `
+          the summoned creature is more defensively inclined.
+          It gains a +2 bonus to all defenses, and it gains a +2d bonus to damage with its attacks.
+        `,
+        name: "summon monster",
+      },
+      rank: 4,
+      scaling: "damage",
+      tags: ["Manifestation"],
+      type: "Attune (self)",
+    },
+
+    {
+      name: "Supreme Summon Defensive Monster",
+
+      functionsLike: {
+        exceptThat: `
+          the summoned creature is more defensively inclined.
+          It gains a +3 bonus to all defenses, and it gains a +4d bonus to damage with its attacks.
+        `,
+        name: "summon monster",
+      },
+      rank: 6,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Attune (self)",
@@ -182,7 +246,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
         the summoned creature appears to be a unicorn.
-        Its attacks deal piercing damage equal to 2d6 plus half your \\glossterm{power}, and you can command it to heal instead of attack.
+        Its attacks deal 2d6 piercing damage, and you can command it to heal instead of attack.
         If you do, during each \\glossterm{action phase} it causes one of your \\glossterm{allies} within \\shortrange of it to regain 2d10 \\glossterm{hit points}.
         You can tell it which creature to heal.
         If you do not instruct it to heal a specific creature, it will automatically heal the ally closest to it that has lost at least one hit point.
@@ -206,7 +270,7 @@ export const summoning: MysticSphere = {
         It is sized appropriately to be wielded by a creature of your size.
         It floats three feet off the ground, and has a 30 foot \\glossterm{fly speed} instead of a \\glossterm{land speed}, with good \\glossterm{maneuverability} and a maximum height of 15 feet (see \\pcref{Flying}).
         The creature's accuracy and damage are based on your chosen weapon, and it gains the effect of the weapon's normal tags (see \\pcref{Weapon Tags}).
-        It adds half your \\glossterm{power} to damage.
+        Its \\glossterm{power} is 0.
         The weapon is considered to be held in two hands if possible, which can increase the damage dealt by Versatile Grip weapons (see \\pcref{Weapon Tags}).
 
         You cannot control the summoned weapon's actions.
@@ -266,7 +330,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
         the summoned creature appears to be an earth elemental.
-        Its attacks deal 2d8 + half \\glossterm{power} bludgeoning damage.
+        Its attacks deal 2d8 bludgeoning damage.
         It has a \\glossterm{resistance} to \\glossterm{physical damage} equal to half its maximum \\glossterm{hit points}.
         `,
         name: "summon monster",
@@ -285,7 +349,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
         the summoned creature appears to be an water elemental.
-        Its attacks deal 1d8 + half \\glossterm{power} bludgeoning damage.
+        Its attacks deal 1d8 bludgeoning damage.
         It has a 30 foot \\glossterm{swim speed}, and it suffers no penalties for fighting underwater (see \\pcref{Underwater Combat}).
         However, it is \\glossterm{vulnerable} to electricity damage.
         `,
@@ -305,7 +369,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
         the summoned creature appears to be an air elemental.
-        Its attacks deal 2d6 + half \\glossterm{power} bludgeoning damage.
+        Its attacks deal 2d6 bludgeoning damage.
         It has a 30 foot \\glossterm{fly speed} with good \\glossterm{maneuverability}.
         `,
         name: "summon monster",
@@ -324,7 +388,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
         the summoned creature appears to be a fire elemental.
-        Its attacks deal 1d8 + half \\glossterm{power} fire damage.
+        Its attacks deal 1d8 fire damage.
         In addition, it is immune to fire damage.
         `,
         name: "summon monster",
@@ -343,7 +407,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
         the creature appears to be a Medium bear.
-        Its attacks deal 1d10 + half \\glossterm{power} bludgeoning and slashing damage.
+        Its attacks deal 1d10 bludgeoning and slashing damage.
         In addition, it suffers no penalty for attacking in a grapple.
         As a standard action, it can make a \\glossterm{grapple} attack against a creature within its \\glossterm{reach}.
         While grappling, the manifested creature can either make a strike or attempt to escape the grapple.
@@ -426,7 +490,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
         the summoned creature appears to be a snake.
-        Its attacks deal bludgeoning and piercing damage equal to 2d6 plus half your \\glossterm{power}.
+        Its attacks deal 2d6 bludgeoning and piercing damage.
         Whenever its strike causes a living creature to lose \\glossterm{hit points}, the damaged creature becomes \\glossterm{poisoned} with asp venom (see \\tref{Typical Poisons}).
         It immediately is \\glossterm{sickened} while it is poisoned.
         The poison's third stage causes the subject to become \\glossterm{nauseated} as long as it is poisoned.
