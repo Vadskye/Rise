@@ -79,13 +79,13 @@ def create_page(destination):
                             ),
                             calc_accuracy(),
                             calc_base_speed(),
-                            calc_carrying_capacity(),
                             calc_encumbrance(),
                             calc_focus_penalty(),
                             calc_initiative(),
                             calc_magical_power(),
                             calc_mundane_power(),
                             calc_vital_rolls(),
+                            calc_weight_limits(),
                             calc_unknown_statistic(),
                             flex_wrapper(div({"class": "section-header"}, "Resources")),
                             calc_attunement_points(),
@@ -319,45 +319,23 @@ def abilities(name_prefix):
     )
 
 
-def calc_carrying_capacity():
+def calc_weight_limits():
     return flex_row(
-        {"class": "carrying-capacity"},
+        {"class": "weight-limits"},
         [
-            div({"class": "calc-header"}, "Carrying Capacity"),
-            underlabel(
-                "Light",
-                number_input(
-                    {
-                        "name": "carrying_capacity_light_display",
-                    }
-                ),
+            div({"class": "calc-header"}, "Weight Limits"),
+            labeled_text_input(
+                "Carrying",
+                input_attributes={
+                    "name": "carrying_capacity_display",
+                }
             ),
             equation_space,
-            underlabel(
-                "Max",
-                number_input(
-                    {
-                        "name": "carrying_capacity_max_display",
-                    }
-                ),
-            ),
-            equation_space,
-            underlabel(
-                "Over",
-                number_input(
-                    {
-                        "name": "carrying_capacity_over_display",
-                    }
-                ),
-            ),
-            equation_space,
-            underlabel(
-                "Push",
-                number_input(
-                    {
-                        "name": "carrying_capacity_push_display",
-                    }
-                ),
+            labeled_text_input(
+                "Push/Drag",
+                input_attributes={
+                    "name": "push_drag_display",
+                }
             ),
         ],
     )
