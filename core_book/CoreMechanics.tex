@@ -928,7 +928,6 @@ It defines how attributes work and explains how to make attacks in combat.
             \begin{itemize}
                 \item You gain a bonus (or penalty) to \glossterm{skill points} equal to twice your base Intelligence (see \pcref{Skill Points}).
                 \item You gain a bonus (or penalty) to \glossterm{insight points} equal to your base Intelligence (see \pcref{Insight Points}).
-                \item You gain bonus languages equal to your base Intelligence (see \pcref{Languages}).
                 \item You apply your base Intelligence as a bonus or penalty to Intelligence-based \glossterm{skills}: Craft, Deduction, Disguise, Knowledge, Linguistics, and Medicine (see \pcref{Skills}).
                 \item If your base Intelligence is at least 3, you are automatically \glossterm{trained} with your Intelligence-based \glossterm{class skills} (see \pcref{Class Skills}.
             \end{itemize}
@@ -1046,7 +1045,7 @@ It defines how attributes work and explains how to make attacks in combat.
         You can use \glossterm{attunement points} to \glossterm{attune} to effects such as spells or items (see \pcref{Attunement}).
         Abilities that require attunement have the \glossterm{Attune} tag (see \pcref{Ability Tags}).
 
-        A 1st level character typically has 1 \glossterm{attunement point}.
+        Your \glossterm{class} gives you a certain number of attunement points.
         At higher levels, you gain additional \glossterm{attunement points} (see \pcref{Character Advancement}).
         A small number of abilities can also grant additional \glossterm{attunement points}.
 
@@ -1061,11 +1060,13 @@ It defines how attributes work and explains how to make attacks in combat.
         \subsubsection{Fatigue Points}\label{Fatigue Points}
             Your level of fatigue is measured with \glossterm{fatigue points}.
             A number of abilities and attacks can cause you to gain fatigue points.
+            The most common abilities that cause you to gain fatigue points are the \textit{desperate exertion}, \textit{recover}, and \textit{sprint} abilities.
+            All of those abilities are described in \pcref{Universal Abilities}.
 
             \subsubsection{Fatigue Tolerance}\label{Fatigue Tolerance}
-                You can gain a number of \glossterm{fatigue points} equal to 2 \add your base Constitution \add your base Willpower without suffering any consequences (minimum 0).
+                You can gain a number of \glossterm{fatigue points} equal to your base Constitution \add your base Willpower without suffering any consequences (minimum 0).
                 This value is called your \glossterm{fatigue tolerance}.
-                Some abilities can modify your fatigue tolerance.
+                Your \glossterm{class} gives you a bonus to your fatigue tolerance, and some abilities can also modify it.
 
             \subsubsection{Fatigue Penalty}\label{Fatigue Penalty}
                 You take a penalty to \glossterm{accuracy} and \glossterm{checks} equal to the number of fatigue points you have \sub your \glossterm{fatigue tolerance}.
@@ -1109,8 +1110,8 @@ It defines how attributes work and explains how to make attacks in combat.
             Similarly, if you were at your maximum hit points and both regained and lost two hit points simultaneously, you would still be at your maximum hit points.
 
     \subsection{Insight Points}\label{Insight Points}
-        You can spend \glossterm{insight points} to learn new special abilities.
-        You normally have a number of \glossterm{insight points} equal to 2 \add your base Intelligence.
+        You can spend \glossterm{insight points} to gain new special abilities or to learn new proficiencies.
+        Your \glossterm{class} gives you a certain number of insight points, and you gain a bonus (or penalty) to that number of insight points equal to your base Intelligence.
         Some abilities can also grant insight points.
 
         Any character can spend insight points in any of the following ways.
@@ -1120,12 +1121,13 @@ It defines how attributes work and explains how to make attacks in combat.
             \item You can spend an \glossterm{insight point} to gain proficiency in an additional \glossterm{usage class} of armor (light, medium, or heavy).
             \item You can spend an \glossterm{insight point} to gain proficiency in an additional \glossterm{weapon group}.
             \item You can spend two \glossterm{insight points} to gain proficiency with \glossterm{exotic weapons} from a single \glossterm{weapon group} you are already proficient with.
+            \item You can spend an \glossterm{insight point} learn two \glossterm{common languages} or one \glossterm{rare language} (see \pcref{Communication and Languages}).
         \end{itemize}
         In addition, every class has at least one way to spend \glossterm{insight points} to learn additional abilities.
 
     \subsection{Skill Points}\label{Skill Points}
         You can spend \glossterm{skill points} to gain training in skills (see \pcref{Skills}).
-        You normally have a number of \glossterm{skill points} equal to 6 \add twice your base Intelligence.
+        Your \glossterm{class} gives you a certain number of skill points, and you gain a bonus (or penalty) to that number of skill points equal to twice your base Intelligence.
         You can spend \glossterm{insight points} to gain skill points at a rate of two skill points per insight point (see \pcref{Insight Points}).
         In addition, some abilities can grant additional skill points.
 
@@ -1672,7 +1674,7 @@ It defines how attributes work and explains how to make attacks in combat.
         \parhead{Recover} You can use the \textit{recover} ability as a standard action.
         As long as you are conscious, no effect can prevent you from using this ability, even effects that prohibit using any other abilities.
         \begin{freeability}{\labeltext{Recover}}
-            When you use this ability, you gain a \glossterm{fatigue point} (see \pcref{Fatigue}).
+            When you use this ability, you gain two \glossterm{fatigue points} (see \pcref{Fatigue}).
 
             You regain hit points equal to your maximum \glossterm{hit points}.
             In addition, you remove all \glossterm{conditions} affecting you.
@@ -2163,23 +2165,23 @@ It defines how attributes work and explains how to make attacks in combat.
         \lcaption{Character Advancement}
         \begin{dtabularx}{\columnwidth}{l >{\lcol}X l l >{\lcol}X l l}
             \tb{Level} & \tb{Max Rank}\fn{1} & \tb{HP} & \tb{Resistances}\fn{2} & \tb{Legacy Item}\fn{3} & \tb{AP}\fn{4} & \tb{XP} \tableheaderrule
-            1st        & 1                   & 11      & 2                      & \tdash                 & 1             & 0      \\
-            2nd        & \tdash              & 12      & 3                      & \tdash                 & 2             & 20     \\
-            3rd        & \tdash              & 13      & 3                      & 1                      & 3             & 50     \\
-            4th        & 2                   & 15      & 3                      & \tdash                 & 4             & 90     \\
-            5th        & \tdash              & 17      & 4                      & \tdash                 & 5             & 150    \\
+            1st        & 1                   & 11      & 2                      & \tdash                 & (Class)             & 0      \\
+            2nd        & \tdash              & 12      & 3                      & \tdash                 & \plus1             & 20     \\
+            3rd        & \tdash              & 13      & 3                      & 1                      & \plus1             & 50     \\
+            4th        & 2                   & 15      & 3                      & \tdash                 & \plus1             & 90     \\
+            5th        & \tdash              & 17      & 4                      & \tdash                 & \plus1             & 150    \\
             6th        & \tdash              & 19      & 4                      & \tdash                 & \tdash        & 230    \\
             7th        & 3                   & 22      & 5                      & \tdash                 & \tdash        & 350    \\
             8th        & \tdash              & 25      & 6                      & \tdash                 & \tdash        & 510    \\
             9th        & \tdash              & 28      & 7                      & 2                      & \tdash        & 750    \\
             10th       & 4                   & 31      & 8                      & \tdash                 & \tdash        & 1,050  \\
-            11th       & \tdash              & 35      & 9                      & \tdash                 & 6             & 1,550  \\
+            11th       & \tdash              & 35      & 9                      & \tdash                 & \plus1             & 1,550  \\
             12th       & \tdash              & 39      & 10                     & \tdash                 & \tdash        & 2,200  \\
             13th       & 5                   & 44      & 11                     & \tdash                 & \tdash        & 3,150  \\
             14th       & \tdash              & 50      & 12                     & \tdash                 & \tdash        & 4,450  \\
             15th       & \tdash              & 56      & 14                     & 3                      & \tdash        & 6,350  \\
             16th       & 6                   & 63      & 15                     & \tdash                 & \tdash        & 8,900  \\
-            17th       & \tdash              & 70      & 17                     & \tdash                 & 7             & 13,000 \\
+            17th       & \tdash              & 70      & 17                     & \tdash                 & \plus1             & 13,000 \\
             18th       & \tdash              & 78      & 19                     & \tdash                 & \tdash        & 18,000 \\
             19th       & 7                   & 88      & 22                     & \tdash                 & \tdash        & 25,500 \\
             20th       & \tdash              & 100     & 25                     & \tdash                 & \tdash        & 36,000 \\
