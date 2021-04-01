@@ -134,12 +134,27 @@ export const electromancy: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
+        hit: `Each subject takes 2d8 + half \\glossterm{power} electricity damage.`,
+        targeting: `
+          Make an attack vs. Reflex against all \\glossterm{enemies} in a \\largearea radius from you.
+        `,
+      },
+      rank: 4,
+      scaling: "damage",
+      type: "Instant",
+    },
+
+    {
+      name: "Supreme Lightning Storm",
+
+      attack: {
+        glance: `Half damage.`,
         hit: `Each subject takes 2d10 + half \\glossterm{power} electricity damage.`,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} in a \\hugearea radius from you.
         `,
       },
-      rank: 5,
+      rank: 6,
       scaling: "damage",
       type: "Instant",
     },
