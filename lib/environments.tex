@@ -113,6 +113,37 @@
     innerbottommargin=0.25em,
 ]{freeability}
 
+\DeclareDocumentEnvironment{durationability}{o m o}
+{
+    \begin{thesamepage}
+    \RaggedRight
+    \lowercase{\hypertarget{ability:#2}{}}
+    \hypertarget{ability:#2}{}
+    \spelltwocol{
+        {\normalsize \textbf{#2}}
+        \IfValueTF{#1}{~--~#1}{}
+    }{
+        \IfValueTF{#3}{#3}{}
+    }
+}
+{
+    \end{thesamepage}
+}
+\surroundwithmdframed[
+    backgroundcolor=cosmiclatte,
+    leftline=true,
+    topline=true,
+    rightline=true,
+    bottomline=true,
+    roundcorner=4pt,
+    skipabove=0.25em,
+    skipbelow=0.5em,
+    innerleftmargin=0.25em,
+    innerrightmargin=0.5em,
+    innertopmargin=-0.1em,  % using thesamepage gives it a top margin
+    innerbottommargin=0.25em,
+]{durationability}
+
 \DeclareDocumentEnvironment{attuneability}{o m o}
 {
     \begin{thesamepage}
