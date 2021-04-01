@@ -3102,16 +3102,17 @@ This choice determines a great deal about your character's abilities.
         However, targets do not stop being affected by your performance simply by travelling beyond the initial range of the bardic performance ability.
         Using a bardic performance ability with an immediate effect does not interfere with your ability to sustain other bardic performance abilities.
         {
-            \begin{freeability}{Aria of Alacrity}[\glossterm{Auditory}, \glossterm{Sustain} (minor)]
-                \targets{Yourself and all \glossterm{allies} within a \arealarge radius from you}
-                For the duration of your performance, each target gains a \plus5 foot bonus to its \glossterm{base speed}.
-                You can use this ability as a \glossterm{minor action}.
+            \begin{durationability}{Aria of Alacrity}
+                \spelltwocol{\glossterm{Sustain} (minor)}{\glossterm{Auditory}}
+                \par \noindent Usage time: One \glossterm{minor action}.
+                \rankline
+                For the duration of your performance, you and all \glossterm{allies} within a \arealarge radius from you each gain a \plus5 foot bonus to their \glossterm{base speed}.
 
                 \rankline
                 \rank{3} The speed bonus increases to \plus10 feet.
                 \rank{5} The speed bonus increases to \plus15 feet.
                 \rank{7} The speed bonus increases to \plus20 feet.
-            \end{freeability}
+            \end{durationability}
 
             % Bardic performance power guidelines:
             % These generally start from the same rank 1 baseline effect as spells.
@@ -3122,192 +3123,259 @@ This choice determines a great deal about your character's abilities.
             %
             % Bardsong debuffs are interesting, since they can't be removed like conditions, but also can't be stacked.
             % For now, they're just ranked in the same way as conditions.
-            \begin{freeability}{Ballad of Belligerence}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
-                \target{All \glossterm{enemies} in a \areamed radius from you}
-                Make an attack vs. Mental against the target.
-                \hit For the duration of your performance, each target is unable to take any \glossterm{standard actions} that do not cause it to make an attack.
-                For example, a target could make a \glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
+            \begin{durationability}{Ballad of Belligerence}
+                \spelltwocol{\glossterm{Sustain} (minor)}{\glossterm{Auditory}, \glossterm{Emotion}}
+                \rankline
+                Make an attack vs. Mental against all \glossterm{enemies} in a \areamed radius from you.
+                \hit For the duration of your performance, each subject is unable to take any \glossterm{standard actions} that do not cause it to make an attack.
+                For example, a subject could make a \glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
 
                 \rankline
-                You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
-            \end{freeability}
+                You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
+            \end{durationability}
 
-            \begin{freeability}{Boastful Bravura}[\glossterm{Auditory}]
-                \targets{\glossterm{Enemies} within a \arealarge radius from you}
-                During the next round, you gain a \plus4 bonus to \glossterm{accuracy} with \textit{bardic performance} abilities against each target.
+            \begin{durationability}{Boastful Bravura}
+                \spelltwocol{Duration}{\glossterm{Auditory}}
+                \rankline
+                This ability affects all \glossterm{enemies} within a \arealarge radius from you.
+                During the next round, you gain a \plus4 bonus to \glossterm{accuracy} with \textit{bardic performance} abilities against each subject.
 
                 \rankline
                 \rank{3} The bonus increases to \plus6.
                 \rank{5} The bonus increases to \plus8.
                 \rank{7} The bonus increases to \plus10.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Cacaphony}[\glossterm{Auditory}]
-                \targets{\glossterm{Enemies} within a \areasmall radius from you}
-                Make an attack vs. Fortitude against each target.
-                \hit Each target takes sonic damage equal to 1d6 plus half your \glossterm{power}.
+            \begin{instantability}{Cacaphony}
+                \spelltwocol{Instant}{\glossterm{Auditory}}
+                \rankline
+                Make an attack vs. Fortitude against all \glossterm{enemies} in a \tinyarea radius from you.
+                \hit Each subject takes 1d6 \add half \glossterm{power} sonic damage.
 
                 \rankline
-                The damage increases by \plus1d for each rank beyond 1.
-            \end{freeability}
+                \rank{2} The damage increases to 1d8, and the area increases to a \smallarea radius.
+                \rank{3} The damage increases to 1d10, and the area increases to a \medarea radius.
+                    In addition, if you miss by 2 or less, each subject takes half damage.
+                    This is called a \glossterm{glancing blow}.
+                \rank{4} The damage increases to 2d6.
+                \rank{5} The damage increases to 2d8, and the area increases to a \largearea radius.
+                \rank{6} The damage increases to 2d10.
+                \rank{7} The damage increases to 4d6, and the area increases to a \hugearea radius.
+            \end{instantability}
 
-            \begin{freeability}{Cadenza of Courage}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
-                \target{Yourself or one \glossterm{ally} within \rngmed range}
-                You can use this ability as a \glossterm{minor action}.
-
-                For the duration of your performance, the target gains a \plus1 bonus to \glossterm{accuracy}.
+            \begin{durationability}{Cadenza of Courage}
+                \spelltwocol{Sustain (minor)}{\glossterm{Auditory}, \glossterm{Emotion}}
+                \par \noindent Usage time: One \glossterm{minor action}.
+                \rankline
+                Choose yourself or one \glossterm{ally} within \medrange.
+                For the duration of your performance, the subject gains a \plus1 bonus to \glossterm{accuracy}.
 
                 \rankline
-                \rank{3} The target also gains a \plus2 bonus to Mental defense.
+                \rank{3} The subject also gains a \plus2 bonus to Mental defense.
                 \rank{5} The accuracy bonus increases to \plus2.
                 \rank{7} The bonus to Mental defense increases to \plus4.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Cantata of Caution}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
-                \target{Yourself or one \glossterm{ally} within \rngmed range}
-                You can use this ability as a \glossterm{minor action}.
-
-                For the duration of your performance, the target gains a \plus1 bonus to Armor and Reflex defenses.
+            \begin{durationability}{Cantata of Caution}
+                \spelltwocol{Sustain (minor)}{\glossterm{Auditory}, \glossterm{Emotion}}
+                \par \noindent Usage time: One \glossterm{minor action}.
+                \rankline
+                Choose yourself or one \glossterm{ally} within \medrange.
+                For the duration of your performance, the subject gains a \plus1 bonus to Armor and Reflex defenses.
 
                 \rankline
                 \rank{3} The bonus applies to all defenses.
                 \rank{5} The bonus to Armor and Reflex defenses increases to \plus2.
                 \rank{7} The bonus to Fortitude and Mental defenses also increases to \plus2.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Cleansing Counterpoint}[\glossterm{Auditory}, \glossterm{Sustain} (minor)]
-                \target{Yourself or one \glossterm{ally} within \rngmed range}
-                The target chooses one of its \glossterm{conditions}.
+            \begin{durationability}{Cleansing Counterpoint}
+                \spelltwocol{Sustain (minor)}{\glossterm{Auditory}}
+                \rankline
+                Choose yourself or one \glossterm{ally} within \rngmed range.
+                The subject chooses one of its \glossterm{conditions}.
                 It cannot choose a condition applied during the current round.
-                For the duration of your performance, the target ignores all effects of that condition.
+                For the duration of your performance, the subject ignores all effects of that condition.
 
                 \rankline
                 \rank{3} This ability loses the \glossterm{Sustain} (minor) tag.
                     Instead, the chosen condition is removed entirely.
-                \rank{5} You can target an additional \glossterm{ally} within range.
-                \rank{7} You can target an additional \glossterm{ally} within range.
-            \end{freeability}
+                \rank{5} You can subject an additional \glossterm{ally} within range.
+                \rank{7} Each subject can remove two conditions instead of one.
+            \end{durationability}
 
-            \begin{freeability}{Dazzling Discordance}[\glossterm{Auditory}]
-                \targets{\glossterm{Enemies} within a \areamed radius from you}
-                Make an attack vs. Mental against each target.
-                \hit Each target is \glossterm{dazzled} until the end of the next round.
-                \crit Each target is \glossterm{dazzled} as a \glossterm{condition}.
+            \begin{durationability}{Dazzling Discordance}
+                \spelltwocol{Duration}{\glossterm{Auditory}}
+                \rankline
+                Make an attack vs. Mental against all \glossterm{enemies} within a \areamed radius from you.
+                \hit Each subject is \glossterm{dazzled} until the end of the next round.
+                \crit Each subject is \glossterm{dazzled} as a \glossterm{condition}.
 
                 \rankline
-                The damage increases by \plus1d for each rank beyond 1.
-            \end{freeability}
+                \rank{2} You gain a \plus1 \glossterm{accuracy} bonus with the attack, and the area increases to a \largearea radius.
+                \rank{3} The accuracy bonus increases to \plus2.
+                \rank{4} The accuracy bonus increases to \plus3, and the area increases to a \hugearea radius.
+                \rank{5} The accuracy bonus increases to \plus4.
+                \rank{6} The accuracy bonus increases to \plus5, and the area increases to a \gargarea radius.
+                \rank{7} The accuracy bonus increases to \plus6.
+            \end{durationability}
 
-            \begin{freeability}{Dirge of Doom}[\glossterm{Auditory}, \glossterm{Emotion}]
-                \target{One creature within \rngmed range}
-                Make an attack vs. Mental against the target.
-                \hit The target takes sonic damage equal to 1d10 plus your \glossterm{power}.
+            \begin{instantability}{Dirge of Doom}
+                \spelltwocol{Instant}{\glossterm{Auditory}}
+                \rankline
+                Make an attack vs. Mental against anything within \medrange.
+                \hit The subject takes sonic damage equal to 1d10 plus your \glossterm{power}.
 
                 \rankline
-                The damage increases by \plus1d for each rank beyond 1.
-            \end{freeability}
+                \rank{2} The damage increases to 2d6.
+                \rank{3} The damage increases to 2d10.
+                    In addition, if you miss by 2 or less, the subject takes half damage.
+                    This is called a \glossterm{glancing blow}.
+                \rank{4} The damage increases to 4d6.
+                \rank{5} The damage increases to 4d10.
+                \rank{6} The damage increases to 5d10.
+                \rank{7} The damage increases to 7d10.
+            \end{instantability}
 
-            \begin{freeability}{Dizzying Ditty}[\glossterm{Auditory}, \glossterm{Compulsion}, \glossterm{Sustain} (minor)]
-                \target{One creature within \rngshort range}
-                Make an attack vs. Mental against the target.
-                \hit For the duration of your performance, the target is \glossterm{dazed}.
-                \crit For the duration of your performance, the target is \glossterm{stunned}.
+            \begin{durationability}{Dizzying Ditty}
+                \spelltwocol{\glossterm{Sustain} (minor)}{\glossterm{Auditory}, \glossterm{Compulsion}}
+                \rankline
+                Make an attack vs. Mental against one creature within \shortrange.
+                \hit For the duration of your performance, the subject is \glossterm{dazed}.
+                \crit For the duration of your performance, the subject is \glossterm{stunned}.
 
                 \rankline
-                You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
-            \end{freeability}
+                You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
+            \end{durationability}
 
-            \begin{freeability}{Frightening Fugue}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
-                \target{One creature within \rngmed range}
-                Make an attack vs. Mental against the target.
-                \hit The target takes 1d6 sonic damage.
+            \begin{durationability}{Frightening Fugue}
+                \spelltwocol{\glossterm{Sustain} (minor)}{\glossterm{Auditory}, \glossterm{Emotion}}
+                \rankline
+                Make an attack vs. Mental against one creature within \medrange.
+                \hit The subject takes 1d6 sonic damage.
                 If it loses \glossterm{hit points} from this damage, it is \glossterm{frightened} by you for the duration of your performance.
-                Unlike normal, the target continues to suffer the penalties of being frightened while it is beyond \rngmed range from you as long as it is still affected by your performance.
+                Unlike normal, the subject continues to suffer the penalties of being frightened while it is beyond \rngmed range from you as long as it is still affected by your performance.
 
                 \rankline
-                The damage increases by \plus1d for each rank beyond 1.
-            \end{freeability}
+                \rank{2} The damage increases to 1d8.
+                \rank{3} The damage increases to 2d6.
+                    In addition, if you miss by 2 or less, the subject takes half damage.
+                    This is called a \glossterm{glancing blow}.
+                \rank{4} The damage increases to 2d8.
+                \rank{5} The damage increases to 4d6.
+                \rank{6} The damage increases to 4d8.
+                \rank{7} The damage increases to 5d10.
+            \end{durationability}
 
-            \begin{freeability}{Hypnotic Hymn}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
-                \target{One creature within \rngmed range}
-                You take a \minus5 penalty to \glossterm{accuracy} with this attack against creatures who are engaged in combat during the current phase.
-                \hit For the duration of your performance, the target is \glossterm{charmed} by you.
+            \begin{durationability}{Hypnotic Hymn}
+                \spelltwocol{\glossterm{Sustain} (minor)}{\glossterm{Auditory}, \glossterm{Emotion}}
+                \rankline
+                Make an attack vs. Mental against one creature within \medrange.
+                You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who are engaged in combat during the current phase.
+                \hit For the duration of your performance, the subject is \glossterm{charmed} by you.
                 Any act by you or by creatures that appear to be your allies that threatens or harms the charmed person breaks the effect.
-                Harming the target is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
-                An observant target may interpret overt threats to its allies as a threat to itself.
-                This ability does not have the \glossterm{Subtle} tag, so an observant target may notice it is being influenced.
+                Harming the subject is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
+                An observant subject may interpret overt threats to its allies as a threat to itself.
+                This ability does not have the \glossterm{Subtle} tag, so an observant subject may notice it is being influenced.
 
                 \rankline
-                You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
-            \end{freeability}
+                You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
+            \end{durationability}
 
-            \begin{freeability}{Inspiring Intonation}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
-                \target{Yourself or one \glossterm{ally} within \rngmed range}
-                You can use this ability as a \glossterm{minor action}.
-
-                For the duration of your performance, the target gains a \plus2 bonus to \glossterm{checks}.
+            \begin{durationability}{Inspiring Intonation}
+                \spelltwocol{\glossterm{Sustain} (minor)}{\glossterm{Auditory}, \glossterm{Emotion}}
+                \par \noindent Usage time: One \glossterm{minor action}.
+                \rankline
+                Choose yourself or one \glossterm{ally} within \rngmed range.
+                For the duration of your performance, the subject gains a \plus2 bonus to \glossterm{checks}.
 
                 \rankline
                 \rank{3} The bonus increases to \plus3.
                 \rank{5} The bonus increases to \plus4.
                 \rank{7} The bonus increases to \plus5.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Mesmerizing Melody}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
-                \targets{All creatures in a \arealarge radius from you}
-                Make an attack vs. Mental against each target.
-                You take a \minus5 penalty to \glossterm{accuracy} with this attack against creatures who are engaged in combat during the current phase.
-                \hit For the duration of your performance, each target is \fascinated by you.
-                Any act by you or your apparent allies that harms a target or that causes it to feel that it is in danger breaks the effect for that creature.
-                Harming a target is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
-                An observant target may interpret overt threats to its allies as a threat to itself.
+            \begin{durationability}{Mesmerizing Melody}
+                \spelltwocol{\glossterm{Sustain} (minor)}{\glossterm{Auditory}, \glossterm{Emotion}}
+                \rankline
+                Make an attack vs. Mental against all creatures in a \largearea radius from you.
+                You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who are engaged in combat during the current phase.
+                \hit For the duration of your performance, each subject is \fascinated by you.
+                Any act by you or your apparent allies that harms a subject or that causes it to feel that it is in danger breaks the effect for that creature.
+                Harming a subject is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
+                An observant subject may interpret overt threats to its allies as a threat to itself.
 
                 \rankline
-                You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
-            \end{freeability}
+                You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
+            \end{durationability}
 
-            \begin{freeability}{Palliative Poem}[\glossterm{Auditory}, \glossterm{Emotion}]
-                \target{One living \glossterm{ally} within \rngshort range}
-                The target regains \glossterm{hit points} equal to 1d6 plus half your \glossterm{power}.
+            \begin{instantability}{Palliative Poem}
+                \spelltwocol{\glossterm{Sustain} (minor)}{\glossterm{Auditory}}
+                \rankline
+                Choose one living \glossterm{ally} within \shortrange.
+                The subject regains \glossterm{hit points} equal to 1d6 plus half your \glossterm{power}.
 
                 \rankline
-                The healing increases by \plus1d for each rank beyond 1.
-            \end{freeability}
+                \rank{2} The healing increases to 1d8.
+                \rank{3} The healing increases to 2d6.
+                \rank{4} The healing increases to 2d8.
+                \rank{5} The healing increases to 4d6.
+                \rank{6} The healing increases to 4d8.
+                \rank{7} The healing increases to 5d10.
+            \end{instantability}
 
-            \begin{freeability}{Partita of Provocation}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
-                \target{\glossterm{Enemies} within a \arealarge radius from you}
-                Make an attack vs. Mental against each target.
-                \hit For the duration of your performance, each target takes a \minus2 penalty to \glossterm{accuracy} against creatures other than you.
-                \crit As above, except that the penalty increases to \minus4.
+            \begin{freeability}{Partita of Provocation}
+                \spelltwocol{\glossterm{Sustain} (minor)}{\glossterm{Auditory}, \glossterm{Emotion}}
+                \rankline
+                Make an attack vs. Mental against all \glossterm{enemies} within a \largearea radius from you.
+                \hit For the duration of your performance, each subject takes a \minus2 penalty to \glossterm{accuracy} against creatures other than you.
+                \crit The penalty increases to \minus4.
 
                 \rankline
-                You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
+                You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
             \end{freeability}
 
-            \begin{freeability}{Serenade of Serenity}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
-                \targets{Yourself and all \glossterm{allies} within a \arealarge radius from you}
-                You can use this ability as a \glossterm{minor action}.
-
-                For the duration of your performance, each target gains a \plus4 bonus to defenses against hostile \glossterm{Compulsion} and \glossterm{Emotion} effects.
+            \begin{freeability}{Serenade of Serenity}
+                \spelltwocol{\glossterm{Sustain} (minor)}{\glossterm{Auditory}, \glossterm{Emotion}}
+                \par \noindent Usage time: One \glossterm{minor action}.
+                \rankline
+                For the duration of your performance, you and all \glossterm{allies} within a \largearea radius from you gain a \plus4 bonus to defenses against hostile \glossterm{Compulsion} and \glossterm{Emotion} effects.
 
                 \rankline
-                \rank{3} At the end of each round, each target removes all \glossterm{conditions} caused by Compulsion and Emotion effects that were not applied during that round.
+                \rank{3} At the end of each round, each subject removes all \glossterm{conditions} caused by Compulsion and Emotion effects that were not applied during that round.
                 \rank{5} The area increases to a \areahuge radius.
-                \rank{7} Each target is immune to hostile Compulsion and Emotion effects.
+                \rank{7} Each subject is immune to hostile Compulsion and Emotion effects.
             \end{freeability}
 
-            \begin{freeability}{Vigorous Verse}[\glossterm{Auditory}, \glossterm{Emotion}, \glossterm{Sustain} (minor)]
-                \target{Yourself or one \glossterm{ally} within \rngmed range}
-                You can use this ability as a \glossterm{minor action}.
-
-                For the duration of your performance, the target increases its current \glossterm{hit points} by 4.
-                This can allow its current hit points to exceed its normal maximum hit points.
-                When this effect ends, the target loses hit points equal to the hit points it gained this way.
+            \begin{durationability}{Sickening Staccato}
+                \spelltwocol{Duration}{\glossterm{Auditory}}
+                \rankline
+                Make an attack vs. Fortitude against all \glossterm{enemies} within a \areamed radius from you.
+                \hit Each subject is \glossterm{sickened} until the end of the next round.
+                \crit Each subject is \glossterm{sickened} as a \glossterm{condition}.
 
                 \rankline
-                \rank{3} The number of hit points increases to 8.
-                \rank{5} The number of hit points increases to 16.
-                \rank{7} The number of hit points increases to 32.
+                \rank{2} You gain a \plus1 \glossterm{accuracy} bonus with the attack, and the area increases to a \largearea radius.
+                \rank{3} The accuracy bonus increases to \plus2.
+                \rank{4} The accuracy bonus increases to \plus3, and the area increases to a \hugearea radius.
+                \rank{5} The accuracy bonus increases to \plus4.
+                \rank{6} The accuracy bonus increases to \plus5, and the area increases to a \gargarea radius.
+                \rank{7} The accuracy bonus increases to \plus6.
+            \end{durationability}
+
+            \begin{freeability}{Vigorous Verse}
+                \spelltwocol{Duration}{\glossterm{Auditory}}
+                \par \noindent Usage time: One \glossterm{minor action}.
+                \rankline
+                Choose yourself or one \glossterm{ally} within \rngmed range.
+                For the duration of your performance, the subject gains a \plus4 bonus to its maximum \glossterm{hit points}.
+                In addition, it immediately gains that many hit points.
+                When this effect ends, the subject loses hit points equal to the hit points it gained this way.
+
+                \rankline
+                \rank{3} The bonus increases to \plus8.
+                \rank{5} The bonus increases to \plus16.
+                \rank{7} The bonus increases to \plus32.
             \end{freeability}
         }
 
@@ -3318,9 +3386,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rog}[3]{Loremaster} You gain a \plus2 bonus to all Knowledge skills.
 
-        \cf{Rog}[4]{Virtuoso} The range and area of all of your \textit{bardic performance} abilities doubles.
-        You gain a bonus to \glossterm{power} with your \textit{bardic performance} abilities equal to your rank in this archetype.
-        In addition, once per round you can \glossterm{sustain} two bardic performances as a single \glossterm{minor action}.
+        \cf{Rog}[4]{Virtuoso} Once per round, you can \glossterm{sustain} two bardic performances as a single \glossterm{minor action}.
 
         \cf{Rog}[5]{Greater Combat Inspiration} The bonus from your \textit{combat inspiration} ability increases to \plus2.
 
@@ -3328,9 +3394,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rog}[6]{Greater Loremaster} The Knowledge skill bonus from your \textit{loremaster} ability increases to \plus4.
 
-        \cf{Rog}[7]{Greater Virtuoso} You learn an additional bardic performance.
-        The power bonus from your \textit{virtuoso} ability increases to twice your rank in this archetype.
-        In addition, the number of bardic performances you can sustain with your \textit{virtuoso} ability increases to three.
+        \cf{Rog}[7]{Greater Virtuoso} The number of bardic performances you can sustain with your \textit{virtuoso} ability increases to three.
 
     \newpage
     \subsection{Combat Trickster}
