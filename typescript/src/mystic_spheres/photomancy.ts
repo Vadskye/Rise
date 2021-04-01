@@ -103,6 +103,7 @@ export const photomancy: MysticSphere = {
       name: "Greater Prismatic Spray",
 
       functionsLike: {
+        // note: technically this should be largearea + 1 level...
         exceptThat: `
           the area increases to a \\hugearea cone from you.
         `,
