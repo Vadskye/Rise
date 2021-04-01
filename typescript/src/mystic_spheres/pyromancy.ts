@@ -393,12 +393,12 @@ export const pyromancy: MysticSphere = {
       name: "Supreme Inferno",
 
       attack: {
-        hit: `Each subject takes 4d8 + half \\glossterm{power} fire damage.`,
+        hit: `Each subject takes 2d10 + half \\glossterm{power} fire damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\hugearea radius from you.
         `,
       },
-      rank: 6,
+      rank: 5,
       scaling: "damage",
       type: "Instant",
     },

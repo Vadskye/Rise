@@ -273,10 +273,8 @@ Tier 3 areas:
 * Small radius in Med range
 
 Tier 4 areas:
-* Huge cone from self
 * Huge line, 10' wide from self
 * Large line, 15' wide from self
-* Huge radius from self
 * Enemies in Large radius from self
 * Medium radius in Med range
 * Enemies in Small radius in Med range
@@ -284,19 +282,20 @@ Tier 4 areas:
 * Tiny radius in Distant range
 
 Tier 5 areas:
+* Huge cone from self
+* Huge radius from self
 * Huge line, 15' wide from self
-* Enemies in Huge radius from self
 * Medium radius in Long range
 * Small radius in Distant range
 * Tiny radius in Long range
 
 Tier 6 areas:
-* Huge radius in Long range
+* Enemies in Huge radius from self
 * Medium radius in Distant range
 * Small radius in Extreme range
 
 Tier 7 areas:
-* Huge radius in Distant range
+* Huge radius in Long range
 * Medium radius in Extreme range
 
 ### Standard effects

@@ -350,10 +350,36 @@ export const enchantment: MysticSphere = {
         crit: `The effect becomes a \\glossterm{condition} on each subject.`,
         hit: `Each subject is \\dazed until the end of the next round.`,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\hugearea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
-      rank: 3,
+      rank: 2,
+      scaling: "accuracy",
+      tags: ["Compulsion"],
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Discordant Song",
+
+      functionsLike: {
+        exceptThat: "the area increases to a \\hugearea radius from you.",
+        name: "discordant song",
+      },
+      rank: 4,
+      scaling: "accuracy",
+      tags: ["Compulsion"],
+      type: "Duration",
+    },
+
+    {
+      name: "Supreme Discordant Song",
+
+      functionsLike: {
+        exceptThat: "the area increases to a \\gargarea radius from you.",
+        name: "discordant song",
+      },
+      rank: 6,
       scaling: "accuracy",
       tags: ["Compulsion"],
       type: "Duration",

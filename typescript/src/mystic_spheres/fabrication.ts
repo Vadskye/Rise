@@ -102,12 +102,28 @@ export const fabrication: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
-        hit: `Each subject takes 2d10 + half \\glossterm{power} piercing damage.`,
+        hit: `Each subject takes 2d8 + half \\glossterm{power} piercing damage.`,
         targeting: `
-          Make an attack vs. Armor against all \\glossterm{enemies}a in a \\hugearea radius from you.
+          Make an attack vs. Armor against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
-      rank: 5,
+      rank: 4,
+      scaling: "damage",
+      tags: ["Manifestation"],
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Missile Storm",
+
+      attack: {
+        glance: `Half damage.`,
+        hit: `Each subject takes 4d6 + half \\glossterm{power} piercing damage.`,
+        targeting: `
+          Make an attack vs. Armor against all \\glossterm{enemies} in a \\hugearea radius from you.
+        `,
+      },
+      rank: 6,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",
