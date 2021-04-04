@@ -189,6 +189,14 @@ def character_creation():
                 ]),
             ]),
             li([
+                'Spend skill points.',
+                ul([
+                    li('You have a set of class skills based on your class. For each class skill, check the "Class Skill?" checkbox associated with that skill on the left side of the "Calcs" tab.'),
+                    li('You have a number of skill points based on your class, Intelligence, and possibly other abilities. That number is written in the "Resources" section of the "Calcs" tab.'),
+                    li('To spend skill points, increase the value in the "Points" column next to the skill that you are interested in.'),
+                ]),
+            ]),
+            li([
                 'Fill in various complicated abilities from your species and archetypes.',
                 ul([
                     li("""<b>Passive numeric abilities</b>, like a halfling's bonus to Armor defense, are best recorded by finding the appropriate calculation in the Calcs tab and adding a new modifier. Every numeric modifier has a text label underneath it for you to fill in. Giving the modifier an appropriate name can help you remember why that modifier exists."""),
