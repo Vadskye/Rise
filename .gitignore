@@ -227,6 +227,7 @@ tags
 .latexrun.db
 .latexrun.db.lock
 *.fls
+*.dvi
 
 #ANDROID
 R.java
