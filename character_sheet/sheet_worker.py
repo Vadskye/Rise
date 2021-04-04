@@ -278,16 +278,16 @@ def accuracy():
 def attunement_points():
     misc = get_misc_variables("attunement_points", 2)
     return js_wrapper(
-        ["level", *misc],
+        ["level", "attunement_points_from_class", *misc],
         f"""
-            var attunement_points_from_level = Math.min(level, 5);
+            var attunement_points_from_level = Math.max(0, Math.min(level, 5) - 1);
             if (level >= 11) {{
-                attunement_points_from_level += 1
+                attunement_points_from_level += 1;
             }}
             if (level >= 17) {{
-                attunement_points_from_level += 1
+                attunement_points_from_level += 1;
             }}
-            var attunement_points = attunement_points_from_level + {sum_variables(misc)};
+            var attunement_points = attunement_points_from_class + attunement_points_from_level + {sum_variables(misc)};
             setAttrs({{
                 attunement_points,
                 attunement_points_max: attunement_points,
@@ -481,10 +481,10 @@ def base_speed():
 def skill_points():
     misc = get_misc_variables("skill_points", 2)
     return js_wrapper(
-        ["level", "intelligence_starting", *misc],
+        ["level", "skill_points_base", "intelligence_starting", *misc],
         f"""
             setAttrs({{
-                skill_points: 6 + intelligence_starting * 2 + {sum_variables(misc)}
+                skill_points: skill_points_base + intelligence_starting * 2 + {sum_variables(misc)}
             }});
         """,
     )
@@ -493,10 +493,10 @@ def skill_points():
 def fatigue_tolerance():
     misc = get_misc_variables("fatigue_tolerance", 2)
     return js_wrapper(
-        ["level", "constitution_starting", "willpower_starting", *misc],
+        ["level", "fatigue_tolerance_base", "constitution_starting", "willpower_starting", *misc],
         f"""
             setAttrs({{
-                fatigue_tolerance: Math.max(0, 2 + constitution_starting + willpower_starting + {sum_variables(misc)}),
+                fatigue_tolerance: Math.max(0, fatigue_tolerance_base + constitution_starting + willpower_starting + {sum_variables(misc)}),
             }});
         """,
     )
@@ -590,10 +590,10 @@ def fatigue_penalty():
 def insight_points():
     misc = get_misc_variables("insight_points", 2)
     return js_wrapper(
-        ["intelligence_starting", *misc],
+        ["insight_points_base", "intelligence_starting", *misc],
         f"""
             setAttrs({{
-                insight_points: 2 + intelligence_starting + {sum_variables(misc)}
+                insight_points: Math.max(0, insight_points_base + intelligence_starting + {sum_variables(misc)}),
             }});
         """,
     )

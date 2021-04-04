@@ -439,7 +439,16 @@ def calc_attunement_points():
             equation(
                 [
                     underlabel(
-                        "Base",
+                        "Class",
+                        number_input(
+                            {
+                                "name": "attunement_points_from_class",
+                            }
+                        ),
+                    ),
+                    plus(),
+                    underlabel(
+                        "Scaling",
                         number_input(
                             {
                                 "disabled": True,
@@ -449,7 +458,7 @@ def calc_attunement_points():
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat("attunement_points", 2),
+                    equation_misc_repeat("attunement_points", 3),
                 ],
                 result_attributes={
                     "disabled": True,
@@ -519,12 +528,10 @@ def calc_fatigue_tolerance():
             equation(
                 [
                     underlabel(
-                        "Base",
+                        "Class",
                         number_input(
                             {
-                                "disabled": True,
                                 "name": "fatigue_tolerance_base",
-                                "value": "2",
                             }
                         ),
                     ),
@@ -890,12 +897,10 @@ def calc_skill_points():
             equation(
                 [
                     underlabel(
-                        "Base",
+                        "Class",
                         number_input(
                             {
-                                "disabled": True,
                                 "name": "skill_points_base",
-                                "value": 6,
                             }
                         ),
                     ),
@@ -1068,12 +1073,10 @@ def calc_insight_points():
             equation(
                 [
                     underlabel(
-                        "Base",
+                        "Class",
                         number_input(
                             {
-                                "disabled": True,
                                 "name": "insight_points_base",
-                                "value": 2,
                             }
                         ),
                     ),
