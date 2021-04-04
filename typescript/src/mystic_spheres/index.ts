@@ -68,6 +68,7 @@ interface BaseSpellLike {
   name: string;
   narrative?: string;
   scaling?: "accuracy" | "damage" | Record<string, string>;
+  tableText?: string;
   tags?: string[];
   type:
     | "Instant"

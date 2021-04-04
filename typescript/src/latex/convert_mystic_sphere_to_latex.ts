@@ -61,6 +61,7 @@ function convertSpellToLatex(spell: SpellLike): string {
     format.spellScaling(spell),
     format.spellNarrative(spell),
   ].filter(Boolean);
+  const tableText = spell.tableText || "";
 
   const latex = `
     \\hypertarget{spell:${spell.name}}{}%
@@ -70,6 +71,7 @@ function convertSpellToLatex(spell: SpellLike): string {
       ${internalComponents.join("\n\\rankline\n\n\\noindent ")}
       \\vspace{0.1em}
     \\end{${abilityType}}
+    ${tableText}
   `;
 
   // if (spell.type === "Attune (target)" && (latex.includes("you ") || latex.includes("your "))) {

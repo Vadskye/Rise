@@ -590,7 +590,9 @@ export const vivimancy: MysticSphere = {
         If this would reduce a creature's maximum attunement points below 0, the creature cannot be resurrected.
 
         This ritual can only be learned through the nature \\glossterm{magic source}.
-
+      `,
+      rank: 4,
+      tableText: `
         \\begin{dtable}
             \\lcaption{Humanoid Reincarnations}
             \\begin{dtabularx}{\\columnwidth}{l X}
@@ -605,7 +607,6 @@ export const vivimancy: MysticSphere = {
             \\end{dtabularx}
         \\end{dtable}
       `,
-      rank: 4,
       tags: ["Creation"],
       type: "Duration",
     },
@@ -639,7 +640,7 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: "Restoration",
+      name: "Vital Regeneration",
 
       castingTime: "24 hours",
       effect: `
