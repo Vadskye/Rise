@@ -315,7 +315,8 @@
 % args:
 %   #1: reference name of term, if different from display name
 %   #2: display name of term
-\DeclareDocumentCommand{\glossterm}{o m}
+%   #3: hyperlink prefix
+\DeclareDocumentCommand{\termlink}{o m m}
 {
     \IfValueTF{#1}
     {
@@ -326,7 +327,7 @@
 
         % TODO: remove \mbox before making major releases;
         % it fixes bizarre page break errors but makes text uglier
-        \hyperlink{gloss:#1}{\textbf{\mbox{#2}}}
+        \hyperlink{#3:#1}{\textbf{\mbox{#2}}}
     }
     {
         % Enable this to test for missing glossary definitions
@@ -334,79 +335,63 @@
         % Enable this to test for unnecessary glossary entries
         % \label{#2}
 
-        \hyperlink{gloss:#2}{\textbf{\mbox{#2}}}
-    }
-}
-
-\DeclareDocumentCommand{\debuff}{o m}
-{
-    \IfValueTF{#1}
-    {
-        % Enable this to test for missing glossary definitions
-        % \pref{#1}
-        % Enable this to test for unnecessary glossary entries
-        % \label{#1}
-
-        % TODO: remove \mbox before making major releases;
-        % it fixes bizarre page break errors but makes text uglier
-        \hyperlink{debuff:#1}{\textbf{\mbox{#2}}}
-    }
-    {
-        % Enable this to test for missing glossary definitions
-        % \pref{#2}
-        % Enable this to test for unnecessary glossary entries
-        % \label{#2}
-
-        \hyperlink{debuff:#2}{\textbf{\mbox{#2}}}
+        \hyperlink{#3:#2}{\textbf{\mbox{#2}}}
     }
 }
 
 % args:
 %   #1: name of term
 %   #2: alternate name of term, only used for labels/targets
+%   #3: hyperlink prefix
+\DeclareDocumentCommand{\termdef}{m o m}
+{
+    \IfValueT{#2}
+    {
+        % Enable this to test for missing glossary definitions
+        % \label{#2}\label{#2s}
+        % Enable this to test for unnecessary glossary entries
+        % \pref{#2}
+
+        \hypertarget{#3:#2}{}
+        \hypertarget{#3:#2s}{}
+    }
+    % Enable this to test for missing glossary definitions
+    % \label{#1}\label{#1s}
+    % Enable this to test for unnecessary glossary entries
+    % \pref{#1}
+
+    \hypertarget{#3:#1}{}
+    \hypertarget{#3:#1s}{}
+    \parhead{#1}
+}
+
+
+\DeclareDocumentCommand{\glossterm}{o m}
+{
+    \IfValueT{#1}
+    {\termlink[#1]{#2}{gloss}}
+    {\termlink{#2}{gloss}}
+}
 \DeclareDocumentCommand{\glossdef}{m o}
 {
     \IfValueT{#2}
-    {
-        % Enable this to test for missing glossary definitions
-        % \label{#2}\label{#2s}
-        % Enable this to test for unnecessary glossary entries
-        % \pref{#2}
-
-        \hypertarget{gloss:#2}{}
-        \hypertarget{gloss:#2s}{}
-    }
-    % Enable this to test for missing glossary definitions
-    % \label{#1}\label{#1s}
-    % Enable this to test for unnecessary glossary entries
-    % \pref{#1}
-
-    \hypertarget{gloss:#1}{}
-    \hypertarget{gloss:#1s}{}
-    \parhead{#1}
+    {\termdef{#1}[#2]{gloss}}
+    {\termdef{#1}{gloss}}
 }
 
-\DeclareDocumentCommand{\debuffdef}{m o}
+\DeclareDocumentCommand{\debuff}{o m}
+{
+    \IfValueT{#1}
+    {\termlink[#1]{#2}{debuff}}
+    {\termlink{#2}{debuff}}
+}
+\DeclareDocumentCommand{\debuffdef}{o m}
 {
     \IfValueT{#2}
-    {
-        % Enable this to test for missing glossary definitions
-        % \label{#2}\label{#2s}
-        % Enable this to test for unnecessary glossary entries
-        % \pref{#2}
-
-        \hypertarget{debuff:#2}{}
-        \hypertarget{debuff:#2s}{}
-    }
-    % Enable this to test for missing glossary definitions
-    % \label{#1}\label{#1s}
-    % Enable this to test for unnecessary glossary entries
-    % \pref{#1}
-
-    \hypertarget{debuff:#1}{}
-    \hypertarget{debuff:#1s}{}
-    \parhead{#1}
+    {\termdef{#1}[#2]{debuff}}
+    {\termdef{#1}{debuff}}
 }
+
 
 \DeclareDocumentCommand{\pcref}{o m}
 {
