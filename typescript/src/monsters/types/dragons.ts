@@ -97,7 +97,7 @@ function baseDragonWithBreath(
 function frightfulPresence(area: string): AttackInput {
   return {
     defense: "mental",
-    hit: "Each target is \\glossterm{shaken} by the dragon as a \\glossterm{condition}.",
+    hit: "Each target is \\shaken by the dragon as a \\glossterm{condition}.",
     name: "Frightful Presence",
     preface: `
       The dragon can use this ability once per round as a \\glossterm{free action}.

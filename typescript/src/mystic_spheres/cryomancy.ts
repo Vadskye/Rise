@@ -70,7 +70,7 @@ export const cryomancy: MysticSphere = {
         glance: "Half damage.",
         hit: `
           The subject takes 2d10 + \\glossterm{power} cold damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{slowed} as a \\glossterm{condition}.
+          If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
           This spell does not have the \\glossterm{Focus} tag.
@@ -134,7 +134,7 @@ export const cryomancy: MysticSphere = {
       attack: {
         glance: `Half damage.`,
         hit: `The subject takes 2d6 cold damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\glossterm{immobilized} as a \\glossterm{condition}.`,
+        If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
         `,
@@ -149,7 +149,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         glance: "The effect lasts until the end of the next round.",
-        hit: `Each subject that has no remaining \\glossterm{resistance} to cold damage is \\glossterm{immobilized} as a \\glossterm{condition}.`,
+        hit: `Each subject that has no remaining \\glossterm{resistance} to cold damage is \\immobilized as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against all creatures in a \\smallarea radius within \\medrange.
         `,
@@ -231,7 +231,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `The subject takes 1d6 cold damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\glossterm{stunned} as a \\glossterm{condition}.`,
+        If it loses \\glossterm{hit points} from this damage, it is \\stunned as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
         `,
@@ -247,7 +247,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         glance: "The effect lasts until the end of the next round.",
-        hit: `Each subject that has no remaining \\glossterm{resistance} to cold damage is \\glossterm{stunned} as a \\glossterm{condition}.`,
+        hit: `Each subject that has no remaining \\glossterm{resistance} to cold damage is \\stunned as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\arealarge radius from you.
         `,
@@ -338,7 +338,7 @@ export const cryomancy: MysticSphere = {
       attack: {
         glance: `Half damage.`,
         hit: `The subject takes 1d8 + half \\glossterm{power} cold damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\glossterm{slowed} as a \\glossterm{condition}.`,
+        If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
         `,
@@ -355,7 +355,7 @@ export const cryomancy: MysticSphere = {
       attack: {
         glance: `Half damage.`,
         hit: `The subject takes 2d8 + half \\glossterm{power} cold damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\glossterm{decelerated} as a \\glossterm{condition}.`,
+        If it loses \\glossterm{hit points} from this damage, it is \\decelerated as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
         `,

@@ -3,7 +3,7 @@
 \debuffdef{blinded} A blinded creature cannot see.
 It automatically fails at actions which depend on vision, including simply seeing the locations of other objects and creatures (but see \pcref{Awareness}).
 It has a 50\% miss chance with all attacks and vision-related checks, even if it knows the location of its target.
-It is at least \glossterm{partially unaware} of all attacks against it, and it can be fully \glossterm{unaware} as normal depending on its level of awareness.
+It is at least \partiallyunaware of all attacks against it, and it can be fully \unaware as normal depending on its level of awareness.
 
 \debuffdef{charmed} A charmed creature is mentally influenced to like another creature.
 It always sees the words and actions of the creature that charmed it in the most favorable way, as a close friend or trusted ally.
@@ -13,7 +13,7 @@ It treats the creature that charmed it as a friend (a \plus10 relationship modif
 \debuffdef{confused} A confused creature is unable to independently control its actions. \confusionexplanation
 
 \debuffdef{dazed} A dazed creature takes a \minus2 penalty to all defenses.
-This does not stack with the \glossterm{stunned} effect.
+This does not stack with the \stunned effect.
 
 \debuffdef{dazzled} A dazzled creature has difficulty seeing.
 It loses any special vision abilities it has, such as \glossterm{darkvision} or \glossterm{low-light vision}.
@@ -24,7 +24,7 @@ In addition, it takes a \minus2 penalty to \glossterm{accuracy} and visual Aware
 \debuffdef{decelerated} A decelerated creature moves at one quarter speed and takes a \minus4 penalty to Armor and Reflex defenses.
 In addition, a decelerated creature cannot act during the \glossterm{action phase}.
 It can take its normal actions during the \glossterm{delayed action phase}.
-This does not stack with the \glossterm{slowed} effect.
+This does not stack with the \slowed effect.
 
 \debuffdef{disoriented} A disoriented creature cannot control the direction of its movement.
 If it tries to use one of its movement speeds to move a given distance, it moves that distance in a random direction instead of in its intended direction.
@@ -39,7 +39,7 @@ If it does not understand the language of the creature that dominated it, it sti
 If the creature notices any threat against it, such as an approaching enemy, it is no longer fascinated.
 
 \debuffdef{frightened} A frightened creature takes a \minus4 penalty to \glossterm{accuracy} and Mental defense while it is within \rngmed range of the source of its fear.
-This does not stack with the \glossterm{shaken} or \glossterm{panicked} effects.
+This does not stack with the \shaken or \panicked effects.
 If the source of a frightened creature's fear is \glossterm{defeated}, this effect is broken.
 
 \debuffdef{grappled} A grappled creature is wrestling or in some other form of hand-to-hand struggle with at least one other creature.
@@ -66,11 +66,11 @@ Immobilized flying creatures that have the ability to hover can maintain their i
 All other flying creatures subjected to this condition descend at a rate of 20 feet per round until they reach the ground, taking no falling damage.
 
 \debuffdef{nauseated} A nauseated creature takes a \minus4 penalty to all defenses.
-This does not stack with the \glossterm{sickened} effect.
+This does not stack with the \sickened effect.
 
 \debuffdef{panicked} While a panicked creature is within \rngmed range of the source of its fear, it takes a \minus4 penalty to Mental defense and must flee from the source of its fear by any means necessary.
 If unable to flee, it must do nothing other than use the \textit{total defense} ability every round (see \pcref{Total Defense}).
-The penalty from this effect does not stack with the \glossterm{frightened} or \glossterm{panicked} effects.
+The penalty from this effect does not stack with the \frightened or \panicked effects.
 
 If the source of a panicked creature's fear is \glossterm{defeated}, this effect is broken.
 
@@ -80,12 +80,6 @@ If the source of a panicked creature's fear is \glossterm{defeated}, this effect
 Creatures take a \minus2 penalty to Armor and Reflex defenses against attacks that they are partially unaware of.
 For details, see \pcref{Awareness and Surprise}.
 
-\debuffdef{petrified} A petrified creature has been turned to stone. It is neither alive nor dead, but is unconscious and unable to take actions, and its body is an inanimate statue. If the statue is broken or damaged before the creature is restored to its original state, the creature has equivalent damage or deformities.
-
-\debuffdef{pinned} A pinned creature is held completely immobile in a grapple.
-The only physical actions it can make are to escape the grapple (see \pcref{Grappling}).
-Like a \glossterm{helpless} creature, its Dexterity is treated as \minus10.
-
 \debuffdef{prone} A prone creature is lying on the ground, rather than standing normally.
 It takes a \minus2 penalty to Armor and Reflex defenses, though it gains a \plus4 bonus to all defenses against ranged \glossterm{strikes}.
 In addition, it takes a \minus2 penalty to accuracy with \glossterm{strikes}.
@@ -94,22 +88,22 @@ A creature can stand up from being prone during the movement phase.
 This generally requires one free hand.
 
 \debuffdef{shaken} A shaken creature takes a \minus2 penalty to \glossterm{accuracy} and Mental defense while it is within \rngmed range of the source of its fear.
-This does not stack with the \glossterm{frightened} or \glossterm{panicked} effects.
+This does not stack with the \frightened or \panicked effects.
 
 If the source of a shaken creature's fear is \glossterm{defeated}, this effect is broken.
 
 \debuffdef{sickened} A sickened creature takes a \minus2 penalty to all defenses.
-This does not stack with the \glossterm{nauseated} effect.
+This does not stack with the \nauseated effect.
 
 \debuffdef{slowed} A slowed creature moves at half speed and takes a \minus2 penalty to Armor and Reflex defenses.
-This does not stack with the \glossterm{decelerated} effect.
+This does not stack with the \decelerated effect.
 
 \debuffdef{squeezing} A squeezing creature is trying to move though an area too small for it to fight in normally.
 While squeezing, a creature moves at half speed and takes a \minus2 penalty to \glossterm{accuracy}, as well as Armor and Reflex defenses.
 For details, see \pcref{Squeezing}.
 
 \debuffdef{stunned} A stunned creature takes a \minus4 penalty to all defenses.
-This does not stack with the \glossterm{dazed} effect.
+This does not stack with the \dazed effect.
 
 \debuffdef{surrounded} An creature is surrounded if every space adjacent to it either contains an \glossterm{enemy} or is both empty and adjacent to an \glossterm{enemy}.
 A surrounded creature suffers a \minus2 penalty to Armor and Reflex defenses.
@@ -118,5 +112,5 @@ A surrounded creature suffers a \minus2 penalty to Armor and Reflex defenses.
 Creatures take a \minus5 penalty to Armor and Reflex defenses against attacks that they are unaware of.
 For details, see \pcref{Awareness and Surprise}.
 
-\debuffdef{unconscious} While you are unconscious, you are \glossterm{helpless} and completely unable to take any actions.
+\debuffdef{unconscious} While you are unconscious, you are \helpless and completely unable to take any actions.
 Some sensory abilities, such as the Awareness and Spellsense skills, can be used while you are asleep, but not while you are forcibly knocked unconscious.

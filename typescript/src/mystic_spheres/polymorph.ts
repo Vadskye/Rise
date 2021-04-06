@@ -131,7 +131,7 @@ export const polymorph: MysticSphere = {
         glance: "Half damage.",
         hit: `
           The subject takes 2d10 + \\glossterm{power} piercing damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{slowed} as a \\glossterm{condition}.
+          If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
           This spell does not have the \\glossterm{Focus} tag.
@@ -156,7 +156,7 @@ export const polymorph: MysticSphere = {
         glance: "The effect lasts until the end of the next round.",
         hit: `The subject takes 2d8 physical damage.
         If it loses \\glossterm{hit points} from this damage, it is balefully polymorphed as a \\glossterm{condition}.
-        It shrinks by two \\glossterm{size categories} and is \\glossterm{confused}.`,
+        It shrinks by two \\glossterm{size categories} and is \\confused.`,
         targeting: `
         Make an attack vs. Fortitude against one creature within \\medrange.
         `,
@@ -555,7 +555,7 @@ export const polymorph: MysticSphere = {
       attack: {
         glance: `Half damage.`,
         hit: `The subject takes 2d6 physical damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\glossterm{blinded} as a \\glossterm{condition}.`,
+        If it loses \\glossterm{hit points} from this damage, it is \\blinded as a \\glossterm{condition}.`,
         targeting: `
         Make an attack vs. Fortitude against one living creature within \\medrange.
         `,
@@ -570,7 +570,7 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `The subject takes 1d6 physical damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\glossterm{nauseated} as a \\glossterm{condition}.`,
+        If it loses \\glossterm{hit points} from this damage, it is \\nauseated as a \\glossterm{condition}.`,
         targeting: `
         Make an attack vs. Fortitude against one living creature within \\medrange.
         `,
@@ -584,9 +584,9 @@ export const polymorph: MysticSphere = {
       name: "Cripple",
 
       attack: {
-        crit: `The subject is \\glossterm{paralyzed} instead of immobilized.`,
+        crit: `The subject is \\paralyzed instead of immobilized.`,
         glance: "The effect lasts until the end of the next round.",
-        hit: `The subject is \\glossterm{immobilized} as a \\glossterm{condition}.`,
+        hit: `The subject is \\immobilized as a \\glossterm{condition}.`,
         targeting: `
         Make an attack vs. Fortitude against one living creature within \\shortrange.
         `,

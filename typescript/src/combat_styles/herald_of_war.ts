@@ -42,8 +42,8 @@ export const heraldOfWar: CombatStyle = {
       name: "Fearsome Battlecry",
 
       attack: {
-        crit: `Each subject that is below its maximum \\glossterm{hit points} is \\glossterm{frightened} by you as a \\glossterm{condition}.`,
-        hit: `Each subject that is below its maximum \\glossterm{hit points} is \\glossterm{shaken} by you as a \\glossterm{condition}.`,
+        crit: `Each subject that is below its maximum \\glossterm{hit points} is \\frightened by you as a \\glossterm{condition}.`,
+        hit: `Each subject that is below its maximum \\glossterm{hit points} is \\shaken by you as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
         `,
@@ -58,9 +58,9 @@ export const heraldOfWar: CombatStyle = {
       name: "Frightening Battlecry",
 
       attack: {
-        crit: `Each subject that is below its maximum \\glossterm{hit points} is \\glossterm{panicked} by you as a \\glossterm{condition}.`,
+        crit: `Each subject that is below its maximum \\glossterm{hit points} is \\panicked by you as a \\glossterm{condition}.`,
         glance: "The effect lasts until the end of the next round.",
-        hit: `Each subject that is below its maximum \\glossterm{hit points} is \\glossterm{frightened} by you as a \\glossterm{condition}.`,
+        hit: `Each subject that is below its maximum \\glossterm{hit points} is \\frightened by you as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
         `,
@@ -133,7 +133,7 @@ export const heraldOfWar: CombatStyle = {
       effect: `
         Make a \\glossterm{strike}.
         You take a -2d penalty to damage with the strike.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{shaken} by you as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\shaken by you as a \\glossterm{condition}.
       `,
       rank: 2,
       tags: ["Emotion"],
@@ -146,7 +146,7 @@ export const heraldOfWar: CombatStyle = {
       effect: `
         Make a \\glossterm{strike}.
         You take a -2d penalty to damage with the strike.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{frightened} by you as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\frightened by you as a \\glossterm{condition}.
       `,
       rank: 5,
       tags: ["Emotion"],

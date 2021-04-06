@@ -61,7 +61,7 @@ export const chronomancy: MysticSphere = {
       attack: {
         crit: `The effect lasts until the curse is removed.`,
         glance: `The effect lasts until the end of the next round.`,
-        hit: `The subject is \\glossterm{slowed} until it takes a \\glossterm{short rest}.`,
+        hit: `The subject is \\slowed until it takes a \\glossterm{short rest}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
         `,
@@ -116,7 +116,7 @@ export const chronomancy: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        hit: `The subject is \\glossterm{slowed} as a \\glossterm{condition}.`,
+        hit: `The subject is \\slowed as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.
         `,
@@ -132,7 +132,7 @@ export const chronomancy: MysticSphere = {
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
         glance: "The effect lasts until the end of the next round.",
-        hit: `The subject is \\glossterm{slowed} as a \\glossterm{condition}.`,
+        hit: `The subject is \\slowed as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\longrange.
         `,
@@ -148,7 +148,7 @@ export const chronomancy: MysticSphere = {
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
         glance: `The effect lasts until the end of the next round.`,
-        hit: `The subject is \\glossterm{decelerated} as a \\glossterm{condition}.`,
+        hit: `The subject is \\decelerated as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.
         `,
@@ -162,7 +162,7 @@ export const chronomancy: MysticSphere = {
 
       attack: {
         crit: `The effect becomes a \\glossterm{condition} on each subject.`,
-        hit: `Each target is \\glossterm{slowed} until the end of the next round.`,
+        hit: `Each target is \\slowed until the end of the next round.`,
         targeting: `
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange.
         `,
@@ -178,8 +178,8 @@ export const chronomancy: MysticSphere = {
       attack: {
         crit: `The subject is immobilized every round.`,
         glance: `The effect lasts until the end of the next round.`,
-        hit: `As a \\glossterm{condition}, the subject is \\glossterm{slowed} and randomly \\glossterm{immobilized}.
-        At the start of each round, it has a 50\\% chance to be \\glossterm{immobilized} during that round.`,
+        hit: `As a \\glossterm{condition}, the subject is \\slowed and randomly \\immobilized.
+        At the start of each round, it has a 50\\% chance to be \\immobilized during that round.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
         `,
@@ -194,9 +194,9 @@ export const chronomancy: MysticSphere = {
       name: "Mental Lag",
 
       attack: {
-        crit: `The subject \\glossterm{stunned} instead of dazed.`,
+        crit: `The subject \\stunned instead of dazed.`,
         glance: "The effect lasts until the end of the next round.",
-        hit: `The subject is \\glossterm{slowed} and \\glossterm{dazed} as a single \\glossterm{condition}.`,
+        hit: `The subject is \\slowed and \\dazed as a single \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.
         `,
@@ -266,7 +266,7 @@ export const chronomancy: MysticSphere = {
 
         When the subject reappears, its condition is unchanged from when it left, except that it gains \\glossterm{fatigue points} equal to the amount used by its duplicate.
         Its \\glossterm{hit points}, conditions, and all other statistics are unaffected, regardless of any damage or other negative effects suffered by the duplicate.
-        If this would reduce any of the subject's resources below 0, it takes 4d10 energy damage from the paradox and becomes \\glossterm{stunned} as a \\glossterm{condition}.
+        If this would reduce any of the subject's resources below 0, it takes 4d10 energy damage from the paradox and becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 5,
       scaling: {
@@ -377,7 +377,7 @@ export const chronomancy: MysticSphere = {
         You can take two full rounds of actions immediately.
         During this time, all other creatures and objects are fixed in time, and cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
         You can still affect yourself and create areas or new effects.
-        When this effect ends, you are \\glossterm{stunned} as a \\glossterm{condition}.
+        When this effect ends, you are \\stunned as a \\glossterm{condition}.
 
         You are still vulnerable to danger, such as from heat or dangerous gases.
         However, you cannot be detected by any means while you travel.
@@ -469,7 +469,7 @@ export const chronomancy: MysticSphere = {
 
       attack: {
         hit: `The subject takes 1d8 + half \\glossterm{power} energy damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\glossterm{slowed} as a \\glossterm{condition}.`,
+        If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
         `,
@@ -489,7 +489,7 @@ export const chronomancy: MysticSphere = {
       attack: {
         glance: `Half damage.`,
         hit: `The subject takes 2d6 energy damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\glossterm{decelerated} as a \\glossterm{condition}.`,
+        If it loses \\glossterm{hit points} from this damage, it is \\decelerated as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
         `,
@@ -514,7 +514,7 @@ export const chronomancy: MysticSphere = {
           The target takes 1d10 energy damage.
           If it loses \\glossterm{hit points} from this damage, it is briefly frozen in time.
           Until the end of the next round, it is completely immune to all damage, attacks, and effects of any kind.
-          In addition, it is \\glossterm{unconscious} and cannot act in any way.
+          In addition, it is \\unconscious and cannot act in any way.
           At the end of the next round, it returns to normal, with no awareness of the intervening time.
           After this effect ends, the subject becomes immune to this spell until it takes a \\glossterm{short rest}.
         `,
