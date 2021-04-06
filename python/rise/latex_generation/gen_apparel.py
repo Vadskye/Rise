@@ -1222,38 +1222,6 @@ def generate_worn():
 
     apparel += [
         MagicItem(
-            name="Gauntlets of Defense",
-            level=7,
-            material_type="Gauntlet",
-            description="""
-                You gain a +1 \\glossterm<magic bonus> to Armor defense.
-                In addition, when you would be \\glossterm<defenseless>, these gauntlets manifest a glowing shield that helps protect you from attack.
-                This prevents you from ever being \\glossterm<defenseless>.
-            """,
-            short_description="Grants +1 Armor defense, cannot be defenseless",
-        ),
-        MagicItem(
-            name="Gauntlets of Defense, Greater",
-            level=13,
-            material_type="Gauntlet",
-            description="""
-                These gauntlets functions \\mitem<gauntlets of defense>, except that the bonus increases to +2.
-            """,
-            short_description="Grants +2 Armor defense, cannot be defenseless",
-        ),
-        MagicItem(
-            name="Gauntlets of Defense, Supreme",
-            level=19,
-            material_type="Gauntlet",
-            description="""
-                These gauntlets functions \\mitem<gauntlets of defense>, except that the bonus increases to +3.
-            """,
-            short_description="Grants +3 Armor defense, cannot be defenseless",
-        ),
-    ]
-
-    apparel += [
-        MagicItem(
             name="Bracers of Archery",
             level=1,
             material_type="Bracers",
