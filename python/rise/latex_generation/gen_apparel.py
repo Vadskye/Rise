@@ -2337,7 +2337,7 @@ def generate_worn():
                 Fog constantly fills a \\areamed radius emanation from you.
 
                 If a 5-foot square of fog takes at least 4 fire damage from a single attack, the fog disappears from that area until the end of the next round.
-                This fog does not fully block sight, but it provides \\concealment.
+                This fog does not fully block sight, but it provides \\glossterm<concealment>.
             """,
             short_description="Fills nearby area with fog",
         ),
