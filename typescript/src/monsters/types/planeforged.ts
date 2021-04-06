@@ -47,16 +47,16 @@ planeforgedInput.push({
         },
         {
           accuracyBonus: 2,
-          crit: "The target is \\glossterm{blinded} as a condition.",
+          crit: "The target is \\blinded as a condition.",
           defense: "mental",
-          hit: "The target is \\glossterm{dazzled} as a \\glossterm{condition}.",
+          hit: "The target is \\dazzled as a \\glossterm{condition}.",
           name: "Glimpse of Divinity",
           source: "magical",
           target: "One creature within \\rngmed range of the $name",
         },
         {
           hit:
-            "The target takes $damage. If the target loses \\glossterm{hit points} from the attack, it is \\glossterm{stunned} as a \\glossterm{condition}.",
+            "The target takes $damage. If the target loses \\glossterm{hit points} from the attack, it is \\stunned as a \\glossterm{condition}.",
           name: "Stunning Smash",
           powerMultiplier: 1,
           weaponName: "greatmace",
@@ -197,7 +197,7 @@ planeforgedInput.push({
           defense: "armor",
           hit: `
             The target takes $damage.
-            In addition, if the target loses \\glossterm{hit points} from this attack, it is \\glossterm{grappled} by the $name.
+            In addition, if the target loses \\glossterm{hit points} from this attack, it is \\grappled by the $name.
           `,
           name: "Impale",
           powerMultiplier: 1,
@@ -310,7 +310,7 @@ planeforgedInput.push({
           description: `
             Whenever the $name makes a creature lose hit points with its stinger, the damaged creature becomes \\glossterm{poisoned} (see \\pcref{Poison}).
             The creature loses 1d6 \\glossterm{hit points} from each hit with the poison.
-            On the poison's third hit, the creature is \\glossterm{sickened} until the poison ends.
+            On the poison's third hit, the creature is \\sickened until the poison ends.
           `,
           name: "Poison Sting",
         },

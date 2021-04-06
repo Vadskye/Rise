@@ -54,8 +54,8 @@ export const photomancy: MysticSphere = {
 
       attack: {
         crit: `The effect is a \\glossterm{condition} that lasts until it is removed.`,
-        hit: `Each subject at its maximum hit points is \\glossterm{dazed} until the end of the next round.
-        Each subject that is at less than its maximum \\glossterm{hit points} is \\glossterm{stunned} instead of dazed.`,
+        hit: `Each subject at its maximum hit points is \\dazed until the end of the next round.
+        Each subject that is at less than its maximum \\glossterm{hit points} is \\stunned instead of dazed.`,
         targeting: `
           Make an attack vs. Mental against each creature within a \\smallarea cone from you.
         `,
@@ -86,8 +86,8 @@ export const photomancy: MysticSphere = {
 
       attack: {
         crit: `The effect is a \\glossterm{condition} that lasts until it is removed.`,
-        hit: `Each subject at its maximum hit points is \\glossterm{stunned} until the end of the next round.
-        Each subject that is at less than its maximum \\glossterm{hit points} is \\glossterm{confused} instead of stunned.`,
+        hit: `Each subject at its maximum hit points is \\stunned until the end of the next round.
+        Each subject that is at less than its maximum \\glossterm{hit points} is \\confused instead of stunned.`,
         targeting: `
           Make an attack vs. Mental against each creature within a \\medarea cone from you.
         `,
@@ -168,8 +168,8 @@ export const photomancy: MysticSphere = {
       name: "Flash",
 
       attack: {
-        crit: `The subject is \\glossterm{blinded} instead of dazzled.`,
-        hit: `The subject is \\glossterm{dazzled} as a \\glossterm{condition}.`,
+        crit: `The subject is \\blinded instead of dazzled.`,
+        hit: `The subject is \\dazzled as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
           Whether you hit or miss, \\glossterm{brilliant illumination} fills a 60 foot radius around the subject until the end of the next round.
@@ -186,7 +186,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        hit: `The subject is \\glossterm{blinded} as a \\glossterm{condition}.`,
+        hit: `The subject is \\blinded as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
           Whether you hit or miss, \\glossterm{brilliant illumination} fills a 120 foot radius around the subject until the end of the next round.
@@ -260,7 +260,7 @@ export const photomancy: MysticSphere = {
           The effect becomes a \\glossterm{condition} on each subject.
           In addition, each subject is affected as if it had entered natural sunlight.
         `,
-        hit: `Each subject is \\glossterm{blinded} until the end of the next round.`,
+        hit: `Each subject is \\blinded until the end of the next round.`,
         targeting: `
           Make an attack vs. Fortitude against all creatures in a \\smallarea radius within \\medrange of you.
           Whether you hit or miss, \\glossterm{brilliant illumination} fills a 120 foot radius from the center of that area until the end of the next round.
@@ -293,7 +293,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         crit: "The effect becomes a \\glossterm{condition} on each subject.",
-        hit: `Each subject is \\glossterm{stunned} until the end of the next round.`,
+        hit: `Each subject is \\stunned until the end of the next round.`,
         targeting: `
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange of you.
           Whether you hit or miss, \\glossterm{brilliant illumination} fills a 60 foot radius from the center of that area until the end of the next round.
@@ -466,7 +466,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `The subject takes 1d8 energy damage.
-        If it loses \\glossterm{hit points} from this damage, it suffers one of the following effects as a \\glossterm{condition}, chosen randomly: \\glossterm{frightened} by you, \\glossterm{nauseated}, \\glossterm{stunned}, or knocked \\glossterm{prone}.`,
+        If it loses \\glossterm{hit points} from this damage, it suffers one of the following effects as a \\glossterm{condition}, chosen randomly: \\frightened by you, \\nauseated, \\stunned, or knocked \\prone.`,
         targeting: `
         Make an attack vs. Reflex against anything within \\medrange.
         `,

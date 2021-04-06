@@ -17,7 +17,7 @@ aberrationInput.push({
         Otherwise, the target takes double the damage of a non-critical hit.
       `,
       defense: "mental",
-      hit: "The target is \\glossterm{confused} as a \\glossterm{condition}.",
+      hit: "The target is \\confused as a \\glossterm{condition}.",
       name: "Mind Control",
       preface: "An aboleth can use this ability as a \\glossterm{minor action}.",
       source: "magical",
@@ -39,7 +39,7 @@ aberrationInput.push({
       defense: "mental",
       name: "Psionic Blast",
       hit:
-        "Each target takes $damage. Any target that loses \\glossterm{hit points} from this damage is \\glossterm{dazed} as a \\glossterm{condition}.",
+        "Each target takes $damage. Any target that loses \\glossterm{hit points} from this damage is \\dazed as a \\glossterm{condition}.",
       powerMultiplier: 0.5,
       preface: "An aboleth can use this ability as a \\glossterm{minor action}.",
       target: "Each enemy in a \\areamed cone from the aboleth",
@@ -97,7 +97,7 @@ aberrationInput.push({
       description: `
         Whenever a creature is \\glossterm{wounded} by the aboleth's tentacle,
           the damaged creature becomes \\glossterm{poisoned} by aboleth slime.
-        The creature is \\glossterm{sickened} as long as it remains poisoned.
+        The creature is \\sickened as long as it remains poisoned.
         On a third hit, the creature gains a \\glossterm{vital wound}.
 
         Instead of making a \\glossterm{vital roll} for the \\glossterm{vital wound},
@@ -140,12 +140,12 @@ aberrationInput.push({
   attackInputs: [
     {
       crit: `
-        The target is is \\glossterm{confused} until the end of the next round.
+        The target is is \\confused until the end of the next round.
       `,
       defense: "mental",
       hit: `
-        If the target is at its maximum \\glossterm{hit points}, it is \\glossterm{dazed} until the end of the next round.
-        Otherwise, it is \\glossterm{confused} until the end of the next round.
+        If the target is at its maximum \\glossterm{hit points}, it is \\dazed until the end of the next round.
+        Otherwise, it is \\confused until the end of the next round.
       `,
       name: "Gibber",
       preface: "The $name can use this ability as a \\glossterm{minor action}.",

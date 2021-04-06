@@ -69,7 +69,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{blinded} as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\blinded as a \\glossterm{condition}.
       `,
       rank: 6,
       type: "Duration",
@@ -81,7 +81,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
-        Each creature loses \\glossterm{hit points} from the strike is \\glossterm{slowed} as a \\glossterm{condition}.
+        Each creature loses \\glossterm{hit points} from the strike is \\slowed as a \\glossterm{condition}.
       `,
       rank: 1,
       type: "Duration",
@@ -93,7 +93,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{immobilized} as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\immobilized as a \\glossterm{condition}.
       `,
       rank: 6,
       type: "Duration",
@@ -210,7 +210,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike} using a slashing weapon against any number of creatures or objects within your weapon's \\glossterm{reach}.
         Your \\glossterm{power} with the strike is halved.
-        In addition, you take no penalties for being \\glossterm{surrounded} until the end of the current round.
+        In addition, you take no penalties for being \\surrounded until the end of the current round.
         This penalty removal is a \\glossterm{Swift} effect, so it affects attacks against you during the current round.
       `,
       rank: 4,

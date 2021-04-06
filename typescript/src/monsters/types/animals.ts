@@ -344,8 +344,8 @@ const animalInput: TypelessMonsterInput[] = [
         description: `
           Whenever the $name makes a creature lose hit points with its stinger,
             the damaged creature becomes \\glossterm{poisoned} (see \\pcref{Poison}).
-          The poison's initial hit makes the target \\glossterm{sickened} as long as the poison lasts.
-          On the poison's third hit, the target becomes \\glossterm{paralyzed} as long as the poison lasts.
+          The poison's initial hit makes the target \\sickened as long as the poison lasts.
+          On the poison's third hit, the target becomes \\paralyzed as long as the poison lasts.
         `,
         name: "Paralyzing Sting",
       },
@@ -445,8 +445,8 @@ const baseSpider = {
       description: `
         Whenever the $name makes a creature lose hit points with its bite,
           the damaged creature becomes \\glossterm{poisoned} (see \\pcref{Poison}).
-        The poison's initial hit makes the target \\glossterm{sickened} as long as the poison lasts.
-        On the poison's third hit, the target becomes \\glossterm{paralyzed} as long as the poison lasts.
+        The poison's initial hit makes the target \\sickened as long as the poison lasts.
+        On the poison's third hit, the target becomes \\paralyzed as long as the poison lasts.
       `,
       name: "Paralyzing Venom",
     },

@@ -50,7 +50,7 @@ export const monstrousHumanoidInput: TypelessMonsterInput[] = [
         defense: "reflex",
         hit: `
           The target takes $damage.
-          If this attack also beats the target's Fortitude defense, it is \\glossterm{grappled} by the $name.
+          If this attack also beats the target's Fortitude defense, it is \\grappled by the $name.
         `,
         powerMultiplier: 1,
         name: "Snatch",
@@ -59,10 +59,10 @@ export const monstrousHumanoidInput: TypelessMonsterInput[] = [
       {
         baseDamageDie: "1d10",
         defense: "fortitude",
-        hit: `The target takes $damage and is \\glossterm{grappled} by the $name.`,
+        hit: `The target takes $damage and is \\grappled by the $name.`,
         name: "Choke",
         powerMultiplier: 1,
-        target: "One creature \\glossterm{grappled} by the $name",
+        target: "One creature \\grappled by the $name",
         weaponName: "tentacle",
       },
     ],

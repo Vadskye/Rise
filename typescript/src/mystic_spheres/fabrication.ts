@@ -83,7 +83,7 @@ export const fabrication: MysticSphere = {
       attack: {
         glance: `Half damage.`,
         hit: `The subject takes 2d10 + \\glossterm{power} piercing damage.
-          If it loses \\glossterm{hit points} from this damage, it is knocked \\glossterm{prone}.`,
+          If it loses \\glossterm{hit points} from this damage, it is knocked \\prone.`,
         targeting: `
           Make an attack vs. Armor against anything within \\longrange.
         `,
@@ -284,9 +284,9 @@ export const fabrication: MysticSphere = {
       name: "Web",
 
       attack: {
-        crit: `Each secondary target is \\glossterm{immobilized} instead of slowed.`,
+        crit: `Each secondary target is \\immobilized instead of slowed.`,
         glance: "The effect lasts until the end of the next round.",
-        hit: `Each secondary target is \\glossterm{slowed} as long as it has webbing from this ability in its space.`,
+        hit: `Each secondary target is \\slowed as long as it has webbing from this ability in its space.`,
         targeting: `
           You fill a \\smallarea radius \\glossterm{zone} within \\shortrange with webs.
           The webs make the area \\glossterm{difficult terrain}.

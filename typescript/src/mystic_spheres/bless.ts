@@ -42,7 +42,7 @@ export const bless: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        The subject is immune to being \\glossterm{slowed}, \\glossterm{decelerated}, \\glossterm{immobilized}, and \\glossterm{paralyzed}.
+        The subject is immune to being \\slowed, \\decelerated, \\immobilized, and \\paralyzed.
 
         You can only have one casting of this spell active at once.
         When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
@@ -397,7 +397,7 @@ export const bless: MysticSphere = {
       scaling: {
         4: `Casting this spell does not remove previous attunements to this spell.
                 In addition, you can choose to cast this spell with the \\glossterm{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
-        6: `The subject is also immune to being \\glossterm{dazed} or \\glossterm{stunned}.`,
+        6: `The subject is also immune to being \\dazed or \\stunned.`,
       },
       type: "Attune (target)",
     },
