@@ -381,7 +381,7 @@ def humanoids(sample_monsters):
                     "Sneeky Stab",
                     f"""
                 The stabber makes a shortsword strike.
-                If the target is \\glossterm<defenseless>, \\glossterm<surrounded>, or \\glossterm<unaware>, the damage becomes {goblin_stabber.weapon_damage(Weapon('shortsword')) + 2}.
+                If the target is \\glossterm<surrounded> or \\glossterm<unaware>, the damage becomes {goblin_stabber.weapon_damage(Weapon('shortsword')) + 2}.
             """,
                 ),
             ],
