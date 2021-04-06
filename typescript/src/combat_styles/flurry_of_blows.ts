@@ -216,7 +216,6 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a ranged \\glossterm{strike} using a \\glossterm{projectile} weapon against a creature adjacent to you.
-        You are not \\glossterm{defenseless} against that creature during the current phase.
       `,
       rank: 2,
       type: "Instant",

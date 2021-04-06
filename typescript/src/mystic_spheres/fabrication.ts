@@ -32,10 +32,8 @@ export const fabrication: MysticSphere = {
       name: "Shieldbearer",
 
       castingTime: "minor action",
-      // secondary effect is too strong to allow a Mass version
       effect: `
         You gain a +1 \\glossterm{magic bonus} to Armor defense.
-        In addition, you are not considered \\glossterm{defenseless} as long as you are not \\glossterm<unaware>, even if you are not wielding a weapon or shield.
       `,
       rank: 1,
       scaling: {
@@ -45,6 +43,23 @@ export const fabrication: MysticSphere = {
       },
       tags: ["Manifestation"],
       type: "Attune (self)",
+    },
+
+    {
+      name: "Mass shieldbearer",
+
+      castingTime: 'minor action',
+      functionsLike: {
+        name: 'shieldbearer',
+        mass: true,
+      },
+      // narrative: '',
+      rank: rank,
+      scaling: {
+        5: 'The bonus increases to +2.',
+        7: 'The bonus increases to +3.',
+      },
+      type: 'Attune (target)',
     },
 
     {

@@ -64,7 +64,10 @@ For details, see \pcref{Attunement}.
 \glossdef{base speed} Your base speed is the distance that you can usually move.
 For details, see \pcref{Base Speed}.
 
-\glossdef{blinded} A blinded creature cannot see. It automatically fails at actions which depend on vision, including simply seeing the locations of other objects and creatures (but see \pcref{Awareness}). It has a 50\% miss chance with all attacks and vision-related checks, even if it knows the location of its target. Finally, it is \defenseless.
+\glossdef{blinded} A blinded creature cannot see.
+It automatically fails at actions which depend on vision, including simply seeing the locations of other objects and creatures (but see \pcref{Awareness}).
+It has a 50\% miss chance with all attacks and vision-related checks, even if it knows the location of its target.
+It is at least \glossterm{partially unaware} of all attacks against it, and it can be fully \glossterm{unaware} as normal depending on its level of awareness.
 
 \glossdef{blindsense} A creature with blindsense can sense its surroundings without any light, regardless of concealment or invisiblity.
 It knows the location of everything around it, but it still takes normal \glossterm{miss chances} for concealment, invisibility, and so on.
@@ -198,10 +201,6 @@ In addition, it takes a \minus2 penalty to \glossterm{accuracy} and visual Aware
 In addition, a decelerated creature cannot act during the \glossterm{action phase}.
 It can take its normal actions during the \glossterm{delayed action phase}.
 This does not stack with the \glossterm{slowed} effect.
-
-\glossdef{defenseless} A defenseless creature is unable to defend itself in melee combat.
-It takes a \minus2 penalty to Armor defense against \glossterm{melee} attacks.
-Any creature not capable of using a weapon or shield to defend itself, such as most unarmed creatures, is defenseless.
 
 \glossdef{defeated} A creature is defeated if it dies, surrenders or is incapacitated for an extended period of time (such as by being knocked unconscious).
 Some abilities, such as a ranger's \textit{quarry} ability (see \pcref{Quarry}), last until their target is defeated.
@@ -356,12 +355,12 @@ For details, see \pcref{Grapple}.
 While grappled, you suffer certain penalties and restrictions, as described below.
 \begin{itemize}
     \item You must use a free hand (or equivalent limb) to grapple, preventing you from taking any actions which would require having two free hands.
-        If you cannot free a hand, you suffer a \minus10 penalty to accuracy with all \glossterm{mundane} attacks and grapple actions until you have a free hand.
-    \item You are \defenseless against creatures who are not grappled by you.
+        If you do not have a free hand, you suffer a \minus10 penalty to accuracy with all \glossterm{mundane} attacks and grapple actions until you have a free hand.
+    \item You take a \minus2 penalty to Armor and Reflex defenses.
     \item The creature you are grappling with provides \glossterm{cover} for you against non-\glossterm{melee} attacks (see \pcref{Cover}).
     \item You take a \minus4 penalty to accuracy with weapons that are not \glossterm{light weapons}, since they are too large and cumbersome to be used effectively in a grapple.
-    \item You cannot use abilities that have \glossterm{somatic components}, such as spells or rituals.
-    \item You cannot normally move from your location (but see the \textit{move grapple} ability, below).
+    \item Abilities that have \glossterm{somatic components}, such as spells or rituals, have a 50\% chance to fail with no effect when used.
+    \item You cannot move unless you \glossterm{push} all creatures grappling you, such as with the \textit{shove} ability (see \pcref{Shove}).
 \end{itemize}
 
 Other than the restrictions listed above, you can act normally. You can also try to move the grapple, escape the grapple, or pin your opponent. For details, see \pcref{Grapple Actions}.
@@ -422,7 +421,10 @@ For details, see \pcref{Initiative}.
 \glossdef{insight point} Insight points can be spent to gain additional abilities or proficiencies.
 For details, see \pcref{Insight Points}.
 
-\glossdef{invisible} An invisible creature or object cannot be seen. Creatures unable to see an invisible creature are \defenseless against its attacks. Attackers suffer a 50\% miss chance even if they know the location of the invisible creature. See \pcref{Awareness}, and \pcref{Stealth}, for how to identify invisible creatures.
+\glossdef{invisible} An invisible creature or object cannot be seen.
+Creatures unable to see an invisible creature are at least \glossterm{partially unaware} of its attacks, and they can be fully \glossterm{unaware} as normal depending on their level of awareness.
+Attackers suffer a 50\% miss chance even if they know the location of the invisible creature.
+See \pcref{Awareness}, and \pcref{Stealth}, for how to identify invisible creatures.
 
 \glossdef{lifesense} A creature with lifesense knows the location of all living creatures within a given range.
 This can allow the creature to identify the presence of hidden living creatures or to identify that seemingly living creatures are not alive.
