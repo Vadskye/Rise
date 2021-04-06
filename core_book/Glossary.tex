@@ -64,10 +64,7 @@ For details, see \pcref{Attunement}.
 \glossdef{base speed} Your base speed is the distance that you can usually move.
 For details, see \pcref{Base Speed}.
 
-\glossdef{blinded} A blinded creature cannot see.
-It automatically fails at actions which depend on vision, including simply seeing the locations of other objects and creatures (but see \pcref{Awareness}).
-It has a 50\% miss chance with all attacks and vision-related checks, even if it knows the location of its target.
-It is at least \glossterm{partially unaware} of all attacks against it, and it can be fully \glossterm{unaware} as normal depending on its level of awareness.
+\glossdef{blinded} See \pcref{Debuffs}.
 
 \glossdef{blindsense} A creature with blindsense can sense its surroundings without any light, regardless of concealment or invisiblity.
 It knows the location of everything around it, but it still takes normal \glossterm{miss chances} for concealment, invisibility, and so on.
@@ -77,9 +74,6 @@ Blindsense always has a range, and grants no benefits beyond that range.
 \glossdef{blindsight} A creature with blindsight can ``see'' its surroundings perfectly without any light, regardless of concealment or invisibility.
 It still needs \glossterm{line of effect} to see its surroundings.
 Blindsight always has a range, and grants no benefits beyond that range.
-
-\glossdef{block}[blocking] The \textit{block} ability allows you to try to prevent other creatures from entering an area.
-For details, see \pcref{Block}.
 
 \glossdef{bright illumination} In an area with bright illumination, creatures can see clearly.
 A creature can't hide in an area with bright illumination unless it is invisible or has cover.
@@ -116,10 +110,7 @@ For details, see \pcref{Charge}.
 \glossdef{character level} Your character level is your total level, including levels from all of your classes.
 Whenever text refers to your ``level'', without specifying a particular kind of level, it means your character level.
 
-\glossdef{charmed} A charmed creature is mentally influenced to like another creature.
-It always sees the words and actions of the creature that charmed it in the most favorable way, as a close friend or trusted ally.
-A charmed creature cannot be controlled like an automaton, but can be persuaded to take particular actions with the Persuasion skill (see \pcref{Persuasion}).
-It treats the creature that charmed it as a friend (a \plus10 relationship modifier) for the purpose of Persuasion checks.
+\glossdef{charmed} See \pcref{Debuffs}.
 
 \glossdef{check}[checks] A check is a d10 roll required to accomplish an action that has a chance of failure that is not an attack.
 If the result of your roll, including your \glossterm{check modifier}, is high enough, you succeed.
@@ -139,8 +130,6 @@ For details, see \pcref{Skill Training}.
 \glossdef{climb speed} A creature with a climb speed can climb as easily as a human walks on land.
 The effects of a climb speed are described at \pcref{Climb Speed}.
 
-\glossdef{cold} A kind of \glossterm{energy damage}.
-
 \glossdef{combat style} A combat style is a collection of \glossterm{maneuvers} that some classes gain access to.
 For details, see \pcref{Combat Styles}.
 
@@ -156,7 +145,7 @@ For details, see \pcref{Concealment}.
 \glossdef{condition}[conditions] A condition is a negative effect on a creature.
 Conditions last until they are removed, such as by the \textit{recover} ability (see \pcref{Recover}).
 
-\glossdef{confused} A confused creature is unable to independently control its actions. \confusionexplanation
+\glossdef{confused} See \pcref{Debuffs}.
 
 \glossdef{cover} Cover represents any obstacle that physically prevents you from striking your target, such as a tree or intervening creature.
 For details, see \pcref{Cover}.
@@ -195,12 +184,9 @@ In addition, it takes a \minus2 penalty to \glossterm{accuracy} and visual Aware
 
 \glossdef{dead} A dead creature's soul leaves its body. Dead creatures cannot benefit from normal or magical healing, but they can be restored to life via magic (see \pcref{Resurrecting the Dead}). A dead body decays normally unless magically preserved.
 
-\glossdef{deafened} A deafened creature cannot hear. It automatically fails at actions which depend on hearing. In addition, it has a 20\% failure chance when casting any spell with verbal components.
+\glossdef{deafened} See \pcref{Debuffs}.
 
-\glossdef{decelerated} A decelerated creature moves at one quarter speed and takes a \minus4 penalty to Armor and Reflex defenses.
-In addition, a decelerated creature cannot act during the \glossterm{action phase}.
-It can take its normal actions during the \glossterm{delayed action phase}.
-This does not stack with the \glossterm{slowed} effect.
+\glossdef{decelerated} See \pcref{Debuffs}.
 
 \glossdef{defeated} A creature is defeated if it dies, surrenders or is incapacitated for an extended period of time (such as by being knocked unconscious).
 Some abilities, such as a ranger's \textit{quarry} ability (see \pcref{Quarry}), last until their target is defeated.
@@ -239,26 +225,14 @@ For details, see \pcref{Disarm}.
 \glossdef{disease} An affliction of the body, causing a steady deterioration over time.
 
 \glossdef{dismiss}[dismissed] When you dismiss an ability, it ends, and all of its lingering effects are removed.
-Unless otherwise noted, all abilities with a \glossterm{duration} can be dismissed.
+Unless otherwise noted, all abilities with a duration can be dismissed.
 
-\glossdef{disoriented} A disoriented creature cannot control the direction of its movement.
-If it tries to move, it instead moves the same distance in a random direction.
-A disoriented creature can remain in the same location without penalty.
-This does not affect abilities that change location without normal movement, such as \glossterm{teleportation}.
+\glossdef{disoriented} See \pcref{Debuffs}.
 
-\glossdef{dominated} A dominated creature is mentally compelled to obey another creature.
-It obeys the commands of the creature of the dominated it unquestioningly, as an automaton.
-If it does not understand the language of the creature that dominated it, it still attempts to obey as much as possible, and simple commmands (such as ``attack'' or ``follow'') can usually be communicated successfully.
-
-% Does this need more description?
-\glossdef{duration} An ability's duration determines how long that ability lasts.
-
-\glossdef{effect} The result of using an \glossterm{ability}.
-
-\glossdef{electricity} A kind of \glossterm{energy damage}.
+\glossdef{dominated} See \pcref{Debuffs}.
 
 \glossdef{emanation} An emanation is a type of area that an ability can have (see \pcref{Area Types}).
-An emanation ability has effects within an area for the \glossterm{duration} of the ability.
+An emanation ability has effects within an area for the duration of the ability.
 It emanates from a specific creature or object, rather than a location.
 If that creature or object moves, the emanation moves with it.
 
@@ -292,8 +266,7 @@ For details, see \pcref{Exploding Attacks}.
 This damage is called falling damage, and it is equal to 1d6 per 10 feet you fell, up to a maximum of 20d6 damage.
 If you control your fall with a successful Agility or Jump check, you can reduce the falling damage you take (see \pcref{Agility}, and \pcref{Jump}).
 
-\glossdef{fascinated} A fascinated creature can take no actions. It remains in place, giving its total attention to some object, creature, or effect. It takes a \minus4 penalty to skill checks made as reactions, such as Awareness checks.
-If the creature notices any threat against it, such as an approaching enemy, it is no longer fascinated.
+\glossdef{fascinated} See \pcref{Debuffs}.
 
 \glossdef{fatigue penalty} You take a penalty to \glossterm{accuracy} and \glossterm{checks} equal to the number of fatigue points you have \sub your \glossterm{fatigue tolerance}.
 If you have a fatigue penalty of at least \minus1, you are considered \glossterm{fatigued}.
@@ -310,8 +283,6 @@ For details, see \pcref{Fatigue Tolerance}.
 \glossdef{fatigued} You are fatigued if you have a \glossterm{fatigue penalty} of at least \minus1.
 For details, see \pcref{Fatigue}.
 
-\glossdef{fire} A kind of \glossterm{energy damage}.
-
 \glossdef{fly speed} A creature with a fly speed has the ability to fly through the air.
 Its speed is the distance it covers in a single \glossterm{move action}.
 For details, see \pcref{Flying}.
@@ -322,17 +293,11 @@ For details, see \pcref{Flying}.
 This penalty is called your focus penalty.
 For details, see \pcref{Ability Tags}.
 
-\glossdef{follow} The \textit{follow} ability allows you to follow another creature to match their movements during the \glossterm{movement phase}.
-For details, see \pcref{Follow}.
-
 \glossdef{free action}[free actions] Each round, you take can any number of free actions.
 Free actions can be taken in any phase.
 For details, see \pcref{Free Actions}.
 
-\glossdef{frightened} A frightened creature takes a \minus4 penalty to \glossterm{accuracy} and Mental defense while it is within \rngmed range of the source of its fear.
-This does not stack with the \glossterm{shaken} or \glossterm{panicked} effects.
-
-If the source of a frightened creature's fear is a creature and is \glossterm{defeated}, this effect is broken.
+\glossdef{frightened} See \pcref{Debuffs}.
 
 \glossdef{glancing blow} When you miss on an attack by 2 or less, it is called a glancing blow.
 Some attacks have effects when you get a glancing blow, as indicated in their descriptions or in other abilities.
@@ -343,27 +308,7 @@ For details, see \pcref{Glancing Blows}.
 It cannot fly upwards, but it can travel forward while it descends, and it descends at a significantly reduced rate.
 For details, see \pcref{Gliding}.
 
-\glossdef{goaded} A goaded creature takes a \minus2 penalty to \glossterm{accuracy} while it is within \rngshort range of the source that goaded it.
-This penalty does not apply to attacks that include the source that goaded the creature as a target.
-
-\glossdef{good} One of the four \glossterm{alignment} components.
-
-\glossdef{grapple} You can use the \textit{grapple} ability to physically restrain a creature.
-For details, see \pcref{Grapple}.
-
-\glossdef{grappled} A grappled creature is wrestling or in some other form of hand-to-hand struggle with at least one other creature.
-While grappled, you suffer certain penalties and restrictions, as described below.
-\begin{itemize}
-    \item You must use a free hand (or equivalent limb) to grapple, preventing you from taking any actions which would require having two free hands.
-        If you do not have a free hand, you suffer a \minus10 penalty to accuracy with all \glossterm{mundane} attacks and grapple actions until you have a free hand.
-    \item You take a \minus2 penalty to Armor and Reflex defenses.
-    \item The creature you are grappling with provides \glossterm{cover} for you against non-\glossterm{melee} attacks (see \pcref{Cover}).
-    \item You take a \minus4 penalty to accuracy with weapons that are not \glossterm{light weapons}, since they are too large and cumbersome to be used effectively in a grapple.
-    \item Abilities that have \glossterm{somatic components}, such as spells or rituals, have a 50\% chance to fail with no effect when used.
-    \item You cannot move unless you \glossterm{push} all creatures grappling you, such as with the \textit{shove} ability (see \pcref{Shove}).
-\end{itemize}
-
-Other than the restrictions listed above, you can act normally. You can also try to move the grapple, escape the grapple, or pin your opponent. For details, see \pcref{Grapple Actions}.
+\glossdef{grappled} See \pcref{Debuffs}.
 
 \glossdef{heavy undergrowth} A space overrun with thick bushes, vines, and similar natural obstacles has heavy undergrowth.
 Heavy undergrowth quadruples the movement cost required to move out of each square and provides \glossterm{concealment}.
@@ -387,12 +332,7 @@ You lose hit points when you take damage.
 If you run out of hit points, you gain \glossterm{vital wounds} when you take damage instead, which can cause you to die quickly.
 For details, see \pcref{Hit Points}.
 
-\glossdef{hunting party} A hunting party is the group of allies affected by a ranger's \textit{quarry} ability (see \pcref{Quarry}).
-
-\glossdef{immobilized} An immobilized creature can't move out of the space it was in when it became immobilized.
-Immobilized flying creatures that have the ability to hover can maintain their initial altitude.
-% TODO: Fix flying interaction; safest way to descend for non-good maneuverability
-All other flying creatures subjected to this condition descend at a rate of 20 feet per round until they reach the ground, taking no falling damage.
+\glossdef{immobilized} See \pcref{Debuffs}.
 
 \glossdef{impervious} A creature can be impervious to a type or subtype of damage.
 It takes half damage from damage of that type.
@@ -552,8 +492,7 @@ For details, see \pcref{Mystic Spheres}.
 \glossdef{natural weapon} A natural weapon is a \glossterm{weapon} that is part of a creature's body.
 For details, see \pcref{Natural Weapons}.
 
-\glossdef{nauseated} A nauseated creature takes a \minus4 penalty to all defenses.
-This does not stack with the \glossterm{sickened} effect.
+\glossdef{nauseated} See \pcref{Debuffs}.
 
 \glossdef{neutral party}[neutral parties] A neutral party is any creature who is neither an \glossterm{ally} nor an \glossterm{enemy}.
 For details, see \pcref{Allies and Enemies}.
@@ -565,29 +504,20 @@ For details, see \pcref{Alignment}.
 \glossdef{overrun} An overrun is a special movement that allows you to move directly through creatures.
 For details, see \pcref{Overrun}.
 
-\glossdef{surrounded} An creature is surrounded if every space adjacent to it either contains an \glossterm{enemy} or is both empty and adjacent to an \glossterm{enemy}.
-A surrounded creature suffers a \minus2 penalty to Armor and Reflex defenses.
+\glossdef{surrounded} See \pcref{Debuffs}.
 
-\glossdef{panicked} While a panicked creature is within \rngmed range of the source of its fear, it takes a \minus4 penalty to Mental defense and must flee from the source of its fear by any means necessary.
-If unable to flee, it must do nothing other than use the \textit{total defense} ability every round (see \pcref{Total Defense}).
-The penalty from this effect does not stack with the \glossterm{frightened} or \glossterm{panicked} effects.
+\glossdef{panicked} See \pcref{Debuffs}.
 
-If the source of a panicked creature's fear is a creature and is \glossterm{defeated}, this effect is broken.
+\glossdef{paralyzed} See \pcref{Debuffs}.
 
-\glossdef{paralyzed} A paralyzed creature is unable to take physical actions. It has effective Dexterity and Strength scores of \minus10 and is \helpless, but can take purely mental actions. This can cause flying creatures to crash, swimming creatures to drown, and so on. Any creature can move through a space occupied by a paralyzed creature, though its space is treated as \glossterm{difficult terrain}.
+\glossdef{partially unaware} See \pcref{Debuffs}.
 
-\glossdef{partially unaware} An creature that is partially unaware of an attack knows that it is in danger, but is missing information about the exact location or nature of the attack.
-Creatures take a \minus2 penalty to Armor and Reflex defenses against attacks that they are partially unaware of.
-For details, see \pcref{Awareness and Surprise}.
-
-\glossdef{petrified} A petrified creature has been turned to stone. It is neither alive nor dead, but is unconscious and unable to take actions, and its body is an inanimate statue. If the statue is broken or damaged before the creature is restored to its original state, the creature has equivalent damage or deformities.
+\glossdef{petrified} See \pcref{Debuffs}.
 
 \glossdef{phase}[phases] A phase is part of the combat \glossterm{round}.
 There are two phases: the \glossterm{movement phase} and the \glossterm{action phase}.
 A phase does not represent a fixed span of time.
 It is an abstract concept designed to represent a variety of actions that all take place nearly simultaneously.
-
-\glossdef{Physical} See \pcref{Ability Tags}.
 
 \glossdef{physical damage} There are three types of physical damage: bludgeoning, piercing, and slashing.
 For details, see \pcref{Damage Types}.
@@ -595,8 +525,6 @@ For details, see \pcref{Damage Types}.
 \glossdef{pinned} A pinned creature is held completely immobile in a grapple.
 The only physical actions it can make are to escape the grapple (see \pcref{Grappling}).
 Like a \glossterm{helpless} creature, its Dexterity is treated as \minus10.
-
-\glossdef{Planar} See \pcref{Ability Tags}.
 
 \glossdef{planar rift}[planar rifts] A planar rift is a location where the boundaries between planes are unusually thin.
 Planar rifts can be used to travel between planes using the appropriate rituals.
@@ -620,10 +548,6 @@ For details, see \pcref{Area}.
 Each stage inflicts a particular negative effect on the poisoned creature according to the poison's description.
 For details, see \pcref{Poison}.
 
-\glossdef{Poison} See \pcref{Ability Tags}.
-
-\glossdef{Positive} See \pcref{Ability Tags}.
-
 \glossdef{power} The power of an \glossterm{ability} represents how strong the ability is.
 Many abilities add your \glossterm{power} to the damage they deal, and it may also determine other effects of the ability.
 Your power with an ability depends on whether the ability is \glossterm{magical} or \glossterm{mundane}.
@@ -633,7 +557,7 @@ For details, see \pcref{Power}.
 
 \glossdef{proficient}[proficiency] A creature can be proficient with weapons and armor.
 If you try to attack with a weapon you are not proficient with, you take a \minus2 penalty to accuracy (see \pcref{Weapon Proficiency}).
-If you try to use armor you are not proficient with, it is less effective and your \glossterm{accuracy} with \glossterm{mundane} attacks is reduced (see \pcref{Armor Proficiency}).
+If you try to use armor you are not proficient with, it is less effective and your \glossterm{accuracy} is reduced (see \pcref{Armor Proficiency}).
 
 \glossdef{projectile} A projectile is an object fired from a weapon at a target.
 Arrows and bolts are projectiles.
@@ -641,11 +565,7 @@ Arrows and bolts are projectiles.
 \glossdef{projectile weapon} A projectile weapon is a weapon designed to fire \glossterm{projectiles}.
 For details about how to attack with projectile weapons, see \pcref{Projectile Strike}.
 
-\glossdef{prone} A prone creature is lying on the ground, rather than standing normally.
-It takes a \minus2 penalty to Armor and Reflex defenses, though it gains a +4 bonus to all defenses against ranged \glossterm{strikes}.
-In addition, it takes a \minus2 penalty to accuracy with melee \glossterm{strikes} and is unable to move until it stands up.
-A creature can stand up from being prone during the movement phase.
-This generally requires one free hand.
+\glossdef{prone} See \pcref{Debuffs}.
 
 \glossdef{push}[pushes] A push is a type of \glossterm{forced movement}.
 It represents being pushed by a constant force.
@@ -695,10 +615,7 @@ Unless otherwise specified, a scrying sensor's visual acuity is the same as that
 Creatures and objects within this area have \concealment, which can allow creatures to make Stealth checks to hide (see \pcref{Stealth}).
 For details, see \pcref{Vision and Light}.
 
-\glossdef{shaken} A shaken creature takes a \minus2 penalty to \glossterm{accuracy} and Mental defense while it is within \rngmed range of the source of its fear.
-This does not stack with the \glossterm{frightened} or \glossterm{panicked} effects.
-
-If the source of a shaken creature's fear is a creature and is \glossterm{defeated}, this effect is broken.
+\glossdef{shaken} See \pcref{Debuffs}.
 
 \glossdef{Shaping} See \pcref{Ability Tags}.
 
@@ -714,8 +631,7 @@ For details, see \pcref{Short Rest}.
 \glossdef{shove} You can use the \textit{shove} ability to forcibly move a creature.
 For details, see \pcref{Shove}.
 
-\glossdef{sickened} A sickened creature takes a \minus2 penalty to all defenses.
-This does not stack with the \glossterm{nauseated} effect.
+\glossdef{sickened} See \pcref{Debuffs}.
 
 \glossdef{size category}[size categories] A creature's size category indicates how large it is.
 There are nine size categories, from smallest to largest: Fine, Diminuitive, Tiny, Small, Medium, Large, Huge, Gargantuan, Colossal.
@@ -731,8 +647,7 @@ For details, see \pcref{Skills}.
 You gain skill points from your class, from having a high Intelligence, and from taking penalties to your starting attributes (see \pcref{Attribute Penalties}).
 For details, see \pcref{Skill Points}.
 
-\glossdef{slowed} A slowed creature moves at half speed and takes a \minus2 penalty to Armor and Reflex defenses.
-This does not stack with the \glossterm{decelerated} effect.
+\glossdef{slowed} See \pcref{Debuffs}.
 
 \glossdef{somatic components}[somatic] Somatic components are hand motions required to cast arcane and pact spells.
 For details, see \pcref{Casting Components}.
@@ -757,15 +672,10 @@ Each spell source has a specific spell list which is described at \pcref{Spells}
 Most characters with the same spell sources have the same spell lists.
 However, some effects, such as a cleric's domains, can add spells to a character's individual spell list.
 
-\glossdef{sprint} You can use the \textit{sprint} ability to move faster for a short period of time.
-For details, see \pcref{Sprint}.
-
 \glossdef{square}[squares] A square represents a single 5-ft.\ by 5-ft.\ space.
 Many areas are measured in squares for convenience.
 
-\glossdef{squeezing} A squeezing creature is trying to move though an area too small for it to fight in normally.
-While squeezing, a creature moves at half speed and takes a \minus2 penalty to \glossterm{accuracy}, as well as Armor and Reflex defenses.
-For details, see \pcref{Squeezing}.
+\glossdef{squeezing} See \pcref{Debuffs}.
 
 \glossdef{standard action}[standard actions] You can use a standard action to attack with a weapon, cast a spell, and do most other things that take concentration and effort.
 
@@ -774,18 +684,17 @@ It is the most common type of attack.
 You can make a strike as a \glossterm{standard action} in the \glossterm{action phase}.
 For details, see \pcref{Strikes}.
 
-\glossdef{stunned} A stunned creature takes a \minus4 penalty to all defenses.
-This does not stack with the \glossterm{dazed} effect.
+\glossdef{stunned} See \pcref{Debuffs}.
 
 \glossdef{subdual damage} Subdual damage is a special kind of damage that can't kill you.
-If you would die from subdual damage, you fall unconscious instead.
+If you would gain a \glossterm{vital wound} from subdual damage, you gain three \glossterm{fatigue points} instead.
 For details, see \pcref{Subdual Damage}.
 
 \glossdef{Subtle} See \pcref{Ability Tags}.
 
 \glossdef{suppressed} A suppressed ability has temporarily ceased to function.
 It has no effect for as long as it remains suppressed.
-Time spent while suppressed counts against the ability's \glossterm{duration}, and it may expire while suppressed if it lasts for a specific amount of time.
+Time spent while suppressed counts against the ability's duration, and it may expire while suppressed if it lasts for a specific amount of time.
 Only \glossterm{magical} abilities can be suppressed.
 Mundane results of magical abilities that have already occured, such as the water created by a \ritual{create water} ritual, cannot themselves be suppressed, and do not disappear if they enter an area that suppresses magical abilities.
 
@@ -827,8 +736,6 @@ For details, see \pcref{Telepathy}.
 \glossdef{teleportation}[teleport] A creature or object that is teleported instantly leaves one location and arrives at another.
 For deatils, see \pcref{Teleportation}.
 
-\glossdef{Temporal} See \pcref{Ability Tags}.
-
 \glossdef{thrown weapon}[thrown weapons] A thrown weapon is a weapon designed to be thrown at a target.
 For details about attacking with thrown weapons, see \pcref{Thrown Strike}.
 
@@ -840,9 +747,6 @@ For details, see \pcref{Total Cover}.
 \glossdef{trained} If you are trained in a skill, you have learned how to use it well, but you have not \glossterm{mastered} it.
 Your modifier with a trained skill is equal to either half your level \add 1 or the skill's \glossterm{key attribute} (if any), whichever is higher.
 For details, see \pcref{Skill Training}.
-
-\glossdef{trip} You can knock a foe off its feet with the \textit{trip} ability.
-For details, see \pcref{Trip}.
 
 \glossdef{tremorsight} A creature with tremorsight can ``see'' its surroundings perfectly without any light, regardless of concealment or invisibility.
 It needs an uninterrupted path through solid objects to sense its surroundings, but does not require line of effect.
@@ -856,23 +760,18 @@ Tremorsense always has a range, and grants no benefits beyond that range.
 \glossdef{truesight} A creature with truesight can ignore all \glossterm{Sensation} effects within a given range.
 Despite the name of the ability, it affects all senses, not merely sight.
 
-\glossdef{Unarmed} See \pcref{Weapon Tags}.
-
 \glossdef{unarmed attack}[unarmed attacks] Every corporeal creature is capable of making an attack using its bare fists (or similar appendages).
 For details, see \pcref{Unarmed Combat}.
 
 \glossdef{unattended} An unattended item is an item not being held or carried by a creature, or that is being held or carried by an \glossterm{ally}.
 Some abilities can only affect unattended items.
 
-\glossdef{unaware} An creature that is unaware of an attack makes no attempt to defend itself.
-Creatures take a \minus5 penalty to Armor and Reflex defenses against attacks that they are unaware of.
-For details, see \pcref{Awareness and Surprise}.
+\glossdef{unaware} See \pcref{Debuffs}.
 
 \glossdef{universal resistance} Some creatures have resistance that applies equally to damage types.
 Universal resistance is applied after more specific resistances have been exhausted, but before hit points are lost.
 
-\glossdef{unconscious} While you are unconscious, you are \glossterm{helpless} and completely unable to take any actions.
-Some sensory abilities, such as the Awareness and Spellsense skills, can be used while you are asleep, but not while you are forcibly knocked unconscious.
+\glossdef{unconscious} See \pcref{Debuffs}.
 
 \glossdef{undergrowth} The presence of a significant amount of roots, bushes, and similar plants that can obstruct movement is called undergrowth.
 There are two kinds of undergrowth: \glossterm{light undergrowth} and \glossterm{heavy undergrowth}.
@@ -886,8 +785,6 @@ For details, see \pcref{Casting Components}.
 
 \glossdef{Visual} See \pcref{Ability Tags}.
 
-
-
 \glossdef{vital wound} A \glossterm{vital wound} is a serious injury that inflicts negative effects on you.
 You gain one or more \glossterm{vital wounds} when you take damage in excess of your hit points (see \pcref{Reaching Zero Hit Points}).
 For details, see \pcref{Vital Wounds}.
@@ -899,8 +796,6 @@ When a creature takes damage of multiple types, it is considered vulnerable to t
 \glossdef{wall} A wall is an area shape that an ability can have (see \pcref{Area Shapes}).
 A wall-shaped area has a length and height, but its width is not measured in squares.
 
-\glossdef{Water} See \pcref{Ability Tags}.
-
 \glossdef{weapon}[weapons] A weapon is an object used to inflict damage.
 Some creatures can treat parts of their body as weapons.
 For details, see \pcref{Weapons}.
@@ -909,13 +804,10 @@ For details, see \pcref{Weapons}.
 You have proficiency with some number of weapon groups based on your \glossterm{class}.
 For details, see \pcref{Weapon Groups}.
 
-\glossdef{withdraw} The \textit{withdraw} ability allows you to stay away from a creature, preventing it from coming too close to you.
-For details, see \pcref{Withdraw}.
-
 \glossdef{vital roll} When you gain a \glossterm{vital wound}, you make a \glossterm{vital roll} to determine the detrimental effect of the \glossterm{vital wound}.
 To make a \glossterm{vital roll}, roll 1d10 \sub the number of \glossterm{vital wounds} you already had, ignoring the vital wound you are rolling for.
 For details, see \pcref{Vital Wounds}.
 
 \glossdef{zone} A zone is a type of area that an ability can have (see \pcref{Area Types}).
-A zone ability has effects within an area for the \glossterm{duration} of the ability.
+A zone ability has effects within an area for the duration of the ability.
 Unless otherwise noted, it does not move after being created.
