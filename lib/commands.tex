@@ -87,10 +87,9 @@
 %\newcommand{\vulnerableexplanation}{A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks.\xspace}
 %\newcommand{\vulneffect}{\minus2 to attacks, defenses, and checks\xspace}
 
-\newcommand{\blinded}{\glossterm{blinded}\xspace}
-\newcommand{\charmed}{\glossterm{charmed}\xspace}
-\newcommand{\confused}{\glossterm{confused}\xspace}
-\newcommand{\defenseless}{\glossterm{defenseless}\xspace}
+\newcommand{\blinded}{\debuff{blinded} \reminder{50\% miss chance}\xspace}
+\newcommand{\charmed}{\debuff{charmed}\xspace}
+\newcommand{\confused}{\glossterm{confused} \reminder{acts randomly}\xspace}
 \newcommand{\disoriented}{\glossterm{disoriented}\xspace}
 \newcommand{\dominated}{\glossterm{dominated}\xspace}
 \newcommand{\fascinated}{\glossterm{fascinated}\xspace}
@@ -99,7 +98,6 @@
 \newcommand{\dazzled}{\glossterm{dazzled}\xspace}
 \newcommand{\deafened}{\glossterm{deafened}\xspace}
 \newcommand{\grappled}{\glossterm{grappled}\xspace}
-\newcommand{\goaded}{\glossterm{goaded}\xspace}
 \newcommand{\helpless}{\glossterm{helpless}\xspace}
 \newcommand{\ignited}{\glossterm{ignited}\xspace}
 \newcommand{\nauseated}{\glossterm{nauseated}\xspace}
@@ -338,6 +336,29 @@
     }
 }
 
+\DeclareDocumentCommand{\debuff}{o m}
+{
+    \IfValueTF{#1}
+    {
+        % Enable this to test for missing glossary definitions
+        % \pref{#1}
+        % Enable this to test for unnecessary glossary entries
+        % \label{#1}
+
+        % TODO: remove \mbox before making major releases;
+        % it fixes bizarre page break errors but makes text uglier
+        \hyperlink{debuff:#1}{\textbf{\mbox{#2}}}
+    }
+    {
+        % Enable this to test for missing glossary definitions
+        % \pref{#2}
+        % Enable this to test for unnecessary glossary entries
+        % \label{#2}
+
+        \hyperlink{debuff:#2}{\textbf{\mbox{#2}}}
+    }
+}
+
 % args:
 %   #1: name of term
 %   #2: alternate name of term, only used for labels/targets
@@ -360,6 +381,28 @@
 
     \hypertarget{gloss:#1}{}
     \hypertarget{gloss:#1s}{}
+    \parhead{#1}
+}
+
+\DeclareDocumentCommand{\debuffdef}{m o}
+{
+    \IfValueT{#2}
+    {
+        % Enable this to test for missing glossary definitions
+        % \label{#2}\label{#2s}
+        % Enable this to test for unnecessary glossary entries
+        % \pref{#2}
+
+        \hypertarget{debuff:#2}{}
+        \hypertarget{debuff:#2s}{}
+    }
+    % Enable this to test for missing glossary definitions
+    % \label{#1}\label{#1s}
+    % Enable this to test for unnecessary glossary entries
+    % \pref{#1}
+
+    \hypertarget{debuff:#1}{}
+    \hypertarget{debuff:#1s}{}
     \parhead{#1}
 }
 
