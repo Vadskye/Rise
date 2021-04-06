@@ -130,7 +130,7 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
         defense: "reflex",
         hit: `
           The target takes $damage.
-          In addition, if this attack also beats Fortitude defense, the target is \\glossterm{grappled} by the $name.
+          In addition, if this attack also beats Fortitude defense, the target is \\grappled by the $name.
         `,
         name: "Impaling Tentacles",
         target: "One creature within \\glossterm{reach}",
@@ -234,7 +234,7 @@ export const magicalBeastInput: TypelessMonsterInput[] = [
       {
         description: `
           Whenever the $name hits a creature with its tentacles, if the attack also beats the target's Fortitude and Reflex defense,
-          the target is \\glossterm{grappled} by the $name.
+          the target is \\grappled by the $name.
         `,
         name: "Latch On",
       },

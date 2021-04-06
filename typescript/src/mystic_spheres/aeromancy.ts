@@ -504,7 +504,7 @@ export const aeromancy: MysticSphere = {
         crit: "Double damage from movement.",
         glance: "Half damage from movement.",
         hit: `
-          As a \\glossterm{condition}, the subject is \\glossterm{slowed} by incredibly fast winds that inhibit movement.
+          As a \\glossterm{condition}, the subject is \\slowed by incredibly fast winds that inhibit movement.
           At the end of each phase, if it moved voluntarily during that phase, it takes 2d6 bludgeoning damage.
         `,
         targeting: `
@@ -522,11 +522,11 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         crit: `
-          Each subject is \\glossterm{dazzled} as a \\glossterm{condition}.
+          Each subject is \\dazzled as a \\glossterm{condition}.
         `,
         // glance: '',
         hit: `
-          Each subject is \\glossterm{dazzled} until the end of the next round.
+          Each subject is \\dazzled until the end of the next round.
         `,
         targeting: `
           Make an attack vs. Reflex against all creatures in a \\smallarea radius within \\medrange from you.
@@ -546,7 +546,7 @@ export const aeromancy: MysticSphere = {
         `,
         // glance: '',
         hit: `
-          Each subject is \\glossterm{dazzled} until the end of the next round.
+          Each subject is \\dazzled until the end of the next round.
         `,
         targeting: `
           Make an attack vs. Reflex against all creatures in a \\largearea radius within \\longrange from you.
@@ -562,11 +562,11 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         crit: `
-          Each subject is \\glossterm{blinded} as a \\glossterm{condition}.
+          Each subject is \\blinded as a \\glossterm{condition}.
         `,
         // glance: '',
         hit: `
-          Each subject is \\glossterm{blinded} until the end of the next round.
+          Each subject is \\blinded until the end of the next round.
         `,
         targeting: `
           Make an attack vs. Reflex against all creatures in a \\smallarea radius within \\medrange from you.
@@ -584,7 +584,7 @@ export const aeromancy: MysticSphere = {
         crit: "The condition is must be removed twice before the effect ends.",
         glance: "The condition is removed at the end of the next round.",
         hit: `
-          The subject is \\glossterm{blinded} as a \\glossterm{condition}.
+          The subject is \\blinded as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Reflex against one creature within \\shortrange.

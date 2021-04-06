@@ -116,7 +116,7 @@ export const pyromancy: MysticSphere = {
 
           If the the subject gains a \\glossterm{vital wound} from this damage, the condition ends.
           The condition can also be removed if the subject makes a \\glossterm{difficulty rating} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
-          Dropping \\glossterm{prone} as part of this action gives a +5 bonus to this check.
+          Dropping \\prone as part of this action gives a +5 bonus to this check.
         `,
         targeting: `
           This spell does not have the \\glossterm{Focus} tag.
@@ -223,7 +223,7 @@ export const pyromancy: MysticSphere = {
 
         If the the subject gains a \\glossterm{vital wound} from this damage, the condition ends.
         The condition can also be removed if the subject makes a \\glossterm{difficulty rating} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
-        Dropping \\glossterm{prone} as part of this action gives a +5 bonus to this check.`,
+        Dropping \\prone as part of this action gives a +5 bonus to this check.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
         `,
@@ -512,8 +512,8 @@ export const pyromancy: MysticSphere = {
       name: "Pyrophobia",
 
       attack: {
-        crit: `The subject is \\glossterm{frightened} instead of shaken.`,
-        hit: `The subject is \\glossterm{shaken} by you and all other sources of fire as a \\glossterm{condition}.`,
+        crit: `The subject is \\frightened instead of shaken.`,
+        hit: `The subject is \\shaken by you and all other sources of fire as a \\glossterm{condition}.`,
         targeting: `
         Make an attack vs. Mental against one creature within \\medrange.
         `,
@@ -528,9 +528,9 @@ export const pyromancy: MysticSphere = {
       name: "Primal Pyrophobia",
 
       attack: {
-        crit: `The subject is \\glossterm{panicked} instead of frightened.`,
+        crit: `The subject is \\panicked instead of frightened.`,
         glance: "The effect lasts until the end of the next round.",
-        hit: `The subject is \\glossterm{frightened} by you and all other sources of fire as a \\glossterm{condition}.`,
+        hit: `The subject is \\frightened by you and all other sources of fire as a \\glossterm{condition}.`,
         targeting: `
         Make an attack vs. Mental against one creature within \\medrange.
         `,
@@ -546,7 +546,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         hit: `The subject takes 1d10 + half \\glossterm{power} fire damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\glossterm{sickened} as a \\glossterm{condition}.`,
+        If it loses \\glossterm{hit points} from this damage, it is \\sickened as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\longrange.
         `,
@@ -563,7 +563,7 @@ export const pyromancy: MysticSphere = {
       attack: {
         glance: `Half damage.`,
         hit: `The subject takes 2d10 + half \\glossterm{power} fire damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\glossterm{nauseated} as a \\glossterm{condition}.`,
+        If it loses \\glossterm{hit points} from this damage, it is \\nauseated as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\longrange.
         `,
@@ -584,7 +584,7 @@ export const pyromancy: MysticSphere = {
         While ignited in this way, it takes 2d8 fire damage at the end of each round.
 
         It can put out the fire by making a \\glossterm{difficulty rating} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
-        Dropping \\glossterm{prone} as part of this action gives a +5 bonus to this check.
+        Dropping \\prone as part of this action gives a +5 bonus to this check.
         Putting out the flames in this way does not remove this effect.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.

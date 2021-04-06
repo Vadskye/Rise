@@ -88,7 +88,7 @@ export const aquamancy: MysticSphere = {
         crit: "The effect lasts until this curse is removed.",
         glance: "The effect lasts until the end of the next round.",
         hit: `
-          The subject is \\glossterm{sickened}.
+          The subject is \\sickened.
           If it immerses itself in or drinks a body of water of minimum size equal to two size categories smaller than itself,
             the subject stops being sickened for 10 minutes.
           This effect lasts until the subject takes a \\glossterm{short rest}.
@@ -490,7 +490,7 @@ export const aquamancy: MysticSphere = {
         // glance: '',
         hit: `
           The subject takes 1d6 physical damage.
-          If it loses hit points from this damage, it is \\glossterm{nauseated} as a \\glossterm{condition}.
+          If it loses hit points from this damage, it is \\nauseated as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\rngmed range.
@@ -508,7 +508,7 @@ export const aquamancy: MysticSphere = {
         glance: "Half damage.",
         hit: `
           The subject takes 2d8 + half \\glossterm{power} physical damage.
-          If it loses hit points from this damage, it is \\glossterm{nauseated} as a \\glossterm{condition}.
+          If it loses hit points from this damage, it is \\nauseated as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\rngmed range.
@@ -526,7 +526,7 @@ export const aquamancy: MysticSphere = {
         glance: "Half damage.",
         hit: `
           The subject takes 4d10 + \\glossterm{power} physical damage.
-          If it loses hit points from this damage, it is \\glossterm{nauseated} as a \\glossterm{condition}.
+          If it loses hit points from this damage, it is \\nauseated as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\rngmed range.
@@ -541,7 +541,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each subject that has no remaining \\glossterm{resistance} to physical damage is \\glossterm{nauseated} as a \\glossterm{condition}.
+          Each subject that has no remaining \\glossterm{resistance} to physical damage is \\nauseated as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against all living creatures in a \\medarealong, 10 ft. wide line from you.
@@ -558,7 +558,7 @@ export const aquamancy: MysticSphere = {
         // crit: '',
         glance: "The effect lasts until the end of the next round.",
         hit: `
-          Each subject that has no remaining \\glossterm{resistance} to physical damage is \\glossterm{nauseated} as a \\glossterm{condition}.
+          Each subject that has no remaining \\glossterm{resistance} to physical damage is \\nauseated as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against all living \\glossterm{enemies} in a \\gargarealong, 10 ft. wide line from you.
@@ -644,7 +644,7 @@ export const aquamancy: MysticSphere = {
         You can only transform into water in this way once during your movement, and you regain your normal form at the end of the movement.
         In this form, you may move wherever water could go, you cannot take other actions, such as jumping, attacking, or casting spells.
         You may move through squares occupied by enemies without penalty.
-        Being \\glossterm{grappled} or otherwise physically constrained does not prevent you from transforming into water in this way.
+        Being \\grappled or otherwise physically constrained does not prevent you from transforming into water in this way.
 
         Your speed is halved when moving uphill and doubled when moving downhill.
         Unusually steep inclines may cause greater movement differences while in this form.

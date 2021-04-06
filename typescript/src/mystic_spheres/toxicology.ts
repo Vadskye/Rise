@@ -66,7 +66,7 @@ export const toxicology: MysticSphere = {
         glance: "Half damage.",
         hit: `
           The subject takes 2d10 + \\glossterm{power} acid damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{sickened} as a \\glossterm{condition}.
+          If it loses \\glossterm{hit points} from this damage, it is \\sickened as a \\glossterm{condition}.
         `,
         targeting: `
           This spell does not have the \\glossterm{Focus} tag.
@@ -88,8 +88,8 @@ export const toxicology: MysticSphere = {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
         hit: `The subject becomes \\glossterm{poisoned} by the first \\glossterm{poison stage} of asp venom.
         At the end of each subsequent round, you repeat this attack, as normal for poisons (see \\pcref{Poison}).
-        A creature poisoned by asp venom becomes \\glossterm{sickened} as long as it is poisoned.
-        Reaching the third \\glossterm{poison stage} causes the subject to become \\glossterm{nauseated} as long as it is poisoned.
+        A creature poisoned by asp venom becomes \\sickened as long as it is poisoned.
+        Reaching the third \\glossterm{poison stage} causes the subject to become \\nauseated as long as it is poisoned.
         A third failed attack ends the poison.`,
         targeting: `
         Make an attack vs. Fortitude against one living creature within \\medrange.
@@ -177,8 +177,8 @@ export const toxicology: MysticSphere = {
       name: "Sickness",
 
       attack: {
-        crit: `The subject is \\glossterm{nauseated} instead of sickened.`,
-        hit: `The subject is \\glossterm{sickened} as a \\glossterm{condition}.`,
+        crit: `The subject is \\nauseated instead of sickened.`,
+        hit: `The subject is \\sickened as a \\glossterm{condition}.`,
         targeting: `
         Make an attack vs. Fortitude against one living creature within \\shortrange.
         `,
@@ -195,7 +195,7 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: `The effect lasts until this curse is removed.`,
         glance: "The effect lasts until the end of the next round.",
-        hit: `The subject is \\glossterm{sickened} until it takes a \\glossterm{short rest}.`,
+        hit: `The subject is \\sickened until it takes a \\glossterm{short rest}.`,
         targeting: `
           Make an attack vs. Mental against one living creature within \\medrange.
         `,

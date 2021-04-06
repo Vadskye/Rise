@@ -133,8 +133,8 @@ export const telekinesis: MysticSphere = {
       name: "Kinetic Impedance",
 
       attack: {
-        crit: `The subject is \\glossterm{decelerated} instead of slowed.`,
-        hit: `The subject is \\glossterm{slowed} as a \\glossterm{condition}.`,
+        crit: `The subject is \\decelerated instead of slowed.`,
+        hit: `The subject is \\slowed as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one Large or smaller target within \\medrange.
         `,
@@ -167,7 +167,7 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         crit: "The effect becomes a \\glossterm{condition} on each subject.",
-        hit: `Each subject is \\glossterm{slowed} until the end of the next round.`,
+        hit: `Each subject is \\slowed until the end of the next round.`,
         targeting: `
           Make an attack vs. Mental against all Large or smaller creatures in a \\areasmall radius within \\medrange.
         `,

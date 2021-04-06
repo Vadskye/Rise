@@ -83,7 +83,7 @@ export const electromancy: MysticSphere = {
         glance: "Half damage.",
         hit: `
           The subject takes 2d10 + \\glossterm{power} electricity damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{dazed} as a \\glossterm{condition}.
+          If it loses \\glossterm{hit points} from this damage, it is \\dazed as a \\glossterm{condition}.
         `,
         targeting: `
           This spell does not have the \\glossterm{Focus} tag.
@@ -105,7 +105,7 @@ export const electromancy: MysticSphere = {
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
         glance: "The effect lasts until the end of the next round.",
-        hit: `Each subject that has no remaining \\glossterm{resistance} to electricity damage is \\glossterm{stunned} as a \\glossterm{condition}.`,
+        hit: `Each subject that has no remaining \\glossterm{resistance} to electricity damage is \\stunned as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\areamed radius from you.
         `,
@@ -164,7 +164,7 @@ export const electromancy: MysticSphere = {
 
       attack: {
         crit: `The effect becomes a \\glossterm{condition} on each subject.`,
-        hit: `Each subject is \\glossterm{dazed} and \\glossterm{disoriented} until the end of the next round.`,
+        hit: `Each subject is \\dazed and \\disoriented until the end of the next round.`,
         targeting: `
           Make an attack vs. Fortitude against all creatures in a \\smallarea radius within \\medrange.
         `,
@@ -274,7 +274,7 @@ export const electromancy: MysticSphere = {
 
       attack: {
         hit: `The subject takes 1d6 electricity damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\glossterm{stunned} as a \\glossterm{condition}.`,
+        If it loses \\glossterm{hit points} from this damage, it is \\stunned as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
         `,
@@ -290,7 +290,7 @@ export const electromancy: MysticSphere = {
       attack: {
         glance: `Half damage.`,
         hit: `The subject takes 2d6 electricity damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\glossterm{disoriented} as a \\glossterm{condition}.`,
+        If it loses \\glossterm{hit points} from this damage, it is \\disoriented as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
         `,

@@ -231,7 +231,7 @@ export const umbramancy: MysticSphere = {
       name: "Shrouded Vision",
 
       attack: {
-        crit: `The subject is \\glossterm{blinded} instead.`,
+        crit: `The subject is \\blinded instead.`,
         glance: "The effect lasts until the end of the next round.",
         hit: `As a \\glossterm{condition}, the subject takes a -4 penalty to \\glossterm{accuracy} and visual Awareness checks.`,
         targeting: `
@@ -269,7 +269,7 @@ export const umbramancy: MysticSphere = {
         Your weapons become become shrouded in darkness, making them virtually impossible to see.
         Your melee \\glossterm{strikes} are treated as if they came from an invisible creature.
 
-        Most creatures are at least \\glossterm{partially unaware} of attacks from invisible creatures, even if they are already actively engaged in combat, causing them to suffer a -2 penalty to Armor and Reflex defenses against the attack.
+        Most creatures are at least \\partiallyunaware of attacks from invisible creatures, even if they are already actively engaged in combat, causing them to suffer a -2 penalty to Armor and Reflex defenses against the attack.
         This effect provides no offensive benefit against creatures immune to \\glossterm{Visual} abilities.
       `,
       rank: 6,
@@ -336,7 +336,7 @@ export const umbramancy: MysticSphere = {
         Teleporting a given distance costs movement equal to half that distance.
         If your \\glossterm{line of effect} to your destination is blocked, or if this teleportation would somehow place you inside a solid object, your teleportation is cancelled and you remain where you are that phase.
         Areas with \\glossterm{bright illumination} blocks line of effect for this spell, so you are unable to teleport into or past areas of bright illumination.
-        You must be able to move to teleport in this way, so effects like being \\glossterm{immobilized} prevent this movement.
+        You must be able to move to teleport in this way, so effects like being \\immobilized prevent this movement.
       `,
       rank: 4,
       scaling: { 6: `You can also teleport vertically or diagonally in addition to horizontally.` },
@@ -348,7 +348,7 @@ export const umbramancy: MysticSphere = {
 
       attack: {
         hit: `The subject takes 1d8 + half \\glossterm{power} cold damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\glossterm{slowed} as a \\glossterm{condition}.`,
+        If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange standing on the ground.
           You attempt to bind the creature's shadow to the ground, slowing its movement.
@@ -367,7 +367,7 @@ export const umbramancy: MysticSphere = {
       attack: {
         glance: `Half damage.`,
         hit: `The subject takes 2d8 cold damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\glossterm{immobilized} as a \\glossterm{condition}.`,
+        If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange standing on the ground.
           You attempt to pin the creature's shadow to the ground, preventing it from moving.
@@ -386,7 +386,7 @@ export const umbramancy: MysticSphere = {
       attack: {
         glance: `Half damage.`,
         hit: `The subject takes 4d8 + half \\glossterm{power} cold damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\glossterm{disoriented} as a \\glossterm{condition}.
+        If it loses \\glossterm{hit points} from this damage, it is \\disoriented as a \\glossterm{condition}.
         In addition, it must move a distance equal to its maximum movement speed in a straight line during each \\glossterm{movement phase}.
         It must use its movement mode with the highest speed to move this way.
         It is not required to use the \\textit{sprint} ability, or use any other special movement ability, though it may choose to do so.
@@ -412,7 +412,7 @@ export const umbramancy: MysticSphere = {
           Your horizontal dimensions are unchanged, and you cannot enter spaces that are more narrow than you can normally fit through.
           \\item You can freely move through space occupied by other creatures, and other creatures can freely move through your space.
           \\item You gain a \\glossterm{climb speed} equal to your \\glossterm{base speed}, and you can climb without using any hands.
-          \\item You are always treated as being \\glossterm{prone}.
+          \\item You are always treated as being \\prone.
           \\item You gain a +4 \\glossterm{magic bonus} to the Stealth skill.
         \\end{itemize}
 

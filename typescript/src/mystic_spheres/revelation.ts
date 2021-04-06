@@ -228,14 +228,14 @@ export const revelation: MysticSphere = {
       name: "Boon of Many Eyes",
 
       effect: `
-        You reduce your penalties for being \\glossterm{surrounded} by 1.
+        You reduce your penalties for being \\surrounded by 1.
       `,
 
       rank: 3,
       scaling: {
         5: `The penalty reduction increases to 2.
             You are still considered to be surrounded for the purpose of other abilities, even this reduces your penalties to 0.`,
-        7: `You can never be \\glossterm{surrounded}`,
+        7: `You can never be \\surrounded`,
       },
       type: "Attune (self)",
     },
@@ -297,9 +297,9 @@ export const revelation: MysticSphere = {
       name: "Myriad Visions",
 
       attack: {
-        crit: `The subject is also \\glossterm{dazed} as part of the same condition.`,
+        crit: `The subject is also \\dazed as part of the same condition.`,
         hit: `The subject sees visions of possible futures that confuse its ability to determine reality.
-        It is \\glossterm{dazzled} as a \\glossterm{condition}.`,
+        It is \\dazzled as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
         `,
@@ -316,7 +316,7 @@ export const revelation: MysticSphere = {
         crit: `The condition must be removed twice before the effect ends.`,
         glance: "The effect lasts until the end of the next round.",
         hit: `The subject's mind is overwhelmed by a total awareness of your chosen fact.
-        It is \\glossterm{stunned} as a \\glossterm{condition}.`,
+        It is \\stunned as a \\glossterm{condition}.`,
         targeting: `
         Choose a fact that you know and make an attack vs. Mental against one creature within \\medrange.
         If the subject does not already know that fact to be true or false,

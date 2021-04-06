@@ -136,7 +136,7 @@ export const channelDivinity: MysticSphere = {
       attack: {
         hit: `
           The subject takes 1d6 energy damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{stunned} as a \\glossterm{condition}.
+          If it loses \\glossterm{hit points} from this damage, it is \\stunned as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
@@ -151,10 +151,10 @@ export const channelDivinity: MysticSphere = {
       name: "Glimpse of Divinity",
 
       attack: {
-        crit: "The subject is also \\glossterm{dazed} as part of the same condition.",
+        crit: "The subject is also \\dazed as part of the same condition.",
         glance: "The effect lasts until the end of the next round.",
         hit: `
-          The subject is \\glossterm{dazzled} as a \\glossterm{condition}.
+          The subject is \\dazzled as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\longrange.
@@ -169,7 +169,7 @@ export const channelDivinity: MysticSphere = {
       name: "Fear of the Divine",
 
       attack: {
-        crit: "The subject is \\glossterm{panicked} instead of \\glossterm{frightened}.",
+        crit: "The subject is \\panicked instead of \\frightened.",
         glance: "The effect lasts until the end of the next round.",
         hit: `
           The subject is \\frightened by you as a \\glossterm{condition}.
@@ -274,7 +274,7 @@ export const channelDivinity: MysticSphere = {
         crit: "The effect becomes a \\glossterm{condition} on each subject.",
         // glance: '',
         hit: `
-          Each subject is \\glossterm{shaken} by you until the end of the next round.
+          Each subject is \\shaken by you until the end of the next round.
         `,
         targeting: `
           At the end of each round, make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius \\glossterm{emanation} from you.

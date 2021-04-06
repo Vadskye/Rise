@@ -89,7 +89,7 @@ export const terramancy: MysticSphere = {
       attack: {
         glance: `Half damage.`,
         hit: `The subject takes 2d6 piercing damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\glossterm{immobilized} as a \\glossterm{condition}.`,
+        If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Armor against anything within \\medrange that is on a stable surface.
           This attack gains a +2 \\glossterm{accuracy} bonus if the target is on a Medium or larger body of stone.
@@ -107,7 +107,7 @@ export const terramancy: MysticSphere = {
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
         glance: "The effect lasts until the end of the next round.",
-        hit: `The subject is is \\glossterm{immobilized} as a \\glossterm{condition}.`,
+        hit: `The subject is is \\immobilized as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Reflex against one Large or smaller creature within \\shortrange.
           This attack gains a +2 \\glossterm{accuracy} bonus if the target is on a Medium or larger body of stone.
@@ -132,7 +132,7 @@ export const terramancy: MysticSphere = {
         If you fully exit the stone, this spell ends.
 
         If this spell ends before you exit the stone, or if the stone stops being a valid target for the spell (such as if it is broken into pieces), you are forcibly expelled from the stone.
-        When you are forcibly expelled from the stone, you take 4d10 bludgeoning damage and become \\glossterm{nauseated} as a \\glossterm{condition}.
+        When you are forcibly expelled from the stone, you take 4d10 bludgeoning damage and become \\nauseated as a \\glossterm{condition}.
       `,
       rank: 3,
       scaling: {
@@ -149,7 +149,7 @@ export const terramancy: MysticSphere = {
 
       attack: {
         crit: `Each subject is also unable to stand up as a \\glossterm{condition}.`,
-        hit: `Each subject is knocked \\glossterm{prone}.`,
+        hit: `Each subject is knocked \\prone.`,
         targeting: `
           Make an attack vs. Reflex against all Large or smaller creatures in a \\smallarea within \\medrange that are on a stable surface.
           This attack gains a +2 \\glossterm{accuracy} bonus against each target that is on a Medium or larger body of stone.
@@ -169,7 +169,7 @@ export const terramancy: MysticSphere = {
       attack: {
         glance: `Half damage.`,
         hit: `Each subject takes 2d8 + half \\glossterm{power} bludgeoning damage.
-        Each Large or smaller target that loses \\glossterm{hit points} from this damage is also knocked \\glossterm{prone}.`,
+        Each Large or smaller target that loses \\glossterm{hit points} from this damage is also knocked \\prone.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea within \\medrange that is on a stable surface.
           This attack gains a +2 \\glossterm{accuracy} bonus against each target that is on a Medium or larger body of stone.
@@ -189,7 +189,7 @@ export const terramancy: MysticSphere = {
       attack: {
         glance: `Half damage.`,
         hit: `Each subject takes 4d8 + \\glossterm{power} bludgeoning damage.
-        Each Large or smaller subject that takes damage this way is also knocked \\glossterm{prone}.`,
+        Each Large or smaller subject that takes damage this way is also knocked \\prone.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarea radius within \\longrange that is on a stable surface.
           This attack gains a +2 \\glossterm{accuracy} bonus against each target that is on a Medium or larger body of stone.
@@ -209,7 +209,7 @@ export const terramancy: MysticSphere = {
         glance: `Half damage.`,
         hit: `The subject takes 4d6 bludgeoning damage.
         If it is Large or smaller and it loses \\glossterm{hit points} from this damage, it is swallowed by the earth as a \\glossterm{condition}.
-        While it is swallowed by the earth, it is \\glossterm{paralyzed} and does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
+        While it is swallowed by the earth, it is \\paralyzed and does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
         At the end of each subsequent round, it takes 4d6 bludgeoning damage as the earth grinds it into paste.
         If the earth or stone it is swallowed by is destroyed or otherwise rendered unable to contain the creature, this effect ends.
         Special movement abilities such as teleportation can also remove the subject from the fissure.`,

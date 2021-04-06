@@ -13,7 +13,7 @@ export const bluntForce: CombatStyle = {
         Make a \\glossterm{strike} using a bludgeoning weapon.
         The attack is made against each target's Fortitude defense instead of its Armor defense.
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{sickened} as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\sickened as a \\glossterm{condition}.
         `,
 
       rank: 1,
@@ -27,7 +27,7 @@ export const bluntForce: CombatStyle = {
         Make a \\glossterm{strike} using a bludgeoning weapon.
         The attack is made against each target's Fortitude defense instead of its Armor defense.
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{nauseated} as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\nauseated as a \\glossterm{condition}.
         `,
 
       rank: 3,
@@ -40,7 +40,7 @@ export const bluntForce: CombatStyle = {
         Make a \\glossterm{strike} using a bludgeoning weapon.
         The attack is made against each target's Fortitude defense instead of its Armor defense.
         Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{nauseated} as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\nauseated as a \\glossterm{condition}.
         `,
 
       rank: 6,
@@ -93,7 +93,7 @@ export const bluntForce: CombatStyle = {
       attack: {
         glance: `Half damage.`,
         hit: `Each subject takes 2d10 + half \\glossterm{power} bludgeoning damage
-        Each Large or smaller creature that loses \\glossterm{hit points} from this damage is knocked \\glossterm{prone}..`,
+        Each Large or smaller creature that loses \\glossterm{hit points} from this damage is knocked \\prone..`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarea radius from you that is on the same stable surface as you.
           You take a -4 penalty to accuracy with this attack against your \\glossterm{allies}.
@@ -159,7 +159,7 @@ export const bluntForce: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{dazed} as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\dazed as a \\glossterm{condition}.
         `,
 
       rank: 1,
@@ -172,7 +172,7 @@ export const bluntForce: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{stunned} as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
         `,
 
       rank: 3,
@@ -185,7 +185,7 @@ export const bluntForce: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{confused} as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\confused as a \\glossterm{condition}.
         `,
 
       rank: 6,
@@ -228,7 +228,7 @@ export const bluntForce: CombatStyle = {
         Make a \\glossterm{strike} using a bludgeoning weapon.
         The attack is made against each target's Fortitude defense instead of its Armor defense.
         You take a -1d penalty to damage with the strike.
-        Each creature that loses \\glossterm{hit points} from the strike falls \\glossterm{prone} if it is no larger than one size category larger than you.
+        Each creature that loses \\glossterm{hit points} from the strike falls \\prone if it is no larger than one size category larger than you.
       `,
       rank: 2,
       type: "Instant",

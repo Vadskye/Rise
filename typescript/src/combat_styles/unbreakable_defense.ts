@@ -63,7 +63,7 @@ export const unbreakableDefense: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a shield.
         Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{sickened} as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\sickened as a \\glossterm{condition}.
       `,
       rank: 1,
       type: "Duration",
@@ -75,7 +75,7 @@ export const unbreakableDefense: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a shield.
         Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{nauseated} as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\nauseated as a \\glossterm{condition}.
         `,
 
       rank: 3,

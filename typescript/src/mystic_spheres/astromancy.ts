@@ -209,7 +209,7 @@ export const astromancy: MysticSphere = {
         glance: "Half damage.",
         hit: `
           The subject takes 2d6 + \\glossterm{power} bludgeoning damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{immobilized} as a \\glossterm{condition}.
+          If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
@@ -255,7 +255,7 @@ export const astromancy: MysticSphere = {
 
           If the the subject gains a \\glossterm{vital wound} from this damage, the condition ends.
           This condition can be removed if the subject makes a \\glossterm{difficulty rating} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
-          Dropping \\glossterm{prone} as part of this action gives a +5 bonus to this check.
+          Dropping \\prone as part of this action gives a +5 bonus to this check.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
@@ -296,7 +296,7 @@ export const astromancy: MysticSphere = {
         glance: "Half damage.",
         hit: `
           The subject takes 4d6 energy damage.
-          In addition, it is \\glossterm{stunned} as a \\glossterm{condition}.
+          In addition, it is \\stunned as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
@@ -344,7 +344,7 @@ export const astromancy: MysticSphere = {
         Once per round, you can teleport horizontally instead of moving normally.
         Teleporting a given distance costs movement equal to that distance.
         If your \\glossterm{line of effect} to your destination is blocked, or if this teleportation would somehow place you inside a solid object, your teleportation is cancelled and you remain where you are that phase.
-        You must be able to move to teleport in this way, so effects like being \\glossterm{immobilized} prevent this movement.
+        You must be able to move to teleport in this way, so effects like being \\immobilized prevent this movement.
       `,
       rank: 4,
       scaling: {
@@ -483,7 +483,7 @@ export const astromancy: MysticSphere = {
       effect: `
         You can move through creatures freely.
         This does not allow you to move through inanimate objects.
-        It also does not allow you to end your movement in spaces occupied by other creatures without \\glossterm{squeezing}.
+        It also does not allow you to end your movement in spaces occupied by other creatures without \\squeezing.
       `,
       rank: 3,
       scaling: {

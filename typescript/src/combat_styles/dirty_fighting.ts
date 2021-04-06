@@ -12,7 +12,7 @@ export const dirtyFighting: CombatStyle = {
       effect: `
         Make a strike using an \\glossterm{unarmed attack}.
         Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{dazed} as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\dazed as a \\glossterm{condition}.
       `,
       rank: 1,
       type: "Duration",
@@ -24,7 +24,7 @@ export const dirtyFighting: CombatStyle = {
       effect: `
         Make a strike using an \\glossterm{unarmed attack}.
         Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{stunned} as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
         `,
 
       rank: 3,
@@ -295,7 +295,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with a +1d bonus to damage.
-        After making the strike, you fall \\glossterm{prone}, and you cannot stand up until after the next \\glossterm{movement phase}.
+        After making the strike, you fall \\prone, and you cannot stand up until after the next \\glossterm{movement phase}.
       `,
       rank: 1,
       type: "Instant",

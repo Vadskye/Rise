@@ -47,7 +47,7 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         crit: `The subject also cannot move farther than 10 feet from its original location until it ends the effect.`,
-        hit: `The subject is \\glossterm{slowed} as a \\glossterm{condition}.
+        hit: `The subject is \\slowed as a \\glossterm{condition}.
         This condition can be removed if the subject or a creature that can reach the subject makes a \\glossterm{difficulty rating} 10 Strength check to break the subject free of the plants around its body.
         The subject can make this check as a \\glossterm{move action}, while other creatures can make the check as a standard action.`,
         targeting: `
@@ -86,7 +86,7 @@ export const verdamancy: MysticSphere = {
       attack: {
         crit: `the condition must be removed twice before the effect ends.`,
         glance: "The effect lasts until the end of the next round.",
-        hit: `The subject is \\glossterm{immobilized} by a mass of vines as a \\glossterm{condition}.
+        hit: `The subject is \\immobilized by a mass of vines as a \\glossterm{condition}.
         In addition, it is unable to breathe.
         This condition can be removed if the subject or a creature that can reach the subject makes a \\glossterm{difficulty rating} 15 Strength check to break the subject free of the vines.
         The subject can make this check as a \\glossterm{move action}, while other creatures can make the check as a standard action.`,
@@ -162,8 +162,8 @@ export const verdamancy: MysticSphere = {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
         hit: `The subject becomes \\glossterm{poisoned} by the first \\glossterm{poison stage} of nitharit.
         At the end of each subsequent round, you repeat this attack, as normal for poisons (see \\pcref{Poison}).
-        A creature poisoned by nitharit becomes \\glossterm{sickened} as long as it is poisoned.
-        Reaching the third \\glossterm{poison stage} causes the subject to become \\glossterm{nauseated} as long as it is poisoned.
+        A creature poisoned by nitharit becomes \\sickened as long as it is poisoned.
+        Reaching the third \\glossterm{poison stage} causes the subject to become \\nauseated as long as it is poisoned.
         A third failed attack ends the poison.`,
         targeting: `
         Make an attack vs. Fortitude against one living creature within \\medrange.

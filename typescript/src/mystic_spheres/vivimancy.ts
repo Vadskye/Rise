@@ -381,7 +381,7 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         crit: "The effect becomes a \\glossterm{condition} on each subject.",
-        hit: `Each subject is \\glossterm{sickened} until the end of the next round.`,
+        hit: `Each subject is \\sickened until the end of the next round.`,
         targeting: `
           Make an attack vs. Fortitude against all living creatures in a \\smallarea radius within \\longrange.
         `,
@@ -396,7 +396,7 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         crit: "The effect becomes a \\glossterm{condition} on each subject.",
-        hit: `Each subject is \\glossterm{nauseated} until the end of the next round.`,
+        hit: `Each subject is \\nauseated until the end of the next round.`,
         targeting: `
           Make an attack vs. Fortitude against all living creatures in a \\smallarea radius within \\longrange.
         `,
