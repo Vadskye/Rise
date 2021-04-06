@@ -54,7 +54,7 @@ export const fabrication: MysticSphere = {
         mass: true,
       },
       // narrative: '',
-      rank: rank,
+      rank: 3,
       scaling: {
         5: 'The bonus increases to +2.',
         7: 'The bonus increases to +3.',
