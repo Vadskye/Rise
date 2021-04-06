@@ -312,7 +312,7 @@ export const photomancy: MysticSphere = {
       effect: `
         Your physical outline is distorted so it appears blurred, shifting, and wavering.
         You gain a +1 \\glossterm{magic bonus} to Armor defense and the Stealth skill.
-        This effect provides no defensive benefit against creatures immune to \\glossterm{Visual} abilities.
+        This effect provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
       `,
       rank: 1,
       scaling: {
@@ -398,7 +398,7 @@ export const photomancy: MysticSphere = {
         Like other miss chances, this miss chance is rolled before determining whether the attack beats your defenses.
         When an attack misses in this way, it affects an image, destroying it.
         When the last image is destroyed, this ability provides no further benefit.
-        This ability provides no defensive benefit against creatures immune to \\glossterm{Visual} abilities.
+        This ability provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
       `,
       rank: 1,
       scaling: {
@@ -416,7 +416,7 @@ export const photomancy: MysticSphere = {
       effect: `
         Your image appears to be two to three feet from its real location.
         All \\glossterm{strikes} against you suffer a 20\\% miss chance.
-        This ability provides no defensive benefit against creatures immune to \\glossterm{Visual} abilities.
+        This ability provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
       `,
       rank: 6,
       tags: ["Sensation", "Visual"],

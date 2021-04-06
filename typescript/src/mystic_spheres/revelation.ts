@@ -75,7 +75,7 @@ export const revelation: MysticSphere = {
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The first time the subject makes a \\glossterm{strike} this round,
         it gains a +2 bonus to \\glossterm{accuracy} and rolls twice and takes the higher result.
-        Because this ability has the \\glossterm{Swift} tag, it can affect an attack the subject makes during the current phase.
+        Because this ability has the \\abilitytag{Swift} tag, it can affect an attack the subject makes during the current phase.
         If you cast this spell on yourself, it affects the first strike you make until the end of the next round.
       `,
       rank: 1,
@@ -544,7 +544,7 @@ export const revelation: MysticSphere = {
       effect: `
         A \\glossterm{scrying sensor} appears floating in the air in the subject location.
         The sensor passively observes its surroundings.
-        As with other \\glossterm{Scrying} effects, its visual acuity is the same as yours.
+        As with other \\abilitytag{Scrying} effects, its visual acuity is the same as yours.
         You can choose the minimum size category that the alarm will notify you for when you cast this spell.
         If it sees a creature or object of that size or larger moving within 50 feet of it, it will trigger an alarm.
         When you perform this ritual, you choose whether the alarm causes the sound of a ringing bell or a mental "ping" that only you can notice.

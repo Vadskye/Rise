@@ -12,7 +12,7 @@ export function spellTypePrefix(
     tags && tags.length > 0
       ? `${tags
           .sort()
-          .map((t) => `\\glossterm{${t}}`)
+          .map((t) => `\\abilitytag{${t}}`)
           .join(", ")}`
       : "";
   const tagLine = tagsText ? `\\spelltwocol{${spell.type}}{${tagsText}}` : spell.type;

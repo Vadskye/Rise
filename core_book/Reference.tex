@@ -1,4 +1,6 @@
-\chapter{Circumstances And Debuffs}\label{Circumstances And Debuffs}
+\chapter{Reference}\label{Reference}
+
+\section{Circumstances and Debuffs}\label{Circumstances and Debuffs}
 
 \debuffdef{blinded} A blinded creature cannot see.
 It automatically fails at actions which depend on vision, including simply seeing the locations of other objects and creatures (but see \pcref{Awareness}).
@@ -114,3 +116,76 @@ For details, see \pcref{Awareness and Surprise}.
 
 \debuffdef{unconscious} While you are unconscious, you are \helpless and completely unable to take any actions.
 Some sensory abilities, such as the Awareness and Spellsense skills, can be used while you are asleep, but not while you are forcibly knocked unconscious.
+
+\newpage
+\section{Ability Tags}\label{Ability Tags}
+
+\abilitytagdef{Auditory} Auditory abilities use sound to cause their effects.
+Creatures and objects that cannot hear the effect are immune to it.
+
+\abilitytagdef{Compulsion} Compulsion abilities forcibly alter a creature's actions, but do not necessarily affect its opinions or personality.
+They have no effect on objects or creatures without minds.
+
+\abilitytagdef{Creation} Creation abilities create permanent physical objects.
+Objects created with Creation abilities are identical to objects created through more mundane means.
+
+\abilitytagdef{Curse} Curse abilities lay supernatural curses on their targets.
+They cannot be \glossterm{dismissed}, but can be removed with the \spell{dispel curse} spell.
+
+\abilitytagdef{Detection}\label{Detection} Detection abilities reveal magical auras or information within an area.
+They can penetrate up to 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.
+For its ability to penetrate other materials, use the most similar substance from the list above.
+
+\abilitytagdef{Emotion} Emotion abilities alter a creature's opinons or personality, but do not necessarily affect their actions.
+They have no effect on objects or creatures without minds.
+
+\abilitytagdef{Focus}\label{Focus} Focus abilities require concentration to use.
+When you use a Focus ability, you take a \minus4 penalty to Armor and Reflex defenses until the end of the round.
+This penalty is called your \glossterm{focus penalty}.
+It applies immediately, affecting attacks made against you during the current phase.
+Some abilities can reduce or increase your \glossterm{focus penalty}.
+Most \glossterm{spells} are \abilitytag{Focus} abilities.
+
+When you use a Focus ability during the \glossterm{delayed action phase}, the ability has a 50\% chance to fail if you already took damage in the current round.
+If your \glossterm{focus penalty} is reduced to 0, this failure chance no longer applies.
+
+If a \abilitytag{Focus} ability has a \abilitytag{Sustain} tag, sustaining the ability does not require focus and does not cause the sustaining creature to suffer focus penalties.
+
+\abilitytagdef{Manifestation} Manifestation abilities create temporary constructs formed from raw magical energy.
+Objects and creatures created with manifestation abilities seem real on the surface, but they have no internal structure.
+When an object or creature created by a Manifestation ability is destroyed or killed, or when the duration of the ability that created it ends, it disappears without a trace.
+
+\abilitytagdef{Ritual} Ritual abilities have a number of shared properties.
+For details, see \pcref{Spell and Ritual Mechanics}.
+
+\abilitytagdef{Scrying} Scrying abilities create one or more invisible magical sensors that send you information.
+Unless otherwise noted, the sensor created has the same powers of sensory acuity that you possess.
+This includes the effect of any abilities which target you personally, such as spells to increase your visual acuity, but not abilities which affect an area around you.
+However, the sensor is treated as a separate, independent sensory organ, and it functions normally even if you have been blinded, deafened, or otherwise suffered sensory impairment.
+\par Any creature trained in Spellsense can notice the sensor by making a \glossterm{difficulty rating} 20 Spellsense check.
+The sensor can be dismissed as if it were an active spell.
+You cannot create a sensor in a location with lead sheeting between you and the location, and you sense that the effect is blocked in this way.
+
+\abilitytagdef{Sensation} Sensation abilities create or manipulate light, sound, or other sensations.
+You can only create sensations you understand.
+For example, you cannot create an illusory figment which speaks coherently in a language you do not understand.
+\par If a Sensation ability appears to create a physical object or creature, its defenses are equal to 0.
+
+\abilitytagdef{Speech} Speech abilities use words to achieve their ends.
+You must specify a language when using a Speech effect, and the language must be one you know (or have memorized the correct words to say). They have no effect on objects or creatures that do not understand the chosen language.
+
+\abilitytagdef{Spell} Spell abilities have a number of shared properties.
+For details, see \pcref{Spell and Ritual Mechanics}.
+
+\abilitytagdef{Subtle} Subtle abilities have no visual or otherwise perceivable manifestation.
+Creatures successfully affected by Subtle abilities do not generally know that they are being influenced.
+However, a creature that successfully resists a Subtle ability can generally notice that it resisted a special effect of some kind, just like a non-Subtle ability.
+Subtle spells can still be identified with the Spellsense skill (see \pcref{Spellsense}), but the \glossterm{difficulty rating} is 10 higher than normal.
+
+\abilitytagdef{Sustain} Sustain abilities require an action to sustain. For details, see \pcref{Sustained Abilities}.
+
+\abilitytagdef{Swift} Swift abilities take effect before non-Swift abilities used during the same phase.
+For details, see \pcref{Swift Abilities}.
+
+\abilitytagdef{Visual} Visual abilities use visible objects or forces to cause their effects.
+Creatures and objects that cannot see the effect are immune to it.

@@ -98,11 +98,11 @@ export const channelDivinity: MysticSphere = {
       name: "Endurance of the Faithful",
 
       effect: `
-        This spell does not have the \\glossterm{Focus} tag.
+        This spell does not have the \\abilitytag{Focus} tag.
 
         You take half damage from \\glossterm{physical damage} this round.
         This halving is applied before \\glossterm{resistances} and similar abilities.
-        Because this ability has the \\glossterm{Swift} tag, this improves your resistances against damage you take during the current phase.
+        Because this ability has the \\abilitytag{Swift} tag, this improves your resistances against damage you take during the current phase.
         `,
       focus: false,
       rank: 2,
@@ -394,7 +394,7 @@ export const channelDivinity: MysticSphere = {
         crit: `
           Double damage.
           In addition, if the subject is a \\glossterm{planeforged} not on its home plane, it is teleported to a random location on its home plane.
-          If it is a creature created by a \\glossterm{Manifestation} ability, it immediately disappears.
+          If it is a creature created by a \\abilitytag{Manifestation} ability, it immediately disappears.
         `,
         glance: "Half damage.",
         hit: `
