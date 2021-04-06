@@ -173,7 +173,7 @@ export const thaumaturgy: MysticSphere = {
           Make an attack against one \\glossterm{magical} effect that is dismissable or has a duration within \\medrange.
           This includes attuned spells and magic items, magical conditions, and sustained magical effects.
           However, it does not include passive magical abilities on creatures, such as the ability to cast spells.
-          It also does not include \\glossterm{Curse} effects, which are more difficult to remove.
+          It also does not include \\abilitytag{Curse} effects, which are more difficult to remove.
           The target's defense against this attack is equal to its \\glossterm{power}.
 
           This spell cannot be used to interrupt or negate immediate effects.
@@ -291,7 +291,7 @@ export const thaumaturgy: MysticSphere = {
         All \\glossterm{magical} effects within the area that are dismissable or have a duration are \\glossterm{suppressed}.
         This includes attuned spells and magic items, magical conditions, and sustained magical effects.
         However, it does not include passive magical abilities on creatures, such as the ability to cast spells.
-        It also does not include \\glossterm{Curse} effects, which are more difficult to remove.
+        It also does not include \\abilitytag{Curse} effects, which are more difficult to remove.
 
         Unlike most emanation spells, you cannot exclude yourself from this \\glossterm{emanation}.
         However, this spell does not supress itself.
@@ -306,7 +306,7 @@ export const thaumaturgy: MysticSphere = {
       attack: {
         glance: "The effect lasts until the end of the next round.",
         hit: `The subject is unable to travel extradimensionally.
-        This prevents all \\glossterm{Manifestation} effects and effects that teleport the subject or move it between planes.`,
+        This prevents all \\abilitytag{Manifestation} effects and effects that teleport the subject or move it between planes.`,
         targeting: `
         Make an attack vs. Mental with a +2 bonus to \\glossterm{accuracy} against anything within \\longrange.
         `,
@@ -323,7 +323,7 @@ export const thaumaturgy: MysticSphere = {
       effect: `
         This spell creates a dimensional lock in a \\medarea radius \\glossterm{zone} from your location.
         Extraplanar travel into or out of the area is impossible.
-        This prevents all \\glossterm{Manifestation} effects and effects teleport targets or move them between planes.
+        This prevents all \\abilitytag{Manifestation} effects and effects teleport targets or move them between planes.
       `,
       rank: 5,
       scaling: { 7: `The area increases to a \\largearea radius \\glossterm{zone}.` },

@@ -203,7 +203,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Bbn}[1]{Rage} You can use the \textit{rage} ability as a \glossterm{free action}.
         For most barbarians, this represents entering a furious rage.
         Some barbarians instead enter a joyous battle trance or undergo a partial physical transformation into a more fearsome form.
-        \begin{attuneability}{Rage}[\glossterm{Emotion}, \glossterm{Sustain} (free), \glossterm{Swift}]
+        \begin{attuneability}{Rage}[\abilitytag{Emotion}, \abilitytag{Sustain} (free), \abilitytag{Swift}]
             For the duration of this ability, you gain the following benefits and drawbacks:
             \begin{itemize}
                 % This is an aggressive scaling that prevents any direct upgrades later in the archetype
@@ -211,7 +211,7 @@ This choice determines a great deal about your character's abilities.
                 \item You gain a \plus2 bonus to \glossterm{vital rolls}.
                 \item You take a \minus2 penalty to Armor and Reflex defenses.
                 \item You are unable to take \glossterm{standard actions} that do not cause you to make \glossterm{mundane} attacks.
-                \item You are unable to use \glossterm{Focus} abilities of any kind.
+                \item You are unable to use \abilitytag{Focus} abilities of any kind.
                 \item At the end of each round, if you did not make a \glossterm{mundane} attack that round, this ability ends.
                 \item When this ability ends for any reason, you cannot use it again until after the end of the next round.
             \end{itemize}
@@ -236,7 +236,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Bbn}[4]{Greater Rage} You gain a \plus1 bonus to \glossterm{accuracy} during your \textit{rage} ability.
 
-        \cf{Bbn}[5]{Immutable Anger} You become immune to hostile \glossterm{Emotion} effects.
+        \cf{Bbn}[5]{Immutable Anger} You become immune to hostile \abilitytag{Emotion} effects.
 
         \cf{Bbn}[6]{Supreme Insensible Anger} The hit point reduction and resistance bonuses from your \textit{insensible anger} ability both increase to be equal to four times your rank in this archetype.
 
@@ -509,7 +509,7 @@ This choice determines a great deal about your character's abilities.
                 The maximum \glossterm{rank} of divine ritual you can learn or perform is equal to the maximum \glossterm{rank} of divine spell that you can cast.
                 You cannot choose this ability multiple times.
             \parhead{Signature Spell} Choose a divine \glossterm{spell} you know.
-                The spell loses the \glossterm{Focus} tag, allowing you to cast it without lowering your guard in combat.
+                The spell loses the \abilitytag{Focus} tag, allowing you to cast it without lowering your guard in combat.
                 In adition, you gain a \plus1 bonus to \glossterm{accuracy} with that spell.
                 You can choose this ability multiple times, choosing a different spell each time.
             \parhead{Spell Power} Choose a divine \glossterm{spell} you know.
@@ -682,7 +682,7 @@ This choice determines a great deal about your character's abilities.
         \subsubsection{Chaos}
             If you choose this domain, you add the Deception skill to your \glossterm{class skill} list.
 
-            \parhead{Gift} You are immune to \glossterm{Compulsion} attacks.
+            \parhead{Gift} You are immune to \abilitytag{Compulsion} attacks.
             \parhead{Aspect} If you roll a 1 on an attack roll, it explodes (see \pcref{Exploding Attacks}).
             This does not affect bonus dice rolled for exploding attacks.
             \parhead{Essence} You can use the \textit{twist of fate} ability as a standard action.
@@ -758,7 +758,7 @@ This choice determines a great deal about your character's abilities.
             If the target is unable to lose hit points, such as if it has no hit points remaining, you suffer the hit point loss normally.
             \parhead{Aspect} You can use this domain's domain gift to target any \glossterm{ally} within \rngmed range.
             \parhead{Essence} You can use the \textit{compel evil} ability as a standard action.
-            \begin{freeability}{Compel Evil}[\glossterm{Compulsion}]
+            \begin{freeability}{Compel Evil}[\abilitytag{Compulsion}]
                 Make an attack vs. Mental against a creature within \rngmed range.
                 Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this ability.
                 \hit The target takes an evil action as soon as it can.
@@ -800,7 +800,7 @@ This choice determines a great deal about your character's abilities.
             The original target suffers any other effects of the attack normally.
             \parhead{Aspect} This domain's domain gift affects any \glossterm{ally} within a \areamed radius \glossterm{emanation} from you.
             \parhead{Essence} You can use the \textit{compel good} ability as a standard action.
-            \begin{freeability}{Compel Good}[\glossterm{Compulsion}]
+            \begin{freeability}{Compel Good}[\abilitytag{Compulsion}]
                 Make an attack vs. Mental against a creature within \rngmed range.
                 Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this ability.
                 \hit The target takes a good action as soon as it can.
@@ -837,7 +837,7 @@ This choice determines a great deal about your character's abilities.
             % Clarify - does this apply to exploding dice?
             \parhead{Aspect} When you roll a 1 on an \glossterm{attack roll}, it is treated as if you had rolled a 6.
             \parhead{Essence} You can use the \textit{compel law} ability as a standard action.
-            \begin{freeability}{Compel Law}[\glossterm{Compulsion}]
+            \begin{freeability}{Compel Law}[\abilitytag{Compulsion}]
                 Make an attack vs. Mental against all creatures within a \arealarge radius from you.
                 \hit Each target is unable to break the laws that apply in the area, and any attempt to do so simply fails.
                 The laws which are applied are those which are most appropriate for the area, regardless of whether you or any other creature know those laws.
@@ -871,10 +871,10 @@ This choice determines a great deal about your character's abilities.
         \subsubsection{Protection}
             \parhead{Gift} You gain a bonus equal to twice your rank in this archetype to your \glossterm{resistance} against \glossterm{energy damage}.
             \parhead{Aspect} You can use the \textit{divine protection} ability as a \glossterm{minor action}.
-            \begin{freeability}{Divine Protection}[\glossterm{Swift}]
+            \begin{freeability}{Divine Protection}[\abilitytag{Swift}]
                 Choose an \glossterm{ally} adjacent to you.
                 It gains a \plus2 bonus to all defenses until the end of the round.
-                Because this ability has the \glossterm{Swift} tag, this bonus applies against attacks made in the current phase.
+                Because this ability has the \abilitytag{Swift} tag, this bonus applies against attacks made in the current phase.
 
                 A creature that sees an attack against an ally protected in this way can observe that you are the cause of the protection with a \glossterm{difficulty rating} 5 Awareness check.
                 While this ability is active, you cannot gain a defense bonus from this ability, even if another creature with this ability uses it on you.
@@ -920,7 +920,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Gift} You gain two skill points.
             \parhead{Aspect} You gain a \plus2 bonus to the Deception, Disguise, and Stealth skills.
             \parhead{Essence} You can use the \textit{compel belief} ability as a standard action.
-            \begin{freeability}{Compel Belief}[\glossterm{Compulsion}, \glossterm{Sustain} (minor)]
+            \begin{freeability}{Compel Belief}[\abilitytag{Compulsion}, \abilitytag{Sustain} (minor)]
                 Make an attack vs. Mental against a creature within \rngmed range.
                 You must also choose a belief that the target has.
                 The belief may be a lie that you told it, or even a simple misunderstanding (such as believing a hidden creature is not present in a room).
@@ -936,7 +936,7 @@ This choice determines a great deal about your character's abilities.
             % This seems like it's a complicated muddle of weird and possibly hilarious edge cases
             \parhead{Mastery} You are undetectable to all \glossterm{magical} abilities.
             They cannot detect your presence, sounds you make, or any actions you take.
-            For example, a scrying sensor created by a \glossterm{Scrying} effect would be unable to detect your presence, and a creature with magical \glossterm{darkvision} would not be able to see you without light.
+            For example, a scrying sensor created by a \abilitytag{Scrying} effect would be unable to detect your presence, and a creature with magical \glossterm{darkvision} would not be able to see you without light.
 
         \subsubsection{War}
             \parhead{Gift} You gain proficiency with heavy armor and an additional \glossterm{weapon group} of your choice.
@@ -1057,7 +1057,7 @@ This choice determines a great deal about your character's abilities.
         Otherwise, you gain access to that mystic sphere, including all \glossterm{cantrips} from that sphere.
 
         \cf{Drd}[2]{Elemental Influence} You can use the \textit{elemental influence} ability as a standard action.
-        \begin{freeability}{Elemental Influence}[\glossterm{Sustain} (standard)]
+        \begin{freeability}{Elemental Influence}[\abilitytag{Sustain} (standard)]
             You can speak with air, earth, fire, and water within a \areahuge \glossterm{zone} from your location.
             You can ask the elements simple questions and understand their responses.
             Air, earth, and water are only able to give information about what they touch.
@@ -1183,7 +1183,7 @@ This choice determines a great deal about your character's abilities.
                 The maximum \glossterm{rank} of nature ritual you can learn or perform is equal to the maximum \glossterm{rank} of nature spell that you can cast.
                 You cannot choose this ability multiple times.
             \parhead{Signature Spell} Choose a nature \glossterm{spell} you know.
-                The spell loses the \glossterm{Focus} tag, allowing you to cast it without lowering your guard in combat.
+                The spell loses the \abilitytag{Focus} tag, allowing you to cast it without lowering your guard in combat.
                 In adition, you gain a \plus1 bonus to \glossterm{accuracy} with that spell.
                 You can choose this ability multiple times, choosing a different spell each time.
             \parhead{Spell Power} Choose a nature \glossterm{spell} you know.
@@ -1411,7 +1411,7 @@ This choice determines a great deal about your character's abilities.
         The bonus from your \textit{shifting defense} ability increases to \plus4.
 
         \cf*{Drd}[7]{Wild Adaptability} You can change your \textit{wild aspect}, your \textit{shifting defense}, or both as a single \glossterm{minor action}.
-        This ability does not have the \glossterm{Swift} tag, so changing in this way does not affect attacks you make or attacks made against you in the same phase.
+        This ability does not have the \abilitytag{Swift} tag, so changing in this way does not affect attacks you make or attacks made against you in the same phase.
 
         % TODO: move this into a separate concept that is less archetype specific where each character can gain immortality
         % \cf{Drd}[8]{Avatar of Nature}[Magical]
@@ -1439,7 +1439,7 @@ This choice determines a great deal about your character's abilities.
     \subsection{Wildspeaker}\label{Wildspeaker}
 
         \cf{Drd}[0]{Animal Speech}[Magical] You can use the \textit{animal speech} ability as a standard action.
-        \begin{attuneability}{Animal Speech}[\glossterm{Sustain} (minor)]
+        \begin{attuneability}{Animal Speech}[\abilitytag{Sustain} (minor)]
             Choose an animal within \rnglong range.
             You can speak to and understand the speech of the target animal, and any other animals of the same species.
 
@@ -1719,7 +1719,7 @@ This choice determines a great deal about your character's abilities.
             This cannot remove a condition applied during the current round.
 
             \rankline
-            \rank{3} This ability gains the \glossterm{Swift} tag.
+            \rank{3} This ability gains the \abilitytag{Swift} tag.
             When you use it, the penalties from the removed conditions do not affect you during the current phase.
             In addition, you cannot gain any additional \glossterm{conditions} until after the end of the next round.
             \rank{5} You can use this ability as a \glossterm{minor action}.
@@ -1865,11 +1865,11 @@ This choice determines a great deal about your character's abilities.
         When you initiate a battle tactic, you choose whether to use visual cues like gestures, auditory cues like shouts, or both to communicate your tactic with your allies.
         Your \textit{battle tactics} affect yourself and your \glossterm{allies} within a \areahuge radius \glossterm{emanation} from you who can either see or hear your chosen communication style.
 
-        All \textit{battle tactics} have the \glossterm{Sustain} (free) tag, so they last as long as you \glossterm{sustain} them (see \pcref{Sustained Abilities}).
+        All \textit{battle tactics} have the \abilitytag{Sustain} (free) tag, so they last as long as you \glossterm{sustain} them (see \pcref{Sustained Abilities}).
         You cannot sustain multiple battle tactics simultaneously.
 
         {
-            \begin{freeability}{Break Through}[\glossterm{Sustain} (free)]
+            \begin{freeability}{Break Through}[\abilitytag{Sustain} (free)]
                 Each target gains a \plus2 bonus to \glossterm{accuracy} with the \textit{overrun} and \textit{shove} abilities (see \pcref{Special Combat Abilities}).
 
                 \rankline
@@ -1878,7 +1878,7 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} The bonus increases to \plus4.
             \end{freeability}
 
-            \begin{freeability}{Dogpile}[\glossterm{Sustain} (free)]
+            \begin{freeability}{Dogpile}[\abilitytag{Sustain} (free)]
                 Each target gains a \plus2 bonus to \glossterm{accuracy} with the \textit{grapple} ability and with all grapple actions (see \pcref{Grapple}, and \pcref{Grapple Actions}).
                 This does not affect any other abilities that may have similar effects, such as the Strangle maneuver (see Strangle, page \pref{maneuver:Strangle}).
 
@@ -1888,7 +1888,7 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} The bonus increases to \plus5.
             \end{freeability}
 
-            \begin{freeability}{Duck and Cover}[\glossterm{Sustain} (free)]
+            \begin{freeability}{Duck and Cover}[\abilitytag{Sustain} (free)]
                 Each target gains a \plus1 bonus to Armor defense against non-\glossterm{melee} attacks.
 
                 \rankline
@@ -1897,7 +1897,7 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} The bonus increases to \plus4.
             \end{freeability}
 
-            \begin{freeability}{Group Up}[\glossterm{Sustain} (free)]
+            \begin{freeability}{Group Up}[\abilitytag{Sustain} (free)]
                 Each target that is adjacent to at least one other target gains a \plus1 bonus to Armor defense.
 
                 \rankline
@@ -1906,7 +1906,7 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} The Mental defense bonus increases to \plus4.
             \end{freeability}
 
-            \begin{freeability}{Hold The Line}[\glossterm{Sustain} (free)]
+            \begin{freeability}{Hold The Line}[\abilitytag{Sustain} (free)]
                 Your \glossterm{enemies} treat all areas adjacent to any target as \glossterm{difficult terrain}.
 
                 \rankline
@@ -1915,7 +1915,7 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} Each area within a 10 foot radius \glossterm{emanation} from each target is doubly difficult terrain.
             \end{freeability}
 
-            \begin{freeability}{Hustle}[\glossterm{Sustain} (free)]
+            \begin{freeability}{Hustle}[\abilitytag{Sustain} (free)]
                 Each target gains a \plus5 foot bonus to its \glossterm{base speed}.
 
                 \rankline
@@ -1924,7 +1924,7 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} The speed bonus increases to \plus20 feet.
             \end{freeability}
 
-            \begin{freeability}{Keep Moving}[\glossterm{Sustain} (free)]
+            \begin{freeability}{Keep Moving}[\abilitytag{Sustain} (free)]
                 Each target that ends the \glossterm{movement phase} at least twenty feet away from where it started the round
                     gains a \plus1 bonus to Armor defense until the end of the round.
 
@@ -1934,7 +1934,7 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} The Reflex defense bonus increases to \plus4.
             \end{freeability}
 
-            \begin{freeability}{Stand Your Ground}[\glossterm{Sustain} (free)]
+            \begin{freeability}{Stand Your Ground}[\abilitytag{Sustain} (free)]
                 Each target that ends the \glossterm{movement phase} without changing its location gains a \plus1 bonus to Armor defense until its location changes.
 
                 \rankline
@@ -1958,7 +1958,7 @@ This choice determines a great deal about your character's abilities.
         In addition, you learn an additional \textit{battle tactic}.
 
         \cf{Ftr}[7]{Greater Reactive Tactics} The bonus from your \textit{reactive tactics} ability increases to \plus10.
-        In addition, all of your \textit{battle tactics} abilities gain the \glossterm{Swift} tag, so their bonuses and penalties take effect in the phase that you active them.
+        In addition, all of your \textit{battle tactics} abilities gain the \abilitytag{Swift} tag, so their bonuses and penalties take effect in the phase that you active them.
 
 \newpage
 \section{Monk}\label{Monk}
@@ -2111,7 +2111,7 @@ This choice determines a great deal about your character's abilities.
 
         After you use a \textit{ki manifestation}, you cannot use a \textit{ki manifestation} until after the end of the next round.
         {
-            \begin{freeability}{Abandon the Fragile Self}[\glossterm{Swift}]
+            \begin{freeability}{Abandon the Fragile Self}[\abilitytag{Swift}]
                 You can use this ability as a \glossterm{free action}.
                 You can negate one \glossterm{condition} that would be applied to you this phase.
                 In exchange, you take a \minus2 penalty to \glossterm{defenses} this phase.
@@ -2122,7 +2122,7 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} The defense penalty is reduced to \minus1.
             \end{freeability}
 
-            \begin{freeability}{Burst of Blinding Speed}[\glossterm{Swift}]
+            \begin{freeability}{Burst of Blinding Speed}[\abilitytag{Swift}]
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus10 foot bonus to your land speed this phase.
 
@@ -2132,7 +2132,7 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} You can also move or stand on liquids as if they were solid this phase.
             \end{freeability}
 
-            \begin{freeability}{Elegant Whirl of Fluid Motion}[\glossterm{Swift}]
+            \begin{freeability}{Elegant Whirl of Fluid Motion}[\abilitytag{Swift}]
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus5 bonus to the Agility skill this round (see \pcref{Agility}).
 
@@ -2142,7 +2142,7 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} The bonus increases to \plus20.
             \end{freeability}
 
-            \begin{freeability}{Extend the Flow of Ki}[\glossterm{Swift}]
+            \begin{freeability}{Extend the Flow of Ki}[\abilitytag{Swift}]
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus5 foot \glossterm{magic bonus} to \glossterm{reach} this phase.
 
@@ -2168,7 +2168,7 @@ This choice determines a great deal about your character's abilities.
                 If your intended destination is invalid, the distance you spent teleporting is wasted, but you suffer no other ill effects.
             \end{freeability}
 
-            \begin{freeability}{Leap of the Heavens}[\glossterm{Swift}]
+            \begin{freeability}{Leap of the Heavens}[\abilitytag{Swift}]
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus5 bonus to the Jump skill this round (see \pcref{Jump}).
 
@@ -2178,7 +2178,7 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} The bonus increases to \plus20.
             \end{freeability}
 
-            \begin{freeability}{Scale the Highest Tower}[\glossterm{Swift}]
+            \begin{freeability}{Scale the Highest Tower}[\abilitytag{Swift}]
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus5 bonus to the Climb skill this round (see \pcref{Climb}).
                 % TODO: is this wording correct?
@@ -2189,7 +2189,7 @@ This choice determines a great deal about your character's abilities.
                 \rank{5} The bonus increases to \plus20.
             \end{freeability}
 
-            \begin{freeability}{Sense the Mystic Truth}[\glossterm{Swift}]
+            \begin{freeability}{Sense the Mystic Truth}[\abilitytag{Swift}]
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus5 bonus to the Spellsense skill this round (see \pcref{Spellsense}).
 
@@ -2199,7 +2199,7 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} The bonus increases to \plus20.
             \end{freeability}
 
-            \begin{freeability}{Step Between the Mystic Worlds}[\glossterm{Swift}]
+            \begin{freeability}{Step Between the Mystic Worlds}[\abilitytag{Swift}]
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus2 bonus to \glossterm{defenses} against \glossterm{magical} abilities this phase.
                 After the effect ends, you take a \minus2 penalty to \glossterm{defenses} against \glossterm{magical} attacks until the end of the next round.
@@ -2210,7 +2210,7 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} The defense bonus is increased to \plus5.
             \end{freeability}
 
-            \begin{freeability}{Surpass the Mortal Limits}[\glossterm{Swift}]
+            \begin{freeability}{Surpass the Mortal Limits}[\abilitytag{Swift}]
                 You can use this ability as a \glossterm{free action}.
                 You can use your \glossterm{power} in place of your Strength, Dexterity, and Constitution when making checks this phase.
 
@@ -2276,7 +2276,7 @@ This choice determines a great deal about your character's abilities.
             This cannot remove a condition applied during the current round.
 
             \rankline
-            \rank{3} This ability gains the \glossterm{Swift} tag.
+            \rank{3} This ability gains the \abilitytag{Swift} tag.
             When you use it, the penalties from the removed conditions do not affect you during the current phase.
             In addition, you cannot gain any additional \glossterm{conditions} until after the end of the next round.
             \rank{5} You can use this ability as a \glossterm{minor action}.
@@ -2290,7 +2290,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Mnk}[3]{Transcend Time} You are immune to being \slowed and \decelerated.
 
-        \cf{Mnk}[4]{Inner Peace} You are immune to \glossterm{Compulsion} and \glossterm{Emotion} attacks.
+        \cf{Mnk}[4]{Inner Peace} You are immune to \abilitytag{Compulsion} and \abilitytag{Emotion} attacks.
 
         \cf{Mnk}[5]{Greater Feel the Flow of Life}[Magical]
         The range of your \glossterm{lifesense} ability increases by 200 feet.
@@ -2549,7 +2549,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Pal}[6]{Supreme Stalwart Defense} The bonus from your \textit{stalwart defense} ability increases to \plus3.
 
         \cf{Pal}[7]{Supreme Lay on Hands}[Magical] When you use your \textit{lay on hands} ability, you and the target each gain a \plus1 bonus to all defenses during the current phase.
-        This is a \glossterm{Swift} effect, so it protects against attacks made during the same phase.
+        This is a \abilitytag{Swift} effect, so it protects against attacks made during the same phase.
 
     \newpage
     \subsection{Zealous Warrior}
@@ -2691,7 +2691,7 @@ This choice determines a great deal about your character's abilities.
         You can use the \textit{animal companion} ability.
         This ability requires 8 hours of training and attunement which the target must actively participate in.
         You can compel a wild animal to undergo this training by sustaining the \textit{command} ability from the Creature Handling skill (see \pcref{Command}).
-        \begin{attuneability}{Animal Companion}[\glossterm{Attune} (self), \glossterm{Emotion}, \glossterm{Magical}]
+        \begin{attuneability}{Animal Companion}[\glossterm{Attune} (self), \abilitytag{Emotion}, \glossterm{Magical}]
             Choose a Medium or smaller animal \glossterm{ally} within your \glossterm{reach} with a level no higher than your level and a \glossterm{challenge rating} no higher than 1.
             The target serves as a loyal companion to you.
             It follows your directions to the best of its ability.
@@ -2757,7 +2757,7 @@ This choice determines a great deal about your character's abilities.
         {
             \begin{freeability}{Anchoring}[Magical]
                 As long as your quarry is adjacent to any member of your hunting party, it cannot travel extradimensionally.
-                This prevents all \glossterm{Manifestation}, \glossterm{Planar}, and \glossterm{Teleportation} effects.
+                This prevents all \abilitytag{Manifestation}, \glossterm{Planar}, and \glossterm{Teleportation} effects.
 
                 \rankline
                 \rank{4} This effect instead applies if your quarry is within \medrange of any member of your hunting party.
@@ -2848,7 +2848,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rgr}[3]{Hunter's Prowess} You gain a \plus1d bonus to your damage with all weapons.
 
-        \cf{Rgr}[4]{Greater Quarry} You can use your \textit{quarry} ability with the \glossterm{Sustain} (free) tag instead of the \glossterm{Attune} (self) tag.
+        \cf{Rgr}[4]{Greater Quarry} You can use your \textit{quarry} ability with the \abilitytag{Sustain} (free) tag instead of the \glossterm{Attune} (self) tag.
         If you originally use your \textit{quarry} ability as a sustained ability, you can attune to the same quarry as a free action, even if your quarry is no longer in sight.
         In addition, you gain a \plus10 bonus to follow tracks left by your quarry.
 
@@ -3052,10 +3052,10 @@ This choice determines a great deal about your character's abilities.
             \begin{itemize}
                 \item \glossterm{Blindsense} and \glossterm{blindsight}
                 \item \glossterm{Darkvision}
-                \item \glossterm{Detection} abilities
+                \item \abilitytag{Detection} abilities
                 \item \glossterm{Lifesense} and \glossterm{lifesight}
                 \item \glossterm{Scent}
-                \item \glossterm{Scrying} abilities
+                \item \abilitytag{Scrying} abilities
                 \item \glossterm{Tremorsense} and \glossterm{tremorsight}
             \end{itemize}
         \end{attuneability}
@@ -3068,7 +3068,7 @@ This choice determines a great deal about your character's abilities.
         This does not protect you from abilities that affect multiple specific targets without affecting an area.
 
         \cf{Rog}[6]{Assassination} You can use the \textit{assassination} ability as a \glossterm{minor action}.
-        \begin{freeability}{Assassination}[\glossterm{Swift}]
+        \begin{freeability}{Assassination}[\abilitytag{Swift}]
             You study a creature within \rngmed range, finding weak points you can take advantage of.
             Until the end of the next round, the subject takes maximum damage from your melee \glossterm{strikes} that it is \unaware of.
         \end{freeability}
@@ -3087,10 +3087,10 @@ This choice determines a great deal about your character's abilities.
         You can also spend \glossterm{insight points} to learn one additional bardic performance per \glossterm{insight point}.
         You can use any bardic performance you know as a \glossterm{standard action} unless it specifies that it requires a different type of action to activate.
 
-        All \textit{bardic performances} have the \glossterm{Auditory} tag.
+        All \textit{bardic performances} have the \abilitytag{Auditory} tag.
         When you use a \textit{bardic performance} ability, you begin a performance using one of your Perform skills.
         You must use either an instrumental performance or a vocal performance, and not a visual performance.
-        If you use a vocal performance, the bardic performance gains the \glossterm{Speech} tag, preventing it from affecting creatures that do not speak the language you perform in.
+        If you use a vocal performance, the bardic performance gains the \abilitytag{Speech} tag, preventing it from affecting creatures that do not speak the language you perform in.
         You must be \glossterm{trained} with a Perform skill capable of making an auditory performance to use a bardic performance ability.
         If you are \glossterm{mastered} with an appropriate Perform skill, you gain a \plus2 bonus to \glossterm{accuracy} with the ability.
 
@@ -3103,7 +3103,7 @@ This choice determines a great deal about your character's abilities.
         Using a bardic performance ability with an immediate effect does not interfere with your ability to sustain other bardic performance abilities.
         {
             \begin{durationability}{Aria of Alacrity}
-                \spelltwocol{\glossterm{Sustain} (minor)}{\glossterm{Auditory}}
+                \spelltwocol{\abilitytag{Sustain} (minor)}{\abilitytag{Auditory}}
                 \par \noindent Usage time: One \glossterm{minor action}.
                 \rankline
                 For the duration of your performance, you and all \glossterm{allies} within a \arealarge radius from you each gain a \plus5 foot bonus to their \glossterm{base speed}.
@@ -3124,7 +3124,7 @@ This choice determines a great deal about your character's abilities.
             % Bardsong debuffs are interesting, since they can't be removed like conditions, but also can't be stacked.
             % For now, they're just ranked in the same way as conditions.
             \begin{durationability}{Ballad of Belligerence}
-                \spelltwocol{\glossterm{Sustain} (minor)}{\glossterm{Auditory}, \glossterm{Emotion}}
+                \spelltwocol{\abilitytag{Sustain} (minor)}{\abilitytag{Auditory}, \abilitytag{Emotion}}
                 \rankline
                 Make an attack vs. Mental against all \glossterm{enemies} in a \areamed radius from you.
                 \hit For the duration of your performance, each subject is unable to take any \glossterm{standard actions} that do not cause it to make an attack.
@@ -3135,7 +3135,7 @@ This choice determines a great deal about your character's abilities.
             \end{durationability}
 
             \begin{durationability}{Boastful Bravura}
-                \spelltwocol{Duration}{\glossterm{Auditory}}
+                \spelltwocol{Duration}{\abilitytag{Auditory}}
                 \rankline
                 This ability affects all \glossterm{enemies} within a \arealarge radius from you.
                 During the next round, you gain a \plus4 bonus to \glossterm{accuracy} with \textit{bardic performance} abilities against each subject.
@@ -3147,7 +3147,7 @@ This choice determines a great deal about your character's abilities.
             \end{durationability}
 
             \begin{instantability}{Cacaphony}
-                \spelltwocol{Instant}{\glossterm{Auditory}}
+                \spelltwocol{Instant}{\abilitytag{Auditory}}
                 \rankline
                 Make an attack vs. Fortitude against all \glossterm{enemies} in a \tinyarea radius from you.
                 \hit Each subject takes 1d6 \add half \glossterm{power} sonic damage.
@@ -3164,7 +3164,7 @@ This choice determines a great deal about your character's abilities.
             \end{instantability}
 
             \begin{durationability}{Cadenza of Courage}
-                \spelltwocol{Sustain (minor)}{\glossterm{Auditory}, \glossterm{Emotion}}
+                \spelltwocol{Sustain (minor)}{\abilitytag{Auditory}, \abilitytag{Emotion}}
                 \par \noindent Usage time: One \glossterm{minor action}.
                 \rankline
                 Choose yourself or one \glossterm{ally} within \medrange.
@@ -3177,7 +3177,7 @@ This choice determines a great deal about your character's abilities.
             \end{durationability}
 
             \begin{durationability}{Cantata of Caution}
-                \spelltwocol{Sustain (minor)}{\glossterm{Auditory}, \glossterm{Emotion}}
+                \spelltwocol{Sustain (minor)}{\abilitytag{Auditory}, \abilitytag{Emotion}}
                 \par \noindent Usage time: One \glossterm{minor action}.
                 \rankline
                 Choose yourself or one \glossterm{ally} within \medrange.
@@ -3190,7 +3190,7 @@ This choice determines a great deal about your character's abilities.
             \end{durationability}
 
             \begin{durationability}{Cleansing Counterpoint}
-                \spelltwocol{Sustain (minor)}{\glossterm{Auditory}}
+                \spelltwocol{Sustain (minor)}{\abilitytag{Auditory}}
                 \rankline
                 Choose yourself or one \glossterm{ally} within \rngmed range.
                 The subject chooses one of its \glossterm{conditions}.
@@ -3198,14 +3198,14 @@ This choice determines a great deal about your character's abilities.
                 For the duration of your performance, the subject ignores all effects of that condition.
 
                 \rankline
-                \rank{3} This ability loses the \glossterm{Sustain} (minor) tag.
+                \rank{3} This ability loses the \abilitytag{Sustain} (minor) tag.
                     Instead, the chosen condition is removed entirely.
                 \rank{5} You can subject an additional \glossterm{ally} within range.
                 \rank{7} Each subject can remove two conditions instead of one.
             \end{durationability}
 
             \begin{durationability}{Dazzling Discordance}
-                \spelltwocol{Duration}{\glossterm{Auditory}}
+                \spelltwocol{Duration}{\abilitytag{Auditory}}
                 \rankline
                 Make an attack vs. Mental against all \glossterm{enemies} within a \areamed radius from you.
                 \hit Each subject is \dazzled until the end of the next round.
@@ -3221,7 +3221,7 @@ This choice determines a great deal about your character's abilities.
             \end{durationability}
 
             \begin{instantability}{Dirge of Doom}
-                \spelltwocol{Instant}{\glossterm{Auditory}}
+                \spelltwocol{Instant}{\abilitytag{Auditory}}
                 \rankline
                 Make an attack vs. Mental against anything within \medrange.
                 \hit The subject takes sonic damage equal to 1d10 plus your \glossterm{power}.
@@ -3238,7 +3238,7 @@ This choice determines a great deal about your character's abilities.
             \end{instantability}
 
             \begin{durationability}{Dizzying Ditty}
-                \spelltwocol{\glossterm{Sustain} (minor)}{\glossterm{Auditory}, \glossterm{Compulsion}}
+                \spelltwocol{\abilitytag{Sustain} (minor)}{\abilitytag{Auditory}, \abilitytag{Compulsion}}
                 \rankline
                 Make an attack vs. Mental against one creature within \shortrange.
                 \hit For the duration of your performance, the subject is \dazed.
@@ -3249,7 +3249,7 @@ This choice determines a great deal about your character's abilities.
             \end{durationability}
 
             \begin{durationability}{Frightening Fugue}
-                \spelltwocol{\glossterm{Sustain} (minor)}{\glossterm{Auditory}, \glossterm{Emotion}}
+                \spelltwocol{\abilitytag{Sustain} (minor)}{\abilitytag{Auditory}, \abilitytag{Emotion}}
                 \rankline
                 Make an attack vs. Mental against one creature within \medrange.
                 \hit The subject takes 1d6 sonic damage.
@@ -3268,7 +3268,7 @@ This choice determines a great deal about your character's abilities.
             \end{durationability}
 
             \begin{durationability}{Hypnotic Hymn}
-                \spelltwocol{\glossterm{Sustain} (minor)}{\glossterm{Auditory}, \glossterm{Emotion}}
+                \spelltwocol{\abilitytag{Sustain} (minor)}{\abilitytag{Auditory}, \abilitytag{Emotion}}
                 \rankline
                 Make an attack vs. Mental against one creature within \medrange.
                 You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who are engaged in combat during the current phase.
@@ -3276,14 +3276,14 @@ This choice determines a great deal about your character's abilities.
                 Any act by you or by creatures that appear to be your allies that threatens or harms the charmed person breaks the effect.
                 Harming the subject is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
                 An observant subject may interpret overt threats to its allies as a threat to itself.
-                This ability does not have the \glossterm{Subtle} tag, so an observant subject may notice it is being influenced.
+                This ability does not have the \abilitytag{Subtle} tag, so an observant subject may notice it is being influenced.
 
                 \rankline
                 You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
             \end{durationability}
 
             \begin{durationability}{Inspiring Intonation}
-                \spelltwocol{\glossterm{Sustain} (minor)}{\glossterm{Auditory}, \glossterm{Emotion}}
+                \spelltwocol{\abilitytag{Sustain} (minor)}{\abilitytag{Auditory}, \abilitytag{Emotion}}
                 \par \noindent Usage time: One \glossterm{minor action}.
                 \rankline
                 Choose yourself or one \glossterm{ally} within \rngmed range.
@@ -3296,7 +3296,7 @@ This choice determines a great deal about your character's abilities.
             \end{durationability}
 
             \begin{durationability}{Mesmerizing Melody}
-                \spelltwocol{\glossterm{Sustain} (minor)}{\glossterm{Auditory}, \glossterm{Emotion}}
+                \spelltwocol{\abilitytag{Sustain} (minor)}{\abilitytag{Auditory}, \abilitytag{Emotion}}
                 \rankline
                 Make an attack vs. Mental against all creatures in a \largearea radius from you.
                 You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who are engaged in combat during the current phase.
@@ -3310,7 +3310,7 @@ This choice determines a great deal about your character's abilities.
             \end{durationability}
 
             \begin{instantability}{Palliative Poem}
-                \spelltwocol{\glossterm{Sustain} (minor)}{\glossterm{Auditory}}
+                \spelltwocol{\abilitytag{Sustain} (minor)}{\abilitytag{Auditory}}
                 \rankline
                 Choose one living \glossterm{ally} within \shortrange.
                 The subject regains \glossterm{hit points} equal to 1d6 plus half your \glossterm{power}.
@@ -3325,7 +3325,7 @@ This choice determines a great deal about your character's abilities.
             \end{instantability}
 
             \begin{freeability}{Partita of Provocation}
-                \spelltwocol{\glossterm{Sustain} (minor)}{\glossterm{Auditory}, \glossterm{Emotion}}
+                \spelltwocol{\abilitytag{Sustain} (minor)}{\abilitytag{Auditory}, \abilitytag{Emotion}}
                 \rankline
                 Make an attack vs. Mental against all \glossterm{enemies} within a \largearea radius from you.
                 \hit For the duration of your performance, each subject takes a \minus2 penalty to \glossterm{accuracy} against creatures other than you.
@@ -3336,10 +3336,10 @@ This choice determines a great deal about your character's abilities.
             \end{freeability}
 
             \begin{freeability}{Serenade of Serenity}
-                \spelltwocol{\glossterm{Sustain} (minor)}{\glossterm{Auditory}, \glossterm{Emotion}}
+                \spelltwocol{\abilitytag{Sustain} (minor)}{\abilitytag{Auditory}, \abilitytag{Emotion}}
                 \par \noindent Usage time: One \glossterm{minor action}.
                 \rankline
-                For the duration of your performance, you and all \glossterm{allies} within a \largearea radius from you gain a \plus4 bonus to defenses against hostile \glossterm{Compulsion} and \glossterm{Emotion} effects.
+                For the duration of your performance, you and all \glossterm{allies} within a \largearea radius from you gain a \plus4 bonus to defenses against hostile \abilitytag{Compulsion} and \abilitytag{Emotion} effects.
 
                 \rankline
                 \rank{3} At the end of each round, each subject removes all \glossterm{conditions} caused by Compulsion and Emotion effects that were not applied during that round.
@@ -3348,7 +3348,7 @@ This choice determines a great deal about your character's abilities.
             \end{freeability}
 
             \begin{durationability}{Sickening Staccato}
-                \spelltwocol{Duration}{\glossterm{Auditory}}
+                \spelltwocol{Duration}{\abilitytag{Auditory}}
                 \rankline
                 Make an attack vs. Fortitude against all \glossterm{enemies} within a \areamed radius from you.
                 \hit Each subject is \sickened until the end of the next round.
@@ -3364,7 +3364,7 @@ This choice determines a great deal about your character's abilities.
             \end{durationability}
 
             \begin{freeability}{Vigorous Verse}
-                \spelltwocol{Duration}{\glossterm{Auditory}}
+                \spelltwocol{Duration}{\abilitytag{Auditory}}
                 \par \noindent Usage time: One \glossterm{minor action}.
                 \rankline
                 Choose yourself or one \glossterm{ally} within \rngmed range.
@@ -3490,7 +3490,7 @@ This choice determines a great deal about your character's abilities.
     %     This archetype improves your social manipulation abilities.
 
     %     \cf{Rog}[1]{Confound} You can use the \textit{confound} ability as a standard action.
-    %     \begin{freeability}{Confound}[\glossterm{Compulsion}, \glossterm{Speech}, \glossterm{Subtle}]
+    %     \begin{freeability}{Confound}[\abilitytag{Compulsion}, \abilitytag{Speech}, \abilitytag{Subtle}]
     %         Make a attack vs. Mental against a creature within \rngshort range.
     %         You can choose to use your Deception skill to attack in place of your normal \glossterm{accuracy}.
     %         \hit As a \glossterm{condition}, the target is \dazed.
@@ -3506,7 +3506,7 @@ This choice determines a great deal about your character's abilities.
     %     In addition, you gain a \plus2 bonus to the Deception, Intimidate, and Persuasion skills.
 
     %     \cf{Rog}[3]{Distract} You can use the \textit{distract} ability as a standard action.
-    %     \begin{freeability}{Distract}[\glossterm{Compulsion}, \glossterm{Speech}, \glossterm{Subtle}]
+    %     \begin{freeability}{Distract}[\abilitytag{Compulsion}, \abilitytag{Speech}, \abilitytag{Subtle}]
     %         Make a attack vs. Mental against a creature within \rngshort range.
     %         You can choose to use your Deception skill to attack in place of your normal \glossterm{accuracy}.
     %         \hit Until the end of the next round, the target is \fascinated by a creature or object of your choice within range.
@@ -3522,7 +3522,7 @@ This choice determines a great deal about your character's abilities.
     %     \cf{Rog}[5]{Greater Glibness} The bonus from your \textit{glibness} ability increases to \plus4.
 
     %     \cf{Rog}[6]{Compel Belief} You can use the \textit{compel belief} ability as a standard action.
-    %     \begin{freeability}{Compel Belief}[\glossterm{Compulsion}, \glossterm{Magical}, \glossterm{Speech}, \glossterm{Subtle}]
+    %     \begin{freeability}{Compel Belief}[\abilitytag{Compulsion}, \glossterm{Magical}, \abilitytag{Speech}, \abilitytag{Subtle}]
     %         Make an attack vs. Mental against a creature within \rngmed range.
     %         You can use your Persuasion skill to attack in place of your normal \glossterm{accuracy}.
     %         You must also choose a belief.
@@ -3676,7 +3676,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Insight Point} You gain an additional \glossterm{insight point}.
                 You can choose this ability multiple times, gaining an additional insight point each time.
             \parhead{Signature Spell} Choose an arcane \glossterm{spell} you know.
-                The spell loses the \glossterm{Focus} tag, allowing you to cast it without lowering your guard in combat.
+                The spell loses the \abilitytag{Focus} tag, allowing you to cast it without lowering your guard in combat.
                 In adition, you gain a \plus1 bonus to \glossterm{accuracy} with that spell.
                 You can choose this ability multiple times, choosing a different spell each time.
             \parhead{Spell Power} Choose an arcane \glossterm{spell} you know.
@@ -3790,7 +3790,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Sor}[0]{Chaotic Exertion} You gain a \plus2 bonus to the roll when you use the \textit{desperate exertion} ability.
         This bonus stacks with the normal \plus2 bonus provided by that ability.
 
-        \cf{Sor}[1]{Wildspell} Whenever you cast a spell that does not have the \glossterm{Attune} or \glossterm{Sustain} tags, you may use this ability after making all other decisions for the spell (such as targets, intended area, and so on).
+        \cf{Sor}[1]{Wildspell} Whenever you cast a spell that does not have the \glossterm{Attune} or \abilitytag{Sustain} tags, you may use this ability after making all other decisions for the spell (such as targets, intended area, and so on).
         When you do, you reduce your \glossterm{focus penalties} for casting the spell by 2, and you gain a bonus equal to your rank in this archetype to \glossterm{power} with the spell.
         In addition, roll 1d10 and apply the corresponding wild magic effect from \trefnp{Wild Magic Effects}.
         Some wild magic effects cannot be meaningfully applied to all spells.
@@ -3814,7 +3814,7 @@ This choice determines a great deal about your character's abilities.
             \end{dtabularx}
         \end{dtable}
 
-        \cf{Sor}[2]{Chaotic Insight} You learn a spell that does not have the \glossterm{Attune} or \glossterm{Sustain} tags from any \glossterm{mystic sphere}, even if you do not have access to that mystic sphere.
+        \cf{Sor}[2]{Chaotic Insight} You learn a spell that does not have the \glossterm{Attune} or \abilitytag{Sustain} tags from any \glossterm{mystic sphere}, even if you do not have access to that mystic sphere.
         The spell does not have to be from a mystic sphere on the arcane mystic sphere list.
         As normal, you can change which spell you learn with this ability as you gain access to new spell ranks.
 
@@ -3835,7 +3835,7 @@ This choice determines a great deal about your character's abilities.
                 2 & All damage dealt by the spell is considered to be all damage types \\
                 3 & When you attack with the spell this round, you roll twice and take the higher result \\
                 4 & When you deal damage with the spell this round, you roll twice for the spell and take the higher result \\
-                5 & Any \glossterm{conditions} inflicted by the spell this round become a \glossterm{Curse} instead of a condition, and are removed when the target takes a \glossterm{short rest} \\
+                5 & Any \glossterm{conditions} inflicted by the spell this round become a \abilitytag{Curse} instead of a condition, and are removed when the target takes a \glossterm{short rest} \\
                 6 & When the spell would cause a creature to lose hit points this round, that creature loses twice as many hit points \\
                 7 & The spell's area is tripled this round \\
                 8 & Each target that loses hit points from the spell this round is also \stunned until the end of the next round \\
@@ -3987,7 +3987,7 @@ This choice determines a great deal about your character's abilities.
         \cf{War}[5]{Greater Fiendish Resistance}[Magical] The bonus from your \textit{fiendish resistance} ability increases to be equal to three times your rank in this archetype.
 
         \cf{War}[6]{Abyssal Curse} You can use the \textit{abyssal curse} ability as a standard action.
-        \begin{freeability}{Abyssal Curse}[\glossterm{Curse}, \glossterm{Magical}]
+        \begin{freeability}{Abyssal Curse}[\abilitytag{Curse}, \glossterm{Magical}]
             Make an attack vs. Fortitude against one creature or object within \rngmed range.
             \hit The target is \nauseated until it takes a \glossterm{short rest}.
             \glance The target is nauseated until the end of the next round.
@@ -4078,7 +4078,7 @@ This choice determines a great deal about your character's abilities.
                 The maximum \glossterm{rank} of pact ritual you can learn or perform is equal to the maximum rank of pact spell that you can cast.
                 You cannot choose this ability multiple times.
             \parhead{Signature Spell} Choose a pact \glossterm{spell} you know.
-                The spell loses the \glossterm{Focus} tag, allowing you to cast it without lowering your guard in combat.
+                The spell loses the \abilitytag{Focus} tag, allowing you to cast it without lowering your guard in combat.
                 In adition, you gain a \plus1 bonus to \glossterm{accuracy} with that spell.
                 You can choose this ability multiple times, choosing a different spell each time.
             \parhead{Spell Power} Choose an arcane \glossterm{spell} you know.
@@ -4121,7 +4121,7 @@ This choice determines a great deal about your character's abilities.
         }
 
         \cf{War}[1]{Possession} You can use the \textit{possession} ability as a \glossterm{free action} to allow your soulkeeper a greater influence over your actions.
-        \begin{attuneability}{Possession}[\glossterm{Sustain} (free)]
+        \begin{attuneability}{Possession}[\abilitytag{Sustain} (free)]
             You gain the following benefits and drawbacks:
             \begin{itemize}
                 \item You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
@@ -4142,12 +4142,12 @@ This choice determines a great deal about your character's abilities.
 
         \cf{War}[2]{Exchange Soul Fragment} Your connection to your soulkeeper deepens, allowing you to send a fragment of your experiences through the link.
         You can use the \textit{exchange soul fragment} ability as a \glossterm{minor action}.
-        \begin{freeability}{Exchange Soul Fragment}[\glossterm{Magical}, \glossterm{Swift}]
+        \begin{freeability}{Exchange Soul Fragment}[\glossterm{Magical}, \abilitytag{Swift}]
             When you use this ability, you gain a \glossterm{fatigue point}.
 
             Remove a \glossterm{condition} affecting you.
             This cannot remove a condition applied during the current round.
-            Because this ability has the \glossterm{Swift} tag, the penalties from the removed condition do not affect you during the current phase.
+            Because this ability has the \abilitytag{Swift} tag, the penalties from the removed condition do not affect you during the current phase.
         \end{freeability}
 
         \cf{War}[3]{Greater Empowering Whispers}[Magical] You gain an additional ability depending on the voices you chose with your \textit{whispers of the lost} ability.
@@ -4167,12 +4167,12 @@ This choice determines a great deal about your character's abilities.
 
         \cf{War}[5]{Exchange Vitality} Your connection to your soulkeeper deepens, allowing you to send a fragment of your vitality through the link.
         You can use the \textit{exchange vitality} ability as a \glossterm{minor action}.
-        \begin{freeability}{Exchange Vitality}[\glossterm{Magical}, \glossterm{Swift}]
+        \begin{freeability}{Exchange Vitality}[\glossterm{Magical}, \abilitytag{Swift}]
             When you use this ability, you gain two \glossterm{fatigue points}.
 
             Remove one of your \glossterm{vital wounds}.
             This cannot remove a vital wound applied during the current round.
-            Because this ability has the \glossterm{Swift} tag, the penalties from the removed vital wound do not affect you during the current phase.
+            Because this ability has the \abilitytag{Swift} tag, the penalties from the removed vital wound do not affect you during the current phase.
         \end{freeability}
 
         \cf{War}[6]{Supreme Empowering Whispers}[Magical] You gain an additional ability depending on the voices you chose with your \textit{whispers of the lost} ability.
@@ -4181,7 +4181,7 @@ This choice determines a great deal about your character's abilities.
 
             \subcf{Spiteful Whispers} The bonus from your \textit{empowering whispers} ability increases to \plus3.
 
-            \subcf{Sycophantic Whispers} You are immune to all \glossterm{Emotion} attacks.
+            \subcf{Sycophantic Whispers} You are immune to all \abilitytag{Emotion} attacks.
 
             \subcf{Warning Whispers} You are never \unaware or \partiallyunaware.
 
@@ -4457,7 +4457,7 @@ This choice determines a great deal about your character's abilities.
                 The maximum \glossterm{rank} of arcane ritual you can learn or perform is equal to the maximum rank of arcane spell that you can cast.
                 You cannot choose this ability multiple times.
             \parhead{Signature Spell} Choose an arcane \glossterm{spell} you know.
-                The spell loses the \glossterm{Focus} tag, allowing you to cast it without lowering your guard in combat.
+                The spell loses the \abilitytag{Focus} tag, allowing you to cast it without lowering your guard in combat.
                 In adition, you gain a \plus1 bonus to \glossterm{accuracy} with that spell.
                 You can choose this ability multiple times, choosing a different spell each time.
             \parhead{Spell Power} Choose an arcane \glossterm{spell} you know.

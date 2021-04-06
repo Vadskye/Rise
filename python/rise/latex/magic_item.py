@@ -80,7 +80,7 @@ class MagicItem(object):
 
     def latex_tags(self):
         return (
-            ", ".join([f"\\glossterm<{tag}>" for tag in sorted(self.tags)])
+            ", ".join([f"\\abilitytag<{tag}>" for tag in sorted(self.tags)])
             if self.tags
             else ""
         )

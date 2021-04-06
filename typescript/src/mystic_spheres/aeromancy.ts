@@ -670,7 +670,7 @@ export const aeromancy: MysticSphere = {
       castingTime: "one minute",
       effect: `
         You learn the approximate distance and direction to any air within \\rnglong \\glossterm{range} of you.
-        Since this is a \\glossterm{Detection} ability, its range can penetrate some solid objects (see \\pcref{Detection}).
+        Since this is a \\abilitytag{Detection} ability, its range can penetrate some solid objects (see \\pcref{Detection}).
         This ritual can detect air pockets with a minimum size of Fine.
       `,
       // narrative: '',

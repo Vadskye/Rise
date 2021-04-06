@@ -12,7 +12,7 @@ export const barrier: MysticSphere = {
       effect: `
         You take half damage from \\glossterm{energy damage} this round.
         This halving is applied before \\glossterm{resistances} and similar abilities.
-        Because this is a \\glossterm{Swift} ability, it affects damage you take during the current phase.
+        Because this is a \\abilitytag{Swift} ability, it affects damage you take during the current phase.
       `,
       focus: false,
       // narrative: '',
@@ -143,7 +143,7 @@ export const barrier: MysticSphere = {
         Each 5-ft.\\ square of wall has 4 \\glossterm{hit points}, and all of its defenses are 0.
 
         When you cast this spell, you can \\glossterm{attune} to it.
-        If you do, it gains the \\glossterm{Attune} (self) tag and loses the \\glossterm{Sustain} (minor) tag.
+        If you do, it gains the \\glossterm{Attune} (self) tag and loses the \\abilitytag{Sustain} (minor) tag.
       `,
       rank: 1,
       scaling: {
@@ -598,7 +598,7 @@ export const barrier: MysticSphere = {
       castingTime: "24 hours",
       effect: `
         This ritual creates a ward against scrying in a \\medarea radius \\glossterm{zone} centered on your location.
-        All \\glossterm{Scrying} effects fail to function in the area.
+        All \\abilitytag{Scrying} effects fail to function in the area.
         This effect is permanent.
         `,
       rank: 3,
@@ -614,7 +614,7 @@ export const barrier: MysticSphere = {
         This effect is permanent.
         Everything in the area is completely imperceptible from outside the area.
         Anyone observing the area from outside sees only a dark, silent void, regardless of darkvision and similar abilities.
-        In addition, all \\glossterm{Scrying} effects fail to function in the area.
+        In addition, all \\abilitytag{Scrying} effects fail to function in the area.
         Creatures inside the area can see within the area and outside of it without any difficulty.
         `,
       rank: 5,

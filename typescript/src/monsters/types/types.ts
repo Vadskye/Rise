@@ -82,7 +82,7 @@ export const typeDescriptions: Record<MonsterType, string | null> = {
     \\parhead{Animated Life} Animates are living creatures that are fundamentally composed of inanimate matter.
     They are considered to be both objects and creatures, and are affected equally by abilities that affect both.
     \\parhead{Nonsentient} Animates may have an intelligence of a sort, depending on the nature of their animation, but they are fundamentally not sentient creatures.
-    All animates are immune to \\glossterm{Compulsion} and \\glossterm{Emotion} abilities.
+    All animates are immune to \\abilitytag{Compulsion} and \\abilitytag{Emotion} abilities.
   `,
   "dragon": `
     ${formatDefenseBonuses("dragon")}
@@ -152,6 +152,6 @@ export const typeDescriptions: Record<MonsterType, string | null> = {
     Any effect from the \\sphere{vivimancy} sphere that would directly cause an undead creature to lose hit points without dealing damage causes that creature to regain that many lost hit points instead.
     In addition, any effect from the \\sphere{vivimancy} sphere that would cause an undead creature to regain lost hit points instead causes it to lose that many hit points instead.
     \\parhead{Unnatural Mind} Undead are controlled by fragments of the souls of deceased creatures.
-    Many undead are \\glossterm{mindless}, and even intelligent undead are immune to \\glossterm{Compulsion} and \\glossterm{Delusion} abilities.
+    Many undead are \\glossterm{mindless}, and even intelligent undead are immune to \\abilitytag{Compulsion} and \\glossterm{Delusion} abilities.
   `,
 };

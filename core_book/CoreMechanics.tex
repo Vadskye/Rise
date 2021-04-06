@@ -91,7 +91,7 @@ It defines how attributes work and explains how to make attacks in combat.
         \begin{enumerate*}
             \item Choose actions.
             \item Determine targets affected by actions.
-            \item Apply the results of \glossterm{Swift} abilities.
+            \item Apply the results of \abilitytag{Swift} abilities.
             \item Check action success.
                 Example: Making attack rolls.
             \item Determine action results.
@@ -106,7 +106,7 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \subsubsection{Swift Abilities}\label{Swift Abilities}
             Some abilities resolve before other actions in the same phase.
-            These abilities have the \glossterm{Swift} tag.
+            These abilities have the \abilitytag{Swift} tag.
             They resolve after targets are determined, but before attack rolls are made.
             Swift abilities never require attack rolls, and almost always affect only the creature using the ability.
 
@@ -222,7 +222,7 @@ It defines how attributes work and explains how to make attacks in combat.
     Whenever you take damage that would reduce your hit points below 0, you gain one or more \glossterm{vital wounds} (see \pcref{Reaching Zero Hit Points}).
 
     \parhead{Dealing Damage, Taking Damage, and Losing Hit Points}
-    You deal damage whenever you hit with a damaging attack, regardless of whether the damage is \glossterm{resisted} by the target's \glossterm{resistances} (see \pcref{Resistances}).
+    You deal damage whenever you hit with a damaging attack, regardless of whether the target loses hit points or only \glossterm{resistances} (see \pcref{Resistances}).
     Likewise, you take damage whenever anything deals damage to you.
     However, you only lose hit points if the damage is not mitigated by your resistances.
     Many special abilities require the target to lose hit points from a damaging attack, which does not happen if the damage is resisted.
@@ -505,7 +505,7 @@ It defines how attributes work and explains how to make attacks in combat.
             \parhead{Average Maneuverability}
             \begin{itemize}
                 \item Defense penalties: Whenever the creature flies, it takes a \minus2 penalty to Armor and Reflex defenses until the end of the round.
-                    This is a \glossterm{Swift} effect, so it affects attacks made against the creature during the phase that it flies.
+                    This is a \abilitytag{Swift} effect, so it affects attacks made against the creature during the phase that it flies.
                 \item Minimum speed: The creature must move forward by at least half its fly speed each round. If it does not, it falls.
                 \item Turning: Turning by 90 degrees costs 5 feet of movement, and the creature can't turn in the same place by more than 90 degrees.
                 \item Vertical movement: The creature can move up by only one square vertically per square traveled horizontally, but it can fly directly down if it chooses.
@@ -515,7 +515,7 @@ It defines how attributes work and explains how to make attacks in combat.
             \parhead{Poor Maneuverability}
             \begin{itemize}
                 \item Defense penalties: Whenever the creature flies, it takes a \minus4 penalty to Armor and Reflex defenses until the end of the round.
-                    This is a \glossterm{Swift} effect, so it affects attacks made against the creature during the phase that it flies.
+                    This is a \abilitytag{Swift} effect, so it affects attacks made against the creature during the phase that it flies.
                 \item Minimum speed: The creature must move forward by at least half its fly speed each round. If it does not, it falls.
                 \item Turning: Turning by 45 degrees costs 5 feet of movement, and the creature can't turn in the same place by more than 45 degrees.
                 \item Vertical movement: The creature can move up or down by only one square vertically per square traveled horizontally.
@@ -756,7 +756,7 @@ It defines how attributes work and explains how to make attacks in combat.
             Some abilities last as long as you take an action to sustain them each round.
             The type of action required is always specified in the ability's tag, such as "Sustain (standard)" for a standard action, or in the ability's description.
             At the end of each round, the ability is dismissed unless you initiated the ability that round or took the action to sustain the ability that round.
-            Taking an action to sustain an ability is not a \glossterm{Focus} ability, even if the ability itself has the \glossterm{Focus} tag.
+            Taking an action to sustain an ability is not a \abilitytag{Focus} ability, even if the ability itself has the abilitytagglossterm{Focus} tag.
 
             % TODO: a more robust timing system would make stating this explicitly unnecessary
             If a sustained ability has effects that trigger at the end of the round, it ends before having its effects if you fail to sustain the ability.
@@ -793,85 +793,11 @@ It defines how attributes work and explains how to make attacks in combat.
         While an ability is suppressed, it has no effect.
         However, if it stops being suppressed, its effects continue as if they had not been interrupted.
 
-    \subsection{Ability Tags}\label{Ability Tags}
-
+    \subsection{Ability Tags}
         Many abilities have tags that describe the nature of the ability.
         Many of these tags have no game effect by themselves, but they govern how the ability interacts with spells, other abilities, unusual creatures, and so on.
-        They are described below.
+        For a list of ability tags, see \pcref{Ability Tags}.
 
-        \parhead{Auditory} Auditory abilities use sound to cause their effects.
-        Creatures and objects that cannot hear the effect are immune to it.
-
-        \parhead{Compulsion} Compulsion abilities forcibly alter a creature's actions, but do not necessarily affect its opinions or personality.
-        They have no effect on objects or creatures without minds.
-
-        \parhead{Creation} Creation abilities create permanent physical objects.
-        Objects created with Creation abilities are identical to objects created through more mundane means.
-
-        \parhead{Curse} Curse abilities lay supernatural curses on their targets.
-        They cannot be \glossterm{dismissed}, but can be removed with the \spell{remove curse} spell.
-
-        \parhead{Detection}\label{Detection} Detection abilities reveal magical auras or information within an area.
-        They can penetrate up to 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.
-        For its ability to penetrate other materials, use the most similar substance from the list above.
-
-        \parhead{Emotion} Emotion abilities alter a creature's opinons or personality, but do not necessarily affect their actions.
-        They have no effect on objects or creatures without minds.
-
-        \parhead{Flesh} Flesh abilities manipulate the physical flesh of creatures.
-        They have no effect on creatures without flesh, such as ghosts or oozes.
-
-        \parhead{Focus}\label{Focus} Focus abilities require concentration to use.
-        When you use a Focus ability, you take a \minus4 penalty to Armor and Reflex defenses until the end of the round.
-        This penalty is called your \glossterm{focus penalty}.
-        It applies immediately, affecting attacks made against you during the current phase.
-        Some abilities can reduce or increase your \glossterm{focus penalty}.
-        Most \glossterm{spells} are \glossterm{Focus} abilities.
-
-        When you use a Focus ability during the \glossterm{delayed action phase}, the ability has a 50\% chance to fail if you already took damage in the current round.
-        If your \glossterm{focus penalty} is reduced to 0, this failure chance no longer applies.
-
-        If a \glossterm{Focus} ability has a \glossterm{Sustain} tag, sustaining the ability does not require focus and does not cause the sustaining creature to suffer focus penalties.
-
-        \parhead{Manifestation} Manifestation abilities create temporary constructs formed from raw magical energy.
-        Objects and creatures created with manifestation abilities seem real on the surface, but they have no internal structure.
-        When an object or creature created by a Manifestation ability is destroyed or killed, or when the duration of the ability that created it ends, it disappears without a trace.
-
-        \parhead{Ritual} Ritual abilities have a number of shared properties.
-        For details, see \pcref{Spell and Ritual Mechanics}.
-
-        \parhead{Scrying} Scrying abilities create one or more invisible magical sensors that send you information.
-        Unless otherwise noted, the sensor created has the same powers of sensory acuity that you possess.
-        This includes the effect of any abilities which target you personally, such as spells to increase your visual acuity, but not abilities which affect an area around you.
-        However, the sensor is treated as a separate, independent sensory organ, and it functions normally even if you have been blinded, deafened, or otherwise suffered sensory impairment.
-        \par Any creature trained in Spellsense can notice the sensor by making a \glossterm{difficulty rating} 20 Spellsense check.
-        The sensor can be dismissed as if it were an active spell.
-        You cannot create a sensor in a location with lead sheeting between you and the location, and you sense that the effect is blocked in this way.
-        \\
-
-        \parhead{Sensation} Sensation abilities create or manipulate light, sound, or other sensations.
-        You can only create sensations you understand.
-        For example, you cannot create an illusory figment which speaks coherently in a language you do not understand.
-        \par If a Sensation ability appears to create a physical object or creature, its defenses are equal to 0.
-
-        \parhead{Speech} Speech abilities use words to achieve their ends.
-        You must specify a language when using a Speech effect, and the language must be one you know (or have memorized the correct words to say). They have no effect on objects or creatures that do not understand the chosen language.
-
-        \parhead{Spell} Spell abilities have a number of shared properties.
-        For details, see \pcref{Spell and Ritual Mechanics}.
-
-        \parhead{Subtle} Subtle abilities have no visual or otherwise perceivable manifestation.
-        Creatures successfully affected by Subtle abilities do not generally know that they are being influenced.
-        However, a creature that successfully resists a Subtle ability can generally notice that it resisted a special effect of some kind, just like a non-Subtle ability.
-        Subtle spells can still be identified with the Spellsense skill (see \pcref{Spellsense}), but the \glossterm{difficulty rating} is 10 higher than normal.
-
-        \parhead{Sustain} Sustain abilities require an action to sustain. For details, see \pcref{Sustained Abilities}.
-
-        \parhead{Swift} Swift abilities take effect before other abilities used during the same phase.
-        For details, see \pcref{Swift Abilities}.
-
-        \parhead{Visual} Visual abilities use visible objects or forces to cause their effects.
-        Creatures and objects that cannot see the effect are immune to it.
 
 \section{Attributes}\label{Attributes}
 
@@ -1216,7 +1142,7 @@ It defines how attributes work and explains how to make attacks in combat.
         Creatures can have a resistance to particular damage types.
         Whenever you take damage, you first apply that damage to your resistance against that damage type before applying it to your hit points.
         You reduce your remaining resistance by an amount equal to the damage you take.
-        If the damage is less than your remaining resistance, the damage is \glossterm{resisted}, and you do not lose any hit points.
+        If the damage is less than your remaining resistance, you do not lose any hit points.
         If the damage is more than your resistance, your resistance is reduced to 0 and you lose hit points equal to the excess damage.
 
         Essentially, resistances function like extra hit points that are always subtracted before you start losing actual hit points.
@@ -1594,7 +1520,7 @@ It defines how attributes work and explains how to make attacks in combat.
         You can even use it after you learn what the effects of a successful attack or check would be, if that is information you could normally learn if it succeeded.
         However, you must use it before the phase is over.
 
-        \begin{freeability}{\labeltext{Desperate Exertion}}[\glossterm{Swift}]
+        \begin{freeability}{\labeltext{Desperate Exertion}}[\abilitytag{Swift}]
             When you use this ability, after resolving the rerolled attack or check, you gain two \glossterm{fatigue points} (see \pcref{Fatigue}).
 
             You reroll any \glossterm{attack} or \glossterm{check} you just made and gain a \plus2 bonus.
@@ -1740,9 +1666,9 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \parhead{Total Defense} As a standard action, you can use the \textit{total defense} ability to focus entirely on defending yourself.
 
-        \begin{freeability}{\labeltext{Total Defense}}[\glossterm{Swift}]
+        \begin{freeability}{\labeltext{Total Defense}}[\abilitytag{Swift}]
             You gain a \plus2 bonus to your \glossterm{defenses} until the end of the round.
-            Because this ability has the \glossterm{Swift} tag, this improves your defenses against attacks made against you during the current phase.
+            Because this ability has the \abilitytag{Swift} tag, this improves your defenses against attacks made against you during the current phase.
         \end{freeability}
 
         \parhead{Trip} As a standard action, you can use the \textit{trip} ability to trip a creature.
@@ -1868,7 +1794,7 @@ It defines how attributes work and explains how to make attacks in combat.
     Spells and rituals share many common properties, defined here.
 
     \subsection{Ability Tags}
-        All spells have the \glossterm{Spell} \glossterm{ability tag}, and all rituals have the \glossterm{Ritual} ability tag.
+        All spells have the \abilitytag{Spell} \glossterm{ability tag}, and all rituals have the \abilitytag{Ritual} ability tag.
         Since spells and rituals are already clearly indicated in this chapter, the tags are omitted here for convenience.
         Elsewhere in this book, such as in monster descriptions, those tags are used to indicate that some abilities are considered spells and rituals.
 
