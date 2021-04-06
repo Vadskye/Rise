@@ -149,7 +149,7 @@ export const umbramancy: MysticSphere = {
         // -1d to compensate for +2a
         hit: `The subject takes 1d8 + \\glossterm{power} cold damage.`,
         targeting: `
-          This spell does not have the \\glossterm{Focus} tag.
+          This spell does not have the \\abilitytag{Focus} tag.
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
@@ -270,7 +270,7 @@ export const umbramancy: MysticSphere = {
         Your melee \\glossterm{strikes} are treated as if they came from an invisible creature.
 
         Most creatures are at least \\partiallyunaware of attacks from invisible creatures, even if they are already actively engaged in combat, causing them to suffer a -2 penalty to Armor and Reflex defenses against the attack.
-        This effect provides no offensive benefit against creatures immune to \\glossterm{Visual} abilities.
+        This effect provides no offensive benefit against creatures immune to \\abilitytag{Visual} abilities.
       `,
       rank: 6,
       tags: ["Sensation", "Visual"],

@@ -368,30 +368,43 @@
 
 \DeclareDocumentCommand{\glossterm}{o m}
 {
-    \IfValueT{#1}
+    \IfValueTF{#1}
     {\termlink[#1]{#2}{gloss}}
     {\termlink{#2}{gloss}}
 }
 \DeclareDocumentCommand{\glossdef}{m o}
 {
-    \IfValueT{#2}
+    \IfValueTF{#2}
     {\termdef{#1}[#2]{gloss}}
     {\termdef{#1}{gloss}}
 }
 
 \DeclareDocumentCommand{\debuff}{o m}
 {
-    \IfValueT{#1}
+    \IfValueTF{#1}
     {\termlink[#1]{#2}{debuff}}
     {\termlink{#2}{debuff}}
 }
-\DeclareDocumentCommand{\debuffdef}{o m}
+\DeclareDocumentCommand{\debuffdef}{m o}
 {
-    \IfValueT{#2}
+    \IfValueTF{#2}
     {\termdef{#1}[#2]{debuff}}
     {\termdef{#1}{debuff}}
 }
 
+
+\DeclareDocumentCommand{\abilitytag}{o m}
+{
+    \IfValueTF{#1}
+    {\termlink[#1]{#2}{abilitytag}}
+    {\termlink{#2}{abilitytag}}
+}
+\DeclareDocumentCommand{\abilitytagdef}{m o}
+{
+    \IfValueTF{#2}
+    {\termdef{#1}[#2]{abilitytag}}
+    {\termdef{#1}{abilitytag}}
+}
 
 \DeclareDocumentCommand{\pcref}{o m}
 {

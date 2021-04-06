@@ -92,7 +92,7 @@ export const pyromancy: MysticSphere = {
       attack: {
         hit: `The subject takes 1d10 + \\glossterm{power} fire damage.`,
         targeting: `
-        This spell does not have the \\glossterm{Focus} tag.
+        This spell does not have the \\abilitytag{Focus} tag.
         You must have a \\glossterm{free hand} to cast this spell.
 
         Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
@@ -119,7 +119,7 @@ export const pyromancy: MysticSphere = {
           Dropping \\prone as part of this action gives a +5 bonus to this check.
         `,
         targeting: `
-          This spell does not have the \\glossterm{Focus} tag.
+          This spell does not have the \\abilitytag{Focus} tag.
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
@@ -697,7 +697,7 @@ export const pyromancy: MysticSphere = {
       castingTime: "one minute",
       effect: `
           You learn the approximate distance and direction to any active fires within \\longrange \\glossterm{range} of you.
-          Since this is a \\glossterm{Detection} ability, its range can penetrate some solid objects (see \\pcref{Detection}).
+          Since this is a \\abilitytag{Detection} ability, its range can penetrate some solid objects (see \\pcref{Detection}).
           This spell can sense fires as small as a candle flame, but no smaller.
       `,
       rank: 1,

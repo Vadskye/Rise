@@ -211,7 +211,7 @@ export const ripAndTear: CombatStyle = {
         Make a melee \\glossterm{strike} using a slashing weapon against any number of creatures or objects within your weapon's \\glossterm{reach}.
         Your \\glossterm{power} with the strike is halved.
         In addition, you take no penalties for being \\surrounded until the end of the current round.
-        This penalty removal is a \\glossterm{Swift} effect, so it affects attacks against you during the current round.
+        This penalty removal is a \\abilitytag{Swift} effect, so it affects attacks against you during the current round.
       `,
       rank: 4,
       type: "Instant",

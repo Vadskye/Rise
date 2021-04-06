@@ -61,7 +61,7 @@ export const vivimancy: MysticSphere = {
       attack: {
         hit: `The subject takes 1d10 + \\glossterm{power} energy damage.`,
         targeting: `
-        This spell does not have the \\glossterm{Focus} tag.
+        This spell does not have the \\abilitytag{Focus} tag.
         You must have a \\glossterm{free hand} to cast this spell.
 
         Make a melee attack vs. Reflex against one living creature within your \\glossterm{reach}.
@@ -83,7 +83,7 @@ export const vivimancy: MysticSphere = {
           If it loses \\glossterm{hit points} from this damage, you regain hit points equal to half the damage it took this way.
         `,
         targeting: `
-          This spell does not have the \\glossterm{Focus} tag.
+          This spell does not have the \\abilitytag{Focus} tag.
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make a melee attack vs. Reflex against one living creature within your \\glossterm{reach}.

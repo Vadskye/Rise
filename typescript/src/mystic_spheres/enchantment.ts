@@ -511,7 +511,7 @@ export const enchantment: MysticSphere = {
       attack: {
         crit: `Situations which cause the subject to feel that it is in danger without harming it do not break the effect.`,
         hit: `Each subject has its emotions calmed.
-        The effects of all other \\glossterm{Emotion} abilities on that target are \\glossterm{suppressed}.
+        The effects of all other \\abilitytag{Emotion} abilities on that target are \\glossterm{suppressed}.
         It cannot take violent actions (although it can defend itself) or do anything destructive.
         If the subject is harmed or feels that it is in danger, this effect is \\glossterm{dismissed}.
         Harming the subject is not limited to dealing it damage, but also includes causing it significant subjective discomfort.`,
@@ -770,7 +770,7 @@ export const enchantment: MysticSphere = {
         crit: `The condition must be removed twice before the effect ends.`,
         glance: "The effect lasts until the end of the next round.",
         hit: `As a \\glossterm{condition}, the subject's mind is primed for distraction.
-        When it uses a \\glossterm{Focus} ability, the distraction triggers, wrenching the subject's attention away.
+        When it uses a \\abilitytag{Focus} ability, the distraction triggers, wrenching the subject's attention away.
         Its \\glossterm{focus penalty} is increased by 4, and it fails to use the ability, wasting its action.
         After the distraction is triggered this way, the condition ends.`,
         targeting: `

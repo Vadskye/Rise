@@ -15,7 +15,7 @@ export const unbreakableDefense: CombatStyle = {
           you gain an additional +2 bonus to Armor defense.
           In addition, whenever a creature misses you with a melee \\glossterm{strike} this round, that creature takes a -2 penalty to Armor defense during the next round.
           As normal, this bonus does not stack with itself, even if the same creature misses you with multiple melee attacks.
-          This ability is \\glossterm{Swift}, so it protects you from attacks in the current phase.
+          This ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
         `,
         name: "total defense",
       },
@@ -30,7 +30,7 @@ export const unbreakableDefense: CombatStyle = {
       effect: `
         You take half damage from \\glossterm{physical damage} this round.
         This halving is applied before \\glossterm{resistances} and similar abilities.
-        Because this is a \\glossterm{Swift} ability, it affects damage you take during the current phase.
+        Because this is a \\abilitytag{Swift} ability, it affects damage you take during the current phase.
       `,
       rank: 2,
       scaling: {
@@ -89,7 +89,7 @@ export const unbreakableDefense: CombatStyle = {
         Make a melee \\glossterm{strike}.
         You take a -1d penalty to damage with the strike.
         In exchange, you gain a +2 bonus to Armor and Reflex defenses until the end of the round.
-        The defense bonus is a \\glossterm{Swift} effect, so it protects you from attacks in the current phase.
+        The defense bonus is a \\abilitytag{Swift} effect, so it protects you from attacks in the current phase.
       `,
       rank: 2,
       tags: ["Swift (see text)"],
@@ -143,10 +143,10 @@ export const unbreakableDefense: CombatStyle = {
       effect: `
         Make a strike.
         In addition, you gain a +1 bonus to \\glossterm{vital rolls} until the end of the round.
-        This bonus is a \\glossterm{Swift} effect, so it affects any vital wounds you gain during the current phase.
+        This bonus is a \\abilitytag{Swift} effect, so it affects any vital wounds you gain during the current phase.
       `,
       rank: 1,
-      tags: ["\\glossterm{Swift} (see text)"],
+      tags: ["\\abilitytag{Swift} (see text)"],
       type: "Duration",
     },
 
@@ -159,7 +159,7 @@ export const unbreakableDefense: CombatStyle = {
         name: "Bracing Strike",
       },
       rank: 3,
-      tags: ["\\glossterm{Swift} (see text)"],
+      tags: ["\\abilitytag{Swift} (see text)"],
       type: "Duration",
     },
 
@@ -172,7 +172,7 @@ export const unbreakableDefense: CombatStyle = {
         name: "Bracing Strike",
       },
       rank: 5,
-      tags: ["\\glossterm{Swift} (see text)"],
+      tags: ["\\abilitytag{Swift} (see text)"],
       type: "Duration",
     },
   ],

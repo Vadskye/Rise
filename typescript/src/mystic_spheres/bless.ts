@@ -50,7 +50,7 @@ export const bless: MysticSphere = {
       rank: 2,
       scaling: {
         4: `Casting this spell does not remove previous attunements to this spell.
-                In addition, you can choose to cast this spell with the \\glossterm{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
+                In addition, you can choose to cast this spell with the \\abilitytag{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
         6: `The subject also gains a +4 bonus to the \\textit{escape grapple} ability (see \\pcref{Grapple Actions}).`,
       },
       type: "Attune (target)",
@@ -70,7 +70,7 @@ export const bless: MysticSphere = {
       rank: 1,
       scaling: {
         3: `Casting this spell does not remove previous attunements to this spell.
-                In addition, you can choose to cast this spell with the \\glossterm{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
+                In addition, you can choose to cast this spell with the \\abilitytag{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
         5: `The speed bonus increases to +20 feet.`,
         7: `The speed bonus increases to +30 feet.`,
       },
@@ -106,7 +106,7 @@ export const bless: MysticSphere = {
       rank: 4,
       scaling: {
         6: `Casting this spell does not remove previous attunements to this spell.
-                In addition, you can choose to cast this spell with the \\glossterm{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
+                In addition, you can choose to cast this spell with the \\abilitytag{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
       },
       type: "Attune (target)",
     },
@@ -126,7 +126,7 @@ export const bless: MysticSphere = {
       rank: 1,
       scaling: {
         3: `Casting this spell does not remove previous attunements to this spell.
-                In addition, you can choose to cast this spell with the \\glossterm{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
+                In addition, you can choose to cast this spell with the \\abilitytag{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
         5: `The subject also gains proficiency with all exotic weapons from weapon groups that it would be proficient with without the effects of this spell.`,
         7: `The subject becomes proficient with all exotic weapons regardless of its prior proficiencies.`,
       },
@@ -140,7 +140,7 @@ export const bless: MysticSphere = {
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The first time the subject makes a \\glossterm{strike} this round,
         it gains a +2 bonus to \\glossterm{accuracy} and rolls twice and takes the higher result.
-        Because this ability has the \\glossterm{Swift} tag, it can affect an attack the subject makes during the current phase.
+        Because this ability has the \\abilitytag{Swift} tag, it can affect an attack the subject makes during the current phase.
         If you cast this spell on yourself, it affects the first strike you make until the end of the next round.
         `,
       rank: 1,
@@ -159,7 +159,7 @@ export const bless: MysticSphere = {
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The subject becomes takes half damage from all sources until the end of the current round.
-        Because this ability has the \\glossterm{Swift} tag, it affects all damage the subject takes during the current phase.
+        Because this ability has the \\abilitytag{Swift} tag, it affects all damage the subject takes during the current phase.
         `,
       rank: 6,
       tags: ["Swift"],
@@ -172,7 +172,7 @@ export const bless: MysticSphere = {
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The subject gains a +2 bonus to \\glossterm{defenses} until the end of the round.
-        Because this ability has the \\glossterm{Swift} tag, this improves the subject's defenses against attacks made against it during the current phase.
+        Because this ability has the \\abilitytag{Swift} tag, this improves the subject's defenses against attacks made against it during the current phase.
         `,
       rank: 1,
       scaling: {
@@ -199,7 +199,7 @@ export const bless: MysticSphere = {
       rank: 2,
       scaling: {
         4: `Casting this spell does not remove previous attunements to this spell.
-                In addition, you can choose to cast this spell with the \\glossterm{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
+                In addition, you can choose to cast this spell with the \\abilitytag{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
         6: `The bonus increases to +8.`,
       },
       type: "Attune (target)",
@@ -211,7 +211,7 @@ export const bless: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        The subject gains a +4 bonus to \\glossterm{defenses} against \\glossterm{Compulsion} and \\glossterm{Emotion} effects.
+        The subject gains a +4 bonus to \\glossterm{defenses} against \\abilitytag{Compulsion} and \\abilitytag{Emotion} effects.
         In addition, at the end of each round, it automatically removes one \\glossterm{condition} from a Compulsion or Emotion effect that was not applied during that round.
 
         You can only have one casting of this spell active at once.
@@ -220,7 +220,7 @@ export const bless: MysticSphere = {
       rank: 2,
       scaling: {
         4: `Casting this spell does not remove previous attunements to this spell.
-                In addition, you can choose to cast this spell with the \\glossterm{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
+                In addition, you can choose to cast this spell with the \\abilitytag{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
         6: `The bonus increases to +6.`,
       },
       type: "Attune (target)",
@@ -240,7 +240,7 @@ export const bless: MysticSphere = {
       rank: 1,
       scaling: {
         3: `Casting this spell does not remove previous attunements to this spell.
-                In addition, you can choose to cast this spell with the \\glossterm{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
+                In addition, you can choose to cast this spell with the \\abilitytag{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
         5: `The bonus increases to +2.`,
         7: `The bonus increases to +3.`,
       },
@@ -261,7 +261,7 @@ export const bless: MysticSphere = {
       rank: 1,
       scaling: {
         3: `Casting this spell does not remove previous attunements to this spell.
-                In addition, you can choose to cast this spell with the \\glossterm{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
+                In addition, you can choose to cast this spell with the \\abilitytag{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
         5: `The bonus increases to +2.`,
         7: `The bonus increases to +3.`,
       },
@@ -282,7 +282,7 @@ export const bless: MysticSphere = {
       rank: 1,
       scaling: {
         3: `Casting this spell does not remove previous attunements to this spell.
-                In addition, you can choose to cast this spell with the \\glossterm{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
+                In addition, you can choose to cast this spell with the \\abilitytag{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
         5: `The bonus increases to +4.`,
         7: `The bonus increases to +8.`,
       },
@@ -304,7 +304,7 @@ export const bless: MysticSphere = {
       rank: 2,
       scaling: {
         4: `Casting this spell does not remove previous attunements to this spell.
-                In addition, you can choose to cast this spell with the \\glossterm{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
+                In addition, you can choose to cast this spell with the \\abilitytag{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
         6: `The spell can negate three conditions before ending.`,
       },
       type: "Attune (target)",
@@ -352,7 +352,7 @@ export const bless: MysticSphere = {
       rank: 2,
       scaling: {
         4: `Casting this spell does not remove previous attunements to this spell.
-                In addition, you can choose to cast this spell with the \\glossterm{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
+                In addition, you can choose to cast this spell with the \\abilitytag{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
         6: `The bonus increases to +3.`,
       },
       type: "Attune (target)",
@@ -374,7 +374,7 @@ export const bless: MysticSphere = {
       rank: 1,
       scaling: {
         3: `Casting this spell does not remove previous attunements to this spell.
-                In addition, you can choose to cast this spell with the \\glossterm{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
+                In addition, you can choose to cast this spell with the \\abilitytag{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
         5: `The bonus increases to +8.`,
         7: `The bonus increases to +16.`,
       },
@@ -396,7 +396,7 @@ export const bless: MysticSphere = {
       rank: 2,
       scaling: {
         4: `Casting this spell does not remove previous attunements to this spell.
-                In addition, you can choose to cast this spell with the \\glossterm{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
+                In addition, you can choose to cast this spell with the \\abilitytag{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
         6: `The subject is also immune to being \\dazed or \\stunned.`,
       },
       type: "Attune (target)",
@@ -416,7 +416,7 @@ export const bless: MysticSphere = {
       rank: 3,
       scaling: {
         5: `Casting this spell does not remove previous attunements to this spell.
-                In addition, you can choose to cast this spell with the \\glossterm{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
+                In addition, you can choose to cast this spell with the \\abilitytag{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
         7: `The bonus increases to +2.`,
       },
       type: "Attune (target)",
@@ -436,7 +436,7 @@ export const bless: MysticSphere = {
       rank: 3,
       scaling: {
         5: `Casting this spell does not remove previous attunements to this spell.
-                In addition, you can choose to cast this spell with the \\glossterm{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
+                In addition, you can choose to cast this spell with the \\abilitytag{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
         7: `The bonus increases to +12.`,
       },
       type: "Attune (target)",
@@ -457,7 +457,7 @@ export const bless: MysticSphere = {
       rank: 4,
       scaling: {
         6: `Casting this spell does not remove previous attunements to this spell.
-                In addition, you can choose to cast this spell with the \\glossterm{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
+                In addition, you can choose to cast this spell with the \\abilitytag{Sustain} (minor) tag instead of the \\glossterm{Attune} (target) tag.`,
       },
       type: "Attune (target)",
     },

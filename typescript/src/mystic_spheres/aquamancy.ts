@@ -689,7 +689,7 @@ export const aquamancy: MysticSphere = {
 
       effect: `
         You learn the approximate distance and direction to any bodies of water within \\rnglong \\glossterm{range} of you.
-        Since this is a \\glossterm{Detection} ability, its range can penetrate some solid objects (see \\pcref{Detection}).
+        Since this is a \\abilitytag{Detection} ability, its range can penetrate some solid objects (see \\pcref{Detection}).
         This spell can detect bodies of water with a minimum size of Fine.
       `,
       rank: 1,

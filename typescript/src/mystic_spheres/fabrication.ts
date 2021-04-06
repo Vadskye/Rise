@@ -101,7 +101,7 @@ export const fabrication: MysticSphere = {
         glance: `Half damage.`,
         hit: `Each subject takes 2d6 + half \\glossterm{power} slashing damage.`,
         targeting: `
-          This spell does not have the \\glossterm{Focus} tag.
+          This spell does not have the \\abilitytag{Focus} tag.
           Make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
         `,
       },
@@ -328,7 +328,7 @@ export const fabrication: MysticSphere = {
         You create a nonmagical arrow or crossbow bolt in a bow or crossbow that you are holding.
         The ammunition can be blunted, but you cannot create other forms of special ammunition like fire arrows or repeating bolts.
         The object persists until the end of the round, at which point it disappears.
-        Because this spell has the \\glossterm{Swift} tag, you can fire the created projectile from the weapon in the same phase that you cast this spell.
+        Because this spell has the \\abilitytag{Swift} tag, you can fire the created projectile from the weapon in the same phase that you cast this spell.
       `,
       rank: 2,
       scaling: {

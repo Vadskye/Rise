@@ -155,7 +155,7 @@ export const telekinesis: MysticSphere = {
       `,
       rank: 2,
       scaling: {
-        4: `This spell no longer has the \\glossterm{Focus} tag.`,
+        4: `This spell no longer has the \\abilitytag{Focus} tag.`,
         6: `You can cast this spell as a \\glossterm{free action}.
             However, you can only cast it once per round.`,
       },

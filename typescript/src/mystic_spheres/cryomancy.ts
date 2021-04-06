@@ -51,7 +51,7 @@ export const cryomancy: MysticSphere = {
       attack: {
         hit: `The subject takes 1d10 + \\glossterm{power} cold damage.`,
         targeting: `
-        This spell does not have the \\glossterm{Focus} tag.
+        This spell does not have the \\abilitytag{Focus} tag.
         You must have a \\glossterm{free hand} to cast this spell.
 
         Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
@@ -73,7 +73,7 @@ export const cryomancy: MysticSphere = {
           If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
-          This spell does not have the \\glossterm{Focus} tag.
+          This spell does not have the \\abilitytag{Focus} tag.
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.

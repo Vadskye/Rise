@@ -11,7 +11,7 @@ export const summoning: MysticSphere = {
 
       functionsLike: {
         exceptThat: `
-          it has the \\glossterm{Sustain} (standard) tag instead of the \\glossterm{Attune} (self) tag.
+          it has the \\abilitytag{Sustain} (standard) tag instead of the \\glossterm{Attune} (self) tag.
         `,
         name: "summon monster",
       },
@@ -265,7 +265,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
         it has the following differences.
-        It has the \\glossterm{Sustain} (minor) tag instead of the \\glossterm{Attune} (self) tag.
+        It has the \\abilitytag{Sustain} (minor) tag instead of the \\glossterm{Attune} (self) tag.
         The summoned creature takes the form of a melee weapon of your choice that you are proficient with.
         It is sized appropriately to be wielded by a creature of your size.
         It floats three feet off the ground, and has a 30 foot \\glossterm{fly speed} instead of a \\glossterm{land speed}, with good \\glossterm{maneuverability} and a maximum height of 15 feet (see \\pcref{Flying}).

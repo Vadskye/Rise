@@ -260,7 +260,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You gain a +2 bonus to \\glossterm{accuracy} with the strike against each creature that is using a \\glossterm{Focus} ability during the current phase.
+        You gain a +2 bonus to \\glossterm{accuracy} with the strike against each creature that is using a \\abilitytag{Focus} ability during the current phase.
       `,
       rank: 2,
       type: "Instant",
@@ -272,7 +272,7 @@ export const dirtyFighting: CombatStyle = {
       effect: `
         Make two melee \\glossterm{strikes}.
         Your \\glossterm{power} with both strikes is halved.
-        You take a -4 penalty to \\glossterm{accuracy} with the strikes against any target that is not using a \\glossterm{Focus} ability during the current phase.
+        You take a -4 penalty to \\glossterm{accuracy} with the strikes against any target that is not using a \\abilitytag{Focus} ability during the current phase.
       `,
       rank: 6,
       type: "Instant",
