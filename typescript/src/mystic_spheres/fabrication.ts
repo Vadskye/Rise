@@ -46,7 +46,7 @@ export const fabrication: MysticSphere = {
     },
 
     {
-      name: "Mass shieldbearer",
+      name: "Mass Shieldbearer",
 
       castingTime: 'minor action',
       functionsLike: {
