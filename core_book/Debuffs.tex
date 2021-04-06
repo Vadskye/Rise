@@ -12,6 +12,13 @@ It treats the creature that charmed it as a friend (a \plus10 relationship modif
 
 \debuffdef{confused} A confused creature is unable to independently control its actions. \confusionexplanation
 
+\debuffdef{dazed} A dazed creature takes a \minus2 penalty to all defenses.
+This does not stack with the \glossterm{stunned} effect.
+
+\debuffdef{dazzled} A dazzled creature has difficulty seeing.
+It loses any special vision abilities it has, such as \glossterm{darkvision} or \glossterm{low-light vision}.
+In addition, it takes a \minus2 penalty to \glossterm{accuracy} and visual Awareness checks (see \pcref{Awareness}).
+
 \debuffdef{deafened} A deafened creature cannot hear. It automatically fails at actions which depend on hearing. In addition, it has a 20\% failure chance when casting any spell with verbal components.
 
 \debuffdef{decelerated} A decelerated creature moves at one quarter speed and takes a \minus4 penalty to Armor and Reflex defenses.
@@ -20,7 +27,7 @@ It can take its normal actions during the \glossterm{delayed action phase}.
 This does not stack with the \glossterm{slowed} effect.
 
 \debuffdef{disoriented} A disoriented creature cannot control the direction of its movement.
-If it tries to move, it instead moves the same distance in a random direction.
+If it tries to use one of its movement speeds to move a given distance, it moves that distance in a random direction instead of in its intended direction.
 A disoriented creature can remain in the same location without penalty.
 This does not affect abilities that change location without normal movement, such as \glossterm{teleportation}.
 
@@ -28,7 +35,7 @@ This does not affect abilities that change location without normal movement, suc
 It obeys the commands of the creature of the dominated it unquestioningly, as an automaton.
 If it does not understand the language of the creature that dominated it, it still attempts to obey as much as possible, and simple commmands (such as ``attack'' or ``follow'') can usually be communicated successfully.
 
-\debuffdef{fascinated} A fascinated creature can take no actions. It remains in place, giving its total attention to some object, creature, or effect. It takes a \minus4 penalty to skill checks made as reactions, such as Awareness checks.
+\debuffdef{fascinated} A fascinated creature can take no actions. It remains in place, giving its total attention to some object, creature, or effect. It takes a \minus5 penalty to all checks made to observe anything other than the object of its fascination.
 If the creature notices any threat against it, such as an approaching enemy, it is no longer fascinated.
 
 \debuffdef{frightened} A frightened creature takes a \minus4 penalty to \glossterm{accuracy} and Mental defense while it is within \rngmed range of the source of its fear.
@@ -49,6 +56,10 @@ While grappled, you suffer certain penalties and restrictions, as described belo
 
 Other than the restrictions listed above, you can act normally. You can also try to move the grapple, escape the grapple, or pin your opponent. For details, see \pcref{Grapple Actions}.
 
+\debuffdef{helpless} A helpless creature is completely at an opponent's mercy.
+Its base Dexterity is treated as \minus10 for the purpose of determining its Armor and Reflex defenses.
+Paralyzed, bound, and unconscious creatures are helpless.
+
 \debuffdef{immobilized} An immobilized creature can't use any of its movement speeds.
 Immobilized flying creatures that have the ability to hover can maintain their initial altitude.
 % TODO: Fix flying interaction; safest way to descend for non-good maneuverability
@@ -56,9 +67,6 @@ All other flying creatures subjected to this condition descend at a rate of 20 f
 
 \debuffdef{nauseated} A nauseated creature takes a \minus4 penalty to all defenses.
 This does not stack with the \glossterm{sickened} effect.
-
-\debuffdef{surrounded} An creature is surrounded if every space adjacent to it either contains an \glossterm{enemy} or is both empty and adjacent to an \glossterm{enemy}.
-A surrounded creature suffers a \minus2 penalty to Armor and Reflex defenses.
 
 \debuffdef{panicked} While a panicked creature is within \rngmed range of the source of its fear, it takes a \minus4 penalty to Mental defense and must flee from the source of its fear by any means necessary.
 If unable to flee, it must do nothing other than use the \textit{total defense} ability every round (see \pcref{Total Defense}).
@@ -79,8 +87,9 @@ The only physical actions it can make are to escape the grapple (see \pcref{Grap
 Like a \glossterm{helpless} creature, its Dexterity is treated as \minus10.
 
 \debuffdef{prone} A prone creature is lying on the ground, rather than standing normally.
-It takes a \minus2 penalty to Armor and Reflex defenses, though it gains a +4 bonus to all defenses against ranged \glossterm{strikes}.
-In addition, it takes a \minus2 penalty to accuracy with melee \glossterm{strikes} and is unable to move until it stands up.
+It takes a \minus2 penalty to Armor and Reflex defenses, though it gains a \plus4 bonus to all defenses against ranged \glossterm{strikes}.
+In addition, it takes a \minus2 penalty to accuracy with \glossterm{strikes}.
+It moves at a quarter of its normal speed until it stands up.
 A creature can stand up from being prone during the movement phase.
 This generally requires one free hand.
 
@@ -101,6 +110,9 @@ For details, see \pcref{Squeezing}.
 
 \debuffdef{stunned} A stunned creature takes a \minus4 penalty to all defenses.
 This does not stack with the \glossterm{dazed} effect.
+
+\debuffdef{surrounded} An creature is surrounded if every space adjacent to it either contains an \glossterm{enemy} or is both empty and adjacent to an \glossterm{enemy}.
+A surrounded creature suffers a \minus2 penalty to Armor and Reflex defenses.
 
 \debuffdef{unaware} An creature that is unaware of an attack makes no attempt to defend itself.
 Creatures take a \minus5 penalty to Armor and Reflex defenses against attacks that they are unaware of.
