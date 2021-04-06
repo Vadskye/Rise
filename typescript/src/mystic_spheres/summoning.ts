@@ -409,7 +409,7 @@ export const summoning: MysticSphere = {
         the creature appears to be a Medium bear.
         Its attacks deal 1d10 bludgeoning and slashing damage.
         In addition, it suffers no penalty for attacking in a grapple.
-        As a standard action, it can make a \\glossterm{grapple} attack against a creature within its \\glossterm{reach}.
+        As a standard action, it can make a \\textit{grapple} attack against a creature within its \\glossterm{reach}.
         While grappling, the manifested creature can either make a strike or attempt to escape the grapple.
         `,
         name: "summon monster",

@@ -500,7 +500,7 @@ export const pyromancy: MysticSphere = {
         You can only make this attack against a given target once per \\glossterm{phase}.
 
         Each five-foot square of wall has hit points equal to twice your \\glossterm{power}, and all of its defenses are 0.
-        It is immune to most forms of attack, but it can be destroyed by \\glossterm{cold damage} and similar effects that can destroy water.
+        It is immune to most forms of attack, but it can be destroyed by cold damage and similar effects that can destroy water.
         `,
       },
       rank: 3,

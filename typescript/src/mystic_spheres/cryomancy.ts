@@ -319,7 +319,7 @@ export const cryomancy: MysticSphere = {
       effect: `
         You cover your body with three overlapping layers of ice that crumple when they take damage.
         The ice does not cover your joints, allowing you to move freely.
-        You are \\glossterm{impervious} to \\glossterm{physical damage} and \\glossterm{fire damage}.
+        You are \\glossterm{impervious} to physical damage and fire damage.
         Whenever you take physical damage or fire damage, one layer of ice is destroyed.
         When the last layer of ice is destroyed, this ability provides no further benefit.
       `,
