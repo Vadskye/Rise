@@ -4,7 +4,6 @@ export const heraldOfWar: CombatStyle = {
   name: "Herald of War",
   shortDescription:
     "Demoralize foes and inspire allies with battlecries and a commanding presence.",
-  sources: ["martial", "primal"],
 
   maneuvers: [
     {

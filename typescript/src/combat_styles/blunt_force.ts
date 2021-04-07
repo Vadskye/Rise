@@ -3,7 +3,6 @@ import { CombatStyle } from ".";
 export const bluntForce: CombatStyle = {
   name: "Blunt Force",
   shortDescription: "Smash foes with bludgeoning weapons and raw power.",
-  sources: ["martial", "primal"],
 
   maneuvers: [
     {

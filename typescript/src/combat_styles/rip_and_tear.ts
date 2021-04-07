@@ -3,7 +3,6 @@ import { CombatStyle } from ".";
 export const ripAndTear: CombatStyle = {
   name: "Rip and Tear",
   shortDescription: "Rip foes apart with slashing weapons.",
-  sources: ["esoteric", "martial", "primal", "trick", "wild"],
 
   maneuvers: [
     {

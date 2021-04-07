@@ -3,7 +3,6 @@ import { CombatStyle } from ".";
 export const unbreakableDefense: CombatStyle = {
   name: "Unbreakable Defense",
   shortDescription: "Guard yourself and your allies with careful attacks and recovery abilities.",
-  sources: ["esoteric", "martial", "primal"],
 
   maneuvers: [
     {
