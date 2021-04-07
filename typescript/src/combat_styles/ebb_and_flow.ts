@@ -3,7 +3,6 @@ import { CombatStyle } from ".";
 export const ebbAndFlow: CombatStyle = {
   name: "Ebb and Flow",
   shortDescription: "Fight reactively, shifting your style with the flow of combat.",
-  sources: ["martial", "esoteric", "wild"],
 
   maneuvers: [
     {
