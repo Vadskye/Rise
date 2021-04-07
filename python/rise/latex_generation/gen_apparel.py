@@ -632,7 +632,7 @@ def generate_armor():
             tags=[],
             description="""
             At the end of each round, if this armor is making significant contact against a creature or object other than you and your equipment, make an attack vs. Fortitude against it.
-            Generally, you can only affect another creature with this armor if you are \\glossterm<grappling> it.
+            Generally, you can only affect another creature with this armor if you are \\grappled by it.
             On a hit, the target takes 2d6 acid damage.
         """,
             short_description="Deals acid damage to anything it touches",
@@ -2452,7 +2452,7 @@ def generate_worn():
             description="""
                 As a standard action, you can activate this belt.
                 If you do, your size increases by one \\glossterm<size category>, to a maximum of Huge.
-                This increases your \\glossterm<base speed> and reduces your \\glossterm<Stealth> skill.
+                This increases your \\glossterm<base speed> and reduces your Stealth skill.
                 It may also increase your \\glossterm<reach> (see \\pcref<Size in Combat>).
                 However, your physical form is not altered fully to match your new size, and your Strength and Dexterity are unchanged.
                 This effect lasts until you activate the belt again, which returns you to your original size.
@@ -2480,7 +2480,7 @@ def generate_worn():
             description="""
                 As a standard action, you can activate this belt.
                 If you do, your size decreases by one \\glossterm<size category>, to a minimum of Tiny.
-                This decreases your \\glossterm<base speed> and improves your \\glossterm<Stealth> skill.
+                This decreases your \\glossterm<base speed> and improves your Stealth skill.
                 It may also decrease your \\glossterm<reach> (see \\pcref<Size in Combat>).
                 This effect lasts until you activate the belt again, which returns you to your original size.
             """,

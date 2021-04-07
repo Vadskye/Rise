@@ -396,7 +396,6 @@ Silent
     \durshort \durmed \durlong \durext \durbrief \durpersonallong
     \rngshort \rngmed \rnglong \rngdist \rngext
     \featpre \featpres \featben \stylereq
-    \miscastyou \miscastrandom \miscastretarget \miscastexplode
     \taburowcolors
     \monlinerule \pari
 

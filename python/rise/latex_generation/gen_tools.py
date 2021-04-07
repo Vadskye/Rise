@@ -46,7 +46,7 @@ def generate_tools():
             material_type="Potion",
             tags=[],
             description="""
-                When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<wound roll> of 0, you treat that wound roll as a 1 instead (see \\pcref<Vital Wounds>).
+                When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<vital roll> of 0, you treat that vital roll as a 1 instead (see \\pcref<Vital Wounds>).
             """,
             short_description="Prevents death from barely lethal vital wounds",
         ),
@@ -57,7 +57,7 @@ def generate_tools():
             material_type="Potion",
             tags=[],
             description="""
-                When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<wound roll> of 0 or -1, you treat that wound roll as a 1 instead (see \\pcref<Vital Wounds>).
+                When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<vital roll> of 0 or -1, you treat that vital roll as a 1 instead (see \\pcref<Vital Wounds>).
             """,
             short_description="Prevents death from vital wounds",
         ),
@@ -68,7 +68,7 @@ def generate_tools():
             material_type="Potion",
             tags=[],
             description="""
-                When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<wound roll> of 0, -1, or -2, you treat that wound roll as a 1 instead (see \\pcref<Vital Wounds>).
+                When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<vital roll> of 0, -1, or -2, you treat that vital roll as a 1 instead (see \\pcref<Vital Wounds>).
             """,
             short_description="Prevents death from major vital wounds",
         ),
@@ -79,7 +79,7 @@ def generate_tools():
             material_type="Potion",
             tags=[],
             description="""
-                When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<wound roll> of 0, -1, -2, or -3, you treat that wound roll as a 1 instead (see \\pcref<Vital Wounds>).
+                When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<vital roll> of 0, -1, -2, or -3, you treat that vital roll as a 1 instead (see \\pcref<Vital Wounds>).
             """,
             short_description="Prevents death from almost any vital wound",
         ),

@@ -375,7 +375,7 @@ export const thaumaturgy: MysticSphere = {
       name: "Spellseal",
 
       attack: {
-        crit: `The effect ends after the subject miscasts three spells instead of only one.`,
+        crit: `The effect ends after the subject fails to cast three spells instead of only one.`,
         hit: `As a \\glossterm{condition}, the next time the subject tries to cast a spell, the spell automatically fails with no effect instead.
         When the subject fails to cast a spell in this way, this effect ends.`,
         targeting: `

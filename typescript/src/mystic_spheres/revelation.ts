@@ -48,7 +48,7 @@ export const revelation: MysticSphere = {
       rank: 1,
       scaling: {
         3: `You also gain a +1 \\glossterm{magic bonus} to \\glossterm{accuracy} with the chosen weapon group.`,
-        5: `You also gain \\glossterm{exotic proficiency} with the chosen weapon group.`,
+        5: `You also gain proficiency with exotic weapons from the chosen weapon group.`,
         7: `The accuracy bonus increases to +2.`,
       },
       type: "Attune (self)",
@@ -789,7 +789,7 @@ export const revelation: MysticSphere = {
         You do not need \\glossterm{line of sight} or \\glossterm{line of effect} to the subject.
         However,  must specify your target with a precise mental image of its appearance.
         The image does not have to be perfect, but it must unambiguously identify the subject.
-        If you specify its appearance incorrectly, or if the subject has changed its appearance, you may accidentally target a different creature, or the spell may simply be \\glossterm{miscast}.
+        If you specify its appearance incorrectly, or if the subject has changed its appearance, you may accidentally target a different creature, or the spell may simply fail without effect.
         This attack roll cannot \\glossterm{explode}.
         `,
       },

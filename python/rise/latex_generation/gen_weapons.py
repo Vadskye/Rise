@@ -404,7 +404,7 @@ def generate_weapons():
             tags=[],
             description="""
             This weapon automatically veers towards its intended target.
-            \\glossterm<Strikes> with this weapon ignore \\glossterm<concealment>.
+            All \\glossterm<strikes> with this weapon ignore \\glossterm<concealment>.
             In addition, any miss chance the strike would normally have is reduced.
             A 50\\% miss chance is reduced to a 20\\% miss chance, and a 20\\% miss chance is removed entirely.
         """,
@@ -613,7 +613,7 @@ def generate_weapons():
             material_type="Weapon",
             tags=[],
             description="""
-                \\glossterm<Strikes> with this weapon, including projectiles fired by this weapon, can pass through a single solid obstacle of up to one feet thick on the way to their target.
+                All \\glossterm<strikes> with this weapon, including projectiles fired by this weapon, can pass through a single solid obstacle of up to one feet thick on the way to their target.
                 This can allow you to ignore \\glossterm<cover>, or even attack through solid walls.
                 It does not allow you to ignore armor, shields, or or similar items used by the target of your attacks.
             """,
