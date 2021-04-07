@@ -43,7 +43,7 @@ planeforgedInput.push({
           name: "Proclamation",
           powerMultiplier: 0.5,
           source: "magical",
-          target: "\\glossterm{Enemies} within a \\areamed radius from the $name",
+          target: "All \\glossterm{enemies} within a \\areamed radius from the $name",
         },
         {
           accuracyBonus: 2,
@@ -82,7 +82,7 @@ planeforgedInput.push({
               An astral deva can learn and perform divine spells and rituals as a rank 5 caster.
               It has access to two spheres and knows five spells from among those spheres.
               They do not use verbal or somatic components to cast spells, and do not suffer any \\glossterm{focus penalty}.
-              A typical astral deva has access to the Bless and Channel Divinity spheres, and knows the \\spell{agent of the divine}, \\spell{boon of cleansing}, \\spell{glimpse of divinity}, \\spell{mantle of faith} and \\spell{proclamation} spells.
+              A typical astral deva has access to the Bless and Channel Divinity spheres, and knows the \\spell{agent of the divine}, \\spell{boon of cleansing}, \\spell{glimpse of divinity}, \\spell{mantle of faith} and \\spell{greater word of faith} spells.
             `,
           name: "Divine Intervention",
         },
