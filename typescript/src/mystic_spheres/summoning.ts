@@ -495,7 +495,7 @@ export const summoning: MysticSphere = {
         It immediately is \\sickened while it is poisoned.
         The poison's third stage causes the subject to become \\nauseated as long as it is poisoned.
         `,
-        name: "summon creature",
+        name: "summon monster",
       },
       rank: 4,
       scaling: "damage",

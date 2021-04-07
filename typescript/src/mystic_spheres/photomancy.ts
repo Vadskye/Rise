@@ -10,6 +10,7 @@ export const photomancy: MysticSphere = {
       name: "Beautify",
 
       functionsLike: {
+        abilityType: 'ability',
         exceptThat: `
         You alter your appearance in minor ways.
         This functions like the \\textit{disguise creature}  ability with a +4 bonus, except that you cannot change the appearance of your equipment, species, creature type, or number of limbs (see \\pcref{Disguise Creature}).
@@ -496,7 +497,7 @@ export const photomancy: MysticSphere = {
         hit: `Each subject takes 2d6 + half \\glossterm{power} electricity damage.`,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
-          \\glossterm{Brilliant illumination} fills a 60 foot radius around both your starting location and your ending location.
+          A blast of \\glossterm{brilliant illumination} fills a 60 foot radius around both your starting location and your ending location.
           In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
         `,
       },

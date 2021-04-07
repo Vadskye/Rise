@@ -490,13 +490,13 @@ export const verdamancy: MysticSphere = {
 
       effect: `
         When you cast this spell, you choose a type of armor you are proficient with that is not normally made from metal.
-        Plants grow around your body, functioning like your chosen type of armor for you, except that the \\glossterm{encumbrance penalty} of the armor is reduced by 2.
+        Plants grow around your body, functioning like your chosen type of armor for you, except that the \\glossterm{encumbrance} of the armor is reduced by 2.
         These plants are considered to be normal plants for the purpose of abilities that require plants to be near targets, such as spells from this mystic sphere.
       `,
       rank: 1,
       scaling: {
         3: `You also gain a +1 bonus to Armor defense.`,
-        5: `The encumbrance penalty reduction is increased to 3.`,
+        5: `The encumbrance reduction is increased to 3.`,
         7: `The bonus to Armor defense increases to +2.`,
       },
       tags: ["Manifestation"],

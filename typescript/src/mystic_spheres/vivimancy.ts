@@ -224,7 +224,7 @@ export const vivimancy: MysticSphere = {
       attack: {
         glance: `Half damage.`,
         hit: `The subject takes 4d10 + \\glossterm{power} energy damage.
-        If this damage \\glossterm{vitally wounds} the subject, you can remove one of your \\glossterm{vital wounds}.
+        If it loses \\glossterm{hit points} from this damage, you can remove one of your vital wounds.
         When you do, you gain two \\glossterm{fatigue points}.`,
         targeting: `
         Make an attack vs. Fortitude against one living creature within \\shortrange.
@@ -657,20 +657,20 @@ export const vivimancy: MysticSphere = {
 
       castingTime: "24 hours",
       effect: `
-        Choose one intact humanoid corpse within \\shortrange.
+        Choose one intact corpse within \\shortrange.
         The corpse returns to life.
         It must not have died due to old age.
 
         The creature has 0 hit points when it returns to life.
-        It is cured of all \\glossterm{vital damage} and other negative effects, but the body's shape is unchanged.
+        It is cured of all \\glossterm{vital wounds} and other negative effects, but the body's shape is unchanged.
         Any missing or irreparably damaged limbs or organs remain missing or damaged.
         The creature may therefore die shortly after being resurrected if its body is excessively damaged.
 
         Coming back from the dead is an ordeal.
         All of the creature's \\glossterm{attunement points} and daily abilities are expended when it returns to life.
-        In addition, its maximum attunement points are reduced by 1.
+        In addition, its maximum \\glossterm{fatigue tolerance} is reduced by 1.
         This penalty lasts for thirty days, or until the creature gains a level.
-        If this would reduce a creature's maximum attunement points below 0, the creature cannot be resurrected.
+        If this would reduce a creature's maximum fatigue tolerance below 0, the creature cannot be resurrected.
 
         This ritual can only be learned through the divine \\glossterm{magic source}.
       `,

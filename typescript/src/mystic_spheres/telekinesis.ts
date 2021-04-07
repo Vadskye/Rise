@@ -306,7 +306,8 @@ export const telekinesis: MysticSphere = {
       name: "Animated Weapon",
 
       effect: `
-        As a \\glossterm{minor action}, you can make a \\glossterm{magical strike} with a -3 penalty to \\glossterm{accuracy}.
+        As a \\glossterm{minor action}, you can make a \\glossterm{strike} with a -3 penalty to \\glossterm{accuracy}.
+        This strike is considered a \\glossterm{magical} ability.
         You take a -2d penalty to damage with the strike, and you do not add your \\glossterm{power} to damage with the strike.
       `,
       rank: 4,
@@ -319,7 +320,8 @@ export const telekinesis: MysticSphere = {
 
       effect: `
         Choose one Tiny or smaller \\glossterm{unattended} projectile within \\longrange.
-        You make a \\glossterm{magical strike} using the projectile against anything within \\longrange.
+        You make a \\glossterm{strike} using the projectile against anything within \\longrange.
+        This strike is considered a \\glossterm{magical} ability, so you add your magical \\glossterm{power} to damage with the strike instead of your \\glossterm{mundane} power.
         The projectile flies directly toward the target instead of originating from your position, which may allow you to avoid \\glossterm{cover} and similar obstacles.
       `,
       rank: 2,

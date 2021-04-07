@@ -1311,28 +1311,28 @@ def undead(sample_monsters):
 def generate_monsters():
     sample_monsters = get_sample_creatures()["monsters"]
     monsters = f"""
-        \\section<Aberrations>
+        \\section<Aberrations>\\label<Aberrations>
         {aberrations(sample_monsters)}
 
-        \\section<Animates>
-        {animates(sample_monsters)}
-
-        \\section<Animals>
+        \\section<Animals>\\label<Animals>
         {animals(sample_monsters)}
 
-        \\section<Humanoids>
+        \\section<Animates>\\label<Animates>
+        {animates(sample_monsters)}
+
+        \\section<Humanoids>\\label<Humanoids>
         {humanoids(sample_monsters)}
 
-        \\section<Magical Beasts>
+        \\section<Magical Beasts>\\label<Magical Beasts>
         {magical_beasts(sample_monsters)}
 
-        \\section<Monstrous Humanoids>
+        \\section<Monstrous Humanoids>\\label<Monstrous Humanoids>
         {monstrous_humanoids(sample_monsters)}
 
-        \\section<Outsiders>
+        \\section<Outsiders>\\label<Outsiders>
         {outsiders(sample_monsters)}
 
-        \\section<Undead>
+        \\section<Undead>\\label<Undead>
         {undead(sample_monsters)}
     """
 

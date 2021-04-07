@@ -302,7 +302,7 @@ export const umbramancy: MysticSphere = {
 
         You teleport into an unoccupied location within \\shortrange on a stable surface that can support your weight.
         Unlike most teleportation effects, both your departure and arrival with this spell are silent.
-        If you are in \\glossterm{bright illumination} and are not touching your shadow, this spell is \\glossterm{miscast}.
+        If you are in \\glossterm{bright illumination} and are not touching your shadow, this spell fails without effect.
       `,
       rank: 1,
       scaling: {
