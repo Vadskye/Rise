@@ -3,7 +3,6 @@ import { CombatStyle } from ".";
 export const dirtyFighting: CombatStyle = {
   name: "Dirty Fighting",
   shortDescription: "Disable foes using freehanded attacks and tricks.",
-  sources: ["esoteric", "primal", "trick"],
 
   maneuvers: [
     {
