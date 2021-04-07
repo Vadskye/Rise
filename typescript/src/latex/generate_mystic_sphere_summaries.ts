@@ -12,19 +12,19 @@ function generateMysticSphereSummary(sphere: MysticSphere): string {
   const spellsByRank = _.groupBy(spells, (s) => s.rank);
   return `
     {
-    \\RaggedRight
-    \\subsection{${sphere.name}}
+      \\RaggedRight
+      \\subsection{${sphere.name}}
 
-    ${generateSpellsSummary("Cantrips", _.sortBy(sphere.cantrips, "name"))}
-    ${ranks
-      .map((rank) => generateSpellsSummary(`Rank ${rank}`, sortByRankAndLevel(spellsByRank[rank])))
-      .filter(Boolean)
-      .join("\n")}
-    ${
-      sphere.rituals && sphere.rituals.length > 0
-        ? generateSpellsSummary("Rituals", _.sortBy(sphere.rituals, "name"))
-        : ""
-    }
+      ${generateSpellsSummary("Cantrips", _.sortBy(sphere.cantrips, "name"))}
+      ${ranks
+        .map((rank) => generateSpellsSummary(`Rank ${rank}`, sortByRankAndLevel(spellsByRank[rank])))
+        .filter(Boolean)
+        .join("\n")}
+      ${
+        sphere.rituals && sphere.rituals.length > 0
+          ? generateSpellsSummary("Rituals", _.sortBy(sphere.rituals, "name"))
+          : ""
+      }
     }
   `;
 }

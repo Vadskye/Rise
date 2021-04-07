@@ -281,7 +281,7 @@ export const revelation: MysticSphere = {
       attack: {
         crit: `The reduction increases to four times your \\glossterm{power}.`,
         hit: `As a \\glossterm{condition}, the subject's vulnerabilities become clear for all to see.
-        Its \\glossterm{physical resistance} and \\glossterm{energy resistance} are each reduced by an amount equal to twice your \\glossterm{power}.
+        Its physical and energy \\glossterm{resistances} are each reduced by an amount equal to twice your \\glossterm{power}.
         Any other resistances, such as an extra resistance to fire damage or \\glossterm{universal resistance}, are unaffected by this spell.
         When this effect ends, the subject regains resistances equal to the amount it lost this way.`,
         targeting: `
@@ -757,7 +757,6 @@ export const revelation: MysticSphere = {
       functionsLike: {
         exceptThat: `
         the effect works at any distance and across planes.
-        It gains the \\glossterm{Planar} tag in addition to the tags from the \\ritual{telepathic bond} ritual.
         `,
         name: "telepathic bond",
       },
@@ -806,7 +805,6 @@ export const revelation: MysticSphere = {
       functionsLike: {
         exceptThat: `
         the subject does not have to be on the same plane as you.
-        It gains the \\glossterm{Planar} tag in addition to the tags from the \\ritual{scry creature} ritual.
         `,
         name: "scry creature",
       },

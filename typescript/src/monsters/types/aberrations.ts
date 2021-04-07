@@ -95,7 +95,7 @@ aberrationInput.push({
     {
       // TODO: this was originally a disease, but disease trigger times are less well defined
       description: `
-        Whenever a creature is \\glossterm{wounded} by the aboleth's tentacle,
+        Whenever a creature is loses \\glossterm{hit points} from a strike with the aboleth's tentacle,
           the damaged creature becomes \\glossterm{poisoned} by aboleth slime.
         The creature is \\sickened as long as it remains poisoned.
         On a third hit, the creature gains a \\glossterm{vital wound}.

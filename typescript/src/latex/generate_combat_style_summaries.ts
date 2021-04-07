@@ -12,15 +12,15 @@ function generateCombatStyleSummary(style: CombatStyle): string {
   const maneuverByRank = _.groupBy(maneuvers, (s) => s.rank);
   return `
     {
-    \\RaggedRight
-    \\subsection{${style.name}}
+      \\RaggedRight
+      \\subsection{${style.name}}
 
-    ${ranks
-      .map((rank) =>
-        generateManeuversSummary(`Rank ${rank}`, sortByRankAndLevel(maneuverByRank[rank])),
-      )
-      .filter(Boolean)
-      .join("\n")}
+      ${ranks
+        .map((rank) =>
+          generateManeuversSummary(`Rank ${rank}`, sortByRankAndLevel(maneuverByRank[rank])),
+        )
+        .filter(Boolean)
+        .join("\n")}
     }
   `;
 }

@@ -57,7 +57,7 @@ const baseTreant = {
         The target animates and fights at the treant's command.
 
         Its statistics are the same as the treant's, except that the tree may be a different size category, and it lacks this ability.
-        This ability lasts until the treant uses it again or \\glossterm{dismisses} it as a \\glossterm{free action}.
+        This ability lasts until the treant uses it again or dismisses it as a \\glossterm{free action}.
         When this ability ends, the tree sets down roots in its new location if possible.
         Treants avoid stranding trees in unsustainable locations except in desperate circumstances.
       `,
