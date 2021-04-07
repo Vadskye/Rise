@@ -10,20 +10,21 @@ function generateSourceList(source: MysticSphereSource): string {
   const sourceSpheres = mysticSpheres.filter((sphere) => sphere.sources.includes(source));
   return `
     {
-    \\RaggedRight
-    \\subsection{${titleCase(source)} Mystic Spheres}\\label{${titleCase(source)} Mystic Spheres}
+      \\RaggedRight
+      \\subsection{${titleCase(source)} Mystic Spheres}\\label{${titleCase(source)} Mystic Spheres}
 
-    ${sourceSpheres.map(formatSphere).join("\n")}
-    ${
-      source === "divine"
-        ? `
-          \\subsubsection{Domain Spheres}
-          ${mysticSpheres
-            .filter((sphere) => sphere.sources.includes("domain"))
-            .map(formatSphere)
-            .join("\n")}
-        `
-        : ""
+      ${sourceSpheres.map(formatSphere).join("\n")}
+      ${
+        source === "divine"
+          ? `
+            \\subsubsection{Domain Spheres}
+            ${mysticSpheres
+              .filter((sphere) => sphere.sources.includes("domain"))
+              .map(formatSphere)
+              .join("\n")}
+          `
+          : ""
+      }
     }
   `;
 }
