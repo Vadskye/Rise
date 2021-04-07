@@ -152,6 +152,6 @@ export const typeDescriptions: Record<MonsterType, string | null> = {
     Any effect from the \\sphere{vivimancy} sphere that would directly cause an undead creature to lose hit points without dealing damage causes that creature to regain that many lost hit points instead.
     In addition, any effect from the \\sphere{vivimancy} sphere that would cause an undead creature to regain lost hit points instead causes it to lose that many hit points instead.
     \\parhead{Unnatural Mind} Undead are controlled by fragments of the souls of deceased creatures.
-    Many undead are \\glossterm{mindless}, and even intelligent undead are immune to \\abilitytag{Compulsion} and \\glossterm{Delusion} abilities.
+    Many undead are \\glossterm{mindless}, and even intelligent undead are immune to \\abilitytag{Compulsion} and \\abilitytag{Emotion} abilities.
   `,
 };
