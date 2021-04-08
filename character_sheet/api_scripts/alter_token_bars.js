@@ -52,17 +52,17 @@ AlterScript.Process = function(msg, who) {
     	const who = msg.who;
     	const Target = getObj("graphic", targetId);
     	let Bar = 0;
-    	Bar = (n[2].toLowerCase().toString() == Bar1Key) ? 1 : 0;
-    	Bar = (n[2].toLowerCase().toString() == Bar2Key) ? 2 : Bar;
-    	Bar = (n[2].toLowerCase().toString() == Bar3Key) ? 3 : Bar;
+    	Bar = (n[1].toLowerCase().toString() == Bar1Key) ? 1 : 0;
+    	Bar = (n[1].toLowerCase().toString() == Bar2Key) ? 2 : Bar;
+    	Bar = (n[1].toLowerCase().toString() == Bar3Key) ? 3 : Bar;
     	if (Bar === 0) {
     		sendChat("ERROR", "/w " + who.replace(" (GM)", "") + " That is not a valid bar.");
     		return;
     	}
-    	let AlterValue = n[3];
+    	let AlterValue = n[2];
     	const CurrentValue = parseInt(Target.get("bar" + Bar + "_value"));
     	const MaxValue = parseInt(Target.get("bar" + Bar + "_max"));
-    	const NoAnnounce = n[4];
+    	const NoAnnounce = n[3];
     	
     	// Check for a + or - sign...
     	const Operand1 = AlterValue.charAt(0);
