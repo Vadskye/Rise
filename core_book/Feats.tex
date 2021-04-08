@@ -166,6 +166,7 @@ You cannot gain the same feat twice.
         \featref{Shieldbearer}         & Str 2            & Defend better with shields                    & \tdash & \featpref{Shieldbearer}         \\
         \featref{Sniper}               & Per 2            & Aim precisely at distant foes                 & \tdash & \featpref{Sniper}               \\
         \featref{Two-Weapon Fighting}  & Dex 2            & Fight better with two weapons at once         & \tdash & \featpref{Two-Weapon Fighting}  \\
+        \featref{Weapon Focus}         & \tdash           & Fight better with a single type of weapon     & \tdash & \featpref{Weapon Focus}         \\
         \featref{Whirlwind Warrior}    & Dex 2            & Fight hordes with agile ease                  & \tdash & \featpref{Whirlwind Warrior}    \\
     \end{longtable}
 \end{longtablewrapper}
@@ -1055,7 +1056,7 @@ You cannot gain the same feat twice.
     \begin{feat}{Martial Training}{Combat}
         \ff[1]{Trained Strike} You can use the \textit{trained strike} ability as a standard action.
         \begin{freeability}{Trained Strike}
-            You make a \glossterm{strike} with a \plus1 bonus to \glossterm{accuracy}.
+            Make a \glossterm{strike} with a \plus1 bonus to \glossterm{accuracy}.
 
             \rankline
             \featlevel{6} The accuracy bonus increases to \plus2.
@@ -2560,8 +2561,39 @@ You cannot gain the same feat twice.
         \ff[18]{Greater Dual Precision} The bonus from your \textit{dual precision} ability increases to \plus2.
     \end{feat}
 
+    \begin{feat}{Weapon Focus}{Combat}
+        \ff[1]{Focused Weapon} Choose one type of weapon, such as a broadsword.
+        This is your focused weapon, and many abilities from this feat give you benefits with your focused weapon.
+
+        \ff[1]{Perfect Strike} You can use the \textit{perfect strike} ability as a standard action.
+        \begin{freeability}{Perfect Strike}
+            Make a \glossterm{strike} using your focused weapon.
+            You gain a \plus1 bonus to \glossterm{accuracy} with the strike and a \plus1d bonus to damage.
+
+            \rankline
+            \featlevel{6} The damage bonus increases to \plus2d.
+            \featlevel{12} The damage bonus increases to \plus3d.
+            \featlevel{18} The damage bonus increases to \plus4d.
+        \end{freeability}
+
+        \ff[3]{Firm Grip} Your focused weapon is considered to be well-secured whenever you want it to be, making it difficult or impossible for you to be disarmed.
+
+        \ff[6]{Focused Power} You gain a \plus2 bonus to \glossterm{power} with attacks using your focused weapon.
+
+        \ff[9]{Focused Precision} You gain a \plus1 bonus to \glossterm{accuracy} with attacks using your focused weapon.
+
+        \ff[12]{Greater Focused Power} The bonus from your \textit{focused power} ability increases to \plus4.
+
+        \ff[15]{Greater Focused Precision} The bonus from your \textit{focused precision} ability increases to \plus2.
+
+        \ff[18]{Supreme Focused Power} The bonus from your \textit{focused power} ability increases to \plus8.
+
+        \ff[21]{Supreme Focused Precision} The bonus from your \textit{focused precision} ability increases to \plus3.
+
+    \end{feat}
+
     \begin{feat}{Whirlwind Warrior}{Combat}
-        \featpres Base Dexterity of 2.
+        \featpre Base Dexterity of 2.
 
         % TODO: this would be better if it hit threatened people, but increased weapon range is too common
         \ff[1]{Cyclone} You can use the \textit{cyclone} ability as a standard action.
