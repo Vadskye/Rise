@@ -283,13 +283,21 @@ def resistances():
                             ],
                         ),
                     ),
-                    freeform_number_input(
-                        number_input_attributes={"name": "resistance_freeform"},
-                        text_input_attributes={"name": "resistance_freeform_name"},
+                    flex_row(
+                        [
+                            text_input({"class": "freeform-resistance-name", "name": "resistance_freeform_name"}),
+                            number_input({"name": "resistance_freeform_current"}),
+                            span({"class": "core-statistics-separator"}, "/"),
+                            number_input({"name": "resistance_freeform_maximum"}),
+                        ],
                     ),
-                    freeform_number_input(
-                        number_input_attributes={"name": "resistance_freeform_2"},
-                        text_input_attributes={"name": "resistance_freeform_name_2"},
+                    flex_row(
+                        [
+                            text_input({"class": "freeform-resistance-name", "name": "resistance_freeform_name_2"}),
+                            number_input({"name": "resistance_freeform_current_2"}),
+                            span({"class": "core-statistics-separator"}, "/"),
+                            number_input({"name": "resistance_freeform_maximum_2"}),
+                        ],
                     ),
                 ]
             ),
