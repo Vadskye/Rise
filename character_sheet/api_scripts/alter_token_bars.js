@@ -60,8 +60,8 @@ AlterScript.Process = function(msg, who) {
     		return;
     	}
     	let AlterValue = n[2];
-    	const CurrentValue = parseInt(Target.get("bar" + Bar + "_value"));
-    	const MaxValue = parseInt(Target.get("bar" + Bar + "_max"));
+    	const CurrentValue = parseInt(Target.get("bar" + Bar + "_value")) || 0;
+    	const MaxValue = parseInt(Target.get("bar" + Bar + "_max")) || CurrentValue;
     	const NoAnnounce = n[3];
     	
     	// Check for a + or - sign...
