@@ -441,7 +441,7 @@ export const polymorph: MysticSphere = {
         If it loses \\glossterm{hit points} from this damage, its physical form loses coherence and partially collapses into a sludgelike mass as a \\glossterm{condition}.
         It has no \\glossterm{free hands}, causing it to drop anything it is holding and making it unable to take any actions that require free hands.
         Its speed with all of its \\glossterm{mundane} movement modes are reduced to one quarter normal.
-        It is also unable to speak normally or use verbal or somatic \\glossterm{components}.`,
+        It is also unable to speak normally or use verbal or somatic \\glossterm{casting components}.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
         `,
