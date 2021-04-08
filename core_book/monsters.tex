@@ -20,13 +20,13 @@ This chapter describes the rules for monsters, and the combat statistics for a v
 
         \begin{dtable}
             \lcaption{Challenge Rating Effects}
-            \begin{dtabularx}{\textwidth}{l l l X l l l}
-                \tb{CR} & \tb{HP}  & \tb{Resists} & \tb{Vital Wound Max} & \tb{AP} & \tb{Accuracy} & \tb{Defenses} \tableheaderrule
-                1/2     & \mult1/2 & \mult0           & 1                    & 0       & \plus0        & \plus0 \\
-                1       & \mult1   & \mult0           & 1                    & 1       & \plus0        & \plus0 \\
-                2       & \mult1   & \mult1           & 2                    & 1       & \plus1        & \plus1 \\
-                3       & \mult2   & \mult2           & 3                    & 2       & \plus2        & \plus2 \\
-                4       & \mult4   & \mult2\fn{1}     & 4                    & 3       & \plus3        & \plus3 \\
+            \begin{dtabularx}{\textwidth}{l l l X l l}
+                \tb{CR} & \tb{HP}  & \tb{Resists} Wound Max} & \tb{AP} & \tb{Accuracy} & \tb{Defenses} \tableheaderrule
+                1/2     & \mult1/2 & \mult0           & 0       & \plus0        & \plus0 \\
+                1       & \mult1   & \mult0           & 1       & \plus0        & \plus0 \\
+                2       & \mult1   & \mult1           & 1       & \plus1        & \plus1 \\
+                3       & \mult2   & \mult2           & 2       & \plus2        & \plus2 \\
+                4       & \mult4   & \mult2\fn{1}     & 3       & \plus3        & \plus3 \\
             \end{dtabularx}
             1. CR 4 monsters also have a universal damage resistance equal to half their HP (see \pcref{Monster Universal Resistance}). \\
         \end{dtable}
@@ -42,14 +42,11 @@ This chapter describes the rules for monsters, and the combat statistics for a v
 
         \subsubsection{Monster Vital Wounds}
             Monsters do not normally make \glossterm{vital rolls} like player characters do.
-            Instead, once a monster takes at least as many \glossterm{vital wounds} as its \glossterm{challenge rating}, it is defeated.
+            Instead, once a monster gains a \glossterm{vital wound}, it is defeated.
             Defeated monsters may be unconscious, dead, or merely flee the fight at the discretion of the Game Master.
 
             Some monsters have specific mechanics for what happens if they gain \glossterm{vital wounds}.
             Unless otherwise specified on the monster's description, \glossterm{vital wounds} have no negative effects on monsters.
-
-            Monsters do suffer vital wounds from taking at least half their maximum hit points in damage from a single attack.
-            This generally makes CR 1/2 and CR 1 monsters easy to quickly dispatch with strong attacks.
 
         \subsubsection{Spending Resources}
             Unless otherwise noted in their description, all monsters are unable to use abilities that would cause them to gain \glossterm{fatigue points}, such as the \textit{desperate exertion} ability.
