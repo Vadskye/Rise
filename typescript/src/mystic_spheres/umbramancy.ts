@@ -332,14 +332,14 @@ export const umbramancy: MysticSphere = {
       name: "Walk the Shadow Roads",
 
       effect: `
-        You can teleport horizontally between shadows instead of moving normally.
-        Teleporting a given distance costs movement equal to half that distance.
-        If your \\glossterm{line of effect} to your destination is blocked, or if this teleportation would somehow place you inside a solid object, your teleportation is cancelled and you remain where you are that phase.
-        Areas with \\glossterm{bright illumination} blocks line of effect for this spell, so you are unable to teleport into or past areas of bright illumination.
-        You must be able to move to teleport in this way, so effects like being \\immobilized prevent this movement.
+        Whenever you would use your land speed to move, you can teleport horizontally between shadows instead.
+        Teleporting a given distance costs movement equal that distance.
+        Your destination must be on a stable surface that can support your weight.
+        If your \\glossterm{line of sight} or \\glossterm{line of effect} to your destination are blocked, or if this teleportation would somehow otherwise place you inside a solid object, your teleportation is cancelled and you remain where you were.
+        Areas with \\glossterm{bright illumination} block line of effect for this spell, so you are unable to teleport into or past areas of bright illumination.
       `,
       rank: 4,
-      scaling: { 6: `You can also teleport vertically or diagonally in addition to horizontally.` },
+      scaling: { 6: `You can teleport in any direction instead of just horizontally.` },
       type: "Attune (self)",
     },
 
