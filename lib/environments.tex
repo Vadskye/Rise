@@ -113,7 +113,7 @@
     innerbottommargin=0.25em,
 ]{freeability}
 
-\DeclareDocumentEnvironment{durationability}{o m o}
+\DeclareDocumentEnvironment{durationability}{o m}
 {
     \begin{thesamepage}
     \RaggedRight
@@ -122,9 +122,7 @@
     \spelltwocol{
         {\normalsize \textbf{#2}}
         \IfValueTF{#1}{~--~#1}{}
-    }{
-        \IfValueTF{#3}{#3}{}
-    }
+    }{}
 }
 {
     \end{thesamepage}
@@ -173,7 +171,7 @@
     innerbottommargin=0.25em,
 ]{attuneability}
 
-\DeclareDocumentEnvironment{instantability}{o m o}
+\DeclareDocumentEnvironment{instantability}{o m}
 {
     \begin{thesamepage}
     \RaggedRight
@@ -182,9 +180,7 @@
     \spelltwocol{
         {\normalsize \textbf{#2}}
         \IfValueTF{#1}{~--~#1}{}
-    }{
-        \IfValueTF{#3}{#3}{}
-    }
+    }{}
 }
 {
     \end{thesamepage}
