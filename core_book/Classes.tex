@@ -223,14 +223,16 @@ This choice determines a great deal about your character's abilities.
         \end{attuneability}
 
         \cf{Bbn}[2]{Enraged Strike} As a standard action, you can use the \textit{enraged strike} ability.
-        \begin{freeability}{Enraged Strike}
+        \begin{instantability}{Enraged Strike}
+            Instant
+            \rankline
             Make a melee \glossterm{strike}.
             If the target of the strike dealt damage to you during the previous round, you gain a \plus2 bonus to \glossterm{accuracy} with the strike and a \plus2d bonus to damage.
 
             \rankline
             \rank{4} The damage bonus increases to \plus3d.
             \rank{6} The damage bonus increases to \plus4d.
-        \end{freeability}
+        \end{instantability}
 
         \cf{Bbn}[3]{Greater Insensible Anger} The hit point reduction and resistance bonuses from your \textit{insensible anger} ability both increase to be equal to three times your rank in this archetype.
 
@@ -608,10 +610,12 @@ This choice determines a great deal about your character's abilities.
         In addition, it only costs you one \glossterm{fatigue point} instead of two to use the \textit{desperate exertion} ability to affect a Medicine check.
 
         \cf{Clr}[1]{Restoration} You can use the \textit{restoration} ability as a standard action.
-        \begin{freeability}{Restoration}[\glossterm{Magical}]
-            \target{Yourself or one living \glossterm{ally} within \glossterm{reach}}
-            The target regains 1d6 \glossterm{hit points}.
-            If the target is a creature other than yourself, they also regain hit points equal to your \glossterm{power}.
+        \begin{instantability}{Restoration}[\glossterm{Magical}]
+            Instant
+            \rankline
+            Choose yourself or one living \glossterm{ally} within your \glossterm{reach}.
+            The subject regains 1d6 \glossterm{hit points}.
+            If the subject is a creature other than yourself, they also regain hit points equal to your \glossterm{power}.
 
             \rankline
             \rank{2} The healing increases to 1d8.
@@ -620,36 +624,40 @@ This choice determines a great deal about your character's abilities.
             \rank{5} The healing increases to 4d6.
             \rank{6} The healing increases to 4d8.
             \rank{7} The healing increases to 5d10.
-        \end{freeability}
+        \end{instantability}
 
         \cf{Clr}[2]{Healer's Grace} You gain a \plus1 bonus to all defenses.
         Whenever you attack or deal damage to a living creature, you lose this bonus until the end of the next round.
 
         \cf{Clr}[3]{Divine Healing} You can use the \textit{divine healing} ability as a standard action.
-        \begin{freeability}{Divine Healing}[\glossterm{Magical}]
-            \target{One living \glossterm{ally} within \glossterm{reach}.}
+        \begin{instantability}{Divine Healing}[\glossterm{Magical}]
+            Instant
+            \rankline
             When you use this ability, you gain two \glossterm{fatigue points} (see \pcref{Fatigue}).
 
-            The target removes one of its \glossterm{vital wounds}.
+            Choose yourself or one living \glossterm{ally} within your \glossterm{reach}.
+            The subject removes one of its \glossterm{vital wounds}.
 
             \rankline
-            \rank{5} If the target's level is at least two levels lower than your level,
+            \rank{5} If the subject's level is at least two levels lower than your level,
                 you do not gain fatigue points when you use this ability.
-            \rank{7} The target can remove an additional \glossterm{vital wound}.
-        \end{freeability}
+            \rank{7} The subject can remove an additional \glossterm{vital wound}.
+        \end{instantability}
 
         \cf{Clr}[4]{Called to the Needy} At the end of each phase, if a living \glossterm{ally} within \distrange of you gained a \glossterm{vital wound} during that phse, you can \glossterm{teleport} into the unoccupied square closest to that creature.
 
         \cf{Clr}[5]{Greater Healer's Grace} The bonus from your \textit{healer's grace} ability increases to \plus2.
 
         \cf{Clr}[6]{Revivify} You can use the \textit{revivify} ability as a standard action.
-        \begin{freeability}{Revivify}
+        \begin{instantability}{Revivify}
+            Instant
+            \rankline
             When you use this ability, you gain three \glossterm{fatigue points} (see \pcref{Fatigue}).
 
-            Choose a dead creature within \glossterm{reach}.
-            If it was dead for no more than 1 minute, it is restored to life, as the \ritual{resurrection} ritual.
-            After using this ability, you cannot use it for 24 hours.
-        \end{freeability}
+            Choose one intact corpse within your \glossterm{reach}.
+            If it belongs to a creature that has been dead for no more than 1 minute, that creature is restored to life, as the \ritual{resurrection} ritual.
+            After using this ability, you cannot use it again until you take a \glossterm{long rest}.
+        \end{instantability}
 
         \cf{Clr}[7]{Greater Called to the Needy} You can use your \textit{called to the needy} ability to teleport to allies that lost \glossterm{hit points} in addition to allies that gained vital wounds.
 
@@ -687,12 +695,14 @@ This choice determines a great deal about your character's abilities.
             \parhead{Aspect} If you roll a 1 on an attack roll, it explodes (see \pcref{Exploding Attacks}).
             This does not affect bonus dice rolled for exploding attacks.
             \parhead{Essence} You can use the \textit{twist of fate} ability as a standard action.
-            \begin{freeability}{Twist of Fate}
+            \begin{instantability}{Twist of Fate}
+                Instant
+                \rankline
                 An improbable event occurs within \rnglong range.
                 You can specify in general terms what you want to happen, such as ``Make the bartender leave the bar''.
                 You cannot control the exact nature of the event, though it always beneficial for you in some way.
                 After using this ability, you cannot use it again until you take a \glossterm{long rest}.
-            \end{freeability}
+            \end{instantability}
             \parhead{Mastery} You gain a \plus5 bonus to \glossterm{accuracy} with any attack roll that explodes (see \pcref{Exploding Attacks}).
 
         \subsubsection{Death}
@@ -715,7 +725,9 @@ This choice determines a great deal about your character's abilities.
             % because maneuvers are upgraded into higher rank maneuvers,
             % while this has no upgrades and should remain relevant alone.
             \parhead{Gift} You can use the \textit{destructive attack} ability as a standard action.
-            \begin{freeability}{Destructive Attack}
+            \begin{instantability}{Destructive Attack}
+                Instant
+                \rankline
                 Make a \glossterm{strike} with a \minus2 penalty to \glossterm{accuracy}.
                 You gain a \plus2d bonus damage with the strike.
 
@@ -723,17 +735,19 @@ This choice determines a great deal about your character's abilities.
                 \rank{3} The damage bonus increases to \plus3d.
                 \rank{5} The damage bonus increases to \plus4d.
                 \rank{7} The damage bonus increases to \plus5d.
-            \end{freeability}
+            \end{instantability}
             \parhead{Aspect} Your abilities deal double damage to objects.
             \parhead{Essence} You can use the \textit{lay waste} ability as a standard action.
-            \begin{freeability}{Lay Waste}
-                You make an attack vs. Fortitude against all unattended objects in a \areamed radius.
+            \begin{instantability}{Lay Waste}
+                Instant
+                \rankline
+                Make an attack vs. Fortitude against all unattended objects in a \areamed radius.
                 You may freely exclude any number of 5-ft\. cubes from the area, as long as the resulting area is still contiguous.
                 \hit For each target, if its \glossterm{resistance} against \glossterm{physical damage} is lower than your \glossterm{power}, it crumbles into a fine power and is irreparably \glossterm{destroyed}.
 
                 \rankline
                 \rank{6} The area increases to a \arealarge radius.
-            \end{freeability}
+            \end{instantability}
             \parhead{Mastery} You gain a \plus4 bonus to your \glossterm{power} with all abilities.
 
         \subsubsection{Earth}
@@ -759,16 +773,20 @@ This choice determines a great deal about your character's abilities.
             If the target is unable to lose hit points, such as if it has no hit points remaining, you suffer the hit point loss normally.
             \parhead{Aspect} You can use this domain's domain gift to target any \glossterm{ally} within \rngmed range.
             \parhead{Essence} You can use the \textit{compel evil} ability as a standard action.
-            \begin{freeability}{Compel Evil}[\abilitytag{Compulsion}]
+            \begin{durationability}{Compel Evil}[\abilitytag{Compulsion}]
+                Duration
+                \rankline
                 Make an attack vs. Mental against a creature within \rngmed range.
                 Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this ability.
                 \hit The target takes an evil action as soon as it can.
+                Once it takes the evil action, this effect ends.
                 You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
+                After this effect ends, the subject becomes immune to this effect until it takes a \glossterm{short rest}.
                 \glance As above, except that the effect ends at the end of the next round.
 
                 \rankline
                 You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
-            \end{freeability}
+            \end{durationability}
             \parhead{Mastery} You can use your domain gift to redirect your hit point loss to an adjacent unwilling creature.
             You cannot target the same unwilling creature more than once with this ability between \glossterm{short rests}.
 
@@ -801,16 +819,20 @@ This choice determines a great deal about your character's abilities.
             The original target suffers any other effects of the attack normally.
             \parhead{Aspect} This domain's domain gift affects any \glossterm{ally} within a \areamed radius \glossterm{emanation} from you.
             \parhead{Essence} You can use the \textit{compel good} ability as a standard action.
-            \begin{freeability}{Compel Good}[\abilitytag{Compulsion}]
+            \begin{instantability}{Compel Good}[\abilitytag{Compulsion}]
+                Instant
+                \rankline
                 Make an attack vs. Mental against a creature within \rngmed range.
                 Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this ability.
                 \hit The target takes a good action as soon as it can.
+                Once it takes the good action, this effect ends.
                 You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
+                After this effect ends, the subject becomes immune to this effect until it takes a \glossterm{short rest}.
                 \glance As above, except that the effect ends at the end of the next round.
 
                 \rankline
                 You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
-            \end{freeability}
+            \end{instantability}
             \parhead{Mastery} Once per round, when an \glossterm{ally} within a \areamed radius \glossterm{emanation} from you would lose \glossterm{hit points}, you may lose those hit points instead.
             The target suffers any other effects of the attack normally, though it is not treated as if it lost hit points from the attack for the purpose of special attack effects.
 
@@ -820,8 +842,10 @@ This choice determines a great deal about your character's abilities.
             \parhead{Gift} You gain two skill points.
             \parhead{Aspect} Your extensive knowledge of all methods of attack and defense grants you a \plus1 bonus to all defenses.
             \parhead{Essence} You can use the \textit{share knowledge} ability as a standard action.
-            \begin{freeability}{Share Knowledge}
-                You make a Knowledge check of any kind.
+            \begin{instantability}{Share Knowledge}
+                Instant
+                \rankline
+                Make a Knowledge check of any kind.
                 You and your \glossterm{allies} within a \arealarge radius learn the results of your check.
                 Creatures believe the information gained in this way to be true as if they it had seen it with their own eyes.
 
@@ -829,7 +853,7 @@ This choice determines a great deal about your character's abilities.
 
                 \rankline
                 \rank{6} You gain a \plus3 bonus to the Knowledge check.
-            \end{freeability}
+            \end{instantability}
             \parhead{Mastery} You gain a \plus1 bonus to \glossterm{accuracy} with all attacks.
             In addition, you can use your \textit{share knowledge} ability to affect all creatures, not just your allies.
 
@@ -838,9 +862,9 @@ This choice determines a great deal about your character's abilities.
             % Clarify - does this apply to exploding dice?
             \parhead{Aspect} When you roll a 1 on an \glossterm{attack roll}, it is treated as if you had rolled a 6.
             \parhead{Essence} You can use the \textit{compel law} ability as a standard action.
-            \begin{freeability}{Compel Law}[\abilitytag{Compulsion}]
+            \begin{durationability}{Compel Law}[\abilitytag{Compulsion}]
                 Make an attack vs. Mental against all creatures within a \arealarge radius from you.
-                \hit Each target is unable to break the laws that apply in the area, and any attempt to do so simply fails.
+                \hit Each subject is unable to break the laws that apply in the area, and any attempt to do so simply fails.
                 The laws which are applied are those which are most appropriate for the area, regardless of whether you or any other creature know those laws.
 
                 % Sufficiently clear that this isn't part of the hit effect?
@@ -851,7 +875,7 @@ This choice determines a great deal about your character's abilities.
 
                 \rankline
                 You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
-            \end{freeability}
+            \end{durationability}
             % on average, slightly better than +1 accuracy
             \parhead{Mastery} When you roll less than a 6 on an \glossterm{attack roll}, it is treated as if you had rolled a 6.
 
@@ -872,14 +896,16 @@ This choice determines a great deal about your character's abilities.
         \subsubsection{Protection}
             \parhead{Gift} You gain a bonus equal to twice your rank in this archetype to your \glossterm{resistance} against \glossterm{energy damage}.
             \parhead{Aspect} You can use the \textit{divine protection} ability as a \glossterm{minor action}.
-            \begin{freeability}{Divine Protection}[\abilitytag{Swift}]
+            \begin{durationability}{Divine Protection}[\abilitytag{Swift}]
+                Duration
+                \rankline
                 Choose an \glossterm{ally} adjacent to you.
                 It gains a \plus2 bonus to all defenses until the end of the round.
                 Because this ability has the \abilitytag{Swift} tag, this bonus applies against attacks made in the current phase.
 
                 A creature that sees an attack against an ally protected in this way can observe that you are the cause of the protection with a \glossterm{difficulty rating} 5 Awareness check.
                 While this ability is active, you cannot gain a defense bonus from this ability, even if another creature with this ability uses it on you.
-            \end{freeability}
+            \end{durationability}
             \parhead{Essence} The bonus from this domain's gift increases to be equal to three times your rank in this archetype.
             \parhead{Mastery} The bonus from your \textit{divine protection} ability increases to \plus3.
 
@@ -901,13 +927,15 @@ This choice determines a great deal about your character's abilities.
             \parhead{Gift} You gain two skill points.
             \parhead{Aspect} You gain a \plus20 foot \glossterm{magic bonus} to your \glossterm{base speed}, up to a maximum of double your normal speed.
             \parhead{Essence} You can use the \textit{dimensional travel} ability as a standard action.
-            \begin{freeability}{Dimensional Travel}
+            \begin{instantability}{Dimensional Travel}
+                Instant
+                \rankline
                 You teleport up to 1 mile in any direction.
                 You do not need \glossterm{line of sight} or \glossterm{line of effect} to your destination, but you must be able to clearly visualize it.
 
                 \rankline
                 \rank{6} The maximum distance increases to 5 miles.
-            \end{freeability}
+            \end{instantability}
             \parhead{Mastery} When you would move using one of your movement speeds, you can teleport the same distance instead.
             This does not change the total distance you can move, but you can teleport in any direction, including vertically.
             Being \grappled or otherwise physically constrained does not prevent you from teleporting in this way.
@@ -921,19 +949,22 @@ This choice determines a great deal about your character's abilities.
             \parhead{Gift} You gain two skill points.
             \parhead{Aspect} You gain a \plus2 bonus to the Deception, Disguise, and Stealth skills.
             \parhead{Essence} You can use the \textit{compel belief} ability as a standard action.
-            \begin{freeability}{Compel Belief}[\abilitytag{Compulsion}, \abilitytag{Sustain} (minor)]
+            \begin{durationability}{Compel Belief}[\abilitytag{Compulsion}, \abilitytag{Sustain} (minor)]
+                Duration
+                \rankline
                 Make an attack vs. Mental against a creature within \rngmed range.
                 You must also choose a belief that the target has.
                 The belief may be a lie that you told it, or even a simple misunderstanding (such as believing a hidden creature is not present in a room).
                 If the creature does not already hold the chosen belief, this ability automatically fails.
-                \hit The target continues to maintain the chosen belief, regardless of any evidence to the contrary.
+                \hit The subject continues to maintain the chosen belief, regardless of any evidence to the contrary.
                 It will interpret any evidence that the falsehood is incorrect to be somehow wrong -- an illusion, a conspiracy to decieve it, or any other reason it can think of to continue believing the falsehood.
                 At the end of the effect, the creature can decide whether it believes the falsehood or not, as normal.
+                After this effect ends, the subject becomes immune to this effect until it takes a \glossterm{short rest}.
                 \glance As above, except that the effect ends at the end of the next round.
 
                 \rankline
                 You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
-            \end{freeability}
+            \end{durationability}
             % This seems like it's a complicated muddle of weird and possibly hilarious edge cases
             \parhead{Mastery} You are undetectable to all \glossterm{magical} abilities.
             They cannot detect your presence, sounds you make, or any actions you take.
@@ -1058,7 +1089,9 @@ This choice determines a great deal about your character's abilities.
         Otherwise, you gain access to that mystic sphere, including all \glossterm{cantrips} from that sphere.
 
         \cf{Drd}[2]{Elemental Influence} You can use the \textit{elemental influence} ability as a standard action.
-        \begin{freeability}{Elemental Influence}[\abilitytag{Sustain} (standard)]
+        \begin{durationability}{Elemental Influence}[\abilitytag{Sustain} (standard)]
+            Duration
+            \rankline
             You can speak with air, earth, fire, and water within a \areahuge \glossterm{zone} from your location.
             You can ask the elements simple questions and understand their responses.
             Air, earth, and water are only able to give information about what they touch.
@@ -1079,7 +1112,7 @@ This choice determines a great deal about your character's abilities.
                 \item Water: Water can remember events up to a day ago in a very calm pool or only a few minutes ago in a turbulent river.
                     Moving water is aware of events near where it moved through, not necessarily in your current location.
             \end{itemize}
-        \end{freeability}
+        \end{durationability}
 
         \cf{Drd}[3]{Greater Elemental Balance} The bonuses from your \textit{elemental balance} ability improve.
         \begin{itemize}
@@ -1234,7 +1267,9 @@ This choice determines a great deal about your character's abilities.
         See \pcref{Natural Weapons}, for details about natural weapons.
 
         {
-            \begin{freeability}{Form of the Bear}
+            \begin{durationability}{Form of the Bear}
+                Duration
+                \rankline
                 You gain a \plus2 bonus to Fortitude defense.
                 In addition, your mouth and hands transform, granting you bite and claw \glossterm{natural weapons}.
                 The bite deals 1d8 damage, and the claws deal 1d6 damage.
@@ -1243,9 +1278,11 @@ This choice determines a great deal about your character's abilities.
                 \rank{3} You gain a \plus1d bonus to your damage with natural weapons.
                 \rank{5} The Fortitude bonus increases to \plus4.
                 \rank{7} The bonus increases to \plus2d.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Form of the Bull}
+            \begin{durationability}{Form of the Bull}
+                Duration
+                \rankline
                 You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{shove} ability (see \pcref{Shove}, and \pcref{Overrun}).
                 In addition, your head transforms, granting you a gore \glossterm{natural weapon}.
                 The weapon deals 1d8 piercing damage, and has the Impact weapon tag (see \pcref{Weapon Tags}).
@@ -1255,9 +1292,11 @@ This choice determines a great deal about your character's abilities.
                 \rank{5} Your \textit{shove} ability moves the target as a \glossterm{knockback} instead of as a \glossterm{push}.
                 In addition, the accuracy bonus increases to \plus4.
                 \rank{7} You can use the \textit{charge} ability without gaining a \glossterm{fatigue point}.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Form of the Constrictor}
+            \begin{durationability}{Form of the Constrictor}
+                Duration
+                \rankline
                 You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{grapple} ability and all grapple actions (see \pcref{Grapple}).
                 In addition, you gain a constrict \glossterm{natural weapon}.
                 This weapon deals 1d10 damage, and it has the Grappling weapon tag (see \pcref{Weapon Tags}).
@@ -1267,9 +1306,11 @@ This choice determines a great deal about your character's abilities.
                 \rank{3} You can contort your body, allowing it to act as a free hand for the purpose of using the \textit{grapple} ability and grapple actions.
                 \rank{5} The accuracy bonus increases to \plus4.
                 \rank{7} When you grapple a creature the \textit{grapple} ability, you are not considered to be \grappled (see \pcref{Asymmetric Grappling}).
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Form of the Fish}
+            \begin{durationability}{Form of the Fish}
+                Duration
+                \rankline
                 You gain a \glossterm{swim speed} equal to your \glossterm{base speed}.
                 In addition, you gain a bite \glossterm{natural weapon} that deals 1d8 damage.
 
@@ -1278,9 +1319,11 @@ This choice determines a great deal about your character's abilities.
                 \rank{5} You suffer no penalties for acting underwater.
                 \rank{7} You are immune to \glossterm{magical} effects that restrict your mobility.
                 In addition, you gain a \plus4 bonus to defenses against the \textit{grapple} ability and grapple actions (see \pcref{Grapple}).
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Form of the Hawk}
+            \begin{durationability}{Form of the Hawk}
+                Duration
+                \rankline
                 You gain \glossterm{low-light vision}.
                 If you already have low-light vision, you double its benefit, allowing you to treat sources of light as if they had four times their normal illumination range.
                 In addition, you gain a \plus3 bonus to Awareness.
@@ -1290,9 +1333,11 @@ This choice determines a great deal about your character's abilities.
                 \rank{5} The Awareness bonus increases to \plus6.
                 \rank{7} The glide speed is replaced with a \glossterm{fly speed} equal to your \glossterm{base speed} with a maximum height of 60 feet (see \pcref{Flying}).
                 At the start of each phase, you can spend a \glossterm{fatigue point} to ignore this height limit until the end of the round.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Form of the Hound}
+            \begin{durationability}{Form of the Hound}
+                Duration
+                \rankline
                 You gain the \glossterm{scent} ability.
                 In addition, you gain a bite \glossterm{natural weapon} that deals 1d8 damage.
 
@@ -1303,10 +1348,12 @@ This choice determines a great deal about your character's abilities.
                 You can descend to four legs and rise up to stand on two legs again as part of movement.
                 \rank{5} You gain an additional \plus10 bonus to scent-based Awareness checks (see \pcref{Awareness}).
                 \rank{7} You gain a \plus10 foot bonus to your land speed.
-            \end{freeability}
+            \end{durationability}
 
             % Seems boring? What abilities would make sense?
-            \begin{freeability}{Form of the Monkey}
+            \begin{durationability}{Form of the Monkey}
+                Duration
+                \rankline
                 You gain a \glossterm{climb speed} equal to your \glossterm{base speed}.
                 In addition, you gain a bite \glossterm{natural weapon} that deals 1d8 damage.
 
@@ -1314,9 +1361,11 @@ This choice determines a great deal about your character's abilities.
                 \rank{3} You grow a tail that you can use as a free hand for the purpose of climbing.
                 \rank{5} You gain a \plus10 foot bonus to your climb speed.
                 \rank{7} You can use the \textit{creature climb} ability against creatures only one size category larger than you instead of two size categories.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Form of the Mouse}
+            \begin{durationability}{Form of the Mouse}
+                Duration
+                \rankline
                 You gain a \plus2 bonus to the Flexibility and Stealth skills.
                 In addition, you gain a bite \glossterm{natural weapon} that deals 1d8 damage.
                 
@@ -1324,18 +1373,22 @@ This choice determines a great deal about your character's abilities.
                 \rank{3} When you use this wild aspect, you can choose to shrink by one \glossterm{size category}.
                 \rank{5} The skill bonuses increases to \plus4.
                 \rank{7} When you use this wild aspect, you can choose to shrink by up to two \glossterm{size categories} instead of only one.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Form of the Oak}
+            \begin{durationability}{Form of the Oak}
+                Duration
+                \rankline
                 Your movement speed is halved.
                 In exchange, you gain a bonus equal to twice your rank in this archetype to your \glossterm{resistance} against \glossterm{physical damage}.
                 \rankline
                 \rank{3} You also gain a \plus1 bonus to Armor defense.
                 \rank{5} The resistance bonus increases to be equal to three times your rank in this archetype.
                 \rank{7} The defense bonuse increases to \plus2.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Form of the Viper}
+            \begin{durationability}{Form of the Viper}
+                Duration
+                \rankline
                 You gain a \glossterm{climb speed} equal to half your \glossterm{base speed}.
                 You do not need to use your hands to climb in this way.
                 In addition, you gain a bite \glossterm{natural weapon} that deals 1d8 damage.
@@ -1347,9 +1400,11 @@ This choice determines a great deal about your character's abilities.
                 The poison is removed if you miss the target on this attack three times.
                 \rank{5} On a critical hit with the poison, the target is \nauseated instead of \sickened.
                 \rank{7} The poison makes the target \nauseated instead of \sickened.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Form of the Wolf}
+            \begin{durationability}{Form of the Wolf}
+                Duration
+                \rankline
                 You gain a \plus1 bonus to \glossterm{accuracy} against \surrounded creatures.
                 In addition, you gain a bite \glossterm{natural weapon} that deals 1d8 damage.
 
@@ -1357,27 +1412,33 @@ This choice determines a great deal about your character's abilities.
                 \rank{3} You gain a \plus1d bonus to your damage with natural weapons.
                 \rank{5} The accuracy bonus increases to \plus2.
                 \rank{7} The damage bonus increases to \plus2d.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Myriad Form}
+            \begin{durationability}{Myriad Form}
+                Duration
+                \rankline
                 You can use your \glossterm{power} in place of your Disguise skill when making Disguise checks to alter your own appearance.
                 \rankline
                 \rank{3} When you use this wild aspect, you can choose to grow or shrink by one \glossterm{size category}.
                     Your physical form is not altered fully to match your new size, and your Strength and Dexterity are unchanged.
                 \rank{5} You can use the \textit{disguise creature} ability to disguise yourself as a \glossterm{standard action} (see \pcref{Disguise Creature}).
                 \rank{7} When you use this wild aspect, you can choose to grow or shrink by up to two \glossterm{size categories} instead of only one.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Photosynthesis}
+            \begin{durationability}{Photosynthesis}
+                Duration
+                \rankline
                 As long as you are in natural sunlight, you gain a \plus10 foot bonus to your \glossterm{base speed}.
                 \rankline
                 \rank{3} As long as you are in natural sunlight, you do not gain hunger or thirst.
                 When you leave natural sunlight, you continue gaining hunger or thirst at your normal rate, ignoring any time you spent in natural sunlight.
                 \rank{5} The speed bonus increases to \plus20 feet.
                 \rank{7} When you take a \glossterm{short rest} while you are in natural sunlight, you remove a \glossterm{vital wound}.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Plantspeaker}
+            \begin{durationability}{Plantspeaker}
+                Duration
+                \rankline
                 Your speed is not reduced when moving in light or heavy \glossterm{undergrowth}.
                 In addition, you can ignore \glossterm{cover} and \glossterm{concealment} (but not \glossterm{total cover}) from plants whenever doing so would be beneficial to you, as the plants move out of the way to help you.
                 This prevents you from suffering penalties on your attacks, and also prevents creatures from using cover or concealment from plants to hide from you.
@@ -1386,14 +1447,16 @@ This choice determines a great deal about your character's abilities.
                 \rank{3} You gain a \plus1 bonus to Armor and Reflex defenses while standing in \glossterm{undergrowth}.
                 \rank{5} The movement penalties from \glossterm{undergrowth} are doubled for enemies within a \areahuge radius emanation from you.
                 \rank{7} The bonus to Armor and Reflex defenses increases to \plus2.
-            \end{freeability}
+            \end{durationability}
         }
 
         \cf{Drd}[2]{Shift Body} You can use the \textit{shift body} ability whenever you finish a \glossterm{long rest}.
-        \begin{freeability}{Shift Body}[Attune (self)]
+        \begin{attuneability}{Shift Body}
+            \abilitytag{Attune} (self)
+            \rankline
             When you use this ability, choose a physical \glossterm{attribute}: Strength, Dexterity, or Constitution (see \pcref{Attributes}).
             You gain a \plus1 bonus to the base value of that attribute.
-        \end{freeability}
+        \end{attuneability}
 
         \cf{Drd}[3]{Glancing Natural Strikes} Whenever you miss by 2 or less with a \glossterm{strike} using a \glossterm{natural weapon}, the target takes half damage from the strike.
         This is called a \glossterm{glancing blow}.
@@ -1715,7 +1778,9 @@ This choice determines a great deal about your character's abilities.
         \cf{Ftr}[0]{Enduring Discipline} You gain a \plus2 bonus to your \glossterm{fatigue tolerance}.
 
         \cf{Ftr}[1]{Discipline} You can use the \textit{discipline} ability as a \glossterm{standard action}.
-        \begin{freeability}{Discipline}
+        \begin{instantability}{Discipline}
+            Instant
+            \rankline
             Remove up to two \glossterm{conditions} affecting you.
             This cannot remove a condition applied during the current round.
 
@@ -1726,7 +1791,7 @@ This choice determines a great deal about your character's abilities.
             \rank{5} You can use this ability as a \glossterm{minor action}.
             When you do, you gain a \glossterm{fatigue point}.
             \rank{7} You can remove any number of \glossterm{conditions}.
-        \end{freeability}
+        \end{instantability}
 
         \cf{Ftr}[2]{Greater Enduring Discipline}
         The bonus from your \textit{enduring discipline} ability increases to \plus3.
@@ -1758,7 +1823,9 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Ftr}[1]{Weapon Training} You can use the \textit{weapon training} ability by spending an hour training with a weapon.
         You cannot use this ability with an \glossterm{exotic weapon} that is from a \glossterm{weapon group} you are not proficient with.
-        \begin{freeability}{Weapon Training}
+        \begin{instantability}{Weapon Training}
+            Instant
+            \rankline
             You become proficient with the weapon you trained with.
             You gain a \plus1 bonus to \glossterm{accuracy} with that weapon unless it is an \glossterm{exotic weapon} that you would not be proficient with without this ability.
             This ability's effect lasts until you use this ability again.
@@ -1766,7 +1833,7 @@ This choice determines a great deal about your character's abilities.
             \rankline
             \rank{4} You can use this ability with only five minutes of training.
             \rank{6} You can use this ability as a \glossterm{minor action}.
-        \end{freeability}
+        \end{instantability}
 
         \cf{Ftr}[2]{Equipment Efficiency} You gain an additional \glossterm{attunement point}.
         You can only use this attunement point to \glossterm{attune} to magic weapons and magic armor.
@@ -1871,16 +1938,20 @@ This choice determines a great deal about your character's abilities.
         You cannot sustain multiple battle tactics simultaneously.
 
         {
-            \begin{freeability}{Break Through}[\abilitytag{Sustain} (free)]
+            \begin{durationability}{Break Through}[\abilitytag{Sustain} (free)]
+                Duration
+                \rankline
                 Each target gains a \plus2 bonus to \glossterm{accuracy} with the \textit{overrun} and \textit{shove} abilities (see \pcref{Special Combat Abilities}).
 
                 \rankline
                 \rank{3} The bonus increases to \plus3.
                 \rank{5} The bonus increases to \plus4.
                 \rank{7} The bonus increases to \plus4.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Dogpile}[\abilitytag{Sustain} (free)]
+            \begin{durationability}{Dogpile}[\abilitytag{Sustain} (free)]
+                Duration
+                \rankline
                 Each target gains a \plus2 bonus to \glossterm{accuracy} with the \textit{grapple} ability and with all grapple actions (see \pcref{Grapple}, and \pcref{Grapple Actions}).
                 This does not affect any other abilities that may have similar effects, such as the Strangle maneuver (see Strangle, page \pref{maneuver:Strangle}).
 
@@ -1888,45 +1959,55 @@ This choice determines a great deal about your character's abilities.
                 \rank{3} The bonus increases to \plus3.
                 \rank{5} The bonus increases to \plus4.
                 \rank{7} The bonus increases to \plus5.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Duck and Cover}[\abilitytag{Sustain} (free)]
+            \begin{durationability}{Duck and Cover}[\abilitytag{Sustain} (free)]
+                Duration
+                \rankline
                 Each target gains a \plus1 bonus to Armor defense against non-\glossterm{melee} attacks.
 
                 \rankline
                 \rank{3} The bonus increases to \plus2.
                 \rank{5} The bonus increases to \plus3.
                 \rank{7} The bonus increases to \plus4.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Group Up}[\abilitytag{Sustain} (free)]
+            \begin{durationability}{Group Up}[\abilitytag{Sustain} (free)]
+                Duration
+                \rankline
                 Each target that is adjacent to at least one other target gains a \plus1 bonus to Armor defense.
 
                 \rankline
                 \rank{3} Each target affected by the Armor defense bonus also gains a \plus2 bonus to Mental defense.
                 \rank{5} The Armor defense bonus increases to \plus2.
                 \rank{7} The Mental defense bonus increases to \plus4.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Hold The Line}[\abilitytag{Sustain} (free)]
+            \begin{durationability}{Hold The Line}[\abilitytag{Sustain} (free)]
+                Duration
+                \rankline
                 Your \glossterm{enemies} treat all areas adjacent to any target as \glossterm{difficult terrain}.
 
                 \rankline
                 \rank{3} Each area adjacent to any target is doubly difficult terrain, and costs quadruple the normal movement cost to move out of.
                 \rank{5} Each area within a 10 foot radius \glossterm{emanation} from each target is difficult terrain.
                 \rank{7} Each area within a 10 foot radius \glossterm{emanation} from each target is doubly difficult terrain.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Hustle}[\abilitytag{Sustain} (free)]
+            \begin{durationability}{Hustle}[\abilitytag{Sustain} (free)]
+                Duration
+                \rankline
                 Each target gains a \plus5 foot bonus to its \glossterm{base speed}.
 
                 \rankline
                 \rank{3} The speed bonus increases to \plus10 feet.
                 \rank{5} The speed bonus increases to \plus15 feet.
                 \rank{7} The speed bonus increases to \plus20 feet.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Keep Moving}[\abilitytag{Sustain} (free)]
+            \begin{durationability}{Keep Moving}[\abilitytag{Sustain} (free)]
+                Duration
+                \rankline
                 Each target that ends the \glossterm{movement phase} at least twenty feet away from where it started the round
                     gains a \plus1 bonus to Armor defense until the end of the round.
 
@@ -1934,16 +2015,18 @@ This choice determines a great deal about your character's abilities.
                 \rank{3} Each target affected by the Armor defense bonus also gains a \plus2 bonus to Reflex defense.
                 \rank{5} The Armor defense bonus increases to \plus2.
                 \rank{7} The Reflex defense bonus increases to \plus4.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Stand Your Ground}[\abilitytag{Sustain} (free)]
+            \begin{durationability}{Stand Your Ground}[\abilitytag{Sustain} (free)]
+                Duration
+                \rankline
                 Each target that ends the \glossterm{movement phase} without changing its location gains a \plus1 bonus to Armor defense until its location changes.
 
                 \rankline
                 \rank{3} Each target affected by the Armor defense bonus also gains a \plus2 bonus to Fortitude defense.
                 \rank{5} The Armor defense bonus increases to \plus2.
                 \rank{7} The Fortitude defense bonus increases to \plus4.
-            \end{freeability}
+            \end{durationability}
         }
 
         \cf{Ftr}[2]{Tactical Precision} You gain a \plus1 bonus to \glossterm{accuracy}.
@@ -2114,18 +2197,22 @@ This choice determines a great deal about your character's abilities.
 
         After you use a \textit{ki manifestation}, you cannot use a \textit{ki manifestation} until after the end of the next round.
         {
-            \begin{freeability}{Abandon the Fragile Self}[\abilitytag{Swift}]
+            \begin{durationability}{Abandon the Fragile Self}[\abilitytag{Swift}]
+                Duration
+                \rankline
                 You can use this ability as a \glossterm{free action}.
                 You can negate one \glossterm{condition} that would be applied to you this phase.
                 In exchange, you take a \minus2 penalty to \glossterm{defenses} this phase.
 
                 \rankline
                 \rank{3} You can negate any number of conditions instead of only one condition.
-                \rank{5} The effect lasts until the end of the round.
-                \rank{7} The defense penalty is reduced to \minus1.
-            \end{freeability}
+                \rank{5} The defense penalty is reduced to \minus1.
+                \rank{7} The defense penalty is removed.
+            \end{durationability}
 
-            \begin{freeability}{Burst of Blinding Speed}[\abilitytag{Swift}]
+            \begin{durationability}{Burst of Blinding Speed}[\abilitytag{Swift}]
+                Duration
+                \rankline
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus10 foot bonus to your land speed this phase.
 
@@ -2133,9 +2220,11 @@ This choice determines a great deal about your character's abilities.
                 \rank{3} You can also ignore \glossterm{difficult terrain} this phase.
                 \rank{5} The speed bonus increases to \plus20 feet.
                 \rank{7} You can also move or stand on liquids as if they were solid this phase.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Elegant Whirl of Fluid Motion}[\abilitytag{Swift}]
+            \begin{durationability}{Elegant Whirl of Fluid Motion}[\abilitytag{Swift}]
+                Duration
+                \rankline
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus5 bonus to the Agility skill this round (see \pcref{Agility}).
 
@@ -2143,9 +2232,11 @@ This choice determines a great deal about your character's abilities.
                 \rank{3} The bonus increases to \plus10.
                 \rank{5} The bonus lasts until the end of the next round.
                 \rank{7} The bonus increases to \plus20.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Extend the Flow of Ki}[\abilitytag{Swift}]
+            \begin{durationability}{Extend the Flow of Ki}[\abilitytag{Swift}]
+                Duration
+                \rankline
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus5 foot \glossterm{magic bonus} to \glossterm{reach} this phase.
 
@@ -2153,9 +2244,11 @@ This choice determines a great deal about your character's abilities.
                 \rank{3} 
                 \rank{5} The bonus to \glossterm{reach} increases to 10 feet.
                 \rank{7} 
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Flash Step}
+            \begin{instantability}{Flash Step}
+                Instant
+                \rankline
                 You can use this ability as part of movement.
                 % TODO: is 'horizontally' the correct word?
                 You teleport horizontally instead of moving normally.
@@ -2169,9 +2262,11 @@ This choice determines a great deal about your character's abilities.
                 \rank{5} You can use this ability to move even if you are \immobilized or \grappled.
                 \rank{7} You can attempt to teleport to locations outside of \glossterm{line of sight} and \glossterm{line of effect}.
                 If your intended destination is invalid, the distance you spent teleporting is wasted, but you suffer no other ill effects.
-            \end{freeability}
+            \end{instantability}
 
-            \begin{freeability}{Leap of the Heavens}[\abilitytag{Swift}]
+            \begin{durationability}{Leap of the Heavens}[\abilitytag{Swift}]
+                Duration
+                \rankline
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus5 bonus to the Jump skill this round (see \pcref{Jump}).
 
@@ -2179,9 +2274,11 @@ This choice determines a great deal about your character's abilities.
                 \rank{3} The bonus increases to \plus10.
                 \rank{5} The bonus lasts until the end of the next round.
                 \rank{7} The bonus increases to \plus20.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Scale the Highest Tower}[\abilitytag{Swift}]
+            \begin{durationability}{Scale the Highest Tower}[\abilitytag{Swift}]
+                Duration
+                \rankline
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus5 bonus to the Climb skill this round (see \pcref{Climb}).
                 % TODO: is this wording correct?
@@ -2190,9 +2287,11 @@ This choice determines a great deal about your character's abilities.
                 \rank{3} The Climb bonus increases to \plus10.
                 \rank{5} The bonus lasts until the end of the next round.
                 \rank{5} The bonus increases to \plus20.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Sense the Mystic Truth}[\abilitytag{Swift}]
+            \begin{durationability}{Sense the Mystic Truth}[\abilitytag{Swift}]
+                Duration
+                \rankline
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus5 bonus to the Spellsense skill this round (see \pcref{Spellsense}).
 
@@ -2200,9 +2299,11 @@ This choice determines a great deal about your character's abilities.
                 \rank{3} The bonus increases to \plus10.
                 \rank{5} The bonus lasts until the end of the next round.
                 \rank{7} The bonus increases to \plus20.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Step Between the Mystic Worlds}[\abilitytag{Swift}]
+            \begin{durationability}{Step Between the Mystic Worlds}[\abilitytag{Swift}]
+                Duration
+                \rankline
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus2 bonus to \glossterm{defenses} against \glossterm{magical} abilities this phase.
                 After the effect ends, you take a \minus2 penalty to \glossterm{defenses} against \glossterm{magical} attacks until the end of the next round.
@@ -2211,9 +2312,11 @@ This choice determines a great deal about your character's abilities.
                 \rank{3} The defense bonus is increased to \plus3.
                 \rank{5} The effect lasts until the end of the current round.
                 \rank{7} The defense bonus is increased to \plus5.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Surpass the Mortal Limits}[\abilitytag{Swift}]
+            \begin{durationability}{Surpass the Mortal Limits}[\abilitytag{Swift}]
+                Duration
+                \rankline
                 You can use this ability as a \glossterm{free action}.
                 You can use your \glossterm{power} in place of your Strength, Dexterity, and Constitution when making checks this phase.
 
@@ -2221,7 +2324,7 @@ This choice determines a great deal about your character's abilities.
                 \rank{3} You also gain a \plus2 bonus to checks based on Strength, Dexterity, and Constitution.
                 \rank{5} The effect lasts until the end of the current round.
                 \rank{7} The bonus increases to \plus4.
-            \end{freeability}
+            \end{durationability}
 
             % TODO: add more
         }
@@ -2274,7 +2377,9 @@ This choice determines a great deal about your character's abilities.
         You are immune to being \sickened and \nauseated.
 
         \cf{Mnk}[1]{Clear the Mind} You can use the \textit{clear the mind} ability as a standard action.
-        \begin{freeability}{Clear the Mind}
+        \begin{instantability}{Clear the Mind}
+            Instant
+            \rankline
             Remove up to two \glossterm{conditions} affecting you.
             This cannot remove a condition applied during the current round.
 
@@ -2285,7 +2390,7 @@ This choice determines a great deal about your character's abilities.
             \rank{5} You can use this ability as a \glossterm{minor action}.
             When you do, you gain a \glossterm{fatigue point}.
             \rank{7} You can remove any number of \glossterm{conditions}.
-        \end{freeability}
+        \end{instantability}
 
         \cf{Mnk}[2]{Feel the Flow of Life}[Magical] You become so attuned to the natural energy of life that you can sense it even when sight fails you.
         You gain the \glossterm{lifesense} ability with a 120 foot range.
@@ -2526,7 +2631,9 @@ This choice determines a great deal about your character's abilities.
         \cf{Pal}[0]{Stalwart Defense} You gain a \plus1 bonus to Fortitude defense and Mental defense.
 
         \cf{Pal}[1]{Lay on Hands}[Magical] You can use the \textit{lay on hands} ability as a standard action.
-        \begin{freeability}{Lay on Hands}
+        \begin{instantability}{Lay on Hands}
+            Instant
+            \rankline
             \target{Yourself or a living \glossterm{ally} within \glossterm{reach}}
             The target regains \glossterm{hit points} equal to 1d6 plus half your \glossterm{power}.
 
@@ -2537,7 +2644,7 @@ This choice determines a great deal about your character's abilities.
             \rank{5} The healing increases to 4d6.
             \rank{6} The healing increases to 4d8.
             \rank{7} The healing increases to 5d10.
-        \end{freeability}
+        \end{instantability}
 
         \cf{Pal}[2]{Stalwart Resilience} You gain a bonus equal to your rank in this archetype to your \glossterm{resistances} against both \glossterm{physical damage} and \glossterm{energy damage} (see \pcref{Resistances}).
 
@@ -2565,7 +2672,9 @@ This choice determines a great deal about your character's abilities.
         % This ability gets rank upgrades while maneuvers don't
         % because maneuvers are upgraded into higher rank maneuvers,
         % while this has no upgrades and should remain relevant alone.
-        \begin{freeability}{Smite}
+        \begin{instantability}{Smite}
+            Instant
+            \rankline
             Make a \glossterm{strike}.
             Because this is a \glossterm{magical} ability, you use your \glossterm{magical} \glossterm{power} to determine your damage instead of your \glossterm{mundane} power.
             If your target shares your devoted alignment, the strike deals no damage.
@@ -2575,7 +2684,7 @@ This choice determines a great deal about your character's abilities.
             \rank{3} The damage bonus increases to \plus2d.
             \rank{5} The damage bonus increases to \plus3d.
             \rank{7} The damage bonus increases to \plus4d.
-        \end{freeability}
+        \end{instantability}
 
         \cf{Pal}[2]{Zealous Offense} You gain a \plus1 bonus to \glossterm{accuracy}.
 
@@ -2583,7 +2692,9 @@ This choice determines a great deal about your character's abilities.
         This is called a \glossterm{glancing blow}.
 
         \cf{Pal}[4]{Zealous Purge} You can use your \textit{zealous purge} ability as a standard action.
-        \begin{freeability}{Zealous Purge}
+        \begin{instantability}{Zealous Purge}
+            Instant
+            \rankline
             Make a \glossterm{strike}.
             You add half your \glossterm{power} to damage with the strike instead of your full power.
             Because this is a \glossterm{magical} ability, you use your \glossterm{magical} \glossterm{power} to determine your damage instead of your \glossterm{mundane} power.
@@ -2593,14 +2704,16 @@ This choice determines a great deal about your character's abilities.
 
             \rankline
             \rank{6} The target stops being attuned to two effects instead of one.
-        \end{freeability}
+        \end{instantability}
 
         \cf{Pal}[5]{Greater Zealous Offense} The bonus from your \textit{zealous offense} ability increases to \plus2.
 
         \cf{Pal}[6]{Greater Zealous Exertion} The bonus from your \textit{zealous exertion} ability increases to \plus5.
 
         \cf{Pal}[7]{Pass Judgment}[Magical] You can use the \textit{pass judgment} ability as a \glossterm{minor action}.
-        \begin{freeability}{Pass Judgment}
+        \begin{durationability}{Pass Judgment}
+            Duration
+            \rankline
             \target{One creature within \rnglong range}
             The target is treated as if it had the alignment opposed to your devoted alignment for the purpose of all abilities.
             This only affects its alignment along the alignment axis your devoted alignment is on.
@@ -2609,7 +2722,7 @@ This choice determines a great deal about your character's abilities.
 
             You can use this ability to do battle against foes who share your alignment, but you should exercise caution in doing so.
             Persecution of those who share your ideals can lead you to fall and become an ex-paladin.
-        \end{freeability}
+        \end{durationability}
 
         \cf{Pal}[7]{Zealous Fixation} Whenever you hit a creature with a \glossterm{strike}, you ignore \glossterm{concealment} and all \glossterm{miss chances} against that creature with your attacks until you take a \glossterm{short rest} or until you hit a different creature with a strike.
         If you hit multiple creatures with the same strike, you may freely choose which creature to fixate on with this ability.
@@ -2758,95 +2871,117 @@ This choice determines a great deal about your character's abilities.
         When you use your \textit{quarry} ability, you may also use one of your \textit{hunting styles}.
         Each \textit{hunting style} ability lasts as long as the \textit{quarry} ability you used it with.
         {
-            \begin{freeability}{Anchoring}[Magical]
+            \begin{durationability}{Anchoring}[Magical]
+                Duration
+                \rankline
                 As long as your quarry is adjacent to any member of your hunting party, it cannot travel extradimensionally.
                 This prevents all \abilitytag{Manifestation} and \glossterm{teleportation} effects.
 
                 \rankline
                 \rank{4} This effect instead applies if your quarry is within \medrange of any member of your hunting party.
                 \rank{6} This effect instead applies if your quarry is within \distrange of any member of your hunting party.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Coordinated Stealth}
+            \begin{durationability}{Coordinated Stealth}
+                Duration
+                \rankline
                 Your quarry takes a \minus4 penalty to Awareness checks to notice members of your hunting party.
 
                 \rankline
                 \rank{4} The Awareness penalty increases to \minus8.
                 \rank{6} The Awareness penalty increases to \minus12.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Cover Weaknesses}
+            \begin{durationability}{Cover Weaknesses}
+                Duration
+                \rankline
                 The accuracy bonus against your quarry is replaced with a \plus1 bonus to Armor and Reflex defenses against your quarry's attacks.
 
                 \rankline
                 \rank{4} The defense bonus applies to all defenses.
                 \rank{6} The defense bonus increases to \plus2.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Decoy}
+            \begin{durationability}{Decoy}
+                Duration
+                \rankline
                 If you are adjacent to your quarry, it takes a \minus2 penalty to accuracy on attacks against members of your hunting party other than you.
 
                 \rankline
                 \rank{4} The penalty increases to \minus3.
                 \rank{6} The penalty increases to \minus4.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Lifeseal}[Magical]
+            \begin{durationability}{Lifeseal}[Magical]
+                Duration
+                \rankline
                 As long as your quarry is adjacent to any member of your hunting party, it cannot regain \glossterm{hit points}.
 
                 \rankline
                 \rank{4} This effect instead applies if the target is within \rngmed range of any member of your hunting party.
                 \rank{6} This effect instead applies if your quarry is within \rngdist range of any member of your hunting party.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Martial Suppression}
+            \begin{durationability}{Martial Suppression}
+                Duration
+                \rankline
                 As long as your quarry is adjacent to at least two members of your hunting party, it takes a \minus1 penalty to accuracy with \glossterm{mundane} attacks.
 
                 \rankline
                 \rank{4} The penalty increases to \minus2.
                 \rank{6} The penalty increases to \minus3.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Mystic Guidance}[Magical]
+            \begin{durationability}{Mystic Guidance}[Magical]
+                Duration
+                \rankline
                 The accuracy bonus from your \textit{quarry} ability applies to all attacks your hunting party makes against your quarry, instead of only to \glossterm{mundane} attacks.
 
                 \rankline
                 \rank{4} Your hunting party gains a \plus1 bonus to Fortitude, Reflex, and Mental defenses against attacks from your quarry.
                 \rank{6} The accuracy bonus against your quarry is increased to \plus2.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Mystic Suppression}
+            \begin{durationability}{Mystic Suppression}
+                Duration
+                \rankline
                 As long as your quarry is adjacent to at least two members of your hunting party, it takes a \minus1 penalty to \glossterm{accuracy} with \glossterm{magical} attacks.
 
                 \rankline
                 \rank{4} The penalty increases to \minus2. 
                 \rank{6} The penalty increases to \minus3.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Solo Hunter}
+            \begin{durationability}{Solo Hunter}
+                Duration
+                \rankline
                 Your hunting party other than you gains no benefit from your \textit{quarry} ability.
                 In exchange, you gain a \plus1 bonus to defenses against your quarry.
 
                 \rankline
                 \rank{4} You gain an additional \plus1 bonus to accuracy against your quarry.
                 \rank{6} The defense bonus increases to \plus2.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Swarm Hunter}
+            \begin{durationability}{Swarm Hunter}
+                Duration
+                \rankline
                 When you use your \textit{quarry} ability, you can target any number of creatures to be your quarry.
 
                 \rankline
                 \rank{4} Your hunting party reduces their penalties for being \surrounded by 1.
                 \rank{6} The penalty reduction increases to 2.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Wolfpack}
+            \begin{durationability}{Wolfpack}
+                Duration
+                \rankline
                 At the start of each \glossterm{phase}, if your quarry is adjacent to at least two members of your hunting party, it moves at half speed until the end of that phase.
 
                 \rankline
                 \rank{4} This effect instead applies if your quarry is adjacent to any member of your hunting party.
                 \rank{6} Your quarry is \slowed instead of moving at half speed.
-            \end{freeability}
+            \end{durationability}
         }
 
         \cf{Rgr}[3]{Hunter's Prowess} You gain a \plus1d bonus to your damage with all weapons.
@@ -3036,7 +3171,9 @@ This choice determines a great deal about your character's abilities.
         % This ability gets rank upgrades while maneuvers don't
         % because maneuvers are upgraded into higher rank maneuvers,
         % while this has no upgrades and should remain relevant alone.
-        \begin{freeability}{Sneak Attack}
+        \begin{instantability}{Sneak Attack}
+            Instant
+            \rankline
             Make a \glossterm{strike} with a \glossterm{light weapon} or a \glossterm{projectile weapon} against a creature within \rngshort range.
             If the target is \unaware or \partiallyunaware of your attack, or if the target is adjacent to one of your \glossterm{allies}, you gain a \plus2d bonus to damage with the strike.
             You do not gain this damage bonus against creatures who that you are unable to score a \glossterm{critical hit} against, such as excessively large creatures or oozes.
@@ -3045,7 +3182,7 @@ This choice determines a great deal about your character's abilities.
             \rank{3} The damage bonus increases to \plus3d.
             \rank{5} The damage bonus increases to \plus4d.
             \rank{7} The damage bonus increases to \plus5d.
-        \end{freeability}
+        \end{instantability}
 
         \cf{Rog}[2]{Evasion} You take half damage from abilities that affect an area.
         This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
@@ -3072,10 +3209,12 @@ This choice determines a great deal about your character's abilities.
         This does not protect you from abilities that affect multiple specific targets without affecting an area.
 
         \cf{Rog}[6]{Assassination} You can use the \textit{assassination} ability as a \glossterm{minor action}.
-        \begin{freeability}{Assassination}[\abilitytag{Swift}]
+        \begin{durationability}{Assassination}[\abilitytag{Swift}]
+            Duration
+            \rankline
             You study a creature within \rngmed range, finding weak points you can take advantage of.
             Until the end of the next round, the subject takes maximum damage from your melee \glossterm{strikes} that it is \unaware of.
-        \end{freeability}
+        \end{durationability}
 
         \cf{Rog}[7]{Greater Darkstalker} When you use your \textit{darkstalker} ability, you become undetectable by any number of the listed senses, not just one.
 
@@ -3328,7 +3467,7 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} The healing increases to 5d10.
             \end{instantability}
 
-            \begin{freeability}{Partita of Provocation}
+            \begin{durationability}{Partita of Provocation}
                 \spelltwocol{\abilitytag{Sustain} (minor)}{\abilitytag{Auditory}, \abilitytag{Emotion}}
                 \rankline
                 Make an attack vs. Mental against all \glossterm{enemies} within a \largearea radius from you.
@@ -3337,9 +3476,9 @@ This choice determines a great deal about your character's abilities.
 
                 \rankline
                 You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
-            \end{freeability}
+            \end{durationability}
 
-            \begin{freeability}{Serenade of Serenity}
+            \begin{durationability}{Serenade of Serenity}
                 \spelltwocol{\abilitytag{Sustain} (minor)}{\abilitytag{Auditory}, \abilitytag{Emotion}}
                 \par \noindent Usage time: One \glossterm{minor action}.
                 \rankline
@@ -3349,7 +3488,7 @@ This choice determines a great deal about your character's abilities.
                 \rank{3} At the end of each round, each subject removes all \glossterm{conditions} caused by Compulsion and Emotion effects that were not applied during that round.
                 \rank{5} The area increases to a \areahuge radius.
                 \rank{7} Each subject is immune to hostile Compulsion and Emotion effects.
-            \end{freeability}
+            \end{durationability}
 
             \begin{durationability}{Sickening Staccato}
                 \spelltwocol{Duration}{\abilitytag{Auditory}}
@@ -3367,7 +3506,7 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} The accuracy bonus increases to \plus6.
             \end{durationability}
 
-            \begin{freeability}{Vigorous Verse}
+            \begin{durationability}{Vigorous Verse}
                 \spelltwocol{Duration}{\abilitytag{Auditory}}
                 \par \noindent Usage time: One \glossterm{minor action}.
                 \rankline
@@ -3380,7 +3519,7 @@ This choice determines a great deal about your character's abilities.
                 \rank{3} The bonus increases to \plus8.
                 \rank{5} The bonus increases to \plus16.
                 \rank{7} The bonus increases to \plus32.
-            \end{freeability}
+            \end{durationability}
         }
 
         \cf{Rog}[2]{Combat Inspiration} Once per round, when you make a Perform check, you may choose an \glossterm{ally} that can see or hear your performance.
@@ -3609,7 +3748,9 @@ This choice determines a great deal about your character's abilities.
         For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
 
         \cf{Sor}[0]{Mage Armor}[Magical] You can use the \textit{mage armor} ability as a standard action.
-        \begin{freeability}{Mage Armor}
+        \begin{durationability}{Mage Armor}
+            Duration
+            \rankline
             You create a translucent suit of magical armor on your body and over your hands.
             This functions like body armor that provides a \plus2 bonus to Armor defense and has no \glossterm{encumbrance}.
             It also provides a \plus4 bonus to \glossterm{resistance} against \glossterm{energy damage}, and a \plus2 bonus to \glossterm{resistance} against \glossterm{physical damage}.
@@ -3619,7 +3760,7 @@ This choice determines a great deal about your character's abilities.
 
             This ability lasts until you use it again or until you \glossterm{dismiss} it as a free action.
             In addition, it is automatically dismissed if you have other body armor of any kind.
-        \end{freeability}
+        \end{durationability}
 
         \cf{Sor}[1]{Spellcasting}[Magical]
         You become a rank 1 arcane spellcaster.
@@ -3950,7 +4091,9 @@ This choice determines a great deal about your character's abilities.
         \cf{War}[0]{Fiendish Resistance} You gain a bonus equal to twice your rank in this archetype to your \glossterm{resistance} against \glossterm{energy damage}, to a minimum bonus of 1.
 
         \cf{War}[1]{Abyssal Blast} You can use the \textit{abyssal blast} ability as a standard action.
-        \begin{freeability}{Abyssal Blast}[\glossterm{Magical}]
+        \begin{instantability}{Abyssal Blast}[\glossterm{Magical}]
+            Instant
+            \rankline
             Make an attack vs. Armor against one creature or object within \rngmed range.
             \hit The target takes fire damage equal to 1d10 plus your \glossterm{power}.
 
@@ -3963,26 +4106,28 @@ This choice determines a great deal about your character's abilities.
             \rank{5} The damage increases to 4d10.
             \rank{6} The damage increases to 5d10.
             \rank{7} The damage increases to 7d10.
-        \end{freeability}
+        \end{instantability}
 
         \cf{War}[2]{Abyssal Sphere} Choose one of the following \glossterm{mystic spheres}: \sphere{astromancy}, \sphere{enchantment}, \sphere{pyromancy}, or \sphere{summoning}.
         If you already have access to that mystic sphere, you learn two spells from that sphere.
         Otherwise, you gain access to that mystic sphere, including all \glossterm{cantrips} from that sphere.
 
         \cf{War}[3]{Abyssal Jaunt} You can use the \textit{abyssal jaunt} ability as a standard action.
-        \begin{freeability}{Abyssal Jaunt}[\glossterm{Magical}]
+        \begin{durationability}{Abyssal Jaunt}[\glossterm{Magical}]
+            Duration
+            \rankline
             Make an attack vs. Mental against one creature within \rngmed range.
             \hit The target takes fire damage equal to 2d6 plus half your \glossterm{power}.
             If it loses \glossterm{hit points} from this damage, it is briefly teleported into the Abyss.
             At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
-            After this effect ends, it becomes immune to this spell until it takes a \glossterm{short rest}.
+            After this effect ends, it becomes immune to this effect until it takes a \glossterm{short rest}.
             \glance As above, except that the target takes half damage.
 
             \rankline
             The damage increases by \plus1d for each rank beyond 3.
             \rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
             \rank{7} The accuracy bonus increases to \plus2.
-        \end{freeability}
+        \end{durationability}
 
         \cf{War}[4]{Abyssal Substitution} Whenever you use an ability that deals \glossterm{energy damage} or any subtype of energy damage, you can change the type of the damage to be fire damage in place of all of its normal damage types.
         Any other aspects of the ability remain unchanged.
@@ -3992,7 +4137,9 @@ This choice determines a great deal about your character's abilities.
         \cf{War}[5]{Greater Fiendish Resistance}[Magical] The bonus from your \textit{fiendish resistance} ability increases to be equal to three times your rank in this archetype.
 
         \cf{War}[6]{Abyssal Curse} You can use the \textit{abyssal curse} ability as a standard action.
-        \begin{freeability}{Abyssal Curse}[\abilitytag{Curse}, \glossterm{Magical}]
+        \begin{durationability}{Abyssal Curse}[\abilitytag{Curse}, \glossterm{Magical}]
+            Duration
+            \rankline
             Make an attack vs. Fortitude against one creature or object within \rngmed range.
             \hit The target is \nauseated until it takes a \glossterm{short rest}.
             \glance The target is nauseated until the end of the next round.
@@ -4000,7 +4147,7 @@ This choice determines a great deal about your character's abilities.
 
             \rankline
             You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 6.
-        \end{freeability}
+        \end{durationability}
 
         \cf{War}[7]{Abyssal Fusion} Whenever you use an ability that deals \glossterm{energy damage} or any subtype of energy damage, you can choose to have it deal fire damage in addition to its normal damage types.
         Any other aspects of the ability remain unchanged.
@@ -4147,13 +4294,15 @@ This choice determines a great deal about your character's abilities.
 
         \cf{War}[2]{Exchange Soul Fragment} Your connection to your soulkeeper deepens, allowing you to send a fragment of your experiences through the link.
         You can use the \textit{exchange soul fragment} ability as a \glossterm{minor action}.
-        \begin{freeability}{Exchange Soul Fragment}[\glossterm{Magical}, \abilitytag{Swift}]
+        \begin{instantability}{Exchange Soul Fragment}[\glossterm{Magical}, \abilitytag{Swift}]
+            Instant
+            \rankline
             When you use this ability, you gain a \glossterm{fatigue point}.
 
             Remove a \glossterm{condition} affecting you.
             This cannot remove a condition applied during the current round.
             Because this ability has the \abilitytag{Swift} tag, the penalties from the removed condition do not affect you during the current phase.
-        \end{freeability}
+        \end{instantability}
 
         \cf{War}[3]{Greater Empowering Whispers}[Magical] You gain an additional ability depending on the voices you chose with your \textit{whispers of the lost} ability.
         {
@@ -4172,13 +4321,15 @@ This choice determines a great deal about your character's abilities.
 
         \cf{War}[5]{Exchange Vitality} Your connection to your soulkeeper deepens, allowing you to send a fragment of your vitality through the link.
         You can use the \textit{exchange vitality} ability as a \glossterm{minor action}.
-        \begin{freeability}{Exchange Vitality}[\glossterm{Magical}, \abilitytag{Swift}]
+        \begin{instantability}{Exchange Vitality}[\glossterm{Magical}, \abilitytag{Swift}]
+            Instant
+            \rankline
             When you use this ability, you gain two \glossterm{fatigue points}.
 
             Remove one of your \glossterm{vital wounds}.
             This cannot remove a vital wound applied during the current round.
             Because this ability has the \abilitytag{Swift} tag, the penalties from the removed vital wound do not affect you during the current phase.
-        \end{freeability}
+        \end{instantability}
 
         \cf{War}[6]{Supreme Empowering Whispers}[Magical] You gain an additional ability depending on the voices you chose with your \textit{whispers of the lost} ability.
         {
@@ -4312,7 +4463,9 @@ This choice determines a great deal about your character's abilities.
         For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
 
         \cf{Wiz}[0]{Mage Armor}[Magical] You can use the \textit{mage armor} ability as a standard action.
-        \begin{freeability}{Mage Armor}
+        \begin{durationability}{Mage Armor}
+            Duration
+            \rankline
             You create a translucent suit of magical armor on your body and over your hands.
             This functions like body armor that provides a \plus2 bonus to Armor defense and has no \glossterm{encumbrance}.
             It also provides a \plus4 bonus to \glossterm{resistance} against \glossterm{energy damage}, and a \plus2 bonus to \glossterm{resistance} against \glossterm{physical damage}.
@@ -4322,7 +4475,7 @@ This choice determines a great deal about your character's abilities.
 
             This ability lasts until you use it again or until you \glossterm{dismiss} it as a free action.
             In addition, it is automatically dismissed if you wear body armor.
-        \end{freeability}
+        \end{durationability}
 
         \cf{Wiz}[1]{Spellcasting}[Magical]
         You become a rank 1 arcane spellcaster.
