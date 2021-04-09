@@ -612,8 +612,8 @@ This choice determines a great deal about your character's abilities.
         In addition, it only costs you one \glossterm{fatigue point} instead of two to use the \textit{desperate exertion} ability to affect a Medicine check.
 
         \cf{Clr}[1]{Restoration} You can use the \textit{restoration} ability as a standard action.
-        \begin{instantability}{Restoration}[\glossterm{Magical}]
-            Instant
+        \begin{instantability}{Restoration}
+            \spelltwocol{Instant}{\glossterm{Magical}}
             \rankline
             Choose yourself or one living \glossterm{ally} within your \glossterm{reach}.
             The subject regains 1d6 \glossterm{hit points}.
@@ -632,8 +632,8 @@ This choice determines a great deal about your character's abilities.
         Whenever you attack or deal damage to a living creature, you lose this bonus until the end of the next round.
 
         \cf{Clr}[3]{Divine Healing} You can use the \textit{divine healing} ability as a standard action.
-        \begin{instantability}{Divine Healing}[\glossterm{Magical}]
-            Instant
+        \begin{instantability}{Divine Healing}
+            \spelltwocol{Instant}{\glossterm{Magical}}
             \rankline
             When you use this ability, you gain two \glossterm{fatigue points} (see \pcref{Fatigue}).
 
@@ -781,8 +781,8 @@ This choice determines a great deal about your character's abilities.
             If the target is unable to lose hit points, such as if it has no hit points remaining, you suffer the hit point loss normally.
             \parhead{Aspect} You can use this domain's domain gift to target any \glossterm{ally} within \rngmed range.
             \parhead{Essence} You can use the \textit{compel evil} ability as a standard action.
-            \begin{durationability}{Compel Evil}[\abilitytag{Compulsion}]
-                Duration
+            \begin{durationability}{Compel Evil}
+                \spelltwocol{Duration}{\abilitytag{Compulsion}}
                 \rankline
                 Make an attack vs. Mental against a creature within \rngmed range.
                 Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this ability.
@@ -829,8 +829,8 @@ This choice determines a great deal about your character's abilities.
             The original target suffers any other effects of the attack normally.
             \parhead{Aspect} This domain's domain gift affects any \glossterm{ally} within a \areamed radius \glossterm{emanation} from you.
             \parhead{Essence} You can use the \textit{compel good} ability as a standard action.
-            \begin{instantability}{Compel Good}[\abilitytag{Compulsion}]
-                Instant
+            \begin{instantability}{Compel Good}
+                \spelltwocol{Instant}{\abilitytag{Compulsion}}
                 \rankline
                 Make an attack vs. Mental against a creature within \rngmed range.
                 Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this ability.
@@ -872,7 +872,9 @@ This choice determines a great deal about your character's abilities.
             % Clarify - does this apply to exploding dice?
             \parhead{Aspect} When you roll a 1 on an \glossterm{attack roll}, it is treated as if you had rolled a 6.
             \parhead{Essence} You can use the \textit{compel law} ability as a standard action.
-            \begin{durationability}{Compel Law}[\abilitytag{Compulsion}]
+            \begin{durationability}{Compel Law}
+                \spelltwocol{Duration}{\abilitytag{Compulsion}}
+                \rankline
                 Make an attack vs. Mental against all creatures within a \arealarge radius from you.
                 \hit Each subject is unable to break the laws that apply in the area, and any attempt to do so simply fails.
                 The laws which are applied are those which are most appropriate for the area, regardless of whether you or any other creature know those laws.
@@ -906,8 +908,8 @@ This choice determines a great deal about your character's abilities.
         \subsubsection{Protection}
             \parhead{Gift} You gain a bonus equal to twice your rank in this archetype to your \glossterm{resistance} against \glossterm{energy damage}.
             \parhead{Aspect} You can use the \textit{divine protection} ability as a \glossterm{minor action}.
-            \begin{durationability}{Divine Protection}[\abilitytag{Swift}]
-                Duration
+            \begin{durationability}{Divine Protection}
+                \spelltwocol{Duration}{\abilitytag{Swift}}
                 \rankline
                 Choose an \glossterm{ally} adjacent to you.
                 It gains a \plus2 bonus to all defenses until the end of the round.
@@ -961,8 +963,8 @@ This choice determines a great deal about your character's abilities.
             \parhead{Gift} You gain two skill points.
             \parhead{Aspect} You gain a \plus2 bonus to the Deception, Disguise, and Stealth skills.
             \parhead{Essence} You can use the \textit{compel belief} ability as a standard action.
-            \begin{durationability}{Compel Belief}[\abilitytag{Compulsion}, \abilitytag{Sustain} (minor)]
-                Duration
+            \begin{durationability}{Compel Belief}
+                \spelltwocol{\abilitytag{Sustain} (minor)}{\abilitytag{Compulsion}}
                 \rankline
                 Make an attack vs. Mental against a creature within \rngmed range.
                 You must also choose a belief that the target has.
@@ -1103,8 +1105,8 @@ This choice determines a great deal about your character's abilities.
         Otherwise, you gain access to that mystic sphere, including all \glossterm{cantrips} from that sphere.
 
         \cf{Drd}[2]{Elemental Influence} You can use the \textit{elemental influence} ability as a standard action.
-        \begin{durationability}{Elemental Influence}[\abilitytag{Sustain} (standard)]
-            Duration
+        \begin{durationability}{Elemental Influence}
+            \abilitytag{Sustain} (standard)
             \rankline
             You can speak with air, earth, fire, and water within a \areahuge \glossterm{zone} from your location.
             You can ask the elements simple questions and understand their responses.
@@ -1956,8 +1958,8 @@ This choice determines a great deal about your character's abilities.
         You cannot sustain multiple battle tactics simultaneously.
 
         {
-            \begin{durationability}{Break Through}[\abilitytag{Sustain} (free)]
-                Duration
+            \begin{durationability}{Break Through}
+                \abilitytag{Sustain} (free)
                 \rankline
                 Each target gains a \plus2 bonus to \glossterm{accuracy} with the \textit{overrun} and \textit{shove} abilities (see \pcref{Special Combat Abilities}).
 
@@ -1967,8 +1969,8 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} The bonus increases to \plus4.
             \end{durationability}
 
-            \begin{durationability}{Dogpile}[\abilitytag{Sustain} (free)]
-                Duration
+            \begin{durationability}{Dogpile}
+                \abilitytag{Sustain} (free)
                 \rankline
                 Each target gains a \plus2 bonus to \glossterm{accuracy} with the \textit{grapple} ability and with all grapple actions (see \pcref{Grapple}, and \pcref{Grapple Actions}).
                 This does not affect any other abilities that may have similar effects, such as the Strangle maneuver (see Strangle, page \pref{maneuver:Strangle}).
@@ -1979,8 +1981,8 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} The bonus increases to \plus5.
             \end{durationability}
 
-            \begin{durationability}{Duck and Cover}[\abilitytag{Sustain} (free)]
-                Duration
+            \begin{durationability}{Duck and Cover}
+                \abilitytag{Sustain} (free)
                 \rankline
                 Each target gains a \plus1 bonus to Armor defense against non-\glossterm{melee} attacks.
 
@@ -1990,8 +1992,8 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} The bonus increases to \plus4.
             \end{durationability}
 
-            \begin{durationability}{Group Up}[\abilitytag{Sustain} (free)]
-                Duration
+            \begin{durationability}{Group Up}
+                \abilitytag{Sustain} (free)
                 \rankline
                 Each target that is adjacent to at least one other target gains a \plus1 bonus to Armor defense.
 
@@ -2001,8 +2003,8 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} The Mental defense bonus increases to \plus4.
             \end{durationability}
 
-            \begin{durationability}{Hold The Line}[\abilitytag{Sustain} (free)]
-                Duration
+            \begin{durationability}{Hold The Line}
+                \abilitytag{Sustain} (free)
                 \rankline
                 Your \glossterm{enemies} treat all areas adjacent to any target as \glossterm{difficult terrain}.
 
@@ -2012,8 +2014,8 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} Each area within a 10 foot radius \glossterm{emanation} from each target is doubly difficult terrain.
             \end{durationability}
 
-            \begin{durationability}{Hustle}[\abilitytag{Sustain} (free)]
-                Duration
+            \begin{durationability}{Hustle}
+                \abilitytag{Sustain} (free)
                 \rankline
                 Each target gains a \plus5 foot bonus to its \glossterm{base speed}.
 
@@ -2023,8 +2025,8 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} The speed bonus increases to \plus20 feet.
             \end{durationability}
 
-            \begin{durationability}{Keep Moving}[\abilitytag{Sustain} (free)]
-                Duration
+            \begin{durationability}{Keep Moving}
+                \abilitytag{Sustain} (free)
                 \rankline
                 Each target that ends the \glossterm{movement phase} at least twenty feet away from where it started the round
                     gains a \plus1 bonus to Armor defense until the end of the round.
@@ -2035,8 +2037,8 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} The Reflex defense bonus increases to \plus4.
             \end{durationability}
 
-            \begin{durationability}{Stand Your Ground}[\abilitytag{Sustain} (free)]
-                Duration
+            \begin{durationability}{Stand Your Ground}
+                \abilitytag{Sustain} (free)
                 \rankline
                 Each target that ends the \glossterm{movement phase} without changing its location gains a \plus1 bonus to Armor defense until its location changes.
 
@@ -2215,8 +2217,8 @@ This choice determines a great deal about your character's abilities.
 
         After you use a \textit{ki manifestation}, you cannot use a \textit{ki manifestation} until after the end of the next round.
         {
-            \begin{durationability}{Abandon the Fragile Self}[\abilitytag{Swift}]
-                Duration
+            \begin{durationability}{Abandon the Fragile Self}
+                \spelltwocol{Duration}{\abilitytag{Swift}}
                 \rankline
                 You can use this ability as a \glossterm{free action}.
                 You can negate one \glossterm{condition} that would be applied to you this phase.
@@ -2228,8 +2230,8 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} The defense penalty is removed.
             \end{durationability}
 
-            \begin{durationability}{Burst of Blinding Speed}[\abilitytag{Swift}]
-                Duration
+            \begin{durationability}{Burst of Blinding Speed}
+                \spelltwocol{Duration}{\abilitytag{Swift}}
                 \rankline
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus10 foot bonus to your land speed this phase.
@@ -2240,8 +2242,8 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} You can also move or stand on liquids as if they were solid this phase.
             \end{durationability}
 
-            \begin{durationability}{Elegant Whirl of Fluid Motion}[\abilitytag{Swift}]
-                Duration
+            \begin{durationability}{Elegant Whirl of Fluid Motion}
+                \spelltwocol{Duration}{\abilitytag{Swift}}
                 \rankline
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus5 bonus to the Agility skill this round (see \pcref{Agility}).
@@ -2252,8 +2254,8 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} The bonus increases to \plus20.
             \end{durationability}
 
-            \begin{durationability}{Extend the Flow of Ki}[\abilitytag{Swift}]
-                Duration
+            \begin{durationability}{Extend the Flow of Ki}
+                \spelltwocol{Duration}{\abilitytag{Swift}}
                 \rankline
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus5 foot \glossterm{magic bonus} to \glossterm{reach} this phase.
@@ -2282,8 +2284,8 @@ This choice determines a great deal about your character's abilities.
                 If your intended destination is invalid, the distance you spent teleporting is wasted, but you suffer no other ill effects.
             \end{instantability}
 
-            \begin{durationability}{Leap of the Heavens}[\abilitytag{Swift}]
-                Duration
+            \begin{durationability}{Leap of the Heavens}
+                \spelltwocol{Duration}{\abilitytag{Swift}}
                 \rankline
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus5 bonus to the Jump skill this round (see \pcref{Jump}).
@@ -2294,8 +2296,8 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} The bonus increases to \plus20.
             \end{durationability}
 
-            \begin{durationability}{Scale the Highest Tower}[\abilitytag{Swift}]
-                Duration
+            \begin{durationability}{Scale the Highest Tower}
+                \spelltwocol{Duration}{\abilitytag{Swift}}
                 \rankline
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus5 bonus to the Climb skill this round (see \pcref{Climb}).
@@ -2307,8 +2309,8 @@ This choice determines a great deal about your character's abilities.
                 \rank{5} The bonus increases to \plus20.
             \end{durationability}
 
-            \begin{durationability}{Sense the Mystic Truth}[\abilitytag{Swift}]
-                Duration
+            \begin{durationability}{Sense the Mystic Truth}
+                \spelltwocol{Duration}{\abilitytag{Swift}}
                 \rankline
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus5 bonus to the Spellsense skill this round (see \pcref{Spellsense}).
@@ -2319,8 +2321,8 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} The bonus increases to \plus20.
             \end{durationability}
 
-            \begin{durationability}{Step Between the Mystic Worlds}[\abilitytag{Swift}]
-                Duration
+            \begin{durationability}{Step Between the Mystic Worlds}
+                \spelltwocol{Duration}{\abilitytag{Swift}}
                 \rankline
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus2 bonus to \glossterm{defenses} against \glossterm{magical} abilities this phase.
@@ -2332,8 +2334,8 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} The defense bonus is increased to \plus5.
             \end{durationability}
 
-            \begin{durationability}{Surpass the Mortal Limits}[\abilitytag{Swift}]
-                Duration
+            \begin{durationability}{Surpass the Mortal Limits}
+                \spelltwocol{Duration}{\abilitytag{Swift}}
                 \rankline
                 You can use this ability as a \glossterm{free action}.
                 You can use your \glossterm{power} in place of your Strength, Dexterity, and Constitution when making checks this phase.
@@ -2893,8 +2895,8 @@ This choice determines a great deal about your character's abilities.
         When you use your \textit{quarry} ability, you may also use one of your \textit{hunting styles}.
         Each \textit{hunting style} ability lasts as long as the \textit{quarry} ability you used it with.
         {
-            \begin{durationability}{Anchoring}[Magical]
-                Duration
+            \begin{durationability}{Anchoring}
+                \spelltwocol{Duration}{Magical}
                 \rankline
                 As long as your quarry is adjacent to any member of your hunting party, it cannot travel extradimensionally.
                 This prevents all \abilitytag{Manifestation} and \glossterm{teleportation} effects.
@@ -2934,8 +2936,8 @@ This choice determines a great deal about your character's abilities.
                 \rank{6} The penalty increases to \minus4.
             \end{durationability}
 
-            \begin{durationability}{Lifeseal}[Magical]
-                Duration
+            \begin{durationability}{Lifeseal}
+                \spelltwocol{Duration}{Magical}
                 \rankline
                 As long as your quarry is adjacent to any member of your hunting party, it cannot regain \glossterm{hit points}.
 
@@ -2954,8 +2956,8 @@ This choice determines a great deal about your character's abilities.
                 \rank{6} The penalty increases to \minus3.
             \end{durationability}
 
-            \begin{durationability}{Mystic Guidance}[Magical]
-                Duration
+            \begin{durationability}{Mystic Guidance}
+                \spelltwocol{Duration}{Magical}
                 \rankline
                 The accuracy bonus from your \textit{quarry} ability applies to all attacks your hunting party makes against your quarry, instead of only to \glossterm{mundane} attacks.
 
@@ -3233,8 +3235,8 @@ This choice determines a great deal about your character's abilities.
         This does not protect you from abilities that affect multiple specific targets without affecting an area.
 
         \cf{Rog}[6]{Assassination} You can use the \textit{assassination} ability as a \glossterm{minor action}.
-        \begin{durationability}{Assassination}[\abilitytag{Swift}]
-            Duration
+        \begin{durationability}{Assassination}
+            \spelltwocol{Duration}{\abilitytag{Swift}}
             \rankline
             You study a creature within \rngmed range, finding weak points you can take advantage of.
             Until the end of the next round, the subject takes maximum damage from your melee \glossterm{strikes} that it is \unaware of.
@@ -4115,8 +4117,8 @@ This choice determines a great deal about your character's abilities.
         \cf{War}[0]{Fiendish Resistance} You gain a bonus equal to twice your rank in this archetype to your \glossterm{resistance} against \glossterm{energy damage}, to a minimum bonus of 1.
 
         \cf{War}[1]{Abyssal Blast} You can use the \textit{abyssal blast} ability as a standard action.
-        \begin{instantability}{Abyssal Blast}[\glossterm{Magical}]
-            Instant
+        \begin{instantability}{Abyssal Blast}
+            \spelltwocol{Instant}{\glossterm{Magical}}
             \rankline
             Make an attack vs. Armor against one creature or object within \rngmed range.
             \hit The target takes fire damage equal to 1d10 plus your \glossterm{power}.
@@ -4137,8 +4139,8 @@ This choice determines a great deal about your character's abilities.
         Otherwise, you gain access to that mystic sphere, including all \glossterm{cantrips} from that sphere.
 
         \cf{War}[3]{Abyssal Jaunt} You can use the \textit{abyssal jaunt} ability as a standard action.
-        \begin{durationability}{Abyssal Jaunt}[\glossterm{Magical}]
-            Duration
+        \begin{durationability}{Abyssal Jaunt}
+            \spelltwocol{Duration}{\glossterm{Magical}}
             \rankline
             Make an attack vs. Mental against one creature within \rngmed range.
             \hit The target takes fire damage equal to 2d6 plus half your \glossterm{power}.
@@ -4161,8 +4163,8 @@ This choice determines a great deal about your character's abilities.
         \cf{War}[5]{Greater Fiendish Resistance}[Magical] The bonus from your \textit{fiendish resistance} ability increases to be equal to three times your rank in this archetype.
 
         \cf{War}[6]{Abyssal Curse} You can use the \textit{abyssal curse} ability as a standard action.
-        \begin{durationability}{Abyssal Curse}[\abilitytag{Curse}, \glossterm{Magical}]
-            Duration
+        \begin{durationability}{Abyssal Curse}
+            \spelltwocol{Duration}{\abilitytag{Curse}, \glossterm{Magical}}
             \rankline
             Make an attack vs. Fortitude against one creature or object within \rngmed range.
             \hit The target is \nauseated until it takes a \glossterm{short rest}.
@@ -4320,8 +4322,8 @@ This choice determines a great deal about your character's abilities.
 
         \cf{War}[2]{Exchange Soul Fragment} Your connection to your soulkeeper deepens, allowing you to send a fragment of your experiences through the link.
         You can use the \textit{exchange soul fragment} ability as a \glossterm{minor action}.
-        \begin{instantability}{Exchange Soul Fragment}[\glossterm{Magical}, \abilitytag{Swift}]
-            Instant
+        \begin{instantability}{Exchange Soul Fragment}
+            \spelltwocol{Instant}{\glossterm{Magical}, \abilitytag{Swift}}
             \rankline
             When you use this ability, you gain a \glossterm{fatigue point}.
 
@@ -4347,8 +4349,8 @@ This choice determines a great deal about your character's abilities.
 
         \cf{War}[5]{Exchange Vitality} Your connection to your soulkeeper deepens, allowing you to send a fragment of your vitality through the link.
         You can use the \textit{exchange vitality} ability as a \glossterm{minor action}.
-        \begin{instantability}{Exchange Vitality}[\glossterm{Magical}, \abilitytag{Swift}]
-            Instant
+        \begin{instantability}{Exchange Vitality}
+            \spelltwocol{Instant}{\glossterm{Magical}, \abilitytag{Swift}}
             \rankline
             When you use this ability, you gain two \glossterm{fatigue points}.
 
