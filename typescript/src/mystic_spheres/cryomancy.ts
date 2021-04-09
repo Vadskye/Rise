@@ -121,7 +121,7 @@ export const cryomancy: MysticSphere = {
         glance: `Half damage.`,
         hit: `Each subject takes 2d10 + half \\glossterm{power} cold damage.`,
         targeting: `
-          Make an attack vs. Fortitude against everything in a \\largearea cone from you.
+          Make an attack vs. Fortitude against everything in a \\hugearea cone from you.
         `,
       },
       rank: 5,
