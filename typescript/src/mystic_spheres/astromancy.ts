@@ -10,7 +10,7 @@ export const astromancy: MysticSphere = {
       name: "Dimension Hop",
 
       effect: `
-        You teleport into an unoccupied destination within 5 foot \\glossterm{range}.
+        You teleport horizontally into an unoccupied location within 5 foot \\glossterm{range} on a stable surface that can support your weight.
         If the destination is invalid, this spell fails with no effect.
       `,
       focus: false,
@@ -110,7 +110,7 @@ export const astromancy: MysticSphere = {
         crit: "The effect lasts until the curse is removed.",
         glance: "The effect lasts until the end of the next round.",
         hit: `
-          At the end of each \\glossterm{movement phase}, the subject teleports 10 feet in a random direction.
+          At the end of each \\glossterm{movement phase}, the subject teleports horizontally 10 feet in a random direction.
           This effect lasts until it takes a \\glossterm{short rest}.
         `,
         targeting: `
