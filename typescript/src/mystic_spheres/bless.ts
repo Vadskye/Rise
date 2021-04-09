@@ -98,15 +98,18 @@ export const bless: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
-        At the end of each round, if the subject did not lose any \\glossterm{hit points} that round, it regains 2d10 \\glossterm{hit points}.
+        At the end of each round, if the subject did not lose any \\glossterm{hit points} that round, it regains 1d10 \\glossterm{hit points}.
 
         You can only have one casting of this spell active at once.
         When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
       `,
       rank: 4,
       scaling: {
-        6: `Casting this spell does not remove previous attunements to this spell.
-                In addition, you can choose to cast this spell with the \\abilitytag{Sustain} (minor) tag instead of the \\abilitytag{Attune} (target) tag.`,
+        special: `
+          The healing increases by +1d for each rank beyond 4.
+          \\rank{6} Casting this spell does not remove previous attunements to this spell.
+            In addition, you can choose to cast this spell with the \\abilitytag{Sustain} (minor) tag instead of the \\abilitytag{Attune} (target) tag.
+        `,
       },
       type: "Attune (target)",
     },
