@@ -2694,7 +2694,7 @@ def generate_worn():
             material_type="Gloves",
             tags=[],
             description="""
-                When you cast a spell that does not have the \\glossterm<Attune> or \\glossterm<Sustain> tags,
+                When you cast a spell that does not have the \\abilitytag<Attune> or \\abilitytag<Sustain> tags,
                     you can invest the magic of the spell in these gloves.
                 If you do, the spell does not have its normal effect.
 
