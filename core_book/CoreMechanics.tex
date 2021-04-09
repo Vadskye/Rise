@@ -385,13 +385,17 @@ It defines how attributes work and explains how to make attacks in combat.
         \parhead{Hustle} As a \glossterm{move action}, you can use the \textit{hustle} ability to move.
         This is the most common movement ability.
 
-        \begin{freeability}{Hustle}
+        \begin{instantability}{Hustle}
+            Instant
+            \rankline
             Choose a path that you want to travel. You travel that path, up to the limit of your movement speed.
-        \end{freeability}
+        \end{instantability}
 
         \parhead{Block} As a \glossterm{move action}, you can use the \textit{block} ability to prevent a creature from entering a particular area.
 
-        \begin{freeability}{\labeltext{Block}}
+        \begin{instantability}{\labeltext{Block}}
+            Instant
+            \rankline
             Choose a creature to block, and the area you want to block it from entering.
             During the current phase, you automatically move to intercept the target as it approaches the blocked area, up to the limit of your movement speed.
             Usually, blocking a target requires an opposed \glossterm{initiative} check against the target.
@@ -400,22 +404,26 @@ It defines how attributes work and explains how to make attacks in combat.
 
             Multiple creatures can coordinate to block a single creature.
             The blocked creature must beat the initiative of all blocking creatures to enter the blocked area.
-        \end{freeability}
+        \end{instantability}
 
         \parhead{Follow} As a \glossterm{move action}, you can use the \textit{follow} ability to follow a creature as it moves.
 
-        \begin{freeability}{\labeltext{Follow}}
+        \begin{instantability}{\labeltext{Follow}}
+            Instant
+            \rankline
             Choose a creature to follow, and the maximum distance you want to follow at.
             During the current phase, you automatically move such that your distance to the target is no greater than your desired follow distance, up to the limit of your movement speed.
             If the target uses an ability that makes it impossible to follow with movement, such as teleporting, you stop moving when you become adjacent to the position where it used that ability.
-        \end{freeability}
+        \end{instantability}
 
         \parhead{Withdraw} As a \glossterm{move action}, you can use the \textit{withdraw} ability to keep away from creatures as they move.
 
-        \begin{freeability}{\labeltext{Withdraw}}
+        \begin{instantability}{\labeltext{Withdraw}}
+            Instant
+            \rankline
             This ability functions like the \textit{follow} ability, except that you specify a minimum distance between you and the target instead of a maximum distance.
             In addition, you can specify multiple targets and try to keep away from all of them.
-        \end{freeability}
+        \end{instantability}
 
     \subsection{Movement Impediments}
 
@@ -723,9 +731,11 @@ It defines how attributes work and explains how to make attacks in combat.
             After you stop being attuned to that ability, you can recover that attunement point when you take your next \glossterm{short rest}.
 
             As a \glossterm{free action}, you can use the \textit{release attunement} ability to stop being attuned an ability you have attuned to.
-            \begin{freeability}{Release Attunement}
+            \begin{instantability}{Release Attunement}
+                Instant
+                \rankline
                 You stop being attuned to one effect you have attuned to.
-            \end{freeability}
+            \end{instantability}
 
             Attuned abilities continue to work across any distance, but not across planar boundaries.
             % TODO: wording
@@ -1435,37 +1445,37 @@ It defines how attributes work and explains how to make attacks in combat.
         However, wielding two weapons can allow you to make an additional strike each round.
         For details, see \pcref{Offhand Strike}.
 
-        \begin{freeability}{\labeltext{Melee Strike}}
-            \target{One creature or object within your weapon's \glossterm{reach} (see text)}
-            Choose one \glossterm{melee} weapon that you can attack with.
-            The target must be within your reach with that weapon.
-            Make an attack with that weapon against the target's Armor defense.
+        \begin{instantability}{\labeltext{Melee Strike}}
+            Instant
+            \rankline
+            Choose one \glossterm{melee} weapon you are wielding and are able to attack with.
+            Make an attack vs. Armor with that weapon against anything within that weapon's \glossterm{reach}.
 
             \hit The target takes damage from the weapon (see \pcref{Strike Damage}).
             \crit The target takes double damage from the weapon, as normal for critical hits (see \pcref{Critical Hits}).
-        \end{freeability}
+        \end{instantability}
 
-        \begin{freeability}{\labeltext{Projectile Strike}}
-            \target{One creature or object within ten \glossterm{range increments} of you (see text)}
-            Choose one \glossterm{projectile weapon} that you can attack with.
-            The target must be within ten \glossterm{range increments} of you with that weapon.
-            Make an attack with that weapon against the target's Armor defense.
-            The attack takes a \minus1 penalty to \glossterm{accuracy} for each full \glossterm{range increment} between you and the target.
-
-            \hit The target takes damage from the weapon (see \pcref{Strike Damage}).
-            \crit The target takes double damage from the weapon, as normal for critical hits (see \pcref{Critical Hits}).
-        \end{freeability}
-
-        \begin{freeability}{\labeltext{Thrown Strike}}
-            \target{One creature or object within five \glossterm{range increments} of you (see text)}
-            Choose one \glossterm{thrown weapon} you can attack with.
-            The target must be within five \glossterm{range increments} of you with all chosen weapons.
-            Make an attack with that weapon against the target's Armor defense.
-            The attack takes a \minus1 penalty to \glossterm{accuracy} for each full \glossterm{range increment} between you and the target.
+        \begin{instantability}{\labeltext{Projectile Strike}}
+            Instant
+            \rankline
+            Choose one \glossterm{projectile weapon} that you are wielding and are able to attack with.
+            Make an attack vs. Armor with that weapon against anything that you have \glossterm{line of sight} and \glossterm{line of effect} to.
+            You take a \minus1 penalty to \glossterm{accuracy} for each full \glossterm{range increment} between you and the target.
+            If your total penalty from range increments would exceed \minus10, the attack fails without effect.
 
             \hit The target takes damage from the weapon (see \pcref{Strike Damage}).
             \crit The target takes double damage from the weapon, as normal for critical hits (see \pcref{Critical Hits}).
-        \end{freeability}
+        \end{instantability}
+
+        \begin{instantability}{\labeltext{Thrown Strike}}
+            Choose one \glossterm{thrown weapon} that you are wielding and are able to attack with.
+            Make an attack vs. Armor with that weapon against anything that you have \glossterm{line of sight} and \glossterm{line of effect} to.
+            You take a \minus1 penalty to \glossterm{accuracy} for each full \glossterm{range increment} between you and the target.
+            If your total penalty from range increments would exceed \minus5, the attack fails without effect.
+
+            \hit The target takes damage from the weapon (see \pcref{Strike Damage}).
+            \crit The target takes double damage from the weapon, as normal for critical hits (see \pcref{Critical Hits}).
+        \end{instantability}
 
         \subsubsection{Strike Damage}\label{Strike Damage}
             When you deal damage with a strike, you roll your weapon's damage dice and add your \glossterm{power} with the strike to get the total damage.
@@ -1509,12 +1519,14 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \parhead{Charge} You can use the \textit{charge} ability as a standard action.
 
-        \begin{freeability}{\labeltext{Charge}}
+        \begin{instantability}{\labeltext{Charge}}
+            Instant
+            \rankline
             After you use this ability, you gain a \glossterm{fatigue point}.
 
             Move up to your speed in a single straight line.
             At the end of your movement, you can make a melee \glossterm{strike} from your new location.
-        \end{freeability}
+        \end{instantability}
 
         \parhead{Desperate Exertion}\label{desperate exertion} You can use the \textit{desperate exertion} ability to succeed at a critical moment when you would otherwise fail.
         Using this ability is not an action, and can be done at any time.
@@ -1522,36 +1534,41 @@ It defines how attributes work and explains how to make attacks in combat.
         You can even use it after you learn what the effects of a successful attack or check would be, if that is information you could normally learn if it succeeded.
         However, you must use it before the phase is over.
 
-        \begin{freeability}{\labeltext{Desperate Exertion}}[\abilitytag{Swift}]
-            When you use this ability, after resolving the rerolled attack or check, you gain two \glossterm{fatigue points} (see \pcref{Fatigue}).
+        \begin{instantability}{\labeltext{Desperate Exertion}}[\abilitytag{Swift}]
+            Instant
+            \rankline
+            After you use this ability, you gain two \glossterm{fatigue points} (see \pcref{Fatigue}).
 
             You reroll any \glossterm{attack} or \glossterm{check} you just made and gain a \plus2 bonus.
             You must reroll the entire roll, not just one die from the roll (such as if the original roll \glossterm{explodes}).
             You cannot use this to affect rolls that are not attacks or checks, such as \glossterm{vital rolls}.
             You cannot use this ability multiple times to affect the same roll.
-        \end{freeability}
+        \end{instantability}
 
         \parhead{Dirty Trick} As a standard action, you can use the \textit{dirty trick} ability to creatively impair a foe's ability to fight.
 
-        \begin{freeability}{Dirty Trick}\label{Dirty Trick}
-            \target{One creature within your \glossterm{reach}}
+        \begin{durationability}{Dirty Trick}\label{Dirty Trick}
+            Duration
+            \rankline
             When you use this ability, you must describe the kind of dirty trick you are performing.
             For example, you can pull a creature's pants down, throw sand, or otherwise use your environment to attack.
             The same creature can be affected by multiple dirty tricks, but each must apply a different penalty.
 
-            Make a melee attack with a free hand against the target's Fortitude or Reflex defense.
+            Make a melee attack with a free hand against the Fortitude or Reflex defense of one creature within your \glossterm{reach}.
             The target uses whichever defense is appropriate to the nature of the trick you describe.
 
-            On a hit, the target suffers a \minus2 penalty to one of the following statistics:
+            On a hit, the subject suffers a \minus2 penalty to one of the following statistics:
             \glossterm{accuracy} with \glossterm{mundane} abilities, Armor defense, Fortitude defense, Reflex defense, or Mental defense.
             You choose the penalty, which must be appropriate for the action you described.
-            If the target is at its maximum hit points, this effect lasts until the end of the next round.
+            If the subject is at its maximum hit points, this effect lasts until the end of the next round.
             Otherwise, this effect is a \glossterm{condition}.
-        \end{freeability}
+        \end{durationability}
 
         \parhead{Disarm} As a standard action, you can use the \textit{disarm} ability to knock an item out of a foe's hands.
 
-        \begin{freeability}{Disarm}\label{Disarm}
+        \begin{instantability}{Disarm}\label{Disarm}
+            Instant
+            \rankline
             Make a melee \glossterm{strike} against an object.
             Unlike most abilities, this ability can target specific items \glossterm{attended} by creatures.
             This attack must beat the target's Reflex defense.
@@ -1562,49 +1579,57 @@ It defines how attributes work and explains how to make attacks in combat.
             If you do, it falls to the ground in the square occupied by the attending creature that is closest to you.
 
             \crit As above, except that you can deal double damage and you can also knock loose objects that are held in a single hand, but not objects that are held in two hands or well secured.
-        \end{freeability}
+        \end{instantability}
 
         \parhead{Grapple} As a standard action, you can use the \textit{grapple} ability to physically grab and restrain a creature.
 
-        \begin{freeability}{Grapple}\label{Grapple}
-            \target{One creature within your \glossterm{reach}}
-            Make a melee attack with a free hand against the target's Fortitude and Reflex defenses.
+        \begin{durationability}{Grapple}\label{Grapple}
+            Duration
+            \rankline
+            Make a melee attack with a free hand against the Fortitude and Reflex defenses of one creature within your \glossterm{reach}.
+            For each size category by which the target is larger than you, you take a \minus4 penalty to \glossterm{accuracy}.
 
             On a hit against both defenses, you and the target are \grappled by each other.
             For details, see \pcref{Grappling}.
-        \end{freeability}
+        \end{durationability}
 
         \parhead{Offhand Strike}\label{Offhand Strike} As a \glossterm{minor action}, you can use the \textit{offhand strike} ability to quickly attack with an offhand weapon while you attack with a primary weapon.
         Your Dexterity must be at least 1 to use this ability.
-        \begin{freeability}{Offhand Strike}
-            Choose one non-heavy weapon you can attack with.
+        \begin{instantability}{Offhand Strike}
+            Instant
+            \rankline
+            Choose one non-heavy weapon you are wielding and are able to attack with.
             You cannot use this ability unless you also make a \glossterm{strike} with a different weapon as part of a \glossterm{standard action} during the same phase.
 
             Make a \glossterm{strike} with your chosen weapon.
             You take a \minus2 penalty to \glossterm{accuracy}, and you do not add your \glossterm{power} to damage with the strike.
             In addition, you take a \minus1 penalty to \glossterm{accuracy} with the strike for each non-light weapon you attack with this phase, including the weapon used to make this strike.
-        \end{freeability}
+        \end{instantability}
 
         \parhead{Overrun} As a \glossterm{move action}, you can use the \textit{overrun} ability to move through creatures in your way.
 
-        \begin{freeability}{\labeltext{Overrun}}
+        \begin{instantability}{\labeltext{Overrun}}
+            Instant
+            \rankline
             After you use this ability, you gain a \glossterm{fatigue point}.
 
             Move up to your movement speed in a straight line.
             You can try to move directly through creatures in your way during this movement.
             Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered.
             If a creature does not attempt to avoid you, you make an attack vs. Fortitude against it.
-            For each size category larger or smaller than the target that you are, you gain a \plus4 bonus or penalty to \glossterm{accuracy}.
+            For each size category by which you are larger or smaller than the target, you gain a \plus4 bonus or penalty to \glossterm{accuracy}.
             If you move into a creature's space with this ability, but you do not move out of it, you and the creature are both \squeezing as long as you continue sharing space.
 
             On a hit, you can move through each target's space, though you treat it as \glossterm{difficult terrain}.
             On a critical hit, each target is knocked \prone, and you do not treat its space as \glossterm{difficult terrain} when you move through it.
             On a miss, you end your movement immediately.
-        \end{freeability}
+        \end{instantability}
 
         \parhead{Recover} You can use the \textit{recover} ability as a standard action.
         As long as you are conscious, no effect can prevent you from using this ability, even effects that prohibit using any other abilities.
-        \begin{freeability}{\labeltext{Recover}}
+        \begin{instantability}{\labeltext{Recover}}
+            Instant
+            \rankline
             When you use this ability, you gain two \glossterm{fatigue points} (see \pcref{Fatigue}).
 
             You regain hit points equal to your maximum \glossterm{hit points}.
@@ -1613,38 +1638,44 @@ It defines how attributes work and explains how to make attacks in combat.
             If you take damage in the same phase that you use this ability, the healing and damage offset, which can prevent you from gaining vital wounds from dropping below 0 hit points (see \pcref{Regaining Hit Points and Resistances}).
 
             After you use this ability, you cannot use it again until you take a \glossterm{short rest}.
-        \end{freeability}
+        \end{instantability}
 
         \parhead{Shove} As a standard action, you can use the \textit{shove} ability to physically move a creature.
 
-        \begin{freeability}{Shove}\label{Shove}
+        \begin{instantability}{Shove}\label{Shove}
+            Instant
+            \rankline
             Choose either one creature within your \glossterm{reach} or all creatures grappling you (see \pcref{Grappling}).
 
-            Make a melee attack with a free hand against both the Reflex defense and total Strength of each creature.
+            Make a melee attack with a free hand against both the Fortitude defense and total Strength of each creature.
             Your \glossterm{accuracy} with this attack is equal to your Strength.
             If you are not able to use any of your movement speeds, such as if you are being carried by a flying creature, you automatically fail when you try to use this ability, and your defense is treated as 0 against this ability.
 
             On a hit, you \glossterm{push} each target up to half your movement speed in a straight line.
             You can move the same distance that you push the target.
             On a critical hit, you push each target up to your full movement speed in a straight line instead.
-        \end{freeability}
+        \end{instantability}
 
         % It's important that this is a movement *replacement* instead of a generic speed modifier
         % to prevent it from being abused with abilities like Shove.
         \parhead{Sprint} As a \glossterm{move action}, you can use the \textit{sprint} ability to move more quickly.
 
-        \begin{freeability}{\labeltext{Sprint}}
+        \begin{instantability}{\labeltext{Sprint}}
+            Instant
+            \rankline
             You move up to double your normal movement speed.
             After you use this ability, you gain a \glossterm{fatigue point}.
-        \end{freeability}
+        \end{instantability}
 
         \parhead{Struggle} As a standard action, you can use the \textit{struggle} ability to move despite movement impediments.
 
-        \begin{freeability}{\labeltext{Struggle}}
+        \begin{durationability}{\labeltext{Struggle}}
+            Duration
+            \rankline
             Until the end of the current phase, your land speed becomes five feet, regardless of all other effects that would modify your land speed.
             In addition, you can move a distance up to your land speed.
             This does not allow you to pass obstacles unrelated to movement speed penalties, such as walls.
-        \end{freeability}
+        \end{durationability}
 
         \parhead{Throw} You can use the \textit{throw} ability to throw an object.
         You can use the ability as a standard action.
@@ -1654,7 +1685,9 @@ It defines how attributes work and explains how to make attacks in combat.
         As long as you have a Strength of at least \minus2, you do not have to use this ability to throw weapons that are sized appropriately for you and which are designed to be thrown.
         Instead, you can simply use the \glossterm{range increment} for those weapons.
 
-        \begin{freeability}{\labeltext{Throw}}
+        \begin{instantability}{\labeltext{Throw}}
+            Instant
+            \rankline
             Make a Strength check to throw an object you hold in at least one hand.
             The base \glossterm{difficulty rating} of this check is 0.
             For each size category larger or smaller than the target that you are, you gain a \plus10 bonus or penalty to the check.
@@ -1664,23 +1697,27 @@ It defines how attributes work and explains how to make attacks in combat.
             For every 5 points by which you succeed, you double the distance you throw the object: ten feet, twenty feet, and so on.
             If you throw the object at a creature or object, you can make an attack roll to hit it with the thrown object, as the \textit{thrown strike} ability.
             That attack roll is rolled separately from the Strength check you make to use this ability.
-        \end{freeability}
+        \end{instantability}
 
         \parhead{Total Defense} As a standard action, you can use the \textit{total defense} ability to focus entirely on defending yourself.
 
-        \begin{freeability}{\labeltext{Total Defense}}[\abilitytag{Swift}]
+        \begin{durationability}{\labeltext{Total Defense}}[\abilitytag{Swift}]
+            Duration
+            \rankline
             You gain a \plus2 bonus to your \glossterm{defenses} until the end of the round.
             Because this ability has the \abilitytag{Swift} tag, this improves your defenses against attacks made against you during the current phase.
-        \end{freeability}
+        \end{durationability}
 
         \parhead{Trip} As a standard action, you can use the \textit{trip} ability to trip a creature.
 
-        \begin{freeability}{\labeltext{Trip}}
+        \begin{instantability}{\labeltext{Trip}}
+            Instant
+            \rankline
             Make a melee attack with a free hand against a creature's Reflex defenses.
-            For each size category smaller than the target that you are, you take a \minus4 penalty to \glossterm{accuracy}.
+            For each size category by which the target is larger than you, you take a \minus4 penalty to \glossterm{accuracy}.
 
             On a hit, the target becomes \prone.
-        \end{freeability}
+        \end{instantability}
 
     \subsection{Grappling}\label{Grappling}
         A grappled creature is physically struggling with at least one other creature.
@@ -1703,27 +1740,33 @@ It defines how attributes work and explains how to make attacks in combat.
 
             \parhead{Escape Grapple} As a standard action, you can use the \textit{escape grapple} ability to try to stop being grappled.
 
-            \begin{freeability}{\labeltext{Escape Grapple}}
+            \begin{instantability}{\labeltext{Escape Grapple}}
+                Instant
+                \rankline
                 Make an attack against any number of creatures that you are grappled by.
                 You may use the Flexibility skill or your total Strength in place of your normal \glossterm{accuracy} with this attack (see \pcref{Flexibility}).
                 The defense of each creature is equal to the result of the attack it made with its \textit{maintain grapple} ability.
                 If a creature did not use that ability during the current round, its defense against this ability is 0.
                 % TODO: awkward wording
                 For each target, if you hit that target with this attack, it stops being grappled by you and you stop being grappled by it.
-            \end{freeability}
+            \end{instantability}
 
             \parhead{Maintain Grapple} As a \glossterm{free action}, you can use the \textit{maintain grapple} ability to maintain a grapple that you are part of.
             If you do not use this ability while you are in a grapple, then creatures can easily escape the grapple with the \textit{escape grapple} ability.
-            \begin{freeability}{Maintain Grapple}[Swift]
+            \begin{instantability}{Maintain Grapple}[Swift]
+                Instant
+                \rankline
                 Make an attack using a \glossterm{free hand}.
                 You may use your total Strength in place of your normal \glossterm{accuracy} with this attack.
                 This attack has no immediate effect.
                 The attack result determines how difficult it is for a creature to escape the grapple during the current round using the \textit{escape grapple} ability.
-            \end{freeability}
+            \end{instantability}
 
             \parhead{Pin}\label{Pin} As a standard action, you can use the \textit{pin} ability to further restrict the actions of a creature you are grappling with.
 
-            \begin{freeability}{Pin}
+            \begin{durationability}{Pin}
+                Duration
+                \rankline
                 Make an attack vs. Fortitude and Reflex against a creature who is grappled by you.
                 Using this ability requires one free hand and one hand that is either free or holding a physical restraint such as a rope or handcuffs.
 
@@ -1735,7 +1778,7 @@ It defines how attributes work and explains how to make attacks in combat.
                 While pinned, the only physical action the target can take is the \textit{escape grapple} ability (see above), though it can take mental actions.
                 At your discretion, you can cover the mouth of a pinned creature to prevent it from speaking.
                 You may release the target as a \glossterm{free action}, ending this effect.
-            \end{freeability}
+            \end{durationability}
 
         \subsubsection{Asymmetric Grappling}\label{Asymmetric Grappling}
             Normally, when you use the \textit{grapple} ability, both you and the target become grappled by each other.
