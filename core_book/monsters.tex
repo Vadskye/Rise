@@ -20,15 +20,16 @@ This chapter describes the rules for monsters, and the combat statistics for a v
 
         \begin{dtable}
             \lcaption{Challenge Rating Effects}
-            \begin{dtabularx}{\textwidth}{l l l X l l}
-                \tb{CR} & \tb{HP}  & \tb{Resists} & \tb{AP} & \tb{Accuracy} & \tb{Defenses} \tableheaderrule
-                1/2     & \mult1/2 & \mult0           & 0       & \plus0        & \plus0 \\
-                1       & \mult1   & \mult0           & 1       & \plus0        & \plus0 \\
-                2       & \mult1   & \mult1           & 1       & \plus1        & \plus1 \\
-                3       & \mult2   & \mult2           & 2       & \plus2        & \plus2 \\
-                4       & \mult4   & \mult2\fn{1}     & 3       & \plus3        & \plus3 \\
+            \begin{dtabularx}{\textwidth}{l l l X l l l}
+                \tb{CR} & \tb{HP}  & \tb{Resists} & \tb{AP} & \tb{Accuracy} & \tb{Defenses} & \tb{Damage}\fn{1} \tableheaderrule
+                1/2     & \mult1/2 & \mult0           & 0       & \plus0        & \plus0 & \minus1d \\
+                1       & \mult1   & \mult0           & 1       & \plus0        & \plus0 & \tdash \\
+                2       & \mult1   & \mult1           & 1       & \plus1        & \plus1 & \tdash \\
+                3       & \mult2   & \mult2           & 2       & \plus2        & \plus2 & \plus1d \\
+                4       & \mult4   & \mult2\fn{2}     & 3       & \plus3        & \plus3 & \plus1d \\
             \end{dtabularx}
-            1. CR 4 monsters also have a universal damage resistance equal to half their HP (see \pcref{Monster Universal Resistance}). \\
+            1. This modifier applies to all damage dice rolled by the monster, including both strikes and magical abilities. \\
+            2. CR 4 monsters also have a universal damage resistance equal to half their HP (see \pcref{Monster Universal Resistance}). \\
         \end{dtable}
 
         \subsection{Monster Universal Resistance}\label{Monster Universal Resistance}

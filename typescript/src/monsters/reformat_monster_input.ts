@@ -50,13 +50,15 @@ export function monsterIsMonsterGroup(monster: Monster): monster is MonsterGroup
 
 export type MonsterInput = MonsterBaseInput | MonsterGroupInput;
 
+export type MonsterChallengeRating = 0.5 | 1 | 2 | 3 | 4;
+
 export interface MonsterBaseInput {
   accuracyBonus?: number;
   alignment: string;
   attackInputs?: AttackInput[];
   activeAbilityInputs?: ActiveAbilityInput[];
   armorInputs?: ArmorInput[];
-  challengeRating?: 0.5 | 1 | 2 | 3 | 4;
+  challengeRating?: MonsterChallengeRating;
   defenseBonuses?: Partial<Record<DefenseType, number>>;
   delayedCalculations?: Array<(monster: MonsterBase) => void>;
   description?: string | null;
