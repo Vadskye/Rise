@@ -25,15 +25,15 @@ export type CalculatedDamagingAttack = Omit<CalculatedAttack, "damageDice"> & {
 
 export function calculateAttack(
   attack: DamagingAttack,
-  monster: Pick<MonsterBase, "level" | "name" | "accuracy" | "magicalPower" | "mundanePower">,
+  monster: Pick<MonsterBase, "challengeRating" | "level" | "name" | "accuracy" | "magicalPower" | "mundanePower">,
 ): CalculatedDamagingAttack;
 export function calculateAttack(
   attack: Attack,
-  monster: Pick<MonsterBase, "level" | "name" | "accuracy" | "magicalPower" | "mundanePower">,
+  monster: Pick<MonsterBase, "challengeRating" | "level" | "name" | "accuracy" | "magicalPower" | "mundanePower">,
 ): CalculatedAttack;
 export function calculateAttack(
   attack: Attack | DamagingAttack,
-  monster: Pick<MonsterBase, "level" | "name" | "accuracy" | "magicalPower" | "mundanePower">,
+  monster: Pick<MonsterBase, "challengeRating" | "level" | "name" | "accuracy" | "magicalPower" | "mundanePower">,
 ): CalculatedAttack | CalculatedDamagingAttack {
   const monsterPower = attack.source === "magical" ? monster.magicalPower : monster.mundanePower;
   if (attack.hit && attack.hit.trim()[attack.hit.trim().length - 1] !== ".") {
@@ -51,6 +51,7 @@ export function calculateAttack(
           attack.baseDamageDie,
           monster.level,
           Math.floor(monsterPower * attack.powerMultiplier),
+          monster.challengeRating,
         )
       : null,
     crit: attack.crit,
