@@ -286,12 +286,12 @@ You cannot gain the same feat twice.
         \featpre Ability to cast a spell.
 
         \ff[1]{Boon Lore} You learn an additional \glossterm{spell}.
-        The spell must have the \glossterm{Attune} tag.
-        You can exchange this spell for other spells as you gain access to new spell ranks, but the spell must always have the \glossterm{Attune} tag.
+        The spell must have the \abilitytag{Attune} tag.
+        You can exchange this spell for other spells as you gain access to new spell ranks, but the spell must always have the \abilitytag{Attune} tag.
 
-        \ff[3]{Share Boon} When you cast a spell with the \glossterm{Attune} (self) tag, you can use the \textit{share boon} ability.
+        \ff[3]{Share Boon} When you cast a spell with the \abilitytag{Attune} (self) tag, you can use the \textit{share boon} ability.
         \begin{freeability}{Share Boon}
-            The spell's \glossterm{Attune} tag changes to \glossterm{Attune} (target).
+            The spell's \abilitytag{Attune} tag changes to abilitytagglossterm{Attune} (target).
             Choose one \glossterm{ally} within \rngmed range.
             That ally is the target of the spell, and the spell affects that creature as if it were you instead of affecting you.
 
@@ -317,7 +317,7 @@ You cannot gain the same feat twice.
         \ff[9]{Greater Share Boon} You can use your \textit{share boon} ability on up to two different spells at once.
         If you use the ability while it already affects another spell, you choose which spells are affected by the ability.
 
-        \ff[12]{Greater Boon Lore} The number of additional \glossterm{Attune} spells you gain from your \textit{boon lore} ability increases to two.
+        \ff[12]{Greater Boon Lore} The number of additional \abilitytag{Attune} spells you gain from your \textit{boon lore} ability increases to two.
 
         \ff[15]{Personal Boon} You gain an additional \glossterm{attunement point}.
         You can only use this attunement point to \glossterm{attune} to spells and rituals that you cast on yourself.
@@ -566,7 +566,7 @@ You cannot gain the same feat twice.
 
         \ff[12]{Disguise Size}[Magical] You can use the \textit{disguise size} ability as a \glossterm{standard action}.
         \begin{attuneability}{Disguise Size}
-            \glossterm{Attune} (self)
+            \abilitytag{Attune} (self)
             \rankline
             You increase or decrease your size by one \glossterm{size category}.
             Your physical form is not altered fully to match your new size, and your Strength and Dexterity are unchanged.
@@ -1201,7 +1201,7 @@ You cannot gain the same feat twice.
 
         \ff[6]{Spell Fusion} You can use the \textit{spell fusion} ability as a \glossterm{standard action}.
         \begin{freeability}{Spell Fusion}
-            Choose two spells that you know which do not have the \abilitytag{Sustain} or \glossterm{Attune} tags.
+            Choose two spells that you know which do not have the \abilitytag{Sustain} or \abilitytag{Attune} tags.
             You cast both spells simultaneously.
             Both spells that you fuse in this way must have the exact same area and/or targeting restrictions, and you must choose the same targets and area for both spells, if applicable.
             Roll the attack roll and damage for each spell separately.
@@ -1250,10 +1250,10 @@ You cannot gain the same feat twice.
 
         \ff[3]{Guided Projectiles}[Magical] Your attacks with projectiles ignore \glossterm{cover}, but not \glossterm{total cover}.
 
-        \ff[6]{Imbue Projectile} When you cast a spell that does not have the \glossterm{Attune} or \abilitytag{Sustain} tags,
+        \ff[6]{Imbue Projectile} When you cast a spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags,
             you can use the \textit{imbue projectile} ability.
         \begin{attuneability}{Imbue Projectile}
-            \spelltwocol{\glossterm{Attune} (self)}{\glossterm{Magical}}
+            \spelltwocol{\abilitytag{Attune} (self)}{\glossterm{Magical}}
             \rankline
             The spell does not have its effect immediately.
             Instead, its power is imbued in a \glossterm{projectile} you hold.
@@ -1608,7 +1608,7 @@ You cannot gain the same feat twice.
 
         \ff[6]{Extradimensional Concealment}[Magical] When you use the \textit{conceal object} ability, you can use the \textit{extradimensional pocket} ability.
         \begin{attuneability}{Extradimensional Pocket}
-            \spelltwocol{\glossterm{Attune} (self)}{\glossterm{Magical}}
+            \spelltwocol{\abilitytag{Attune} (self)}{\glossterm{Magical}}
             \rankline
             You conceal the object in a pocket dimension that cannot be accessed by nonmagical means.
             When your attunement to this ability ends, the object appears in a free hand.
@@ -1709,13 +1709,13 @@ You cannot gain the same feat twice.
         \ff[6]{Unweave Magic}[Magical] You can use the \textit{unweave magic} ability as a standard action.
         \begin{freeability}{Unweave Magic}
             Make a Spellsense check on an active spell effect within \rngmed range.
-            This can affect spells with the \abilitytag{Sustain} tag, but it cannot affect spells with the \glossterm{Attune} tag.
+            This can affect spells with the \abilitytag{Sustain} tag, but it cannot affect spells with the \abilitytag{Attune} tag.
             The \glossterm{difficulty rating} is equal to 5 \add the \glossterm{power} of the effect.
             Success means the effect is \glossterm{dismissed} if it is an effect that can be dismissed.
 
             \rankline
             \featlevel{12} You can target up to two spell effects within range.
-            \featlevel{18} You can affect spells with the \glossterm{Attune} tag.
+            \featlevel{18} You can affect spells with the \abilitytag{Attune} tag.
             The \glossterm{difficulty rating} to affect those spells is increased by 10.
         \end{freeability}
 
@@ -1745,10 +1745,10 @@ You cannot gain the same feat twice.
         \ff[3]{Spellsword Conduit} You can cast spells using a melee weapon as if it were an implement (see \pcref{Implements}).
         When you do, you reduce your \glossterm{focus penalty} by 2.
 
-        \ff[6]{Imbue Weapon} When you cast a spell that does not have the \glossterm{Attune} or \abilitytag{Sustain} tags,
+        \ff[6]{Imbue Weapon} When you cast a spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags,
             you can use the \textit{imbue weapon} ability.
         \begin{attuneability}{Imbue Weapon}
-            \spelltwocol{\glossterm{Attune} (self)}{\glossterm{Magical}}
+            \spelltwocol{\abilitytag{Attune} (self)}{\glossterm{Magical}}
             \rankline
             The spell does not have its effect immediately.
             Instead, its power is imbued in a melee weapon you hold.
@@ -2063,7 +2063,7 @@ You cannot gain the same feat twice.
         \ff[3]{Crafting Familiarity} You gain a \plus2 bonus to all Craft skills.
 
         \ff[6]{Greater Fabricate Trinket} The maximum size of the trinket you can create with your \textit{fabricate trinket} cantrip increases by one size category.
-        In addition, when you cast that spell, you can treat it as if it had the \abilitytag{Sustain} (minor) tag instead of the \glossterm{Attune} (self) tag.
+        In addition, when you cast that spell, you can treat it as if it had the \abilitytag{Sustain} (minor) tag instead of the \abilitytag{Attune} (self) tag.
 
         \ff[9]{Personal Fabrication} You gain an additional \glossterm{attunement point}.
         You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Fabrication} \glossterm{mystic sphere}.
@@ -2204,7 +2204,7 @@ You cannot gain the same feat twice.
 
         \ff[6]{Resummon} You can use the \textit{resummon} ability as a \glossterm{minor action}.
         \begin{freeability}{Resummon}
-            Choose one creature or object that you summoned with a currently active ability from the \sphere{Summoning} \glossterm{mystic sphere} with the \glossterm{Attune} or \abilitytag{Sustain} tags.
+            Choose one creature or object that you summoned with a currently active ability from the \sphere{Summoning} \glossterm{mystic sphere} with the \abilitytag{Attune} or \abilitytag{Sustain} tags.
             You teleport the target into an unoccupied space on stable ground within \rngmed range of you.
 
             \rankline
@@ -2468,7 +2468,7 @@ You cannot gain the same feat twice.
 
         \ff[18]{Find the Path}[Magical] You can use the \textit{find the path} ability as a standard action.
         \begin{attuneability}{Find the Path}
-            \glossterm{Attune} (self)
+            \abilitytag{Attune} (self)
             \rankline
             When you use this ability, you must unambiguously specify a location on the same plane as you.
             You know exactly what direction you must travel to reach your chosen destination by the most direct physical route.

@@ -143,7 +143,7 @@ export const barrier: MysticSphere = {
         Each 5-ft.\\ square of wall has 4 \\glossterm{hit points}, and all of its defenses are 0.
 
         When you cast this spell, you can \\glossterm{attune} to it.
-        If you do, it gains the \\glossterm{Attune} (self) tag and loses the \\abilitytag{Sustain} (minor) tag.
+        If you do, it gains the \\abilitytag{Attune} (self) tag and loses the \\abilitytag{Sustain} (minor) tag.
       `,
       rank: 1,
       scaling: {
