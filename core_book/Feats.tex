@@ -565,7 +565,9 @@ You cannot gain the same feat twice.
         \ff[9]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
         \ff[12]{Disguise Size}[Magical] You can use the \textit{disguise size} ability as a \glossterm{standard action}.
-        \begin{attuneability}{Disguise Size}[\glossterm{Attune} (self)]
+        \begin{attuneability}{Disguise Size}
+            \glossterm{Attune} (self)
+            \rankline
             You increase or decrease your size by one \glossterm{size category}.
             Your physical form is not altered fully to match your new size, and your Strength and Dexterity are unchanged.
             This effect lasts as long as you \glossterm{attune} to it.
@@ -853,7 +855,9 @@ You cannot gain the same feat twice.
         \ff[3]{Potent Poisons} You gain a \plus1 bonus to \glossterm{accuracy} with any poisons you make.
 
         \ff[6]{Tempting Concoction} You can use the \textit{tempting concoction} ability as a \glossterm{standard action}.
-        \begin{attuneability}{Tempting Concoction}[\abilitytag{Emotion}, \glossterm{Magical}, \abilitytag{Subtle}]
+        \begin{attuneability}{Tempting Concoction}
+            \spelltwocol{\abilitytag{Attune} (self)}{\abilitytag{Emotion}, \glossterm{Magical}, \abilitytag{Subtle}}
+            \rankline
             \targets{See text}
             Choose one liquid poison or potion you created, or an object containing one of those liquids, within \rngshort range.
             Whenever an \glossterm{enemy} notices the chosen object, make an attack vs. Mental against it.
@@ -1248,7 +1252,9 @@ You cannot gain the same feat twice.
 
         \ff[6]{Imbue Projectile} When you cast a spell that does not have the \glossterm{Attune} or \abilitytag{Sustain} tags,
             you can use the \textit{imbue projectile} ability.
-        \begin{attuneability}{Imbue Projectile}[\glossterm{Attune} (self), \glossterm{Magical}]
+        \begin{attuneability}{Imbue Projectile}
+            \spelltwocol{\glossterm{Attune} (self)}{\glossterm{Magical}}
+            \rankline
             The spell does not have its effect immediately.
             Instead, its power is imbued in a \glossterm{projectile} you hold.
             An individual projectile can only be imbued with this ability once, even if multiple creatures use this ability on the same projectile.
@@ -1601,7 +1607,9 @@ You cannot gain the same feat twice.
         \ff[3]{todo}
 
         \ff[6]{Extradimensional Concealment}[Magical] When you use the \textit{conceal object} ability, you can use the \textit{extradimensional pocket} ability.
-        \begin{attuneability}{Extradimensional Pocket}[\glossterm{Attune} (self), \glossterm{Magical}]
+        \begin{attuneability}{Extradimensional Pocket}
+            \spelltwocol{\glossterm{Attune} (self)}{\glossterm{Magical}}
+            \rankline
             You conceal the object in a pocket dimension that cannot be accessed by nonmagical means.
             When your attunement to this ability ends, the object appears in a free hand.
             If you have no free hands, it drops to the ground.
@@ -1739,7 +1747,9 @@ You cannot gain the same feat twice.
 
         \ff[6]{Imbue Weapon} When you cast a spell that does not have the \glossterm{Attune} or \abilitytag{Sustain} tags,
             you can use the \textit{imbue weapon} ability.
-        \begin{attuneability}{Imbue Weapon}[\glossterm{Attune} (self), \glossterm{Magical}]
+        \begin{attuneability}{Imbue Weapon}
+            \spelltwocol{\glossterm{Attune} (self)}{\glossterm{Magical}}
+            \rankline
             The spell does not have its effect immediately.
             Instead, its power is imbued in a melee weapon you hold.
             An individual weapon can only be imbued with this ability once.
@@ -2457,7 +2467,9 @@ You cannot gain the same feat twice.
         \ff[15]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus9.
 
         \ff[18]{Find the Path}[Magical] You can use the \textit{find the path} ability as a standard action.
-        \begin{attuneability}{Find the Path}[\glossterm{Attune} (self)]
+        \begin{attuneability}{Find the Path}
+            \glossterm{Attune} (self)
+            \rankline
             When you use this ability, you must unambiguously specify a location on the same plane as you.
             You know exactly what direction you must travel to reach your chosen destination by the most direct physical route.
             You are not always led in the exact direction of the destination -- if there is an impassable obstacle between the target and the destination, this ability will direct you around the obstacle, rather than through it.
