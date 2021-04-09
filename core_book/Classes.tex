@@ -203,7 +203,9 @@ This choice determines a great deal about your character's abilities.
         \cf{Bbn}[1]{Rage} You can use the \textit{rage} ability as a \glossterm{free action}.
         For most barbarians, this represents entering a furious rage.
         Some barbarians instead enter a joyous battle trance or undergo a partial physical transformation into a more fearsome form.
-        \begin{attuneability}{Rage}[\abilitytag{Emotion}, \abilitytag{Sustain} (free), \abilitytag{Swift}]
+        \begin{durationability}{Rage}
+            \spelltwocol{\abilitytag{Sustain} (free)}{\abilitytag{Emotion}, \abilitytag{Swift}}
+            \rankline
             For the duration of this ability, you gain the following benefits and drawbacks:
             \begin{itemize}
                 % This is an aggressive scaling that prevents any direct upgrades later in the archetype
@@ -220,7 +222,7 @@ This choice determines a great deal about your character's abilities.
             \rank{3} The power bonus increases to \plus4.
             \rank{5} The power bonus increases to \plus8.
             \rank{7} The power bonus increases to \plus16.
-        \end{attuneability}
+        \end{durationability}
 
         \cf{Bbn}[2]{Enraged Strike} As a standard action, you can use the \textit{enraged strike} ability.
         \begin{instantability}{Enraged Strike}
@@ -674,7 +676,9 @@ This choice determines a great deal about your character's abilities.
             In addition, you take half damage from \glossterm{falling damage}.
             \parhead{Aspect} You gain a \glossterm{glide speed} equal to your \glossterm{base speed} (see \pcref{Gliding}).
             \parhead{Essence} You can use the \textit{speak with air} ability as a standard action.
-            \begin{attuneability}{Speak with Air}[\glossterm{Attune} (self)]
+            \begin{attuneability}{Speak with Air}
+                \glossterm{Attune} (self)
+                \rankline
                 You can speak with and command air within a \areahuge radius \glossterm{zone} from your location.
                 You can ask the air simple questions and understand its responses.
                 If you command the air to perform a task, it will do so do the best of its ability until this effect ends.
@@ -710,7 +714,9 @@ This choice determines a great deal about your character's abilities.
             \parhead{Gift} You gain a \plus2 bonus to Fortitude defense.
             \parhead{Aspect} Whenever you kill a creature, you gain a \plus2 bonus to \glossterm{accuracy} until the end of the next round.
             \parhead{Essence} You can use the \textit{speak with dead} ability as a standard action.
-            \begin{attuneability}{Speak with Dead}[\glossterm{Attune} (self)]
+            \begin{attuneability}{Speak with Dead}
+                \glossterm{Attune} (self)
+                \rankline
                 Choose a corpse within \rngshort range.
                 The corpse must have died no more than 24 hours ago.
                 It regains a semblance of life, allowing you to speak with it as if it were the creature the corpse belonged to.
@@ -756,7 +762,9 @@ This choice determines a great deal about your character's abilities.
             \parhead{Gift} You gain a \plus2 bonus to Fortitude defense.
             \parhead{Aspect} You gain a \plus4 bonus to your maximum \glossterm{hit points}.
             \parhead{Essence} You can use the \textit{speak with earth} ability as a standard action.
-            \begin{attuneability}{Speak with Earth}[\glossterm{Attune} (self)]
+            \begin{attuneability}{Speak with Earth}
+                \glossterm{Attune} (self)
+                \rankline
                 You can speak with earth within a \areahuge radius \glossterm{zone} from your location.
                 You can ask the earth simple questions and understand its responses.
 
@@ -796,7 +804,9 @@ This choice determines a great deal about your character's abilities.
             \parhead{Gift} You gain a bonus equal to twice your rank in this archetype to your \glossterm{resistance} against fire damage.
             \parhead{Aspect} Your abilities cannot deal fire damage to your \glossterm{allies}.
             \parhead{Essence} You can use the \textit{speak with fire} ability as a standard action.
-            \begin{attuneability}{Speak with Fire}[\glossterm{Attune} (self)]
+            \begin{attuneability}{Speak with Fire}
+                \glossterm{Attune} (self)
+                \rankline
                 You can speak with and command fire within a \areahuge radius \glossterm{zone} from your location.
                 You can ask the fire simple questions and understand its responses.
                 If you command the fire to perform a task, it will do so do the best of its ability until this effect ends.
@@ -915,7 +925,9 @@ This choice determines a great deal about your character's abilities.
             \parhead{Gift} You gain two skill points.
             \parhead{Aspect} You gain a \plus4 bonus to Strength for the purpose of checks and determining your carrying capacity.
             \parhead{Essence} You can use the \textit{divine strength} ability as a \glossterm{minor action}.
-            \begin{attuneability}{Divine Strength}[\glossterm{Attune} (self)]
+            \begin{attuneability}{Divine Strength}
+                \glossterm{Attune} (self)
+                \rankline
                 You gain a \plus4 \glossterm{magic bonus} to Strength.
             \end{attuneability}
             \parhead{Mastery} You gain a \plus2 bonus to your base Strength.
@@ -984,7 +996,9 @@ This choice determines a great deal about your character's abilities.
             \parhead{Gift} You gain a \plus2 bonus to the Flexibility and Swim skills.
             \parhead{Aspect} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
             \parhead{Essence} You can use the \textit{speak with water} ability as a standard action.
-            \begin{attuneability}{Speak with Water}[\glossterm{Attune} (self)]
+            \begin{attuneability}{Speak with Water}
+                \glossterm{Attune} (self)
+                \rankline
                 You can speak with and command water within a \areahuge \glossterm{zone} from your location.
                 You can ask the water simple questions and understand its responses.
                 If you command the water to perform a task, it will do so do the best of its ability until this effect ends.
@@ -1503,18 +1517,22 @@ This choice determines a great deal about your character's abilities.
     \subsection{Wildspeaker}\label{Wildspeaker}
 
         \cf{Drd}[0]{Animal Speech}[Magical] You can use the \textit{animal speech} ability as a standard action.
-        \begin{attuneability}{Animal Speech}[\abilitytag{Sustain} (minor)]
+        \begin{durationability}{Animal Speech}
+            \abilitytag{Sustain} (minor)
+            \rankline
             Choose an animal within \rnglong range.
             You can speak to and understand the speech of the target animal, and any other animals of the same species.
 
             This ability does not make the target any more friendly or cooperative than normal.
             Wary and cunning animals are likely to be terse and evasive, while stupid ones tend to make inane comments and are unlikely to say or understand anything of use.
-        \end{attuneability}
+        \end{durationability}
 
         \cf{Drd}[1]{Natural Servant}[Magical]
         You can use the \textit{natural servant} ability.
         This ability requires spending 1 hour performing rituals in a natural area.
-        \begin{attuneability}{Natural Servant}[\glossterm{Attune} (self), \glossterm{Magical}]
+        \begin{attuneability}{Natural Servant}
+            \spelltwocol{\glossterm{Attune} (self)}{\glossterm{Magical}}
+            \rankline
             An animal native to the local environment appears to help you.
             It follows your directions to the best of its ability as long as you remain in its natural environment.
             Animals are unable to understand complex concepts, so their ability to obey convoluted instructions is limited.
@@ -2807,7 +2825,9 @@ This choice determines a great deal about your character's abilities.
         You can use the \textit{animal companion} ability.
         This ability requires 8 hours of training and attunement which the target must actively participate in.
         You can compel a wild animal to undergo this training by sustaining the \textit{command} ability from the Creature Handling skill (see \pcref{Command}).
-        \begin{attuneability}{Animal Companion}[\glossterm{Attune} (self), \abilitytag{Emotion}, \glossterm{Magical}]
+        \begin{attuneability}{Animal Companion}
+            \spelltwocol{\glossterm{Attune} (self)}{\abilitytag{Emotion}, \glossterm{Magical}}
+            \rankline
             Choose a Medium or smaller animal \glossterm{ally} within your \glossterm{reach} with a level no higher than your level and a \glossterm{challenge rating} no higher than 1.
             The target serves as a loyal companion to you.
             It follows your directions to the best of its ability.
@@ -2856,7 +2876,9 @@ This choice determines a great deal about your character's abilities.
         In addition, using the \textit{desperate exertion} ability on a Survival check to follow tracks only causes you to gain one \glossterm{fatigue point} instead of two.
 
         \cf{Rgr}[1]{Quarry}\label{Quarry} You can use the \textit{quarry} ability as a \glossterm{minor action}.
-        \begin{attuneability}{Quarry}[\glossterm{Attune} (self)]
+        \begin{attuneability}{Quarry}
+            \glossterm{Attune} (self)
+            \rankline
             Choose a creature within \rnglong range.
             The target becomes your quarry.
             You and your \glossterm{allies} within the same range are called your hunting party.
@@ -3188,7 +3210,9 @@ This choice determines a great deal about your character's abilities.
         This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
 
         \cf*{Rog}[3]{Darkstalker}[Magical] You can use the \textit{darkstalker} ability as a standard action.
-        \begin{attuneability}{Darkstalker}[\glossterm{Attune} (self)]
+        \begin{attuneability}{Darkstalker}
+            \glossterm{Attune} (self)
+            \rankline
             You become completely undetectable by your choice of one of the following sense groups:
             \begin{itemize}
                 \item \glossterm{Blindsense} and \glossterm{blindsight}
@@ -4273,7 +4297,9 @@ This choice determines a great deal about your character's abilities.
         }
 
         \cf{War}[1]{Possession} You can use the \textit{possession} ability as a \glossterm{free action} to allow your soulkeeper a greater influence over your actions.
-        \begin{attuneability}{Possession}[\abilitytag{Sustain} (free)]
+        \begin{durationability}{Possession}
+            \abilitytag{Sustain} (free)
+            \rankline
             You gain the following benefits and drawbacks:
             \begin{itemize}
                 \item You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
@@ -4290,7 +4316,7 @@ This choice determines a great deal about your character's abilities.
             \rank{3} The power bonus increases to \plus4.
             \rank{5} The power bonus increases to \plus8.
             \rank{7} The power bonus increases to \plus16.
-        \end{attuneability}
+        \end{durationability}
 
         \cf{War}[2]{Exchange Soul Fragment} Your connection to your soulkeeper deepens, allowing you to send a fragment of your experiences through the link.
         You can use the \textit{exchange soul fragment} ability as a \glossterm{minor action}.
