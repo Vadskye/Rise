@@ -16,11 +16,12 @@ def generate_implements():
             material_type="Wand",
             tags=[],
             description="""
-                This wand grants you knowledge of a single rank 1 spell that does not have the \\glossterm<Attune> tag.
+                This wand grants you knowledge of a single rank 1 spell that does not have the \\abilitytag<Attune> tag.
                 Each wand is associated with a specific spell, and a single \\glossterm<magic source> that can grant access to that spell.
                 You must have the ability to cast spells of the given rank from the same \\glossterm<magic source> as the wand.
                 However, you do not need to have access to the \\glossterm<mystic sphere> that the spell belongs to.
                 Spells you know because of a spell wand gain any rank upgrades appropriate to your rank with that form of spellcasting.
+                If you stop attuning to this item or its effect otherwise ends, the effects of any active spells that you know because of the wand also end, regardless of their normal duration.
             """,
             short_description="Grants knowledge of a rank 1 spell",
         ),
@@ -240,7 +241,7 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Whenever you use a \\glossterm<magical> ability that affects an area and does not have the \\glossterm<Sustain> or \\glossterm<Attune> tags, you can freely exclude any areas from the ability's effect.
+                Whenever you use a \\glossterm<magical> ability that affects an area and does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you can freely exclude any areas from the ability's effect.
                 All squares in the final area of the spell must be contiguous.
                 You cannot create split a spell's area into multiple completely separate areas.
             """,
@@ -298,7 +299,7 @@ def generate_implements():
             level=12,
             material_type="Staff",
             description="""
-                Whenever you use a \\glossterm<magical> ability that does not have the \\glossterm<Sustain> or \\glossterm<Attune> tags, you may choose a location within \\rngshort range.
+                Whenever you use a \\glossterm<magical> ability that does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you may choose a location within \\rngshort range.
                 The ability takes effect as if you were in the chosen location.
                 This affects your \\glossterm<line of effect> for the ability, but not your \\glossterm<line of sight> (since you still see from your normal location).
                 % Wording?
@@ -368,7 +369,7 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Whenever you use a \\glossterm<magical> ability that affects an area and does not have the \\glossterm<Attune> or \\glossterm<Sustain> tags, you may double its area.
+                Whenever you use a \\glossterm<magical> ability that affects an area and does not have the \\abilitytag<Attune> or \\abilitytag<Sustain> tags, you may double its area.
             """,
             short_description="Doubles area size",
         ),

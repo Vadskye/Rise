@@ -557,7 +557,7 @@ export const photomancy: MysticSphere = {
       castingTime: "24 hours",
       functionsLike: {
         exceptThat: `
-          it loses the \\glossterm{Attune} (ritual) tag and the effect lasts permanently.
+          it loses the \\abilitytag{Attune} (ritual) tag and the effect lasts permanently.
           In addition, it can only target objects.
         `,
         name: "continuous light",
