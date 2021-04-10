@@ -207,3 +207,50 @@
     text-align: center;
     width: 1em;
 }
+
+.active-ability-group {
+    .repcontainer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: flex-start;
+        align-items: flex-start;
+        width: calc(100% - 65px);
+
+        .repitem {
+            // Conceptually, this should match the name width displayed on the
+            // Active page. However, specifying a precise width here causes odd
+            // behavior, so we use percentages instead.
+            width: 48%;
+        }
+    }
+
+    .repcontrol_add {
+        display: none;
+    }
+
+    .active-ability-button {
+        margin-bottom: 0.25em;
+
+        .attack-label {
+            background: none;
+            box-shadow: none;
+            cursor: inherit;
+            padding: 0;
+        }
+
+        button {
+            align-items: baseline;
+            background: none;
+            border: 0;
+            box-shadow: none;
+            display: flex;
+            width: 100%;
+        }
+
+        .hidden {
+            display: none;
+        }
+    }
+}
