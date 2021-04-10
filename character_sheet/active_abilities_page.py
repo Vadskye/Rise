@@ -45,7 +45,7 @@ def create_page(destination):
                 {"class": f"repeating_attacks"},
                 attack("nondamaging"),
             ),
-            flex_wrapper(div({"class": "section-header"}, "Abilities")),
+            flex_wrapper(div({"class": "section-header"}, "Other Abilities")),
             fieldset(
                 {"class": f"repeating_abilities"},
                 ability(),

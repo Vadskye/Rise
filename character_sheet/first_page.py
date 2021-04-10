@@ -66,7 +66,7 @@ def create_page(destination):
                             active_ability_button("attack"),
                         ),
                     ),
-                    div({"class": "section-header"}, "Active Abilities"),
+                    div({"class": "section-header"}, "Other Abilities"),
                     flex_row(
                         {"class": "active-ability-group"},
                         fieldset(
