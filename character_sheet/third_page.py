@@ -36,10 +36,9 @@ def create_page():
             flex_col(
                 {"class": "main-body"},
                 [
-                    equipment(),
                     abilities_summary(),
+                    equipment(),
                     personality(),
-                    inventory(),
                 ],
             ),
         ],
@@ -88,7 +87,7 @@ def abilities_summary():
     return div(
         {"class": "abilities"},
         [
-            div({"class": "section-header"}, "Passive Abilities"),
+            div({"class": "section-header"}, "Passive Abilities and Ability Choices"),
             fieldset(
                 {"class": "repeating_passiveabilities"},
                 flex_row(
@@ -142,7 +141,7 @@ def equipment():
     return div(
         {"class": "equipment"},
         [
-            div({"class": "section-header"}, "Equipment"),
+            div({"class": "section-header"}, "Inventory and Non-Attuned Equipment"),
             fieldset(
                 {"class": "repeating_equipment"},
                 flex_row(
@@ -188,19 +187,6 @@ def archetypes():
             ],
         ],
     )
-
-
-def inventory():
-    return div(
-        {"class": "inventory"},
-        [
-            div({"class": "section-header"}, "Inventory"),
-            fieldset(
-                {"class": "repeating_inventory"}, text_input({"name": f"inventory"})
-            ),
-        ],
-    )
-
 
 def misc_equipment(body_slot, body_slot_html=None):
     if body_slot_html is None:
