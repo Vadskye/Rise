@@ -49,7 +49,7 @@ def create_page():
                 {'class': 'repeating_custommodifiers'},
                 custom_modifier(),
             ),
-            flex_wrapper(div({"class": "section-header"}, "Attuned Effects")),
+            flex_wrapper(div({"class": "section-header"}, "Attuned Abilities and Equipment")),
             fieldset(
                 {"class": f"repeating_attunements"},
                 attunement(),
