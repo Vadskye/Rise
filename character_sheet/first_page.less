@@ -11,6 +11,7 @@
 
     .skill-button {
         font-size: 1em;
+        margin-right: 0.1em;
     }
 
     input[type=number] {
@@ -58,13 +59,14 @@
 
 .main-body {
     flex-grow: 1;
+    width: 45em;
 }
 
 .special-defenses {
     flex-grow: 1;
 }
 
-.first-page > div, .all-statistics > div, .boring-row div, .ability > div, .attack > div {
+.first-page > div, .all-statistics > div, .boring-row div {
     margin-left: 0.2em;
     margin-right: 0.2em;
 }
@@ -74,31 +76,6 @@
 .first-page > div:last-child, .passive-ability-row > div:last-child, .all-statistics > div:last-child, .boring-row div:last-child, .active-ability > div:last-child, .attack > div:last-child {
     margin-right: 0;
 }
-
-.passive-ability-row > div {
-    flex-grow: 1;
-}
-
-.active-ability-effect, .attack-effect {
-    flex-grow: 1;
-}
-
-.active-ability-name, .attack-prefix {
-    width: 33%;
-}
-
-.attack-name input[type=text], .active-ability-name input[type=text] {
-    font-weight: 600;
-}
-
-.attack, .ability {
-    margin-bottom: 0.25em;
-}
-
-.attack-calcs {
-    justify-content: space-between;
-}
-
 
 .other-skills {
     .attribute {
@@ -110,16 +87,8 @@
     margin-bottom: 0.1em;
 }
 
-.attack-info {
-    margin-bottom: 0.25em;
-}
-
 .attribute {
     margin-bottom: 0.25em;
-}
-
-.passive-abilities, .all-statistics {
-    margin-bottom: 0.5em;
 }
 
 .attribute-section {
@@ -155,7 +124,7 @@
     font-size: 1.25em;
 }
 
-.core-statistics > .flex-row, .defenses > .flex-row, .resources > .flex-row, .damage-resistances > .flex-row, .vital-resistances > .flex-row {
+.core-statistics > .flex-row, .defenses > .flex-row, .resources > .flex-row, .damage-resistances > .flex-row, .vital-resistances > .flex-row, .movement > .flex-row {
     margin-top: 0.2em;
     margin-bottom: 0.2em;
 }
@@ -163,6 +132,7 @@
 .damage-resistances {
     .freeform-resistance-name {
         flex-grow: 1;
+        padding-top: 5.75px;
         width: 5em;
     }
 }
@@ -170,28 +140,6 @@
 .core-initiative {
     flex-grow: 1;
     text-align: center;
-}
-
-.attack-info {
-    justify-content: space-around;
-}
-
-.attack-info .number-label {
-    font-size: 1.25em;
-}
-
-.attack {
-    .attack-bonus {
-        width: 3em;
-    }
-
-    .attack-defense {
-        width: 4em;
-    }
-
-    .attack-dice {
-        width: 3em;
-    }
 }
 
 .special-defenses {
@@ -253,14 +201,6 @@
     margin-top: 0;
 }
 
-button.attack-roll[type=roll] {
-    margin-left: 0.5em;
-}
-
-.attack-power {
-    width: 4em;
-}
-
 .core-statistics-split {
     align-items: center;
 }
@@ -270,9 +210,70 @@ button.attack-roll[type=roll] {
     width: 1em;
 }
 
-textarea {
-    height: 5.5em;
-    margin: 0;
-    padding-right: 0;
-    // resize: none;
+.active-ability-group {
+    .repcontainer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: flex-start;
+        align-items: flex-start;
+        width: calc(100% - 65px);
+
+        .repitem {
+            // Conceptually, this should match the name width displayed on the
+            // Active page. However, specifying a precise width here causes odd
+            // behavior, so we use percentages instead.
+            width: 48%;
+        }
+    }
+
+    .repcontrol_add {
+        // This can have an element-specific "display: inline-block" if someone
+        // toggles Modify on and off, so we resort to dumber means to 
+        position: absolute;
+        visibility: hidden;
+    }
+
+    .active-ability-button {
+        margin-bottom: 0.25em;
+
+        .attack-label {
+            background: none;
+            box-shadow: none;
+            cursor: inherit;
+            margin-left: 0.1em;
+            padding: 0;
+        }
+
+        button {
+            align-items: baseline;
+            background: none;
+            border: 0;
+            box-shadow: none;
+            display: flex;
+            width: 100%;
+        }
+
+        .hidden {
+            display: none;
+        }
+    }
+
+    .custom-modifier-toggle {
+        input[type=text] {
+            box-shadow: none;
+            cursor: inherit;
+            // Should match length on Status page
+            width: 12em;
+        }
+
+        // Should match definition in Status page
+        .is-active {
+            height: 1.5em;
+            width: 1.5em;
+            margin-top: 0.7em;
+            margin-left: 0.5em;
+        }
+    }
 }
