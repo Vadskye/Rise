@@ -41,9 +41,16 @@ export const thaumaturgy: MysticSphere = {
     {
       name: "Magic Missile",
 
-      effect: `
-        Anything within \\medrange takes 1d6 energy damage.
-      `,
+      // -2d, -1 range level in exchange for the strong miss effect
+      attack: {
+        hit: `
+          The subject takes 1d6 + \\glossterm{power} energy damage.
+          \\miss The subject takes 1d6 energy damage.
+        `,
+        targeting: `
+          Make an attack vs. Armor against anything within \\shortrange.
+        `,
+      },
       narrative: `
         An unerring projectile made of pure magical energy streaks towards your foe, inflicting damage unavoidably.
       `,
@@ -55,9 +62,16 @@ export const thaumaturgy: MysticSphere = {
     {
       name: "Magic Missile Flurry",
 
-      effect: `
-        Everything in a \\smallarea radius within \\medrange takes 1d8 energy damage.
-      `,
+      // -2d, -1 range level in exchange for the strong miss effect
+      attack: {
+        hit: `
+          Each subject takes 1d8 + half \\glossterm{power} energy damage.
+          \\miss Each subject takes 1d8 energy damage.
+        `,
+        targeting: `
+          Make an attack vs. Armor against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
+        `,
+      },
       narrative: `
         A barrage of unerring projectiles made of pure magical energy streak towards an area, inflicting damage unavoidably.
       `,
@@ -69,9 +83,16 @@ export const thaumaturgy: MysticSphere = {
     {
       name: "Magic Missile Storm",
 
-      effect: `
-        All \\glossterm{enemies} in a \\medarea radius within \\longrange take 2d8 energy damage.
-      `,
+      // -2d, -1 range level in exchange for the strong miss effect
+      attack: {
+        hit: `
+          The subject takes 2d6 + half \\glossterm{power} energy damage.
+          \\miss Each subject takes 2d6 energy damage.
+        `,
+        targeting: `
+          Make an attack vs. Armor against all \\glossterm{enemies} in a \\medarea radius within \\medrange.
+        `,
+      },
       narrative: `
         A massive barrage of unerring projectiles made of pure magical energy streak towards your foes, inflicting damage unavoidably.
       `,
