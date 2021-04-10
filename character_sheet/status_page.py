@@ -156,17 +156,17 @@ def custom_modifier():
     return flex_row(
         {'class': 'custom-modifier'},
         [
+            underlabeled_checkbox(
+                "Active?",
+                None,
+                {"class": "is-active", "name": "is_active"},
+            ),
             labeled_text_input(
                 "Name",
                 {"class": "name"},
                 {"name": "name"},
             ),
             ''.join([custom_statistic(str(i)) for i in range(0, 4)]),
-            underlabeled_checkbox(
-                "Active?",
-                None,
-                {"class": "is-active", "name": "is_active"},
-            ),
         ],
     ),
 
