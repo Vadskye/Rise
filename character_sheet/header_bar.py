@@ -87,6 +87,10 @@ def nav_row():
         ),
         span({"class": "nav-button-label"}, "Core"),
         radio_input(
+            {"class": "nav-button nav-button-active", "name": "navrow", "value": "active"}
+        ),
+        span({"class": "nav-button-label"}, "Active"),
+        radio_input(
             {"class": "nav-button nav-button-page2", "name": "navrow", "value": "page2"}
         ),
         span({"class": "nav-button-label"}, "Calcs"),
