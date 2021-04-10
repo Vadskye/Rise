@@ -3,6 +3,7 @@
 import click
 import cgi_simple as cgi
 import first_page
+import active_abilities_page
 import rolltemplate
 import re
 import second_page
@@ -39,6 +40,12 @@ def main(destination):
                 ),
             ]) + '\n')
 
+        with open('active_abilities_page.html', 'w') as fh:
+            fh.write(''.join([
+                debug_stylesheets('active_abilities_page', destination),
+                debug_html_wrapper(active_abilities_page.create_page(destination), destination),
+            ]) + '\n')
+
         with open('second_page.html', 'w') as fh:
             fh.write(''.join([
                 debug_stylesheets('second_page', destination),
@@ -66,6 +73,7 @@ def main(destination):
         # Compile LESS
         call(['lessc', 'status_page.less', 'status_page.css'])
         call(['lessc', 'first_page.less', 'first_page.css'])
+        call(['lessc', 'active_abilities_page.less', 'active_abilities_page.css'])
         call(['lessc', 'second_page.less', 'second_page.css'])
         call(['lessc', 'third_page.less', 'third_page.css'])
         call(['lessc', 'reference_page.less', 'reference_page.css'])
@@ -78,6 +86,7 @@ def main(destination):
                 header_bar.create_page(cgi.DESTINATION),
                 ''.join(header_bar.nav_row()),
                 first_page.create_page(cgi.DESTINATION),
+                active_abilities_page.create_page(cgi.DESTINATION),
                 second_page.create_page(cgi.DESTINATION),
                 third_page.create_page(),
                 status_page.create_page(),
@@ -87,13 +96,13 @@ def main(destination):
 
         class_pattern = re.compile(r'\.([a-z\-]+)\b')
         with open('roll20.less', 'w') as output_file:
-            for filename in ['sheet', 'first_page', 'second_page', 'third_page', 'roll20_custom', 'reference_page', 'status_page']:
+            for filename in ['sheet', 'first_page', 'active_abilities_page', 'second_page', 'third_page', 'roll20_custom', 'reference_page', 'status_page']:
                 with open(filename + '.less', 'r') as input_file:
-                    if filename in ['first_page', 'second_page', 'third_page', 'reference_page', 'status_page']:
+                    if filename in ['first_page', 'active_abilities_page', 'second_page', 'third_page', 'reference_page', 'status_page']:
                         output_file.write(f"div.page.{filename.replace('_', '-')} {{\n")
                     for line in input_file:
                         output_file.write(line)
-                    if filename in ['first_page', 'second_page', 'third_page', 'reference_page', 'status_page']:
+                    if filename in ['first_page', 'active_abilities_page', 'second_page', 'third_page', 'reference_page', 'status_page']:
                         output_file.write("\n}")
                 output_file.write('\n\n')
             output_file.write(rolltemplate.rolltemplate_css())

@@ -3,6 +3,17 @@
     overflow: visible;
     margin: 0;
     padding: 0;
+
+    input[type=text] {
+        box-shadow: 0 -2px 2px -2px black inset;
+    }
+
+    input[type=number].fake-text {
+        box-shadow: 0 -2px 2px -2px black inset;
+        border: 0;
+        padding-top: 0.75em;
+        width: 100%;
+    }
 }
 
 .hidden {
@@ -133,14 +144,6 @@ input[type=text] {
 
 .blank-input {
     padding-top: 0.25em;
-}
-
-input[type=number].fake-text {
-    box-shadow: none !important;
-    border: 0;
-    border-bottom: 1px solid black;
-    padding-top: 0.75em;
-    width: 100%;
 }
 
 .boring-stuff {
