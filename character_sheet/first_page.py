@@ -23,6 +23,7 @@ from cgi_simple import (
     underlabeled_checkbox,
     underlabel_spaced,
 )
+from active_abilities_page import attack
 from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, SUBSKILLS
 import re
 
@@ -41,6 +42,38 @@ def create_page(destination):
                 {"class": "main-body"},
                 [
                     statistics_header(destination),
+                    div({"class": "section-header"}, "Magical Attacks"),
+                    flex_row(
+                        {"class": "active-ability-group"},
+                        fieldset(
+                            {"class": f"repeating_magicalattacks"},
+                            active_ability_button("attack"),
+                        ),
+                    ),
+                    div({"class": "section-header"}, "Mundane Attacks"),
+                    flex_row(
+                        {"class": "active-ability-group"},
+                        fieldset(
+                            {"class": f"repeating_mundaneattacks"},
+                            active_ability_button("attack"),
+                        ),
+                    ),
+                    div({"class": "section-header"}, "Non-Damaging Attacks"),
+                    flex_row(
+                        {"class": "active-ability-group"},
+                        fieldset(
+                            {"class": f"repeating_attacks"},
+                            active_ability_button("attack"),
+                        ),
+                    ),
+                    div({"class": "section-header"}, "Active Abilities"),
+                    flex_row(
+                        {"class": "active-ability-group"},
+                        fieldset(
+                            {"class": f"repeating_abilities"},
+                            active_ability_button("ability"),
+                        ),
+                    ),
                 ],
             ),
         ],
@@ -432,3 +465,30 @@ def movement():
             ),
         ],
     )
+
+def active_ability_button(ability_type):
+    prefix = "attack0" if ability_type == "attack" else "active_ability0"
+    button_name = "roll_attack" if ability_type == "attack" else "use_ability"
+    button_value = (
+        "&{template:custom}"
+        + " {{title=@{active_ability0_name}}}"
+        + " {{subtitle=@{character_name}}}"
+        + " {{color=@{chat_color}}}"
+        + " {{desc=@{active_ability0_effect}}}"
+    ) if ability_type == "ability" else None
+    return div({"class": "active-ability-button"}, [
+        text_input({"class": "hidden", "name": prefix + "_accuracy"}),
+        text_input({"class": "hidden", "name": prefix + "_defense"}),
+        text_input({"class": "hidden", "name": prefix + "_dice"}),
+        text_input({"class": "hidden", "name": prefix + "_power"}),
+        text_input({"class": "hidden", "name": prefix + "_effect"}),
+        button(
+            {
+                "class": "attack-roll",
+                "name": button_name,
+                "type": "roll",
+                "value": button_value,
+            },
+            text_input({"class": "attack-label", "readonly": True, "name": prefix + "_name"}),
+        ),
+    ]),
