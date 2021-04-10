@@ -64,7 +64,7 @@
     flex-grow: 1;
 }
 
-.first-page > div, .all-statistics > div, .boring-row div, .ability > div, .attack > div {
+.first-page > div, .all-statistics > div, .boring-row div {
     margin-left: 0.2em;
     margin-right: 0.2em;
 }
@@ -74,31 +74,6 @@
 .first-page > div:last-child, .passive-ability-row > div:last-child, .all-statistics > div:last-child, .boring-row div:last-child, .active-ability > div:last-child, .attack > div:last-child {
     margin-right: 0;
 }
-
-.passive-ability-row > div {
-    flex-grow: 1;
-}
-
-.active-ability-effect, .attack-effect {
-    flex-grow: 1;
-}
-
-.active-ability-name, .attack-prefix {
-    width: 33%;
-}
-
-.attack-name input[type=text], .active-ability-name input[type=text] {
-    font-weight: 600;
-}
-
-.attack, .ability {
-    margin-bottom: 0.25em;
-}
-
-.attack-calcs {
-    justify-content: space-between;
-}
-
 
 .other-skills {
     .attribute {
@@ -110,16 +85,8 @@
     margin-bottom: 0.1em;
 }
 
-.attack-info {
-    margin-bottom: 0.25em;
-}
-
 .attribute {
     margin-bottom: 0.25em;
-}
-
-.passive-abilities, .all-statistics {
-    margin-bottom: 0.5em;
 }
 
 .attribute-section {
@@ -171,28 +138,6 @@
 .core-initiative {
     flex-grow: 1;
     text-align: center;
-}
-
-.attack-info {
-    justify-content: space-around;
-}
-
-.attack-info .number-label {
-    font-size: 1.25em;
-}
-
-.attack {
-    .attack-bonus {
-        width: 3em;
-    }
-
-    .attack-defense {
-        width: 4em;
-    }
-
-    .attack-dice {
-        width: 3em;
-    }
 }
 
 .special-defenses {
@@ -254,14 +199,6 @@
     margin-top: 0;
 }
 
-button.attack-roll[type=roll] {
-    margin-left: 0.5em;
-}
-
-.attack-power {
-    width: 4em;
-}
-
 .core-statistics-split {
     align-items: center;
 }
@@ -269,11 +206,4 @@ button.attack-roll[type=roll] {
 .core-statistics-separator {
     text-align: center;
     width: 1em;
-}
-
-textarea {
-    height: 5.5em;
-    margin: 0;
-    padding-right: 0;
-    // resize: none;
 }
