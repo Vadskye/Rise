@@ -74,6 +74,14 @@ def create_page(destination):
                             active_ability_button("ability"),
                         ),
                     ),
+                    flex_wrapper(div({"class": "section-header"}, "Custom Modifiers")),
+                    flex_row(
+                        {"class": "active-ability-group"},
+                        fieldset(
+                            {'class': 'repeating_custommodifiers'},
+                            custom_modifier_toggle(),
+                        ),
+                    ),
                 ],
             ),
         ],
@@ -492,3 +500,9 @@ def active_ability_button(ability_type):
             text_input({"class": "attack-label", "readonly": True, "name": prefix + "_name"}),
         ),
     ]),
+
+def custom_modifier_toggle():
+    return flex_row({"class": "custom-modifier-toggle"}, [
+        checkbox({"class": "is-active", "name": "is_active"}),
+        text_input({"name": "name", "readonly": True}),
+    ])
