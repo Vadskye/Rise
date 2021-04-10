@@ -23,6 +23,7 @@ from cgi_simple import (
     underlabeled_checkbox,
     underlabel_spaced,
 )
+from active_abilities_page import attack
 from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, SUBSKILLS
 import re
 
@@ -41,8 +42,46 @@ def create_page(destination):
                 {"class": "main-body"},
                 [
                     statistics_header(destination),
-                    attacks(destination),
-                    abilities(destination),
+                    div({"class": "section-header"}, "Magical Attacks"),
+                    flex_row(
+                        {"class": "active-ability-group"},
+                        fieldset(
+                            {"class": f"repeating_magicalattacks"},
+                            active_ability_button("attack"),
+                        ),
+                    ),
+                    div({"class": "section-header"}, "Mundane Attacks"),
+                    flex_row(
+                        {"class": "active-ability-group"},
+                        fieldset(
+                            {"class": f"repeating_mundaneattacks"},
+                            active_ability_button("attack"),
+                        ),
+                    ),
+                    div({"class": "section-header"}, "Non-Damaging Attacks"),
+                    flex_row(
+                        {"class": "active-ability-group"},
+                        fieldset(
+                            {"class": f"repeating_attacks"},
+                            active_ability_button("attack"),
+                        ),
+                    ),
+                    div({"class": "section-header"}, "Other Abilities"),
+                    flex_row(
+                        {"class": "active-ability-group"},
+                        fieldset(
+                            {"class": f"repeating_abilities"},
+                            active_ability_button("ability"),
+                        ),
+                    ),
+                    flex_wrapper(div({"class": "section-header"}, "Custom Modifiers")),
+                    flex_row(
+                        {"class": "active-ability-group"},
+                        fieldset(
+                            {'class': 'repeating_custommodifiers'},
+                            custom_modifier_toggle(),
+                        ),
+                    ),
                 ],
             ),
         ],
@@ -435,225 +474,35 @@ def movement():
         ],
     )
 
+def active_ability_button(ability_type):
+    prefix = "attack0" if ability_type == "attack" else "active_ability0"
+    button_name = "roll_attack" if ability_type == "attack" else "use_ability"
+    button_value = (
+        "&{template:custom}"
+        + " {{title=@{active_ability0_name}}}"
+        + " {{subtitle=@{character_name}}}"
+        + " {{color=@{chat_color}}}"
+        + " {{desc=@{active_ability0_effect}}}"
+    ) if ability_type == "ability" else None
+    return div({"class": "active-ability-button"}, [
+        text_input({"class": "hidden", "name": prefix + "_accuracy"}),
+        text_input({"class": "hidden", "name": prefix + "_defense"}),
+        text_input({"class": "hidden", "name": prefix + "_dice"}),
+        text_input({"class": "hidden", "name": prefix + "_power"}),
+        text_input({"class": "hidden", "name": prefix + "_effect"}),
+        button(
+            {
+                "class": "attack-roll",
+                "name": button_name,
+                "type": "roll",
+                "value": button_value,
+            },
+            text_input({"class": "attack-label", "readonly": True, "name": prefix + "_name"}),
+        ),
+    ]),
 
-def abilities(destination):
-    return flex_col(
-        {"class": "abilities"},
-        [
-            flex_wrapper(div({"class": "section-header"}, "Abilities")),
-            "".join([ability() for i in range(13)])
-            if destination == "paper"
-            else fieldset(
-                {"class": f"repeating_abilities"},
-                ability(),
-            ),
-        ],
-    )
-
-def ability():
-    # TODO: make this legacy less dumb
-    ability_number = 0
-    return flex_row(
-        {"class": "ability"},
-        [
-            labeled_text_input(
-                "Name",
-                {"class": "active-ability-name"},
-                {"name": "active_ability0_name"},
-            ),
-            labeled_textarea(
-                "Effect",
-                {"class": "active-ability-effect"},
-                {"name": "active_ability0_effect"},
-            ),
-            button(
-                {
-                    "class": "attack-roll",
-                    "name": "use_ability",
-                    "type": "roll",
-                    "value": (
-                        "&{template:custom}"
-                        + " {{title=@{active_ability0_name}}}"
-                        + " {{subtitle=@{character_name}}}"
-                        + " {{color=@{chat_color}}}"
-                        + " {{desc=@{active_ability0_effect}}}"
-                    ),
-                },
-                "Use",
-            ),
-        ],
-    )
-
-
-def passive_abilities():
-    return flex_col(
-        {"class": "passive-abilities"},
-        [
-            flex_wrapper(div({"class": "section-header"}, "Passive Abilities")),
-            "".join(
-                [
-                    flex_row(
-                        {"class": "passive-ability-row"},
-                        [
-                            passive_ability(prefix="l", ability_number=i),
-                            passive_ability(prefix="r", ability_number=i),
-                        ],
-                    )
-                    for i in range(5)
-                ]
-            ),
-        ],
-    )
-
-
-def passive_ability(prefix, ability_number):
-    return div(
-        text_input({"name": "passive{0}-{1}-name".format(ability_number, prefix)})
-    )
-
-    return flex_row(
-        {"class": "passive-ability"},
-        [
-            labeled_text_input(
-                "Name",
-                {"class": "passive-name"},
-                input_attributes={
-                    "name": "passive{0}-{1}-name".format(ability_number, prefix),
-                },
-            ),
-            labeled_textarea(
-                "Effect",
-                {"class": "passive-effect"},
-                input_attributes={
-                    "name": "passive{0}-{1}-effect".format(ability_number, prefix),
-                },
-            ),
-        ],
-    )
-
-
-def attacks(destination):
-    if destination == "paper":
-        return flex_col(
-            {"class": "attacks"},
-            [
-                flex_wrapper(div({"class": "section-header"}, "Attacks")),
-                "".join([paper_attack() for i in range(6)]),
-            ],
-        )
-    else:
-        return flex_col(
-            {"class": "attacks"},
-            [
-                flex_wrapper(div({"class": "section-header"}, "Magical Attacks")),
-                fieldset(
-                    {"class": f"repeating_magicalattacks"},
-                    attack("magical"),
-                ),
-                flex_wrapper(div({"class": "section-header"}, "Mundane Attacks")),
-                fieldset(
-                    {"class": f"repeating_mundaneattacks"},
-                    attack("mundane"),
-                ),
-                flex_wrapper(div({"class": "section-header"}, "Non-Damaging Attacks")),
-                fieldset(
-                    {"class": f"repeating_attacks"},
-                    attack("nondamaging"),
-                ),
-            ],
-        )
-
-
-def paper_attack():
-    return flex_row(
-        {"class": "attack"},
-        [
-            labeled_text_input(
-                "Name",
-                {"class": "attack-name"},
-            ),
-            underlabel_spaced(
-                "Accuracy",
-                number_input({"class": "fake-text"}),
-                {"class": "attack-bonus"},
-            ),
-            labeled_text_input(
-                "Damage/Effect",
-                {"class": "attack-effect"},
-            ),
-        ],
-    )
-
-
-# source: 'magical', 'mundane', 'nondamaging'
-def attack(source):
-    return flex_row(
-        {"class": "attack"},
-        [
-            flex_col(
-                {"class": "attack-prefix"},
-                [
-                    flex_wrapper(
-                        labeled_text_input(
-                            "Name",
-                            {"class": "attack-name"},
-                            {"name": "attack0_name"},
-                        ),
-                    ),
-                    flex_row(
-                        {"class": "attack-calcs"},
-                        [
-                            underlabel_spaced(
-                                "+Acc",
-                                number_input(
-                                    {
-                                        "class": "fake-text",
-                                        "name": "attack0_accuracy",
-                                    }
-                                ),
-                                {"class": "attack-bonus"},
-                            ),
-                            labeled_text_input(
-                                "Defense",
-                                {"class": "attack-defense"},
-                                {"name": "attack0_defense"},
-                            ),
-                            labeled_text_input(
-                                "Dmg",
-                                {"class": "attack-dice"},
-                                {"name": "attack0_dice"},
-                            )
-                            if source != "nondamaging"
-                            else "",
-                            underlabel(
-                                "Power",
-                                select(
-                                    {"class": "attack-power", "name": "attack0_power"},
-                                    [
-                                        option({"value": "1"}, "Full"),
-                                        option({"value": "0.5"}, "Half"),
-                                        option({"value": "0"}, "None"),
-                                    ],
-                                ),
-                            )
-                            if source != "nondamaging"
-                            else "",
-                        ],
-                    ),
-                ],
-            ),
-            labeled_textarea(
-                "Effect",
-                {"class": "attack-effect"},
-                {"name": "attack0_effect"},
-            ),
-            button(
-                {
-                    "class": "attack-roll",
-                    "name": f"roll_attack",
-                    "type": "roll",
-                },
-                "Attack",
-            ),
-        ],
-    )
+def custom_modifier_toggle():
+    return flex_row({"class": "custom-modifier-toggle"}, [
+        checkbox({"class": "is-active", "name": "is_active"}),
+        text_input({"name": "name", "readonly": True}),
+    ])
