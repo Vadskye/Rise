@@ -11,6 +11,7 @@
 
     .skill-button {
         font-size: 1em;
+        margin-right: 0.1em;
     }
 
     input[type=number] {
@@ -58,6 +59,7 @@
 
 .main-body {
     flex-grow: 1;
+    width: 45em;
 }
 
 .special-defenses {
@@ -227,7 +229,10 @@
     }
 
     .repcontrol_add {
-        display: none;
+        // This can have an element-specific "display: inline-block" if someone
+        // toggles Modify on and off, so we resort to dumber means to 
+        position: absolute;
+        visibility: hidden;
     }
 
     .active-ability-button {
@@ -237,6 +242,7 @@
             background: none;
             box-shadow: none;
             cursor: inherit;
+            margin-left: 0.1em;
             padding: 0;
         }
 
