@@ -222,8 +222,26 @@ def attack(source):
                     "class": "attack-roll",
                     "name": f"roll_attack",
                     "type": "roll",
+                    "value": attack_button_text(source),
                 },
                 "Attack",
             ),
         ],
+    )
+
+def attack_button_text(source):
+    damage = {
+        'nondamaging': '',
+        'magical': '[[@{attack0_dice}+floor(@{magical_power}*@{attack0_power})]]',
+        'mundane': '[[@{attack0_dice}+floor(@{mundane_power}*@{attack0_power})]]',
+    }[source]
+    damage_text = " {{Damage=" + damage + "}}" if damage else ""
+    return (
+        "&{template:custom}"
+        + " {{title=@{attack0_name}}}"
+        + " {{subtitle=@{character_name}}}"
+        + " {{Attack=[[d10!+@{accuracy}+@{attack0_accuracy}]] vs @{attack0_defense}}}"
+        + damage_text
+        + " {{color=@{chat_color}}}"
+        + " {{desc=@{attack0_effect}}}"
     )
