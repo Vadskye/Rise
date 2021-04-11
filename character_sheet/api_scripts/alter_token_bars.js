@@ -51,6 +51,9 @@ AlterScript.Process = function(msg, who) {
     	const n = msg.content.split(" ");
     	const who = msg.who;
     	const Target = getObj("graphic", targetId);
+      if (!Target) {
+        continue;
+      }
     	let Bar = 0;
     	Bar = (n[1].toLowerCase().toString() == Bar1Key) ? 1 : 0;
     	Bar = (n[1].toLowerCase().toString() == Bar2Key) ? 2 : Bar;
