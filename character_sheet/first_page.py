@@ -19,6 +19,7 @@ from cgi_simple import (
     span,
     subtlebutton,
     text_input,
+    textarea,
     underlabel,
     underlabeled_checkbox,
     underlabel_spaced,
@@ -489,7 +490,7 @@ def active_ability_button(ability_type):
         text_input({"class": "hidden", "name": prefix + "_defense"}),
         text_input({"class": "hidden", "name": prefix + "_dice"}),
         text_input({"class": "hidden", "name": prefix + "_power"}),
-        text_input({"class": "hidden", "name": prefix + "_effect"}),
+        textarea({"class": "hidden", "name": prefix + "_effect"}),
         button(
             {
                 "class": "attack-roll",
