@@ -228,9 +228,10 @@
         }
     }
 
-    .repcontrol_add {
+    .repcontrol_add, .repcontrol_del {
         // This can have an element-specific "display: inline-block" if someone
         // toggles Modify on and off, so we resort to dumber means to 
+        left: -10000px;
         position: absolute;
         visibility: hidden;
     }
