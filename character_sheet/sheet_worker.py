@@ -1144,7 +1144,5 @@ def attack_button_text(attack_group):
         + " {{Attack=[[d10!+@{accuracy}+@{attack0_accuracy}]] vs @{attack0_defense}}}"
         + damage_text
         + " {{color=${color || '@{chat_color}'}}}"
-        # For unknown and surely horrifying reasons, this has to be referenced
-        # this way to preserve line breaks
-        + " {{desc=${v['" + attack_group + "_attack0_effect']}}}"
+        + " {{desc=@{attack0_effect}}}"
     )
