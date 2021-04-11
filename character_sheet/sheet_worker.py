@@ -16,8 +16,8 @@ def generate_script():
             skill_points_spent(),
             unknown_statistic(),
             custom_modifiers(),
+            monster_chat_color(),
             debuffs(),
-            attack_buttons(),
             "</script>",
             "",
         ]
@@ -30,14 +30,14 @@ def formatChangeString(varName):
         return 'change:' + varName
 
 
-def js_wrapper(variables, function_body, boolean_variables=[], include_level=True):
+def js_wrapper(variables, function_body, boolean_variables=[], string_variables=[], include_level=True):
     # not everything actually depends on level, but it's convenient to make
     # everything recalculate when level changes
     if include_level:
         variables = variables + ["level"]
-    variables_with_level = sorted(list(set(variables + boolean_variables)))
-    change_string = " ".join([formatChangeString(var) for var in variables_with_level])
-    get_attrs_string = ", ".join([f'"{var}"' for var in variables + boolean_variables])
+    all_unique_variables = sorted(list(set(variables + boolean_variables + string_variables)))
+    change_string = " ".join([formatChangeString(var) for var in all_unique_variables])
+    get_attrs_string = ", ".join([f'"{var}"' for var in all_unique_variables])
     set_variables_string = (
         ";\n    ".join(
             [
@@ -47,6 +47,10 @@ def js_wrapper(variables, function_body, boolean_variables=[], include_level=Tru
             [
                 f'var {stringify_variable_name(var)} = v["{var}"] === "on" ? true : false;'
                 for var in boolean_variables
+            ] +
+            [
+                f'var {stringify_variable_name(var)} = v["{var}"];'
+                for var in string_variables
             ]
         )
         + ";"
@@ -1039,6 +1043,19 @@ def vital_rolls():
         """,
     )
 
+def monster_chat_color():
+    return js_wrapper(
+        ["challenge_rating"],
+        string_variables=["chat_color"],
+        function_body=f"""
+            if (challenge_rating > 0) {{
+                setAttrs({{
+                    chat_color: "monster",
+                }});
+            }}
+        """,
+    )
+
 
 def custom_modifiers():
     return """
@@ -1088,61 +1105,3 @@ def custom_modifiers():
             });
         });
     """
-
-
-def attack_buttons():
-    attack_groups = [
-        "repeating_magicalattacks",
-        "repeating_mundaneattacks",
-        "repeating_attacks",
-    ]
-    return "\n".join(
-        [
-            js_wrapper(
-                [
-                    f"{attack_group}_attack0_name",
-                    f"{attack_group}_attack0_accuracy",
-                    f"{attack_group}_attack0_defense",
-                    f"{attack_group}_attack0_dice",
-                    f"{attack_group}_attack0_power",
-                    f"{attack_group}_attack0_effect",
-                ],
-                f"""
-                    getAttrs(["challenge_rating"], (values) => {{
-                        const challengeRating = Number(values.challenge_rating) || 0;
-                        const color = challengeRating > 0 ? "monster" : null;
-                        setAttrs({{
-                            {attack_group}_roll_attack: `{attack_button_text(attack_group)}`
-                        }});
-                    }})
-                """,
-                include_level=False,
-            )
-            for attack_group in attack_groups
-        ]
-    )
-
-
-def attack_button_text(attack_group):
-    damage = {
-        'repeating_attacks': '',
-        'repeating_magicalattacks': '[[@{attack0_dice}+floor(@{magical_power}*@{attack0_power})]]',
-        'repeating_mundaneattacks': '[[@{attack0_dice}+floor(@{mundane_power}*@{attack0_power})]]',
-    }[attack_group]
-    damage_text = " {{Damage=" + damage + "}}" if damage else ""
-
-    color = {
-        'repeating_attacks': 'nondamaging',
-        'repeating_magicalattacks': 'magical',
-        'repeating_mundaneattacks': 'mundane',
-    }[attack_group]
-
-    return (
-        "&{template:custom}"
-        + " {{title=@{attack0_name}}}"
-        + " {{subtitle=@{character_name}}}"
-        + " {{Attack=[[d10!+@{accuracy}+@{attack0_accuracy}]] vs @{attack0_defense}}}"
-        + damage_text
-        + " {{color=${color || '@{chat_color}'}}}"
-        + " {{desc=@{attack0_effect}}}"
-    )
