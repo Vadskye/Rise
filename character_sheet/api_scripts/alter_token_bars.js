@@ -13,7 +13,7 @@ on("chat:message", function (msg) {
 	
 	// Get the api command...
 	var command = msg.content.split(" ", 1)[0];
-	if (command === "!alter") AlterScript.Process(msg);
+	if (command === "!altertokenbar") AlterScript.Process(msg);
 });
 
 AlterScript.Process = function(msg, who) {
