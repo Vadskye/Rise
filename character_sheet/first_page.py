@@ -24,7 +24,7 @@ from cgi_simple import (
     underlabeled_checkbox,
     underlabel_spaced,
 )
-from active_abilities_page import attack
+from active_abilities_page import attack_button_text
 from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, SUBSKILLS
 import re
 
@@ -48,7 +48,7 @@ def create_page(destination):
                         {"class": "active-ability-group"},
                         fieldset(
                             {"class": f"repeating_magicalattacks"},
-                            active_ability_button("attack"),
+                            active_ability_button("attack", "magical"),
                         ),
                     ),
                     div({"class": "section-header"}, "Mundane Attacks"),
@@ -56,7 +56,7 @@ def create_page(destination):
                         {"class": "active-ability-group"},
                         fieldset(
                             {"class": f"repeating_mundaneattacks"},
-                            active_ability_button("attack"),
+                            active_ability_button("attack", "mundane"),
                         ),
                     ),
                     div({"class": "section-header"}, "Non-Damaging Attacks"),
@@ -64,7 +64,7 @@ def create_page(destination):
                         {"class": "active-ability-group"},
                         fieldset(
                             {"class": f"repeating_attacks"},
-                            active_ability_button("attack"),
+                            active_ability_button("attack", "nondamaging"),
                         ),
                     ),
                     div({"class": "section-header"}, "Other Abilities"),
@@ -475,7 +475,7 @@ def movement():
         ],
     )
 
-def active_ability_button(ability_type):
+def active_ability_button(ability_type, source=None):
     prefix = "attack0" if ability_type == "attack" else "active_ability0"
     button_name = "roll_attack" if ability_type == "attack" else "use_ability"
     button_value = (
@@ -484,7 +484,7 @@ def active_ability_button(ability_type):
         + " {{subtitle=@{character_name}}}"
         + " {{color=@{chat_color}}}"
         + " {{desc=@{active_ability0_effect}}}"
-    ) if ability_type == "ability" else None
+    ) if ability_type == "ability" else attack_button_text(source)
     return div({"class": "active-ability-button"}, [
         text_input({"class": "hidden", "name": prefix + "_accuracy"}),
         text_input({"class": "hidden", "name": prefix + "_defense"}),
