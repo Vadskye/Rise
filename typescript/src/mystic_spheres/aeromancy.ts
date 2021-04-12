@@ -395,10 +395,10 @@ export const aeromancy: MysticSphere = {
         // crit: '',
         glance: "Half damage.",
         hit: `
-          Each subject takes 2d6 \\add half \\glossterm{power} bludgeoning damage.
+          Each subject takes 2d6 bludgeoning damage.
         `,
         targeting: `
-          At the end of each phase, make an attack vs. Armor against each creature within \\shortrange that attacked you during that phase.
+          At the end of each round, make an attack vs. Armor against each creature within \\shortrange that attacked you during that round.
           Any effect which increases this spell's range increases the range of this retaliation by the same amount.
         `,
       },
