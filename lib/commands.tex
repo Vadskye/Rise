@@ -127,8 +127,7 @@
 
 \DeclareDocumentCommand{\parhead}{s m o}
 {
-    \vspace{0.25em}
-    \par \noindent
+    \par
     \IfNoValueTF{#3}
     {\textbf{#2}:}
     {\textbf{#2}~[#3]:}\xspace
@@ -136,7 +135,6 @@
 
 \DeclareDocumentCommand{\parheadindent}{s m o}
 {
-    \vspace{0.25em}
     \par
     \IfNoValueTF{#3}
     {\textbf{#2}:}
