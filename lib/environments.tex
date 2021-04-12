@@ -67,10 +67,8 @@
 
 \DeclareDocumentEnvironment{spellcontent}{}
 {
-    \begin{thesamepage}
 }
 {
-    \end{thesamepage}
 }
 \surroundwithmdframed[
     style=spellcontent,
@@ -84,7 +82,6 @@
 
 \DeclareDocumentEnvironment{freeability}{o m o}
 {
-    \begin{thesamepage}
     \RaggedRight
     \lowercase{\hypertarget{ability:#2}{}}
     \hypertarget{ability:#2}{}
@@ -95,9 +92,7 @@
         \IfValueTF{#3}{#3}{}
     }
 }
-{
-    \end{thesamepage}
-}
+{}
 \surroundwithmdframed[
     backgroundcolor=cosmiclatte,
     leftline=true,
@@ -109,13 +104,12 @@
     skipbelow=0.5em,
     innerleftmargin=0.25em,
     innerrightmargin=0.5em,
-    innertopmargin=-0.1em,  % using thesamepage gives it a top margin
+    innertopmargin=0.5em,
     innerbottommargin=0.25em,
 ]{freeability}
 
 \DeclareDocumentEnvironment{durationability}{o m o}
 {
-    \begin{thesamepage}
     \RaggedRight
     \lowercase{\hypertarget{ability:#2}{}}
     \hypertarget{ability:#2}{}
@@ -126,9 +120,7 @@
         \IfValueTF{#3}{#3}{}
     }
 }
-{
-    \end{thesamepage}
-}
+{}
 \surroundwithmdframed[
     backgroundcolor=cosmiclatte,
     leftline=true,
@@ -140,13 +132,12 @@
     skipbelow=0.5em,
     innerleftmargin=0.25em,
     innerrightmargin=0.5em,
-    innertopmargin=-0.1em,  % using thesamepage gives it a top margin
+    innertopmargin=0.5em,
     innerbottommargin=0.25em,
 ]{durationability}
 
 \DeclareDocumentEnvironment{attuneability}{o m o}
 {
-    \begin{thesamepage}
     \RaggedRight
     \lowercase{\hypertarget{ability:#2}{}}
     \hypertarget{ability:#2}{}
@@ -157,9 +148,7 @@
         \IfValueTF{#3}{#3}{}
     }
 }
-{
-    \end{thesamepage}
-}
+{}
 \surroundwithmdframed[
     backgroundcolor=brown!8,
     leftline=true,
@@ -171,13 +160,12 @@
     skipbelow=0.5em,
     innerleftmargin=0.25em,
     innerrightmargin=0.5em,
-    innertopmargin=-0.1em,  % using thesamepage gives it a top margin
+    innertopmargin=0.5em,
     innerbottommargin=0.25em,
 ]{attuneability}
 
 \DeclareDocumentEnvironment{instantability}{o m o}
 {
-    \begin{thesamepage}
     \RaggedRight
     \lowercase{\hypertarget{ability:#2}{}}
     \hypertarget{ability:#2}{}
@@ -189,7 +177,6 @@
     }
 }
 {
-    \end{thesamepage}
 }
 \surroundwithmdframed[
     backgroundcolor=MintCream,
@@ -202,7 +189,7 @@
     skipbelow=0.5em,
     innerleftmargin=0.25em,
     innerrightmargin=0.5em,
-    innertopmargin=-0.1em,  % using thesamepage gives it a top margin
+    innertopmargin=0.5em,
     innerbottommargin=0.25em,
 ]{instantability}
 
