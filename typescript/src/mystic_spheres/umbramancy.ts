@@ -167,7 +167,7 @@ export const umbramancy: MysticSphere = {
 
       attack: {
         // -1d to compensate for +2a
-        hit: `The subject takes 1d8 + \\glossterm{power} cold damage.`,
+        hit: `The subject takes 1d10 + \\glossterm{power} cold damage.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\longrange.
           You gain a +2 bonus to \\glossterm{accuracy} with the attack if the subject is not in \\glossterm{bright illumination}.
