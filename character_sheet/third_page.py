@@ -38,6 +38,7 @@ def create_page():
                 [
                     abilities_summary(),
                     equipment(),
+                    inventory(),
                     personality(),
                 ],
             ),
@@ -141,7 +142,7 @@ def equipment():
     return div(
         {"class": "equipment"},
         [
-            div({"class": "section-header"}, "Inventory and Non-Attuned Equipment"),
+            div({"class": "section-header"}, "Non-Attuned Equipment"),
             fieldset(
                 {"class": "repeating_equipment"},
                 flex_row(
@@ -213,4 +214,13 @@ def personality():
             div({"class": "section-header"}, "Personality and Background"),
             textarea({"class": "personality", "name": "personality_and_background"}),
         ]
+    )
+
+def inventory():
+    return div(
+        {"class": "inventory"},
+        [
+            div({"class": "section-header"}, "Inventory"),
+            textarea({"name": "inventory"}),
+        ],
     )
