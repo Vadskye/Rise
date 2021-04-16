@@ -393,7 +393,8 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \parhead{Block} As a \glossterm{move action}, you can use the \textit{block} ability to prevent a creature from entering a particular area.
 
-        \begin{instantability}{\labeltext{Block}}
+        \begin{instantability}{Block}
+            \label{Block}
             Instant
             \rankline
             Choose a creature to block, and the area you want to block it from entering.
@@ -408,7 +409,8 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \parhead{Follow} As a \glossterm{move action}, you can use the \textit{follow} ability to follow a creature as it moves.
 
-        \begin{instantability}{\labeltext{Follow}}
+        \begin{instantability}{Follow}
+            \label{Follow}
             Instant
             \rankline
             Choose a creature to follow, and the maximum distance you want to follow at.
@@ -418,7 +420,8 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \parhead{Withdraw} As a \glossterm{move action}, you can use the \textit{withdraw} ability to keep away from creatures as they move.
 
-        \begin{instantability}{\labeltext{Withdraw}}
+        \begin{instantability}{Withdraw}
+            \label{Withdraw}
             Instant
             \rankline
             This ability functions like the \textit{follow} ability, except that you specify a minimum distance between you and the target instead of a maximum distance.
@@ -1445,7 +1448,8 @@ It defines how attributes work and explains how to make attacks in combat.
         However, wielding two weapons can allow you to make an additional strike each round.
         For details, see \pcref{Offhand Strike}.
 
-        \begin{instantability}{\labeltext{Melee Strike}}
+        \begin{instantability}{Melee Strike}
+            \label{Melee Strike}
             Instant
             \rankline
             Choose one \glossterm{melee} weapon you are wielding and are able to attack with.
@@ -1455,7 +1459,8 @@ It defines how attributes work and explains how to make attacks in combat.
             \crit The target takes double damage from the weapon, as normal for critical hits (see \pcref{Critical Hits}).
         \end{instantability}
 
-        \begin{instantability}{\labeltext{Projectile Strike}}
+        \begin{instantability}{Projectile Strike}
+            \label{Projectile Strike}
             Instant
             \rankline
             Choose one \glossterm{projectile weapon} that you are wielding and are able to attack with.
@@ -1467,7 +1472,8 @@ It defines how attributes work and explains how to make attacks in combat.
             \crit The target takes double damage from the weapon, as normal for critical hits (see \pcref{Critical Hits}).
         \end{instantability}
 
-        \begin{instantability}{\labeltext{Thrown Strike}}
+        \begin{instantability}{Thrown Strike}
+            \label{Thrown Strike}
             Choose one \glossterm{thrown weapon} that you are wielding and are able to attack with.
             Make an attack vs. Armor with that weapon against anything that you have \glossterm{line of sight} and \glossterm{line of effect} to.
             You take a \minus1 penalty to \glossterm{accuracy} for each full \glossterm{range increment} between you and the target.
@@ -1519,7 +1525,8 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \parhead{Charge} You can use the \textit{charge} ability as a standard action.
 
-        \begin{instantability}{\labeltext{Charge}}
+        \begin{instantability}{Charge}
+            \label{Charge}
             Instant
             \rankline
             After you use this ability, you gain a \glossterm{fatigue point}.
@@ -1534,7 +1541,8 @@ It defines how attributes work and explains how to make attacks in combat.
         You can even use it after you learn what the effects of a successful attack or check would be, if that is information you could normally learn if it succeeded.
         However, you must use it before the phase is over.
 
-        \begin{instantability}{\labeltext{Desperate Exertion}}
+        \begin{instantability}{Desperate Exertion}
+            \label{Desperate Exertion}
             \spelltwocol{Instant}{\abilitytag{Swift}}
             \rankline
             After you use this ability, you gain two \glossterm{fatigue points} (see \pcref{Fatigue}).
@@ -1608,7 +1616,8 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \parhead{Overrun} As a \glossterm{move action}, you can use the \textit{overrun} ability to move through creatures in your way.
 
-        \begin{instantability}{\labeltext{Overrun}}
+        \begin{instantability}{Overrun}
+            \label{Overrun}
             Instant
             \rankline
             After you use this ability, you gain a \glossterm{fatigue point}.
@@ -1627,7 +1636,8 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \parhead{Recover} You can use the \textit{recover} ability as a standard action.
         As long as you are conscious, no effect can prevent you from using this ability, even effects that prohibit using any other abilities.
-        \begin{instantability}{\labeltext{Recover}}
+        \begin{instantability}{Recover}
+            \label{Recover}
             Instant
             \rankline
             When you use this ability, you gain two \glossterm{fatigue points} (see \pcref{Fatigue}).
@@ -1660,7 +1670,8 @@ It defines how attributes work and explains how to make attacks in combat.
         % to prevent it from being abused with abilities like Shove.
         \parhead{Sprint} As a \glossterm{move action}, you can use the \textit{sprint} ability to move more quickly.
 
-        \begin{instantability}{\labeltext{Sprint}}
+        \begin{instantability}{Sprint}
+            \label{Sprint}
             Instant
             \rankline
             You move up to double your normal movement speed.
@@ -1669,7 +1680,8 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \parhead{Struggle} As a standard action, you can use the \textit{struggle} ability to move despite movement impediments.
 
-        \begin{durationability}{\labeltext{Struggle}}
+        \begin{durationability}{Struggle}
+            \label{Struggle}
             Duration
             \rankline
             Until the end of the current phase, your land speed becomes five feet, regardless of all other effects that would modify your land speed.
@@ -1685,7 +1697,8 @@ It defines how attributes work and explains how to make attacks in combat.
         As long as you have a Strength of at least \minus2, you do not have to use this ability to throw weapons that are sized appropriately for you and which are designed to be thrown.
         Instead, you can simply use the \glossterm{range increment} for those weapons.
 
-        \begin{instantability}{\labeltext{Throw}}
+        \begin{instantability}{Throw}
+            \label{Throw}
             Instant
             \rankline
             Make a Strength check to throw an object you hold in at least one hand.
@@ -1701,7 +1714,8 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \parhead{Total Defense} As a standard action, you can use the \textit{total defense} ability to focus entirely on defending yourself.
 
-        \begin{durationability}{\labeltext{Total Defense}}
+        \begin{durationability}{Total Defense}
+            \label{Total Defense}
             \spelltwocol{Duration}{\abilitytag{Swift}}
             \rankline
             You gain a \plus2 bonus to your \glossterm{defenses} until the end of the round.
@@ -1710,7 +1724,8 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \parhead{Trip} As a standard action, you can use the \textit{trip} ability to trip a creature.
 
-        \begin{instantability}{\labeltext{Trip}}
+        \begin{instantability}{Trip}
+            \label{Trip}
             Instant
             \rankline
             Make a melee attack with a free hand against a creature's Reflex defenses.
@@ -1740,7 +1755,8 @@ It defines how attributes work and explains how to make attacks in combat.
 
             \parhead{Escape Grapple} As a standard action, you can use the \textit{escape grapple} ability to try to stop being grappled.
 
-            \begin{instantability}{\labeltext{Escape Grapple}}
+            \begin{instantability}{Escape Grapple}
+                \label{Escape Grapple}
                 Instant
                 \rankline
                 Make an attack against any number of creatures that you are grappled by.
