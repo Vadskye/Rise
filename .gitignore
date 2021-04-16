@@ -255,3 +255,4 @@ typescript/src/**/*.js
 typescript/node_modules/
 typescript/tsconfig.tsbuildinfo
 core_book/generated
+html_book/generated
