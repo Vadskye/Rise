@@ -1038,14 +1038,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Druid Progression}
 \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X l >{\lcol}X >{\lcol}X}
     \tb{Rank} & \tb{Min Level} & \tb{Elementalist}         & \tb{Nature Magic} & \tb{Nature Spell Mastery}   & \tb{Shifter}               & \tb{Wildspeaker}         \tableheaderrule
-    0 & \tdash & Elemental balance         & Cantrips                        & Combat caster               & Shifting defense                                   & Animal speech           \\
-    1 & 1      & Elemental magic           & Spellcasting                    & Mystic insight              & Wild aspects                                       & Natural servant         \\
-    2 & 4      & Elemental influence       & Spell rank (2), spell knowledge & Natural guidance            & Shift body                                         & Nature's ally           \\
-    3 & 7      & Greater elemental balance & Spell rank (3)                  & Wellspring of power         & Glancing natural strikes, greater shifting defense & Plant speech   \\
-    4 & 10     & Elemental versatility     & Spell rank (4), spell knowledge & Mystic insight              & Wild aspect                                        & Greater natural servant \\
-    5 & 13     & Elemental control         & Spell rank (5)                  & Greater natural guidance    & Greater shift body                                 & Greater nature's ally            \\
-    6 & 16     & Elemental versatility     & Spell rank (6)                  & Greater wellspring of power & Natural force, supreme shifting defense            & Universal speech \\
-    7 & 19     & Supreme elemental balance & Spell rank (7), spell knowledge & Mystic insight              & Wild adaptability                                  & Supreme natural servant \\
+    0 & \tdash & Elemental balance         & Cantrips                        & Combat caster               & Shifting defense                                & Animal speech           \\
+    1 & 1      & Elemental magic           & Spellcasting                    & Mystic insight              & Wild aspects                                    & Natural servant         \\
+    2 & 4      & Elemental influence       & Spell rank (2), spell knowledge & Natural guidance            & Shift body                                      & Nature's ally           \\
+    3 & 7      & Greater elemental balance & Spell rank (3)                  & Wellspring of power         & Greater shifting defense, natural force         & Plant speech            \\
+    4 & 10     & Elemental versatility     & Spell rank (4), spell knowledge & Mystic insight              & Greater wild aspect                             & Greater natural servant \\
+    5 & 13     & Elemental control         & Spell rank (5)                  & Greater natural guidance    & Greater shift body                              & Greater nature's ally   \\
+    6 & 16     & Elemental versatility     & Spell rank (6)                  & Greater wellspring of power & Greater natural force, supreme shifting defense & Universal speech        \\
+    7 & 19     & Supreme elemental balance & Spell rank (7), spell knowledge & Mystic insight              & Wild adaptability                               & Supreme natural servant \\
 \end{dtabularx}
     \end{dtable!*}
 
@@ -1272,10 +1272,11 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Drd}[1]{Wild Aspects}[Magical]
         You gain the ability to embody an aspect of an animal or of nature itself.
-        Choose a single wild aspect from the list below.
+        Choose two wild aspects from the list below.
         You can also spend \glossterm{insight points} to learn one additional \textit{wild aspect} per \glossterm{insight point}.
 
         As a \glossterm{standard action}, you can gain the effects of one wild aspect that you know.
+        You cannot change your wild aspect more than once per round.
         That effect lasts until you activate a different wild aspect you know or until you dismiss it as a \glossterm{free action}.
 
         The abilities in the list below describe the effects of the aspect.
@@ -1293,48 +1294,46 @@ This choice determines a great deal about your character's abilities.
                 Duration
                 \rankline
                 You gain a \plus2 bonus to Fortitude defense.
-                In addition, your mouth and hands transform, granting you bite and claw \glossterm{natural weapons}.
-                The bite deals 1d8 damage, and the claws deal 1d6 damage.
+                In addition, your mouth and hands transform, granting you a bite and two claw \glossterm{natural weapons} (see \tref{Natural Weapons}).
 
                 \rankline
-                \rank{3} You gain a \plus1d bonus to your damage with natural weapons.
-                \rank{5} The Fortitude bonus increases to \plus4.
-                \rank{7} The bonus increases to \plus2d.
+                \rank{3} The Fortitude bonus increases to \plus3.
+                \rank{5} You gain a \plus1d bonus to your damage with natural weapons.
+                \rank{7} The Fortitude bonus increases to \plus4.
             \end{durationability}
 
             \begin{durationability}{Form of the Bull}
                 Duration
                 \rankline
-                You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{shove} ability (see \pcref{Shove}, and \pcref{Overrun}).
-                In addition, your head transforms, granting you a gore \glossterm{natural weapon}.
-                The weapon deals 1d8 piercing damage, and has the Impact weapon tag (see \pcref{Weapon Tags}).
+                You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{shove} ability (see \pcref{Shove}).
+                In addition, your head transforms, granting you a gore \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                 \rankline
-                \rank{3} The gore natural weapon also gains the Forceful weapon tag.
-                \rank{5} Your \textit{shove} ability moves the target as a \glossterm{knockback} instead of as a \glossterm{push}.
-                In addition, the accuracy bonus increases to \plus4.
-                \rank{7} You can use the \textit{charge} ability without gaining a \glossterm{fatigue point}.
+                \rank{3} The accuracy bonus increases to \plus3.
+                \rank{5} You can move your full movement speed when you push a creature with the \textit{shove} ability even if you do not get a critical hit.
+                \rank{7} When you push a creature with the the \textit{shove} ability, the pushed creature also takes damage as if you had hit it with your gore natural weapon.
+                This damage cannot be combined with other effects that deal damage with a shove, such as the \textit{wall slam} ability.
             \end{durationability}
 
             \begin{durationability}{Form of the Constrictor}
                 Duration
                 \rankline
                 You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{grapple} ability and all grapple actions (see \pcref{Grapple}).
-                In addition, you gain a constrict \glossterm{natural weapon}.
+                In addition, you gain a constrict \glossterm{natural weapon} (see \tref{Natural Weapons}).
                 This weapon deals 1d10 damage, and it has the Grappling weapon tag (see \pcref{Weapon Tags}).
                 It can only be used against a foe you are grappling with.
 
                 \rankline
-                \rank{3} You can contort your body, allowing it to act as a free hand for the purpose of using the \textit{grapple} ability and grapple actions.
-                \rank{5} The accuracy bonus increases to \plus4.
-                \rank{7} When you grapple a creature the \textit{grapple} ability, you are not considered to be \grappled (see \pcref{Asymmetric Grappling}).
+                \rank{3} The accuracy bonus increases to \plus3.
+                \rank{5} You can contort your body, allowing it to act as a free hand for the purpose of using the \textit{grapple} ability and grapple actions even if you do not have a free hand.
+                \rank{7} When you grapple a creature with the \textit{grapple} ability, you are not considered to be \grappled (see \pcref{Asymmetric Grappling}).
             \end{durationability}
 
             \begin{durationability}{Form of the Fish}
                 Duration
                 \rankline
                 You gain a \glossterm{swim speed} equal to your \glossterm{base speed}.
-                In addition, you gain a bite \glossterm{natural weapon} that deals 1d8 damage.
+                In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                 \rankline
                 \rank{3} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
@@ -1360,16 +1359,16 @@ This choice determines a great deal about your character's abilities.
             \begin{durationability}{Form of the Hound}
                 Duration
                 \rankline
-                You gain the \glossterm{scent} ability.
-                In addition, you gain a bite \glossterm{natural weapon} that deals 1d8 damage.
-
-                \rankline
-                \rank{3} You gain the ability to move on all four limbs.
+                You gain the ability to move on all four limbs.
                 When doing so, you gain a \plus20 foot bonus to your land speed, up to a maximum of double your original speed.
                 When not using your hands to move, your ability to use your hands is unchanged.
                 You can descend to four legs and rise up to stand on two legs again as part of movement.
-                \rank{5} You gain an additional \plus10 bonus to scent-based Awareness checks (see \pcref{Awareness}).
-                \rank{7} You gain a \plus10 foot bonus to your land speed.
+                In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
+
+                \rankline
+                \rank{3} You gain the \glossterm{scent} ability.
+                \rank{5} You gain a \plus10 foot bonus to your land speed.
+                \rank{7} You gain an additional \plus10 bonus to scent-based Awareness checks (see \pcref{Awareness}).
             \end{durationability}
 
             % Seems boring? What abilities would make sense?
@@ -1377,7 +1376,7 @@ This choice determines a great deal about your character's abilities.
                 Duration
                 \rankline
                 You gain a \glossterm{climb speed} equal to your \glossterm{base speed}.
-                In addition, you gain a bite \glossterm{natural weapon} that deals 1d8 damage.
+                In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                 \rankline
                 \rank{3} You grow a tail that you can use as a free hand for the purpose of climbing.
@@ -1389,7 +1388,7 @@ This choice determines a great deal about your character's abilities.
                 Duration
                 \rankline
                 You gain a \plus2 bonus to the Flexibility and Stealth skills.
-                In addition, you gain a bite \glossterm{natural weapon} that deals 1d8 damage.
+                In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
                 
                 \rankline
                 \rank{3} When you use this wild aspect, you can choose to shrink by one \glossterm{size category}.
@@ -1397,30 +1396,29 @@ This choice determines a great deal about your character's abilities.
                 \rank{7} When you use this wild aspect, you can choose to shrink by up to two \glossterm{size categories} instead of only one.
             \end{durationability}
 
-            \begin{durationability}{Form of the Oak}
-                Duration
-                \rankline
-                Your movement speed is halved.
-                In exchange, you gain a bonus equal to twice your rank in this archetype to your \glossterm{resistance} against \glossterm{physical damage}.
-                \rankline
-                \rank{3} You also gain a \plus1 bonus to Armor defense.
-                \rank{5} The resistance bonus increases to be equal to three times your rank in this archetype.
-                \rank{7} The defense bonuse increases to \plus2.
-            \end{durationability}
+            % \begin{durationability}{Form of the Oak}
+            %     Duration
+            %     \rankline
+            %     As long as you have any remaining resistance to physical damage, you are both \glossterm{immobilized} and \glossterm{impervious} to \glossterm{physical damage}.
+            %     \rankline
+            %     \rank{3} You also gain a \plus1 bonus to Armor defense.
+            %     \rank{5} The resistance bonus increases to be equal to three times your rank in this archetype.
+            %     \rank{7} The defense bonuse increases to \plus2.
+            % \end{durationability}
 
             \begin{durationability}{Form of the Viper}
                 Duration
                 \rankline
                 You gain a \glossterm{climb speed} equal to half your \glossterm{base speed}.
                 You do not need to use your hands to climb in this way.
-                In addition, you gain a bite \glossterm{natural weapon} that deals 1d8 damage.
+                In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                 \rankline
                 \rank{3} When a creature takes damage from your bite \glossterm{natural weapon}, it is poisoned.
                 At the end of each round, you make an attack vs. Fortitude against the target.
                 If you hit, the target is \sickened until it removes the poison.
                 The poison is removed if you miss the target on this attack three times.
-                \rank{5} On a critical hit with the poison, the target is \nauseated instead of \sickened.
+                \rank{5} You gain a \plus1d bonus to your damage with natural weapons.
                 \rank{7} The poison makes the target \nauseated instead of \sickened.
             \end{durationability}
 
@@ -1428,18 +1426,19 @@ This choice determines a great deal about your character's abilities.
                 Duration
                 \rankline
                 You gain a \plus1 bonus to \glossterm{accuracy} against \surrounded creatures.
-                In addition, you gain a bite \glossterm{natural weapon} that deals 1d8 damage.
+                In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                 \rankline
-                \rank{3} You gain a \plus1d bonus to your damage with natural weapons.
-                \rank{5} The accuracy bonus increases to \plus2.
-                \rank{7} The damage bonus increases to \plus2d.
+                \rank{3} The accuracy bonus increases to \plus2.
+                \rank{5} You gain a \plus1d bonus to your damage with natural weapons.
+                \rank{7} The accuracy bonus increases to \plus3.
             \end{durationability}
 
             \begin{durationability}{Myriad Form}
                 Duration
                 \rankline
                 You can use your \glossterm{power} in place of your Disguise skill when making Disguise checks to alter your own appearance.
+
                 \rankline
                 \rank{3} When you use this wild aspect, you can choose to grow or shrink by one \glossterm{size category}.
                     Your physical form is not altered fully to match your new size, and your Strength and Dexterity are unchanged.
@@ -1480,24 +1479,23 @@ This choice determines a great deal about your character's abilities.
             You gain a \plus1 bonus to the base value of that attribute.
         \end{attuneability}
 
-        \cf{Drd}[3]{Glancing Natural Strikes} Whenever you miss by 2 or less with a \glossterm{strike} using a \glossterm{natural weapon}, the target takes half damage from the strike.
-        This is called a \glossterm{glancing blow}.
+        \cf{Drd}[3]{Natural Force} You gain a \plus1d bonus to your damage with natural weapons.
 
         \cf{Drd}[3]{Greater Shifting Defense}
         The bonus from your \textit{shifting defense} ability increases to \plus3.
 
-        \cf{Drd}[4]{Wild Aspect}[Magical]
-        You learn an additional \textit{wild aspect}.
+        \cf{Drd}[4]{Greater Wild Aspect}[Magical] You can change your \textit{wild aspect} as a \glossterm{minor action} instead of as a standard action.
+        In addition, you learn an additional \textit{wild aspect}.
 
         \cf{Drd}[5]{Greater Shift Body} The bonus from your \textit{shift body} ability increases to \plus2.
 
-        \cf{Drd}[6]{Natural Force} You gain a \plus1d bonus to your damage with natural weapons.
+        \cf{Drd}[6]{Greater Natural Force} The bonus from your \textit{natural force} ability increases to \plus2d.
 
         \cf{Drd}[6]{Supreme Shifting Defense}
         The bonus from your \textit{shifting defense} ability increases to \plus4.
 
-        \cf*{Drd}[7]{Wild Adaptability} You can change your \textit{wild aspect}, your \textit{shifting defense}, or both as a single \glossterm{minor action}.
-        This ability does not have the \abilitytag{Swift} tag, so changing in this way does not affect attacks you make or attacks made against you in the same phase.
+        \cf*{Drd}[7]{Supreme Wild Aspect} You can change your \textit{wild aspect} as a \glossterm{free action} instead of as a minor action.
+        In addition, you learn an additional \textit{wild aspect}.
 
         % TODO: move this into a separate concept that is less archetype specific where each character can gain immortality
         % \cf{Drd}[8]{Avatar of Nature}[Magical]
