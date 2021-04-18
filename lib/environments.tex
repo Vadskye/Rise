@@ -65,12 +65,7 @@
     %\IfBooleanF{#1}{\spellline}
 }
 
-\DeclareDocumentEnvironment{spellcontent}{}
-{
-}
-{
-}
-\surroundwithmdframed[
+\newmdenv[
     style=spellcontent,
     leftline=true,
     topline=true,
@@ -80,8 +75,23 @@
 
 \definecolor{cosmiclatte}{rgb}{1.0, 0.97, 0.91}
 
+\newmdenv[
+    backgroundcolor=cosmiclatte,
+    leftline=true,
+    topline=true,
+    rightline=true,
+    bottomline=true,
+    roundcorner=4pt,
+    skipabove=0.25em,
+    skipbelow=0.5em,
+    innerleftmargin=0.25em,
+    innerrightmargin=0.5em,
+    innertopmargin=0.5em,
+    innerbottommargin=0.25em,
+]{freeabilitymdframed}
 \DeclareDocumentEnvironment{freeability}{o m o}
 {
+    \begin{freeabilitymdframed}
     \RaggedRight
     \lowercase{\hypertarget{ability:#2}{}}
     \hypertarget{ability:#2}{}
@@ -92,8 +102,11 @@
         \IfValueTF{#3}{#3}{}
     }
 }
-{}
-\surroundwithmdframed[
+{
+    \end{freeabilitymdframed}
+}
+
+\newmdenv[
     backgroundcolor=cosmiclatte,
     leftline=true,
     topline=true,
@@ -106,10 +119,10 @@
     innerrightmargin=0.5em,
     innertopmargin=0.5em,
     innerbottommargin=0.25em,
-]{freeability}
-
+]{durationabilitymdframed}
 \DeclareDocumentEnvironment{durationability}{o m o}
 {
+    \begin{durationabilitymdframed}
     \RaggedRight
     \lowercase{\hypertarget{ability:#2}{}}
     \hypertarget{ability:#2}{}
@@ -120,36 +133,11 @@
         \IfValueTF{#3}{#3}{}
     }
 }
-{}
-\surroundwithmdframed[
-    backgroundcolor=cosmiclatte,
-    leftline=true,
-    topline=true,
-    rightline=true,
-    bottomline=true,
-    roundcorner=4pt,
-    skipabove=0.25em,
-    skipbelow=0.5em,
-    innerleftmargin=0.25em,
-    innerrightmargin=0.5em,
-    innertopmargin=0.5em,
-    innerbottommargin=0.25em,
-]{durationability}
-
-\DeclareDocumentEnvironment{attuneability}{o m o}
 {
-    \RaggedRight
-    \lowercase{\hypertarget{ability:#2}{}}
-    \hypertarget{ability:#2}{}
-    \spelltwocol{
-        {\normalsize \textbf{#2}}
-        \IfValueTF{#1}{~--~#1}{}
-    }{
-        \IfValueTF{#3}{#3}{}
-    }
+    \end{durationabilitymdframed}
 }
-{}
-\surroundwithmdframed[
+
+\newmdenv[
     backgroundcolor=brown!8,
     leftline=true,
     topline=true,
@@ -162,10 +150,10 @@
     innerrightmargin=0.5em,
     innertopmargin=0.5em,
     innerbottommargin=0.25em,
-]{attuneability}
-
-\DeclareDocumentEnvironment{instantability}{o m o}
+]{attuneabilitymdframed}
+\DeclareDocumentEnvironment{attuneability}{o m o}
 {
+    \begin{attuneabilitymdframed}
     \RaggedRight
     \lowercase{\hypertarget{ability:#2}{}}
     \hypertarget{ability:#2}{}
@@ -177,8 +165,10 @@
     }
 }
 {
+    \end{attuneabilitymdframed}
 }
-\surroundwithmdframed[
+
+\newmdenv[
     backgroundcolor=MintCream,
     leftline=true,
     topline=true,
@@ -191,7 +181,23 @@
     innerrightmargin=0.5em,
     innertopmargin=0.5em,
     innerbottommargin=0.25em,
-]{instantability}
+]{instantabilitymdframed}
+\DeclareDocumentEnvironment{instantability}{o m o}
+{
+    \begin{instantabilitymdframed}
+    \RaggedRight
+    \lowercase{\hypertarget{ability:#2}{}}
+    \hypertarget{ability:#2}{}
+    \spelltwocol{
+        {\normalsize \textbf{#2}}
+        \IfValueTF{#1}{~--~#1}{}
+    }{
+        \IfValueTF{#3}{#3}{}
+    }
+}
+{
+    \end{instantabilitymdframed}
+}
 
 \newmdenv[
     style=colorenv,
@@ -203,26 +209,17 @@
     backgroundcolor=LightCyan,
 ]{augmenttargetinginfo}
 
-\DeclareDocumentEnvironment{spelleffects}{}
-{}
-{}
-\surroundwithmdframed[
+\newmdenv[
     style=colorenv,
     backgroundcolor=Lavender,
 ]{spelleffects}
 
-\DeclareDocumentEnvironment{augmenteffects}{}
-{}
-{}
-\surroundwithmdframed[
+\newmdenv[
     style=colorenv,
     backgroundcolor=Lavender,
 ]{augmenteffects}
 
-\DeclareDocumentEnvironment{spellfooter}{}
-{}
-{}
-\surroundwithmdframed[
+\newmdenv[
     style=colorenv,
     backgroundcolor=Gainsboro,
     leftline=true,
