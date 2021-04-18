@@ -226,20 +226,23 @@
     rightline=true,
 ]{spellfooter}
 
-\DeclareDocumentEnvironment{monsterfooter}{}
-{
-    \begin{fakehang}
-}
-{
-    \end{fakehang}
-}
-\surroundwithmdframed[
+\newmdenv[
     style=colorenv,
     backgroundcolor=Gainsboro,
     leftline=true,
     rightline=true,
     bottomline=true,
-]{monsterfooter}
+    topline=true,
+]{monsterfootermdframed}
+\DeclareDocumentEnvironment{monsterfooter}{}
+{
+    \begin{monsterfootermdframed}
+    \begin{fakehang}
+}
+{
+    \end{fakehang}
+    \end{monsterfootermdframed}
+}
 
 \DeclareDocumentEnvironment{dtabularx}{m m}
 {
@@ -248,7 +251,6 @@
 {
     \endtabularx
 }
-
 \surroundwithmdframed{dtabularx}
 
 \DeclareDocumentEnvironment{spellsection}{o m o}
