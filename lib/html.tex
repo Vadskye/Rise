@@ -1,5 +1,86 @@
 \ExplSyntaxOn
 
+\DeclareDocumentEnvironment{spellcontent}{}{}{}
+
+\newmdenv[
+    style=colorenv,
+    backgroundcolor=LightCyan,
+]{spelltargetinginfomdframed}
+\DeclareDocumentEnvironment{spelltargetinginfo}{}
+{
+    \begin{spelltargetinginfomdframed}
+}
+{
+    \end{spelltargetinginfomdframed}
+}
+
+\newmdenv[
+    style=colorenv,
+    backgroundcolor=LightCyan,
+]{augmenttargetinginfomdframed}
+\DeclareDocumentEnvironment{augmenttargetinginfo}{}
+{
+    \begin{augmenttargetinginfomdframed}
+}
+{
+    \end{augmenttargetinginfomdframed}
+}
+
+\newmdenv[
+    style=colorenv,
+    backgroundcolor=Lavender,
+]{spelleffectsmdframed}
+\DeclareDocumentEnvironment{spelleffects}{}
+{
+    \begin{spelleffectsmdframed}
+}
+{
+    \end{spelleffectsmdframed}
+}
+
+\newmdenv[
+    style=colorenv,
+    backgroundcolor=Lavender,
+]{augmenteffectsmdframed}
+\DeclareDocumentEnvironment{augmenteffects}{}
+{
+    \begin{augmenteffectsmdframed}
+}
+{
+    \end{augmenteffectsmdframed}
+}
+
+\newmdenv[
+    style=colorenv,
+    backgroundcolor=Gainsboro,
+    leftline=true,
+    rightline=true,
+]{spellfootermdframed}
+\DeclareDocumentEnvironment{spellfooter}{}
+{
+    \begin{spellfootermdframed}
+}
+{
+    \end{spellfootermdframed}
+}
+
+\newmdenv[
+    style=colorenv,
+    backgroundcolor=Gainsboro,
+    leftline=true,
+    rightline=true,
+    bottomline=true,
+    topline=true,
+]{monsterfootermdframed}
+\DeclareDocumentEnvironment{monsterfooter}{}
+{
+    \begin{monsterfootermdframed}
+}
+{
+    \end{monsterfootermdframed}
+}
+
+
 \DeclareDocumentCommand{\spelltwocol}{m m}
 {
     \renewcommand{\arraystretch}{0.5}
