@@ -1,5 +1,14 @@
 \ExplSyntaxOn
 
+\DeclareDocumentCommand{\spelltwocol}{m m}
+{
+    \renewcommand{\arraystretch}{0.5}
+    \par\noindent
+    \begin{tabularx}{\columnwidth}{@{}~>{\lcol}X~l~@{}}
+        #1 & #2
+    \end{tabularx}
+}
+
 % args:
 %   #1: reference name of term, if different from display name
 %   #2: display name of term
