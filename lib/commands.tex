@@ -311,33 +311,6 @@
 }
 
 % args:
-%   #1: reference name of term, if different from display name
-%   #2: display name of term
-%   #3: hyperlink prefix
-\DeclareDocumentCommand{\termlink}{o m m}
-{
-    \IfValueTF{#1}
-    {
-        % Enable this to test for missing glossary definitions
-        % \pref{#1}
-        % Enable this to test for unnecessary glossary entries
-        % \label{#1}
-
-        % TODO: remove \mbox before making major releases;
-        % it fixes bizarre page break errors but makes text uglier
-        \hyperlink{#3:#1}{\textbf{\mbox{#2}}}
-    }
-    {
-        % Enable this to test for missing glossary definitions
-        % \pref{#2}
-        % Enable this to test for unnecessary glossary entries
-        % \label{#2}
-
-        \hyperlink{#3:#2}{\textbf{\mbox{#2}}}
-    }
-}
-
-% args:
 %   #1: name of term
 %   #2: alternate name of term, only used for labels/targets
 %   #3: hyperlink prefix
