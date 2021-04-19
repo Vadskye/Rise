@@ -1,5 +1,15 @@
 \ExplSyntaxOn
 
+\DeclareDocumentCommand{\spelltwocol}{m m}
+{
+    \renewcommand{\arraystretch}{0.5}
+    \begin{figure}
+    \begin{tabularx}{\linewidth}{>{\lcol}X~l}
+        #1 & #2
+    \end{tabularx}
+    \end{figure}
+}
+
 % args:
 %   #1: reference name of term, if different from display name
 %   #2: display name of term
