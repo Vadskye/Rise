@@ -124,7 +124,7 @@
     }
 }
 
-% The HTML version of pcref doesn't want to reference pages at all
+% The HTML versions of pref/pcref don't want to reference pages at all
 \DeclareDocumentCommand{\pcref}{o m}
 {
     \IfValueTF{#1}
@@ -135,5 +135,8 @@
         \hyperref[#2]{#2}
     }
 }
+\newcommand{\pref}[1]{\hyperref[#1]{here}}
+\newcommand{\tref}[1]{Table~\ref{cap:#1}:~\hyperref[cap:#1]{#1}}
+\newcommand{\trefnp}[1]{Table~\ref{cap:#1}:~\hyperref[cap:#1]{#1}}
 
 \ExplSyntaxOff
