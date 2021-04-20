@@ -1,7 +1,9 @@
+% This package uses a different parsing argument for PDF and HTML output
 \usepackage[pdftex,bookmarks=true,breaklinks=true,colorlinks=true,linkcolor=MidnightBlue,bookmarksopen=true,bookmarksopenlevel=1,bookmarksdepth=1]{hyperref}
 
 \ExplSyntaxOn
 
+% The HTML versions of mdframed environments need dumb hacks to fix parsing issues
 \newmdenv[
     style=spellcontent,
     leftline=true,
@@ -56,7 +58,7 @@
     \end{monsterfootermdframed}
 }
 
-
+% The HTML version of spelltwocol has to put its tabularx inside of a figure
 \DeclareDocumentCommand{\spelltwocol}{m m}
 {
     \renewcommand{\arraystretch}{0.5}
@@ -66,6 +68,7 @@
     \end{tabularx}
 }
 
+% The HTML version of termlink can't use mbox
 % args:
 %   #1: reference name of term, if different from display name
 %   #2: display name of term
@@ -90,6 +93,18 @@
         % \label{#2}
 
         \hyperlink{#3:#2}{\textbf{\mbox{#2}}}
+    }
+}
+
+% The HTML version of pcref doesn't want to reference pages at all
+\DeclareDocumentCommand{\pcref}{o m}
+{
+    \IfValueTF{#1}
+    {
+        #2,~page~\pageref{#1}
+    }
+    {
+        #2,~page~\pageref{#2}
     }
 }
 

@@ -376,17 +376,6 @@
     {\termdef{#1}{abilitytag}}
 }
 
-\DeclareDocumentCommand{\pcref}{o m}
-{
-    \IfValueTF{#1}
-    {
-        #2,~page~\pageref{#1}
-    }
-    {
-        #2,~page~\pageref{#2}
-    }
-}
-
 \DeclareDocumentCommand{\hit}{}
 {
     \par \textbf{Hit}:\xspace
