@@ -229,6 +229,14 @@ tags
 *.fls
 *.dvi
 
+#HTML generation from LaTeX
+*.4tc
+*.xref
+*.4ct
+*.4tc
+*.idv
+*.lg
+
 #ANDROID
 R.java
 
@@ -247,3 +255,4 @@ typescript/src/**/*.js
 typescript/node_modules/
 typescript/tsconfig.tsbuildinfo
 core_book/generated
+html_book/generated

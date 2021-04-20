@@ -48,7 +48,7 @@ export function determineAbilityType(spell: Pick<SpellLike, "type">): string {
   } else if (spell.type.includes("Attune")) {
     return "attuneability";
   } else {
-    return "freeability";
+    return "durationability";
   }
 }
 

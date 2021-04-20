@@ -1,8 +1,4 @@
-\newcommand{\lcaption}[1]{\caption{#1}\label{cap:#1}}
-
-\newcommand{\pref}[1]{page \pageref{#1}}
-\newcommand{\tref}[1]{Table \ref{cap:#1}: #1 (\pref{cap:#1})}
-\newcommand{\trefnp}[1]{Table \ref{cap:#1}: #1}
+\newcommand{\lcaption}[1]{\caption[]{#1}\label{cap:#1}}
 
 \newcommand{\minus}{\texttt{-{}}}
 \newcommand{\plus}{\texttt{+}}    %Use a smaller positive marker for use directly adjacent to numbers
@@ -36,7 +32,6 @@
 \newcommand{\tind}{\hspace{1em}}
 
 \newcommand{\spelldesc}[1]{\par\noindent \textit{#1}}
-\newcommand{\spelltwocol}[2]{\spelltabularcompressed #1 & #2\end{tabularx}}
 
 \newcommand{\rngshort}{Short \reminder{30 ft.}\xspace}
 \newcommand{\rngmed}{Medium \reminder{60 ft.}\xspace}
@@ -76,9 +71,6 @@
 \newcommand{\featpre}{\parhead{Prerequisite} }
 \newcommand{\featpres}{\parhead{Prerequisites} }
 %featref no target
-\newcommand{\featpref}[1]{\pageref{feat:#1}}
-\newcommand{\mitempref}[1]{\pageref{item:#1}}
-\newcommand{\featpcref}[1]{#1, page \pageref{feat:#1}}
 
 \newcommand{\skill}[2]{\section{#1 (#2)}\label{#1}}
 
@@ -311,33 +303,6 @@
 }
 
 % args:
-%   #1: reference name of term, if different from display name
-%   #2: display name of term
-%   #3: hyperlink prefix
-\DeclareDocumentCommand{\termlink}{o m m}
-{
-    \IfValueTF{#1}
-    {
-        % Enable this to test for missing glossary definitions
-        % \pref{#1}
-        % Enable this to test for unnecessary glossary entries
-        % \label{#1}
-
-        % TODO: remove \mbox before making major releases;
-        % it fixes bizarre page break errors but makes text uglier
-        \hyperlink{#3:#1}{\textbf{\mbox{#2}}}
-    }
-    {
-        % Enable this to test for missing glossary definitions
-        % \pref{#2}
-        % Enable this to test for unnecessary glossary entries
-        % \label{#2}
-
-        \hyperlink{#3:#2}{\textbf{\mbox{#2}}}
-    }
-}
-
-% args:
 %   #1: name of term
 %   #2: alternate name of term, only used for labels/targets
 %   #3: hyperlink prefix
@@ -402,22 +367,6 @@
     \IfValueTF{#2}
     {\termdef{#1}[#2]{abilitytag}}
     {\termdef{#1}{abilitytag}}
-}
-
-\DeclareDocumentCommand{\pcref}{o m}
-{
-    \IfValueTF{#1}
-    {
-        #2,~page~\pageref{#1}
-    }
-    {
-        #2,~page~\pageref{#2}
-    }
-}
-
-\DeclareDocumentCommand{\labeltext}{m}
-{
-    #1\label{#1}
 }
 
 \DeclareDocumentCommand{\hit}{}

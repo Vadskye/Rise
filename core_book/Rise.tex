@@ -4,6 +4,7 @@
 \input{../lib/commands.tex}
 \input{../lib/environments.tex}
 \input{../lib/formatting.tex}
+\input{../lib/pdf.tex}
 
 \pagestyle{fancy}
 \lhead{\nouppercase\leftmark}
@@ -13,15 +14,12 @@
 \cfoot{\thepage}
 \rfoot{v. 6.7.2}
 
-% \includeonly{MysticSpheres}
+% \includeonly{monsters}
 
 \setcounter{tocdepth}{1}
 
 \begin{document}
-\setcounter{chapter}{-1}
 \tableofcontents
-\include{Acknowledgements}
-
 \include{Introduction}
 
 \include{CoreMechanics}
@@ -59,5 +57,7 @@
 \include{CampaignSettings}
 
 \include{monsters}
+
+\include{Acknowledgements}
 
 \end{document}

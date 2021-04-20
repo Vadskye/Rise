@@ -1,0 +1,117 @@
+% This package uses a different parsing argument for PDF and HTML output
+\usepackage[pdftex,bookmarks=true,breaklinks=true,colorlinks=true,linkcolor=MidnightBlue,bookmarksopen=true,bookmarksopenlevel=1,bookmarksdepth=1]{hyperref}
+
+\ExplSyntaxOn
+
+% The HTML versions of mdframed environments need dumb hacks to fix parsing issues
+\newmdenv[
+    style=spellcontent,
+    leftline=true,
+    topline=true,
+    rightline=true,
+    bottomline=true,
+]{spellcontent}
+
+\newmdenv[
+    style=colorenv,
+    backgroundcolor=LightCyan,
+    topline=true,
+]{spelltargetinginfo}
+
+\newmdenv[
+    style=colorenv,
+    backgroundcolor=LightCyan,
+]{augmenttargetinginfo}
+
+\newmdenv[
+    style=colorenv,
+    backgroundcolor=Lavender,
+]{spelleffects}
+
+\newmdenv[
+    style=colorenv,
+    backgroundcolor=Lavender,
+]{augmenteffects}
+
+\newmdenv[
+    style=colorenv,
+    backgroundcolor=Gainsboro,
+    leftline=true,
+    rightline=true,
+]{spellfooter}
+
+\newmdenv[
+    style=colorenv,
+    backgroundcolor=Gainsboro,
+    leftline=true,
+    rightline=true,
+    bottomline=true,
+    topline=true,
+]{monsterfootermdframed}
+\DeclareDocumentEnvironment{monsterfooter}{}
+{
+    \begin{monsterfootermdframed}
+    \begin{fakehang}
+}
+{
+    \end{fakehang}
+    \end{monsterfootermdframed}
+}
+
+% The HTML version of spelltwocol has to put its tabularx inside of a figure
+\DeclareDocumentCommand{\spelltwocol}{m m}
+{
+    \renewcommand{\arraystretch}{0.5}
+    \par\noindent
+    \begin{tabularx}{\columnwidth}{@{}~>{\lcol}X~l~@{}}
+        #1 & #2
+    \end{tabularx}
+}
+
+% The HTML version of termlink can't use mbox
+% args:
+%   #1: reference name of term, if different from display name
+%   #2: display name of term
+%   #3: hyperlink prefix
+\DeclareDocumentCommand{\termlink}{o m m}
+{
+    \IfValueTF{#1}
+    {
+        % Enable this to test for missing glossary definitions
+        % \pref{#1}
+        % Enable this to test for unnecessary glossary entries
+        % \label{#1}
+
+        % TODO: remove \mbox before making major releases;
+        % it fixes bizarre page break errors but makes text uglier
+        \hyperlink{#3:#1}{\textbf{\mbox{#2}}}
+    }
+    {
+        % Enable this to test for missing glossary definitions
+        % \pref{#2}
+        % Enable this to test for unnecessary glossary entries
+        % \label{#2}
+
+        \hyperlink{#3:#2}{\textbf{\mbox{#2}}}
+    }
+}
+
+% The HTML versions of pref/pcref don't want to reference pages at all
+\DeclareDocumentCommand{\pcref}{o m}
+{
+    \IfValueTF{#1}
+    {
+        #2,~page~\pageref{#1}
+    }
+    {
+        #2,~page~\pageref{#2}
+    }
+}
+\newcommand{\pref}[1]{page~pageref{#1}}
+\newcommand{\tref}[1]{Table~\ref{cap:#1}:~#1~(\pref{cap:#1})}
+\newcommand{\trefnp}[1]{Table~\ref{cap:#1}:~#1}
+\newcommand{\featpref}[1]{\pageref{feat:#1}}
+\newcommand{\mitempref}[1]{\pageref{item:#1}}
+\newcommand{\featpcref}[1]{#1,~page~\pageref{feat:#1}}
+
+\ExplSyntaxOff
