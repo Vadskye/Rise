@@ -640,7 +640,7 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: "Vital Regeneration",
+      name: "True Regeneration",
 
       castingTime: "24 hours",
       effect: `
