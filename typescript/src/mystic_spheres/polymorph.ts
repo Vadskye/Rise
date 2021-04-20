@@ -468,7 +468,8 @@ export const polymorph: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        A the end of each round, the subject can remove one of its \\glossterm{vital wounds}.
+        At the end of each round, the subject can remove one of its \\glossterm{vital wounds}.
+        This cannot remove a vital wound the subject gained during the current round.
         If it does, it gains two \\glossterm{fatigue points}.
       `,
       rank: 5,

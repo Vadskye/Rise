@@ -2138,14 +2138,15 @@ def generate_worn():
 
     apparel.append(
         MagicItem(
-            name="Ring of Regeneration",
+            name="Ring of Vital Regeneration",
             level=15,
             material_type="Ring",
             tags=[],
             description="""
-            A the end of each round, you can remove one of your \\glossterm<vital wounds>.
-            If you do, you gain two \\glossterm<fatigue points>.
-        """,
+                A the end of each round, you can remove one of your \\glossterm<vital wounds>.
+                This cannot remove a vital wound you gained during the current round.
+                If you do, you gain two \\glossterm<fatigue points>.
+            """,
             short_description="Automatically removes vital wounds",
         )
     )
