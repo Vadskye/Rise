@@ -1,0 +1,145 @@
+% This package uses a different parsing argument for PDF and HTML output
+\usepackage[tex4ht,bookmarks=true,breaklinks=true,colorlinks=true,linkcolor=MidnightBlue,bookmarksopen=true,bookmarksopenlevel=1,bookmarksdepth=1]{hyperref}
+
+\ExplSyntaxOn
+
+\DeclareDocumentEnvironment{spellcontent}{}{}{}
+
+% The HTML versions of mdframed environments need dumb hacks to fix parsing issues
+\newmdenv[
+    style=colorenv,
+    backgroundcolor=LightCyan,
+]{spelltargetinginfomdframed}
+\DeclareDocumentEnvironment{spelltargetinginfo}{}
+{
+    \begin{spelltargetinginfomdframed}
+}
+{
+    \end{spelltargetinginfomdframed}
+}
+
+\newmdenv[
+    style=colorenv,
+    backgroundcolor=LightCyan,
+]{augmenttargetinginfomdframed}
+\DeclareDocumentEnvironment{augmenttargetinginfo}{}
+{
+    \begin{augmenttargetinginfomdframed}
+}
+{
+    \end{augmenttargetinginfomdframed}
+}
+
+\newmdenv[
+    style=colorenv,
+    backgroundcolor=Lavender,
+]{spelleffectsmdframed}
+\DeclareDocumentEnvironment{spelleffects}{}
+{
+    \begin{spelleffectsmdframed}
+}
+{
+    \end{spelleffectsmdframed}
+}
+
+\newmdenv[
+    style=colorenv,
+    backgroundcolor=Lavender,
+]{augmenteffectsmdframed}
+\DeclareDocumentEnvironment{augmenteffects}{}
+{
+    \begin{augmenteffectsmdframed}
+}
+{
+    \end{augmenteffectsmdframed}
+}
+
+\newmdenv[
+    style=colorenv,
+    backgroundcolor=Gainsboro,
+    leftline=true,
+    rightline=true,
+]{spellfootermdframed}
+\DeclareDocumentEnvironment{spellfooter}{}
+{
+    \begin{spellfootermdframed}
+}
+{
+    \end{spellfootermdframed}
+}
+
+\newmdenv[
+    style=colorenv,
+    backgroundcolor=Gainsboro,
+    leftline=true,
+    rightline=true,
+    bottomline=true,
+    topline=true,
+]{monsterfootermdframed}
+\DeclareDocumentEnvironment{monsterfooter}{}
+{
+    \begin{monsterfootermdframed}
+}
+{
+    \end{monsterfootermdframed}
+}
+
+
+% The HTML version of spelltwocol has to put its tabularx inside of a figure
+\DeclareDocumentCommand{\spelltwocol}{m m}
+{
+    \renewcommand{\arraystretch}{0.5}
+    \begin{figure}
+    \begin{tabularx}{\linewidth}{>{\lcol}X~l}
+        #1 & #2
+    \end{tabularx}
+    \end{figure}
+}
+
+% The HTML version of termlink can't use mbox
+% args:
+%   #1: reference name of term, if different from display name
+%   #2: display name of term
+%   #3: hyperlink prefix
+\DeclareDocumentCommand{\termlink}{o m m}
+{
+    \IfValueTF{#1}
+    {
+        % Enable this to test for missing glossary definitions
+        % \pref{#1}
+        % Enable this to test for unnecessary glossary entries
+        % \label{#1}
+
+        % \mbox causes inconsistent but bizarre "missing space" issues
+        % when used in HTML generation, so we omit it from this file
+        \hyperlink{#3:#1}{\textbf{#2}}
+    }
+    {
+        % Enable this to test for missing glossary definitions
+        % \pref{#2}
+        % Enable this to test for unnecessary glossary entries
+        % \label{#2}
+
+        \hyperlink{#3:#2}{\textbf{#2}}
+    }
+}
+
+% The HTML versions of pref/pcref don't want to reference pages at all
+\DeclareDocumentCommand{\pcref}{o m}
+{
+    \IfValueTF{#1}
+    {
+        \hyperref[#1]{#2}
+    }
+    {
+        \hyperref[#2]{#2}
+    }
+}
+\newcommand{\pref}[1]{\hyperref[#1]{here}}
+\newcommand{\tref}[1]{Table~\ref{cap:#1}:~\hyperref[cap:#1]{#1}}
+\newcommand{\trefnp}[1]{Table~\ref{cap:#1}:~\hyperref[cap:#1]{#1}}
+\newcommand{\featpref}[1]{\hyperref[feat:#1]{here}}
+\newcommand{\mitempref}[1]{\hyperref[item:#1]{here}}
+\newcommand{\featpcref}[1]{\hyperref[feat:#1]{#1}}
+
+\ExplSyntaxOff
