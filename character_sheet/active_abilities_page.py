@@ -200,7 +200,7 @@ def attack(source):
                                 select(
                                     {"class": "attack-power", "name": "attack0_power"},
                                     [
-                                        option({"value": "1"}, "Full"),
+                                        option({"value": "1", "selected": True}, "Full"),
                                         option({"value": "0.5"}, "Half"),
                                         option({"value": "0"}, "None"),
                                     ],
