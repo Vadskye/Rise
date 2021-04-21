@@ -476,3 +476,6 @@ def ul(attributes=None, contents=None):
 
 def li(attributes=None, contents=None):
     return html_tag("li", attributes, contents)
+
+def p(attributes=None, contents=None):
+    return html_tag("p", attributes, contents)
