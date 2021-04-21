@@ -44,7 +44,7 @@ export const unbreakableDefense: CombatStyle = {
       name: "Second Wind",
 
       effect: `
-        When you use this ability, you gain a \\glossterm{fatigue point}.
+        When you use this ability, you gain two \\glossterm{fatigue points}.
 
         You regain hit points equal to your maximum \\glossterm{hit points}.
         If you take damage in the same phase that you use this ability, the healing and damage offset, which can prevent you from gaining vital wounds from dropping below 0 hit points (see \\pcref{Regaining Hit Points and Resistances}).
