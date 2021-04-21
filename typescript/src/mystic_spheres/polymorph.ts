@@ -381,7 +381,7 @@ export const polymorph: MysticSphere = {
         // TODO: is this damage correct?
         hit: `Each subject takes 4d6 piercing damage.`,
         targeting: `
-          As a \\glossterm{minor action}, you can extend the spikes to make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
+          As a \\glossterm{minor action}, you can extend spikes to make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
         `,
       },
       narrative: `
