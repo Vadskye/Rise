@@ -26,8 +26,8 @@ def create_page():
         [
             flex_row({'class': 'reference-row'}, [
                 standard_damage(),
-                vital_wound_chart(),
                 skill_modifiers(),
+                vital_wound_chart(),
             ]),
             character_creation(),
         ],
