@@ -46,7 +46,6 @@ def standard_damage():
                 [
                     flex_col(
                         [
-                            div({"class": "header"}, "Damage"),
                             "".join(
                                 [
                                     div(standard_damage_at_power(i))
