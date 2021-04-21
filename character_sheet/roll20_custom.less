@@ -102,6 +102,7 @@ div.full-sheet {
         position: fixed;
         bottom: 0px;
         width: calc(100% - 10px);
+        z-index: 1;
     }
 
     .nav-button, .nav-button-label {
@@ -134,12 +135,16 @@ div.full-sheet {
         display: flex;
     }
 
+    input[type=radio].nav-button:checked + .nav-button-label {
+        background: #f0c860;
+    }
+
     input.nav-button {
         border: 0;
         height: 2.5em;
         opacity: 0;
         width: 5em;
-        z-index: 2;
+        z-index: 3;
     }
 
     .nav-button-label {
@@ -152,6 +157,7 @@ div.full-sheet {
         padding: 0.25em;
         text-align: center;
         width: 4em;
+        z-index: 2;
     }
 
     .nav-button:hover + .nav-button-label {
