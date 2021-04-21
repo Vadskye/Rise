@@ -77,6 +77,12 @@ def boring_stuff(destination):
 
 def nav_row():
     return [
+        # You'd think that this should be wrapping the nav buttons. And that
+        # would be reasonable! But in fact the CSS that is used to omake the nav
+        # buttons functional only works if they are technically children of the
+        # main pages, so this div is empty and creatively styled with CSS to
+        # make it look like it contains the nav buttons.
+        div({"class": "nav-bar"}),
         radio_input(
             {
                 "class": "nav-button nav-button-page1",
