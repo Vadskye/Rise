@@ -455,10 +455,12 @@ export const polymorph: MysticSphere = {
 
       effect: `
         Choose yourself or one living \\glossterm{ally} within \\shortrange.
-        The subject regains \\glossterm{hit points} equal to 1d6 plus half your \\glossterm{power}.
+        The subject regains \\glossterm{hit points} equal to 1d8 plus half your \\glossterm{power}.
+        After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
       `,
       rank: 2,
       scaling: { special: "The healing increases by +1d for each rank beyond 2." },
+      tags: ['Healing'],
       type: "Instant",
     },
 
@@ -489,6 +491,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 4,
       scaling: { special: "The healing increases by +1d for each rank beyond 4." },
+      tags: ['Healing'],
       type: "Attune (self)",
     },
 
@@ -875,8 +878,10 @@ export const polymorph: MysticSphere = {
       effect: `
         Chose one \\glossterm{unattended} object within \\shortrange.
         The subject regains hit points equal to 1d6 plus half your \\glossterm{power}.
+        After you use this ability, you cannot use it or any other \abilitytag{Healing} ability until after the end of the next round.
       `,
       rank: 1,
+      tags: ['Healing'],
       type: "Instant",
     },
 

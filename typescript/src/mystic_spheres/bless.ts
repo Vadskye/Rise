@@ -111,6 +111,7 @@ export const bless: MysticSphere = {
             In addition, you can choose to cast this spell with the \\abilitytag{Sustain} (minor) tag instead of the \\abilitytag{Attune} (target) tag.
         `,
       },
+      tags: ['Healing'],
       type: "Attune (target)",
     },
 
