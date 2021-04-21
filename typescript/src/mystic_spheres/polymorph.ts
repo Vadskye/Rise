@@ -485,7 +485,7 @@ export const polymorph: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        At the end of each round, if you did not lose any \\glossterm{hit points} that round, you regain 1d10 \\glossterm{hit points}.
+        At the end of each round, you regain 1d10 \\glossterm{hit points}.
       `,
       rank: 4,
       scaling: { special: "The healing increases by +1d for each rank beyond 4." },

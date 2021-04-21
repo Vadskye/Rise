@@ -98,7 +98,7 @@ export const bless: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
-        At the end of each round, if the subject did not lose any \\glossterm{hit points} that round, it regains 1d10 \\glossterm{hit points}.
+        At the end of each round, the subject regains 1d10 \\glossterm{hit points}.
 
         You can only have one casting of this spell active at once.
         When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
