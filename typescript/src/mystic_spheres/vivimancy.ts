@@ -27,14 +27,16 @@ export const vivimancy: MysticSphere = {
 
       effect: `
         Choose yourself or one living \\glossterm{ally} within \\medrange.
-        The subject regains one \\glossterm{hit point}.
+        The subject regains two \\glossterm{hit points}.
+        After you use this ability, you cannot use it or any other \abilitytag{Healing} ability until after the end of the next round.
       `,
       focus: false,
       scaling: {
-        3: `The healing increases to two \\glossterm{hit points}.`,
-        5: `The healing increases to four \\glossterm{hit points}.`,
-        7: `The healing increases to eight \\glossterm{hit points}.`,
+        3: `The healing increases to four \\glossterm{hit points}.`,
+        5: `The healing increases to eight \\glossterm{hit points}.`,
+        7: `The healing increases to sixteen \\glossterm{hit points}.`,
       },
+      tags: ['Healing'],
       type: "Instant",
     },
   ],
@@ -80,7 +82,8 @@ export const vivimancy: MysticSphere = {
         glance: "Half damage.",
         hit: `
           The subject takes 2d8 + \\glossterm{power} energy damage.
-          If it loses \\glossterm{hit points} from this damage, you regain hit points equal to half the damage it took this way.
+          If it loses \\glossterm{hit points} from this damage, you regain hit points equal to the damage it took this way.
+          After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
         `,
         targeting: `
           This spell does not have the \\abilitytag{Focus} tag.
@@ -92,6 +95,7 @@ export const vivimancy: MysticSphere = {
       focus: false,
       rank: 3,
       scaling: "damage",
+      tags: ['Healing'],
       type: "Duration",
     },
 
@@ -114,10 +118,12 @@ export const vivimancy: MysticSphere = {
 
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
-        The subject regains \\glossterm{hit points} equal to 1d6 plus half your \\glossterm{power}.
+        The subject regains \\glossterm{hit points} equal to 1d8 plus half your \\glossterm{power}.
+        After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
       `,
       rank: 2,
       scaling: { special: "The healing increases by +1d for each rank beyond 2." },
+      tags: ['Healing'],
       type: "Instant",
     },
 
@@ -304,10 +310,12 @@ export const vivimancy: MysticSphere = {
       name: "Circle of Life",
 
       effect: `
-        You and each living \\glossterm{ally} in a \\medarea radius from you each regain 2d8 \\glossterm{hit points}.
+        You and each living \\glossterm{ally} in a \\medarea radius from you each regain 2d10 \\glossterm{hit points}.
+        After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
       `,
       rank: 5,
       scaling: { special: "The healing increases by +1d for each rank beyond 5." },
+      tags: ['Healing'],
       type: "Instant",
     },
 
@@ -412,14 +420,18 @@ export const vivimancy: MysticSphere = {
       // original targets: one living creature within \medrange
       attack: {
         glance: `Half damage.`,
-        hit: `The subject takes 2d8 + \\glossterm{power} energy damage.
-        If it loses \\glossterm{hit points} from this damage, you regain \\glossterm{hit points} equal to half the hit points it lost this way.`,
+        hit: `
+          The subject takes 2d8 + \\glossterm{power} energy damage.
+          If it loses \\glossterm{hit points} from this damage, you regain \\glossterm{hit points} equal to the hit points it lost this way.
+          After you use this ability, you cannot use it or any other \abilitytag{Healing} ability until after the end of the next round.
+        `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\medrange.
         `,
       },
       rank: 3,
       scaling: "damage",
+      tags: ['Healing'],
       type: "Instant",
     },
 
@@ -434,6 +446,7 @@ export const vivimancy: MysticSphere = {
       scaling: {
         7: `The healing increases to be equal to the hit points the struck creature lost this way.`,
       },
+      tags: ['Healing'],
       type: "Attune (self)",
     },
 
