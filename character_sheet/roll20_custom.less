@@ -67,41 +67,6 @@ div.full-sheet {
         }
     }
 
-    input[type=radio].nav-button-page1:checked ~ .first-page, input[type=radio].nav-button-active:checked ~ .active-abilities-page, input[type=radio].nav-button-page2:checked ~ .second-page, input[type=radio].nav-button-page3:checked ~ .third-page, input[type=radio].nav-button-page4:checked ~ .status-page, input[type=radio].nav-button-page5:checked ~ .reference-page {
-        display: flex;
-    }
-
-    input.nav-button {
-        border: 0;
-        opacity: 0;
-        z-index: 2;
-    }
-
-    input.nav-button, .nav-button-label {
-        height: 2em;
-        width: 4em;
-        padding: 0.25em;
-        margin-right: 1em;
-    }
-
-    .nav-button-label {
-        background: #FFF0C8;
-        border: 1px solid black;
-        border-radius: 6px;
-        font-weight: 600;
-        font-size: 1.25em;
-        margin-left: -4em;
-        text-align: center;
-    }
-
-    .nav-button:hover + .nav-button-label {
-        background: #f0c860;
-    }
-
-    .header-bar {
-        margin-bottom: 0.5em;
-    }
-
     // center alignment looks nicer, but causes weird cascade effects
     // .full-sheet {
     //     text-align: center;
@@ -119,5 +84,80 @@ div.full-sheet {
     .invisible-button > button[type=roll]:before {
         content: none;
     }
+}
 
+// Make nav buttons a fixed row.
+// This would be much, much easier if we could wrap them in a div, but they must
+// be siblings of the actual pages, so we have to style them and space them
+// individually.
+div.full-sheet {
+    padding-bottom: 2.5em;
+    position: relative;
+
+    .nav-bar {
+        background: white;
+        box-shadow: 0 -6px 6px -6px gray;
+        height: 3em;
+        left: 0px;
+        position: fixed;
+        bottom: 0px;
+        width: calc(100% - 10px);
+    }
+
+    .nav-button, .nav-button-label {
+        position: fixed;
+        bottom: 0px;
+    }
+    input:nth-of-type(1), span:nth-of-type(1) {
+        left: 10px;
+    }
+    input:nth-of-type(2), span:nth-of-type(2) {
+        left: 110px;
+    }
+    input:nth-of-type(3), span:nth-of-type(3) {
+        left: 210px;
+    }
+    input:nth-of-type(4), span:nth-of-type(4) {
+        left: 310px;
+    }
+    input:nth-of-type(5), span:nth-of-type(5) {
+        left: 410px;
+    }
+    input:nth-of-type(6), span:nth-of-type(6) {
+        left: 510px;
+    }
+    input:nth-of-type(7), span:nth-of-type(7) {
+        left: 610px;
+    }
+
+    input[type=radio].nav-button-page1:checked ~ .first-page, input[type=radio].nav-button-active:checked ~ .active-abilities-page, input[type=radio].nav-button-page2:checked ~ .second-page, input[type=radio].nav-button-page3:checked ~ .third-page, input[type=radio].nav-button-page4:checked ~ .status-page, input[type=radio].nav-button-page5:checked ~ .reference-page {
+        display: flex;
+    }
+
+    input.nav-button {
+        border: 0;
+        height: 2.5em;
+        opacity: 0;
+        width: 5em;
+        z-index: 2;
+    }
+
+    .nav-button-label {
+        background: #FFF0C8;
+        border: 1px solid black;
+        border-radius: 6px;
+        font-size: 1.25em;
+        font-weight: 600;
+        height: 2em;
+        padding: 0.25em;
+        text-align: center;
+        width: 4em;
+    }
+
+    .nav-button:hover + .nav-button-label {
+        background: #f0c860;
+    }
+}
+.ui-dialog .charsheet {
+    padding-top: 0;
 }
