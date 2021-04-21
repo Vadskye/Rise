@@ -2416,9 +2416,10 @@ def generate_worn():
             name="Belt of Healing",
             level=4,
             material_type="Belt",
-            tags=[],
+            tags=['Healing'],
             description="""
-                As a standard action, you can use this belt to regain 1d6+1 hit points.
+                As a standard action, you can use this belt to regain 1d8+1 hit points.
+                After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
             """,
             short_description="Grants healing",
         ),
@@ -2426,9 +2427,10 @@ def generate_worn():
             name="Belt of Healing, Greater",
             level=10,
             material_type="Belt",
-            tags=[],
+            tags=['Healing'],
             description="""
-                As a standard action, you can use this belt to regain 2d6+2 hit points.
+                As a standard action, you can use this belt to regain 2d8+2 hit points.
+                After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
             """,
             short_description="Grants more healing",
         ),
@@ -2436,9 +2438,10 @@ def generate_worn():
             name="Belt of Healing, Supreme",
             level=16,
             material_type="Belt",
-            tags=[],
+            tags=['Healing'],
             description="""
-                As a standard action, you can use this belt to regain 4d6+4 hit points.
+                As a standard action, you can use this belt to regain 4d8+4 hit points.
+                After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
             """,
             short_description="Grants more healing",
         ),
