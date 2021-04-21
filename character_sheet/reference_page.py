@@ -11,6 +11,7 @@ from cgi_simple import (
     minus,
     number_input,
     ol,
+    p,
     plus,
     span,
     text_input,
@@ -28,6 +29,7 @@ def create_page():
                 standard_damage(),
                 skill_modifiers(),
                 vital_wound_chart(),
+                common_concepts(),
             ]),
             character_creation(),
         ],
@@ -206,4 +208,14 @@ def character_creation():
                 ]),
             ]),
         ]),
+    ])
+
+def common_concepts():
+    return flex_col({"class": "common-concepts"}, [
+        div(
+            {"class": "section-header"},
+            "Common Concepts",
+        ),
+        p("""<b>Critical hit</b>: If you hit with an attack by 10 or more, you get a critical hit. Unless otherwise specified, all damaging attacks deal double damage on a critical hit."""),
+        p("""<b>Glancing blow</b>: If you miss with an attack by 1 or 2, you get a glancing blow. Some higher level attacks have specific effects on a glancing blow, such as dealing half damage."""),
     ])
