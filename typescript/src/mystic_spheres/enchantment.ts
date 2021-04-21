@@ -774,6 +774,8 @@ export const enchantment: MysticSphere = {
         Its \\glossterm{focus penalty} is increased by 4, and it fails to use the ability, wasting its action.
         After the distraction is triggered this way, the condition ends.`,
         targeting: `
+          This spell does not have \\glossterm{verbal components}.
+
           Make an attack vs. Mental with a +4 \\glossterm{accuracy} bonus against one creature within \\longrange.
         `,
       },
