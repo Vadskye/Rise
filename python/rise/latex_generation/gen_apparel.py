@@ -926,7 +926,7 @@ def generate_armor():
             description="""
                 Whenever you roll a 1 on an attack or check using the Agility, Climb, Jump, or Swim skills, you may reroll and take the higher result.
                 You can only reroll any individual roll once in this way.
-                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to gain one \\glossterm<fatigue point> instead of two (see \\pcref<desperate exertion>).
+                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<desperate exertion>).
             """,
             short_description="Can reroll 1s and exert more easily with movement-based skills",
         ),
@@ -938,7 +938,7 @@ def generate_armor():
             description="""
                 Whenever you roll a 1 or 2 on an attack or check using the Agility, Climb, Jump, or Swim skills, you may reroll and take the higher result.
                 You can only reroll any individual roll once in this way.
-                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to gain one \\glossterm<fatigue point> instead of two (see \\pcref<desperate exertion>).
+                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<desperate exertion>).
             """,
             short_description="Can reroll 1s and 2s and exert more easily with movement-based skills",
         ),
@@ -961,7 +961,7 @@ def generate_armor():
             description="""
                 Whenever you roll a 1 on an attack or check using the Craft, Devices, Flexibility, or Sleight of Hand skills, you may reroll and take the higher result.
                 You can only reroll any individual roll once in this way.
-                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to gain one \\glossterm<fatigue point> instead of two (see \\pcref<desperate exertion>).
+                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<desperate exertion>).
             """,
             short_description="Can reroll 1s and exert more easily with finesse-based skills",
         ),
@@ -973,7 +973,7 @@ def generate_armor():
             description="""
                 Whenever you roll a 1 or 2 on an attack or check using the Craft, Devices, Medicine, or Sleight of Hand skills, you may reroll and take the higher result.
                 You can only reroll any individual roll once in this way.
-                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to gain one \\glossterm<fatigue point> instead of two (see \\pcref<desperate exertion>).
+                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<desperate exertion>).
             """,
             short_description="Can reroll 1s and 2s and exert more easily with finesse-based skills",
         ),
@@ -996,7 +996,7 @@ def generate_armor():
             description="""
                 Whenever you roll a 1 on an attack or check using the Awareness, Deduction, Social Insight, or Spellsense skills, you may reroll and take the higher result.
                 You can only reroll any individual roll once in this way.
-                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to gain one \\glossterm<fatigue point> instead of two (see \\pcref<desperate exertion>).
+                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<desperate exertion>).
             """,
             short_description="Can reroll 1s and exert more easily with observation-based skills",
         ),
@@ -1008,7 +1008,7 @@ def generate_armor():
             description="""
                 Whenever you roll a 1 or 2 on an attack or check using the Awareness, Deduction, Social Insight, or Spellsense skills, you may reroll and take the higher result.
                 You can only reroll any individual roll once in this way.
-                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to gain one \\glossterm<fatigue point> instead of two (see \\pcref<desperate exertion>).
+                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<desperate exertion>).
             """,
             short_description="Can reroll 1s and 2s and exert more easily with observation-based skills",
         ),
@@ -1059,7 +1059,7 @@ def generate_armor():
             material_type="Boots",
             tags=[],
             description="""
-                Using the \\textit<charge> action does not cause you to gain a \\glossterm<fatigue point> (see \\pcref<Charge>).
+                Using the \\textit<charge> action does not cause you to increase your \\glossterm<fatigue level> (see \\pcref<Charge>).
             """,
             short_description="Can charge freely",
         ),
@@ -1068,13 +1068,14 @@ def generate_armor():
     apparel += [
         MagicItem(
             name="Sprinting Boots",
-            level=16,
+            level=14,
             material_type="Boots",
             tags=[],
             description="""
-                Once per round, you can use the \\textit<sprint> action without gaining a \\glossterm<fatigue point> (see \\pcref<Sprint>).
+                You can use these boots when you take the \\textit<sprint> action to avoid increasing your\\glossterm<fatigue level> (see \\pcref<Sprint>).
+                After you use this boots in this way, you cannot use them again until after the end of the next round.
             """,
-            short_description="Can sprint freely",
+            short_description="Can sprint more easily",
         ),
     ]
 
@@ -1289,8 +1290,8 @@ def generate_worn():
             material_type="Bracers",
             tags=["Swift"],
             description="""
-                As a \\glossterm<free action>, you can gain a \\glossterm<fatigue point> to activate these bracers.
-                If you do, you gain a +2 bonus to Armor defense until the end of the round.
+                As a \\glossterm<free action>, you activate these bracers.
+                When you do, you increase your \\glossterm<fatigue level> by one and gain a +2 bonus to Armor defense until the end of the round.
                 This ability has the \\glossterm<Swift> tag, so it protects you against attacks against you during the current phase.
             """,
             short_description="Can grant brief +2 Armor defense",
@@ -1563,8 +1564,8 @@ def generate_worn():
             material_type="Amulet",
             tags=[],
             description="""
-            As a \\glossterm<minor action>, you can gain a \\glossterm<fatigue point> to activate this item.
-            When you do, you can breathe in clean, fresh air until the end of the next round, regardless of your environment.
+            As a \\glossterm<minor action>, you can activate this item.
+            When you do, you increase your \\glossterm<fatigue level> by one, and you can breathe in clean, fresh air until the end of the next round, regardless of your environment.
             This can be used in emergencies to save yourself from drowning or other perils.
         """,
             short_description="Allows limited breathing",
@@ -1708,8 +1709,8 @@ def generate_worn():
             material_type="Boots",
             tags=["Swift"],
             description="""
-                As a \\glossterm<free action>, you can gain a \\glossterm<fatigue point> to activate these boots.
-                When you do, you may move through creatures freely until the end of the round.
+                As a \\glossterm<free action>, you can activate these boots.
+                When you do, you increase your \\glossterm<fatigue level> by one, and you may move through creatures freely until the end of the round.
                 This does not allow you to move through inanimate objects.
             """,
             short_description="Can briefly move through creatures",
@@ -1894,7 +1895,7 @@ def generate_worn():
             tags=[],
             description="""
             As a standard action, you can activate these boots.
-            When you do, you gain a \\glossterm<fatigue point> and teleport horizontally exactly 25 miles in a direction you specify.
+            When you do, you increase your \\glossterm<fatigue level> by one and teleport horizontally exactly 25 miles in a direction you specify.
             If this would place you within a solid object or otherwise impossible space, the boots will shunt you up to 1,000 feet in any direction to the closest available space.
             If there is no available space within 1,000 feet of your intended destination, the effect fails and you take 4d6 energy damage.
         """,
@@ -2080,8 +2081,8 @@ def generate_worn():
             material_type="Ring",
             tags=[],
             description="""
-                Whenever you are hit by a \\glossterm<critical hit> from a \\glossterm<strike>, you may gain two \\glossterm<fatigue points> to activate this item.
-                If you do, the attacker rerolls the attack against you, which may prevent the attack from getting a critical hit against you.
+                Whenever you are hit by a \\glossterm<critical hit> from a \\glossterm<strike>, you may activate this item.
+                When you do, you increase your \\glossterm<fatigue level> by two, and the attacker rerolls the attack against you, which may prevent the attack from getting a critical hit against you.
                 This does not protect any other targets of the attack.
                 You can choose to use this item after you learn the effects that the critical hit would have, but you must do so during the phase that the attack was made.
             """,
@@ -2145,7 +2146,7 @@ def generate_worn():
             description="""
                 A the end of each round, you can remove one of your \\glossterm<vital wounds>.
                 This cannot remove a vital wound you gained during the current round.
-                If you do, you gain two \\glossterm<fatigue points>.
+                When you do, you increase your \\glossterm<fatigue level> by two.
             """,
             short_description="Automatically removes vital wounds",
         )
@@ -2223,7 +2224,7 @@ def generate_worn():
             material_type="Amulet",
             tags=[],
             description="""
-            When you perform the \\ritual<plane shift> ritual, this amulet provides all \\glossterm<fatigue points> required.
+            When you perform the \\ritual<plane shift> ritual, this amulet provides all \\glossterm<fatigue levels> required.
             This does not grant you the ability to perform the \\ritual<plane shift> ritual if you could not already.
         """,
             short_description="Aids travel with \\ritual<plane shift>",
@@ -2600,8 +2601,8 @@ def generate_worn():
             material_type="Belt",
             tags=[],
             description="""
-                When you make a \\glossterm<vital roll>, you can gain a \\glossterm<fatigue point> (see \\pcref<Vital Rolls>).
-                If you do, you gain a +1 bonus to the vital roll.
+                When you make a \\glossterm<vital roll>, you can activate this item.
+                When you do, you increase your \\glossterm<fatigue level> by one, and you gain a +1 bonus to the vital roll.
                 You can use this ability after you see the result of the vital roll.
             """,
             short_description="Can grant +1 to a vital roll",
@@ -2612,9 +2613,9 @@ def generate_worn():
             material_type="Belt",
             tags=[],
             description="""
-                This item functions like a \\textit<belt of vital persistence>, except that the bonus it grants increases to +3.
+                This item functions like a \\textit<belt of vital persistence>, except that the bonus it grants increases to +2.
             """,
-            short_description="Can grant +3 to a vital roll",
+            short_description="Can grant +2 to a vital roll",
         ),
         MagicItem(
             name="Belt of Vital Persistence, Supreme",
@@ -2622,9 +2623,9 @@ def generate_worn():
             material_type="Belt",
             tags=[],
             description="""
-                This item functions like a \\textit<belt of vital persistence>, except that the bonus it grants increases to +5.
+                This item functions like a \\textit<belt of vital persistence>, except that the bonus it grants increases to +3.
             """,
-            short_description="Can grant +5 to a vital roll",
+            short_description="Can grant +3 to a vital roll",
         ),
     ]
 

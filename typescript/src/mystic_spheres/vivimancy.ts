@@ -182,7 +182,7 @@ export const vivimancy: MysticSphere = {
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\medrange
         The subject removes one \\glossterm{vital wound}.
-        It gains two \\glossterm{fatigue points} for each vital wound removed this way.
+        It increases its \\glossterm{fatigue level} by two for each vital wound removed this way.
       `,
       rank: 5,
       scaling: { 7: `The subject can remove two \\glossterm{vital wounds}.` },
@@ -231,7 +231,7 @@ export const vivimancy: MysticSphere = {
         glance: `Half damage.`,
         hit: `The subject takes 4d10 + \\glossterm{power} energy damage.
         If it loses \\glossterm{hit points} from this damage, you can remove one of your vital wounds.
-        When you do, you gain two \\glossterm{fatigue points}.`,
+        When you do, you increase your \\glossterm{fatigue level} by two.`,
         targeting: `
         Make an attack vs. Fortitude against one living creature within \\shortrange.
         `,

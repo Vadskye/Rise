@@ -472,12 +472,12 @@ export const polymorph: MysticSphere = {
         Choose yourself or one \\glossterm{ally} within \\medrange.
         At the end of each round, the subject can remove one of its \\glossterm{vital wounds}.
         This cannot remove a vital wound the subject gained during the current round.
-        If it does, it gains two \\glossterm{fatigue points}.
+        If it does, it increases its \\glossterm{fatigue level} by two.
       `,
       rank: 5,
       scaling: {
         7: `The subject can remove two \\glossterm{vital wounds} instead of one.
-            It gains two \\glossterm{fatigue points} per vital wound removed this way.`,
+            It increases its \\glossterm{fatigue level} by two per vital wound removed this way.`,
       },
       type: "Attune (target)",
     },

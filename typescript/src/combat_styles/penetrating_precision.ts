@@ -35,7 +35,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        Using the \\textit{desperate exertion} ability to affect this strike only costs one \\glossterm{fatigue point} instead of two.
+        Using the \\textit{desperate exertion} ability to affect this strike only increases your \\glossterm{fatigue level} by one instead of two.
       `,
       rank: 2,
       type: "Instant",

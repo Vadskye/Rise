@@ -264,7 +264,7 @@ export const chronomancy: MysticSphere = {
         At the end of the following round, the subject reappears in the place where it ceased to exist.
         If that space is occupied, it appears in the closest unoccupied space.
 
-        When the subject reappears, its condition is unchanged from when it left, except that it gains \\glossterm{fatigue points} equal to the amount used by its duplicate.
+        When the subject reappears, its condition is unchanged from when it left, except that it increases its \\glossterm{fatigue level} by the amount used by its duplicate.
         Its \\glossterm{hit points}, conditions, and all other statistics are unaffected, regardless of any damage or other negative effects suffered by the duplicate.
         If this would reduce any of the subject's resources below 0, it takes 4d10 energy damage from the paradox and becomes \\stunned as a \\glossterm{condition}.
       `,

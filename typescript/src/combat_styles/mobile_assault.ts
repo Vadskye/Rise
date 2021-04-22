@@ -86,7 +86,7 @@ export const mobileAssault: CombatStyle = {
       functionsLike: {
         abilityType: "ability",
         exceptThat: `
-          it does not cost a \\glossterm{fatigue point} to use.
+          it does not increase your \\glossterm{fatigue level}.
           In exchange, you take a -2 penalty to Armor and Reflex defenses during the next round.
         `,
         name: "charge",

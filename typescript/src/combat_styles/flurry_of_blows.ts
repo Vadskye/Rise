@@ -34,7 +34,7 @@ export const flurryOfBlows: CombatStyle = {
       name: "Desperate Flurry",
 
       effect: `
-        When you use this ability, you gain two \\glossterm{fatigue points}.
+        When you use this ability, you increase your \\glossterm{fatigue level} by two.
 
         Make two \\glossterm{strikes}.
         You cannot use the \\textit{desperate exertion} ability to affect these strikes.
@@ -47,7 +47,7 @@ export const flurryOfBlows: CombatStyle = {
       name: "Greater Desperate Flurry",
 
       effect: `
-        When you use this ability, you gain one \\glossterm{fatigue point}.
+        When you use this ability, you increase your \\glossterm{fatigue level} by one.
 
         Make two \\glossterm{strikes}.
         You cannot use the \\textit{desperate exertion} ability to affect these strikes.

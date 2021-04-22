@@ -17,11 +17,11 @@ export function spellEffect(
 
     let fatiguePointsText = "";
     if (spellCategory === "ritual") {
-      const fatiguePoints =
+      const fatigueLevel =
         spell.castingTime === "24 hours" || spell.castingTime === "one week"
-          ? `${Math.pow(spell.rank || 0, 2) * 2} \\glossterm{fatigue points}`
-          : "one \\glossterm{fatigue point}";
-      fatiguePointsText = `\n\nThis ritual requires ${fatiguePoints} from its participants.`;
+          ? `${Math.pow(spell.rank || 0, 2) * 2} \\glossterm{fatigue levels}`
+          : "one \\glossterm{fatigue level}";
+      fatiguePointsText = `\n\nThis ritual requires ${fatigueLevel} from its participants.`;
     }
 
     if (spell.attack) {

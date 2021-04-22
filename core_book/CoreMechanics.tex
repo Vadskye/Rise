@@ -340,7 +340,7 @@ It defines how attributes work and explains how to make attacks in combat.
         \subsubsection{Subdual Damage}\label{Subdual Damage}
             Some attacks and environmental effects deal subdual damage.
             Subdual damage works in the same way as normal damage, except it cannot inflict \glossterm{vital wounds}.
-            If an attack that deals subdual damage would inflict a vital wound, the target gains three \glossterm{fatigue points} instead.
+            If an attack that deals subdual damage would inflict a vital wound, the target increases its \glossterm{fatigue level} by three instead.
 
         \subsubsection{Environmental Damage}\label{Environmental Damage}
             Some abilities and environmental effects deal environmental damage.
@@ -991,22 +991,23 @@ It defines how attributes work and explains how to make attacks in combat.
 
     \subsection{Fatigue}\label{Fatigue}
         Thoughout the day, you can become fatigued by your exertions both in and out of combat.
-        While \glossterm{hit points} are easy to restore, \glossterm{fatigue points} generally require a \glossterm{long rest} to remove.
+        While \glossterm{hit points} are easy to restore, reducing your \glossterm{fatigue level} generally requires a \glossterm{long rest}.
         Fatigue is still easier to recover from than \glossterm{vital wounds}.
 
-        \subsubsection{Fatigue Points}\label{Fatigue Points}
-            Your level of fatigue is measured with \glossterm{fatigue points}.
-            A number of abilities and attacks can cause you to gain fatigue points.
-            The most common abilities that cause you to gain fatigue points are the \textit{desperate exertion}, \textit{recover}, and \textit{sprint} abilities.
+        \subsubsection{Fatigue Level}\label{Fatigue Level}
+            Your \glossterm{fatigue level} measures how fatigued you are.
+            A number of abilities and attacks can cause you to increase your fatigue level.
+            The most common abilities that increase your fatigue level are the \textit{desperate exertion}, \textit{recover}, and \textit{sprint} abilities.
             All of those abilities are described in \pcref{Universal Abilities}.
 
             \subsubsection{Fatigue Tolerance}\label{Fatigue Tolerance}
-                You can gain a number of \glossterm{fatigue points} equal to your base Constitution \add your base Willpower without suffering any consequences (minimum 0).
+                Becoming slightly fatigued is not immediately detrimental.
+                Your fatigue level can be as high as your base Constitution \add your base Willpower without suffering any consequences (minimum 0).
                 This value is called your \glossterm{fatigue tolerance}.
                 Your \glossterm{class} gives you a bonus to your fatigue tolerance, and some abilities can also modify it.
 
             \subsubsection{Fatigue Penalty}\label{Fatigue Penalty}
-                You take a penalty to \glossterm{accuracy} and \glossterm{checks} equal to the number of fatigue points you have \sub your \glossterm{fatigue tolerance}.
+                You take a penalty to \glossterm{accuracy} and \glossterm{checks} equal your \glossterm{fatigue level} \sub your \glossterm{fatigue tolerance}.
                 This penalty is called your \glossterm{fatigue penalty}.
                 If you have a fatigue penalty of at least \minus1, you are \glossterm{fatigued}.
 
@@ -1015,7 +1016,7 @@ It defines how attributes work and explains how to make attacks in combat.
             Generally, this means that you are unconscious for 8 hours.
 
         \subsubsection{Recovering From Fatigue}
-            When you take a \glossterm{long rest}, you remove all of your \glossterm{fatigue points}.
+            When you take a \glossterm{long rest}, your \glossterm{fatigue level} is restored to 0.
 
     \subsection{Hit Points}\label{Hit Points}
         Your \glossterm{hit points} measure how hard you are to seriously injure or kill.
@@ -1137,8 +1138,8 @@ It defines how attributes work and explains how to make attacks in combat.
         You apply this reduction to the total encumbrance applied by all armor you wear, not individually for each piece of armor.
 
         Resting in armor is difficult.
-        If you take a \glossterm{long rest} while you have any encumbrance, you wake up with a number of \glossterm{fatigue points} equal to the value of your encumbrance.
-        In addition, only half the time you spend sleeping counts as sleep for the purpose of determining your fatigue (see \pcref{Sleep and Fatigue}).
+        If you take a \glossterm{long rest} while you have any encumbrance, you finish your rest with a \glossterm{fatigue level} equal to the value of your encumbrance.
+        In addition, only half the time you spend sleeping while you have encumbrance counts as sleep for the purpose of determining your fatigue (see \pcref{Sleep and Fatigue}).
 
     \subsection{Initiative}\label{Initiative}
         When multiple creatures take mutually impossible actions simultaneously, such as racing to be the first one to a door, they must roll initiative checks.
@@ -1520,7 +1521,7 @@ It defines how attributes work and explains how to make attacks in combat.
                 Throw                    & \tdash       & Throw a held object                  \\
                 Trip                     & Ref          & Trip a foe                           \\
             \end{dtabularx}
-            1. This ability gives you a \glossterm{fatigue point} when used. \\
+            1. This ability increases your \glossterm{fatigue level} when used. \\
         \end{dtable}
 
         \parhead{Charge} You can use the \textit{charge} ability as a standard action.
@@ -1529,7 +1530,7 @@ It defines how attributes work and explains how to make attacks in combat.
             \label{Charge}
             Instant
             \rankline
-            After you use this ability, you gain a \glossterm{fatigue point}.
+            After you use this ability, you increase your \glossterm{fatigue level} by one.
 
             Move up to your speed in a single straight line.
             At the end of your movement, you can make a melee \glossterm{strike} from your new location.
@@ -1545,7 +1546,7 @@ It defines how attributes work and explains how to make attacks in combat.
             \label{Desperate Exertion}
             \spelltwocol{Instant}{\abilitytag{Swift}}
             \rankline
-            After you use this ability, you gain two \glossterm{fatigue points} (see \pcref{Fatigue}).
+            After you use this ability, you increase your \glossterm{fatigue level} by two (see \pcref{Fatigue}).
 
             You reroll any \glossterm{attack} or \glossterm{check} you just made and gain a \plus2 bonus.
             You must reroll the entire roll, not just one die from the roll (such as if the original roll \glossterm{explodes}).
@@ -1620,7 +1621,7 @@ It defines how attributes work and explains how to make attacks in combat.
             \label{Overrun}
             Instant
             \rankline
-            After you use this ability, you gain a \glossterm{fatigue point}.
+            After you use this ability, you increase your \glossterm{fatigue level} by one.
 
             Move up to your movement speed in a straight line.
             You can try to move directly through creatures in your way during this movement.
@@ -1640,7 +1641,7 @@ It defines how attributes work and explains how to make attacks in combat.
             \label{Recover}
             Instant
             \rankline
-            When you use this ability, you gain two \glossterm{fatigue points} (see \pcref{Fatigue}).
+            When you use this ability, you increase your \glossterm{fatigue level} by two (see \pcref{Fatigue}).
 
             You regain hit points equal to your maximum \glossterm{hit points}.
             In addition, you remove all \glossterm{conditions} affecting you.
@@ -1675,7 +1676,7 @@ It defines how attributes work and explains how to make attacks in combat.
             Instant
             \rankline
             You move up to double your normal movement speed.
-            After you use this ability, you gain a \glossterm{fatigue point}.
+            After you use this ability, you increase your \glossterm{fatigue level} by one.
         \end{instantability}
 
         \parhead{Struggle} As a standard action, you can use the \textit{struggle} ability to move despite movement impediments.
@@ -1827,7 +1828,7 @@ It defines how attributes work and explains how to make attacks in combat.
             \begin{itemize}
                 \item You remove one of your vital wounds (see \pcref{Removing Vital Wounds}).
                     The Medicine skill can increase this healing (see \pcref{Accelerate Recovery}).
-                \item You remove all of your \glossterm{fatigue points}.
+                \item Your \glossterm{fatigue level} becomes 0.
                 \item Some other abilities have specific effects that last until you take a long rest.
             \end{itemize}
 
@@ -1938,7 +1939,7 @@ It defines how attributes work and explains how to make attacks in combat.
             Rituals are described in the body of the \glossterm{mystic sphere} they are associated with, following the description of spells from that mystic sphere.
 
         \subsubsection{Ritual Books}
-            A ritual book contains one or more rituals that you can use as frequently as you want, as long as you can spend the time and \glossterm{fatigue points} to perform the ritual.
+            A ritual book contains one or more rituals that you can use as frequently as you want, as long as you can spend the time and \glossterm{fatigue level} to perform the ritual.
             Scribing a ritual in a ritual book costs an amount of precious inks.
 
         \subsubsection{Ritual Costs}\label{Ritual Costs}
@@ -1960,26 +1961,26 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \subsubsection{Performing Rituals}
             To perform a ritual, you must have a ritual book containing the ritual and the material components required for the ritual.
-            Some rituals cause the creatures performing them to gain \glossterm{fatigue points}, as indicated in their descriptions.
+            Some rituals cause the creatures performing them to increase their \glossterm{fatigue level}, as indicated in their descriptions.
             Other creatures can suffer this fatigue to help you perform rituals; see Ritual Participants, below.
 
-            % The fatigue point cost for 24 hour rituals is equal to (ritual rank ^ 2) * 2.
+            % The fatigue level cost for 24 hour rituals is equal to (ritual rank ^ 2) * 2.
             % Should this be specified explicitly?
 
         \subsubsection{Ritual Participants}
             Creatures can assist in the performance of rituals even if they are unable to perform rituals themselves.
             A creature that helps perform a ritual is called a ritual participant, and the creature performing the ritual is called the ritual leader.
-            A ritual participant may gain an fatigue point in place of or in addition to the fatigue point gained by the creature performing the ritual.
-            If multiple creatures are willing to gain fatigue points points or attune to effects, the ritual leader decides which creatures gain fatigue points or attune to the ritual's effects.
+            A ritual participant may increase their \glossterm{fatigue level} in place of or in addition to the fatigue level gained by the creature performing the ritual.
+            If multiple creatures are willing to increase their fatigue level or attune to effects, the ritual leader decides which creatures increase their fatigue level or attune to the ritual's effects.
 
             The steps required to participate in rituals can be complex.
             Ritual participants must be given specific instructions for the actions they must perform during a ritual by a creature who knows how to perform the ritual.
             This instruction generally takes half the time required to perform the ritual.
             A creature cannot participate in rituals unless it has an Intelligence of at least 0, can speak at least one language, and has the fine motor control required to perform the \glossterm{somatic components} of rituals.
 
-            Normally, a ritual participant can only contribute one \glossterm{fatigue point}.
-            If the participant has access to the same \glossterm{magic source} as the ritual, they can contribute any number of \glossterm{fatigue points} (until they drop unconscious).
-            Creatures willing to gain fatigue points generally gain them at a rate no faster than one fatigue point per ten minutes spent performing the ritual.
+            Normally, a ritual participant can only contribute one \glossterm{fatigue level}.
+            If the participant has access to the same \glossterm{magic source} as the ritual, they can contribute any number of \glossterm{fatigue levels} (until they drop unconscious).
+            Creatures willing to fatigue themselves generally tire at a rate no faster than one fatigue level per ten minutes spent performing the ritual.
 
             \parhead{Changing Ritual Participation}
             Rituals are deeply complex magic, and they cannot be abandoned or paused partway through.

@@ -305,23 +305,6 @@ export const enchantment: MysticSphere = {
     },
 
     {
-      name: "Heedless Rush",
-
-      attack: {
-        crit: `The condition must be removed twice before the effect ends.`,
-        hit: `As a \\glossterm{condition}, the subject is forced to use the \\textit{sprint} action whenever it moves (see \\pcref{Sprint}).
-        It can still stop before reaching its maximum movement speed, but it must pay the \\glossterm{fatigue point} cost if it moves from its current position.`,
-        targeting: `
-          Make an attack vs. Mental with a +4 bonus to \\glossterm{accuracy} against one creature within \\longrange.
-        `,
-      },
-      rank: 1,
-      scaling: "accuracy",
-      tags: ["Compulsion"],
-      type: "Duration",
-    },
-
-    {
       name: "Selfstrike",
 
       // original targets: One creature within \medrange

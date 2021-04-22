@@ -200,7 +200,7 @@ export const dirtyFighting: CombatStyle = {
         abilityType: "ability",
         // This is basically a 30' line of standard AOE damage, -1d because it's easier to optimize
         exceptThat: `
-          it requires a standard action to use and does not cause you to gain a \\glossterm{fatigue point}.
+          it requires a standard action to use and does not increase your \\glossterm{fatigue level}.
           In addition, creatures cannot choose to avoid you and each creature that you move through takes 1d10 + half \\glossterm{power} bludgeoning damage.
           Any accuracy bonuses you have that apply specifically to the \\textit{overrun} ability also apply to this ability.
         `,
