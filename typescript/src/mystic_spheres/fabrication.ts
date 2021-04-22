@@ -440,7 +440,7 @@ export const fabrication: MysticSphere = {
         You copy the writing from one Small or smaller written work within \\shortrange to a Small or smaller set of blank pages within \\shortrange.
         The blank pages must have enough room for the original writing.
         This ritual takes half the time required to copy the writing by hand, to a minimum of one minute, and does not require writing materials.
-        It requires one \\glossterm{fatigue point} from its participants.
+        It requires one \\glossterm{fatigue level} from its participants.
       `,
       rank: 1,
       type: "Instant",
@@ -454,7 +454,7 @@ export const fabrication: MysticSphere = {
         exceptThat: `
           it can target objects of Medium or smaller size.
           In addition, the time required to perform this ritual decreases to one tenth of the time required to copy the writing by hand, to a minimum of one minute.
-          It requires one \\glossterm{fatigue point} from its participants.
+          It requires one \\glossterm{fatigue level} from its participants.
         `,
         name: "copy writing",
       },

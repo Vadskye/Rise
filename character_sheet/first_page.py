@@ -373,7 +373,7 @@ def core_statistics(destination):
                 ),
             ),
             sidelabel(
-                "Fatigue points",
+                "Fatigue level",
                 flex_row(
                     {"class": "core-statistics-split"},
                     [

@@ -473,7 +473,7 @@ export const bless: MysticSphere = {
         Choose yourself or one \\glossterm{ally} within \\medrange.
         When the subject dies, it automatically returns to life at the end of the following round.
         It returns in the same state in which it died, except that all of its \\glossterm{vital rolls} for its vital rolls that were 0 or lower become 1, preventing it from dying again immediately.
-        In addition, it gains four \\glossterm{fatigue points} from the trauma of the experience.
+        In addition, it increases its \\glossterm{fatigue level} by 4 from the trauma of the experience.
         After the subject is returned to life this way, this spell ends.
 
         You can only have one casting of this spell active at once.
