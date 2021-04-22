@@ -11,6 +11,7 @@ valid_tags = set(
         "Detection",
         "Emotion",
         "Focus",
+        "Healing",
         "Manifestation",
         "Physical",
         "Scrying",
