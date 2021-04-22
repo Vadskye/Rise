@@ -32,7 +32,7 @@ export const summoning: MysticSphere = {
         If a summoned creature gains a \\glossterm{vital wound} or has no hit points remaining at the end of a phase, it disappears.
 
         \\begin{itemize}
-          \\item Its \\glossterm{fatigue tolerance} is 0, and it cannot choose to take actions that would give it \\glossterm{fatigue points}.
+          \\item Its \\glossterm{fatigue tolerance} is 0, and it cannot choose to take actions that would give it \\glossterm{fatigue levels}.
           \\item Its \\glossterm{hit points} are equal to the base value for your level (see \\tref{Character Advancement}).
           \\item It has no \\glossterm{resistances}.
           \\item Each of its \\glossterm{defenses} is equal to 4 \\add your level.
