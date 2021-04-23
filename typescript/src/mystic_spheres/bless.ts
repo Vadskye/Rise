@@ -294,7 +294,7 @@ export const bless: MysticSphere = {
     },
 
     {
-      name: "Blessing of Perserverance",
+      name: "Blessing of Perseverance",
 
       castingTime: "minor action",
       effect: `
