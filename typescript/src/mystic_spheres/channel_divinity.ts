@@ -54,15 +54,12 @@ export const channelDivinity: MysticSphere = {
 
       effect: `
         At the end of the next round, you become infused with divine power.
-        You remove one \\glossterm{condition} affecting you and heal one \\glossterm{hit point}.
+        You remove one \\glossterm{condition} affecting you and heal 1d10 \\glossterm{hit points}.
         This cannot remove a condition applied during that round.
         In addition, you gain a +4 bonus to \\glossterm{accuracy} during the round after you become infused with divine power.
-        `,
+      `,
       rank: 3,
-      scaling: {
-        5: `The accuracy bonus increases to +5.`,
-        7: `The accuracy bonus increases to +6.`,
-      },
+      scaling: { special: "The healing increases by +1d for each rank beyond 3." },
       type: "Duration",
     },
 
