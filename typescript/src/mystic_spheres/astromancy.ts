@@ -14,7 +14,9 @@ export const astromancy: MysticSphere = {
         If the destination is invalid, this spell fails with no effect.
       `,
       focus: false,
-      // narrative: '',
+      narrative: `
+        You disappear with an audible pop, appearing only a few feet away - but now on the other side of the cell bars.
+      `,
       scaling: {
         2: "The range increases to 15 feet.",
         4: "The range increases to \\rngshort.",
@@ -31,7 +33,10 @@ export const astromancy: MysticSphere = {
         If the destination is invalid, this spell fails with no effect.
       `,
       focus: false,
-      // narrative: '',
+      narrative: `
+        A tankard of ale disappears from the counter, appearing directly in your hand.
+        The barkeep frowns, about to say something, before a gold coin suddenly appears in the tankard's place.
+      `,
       scaling: {
         2: "The range increases to \\rngmed.",
         4: "The maximum size increases to Medium.",
@@ -58,6 +63,10 @@ export const astromancy: MysticSphere = {
         `,
       },
       focus: false,
+      narrative: `
+        Your touch sends part of your foe's body to the Astral Plane.
+        Although most of its body remains where it was, something important - and painful - was lost.
+      `,
       rank: 1,
       scaling: "damage",
       type: "Instant",
@@ -69,9 +78,10 @@ export const astromancy: MysticSphere = {
       attack: {
         glance: "Half damage.",
         hit: `
-          The subject takes 2d10 + \\glossterm{power} energy damage.
-          If it loses \\glossterm{hit points} from this damage, and it was created by a \\glossterm{Manifesation} ability or is a \\glossterm{planeforged} not on its home plane, it immediately disappears.
-          A planeforged creature is \\glossterm{teleported} to a random location on its home plane.
+          The subject takes 2d8 + half \\glossterm{power} energy damage.
+          If it loses \\glossterm{hit points} from this damage, it immediately disappears.
+          At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
+          After this effect ends, it becomes immune to this effect until it takes a \\glossterm{short rest}.
         `,
         targeting: `
           This spell does not have the \\abilitytag{Focus} tag.
@@ -80,6 +90,10 @@ export const astromancy: MysticSphere = {
           Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
         `,
       },
+      narrative: `
+        Your touch banishes the dire wolf that was about to eat you.
+        It should be gone long enough for you to escape to a more comfortable vantage point.
+      `,
       rank: 4,
       scaling: "damage",
       focus: false,
@@ -92,16 +106,21 @@ export const astromancy: MysticSphere = {
         glance: "Half damage.",
         hit: `
           The subject takes 2d6 + half \\glossterm{power} energy damage.
-          If it loses \\glossterm{hit points} from this damage, and it was created by a \\glossterm{Manifesation} ability or is a \\glossterm{planeforged} not on its home plane, it immediately disappears.
-          A planeforged creature is \\glossterm{teleported} to a random location on its home plane.
+          If it loses \\glossterm{hit points} from this damage, it immediately teleports into a random unoccupied location in the Astral Plane.
+          At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
+          After this effect ends, it becomes immune to this effect until it takes a \\glossterm{short rest}.
         `,
         targeting: `
-          Make an attack vs. Mental against anything within \\medrange.
+          Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
+      narrative: `
+        The dire wolf about to eat your allies disappears with an audible pop.
+        If they run quickly, they can escape before it returns.
+      `,
       rank: 3,
       scaling: "damage",
-      type: "Instant",
+      type: "Duration",
     },
     {
       name: "Jittering Curse",
@@ -117,6 +136,10 @@ export const astromancy: MysticSphere = {
           Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
+      narrative: `
+        The furious troll rushes up to you again, ready to strike, only to be teleported away from you just before its claws reach you.
+        Will it ever learn?
+      `,
       rank: 6,
       tags: ["Curse"],
       type: "Duration",
@@ -137,6 +160,10 @@ export const astromancy: MysticSphere = {
           Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
+      narrative: `
+        There is no escape.
+        Nothing prevents your foe from moving, yet it is trapped more perfectly than any net could achieve.
+      `,
       rank: 7,
       tags: ["Curse"],
       type: "Duration",
@@ -152,6 +179,10 @@ export const astromancy: MysticSphere = {
           Make an attack vs. Mental against anything within \\medrange.
         `,
       },
+      narrative: `
+        You send part of your foe's body to the Astral Plane.
+        Although most of its body remains where it was, something important - and painful - was lost.
+      `,
       rank: 1,
       scaling: "damage",
       type: "Instant",
@@ -167,6 +198,10 @@ export const astromancy: MysticSphere = {
         If the destination is invalid, this spell fails with no effect.
       `,
       rank: 1,
+      narrative: `
+        One by one, you teleport your allies across the chasm.
+        The orcs tracking you will never be able to follow your trail now.
+      `,
       scaling: {
         3: "The range increases to \\rngmed.",
         5: "The range increases to \\rnglong.",
@@ -178,9 +213,16 @@ export const astromancy: MysticSphere = {
       name: "Silent Translocation",
 
       functionsLike: {
-        exceptThat: "the subject's departure and arrival with this spell are silent.",
+        exceptThat: `
+          this spell does not have \\glossterm{verbal components}.
+          In addition, the subject's departure and arrival with this spell are silent.
+        `,
         name: "translocation",
       },
+      narrative: `
+        One by one, you teleport your allies into hidden vantage points overlooking your enemies.
+        It took some effort to convince the dwarven paladin to try a surprise attack, but the results will be worth it.
+      `,
       rank: 3,
       scaling: {
         5: "The range increases to \\rngmed.",
@@ -195,6 +237,10 @@ export const astromancy: MysticSphere = {
         You teleport to an unoccupied destination on a stable surfce within \\rngdist range of you.
         You must clearly visualize the destination's appearance and have an approximate knowledge of its direction and distance from you.
         However, you do not need \\glossterm{line of sight} or \\glossterm{line of effect} to your destination.
+      `,
+      narrative: `
+        You were invited into this throne room once, while the old king still lived.
+        Now, you can return whenever you want, no matter how many guards and locks the usurper tries to deploy against you.
       `,
       rank: 4,
       scaling: {
@@ -261,6 +307,9 @@ export const astromancy: MysticSphere = {
           Make an attack vs. Mental against anything within \\medrange.
         `,
       },
+      narrative: `
+        Your foe disappears for a second into the Plane of fire, where it is - unsurprisingly - set on fire.
+      `,
       rank: 6,
       scaling: {
         special: `
@@ -283,7 +332,8 @@ export const astromancy: MysticSphere = {
         `,
       },
       narrative: `
-        Your foe briefly teleports through a number of planes in sequence.
+        Your foe briefly teleports through a number of planes in a rapid sequence.
+        No matter what its weaknesses are, one of those planes probably held the key.
       `,
       rank: 5,
       scaling: "damage",
@@ -316,6 +366,10 @@ export const astromancy: MysticSphere = {
         At the end of each \\glossterm{phase}, you may choose to \\glossterm{teleport} 10 feet horizontally in a random direction.
         If your \\glossterm{line of effect} to your destination is blocked, or if this teleportation would somehow place you inside a solid object, your teleportation is cancelled and you remain where you are.
       `,
+      narrative: `
+        The squad of furious orcs rush up to you again, ready to strike, but you teleport away from them just before their greataxes reach you.
+        Will they ever learn?
+      `,
       rank: 5,
       scaling: {
         7: "You can choose the direction of the teleportation.",
@@ -329,6 +383,11 @@ export const astromancy: MysticSphere = {
       effect: `
         Choose up to five creatures from among you and your \\glossterm{allies} within \\longrange.
         Each subject \\glossterm{teleports} into the location of a different subject.
+      `,
+      narrative: `
+        The kobold ambush exploited a weak point in your marching formation, and now everything is out of place.
+        The warriors are stuck in back, unable to reach you and the archer, who are surrounded by glistening daggers.
+        Or rather, they were stuck - but with a rapid succession of pops, you find yourself safely at a distance while the kobolds face the barbarian's whirling greataxe.
       `,
       rank: 2,
       scaling: {
@@ -344,7 +403,10 @@ export const astromancy: MysticSphere = {
         Once per round, you can teleport horizontally instead of moving normally.
         Teleporting a given distance costs movement equal to that distance.
         If your \\glossterm{line of effect} to your destination is blocked, or if this teleportation would somehow place you inside a solid object, your teleportation is cancelled and you remain where you are that phase.
-        You must be able to move to teleport in this way, so effects like being \\immobilized prevent this movement.
+        You must be able to use your movement speeds to teleport in this way, so effects like being \\immobilized or \\grappled prevent this movement.
+      `,
+      narrative: `
+        Why would you walk when you can teleport?
       `,
       rank: 4,
       scaling: {
@@ -357,14 +419,18 @@ export const astromancy: MysticSphere = {
 
       effect: `
         You randomly flicker between your current plane and the Astral Plane.
-        \\glossterm{Targeted} \\glossterm{strikes} against you have a 20\\% failure chance as you happen to be in the Astral Plane when the attack would hit.
-        However, all of your attacks also have the same failure chance.
-        This does not affect abilities you use that do not make attacks.
+        ALl \\glossterm{strikes} against you have a 20\\% failure chance as you happen to be in the Astral Plane when the attack would hit.
+        However, all of your abilities that affect creatures or objects other than yourself also have the same failure chance.
+        This does not affect abilities you use that only affect yourself.
+      `,
+      narrative: `
+        It's sometimes annoying to be caught in the Astral Plane while you're trying to banish your foes there.
+        However, watching swords pass through your body as you blink out of existence is worth the risk.
       `,
       rank: 2,
       scaling: {
-        4: "The failure chance increases to 30\\%.",
-        6: "The failure chance increases to 40\\%.",
+        4: "When you cast this spell, you can choose to increase the failure chance to 30\\%.",
+        6: "When you cast this spell, you can choose to increase the failure chance to 40\\%.",
       },
       type: "Attune (self)",
     },
@@ -374,13 +440,17 @@ export const astromancy: MysticSphere = {
       functionsLike: {
         exceptThat: `
           you can choose at the start of each round to stop flickering for that round.
-          If you do, your attacks do not have a failure chance, and attacks against you also do not have a failure chance.
+          If you do, your abilities do not have a failure chance, and attacks against you also do not have a failure chance.
         `,
         name: "flicker",
       },
+      narrative: `
+        Some astromancers have studied for decades to gain total control over their current plane at all times.
+        Their incremental progress towards that goal can be unimpressive to people who who take for granted their ability to stay on only one plane at a time.
+      `,
       rank: 4,
       scaling: {
-        6: "The failure chance increases to 30\\%.",
+        6: "When you cast this spell, you can choose to increase the failure chance to 30\\%.",
       },
       type: "Attune (self)",
     },
@@ -388,11 +458,16 @@ export const astromancy: MysticSphere = {
       name: "Astral Instability",
 
       effect: `
-        At the start of each phase, you may \\glossterm{teleport} into a random location in the Astral Plane.
+        At the start of each phase, you may \\glossterm{teleport} into a random unoccupied location in the Astral Plane.
         At the end of the round, you reappear in the location where you disappeared.
         If that space is occupied, you reappear in the closest available space.
+        After you teleport in this way, you cannot teleport with this ability again until after the end of the next round.
       `,
       rank: 3,
+      narrative: `
+        Armor and shields can offer some protection, but true defensive mastery comes from not being hit at all.
+        Of course, few people are both capable and willing to send themselves to another plane just to avoid danger, but it's a virtually unbeatable defense.
+      `,
       scaling: {
         5: `
           When you disappear, you can choose where you reappear.
@@ -409,13 +484,17 @@ export const astromancy: MysticSphere = {
         // crit: '',
         // glance: '',
         hit: `
-          If both subjects are hit, they each teleport into each other's locations.
+          If you hit both subjects, they each teleport into each other's locations.
         `,
         targeting: `
-          Make an attack vs. Mental against two Large or smaller creatures within \\medrange.
+          Make an attack vs. Mental against two Large or smaller creatures within \\longrange.
           If either creature is not standing on solid ground, this spell fails.
         `,
       },
+      narrative: `
+        The cultists were confident that they were safe behind their defensive wall of zombies.
+        When one of their number was unexpectedly replaced by a raging barbarian, they briefly discovered how wrong they were.
+      `,
       rank: 3,
       scaling: "accuracy",
       type: "Instant",
@@ -427,6 +506,10 @@ export const astromancy: MysticSphere = {
         exceptThat: "it can affect creatures with a maximum size of Gargantuan.",
         name: "transposition",
       },
+      narrative: `
+        The storm giant shamans were confident that they were safe behind their defensive wall of giant warriors.
+        When one of their number was unexpectedly replaced by a fire-breathing dragon, they briefly discovered how wrong they were.
+      `,
       rank: 5,
       scaling: "accuracy",
       type: "Instant",
@@ -438,9 +521,12 @@ export const astromancy: MysticSphere = {
       effect: `
         Whenever you make a \\glossterm{strike}, your weapon or projectile can pass through a single physical obstacle up to one foot thick on its way to the strike's target.
         This can allow your attacks to ignore \\glossterm{cover}, or even attack through solid walls.
-        It does not allow you to ignore armor, shields, or or similar items used by the targets of your attacks.
+        It does not allow you to ignore armor, shields, or or similar items carried or worn by the targets of your attacks.
       `,
       rank: 3,
+      narrative: `
+        You augment your weapons with the ability to travel short distances through the Astral Plane to reach their targets.
+      `,
       scaling: {
         5: "Your strikes can pass through any number of physical obstacles with a combined thickness of two feet or less.",
         7: "Your strikes can pass through any number of physical obstacles with a combined thickness of five feet or less.",
@@ -455,7 +541,9 @@ export const astromancy: MysticSphere = {
         mass: true,
         name: "phasing blade",
       },
-      // narrative: '',
+      narrative: `
+        You augment the weapons of your allies with the ability to travel short distances through the Astral Plane to reach their targets.
+      `,
       rank: 5,
       scaling: {
         7: "Each subject's strikes can penetrate through any number of physical obstacles with a combined thickness of two feet or less.",
@@ -470,6 +558,9 @@ export const astromancy: MysticSphere = {
         When determining whether you have \\glossterm{line of effect} to a particular location with spells, you can ignore a single physical obstacle up to one foot thick.
         This can allow you to cast spells through solid walls, though it does not grant you the ability to see through the wall.
       `,
+      narrative: `
+        You augment your spells with the ability to travel short distances through the Astral Plane to reach their targets.
+      `,
       rank: 4,
       scaling: {
         6: "Your spells can pass through any number of physical obstacles with a combined thickness of two feet or less.",
@@ -483,7 +574,10 @@ export const astromancy: MysticSphere = {
       effect: `
         You can move through creatures freely.
         This does not allow you to move through inanimate objects.
-        It also does not allow you to end your movement in spaces occupied by other creatures without \\squeezing.
+        If you end your movement in spaces occupied by other creatures, both of you are still \\squeezing.
+      `,
+      narrative: `
+        You augment your body with the ability to travel short distances through the Astral Plane to reach your destination.
       `,
       rank: 3,
       scaling: {
@@ -500,7 +594,9 @@ export const astromancy: MysticSphere = {
         mass: true,
         name: "phasestep",
       },
-      // narrative: '',
+      narrative: `
+        You augment the bodies of your allies with the ability to travel short distances through the Astral Plane to reach their destinations.
+      `,
       rank: 5,
       scaling: {
         7: "Each subject can also ignore all sources of \\glossterm{difficult terrain}.",
