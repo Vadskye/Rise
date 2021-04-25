@@ -19,7 +19,7 @@
                 \lcaption{Weapon Groups}
                 \begin{dtabularx}{\textwidth}{l >{\lcol}X >{\lcol}X}
                     \tb{Group}         & \tb{Weapons}                                                                     & \tb{Exotic Weapons} \tableheaderrule
-                    Armor weapons      & Armor spikes, Standard shield (and spiked)                                       &                                                       \\
+                    Armor weapons      & Armor spikes, Standard shield (and spiked)                                       & Armblade, spiked knee                                 \\
                     Axes               & Battleaxe, broadaxe, greataxe, handaxe, pollaxe, shepherd's axe                  & Dwarven throwing axe, dwarven waraxe, orcish greataxe \\
                     Blades             & Broadsword, dagger, estoc, greatsword, rapier, sabre, smallsword                 & Boot dagger, falchion, katana, kukri                  \\
                     Bows               & Longbow, shortbow                                                                & Flatbow, heartseeker arrows, takedown bow             \\
@@ -309,6 +309,8 @@
             \begin{dtabularx}{\textwidth}{p{12em} c c c >{\ccol}p{10em} c >{\ccol}X}
                 \tb{Exotic Weapons}           & \tb{Usage Class} & \tb{Accuracy} & \tb{Damage} & \tb{Damage Type\fn{1}} & \tb{Cost} & \tb{Special} \tableheaderrule
                 Armor                                &         &        &        &                      &        &                                 \\
+                \tind Armblade\fn{2}                 & Light   & \plus2 & 1d6    & Slashing             & 10 gp  & Grappling, Keen                 \\
+                \tind Spiked knee\fn{2}              & Light   & \plus1 & 1d6    & Piercing             & 10 gp  & Grappling, Impact               \\
                 Axes                                 &         &        &        &                      &        &                                 \\
                 \tind Dwarven throwing axe           & Light   & \plus2 & 1d6    & Slashing             & 8 gp   & Impact, Thrown (20 ft.)         \\
                 \tind Dwarven waraxe                 & Medium  & \plus0 & 1d10   & Slashing             & 75 gp  & Thrown (20 ft.), Versatile Grip \\
@@ -323,18 +325,18 @@
                 \tind Heartseeker arrows (20)        & \tdash  & \plus0 & \tdash & Piercing             & 20 gp  & Ammunition, Impact              \\
                 \tind Takedown bow\fn{2}             & Special & \plus0 & 1d8    & \tdash               & 200 gp & Projectile (90 ft. or 50 ft.)   \\
                 Club-like weapons                    &         &        &        &                      &        &                                 \\
-                \tind Gnomish trick mace                         & Medium           & \plus1        & 1d8         & Bludgeoning              & 8 gp      & Impact, Tripping                \\
-                \tind Knobkerrie                         & Medium           & \plus1        & 1d8         & Bludgeoning              & \tdash    & Impact, Throwing (20 ft.)                        \\
+                \tind Gnomish trick mace             & Medium  & \plus1 & 1d8    & Bludgeoning          & 8 gp   & Impact, Tripping                \\
+                \tind Knobkerrie                     & Medium  & \plus1 & 1d8    & Bludgeoning          & \tdash & Impact, Throwing (20 ft.)       \\
                 Crossbows                            &         &        &        &                      &        &                                 \\
                 \tind Repeating heavy crossbow\fn{2} & Heavy   & \plus0 & 1d10   & \tdash               & 400 gp & Projectile (60 ft.)             \\
                 \tind Repeating light crossbow\fn{2} & Medium  & \plus0 & 1d8    & \tdash               & 250 gp & Projectile (60 ft.)             \\
                 \tind Repeating bolts (5)            & \tdash  & \plus0 & \tdash & Piercing             & 1 gp   & Ammunition                      \\
                 Flexible weapons                     &         &        &        &                      &        &                                 \\
-                \tind Chain whip                     & Medium  & \plus1 & 1d8   & Bludgeoning          & 50 gp  & Long, Tripping       \\
-                \tind Meteor hammer                  & Heavy   & \plus0 & 2d6   & Bludgeoning          & 50 gp  & Long, Tripping       \\
+                \tind Chain whip                     & Medium  & \plus1 & 1d8    & Bludgeoning          & 50 gp  & Long, Tripping                  \\
+                \tind Meteor hammer                  & Heavy   & \plus0 & 2d6    & Bludgeoning          & 50 gp  & Long, Tripping                  \\
                 \tind Three-section staff            & Heavy   & \plus0 & 1d10   & Bludgeoning          & 40 gp  & Disarming, Long, Tripping       \\
                 Headed weapons                       &         &        &        &                      &        &                                 \\
-                \tind Dwarven longhammer             & Heavy            & \plus0        & 2d6        & Bludgeoning              & 50 gp     & Impact, Long                          \\
+                \tind Dwarven longhammer             & Heavy   & \plus0 & 2d6    & Bludgeoning          & 50 gp  & Impact, Long                    \\
                 \tind Heavy pick                     & Heavy   & \plus0 & 2d6    & Piercing             & 40 gp  & Keen, Impact                    \\
                 Monk weapons                         &         &        &        &                      &        &                                 \\
                 \tind Three-section staff            & Heavy   & \plus0 & 1d10   & Bludgeoning          & 40 gp  & Disarming, Long, Tripping       \\
@@ -377,6 +379,10 @@
 
     \subsection{Individual Weapon Descriptions}
         Some weapons in \trefnp{Weapons} have additional abilities which are described below.
+        \parhead{Armblade} This weapon is not held in a hand.
+        Instead, it is affixed to the arm of body armor with a medium or heavy \glossterm{usage class}.
+        When you attack with an armblade, you cannot use the arm it is attached to for any other combat purpose in the same phase.
+        You can still hold items in that hand, but they have no combat effect.
         \parhead{Armor spikes} Any \glossterm{body armor} can be spiked.
         You cannot normally attack with armor spikes.
         However, if your armor is spiked and you are proficient with it, you deal damage with it when you make a successful \textit{grapple} or \textit{shove} attack.
@@ -421,6 +427,8 @@
         \parhead{Sling} You can fire, but not load, a sling with one hand. Loading a sling is a free action that requires both hands.
         \par You can hurl ordinary stones with a sling, but stones are not as dense or as round as bullets. You take a \minus1d penalty to damage with ordinary stones.
         \parhead{Spear} You cannot throw a spear while holding it in two hands.
+        \parhead{Spiked Knee} This weapon is not held in a hand.
+        Instead, it is affixed to the leg of body armor with a medium or heavy \glossterm{usage class}.
         \parhead{Spiked Shield, Standard} You can bash with a spiked shield in addition to defending with it. See Armor for details.
         \parhead{Takedown Bow} A takedown bow is a bow assembled from multiple independent components that can be reconfigured into two different combinations.
         In its longbow configuration, it has a heavy usage class and a 90 ft.\ range increment.
