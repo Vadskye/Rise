@@ -14,7 +14,10 @@ export const aquamancy: MysticSphere = {
         You must create a minimum of one ounce of water in each location.
       `,
       focus: false,
-      // narrative: '',
+      narrative: `
+        The desert air ripples with heat, scorching the group of adventurers.
+        When they finally stop to rest, you conjure water from thin air, giving them all the strength to press on.
+      `,
       scaling: {
         2: "The volume created increases to five gallons.",
         4: "The volume created increases to ten gallons.",
@@ -32,10 +35,9 @@ export const aquamancy: MysticSphere = {
         You choose the speed change and direction when you cast this spell, and that choice persists for the duration of this effect.
 
         In addition to allowing you to change the direction of currents within large bodies of water, you can also use this to propel water across surfaces.
-        Generally, moving water uphill requires at least 5 miles per hour of speed for every foot of elevation that you are trying to climb, which can limit your ability to move water up large distances.
+        Generally, moving water uphill costs at least 5 miles per hour of speed for every foot of elevation that you are trying to climb, which can limit your ability to move water up large distances.
       `,
       focus: false,
-      // narrative: '',
       scaling: {
         2: "The area increases to a \\largearea radius, and the maximum speed change increases to 10 miles per hour.",
         4: "The area increases to a \\hugearea radius, and the maximum speed change increases to 20 miles per hour.",
