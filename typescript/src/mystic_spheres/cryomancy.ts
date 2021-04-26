@@ -417,11 +417,11 @@ export const cryomancy: MysticSphere = {
 
       effect: `
         Choose one pool of \\glossterm{unattended}, nonmagical water within \\shortrange.
-        This spell creates an icy weapon or a suit of icy armor from the subject pool of water.
+        This spell creates up to three weapons, suits of body armor, or shields from the subject pool of water.
         You can create any weapon, shield, or body armor that you are proficient with, and which would normally be made entirely from metal, except for heavy armor.
-        The pool of water targeted must be at least as large as the item you create.
+        The pool of water targeted must be at least as large as the largest item you create.
 
-        The item functions like a normal item of its type, with three exceptions.
+        An item created with this spell functions like a normal item of its type, with three exceptions.
         First, any \\glossterm{strikes} that you make with a weapon created with this ability are \\glossterm{magical} abilities, so you use your magical \\glossterm{power} to determine their damage instead of your \\glossterm{mundane} power.
         except that it reacts differently to fire damage.
         Second, while wearing body armor from this spell, you are \\glossterm{impervious} to fire damage.
@@ -432,9 +432,9 @@ export const cryomancy: MysticSphere = {
       scaling: {
         3: `
           You can also create heavy armor.
-          In addition, the item created is magically enhanced.
+          In addition, the items are magically enhanced.
           A weapon grants a +1 \\glossterm{magic bonus} to \\glossterm{accuracy} with strikes using the weapon,
-            and armor grants a +1 \\glossterm{magic bonus} to Armor defense.
+            and both shields and body armor grant a +1 \\glossterm{magic bonus} to Armor defense.
         `,
         5: `The magic bonus increases to +2.`,
         7: `The magic bonus increases to +3.`,
