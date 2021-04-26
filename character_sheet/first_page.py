@@ -477,7 +477,7 @@ def movement():
 
 def active_ability_button(ability_type, source=None):
     prefix = "attack0" if ability_type == "attack" else "active_ability0"
-    button_name = "roll_attack" if ability_type == "attack" else "use_ability"
+    button_name = "use_ability"
     button_value = (
         "&{template:custom}"
         + " {{title=@{active_ability0_name}}}"
