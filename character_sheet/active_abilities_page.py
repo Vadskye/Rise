@@ -220,7 +220,7 @@ def attack(source):
             button(
                 {
                     "class": "attack-roll",
-                    "name": f"roll_attack",
+                    "name": f"use_ability",
                     "type": "roll",
                     "value": attack_button_text(source),
                 },
