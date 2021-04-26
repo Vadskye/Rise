@@ -541,12 +541,28 @@ export const vivimancy: MysticSphere = {
       attack: {
         glance: `Half damage.`,
         // +1d from levels
-        hit: `Each secondary target takes 2d10 energy damage.`,
+        hit: `Each subject takes 2d10 energy damage.`,
         targeting: `
           At the end of each round, make an attack vs. Fortitude against each \\glossterm{enemy} within a \\medarea radius \\glossterm{emanation} from you that caused you to lose \\glossterm{hit points} that round.
         `,
       },
       rank: 4,
+      scaling: "damage",
+      type: "Attune (self)",
+    },
+
+    {
+      name: "Supreme Retributive Lifebond",
+
+      attack: {
+        glance: `Half damage.`,
+        // +1d from levels
+        hit: `Each subject takes 5d10 energy damage.`,
+        targeting: `
+          At the end of each round, make an attack vs. Fortitude against each \\glossterm{enemy} within a \\largearea radius \\glossterm{emanation} from you that caused you to lose \\glossterm{hit points} that round.
+        `,
+      },
+      rank: 7,
       scaling: "damage",
       type: "Attune (self)",
     },
