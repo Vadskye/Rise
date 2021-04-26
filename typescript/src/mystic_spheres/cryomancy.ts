@@ -421,17 +421,23 @@ export const cryomancy: MysticSphere = {
         You can create any weapon, shield, or body armor that you are proficient with, and which would normally be made entirely from metal, except for heavy armor.
         The pool of water targeted must be at least as large as the item you create.
 
-        The item functions like a normal item of its type, except that it is easier to destroy with fire damage.
-        When a creature wearing armor created in this way takes fire damage, that damage is also dealt to the armor.
+        The item functions like a normal item of its type, with three exceptions.
+        First, any \\glossterm{strikes} that you make with a weapon created with this ability are \\glossterm{magical} abilities, so you use your magical \\glossterm{power} to determine their damage instead of your \\glossterm{mundane} power.
+        except that it reacts differently to fire damage.
+        Second, while wearing body armor from this spell, you are \\glossterm{impervious} to fire damage.
+        Third, whenever you lose \\glossterm{hit points} from fire damage, all armor and weapons you made with this ability disappear.
+        They reappear at the end of the round.
       `,
       rank: 1,
       scaling: {
-        3: `You can also create heavy armor.
-                In addition, the item created is magically enhanced.
-                A weapon grants a +2 \\glossterm{magic bonus} to your \\glossterm{mundane} \\glossterm{power},
-                    and armor grants a +1 \\glossterm{magic bonus} to Armor defense.`,
-        5: `The magic bonus for a weapon increases to +4, and the magic bonus for armor increases to +2.`,
-        7: `The magic bonus for a weapon increases to +8, and the magic bonus for armor increases to +3.`,
+        3: `
+          You can also create heavy armor.
+          In addition, the item created is magically enhanced.
+          A weapon grants a +1 \\glossterm{magic bonus} to \\glossterm{accuracy} with strikes using the weapon,
+            and armor grants a +1 \\glossterm{magic bonus} to Armor defense.
+        `,
+        5: `The magic bonus increases to +2.`,
+        7: `The magic bonus increases to +3.`,
       },
       type: "Attune (self)",
     },
