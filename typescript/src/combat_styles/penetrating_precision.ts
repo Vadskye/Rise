@@ -35,7 +35,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        Using the \\textit{desperate exertion} ability to affect this strike only increases your \\glossterm{fatigue level} by one instead of two.
+        If you miss, you can increase your \\glossterm{fatigue level} by one to reroll the attack with a +3 bonus.
       `,
       rank: 2,
       type: "Instant",
