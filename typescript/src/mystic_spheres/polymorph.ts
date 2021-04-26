@@ -47,6 +47,23 @@ export const polymorph: MysticSphere = {
       },
       type: "Duration",
     },
+
+    {
+      name: "Natural Weapon",
+
+      effect: `
+        You gain your choice of one of the following \\glossterm{natural weapons}: bite, claw, constrict, gore, ram, slam, or talon.
+        For details, see \\tref{Natural Weapons}.
+        This ability lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
+      `,
+      focus: false,
+      scaling: {
+        2: `You also gain a +1 \\glossterm{magic bonus} to \\glossterm{power} with natural weapons.`,
+        4: `The power bonus increases to +2.`,
+        6: `The power bonus increases to +4.`,
+      },
+      type: "Duration",
+    },
   ],
   spells: [
     {
@@ -68,39 +85,6 @@ export const polymorph: MysticSphere = {
       },
       // TODO: weird that this is one of the few ways you can attune on behalf of an ally
       type: "Attune (self)",
-    },
-
-    {
-      name: "Natural Weapon",
-
-      effect: `
-        You gain your choice of one of the following \\glossterm{natural weapons}: bite, claw, constrict, gore, ram, slam, or talon.
-        For details, see \\tref{Natural Weapons}.
-      `,
-      rank: 1,
-      scaling: {
-        3: `You also gain a +2 \\glossterm{magic bonus} to \\glossterm{power} with natural weapons.`,
-        5: `The power bonus increases to +4.`,
-        7: `The power bonus increases to +8.`,
-      },
-      type: "Attune (self)",
-    },
-
-    {
-      name: "Mass Natural Weapon",
-
-      castingTime: "minor action",
-      functionsLike: {
-        mass: true,
-        name: "Natural Weapon",
-      },
-      // narrative: '',
-      rank: 3,
-      scaling: {
-        3: `Each subject also gains a +2 \\glossterm{magic bonus} to \\glossterm{power} with natural weapons.`,
-        5: `The power bonus increases to +4.`,
-      },
-      type: "Attune (target)",
     },
 
     {
