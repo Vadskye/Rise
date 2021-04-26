@@ -259,14 +259,18 @@ export const chronomancy: MysticSphere = {
         Choose yourself or one \\glossterm{ally} within \\medrange.
         You reach into a possible future and create a duplicate of the subject.
         The duplicate is identical in all ways to the subject when the spell resolves.
+
         The subject and its duplicate can act during the next round.
         At the end of that round, the subject and its duplicate cease to exist.
+        During that round, time does not pass for the subject.
         At the end of the following round, the subject reappears in the place where it ceased to exist.
         If that space is occupied, it appears in the closest unoccupied space.
-
-        When the subject reappears, its condition is unchanged from when it left, except that it increases its \\glossterm{fatigue level} by the amount used by its duplicate.
+        When the subject reappears, its condition is unchanged from when it left.
         Its \\glossterm{hit points}, conditions, and all other statistics are unaffected, regardless of any damage or other negative effects suffered by the duplicate.
-        If this would reduce any of the subject's resources below 0, it takes 4d10 energy damage from the paradox and becomes \\stunned as a \\glossterm{condition}.
+
+        The duplicate is fragile, and its actions are limited.
+        It cannot use actions that would cause it to increase its \\glossterm{fatigue level}, lose \\glossterm{hit points}, or otherwise suffer negative consequences as a cost of the action.
+        If it loses any \\glossterm{hit points}, it ceases to exist.
       `,
       rank: 5,
       scaling: {
