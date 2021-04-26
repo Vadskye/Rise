@@ -423,11 +423,9 @@ export const summoning: MysticSphere = {
     {
       name: "Summon Mount",
 
-      // original targets: One unoccupied square on stable ground within \medrange
-
       functionsLike: {
         exceptThat: `
-        you must also choose an \\glossterm{ally} within \\medrange to ride the summoned creature.
+        you must also choose yourself or an \\glossterm{ally} within \\medrange to ride the summoned creature.
         The summoned creature appears to be either a Large horse or a Medium pony.
         It comes with a bit and bridle and a riding saddle, and will only accept the subject as a rider.
         The creature follows its rider's directions to the extent that a well-trained horse would and it cannot attack.
