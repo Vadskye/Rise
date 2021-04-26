@@ -68,17 +68,18 @@ export const terramancy: MysticSphere = {
         The body targeted must be at least as large as the item you create.
         The item appears in your hands.
 
-        The item functions like a normal item of its type, except that it is twice as heavy.
-        If the item loses all of its hit points, this effect is \\glossterm{dismissed}.
+        The item functions like a normal item of its type, except that any \\glossterm{strikes} that you make with a weapon created with this ability are \\glossterm{magical} abilities, so you use your magical \\glossterm{power} to determine their damage instead of your \\glossterm{mundane} power.
       `,
       rank: 1,
       scaling: {
-        3: `You can also create heavy armor.
-            In addition, the item created is magically enhanced.
-                A weapon grants a +2 \\glossterm{magic bonus} to your \\glossterm{mundane} \\glossterm{power},
-                    and armor grants a +1 \\glossterm{magic bonus} to Armor defense.`,
-        5: `The magic bonus for a weapon increases to +4, and the magic bonus for armor increases to +2.`,
-        7: `The magic bonus for a weapon increases to +8, and the magic bonus for armor increases to +3.`,
+        3: `
+          You can also create heavy armor.
+          In addition, the item created is magically enhanced.
+          A weapon grants a +1 \\glossterm{magic bonus} to \\glossterm{accuracy} with strikes using the weapon,
+            and armor grants a +1 \\glossterm{magic bonus} to Armor defense.
+        `,
+        5: `The magic bonus increases to +2.`,
+        7: `The magic bonus increases to +3.`,
       },
       type: "Attune (self)",
     },
