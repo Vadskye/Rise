@@ -35,8 +35,8 @@ export const barrier: MysticSphere = {
       name: "Minor Barrier",
       scaling: {
         2: "The range increases to \\medrange.",
-        4: "The maximum dimensions of the wall increase to a 5 ft.\\ by 10 ft.\\ rectangle, and the hit points of each square increase to 8.",
-        6: "The maximum dimensions of the wall increase to a 10 ft.\\ by 10 ft.\\ square, and the hit points of each square increase to 16.",
+        4: "The maximum dimensions of the wall increase to a 5 ft.\\ by 10 ft.\\ rectangle, and the hit points of each square increase to 16.",
+        6: "The maximum dimensions of the wall increase to a 10 ft.\\ by 10 ft.\\ square, and the hit points of each square increase to 32.",
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -51,13 +51,13 @@ export const barrier: MysticSphere = {
           it reflects \\glossterm{mundane} attacks against it.
             The barrier's defenses become equal to 5 \\add your level.
             Whenever a creature misses the barrier with a \\glossterm{mundane} attack, it makes the same attack against itself, rolling a new attack roll against its own defenses.
-            In addition, the \\glossterm{hit points} of each 5-ft.\\ square increase to 8.
+            In addition, the \\glossterm{hit points} of each 5-ft.\\ square increase to 16.
         `,
         name: "mystic barrier",
       },
       rank: 4,
       scaling: {
-        6: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 16.`,
+        6: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 32.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -76,8 +76,8 @@ export const barrier: MysticSphere = {
       },
       rank: 2,
       scaling: {
-        4: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 8.`,
-        6: `The maximum area increases to a \\largearealong line, and the hit points of each square increase to 16.`,
+        4: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 16.`,
+        6: `The maximum area increases to a \\largearealong line, and the hit points of each square increase to 32.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -99,8 +99,8 @@ export const barrier: MysticSphere = {
       },
       rank: 2,
       scaling: {
-        4: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 8.`,
-        6: `The maximum area increases to a \\largearealong line, and the hit points of each square increase to 16.`,
+        4: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 16.`,
+        6: `The maximum area increases to a \\largearealong line, and the hit points of each square increase to 32.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -115,15 +115,15 @@ export const barrier: MysticSphere = {
             Each object in the path of the wall takes energy damage equal to 2d6 plus your \\glossterm{power}.
             Any object destroyed in this way does not block the barrier's area of effect.
             This does no damage to creatures, who block the path of the barrier like normal.
-            In addition, the \\glossterm{hit points} of each 5-ft.\\ square increase to 8.
+            In addition, the \\glossterm{hit points} of each 5-ft.\\ square increase to 16.
         `,
         name: "mystic barrier",
       },
       rank: 3,
       scaling: {
-        5: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 16.
+        5: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 32.
             In addition, the damage increases to 2d8 plus your \\glossterm{power}.`,
-        7: `The maximum area increases to a \\largearealong line, and the hit points of each square increase to 32.
+        7: `The maximum area increases to a \\largearealong line, and the hit points of each square increase to 64.
             In addition, the damage increases to 2d10 plus your \\glossterm{power}.`,
       },
       tags: ["Manifestation"],
@@ -140,16 +140,16 @@ export const barrier: MysticSphere = {
         This can allow you to completely block off small tunnels.
         The wall is visible as a shimmering magical membrane that does not block sight.
         Nothing can pass through the wall until it is destroyed.
-        Each 5-ft.\\ square of wall has 4 \\glossterm{hit points}, and all of its defenses are 0.
+        Each 5-ft.\\ square of wall has 8 \\glossterm{hit points}, and all of its defenses are 0.
 
         When you cast this spell, you can \\glossterm{attune} to it.
         If you do, it gains the \\abilitytag{Attune} (self) tag and loses the \\abilitytag{Sustain} (minor) tag.
       `,
       rank: 1,
       scaling: {
-        3: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 8.`,
-        5: `The maximum area increases to a \\largearealong line, and the hit points of each square increase to 16.`,
-        7: `The maximum area increases to a \\hugearealong line, and the hit points of each square increase to 32.`,
+        3: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 16.`,
+        5: `The maximum area increases to a \\largearealong line, and the hit points of each square increase to 32.`,
+        7: `The maximum area increases to a \\hugearealong line, and the hit points of each square increase to 64.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -166,8 +166,8 @@ export const barrier: MysticSphere = {
       },
       rank: 2,
       scaling: {
-        4: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 8.`,
-        6: `The maximum area increases to a \\largearealong line, and the hit points of each square increase to 16.`,
+        4: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 16.`,
+        6: `The maximum area increases to a \\largearealong line, and the hit points of each square increase to 32.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -182,15 +182,15 @@ export const barrier: MysticSphere = {
         The sphere is visible as a shimmering magical membrane that does not block sight.
         Nothing can pass through the field until it is destroyed.
         This prevents the subject from having \\glossterm{line of effect} to anything outside of the area.
-        Each 5-ft.\\ square of the field has \\glossterm{hit points} equal to twice your \\glossterm{power}.
+        Each 5-ft.\\ square of the field has 8 \\glossterm{hit points}.
 
         If another creature is in the subject's space when this spell is cast, this spell fails without effect.
         `,
       rank: 1,
       scaling: {
-        3: `The \\glossterm{hit points} of each 5-ft.\\ square increase to be equal to three times your \\glossterm{power}.`,
-        5: `The maximum size of the subject increases to Huge.`,
-        7: `The \\glossterm{hit points} of each 5-ft.\\ square increase to be equal to four times your \\glossterm{power}.`,
+        3: `The \\glossterm{hit points} of each 5-ft.\\ square increase to 16.`,
+        5: `The \\glossterm{hit points} of each 5-ft.\\ square increase to 32.`,
+        7: `The \\glossterm{hit points} of each 5-ft.\\ square increase to 64.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -204,12 +204,12 @@ export const barrier: MysticSphere = {
         You create a curved field of magical energy that blocks access to the subject's opening mechanism.
         The opening mechanism must be Medium or smaller in size.
         Nothing can pass through the field until it is destroyed.
-        The field has 8 \\glossterm{hit points}.
+        The field has 16 \\glossterm{hit points}.
       `,
       rank: 2,
       scaling: {
-        4: `The \\glossterm{hit points} of the field increase to 16.`,
-        6: `The \\glossterm{hit points} of the field increase to 32.`,
+        4: `The \\glossterm{hit points} of the field increase to 32.`,
+        6: `The \\glossterm{hit points} of the field increase to 64.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -224,11 +224,11 @@ export const barrier: MysticSphere = {
         Nothing can pass through the field until it is destroyed.
         This prevents you from having \\glossterm{line of effect} to anything outside of the area.
         When you move using one of your movement speeds, the sphere moves with you, though you cannot force it against another creature or object.
-        Each 5-ft.\\ square of the field has \\glossterm{hit points} equal to three times your \\glossterm{power}.
+        Each 5-ft.\\ square of the field has 16 \\glossterm{hit points}.
         `,
       rank: 5,
       scaling: {
-        7: `The \\glossterm{hit points} of each 5-ft.\\ square increase to be equal to four times your \\glossterm{power}.`,
+        7: `The \\glossterm{hit points} of each 5-ft.\\ square increase to 32.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -238,14 +238,14 @@ export const barrier: MysticSphere = {
       name: "Entrapping Sphere",
 
       attack: {
-        crit: "The sphere's \\glossterm{hit points} increase to 32.",
+        crit: "The sphere's \\glossterm{hit points} increase to 64.",
         glance: "The effect lasts until the end of the next round.",
         hit: `
           A sphere of magical energy appears around the subject in its space.
           The sphere is visible as a shimmering magical membrane that does not block sight.
           Nothing can pass through the sphere until it is destroyed.
           This prevents the subject from having \\glossterm{line of effect} to anything outside of the area.
-          Each 5-ft.\\ square of the field has \\glossterm{hit points} equal to twice your \\glossterm{power}.
+          Each 5-ft.\\ square of the field has 32 \\glossterm{hit points}.
 
           If another creature is in the subject's space when this spell is cast, this spell fails without effect.
         `,
@@ -265,13 +265,13 @@ export const barrier: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the wall is \\glossterm{impervious} to physical damage.
-          In addition, each 5-ft.\\ square of wall has 16 \\glossterm{hit points}.
+          In addition, each 5-ft.\\ square of wall has 32 \\glossterm{hit points}.
         `,
         name: "mystic barrier",
       },
       rank: 5,
       scaling: {
-        7: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 32.`,
+        7: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 64.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -284,12 +284,12 @@ export const barrier: MysticSphere = {
         You create a wall of magical energy in a 15 ft.\\ high, \\smallarealong line within \\medrange.
         The wall is visible as a shimmering magical membrane that does not block sight.
         It does not impede passage for objects or creatures, but any ability that deals \\glossterm{energy damage} treats the wall as an impassable barrier.
-        Each 5-ft.\\ square of wall has \\glossterm{hit points} equal to twice your \\glossterm{power}.
+        Each 5-ft.\\ square of wall has 16 \\glossterm{hit points}.
         `,
       rank: 3,
       scaling: {
-        5: `The area increases to a \\medarealong line.`,
-        7: `The \\glossterm{hit points} of each 5-ft.\\ square increase to be equal to three times your \\glossterm{power}.`,
+        5: `The \\glossterm{hit points} of each 5-ft.\\ square increase to 32.`,
+        7: `The \\glossterm{hit points} of each 5-ft.\\ square increase to 64.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -302,13 +302,13 @@ export const barrier: MysticSphere = {
         exceptThat: `
           the wall only blocks \\glossterm{magical} abilities.
             Objects, creatures, and \\glossterm{mundane} abilities can pass through the wall freely, but any \\glossterm{magical} ability treats the wall as an impassable barrier.
-            In addition, each 5-ft.\\ square of wall has 8 \\glossterm{hit points}.
+            In addition, each 5-ft.\\ square of wall has 16 \\glossterm{hit points}.
         `,
         name: "mystic barrier",
       },
       rank: 4,
       scaling: {
-        6: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 16.`,
+        6: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 32.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -322,7 +322,7 @@ export const barrier: MysticSphere = {
           you choose one side of the barrier when you cast the spell.
             Whenever an object, creature, or ability passes through the barrier from the chosen side, the barrier parts to allow it through.
             If it stops halfway, it can return to its side, but once it passes through fully it treats the barrier as impassable from the other side.
-            In addition, each 5-ft.\\ square of wall has 16 \\glossterm{hit points}.
+            In addition, each 5-ft.\\ square of wall has 32 \\glossterm{hit points}.
         `,
         name: "mystic barrier",
       },
