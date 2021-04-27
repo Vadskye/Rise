@@ -1268,6 +1268,7 @@ def generate_worn():
             tags=[],
             description="""
                 These bracers function like \\textit<bracers of armor>, except that the defense bonus from the body armor increases to +3.
+                In addition, its bonus to \glossterm{resistance} against \glossterm{energy damage} increases to +8, and its bonus to resistance against \glossterm{physical damage} increases to +4.
             """,
             short_description="Grants encumbrance-free +3 armor",
         ),
@@ -1278,6 +1279,7 @@ def generate_worn():
             tags=[],
             description="""
                 These bracers function like \\textit<bracers of armor>, except that the defense bonus from the body armor increases to +4.
+                In addition, its bonus to \glossterm{resistance} against \glossterm{energy damage} increases to +16, and its bonus to resistance against \glossterm{physical damage} increases to +8.
             """,
             short_description="Grants encumbrance-free +4 armor",
         ),
