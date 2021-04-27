@@ -24,6 +24,12 @@ def create_page():
                     basic_info(),
                     archetypes(),
                     feats_summary(),
+                    div({"class": "section-header"}, "Personal Info"),
+                    labeled_text_input("Alignment", input_attributes={"name": f"alignment"}),
+                    labeled_text_input("Deity", input_attributes={"name": f"deity"}),
+                    labeled_text_input(
+                        "Experience points", input_attributes={"name": "experience"}
+                    ),
                     div({"class": "section-header goals-and-flaws"}, "Goals and Flaws"),
                     "".join(
                         [
@@ -61,12 +67,6 @@ def basic_info():
         ),
         labeled_textarea(
             "Weapon groups", input_attributes={"name": "weapon_proficiencies_1"}
-        ),
-        div({"class": "section-header"}, "Personal Info"),
-        labeled_text_input("Alignment", input_attributes={"name": f"alignment"}),
-        labeled_text_input("Deity", input_attributes={"name": f"deity"}),
-        labeled_text_input(
-            "Experience points", input_attributes={"name": "experience"}
         ),
     ])
 
