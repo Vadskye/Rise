@@ -184,8 +184,10 @@ def character_creation():
                 'Choose your class and archetypes.',
                 ul([
                     li('Your chosen class is written in the top left of the Misc tab in the text box labeled "Class", under the "Class Info" header.'),
-                    li('Your chosen archetypes are written in the bottom left of the "Misc" tab in the section with an "Archetypes" header. You can note your rank in each archetype with the numeric input labeled "Rank".'),
-                    li('Your class determines your armor and weapon proficiencies. Those are written on the left side of the "Misc" tab in the text boxes labeled "Armor proficiencies" and "Weapon groups".'),
+                    li('Your chosen archetypes are written in the bottom left of the Misc tab in the section with an "Archetypes" header. You can note your rank in each archetype with the numeric input labeled "Rank".'),
+                    li('Your class gives you bonuses to various resources. Those resources are tracked under the "Resources" header in the Calcs tab.'),
+                    li('Your class determines your armor and weapon proficiencies. Those are written on the left side of the Misc tab in the text boxes labeled "Armor proficiencies" and "Weapon groups".'),
+                    li('You have a set of class skills based on your class. For each class skill, check the "Class Skill?" checkbox associated with that skill on the left side of the Calcs tab.'),
                 ]),
             ]),
             li([
@@ -198,7 +200,6 @@ def character_creation():
             li([
                 'Spend skill points.',
                 ul([
-                    li('You have a set of class skills based on your class. For each class skill, check the "Class Skill?" checkbox associated with that skill on the left side of the Calcs tab.'),
                     li('You have a number of skill points based on your class, Intelligence, and possibly other abilities. That number is written in the "Resources" section of the Calcs tab.'),
                     li('To spend skill points, increase the value in the "Points" column next to the skill that you are interested in.'),
                 ]),
