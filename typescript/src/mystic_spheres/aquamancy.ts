@@ -580,7 +580,7 @@ export const aquamancy: MysticSphere = {
           \\item You gain a \\glossterm{swim speed} equal to your \\glossterm{base speed}.
           \\item You gain a +8 \\glossterm{magic bonus} to the Flexibility skill. In addition, the minimum size you can squeeze down to is reduced to one inch, which can dramatically improve your ability to squeeze through tight spaces.
           \\item You are immune to \\glossterm{critical hits} from \\glossterm{strikes}.
-          \\item Your \\glossterm{resistance} to \\glossterm{physical damage} is reduced to 0.
+          \\item Your \\glossterm{resistance} to \\glossterm{physical damage} is halved.
         \\end{itemize}
       `,
       rank: 4,
