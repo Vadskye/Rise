@@ -497,10 +497,10 @@ def skill_points():
 def fatigue_tolerance():
     misc = get_misc_variables("fatigue_tolerance", 2)
     return js_wrapper(
-        ["level", "fatigue_tolerance_base", "constitution_starting", "willpower_starting", *misc],
+        ["level", "fatigue_tolerance_base", "constitution_starting", "willpower_starting", "fatigue_tolerance_custom_modifier", *misc],
         f"""
             setAttrs({{
-                fatigue_tolerance: Math.max(0, fatigue_tolerance_base + constitution_starting + willpower_starting + {sum_variables(misc)}),
+                fatigue_tolerance: Math.max(0, fatigue_tolerance_base + constitution_starting + willpower_starting + fatigue_tolerance_custom_modifier + {sum_variables(misc)}),
             }});
         """,
     )
@@ -1092,6 +1092,7 @@ def custom_modifiers():
                         armor_defense_custom_modifier: totalCustomModifiers.armor_defense || 0,
                         encumbrance_custom_modifier: totalCustomModifiers.encumbrance || 0,
                         energy_resistance_bonus_custom_modifier: totalCustomModifiers.energy_resistance_bonus || 0,
+                        fatigue_tolerance_custom_modifier: totalCustomModifiers.fatigue_tolerance || 0,
                         fortitude_custom_modifier: totalCustomModifiers.fortitude || 0,
                         hit_points_custom_modifier: totalCustomModifiers.hit_points || 0,
                         magical_power_custom_modifier: totalCustomModifiers.magical_power || 0,

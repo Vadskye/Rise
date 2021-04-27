@@ -181,6 +181,7 @@ def custom_statistic(i):
                 option({'value': 'armor_defense'}, 'Armor'),
                 option({'value': 'encumbrance'}, 'Encumbrance'),
                 option({'value': 'energy_resistance_bonus'}, 'Energy resist'),
+                option({'value': 'fatigue_tolerance'}, 'Fatigue tolerance'),
                 option({'value': 'fortitude'}, 'Fortitude'),
                 option({'value': 'hit_points'}, 'Hit points'),
                 option({'value': 'magical_power'}, 'Magical power'),
