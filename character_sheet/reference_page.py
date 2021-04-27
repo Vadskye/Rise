@@ -174,17 +174,16 @@ def character_creation():
             li([
                 'Choose your species.',
                 ul([
-                    li('Your chosen species is written in the top left of the "Misc" tab in the text box labeled "Species".'),
-                    li('Your species determines your size. Your size is written on the left side of the "Misc" tab in the text box labeled "Size".'),
-                    li('Your species determines your automatic languages. Your languages are written on the left side of the "Misc" tab in the text box labeled "Languages known".'),
+                    li('Your chosen species is written in the top left of the Misc tab in the text box labeled "Species", under the "Species Info" header.'),
+                    li('Your species determines your size and languages known. Those are written next to your species in the Misc tab.'),
                     li('Many species modify your base attributes. You can write those modifiers in the section of the Calcs tab with an "Attributes" header. They should be written in one of the boxes to the right of the "Points" boxes. You can fill in the name of your species below the attribute modifier to remind yourself later why that attribute modifier exists.'),
-                    li("""All species grant special abilities of some sort. Passive numeric abilities, like a halfling's bonus to Armor defense, are generally recorded by finding the appropriate calculation in the Calcs tab and adding a new modifier. Other abilities, like a dwarf's darkvision, are generally recorded by adding a new Ability on the Core tab to remind yourself that the ability exists."""),
+                    li("""All species grant special abilities of some sort. Passive numeric abilities, like a halfling's bonus to Armor defense, are generally recorded by finding the appropriate calculation in the Calcs tab and adding a new modifier. Other abilities, like a dwarf's darkvision, are generally recorded by adding a new Ability on the Active tab to remind yourself that the ability exists."""),
                 ]),
             ]),
             li([
                 'Choose your class and archetypes.',
                 ul([
-                    li('Your chosen class is written in the top left of the "Misc" tab in the text box labeled "Class".'),
+                    li('Your chosen class is written in the top left of the Misc tab in the text box labeled "Class", under the "Class Info" header.'),
                     li('Your chosen archetypes are written in the bottom left of the "Misc" tab in the section with an "Archetypes" header. You can note your rank in each archetype with the numeric input labeled "Rank".'),
                     li('Your class determines your armor and weapon proficiencies. Those are written on the left side of the "Misc" tab in the text boxes labeled "Armor proficiencies" and "Weapon groups".'),
                 ]),
