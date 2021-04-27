@@ -47,41 +47,35 @@ def create_page():
 
 
 def basic_info():
-    return flex_col(
-        {"class": "basic-info"},
-        [
-            flex_wrapper(div({"class": "section-header"}, "Basic Info")),
-            labeled_text_input("Species", input_attributes={"name": f"species"}),
-            labeled_text_input("Class", input_attributes={"name": f"class"}),
-            labeled_text_input(
-                "Armor proficiencies", input_attributes={"name": "prof_armor"}
-            ),
-            text_input({"name": "armor_proficiencies"}),
-            labeled_text_input(
-                "Weapon groups", input_attributes={"name": "weapon_proficiencies_1"}
-            ),
-            text_input({"name": "weapon_proficiencies_2"}),
-            labeled_text_input(
-                "Languages known", input_attributes={"name": "language_proficiencies"}
-            ),
-            labeled_text_input("Size", input_attributes={"name": f"size"}),
-            labeled_text_input("Alignment", input_attributes={"name": f"alignment"}),
-            labeled_text_input("Deity", input_attributes={"name": f"deity"}),
-            labeled_text_input(
-                "Experience points", input_attributes={"name": "experience"}
-            ),
-        ],
-    )
+    return "".join([
+        div({"class": "section-header"}, "Species Info"),
+        labeled_text_input("Species", input_attributes={"name": f"species"}),
+        labeled_text_input("Size", input_attributes={"name": f"size"}),
+        labeled_text_input(
+            "Languages known", input_attributes={"name": "language_proficiencies"}
+        ),
+        div({"class": "section-header"}, "Class Info"),
+        labeled_text_input("Class", input_attributes={"name": f"class"}),
+        labeled_textarea(
+            "Armor proficiencies", input_attributes={"name": "prof_armor"}
+        ),
+        labeled_textarea(
+            "Weapon groups", input_attributes={"name": "weapon_proficiencies_1"}
+        ),
+        div({"class": "section-header"}, "Personal Info"),
+        labeled_text_input("Alignment", input_attributes={"name": f"alignment"}),
+        labeled_text_input("Deity", input_attributes={"name": f"deity"}),
+        labeled_text_input(
+            "Experience points", input_attributes={"name": "experience"}
+        ),
+    ])
 
 
 def feats_summary():
-    return flex_col(
-        {"class": "feats-summary"},
-        [
-            flex_wrapper(div({"class": "section-header"}, "Feats")),
-            "".join([feat_row(i) for i in range(4)]),
-        ],
-    )
+    return "".join([
+        div({"class": "section-header"}, "Feats"),
+        "".join([feat_row(i) for i in range(4)]),
+    ])
 
 
 def abilities_summary():
@@ -123,15 +117,6 @@ def feat_row(i):
     )
 
 
-def proficiencies():
-    return flex_col(
-        {"class": "proficiencies"},
-        [
-            flex_wrapper(div({"class": "section-header"}, "Proficiencies")),
-        ],
-    )
-
-
 def subsection_header(attributes=None, contents=None):
     attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
     attributes["class"] = "subsection-header " + attributes.get("class", "")
@@ -165,29 +150,26 @@ def equipment():
 
 
 def archetypes():
-    return div(
-        {"class": "archetypes"},
-        [
-            flex_wrapper(div({"class": "section-header"}, "Archetypes")),
-            *[
-                flex_row(
-                    {"class": "archetype"},
-                    [
-                        labeled_text_input(
-                            "Name",
-                            {"class": "archetype-name"},
-                            {"name": f"archetype_name_{i}"},
-                        ),
-                        underlabel(
-                            "Rank",
-                            number_input({"name": f"archetype_rank_{i}"}),
-                        ),
-                    ],
-                )
-                for i in range(3)
-            ],
+    return "".join([
+        div({"class": "section-header"}, "Archetypes"),
+        *[
+            flex_row(
+                {"class": "archetype"},
+                [
+                    labeled_text_input(
+                        "Name",
+                        {"class": "archetype-name"},
+                        {"name": f"archetype_name_{i}"},
+                    ),
+                    underlabel(
+                        "Rank",
+                        number_input({"name": f"archetype_rank_{i}"}),
+                    ),
+                ],
+            )
+            for i in range(3)
         ],
-    )
+    ])
 
 def misc_equipment(body_slot, body_slot_html=None):
     if body_slot_html is None:
