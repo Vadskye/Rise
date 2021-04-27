@@ -191,7 +191,7 @@ def custom_statistic(i):
                 option({'value': 'vital_rolls'}, 'Vital rolls'),
             ],
         ),
-        underlabel_spaced(
+        underlabel(
             "Value",
             number_input({"name": "value" + i}),
             {"class": "custom-modifier-value"},
