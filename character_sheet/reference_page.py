@@ -189,10 +189,17 @@ def character_creation():
                 ]),
             ]),
             li([
+                'Spend insight points.',
+                ul([
+                    li('You have a number of insight skills based on your class, Intelligence, and possibly other abilities. That number is written in the "Resources" section of the Calcs tab.'),
+                    li('You can spend insight points on special abilities from your class, or on a variety of proficiencies and abilities. The general list of options for insight points is listed in the "Resources" section of the "Core Mechanics" chapter of the book.'),
+                ]),
+            ]),
+            li([
                 'Spend skill points.',
                 ul([
-                    li('You have a set of class skills based on your class. For each class skill, check the "Class Skill?" checkbox associated with that skill on the left side of the "Calcs" tab.'),
-                    li('You have a number of skill points based on your class, Intelligence, and possibly other abilities. That number is written in the "Resources" section of the "Calcs" tab.'),
+                    li('You have a set of class skills based on your class. For each class skill, check the "Class Skill?" checkbox associated with that skill on the left side of the Calcs tab.'),
+                    li('You have a number of skill points based on your class, Intelligence, and possibly other abilities. That number is written in the "Resources" section of the Calcs tab.'),
                     li('To spend skill points, increase the value in the "Points" column next to the skill that you are interested in.'),
                 ]),
             ]),
