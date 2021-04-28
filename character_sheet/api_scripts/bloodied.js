@@ -26,15 +26,15 @@ function updateHitPoints(obj) {
     } else if (bar1_value > 0) {
         // The object is bloodied
         obj.set({
-            "status_green": false,
+            "status_green": true,
             "status_half-heart": true,
             "status_dead": false,
         });
     } else {
         // The object is dead
         obj.set({
-            "status_green": false,
-            "status_half-heart": false,
+            "status_green": true,
+            "status_half-heart": true,
             "status_dead": true,
         });
     }
