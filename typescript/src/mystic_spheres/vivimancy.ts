@@ -28,7 +28,7 @@ export const vivimancy: MysticSphere = {
       effect: `
         Choose yourself or one living \\glossterm{ally} within \\medrange.
         The subject regains two \\glossterm{hit points}.
-        After you use this ability, you cannot use it or any other \abilitytag{Healing} ability until after the end of the next round.
+        After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
       `,
       focus: false,
       scaling: {
@@ -423,7 +423,7 @@ export const vivimancy: MysticSphere = {
         hit: `
           The subject takes 2d8 + \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, you regain \\glossterm{hit points} equal to the hit points it lost this way.
-          After you use this ability, you cannot use it or any other \abilitytag{Healing} ability until after the end of the next round.
+          After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\medrange.
