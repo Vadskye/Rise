@@ -77,6 +77,7 @@ def get_misc_variables(variable_name, count):
         "armor_defense",
         "encumbrance",
         "energy_resistance_bonus",
+        "fatigue_tolerance",
         "fortitude",
         "hit_points",
         "magical_power",
@@ -221,6 +222,7 @@ def core_statistics():
         mundane_power(),
         skill_points(),
         vital_rolls(),
+        weapon_damage_dice(),
     ]
 
 
@@ -251,7 +253,7 @@ def abilities_known():
 
 
 def accuracy():
-    misc = get_misc_variables("accuracy", 2)
+    misc = get_misc_variables("accuracy", 3)
     return js_wrapper(
         [
             "challenge_rating",
@@ -441,7 +443,7 @@ def mental():
 
 
 def encumbrance():
-    misc = get_misc_variables("encumbrance", 2)
+    misc = get_misc_variables("encumbrance", 3)
     return js_wrapper(
         ["level", "body_armor_encumbrance", "strength_starting", *misc],
         f"""
@@ -471,7 +473,7 @@ def initiative():
 
 
 def base_speed():
-    misc = get_misc_variables("speed", 2)
+    misc = get_misc_variables("speed", 3)
     return js_wrapper(
         ["level", "speed_size", "speed_armor", *misc],
         f"""
@@ -483,7 +485,7 @@ def base_speed():
 
 
 def skill_points():
-    misc = get_misc_variables("skill_points", 2)
+    misc = get_misc_variables("skill_points", 3)
     return js_wrapper(
         ["level", "skill_points_base", "intelligence_starting", *misc],
         f"""
@@ -497,10 +499,10 @@ def skill_points():
 def fatigue_tolerance():
     misc = get_misc_variables("fatigue_tolerance", 2)
     return js_wrapper(
-        ["level", "fatigue_tolerance_base", "constitution_starting", "willpower_starting", "fatigue_tolerance_custom_modifier", *misc],
+        ["level", "fatigue_tolerance_base", "constitution_starting", "willpower_starting", *misc],
         f"""
             setAttrs({{
-                fatigue_tolerance: Math.max(0, fatigue_tolerance_base + constitution_starting + willpower_starting + fatigue_tolerance_custom_modifier + {sum_variables(misc)}),
+                fatigue_tolerance: Math.max(0, fatigue_tolerance_base + constitution_starting + willpower_starting + {sum_variables(misc)}),
             }});
         """,
     )
@@ -592,7 +594,7 @@ def fatigue_penalty():
 
 
 def insight_points():
-    misc = get_misc_variables("insight_points", 2)
+    misc = get_misc_variables("insight_points", 3)
     return js_wrapper(
         ["insight_points_base", "intelligence_starting", *misc],
         f"""
@@ -1039,6 +1041,17 @@ def vital_rolls():
         f"""
             setAttrs({{
                 vital_rolls: {sum_variables(misc)} - vital_wound_count,
+            }});
+        """,
+    )
+
+def weapon_damage_dice():
+    misc = get_misc_variables("weapon_damage_dice", 4)
+    return js_wrapper(
+        ["level", "vital_wound_count", *misc],
+        f"""
+            setAttrs({{
+                weapon_damage_dice: {sum_variables(misc)}
             }});
         """,
     )

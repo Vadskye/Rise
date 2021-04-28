@@ -85,6 +85,7 @@ def create_page(destination):
                             calc_magical_power(),
                             calc_mundane_power(),
                             calc_vital_rolls(),
+                            calc_weapon_damage_dice(),
                             calc_weight_limits(),
                             calc_unknown_statistic(),
                             flex_wrapper(div({"class": "section-header"}, "Resources")),
@@ -369,7 +370,7 @@ def calc_accuracy():
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat("accuracy", 2),
+                    equation_misc_repeat("accuracy", 3),
                 ],
                 result_attributes={
                     "disabled": True,
@@ -752,6 +753,24 @@ def calc_vital_rolls():
         ]
     )
 
+def calc_weapon_damage_dice():
+    return flex_row(
+        [
+            div({"class": "calc-header"}, "Weapon Damage"),
+            equation(
+                [
+                    equation_misc_repeat("weapon_damage_dice", 4),
+                ],
+                result_attributes={
+                    "disabled": True,
+                    "name": "weapon_damage_dice_display",
+                    "value": "@{weapon_damage_dice}",
+                },
+                result_label="Total +d",
+            ),
+        ]
+    )
+
 
 def calc_unknown_statistic():
     return flex_row(
@@ -783,7 +802,7 @@ def calc_base_speed():
                     minus(),
                     underlabel("Armor", number_input({"name": "speed_armor"})),
                     plus(),
-                    equation_misc_repeat("speed", 2),
+                    equation_misc_repeat("speed", 3),
                 ],
                 result_attributes={
                     "disabled": True,
@@ -867,6 +886,8 @@ def calc_encumbrance():
                     equation_misc("encumbrance", 0),
                     minus(),
                     equation_misc("encumbrance", 1),
+                    minus(),
+                    equation_misc("encumbrance", 2),
                 ],
                 result_attributes={
                     "disabled": True,
@@ -916,7 +937,7 @@ def calc_skill_points():
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat("skill_points", 2),
+                    equation_misc_repeat("skill_points", 3),
                 ],
                 result_attributes={
                     "disabled": "true",
@@ -1092,7 +1113,7 @@ def calc_insight_points():
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat("insight_points", 2),
+                    equation_misc_repeat("insight_points", 3),
                 ],
                 result_attributes={
                     "disabled": "true",
