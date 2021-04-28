@@ -95,6 +95,7 @@ export const unbreakableDefense: CombatStyle = {
       type: "Duration",
     },
 
+    // TODO: change to rank 5 once campaigns progress far enough
     {
       name: "Cleansing Strike",
 
