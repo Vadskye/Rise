@@ -179,6 +179,18 @@ export const ebbAndFlow: CombatStyle = {
       name: "Greater Certain Strike",
 
       effect: `
+        Make a \\glossterm{strike} with a +3 accuracy bonus.
+        You take a -2d penalty to damage with the strike.
+        `,
+
+      rank: 3,
+      type: "Instant",
+    },
+
+    {
+      name: "Supreme Certain Strike",
+
+      effect: `
         Make a \\glossterm{strike} with a +4 accuracy bonus.
         You take a -2d penalty to damage with the strike.
         `,
@@ -204,9 +216,19 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a -2 penalty to \\glossterm{accuracy}.
-        You gain a +4d bonus to damage with the strike.
-        `,
+        You gain a +3d bonus to damage with the strike.
+      `,
+      rank: 3,
+      type: "Instant",
+    },
 
+    {
+      name: "Supreme Power Strike",
+
+      effect: `
+        Make a \\glossterm{strike} with a -2 penalty to \\glossterm{accuracy}.
+        You gain a +4d bonus to damage with the strike.
+      `,
       rank: 5,
       type: "Instant",
     },
@@ -233,7 +255,7 @@ export const ebbAndFlow: CombatStyle = {
       name: "Hunting Strike",
 
       effect: `
-        Make a \\glossterm{strike} against a creature.
+        Make a \\glossterm{strike} with a -1d damage penalty against a creature.
         After making the strike, you gain a +1 bonus to \\glossterm{accuracy} against one target of the strike with all future attacks.
         If the strike had multiple targets, you choose which target you gain the bonus against.
         This effect stacks with itself, up to a maximum of a +4 bonus.
@@ -250,7 +272,7 @@ export const ebbAndFlow: CombatStyle = {
         exceptThat: "the accuracy bonus from each strike increases to +2.",
         name: "hunting strike",
       },
-      rank: 4,
+      rank: 5,
       type: "Duration",
     },
 
