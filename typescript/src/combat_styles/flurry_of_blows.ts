@@ -215,6 +215,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a ranged \\glossterm{strike} using a \\glossterm{projectile} weapon against a creature adjacent to you.
+        You do not suffer the normal -4 accuracy penalty for using a medium or large ranged weapon against a creature adjacent to you on this attack.
       `,
       rank: 2,
       type: "Instant",
