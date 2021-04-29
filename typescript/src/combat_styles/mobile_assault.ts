@@ -21,12 +21,23 @@ export const mobileAssault: CombatStyle = {
     {
       name: "Greater Reaping Harvest",
 
-      effect: `
-        Move up to your movement speed.
-        You can make a melee \\glossterm{strike} using a slashing or bludgeoning weapon.
-        Your \\glossterm{power} with the strike is halved.
-        The strike targets any number of creatures and objects within your \\glossterm{reach} at any point during your movement, except for the space you start in and the space you end in.
-      `,
+      functionsLike: {
+        abilityType: "maneuver",
+        exceptThat: "you can move up to your full speed instead of up to half your speed.",
+        name: "reaping harvest",
+      },
+      rank: 4,
+      type: "Instant",
+    },
+
+    {
+      name: "Supreme Reaping Harvest",
+
+      functionsLike: {
+        abilityType: "maneuver",
+        exceptThat: "you can move up to your full speed instead of up to half your speed, and you do not have to move in a straight line.",
+        name: "reaping harvest",
+      },
       rank: 6,
       type: "Instant",
     },
