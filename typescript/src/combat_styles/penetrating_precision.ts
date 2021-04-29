@@ -144,6 +144,32 @@ export const penetratingPrecision: CombatStyle = {
     },
 
     {
+      name: "Greater Heartpiercing Strike",
+
+      effect: `
+        Make a \\glossterm{strike} using a piercing weapon.
+        If you get a critical hit with the strike, you gain a bonus to damage with the strike equal to twice your \\glossterm{power}.
+        This bonus applies before applying any multipliers for the critical hit.
+      `,
+      // narrative: '',
+      rank: 4,
+      type: "Instant",
+    },
+
+    {
+      name: "Supreme Heartpiercing Strike",
+
+      effect: `
+        Make a \\glossterm{strike} using a piercing weapon.
+        If you get a critical hit with the strike, you gain a bonus to damage with the strike equal to three times your \\glossterm{power}.
+        This bonus applies before applying any multipliers for the critical hit.
+      `,
+      // narrative: '',
+      rank: 7,
+      type: "Instant",
+    },
+
+    {
       name: "Arrowguide",
 
       effect: `
