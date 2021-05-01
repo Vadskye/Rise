@@ -386,8 +386,7 @@ export const astromancy: MysticSphere = {
       `,
       narrative: `
         The kobold ambush exploited a weak point in your marching formation, and now everything is out of place.
-        The warriors are stuck in back, unable to reach you and the archer, who are surrounded by glistening daggers.
-        Or rather, they were stuck - but with a rapid succession of pops, you find yourself safely at a distance while the kobolds face the barbarian's whirling greataxe.
+        With a rapid succession of pops, you find yourself safely at a distance while the kobolds face the barbarian's whirling greataxe.
       `,
       rank: 2,
       scaling: {
@@ -445,8 +444,8 @@ export const astromancy: MysticSphere = {
         name: "flicker",
       },
       narrative: `
-        Some astromancers have studied for decades to gain total control over their current plane at all times.
-        Their incremental progress towards that goal can be unimpressive to people who who take for granted their ability to stay on only one plane at a time.
+        Some astromancers have researched the mystic arts for decades to avoid accidentally travelling to other planes in combat.
+        Of course, most people take that ability for granted.
       `,
       rank: 4,
       scaling: {
@@ -466,7 +465,7 @@ export const astromancy: MysticSphere = {
       rank: 3,
       narrative: `
         Armor and shields can offer some protection, but true defensive mastery comes from not being hit at all.
-        Of course, few people are both capable and willing to send themselves to another plane just to avoid danger, but it's a virtually unbeatable defense.
+        Few people send themselves to another plane just to avoid danger, but it's a virtually unbeatable defense.
       `,
       scaling: {
         5: `
