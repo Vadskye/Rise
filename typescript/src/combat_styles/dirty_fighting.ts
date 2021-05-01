@@ -321,5 +321,40 @@ export const dirtyFighting: CombatStyle = {
       rank: 4,
       type: "Instant",
     },
+
+    {
+      name: "Sweep the Leg",
+
+      effect: `
+        Make a melee \\glossterm{strike} with a -2d penalty to damage.
+        Each creature dealt damage by the strike falls \\prone.
+      `,
+      rank: 1,
+      type: "Instant",
+    },
+
+    {
+      name: "Anklesprainer",
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        Each creature damaged by the strike is \\slowed until the end of the next round.
+      `,
+      rank: 1,
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Anklesprainer",
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        Each creature damaged by the strike is \\decelerated until the end of the next round.
+      `,
+      rank: 4,
+      type: "Instant",
+    },
   ],
 };

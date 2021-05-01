@@ -92,7 +92,7 @@ export const bluntForce: CombatStyle = {
       attack: {
         glance: `Half damage.`,
         hit: `Each subject takes 2d10 + half \\glossterm{power} bludgeoning damage
-        Each Large or smaller creature that loses \\glossterm{hit points} from this damage is knocked \\prone..`,
+        Each Large or smaller creature that loses \\glossterm{hit points} from this damage is knocked \\prone.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarea radius from you that is on the same stable surface as you.
           You take a -4 penalty to accuracy with this attack against your \\glossterm{allies}.
@@ -266,6 +266,81 @@ export const bluntForce: CombatStyle = {
         The strike gains the \\glossterm{Forceful} weapon tag (see \\pcref{Weapon Tags}).
         If it already has that weapon tag, the distance that you can \\glossterm<knockback> the target increases by 10 feet.
         In addition, the maximum size category of creature that you can knockback with the Forceful effect increases by two size categories.
+      `,
+      rank: 6,
+      type: "Instant",
+    },
+
+    {
+      name: "Press Forward",
+
+      effect: `
+        Make a melee \\glossterm{strike} using a bludgeoning weapon.
+        After you make the strike, you can move up to 5 feet, \\glossterm{pushing} each creature damaged by the strike as you move.
+        You cannot push creatures two or more size categories larger than you with this ability.
+      `,
+      rank: 1,
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Press Forward",
+
+      effect: `
+        Make a melee \\glossterm{strike} using a bludgeoning weapon.
+        After you make the strike, you can move up to your movement speed, \\glossterm{pushing} each creature damaged by the strike as you move.
+        You cannot push creatures two or more size categories larger than you with this ability.
+      `,
+      rank: 4,
+      type: "Instant",
+    },
+
+    {
+      name: "Supreme Press Forward",
+
+      effect: `
+        Make a melee \\glossterm{strike} using a bludgeoning weapon.
+        After you make the strike, you can move up to your movement speed, \\glossterm{pushing} each creature damaged by the strike as you move.
+        You cannot push creatures three or more size categories larger than you with this ability.
+      `,
+      rank: 7,
+      type: "Instant",
+    },
+
+    {
+      name: "Desperate Crush",
+
+      effect: `
+        After you use this ability, you increase your \\glossterm{fatigue level} by one.
+
+        Make a melee \\glossterm{strike} using a bludgeoning weapon.
+        You gain a +2d bonus to damage with the strike.
+      `,
+      rank: 2,
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Desperate Crush",
+
+      effect: `
+        After you use this ability, you increase your \\glossterm{fatigue level} by one.
+
+        Make a melee \\glossterm{strike} using a bludgeoning weapon.
+        You gain a +3d bonus to damage with the strike.
+      `,
+      rank: 4,
+      type: "Instant",
+    },
+
+    {
+      name: "Supreme Desperate Crush",
+
+      effect: `
+        After you use this ability, you increase your \\glossterm{fatigue level} by one.
+
+        Make a melee \\glossterm{strike} using a bludgeoning weapon.
+        You gain a +4d bonus to damage with the strike.
       `,
       rank: 6,
       type: "Instant",

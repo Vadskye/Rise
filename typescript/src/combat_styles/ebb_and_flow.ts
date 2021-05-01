@@ -300,5 +300,16 @@ export const ebbAndFlow: CombatStyle = {
       rank: 6,
       type: "Instant",
     },
+
+    {
+      name: "Covering Strike",
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        Each creature damaged by the strike takes a -2 penalty to \\glossterm{accuracy} against your \\glossterm{allies} until the end of the next round.
+      `,
+      rank: 3,
+      type: "Duration",
+    },
   ],
 };

@@ -80,7 +80,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
-        Each creature loses \\glossterm{hit points} from the strike is \\slowed as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\slowed as a \\glossterm{condition}.
       `,
       rank: 1,
       type: "Duration",
@@ -92,9 +92,21 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        Each creature that loses \\glossterm{hit points} from the strike is \\decelerated as a \\glossterm{condition}.
+      `,
+      rank: 4,
+      type: "Duration",
+    },
+
+    {
+      name: "Supreme Hamstring",
+
+      effect: `
+        Make a \\glossterm{strike} using a slashing weapon.
+        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\immobilized as a \\glossterm{condition}.
       `,
-      rank: 6,
+      rank: 7,
       type: "Duration",
     },
 
