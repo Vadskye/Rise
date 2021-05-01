@@ -135,8 +135,8 @@ export const ripAndTear: CombatStyle = {
       name: "Sweeping Strike",
 
       effect: `
-        Make a melee \\glossterm{strike} using a slashing weapon against up to three creatures or objects within your weapon's \\glossterm{reach}.
-        Your \\glossterm{power} with the strike is halved.
+        Make a melee \\glossterm{strike} using a slashing weapon.
+        The strike gains the \\glossterm{Sweeping} (1) tag, or you increase the Sweeping value by 1 if it already had that tag (see \\pcref{Weapon Tags}).
       `,
       rank: 2,
       type: "Instant",
@@ -146,9 +146,22 @@ export const ripAndTear: CombatStyle = {
       name: "Greater Sweeping Strike",
 
       effect: `
-        Make a melee \\glossterm{strike} using a slashing weapon against up to three creatures or objects within your weapon's \\glossterm{reach}.
+        Make a melee \\glossterm{strike} using a slashing weapon.
+        The strike gains the \\glossterm{Sweeping} (2) tag, or you increase the Sweeping value by 2 if it already had that tag (see \\pcref{Weapon Tags}).
       `,
-      rank: 5,
+      rank: 4,
+      type: "Instant",
+    },
+
+    {
+      name: "Supreme Sweeping Strike",
+
+      effect: `
+        Make a melee \\glossterm{strike} using a slashing weapon.
+        The strike gains the \\glossterm{Sweeping} (3) tag, or you increase the Sweeping value by 3 if it already had that tag (see \\pcref{Weapon Tags}).
+        In addition, the maximum distance between the primary target and each secondary target increases by 5 feet.
+      `,
+      rank: 6,
       type: "Instant",
     },
 

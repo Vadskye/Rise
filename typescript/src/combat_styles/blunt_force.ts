@@ -232,5 +232,43 @@ export const bluntForce: CombatStyle = {
       rank: 2,
       type: "Instant",
     },
+
+    {
+      name: "Forceful Strike",
+
+      effect: `
+        Make a \\glossterm{strike} using a bludgeoning weapon.
+        The strike gains the \\glossterm{Forceful} weapon tag (see \\pcref{Weapon Tags}).
+        If it already has that weapon tag, the distance that you can \\glossterm<knockback> the target increases by 10 feet.
+      `,
+      rank: 2,
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Forceful Strike",
+
+      effect: `
+        Make a \\glossterm{strike} using a bludgeoning weapon.
+        The strike gains the \\glossterm{Forceful} weapon tag (see \\pcref{Weapon Tags}).
+        If it already has that weapon tag, the distance that you can \\glossterm<knockback> the target increases by 10 feet.
+        In addition, the maximum size category of creature that you can knockback with the Forceful effect increases by one size category.
+      `,
+      rank: 4,
+      type: "Instant",
+    },
+
+    {
+      name: "Supreme Forceful Strike",
+
+      effect: `
+        Make a \\glossterm{strike} using a bludgeoning weapon.
+        The strike gains the \\glossterm{Forceful} weapon tag (see \\pcref{Weapon Tags}).
+        If it already has that weapon tag, the distance that you can \\glossterm<knockback> the target increases by 10 feet.
+        In addition, the maximum size category of creature that you can knockback with the Forceful effect increases by two size categories.
+      `,
+      rank: 6,
+      type: "Instant",
+    },
   ],
 };
