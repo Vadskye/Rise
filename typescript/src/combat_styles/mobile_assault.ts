@@ -188,5 +188,18 @@ export const mobileAssault: CombatStyle = {
       rank: 4,
       type: "Instant",
     },
+
+    {
+      name: "Passing Splitstrike",
+
+      effect: `
+        Make a melee \\glossterm{strike}, then move up to 10 feet and make another melee \\glossterm{strike}.
+        You take a -1d penalty to damage with both strikes.
+        You cannot include the same creature or object as a target of both strikes.
+        If your weapon has the \\glossterm{Sweeping} damage tag, you ignore that tag on the first strike.
+      `,
+      rank: 3,
+      type: "Instant",
+    },
   ],
 };
