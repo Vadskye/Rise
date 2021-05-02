@@ -174,7 +174,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a ranged \\glossterm{strike} using a piercing weapon.
-        You gain a +2 bonus to \\glossterm{accuracy} against each creature dealt damage by that strike until the end of the next round.
+        You gain a +2 bonus to \\glossterm{accuracy} against each creature damaged by that strike until the end of the next round.
       `,
       rank: 3,
       type: "Instant",
@@ -185,7 +185,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a ranged \\glossterm{strike} using a piercing weapon.
-        You gain a +4 bonus to \\glossterm{accuracy} against each creature dealt damage by that strike until the end of the next round.
+        You gain a +4 bonus to \\glossterm{accuracy} against each creature damaged by that strike until the end of the next round.
       `,
       rank: 6,
       type: "Instant",

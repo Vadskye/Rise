@@ -220,5 +220,75 @@ export const flurryOfBlows: CombatStyle = {
       rank: 2,
       type: "Instant",
     },
+
+    {
+      name: "Dazing Feint",
+
+      effect: `
+        Make a melee \\glossterm{strike} with a -2d damage penalty.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature damaged by the strike is \\dazed until the end of the next round.
+      `,
+      rank: 1,
+      type: "Duration",
+    },
+
+    {
+      name: "Stunning Feint",
+
+      effect: `
+        Make a melee \\glossterm{strike} with a -2d damage penalty.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature that loses \\glossterm{hit points} from the strike is \\stunned until the end of the next round.
+      `,
+      rank: 4,
+      type: "Duration",
+    },
+
+    {
+      name: "Dizzying Feint",
+
+      effect: `
+        Make a melee \\glossterm{strike} with a -2d damage penalty.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature that loses \\glossterm{hit points} from the strike is \\disoriented until the end of the next round.
+      `,
+      rank: 7,
+      type: "Duration",
+    },
+
+    {
+      name: "Distracting Feint",
+
+      effect: `
+        Make a melee \\glossterm{strike} with a -2d damage penalty.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature damaged by the strike takes a -4 penalty to \\glossterm{initiative} checks as a \\glossterm{condition}.
+      `,
+      rank: 2,
+      type: "Duration",
+    },
+    {
+      name: "Greater Distracting Feint",
+
+      effect: `
+        Make a melee \\glossterm{strike} with a -2d damage penalty.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature damaged by the strike takes a -6 penalty to \\glossterm{initiative} checks as a \\glossterm{condition}.
+      `,
+      rank: 4,
+      type: "Duration",
+    },
+    {
+      name: "Supreme Distracting Feint",
+
+      effect: `
+        Make a melee \\glossterm{strike} with a -2d damage penalty.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature damaged by the strike takes a -8 penalty to \\glossterm{initiative} checks as a \\glossterm{condition}.
+      `,
+      rank: 6,
+      type: "Duration",
+    },
   ],
 };

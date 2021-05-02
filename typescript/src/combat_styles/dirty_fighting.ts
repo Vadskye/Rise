@@ -305,7 +305,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        Each creature dealt damage by the strike takes a -2 penalty to Reflex defense until the end of the next round.
+        Each creature damaged by the strike takes a -2 penalty to Reflex defense until the end of the next round.
       `,
       rank: 1,
       type: "Instant",
@@ -316,9 +316,20 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        Each creature dealt damage by the strike takes a -4 penalty to Reflex defense until the end of the next round.
+        Each creature damaged by the strike takes a -4 penalty to Reflex defense until the end of the next round.
       `,
-      rank: 4,
+      rank: 3,
+      type: "Instant",
+    },
+
+    {
+      name: "Supreme Unbalancing Strike",
+
+      effect: `
+        Make a \\glossterm{strike}.
+        Each creature damaged by the strike takes a -6 penalty to Reflex defense until the end of the next round.
+      `,
+      rank: 5,
       type: "Instant",
     },
 
@@ -327,7 +338,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with a -2d penalty to damage.
-        Each creature dealt damage by the strike falls \\prone.
+        Each creature damaged by the strike falls \\prone.
       `,
       rank: 1,
       type: "Instant",
