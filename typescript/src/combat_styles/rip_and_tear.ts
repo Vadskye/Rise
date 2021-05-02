@@ -34,7 +34,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        Each creature dealt damage by the strike that is not wearing metal armor takes a -1 penalty to Armor defense until the end of the next round.
+        Each creature damaged by the strike that is not wearing metal armor takes a -1 penalty to Armor defense until the end of the next round.
       `,
       rank: 1,
       type: "Instant",
@@ -45,7 +45,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        Each creature dealt damage by the strike that is not wearing metal armor takes a -2 penalty to Armor defense until the end of the next round.
+        Each creature damaged by the strike that is not wearing metal armor takes a -2 penalty to Armor defense until the end of the next round.
       `,
       rank: 4,
       type: "Instant",
@@ -56,7 +56,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        Each creature dealt damage by the strike that is not wearing metal armor takes a -4 penalty to Armor defense until the end of the next round.
+        Each creature damaged by the strike that is not wearing metal armor takes a -4 penalty to Armor defense until the end of the next round.
       `,
       rank: 7,
       type: "Instant",
