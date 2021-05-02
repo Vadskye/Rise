@@ -159,7 +159,7 @@ export const bluntForce: CombatStyle = {
         Make a \\glossterm{strike} using a bludgeoning weapon.
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\dazed as a \\glossterm{condition}.
-        `,
+      `,
 
       rank: 1,
       type: "Duration",
@@ -344,6 +344,28 @@ export const bluntForce: CombatStyle = {
       `,
       rank: 6,
       type: "Instant",
+    },
+
+    {
+      name: "Dazing Smash",
+
+      effect: `
+        Make a melee \\glossterm{strike} with a -1 accuracy penalty using a bludgeoning weapon.
+        Each creature that loses \\glossterm{hit points} from the strike is \\dazed until the end of the next round.
+      `,
+      rank: 2,
+      type: "Duration",
+    },
+
+    {
+      name: "Stunning Smash",
+
+      effect: `
+        Make a melee \\glossterm{strike} with a -1 accuracy penalty using a bludgeoning weapon.
+        Each creature that loses \\glossterm{hit points} from the strike is \\stunned until the end of the next round.
+      `,
+      rank: 5,
+      type: "Duration",
     },
   ],
 };

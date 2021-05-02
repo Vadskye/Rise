@@ -168,7 +168,7 @@ export const ebbAndFlow: CombatStyle = {
       name: "Certain Strike",
 
       effect: `
-        Make a \\glossterm{strike} with a +2 accuracy bonus.
+        Make a \\glossterm{strike} with a +3 accuracy bonus.
         You take a -2d penalty to damage with the strike.
       `,
       rank: 1,
@@ -179,7 +179,7 @@ export const ebbAndFlow: CombatStyle = {
       name: "Greater Certain Strike",
 
       effect: `
-        Make a \\glossterm{strike} with a +3 accuracy bonus.
+        Make a \\glossterm{strike} with a +4 accuracy bonus.
         You take a -2d penalty to damage with the strike.
         `,
 
@@ -191,7 +191,7 @@ export const ebbAndFlow: CombatStyle = {
       name: "Supreme Certain Strike",
 
       effect: `
-        Make a \\glossterm{strike} with a +4 accuracy bonus.
+        Make a \\glossterm{strike} with a +5 accuracy bonus.
         You take a -2d penalty to damage with the strike.
         `,
 
@@ -309,6 +309,72 @@ export const ebbAndFlow: CombatStyle = {
         Each creature damaged by the strike takes a -2 penalty to \\glossterm{accuracy} against your \\glossterm{allies} until the end of the next round.
       `,
       rank: 3,
+      type: "Duration",
+    },
+
+    {
+      name: "Mainhand Feint",
+
+      effect: `
+        Make a melee \\glossterm{strike} with a -2d damage penalty.
+        During the next round, you gain a +2 accuracy bonus and a +2d damage bonus with your \\textit<offhand strike> ability against each creature that took damage from this strike.
+      `,
+      rank: 3,
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Mainhand Feint",
+
+      effect: `
+        Make a melee \\glossterm{strike} with a -2d damage penalty.
+        During the next round, you gain a +3 accuracy bonus and a +3d damage bonus with your \\textit<offhand strike> ability against each creature that took damage from this strike.
+      `,
+      rank: 5,
+      type: "Duration",
+    },
+
+    {
+      name: "Supreme Mainhand Feint",
+
+      effect: `
+        Make a melee \\glossterm{strike} with a -2d damage penalty.
+        During the next round, you gain a +4 accuracy bonus and a +4d damage bonus with your \\textit<offhand strike> ability against each creature that took damage from this strike.
+      `,
+      rank: 7,
+      type: "Duration",
+    },
+
+    {
+      name: "Pursuer's Strike",
+
+      effect: `
+        Make a \\glossterm{strike}.
+        You gain a +4 bonus to contested \\glossterm{initiative} checks against each creature damaged by the strike until the end of the next round.
+      `,
+      rank: 2,
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Pursuer's Strike",
+
+      effect: `
+        Make a \\glossterm{strike}.
+        You gain a +6 bonus to contested \\glossterm{initiative} checks against each creature damaged by the strike until the end of the next round.
+      `,
+      rank: 4,
+      type: "Duration",
+    },
+
+    {
+      name: "Supreme Pursuer's Strike",
+
+      effect: `
+        Make a \\glossterm{strike}.
+        You gain a +8 bonus to contested \\glossterm{initiative} checks against each creature damaged by the strike until the end of the next round.
+      `,
+      rank: 6,
       type: "Duration",
     },
   ],

@@ -177,5 +177,96 @@ export const unbreakableDefense: CombatStyle = {
       tags: ["\\abilitytag{Swift} (see text)"],
       type: "Duration",
     },
+
+    {
+      name: "Guard the Pass",
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        Until the end of the next round, your \\glossterm{enemies} treat all squares adjacent to you as \\glossterm{difficult terrain}.
+      `,
+      rank: 1,
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Guard the Pass",
+
+      effect: `
+        Make a melee \\glossterm{strike} with a +1 accuracy bonus.
+        Until the end of the next round, your \\glossterm{enemies} treat all squares within a 15 foot \\glossterm{emanation} from you as \\glossterm{difficult terrain}.
+      `,
+      rank: 4,
+      type: "Duration",
+    },
+
+    {
+      name: "Supreme Guard the Pass",
+
+      effect: `
+        Make a melee \\glossterm{strike} with a +2 accuracy bonus.
+        Until the end of the next round, your \\glossterm{enemies} treat all squares within a 30 foot \\glossterm{emanation} from you as \\glossterm{difficult terrain}.
+      `,
+      rank: 7,
+      type: "Duration",
+    },
+
+    {
+      name: "Prepared Defense",
+
+      effect: `
+        Make a \\glossterm{strike} with a -1d damage penalty.
+        After you make the strike, choose your Fortitude, Reflex, or Mental defense.
+        You gain a +2 bonus to that defense during the next round.
+      `,
+      rank: 1,
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Prepared Defense",
+
+      effect: `
+        Make a \\glossterm{strike}.
+        After you make the strike, choose your Fortitude, Reflex, or Mental defense.
+        You gain a +4 bonus to that defense during the next round.
+      `,
+      rank: 4,
+      type: "Duration",
+    },
+
+    {
+      name: "Supreme Prepared Defense",
+
+      effect: `
+        Make a \\glossterm{strike} with a +1d damage bonus.
+        After you make the strike, choose your Fortitude, Reflex, or Mental defense.
+        You gain a +6 bonus to that defense during the next round.
+      `,
+      rank: 7,
+      type: "Duration",
+    },
+
+    {
+      name: "Shielded Bulwark",
+
+      effect: `
+        Make a \\glossterm{strike}.
+        If you have a shield, you gain a +2 bonus to Armor defense during the next round.
+      `,
+      rank: 2,
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Shielded Bulwark",
+
+      effect: `
+        Make a \\glossterm{strike}.
+        If you have a shield, you gain a +4 bonus to Armor defense during the next round.
+      `,
+      rank: 5,
+      type: "Duration",
+    },
   ],
 };
