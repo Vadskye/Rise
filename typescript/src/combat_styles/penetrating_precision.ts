@@ -20,12 +20,21 @@ export const penetratingPrecision: CombatStyle = {
     {
       name: "Greater Penetrating Strike",
 
-      effect: `
-        Make a \\glossterm{strike} with a +2 bonus to \\glossterm{accuracy} using a piercing weapon.
-        The attack is made against each subject's Reflex defense instead of its Armor defense.
-        You take a -1d penalty to damage with the strike.
-      `,
+      functionsLike: {
+        exceptThat: "you gain a +1 accuracy bonus with the strike.",
+        name: "penetrating strike",
+      },
+      rank: 3,
+      type: "Instant",
+    },
 
+    {
+      name: "Supreme Penetrating Strike",
+
+      functionsLike: {
+        exceptThat: "you gain a +2 accuracy bonus with the strike.",
+        name: "penetrating strike",
+      },
       rank: 5,
       type: "Instant",
     },
@@ -35,9 +44,9 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If you miss, you can increase your \\glossterm{fatigue level} by one to reroll the attack with a +3 bonus.
+        If you miss, you can increase your \\glossterm{fatigue level} by one to reroll the attack with a +3 accuracy bonus.
       `,
-      rank: 2,
+      rank: 1,
       type: "Instant",
     },
 
@@ -46,9 +55,9 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        You gain a +4 accuracy bonus with injury-based poisons delivered with the strike against each creature that loses \\glossterm{hit points} from the strike.
+        You gain a +4 accuracy bonus with contact-based and injury-based poisons delivered with the strike.
       `,
-      rank: 2,
+      rank: 1,
       type: "Instant",
     },
 
@@ -56,10 +65,21 @@ export const penetratingPrecision: CombatStyle = {
       name: "Greater Injection",
 
       effect: `
-        Make a \\glossterm{strike} with a +2 \\glossterm{accuracy} bonus using a piercing weapon.
-        You gain a +6 accuracy bonus with injury-based poisons delivered with the strike against each creature that loses \\glossterm{hit points} from the strike.
+        Make a \\glossterm{strike} with a +1 \\glossterm{accuracy} bonus using a piercing weapon.
+        You gain a +6 accuracy bonus with contact-based and injury-based poisons delivered with the strike.
       `,
-      rank: 6,
+      rank: 4,
+      type: "Instant",
+    },
+
+    {
+      name: "Supreme Injection",
+
+      effect: `
+        Make a \\glossterm{strike} with a +2 \\glossterm{accuracy} bonus using a piercing weapon.
+        You gain a +8 accuracy bonus with contact-based and injury-based poisons delivered with the strike.
+      `,
+      rank: 7,
       type: "Instant",
     },
 
@@ -98,21 +118,21 @@ export const penetratingPrecision: CombatStyle = {
     {
       name: "Greater Distant Shot",
 
-      effect: `
-        Make a ranged \\glossterm{strike}.
-        You reduce your penalties for \\glossterm{range increments} by 3.
-      `,
+      functionsLike: {
+        exceptThat: "the penalty reduction increases to 3.",
+        name: "distant shot",
+      },
       rank: 4,
       type: "Instant",
     },
 
     {
-      name: "Supreme Distant Shot",
+      name: "Greater Distant Shot",
 
-      effect: `
-        Make a ranged \\glossterm{strike}.
-        You reduce your penalties for \\glossterm{range increments} by 4.
-      `,
+      functionsLike: {
+        exceptThat: "the penalty reduction increases to 4.",
+        name: "distant shot",
+      },
       rank: 6,
       type: "Instant",
     },

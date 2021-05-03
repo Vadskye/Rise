@@ -216,7 +216,7 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a -1d damage penalty.
-        After you make the strike, choose your Fortitude, Reflex, or Mental defense.
+        After you make the strike, choose any one defense: Armor, Fortitude, Reflex, or Mental.
         You gain a +2 bonus to that defense during the next round.
       `,
       rank: 1,
@@ -228,8 +228,8 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        After you make the strike, choose your Fortitude, Reflex, or Mental defense.
-        You gain a +4 bonus to that defense during the next round.
+        After you make the strike, choose any one defense: Armor, Fortitude, Reflex, or Mental.
+        You gain a +3 bonus to that defense during the next round.
       `,
       rank: 4,
       type: "Duration",
@@ -240,32 +240,10 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a +1d damage bonus.
-        After you make the strike, choose your Fortitude, Reflex, or Mental defense.
-        You gain a +6 bonus to that defense during the next round.
+        After you make the strike, choose any one defense: Armor, Fortitude, Reflex, or Mental.
+        You gain a +4 bonus to that defense during the next round.
       `,
       rank: 7,
-      type: "Duration",
-    },
-
-    {
-      name: "Shielded Bulwark",
-
-      effect: `
-        Make a \\glossterm{strike}.
-        If you have a shield, you gain a +2 bonus to Armor defense during the next round.
-      `,
-      rank: 2,
-      type: "Duration",
-    },
-
-    {
-      name: "Greater Shielded Bulwark",
-
-      effect: `
-        Make a \\glossterm{strike}.
-        If you have a shield, you gain a +4 bonus to Armor defense during the next round.
-      `,
-      rank: 5,
       type: "Duration",
     },
   ],
