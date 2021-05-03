@@ -29,19 +29,96 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
+      name: "Redirecting Parry",
+
+      functionsLike: {
+        abilityType: "ability",
+        exceptThat: `
+          you gain an additional +2 bonus to Armor defense.
+          In addition, whenever a creature misses you with a melee \\glossterm{strike} this round, that creature treats itself as a target of that strike in addition to any other targets.
+          It cannot choose to reduce its accuracy or damage against itself.
+          This ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
+        `,
+        name: "total defense",
+      },
+      rank: 3,
+      scaling: {
+        5: "A creature that makes a strike against itself in this way takes a -2 penalty to defenses against that strike.",
+        7: "The penalty increases to -4.",
+      },
+      tags: ["Swift"],
+      type: "Duration",
+    },
+
+    {
+      name: "Flamboyant Parry",
+
+      functionsLike: {
+        abilityType: "ability",
+        exceptThat: `
+          you gain an additional +2 bonus to Armor defense.
+          In addition, whenever a creature misses you with a melee \\glossterm{strike} this round, that creature becomes \\glossterm{dazed} as a \\glossterm{condition}.
+          This ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
+        `,
+        name: "total defense",
+      },
+      rank: 5,
+      scaling: {
+        7: "The Armor defense bonus increases to +3.",
+      },
+      tags: ["Swift"],
+      type: "Duration",
+    },
+
+    {
+      name: "Reflective Parry",
+
+      functionsLike: {
+        abilityType: "ability",
+        exceptThat: `
+          you gain an additional +2 bonus to Armor defense.
+          In addition, whenever a creature misses you with a \\glossterm{targeted} attack this round, that creature treats itself as a target of that attack in addition to any other targets.
+          This ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
+        `,
+        name: "total defense",
+      },
+      rank: 7,
+      tags: ["Swift"],
+      type: "Duration",
+    },
+
+    {
       name: "Brace for Impact",
 
       effect: `
-        You take half damage from \\glossterm{physical damage} this round.
+        You are \\glossterm{impervious} to \\glossterm{physical damage} this round.
         This halving is applied before \\glossterm{resistances} and similar abilities.
         Because this is a \\abilitytag{Swift} ability, it affects damage you take during the current phase.
       `,
       rank: 2,
       scaling: {
-        4: "You also take half damage from \\glossterm{energy} damage this round.",
+        4: "You are impervious to all damage, not just physical damage.",
         6: "You also negate any \\glossterm{conditions} that you would gain this round.",
       },
       tags: ["Swift"],
+      type: "Duration",
+    },
+
+    {
+      name: "Bracing Strike",
+
+      effect: `
+        Make a \\glossterm{strike} with a -2d damage penalty.
+        Your \\glossterm{power} with the strike is halved.
+
+        In addition, you are \\glossterm{impervious} to \\glossterm{physical damage} this round.
+        This halving is applied before \\glossterm{resistances} and similar abilities.
+        Becoming impervious in this way is a \\abilitytag{Swift} ability, so it affects damage you take during the current phase.
+      `,
+      rank: 5,
+      scaling: {
+        7: "You are impervious to all damage, not just physical damage.",
+      },
       type: "Duration",
     },
 

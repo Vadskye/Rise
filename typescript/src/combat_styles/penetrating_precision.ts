@@ -28,6 +28,7 @@ export const penetratingPrecision: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         If you miss, you can increase your \\glossterm{fatigue level} by one to reroll the attack with a +3 accuracy bonus.
+        You cannot use the \\textit<desperate exertion> ability to affect this strike.
       `,
       rank: 1,
       scaling: {
@@ -184,7 +185,7 @@ export const penetratingPrecision: CombatStyle = {
         Each target that has any \\glossterm{resistance} against the strike's damage takes no damage from the strike.
       `,
       narrative: `
-        You strike directly for your foe's heart, hoping their armor is too damaged to effectively deflect the blow.
+        You strike directly for your foe's heart, hoping its armor is too damaged to effectively deflect the blow.
       `,
       rank: 3,
       scaling: {
