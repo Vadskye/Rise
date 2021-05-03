@@ -310,5 +310,20 @@ export const ebbAndFlow: CombatStyle = {
       },
       type: "Duration",
     },
+
+    {
+      name: "Reckless Assault",
+
+      effect: `
+        Make a \\glossterm{strike}.
+        During the next round, you and each creature damaged by the strike take a -2 penalty to Armor and Reflex defenses.
+      `,
+      rank: 3,
+      scaling: {
+        5: "You gain a +1d damage bonus with the strike.",
+        7: "The damage bonus increases to +2d.",
+      },
+      type: "Duration",
+    },
   ],
 };
