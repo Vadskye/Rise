@@ -305,7 +305,7 @@ Tier 7 areas:
 Rank 1 maneuver:
 * Strike-based:
   * Softener:
-    * Make a strike with +2a, low damage
+    * Make a strike with +3a, low damage
   * Damage:
     * Make a strike against Fort/Ref defense with -1d damage
     * Make a strike with a highly circumstantial benefit (reroll miss chance)
@@ -332,8 +332,13 @@ Rank 1 Focus/non-upgrading, Rank 3 maneuver:
 
 ### Higher rank specific examples
 
+Rank 2 Focus/non-upgrading, Rank 4 maneuver:
+
 Rank 3 Focus/non-upgrading, Rank 5 maneuver:
 * Strike-based:
+  * Softener:
+    * low damage, r1 debuff condition
+      * +1 rank relative to spell softeners since it still deals damage
   * Finisher:
     * low damage, r2 debuff condition
 * Non-strike-based:
