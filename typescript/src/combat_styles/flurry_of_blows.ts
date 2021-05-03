@@ -14,6 +14,11 @@ export const flurryOfBlows: CombatStyle = {
         In exchange, you roll to hit twice and take the higher result.
       `,
       rank: 1,
+      scaling: {
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
+      },
       type: "Instant",
     },
 
@@ -22,24 +27,34 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You take a -1d penalty to damage with the strike.
+        You take a -2d penalty to damage with the strike.
         In addition, you can drink a potion.
         You must still have a free hand that is not being used to make the strike to hold and drink the potion.
       `,
       rank: 2,
+      scaling: {
+        4: "The damage penalty is reduced to -1d.",
+        6: "The damage penalty is removed.",
+      },
       type: "Instant",
     },
 
     {
       name: "Desperate Flurry",
 
+      // Two fatigue instead of one fatigue like desperate smash because it also doubles
+      // damage from power
       effect: `
         After you use this ability, you increase your \\glossterm{fatigue level} by two.
 
         Make two \\glossterm{strikes}.
         You cannot use the \\textit{desperate exertion} ability to affect these strikes.
       `,
-      rank: 2,
+      rank: 3,
+      scaling: {
+        5: "You gain a +1d bonus to damage with both strikes.",
+        7: "The damage bonus increases to +2d.",
+      },
       type: "Instant",
     },
 
@@ -47,12 +62,12 @@ export const flurryOfBlows: CombatStyle = {
       name: "Greater Desperate Flurry",
 
       effect: `
-        After you use this ability, you increase your \\glossterm{fatigue level} by one.
+        After you use this ability, you increase your \\glossterm{fatigue level} by two.
 
-        Make two \\glossterm{strikes}.
+        Make three \\glossterm{strikes}.
         You cannot use the \\textit{desperate exertion} ability to affect these strikes.
       `,
-      rank: 5,
+      rank: 7,
       type: "Instant",
     },
 
@@ -66,18 +81,10 @@ export const flurryOfBlows: CombatStyle = {
         You take a -2d penalty to damage with both strikes.
       `,
       rank: 2,
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Rebounding Flurry",
-
-      effect: `
-        You can only use this ability during the \\glossterm{action phase}.
-        Make a \\glossterm{strike}.
-        If all damage from the strike is resisted, you can make an additional strike during the \\glossterm{delayed action phase}.
-      `,
-      rank: 6,
+      scaling: {
+        4: "The damage penalty is reduced to -1d.",
+        6: "The damage penalty is removed.",
+      },
       type: "Instant",
     },
 
@@ -90,30 +97,10 @@ export const flurryOfBlows: CombatStyle = {
         You take a -2d penalty to damage with both strikes, and your \\glossterm{power} is halved.
       `,
       rank: 3,
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Strike Flurry",
-
-      // basically +3d
-      effect: `
-        Make two \\glossterm{strikes}.
-        You take a -1d penalty to damage with both strikes, and your \\glossterm{power} is halved.
-      `,
-      rank: 5,
-      type: "Instant",
-    },
-
-    {
-      name: "Supreme Strike Flurry",
-
-      // basically +3d
-      effect: `
-        Make two \\glossterm{strikes}.
-        Your \\glossterm{power} is halved with both strikes.
-      `,
-      rank: 7,
+      scaling: {
+        5: "The damage penalty is reduced to -1d.",
+        7: "The damage penalty is removed.",
+      },
       type: "Instant",
     },
 
@@ -126,18 +113,10 @@ export const flurryOfBlows: CombatStyle = {
         Your \\glossterm{power} is halved with both strikes.
       `,
       rank: 2,
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Power Flurry",
-
-      // basically +3d, -2a
-      effect: `
-        Make two \\glossterm{strikes} with a -2 penalty to \\glossterm{accuracy}.
-        You gain a +1d bonus to damage with both strikes, but your \\glossterm{power} is halved.
-      `,
-      rank: 6,
+      scaling: {
+        4: "You gain a +1d bonus to damage with both strikes.",
+        6: "The damage bonus increases to +2d.",
+      },
       type: "Instant",
     },
 
@@ -149,6 +128,10 @@ export const flurryOfBlows: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
       `,
       rank: 2,
+      scaling: {
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
+      },
       type: "Instant",
     },
 
@@ -172,6 +155,9 @@ export const flurryOfBlows: CombatStyle = {
         For each previous round that you used this ability without moving, you reduce the accuracy penalty by 1.
       `,
       rank: 4,
+      scaling: {
+        6: "You gain a +1d damage bonus with both strikes.",
+      },
       type: "Instant",
     },
 
@@ -184,18 +170,9 @@ export const flurryOfBlows: CombatStyle = {
         This strike costs five projectiles.
       `,
       rank: 5,
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Volley Fire",
-
-      effect: `
-        Make a ranged \\glossterm{strike} using a projectile weapon against each creature in a \\medarea radius within \\longrange.
-        Your \\glossterm{power} with the strike is halved.
-        This strike costs ten projectiles.
-      `,
-      rank: 7,
+      scaling: {
+        7: "The area increases to a \\medarea radius.",
+      },
       type: "Instant",
     },
 
@@ -207,6 +184,11 @@ export const flurryOfBlows: CombatStyle = {
         Then, you can make a \\glossterm{strike}.
       `,
       rank: 1,
+      scaling: {
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
+      },
       type: "Instant",
     },
 
@@ -218,6 +200,10 @@ export const flurryOfBlows: CombatStyle = {
         You do not suffer the normal -4 accuracy penalty for using a medium or large ranged weapon against a creature adjacent to you on this attack.
       `,
       rank: 2,
+      scaling: {
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
+      },
       type: "Instant",
     },
 
@@ -225,11 +211,16 @@ export const flurryOfBlows: CombatStyle = {
       name: "Dazing Feint",
 
       effect: `
-        Make a melee \\glossterm{strike} with a -2d damage penalty.
+        Make a melee \\glossterm{strike} with a -1d damage penalty.
         Your \\glossterm{power} with the strike is halved.
         Each creature damaged by the strike is \\dazed until the end of the next round.
       `,
       rank: 1,
+      scaling: {
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
+      },
       type: "Duration",
     },
 
@@ -241,7 +232,11 @@ export const flurryOfBlows: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\stunned until the end of the next round.
       `,
-      rank: 4,
+      rank: 3,
+      scaling: {
+        5: "You gain a +1 accuracy bonus with the strike.",
+        7: "The accuracy bonus increases to +2.",
+      },
       type: "Duration",
     },
 
@@ -253,7 +248,7 @@ export const flurryOfBlows: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\disoriented until the end of the next round.
       `,
-      rank: 7,
+      rank: 6,
       type: "Duration",
     },
 
@@ -266,29 +261,32 @@ export const flurryOfBlows: CombatStyle = {
         Each creature damaged by the strike takes a -4 penalty to \\glossterm{initiative} checks as a \\glossterm{condition}.
       `,
       rank: 2,
+      scaling: {
+        4: "The penalty increases to -6.",
+        6: "The penalty increases to -8.",
+      },
       type: "Duration",
     },
+
     {
-      name: "Greater Distracting Feint",
+      name: "Frenzied Strike",
 
       effect: `
-        Make a melee \\glossterm{strike} with a -2d damage penalty.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by the strike takes a -6 penalty to \\glossterm{initiative} checks as a \\glossterm{condition}.
+        Make a melee \\glossterm{strike}.
+        % This would be easier to write as +1d up to +3d, but that is very
+        % annoying to track in practice due to the different dice for each stage.
+        % A static damage bonus is more complex to write down, but much easier
+        % to actually make attacks with.
+        For each previous consecutive round that you used this ability, you gain a +1 bonus to damage with the strike, up to a maximum of +3.
       `,
-      rank: 4,
-      type: "Duration",
-    },
-    {
-      name: "Supreme Distracting Feint",
-
-      effect: `
-        Make a melee \\glossterm{strike} with a -2d damage penalty.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by the strike takes a -8 penalty to \\glossterm{initiative} checks as a \\glossterm{condition}.
-      `,
-      rank: 6,
-      type: "Duration",
+      scaling: {
+        special: `
+          The damage bonus for each consecutive round increases by 1 for each rank beyond 1.
+          In addition, the maximum damage bonus increases by 3 for each rank beyond 1.
+        `,
+      },
+      rank: 1,
+      type: "Instant",
     },
   ],
 };

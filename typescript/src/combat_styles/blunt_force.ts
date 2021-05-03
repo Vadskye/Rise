@@ -6,69 +6,70 @@ export const bluntForce: CombatStyle = {
 
   maneuvers: [
     {
-      name: "Liver Shot",
+      name: "Liver Crush",
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
         The attack is made against each target's Fortitude defense instead of its Armor defense.
-        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        You take a -1d penalty to damage with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\sickened as a \\glossterm{condition}.
-        `,
-
+      `,
       rank: 1,
+      scaling: {
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
+      },
       type: "Duration",
     },
 
     {
-      name: "Nauseating Liver Shot",
+      name: "Nauseating Liver Crush",
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
         The attack is made against each target's Fortitude defense instead of its Armor defense.
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\nauseated as a \\glossterm{condition}.
-        `,
-
+      `,
       rank: 3,
-      type: "Duration",
-    },
-    {
-      name: "Greater Nauseating Liver Shot",
-
-      effect: `
-        Make a \\glossterm{strike} using a bludgeoning weapon.
-        The attack is made against each target's Fortitude defense instead of its Armor defense.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\nauseated as a \\glossterm{condition}.
-        `,
-
-      rank: 6,
+      scaling: {
+        5: "You gain a +1 accuracy bonus with the strike.",
+        7: "The accuracy bonus increases to +2.",
+      },
       type: "Duration",
     },
 
     {
-      name: "Pulverizing Smash",
+      name: "Pulverizing Crush",
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
         The attack is made against each target's Fortitude defense instead of its Armor defense.
         You take -1d penalty to damage with the strike.
-        `,
-
+      `,
       rank: 1,
+      scaling: {
+        3: "The damage penalty is removed.",
+        5: "You gain a +1d bonus to damage with the strike.",
+        7: "The damage bonus increases to +2d.",
+      },
       type: "Instant",
     },
 
     {
-      name: "Pulverizing Power Smash",
+      name: "Pulverizing Power Crush",
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon with a -2 penalty to accuracy.
         The attack is made against each target's Fortitude defense instead of its Armor defense.
-        You gain a +1d bonus to damage with the strike.
-        `,
-
+        You gain a +2d bonus to damage with the strike.
+      `,
       rank: 3,
+      scaling: {
+        5: "The damage bonus increases to +3d.",
+        7: "The damage bonus increases to +4d.",
+      },
       type: "Instant",
     },
 
@@ -99,6 +100,7 @@ export const bluntForce: CombatStyle = {
         `,
       },
       rank: 5,
+      scaling: "damage",
       type: "Instant",
     },
 
@@ -107,11 +109,15 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a bludgeoning weapon against a stable surface.
-        The strike targets everything on that surface in a \\smallarealong, 10 ft. wide line from you.
+        The strike targets everything supported by that surface in a \\smallarealong, 10 ft. wide line from you.
         Your \\glossterm{power} with the strike is halved.
         All damage dealt by this attack is bludgeoning damage instead of its normal types.
       `,
       rank: 3,
+      scaling: {
+        5: "You gain a +1d damage bonus with the strike.",
+        7: "The damage bonus increases to +2d.",
+      },
       type: "Instant",
     },
 
@@ -125,6 +131,9 @@ export const bluntForce: CombatStyle = {
         All damage dealt by this attack is bludgeoning damage instead of its normal types.
       `,
       rank: 5,
+      scaling: {
+        7: "You gain a +1d damage bonus with the strike.",
+      },
       type: "Instant",
     },
 
@@ -136,6 +145,10 @@ export const bluntForce: CombatStyle = {
         Damage dealt by the strike is sonic damage in addition to its normal damage types.
       `,
       rank: 3,
+      scaling: {
+        5: "You gain a +1d damage bonus with the strike.",
+        7: "The damage bonus increases to +2d.",
+      },
       type: "Instant",
     },
 
@@ -143,12 +156,14 @@ export const bluntForce: CombatStyle = {
       name: "Resonating Crush",
 
       effect: `
-        Make a strike using a bludgeoning weapon.
+        Make a strike with a -1d damage penalty using a bludgeoning weapon.
         The attack is made against each target's Fortitude defense instead of its Armor defense.
-        You take -1d penalty to damage with the strike.
         Damage dealt by the strike is sonic damage in addition to its normal damage types.
       `,
       rank: 4,
+      scaling: {
+        6: "The damage penalty is removed.",
+      },
       type: "Instant",
     },
 
@@ -157,11 +172,15 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        You take a -1d penalty to damage with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\dazed as a \\glossterm{condition}.
       `,
-
       rank: 1,
+      scaling: {
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
+      },
       type: "Duration",
     },
 
@@ -172,9 +191,12 @@ export const bluntForce: CombatStyle = {
         Make a \\glossterm{strike} using a bludgeoning weapon.
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
-        `,
-
+      `,
       rank: 3,
+      scaling: {
+        5: "You gain a +1 accuracy bonus with the strike.",
+        7: "The accuracy bonus increases to +2.",
+      },
       type: "Duration",
     },
 
@@ -185,8 +207,7 @@ export const bluntForce: CombatStyle = {
         Make a \\glossterm{strike} using a bludgeoning weapon.
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\confused as a \\glossterm{condition}.
-        `,
-
+      `,
       rank: 6,
       type: "Duration",
     },
@@ -217,6 +238,9 @@ export const bluntForce: CombatStyle = {
         If you choose yourself as one of the subjects, you can catch the weapon instead of taking damage from it.
       `,
       rank: 4,
+      scaling: {
+        6: "You gain a +1d damage bonus with the strike.",
+      },
       type: "Instant",
     },
 
@@ -230,6 +254,10 @@ export const bluntForce: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike falls \\prone if it is no larger than one size category larger than you.
       `,
       rank: 2,
+      scaling: {
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
+      },
       type: "Instant",
     },
 
@@ -239,35 +267,13 @@ export const bluntForce: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
         The strike gains the \\glossterm{Forceful} weapon tag (see \\pcref{Weapon Tags}).
-        If it already has that weapon tag, the distance that you can \\glossterm<knockback> the target increases by 10 feet.
+        If it already has that weapon tag, the maximum size category of creature that you can \\glossterm{knockback} with that tag increases by one size category.
       `,
       rank: 2,
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Forceful Strike",
-
-      effect: `
-        Make a \\glossterm{strike} using a bludgeoning weapon.
-        The strike gains the \\glossterm{Forceful} weapon tag (see \\pcref{Weapon Tags}).
-        If it already has that weapon tag, the distance that you can \\glossterm<knockback> the target increases by 10 feet.
-        In addition, the maximum size category of creature that you can knockback with the Forceful effect increases by one size category.
-      `,
-      rank: 4,
-      type: "Instant",
-    },
-
-    {
-      name: "Supreme Forceful Strike",
-
-      effect: `
-        Make a \\glossterm{strike} using a bludgeoning weapon.
-        The strike gains the \\glossterm{Forceful} weapon tag (see \\pcref{Weapon Tags}).
-        If it already has that weapon tag, the distance that you can \\glossterm<knockback> the target increases by 10 feet.
-        In addition, the maximum size category of creature that you can knockback with the Forceful effect increases by two size categories.
-      `,
-      rank: 6,
+      scaling: {
+        4: "The distance that you can knockback the target increases by 10 feet.",
+        6: "The distance that you can knockback the target increases by an additional 10 feet.",
+      },
       type: "Instant",
     },
 
@@ -280,6 +286,11 @@ export const bluntForce: CombatStyle = {
         You cannot push creatures two or more size categories larger than you with this ability.
       `,
       rank: 1,
+      scaling: {
+        3: "You gain a +1d damage bonus with the strike.",
+        5: "The damage bonus increases to +2d.",
+        7: "The damage bonus increases to +3d.",
+      },
       type: "Instant",
     },
 
@@ -291,19 +302,28 @@ export const bluntForce: CombatStyle = {
         After you make the strike, you can move up to your movement speed, \\glossterm{pushing} each creature damaged by the strike as you move.
         You cannot push creatures two or more size categories larger than you with this ability.
       `,
-      rank: 4,
+      rank: 5,
+      scaling: {
+        7: "You gain a +1d damage bonus with the strike.",
+      },
       type: "Instant",
     },
 
     {
-      name: "Supreme Press Forward",
+      name: "Desperate Smash",
 
       effect: `
-        Make a melee \\glossterm{strike} using a bludgeoning weapon.
-        After you make the strike, you can move up to your movement speed, \\glossterm{pushing} each creature damaged by the strike as you move.
-        You cannot push creatures three or more size categories larger than you with this ability.
+        After you use this ability, you increase your \\glossterm{fatigue level} by one.
+
+        Make a melee \\glossterm{strike} with a +2d damage bonus using a bludgeoning weapon.
+        You cannot use the \\textit{desperate exertion} ability to affect this strike.
       `,
-      rank: 7,
+      rank: 1,
+      scaling: {
+        3: "The damage bonus increases to +3d.",
+        5: "The damage bonus increases to +4d.",
+        7: "The damage bonus increases to +5d.",
+      },
       type: "Instant",
     },
 
@@ -313,36 +333,15 @@ export const bluntForce: CombatStyle = {
       effect: `
         After you use this ability, you increase your \\glossterm{fatigue level} by one.
 
-        Make a melee \\glossterm{strike} using a bludgeoning weapon.
-        You gain a +2d bonus to damage with the strike.
+        Make a melee \\glossterm{strike} with a +2d damage bonus using a bludgeoning weapon.
+        The attack is made against each target's Fortitude defense instead of its Armor defense.
+        You cannot use the \\textit{desperate exertion} ability to affect this strike.
       `,
-      rank: 2,
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Desperate Crush",
-
-      effect: `
-        After you use this ability, you increase your \\glossterm{fatigue level} by one.
-
-        Make a melee \\glossterm{strike} using a bludgeoning weapon.
-        You gain a +3d bonus to damage with the strike.
-      `,
-      rank: 4,
-      type: "Instant",
-    },
-
-    {
-      name: "Supreme Desperate Crush",
-
-      effect: `
-        After you use this ability, you increase your \\glossterm{fatigue level} by one.
-
-        Make a melee \\glossterm{strike} using a bludgeoning weapon.
-        You gain a +4d bonus to damage with the strike.
-      `,
-      rank: 6,
+      rank: 3,
+      scaling: {
+        5: "The damage bonus increases to +3d.",
+        7: "The damage bonus increases to +4d.",
+      },
       type: "Instant",
     },
 
@@ -354,6 +353,10 @@ export const bluntForce: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike is \\dazed until the end of the next round.
       `,
       rank: 2,
+      scaling: {
+        4: "You gain a +1d bonus to damage with the strike.",
+        6: "The accuracy bonus increases to +2d.",
+      },
       type: "Duration",
     },
 
@@ -365,6 +368,9 @@ export const bluntForce: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike is \\stunned until the end of the next round.
       `,
       rank: 5,
+      scaling: {
+        7: "You gain a +1d bonus to damage with the strike.",
+      },
       type: "Duration",
     },
   ],

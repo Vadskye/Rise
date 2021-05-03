@@ -14,6 +14,11 @@ export const dirtyFighting: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike is \\dazed as a \\glossterm{condition}.
       `,
       rank: 1,
+      scaling: {
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
+      },
       type: "Duration",
     },
 
@@ -24,9 +29,12 @@ export const dirtyFighting: CombatStyle = {
         Make a strike using an \\glossterm{unarmed attack}.
         Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
-        `,
-
+      `,
       rank: 3,
+      scaling: {
+        5: "You gain a +1 accuracy bonus with the strike.",
+        7: "The accuracy bonus increases to +2.",
+      },
       type: "Duration",
     },
 
@@ -37,8 +45,7 @@ export const dirtyFighting: CombatStyle = {
         Make a strike using an \\glossterm{unarmed attack}.
         Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike loses additional hit points equal to half its maximum hit points.
-        `,
-
+      `,
       rank: 7,
       type: "Instant",
     },
@@ -109,7 +116,7 @@ export const dirtyFighting: CombatStyle = {
       },
       rank: 4,
       scaling: {
-        6: "The distance you knockback the subject increases to 30 feet, or 60 feet on a critical hit.",
+        6: "The distance you knockback each subject increases to 30 feet, or 60 feet on a critical hit.",
       },
       type: "Instant",
     },
@@ -127,6 +134,10 @@ export const dirtyFighting: CombatStyle = {
         name: "disarm",
       },
       rank: 2,
+      scaling: {
+        4: "You gain a +1 accuracy bonus with the attack.",
+        6: "The accuracy bonus increases to +2.",
+      },
       type: "Instant",
     },
 
@@ -142,6 +153,9 @@ export const dirtyFighting: CombatStyle = {
         name: "disarm weapon",
       },
       rank: 4,
+      scaling: {
+        6: "You gain a +1 accuracy bonus with the attack.",
+      },
       type: "Instant",
     },
 
@@ -158,7 +172,7 @@ export const dirtyFighting: CombatStyle = {
         `,
         name: "disarm weapon",
       },
-      rank: 6,
+      rank: 7,
       type: "Instant",
     },
 
@@ -168,28 +182,16 @@ export const dirtyFighting: CombatStyle = {
       functionsLike: {
         abilityType: "ability",
         exceptThat: `
-          you gain a +1d bonus to damage with the strike.
+          if you disarm an attended item and your attack result also beats the attending creature's Armor defense, you may choose to deal damage to the attending creature in addition to its item.
           Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
         `,
         name: "disarm",
       },
-      rank: 1,
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Sunder",
-
-      functionsLike: {
-        abilityType: "ability",
-        exceptThat: `
-          you gain a +1d bonus to damage with the strike.
-          In addition, if you disarm an attended item and your attack result also beats the attending creature's Armor defense, you may choose to deal damage to the attending creature in addition to its item.
-          Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
-        `,
-        name: "disarm",
+      rank: 2,
+      scaling: {
+        4: "You gain a +1d damage bonus with the strike.",
+        6: "The damage bonus increases to +2d.",
       },
-      rank: 4,
       type: "Instant",
     },
 
@@ -238,6 +240,10 @@ export const dirtyFighting: CombatStyle = {
         It can freely choose which effects it releases its attunement to.
       `,
       rank: 2,
+      scaling: {
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
+      },
       type: "Instant",
     },
 
@@ -251,6 +257,9 @@ export const dirtyFighting: CombatStyle = {
         It can freely choose which effect it releases its attunement to.
       `,
       rank: 5,
+      scaling: {
+        7: "You gain a +1 accuracy bonus with the strike.",
+      },
       type: "Instant",
     },
 
@@ -262,6 +271,10 @@ export const dirtyFighting: CombatStyle = {
         You gain a +2 bonus to \\glossterm{accuracy} with the strike against each creature that is using a \\abilitytag{Focus} ability during the current phase.
       `,
       rank: 2,
+      scaling: {
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
+      },
       type: "Instant",
     },
 
@@ -281,11 +294,15 @@ export const dirtyFighting: CombatStyle = {
       name: "Alchemical Strike",
 
       effect: `
-        Make a melee \\glossterm{strike} with a -1d penalty to damage.
+        Make a melee \\glossterm{strike} with a -2d penalty to damage.
         In addition, you can throw a tanglefoot bag, vial of alchemist's fire, or similar small object at a target of the strike.
         You must still have a free hand that is not being used to make the strike to throw the object.
       `,
       rank: 3,
+      scaling: {
+        5: "You gain a +1 accuracy bonus with the strike.",
+        7: "The accuracy bonus increases to +2.",
+      },
       type: "Instant",
     },
 
@@ -297,6 +314,11 @@ export const dirtyFighting: CombatStyle = {
         After making the strike, you fall \\prone, and you cannot stand up until after the next \\glossterm{movement phase}.
       `,
       rank: 1,
+      scaling: {
+        3: "The damage bonus increases to +2d.",
+        5: "The damage bonus increases to +3d.",
+        7: "The damage bonus increases to +4d.",
+      },
       type: "Instant",
     },
 
@@ -308,28 +330,11 @@ export const dirtyFighting: CombatStyle = {
         Each creature damaged by the strike takes a -2 penalty to Reflex defense until the end of the next round.
       `,
       rank: 1,
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Unbalancing Strike",
-
-      effect: `
-        Make a \\glossterm{strike}.
-        Each creature damaged by the strike takes a -4 penalty to Reflex defense until the end of the next round.
-      `,
-      rank: 3,
-      type: "Instant",
-    },
-
-    {
-      name: "Supreme Unbalancing Strike",
-
-      effect: `
-        Make a \\glossterm{strike}.
-        Each creature damaged by the strike takes a -6 penalty to Reflex defense until the end of the next round.
-      `,
-      rank: 5,
+      scaling: {
+        3: "The penalty increases to -4.",
+        5: "The penalty increases to -6.",
+        7: "The penalty increases to -8.",
+      },
       type: "Instant",
     },
 
@@ -341,6 +346,11 @@ export const dirtyFighting: CombatStyle = {
         Each creature damaged by the strike falls \\prone.
       `,
       rank: 1,
+      scaling: {
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
+      },
       type: "Instant",
     },
 
@@ -353,6 +363,11 @@ export const dirtyFighting: CombatStyle = {
         Each creature damaged by the strike is \\slowed until the end of the next round.
       `,
       rank: 1,
+      scaling: {
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
+      },
       type: "Instant",
     },
 
@@ -365,6 +380,9 @@ export const dirtyFighting: CombatStyle = {
         Each creature damaged by the strike is \\decelerated until the end of the next round.
       `,
       rank: 4,
+      scaling: {
+        6: "You gain a +1 accuracy bonus with the strike.",
+      },
       type: "Instant",
     },
   ],
