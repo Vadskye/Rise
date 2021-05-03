@@ -982,7 +982,7 @@ def debuffs():
                 mental -= 2;
                 reflex -= 2;
             }}
-            if (slowed) {{
+            if (slowed && !(immobilized || decelerated)) {{
                 armor -= 2;
                 reflex -= 2;
             }}
@@ -1011,7 +1011,7 @@ def debuffs():
             }}
 
             // rank 3 debuffs
-            if (decelerated) {{
+            if (decelerated || immobilized) {{
                 armor -= 4;
                 reflex -= 4;
             }}

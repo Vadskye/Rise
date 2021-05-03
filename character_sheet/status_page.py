@@ -123,7 +123,7 @@ def debuffs():
                 debuff("frightened"),
             ]),
             flex_col([
-                debuff("immobilized", False),
+                debuff("immobilized"),
                 debuff("nauseated"),
                 debuff("panicked"),
                 debuff("shaken"),
