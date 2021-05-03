@@ -326,14 +326,14 @@ export const dirtyFighting: CombatStyle = {
       name: "Unbalancing Strike",
 
       effect: `
-        Make a \\glossterm{strike}.
+        Make a \\glossterm{strike} with a -1d damage penalty.
         Each creature damaged by the strike takes a -2 penalty to Reflex defense until the end of the next round.
       `,
       rank: 1,
       scaling: {
-        3: "The penalty increases to -4.",
-        5: "The penalty increases to -6.",
-        7: "The penalty increases to -8.",
+        3: "The penalty increases to -3.",
+        5: "The penalty increases to -4.",
+        7: "The penalty increases to -5.",
       },
       type: "Instant",
     },

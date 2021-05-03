@@ -14,6 +14,9 @@ export const ripAndTear: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike becomes \\glossterm{vulnerable} to all damage as a \\glossterm{condition}.
       `,
       rank: 4,
+      scaling: {
+        6: "You gain a +1 accuracy bonus with the strike.",
+      },
       type: "Duration",
     },
 
@@ -21,11 +24,15 @@ export const ripAndTear: CombatStyle = {
       name: "Strip the Armor",
 
       effect: `
-        Make a \\glossterm{strike} with a +2 bonus to \\glossterm{accuracy} using a slashing weapon.
+        Make a \\glossterm{strike} with a +2 accuracy bonus using a slashing weapon.
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
-        Each creature that resists all damage from the strike takes the damage from this strike again.
+        Each creature that resists all damage from the strike takes the damage from the strike again.
       `,
       rank: 2,
+      scaling: {
+        4: "The accuracy bonus increases to +3.",
+        6: "The accuracy bonus increases to +4.",
+      },
       type: "Instant",
     },
 
@@ -33,32 +40,15 @@ export const ripAndTear: CombatStyle = {
       name: "Rend the Hide",
 
       effect: `
-        Make a \\glossterm{strike} using a slashing weapon.
-        Each creature damaged by the strike that is not wearing metal armor takes a -1 penalty to Armor defense until the end of the next round.
-      `,
-      rank: 1,
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Rend the Hide",
-
-      effect: `
-        Make a \\glossterm{strike} using a slashing weapon.
+        Make a \\glossterm{strike} with a -1d damage penalty using a slashing weapon.
         Each creature damaged by the strike that is not wearing metal armor takes a -2 penalty to Armor defense until the end of the next round.
       `,
-      rank: 4,
-      type: "Instant",
-    },
-
-    {
-      name: "Supreme Rend the Hide",
-
-      effect: `
-        Make a \\glossterm{strike} using a slashing weapon.
-        Each creature damaged by the strike that is not wearing metal armor takes a -4 penalty to Armor defense until the end of the next round.
-      `,
-      rank: 7,
+      rank: 1,
+      scaling: {
+        3: "The penalty increases to -3.",
+        5: "The penalty increases to -4.",
+        7: "The penalty increases to -5.",
+      },
       type: "Instant",
     },
 
@@ -79,7 +69,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        You take a -1d penalty to damage with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\slowed as a \\glossterm{condition}.
       `,
       rank: 1,
@@ -94,7 +84,7 @@ export const ripAndTear: CombatStyle = {
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\decelerated as a \\glossterm{condition}.
       `,
-      rank: 4,
+      rank: 3,
       type: "Duration",
     },
 
@@ -106,7 +96,7 @@ export const ripAndTear: CombatStyle = {
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\immobilized as a \\glossterm{condition}.
       `,
-      rank: 7,
+      rank: 6,
       type: "Duration",
     },
 
@@ -115,20 +105,13 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a melee strike using a slashing weapon.
-        At the end of this phase, each creature that you hit during this phase with both that strike and the \\textit{offhand strike} ability takes slashing damage equal to half your \\glossterm{power}.
-      `,
-      rank: 1,
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Two-Weapon Rend",
-
-      effect: `
-        Make a melee strike using a slashing weapon.
         At the end of this phase, each creature that you hit during this phase with both that strike and the \\textit{offhand strike} ability takes slashing damage equal to your \\glossterm{power}.
       `,
-      rank: 4,
+      rank: 3,
+      scaling: {
+        5: "You gain a +1 accuracy bonus with the strike.",
+        7: "The accuracy bonus increases to +2.",
+      },
       type: "Instant",
     },
 
@@ -140,6 +123,10 @@ export const ripAndTear: CombatStyle = {
         If the subject is wearing metal armor or is significantly composed of metal, damage dealt by the strike is fire damage in addition to its normal damage types.
       `,
       rank: 2,
+      scaling: {
+        4: "You gain a +1d damage bonus with the strike.",
+        6: "The damage bonus increases to +2d.",
+      },
       type: "Instant",
     },
 
@@ -148,32 +135,13 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a slashing weapon.
-        The strike gains the \\glossterm{Sweeping} (1) tag, or you increase the Sweeping value by 1 if it already had that tag (see \\pcref{Weapon Tags}).
+        The strike gains the \\glossterm{Sweeping} (1) tag, or you gain a +1 bonus to the Sweeping value if it already had that tag (see \\pcref{Weapon Tags}).
       `,
       rank: 2,
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Sweeping Strike",
-
-      effect: `
-        Make a melee \\glossterm{strike} using a slashing weapon.
-        The strike gains the \\glossterm{Sweeping} (2) tag, or you increase the Sweeping value by 2 if it already had that tag (see \\pcref{Weapon Tags}).
-      `,
-      rank: 4,
-      type: "Instant",
-    },
-
-    {
-      name: "Supreme Sweeping Strike",
-
-      effect: `
-        Make a melee \\glossterm{strike} using a slashing weapon.
-        The strike gains the \\glossterm{Sweeping} (3) tag, or you increase the Sweeping value by 3 if it already had that tag (see \\pcref{Weapon Tags}).
-        In addition, the maximum distance between the primary target and each secondary target increases by 5 feet.
-      `,
-      rank: 6,
+      scaling: {
+        4: "You gain a +1 bonus to the Sweeping value of the strike.",
+        6: "The bonus to the Sweeping value increases to +2.",
+      },
       type: "Instant",
     },
 
@@ -182,11 +150,29 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a thrown \\glossterm{strike} using a slashing weapon.
-        The strike also targets up to two creatures or objects within 5 feet of the strike's primary target.
-        Your \\glossterm{power} with the strike is halved.
+        The strike also targets an additional creature or object within 5 feet of the strike's primary target.
         If you choose yourself as one of the targets, you can catch the weapon instead of taking damage from it.
       `,
       rank: 2,
+      scaling: {
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
+      },
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Sweeping Throw",
+
+      effect: `
+        Make a thrown \\glossterm{strike} using a slashing weapon.
+        The strike also targets up to two additional creatures or object within 5 feet of the strike's primary target.
+        If you choose yourself as one of the targets, you can catch the weapon instead of taking damage from it.
+      `,
+      rank: 5,
+      scaling: {
+        7: "You gain a +1 accuracy bonus with the strike.",
+      },
       type: "Instant",
     },
 
@@ -199,6 +185,9 @@ export const ripAndTear: CombatStyle = {
         If you choose yourself as one of the subjects, you can catch the weapon instead of taking damage from it.
       `,
       rank: 4,
+      scaling: {
+        6: "You gain a +1d damage bonus with the strike.",
+      },
       type: "Instant",
     },
 
@@ -209,22 +198,13 @@ export const ripAndTear: CombatStyle = {
         Make a \\glossterm{strike} using a slashing weapon.
         Each creature that loses \\glossterm{hit points} from the strike begins bleeding as a \\glossterm{condition}.
         It loses \\glossterm{hit points} equal to your \\glossterm{power} with that strike at the end of each round until the condition is removed.
-        The condition can be removed with the \\textit{treat condition} ability (see \\pcref{Treat Condition}).
-        The \\glossterm{difficulty rating} of the check is equal to 5.
+        This condition is automatically removed once the creature suffers a \\glossterm{vital wound}.
       `,
       rank: 3,
-      type: "Duration",
-    },
-
-    {
-      name: "Greater Bloodletting Strike",
-
-      functionsLike: {
-        abilityType: "maneuver",
-        exceptThat: "the condition cannot be removed with the \\textit{treat condition} ability.",
-        name: "Bloodletting Strike",
+      scaling: {
+        5: "You gain a +1 accuracy bonus with the strike.",
+        7: "The accuracy bonus increases to +2.",
       },
-      rank: 6,
       type: "Duration",
     },
 
@@ -238,6 +218,9 @@ export const ripAndTear: CombatStyle = {
         This penalty removal is a \\abilitytag{Swift} effect, so it affects attacks against you during the current round.
       `,
       rank: 4,
+      scaling: {
+        6: "You gain a +1 accuracy bonus with the strike.",
+      },
       type: "Instant",
     },
 
@@ -250,30 +233,10 @@ export const ripAndTear: CombatStyle = {
         You take a -2d penalty to damage with both strikes, and your \\glossterm{power} is halved.
       `,
       rank: 3,
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Twinslash",
-
-      // basically +1d
-      effect: `
-        Make two melee \\glossterm{strikes} using a slashing weapon.
-        You take a -1d penalty to damage with both strikes, and your \\glossterm{power} is halved.
-      `,
-      rank: 5,
-      type: "Instant",
-    },
-
-    {
-      name: "Supreme Twinslash",
-
-      // basically +1d
-      effect: `
-        Make two melee \\glossterm{strikes} using a slashing weapon.
-        Your \\glossterm{power} is halved with both strikes.
-      `,
-      rank: 7,
+      scaling: {
+        5: "The damage penalty is reduced to -1d.",
+        7: "The damage penalty is removed.",
+      },
       type: "Instant",
     },
 
@@ -285,6 +248,10 @@ export const ripAndTear: CombatStyle = {
         If the target does not have any \\glossterm{resistance} to the attack, your \\glossterm{power} with the strike is doubled.
       `,
       rank: 3,
+      scaling: {
+        5: "You gain a +1d damage bonus with the strike.",
+        7: "The damage bonus increases to +2d.",
+      },
       type: "Instant",
     },
   ],

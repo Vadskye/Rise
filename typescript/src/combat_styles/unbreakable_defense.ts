@@ -19,6 +19,11 @@ export const unbreakableDefense: CombatStyle = {
         name: "total defense",
       },
       rank: 1,
+      scaling: {
+        3: "The penalty increases to -3.",
+        5: "The penalty increases to -4.",
+        7: "The penalty increases to -5.",
+      },
       tags: ["Swift"],
       type: "Duration",
     },
@@ -53,6 +58,12 @@ export const unbreakableDefense: CombatStyle = {
       `,
       rank: 4,
       tags: [],
+      scaling: {
+        6: `
+          You can also remove a single condition.
+          This cannot remove a condition applied during the current round.
+        `,
+      },
       type: "Duration",
     },
 
@@ -65,6 +76,11 @@ export const unbreakableDefense: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike is \\sickened as a \\glossterm{condition}.
       `,
       rank: 1,
+      scaling: {
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
+      },
       type: "Duration",
     },
 
@@ -72,11 +88,14 @@ export const unbreakableDefense: CombatStyle = {
       name: "Nauseating Shield Slam",
 
       effect: `
-        Make a \\glossterm{strike} using a shield.
+        Make a \\glossterm{strike} with -1d damage penalty using a shield.
         Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\nauseated as a \\glossterm{condition}.
-        `,
-
+      `,
+      scaling: {
+        5: "You gain a +1 accuracy bonus with the strike.",
+        7: "The accuracy bonus increases to +2.",
+      },
       rank: 3,
       type: "Duration",
     },
@@ -91,6 +110,10 @@ export const unbreakableDefense: CombatStyle = {
         The defense bonus is a \\abilitytag{Swift} effect, so it protects you from attacks in the current phase.
       `,
       rank: 2,
+      scaling: {
+        4: "The defense bonuses increase to +3.",
+        6: "The defense bonuses increase to +4.",
+      },
       tags: ["Swift (see text)"],
       type: "Duration",
     },
@@ -107,19 +130,9 @@ export const unbreakableDefense: CombatStyle = {
         The penalties from the condition still affect you when you make the strike.
       `,
       rank: 4,
-      type: "Duration",
-    },
-
-    {
-      name: "Greater Cleansing Strike",
-
-      effect: `
-        Make a strike.
-        In addition, you may remove a \\glossterm{condition} affecting you.
-        This cannot remove a condition applied during the current round.
-        The penalties from the condition still affect you when you make the strike.
-      `,
-      rank: 7,
+      scaling: {
+        6: "The damage penalty is reduced to -1d.",
+      },
       type: "Duration",
     },
 
@@ -147,33 +160,11 @@ export const unbreakableDefense: CombatStyle = {
         In addition, you gain a +1 bonus to \\glossterm{vital rolls} until the end of the round.
         This bonus is a \\abilitytag{Swift} effect, so it affects any vital wounds you gain during the current phase.
       `,
-      rank: 1,
-      tags: ["\\abilitytag{Swift} (see text)"],
-      type: "Duration",
-    },
-
-    {
-      name: "Greater Bracing Strike",
-
-      functionsLike: {
-        abilityType: "maneuver",
-        exceptThat: "the bonus increases to +2.",
-        name: "Bracing Strike",
+      rank: 2,
+      scaling: {
+        4: "The bonus increases to +2.",
+        6: "The bonus increases to +3.",
       },
-      rank: 3,
-      tags: ["\\abilitytag{Swift} (see text)"],
-      type: "Duration",
-    },
-
-    {
-      name: "Supreme Bracing Strike",
-
-      functionsLike: {
-        abilityType: "maneuver",
-        exceptThat: "the bonus increases to +3.",
-        name: "Bracing Strike",
-      },
-      rank: 5,
       tags: ["\\abilitytag{Swift} (see text)"],
       type: "Duration",
     },
@@ -183,31 +174,14 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        Until the end of the next round, your \\glossterm{enemies} treat all squares adjacent to you as \\glossterm{difficult terrain}.
+        Until the end of the next round, your \\glossterm{enemies} treat all squares within a \\tinyarea radius from you as \\glossterm{difficult terrain}.
       `,
       rank: 1,
-      type: "Duration",
-    },
-
-    {
-      name: "Greater Guard the Pass",
-
-      effect: `
-        Make a melee \\glossterm{strike} with a +1 accuracy bonus.
-        Until the end of the next round, your \\glossterm{enemies} treat all squares within a 15 foot \\glossterm{emanation} from you as \\glossterm{difficult terrain}.
-      `,
-      rank: 4,
-      type: "Duration",
-    },
-
-    {
-      name: "Supreme Guard the Pass",
-
-      effect: `
-        Make a melee \\glossterm{strike} with a +2 accuracy bonus.
-        Until the end of the next round, your \\glossterm{enemies} treat all squares within a 30 foot \\glossterm{emanation} from you as \\glossterm{difficult terrain}.
-      `,
-      rank: 7,
+      scaling: {
+        3: "The area increases to a \\smallarea radius \\glossterm{emanation} from you.",
+        5: "The area increases to a \\medarea radius \\glossterm{emanation} from you.",
+        7: "The area increases to a \\largearea radius \\glossterm{emanation} from you.",
+      },
       type: "Duration",
     },
 
@@ -220,30 +194,11 @@ export const unbreakableDefense: CombatStyle = {
         You gain a +2 bonus to that defense during the next round.
       `,
       rank: 1,
-      type: "Duration",
-    },
-
-    {
-      name: "Greater Prepared Defense",
-
-      effect: `
-        Make a \\glossterm{strike}.
-        After you make the strike, choose any one defense: Armor, Fortitude, Reflex, or Mental.
-        You gain a +3 bonus to that defense during the next round.
-      `,
-      rank: 4,
-      type: "Duration",
-    },
-
-    {
-      name: "Supreme Prepared Defense",
-
-      effect: `
-        Make a \\glossterm{strike} with a +1d damage bonus.
-        After you make the strike, choose any one defense: Armor, Fortitude, Reflex, or Mental.
-        You gain a +4 bonus to that defense during the next round.
-      `,
-      rank: 7,
+      scaling: {
+        3: "The bonus increases to +3.",
+        5: "The bonus increases to +4.",
+        7: "The bonus increases to +5.",
+      },
       type: "Duration",
     },
   ],
