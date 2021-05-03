@@ -16,17 +16,10 @@ export const ebbAndFlow: CombatStyle = {
         You gain a +2 bonus to \\glossterm{accuracy} with the strike against each creature that attacked you during the action phase of this round.
       `,
       rank: 2,
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Counterstrike",
-
-      functionsLike: {
-        exceptThat: "the accuracy bonus increases to +4.",
-        name: "counterstrike",
+      scaling: {
+        4: "You gain a +1d bonus to damage with the strike.",
+        6: "The damage bonus increases to +2d.",
       },
-      rank: 5,
       type: "Instant",
     },
 
@@ -40,9 +33,11 @@ export const ebbAndFlow: CombatStyle = {
         During the \\glossterm{delayed action phase}, make a melee \\glossterm{strike} with a slashing or bludgeoning weapon.
         The strike targets one creature or object of your choice,
         plus each creature within your weapon's \\glossterm{reach} that attacked you during the action phase of this round.
-        `,
-
+      `,
       rank: 4,
+      scaling: {
+        6: "You gain a +1d damage bonus with the strike.",
+      },
       type: "Instant",
     },
 
@@ -58,6 +53,9 @@ export const ebbAndFlow: CombatStyle = {
         You take a -4 penalty to \\glossterm{accuracy} with the strikes against any target that did not attack you during the action phase of this round.
       `,
       rank: 5,
+      scaling: {
+        6: "You gain a +1d damage bonus with the strike.",
+      },
       type: "Instant",
     },
 
@@ -69,6 +67,10 @@ export const ebbAndFlow: CombatStyle = {
         You gain a +2 bonus to \\glossterm{accuracy} with the strike against each creature that you missed with a \\glossterm{strike} last round.
       `,
       rank: 2,
+      scaling: {
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
+      },
       type: "Instant",
     },
 
@@ -90,32 +92,16 @@ export const ebbAndFlow: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike} with a +2 bonus to \\glossterm{accuracy}.
         The attack is made against each subject's Reflex defense instead of its Armor defense.
-        The strike deals minimum damage, and your \\glossterm{power} is halved.
+        You take a -3d damage penalty with the strike, and your \\glossterm{power} is halved.
         If a creature takes damage from the strike, it takes a -2 penalty to Armor defense until the end of the next round.
       `,
       rank: 1,
-      type: "Duration",
-    },
-
-    {
-      name: "Frenzied Strike",
-
-      effect: `
-        Make a melee \\glossterm{strike}.
-        % This would be easier to write as +1d up to +3d, but that is very
-        % annoying to track in practice due to the different dice for each stage.
-        % A static damage bonus is more complex to write down, but much easier
-        % to actually make attacks with.
-        For each previous consecutive round that you used this ability, you gain a +1 bonus to damage with the strike, up to a maximum of +3.
-      `,
       scaling: {
-        special: `
-          The damage bonus for each consecutive round increases by 1 for each rank beyond 1.
-          In addition, the maximum damage bonus increases by 3 for each rank beyond 1.
-        `,
+        3: "The accuracy bonus increases to +3.",
+        5: "The accuracy bonus increases to +4.",
+        7: "The accuracy bonus increases to +5.",
       },
-      rank: 1,
-      type: "Instant",
+      type: "Duration",
     },
 
     {
@@ -126,7 +112,12 @@ export const ebbAndFlow: CombatStyle = {
         You gain a +1d bonus to damage with the strike.
         During the next round, you take a -2 penalty to all defenses.
       `,
-      rank: 2,
+      rank: 1,
+      scaling: {
+        3: "The damage bonus increases to +2d.",
+        5: "The damage bonus increases to +3d.",
+        7: "The damage bonus increases to +4d.",
+      },
       type: "Instant",
     },
 
@@ -150,6 +141,11 @@ export const ebbAndFlow: CombatStyle = {
         If your movement during the \\glossterm{movement phase} consisted entirely of moving at least 20 feet in a straight line towards your target, you gain a +1d bonus to damage with the strike.
       `,
       rank: 1,
+      scaling: {
+        3: "The damage bonus increases to +2d.",
+        5: "The damage bonus increases to +3d.",
+        7: "The damage bonus increases to +4d.",
+      },
       type: "Instant",
     },
 
@@ -158,9 +154,9 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If your movement during the \\glossterm{movement phase} consisted entirely of moving at least 20 feet in a straight line towards your target, you gain a +3d bonus to damage with the strike.
+        If your movement during the \\glossterm{movement phase} consisted entirely of moving at least 20 feet in a straight line towards your target, you gain a +2 accuracy bonus and a +2d damage bonus with the strike.
       `,
-      rank: 5,
+      rank: 7,
       type: "Instant",
     },
 
@@ -172,30 +168,11 @@ export const ebbAndFlow: CombatStyle = {
         You take a -2d penalty to damage with the strike.
       `,
       rank: 1,
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Certain Strike",
-
-      effect: `
-        Make a \\glossterm{strike} with a +4 accuracy bonus.
-        You take a -2d penalty to damage with the strike.
-        `,
-
-      rank: 3,
-      type: "Instant",
-    },
-
-    {
-      name: "Supreme Certain Strike",
-
-      effect: `
-        Make a \\glossterm{strike} with a +5 accuracy bonus.
-        You take a -2d penalty to damage with the strike.
-        `,
-
-      rank: 5,
+      scaling: {
+        3: "The accuracy bonus increases to +4.",
+        5: "The accuracy bonus increases to +5.",
+        7: "The accuracy bonus increases to +6.",
+      },
       type: "Instant",
     },
 
@@ -205,31 +182,13 @@ export const ebbAndFlow: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} with a -2 penalty to \\glossterm{accuracy}.
         You gain a +2d bonus to damage with the strike.
-        `,
-
+      `,
       rank: 1,
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Power Strike",
-
-      effect: `
-        Make a \\glossterm{strike} with a -2 penalty to \\glossterm{accuracy}.
-        You gain a +3d bonus to damage with the strike.
-      `,
-      rank: 3,
-      type: "Instant",
-    },
-
-    {
-      name: "Supreme Power Strike",
-
-      effect: `
-        Make a \\glossterm{strike} with a -2 penalty to \\glossterm{accuracy}.
-        You gain a +4d bonus to damage with the strike.
-      `,
-      rank: 5,
+      scaling: {
+        3: "The damage bonus increases to +3d.",
+        5: "The damage bonus increases to +4d.",
+        7: "The damage bonus increases to +4d.",
+      },
       type: "Instant",
     },
 
@@ -248,6 +207,10 @@ export const ebbAndFlow: CombatStyle = {
       `,
       focus: true,
       rank: 2,
+      scaling: {
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
+      },
       type: "Instant",
     },
 
@@ -262,6 +225,11 @@ export const ebbAndFlow: CombatStyle = {
         It lasts until you take a \\glossterm{short rest} or use this ability on a different creature.
       `,
       rank: 1,
+      scaling: {
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
+      },
       type: "Duration",
     },
 
@@ -273,6 +241,9 @@ export const ebbAndFlow: CombatStyle = {
         name: "hunting strike",
       },
       rank: 5,
+      scaling: {
+        7: "The damage penalty is removed.",
+      },
       type: "Duration",
     },
 
@@ -287,17 +258,10 @@ export const ebbAndFlow: CombatStyle = {
         You gain a +2 bonus to \\glossterm{accuracy} with the strike against each creature that did not attack you during the action phase of this round.
       `,
       rank: 3,
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Punish Inattention",
-
-      functionsLike: {
-        exceptThat: "the accuracy bonus increases to +4.",
-        name: "punish inattention",
+      scaling: {
+        5: "You gain a +1d damage bonus with the strike.",
+        7: "The damage bonus increases to +2d.",
       },
-      rank: 6,
       type: "Instant",
     },
 
@@ -305,10 +269,15 @@ export const ebbAndFlow: CombatStyle = {
       name: "Covering Strike",
 
       effect: `
-        Make a melee \\glossterm{strike}.
+        Make a melee \\glossterm{strike} with a -1d damage penalty.
         Each creature damaged by the strike takes a -2 penalty to \\glossterm{accuracy} against your \\glossterm{allies} until the end of the next round.
       `,
-      rank: 3,
+      rank: 1,
+      scaling: {
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
+      },
       type: "Duration",
     },
 
@@ -320,28 +289,10 @@ export const ebbAndFlow: CombatStyle = {
         During the next round, you gain a +2 accuracy bonus and a +2d damage bonus with your \\textit<offhand strike> ability against each creature that took damage from this strike.
       `,
       rank: 3,
-      type: "Duration",
-    },
-
-    {
-      name: "Greater Mainhand Feint",
-
-      effect: `
-        Make a melee \\glossterm{strike} with a -2d damage penalty.
-        During the next round, you gain a +3 accuracy bonus and a +3d damage bonus with your \\textit<offhand strike> ability against each creature that took damage from this strike.
-      `,
-      rank: 5,
-      type: "Duration",
-    },
-
-    {
-      name: "Supreme Mainhand Feint",
-
-      effect: `
-        Make a melee \\glossterm{strike} with a -2d damage penalty.
-        During the next round, you gain a +4 accuracy bonus and a +4d damage bonus with your \\textit<offhand strike> ability against each creature that took damage from this strike.
-      `,
-      rank: 7,
+      scaling: {
+        5: "You gain a +1 accuracy bonus with the strike.",
+        7: "The accuracy bonus increases to +2d.",
+      },
       type: "Duration",
     },
 
@@ -353,28 +304,10 @@ export const ebbAndFlow: CombatStyle = {
         You gain a +4 bonus to contested \\glossterm{initiative} checks against each creature damaged by the strike until the end of the next round.
       `,
       rank: 2,
-      type: "Duration",
-    },
-
-    {
-      name: "Greater Pursuer's Strike",
-
-      effect: `
-        Make a \\glossterm{strike}.
-        You gain a +6 bonus to contested \\glossterm{initiative} checks against each creature damaged by the strike until the end of the next round.
-      `,
-      rank: 4,
-      type: "Duration",
-    },
-
-    {
-      name: "Supreme Pursuer's Strike",
-
-      effect: `
-        Make a \\glossterm{strike}.
-        You gain a +8 bonus to contested \\glossterm{initiative} checks against each creature damaged by the strike until the end of the next round.
-      `,
-      rank: 6,
+      scaling: {
+        4: "The initiative bonus increases to +6.",
+        6: "The initiative bonus increases to +8.",
+      },
       type: "Duration",
     },
   ],
