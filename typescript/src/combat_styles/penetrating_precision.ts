@@ -14,28 +14,11 @@ export const penetratingPrecision: CombatStyle = {
         You take a -1d penalty to damage with the strike.
       `,
       rank: 1,
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Penetrating Strike",
-
-      functionsLike: {
-        exceptThat: "you gain a +1 accuracy bonus with the strike.",
-        name: "penetrating strike",
+      scaling: {
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
       },
-      rank: 3,
-      type: "Instant",
-    },
-
-    {
-      name: "Supreme Penetrating Strike",
-
-      functionsLike: {
-        exceptThat: "you gain a +2 accuracy bonus with the strike.",
-        name: "penetrating strike",
-      },
-      rank: 5,
       type: "Instant",
     },
 
@@ -47,6 +30,11 @@ export const penetratingPrecision: CombatStyle = {
         If you miss, you can increase your \\glossterm{fatigue level} by one to reroll the attack with a +3 accuracy bonus.
       `,
       rank: 1,
+      scaling: {
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
+      },
       type: "Instant",
     },
 
@@ -58,28 +46,11 @@ export const penetratingPrecision: CombatStyle = {
         You gain a +4 accuracy bonus with contact-based and injury-based poisons delivered with the strike.
       `,
       rank: 1,
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Injection",
-
-      effect: `
-        Make a \\glossterm{strike} with a +1 \\glossterm{accuracy} bonus using a piercing weapon.
-        You gain a +6 accuracy bonus with contact-based and injury-based poisons delivered with the strike.
-      `,
-      rank: 4,
-      type: "Instant",
-    },
-
-    {
-      name: "Supreme Injection",
-
-      effect: `
-        Make a \\glossterm{strike} with a +2 \\glossterm{accuracy} bonus using a piercing weapon.
-        You gain a +8 accuracy bonus with contact-based and injury-based poisons delivered with the strike.
-      `,
-      rank: 7,
+      scaling: {
+        3: "The accuracy bonus increases to +6.",
+        5: "The accuracy bonus increases to +8.",
+        7: "The accuracy bonus increases to +10.",
+      },
       type: "Instant",
     },
 
@@ -91,16 +62,24 @@ export const penetratingPrecision: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
       `,
       rank: 3,
+      scaling: {
+        5: "You gain a +1d bonus to damage with the strike.",
+        7: "The damage bonus increases to +2d.",
+      },
       type: "Instant",
     },
 
     {
-      name: "Greater Penetrating Shot",
+      name: "Penetrating Longshot",
 
       effect: `
-        Make a ranged \\glossterm{strike} against everything in a \\largearealong, 5 ft. wide line from you.
+        Make a ranged \\glossterm{strike} against everything in a \\hugearealong, 5 ft. wide line from you.
+        Your \\glossterm{power} with the strike is halved.
       `,
-      rank: 6,
+      rank: 5,
+      scaling: {
+        7: "You gain a +1d bonus to damage with the strike.",
+      },
       type: "Instant",
     },
 
@@ -112,27 +91,20 @@ export const penetratingPrecision: CombatStyle = {
         You reduce your penalties for \\glossterm{range increments} by 2.
       `,
       rank: 2,
+      scaling: {
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
+      },
       type: "Instant",
     },
 
     {
       name: "Greater Distant Shot",
 
-      functionsLike: {
-        exceptThat: "the penalty reduction increases to 3.",
-        name: "distant shot",
-      },
-      rank: 4,
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Distant Shot",
-
-      functionsLike: {
-        exceptThat: "the penalty reduction increases to 4.",
-        name: "distant shot",
-      },
+      effect: `
+        Make a ranged \\glossterm{strike}.
+        You reduce your penalties for \\glossterm{range increments} by 5.
+      `,
       rank: 6,
       type: "Instant",
     },
@@ -147,11 +119,16 @@ export const penetratingPrecision: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
       `,
       rank: 1,
+      scaling: {
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
+      },
       type: "Instant",
     },
 
     {
-      name: "Heartpiercing Strike",
+      name: "Deathblow",
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
@@ -160,65 +137,11 @@ export const penetratingPrecision: CombatStyle = {
       `,
       // narrative: '',
       rank: 1,
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Heartpiercing Strike",
-
-      effect: `
-        Make a \\glossterm{strike} using a piercing weapon.
-        If you get a critical hit with the strike, you gain a bonus to damage with the strike equal to twice your \\glossterm{power}.
-        This bonus applies before applying any multipliers for the critical hit.
-      `,
-      // narrative: '',
-      rank: 4,
-      type: "Instant",
-    },
-
-    {
-      name: "Supreme Heartpiercing Strike",
-
-      effect: `
-        Make a \\glossterm{strike} using a piercing weapon.
-        If you get a critical hit with the strike, you gain a bonus to damage with the strike equal to three times your \\glossterm{power}.
-        This bonus applies before applying any multipliers for the critical hit.
-      `,
-      // narrative: '',
-      rank: 7,
-      type: "Instant",
-    },
-
-    {
-      name: "Arrowguide",
-
-      effect: `
-        Make a ranged \\glossterm{strike} using a piercing weapon.
-        You gain a +2 bonus to \\glossterm{accuracy} against each creature damaged by that strike until the end of the next round.
-      `,
-      rank: 3,
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Arrowguide",
-
-      effect: `
-        Make a ranged \\glossterm{strike} using a piercing weapon.
-        You gain a +4 bonus to \\glossterm{accuracy} against each creature damaged by that strike until the end of the next round.
-      `,
-      rank: 6,
-      type: "Instant",
-    },
-
-    {
-      name: "Deathblow",
-
-      effect: `
-        Make a \\glossterm{strike} using a piercing weapon with a +2d bonus to damage.
-        Each target that has any \\glossterm{resistance} against the strike's damage takes no damage from the strike.
-      `,
-      rank: 3,
+      scaling: {
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
+      },
       type: "Instant",
     },
 
@@ -226,10 +149,48 @@ export const penetratingPrecision: CombatStyle = {
       name: "Greater Deathblow",
 
       effect: `
-        Make a \\glossterm{strike} using a piercing weapon with a +3d bonus to damage.
-        Each target that has any \\glossterm{resistance} against the strike's damage takes half damage from the strike.
+        Make a \\glossterm{strike} using a piercing weapon.
+        If you get a critical hit with the strike, you gain a bonus to damage with the strike equal to twice your \\glossterm{power}.
+        This bonus applies before applying any multipliers for the critical hit.
       `,
-      rank: 6,
+      // narrative: '',
+      rank: 5,
+      scaling: {
+        7: "You gain a +1 accuracy bonus with the strike.",
+      },
+      type: "Instant",
+    },
+
+    {
+      name: "Arrowguide",
+
+      effect: `
+        Make a ranged \\glossterm{strike} with a -1d damage penalty using a piercing weapon.
+        You gain a +2 bonus to \\glossterm{accuracy} against each creature damaged by that strike during the next round.
+      `,
+      rank: 2,
+      scaling: {
+        4: "The accuracy bonus increases to +3.",
+        6: "The accuracy bonus increases to +4.",
+      },
+      type: "Instant",
+    },
+
+    {
+      name: "Heartpiercing Strike",
+
+      effect: `
+        Make a \\glossterm{strike} with a +2d bonus to damage using a piercing weapon.
+        Each target that has any \\glossterm{resistance} against the strike's damage takes no damage from the strike.
+      `,
+      narrative: `
+        You strike directly for your foe's heart, hoping their armor is too damaged to effectively deflect the blow.
+      `,
+      rank: 3,
+      scaling: {
+        5: "The damage bonus increases to +3d.",
+        7: "The damage bonus increases to +4d.",
+      },
       type: "Instant",
     },
   ],

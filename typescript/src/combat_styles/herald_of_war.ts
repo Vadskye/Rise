@@ -15,9 +15,9 @@ export const heraldOfWar: CombatStyle = {
       `,
       rank: 1,
       scaling: {
-        3: "The bonus increases to +5.",
-        5: "The bonus increases to +6.",
-        7: "The bonus increases to +7.",
+        3: "The bonus increases to +6.",
+        5: "The bonus increases to +8.",
+        7: "The bonus increases to +10.",
       },
       type: "Instant",
     },
@@ -27,7 +27,7 @@ export const heraldOfWar: CombatStyle = {
 
       attack: {
         crit: `Each subject takes a -2 penalty to defenses as a \\glossterm{condition}.`,
-        hit: `Each subject takes a -2 penalty to defenses until the end of the next round..`,
+        hit: `Each subject takes a -2 penalty to defenses until the end of the next round.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
         `,
@@ -101,13 +101,13 @@ export const heraldOfWar: CombatStyle = {
       name: "Rally the Troops",
 
       effect: `
-        You and your \\glossterm{allies} within a \\medarea radius from you can each ignore any effects from one \\glossterm{condition} they are already affected by until the end of the next round.
+        You and your \\glossterm{allies} within a \\largearea radius from you can each ignore any effects from one \\glossterm{condition} they are already affected by until the end of the next round.
         Because this ability has the \\abilitytag{Swift} tag, it removes any relevant penalties from those conditions during the current phase.
       `,
       rank: 2,
       scaling: {
-        4: "The area increases to a \\largearea radius from you.",
-        6: "The area increases to a \\hugearea radius from you.",
+        4: "The area increases to a \\hugearea radius from you.",
+        6: "Each ally can ignore two conditions instead of one.",
       },
       tags: ["Swift"],
       type: "Duration",
@@ -118,11 +118,15 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
-        Each creature damaged by the strike takes a -2 penalty to \\glossterm{accuracy} against creatures other than you as a \\glossterm{condition}.
+        You take a -2d penalty to damage with the strike.
+        As a \\glossterm{condition}, each creature damaged by the strike takes a -2 penalty to \\glossterm{accuracy} against creatures other than you as long as it is within \\rngmed range of you.
         This condition is removed if another creature applies this condition to the same target.
       `,
-      rank: 2,
+      rank: 3,
+      scaling: {
+        5: "The penalty increases to -4.",
+        7: "The penalty increases to -6.",
+      },
       type: "Duration",
     },
 
@@ -131,10 +135,14 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You take a -2d penalty to damage with the strike.
-        Each creature that loses \\glossterm{hit points} from the strike is \\shaken by you as a \\glossterm{condition}.
+        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        Each creature damaged by the strike is \\shaken by you as a \\glossterm{condition}.
       `,
-      rank: 2,
+      rank: 3,
+      scaling: {
+        5: "You gain a +1 accuracy bonus with the strike.",
+        7: "The accuracy bonus increases to +2.",
+      },
       tags: ["Emotion"],
       type: "Duration",
     },
@@ -144,10 +152,10 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You take a -2d penalty to damage with the strike.
-        Each creature that loses \\glossterm{hit points} from the strike is \\frightened by you as a \\glossterm{condition}.
+        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        Each creature damaged by the strike is \\frightened by you as a \\glossterm{condition}.
       `,
-      rank: 5,
+      rank: 6,
       tags: ["Emotion"],
       type: "Duration",
     },
