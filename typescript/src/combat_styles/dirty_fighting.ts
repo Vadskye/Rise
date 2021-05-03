@@ -385,5 +385,32 @@ export const dirtyFighting: CombatStyle = {
       },
       type: "Instant",
     },
+
+    {
+      name: "Switchstrike",
+
+      effect: `
+        Make a melee \\glossterm{strike} with a -1d damage penalty.
+        You may switch places with one creature damaged by the strike that is the same \\glossterm{size category} as you or smaller.
+      `,
+      rank: 1,
+      scaling: {
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
+      },
+      type: "Instant",
+    },
+
+    {
+      name: "Eye-Averting Strike",
+
+      effect: `
+        Make a \\glossterm{strike} with a -1d damage penalty.
+        Each creature damaged by the strike treats you as being \\glossterm{invisible} of you until the end of the next round.
+      `,
+      rank: 7,
+      type: "Duration",
+    },
   ],
 };

@@ -163,6 +163,17 @@ export const mobileAssault: CombatStyle = {
     },
 
     {
+      name: "Flash Flurry",
+
+      effect: `
+        You \\glossterm{teleport} into an unoccupied destination on a stable surface within \\shortrange.
+        In addition, you can make a melee \\glossterm{strike} that targets up to three creatures within a 5 ft.\\ wide line between your starting location and your ending location.
+      `,
+      rank: 7,
+      type: "Instant",
+    },
+
+    {
       name: "Flash Charge",
 
       effect: `

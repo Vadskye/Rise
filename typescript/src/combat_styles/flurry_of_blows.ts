@@ -124,7 +124,8 @@ export const flurryOfBlows: CombatStyle = {
       name: "Whirlwind",
 
       effect: `
-        Make a melee \\glossterm{strike} using a light or medium slashing or bludgeoning weapon against all \\glossterm{enemies} within your weapon's \\glossterm{reach}.
+        Make a melee \\glossterm{strike} using a light or medium slashing or bludgeoning weapon.
+        The strike targets all \\glossterm{enemies} within your weapon's \\glossterm{reach}.
         Your \\glossterm{power} with the strike is halved.
       `,
       rank: 2,
@@ -136,10 +137,26 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
+      name: "Tripping Whirlwind",
+
+      effect: `
+        Make a melee \\glossterm{strike} with a -2d damage penalty using a light or medium slashing or bludgeoning weapon.
+        The strike targets all \\glossterm{enemies} within your weapon's \\glossterm{reach}.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature damaged by the strike that is not two or more size categories larger than you falls \\glossterm{prone}.
+      `,
+      rank: 4,
+      scaling: {
+        6: "You gain a +1 accuracy bonus with the strike.",
+      },
+      type: "Instant",
+    },
+
+    {
       name: "Whirlwind Flurry",
 
       effect: `
-        Make two melee \\glossterm{strikes} with a -2 penalty to \\glossterm{accuracy} using a light or medium slashing or bludgeoning weapon against all \\glossterm{enemies} within your weapon's \\glossterm{reach}.
+        Make two melee \\glossterm{strikes} using a light or medium slashing or bludgeoning weapon against all \\glossterm{enemies} within your weapon's \\glossterm{reach}.
         You take a -2d penalty to damage with both strikes, and your \\glossterm{power} is halved.
       `,
       rank: 7,
@@ -157,6 +174,36 @@ export const flurryOfBlows: CombatStyle = {
       rank: 4,
       scaling: {
         6: "You gain a +1d damage bonus with both strikes.",
+      },
+      type: "Instant",
+    },
+
+    {
+      name: "Shrapnel Strike",
+
+      effect: `
+        Make a ranged \\glossterm{strike} using a projectile weapon against each creature in a \\smallarea cone from you.
+        Your \\glossterm{power} with the strike is halved.
+        This strike costs five projectiles.
+      `,
+      rank: 3,
+      scaling: {
+        5: "You gain a +1 bonus to accuracy with the strike.",
+        7: "The accuracy bonus increases to +2.",
+      },
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Shrapnel Strike",
+
+      functionsLike: {
+        exceptThat: "the area increases to a \\largearea cone from you.",
+        name: "shrapnel strike",
+      },
+      rank: 5,
+      scaling: {
+        7: "You gain a +1 bonus to accuracy with the strike.",
       },
       type: "Instant",
     },
@@ -258,7 +305,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike} with a -2d damage penalty.
         Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by the strike takes a -4 penalty to \\glossterm{initiative} checks as a \\glossterm{condition}.
+        Each creature damaged by the strike takes a -4 penalty to \\glossterm{initiative} checks and Awareness checks as a \\glossterm{condition}.
       `,
       rank: 2,
       scaling: {
@@ -286,6 +333,37 @@ export const flurryOfBlows: CombatStyle = {
         `,
       },
       rank: 1,
+      type: "Instant",
+    },
+
+    {
+      name: "Harrying Strike",
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        Each creature damaged by the strike increases its \\glossterm{focus penalty} by 2 until the end of the next round.
+      `,
+      rank: 2,
+      scaling: {
+        4: "The penalty increases to -4.",
+        6: "The penalty increases to -6.",
+      },
+      type: "Duration",
+    },
+
+    {
+      name: "Deathseeking Flurry",
+
+      effect: `
+        Make a melee \\glossterm{strike} with a -1d damage penalty.
+        You can make an additional \\glossterm{strike} with a -1d damage penalty against each creature that lost hit points from the first strike.
+        Your \\glossterm{power} with both strikes is halved.
+      `,
+      rank: 3,
+      scaling: {
+        5: "The damage penalty is removed.",
+        7: "You gain a +1d damage bonus with both strikes.",
+      },
       type: "Instant",
     },
   ],

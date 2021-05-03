@@ -11,12 +11,25 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
         You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        Each creature that loses \\glossterm{hit points} from the strike becomes \\glossterm{vulnerable} to all damage until the end of the next round.
+      `,
+      rank: 3,
+      scaling: {
+        5: "You gain a +1 accuracy bonus with the strike.",
+        7: "The accuracy bonus increases to +2.",
+      },
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Strip the Flesh",
+
+      effect: `
+        Make a \\glossterm{strike} using a slashing weapon.
+        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike becomes \\glossterm{vulnerable} to all damage as a \\glossterm{condition}.
       `,
-      rank: 4,
-      scaling: {
-        6: "You gain a +1 accuracy bonus with the strike.",
-      },
+      rank: 6,
       type: "Duration",
     },
 
@@ -54,6 +67,22 @@ export const ripAndTear: CombatStyle = {
 
     {
       name: "Brow Gash",
+
+      effect: `
+        Make a \\glossterm{strike} using a slashing weapon.
+        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        Each creature that loses \\glossterm{hit points} from the strike is \\blinded until the end of the next round.
+      `,
+      rank: 3,
+      scaling: {
+        5: "You gain a +1 accuracy bonus with the strike.",
+        7: "The accuracy bonus increases to +2.",
+      },
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Brow Gash",
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
