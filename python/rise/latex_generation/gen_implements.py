@@ -175,7 +175,7 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Whenever you cause an \\glossterm<enemy> to lose \\glossterm<hit points> with a \\glossterm<magical> ability, that creature becomes \\glossterm<dazed> until the end of the next round.
+                Whenever you cause an \\glossterm<enemy> to lose \\glossterm<hit points> with a \\glossterm<magical> ability, that creature becomes \\glossterm<dazed> during the next round.
             """,
             short_description="Makes wounded creatures briefly dazed",
         ),
