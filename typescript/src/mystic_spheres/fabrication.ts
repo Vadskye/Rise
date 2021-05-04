@@ -232,7 +232,7 @@ export const fabrication: MysticSphere = {
       scaling: {
         3: `You gain a +1 \\glossterm{magic bonus} to \\glossterm{accuracy} with \\glossterm{strikes} using the weapon.`,
         5: `You gain a +4 \\glossterm{magic bonus} to \\glossterm{power} with \\glossterm{strikes} using the weapon.`,
-        7: `The bonus to accuracy increases to +2, and the bonus to power increases to +8.`,
+        7: `The accuracy bonus increases to +2, and the bonus to power increases to +8.`,
       },
       tags: ["Manifestation"],
       type: "Duration",

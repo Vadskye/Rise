@@ -64,7 +64,7 @@ export const penetratingPrecision: CombatStyle = {
       `,
       rank: 3,
       scaling: {
-        5: "You gain a +1d bonus to damage with the strike.",
+        5: "You gain a +1d damage bonus with the strike.",
         7: "The damage bonus increases to +2d.",
       },
       type: "Instant",
@@ -79,7 +79,7 @@ export const penetratingPrecision: CombatStyle = {
       `,
       rank: 5,
       scaling: {
-        7: "You gain a +1d bonus to damage with the strike.",
+        7: "You gain a +1d damage bonus with the strike.",
       },
       type: "Instant",
     },
@@ -148,7 +148,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        If you get a critical hit with the strike, you gain a bonus to damage with the strike equal to your \\glossterm{power}.
+        If you get a critical hit with the strike, you gain a damage bonus with the strike equal to your \\glossterm{power}.
         This bonus applies before applying any multipliers for the critical hit.
       `,
       // narrative: '',
@@ -166,7 +166,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        If you get a critical hit with the strike, you gain a bonus to damage with the strike equal to twice your \\glossterm{power}.
+        If you get a critical hit with the strike, you gain a damage bonus with the strike equal to twice your \\glossterm{power}.
         This bonus applies before applying any multipliers for the critical hit.
       `,
       // narrative: '',
@@ -196,7 +196,7 @@ export const penetratingPrecision: CombatStyle = {
       name: "Heartpiercing Strike",
 
       effect: `
-        Make a \\glossterm{strike} with a +2d bonus to damage using a piercing weapon.
+        Make a \\glossterm{strike} with a +2d damage bonus using a piercing weapon.
         Each target that has any \\glossterm{resistance} against the strike's damage takes no damage from the strike.
       `,
       narrative: `

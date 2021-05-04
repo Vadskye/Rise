@@ -182,7 +182,7 @@ export const electromancy: MysticSphere = {
         hit: `Each subject takes 2d8 + half \\glossterm{power} electricity damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarealong, 10 ft. wide line from you.
-          You gain a +2 bonus to accuracy against each subject that is wearing metal armor or otherwise carrying or composed of a significant amount of metal.
+          You gain a +2 accuracy bonus against each subject that is wearing metal armor or otherwise carrying or composed of a significant amount of metal.
         `,
       },
       rank: 4,
