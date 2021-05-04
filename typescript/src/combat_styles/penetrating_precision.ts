@@ -43,7 +43,7 @@ export const penetratingPrecision: CombatStyle = {
       name: "Injection",
 
       effect: `
-        Make a \\glossterm{strike} using a piercing weapon.
+        Make a \\glossterm{strike} with a -1d damage penalty using a piercing weapon.
         You gain a +4 accuracy bonus with contact-based and injury-based poisons delivered with the strike.
       `,
       rank: 1,
