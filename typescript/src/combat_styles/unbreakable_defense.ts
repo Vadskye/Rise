@@ -230,7 +230,7 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
-      name: "Bracing Strike",
+      name: "Steadfast Strike",
 
       effect: `
         Make a strike.
