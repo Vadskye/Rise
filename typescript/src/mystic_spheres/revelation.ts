@@ -322,7 +322,7 @@ export const revelation: MysticSphere = {
         If the subject does not already know that fact to be true or false,
         and the subject has sufficient cognitive ability to understand the fact,
         you gain a +2 bonus to \\glossterm{accuracy}.
-        Otherwise, you take a -2 penalty to accuracy.
+        Otherwise, you take a -2 accuracy penalty.
         The fact does not have to be true to gain this bonus.
         `,
       },

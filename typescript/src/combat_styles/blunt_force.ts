@@ -11,7 +11,7 @@ export const bluntForce: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
         The attack is made against each target's Fortitude defense instead of its Armor defense.
-        You take a -1d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        You take a -1d damage penalty with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\sickened as a \\glossterm{condition}.
       `,
       rank: 1,
@@ -29,7 +29,7 @@ export const bluntForce: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
         The attack is made against each target's Fortitude defense instead of its Armor defense.
-        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\nauseated as a \\glossterm{condition}.
       `,
       rank: 3,
@@ -46,7 +46,7 @@ export const bluntForce: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
         The attack is made against each target's Fortitude defense instead of its Armor defense.
-        You take -1d penalty to damage with the strike.
+        You take -1d damage penalty with the strike.
       `,
       rank: 1,
       scaling: {
@@ -61,7 +61,7 @@ export const bluntForce: CombatStyle = {
       name: "Pulverizing Power Crush",
 
       effect: `
-        Make a \\glossterm{strike} using a bludgeoning weapon with a -2 penalty to accuracy.
+        Make a \\glossterm{strike} using a bludgeoning weapon with a -2 accuracy penalty.
         The attack is made against each target's Fortitude defense instead of its Armor defense.
         You gain a +2d bonus to damage with the strike.
       `,
@@ -96,7 +96,7 @@ export const bluntForce: CombatStyle = {
         Each Large or smaller creature that loses \\glossterm{hit points} from this damage is knocked \\prone.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarea radius from you that is on the same stable surface as you.
-          You take a -4 penalty to accuracy with this attack against your \\glossterm{allies}.
+          You take a -4 accuracy penalty with this attack against your \\glossterm{allies}.
         `,
       },
       rank: 5,
@@ -172,7 +172,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        You take a -1d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        You take a -1d damage penalty with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\dazed as a \\glossterm{condition}.
       `,
       rank: 1,
@@ -189,7 +189,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
       `,
       rank: 3,
@@ -205,7 +205,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\confused as a \\glossterm{condition}.
       `,
       rank: 6,
@@ -250,7 +250,7 @@ export const bluntForce: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
         The attack is made against each target's Fortitude defense instead of its Armor defense.
-        You take a -1d penalty to damage with the strike.
+        You take a -1d damage penalty with the strike.
         Each creature that loses \\glossterm{hit points} from the strike falls \\prone if it is no larger than one size category larger than you.
       `,
       rank: 2,
