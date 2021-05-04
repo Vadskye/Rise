@@ -165,7 +165,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You take a -2d penalty to damage with the strike.
+        You take a -2d damage penalty with the strike.
         As a \\glossterm{condition}, each creature damaged by the strike takes a -2 penalty to \\glossterm{accuracy} against creatures other than you as long as it is within \\rngmed range of you.
         This condition is removed if another creature applies this condition to the same target.
       `,
@@ -182,7 +182,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
         Each creature damaged by the strike is \\shaken by you as a \\glossterm{condition}.
       `,
       rank: 3,
@@ -199,7 +199,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
         Each creature damaged by the strike is \\frightened by you as a \\glossterm{condition}.
       `,
       rank: 6,

@@ -83,7 +83,7 @@ export const mobileAssault: CombatStyle = {
       name: "Push Through",
 
       effect: `
-        Make a \\glossterm{strike} with a -1d penalty to damage.
+        Make a \\glossterm{strike} with a -1d damage penalty.
         During the next round, you can move through the space of each creature that took damage from this strike.
       `,
       rank: 1,
@@ -151,7 +151,7 @@ export const mobileAssault: CombatStyle = {
       name: "Retreating Strike",
 
       effect: `
-        Make a \\glossterm{strike} with a -1d penalty to damage.
+        Make a \\glossterm{strike} with a -1d damage penalty.
         In addition, you can move up to half your movement speed in a straight line away from one target of the strike.
       `,
       rank: 2,
@@ -266,7 +266,7 @@ export const mobileAssault: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}, then move up to 10 feet and make another melee \\glossterm{strike}.
-        You take a -1d penalty to damage with both strikes.
+        You take a -1d damage penalty with both strikes.
         You cannot include the same creature or object as a target of both strikes.
         If your weapon has the Sweeping weapon tag, you ignore that tag on the first strike (see \\pcref{Sweeping}).
       `,

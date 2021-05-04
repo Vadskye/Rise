@@ -244,7 +244,7 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         As a \\glossterm{minor action}, you can make a \\glossterm{strike} with a -3 penalty to \\glossterm{accuracy}.
-        You take a -2d penalty to damage with the strike, and you do not add your \\glossterm{power} to damage.
+        You take a -2d damage penalty with the strike, and you do not add your \\glossterm{power} to damage.
       `,
       rank: 4,
       scaling: { 6: `The accuracy penalty is reduced to -2.` },

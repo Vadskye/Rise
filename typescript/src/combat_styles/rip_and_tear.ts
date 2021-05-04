@@ -10,7 +10,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike becomes \\glossterm{vulnerable} to all damage until the end of the next round.
       `,
       rank: 3,
@@ -26,7 +26,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike becomes \\glossterm{vulnerable} to all damage as a \\glossterm{condition}.
       `,
       rank: 6,
@@ -38,7 +38,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a +2 accuracy bonus using a slashing weapon.
-        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
         Each creature that resists all damage from the strike takes the damage from the strike again.
       `,
       rank: 2,
@@ -71,7 +71,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        You take a -1d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        You take a -1d damage penalty with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\blinded until the end of the next round.
       `,
       rank: 4,
@@ -86,7 +86,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        You take a -1d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        You take a -1d damage penalty with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\blinded as a \\glossterm{condition}.
       `,
       rank: 7,
@@ -98,7 +98,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        You take a -1d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        You take a -1d damage penalty with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\slowed as a \\glossterm{condition}.
       `,
       rank: 1,
@@ -110,7 +110,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\decelerated as a \\glossterm{condition}.
       `,
       rank: 3,
@@ -122,7 +122,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\immobilized as a \\glossterm{condition}.
       `,
       rank: 6,
@@ -288,7 +288,7 @@ export const ripAndTear: CombatStyle = {
       // basically +1d
       effect: `
         Make two melee \\glossterm{strikes} using a slashing weapon.
-        You take a -2d penalty to damage with both strikes, and your \\glossterm{power} is halved.
+        You take a -2d damage penalty with both strikes, and your \\glossterm{power} is halved.
       `,
       rank: 3,
       scaling: {
