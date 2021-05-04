@@ -64,7 +64,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature is more offensively inclined.
-          It gains a +1 \\glossterm{accuracy} bonus and a +2d bonus to damage with its attacks, but its \\glossterm{hit points} are halved and it takes a -1 penalty to all \\glossterm{defenses}.
+          It gains a +1 \\glossterm{accuracy} bonus and a +2d damage bonus with its attacks, but its \\glossterm{hit points} are halved and it takes a -1 penalty to all \\glossterm{defenses}.
         `,
         name: "summon monster",
       },
@@ -80,7 +80,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature is more offensively inclined.
-          It gains a +2 \\glossterm{accuracy} bonus and a +4d bonus to damage with its attacks, but its \\glossterm{hit points} are halved and it takes a -1 penalty to all \\glossterm{defenses}.
+          It gains a +2 \\glossterm{accuracy} bonus and a +4d damage bonus with its attacks, but its \\glossterm{hit points} are halved and it takes a -1 penalty to all \\glossterm{defenses}.
         `,
         name: "summon monster",
       },
@@ -96,7 +96,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature is more offensively inclined.
-          It gains a +3 \\glossterm{accuracy} bonus and a +6d bonus to damage with its attacks, but its \\glossterm{hit points} are halved and it takes a -1 penalty to all \\glossterm{defenses}.
+          It gains a +3 \\glossterm{accuracy} bonus and a +6d damage bonus with its attacks, but its \\glossterm{hit points} are halved and it takes a -1 penalty to all \\glossterm{defenses}.
         `,
         name: "summon monster",
       },
@@ -128,7 +128,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature is more defensively inclined.
-          It gains a +2 bonus to all defenses, and it gains a +2d bonus to damage with its attacks.
+          It gains a +2 bonus to all defenses, and it gains a +2d damage bonus with its attacks.
         `,
         name: "summon monster",
       },
@@ -144,7 +144,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature is more defensively inclined.
-          It gains a +3 bonus to all defenses, and it gains a +4d bonus to damage with its attacks.
+          It gains a +3 bonus to all defenses, and it gains a +4d damage bonus with its attacks.
         `,
         name: "summon monster",
       },

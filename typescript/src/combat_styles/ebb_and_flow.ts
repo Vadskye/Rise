@@ -17,7 +17,7 @@ export const ebbAndFlow: CombatStyle = {
       `,
       rank: 2,
       scaling: {
-        4: "You gain a +1d bonus to damage with the strike.",
+        4: "You gain a +1d damage bonus with the strike.",
         6: "The damage bonus increases to +2d.",
       },
       type: "Instant",
@@ -125,7 +125,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You gain a +1d bonus to damage with the strike.
+        You gain a +1d damage bonus with the strike.
         During the next round, you take a -2 penalty to all defenses.
       `,
       rank: 1,
@@ -154,7 +154,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If your movement during the \\glossterm{movement phase} consisted entirely of moving at least 20 feet in a straight line towards your target, you gain a +1d bonus to damage with the strike.
+        If your movement during the \\glossterm{movement phase} consisted entirely of moving at least 20 feet in a straight line towards your target, you gain a +1d damage bonus with the strike.
       `,
       rank: 1,
       scaling: {
@@ -197,7 +197,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a -2 penalty to \\glossterm{accuracy}.
-        You gain a +2d bonus to damage with the strike.
+        You gain a +2d damage bonus with the strike.
       `,
       rank: 1,
       scaling: {

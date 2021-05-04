@@ -75,7 +75,7 @@ def generate_weapons():
                 It sheds light as a torch, and all damage dealt with it is fire damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
                 As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with fiery energy.
-                You gain a +1d bonus to damage with the strike.
+                You gain a +1d damage bonus with the strike.
             """,
             short_description="Deals fire damage",
         ),
@@ -89,7 +89,7 @@ def generate_weapons():
                 It sheds light as a torch, and all damage dealt with it is fire damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
                 As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with fiery energy.
-                You gain a +2d bonus to damage with the strike.
+                You gain a +2d damage bonus with the strike.
             """,
             short_description="Deals major fire damage",
         ),
@@ -175,7 +175,7 @@ def generate_weapons():
                 All damage dealt with it is cold damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
                 As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with cold energy.
-                You gain a +1d bonus to damage with the strike.
+                You gain a +1d damage bonus with the strike.
                 If a creature loses \\glossterm<hit points> from that strike, it is \\glossterm<slowed> as a \\glossterm<condition>.
             """,
             short_description="Deals cold damage, can powerfully chill",
@@ -330,7 +330,7 @@ def generate_weapons():
             level=12,
             material_type="Weapon",
             description="""
-            When you make a \\glossterm<strike> with this weapon, you gain a +1 bonus to accuracy against one target of the strike with all future attacks.
+            When you make a \\glossterm<strike> with this weapon, you gain a +1 accuracy bonus against one target of the strike with all future attacks.
             If the strike had multiple targets, you choose which target you gain the bonus against.
             This bonus lasts until you make a strike with this weapon against a different target.
             This bonus can stack with itself, up to a maximum of +4.

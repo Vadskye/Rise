@@ -38,7 +38,7 @@
     name: "Unstoppable Blow",
 
     effect: `
-        Make a \\glossterm{strike} with a +3d bonus to damage.
+        Make a \\glossterm{strike} with a +3d damage bonus.
         `,
 
     rank: 7,
