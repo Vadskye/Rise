@@ -259,7 +259,7 @@ export const heraldOfWar: CombatStyle = {
         After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
       `,
       rank: 7,
-      tags: ['Emotion'],
+      tags: ['Emotion', 'Healing'],
       type: "Duration",
     },
 
