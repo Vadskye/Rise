@@ -80,7 +80,7 @@ export const ebbAndFlow: CombatStyle = {
       effect: `
         Make two \\glossterm{strikes}.
         Your \\glossterm{power} with both strikes is halved.
-        You take a -4 penalty to accuracy with the strikes against anything other than creatures that you missed with a \\glossterm{strike} last round.
+        You take a -4 accuracy penalty with the strikes against anything other than creatures that you missed with a \\glossterm{strike} last round.
       `,
       rank: 6,
       type: "Instant",
@@ -142,7 +142,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make two melee \\glossterm{strikes}.
-        You take a -2d penalty to damage with both strikes, and your \\glossterm{power} is \\glossterm{halved}.
+        You take a -2d damage penalty with both strikes, and your \\glossterm{power} is \\glossterm{halved}.
         During the next round, you take a -2 penalty to all defenses.
       `,
       rank: 5,
@@ -181,7 +181,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a +3 accuracy bonus.
-        You take a -2d penalty to damage with the strike.
+        You take a -2d damage penalty with the strike.
       `,
       rank: 1,
       scaling: {
@@ -218,7 +218,7 @@ export const ebbAndFlow: CombatStyle = {
         You only suffer a \\glossterm{focus penalty} for this attack during the action phase.
 
         During the \\glossterm{delayed action phase}, you can make a melee \\glossterm{strike} against the subject.
-        You take a -1d penalty to damage with the strike.
+        You take a -1d damage penalty with the strike.
         The attack roll \\glossterm{explodes} regardless of what you roll.
       `,
       focus: true,

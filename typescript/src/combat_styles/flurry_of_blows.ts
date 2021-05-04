@@ -10,7 +10,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You take a -2d penalty to damage with the strike.
+        You take a -2d damage penalty with the strike.
         In exchange, you roll to hit twice and take the higher result.
       `,
       rank: 1,
@@ -27,7 +27,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You take a -2d penalty to damage with the strike.
+        You take a -2d damage penalty with the strike.
         In addition, you can drink a potion.
         You must still have a free hand that is not being used to make the strike to hold and drink the potion.
       `,
@@ -78,7 +78,7 @@ export const flurryOfBlows: CombatStyle = {
         You can only use this ability during the \\glossterm{action phase}.
         Make a \\glossterm{strike}.
         If all damage from the strike is resisted, you can make an additional strike during the \\glossterm{delayed action phase}.
-        You take a -2d penalty to damage with both strikes.
+        You take a -2d damage penalty with both strikes.
       `,
       rank: 2,
       scaling: {
@@ -94,7 +94,7 @@ export const flurryOfBlows: CombatStyle = {
       // basically +1d
       effect: `
         Make two \\glossterm{strikes}.
-        You take a -2d penalty to damage with both strikes, and your \\glossterm{power} is halved.
+        You take a -2d damage penalty with both strikes, and your \\glossterm{power} is halved.
       `,
       rank: 3,
       scaling: {
@@ -157,7 +157,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make two melee \\glossterm{strikes} using a light or medium slashing or bludgeoning weapon against all \\glossterm{enemies} within your weapon's \\glossterm{reach}.
-        You take a -2d penalty to damage with both strikes, and your \\glossterm{power} is halved.
+        You take a -2d damage penalty with both strikes, and your \\glossterm{power} is halved.
       `,
       rank: 7,
       type: "Instant",

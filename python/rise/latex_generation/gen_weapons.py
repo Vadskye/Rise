@@ -245,7 +245,7 @@ def generate_weapons():
             description="""
                 This weapon shimmers with a chaotic pattern of colors.
                 As a standard action, you can make a flashy \\glossterm<strike> with this weapon that accentuates its bewildering effect.
-                You take a -2d penalty to damage with the strike.
+                You take a -2d damage penalty with the strike.
                 If a creature loses a \\glossterm<hit point> from this strike, it is \\glossterm<dazzled> as a \\glossterm<condition>.
             """,
             short_description="Can dazzle struck foes",
@@ -258,7 +258,7 @@ def generate_weapons():
             description="""
                 This weapon shimmers with a blindingly chaotic pattern of colors.
                 As a standard action, you can make a flashy \\glossterm<strike> with this weapon that accentuates its bewildering effect.
-                You take a -2d penalty to damage with the strike.
+                You take a -2d damage penalty with the strike.
                 If a creature loses a \\glossterm<hit point> from this strike, it is \\glossterm<blinded> as a \\glossterm<condition>.
             """,
             short_description="Disorients struck foes",

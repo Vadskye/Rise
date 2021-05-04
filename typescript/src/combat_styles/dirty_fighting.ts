@@ -235,7 +235,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You take a -2d penalty to damage with the strike.
+        You take a -2d damage penalty with the strike.
         Each creature that loses \\glossterm{hit points} from the strike stops being \\glossterm{attuned} to two effects.
         It can freely choose which effects it releases its attunement to.
       `,
@@ -252,7 +252,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
         If a creature takes damage from the strike, it stops being \\glossterm{attuned} to one effect.
         It can freely choose which effect it releases its attunement to.
       `,
@@ -294,7 +294,7 @@ export const dirtyFighting: CombatStyle = {
       name: "Alchemical Strike",
 
       effect: `
-        Make a melee \\glossterm{strike} with a -2d penalty to damage.
+        Make a melee \\glossterm{strike} with a -2d damage penalty.
         In addition, you can throw a tanglefoot bag, vial of alchemist's fire, or similar small object at a target of the strike.
         You must still have a free hand that is not being used to make the strike to throw the object.
       `,
@@ -342,7 +342,7 @@ export const dirtyFighting: CombatStyle = {
       name: "Sweep the Leg",
 
       effect: `
-        Make a melee \\glossterm{strike} with a -2d penalty to damage.
+        Make a melee \\glossterm{strike} with a -2d damage penalty.
         Each creature damaged by the strike falls \\prone.
       `,
       rank: 1,
@@ -359,7 +359,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
         Each creature damaged by the strike is \\slowed until the end of the next round.
       `,
       rank: 1,
@@ -376,7 +376,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
         Each creature damaged by the strike is \\decelerated until the end of the next round.
       `,
       rank: 4,

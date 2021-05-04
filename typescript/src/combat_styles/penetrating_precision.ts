@@ -11,7 +11,7 @@ export const penetratingPrecision: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
         The attack is made against each subject's Reflex defense instead of its Armor defense.
-        You take a -1d penalty to damage with the strike.
+        You take a -1d damage penalty with the strike.
       `,
       rank: 1,
       scaling: {
@@ -215,7 +215,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        You take a -1d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        You take a -1d damage penalty with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\dazzled as a \\glossterm{condition}.
       `,
       rank: 1,
@@ -227,7 +227,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\blinded until the end of the next round.
       `,
       rank: 3,
@@ -239,7 +239,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\blinded as a \\glossterm{condition}.
       `,
       rank: 6,
@@ -251,7 +251,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        You take a -1d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        You take a -1d damage penalty with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\immobilized until the end of the next round.
       `,
       rank: 4,
@@ -263,7 +263,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        You take a -1d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        You take a -1d damage penalty with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\immobilized as a \\glossterm{condition}.
       `,
       rank: 7,

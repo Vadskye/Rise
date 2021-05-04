@@ -308,7 +308,7 @@ export const telekinesis: MysticSphere = {
       effect: `
         As a \\glossterm{minor action}, you can make a \\glossterm{strike} with a -3 penalty to \\glossterm{accuracy}.
         This strike is considered a \\glossterm{magical} ability.
-        You take a -2d penalty to damage with the strike, and you do not add your \\glossterm{power} to damage with the strike.
+        You take a -2d damage penalty with the strike, and you do not add your \\glossterm{power} to damage with the strike.
       `,
       rank: 4,
       scaling: { 6: `The accuracy penalty is reduced to -2.` },

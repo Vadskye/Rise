@@ -468,7 +468,7 @@ def humanoids(sample_monsters):
                     "Hit Worse",
                     f"""
                 The shaman makes a +{orc_shaman.accuracy()} vs. Mental attack against one creature in Close range.
-                \\hit The target takes a -3 penalty to accuracy with strikes as a \\glossterm<condition>.
+                \\hit The target takes a -3 accuracy penalty with strikes as a \\glossterm<condition>.
                 \\crit As above, except that the penalty is increased to -6.
             """,
                 ),

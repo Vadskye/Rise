@@ -182,7 +182,7 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You take a -1d penalty to damage with the strike.
+        You take a -1d damage penalty with the strike.
         In exchange, you gain a +2 bonus to Armor and Reflex defenses until the end of the round.
         The defense bonus is a \\abilitytag{Swift} effect, so it protects you from attacks in the current phase.
       `,
@@ -201,7 +201,7 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a strike.
-        You take a -2d penalty to damage with the strike.
+        You take a -2d damage penalty with the strike.
         In addition, you may remove a \\glossterm{condition} affecting you.
         This cannot remove a condition applied during the current round.
         The penalties from the condition still affect you when you make the strike.
