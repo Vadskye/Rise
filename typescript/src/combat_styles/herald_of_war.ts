@@ -23,11 +23,11 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
-      name: "Demoralizing Battlecry",
+      name: "Dazing Roar",
 
       attack: {
-        crit: `Each subject takes a -2 penalty to defenses as a \\glossterm{condition}.`,
-        hit: `Each subject takes a -2 penalty to defenses until the end of the next round.`,
+        crit: `The effect becomes a \\glossterm{condition} on each subject.`,
+        hit: `Each subject is \\glossterm{dazed} until the end of the next round.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
         `,
@@ -38,7 +38,7 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
-      name: "Fearsome Battlecry",
+      name: "Fearsome Roar",
 
       attack: {
         crit: `Each subject that is below its maximum \\glossterm{hit points} is \\frightened by you as a \\glossterm{condition}.`,
@@ -54,7 +54,26 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
-      name: "Frightening Battlecry",
+      name: "Goading Roar",
+
+      attack: {
+        crit: `The effect becomes a \\glossterm{condition} on each subject.`,
+        hit: `
+          Each subject takes a -2 accuracy penalty against creatures other than you as long as it is within \\rngmed range of you.
+          This effect lasts until the end of the next round.
+        `,
+        targeting: `
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
+        `,
+      },
+      scaling: "accuracy",
+      rank: 2,
+      tags: ["Emotion"],
+      type: "Duration",
+    },
+
+    {
+      name: "Frightening Roar",
 
       attack: {
         crit: `Each subject that is below its maximum \\glossterm{hit points} is \\panicked by you as a \\glossterm{condition}.`,
@@ -93,6 +112,34 @@ export const heraldOfWar: CombatStyle = {
           Make an attack vs. Fortitude against everything in a \\hugearea cone from you.
         `,
       },
+      rank: 6,
+      type: "Instant",
+    },
+
+    {
+      name: "Directed Shout",
+
+      attack: {
+        hit: `The subject takes 2d6 + \\glossterm{power} sonic damage.`,
+        targeting: `
+          Make an attack vs. Fortitude against anything within \\shortrange of you.
+        `,
+      },
+      scaling: "damage",
+      rank: 2,
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Directed Shout",
+
+      attack: {
+        hit: `The subject takes 5d10 + \\glossterm{power} sonic damage.`,
+        targeting: `
+          Make an attack vs. Fortitude against anything within \\shortrange of you.
+        `,
+      },
+      scaling: "damage",
       rank: 6,
       type: "Instant",
     },
@@ -157,6 +204,99 @@ export const heraldOfWar: CombatStyle = {
       `,
       rank: 6,
       tags: ["Emotion"],
+      type: "Duration",
+    },
+
+    // T3 area for briefly shaken would be a rank 2 maneuver alone
+    // This assumes that adding an extra strike is +2 ranks, which seems a bit low?
+    // They can't ever hit the same creature, though
+    {
+      name: "Awe-Inspiring Strike",
+
+      effect: `
+        Make a melee \\glossterm{strike} with a -1d damage penalty.
+        In addition, make an attack vs. Mental against each \\glossterm{enemy} other than the target of that strike within a \\medarea radius from you.
+        On a hit, each subject is \\glossterm{shaken} by you until the end of the next round.
+      `,
+      rank: 4,
+      scaling: {
+        6: "You gain a +1 accuracy bonus with both the strike and area attack.",
+      },
+      type: "Duration",
+    },
+
+    {
+      name: "Fear-Inspiring Strike",
+
+      effect: `
+        Make a melee \\glossterm{strike} with a -1d damage penalty.
+        In addition, make an attack vs. Mental against each \\glossterm{enemy} other than the target of that strike within a \\medarea radius from you.
+        On a hit, each subject is \\glossterm{frightened} by you until the end of the next round.
+      `,
+      rank: 7,
+      type: "Duration",
+    },
+
+    {
+      name: "Inspiring Strike",
+
+      effect: `
+        Make a melee \\glossterm{strike} with a -1d damage penalty.
+        Your \\glossterm{allies} within a \\largearea radius from you gain a +2 bonus to Mental defense until the end of the next round.
+      `,
+      rank: 1,
+      scaling: {
+        3: "The bonus increases to +3.",
+        5: "The bonus increases to +4.",
+        7: "The bonus increases to +5.",
+      },
+      type: "Duration",
+    },
+
+    {
+      name: "Revitalizing Battlecry",
+
+      effect: `
+        You and each living \\glossterm{ally} in a \\medarea radius from you each regain 4d8 \\glossterm{hit points}.
+        After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
+      `,
+      rank: 7,
+      tags: ['Emotion'],
+      type: "Duration",
+    },
+
+    {
+      name: "Steadfast Battlecry",
+
+      effect: `
+        You and each living \\glossterm{ally} in a \\largearea radius from you gain a +1 bonus to \\glossterm{vital rolls} until the end of the next round.
+      `,
+      rank: 1,
+      scaling: {
+        3: "The bonus increases to +2.",
+        5: "The bonus increases to +3.",
+        7: "The bonus increases to +4.",
+      },
+      tags: ['Emotion'],
+      type: "Duration",
+    },
+
+    {
+      name: "Enraging Roar",
+
+      attack: {
+        hit: `
+          Until the end of the next round, each subject is unable to take any \\glossterm{standard actions} that do not cause it to make an attack.
+          For example, it could make a \\glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
+        `,
+        targeting: `
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
+        `,
+      },
+      // unclear what the right rank for this should be
+      rank: 2,
+      scaling: "accuracy",
+      tags: ['Emotion'],
       type: "Duration",
     },
   ],

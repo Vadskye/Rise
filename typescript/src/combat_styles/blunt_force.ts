@@ -315,7 +315,7 @@ export const bluntForce: CombatStyle = {
       effect: `
         After you use this ability, you increase your \\glossterm{fatigue level} by one.
 
-        Make a melee \\glossterm{strike} with a +2d damage bonus using a bludgeoning weapon.
+        Make a \\glossterm{strike} with a +2d damage bonus using a bludgeoning weapon.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
       `,
       rank: 1,
@@ -333,7 +333,7 @@ export const bluntForce: CombatStyle = {
       effect: `
         After you use this ability, you increase your \\glossterm{fatigue level} by one.
 
-        Make a melee \\glossterm{strike} with a +2d damage bonus using a bludgeoning weapon.
+        Make a \\glossterm{strike} with a +2d damage bonus using a bludgeoning weapon.
         The attack is made against each target's Fortitude defense instead of its Armor defense.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
       `,
@@ -349,7 +349,7 @@ export const bluntForce: CombatStyle = {
       name: "Dazing Smash",
 
       effect: `
-        Make a melee \\glossterm{strike} with a -1 accuracy penalty using a bludgeoning weapon.
+        Make a \\glossterm{strike} with a -1 accuracy penalty using a bludgeoning weapon.
         Each creature that loses \\glossterm{hit points} from the strike is \\dazed until the end of the next round.
       `,
       rank: 2,
@@ -364,13 +364,50 @@ export const bluntForce: CombatStyle = {
       name: "Stunning Smash",
 
       effect: `
-        Make a melee \\glossterm{strike} with a -1 accuracy penalty using a bludgeoning weapon.
+        Make a \\glossterm{strike} with a -1 accuracy penalty using a bludgeoning weapon.
         Each creature that loses \\glossterm{hit points} from the strike is \\stunned until the end of the next round.
       `,
       rank: 5,
       scaling: {
         7: "You gain a +1d bonus to damage with the strike.",
       },
+      type: "Duration",
+    },
+
+    {
+      name: "Tenderizing Smash",
+
+      effect: `
+        Make a \\glossterm{strike} with a -1 accuracy penalty using a bludgeoning weapon.
+        Each creature damaged by the strike is \\stunned until the end of the next round.
+      `,
+      rank: 4,
+      scaling: {
+        6: "You gain a +1d damage bonus with the strike.",
+      },
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Tenderizing Smash",
+
+      effect: `
+        Make a \\glossterm{strike} with a -1 accuracy penalty using a bludgeoning weapon.
+        Each creature damaged by the strike is \\nauseated until the end of the next round.
+      `,
+      rank: 7,
+      type: "Duration",
+    },
+
+    {
+      name: "Boneshatter",
+
+      effect: `
+        Make a \\glossterm{strike} with a +2d damage bonus using a bludgeoning weapon.
+        As a \\glossterm{condition}, each creature that loses \\glossterm{hit points} from the strike takes the damage from the strike again whenever it uses one of its movement speeds.
+        Any individual creature can only take this damage once per phase.
+      `,
+      rank: 7,
       type: "Duration",
     },
   ],
