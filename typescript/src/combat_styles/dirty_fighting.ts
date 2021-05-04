@@ -406,10 +406,13 @@ export const dirtyFighting: CombatStyle = {
       name: "Eye-Averting Strike",
 
       effect: `
-        Make a \\glossterm{strike} with a -1d damage penalty.
-        Each creature damaged by the strike treats you as being \\glossterm{invisible} of you until the end of the next round.
+        Make a \\glossterm{strike} with a -2 accuracy penalty.
+        Each creature damaged by the strike treats you as being \\glossterm{invisible} until the end of the next round.
       `,
-      rank: 7,
+      rank: 5,
+      scaling: {
+        7: "The accuracy penalty is reduced to -1.",
+      },
       type: "Duration",
     },
   ],

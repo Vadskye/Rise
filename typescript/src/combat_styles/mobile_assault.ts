@@ -66,6 +66,20 @@ export const mobileAssault: CombatStyle = {
     },
 
     {
+      name: "Greater Wanderer's Strike",
+
+      effect: `
+        You can either move up to your speed or make a \\glossterm{strike}.
+        If you use this ability during the \\glossterm{action phase}, you can take the other action during the \\glossterm{delayed action phase}.
+      `,
+      scaling: {
+        6: "You gain a +1 accuracy bonus with the strike.",
+      },
+      rank: 4,
+      type: "Instant",
+    },
+
+    {
       name: "Push Through",
 
       effect: `
@@ -144,6 +158,20 @@ export const mobileAssault: CombatStyle = {
       scaling: {
         4: "You gain a +1 accuracy bonus with the strike.",
         6: "The accuracy bonus increases to +2.",
+      },
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Retreating Strike",
+
+      effect: `
+        Make a \\glossterm{strike}.
+        In addition, you can either use the \\textit<sprint> ability or move up to your movement speed in a straight line away from one target of the strike.
+      `,
+      rank: 5,
+      scaling: {
+        7: "You gain a +1 accuracy bonus with the strike.",
       },
       type: "Instant",
     },

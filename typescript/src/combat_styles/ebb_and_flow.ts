@@ -105,6 +105,22 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
+      name: "Stunning Feint",
+
+      effect: `
+        Make a melee \\glossterm{strike} with a +2 bonus to \\glossterm{accuracy}.
+        The attack is made against each subject's Reflex defense instead of its Armor defense.
+        You take a -3d damage penalty with the strike, and your \\glossterm{power} is halved.
+        If a creature takes damage from the strike, it is \\glossterm{stunned} until the end of the next round.
+      `,
+      rank: 4,
+      scaling: {
+        6: "The accuracy bonus increases to +3.",
+      },
+      type: "Duration",
+    },
+
+    {
       name: "Reckless Strike",
 
       effect: `
@@ -134,7 +150,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Momentum Smash",
+      name: "Momentum Strike",
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -150,7 +166,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Meteor Smash",
+      name: "Greater Momentum Strike",
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -323,6 +339,17 @@ export const ebbAndFlow: CombatStyle = {
         5: "You gain a +1d damage bonus with the strike.",
         7: "The damage bonus increases to +2d.",
       },
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Reckless Assault",
+
+      effect: `
+        Make a \\glossterm{strike}.
+        During the next round, you and each creature damaged by the strike are \\glossterm{stunned}.
+      `,
+      rank: 6,
       type: "Duration",
     },
   ],
