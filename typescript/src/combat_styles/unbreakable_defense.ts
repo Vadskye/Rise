@@ -278,5 +278,21 @@ export const unbreakableDefense: CombatStyle = {
       },
       type: "Duration",
     },
+
+    {
+      name: "Greater Revitalizing Strike",
+
+      effect: `
+        Make a strike.
+        In addition, you regain 2d10 + half \\glossterm{power} hit points.
+        After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
+      `,
+      scaling: {
+        special: "The healing increases by +1d for each rank beyond 3.",
+      },
+      rank: 6,
+      tags: ['Healing'],
+      type: "Instant",
+    },
   ],
 };
