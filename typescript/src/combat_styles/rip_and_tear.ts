@@ -37,14 +37,14 @@ export const ripAndTear: CombatStyle = {
       name: "Strip the Armor",
 
       effect: `
-        Make a \\glossterm{strike} with a +2 accuracy bonus using a slashing weapon.
+        Make a \\glossterm{strike} with a +1 accuracy bonus using a slashing weapon.
         You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
         Each creature that resists all damage from the strike takes the damage from the strike again.
       `,
       rank: 2,
       scaling: {
-        4: "The accuracy bonus increases to +3.",
-        6: "The accuracy bonus increases to +4.",
+        4: "The accuracy bonus increases to +2.",
+        6: "The accuracy bonus increases to +3.",
       },
       type: "Instant",
     },
