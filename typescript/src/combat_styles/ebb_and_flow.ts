@@ -302,7 +302,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with a -2d damage penalty.
-        During the next round, you gain a +2 accuracy bonus and a +2d damage bonus with your \\textit<offhand strike> ability against each creature that took damage from this strike.
+        During the next round, you gain a +2 accuracy bonus and a +2d damage bonus with your \\textit{offhand strike} ability against each creature that took damage from this strike.
       `,
       rank: 3,
       scaling: {
