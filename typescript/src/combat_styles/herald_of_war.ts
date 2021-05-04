@@ -165,7 +165,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You take a -2d damage penalty with the strike.
+        You take a -2d damage penalty with the strike, and you \\glossterm{power} is halved.
         As a \\glossterm{condition}, each creature damaged by the strike takes a -2 penalty to \\glossterm{accuracy} against creatures other than you as long as it is within \\rngmed range of you.
         This condition is removed if another creature applies this condition to the same target.
       `,
@@ -181,14 +181,13 @@ export const heraldOfWar: CombatStyle = {
       name: "Fearsome Blow",
 
       effect: `
-        Make a \\glossterm{strike}.
-        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
-        Each creature damaged by the strike is \\shaken by you as a \\glossterm{condition}.
+        Make a \\glossterm{strike} with a -1d damage penalty.
+        Each creature that loses \\glossterm{hit points} from the strike is \\shaken by you as a \\glossterm{condition}.
       `,
-      rank: 3,
+      rank: 2,
       scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
       },
       tags: ["Emotion"],
       type: "Duration",
@@ -198,11 +197,10 @@ export const heraldOfWar: CombatStyle = {
       name: "Frightening Blow",
 
       effect: `
-        Make a \\glossterm{strike}.
-        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
-        Each creature damaged by the strike is \\frightened by you as a \\glossterm{condition}.
+        Make a \\glossterm{strike} with a -1d damage penalty.
+        Each creature that loses \\glossterm{hit points} from the strike is \\frightened by you as a \\glossterm{condition}.
       `,
-      rank: 6,
+      rank: 5,
       tags: ["Emotion"],
       type: "Duration",
     },
