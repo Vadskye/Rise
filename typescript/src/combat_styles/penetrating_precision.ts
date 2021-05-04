@@ -28,7 +28,7 @@ export const penetratingPrecision: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         If you miss, you can increase your \\glossterm{fatigue level} by one to reroll the attack with a +3 accuracy bonus.
-        You cannot use the \\textit<desperate exertion> ability to affect this strike.
+        You cannot use the \\textit{desperate exertion} ability to affect this strike.
       `,
       rank: 1,
       scaling: {

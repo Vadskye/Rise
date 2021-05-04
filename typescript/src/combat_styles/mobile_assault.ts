@@ -167,7 +167,7 @@ export const mobileAssault: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        In addition, you can either use the \\textit<sprint> ability or move up to your movement speed in a straight line away from one target of the strike.
+        In addition, you can either use the \\textit{sprint} ability or move up to your movement speed in a straight line away from one target of the strike.
       `,
       rank: 5,
       scaling: {
