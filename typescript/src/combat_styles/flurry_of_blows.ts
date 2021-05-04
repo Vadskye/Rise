@@ -52,7 +52,7 @@ export const flurryOfBlows: CombatStyle = {
       `,
       rank: 3,
       scaling: {
-        5: "You gain a +1d bonus to damage with both strikes.",
+        5: "You gain a +1d damage bonus with both strikes.",
         7: "The damage bonus increases to +2d.",
       },
       type: "Instant",
@@ -114,7 +114,7 @@ export const flurryOfBlows: CombatStyle = {
       `,
       rank: 2,
       scaling: {
-        4: "You gain a +1d bonus to damage with both strikes.",
+        4: "You gain a +1d damage bonus with both strikes.",
         6: "The damage bonus increases to +2d.",
       },
       type: "Instant",
@@ -188,7 +188,7 @@ export const flurryOfBlows: CombatStyle = {
       `,
       rank: 3,
       scaling: {
-        5: "You gain a +1 bonus to accuracy with the strike.",
+        5: "You gain a +1 accuracy bonus with the strike.",
         7: "The accuracy bonus increases to +2.",
       },
       type: "Instant",
@@ -203,7 +203,7 @@ export const flurryOfBlows: CombatStyle = {
       },
       rank: 5,
       scaling: {
-        7: "You gain a +1 bonus to accuracy with the strike.",
+        7: "You gain a +1 accuracy bonus with the strike.",
       },
       type: "Instant",
     },
@@ -324,7 +324,7 @@ export const flurryOfBlows: CombatStyle = {
         % annoying to track in practice due to the different dice for each stage.
         % A static damage bonus is more complex to write down, but much easier
         % to actually make attacks with.
-        For each previous consecutive round that you used this ability, you gain a +1 bonus to damage with the strike, up to a maximum of +3.
+        For each previous consecutive round that you used this ability, you gain a +1 damage bonus with the strike, up to a maximum of +3.
       `,
       scaling: {
         special: `

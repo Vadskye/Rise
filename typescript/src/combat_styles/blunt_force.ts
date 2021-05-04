@@ -51,7 +51,7 @@ export const bluntForce: CombatStyle = {
       rank: 1,
       scaling: {
         3: "The damage penalty is removed.",
-        5: "You gain a +1d bonus to damage with the strike.",
+        5: "You gain a +1d damage bonus with the strike.",
         7: "The damage bonus increases to +2d.",
       },
       type: "Instant",
@@ -63,7 +63,7 @@ export const bluntForce: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon with a -2 accuracy penalty.
         The attack is made against each target's Fortitude defense instead of its Armor defense.
-        You gain a +2d bonus to damage with the strike.
+        You gain a +2d damage bonus with the strike.
       `,
       rank: 3,
       scaling: {
@@ -354,7 +354,7 @@ export const bluntForce: CombatStyle = {
       `,
       rank: 2,
       scaling: {
-        4: "You gain a +1d bonus to damage with the strike.",
+        4: "You gain a +1d damage bonus with the strike.",
         6: "The accuracy bonus increases to +2d.",
       },
       type: "Duration",
@@ -369,7 +369,7 @@ export const bluntForce: CombatStyle = {
       `,
       rank: 5,
       scaling: {
-        7: "You gain a +1d bonus to damage with the strike.",
+        7: "You gain a +1d damage bonus with the strike.",
       },
       type: "Duration",
     },

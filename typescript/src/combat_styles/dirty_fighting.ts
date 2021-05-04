@@ -310,7 +310,7 @@ export const dirtyFighting: CombatStyle = {
       name: "Slipstrike",
 
       effect: `
-        Make a melee \\glossterm{strike} with a +1d bonus to damage.
+        Make a melee \\glossterm{strike} with a +1d damage bonus.
         After making the strike, you fall \\prone, and you cannot stand up until after the next \\glossterm{movement phase}.
       `,
       rank: 1,

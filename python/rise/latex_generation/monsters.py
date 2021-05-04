@@ -968,7 +968,7 @@ def outsiders(sample_monsters):
                     "Smite",
                     """
                 The angel makes a melee \\glossterm<strike>.
-                If its target is evil, it gains a +2 bonus to accuracy and a +2d bonus to damage on the strike.
+                If its target is evil, it gains a +2 accuracy bonus and a +2d damage bonus on the strike.
             """,
                 ),
                 active_ability(

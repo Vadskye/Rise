@@ -16,7 +16,7 @@ export const mobileAssault: CombatStyle = {
       `,
       rank: 2,
       scaling: {
-        4: "You gain a +1d bonus to damage with the strike.",
+        4: "You gain a +1d damage bonus with the strike.",
         6: "The damage bonus increases to +2d.",
       },
       type: "Instant",
@@ -89,7 +89,7 @@ export const mobileAssault: CombatStyle = {
       rank: 1,
       scaling: {
         3: "The damage penalty is removed.",
-        5: "You gain a +1d bonus to damage with the strike.",
+        5: "You gain a +1d damage bonus with the strike.",
         7: "The damage bonus increases to +2d.",
       },
       type: "Duration",
@@ -105,7 +105,7 @@ export const mobileAssault: CombatStyle = {
       },
       rank: 1,
       scaling: {
-        3: "You gain a +1d bonus to damage with the strike at the end of the charge.",
+        3: "You gain a +1d damage bonus with the strike at the end of the charge.",
         5: "The damage bonus increases to +2d.",
         7: "The damage bonus increases to +3d.",
       },
@@ -125,7 +125,7 @@ export const mobileAssault: CombatStyle = {
       },
       rank: 2,
       scaling: {
-        4: "You gain a +1d bonus to damage with the strike at the end of the charge.",
+        4: "You gain a +1d damage bonus with the strike at the end of the charge.",
         6: "The damage bonus increases to +2d.",
       },
       type: "Instant",
