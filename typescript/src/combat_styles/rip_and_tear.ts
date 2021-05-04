@@ -65,18 +65,18 @@ export const ripAndTear: CombatStyle = {
       type: "Instant",
     },
 
+    // +1 rank for +1d
     {
       name: "Brow Gash",
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        You take a -1d penalty to damage with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\blinded until the end of the next round.
       `,
-      rank: 3,
+      rank: 4,
       scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
+        6: "You gain a +1 accuracy bonus with the strike.",
       },
       type: "Duration",
     },
@@ -86,10 +86,10 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        You take a -1d penalty to damage with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\blinded as a \\glossterm{condition}.
       `,
-      rank: 6,
+      rank: 7,
       type: "Duration",
     },
 
@@ -134,12 +134,27 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a melee strike using a slashing weapon.
+        At the end of this phase, each creature that you hit during this phase with both that strike and the \\textit{offhand strike} ability takes slashing damage equal to half your \\glossterm{power} (minimum 1).
+      `,
+      rank: 1,
+      scaling: {
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
+      },
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Two-Weapon Rend",
+
+      effect: `
+        Make a melee strike using a slashing weapon.
         At the end of this phase, each creature that you hit during this phase with both that strike and the \\textit{offhand strike} ability takes slashing damage equal to your \\glossterm{power}.
       `,
-      rank: 3,
+      rank: 4,
       scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
+        6: "You gain a +1 accuracy bonus with the strike.",
       },
       type: "Instant",
     },
@@ -229,11 +244,25 @@ export const ripAndTear: CombatStyle = {
         It loses \\glossterm{hit points} equal to your \\glossterm{power} with that strike at the end of each round until the condition is removed.
         This condition is automatically removed once the creature suffers a \\glossterm{vital wound}.
       `,
-      rank: 3,
+      rank: 4,
       scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
+        6: "You gain a +1 accuracy bonus with the strike.",
       },
+      type: "Duration",
+    },
+
+    {
+      name: "Bloodletting Sweep",
+
+      effect: `
+        Make a \\glossterm{strike} using a slashing weapon.
+        The strike gains the \\glossterm{Sweeping} (1) tag, or you gain a +1 bonus to the Sweeping value if it already had that tag (see \\pcref{Weapon Tags}).
+
+        Each creature that loses \\glossterm{hit points} from the strike begins bleeding as a \\glossterm{condition}.
+        It loses \\glossterm{hit points} equal to your \\glossterm{power} with that strike at the end of each round until the condition is removed.
+        This condition is automatically removed once the creature suffers a \\glossterm{vital wound}.
+      `,
+      rank: 7,
       type: "Duration",
     },
 

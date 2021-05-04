@@ -129,6 +129,21 @@ export const penetratingPrecision: CombatStyle = {
     },
 
     {
+      name: "Greater Lunge",
+
+      effect: `
+        Make a melee \\glossterm{strike} using a piercing weapon against everything in a 15 ft. long, 5 ft. wide line from you.
+        The line must point directly away from you.
+        Only one of the spaces in the line can be adjacent to you.
+      `,
+      rank: 4,
+      scaling: {
+        6: "You gain a +1 accuracy bonus with the strike.",
+      },
+      type: "Instant",
+    },
+
+    {
       name: "Deathblow",
 
       effect: `
@@ -193,6 +208,66 @@ export const penetratingPrecision: CombatStyle = {
         7: "The damage bonus increases to +4d.",
       },
       type: "Instant",
+    },
+
+    {
+      name: "Eye Poke",
+
+      effect: `
+        Make a \\glossterm{strike} using a piercing weapon.
+        You take a -1d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        Each creature that loses \\glossterm{hit points} from the strike is \\dazzled as a \\glossterm{condition}.
+      `,
+      rank: 1,
+      type: "Duration",
+    },
+
+    {
+      name: "Eye Gouge",
+
+      effect: `
+        Make a \\glossterm{strike} using a piercing weapon.
+        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        Each creature that loses \\glossterm{hit points} from the strike is \\blinded until the end of the next round.
+      `,
+      rank: 3,
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Eye Gouge",
+
+      effect: `
+        Make a \\glossterm{strike} using a piercing weapon.
+        You take a -2d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        Each creature that loses \\glossterm{hit points} from the strike is \\blinded as a \\glossterm{condition}.
+      `,
+      rank: 6,
+      type: "Duration",
+    },
+
+    {
+      name: "Groundspike",
+
+      effect: `
+        Make a \\glossterm{strike} using a piercing weapon.
+        You take a -1d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        Each creature that loses \\glossterm{hit points} from the strike is \\immobilized until the end of the next round.
+      `,
+      rank: 4,
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Groundspike",
+
+      effect: `
+        Make a \\glossterm{strike} using a piercing weapon.
+        You take a -1d penalty to damage with the strike, and your \\glossterm{power} is halved.
+        Each creature that loses \\glossterm{hit points} from the strike is \\immobilized as a \\glossterm{condition}.
+      `,
+      rank: 7,
+      type: "Duration",
     },
   ],
 };
