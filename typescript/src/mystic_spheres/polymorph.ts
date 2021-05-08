@@ -319,14 +319,14 @@ export const polymorph: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You gain a +4 \\glossterm{magic bonus} to your \\glossterm{resistance} against \\glossterm{physical} damage.
+        You gain a +5 \\glossterm{magic bonus} to your \\glossterm{resistance} against \\glossterm{physical} damage.
       `,
 
       rank: 1,
       scaling: {
-        3: `The bonus increases to +8.`,
-        5: `The bonus increases to +16.`,
-        7: `The bonus increases to +32.`,
+        3: `The bonus increases to +10.`,
+        5: `The bonus increases to +20.`,
+        7: `The bonus increases to +40.`,
       },
       type: "Attune (self)",
     },
@@ -342,8 +342,8 @@ export const polymorph: MysticSphere = {
       // narrative: '',
       rank: 3,
       scaling: {
-        5: `The bonus increases to +8.`,
-        7: `The bonus increases to +16.`,
+        5: `The bonus increases to +10.`,
+        7: `The bonus increases to +20.`,
       },
       type: "Attune (target)",
     },

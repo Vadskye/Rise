@@ -337,11 +337,11 @@ def generate_armor():
             tags=[],
             material_type="Body armor",
             description="""
-                You gain a +4 \\glossterm<magic bonus> to your \\glossterm<resistance> against \\glossterm<energy damage>.
+                You gain a +5 \\glossterm<magic bonus> to your \\glossterm<resistance> against \\glossterm<energy damage>.
                 When you resist energy damage, this item sheds light as a torch until the end of the next round.
                 The color of the light depends on the energy damage resisted: blue for cold, yellow for electricity, and red for fire.
             """,
-            short_description="Grants +4 energy resistance",
+            short_description="Grants +5 energy resistance",
         ),
         MagicItem(
             name="Armor of Energy Resistance, Greater",
@@ -349,9 +349,9 @@ def generate_armor():
             tags=[],
             material_type="Body armor",
             description="""
-                This item functions like \\mitem<armor of energy resistance>, except that the bonus is equal to +8.
+                This item functions like \\mitem<armor of energy resistance>, except that the bonus is equal to +10.
             """,
-            short_description="Grants +8 energy resistance",
+            short_description="Grants +10 energy resistance",
         ),
         MagicItem(
             name="Armor of Energy Resistance, Supreme",
@@ -359,9 +359,9 @@ def generate_armor():
             tags=[],
             material_type="Body armor",
             description="""
-                This item functions like \\mitem<armor of energy resistance>, except that the bonus is equal to +16.
+                This item functions like \\mitem<armor of energy resistance>, except that the bonus is equal to +20.
             """,
-            short_description="Grants +16 energy resistance",
+            short_description="Grants +20 energy resistance",
         ),
         MagicItem(
             name="Ring of Energy Resistance",
@@ -370,11 +370,11 @@ def generate_armor():
             tags=[],
             material_type="Ring",
             description="""
-                You gain a +4 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<energy damage>.
+                You gain a +5 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<energy damage>.
                 When you resist energy damage, this item sheds light as a torch until the end of the next round.
                 The color of the light depends on the energy damage resisted: blue for cold, yellow for electricity, and red for fire.
             """,
-            short_description="Grants +4 energy resistance",
+            short_description="Grants +5 energy resistance",
         ),
         MagicItem(
             name="Ring of Energy Resistance, Greater",
@@ -382,9 +382,9 @@ def generate_armor():
             tags=[],
             material_type="Ring",
             description="""
-                This item functions like a \\mitem<ring of energy resistance>, except that the bonus is equal to +8.
+                This item functions like a \\mitem<ring of energy resistance>, except that the bonus is equal to +10.
             """,
-            short_description="Grants +8 energy resistance",
+            short_description="Grants +10 energy resistance",
         ),
         MagicItem(
             name="Ring of Energy Resistance, Supreme",
@@ -392,9 +392,9 @@ def generate_armor():
             tags=[],
             material_type="Ring",
             description="""
-                This item functions like a \\mitem<ring of energy resistance>, except that the bonus is equal to +16.
+                This item functions like a \\mitem<ring of energy resistance>, except that the bonus is equal to +20.
             """,
-            short_description="Grants +16 energy resistance",
+            short_description="Grants +20 energy resistance",
         ),
     ]
 
@@ -519,9 +519,9 @@ def generate_armor():
             tags=[],
             material_type="Body armor",
             description="""
-                You gain a +4 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
+                You gain a +5 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
             """,
-            short_description="Grants +4 physical resistance",
+            short_description="Grants +5 physical resistance",
         ),
         MagicItem(
             name="Armor of Kinetic Absorption, Greater",
@@ -529,9 +529,9 @@ def generate_armor():
             tags=[],
             material_type="Body armor",
             description="""
-                You gain a +8 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
+                You gain a +10 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
             """,
-            short_description="Grants +8 physical resistance",
+            short_description="Grants +10 physical resistance",
         ),
         MagicItem(
             name="Armor of Kinetic Absorption, Supreme",
@@ -539,9 +539,9 @@ def generate_armor():
             tags=[],
             material_type="Body armor",
             description="""
-                You gain a +16 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
+                You gain a +20 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
             """,
-            short_description="Grants +16 physical resistance",
+            short_description="Grants +20 physical resistance",
         ),
         MagicItem(
             name="Amulet of Kinetic Absorption",
@@ -550,9 +550,9 @@ def generate_armor():
             tags=[],
             material_type="Amulet",
             description="""
-                You gain a +4 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
+                You gain a +5 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
             """,
-            short_description="Grants +4 physical resistance",
+            short_description="Grants +5 physical resistance",
         ),
         MagicItem(
             name="Amulet of Kinetic Absorption, Greater",
@@ -560,9 +560,9 @@ def generate_armor():
             tags=[],
             material_type="Amulet",
             description="""
-                You gain a +8 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
+                You gain a +10 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
             """,
-            short_description="Grants +8 physical resistance",
+            short_description="Grants +10 physical resistance",
         ),
         MagicItem(
             name="Amulet of Kinetic Absorption, Supreme",
@@ -570,9 +570,9 @@ def generate_armor():
             tags=[],
             material_type="Amulet",
             description="""
-                You gain a +16 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
+                You gain a +20 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
             """,
-            short_description="Grants +16 physical resistance",
+            short_description="Grants +20 physical resistance",
         ),
     ]
 
@@ -583,9 +583,9 @@ def generate_armor():
             tags=[],
             material_type="Body armor",
             description="""
-                You gain a +6 \\glossterm<magic bonus> to your \\glossterm<resistances> to both \\glossterm<physical damage> and \\glossterm<energy damage>.
+                You gain a +7 \\glossterm<magic bonus> to your \\glossterm<resistances> to both \\glossterm<physical damage> and \\glossterm<energy damage>.
             """,
-            short_description="Grants +6 energy and physical resistance",
+            short_description="Grants +7 energy and physical resistance",
         ),
         MagicItem(
             name="Armor of Invulnerability, Greater",
@@ -593,9 +593,9 @@ def generate_armor():
             tags=[],
             material_type="Body armor",
             description="""
-                You gain a +12 \\glossterm<magic bonus> to your \\glossterm<resistances> to both \\glossterm<physical damage> and \\glossterm<energy damage>.
+                You gain a +14 \\glossterm<magic bonus> to your \\glossterm<resistances> to both \\glossterm<physical damage> and \\glossterm<energy damage>.
             """,
-            short_description="Grants +12 energy and physical resistance",
+            short_description="Grants +14 energy and physical resistance",
         ),
     ]
 
