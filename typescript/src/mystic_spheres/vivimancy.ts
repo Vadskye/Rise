@@ -118,7 +118,7 @@ export const vivimancy: MysticSphere = {
 
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
-        The subject regains \\glossterm{hit points} equal to 1d8 plus half your \\glossterm{power}.
+        The subject regains \\glossterm{hit points} equal to 1d10 plus half your \\glossterm{power}.
         After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
       `,
       rank: 2,
@@ -310,7 +310,7 @@ export const vivimancy: MysticSphere = {
       name: "Circle of Life",
 
       effect: `
-        You and each living \\glossterm{ally} in a \\medarea radius from you each regain 2d10 \\glossterm{hit points}.
+        You and each living \\glossterm{ally} in a \\medarea radius from you each regain 4d6 \\glossterm{hit points}.
         After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
       `,
       rank: 5,
@@ -358,12 +358,12 @@ export const vivimancy: MysticSphere = {
       name: "Wellspring of Life",
 
       effect: `
-        Once per round, when you regain hit points, you regain 4 additional hit points.
+        Once per round, when you regain hit points, you may regain 3 additional hit points.
       `,
       rank: 2,
       scaling: {
-        4: `The additional healing increases to 8.`,
-        6: `The additional healing increases to 16.`,
+        4: `The additional healing increases to 6.`,
+        6: `The additional healing increases to 12.`,
       },
       type: "Attune (self)",
     },

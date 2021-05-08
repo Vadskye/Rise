@@ -255,7 +255,7 @@ export const heraldOfWar: CombatStyle = {
       name: "Revitalizing Battlecry",
 
       effect: `
-        You and each living \\glossterm{ally} in a \\medarea radius from you each regain 4d8 \\glossterm{hit points}.
+        You and each living \\glossterm{ally} in a \\medarea radius from you each regain 4d10 \\glossterm{hit points}.
         After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
       `,
       rank: 7,
