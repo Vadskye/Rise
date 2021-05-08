@@ -341,7 +341,7 @@ export const toxicology: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within your \\glossterm{reach}.
-        The subject regains \\glossterm{hit points} equal to 1d8 plus half your \\glossterm{power}.
+        The subject regains 1d10 + half \\glossterm{power} \\glossterm{hit points}.
         After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
       `,
       rank: 2,

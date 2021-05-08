@@ -217,8 +217,8 @@ export const unbreakableDefense: CombatStyle = {
       name: "Revitalizing Strike",
 
       effect: `
-        Make a strike.
-        In addition, you regain 1d10 hit points.
+        Make a strike with a -1d damage penalty.
+        In addition, you regain 2d6 hit points.
         After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
       `,
       scaling: {
@@ -283,8 +283,8 @@ export const unbreakableDefense: CombatStyle = {
       name: "Greater Revitalizing Strike",
 
       effect: `
-        Make a strike.
-        In addition, you regain 2d10 + half \\glossterm{power} hit points.
+        Make a strike with a -1d damage penalty.
+        In addition, you regain 4d6 + half \\glossterm{power} hit points.
         After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
       `,
       scaling: {
