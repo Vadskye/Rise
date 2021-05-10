@@ -97,8 +97,10 @@ class MagicItem(object):
         else:
             return f"\\nth<{self.level}>"
 
-    def latex_table_row(self):
-        return f"{self.name} & {self.nth_text()} & {self.price()} gp & {self.short_description} & \\pageref<item:{self.name}> \\\\"
+    def latex_table_row(self, include_type=True):
+        # \\tb<Name> & \\tb<Item Level (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
+        type_text = f" & {self.material_type}" if include_type else ""
+        return f"{self.name} & {self.nth_text()} ({self.price()} gp) {type_text} & {self.short_description} & \\pageref<item:{self.name}> \\\\"
 
     def tag_text(self):
         return f"\\parhead*<Tags> {self.latex_tags()}" if self.tags else ""

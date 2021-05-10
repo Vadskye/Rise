@@ -521,7 +521,7 @@ def generate_implement_table():
     return longtablify(
         f"""
         \\lcaption<Implement Items> \\\\
-        \\tb<Name> & \\tb<Level> & \\tb<Typical Price> & \\tb<Description> & \\tb<Page> \\tableheaderrule
+        \\tb<Name> & \\tb<Item Level (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
         {row_text}
     """
     )
