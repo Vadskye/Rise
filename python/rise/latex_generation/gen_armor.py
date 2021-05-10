@@ -233,7 +233,7 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Covering Shield",
-            level=2,
+            level=4,
             material_type="Shield",
             description="""
                 When you take the \\textit<total defense> action with this shield, you gain a +4 bonus to Armor defense in addition to the normal bonuses from taking that action (see \\pcref<Total Defense>).
@@ -243,7 +243,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Covering Shield, Greater",
-            level=8,
+            level=10,
             material_type="Shield",
             description="""
                 This shield functions like a \\mitem<covering shield>, except that the defense bonus increases to +6.
@@ -253,7 +253,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Covering Shield, Supreme",
-            level=14,
+            level=16,
             material_type="Shield",
             description="""
                 This shield functions like a \\mitem<covering shield>, except that the defense bonus increases to +8.
