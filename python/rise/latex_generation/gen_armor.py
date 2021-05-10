@@ -201,40 +201,6 @@ def generate_armor():
 
     armor += [
         MagicItem(
-            name="Gloves of Precision",
-            # +2 levels since gloves are secondary for accuracy
-            level=6,
-            material_type="Gloves",
-            tags=[],
-            description="""
-                You gain a +1 \\glossterm<magic bonus> to accuracy.
-            """,
-            short_description="Grants +1 accuracy bonus",
-        ),
-        MagicItem(
-            name="Gloves of Precision, Greater",
-            level=12,
-            material_type="Gloves",
-            tags=[],
-            description="""
-                You gain a +2 \\glossterm<magic bonus> to accuracy.
-            """,
-            short_description="Grants +2 accuracy bonus",
-        ),
-        MagicItem(
-            name="Gloves of Precision, Supreme",
-            level=18,
-            material_type="Gloves",
-            tags=[],
-            description="""
-                You gain a +3 \\glossterm<magic bonus> to accuracy.
-            """,
-            short_description="Grants +3 accuracy bonus",
-        ),
-    ]
-
-    armor += [
-        MagicItem(
             name="Shield of Bashing",
             # -1 level relative to a potency weapon due to being more limited
             level=3,
