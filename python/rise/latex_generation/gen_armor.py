@@ -470,6 +470,66 @@ def generate_armor():
 
     armor += [
         MagicItem(
+            name="Crumpling Armor",
+            level=7,
+            tags=[],
+            material_type="Body armor",
+            description="""
+                Whenever you take damage, you can choose to have your armor crumple under the attack, cushioning the blow.
+                If you do, you are treated as \\glossterm<impervious> to the damage.
+                You can learn the amount of damage that you would take from all attacks in a given phase before you decide whether to apply this effect.
+                After you reduce damage in this way, you cannot do so again until you take a \\glossterm<short rest>.
+            """,
+            short_description="Halves damage from a single attack",
+        ),
+        MagicItem(
+            name="Greater Crumpling Armor",
+            level=13,
+            tags=[],
+            material_type="Body armor",
+            description="""
+                This armor functions like \\mitem<crumpling armor>, except that you can use it twice between short rests.
+            """,
+            short_description="Halves damage from two attacks",
+        ),
+        MagicItem(
+            name="Greater Crumpling Armor",
+            level=19,
+            tags=[],
+            material_type="Body armor",
+            description="""
+                This armor functions like \\mitem<crumpling armor>, except that you can use it three times between short rests.
+            """,
+            short_description="Halves damage from three attacks",
+        ),
+    ]
+
+    armor += [
+        MagicItem(
+            name="Hardblock Shield",
+            level=13,
+            tags=[],
+            material_type="Body armor",
+            description="""
+                Whenever a creature misses you with a melee \\glossterm<strike>, it takes a -2 penalty to Armor defense during the next round.
+                As normal, this bonus does not stack with itself, even if the same creature misses you with multiple melee attacks.
+            """,
+            short_description="Imposes -2 Armor penalty when creatures miss you",
+        ),
+        MagicItem(
+            name="Greater Hardblock Shield",
+            level=19,
+            tags=[],
+            material_type="Body armor",
+            description="""
+                This shield functions like a \\mitem<hardblock shield>, except that the penalty increases to -3.
+            """,
+            short_description="Imposes -3 Armor penalty when creatures miss you",
+        ),
+    ]
+
+    armor += [
+        MagicItem(
             name="Shield of Mystic Reflection",
             level=10,
             tags=[],
@@ -487,7 +547,7 @@ def generate_armor():
             material_type="Shield",
             tags=[],
             description="""
-                This item functions like a \\mitem<shield of mystic reflection>, except that it also affects all \\glossterm<allies> in a \\areasmall radius from you.
+                This item functions like a \\mitem<shield of mystic reflection>, except that it also affects your \\glossterm<allies> in a \\areasmall radius from you.
             """,
             short_description="React to reflect magical attacks against allies",
         ),
