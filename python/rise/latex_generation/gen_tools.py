@@ -91,6 +91,9 @@ def generate_tools():
             name="Potion of Healing",
             level=0.5,
             material_type="Potion",
+            # This seems like it should be Healing-tagged, but it's not really
+            # an ability? It's not obvious how the cooldown should interact with
+            # it.
             tags=[],
             description="""
                 When you drink this \\glossterm<potion>, you regain 1d8 \\glossterm<hit points>.
