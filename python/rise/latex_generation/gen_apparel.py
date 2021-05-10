@@ -2186,10 +2186,10 @@ def generate_apparel_table():
     row_text = "\n".join(rows)
     return longtablify(
         f"""
-        \\lcaption<Apparel Items> \\\\
-        \\tb<Name> & \\tb<Item Level (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
-        {row_text}
-    """
+            \\lcaption<Apparel Items> \\\\
+            \\tb<Name> & \\tb<Item Level (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
+            {row_text}
+        """
     )
 
 
