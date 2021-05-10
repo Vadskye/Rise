@@ -188,27 +188,27 @@ def generate_weapons():
             level=4,
             material_type="Weapon",
             description="""
-                You gain a +2 \\glossterm<magic bonus> to your \\glossterm<mundane> \\glossterm<power>.
+                You gain a +2 \\glossterm<magic bonus> to your \\glossterm<power>.
             """,
-            short_description="Grants +2 \\glossterm<mundane> power",
+            short_description="Grants +2 power",
         ),
         MagicItem(
             name="Potency, Greater",
             level=10,
             material_type="Weapon",
             description="""
-                You gain a +4 \\glossterm<magic bonus> to your \\glossterm<mundane> \\glossterm<power>.
+                You gain a +4 \\glossterm<magic bonus> to your \\glossterm<power>.
             """,
-            short_description="Grants +4 \\glossterm<mundane> power",
+            short_description="Grants +4 power",
         ),
         MagicItem(
             name="Potency, Supreme",
             level=16,
             material_type="Weapon",
             description="""
-                You gain a +8 \\glossterm<magic bonus> to your \\glossterm<mundane> \\glossterm<power>.
+                You gain a +8 \\glossterm<magic bonus> to your \\glossterm<power>.
             """,
-            short_description="Grants +8 \\glossterm<mundane> power",
+            short_description="Grants +8 power",
         ),
     ]
 
