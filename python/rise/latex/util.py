@@ -49,7 +49,7 @@ def longtablify(text):
         f"""
         \\begin<longtablewrapper>
             \\begin<longtable><p<15em> p<8em> p<5em> p<20em> p<3em>>
-                {text}
+                {text.strip()}
             \\end<longtable>
         \\end<longtablewrapper>
     """
