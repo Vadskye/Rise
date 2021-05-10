@@ -93,7 +93,7 @@ def generate_tools():
             material_type="Potion",
             tags=[],
             description="""
-                When you drink this \\glossterm<potion>, you heal 1d6 \\glossterm<hit points>.
+                When you drink this \\glossterm<potion>, you regain 1d8 \\glossterm<hit points>.
             """,
             short_description="Restores 1d6 hit points",
         ),
@@ -104,9 +104,9 @@ def generate_tools():
             material_type="Potion",
             tags=[],
             description="""
-                When you drink this \\glossterm<potion>, you heal 2d6+1 \\glossterm<hit points>.
+                When you drink this \\glossterm<potion>, you regain 2d8+3 \\glossterm<hit points>.
             """,
-            short_description="Restores 1d10+1 hit points",
+            short_description="Restores 2d6+3 hit points",
         ),
         MagicItem(
             consumable=True,
@@ -115,9 +115,9 @@ def generate_tools():
             material_type="Potion",
             tags=[],
             description="""
-                When you drink this \\glossterm<potion>, you heal 4d6+3 \\glossterm<hit points>.
+                When you drink this \\glossterm<potion>, you regain 4d8+6 \\glossterm<hit points>.
             """,
-            short_description="Restores 4d6+3 hit points",
+            short_description="Restores 4d6+6 hit points",
         ),
         MagicItem(
             consumable=True,
@@ -126,9 +126,9 @@ def generate_tools():
             material_type="Potion",
             tags=[],
             description="""
-                When you drink this \\glossterm<potion>, you heal 5d10+4 \\glossterm<hit points>.
+                When you drink this \\glossterm<potion>, you regain 6d10+9 \\glossterm<hit points>.
             """,
-            short_description="Restores 5d10+4 hit points",
+            short_description="Restores 5d10+9 hit points",
         ),
     ]
 
