@@ -652,12 +652,12 @@ def generate_tool_table():
         sorted(generate_tools(), key=lambda item: item.name),
         key=lambda item: item.level,
     )
-    rows = [item.latex_table_row() for item in tools]
+    rows = [item.latex_table_row(include_type=False) for item in tools]
     row_text = "\n".join(rows)
     return longtablify(
         f"""
         \\lcaption<Tool Items> \\\\
-        \\tb<Name> & \\tb<Level> & \\tb<Typical Price> & \\tb<Description> & \\tb<Page> \\tableheaderrule
+        \\tb<Name> & \\tb<Item Level (Cost)> & \\tb<Description> & \\tb<Page> \\tableheaderrule
         {row_text}
     """
     )

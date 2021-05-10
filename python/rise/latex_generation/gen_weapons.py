@@ -664,7 +664,7 @@ def generate_weapon_table():
     return longtablify(
         f"""
         \\lcaption<Weapon Items> \\\\
-        \\tb<Name> & \\tb<Level> & \\tb<Typical Price> & \\tb<Description> & \\tb<Page> \\tableheaderrule
+        \\tb<Name> & \\tb<Item Level (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
         {row_text}
     """
     )
