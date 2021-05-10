@@ -321,8 +321,8 @@ export const channelDivinity: MysticSphere = {
       `,
       rank: 2,
       scaling: {
-        4: `You gain a +1 \\glossterm{magic bonus} to \\glossterm{accuracy} with divine spells.`,
-        6: `You gain a +4 \\glossterm{magic bonus} to \\glossterm{power} with divine spells.`,
+        4: `You gain a +1 \\glossterm{magic bonus} to \\glossterm{accuracy}.`,
+        6: `You gain a +4 \\glossterm{magic bonus} to \\glossterm{power}.`,
       },
       type: "Attune (self)",
     },
