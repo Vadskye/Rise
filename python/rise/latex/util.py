@@ -44,11 +44,12 @@ def tag_if(text, tag, test):
 
 
 # Using this fuction ensures consistent formatting of item longtables
-def longtablify(text):
+def longtablify(text, include_type=True):
+    type_column_text = " p<5em>" if include_type else ""
     return latexify(
         f"""
         \\begin<longtablewrapper>
-            \\begin<longtable><p<15em> p<8em> p<5em> p<20em> p<3em>>
+            \\begin<longtable><p<15em> p<8em>{type_column_text} p<20em> p<3em>>
                 {text.strip()}
             \\end<longtable>
         \\end<longtablewrapper>

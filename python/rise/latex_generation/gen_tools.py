@@ -659,11 +659,11 @@ def generate_tool_table():
     row_text = "\n".join(rows)
     return longtablify(
         f"""
-        \\lcaption<Tool Items> \\\\
-        \\tb<Name> & \\tb<Item Level (Cost)> & \\tb<Description> & \\tb<Page> \\tableheaderrule
-        {row_text}
-    """
-    )
+            \\lcaption<Tool Items> \\\\
+            \\tb<Name> & \\tb<Item Level (Cost)> & \\tb<Description> & \\tb<Page> \\tableheaderrule
+            {row_text}
+        """
+    , include_type=False)
 
 
 def write_to_file():
