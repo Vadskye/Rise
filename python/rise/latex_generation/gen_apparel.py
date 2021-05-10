@@ -113,7 +113,7 @@ def generate_armor():
     apparel += [
         MagicItem(
             name="Ring of Protection",
-            level=6,
+            level=7,
             material_type="Ring",
             tags=[],
             description="""
@@ -123,7 +123,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Ring of Protection, Greater",
-            level=12,
+            level=13,
             material_type="Ring",
             tags=[],
             description="""
@@ -133,7 +133,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Ring of Protection, Supreme",
-            level=18,
+            level=19,
             material_type="Ring",
             tags=[],
             description="""
