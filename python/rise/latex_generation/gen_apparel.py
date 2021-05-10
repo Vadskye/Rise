@@ -13,67 +13,34 @@ def generate_apparel():
 
     apparel += [
         MagicItem(
-            name="Mystic Gloves",
+            name="Gloves of Potency",
             # +2 since gloves are secondary for power
             level=6,
             material_type="Glove",
             description="""
-                You gain a +2 \\glossterm<magic bonus> to your \\glossterm<magical> \\glossterm<power>.
+                You gain a +2 \\glossterm<magic bonus> to your \\glossterm<power>.
             """,
-            short_description="Grants +2 \\glossterm<magical> power",
+            short_description="Grants +2 power",
         ),
         MagicItem(
-            name="Mystic Gloves, Greater",
+            name="Gloves of Potency, Greater",
             # +2 since gloves are secondary for power
             level=12,
             material_type="Gauntlet",
             description="""
-                You gain a +4 \\glossterm<magic bonus> to your \\glossterm<magical> \\glossterm<power>.
+                You gain a +4 \\glossterm<magic bonus> to your \\glossterm<power>.
             """,
-            short_description="Grants +4 \\glossterm<magical> power",
+            short_description="Grants +4 power",
         ),
         MagicItem(
-            name="Mystic Gloves, Supreme",
+            name="Gloves of Potency, Supreme",
             # +2 since gloves are secondary for power
             level=18,
             material_type="Gauntlet",
             description="""
-                You gain a +8 \\glossterm<magic bonus> to your \\glossterm<magical> \\glossterm<power>.
+                You gain a +8 \\glossterm<magic bonus> to your \\glossterm<power>.
             """,
-            short_description="Grants +8 \\glossterm<magical> power",
-        ),
-    ]
-
-    apparel += [
-        MagicItem(
-            name="Titan Gauntlets",
-            # +2 since gauntlets are secondary for power
-            level=6,
-            material_type="Gauntlet",
-            description="""
-                You gain a +2 \\glossterm<magic bonus> to your \\glossterm<mundane> \\glossterm<power>.
-            """,
-            short_description="Grants +2 \\glossterm<mundane> power",
-        ),
-        MagicItem(
-            name="Titan Gauntlets, Greater",
-            # +2 since gauntlets are secondary for power
-            level=12,
-            material_type="Gauntlet",
-            description="""
-                You gain a +4 \\glossterm<magic bonus> to your \\glossterm<mundane> \\glossterm<power>.
-            """,
-            short_description="Grants +4 \\glossterm<mundane> power",
-        ),
-        MagicItem(
-            name="Titan Gauntlets, Supreme",
-            # +2 since gauntlets are secondary for power
-            level=18,
-            material_type="Gauntlet",
-            description="""
-                You gain a +8 \\glossterm<magic bonus> to your \\glossterm<mundane> \\glossterm<power>.
-            """,
-            short_description="Grants +8 \\glossterm<mundane> power",
+            short_description="Grants +8 power",
         ),
     ]
 
