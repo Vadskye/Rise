@@ -399,34 +399,34 @@ def generate_implements():
 
     implements += [
         MagicItem(
-            name="Staff of Power",
+            name="Staff of Potency",
             level=4,
             material_type="Staff",
             tags=[],
             description="""
-                You gain a +2 \\glossterm<magic bonus> to your \\glossterm<magical> \\glossterm<power>.
+                You gain a +2 \\glossterm<magic bonus> to your \\glossterm<power>.
             """,
-            short_description="Grants +2 \\glossterm<magical> power",
+            short_description="Grants +2 power",
         ),
         MagicItem(
-            name="Staff of Power, Greater",
+            name="Staff of Potency, Greater",
             level=10,
             material_type="Staff",
             tags=[],
             description="""
-                You gain a +4 \\glossterm<magic bonus> to your \\glossterm<magical> \\glossterm<power>.
+                You gain a +4 \\glossterm<magic bonus> to your \\glossterm<power>.
             """,
-            short_description="Grants +4 \\glossterm<magical> power",
+            short_description="Grants +4 power",
         ),
         MagicItem(
-            name="Staff of Power, Supreme",
+            name="Staff of Potency, Supreme",
             level=16,
             material_type="Staff",
             tags=[],
             description="""
-                You gain a +8 \\glossterm<magic bonus> to your \\glossterm<magical> \\glossterm<power>.
+                You gain a +8 \\glossterm<magic bonus> to your \\glossterm<power>.
             """,
-            short_description="Grants +8 \\glossterm<magical> power",
+            short_description="Grants +8 power",
         ),
     ]
 
@@ -438,9 +438,9 @@ def generate_implements():
             tags=[],
             description="""
                 You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy>.
-                In addition, you gain a +2 \\glossterm<magic bonus> to your \\glossterm<magical> \\glossterm<power>.
+                In addition, you gain a +2 \\glossterm<magic bonus> to your \\glossterm<power>.
             """,
-            short_description="Grants +1 accuracy, +2 \\glossterm<magical> power",
+            short_description="Grants +1 accuracy, +2 power",
         ),
         MagicItem(
             name="Staff of the Archmagi, Greater",
@@ -449,9 +449,9 @@ def generate_implements():
             tags=[],
             description="""
                 You gain a +2 \\glossterm<magic bonus> to \\glossterm<accuracy>.
-                In addition, you gain a +4 \\glossterm<magic bonus> to your \\glossterm<magical> \\glossterm<power>.
+                In addition, you gain a +4 \\glossterm<magic bonus> to your \\glossterm<power>.
             """,
-            short_description="Grants +2 accuracy, +4 \\glossterm<magical> power",
+            short_description="Grants +2 accuracy, +4 power",
         ),
     ]
 
