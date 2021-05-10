@@ -2021,6 +2021,143 @@ def generate_apparel():
         ),
     ]
 
+    apparel += [
+        MagicItem(
+            name="Ring of Protection",
+            level=7,
+            material_type="Ring",
+            tags=[],
+            description="""
+                You gain a +1 \\glossterm<magic bonus> to Fortitude, Reflex, and Mental defense.
+            """,
+            short_description="Grants +1 non-Armor defenses",
+        ),
+        MagicItem(
+            name="Ring of Protection, Greater",
+            level=13,
+            material_type="Ring",
+            tags=[],
+            description="""
+                You gain a +2 \\glossterm<magic bonus> to Fortitude, Reflex, and Mental defense.
+            """,
+            short_description="Grants +2 non-Armor defenses",
+        ),
+        MagicItem(
+            name="Ring of Protection, Supreme",
+            level=19,
+            material_type="Ring",
+            tags=[],
+            description="""
+                You gain a +3 \\glossterm<magic bonus> to Fortitude, Reflex, and Mental defense.
+            """,
+            short_description="Grants +3 non-Armor defenses",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Ring of Energy Resistance",
+            # +2 level since ring is secondary for this effect
+            level=6,
+            tags=[],
+            material_type="Ring",
+            description="""
+                You gain a +5 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<energy damage>.
+                When you resist energy damage, this item sheds light as a torch until the end of the next round.
+                The color of the light depends on the energy damage resisted: blue for cold, yellow for electricity, and red for fire.
+            """,
+            short_description="Grants +5 energy resistance",
+        ),
+        MagicItem(
+            name="Ring of Energy Resistance, Greater",
+            level=12,
+            tags=[],
+            material_type="Ring",
+            description="""
+                This item functions like a \\mitem<ring of energy resistance>, except that the bonus is equal to +10.
+            """,
+            short_description="Grants +10 energy resistance",
+        ),
+        MagicItem(
+            name="Ring of Energy Resistance, Supreme",
+            level=18,
+            tags=[],
+            material_type="Ring",
+            description="""
+                This item functions like a \\mitem<ring of energy resistance>, except that the bonus is equal to +20.
+            """,
+            short_description="Grants +20 energy resistance",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Anchoring Belt",
+            level=5,
+            material_type="Belt",
+            tags=[],
+            description="""
+                You are immune to \\glossterm<knockback> or \\glossterm<push> effects from attacks, unless the effects come from an attack that scores a \\glossterm<critical hit>.
+                This does not make you immune to \\glossterm<teleportation>, and does not affect movement effects used by your \\glossterm<allies>.
+            """,
+            short_description="Protects you from most forced movement attacks",
+        ),
+        MagicItem(
+            name="Anchoring Belt, Greater",
+            level=11,
+            material_type="Belt",
+            tags=[],
+            description="""
+                This belt functions like an \\mitem<anchoring belt>, except that you are also immune to \\glossterm<teleport> effects from attacks that are not critical hits.
+            """,
+            short_description="Protects you from most forced movement and teleportation attacks",
+        ),
+        MagicItem(
+            name="Anchoring Belt, Supreme",
+            level=17,
+            material_type="Belt",
+            tags=[],
+            description="""
+                This belt functions like an \\mitem<anchoring belt>, except that the immunities apply even against critical hits.
+            """,
+            short_description="Protects you from all forced movement and teleportation attacks",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Amulet of Kinetic Absorption",
+            # +2 since amulet is secondary for this effect
+            level=6,
+            tags=[],
+            material_type="Amulet",
+            description="""
+                You gain a +5 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
+            """,
+            short_description="Grants +5 physical resistance",
+        ),
+        MagicItem(
+            name="Amulet of Kinetic Absorption, Greater",
+            level=12,
+            tags=[],
+            material_type="Amulet",
+            description="""
+                You gain a +10 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
+            """,
+            short_description="Grants +10 physical resistance",
+        ),
+        MagicItem(
+            name="Amulet of Kinetic Absorption, Supreme",
+            level=18,
+            tags=[],
+            material_type="Amulet",
+            description="""
+                You gain a +20 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
+            """,
+            short_description="Grants +20 physical resistance",
+        ),
+    ]
+
     return apparel
 
 
