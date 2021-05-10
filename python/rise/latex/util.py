@@ -48,7 +48,7 @@ def longtablify(text):
     return latexify(
         f"""
         \\begin<longtablewrapper>
-            \\begin<longtable><p<15em> p<3em> p<6em> p<25em> p<3em>>
+            \\begin<longtable><p<15em> p<8em> p<5em> p<20em> p<3em>>
                 {text}
             \\end<longtable>
         \\end<longtablewrapper>
