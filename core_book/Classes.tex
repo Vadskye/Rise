@@ -115,15 +115,15 @@ This choice determines a great deal about your character's abilities.
     \begin{dtable!*}
         \lcaption{Barbarian Progression}
 \begin{dtabularx}{\textwidth}{l l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-    \tb{Rank} & \tb{Min Level} & \tb{Battleforged Resilience}  & \tb{Battlerager}         & \tb{Outland Savage}                        & \tb{Primal Warrior}    \tableheaderrule
-    0 & \tdash & Unbattered resilience         & Insensible anger         & Savage rush                                & Primal might                                \\
-    1 & 1      & Battle-scarred                & Rage                     & Fast movement                              & Combat styles                         \\
-    2 & 4      & Resilient recovery            & Enraged strike           & Savage precision                           & Combat style rank (2), primal force         \\
-    3 & 7      & Greater unbattered resilience & Greater insensible anger & Savage force                               & Combat style rank (3), glancing strikes     \\
-    4 & 10     & Greater battle-scarred        & Greater rage             & Greater fast movement, greater savage rush & Combat style rank (4), primal maneuver      \\
-    5 & 13     & Greater resilient recovery    & Immutable anger          & Greater savage precision                   & Combat style rank (5), greater primal force \\
-    6 & 16     & Supreme unbattered resilience & Supreme insensible anger & Greater savage force                       & Combat style rank (6), greater primal might \\
-    7 & 19     & Supreme battle-scarred        & Supreme rage             & Supreme fast movement, supreme savage rush & Combat style rank (7), primal maneuver      \\
+    \tb{Rank} & \tb{Min Level} & \tb{Battleforged Resilience}  & \tb{Battlerager}         & \tb{Outland Savage}                        & \tb{Primal Warrior}                         & \tb{Totemist} \tableheaderrule
+    0         & \tdash         & Unbattered resilience         & Insensible anger         & Savage rush                                & Primal might                                & Animal instincts        \\
+    1         & 1              & Battle-scarred                & Rage                     & Fast movement                              & Combat styles                               & Totem animal            \\
+    2         & 4              & Resilient recovery            & Enraged strike           & Savage precision                           & Combat style rank (2), primal force         & Feral explosion         \\
+    3         & 7              & Greater unbattered resilience & Greater insensible anger & Savage force                               & Combat style rank (3), glancing strikes     & Totemic force           \\
+    4         & 10             & Greater battle-scarred        & Greater rage             & Greater fast movement, greater savage rush & Combat style rank (4), primal maneuver      & Greater totem animal    \\
+    5         & 13             & Greater resilient recovery    & Immutable anger          & Greater savage precision                   & Combat style rank (5), greater primal force & Greater feral explosion \\
+    6         & 16             & Supreme unbattered resilience & Supreme insensible anger & Greater savage force                       & Combat style rank (6), greater primal might & Greater totemic force   \\
+    7         & 19             & Supreme battle-scarred        & Supreme rage             & Supreme fast movement, supreme savage rush & Combat style rank (7), primal maneuver      & Supreme totem animal    \\
 \end{dtabularx}
     \end{dtable!*}
 
@@ -340,6 +340,75 @@ This choice determines a great deal about your character's abilities.
             \cf*{Bbn}[7]{Primal Maneuver}
             You learn an additional \glossterm{maneuver} from a combat style you have access to (see \pcref{Combat Styles}).
 
+        }
+
+    \newpage
+    \subsection{Totemist}
+
+        \cf{Bbn}[0]{Animal Instincts} You gain a \plus2 bonus to Reflex defense and \glossterm{initiative} checks.
+
+        \cf{Bbn}[1]{Totem Animal} You choose a totem animal that represents you.
+        Each totem animal grants you abilities that are associated with that animal.
+        {
+            \subcf{Bear} You gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{hit points}.
+            In addition, you gain a \plus1 bonus to Fortitude defense.
+
+            \subcf{Crocodile} Whenever you damage a creature with a melee \glossterm{strike}, you can \glossterm{push} it into any space adjacent to you.
+
+            \subcf{Eagle} You gain \glossterm{low-light vision}, allowing you to treat sources of light as if they had double their normal illumination range.
+            If you already have low-light vision, you double its benefit, allowing you to treat sources of light as if they had four times their normal illumination range.
+            In addition, you reduce your \glossterm{range increment} penalties by 1 (see \pcref{Range Increments}).
+
+            \subcf{Lion} You gain a \plus1 bonus to \glossterm{accuracy} as long as you have an \glossterm{ally} adjacent to you.
+
+            \subcf{Shark} You gain a \plus2 bonus to \glossterm{accuracy} against creatures that are below their maximum hit points.
+
+            \subcf{Wolf} At the start of each round, you may choose one of your \glossterm{allies}.
+            That creature gains a \plus1 bonus to \glossterm{accuracy} during that round as long as it is adjacent to you.
+        }
+
+        \cf{Bbn}[2]{Feral Explosion} Whenever you \glossterm{explode} with an attack roll, you gain a \plus2 \glossterm{accuracy} bonus with the attack.
+        This bonus stacks if you explode multiple times with the same attack roll.
+
+        \cf{Bbn}[3]{Totemic Force} You gain a \plus1d bonus to your damage with all weapons.
+
+        \cf{Bbn}[4]{Greater Totem Animal} The benefit from your \textit{totem animal} ability improves.
+        {
+            \subcf{Bear} The hit point bonus increases to five times your rank in this archetype.
+            In addition, the Fortitude bonus increases to \plus2.
+
+            \subcf{Crocodile} Whenever you make a creature lose \glossterm{hit points} with a melee \glossterm{strike}, you can choose to either \glossterm{grapple} it or knock it \glossterm{prone}.
+
+            \subcf{Eagle} The range increment penalty reduction increases to 2.
+            In addition, you gain a \plus3 bonus to the Awareness skill.
+
+            \subcf{Lion} The accuracy bonus increases to \plus2.
+
+            \subcf{Shark} The accuracy bonus increases to \plus4.
+
+            \subcf{Wolf} The accuracy bonus increases to \plus2.
+        }
+
+        \cf{Bbn}[5]{Greater Feral Explosion} Your first die you roll for each attack roll \glossterm{explodes} on a 9 in addition to the normal explosion on a 10.
+        This does not affect additional rolls with exploding dice.
+
+        \cf{Bbn}[6]{Greater Totemic Force} The bonus from your \textit{totemic force} ability increases to \plus2d.
+
+        \cf{Bbn}[7]{Supreme Totem Animal} The benefit from your \textit{totem animal} ability improves further.
+        {
+            \subcf{Bear} The hit point bonus increases to seven times your rank in this archetype.
+            In addition, the Fortitude bonus increases to \plus3.
+
+            \subcf{Crocodile} The benefit of your \textit{greater totem animal} ability applies whenever you deal damage with a melee strike instead of whenever you make a creature lose hit points with a melee strike.
+
+            \subcf{Eagle} The range increment penalty reduction increases to 3.
+            In addition, the Awareness bonus increases to \plus6.
+
+            \subcf{Lion} The accuracy bonus increases to \plus3.
+
+            \subcf{Shark} The accuracy bonus increases to \plus6.
+
+            \subcf{Wolf} The accuracy bonus increases to \plus3.
         }
 
 
@@ -3054,7 +3123,7 @@ This choice determines a great deal about your character's abilities.
         If you already have that ability, you increase its range by 60 feet.
 
         \cf{Rgr}[1]{Skirmisher} You gain a \plus5 foot bonus to your \glossterm{base speed}.
-        In addition, you reduce your \glossterm{range increment} penalties for attacking at long range by 1.
+        In addition, you reduce your \glossterm{range increment} penalties by 1 (see \pcref{Range Increments}).
 
         \cf{Rgr}[2]{Perceive Weakness} You gain a \plus1 bonus to \glossterm{accuracy}.
 
