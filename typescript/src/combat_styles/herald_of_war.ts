@@ -164,15 +164,14 @@ export const heraldOfWar: CombatStyle = {
       name: "Challenging Strike",
 
       effect: `
-        Make a \\glossterm{strike}.
-        You take a -2d damage penalty with the strike, and you \\glossterm{power} is halved.
-        As a \\glossterm{condition}, each creature damaged by the strike takes a -2 penalty to \\glossterm{accuracy} against creatures other than you as long as it is within \\rngmed range of you.
-        This condition is removed if another creature applies this condition to the same target.
+        Make a \\glossterm{strike} with a -2d damage penalty.
+        Your \\glossterm{power} is halved.
+        Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition}.
       `,
       rank: 3,
       scaling: {
-        5: "The penalty increases to -4.",
-        7: "The penalty increases to -6.",
+        5: "You gain a +1 accuracy bonus with the strike.",
+        7: "The accuracy bonus increases to +2.",
       },
       type: "Duration",
     },
