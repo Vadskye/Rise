@@ -1881,14 +1881,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Fighter Progression}
 \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
     \tb{Rank} & \tb{Min Level} & \tb{Combat Discipline}       & \tb{Equipment Training}      & \tb{Martial Mastery}               & \tb{Sentinel}                 & \tb{Tactician} \tableheaderrule
-    0 & \tdash & Enduring discipline          & Armor expertise              & Defensive expertise                                & Threatening influence         & Tactical insight           \\
-    1 & 1      & Discipline                   & Weapon training              & Martial maneuvers                                  & Guarding strike               & Battle tactics             \\
-    2 & 4      & Greater enduring discipline  & Equipment efficiency         & Combat style rank (2), martial force               & Protect                       & Tactical precision         \\
-    3 & 7      & Disciplined force            & Greater armor expertise      & Combat style rank (3), glancing strikes            & Greater threatening influence & Greater tactical insight   \\
-    4 & 10     & Disciplined reaction         & Weapon expertise             & Combat style rank (4), martial maneuver            & Sentinel's challenge          & Reactive tactics           \\
-    5 & 13     & Supreme enduring discipline  & Greater equipment efficiency & Combat style rank (5), greater martial force       & Greater protect               & Greater tactical precision \\
-    6 & 16     & Greater disciplined force    & Supreme armor expertise      & Combat style rank (6), greater defensive expertise & Supreme threatening influence & Supreme tactical insight   \\
-    7 & 19     & Greater disciplined reaction & Greater weapon expertise     & Combat style rank (7), martial maneuver            & Sentinel's goad               & Greater reactive tactics   \\
+    0 & \tdash & Enduring discipline          & Armor expertise              & Defensive expertise                                & Threatening influence                     & Tactical insight           \\
+    1 & 1      & Discipline                   & Weapon training              & Martial maneuvers                                  & Guarding strike                           & Battle tactics             \\
+    2 & 4      & Greater enduring discipline  & Equipment efficiency         & Combat style rank (2), martial force               & Protect                                   & Tactical precision         \\
+    3 & 7      & Disciplined force            & Greater armor expertise      & Combat style rank (3), glancing strikes            & Greater threatening influence             & Greater tactical insight   \\
+    4 & 10     & Disciplined reaction         & Weapon expertise             & Combat style rank (4), martial maneuver            & Sentinel's challenge, sentinel's force    & Reactive tactics           \\
+    5 & 13     & Supreme enduring discipline  & Greater equipment efficiency & Combat style rank (5), greater martial force       & Greater protect                           & Greater tactical precision \\
+    6 & 16     & Greater disciplined force    & Supreme armor expertise      & Combat style rank (6), greater defensive expertise & Supreme threatening influence             & Supreme tactical insight   \\
+    7 & 19     & Greater disciplined reaction & Greater weapon expertise     & Combat style rank (7), martial maneuver            & Greater sentinel's force, sentinel's goad & Greater reactive tactics   \\
 \end{dtabularx}
     \end{dtable!*}
 
@@ -2125,9 +2125,13 @@ This choice determines a great deal about your character's abilities.
             \rank{6} The area increases to a \hugearea radius.
         \end{durationability}
 
+        \cf{Ftr}[4]{Sentinel's Force} You gain a \plus1d bonus to your damage with all weapons.
+
         \cf{Ftr}[5]{Greater Protect} The bonus from your \textit{protect} ability increases to \plus3.
 
         \cf{Ftr}[6]{Supreme Threatening Influence} Your \textit{threatening influence} ability applies \glossterm{difficult terrain} twice, causing enemies to move at one quarter speed.
+
+        \cf{Ftr}[7]{Greater Sentinel's Force} The bonus from your \textit{sentinel's force} ability increases to \plus2d.
 
         \cf{Ftr}[7]{Sentinel's Goad} Any creature that is \goaded by you suffers a \minus4 accuracy penalty instead of the normal \minus2.
 
@@ -3005,7 +3009,7 @@ This choice determines a great deal about your character's abilities.
 \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X > {\lcol}X}
     \tb{Rank} & \tb{Min Level} & \tb{Beastmaster}         & \tb{Huntmaster}          & \tb{Scout}                & \tb{Wilderness Warrior} \tableheaderrule
     0 & \tdash & Beast affinity           & Tracker                  & Keen vision               & Wild senses                                \\
-    1 & 1      & Animal companion         & Quarry                   & Skirmisher                & Combat styles                             \\
+    1 & 1      & Animal companion         & Quarry                   & Skirmisher                & Combat styles                              \\
     2 & 4      & Pack tactics             & Hunting style            & Perceive weakness         & Combat style rank (2), wild force          \\
     3 & 7      & Power of beasts          & Hunter's prowess         & Blindsight                & Combat style rank (3), glancing strikes    \\
     4 & 10     & Greater animal companion & Greater quarry           & Greater skirmisher        & Combat style rank (4), wild maneuver       \\
