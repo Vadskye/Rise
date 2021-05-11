@@ -1880,15 +1880,15 @@ This choice determines a great deal about your character's abilities.
     \begin{dtable!*}
         \lcaption{Fighter Progression}
 \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-    \tb{Rank} & \tb{Min Level} & \tb{Combat Discipline}       & \tb{Equipment Training}      & \tb{Martial Mastery}                           & \tb{Tactician} \tableheaderrule
-    0 & \tdash & Enduring discipline          & Armor expertise              & Defensive expertise                                & Tactical insight           \\
-    1 & 1      & Discipline                   & Weapon training              & Martial maneuvers                                  & Battle tactics             \\
-    2 & 4      & Greater enduring discipline  & Equipment efficiency         & Combat style rank (2), martial force               & Tactical precision         \\
-    3 & 7      & Disciplined force            & Greater armor expertise      & Combat style rank (3), glancing strikes            & Greater tactical insight   \\
-    4 & 10     & Disciplined reaction         & Weapon expertise             & Combat style rank (4), martial maneuver            & Reactive tactics           \\
-    5 & 13     & Supreme enduring discipline  & Greater equipment efficiency & Combat style rank (5), greater martial force       & Greater tactical precision \\
-    6 & 16     & Greater disciplined force    & Supreme armor expertise      & Combat style rank (6), greater defensive expertise & Supreme tactical insight   \\
-    7 & 19     & Greater disciplined reaction & Greater weapon expertise     & Combat style rank (7), martial maneuver            & Greater reactive tactics   \\
+    \tb{Rank} & \tb{Min Level} & \tb{Combat Discipline}       & \tb{Equipment Training}      & \tb{Martial Mastery}               & \tb{Sentinel}                 & \tb{Tactician} \tableheaderrule
+    0 & \tdash & Enduring discipline          & Armor expertise              & Defensive expertise                                & Threatening influence         & Tactical insight           \\
+    1 & 1      & Discipline                   & Weapon training              & Martial maneuvers                                  & Guarding strike               & Battle tactics             \\
+    2 & 4      & Greater enduring discipline  & Equipment efficiency         & Combat style rank (2), martial force               & Protect                       & Tactical precision         \\
+    3 & 7      & Disciplined force            & Greater armor expertise      & Combat style rank (3), glancing strikes            & Greater threatening influence & Greater tactical insight   \\
+    4 & 10     & Disciplined reaction         & Weapon expertise             & Combat style rank (4), martial maneuver            & Sentinel's challenge          & Reactive tactics           \\
+    5 & 13     & Supreme enduring discipline  & Greater equipment efficiency & Combat style rank (5), greater martial force       & Greater protect               & Greater tactical precision \\
+    6 & 16     & Greater disciplined force    & Supreme armor expertise      & Combat style rank (6), greater defensive expertise & Supreme threatening influence & Supreme tactical insight   \\
+    7 & 19     & Greater disciplined reaction & Greater weapon expertise     & Combat style rank (7), martial maneuver            & Sentinel's goad               & Greater reactive tactics   \\
 \end{dtabularx}
     \end{dtable!*}
 
@@ -2080,6 +2080,56 @@ This choice determines a great deal about your character's abilities.
             \cf*{Ftr}[7]{Martial Maneuver}
             You learn an additional \glossterm{maneuver} from a combat style you have access to (see \pcref{Combat Styles}).
         }
+
+    \newpage
+    \subsection{Sentinel}
+        This archetype improves your ability to protect your allies in combat and control the battlefield.
+
+        \cf{Ftr}[0]{Threatening Influence} Your \glossterm{enemies} treat each space adjacent to you as \glossterm{difficult terrain}.
+
+        \cf{Ftr}[1]{Guarding Strike} You can use the \textit{guarding strike} ability as a standard action.
+        \begin{durationability}{Guarding Strike}
+            Duration
+            \rankline
+            Make a \glossterm{strike} with a \minus2d damage penalty.
+            Your \glossterm{power} with the strike is halved.
+            Each creature damaged by the strike is \goaded by you as a \glossterm{condition}.
+            \rankline
+            \rank{3} You gain a \plus1 \glossterm{accuracy} bonus with the strike.
+            \rank{5} The accuracy bonus increases to \plus2.
+            \rank{7} The accuracy bonus increases to \plus3.
+        \end{durationability}
+
+        \cf{Ftr}[2]{Protect} You can use the \textit{protect} ability as a \glossterm{minor action}.
+        \begin{durationability}{Protect}
+            \spelltwocol{Duration}{\abilitytag{Swift}}
+            \rankline
+            Choose an \glossterm{ally} adjacent to you.
+            It gains a \plus2 bonus to Armor defense until the end of the round.
+            Because this ability has the \abilitytag{Swift} tag, this bonus applies against attacks made in the current phase.
+
+            A creature that sees an attack against an ally protected in this way can observe that you are the cause of the protection with a \glossterm{difficulty rating} 5 Awareness check.
+            While this ability is active, you cannot gain a defense bonus from this ability, even if another creature with this ability uses it on you.
+        \end{durationability}
+
+        \cf{Ftr}[3]{Greater Threatening Influence} The area affected by your \textit{threatening influence} ability increases to a \smallarea radius \glossterm{emanation} from you.
+        However, it does not affect creatures who are moving in a straight line directly towards you.
+
+        \cf{Ftr}[4]{Sentinel's Challenge} You can use the \textit{sentinel's challenge} ability as a standard action.
+        \begin{durationability}{Sentinel's Challenge}
+            Duration
+            \rankline
+            Make an attack vs. Mental against all \glossterm{enemies} in a \largearea radius from you.
+            \hit Each subject is \goaded by you as a \glossterm{condition}.
+            \rankline
+            \rank{6} The area increases to a \hugearea radius.
+        \end{durationability}
+
+        \cf{Ftr}[5]{Greater Protect} The bonus from your \textit{protect} ability increases to \plus3.
+
+        \cf{Ftr}[6]{Supreme Threatening Influence} Your \textit{threatening influence} ability applies \glossterm{difficult terrain} twice, causing enemies to move at one quarter speed.
+
+        \cf{Ftr}[7]{Sentinel's Goad} Any creature that is \goaded by you suffers a \minus4 accuracy penalty instead of the normal \minus2.
 
     \newpage
     \subsection{Tactician}
