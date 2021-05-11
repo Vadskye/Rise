@@ -135,7 +135,7 @@ This choice determines a great deal about your character's abilities.
 
     \classbasics{Alignment} Any.
 
-    \classbasics{Archetypes} Barbarians have the Battlerager, Battleforged Resilience, Outland Savage, and Primal Warrior \glossterm{archetypes}.
+    \classbasics{Archetypes} Barbarians have the Battlerager, Battleforged Resilience, Outland Savage, Primal Warrior, and Totemist \glossterm{archetypes}.
 
     \subsection{Basic Class Abilities}
         If you are a barbarian, you gain the following abilities.
@@ -344,6 +344,7 @@ This choice determines a great deal about your character's abilities.
 
     \newpage
     \subsection{Totemist}
+        This archetype allows you to embody the spirits of apex predators to improve your combat ability.
 
         \cf{Bbn}[0]{Animal Instincts} You gain a \plus2 bonus to Reflex defense and \glossterm{initiative} checks.
 
@@ -417,15 +418,15 @@ This choice determines a great deal about your character's abilities.
     \begin{dtable!*}
         \lcaption{Cleric Progression}
 \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-    \tb{Rank} & \tb{Min Level} & \tb{Divine Magic} & \tb{Divine Spell Mastery}   & \tb{Domain Influence}  & \tb{Healer} \tableheaderrule
-    0 & \tdash & Cantrips                        & Mystic sphere               & Domains, domain gift & Desperate healing           \\
-    1 & 1      & Spellcasting                    & Mystic insight              & Domain gift          & Restoration                 \\
-    2 & 4      & Spell rank (2), spell knowledge & Divine guidance             & Domain aspect        & Healer's grace              \\
-    3 & 7      & Spell rank (3)                  & Wellspring of power         & Domain aspect        & Divine healing              \\
-    4 & 10     & Spell rank (4), spell knowledge & Mystic insight              & Domain essences       & Called to the needy         \\
-    5 & 13     & Spell rank (5)                  & Greater divine guidance     & Miracle       & Greater healer's grace      \\
-    6 & 16     & Spell rank (6)                  & Greater wellspring of power & Domain mastery              & Revivify                    \\
-    7 & 19     & Spell rank (7), spell knowledge & Mystic insight              & Domain mastery     & Greater called to the needy \\
+    \tb{Rank} & \tb{Min Level} & \tb{Divine Magic}               & \tb{Divine Spell Mastery}   & \tb{Domain Influence} & \tb{Healer} & \tb{Preacher} \tableheaderrule
+    0 & \tdash & Cantrips                        & Mystic sphere               & Domains, domain gift & Desperate healing           & Practiced persuasion         \\
+    1 & 1      & Spellcasting                    & Mystic insight              & Domain gift          & Restoration                 & Denounce the heathens        \\
+    2 & 4      & Spell rank (2), spell knowledge & Divine guidance             & Domain aspect        & Healer's grace              & Inspiring oration            \\
+    3 & 7      & Spell rank (3)                  & Wellspring of power         & Domain aspect        & Divine healing              & Bless the worthy             \\
+    4 & 10     & Spell rank (4), spell knowledge & Mystic insight              & Domain essences      & Called to the needy         & Greater practiced persuasion \\
+    5 & 13     & Spell rank (5)                  & Greater divine guidance     & Miracle              & Greater healer's grace      & Condemn the fearful          \\
+    6 & 16     & Spell rank (6)                  & Greater wellspring of power & Domain mastery       & Revivify                    & Greater inspiring oration    \\
+    7 & 19     & Spell rank (7), spell knowledge & Mystic insight              & Domain mastery       & Greater called to the needy & Convert the irresolute       \\
 \end{dtabularx}
     \end{dtable!*}
 
@@ -437,7 +438,7 @@ This choice determines a great deal about your character's abilities.
 
     \classbasics{Alignment} Your alignment must be within one step of your deity's (that is, it may be one step away on either the lawful-chaotic axis or the good-evil axis, but not both).
 
-    \classbasics{Archetypes} Clerics have the Divine Magic, Domain Influence, and Divine Spell Mastery \glossterm{archetypes}.
+    \classbasics{Archetypes} Clerics have the Divine Magic, Domain Influence, Divine Spell Mastery, Healer, and Preacher \glossterm{archetypes}.
 
     \subsection{Basic Class Abilities}
         If you are a cleric, you gain the following abilities.
@@ -679,7 +680,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Clr}[0]{Desperate Healing} When you use the \textit{desperate exertion} ability to affect a Medicine check, you gain a \plus3 bonus to the check.
         This stacks with the normal +2 bonus from the \textit{desperate exertion} ability.
-        In addition, using the \textit{desperate exertion} ability to affect a Medicine check only increases your \glossterm{fatigue level} by one instead of two.
+        In addition, using the \textit{desperate exertion} ability to affect a roll using the Medicine skill only causes you to increase your \glossterm{fatigue level} by one instead of two.
 
         \cf{Clr}[1]{Restoration} You can use the \textit{restoration} ability as a standard action.
         \begin{instantability}{Restoration}
@@ -734,6 +735,62 @@ This choice determines a great deal about your character's abilities.
         \end{instantability}
 
         \cf{Clr}[7]{Greater Called to the Needy} You can use your \textit{called to the needy} ability to teleport to allies that lost \glossterm{hit points} in addition to allies that gained vital wounds.
+
+    \newpage
+    \subsection{Preacher}
+        This archetype grants you the ability to inspire your allies and denounce or even convert your foes.
+
+        \cf{Clr}[0]{Practiced Persuasion} You gain a \plus2 bonus to the Persuasion skill.
+        In addition, using the \textit{desperate exertion} ability to affect a roll using the Persuasion skill only causes you to increase your \glossterm{fatigue level} by one instead of two.
+
+        \cf{Clr}[1]{Denounce the Heathens} You can use the \textit{denounce the heathens} ability as a standard action.
+        \begin{instantability}{Denounce the Heathens}
+            Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
+            Your \glossterm{accuracy} is equal to your Persuasion skill.
+            \hit Each subject is \dazed until the end of the next round.
+
+            \rankline
+            \rank{3} The area increases to a \largearea radius, and the effect becomes a \glossterm{condition} on a critical hit.
+            \rank{5} The area increases to a \hugearea radius.
+            \rank{7} The area increases to a \gargarea radius.
+        \end{instantability}
+
+        \cf{Clr}[2]{Inspiring Oration} Your \glossterm{allies} who can hear you in a fight gain a \plus2 bonus to Mental defense.
+        You must generally say inspiring words every few rounds to grant your allies this effect, though they can be brief, so this does not take an action.
+
+        \cf{Clr}[3]{Bless the Worthy} You can use the \textit{bless the worthy} abiity as a standard action.
+        \begin{instantability}{Bless the Worthy}
+            All \glossterm{allies} within a \hugearea radius from you gain a \plus2 bonus to \glossterm{accuracy} during the next round.
+            In addition, one of those allies can remove a \glossterm{condition}.
+            This ability cannot remove a condition gained during the current round.
+
+            \rankline
+            \rank{5} The accuracy bonus increases to \plus3.
+            \rank{7} The accuracy bonus increases to \plus4.
+        \end{instantability}
+
+        \cf{Clr}[4]{Greater Practiced Persuasion} The bonus from your \textit{practiced persuasion} ability increases to \plus5.
+        In addition, you can use the \textit{desperate exertion} ability any number of times to affect the same Persuasion check.
+
+        \cf{Clr}[5]{Condemn the Fearful} You can use the \textit{condemn the fearful} ability as a standard action.
+        \begin{instantability}{Condemn the Fearful}
+            Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
+            Your \glossterm{accuracy} is equal to your Persuasion skill.
+            \hit Each subject is \frightened by you until the end of the next round.
+
+            \rankline
+            \rank{7} The area increases to a \largearea radius, and the effect becomes a \glossterm{condition} on a critical hit.
+        \end{instantability}
+
+        \cf{Clr}[6]{Greater Inspiring Oration} The bonus from your \textit{inspiring oration} ability increases to \plus4.
+
+        \cf{Clr}[7]{Convert the Irresolute} You can use the \textit{convert the irresolute} abiity as a standard action.
+        \begin{instantability}{Convert the Irresolute}
+            Make an attack vs. Mental against one creature within \rngmed range.
+            Your \glossterm{accuracy} is equal to your Persuasion skill.
+            \hit The subject is \glossterm{stunned} until it finishes a \glossterm{long rest}.
+            At the end of that time, if its Willpower is 0 or lower, it changes its mind and begins worshipping your deity permanently if it is capable of doing so.
+        \end{instantability}
 
     \newpage
     \subsection{Cleric Domain Abilities}\label{Cleric Domain Abilities}
@@ -3279,7 +3336,7 @@ This choice determines a great deal about your character's abilities.
         This archetype improves your agility, stealth, and combat prowess against unaware targets.
 
         \cf{Rog}[0]{Unseen Assassin} You gain a \plus2 bonus to the Stealth skill.
-        In addition, using the \textit{desperate exertion} ability on a Stealth check only causes you to increase your \glossterm{fatigue level} by one instead of two.
+        In addition, using the \textit{desperate exertion} ability to affect a roll using the Stealth skill only causes you to increase your \glossterm{fatigue level} by one instead of two.
 
         \cf{Rog}[1]{Sneak Attack}
         You can use the \textit{sneak attack} ability as a standard action.
@@ -4659,7 +4716,7 @@ This choice determines a great deal about your character's abilities.
         You have the Arcane Magic archetype from the wizard class to gain the abilities from this archetype.
 
         \cf{Wiz}[0]{Deep Knowledge} You gain a \plus2 bonus to all Knowledge skills.
-        In addition, using the \textit{desperate exertion} ability on a Knowledge check only causes you to increase your \glossterm{fatigue level} by one instead of two.
+        In addition, using the \textit{desperate exertion} ability to affect a roll using a Knowledge skill only causes you to increase your \glossterm{fatigue level} by one instead of two.
 
         \cf{Wiz}[1]{Ritualist}[Magical] You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
         The maximum \glossterm{rank} of arcane ritual you can learn or perform is equal to the maximum rank of arcane spell that you can cast.
