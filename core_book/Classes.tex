@@ -2260,16 +2260,16 @@ This choice determines a great deal about your character's abilities.
 \section{Monk}\label{Monk}
     \begin{dtable!*}
         \lcaption{Monk Progression}
-\begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-    \tb{Rank} & \tb{Min Level} & \tb{Esoteric Warrior}                            & \tb{Ki}                  & \tb{Perfected Form}       & \tb{Transcendent Sage} \tableheaderrule
-    0         & \tdash         & Esoteric fluidity                                & Ki barrier, ki energy    & Unarmed warrior           & Transcend frailty                               \\
-    1         & 1              & Combat styles                                    & Ki manifestations        & Fast movement             & Clear the mind                                  \\
-    2         & 4              & Combat style rank (2), esoteric force            & Greater ki barrier       & Perfect precision         & Feel the flow of life                           \\
-    3         & 7              & Combat style rank (3), glancing strikes          & Ki power                 & Perfect body              & Transcend time, transcendent power              \\
-    4         & 10             & Combat style rank (4), esoteric maneuver         & Ki manifestation         & Greater fast movement     & Inner peace                                     \\
-    5         & 13             & Combat style rank (5), greater esoteric force    & Supreme ki barrier       & Greater perfect precision & Greater feel the flow of life                   \\
-    6         & 16             & Combat style rank (6), greater esoteric fluidity & Greater ki power         & Greater perfect body      & Transcend mortality, greater transcendent power \\
-    7         & 19             & Combat style rank (7), esoteric maneuver         & Greater ki manifestation & Supreme fast movement     & Inner transcendence                             \\
+\begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+    \tb{Rank} & \tb{Min Level} & \tb{Airdancer}             & \tb{Esoteric Warrior}                            & \tb{Ki}                  & \tb{Perfected Form}       & \tb{Transcendent Sage} \tableheaderrule
+    0         & \tdash         & Practiced leaper           & Esoteric fluidity                                & Ki barrier, ki energy    & Unarmed warrior           & Transcend frailty                               \\
+    1         & 1              & Acrobatic accuracy         & Combat styles                                    & Ki manifestations        & Fast movement             & Clear the mind                                  \\
+    2         & 4              & Evasion                    & Combat style rank (2), esoteric force            & Greater ki barrier       & Perfect precision         & Feel the flow of life                           \\
+    3         & 7              & Airdance                   & Combat style rank (3), glancing strikes          & Ki power                 & Perfect body              & Transcend time, transcendent power              \\
+    4         & 10             & Greater acrobatic accurcy  & Combat style rank (4), esoteric maneuver         & Ki manifestation         & Greater fast movement     & Inner peace                                     \\
+    5         & 13             & Greater evasion            & Combat style rank (5), greater esoteric force    & Supreme ki barrier       & Greater perfect precision & Greater feel the flow of life                   \\
+    6         & 16             & Greater airdance           & Combat style rank (6), greater esoteric fluidity & Greater ki power         & Greater perfect body      & Transcend mortality, greater transcendent power \\
+    7         & 19             & Supreme acrobatic accuracy & Combat style rank (7), esoteric maneuver         & Greater ki manifestation & Supreme fast movement     & Inner transcendence                             \\
 \end{dtabularx}
     \end{dtable!*}
 
@@ -2312,6 +2312,36 @@ This choice determines a great deal about your character's abilities.
             \item \subparhead{Perception} Awareness, Creature Handling, Social Insight, Spellsense, Survival.
             \item \subparhead{Other} Deception, Intimidate, Perform, Persuasion, Profession.
         \end{itemize}
+
+    \newpage
+    \subsection{Airdancer}\label{Airdancer}
+        This archetype improves your acrobatic ability and mobility in combat.
+
+        \cf{Mnk}[0]{Practiced Leaper} You gain a \plus2 bonus to the Jump skill.
+        In addition, using the \textit{desperate exertion} ability to affect a roll using the Jump skill only causes you to increase your \glossterm{fatigue level} by one instead of two.
+
+        \cf{Mnk}[1]{Acrobatic Accuracy} Whenever you make a Jump check that moves you over or adjacent to a creature, if your Jump check result is higher than that creature's Reflex defense, you gain a \plus1 bonus to \glossterm{accuracy} against that creature for the rest of the current round.
+        This is a \glossterm{Swift} effect, so it helps you if you make a Jump check in the same phase that you make a strike, such as with the \ability{leaping strike} \glossterm{maneuver}.
+
+        \cf{Mnk}[2]{Evasion} You take half damage from abilities that affect an area and attack your Armor or Reflex defense.
+        This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
+
+        \cf{Mnk}[3]{Airdance}[Magical] When you move with a Jump check, you can land in midair as if it was solid ground.
+        Your landing loation must be no more than 30 feet above above an object at least two size categories larger than you that is free-standing and capable of supporting your weight.
+        You cannot walk in the air, but you can continue jumping or remain in place.
+        The air holds you until the end of the current round, at which point you fall normally.
+        After you land on air in this way, you cannot do so again until after the end of the next round.
+
+        \cf{Mnk}[4]{Greater Acrobatic Accuracy} The bonus from your \textit{acrobatic accuracy} ability increases to \plus2.
+
+        \cf{Mnk}[5]{Greater Evasion} You can use your Reflex defense with a \minus4 penalty in place of any other defense against abilities that affect an area.
+        This does not protect you from abilities that affect multiple specific targets without affecting an area.
+        Using this ability also does not cause your \textit{evasion} ability to reduce damage from the attack if it was not already against Armor or Reflex defense.
+
+        \cf{Mnk}[6]{Greater Airdance}[Magical] When you use your \textit{airdance} ability to land in the air, you can walk around freely in the air as if it was fully solid until the end of the round.
+        In addition, the maxium height above the ground increases to 60 feet.
+
+        \cf{Mnk}[7]{Greater Acrobatic Accuracy} The bonus from your \textit{acrobatic accuracy} ability increases to \plus3.
 
     \newpage
     \subsection{Esoteric Warrior}\label{Esoteric Warrior}
