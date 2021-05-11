@@ -23,7 +23,7 @@ You cannot gain the same feat twice.
 
         \parhead{Human} Any feat.
 
-        \parhead{Dwarf} Any from the following list: \featref*{Blindfighter}, \featref*{Craft Specialization}, \featref*{Guardian}, \featref*{Iron Will}, \featref*{Martial Training}, \featref*{Regenerator}, \featref*{Toughness}.
+        \parhead{Dwarf} Any from the following list: \featref*{Blindfighter}, \featref*{Craft Specialization}, \featref*{Iron Will}, \featref*{Martial Training}, \featref*{Regenerator}, \featref*{Toughness}.
 
         \parhead{Elf} Any Casting feat (see \pcref{Casting Feats}), or any from the following list: \featref*{Agility Specialization}, \featref*{Awareness Specialization}, \featref*{Sniper}, \featref*{Rapid Reaction}.
 
@@ -158,7 +158,6 @@ You cannot gain the same feat twice.
         \featref{Duelist}              & Dex 1, Int 1     & Fight one-on-one better                       & \tdash & \featpref{Duelist}              \\
         \featref{Executioner}          & Str 1, Per 2     & Kill weakened foes more easily                & \tdash & \featpref{Executioner}          \\
         \featref{Greatweapon Warrior}  & Str 2            & Fight better with two-handed weapons          & \tdash & \featpref{Greatweapon Warrior}  \\
-        \featref{Guardian}             & Per 1, Wil 1     & Protect nearby allies                         & \tdash & \featpref{Guardian}             \\
         \featref{Leadership}           & Int 2 or Wil 2   & Inspire nearby allies                         & \tdash & \featpref{Leadership}           \\
         \featref{Maneuverist}        & Int 1    & Gain limited maneuver access     & \tdash             & \featpref{Maneuverist}        \\
         \featref{Martial Training}     & \tdash           & Improve combat abilities                      & \tdash & \featpref{Martial Training}     \\
@@ -800,45 +799,6 @@ You cannot gain the same feat twice.
         If the weapon already has the Sweeping tag, you instead increase the number of secondary targets by 3.
 
         \ff[21]{Greater Power Attack} The damage bonus from your \textit{power attack} ability increases to \plus3d.
-    \end{feat}
-
-    \begin{feat}{Guardian}{Combat}
-        \featpre Base Perception and Willpower of 1.
-
-        \ff[1]{Binding Strike} You can use the \textit{binding strike} ability as a standard action.
-        \begin{freeability}{Binding Strike}
-            Make a melee \glossterm{strike} against a creature adjacent to you.
-            You take a \minus2d damage penalty with the strike, and your \glossterm{power} is halved.
-            If the target loses \glossterm{hit points} from the strike, it is \immobilized as a \glossterm{condition}.
-                At the end of each round, this condition ends if the target is not adjacent to you.
-
-            \rankline
-            \featlevel{6} You gain a \plus1 bonus to \glossterm{accuracy} with the strike.
-            \featlevel{12} The accuracy bonus increases to \plus2.
-            \featlevel{18} The accuracy bonus increases to \plus3.
-        \end{freeability}
-
-        \ff[3]{Threatening Guardian} Your \glossterm{enemies} treat each space adjacent to you as \glossterm{difficult terrain}.
-
-        \ff[6]{Protect} You can use the \textit{protect} ability as a \glossterm{minor action}.
-        \begin{freeability}{Protect}[\abilitytag{Swift}]
-            Choose an \glossterm{ally} adjacent to you.
-            It gains a \plus2 bonus to Armor defense until the end of the round.
-            Because this ability has the \abilitytag{Swift} tag, this bonus applies against attacks made in the current phase.
-
-            A creature that sees an attack against an ally protected in this way can observe that you are the cause of the protection with a \glossterm{difficulty rating} 5 Awareness check.
-            While this ability is active, you cannot gain a defense bonus from this ability, even if another creature with this ability uses it on you.
-        \end{freeability}
-
-        \ff[9]{Resolute Defender} You gain a \plus1 bonus to Armor defense and Mental defense.
-
-        \ff[12]{Greater Protect} The bonus from your \textit{protect} ability increases to \plus3.
-
-        \ff[15]{Greater Threatening Guardian} Your \textit{threatening guardian} ability applies \glossterm{difficult terrain} twice, causing enemies to move at one quarter speed.
-
-        \ff[18]{Greater Resolute Defender} The bonuses from your \textit{resolute defender} ability increase to \plus2.
-
-        \ff[21]{Supreme Protect} The bonus from your \textit{protect} ability increases to \plus4.
     \end{feat}
 
     \begin{feat}{Herbalist}{Skill}
