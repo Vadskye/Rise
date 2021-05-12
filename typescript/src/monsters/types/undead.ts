@@ -1,8 +1,6 @@
-import { parseActiveAbility } from "@src/active_abilities";
-import { parseAttack } from "@src/attacks";
+import { parseActiveAbility, parseAttack, passiveAbilities } from "@src/monsters/mechanics";
 import { MonsterBaseInput } from "@src/monsters/reformat_monster_input";
 import { MonsterGroupInput } from "@src/monsters/reformat_monster_input";
-import { passiveAbilities } from "@src/passive_abilities";
 import { addType, TypelessMonsterInput } from "./add_type";
 import { humanoids } from "./humanoids";
 

@@ -1,5 +1,5 @@
-import { AbilityTag } from "@src/ability_tags";
-import { Attack, DamagingAttack } from "@src/attacks";
+import { AbilityTag } from "@src/data";
+import { Attack, DamagingAttack } from "@src/monsters/mechanics";
 import { calculateDamageDice, DamageDice } from "@src/calculate";
 import { DamageType } from "@src/data";
 import { MonsterBase } from "@src/monsters";

@@ -1,4 +1,4 @@
-import { AbilityTag } from "@src/ability_tags";
+import { AbilityTag } from "@src/data";
 
 const tagPattern = /([^(]+)( \([^)]\))?/;
 
