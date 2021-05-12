@@ -1,4 +1,4 @@
-import {MonsterChallengeRating} from "@src/monsters/reformat_monster_input";
+import { MonsterChallengeRating } from "@src/monsters/reformat_monster_input";
 
 export interface DamageDice {
   count: number;
@@ -35,4 +35,8 @@ export function calculateDamageDice(
   }
 
   return { count, flatBonus, size };
+}
+
+export function calculateAverageDamage(dice: DamageDice): number {
+  return dice.flatBonus + (dice.count * (dice.size + 1)) / 2;
 }
