@@ -1,6 +1,5 @@
-import { attackIsDamaging, parseAttack } from "@src/attacks";
+import { attackIsDamaging, parseAttack,  StandardWeaponName, Weapon  } from "@src/monsters/mechanics";
 import { MonsterBase } from "@src/monsters";
-import { StandardWeaponName, Weapon } from "@src/weapons";
 import { calculateAttack, CalculatedDamagingAttack } from "./calculate_attack";
 
 export function calculateStrike(monster: MonsterBase, weapon: Weapon): CalculatedDamagingAttack {

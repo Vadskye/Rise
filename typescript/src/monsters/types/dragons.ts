@@ -1,4 +1,4 @@
-import { AttackInput } from "@src/attacks";
+import { AttackInput } from "@src/monsters/mechanics";
 import { DamageType } from "@src/data";
 import { MonsterBaseInput } from "@src/monsters/reformat_monster_input";
 import { titleCase } from "change-case";

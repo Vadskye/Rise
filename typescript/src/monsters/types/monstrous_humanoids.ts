@@ -1,4 +1,4 @@
-import { WeaponInput } from "@src/weapons";
+import { WeaponInput } from "@src/monsters/mechanics";
 import { addType, TypelessMonsterInput } from "./add_type";
 
 const boulder: WeaponInput = {

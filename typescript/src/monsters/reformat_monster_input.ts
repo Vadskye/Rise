@@ -1,6 +1,3 @@
-import { ActiveAbility, ActiveAbilityInput, parseActiveAbility } from "@src/active_abilities";
-import { Armor, ArmorInput, parseArmorInput } from "@src/armor";
-import { Attack, AttackInput, parseAttack } from "@src/attacks";
 import {
   attributesAtLevel,
   calculateAccuracy,
@@ -17,14 +14,33 @@ import {
   spaceBySize,
   speedBySize,
 } from "@src/calculate";
-import { attributes, DamageType, damageTypes, DefenseType, defenseTypes, skills } from "@src/data";
+import {
+  attributes,
+  DamageType,
+  damageTypes,
+  DefenseType,
+  defenseTypes,
+  MovementMode,
+  skills,
+} from "@src/data";
+import {
+  ActiveAbility,
+  ActiveAbilityInput,
+  Armor,
+  ArmorInput,
+  Attack,
+  AttackInput,
+  parseActiveAbility,
+  parseArmorInput,
+  parseAttack,
+  parseWeaponInput,
+  PassiveAbility,
+  Weapon,
+  WeaponInput,
+} from "@src/monsters/mechanics";
 import { MonsterType } from "@src/monsters/types";
-import { PassiveAbility } from "@src/passive_abilities";
 import { fromPairs } from "@src/util/from_pairs";
-import { parseWeaponInput, Weapon, WeaponInput } from "@src/weapons";
 import _ from "lodash";
-
-import { MovementMode } from "@src/movement_modes";
 
 export interface MonsterGroupInput {
   description?: string;
