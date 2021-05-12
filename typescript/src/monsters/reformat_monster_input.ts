@@ -220,7 +220,7 @@ function generateMonsterGroup(monsterGroupInput: MonsterGroupInput): MonsterGrou
   };
 }
 
-function generateMonsterBase(monsterInput: MonsterBaseInput): MonsterBase {
+export function generateMonsterBase(monsterInput: MonsterBaseInput): MonsterBase {
   const defenseBonuses = Object.assign(
     {},
     monsterDefaults.defenseBonuses,
