@@ -1,20 +1,22 @@
-import { CalculatedDamagingAttack, calculateStrike } from "@src/calculate";
+import { CalculatedDamagingAttack, calculateStrike, calculateAverageDamage } from "@src/calculate";
 import { MonsterBase } from "@src/monsters";
 
 export function calculateDamagePerRound(
-  attacker: MonsterBase,
+  attacker: Pick<
+    MonsterBase,
+    "challengeRating" | "level" | "name" | "accuracy" | "magicalPower" | "mundanePower" | "weapons"
+  >,
   defender: Pick<MonsterBase, "defenses">,
 ): number {
   // TODO: look through attacker's attack options to find the best attack
   const strike = calculateStrike(attacker, attacker.weapons[0]);
-  const withoutExplosion = calculateHitProbability(strike, defender);
-  // TODO: multiply accuracy by damage
-  return withoutExplosion;
+  const hitProbability = calculateHitProbability(strike, defender);
+  return hitProbability * calculateAverageDamage(strike.damageDice);
 }
 
 // This takes crits into account, so it can return a number greater than 1.
 // For example, with a +14 accuracy vs a defense of 10, there is a 100% chance to hit and a 50%
-// chance to crit, so this would return 1.5.
+// chance to crit, so this would return 1.5 with an explosion depth of 0.
 export function calculateHitProbability(
   strike: Pick<CalculatedDamagingAttack, "accuracy" | "defense">,
   defender: Pick<MonsterBase, "defenses">,

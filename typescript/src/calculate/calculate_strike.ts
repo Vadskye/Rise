@@ -1,8 +1,14 @@
-import { attackIsDamaging, parseAttack,  StandardWeaponName, Weapon  } from "@src/monsters/mechanics";
 import { MonsterBase } from "@src/monsters";
+import { attackIsDamaging, parseAttack, StandardWeaponName, Weapon } from "@src/monsters/mechanics";
 import { calculateAttack, CalculatedDamagingAttack } from "./calculate_attack";
 
-export function calculateStrike(monster: MonsterBase, weapon: Weapon): CalculatedDamagingAttack {
+export function calculateStrike(
+  monster: Pick<
+    MonsterBase,
+    "challengeRating" | "level" | "name" | "accuracy" | "magicalPower" | "mundanePower"
+  >,
+  weapon: Weapon,
+): CalculatedDamagingAttack {
   const attack = parseAttack({
     baseDamageDie: weapon.baseDamageDie,
     name: weapon.name,
