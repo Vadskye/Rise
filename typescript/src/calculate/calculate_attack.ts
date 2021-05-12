@@ -1,7 +1,7 @@
 import { AbilityTag } from "@src/data";
 import { Attack, DamagingAttack } from "@src/monsters/mechanics";
 import { calculateDamageDice, DamageDice } from "@src/calculate";
-import { DamageType } from "@src/data";
+import { DamageType, DefenseType } from "@src/data";
 import { MonsterBase } from "@src/monsters";
 
 export interface CalculatedAttack {
@@ -9,7 +9,7 @@ export interface CalculatedAttack {
   damageDice: DamageDice | null;
   crit: string | null;
   damageTypes: DamageType[];
-  defense: string;
+  defense: DefenseType;
   hit: string | null;
   monsterName: string;
   name: string;
