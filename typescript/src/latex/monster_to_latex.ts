@@ -1,4 +1,4 @@
-import { ActiveAbility } from "@src/active_abilities";
+import { ActiveAbility, PassiveAbility, Weapon  } from "@src/monsters/mechanics";
 import {
   calculateBaseKnowledgeDifficulty,
   CalculatedAttack,
@@ -8,9 +8,7 @@ import { DamageType, energyDamageTypes, physicalDamageTypes } from "@src/data";
 import * as format from "@src/latex/format";
 import { Monster, MonsterBase, MonsterGroup, monsterIsMonsterGroup } from "@src/monsters";
 import { knowledgeSkillsByMonsterType } from "@src/monsters/types";
-import { movementModes } from "@src/movement_modes";
-import { PassiveAbility } from "@src/passive_abilities";
-import { Weapon } from "@src/weapons";
+import { movementModes } from "@src/data";
 import { sentenceCase, titleCase } from "change-case";
 import _ from "lodash";
 import { standardAttackEffect } from "./standard_attack_effect";

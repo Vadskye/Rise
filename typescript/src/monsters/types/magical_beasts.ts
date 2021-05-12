@@ -1,4 +1,4 @@
-import { passiveAbilities } from "@src/passive_abilities";
+import { passiveAbilities } from "@src/monsters/mechanics";
 import { addType, TypelessMonsterInput } from "./add_type";
 
 export const magicalBeastInput: TypelessMonsterInput[] = [

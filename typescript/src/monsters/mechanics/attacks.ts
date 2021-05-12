@@ -1,7 +1,6 @@
-import { AbilityTag } from "@src/ability_tags";
-import { DamageType, DefenseType } from "@src/data";
+import { AbilityTag, DamageType, DefenseType } from "@src/data";
 import { MonsterBase } from "@src/monsters";
-import { isStandardWeaponName, StandardWeaponName, standardWeapons } from "@src/weapons";
+import { isStandardWeaponName, StandardWeaponName, standardWeapons } from "@src/monsters/mechanics";
 
 export type AttackEffect = (monster: MonsterBase) => string;
 
