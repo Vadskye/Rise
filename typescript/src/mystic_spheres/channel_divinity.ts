@@ -238,12 +238,12 @@ export const channelDivinity: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You gain a +7 \\glossterm{magic bonus} to your \\glossterm{resistances} to both \\glossterm{physical damage} and \\glossterm{energy damage}.
+        You gain a +8 \\glossterm{magic bonus} to your \\glossterm{resistances} to both \\glossterm{physical damage} and \\glossterm{energy damage}.
         `,
       rank: 3,
       scaling: {
-        5: `The bonus increases to +14.`,
-        7: `The bonus increases to +28.`,
+        5: `The bonus increases to +16.`,
+        7: `The bonus increases to +32.`,
       },
       type: "Attune (self)",
     },
