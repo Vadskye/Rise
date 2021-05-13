@@ -1,13 +1,9 @@
-import {
-  generateMonsterBase,
-  MonsterBase,
-  MonsterChallengeRating,
-} from "@src/monsters/reformat_monster_input";
-import { MonsterType } from "@src/monsters/types";
+import { ChallengeRating, MonsterType } from "@src/data";
+import { generateMonsterBase, MonsterBase } from "@src/monsters/reformat_monster_input";
 
 export function generateStandardMonster(
   level: number,
-  challengeRating: MonsterChallengeRating,
+  challengeRating: ChallengeRating,
   options: { monsterType?: MonsterType; startingAttribute?: number } = {},
 ): MonsterBase {
   return generateMonsterBase({

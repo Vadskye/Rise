@@ -1,4 +1,4 @@
-import { MonsterChallengeRating } from "@src/monsters/reformat_monster_input";
+import { ChallengeRating } from "@src/data";
 import { generateStandardMonster } from "@src/simulation/standard_monsters";
 import { assert } from "chai";
 import { calculateDamagePerRound, calculateHitProbability } from "./calculate_damage_per_round";
@@ -109,7 +109,7 @@ describe("simulation/calculate_damage_per_round tests", function() {
 
   describe("calculateDamagePerRound():", function() {
     describe("minimal hardcoded monsters:", function() {
-      function generateSimpleMonster(level: number, challengeRating: MonsterChallengeRating) {
+      function generateSimpleMonster(level: number, challengeRating: ChallengeRating) {
         return {
           accuracy: 4,
           challengeRating,

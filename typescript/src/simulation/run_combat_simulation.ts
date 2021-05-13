@@ -1,4 +1,5 @@
-import { MonsterBase, MonsterChallengeRating } from "@src/monsters/reformat_monster_input";
+import {ChallengeRating} from '@src/data';
+import { MonsterBase } from "@src/monsters/reformat_monster_input";
 import { calculateDamagePerRound } from "@src/simulation/calculate_damage_per_round";
 import { generateStandardMonster } from "@src/simulation/standard_monsters";
 
@@ -11,7 +12,7 @@ export function runCombatSimulation({
   roundPrecision,
   startingAttributePool,
 }: {
-  challengeRatingPool?: MonsterChallengeRating[];
+  challengeRatingPool?: ChallengeRating[];
   customizeMonsterA?(monster: MonsterBase): void;
   customizeMonsterB?(monster: MonsterBase): void;
   formatOutput?(roundsMonsterASurvives: string, roundsMonsterBSurvives: string): void;

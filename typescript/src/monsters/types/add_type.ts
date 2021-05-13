@@ -3,7 +3,7 @@ import {
   MonsterGroupInput,
   MonsterInput,
 } from "@src/monsters/reformat_monster_input";
-import { MonsterType } from "@src/monsters/types";
+import { MonsterType } from "@src/data";
 
 export type TypelessMonsterInput =
   | Omit<MonsterBaseInput, "monsterType">

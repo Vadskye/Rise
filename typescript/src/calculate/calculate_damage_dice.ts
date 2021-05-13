@@ -1,4 +1,4 @@
-import { MonsterChallengeRating } from "@src/monsters/reformat_monster_input";
+import { ChallengeRating } from "@src/data";
 
 export interface DamageDice {
   count: number;
@@ -10,7 +10,7 @@ export function calculateDamageDice(
   baseDamageDie: string,
   level: number,
   flatBonus: number,
-  challengeRating: MonsterChallengeRating,
+  challengeRating: ChallengeRating,
 ): DamageDice {
   let [count, size] = baseDamageDie.split("d").map(Number);
   // +1d at 4/7/10, just like player abilities

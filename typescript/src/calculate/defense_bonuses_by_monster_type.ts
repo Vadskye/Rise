@@ -1,5 +1,4 @@
-import { DefenseType } from "@src/data";
-import { MonsterType } from "@src/monsters/types";
+import { DefenseType, MonsterType } from "@src/data";
 
 // Like PCs, monster defense bonuses should sum to 15.
 // Monster defense bonuses are generally more balanced than PC defense bonuses.

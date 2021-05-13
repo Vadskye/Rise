@@ -9,11 +9,12 @@ import {
   monsterToLatex,
 } from "@src/latex";
 import { monstersByType } from "@src/monsters";
-import { MonsterType, monsterTypes, typeDescriptions } from "@src/monsters/types";
+import { typeDescriptions } from "@src/monsters/types";
 import { mysticSpheres } from "@src/mystic_spheres";
 import { titleCase } from "change-case";
 import cli from "commander";
 import fs from "fs";
+import { MonsterType, monsterTypes, } from "@src/data";
 
 function formatPluralMonsterType(monsterType: MonsterType): string {
   if (["planeforged", "undead"].includes(monsterType)) {

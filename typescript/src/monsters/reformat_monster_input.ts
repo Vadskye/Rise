@@ -16,10 +16,12 @@ import {
 } from "@src/calculate";
 import {
   attributes,
+  ChallengeRating,
   DamageType,
   damageTypes,
   DefenseType,
   defenseTypes,
+  MonsterType,
   MovementMode,
   skills,
 } from "@src/data";
@@ -38,7 +40,6 @@ import {
   Weapon,
   WeaponInput,
 } from "@src/monsters/mechanics";
-import { MonsterType } from "@src/monsters/types";
 import { fromPairs } from "@src/util/from_pairs";
 import _ from "lodash";
 
@@ -66,15 +67,13 @@ export function monsterIsMonsterGroup(monster: Monster): monster is MonsterGroup
 
 export type MonsterInput = MonsterBaseInput | MonsterGroupInput;
 
-export type MonsterChallengeRating = 0.5 | 1 | 2 | 3 | 4;
-
 export interface MonsterBaseInput {
   accuracyBonus?: number;
   alignment: string;
   attackInputs?: AttackInput[];
   activeAbilityInputs?: ActiveAbilityInput[];
   armorInputs?: ArmorInput[];
-  challengeRating?: MonsterChallengeRating;
+  challengeRating?: ChallengeRating;
   defenseBonuses?: Partial<Record<DefenseType, number>>;
   delayedCalculations?: Array<(monster: MonsterBase) => void>;
   description?: string | null;
