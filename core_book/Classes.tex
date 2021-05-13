@@ -2421,7 +2421,7 @@ This choice determines a great deal about your character's abilities.
         All abilities from this archetype are \glossterm{magical}.
 
         \cf{Mnk}[0]{Ki Barrier}
-        While you have no other body armor, you gain a ki barrier around your body.
+        While you are not wearing other body armor, you gain a ki barrier around your body.
         This functions like body armor that provides a \plus2 bonus to Armor defense and has no \glossterm{encumbrance}.
         It also provides a \plus4 bonus to \glossterm{resistance} against \glossterm{energy damage}, and a \plus2 bonus to \glossterm{resistance} against \glossterm{physical damage}.
         The armor has no \glossterm{encumbrance}.
@@ -4047,7 +4047,7 @@ This choice determines a great deal about your character's abilities.
             This bonus is considered to come from a shield, and does not stack with the benefits of using any other shield.
 
             This ability lasts until you use it again or until you \glossterm{dismiss} it as a free action.
-            In addition, it is automatically dismissed if you have other body armor of any kind.
+            In addition, it is automatically dismissed if you wear other body armor of any kind.
         \end{durationability}
 
         \cf{Sor}[1]{Spellcasting}
@@ -4286,16 +4286,16 @@ This choice determines a great deal about your character's abilities.
 \section{Warlock}\label{Warlock}
     \begin{dtable!*}
         \lcaption{Warlock Progression}
-\begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-    \tb{Rank} & \tb{Min Level} & \tb{Blessings of the Abyss} & \tb{Pact Magic}                         & \tb{Pact Spell Mastery}       & \tb{Soulkeeper's Chosen} \tableheaderrule
-    0         & \tdash         & Fiendish resistance         & Armor tolerance, cantrips               & Combat caster                 & Empowering whispers         \\
-    1         & 1              & Abyssal blast               & Spellcasting                            & Mystic insight                & Possession                  \\
-    2         & 4              & Abyssal sphere              & Spell rank (2), spell knowledge         & Soulkeeper's guidance         & Exchange soul fragment      \\
-    3         & 7              & Banish to the abyss         & Spell rank (3), greater armor tolerance & Wellspring of power           & Greater empowering whispers \\
-    4         & 10             & Hellfire                    & Spell rank (4), spell knowledge         & Mystic insight                & Greater possession          \\
-    5         & 13             & Greater fiendish resistance & Spell rank (5)                          & Greater soulkeeper's guidance & Exchange vitality           \\
-    6         & 16             & Abyssal curse               & Spell rank (6), supreme armor tolerance & Greater wellspring of power   & Supreme empowering whispers \\
-    7         & 19             & Brimstone                   & Spell rank (7), spell knowledge         & Mystic insight                & Supreme possession          \\
+\begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+    \tb{Rank} & \tb{Min Level} & \tb{Blessings of the Abyss} & \tb{Keeper of Forbidden Knowledge} & \tb{Pact Magic}                         & \tb{Pact Spell Mastery}       & \tb{Soulkeeper's Chosen} \tableheaderrule
+    0 & \tdash & Fiendish resistance         & Reader of hidden tomes           & Armor tolerance, cantrips               & Combat caster                 & Empowering whispers         \\
+    1 & 1      & Abyssal blast               & Eldritch secret                  & Spellcasting                            & Mystic insight                & Possession                  \\
+    2 & 4      & Abyssal sphere              & Unnatural insight                & Spell rank (2), spell knowledge         & Soulkeeper's guidance         & Exchange soul fragment      \\
+    3 & 7      & Banish to the abyss         & Lore of corrupting power         & Spell rank (3), greater armor tolerance & Wellspring of power           & Greater empowering whispers \\
+    4 & 10     & Hellfire                    & Greater eldritch secret          & Spell rank (4), spell knowledge         & Mystic insight                & Greater possession          \\
+    5 & 13     & Greater fiendish resistance & Greater unnatural insight        & Spell rank (5)                          & Greater soulkeeper's guidance & Exchange vitality           \\
+    6 & 16     & Abyssal curse               & Greater lore of corrupting power & Spell rank (6), supreme armor tolerance & Greater wellspring of power   & Supreme empowering whispers \\
+    7 & 19     & Brimstone                   & Supreme eldritch secret          & Spell rank (7), spell knowledge         & Mystic insight                & Supreme possession          \\
 \end{dtabularx}
     \end{dtable!*}
 
@@ -4447,9 +4447,61 @@ This choice determines a great deal about your character's abilities.
         That creature then becomes immune to this effect until it takes a \glossterm{short rest}.
 
     \newpage
+    \subsection{Keeper of Forbidden Knowledge}
+        This archetype grants you access to dangerous secrets revealed to you by your soulkeeper.
+
+        \cf{War}[0]{Reader of Hidden Tomes} You treat all Knowledge skills as class skills for you.
+        In addition, you gain a \plus2 bonus to all Knowledge skills.
+
+        \cf{War}[1]{Eldritch Secret} You learn one secret of your choice from the following list.
+        Each secret grants great power at a cost.
+        {
+            \parhead{Secret of Bloodforging} While you are not wearing other body armor, your blood flows to the surface of your skin, manifesting a carapace of armor around you.
+            This functions like body armor that provides a \plus3 bonus to Armor defense and has no \glossterm{encumbrance}.
+            It also provides a \plus6 bonus to \glossterm{resistance} against \glossterm{physical damage}, and a \plus3 bonus to \glossterm{resistance} against \glossterm{energy damage}.
+            However, the \textit{recover} action heals you for half as many hit points as it normally would.
+
+            \parhead{Secret of Bloodsharing} Once per round, when you deal damage to a creature that causes it to lose \glossterm{hit points}, you regain \glossterm{hit points} equal to half the the hit points the creature lost this way.
+            However, whenever you take damage, half of that damage is applied to your \glossterm{hit points} directly, ignoring your resistances.
+
+            \parhead{Secret of Soulcursing} Whenever you would inflict a \glossterm{condition} on a creature that is not already under the effects of a Curse, that effect becomes a Curse on it instead of a condition.
+            It is removed when the creature takes a \glossterm{short rest}.
+            However, whenever you would gain a \glossterm{condition}, if you are not already under the effects of a Curse, that effect becomes a Curse on you instead of a condition.
+            It is removed when you take a short rest.
+        }
+
+        \cf{War}[2]{Unnatural Insight} You gain up to two additional \glossterm{insight points}.
+        For each insight point you gain in this way, you take a \minus1 penalty to all skills other than Knowledge skills.
+        For each insight point you choose not to gain in this way, you gain a \plus1 bonus to all Knowledge skills.
+
+        \cf{War}[3]{Lore of Corrupting Power} You gain a \plus4 bonus to \glossterm{power}.
+        However, you take a \minus2 penalty to Mental defense.
+
+        \cf{War}[4]{Greater Eldritch Secret} Your understanding of your chosen secret improves.
+        {
+            \parhead{Secret of Bloodforging} The resistance bonuses provided by the armor increase to a \plus16 bonus against physical damage and a \plus8 bonus against energy damage.
+
+            \parhead{Secret of Bloodsharing} The healing increases to be equal to the hit points lost by the creature you deal damage to.
+
+            \parhead{Secret of Soulcursing} You can convert conditions into Curse effects against creatures that already have a single Curse effect active on them.
+        }
+
+        \cf{War}[5]{Greater Unnatural Insight} The maximum number of insight points you can gain with your \textit{unnatural insight} ability increases to four.
+
+        \cf{War}[6]{Greater Lore of Corrupting Power} The bonus from your \textit{lore of corrupting power} ability increases to \plus8.
+
+        \cf{War}[7]{Supreme Eldritch Secret} Your understanding of your chosen secret improves again.
+        {
+            \parhead{Secret of Bloodforging} The resistance bonuses provided by the armor increase to a \plus40 bonus against physical damage and a \plus20 bonus against energy damage.
+
+            \parhead{Secret of Bloodsharing} You can trigger the healing effect twice per round.
+
+            \parhead{Secret of Soulcursing} You can convert conditions into Curse effects with this ability regardless of the number of Curse effects active on the subject.
+        }
+
+    \newpage
     \subsection{Pact Magic}
         This archetype grants you the ability to cast pact spells.
-        You must have a base Willpower of at least 1 to gain this archetype.
         All abilities from this archetype are \glossterm{magical}.
 
         \cf{War}[0]{Cantrips}
