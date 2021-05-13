@@ -336,13 +336,13 @@ export const barrier: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You gain a +5 \\glossterm{magic bonus} to your \\glossterm{resistance} against \\glossterm{physical} damage.
+        You gain a +6 \\glossterm{magic bonus} to your \\glossterm{resistance} against \\glossterm{physical} damage.
       `,
       rank: 1,
       scaling: {
-        3: `The bonus increases to +10.`,
-        5: `The bonus increases to +20.`,
-        7: `The bonus increases to +40.`,
+        3: `The bonus increases to +12.`,
+        5: `The bonus increases to +24.`,
+        7: `The bonus increases to +48.`,
       },
       type: "Attune (self)",
     },
@@ -357,8 +357,8 @@ export const barrier: MysticSphere = {
       },
       rank: 3,
       scaling: {
-        5: `The bonus increases to +8.`,
-        7: `The bonus increases to +16.`,
+        5: `The bonus increases to +12.`,
+        7: `The bonus increases to +24.`,
       },
       type: "Attune (target)",
     },
@@ -369,13 +369,13 @@ export const barrier: MysticSphere = {
       effect: `
         You can cast this spell as a \\glossterm{minor action}.
 
-        You gain a +20 \\glossterm{magic bonus} to \\glossterm{resistance} against \\glossterm{physical damage}.
+        You gain a +24 \\glossterm{magic bonus} to \\glossterm{resistance} against \\glossterm{physical damage}.
         In addition, whenever you resist physical damage, the attacker takes energy damage equal to half the damage resisted this way.
         If the attacker is beyond \\shortrange of you, this reflection fails.
         Any effect which increases this spell's range increases the range of this effect by the same amount.
       `,
       rank: 5,
-      scaling: { 7: `The bonus increases to +40.` },
+      scaling: { 7: `The bonus increases to +48.` },
       type: "Attune (self)",
     },
 
@@ -384,13 +384,13 @@ export const barrier: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You gain a +5 \\glossterm{magic bonus} to your \\glossterm{resistance} against \\glossterm{energy} damage.
+        You gain a +6 \\glossterm{magic bonus} to your \\glossterm{resistance} against \\glossterm{energy} damage.
       `,
       rank: 1,
       scaling: {
-        3: `The bonus increases to +10.`,
-        5: `The bonus increases to +20.`,
-        7: `The bonus increases to +40.`,
+        3: `The bonus increases to +12.`,
+        5: `The bonus increases to +24.`,
+        7: `The bonus increases to +48.`,
       },
       type: "Attune (self)",
     },
@@ -405,8 +405,8 @@ export const barrier: MysticSphere = {
       },
       rank: 3,
       scaling: {
-        5: `The bonus increases to +8.`,
-        7: `The bonus increases to +16.`,
+        5: `The bonus increases to +12.`,
+        7: `The bonus increases to +24.`,
       },
       type: "Attune (target)",
     },
@@ -415,12 +415,12 @@ export const barrier: MysticSphere = {
       name: "Universal Shield",
 
       effect: `
-        You gain a +7 \\glossterm{magic bonus} to your \\glossterm{resistances} against both \\glossterm{physical damage} and \\glossterm{energy damage}.
+        You gain a +8 \\glossterm{magic bonus} to your \\glossterm{resistances} against both \\glossterm{physical damage} and \\glossterm{energy damage}.
       `,
       rank: 3,
       scaling: {
-        5: `The bonus increases to +14.`,
-        7: `The bonus increases to +28.`,
+        5: `The bonus increases to +16.`,
+        7: `The bonus increases to +32.`,
       },
       type: "Attune (self)",
     },
@@ -435,7 +435,7 @@ export const barrier: MysticSphere = {
       },
       rank: 5,
       scaling: {
-        7: `The bonus increases to +14.`,
+        7: `The bonus increases to +16.`,
       },
       type: "Attune (target)",
     },

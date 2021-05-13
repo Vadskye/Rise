@@ -432,7 +432,7 @@ export const bless: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        The subject gains a +7 \\glossterm{magic bonus} to its \\glossterm{resistances} against both \\glossterm{physical} damage and \\glossterm{energy} damage.
+        The subject gains a +9 \\glossterm{magic bonus} to its \\glossterm{resistances} against both \\glossterm{physical} damage and \\glossterm{energy} damage.
 
         You can only have one casting of this spell active at once.
         When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
@@ -441,7 +441,7 @@ export const bless: MysticSphere = {
       scaling: {
         5: `Casting this spell does not remove previous attunements to this spell.
                 In addition, you can choose to cast this spell with the \\abilitytag{Sustain} (minor) tag instead of the \\abilitytag{Attune} (target) tag.`,
-        7: `The bonus increases to +14.`,
+        7: `The bonus increases to +18.`,
       },
       type: "Attune (target)",
     },

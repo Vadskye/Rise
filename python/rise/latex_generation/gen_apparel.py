@@ -2029,11 +2029,11 @@ def generate_apparel():
             tags=[],
             material_type="Ring",
             description="""
-                You gain a +5 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<energy damage>.
+                You gain a +6 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<energy damage>.
                 When you resist energy damage, this item sheds light as a torch until the end of the next round.
                 The color of the light depends on the energy damage resisted: blue for cold, yellow for electricity, and red for fire.
             """,
-            short_description="Grants +5 energy resistance",
+            short_description="Grants +6 energy resistance",
         ),
         MagicItem(
             name="Ring of Energy Resistance, Greater",
@@ -2041,9 +2041,9 @@ def generate_apparel():
             tags=[],
             material_type="Ring",
             description="""
-                This item functions like a \\mitem<ring of energy resistance>, except that the bonus is equal to +10.
+                This item functions like a \\mitem<ring of energy resistance>, except that the bonus is equal to +12.
             """,
-            short_description="Grants +10 energy resistance",
+            short_description="Grants +12 energy resistance",
         ),
         MagicItem(
             name="Ring of Energy Resistance, Supreme",
@@ -2051,9 +2051,9 @@ def generate_apparel():
             tags=[],
             material_type="Ring",
             description="""
-                This item functions like a \\mitem<ring of energy resistance>, except that the bonus is equal to +20.
+                This item functions like a \\mitem<ring of energy resistance>, except that the bonus is equal to +24.
             """,
-            short_description="Grants +20 energy resistance",
+            short_description="Grants +24 energy resistance",
         ),
     ]
 
@@ -2099,9 +2099,9 @@ def generate_apparel():
             tags=[],
             material_type="Amulet",
             description="""
-                You gain a +5 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
+                You gain a +6 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
             """,
-            short_description="Grants +5 physical resistance",
+            short_description="Grants +6 physical resistance",
         ),
         MagicItem(
             name="Amulet of Kinetic Absorption, Greater",
@@ -2109,9 +2109,9 @@ def generate_apparel():
             tags=[],
             material_type="Amulet",
             description="""
-                You gain a +10 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
+                You gain a +12 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
             """,
-            short_description="Grants +10 physical resistance",
+            short_description="Grants +12 physical resistance",
         ),
         MagicItem(
             name="Amulet of Kinetic Absorption, Supreme",
@@ -2119,9 +2119,9 @@ def generate_apparel():
             tags=[],
             material_type="Amulet",
             description="""
-                You gain a +20 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
+                You gain a +24 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
             """,
-            short_description="Grants +20 physical resistance",
+            short_description="Grants +24 physical resistance",
         ),
     ]
 
