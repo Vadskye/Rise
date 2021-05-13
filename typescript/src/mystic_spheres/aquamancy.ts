@@ -460,9 +460,9 @@ export const aquamancy: MysticSphere = {
         `,
         name: "aqueous tentacle",
       },
-      rank: 5,
+      rank: 4,
       scaling: {
-        7: "You gain a +5 bonus to \\glossterm{reach} with attacks using the tentacles.",
+        6: "You gain a +5 bonus to \\glossterm{reach} with attacks using the tentacles.",
       },
       type: "Attune (self)",
     },
@@ -472,7 +472,7 @@ export const aquamancy: MysticSphere = {
       effect: `
         You grow a massive watery tentacle that extends from your body.
         The tentacle grants you a slam \\glossterm{natural weapon} (see \\tref{Natural Weapons}).
-        The natural weapon deals 1d10 damage, as normal for a slam natural weapon.
+        The natural weapon deals 1d10 damage, as normal for a slam natural weapon, and it has the Sweeping (1) tag.
         In addition, it has the Long \\glossterm{weapon tag} (see \\pcref{Weapon Tags}).
         Strikes using the tentacle are considered \\glossterm{magical} abilities, which means you use your \\glossterm{magical} \\glossterm{power} to determine their damage.
       `,
