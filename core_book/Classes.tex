@@ -750,7 +750,7 @@ This choice determines a great deal about your character's abilities.
             \hit Each subject is \dazed until the end of the next round.
 
             \rankline
-            \rank{3} The area increases to a \largearea radius, and the effect becomes a \glossterm{condition} on a critical hit.
+            \rank{3} The area increases to a \largearea radius.
             \rank{5} The area increases to a \hugearea radius.
             \rank{7} The area increases to a \gargarea radius.
         \end{instantability}
@@ -3385,16 +3385,16 @@ This choice determines a great deal about your character's abilities.
 \section{Rogue}\label{Rogue}
     \begin{dtable!*}
         \lcaption{Rogue Progression}
-\begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-    \tb{Rank} & \tb{Min Level} & \tb{Assassin}       & \tb{Bardic Music}                             & \tb{Combat Trickster}                     & \tb{Jack of All Trades} \tableheaderrule
-    0 & \tdash & Stealthy instincts  & Bardic lore                            & Tricky finesse                            & Dabbler              \\
-    1 & 1      & Sneak attack        & Bardic performances                    & Combat styles           & Skill exemplar          \\
-    2 & 4      & Evasion             & Combat inspiration                     & Combat style rank (2), tricky force       & Greater dabbler                 \\
-    3 & 7      & Darkstalker         & Bardic performance, loremaster         & Combat style rank (3), glancing strikes         & Versatile power         \\
-    4 & 10     & Hide in plain sight & Virtuoso                               & Combat style rank (4), trick maneuver   & Greater skill exemplar  \\
-    5 & 13     & Greater evasion     & Greater combat inspiration             & Combat style rank (5), greater tricky force & Supreme dabbler         \\
-    6 & 16     & Assassination       & Bardic performance, greater loremaster & Combat style rank (6), greater tricky finesse & Greater versatile power \\
-    7 & 19     & Greater darkstalker & Greater virtuoso                       & Combat style rank (7), trick maneuver         & Supreme skill exemplar  \\
+\begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+    \tb{Rank} & \tb{Min Level} & \tb{Assassin}       & \tb{Bardic Music}                             & \tb{Combat Trickster}                     & \tb{Jack of All Trades} & \tb{Suave Scoundrel} \tableheaderrule
+    0 & \tdash & Stealthy instincts  & Bardic lore                            & Tricky finesse                                & Dabbler                 & Smooth liar                 \\
+    1 & 1      & Sneak attack        & Bardic performances                    & Combat styles                                 & Skill exemplar          & Confound                    \\
+    2 & 4      & Evasion             & Combat inspiration                     & Combat style rank (2), tricky force           & Greater dabbler         & Slippery mind               \\
+    3 & 7      & Darkstalker         & Bardic performance, loremaster         & Combat style rank (3), glancing strikes       & Versatile power         & Exploit distraction         \\
+    4 & 10     & Hide in plain sight & Virtuoso                               & Combat style rank (4), trick maneuver         & Greater skill exemplar  & What's that over there      \\
+    5 & 13     & Greater evasion     & Greater combat inspiration             & Combat style rank (5), greater tricky force   & Supreme dabbler         & Greater slippery mind       \\
+    6 & 16     & Assassination       & Bardic performance, greater loremaster & Combat style rank (6), greater tricky finesse & Greater versatile power & Greater exploit distraction \\
+    7 & 19     & Greater darkstalker & Greater virtuoso                       & Combat style rank (7), trick maneuver         & Supreme skill exemplar  & Nothing is real             \\
 \end{dtabularx}
     \end{dtable!*}
 
@@ -3911,57 +3911,60 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rog}[7]{Supreme Skill Exemplar} The skill bonus from your \textit{skill exemplar} ability increases to \plus5.
 
-    % \subsection{Suave Scoundrel}
-    %     This archetype improves your social manipulation abilities.
+    \subsection{Suave Scoundrel}
+        This archetype improves your deceptiveness and helps you make use of that talent in combat.
 
-    %     \cf{Rog}[1]{Confound} You can use the \textit{confound} ability as a standard action.
-    %     \begin{freeability}{Confound}[\abilitytag{Compulsion}, \abilitytag{Speech}, \abilitytag{Subtle}]
-    %         Make a attack vs. Mental against a creature within \rngshort range.
-    %         You can choose to use your Deception skill to attack in place of your normal \glossterm{accuracy}.
-    %         \hit As a \glossterm{condition}, the target is \dazed.
-    %         That target cannot be affected by this ability again until it takes a \glossterm{short rest}.
+        \cf{Rog}[0]{Smooth Liar} You gain a \plus2 bonus to the Deception skill.
+        In addition, using the \textit{desperate exertion} ability to affect a roll using the Deception skill only causes you to increase your \glossterm{fatigue level} by one instead of two.
 
-    %         \rankline
-    %         \rank{3} On a \glossterm{critical hit}, the target is \confused in addition to being \dazed as part of the same \glossterm{condition}.
-    %         \rank{5} The range increases to \rngmed.
-    %         \rank{7} The target is \confused in addition to being \dazed as part of the same condition.
-    %     \end{freeability}
+        \cf{Rog}[1]{Confound} You can use the \textit{confound} ability as a standard action.
+        \begin{durationability}{Confound}
+            \spelltwocol{Duration}{\abilitytag{Compulsion}}
+            \rankline
+            Make a attack vs. Mental against a creature within \shortrange.
+            Your \glossterm{accuracy} is equal to your Deception skill.
+            \hit The subject is \dazed as a \glossterm{condition}.
 
-    %     \cf{Rog}[2]{Glibness} You gain two additional \glossterm{skill points}.
-    %     In addition, you gain a \plus2 bonus to the Deception, Intimidate, and Persuasion skills.
+            \rankline
+            \rank{3} You can target an additional creature within range.
+            \rank{5} The range increases to \rngmed.
+            \rank{7} The number of targets increases to be up to 5.
+        \end{durationability}
 
-    %     \cf{Rog}[3]{Distract} You can use the \textit{distract} ability as a standard action.
-    %     \begin{freeability}{Distract}[\abilitytag{Compulsion}, \abilitytag{Speech}, \abilitytag{Subtle}]
-    %         Make a attack vs. Mental against a creature within \rngshort range.
-    %         You can choose to use your Deception skill to attack in place of your normal \glossterm{accuracy}.
-    %         \hit Until the end of the next round, the target is \fascinated by a creature or object of your choice within range.
-    %         That target cannot be affected by this ability again until it takes a \glossterm{short rest}.
+        \cf{Rog}[2]{Slippery Mind} You gain a \plus2 bonus to Mental defense.
 
-    %         \rankline
-    %         \rank{5} The range increases to \rngmed.
-    %         \rank{7} The target is also distracted by the creature or object as a \glossterm{condition}.
-    %     \end{freeability}
+        \cf{Rog}[3]{Exploit Distraction} You gain a \plus1 \glossterm{accuracy} bonus against creatures affected by any \glossterm{condition}.
 
-    %     \cf{Rog}[4]{Slippery Mind} You gain a \plus2 bonus to Mental defense.
+        \cf{Rog}[4]{What's That Over There} You can use the \textit{what's that over there} ability as a standard action.
+        \begin{durationability}{What's That Over There}
+            \spelltwocol{Duration}{\abilitytag{Compulsion}}
+            \rankline
+            Make a attack vs. Mental against a creature within \medrange.
+            Your \glossterm{accuracy} is equal to your Deception skill.
+            In addition, choose a location within range.
+            \hit Until the end of the next round, the subject is compelled to move to the location you chose if it can do so safely, and it cannot take any actions except to move to the location and look around at it.
+            This effect automatically ends if the subject takes any damage.
+            After this effect ends, the subject becomes immune to this effect until it takes a \glossterm{short rest}.
 
-    %     \cf{Rog}[5]{Greater Glibness} The bonus from your \textit{glibness} ability increases to \plus4.
+            \rankline
+            \rank{6} You can target an additional creature within range.
+        \end{durationability}
 
-    %     \cf{Rog}[6]{Compel Belief} You can use the \textit{compel belief} ability as a standard action.
-    %     \begin{freeability}{Compel Belief}[\abilitytag{Compulsion}, \glossterm{Magical}, \abilitytag{Speech}, \abilitytag{Subtle}]
-    %         Make an attack vs. Mental against a creature within \rngmed range.
-    %         You can use your Persuasion skill to attack in place of your normal \glossterm{accuracy}.
-    %         You must also choose a belief.
-    %         The belief may be a truth the target knows, a lie that you told it, or even a simple misunderstanding (such as believing a hidden creature is not present in a room).
-    %         If the creature does not already hold the chosen belief, this ability automatically fails.
-    %         \hit As a \glossterm{condition}, the target continues to maintain the chosen belief, regardless of any evidence to the contrary.
-    %         It will interpret any evidence that the falsehood is incorrect to be somehow wrong -- an illusion, a conspiracy to decieve it, or any other reason it can think of to continue believing the falsehood.
-    %         When the effect ends, the creature can decide whether it believes the falsehood or not, as normal.
+        \cf{Rog}[5]{Greater Slippery Mind} The bonus from your \textit{slippery mind} ability increases to \plus3.
+        In addition, any \glossterm{magical} abilities which detect lies are unable to detect lies you speak.
 
-    %         \rankline
-    %         \rank{8} The first time the condition would be removed, it instead remains.
-    %     \end{freeability}
+        \cf{Rog}[6]{Greater Exploit Distraction} The bonus from your \textit{exploit distraction} ability increases to \plus2.
 
-    %     \cf{Rog}[7]{Slippery Mind} The bonus from your \textit{slippery mind} ability increases to \plus4.
+        \cf{Rog}[7]{Nothing Is Real} You can use the \textit{nothing is real} ability as a standard action.
+        \begin{freeability}{Nothing Is Real}
+            \spelltwocol{Duration}{\abilitytag{Compulsion}}
+            \rankline
+            Make an attack vs. Mental against a creature within \shortrange.
+            Your \glossterm{accuracy} is equal to your Deception skill.
+            \hit Until the end of the next round, the subject is convinced that nothing is real.
+            It is unable to take any actions and is \unaware of all attacks against it.
+            After this effect ends, the subject becomes immune to this effect until it takes a \glossterm{short rest}.
+        \end{freeability}
 
 \newpage
 \section{Sorcerer}\label{Mage}
