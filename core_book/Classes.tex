@@ -3006,16 +3006,16 @@ This choice determines a great deal about your character's abilities.
 \section{Ranger}\label{Ranger}
     \begin{dtable!*}
         \lcaption{Ranger Progression}
-\begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X > {\lcol}X}
-    \tb{Rank} & \tb{Min Level} & \tb{Beastmaster}         & \tb{Huntmaster}          & \tb{Scout}                & \tb{Wilderness Warrior} \tableheaderrule
-    0 & \tdash & Beast affinity           & Tracker                  & Keen vision               & Wild senses                                \\
-    1 & 1      & Animal companion         & Quarry                   & Skirmisher                & Combat styles                              \\
-    2 & 4      & Pack tactics             & Hunting style            & Perceive weakness         & Combat style rank (2), wild force          \\
-    3 & 7      & Power of beasts          & Hunter's prowess         & Blindsight                & Combat style rank (3), glancing strikes    \\
-    4 & 10     & Greater animal companion & Greater quarry           & Greater skirmisher        & Combat style rank (4), wild maneuver       \\
-    5 & 13     & Greater pack tactics     & Hunting style            & Greater perceive weakness & Combat style rank (5), greater wild force  \\
-    6 & 16     & Greater power of beasts  & Greater hunter's prowess & Greater blindsight        & Combat style rank (6), greater wild senses \\
-    7 & 19     & Supreme animal companion & Supreme quarry           & Supreme skirmisher        & Combat style rank (7), wild maneuver       \\
+\begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X > {\lcol}X}
+    \tb{Rank} & \tb{Min Level} & \tb{Beastmaster}         & \tb{Boundary Warden}      & \tb{Huntmaster}          & \tb{Scout}                & \tb{Wilderness Warrior} \tableheaderrule
+    0         & \tdash         & Beast affinity           & Terrain familiarity       & Tracker                  & Keen vision               & Wild senses                                \\
+    1         & 1              & Animal companion         & Know your enemy           & Quarry                   & Skirmisher                & Combat styles                              \\
+    2         & 4              & Pack tactics             & Experenced guide          & Hunting style            & Perceive weakness         & Combat style rank (2), wild force          \\
+    3         & 7              & Power of beasts          & Warden's force            & Hunter's prowess         & Blindsight                & Combat style rank (3), glancing strikes    \\
+    4         & 10             & Greater animal companion & Greater know your enemy   & Greater quarry           & Greater skirmisher        & Combat style rank (4), wild maneuver       \\
+    5         & 13             & Greater pack tactics     & Greater experienced guide & Hunting style            & Greater perceive weakness & Combat style rank (5), greater wild force  \\
+    6         & 16             & Greater power of beasts  & Greater warden's force    & Greater hunter's prowess & Greater blindsight        & Combat style rank (6), greater wild senses \\
+    7         & 19             & Supreme animal companion & Supreme know your enemy   & Supreme quarry           & Supreme skirmisher        & Combat style rank (7), wild maneuver       \\
 \end{dtabularx}
     \end{dtable!*}
 
@@ -3111,6 +3111,31 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rgr}[7]{Supreme Animal Companion} Your \textit{animal companion} gains an additional \glossterm{attunement point}.
         In addition, the bonuses from your \textit{greater animal companion} ability increase to \plus2.
+
+    \newpage
+    \subsection{Boundary Warden}
+        This archetype improves your ability to guard the boundaries between civilization and nature.
+
+        \cf{Rgr}[0]{Terrain Familiarity} You ignore \glossterm{difficult terrain} from all sources except for creature abilities.
+
+        \cf{Rgr}[1]{Know Your Enemy} Whenever you take a \glossterm{short rest}, you can choose a creature type: aberration, animal, animate, dragon, humanoid, magical beast, monstrous humanoid, planeforged, or undead.
+        You gain a \plus1 bonus to \glossterm{accuracy} against creatures of that type.
+        This benefit lasts until you choose a different creature type with this ability.
+
+        \cf{Rgr}[2]{Experienced Guide} Your \glossterm{allies} who can see or hear you can ignore \glossterm{difficult terrain} from all sources except for creature abilities.
+        In addition, any group you are part of can travel at full speed through difficult terrain during overland travel (see \pcref{Overland Movement}).
+
+        \cf{Rgr}[3]{Warden's Force} You gain a \plus1d bonus to damage with projectile weapons and light weapons.
+
+        \cf{Rgr}[4]{Greater Know Your Enemy} The bonus from your \textit{know your enemy} ability increases to \plus2.
+        In addition, you can choose two creature types with that ability instead of one.
+
+        \cf{Rgr}[5]{Greater Experienced Guide} You and your \glossterm{allies} who can see or hear you gain a \plus4 bonus to \glossterm{initiative} checks.
+
+        \cf{Rgr}[6]{Greater Warden's Force} The bonus from your \textit{warden's force} ability increases to \plus2d.
+
+        \cf{Rgr}[7]{Supreme Know Your Enemy} The bonus from your \textit{know your enemy} ability increases to \plus3.
+        In addition, you can choose three creature types with that ability instead of two.
 
     \newpage
     \subsection{Huntmaster}
@@ -3355,13 +3380,6 @@ This choice determines a great deal about your character's abilities.
             \cf*{Rgr}[7]{Wild Maneuver}
             You learn an additional \glossterm{maneuver} from a combat style you have access to (see \pcref{Combat Styles}).
         }
-
-    % \subsection{Boundary Warden}
-    %     This archetype grants you abilities improving your ability to guard the boundaries between civilization and nature.
-
-    %     \cf{Rgr}[2]{Favored Terrain} Choose one of the following terrain types: 
-    %     You can also spend \glossterm{insight points} to choose one additional creature type per \glossterm{insight point}.
-    %     You gain a \plus1 bonus to all \glossterm{defenses} and a \plus10 foot bonus to land speed while in any terrain you chose.
 
 \newpage
 \section{Rogue}\label{Rogue}
