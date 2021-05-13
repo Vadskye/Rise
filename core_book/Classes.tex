@@ -2695,7 +2695,7 @@ This choice determines a great deal about your character's abilities.
 
     \classbasics{Alignment} Any other than true neutral.
 
-    \classbasics{Archetypes} Paladins have the Devoted Paragon, Divine Magic, Stalwart Guardian, and Zealous Warrior \glossterm{archetypes}.
+    \classbasics{Archetypes} Paladins have the Devoted Paragon, Divine Magic, Divine Spell Expertise, Stalwart Guardian, and Zealous Warrior \glossterm{archetypes}.
 
     \subsection{Basic Class Abilities}
         If you are a paladin, you gain the following abilities.
@@ -3021,7 +3021,7 @@ This choice determines a great deal about your character's abilities.
 
     \classbasics{Alignment} Any.
 
-    \classbasics{Archetypes} Rangers have the Beastmaster, Huntmaster, Scout, and Wilderness Warrior \glossterm{archetypes}.
+    \classbasics{Archetypes} Rangers have the Beastmaster, Boundary Warden, Huntmaster, Scout, and Wilderness Warrior \glossterm{archetypes}.
 
     \subsection{Basic Class Abilities}
         If you are a ranger, you gain the following abilities.
@@ -3400,7 +3400,7 @@ This choice determines a great deal about your character's abilities.
 
     \classbasics{Alignment} Any.
 
-    \classbasics{Archetypes} Rogues have the Assassin, Bardic Music, Combat Trickster, and Jack of All Trades \glossterm{archetypes}.
+    \classbasics{Archetypes} Rogues have the Assassin, Bardic Music, Combat Trickster, Jack of All Trades, and Suave Scoundrel \glossterm{archetypes}.
 
     \subsection{Basic Class Abilities}
         If you are a rogue, you gain the following abilities.
@@ -4301,7 +4301,7 @@ This choice determines a great deal about your character's abilities.
 
     \classbasics{Alignment} Any.
 
-    \classbasics{Archetypes} Warlocks have the Blessings of the Abyss, Pact Magic, Pact Spell Mastery, and Soulkeeper's Chosen \glossterm{archetypes}.
+    \classbasics{Archetypes} Warlocks have the Blessings of the Abyss, Keeper of Forbidden Knowledge, Pact Magic, Pact Spell Mastery, and Soulkeeper's Chosen \glossterm{archetypes}.
 
     \subsection{Basic Class Abilities}
         If you are a warlock, you gain the following abilities.
@@ -4699,16 +4699,16 @@ This choice determines a great deal about your character's abilities.
 \section{Wizard}\label{Wizard}
     \begin{dtable!*}
         \lcaption{Wizard Progression}
-\begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-    \tb{Rank} & \tb{Min Level} & \tb{Alchemist}              & \tb{Arcane Magic}                  & \tb{Arcane Scholar}     & \tb{Arcane Spell Mastery}   \tableheaderrule
-    0 & \tdash & Alchemical infusion          & Cantrips, mage armor               & Deep knowledge       & Mystic sphere               \\
-    1 & 1      & Portable workshop            & Spellcasting                       & Ritualist            & Mystic insight              \\
-    2 & 4      & Alchemical discovery         & Spell rank (2), spell knowledge    & Scholastic insight   & Arcane attunement           \\
-    3 & 7      & Experienced quaffing         & Spell rank (3), greater mage armor & Contingency          & Wellspring of power         \\
-    4 & 10     & Alchemical discovery         & Spell rank (4), spell knowledge    & Scholastic insight   & Mystic insight              \\
-    5 & 13     & Greater portable workshop    & Spell rank (5)                     & Greater ritualist    & Greater arcane attunement   \\
-    6 & 16     & Alchemical discovery         & Spell rank (6), supreme mage armor & Scholastic insight   & Greater wellspring of power \\
-    7 & 19     & Greater experienced quaffing & Spell rank (7), spell knowledge    & Multiple contingency & Mystic insight              \\
+\begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+    \tb{Rank} & \tb{Min Level} & \tb{Alchemist}               & \tb{Arcane Magic}                  & \tb{Arcane Scholar}  & \tb{Arcane Spell Mastery}   & \tb{School Specialization}  \tableheaderrule
+    0 & \tdash & Alchemical infusion          & Cantrips, mage armor               & Deep knowledge       & Mystic sphere               & School specialist             \\
+    1 & 1      & Portable workshop            & Spellcasting                       & Ritualist            & Mystic insight              & Scholastic discovery          \\
+    2 & 4      & Alchemical discovery         & Spell rank (2), spell knowledge    & Scholastic insight   & Arcane attunement           & Spell knowledge               \\
+    3 & 7      & Experienced quaffing         & Spell rank (3), greater mage armor & Contingency          & Wellspring of power         & Scholastic attunement         \\
+    4 & 10     & Alchemical discovery         & Spell rank (4), spell knowledge    & Scholastic insight   & Mystic insight              & Greater scholastic discovery  \\
+    5 & 13     & Greater portable workshop    & Spell rank (5)                     & Greater ritualist    & Greater arcane attunement   & Spell knowledge               \\
+    6 & 16     & Alchemical discovery         & Spell rank (6), supreme mage armor & Scholastic insight   & Greater wellspring of power & Greater scholastic attunement \\
+    7 & 19     & Greater experienced quaffing & Spell rank (7), spell knowledge    & Multiple contingency & Mystic insight              & Supreme scholastic discovery  \\
 \end{dtabularx}
     \end{dtable!*}
 
@@ -4989,3 +4989,82 @@ This choice determines a great deal about your character's abilities.
 
         \cf*{Wiz}[7]{Mystic Insight}
         You gain an additional \textit{mystic insight} ability.
+
+    \newpage
+    \subsection{School Specialist}
+        This archetype improves your ability to cast spells from a particular school of magic while sacrificing some versatility.
+        You have the Arcane Magic archetype from the wizard class to gain the abilities from this archetype.
+
+        \cf{Wiz}[0]{School Specialization} The arcane mystic spheres can be divided into six traditional schools of magic.
+        Choose one of the following schools of magic.
+        You are a specialist in your chosen school.
+        You cannot gain access to any arcane mystic spheres outside of your specialist school.
+        In exchange, you gain an additional \glossterm{insight point}.
+        \begin{itemize}
+            \item Abjuration: \sphere{barrier}, \sphere{telekinesis}, \sphere{thaumaturgy}
+            \item Conjuration: \sphere{astromancy}, \sphere{fabrication}, \sphere{summoning}
+            \item Evocation: \sphere{cryomancy}, \sphere{electromancy}, \sphere{pyromancy}
+            \item Illusion: \sphere{enchantment}, \sphere{photomancy}, \sphere{umbramancy}
+            \item Transmutation: \sphere{chronomancy}, \sphere{polymorph}, \sphere{terramancy}
+            \item Necromancy: \sphere{revelation}, \sphere{vivimancy}
+        \end{itemize}
+
+        \cf{Wiz}[1]{Scholastic Discovery} You gain an ability based on your chosen school.
+        {
+            \subcf{Abjuration} You gain a bonus equal to twice your rank in this archetype to your \glossterm{resistances} against both \glossterm{physical damage} and \glossterm{energy damage} (see \pcref{Resistances}).
+
+            \subcf{Conjuration} You double the \glossterm{range} of arcane spells you cast.
+
+            \subcf{Evocation} You gain a \plus2 bonus to \glossterm{power}.
+
+            \subcf{Illusion} You gain a \plus1 bonus to \glossterm{accuracy}.
+
+            \subcf{Transmutation} You gain a \plus2 bonus to Fortitude, Reflex, or Mental defense.
+            You can change the defense this bonus applies to as a \glossterm{minor action}.
+
+            \subcf{Necromancy} You gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{hit points}.
+            In addition, you gain a \plus1 bonus to Fortitude defense.
+        }
+
+        \cf*{Wiz}[2]{Spell Knowledge} You learn an additional arcane spell.
+
+        \cf{Wiz}[3]{Scholastic Attunement} You gain an additional \glossterm{attunement point}.
+        You can only use this attunement point to \glossterm{attune} to a spell from your chosen school.
+
+        \cf{Wiz}[4]{Greater Scholastic Discovery} Your understanding of your chosen school improves.
+        {
+            \subcf{Abjuration} The bonus to resistances increases to three times your rank in this archetype.
+
+            \subcf{Conjuration} The range improvement increases to triple your range.
+
+            \subcf{Evocation} The power bonus increases to \plus4.
+
+            \subcf{Illusion} The accuracy bonus increases to \plus2.
+
+            \subcf{Transmutation} The defense bonus increases to \plus3.
+            In addition, changing which defense the bonus applies to becomes a \abilitytag{Swift} effect, so it protects you from attacks during the phase that you change it.
+
+            \subcf{Necromancy} The hit point bonus increases to five times your rank in this archetype.
+            In addition, the Fortitude bonus increases to \plus2.
+        }
+
+        \cf*{Wiz}[5]{Spell Knowledge} You learn an additional arcane spell.
+
+        \cf{Wiz}[6]{Greater Scholastic Attunement} The number of attunement points you gain from your \textit{scholastic attunement} ability increases to two.
+
+        \cf{Wiz}[7]{Supreme Scholastic Discovery} Your understanding of your chosen school improves further.
+        {
+            \subcf{Abjuration} The bonus to resistances increases to four times your rank in this archetype.
+
+            \subcf{Conjuration} The range improvement increases to quadruple your range.
+
+            \subcf{Evocation} The power bonus increases to \plus8.
+
+            \subcf{Illusion} The accuracy bonus increases to \plus3.
+
+            \subcf{Transmutation} The defense bonus increases to \plus4.
+            In addition, you can change which defense the bonus applies to as a \glossterm{free action}.
+
+            \subcf{Necromancy} The hit point bonus increases to seven times your rank in this archetype.
+            In addition, the Fortitude bonus increases to \plus3.
+        }
