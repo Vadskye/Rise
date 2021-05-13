@@ -1,5 +1,6 @@
+import { MonsterType, monsterTypes } from "@src/data";
 import { Monster, processMonsterInput } from "@src/monsters/reformat_monster_input";
-import { monsterInputsByType, MonsterType, monsterTypes } from "@src/monsters/types";
+import { monsterInputsByType } from "@src/monsters/types";
 import { fromPairs } from "@src/util/from_pairs";
 import _ from "lodash";
 

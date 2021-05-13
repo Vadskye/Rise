@@ -1,4 +1,5 @@
 import { defenseBonusesByMonsterType } from "@src/calculate/defense_bonuses_by_monster_type";
+import { MonsterType } from "@src/data";
 import * as format from "@src/latex/format";
 import { MonsterInput } from "@src/monsters/reformat_monster_input";
 import { aberrations } from "./aberrations";
@@ -10,29 +11,6 @@ import { magicalBeasts } from "./magical_beasts";
 import { monstrousHumanoids } from "./monstrous_humanoids";
 import { planeforged } from "./planeforged";
 import { undead } from "./undead";
-
-export type MonsterType =
-  | "aberration"
-  | "animal"
-  | "animate"
-  | "dragon"
-  | "humanoid"
-  | "magical beast"
-  | "monstrous humanoid"
-  | "planeforged"
-  | "undead";
-
-export const monsterTypes: MonsterType[] = [
-  "aberration",
-  "animal",
-  "animate",
-  "dragon",
-  "humanoid",
-  "magical beast",
-  "monstrous humanoid",
-  "planeforged",
-  "undead",
-];
 
 export const monsterInputsByType: Record<MonsterType, MonsterInput[]> = {
   "aberration": aberrations,
