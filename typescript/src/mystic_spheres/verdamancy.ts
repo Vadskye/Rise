@@ -140,7 +140,7 @@ export const verdamancy: MysticSphere = {
 
       effect: `
         You gain a slam \\glossterm{natural weapon} (see \\tref{Natural Weapons}).
-        The natural weapon deals 1d10 damage, as normal for a slam natural weapon.
+        The natural weapon deals 1d10 damage, as normal for a slam natural weapon, and it has the Sweeping (1) tag.
         In addition, it has the Long \\glossterm{weapon tag} (see \\pcref{Weapon Tags}).
       `,
       rank: 2,
