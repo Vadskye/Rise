@@ -422,18 +422,15 @@ export const channelDivinity: MysticSphere = {
       name: "Banish Anathema",
 
       attack: {
-        crit: `
-          Double damage.
-          In addition, if the subject is a \\glossterm{planeforged} not on its home plane, it is teleported to a random location on its home plane.
-          If it is a creature created by a \\abilitytag{Manifestation} ability, it immediately disappears.
-        `,
         glance: "Half damage.",
         hit: `
           The subject takes 2d6 + half \\glossterm{power} energy damage.
+          If it loses \\glossterm{hit points} from this damage, it immediately teleports into a random unoccupied location in the Astral Plane.
+          At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
+          After this effect ends, it becomes immune to this effect until it takes a \\glossterm{short rest}.
         `,
-        // +2 accuracy in exchange for +1 level and -half power
         targeting: `
-          Make an attack vs. Mental with a +2 \\glossterm{accuracy} bonus against anything within \\medrange.
+          Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
       rank: 3,
