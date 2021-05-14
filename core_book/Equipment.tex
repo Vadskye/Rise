@@ -535,20 +535,20 @@
             \begin{dtabularx}{\textwidth}{l c c c c c c >{\lcol}X c}
                 \tb{Armor}            & \tb{Defense} & \tb{Physical Resist} & \tb{Energy Resist} & \tb{Encumbrance} & \tb{Speed}   & \tb{Dex} & \tb{Material}     & \tb{Item Level (Cost)}\fn{1}  \tableheaderrule
                 Light armor           &              &         &         &              &              &          &                   &             \\
-                \tind Leather         & \plus2       & \plus1  & \plus3  & \plus1       & \tdash       & \tdash   & Leather           & 1/2 (10 gp) \\
-                \tind Studded leather & \plus2       & \plus3  & \plus3  & \plus2       & \tdash       & \tdash   & Leather and metal & 1st (50 gp)   \\
-                \tind Chain shirt     & \plus2       & \plus4  & \plus2  & \plus2       & \tdash       & \tdash   & Metal             & 1st (50 gp)   \\
+                \tind Leather         & \plus2       & \plus1  & \plus3  & \tdash       & \tdash       & \tdash   & Leather           & 1/2 (10 gp) \\
+                \tind Studded leather & \plus2       & \plus3  & \plus3  & \plus1       & \tdash       & \tdash   & Leather and metal & 1st (50 gp)   \\
+                \tind Chain shirt     & \plus2       & \plus4  & \plus2  & \plus1       & \tdash       & \tdash   & Metal             & 1st (50 gp)   \\
                 \tind Buckler         & \plus1       & \tdash  & \tdash  & \tdash       & \tdash       & \tdash   & Metal or wood     & 1/2 (10 gp) \\
                 Medium armor          &              &         &         &              &              &          &                   &             \\
-                \tind Hide            & \plus3       & \plus2  & \plus5  & \plus3       & \minus5 ft.  & \tdash   & Leather           & 1st (50 gp)   \\
-                \tind Scale mail      & \plus3       & \plus7  & \plus2  & \plus5       & \minus5 ft.  & \tdash   & Metal             & 1st (50 gp)   \\
-                \tind Breastplate     & \plus3       & \plus6  & \plus3  & \plus4       & \minus5 ft.  & \tdash   & Metal             & 2nd (125 gp)  \\
+                \tind Hide            & \plus3       & \plus2  & \plus5  & \plus2       & \minus5 ft.  & \tdash   & Leather           & 1st (50 gp)   \\
+                \tind Scale mail      & \plus3       & \plus6  & \plus2  & \plus4       & \minus5 ft.  & \tdash   & Metal             & 1st (50 gp)   \\
+                \tind Breastplate     & \plus3       & \plus6  & \plus3  & \plus3       & \minus5 ft.  & \tdash   & Metal             & 2nd (125 gp)  \\
                 \tind Standard shield & \plus2       & \tdash  & \tdash  & \tdash\fn{2} & \tdash       & \tdash   & Metal or wood     & 1/2 (10 gp) \\
                 Heavy armor           &              &         &         &              &              &          &                   &             \\
-                \tind Layered hide    & \plus4       & \plus3  & \plus7  & \plus5       & \minus10 ft. & \mult1/2 & Leather           & 2nd (125 gp)  \\
-                \tind Plated mail     & \plus4       & \plus8  & \plus4  & \plus6       & \minus10 ft. & \mult1/2 & Metal             & 3rd (250 gp)  \\
-                \tind Half-plate      & \plus4       & \plus10 & \plus5  & \plus7       & \minus10 ft. & \mult1/2 & Metal             & 4th (500 gp)  \\
-                \tind Full plate      & \plus4       & \plus12 & \plus6  & \plus6       & \minus10 ft. & \mult1/2 & Metal             & 5th (800 gp)  \\
+                \tind Layered hide    & \plus4       & \plus3  & \plus7  & \plus4       & \minus10 ft. & \mult1/2 & Leather           & 2nd (125 gp)  \\
+                \tind Plated mail     & \plus4       & \plus8  & \plus4  & \plus5       & \minus10 ft. & \mult1/2 & Metal             & 3rd (250 gp)  \\
+                \tind Half-plate      & \plus4       & \plus10 & \plus5  & \plus6       & \minus10 ft. & \mult1/2 & Metal             & 4th (500 gp)  \\
+                \tind Full plate      & \plus4       & \plus12 & \plus6  & \plus5       & \minus10 ft. & \mult1/2 & Metal             & 5th (800 gp)  \\
                 \tind Tower shield    & \plus3\fn{3} & \tdash  & \tdash  & \plus2\fn{2} & \tdash       & \tdash   & Metal or wood     & 1st (50 gp)   \\
                 Extras                &              &         &         &              &              &          &                   &             \\
                 \tind Armor spikes    & \tdash       & \minus1 & \minus1 & \plus1       & \tdash       & \tdash   & Metal             & \tdash      \\
@@ -618,30 +618,41 @@
             \lcaption{Armor Special Materials}
 \begin{dtabularx}{\textwidth}{l c c c c c >{\lcol}X}
     \tb{Material}     & \tb{Defense} & \tb{Physical Resist} & \tb{Energy Resist} & \tb{Encumbrance} & \tb{Material} & \tb{Item Level}              \tableheaderrule
-    \tind Adamantine           & \tdash  & \mult3   & \mult3 & \plus2  & Metal   & \plus9  \\
-    \tind Adamantine, pure     & \tdash  & \mult5   & \mult5 & \plus3  & Metal   & \plus15 \\
-    \tind Cold iron            & Special & \mult1/2 & \tdash & \tdash  & Metal   & \plus6    \\
-    \tind Cold iron, pure      & Special & \mult1/2 & \tdash & \tdash  & Metal   & \plus12    \\
-    \tind Deepforged           & \tdash  & \mult2   & \mult2 & \tdash  & Metal   & \plus9  \\
-    \tind Diamondsteel         & \tdash  & \tdash   & \mult3 & \tdash  & Metal   & \plus9  \\
-    \tind Diamondsteel, pure   & \tdash  & \mult2   & \mult5 & \tdash  & Metal   & \plus15 \\
-    \tind Dragonhide           & \tdash  & \tdash   & \mult2 & \tdash  & Leather & \plus6    \\
-    \tind Dragonhide, ancient  & \tdash  & \mult2   & \mult4 & \tdash  & Leather & \plus12  \\
-    \tind Dragonscale          & \tdash  & \tdash   & \mult2 & \tdash  & Metal   & \plus6    \\
-    \tind Dragonscale, ancient & \tdash  & \tdash   & \mult4 & \tdash  & Metal   & \plus12  \\
-    \tind Elvenweave           & \tdash  & \mult2   & \mult2 & \tdash  & Leather & \plus9  \\
-    \tind Ironwood             & \tdash  & \tdash   & \tdash & \tdash  & Metal   & \plus3      \\
-    \tind Mithral              & \tdash  & \tdash   & \tdash & \minus2 & Metal   & \plus6    \\
-    \tind Mithral, pure        & \tdash  & \mult2   & \mult2 & \minus3 & Metal   & \plus12  \\
-    \tind Starmetal            & \tdash  & \mult2   & \tdash & \plus1  & Metal   & \plus6    \\
-    \tind Starmetal, pure      & \tdash  & \mult4   & \mult2 & \plus2  & Metal   & \plus12  \\
+    % extra high resists, encumbrance penalty
+    \tind Adamantine           & \tdash  & \mult4   & \mult4 & \plus2  & Metal   & \plus9  \\
+    \tind Adamantine, pure     & \tdash  & \mult8   & \mult8 & \plus2  & Metal   & \plus15 \\
+    % magic defense
+    \tind Cold iron            & Special & \mult1/2 & \tdash & \tdash  & Metal   & \plus6  \\
+    \tind Cold iron, pure      & Special & \mult1/2 & \tdash & \tdash  & Metal   & \plus12 \\
+    % balanced physical/energy
+    \tind Deepforged           & \tdash  & \mult2   & \mult2 & \tdash  & Metal   & \plus6  \\
+    \tind Deepforged, pure     & \tdash  & \mult4   & \mult4 & \tdash  & Metal   & \plus12 \\
+    % slightly biased to energy
+    \tind Diamondsteel         & \tdash  & \mult2   & \mult4 & \tdash  & Metal   & \plus9  \\
+    \tind Diamondsteel, pure   & \tdash  & \mult4   & \mult8 & \tdash  & Metal   & \plus15 \\
+    % biased to energy
+    \tind Dragonhide           & \tdash  & \tdash   & \mult3 & \tdash  & Leather & \plus6  \\
+    \tind Dragonhide, ancient  & \tdash  & \mult2   & \mult6 & \tdash  & Leather & \plus12 \\
+    \tind Dragonscale          & \tdash  & \tdash   & \mult3 & \tdash  & Metal   & \plus6  \\
+    \tind Dragonscale, ancient & \tdash  & \mult2   & \mult6 & \tdash  & Metal   & \plus12 \\
+    % balanced physical/energy
+    \tind Elvenweave           & \tdash  & \mult2   & \mult2 & \tdash  & Leather & \plus6  \\
+    \tind Elvenweave, pure     & \tdash  & \mult4   & \mult4 & \tdash  & Leather & \plus12 \\
+    % idk
+    \tind Ironwood             & \tdash  & \tdash   & \tdash & \tdash  & Metal   & \plus3  \\
+    % low resists, encumbrance reduction
+    \tind Mithral              & \tdash  & \tdash   & \mult2 & \minus2 & Metal   & \plus6  \\
+    \tind Mithral, pure        & \tdash  & \mult2   & \mult4 & \minus2 & Metal   & \plus12 \\
+    % offset balanced physical/energy, encumbrance
+    \tind Starmetal            & \tdash  & \mult3   & \mult3 & \plus1  & Metal   & \plus9  \\
+    \tind Starmetal, pure      & \tdash  & \mult6   & \mult6 & \plus1  & Metal   & \plus15 \\
 \end{dtabularx}
         \end{dtable!*}
 
-        \parhead{Adamantine} Adamantine armor increases the \glossterm{encumbrance} of the armor by 2, but it triples the \glossterm{resistance} provided by the armor against both \glossterm{physical damage} and \glossterm{energy damage}.
+        \parhead{Adamantine} Adamantine armor increases the \glossterm{encumbrance} of the armor by 2, but it multiplies the \glossterm{resistance} provided by the armor against both \glossterm{physical damage} and \glossterm{energy damage} by 4.
         The armor's item level is increased by 9, which increases the typical cost to buy the item (see \pcref{Item Levels}).
 
-        \parhead{Adamantine, Pure} Pure adamantine armor increases the \glossterm{encumbrance} of the armor by 3, but it quintuples the \glossterm{resistance} provided by the armor against both \glossterm{physical damage} and \glossterm{energy damage}.
+        \parhead{Adamantine, Pure} Pure adamantine armor increases the \glossterm{encumbrance} of the armor by 2, but it multiplies the \glossterm{resistance} provided by the armor against both \glossterm{physical damage} and \glossterm{energy damage} by 8.
         The armor's item level is increased by 15, which increases the typical cost to buy the item (see \pcref{Item Levels}).
 
         \parhead{Cold Iron} Cold iron armor provides half the normal \glossterm{resistance} against \glossterm{physical damage}.
@@ -652,47 +663,50 @@
         In exchange, it grants a \plus2 bonus to defenses against \glossterm{magical} abilities.
         The armor's item level is increased by 12, which increases the typical cost to buy the item (see \pcref{Item Levels}).
 
-        \parhead{Deepforged} Deepforged body armor doubles the \glossterm{resistance} provided by the armor against both \glossterm{physical damage} and \glossterm{energy damage}.
+        \parhead{Deepforged} Deepforged body armor multiplies the \glossterm{resistance} provided by the armor against both \glossterm{physical damage} and \glossterm{energy damage} by 2.
         The armor's item level is increased by 9, which increases the typical cost to buy the item (see \pcref{Item Levels}).
 
-        \parhead{Diamondsteel} Diamondsteel body armor triples the \glossterm{resistance} provided by the armor against \glossterm{energy damage}.
+        \parhead{Diamondsteel} Diamondsteel body armor multiplies the \glossterm{resistance} provided by the armor against \glossterm{energy damage} by 4, and multiplies the \glossterm{resistance} provided against \glossterm{physical damage} by 2.
         The armor's item level is increased by 9, which increases the typical cost to buy the item (see \pcref{Item Levels}).
 
-        \parhead{Diamondsteel, Pure} Pure diamondsteel body armor quintuples the \glossterm{resistance} provided by the armor against \glossterm{energy damage}.
-        In addition, it double the \glossterm{resistance} provided by the armor against \glossterm{physical damage}.
+        \parhead{Diamondsteel, Pure} Pure diamondsteel body armor multiplies the \glossterm{resistance} provided by the armor against \glossterm{energy damage} by 8, and multiplies the \glossterm{resistance} provided against \glossterm{physical damage} by 4.
         The armor's item level is increased by 15, which increases the typical cost to buy the item (see \pcref{Item Levels}).
 
-        \parhead{Dragonhide} Dragonhide body armor doubles the \glossterm{resistance} provided by the armor against \glossterm{energy damage}.
+        \parhead{Dragonhide} Dragonhide body armor multiplies the \glossterm{resistance} provided by the armor against \glossterm{energy damage} by 3.
         The armor's item level is increased by 6, which increases the typical cost to buy the item (see \pcref{Item Levels}).
 
-        \parhead{Dragonhide, Ancient} Ancient dragonhide body armor quadruples the \glossterm{resistance} provided by the armor against \glossterm{energy damage}, and doubles the resistance provided by the armor against \glossterm{physical damage}.
+        \parhead{Dragonhide, Ancient} Ancient dragonhide body armor multiplies the \glossterm{resistance} provided by the armor against \glossterm{energy damage} by 6, and multiplies the \glossterm{resistance} provided against \glossterm{physical damage} by 2.
         The armor's item level is increased by 12, which increases the typical cost to buy the item (see \pcref{Item Levels}).
 
-        \parhead{Dragonscale} Dragonscale body armor doubles the \glossterm{resistance} provided by the armor against \glossterm{energy damage}.
+        \parhead{Dragonscale} Dragonscale body armor multiplies the \glossterm{resistance} provided by the armor against \glossterm{energy damage} by 3.
         In addition, dragonscale is not considered to be metal, which may affect abilities like the \spell{heat metal} spell.
         The armor's item level is increased by 6, which increases the typical cost to buy the item (see \pcref{Item Levels}).
 
-        \parhead{Dragonscale, Ancient} Ancient dragonscale body armor quadruples the \glossterm{resistance} provided by the armor against \glossterm{energy damage}, and double the resistance provided by the armor against \glossterm{physical damage}.
+        \parhead{Dragonscale, Ancient} Ancient dragonscale body armor multiplies the \glossterm{resistance} provided by the armor against \glossterm{energy damage} by 6, and multiplies the \glossterm{resistance} provided against \glossterm{physical damage} by 2.
         In addition, dragonscale is not considered to be metal, which may affect abilities like the \spell{heat metal} spell.
         The armor's item level is increased by 12, which increases the typical cost to buy the item (see \pcref{Item Levels}).
 
-        \parhead{Elvenweave} Elvenweave body armor doubles the \glossterm{resistance} provided by the armor against both \glossterm{physical damage} and \glossterm{energy damage}.
-        The armor's item level is increased by 9, which increases the typical cost to buy the item (see \pcref{Item Levels}).
+        \parhead{Elvenweave} Elvenweave body armor multiplies the \glossterm{resistance} provided by the armor against both \glossterm{physical damage} and \glossterm{energy damage} by 2.
+        The armor's item level is increased by 6, which increases the typical cost to buy the item (see \pcref{Item Levels}).
 
         \parhead{Ironwood} The most common special material is ironwood, which is made from wood magically treated using the \spell{ironwood} ritual to be as strong as steel. Ironwood armor functions exactly like  armor of the same type, except that it is made of wood.
         The armor's item level is increased by 3, which increases the typical cost to buy the item (see \pcref{Item Levels}).
 
-        \parhead{Mithral} Mithral armor reduces the \glossterm{encumbrance} of the armor by 2.
+        \parhead{Mithral} Mithral body armor multiplies the \glossterm{resistance} provided by the armor against \glossterm{energy damage} by 2.
+        In addition, it reduces the \glossterm{encumbrance} of the armor by 2.
         The armor's item level is increased by 6, which increases the typical cost to buy the item (see \pcref{Item Levels}).
 
-        \parhead{Mithral, Pure} Pure mithral armor reduces the \glossterm{encumbrance} of the armor by 3, and doubles its \glossterm{resistance} provided by the armor against both \glossterm{energy damage} and \glossterm{physical damage}.
+        \parhead{Mithral, Pure} Pure mithral body armor multiplies the \glossterm{resistance} provided by the armor against \glossterm{energy damage} by 4, and multiplies the \glossterm{resistance} provided against \glossterm{physical damage} by 2.
+        In addition, it reduces the \glossterm{encumbrance} of the armor by 2.
         The armor's item level is increased by 12, which increases the typical cost to buy the item (see \pcref{Item Levels}).
 
-        \parhead{Starmetal} Starmetal body armor increases the \glossterm{encumbrance} of the armor by 1, but it doubles the \glossterm{resistance} provided by the armor against \glossterm{physical damage}.
-        The armor's item level is increased by 6, which increases the typical cost to buy the item (see \pcref{Item Levels}).
+        \parhead{Starmetal} Starmetal body armor multiplies the \glossterm{resistance} provided by the armor against both \glossterm{physical damage} and \glossterm{energy damage} by 3.
+        In addition, it increases the \glossterm{encumbrance} of the armor by 1.
+        The armor's item level is increased by 9, which increases the typical cost to buy the item (see \pcref{Item Levels}).
 
-        \parhead{Starmetal, Pure} Pure starmetal body armor increases the \glossterm{encumbrance} of the armor by 2, but it quadruples the \glossterm{resistance} provided by the armor against \glossterm{physical damage} and doubles the resistance provided by the armor against \glossterm{energy damage}.
-        The armor's item level is increased by 12, which increases the typical cost to buy the item (see \pcref{Item Levels}).
+        \parhead{Starmetal, Pure} Pure starmetal body armor multiplies the \glossterm{resistance} provided by the armor against both \glossterm{physical damage} and \glossterm{energy damage} by 6.
+        In addition, it increases the \glossterm{encumbrance} of the armor by 1.
+        The armor's item level is increased by 15, which increases the typical cost to buy the item (see \pcref{Item Levels}).
 
 \section{Goods And Services}
 
