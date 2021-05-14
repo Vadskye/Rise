@@ -130,6 +130,38 @@ export const channelDivinity: MysticSphere = {
     },
 
     {
+      name: "Greater Divine Judgment",
+
+      attack: {
+        hit: `
+          The subject takes 4d6 + \\glossterm{power} energy damage.
+        `,
+        targeting: `
+          Make an attack vs. Mental against anything within \\longrange.
+        `,
+      },
+      rank: 4,
+      scaling: "damage",
+      type: "Instant",
+    },
+
+    {
+      name: "Supreme Divine Judgment",
+
+      attack: {
+        hit: `
+          The subject takes 6d10 + \\glossterm{power} energy damage.
+        `,
+        targeting: `
+          Make an attack vs. Mental against anything within \\distrange.
+        `,
+      },
+      rank: 7,
+      scaling: "damage",
+      type: "Instant",
+    },
+
+    {
       name: "Stunning Judgment",
 
       attack: {
