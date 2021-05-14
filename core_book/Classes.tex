@@ -719,6 +719,38 @@ This choice determines a great deal about your character's abilities.
 
         \cf*{Clr}[7]{Spell Knowledge} You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
 
+        \subsubsection{Typical Character}
+            If you want to quickly create a character based on this archetype, make the following choices:
+            \parhead{Species} Gnome.
+            \parhead{Attributes} 0 Str, 0 Dex, 3 Con, 1 Int, 2 Per, 3 Wil (after species modifiers).
+            \parhead{Class} Cleric.
+            \parhead{Archetypes} Divine Magic first, Divine Spell Mastery second, Domain Influence third.
+            \parhead{Insight Points} 2 points for an additional mystic sphere, 1 point for an additional spell known.
+            \parhead{Skills} Knowledge (religion) (M), Medicine (M), Persuasion (T), Spellsense (M), Social Insight (T)
+            \parhead{Weapon Group} Club-like weapons.
+            \parhead{Languages} Common, Dwarven, Halfling.
+            \parhead{Equipment} Mace, scale mail. As you gain levels, use the best medium armor you can afford.
+            \parhead{Legacy Item} Implement.
+                At level 3, choose \mitem{staff of precision}.
+                At level 9, choose \mitem{greater staff of precision} and \mitem{staff of focus}.
+                At level 15, choose \mitem{supreme staff of precision}, \mitem{fearful staff}, and \mitem{staff of focus}.
+            \parhead{Feats} 
+            \parhead{Mystic Spheres} Bless, Channel Divinity, and Vivimancy
+            \parhead{Spells}
+            \begin{itemize}
+                \item Rank 1: \spell{blessing of endurance}, \spell{boon of precision}, \spell{divine judgment}, \spell{inflict wound}
+                \item Rank 2: \spell{cure wound}, \spell{divine conduit}, \spell{word of faith}
+                \item Rank 3: \spell{boon of cleansing}, \spell{lifesteal}, \spell{mantle of faith}
+                \item Rank 4: \spell{greater divine judgment}, \spell{greater inflict wound}, \spell{greater word of faith}
+                \item Rank 5: \spell{circle of life}, \spell{cure vital wound}, \spell{fear of the divine}
+                \item Rank 6: \spell{boon of invulnerability}, \spell{cleansing benediction}, \spell{greater divine presence}
+                \item Rank 7: \spell{avasculate}, \spell{supreme divine judgment}
+            \end{itemize}
+            \parhead{Domains} Good, Magic
+            \parhead{Combat Tactics} You can protect and heal your allies and invoke divine wrath on your foes.
+            You have a mixture of attacks against both Fortitude and Mental defense, so use the best spells for the situation.
+            If you are facing a foe that not particularly vulnerable to either, you can focus on keeping your allies healed and using "boon" spells to make their actions more effective.
+
     \newpage
     \subsection{Divine Spell Mastery}
         This archetype improves the divine spells you cast.
@@ -762,6 +794,10 @@ This choice determines a great deal about your character's abilities.
 
         \cf*{Clr}[7]{Mystic Insight}
         You gain an additional \textit{mystic insight} ability.
+
+        \subsubsection{Typical Character}
+            Use the typical character for the Divine Magic cleric archetype.
+            Even if you focus on spells through this archetype, you should generally still rank up your spells before improving your rank in this archetype.
 
     \newpage
     \subsection{Domain Influence}
@@ -829,6 +865,42 @@ This choice determines a great deal about your character's abilities.
 
         \cf*{Clr}[7]{Domain Mastery}
         You gain the \textit{domain mastery} for another one of your domains.
+
+        \subsubsection{Typical Character}
+            Characters from this archetype can be very different based on their chosen domains.
+            A character with spellcasting-focused domains might resemble the typical character for the Divine Magic cleric archetype.
+            If you want to quickly create a more martial character based on the Strength and War domains from this archetype, make the following choices:
+
+            \parhead{Species} Dwarf.
+            \parhead{Attributes} 3 Str, 0 Dex, 3 Con, 0 Int, 2 Per, 1 Wil (after species modifiers).
+            \parhead{Class} Cleric.
+            \parhead{Archetypes} Domain Influence first, Divine Magic second, Preacher third.
+            \parhead{Insight Points} 3 points for additional spells known.
+            \parhead{Skills} Awareness (T), Climb (T), Knowledge (religion) (M), Jump (T), Medicine (M), Persuasion (M), Spellsense (T), Swim (T)
+            \parhead{Weapon Group} Club-like weapons.
+            \parhead{Languages} Common, Draconic, Dwarven.
+            \parhead{Equipment} Morning star, standard shield, scale mail. As you gain levels, use the best heavy armor you can afford.
+            \parhead{Legacy Item} Shield.
+                At level 3, choose \mitem{protective shield}.
+                At level 9, choose \mitem{greater protective shield} and \mitem{shield of arrow catching}.
+                At level 15, choose \mitem{supreme protective shield}, \mitem{greater shield of arrow deflection}, and \mitem{shield of arrow catching}.
+            \parhead{Feats} Weapon Focus, Sphere Focus: Channel Divinity, Shieldbearer
+            \parhead{Mystic Spheres} Channel Divinity
+            \parhead{Spells}
+            \begin{itemize}
+                \item Rank 1: \spell{divine power}, \spell{divine favor}, \spell{divine authority}, \spell{stunning judgment}
+                \item Rank 2: \spell{astral refuge}
+                \item Rank 3: \spell{banish anathema}, \spell{divine might}, \spell{divine presence}, \spell{mantle of faith}
+                \item Rank 4: \spell{greater word of faith}
+                \item Rank 5: \spell{agent of the divine}, \spell{fear of the divine}
+                \item Rank 6: \spell{divine offering}, \spell{greater divine presence}
+                % \item Rank 7: TODO
+            \end{itemize}
+            \parhead{Domains} Strength, War
+            \parhead{Combat Tactics} You are a frontline fighter first and foremost.
+            Your high defenses and magically enhanced resistances make you durable in combat, though you lack mobility. 
+            When you need to distract foes or face down hordes, you can use your abilities from the Preacher archetype, which do not have the \abilitytag{Focus} tag.
+            If you can't take the Weapon Focus feat, consider taking the Destruction domain instead of the Strength domain, since that gives you a standard action ability to help you deal damage with your weapon.
 
     \newpage
     \subsection{Healer}
@@ -1012,15 +1084,12 @@ This choice determines a great deal about your character's abilities.
             \parhead{Mastery} The bonus from this domain's aspect increases to \plus5.
 
         \subsubsection{Destruction}
-            % This ability gets rank upgrades while maneuvers don't
-            % because maneuvers are upgraded into higher rank maneuvers,
-            % while this has no upgrades and should remain relevant alone.
             \parhead{Gift} You can use the \textit{destructive attack} ability as a standard action.
             \begin{instantability}{Destructive Attack}
                 Instant
                 \rankline
                 Make a \glossterm{strike} with a \minus2 penalty to \glossterm{accuracy}.
-                You gain a \plus2d bonus damage with the strike.
+                You gain a \plus2d damage bonus with the strike.
 
                 \rankline
                 \rank{3} The damage bonus increases to \plus3d.
@@ -1187,8 +1256,8 @@ This choice determines a great deal about your character's abilities.
 
             \parhead{Gift} You gain a \plus4 bonus to the Spellsense skill (see \pcref{Spellsense}).
             \parhead{Aspect} You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
-            \parhead{Essence} You gain a \plus4 bonus to your \glossterm{magical} \glossterm{power}.
-            \parhead{Mastery} The power bonus from this domain's essence increases to \plus8.
+            \parhead{Essence} You gain a \plus3 bonus to your \glossterm{magical} \glossterm{power}.
+            \parhead{Mastery} The power bonus from this domain's essence increases to \plus6.
 
         \subsubsection{Protection}
             \parhead{Gift} You gain a bonus equal to twice your rank in this archetype to your \glossterm{resistance} against \glossterm{energy damage}.
@@ -1210,14 +1279,14 @@ This choice determines a great deal about your character's abilities.
             If you choose this domain, you add the Climb, Jump, and Swim skills to your cleric \glossterm{class skill} list.
 
             \parhead{Gift} You gain two skill points.
-            \parhead{Aspect} You gain a \plus4 bonus to Strength for the purpose of checks and determining your carrying capacity.
+            \parhead{Aspect} You gain a \plus4 bonus to your Strength for the purpose of checks and determining your carrying capacity.
             \parhead{Essence} You can use the \textit{divine strength} ability as a \glossterm{minor action}.
             \begin{attuneability}{Divine Strength}
                 \abilitytag{Attune} (self)
                 \rankline
-                You gain a \plus4 \glossterm{magic bonus} to Strength.
+                You gain a \plus1 bonus to your base Strength.
             \end{attuneability}
-            \parhead{Mastery} You gain a \plus2 bonus to your base Strength.
+            \parhead{Mastery} The bonus from your \textit{divine strength} ability increases to \plus2.
 
         \subsubsection{Travel}
             If you choose this domain, you add the \sphere{astromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
@@ -1271,10 +1340,10 @@ This choice determines a great deal about your character's abilities.
 
         \subsubsection{War}
             \parhead{Gift} You gain proficiency with heavy armor and an additional \glossterm{weapon group} of your choice.
-            \parhead{Aspect} You deal half damage to your allies with \glossterm{magical} abilities.
+            \parhead{Aspect} You gain a \plus2 bonus to your \glossterm{power} with all abilities.
             \parhead{Essence} Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
             This is called a \glossterm{glancing blow}.
-            \parhead{Mastery} You gain a \plus4 bonus to your \glossterm{power} with all abilities.
+            \parhead{Mastery} The bonus from this domain's aspect increases to \plus6.
 
         \subsubsection{Water}
             If you choose this domain, you add the \sphere{aquamancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
