@@ -204,7 +204,7 @@ const baseGiant = {
       description: `
         A giant can throw objects no larger than two size categories smaller than itself with ease.
         Giants prefer to throw boulders, but in a pinch they can throw almost anything.
-        Their \\glossterm{range increment} with objects other than boulders is generally half their range increment with boulders, and depending on the construction of the object it may also deal less damage than a boulder.
+        Their \\glossterm{range limits} with objects other than boulders are generally half their range limits with boulders, and depending on the construction of the object it may also deal less damage than a boulder.
       `,
       name: "Rock Throwing",
     },

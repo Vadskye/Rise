@@ -846,7 +846,7 @@ def monstrous_humanoids(sample_monsters):
                 active_ability(
                     "Boulder Toss",
                     """
-                The giant makes a ranged boulder strike, treating it as a thrown weapon with a 100 ft.\\ range increment.
+                The giant makes a ranged boulder strike, treating it as a thrown weapon with 200/1000 \\glossterm<range limits>.
             """,
                 ),
             ],
@@ -861,7 +861,7 @@ def monstrous_humanoids(sample_monsters):
                 active_ability(
                     "Boulder Toss",
                     """
-                The giant makes a ranged boulder strike, treating it as a thrown weapon with a 100 ft.\\ range increment.
+                The giant makes a ranged boulder strike, treating it as a thrown weapon with a 200/1000 \\glossterm<range limits>.
             """,
                 ),
             ],

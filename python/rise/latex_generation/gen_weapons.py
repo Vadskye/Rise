@@ -281,27 +281,27 @@ def generate_weapons():
             level=2,
             material_type="Weapon",
             description="""
-                When you make a ranged attack with this weapon, you reduce your penalties for \\glossterm<range increments> by 1.
+                When you make a ranged attack with this weapon, you reduce your \\glossterm<longshot penalty> by 1.
             """,
-            short_description="Ignores one range increment",
+            short_description="Reduces longshot penalty by 1",
         ),
         MagicItem(
             name="Longshot, Greater",
             level=8,
             material_type="Weapon",
             description="""
-                When you make a ranged attack with this weapon, you reduce your penalties for \\glossterm<range increments> by 2.
+                When you make a ranged attack with this weapon, you reduce your \\glossterm<longshot penalty> by 2.
             """,
-            short_description="Ignores two range increments",
+            short_description="Reduces longshot penalty by 2",
         ),
         MagicItem(
             name="Longshot, Supreme",
             level=14,
             material_type="Weapon",
             description="""
-                When you make a ranged attack with this weapon, you reduce your penalties for \\glossterm<range increments> by 3.
+                When you make a ranged attack with this weapon, you reduce your \\glossterm<longshot penalty> by 1.
             """,
-            short_description="Ignores three range increments",
+            short_description="Reduces longshot penalty by 3",
         ),
     ]
 
@@ -313,7 +313,7 @@ def generate_weapons():
             description="""
             You can throw this weapon as if it was designed to be thrown.
             In addition, as a standard action, you can throw this weapon in a spinning arc.
-            When you do, make a thrown \\glossterm<strike> against up to two targets within one \\glossterm<range increment>.
+            When you do, make a thrown \\glossterm<strike> against up to two targets within \\glossterm<close range>.
             After attacking the last target, the weapon flies back to your hand.
         """,
             short_description="Can be thrown to strike multiple foes",
