@@ -1298,16 +1298,6 @@ It defines how attributes work and explains how to make attacks in combat.
         If every space adjacent to you either contains an \glossterm{enemy} or is adjacent to an \glossterm{enemy}, you are surrounded.
         While surrounded, you take a \minus2 penalty to your Armor and Reflex defenses.
 
-    \subsection{Range Increments}\label{Range Increments}
-        Most \glossterm{mundane} ranged attacks are less accurate against distant targets.
-        This is represented with a \glossterm{range increment} for the attack, which is always measured in feet.
-        You take a \minus1 accuracy penalty with the ranged attack for each full range increment between you and your target.
-        For example, when using a longbow with a range increment of 90 feet against a target 170 feet away, you take a \minus1 accuracy penalty.
-
-        If your target is too far away, you cannot attempt a ranged attack.
-        You cannot attempt a thrown attack with a range increment penalty of \minus6 or worse.
-        Similarly, you cannot attempt a projectile attack with a range increment penalty of \minus11 or worse.
-
     \subsection{Cover}\label{Cover}
 
         Cover represents any obstacle that physically prevents you from striking your target, such as a tree or intervening creature.
@@ -1444,7 +1434,7 @@ It defines how attributes work and explains how to make attacks in combat.
     \subsection{Underwater Combat}\label{Underwater Combat}
         Land-based creatures have considerable difficulty when fighting in water.
         You take a \minus4 penalty to \glossterm{accuracy}, Strength and Dexterity-based \glossterm{checks}, and Armor and Reflex defenses.
-        In addition, all ranged attacks with a \glossterm{range increment} are considered to have a \glossterm{range increment} of 5 feet, regardless of the attack's normal range increment or any other modifiers.
+        In addition, all ranged weapons have \glossterm{range limits} of 5/30, regardless of the attack's normal range limits or any other modifiers.
 
 \section{Universal Abilities}\label{Universal Abilities}
     All creatures can use the following abilities.
@@ -1481,8 +1471,7 @@ It defines how attributes work and explains how to make attacks in combat.
             \rankline
             Choose one \glossterm{projectile weapon} that you are wielding and are able to attack with.
             Make an attack vs. Armor with that weapon against anything that you have \glossterm{line of sight} and \glossterm{line of effect} to.
-            You take a \minus1 penalty to \glossterm{accuracy} for each full \glossterm{range increment} between you and the target.
-            If your total penalty from range increments would exceed \minus10, the attack fails without effect.
+            You suffer a \glossterm{longshot penalty} if the target is at \glossterm{long range} from you with that weapon (see \pcref{Weapon Range Limits}).
 
             \hit The target takes damage from the weapon (see \pcref{Strike Damage}).
             \crit The target takes double damage from the weapon, as normal for critical hits (see \pcref{Critical Hits}).
@@ -1494,8 +1483,7 @@ It defines how attributes work and explains how to make attacks in combat.
             \rankline
             Choose one \glossterm{thrown weapon} that you are wielding and are able to attack with.
             Make an attack vs. Armor with that weapon against anything that you have \glossterm{line of sight} and \glossterm{line of effect} to.
-            You take a \minus1 penalty to \glossterm{accuracy} for each full \glossterm{range increment} between you and the target.
-            If your total penalty from range increments would exceed \minus5, the attack fails without effect.
+            You suffer a \glossterm{longshot penalty} if the target is at \glossterm{long range} from you with that weapon (see \pcref{Weapon Range Limits}).
 
             \hit The target takes damage from the weapon (see \pcref{Strike Damage}).
             \crit The target takes double damage from the weapon, as normal for critical hits (see \pcref{Critical Hits}).
@@ -1712,7 +1700,7 @@ It defines how attributes work and explains how to make attacks in combat.
         If you do, you take a \minus20 penalty to the check, and you cannot make an attack roll to hit with the thrown object.
 
         As long as you have a Strength of at least \minus2, you do not have to use this ability to throw weapons that are sized appropriately for you and which are designed to be thrown.
-        Instead, you can simply use the \glossterm{range increment} for those weapons.
+        Instead, you can simply use the listed \glossterm{range limits} for those weapons.
 
         \begin{instantability}{Throw}
             \label{Throw}

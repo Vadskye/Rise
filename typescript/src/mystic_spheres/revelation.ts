@@ -404,7 +404,7 @@ export const revelation: MysticSphere = {
       name: "Longshot",
 
       effect: `
-        You reduce your penalties for \\glossterm{range increments} by 1.
+        You reduce your \\glossterm{longshot penalty} by 1.
       `,
       rank: 1,
       scaling: {

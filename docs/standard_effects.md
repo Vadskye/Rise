@@ -234,10 +234,10 @@ have their own logic which may differ significantly from this.
     * This is free for abilities around self, because those abilities would otherwise be
       virtually useless
   * +1 level: +1 area size
-  * +1 level: +1 range increment (not applicable to effects that intrinsically scale with range, like teleportation)
+  * +1 level: +1 range (not applicable to effects that intrinsically scale with range, like teleportation)
   * +1 level: Increase line width by 5'
   * +1 level: convert ability to attunement, no-focus, no-component standard action
-  * +2 level: +1 range increment (for effects that intrinsically scale with range, like teleportation)
+  * +2 level: +1 range (for effects that intrinsically scale with range, like teleportation)
   * +2 level: remove Focus tag (dangerous; only for narratively relevant spells)
 * Strikes only:
 
