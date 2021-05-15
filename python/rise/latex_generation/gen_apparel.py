@@ -1519,69 +1519,34 @@ def generate_apparel():
 
     apparel += [
         MagicItem(
-            name="Gloves of Spell Investment",
-            level=7,
-            material_type="Gloves",
+            name="Ring of Spell Investment",
+            level=5,
+            material_type="Ring",
             tags=[],
             description="""
-                When you cast a spell that does not have the \\abilitytag<Attune> or \\abilitytag<Sustain> tags,
-                    you can invest the magic of the spell in these gloves.
+                When you or an adjacent ally casts a spell that does not have the \\abilitytag<Attune> or \\abilitytag<Sustain> tags,
+                    you can invest the magic of the spell in the ring.
                 If you do, the spell does not have its normal effect.
+                Only one spell can be stored this way.
 
-                As a standard action, you can activate these gloves.
-                When you do, you cause the effect of the last spell invested in the gloves.
+                As a standard action, you can activate this ring.
+                When you do, you cause the effect of the last spell invested in the ring.
                 This does not require \\glossterm<casting components> and does not have the \\abilitytag<Focus> tag, even if casting the spell normally would have those limitations.
-                After you use a spell in this way, the energy in the gloves is spent, and you must invest a new spell to activate the gloves again.
-
-                If you remove either glove from your hand, the magic of the spell invested in the gloves is lost.
+                You do not have to have the ability to cast the spell to activate a spell in this way.
+                After you use a spell in this way, the energy in the ring is spent, and you must invest a new spell to activate the ring again.
             """,
-            short_description="Can invest a spell to cast later",
+            short_description="Can invest a spell to gain its effect later",
         ),
         MagicItem(
-            name="Gloves of Spell Investment, Greater",
-            level=13,
-            material_type="Gloves",
+            name="Ring of Spell Investment, Greater",
+            level=11,
+            material_type="Ring",
             tags=[],
             description="""
-                This item functions like a \\mitem<gloves of spell investment>, except that you can store up to two spells in the gloves.
-                When you activate the gauntlets, you choose which spell to use.
+                This item functions like a \\mitem<ring of spell investment>, except that you can store up to three spells in the gloves.
+                When you activate the ring, you choose which spell to use.
             """,
-            short_description="Can invest two spells to cast later",
-        ),
-    ]
-
-    apparel += [
-        MagicItem(
-            name="Gloves of Spell Freedom",
-            level=1,
-            material_type="Gloves",
-            tags=["Swift"],
-            description="""
-                You may activate these bracers as a \\glossterm<free action>.
-                When you do, you can cast spells without using \\glossterm<somatic components> or \\glossterm<verbal components> until the end of the round.
-                This ability has the \\glossterm<Swift> tag, so this affects spells you cast during the same phase.
-            """,
-            short_description="Can very briefly cast spells without components",
-        ),
-        MagicItem(
-            name="Gloves of Spell Freedom, Greater",
-            level=7,
-            material_type="Gloves",
-            tags=[],
-            description="""
-                These gloves function like a \\mitem<gloves of spell freedom>, except that the effect lasts for 5 minutes.
-            """,
-            short_description="Can briefly cast spells without components",
-        ),
-        MagicItem(
-            name="Gloves of Spell Freedom, Supreme",
-            level=13,
-            material_type="Gloves",
-            tags=[],
-            description="""
-                You do not need \\glossterm<somatic components> or \\glossterm<verbal components> to cast spells.
-            """,
-            short_description="Can cast spells without components",
+            short_description="Can invest three spells to gain their effects later",
         ),
     ]
 
