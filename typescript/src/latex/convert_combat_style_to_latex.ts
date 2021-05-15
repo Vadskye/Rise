@@ -9,11 +9,10 @@ import { assertEndsWithPeriod } from "@src/latex/format/spell_effect";
 export function convertCombatStyleToLatex(style: CombatStyle): string {
   assertEndsWithPeriod(style.shortDescription);
   return format.latexify(`
-    \\newpage
-    \\hypertarget{style:${style.name.toLowerCase()}}{}%
-    \\hypertarget{style:${style.name}}{}%
-    \\label{${style.name}}%
     \\section{{${style.name}}}
+      \\hypertarget{style:${style.name.toLowerCase()}}{}%
+      \\hypertarget{style:${style.name}}{}%
+      \\label{${style.name}}%
       \\textit{${style.shortDescription}}
 
       \\subsection{Maneuvers}
