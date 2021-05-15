@@ -524,7 +524,7 @@ def generate_implements():
         ),
     ]
 
-    weapons += [
+    implements += [
         MagicItem(
             name="Blessed Staff",
             level=4,
@@ -560,7 +560,7 @@ def generate_implements():
         ),
     ]
 
-    weapons += [
+    implements += [
         MagicItem(
             name="Hexbite Staff",
             level=5,
@@ -593,7 +593,7 @@ def generate_implements():
         ),
     ]
 
-    weapons += [
+    implements += [
         MagicItem(
             name="Staff of the Martyr",
             level=10,
@@ -607,7 +607,7 @@ def generate_implements():
         ),
     ]
 
-    weapons += [
+    implements += [
         MagicItem(
             name="Staff of Stored Attunement",
             # this has a dangerous interaction with legacy items, so avoid
