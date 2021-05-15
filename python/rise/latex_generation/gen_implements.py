@@ -90,7 +90,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Staff of Shared Healing",
-            level=5,
+            level=8,
             material_type="Staff",
             tags=[],
             description="""
@@ -101,7 +101,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Shared Healing, Greater",
-            level=14,
+            level=17,
             material_type="Staff",
             tags=[],
             description="""
@@ -115,7 +115,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Staff of Transit",
-            level=6,
+            level=5,
             material_type="Staff",
             tags=[],
             description="""
@@ -125,7 +125,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Transit, Greater",
-            level=12,
+            level=11,
             material_type="Staff",
             tags=[],
             description="""
@@ -135,7 +135,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Transit, Supreme",
-            level=18,
+            level=17,
             material_type="Staff",
             tags=[],
             description="""
@@ -263,40 +263,66 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Staff of Silence",
-            level=9,
+            level=4,
+            material_type="Staff",
+            tags=[],
+            description="""
+                As a \\glossterm<free action>, you can activate this staff.
+                When you do, you increase your \\glossterm<fatigue level> by one and gain the ability to cast spells without using \\glossterm<verbal components>.
+                This effect lasts until the end of the next round.
+                It has the \\glossterm<Swift> tag, so it allows you to cast a spell without verbal components in the same phase that you activate this staff.
+            """,
+            short_description="Briefly cst spells without verbal components",
+        ),
+        MagicItem(
+            name="Staff of Stillness",
+            level=4,
+            material_type="Staff",
+            tags=[],
+            description="""
+                As a \\glossterm<free action>, you can activate this staff.
+                When you do, you increase your \\glossterm<fatigue level> by one and gain the ability to cast spells without using \\glossterm<somatic components>.
+                This effect lasts until the end of the next round.
+                It has the \\glossterm<Swift> tag, so it allows you to cast a spell without somatic components in the same phase that you activate this staff.
+            """,
+            short_description="Briefly cast spells without somatic components",
+        ),
+        MagicItem(
+            name="Greater Staff of Silence",
+            level=10,
             material_type="Staff",
             tags=[],
             description="""
                 You can cast spells without using \\glossterm<verbal components>.
             """,
-            short_description="Allows casting spells without verbal components",
+            short_description="Cast spells without verbal components",
         ),
         MagicItem(
-            name="Staff of Stillness",
-            level=9,
+            name="Greater Staff of Stillness",
+            level=10,
             material_type="Staff",
             tags=[],
             description="""
                 You can cast spells without using \\glossterm<somatic components>.
             """,
-            short_description="Allows casting spells without somatic components",
+            short_description="Cast spells without somatic components",
         ),
         MagicItem(
             name="Staff of Tranquility",
-            level=15,
+            level=16,
             material_type="Staff",
             tags=[],
             description="""
                 You can cast spells without using \\glossterm<verbal components> or \\glossterm<somatic components>.
             """,
-            short_description="Allows casting spells without components",
+            short_description="Cast spells without components",
         ),
     ]
 
     implements += [
         MagicItem(
             name="Reaching Staff",
-            level=12,
+            level=11,
             material_type="Staff",
             description="""
                 Whenever you use a \\glossterm<magical> ability that does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you may choose a location within \\rngshort range.
@@ -310,7 +336,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Reaching Staff, Greater",
-            level=18,
+            level=17,
             material_type="Staff",
             description="""
                 This implement functions like a \\textit<reaching staff> implement, except that the range increases to \\rngmed range.
@@ -342,7 +368,7 @@ def generate_implements():
         MagicItem(
             name="Protective Staff",
             # +2 level since staff is secondary for this effect
-            level=9,
+            level=6,
             material_type="Staff",
             tags=[],
             description="""
@@ -352,13 +378,23 @@ def generate_implements():
         ),
         MagicItem(
             name="Protective Staff, Greater",
-            level=15,
+            level=12,
             material_type="Staff",
             tags=[],
             description="""
                 You gain a +2 \\glossterm<magic bonus> to Armor defense.
             """,
             short_description="Grants +2 Armor defense",
+        ),
+        MagicItem(
+            name="Protective Staff, Supreme",
+            level=18,
+            material_type="Staff",
+            tags=[],
+            description="""
+                You gain a +3 \\glossterm<magic bonus> to Armor defense.
+            """,
+            short_description="Grants +3 Armor defense",
         ),
     ]
 
@@ -485,6 +521,132 @@ def generate_implements():
                 You gain a +3 \\glossterm<magic bonus> to \\glossterm<accuracy>.
             """,
             short_description="Grants +3 accuracy",
+        ),
+    ]
+
+    weapons += [
+        MagicItem(
+            name="Blessed Staff",
+            level=4,
+            material_type="Weapon",
+            tags=[],
+            description="""
+                When you use the \\textit<desperate exertion> ability to affect a \\glossterm<magical> ability, you gain a +2 bonus to the reroll.
+                This stacks with the normal +2 bonus from the \\textit<desperate exertion> ability.
+            """,
+            short_description="Grants +2 bonus with \\textit<desperate exertion>",
+        ),
+        MagicItem(
+            name="Blessed Staff, Greater",
+            level=10,
+            material_type="Weapon",
+            tags=[],
+            description="""
+                When you use the \\textit<desperate exertion> ability to affect a \\glossterm<magical> ability, you gain a +3 bonus to the reroll.
+                This stacks with the normal +2 bonus from the \\textit<desperate exertion> ability.
+            """,
+            short_description="Grants +3 bonus with \\textit<desperate exertion>",
+        ),
+        MagicItem(
+            name="Blessed Staff, Supreme",
+            level=16,
+            material_type="Weapon",
+            tags=[],
+            description="""
+                When you use the \\textit<desperate exertion> ability to affect a \\glossterm<magical> ability, you gain a +4 bonus to the reroll.
+                This stacks with the normal +2 bonus from the \\textit<desperate exertion> ability.
+            """,
+            short_description="Grants +4 bonus with \\textit<desperate exertion>",
+        ),
+    ]
+
+    weapons += [
+        MagicItem(
+            name="Hexbite Staff",
+            level=5,
+            material_type="Staff",
+            tags=[],
+            description="""
+                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 1d10 + half \\glossterm<power> \\glossterm<energy damage>.
+            """,
+            short_description="Deals 1d10 damage when creatures remove conditions",
+        ),
+        MagicItem(
+            name="Hexbite Staff, Greater",
+            level=11,
+            material_type="Weapon",
+            tags=[],
+            description="""
+                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 2d10 + half \\glossterm<power> \\glossterm<energy damage>.
+            """,
+            short_description="Deals 2d10 damage when creatures remove conditions",
+        ),
+        MagicItem(
+            name="Hexbite Staff, Supreme",
+            level=17,
+            material_type="Weapon",
+            tags=[],
+            description="""
+                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 4d10 + half \\glossterm<power> \\glossterm<energy damage>.
+            """,
+            short_description="Deals 4d10 damage when creatures remove conditions",
+        ),
+    ]
+
+    weapons += [
+        MagicItem(
+            name="Staff of the Martyr",
+            level=10,
+            material_type="Staff",
+            tags=[],
+            description="""
+                You can use \\abilitytag<Healing> abilities even if you used a Healing ability during the previous round.
+                However, \\abilitytag<Healing> abilities cannot cause you to regain any hit points.
+            """,
+            short_description="Heal others more frequently, but not yourself",
+        ),
+    ]
+
+    weapons += [
+        MagicItem(
+            name="Staff of Stored Attunement",
+            # this has a dangerous interaction with legacy items, so avoid
+            # making that too easy
+            level=6,
+            material_type="Staff",
+            tags=[],
+            description="""
+                When you cast a \\glossterm<targeted> spell that has the \\glossterm<Attune> tag, you can invest the magic of the spell in this staff.
+                If you do, the spell does not have its normal effect.
+                Up to two spells can be stored this way.
+                If there are already spells invested in the staff, you can choose which spell to replace to make room for the new spell.
+
+                As a \\glossterm<minor action>, you can activate this staff.
+                When you do, you choose one of the spells that you personally stored the staff and gain its effects, with yourself as the only target.
+                You do not have to invest an additional attunement point to gain the benefit of a spell in this way, and this does not remove the spell from the staff's storage.
+                This effect lasts until you activate the staff again, which can allow you to easily change which benefit you gain.
+            """,
+            short_description="Change easily between two stored attunements",
+        ),
+        MagicItem(
+            name="Staff of Stored Attunement, Greater",
+            level=12,
+            material_type="Staff",
+            tags=[],
+            description="""
+                This staff functions like a \\mitem<staff of stored attunement>, except that you can store up to three spells in the staff.
+            """,
+            short_description="Change easily between three stored attunements",
+        ),
+        MagicItem(
+            name="Staff of Stored Attunement, Supreme",
+            level=18,
+            material_type="Staff",
+            tags=[],
+            description="""
+                This staff functions like a \\mitem<staff of stored attunement>, except that you can store up to four spells in the staff.
+            """,
+            short_description="Change easily between four stored attunements",
         ),
     ]
 
