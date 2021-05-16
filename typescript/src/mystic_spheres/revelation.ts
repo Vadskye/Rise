@@ -369,7 +369,7 @@ export const revelation: MysticSphere = {
         hit: `The subject sees an overwhelming barrage of visions of possible futures that make it virtually impossible for it to determine reality.
         It is \\blinded as a \\glossterm{condition}.`,
         targeting: `
-          Make an attack vs. Mental against one creature within \\closerange.
+          Make an attack vs. Mental against one creature within \\shortrange.
         `,
       },
       rank: 7,
