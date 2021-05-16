@@ -328,20 +328,21 @@ export const umbramancy: MysticSphere = {
       type: "Instant",
     },
 
-    {
-      name: "Walk the Shadow Roads",
+    // Silent move action teleportation invalidates HiPS
+    // {
+    //   name: "Walk the Shadow Roads",
 
-      effect: `
-        Whenever you would use your land speed to move, you can teleport horizontally between shadows instead.
-        Teleporting a given distance costs movement equal that distance.
-        Your destination must be on a stable surface that can support your weight.
-        If your \\glossterm{line of sight} or \\glossterm{line of effect} to your destination are blocked, or if this teleportation would somehow otherwise place you inside a solid object, your teleportation is cancelled and you remain where you were.
-        Areas with \\glossterm{bright illumination} block line of effect for this spell, so you are unable to teleport into or past areas of bright illumination.
-      `,
-      rank: 4,
-      scaling: { 6: `You can teleport in any direction instead of just horizontally.` },
-      type: "Attune (self)",
-    },
+    //   effect: `
+    //     Whenever you would use your land speed to move, you can teleport horizontally between shadows instead.
+    //     Teleporting a given distance costs movement equal that distance.
+    //     Your destination must be on a stable surface that can support your weight.
+    //     If your \\glossterm{line of sight} or \\glossterm{line of effect} to your destination are blocked, or if this teleportation would somehow otherwise place you inside a solid object, your teleportation is cancelled and you remain where you were.
+    //     Areas with \\glossterm{bright illumination} block line of effect for this spell, so you are unable to teleport into or past areas of bright illumination.
+    //   `,
+    //   rank: 4,
+    //   scaling: { 6: `You can teleport in any direction instead of just horizontally.` },
+    //   type: "Attune (self)",
+    // },
 
     {
       name: "Bind Shadow",
