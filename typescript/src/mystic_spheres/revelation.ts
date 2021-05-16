@@ -43,13 +43,13 @@ export const revelation: MysticSphere = {
       name: "Proficiency",
 
       effect: `
-        You gain \\glossterm{proficiency} with one weapon group of your choice.
+        You gain \\glossterm{proficiency} with one weapon group of your choice, including exotic weapons from that weapon group.
       `,
       rank: 1,
       scaling: {
         3: `You also gain a +1 \\glossterm{magic bonus} to \\glossterm{accuracy} with the chosen weapon group.`,
-        5: `You also gain proficiency with exotic weapons from the chosen weapon group.`,
-        7: `The accuracy bonus increases to +2.`,
+        5: `The accuracy bonus increases to +2.`,
+        7: `The accuracy bonus increases to +3.`,
       },
       type: "Attune (self)",
     },
