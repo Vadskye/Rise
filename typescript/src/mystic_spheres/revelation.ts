@@ -89,6 +89,25 @@ export const revelation: MysticSphere = {
     },
 
     {
+      name: "True Cast",
+
+      effect: `
+        Choose yourself or one \\glossterm{ally} within \\medrange.
+        The first time the subject casts a spell this round,
+        it gains a +2 bonus to \\glossterm{accuracy} and rolls twice and takes the higher result.
+        Because this ability has the \\abilitytag{Swift} tag, it can affect an attack the subject makes during the current phase.
+        If you cast this spell on yourself, it affects the first spell you cast until the end of the next round.
+      `,
+      rank: 3,
+      scaling: {
+        5: `The bonus increases to +3.`,
+        7: `The bonus increases to +4.`,
+      },
+      tags: ["Swift"],
+      type: "Duration",
+    },
+
+    {
       name: "Precognitive Offense",
 
       castingTime: "minor action",
@@ -192,7 +211,7 @@ export const revelation: MysticSphere = {
         In addition, once per hour you may reroll one Knowledge check you make and take the higher result.
       `,
       rank: 4,
-      scaling: { 6: `The bonus increases to +6.` },
+      scaling: { 6: `The bonus increases to +5.` },
       type: "Attune (self)",
     },
 
@@ -231,11 +250,11 @@ export const revelation: MysticSphere = {
         You reduce your penalties for being \\surrounded by 1.
       `,
 
-      rank: 3,
+      rank: 2,
       scaling: {
-        5: `The penalty reduction increases to 2.
+        4: `The penalty reduction increases to 2.
             You are still considered to be surrounded for the purpose of other abilities, even this reduces your penalties to 0.`,
-        7: `You can never be \\surrounded`,
+        6: `You can never be surrounded.`,
       },
       type: "Attune (self)",
     },
@@ -249,9 +268,9 @@ export const revelation: MysticSphere = {
         name: "Boon of Many Eyes",
       },
       // narrative: '',
-      rank: 5,
+      rank: 4,
       scaling: {
-        7: `The penalty reduction increases to 2.
+        6: `The penalty reduction increases to 2.
             Each subject is still considered to be surrounded for the purpose of other abilities, even this reduces its penalties to 0.`,
       },
       type: "Attune (target)",
@@ -272,6 +291,35 @@ export const revelation: MysticSphere = {
 
       rank: 1,
       scaling: "accuracy",
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Reveal Weakness",
+
+      attack: {
+        crit: `The penalty increases to -8.`,
+        hit: `As a \\glossterm{condition}, the subject's weaknesses are highlighted, and openings in its defenses are revealed to attackers moments before they exist.
+        It takes a -4 penalty to the chosen defense.`,
+        targeting: `
+          Choose one of the four defenses: Armor, Fortitude, Reflex, or Mental.
+          Make an attack vs. Mental against one creature within \\medrange.
+        `,
+      },
+
+      rank: 4,
+      scaling: "accuracy",
+      type: "Duration",
+    },
+
+    {
+      name: "Mass True Strike",
+
+      functionsLike: {
+        mass: true,
+        name: "True Strike",
+      },
+      rank: 6,
       type: "Duration",
     },
 
@@ -301,7 +349,7 @@ export const revelation: MysticSphere = {
       name: "Myriad Visions",
 
       attack: {
-        crit: `The subject is also \\dazed as part of the same condition.`,
+        crit: `The condition must be removed twice before the effect ends.`,
         hit: `The subject sees visions of possible futures that confuse its ability to determine reality.
         It is \\dazzled as a \\glossterm{condition}.`,
         targeting: `
@@ -309,6 +357,22 @@ export const revelation: MysticSphere = {
         `,
       },
       rank: 2,
+      scaling: "accuracy",
+      type: "Duration",
+    },
+
+    {
+      name: "Blinding Visions",
+
+      attack: {
+        crit: `The condition must be removed twice before the effect ends.`,
+        hit: `The subject sees an overwhelming barrage of visions of possible futures that make it virtually impossible for it to determine reality.
+        It is \\blinded as a \\glossterm{condition}.`,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\closerange.
+        `,
+      },
+      rank: 7,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -322,11 +386,11 @@ export const revelation: MysticSphere = {
         hit: `The subject's mind is overwhelmed by a total awareness of your chosen fact.
         It is \\stunned as a \\glossterm{condition}.`,
         targeting: `
-        Choose a fact that you know and make an attack vs. Mental against one creature within \\medrange.
+        Choose a fact that you know and make an attack vs. Mental against one creature within \\shortrange.
         If the subject does not already know that fact to be true or false,
         and the subject has sufficient cognitive ability to understand the fact,
-        you gain a +2 bonus to \\glossterm{accuracy}.
-        Otherwise, you take a -2 accuracy penalty.
+        you gain a +1 bonus to \\glossterm{accuracy}.
+        Otherwise, you take a -1 accuracy penalty.
         The fact does not have to be true to gain this bonus.
         `,
       },
