@@ -270,25 +270,29 @@ export const revelation: MysticSphere = {
         `,
       },
 
-      rank: 2,
+      rank: 1,
       scaling: "accuracy",
       type: "Duration",
     },
 
+    // Correct rank is unclear?
     {
       name: "Reveal Vulnerability",
 
       attack: {
-        crit: `The reduction increases to four times your \\glossterm{power}.`,
-        hit: `As a \\glossterm{condition}, the subject's vulnerabilities become clear for all to see.
-        Its physical and energy \\glossterm{resistances} are each reduced by an amount equal to twice your \\glossterm{power}.
-        Any other resistances, such as an extra resistance to fire damage or \\glossterm{universal resistance}, are unaffected by this spell.
-        When this effect ends, the subject regains resistances equal to the amount it lost this way.`,
+        crit: `
+          Attacks against the creature also ignore universal resistance.
+        `,
+        hit: `
+          As a \\glossterm{condition}, the subject's vulnerabilities become clear for all to see.
+          All attacks against it ignore its \\glossterm{resistances} to physical damage and energy damage, treating the creature as if it had no remaining resistances.
+          This does not allow attacks to ignore \\glossterm{universal resistance}.
+        `,
         targeting: `
-          Make an attack vs. Mental with a +4 \\glossterm{accuracy} bonus against one creature within \\longrange.
+          Make an attack vs. Mental against one creature within \\longrange.
         `,
       },
-      rank: 1,
+      rank: 2,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -332,7 +336,7 @@ export const revelation: MysticSphere = {
     },
 
     {
-      name: "Arcane Eye",
+      name: "Mystic Eye",
 
       effect: `
         A \\glossterm{scrying sensor} appears floating in the air in any unoccupied square within \\medrange.
