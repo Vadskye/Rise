@@ -969,7 +969,7 @@ def generate_apparel():
             material_type="Ring",
             tags=[],
             description="""
-                A the end of each round, you can remove one of your \\glossterm<vital wounds>.
+                At the end of each round, you can remove one of your \\glossterm<vital wounds>.
                 This cannot remove a vital wound you gained during the current round.
                 When you do, you increase your \\glossterm<fatigue level> by two.
             """,
