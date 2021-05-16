@@ -147,7 +147,7 @@ def generate_implements():
 
     implements += [
         MagicItem(
-            name="Fearful Staff",
+            name="Fearsome Staff",
             level=10,
             material_type="Staff",
             tags=["Emotion"],
@@ -157,7 +157,7 @@ def generate_implements():
             short_description="Makes wounded creatures briefly shaken",
         ),
         MagicItem(
-            name="Fearful Staff, Greater",
+            name="Fearsome Staff, Greater",
             level=16,
             material_type="Staff",
             tags=["Emotion"],
