@@ -205,7 +205,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Legacy Item} Shield.
                 At level 3, choose \mitem{protective shield}.
                 At level 9, choose \mitem{greater protective shield} and \mitem{covering shield}.
-                At level 15, choose \mitem{supreme protective shield}, \mitem{greater shield of arrow catching}, and \mitem{covering shield}.
+                At level 15, choose \mitem{supreme protective shield}, \mitem{greater shield of arrow catching}, and \mitem{shield of arrow deflection}.
             \parhead{Feats} Shieldbearer, Regenerator, Toughness.
             \parhead{Combat Styles} Ebb and Flow, Herald of War, Unbreakable Defense.
             \parhead{Maneuvers}
@@ -964,6 +964,40 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Clr}[7]{Greater Called to the Needy} You can use your \textit{called to the needy} ability to teleport to allies that lost \glossterm{hit points} in addition to allies that gained vital wounds.
 
+        \subsubsection{Typical Character}
+            If you want to quickly create a character based on this archetype, make the following choices:
+            \parhead{Species} Gnome.
+            \parhead{Attributes} -1 Str, 2 Dex, 3 Con, 0 Int, 0 Per, 4 Wil (after species modifiers).
+            \parhead{Class} Cleric.
+            \parhead{Archetypes} Healer first, Divine Magic second, Domain Influence third.
+            \parhead{Insight Points} 3 points for additional spells known.
+            \parhead{Skills} Awareness (T), Climb (T), Knowledge (religion) (M), Jump (T), Medicine (M), Persuasion (M), Spellsense (T), Swim (T)
+            \parhead{Weapon Group} Club-like weapons.
+            \parhead{Languages} Common, Draconic, Halfling.
+            \parhead{Equipment} Morning star, standard shield, scale mail. As you gain levels, use the best medium armor you can afford.
+            \parhead{Legacy Item} Implement.
+                At level 3, choose \mitem{staff of potency}.
+                At level 9, choose \mitem{reaching staff} and \mitem{staff of potency}.
+                At level 15, choose \mitem{greater staff of the archmagi}, \mitem{reaching staff}, and \mitem{staff of focus}.
+            \parhead{Feats} Sphere Focus: Vivimancy, Boongiver, Iron Will
+            \parhead{Mystic Spheres} Vivimancy
+            \parhead{Spells}
+            \begin{itemize}
+                \item Rank 1: \spell{drain life}, \spell{draining grasp}, \spell{lifegift}, \spell{retributive lifebond}
+                \item Rank 2: \spell{cure wound}, \spell{sickening miasma}, \spell{wellspring of life}
+                \item Rank 3: \spell{circle of death}, \spell{lifesteal}, \spell{vital persistance}
+                \item Rank 4: \spell{greater inflict wound}, \spell{greater retributive lifebond}
+                \item Rank 5: \spell{circle of death}, \spell{nauseating miasma}, \spell{steal vitality}
+                % \item Rank 6: TODO
+                \item Rank 7: \spell{avasculate}, \spell{supreme retributive lifebond}
+            \end{itemize}
+            \parhead{Domains} Life, Protection
+            \parhead{Combat Tactics} You have an unmatched mastery of healing and protection.
+            You have high defenses, so you can take to the front lines as necessary to make the most of \ability{restoration} and \ability{divine protection}, but it's generally better to let your allies take hits instead of you.
+            Since \ability{restoration} is much less effective at healing yourself, you can use spells like \spell{cure wounds} or \spell{lifesteal} to heal yourself if you lose hit points.
+            Although your \ability{healer's grace} ability is powerful, you shouldn't feel bad about attacking enemies.
+            That's especially important early in a fight when your allies don't need healing yet and your enemies haven't realized that it's pointless to attack your allies while you are still standing.
+
     \newpage
     \subsection{Preacher}
         This archetype grants you the ability to inspire your allies and denounce or even convert your foes.
@@ -986,11 +1020,11 @@ This choice determines a great deal about your character's abilities.
         \cf{Clr}[2]{Inspiring Oration} Your \glossterm{allies} who can hear you in a fight gain a \plus2 bonus to Mental defense.
         You must generally say inspiring words every few rounds to grant your allies this effect, though they can be brief, so this does not take an action.
 
-        \cf{Clr}[3]{Bless the Worthy} You can use the \textit{bless the worthy} abiity as a standard action.
+        \cf{Clr}[3]{Bless the Worthy} You can use the \textit{bless the worthy} ability as a standard action.
         \begin{instantability}{Bless the Worthy}
-            All \glossterm{allies} within a \hugearea radius from you gain a \plus2 bonus to \glossterm{accuracy} during the next round.
-            In addition, one of those allies can remove a \glossterm{condition}.
+            You and all \glossterm{allies} within a \hugearea radius from you can remove a \glossterm{condition}.
             This ability cannot remove a condition gained during the current round.
+            In addition, one of your allies gains a \plus2 bonus to \glossterm{accuracy} until the end of the next round.
 
             \rankline
             \rank{5} The accuracy bonus increases to \plus3.
@@ -1007,18 +1041,52 @@ This choice determines a great deal about your character's abilities.
             \hit Each subject is \frightened by you until the end of the next round.
 
             \rankline
-            \rank{7} The area increases to a \largearea radius, and the effect becomes a \glossterm{condition} on a critical hit.
+            \rank{7} The area increases to a \largearea radius.
         \end{instantability}
 
         \cf{Clr}[6]{Greater Inspiring Oration} The bonus from your \textit{inspiring oration} ability increases to \plus4.
 
-        \cf{Clr}[7]{Convert the Irresolute} You can use the \textit{convert the irresolute} abiity as a standard action.
+        \cf{Clr}[7]{Convert the Irresolute} You can use the \textit{convert the irresolute} ability as a standard action.
         \begin{instantability}{Convert the Irresolute}
             Make an attack vs. Mental against one creature within \rngmed range.
             Your \glossterm{accuracy} is equal to your Persuasion skill.
             \hit The subject is \glossterm{stunned} until it finishes a \glossterm{long rest}.
             At the end of that time, if its Willpower is 0 or lower, it changes its mind and begins worshipping your deity permanently if it is capable of doing so.
         \end{instantability}
+
+        \subsubsection{Typical Character}
+            If you want to quickly create a character based on this archetype, make the following choices:
+            \parhead{Species} Half-elf.
+            \parhead{Attributes} 1 Str, 0 Dex, 2 Con, 3 Int, 2 Per, 1 Wil.
+            \parhead{Class} Cleric.
+            \parhead{Archetypes} Preacher first, Divine Magic second, Domain Mastery third.
+            \parhead{Insight Points} 1 point for heavy armor, 2 points for additional skill points, 3 points for additional spells known.
+            \parhead{Skills} Awareness (M), Deduction (T), Intimidate (M), Knowledge (arcana, local, religion, planes) (M), Linguistics (M), Medicine (M), Persuasion (M), Social Insight (M), Spellsense (M)
+            \parhead{Weapon Group} Headed weapons
+            \parhead{Languages} Common, Draconic, Elven, Gnome.
+            \parhead{Equipment} Warhammer, standard shield, scale mail. As you gain levels, use the best heavy armor you can afford.
+            \parhead{Legacy Item} Apparel.
+                At level 3, choose \mitem{amulet of honeyed words}.
+                At level 9, choose \mitem{greater amulet of honeyed words} and \mitem{ring of blessed protection}.
+                At level 15, choose \mitem{supreme amulet of honeyed words}, \mitem{phasestep boots}, and \mitem{ring of blessed protection}.
+            \parhead{Feats} Persuasion Specialization, Sphere Focus: Revelation, Social Insight Specialization
+            \parhead{Mystic Sphere} Revelation
+            \parhead{Spells}
+            \begin{itemize}
+                \item Rank 1: \spell{precognitive defense}, \spell{precognitive offense}, \spell{reveal weakness}, \spell{true strike}
+                \item Rank 2: \spell{blindsight}, \spell{myriad visions}
+                \item Rank 3: \spell{discern lies}, \spell{true cast}
+                \item Rank 4: \spell{boon of knowledge}, \spell{greater reveal weakness}
+                \item Rank 5: \spell{clairvoyance}
+                \item Rank 6: \spell{mass true strike}, \spell{stunning truth}
+                \item Rank 7: \spell{blinding visions}
+            \end{itemize}
+            \parhead{Domains} Good, Travel
+            \parhead{Combat Tactics} You can distract and demoralize your enemies with unmatched accuracy.
+            Your social skills should be incredibly high, which you can use to your advantage both in and out of combat.
+            For a more cynical take on this character, consider mastering the Deception skill instead of Knowledge (religion).
+            Your domains and spells help you stay mobile in combat and protect your allies.
+            Your Preacher abilities work best if you are near the middle of the fight, but your spells are dangerous to use if you are being attacked because of your high \glossterm{Focus penalty}, so your positioning can be tricky.
 
     \newpage
     \subsection{Cleric Domain Abilities}\label{Cleric Domain Abilities}
