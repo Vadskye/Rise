@@ -217,14 +217,14 @@ It defines how attributes work and explains how to make attacks in combat.
     In general, most damaging attacks deal an amount of damage determined by rolling some number of dice and adding some multiplier of your power.
     The details are given in each attack's description.
 
-    When you would be dealt damage, you first reduce your relevant \glossterm{resistance} to that attack's damage type (see \pcref{Resistances}).
-    Any damage in excess of your remaining resistance causes you to lose that many \glossterm{hit points} (see \pcref{Hit Points}).
+    When you would be dealt damage, you first reduce your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
+    Any damage in excess of your remaining damage resistance causes you to lose that many \glossterm{hit points} (see \pcref{Hit Points}).
     Whenever you take damage that would reduce your hit points below 0, you gain one or more \glossterm{vital wounds} (see \pcref{Reaching Zero Hit Points}).
 
     \parhead{Dealing Damage, Taking Damage, and Losing Hit Points}
-    You deal damage whenever you hit with a damaging attack, regardless of whether the target loses hit points or only \glossterm{resistances} (see \pcref{Resistances}).
+    You deal damage whenever you hit with a damaging attack, regardless of whether the target loses hit points or only \glossterm{damage resistance}.
     Likewise, you take damage whenever anything deals damage to you.
-    However, you only lose hit points if the damage is not mitigated by your resistances.
+    However, you only lose hit points if the damage is not mitigated by your damage resistance.
     Many special abilities require the target to lose hit points from a damaging attack, which does not happen if the damage is resisted.
 
     \subsection{Dice Increments}\label{Dice Increments}
@@ -286,12 +286,12 @@ It defines how attributes work and explains how to make attacks in combat.
                     \minus1--\minus5 & You are unconscious, and you die at the end of the next round              \\
                     0                & You are unconscious, and you die after one minute                          \\
                     1                & You are unconscious while you have less than full hit points               \\
-                    2                & Your maximum \glossterm{hit points} and \glossterm{resistances} are halved \\
+                    2                & Your maximum \glossterm{hit points} and \glossterm{damage resistance} is halved \\
                     3                & You take a \minus2 penalty to \glossterm{accuracy}                         \\
                     4                & You take a \minus2 penalty to all \glossterm{defenses}                     \\
                     5                & You take a \minus1 penalty to future \glossterm{vital rolls}               \\
                     6                & You move at half speed while you have less than full hit points            \\
-                    7                & Your maximum \glossterm{resistances} are halved                            \\
+                    7                & Your maximum \glossterm{damage resistance} are halved                            \\
                     8                & You take a \minus1 penalty to \glossterm{accuracy}                         \\
                     9                & You take a \minus1 penalty to all \glossterm{defenses}                     \\
                     10 or more       & No extra vital wound effect                                                \\
@@ -313,7 +313,7 @@ It defines how attributes work and explains how to make attacks in combat.
             Physical damage has three subtypes: bludgeoning damage, piercing damage, and slashing damage.
             Energy damage has five subtypes: acid damage, cold damage, electricity damage, fire damage, and sonic damage.
             Damage of a particular subtype is also considered damage of its primary type.
-            For example, if you have a \glossterm{resistance} to \glossterm{physical damage}, that resistance applies against bludgeoning damage because bludgeoning damage is a subtype of \glossterm{physical damage}.
+            For example, if you are \glossterm{impervious} to \glossterm{physical damage}, that applies against bludgeoning damage because bludgeoning damage is a subtype of \glossterm{physical damage}.
 
             Some damage types have special properties, as described below.
             \parhead{Cold} Abilities that deal cold damage can freeze liquids and have similar effects appropriate to a sudden drop in temperature.
@@ -325,13 +325,7 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \subsubsection{Multiple Damage Types}\label{Multiple Damage Types}
             Some attacks deal damage that has multiple damage types.
-            When you take damage with multiple damage types, it reduces all relevant resistances equally.
-            If you take damage in excess of any of those resistances this way, you lose hit points equal to largest amount of excess damage you take this way.
-            Defensive abilities other than resistances and immunities apply only if they apply to all damage types dealt by the attack.
-
-            For example, suppose that you have 2 remaining physical damage resistance and 5 remaining energy damage resistance, and you take 4 damage from a flaming longsword that deals both slashing and fire damage.
-            Your physical damage resistance would be reduced to 0, your energy damage resistance would be reduced to 1, and you would lose 2 hit points.
-            If you were immune to fire damage, your physical damage resistance would still be reduced to 0 and you would still lose 2 hit points, but your energy damage resistance would remain at 5.
+            Defensive abilities such as being \glossterm{impervious} or immune to damage apply only if they apply to all damage types dealt by the attack.
 
     \subsection{Special Damage Types}\label{Special Damage Types}
 
@@ -345,8 +339,8 @@ It defines how attributes work and explains how to make attacks in combat.
         \subsubsection{Environmental Damage}\label{Environmental Damage}
             Some abilities and environmental effects deal environmental damage.
             Environmental damage is never dealt as the result of a successful attack roll.
-            Environmental damage works in the same way as normal damage, except that environmental damage is reduced by \glossterm{resistances} without subtracting from the remaining value of those resistances.
-            Any environmental damage in excess of a creature's resistances is dealt as hit points like normal.
+            Environmental damage works in the same way as normal damage, except that environmental damage is reduced by your \glossterm{damage resistance} without subtracting from its remaining value.
+            Any environmental damage in excess of a creature's damage resistance is causes the creature to lose hit points just like normal damage.
 
             It is possible for damage to be both environmental damage and subdual damage.
 
@@ -849,7 +843,7 @@ It defines how attributes work and explains how to make attacks in combat.
             It has the following effects:
             \begin{itemize}
                 \item You gain a bonus (or penalty) to your \glossterm{hit points} equal to your Constitution.
-                \item You gain a bonus (or penalty) to your \glossterm{resistance} against \glossterm{physical damage} equal to your Constitution (see \pcref{Resistances}).
+                \item You gain a bonus (or penalty) to your \glossterm{damage resistance} equal to half your Constitution (see \pcref{Damage Resistance}).
                 \item You gain a bonus (or penalty) to your Fortitude defense equal to your base Constitution.
                 \item You gain a bonus (or penalty) to your \glossterm{fatigue tolerance} equal to your base Constitution (see \pcref{Fatigue}).
                 \item You apply your base Constitution as a bonus or penalty to the Constitution-based \glossterm{skill}: Endurance (see \pcref{Skills}).
@@ -890,7 +884,6 @@ It defines how attributes work and explains how to make attacks in combat.
             Willpower represents your ability to endure mental hardships.
             It has the following effects:
             \begin{itemize}
-                \item You gain a bonus (or penalty) to your \glossterm{resistance} against \glossterm{energy damage} equal to your Willpower (see \pcref{Resistances}).
                 \item You gain a bonus (or penalty) to your \glossterm{power} with \glossterm{magical} abilities, such as spells, equal to half your Willpower (see \pcref{Power}).
                 \item You gain a bonus (or penalty) to your Mental defense equal to your base Willpower.
                 \item You gain a bonus (or penalty) to your \glossterm{fatigue tolerance} equal to your base Willpower (see \pcref{Fatigue}).
@@ -1020,7 +1013,7 @@ It defines how attributes work and explains how to make attacks in combat.
 
     \subsection{Hit Points}\label{Hit Points}
         Your \glossterm{hit points} measure how hard you are to seriously injure or kill.
-        Whenever you take damage that is not prevented by your \glossterm{resistances}, you lose that many hit points (see \pcref{Damage}).
+        Whenever you take damage that is not prevented by your \glossterm{damage resistance}, you lose that many hit points (see \pcref{Damage}).
         When you run out of hit points, you start gaining vital wounds instead (see \pcref{Reaching Zero Hit Points}).
 
         The number of hit points you have is based on your level, as defined in \tref{Character Advancement}.
@@ -1038,13 +1031,13 @@ It defines how attributes work and explains how to make attacks in combat.
         When lose a single hit point from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight.
         Instead, you avoided the worst of the blow, but it bruised you through your armor, the effort to dodge the blow fatigued you, or it barely nicked you through sheer luck -- and everyone's luck runs out eventually.
 
-        \subsubsection{Regaining Hit Points and Resistances}\label{Regaining Hit Points and Resistances}
-            Some abilities cause you to regain lost hit points or or resistances.
+        \subsubsection{Regaining Hit Points and Damage Resistance}\label{Regaining Hit Points and Damage Resistance}
+            Some abilities cause you to regain lost hit points or damage resistance.
             For example, the \textit{recover} ability allows you to regain all of your lost hit points (see \pcref{Recover}).
-            You can't normally exceed your maximum hit points or maximum resistances, even with magical abilities.
+            You can't normally exceed your maximum hit points or maximum damage resistance, even with magical abilities.
 
             \parhead{Timing} If you regain hit points and lose hit points in the same phase, the two values offset before checking other effects or limitations on the healing or damage.
-            The same applies to regaining and losing resistances.
+            The same applies to regaining and losing damage resistance.
             For example, if you were at five hit point and both regained six hit points and lost six hit points simultaneously, you would not receive a vital wound for dropping below 0 hit points.
             Instead, you would simply be at one hit point after both the healing and damage were applied.
             Similarly, if you were at your maximum hit points and both regained and lost two hit points simultaneously, you would still be at your maximum hit points.
@@ -1165,26 +1158,26 @@ It defines how attributes work and explains how to make attacks in combat.
         For every 5 feet of movement you would have available after completing your movement, you gain a \plus2 bonus to any initiative checks necessary to determine whether your movement succeeds.
         Regardless of whether your initiative check succeeds or fails, you cannot use that ``excess'' movement to move after making such an initiative check.
 
-    \subsection{Resistances}\label{Resistances}
-        Creatures can have a resistance to particular damage types.
-        Whenever you take damage, you first apply that damage to your resistance against that damage type before applying it to your hit points.
-        You reduce your remaining resistance by an amount equal to the damage you take.
+    \subsection{Damage Resistance}\label{Damage Resistance}
+        Most creatures can resist some damage before they start losing hit points.
+        Whenever you take damage, you first apply that damage to your \glossterm{damage resistance} before applying it to your hit points.
+        You reduce your remaining damage resistance by an amount equal to the damage you take.
         If the damage is less than your remaining resistance, you do not lose any hit points.
         If the damage is more than your resistance, your resistance is reduced to 0 and you lose hit points equal to the excess damage.
 
-        Essentially, resistances function like extra hit points that are always subtracted before you start losing actual hit points.
-        Many attacks have specific consequences if you lose hit points from them, and resistances can protect you from those consequences.
+        Essentially, your damage resistance function like extra hit points that are always subtracted before you start losing actual hit points.
+        Many attacks have specific consequences if you lose hit points from them, and your damage resistance can protect you from those consequences.
 
-        You restore all of your resistances to their full values whenever you take a \glossterm{short rest}.
-        Resistances cannot be restored by effects that cause creatures to regain hit points.
-        Some specific special abilities can restore resistances.
+        You restore your damage resistance to its full value whenever you take a \glossterm{short rest}.
+        Damage resistance cannot be restored by effects that cause creatures to regain hit points.
+        Some specific special abilities can restore damage resistance.
 
-        The base value of both of your resistances is based on your level, as defined in \tref{Character Advancement}.
-        In addition, all creatures gain a bonus to their resistance to \glossterm{physical damage} equal to their Constitution, and a bonus to their resistance to \glossterm{energy damage} equal to their Willpower.
-        Body armor provides additional resistance bonuses, and many special abilities also increase resistances.
+        The base value of your damage resistance is based on your level, as defined in \tref{Character Advancement}.
+        In addition, all creatures gain a bonus to their damage resistance equal to half their Constitution.
+        Body armor provides a bonus to damage resistance, and many special abilities also increase your damage resistance.
 
-        \parhead{Noticing Resistances}
-        In general, it is impossible to determine whether a creature has resistances simply by observing them unless there are obvious visual cues like armor.
+        \parhead{Noticing Damage Resistance}
+        In general, it is impossible to determine whether a creature has resistances simply by observing them unless there are obvious visual cues like body armor.
         However, when a creature takes damage from an attack, an observer can determine the result of the attack with an Awareness check with a base \glossterm{difficulty rating} of 10 (before applying the normal modifiers for distance, visibility, and so on).
         The creature dealing the damage gains a \plus10 bonus to this check.
         Success on this check allows an observer to distinguish between the following three possibilities:
@@ -1196,7 +1189,7 @@ It defines how attributes work and explains how to make attacks in combat.
         \end{itemize}
 
         \parhead{Timing} If you take damage from multiple sources simultaneously, you apply your current resistance value against all of them equally for the purpose of determining whether any individual attack caused you to lose hit points.
-        For example, if you have 5 physical damage resistance remaining, and you take 3 damage and 8 damage from different sources in the same round, only the 8 damage attack would be considered to have caused you to lose hit points.
+        For example, if you have 5 damage resistance remaining, and you take 3 damage and 8 damage from different sources in the same round, only the 8 damage attack would be considered to have caused you to lose hit points.
         This is meaningful for determining the effects of attacks that have special effects if they specifically cause you to lose hit points.
 
         \parhead{Stacking Magic Bonuses} A \glossterm{magic bonus} to a specific type of resistance does not stack with a \glossterm{magic bonus} to a more general resistance if both apply.
@@ -1651,7 +1644,7 @@ It defines how attributes work and explains how to make attacks in combat.
             You regain hit points equal to your maximum \glossterm{hit points}.
             In addition, you remove all \glossterm{conditions} affecting you.
             This cannot remove a condition applied during the current round.
-            If you take damage in the same phase that you use this ability, the healing and damage offset, which can prevent you from gaining vital wounds from dropping below 0 hit points (see \pcref{Regaining Hit Points and Resistances}).
+            If you take damage in the same phase that you use this ability, the healing and damage offset, which can prevent you from gaining vital wounds from dropping below 0 hit points (see \pcref{Regaining Hit Points and Damage Resistance}).
 
             After you use this ability, you cannot use it again until you take a \glossterm{short rest}.
         \end{instantability}
@@ -1817,7 +1810,7 @@ It defines how attributes work and explains how to make attacks in combat.
             When you take a short rest, you gain the following benefits.
             \begin{itemize}
                 \item Your \glossterm{hit points} become equal to your maximum hit points.
-                \item Your current resistances become equal to your maximum resistances.
+                \item Your current \glossterm{damage resistance} becomes equal to your maximum damage resistance.
                 \item You regain any \glossterm{attunement points} you released from \glossterm{attuned} abilities (see \pcref{Attunement}).
                 \item You remove all \glossterm{conditions} affecting you (unless they cannot be removed normally).
                 \item Some other abilities have specific effects that last until you take a short rest.
@@ -2160,7 +2153,7 @@ It defines how attributes work and explains how to make attacks in combat.
     \begin{dtable}
         \lcaption{Character Advancement}
         \begin{dtabularx}{\columnwidth}{l >{\lcol}X l l >{\lcol}X l l}
-            \tb{Level} & \tb{Max Rank}\fn{1} & \tb{HP} & \tb{Resistances}\fn{2} & \tb{Legacy Item}\fn{3} & \tb{AP}\fn{4} & \tb{XP} \tableheaderrule
+            \tb{Level} & \tb{Max Rank}\fn{1} & \tb{HP} & \tb{DR}\fn{2} & \tb{Legacy Item}\fn{3} & \tb{AP}\fn{4} & \tb{XP} \tableheaderrule
             1st        & 1                   & 11      & 2                      & \tdash                 & (Class)             & 0      \\
             2nd        & \tdash              & 12      & 3                      & \tdash                 & \plus1             & 20     \\
             3rd        & \tdash              & 13      & 3                      & 1                      & \plus1             & 50     \\
@@ -2184,7 +2177,7 @@ It defines how attributes work and explains how to make attacks in combat.
             21st       & \tdash              & 115     & 28                     & 4                      & \tdash        & 60,000 \\
         \end{dtabularx}
         1. See \pcref{Archetype Ranks}. \\
-        2. See \pcref{Resistances}. \\
+        2. See \pcref{Damage Resistance}. \\
         3. See \pcref{Legacy Items}. \\
         4. See \pcref{Attunement Points}. \\
     \end{dtable}
@@ -2192,7 +2185,7 @@ It defines how attributes work and explains how to make attacks in combat.
     \subsection{Leveling Up}
         When you gain a level, the following things happen:
         \begin{itemize}
-            \item Your \glossterm{hit points} and \glossterm{resistances} increase (see \tref{Character Advancement}).
+            \item Your \glossterm{hit points} and \glossterm{damage resistance} increase (see \tref{Character Advancement}).
             \item Your \glossterm{accuracy} increases by 1 (see \pcref{Accuracy})
             \item All of your \glossterm{defenses} increase by 1 (see \pcref{Defenses})
             \item You gain an additional \glossterm{archetype rank} (see \pcref{Archetypes})
