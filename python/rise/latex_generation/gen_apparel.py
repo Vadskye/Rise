@@ -804,7 +804,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                You gain a +4 bonus to defenses against abilities from the \\sphere<polymorph> sphere.
+                You gain a +4 bonus to defenses against attacks from the \\sphere<polymorph> sphere.
                 This bonus also applies against other attacks that significantly alter your physical form, such as an aboleth's slime.
             """,
             short_description="Grants +4 defenses vs form-altering attacks",
@@ -815,7 +815,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                You gain a +8 bonus to defenses against abilities from the \\textit<polymorph> sphere.
+                You gain a +8 bonus to defenses against attacks from the \\textit<polymorph> sphere.
                 This bonus also applies against other attacks that significantly alter your physical form, such as an aboleth's slime.
             """,
             short_description="Grants +8 defenses vs form-altering attacks",
@@ -1063,7 +1063,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                You gain a +4 bonus to defenses against abilities with the \\glossterm<Detection> or \\glossterm<Scrying> tags.
+                You gain a +4 bonus to defenses against attacks with the \\glossterm<Detection> or \\glossterm<Scrying> tags.
             """,
             short_description="Grants +4 to defenses against detection",
         ),
@@ -1073,7 +1073,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                You gain a +8 bonus to defenses against abilities with the \\glossterm<Detection> or \\glossterm<Scrying> tags.
+                You gain a +8 bonus to defenses against attacks with the \\glossterm<Detection> or \\glossterm<Scrying> tags.
             """,
             short_description="Grants +8 to defenses against detection",
         ),
