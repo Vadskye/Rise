@@ -94,12 +94,7 @@ def create_page(destination):
                             calc_hit_points(),
                             calc_insight_points(),
                             calc_skill_points(),
-                            flex_wrapper(
-                                div({"class": "section-header"}, "Resistances")
-                            ),
-                            calc_physical_resistance_bonus(),
-                            calc_energy_resistance_bonus(),
-                            flex_wrapper(div({"class": "section-header"}, "Defenses")),
+                            flex_wrapper(div({"class": "section-header"}, "Defenses and Damage Resistance")),
                             calc_defenses(),
                         ],
                     ),
@@ -382,20 +377,30 @@ def calc_accuracy():
     )
 
 
-def calc_physical_resistance_bonus():
+def calc_damage_resistance():
     return flex_row(
-        {"class": "resistance-row"},
         [
-            div({"class": "calc-header"}, "Physical"),
+            div({"class": "calc-header"}, "DR"),
             equation(
                 [
                     underlabel(
-                        "Con",
+                        "Base",
                         number_input(
                             {
                                 "disabled": True,
-                                "name": "physical_resistance_constitution",
-                                "value": "(@{constitution})",
+                                "name": "damage_resistance_from_level_display",
+                                "value": "(@{damage_resistance_from_level})",
+                            }
+                        ),
+                    ),
+                    plus(),
+                    underlabel(
+                        "1/2 Con",
+                        number_input(
+                            {
+                                "disabled": True,
+                                "name": "damage_resistance_constitution",
+                                "value": "(floor(@{constitution}/2))",
                             }
                         ),
                     ),
@@ -404,30 +409,18 @@ def calc_physical_resistance_bonus():
                         "Armor",
                         number_input(
                             {
-                                "name": "physical_resistance_bonus_armor",
+                                "name": "damage_resistance_bonus_armor",
                             }
                         ),
                     ),
                     plus(),
-                    underlabel(
-                        "Base",
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": "physical_resistance_from_level_display",
-                                "value": "(@{physical_resistance_from_level})",
-                            }
-                        ),
-                    ),
-                    plus(),
-                    equation_misc_repeat("physical_resistance_bonus", 3),
+                    equation_misc_repeat("damage_resistance_bonus", 4),
                 ],
                 result_attributes={
                     "disabled": "true",
-                    "name": "physical_resistance_bonus_display",
-                    "value": "(@{physical_resistance_maximum})",
+                    "name": "damage_resistance_bonus_display",
+                    "value": "(@{damage_resistance_maximum})",
                 },
-                result_label="Bonus",
             ),
         ],
     )
@@ -903,6 +896,7 @@ def calc_defenses():
     return div(
         {"class": "defenses"},
         [
+            calc_damage_resistance(),
             calc_armor(),
             calc_fort(),
             calc_ref(),
