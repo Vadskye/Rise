@@ -431,7 +431,7 @@ def generate_weapons():
             description="""
                 This weapon is transluscent and has no physical presence for anyone except you.
                 It has no effect on objects or constructs, and creatures do not feel any pain or even notice attacks from it.
-                Attacks with this weapon ignore all \\glossterm<resistances>, but the damage is delayed instead of being dealt immediately.
+                Attacks with this weapon ignore all \\glossterm<damage resistance>, but the damage is delayed instead of being dealt immediately.
                 Damage that would be dealt by the weapon can be delayed indefinitely.
                 While the damage is delayed, it cannot be removed by any means short of the destruction of this weapon or the creature's death.
 
@@ -445,7 +445,7 @@ def generate_weapons():
         ),
         MagicItem(
             name="Soulreaving, Greater",
-            level=15,
+            level=18,
             material_type="Weapon",
             tags=[],
             description="""

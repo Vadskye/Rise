@@ -331,7 +331,7 @@ export const barrier: MysticSphere = {
     },
 
     {
-      name: "Kinetic Shield",
+      name: "Resilient Shield",
 
       castingTime: "minor action",
       effect: `
@@ -347,12 +347,12 @@ export const barrier: MysticSphere = {
     },
 
     {
-      name: "Mass Kinetic Shield",
+      name: "Mass Resilient Shield",
 
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        name: "kinetic shield",
+        name: "resilient shield",
       },
       rank: 3,
       scaling: {
@@ -363,13 +363,13 @@ export const barrier: MysticSphere = {
     },
 
     {
-      name: "Retributive Kinetic Shield",
+      name: "Retributive Shield",
 
       effect: `
         You can cast this spell as a \\glossterm{minor action}.
 
         You gain a +16 \\glossterm{magic bonus} to \\glossterm{damage resistance}.
-        In addition, whenever you resist physical damage, the attacker takes energy damage equal to half the damage resisted this way.
+        In addition, whenever you resist damage, the attacker takes energy damage equal to half the damage resisted this way.
         If the attacker is beyond \\shortrange of you, this reflection fails.
         Any effect which increases this spell's range increases the range of this effect by the same amount.
       `,
