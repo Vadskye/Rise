@@ -328,16 +328,12 @@ export const revelation: MysticSphere = {
       name: "Reveal Vulnerability",
 
       attack: {
-        crit: `
-          Attacks against the creature also ignore universal resistance.
-        `,
         hit: `
           As a \\glossterm{condition}, the subject's vulnerabilities become clear for all to see.
-          All attacks against it ignore its \\glossterm{resistances} to physical damage and energy damage, treating the creature as if it had no remaining resistances.
-          This does not allow attacks to ignore \\glossterm{universal resistance}.
+          Damage against it is treated as damage of all types, which can bypass many forms of immunity and special defenses against specific damage types.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\longrange.
+          Make an attack vs. Mental with a +3 accuracy bonus against one creature within \\longrange.
         `,
       },
       rank: 2,

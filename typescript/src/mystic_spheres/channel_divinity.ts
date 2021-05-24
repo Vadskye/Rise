@@ -99,15 +99,14 @@ export const channelDivinity: MysticSphere = {
       effect: `
         This spell does not have the \\abilitytag{Focus} tag.
 
-        You take half damage from \\glossterm{physical damage} this round.
-        This halving is applied before \\glossterm{resistances} and similar abilities.
-        Because this ability has the \\abilitytag{Swift} tag, this improves your resistances against damage you take during the current phase.
-        `,
+        You are \\glossterm{impervious} to all damage this round.
+        Because this is a \\abilitytag{Swift} ability, it affects damage you take during the current phase.
+      `,
       focus: false,
       rank: 2,
       scaling: {
-        4: `You also take half damage from \\glossterm{energy} damage this round.`,
-        6: `You also negate any \\glossterm{conditions} that you would gain this round.`,
+        4: `You also gain a +2 bonus to \\glossterm{vital rolls} this round.`,
+        6: `The bonus to vital rolls increases to +4.`,
       },
       tags: ["Swift"],
       type: "Instant",
@@ -270,10 +269,11 @@ export const channelDivinity: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You gain a +8 \\glossterm{magic bonus} to your \\glossterm{resistances} to both \\glossterm{physical damage} and \\glossterm{energy damage}.
-        `,
-      rank: 3,
+        You gain a +4 \\glossterm{magic bonus} to your \\glossterm{damage resistance}.
+      `,
+      rank: 1,
       scaling: {
+        3: `The bonus increases to +8.`,
         5: `The bonus increases to +16.`,
         7: `The bonus increases to +32.`,
       },
