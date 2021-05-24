@@ -223,7 +223,7 @@ def calc_skill(skill_name, attribute=None, blank_input=False):
                     }
                 ),
             ),
-            equation_misc_repeat(skill_parsable, 3, lambda: ""),
+            equation_misc_repeat(skill_parsable, 2, lambda: ""),
         ],
     )
 
@@ -269,7 +269,7 @@ def calc_attribute(attribute_name):
                                 ),
                             ),
                             plus(),
-                            equation_misc_repeat(attribute_lower + "_starting", 2),
+                            equation_misc_repeat(attribute_lower + "_starting", 1),
                         ],
                         result_attributes={
                             "disabled": "true",
@@ -957,7 +957,7 @@ def calc_combat_styles():
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat("combat_styles_known", 3),
+                    equation_misc_repeat("combat_styles_known", 2),
                 ],
                 result_attributes={
                     "disabled": True,
@@ -984,7 +984,7 @@ def calc_maneuvers():
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat("maneuvers_known", 3),
+                    equation_misc_repeat("maneuvers_known", 2),
                 ],
                 result_attributes={
                     "disabled": True,
@@ -1011,7 +1011,7 @@ def calc_spells():
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat("spells_known", 3),
+                    equation_misc_repeat("spells_known", 2),
                 ],
                 result_attributes={
                     "disabled": True,
@@ -1038,7 +1038,7 @@ def calc_spheres():
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat("spheres_known", 3),
+                    equation_misc_repeat("spheres_known", 2),
                 ],
                 result_attributes={
                     "disabled": True,
@@ -1069,7 +1069,7 @@ def calc_blank_ability(i):
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat(name, 3),
+                    equation_misc_repeat(name, 2),
                 ],
                 result_attributes={
                     "disabled": True,

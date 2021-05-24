@@ -95,7 +95,7 @@ def sum_variables(variables):
 
 
 def attribute_change(a):
-    misc = get_misc_variables(a + "_starting", 2)
+    misc = get_misc_variables(a + "_starting", 1)
     return js_wrapper(
         ["level", f"{a}_point_buy", *misc],
         f"""
@@ -134,7 +134,7 @@ def attribute_skills(attribute):
 
 
 def set_skill(a, s):
-    misc = get_misc_variables(s, 3)
+    misc = get_misc_variables(s, 2)
     if a == "other":
         return js_wrapper(
             ["level", f"{s}_points", "fatigue_penalty", *misc],
@@ -662,7 +662,7 @@ def mundane_power():
 
 
 def combat_styles_known():
-    misc = get_misc_variables("combat_styles_known", 3)
+    misc = get_misc_variables("combat_styles_known", 2)
     return js_wrapper(
         ["combat_styles_known_insight_points", *misc],
         f"""
@@ -674,7 +674,7 @@ def combat_styles_known():
 
 
 def maneuvers_known():
-    misc = get_misc_variables("maneuvers_known", 3)
+    misc = get_misc_variables("maneuvers_known", 2)
     return js_wrapper(
         ["maneuvers_known_insight_points", *misc],
         f"""
@@ -686,7 +686,7 @@ def maneuvers_known():
 
 
 def spheres_known():
-    misc = get_misc_variables("spheres_known", 3)
+    misc = get_misc_variables("spheres_known", 2)
     return js_wrapper(
         ["spheres_known_insight_points", *misc],
         f"""
@@ -698,7 +698,7 @@ def spheres_known():
 
 
 def spells_known():
-    misc = get_misc_variables("spells_known", 3)
+    misc = get_misc_variables("spells_known", 2)
     return js_wrapper(
         ["spells_known_insight_points", *misc],
         f"""
@@ -711,7 +711,7 @@ def spells_known():
 
 def blank_ability_known(i):
     name = f"blank_ability_known_{i}"
-    misc = get_misc_variables(name, 3)
+    misc = get_misc_variables(name, 2)
     return js_wrapper(
         [f"{name}_insight_points", *misc],
         f"""
