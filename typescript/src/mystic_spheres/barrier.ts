@@ -368,7 +368,7 @@ export const barrier: MysticSphere = {
       effect: `
         You can cast this spell as a \\glossterm{minor action}.
 
-        You gain a +16 \\glossterm{magic bonus} to \\glossterm{resistance} against \\glossterm{physical damage}.
+        You gain a +16 \\glossterm{magic bonus} to \\glossterm{damage resistance}.
         In addition, whenever you resist physical damage, the attacker takes energy damage equal to half the damage resisted this way.
         If the attacker is beyond \\shortrange of you, this reflection fails.
         Any effect which increases this spell's range increases the range of this effect by the same amount.
