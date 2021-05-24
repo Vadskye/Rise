@@ -867,12 +867,13 @@ export const polymorph: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You gain a +10 foot \\glossterm{magic bonus} to your \\glossterm{land speed}.
+        You gain a +5 foot \\glossterm{magic bonus} to your \\glossterm{land speed}.
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: `The bonus increases to +20 feet.`,
-        6: `The bonus increases to +30 feet.`,
+        3: `The bonus increases to +10 feet.`,
+        5: `The bonus increases to +15 feet.`,
+        7: `The bonus increases to +20 feet.`,
       },
       type: "Attune (self)",
     },

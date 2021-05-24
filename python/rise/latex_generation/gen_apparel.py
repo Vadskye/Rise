@@ -626,7 +626,7 @@ def generate_apparel():
             material_type="Boots",
             tags=[],
             description="""
-                You gain a +10 foot \\glossterm<magic bonus> to your land speed, up to a maximum of double your normal speed.
+                You gain a +5 foot \\glossterm<magic bonus> to your land speed.
             """,
             short_description="Increases speed by ten feet",
         ),
@@ -636,9 +636,9 @@ def generate_apparel():
             material_type="Boots",
             tags=[],
             description="""
-                You gain a +20 foot \\glossterm<magic bonus> to your land speed, up to a maximum of double your normal speed.
+                You gain a +10 foot \\glossterm<magic bonus> to your land speed.
             """,
-            short_description="Increases speed by twenty feet",
+            short_description="Increases speed by ten feet",
         ),
         MagicItem(
             name="Boots of Speed, Supreme",
@@ -646,9 +646,9 @@ def generate_apparel():
             material_type="Boots",
             tags=[],
             description="""
-                You gain a +30 foot \\glossterm<magic bonus> to your land speed, up to a maximum of double your normal speed.
+                You gain a +15 foot \\glossterm<magic bonus> to your land speed.
             """,
-            short_description="Increases speed by thirty feet",
+            short_description="Increases speed by fifteen feet",
         ),
     ]
 
@@ -659,11 +659,11 @@ def generate_apparel():
             material_type="Boots",
             tags=[],
             description="""
-            When you move using one of your movement speeds, you can teleport the same distance instead.
-            This does not change the total distance you can move, but you can teleport in any direction, even vertically.
-            You must teleport onto a stable surface that can support your weight.
-            You cannot teleport to locations you do not have \\glossterm<line of sight> and \\glossterm<line of effect> to.
-        """,
+                When you move using one of your movement speeds, you can teleport the same distance instead.
+                This does not change the total distance you can move, but you can teleport in any direction, even vertically.
+                You must teleport onto a stable surface that can support your weight.
+                You cannot teleport to locations you do not have \\glossterm<line of sight> and \\glossterm<line of effect> to.
+            """,
             short_description="Allows teleporting instead of moving",
         )
     )

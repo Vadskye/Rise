@@ -62,7 +62,7 @@ export const bless: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        The subject gains a +10 foot \\glossterm{magic bonus} to its \\glossterm{base speed}, up to a maximum of double its \\glossterm{base speed}.
+        The subject gains a +5 foot \\glossterm{magic bonus} to its \\glossterm{base speed}, and a +1 \\glossterm{magic bonus} to Reflex defense.
 
         You can only have one casting of this spell active at once.
         When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
@@ -71,8 +71,8 @@ export const bless: MysticSphere = {
       scaling: {
         3: `Casting this spell does not remove previous attunements to this spell.
                 In addition, you can choose to cast this spell with the \\abilitytag{Sustain} (minor) tag instead of the \\abilitytag{Attune} (target) tag.`,
-        5: `The speed bonus increases to +20 feet.`,
-        7: `The speed bonus increases to +30 feet.`,
+        5: `The speed bonus increases to +10 feet, and the defense bonus increases to +2.`,
+        7: `The speed bonus increases to +15 feet, and the defense bonus increases to +3.`,
       },
       type: "Attune (target)",
     },
