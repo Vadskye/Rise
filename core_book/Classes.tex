@@ -3244,16 +3244,12 @@ This choice determines a great deal about your character's abilities.
         This bonus stacks with the normal \plus2 bonus provided by that ability.
 
         \cf{Pal}[1]{Smite}[Magical] You can use the \textit{smite} ability as a standard action.
-        % This ability gets rank upgrades while maneuvers don't
-        % because maneuvers are upgraded into higher rank maneuvers,
-        % while this has no upgrades and should remain relevant alone.
         \begin{instantability}{Smite}
             \spelltwocol{Instant}{\abilitytag{Magical}}
             \rankline
-            Make a \glossterm{strike}.
+            Make a \glossterm{strike} with a \plus1d damage bonus.
             Because this is a \glossterm{magical} ability, you use your magical \glossterm{power} to determine your damage instead of your \glossterm{mundane} power.
-            If your target shares your devoted alignment, the strike deals no damage.
-            Otherwise, you gain a \plus1d damage bonus with the strike.
+            If your target shares your devoted alignment, you take a single point of \glossterm{energy damage} as feedback from the attack warning you that you are persecuting a creature that share your alignment.
 
             \rankline
             \rank{3} The damage bonus increases to \plus2d.
@@ -3272,9 +3268,10 @@ This choice determines a great deal about your character's abilities.
         \begin{instantability}{Zealous Purge}
             \spelltwocol{Instant}{\abilitytag{Magical}}
             \rankline
-            Make a \glossterm{strike}.
+            Make a \glossterm{strike} with a \minus1d damage penalty.
             You add half your \glossterm{power} to damage with the strike instead of your full power.
             Because this is a \glossterm{magical} ability, you use your \glossterm{magical} \glossterm{power} to determine your damage instead of your \glossterm{mundane} power.
+            If your target shares your devoted alignment, you take a single point of \glossterm{energy damage} as feedback from the attack warning you that you are persecuting a creature that share your alignment.
 
             If the target takes damage from the strike, it stops being \glossterm{attuned} to one effect.
             It can freely choose which effect it releases its attunement to.
