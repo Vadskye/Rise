@@ -200,7 +200,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a +2d damage bonus using a piercing weapon.
-        Each target that has any \\glossterm{resistance} against the strike's damage takes no damage from the strike.
+        Each target that has any remaining \\glossterm{damage resistance} takes no damage from the strike.
       `,
       narrative: `
         You strike directly for your foe's heart, hoping its armor is too damaged to effectively deflect the blow.

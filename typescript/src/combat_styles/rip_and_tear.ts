@@ -303,7 +303,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        If the target does not have any \\glossterm{resistance} to the attack, your \\glossterm{power} with the strike is doubled.
+        If the target does not have any remaining \\glossterm{damage resistance}, your \\glossterm{power} with the strike is doubled.
       `,
       rank: 3,
       scaling: {
