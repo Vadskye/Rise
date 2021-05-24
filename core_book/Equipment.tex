@@ -182,14 +182,19 @@
 
         \parhead{Range Limts} The \glossterm{range limits} of the weapon (see \pcref{Weapon Range Limits}).
 
-        \parhead{Type} Weapons are classified according to the type of damage they deal: bludgeoning, piercing, or slashing. Some monsters may be resistant or immune to attacks from certain types of weapons.
+        \parhead{Type} Weapons are classified according to the type of damage they deal: bludgeoning, piercing, or slashing.
+        Some monsters may be impervious or immune to attacks from certain damage types.
 
-        Some weapons deal damage of multiple types. If a weapon is of two types, the damage it deals is not half one type and half another; all of it is both types. Therefore, a creature would have to be immune to both types of damage to ignore any of the damage from such a weapon.
+        Some weapons deal damage of multiple types. If a weapon is of two types, the damage it deals is not half one type and half another; all of it is both types.
+        Therefore, a creature would have to be immune to both types of damage to ignore any of the damage from such a weapon.
+        For details, see \pcref{Multiple Damage Types}.
 
         In other cases, a weapon can deal either of two types of damage. In a situation when the damage type is significant, the wielder can choose which type of damage to deal with such a weapon.
 
-        \parhead{Cost} This value is the weapon's cost in gold pieces (gp) or silver pieces (sp). The cost includes miscellaneous gear that goes with the weapon.
-        \par A Small or Large version costs twice the listed price.
+        \parhead{Item Level (Cost)} The first value indicates the \glossterm{item level} of the item (see \pcref{Item Levels}).
+        The second value in parentheses indicates the average cost to buy the item.
+        Items crafted for unusually large or small creatures are more expensive.
+        For each size category larger or smaller than Medium, the item's \glossterm{item level} increases by one, which increases its price.
 
         \parhead{Weapon Tags} Some weapons have special properties. See \pcref{Weapon Tags} for details.
 
@@ -502,23 +507,6 @@
                 2 The wearer must have help to don this armor. Without help, it can be donned only hastily.
             \end{dtable}
 
-        \subsubsection{Armor for Unusual Creatures}\label{Armor for Unusual Creatures}
-            Armor and shields for unusually big creatures, unusually little creatures, and nonhumanoid creatures have different costs and weights from those given on \trefnp{Armor and Shields}. Refer to the appropriate line on the table below and apply the multipliers to cost and weight for the armor type in question.
-            \begin{dtable}
-                \lcaption{Armor for Unusual Creatures}
-                \begin{dtabularx}{\columnwidth}{>{\lcol}X c c c c}
-                    & \multicolumn{2}{c}{\tb{Humanoid}} & \multicolumn{2}{c}{\tb{Nonhumanoid}} \tableheaderrule
-                    \tb{Size} & \tb{Cost} & \tb{Weight} & \tb{Cost} & \tb{Weight} \\
-                    Tiny or smaller & \mult2 & \mult1/64 & \mult4  & \mult1/64 \\
-                    Small           & \mult1   & \mult1/8  & \mult2  & \mult1/8  \\
-                    Medium          & \mult1   & \mult1    & \mult2  & \mult1    \\
-                    Large           & \mult2   & \mult2    & \mult4  & \mult2    \\
-                    Huge            & \mult4   & \mult4    & \mult8  & \mult4    \\
-                    Gargantuan      & \mult8   & \mult8    & \mult16 & \mult8    \\
-                    Colossal        & \mult16  & \mult12   & \mult32 & \mult12   \\
-                \end{dtabularx}
-            \end{dtable}
-
     \subsection{Armor Table}
         \par Here is the format for armor entries (given as column headings on \trefnp{Armor and Shields}, below).
 
@@ -537,8 +525,11 @@
         \parhead{Dex} Some armor halves your current and base Dexterity while being used.
         If your Dexterity or base Dexterity are negative, they are not halved.
 
-        \parhead{Cost} The cost of the armor for Medium humanoid creatures.
-        See \trefnp{Armor for Unusual Creatures}, below, for armor prices for other creatures.
+        \parhead{Item Level (Cost)} The first value indicates the \glossterm{item level} of the item (see \pcref{Item Levels}).
+        The second value in parentheses indicates the average cost to buy the item.
+        Items crafted for unusually large or small creatures are more expensive.
+        For each size category larger or smaller than Medium, the item's \glossterm{item level} increases by one, which increases its price.
+
         \parhead{Armor/Shield Bonus} Both body armor and shields improve your Armor defense.
         Wearing multiple suits of armor or wielding multiple shields does not improve your defenses any further.
 
@@ -613,22 +604,6 @@
     \subsection{Special Materials}\label{Special Materials}
         Body armor can be made from special materials that can alter the properties of the item.
         These special materials are described in \trefnp{Armor Special Materials}.
-
-        % Cost analysis for breastplate:
-        % Regular: 150 gp = IL 3
-        % \mult2, \plus 500: 800 gp = IL 5
-        % \mult5, \plus2,000: 2750 gp = IL 8
-        % \mult10, \plus10,000: 11500 gp = IL 12 (barely)
-        % \mult20, \plus50,000: 53,000 gp = IL 15
-        % \mult50, \plus250,000: 275,000 gp = IL 19
-
-        % Cost analysis for full plate:
-        % Regular: 1,000 gp = IL 6
-        % \mult2, \plus 500: 2500 gp = IL 8
-        % \mult5, \plus2,000: 7000 gp = IL 11
-        % \mult10, \plus10,000: 20,000 gp = IL 13
-        % \mult20, \plus50,000: 70,000 gp = IL 16
-        % \mult50, \plus250,000: 300,000 gp = IL 20
 
         \begin{dtable!*}
             \lcaption{Armor Special Materials}
