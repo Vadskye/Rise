@@ -92,7 +92,6 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         You are \\glossterm{impervious} to \\glossterm{physical damage} this round.
-        This halving is applied before \\glossterm{resistances} and similar abilities.
         Because this is a \\abilitytag{Swift} ability, it affects damage you take during the current phase.
       `,
       rank: 2,
@@ -112,7 +111,6 @@ export const unbreakableDefense: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
 
         In addition, you are \\glossterm{impervious} to \\glossterm{physical damage} this round.
-        This halving is applied before \\glossterm{resistances} and similar abilities.
         Becoming impervious in this way is a \\abilitytag{Swift} ability, so it affects damage you take during the current phase.
       `,
       rank: 5,
