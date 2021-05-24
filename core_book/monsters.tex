@@ -22,24 +22,14 @@ This chapter describes the rules for monsters, and the combat statistics for a v
             \lcaption{Challenge Rating Effects}
             \begin{dtabularx}{\textwidth}{l l l X l l l}
                 \tb{CR} & \tb{HP}  & \tb{Resists} & \tb{AP} & \tb{Accuracy} & \tb{Defenses} & \tb{Damage}\fn{1} \tableheaderrule
-                1/2     & \mult1/2 & \mult0           & 0       & \plus0        & \plus0 & \minus2d \\
-                1       & \mult1   & \mult0           & 1       & \plus0        & \plus0 & \minus1d \\
-                2       & \mult1   & \mult1           & 1       & \plus1        & \plus1 & \tdash \\
-                3       & \mult2   & \mult2           & 2       & \plus2        & \plus2 & \plus1d \\
-                4       & \mult4   & \mult2\fn{2}     & 3       & \plus3        & \plus3 & \plus1d \\
+                1/2     & \mult1/2 & \mult0       & 0       & \plus0        & \plus0        & \minus2d \\
+                1       & \mult1   & \mult0       & 1       & \plus0        & \plus0        & \minus1d \\
+                2       & \mult1   & \mult1       & 1       & \plus1        & \plus1        & \tdash   \\
+                3       & \mult2   & \mult2       & 2       & \plus2        & \plus2        & \plus1d  \\
+                4       & \mult4   & \mult4       & 3       & \plus3        & \plus3        & \plus1d  \\
             \end{dtabularx}
             1. This modifier applies to all damage dice rolled by the monster, including both strikes and magical abilities. \\
-            2. CR 4 monsters also have a universal damage resistance equal to half their HP (see \pcref{Monster Universal Resistance}). \\
         \end{dtable}
-
-        \subsection{Monster Universal Resistance}\label{Monster Universal Resistance}
-            CR 4 monsters have a special \glossterm{universal resistance} to damage of all types equal to half their maximum \glossterm{hit points} (after taking into account their hit point multiplier).
-            This resistance is independent of their specific resistances to physical damage or energy damage, and is applied after their more specific resistances have been expended.
-            A small number of monsters that are not CR 4 can also gain universal damage resistance as indicated in their descriptions.
-
-            This resistance ensures that CR 4 monsters are appropriately durable in combat without requiring all damage they take be of any particular type.
-            It should take multiple rounds of combat before they start losing hit points, since losing hit points makes them vulnerable to powerful detrimental effects.
-            CR 4 monsters also have a high hit point total to encourage the use of those powerful debuffs against them.
 
         \subsubsection{Monster Vital Wounds}
             Monsters do not normally make \glossterm{vital rolls} like player characters do.
@@ -70,11 +60,14 @@ This chapter describes the rules for monsters, and the combat statistics for a v
         Monster level scaling is described in \tref{Monster Advancement}.
         This summarizes the following effects:
         \begin{itemize}
-            \item A \plus1 bonus to all defenses at 3rd level and every 6 levels thereafter
-            \item A \plus1 bonus to power with all abilities at 3rd level that gradually increases every 3 levels thereafter
-            \item A \plus1d damage bonus with strikes at 4th level and every 3 levels thereafter
-            \item A \plus1 bonus to level for the purpose of determining \glossterm{hit points} at 4th level and every 3 levels thereafter.
-            \item A \plus1 accuracy bonus at 5th level and every 6 levels thereafter
+            % this compensates for monsters not being able to take the recover action
+            \item At almost all levels, the base \glossterm{hit points} of a monster are 50\% higher than the base hit points of a player character
+            % this compensates for monsters not having complicated armor mechanics
+            \item At all levels, the base \glossterm{damage resistance} of a monster is twice the base damage resistance of a player character
+            \item Monsters gain a \plus1 bonus to all defenses at 3rd level and every 6 levels thereafter
+            \item Monsters gain a \plus1 bonus to power with all abilities at 3rd level that gradually increases every 3 levels thereafter
+            \item Monsters gain a \plus1d damage bonus with strikes at 4th level and every 3 levels thereafter
+            \item Monsters gain a \plus1 accuracy bonus at 5th level and every 6 levels thereafter
         \end{itemize}
         These scaling values are designed to keep monsters at a similar power level to player characters without having to repetitively define specific bonuses for each monster.
         In general, monsters that are designed to have unusually high or low values for any particular statistic define that with their attributes, though some monsters have more specific abilities.
@@ -82,30 +75,30 @@ This chapter describes the rules for monsters, and the combat statistics for a v
     \begin{dtable*}
         \lcaption{Monster Advancement}
         \begin{dtabularx}{\textwidth}{l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Level} & \tb{HP}   & \tb{Resistances} & \tb{Defenses} & \tb{Power} & \tb{Strike Damage} & \tb{Accuracy} \tableheaderrule
-            1st        & 11        & 2                & \tdash        & \tdash     & \tdash             & \tdash \\
-            2nd        & 12        & 3                & \tdash        & \tdash     & \tdash             & \tdash \\
-            3rd        & 13        & 3                & \plus1        & \plus1     & \tdash             & \tdash \\
-            4th        & 15        & 3                & \plus1        & \plus1     & \plus1d            & \tdash \\
-            5th        & 17        & 4                & \plus1        & \plus1     & \plus1d            & \plus1 \\
-            6th        & 19        & 4                & \plus1        & \plus2     & \plus1d            & \plus1 \\
-            7th        & 22        & 5                & \plus1        & \plus2     & \plus2d            & \plus1 \\
-            8th        & 25        & 6                & \plus1        & \plus2     & \plus2d            & \plus1 \\
-            9th        & 28        & 7                & \plus2        & \plus3     & \plus2d            & \plus1 \\
-            10th       & 31        & 8                & \plus2        & \plus3     & \plus3d            & \plus1 \\
-            11th       & 35        & 9                & \plus2        & \plus3     & \plus3d            & \plus2 \\
-            12th       & 39        & 10               & \plus2        & \plus4     & \plus3d            & \plus2 \\
-            13th       & 44        & 11               & \plus2        & \plus4     & \plus4d            & \plus2 \\
-            14th       & 50        & 12               & \plus2        & \plus4     & \plus4d            & \plus2 \\
-            15th       & 56        & 14               & \plus3        & \plus6     & \plus4d            & \plus2 \\
-            16th       & 63        & 15               & \plus3        & \plus6     & \plus5d            & \plus2 \\
-            17th       & 70        & 17               & \plus3        & \plus6     & \plus5d            & \plus3 \\
-            18th       & 78        & 19               & \plus3        & \plus8     & \plus5d            & \plus3 \\
-            19th       & 88        & 22               & \plus3        & \plus8     & \plus6d            & \plus3 \\
-            20th       & 100       & 25               & \plus3        & \plus8     & \plus6d            & \plus3 \\
-            21st       & 115\fn{5} & 28               & \plus4        & \plus12    & \plus6d            & \plus3 \\
+            \tb{Level} & \tb{HP}   & \tb{DR} & \tb{Defenses} & \tb{Power} & \tb{Strike Damage} & \tb{Accuracy} \tableheaderrule
+            1st        & 16        & 4       & \tdash        & \tdash     & \tdash             & \tdash \\
+            2nd        & 18        & 6       & \tdash        & \tdash     & \tdash             & \tdash \\
+            3rd        & 19        & 6       & \plus1        & \plus1     & \tdash             & \tdash \\
+            4th        & 22        & 6       & \plus1        & \plus1     & \plus1d            & \tdash \\
+            5th        & 25        & 8       & \plus1        & \plus1     & \plus1d            & \plus1 \\
+            6th        & 28        & 8       & \plus1        & \plus2     & \plus1d            & \plus1 \\
+            7th        & 33        & 10      & \plus1        & \plus2     & \plus2d            & \plus1 \\
+            8th        & 37        & 12      & \plus1        & \plus2     & \plus2d            & \plus1 \\
+            9th        & 42        & 14      & \plus2        & \plus3     & \plus2d            & \plus1 \\
+            10th       & 46        & 16      & \plus2        & \plus3     & \plus3d            & \plus1 \\
+            11th       & 52        & 18      & \plus2        & \plus3     & \plus3d            & \plus2 \\
+            12th       & 58        & 20      & \plus2        & \plus4     & \plus3d            & \plus2 \\
+            13th       & 66        & 22      & \plus2        & \plus4     & \plus4d            & \plus2 \\
+            14th       & 75        & 24      & \plus2        & \plus4     & \plus4d            & \plus2 \\
+            15th       & 84        & 28      & \plus3        & \plus6     & \plus4d            & \plus2 \\
+            16th       & 94        & 30      & \plus3        & \plus6     & \plus5d            & \plus2 \\
+            17th       & 105       & 34      & \plus3        & \plus6     & \plus5d            & \plus3 \\
+            18th       & 115       & 38      & \plus3        & \plus8     & \plus5d            & \plus3 \\
+            19th       & 132       & 44      & \plus3        & \plus8     & \plus6d            & \plus3 \\
+            20th       & 150       & 50      & \plus3        & \plus8     & \plus6d            & \plus3 \\
+            21st       & 175\fn{5} & 56      & \plus4        & \plus12    & \plus6d            & \plus3 \\
         \end{dtabularx}
-        1. For each level beyond 21, a monster increases its maximum hit points by 30 and its maximum resistances by 4. \\
+        1. For each level beyond 21, a monster increases its maximum hit points by 25 and its maximum damage resistance by 10. \\
     \end{dtable*}
 
     \subsection{Monster Armor}
@@ -113,11 +106,10 @@ This chapter describes the rules for monsters, and the combat statistics for a v
         Of course, not all monsters wear physical armor.
         The narrative justification is that the bonus is caused by their scales, an unusually tough hide, or similar effects.
 
-        Monster resistances are generally calculated more simply than player resistances from armor, however.
-        At higher levels, player resistances are heavily influenced by special materials, and calculating monster resistances in the same way would require annoying bookkeeping and lead to oddly large gaps between resistances at similar levels.
-        Instead, many monsters have special abilities indicating that they double their base resistance bonus for physical damage, energy damage, or both, depending on the monster's narrative.
-        This should generally result in monsters that have highly mismatched resistances, such as high physical resistance and low energy resistance, instead of creating monsters with balanced resistances.
-        Imbalanced monster resistances give player characters more opportunity to meaningfully change their actions based on monster resistances, and encourages PCs to switch between energy damage and physical damage where possible.
+        Monster damage resistance is generally calculated more simply than player damage resistance.
+        Player characters can have damage resistance bonuses from a variety of sources, especially armor.
+        Since the vast majority of monsters do not wear armor, tracking their resistances explicitly with armor-equivalent mechanics would just be unnecessary bookkeeping.
+        Instead, monsters have twice the normal base value for their damage resistance, and high CR monsters have additional multipliers on top of that.
 
     \subsection{Monster Natural Weapon Bonuses}
         Monsters do not use the \textit{offhand strike} ability in combat.
