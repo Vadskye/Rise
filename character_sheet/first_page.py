@@ -248,8 +248,8 @@ def defenses():
         {"class": "defenses"},
         [
             flex_wrapper(div({"class": "section-header"}, "Defenses")),
-            "".join(
-                [
+            flex_row([
+                flex_col({"class": "standard-defenses"}, [
                     labeled_number_input(
                         defense,
                         input_attributes={
@@ -265,8 +265,14 @@ def defenses():
                         },
                     )
                     for defense in DEFENSES
-                ]
-            ),
+                ]),
+                flex_col({"class": "special-defenses"}, [
+                    text_input(
+                        {"name": f"special_defense_{i}_name"},
+                    )
+                    for i in range(4)
+                ]),
+            ]),
         ],
     )
 
@@ -460,17 +466,18 @@ def movement():
         {"class": "movement"},
         [
             flex_wrapper(div({"class": "section-header"}, "Movement")),
-            "".join(
-                [
-                    labeled_number_input(
-                        movement_type,
-                        input_attributes={
-                            "name": f"{movement_type.lower()}_display",
-                        },
-                    )
-                    for movement_type in "Land Climb Fly Swim".split()
-                ]
+            labeled_number_input(
+                "Land",
+                input_attributes={
+                    "name": f"land_display",
+                },
             ),
+            *[
+                freeform_number_input(
+                    text_input_attributes={"name": f"movement_speed_{i}_name"}, number_input_attributes={"name": f"movement_speed_{i}_value"},
+                )
+                for i in range(3)
+            ],
         ],
     )
 
