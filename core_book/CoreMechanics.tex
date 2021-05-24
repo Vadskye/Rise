@@ -1162,8 +1162,8 @@ It defines how attributes work and explains how to make attacks in combat.
         Most creatures can resist some damage before they start losing hit points.
         Whenever you take damage, you first apply that damage to your \glossterm{damage resistance} before applying it to your hit points.
         You reduce your remaining damage resistance by an amount equal to the damage you take.
-        If the damage is less than your remaining resistance, you do not lose any hit points.
-        If the damage is more than your resistance, your resistance is reduced to 0 and you lose hit points equal to the excess damage.
+        If the damage is less than your remaining damage resistance, you do not lose any hit points.
+        If the damage is more than your remaining damage resistance, your damage resistance is reduced to 0 and you lose hit points equal to the excess damage.
 
         Essentially, your damage resistance function like extra hit points that are always subtracted before you start losing actual hit points.
         Many attacks have specific consequences if you lose hit points from them, and your damage resistance can protect you from those consequences.
@@ -1177,23 +1177,20 @@ It defines how attributes work and explains how to make attacks in combat.
         Body armor provides a bonus to damage resistance, and many special abilities also increase your damage resistance.
 
         \parhead{Noticing Damage Resistance}
-        In general, it is impossible to determine whether a creature has resistances simply by observing them unless there are obvious visual cues like body armor.
+        In general, it is impossible to determine whether a creature has damage resistance simply by observing them unless there are obvious visual cues like body armor.
         However, when a creature takes damage from an attack, an observer can determine the result of the attack with an Awareness check with a base \glossterm{difficulty rating} of 10 (before applying the normal modifiers for distance, visibility, and so on).
         The creature dealing the damage gains a \plus10 bonus to this check.
         Success on this check allows an observer to distinguish between the following three possibilities:
         \begin{itemize}
             \item The creature resisted all damage from your attack.
             \item The creature resisted some damage from your attack, but also lost some hit points.
-                This means that the target's resistance was reduced to 0 during this phase.
+                This means that the target's damage resistance was reduced to 0 during this phase.
             \item The creature did not resist any damage from your attack, and took all damage from the attack from their hit points.
         \end{itemize}
 
-        \parhead{Timing} If you take damage from multiple sources simultaneously, you apply your current resistance value against all of them equally for the purpose of determining whether any individual attack caused you to lose hit points.
+        \parhead{Timing} If you take damage from multiple sources simultaneously, you apply your current damage resistance value against all of them equally for the purpose of determining whether any individual attack caused you to lose hit points.
         For example, if you have 5 damage resistance remaining, and you take 3 damage and 8 damage from different sources in the same round, only the 8 damage attack would be considered to have caused you to lose hit points.
         This is meaningful for determining the effects of attacks that have special effects if they specifically cause you to lose hit points.
-
-        \parhead{Stacking Magic Bonuses} A \glossterm{magic bonus} to a specific type of resistance does not stack with a \glossterm{magic bonus} to a more general resistance if both apply.
-        For example, if you have a \glossterm{magic bonus} to resistances against energy damage and another \glossterm{magic bonus} to resistances against fire damage, you only use the higher of the two when you take fire damage.
 
 \section{Circumstances, Bonuses, and Penalties}
 
