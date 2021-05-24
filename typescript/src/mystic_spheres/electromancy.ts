@@ -340,18 +340,19 @@ export const electromancy: MysticSphere = {
     },
 
     {
-      // The flavor here is a bit of a stretch, so it's a rank behind Haste and there is no Mass
-      // Energize.
+      // The flavor here is a bit of a stretch, so it doesn't provide a Reflex bonus like Haste and
+      // there is no Mass Energize.
       name: "Energize",
 
       castingTime: "minor action",
       effect: `
-        You gain a +10 foot \\glossterm{magic bonus} to your \\glossterm{base speed}.
+        You gain a +5 foot \\glossterm{magic bonus} to your \\glossterm{base speed}.
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: `The speed bonus increases to +20 feet.`,
-        6: `The speed bonus increases to +30 feet.`,
+        3: `The speed bonus increases to +10 feet.`,
+        5: `The speed bonus increases to +15 feet.`,
+        7: `The speed bonus increases to +20 feet.`,
       },
       type: "Attune (self)",
     },
