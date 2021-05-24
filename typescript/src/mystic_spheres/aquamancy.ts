@@ -400,7 +400,7 @@ export const aquamancy: MysticSphere = {
       effect: `
         Torrential rain begins falling out of thin air within a \\medarea radius \\glossterm{zone} within \\longrange.
         The rain extinguishes minor fires such as campfires and torches on contact.
-        Everything in the area gains a bonus equal to your \\glossterm{power} to its \\glossterm{resistance} against fire damage.
+        Everything in the area gains a +4 bonus to \\glossterm{defenses} against attacks that deal fire damage.
       `,
       rank: 1,
       scaling: {

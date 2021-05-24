@@ -432,16 +432,17 @@ export const bless: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        The subject gains a +9 \\glossterm{magic bonus} to its \\glossterm{resistances} against both \\glossterm{physical} damage and \\glossterm{energy} damage.
+        The subject gains a +4 \\glossterm{magic bonus} to its \\glossterm{resistances} against both \\glossterm{physical} damage and \\glossterm{energy} damage.
 
         You can only have one casting of this spell active at once.
         When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
       `,
-      rank: 3,
+      rank: 1,
       scaling: {
-        5: `Casting this spell does not remove previous attunements to this spell.
+        3: `Casting this spell does not remove previous attunements to this spell.
                 In addition, you can choose to cast this spell with the \\abilitytag{Sustain} (minor) tag instead of the \\abilitytag{Attune} (target) tag.`,
-        7: `The bonus increases to +18.`,
+        5: `The bonus increases to +8.`,
+        7: `The bonus increases to +16.`,
       },
       type: "Attune (target)",
     },
@@ -493,7 +494,7 @@ export const bless: MysticSphere = {
         Unlike most abilities, this ritual can affect individual parts of a whole object.
 
         % How should this affect Strength break difficulty ratings?
-        The subject gains a +5 \\glossterm{magic bonus} to its \\glossterm{resistances} to both \\glossterm{physical damage} and \\glossterm{energy damage}.
+        The subject gains a +5 \\glossterm{magic bonus} to its \\glossterm{damage resistance}.
         If the subject is moved, this effect ends.
         Otherwise, it lasts for one year.
         `,
@@ -535,7 +536,7 @@ export const bless: MysticSphere = {
       castingTime: "one hour",
       functionsLike: {
         exceptThat: `
-          the bonus to \\glossterm{resistances} increases to 10.
+          the bonus to \\glossterm{damage resistance} increases to 10.
         `,
         name: "blessing of fortification",
       },
@@ -549,7 +550,7 @@ export const bless: MysticSphere = {
       castingTime: "one hour",
       functionsLike: {
         exceptThat: `
-          the bonus to \\glossterm{resistances} increases to 15.
+          the bonus to \\glossterm{damage resistance} increases to 15.
         `,
         name: "blessing of fortification",
       },

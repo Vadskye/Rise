@@ -105,7 +105,7 @@ export const electromancy: MysticSphere = {
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
         glance: "The effect lasts until the end of the next round.",
-        hit: `Each subject that has no remaining \\glossterm{resistance} to electricity damage is \\stunned as a \\glossterm{condition}.`,
+        hit: `Each subject that has no remaining \\glossterm{damage resistance} is \\stunned as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\areamed radius from you.
         `,

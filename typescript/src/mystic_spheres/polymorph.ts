@@ -12,7 +12,7 @@ export const polymorph: MysticSphere = {
       effect: `
         Choose one \\glossterm{unattended}, nonmagical object you touch.
         You make a Craft check to alter it (see \\pcref{Craft}), except that you do not need any special tools to make the check (such as an anvil and furnace).
-        The maximum \\glossterm{resistance} of a material you can affect with this ability is equal to your \\glossterm{power}.
+        The maximum \\glossterm{damage resistance} of a material you can affect with this ability is equal to your \\glossterm{power}.
 
         % too short?
         Each time you cast this spell, you can accomplish work that would take up to two rounds with a normal Craft check.
@@ -319,14 +319,14 @@ export const polymorph: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You gain a +6 \\glossterm{magic bonus} to your \\glossterm{resistance} against \\glossterm{physical} damage.
+        You gain a +4 \\glossterm{magic bonus} to your \\glossterm{damage resistance}.
       `,
 
       rank: 1,
       scaling: {
-        3: `The bonus increases to +12.`,
-        5: `The bonus increases to +24.`,
-        7: `The bonus increases to +48.`,
+        3: `The bonus increases to +8.`,
+        5: `The bonus increases to +16.`,
+        7: `The bonus increases to +32.`,
       },
       type: "Attune (self)",
     },
@@ -443,7 +443,7 @@ export const polymorph: MysticSphere = {
           \\item You gain a \\glossterm{climb speed} equal to your \\glossterm{base speed}.
           \\item You gain a +8 \\glossterm{magic bonus} to the Flexibility skill. In addition, the minimum size you can squeeze down to is reduced to one inch, which can dramatically improve your ability to squeeze through tight spaces.
           \\item You are immune to \\glossterm{critical hits} from \\glossterm{strikes}.
-          \\item Your \\glossterm{resistance} to \\glossterm{physical damage} is halved.
+          \\item Your maximum \\glossterm{damage resistance} is halved.
         \\end{itemize}
       `,
       rank: 4,
@@ -1021,7 +1021,7 @@ export const polymorph: MysticSphere = {
         Unlike most abilities, this ritual can affect individual parts of a whole object.
 
         % How should this affect Strength break difficulty ratings?
-        The subject gains a +5 \\glossterm{magic bonus} to its \\glossterm{resistances} against \\glossterm{physical damage} and \\glossterm{energy damage}.
+        The subject gains a +5 \\glossterm{magic bonus} to its \\glossterm{damage resistance}.
         If the subject is moved, this effect ends.
         Otherwise, it lasts for one year.
       `,
@@ -1065,7 +1065,7 @@ export const polymorph: MysticSphere = {
       castingTime: "one hour",
       functionsLike: {
         exceptThat: `
-          the bonus to \\glossterm{resistances} increases to 10.
+          the bonus to \\glossterm{damage resistance} increases to 10.
         `,
         name: "fortify",
       },
@@ -1079,7 +1079,7 @@ export const polymorph: MysticSphere = {
       castingTime: "one hour",
       functionsLike: {
         exceptThat: `
-          the bonus to \\glossterm{resistances} increases to 15.
+          the bonus to \\glossterm{damage resistance} increases to 15.
         `,
         name: "fortify",
       },
