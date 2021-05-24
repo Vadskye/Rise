@@ -432,7 +432,7 @@ export const bless: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        The subject gains a +4 \\glossterm{magic bonus} to its \\glossterm{resistances} against both \\glossterm{physical} damage and \\glossterm{energy} damage.
+        The subject gains a +4 \\glossterm{magic bonus} to its \\glossterm{damage resistance}.
 
         You can only have one casting of this spell active at once.
         When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.

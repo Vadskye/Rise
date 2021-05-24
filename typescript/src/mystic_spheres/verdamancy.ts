@@ -265,13 +265,13 @@ export const verdamancy: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You gain a +6 \\glossterm{magic bonus} to \\glossterm{resistances} against \\glossterm{physical} damage.
+        You gain a +4 \\glossterm{magic bonus} to \\glossterm{damage resistance}.
       `,
       rank: 1,
       scaling: {
-        3: `The bonus increases to +12.`,
-        5: `The bonus increases to +24.`,
-        7: `The bonus increases to +48.`,
+        3: `The bonus increases to +8.`,
+        5: `The bonus increases to +16.`,
+        7: `The bonus increases to +32.`,
       },
       type: "Attune (self)",
     },
@@ -287,8 +287,8 @@ export const verdamancy: MysticSphere = {
       // narrative: '',
       rank: 3,
       scaling: {
-        5: `The bonus increases to +12.`,
-        7: `The bonus increases to +24.`,
+        5: `The bonus increases to +8.`,
+        7: `The bonus increases to +16.`,
       },
       type: "Attune (target)",
     },
