@@ -50,8 +50,30 @@ def create_page():
                 custom_modifier(),
             ),
             flex_wrapper(div({"class": "section-header"}, "Attuned Abilities and Equipment")),
+            sidelabel(
+                "Attune points",
+                flex_row(
+                    {"class": "core-statistics-split"},
+                    [
+                        number_input(
+                            {
+                                "name": "attunement_points",
+                                "value": "@{attunement_points}",
+                            }
+                        ),
+                        span({"class": "core-statistics-separator"}, "/"),
+                        number_input(
+                            {
+                                "disabled": True,
+                                "name": "attunement_points_maximum_display",
+                                "value": "@{attunement_points_maximum}",
+                            }
+                        ),
+                    ],
+                ),
+            ),
             fieldset(
-                {"class": f"repeating_attunements"},
+                {"class": "repeating_attunements"},
                 attunement(),
             ),
         ],

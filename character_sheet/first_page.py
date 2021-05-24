@@ -236,7 +236,6 @@ def statistics_header(destination):
                 [
                     core_statistics(destination),
                     defenses(),
-                    resistances(),
                     movement(),
                 ],
             )
@@ -351,22 +350,44 @@ def core_statistics(destination):
         [
             flex_wrapper(div({"class": "section-header"}, "Core Statistics")),
             sidelabel(
-                "Attune points",
+                "Hit points",
                 flex_row(
                     {"class": "core-statistics-split"},
                     [
                         number_input(
                             {
-                                "name": "attunement_points",
-                                "value": "@{attunement_points}",
+                                "name": "hit_points",
+                                "value": "@{hit_points}",
                             }
                         ),
                         span({"class": "core-statistics-separator"}, "/"),
                         number_input(
                             {
                                 "disabled": True,
-                                "name": "attunement_points_maximum_display",
-                                "value": "@{attunement_points_maximum}",
+                                "name": "hit_points_maximum_display",
+                                "value": "@{hit_points_maximum}",
+                            }
+                        ),
+                    ],
+                ),
+            ),
+            sidelabel(
+                "DR",
+                flex_row(
+                    {"class": "core-statistics-split"},
+                    [
+                        number_input(
+                            {
+                                "name": "damage_resistance",
+                                "value": "@{damage_resistance}",
+                            }
+                        ),
+                        span({"class": "core-statistics-separator"}, "/"),
+                        number_input(
+                            {
+                                "disabled": True,
+                                "name": "damage_resistance_maximum_display",
+                                "value": "@{damage_resistance_maximum}",
                             }
                         ),
                     ],
@@ -389,28 +410,6 @@ def core_statistics(destination):
                                 "disabled": True,
                                 "name": "fatigue_tolerance_display_first_page",
                                 "value": "@{fatigue_tolerance}",
-                            }
-                        ),
-                    ],
-                ),
-            ),
-            sidelabel(
-                "Hit points",
-                flex_row(
-                    {"class": "core-statistics-split"},
-                    [
-                        number_input(
-                            {
-                                "name": "hit_points",
-                                "value": "@{hit_points}",
-                            }
-                        ),
-                        span({"class": "core-statistics-separator"}, "/"),
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": "hit_points_maximum_display",
-                                "value": "@{hit_points_maximum}",
                             }
                         ),
                     ],
