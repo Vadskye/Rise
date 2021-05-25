@@ -34,7 +34,6 @@ def main(destination):
                 debug_stylesheets('first_page', destination),
                 debug_html_wrapper(
                     ''.join([
-                        header_bar.create_page(destination),
                         first_page.create_page(destination)
                     ]),
                     destination,
@@ -60,7 +59,6 @@ def main(destination):
         with open('roll20.html', 'w') as fh:
             fh.write(sheet_worker.generate_script())
             fh.write(cgi.div({'class': 'full-sheet'}, [
-                header_bar.create_page(cgi.DESTINATION),
                 ''.join(header_bar.nav_row()),
                 first_page.create_page(cgi.DESTINATION),
                 active_abilities_page.create_page(cgi.DESTINATION),
