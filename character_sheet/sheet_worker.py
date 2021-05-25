@@ -762,11 +762,14 @@ def debuffs():
         [],
         boolean_variables=[
             # conditional debuffs
-            "surrounded",
             "flying",
             "flying_poorly",
+            "grappled",
+            "helpless",
             "prone",
             "squeezing",
+            "surrounded",
+            "underwater",
             # rank 1 debuffs
             "dazed",
             "dazzled",
@@ -777,7 +780,6 @@ def debuffs():
             "frightened",
             "nauseated",
             "stunned",
-            "underwater",
             # rank 3 debuffs
             "decelerated",
             "confused",
@@ -787,7 +789,6 @@ def debuffs():
             "panicked",
             # rank 4 debuffs
             "asleep",
-            "helpless",
             "paralyzed",
             # other calculations
             "dexterity_starting",
@@ -800,6 +801,10 @@ def debuffs():
             let reflex = 0;
 
             // circumstantial effects
+            if (grappled) {{
+                armor -= 2;
+                reflex -= 2;
+            }}
             if (squeezing) {{
                 accuracy -= 2;
                 armor -= 2;
