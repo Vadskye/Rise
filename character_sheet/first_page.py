@@ -30,9 +30,9 @@ import re
 
 
 def create_page(destination):
-    return flex_row(
-        {"class": "page first-page"},
-        [
+    return flex_col( {"class": "page first-page"}, [
+        boring_stuff(destination),
+        flex_row([
             flex_col(
                 {"class": "sidebar"},
                 [
@@ -85,8 +85,8 @@ def create_page(destination):
                     ),
                 ],
             ),
-        ],
-    )
+        ]),
+    ])
 
 
 def attributes_and_skills():
@@ -513,3 +513,54 @@ def custom_modifier_toggle():
         checkbox({"class": "is-active", "name": "is_active"}),
         text_input({"name": "name", "readonly": True}),
     ])
+
+def boring_stuff(destination):
+    return div(
+        {"class": "boring-stuff"},
+        [
+            flex_row(
+                {"class": "boring-row"},
+                [
+                    labeled_text_input(
+                        "Character name", input_attributes={"name": "character_name"}
+                    ),
+                    labeled_text_input(
+                        "Player name", input_attributes={"name": "player_name"}
+                    ),
+                    labeled_text_input("Concept", input_attributes={"name": "concept"}),
+                    underlabel_spaced(
+                        "Level",
+                        number_input({"class": "fake-text", "name": "level"}),
+                        attributes={"class": "level-input"},
+                    ),
+                    *(
+                        [
+                            underlabel_spaced(
+                                "CR",
+                                number_input(
+                                    {"class": "fake-text", "name": "challenge_rating"}
+                                ),
+                                attributes={"class": "challenge-rating-input"},
+                            ),
+                            underlabel("Chat color", select(
+                                {"class": "chat-color", "name": "chat_color"},
+                                [
+                                    option({"value": "black"}, "Black"),
+                                    option({"value": "blue"}, "Blue"),
+                                    option({"value": "bluegreen"}, "Bluegreen"),
+                                    option({"value": "brown"}, "Brown"),
+                                    option({"value": "gold"}, "Gold"),
+                                    option({"value": "gray"}, "Gray"),
+                                    option({"value": "green"}, "Green"),
+                                    option({"value": "orange"}, "Orange"),
+                                    option({"value": "purple"}, "Purple"),
+                                ],
+                            ))
+                        ]
+                        if destination == "roll20"
+                        else []
+                    ),
+                ],
+            ),
+        ],
+    )
