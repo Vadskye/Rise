@@ -266,7 +266,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
-        hit: `Each subject takes 4d6 + half \\glossterm{power} bludgeoning and fire damage.`,
+        hit: `Each subject takes 2d10 + half \\glossterm{power} bludgeoning and fire damage.`,
         targeting: `
           You create a meteor in midair within \\medrange that falls to the ground, crushing foes in its path.
           The meteor takes up a \\smallarea radius, and must be created in unoccupied space.
@@ -274,7 +274,7 @@ export const fabrication: MysticSphere = {
           Make an attack vs. Armor against everything in its path.
         `,
       },
-      rank: 6,
+      rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",
