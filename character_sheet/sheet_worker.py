@@ -14,6 +14,7 @@ def generate_script():
             attunement_points(),
             skill_points_spent(),
             unknown_statistic(),
+            vital_wounds(),
             custom_modifiers(),
             monster_chat_color(),
             debuffs(),
@@ -926,6 +927,17 @@ def monster_chat_color():
             }}
         """,
     )
+
+def vital_wounds():
+    return """
+        on("change:repeating_vitalwounds remove:repeating_vitalwounds", function(eventInfo) {
+            getSectionIDs("repeating_vitalwounds", (repeatingSectionIds) => {
+                setAttrs({
+                    vital_wound_count: repeatingSectionIds.length,
+                });
+            });
+        });
+    """
 
 
 def custom_modifiers():
