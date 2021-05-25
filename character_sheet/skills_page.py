@@ -35,44 +35,42 @@ def calc_skills(destination):
     if destination == "roll20":
         return flex_col(
             [
-                flex_row([
-                    flex_row(
-                        {"class": "skill-points"},
-                        [
-                            div({"class": "skill-points-label"}, "Skill Points"),
-                            underlabel(
-                                "Spent",
-                                number_input(
-                                    {
-                                        "disabled": True,
-                                        "name": "skill_points_spent_display",
-                                        "value": "@{skill_points_spent}",
-                                    }
-                                ),
-                            ),
-                            span({"class": "equation-glue"}, "/"),
-                            underlabel(
-                                "Total",
-                                number_input(
-                                    {
-                                        "disabled": True,
-                                        "name": "skill_points_total_display",
-                                        "value": "@{skill_points}",
-                                    }
-                                ),
-                            ),
-                        ],
-                    ),
-                    div({"class": "tab-explanation"}, """
-                        This tab is used to track your skills.
-                        On the left side, you can spend skill points and determine your level of training in each skill.
-                        On the right side, you can add custom bonuses or penalties to each skill to determine your total skill modifier.
-                    """),
-                ]),
+                div({"class": "tab-explanation"}, """
+                    This tab is used to track your skills.
+                    On the left side, you can spend skill points and determine your level of training in each skill.
+                    On the right side, you can add custom bonuses or penalties to each skill to determine your total skill modifier.
+                """),
                 *[
                     display_skills_for_attribute(attribute, calc_skill)
                     for attribute in filter(lambda a: a != "Willpower", ATTRIBUTES + ["Other"])
                 ],
+                flex_row(
+                    {"class": "skill-points"},
+                    [
+                        div({"class": "skill-points-label"}, "Skill Points"),
+                        underlabel(
+                            "Spent",
+                            number_input(
+                                {
+                                    "disabled": True,
+                                    "name": "skill_points_spent_display",
+                                    "value": "@{skill_points_spent}",
+                                }
+                            ),
+                        ),
+                        span({"class": "equation-glue"}, "/"),
+                        underlabel(
+                            "Total",
+                            number_input(
+                                {
+                                    "disabled": True,
+                                    "name": "skill_points_total_display",
+                                    "value": "@{skill_points}",
+                                }
+                            ),
+                        ),
+                    ],
+                ),
             ],
         )
     else:
