@@ -164,13 +164,13 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
-        hit: `Each subject takes piercing and cold damage equal to 2d8 plus half your \\glossterm{power} (see \\pcref{Multiple Damage Types}).`,
+        hit: `Each subject takes piercing and cold damage equal to 2d6 plus half your \\glossterm{power} (see \\pcref{Multiple Damage Types}).`,
         targeting: `
         Make an attack vs. Armor against everything in a \\medarealong, 10 ft. wide line from you.
         `,
       },
 
-      rank: 4,
+      rank: 3,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",
@@ -181,9 +181,9 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
-        hit: `The subject takes 2d8 + \\glossterm{power} piercing and cold damage (see \\pcref{Multiple Damage Types}).`,
+        hit: `The subject takes 2d10 + \\glossterm{power} piercing and cold damage (see \\pcref{Multiple Damage Types}).`,
         targeting: `
-          Make an attack vs. Armor against anything within \\medrange.
+          Make an attack vs. Armor against anything within \\closerange.
         `,
       },
       rank: 3,
@@ -197,9 +197,9 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
-        hit: `The subject takes 4d10 + \\glossterm{power} piercing and cold damage (see \\pcref{Multiple Damage Types}).`,
+        hit: `The subject takes 5d10 + \\glossterm{power} piercing and cold damage (see \\pcref{Multiple Damage Types}).`,
         targeting: `
-          Make an attack vs. Armor against anything within \\longrange.
+          Make an attack vs. Armor against anything within \\medrange.
         `,
       },
       rank: 6,
@@ -375,7 +375,7 @@ export const cryomancy: MysticSphere = {
         glance: `Half damage.`,
         hit: `Each subject takes 2d10 + half \\glossterm{power} bludgeoning and cold damage (see \\pcref{Multiple Damage Types}).`,
         targeting: `
-          Make an attack vs. Armor against everything in a \\smallarea radius within \\medrange.
+          Make an attack vs. Armor against everything in a \\medarea radius within \\medrange.
         `,
       },
 

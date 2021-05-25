@@ -356,7 +356,7 @@ export const terramancy: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
-        hit: `Each subject takes 2d10 + half \\glossterm{power} bludgeoning and fire damage.`,
+        hit: `Each subject takes 2d8 + half \\glossterm{power} bludgeoning and fire damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\areasmall radius from a point on a stable surface within \\medrange.
           This attack gains a +2 \\glossterm{accuracy} bonus if that point is on a Medium or larger body of stone.
@@ -365,7 +365,7 @@ export const terramancy: MysticSphere = {
       narrative: `
         You create a small volcano that bursts forth, showering nearby creatures in burning shrapnel.
       `,
-      rank: 5,
+      rank: 4,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",
