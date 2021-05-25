@@ -136,7 +136,7 @@ def calc_attribute(attribute_name):
                                 ),
                             ),
                             plus(),
-                            equation_misc_repeat(attribute_lower + "_starting", 1),
+                            equation_misc_repeat(attribute_lower + "_starting", 2),
                         ],
                         result_attributes={
                             "disabled": "true",
