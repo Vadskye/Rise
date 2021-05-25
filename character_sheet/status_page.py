@@ -23,7 +23,7 @@ from cgi_simple import (
 )
 
 
-def create_page():
+def create_page(_destination):
     return flex_col(
         {"class": "page status-page"},
         [
