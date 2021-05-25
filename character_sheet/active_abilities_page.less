@@ -58,10 +58,6 @@
     }
 }
 
-button.attack-roll[type=roll] {
-    margin-left: 0.5em;
-}
-
 .attack-power {
     width: 4em;
 }
@@ -69,6 +65,7 @@ button.attack-roll[type=roll] {
 textarea {
     height: 5.5em;
     margin: 0;
-    padding-right: 0;
-    // resize: none;
+    // it seems like textareas naturally bleed into their surroundings due to
+    // the weird behavior of their padding
+    width: calc(100% - 1em);
 }
