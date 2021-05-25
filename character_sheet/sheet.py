@@ -9,6 +9,7 @@ import re
 import second_page
 import header_bar
 import sheet_worker
+import skills_page
 import third_page
 import reference_page
 import status_page
@@ -39,46 +40,22 @@ def main(destination):
                     destination,
                 ),
             ]) + '\n')
-
-        with open('active_abilities_page.html', 'w') as fh:
-            fh.write(''.join([
-                debug_stylesheets('active_abilities_page', destination),
-                debug_html_wrapper(active_abilities_page.create_page(destination), destination),
-            ]) + '\n')
-
-        with open('second_page.html', 'w') as fh:
-            fh.write(''.join([
-                debug_stylesheets('second_page', destination),
-                debug_html_wrapper(second_page.create_page(destination), destination),
-            ]) + '\n')
-
-        with open('third_page.html', 'w') as fh:
-            fh.write(''.join([
-                debug_stylesheets('third_page', destination),
-                debug_html_wrapper(third_page.create_page(), destination),
-            ]) + '\n')
-
-        with open('reference_page.html', 'w') as fh:
-            fh.write(''.join([
-                debug_stylesheets('reference_page', destination),
-                debug_html_wrapper(reference_page.create_page(), destination),
-            ]) + '\n')
-
-        with open('status_page.html', 'w') as fh:
-            fh.write(''.join([
-                debug_stylesheets('status_page', destination),
-                debug_html_wrapper(status_page.create_page(), destination),
-            ]) + '\n')
-
-        # Compile LESS
-        call(['lessc', 'status_page.less', 'status_page.css'])
         call(['lessc', 'first_page.less', 'first_page.css'])
-        call(['lessc', 'active_abilities_page.less', 'active_abilities_page.css'])
-        call(['lessc', 'second_page.less', 'second_page.css'])
-        call(['lessc', 'third_page.less', 'third_page.css'])
-        call(['lessc', 'reference_page.less', 'reference_page.css'])
-        call(['lessc', 'sheet.less', 'sheet.css'])
-        call(['lessc', 'paper_sheet.less', 'paper_sheet.css'])
+
+        for (name, module) in [
+                ['active_abilities_page', active_abilities_page],
+                ['second_page', second_page],
+                ['third_page', third_page],
+                ['skills_page', skills_page],
+                ['reference_page', reference_page],
+                ['status_page', status_page],
+        ]:
+            with open(f'{name}.html', 'w') as fh:
+                fh.write(''.join([
+                    debug_stylesheets(name, destination),
+                    debug_html_wrapper(module.create_page(destination), destination),
+                ]) + '\n')
+            call(['lessc', f'{name}.less', f'{name}.css'])
     else:
         with open('roll20.html', 'w') as fh:
             fh.write(sheet_worker.generate_script())
@@ -87,22 +64,23 @@ def main(destination):
                 ''.join(header_bar.nav_row()),
                 first_page.create_page(cgi.DESTINATION),
                 active_abilities_page.create_page(cgi.DESTINATION),
+                skills_page.create_page(cgi.DESTINATION),
                 second_page.create_page(cgi.DESTINATION),
-                third_page.create_page(),
-                status_page.create_page(),
-                reference_page.create_page(),
+                third_page.create_page(cgi.DESTINATION),
+                status_page.create_page(cgi.DESTINATION),
+                reference_page.create_page(cgi.DESTINATION),
                 rolltemplate.rolltemplate_html(),
             ]))
 
         class_pattern = re.compile(r'\.([a-z\-]+)\b')
         with open('roll20.less', 'w') as output_file:
-            for filename in ['sheet', 'first_page', 'active_abilities_page', 'second_page', 'third_page', 'roll20_custom', 'reference_page', 'status_page']:
+            for filename in ['sheet', 'first_page', 'active_abilities_page', 'skills_page', 'second_page', 'third_page', 'roll20_custom', 'reference_page', 'status_page']:
                 with open(filename + '.less', 'r') as input_file:
-                    if filename in ['first_page', 'active_abilities_page', 'second_page', 'third_page', 'reference_page', 'status_page']:
+                    if filename not in ['sheet', 'roll20_custom']:
                         output_file.write(f"div.page.{filename.replace('_', '-')} {{\n")
                     for line in input_file:
                         output_file.write(line)
-                    if filename in ['first_page', 'active_abilities_page', 'second_page', 'third_page', 'reference_page', 'status_page']:
+                    if filename not in ['sheet', 'roll20_custom']:
                         output_file.write("\n}")
                 output_file.write('\n\n')
             output_file.write(rolltemplate.rolltemplate_css())
@@ -149,4 +127,4 @@ def debug_html_wrapper(html, destination):
         raise Exception("Unknown destination '" + destination + "'")
 
 if __name__ == "__main__":
-    main()
+    main(None)

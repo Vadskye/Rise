@@ -14,7 +14,7 @@ from cgi_simple import (
 )
 
 
-def create_page():
+def create_page(_destination):
     return flex_row(
         {"class": "page third-page"},
         [
