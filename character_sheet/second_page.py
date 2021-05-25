@@ -527,7 +527,9 @@ def calc_vital_rolls():
                         "Wounds",
                         number_input(
                             {
-                                "name": "vital_wound_count",
+                                "disabled": True,
+                                "name": "vital_wound_count_display",
+                                "value": "@{vital_wound_count}",
                             }
                         ),
                     ),
