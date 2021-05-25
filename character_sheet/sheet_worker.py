@@ -554,7 +554,7 @@ def hit_points():
                 1: 1,
                 2: 1,
                 3: 2,
-                4: 4,
+                4: 3,
             }}[challenge_rating || 0];
             hit_points = Math.floor(hit_points * cr_multiplier)
             setAttrs({{
