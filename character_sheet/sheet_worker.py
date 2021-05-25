@@ -466,7 +466,7 @@ def initiative():
 
 
 def base_speed():
-    misc = get_misc_variables("speed", 3)
+    misc = get_misc_variables("speed", 2)
     return js_wrapper(
         ["level", "speed_size", "speed_armor", *misc],
         f"""
