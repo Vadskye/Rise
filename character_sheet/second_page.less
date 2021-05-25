@@ -95,13 +95,13 @@
 }
 .core-statistics {
   justify-content: space-around;
-  margin-bottom: 0.5em !important;
+  margin-bottom: 0.5em;
 }
 .prowess-header {
   font-weight: 600;
 }
-.statistics > .flex-row {
-  margin-bottom: 0.1em;
+.statistics > .flex-row, .calc-attributes > .flex-row, .sidebar > .flex-row, .calc-skills > .flex-row, .defenses > .flex-row {
+  margin-bottom: 0.5em;
   align-items: baseline;
 }
 .calc-attributes {
@@ -213,10 +213,8 @@
 }
 
 input[type=text].invisible-text-input {
-    border: 0;
-    font-family: Calibri;
-    padding: 2px 0 0 0;
-    text-align: center;
+    font-size: 0.8em;
+    padding-top: 0;
 }
 
 .attribute-name {
