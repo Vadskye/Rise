@@ -640,7 +640,7 @@ def calc_initiative():
             equation(
                 [
                     underlabel(
-                        "Dex/Per",
+                        "(Dex|Per)",
                         number_input(
                             {
                                 "disabled": True,
