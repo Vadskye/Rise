@@ -163,13 +163,13 @@ export const ripAndTear: CombatStyle = {
       name: "Flintspark Strike",
 
       effect: `
-        Make a strike using a slashing weapon.
+        Make a strike with a +1d damage bonus using a slashing weapon.
         If the subject is wearing metal armor or is significantly composed of metal, damage dealt by the strike is fire damage in addition to its normal damage types.
       `,
-      rank: 2,
+      rank: 3,
       scaling: {
-        4: "You gain a +1d damage bonus with the strike.",
-        6: "The damage bonus increases to +2d.",
+        5: "The damage bonus increases to +2d.",
+        7: "The damage bonus increases to +3d.",
       },
       type: "Instant",
     },
