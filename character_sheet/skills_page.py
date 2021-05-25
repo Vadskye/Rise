@@ -35,7 +35,6 @@ def calc_skills(destination):
     if destination == "roll20":
         return flex_col(
             [
-                div({"class": "section-header"}, "Skills"),
                 flex_row([
                     flex_row(
                         {"class": "skill-points"},
@@ -64,15 +63,15 @@ def calc_skills(destination):
                             ),
                         ],
                     ),
-                    div({"class": "explanation"}, """
+                    div({"class": "tab-explanation"}, """
                         This tab is used to track your skills.
                         On the left side, you can spend skill points and determine your level of training in each skill.
                         On the right side, you can add custom bonuses or penalties to each skill to determine your total skill modifier.
                     """),
                 ]),
                 *[
-                    display_skills_for_attribute(attribute.lower(), calc_skill)
-                    for attribute in filter(lambda a: a != "Willpower", ATTRIBUTES + ["other"])
+                    display_skills_for_attribute(attribute, calc_skill)
+                    for attribute in filter(lambda a: a != "Willpower", ATTRIBUTES + ["Other"])
                 ],
             ],
         )
@@ -187,9 +186,9 @@ def calc_skill(skill_name, attribute=None):
 
 def display_skills_for_attribute(attribute, display_function):
     return "".join([
-        div({"class": "attribute-header"}, f"{ATTRIBUTE_SHORTHAND[attribute]} Skills"),
+        div({"class": "section-header"}, f"{attribute} Skills"),
         *[
-            display_function(skill_name, attribute)
-            for skill_name in ATTRIBUTE_SKILLS[attribute]
+            display_function(skill_name, attribute.lower())
+            for skill_name in ATTRIBUTE_SKILLS[attribute.lower()]
         ],
     ])
