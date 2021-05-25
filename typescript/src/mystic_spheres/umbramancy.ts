@@ -420,6 +420,9 @@ export const umbramancy: MysticSphere = {
         While you are in \\glossterm{bright illumination}, this effect is \\glossterm{suppressed}, and you return to your normal size and shape.
         If doing so is impossible, such as if you are in a space too small to contain your body, you gain a \\glossterm{vital wound} and this effect persists for the rest of the round.
         This form offers you no special immunity to damage, as creatures can simply attack the shadow.
+
+        As a \\glossterm{minor action}, you can voluntarily disable this ability and return to your normal form.
+        If you do, you can resume the effect of this ability as a minor action.
       `,
       rank: 4,
       scaling: {

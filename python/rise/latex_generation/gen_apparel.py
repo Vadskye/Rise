@@ -69,13 +69,13 @@ def generate_apparel():
     apparel += [
         MagicItem(
             name="Bracers of Armor",
-            level=3,
+            level=4,
             material_type="Bracers",
             tags=[],
             description="""
                 You have a translucent suit of magical armor on your body and over your hands.
                 This functions like body armor that provides a +2 bonus to Armor defense and has no \\glossterm<encumbrance>.
-                It also provides a +4 bonus to \\glossterm{resistance} against \\glossterm{energy damage}, and a +2 bonus to \\glossterm{resistance} against \\glossterm{physical damage}.
+                It also provides a +4 bonus to \\glossterm{damage resistance}.
 
                 As long as you have a free hand, the barrier also manifests as a shield that provides a +1 bonus to Armor defense.
                 This bonus is considered to come from a shield, and does not stack with the benefits of using any other shield.
@@ -86,23 +86,23 @@ def generate_apparel():
         ),
         MagicItem(
             name="Bracers of Armor, Greater",
-            level=9,
+            level=10,
             material_type="Bracers",
             tags=[],
             description="""
                 These bracers function like \\textit<bracers of armor>, except that the defense bonus from the body armor increases to +3.
-                In addition, its bonus to \glossterm{resistance} against \glossterm{energy damage} increases to +8, and its bonus to resistance against \glossterm{physical damage} increases to +4.
+                In addition, its bonus to \\glossterm{damage resistance} increases to +8.
             """,
             short_description="Grants encumbrance-free +3 armor",
         ),
         MagicItem(
             name="Bracers of Armor, Supreme",
-            level=15,
+            level=16,
             material_type="Bracers",
             tags=[],
             description="""
                 These bracers function like \\textit<bracers of armor>, except that the defense bonus from the body armor increases to +4.
-                In addition, its bonus to \glossterm{resistance} against \glossterm{energy damage} increases to +16, and its bonus to resistance against \glossterm{physical damage} increases to +8.
+                In addition, its bonus to \\glossterm{damage resistance} increases to +16.
             """,
             short_description="Grants encumbrance-free +4 armor",
         ),
@@ -421,13 +421,13 @@ def generate_apparel():
                 The flame sheds light as a torch.
 
                 You and your \\glossterm<allies> within a \\areamed radius emanation from you
-                    gain a +4 bonus to their \\glossterm<resistance> against cold and fire damage.
+                    gain a +2 bonus to \\glossterm<defenses> against attacks that deal fire damage.
             """,
-            short_description="Grants nearby allies +4 cold and fire resistance",
+            short_description="Grants you and allies +2 defenses vs fire",
         ),
         MagicItem(
             name="Crown of Flame, Greater",
-            level=10,
+            level=13,
             material_type="Crown",
             tags=[],
             description="""
@@ -435,23 +435,9 @@ def generate_apparel():
                 The flame sheds light as a torch.
 
                 You and your \\glossterm<allies> within a \\areamed radius emanation from you
-                    gain a +8 bonus to their \\glossterm<resistance> against cold and fire damage.
+                    gain a +4 bonus to \\glossterm<defenses> against attacks that deal fire damage.
             """,
-            short_description="Grants nearby allies +8 cold and fire resistance",
-        ),
-        MagicItem(
-            name="Crown of Flame, Supreme",
-            level=16,
-            material_type="Crown",
-            tags=[],
-            description="""
-                This crown is continuously on fire.
-                The flame sheds light as a torch.
-
-                You and your \\glossterm<allies> within a \\areamed radius emanation from you
-                    gain a +16 bonus to their \\glossterm<resistance> against fire damage.
-            """,
-            short_description="Grants nearby allies +16 cold and fire resistance",
+            short_description="Grants you and allies +4 defenses vs fire",
         ),
     ]
 
@@ -462,14 +448,14 @@ def generate_apparel():
             material_type="Crown",
             tags=[],
             description="""
-            This crown continuously crackles with electricity.
-            The constant sparks shed light as a torch.
+                This crown continuously crackles with electricity.
+                The constant sparks shed light as a torch.
 
-            As a standard action, you can intensify the crown's energy to shock nearby enemies.
-            When you do, make an attack vs. Fortitude against your \\glossterm<enemies> within a \\areasmall radius from you.
-            On a hit, each target takes 2d6+1 electricity damage.
-            On a \\glossterm<glancing blow>, each target takes half damage.
-        """,
+                As a standard action, you can intensify the crown's energy to shock nearby enemies.
+                When you do, make an attack vs. Fortitude against your \\glossterm<enemies> within a \\areasmall radius from you.
+                On a hit, each target takes 2d6+1 electricity damage.
+                On a \\glossterm<glancing blow>, each target takes half damage.
+            """,
             short_description="Can damage nearby enemies",
         )
     )
@@ -482,12 +468,12 @@ def generate_apparel():
             tags=[],
             description="""
             This crown continuously emits a chilling aura around you.
-            You gain a +8 bonus to your \\glossterm<resistance> against fire damage.
+            You gain a +4 bonus to \\glossterm<defenses> against attacks that deal cold damage.
 
             As a standard action, you can intensify the crown's energy to freeze nearby enemies.
             When you do, make an attack vs. Fortitude against all \\glossterm<enemies> within a \\areasmall radius from you.
-            On a hit, each target with no remaining \\glossterm<resistance> to cold damage is \\glossterm<immobilized> until the end of the next round.
-            On a critical hit, each target with no remaining \\glossterm<resistance> to cold damage is immobilized as a \\glossterm<condition>.
+            On a hit, each target with no remaining \\glossterm<damage resistance> is \\glossterm<immobilized> until the end of the next round.
+            On a critical hit, each target with no remaining \\glossterm<damage resistance> is immobilized as a \\glossterm<condition>.
         """,
             short_description="Can freeze nearby enemies",
         )
@@ -626,7 +612,7 @@ def generate_apparel():
             material_type="Boots",
             tags=[],
             description="""
-                You gain a +10 foot \\glossterm<magic bonus> to your land speed, up to a maximum of double your normal speed.
+                You gain a +5 foot \\glossterm<magic bonus> to your land speed.
             """,
             short_description="Increases speed by ten feet",
         ),
@@ -636,9 +622,9 @@ def generate_apparel():
             material_type="Boots",
             tags=[],
             description="""
-                You gain a +20 foot \\glossterm<magic bonus> to your land speed, up to a maximum of double your normal speed.
+                You gain a +10 foot \\glossterm<magic bonus> to your land speed.
             """,
-            short_description="Increases speed by twenty feet",
+            short_description="Increases speed by ten feet",
         ),
         MagicItem(
             name="Boots of Speed, Supreme",
@@ -646,9 +632,9 @@ def generate_apparel():
             material_type="Boots",
             tags=[],
             description="""
-                You gain a +30 foot \\glossterm<magic bonus> to your land speed, up to a maximum of double your normal speed.
+                You gain a +15 foot \\glossterm<magic bonus> to your land speed.
             """,
-            short_description="Increases speed by thirty feet",
+            short_description="Increases speed by fifteen feet",
         ),
     ]
 
@@ -659,11 +645,11 @@ def generate_apparel():
             material_type="Boots",
             tags=[],
             description="""
-            When you move using one of your movement speeds, you can teleport the same distance instead.
-            This does not change the total distance you can move, but you can teleport in any direction, even vertically.
-            You must teleport onto a stable surface that can support your weight.
-            You cannot teleport to locations you do not have \\glossterm<line of sight> and \\glossterm<line of effect> to.
-        """,
+                When you move using one of your movement speeds, you can teleport the same distance instead.
+                This does not change the total distance you can move, but you can teleport in any direction, even vertically.
+                You must teleport onto a stable surface that can support your weight.
+                You cannot teleport to locations you do not have \\glossterm<line of sight> and \\glossterm<line of effect> to.
+            """,
             short_description="Allows teleporting instead of moving",
         )
     )
@@ -804,7 +790,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                You gain a +4 bonus to defenses against abilities from the \\sphere<polymorph> sphere.
+                You gain a +4 bonus to defenses against attacks from the \\sphere<polymorph> sphere.
                 This bonus also applies against other attacks that significantly alter your physical form, such as an aboleth's slime.
             """,
             short_description="Grants +4 defenses vs form-altering attacks",
@@ -815,7 +801,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                You gain a +8 bonus to defenses against abilities from the \\textit<polymorph> sphere.
+                You gain a +8 bonus to defenses against attacks from the \\textit<polymorph> sphere.
                 This bonus also applies against other attacks that significantly alter your physical form, such as an aboleth's slime.
             """,
             short_description="Grants +8 defenses vs form-altering attacks",
@@ -1063,7 +1049,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                You gain a +4 bonus to defenses against abilities with the \\glossterm<Detection> or \\glossterm<Scrying> tags.
+                You gain a +4 bonus to defenses against attacks with the \\glossterm<Detection> or \\glossterm<Scrying> tags.
             """,
             short_description="Grants +4 to defenses against detection",
         ),
@@ -1073,7 +1059,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                You gain a +8 bonus to defenses against abilities with the \\glossterm<Detection> or \\glossterm<Scrying> tags.
+                You gain a +8 bonus to defenses against attacks with the \\glossterm<Detection> or \\glossterm<Scrying> tags.
             """,
             short_description="Grants +8 to defenses against detection",
         ),
@@ -1988,37 +1974,35 @@ def generate_apparel():
 
     apparel += [
         MagicItem(
-            name="Ring of Energy Resistance",
+            name="Ring of Resistance",
             # +2 level since ring is secondary for this effect
             level=6,
             tags=[],
             material_type="Ring",
             description="""
-                You gain a +6 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<energy damage>.
-                When you resist energy damage, this item sheds light as a torch until the end of the next round.
-                The color of the light depends on the energy damage resisted: blue for cold, yellow for electricity, and red for fire.
+                You gain a +4 \\glossterm<magic bonus> to \\glossterm<damage resistance>.
             """,
-            short_description="Grants +6 energy resistance",
+            short_description="Grants +4 damage resistance",
         ),
         MagicItem(
-            name="Ring of Energy Resistance, Greater",
+            name="Ring of Resistance, Greater",
             level=12,
             tags=[],
             material_type="Ring",
             description="""
-                This item functions like a \\mitem<ring of energy resistance>, except that the bonus is equal to +12.
+                You gain a +8 \\glossterm<magic bonus> to \\glossterm<damage resistance>.
             """,
-            short_description="Grants +12 energy resistance",
+            short_description="Grants +8 damage resistance",
         ),
         MagicItem(
-            name="Ring of Energy Resistance, Supreme",
+            name="Ring of Resistance, Supreme",
             level=18,
             tags=[],
             material_type="Ring",
             description="""
-                This item functions like a \\mitem<ring of energy resistance>, except that the bonus is equal to +24.
+                You gain a +16 \\glossterm<magic bonus> to \\glossterm<damage resistance>.
             """,
-            short_description="Grants +24 energy resistance",
+            short_description="Grants +16 damage resistance",
         ),
     ]
 
@@ -2053,40 +2037,6 @@ def generate_apparel():
                 This belt functions like an \\mitem<anchoring belt>, except that the immunities apply even against critical hits.
             """,
             short_description="Protects you from all forced movement and teleportation attacks",
-        ),
-    ]
-
-    apparel += [
-        MagicItem(
-            name="Amulet of Kinetic Absorption",
-            # +2 since amulet is secondary for this effect
-            level=6,
-            tags=[],
-            material_type="Amulet",
-            description="""
-                You gain a +6 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
-            """,
-            short_description="Grants +6 physical resistance",
-        ),
-        MagicItem(
-            name="Amulet of Kinetic Absorption, Greater",
-            level=12,
-            tags=[],
-            material_type="Amulet",
-            description="""
-                You gain a +12 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
-            """,
-            short_description="Grants +12 physical resistance",
-        ),
-        MagicItem(
-            name="Amulet of Kinetic Absorption, Supreme",
-            level=18,
-            tags=[],
-            material_type="Amulet",
-            description="""
-                You gain a +24 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
-            """,
-            short_description="Grants +24 physical resistance",
         ),
     ]
 
@@ -2159,7 +2109,7 @@ def generate_apparel_table():
     )
 
 
-def sanity_check(armor, worn):
+def sanity_check(armor):
     pass
 
 
@@ -2183,4 +2133,4 @@ def main(output, check):
 
 
 if __name__ == "__main__":
-    main()
+    main(None, None)

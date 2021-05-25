@@ -11,8 +11,14 @@
     input[type=number].fake-text {
         box-shadow: 0 -2px 2px -2px black inset;
         border: 0;
-        padding-top: 0.75em;
         width: 100%;
+    }
+
+    input[type=checkbox] {
+        height: 1em;
+        width: 1em;
+        margin-top: 0.4em;
+        margin-left: 0.5em;
     }
 }
 
@@ -68,7 +74,9 @@ input {
 }
 
 input[type=text] {
-    padding-top: 0.75em;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    line-height: 1em;
     border: 0;
     box-shadow: 0 -2px 1px -2px #000000 inset;
     background-color: inherit;
@@ -78,6 +86,9 @@ input[type=text] {
 }
 
 input[type=number], input[type=text].fake-number {
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    line-height: 1em;
     width: 2.5em;
     border: 0;
     box-shadow: 0 0 2px 1px inset;
@@ -156,6 +167,13 @@ input[type=text] {
 }
 
 .boring-row {
+    > div {
+        margin-left: 0.1em;
+        margin-right: 0.1em;
+    }
+    > div:nth-child(1) {
+        margin-left: 0;
+    }
     .labeled-text-input {
         flex-grow: 1;
     }
@@ -178,4 +196,60 @@ input[type=text] {
 
 .underlabeled select {
     margin-bottom: 0;
+}
+
+
+
+.calc-header {
+  font-weight: 600;
+  width: 9em;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  height: 1.5em;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+}
+.equation-glue {
+  display: flex;
+  justify-content: center;
+  height: 1.6em;
+  width: 1.1em;
+  text-align: center;
+  align-items: center;
+}
+.equation {
+  align-items: baseline;
+  margin: 0;
+  flex-grow: 1;
+
+    .equation-text {
+      display: flex;
+      justify-content: center;
+      height: 1.6em;
+      text-align: center;
+      align-items: center;
+      margin-left: 0.25em;
+      margin-right: 0.25em;
+    }
+    .equation-math {
+      font-size: 1em;
+    }
+
+    input[type=text].invisible-text-input {
+        font-size: 0.8em;
+        padding-top: 0;
+    }
+
+    .equation-misc {
+        // make box shadows less intense for optional fields
+        box-shadow: 0 0 2px 0px black inset;
+    }
+}
+
+.tab-explanation {
+    align-self: center;
+    margin-bottom: 0.5em;
+    max-width: 600px;
 }

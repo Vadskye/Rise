@@ -36,9 +36,6 @@
 .skill-box.freeform-number-input > input[type=text] {
     flex-grow: 0;
     width: 7em;
-    padding-bottom: 0;
-    padding-top: 0.5em;
-    margin-bottom: 0.25em;
 }
 
 .action-point-header {
@@ -64,6 +61,12 @@
 
 .special-defenses {
     flex-grow: 1;
+    margin-left: 0.5em;
+
+    input[type=text] {
+        margin-bottom: 0.2em;
+        margin-top: 0.2em;
+    }
 }
 
 .first-page > div, .all-statistics > div, .boring-row div {
@@ -83,7 +86,7 @@
     }
 }
 
-.defenses > div, .movement > div, .resources > div, .hit-points > div {
+.standard-defenses > div, .resources > div, .hit-points > div {
     margin-bottom: 0.1em;
 }
 
@@ -124,7 +127,7 @@
     font-size: 1.25em;
 }
 
-.core-statistics > .flex-row, .defenses > .flex-row, .resources > .flex-row, .damage-resistances > .flex-row, .vital-resistances > .flex-row, .movement > .flex-row {
+.core-statistics > .flex-row, .standard-defenses > .flex-row, .special-defenses > .flex-row, .resources > .flex-row, .damage-resistances > .flex-row, .vital-resistances > .flex-row, .movement > .flex-row {
     margin-top: 0.2em;
     margin-bottom: 0.2em;
 }
@@ -140,12 +143,6 @@
 .core-initiative {
     flex-grow: 1;
     text-align: center;
-}
-
-.special-defenses {
-    input {
-        height: 2.5em;
-    }
 }
 
 .resources {
@@ -225,6 +222,11 @@
             // Active page. However, specifying a precise width here causes odd
             // behavior, so we use percentages instead.
             width: 48%;
+
+            font-size: 16px;
+            input {
+                font-size: 16px;
+            }
         }
     }
 
@@ -269,12 +271,5 @@
             width: 12em;
         }
 
-        // Should match definition in Status page
-        .is-active {
-            height: 1.5em;
-            width: 1.5em;
-            margin-top: 0.7em;
-            margin-left: 0.5em;
-        }
     }
 }

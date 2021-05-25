@@ -212,13 +212,13 @@ export const chronomancy: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You gain a +10 foot \\glossterm{magic bonus} to your \\glossterm{base speed}.
+        You gain a +5 foot \\glossterm{magic bonus} to your \\glossterm{base speed}, and a +1 \\glossterm{magic bonus} to Reflex defense.
       `,
       rank: 1,
       scaling: {
-        3: `The speed bonus increases to +20 feet.`,
-        5: `The speed bonus increases to +30 feet.`,
-        7: `The speed bonus increases to +40 feet.`,
+        3: `The speed bonus increases to +10 feet, and the defense bonus increases to +2.`,
+        5: `The speed bonus increases to +15 feet, and the defense bonus increases to +3.`,
+        7: `The speed bonus increases to +20 feet, and the defense bonus increases to +4.`,
       },
       type: "Attune (self)",
     },
@@ -233,8 +233,8 @@ export const chronomancy: MysticSphere = {
       },
       rank: 3,
       scaling: {
-        5: `The speed bonus increases to +20 feet.`,
-        7: `The speed bonus increases to +30 feet.`,
+        5: `The speed bonus increases to +10 feet, and the defense bonus increases to +2.`,
+        7: `The speed bonus increases to +15 feet, and the defense bonus increases to +3.`,
       },
       type: "Attune (target)",
     },

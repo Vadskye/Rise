@@ -141,28 +141,13 @@ export const bluntForce: CombatStyle = {
       name: "Resonating Strike",
 
       effect: `
-        Make a strike using a bludgeoning weapon.
+        Make a strike with a +1d damage bonus using a bludgeoning weapon.
         Damage dealt by the strike is sonic damage in addition to its normal damage types.
       `,
       rank: 3,
       scaling: {
-        5: "You gain a +1d damage bonus with the strike.",
-        7: "The damage bonus increases to +2d.",
-      },
-      type: "Instant",
-    },
-
-    {
-      name: "Resonating Crush",
-
-      effect: `
-        Make a strike with a -1d damage penalty using a bludgeoning weapon.
-        The attack is made against each target's Fortitude defense instead of its Armor defense.
-        Damage dealt by the strike is sonic damage in addition to its normal damage types.
-      `,
-      rank: 4,
-      scaling: {
-        6: "The damage penalty is removed.",
+        5: "The damage bonus increases to +2d.",
+        7: "The damage bonus increases to +3d.",
       },
       type: "Instant",
     },

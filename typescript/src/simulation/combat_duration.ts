@@ -5,7 +5,7 @@ function simulateCombatDuration(): void {
   runCombatSimulation({
     challengeRatingPool: [2, 3, 4],
     formatOutput: (roundsA, roundsB) => Math.min(Number(roundsA), Number(roundsB)),
-    startingAttributePool: [0],
+    startingAttributePool: [0, 2, 4],
   });
 }
 

@@ -10,11 +10,12 @@ def generate_script():
             *[attribute_skills(a.lower()) for a in ATTRIBUTE_SKILLS],
             *core_statistics(),
             *defenses(),
-            *resistances(),
-            *abilities_known(),
+            damage_resistance(),
             attunement_points(),
             skill_points_spent(),
             unknown_statistic(),
+            vital_wounds(),
+            attuned_effects(),
             custom_modifiers(),
             monster_chat_color(),
             debuffs(),
@@ -76,14 +77,13 @@ def get_misc_variables(variable_name, count):
         "all_defenses",
         "armor_defense",
         "encumbrance",
-        "energy_resistance_bonus",
+        "damage_resistance_bonus",
         "fatigue_tolerance",
         "fortitude",
         "hit_points",
         "magical_power",
         "mental",
         "mundane_power",
-        "physical_resistance_bonus",
         "reflex",
         "vital_rolls",
     ]:
@@ -150,11 +150,11 @@ def set_skill(a, s):
                 if ({s}_points === 1) {{
                     ranks = Math.floor(level / 2);
                     pointsModifier = 1;
-                    training = 'T';
+                    training = 'Trained';
                 }} else if (({s}_points >= 3) || (({s}_points === 2) && {s}_class_skill)) {{
                     ranks = level;
                     pointsModifier = 3;
-                    training = 'M';
+                    training = 'Mastered';
                 }}
 
                 setAttrs({{
@@ -191,15 +191,15 @@ def set_skill(a, s):
 
                 if ({s}_points === 1) {{
                     ranks = Math.floor(level / 2) + 1;
-                    training = 'T';
+                    training = 'Trained';
                 }} else if (({s}_points >= 3) || (({s}_points === 2) && {s}_class_skill)) {{
                     ranks = level;
                     pointsModifier = 3;
-                    training = 'M';
+                    training = 'Mastered';
                 }}
 
                 setAttrs({{
-                    {s}_ranks: ranks,
+                    {s}_ranks: ranks + pointsModifier,
                     {s}_total: ranks + pointsModifier + {a}_starting + {sum_variables(misc)} - fatigue_penalty {subtract_encumbrance},
                     {s}_training: training,
                 }});
@@ -235,23 +235,6 @@ def defenses():
     ]
 
 
-def resistances():
-    return [
-        energy_resistance(),
-        physical_resistance(),
-    ]
-
-
-def abilities_known():
-    return [
-        combat_styles_known(),
-        maneuvers_known(),
-        spells_known(),
-        spheres_known(),
-        *[blank_ability_known(i) for i in range(1)],
-    ]
-
-
 def accuracy():
     misc = get_misc_variables("accuracy", 3)
     return js_wrapper(
@@ -282,7 +265,7 @@ def accuracy():
 
 
 def attunement_points():
-    misc = get_misc_variables("attunement_points", 2)
+    misc = get_misc_variables("attunement_points", 3)
     return js_wrapper(
         ["level", "attunement_points_from_class", *misc],
         f"""
@@ -317,7 +300,7 @@ def unknown_statistic():
 
 
 def armor_defense():
-    misc = get_misc_variables("armor_defense", 3)
+    misc = get_misc_variables("armor_defense", 2)
     return js_wrapper(
         [
             "level",
@@ -350,7 +333,7 @@ def armor_defense():
 
 
 def fortitude():
-    misc = get_misc_variables("fortitude", 4)
+    misc = get_misc_variables("fortitude", 3)
     return js_wrapper(
         [
             "level",
@@ -381,7 +364,7 @@ def fortitude():
 
 
 def reflex():
-    misc = get_misc_variables("reflex", 4)
+    misc = get_misc_variables("reflex", 3)
     return js_wrapper(
         [
             "level",
@@ -412,7 +395,7 @@ def reflex():
 
 
 def mental():
-    misc = get_misc_variables("mental", 4)
+    misc = get_misc_variables("mental", 3)
     return js_wrapper(
         [
             "level",
@@ -443,7 +426,7 @@ def mental():
 
 
 def encumbrance():
-    misc = get_misc_variables("encumbrance", 3)
+    misc = get_misc_variables("encumbrance", 2)
     return js_wrapper(
         ["level", "body_armor_encumbrance", "strength_starting", *misc],
         f"""
@@ -461,9 +444,9 @@ def encumbrance():
 def initiative():
     misc = get_misc_variables("initiative", 3)
     return js_wrapper(
-        ["dexterity", "perception", "fatigue_penalty", *misc],
+        ["dexterity_starting", "perception_starting", "fatigue_penalty", *misc],
         f"""
-            var scaling = Math.max(dexterity, perception);
+            var scaling = Math.max(dexterity_starting, perception_starting);
             setAttrs({{
                 initiative: scaling + {sum_variables(misc)} - fatigue_penalty,
                 initiative_scaling: scaling,
@@ -473,7 +456,7 @@ def initiative():
 
 
 def base_speed():
-    misc = get_misc_variables("speed", 3)
+    misc = get_misc_variables("speed", 2)
     return js_wrapper(
         ["level", "speed_size", "speed_armor", *misc],
         f"""
@@ -502,6 +485,7 @@ def fatigue_tolerance():
         ["level", "fatigue_tolerance_base", "constitution_starting", "willpower_starting", *misc],
         f"""
             setAttrs({{
+                fatigue_tolerance_attributes: constitution_starting + willpower_starting,
                 fatigue_tolerance: Math.max(0, fatigue_tolerance_base + constitution_starting + willpower_starting + {sum_variables(misc)}),
             }});
         """,
@@ -521,7 +505,7 @@ def focus_penalty():
 
 
 def hit_points():
-    misc = get_misc_variables("hit_points", 3)
+    misc = get_misc_variables("hit_points", 4)
     return js_wrapper(
         ["level", "constitution", "challenge_rating", *misc],
         f"""
@@ -559,6 +543,9 @@ def hit_points():
                 29:   245,
                 30:   260,
             }}[level] || 1;
+            if (challenge_rating > 0) {{
+                hit_points_from_level = Math.floor(hit_points_from_level * 1.5);
+            }}
 
             var hit_points = hit_points_from_level + constitution + {sum_variables(misc)};
             var cr_multiplier = {{
@@ -567,8 +554,6 @@ def hit_points():
                 1: 1,
                 2: 1,
                 3: 2,
-                // TODO: represent universal resistance in the roll20 sheet.
-                // For now, just going through the HP bar 1.5x times works... okay
                 4: 4,
             }}[challenge_rating || 0];
             hit_points = Math.floor(hit_points * cr_multiplier)
@@ -667,140 +652,14 @@ def mundane_power():
     )
 
 
-def combat_styles_known():
-    misc = get_misc_variables("combat_styles_known", 3)
-    return js_wrapper(
-        ["combat_styles_known_insight_points", *misc],
-        f"""
-            setAttrs({{
-                combat_styles_known: combat_styles_known_insight_points + {sum_variables(misc)}
-            }});
-        """,
-    )
-
-
-def maneuvers_known():
-    misc = get_misc_variables("maneuvers_known", 3)
-    return js_wrapper(
-        ["maneuvers_known_insight_points", *misc],
-        f"""
-            setAttrs({{
-                maneuvers_known: maneuvers_known_insight_points + {sum_variables(misc)}
-            }});
-        """,
-    )
-
-
-def spheres_known():
-    misc = get_misc_variables("spheres_known", 3)
-    return js_wrapper(
-        ["spheres_known_insight_points", *misc],
-        f"""
-            setAttrs({{
-                spheres_known: Math.floor(spheres_known_insight_points / 2) + {sum_variables(misc)}
-            }});
-        """,
-    )
-
-
-def spells_known():
-    misc = get_misc_variables("spells_known", 3)
-    return js_wrapper(
-        ["spells_known_insight_points", *misc],
-        f"""
-            setAttrs({{
-                spells_known: spells_known_insight_points + {sum_variables(misc)}
-            }});
-        """,
-    )
-
-
-def blank_ability_known(i):
-    name = f"blank_ability_known_{i}"
-    misc = get_misc_variables(name, 3)
-    return js_wrapper(
-        [f"{name}_insight_points", *misc],
-        f"""
-            setAttrs({{
-                {name}: {name}_insight_points + {sum_variables(misc)}
-            }});
-        """,
-    )
-
-
-def energy_resistance():
-    misc = get_misc_variables("energy_resistance_bonus", 3)
-    return js_wrapper(
-        [
-            "willpower",
-            "level",
-            "challenge_rating",
-            "energy_resistance_bonus_armor",
-            *misc,
-        ],
-        f"""
-            var resistance_from_level = {{
-                0:    0 ,
-                1:    2 ,
-                2:    3 ,
-                3:    3 ,
-                4:    3 ,
-                5:    4 ,
-                6:    4 ,
-                7:    5 ,
-                8:    6 ,
-                9:    7 ,
-                10:   8 ,
-                11:   9 ,
-                12:   10,
-                13:   11,
-                14:   12,
-                15:   14,
-                16:   15,
-                17:   17,
-                18:   19,
-                19:   22,
-                20:   25,
-                21:   28,
-                22:   32,
-                23:   36,
-                24:   40,
-                25:   44,
-                26:   48,
-                27:   52,
-                28:   56,
-                29:   60,
-                30:   64,
-            }}[level] || 0;
-            var cr_multiplier = {{
-                0: 1,
-                0.5: 0,
-                1: 0,
-                2: 1,
-                3: 2,
-                // TODO: represent universal resistance in the roll20 sheet.
-                // For now, just going through the HP bar twice works well enough.
-                4: 2,
-            }}[challenge_rating || 0];
-            const energy_resistance = (resistance_from_level + willpower + energy_resistance_bonus_armor + {sum_variables(misc)}) * cr_multiplier;
-            setAttrs({{
-                energy_resistance,
-                energy_resistance_from_level: resistance_from_level,
-                energy_resistance_max: energy_resistance,
-                energy_resistance_maximum: energy_resistance,
-            }});
-        """,
-    )
-
-
-def physical_resistance():
-    misc = get_misc_variables("physical_resistance_bonus", 3)
+def damage_resistance():
+    misc = get_misc_variables("damage_resistance_bonus", 3)
     return js_wrapper(
         [
             "constitution",
             "level",
             "challenge_rating",
-            "physical_resistance_bonus_armor",
+            "damage_resistance_bonus_armor",
             *misc,
         ],
         f"""
@@ -837,22 +696,23 @@ def physical_resistance():
                 29:   60,
                 30:   64,
             }}[level] || 0;
+            if (challenge_rating > 0) {{
+                resistance_from_level *= 2;
+            }}
             var cr_multiplier = {{
                 0: 1,
                 0.5: 0,
                 1: 0,
                 2: 1,
                 3: 2,
-                // TODO: represent universal resistance in the roll20 sheet.
-                // For now, just going through the HP bar twice works well enough.
-                4: 2,
+                4: 4,
             }}[challenge_rating || 0];
-            const physical_resistance = (resistance_from_level + constitution + physical_resistance_bonus_armor + {sum_variables(misc)}) * cr_multiplier;
+            const damage_resistance = (resistance_from_level + Math.floor(constitution / 2) + damage_resistance_bonus_armor + {sum_variables(misc)}) * cr_multiplier;
             setAttrs({{
-                physical_resistance,
-                physical_resistance_from_level: resistance_from_level,
-                physical_resistance_max: physical_resistance,
-                physical_resistance_maximum: physical_resistance,
+                damage_resistance,
+                damage_resistance_from_level: resistance_from_level,
+                damage_resistance_max: damage_resistance,
+                damage_resistance_maximum: damage_resistance,
             }});
         """,
     )
@@ -902,11 +762,14 @@ def debuffs():
         [],
         boolean_variables=[
             # conditional debuffs
-            "surrounded",
             "flying",
             "flying_poorly",
+            "grappled",
+            "helpless",
             "prone",
             "squeezing",
+            "surrounded",
+            "underwater",
             # rank 1 debuffs
             "dazed",
             "dazzled",
@@ -917,7 +780,6 @@ def debuffs():
             "frightened",
             "nauseated",
             "stunned",
-            "underwater",
             # rank 3 debuffs
             "decelerated",
             "confused",
@@ -927,7 +789,6 @@ def debuffs():
             "panicked",
             # rank 4 debuffs
             "asleep",
-            "helpless",
             "paralyzed",
             # other calculations
             "dexterity_starting",
@@ -940,6 +801,10 @@ def debuffs():
             let reflex = 0;
 
             // circumstantial effects
+            if (grappled) {{
+                armor -= 2;
+                reflex -= 2;
+            }}
             if (squeezing) {{
                 accuracy -= 2;
                 armor -= 2;
@@ -1069,6 +934,32 @@ def monster_chat_color():
         """,
     )
 
+def vital_wounds():
+    return """
+        on("change:repeating_vitalwounds remove:repeating_vitalwounds", function(eventInfo) {
+            getSectionIDs("repeating_vitalwounds", (repeatingSectionIds) => {
+                setAttrs({
+                    vital_wound_count: repeatingSectionIds.length,
+                });
+            });
+        });
+    """
+
+def attuned_effects():
+    return """
+        on("change:repeating_attunements remove:repeating_attunements", function(eventInfo) {
+            getSectionIDs("repeating_attunements", (repeatingSectionIds) => {
+                const isActiveIds = repeatingSectionIds.map((id) => `repeating_attunements_${id}_attunement_active`);
+                getAttrs(isActiveIds, (values) => {
+                    const activeAbilities = isActiveIds.filter((id) => values[id] === 'on');
+                    setAttrs({
+                        active_attunement_count: activeAbilities.length,
+                    });
+                });
+            });
+        });
+    """
+
 
 def custom_modifiers():
     return """
@@ -1103,15 +994,14 @@ def custom_modifiers():
                         accuracy_custom_modifier: totalCustomModifiers.accuracy || 0,
                         all_defenses_custom_modifier: totalCustomModifiers.all_defenses || 0,
                         armor_defense_custom_modifier: totalCustomModifiers.armor_defense || 0,
+                        damage_resistance_bonus_custom_modifier: totalCustomModifiers.energy_resistance_bonus || 0,
                         encumbrance_custom_modifier: totalCustomModifiers.encumbrance || 0,
-                        energy_resistance_bonus_custom_modifier: totalCustomModifiers.energy_resistance_bonus || 0,
                         fatigue_tolerance_custom_modifier: totalCustomModifiers.fatigue_tolerance || 0,
                         fortitude_custom_modifier: totalCustomModifiers.fortitude || 0,
                         hit_points_custom_modifier: totalCustomModifiers.hit_points || 0,
                         magical_power_custom_modifier: totalCustomModifiers.magical_power || 0,
                         mental_custom_modifier: totalCustomModifiers.mental || 0,
                         mundane_power_custom_modifier: totalCustomModifiers.mundane_power || 0,
-                        physical_resistance_bonus_custom_modifier: totalCustomModifiers.physical_resistance_bonus || 0,
                         reflex_custom_modifier: totalCustomModifiers.reflex || 0,
                         vital_rolls_custom_modifier: totalCustomModifiers.vital_rolls || 0,
                     });

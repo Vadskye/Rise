@@ -9,6 +9,7 @@ ATTRIBUTE_SHORTHAND = {
     "intelligence": "Int",
     "perception": "Per",
     "willpower": "Wil",
+    "other": "Other",
 }
 ATTRIBUTE_SKILLS = {
     "strength": "Climb Jump Swim".split(),

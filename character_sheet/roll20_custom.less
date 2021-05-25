@@ -1,8 +1,8 @@
 div.full-sheet {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-    input {
-        font-size: 1em;
+    p {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     }
 
     .chat-color {
@@ -27,10 +27,6 @@ div.full-sheet {
             width: 9em;
         }
         .skill-labels {
-            .skill-label {
-                font-size: 1em;
-            }
-
             .skill-row {
                 .skill-training {
                     width: 1em;
@@ -58,9 +54,13 @@ div.full-sheet {
     .page {
         margin-top: 0.5em;
         display: none;
-        font-size: 13px;
+        font-size: 14px;
         overflow: visible;
         margin-bottom: 1em;
+
+        input {
+            font-size: 14px;
+        }
 
         input[type=number] {
             width: 2.9em
@@ -134,8 +134,11 @@ div.full-sheet {
     input:nth-of-type(7), span:nth-of-type(7) {
         left: 610px;
     }
+    input:nth-of-type(8), span:nth-of-type(8) {
+        left: 710px;
+    }
 
-    input[type=radio].nav-button-page1:checked ~ .first-page, input[type=radio].nav-button-active:checked ~ .active-abilities-page, input[type=radio].nav-button-page2:checked ~ .second-page, input[type=radio].nav-button-page3:checked ~ .third-page, input[type=radio].nav-button-page4:checked ~ .status-page, input[type=radio].nav-button-page5:checked ~ .reference-page {
+    input[type=radio].nav-button-page1:checked ~ .first-page, input[type=radio].nav-button-active:checked ~ .active-abilities-page, input[type=radio].nav-button-page2:checked ~ .skills-page, input[type=radio].nav-button-page3:checked ~ .second-page, input[type=radio].nav-button-page4:checked ~ .third-page, input[type=radio].nav-button-page5:checked ~ .status-page, input[type=radio].nav-button-page6:checked ~ .reference-page {
         display: flex;
     }
 
@@ -145,9 +148,9 @@ div.full-sheet {
 
     input.nav-button {
         border: 0;
-        height: 2.5em;
+        height: 3em;
         opacity: 0;
-        width: 5em;
+        width: 6.5em;
         z-index: 3;
     }
 
@@ -160,7 +163,7 @@ div.full-sheet {
         height: 2em;
         padding: 0.25em;
         text-align: center;
-        width: 4em;
+        width: 4.3em;
         z-index: 2;
     }
 

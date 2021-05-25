@@ -34,7 +34,7 @@ export const summoning: MysticSphere = {
         \\begin{itemize}
           \\item Its \\glossterm{fatigue tolerance} is 0, and it cannot choose to take actions that would give it \\glossterm{fatigue levels}.
           \\item Its \\glossterm{hit points} are equal to the base value for your level (see \\tref{Character Advancement}).
-          \\item It has no \\glossterm{resistances}.
+          \\item It has no \\glossterm{damage resistance}.
           \\item Each of its \\glossterm{defenses} is equal to 4 \\add your level.
           \\item Its \\glossterm{accuracy} is equal to your level \\add half your base Perception \\add your \\glossterm{magic bonuses} to accuracy \\sub 2.
           \\item Its \\glossterm{land speed} is 30 feet.
@@ -331,7 +331,7 @@ export const summoning: MysticSphere = {
         exceptThat: `
         the summoned creature appears to be an earth elemental.
         Its attacks deal 2d8 bludgeoning damage.
-        It has a \\glossterm{resistance} to \\glossterm{physical damage} equal to half its maximum \\glossterm{hit points}.
+        It has \\glossterm{damage resistance} equal to half its maximum \\glossterm{hit points}.
         `,
         name: "summon monster",
       },

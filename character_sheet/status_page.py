@@ -23,10 +23,15 @@ from cgi_simple import (
 )
 
 
-def create_page():
+def create_page(_destination):
     return flex_col(
         {"class": "page status-page"},
         [
+            div({"class": "tab-explanation"}, """
+                This tab is used to track temporary modifiers to your character's state.
+                Circumstances and debuffs that are not in <i>italics</i> automatically modify your statistics appropriately.
+                You can use custom modifiers for temporary effects, or to define complex abilities such as a barbarian's rage.
+            """),
             flex_row({'class': 'standard-modifiers'}, [
                 flex_col([
                     div({"class": "section-header"}, "Circumstances"),
@@ -37,7 +42,26 @@ def create_page():
                     debuffs(),
                 ]),
                 flex_col({'class': 'vital-wounds'}, [
-                    flex_wrapper(div({"class": "section-header"}, "Vital Wounds")),
+                    div({"class": "section-header"}, "Vital Wounds"),
+                    flex_row({"class": "vital-roll-row"}, [
+                        button(
+                            {
+                                "type": "roll",
+                                "value": "@{character_name} makes a vital roll: [[d10+@{vital_rolls}]]"
+                            },
+                            "Roll vital wound",
+                        ),
+                        underlabel(
+                            "Roll mod",
+                            number_input(
+                                {
+                                    "disabled": True,
+                                    "name": "vital_rolls_display",
+                                    "value": "@{vital_rolls}",
+                                }
+                            ),
+                        ),
+                    ]),
                     fieldset(
                         {"class": f"repeating_vitalwounds"},
                         vital_wound(),
@@ -50,8 +74,31 @@ def create_page():
                 custom_modifier(),
             ),
             flex_wrapper(div({"class": "section-header"}, "Attuned Abilities and Equipment")),
+            sidelabel(
+                "Attuned effects",
+                flex_row(
+                    [
+                        underlabel("Current", number_input(
+                            {
+                                "disabled": True,
+                                "name": "active_attuned_effects_display",
+                                "value": "@{active_attunement_count}",
+                            }
+                        )),
+                        span({"class": "equation-glue"}, "/"),
+                        underlabel("Max", number_input(
+                            {
+                                "disabled": True,
+                                "name": "attunement_points_maximum_display",
+                                "value": "@{attunement_points_maximum}",
+                            }
+                        )),
+                    ],
+                ),
+                {"class": "attune-points"},
+            ),
             fieldset(
-                {"class": f"repeating_attunements"},
+                {"class": "repeating_attunements"},
                 attunement(),
             ),
         ],
@@ -102,6 +149,7 @@ def circumstances():
     return ''.join([
         debuff("flying"),
         debuff("flying poorly"),
+        debuff("grappled"),
         debuff("helpless"),
         debuff("prone"),
         debuff("squeezing"),
@@ -121,6 +169,7 @@ def debuffs():
                 debuff("decelerated"),
                 debuff("disoriented", False),
                 debuff("frightened"),
+                debuff("goaded", False),
             ]),
             flex_col([
                 debuff("immobilized"),

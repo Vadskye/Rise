@@ -371,13 +371,13 @@ export const flurryOfBlows: CombatStyle = {
       name: "Static Strike",
 
       effect: `
-        Make a melee strike.
+        Make a melee strike with a +1 accuracy bonus.
         Damage dealt by the strike is electricity damage in addition to its normal damage types.
       `,
       rank: 3,
       scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
       },
       type: "Instant",
     },

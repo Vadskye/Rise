@@ -597,7 +597,9 @@ export const vivimancy: MysticSphere = {
 
       castingTime: "24 hours",
       effect: `
-        Choose one Diminuitive or larger piece of a humanoid corpse
+        In addition to the normal requirements, this ritual requires and consumes diamond dust worth a total of 2,000 gp.
+
+        Choose one Diminuitive or larger piece of a humanoid corpse.
         It must have been part of the original creature's body at the time of death.
         The creature the corpse belongs to returns to life in a new body.
         It must not have died due to old age.
@@ -686,6 +688,8 @@ export const vivimancy: MysticSphere = {
 
       castingTime: "24 hours",
       effect: `
+        In addition to the normal requirements, this ritual requires and consumes diamond dust worth a total of 2,000 gp.
+
         Choose one intact corpse within \\shortrange.
         The corpse returns to life.
         It must not have died due to old age.

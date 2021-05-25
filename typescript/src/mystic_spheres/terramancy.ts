@@ -12,7 +12,7 @@ export const terramancy: MysticSphere = {
       effect: `
         Choose one unattended, nonmagical body of earth or unworked stone you touch.
         You make a Craft check to alter the subject (see \\pcref{Craft}), except that you do not need any special tools to make the check, such as a shovel or hammer and chisel.
-        The maximum \\glossterm{resistance} of a material you can affect with this ability is equal to your \\glossterm{power}.
+        The maximum \\glossterm{damage resistance} of a material you can affect with this ability is equal to your \\glossterm{power}.
 
         % should be longer than polymorph's alter object ability
         Each time you cast this spell, you can accomplish work that would take up to five rounds with a normal Craft check.
@@ -305,8 +305,8 @@ export const terramancy: MysticSphere = {
       effect: `
         You cover your body with two overlapping layers of rock that crumple when they take damage.
         The rock does not cover your joints, allowing you to move, though the shell increases your \\glossterm{encumbrance} by 2.
-        You are \\glossterm{impervious} to all \\glossterm{damage}.
-        Whenever you take damage, one layer of rock is destroyed.
+        You are \\glossterm{impervious} to all damage.
+        Whenever you take damage that you would not be impervious to without this ability, one layer of rock is destroyed.
         When the last layer of rock is destroyed, this ability provides no further benefit.
 
         If you take simultaneous damage from more sources than you have remaining layers, the remaining layers apply to the largest damage sources, and you take full damage from any lower damage values.
@@ -356,7 +356,7 @@ export const terramancy: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
-        hit: `Each subject takes 2d10 + half \\glossterm{power} bludgeoning and fire damage.`,
+        hit: `Each subject takes 2d8 + half \\glossterm{power} bludgeoning and fire damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\areasmall radius from a point on a stable surface within \\medrange.
           This attack gains a +2 \\glossterm{accuracy} bonus if that point is on a Medium or larger body of stone.
@@ -365,7 +365,7 @@ export const terramancy: MysticSphere = {
       narrative: `
         You create a small volcano that bursts forth, showering nearby creatures in burning shrapnel.
       `,
-      rank: 5,
+      rank: 4,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",

@@ -300,7 +300,7 @@
                 When creating a drakkenfel, choose which type of dragon it used to be.
                 This is inherent to the drakkenfel, and cannot be changed.
                 A list of dragons and their associated energy type is given on \tref{Dragon Types}.
-            \itemhead{Damage Resistance} A drakkenfel gains a bonus equal to its level to its \glossterm{resistance} against the damage type associated with its \textit{draconic essence}.
+            \itemhead{Damage Tolerance} A drakkenfel gains \plus4 bonus to \glossterm{defenses} against attacks that deal damage of the type associated with its \textit{draconic essence}.
             \itemhead{Bite} A drakkenfel's mouth can be used to bite (see \pcref{Natural Weapons}). A drakkenfel's bite attack deals \plus0d damage.
             \itemhead{Sleeping Dragon} If a drakkenfel recovers its stolen scales, it immediately becomes a true dragon again.
                 Its statistics become identical to its statistics before losing its scales, including level.
@@ -384,6 +384,7 @@
 
             \cf{Dgn}[6]{Greater Draconic Bulk} Your size category increases to Large.
             The speed bonus from your \textit{draconic bulk} ability increases to \plus20 feet, the attribute modifiers to Dexterity and Strength increase to \minus2 and \plus3 respectively, and the power bonus increases to \plus6.
+            % TODO: too fast?
             In addition, you gain a \plus30 foot bonus to your fly speed with your \textit{draconic flight} ability, but your maneuverability drops to poor maneuverability (see \pcref{Flying Maneuverability}).
 
             \cf{Dgn}[7]{Greater Draconic Body} The defense bonus from your \textit{draconic body} ability increases to \plus2.
@@ -429,18 +430,19 @@
 
         \parhead{Size} Medium.
         \parhead{Attributes} \plus1 base Constitution, \minus1 base Dexterity.
-        \parhead{Speed} 20 feet.
+        \parhead{Speed} 25 feet.
         \parhead{Special Abilities}
         \begin{itemize}
             \itemhead{Ingrain} A dryaidi use the \textit{ingrain} ability as a standard action.
                 \begin{freeability}{Ingrain}
-                    The dryaidi's land speed becomes 5 feet, regardless of any bonuses that normally apply.
+                    The dryaidi's land speed becomes 5 feet, regardless of any modifiers that normally apply.
                     It gains a \plus4 bonus to Fortitude defense and a \plus1 bonus to Armor defense.
+                    When moving, it may ignore \glossterm{difficult terrain} of any kind.
                     If the dryaidi takes a \glossterm{long rest} while this ability is active, it acquires nutrients sufficient to replace a day's worth of food and water.
 
                     This ability lasts until the dryaidi ends it as a standard action.
                 \end{freeability}
-            \itemhead{Photosynthesis} While in sunlight, a dryaidi gains a \plus10 foot bonus to land speed.
+            \itemhead{Photosynthesis} While in sunlight, a dryaidi gains a \plus5 foot bonus to land speed.
             \itemhead{Plant Nature} A dryaidi is considered both a creature and a plant.
         \end{itemize}
         \parhead{Species Feat Options} Herbalist, Mental Magic, Regenerator, Sphere Focus: Verdamancy, or Toughness.
@@ -512,7 +514,7 @@
         \parhead{Special Abilities}
         \begin{itemize}
             \itemhead*{Darkvision}: Tieflings can see in the dark clearly up to 60 feet. Darkvision does not function if a tiefling is in a brightly lit area, and does not resume functioning until the end of the next round after the tiefling leaves the brightly lit area.
-            \itemhead*{Fire Resistance} (Magical): Tieflings gain a bonus equal to their level to \glossterm{resistance} against fire damage.
+            \itemhead*{Fire Tolerance} (Magical): Tieflings gain a \plus4 bonus to \glossterm{defenses} against attacks that deal fire damage.
             \itemhead*{Infernal Darkness} (Magical): A tiefling can use the \textit{infernal darkness} ability as a \glossterm{standard action}.
                 \begin{attuneability}{Infernal Darkness}
                     \abilitytag{Sustain} (minor)
@@ -621,7 +623,7 @@
 
         \ff[10]{Hellfire Conduit} Whenever you deal fire damage, you also treat that damage as being pure energy damage.
         This can help you deal damage to enemies that are highly resistant to fire damage.
-        In addition, your bonus to your resistance against fire damage from your tiefling \textit{fire resistance} ability increases to twice your level.
+        In addition, the defense bonus from your tiefling \textit{fire tolerance} ability increases to \plus6.
 
         \ff[13]{Supreme Infernal Presence} The bonuses from your \textit{infernal presence} ability increase to \plus6.
 
