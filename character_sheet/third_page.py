@@ -18,7 +18,7 @@ def create_page(_destination):
     return flex_col({"class": "page third-page"}, [
         div({"class": "tab-explanation"}, """
             This tab is used to track fundamental aspects of your character's identity, as well as the things they carry with them.
-            It is a good place to record choices that you've made, such as the specific mystic spheres and combat styles that you have access to.
+            It's a good place to record choices that you've made, such as the specific mystic spheres and combat styles that you have access to.
         """),
         flex_row([
             flex_col(
