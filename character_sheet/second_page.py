@@ -46,47 +46,53 @@ def equation_misc_repeat(name, count=1, joiner=plus):
 
 
 def create_page(destination):
-    return flex_row(
-        {"class": "page second-page"},
-        [
-            flex_col(
-                {"class": "sidebar"},
-                [
-                    level_chart(),
-                    div({"class": "section-header"}, "Core Statistics"),
-                    calc_base_speed(),
-                    calc_encumbrance(),
-                    calc_focus_penalty(),
-                    calc_initiative(),
-                    calc_vital_rolls(),
-                    calc_weight_limits(),
-                    calc_unknown_statistic(),
-                ],
-            ),
-            flex_col(
-                {"class": "main-body"},
-                [
-                    flex_col(
-                        {"class": "statistics"},
-                        [
-                            div({"class": "section-header"}, "Defensive Statistics"),
-                            calc_defenses(),
-                            div({"class": "section-header"}, "Offensive Statistics"),
-                            calc_accuracy(),
-                            calc_magical_power(),
-                            calc_mundane_power(),
-                            calc_weapon_damage_dice(),
-                            div({"class": "section-header"}, "Resources"),
-                            calc_attunement_points(),
-                            calc_fatigue_tolerance(),
-                            calc_insight_points(),
-                            calc_skill_points(),
-                        ],
-                    ),
-                ],
-            ),
-        ],
-    )
+    return flex_col( {"class": "page second-page"}, [
+        div({"class": "tab-explanation"}, """
+            This tab is used to track your core character statistics.
+            There are open spaces in each equation so you can add custom modifiers for each statistic.
+            Each custom modifier has a small text box underneath it that you can use to remind yourself why that modifier exists.
+        """),
+        flex_row(
+            [
+                flex_col(
+                    {"class": "sidebar"},
+                    [
+                        calc_attributes(),
+                        div({"class": "section-header"}, "Core Statistics"),
+                        calc_base_speed(),
+                        calc_encumbrance(),
+                        calc_focus_penalty(),
+                        calc_initiative(),
+                        calc_vital_rolls(),
+                        calc_weight_limits(),
+                        calc_unknown_statistic(),
+                    ],
+                ),
+                flex_col(
+                    {"class": "main-body"},
+                    [
+                        flex_col(
+                            {"class": "statistics"},
+                            [
+                                div({"class": "section-header"}, "Defensive Statistics"),
+                                calc_defenses(),
+                                div({"class": "section-header"}, "Offensive Statistics"),
+                                calc_accuracy(),
+                                calc_magical_power(),
+                                calc_mundane_power(),
+                                calc_weapon_damage_dice(),
+                                div({"class": "section-header"}, "Resources"),
+                                calc_attunement_points(),
+                                calc_fatigue_tolerance(),
+                                calc_insight_points(),
+                                calc_skill_points(),
+                            ],
+                        ),
+                    ],
+                ),
+            ],
+        ),
+    ])
 
 
 
@@ -95,9 +101,7 @@ def calc_attributes():
     return flex_col(
         {"class": "calc-attributes"},
         [
-            flex_wrapper(
-                div({"class": "section-header attributes-header"}, "Attributes")
-            ),
+            div({"class": "section-header attributes-header"}, "Attributes"),
             "".join([calc_attribute(attribute) for attribute in ATTRIBUTES]),
         ],
     )
@@ -145,16 +149,6 @@ def calc_attribute(attribute_name):
             ),
         ]
     )
-
-
-def level_chart():
-    return flex_row(
-        [
-            # standard_damage(),
-            calc_attributes(),
-        ]
-    )
-
 
 def abilities(name_prefix):
     return flex_col(

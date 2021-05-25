@@ -27,6 +27,11 @@ def create_page(_destination):
     return flex_col(
         {"class": "page status-page"},
         [
+            div({"class": "tab-explanation"}, """
+                This tab is used to track temporary modifiers to your character's state.
+                If you suffer a negative condition or vital wound in combat, you can record that here.
+                You can also use custom modifiers to define core character abilities, such as a barbarian's rage.
+            """),
             flex_row({'class': 'standard-modifiers'}, [
                 flex_col([
                     div({"class": "section-header"}, "Circumstances"),
@@ -51,7 +56,7 @@ def create_page(_destination):
             ),
             flex_wrapper(div({"class": "section-header"}, "Attuned Abilities and Equipment")),
             sidelabel(
-                "Attune points",
+                "Attunement points",
                 flex_row(
                     [
                         number_input(
