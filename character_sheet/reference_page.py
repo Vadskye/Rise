@@ -21,7 +21,7 @@ from cgi_simple import (
 from sheet_worker import standard_damage_at_power
 
 
-def create_page():
+def create_page(_destination):
     return flex_col(
         {"class": "page reference-page"},
         [
@@ -169,7 +169,7 @@ def character_creation():
                 ul([
                     li('Your chosen species is written in the top left of the Misc tab in the text box labeled "Species", under the "Species Info" header.'),
                     li('Your species determines your size and languages known. Those are written next to your species in the Misc tab.'),
-                    li('Many species modify your base attributes. You can write those modifiers in the section of the Calcs tab with an "Attributes" header. They should be written in one of the boxes to the right of the "Points" boxes. You can fill in the name of your species below the attribute modifier to remind yourself later why that attribute modifier exists.'),
+                    li('Many species modify your base attributes. You can write those modifiers in the section of the Calcs tab with an "Attributes" header. They should be written in one of the boxes to the right of the "Points" boxes.'),
                     li("""All species grant special abilities of some sort. Passive numeric abilities, like a halfling's bonus to Armor defense, are generally recorded by finding the appropriate calculation in the Calcs tab and adding a new modifier. Other abilities, like a dwarf's darkvision, are generally recorded by adding a new Ability on the Active tab to remind yourself that the ability exists."""),
                 ]),
             ]),
@@ -207,7 +207,7 @@ def character_creation():
             li([
                 'Fill in various complicated abilities from your species and archetypes.',
                 ul([
-                    li("""<b>Passive numeric abilities</b>, like a halfling's bonus to Armor defense, are best recorded by finding the appropriate calculation in the Calcs tab and adding a new modifier. Every numeric modifier has a text label underneath it for you to fill in. Giving the modifier an appropriate name can help you remember why that modifier exists."""),
+                    li("""<b>Passive numeric abilities</b>, like a halfling's bonus to Armor defense, are best recorded by finding the appropriate calculation in the Calcs tab and adding a new modifier."""),
                     li("""<b>Situtational numeric abilities</b>, like a barbarian's rage, are best recorded as a new "Custom Modifier" in the Status page. That page offers a toggling checkbox to allow you to turn the ability's effects on and off, making it easy to start or stop using the ability without needing to track down all of the places that the ability affects."""),
                     li("""<b>Choices</b> that have no direct gameplay effect, like the set of combat styles or mystic spheres that your character knows, are best recorded in the "Passive Abilities" section of the Misc tab. You could put them on the Core tab with your other non-numeric abilities, but you don't really need to see them very often, so they are better recorded on a page you are less likely to be looking at during gameplay."""),
                     li("""<b>Non-numeric abilities</b>, like a dwarf's darkvision or a spell you can cast, are best recorded by adding the ability to the appropriate section on the Core tab. Each ability on the Core tab can be clicked as a button with a fancy output format, so you can safely record the entire text of the ability to remind yourself exactly what it does."""),

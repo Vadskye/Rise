@@ -400,7 +400,7 @@ export const aquamancy: MysticSphere = {
       effect: `
         Torrential rain begins falling out of thin air within a \\medarea radius \\glossterm{zone} within \\longrange.
         The rain extinguishes minor fires such as campfires and torches on contact.
-        Everything in the area gains a bonus equal to your \\glossterm{power} to its \\glossterm{resistance} against fire damage.
+        Everything in the area gains a +4 bonus to \\glossterm{defenses} against attacks that deal fire damage.
       `,
       rank: 1,
       scaling: {
@@ -543,7 +543,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each subject that has no remaining \\glossterm{resistance} to physical damage is \\nauseated as a \\glossterm{condition}.
+          Each subject that has no remaining \\glossterm{damage resistance} is \\nauseated as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against all living creatures in a \\medarealong, 10 ft. wide line from you.
@@ -560,7 +560,7 @@ export const aquamancy: MysticSphere = {
         // crit: '',
         glance: "The effect lasts until the end of the next round.",
         hit: `
-          Each subject that has no remaining \\glossterm{resistance} to physical damage is \\nauseated as a \\glossterm{condition}.
+          Each subject that has no remaining \\glossterm{damage resistance} is \\nauseated as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against all living \\glossterm{enemies} in a \\gargarealong, 10 ft. wide line from you.
@@ -580,7 +580,7 @@ export const aquamancy: MysticSphere = {
           \\item You gain a \\glossterm{swim speed} equal to your \\glossterm{base speed}.
           \\item You gain a +8 \\glossterm{magic bonus} to the Flexibility skill. In addition, the minimum size you can squeeze down to is reduced to one inch, which can dramatically improve your ability to squeeze through tight spaces.
           \\item You are immune to \\glossterm{critical hits} from \\glossterm{strikes}.
-          \\item Your \\glossterm{resistance} to \\glossterm{physical damage} is halved.
+          \\item Your \\glossterm{damage resistance} is halved.
         \\end{itemize}
       `,
       rank: 4,
@@ -670,7 +670,7 @@ export const aquamancy: MysticSphere = {
       name: "Dampen",
 
       effect: `
-          Up to five ritual participants each gain a bonus equal to your \\glossterm{power} to their \\glossterm{resistance} to fire damage.
+          Up to five ritual participants each gain a +2 bonus to defenses against attacks that deal fire damage.
       `,
       rank: 1,
       type: "Attune (ritual)",

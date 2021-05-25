@@ -272,7 +272,7 @@ def generate_implements():
                 This effect lasts until the end of the next round.
                 It has the \\glossterm<Swift> tag, so it allows you to cast a spell without verbal components in the same phase that you activate this staff.
             """,
-            short_description="Briefly cst spells without verbal components",
+            short_description="Briefly cast spells without verbal components",
         ),
         MagicItem(
             name="Staff of Stillness",

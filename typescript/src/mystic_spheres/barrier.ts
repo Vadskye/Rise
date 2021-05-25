@@ -10,14 +10,13 @@ export const barrier: MysticSphere = {
       name: "Burst Ward",
 
       effect: `
-        You take half damage from \\glossterm{energy damage} this round.
-        This halving is applied before \\glossterm{resistances} and similar abilities.
+        You are \\glossterm{impervious} to \\glossterm{energy damage} this round.
         Because this is a \\abilitytag{Swift} ability, it affects damage you take during the current phase.
       `,
       focus: false,
       // narrative: '',
       scaling: {
-        2: "The halving applies to all damage, not just energy damage.",
+        2: "You are impervious to all damage, not just energy damage.",
         4: "You also gain a +1 bonus to all defenses.",
         6: "The defense bonus increases to +2.",
       },
@@ -332,93 +331,15 @@ export const barrier: MysticSphere = {
     },
 
     {
-      name: "Kinetic Shield",
+      name: "Resilient Shield",
 
       castingTime: "minor action",
       effect: `
-        You gain a +6 \\glossterm{magic bonus} to your \\glossterm{resistance} against \\glossterm{physical} damage.
+        You gain a +4 \\glossterm{magic bonus} to your \\glossterm{damage resistance}.
       `,
       rank: 1,
       scaling: {
-        3: `The bonus increases to +12.`,
-        5: `The bonus increases to +24.`,
-        7: `The bonus increases to +48.`,
-      },
-      type: "Attune (self)",
-    },
-
-    {
-      name: "Mass Kinetic Shield",
-
-      castingTime: "minor action",
-      functionsLike: {
-        mass: true,
-        name: "kinetic shield",
-      },
-      rank: 3,
-      scaling: {
-        5: `The bonus increases to +12.`,
-        7: `The bonus increases to +24.`,
-      },
-      type: "Attune (target)",
-    },
-
-    {
-      name: "Retributive Kinetic Shield",
-
-      effect: `
-        You can cast this spell as a \\glossterm{minor action}.
-
-        You gain a +24 \\glossterm{magic bonus} to \\glossterm{resistance} against \\glossterm{physical damage}.
-        In addition, whenever you resist physical damage, the attacker takes energy damage equal to half the damage resisted this way.
-        If the attacker is beyond \\shortrange of you, this reflection fails.
-        Any effect which increases this spell's range increases the range of this effect by the same amount.
-      `,
-      rank: 5,
-      scaling: { 7: `The bonus increases to +48.` },
-      type: "Attune (self)",
-    },
-
-    {
-      name: "Resist Energy",
-
-      castingTime: "minor action",
-      effect: `
-        You gain a +6 \\glossterm{magic bonus} to your \\glossterm{resistance} against \\glossterm{energy} damage.
-      `,
-      rank: 1,
-      scaling: {
-        3: `The bonus increases to +12.`,
-        5: `The bonus increases to +24.`,
-        7: `The bonus increases to +48.`,
-      },
-      type: "Attune (self)",
-    },
-
-    {
-      name: "Mass Resist Energy",
-
-      castingTime: "minor action",
-      functionsLike: {
-        mass: true,
-        name: "resist energy",
-      },
-      rank: 3,
-      scaling: {
-        5: `The bonus increases to +12.`,
-        7: `The bonus increases to +24.`,
-      },
-      type: "Attune (target)",
-    },
-
-    {
-      name: "Universal Shield",
-
-      effect: `
-        You gain a +8 \\glossterm{magic bonus} to your \\glossterm{resistances} against both \\glossterm{physical damage} and \\glossterm{energy damage}.
-      `,
-      rank: 3,
-      scaling: {
+        3: `The bonus increases to +8.`,
         5: `The bonus increases to +16.`,
         7: `The bonus increases to +32.`,
       },
@@ -426,18 +347,54 @@ export const barrier: MysticSphere = {
     },
 
     {
-      name: "Mass Universal Shield",
+      name: "Mass Resilient Shield",
 
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        name: "universal shield",
+        name: "resilient shield",
       },
-      rank: 5,
+      rank: 3,
       scaling: {
+        5: `The bonus increases to +8.`,
         7: `The bonus increases to +16.`,
       },
       type: "Attune (target)",
+    },
+
+    {
+      name: "Retributive Shield",
+
+      effect: `
+        You can cast this spell as a \\glossterm{minor action}.
+
+        You gain a +16 \\glossterm{magic bonus} to \\glossterm{damage resistance}.
+        In addition, whenever you resist damage, the attacker takes energy damage equal to half the damage resisted this way.
+        If the attacker is beyond \\shortrange of you, this reflection fails.
+        Any effect which increases this spell's range increases the range of this effect by the same amount.
+      `,
+      rank: 5,
+      scaling: { 7: `The bonus increases to +32.` },
+      type: "Attune (self)",
+    },
+
+    {
+      name: "Ablative Energy Shield",
+
+      castingTime: "minor action",
+      effect: `
+        You surround yourself with two layers of shields that ablate the power of energy attacks against you.
+        You are \\glossterm{impervious} to \\glossterm{energy damage}.
+        Whenever you take energy damage that you would not be impervious to without this ability, one layer of shields is removed.
+
+        If you take simultaneous damage from more sources than you have remaining layers, the remaining layers apply to the largest damage sources, and you take full damage from any lower damage values.
+      `,
+      rank: 2,
+      scaling: {
+        4: `The spell creates three shield layers.`,
+        6: `The spell creates four shield layers.`,
+      },
+      type: "Attune (self)",
     },
 
     {

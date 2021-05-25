@@ -149,7 +149,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         glance: "The effect lasts until the end of the next round.",
-        hit: `Each subject that has no remaining \\glossterm{resistance} to cold damage is \\immobilized as a \\glossterm{condition}.`,
+        hit: `Each subject that has no remaining \\glossterm{damage resistance} is \\immobilized as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against all creatures in a \\smallarea radius within \\medrange.
         `,
@@ -164,13 +164,13 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
-        hit: `Each subject takes piercing and cold damage equal to 2d8 plus half your \\glossterm{power} (see \\pcref{Multiple Damage Types}).`,
+        hit: `Each subject takes piercing and cold damage equal to 2d6 plus half your \\glossterm{power} (see \\pcref{Multiple Damage Types}).`,
         targeting: `
         Make an attack vs. Armor against everything in a \\medarealong, 10 ft. wide line from you.
         `,
       },
 
-      rank: 4,
+      rank: 3,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",
@@ -181,9 +181,9 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
-        hit: `The subject takes 2d8 + \\glossterm{power} piercing and cold damage (see \\pcref{Multiple Damage Types}).`,
+        hit: `The subject takes 2d10 + \\glossterm{power} piercing and cold damage (see \\pcref{Multiple Damage Types}).`,
         targeting: `
-          Make an attack vs. Armor against anything within \\medrange.
+          Make an attack vs. Armor against anything within \\shortrange.
         `,
       },
       rank: 3,
@@ -197,9 +197,9 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
-        hit: `The subject takes 4d10 + \\glossterm{power} piercing and cold damage (see \\pcref{Multiple Damage Types}).`,
+        hit: `The subject takes 5d10 + \\glossterm{power} piercing and cold damage (see \\pcref{Multiple Damage Types}).`,
         targeting: `
-          Make an attack vs. Armor against anything within \\longrange.
+          Make an attack vs. Armor against anything within \\medrange.
         `,
       },
       rank: 6,
@@ -247,7 +247,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         glance: "The effect lasts until the end of the next round.",
-        hit: `Each subject that has no remaining \\glossterm{resistance} to cold damage is \\stunned as a \\glossterm{condition}.`,
+        hit: `Each subject that has no remaining \\glossterm{damage resistance} is \\stunned as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\arealarge radius from you.
         `,
@@ -320,7 +320,7 @@ export const cryomancy: MysticSphere = {
         You cover your body with two overlapping layers of ice that crumple when they take damage.
         The ice does not cover your joints, allowing you to move freely.
         You are \\glossterm{impervious} to physical damage and fire damage.
-        Whenever you take physical damage or fire damage, one layer of ice is destroyed.
+        Whenever you take physical damage or fire damage that you would not be impervious to without this ability, one layer of ice is destroyed.
         When the last layer of ice is destroyed, this ability provides no further benefit.
 
         If you take simultaneous damage from more sources than you have remaining layers, the remaining layers apply to the largest damage sources, and you take full damage from any lower damage values.
@@ -375,7 +375,7 @@ export const cryomancy: MysticSphere = {
         glance: `Half damage.`,
         hit: `Each subject takes 2d10 + half \\glossterm{power} bludgeoning and cold damage (see \\pcref{Multiple Damage Types}).`,
         targeting: `
-          Make an attack vs. Armor against everything in a \\smallarea radius within \\medrange.
+          Make an attack vs. Armor against everything in a \\medarea radius within \\medrange.
         `,
       },
 

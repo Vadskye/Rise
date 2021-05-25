@@ -30,9 +30,9 @@ import re
 
 
 def create_page(destination):
-    return flex_row(
-        {"class": "page first-page"},
-        [
+    return flex_col( {"class": "page first-page"}, [
+        boring_stuff(destination),
+        flex_row([
             flex_col(
                 {"class": "sidebar"},
                 [
@@ -85,8 +85,8 @@ def create_page(destination):
                     ),
                 ],
             ),
-        ],
-    )
+        ]),
+    ])
 
 
 def attributes_and_skills():
@@ -236,7 +236,6 @@ def statistics_header(destination):
                 [
                     core_statistics(destination),
                     defenses(),
-                    resistances(),
                     movement(),
                 ],
             )
@@ -249,8 +248,8 @@ def defenses():
         {"class": "defenses"},
         [
             flex_wrapper(div({"class": "section-header"}, "Defenses")),
-            "".join(
-                [
+            flex_row([
+                flex_col({"class": "standard-defenses"}, [
                     labeled_number_input(
                         defense,
                         input_attributes={
@@ -266,8 +265,14 @@ def defenses():
                         },
                     )
                     for defense in DEFENSES
-                ]
-            ),
+                ]),
+                flex_col({"class": "special-defenses"}, [
+                    text_input(
+                        {"name": f"special_defense_{i}_name"},
+                    )
+                    for i in range(4)
+                ]),
+            ]),
         ],
     )
 
@@ -351,22 +356,44 @@ def core_statistics(destination):
         [
             flex_wrapper(div({"class": "section-header"}, "Core Statistics")),
             sidelabel(
-                "Attune points",
+                "Hit points",
                 flex_row(
                     {"class": "core-statistics-split"},
                     [
                         number_input(
                             {
-                                "name": "attunement_points",
-                                "value": "@{attunement_points}",
+                                "name": "hit_points",
+                                "value": "@{hit_points}",
                             }
                         ),
                         span({"class": "core-statistics-separator"}, "/"),
                         number_input(
                             {
                                 "disabled": True,
-                                "name": "attunement_points_maximum_display",
-                                "value": "@{attunement_points_maximum}",
+                                "name": "hit_points_maximum_display",
+                                "value": "@{hit_points_maximum}",
+                            }
+                        ),
+                    ],
+                ),
+            ),
+            sidelabel(
+                "DR",
+                flex_row(
+                    {"class": "core-statistics-split"},
+                    [
+                        number_input(
+                            {
+                                "name": "damage_resistance",
+                                "value": "@{damage_resistance}",
+                            }
+                        ),
+                        span({"class": "core-statistics-separator"}, "/"),
+                        number_input(
+                            {
+                                "disabled": True,
+                                "name": "damage_resistance_maximum_display",
+                                "value": "@{damage_resistance_maximum}",
                             }
                         ),
                     ],
@@ -389,28 +416,6 @@ def core_statistics(destination):
                                 "disabled": True,
                                 "name": "fatigue_tolerance_display_first_page",
                                 "value": "@{fatigue_tolerance}",
-                            }
-                        ),
-                    ],
-                ),
-            ),
-            sidelabel(
-                "Hit points",
-                flex_row(
-                    {"class": "core-statistics-split"},
-                    [
-                        number_input(
-                            {
-                                "name": "hit_points",
-                                "value": "@{hit_points}",
-                            }
-                        ),
-                        span({"class": "core-statistics-separator"}, "/"),
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": "hit_points_maximum_display",
-                                "value": "@{hit_points_maximum}",
                             }
                         ),
                     ],
@@ -461,17 +466,18 @@ def movement():
         {"class": "movement"},
         [
             flex_wrapper(div({"class": "section-header"}, "Movement")),
-            "".join(
-                [
-                    labeled_number_input(
-                        movement_type,
-                        input_attributes={
-                            "name": f"{movement_type.lower()}_display",
-                        },
-                    )
-                    for movement_type in "Land Climb Fly Swim".split()
-                ]
+            labeled_number_input(
+                "Land",
+                input_attributes={
+                    "name": f"land_display",
+                },
             ),
+            *[
+                freeform_number_input(
+                    text_input_attributes={"name": f"movement_speed_{i}_name"}, number_input_attributes={"name": f"movement_speed_{i}_value"},
+                )
+                for i in range(3)
+            ],
         ],
     )
 
@@ -507,3 +513,54 @@ def custom_modifier_toggle():
         checkbox({"class": "is-active", "name": "is_active"}),
         text_input({"name": "name", "readonly": True}),
     ])
+
+def boring_stuff(destination):
+    return div(
+        {"class": "boring-stuff"},
+        [
+            flex_row(
+                {"class": "boring-row"},
+                [
+                    labeled_text_input(
+                        "Character name", input_attributes={"name": "character_name"}
+                    ),
+                    labeled_text_input(
+                        "Player name", input_attributes={"name": "player_name"}
+                    ),
+                    labeled_text_input("Concept", input_attributes={"name": "concept"}),
+                    underlabel_spaced(
+                        "Level",
+                        number_input({"class": "fake-text", "name": "level"}),
+                        attributes={"class": "level-input"},
+                    ),
+                    *(
+                        [
+                            underlabel_spaced(
+                                "CR",
+                                number_input(
+                                    {"class": "fake-text", "name": "challenge_rating"}
+                                ),
+                                attributes={"class": "challenge-rating-input"},
+                            ),
+                            underlabel("Chat color", select(
+                                {"class": "chat-color", "name": "chat_color"},
+                                [
+                                    option({"value": "black"}, "Black"),
+                                    option({"value": "blue"}, "Blue"),
+                                    option({"value": "bluegreen"}, "Bluegreen"),
+                                    option({"value": "brown"}, "Brown"),
+                                    option({"value": "gold"}, "Gold"),
+                                    option({"value": "gray"}, "Gray"),
+                                    option({"value": "green"}, "Green"),
+                                    option({"value": "orange"}, "Orange"),
+                                    option({"value": "purple"}, "Purple"),
+                                ],
+                            ))
+                        ]
+                        if destination == "roll20"
+                        else []
+                    ),
+                ],
+            ),
+        ],
+    )

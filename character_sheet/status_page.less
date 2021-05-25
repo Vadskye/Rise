@@ -2,7 +2,7 @@
     display: inline;
     font-size: 12px;
     font-weight: normal;
-    width: 8em;
+    width: 9em;
 
     > input {
         vertical-align: initial;
@@ -25,12 +25,8 @@
     width: 15em;
 }
 
-// Should match definition in Core page
 .is-active {
-    height: 1.5em;
-    width: 1.5em;
-    margin-top: 0.7em;
-    margin-left: 0.5em;
+    font-size: 18px;
 }
 
 .custom-modifier {
@@ -48,8 +44,6 @@
 }
 
 .standard-modifiers {
-    flex-grow: 1;
-
     > div {
         margin-left: 0.25em;
         margin-right: 0.25em;
@@ -62,8 +56,25 @@
     .vital-wounds {
         flex-grow: 1;
 
+        .vital-roll-row {
+            justify-content: center;
+            margin-bottom: 0.5em;
+
+            button {
+                margin-right: 0.25em;
+            }
+        }
+
         .vital-wound-roll {
             margin-right: 0.5em;
         }
+    }
+}
+
+.attune-points {
+    margin-bottom: 0.5em;
+
+    .number-label {
+        flex-grow: 0;
     }
 }

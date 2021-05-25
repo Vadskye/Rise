@@ -355,10 +355,9 @@ You cannot gain the same feat twice.
         \ff[1]{Holy Smite} You can use the \textit{holy smite} ability as a standard action.
         In addition, if you have the \textit{smite} paladin ability and your \textit{devoted alignment} is good, you gain a \plus2 bonus to \glossterm{power} with the \textit{holy smite} ability.
         \begin{freeability}{Holy Smite}[Magical]
-            Make a \glossterm{strike}.
+            Make a \glossterm{strike} with a \plus1d damage bonus.
             Because this is a \glossterm{magical} ability, you use your \glossterm{magical} \glossterm{power} to determine your damage instead of your \glossterm{mundane} power.
-            If your target is good, the strike deals no damage.
-            Otherwise, the strike gains a \plus1d damage bonus.
+            If your target is good, you take a single point of \glossterm{energy damage} as feedback from the attack warning you that you are persecuting a good creature.
 
             \rankline
             \featlevel{6} The damage bonus increases to \plus2d.
@@ -366,18 +365,22 @@ You cannot gain the same feat twice.
             \featlevel{18} The damage bonus increases to \plus4d.
         \end{freeability}
 
-        \ff[3]{Celestial Soul} You gain a \plus5 bonus to your \glossterm{resistance} against \glossterm{energy damage}.
+        \ff[3]{Healing Light}[Magical] When you use the \textit{recover} ability, you emit \glossterm{brilliant illumination} in a \medarea radius from you, and \glossterm{shadowy illumination} in twice that radius.
+        Each \glossterm{ally} in the radius of brilliant illumination regains 1d6 \glossterm{hit points}.
+        The light lasts until the end of the next round.
+        This healing increases by \plus1d at 6th level and every 3 levels thereafter.
 
         \ff[6]{Angel Wings} You gain feathery wings that sprout from your back.
         These wings grant you a glide speed equal to your \glossterm{base speed} (see \pcref{Gliding}).
         The wings themselves are \glossterm{mundane}, but the ability to fly and glide with them is \glossterm{magical}.
 
-        \ff[9]{Greater Celestial Soul} The bonus from your \textit{celestial soul} ability increases to \plus10.
+        % TODO: make this more interesting
+        \ff[9]{Celestial Soul} You gain a \plus4 bonus to your \glossterm{damage resistance}.
 
         \ff[12]{Angelic Flight}[Magical] You gain a \glossterm{fly speed} equal to your \glossterm{base speed} with a maximum height of 30 feet (see \pcref{Flying}).
         At the start of each phase, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
 
-        \ff[15]{Supreme Celestial Soul} The bonus from your \textit{celestial soul} ability increases to \plus20.
+        \ff[15]{Greater Celestial Soul} The bonus from your \textit{celestial soul} ability increases to \plus8.
 
         \ff[18]{Greater Angelic Flight} The height limit from your \textit{angelic flight} ability increases to 120 feet.
     \end{feat}
@@ -388,7 +391,7 @@ You cannot gain the same feat twice.
         \ff[1]{Specialization} You gain a \plus3 bonus to the Climb skill.
 
         \ff[3]{Climb Speed} You gain a \glossterm{climb speed} equal to your \glossterm{base speed}.
-        If you already have a climb speed, you gain a \plus10 foot bonus to your climb speed.
+        If you already have a climb speed, you gain a \plus5 foot bonus to your climb speed.
         A successful Climb check to move allows you to travel a distance equal to your climb speed.
 
         \ff[6]{Creature Climber} You can use the \textit{creature climb} ability against creatures one or more size categories larger than you instead of two (see \pcref{Creature Climb}).
@@ -396,6 +399,7 @@ You cannot gain the same feat twice.
 
         \ff[9]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
+        \ff[12]{Rapid Climber} You gain a \plus5 foot bonus to your climb speed.
 
         \ff[15]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus9.
 
@@ -463,7 +467,7 @@ You cannot gain the same feat twice.
         The \glossterm{difficulty rating} to train the trick is 15.
         A creature with the trick gains the following benefits:
         \begin{itemize}
-            \item It gains a bonus equal to your level to its \glossterm{resistance} against \glossterm{physical damage}.
+            \item It gains a bonus equal to your level to its \glossterm{damage resistance}.
             \item It gains a \plus1 accuracy bonus with all attacks.
             \item It gains a \plus1d damage bonus with \glossterm{strikes}.
         \end{itemize}
@@ -480,7 +484,7 @@ You cannot gain the same feat twice.
         The \glossterm{difficulty rating} to train the trick is 25.
         A creature with the trick gains the following benefits, which replace the benefits of the Battleforged trick:
         \begin{itemize}
-            \item It gains a bonus equal to twice your level to its \glossterm{resistance} against \glossterm{physical damage}.
+            \item It gains a bonus equal to twice your level to its \glossterm{damage resistance}.
             \item It gains a \plus2 accuracy bonus with all attacks.
             \item It gains a \plus2d damage bonus with \glossterm{strikes}.
         \end{itemize}
@@ -582,7 +586,7 @@ You cannot gain the same feat twice.
 
         \ff[1]{Draconic Ancestry} Choose a type of dragon from among the dragons on \trefnp{Dragon Types}.
         You have the blood of that type of dragon in your veins.
-        You gain a bonus equal to your level to your \glossterm{resistance} against the damage type dealt by that dragon's breath weapon.
+        You gain a \plus4 bonus to \glossterm{defenses} against attacks that deal damage of the type dealt by that dragon's breath weapon.
 
         \ff[1]{Draconic Weapons} You gain a bite natural weapon and two claw natural weapons, one on each arm.
         For details, see \pcref{Natural Weapons}.
@@ -624,7 +628,7 @@ You cannot gain the same feat twice.
         \ff[12]{Draconic Flight}[Magical] You gain a \glossterm{fly speed} equal to your \glossterm{base speed} with a maximum height of 30 feet (see \pcref{Flying}).
         At the start of each phase, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
 
-        \ff[15]{Greater Draconic Ancestry} The resistance bonus from your \textit{draconic ancestry} ability increases to be equal to twice your level.
+        \ff[15]{Greater Draconic Ancestry} You become immune to damage of the type dealt by your dragon's breath weapon.
 
         \ff[15]{Greater Draconic Scales} The bonus from your \textit{draconic scales} ability increases to \plus2.
 
@@ -710,7 +714,7 @@ You cannot gain the same feat twice.
     \begin{feat}{Executioner}{Combat}
         \featpres Base Strength of 1, base Perception of 2.
 
-        \ff[1]{Marked for Execution} You consider living creatures that either have a \glossterm{vital wound}, have less than their maximum \glossterm{hit points}, or have no remaining \glossterm{resistances} of any kind to be \textit{marked for execution}.
+        \ff[1]{Marked for Execution} You consider living creatures that either have a \glossterm{vital wound}, have less than their maximum \glossterm{hit points}, or have no remaining \glossterm{damage resistance} to be \textit{marked for execution}.
         Several abilities from this feat affect creatures \textit{marked for execution}.
 
         % This ability is melee-only because it makes some of the questions around ``is this creature marked''
@@ -1272,7 +1276,7 @@ You cannot gain the same feat twice.
 
         \ff[1]{Spell Sensitivity} You treat the Spellsense skill as a \glossterm{class skill} (see \pcref{Spellsense}).
 
-        \ff[3]{Mundane Resilience} You gain a \plus4 bonus to your \glossterm{resistance} against both \glossterm{physical damage} and \glossterm{energy damage}.
+        \ff[3]{Mundane Resilience} You gain a \plus4 bonus to \glossterm{damage resistance}.
 
         \ff[3]{Personal Legacy} You do not gain any legacy item upgrades (see \pcref{Legacy Items}).
         Instead, each time you would gain a legacy item upgrade, you instead gain a \plus1 bonus to \glossterm{accuracy}, all \glossterm{defenses}, and \glossterm{fatigue tolerance}.
@@ -1968,7 +1972,7 @@ You cannot gain the same feat twice.
         \ff[1]{Spell} You learn a spell from the \sphere{Cryomancy} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[3]{Cold Resistance} You gain a bonus equal to your level to your \glossterm{resistance} against cold damage.
+        \ff[3]{Cold Tolerance} You gain a \plus4 bonus to \glossterm{defenses} against attacks that deal cold damage.
 
         \ff[3]{Frozen Blood} You are immune to \glossterm{diseases}.
 
@@ -1978,7 +1982,7 @@ You cannot gain the same feat twice.
         \ff[9]{Personal Cryomancy} You gain an additional \glossterm{attunement point}.
         You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Cryomancy} \glossterm{mystic sphere}.
 
-        \ff[12]{Greater Cold Resistance} The bonus from your \textit{cold resistance} ability increases to twice your level.
+        \ff[12]{Greater Cold Tolerance} The bonus from your \textit{cold tolerance} ability increases to \plus6.
 
         \ff[12]{Greater Frozen Blood} You are immune to \glossterm{poisons}.
 
@@ -1994,7 +1998,7 @@ You cannot gain the same feat twice.
         \ff[1]{Spell} You learn a spell from the \sphere{Electromancy} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[3]{Electricity Resistance} You gain a bonus equal to your level to your \glossterm{resistances} against electricity damage.
+        \ff[3]{Electricity Tolerance} You gain a \plus4 bonus to \glossterm{defenses} against attacks that deal electricity damage.
 
         \ff[3]{Energetic Rush} You gain a \plus5 foot bonus to your \glossterm{base speed}.
 
@@ -2004,7 +2008,7 @@ You cannot gain the same feat twice.
         \ff[9]{Personal Electromancy} You gain an additional \glossterm{attunement point}.
         You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Electromancy} \glossterm{mystic sphere}.
 
-        \ff[12]{Greater Electricity Resistance} Your bonus from the \textit{electricity resistance} ability increases to twice your level.
+        \ff[12]{Greater Electricity Tolerance} The bonus from your \textit{electricity resistance} ability increases to \plus6.
 
         \ff[12]{Greater Energetic Rush} The bonus from your \textit{energetic rush} ability increases to \plus10 feet.
 
@@ -2131,7 +2135,7 @@ You cannot gain the same feat twice.
         \ff[1]{Spell} You learn a spell from the \sphere{Pyromancy} \glossterm{mystic sphere}.
         When you gain access to new spell ranks, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[3]{Fire Resistance} You gain a bonus equal to your level to your \glossterm{resistance} against fire damage.
+        \ff[3]{Fire Tolerance} You gain a \plus4 bonus to \glossterm{defenses} against attacks that deal fire damage.
 
         \ff[3]{Friendly Fire} Whenever you deal fire damage to your \glossterm{allies}, you deal half damage, and that damage is treated as \glossterm{environmental damage}.
 
@@ -2142,7 +2146,7 @@ You cannot gain the same feat twice.
         \ff[9]{Personal Pyromancy} You gain an additional \glossterm{attunement point}.
         You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Pyromancy} \glossterm{mystic sphere}.
 
-        \ff[12]{Greater Fire Resistance} Your bonus from the \textit{fire resistance} ability increases to twice your level.
+        \ff[12]{Greater Fire Tolerance} The from your \textit{fire resistance} ability increases to \plus6.
 
         \ff[12]{Greater Friendly Fire} Your \glossterm{allies} are immune to fire damage from your abilities.
 
@@ -2185,7 +2189,7 @@ You cannot gain the same feat twice.
         When you gain access to a new spell level, you can change which spell you know from that \glossterm{mystic sphere}.
 
         \ff[3]{Fortified Summons} Creatures you create with the \sphere{Summoning} \glossterm{mystic sphere} have half their normal \glossterm{hit points}.
-        They gain a bonus to their \glossterm{resistances} to both \glossterm{energy damage} and \glossterm{physical damage} equal to the hit points lost this way.
+        They gain a bonus to their \glossterm{damage resistance} equal to the hit points lost this way.
 
         \ff[6]{Resummon} You can use the \textit{resummon} ability as a \glossterm{minor action}.
         \begin{freeability}{Resummon}
@@ -2400,7 +2404,7 @@ You cannot gain the same feat twice.
 
         \ff[3]{Personal Vitality} You gain a \plus1 bonus to Fortitude defense and are immune to being \sickened.
 
-        \ff[6]{Life Suppression} You gain a \plus4 bonus to defenses against abilities that only affect living creatures.
+        \ff[6]{Life Suppression} You gain a \plus4 bonus to defenses against attacks that only affect living creatures.
 
         \ff[9]{Personal Vivimancy} You gain an additional \glossterm{attunement point}.
         You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Vivimancy} \glossterm{mystic sphere}.
@@ -2469,7 +2473,7 @@ You cannot gain the same feat twice.
     \begin{feat}{Swift}{General}
         \featpre Base Dexterity of 1.
 
-        \ff[1]{Rapid Movement} You gain a \plus10 foot bonus to your \glossterm{base speed}.
+        \ff[1]{Rapid Movement} You gain a \plus5 foot bonus to your \glossterm{base speed}.
 
         \ff[3]{Sprinter} When you use the \textit{sprint} ability, you move can move up to triple your movement speed.
         In addition, you gain a \plus1 bonus to your \glossterm{fatigue tolerance}.
@@ -2479,12 +2483,14 @@ You cannot gain the same feat twice.
 
         \ff[9]{Water Runner} During your movement with the \textit{sprint} ability, you can move on water and similar liquids as if they were solid ground.
 
-        \ff[12]{Greater Rapid Movement} The speed bonus from your \textit{rapid movement} ability increases to \plus20 feet.
+        \ff[12]{Greater Rapid Movement} The speed bonus from your \textit{rapid movement} ability increases to \plus10 feet.
 
         \ff[15]{Greater Sprinter} When you use the \textit{sprint} ability, you can move up to five times your movement speed.
         In addition, the bonus to your \glossterm{fatigue tolerance} from your \textit{sprinter} ability increases to \plus2.
 
         \ff[18]{Cloud Runner} During your movement with the \textit{sprint} ability, you can move on dense fog and similar gaseous substances as if they were solid ground.
+
+        \ff[21]{Supreme Rapid Movement} The speed bonus from your \textit{rapid movement} ability increases to \plus15 feet.
     \end{feat}
 
     \begin{feat}{Swim Specialization}{Skill}

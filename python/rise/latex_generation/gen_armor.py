@@ -265,41 +265,6 @@ def generate_armor():
 
     armor += [
         MagicItem(
-            name="Armor of Energy Resistance",
-            level=4,
-            tags=[],
-            material_type="Body armor",
-            description="""
-                You gain a +6 \\glossterm<magic bonus> to your \\glossterm<resistance> against \\glossterm<energy damage>.
-                When you resist energy damage, this item sheds light as a torch until the end of the next round.
-                The color of the light depends on the energy damage resisted: blue for cold, yellow for electricity, and red for fire.
-            """,
-            short_description="Grants +6 energy resistance",
-        ),
-        MagicItem(
-            name="Armor of Energy Resistance, Greater",
-            level=10,
-            tags=[],
-            material_type="Body armor",
-            description="""
-                This item functions like \\mitem<armor of energy resistance>, except that the bonus is equal to +12.
-            """,
-            short_description="Grants +12 energy resistance",
-        ),
-        MagicItem(
-            name="Armor of Energy Resistance, Supreme",
-            level=16,
-            tags=[],
-            material_type="Body armor",
-            description="""
-                This item functions like \\mitem<armor of energy resistance>, except that the bonus is equal to +24.
-            """,
-            short_description="Grants +24 energy resistance",
-        ),
-    ]
-
-    armor += [
-        MagicItem(
             name="Featherlight Armor",
             level=5,
             material_type="Body armor",
@@ -414,57 +379,34 @@ def generate_armor():
 
     armor += [
         MagicItem(
-            name="Armor of Kinetic Absorption",
+            name="Resistant Armor",
             level=4,
             tags=[],
             material_type="Body armor",
             description="""
-                You gain a +6 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
+                You gain a +4 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
             """,
-            short_description="Grants +6 physical resistance",
+            short_description="Grants +4 damage resistance",
         ),
         MagicItem(
-            name="Armor of Kinetic Absorption, Greater",
+            name="Resistant Armor, Greater",
             level=10,
             tags=[],
             material_type="Body armor",
             description="""
-                You gain a +12 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
+                You gain a +8 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
             """,
-            short_description="Grants +12 physical resistance",
+            short_description="Grants +8 damage resistance",
         ),
         MagicItem(
-            name="Armor of Kinetic Absorption, Supreme",
+            name="Resistant Armor, Supreme",
             level=16,
             tags=[],
             material_type="Body armor",
             description="""
-                You gain a +24 \\glossterm<magic bonus> to \\glossterm<resistances> against \\glossterm<physical damage>.
+                You gain a +16 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
             """,
-            short_description="Grants +24 physical resistance",
-        ),
-    ]
-
-    armor += [
-        MagicItem(
-            name="Armor of Invulnerability",
-            level=10,
-            tags=[],
-            material_type="Body armor",
-            description="""
-                You gain a +8 \\glossterm<magic bonus> to your \\glossterm<resistances> to both \\glossterm<physical damage> and \\glossterm<energy damage>.
-            """,
-            short_description="Grants +8 energy and physical resistance",
-        ),
-        MagicItem(
-            name="Armor of Invulnerability, Greater",
-            level=16,
-            tags=[],
-            material_type="Body armor",
-            description="""
-                You gain a +16 \\glossterm<magic bonus> to your \\glossterm<resistances> to both \\glossterm<physical damage> and \\glossterm<energy damage>.
-            """,
-            short_description="Grants +16 energy and physical resistance",
+            short_description="Grants +16 damage resistance",
         ),
     ]
 
@@ -578,8 +520,8 @@ def generate_armor():
             This shield normally has a cloth covering its face.
             As a standard action, you can pull the cloth back and reveal the horrifying face emblazoned on the shield.
             When you do, make an attack vs. Fortitude against each creature within a \\areasmall cone.
-            On a hit, each target with no remaining \\glossterm<resistance> to \\glossterm<physical damage> is \\glossterm<nauseated> until the end of the next round.
-            On a \\glossterm<critical hit>, each target with no remaining \\glossterm<resistance> to \\glossterm<physical damage> is \\glossterm<paralyzed> until the end of the next round.
+            On a hit, each target with no remaining \\glossterm<damage resistance> is \\glossterm<nauseated> until the end of the next round.
+            On a \\glossterm<critical hit>, each target with no remaining \\glossterm<damage resistance> is \\glossterm<paralyzed> until the end of the next round.
             In either case, each target is immune to this ability until it takes a \\glossterm<short rest>.
 
             If the cloth is prematurely pulled back, allowing creatures to see the shield without a dramatic reveal, the shield has no effect.
@@ -596,7 +538,7 @@ def generate_armor():
 def generate_armor_latex(check=False):
     armor = sorted(generate_armor(), key=lambda armor: armor.name)
     if check:
-        sanity_check(armor)
+        sanity_check(armor, True)
 
     texts = []
     for item in armor:
@@ -649,4 +591,4 @@ def main(output, check):
 
 
 if __name__ == "__main__":
-    main()
+    main(None, None)

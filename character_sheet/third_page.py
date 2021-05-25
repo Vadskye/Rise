@@ -14,10 +14,13 @@ from cgi_simple import (
 )
 
 
-def create_page():
-    return flex_row(
-        {"class": "page third-page"},
-        [
+def create_page(_destination):
+    return flex_col({"class": "page third-page"}, [
+        div({"class": "tab-explanation"}, """
+            This tab is used to track fundamental aspects of your character's identity, as well as the things they carry with them.
+            It's a good place to record choices that you've made, such as the specific mystic spheres or combat styles that you have access to.
+        """),
+        flex_row([
             flex_col(
                 {"class": "sidebar"},
                 [
@@ -44,12 +47,14 @@ def create_page():
                 [
                     abilities_summary(),
                     equipment(),
+                    div({"class": "section-header"}, "Abilities Chosen"),
+                    textarea({"class": "all-abilities-known", "name": "abilities_chosen"}),
                     inventory(),
                     personality(),
                 ],
             ),
-        ],
-    )
+        ]),
+    ])
 
 
 def basic_info():
@@ -82,7 +87,7 @@ def abilities_summary():
     return div(
         {"class": "abilities"},
         [
-            div({"class": "section-header"}, "Passive Abilities and Ability Choices"),
+            div({"class": "section-header"}, "Passive Abilities"),
             fieldset(
                 {"class": "repeating_passiveabilities"},
                 flex_row(

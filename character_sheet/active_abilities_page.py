@@ -18,6 +18,7 @@ from cgi_simple import (
     sidelabel,
     span,
     subtlebutton,
+    textarea,
     text_input,
     underlabel,
     underlabeled_checkbox,
@@ -30,6 +31,10 @@ def create_page(destination):
     return flex_col(
         {"class": "page active-abilities-page"},
         [
+            div({"class": "tab-explanation"}, """
+                This tab is used to track the abilities that you can use.
+                Each ability you add here will appear as a button on the Core page.
+            """),
             div({"class": "section-header"}, "Magical Attacks"),
             fieldset(
                 {"class": f"repeating_magicalattacks"},
