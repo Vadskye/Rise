@@ -75,23 +75,24 @@ def create_page(_destination):
             ),
             flex_wrapper(div({"class": "section-header"}, "Attuned Abilities and Equipment")),
             sidelabel(
-                "Attunement points",
+                "Attuned effects",
                 flex_row(
                     [
-                        number_input(
+                        underlabel("Current", number_input(
                             {
-                                "name": "attunement_points",
-                                "value": "@{attunement_points}",
+                                "disabled": True,
+                                "name": "active_attuned_effects_display",
+                                "value": "@{active_attunement_count}",
                             }
-                        ),
+                        )),
                         span({"class": "equation-glue"}, "/"),
-                        number_input(
+                        underlabel("Max", number_input(
                             {
                                 "disabled": True,
                                 "name": "attunement_points_maximum_display",
                                 "value": "@{attunement_points_maximum}",
                             }
-                        ),
+                        )),
                     ],
                 ),
                 {"class": "attune-points"},
