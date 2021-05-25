@@ -454,9 +454,9 @@ def encumbrance():
 def initiative():
     misc = get_misc_variables("initiative", 3)
     return js_wrapper(
-        ["dexterity", "perception", "fatigue_penalty", *misc],
+        ["dexterity_starting", "perception_starting", "fatigue_penalty", *misc],
         f"""
-            var scaling = Math.max(dexterity, perception);
+            var scaling = Math.max(dexterity_starting, perception_starting);
             setAttrs({{
                 initiative: scaling + {sum_variables(misc)} - fatigue_penalty,
                 initiative_scaling: scaling,
