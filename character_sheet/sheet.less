@@ -14,6 +14,14 @@
         padding-top: 0.75em;
         width: 100%;
     }
+
+    // Should match definition in Status page
+    input[type=checkbox] {
+        height: 1em;
+        width: 1em;
+        margin-top: 0.4em;
+        margin-left: 0.5em;
+    }
 }
 
 .hidden {
@@ -181,3 +189,50 @@ input[type=text] {
 .underlabeled select {
     margin-bottom: 0;
 }
+
+
+
+.calc-header {
+  font-weight: 600;
+  width: 9em;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  height: 1.5em;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+}
+.equation-glue {
+  display: flex;
+  justify-content: center;
+  height: 1.6em;
+  width: 1.1em;
+  text-align: center;
+  align-items: center;
+}
+.equation {
+  align-items: baseline;
+  margin: 0;
+  flex-grow: 1;
+
+    .equation-text {
+      display: flex;
+      justify-content: center;
+      height: 1.6em;
+      text-align: center;
+      align-items: center;
+      margin-left: 0.25em;
+      margin-right: 0.25em;
+    }
+    .equation-math {
+      font-size: 1em;
+    }
+
+    input[type=text].invisible-text-input {
+        font-size: 0.8em;
+        padding-top: 0;
+    }
+}
+
+

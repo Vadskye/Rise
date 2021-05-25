@@ -149,11 +149,11 @@ def set_skill(a, s):
                 if ({s}_points === 1) {{
                     ranks = Math.floor(level / 2);
                     pointsModifier = 1;
-                    training = 'T';
+                    training = 'Trained';
                 }} else if (({s}_points >= 3) || (({s}_points === 2) && {s}_class_skill)) {{
                     ranks = level;
                     pointsModifier = 3;
-                    training = 'M';
+                    training = 'Mastered';
                 }}
 
                 setAttrs({{
@@ -190,15 +190,15 @@ def set_skill(a, s):
 
                 if ({s}_points === 1) {{
                     ranks = Math.floor(level / 2) + 1;
-                    training = 'T';
+                    training = 'Trained';
                 }} else if (({s}_points >= 3) || (({s}_points === 2) && {s}_class_skill)) {{
                     ranks = level;
                     pointsModifier = 3;
-                    training = 'M';
+                    training = 'Mastered';
                 }}
 
                 setAttrs({{
-                    {s}_ranks: ranks,
+                    {s}_ranks: ranks + pointsModifier,
                     {s}_total: ranks + pointsModifier + {a}_starting + {sum_variables(misc)} - fatigue_penalty {subtract_encumbrance},
                     {s}_training: training,
                 }});

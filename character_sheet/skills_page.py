@@ -34,56 +34,46 @@ def create_page(destination):
 def calc_skills(destination):
     if destination == "roll20":
         return flex_col(
-            {"class": "calc-skills"},
             [
                 div({"class": "section-header"}, "Skills"),
-                skill_labels(),
+                flex_row([
+                    flex_row(
+                        {"class": "skill-points"},
+                        [
+                            div({"class": "skill-points-label"}, "Skill Points"),
+                            underlabel(
+                                "Spent",
+                                number_input(
+                                    {
+                                        "disabled": True,
+                                        "name": "skill_points_spent_display",
+                                        "value": "@{skill_points_spent}",
+                                    }
+                                ),
+                            ),
+                            span({"class": "equation-glue"}, "/"),
+                            underlabel(
+                                "Total",
+                                number_input(
+                                    {
+                                        "disabled": True,
+                                        "name": "skill_points_total_display",
+                                        "value": "@{skill_points}",
+                                    }
+                                ),
+                            ),
+                        ],
+                    ),
+                    div({"class": "explanation"}, """
+                        This tab is used to track your skills.
+                        On the left side, you can spend skill points and determine your level of training in each skill.
+                        On the right side, you can add custom bonuses or penalties to each skill to determine your total skill modifier.
+                    """),
+                ]),
                 *[
-                    calc_skill(skill_name, "strength")
-                    for skill_name in ATTRIBUTE_SKILLS["strength"]
+                    display_skills_for_attribute(attribute.lower(), calc_skill)
+                    for attribute in filter(lambda a: a != "Willpower", ATTRIBUTES + ["other"])
                 ],
-                skill_labels(),
-                *[
-                    calc_skill(skill_name, "dexterity")
-                    for skill_name in ATTRIBUTE_SKILLS["dexterity"]
-                ],
-                *[
-                    calc_skill(skill_name, "constitution")
-                    for skill_name in ATTRIBUTE_SKILLS["constitution"]
-                ],
-                skill_labels(),
-                *[
-                    calc_skill(skill_name, "intelligence")
-                    for skill_name in ATTRIBUTE_SKILLS["intelligence"]
-                ],
-                skill_labels(),
-                *[
-                    calc_skill(skill_name, "perception")
-                    for skill_name in ATTRIBUTE_SKILLS["perception"]
-                ],
-                *[
-                    calc_skill(skill_name, "constitution")
-                    for skill_name in ATTRIBUTE_SKILLS["willpower"]
-                ],
-                skill_labels(),
-                *[
-                    calc_skill(skill_name)
-                    for skill_name in ATTRIBUTE_SKILLS["other"]
-                ],
-                flex_row(
-                    {"class": "skill-row"},
-                    [
-                        div({"class": "skill-name"}, "Points spent"),
-                        number_input(
-                            {
-                                "class": "skill-points-spent",
-                                "disabled": True,
-                                "name": "skill_points_spent_display",
-                                "value": "@{skill_points_spent}",
-                            }
-                        ),
-                    ],
-                ),
             ],
         )
     else:
@@ -111,45 +101,95 @@ def skill_labels():
     )
 
 
-def calc_skill(skill_name, attribute=None, blank_input=False):
+def calc_skill(skill_name, attribute=None):
     visible_skill_name = re.sub('\\d', '', skill_name).title()
     skill_parsable = skill_name.lower().replace(" ", "_")
+    attribute_shorthand = ATTRIBUTE_SHORTHAND[attribute] if attribute else None;
     return flex_row(
         {"class": "skill-row"},
         [
-            div(
-                {"class": f'skill-name{" blank-input" if blank_input else ""}'},
-                [
-                    visible_skill_name,
+            flex_row({"class": "skill-points-row"}, [
+                underlabel(
+                    "Points",
+                    number_input(
+                        {
+                            "name": skill_parsable + '_points',
+                        }
+                    ),
+                ),
+                underlabel(
+                    "Class?",
+                    checkbox(
+                        {
+                            "class": "is-class-skill",
+                            "name": skill_parsable + "_class_skill",
+                        }
+                    ),
+                ),
+                underlabel(
+                    "Training level",
                     text_input(
                         {
-                            "class": "subskill-type",
-                            "name": f"{skill_parsable}_type",
+                            "class": "skill-training",
+                            "disabled": True,
+                            "name": f"${skill_parsable}_training_display",
+                            "value": "@{" + skill_parsable + "_training}",
                         }
-                    )
-                    if skill_name in SUBSKILLS
-                    else "",
-                ],
-            ),
-            number_input({"class": "skill-points", "name": skill_parsable + "_points"}),
-            flex_wrapper(
+                    ),
+                ),
+            ]),
+            div({"class": "calc-header"}, [
+                visible_skill_name,
                 text_input(
                     {
-                        "class": "skill-training",
-                        "disabled": True,
-                        "name": f"${skill_parsable}_training_display",
-                        "value": "@{" + skill_parsable + "_training}",
+                        "class": "subskill-type",
+                        "name": f"{skill_parsable}_type",
                     }
-                ),
+                )
+                if skill_name in SUBSKILLS
+                else "",
+            ]),
+            equation(
+                [
+                    underlabel(
+                        "Train",
+                        number_input(
+                            {
+                                "disabled": True,
+                                "name": "skill_ranks_display",
+                                "value": f"@{{{skill_parsable}_ranks}}",
+                            }
+                        ),
+                    ),
+                    plus(),
+                    # TODO: omit this for non-attribute skills
+                    underlabel(
+                        f"({attribute_shorthand})",
+                        number_input(
+                            {
+                                "disabled": True,
+                                "name": f"{skill_parsable}_attribute",
+                                "value": f"@{{{attribute}_starting}}",
+                            }
+                        ),
+                    ),
+                    plus(),
+                    equation_misc_repeat(skill_parsable, 3),
+                ],
+                result_attributes={
+                    "disabled": True,
+                    "name": f"{skill_parsable}_display",
+                    "value": f"@{{{skill_parsable}_total}}",
+                },
             ),
-            flex_wrapper(
-                checkbox(
-                    {
-                        "class": "is-class-skill",
-                        "name": skill_parsable + "_class_skill",
-                    }
-                ),
-            ),
-            equation_misc_repeat(skill_parsable, 2, lambda: ""),
         ],
     )
+
+def display_skills_for_attribute(attribute, display_function):
+    return "".join([
+        div({"class": "attribute-header"}, f"{ATTRIBUTE_SHORTHAND[attribute]} Skills"),
+        *[
+            display_function(skill_name, attribute)
+            for skill_name in ATTRIBUTE_SKILLS[attribute]
+        ],
+    ])
