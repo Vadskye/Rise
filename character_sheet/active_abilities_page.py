@@ -18,6 +18,7 @@ from cgi_simple import (
     sidelabel,
     span,
     subtlebutton,
+    textarea,
     text_input,
     underlabel,
     underlabeled_checkbox,
@@ -50,6 +51,8 @@ def create_page(destination):
                 {"class": f"repeating_abilities"},
                 ability(),
             ),
+            div({"class": "section-header"}, "List of Abilities Known"),
+            textarea({"class": "all-abilities-known", "name": "all_abilities_known"}),
         ],
     )
 
