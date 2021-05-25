@@ -11,7 +11,6 @@ def generate_script():
             *core_statistics(),
             *defenses(),
             damage_resistance(),
-            *abilities_known(),
             attunement_points(),
             skill_points_spent(),
             unknown_statistic(),
@@ -231,17 +230,6 @@ def defenses():
         fortitude(),
         mental(),
         reflex(),
-    ]
-
-
-
-def abilities_known():
-    return [
-        combat_styles_known(),
-        maneuvers_known(),
-        spells_known(),
-        spheres_known(),
-        *[blank_ability_known(i) for i in range(1)],
     ]
 
 
