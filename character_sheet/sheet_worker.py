@@ -95,7 +95,7 @@ def sum_variables(variables):
 
 
 def attribute_change(a):
-    misc = get_misc_variables(a + "_starting", 1)
+    misc = get_misc_variables(a + "_starting", 2)
     return js_wrapper(
         ["level", f"{a}_point_buy", *misc],
         f"""
@@ -134,7 +134,7 @@ def attribute_skills(attribute):
 
 
 def set_skill(a, s):
-    misc = get_misc_variables(s, 2)
+    misc = get_misc_variables(s, 3)
     if a == "other":
         return js_wrapper(
             ["level", f"{s}_points", "fatigue_penalty", *misc],
@@ -275,7 +275,7 @@ def accuracy():
 
 
 def attunement_points():
-    misc = get_misc_variables("attunement_points", 2)
+    misc = get_misc_variables("attunement_points", 3)
     return js_wrapper(
         ["level", "attunement_points_from_class", *misc],
         f"""
@@ -310,7 +310,7 @@ def unknown_statistic():
 
 
 def armor_defense():
-    misc = get_misc_variables("armor_defense", 3)
+    misc = get_misc_variables("armor_defense", 2)
     return js_wrapper(
         [
             "level",
@@ -343,7 +343,7 @@ def armor_defense():
 
 
 def fortitude():
-    misc = get_misc_variables("fortitude", 4)
+    misc = get_misc_variables("fortitude", 3)
     return js_wrapper(
         [
             "level",
@@ -374,7 +374,7 @@ def fortitude():
 
 
 def reflex():
-    misc = get_misc_variables("reflex", 4)
+    misc = get_misc_variables("reflex", 3)
     return js_wrapper(
         [
             "level",
@@ -405,7 +405,7 @@ def reflex():
 
 
 def mental():
-    misc = get_misc_variables("mental", 4)
+    misc = get_misc_variables("mental", 3)
     return js_wrapper(
         [
             "level",
@@ -436,7 +436,7 @@ def mental():
 
 
 def encumbrance():
-    misc = get_misc_variables("encumbrance", 3)
+    misc = get_misc_variables("encumbrance", 2)
     return js_wrapper(
         ["level", "body_armor_encumbrance", "strength_starting", *misc],
         f"""
@@ -515,7 +515,7 @@ def focus_penalty():
 
 
 def hit_points():
-    misc = get_misc_variables("hit_points", 3)
+    misc = get_misc_variables("hit_points", 4)
     return js_wrapper(
         ["level", "constitution", "challenge_rating", *misc],
         f"""
@@ -662,69 +662,8 @@ def mundane_power():
     )
 
 
-def combat_styles_known():
-    misc = get_misc_variables("combat_styles_known", 2)
-    return js_wrapper(
-        ["combat_styles_known_insight_points", *misc],
-        f"""
-            setAttrs({{
-                combat_styles_known: combat_styles_known_insight_points + {sum_variables(misc)}
-            }});
-        """,
-    )
-
-
-def maneuvers_known():
-    misc = get_misc_variables("maneuvers_known", 2)
-    return js_wrapper(
-        ["maneuvers_known_insight_points", *misc],
-        f"""
-            setAttrs({{
-                maneuvers_known: maneuvers_known_insight_points + {sum_variables(misc)}
-            }});
-        """,
-    )
-
-
-def spheres_known():
-    misc = get_misc_variables("spheres_known", 2)
-    return js_wrapper(
-        ["spheres_known_insight_points", *misc],
-        f"""
-            setAttrs({{
-                spheres_known: Math.floor(spheres_known_insight_points / 2) + {sum_variables(misc)}
-            }});
-        """,
-    )
-
-
-def spells_known():
-    misc = get_misc_variables("spells_known", 2)
-    return js_wrapper(
-        ["spells_known_insight_points", *misc],
-        f"""
-            setAttrs({{
-                spells_known: spells_known_insight_points + {sum_variables(misc)}
-            }});
-        """,
-    )
-
-
-def blank_ability_known(i):
-    name = f"blank_ability_known_{i}"
-    misc = get_misc_variables(name, 2)
-    return js_wrapper(
-        [f"{name}_insight_points", *misc],
-        f"""
-            setAttrs({{
-                {name}: {name}_insight_points + {sum_variables(misc)}
-            }});
-        """,
-    )
-
-
 def damage_resistance():
-    misc = get_misc_variables("damage_resistance_bonus", 4)
+    misc = get_misc_variables("damage_resistance_bonus", 3)
     return js_wrapper(
         [
             "constitution",
