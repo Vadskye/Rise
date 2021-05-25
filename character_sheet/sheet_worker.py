@@ -15,6 +15,7 @@ def generate_script():
             skill_points_spent(),
             unknown_statistic(),
             vital_wounds(),
+            attuned_effects(),
             custom_modifiers(),
             monster_chat_color(),
             debuffs(),
@@ -934,6 +935,21 @@ def vital_wounds():
             getSectionIDs("repeating_vitalwounds", (repeatingSectionIds) => {
                 setAttrs({
                     vital_wound_count: repeatingSectionIds.length,
+                });
+            });
+        });
+    """
+
+def attuned_effects():
+    return """
+        on("change:repeating_attunements remove:repeating_attunements", function(eventInfo) {
+            getSectionIDs("repeating_attunements", (repeatingSectionIds) => {
+                const isActiveIds = repeatingSectionIds.map((id) => `repeating_attunements_${id}_attunement_active`);
+                getAttrs(isActiveIds, (values) => {
+                    const activeAbilities = isActiveIds.filter((id) => values[id] === 'on');
+                    setAttrs({
+                        active_attunement_count: activeAbilities.length,
+                    });
                 });
             });
         });
