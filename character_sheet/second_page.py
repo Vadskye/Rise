@@ -69,13 +69,13 @@ def create_page(destination):
                     flex_col(
                         {"class": "statistics"},
                         [
+                            div({"class": "section-header"}, "Defensive Statistics"),
+                            calc_defenses(),
                             div({"class": "section-header"}, "Offensive Statistics"),
                             calc_accuracy(),
                             calc_magical_power(),
                             calc_mundane_power(),
                             calc_weapon_damage_dice(),
-                            div({"class": "section-header"}, "Defensive Statistics"),
-                            calc_defenses(),
                             div({"class": "section-header"}, "Resources"),
                             calc_attunement_points(),
                             calc_fatigue_tolerance(),
@@ -343,28 +343,17 @@ def calc_fatigue_tolerance():
                     ),
                     plus(),
                     underlabel(
-                        "(Con)",
+                        "(Con+Wil)",
                         number_input(
                             {
                                 "disabled": True,
                                 "name": "fatigue_tolerance_con",
-                                "value": "(@{constitution_starting})",
+                                "value": "(@{fatigue_tolerance_attributes})",
                             }
                         ),
                     ),
                     plus(),
-                    underlabel(
-                        "(Wil)",
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": "fatigue_tolerance_wil",
-                                "value": "(@{willpower_starting})",
-                            }
-                        ),
-                    ),
-                    plus(),
-                    equation_misc_repeat("fatigue_tolerance", 2),
+                    equation_misc_repeat("fatigue_tolerance", 3),
                 ],
                 result_attributes={
                     "disabled": True,
@@ -491,7 +480,7 @@ def calc_magical_power():
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat("magical_power", 4),
+                    equation_misc_repeat("magical_power", 3),
                 ],
                 result_attributes={
                     "disabled": True,
@@ -520,7 +509,7 @@ def calc_mundane_power():
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat("mundane_power", 4),
+                    equation_misc_repeat("mundane_power", 3),
                 ],
                 result_attributes={
                     "disabled": True,
@@ -564,7 +553,7 @@ def calc_weapon_damage_dice():
             div({"class": "calc-header"}, "Weapon Damage"),
             equation(
                 [
-                    equation_misc_repeat("weapon_damage_dice", 5),
+                    equation_misc_repeat("weapon_damage_dice", 4),
                 ],
                 result_attributes={
                     "disabled": True,
