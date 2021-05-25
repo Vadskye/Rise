@@ -1,4 +1,4 @@
-import {ChallengeRating} from '@src/data';
+import { ChallengeRating } from "@src/data";
 import { MonsterBase } from "@src/monsters/reformat_monster_input";
 import { calculateDamagePerRound } from "@src/simulation/calculate_damage_per_round";
 import { generateStandardMonster } from "@src/simulation/standard_monsters";
@@ -13,12 +13,12 @@ export function runCombatSimulation({
   startingAttributePool,
 }: {
   challengeRatingPool?: ChallengeRating[];
-  customizeMonsterA?(monster: MonsterBase): void;
-  customizeMonsterB?(monster: MonsterBase): void;
-  formatOutput?(roundsMonsterASurvives: string, roundsMonsterBSurvives: string): void;
   levelPool?: number[];
   roundPrecision?: number;
   startingAttributePool?: number[];
+  customizeMonsterA?(monster: MonsterBase): void;
+  customizeMonsterB?(monster: MonsterBase): void;
+  formatOutput?(roundsMonsterASurvives: string, roundsMonsterBSurvives: string): void;
 }) {
   levelPool = levelPool || [2, 5, 8, 11, 14, 17, 20];
   challengeRatingPool = challengeRatingPool || [2];
@@ -59,12 +59,14 @@ export function runCombatSimulation({
         const damageToMonsterA = calculateDamagePerRound(monsterB, monsterA) * crMultiplier;
         const damageToMonsterB = calculateDamagePerRound(monsterA, monsterB) * crMultiplier;
 
-        const damageAbsorptionMonsterA =
-          monsterA.hitPoints + Math.min(monsterA.resistances.physical, monsterA.resistances.energy);
-        const damageAbsorptionMonsterB =
-          monsterB.hitPoints + Math.min(monsterB.resistances.physical, monsterB.resistances.energy);
-        const roundsMonsterASurvives = (damageAbsorptionMonsterA / damageToMonsterA).toFixed(roundPrecision);
-        const roundsMonsterBSurvives = (damageAbsorptionMonsterB / damageToMonsterB).toFixed(roundPrecision);
+        const damageAbsorptionMonsterA = monsterA.hitPoints + monsterA.damageResistance;
+        const damageAbsorptionMonsterB = monsterB.hitPoints + monsterB.damageResistance;
+        const roundsMonsterASurvives = (damageAbsorptionMonsterA / damageToMonsterA).toFixed(
+          roundPrecision,
+        );
+        const roundsMonsterBSurvives = (damageAbsorptionMonsterB / damageToMonsterB).toFixed(
+          roundPrecision,
+        );
         console.log(
           `L${level
             .toString()

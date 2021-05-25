@@ -1,4 +1,4 @@
-import { DamageType, damageTypes, DefenseType, defenseTypes } from "@src/data";
+import { DefenseType, defenseTypes } from "@src/data";
 import { fromPairs } from "@src/util/from_pairs";
 
 interface StandardArmorInput {
@@ -7,7 +7,7 @@ interface StandardArmorInput {
 
 interface CustomArmorInput {
   defenseBonuses: Partial<Record<DefenseType, number>>;
-  resistanceBonuses: Partial<Record<DamageType, number>>;
+  drBonus: number;
   name: string;
 }
 
@@ -15,8 +15,8 @@ export type ArmorInput = StandardArmorInput | CustomArmorInput;
 
 export interface Armor {
   defenseBonuses: Record<DefenseType, number>;
+  drBonus: number;
   name: string;
-  resistanceBonuses: Record<DamageType, number>;
 }
 
 export function parseArmorInput(input: ArmorInput): Armor {
@@ -25,17 +25,13 @@ export function parseArmorInput(input: ArmorInput): Armor {
     fromPairs(defenseTypes.map((d) => [d, 0])),
     isStandardArmorInput(input) ? standardArmors[input.name].defenseBonuses : input.defenseBonuses,
   );
-  const armorResistanceBonuses: Record<DamageType, number> = Object.assign(
-    {},
-    fromPairs(damageTypes.map((r) => [r, 0])),
-    isStandardArmorInput(input)
-      ? standardArmors[input.name].resistanceBonuses
-      : input.resistanceBonuses,
-  );
+  const drBonus =isStandardArmorInput(input)
+      ? standardArmors[input.name].drBonus
+      : input.drBonus;
   return {
     defenseBonuses: armorDefenseBonuses,
+    drBonus,
     name: input.name,
-    resistanceBonuses: armorResistanceBonuses,
   };
 }
 
@@ -72,69 +68,57 @@ export function isStandardArmorInput(input: ArmorInput): input is StandardArmorI
 export const standardArmors: Record<StandardArmorName, Omit<CustomArmorInput, "name">> = {
   "full plate": {
     defenseBonuses: { armor: 4 },
-    resistanceBonuses: {},
-    // resistanceBonuses: { energy: 3, physical: 6 },
+    drBonus: 0,
   },
   "standard shield": {
     defenseBonuses: { armor: 2 },
-    resistanceBonuses: {},
+    drBonus: 0,
   },
   "breastplate": {
     defenseBonuses: { armor: 3 },
-    resistanceBonuses: {},
-    // resistanceBonuses: { energy: 2, physical: 4 },
+    drBonus: 0,
   },
   // Conflicts with body armor; equivalent to hide
   "fur": {
     defenseBonuses: { armor: 3 },
-    resistanceBonuses: {},
-    // resistanceBonuses: { energy: 3, physical: 3 },
+    drBonus: 0,
   },
   // Conflicts with body armor; equivalent to breastplate
   "scales": {
     defenseBonuses: { armor: 3 },
-    resistanceBonuses: {},
-    // resistanceBonuses: { energy: 4, physical: 4 },
+    drBonus: 0,
   },
   "hide": {
     defenseBonuses: { armor: 3 },
-    resistanceBonuses: {},
-    // resistanceBonuses: { energy: 2, physical: 2 },
+    drBonus: 0,
   },
   "feathers": {
     defenseBonuses: { armor: 2 },
-    resistanceBonuses: {},
-    // resistanceBonuses: { energy: 1, physical: 1 },
+    drBonus: 0,
   },
   // Conflicts with body armor; equivalent to full plate
   "carapace": {
     defenseBonuses: { armor: 4 },
-    resistanceBonuses: {},
-    // resistanceBonuses: { energy: 3, physical: 6 },
+    drBonus: 0,
   },
   "thick skin": {
-    defenseBonuses: { armor: 1 },
-    resistanceBonuses: {},
-    // resistanceBonuses: { energy: 3, physical: 3 },
+    defenseBonuses: { armor: 2 },
+    drBonus: 0,
   },
   "reinforced": {
     defenseBonuses: {},
-    resistanceBonuses: {},
-    // resistanceBonuses: { energy: 1, physical: 1 },
+    drBonus: 0,
   },
   "double reinforced": {
     defenseBonuses: {},
-    resistanceBonuses: {},
-    // resistanceBonuses: { energy: 2, physical: 2 },
+    drBonus: 0,
   },
   "leather": {
     defenseBonuses: { armor: 2 },
-    resistanceBonuses: {},
-    // resistanceBonuses: { energy: 2, physical: 0 },
+    drBonus: 0,
   },
   "studded leather": {
     defenseBonuses: { armor: 2 },
-    resistanceBonuses: {},
-    // resistanceBonuses: { energy: 2, physical: 1 },
+    drBonus: 0,
   },
 };
