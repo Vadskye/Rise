@@ -53,7 +53,6 @@ def create_page():
             sidelabel(
                 "Attune points",
                 flex_row(
-                    {"class": "core-statistics-split"},
                     [
                         number_input(
                             {
@@ -61,7 +60,7 @@ def create_page():
                                 "value": "@{attunement_points}",
                             }
                         ),
-                        span({"class": "core-statistics-separator"}, "/"),
+                        span({"class": "attune-points-separator"}, "/"),
                         number_input(
                             {
                                 "disabled": True,
@@ -71,6 +70,7 @@ def create_page():
                         ),
                     ],
                 ),
+                {"class": "attune-points"},
             ),
             fieldset(
                 {"class": "repeating_attunements"},
