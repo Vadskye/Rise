@@ -95,7 +95,7 @@ def nav_row():
         radio_input(
             {"class": "nav-button nav-button-active", "name": "navrow", "value": "active"}
         ),
-        span({"class": "nav-button-label"}, "Ability"),
+        span({"class": "nav-button-label"}, "Abilities"),
         radio_input(
             {"class": "nav-button nav-button-page2", "name": "navrow", "value": "page2"}
         ),
