@@ -47,8 +47,8 @@ def create_page(_destination):
                 [
                     abilities_summary(),
                     equipment(),
-                    div({"class": "section-header"}, "List of Abilities Known"),
-                    textarea({"class": "all-abilities-known", "name": "all_abilities_known"}),
+                    div({"class": "section-header"}, "Abilities Chosen"),
+                    textarea({"class": "all-abilities-known", "name": "abilities_chosen"}),
                     inventory(),
                     personality(),
                 ],
@@ -87,7 +87,7 @@ def abilities_summary():
     return div(
         {"class": "abilities"},
         [
-            div({"class": "section-header"}, "Passive Abilities and Ability Choices"),
+            div({"class": "section-header"}, "Passive Abilities"),
             fieldset(
                 {"class": "repeating_passiveabilities"},
                 flex_row(
