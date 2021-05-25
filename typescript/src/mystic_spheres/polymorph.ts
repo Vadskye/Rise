@@ -445,9 +445,12 @@ export const polymorph: MysticSphere = {
           \\item You are immune to \\glossterm{critical hits} from \\glossterm{strikes}.
           \\item Your maximum \\glossterm{damage resistance} is halved.
         \\end{itemize}
+
+        As a \\glossterm{minor action}, you can voluntarily disable this ability and return to your normal form.
+        If you do, you can resume the effect of this ability as a minor action.
       `,
       rank: 4,
-      scaling: { 6: `Your physical damage ressitance is not reduced.` },
+      scaling: { 6: `Your damage resistance is not reduced.` },
       type: "Attune (self)",
     },
 
