@@ -42,7 +42,26 @@ def create_page(_destination):
                     debuffs(),
                 ]),
                 flex_col({'class': 'vital-wounds'}, [
-                    flex_wrapper(div({"class": "section-header"}, "Vital Wounds")),
+                    div({"class": "section-header"}, "Vital Wounds"),
+                    flex_row({"class": "vital-roll-row"}, [
+                        button(
+                            {
+                                "type": "roll",
+                                "value": "@{character_name} makes a vital roll: [[d10+@{vital_rolls}]]"
+                            },
+                            "Roll vital wound",
+                        ),
+                        underlabel(
+                            "Roll mod",
+                            number_input(
+                                {
+                                    "disabled": True,
+                                    "name": "vital_rolls_display",
+                                    "value": "@{vital_rolls}",
+                                }
+                            ),
+                        ),
+                    ]),
                     fieldset(
                         {"class": f"repeating_vitalwounds"},
                         vital_wound(),
