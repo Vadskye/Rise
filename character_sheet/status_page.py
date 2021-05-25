@@ -29,8 +29,8 @@ def create_page(_destination):
         [
             div({"class": "tab-explanation"}, """
                 This tab is used to track temporary modifiers to your character's state.
-                If you suffer a negative condition or vital wound in combat, you can record that here.
-                You can also use custom modifiers to define core character abilities, such as a barbarian's rage.
+                Circumstances and debuffs that are not in <i>italics</i> automatically modify your statistics appropriately.
+                You can use custom modifiers for temporary effects, or to define complex abilities such as a barbarian's rage.
             """),
             flex_row({'class': 'standard-modifiers'}, [
                 flex_col([
@@ -149,6 +149,7 @@ def circumstances():
     return ''.join([
         debuff("flying"),
         debuff("flying poorly"),
+        debuff("grappled"),
         debuff("helpless"),
         debuff("prone"),
         debuff("squeezing"),
@@ -168,6 +169,7 @@ def debuffs():
                 debuff("decelerated"),
                 debuff("disoriented", False),
                 debuff("frightened"),
+                debuff("goaded", False),
             ]),
             flex_col([
                 debuff("immobilized"),
