@@ -84,7 +84,7 @@ def create_page(_destination):
                                 "value": "@{attunement_points}",
                             }
                         ),
-                        span({"class": "attune-points-separator"}, "/"),
+                        span({"class": "equation-glue"}, "/"),
                         number_input(
                             {
                                 "disabled": True,
