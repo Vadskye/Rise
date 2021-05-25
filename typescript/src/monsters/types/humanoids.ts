@@ -64,7 +64,6 @@ humanoidInput.push({
     {
       ...lizardfolkBase,
       armorInputs: [{ name: "breastplate" }, { name: "hide" }, { name: "standard shield" }],
-      resistanceBonuses: { physical: 4 },
       level: 3,
       name: "Lizardfolk Grunt",
       startingAttributes: { str: 2, con: 2 },
@@ -74,7 +73,6 @@ humanoidInput.push({
       ...lizardfolkBase,
       armorInputs: [{ name: "breastplate" }, { name: "hide" }, { name: "standard shield" }],
       challengeRating: 2,
-      resistanceBonuses: { physical: 4 },
       level: 4,
       name: "Lizardfolk Elite",
       startingAttributes: { str: 3, con: 2 },

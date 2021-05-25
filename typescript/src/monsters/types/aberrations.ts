@@ -1,4 +1,3 @@
-import { damageTypes } from "@src/data";
 import * as format from "@src/latex/format";
 import { addType, TypelessMonsterInput } from "./add_type";
 
@@ -48,9 +47,7 @@ aberrationInput.push({
   challengeRating: 4,
   delayedCalculations: [
     (monster) => {
-      for (const damageType of damageTypes) {
-        monster.resistances[damageType] += Math.floor(monster.magicalPower / 2);
-      }
+      monster.damageResistance += Math.floor(monster.magicalPower / 2);
     },
   ],
   knowledge: {

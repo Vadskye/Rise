@@ -1,6 +1,4 @@
-import { damageTypes } from "@src/data";
 import * as format from "@src/latex/format";
-import { MonsterBase } from "@src/monsters/reformat_monster_input";
 import { addType, TypelessMonsterInput } from "./add_type";
 
 export const planeforgedInput: TypelessMonsterInput[] = [];
@@ -9,13 +7,6 @@ const baseAngel = {
   alignment: "Always good",
   armorInputs: [{ name: "thick skin" as const }],
   challengeRating: 4 as const,
-  delayedCalculations: [
-    (monster: MonsterBase) => {
-      for (const damageType of damageTypes) {
-        monster.resistances[damageType] += Math.floor(monster.magicalPower / 2);
-      }
-    },
-  ],
   languages: ["Celestial", "Common", "Draconic", "Infernal"],
 };
 
@@ -110,7 +101,7 @@ planeforgedInput.push({
       weaponInput: [{ name: "greatmace" }],
 
       // mantle of faith
-      resistanceBonuses: { energy: 6 },
+      drBonus: 8,
 
       // agent of the divine
       accuracyBonus: 1,
@@ -134,14 +125,14 @@ planeforgedInput.push({
       },
       level: 16,
       name: "Planetar",
-      // +half level to energy resistance
-      resistanceBonuses: { energy: 8 },
+      drBonus: 16,
       speeds: { fly: 50, land: 50 },
       startingAttributes: { str: 3, dex: 2, con: 2, int: 2, per: 2, wil: 3 },
       weaponInput: [{ name: "greatmace" }],
     },
     {
       ...baseAngel,
+      drBonus: 16,
       knowledge: {
         0: `
           A solar has a deep and commanding voice, and stands about 9 feet tall. It weighs about 500 pounds.
@@ -149,8 +140,6 @@ planeforgedInput.push({
       },
       level: 20,
       name: "Solar",
-      // +half level to energy resistance
-      resistanceBonuses: { energy: 10 },
       speeds: { fly: 60, land: 60 },
       startingAttributes: { str: 3, dex: 2, con: 2, int: 2, per: 2, wil: 3 },
       weaponInput: [{ name: "greatmace" }],

@@ -13,13 +13,15 @@ export function calculateDamageDice(
   challengeRating: ChallengeRating,
 ): DamageDice {
   let [count, size] = baseDamageDie.split("d").map(Number);
+  const crModifier = {
+    0.5: -2,
+    1: -1,
+    2: 0,
+    3: 1,
+    4: 2,
+  }[challengeRating];
   // +1d at 4/7/10, just like player abilities
-  let bonusIncrements = Math.floor((level - 1) / 3);
-  if (challengeRating === 0.5) {
-    bonusIncrements -= 1;
-  } else if (challengeRating > 2) {
-    bonusIncrements += 1;
-  }
+  const bonusIncrements = Math.floor((level - 1) / 3) + crModifier;
 
   for (let i = 0; i < bonusIncrements; i += 1) {
     size += 2;

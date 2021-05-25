@@ -7,9 +7,8 @@ import {
   calculateHitPoints,
   calculateMagicalPower,
   calculateMundanePower,
-  calculateResistances,
+  calculateDamageResistance,
   reachBySize,
-  Resistances,
   skillModifierByName,
   spaceBySize,
   speedBySize,
@@ -17,8 +16,6 @@ import {
 import {
   attributes,
   ChallengeRating,
-  DamageType,
-  damageTypes,
   DefenseType,
   defenseTypes,
   MonsterType,
@@ -77,6 +74,7 @@ export interface MonsterBaseInput {
   defenseBonuses?: Partial<Record<DefenseType, number>>;
   delayedCalculations?: Array<(monster: MonsterBase) => void>;
   description?: string | null;
+  drBonus?: number;
   height?: string | null;
   knowledge?: Record<number, string> | null;
   languages?: string[];
@@ -90,7 +88,6 @@ export interface MonsterBaseInput {
     mundane?: number;
   };
   reach?: number;
-  resistanceBonuses?: Partial<Record<DamageType, number>>;
   size?: Creature.Size;
   skillPoints?: Partial<Creature.SkillPoints>;
   space?: number;
@@ -107,6 +104,7 @@ interface MonsterCalculatedValues {
   attacks: Attack[];
   attributes: Creature.Attributes;
   calculatedAttacks: CalculatedAttack[];
+  damageResistance: number;
   defenses: Record<DefenseType, number>;
   defenseBonuses: Record<DefenseType, number>;
   hitPoints: number;
@@ -114,8 +112,6 @@ interface MonsterCalculatedValues {
   mundanePower: number;
   passiveAbilities: PassiveAbility[];
   reach: number;
-  resistanceBonuses: Record<DamageType, number>;
-  resistances: Resistances;
   skills: Creature.Skills;
   skillPoints: Creature.SkillPoints;
   startingAttributes: Creature.Attributes;
@@ -138,16 +134,15 @@ const monsterDefaults: Required<
     | "name"
     | "skillPoints"
     | "startingAttributes"
-    | "resistanceBonuses"
     | keyof MonsterCalculatedValues
   >
 > &
   Pick<
     MonsterCalculatedValues,
     | "armors"
+    | "damageResistance"
     | "defenseBonuses"
     | "passiveAbilities"
-    | "resistanceBonuses"
     | "skillPoints"
     | "speeds"
     | "startingAttributes"
@@ -159,16 +154,17 @@ const monsterDefaults: Required<
   armorInputs: [],
   armors: [],
   challengeRating: 1,
+  damageResistance: 1,
   defenseBonuses: fromPairs(defenseTypes.map((d) => [d, 0])),
   delayedCalculations: [],
   description: null,
+  drBonus: 0,
   height: null,
   knowledge: null,
   knowledgeSkills: null,
   languages: [],
   passiveAbilities: [],
   powerBonuses: {},
-  resistanceBonuses: fromPairs(damageTypes.map((d) => [d, 0])),
   size: "medium",
   skillPoints: fromPairs(skills.map((s) => [s, 0])),
   speeds: { burrow: 0, climb: 0, fly: 0, land: 0, swim: 0 },
@@ -231,16 +227,10 @@ export function generateMonsterBase(monsterInput: MonsterBaseInput): MonsterBase
     monsterInput.startingAttributes,
   );
   const skillPoints = Object.assign({}, monsterDefaults.skillPoints, monsterInput.skillPoints);
-  const resistanceBonuses = Object.assign(
-    {},
-    monsterDefaults.resistanceBonuses,
-    monsterInput.resistanceBonuses,
-  );
   const monster = {
     ...monsterDefaults,
     ...monsterInput,
     defenseBonuses,
-    resistanceBonuses,
     startingAttributes,
     skillPoints,
   };
@@ -250,9 +240,7 @@ export function generateMonsterBase(monsterInput: MonsterBaseInput): MonsterBase
     for (const [defenseType, bonus] of _.entries(armor.defenseBonuses)) {
       monster.defenseBonuses[defenseType as DefenseType] += bonus;
     }
-    for (const [damageType, bonus] of _.entries(armor.resistanceBonuses)) {
-      monster.resistanceBonuses[damageType as DamageType] += bonus;
-    }
+    monster.drBonus += armor.drBonus;
   }
 
   const attributes = attributesAtLevel({ level: monster.level, startingAttributes });
@@ -273,12 +261,12 @@ export function generateMonsterBase(monsterInput: MonsterBaseInput): MonsterBase
     calculatedAttacks: attacks.map((a) => {
       return calculateAttack(a, { ...monster, accuracy, magicalPower, mundanePower });
     }),
+    damageResistance: calculateDamageResistance({...monster, attributes}),
     defenses: calculateDefenses(monster),
     hitPoints,
     magicalPower,
     mundanePower,
     reach: reachBySize(monster.size),
-    resistances: calculateResistances({ ...monster, attributes, hitPoints }),
     space: spaceBySize(monster.size),
     speeds: {
       burrow: monsterInput.speeds?.burrow || 0,

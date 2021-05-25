@@ -153,7 +153,7 @@ monstrousHumanoidInput.push({
       armorInputs: [
         { name: "thick skin" },
         // This creature is low level, so mage armor has only its simple effects
-        { defenseBonuses: { armor: 2 }, name: "mage armor", resistanceBonuses: { energy: 2 } },
+        { defenseBonuses: { armor: 2 }, name: "mage armor", drBonus: 0, },
       ],
       challengeRating: 2,
       knowledge: {

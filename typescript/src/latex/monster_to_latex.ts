@@ -4,7 +4,6 @@ import {
   CalculatedAttack,
   calculateStrike,
 } from "@src/calculate";
-import { DamageType, energyDamageTypes, physicalDamageTypes } from "@src/data";
 import * as format from "@src/latex/format";
 import { Monster, MonsterBase, MonsterGroup, monsterIsMonsterGroup } from "@src/monsters";
 import { knowledgeSkillsByMonsterType } from "@src/monsters/types";
@@ -105,32 +104,15 @@ function getMonsterNameHeader({ name }: MonsterBase): string {
 }
 
 function getMainContent(monster: MonsterBase) {
-  const displayedDamageTypes = new Set<DamageType>(["physical", "energy"]);
-  for (const damageType of physicalDamageTypes) {
-    if (monster.resistances[damageType] !== monster.resistances.physical) {
-      displayedDamageTypes.add(damageType);
-    }
-  }
-  for (const damageType of energyDamageTypes) {
-    if (monster.resistances[damageType] !== monster.resistances.energy) {
-      displayedDamageTypes.add(damageType);
-    }
-  }
-  if (monster.challengeRating === 4) {
-    displayedDamageTypes.add("universal");
-  }
-
   return `
     \\begin{spellcontent}
       \\begin{spelltargetinginfo}
         \\pari \\textbf{HP} ${monster.hitPoints} \\monsep
-          \\textbf{AD} ${monster.defenses.armor} \\monsep
+          \\textbf{DR} ${monster.damageResistance}
+        \\pari \\textbf{AD} ${monster.defenses.armor} \\monsep
           \\textbf{Fort} ${monster.defenses.fortitude} \\monsep
           \\textbf{Ref} ${monster.defenses.reflex} \\monsep
           \\textbf{Ment} ${monster.defenses.mental}
-        \\pari \\textbf{Resists} ${Array.from(displayedDamageTypes)
-          .map((t: DamageType) => `${titleCase(t)} ${monster.resistances[t]}`)
-          .join(", ")} \\monsep
         ${getStrikes(monster)}
       \\end{spelltargetinginfo}
     \\end{spellcontent}
