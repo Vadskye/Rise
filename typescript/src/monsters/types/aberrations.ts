@@ -84,7 +84,7 @@ aberrationInput.push({
         The aboleth is \\glossterm{attuned} to this ability.
         It gains a ${format.modifier(
           Math.floor(monster.magicalPower / 2),
-        )} \\glossterm{magic bonus} to \\glossterm{resistances}.
+        )} \\glossterm{magic bonus} to \\glossterm{damage resistance}.
       `,
       magical: true,
       name: "Psionic Barrier",

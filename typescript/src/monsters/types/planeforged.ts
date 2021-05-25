@@ -88,9 +88,7 @@ planeforgedInput.push({
         {
           description: (monster) => `
               The $name is \\glossterm{attuned} to this ability.
-              It gains a ${format.modifier(
-                Math.floor(monster.magicalPower / 2),
-              )} \\glossterm{magic bonus} to \\glossterm{resistances}.
+              It gains a +8 \\glossterm{magic bonus} to \\glossterm{damage resistance}.
             `,
           magical: true,
           name: "Mantle of Faith",
