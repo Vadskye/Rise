@@ -81,11 +81,11 @@ export function isStandardWeaponName(
 
 export const standardWeapons: Record<StandardWeaponName, Omit<CustomWeaponInput, "name">> = {
   "bite": {
-    baseDamageDie: "1d8",
+    baseDamageDie: "1d10",
     damageTypes: ["bludgeoning", "piercing"],
   },
   "claw": {
-    accuracyBonus: 2,
+    accuracyBonus: 4,
     baseDamageDie: "1d6",
     damageTypes: ["slashing", "piercing"],
   },
@@ -124,7 +124,7 @@ export const standardWeapons: Record<StandardWeaponName, Omit<CustomWeaponInput,
     tags: ["sweeping 2"],
   },
   "gore": {
-    baseDamageDie: "1d8",
+    baseDamageDie: "1d10",
     damageTypes: ["piercing"],
     tags: ["impact"],
   },
@@ -143,7 +143,7 @@ export const standardWeapons: Record<StandardWeaponName, Omit<CustomWeaponInput,
     damageTypes: ["bludgeoning"],
   },
   "ram": {
-    baseDamageDie: "1d8",
+    baseDamageDie: "1d10",
     damageTypes: ["bludgeoning"],
     tags: ["forceful"],
   },

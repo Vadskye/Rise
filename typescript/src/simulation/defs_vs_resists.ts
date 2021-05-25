@@ -8,8 +8,7 @@ function simulateDefensesVsResistances(): void {
       monster.defenses.armor += 1;
     },
     customizeMonsterB: (monster) => {
-      monster.resistances.physical += 6;
-      monster.resistances.energy += 6;
+      monster.damageResistance += 6;
     },
     startingAttributePool: [0, 1, 2],
   });

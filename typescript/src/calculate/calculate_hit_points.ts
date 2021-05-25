@@ -47,6 +47,7 @@ export function calculateHitPoints({
     3: 2,
     4: 4,
   }[challengeRating];
-  const hpFromLevel = hpByLevel[level];
+  // Monsters have 50% more level-based HP than PCs
+  const hpFromLevel = Math.floor(hpByLevel[level] * 1.5);
   return Math.floor(crMult * (hpFromLevel + (attributes.con || 0)));
 }
