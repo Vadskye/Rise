@@ -53,6 +53,14 @@ def create_page(destination):
                 {"class": "sidebar"},
                 [
                     level_chart(),
+                    div({"class": "section-header"}, "Core Statistics"),
+                    calc_base_speed(),
+                    calc_encumbrance(),
+                    calc_focus_penalty(),
+                    calc_initiative(),
+                    calc_vital_rolls(),
+                    calc_weight_limits(),
+                    calc_unknown_statistic(),
                 ],
             ),
             flex_col(
@@ -61,28 +69,18 @@ def create_page(destination):
                     flex_col(
                         {"class": "statistics"},
                         [
-                            flex_wrapper(
-                                div({"class": "section-header"}, "Core Statistics")
-                            ),
+                            div({"class": "section-header"}, "Offensive Statistics"),
                             calc_accuracy(),
-                            calc_base_speed(),
-                            calc_encumbrance(),
-                            calc_focus_penalty(),
-                            calc_initiative(),
                             calc_magical_power(),
                             calc_mundane_power(),
-                            calc_vital_rolls(),
                             calc_weapon_damage_dice(),
-                            calc_weight_limits(),
-                            calc_unknown_statistic(),
-                            flex_wrapper(div({"class": "section-header"}, "Resources")),
+                            div({"class": "section-header"}, "Defensive Statistics"),
+                            calc_defenses(),
+                            div({"class": "section-header"}, "Resources"),
                             calc_attunement_points(),
                             calc_fatigue_tolerance(),
-                            calc_hit_points(),
                             calc_insight_points(),
                             calc_skill_points(),
-                            flex_wrapper(div({"class": "section-header"}, "Defenses and Damage Resistance")),
-                            calc_defenses(),
                         ],
                     ),
                 ],
@@ -279,7 +277,7 @@ def calc_damage_resistance():
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat("damage_resistance_bonus", 4),
+                    equation_misc_repeat("damage_resistance_bonus", 3),
                 ],
                 result_attributes={
                     "disabled": "true",
@@ -326,57 +324,6 @@ def calc_attunement_points():
                 },
             ),
         ]
-    )
-
-
-def calc_energy_resistance_bonus():
-    return flex_row(
-        {"class": "resistance-row"},
-        [
-            div({"class": "calc-header"}, "Energy"),
-            equation(
-                [
-                    underlabel(
-                        "Wil",
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": "energy_resistance_willpower",
-                                "value": "(@{willpower})",
-                            }
-                        ),
-                    ),
-                    plus(),
-                    underlabel(
-                        "Armor",
-                        number_input(
-                            {
-                                "name": "energy_resistance_bonus_armor",
-                            }
-                        ),
-                    ),
-                    plus(),
-                    underlabel(
-                        "Base",
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": "energy_resistance_from_level_display",
-                                "value": "(@{energy_resistance_from_level})",
-                            }
-                        ),
-                    ),
-                    plus(),
-                    equation_misc_repeat("energy_resistance_bonus", 3),
-                ],
-                result_attributes={
-                    "disabled": "true",
-                    "name": "energy_resistance_bonus_display",
-                    "value": "(@{energy_resistance_maximum})",
-                },
-                result_label="Bonus",
-            ),
-        ],
     )
 
 
@@ -461,7 +408,7 @@ def calc_focus_penalty():
 def calc_hit_points():
     return flex_row(
         [
-            div({"class": "calc-header"}, "Hit Points"),
+            div({"class": "calc-header"}, "HP"),
             equation(
                 [
                     underlabel(
@@ -486,7 +433,7 @@ def calc_hit_points():
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat("hit_points", 3),
+                    equation_misc_repeat("hit_points", 4),
                 ],
                 result_attributes={
                     "disabled": True,
@@ -544,7 +491,7 @@ def calc_magical_power():
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat("magical_power", 3),
+                    equation_misc_repeat("magical_power", 4),
                 ],
                 result_attributes={
                     "disabled": True,
@@ -573,7 +520,7 @@ def calc_mundane_power():
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat("mundane_power", 3),
+                    equation_misc_repeat("mundane_power", 4),
                 ],
                 result_attributes={
                     "disabled": True,
@@ -617,7 +564,7 @@ def calc_weapon_damage_dice():
             div({"class": "calc-header"}, "Weapon Damage"),
             equation(
                 [
-                    equation_misc_repeat("weapon_damage_dice", 4),
+                    equation_misc_repeat("weapon_damage_dice", 5),
                 ],
                 result_attributes={
                     "disabled": True,
@@ -660,7 +607,7 @@ def calc_base_speed():
                     minus(),
                     underlabel("Armor", number_input({"name": "speed_armor"})),
                     plus(),
-                    equation_misc_repeat("speed", 3),
+                    equation_misc_repeat("speed", 2),
                 ],
                 result_attributes={
                     "disabled": True,
@@ -744,8 +691,6 @@ def calc_encumbrance():
                     equation_misc("encumbrance", 0),
                     minus(),
                     equation_misc("encumbrance", 1),
-                    minus(),
-                    equation_misc("encumbrance", 2),
                 ],
                 result_attributes={
                     "disabled": True,
@@ -761,6 +706,7 @@ def calc_defenses():
     return div(
         {"class": "defenses"},
         [
+            calc_hit_points(),
             calc_damage_resistance(),
             calc_armor(),
             calc_fort(),
@@ -889,7 +835,7 @@ def calc_armor():
                         "Armor", number_input({"name": "body_armor_defense_value"})
                     ),
                     plus(),
-                    equation_misc_repeat("armor_defense", 3),
+                    equation_misc_repeat("armor_defense", 2),
                 ],
                 result_attributes={
                     "disabled": "true",
@@ -933,7 +879,7 @@ def calc_fort():
                         "Class", number_input({"name": "fortitude_class", "value": "4"})
                     ),
                     plus(),
-                    equation_misc_repeat("fortitude", 4),
+                    equation_misc_repeat("fortitude", 3),
                 ],
                 result_attributes={
                     "disabled": "true",
@@ -977,7 +923,7 @@ def calc_ref():
                         "Class", number_input({"name": "reflex_class", "value": "4"})
                     ),
                     plus(),
-                    equation_misc_repeat("reflex", 4),
+                    equation_misc_repeat("reflex", 3),
                 ],
                 result_attributes={
                     "disabled": "true",
@@ -1021,7 +967,7 @@ def calc_mental():
                         "Class", number_input({"name": "mental_class", "value": "4"})
                     ),
                     plus(),
-                    equation_misc_repeat("mental", 4),
+                    equation_misc_repeat("mental", 3),
                 ],
                 result_attributes={
                     "disabled": "true",
