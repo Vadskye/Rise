@@ -158,18 +158,19 @@ def calc_skill(skill_name, attribute=None):
                             }
                         ),
                     ),
-                    plus(),
-                    # TODO: omit this for non-attribute skills
-                    underlabel(
-                        f"({attribute_shorthand})",
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": f"{skill_parsable}_attribute",
-                                "value": f"@{{{attribute}_starting}}",
-                            }
+                    *([] if attribute == "other" else [
+                        plus(),
+                        underlabel(
+                            f"({attribute_shorthand})",
+                            number_input(
+                                {
+                                    "disabled": True,
+                                    "name": f"{skill_parsable}_attribute",
+                                    "value": f"@{{{attribute}_starting}}",
+                                }
+                            ),
                         ),
-                    ),
+                    ]),
                     plus(),
                     equation_misc_repeat(skill_parsable, 3),
                 ],
