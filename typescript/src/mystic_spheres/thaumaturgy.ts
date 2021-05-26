@@ -467,11 +467,77 @@ export const thaumaturgy: MysticSphere = {
 
       castingTime: "24 hours",
       effect: `
-        All curses affecting yourself or one \\glossterm{ally} within \\medrange are removed.
+        Choose yourself or one \\glossterm{ally} within \\shortrange.
+        All curses affecting the subject are removed.
         This ritual cannot remove a curse that is part of the effect of an item the subject has equipped.
         However, it can allow the subject to remove any cursed items it has equipped.
       `,
       rank: 3,
+      type: "Instant",
+    },
+    {
+      name: "Suppress Magic Aura",
+
+      castingTime: "one minute",
+      effect: `
+        Choose one \\glossterm{ally} or \\glossterm{unattended} object within \\shortrange.
+        All magical effects on the subject, including any magic items a subject creature wears or carries, are undetectable with the Spellsense skill and similar abilities that detect magic.
+      `,
+      rank: 2,
+      type: "Attune (ritual)",
+    },
+    {
+      name: "Create Magic Aura",
+
+      castingTime: "one minute",
+      effect: `
+        Choose one \\glossterm{ally} or \\glossterm{unattended} object within \\shortrange.
+        In addition, choose any \\glossterm{mystic sphere} you have access to and any \\glossterm{power}, up to a maximum of twice your \\glossterm{power}.
+        The subject appears to have a magical effect on it that is detectable with abilities like the Spellsense skill (see \\pcref{Spellsense}).
+        The ability's power is equal to your chosen power, and it appears to be from the mystic sphere you chose.
+      `,
+      rank: 1,
+      type: "Attune (ritual)",
+    },
+    {
+      name: "Greater Create Magic Aura",
+
+      castingTime: "one minute",
+      functionsLike: {
+        exceptThat: 'you can choose any mystic sphere, not just a mystic sphere you have access to.',
+        name: 'create magic aura',
+      },
+      rank: 3,
+      type: "Attune (ritual)",
+    },
+    {
+      name: "Analyze Magic",
+
+      castingTime: "one hour",
+      effect: `
+        Make a Spellsense check with a +10 bonus.
+      `,
+      rank: 2,
+      type: "Instant",
+    },
+    {
+      name: "Greater Analyze Magic",
+
+      castingTime: "one hour",
+      effect: `
+        Make a Spellsense check with a +15 bonus.
+      `,
+      rank: 4,
+      type: "Instant",
+    },
+    {
+      name: "Supreme Analyze Magic",
+
+      castingTime: "one hour",
+      effect: `
+        Make a Spellsense check with a +20 bonus.
+      `,
+      rank: 6,
       type: "Instant",
     },
   ],
