@@ -67,16 +67,16 @@ export const aquamancy: MysticSphere = {
       name: "Slippery Escape",
 
       effect: `
-        You gain a +4 bonus to the Flexibility skill until the end of the next round.
+        You gain a +3 bonus to the Flexibility skill until the end of the next round.
       `,
       focus: false,
       narrative: `
         A thin layer of water covers you, allowing you to slip through the grasp of your foes more easily.
       `,
       scaling: {
-        2: "The bonus increases to +6.",
-        4: "The bonus increases to +8.",
-        6: "The bonus increases to +10.",
+        2: "The bonus increases to +4.",
+        4: "The bonus increases to +5.",
+        6: "The bonus increases to +6.",
       },
       tags: ["Manifestation"],
       type: "Duration",

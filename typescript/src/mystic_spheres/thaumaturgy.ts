@@ -10,13 +10,13 @@ export const thaumaturgy: MysticSphere = {
       name: "Sense Magic",
 
       effect: `
-        You gain a +4 bonus to the Spellsense skill until the end of the next round.
+        You gain a +3 bonus to the Spellsense skill until the end of the next round.
       `,
       focus: false,
       scaling: {
-        2: `The bonus increases to +6.`,
-        4: `The bonus increases to +8.`,
-        6: `The bonus increases to +10.`,
+        2: `The bonus increases to +4.`,
+        4: `The bonus increases to +5.`,
+        6: `The bonus increases to +6.`,
       },
       type: "Duration",
     },
