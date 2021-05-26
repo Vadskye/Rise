@@ -57,6 +57,10 @@ def create_page(destination):
             ),
             flex_wrapper(div({"class": "section-header"}, "Universal Abilities")),
             universal_abilities(),
+            div("""
+                These buttons cannot be customized.
+                If you have special benefits with some of these abilities, create your own versions of them above.
+            """),
         ],
     )
 
