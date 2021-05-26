@@ -349,6 +349,36 @@ def generate_apparel():
 
     apparel += [
         MagicItem(
+            name="Circlet of Foresight",
+            level=3,
+            material_type="Circlet",
+            description="""
+                You gain a +2 \\glossterm<magic bonus> to \\glossterm<initiative> checks.
+            """,
+            short_description="Grants +2 initiative",
+        ),
+        MagicItem(
+            name="Circlet of Foresight, Greater",
+            level=9,
+            material_type="Circlet",
+            description="""
+                You gain a +3 \\glossterm<magic bonus> to \\glossterm<initiative> checks.
+            """,
+            short_description="Grants +3 initiative",
+        ),
+        MagicItem(
+            name="Circlet of Foresight, Supreme",
+            level=15,
+            material_type="Circlet",
+            description="""
+                You gain a +4 \\glossterm<magic bonus> to \\glossterm<initiative> checks.
+            """,
+            short_description="Grants +4 initiative",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
             name="Circlet of Many Eyes",
             level=10,
             material_type="Circlet",
