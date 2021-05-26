@@ -446,7 +446,7 @@ def initiative():
     return js_wrapper(
         ["dexterity_starting", "perception_starting", "fatigue_penalty", *misc],
         f"""
-            var scaling = Math.max(dexterity_starting, perception_starting);
+            var scaling = dexterity_starting + perception_starting;
             setAttrs({{
                 initiative: scaling + {sum_variables(misc)} - fatigue_penalty,
                 initiative_scaling: scaling,
