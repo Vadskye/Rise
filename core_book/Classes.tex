@@ -116,14 +116,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Barbarian Progression}
 \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
     \tb{Rank} & \tb{Min Level} & \tb{Battleforged Resilience}  & \tb{Battlerager}         & \tb{Outland Savage}                        & \tb{Primal Warrior}                         & \tb{Totemist} \tableheaderrule
-    0 & \tdash & Unbattered resilience         & Insensible anger         & Savage rush                                & Primal might                                & Animal instincts        \\
+    0 & \tdash & Resilient recovery            & Insensible anger         & Savage rush                                & Primal might                                & Animal instincts        \\
     1 & 1      & Battle-scarred                & Rage                     & Fast movement                              & Combat styles                               & Totem animal            \\
-    2 & 4      & Resilient recovery            & Enraged strike           & Savage precision                           & Combat style rank (2), primal force         & Feral explosion         \\
-    3 & 7      & Greater unbattered resilience & Greater insensible anger & Savage force                               & Combat style rank (3), glancing strikes     & Totemic force           \\
-    4 & 10     & Unstoppable recovery          & Greater rage             & Greater fast movement, greater savage rush & Combat style rank (4), primal maneuver      & Greater totem animal    \\
+    2 & 4      & Unbattered resilience         & Enraged strike           & Savage precision                           & Combat style rank (2), primal force         & Feral explosion         \\
+    3 & 7      & Greater resilient recovery    & Greater insensible anger & Savage force                               & Combat style rank (3), glancing strikes     & Totemic force           \\
+    4 & 10     & Limitless recovery            & Greater rage             & Greater fast movement, greater savage rush & Combat style rank (4), primal maneuver      & Greater totem animal    \\
     5 & 13     & Greater battle-scarred        & Immutable anger          & Greater savage precision                   & Combat style rank (5), greater primal force & Greater feral explosion \\
-    6 & 16     & Greater resilient recovery    & Supreme insensible anger & Greater savage force                       & Combat style rank (6), greater primal might & Greater totemic force   \\
-    7 & 19     & Supreme unbattered resilience & Supreme rage             & Supreme fast movement, supreme savage rush & Combat style rank (7), primal maneuver      & Supreme totem animal    \\
+    6 & 16     & Greater unbattered resilience & Supreme insensible anger & Greater savage force                       & Combat style rank (6), greater primal might & Greater totemic force   \\
+    7 & 19     & Instant recovery              & Supreme rage             & Supreme fast movement, supreme savage rush & Combat style rank (7), primal maneuver      & Supreme totem animal    \\
 \end{dtabularx}
     \end{dtable!*}
 
@@ -173,23 +173,22 @@ This choice determines a great deal about your character's abilities.
     \subsection{Battleforged Resilience}
         This archetype improves your durability in combat.
 
-        \cf{Bbn}[0]{Unbattered Resilience} At the end of each round, if you did not resist any damage that round, you regain \glossterm{damage resistance} equal to your rank in this archetype (minimum 1).
-        This cannot increase your damage resistance above half of your maximum damage resistance.
+        \cf{Bbn}[0]{Resilient Recovery} You regain a quarter of your maximum \glossterm{damage resistance} when you use the \textit{recover} ability (see \pcref{Recover}).
 
         \cf{Bbn}[1]{Battle-Scarred} You gain a bonus equal to twice your rank in this archetype to your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
 
-        \cf{Bbn}[2]{Resilient Recovery} You regain a quarter of your maximum \glossterm{damage resistance} when you take the \textit{recover} action (see \pcref{Recover}).
+        \cf{Bbn}[2]{Unbattered Resilience} At the end of each round, if another creature dealt you damage that round, you regain \glossterm{damage resistance} equal to twice your rank in this archetype.
+        This cannot increase your damage resistance above half of your maximum damage resistance.
 
-        \cf{Bbn}[3]{Greater Unbattered Resilience} The amount of damage resistance you regain with your \textit{unbattered resilience} ability increases to twice your rank in this archetype.
+        \cf{Bbn}[3]{Greater Resilient Recovery} The damage resistance you regain with your \textit{resilient recovery} ability increases to half your maximum damage resistance.
 
-        \cf{Bbn}[4]{Unstoppable Recovery} You can use the \textit{recover} action an additional time before you take a \glossterm{short rest}.
+        \cf{Bbn}[4]{Limitless Recovery} You can use the \textit{recover} action an additional time before you take a \glossterm{short rest}.
 
         \cf{Bbn}[5]{Greater Battle-Scarred} The bonus from your \textit{battle-scarred} ability increases to three times your rank in this archetype.
 
-        \cf{Bbn}[6]{Greater Resilient Recovery} The damage resistance you regain with your \textit{resilient recovery} ability increases to half your maximum damage resistance.
+        \cf{Bbn}[6]{Greater Unbattered Resilience} The amount of damage resistance you regain with your \textit{unbattered resilience} ability increases to three times your rank in this archetype.
 
-        % dangerously strong?
-        \cf{Bbn}[7]{Supreme Unbattered Resilience} The amount of damage resistance you regain with your \textit{unbattered resilience} ability increases to three times your rank in this archetype.
+        \cf{Bbn}[7]{Instant Recovery} Once per \glossterm{short rest}, you can use the \textit{recover} ability as a \glossterm{minor action} instead of as a standard action.
 
         \subsubsection{Typical Character}
             If you want to quickly create a character based on this archetype, make the following choices:
