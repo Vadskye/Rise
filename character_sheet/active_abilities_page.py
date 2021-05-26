@@ -253,7 +253,7 @@ def attack_button_text(source):
         + " {{desc=@{attack0_effect}}}"
     )
 
-def universal_ability_button(name, effect):
+def universal_ability_button(name, effect, attack=None):
     return div(button(
         {
             "type": "roll",
@@ -261,6 +261,7 @@ def universal_ability_button(name, effect):
                 "&{template:custom}"
                 + f" {{{{title={name}}}}}"
                 + " {{subtitle=@{character_name}}}"
+                + (f" {{{{Attack=[[d10!+{attack['accuracy']}]] vs {attack['defense']}}}}}" if attack else "")
                 + " {{color=@{chat_color}}}"
                 + f" {{{{desc={effect.strip()}}}}}"
             ),
@@ -281,15 +282,15 @@ def universal_abilities():
         universal_ability_button("Dirty Trick", """
             Make a melee attack with a free hand against the Fortitude or Reflex defense of one creature within your reach. On a hit, the subject suffers a -2 penalty to one of the following statistics: accuracy with mundane abilities, Armor defense, Fortitude defense, Reflex defense, or Mental defense.
             If the subject is at its maximum hit points, this effect lasts until the end of the next round. Otherwise, this effect is a condition.
-        """),
+         """, attack={"accuracy":"@{accuracy}", "defense":"Fort or Ref"}),
         universal_ability_button("Disarm", """
             Make a melee strike against an object's Reflex defense.
             On a hit, it may take damage from your strike. If it is attended and not held in a hand or well secured, you can choose to knock it loose. On a crit, you can deal double damage and you can also knock loose objects that are held in a single hand.
-        """),
+         """, attack={"accuracy":"@{accuracy}", "defense":"Ref"}),
         universal_ability_button("Grapple", """
             Make a melee attack with a free hand against the Fortitude and Reflex defenses of one creature within your reach. For each size category by which the target is larger than you, you take a -4 penalty to accuracy.
             On a hit against both defenses, you and the target are grappled by each other.
-        """),
+         """, attack={"accuracy":"@{accuracy}", "defense":"Fort and Ref"}),
         universal_ability_button("Overrun", """
             After you use this ability, you increase your fatigue level by one.
             Move up to your movement speed in a straight line, even through creatures. Make an attack vs. Fortitude against each creature that you move through who does not choose to avoid you. For each size category by which you are larger or smaller than the target, you gain a +4 bonus or penalty to accuracy.
@@ -302,7 +303,7 @@ def universal_abilities():
         universal_ability_button("Shove", """
             Choose either one creature within your reach or all creatures grappling you. Make a melee attack with a free hand against both the Fortitude defense and total Strength of each target. Your accuracy with this attack is equal to your Strength. If you are not able to use any of your movement speeds, such as if you are being carried by a flying creature, you automatically fail when you try to use this ability, and your defense is treated as 0 against this ability.
             On a hit, you can move up to half your movement speed in a straight line, pushing each subject as you move. On a critical hit, you can move up to your full movement speed instead.
-        """),
+         """, attack={"accuracy":"@{strength}", "defense":"Fort and Strength"}),
         universal_ability_button("Sprint", """
             After you use this ability, you increase your fatigue level by one.
             You move up to double your normal movement speed.
@@ -317,5 +318,5 @@ def universal_abilities():
         universal_ability_button("Trip", """
             Make a melee attack with a free hand against a creature's Reflex defenses. For each size category by which the target is larger than you, you take a -4 penalty to accuracy.
             On a hit, the subject becomes prone.
-        """),
+         """, attack={"accuracy":"@{accuracy}", "defense":"Ref"}),
     ])
