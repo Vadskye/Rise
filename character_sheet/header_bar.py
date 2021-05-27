@@ -35,7 +35,7 @@ def nav_row():
         radio_input(
             {"class": "nav-button nav-button-active", "name": "navrow", "value": "active"}
         ),
-        span({"class": "nav-button-label"}, "Abilities"),
+        span({"class": "nav-button-label"}, "Active"),
         radio_input(
             {"class": "nav-button nav-button-page2", "name": "navrow", "value": "page2"}
         ),
@@ -51,9 +51,13 @@ def nav_row():
         radio_input(
             {"class": "nav-button nav-button-page5", "name": "navrow", "value": "page5"}
         ),
-        span({"class": "nav-button-label"}, "Status"),
+        span({"class": "nav-button-label"}, "Items"),
         radio_input(
             {"class": "nav-button nav-button-page6", "name": "navrow", "value": "page6"}
+        ),
+        span({"class": "nav-button-label"}, "Status"),
+        radio_input(
+            {"class": "nav-button nav-button-page7", "name": "navrow", "value": "page7"}
         ),
         span({"class": "nav-button-label"}, "Ref"),
     ]
