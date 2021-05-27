@@ -27,12 +27,6 @@ def create_page(_destination):
                     basic_info(),
                     archetypes(),
                     feats_summary(),
-                    div({"class": "section-header"}, "Personal Info"),
-                    labeled_text_input("Alignment", input_attributes={"name": f"alignment"}),
-                    labeled_text_input("Deity", input_attributes={"name": f"deity"}),
-                    labeled_text_input(
-                        "Experience points", input_attributes={"name": "experience"}
-                    ),
                     div({"class": "section-header goals-and-flaws"}, "Goals and Flaws"),
                     "".join(
                         [
@@ -152,6 +146,14 @@ def archetypes():
 def personality():
     return div(
         [
+            div({"class": "section-header"}, "Personal Info"),
+            flex_row({"class": "personal-info-row"}, [
+                labeled_text_input("Alignment", input_attributes={"name": f"alignment"}),
+                labeled_text_input("Deity", input_attributes={"name": f"deity"}),
+                labeled_text_input(
+                    "Experience points", input_attributes={"name": "experience"}
+                ),
+            ]),
             div({"class": "section-header"}, "Personality and Background"),
             textarea({"class": "personality", "name": "personality_and_background"}),
         ]
