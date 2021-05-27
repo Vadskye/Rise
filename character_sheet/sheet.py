@@ -11,6 +11,7 @@ import header_bar
 import sheet_worker
 import skills_page
 import third_page
+import items_page
 import reference_page
 import status_page
 from subprocess import call
@@ -43,11 +44,12 @@ def main(destination):
 
         for (name, module) in [
                 ['active_abilities_page', active_abilities_page],
+                ['skills_page', skills_page],
                 ['second_page', second_page],
                 ['third_page', third_page],
-                ['skills_page', skills_page],
-                ['reference_page', reference_page],
+                ['items_page', items_page],
                 ['status_page', status_page],
+                ['reference_page', reference_page],
         ]:
             with open(f'{name}.html', 'w') as fh:
                 fh.write(''.join([
@@ -65,6 +67,7 @@ def main(destination):
                 skills_page.create_page(cgi.DESTINATION),
                 second_page.create_page(cgi.DESTINATION),
                 third_page.create_page(cgi.DESTINATION),
+                items_page.create_page(cgi.DESTINATION),
                 status_page.create_page(cgi.DESTINATION),
                 reference_page.create_page(cgi.DESTINATION),
                 rolltemplate.rolltemplate_html(),
@@ -72,7 +75,7 @@ def main(destination):
 
         class_pattern = re.compile(r'\.([a-z\-]+)\b')
         with open('roll20.less', 'w') as output_file:
-            for filename in ['sheet', 'first_page', 'active_abilities_page', 'skills_page', 'second_page', 'third_page', 'roll20_custom', 'reference_page', 'status_page']:
+            for filename in ['sheet', 'first_page', 'active_abilities_page', 'skills_page', 'second_page', 'third_page', 'items_page', 'status_page', 'reference_page', 'roll20_custom']:
                 with open(filename + '.less', 'r') as input_file:
                     if filename not in ['sheet', 'roll20_custom']:
                         output_file.write(f"div.page.{filename.replace('_', '-')} {{\n")

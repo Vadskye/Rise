@@ -73,57 +73,6 @@ def create_page(_destination):
                 {'class': 'repeating_custommodifiers'},
                 custom_modifier(),
             ),
-            flex_wrapper(div({"class": "section-header"}, "Attuned Abilities and Equipment")),
-            sidelabel(
-                "Attuned effects",
-                flex_row(
-                    [
-                        underlabel("Current", number_input(
-                            {
-                                "disabled": True,
-                                "name": "active_attuned_effects_display",
-                                "value": "@{active_attunement_count}",
-                            }
-                        )),
-                        span({"class": "equation-glue"}, "/"),
-                        underlabel("Max", number_input(
-                            {
-                                "disabled": True,
-                                "name": "attunement_points_maximum_display",
-                                "value": "@{attunement_points_maximum}",
-                            }
-                        )),
-                    ],
-                ),
-                {"class": "attune-points"},
-            ),
-            fieldset(
-                {"class": "repeating_attunements"},
-                attunement(),
-            ),
-        ],
-    )
-
-
-def attunement():
-    return flex_row(
-        {"class": "attunement"},
-        [
-            labeled_text_input(
-                "Name",
-                {"class": "attunement-name"},
-                {"name": "attunement_name"},
-            ),
-            labeled_text_input(
-                "Effect",
-                {"class": "attunement-effect"},
-                {"name": "attunement_effect"},
-            ),
-            underlabeled_checkbox(
-                "Active?",
-                None,
-                {"class": "is-active", "name": "attunement_active"},
-            ),
         ],
     )
 

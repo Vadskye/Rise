@@ -46,10 +46,8 @@ def create_page(_destination):
                 {"class": "main-body"},
                 [
                     abilities_summary(),
-                    equipment(),
                     div({"class": "section-header"}, "Abilities Chosen"),
                     textarea({"class": "all-abilities-known", "name": "abilities_chosen"}),
-                    inventory(),
                     personality(),
                 ],
             ),
@@ -128,32 +126,6 @@ def subsection_header(attributes=None, contents=None):
     return flex_col(attributes, contents)
 
 
-def equipment():
-    return div(
-        {"class": "equipment"},
-        [
-            div({"class": "section-header"}, "Non-Attuned Equipment"),
-            fieldset(
-                {"class": "repeating_equipment"},
-                flex_row(
-                    [
-                        labeled_text_input(
-                            "Name",
-                            {"class": "equipment-name"},
-                            {"name": f"equipment_name"},
-                        ),
-                        labeled_text_input(
-                            "Effects",
-                            {"class": "equipment-effects"},
-                            {"name": f"equipment_effects"},
-                        ),
-                    ]
-                ),
-            ),
-        ],
-    )
-
-
 def archetypes():
     return "".join([
         div({"class": "section-header"}, "Archetypes"),
@@ -176,24 +148,6 @@ def archetypes():
         ],
     ])
 
-def misc_equipment(body_slot, body_slot_html=None):
-    if body_slot_html is None:
-        body_slot_html = body_slot.lower()
-    return flex_row(
-        {"class": body_slot_html},
-        [
-            subsection_header(body_slot),
-            labeled_text_input(
-                "Name", {"class": "equipment-name"}, {"name": body_slot_html + "-name"}
-            ),
-            labeled_text_input(
-                "Special",
-                {"class": "equipment-special"},
-                {"name": body_slot_html + "-special"},
-            ),
-        ],
-    )
-
 
 def personality():
     return div(
@@ -201,13 +155,4 @@ def personality():
             div({"class": "section-header"}, "Personality and Background"),
             textarea({"class": "personality", "name": "personality_and_background"}),
         ]
-    )
-
-def inventory():
-    return div(
-        {"class": "inventory"},
-        [
-            div({"class": "section-header"}, "Inventory"),
-            textarea({"name": "inventory"}),
-        ],
     )
