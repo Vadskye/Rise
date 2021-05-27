@@ -28,7 +28,7 @@ def create_page(_destination):
         {"class": "page items-page"},
         [
             div({"class": "tab-explanation"}, """
-                This tab is used to track your equipped items, inventory, and attunements to both items and spells.
+                This tab is used to track your equipment, inventory, and attunements to both items and spells.
             """),
             div({"class": "section-header"}, "Legacy Item"),
             legacy_item(),
