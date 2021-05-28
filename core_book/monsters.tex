@@ -22,33 +22,37 @@ This chapter describes the rules for monsters, and the combat statistics for a v
             \lcaption{Challenge Rating Effects}
             \begin{dtabularx}{\textwidth}{l l l X l l l}
                 \tb{CR} & \tb{HP}  & \tb{DR} & \tb{AP} & \tb{Accuracy} & \tb{Defenses} & \tb{Damage}\fn{1} \tableheaderrule
-                1/2     & \mult1/2 & \mult0       & 0       & \plus0        & \plus0        & \minus2d \\
-                1       & \mult1   & \mult0       & 1       & \plus0        & \plus0        & \minus1d \\
-                2       & \mult1   & \mult1       & 1       & \plus1        & \plus1        & \tdash   \\
-                3       & \mult2   & \mult2       & 2       & \plus2        & \plus2        & \plus1d  \\
-                4       & \mult3   & \mult4       & 3       & \plus3        & \plus3        & \plus2d  \\
+                1/2     & \mult1/2 & \mult0  & 0       & \plus0        & \plus0        & \minus2d \\
+                1       & \mult1   & \mult0  & 1       & \plus0        & \plus0        & \minus1d \\
+                2       & \mult1   & \mult1  & 1       & \plus1        & \plus1        & \tdash   \\
+                3       & \mult2   & \mult2  & 2       & \plus2        & \plus2        & \plus1d  \\
+                4       & \mult3   & \mult4  & 3       & \plus3        & \plus3        & \plus2d  \\
             \end{dtabularx}
             1. This modifier applies to all damage dice rolled by the monster, including both strikes and magical abilities. \\
         \end{dtable}
 
         \subsubsection{Monster Vital Wounds}
             Monsters do not normally make \glossterm{vital rolls} like player characters do.
+            Unless otherwise specified on the monster's description, \glossterm{vital wounds} have no negative effects on monsters.
             Instead, once a monster gains a \glossterm{vital wound}, it is defeated.
             Defeated monsters may be unconscious, dead, or merely flee the fight at the discretion of the Game Master.
 
-            Some monsters have specific mechanics for what happens if they gain \glossterm{vital wounds}.
-            Unless otherwise specified on the monster's description, \glossterm{vital wounds} have no negative effects on monsters.
+        \subsubsection{Monster Resources}
+            Unless otherwise noted in their description, monsters have no \glossterm{resources}, and their \glossterm{fatigue tolerance} is treated as 0.
+            They are unable to use abilities that would cause them to increase their \glossterm{fatigue level}, such as the \textit{desperate exertion} ability.
 
-        \subsubsection{Spending Resources}
-            Unless otherwise noted in their description, all monsters are unable to use abilities that would cause them to increase their \glossterm{fatigue level}, such as the \textit{desperate exertion} ability.
-
-        \subsubsection{Recovering Hit Points and Conditions}
+        \subsubsection{Recovering Conditions}
             Monsters cannot normally use the \textit{recover} ability.
             However, monsters with a high challenge rating can remove conditions automatically.
             At the end of each round, monsters with CR of 1 or higher roll 1d10 \add their CR.
             If the result is 10 or higher, the monster removes one condition of its choice.
             This effect cannot remove a condition applied during the current round.
             Monsters without a sufficient understanding of the conditions affecting them generally choose randomly.
+
+        \subsubsection{Rank-Based Ability Access}
+            Although monsters do not gain archetypes, their special abilities should still be balanced appropriately for their maximum accessible rank.
+            Like a player character, a monster's maximum accessible rank is based on its level, as shown in \tref{Monster Advancement}.
+            CR 3 and CR 4 monsters gain a \plus1 bonus to their maximum rank, allowing them to use powerful abilities before players can.
 
     \subsection{Attributes}
         Each of a monster's base attributes can range from \minus9 to 3, as appropriate for the type of monster.
@@ -74,29 +78,29 @@ This chapter describes the rules for monsters, and the combat statistics for a v
 
     \begin{dtable*}
         \lcaption{Monster Advancement}
-        \begin{dtabularx}{\textwidth}{l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Level} & \tb{HP}   & \tb{DR} & \tb{Defenses} & \tb{Power} & \tb{Strike Damage} & \tb{Accuracy} \tableheaderrule
-            1st        & 16        & 4       & \tdash        & \tdash     & \tdash             & \tdash \\
-            2nd        & 18        & 6       & \tdash        & \tdash     & \tdash             & \tdash \\
-            3rd        & 19        & 6       & \plus1        & \plus1     & \tdash             & \tdash \\
-            4th        & 22        & 6       & \plus1        & \plus1     & \plus1d            & \tdash \\
-            5th        & 25        & 8       & \plus1        & \plus1     & \plus1d            & \plus1 \\
-            6th        & 28        & 8       & \plus1        & \plus2     & \plus1d            & \plus1 \\
-            7th        & 33        & 10      & \plus1        & \plus2     & \plus2d            & \plus1 \\
-            8th        & 37        & 12      & \plus1        & \plus2     & \plus2d            & \plus1 \\
-            9th        & 42        & 14      & \plus2        & \plus3     & \plus2d            & \plus1 \\
-            10th       & 46        & 16      & \plus2        & \plus3     & \plus3d            & \plus1 \\
-            11th       & 52        & 18      & \plus2        & \plus3     & \plus3d            & \plus2 \\
-            12th       & 58        & 20      & \plus2        & \plus4     & \plus3d            & \plus2 \\
-            13th       & 66        & 22      & \plus2        & \plus4     & \plus4d            & \plus2 \\
-            14th       & 75        & 24      & \plus2        & \plus4     & \plus4d            & \plus2 \\
-            15th       & 84        & 28      & \plus3        & \plus6     & \plus4d            & \plus2 \\
-            16th       & 94        & 30      & \plus3        & \plus6     & \plus5d            & \plus2 \\
-            17th       & 105       & 34      & \plus3        & \plus6     & \plus5d            & \plus3 \\
-            18th       & 115       & 38      & \plus3        & \plus8     & \plus5d            & \plus3 \\
-            19th       & 132       & 44      & \plus3        & \plus8     & \plus6d            & \plus3 \\
-            20th       & 150       & 50      & \plus3        & \plus8     & \plus6d            & \plus3 \\
-            21st       & 175\fn{5} & 56      & \plus4        & \plus12    & \plus6d            & \plus3 \\
+        \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+            \tb{Level} & \tb{Max Rank}\fn{1} & \tb{HP}   & \tb{DR} & \tb{Defenses} & \tb{Power} & \tb{Strike Damage} & \tb{Accuracy} \tableheaderrule
+            1st        & 1                   & 16        & 4       & \tdash        & \tdash     & \tdash             & \tdash \\
+            2nd        & \tdash              & 18        & 6       & \tdash        & \tdash     & \tdash             & \tdash \\
+            3rd        & \tdash              & 19        & 6       & \plus1        & \plus1     & \tdash             & \tdash \\
+            4th        & 2                   & 22        & 6       & \plus1        & \plus1     & \plus1d            & \tdash \\
+            5th        & \tdash              & 25        & 8       & \plus1        & \plus1     & \plus1d            & \plus1 \\
+            6th        & \tdash              & 28        & 8       & \plus1        & \plus2     & \plus1d            & \plus1 \\
+            7th        & 3                   & 33        & 10      & \plus1        & \plus2     & \plus2d            & \plus1 \\
+            8th        & \tdash              & 37        & 12      & \plus1        & \plus2     & \plus2d            & \plus1 \\
+            9th        & \tdash              & 42        & 14      & \plus2        & \plus3     & \plus2d            & \plus1 \\
+            10th       & 4                   & 46        & 16      & \plus2        & \plus3     & \plus3d            & \plus1 \\
+            11th       & \tdash              & 52        & 18      & \plus2        & \plus3     & \plus3d            & \plus2 \\
+            12th       & \tdash              & 58        & 20      & \plus2        & \plus4     & \plus3d            & \plus2 \\
+            13th       & 5                   & 66        & 22      & \plus2        & \plus4     & \plus4d            & \plus2 \\
+            14th       & \tdash              & 75        & 24      & \plus2        & \plus4     & \plus4d            & \plus2 \\
+            15th       & \tdash              & 84        & 28      & \plus3        & \plus6     & \plus4d            & \plus2 \\
+            16th       & 6                   & 94        & 30      & \plus3        & \plus6     & \plus5d            & \plus2 \\
+            17th       & \tdash              & 105       & 34      & \plus3        & \plus6     & \plus5d            & \plus3 \\
+            18th       & \tdash              & 115       & 38      & \plus3        & \plus8     & \plus5d            & \plus3 \\
+            19th       & 7                   & 132       & 44      & \plus3        & \plus8     & \plus6d            & \plus3 \\
+            20th       & \tdash              & 150       & 50      & \plus3        & \plus8     & \plus6d            & \plus3 \\
+            21st       & \tdash              & 175\fn{5} & 56      & \plus4        & \plus12    & \plus6d            & \plus3 \\
         \end{dtabularx}
         1. For each level beyond 21, a monster increases its maximum hit points by 25 and its maximum damage resistance by 10. \\
     \end{dtable*}
