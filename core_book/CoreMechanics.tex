@@ -457,9 +457,10 @@ It defines how attributes work and explains how to make attacks in combat.
         In addition, using the \textit{charge} and \textit{sprint} actions is impossible in heavy undergrowth (see \pcref{Movement Abilities}, and \pcref{Special Combat Abilities}).
 
     \subsection{Movement Modes}\label{Movement Modes}
-        A movement mode is a method of moving from one location to another.
+        A \glossterm{movement mode} is a method of moving from one location to another.
         % TODO: terminology confusion mode vs. speed
-        The most common movement mode is a land speed.
+        The most common movement mode is a land speed, which allows creatures to move across the ground.
+        Unless otherwise noted, all creatures have a land speed equal to the base speed for their size (see \pcref{Size in Combat}).
         In addition, some abilities grant creatures the ability to move in unusual ways.
         These forms of movement are described here.
 
@@ -1200,7 +1201,7 @@ It defines how attributes work and explains how to make attacks in combat.
     Many effects can grant bonuses or penalties to actions you take.
 
     \subsection{Size in Combat}\label{Size in Combat}
-        Your size affects your \glossterm{space} and \glossterm{reach} in combat, your \glossterm{base speed}, your base attributes, and how noticeable you are (see \pcref{Stealth}).
+        Your size affects your \glossterm{space} and \glossterm{reach} in combat, your speed with any \glossterm{movement modes} that depend on your size category's \glossterm{base speed}, your base attributes, and how noticeable you are (see \pcref{Stealth}).
         These effects are shown on \trefnp{Size in Combat}.
 
         \begin{dtable*}
@@ -1235,12 +1236,8 @@ It defines how attributes work and explains how to make attacks in combat.
             A creature's \glossterm{reach} is the distance that its \glossterm{melee} attacks can reach.
 
         \subsubsection{Base Speed}\label{Base Speed}
-            A creature's \glossterm{base speed} is the distance that it can usually move.
-            In addition to a base speed, most creatures have specific \glossterm{movement modes} that allow them to move in particular ways.
-            The most common movement mode is a land speed, which allows creatures to move across the ground.
-            Unless otherwise noted, all creatures have a land speed equal to their base speed.
-            There are other movement modes that can allow creatures to move in different ways.
-            For example, most birds have a \glossterm{fly speed}, which allows them to move through the air.
+            Each size category has a \glossterm{base speed} that indicates how far creatures of that size category can generally move.
+            Most \glossterm{movement modes} use a speed equal to the base speed for a creature's size category.
             For details about other speeds, see \pcref{Movement Modes}.
 
         \subsubsection{Other Effects}

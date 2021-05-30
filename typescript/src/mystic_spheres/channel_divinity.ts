@@ -286,7 +286,7 @@ export const channelDivinity: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Your size increases by one \\glossterm{size category}.
-        This increases your \\glossterm{base speed} and reduces your Stealth skill.
+        This increases the \\glossterm{base speed} for your size and reduces your Stealth skill.
         It may also increase your \\glossterm{reach} (see \\pcref{Size in Combat}).
         However, your physical form is not altered fully to match your new size, and your Strength and Dexterity are unchanged.
       `,

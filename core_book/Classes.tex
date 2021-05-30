@@ -314,7 +314,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Bbn}[0]{Savage Rush} When you use the \textit{sprint} ability, you can move through spaces occupied by enemies during that movement.
         You treat those spaces as \glossterm{difficult terrain}, which causes to you to move at half speed.
 
-        \cf{Bbn}[1]{Fast Movement} You gain a \plus5 foot bonus to your \glossterm{base speed}.
+        \cf{Bbn}[1]{Fast Movement} You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
 
         \cf{Bbn}[2]{Savage Precision} You can use your Strength in place of your Perception to determine your \glossterm{accuracy} with the \textit{dirty trick}, \textit{disarm}, \textit{grapple}, \textit{overrun}, and \textit{trip} abilities, as well as with grapple actions (see \pcref{Special Combat Abilities}, and \pcref{Grapple Actions}).
         In addition, you gain a \plus1 bonus to \glossterm{accuracy} with those abilities and with the \textit{shove} ability.
@@ -503,11 +503,11 @@ This choice determines a great deal about your character's abilities.
             \subcf{Eagle} The longshot penalty reduction increases to 2.
             In addition, you gain a \plus3 bonus to the Awareness skill.
 
-            \subcf{Lion} You gain a \plus5 foot bonus to your \glossterm{base speed}.
+            \subcf{Lion} You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
 
             \subcf{Shark} The accuracy bonus increases to \plus4.
 
-            \subcf{Wolf} You gain a \plus5 foot bonus to your \glossterm{base speed}.
+            \subcf{Wolf} You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
         }
 
         \cf{Bbn}[5]{Greater Feral Explosion} Your first die you roll for each attack roll \glossterm{explodes} on a 9 in addition to the normal explosion on a 10.
@@ -1098,7 +1098,7 @@ This choice determines a great deal about your character's abilities.
 
             \parhead{Gift} You gain a \plus4 bonus to the Jump skill (see \pcref{Jump}).
             In addition, you take half damage from \glossterm{falling damage}.
-            \parhead{Aspect} You gain a \glossterm{glide speed} equal to your \glossterm{base speed} (see \pcref{Gliding}).
+            \parhead{Aspect} You gain a \glossterm{glide speed} equal to the \glossterm{base speed} for your size (see \pcref{Gliding}).
             \parhead{Essence} You can use the \textit{speak with air} ability as a standard action.
             \begin{attuneability}{Speak with Air}
                 \abilitytag{Attune} (self)
@@ -1113,7 +1113,7 @@ This choice determines a great deal about your character's abilities.
                 \rankline
                 \rank{6} The area increases to a \areagarg radius.
             \end{attuneability}
-            \parhead{Mastery} You gain a \glossterm{fly speed} equal to your \glossterm{base speed} with a maximum height of 120 feet (see \pcref{Flying}).
+            \parhead{Mastery} You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 120 feet (see \pcref{Flying}).
             At the start of each phase, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
 
         \subsubsection{Chaos}
@@ -1360,7 +1360,7 @@ This choice determines a great deal about your character's abilities.
             In addition, you add the Knowledge (geography), Survival, and Swim skills to your cleric \glossterm{class skill} list.
 
             \parhead{Gift} You gain two skill points.
-            \parhead{Aspect} You gain a \plus5 foot bonus to your \glossterm{base speed}.
+            \parhead{Aspect} You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
             \parhead{Essence} You can use the \textit{dimensional travel} ability as a standard action.
             \begin{instantability}{Dimensional Travel}
                 Instant
@@ -1556,10 +1556,10 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Drd}[3]{Greater Elemental Balance} The bonuses from your \textit{elemental balance} ability improve.
         \begin{itemize}
-            \item Air: You gain a \glossterm{glide speed} equal to half your \glossterm{base speed}.
+            \item Air: You gain a \glossterm{glide speed} equal to half the \glossterm{base speed} for your size.
             \item Earth: The bonus to Fortitude defense increases to \plus2.
             \item Fire: The defense bonus increases to \plus4.
-            \item Water: You gain a \glossterm{swim speed} equal to half your \glossterm{base speed}.
+            \item Water: You gain a \glossterm{swim speed} equal to half the \glossterm{base speed} for your size.
         \end{itemize}
 
         \cf{Drd}[4]{Elemental Versatility} You learn a spell from any of the spheres associated with the four elements: \sphere{aeromancy}, \sphere{aquamancy}, \sphere{pyromancy}, or \sphere{terramancy}.
@@ -1581,11 +1581,11 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Drd}[7]{Supreme Elemental Balance} The bonuses from your \textit{elemental balance} ability improve.
         \begin{itemize}
-            \item Air: You gain a \glossterm{fly speed} equal to your \glossterm{base speed} with a maximum height of 30 feet (see \pcref{Flying}).
+            \item Air: You gain a \glossterm{fly speed} equal to half the \glossterm{base speed} for your size with a maximum height of 15 feet (see \pcref{Flying}).
             At the start of each phase, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
             \item Earth: The bonus to Fortitude defense increases to \plus4.
             \item Fire: The defense bonus increases to \plus6.
-            \item Water: You suffer no penalties for fighting underwater, and your swim speed increases to be equal to your base speed.
+            \item Water: You suffer no penalties for fighting underwater, and your swim speed increases to be equal to the base speed for your size.
         \end{itemize}
 
 %         \subsubsection{Typical Character}
@@ -1781,7 +1781,7 @@ This choice determines a great deal about your character's abilities.
             \begin{durationability}{Form of the Fish}
                 Duration
                 \rankline
-                You gain a \glossterm{swim speed} equal to your \glossterm{base speed}.
+                You gain a \glossterm{swim speed} equal to the \glossterm{base speed} for your size.
                 In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                 \rankline
@@ -1799,9 +1799,9 @@ This choice determines a great deal about your character's abilities.
                 In addition, you gain a \plus3 bonus to Awareness.
 
                 \rankline
-                \rank{3} You grow wings, granting your a glide speed equal to your \glossterm{base speed} (see \pcref{Gliding}).
+                \rank{3} You grow wings, granting your a glide speed equal to the \glossterm{base speed} for your size (see \pcref{Gliding}).
                 \rank{5} The Awareness bonus increases to \plus6.
-                \rank{7} The glide speed is replaced with a \glossterm{fly speed} equal to your \glossterm{base speed} with a maximum height of 60 feet (see \pcref{Flying}).
+                \rank{7} You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 60 feet (see \pcref{Flying}).
                 At the start of each phase, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
             \end{durationability}
 
@@ -1824,7 +1824,7 @@ This choice determines a great deal about your character's abilities.
             \begin{durationability}{Form of the Monkey}
                 Duration
                 \rankline
-                You gain a \glossterm{climb speed} equal to your \glossterm{base speed}.
+                You gain a \glossterm{climb speed} equal to the \glossterm{base speed} for your size.
                 In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                 \rankline
@@ -1858,7 +1858,7 @@ This choice determines a great deal about your character's abilities.
             \begin{durationability}{Form of the Viper}
                 Duration
                 \rankline
-                You gain a \glossterm{climb speed} equal to half your \glossterm{base speed}.
+                You gain a \glossterm{climb speed} equal to half the \glossterm{base speed} for your size.
                 You do not need to use your hands to climb in this way.
                 In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
@@ -1898,7 +1898,7 @@ This choice determines a great deal about your character's abilities.
             \begin{durationability}{Photosynthesis}
                 Duration
                 \rankline
-                As long as you are in natural sunlight, you gain a \plus5 foot bonus to your \glossterm{base speed}.
+                As long as you are in natural sunlight, you gain a \plus5 foot bonus to the \glossterm{base speed} for your size.
                 \rankline
                 \rank{3} As long as you are in natural sunlight, you do not gain hunger or thirst.
                 When you leave natural sunlight, you continue gaining hunger or thirst at your normal rate, ignoring any time you spent in natural sunlight.
@@ -2533,7 +2533,7 @@ This choice determines a great deal about your character's abilities.
             \begin{durationability}{Hustle}
                 \abilitytag{Sustain} (free)
                 \rankline
-                Each subject gains a \plus5 foot bonus to its \glossterm{base speed} during any phase that it takes the \textit{sprint} action, or if it moves using a \glossterm{standard action}.
+                Each subject gains a \plus5 foot bonus to its speed with all of its \glossterm{movement modes} during any phase that it takes the \textit{sprint} action, or if it moves using a \glossterm{standard action}.
 
                 \rankline
                 \rank{3} The speed bonus increases to \plus10 feet.
@@ -2922,7 +2922,7 @@ This choice determines a great deal about your character's abilities.
         In addition, you gain a \plus2d damage bonus with weapons that have the Unarmed weapon tag (see \pcref{Unarmed}).
         For details about how to fight while unarmed, see \pcref{Unarmed Combat}.
 
-        \cf{Mnk}[1]{Fast Movement} You gain a \plus5 foot bonus to your \glossterm{base speed}.
+        \cf{Mnk}[1]{Fast Movement} You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
 
         \cf{Mnk}[2]{Perfect Precision} You gain a \plus1 bonus to \glossterm{accuracy} with attacks using weapons from the monk weapons and unarmed weapons \glossterm{weapon groups}, natural weapons, and to any attack using one or more \glossterm{free hands}.
 
@@ -3604,7 +3604,7 @@ This choice determines a great deal about your character's abilities.
         In addition, you gain \glossterm{darkvision} with a 60 foot range, allowing you to see in complete darkness clearly.
         If you already have that ability, you increase its range by 60 feet.
 
-        \cf{Rgr}[1]{Skirmisher} At the start of each phase, if there is no more than one creature adjacent to you, you gain a \plus5 foot bonus to your \glossterm{base speed} during that phase.
+        \cf{Rgr}[1]{Skirmisher} At the start of each phase, if there is no more than one creature adjacent to you, you gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes} during that phase.
         In addition, you reduce your \glossterm{longshot penalty} by 1 (see \pcref{Weapon Range Limits}).
 
         \cf{Rgr}[2]{Perceive Weakness} You gain a \plus1 bonus to \glossterm{accuracy}.
@@ -3842,7 +3842,7 @@ This choice determines a great deal about your character's abilities.
                 \spelltwocol{\abilitytag{Sustain} (minor)}{\abilitytag{Auditory}}
                 \par \noindent Usage time: One \glossterm{minor action}.
                 \rankline
-                For the duration of your performance, all \glossterm{allies} within a \arealarge radius from you each gain a \plus5 foot bonus to their \glossterm{base speed}.
+                For the duration of your performance, all \glossterm{allies} within a \arealarge radius from you each gain a \plus5 foot bonus to their speed with all of their \glossterm{movement modes}.
 
                 \rankline
                 \rank{3} The speed bonus increases to \plus10 feet.

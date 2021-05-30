@@ -212,7 +212,7 @@ export const chronomancy: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You gain a +5 foot \\glossterm{magic bonus} to your \\glossterm{base speed}, and a +1 \\glossterm{magic bonus} to Reflex defense.
+        You gain a +5 foot \\glossterm{magic bonus} to speed with all of your \\glossterm{movement modes}, and a +1 \\glossterm{magic bonus} to Reflex defense.
       `,
       rank: 1,
       scaling: {

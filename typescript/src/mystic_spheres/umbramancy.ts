@@ -412,7 +412,7 @@ export const umbramancy: MysticSphere = {
           \\item You are nearly flat, allowing you to pass under doors and through other narrow passages.
           Your horizontal dimensions are unchanged, and you cannot enter spaces that are more narrow than you can normally fit through.
           \\item You can freely move through space occupied by other creatures, and other creatures can freely move through your space.
-          \\item You gain a \\glossterm{climb speed} equal to your \\glossterm{base speed}, and you can climb without using any hands.
+          \\item You gain a \\glossterm{climb speed} equal to the \\glossterm{base speed} for your size, and you can climb without using any hands.
           \\item You are always treated as being \\prone.
           \\item You gain a +4 \\glossterm{magic bonus} to the Stealth skill.
         \\end{itemize}
