@@ -268,7 +268,7 @@ def generate_weapons():
     weapons += [
         MagicItem(
             name="Longshot",
-            level=4,
+            level=7,
             material_type="Weapon",
             description="""
                 When you make a ranged attack with this weapon, you reduce your \\glossterm<longshot penalty> by 1.
@@ -277,7 +277,7 @@ def generate_weapons():
         ),
         MagicItem(
             name="Longshot, Greater",
-            level=10,
+            level=13,
             material_type="Weapon",
             description="""
                 When you make a ranged attack with this weapon, you reduce your \\glossterm<longshot penalty> by 2.
@@ -286,7 +286,7 @@ def generate_weapons():
         ),
         MagicItem(
             name="Longshot, Supreme",
-            level=16,
+            level=19,
             material_type="Weapon",
             description="""
                 When you make a ranged attack with this weapon, you reduce your \\glossterm<longshot penalty> by 3.

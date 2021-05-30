@@ -470,11 +470,10 @@ export const revelation: MysticSphere = {
       effect: `
         You reduce your \\glossterm{longshot penalty} by 1.
       `,
-      rank: 1,
+      rank: 3,
       scaling: {
-        3: `The penalty reduction increases to 2.`,
-        5: `The penalty reduction increases to 3.`,
-        7: `The penalty reduction increases to 4.`,
+        5: `The penalty reduction increases to 2.`,
+        7: `The penalty reduction increases to 3.`,
       },
       type: "Attune (self)",
     },
@@ -488,10 +487,9 @@ export const revelation: MysticSphere = {
         name: "Longshot",
       },
       // narrative: '',
-      rank: 3,
+      rank: 5,
       scaling: {
-        5: `The penalty reduction increases to 2.`,
-        7: `The penalty reduction increases to 3.`,
+        7: `The penalty reduction increases to 2.`,
       },
       type: "Attune (target)",
     },
