@@ -89,12 +89,12 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a ranged \\glossterm{strike}.
-        You reduce your \\glossterm{longshot penalty} by 2.
+        You reduce your \\glossterm{longshot penalty} with the strike by 2.
       `,
-      rank: 2,
+      rank: 3,
       scaling: {
-        4: "You gain a +1 accuracy bonus with the strike.",
-        6: "The accuracy bonus increases to +2.",
+        5: "You gain a +1 accuracy bonus with the strike.",
+        7: "The accuracy bonus increases to +2.",
       },
       type: "Instant",
     },
@@ -104,12 +104,9 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a ranged \\glossterm{strike}.
-        You reduce your \\glossterm{longshot penalty} by 4.
+        You reduce your \\glossterm{longshot penalty} with the strike by 4.
       `,
-      rank: 5,
-      scaling: {
-        7: "You gain a +1 accuracy bonus with the strike.",
-      },
+      rank: 6,
       type: "Instant",
     },
 
