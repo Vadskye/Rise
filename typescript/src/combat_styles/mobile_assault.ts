@@ -219,7 +219,7 @@ export const mobileAssault: CombatStyle = {
       name: "Leaping Strike",
 
       effect: `
-        You make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to half your \\glossterm{base speed} (see \\pcref{Leap}).
+        You make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to half your \\glossterm{land speed} (see \\pcref{Leap}).
         You can make a melee \\glossterm{strike} from any location you occupy during the motion, including both your initial leap and your fall afterwards (if any).
       `,
       rank: 3,
@@ -234,7 +234,7 @@ export const mobileAssault: CombatStyle = {
       name: "Leaping Impact Strike",
 
       effect: `
-        You make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to half your \\glossterm{base speed} (see \\pcref{Leap}).
+        You make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to half your \\glossterm{land speed} (see \\pcref{Leap}).
         You can make a melee \\glossterm{strike} from any location you occupy during the motion, including both your initial leap and your fall afterwards (if any).
         If you hit with the strike, the subject takes half of the \\glossterm{falling damage} that you would normally take based on the height of the jump, ignoring any of your abilities that reduce that damage.
       `,

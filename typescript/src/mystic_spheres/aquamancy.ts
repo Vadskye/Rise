@@ -314,8 +314,8 @@ export const aquamancy: MysticSphere = {
       `,
       rank: 2,
       scaling: {
-        4: "You also gain a swim speed equal to half your \\glossterm{base speed}.",
-        6: "The swim speed increases to be equal to your \\glossterm{base speed}.",
+        4: "You also gain a swim speed equal to half the \\glossterm{base speed} for your size.",
+        6: "The swim speed increases to be equal to the \\glossterm{base speed} for your size.",
       },
       type: "Attune (self)",
     },
@@ -329,7 +329,7 @@ export const aquamancy: MysticSphere = {
       },
       rank: 4,
       scaling: {
-        6: "Each subject also gains a swim speed equal to half its \\glossterm{base speed}.",
+        6: "Each subject also gains a swim speed equal to half the \\glossterm{base speed} for its size.",
       },
       type: "Attune (target)",
     },
@@ -577,7 +577,7 @@ export const aquamancy: MysticSphere = {
         You transform your body and equipment into water, allowing you to compress your body or contort yourself into odd shapes.
         This has the following effects:
         \\begin{itemize}
-          \\item You gain a \\glossterm{swim speed} equal to your \\glossterm{base speed}.
+          \\item You gain a \\glossterm{swim speed} equal to the \\glossterm{base speed} for your size.
           \\item You gain a +8 \\glossterm{magic bonus} to the Flexibility skill. In addition, the minimum size you can squeeze down to is reduced to one inch, which can dramatically improve your ability to squeeze through tight spaces.
           \\item You are immune to \\glossterm{critical hits} from \\glossterm{strikes}.
           \\item Your \\glossterm{damage resistance} is halved.

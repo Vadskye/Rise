@@ -640,7 +640,7 @@ export const aeromancy: MysticSphere = {
       effect: `
         You can move through creatures freely.
         This does not allow you to move through inanimate objects.
-        In addition, you gain a \\glossterm{glide speed} equal to your \\glossterm{base speed}.
+        In addition, you gain a \\glossterm{glide speed} equal to the \\glossterm{base speed} for your size.
       `,
       // narrative: '',
       rank: 4,

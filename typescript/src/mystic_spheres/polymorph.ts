@@ -286,7 +286,7 @@ export const polymorph: MysticSphere = {
       castingTime: "minor action",
       effect: `
         The subject's size decreases by one \\glossterm{size category}, to a minimum of Tiny.
-        This decreases its \\glossterm{base speed} and improves its Stealth skill.
+        This decreases the \\glossterm{base speed} for its size and improves its Stealth skill.
         It may also decrease the subject's \\glossterm{reach} (see \\pcref{Size in Combat}).
         However, its physical form is not altered fully to match its new size, and its Strength and Dexterity are unchanged.
       `,
@@ -354,7 +354,7 @@ export const polymorph: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Your size increases by one \\glossterm{size category}.
-        This increases your \\glossterm{base speed} and reduces your Stealth skill.
+        This increases the \\glossterm{base speed} for your size and reduces your Stealth skill.
         It may also increase your \\glossterm{reach} (see \\pcref{Size in Combat}).
         However, your physical form is not altered fully to match your new size, and your Strength and Dexterity are unchanged.
       `,
@@ -440,7 +440,7 @@ export const polymorph: MysticSphere = {
         Your body and equipment becomes highly flexible and malleable, allowing you to compress your body or contort yourself into odd shapes.
         This has the following effects:
         \\begin{itemize}
-          \\item You gain a \\glossterm{climb speed} equal to your \\glossterm{base speed}.
+          \\item You gain a \\glossterm{climb speed} equal to the \\glossterm{base speed} for your size.
           \\item You gain a +8 \\glossterm{magic bonus} to the Flexibility skill. In addition, the minimum size you can squeeze down to is reduced to one inch, which can dramatically improve your ability to squeeze through tight spaces.
           \\item You are immune to \\glossterm{critical hits} from \\glossterm{strikes}.
           \\item Your maximum \\glossterm{damage resistance} is halved.
@@ -808,7 +808,7 @@ export const polymorph: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You gain a \\glossterm{swim speed} equal to your \\glossterm{base speed}.
+        You gain a \\glossterm{swim speed} equal to the \\glossterm{base speed} for your size.
       `,
       rank: 2,
       scaling: {
@@ -839,7 +839,7 @@ export const polymorph: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You gain a \\glossterm{climb speed} equal to your \\glossterm{base speed}.
+        You gain a \\glossterm{climb speed} equal to the \\glossterm{base speed} for your size.
       `,
       rank: 2,
       scaling: {

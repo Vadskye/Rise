@@ -750,8 +750,8 @@ def generate_apparel():
             level=13,
             material_type="Boots",
             description="""
-                You gain a \\glossterm<fly speed> equal to your \\glossterm<base speed> with a maximum height of 15 feet (see \\pcref<Flying>).
-                If you are above that height, you gain a \\glossterm<glide speed> equal to your base speed instead.
+                You gain a \\glossterm<fly speed> equal to the \\glossterm<base speed> for your size with a maximum height of 15 feet (see \\pcref<Flying>).
+                If you are above that height, you gain a \\glossterm<glide speed> equal to the base speed for your size instead.
             """,
             short_description="Grants flight up to 15 feet high",
         ),
@@ -760,8 +760,7 @@ def generate_apparel():
             level=19,
             material_type="Boots",
             description="""
-                You gain a \\glossterm<fly speed> equal to your \\glossterm<base speed> with a maximum height of 30 feet (see \\pcref<Flying>).
-                If you are above that height, you gain a \\glossterm<glide speed> equal to your base speed instead.
+                These boots function like \\mitem<winged boots>, except that the \\glossterm<height limit> increases to 30 feet.
             """,
             short_description="Grants flight up to 30 feet high",
         ),
@@ -1140,7 +1139,7 @@ def generate_apparel():
             material_type="Cloak",
             tags=[],
             description="""
-            You gain a \\glossterm<glide speed> equal to your \\glossterm<base speed>.
+            You gain a \\glossterm<glide speed> equal to the \\glossterm<base speed> for your size.
         """,
             short_description="Grants a glide speed",
         )
@@ -1298,7 +1297,7 @@ def generate_apparel():
             description="""
                 As a standard action, you can activate this belt.
                 If you do, your size increases by one \\glossterm<size category>, to a maximum of Huge.
-                This increases your \\glossterm<base speed> and reduces your Stealth skill.
+                This increases the \\glossterm<base speed> for your size and reduces your Stealth skill.
                 It may also increase your \\glossterm<reach> (see \\pcref<Size in Combat>).
                 However, your physical form is not altered fully to match your new size, and your Strength and Dexterity are unchanged.
                 This effect lasts until you activate the belt again, which returns you to your original size.
@@ -1326,7 +1325,7 @@ def generate_apparel():
             description="""
                 As a standard action, you can activate this belt.
                 If you do, your size decreases by one \\glossterm<size category>, to a minimum of Tiny.
-                This decreases your \\glossterm<base speed> and improves your Stealth skill.
+                This decreases the \\glossterm<base speed> for your size and improves your Stealth skill.
                 It may also decrease your \\glossterm<reach> (see \\pcref<Size in Combat>).
                 This effect lasts until you activate the belt again, which returns you to your original size.
             """,

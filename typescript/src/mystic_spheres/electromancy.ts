@@ -346,7 +346,7 @@ export const electromancy: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You gain a +5 foot \\glossterm{magic bonus} to your \\glossterm{base speed}.
+        You gain a +5 foot \\glossterm{magic bonus} to speed with all of your \\glossterm{movement modes}.
       `,
       rank: 1,
       scaling: {

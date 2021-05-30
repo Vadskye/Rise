@@ -524,7 +524,7 @@ def magical_beasts(sample_monsters):
                     "Drag Prey",
                     f"""
                 This ability functions like the \\textit<shove> ability (see \\pcref<Shove>), except that the ankheg's accuracy is +{ankheg.accuracy() + 5}.
-                In addition, the ankheg can move with the target up to a maximum distance equal to its \\glossterm<base speed>.
+                In addition, the ankheg can move with the target up to a maximum distance equal to its \\glossterm<land speed>.
             """,
                 ),
                 active_ability(

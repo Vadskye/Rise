@@ -295,7 +295,7 @@ export const terramancy: MysticSphere = {
         This does not allow you to breathe while inside the earth or stone, so your ability to traverse long distances may be limited.
       `,
       rank: 5,
-      scaling: { 7: `Your speed increases to be equal to half your \\glossterm{base speed}.` },
+      scaling: { 7: `Your speed increases to be equal to half the \\glossterm{base speed} for your size.` },
       type: "Attune (self)",
     },
 

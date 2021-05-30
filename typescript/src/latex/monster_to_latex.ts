@@ -31,7 +31,7 @@ function monsterGroupToLatex(monsterGroup: MonsterGroup) {
 }
 
 function monsterBaseToLatex(monster: MonsterBase, options?: { subsection?: boolean }) {
-  const sectionTag = options?.subsection ? "monsubsection" : "monsection";
+  const sectionTag = options?.subsection ? "monsubsubsection" : "monsubsection";
   return `
   \\begin{${sectionTag}}${getMonsectionArgs(monster)}
     ${getTitleAndTypeHeader(monster).trim()}
