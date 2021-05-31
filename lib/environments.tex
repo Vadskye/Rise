@@ -259,7 +259,40 @@
 
 \DeclareDocumentEnvironment{monsubsection}{m o m o}
 {
-    \begin{thesamepage}
+    \setlength\multicolsep{0pt}
+    \begin{multicols}{2}
+        \IfValueTF{#2}
+        {
+            \lowercase{\hypertarget{mon:#2~#1}{}}
+            \label{mon:#2~#1}
+            \hypertarget{mon:#2~#1}
+                {\section{#1,~#2}}
+        }
+        {
+            \lowercase{\hypertarget{mon:#1}{}}
+            \label{mon:#1}
+            \hypertarget{mon:#1}
+                {\section{#1}}
+        }
+
+        \columnbreak
+        \begin{flushright}
+            \large\textbf{Level~#3}
+            \IfValueTF{#4}
+            {
+                \textbf{~[CR~#4]}
+            }
+            {
+                \textbf{~[CR~1]}
+            }
+        \end{flushright}
+    \end{multicols}
+}
+{
+}
+
+\DeclareDocumentEnvironment{monsubsubsection}{m o m o}
+{
     \setlength\multicolsep{0pt}
     \begin{multicols}{2}
         \IfValueTF{#2}
@@ -278,42 +311,6 @@
 
         \columnbreak
         \begin{flushright}
-            \large\textbf{Level~#3}
-            \IfValueTF{#4}
-            {
-                \textbf{~[CR~#4]}
-            }
-            {
-                \textbf{~[CR~1]}
-            }
-        \end{flushright}
-    \end{multicols}
-}
-{
-    \end{thesamepage}
-}
-
-\DeclareDocumentEnvironment{monsubsubsection}{m o m o}
-{
-    \begin{thesamepage}
-    \setlength\multicolsep{0pt}
-    \begin{multicols}{2}
-        \IfValueTF{#2}
-        {
-            \lowercase{\hypertarget{mon:#2~#1}{}}
-            \label{mon:#2~#1}
-            \hypertarget{mon:#2~#1}
-                {\subsubsection{#1,~#2}}
-        }
-        {
-            \lowercase{\hypertarget{mon:#1}{}}
-            \label{mon:#1}
-            \hypertarget{mon:#1}
-                {\subsubsection{#1}}
-        }
-
-        \columnbreak
-        \begin{flushright}
             \textbf{Level~#3}
             \IfValueTF{#4}
             {
@@ -326,7 +323,6 @@
     \end{multicols}
 }
 {
-    \end{thesamepage}
 }
 
 \ExplSyntaxOff
