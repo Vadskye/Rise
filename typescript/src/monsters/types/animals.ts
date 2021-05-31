@@ -6,10 +6,6 @@ const animalInput: TypelessMonsterInput[] = [
     alignment: "Always true neutral",
     armorInputs: [{ name: "fur" }],
     challengeRating: 1,
-    description: `
-      Baboons are powerful and aggressive primates adapted to life on the ground.
-      They
-    `,
     knowledge: {
       0: `
         A baboon is a primate adapted to life on the ground.
