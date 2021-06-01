@@ -1,5 +1,4 @@
-import { CombatStyle, combatStyles, CombatStyleSource } from "@src/combat_styles";
-import { titleCase } from "change-case";
+import { CombatStyle, combatStyles} from "@src/combat_styles";
 
 export function generateCombatStyleLists(): string {
   return `

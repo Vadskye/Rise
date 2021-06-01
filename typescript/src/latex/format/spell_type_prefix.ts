@@ -1,8 +1,8 @@
-import { Spell } from "@src/mystic_spheres";
+import { SpellLike } from "@src/mystic_spheres";
 import { sentenceCase } from "change-case";
 
 export function spellTypePrefix(
-  spell: Pick<Spell, "castingTime" | "focus" | "tags" | "type">,
+  spell: Pick<SpellLike, "castingTime" | "focus" | "tags" | "type" | "rank">,
 ): string {
   const tags = spell.tags || [];
   if (spell.focus !== false) {
@@ -12,10 +12,11 @@ export function spellTypePrefix(
     tags && tags.length > 0
       ? `${tags
           .sort()
-          .map((t) => t.includes('abilitytag') ? t : `\\abilitytag{${t}}`)
+          .map((t) => (t.includes("abilitytag") ? t : `\\abilitytag{${t}}`))
           .join(", ")}`
       : "";
-  const tagLine = tagsText ? `\\spelltwocol{${spell.type}}{${tagsText}}` : spell.type;
+  const rankText = spell.rank ? `Rank ${spell.rank}` : "";
+  const tagLine: string = tagsText || rankText ? `\\spelltwocol{${tagsText}}{${rankText}}` : "";
 
   if (spell.castingTime) {
     const castingTime =

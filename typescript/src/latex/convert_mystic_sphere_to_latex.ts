@@ -1,6 +1,6 @@
 import * as format from "@src/latex/format";
 import { assertEndsWithPeriod } from "@src/latex/format/spell_effect";
-import { MysticSphere, Spell, SpellLike } from "@src/mystic_spheres";
+import { MysticSphere, SpellLike } from "@src/mystic_spheres";
 import _ from "lodash";
 
 export function convertMysticSphereToLatex(sphere: MysticSphere): string {
@@ -53,7 +53,6 @@ export function determineAbilityType(spell: Pick<SpellLike, "type">): string {
 
 function convertSpellToLatex(spell: SpellLike): string {
   const abilityType = determineAbilityType(spell);
-  const rankText = (spell as Spell).rank ? `[Rank ${spell.rank}]` : "";
   const internalComponents = [
     format.spellTypePrefix(spell),
     format.spellEffect(spell, "spell"),
@@ -66,7 +65,7 @@ function convertSpellToLatex(spell: SpellLike): string {
     \\hypertarget{spell:${spell.name}}{}%
     \\hypertarget{spell:${spell.name.toLowerCase()}}{}%
     \\label{${spell.name}}%
-    \\begin{${abilityType}}{${spell.name}}${rankText}
+    \\begin{${abilityType}}{${spell.name}}[${spell.type}]
       ${internalComponents.join("\n\\rankline\n\n\\noindent ")}
       \\vspace{0.1em}
     \\end{${abilityType}}
