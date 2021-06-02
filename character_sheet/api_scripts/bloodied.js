@@ -60,4 +60,3 @@ function generateResistanceUpdater(barNumber, color) {
   }
 }
 on("change:graphic:bar2_value", generateResistanceUpdater(2, "blue"));
-on("change:graphic:bar3_value", generateResistanceUpdater(3, "red"));
