@@ -20,8 +20,8 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
         You can use the \textit{animal companion} ability.
         This ability requires 8 hours of training and attunement which the target must actively participate in.
         You can compel a wild animal to undergo this training by sustaining the \textit{command} ability from the Creature Handling skill (see \pcref{Command}).
-        \begin{attuneability}{Animal Companion}
-            \spelltwocol{\abilitytag{Attune} (self)}{\abilitytag{Emotion}, \glossterm{Magical}}
+        \begin{attuneability}{Animal Companion}[\abilitytag{Attune} (self)]
+            \abilitytag{Emotion}, \glossterm{Magical}
             \rankline
             Choose a Medium or smaller animal \glossterm{ally} within your \glossterm{reach} with a level no higher than your level and a \glossterm{challenge rating} no higher than 1.
             The target serves as a loyal companion to you.
@@ -201,8 +201,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
         \label{Quarry} You can use the \textit{quarry} ability as a \glossterm{minor action}.
-        \begin{attuneability}{Quarry}
-            \abilitytag{Attune} (self)
+        \begin{attuneability}{Quarry}[\abilitytag{Attune} (self)]
             \rankline
             Choose a creature within \rnglong range.
             The target becomes your quarry.
@@ -224,8 +223,8 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
         When you use your \textit{quarry} ability, you may also use one of your \textit{hunting styles}.
         Each \textit{hunting style} ability lasts as long as the \textit{quarry} ability you used it with.
         {
-            \begin{durationability}{Anchoring}
-                \spelltwocol{Duration}{Magical}
+            \begin{durationability}{Anchoring}[Duration]
+                Magical
                 \rankline
                 As long as your quarry is adjacent to any member of your hunting party, it cannot travel extradimensionally.
                 This prevents all \abilitytag{Manifestation} and \glossterm{teleportation} effects.
@@ -235,8 +234,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 \rank{6} This effect instead applies if your quarry is within \distrange of any member of your hunting party.
             \end{durationability}
 
-            \begin{durationability}{Coordinated Stealth}
-                Duration
+            \begin{durationability}{Coordinated Stealth}[Duration]
                 \rankline
                 Your quarry takes a \minus4 penalty to Awareness checks to notice members of your hunting party.
 
@@ -245,8 +243,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 \rank{6} The Awareness penalty increases to \minus12.
             \end{durationability}
 
-            \begin{durationability}{Cover Weaknesses}
-                Duration
+            \begin{durationability}{Cover Weaknesses}[Duration]
                 \rankline
                 The accuracy bonus against your quarry is replaced with a \plus1 bonus to Armor and Reflex defenses against your quarry's attacks.
 
@@ -255,8 +252,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 \rank{6} The defense bonus increases to \plus2.
             \end{durationability}
 
-            \begin{durationability}{Decoy}
-                Duration
+            \begin{durationability}{Decoy}[Duration]
                 \rankline
                 If you are adjacent to your quarry, it takes a \minus2 accuracy penalty on attacks against members of your hunting party other than you.
 
@@ -265,8 +261,8 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 \rank{6} The penalty increases to \minus4.
             \end{durationability}
 
-            \begin{durationability}{Lifeseal}
-                \spelltwocol{Duration}{Magical}
+            \begin{durationability}{Lifeseal}[Duration]
+                \abilitytag{Magical}
                 \rankline
                 As long as your quarry is adjacent to any member of your hunting party, it cannot regain \glossterm{hit points}.
 
@@ -275,8 +271,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 \rank{6} This effect instead applies if your quarry is within \rngdist range of any member of your hunting party.
             \end{durationability}
 
-            \begin{durationability}{Martial Suppression}
-                Duration
+            \begin{durationability}{Martial Suppression}[Duration]
                 \rankline
                 As long as your quarry is adjacent to at least two members of your hunting party, it takes a \minus1 accuracy penalty with \glossterm{mundane} attacks.
 
@@ -285,8 +280,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 \rank{6} The penalty increases to \minus3.
             \end{durationability}
 
-            \begin{durationability}{Mystic Suppression}
-                Duration
+            \begin{durationability}{Mystic Suppression}[Duration]
                 \rankline
                 As long as your quarry is adjacent to at least two members of your hunting party, it takes a \minus1 penalty to \glossterm{accuracy} with \glossterm{magical} attacks.
 
@@ -295,8 +289,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 \rank{6} The penalty increases to \minus3.
             \end{durationability}
 
-            \begin{durationability}{Solo Hunter}
-                Duration
+            \begin{durationability}{Solo Hunter}[Duration]
                 \rankline
                 Your hunting party other than you gains no benefit from your \textit{quarry} ability.
                 In exchange, you gain a \plus1 bonus to defenses against your quarry.
@@ -306,8 +299,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 \rank{6} The defense bonus increases to \plus2.
             \end{durationability}
 
-            \begin{durationability}{Swarm Hunter}
-                Duration
+            \begin{durationability}{Swarm Hunter}[Duration]
                 \rankline
                 When you use your \textit{quarry} ability, you can target any number of creatures to be your quarry.
 
@@ -316,8 +308,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 \rank{6} The penalty reduction increases to 2.
             \end{durationability}
 
-            \begin{durationability}{Wolfpack}
-                Duration
+            \begin{durationability}{Wolfpack}[Duration]
                 \rankline
                 At the start of each \glossterm{phase}, if your quarry is adjacent to at least two members of your hunting party, it moves at half speed until the end of that phase.
 

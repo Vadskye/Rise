@@ -16,8 +16,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
          You can use the \textit{discipline} ability as a \glossterm{standard action}.
-        \begin{instantability}{Discipline}
-            Instant
+        \begin{instantability}{Discipline}[Instant]
             \rankline
             Remove up to two \glossterm{conditions} affecting you.
             This cannot remove a condition applied during the current round.
@@ -109,8 +108,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             description: r"
          You can use the \textit{weapon training} ability by spending an hour training with a weapon.
         You cannot use this ability with an \glossterm{exotic weapon} that is from a \glossterm{weapon group} you are not proficient with.
-        \begin{instantability}{Weapon Training}
-            Instant
+        \begin{instantability}{Weapon Training}[Duration]
             \rankline
             You become proficient with the weapon you trained with.
             You gain a \plus1 bonus to \glossterm{accuracy} with that weapon unless it is an \glossterm{exotic weapon} that you would not be proficient with without this ability.
@@ -318,8 +316,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
          You can use the \textit{guarding strike} ability as a standard action.
-        \begin{durationability}{Guarding Strike}
-            Duration
+        \begin{durationability}{Guarding Strike}[Duration]
             \rankline
             Make a \glossterm{strike} with a \minus2d damage penalty.
             Your \glossterm{power} with the strike is halved.
@@ -337,8 +334,8 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
          You can use the \textit{protect} ability as a \glossterm{minor action}.
-        \begin{durationability}{Protect}
-            \spelltwocol{Duration}{\abilitytag{Swift}}
+        \begin{durationability}{Protect}[Duration]
+            \abilitytag{Swift}
             \rankline
             Choose an \glossterm{ally} adjacent to you.
             It gains a \plus2 bonus to Armor defense until the end of the round.
@@ -364,8 +361,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
          You can use the \textit{sentinel's challenge} ability as a standard action.
-        \begin{durationability}{Sentinel's Challenge}
-            Duration
+        \begin{durationability}{Sentinel's Challenge}[Duration]
             \rankline
             Make an attack vs. Mental against all \glossterm{enemies} in a \largearea radius from you.
             \hit Each subject is \goaded by you as a \glossterm{condition}.
@@ -445,8 +441,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
         You cannot sustain multiple battle tactics simultaneously.
 
         {
-            \begin{durationability}{Break Through}
-                \abilitytag{Sustain} (free)
+            \begin{durationability}{Break Through}[\abilitytag{Sustain} (free)]
                 \rankline
                 Each target gains a \plus2 bonus to \glossterm{accuracy} with the \textit{overrun} and \textit{shove} abilities (see \pcref{Special Combat Abilities}).
 

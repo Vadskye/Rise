@@ -16,8 +16,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
          You can use the \textit{abyssal blast} ability as a standard action.
-        \begin{instantability}{Abyssal Blast}
-            Instant
+        \begin{instantability}{Abyssal Blast}[Instant]
             \rankline
             Make an attack vs. Armor against one creature or object within \rngmed range.
             \hit The target takes fire damage equal to 1d10 plus your \glossterm{power}.
@@ -50,8 +49,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
          You can use the \textit{banish to the abyss} ability as a standard action.
-        \begin{durationability}{Banish to the Abyss}
-            Duration
+        \begin{durationability}{Banish to the Abyss}[Duration]
             \rankline
             Make an attack vs. Mental against one creature within \rngmed range.
             \hit The subject takes 2d6 \add half \glossterm{power} fire damage.
@@ -91,8 +89,8 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
          You can use the \textit{abyssal curse} ability as a standard action.
-        \begin{durationability}{Abyssal Curse}
-            \spelltwocol{Duration}{\abilitytag{Curse}}
+        \begin{durationability}{Abyssal Curse}[Duration]
+            \abilitytag{Curse}
             \rankline
             Make an attack vs. Fortitude against one creature or object within \rngmed range.
             \hit The target is \nauseated until it takes a \glossterm{short rest}.
@@ -480,8 +478,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
          You can use the \textit{possession} ability as a \glossterm{free action} to allow your soulkeeper a greater influence over your actions.
-        \begin{durationability}{Possession}
-            \abilitytag{Sustain} (free)
+        \begin{durationability}{Possession}[\abilitytag{Sustain} (free)]
             \rankline
             You gain the following benefits and drawbacks:
             \begin{itemize}
@@ -509,8 +506,8 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             description: r"
          Your connection to your soulkeeper deepens, allowing you to send a fragment of your experiences through the link.
         You can use the \textit{exchange soul fragment} ability as a \glossterm{minor action}.
-        \begin{instantability}{Exchange Soul Fragment}
-            \spelltwocol{Instant}{\abilitytag{Swift}}
+        \begin{instantability}{Exchange Soul Fragment}[Instant]
+            \abilitytag{Swift}
             \rankline
             When you use this ability, you increase your \glossterm{fatigue level} by one.
 
@@ -554,8 +551,8 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             description: r"
          Your connection to your soulkeeper deepens, allowing you to send a fragment of your vitality through the link.
         You can use the \textit{exchange vitality} ability as a \glossterm{minor action}.
-        \begin{instantability}{Exchange Vitality}
-            \spelltwocol{Instant}{\abilitytag{Swift}}
+        \begin{instantability}{Exchange Vitality}[Instant]
+            \abilitytag{Swift}
             \rankline
             When you use this ability, you increase your \glossterm{fatigue level} by two.
 

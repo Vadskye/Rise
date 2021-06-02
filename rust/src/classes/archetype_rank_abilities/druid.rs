@@ -32,8 +32,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
          You can use the \textit{elemental influence} ability as a standard action.
-        \begin{durationability}{Elemental Influence}
-            \abilitytag{Sustain} (standard)
+        \begin{durationability}{Elemental Influence}[\abilitytag{Sustain} (standard)]
             \rankline
             You can speak with air, earth, fire, and water within a \areahuge \glossterm{zone} from your location.
             You can ask the elements simple questions and understand their responses.
@@ -354,8 +353,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
         See \pcref{Natural Weapons}, for details about natural weapons.
 
         {
-            \begin{durationability}{Form of the Bear}
-                Duration
+            \begin{durationability}{Form of the Bear}[Duration]
                 \rankline
                 You gain a \plus2 bonus to Fortitude defense.
                 In addition, your mouth and hands transform, granting you a bite and two claw \glossterm{natural weapons} (see \tref{Natural Weapons}).
@@ -366,8 +364,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} The Fortitude bonus increases to \plus4.
             \end{durationability}
 
-            \begin{durationability}{Form of the Bull}
-                Duration
+            \begin{durationability}{Form of the Bull}[Duration]
                 \rankline
                 You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{shove} ability (see \pcref{Shove}).
                 In addition, your head transforms, granting you a gore \glossterm{natural weapon} (see \tref{Natural Weapons}).
@@ -379,8 +376,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 This damage cannot be combined with other effects that deal damage with a shove, such as the \textit{wall slam} ability.
             \end{durationability}
 
-            \begin{durationability}{Form of the Constrictor}
-                Duration
+            \begin{durationability}{Form of the Constrictor}[Duration]
                 \rankline
                 You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{grapple} ability and all grapple actions (see \pcref{Grapple}).
                 In addition, you gain a constrict \glossterm{natural weapon} (see \tref{Natural Weapons}).
@@ -393,8 +389,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} When you grapple a creature with the \textit{grapple} ability, you are not considered to be \grappled (see \pcref{Asymmetric Grappling}).
             \end{durationability}
 
-            \begin{durationability}{Form of the Fish}
-                Duration
+            \begin{durationability}{Form of the Fish}[Duration]
                 \rankline
                 You gain a \glossterm{swim speed} equal to the \glossterm{base speed} for your size.
                 In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
@@ -406,8 +401,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 In addition, you gain a \plus4 bonus to defenses against the \textit{grapple} ability and grapple actions (see \pcref{Grapple}).
             \end{durationability}
 
-            \begin{durationability}{Form of the Hawk}
-                Duration
+            \begin{durationability}{Form of the Hawk}[Duration]
                 \rankline
                 You gain \glossterm{low-light vision}.
                 If you already have low-light vision, you double its benefit, allowing you to treat sources of light as if they had four times their normal illumination range.
@@ -420,8 +414,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 At the start of each phase, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
             \end{durationability}
 
-            \begin{durationability}{Form of the Hound}
-                Duration
+            \begin{durationability}{Form of the Hound}[Duration]
                 \rankline
                 You gain the ability to move on all four limbs.
                 When doing so, you gain a \plus10 foot bonus to your land speed.
@@ -436,8 +429,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             \end{durationability}
 
             % Seems boring? What abilities would make sense?
-            \begin{durationability}{Form of the Monkey}
-                Duration
+            \begin{durationability}{Form of the Monkey}[Duration]
                 \rankline
                 You gain a \glossterm{climb speed} equal to the \glossterm{base speed} for your size.
                 In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
@@ -448,8 +440,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} You can use the \textit{creature climb} ability against creatures only one size category larger than you instead of two size categories.
             \end{durationability}
 
-            \begin{durationability}{Form of the Mouse}
-                Duration
+            \begin{durationability}{Form of the Mouse}[Duration]
                 \rankline
                 You gain a \plus2 bonus to the Flexibility and Stealth skills.
                 In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
@@ -460,8 +451,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} When you use this wild aspect, you can choose to shrink by up to two \glossterm{size categories} instead of only one.
             \end{durationability}
 
-            % \begin{durationability}{Form of the Oak}
-            %     Duration
+            % \begin{durationability}{Form of the Oak}[Duration]
             %     \rankline
             %     As long as you have any remaining resistance to physical damage, you are both \glossterm{immobilized} and \glossterm{impervious} to \glossterm{physical damage}.
             %     \rankline
@@ -470,8 +460,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             %     \rank{7} The defense bonuse increases to \plus2.
             % \end{durationability}
 
-            \begin{durationability}{Form of the Viper}
-                Duration
+            \begin{durationability}{Form of the Viper}[Duration]
                 \rankline
                 You gain a \glossterm{climb speed} equal to half the \glossterm{base speed} for your size.
                 You do not need to use your hands to climb in this way.
@@ -486,8 +475,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} The poison makes the target \nauseated instead of \sickened.
             \end{durationability}
 
-            \begin{durationability}{Form of the Wolf}
-                Duration
+            \begin{durationability}{Form of the Wolf}[Duration]
                 \rankline
                 You gain a \plus1 bonus to \glossterm{accuracy} against \surrounded creatures.
                 In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
@@ -498,8 +486,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} The accuracy bonus increases to \plus3.
             \end{durationability}
 
-            \begin{durationability}{Myriad Form}
-                Duration
+            \begin{durationability}{Myriad Form}[Duration]
                 \rankline
                 You can use your \glossterm{power} in place of your Disguise skill when making Disguise checks to alter your own appearance.
 
@@ -510,8 +497,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} When you use this wild aspect, you can choose to grow or shrink by up to two \glossterm{size categories} instead of only one.
             \end{durationability}
 
-            \begin{durationability}{Photosynthesis}
-                Duration
+            \begin{durationability}{Photosynthesis}[Duration]
                 \rankline
                 As long as you are in natural sunlight, you gain a \plus5 foot bonus to the \glossterm{base speed} for your size.
                 \rankline
@@ -521,8 +507,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} When you take a \glossterm{short rest} while you are in natural sunlight, you remove a \glossterm{vital wound}.
             \end{durationability}
 
-            \begin{durationability}{Plantspeaker}
-                Duration
+            \begin{durationability}{Plantspeaker}[Duration]
                 \rankline
                 Your speed is not reduced when moving in light or heavy \glossterm{undergrowth}.
                 In addition, you can ignore \glossterm{cover} and \glossterm{concealment} (but not \glossterm{total cover}) from plants whenever doing so would be beneficial to you, as the plants move out of the way to help you.
@@ -542,8 +527,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
          You can use the \textit{shift body} ability whenever you finish a \glossterm{long rest}.
-        \begin{attuneability}{Shift Body}
-            \abilitytag{Attune} (self)
+        \begin{attuneability}{Shift Body}[\abilitytag{Attune} (self)]
             \rankline
             When you use this ability, choose a physical \glossterm{attribute}: Strength, Dexterity, or Constitution (see \pcref{Attributes}).
             You gain a \plus1 bonus to the base value of that attribute.
@@ -621,8 +605,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             rank: 0,
             description: r"
          You can use the \textit{animal speech} ability as a standard action.
-        \begin{durationability}{Animal Speech}
-            \abilitytag{Sustain} (minor)
+        \begin{durationability}{Animal Speech}[\abilitytag{Sustain} (minor)]
             \rankline
             Choose an animal within \rnglong range.
             You can speak to and understand the speech of the target animal, and any other animals of the same species.
@@ -640,8 +623,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
         
         You can use the \textit{natural servant} ability.
         This ability requires spending 1 hour performing rituals in a natural area.
-        \begin{attuneability}{Natural Servant}
-            \abilitytag{Attune} (self)
+        \begin{attuneability}{Natural Servant}[\abilitytag{Attune} (self)]
             \rankline
             An animal native to the local environment appears to help you.
             It follows your directions to the best of its ability as long as you remain in its natural environment.
