@@ -1,0 +1,15 @@
+[package]
+name = "rise"
+version = "0.1.0"
+authors = ["Kevin Johnson <vadskye@gmail.com>"]
+edition = "2018"
+default-run = "debug"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+numerics = "0.0.1"
+titlecase = "1.1.0"
+clap = "2.33.0"
+regex = "1"
+# itertools = "0.10.0"
