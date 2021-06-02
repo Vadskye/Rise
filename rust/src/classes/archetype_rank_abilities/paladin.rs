@@ -292,8 +292,8 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
         [Magical] You can use the \textit{lay on hands} ability as a standard action.
-        \begin{instantability}{Lay on Hands}
-            \spelltwocol{Instant}{\abilitytag{Healing}, \abilitytag{Magical}}
+        \begin{instantability}{Lay on Hands}[Instant]
+            \abilitytag{Healing}, \abilitytag{Magical}
             \rankline
             Choose yourself or a living \glossterm{ally} within your \glossterm{reach}.
             The target regains 1d10 \add \glossterm{power} \glossterm{hit points}.
@@ -380,8 +380,8 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
         [Magical] You can use the \textit{smite} ability as a standard action.
-        \begin{instantability}{Smite}
-            \spelltwocol{Instant}{\abilitytag{Magical}}
+        \begin{instantability}{Smite}[Instant]
+            \abilitytag{Magical}
             \rankline
             Make a \glossterm{strike} with a \plus1d damage bonus.
             Because this is a \glossterm{magical} ability, you use your magical \glossterm{power} to determine your damage instead of your \glossterm{mundane} power.
@@ -425,8 +425,8 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
          You can use your \textit{zealous purge} ability as a standard action.
-        \begin{instantability}{Zealous Purge}
-            \spelltwocol{Instant}{\abilitytag{Magical}}
+        \begin{instantability}{Zealous Purge}[Instant]
+            \abilitytag{Magical}
             \rankline
             Make a \glossterm{strike} with a \minus1d damage penalty.
             You add half your \glossterm{power} to damage with the strike instead of your full power.
@@ -480,8 +480,8 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
          You can use the \textit{pass judgment} ability as a \glossterm{minor action}.
-        \begin{durationability}{Pass Judgment}
-            \spelltwocol{Duration}{\abilitytag{Magical}}
+        \begin{durationability}{Pass Judgment}[Duration]
+            \abilitytag{Magical}
             \rankline
             \target{One creature within \rnglong range}
             The target is treated as if it had the alignment opposed to your devoted alignment for the purpose of all abilities.

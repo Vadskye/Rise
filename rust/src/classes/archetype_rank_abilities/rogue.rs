@@ -21,8 +21,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
         % This ability gets rank upgrades while maneuvers don't
         % because maneuvers are upgraded into higher rank maneuvers,
         % while this has no upgrades and should remain relevant alone.
-        \begin{instantability}{Sneak Attack}
-            Instant
+        \begin{instantability}{Sneak Attack}[Instant]
             \rankline
             Make a \glossterm{strike} with a \glossterm{light weapon} or a \glossterm{projectile weapon} against a creature within \rngshort range.
             If the target is \unaware or \partiallyunaware of your attack, or if the target is adjacent to one of your \glossterm{allies}, you gain a \plus2d damage bonus with the strike.
@@ -50,8 +49,8 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
         You can use the \textit{darkstalker} ability as a standard action.
-        \begin{attuneability}{Darkstalker}
-            \spelltwocol{\abilitytag{Attune} (self)}{\abilitytag{Magical}}
+        \begin{attuneability}{Darkstalker}[\abilitytag{Attune} (self)]
+            \abilitytag{Magical}
             \rankline
             You become completely undetectable by your choice of one of the following sense groups:
             \begin{itemize}
@@ -92,8 +91,8 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
          You can use the \textit{assassination} ability as a \glossterm{minor action}.
-        \begin{durationability}{Assassination}
-            \spelltwocol{Duration}{\abilitytag{Swift}}
+        \begin{durationability}{Assassination}[Duration]
+            \abilitytag{Swift}
             \rankline
             You study a creature within \rngmed range, finding weak points you can take advantage of.
             Until the end of the next round, the subject takes maximum damage from your melee \glossterm{strikes} that it is \unaware of.
@@ -147,8 +146,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
         However, targets do not stop being affected by your performance simply by travelling beyond the initial range of the bardic performance ability.
         Using a bardic performance ability with an immediate effect does not interfere with your ability to sustain other bardic performance abilities.
         {
-            \begin{durationability}{Aria of Alacrity}
-                \spelltwocol{\abilitytag{Sustain} (minor)}{\abilitytag{Auditory}}
+            \begin{durationability}{Aria of Alacrity}[\abilitytag{Sustain} (minor)]
+                \abilitytag{Auditory}
                 \par \noindent Usage time: One \glossterm{minor action}.
                 \rankline
                 For the duration of your performance, all \glossterm{allies} within a \arealarge radius from you each gain a \plus5 foot bonus to their speed with all of their \glossterm{movement modes}.
@@ -168,8 +167,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             %
             % Bardsong debuffs are interesting, since they can't be removed like conditions, but also can't be stacked.
             % For now, they're just ranked in the same way as conditions.
-            \begin{durationability}{Ballad of Belligerence}
-                \spelltwocol{\abilitytag{Sustain} (minor)}{\abilitytag{Auditory}, \abilitytag{Emotion}}
+            \begin{durationability}{Ballad of Belligerence}[\abilitytag{Sustain} (minor)]
+                \abilitytag{Auditory}, \abilitytag{Emotion}
                 \rankline
                 Make an attack vs. Mental against all \glossterm{enemies} in a \areamed radius from you.
                 \hit For the duration of your performance, each subject is unable to take any \glossterm{standard actions} that do not cause it to make an attack.
@@ -179,8 +178,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
             \end{durationability}
 
-            \begin{durationability}{Boastful Bravura}
-                \spelltwocol{Duration}{\abilitytag{Auditory}}
+            \begin{durationability}{Boastful Bravura}[Duration]
+                \abilitytag{Auditory}
                 \rankline
                 This ability affects all \glossterm{enemies} within a \arealarge radius from you.
                 During the next round, you gain a \plus4 bonus to \glossterm{accuracy} with \textit{bardic performance} abilities against each subject.
@@ -191,8 +190,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} The bonus increases to \plus10.
             \end{durationability}
 
-            \begin{instantability}{Cacaphony}
-                \spelltwocol{Instant}{\abilitytag{Auditory}}
+            \begin{instantability}{Cacaphony}[Instant]
+                \abilitytag{Auditory}
                 \rankline
                 Make an attack vs. Fortitude against all \glossterm{enemies} in a \tinyarea radius from you.
                 \hit Each subject takes 1d6 \add half \glossterm{power} sonic damage.
@@ -208,8 +207,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} The damage increases to 4d6, and the area increases to a \hugearea radius.
             \end{instantability}
 
-            \begin{durationability}{Cadenza of Courage}
-                \spelltwocol{Sustain (minor)}{\abilitytag{Auditory}, \abilitytag{Emotion}}
+            \begin{durationability}{Cadenza of Courage}[Sustain (minor)]
+                \abilitytag{Auditory}, \abilitytag{Emotion}
                 \par \noindent Usage time: One \glossterm{minor action}.
                 \rankline
                 Choose yourself or one \glossterm{ally} within \medrange.
@@ -221,8 +220,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} The bonus to Mental defense increases to \plus4.
             \end{durationability}
 
-            \begin{durationability}{Cantata of Caution}
-                \spelltwocol{Sustain (minor)}{\abilitytag{Auditory}, \abilitytag{Emotion}}
+            \begin{durationability}{Cantata of Caution}[Sustain (minor)]
+                \abilitytag{Auditory}, \abilitytag{Emotion}
                 \par \noindent Usage time: One \glossterm{minor action}.
                 \rankline
                 Choose yourself or one \glossterm{ally} within \medrange.
@@ -234,8 +233,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} The bonus to Fortitude and Mental defenses also increases to \plus2.
             \end{durationability}
 
-            \begin{durationability}{Cleansing Counterpoint}
-                \spelltwocol{Sustain (minor)}{\abilitytag{Auditory}}
+            \begin{durationability}{Cleansing Counterpoint}[Sustain (minor)]
+                \abilitytag{Auditory}
                 \rankline
                 Choose yourself or one \glossterm{ally} within \rngmed range.
                 The subject chooses one of its \glossterm{conditions}.
@@ -249,8 +248,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} Each subject can remove two conditions instead of one.
             \end{durationability}
 
-            \begin{durationability}{Dazzling Discordance}
-                \spelltwocol{Duration}{\abilitytag{Auditory}}
+            \begin{durationability}{Dazzling Discordance}[Duration]
+                \abilitytag{Auditory}
                 \rankline
                 Make an attack vs. Mental against all \glossterm{enemies} within a \areamed radius from you.
                 \hit Each subject is \dazzled until the end of the next round.
@@ -265,8 +264,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} The accuracy bonus increases to \plus6.
             \end{durationability}
 
-            \begin{instantability}{Dirge of Doom}
-                \spelltwocol{Instant}{\abilitytag{Auditory}}
+            \begin{instantability}{Dirge of Doom}[Instant]
+                \abilitytag{Auditory}
                 \rankline
                 Make an attack vs. Mental against anything within \medrange.
                 \hit The subject takes sonic damage equal to 1d10 plus your \glossterm{power}.
@@ -282,8 +281,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} The damage increases to 7d10.
             \end{instantability}
 
-            \begin{durationability}{Dizzying Ditty}
-                \spelltwocol{\abilitytag{Sustain} (minor)}{\abilitytag{Auditory}, \abilitytag{Compulsion}}
+            \begin{durationability}{Dizzying Ditty}[\abilitytag{Sustain} (minor)]
+                \abilitytag{Auditory}, \abilitytag{Compulsion}
                 \rankline
                 Make an attack vs. Mental against one creature within \shortrange.
                 \hit For the duration of your performance, the subject is \dazed.
@@ -293,8 +292,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
             \end{durationability}
 
-            \begin{durationability}{Frightening Fugue}
-                \spelltwocol{\abilitytag{Sustain} (minor)}{\abilitytag{Auditory}, \abilitytag{Emotion}}
+            \begin{durationability}{Frightening Fugue}[\abilitytag{Sustain} (minor)]
+                \abilitytag{Auditory}, \abilitytag{Emotion}
                 \rankline
                 Make an attack vs. Mental against one creature within \medrange.
                 \hit The subject takes 1d6 sonic damage.
@@ -312,8 +311,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} The damage increases to 5d10.
             \end{durationability}
 
-            \begin{durationability}{Hypnotic Hymn}
-                \spelltwocol{\abilitytag{Sustain} (minor)}{\abilitytag{Auditory}, \abilitytag{Emotion}}
+            \begin{durationability}{Hypnotic Hymn}[\abilitytag{Sustain} (minor)]
+                \abilitytag{Auditory}, \abilitytag{Emotion}
                 \rankline
                 Make an attack vs. Mental against one creature within \medrange.
                 You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who are engaged in combat during the current phase.
@@ -327,8 +326,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
             \end{durationability}
 
-            \begin{durationability}{Inspiring Intonation}
-                \spelltwocol{\abilitytag{Sustain} (minor)}{\abilitytag{Auditory}, \abilitytag{Emotion}}
+            \begin{durationability}{Inspiring Intonation}[\abilitytag{Sustain} (minor)]
+                \abilitytag{Auditory}, \abilitytag{Emotion}
                 \par \noindent Usage time: One \glossterm{minor action}.
                 \rankline
                 Choose yourself or one \glossterm{ally} within \rngmed range.
@@ -340,8 +339,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} The bonus increases to \plus5.
             \end{durationability}
 
-            \begin{durationability}{Mesmerizing Melody}
-                \spelltwocol{\abilitytag{Sustain} (minor)}{\abilitytag{Auditory}, \abilitytag{Emotion}}
+            \begin{durationability}{Mesmerizing Melody}[\abilitytag{Sustain} (minor)]
+                \abilitytag{Auditory}, \abilitytag{Emotion}
                 \rankline
                 Make an attack vs. Mental against all creatures in a \largearea radius from you.
                 You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who are engaged in combat during the current phase.
@@ -354,8 +353,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
             \end{durationability}
 
-            \begin{instantability}{Palliative Poem}
-                \spelltwocol{\abilitytag{Sustain} (minor)}{\abilitytag{Auditory}, \abilitytag{Healing}}
+            \begin{instantability}{Palliative Poem}[\abilitytag{Sustain} (minor)]
+                \abilitytag{Auditory}, \abilitytag{Healing}
                 \rankline
                 Choose one living \glossterm{ally} within \shortrange.
                 The subject regains 1d10 \add \glossterm{power} \glossterm{hit points}.
@@ -370,8 +369,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} The healing increases to 7d10.
             \end{instantability}
 
-            \begin{durationability}{Partita of Provocation}
-                \spelltwocol{\abilitytag{Sustain} (minor)}{\abilitytag{Auditory}, \abilitytag{Emotion}}
+            \begin{durationability}{Partita of Provocation}[\abilitytag{Sustain} (minor)]
+                \abilitytag{Auditory}, \abilitytag{Emotion}
                 \rankline
                 Make an attack vs. Mental against all \glossterm{enemies} within a \largearea radius from you.
                 \hit For the duration of your performance, each subject takes a \minus2 penalty to \glossterm{accuracy} against creatures other than you.
@@ -381,8 +380,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
             \end{durationability}
 
-            \begin{durationability}{Serenade of Serenity}
-                \spelltwocol{\abilitytag{Sustain} (minor)}{\abilitytag{Auditory}, \abilitytag{Emotion}}
+            \begin{durationability}{Serenade of Serenity}[\abilitytag{Sustain} (minor)]
+                \abilitytag{Auditory}, \abilitytag{Emotion}
                 \par \noindent Usage time: One \glossterm{minor action}.
                 \rankline
                 For the duration of your performance, you and all \glossterm{allies} within a \largearea radius from you gain a \plus4 bonus to defenses against hostile \abilitytag{Compulsion} and \abilitytag{Emotion} effects.
@@ -393,8 +392,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} Each subject is immune to hostile Compulsion and Emotion effects.
             \end{durationability}
 
-            \begin{durationability}{Sickening Staccato}
-                \spelltwocol{Duration}{\abilitytag{Auditory}}
+            \begin{durationability}{Sickening Staccato}[Duration]
+                \abilitytag{Auditory}
                 \rankline
                 Make an attack vs. Fortitude against all \glossterm{enemies} within a \areamed radius from you.
                 \hit Each subject is \sickened until the end of the next round.
@@ -409,8 +408,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} The accuracy bonus increases to \plus6.
             \end{durationability}
 
-            \begin{durationability}{Vigorous Verse}
-                \spelltwocol{Duration}{\abilitytag{Auditory}}
+            \begin{durationability}{Vigorous Verse}[Duration]
+                \abilitytag{Auditory}
                 \par \noindent Usage time: One \glossterm{minor action}.
                 \rankline
                 Choose yourself or one \glossterm{ally} within \rngmed range.
@@ -704,8 +703,8 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
          You can use the \textit{confound} ability as a standard action.
-        \begin{durationability}{Confound}
-            \spelltwocol{Duration}{\abilitytag{Compulsion}}
+        \begin{durationability}{Confound}[Duration]
+            \abilitytag{Compulsion}
             \rankline
             Make a attack vs. Mental against a creature within \shortrange.
             Your \glossterm{accuracy} is equal to your Deception skill.
@@ -743,8 +742,8 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
          You can use the \textit{what's that over there} ability as a standard action.
-        \begin{durationability}{What's That Over There}
-            \spelltwocol{Duration}{\abilitytag{Compulsion}}
+        \begin{durationability}{What's That Over There}[Duration]
+            \abilitytag{Compulsion}
             \rankline
             Make a attack vs. Mental against a creature within \medrange.
             Your \glossterm{accuracy} is equal to your Deception skill.
@@ -782,8 +781,8 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             description: r"
 
          You can use the \textit{nothing is real} ability as a standard action.
-        \begin{freeability}{Nothing Is Real}
-            \spelltwocol{Duration}{\abilitytag{Compulsion}}
+        \begin{freeability}{Nothing Is Real}[Duration]
+            \abilitytag{Compulsion}
             \rankline
             Make an attack vs. Mental against a creature within \shortrange.
             Your \glossterm{accuracy} is equal to your Deception skill.

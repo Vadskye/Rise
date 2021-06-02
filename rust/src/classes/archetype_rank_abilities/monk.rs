@@ -242,8 +242,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
         After you use a \textit{ki manifestation}, you cannot use a \textit{ki manifestation} until after the end of the next round.
         {
-            \begin{durationability}{Abandon the Fragile Self}
-                \spelltwocol{Duration}{\abilitytag{Swift}}
+            \begin{durationability}{Abandon the Fragile Self}[Duration]
+                \abilitytag{Swift}
                 \rankline
                 You can use this ability as a \glossterm{free action}.
                 You can negate one \glossterm{condition} that would be applied to you this phase.
@@ -255,8 +255,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} The defense penalty is removed.
             \end{durationability}
 
-            \begin{durationability}{Burst of Blinding Speed}
-                \spelltwocol{Duration}{\abilitytag{Swift}}
+            \begin{durationability}{Burst of Blinding Speed}[Duration]
+                \abilitytag{Swift}
                 \rankline
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus10 foot bonus to your land speed this phase.
@@ -267,8 +267,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} You can also move or stand on liquids as if they were solid this phase.
             \end{durationability}
 
-            \begin{durationability}{Elegant Whirl of Fluid Motion}
-                \spelltwocol{Duration}{\abilitytag{Swift}}
+            \begin{durationability}{Elegant Whirl of Fluid Motion}[Duration]
+                \abilitytag{Swift}
                 \rankline
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus4 bonus to the Agility skill this round (see \pcref{Agility}).
@@ -279,8 +279,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} The bonus increases to \plus12.
             \end{durationability}
 
-            \begin{durationability}{Extend the Flow of Ki}
-                \spelltwocol{Duration}{\abilitytag{Swift}}
+            \begin{durationability}{Extend the Flow of Ki}[Duration]
+                \abilitytag{Swift}
                 \rankline
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus5 foot \glossterm{magic bonus} to \glossterm{reach} this phase.
@@ -291,8 +291,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} 
             \end{durationability}
 
-            \begin{instantability}{Flash Step}
-                Instant
+            \begin{instantability}{Flash Step}[Instant]
                 \rankline
                 You can use this ability as part of movement with your land speed.
                 % TODO: is 'horizontally' the correct word?
@@ -309,8 +308,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 If your intended destination is invalid, the distance you spent teleporting is wasted, but you suffer no other ill effects.
             \end{instantability}
 
-            \begin{durationability}{Leap of the Heavens}
-                \spelltwocol{Duration}{\abilitytag{Swift}}
+            \begin{durationability}{Leap of the Heavens}[Duration]
+                \abilitytag{Swift}
                 \rankline
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus4 bonus to the Jump skill this round (see \pcref{Jump}).
@@ -321,8 +320,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} The bonus increases to \plus12.
             \end{durationability}
 
-            \begin{durationability}{Scale the Highest Tower}
-                \spelltwocol{Duration}{\abilitytag{Swift}}
+            \begin{durationability}{Scale the Highest Tower}[Duration]
+                \abilitytag{Swift}
                 \rankline
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus4 bonus to the Climb skill this round (see \pcref{Climb}).
@@ -334,8 +333,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} The bonus increases to \plus12.
             \end{durationability}
 
-            \begin{durationability}{Sense the Mystic Truth}
-                \spelltwocol{Duration}{\abilitytag{Swift}}
+            \begin{durationability}{Sense the Mystic Truth}[Duration]
+                \abilitytag{Swift}
                 \rankline
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus4 bonus to the Spellsense skill this round (see \pcref{Spellsense}).
@@ -346,8 +345,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} The bonus increases to \plus12.
             \end{durationability}
 
-            \begin{durationability}{Step Between the Mystic Worlds}
-                \spelltwocol{Duration}{\abilitytag{Swift}}
+            \begin{durationability}{Step Between the Mystic Worlds}[Duration]
+                \abilitytag{Swift}
                 \rankline
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus2 bonus to \glossterm{defenses} against \glossterm{magical} abilities this phase.
@@ -521,8 +520,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
          You can use the \textit{clear the mind} ability as a standard action.
-        \begin{instantability}{Clear the Mind}
-            Instant
+        \begin{instantability}{Clear the Mind}[Instant]
             \rankline
             Remove up to two \glossterm{conditions} affecting you.
             This cannot remove a condition applied during the current round.

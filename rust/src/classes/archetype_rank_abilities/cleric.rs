@@ -320,8 +320,8 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
          You can use the \textit{restoration} ability as a standard action.
-        \begin{instantability}{Restoration}
-            \spelltwocol{Instant}{\abilitytag{Healing}, \glossterm{Magical}}
+        \begin{instantability}{Restoration}[Instant]
+            \abilitytag{Healing}, \glossterm{Magical}
             \rankline
             Choose yourself or one living \glossterm{ally} within your \glossterm{reach}.
             % +1d in exchange for not applying power to self
@@ -354,8 +354,8 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
          You can use the \textit{divine healing} ability as a standard action.
-        \begin{instantability}{Divine Healing}
-            \spelltwocol{Instant}{\glossterm{Magical}}
+        \begin{instantability}{Divine Healing}[Instant]
+            \glossterm{Magical}
             \rankline
             When you use this ability, you increase your \glossterm{fatigue level} by two (see \pcref{Fatigue}).
 
@@ -390,8 +390,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
          You can use the \textit{revivify} ability as a standard action.
-        \begin{instantability}{Revivify}
-            Instant
+        \begin{instantability}{Revivify}[Instant]
             \rankline
             When you use this ability, you increase your \glossterm{fatigue level} by three (see \pcref{Fatigue}).
 
@@ -428,7 +427,8 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
          You can use the \textit{denounce the heathens} ability as a standard action.
-        \begin{instantability}{Denounce the Heathens}
+        \begin{instantability}{Denounce the Heathens}[Duration]
+            \rankline
             Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
             Your \glossterm{accuracy} is equal to your Persuasion skill.
             \hit Each subject is \dazed until the end of the next round.
@@ -455,7 +455,8 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
          You can use the \textit{bless the worthy} ability as a standard action.
-        \begin{instantability}{Bless the Worthy}
+        \begin{instantability}{Bless the Worthy}[Duration]
+            \rankline
             You and all \glossterm{allies} within a \hugearea radius from you can remove a \glossterm{condition}.
             This ability cannot remove a condition gained during the current round.
             In addition, one of your allies gains a \plus2 bonus to \glossterm{accuracy} until the end of the next round.
@@ -481,7 +482,8 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             rank: 5,
             description: r"
          You can use the \textit{condemn the fearful} ability as a standard action.
-        \begin{instantability}{Condemn the Fearful}
+        \begin{instantability}{Condemn the Fearful}[Duration]
+            \rankline
             Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
             Your \glossterm{accuracy} is equal to your Persuasion skill.
             \hit Each subject is \frightened by you until the end of the next round.
@@ -504,7 +506,8 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 You can use the \textit{convert the irresolute} ability as a standard action.
-                \begin{instantability}{Convert the Irresolute}
+                \begin{instantability}{Convert the Irresolute}[Duration]
+                    \rankline
                     Make an attack vs. Mental against one creature within \rngmed range.
                     Your \glossterm{accuracy} is equal to your Persuasion skill.
                     \hit The subject is \glossterm{stunned} until it finishes a \glossterm{long rest}.
