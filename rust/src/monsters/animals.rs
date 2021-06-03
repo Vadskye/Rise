@@ -1,15 +1,19 @@
-use crate::core_mechanics::movement_modes::{MovementMode, SpeedCategory};
+use crate::core_mechanics::movement_modes::{FlightManeuverability, MovementMode, SpeedCategory};
+use crate::core_mechanics::{attack_effects, attacks, debuffs};
 use crate::equipment::weapons;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Animal;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::sizes::Size;
-use crate::core_mechanics::{attacks, defenses};
-use crate::monsters::{monster_group, FullMonsterDefinition, Monster};
+use crate::monsters::{monster_group, FullMonsterDefinition, MinimalMonsterDefinition, Monster};
 
 pub fn animals() -> Vec<MonsterEntry> {
     let mut monsters: Vec<MonsterEntry> = vec![];
 
+    let mut half_power_bite = attacks::Attack::from_weapon(weapons::Weapon::MonsterBite);
+    if let Some(e) = half_power_bite.damage_effect_mut() {
+        e.power_multiplier = 0.5;
+    }
     monsters.push(MonsterEntry::Monster(Monster::fully_defined(
         FullMonsterDefinition {
             alignment: "Always true neutral",
@@ -25,18 +29,7 @@ pub fn animals() -> Vec<MonsterEntry> {
             name: "Camel",
             size: Size::Medium,
             // Camels have a high strength, but they shouldn't deal massive damage
-            special_attacks: Some(vec![
-                attacks::Attack::new_strike(attacks::StrikeAttackDefinition {
-                    accuracy_modifier: 0,
-                    damage_dice_increments: -1,
-                    damage_modifier: 0,
-                    defense: defenses::ARMOR,
-                    is_magical: false,
-                    power_multiplier: 0.5,
-                    name: String::from("Bite"),
-                    weapon: weapons::Weapon::MonsterBite,
-                }),
-            ]),
+            special_attacks: Some(vec![half_power_bite]),
             weapons: vec![weapons::Weapon::MonsterBite],
         },
     )));
@@ -208,6 +201,62 @@ pub fn animals() -> Vec<MonsterEntry> {
             ],
         ),
     ));
+
+    let mut frostweb_spider_bite = attacks::Attack::from_weapon(weapons::Weapon::MonsterBite);
+    if let Some(e) = frostweb_spider_bite.damage_effect_mut() {
+        e.lose_hp_effects = Some(vec![attack_effects::AttackEffect::Debuff(
+            attack_effects::DebuffEffect {
+                debuffs: vec![debuffs::Debuff::Sickened],
+                duration: attack_effects::AttackEffectDuration::Condition,
+            },
+        )]);
+    }
+    monsters.push(MonsterEntry::Monster(Monster::minimally_defined(
+        MinimalMonsterDefinition {
+            attributes: vec![3, 3, 1, 1, 2, 2],
+            challenge_rating: ChallengeRating::Four,
+            creature_type: Animal,
+            level: 12,
+            name: "Frostweb Spider",
+            size: Size::Large,
+            special_attacks: Some(vec![frostweb_spider_bite]),
+            weapons: vec![weapons::Weapon::MonsterBite],
+        },
+    )));
+
+    let mut poisonous_stinger = attacks::Attack::from_weapon(weapons::Weapon::MonsterStinger);
+    if let Some(e) = poisonous_stinger.damage_effect_mut() {
+        e.lose_hp_effects = Some(vec![attack_effects::AttackEffect::Poison(
+            attack_effects::PoisonEffect {
+                stage1: vec![debuffs::Debuff::Sickened],
+                stage3: Some(vec![debuffs::Debuff::Paralyzed]),
+            },
+        )]);
+    }
+    monsters.push(MonsterEntry::Monster(Monster::fully_defined(
+        FullMonsterDefinition {
+            alignment: "Always true neutral",
+            attributes: vec![1, 4, 0, -8, 2, -2],
+            challenge_rating: ChallengeRating::Two,
+            creature_type: Animal,
+            description: None,
+            knowledge: vec![
+                (0, "
+                    A giant wasp is a Large insect resembling a normal wasp.
+                    Giant wasps attack when hungry or threatened, stinging their prey to death.
+                "),
+                (5, "
+                    Giant wasps take dead or incapacitated opponents back to their lairs as food for their unhatched young.
+                "),
+            ],
+            level: 6,
+            movement_modes: Some(vec![MovementMode::Fly(&SpeedCategory::Fast, FlightManeuverability::Normal)]),
+            name: "Giant Wasp",
+            size: Size::Large,
+            special_attacks: Some(vec![poisonous_stinger]),
+            weapons: vec![weapons::Weapon::MonsterStinger],
+        },
+    )));
 
     return monsters;
 }

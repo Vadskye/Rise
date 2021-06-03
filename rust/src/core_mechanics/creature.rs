@@ -165,8 +165,8 @@ impl HasAttacks for Creature {
             .into_iter()
             .filter(|weapon| {
                 let same_weapon_attack = all_attacks.iter().any(|attack| {
-                    if let attacks::Attack::StrikeAttack(s) = attack {
-                        return s.weapon.name() == weapon.name();
+                    if let Some(w) = attack.weapon {
+                        return w.name() == weapon.name();
                     } else {
                         return false;
                     }

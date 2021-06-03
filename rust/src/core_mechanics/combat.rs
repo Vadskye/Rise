@@ -67,11 +67,14 @@ fn calc_individual_dpr<T: HasCreatureMechanics>(attacker: &T, defender: &T) -> f
     let mut best_damage_per_round = 0.0;
     for attack in attacks {
         let hit_probability = calculate_hit_probability(&attack, attacker, defender);
-        let average_damage_per_round = hit_probability
-            * (attack.calc_damage_dice(attacker).average_damage() +
-                (attack.calc_damage_modifier(attacker) as f64));
-        if average_damage_per_round > best_damage_per_round {
-            best_damage_per_round = average_damage_per_round;
+        if let Some(damage_effect) = attack.damage_effect() {
+            let damage_dice = attack.calc_damage_dice(attacker).unwrap();
+            let damage_modifier = attack.calc_damage_modifier(attacker).unwrap();
+            let average_damage_per_round = hit_probability
+                * (damage_dice.average_damage() + damage_modifier as f64);
+            if average_damage_per_round > best_damage_per_round {
+                best_damage_per_round = average_damage_per_round;
+            }
         }
     }
 
@@ -90,9 +93,9 @@ fn calculate_hit_probability<T: HasCreatureMechanics>(
     let mut crit_count = 0.0;
     let mut explosion_count = 0.0;
     loop {
-        let hit_probability: f64 = ((attack.calc_accuracy(attacker) as f64) + 11.0 - crit_count * 10.0
+        let hit_probability: f64 = ((attack.accuracy + attacker.calc_accuracy()) as f64 + 11.0 - crit_count * 10.0
             + explosion_count * 10.0
-            - (defender.calc_defense(attack.defense()) as f64))
+            - (defender.calc_defense(attack.defense) as f64))
             / 10.0;
         let hit_probability = if hit_probability > 1.0 {
             1.0
