@@ -1,4 +1,5 @@
 use regex::Regex;
+use std::fmt::Display;
 
 pub fn latexify(text: String) -> String {
     let text = text
@@ -18,6 +19,11 @@ pub fn latexify(text: String) -> String {
     let text = minus.replace_all(text.as_ref(), r"\minus$1");
 
     return text.to_string();
+}
+
+pub fn join_formattable_list<T: Display>(strings: &Vec<T>) -> Option<String> {
+    let strings: Vec<String> = strings.iter().map(|c| format!("{}", c)).collect();
+    return join_string_list(&strings);
 }
 
 pub fn join_string_list(strings: &Vec<String>) -> Option<String> {

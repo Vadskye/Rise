@@ -1,4 +1,4 @@
-use crate::core_mechanics::{damage_dice, debuffs, HasCreatureMechanics};
+use crate::core_mechanics::{damage_dice, damage_types, debuffs, HasCreatureMechanics};
 use crate::equipment::weapons;
 use crate::latex_formatting;
 
@@ -12,6 +12,7 @@ pub enum AttackEffect {
 #[derive(Clone)]
 pub struct DamageEffect {
     pub damage_dice: damage_dice::DamageDice,
+    pub damage_types: Vec<damage_types::DamageType>,
     pub damage_modifier: i8,
     pub lose_hp_effects: Option<Vec<AttackEffect>>,
     pub power_multiplier: f64,
@@ -42,6 +43,7 @@ impl AttackEffect {
         return Self::Damage(DamageEffect {
             damage_dice: weapon.damage_dice(),
             damage_modifier: 0,
+            damage_types: weapon.damage_types(),
             lose_hp_effects: None,
             power_multiplier: 1.0,
             take_damage_effects: None,
@@ -86,7 +88,7 @@ impl AttackEffect {
                 // TODO: damage types
                 return format!(
                     "
-                        {damage_dice}{damage_modifier} damage. {take_damage_effect} {lose_hp_effect}
+                        {damage_dice}{damage_modifier} {damage_types} damage. {take_damage_effect} {lose_hp_effect}
                     ",
                     damage_dice = effect
                         .damage_dice
@@ -97,6 +99,7 @@ impl AttackEffect {
                             + (creature.calc_power(is_magical) as f64 * effect.power_multiplier)
                                 as i8,
                     ),
+                    damage_types = latex_formatting::join_formattable_list(&effect.damage_types).unwrap_or(String::from("")),
                     take_damage_effect = take_damage_effect.trim(),
                     lose_hp_effect = lose_hp_effect.trim(),
                 );
