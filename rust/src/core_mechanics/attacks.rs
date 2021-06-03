@@ -1,34 +1,17 @@
-use crate::core_mechanics::{damage_dice, defenses, HasCreatureMechanics};
+use crate::core_mechanics::{attack_effects, damage_dice, defenses, HasCreatureMechanics};
 use crate::equipment::weapons;
 use crate::latex_formatting;
 
 #[derive(Clone)]
-pub struct StrikeAttackDefinition {
-    pub accuracy_modifier: i8,
-    pub damage_dice_increments: i8,
-    pub damage_modifier: i8,
+pub struct Attack {
+    pub accuracy: i8,
+    pub crit: Option<Vec<attack_effects::AttackEffect>>,
     pub defense: &'static defenses::Defense,
+    pub glance: Option<Vec<attack_effects::AttackEffect>>,
+    pub hit: Vec<attack_effects::AttackEffect>,
     pub is_magical: bool,
     pub name: String,
-    pub power_multiplier: f64,
-    pub weapon: weapons::Weapon,
-}
-
-#[derive(Clone)]
-pub struct StandaloneAttackDefinition {
-    pub accuracy_modifier: i8,
-    pub damage_dice: damage_dice::DamageDice,
-    pub damage_modifier: i8,
-    pub defense: &'static defenses::Defense,
-    pub is_magical: bool,
-    pub name: String,
-    pub power_multiplier: f64,
-}
-
-#[derive(Clone)]
-pub enum Attack {
-    StrikeAttack(StrikeAttackDefinition),
-    StandaloneAttack(StandaloneAttackDefinition),
+    pub weapon: Option<weapons::Weapon>,
 }
 
 pub trait HasAttacks {
@@ -41,99 +24,91 @@ pub trait HasAttacks {
 }
 
 impl Attack {
-    pub fn calc_strikes(weapons: Vec<&weapons::Weapon>) -> Vec<Attack> {
-        // TODO: combine maneuvers with weapons and handle non-weapon attacks
-        return weapons
-            .iter()
-            .map(|w| {
-                Attack::StrikeAttack(StrikeAttackDefinition {
-                    accuracy_modifier: 0,
-                    damage_dice_increments: 0,
-                    damage_modifier: 0,
-                    defense: defenses::ARMOR,
-                    is_magical: false,
-                    power_multiplier: 1.0,
-                    name: w.name().to_string(),
-                    weapon: *w.clone(),
-                })
-            })
-            .collect();
+    pub fn from_weapon(weapon: weapons::Weapon) -> Attack {
+        return Attack {
+            accuracy: weapon.accuracy(),
+            crit: None,
+            defense: defenses::ARMOR,
+            glance: None,
+            hit: vec![attack_effects::AttackEffect::from_weapon(weapon)],
+            name: weapon.name().to_string(),
+            is_magical: false,
+            weapon: Some(weapon),
+        };
     }
 
-    pub fn new_strike(def: StrikeAttackDefinition) -> Self {
-        return Attack::StrikeAttack(def);
-    }
-
-    pub fn latex_shorthand<T: HasCreatureMechanics>(&self, creature: &T) -> String {
-        return format!(
-            "{name} {accuracy} ({damage_dice}{damage_modifier})",
-            name = latex_formatting::uppercase_first_letter(self.name()),
-            accuracy = latex_formatting::modifier(self.calc_accuracy(creature)),
-            damage_dice = self.calc_damage_dice(creature).to_string(),
-            damage_modifier = latex_formatting::modifier(self.calc_damage_modifier(creature))
-        );
-    }
-
-    pub fn name(&self) -> &str {
-        match self {
-            Attack::StrikeAttack(d) => d.name.as_str(),
-            Attack::StandaloneAttack(d) => d.name.as_str(),
-        }
-    }
-
-    pub fn defense(&self) -> &'static defenses::Defense {
-        match self {
-            Attack::StrikeAttack(d) => d.defense,
-            Attack::StandaloneAttack(d) => d.defense,
-        }
-    }
-}
-
-// Calculation functions
-impl Attack {
-    pub fn calc_accuracy<T: HasCreatureMechanics>(&self, creature: &T) -> i8 {
-        match self {
-            Attack::StrikeAttack(d) => {
-                d.accuracy_modifier + d.weapon.accuracy() + creature.calc_accuracy()
+    // Implicit assumption: an attack can only have one damage effect.
+    pub fn damage_effect_mut(&mut self) -> Option<&mut attack_effects::DamageEffect> {
+        for hit_effect in self.hit.iter_mut().collect::<Vec<&mut attack_effects::AttackEffect>>() {
+            if let attack_effects::AttackEffect::Damage(ref mut e) = hit_effect {
+                return Some(e);
             }
-            Attack::StandaloneAttack(d) => d.accuracy_modifier + creature.calc_accuracy(),
         }
+        return None;
+    }
+
+    pub fn damage_effect(&self) -> Option<&attack_effects::DamageEffect> {
+        for hit_effect in self.hit.iter().collect::<Vec<&attack_effects::AttackEffect>>() {
+            if let attack_effects::AttackEffect::Damage(ref e) = hit_effect {
+                return Some(e);
+            }
+        }
+        return None;
     }
 
     pub fn calc_damage_dice<T: HasCreatureMechanics>(
         &self,
         creature: &T,
-    ) -> damage_dice::DamageDice {
-        match self {
-            Attack::StrikeAttack(d) => d
-                .weapon
-                .damage_dice()
-                .add(d.damage_dice_increments + creature.calc_damage_increments(true)),
-            Attack::StandaloneAttack(d) => {
-                d.damage_dice.add(creature.calc_damage_increments(false))
-            }
+    ) -> Option<damage_dice::DamageDice> {
+        if let Some(damage_effect) = self.damage_effect() {
+            return Some(
+                damage_effect
+                    .damage_dice
+                    .add(creature.calc_damage_increments(self.weapon.is_some())),
+            );
         }
+        return None;
     }
 
-    pub fn calc_damage_modifier<T: HasCreatureMechanics>(&self, creature: &T) -> i8 {
-        match self {
-            Attack::StrikeAttack(d) => {
-                d.damage_modifier + (creature.calc_power(d.is_magical) as f64 * d.power_multiplier) as i8
-            }
-            Attack::StandaloneAttack(d) => {
-                d.damage_modifier + (creature.calc_power(d.is_magical) as f64 * d.power_multiplier) as i8
-            }
+    pub fn calc_damage_modifier<T: HasCreatureMechanics>(&self, creature: &T) -> Option<i8> {
+        if let Some(damage_effect) = self.damage_effect() {
+            return Some(
+                damage_effect.damage_modifier
+                    + (damage_effect.power_multiplier * creature.calc_power(self.is_magical) as f64)
+                        as i8,
+            );
         }
+        return None;
+    }
+
+    pub fn calc_strikes(weapons: Vec<&weapons::Weapon>) -> Vec<Attack> {
+        // TODO: combine maneuvers with weapons and handle non-weapon attacks
+        return weapons.iter().map(|w| Self::from_weapon(**w)).collect();
+    }
+
+    pub fn shorthand_description<T: HasCreatureMechanics>(&self, creature: &T) -> String {
+        return format!(
+            "{name} {accuracy} ({hit})",
+            name = latex_formatting::uppercase_first_letter(&self.name),
+            accuracy = latex_formatting::modifier(self.accuracy + creature.calc_accuracy()),
+            hit = self
+                .hit
+                .iter()
+                .map(|h| h
+                    .description(creature, self.is_magical, self.weapon.is_some())
+                    .trim()
+                    .to_string())
+                .collect::<Vec<String>>()
+                .join("; "),
+        );
     }
 }
 
 // LaTeX generation functions
 impl Attack {
     pub fn latex_ability_block<T: HasCreatureMechanics>(&self, creature: &T) -> String {
-        let ability_components: Vec<Option<String>> = vec![
-            Some(self.latex_tags()),
-            Some(self.latex_effect(creature)),
-        ];
+        let ability_components: Vec<Option<String>> =
+            vec![Some(self.latex_tags()), Some(self.latex_effect(creature))];
         let ability_components = ability_components
             .iter()
             .filter(|c| c.is_some())
@@ -148,7 +123,7 @@ impl Attack {
             ability_environment = "freeability", // TODO
             ability_components = ability_components.join("\n\\rankline "),
             ability_type = "Instant", // TODO
-            name = latex_formatting::uppercase_first_letter(self.name()),
+            name = latex_formatting::uppercase_first_letter(&self.name),
         );
     }
 
@@ -162,15 +137,19 @@ impl Attack {
     fn latex_effect<T: HasCreatureMechanics>(&self, creature: &T) -> String {
         return format!(
             "
-                The $name makes a strike with a {accuracy} accuracy bonus.
-                \\hit {damage} damage.
+                The $name makes an attack vs. Armor with a {accuracy} accuracy bonus.
+                \\hit {hit}
             ",
-            accuracy = latex_formatting::modifier(self.calc_accuracy(creature)),
-            damage = format!(
-                "{}{}",
-                self.calc_damage_dice(creature).to_string(),
-                latex_formatting::modifier(self.calc_damage_modifier(creature))
-            ),
+            accuracy = latex_formatting::modifier(self.accuracy + creature.calc_accuracy()),
+            hit = self
+                .hit
+                .iter()
+                .map(|h| h
+                    .description(creature, self.is_magical, self.weapon.is_some())
+                    .trim()
+                    .to_string())
+                .collect::<Vec<String>>()
+                .join("; "),
         );
     }
 }

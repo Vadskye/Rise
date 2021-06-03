@@ -40,6 +40,17 @@ pub struct FullMonsterDefinition {
     weapons: Vec<weapons::Weapon>,
 }
 
+pub struct MinimalMonsterDefinition {
+    attributes: Vec<i8>,
+    challenge_rating: challenge_rating::ChallengeRating,
+    creature_type: creature_type::CreatureType,
+    level: i8,
+    name: &'static str,
+    size: sizes::Size,
+    special_attacks: Option<Vec<attacks::Attack>>,
+    weapons: Vec<weapons::Weapon>,
+}
+
 impl Monster {
     pub fn new(
         challenge_rating: challenge_rating::ChallengeRating,
@@ -55,6 +66,25 @@ impl Monster {
             knowledge: None,
             movement_modes: vec![],
         };
+    }
+
+    pub fn minimally_defined(def: MinimalMonsterDefinition) -> Monster {
+        return Self::fully_defined(FullMonsterDefinition {
+            // From def
+            attributes: def.attributes,
+            challenge_rating: def.challenge_rating,
+            creature_type: def.creature_type,
+            level: def.level,
+            name: def.name,
+            size: def.size,
+            special_attacks: def.special_attacks,
+            weapons: def.weapons,
+            // Default values
+            alignment: "Usually true neutral",
+            description: None,
+            knowledge: vec![],
+            movement_modes: None,
+        });
     }
 
     pub fn fully_defined(def: FullMonsterDefinition) -> Monster {
@@ -403,7 +433,7 @@ impl Monster {
 
     fn latex_abilities(&self) -> String {
         let mut attacks = self.calc_all_attacks();
-        attacks.sort_by(|a, b| a.name().to_lowercase().cmp(&b.name().to_lowercase()));
+        attacks.sort_by(|a, b| a.name.to_lowercase().cmp(&b.name.to_lowercase()));
         return attacks
                 .iter()
                 .map(|a| a.latex_ability_block(self))

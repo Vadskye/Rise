@@ -1,4 +1,6 @@
 pub mod attacks;
+pub mod attack_effects;
+pub mod debuffs;
 pub mod attributes;
 pub mod character;
 pub mod combat;
