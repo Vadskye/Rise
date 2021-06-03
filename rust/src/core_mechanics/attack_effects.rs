@@ -39,6 +39,17 @@ pub enum AttackEffectDuration {
 }
 
 impl AttackEffect {
+    pub fn area_damage(rank: i8, damage_types: Vec<damage_types::DamageType>) -> Self {
+        return Self::Damage(DamageEffect {
+            damage_dice: damage_dice::DamageDice::new(damage_dice::D8 + rank - 1),
+            damage_modifier: 0,
+            damage_types,
+            lose_hp_effects: None,
+            power_multiplier: 0.5,
+            take_damage_effects: None,
+        });
+    }
+
     pub fn from_weapon(weapon: weapons::Weapon) -> Self {
         return Self::Damage(DamageEffect {
             damage_dice: weapon.damage_dice(),

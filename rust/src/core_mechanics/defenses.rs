@@ -1,4 +1,5 @@
 use crate::core_mechanics::attributes;
+use std::fmt;
 
 pub trait HasDefenses {
     fn calc_defense(&self, defense: &'static Defense) -> i8;
@@ -42,5 +43,11 @@ impl Defense {
             Self::Mental => &attributes::WIL,
             Self::Reflex => &attributes::DEX,
         }
+    }
+}
+
+impl fmt::Display for Defense {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{}", self.name())
     }
 }
