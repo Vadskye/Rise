@@ -1,6 +1,7 @@
 use crate::core_mechanics::{attack_effects, damage_dice, defenses, HasCreatureMechanics};
 use crate::equipment::weapons;
 use crate::latex_formatting;
+use std::fmt;
 
 #[derive(Clone)]
 pub struct Attack {
@@ -11,6 +12,7 @@ pub struct Attack {
     pub hit: Vec<attack_effects::AttackEffect>,
     pub is_magical: bool,
     pub name: String,
+    pub targeting: AttackTargeting,
     pub weapon: Option<weapons::Weapon>,
 }
 
@@ -33,13 +35,18 @@ impl Attack {
             hit: vec![attack_effects::AttackEffect::from_weapon(weapon)],
             name: weapon.name().to_string(),
             is_magical: false,
+            targeting: AttackTargeting::Strike,
             weapon: Some(weapon),
         };
     }
 
     // Implicit assumption: an attack can only have one damage effect.
     pub fn damage_effect_mut(&mut self) -> Option<&mut attack_effects::DamageEffect> {
-        for hit_effect in self.hit.iter_mut().collect::<Vec<&mut attack_effects::AttackEffect>>() {
+        for hit_effect in self
+            .hit
+            .iter_mut()
+            .collect::<Vec<&mut attack_effects::AttackEffect>>()
+        {
             if let attack_effects::AttackEffect::Damage(ref mut e) = hit_effect {
                 return Some(e);
             }
@@ -48,7 +55,11 @@ impl Attack {
     }
 
     pub fn damage_effect(&self) -> Option<&attack_effects::DamageEffect> {
-        for hit_effect in self.hit.iter().collect::<Vec<&attack_effects::AttackEffect>>() {
+        for hit_effect in self
+            .hit
+            .iter()
+            .collect::<Vec<&attack_effects::AttackEffect>>()
+        {
             if let attack_effects::AttackEffect::Damage(ref e) = hit_effect {
                 return Some(e);
             }
@@ -137,7 +148,7 @@ impl Attack {
     fn latex_effect<T: HasCreatureMechanics>(&self, creature: &T) -> String {
         return format!(
             "
-                The $name makes an attack vs. Armor with a {accuracy} accuracy bonus.
+                The $name makes a {accuracy} {targeting}.
                 \\hit {hit}
             ",
             accuracy = latex_formatting::modifier(self.accuracy + creature.calc_accuracy()),
@@ -150,6 +161,127 @@ impl Attack {
                     .to_string())
                 .collect::<Vec<String>>()
                 .join("; "),
+            targeting = self.targeting.description(self.defense),
         );
+    }
+}
+
+#[derive(Clone)]
+pub enum AttackTargeting {
+    Anything(AttackRange),
+    Cone(AreaSize, AreaTargets),
+    Radius(AreaSize, AreaTargets),
+    Strike,
+}
+
+impl AttackTargeting {
+    pub fn description(&self, defense: &'static defenses::Defense) -> String {
+        let defense = latex_formatting::uppercase_first_letter(defense.to_string().as_str());
+        match self {
+            Self::Anything(range) => format!(
+                "attack vs. {defense} against anything within {range}",
+                defense = defense,
+                range = range
+            ),
+            Self::Cone(area_size, area_targets) => format!(
+                "attack vs. {defense} against {targets} in a {size} cone",
+                defense = defense,
+                targets = area_targets,
+                size = area_size
+            ),
+            Self::Radius(area_size, area_targets) => format!(
+                "attack vs. {defense} against {targets} in a {size} radius",
+                defense = defense,
+                targets = area_targets,
+                size = area_size
+            ),
+            Self::Strike => format!(
+                "strike vs. {defense}",
+                defense = defense
+            ),
+        }
+    }
+}
+
+#[derive(Clone)]
+pub enum AttackRange {
+    Short,
+    Medium,
+    Long,
+    Distant,
+    Extreme,
+    Custom(i32),
+}
+
+impl AttackRange {
+    fn latex_tag(&self) -> String {
+        match self {
+            Self::Short => "\\shortrange".to_string(),
+            Self::Medium => "\\medrange".to_string(),
+            Self::Long => "\\longrange".to_string(),
+            Self::Distant => "\\distrange".to_string(),
+            Self::Extreme => "\\extrange".to_string(),
+            Self::Custom(feet) => format!("{} ft.", feet),
+        }
+    }
+}
+
+impl fmt::Display for AttackRange {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{}", self.latex_tag())
+    }
+}
+
+#[derive(Clone)]
+pub enum AreaSize {
+    Small,
+    Medium,
+    Large,
+    Huge,
+    Gargantuan,
+    Custom(i32),
+}
+
+impl AreaSize {
+    fn latex_tag(&self) -> String {
+        match self {
+            Self::Small => "\\smallarea".to_string(),
+            Self::Medium => "\\medarea".to_string(),
+            Self::Large => "\\largearea".to_string(),
+            Self::Huge => "\\hugearea".to_string(),
+            Self::Gargantuan => "\\extarea".to_string(),
+            Self::Custom(feet) => format!("{} ft.", feet),
+        }
+    }
+}
+
+impl fmt::Display for AreaSize {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{}", self.latex_tag())
+    }
+}
+
+#[derive(Clone)]
+pub enum AreaTargets {
+    Allies,
+    Creatures,
+    Enemies,
+    Everything,
+}
+
+impl AreaTargets {
+    fn description(&self) -> &str {
+        match self {
+            Self::Allies => "allies",
+            Self::Creatures => "creatures",
+            Self::Enemies => "enemies",
+            Self::Everything => "everything",
+        }
+    }
+}
+
+impl fmt::Display for AreaTargets {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{}", self.description())
     }
 }

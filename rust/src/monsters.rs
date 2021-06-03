@@ -218,19 +218,10 @@ impl HasAttacks for Monster {
         // upgrades.
         let special_attack_modifier = (self.creature.level - 1) / 6;
 
-        // TODO: this logic doesn't take into account some non-bite handless natural weapons
-        let weapons = self.creature.weapons();
-        let no_hands_modifier = if weapons.len() == 1 && weapons[0].name() == "bite" {
-            1
-        } else {
-            0
-        };
-
         return self.creature.calc_damage_increments(is_strike)
             + self.challenge_rating.damage_increments()
             + level_modifier
-            + special_attack_modifier
-            + no_hands_modifier;
+            + special_attack_modifier;
     }
 
     fn calc_power(&self, is_magical: bool) -> i8 {

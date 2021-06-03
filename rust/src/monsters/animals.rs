@@ -1,5 +1,5 @@
 use crate::core_mechanics::movement_modes::{FlightManeuverability, MovementMode, SpeedCategory};
-use crate::core_mechanics::{attack_effects, attacks, debuffs};
+use crate::core_mechanics::{attack_effects, attacks, damage_types, debuffs, defenses};
 use crate::equipment::weapons;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Animal;
@@ -219,7 +219,20 @@ pub fn animals() -> Vec<MonsterEntry> {
             level: 12,
             name: "Frostweb Spider",
             size: Size::Large,
-            special_attacks: Some(vec![frostweb_spider_bite]),
+            special_attacks: Some(vec![
+                frostweb_spider_bite,
+                attacks::Attack {
+                    accuracy: 0,
+                    crit: None,
+                    defense: defenses::FORT,
+                    glance: None,
+                    hit: vec![attack_effects::AttackEffect::area_damage(5, vec![damage_types::DamageType::Cold])],
+                    is_magical: true,
+                    name: "Frost Breath".to_string(),
+                    targeting: attacks::AttackTargeting::Cone(attacks::AreaSize::Large, attacks::AreaTargets::Everything),
+                    weapon: None,
+                },
+            ]),
             weapons: vec![weapons::Weapon::MonsterBite],
         },
     )));
