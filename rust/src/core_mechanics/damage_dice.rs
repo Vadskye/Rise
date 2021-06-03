@@ -21,13 +21,13 @@ impl DamageDice {
             };
         }
 
-        let mut increments = increments;
+        let mut increments_mut = increments;
         let mut count: i8 = 1;
-        while increments > 6 {
-            increments -= 3;
+        while increments_mut > 6 {
+            increments_mut -= 3;
             count *= 2;
         }
-        let size = match increments {
+        let size = match increments_mut {
             0 => 1,
             1 => 2,
             2 => 3,
