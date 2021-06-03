@@ -451,8 +451,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} The bonus increases to \plus4.
             \end{durationability}
 
-            \begin{durationability}{Dogpile}
-                \abilitytag{Sustain} (free)
+            \begin{durationability}{Dogpile}[\abilitytag{Sustain} (free)]
                 \rankline
                 Each target gains a \plus2 bonus to \glossterm{accuracy} with the \textit{grapple} ability and with all grapple actions (see \pcref{Grapple}, and \pcref{Grapple Actions}).
                 This does not affect any other abilities that may have similar effects, such as the Strangle maneuver (see Strangle, page \pref{maneuver:Strangle}).
@@ -463,8 +462,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} The bonus increases to \plus5.
             \end{durationability}
 
-            \begin{durationability}{Duck and Cover}
-                \abilitytag{Sustain} (free)
+            \begin{durationability}{Duck and Cover}[\abilitytag{Sustain} (free)]
                 \rankline
                 Each target gains a \plus1 bonus to Armor defense against non-\glossterm{melee} attacks.
 
@@ -474,8 +472,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} The bonus increases to \plus4.
             \end{durationability}
 
-            \begin{durationability}{Group Up}
-                \abilitytag{Sustain} (free)
+            \begin{durationability}{Group Up}[\abilitytag{Sustain} (free)]
                 \rankline
                 Each target that is adjacent to at least one other target gains a \plus1 bonus to Armor defense.
 
@@ -485,8 +482,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} The Mental defense bonus increases to \plus4.
             \end{durationability}
 
-            \begin{durationability}{Hold The Line}
-                \abilitytag{Sustain} (free)
+            \begin{durationability}{Hold The Line}[\abilitytag{Sustain} (free)]
                 \rankline
                 Your \glossterm{enemies} treat all areas adjacent to any target as \glossterm{difficult terrain}.
 
@@ -496,8 +492,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} Each area within a 10 foot radius \glossterm{emanation} from each target is doubly difficult terrain.
             \end{durationability}
 
-            \begin{durationability}{Hustle}
-                \abilitytag{Sustain} (free)
+            \begin{durationability}{Hustle}[\abilitytag{Sustain} (free)]
                 \rankline
                 Each subject gains a \plus5 foot bonus to its speed with all of its \glossterm{movement modes} during any phase that it takes the \textit{sprint} action, or if it moves using a \glossterm{standard action}.
 
@@ -507,8 +502,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} The speed bonus increases to \plus20 feet.
             \end{durationability}
 
-            \begin{durationability}{Keep Moving}
-                \abilitytag{Sustain} (free)
+            \begin{durationability}{Keep Moving}[\abilitytag{Sustain} (free)]
                 \rankline
                 Each target that ends the \glossterm{movement phase} at least twenty feet away from where it started the round
                     gains a \plus1 bonus to Armor defense until the end of the round.
@@ -519,8 +513,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} The Reflex defense bonus increases to \plus4.
             \end{durationability}
 
-            \begin{durationability}{Stand Your Ground}
-                \abilitytag{Sustain} (free)
+            \begin{durationability}{Stand Your Ground}[\abilitytag{Sustain} (free)]
                 \rankline
                 Each target that ends the \glossterm{movement phase} without changing its location gains a \plus1 bonus to Armor defense until its location changes.
 
