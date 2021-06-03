@@ -1,3 +1,4 @@
+use crate::core_mechanics::damage_types::DamageType;
 use crate::core_mechanics::damage_dice::{self, D10, D6, D8};
 use std::fmt;
 
@@ -60,6 +61,26 @@ impl Weapon {
             Self::Slam => D10,
         };
         return damage_dice::DamageDice::new(increments);
+    }
+
+    pub fn damage_types(&self) -> Vec<DamageType> {
+        match self {
+            Self::ArmorSpikes => vec![DamageType::Piercing],
+            Self::Battleaxe => vec![DamageType::Slashing],
+            Self::Bite => vec![DamageType::Physical],
+            Self::Broadsword => vec![DamageType::Slashing],
+            Self::Claw => vec![DamageType::Slashing],
+            Self::Greataxe => vec![DamageType::Slashing],
+            Self::Greatsword => vec![DamageType::Slashing],
+            Self::Longbow => vec![DamageType::Piercing],
+            Self::MonsterBite => vec![DamageType::Physical],
+            Self::MonsterClaws => vec![DamageType::Slashing],
+            Self::MonsterStinger => vec![DamageType::Piercing],
+            Self::Sap => vec![DamageType::Bludgeoning],
+            Self::Scimitar => vec![DamageType::Slashing],
+            Self::Sickle => vec![DamageType::Slashing],
+            Self::Slam => vec![DamageType::Bludgeoning],
+        }
     }
 
     pub fn name(&self) -> &str {
