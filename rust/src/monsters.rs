@@ -127,7 +127,7 @@ impl Monster {
                 m
             } else {
                 vec![movement_modes::MovementMode::Land(
-                    &movement_modes::SpeedCategory::Normal,
+                    movement_modes::SpeedCategory::Normal,
                 )]
             },
         };
@@ -159,7 +159,7 @@ impl Monster {
             description: None,
             knowledge: None,
             movement_modes: vec![movement_modes::MovementMode::Land(
-                &movement_modes::SpeedCategory::Normal,
+                movement_modes::SpeedCategory::Normal,
             )],
         };
     }
