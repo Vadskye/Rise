@@ -2,20 +2,16 @@ use crate::core_mechanics::attributes;
 use std::fmt;
 
 pub trait HasDefenses {
-    fn calc_defense(&self, defense: &'static Defense) -> i8;
+    fn calc_defense(&self, defense: &Defense) -> i8;
 }
 
+#[derive(Clone)]
 pub enum Defense {
     Armor,
     Fortitude,
     Mental,
     Reflex,
 }
-
-pub static ARMOR: &Defense = &Defense::Armor;
-pub static FORT: &Defense = &Defense::Fortitude;
-pub static REF: &Defense = &Defense::Reflex;
-pub static MENT: &Defense = &Defense::Mental;
 
 impl Defense {
     pub fn name(&self) -> &str {

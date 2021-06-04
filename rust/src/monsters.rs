@@ -7,7 +7,7 @@ pub mod monster_group;
 use crate::core_mechanics::attacks::HasAttacks;
 use crate::core_mechanics::attributes::{self, Attribute, HasAttributes};
 use crate::core_mechanics::damage_absorption::HasDamageAbsorption;
-use crate::core_mechanics::defenses::{self, HasDefenses};
+use crate::core_mechanics::defenses::{Defense, HasDefenses};
 use crate::core_mechanics::resources::{self, HasResources};
 use crate::core_mechanics::{attacks, creature, movement_modes, sizes, HasCreatureMechanics};
 use crate::equipment::{weapons, HasEquipment};
@@ -265,7 +265,7 @@ impl HasDamageAbsorption for Monster {
 }
 
 impl HasDefenses for Monster {
-    fn calc_defense(&self, defense: &'static defenses::Defense) -> i8 {
+    fn calc_defense(&self, defense: &Defense) -> i8 {
         return self.creature.calc_defense(defense)
             + self.creature_type.defense_bonus(defense)
             + self.challenge_rating.defense_bonus()
@@ -372,10 +372,10 @@ impl Monster {
             hp = self.calc_hit_points(),
             immunities = "", // TODO
             dr = self.calc_damage_resistance(),
-            armor = self.calc_defense(defenses::ARMOR),
-            fort = self.calc_defense(defenses::FORT),
-            ref = self.calc_defense(defenses::REF),
-            ment = self.calc_defense(defenses::MENT),
+            armor = self.calc_defense(&Defense::Armor),
+            fort = self.calc_defense(&Defense::Fortitude),
+            ref = self.calc_defense(&Defense::Reflex),
+            ment = self.calc_defense(&Defense::Mental),
         );
     }
 

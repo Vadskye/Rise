@@ -1,4 +1,4 @@
-use crate::core_mechanics::defenses::{self, Defense};
+use crate::core_mechanics::defenses::Defense;
 use crate::latex_formatting;
 use titlecase::titlecase;
 use std::fmt;
@@ -13,7 +13,7 @@ pub enum CreatureType {
 }
 
 impl CreatureType {
-    pub fn defense_bonus(&self, defense: &'static Defense) -> i8 {
+    pub fn defense_bonus(&self, defense: &Defense) -> i8 {
         match self {
             Self::Aberration => match defense {
                 Defense::Armor => 4,
@@ -100,10 +100,10 @@ impl CreatureType {
     fn latex_defenses(&self) -> String {
         return format!(
             "\\textbf<Defenses:> {armor} Armor, {fort} Fortitude, {ref} Reflex, {ment} Mental",
-            armor=latex_formatting::modifier(self.defense_bonus(defenses::ARMOR)),
-            fort=latex_formatting::modifier(self.defense_bonus(defenses::FORT)),
-            ref=latex_formatting::modifier(self.defense_bonus(defenses::REF)),
-            ment=latex_formatting::modifier(self.defense_bonus(defenses::MENT)),
+            armor=latex_formatting::modifier(self.defense_bonus(&Defense::Armor)),
+            fort=latex_formatting::modifier(self.defense_bonus(&Defense::Fortitude)),
+            ref=latex_formatting::modifier(self.defense_bonus(&Defense::Reflex)),
+            ment=latex_formatting::modifier(self.defense_bonus(&Defense::Mental)),
         );
     }
 }

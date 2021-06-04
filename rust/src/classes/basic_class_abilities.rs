@@ -1,6 +1,6 @@
 use crate::classes;
 use crate::core_mechanics::attributes::Attribute;
-use crate::core_mechanics::defenses;
+use crate::core_mechanics::defenses::Defense;
 use crate::latex_formatting;
 use numerics::Numerics;
 
@@ -77,10 +77,10 @@ fn generate_latex_defenses(class: &classes::Class) -> String {
                 \\cf<{shorthand_name}><Defenses>
                 You gain the following bonuses to your \\glossterm<defenses>: \\plus{armor} Armor, \\plus{fortitude} Fortitude, \\plus{reflex} Reflex, \\plus{mental} Mental.
             ",
-            armor=class.defense_bonus(defenses::ARMOR),
-            fortitude=class.defense_bonus(defenses::FORT),
-            reflex=class.defense_bonus(defenses::REF),
-            mental=class.defense_bonus(defenses::MENT),
+            armor=class.defense_bonus(&Defense::Armor),
+            fortitude=class.defense_bonus(&Defense::Fortitude),
+            reflex=class.defense_bonus(&Defense::Reflex),
+            mental=class.defense_bonus(&Defense::Mental),
             shorthand_name=class.shorthand_name(),
         )
     );

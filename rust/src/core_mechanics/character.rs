@@ -101,7 +101,7 @@ impl HasDamageAbsorption for Character {
 }
 
 impl HasDefenses for Character {
-    fn calc_defense(&self, defense: &'static defenses::Defense) -> i8 {
+    fn calc_defense(&self, defense: &defenses::Defense) -> i8 {
         return self.creature.calc_defense(defense) + self.class.defense_bonus(defense);
     }
 }
