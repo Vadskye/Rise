@@ -13,6 +13,7 @@ pub struct Attack {
     pub is_magical: bool,
     pub name: String,
     pub targeting: AttackTargeting,
+    pub usage_time: UsageTime,
     pub weapon: Option<weapons::Weapon>,
 }
 
@@ -36,6 +37,7 @@ impl Attack {
             name: weapon.name().to_string(),
             is_magical: false,
             targeting: AttackTargeting::Strike,
+            usage_time: UsageTime::Standard,
             weapon: Some(weapon),
         };
     }
@@ -142,7 +144,11 @@ impl Attack {
     // top section.
     fn latex_tags(&self) -> String {
         // TODO: take into account tags and usage time
-        return String::from("");
+        return self
+            .usage_time
+            .latex_ability_header()
+            .unwrap_or("")
+            .to_string();
     }
 
     fn latex_effect<T: HasCreatureMechanics>(&self, creature: &T) -> String {
@@ -195,10 +201,7 @@ impl AttackTargeting {
                 targets = area_targets,
                 size = area_size
             ),
-            Self::Strike => format!(
-                "strike vs. {defense}",
-                defense = defense
-            ),
+            Self::Strike => format!("strike vs. {defense}", defense = defense),
         }
     }
 }
@@ -283,5 +286,20 @@ impl AreaTargets {
 impl fmt::Display for AreaTargets {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "{}", self.description())
+    }
+}
+
+#[derive(Clone)]
+pub enum UsageTime {
+    Standard,
+    Minor,
+}
+
+impl UsageTime {
+    pub fn latex_ability_header(&self) -> Option<&str> {
+        match self {
+            UsageTime::Standard => None,
+            UsageTime::Minor => Some(r"\par \noindent Usage time: One \glossterm{minor action}."),
+        }
     }
 }

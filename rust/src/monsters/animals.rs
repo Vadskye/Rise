@@ -204,10 +204,10 @@ pub fn animals() -> Vec<MonsterEntry> {
 
     let mut frostweb_spider_bite = attacks::Attack::from_weapon(weapons::Weapon::MonsterBite);
     if let Some(e) = frostweb_spider_bite.damage_effect_mut() {
-        e.lose_hp_effects = Some(vec![attack_effects::AttackEffect::Debuff(
-            attack_effects::DebuffEffect {
-                debuffs: vec![debuffs::Debuff::Sickened],
-                duration: attack_effects::AttackEffectDuration::Condition,
+        e.lose_hp_effects = Some(vec![attack_effects::AttackEffect::Poison(
+            attack_effects::PoisonEffect {
+                stage1: vec![debuffs::Debuff::Slowed],
+                stage3: Some(vec![debuffs::Debuff::Decelerated]),
             },
         )]);
     }
@@ -236,6 +236,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                         attacks::AreaSize::Large,
                         attacks::AreaTargets::Everything,
                     ),
+                    usage_time: attacks::UsageTime::Minor,
                     weapon: None,
                 },
             ]),
@@ -269,7 +270,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                 "),
             ],
             level: 6,
-            movement_modes: Some(vec![MovementMode::Fly(SpeedCategory::Fast, FlightManeuverability::Normal)]),
+            movement_modes: Some(vec![MovementMode::Fly(SpeedCategory::Fast, FlightManeuverability::Perfect)]),
             name: "Giant Wasp",
             size: Size::Large,
             special_attacks: Some(vec![poisonous_stinger]),
