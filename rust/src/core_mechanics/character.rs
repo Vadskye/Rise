@@ -43,13 +43,13 @@ impl Character {
 }
 
 impl HasAttributes for Character {
-    fn get_base_attribute(&self, attribute: &'static Attribute) -> i8 {
+    fn get_base_attribute(&self, attribute: &Attribute) -> i8 {
         return self.creature.get_base_attribute(attribute);
     }
-    fn calc_total_attribute(&self, attribute: &'static Attribute) -> i8 {
+    fn calc_total_attribute(&self, attribute: &Attribute) -> i8 {
         return self.creature.calc_total_attribute(attribute);
     }
-    fn set_base_attribute(&mut self, attribute: &'static Attribute, value: i8) {
+    fn set_base_attribute(&mut self, attribute: Attribute, value: i8) {
         self.creature.set_base_attribute(attribute, value);
     }
 }

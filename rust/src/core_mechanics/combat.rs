@@ -67,7 +67,7 @@ fn calc_individual_dpr<T: HasCreatureMechanics>(attacker: &T, defender: &T) -> f
     let mut best_damage_per_round = 0.0;
     for attack in attacks {
         let hit_probability = calculate_hit_probability(&attack, attacker, defender);
-        if let Some(damage_effect) = attack.damage_effect() {
+        if let Some(_) = attack.damage_effect() {
             let damage_dice = attack.calc_damage_dice(attacker).unwrap();
             let damage_modifier = attack.calc_damage_modifier(attacker).unwrap();
             let average_damage_per_round = hit_probability
