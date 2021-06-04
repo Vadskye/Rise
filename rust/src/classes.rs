@@ -281,7 +281,7 @@ impl Class {
         }
     }
 
-    pub fn defense_bonus(&self, defense: &'static Defense) -> i8 {
+    pub fn defense_bonus(&self, defense: &Defense) -> i8 {
         match self {
             Self::Barbarian => match defense {
                 Defense::Armor => 1,

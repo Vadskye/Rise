@@ -7,7 +7,7 @@ use std::fmt;
 pub struct Attack {
     pub accuracy: i8,
     pub crit: Option<Vec<attack_effects::AttackEffect>>,
-    pub defense: &'static defenses::Defense,
+    pub defense: defenses::Defense,
     pub glance: Option<Vec<attack_effects::AttackEffect>>,
     pub hit: Vec<attack_effects::AttackEffect>,
     pub is_magical: bool,
@@ -30,7 +30,7 @@ impl Attack {
         return Attack {
             accuracy: weapon.accuracy(),
             crit: None,
-            defense: defenses::ARMOR,
+            defense: defenses::Defense::Armor,
             glance: None,
             hit: vec![attack_effects::AttackEffect::from_weapon(weapon)],
             name: weapon.name().to_string(),
@@ -161,7 +161,7 @@ impl Attack {
                     .to_string())
                 .collect::<Vec<String>>()
                 .join("; "),
-            targeting = self.targeting.description(self.defense),
+            targeting = self.targeting.description(&self.defense),
         );
     }
 }
@@ -175,7 +175,7 @@ pub enum AttackTargeting {
 }
 
 impl AttackTargeting {
-    pub fn description(&self, defense: &'static defenses::Defense) -> String {
+    pub fn description(&self, defense: &defenses::Defense) -> String {
         let defense = latex_formatting::uppercase_first_letter(defense.to_string().as_str());
         match self {
             Self::Anything(range) => format!(

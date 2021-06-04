@@ -224,12 +224,18 @@ pub fn animals() -> Vec<MonsterEntry> {
                 attacks::Attack {
                     accuracy: 0,
                     crit: None,
-                    defense: defenses::FORT,
+                    defense: defenses::Defense::Fortitude,
                     glance: None,
-                    hit: vec![attack_effects::AttackEffect::area_damage(5, vec![damage_types::DamageType::Cold])],
+                    hit: vec![attack_effects::AttackEffect::area_damage(
+                        5,
+                        vec![damage_types::DamageType::Cold],
+                    )],
                     is_magical: true,
                     name: "Frost Breath".to_string(),
-                    targeting: attacks::AttackTargeting::Cone(attacks::AreaSize::Large, attacks::AreaTargets::Everything),
+                    targeting: attacks::AttackTargeting::Cone(
+                        attacks::AreaSize::Large,
+                        attacks::AreaTargets::Everything,
+                    ),
                     weapon: None,
                 },
             ]),

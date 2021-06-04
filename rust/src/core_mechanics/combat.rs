@@ -95,7 +95,7 @@ fn calculate_hit_probability<T: HasCreatureMechanics>(
     loop {
         let hit_probability: f64 = ((attack.accuracy + attacker.calc_accuracy()) as f64 + 11.0 - crit_count * 10.0
             + explosion_count * 10.0
-            - (defender.calc_defense(attack.defense) as f64))
+            - (defender.calc_defense(&attack.defense) as f64))
             / 10.0;
         let hit_probability = if hit_probability > 1.0 {
             1.0

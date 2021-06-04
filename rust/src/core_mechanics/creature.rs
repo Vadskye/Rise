@@ -214,7 +214,7 @@ impl HasEquipment for Creature {
 }
 
 impl HasDefenses for Creature {
-    fn calc_defense(&self, defense: &'static defenses::Defense) -> i8 {
+    fn calc_defense(&self, defense: &defenses::Defense) -> i8 {
         return self.level + self.get_base_attribute(defense.associated_attribute());
     }
 }
