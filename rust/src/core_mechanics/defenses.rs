@@ -1,4 +1,4 @@
-use crate::core_mechanics::attributes;
+use crate::core_mechanics::attributes::Attribute;
 use std::fmt;
 
 pub trait HasDefenses {
@@ -32,12 +32,12 @@ impl Defense {
         }
     }
 
-    pub fn associated_attribute(&self) -> &'static attributes::Attribute {
+    pub fn associated_attribute(&self) -> &Attribute {
         match self {
-            Self::Armor => &attributes::DEX,
-            Self::Fortitude => &attributes::CON,
-            Self::Mental => &attributes::WIL,
-            Self::Reflex => &attributes::DEX,
+            Self::Armor => &Attribute::Dexterity,
+            Self::Fortitude => &Attribute::Constitution,
+            Self::Mental => &Attribute::Willpower,
+            Self::Reflex => &Attribute::Dexterity,
         }
     }
 }

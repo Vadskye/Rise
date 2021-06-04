@@ -10,17 +10,6 @@ pub enum Attribute {
     Willpower,
 }
 
-pub static STR: &Attribute = &Attribute::Strength;
-pub static DEX: &Attribute = &Attribute::Dexterity;
-pub static CON: &Attribute = &Attribute::Constitution;
-pub static INT: &Attribute = &Attribute::Intelligence;
-pub static PER: &Attribute = &Attribute::Perception;
-pub static WIL: &Attribute = &Attribute::Willpower;
-
-pub fn all_attributes() -> [&'static Attribute; 6] {
-    return [STR, DEX, CON, INT, PER, WIL];
-}
-
 impl Attribute {
     pub fn name(&self) -> &str {
         match self {
@@ -57,26 +46,26 @@ impl Attribute {
         }
     }
 
-    pub fn all() -> Vec<&'static Attribute> {
-        vec![
-            &STR,
-            &DEX,
-            &CON,
-            &INT,
-            &PER,
-            &WIL,
-        ]
+    pub fn all() -> Vec<Attribute> {
+        return vec![
+            Attribute::Strength,
+            Attribute::Dexterity,
+            Attribute::Constitution,
+            Attribute::Intelligence,
+            Attribute::Perception,
+            Attribute::Willpower,
+        ];
     }
 }
 
 impl PartialEq for Attribute {
-    fn eq(&self, other:&Self) -> bool {
+    fn eq(&self, other: &Self) -> bool {
         return self.name() == other.name();
     }
 }
 
 pub trait HasAttributes {
-    fn calc_total_attribute(&self, attribute: &'static Attribute) -> i8;
-    fn get_base_attribute(&self, attribute: &'static Attribute) -> i8;
-    fn set_base_attribute(&mut self, attribute: &'static Attribute, value: i8);
+    fn calc_total_attribute(&self, attribute: &Attribute) -> i8;
+    fn get_base_attribute(&self, attribute: &Attribute) -> i8;
+    fn set_base_attribute(&mut self, attribute: Attribute, value: i8);
 }

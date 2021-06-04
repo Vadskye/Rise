@@ -26,7 +26,7 @@ impl Resource {
 
     // This is less useful than the equivalent function for defenses since the number of relevant
     // attributes ranges from 0 to 2 and is not simply added directly.
-    // pub fn associated_attributes(&self) -> Vec<&'static attributes::Attribute> {
+    // pub fn associated_attributes(&self) -> Vec<&attributes::Attribute> {
     //     match self {
     //         Self::AttunementPoint => vec![],
     //         Self::Fatigue => vec![attributes::CON, attributes::WIL],

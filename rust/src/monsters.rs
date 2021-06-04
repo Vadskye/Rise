@@ -5,7 +5,7 @@ pub mod monster_entry;
 pub mod monster_group;
 
 use crate::core_mechanics::attacks::HasAttacks;
-use crate::core_mechanics::attributes::{self, Attribute, HasAttributes};
+use crate::core_mechanics::attributes::{Attribute, HasAttributes};
 use crate::core_mechanics::damage_absorption::HasDamageAbsorption;
 use crate::core_mechanics::defenses::{Defense, HasDefenses};
 use crate::core_mechanics::resources::{self, HasResources};
@@ -90,8 +90,8 @@ impl Monster {
     pub fn fully_defined(def: FullMonsterDefinition) -> Monster {
         let mut creature = creature::Creature::new(def.level);
         creature.set_name(def.name.to_string());
-        for (i, attribute) in attributes::all_attributes().iter().enumerate() {
-            creature.set_base_attribute(attribute, def.attributes[i]);
+        for (i, attribute) in Attribute::all().iter().enumerate() {
+            creature.set_base_attribute(attribute.clone(), def.attributes[i]);
         }
         for weapon in def.weapons {
             creature.add_weapon(weapon);
@@ -141,13 +141,10 @@ impl Monster {
     ) -> Monster {
         let mut creature = creature::Creature::new(level);
         creature.add_weapon(weapons::Weapon::Slam);
-        if let Some(a) = starting_attribute {
-            creature.set_base_attribute(attributes::STR, a);
-            creature.set_base_attribute(attributes::DEX, a);
-            creature.set_base_attribute(attributes::CON, a);
-            creature.set_base_attribute(attributes::INT, a);
-            creature.set_base_attribute(attributes::PER, a);
-            creature.set_base_attribute(attributes::WIL, a);
+        if let Some(value) = starting_attribute {
+            for a in Attribute::all() {
+                creature.set_base_attribute(a, value);
+            }
         }
         let creature_type = if let Some(a) = creature_type {
             a
@@ -173,13 +170,13 @@ impl Monster {
 }
 
 impl HasAttributes for Monster {
-    fn get_base_attribute(&self, attribute: &'static Attribute) -> i8 {
+    fn get_base_attribute(&self, attribute: &Attribute) -> i8 {
         return self.creature.get_base_attribute(attribute);
     }
-    fn calc_total_attribute(&self, attribute: &'static Attribute) -> i8 {
+    fn calc_total_attribute(&self, attribute: &Attribute) -> i8 {
         return self.creature.calc_total_attribute(attribute);
     }
-    fn set_base_attribute(&mut self, attribute: &'static Attribute, value: i8) {
+    fn set_base_attribute(&mut self, attribute: Attribute, value: i8) {
         self.creature.set_base_attribute(attribute, value);
     }
 }
@@ -345,7 +342,7 @@ impl Monster {
             // TODO: figure out skill training
             awareness = format!(
                 "Awareness {}", 
-                latex_formatting::modifier(self.creature.get_base_attribute(attributes::PER))
+                latex_formatting::modifier(self.creature.get_base_attribute(&Attribute::Perception))
             ),
             attributes = self.latex_attributes(),
             accuracy = latex_formatting::modifier(self.calc_accuracy()),
@@ -394,7 +391,7 @@ impl Monster {
     }
 
     fn latex_attributes(&self) -> String {
-        return attributes::Attribute::all()
+        return Attribute::all()
             .iter()
             .map(|a| format!("{} {}", a.shorthand_name(), self.calc_total_attribute(a)))
             .collect::<Vec<String>>()

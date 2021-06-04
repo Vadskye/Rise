@@ -1,5 +1,5 @@
 use crate::core_mechanics::attacks::{self, HasAttacks};
-use crate::core_mechanics::attributes::{self, HasAttributes};
+use crate::core_mechanics::attributes::{Attribute, HasAttributes};
 use crate::core_mechanics::damage_absorption::HasDamageAbsorption;
 use crate::core_mechanics::defenses::{self, HasDefenses};
 use crate::core_mechanics::latex;
@@ -12,7 +12,7 @@ use std::cmp::{max, min};
 use std::collections::HashMap;
 
 pub struct Creature {
-    base_attributes: HashMap<&'static attributes::Attribute, i8>,
+    base_attributes: HashMap<Attribute, i8>,
     pub name: Option<String>,
     pub level: i8,
     pub size: sizes::Size,
@@ -23,7 +23,7 @@ pub struct Creature {
 
 impl Creature {
     pub fn new(level: i8) -> Creature {
-        let base_attributes = HashMap::<&attributes::Attribute, i8>::new();
+        let base_attributes = HashMap::<Attribute, i8>::new();
         return Creature {
             base_attributes,
             level,
@@ -61,7 +61,7 @@ impl Creature {
 }
 
 impl HasAttributes for Creature {
-    fn get_base_attribute(&self, attribute: &'static attributes::Attribute) -> i8 {
+    fn get_base_attribute(&self, attribute: &Attribute) -> i8 {
         if let Some(a) = self.base_attributes.get(attribute) {
             *a
         } else {
@@ -69,12 +69,12 @@ impl HasAttributes for Creature {
         }
     }
 
-    fn calc_total_attribute(&self, attribute: &'static attributes::Attribute) -> i8 {
-        attributes::Attribute::calculate_total(self.get_base_attribute(attribute), self.level)
+    fn calc_total_attribute(&self, attribute: &Attribute) -> i8 {
+        Attribute::calculate_total(self.get_base_attribute(attribute), self.level)
     }
 
-    fn set_base_attribute(&mut self, attribute: &'static attributes::Attribute, value: i8) {
-        if let Some(a) = self.base_attributes.get_mut(attribute) {
+    fn set_base_attribute(&mut self, attribute: Attribute, value: i8) {
+        if let Some(a) = self.base_attributes.get_mut(&attribute) {
             *a = value;
         } else {
             self.base_attributes.insert(attribute, value);
@@ -110,7 +110,7 @@ impl HasDamageAbsorption for Creature {
             _ => panic!("Invalid level {}", self.level),
         };
 
-        return dr_from_level + (self.get_base_attribute(attributes::CON) as i32) / 2;
+        return dr_from_level + (self.get_base_attribute(&Attribute::Constitution) as i32) / 2;
     }
 
     fn calc_hit_points(&self) -> i32 {
@@ -139,7 +139,7 @@ impl HasDamageAbsorption for Creature {
             _ => panic!("Invalid level {}", self.level),
         };
 
-        return hp_from_level + self.get_base_attribute(attributes::CON) as i32;
+        return hp_from_level + self.get_base_attribute(&Attribute::Constitution) as i32;
     }
 }
 
@@ -187,7 +187,7 @@ impl HasAttacks for Creature {
 
     fn calc_accuracy(&self) -> i8 {
         // note implicit floor due to integer storage
-        return self.level + self.get_base_attribute(attributes::PER) / 2;
+        return self.level + self.get_base_attribute(&Attribute::Perception) / 2;
     }
 
     fn calc_damage_increments(&self, _is_strike: bool) -> i8 {
@@ -196,9 +196,9 @@ impl HasAttacks for Creature {
 
     fn calc_power(&self, is_magical: bool) -> i8 {
         if is_magical {
-            return self.calc_total_attribute(attributes::WIL) / 2;
+            return self.calc_total_attribute(&Attribute::Strength) / 2;
         } else {
-            return self.calc_total_attribute(attributes::STR) / 2;
+            return self.calc_total_attribute(&Attribute::Strength) / 2;
         }
     }
 }
@@ -233,10 +233,10 @@ impl HasResources for Creature {
                 return ap_from_level;
             }
             resources::Resource::FatigueTolerance => {
-                self.get_base_attribute(attributes::CON) + self.get_base_attribute(attributes::WIL)
+                self.get_base_attribute(&Attribute::Constitution) + self.get_base_attribute(&Attribute::Willpower)
             }
-            resources::Resource::InsightPoint => self.get_base_attribute(attributes::INT),
-            resources::Resource::SkillPoint => (self.get_base_attribute(attributes::INT)) * 2,
+            resources::Resource::InsightPoint => self.get_base_attribute(&Attribute::Intelligence),
+            resources::Resource::SkillPoint => (self.get_base_attribute(&Attribute::Intelligence)) * 2,
         }
     }
 }
