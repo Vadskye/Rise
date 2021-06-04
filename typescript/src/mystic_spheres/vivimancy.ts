@@ -575,7 +575,7 @@ export const vivimancy: MysticSphere = {
       effect: `
           All diseases affecting yourself or one \\glossterm{ally} within \\medrange are removed.
       `,
-      rank: 3,
+      rank: 2,
       type: "Instant",
     },
 
