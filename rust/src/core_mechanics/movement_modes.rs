@@ -1,11 +1,11 @@
 use crate::core_mechanics::sizes::Size;
 
 pub enum MovementMode {
-    Climb(&'static SpeedCategory),
-    Fly(&'static SpeedCategory, FlightManeuverability),
-    Glide(&'static SpeedCategory),
-    Land(&'static SpeedCategory),
-    Swim(&'static SpeedCategory),
+    Climb(SpeedCategory),
+    Fly(SpeedCategory, FlightManeuverability),
+    Glide(SpeedCategory),
+    Land(SpeedCategory),
+    Swim(SpeedCategory),
 }
 
 pub enum FlightManeuverability {
