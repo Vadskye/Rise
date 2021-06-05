@@ -6,6 +6,7 @@ use crate::core_mechanics::defenses::HasDefenses;
 use crate::core_mechanics::resources::HasResources;
 use crate::core_mechanics::{creature, defenses, latex, resources, HasCreatureMechanics};
 use crate::equipment::{weapons, HasEquipment};
+use crate::skills::{Skill, HasSkills};
 
 pub struct Character {
     class: Class,
@@ -109,6 +110,20 @@ impl HasDefenses for Character {
 impl HasResources for Character {
     fn calc_resource(&self, resource: &'static resources::Resource) -> i8 {
         return self.creature.calc_resource(resource) + self.class.resource_bonus(resource);
+    }
+}
+
+impl HasSkills for Character {
+    fn set_skill_points(&mut self, skill: Skill, value: i8) {
+        return self.creature.set_skill_points(skill, value);
+    }
+
+    fn get_skill_points(&self, skill: &Skill) -> i8 {
+        return self.creature.get_skill_points(skill);
+    }
+
+    fn calc_skill_modifier(&self, skill: &Skill) -> i8 {
+        return self.creature.calc_skill_modifier(skill);
     }
 }
 

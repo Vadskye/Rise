@@ -2,7 +2,15 @@ use crate::core_mechanics::attributes::Attribute;
 use titlecase::titlecase;
 // use itertools::Itertools;
 use std::fmt;
+use std::cmp::PartialEq;
 
+pub trait HasSkills {
+    fn get_skill_points(&self, skill: &Skill) -> i8;
+    fn set_skill_points(&mut self, skill: Skill, value: i8);
+    fn calc_skill_modifier(&self, skill: &Skill) -> i8;
+}
+
+#[derive(Eq, Hash)]
 pub enum Skill {
     Agility,
     Awareness,
@@ -119,12 +127,27 @@ impl Skill {
     }
 }
 
+impl PartialEq for Skill {
+    fn eq(&self, other: &Self) -> bool {
+        if let Self::Knowledge(subskills) = self {
+            if let Self::Knowledge(other_subskills) = other {
+                return subskills.eq(other_subskills);
+            } else {
+                return false;
+            }
+        } else {
+            return self.name() == other.name();
+        }
+    }
+}
+
 impl fmt::Display for Skill {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "{}", self.name())
     }
 }
 
+#[derive(Eq, Hash)]
 pub enum KnowledgeSubskill {
     Arcana,
     Dungeoneering,
@@ -161,5 +184,11 @@ impl KnowledgeSubskill {
             Self::Planes => "planes",
             Self::Religion => "religion",
         }
+    }
+}
+
+impl PartialEq for KnowledgeSubskill {
+    fn eq(&self, other: &Self) -> bool {
+        return self.name() == other.name();
     }
 }

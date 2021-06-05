@@ -11,6 +11,7 @@ use crate::core_mechanics::defenses::{Defense, HasDefenses};
 use crate::core_mechanics::resources::{self, HasResources};
 use crate::core_mechanics::{attacks, creature, movement_modes, sizes, HasCreatureMechanics};
 use crate::equipment::{weapons, HasEquipment};
+use crate::skills::{Skill, HasSkills};
 use crate::latex_formatting;
 use std::collections::HashMap;
 use titlecase::titlecase;
@@ -35,6 +36,7 @@ pub struct FullMonsterDefinition {
     level: i8,
     movement_modes: Option<Vec<movement_modes::MovementMode>>,
     name: &'static str,
+    skill_points: Option<Vec<(Skill, i8)>>,
     size: sizes::Size,
     special_attacks: Option<Vec<attacks::Attack>>,
     weapons: Vec<weapons::Weapon>,
@@ -84,6 +86,7 @@ impl Monster {
             description: None,
             knowledge: vec![],
             movement_modes: None,
+            skill_points: None,
         });
     }
 
@@ -106,6 +109,11 @@ impl Monster {
             knowledge_option = Some(knowledge)
         }
         creature.set_size(def.size);
+        if let Some(skill_points) = def.skill_points {
+            for (skill, points) in skill_points {
+                creature.set_skill_points(skill, points);
+            }
+        }
         if let Some(special_attacks) = def.special_attacks {
             for a in special_attacks {
                 creature.add_special_attack(a);
@@ -273,6 +281,20 @@ impl HasDefenses for Monster {
 impl HasResources for Monster {
     fn calc_resource(&self, resource: &'static resources::Resource) -> i8 {
         return self.creature.calc_resource(resource);
+    }
+}
+
+impl HasSkills for Monster {
+    fn set_skill_points(&mut self, skill: Skill, value: i8) {
+        return self.creature.set_skill_points(skill, value);
+    }
+
+    fn get_skill_points(&self, skill: &Skill) -> i8 {
+        return self.creature.get_skill_points(skill);
+    }
+
+    fn calc_skill_modifier(&self, skill: &Skill) -> i8 {
+        return self.creature.calc_skill_modifier(skill);
     }
 }
 

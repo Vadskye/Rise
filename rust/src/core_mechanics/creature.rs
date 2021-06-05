@@ -8,6 +8,7 @@ use crate::core_mechanics::resources::{self, HasResources};
 use crate::core_mechanics::sizes;
 use crate::core_mechanics::HasCreatureMechanics;
 use crate::equipment::{weapons, HasEquipment};
+use crate::skills::{HasSkills, Skill};
 use std::cmp::{max, min};
 use std::collections::HashMap;
 
@@ -16,6 +17,7 @@ pub struct Creature {
     pub name: Option<String>,
     pub level: i8,
     pub size: sizes::Size,
+    pub skill_points: Option<HashMap<Skill, i8>>,
     pub speeds: Vec<movement_modes::MovementMode>,
     pub special_attacks: Option<Vec<attacks::Attack>>,
     pub weapons: Vec<weapons::Weapon>,
@@ -29,6 +31,7 @@ impl Creature {
             level,
             name: None,
             size: sizes::Size::Medium,
+            skill_points: None,
             special_attacks: None,
             speeds: vec![],
             weapons: vec![],
@@ -233,13 +236,55 @@ impl HasResources for Creature {
                 return ap_from_level;
             }
             resources::Resource::FatigueTolerance => {
-                self.get_base_attribute(&Attribute::Constitution) + self.get_base_attribute(&Attribute::Willpower)
+                self.get_base_attribute(&Attribute::Constitution)
+                    + self.get_base_attribute(&Attribute::Willpower)
             }
             resources::Resource::InsightPoint => self.get_base_attribute(&Attribute::Intelligence),
-            resources::Resource::SkillPoint => (self.get_base_attribute(&Attribute::Intelligence)) * 2,
+            resources::Resource::SkillPoint => {
+                (self.get_base_attribute(&Attribute::Intelligence)) * 2
+            }
         }
     }
 }
 
 // No need for explicit funtions here - it's handled by the above functions
 impl HasCreatureMechanics for Creature {}
+
+impl HasSkills for Creature {
+    fn set_skill_points(&mut self, skill: Skill, value: i8) {
+        if self.skill_points.is_none() {
+            self.skill_points = Some(HashMap::new());
+        }
+        let ref mut skill_points = self.skill_points.as_mut().unwrap();
+        skill_points.insert(skill, value);
+    }
+
+    fn get_skill_points(&self, skill: &Skill) -> i8 {
+        if let Some(ref skill_points) = self.skill_points {
+            if let Some(p) = skill_points.get(skill) {
+                return *p;
+            } else {
+                return 0;
+            }
+        } else {
+            return 0;
+        }
+    }
+
+    fn calc_skill_modifier(&self, skill: &Skill) -> i8 {
+        let attribute_modifier = if let Some(ref a) = skill.attribute() {
+            self.get_base_attribute(a)
+        } else {
+            0
+        };
+        let skill_points = self.get_skill_points(skill);
+        let level_modifier = match skill_points {
+            0 => 0,
+            1 => 1 + self.level / 2,
+            2 => 2 + self.level,
+            3 => 2 + self.level,
+            _ => panic!("Invalid number of skill points {}", skill_points),
+        };
+        return level_modifier + attribute_modifier;
+    }
+}

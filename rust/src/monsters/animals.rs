@@ -1,6 +1,7 @@
 use crate::core_mechanics::movement_modes::{FlightManeuverability, MovementMode, SpeedCategory};
 use crate::core_mechanics::{attack_effects, attacks, damage_types, debuffs, defenses};
 use crate::equipment::weapons;
+use crate::skills::Skill;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Animal;
 use crate::monsters::monster_entry::MonsterEntry;
@@ -28,6 +29,9 @@ pub fn animals() -> Vec<MonsterEntry> {
             movement_modes: None,
             name: "Camel",
             size: Size::Medium,
+            skill_points: Some(vec![
+                (Skill::Endurance, 3),
+            ]),
             // Camels have a high strength, but they shouldn't deal massive damage
             special_attacks: Some(vec![half_power_bite]),
             weapons: vec![weapons::Weapon::MonsterBite],
@@ -58,6 +62,9 @@ pub fn animals() -> Vec<MonsterEntry> {
             ]),
             name: "Baboon",
             size: Size::Medium,
+            skill_points: Some(vec![
+                (Skill::Climb, 3),
+            ]),
             special_attacks: None,
             weapons: vec![weapons::Weapon::MonsterBite],
         },
@@ -90,6 +97,9 @@ pub fn animals() -> Vec<MonsterEntry> {
             movement_modes: None,
             name: "Badger",
             size: Size::Small,
+            skill_points: Some(vec![
+                (Skill::Endurance, 1),
+            ]),
             special_attacks: None,
             weapons: vec![weapons::Weapon::MonsterClaws],
         },
@@ -115,6 +125,11 @@ pub fn animals() -> Vec<MonsterEntry> {
                     movement_modes: None,
                     name: "Black bear",
                     size: Size::Medium,
+                    skill_points: Some(vec![
+                        (Skill::Climb, 3),
+                        (Skill::Endurance, 3),
+                        (Skill::Swim, 1),
+                    ]),
                     special_attacks: None,
                     weapons: vec![weapons::Weapon::MonsterBite, weapons::Weapon::MonsterClaws],
                 }),
@@ -133,6 +148,11 @@ pub fn animals() -> Vec<MonsterEntry> {
                     level: 5,
                     name: "Brown bear",
                     size: Size::Large,
+                    skill_points: Some(vec![
+                        (Skill::Climb, 3),
+                        (Skill::Endurance, 3),
+                        (Skill::Swim, 1),
+                    ]),
                     special_attacks: None,
                     weapons: vec![weapons::Weapon::MonsterBite, weapons::Weapon::MonsterClaws],
                 }),
@@ -152,6 +172,12 @@ pub fn animals() -> Vec<MonsterEntry> {
             movement_modes: None,
             name: "Cat",
             size: Size::Small,
+            skill_points: Some(vec![
+                (Skill::Agility, 3),
+                (Skill::Awareness, 1),
+                (Skill::Flexibility, 3),
+                (Skill::Stealth, 3),
+            ]),
             special_attacks: None,
             weapons: vec![weapons::Weapon::MonsterBite],
         },
@@ -173,6 +199,9 @@ pub fn animals() -> Vec<MonsterEntry> {
                         movement_modes: None,
                         name: "Wild dog",
                         size: Size::Medium,
+                        skill_points: Some(vec![
+                            (Skill::Awareness, 3),
+                        ]),
                         special_attacks: None,
                         weapons: vec![weapons::Weapon::MonsterBite],
                     },
@@ -194,6 +223,10 @@ pub fn animals() -> Vec<MonsterEntry> {
                         movement_modes: None,
                         name: "Riding dog",
                         size: Size::Medium,
+                        skill_points: Some(vec![
+                            (Skill::Awareness, 3),
+                            (Skill::Endurance, 3),
+                        ]),
                         special_attacks: None,
                         weapons: vec![weapons::Weapon::MonsterBite],
                     },
@@ -273,8 +306,40 @@ pub fn animals() -> Vec<MonsterEntry> {
             movement_modes: Some(vec![MovementMode::Fly(SpeedCategory::Fast, FlightManeuverability::Perfect)]),
             name: "Giant Wasp",
             size: Size::Large,
+            skill_points: Some(vec![
+                (Skill::Awareness, 3),
+            ]),
             special_attacks: Some(vec![poisonous_stinger]),
             weapons: vec![weapons::Weapon::MonsterStinger],
+        },
+    )));
+
+    monsters.push(MonsterEntry::Monster(Monster::fully_defined(
+        FullMonsterDefinition {
+            alignment: "Always true neutral",
+            attributes: vec![0, 3, 0, -9, 2, -2],
+            challenge_rating: ChallengeRating::One,
+            creature_type: Animal,
+            description: None,
+            knowledge: vec![
+                (0, "
+                    A dire rat is a Small omnivorous scavenger that resembles an unusually large rat.
+                    Dire rats are not generally aggressive, but will attack to defend their nests and territories.
+                "),
+                (5, "
+                    Dire rats can grow to be up to 4 feet long and weigh over 50 pounds.
+                "),
+            ],
+            level: 1,
+            movement_modes: None,
+            name: "Dire Rat",
+            size: Size::Small,
+            skill_points: Some(vec![
+                (Skill::Climb, 3),
+                (Skill::Swim, 3),
+            ]),
+            special_attacks: None,
+            weapons: vec![weapons::Weapon::MonsterBite],
         },
     )));
 
