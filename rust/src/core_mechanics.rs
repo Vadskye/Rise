@@ -15,6 +15,7 @@ pub mod resources;
 pub mod sizes;
 
 use crate::equipment::HasEquipment;
+use crate::skills::HasSkills;
 
 pub trait HasCreatureMechanics:
     attacks::HasAttacks
@@ -23,5 +24,6 @@ pub trait HasCreatureMechanics:
     + defenses::HasDefenses
     + resources::HasResources
     + HasEquipment
+    + HasSkills
 {
 }
