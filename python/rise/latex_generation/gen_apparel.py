@@ -644,7 +644,7 @@ def generate_apparel():
             description="""
                 You gain a +5 foot \\glossterm<magic bonus> to your land speed.
             """,
-            short_description="Increases speed by ten feet",
+            short_description="Increases speed by 5 feet",
         ),
         MagicItem(
             name="Boots of Speed, Greater",
@@ -654,7 +654,7 @@ def generate_apparel():
             description="""
                 You gain a +10 foot \\glossterm<magic bonus> to your land speed.
             """,
-            short_description="Increases speed by ten feet",
+            short_description="Increases speed by 10 feet",
         ),
         MagicItem(
             name="Boots of Speed, Supreme",
@@ -664,7 +664,7 @@ def generate_apparel():
             description="""
                 You gain a +15 foot \\glossterm<magic bonus> to your land speed.
             """,
-            short_description="Increases speed by fifteen feet",
+            short_description="Increases speed by 15 feet",
         ),
     ]
 
