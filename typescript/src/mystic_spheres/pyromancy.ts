@@ -219,7 +219,7 @@ export const pyromancy: MysticSphere = {
       attack: {
         crit: `The damage from the condition is doubled.`,
         hit: `The subject catches on fire as a \\glossterm{condition}.
-        At the end of each round, it takes 1d6 fire damage.
+        At the end of each round, it takes 1d10 fire damage.
 
         If the the subject gains a \\glossterm{vital wound} from this damage, the condition ends.
         The condition can also be removed if the subject makes a \\glossterm{difficulty rating} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
@@ -241,7 +241,7 @@ export const pyromancy: MysticSphere = {
         glance:
           "The effect lasts until the end of the next round. The subject still takes damage during that round.",
         hit: `The subject catches on fire as a \\glossterm{condition}.
-        At the end of each round, it takes 2d6 fire damage.
+        At the end of each round, it takes 2d10 fire damage.
         If the the subject gains a \\glossterm{vital wound} from this damage, the condition ends.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
