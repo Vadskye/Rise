@@ -1,5 +1,7 @@
 from cgi_simple import (
     div,
+    equation,
+    plus,
     ensure_valid_attributes_and_contents,
     fieldset,
     flex_col,
@@ -12,6 +14,7 @@ from cgi_simple import (
     text_input,
     underlabel,
 )
+from second_page import equation_misc_repeat
 
 
 def create_page(_destination):
@@ -40,6 +43,10 @@ def create_page(_destination):
                 {"class": "main-body"},
                 [
                     abilities_summary(),
+                    div({"class": "section-header"}, "Abilities Known"),
+                    calc_maneuvers(),
+                    calc_spells(),
+                    calc_spheres(),
                     div({"class": "section-header"}, "Abilities Chosen"),
                     textarea({"class": "all-abilities-known", "name": "abilities_chosen"}),
                     personality(),
@@ -158,3 +165,60 @@ def personality():
             textarea({"class": "personality", "name": "personality_and_background"}),
         ]
     )
+
+def calc_maneuvers():
+    return flex_row([
+        div({'class': 'calc-header'}, 'Maneuvers'),
+        equation(
+            [
+                underlabel('Insight', number_input({
+                    'name': 'maneuvers_known_insight_points',
+                })),
+                plus(),
+                equation_misc_repeat('maneuvers_known', 3)
+            ],
+            result_attributes={
+                'disabled': True,
+                'name': 'maneuvers_known_display',
+                'value': '@{maneuvers_known}',
+            },
+        )
+    ])
+
+def calc_spells():
+    return flex_row([
+        div({'class': 'calc-header'}, 'Spells'),
+        equation(
+            [
+                underlabel('Insight', number_input({
+                    'name': 'spells_known_insight_points',
+                })),
+                plus(),
+                equation_misc_repeat('spells_known', 3)
+            ],
+            result_attributes={
+                'disabled': True,
+                'name': 'spells_known_display',
+                'value': '@{spells_known}',
+            },
+        ),
+    ])
+
+def calc_spheres():
+    return flex_row([
+        div({'class': 'calc-header'}, 'Spheres'),
+        equation(
+            [
+                underlabel('1/2 Insight', number_input({
+                    'name': 'spheres_known_insight_points',
+                })),
+                plus(),
+                equation_misc_repeat('spheres_known', 3)
+            ],
+            result_attributes={
+                'disabled': True,
+                'name': 'spheres_known_display',
+                'value': '@{spheres_known}',
+            },
+        ),
+    ])
