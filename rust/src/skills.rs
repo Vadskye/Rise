@@ -1,8 +1,8 @@
 use crate::core_mechanics::attributes::Attribute;
 use titlecase::titlecase;
 // use itertools::Itertools;
-use std::fmt;
 use std::cmp::PartialEq;
+use std::fmt;
 
 pub trait HasSkills {
     fn get_skill_points(&self, skill: &Skill) -> i8;
@@ -38,6 +38,12 @@ pub enum Skill {
     Stealth,
     Survival,
     Swim,
+}
+
+pub enum SkillCategory {
+    Movement,
+    Senses,
+    Social,
 }
 
 impl Skill {
@@ -103,6 +109,82 @@ impl Skill {
         }
     }
 
+    pub fn all(&self) -> Vec<Self> {
+        return vec![
+            Self::Agility,
+            Self::Awareness,
+            Self::Climb,
+            Self::Craft,
+            Self::CreatureHandling,
+            Self::Deception,
+            Self::Deduction,
+            Self::Devices,
+            Self::Disguise,
+            Self::Endurance,
+            Self::Flexibility,
+            Self::Intimidate,
+            Self::Jump,
+            Self::Knowledge(vec![]),
+            Self::Linguistics,
+            Self::Medicine,
+            Self::Perform,
+            Self::Persuasion,
+            Self::Profession,
+            Self::Ride,
+            Self::SleightOfHand,
+            Self::SocialInsight,
+            Self::Spellsense,
+            Self::Stealth,
+            Self::Survival,
+            Self::Swim,
+        ];
+    }
+
+    pub fn all_from_skill_category(&self, category: &SkillCategory) -> Vec<Self> {
+        return self
+            .all()
+            .into_iter()
+            .filter(|s| {
+                if let Some(c) = s.skill_category() {
+                    c.name() == category.name()
+                } else {
+                    false
+                }
+            })
+            .collect();
+    }
+
+    pub fn skill_category(&self) -> Option<SkillCategory> {
+        match self {
+            Self::Agility => Some(SkillCategory::Movement),
+            Self::Awareness => Some(SkillCategory::Senses),
+            Self::Climb => Some(SkillCategory::Movement),
+            Self::Craft => None,
+            Self::CreatureHandling => None,
+            Self::Deception => Some(SkillCategory::Social),
+            Self::Deduction => Some(SkillCategory::Senses),
+            Self::Devices => None,
+            Self::Disguise => Some(SkillCategory::Social),
+            Self::Endurance => None,
+            Self::Flexibility => Some(SkillCategory::Movement),
+            Self::Intimidate => Some(SkillCategory::Social),
+            Self::Jump => Some(SkillCategory::Movement),
+            Self::Knowledge(_) => None,
+            Self::Linguistics => Some(SkillCategory::Social),
+            Self::Medicine => None,
+            Self::Perform => Some(SkillCategory::Social),
+            Self::Persuasion => Some(SkillCategory::Social),
+            Self::Profession => None,
+            Self::Ride => Some(SkillCategory::Movement),
+            Self::SleightOfHand => None,
+            Self::SocialInsight => Some(SkillCategory::Social),
+            Self::Spellsense => Some(SkillCategory::Senses),
+            Self::Stealth => Some(SkillCategory::Movement),
+            Self::Survival => None,
+            Self::Swim => Some(SkillCategory::Movement),
+        }
+    }
+
     // It's useful to return this separately from .name() for three reasons.
     // First, it naturally takes the form of `String` instead of `&str`.
     // Second, it requires some calculation and allocations, while `.name()` should be trivial.
@@ -115,13 +197,11 @@ impl Skill {
                 if subskills.len() == KnowledgeSubskill::all().len() {
                     return String::from("Knowledge (all kinds, taken individually)");
                 } else {
-                    let subskill_names: Vec<&str> = subskills.iter().map(|subskill| subskill.name()).collect();
-                    return format!(
-                        "Knowledge ({})",
-                        subskill_names.join(", ")
-                    );
+                    let subskill_names: Vec<&str> =
+                        subskills.iter().map(|subskill| subskill.name()).collect();
+                    return format!("Knowledge ({})", subskill_names.join(", "));
                 }
-            },
+            }
             _ => titlecase(self.name()),
         }
     }
@@ -190,5 +270,15 @@ impl KnowledgeSubskill {
 impl PartialEq for KnowledgeSubskill {
     fn eq(&self, other: &Self) -> bool {
         return self.name() == other.name();
+    }
+}
+
+impl SkillCategory {
+    pub fn name(&self) -> &str {
+        match self {
+            Self::Movement => "movement",
+            Self::Senses => "senses",
+            Self::Social => "social",
+        }
     }
 }
