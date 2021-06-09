@@ -357,14 +357,13 @@ impl Monster {
                 \\end<monsterstatistics>
             ",
             defensive_statistics = self.latex_defensive_statistics(),
-            movement_skills = "", // TODO
+            movement_skills = self.latex_movement_skills(), // TODO
             movement_modes = self.movement_modes.iter().map(
                 |m| format!("{} {} ft.", m.name(), m.calc_speed(&self.creature.size))
             ).collect::<Vec<String>>().join("\\monsep "),
-            // TODO: figure out skill training
             awareness = format!(
                 "Awareness {}", 
-                latex_formatting::modifier(self.creature.get_base_attribute(&Attribute::Perception))
+                latex_formatting::modifier(self.calc_skill_modifier(&Skill::Awareness))
             ),
             attributes = self.latex_attributes(),
             accuracy = latex_formatting::modifier(self.calc_accuracy()),
@@ -374,6 +373,10 @@ impl Monster {
             ),
             space_and_reach = "", // TODO: only display for monsters with nonstandard space/reach
         );
+    }
+
+    fn latex_movement_skills(&self) -> String {
+        return "TODO".to_string();
     }
 
     fn latex_defensive_statistics(&self) -> String {
