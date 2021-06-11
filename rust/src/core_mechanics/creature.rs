@@ -16,9 +16,9 @@ pub struct Creature {
     base_attributes: HashMap<Attribute, i8>,
     pub name: Option<String>,
     pub level: i8,
+    pub movement_modes: Vec<movement_modes::MovementMode>,
     pub size: sizes::Size,
     pub skill_points: Option<HashMap<Skill, i8>>,
-    pub speeds: Vec<movement_modes::MovementMode>,
     pub special_attacks: Option<Vec<attacks::Attack>>,
     pub weapons: Vec<weapons::Weapon>,
 }
@@ -29,11 +29,11 @@ impl Creature {
         return Creature {
             base_attributes,
             level,
+            movement_modes: vec![],
             name: None,
             size: sizes::Size::Medium,
             skill_points: None,
             special_attacks: None,
-            speeds: vec![],
             weapons: vec![],
         };
     }
@@ -52,6 +52,10 @@ impl Creature {
         } else {
             return None;
         }
+    }
+
+    pub fn set_movement_modes(&mut self, movement_modes: Vec<movement_modes::MovementMode>) {
+        self.movement_modes = movement_modes;
     }
 
     pub fn set_size(&mut self, size: sizes::Size) {

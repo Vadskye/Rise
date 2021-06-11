@@ -32,22 +32,11 @@ pub struct FullMonsterDefinition {
     challenge_rating: challenge_rating::ChallengeRating,
     creature_type: creature_type::CreatureType,
     description: Option<&'static str>,
-    knowledge: Vec<(i8, &'static str)>,
+    knowledge: Option<Vec<(i8, &'static str)>>,
     level: i8,
     movement_modes: Option<Vec<movement_modes::MovementMode>>,
     name: &'static str,
     skill_points: Option<Vec<(Skill, i8)>>,
-    size: sizes::Size,
-    special_attacks: Option<Vec<attacks::Attack>>,
-    weapons: Vec<weapons::Weapon>,
-}
-
-pub struct MinimalMonsterDefinition {
-    attributes: Vec<i8>,
-    challenge_rating: challenge_rating::ChallengeRating,
-    creature_type: creature_type::CreatureType,
-    level: i8,
-    name: &'static str,
     size: sizes::Size,
     special_attacks: Option<Vec<attacks::Attack>>,
     weapons: Vec<weapons::Weapon>,
@@ -70,26 +59,6 @@ impl Monster {
         };
     }
 
-    pub fn minimally_defined(def: MinimalMonsterDefinition) -> Monster {
-        return Self::fully_defined(FullMonsterDefinition {
-            // From def
-            attributes: def.attributes,
-            challenge_rating: def.challenge_rating,
-            creature_type: def.creature_type,
-            level: def.level,
-            name: def.name,
-            size: def.size,
-            special_attacks: def.special_attacks,
-            weapons: def.weapons,
-            // Default values
-            alignment: "Usually true neutral",
-            description: None,
-            knowledge: vec![],
-            movement_modes: None,
-            skill_points: None,
-        });
-    }
-
     pub fn fully_defined(def: FullMonsterDefinition) -> Monster {
         let mut creature = creature::Creature::new(def.level);
         creature.set_name(def.name.to_string());
@@ -98,15 +67,6 @@ impl Monster {
         }
         for weapon in def.weapons {
             creature.add_weapon(weapon);
-        }
-        let base_knowledge_difficulty = def.level + 5;
-        let mut knowledge_option = None;
-        if def.knowledge.len() > 0 {
-            let mut knowledge = HashMap::new();
-            for (modifier, text) in def.knowledge {
-                knowledge.insert(base_knowledge_difficulty + modifier, text.to_string());
-            }
-            knowledge_option = Some(knowledge)
         }
         creature.set_size(def.size);
         if let Some(skill_points) = def.skill_points {
@@ -120,7 +80,7 @@ impl Monster {
             }
         }
 
-        return Monster {
+        let mut monster = Monster {
             alignment: Some(def.alignment.to_owned()),
             challenge_rating: def.challenge_rating,
             creature_type: def.creature_type,
@@ -130,7 +90,7 @@ impl Monster {
             } else {
                 None
             },
-            knowledge: knowledge_option,
+            knowledge: None,
             movement_modes: if let Some(m) = def.movement_modes {
                 m
             } else {
@@ -139,6 +99,21 @@ impl Monster {
                 )]
             },
         };
+        if let Some(k) = def.knowledge {
+            monster.set_knowledge(k);
+        }
+        return monster;
+    }
+
+    pub fn set_knowledge(&mut self, knowledge: Vec<(i8, &'static str)>) {
+        if knowledge.len() > 0 {
+            let base_knowledge_difficulty = self.creature.level + 5;
+            let mut knowledge_map = HashMap::new();
+            for (modifier, text) in knowledge {
+                knowledge_map.insert(base_knowledge_difficulty + modifier, text.to_string());
+            }
+            self.knowledge = Some(knowledge_map);
+        }
     }
 
     pub fn standard_monster(
@@ -149,6 +124,7 @@ impl Monster {
     ) -> Monster {
         let mut creature = creature::Creature::new(level);
         creature.add_weapon(weapons::Weapon::Slam);
+        creature.set_name("Standard Monster".to_string());
         if let Some(value) = starting_attribute {
             for a in Attribute::all() {
                 creature.set_base_attribute(a, value);
