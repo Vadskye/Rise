@@ -224,3 +224,7 @@ typescript/node_modules/
 typescript/tsconfig.tsbuildinfo
 core_book/generated
 html_book/generated
+
+#Rust
+rust/target/*
+rust/target/.*
