@@ -1,12 +1,42 @@
 use crate::core_mechanics::movement_modes::{FlightManeuverability, MovementMode, SpeedCategory};
 use crate::core_mechanics::{attack_effects, attacks, damage_types, debuffs, defenses};
 use crate::equipment::weapons;
-use crate::skills::Skill;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Animal;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::sizes::Size;
-use crate::monsters::{monster_group, FullMonsterDefinition, MinimalMonsterDefinition, Monster};
+use crate::monsters::{monster_group, FullMonsterDefinition, Monster};
+use crate::skills::{HasSkills, Skill};
+
+struct MinimalAnimalDefinition {
+    attributes: Vec<i8>,
+    challenge_rating: ChallengeRating,
+    level: i8,
+    name: &'static str,
+    size: Size,
+    special_attacks: Option<Vec<attacks::Attack>>,
+    weapons: Vec<weapons::Weapon>,
+}
+
+fn minimal_animal(def: MinimalAnimalDefinition) -> Monster {
+    return Monster::fully_defined(FullMonsterDefinition {
+        // From def
+        attributes: def.attributes,
+        challenge_rating: def.challenge_rating,
+        creature_type: Animal,
+        level: def.level,
+        name: def.name,
+        size: def.size,
+        special_attacks: def.special_attacks,
+        weapons: def.weapons,
+        // Default values
+        alignment: "Always true neutral",
+        description: None,
+        knowledge: None,
+        movement_modes: None,
+        skill_points: None,
+    });
+}
 
 pub fn animals() -> Vec<MonsterEntry> {
     let mut monsters: Vec<MonsterEntry> = vec![];
@@ -22,9 +52,9 @@ pub fn animals() -> Vec<MonsterEntry> {
             challenge_rating: ChallengeRating::Two,
             creature_type: Animal,
             description: None,
-            knowledge: vec![
+            knowledge: Some(vec![
                 (0, "Camels are known for their ability to travel long distances without food or water."),
-            ],
+            ]),
             level: 1,
             movement_modes: None,
             name: "Camel",
@@ -33,7 +63,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                 (Skill::Endurance, 3),
             ]),
             // Camels have a high strength, but they shouldn't deal massive damage
-            special_attacks: Some(vec![half_power_bite]),
+            special_attacks: Some(vec![half_power_bite.clone()]),
             weapons: vec![weapons::Weapon::MonsterBite],
         },
     )));
@@ -45,7 +75,7 @@ pub fn animals() -> Vec<MonsterEntry> {
             challenge_rating: ChallengeRating::One,
             creature_type: Animal,
             description: None,
-            knowledge: vec![
+            knowledge: Some(vec![
                 (0, "
                     A baboon is an aggressive primate adapted to life on the ground.
                     A typical baboon is the size of a big dog.
@@ -54,7 +84,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                     Baboons prefer open spaces but climb trees to find safe places to rest overnight.
                     They can be aggressive, though they avoid attacking creatures that seem too dangerous.
                 "),
-            ],
+            ]),
             level: 1,
             movement_modes: Some(vec![
                 MovementMode::Climb(SpeedCategory::Normal),
@@ -77,7 +107,7 @@ pub fn animals() -> Vec<MonsterEntry> {
             challenge_rating: ChallengeRating::One,
             creature_type: Animal,
             description: None,
-            knowledge: vec![
+            knowledge: Some(vec![
                 (
                     0,
                     "
@@ -92,14 +122,12 @@ pub fn animals() -> Vec<MonsterEntry> {
                     A typical adult badger is 2 to 3 feet long and weighs 25 to 35 pounds.
                 ",
                 ),
-            ],
+            ]),
             level: 1,
             movement_modes: None,
             name: "Badger",
             size: Size::Small,
-            skill_points: Some(vec![
-                (Skill::Endurance, 1),
-            ]),
+            skill_points: Some(vec![(Skill::Endurance, 1)]),
             special_attacks: None,
             weapons: vec![weapons::Weapon::MonsterClaws],
         },
@@ -115,12 +143,12 @@ pub fn animals() -> Vec<MonsterEntry> {
                     challenge_rating: ChallengeRating::Three,
                     creature_type: Animal,
                     description: None,
-                    knowledge: vec![
+                    knowledge: Some(vec![
                         (0, "
                             Black bears are forest-dwelling omnivores that are usually not dangerous unless an interloper threatens their cubs or food supply.
                             They can be pure black, blond, or cinnamon in color and are rarely more than 5 feet long.
                         "),
-                    ],
+                    ]),
                     level: 3,
                     movement_modes: None,
                     name: "Black bear",
@@ -139,11 +167,11 @@ pub fn animals() -> Vec<MonsterEntry> {
                     challenge_rating: ChallengeRating::Three,
                     creature_type: Animal,
                     description: Some("A brown bear's statistics can be used for almost any big bear, including a grizzly bear."),
-                    knowledge: vec![
+                    knowledge: Some(vec![
                         (0, "
                             Brown bears tend to be bad-tempered and territorial.
                         "),
-                    ],
+                    ]),
                     movement_modes: None,
                     level: 5,
                     name: "Brown bear",
@@ -167,7 +195,7 @@ pub fn animals() -> Vec<MonsterEntry> {
             challenge_rating: ChallengeRating::Half,
             creature_type: Animal,
             description: None,
-            knowledge: vec![],
+            knowledge: None,
             level: 1,
             movement_modes: None,
             name: "Cat",
@@ -194,7 +222,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                         challenge_rating: ChallengeRating::One,
                         creature_type: Animal,
                         description: None,
-                        knowledge: vec![],
+                        knowledge: None,
                         level: 1,
                         movement_modes: None,
                         name: "Wild dog",
@@ -213,12 +241,12 @@ pub fn animals() -> Vec<MonsterEntry> {
                         challenge_rating: ChallengeRating::One,
                         creature_type: Animal,
                         description: None,
-                        knowledge: vec![
+                        knowledge: Some(vec![
                             (0, "
                                 A riding dog is bred for speed and endurance.
                                 Riding dogs are sometimes used as battle mounts by halflings and gnomes.
                             "),
-                        ],
+                        ]),
                         level: 2,
                         movement_modes: None,
                         name: "Riding dog",
@@ -244,11 +272,10 @@ pub fn animals() -> Vec<MonsterEntry> {
             },
         )]);
     }
-    monsters.push(MonsterEntry::Monster(Monster::minimally_defined(
-        MinimalMonsterDefinition {
+    monsters.push(MonsterEntry::Monster(minimal_animal(
+        MinimalAnimalDefinition {
             attributes: vec![3, 3, 1, 1, 2, 2],
             challenge_rating: ChallengeRating::Four,
-            creature_type: Animal,
             level: 12,
             name: "Frostweb Spider",
             size: Size::Large,
@@ -293,7 +320,7 @@ pub fn animals() -> Vec<MonsterEntry> {
             challenge_rating: ChallengeRating::Two,
             creature_type: Animal,
             description: None,
-            knowledge: vec![
+            knowledge: Some(vec![
                 (0, "
                     A giant wasp is a Large insect resembling a normal wasp.
                     Giant wasps attack when hungry or threatened, stinging their prey to death.
@@ -301,7 +328,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                 (5, "
                     Giant wasps take dead or incapacitated opponents back to their lairs as food for their unhatched young.
                 "),
-            ],
+            ]),
             level: 6,
             movement_modes: Some(vec![MovementMode::Fly(SpeedCategory::Fast, FlightManeuverability::Perfect)]),
             name: "Giant Wasp",
@@ -321,7 +348,7 @@ pub fn animals() -> Vec<MonsterEntry> {
             challenge_rating: ChallengeRating::One,
             creature_type: Animal,
             description: None,
-            knowledge: vec![
+            knowledge: Some(vec![
                 (0, "
                     A dire rat is a Small omnivorous scavenger that resembles an unusually large rat.
                     Dire rats are not generally aggressive, but will attack to defend their nests and territories.
@@ -329,7 +356,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                 (5, "
                     Dire rats can grow to be up to 4 feet long and weigh over 50 pounds.
                 "),
-            ],
+            ]),
             level: 1,
             movement_modes: None,
             name: "Dire Rat",
@@ -342,6 +369,141 @@ pub fn animals() -> Vec<MonsterEntry> {
             weapons: vec![weapons::Weapon::MonsterBite],
         },
     )));
+
+    monsters.push(MonsterEntry::Monster(minimal_animal(
+        MinimalAnimalDefinition {
+            attributes: vec![1, 2, 1, -7, 0, -1],
+            challenge_rating: ChallengeRating::One,
+            level: 2,
+            name: "Wolf",
+            size: Size::Medium,
+            special_attacks: None,
+            weapons: vec![weapons::Weapon::MonsterBite],
+        },
+    )));
+
+    // TODO: add carrying capacity to knowledge result
+    let mut horse = minimal_animal(MinimalAnimalDefinition {
+        attributes: vec![2, 1, 3, -7, 0, -3],
+        challenge_rating: ChallengeRating::Two,
+        level: 2,
+        name: "Horse",
+        size: Size::Large,
+        special_attacks: Some(vec![half_power_bite.clone()]),
+        weapons: vec![weapons::Weapon::MonsterBite],
+    });
+    horse.set_skill_points(Skill::Endurance, 2);
+    monsters.push(MonsterEntry::Monster(horse));
+
+    let mut pony = minimal_animal(MinimalAnimalDefinition {
+        attributes: vec![1, 0, 3, -7, 0, -3],
+        challenge_rating: ChallengeRating::One,
+        level: 2,
+        name: "Pony",
+        size: Size::Medium,
+        special_attacks: Some(vec![half_power_bite.clone()]),
+        weapons: vec![weapons::Weapon::MonsterBite],
+    });
+    pony.set_skill_points(Skill::Endurance, 2);
+    monsters.push(MonsterEntry::Monster(pony));
+
+    let mut roc = minimal_animal(MinimalAnimalDefinition {
+        attributes: vec![4, 1, 3, -7, 2, -1],
+        challenge_rating: ChallengeRating::Four,
+        level: 9,
+        name: "Roc",
+        size: Size::Gargantuan,
+        special_attacks: None,
+        weapons: vec![weapons::Weapon::MonsterBite],
+    });
+    roc.set_knowledge(vec![
+        (0, "
+            A roc is an incredibly strong bird with the ability to carry off horses.
+            It is typically 30 feet long from the beak to the base of the tail, with a wingspan as wide as 80 feet.
+            Its plumage is either dark brown or golden from head to tail.
+        "),
+        (5, "
+            A roc attacks from the air, swooping earthward to snatch prey in its powerful talons and carry it off for itself and its young to devour.
+            A solitary roc is typically hunting and will attack any Medium or larger creature that appears edible.
+            A mated pair of rocs attack in concert, fighting to the death to defend their nests or hatchlings.
+        "),
+    ]);
+    monsters.push(MonsterEntry::Monster(roc));
+
+    let mut vampire_eel = minimal_animal(MinimalAnimalDefinition {
+        attributes: vec![2, 2, 2, -8, 1, -1],
+        challenge_rating: ChallengeRating::Half,
+        level: 6,
+        name: "Vampire Eel",
+        size: Size::Medium,
+        special_attacks: None,
+        weapons: vec![weapons::Weapon::MonsterBite],
+    });
+    vampire_eel.set_knowledge(vec![(
+        0,
+        "
+            Vampire eels are slimy, snakelike carnivores.
+            They swim through murky water, looking for edible creatures.
+        ",
+    )]);
+    monsters.push(MonsterEntry::Monster(vampire_eel));
+
+    let mut dire_wolf = minimal_animal(MinimalAnimalDefinition {
+        attributes: vec![3, 3, 2, -7, 3, 0],
+        challenge_rating: ChallengeRating::One,
+        level: 5,
+        name: "Dire Wolf",
+        size: Size::Large,
+        special_attacks: None,
+        weapons: vec![weapons::Weapon::MonsterBite],
+    });
+    dire_wolf.set_knowledge(vec![(
+        0,
+        "
+            A dire wolf is a wolf-like creature that is much larger than an ordinary wolf.
+            Their fur is usually mottled gray or black.
+            Dire wolves are efficient pack hunters that will kill anything they can catch.
+        ",
+    )]);
+    monsters.push(MonsterEntry::Monster(dire_wolf));
+
+    monsters.push(MonsterEntry::Monster(minimal_animal(
+        MinimalAnimalDefinition {
+            attributes: vec![-8, 3, -4, -6, 2, -1],
+            challenge_rating: ChallengeRating::Half,
+            level: 1,
+            name: "Raven",
+            size: Size::Small,
+            special_attacks: None,
+            weapons: vec![weapons::Weapon::MonsterTalons],
+        },
+    )));
+
+    let mut giant_wasp = minimal_animal(MinimalAnimalDefinition {
+        attributes: vec![1, 4, 1, -8, 2, -2],
+        challenge_rating: ChallengeRating::One,
+        level: 6,
+        name: "Giant Wasp",
+        size: Size::Large,
+        special_attacks: None,
+        weapons: vec![weapons::Weapon::MonsterStinger],
+    });
+    giant_wasp
+        .creature
+        .set_movement_modes(vec![MovementMode::Fly(
+            SpeedCategory::Fast,
+            FlightManeuverability::Perfect,
+        )]);
+    giant_wasp.set_knowledge(vec![
+        (0, "
+            A giant wasp is an insect resembling a normal wasp.
+            Giant wasps attack when hungry or threatened, stinging their prey to death.
+        "),
+        (5, "
+            Giant wasps take dead or incapacitated opponents back to their lairs as food for their unhatched young.
+        "),
+    ]);
+    monsters.push(MonsterEntry::Monster(giant_wasp));
 
     return monsters;
 }
