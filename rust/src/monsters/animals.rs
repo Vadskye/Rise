@@ -479,31 +479,26 @@ pub fn animals() -> Vec<MonsterEntry> {
         },
     )));
 
-    let mut giant_wasp = minimal_animal(MinimalAnimalDefinition {
-        attributes: vec![1, 4, 1, -8, 2, -2],
-        challenge_rating: ChallengeRating::One,
-        level: 6,
-        name: "Giant Wasp",
+    let mut bombardier_beetle = minimal_animal(MinimalAnimalDefinition {
+        attributes: vec![3, -1, 4, -9, 0, 1],
+        challenge_rating: ChallengeRating::Half,
+        level: 7,
+        name: "Giant Bombardier Beetle",
         size: Size::Large,
         special_attacks: None,
-        weapons: vec![weapons::Weapon::MonsterStinger],
+        weapons: vec![weapons::Weapon::MonsterBite],
     });
-    giant_wasp
-        .creature
-        .set_movement_modes(vec![MovementMode::Fly(
-            SpeedCategory::Fast,
-            FlightManeuverability::Perfect,
-        )]);
-    giant_wasp.set_knowledge(vec![
+    bombardier_beetle.set_knowledge(vec![
         (0, "
-            A giant wasp is an insect resembling a normal wasp.
-            Giant wasps attack when hungry or threatened, stinging their prey to death.
+            A giant bombardier beetle is an insect resembling a massive beetle.
+            They feed primarily on carrion and offal, gathering heaps of the stuff in which they build nests and lay eggs.
         "),
         (5, "
-            Giant wasps take dead or incapacitated opponents back to their lairs as food for their unhatched young.
+            A typical adult giant bombardier beetle is about 6 feet long.
+            Giant bombardier beetles normally attack only to defend themselves, their nests, or their eggs.
         "),
     ]);
-    monsters.push(MonsterEntry::Monster(giant_wasp));
+    monsters.push(MonsterEntry::Monster(bombardier_beetle));
 
     return monsters;
 }
