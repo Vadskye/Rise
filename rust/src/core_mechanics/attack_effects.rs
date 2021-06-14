@@ -63,7 +63,7 @@ impl AttackEffect {
 
     pub fn description<T: HasCreatureMechanics>(
         &self,
-        creature: &T,
+        attacker: &T,
         is_magical: bool,
         is_strike: bool,
     ) -> String {
@@ -76,7 +76,7 @@ impl AttackEffect {
                         ",
                         effect = latex_formatting::join_string_list(
                             &t.iter()
-                                .map(|e| e.description(creature, is_magical, is_strike))
+                                .map(|e| e.description(attacker, is_magical, is_strike))
                                 .collect()
                         )
                         .unwrap(),
@@ -90,7 +90,7 @@ impl AttackEffect {
                             Each creature that loses \\glossterm<hit points> from this attack is {effect}
                         ",
                         effect = latex_formatting::join_string_list(
-                            &t.iter().map(|e| e.description(creature, is_magical, is_strike)).collect()
+                            &t.iter().map(|e| e.description(attacker, is_magical, is_strike)).collect()
                         ).unwrap(),
                     )
                 } else {
@@ -103,11 +103,11 @@ impl AttackEffect {
                     ",
                     damage_dice = effect
                         .damage_dice
-                        .add(creature.calc_damage_increments(is_strike))
+                        .add(attacker.calc_damage_increments(is_strike))
                         .to_string(),
                     damage_modifier = latex_formatting::modifier(
                         effect.damage_modifier
-                            + (creature.calc_power(is_magical) as f64 * effect.power_multiplier)
+                            + (attacker.calc_power(is_magical) as f64 * effect.power_multiplier)
                                 as i8,
                     ),
                     damage_types = latex_formatting::join_formattable_list(&effect.damage_types).unwrap_or(String::from("")),
