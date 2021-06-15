@@ -1,8 +1,9 @@
-use crate::monsters::{animals, monster_group, Monster};
+use crate::monsters::{animals, aberrations, monster_group, Monster};
 
 pub fn generate_monster_entries() -> Vec<MonsterEntry> {
     let mut entries: Vec<MonsterEntry> = vec![];
     entries.append(animals::animals().as_mut());
+    entries.append(aberrations::aberrations().as_mut());
     return entries;
 }
 
@@ -22,10 +23,10 @@ impl MonsterEntry {
         }
     }
 
-    pub fn name(&self) -> Option<&str> {
+    pub fn name(&self) -> &str {
         match self {
-            MonsterEntry::Monster(m) => m.creature.name.as_deref(),
-            MonsterEntry::MonsterGroup(m) => Some(m.name.as_str()),
+            MonsterEntry::Monster(m) => m.creature.name.as_deref().unwrap_or("Anonymous"),
+            MonsterEntry::MonsterGroup(m) => m.name.as_str(),
         }
     }
 }

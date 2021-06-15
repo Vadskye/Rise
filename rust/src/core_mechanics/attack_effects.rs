@@ -7,6 +7,7 @@ pub enum AttackEffect {
     Damage(DamageEffect),
     Debuff(DebuffEffect),
     Poison(PoisonEffect),
+    VitalWound(VitalWoundEffect),
 }
 
 #[derive(Clone)]
@@ -28,7 +29,13 @@ pub struct DebuffEffect {
 #[derive(Clone)]
 pub struct PoisonEffect {
     pub stage1: Vec<debuffs::Debuff>,
-    pub stage3: Option<Vec<debuffs::Debuff>>,
+    pub stage3_debuff: Option<Vec<debuffs::Debuff>>,
+    pub stage3_vital: Option<VitalWoundEffect>,
+}
+
+#[derive(Clone)]
+pub struct VitalWoundEffect {
+    pub special_effect: Option<String>,
 }
 
 #[derive(Clone)]
@@ -128,7 +135,7 @@ impl AttackEffect {
                 );
             }
             Self::Poison(effect) => {
-                let third_stage = if let Some(ref debuffs) = effect.stage3 {
+                let mut third_stage = if let Some(ref debuffs) = effect.stage3_debuff {
                     format!(
                         "If a creature reaches the third poison stage, it becomes {debuffs} as long as it is poisoned.",
                         debuffs = latex_formatting::join_str_list(&debuffs.iter().map(|d| d.latex_link()).collect()).unwrap(),
@@ -136,6 +143,12 @@ impl AttackEffect {
                 } else {
                     String::from("")
                 };
+                if let Some(ref vital_wound) = effect.stage3_vital {
+                    third_stage = format!(
+                        "If a creature reaches the third poison stage, it gains a \\glossterm<vital wound>. {special_effect}",
+                        special_effect = vital_wound.special_effect.as_deref().unwrap_or(""),
+                    )
+                }
                 return format!(
                     "
                         \\glossterm<poisoned>.
@@ -146,6 +159,12 @@ impl AttackEffect {
                     ",
                     debuffs = latex_formatting::join_str_list(&effect.stage1.iter().map(|d| d.latex_link()).collect()).unwrap(),
                     third_stage = third_stage,
+                );
+            }
+            Self::VitalWound(effect) => {
+                return format!(
+                    "gains a \\glossterm<vital wound>. {special_effect}.",
+                    special_effect = effect.special_effect.as_deref().unwrap_or(""),
                 );
             }
         };
