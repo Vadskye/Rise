@@ -268,7 +268,8 @@ pub fn animals() -> Vec<MonsterEntry> {
         e.lose_hp_effects = Some(vec![attack_effects::AttackEffect::Poison(
             attack_effects::PoisonEffect {
                 stage1: vec![debuffs::Debuff::Slowed],
-                stage3: Some(vec![debuffs::Debuff::Decelerated]),
+                stage3_debuff: Some(vec![debuffs::Debuff::Decelerated]),
+                stage3_vital: None,
             },
         )]);
     }
@@ -309,7 +310,8 @@ pub fn animals() -> Vec<MonsterEntry> {
         e.lose_hp_effects = Some(vec![attack_effects::AttackEffect::Poison(
             attack_effects::PoisonEffect {
                 stage1: vec![debuffs::Debuff::Sickened],
-                stage3: Some(vec![debuffs::Debuff::Paralyzed]),
+                stage3_debuff: Some(vec![debuffs::Debuff::Paralyzed]),
+                stage3_vital: None,
             },
         )]);
     }

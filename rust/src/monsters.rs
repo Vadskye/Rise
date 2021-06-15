@@ -1,4 +1,5 @@
 mod animals;
+mod aberrations;
 pub mod challenge_rating;
 pub mod creature_type;
 pub mod monster_entry;
