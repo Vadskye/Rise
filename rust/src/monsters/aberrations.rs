@@ -1,6 +1,8 @@
 use crate::core_mechanics::attack_effects::AttackEffect;
-use crate::core_mechanics::attacks::Attack;
+use crate::core_mechanics::attacks::{Attack, AttackTargeting, SimpleAttack, AreaSize, AreaTargets};
+use crate::core_mechanics::damage_types::DamageType;
 use crate::core_mechanics::debuffs::Debuff;
+use crate::core_mechanics::defenses::Defense;
 use crate::core_mechanics::movement_modes::{FlightManeuverability, MovementMode, SpeedCategory};
 use crate::core_mechanics::{attack_effects, damage_types, debuffs, defenses};
 use crate::equipment::weapons::Weapon;
@@ -63,6 +65,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
             },
         )]);
     }
+    aboleth_slam.glance = Some(AttackEffect::HalfDamage);
     monsters.push(MonsterEntry::Monster(Monster::fully_defined(
         FullMonsterDefinition {
             alignment: "Usually lawful evil",
@@ -100,7 +103,18 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                 (Skill::Spellsense, 3),
                 (Skill::Swim, 3),
             ]),
-            special_attacks: Some(vec![aboleth_slam]),
+            special_attacks: Some(vec![
+                aboleth_slam,
+                Attack::aoe_damage(SimpleAttack {
+                    damage_types: vec![DamageType::Energy],
+                    defense: Defense::Mental,
+                    glance_half: true,
+                    is_magical: true,
+                    name: "Mind Crush".to_string(),
+                    rank: 5,
+                    targeting: AttackTargeting::Cone(AreaSize::Large, AreaTargets::Enemies),
+                }),
+            ]),
             weapons: vec![Weapon::Slam],
         },
     )));

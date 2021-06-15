@@ -203,7 +203,7 @@ impl HasAttacks for Creature {
 
     fn calc_power(&self, is_magical: bool) -> i8 {
         if is_magical {
-            return self.calc_total_attribute(&Attribute::Strength) / 2;
+            return self.calc_total_attribute(&Attribute::Willpower) / 2;
         } else {
             return self.calc_total_attribute(&Attribute::Strength) / 2;
         }

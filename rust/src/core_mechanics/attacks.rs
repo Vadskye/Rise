@@ -1,4 +1,6 @@
-use crate::core_mechanics::{attack_effects, damage_dice, defenses, HasCreatureMechanics};
+use crate::core_mechanics::{
+    attack_effects, damage_dice, damage_types, defenses, HasCreatureMechanics,
+};
 use crate::equipment::weapons;
 use crate::latex_formatting;
 use std::fmt;
@@ -8,13 +10,23 @@ pub struct Attack {
     pub accuracy: i8,
     pub crit: Option<Vec<attack_effects::AttackEffect>>,
     pub defense: defenses::Defense,
-    pub glance: Option<Vec<attack_effects::AttackEffect>>,
+    pub glance: Option<attack_effects::AttackEffect>,
     pub hit: Vec<attack_effects::AttackEffect>,
     pub is_magical: bool,
     pub name: String,
     pub targeting: AttackTargeting,
     pub usage_time: UsageTime,
     pub weapon: Option<weapons::Weapon>,
+}
+
+pub struct SimpleAttack {
+    pub damage_types: Vec<damage_types::DamageType>,
+    pub defense: defenses::Defense,
+    pub glance_half: bool,
+    pub is_magical: bool,
+    pub name: String,
+    pub rank: i8,
+    pub targeting: AttackTargeting,
 }
 
 pub trait HasAttacks {
@@ -39,6 +51,35 @@ impl Attack {
             targeting: AttackTargeting::Strike,
             usage_time: UsageTime::Standard,
             weapon: Some(weapon),
+        };
+    }
+
+    pub fn aoe_damage(attack: SimpleAttack) -> Attack {
+        let excess_ranks = attack.rank - attack.targeting.minimum_rank();
+        return Attack {
+            accuracy: 0,
+            crit: None,
+            defense: attack.defense,
+            glance: if attack.glance_half {
+                Some(attack_effects::AttackEffect::HalfDamage)
+            } else {
+                None
+            },
+            hit: vec![attack_effects::AttackEffect::Damage(
+                attack_effects::DamageEffect {
+                    damage_dice: damage_dice::DamageDice::new(damage_dice::D8 + (attack.rank - 1) + excess_ranks / 2),
+                    damage_modifier: 0,
+                    damage_types: attack.damage_types,
+                    lose_hp_effects: None,
+                    power_multiplier: 0.5,
+                    take_damage_effects: None,
+                },
+            )],
+            is_magical: attack.is_magical,
+            name: attack.name,
+            targeting: attack.targeting,
+            usage_time: UsageTime::Standard,
+            weapon: None,
         };
     }
 
@@ -156,6 +197,7 @@ impl Attack {
             "
                 The $name makes a {accuracy} {targeting}.
                 \\hit {hit}
+                {glance}
             ",
             accuracy = latex_formatting::modifier(self.accuracy + creature.calc_accuracy()),
             hit = self
@@ -167,6 +209,14 @@ impl Attack {
                     .to_string())
                 .collect::<Vec<String>>()
                 .join("; "),
+            glance = if let Some(ref g) = self.glance {
+                format!(
+                    "\\glance {}",
+                    g.description(creature, self.is_magical, self.weapon.is_some())
+                )
+            } else {
+                "".to_string()
+            },
             targeting = self.targeting.description(&self.defense),
         );
     }
@@ -176,11 +226,46 @@ impl Attack {
 pub enum AttackTargeting {
     Anything(AttackRange),
     Cone(AreaSize, AreaTargets),
-    Radius(AreaSize, AreaTargets),
+    Radius(Option<AttackRange>, AreaSize, AreaTargets),
     Strike,
 }
 
 impl AttackTargeting {
+    // the minimum rank required to achieve the given targeting requirements
+    pub fn minimum_rank(&self) -> i8 {
+        match self {
+            Self::Anything(range) => range.minimum_rank(),
+            Self::Cone(size, targets) => {
+                let minimum_rank = match size {
+                    AreaSize::Small => 1,
+                    AreaSize::Medium => 2,
+                    AreaSize::Large => 3,
+                    AreaSize::Huge => 5,
+                    AreaSize::Gargantuan => 7,
+                    AreaSize::Custom(_) => 7,
+                };
+                return minimum_rank + targets.rank_modifier();
+            }
+            Self::Radius(range, size, targets) => {
+                let minimum_rank = match size {
+                    AreaSize::Small => 1,
+                    AreaSize::Medium => 2,
+                    AreaSize::Large => 3,
+                    AreaSize::Huge => 5,
+                    AreaSize::Gargantuan => 7,
+                    AreaSize::Custom(_) => 7,
+                };
+                let range_modifier = if let Some(r) = range {
+                    r.minimum_rank() + 1
+                } else {
+                    0
+                };
+                return minimum_rank + range_modifier + targets.rank_modifier();
+            }
+            Self::Strike => 1,
+        }
+    }
+
     pub fn description(&self, defense: &defenses::Defense) -> String {
         let defense = latex_formatting::uppercase_first_letter(defense.to_string().as_str());
         match self {
@@ -195,11 +280,16 @@ impl AttackTargeting {
                 targets = area_targets,
                 size = area_size
             ),
-            Self::Radius(area_size, area_targets) => format!(
-                "attack vs. {defense} against {targets} in a {size} radius",
+            Self::Radius(attack_range, area_size, area_targets) => format!(
+                "attack vs. {defense} against {targets} in a {size} radius{range}",
                 defense = defense,
                 targets = area_targets,
-                size = area_size
+                size = area_size,
+                range = if let Some(r) = attack_range {
+                    format!(" within {}", r)
+                } else {
+                    "".to_string()
+                },
             ),
             Self::Strike => format!("strike vs. {defense}", defense = defense),
         }
@@ -217,6 +307,18 @@ pub enum AttackRange {
 }
 
 impl AttackRange {
+    pub fn minimum_rank(&self) -> i8 {
+        match self {
+            Self::Short => 0,
+            Self::Medium => 1,
+            Self::Long => 2,
+            Self::Distant => 3,
+            Self::Extreme => 4,
+            // TODO: calculate rank based on number of feet
+            Self::Custom(_) => 5,
+        }
+    }
+
     fn latex_tag(&self) -> String {
         match self {
             Self::Short => "\\shortrange".to_string(),
@@ -279,6 +381,15 @@ impl AreaTargets {
             Self::Creatures => "creatures",
             Self::Enemies => "enemies",
             Self::Everything => "everything",
+        }
+    }
+
+    fn rank_modifier(&self) -> i8 {
+        match self {
+            Self::Allies => 0,
+            Self::Creatures => 0,
+            Self::Enemies => 1,
+            Self::Everything => 0,
         }
     }
 }

@@ -6,6 +6,7 @@ use crate::latex_formatting;
 pub enum AttackEffect {
     Damage(DamageEffect),
     Debuff(DebuffEffect),
+    HalfDamage,
     Poison(PoisonEffect),
     VitalWound(VitalWoundEffect),
 }
@@ -133,6 +134,9 @@ impl AttackEffect {
                         .join(", "),
                     duration = effect.duration.description(),
                 );
+            }
+            Self::HalfDamage => {
+                return "Half damage.".to_string();
             }
             Self::Poison(effect) => {
                 let mut third_stage = if let Some(ref debuffs) = effect.stage3_debuff {
