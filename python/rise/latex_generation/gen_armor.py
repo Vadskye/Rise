@@ -236,30 +236,30 @@ def generate_armor():
             level=4,
             material_type="Shield",
             description="""
-                When you take the \\textit<total defense> action with this shield, you gain a +4 bonus to Armor defense in addition to the normal bonuses from taking that action (see \\pcref<Total Defense>).
+                When you take the \\textit<total defense> action with this shield, you gain a +3 bonus to Armor defense in addition to the normal bonuses from taking that action (see \\pcref<Total Defense>).
                 This property cannot be applied to tower shields.
             """,
-            short_description="Grants +4 Armor defense during total defense",
+            short_description="Grants +3 Armor defense during total defense",
         ),
         MagicItem(
             name="Covering Shield, Greater",
             level=10,
             material_type="Shield",
             description="""
-                This shield functions like a \\mitem<covering shield>, except that the defense bonus increases to +6.
+                This shield functions like a \\mitem<covering shield>, except that the defense bonus increases to +4.
                 This property cannot be applied to tower shields.
             """,
-            short_description="Grants +6 Armor defense during total defense",
+            short_description="Grants +4 Armor defense during total defense",
         ),
         MagicItem(
             name="Covering Shield, Supreme",
             level=16,
             material_type="Shield",
             description="""
-                This shield functions like a \\mitem<covering shield>, except that the defense bonus increases to +8.
+                This shield functions like a \\mitem<covering shield>, except that the defense bonus increases to +5.
                 This property cannot be applied to tower shields.
             """,
-            short_description="Grants +8 Armor defense during total defense",
+            short_description="Grants +5 Armor defense during total defense",
         ),
     ]
 
