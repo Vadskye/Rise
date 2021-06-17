@@ -109,7 +109,7 @@ impl Skill {
         }
     }
 
-    pub fn all(&self) -> Vec<Self> {
+    pub fn all() -> Vec<Self> {
         return vec![
             Self::Agility,
             Self::Awareness,
@@ -140,9 +140,8 @@ impl Skill {
         ];
     }
 
-    pub fn all_from_skill_category(&self, category: &SkillCategory) -> Vec<Self> {
-        return self
-            .all()
+    pub fn all_from_skill_category(category: &SkillCategory) -> Vec<Self> {
+        return Self::all()
             .into_iter()
             .filter(|s| {
                 if let Some(c) = s.skill_category() {

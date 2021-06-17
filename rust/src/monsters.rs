@@ -1,5 +1,5 @@
-mod animals;
 mod aberrations;
+mod animals;
 pub mod challenge_rating;
 pub mod creature_type;
 pub mod monster_entry;
@@ -12,8 +12,8 @@ use crate::core_mechanics::defenses::{Defense, HasDefenses};
 use crate::core_mechanics::resources::{self, HasResources};
 use crate::core_mechanics::{attacks, creature, movement_modes, sizes, HasCreatureMechanics};
 use crate::equipment::{weapons, HasEquipment};
-use crate::skills::{Skill, HasSkills};
 use crate::latex_formatting;
+use crate::skills::{HasSkills, Skill, SkillCategory};
 use std::collections::HashMap;
 use titlecase::titlecase;
 
@@ -295,6 +295,7 @@ impl Monster {
                     {description}
                     {knowledge}
 
+                    \\RaggedRight
                     {content}
                 \\end<{section_name}>
                 \\monsterabilitiesheader<$Name>
@@ -310,10 +311,16 @@ impl Monster {
             description = self.description.as_deref().unwrap_or(""),
             knowledge = self.latex_knowledge().trim(),
             content = self.latex_content().trim(),
-            abilities = self.latex_abilities().trim(), // TODO
+            abilities = self.latex_abilities().trim(),
         ))
-            .replace("$name", self.creature.lowercase_name().as_deref().unwrap_or(""))
-            .replace("$Name", titlecase(self.creature.name.as_deref().unwrap_or("")).as_str());
+        .replace(
+            "$name",
+            self.creature.lowercase_name().as_deref().unwrap_or(""),
+        )
+        .replace(
+            "$Name",
+            titlecase(self.creature.name.as_deref().unwrap_or("")).as_str(),
+        );
     }
 
     fn latex_content(&self) -> String {
@@ -321,7 +328,7 @@ impl Monster {
             "
                 \\begin<monsterstatistics>
                     {defensive_statistics}
-                    \\pari \\textbf<Movement> {movement_modes}{movement_skills}
+                    \\pari \\textbf<Movement> {movement_modes} \\monsep {movement_skills}
                     {space_and_reach}
                     \\pari \\textbf<Senses> {awareness}
                     \\rankline
@@ -334,7 +341,7 @@ impl Monster {
                 \\end<monsterstatistics>
             ",
             defensive_statistics = self.latex_defensive_statistics(),
-            movement_skills = self.latex_movement_skills(), // TODO
+            movement_skills = self.latex_movement_skills(),
             movement_modes = self.movement_modes.iter().map(
                 |m| format!("{} {} ft.", m.name(), m.calc_speed(&self.creature.size))
             ).collect::<Vec<String>>().join("\\monsep "),
@@ -353,7 +360,18 @@ impl Monster {
     }
 
     fn latex_movement_skills(&self) -> String {
-        return "TODO".to_string();
+        return Skill::all_from_skill_category(&SkillCategory::Movement)
+            .iter()
+            .filter(|s| self.get_skill_points(s) > 0)
+            .map(|s| {
+                format!(
+                    "{}~{}",
+                    titlecase(s.name()),
+                    latex_formatting::modifier(self.calc_skill_modifier(s))
+                )
+            })
+            .collect::<Vec<String>>()
+            .join(" \\monsep ");
     }
 
     fn latex_defensive_statistics(&self) -> String {
@@ -425,9 +443,9 @@ impl Monster {
         let mut attacks = self.calc_all_attacks();
         attacks.sort_by(|a, b| a.name.to_lowercase().cmp(&b.name.to_lowercase()));
         return attacks
-                .iter()
-                .map(|a| a.latex_ability_block(self))
-                .collect::<Vec<String>>()
-                .join("\\par ");
+            .iter()
+            .map(|a| a.latex_ability_block(self))
+            .collect::<Vec<String>>()
+            .join("\\par ");
     }
 }
