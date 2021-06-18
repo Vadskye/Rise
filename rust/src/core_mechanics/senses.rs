@@ -29,5 +29,5 @@ impl Sense {
 }
 
 fn format_range(name: &str, feet: &i32) -> String {
-    return format!("{} ({} ft.)", name, feet);
+    return format!("{}~({}~ft.)", name, feet);
 }
