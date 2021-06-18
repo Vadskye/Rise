@@ -14,6 +14,7 @@ pub mod movement_modes;
 pub mod passive_abilities;
 pub mod resources;
 pub mod sizes;
+pub mod senses;
 
 use crate::equipment::HasEquipment;
 use crate::skills::HasSkills;

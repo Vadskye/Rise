@@ -1,4 +1,5 @@
 use crate::core_mechanics::movement_modes::{FlightManeuverability, MovementMode, SpeedCategory};
+use crate::core_mechanics::senses::Sense;
 use crate::core_mechanics::{attack_effects, attacks, damage_types, debuffs, defenses};
 use crate::equipment::weapons;
 use crate::monsters::challenge_rating::ChallengeRating;
@@ -35,6 +36,7 @@ fn minimal_animal(def: MinimalAnimalDefinition) -> Monster {
         knowledge: None,
         movement_modes: None,
         passive_abilities: None,
+        senses: None,
         skill_points: None,
     });
 }
@@ -60,6 +62,7 @@ pub fn animals() -> Vec<MonsterEntry> {
             passive_abilities: None,
             movement_modes: None,
             name: "Camel",
+            senses: None,
             size: Size::Medium,
             skill_points: Some(vec![
                 (Skill::Endurance, 3),
@@ -94,6 +97,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                 MovementMode::Land(SpeedCategory::Normal),
             ]),
             name: "Baboon",
+            senses: None,
             size: Size::Medium,
             skill_points: Some(vec![
                 (Skill::Climb, 3),
@@ -130,6 +134,7 @@ pub fn animals() -> Vec<MonsterEntry> {
             passive_abilities: None,
             movement_modes: None,
             name: "Badger",
+            senses: Some(vec![Sense::Scent]),
             size: Size::Small,
             skill_points: Some(vec![(Skill::Endurance, 1)]),
             special_attacks: None,
@@ -157,6 +162,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                     passive_abilities: None,
                     movement_modes: None,
                     name: "Black bear",
+                    senses: Some(vec![Sense::Scent]),
                     size: Size::Medium,
                     skill_points: Some(vec![
                         (Skill::Climb, 3),
@@ -181,6 +187,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                     movement_modes: None,
                     level: 5,
                     name: "Brown bear",
+                    senses: Some(vec![Sense::Scent]),
                     size: Size::Large,
                     skill_points: Some(vec![
                         (Skill::Climb, 3),
@@ -206,6 +213,7 @@ pub fn animals() -> Vec<MonsterEntry> {
             passive_abilities: None,
             movement_modes: None,
             name: "Cat",
+            senses: Some(vec![Sense::LowLightVision, Sense::Scent]),
             size: Size::Small,
             skill_points: Some(vec![
                 (Skill::Agility, 3),
@@ -234,6 +242,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                         passive_abilities: None,
                         movement_modes: None,
                         name: "Wild dog",
+                        senses: Some(vec![Sense::Scent]),
                         size: Size::Medium,
                         skill_points: Some(vec![
                             (Skill::Awareness, 3),
@@ -259,6 +268,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                         passive_abilities: None,
                         movement_modes: None,
                         name: "Riding dog",
+                        senses: Some(vec![Sense::Scent]),
                         size: Size::Medium,
                         skill_points: Some(vec![
                             (Skill::Awareness, 3),
@@ -343,6 +353,7 @@ pub fn animals() -> Vec<MonsterEntry> {
             level: 6,
             passive_abilities: None,
             movement_modes: Some(vec![MovementMode::Fly(SpeedCategory::Fast, FlightManeuverability::Perfect)]),
+            senses: None,
             name: "Giant Wasp",
             size: Size::Large,
             skill_points: Some(vec![
@@ -373,6 +384,7 @@ pub fn animals() -> Vec<MonsterEntry> {
             passive_abilities: None,
             movement_modes: None,
             name: "Dire Rat",
+            senses: Some(vec![Sense::LowLightVision, Sense::Scent]),
             size: Size::Small,
             skill_points: Some(vec![
                 (Skill::Climb, 3),
