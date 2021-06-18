@@ -9,6 +9,7 @@ use crate::core_mechanics::attacks::HasAttacks;
 use crate::core_mechanics::attributes::{Attribute, HasAttributes};
 use crate::core_mechanics::damage_absorption::HasDamageAbsorption;
 use crate::core_mechanics::defenses::{Defense, HasDefenses};
+use crate::core_mechanics::passive_abilities::PassiveAbility;
 use crate::core_mechanics::resources::{self, HasResources};
 use crate::core_mechanics::{attacks, creature, movement_modes, sizes, HasCreatureMechanics};
 use crate::equipment::{weapons, HasEquipment};
@@ -37,6 +38,7 @@ pub struct FullMonsterDefinition {
     level: i8,
     movement_modes: Option<Vec<movement_modes::MovementMode>>,
     name: &'static str,
+    passive_abilities: Option<Vec<PassiveAbility>>,
     skill_points: Option<Vec<(Skill, i8)>>,
     size: sizes::Size,
     special_attacks: Option<Vec<attacks::Attack>>,
@@ -70,6 +72,11 @@ impl Monster {
             creature.add_weapon(weapon);
         }
         creature.set_size(def.size);
+        if let Some(passive_abilities) = def.passive_abilities {
+            for ability in passive_abilities {
+                creature.add_passive_ability(ability);
+            }
+        }
         if let Some(skill_points) = def.skill_points {
             for (skill, points) in skill_points {
                 creature.set_skill_points(skill, points);
@@ -439,13 +446,22 @@ impl Monster {
         }
     }
 
+    // This could probably be moved to Creature instead of Monster
     fn latex_abilities(&self) -> String {
         let mut attacks = self.calc_all_attacks();
         attacks.sort_by(|a, b| a.name.to_lowercase().cmp(&b.name.to_lowercase()));
-        return attacks
+        let mut ability_texts = attacks
             .iter()
             .map(|a| a.latex_ability_block(self))
-            .collect::<Vec<String>>()
-            .join("\\par ");
+            .collect::<Vec<String>>();
+        if let Some(ref passive_abilities) = self.creature.passive_abilities {
+            let mut passive_ability_texts = passive_abilities
+                .iter()
+                .map(|a| a.to_latex())
+                .collect::<Vec<String>>();
+            passive_ability_texts.sort();
+            ability_texts.extend(passive_ability_texts);
+        }
+        return ability_texts.join("\\par ");
     }
 }
