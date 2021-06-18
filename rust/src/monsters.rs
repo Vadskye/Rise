@@ -394,9 +394,7 @@ impl Monster {
                 "
                     \\pari \\textbf<Movement> {movement}
                 ",
-                movement = latex_formatting::uppercase_first_letter(
-                    &movement_components.join("\\monsep ")
-                ),
+                movement = movement_components.join("\\monsep "),
             );
         } else {
             return "".to_string();
@@ -408,7 +406,7 @@ impl Monster {
         let senses = self.creature.senses.as_ref().unwrap_or(&senses);
         let mut sense_components = senses
             .iter()
-            .map(|s| s.latex_description())
+            .map(|s| latex_formatting::uppercase_first_letter(&s.latex_description()))
             .collect::<Vec<String>>();
         sense_components.extend(self.latex_skill_modifiers_from_category(&SkillCategory::Senses));
         if sense_components.len() > 0 {
@@ -416,8 +414,7 @@ impl Monster {
                 "
                     \\pari \\textbf<Senses> {senses}
                 ",
-                senses =
-                    latex_formatting::uppercase_first_letter(&sense_components.join("\\monsep ")),
+                senses = &sense_components.join("\\monsep "),
             );
         } else {
             return "".to_string();
