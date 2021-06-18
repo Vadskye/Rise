@@ -1,6 +1,4 @@
-use crate::core_mechanics::{
-    attack_effects, damage_dice, defenses, HasCreatureMechanics,
-};
+use crate::core_mechanics::{attack_effects, damage_dice, defenses, HasCreatureMechanics};
 use crate::equipment::weapons;
 use crate::latex_formatting;
 use std::fmt;
@@ -8,10 +6,10 @@ use std::fmt;
 #[derive(Clone)]
 pub struct Attack {
     pub accuracy: i8,
-    pub crit: Option<Vec<attack_effects::AttackEffect>>,
+    pub crit: Option<attack_effects::AttackEffect>,
     pub defense: defenses::Defense,
     pub glance: Option<attack_effects::AttackEffect>,
-    pub hit: Vec<attack_effects::AttackEffect>,
+    pub hit: attack_effects::AttackEffect,
     pub is_magical: bool,
     pub name: String,
     pub targeting: AttackTargeting,
@@ -35,7 +33,7 @@ impl Attack {
             crit: None,
             defense: defenses::Defense::Armor,
             glance: None,
-            hit: vec![attack_effects::AttackEffect::from_weapon(weapon)],
+            hit: attack_effects::AttackEffect::from_weapon(weapon),
             name: weapon.name().to_string(),
             is_magical: false,
             targeting: AttackTargeting::Strike,
@@ -44,29 +42,16 @@ impl Attack {
         };
     }
 
-    // Implicit assumption: an attack can only have one damage effect.
     pub fn damage_effect_mut(&mut self) -> Option<&mut attack_effects::DamageEffect> {
-        for hit_effect in self
-            .hit
-            .iter_mut()
-            .collect::<Vec<&mut attack_effects::AttackEffect>>()
-        {
-            if let attack_effects::AttackEffect::Damage(ref mut e) = hit_effect {
-                return Some(e);
-            }
+        if let attack_effects::AttackEffect::Damage(ref mut e) = self.hit {
+            return Some(e);
         }
         return None;
     }
 
     pub fn damage_effect(&self) -> Option<&attack_effects::DamageEffect> {
-        for hit_effect in self
-            .hit
-            .iter()
-            .collect::<Vec<&attack_effects::AttackEffect>>()
-        {
-            if let attack_effects::AttackEffect::Damage(ref e) = hit_effect {
-                return Some(e);
-            }
+        if let attack_effects::AttackEffect::Damage(ref e) = self.hit {
+            return Some(e);
         }
         return None;
     }
@@ -108,13 +93,9 @@ impl Attack {
             accuracy = latex_formatting::modifier(self.accuracy + creature.calc_accuracy()),
             hit = self
                 .hit
-                .iter()
-                .map(|h| h
-                    .description(creature, self.is_magical, self.weapon.is_some())
-                    .trim()
-                    .to_string())
-                .collect::<Vec<String>>()
-                .join("; "),
+                .description(creature, self.is_magical, self.weapon.is_some())
+                .trim()
+                .to_string(),
         );
     }
 }
@@ -163,13 +144,9 @@ impl Attack {
             accuracy = latex_formatting::modifier(self.accuracy + creature.calc_accuracy()),
             hit = self
                 .hit
-                .iter()
-                .map(|h| h
-                    .description(creature, self.is_magical, self.weapon.is_some())
-                    .trim()
-                    .to_string())
-                .collect::<Vec<String>>()
-                .join("; "),
+                .description(creature, self.is_magical, self.weapon.is_some())
+                .trim()
+                .to_string(),
             glance = if let Some(ref g) = self.glance {
                 format!(
                     "\\glance {}",
