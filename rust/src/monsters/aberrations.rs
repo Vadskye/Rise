@@ -138,7 +138,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                 crit: None,
                 defense: Defense::Mental,
                 glance: Some(AttackEffect::HalfDamage),
-                hit: vec![AttackEffect::Damage(
+                hit: AttackEffect::Damage(
                     DamageEffect {
                         damage_dice: damage_dice::DamageDice::aoe_damage(5),
                         damage_modifier: 0,
@@ -147,7 +147,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                         power_multiplier: 0.5,
                         take_damage_effects: None,
                     },
-                )],
+                ),
                 is_magical: true,
                 name: "Psionic Blast".to_string(),
                 targeting: AttackTargeting::Cone(AreaSize::Large, AreaTargets::Enemies),
@@ -159,7 +159,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                 crit: None,
                 defense: Defense::Mental,
                 glance: Some(AttackEffect::HalfDamage),
-                hit: vec![AttackEffect::Damage(
+                hit: AttackEffect::Damage(
                     DamageEffect {
                         damage_dice: damage_dice::DamageDice::single_target_damage(5),
                         damage_modifier: 0,
@@ -173,7 +173,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                         power_multiplier: 1.0,
                         take_damage_effects: None,
                     },
-                )],
+                ),
                 is_magical: true,
                 name: "Mind Crush".to_string(),
                 targeting: AttackTargeting::Creature(AttackRange::Long),
@@ -213,16 +213,16 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         special_attacks: Some(vec![
             Attack {
                 accuracy: 0,
-                crit: Some(vec![AttackEffect::Debuff(DebuffEffect {
+                crit: Some(AttackEffect::Debuff(DebuffEffect {
                     debuffs: vec![Debuff::Confused],
                     duration: AttackEffectDuration::Brief,
-                })]),
+                })),
                 defense: Defense::Mental,
                 glance: None,
-                hit: vec![AttackEffect::Debuff(DebuffEffect {
+                hit: AttackEffect::Debuff(DebuffEffect {
                     debuffs: vec![Debuff::Dazed],
                     duration: AttackEffectDuration::Brief,
-                })],
+                }),
                 is_magical: true,
                 name: "Gibber".to_string(),
                 targeting: AttackTargeting::Radius(None, AreaSize::Medium, AreaTargets::Creatures),
