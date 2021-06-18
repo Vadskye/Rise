@@ -11,12 +11,14 @@ use crate::equipment::{weapons, HasEquipment};
 use crate::skills::{HasSkills, Skill};
 use std::cmp::{max, min};
 use std::collections::HashMap;
+use crate::core_mechanics::passive_abilities::PassiveAbility;
 
 pub struct Creature {
     base_attributes: HashMap<Attribute, i8>,
     pub name: Option<String>,
     pub level: i8,
     pub movement_modes: Vec<movement_modes::MovementMode>,
+    pub passive_abilities: Option<Vec<PassiveAbility>>,
     pub size: sizes::Size,
     pub skill_points: Option<HashMap<Skill, i8>>,
     pub special_attacks: Option<Vec<attacks::Attack>>,
@@ -31,11 +33,19 @@ impl Creature {
             level,
             movement_modes: vec![],
             name: None,
+            passive_abilities: None,
             size: sizes::Size::Medium,
             skill_points: None,
             special_attacks: None,
             weapons: vec![],
         };
+    }
+
+    pub fn add_passive_ability(&mut self, ability: PassiveAbility) {
+        if self.passive_abilities.is_none() {
+            self.passive_abilities = Some(vec![]);
+        }
+        self.passive_abilities.as_mut().unwrap().push(ability);
     }
 
     pub fn set_level(&mut self, level: i8) {

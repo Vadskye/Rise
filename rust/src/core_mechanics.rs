@@ -11,6 +11,7 @@ pub mod debuffs;
 pub mod defenses;
 pub mod latex;
 pub mod movement_modes;
+pub mod passive_abilities;
 pub mod resources;
 pub mod sizes;
 

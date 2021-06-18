@@ -10,6 +10,7 @@ use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Aberration;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::sizes::Size;
+use crate::core_mechanics::passive_abilities::PassiveAbility;
 use crate::monsters::{monster_group, FullMonsterDefinition, Monster};
 use crate::skills::{HasSkills, Skill};
 
@@ -18,6 +19,7 @@ struct MinimalAberrationDefinition {
     challenge_rating: ChallengeRating,
     level: i8,
     name: &'static str,
+    passive_abilities: Option<Vec<PassiveAbility>>,
     size: Size,
     special_attacks: Option<Vec<Attack>>,
     weapons: Vec<Weapon>,
@@ -39,6 +41,7 @@ fn minimal_aberration(def: MinimalAberrationDefinition) -> Monster {
         description: None,
         knowledge: None,
         movement_modes: None,
+        passive_abilities: None,
         skill_points: None,
     });
 }
@@ -97,6 +100,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
             level: 12,
             movement_modes: None,
             name: "Aboleth",
+            passive_abilities: None,
             size: Size::Huge,
             skill_points: Some(vec![
                 (Skill::Endurance, 3),
