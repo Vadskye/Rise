@@ -12,6 +12,7 @@ use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::sizes::Size;
 use crate::core_mechanics::passive_abilities::PassiveAbility;
 use crate::monsters::{monster_group, FullMonsterDefinition, Monster};
+use crate::core_mechanics::senses::Sense;
 use crate::skills::{HasSkills, Skill};
 
 struct MinimalAberrationDefinition {
@@ -42,6 +43,7 @@ fn minimal_aberration(def: MinimalAberrationDefinition) -> Monster {
         knowledge: None,
         movement_modes: None,
         passive_abilities: None,
+        senses: None,
         skill_points: None,
     });
 }
@@ -101,6 +103,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
             movement_modes: None,
             name: "Aboleth",
             passive_abilities: None,
+            senses: Some(vec![Sense::Darkvision(240), Sense::Telepathy(900)]),
             size: Size::Huge,
             skill_points: Some(vec![
                 (Skill::Endurance, 3),

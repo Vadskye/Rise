@@ -11,6 +11,7 @@ use crate::core_mechanics::damage_absorption::HasDamageAbsorption;
 use crate::core_mechanics::defenses::{Defense, HasDefenses};
 use crate::core_mechanics::passive_abilities::PassiveAbility;
 use crate::core_mechanics::resources::{self, HasResources};
+use crate::core_mechanics::senses::Sense;
 use crate::core_mechanics::{attacks, creature, movement_modes, sizes, HasCreatureMechanics};
 use crate::equipment::{weapons, HasEquipment};
 use crate::latex_formatting;
@@ -39,6 +40,7 @@ pub struct FullMonsterDefinition {
     movement_modes: Option<Vec<movement_modes::MovementMode>>,
     name: &'static str,
     passive_abilities: Option<Vec<PassiveAbility>>,
+    senses: Option<Vec<Sense>>,
     skill_points: Option<Vec<(Skill, i8)>>,
     size: sizes::Size,
     special_attacks: Option<Vec<attacks::Attack>>,
@@ -75,6 +77,11 @@ impl Monster {
         if let Some(passive_abilities) = def.passive_abilities {
             for ability in passive_abilities {
                 creature.add_passive_ability(ability);
+            }
+        }
+        if let Some(senses) = def.senses {
+            for sense in senses {
+                creature.add_sense(sense);
             }
         }
         if let Some(skill_points) = def.skill_points {
@@ -335,9 +342,9 @@ impl Monster {
             "
                 \\begin<monsterstatistics>
                     {defensive_statistics}
-                    \\pari \\textbf<Movement> {movement_modes} \\monsep {movement_skills}
+                    {movement}
                     {space_and_reach}
-                    \\pari \\textbf<Senses> {awareness}
+                    {senses}
                     \\rankline
                     \\pari \\textbf<Attributes> {attributes}
                     % This is sometimes useful for debugging, but isn't actually useful information in general.
@@ -348,14 +355,8 @@ impl Monster {
                 \\end<monsterstatistics>
             ",
             defensive_statistics = self.latex_defensive_statistics(),
-            movement_skills = self.latex_movement_skills(),
-            movement_modes = self.movement_modes.iter().map(
-                |m| format!("{} {} ft.", m.name(), m.calc_speed(&self.creature.size))
-            ).collect::<Vec<String>>().join("\\monsep "),
-            awareness = format!(
-                "Awareness {}", 
-                latex_formatting::modifier(self.calc_skill_modifier(&Skill::Awareness))
-            ),
+            movement = self.latex_movement(),
+            senses = self.latex_senses(),
             attributes = self.latex_attributes(),
             accuracy = latex_formatting::modifier(self.calc_accuracy()),
             power = self.latex_power(),
@@ -366,8 +367,8 @@ impl Monster {
         );
     }
 
-    fn latex_movement_skills(&self) -> String {
-        return Skill::all_from_skill_category(&SkillCategory::Movement)
+    fn latex_skill_modifiers_from_category(&self, skill_category: &SkillCategory) -> Vec<String> {
+        return Skill::all_from_skill_category(skill_category)
             .iter()
             .filter(|s| self.get_skill_points(s) > 0)
             .map(|s| {
@@ -377,8 +378,50 @@ impl Monster {
                     latex_formatting::modifier(self.calc_skill_modifier(s))
                 )
             })
-            .collect::<Vec<String>>()
-            .join(" \\monsep ");
+            .collect::<Vec<String>>();
+    }
+
+    fn latex_movement(&self) -> String {
+        let mut movement_components = self
+            .movement_modes
+            .iter()
+            .map(|m| format!("{} {} ft.", m.name(), m.calc_speed(&self.creature.size)))
+            .collect::<Vec<String>>();
+        movement_components
+            .extend(self.latex_skill_modifiers_from_category(&SkillCategory::Movement));
+        if movement_components.len() > 0 {
+            return format!(
+                "
+                    \\pari \\textbf<Movement> {movement}
+                ",
+                movement = latex_formatting::uppercase_first_letter(
+                    &movement_components.join("\\monsep ")
+                ),
+            );
+        } else {
+            return "".to_string();
+        }
+    }
+
+    fn latex_senses(&self) -> String {
+        let senses = vec![];
+        let senses = self.creature.senses.as_ref().unwrap_or(&senses);
+        let mut sense_components = senses
+            .iter()
+            .map(|s| s.latex_description())
+            .collect::<Vec<String>>();
+        sense_components.extend(self.latex_skill_modifiers_from_category(&SkillCategory::Senses));
+        if sense_components.len() > 0 {
+            return format!(
+                "
+                    \\pari \\textbf<Senses> {senses}
+                ",
+                senses =
+                    latex_formatting::uppercase_first_letter(&sense_components.join("\\monsep ")),
+            );
+        } else {
+            return "".to_string();
+        }
     }
 
     fn latex_defensive_statistics(&self) -> String {
