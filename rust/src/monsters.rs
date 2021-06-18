@@ -350,7 +350,7 @@ impl Monster {
                     % This is sometimes useful for debugging, but isn't actually useful information in general.
                     % To the extent that raw accuracy or power is important, that should already be
                     % included in more specific attacks or abilities.
-                    \\pari \\textbf<Accuracy> {accuracy} \\monsep {power}
+                    % \\pari \\textbf<Accuracy> {accuracy} \\monsep {power}
                     \\pari \\textbf<Alignment> {alignment}
                 \\end<monsterstatistics>
             ",
