@@ -55,4 +55,12 @@ impl DamageDice {
     pub fn average_damage(&self) -> f64 {
         return ((self.count * (self.size + 1)) as f64) / 2.0
     }
+
+    pub fn aoe_damage(rank: i8) -> Self {
+        return Self::new(D8 + (rank - 1));
+    }
+
+    pub fn single_target_damage(rank: i8) -> Self {
+        return Self::new(D10 + (rank - 1));
+    }
 }

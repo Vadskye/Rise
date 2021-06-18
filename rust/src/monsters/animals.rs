@@ -516,7 +516,7 @@ pub fn animals() -> Vec<MonsterEntry> {
 
     let mut bombardier_beetle = animal(FullAnimalDefinition {
         attributes: vec![3, -1, 4, -9, 0, 1],
-        challenge_rating: ChallengeRating::Half,
+        challenge_rating: ChallengeRating::Two,
         level: 7,
         name: "Giant Bombardier Beetle",
         size: Size::Large,

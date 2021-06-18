@@ -1,18 +1,23 @@
-use crate::core_mechanics::attack_effects::AttackEffect;
-use crate::core_mechanics::attacks::{Attack, AttackTargeting, SimpleAttack, AreaSize, AreaTargets};
+use crate::core_mechanics::attack_effects::{
+    AttackEffect, AttackEffectDuration, DamageEffect, DebuffEffect,
+};
+use crate::core_mechanics::attacks::{
+    AreaSize, AreaTargets, Attack, AttackRange, AttackTargeting, UsageTime,
+};
+use crate::core_mechanics::damage_dice;
 use crate::core_mechanics::damage_types::DamageType;
 use crate::core_mechanics::debuffs::Debuff;
 use crate::core_mechanics::defenses::Defense;
 use crate::core_mechanics::movement_modes::{FlightManeuverability, MovementMode, SpeedCategory};
+use crate::core_mechanics::passive_abilities::PassiveAbility;
+use crate::core_mechanics::senses::Sense;
 use crate::core_mechanics::{attack_effects, damage_types, debuffs, defenses};
 use crate::equipment::weapons::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Aberration;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::sizes::Size;
-use crate::core_mechanics::passive_abilities::PassiveAbility;
 use crate::monsters::{monster_group, FullMonsterDefinition, Monster};
-use crate::core_mechanics::senses::Sense;
 use crate::skills::Skill;
 
 struct FullAberrationDefinition {
@@ -107,7 +112,17 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         level: 12,
         movement_modes: None,
         name: "Aboleth",
-        passive_abilities: None,
+        passive_abilities: Some(vec![
+            PassiveAbility {
+                description: r"
+                    As a standard action, the aboleth can \glossterm{dominate} the mind of an unconscious humanoid or aberration it touches.
+                    It can dominate up to 5 creatures in this way.
+                    This ability has the \glossterm{Compulsion} tag.
+                ".to_string(),
+                is_magical: true,
+                name: "Dominate".to_string(),
+            }
+        ]),
         senses: Some(vec![Sense::Darkvision(240), Sense::Telepathy(900)]),
         size: Size::Huge,
         skill_points: Some(vec![
@@ -117,17 +132,106 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         ]),
         special_attacks: Some(vec![
             aboleth_slam,
-            Attack::aoe_damage(SimpleAttack {
-                damage_types: vec![DamageType::Energy],
+            // Large enemies-only cone is a rank 4 effect
+            Attack {
+                accuracy: 0,
+                crit: None,
                 defense: Defense::Mental,
-                glance_half: true,
+                glance: Some(AttackEffect::HalfDamage),
+                hit: vec![AttackEffect::Damage(
+                    DamageEffect {
+                        damage_dice: damage_dice::DamageDice::aoe_damage(5),
+                        damage_modifier: 0,
+                        damage_types: vec![DamageType::Energy],
+                        lose_hp_effects: None,
+                        power_multiplier: 0.5,
+                        take_damage_effects: None,
+                    },
+                )],
+                is_magical: true,
+                name: "Psionic Blast".to_string(),
+                targeting: AttackTargeting::Cone(AreaSize::Large, AreaTargets::Enemies),
+                usage_time: UsageTime::Standard,
+                weapon: None,
+            },
+            Attack {
+                accuracy: 2,
+                crit: None,
+                defense: Defense::Mental,
+                glance: Some(AttackEffect::HalfDamage),
+                hit: vec![AttackEffect::Damage(
+                    DamageEffect {
+                        damage_dice: damage_dice::DamageDice::single_target_damage(5),
+                        damage_modifier: 0,
+                        damage_types: vec![DamageType::Energy],
+                        lose_hp_effects: Some(vec![
+                            AttackEffect::Debuff(DebuffEffect {
+                                debuffs: vec![Debuff::Dazed],
+                                duration: AttackEffectDuration::Condition
+                            }),
+                        ]),
+                        power_multiplier: 1.0,
+                        take_damage_effects: None,
+                    },
+                )],
                 is_magical: true,
                 name: "Mind Crush".to_string(),
-                rank: 5,
-                targeting: AttackTargeting::Cone(AreaSize::Large, AreaTargets::Enemies),
-            }),
+                targeting: AttackTargeting::Creature(AttackRange::Long),
+                usage_time: UsageTime::Minor,
+                weapon: None,
+            },
         ]),
         weapons: vec![Weapon::Slam],
+    })));
+
+    monsters.push(MonsterEntry::Monster(aberration(FullAberrationDefinition {
+        alignment: "Usually lawful evil",
+        attributes: vec![0, 1, 4, -6, 1, 2],
+        challenge_rating: ChallengeRating::Three,
+        description: None,
+        knowledge: Some(vec![
+            (0, "
+                A gibbering mouther is a horrible creature seemingly drawn from a lunatic's nightmares.
+                They are named for their tendency for speak gibberish to baffle the minds of their prey.
+            "),
+            (5, "
+                Although gibbering mouthers are not intelligent enough to be actively evil, they thirst after bodily fluids and seem to prefer the blood of intelligent creatures.
+                They speak their gibberish in Common, but cannot understand it.
+            "),
+        ]),
+        level: 5,
+        movement_modes: None,
+        name: "Gibbering Mouther",
+        passive_abilities: None,
+        senses: Some(vec![Sense::Darkvision(240), Sense::Telepathy(900)]),
+        size: Size::Huge,
+        skill_points: Some(vec![
+            (Skill::Endurance, 3),
+            (Skill::Spellsense, 3),
+            (Skill::Swim, 3),
+        ]),
+        special_attacks: Some(vec![
+            Attack {
+                accuracy: 0,
+                crit: Some(vec![AttackEffect::Debuff(DebuffEffect {
+                    debuffs: vec![Debuff::Confused],
+                    duration: AttackEffectDuration::Brief,
+                })]),
+                defense: Defense::Mental,
+                glance: None,
+                hit: vec![AttackEffect::Debuff(DebuffEffect {
+                    debuffs: vec![Debuff::Dazed],
+                    duration: AttackEffectDuration::Brief,
+                })],
+                is_magical: true,
+                name: "Gibber".to_string(),
+                targeting: AttackTargeting::Radius(None, AreaSize::Medium, AreaTargets::Creatures),
+                usage_time: UsageTime::Minor,
+                weapon: None,
+            },
+        ]),
+        // TODO: make attacks sweeping
+        weapons: vec![Weapon::MonsterBite],
     })));
 
     return monsters;

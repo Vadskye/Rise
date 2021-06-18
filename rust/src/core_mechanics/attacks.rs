@@ -1,5 +1,5 @@
 use crate::core_mechanics::{
-    attack_effects, damage_dice, damage_types, defenses, HasCreatureMechanics,
+    attack_effects, damage_dice, defenses, HasCreatureMechanics,
 };
 use crate::equipment::weapons;
 use crate::latex_formatting;
@@ -17,16 +17,6 @@ pub struct Attack {
     pub targeting: AttackTargeting,
     pub usage_time: UsageTime,
     pub weapon: Option<weapons::Weapon>,
-}
-
-pub struct SimpleAttack {
-    pub damage_types: Vec<damage_types::DamageType>,
-    pub defense: defenses::Defense,
-    pub glance_half: bool,
-    pub is_magical: bool,
-    pub name: String,
-    pub rank: i8,
-    pub targeting: AttackTargeting,
 }
 
 pub trait HasAttacks {
@@ -51,35 +41,6 @@ impl Attack {
             targeting: AttackTargeting::Strike,
             usage_time: UsageTime::Standard,
             weapon: Some(weapon),
-        };
-    }
-
-    pub fn aoe_damage(attack: SimpleAttack) -> Attack {
-        let excess_ranks = attack.rank - attack.targeting.minimum_rank();
-        return Attack {
-            accuracy: 0,
-            crit: None,
-            defense: attack.defense,
-            glance: if attack.glance_half {
-                Some(attack_effects::AttackEffect::HalfDamage)
-            } else {
-                None
-            },
-            hit: vec![attack_effects::AttackEffect::Damage(
-                attack_effects::DamageEffect {
-                    damage_dice: damage_dice::DamageDice::new(damage_dice::D8 + (attack.rank - 1) + excess_ranks / 2),
-                    damage_modifier: 0,
-                    damage_types: attack.damage_types,
-                    lose_hp_effects: None,
-                    power_multiplier: 0.5,
-                    take_damage_effects: None,
-                },
-            )],
-            is_magical: attack.is_magical,
-            name: attack.name,
-            targeting: attack.targeting,
-            usage_time: UsageTime::Standard,
-            weapon: None,
         };
     }
 
@@ -225,6 +186,7 @@ impl Attack {
 #[derive(Clone)]
 pub enum AttackTargeting {
     Anything(AttackRange),
+    Creature(AttackRange),
     Cone(AreaSize, AreaTargets),
     Radius(Option<AttackRange>, AreaSize, AreaTargets),
     Strike,
@@ -235,6 +197,7 @@ impl AttackTargeting {
     pub fn minimum_rank(&self) -> i8 {
         match self {
             Self::Anything(range) => range.minimum_rank(),
+            Self::Creature(range) => range.minimum_rank(),
             Self::Cone(size, targets) => {
                 let minimum_rank = match size {
                     AreaSize::Small => 1,
@@ -271,6 +234,11 @@ impl AttackTargeting {
         match self {
             Self::Anything(range) => format!(
                 "attack vs. {defense} against anything within {range}",
+                defense = defense,
+                range = range
+            ),
+            Self::Creature(range) => format!(
+                "attack vs. {defense} against one creature within {range}",
                 defense = defense,
                 range = range
             ),
