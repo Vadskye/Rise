@@ -243,6 +243,7 @@ impl AttackTargeting {
 
 #[derive(Clone)]
 pub enum AttackRange {
+    Reach,
     Short,
     Medium,
     Long,
@@ -254,6 +255,7 @@ pub enum AttackRange {
 impl AttackRange {
     pub fn minimum_rank(&self) -> i8 {
         match self {
+            Self::Reach => -1,
             Self::Short => 0,
             Self::Medium => 1,
             Self::Long => 2,
@@ -266,6 +268,7 @@ impl AttackRange {
 
     fn latex_tag(&self) -> String {
         match self {
+            Self::Reach => "\\glossterm{reach}".to_string(),
             Self::Short => "\\shortrange".to_string(),
             Self::Medium => "\\medrange".to_string(),
             Self::Long => "\\longrange".to_string(),

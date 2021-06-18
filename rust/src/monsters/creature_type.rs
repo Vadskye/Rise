@@ -8,6 +8,7 @@ use std::cmp::PartialEq;
 pub enum CreatureType {
     Aberration,
     Animal,
+    Animate,
     Planeforged,
     Undead,
 }
@@ -26,6 +27,12 @@ impl CreatureType {
                 Defense::Fortitude => 6,
                 Defense::Reflex => 5,
                 Defense::Mental => 4,
+            },
+            Self::Animate => match defense {
+                Defense::Armor => 4,
+                Defense::Fortitude => 6,
+                Defense::Reflex => 4,
+                Defense::Mental => 5,
             },
             Self::Planeforged => match defense {
                 Defense::Armor => 4,
@@ -58,6 +65,7 @@ impl CreatureType {
         match self {
             Self::Aberration => "dungeoneering",
             Self::Animal => "nature",
+            Self::Animate => "nature",
             Self::Planeforged => "planes",
             Self::Undead => "religion",
         }
@@ -67,6 +75,7 @@ impl CreatureType {
         match self {
             Self::Aberration => "aberration",
             Self::Animal => "animal",
+            Self::Animate => "animate",
             Self::Planeforged => "planeforged",
             Self::Undead => "undead",
         }
