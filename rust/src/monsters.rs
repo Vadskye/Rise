@@ -1,5 +1,6 @@
 mod aberrations;
 mod animals;
+mod animates;
 pub mod challenge_rating;
 pub mod creature_type;
 pub mod monster_entry;
@@ -500,7 +501,7 @@ impl Monster {
                 .map(|a| a.to_latex())
                 .collect::<Vec<String>>();
             passive_ability_texts.sort();
-            ability_texts.extend(passive_ability_texts);
+            ability_texts = [&passive_ability_texts[..], &ability_texts[..]].concat();
         }
         return ability_texts.join("\\par ");
     }
