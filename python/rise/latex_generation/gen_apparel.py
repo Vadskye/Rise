@@ -1310,7 +1310,7 @@ def generate_apparel():
             material_type="Belt",
             tags=[],
             description="""
-                This belt functions like an \\mitem<enlarging belt>, except that your size increases by two size categories instead of one.
+                This belt functions like an \\mitem<enlarging belt>, except that your size increases by up to two size categories instead of one.
             """,
             short_description="Greatly increases your size",
         ),
