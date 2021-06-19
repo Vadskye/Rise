@@ -203,7 +203,7 @@ export const ebbAndFlow: CombatStyle = {
       scaling: {
         3: "The damage bonus increases to +3d.",
         5: "The damage bonus increases to +4d.",
-        7: "The damage bonus increases to +4d.",
+        7: "The damage bonus increases to +5d.",
       },
       type: "Instant",
     },
@@ -249,11 +249,12 @@ export const ebbAndFlow: CombatStyle = {
       type: "Duration",
     },
 
+    // TODO: nerf once people won't complain
     {
       name: "Greater Hunting Strike",
 
       functionsLike: {
-        exceptThat: "the accuracy bonus from each strike increases to +2.",
+        exceptThat: "the accuracy bonus from each strike increases to +2. This bonus does not stack with the bonus from the \\maneuver{hunting strike} maneuver.",
         name: "hunting strike",
       },
       rank: 5,
