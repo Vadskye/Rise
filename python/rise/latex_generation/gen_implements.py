@@ -528,7 +528,7 @@ def generate_implements():
         MagicItem(
             name="Blessed Staff",
             level=4,
-            material_type="Weapon",
+            material_type="Staff",
             tags=[],
             description="""
                 When you use the \\textit<desperate exertion> ability to affect a \\glossterm<magical> ability, you gain a +2 bonus to the reroll.
@@ -539,7 +539,7 @@ def generate_implements():
         MagicItem(
             name="Blessed Staff, Greater",
             level=10,
-            material_type="Weapon",
+            material_type="Staff",
             tags=[],
             description="""
                 When you use the \\textit<desperate exertion> ability to affect a \\glossterm<magical> ability, you gain a +3 bonus to the reroll.
@@ -550,7 +550,7 @@ def generate_implements():
         MagicItem(
             name="Blessed Staff, Supreme",
             level=16,
-            material_type="Weapon",
+            material_type="Staff",
             tags=[],
             description="""
                 When you use the \\textit<desperate exertion> ability to affect a \\glossterm<magical> ability, you gain a +4 bonus to the reroll.
@@ -574,7 +574,7 @@ def generate_implements():
         MagicItem(
             name="Hexbite Staff, Greater",
             level=11,
-            material_type="Weapon",
+            material_type="Staff",
             tags=[],
             description="""
                 Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 2d10 + half \\glossterm<power> \\glossterm<energy damage>.
@@ -584,7 +584,7 @@ def generate_implements():
         MagicItem(
             name="Hexbite Staff, Supreme",
             level=17,
-            material_type="Weapon",
+            material_type="Staff",
             tags=[],
             description="""
                 Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 4d10 + half \\glossterm<power> \\glossterm<energy damage>.
