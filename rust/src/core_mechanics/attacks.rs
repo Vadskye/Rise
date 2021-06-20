@@ -112,11 +112,11 @@ impl Attack {
             .collect::<Vec<&str>>();
         return format!(
             "
-                \\begin<{ability_environment}><{name}>[{ability_type}]
+                \\begin<{ability_environment}>*<{name}>[{ability_type}]
                     {ability_components}
                 \\end<{ability_environment}>
             ",
-            ability_environment = "freeability", // TODO
+            ability_environment = "instantability", // TODO
             ability_components = ability_components.join("\n\\rankline "),
             ability_type = "Instant", // TODO
             name = latex_formatting::uppercase_first_letter(&self.name),
