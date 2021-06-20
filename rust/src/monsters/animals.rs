@@ -18,7 +18,7 @@ struct FullAnimalDefinition {
     knowledge: Option<Vec<(i8, &'static str)>>,
     level: i8,
     movement_modes: Option<Vec<MovementMode>>,
-    name: &'static str,
+    name: String,
     passive_abilities: Option<Vec<PassiveAbility>>,
     senses: Option<Vec<Sense>>,
     skill_points: Option<Vec<(Skill, i8)>>,
@@ -46,7 +46,7 @@ fn animal(def: FullAnimalDefinition) -> Monster {
 
         // Default values
         creature_type: Animal,
-        alignment: "Always true neutral",
+        alignment: "Always true neutral".to_string(),
     });
 }
 
@@ -68,7 +68,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         level: 1,
         passive_abilities: None,
         movement_modes: None,
-        name: "Camel",
+        name: "Camel".to_string(),
         senses: None,
         size: Size::Medium,
         skill_points: Some(vec![(Skill::Endurance, 3)]),
@@ -97,7 +97,7 @@ pub fn animals() -> Vec<MonsterEntry> {
             MovementMode::Climb(SpeedCategory::Normal),
             MovementMode::Land(SpeedCategory::Normal),
         ]),
-        name: "Baboon",
+        name: "Baboon".to_string(),
         senses: None,
         size: Size::Medium,
         skill_points: Some(vec![
@@ -130,7 +130,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         level: 1,
         passive_abilities: None,
         movement_modes: None,
-        name: "Badger",
+        name: "Badger".to_string(),
         senses: Some(vec![Sense::Scent]),
         size: Size::Small,
         skill_points: Some(vec![(Skill::Endurance, 1)]),
@@ -155,7 +155,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                     level: 3,
                     passive_abilities: None,
                     movement_modes: None,
-                    name: "Black bear",
+                    name: "Black bear".to_string(),
                     senses: Some(vec![Sense::Scent]),
                     size: Size::Medium,
                     skill_points: Some(vec![
@@ -178,7 +178,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                     passive_abilities: None,
                     movement_modes: None,
                     level: 5,
-                    name: "Brown bear",
+                    name: "Brown bear".to_string(),
                     senses: Some(vec![Sense::Scent]),
                     size: Size::Large,
                     skill_points: Some(vec![
@@ -201,7 +201,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         level: 1,
         passive_abilities: None,
         movement_modes: None,
-        name: "Cat",
+        name: "Cat".to_string(),
         senses: Some(vec![Sense::LowLightVision, Sense::Scent]),
         size: Size::Small,
         skill_points: Some(vec![
@@ -226,7 +226,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                     level: 1,
                     passive_abilities: None,
                     movement_modes: None,
-                    name: "Wild dog",
+                    name: "Wild dog".to_string(),
                     senses: Some(vec![Sense::Scent]),
                     size: Size::Medium,
                     skill_points: Some(vec![(Skill::Awareness, 3)]),
@@ -247,7 +247,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                     level: 2,
                     passive_abilities: None,
                     movement_modes: None,
-                    name: "Riding dog",
+                    name: "Riding dog".to_string(),
                     senses: Some(vec![Sense::Scent]),
                     size: Size::Medium,
                     skill_points: Some(vec![(Skill::Awareness, 3), (Skill::Endurance, 3)]),
@@ -275,7 +275,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         knowledge: None,
         level: 12,
         movement_modes: None,
-        name: "Frostweb Spider",
+        name: "Frostweb Spider".to_string(),
         passive_abilities: None,
         senses: Some(vec![Sense::Tremorsense(240), Sense::Tremorsight(60)]),
         size: Size::Large,
@@ -331,7 +331,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         passive_abilities: None,
         movement_modes: Some(vec![MovementMode::Fly(SpeedCategory::Fast, FlightManeuverability::Perfect)]),
         senses: None,
-        name: "Giant Wasp",
+        name: "Giant Wasp".to_string(),
         size: Size::Large,
         skill_points: Some(vec![
             (Skill::Awareness, 3),
@@ -341,12 +341,10 @@ pub fn animals() -> Vec<MonsterEntry> {
     },
     )));
 
-    monsters.push(MonsterEntry::Monster(Monster::fully_defined(
-        FullMonsterDefinition {
-            alignment: "Always true neutral",
+    monsters.push(MonsterEntry::Monster(animal(
+        FullAnimalDefinition {
             attributes: vec![0, 3, 0, -9, 2, -2],
             challenge_rating: ChallengeRating::One,
-            creature_type: Animal,
             description: None,
             knowledge: Some(vec![
                 (0, "
@@ -360,7 +358,7 @@ pub fn animals() -> Vec<MonsterEntry> {
             level: 1,
             passive_abilities: None,
             movement_modes: None,
-            name: "Dire Rat",
+            name: "Dire Rat".to_string(),
             senses: Some(vec![Sense::LowLightVision, Sense::Scent]),
             size: Size::Small,
             skill_points: Some(vec![
@@ -379,7 +377,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         knowledge: None,
         level: 2,
         movement_modes: None,
-        name: "Wolf",
+        name: "Wolf".to_string(),
         passive_abilities: None,
         senses: Some(vec![Sense::Scent]),
         size: Size::Medium,
@@ -393,7 +391,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         attributes: vec![2, 1, 3, -7, 0, -3],
         challenge_rating: ChallengeRating::Two,
         level: 2,
-        name: "Horse",
+        name: "Horse".to_string(),
         size: Size::Large,
         special_attacks: Some(vec![half_power_bite.clone()]),
         weapons: vec![Weapon::MonsterBite],
@@ -410,7 +408,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         attributes: vec![1, 0, 3, -7, 0, -3],
         challenge_rating: ChallengeRating::One,
         level: 2,
-        name: "Pony",
+        name: "Pony".to_string(),
         size: Size::Medium,
         special_attacks: Some(vec![half_power_bite.clone()]),
         weapons: vec![Weapon::MonsterBite],
@@ -427,7 +425,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         attributes: vec![4, 1, 3, -7, 2, -1],
         challenge_rating: ChallengeRating::Four,
         level: 9,
-        name: "Roc",
+        name: "Roc".to_string(),
         size: Size::Gargantuan,
         special_attacks: None,
         weapons: vec![Weapon::MonsterBite],
@@ -455,7 +453,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         attributes: vec![2, 2, 2, -8, 1, -1],
         challenge_rating: ChallengeRating::Half,
         level: 6,
-        name: "Vampire Eel",
+        name: "Vampire Eel".to_string(),
         size: Size::Medium,
         special_attacks: None,
         weapons: vec![Weapon::MonsterBite],
@@ -478,7 +476,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         attributes: vec![3, 3, 2, -7, 3, 0],
         challenge_rating: ChallengeRating::One,
         level: 5,
-        name: "Dire Wolf",
+        name: "Dire Wolf".to_string(),
         size: Size::Large,
         special_attacks: None,
         weapons: vec![Weapon::MonsterBite],
@@ -502,7 +500,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         attributes: vec![-8, 3, -4, -6, 2, -1],
         challenge_rating: ChallengeRating::Half,
         level: 1,
-        name: "Raven",
+        name: "Raven".to_string(),
         size: Size::Small,
         special_attacks: None,
         weapons: vec![Weapon::MonsterTalons],
@@ -518,7 +516,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         attributes: vec![3, -1, 4, -9, 0, 1],
         challenge_rating: ChallengeRating::Two,
         level: 7,
-        name: "Giant Bombardier Beetle",
+        name: "Giant Bombardier Beetle".to_string(),
         size: Size::Large,
         special_attacks: None,
         weapons: vec![Weapon::MonsterBite],

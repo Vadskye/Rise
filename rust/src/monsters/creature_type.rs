@@ -9,6 +9,7 @@ pub enum CreatureType {
     Aberration,
     Animal,
     Animate,
+    Dragon,
     Planeforged,
     Undead,
 }
@@ -31,6 +32,12 @@ impl CreatureType {
             Self::Animate => match defense {
                 Defense::Armor => 4,
                 Defense::Fortitude => 6,
+                Defense::Reflex => 4,
+                Defense::Mental => 5,
+            },
+            Self::Dragon => match defense {
+                Defense::Armor => 5,
+                Defense::Fortitude => 5,
                 Defense::Reflex => 4,
                 Defense::Mental => 5,
             },
@@ -66,6 +73,7 @@ impl CreatureType {
             Self::Aberration => "dungeoneering",
             Self::Animal => "nature",
             Self::Animate => "nature",
+            Self::Dragon => "arcana",
             Self::Planeforged => "planes",
             Self::Undead => "religion",
         }
@@ -76,6 +84,7 @@ impl CreatureType {
             Self::Aberration => "aberration",
             Self::Animal => "animal",
             Self::Animate => "animate",
+            Self::Dragon => "dragon",
             Self::Planeforged => "planeforged",
             Self::Undead => "undead",
         }
@@ -83,6 +92,7 @@ impl CreatureType {
 
     pub fn plural_name(&self) -> String {
         match self {
+            Self::Planeforged => self.name().to_string(),
             Self::Undead => self.name().to_string(),
             _ => format!("{}s", self.name()),
         }

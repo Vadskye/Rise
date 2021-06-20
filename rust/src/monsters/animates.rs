@@ -21,14 +21,14 @@ use crate::monsters::{monster_group, FullMonsterDefinition, Monster};
 use crate::skills::Skill;
 
 struct FullAnimateDefinition {
-    alignment: &'static str,
+    alignment: String,
     attributes: Vec<i8>,
     challenge_rating: ChallengeRating,
     description: Option<&'static str>,
     knowledge: Option<Vec<(i8, &'static str)>>,
     level: i8,
     movement_modes: Option<Vec<MovementMode>>,
-    name: &'static str,
+    name: String,
     passive_abilities: Option<Vec<PassiveAbility>>,
     senses: Option<Vec<Sense>>,
     skill_points: Option<Vec<(Skill, i8)>>,
@@ -64,7 +64,7 @@ pub fn animates() -> Vec<MonsterEntry> {
     let mut monsters: Vec<MonsterEntry> = vec![];
 
     monsters.push(MonsterEntry::Monster(animate(FullAnimateDefinition {
-        alignment: "Always neutral evil",
+        alignment: "Always neutral evil".to_string(),
         attributes: vec![0, 3, 0, 1, 2, 2],
         challenge_rating: ChallengeRating::Four,
         description: None,
@@ -83,7 +83,7 @@ pub fn animates() -> Vec<MonsterEntry> {
         level: 1,
         passive_abilities: None,
         movement_modes: Some(vec![MovementMode::Fly(SpeedCategory::Normal, FlightManeuverability::Perfect)]),
-        name: "Darkwraith",
+        name: "Darkwraith".to_string(),
         senses: None,
         size: Size::Medium,
         skill_points: Some(vec![
@@ -144,15 +144,15 @@ pub fn animates() -> Vec<MonsterEntry> {
     })));
 
     fn create_treant(
-        alignment: &'static str,
+        alignment: &str,
         attributes: Vec<i8>,
         knowledge: Vec<(i8, &'static str)>,
         level: i8,
-        name: &'static str,
+        name: &str,
         size: Size,
     ) -> Monster {
         return animate(FullAnimateDefinition {
-            alignment,
+            alignment: alignment.to_string(),
             attributes,
             challenge_rating: ChallengeRating::Two,
             description: None,
@@ -175,7 +175,7 @@ pub fn animates() -> Vec<MonsterEntry> {
                 },
             ]),
             movement_modes: Some(vec![MovementMode::Land(SpeedCategory::Slow)]),
-            name,
+            name: name.to_string(),
             senses: None,
             size,
             skill_points: Some(vec![ (Skill::Awareness, 1), ]),
@@ -269,11 +269,11 @@ pub fn animates() -> Vec<MonsterEntry> {
         attributes: Vec<i8>,
         challenge_rating: ChallengeRating,
         level: i8,
-        name: &'static str,
+        name: &str,
         size: Size,
     ) -> Monster {
         return animate(FullAnimateDefinition {
-            alignment: "Always true neutral",
+            alignment: "Always true neutral".to_string(),
             attributes,
             challenge_rating,
             description: None,
@@ -281,7 +281,7 @@ pub fn animates() -> Vec<MonsterEntry> {
             level,
             passive_abilities: None,
             movement_modes: None,
-            name,
+            name: name.to_string(),
             senses: Some(vec![Sense::Darkvision(60)]),
             size,
             skill_points: None,

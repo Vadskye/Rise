@@ -302,8 +302,8 @@ impl AreaSize {
             Self::Medium => "\\medarea".to_string(),
             Self::Large => "\\largearea".to_string(),
             Self::Huge => "\\hugearea".to_string(),
-            Self::Gargantuan => "\\extarea".to_string(),
-            Self::Custom(feet) => format!("{} ft.", feet),
+            Self::Gargantuan => "\\gargarea".to_string(),
+            Self::Custom(feet) => format!("{}~ft.", feet),
         }
     }
 }

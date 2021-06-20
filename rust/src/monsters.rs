@@ -1,6 +1,7 @@
 mod aberrations;
 mod animals;
 mod animates;
+mod dragons;
 pub mod challenge_rating;
 pub mod creature_type;
 pub mod monster_entry;
@@ -31,7 +32,7 @@ pub struct Monster {
 }
 
 pub struct FullMonsterDefinition {
-    alignment: &'static str,
+    alignment: String,
     attributes: Vec<i8>,
     challenge_rating: challenge_rating::ChallengeRating,
     creature_type: creature_type::CreatureType,
@@ -39,7 +40,7 @@ pub struct FullMonsterDefinition {
     knowledge: Option<Vec<(i8, &'static str)>>,
     level: i8,
     movement_modes: Option<Vec<movement_modes::MovementMode>>,
-    name: &'static str,
+    name: String,
     passive_abilities: Option<Vec<PassiveAbility>>,
     senses: Option<Vec<Sense>>,
     skill_points: Option<Vec<(Skill, i8)>>,
@@ -67,7 +68,7 @@ impl Monster {
 
     pub fn fully_defined(def: FullMonsterDefinition) -> Monster {
         let mut creature = creature::Creature::new(def.level);
-        creature.set_name(def.name.to_string());
+        creature.set_name(def.name);
         for (i, attribute) in Attribute::all().iter().enumerate() {
             creature.set_base_attribute(attribute.clone(), def.attributes[i]);
         }
@@ -97,7 +98,7 @@ impl Monster {
         }
 
         let mut monster = Monster {
-            alignment: Some(def.alignment.to_owned()),
+            alignment: Some(def.alignment),
             challenge_rating: def.challenge_rating,
             creature_type: def.creature_type,
             creature,
