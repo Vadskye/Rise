@@ -12,10 +12,10 @@ pub static D10: i8 = 6;
 
 impl DamageDice {
     pub fn new(increments: i8) -> DamageDice {
-        // 4d10+ has different scaling
+        // 5d10+ has different scaling
         if increments >= 13 {
             return DamageDice {
-                count: increments - 9,
+                count: increments - 8,
                 increments,
                 size: 10,
             };
