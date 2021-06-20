@@ -81,17 +81,19 @@
     innertopmargin=0.5em,
     innerbottommargin=0.25em,
 ]{freeabilitymdframed}
-\DeclareDocumentEnvironment{freeability}{o m o}
+\DeclareDocumentEnvironment{freeability}{s o m o}
 {
     \begin{freeabilitymdframed}
     \RaggedRight
-    \lowercase{\hypertarget{ability:#2}{}}
-    \hypertarget{ability:#2}{}
+    \IfBooleanF{#1}{
+        \lowercase{\hypertarget{ability:#3}{}}
+        \hypertarget{ability:#3}{}
+    }
     \spelltwocol{
-        {\normalsize \textbf{#2}}
-        \IfValueTF{#1}{~--~#1}{}
+        {\normalsize \textbf{#3}}
+        \IfValueTF{#2}{~--~#2}{}
     }{
-        \IfValueTF{#3}{#3}{}
+        \IfValueTF{#4}{#4}{}
     }
 }
 {
@@ -112,17 +114,19 @@
     innertopmargin=0.5em,
     innerbottommargin=0.25em,
 ]{durationabilitymdframed}
-\DeclareDocumentEnvironment{durationability}{o m o}
+\DeclareDocumentEnvironment{durationability}{s o m o}
 {
     \begin{durationabilitymdframed}
     \RaggedRight
-    \lowercase{\hypertarget{ability:#2}{}}
-    \hypertarget{ability:#2}{}
+    \IfBooleanF{#1}{
+        \lowercase{\hypertarget{ability:#3}{}}
+        \hypertarget{ability:#3}{}
+    }
     \spelltwocol{
-        {\normalsize \textbf{#2}}
-        \IfValueTF{#1}{~--~#1}{}
+        {\normalsize \textbf{#3}}
+        \IfValueTF{#2}{~--~#2}{}
     }{
-        \IfValueTF{#3}{#3}{}
+        \IfValueTF{#4}{#4}{}
     }
 }
 {
@@ -143,17 +147,19 @@
     innertopmargin=0.5em,
     innerbottommargin=0.25em,
 ]{attuneabilitymdframed}
-\DeclareDocumentEnvironment{attuneability}{o m o}
+\DeclareDocumentEnvironment{attuneability}{s o m o}
 {
     \begin{attuneabilitymdframed}
     \RaggedRight
-    \lowercase{\hypertarget{ability:#2}{}}
-    \hypertarget{ability:#2}{}
+    \IfBooleanF{#1}{
+        \lowercase{\hypertarget{ability:#3}{}}
+        \hypertarget{ability:#3}{}
+    }
     \spelltwocol{
-        {\normalsize \textbf{#2}}
-        \IfValueTF{#1}{~--~#1}{}
+        {\normalsize \textbf{#3}}
+        \IfValueTF{#2}{~--~#2}{}
     }{
-        \IfValueTF{#3}{#3}{}
+        \IfValueTF{#4}{#4}{}
     }
 }
 {
@@ -174,17 +180,19 @@
     innertopmargin=0.5em,
     innerbottommargin=0.25em,
 ]{instantabilitymdframed}
-\DeclareDocumentEnvironment{instantability}{o m o}
+\DeclareDocumentEnvironment{instantability}{s o m o}
 {
     \begin{instantabilitymdframed}
     \RaggedRight
-    \lowercase{\hypertarget{ability:#2}{}}
-    \hypertarget{ability:#2}{}
+    \IfBooleanF{#1}{
+        \lowercase{\hypertarget{ability:#3}{}}
+        \hypertarget{ability:#3}{}
+    }
     \spelltwocol{
-        {\normalsize \textbf{#2}}
-        \IfValueTF{#1}{~--~#1}{}
+        {\normalsize \textbf{#3}}
+        \IfValueTF{#2}{~--~#2}{}
     }{
-        \IfValueTF{#3}{#3}{}
+        \IfValueTF{#4}{#4}{}
     }
 }
 {
