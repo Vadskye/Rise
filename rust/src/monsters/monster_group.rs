@@ -16,8 +16,10 @@ impl MonsterGroup {
     }
 
     pub fn to_latex(&self) -> String {
-        let mut monsters: Vec<&Monster> = self.monsters.iter().collect();
-        monsters.sort_by(|a, b| a.creature.name.cmp(&b.creature.name));
+        // Note that we do not sort the monsters within a monster group.
+        // There are various reasons we might want a non-alphabetical order, such as ordering by
+        // size or age.
+        let monsters: Vec<&Monster> = self.monsters.iter().collect();
         // TODO: include general description and/or knowledge checks
         return latex_formatting::latexify(format!(
             "

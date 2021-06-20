@@ -104,6 +104,8 @@ impl AttackEffect {
                 } else {
                     String::from("")
                 };
+                let damage_modifier = effect.damage_modifier
+                    + (attacker.calc_power(is_magical) as f64 * effect.power_multiplier) as i8;
                 // TODO: damage types
                 return format!(
                     "
@@ -113,11 +115,7 @@ impl AttackEffect {
                         .damage_dice
                         .add(attacker.calc_damage_increments(is_strike))
                         .to_string(),
-                    damage_modifier = latex_formatting::modifier(
-                        effect.damage_modifier
-                            + (attacker.calc_power(is_magical) as f64 * effect.power_multiplier)
-                                as i8,
-                    ),
+                    damage_modifier = if damage_modifier == 0 { "".to_string()} else { latex_formatting::modifier(damage_modifier)},
                     damage_types = latex_formatting::join_formattable_list(&effect.damage_types).unwrap_or(String::from("")),
                     take_damage_effect = take_damage_effect.trim(),
                     lose_hp_effect = lose_hp_effect.trim(),
