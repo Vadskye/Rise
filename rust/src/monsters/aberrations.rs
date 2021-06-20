@@ -21,14 +21,14 @@ use crate::monsters::{monster_group, FullMonsterDefinition, Monster};
 use crate::skills::Skill;
 
 struct FullAberrationDefinition {
-    alignment: &'static str,
+    alignment: String,
     attributes: Vec<i8>,
     challenge_rating: ChallengeRating,
     description: Option<&'static str>,
     knowledge: Option<Vec<(i8, &'static str)>>,
     level: i8,
     movement_modes: Option<Vec<MovementMode>>,
-    name: &'static str,
+    name: String,
     passive_abilities: Option<Vec<PassiveAbility>>,
     senses: Option<Vec<Sense>>,
     skill_points: Option<Vec<(Skill, i8)>>,
@@ -84,7 +84,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
     }
     aboleth_slam.glance = Some(AttackEffect::HalfDamage);
     monsters.push(MonsterEntry::Monster(aberration(FullAberrationDefinition {
-        alignment: "Usually lawful evil",
+        alignment: "Usually lawful evil".to_string(),
         attributes: vec![3, -1, 4, 3, 2, 4],
         challenge_rating: ChallengeRating::Four,
         description: None,
@@ -111,7 +111,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         ]),
         level: 12,
         movement_modes: None,
-        name: "Aboleth",
+        name: "Aboleth".to_string(),
         passive_abilities: Some(vec![
             PassiveAbility {
                 description: r"
@@ -185,7 +185,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
     })));
 
     monsters.push(MonsterEntry::Monster(aberration(FullAberrationDefinition {
-        alignment: "Usually lawful evil",
+        alignment: "Usually lawful evil".to_string(),
         attributes: vec![0, 1, 4, -6, 1, 2],
         challenge_rating: ChallengeRating::Three,
         description: None,
@@ -201,7 +201,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         ]),
         level: 5,
         movement_modes: None,
-        name: "Gibbering Mouther",
+        name: "Gibbering Mouther".to_string(),
         passive_abilities: None,
         senses: Some(vec![Sense::Darkvision(240), Sense::Telepathy(900)]),
         size: Size::Huge,

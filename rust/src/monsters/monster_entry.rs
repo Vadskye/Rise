@@ -1,10 +1,11 @@
-use crate::monsters::{animals, aberrations, animates, monster_group, Monster};
+use crate::monsters::{animals, aberrations, animates, dragons, monster_group, Monster};
 
 pub fn generate_monster_entries() -> Vec<MonsterEntry> {
     let mut entries: Vec<MonsterEntry> = vec![];
     entries.append(animals::animals().as_mut());
     entries.append(aberrations::aberrations().as_mut());
     entries.append(animates::animates().as_mut());
+    entries.append(dragons::dragons().as_mut());
     return entries;
 }
 

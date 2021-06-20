@@ -3,7 +3,7 @@ use crate::monsters::Monster;
 use titlecase::titlecase;
 
 pub struct MonsterGroup {
-    monsters: Vec<Monster>,
+    pub monsters: Vec<Monster>,
     pub name: String,
 }
 
