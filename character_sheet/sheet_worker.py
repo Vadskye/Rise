@@ -11,6 +11,7 @@ def generate_script():
             *core_statistics(),
             *defenses(),
             damage_resistance(),
+            *abilities_known(),
             attunement_points(),
             skill_points_spent(),
             unknown_statistic(),
@@ -1012,3 +1013,72 @@ def custom_modifiers():
             });
         });
     """
+
+def abilities_known():
+    return [
+        combat_styles_known(),
+        maneuvers_known(),
+        spells_known(),
+        spheres_known(),
+        *[blank_ability_known(i) for i in range(1)],
+    ]
+
+def combat_styles_known():
+    misc = get_misc_variables("combat_styles_known", 3)
+    return js_wrapper(
+        ["combat_styles_known_insight_points", *misc],
+        f"""
+            setAttrs({{
+                combat_styles_known: combat_styles_known_insight_points + {sum_variables(misc)}
+            }});
+        """,
+    )
+
+
+def maneuvers_known():
+    misc = get_misc_variables("maneuvers_known", 3)
+    return js_wrapper(
+        ["maneuvers_known_insight_points", *misc],
+        f"""
+            setAttrs({{
+                maneuvers_known: maneuvers_known_insight_points + {sum_variables(misc)}
+            }});
+        """,
+    )
+
+
+def spheres_known():
+    misc = get_misc_variables("spheres_known", 3)
+    return js_wrapper(
+        ["spheres_known_insight_points", *misc],
+        f"""
+            setAttrs({{
+                spheres_known: Math.floor(spheres_known_insight_points / 2) + {sum_variables(misc)}
+            }});
+        """,
+    )
+
+
+def spells_known():
+    misc = get_misc_variables("spells_known", 3)
+    return js_wrapper(
+        ["spells_known_insight_points", *misc],
+        f"""
+            setAttrs({{
+                spells_known: spells_known_insight_points + {sum_variables(misc)}
+            }});
+        """,
+    )
+
+
+def blank_ability_known(i):
+    name = f"blank_ability_known_{i}"
+    misc = get_misc_variables(name, 3)
+    return js_wrapper(
+        [f"{name}_insight_points", *misc],
+        f"""
+            setAttrs({{
+                {name}: {name}_insight_points + {sum_variables(misc)}
+            }});
+        """,
+    )
