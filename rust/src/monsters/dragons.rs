@@ -121,16 +121,16 @@ impl DragonType {
 
     fn attribute_modifiers(&self) -> Vec<i32> {
         match self {
-            Self::Black => vec![0, 0, 0, 0, 0, 0],
-            Self::Blue => vec![0, 0, 0, 0, 0, 0],
-            Self::Brass => vec![0, 0, 0, 0, 0, 0],
-            Self::Bronze => vec![0, 0, 0, 0, 0, 0],
-            Self::Copper => vec![0, 0, 0, 0, 0, 0],
-            Self::Gold => vec![0, 0, 0, 0, 0, 0],
-            Self::Green => vec![0, 0, 0, 0, 0, 0],
-            Self::Red => vec![0, 0, 0, 0, 0, 0],
-            Self::Silver => vec![0, 0, 0, 0, 0, 0],
-            Self::White => vec![0, 0, 0, 0, 0, 0],
+            Self::Black => vec![1, 1, -1, 0, -1, -1],
+            Self::Blue => vec![0, 0, 1, 0, 0, -1],
+            Self::Brass => vec![0, 0, -1, 0, 1, 1],
+            Self::Bronze => vec![0, 0, 0, 0, -1, 1],
+            Self::Copper => vec![-1, 1, -1, 1, 1, 0],
+            Self::Gold => vec![1, 0, 0, 1, 0, 2],
+            Self::Green => vec![-1, 0, -1, 2, 1, 0],
+            Self::Red => vec![1, 0, 0, 0, -1, 1],
+            Self::Silver => vec![0, 0, 0, 0, 0, 1],
+            Self::White => vec![0, 0, 0, -2, -1, -1],
         }
     }
 
@@ -181,9 +181,13 @@ impl DragonType {
 }
 
 fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
+    let mut attributes = age_category.attributes();
+    for (i, modifier) in dragon_type.attribute_modifiers().iter().enumerate() {
+        attributes[i] += modifier;
+    }
     return Monster::fully_defined(FullMonsterDefinition {
         alignment: dragon_type.alignment().to_string(),
-        attributes: age_category.attributes(),
+        attributes,
         challenge_rating: ChallengeRating::Four,
         creature_type: Dragon,
         description: None,
