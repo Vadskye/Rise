@@ -103,7 +103,15 @@ impl HasDamageAbsorption for Character {
 
 impl HasDefenses for Character {
     fn calc_defense(&self, defense: &defenses::Defense) -> i32 {
-        return self.creature.calc_defense(defense) + self.class.defense_bonus(defense);
+        let mut value = self.creature.calc_defense(defense) + self.class.defense_bonus(defense);
+        match defense {
+            // TODO: check for light armor
+            defenses::Defense::Armor => {
+                value = value + self.get_base_attribute(&Attribute::Dexterity) / 2 + self.get_base_attribute(&Attribute::Constitution) / 2;
+            },
+            _ => {},
+        };
+        return value;
     }
 }
 
