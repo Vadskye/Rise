@@ -34,12 +34,13 @@ impl Defense {
         }
     }
 
-    pub fn associated_attribute(&self) -> &Attribute {
+    pub fn associated_attribute(&self) -> Option<Attribute> {
         match self {
-            Self::Armor => &Attribute::Dexterity,
-            Self::Fortitude => &Attribute::Constitution,
-            Self::Mental => &Attribute::Willpower,
-            Self::Reflex => &Attribute::Dexterity,
+            // Armor has a more complicated calculation
+            Self::Armor => None,
+            Self::Fortitude => Some(Attribute::Constitution),
+            Self::Mental => Some(Attribute::Willpower),
+            Self::Reflex => Some(Attribute::Dexterity),
         }
     }
 }

@@ -272,10 +272,17 @@ impl HasDamageAbsorption for Monster {
 
 impl HasDefenses for Monster {
     fn calc_defense(&self, defense: &Defense) -> i32 {
-        return self.creature.calc_defense(defense)
+        let mut value = self.creature.calc_defense(defense)
             + self.creature_type.defense_bonus(defense)
             + self.challenge_rating.defense_bonus()
             + (self.creature.level + 3) / 6;
+        match defense {
+            Defense::Armor => {
+                value = value + self.get_base_attribute(&Attribute::Dexterity) / 2 + self.get_base_attribute(&Attribute::Constitution) / 2;
+            },
+            _ => {},
+        };
+        return value;
     }
 }
 
