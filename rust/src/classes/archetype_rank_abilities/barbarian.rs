@@ -17,11 +17,10 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            name: "Unbattered Resilience",
+            name: "Vital Tolerance",
             rank: 2,
             description: r"
-                At the end of each round, if another creature dealt you damage that round, you regain \glossterm{damage resistance} equal to twice your rank in this archetype.
-                This cannot increase your damage resistance above half of your maximum damage resistance.
+                You gain a +1 bonus to \glossterm{vital rolls} and \glossterm{fatigue tolerance}.
             ",
         },
         RankAbility {
@@ -46,10 +45,10 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            name: "Greater Unbattered Resilience",
+            name: "Greater Vital Tolerance",
             rank: 6,
             description: r"
-                The amount of damage resistance you regain with your \textit{unbattered resilience} ability increases to three times your rank in this archetype.
+                The bonuses from your \textit{vital tolerance} ability increase to +2.
             ",
         },
         RankAbility {
