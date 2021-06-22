@@ -352,7 +352,6 @@ export const verdamancy: MysticSphere = {
         You can only make an attack in this way against a given target once per \\glossterm{phase}.
 
         Each five-foot square of wall has hit points equal to three times your \\glossterm{power}, and all of its defenses are 0.
-        It is \\glossterm{vulnerable} to fire damage.
         `,
       },
 

@@ -263,7 +263,7 @@ export const barrier: MysticSphere = {
 
       functionsLike: {
         exceptThat: `
-          the wall is \\glossterm{impervious} to physical damage.
+          the wall's defenses are each equal to 5 + your level, and it is \\glossterm{impervious} to physical damage.
           In addition, each 5-ft.\\ square of wall has 32 \\glossterm{hit points}.
         `,
         name: "mystic barrier",
@@ -383,11 +383,10 @@ export const barrier: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You surround yourself with two layers of shields that ablate the power of energy attacks against you.
+        You surround yourself with two layers of shielding that ablate the power of energy attacks against you.
         You are \\glossterm{impervious} to \\glossterm{energy damage}.
-        Whenever you take energy damage that you would not be impervious to without this ability, one layer of shields is removed.
-
-        If you take simultaneous damage from more sources than you have remaining layers, the remaining layers apply to the largest damage sources, and you take full damage from any lower damage values.
+        Whenever an attack that deals energy damage hits you or misses you by 5 or less, one layer of shielding is removed.
+        When the last layer of shielding is destroyed, this ability provides no further benefit.
       `,
       rank: 2,
       scaling: {

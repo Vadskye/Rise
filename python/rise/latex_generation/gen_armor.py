@@ -418,7 +418,7 @@ def generate_armor():
             material_type="Body armor",
             description="""
                 Whenever you take damage, you can choose to have your armor crumple under the attack, cushioning the blow.
-                If you do, you are treated as \\glossterm<impervious> to the damage.
+                If you do, you only take half of that damage.
                 You can learn the amount of damage that you would take from all attacks in a given phase before you decide whether to apply this effect.
                 After you reduce damage in this way, you cannot do so again until you take a \\glossterm<short rest>.
             """,

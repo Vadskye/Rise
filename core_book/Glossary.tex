@@ -352,10 +352,11 @@ For details, see \pcref{Hit Points}.
 
 \glossdef{immobilized} See \pcref{Circumstances and Debuffs}.
 
-\glossdef{impervious} A creature can be impervious to a type or subtype of damage.
-It takes half damage from damage of that type.
-When a creature takes damage of multiple types, it is considered impervious to the damage only if it is impervious to all of its damage types.
-If a creature would be impervious to damage for multiple reasons, the damage is still only halved once.
+\glossdef{impervious} A creature can be impervious to a particular damage type.
+It gains a \plus5 bonus to all defenses against attacks that would cause it to take damage of that type.
+If an attack deals damage of multiple types, a creature is impervious to that attack only if it is impervious to all of the attack's damage types.
+For attacks with random effects, such as the \spell{chromatic orb} spell, determine the random effect before determining if the creature is impervious.
+An impervious creature gains no defensive benefit against attacks that do not deal damage.
 
 \glossdef{improvised weapon}[improvised weapons] An improvised weapon is an object which could conceivably be used as a weapon, but which was not designed for that purpose.
 Common examples include doors and wine bottles.
@@ -827,7 +828,11 @@ For details, see \pcref{Casting Components}.
 You gain one or more \glossterm{vital wounds} when you take damage in excess of your hit points (see \pcref{Reaching Zero Hit Points}).
 For details, see \pcref{Vital Wounds}.
 
-\glossdef{vulnerable} A creature can be vulnerable to a type or subtype of damage.
+\glossdef{vulnerable} A creature can be vulnerable to a particular damage type or debuff.
+It takes a \minus5 penalty to all defenses against attacks that would cause it to take damage of that type, or that would cause it suffer that debuff.
+This penalty applies against the whole attack even if the attack would only inflict the debuff or damage under specific circumstances, such as if the attack gets a critical hit or if the attack causes the creature to lose hit points.
+For attacks with random effects, such as the \spell{chromatic orb} spell, determine the random effect before determining if the creature is vulnerable.
+
 It takes double damage from damage of the type that it is vulnerable to.
 When a creature takes damage of multiple types, it is considered vulnerable to the damage if it is vulnerable to any of its damage types.
 
