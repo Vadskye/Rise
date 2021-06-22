@@ -4,7 +4,7 @@ use crate::core_mechanics::debuffs::Debuff;
 use crate::core_mechanics::damage_types::DamageType;
 
 pub trait HasDefenses {
-    fn calc_defense(&self, defense: &Defense) -> i8;
+    fn calc_defense(&self, defense: &Defense) -> i32;
 }
 
 #[derive(Clone)]

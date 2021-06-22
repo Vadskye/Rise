@@ -15,7 +15,7 @@ pub enum AttackEffect {
 pub struct DamageEffect {
     pub damage_dice: damage_dice::DamageDice,
     pub damage_types: Vec<damage_types::DamageType>,
-    pub damage_modifier: i8,
+    pub damage_modifier: i32,
     pub lose_hp_effects: Option<Vec<AttackEffect>>,
     pub power_multiplier: f64,
     pub take_damage_effects: Option<Vec<AttackEffect>>,
@@ -47,7 +47,7 @@ pub enum AttackEffectDuration {
 }
 
 impl AttackEffect {
-    pub fn area_damage(rank: i8, damage_types: Vec<damage_types::DamageType>) -> Self {
+    pub fn area_damage(rank: i32, damage_types: Vec<damage_types::DamageType>) -> Self {
         return Self::Damage(DamageEffect {
             damage_dice: damage_dice::DamageDice::new(damage_dice::D8 + rank - 1),
             damage_modifier: 0,
@@ -105,7 +105,7 @@ impl AttackEffect {
                     String::from("")
                 };
                 let damage_modifier = effect.damage_modifier
-                    + (attacker.calc_power(is_magical) as f64 * effect.power_multiplier) as i8;
+                    + (attacker.calc_power(is_magical) as f64 * effect.power_multiplier) as i32;
                 // TODO: damage types
                 return format!(
                     "

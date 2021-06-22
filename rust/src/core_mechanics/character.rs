@@ -14,14 +14,14 @@ pub struct Character {
 }
 
 impl Character {
-    pub fn new(class: Class, level: i8) -> Character {
+    pub fn new(class: Class, level: i32) -> Character {
         return Character {
             class,
             creature: creature::Creature::new(level),
         };
     }
 
-    pub fn set_level(&mut self, level: i8) {
+    pub fn set_level(&mut self, level: i32) {
         self.creature.level = level;
     }
 
@@ -44,13 +44,13 @@ impl Character {
 }
 
 impl HasAttributes for Character {
-    fn get_base_attribute(&self, attribute: &Attribute) -> i8 {
+    fn get_base_attribute(&self, attribute: &Attribute) -> i32 {
         return self.creature.get_base_attribute(attribute);
     }
-    fn calc_total_attribute(&self, attribute: &Attribute) -> i8 {
+    fn calc_total_attribute(&self, attribute: &Attribute) -> i32 {
         return self.creature.calc_total_attribute(attribute);
     }
-    fn set_base_attribute(&mut self, attribute: Attribute, value: i8) {
+    fn set_base_attribute(&mut self, attribute: Attribute, value: i32) {
         self.creature.set_base_attribute(attribute, value);
     }
 }
@@ -64,7 +64,7 @@ impl HasAttacks for Character {
         return self.creature.calc_all_attacks();
     }
 
-    fn calc_accuracy(&self) -> i8 {
+    fn calc_accuracy(&self) -> i32 {
         return self.creature.calc_accuracy();
     }
 
@@ -72,11 +72,11 @@ impl HasAttacks for Character {
         return 1.0;
     }
 
-    fn calc_damage_increments(&self, is_strike: bool) -> i8 {
+    fn calc_damage_increments(&self, is_strike: bool) -> i32 {
         return self.creature.calc_damage_increments(is_strike);
     }
 
-    fn calc_power(&self, is_magical: bool) -> i8 {
+    fn calc_power(&self, is_magical: bool) -> i32 {
         return self.creature.calc_power(is_magical);
     }
 }
@@ -102,27 +102,27 @@ impl HasDamageAbsorption for Character {
 }
 
 impl HasDefenses for Character {
-    fn calc_defense(&self, defense: &defenses::Defense) -> i8 {
+    fn calc_defense(&self, defense: &defenses::Defense) -> i32 {
         return self.creature.calc_defense(defense) + self.class.defense_bonus(defense);
     }
 }
 
 impl HasResources for Character {
-    fn calc_resource(&self, resource: &'static resources::Resource) -> i8 {
+    fn calc_resource(&self, resource: &'static resources::Resource) -> i32 {
         return self.creature.calc_resource(resource) + self.class.resource_bonus(resource);
     }
 }
 
 impl HasSkills for Character {
-    fn set_skill_points(&mut self, skill: Skill, value: i8) {
+    fn set_skill_points(&mut self, skill: Skill, value: i32) {
         return self.creature.set_skill_points(skill, value);
     }
 
-    fn get_skill_points(&self, skill: &Skill) -> i8 {
+    fn get_skill_points(&self, skill: &Skill) -> i32 {
         return self.creature.get_skill_points(skill);
     }
 
-    fn calc_skill_modifier(&self, skill: &Skill) -> i8 {
+    fn calc_skill_modifier(&self, skill: &Skill) -> i32 {
         return self.creature.calc_skill_modifier(skill);
     }
 }

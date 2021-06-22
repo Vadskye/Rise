@@ -12,16 +12,16 @@ use crate::monsters::{monster_group, FullMonsterDefinition, Monster};
 use crate::skills::Skill;
 
 struct FullAnimalDefinition {
-    attributes: Vec<i8>,
+    attributes: Vec<i32>,
     challenge_rating: ChallengeRating,
     description: Option<&'static str>,
-    knowledge: Option<Vec<(i8, &'static str)>>,
-    level: i8,
+    knowledge: Option<Vec<(i32, &'static str)>>,
+    level: i32,
     movement_modes: Option<Vec<MovementMode>>,
     name: String,
     passive_abilities: Option<Vec<PassiveAbility>>,
     senses: Option<Vec<Sense>>,
-    skill_points: Option<Vec<(Skill, i8)>>,
+    skill_points: Option<Vec<(Skill, i32)>>,
     size: Size,
     special_attacks: Option<Vec<Attack>>,
     weapons: Vec<Weapon>,

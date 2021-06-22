@@ -5,7 +5,7 @@ use std::fmt;
 
 #[derive(Clone)]
 pub struct Attack {
-    pub accuracy: i8,
+    pub accuracy: i32,
     pub crit: Option<attack_effects::AttackEffect>,
     pub defense: defenses::Defense,
     pub glance: Option<attack_effects::AttackEffect>,
@@ -20,10 +20,10 @@ pub struct Attack {
 pub trait HasAttacks {
     fn add_special_attack(&mut self, attack: Attack);
     fn calc_all_attacks(&self) -> Vec<Attack>;
-    fn calc_accuracy(&self) -> i8;
-    fn calc_damage_increments(&self, is_strike: bool) -> i8;
+    fn calc_accuracy(&self) -> i32;
+    fn calc_damage_increments(&self, is_strike: bool) -> i32;
     fn calc_damage_per_round_multiplier(&self) -> f64;
-    fn calc_power(&self, is_magical: bool) -> i8;
+    fn calc_power(&self, is_magical: bool) -> i32;
 }
 
 impl Attack {
@@ -70,12 +70,12 @@ impl Attack {
         return None;
     }
 
-    pub fn calc_damage_modifier<T: HasCreatureMechanics>(&self, creature: &T) -> Option<i8> {
+    pub fn calc_damage_modifier<T: HasCreatureMechanics>(&self, creature: &T) -> Option<i32> {
         if let Some(damage_effect) = self.damage_effect() {
             return Some(
                 damage_effect.damage_modifier
                     + (damage_effect.power_multiplier * creature.calc_power(self.is_magical) as f64)
-                        as i8,
+                        as i32,
             );
         }
         return None;
@@ -171,7 +171,7 @@ pub enum AttackTargeting {
 
 impl AttackTargeting {
     // the minimum rank required to achieve the given targeting requirements
-    pub fn minimum_rank(&self) -> i8 {
+    pub fn minimum_rank(&self) -> i32 {
         match self {
             Self::Anything(range) => range.minimum_rank(),
             Self::Creature(range) => range.minimum_rank(),
@@ -253,7 +253,7 @@ pub enum AttackRange {
 }
 
 impl AttackRange {
-    pub fn minimum_rank(&self) -> i8 {
+    pub fn minimum_rank(&self) -> i32 {
         match self {
             Self::Reach => -1,
             Self::Short => 0,
@@ -332,7 +332,7 @@ impl AreaTargets {
         }
     }
 
-    fn rank_modifier(&self) -> i8 {
+    fn rank_modifier(&self) -> i32 {
         match self {
             Self::Allies => 0,
             Self::Creatures => 0,

@@ -15,22 +15,22 @@ use crate::core_mechanics::passive_abilities::PassiveAbility;
 use crate::core_mechanics::senses::Sense;
 
 pub struct Creature {
-    base_attributes: HashMap<Attribute, i8>,
+    base_attributes: HashMap<Attribute, i32>,
     pub name: Option<String>,
-    pub level: i8,
+    pub level: i32,
     pub movement_modes: Vec<movement_modes::MovementMode>,
     pub passive_abilities: Option<Vec<PassiveAbility>>,
     pub senses: Option<Vec<Sense>>,
     pub size: sizes::Size,
-    pub skill_points: Option<HashMap<Skill, i8>>,
+    pub skill_points: Option<HashMap<Skill, i32>>,
     pub special_attacks: Option<Vec<attacks::Attack>>,
     pub special_defense_modifiers: Option<Vec<SpecialDefenseModifier>>,
     pub weapons: Vec<weapons::Weapon>,
 }
 
 impl Creature {
-    pub fn new(level: i8) -> Creature {
-        let base_attributes = HashMap::<Attribute, i8>::new();
+    pub fn new(level: i32) -> Creature {
+        let base_attributes = HashMap::<Attribute, i32>::new();
         return Creature {
             base_attributes,
             level,
@@ -67,7 +67,7 @@ impl Creature {
         self.senses.as_mut().unwrap().push(sense);
     }
 
-    pub fn set_level(&mut self, level: i8) {
+    pub fn set_level(&mut self, level: i32) {
         self.level = level;
     }
 
@@ -97,7 +97,7 @@ impl Creature {
 }
 
 impl HasAttributes for Creature {
-    fn get_base_attribute(&self, attribute: &Attribute) -> i8 {
+    fn get_base_attribute(&self, attribute: &Attribute) -> i32 {
         if let Some(a) = self.base_attributes.get(attribute) {
             *a
         } else {
@@ -105,11 +105,11 @@ impl HasAttributes for Creature {
         }
     }
 
-    fn calc_total_attribute(&self, attribute: &Attribute) -> i8 {
+    fn calc_total_attribute(&self, attribute: &Attribute) -> i32 {
         Attribute::calculate_total(self.get_base_attribute(attribute), self.level)
     }
 
-    fn set_base_attribute(&mut self, attribute: Attribute, value: i8) {
+    fn set_base_attribute(&mut self, attribute: Attribute, value: i32) {
         if let Some(a) = self.base_attributes.get_mut(&attribute) {
             *a = value;
         } else {
@@ -221,16 +221,16 @@ impl HasAttacks for Creature {
         return 1.0;
     }
 
-    fn calc_accuracy(&self) -> i8 {
+    fn calc_accuracy(&self) -> i32 {
         // note implicit floor due to integer storage
         return self.level + self.get_base_attribute(&Attribute::Perception) / 2;
     }
 
-    fn calc_damage_increments(&self, _is_strike: bool) -> i8 {
+    fn calc_damage_increments(&self, _is_strike: bool) -> i32 {
         return 0;
     }
 
-    fn calc_power(&self, is_magical: bool) -> i8 {
+    fn calc_power(&self, is_magical: bool) -> i32 {
         if is_magical {
             return self.calc_total_attribute(&Attribute::Willpower) / 2;
         } else {
@@ -250,13 +250,13 @@ impl HasEquipment for Creature {
 }
 
 impl HasDefenses for Creature {
-    fn calc_defense(&self, defense: &defenses::Defense) -> i8 {
+    fn calc_defense(&self, defense: &defenses::Defense) -> i32 {
         return self.level + self.get_base_attribute(defense.associated_attribute());
     }
 }
 
 impl HasResources for Creature {
-    fn calc_resource(&self, resource: &'static resources::Resource) -> i8 {
+    fn calc_resource(&self, resource: &'static resources::Resource) -> i32 {
         match resource {
             resources::Resource::AttunementPoint => {
                 let mut ap_from_level = max(0, min(self.level, 5) - 1);
@@ -284,7 +284,7 @@ impl HasResources for Creature {
 impl HasCreatureMechanics for Creature {}
 
 impl HasSkills for Creature {
-    fn set_skill_points(&mut self, skill: Skill, value: i8) {
+    fn set_skill_points(&mut self, skill: Skill, value: i32) {
         if self.skill_points.is_none() {
             self.skill_points = Some(HashMap::new());
         }
@@ -292,7 +292,7 @@ impl HasSkills for Creature {
         skill_points.insert(skill, value);
     }
 
-    fn get_skill_points(&self, skill: &Skill) -> i8 {
+    fn get_skill_points(&self, skill: &Skill) -> i32 {
         if let Some(ref skill_points) = self.skill_points {
             if let Some(p) = skill_points.get(skill) {
                 return *p;
@@ -304,7 +304,7 @@ impl HasSkills for Creature {
         }
     }
 
-    fn calc_skill_modifier(&self, skill: &Skill) -> i8 {
+    fn calc_skill_modifier(&self, skill: &Skill) -> i32 {
         let attribute_modifier = if let Some(ref a) = skill.attribute() {
             self.get_base_attribute(a)
         } else {

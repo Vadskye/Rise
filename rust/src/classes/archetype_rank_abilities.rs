@@ -15,7 +15,7 @@ mod wizard;
 
 pub struct RankAbility<'a> {
     pub description: &'a str,
-    pub rank: i8,
+    pub rank: i32,
     pub name: &'a str,
 }
 

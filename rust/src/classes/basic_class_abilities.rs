@@ -86,7 +86,7 @@ fn generate_latex_defenses(class: &classes::Class) -> String {
     );
 }
 
-fn generate_labeled_english_number(val: i8, singular: &str, plural: &str) -> String {
+fn generate_labeled_english_number(val: i32, singular: &str, plural: &str) -> String {
     let converter = Numerics::builder().build();
     let english_number = converter.convert_number(val).unwrap();
     let suffix = if val == 1 { singular } else { plural };
