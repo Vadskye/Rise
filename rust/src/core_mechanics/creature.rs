@@ -2,6 +2,8 @@ use crate::core_mechanics::attacks::{self, HasAttacks};
 use crate::core_mechanics::attributes::{Attribute, HasAttributes};
 use crate::core_mechanics::damage_absorption::HasDamageAbsorption;
 use crate::core_mechanics::defenses::{self, HasDefenses};
+use crate::core_mechanics::debuffs::Debuff;
+use crate::core_mechanics::damage_types::DamageTypeEffect;
 use crate::core_mechanics::latex;
 use crate::core_mechanics::movement_modes;
 use crate::core_mechanics::resources::{self, HasResources};
@@ -16,6 +18,8 @@ use crate::core_mechanics::senses::Sense;
 
 pub struct Creature {
     base_attributes: HashMap<Attribute, i8>,
+    pub damage_type_effects: Option<Vec<DamageTypeEffect>>,
+    pub debuff_immunities: Option<Vec<Debuff>>,
     pub name: Option<String>,
     pub level: i8,
     pub movement_modes: Vec<movement_modes::MovementMode>,
@@ -32,6 +36,8 @@ impl Creature {
         let base_attributes = HashMap::<Attribute, i8>::new();
         return Creature {
             base_attributes,
+            damage_type_effects: None,
+            debuff_immunities: None,
             level,
             movement_modes: vec![],
             name: None,
@@ -42,6 +48,20 @@ impl Creature {
             special_attacks: None,
             weapons: vec![],
         };
+    }
+
+    pub fn add_damage_type_effect(&mut self, damage_type_effect: DamageTypeEffect) {
+        if self.damage_type_effects.is_none() {
+            self.damage_type_effects = Some(vec![]);
+        }
+        self.damage_type_effects.as_mut().unwrap().push(damage_type_effect);
+    }
+
+    pub fn add_debuff_immunity(&mut self, debuff: Debuff) {
+        if self.debuff_immunities.is_none() {
+            self.debuff_immunities = Some(vec![]);
+        }
+        self.debuff_immunities.as_mut().unwrap().push(debuff);
     }
 
     pub fn add_passive_ability(&mut self, ability: PassiveAbility) {

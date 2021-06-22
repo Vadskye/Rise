@@ -36,3 +36,9 @@ impl fmt::Display for DamageType {
         write!(f, "{}", self.name())
     }
 }
+
+pub enum DamageTypeEffect {
+    Immune(DamageType),
+    Impervious(DamageType),
+    Vulnerable(DamageType),
+}

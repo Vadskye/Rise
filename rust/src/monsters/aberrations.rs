@@ -5,7 +5,7 @@ use crate::core_mechanics::attacks::{
     AreaSize, AreaTargets, Attack, AttackRange, AttackTargeting, UsageTime,
 };
 use crate::core_mechanics::damage_dice;
-use crate::core_mechanics::damage_types::DamageType;
+use crate::core_mechanics::damage_types::{DamageType, DamageTypeEffect};
 use crate::core_mechanics::debuffs::Debuff;
 use crate::core_mechanics::defenses::Defense;
 use crate::core_mechanics::movement_modes::{FlightManeuverability, MovementMode, SpeedCategory};
@@ -24,6 +24,8 @@ struct FullAberrationDefinition {
     alignment: String,
     attributes: Vec<i8>,
     challenge_rating: ChallengeRating,
+    damage_type_effects: Option<Vec<DamageTypeEffect>>,
+    debuff_immunities: Option<Vec<Debuff>>,
     description: Option<&'static str>,
     knowledge: Option<Vec<(i8, &'static str)>>,
     level: i8,
@@ -43,6 +45,8 @@ fn aberration(def: FullAberrationDefinition) -> Monster {
         alignment: def.alignment,
         attributes: def.attributes,
         challenge_rating: def.challenge_rating,
+        damage_type_effects: def.damage_type_effects,
+        debuff_immunities: def.debuff_immunities,
         description: def.description,
         knowledge: def.knowledge,
         level: def.level,
@@ -87,6 +91,8 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         alignment: "Usually lawful evil".to_string(),
         attributes: vec![3, -1, 4, 3, 2, 4],
         challenge_rating: ChallengeRating::Four,
+        damage_type_effects: None,
+        debuff_immunities: None,
         description: None,
         knowledge: Some(vec![
             (-10, "
@@ -188,6 +194,8 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         alignment: "Usually lawful evil".to_string(),
         attributes: vec![0, 1, 4, -6, 1, 2],
         challenge_rating: ChallengeRating::Three,
+        damage_type_effects: None,
+        debuff_immunities: Some(vec![Debuff::Prone]),
         description: None,
         knowledge: Some(vec![
             (0, "
