@@ -165,6 +165,7 @@ pub enum AttackTargeting {
     Anything(AttackRange),
     Creature(AttackRange),
     Cone(AreaSize, AreaTargets),
+    Line(i32, AreaSize, AreaTargets),
     Radius(Option<AttackRange>, AreaSize, AreaTargets),
     Strike,
 }
@@ -185,6 +186,23 @@ impl AttackTargeting {
                     AreaSize::Custom(_) => 7,
                 };
                 return minimum_rank + targets.rank_modifier();
+            }
+            Self::Line(width, size, targets) => {
+                let minimum_rank = match size {
+                    AreaSize::Small => 0,
+                    AreaSize::Medium => 1,
+                    AreaSize::Large => 2,
+                    AreaSize::Huge => 3,
+                    AreaSize::Gargantuan => 4,
+                    AreaSize::Custom(_) => 5,
+                };
+                let width_modifier = match width {
+                    5 => 0,
+                    10 => 1,
+                    15 => 2,
+                    _ => panic!("Invalid line width {}", width),
+                };
+                return minimum_rank + width_modifier + targets.rank_modifier();
             }
             Self::Radius(range, size, targets) => {
                 let minimum_rank = match size {
@@ -224,6 +242,13 @@ impl AttackTargeting {
                 defense = defense,
                 targets = area_targets,
                 size = area_size
+            ),
+            Self::Line(width, area_size, area_targets) => format!(
+                "attack vs. {defense} against {targets} in a {width} wide, {size}long line",
+                defense = defense,
+                targets = area_targets,
+                size = area_size,
+                width = format!("{} ft.", width),
             ),
             Self::Radius(attack_range, area_size, area_targets) => format!(
                 "attack vs. {defense} against {targets} in a {size} radius{range}",
