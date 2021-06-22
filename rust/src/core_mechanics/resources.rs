@@ -1,5 +1,5 @@
 pub trait HasResources {
-    fn calc_resource(&self, resource: &'static Resource) -> i8;
+    fn calc_resource(&self, resource: &'static Resource) -> i32;
 }
 
 pub enum Resource {

@@ -7,7 +7,7 @@ pub enum ChallengeRating {
 }
 
 impl ChallengeRating {
-    pub fn accuracy_bonus(&self) -> i8 {
+    pub fn accuracy_bonus(&self) -> i32 {
         match self {
             Self::Half => 0,
             Self::One => 0,
@@ -17,7 +17,7 @@ impl ChallengeRating {
         }
     }
 
-    pub fn damage_increments(&self) -> i8 {
+    pub fn damage_increments(&self) -> i32 {
         match self {
             Self::Half => -2,
             Self::One => -1,
@@ -39,7 +39,7 @@ impl ChallengeRating {
         }
     }
 
-    pub fn defense_bonus(&self) -> i8 {
+    pub fn defense_bonus(&self) -> i32 {
         match self {
             Self::Half => 0,
             Self::One => 0,

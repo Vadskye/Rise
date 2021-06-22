@@ -33,8 +33,8 @@ impl Attribute {
         }
     }
 
-    pub fn calculate_total(base_value: i8, level: i8) -> i8 {
-        let slevel = level as i8;
+    pub fn calculate_total(base_value: i32, level: i32) -> i32 {
+        let slevel = level as i32;
         if base_value <= 0 {
             return base_value;
         } else if base_value == 1 {
@@ -42,7 +42,7 @@ impl Attribute {
         } else if base_value == 2 {
             return base_value + slevel / 2;
         } else {
-            return base_value + (((slevel - 1) * (base_value - 1)) as f64 / 2.0).ceil() as i8;
+            return base_value + (((slevel - 1) * (base_value - 1)) as f64 / 2.0).ceil() as i32;
         }
     }
 
@@ -65,7 +65,7 @@ impl PartialEq for Attribute {
 }
 
 pub trait HasAttributes {
-    fn calc_total_attribute(&self, attribute: &Attribute) -> i8;
-    fn get_base_attribute(&self, attribute: &Attribute) -> i8;
-    fn set_base_attribute(&mut self, attribute: Attribute, value: i8);
+    fn calc_total_attribute(&self, attribute: &Attribute) -> i32;
+    fn get_base_attribute(&self, attribute: &Attribute) -> i32;
+    fn set_base_attribute(&mut self, attribute: Attribute, value: i32);
 }

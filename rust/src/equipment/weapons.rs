@@ -23,7 +23,7 @@ pub enum Weapon {
 }
 
 impl Weapon {
-    pub fn accuracy(&self) -> i8 {
+    pub fn accuracy(&self) -> i32 {
         match self {
             Self::ArmorSpikes => 0,
             Self::Battleaxe => 0,

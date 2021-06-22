@@ -5,9 +5,9 @@ use std::cmp::PartialEq;
 use std::fmt;
 
 pub trait HasSkills {
-    fn get_skill_points(&self, skill: &Skill) -> i8;
-    fn set_skill_points(&mut self, skill: Skill, value: i8);
-    fn calc_skill_modifier(&self, skill: &Skill) -> i8;
+    fn get_skill_points(&self, skill: &Skill) -> i32;
+    fn set_skill_points(&mut self, skill: Skill, value: i32);
+    fn calc_skill_modifier(&self, skill: &Skill) -> i32;
 }
 
 #[derive(Eq, Hash)]

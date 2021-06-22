@@ -39,13 +39,13 @@ impl AgeCategory {
         ];
     }
 
-    fn attributes(&self) -> Vec<i8> {
+    fn attributes(&self) -> Vec<i32> {
         match self {
             Self::Wyrmling => vec![-1, 3, 1, 1, 0, 0],
-            Self::Juvenile => vec![3, 1, 4, 2, 2, 2],
-            Self::Adult => vec![4, 0, 4, 3, 3, 3],
-            Self::Ancient => vec![5, -2, 5, 4, 4, 4],
-            Self::Wyrm => vec![6, -3, 6, 5, 5, 5],
+            Self::Juvenile => vec![3, 1, 2, 2, 2, 2],
+            Self::Adult => vec![4, 0, 3, 3, 3, 3],
+            Self::Ancient => vec![6, -1, 4, 4, 4, 4],
+            Self::Wyrm => vec![8, -2, 5, 5, 5, 5],
         }
     }
 
@@ -59,7 +59,7 @@ impl AgeCategory {
         }
     }
 
-    fn level(&self) -> i8 {
+    fn level(&self) -> i32 {
         match self {
             Self::Wyrmling => 5,
             Self::Juvenile => 9,
@@ -119,7 +119,7 @@ impl DragonType {
         ];
     }
 
-    fn attribute_modifiers(&self) -> Vec<i8> {
+    fn attribute_modifiers(&self) -> Vec<i32> {
         match self {
             Self::Black => vec![0, 0, 0, 0, 0, 0],
             Self::Blue => vec![0, 0, 0, 0, 0, 0],

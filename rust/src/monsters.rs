@@ -29,25 +29,25 @@ pub struct Monster {
     creature: creature::Creature,
     creature_type: creature_type::CreatureType,
     description: Option<String>,
-    knowledge: Option<HashMap<i8, String>>,
+    knowledge: Option<HashMap<i32, String>>,
     movement_modes: Vec<movement_modes::MovementMode>,
 }
 
 pub struct FullMonsterDefinition {
     alignment: String,
-    attributes: Vec<i8>,
+    attributes: Vec<i32>,
     challenge_rating: challenge_rating::ChallengeRating,
     creature_type: creature_type::CreatureType,
     special_defense_modifiers: Option<Vec<SpecialDefenseModifier>>,
     description: Option<&'static str>,
-    knowledge: Option<Vec<(i8, &'static str)>>,
-    level: i8,
+    knowledge: Option<Vec<(i32, &'static str)>>,
+    level: i32,
     movement_modes: Option<Vec<movement_modes::MovementMode>>,
     name: String,
     passive_abilities: Option<Vec<PassiveAbility>>,
     senses: Option<Vec<Sense>>,
     size: sizes::Size,
-    skill_points: Option<Vec<(Skill, i8)>>,
+    skill_points: Option<Vec<(Skill, i32)>>,
     special_attacks: Option<Vec<attacks::Attack>>,
     weapons: Vec<weapons::Weapon>,
 }
@@ -56,7 +56,7 @@ impl Monster {
     pub fn new(
         challenge_rating: challenge_rating::ChallengeRating,
         creature_type: creature_type::CreatureType,
-        level: i8,
+        level: i32,
     ) -> Monster {
         return Monster {
             alignment: None,
@@ -130,7 +130,7 @@ impl Monster {
         return monster;
     }
 
-    pub fn set_knowledge(&mut self, knowledge: Vec<(i8, &'static str)>) {
+    pub fn set_knowledge(&mut self, knowledge: Vec<(i32, &'static str)>) {
         if knowledge.len() > 0 {
             let base_knowledge_difficulty = self.creature.level + 5;
             let mut knowledge_map = HashMap::new();
@@ -143,8 +143,8 @@ impl Monster {
 
     pub fn standard_monster(
         challenge_rating: challenge_rating::ChallengeRating,
-        level: i8,
-        starting_attribute: Option<i8>,
+        level: i32,
+        starting_attribute: Option<i32>,
         creature_type: Option<creature_type::CreatureType>,
     ) -> Monster {
         let mut creature = creature::Creature::new(level);
@@ -173,19 +173,19 @@ impl Monster {
         };
     }
 
-    pub fn set_level(&mut self, level: i8) {
+    pub fn set_level(&mut self, level: i32) {
         self.creature.level = level;
     }
 }
 
 impl HasAttributes for Monster {
-    fn get_base_attribute(&self, attribute: &Attribute) -> i8 {
+    fn get_base_attribute(&self, attribute: &Attribute) -> i32 {
         return self.creature.get_base_attribute(attribute);
     }
-    fn calc_total_attribute(&self, attribute: &Attribute) -> i8 {
+    fn calc_total_attribute(&self, attribute: &Attribute) -> i32 {
         return self.creature.calc_total_attribute(attribute);
     }
-    fn set_base_attribute(&mut self, attribute: Attribute, value: i8) {
+    fn set_base_attribute(&mut self, attribute: Attribute, value: i32) {
         self.creature.set_base_attribute(attribute, value);
     }
 }
@@ -199,7 +199,7 @@ impl HasAttacks for Monster {
         return self.creature.calc_all_attacks();
     }
 
-    fn calc_accuracy(&self) -> i8 {
+    fn calc_accuracy(&self) -> i32 {
         return self.creature.calc_accuracy()
             + self.challenge_rating.accuracy_bonus()
             + (self.creature.level + 1) / 6;
@@ -210,7 +210,7 @@ impl HasAttacks for Monster {
             * self.challenge_rating.damage_per_round_multiplier();
     }
 
-    fn calc_damage_increments(&self, is_strike: bool) -> i8 {
+    fn calc_damage_increments(&self, is_strike: bool) -> i32 {
         let level_modifier = if is_strike {
             (self.creature.level - 1) / 3
         } else {
@@ -230,7 +230,7 @@ impl HasAttacks for Monster {
             + special_attack_modifier;
     }
 
-    fn calc_power(&self, is_magical: bool) -> i8 {
+    fn calc_power(&self, is_magical: bool) -> i32 {
         let level_scaling = match self.creature.level / 3 {
             0 => 0,
             1 => 1,
@@ -271,7 +271,7 @@ impl HasDamageAbsorption for Monster {
 }
 
 impl HasDefenses for Monster {
-    fn calc_defense(&self, defense: &Defense) -> i8 {
+    fn calc_defense(&self, defense: &Defense) -> i32 {
         return self.creature.calc_defense(defense)
             + self.creature_type.defense_bonus(defense)
             + self.challenge_rating.defense_bonus()
@@ -280,21 +280,21 @@ impl HasDefenses for Monster {
 }
 
 impl HasResources for Monster {
-    fn calc_resource(&self, resource: &'static resources::Resource) -> i8 {
+    fn calc_resource(&self, resource: &'static resources::Resource) -> i32 {
         return self.creature.calc_resource(resource);
     }
 }
 
 impl HasSkills for Monster {
-    fn set_skill_points(&mut self, skill: Skill, value: i8) {
+    fn set_skill_points(&mut self, skill: Skill, value: i32) {
         return self.creature.set_skill_points(skill, value);
     }
 
-    fn get_skill_points(&self, skill: &Skill) -> i8 {
+    fn get_skill_points(&self, skill: &Skill) -> i32 {
         return self.creature.get_skill_points(skill);
     }
 
-    fn calc_skill_modifier(&self, skill: &Skill) -> i8 {
+    fn calc_skill_modifier(&self, skill: &Skill) -> i32 {
         return self.creature.calc_skill_modifier(skill);
     }
 }
@@ -525,7 +525,7 @@ impl Monster {
 
     fn latex_knowledge(&self) -> String {
         if let Some(ref knowledge) = self.knowledge {
-            let mut knowledge_keys = knowledge.keys().collect::<Vec<&i8>>();
+            let mut knowledge_keys = knowledge.keys().collect::<Vec<&i32>>();
             knowledge_keys.sort();
             return knowledge_keys
                 .iter()

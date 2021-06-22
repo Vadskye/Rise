@@ -15,7 +15,7 @@ pub enum CreatureType {
 }
 
 impl CreatureType {
-    pub fn defense_bonus(&self, defense: &Defense) -> i8 {
+    pub fn defense_bonus(&self, defense: &Defense) -> i32 {
         match self {
             Self::Aberration => match defense {
                 Defense::Armor => 4,

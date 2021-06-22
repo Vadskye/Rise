@@ -21,16 +21,16 @@ use crate::skills::Skill;
 
 struct FullAnimateDefinition {
     alignment: String,
-    attributes: Vec<i8>,
+    attributes: Vec<i32>,
     challenge_rating: ChallengeRating,
     description: Option<&'static str>,
-    knowledge: Option<Vec<(i8, &'static str)>>,
-    level: i8,
+    knowledge: Option<Vec<(i32, &'static str)>>,
+    level: i32,
     movement_modes: Option<Vec<MovementMode>>,
     name: String,
     passive_abilities: Option<Vec<PassiveAbility>>,
     senses: Option<Vec<Sense>>,
-    skill_points: Option<Vec<(Skill, i8)>>,
+    skill_points: Option<Vec<(Skill, i32)>>,
     size: Size,
     special_attacks: Option<Vec<Attack>>,
     special_defense_modifiers: Option<Vec<SpecialDefenseModifier>>,
@@ -150,9 +150,9 @@ pub fn animates() -> Vec<MonsterEntry> {
 
     fn create_treant(
         alignment: &str,
-        attributes: Vec<i8>,
-        knowledge: Vec<(i8, &'static str)>,
-        level: i8,
+        attributes: Vec<i32>,
+        knowledge: Vec<(i32, &'static str)>,
+        level: i32,
         name: &str,
         size: Size,
         special_defense_modifiers: Option<Vec<SpecialDefenseModifier>>,
@@ -280,9 +280,9 @@ pub fn animates() -> Vec<MonsterEntry> {
 
     // TODO: attach knowledge checks to the group as a whole, not any individual animated object
     fn create_animated_object(
-        attributes: Vec<i8>,
+        attributes: Vec<i32>,
         challenge_rating: ChallengeRating,
-        level: i8,
+        level: i32,
         name: &str,
         size: Size,
     ) -> Monster {

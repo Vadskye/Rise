@@ -42,7 +42,7 @@ impl Class {
         ];
     }
 
-    pub fn attunement_points(&self) -> i8 {
+    pub fn attunement_points(&self) -> i32 {
         match self {
             Self::Barbarian => 1,
             Self::Cleric => 2,
@@ -281,7 +281,7 @@ impl Class {
         }
     }
 
-    pub fn defense_bonus(&self, defense: &Defense) -> i8 {
+    pub fn defense_bonus(&self, defense: &Defense) -> i32 {
         match self {
             Self::Barbarian => match defense {
                 Defense::Armor => 1,
@@ -352,7 +352,7 @@ impl Class {
         }
     }
 
-    pub fn fatigue_tolerance(&self) -> i8 {
+    pub fn fatigue_tolerance(&self) -> i32 {
         match self {
             Self::Barbarian => 4,
             Self::Cleric => 1,
@@ -368,7 +368,7 @@ impl Class {
         }
     }
 
-    pub fn insight_points(&self) -> i8 {
+    pub fn insight_points(&self) -> i32 {
         match self {
             Self::Barbarian => 1,
             Self::Cleric => 3,
@@ -400,7 +400,7 @@ impl Class {
         }
     }
 
-    pub fn resource_bonus(&self, resource: &'static Resource) -> i8 {
+    pub fn resource_bonus(&self, resource: &'static Resource) -> i32 {
         match resource {
             Resource::AttunementPoint => self.attunement_points(),
             Resource::FatigueTolerance => self.fatigue_tolerance(),
@@ -425,7 +425,7 @@ impl Class {
         }
     }
 
-    pub fn skill_points(&self) -> i8 {
+    pub fn skill_points(&self) -> i32 {
         match self {
             Self::Barbarian => 9,
             Self::Cleric => 6,
@@ -541,14 +541,14 @@ impl fmt::Display for Class {
 
 #[derive(Debug)]
 pub struct ClassDefenseBonuses {
-    pub armor: i8,
-    pub fortitude: i8,
-    pub mental: i8,
-    pub reflex: i8,
+    pub armor: i32,
+    pub fortitude: i32,
+    pub mental: i32,
+    pub reflex: i32,
 }
 
 pub struct WeaponProficiencies {
-    pub custom_weapon_groups: i8,
+    pub custom_weapon_groups: i32,
     pub specific_weapon_groups: Option<Vec<weapons::WeaponGroup>>,
     pub specific_weapons: Option<Vec<weapons::Weapon>>,
     pub simple_weapons: bool,
@@ -556,11 +556,11 @@ pub struct WeaponProficiencies {
 
 #[derive(Debug)]
 pub struct ClassResources {
-    pub attunement_points: i8,
+    pub attunement_points: i32,
     pub defenses: ClassDefenseBonuses,
-    pub fatigue_tolerance: i8,
-    pub insight_points: i8,
-    pub skill_points: i8,
+    pub fatigue_tolerance: i32,
+    pub insight_points: i32,
+    pub skill_points: i32,
 }
 
 // LaTeX class generation
@@ -661,7 +661,7 @@ impl Class {
             for rank in 0..7 {
                 let mut abilities_at_rank: Vec<&archetype_rank_abilities::RankAbility> = rank_abilities
                     .iter()
-                    .filter(|a| a.rank == rank as i8)
+                    .filter(|a| a.rank == rank as i32)
                     .collect();
                 abilities_at_rank.sort_by(|a, b| a.name.cmp(b.name));
                 if abilities_by_rank_and_archetype.get(rank).is_none() {
