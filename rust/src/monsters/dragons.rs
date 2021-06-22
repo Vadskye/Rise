@@ -5,7 +5,7 @@ use crate::core_mechanics::attacks::{
     AreaSize, AreaTargets, Attack, AttackRange, AttackTargeting, UsageTime,
 };
 use crate::core_mechanics::damage_dice;
-use crate::core_mechanics::damage_types::DamageType;
+use crate::core_mechanics::damage_types::{DamageType, DamageTypeEffect};
 use crate::core_mechanics::debuffs::Debuff;
 use crate::core_mechanics::defenses::Defense;
 use crate::core_mechanics::movement_modes::{FlightManeuverability, MovementMode, SpeedCategory};
@@ -150,6 +150,21 @@ impl DragonType {
         }
     }
 
+    fn damage_type(&self) -> DamageType {
+        match self {
+            Self::Black => DamageType::Acid,
+            Self::Blue => DamageType::Electricity,
+            Self::Brass => DamageType::Fire,
+            Self::Bronze => DamageType::Electricity,
+            Self::Copper => DamageType::Acid,
+            Self::Gold => DamageType::Fire,
+            Self::Green => DamageType::Acid,
+            Self::Red => DamageType::Fire,
+            Self::Silver => DamageType::Cold,
+            Self::White => DamageType::Cold,
+        }
+    }
+
     fn name(&self) -> &str {
         match self {
             Self::Black => "Black",
@@ -172,6 +187,8 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
         attributes: age_category.attributes(),
         challenge_rating: ChallengeRating::Four,
         creature_type: Dragon,
+        damage_type_effects: Some(vec![DamageTypeEffect::Immune(dragon_type.damage_type())]),
+        debuff_immunities: None,
         description: None,
         knowledge: None,
         level: age_category.level(),

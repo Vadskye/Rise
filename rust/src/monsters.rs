@@ -9,7 +9,9 @@ pub mod monster_group;
 
 use crate::core_mechanics::attacks::HasAttacks;
 use crate::core_mechanics::attributes::{Attribute, HasAttributes};
+use crate::core_mechanics::debuffs::Debuff;
 use crate::core_mechanics::damage_absorption::HasDamageAbsorption;
+use crate::core_mechanics::damage_types::DamageTypeEffect;
 use crate::core_mechanics::defenses::{Defense, HasDefenses};
 use crate::core_mechanics::passive_abilities::PassiveAbility;
 use crate::core_mechanics::resources::{self, HasResources};
@@ -36,6 +38,8 @@ pub struct FullMonsterDefinition {
     attributes: Vec<i8>,
     challenge_rating: challenge_rating::ChallengeRating,
     creature_type: creature_type::CreatureType,
+    damage_type_effects: Option<Vec<DamageTypeEffect>>,
+    debuff_immunities: Option<Vec<Debuff>>,
     description: Option<&'static str>,
     knowledge: Option<Vec<(i8, &'static str)>>,
     level: i8,
@@ -43,8 +47,8 @@ pub struct FullMonsterDefinition {
     name: String,
     passive_abilities: Option<Vec<PassiveAbility>>,
     senses: Option<Vec<Sense>>,
-    skill_points: Option<Vec<(Skill, i8)>>,
     size: sizes::Size,
+    skill_points: Option<Vec<(Skill, i8)>>,
     special_attacks: Option<Vec<attacks::Attack>>,
     weapons: Vec<weapons::Weapon>,
 }
@@ -76,6 +80,16 @@ impl Monster {
             creature.add_weapon(weapon);
         }
         creature.set_size(def.size);
+        if let Some(damage_type_effects) = def.damage_type_effects {
+            for e in damage_type_effects {
+                creature.add_damage_type_effect(e);
+            }
+        }
+        if let Some(debuff_immunities) = def.debuff_immunities {
+            for d in debuff_immunities {
+                creature.add_debuff_immunity(d);
+            }
+        }
         if let Some(passive_abilities) = def.passive_abilities {
             for ability in passive_abilities {
                 creature.add_passive_ability(ability);

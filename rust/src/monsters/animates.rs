@@ -5,7 +5,7 @@ use crate::core_mechanics::attacks::{
     AreaSize, AreaTargets, Attack, AttackRange, AttackTargeting, UsageTime,
 };
 use crate::core_mechanics::damage_dice;
-use crate::core_mechanics::damage_types::DamageType;
+use crate::core_mechanics::damage_types::{DamageType, DamageTypeEffect};
 use crate::core_mechanics::debuffs::Debuff;
 use crate::core_mechanics::defenses::Defense;
 use crate::core_mechanics::movement_modes::{FlightManeuverability, MovementMode, SpeedCategory};
@@ -25,6 +25,8 @@ struct FullAnimateDefinition {
     attributes: Vec<i8>,
     challenge_rating: ChallengeRating,
     description: Option<&'static str>,
+    damage_type_effects: Option<Vec<DamageTypeEffect>>,
+    debuff_immunities: Option<Vec<Debuff>>,
     knowledge: Option<Vec<(i8, &'static str)>>,
     level: i8,
     movement_modes: Option<Vec<MovementMode>>,
@@ -43,6 +45,8 @@ fn animate(def: FullAnimateDefinition) -> Monster {
         alignment: def.alignment,
         attributes: def.attributes,
         challenge_rating: def.challenge_rating,
+        damage_type_effects: def.damage_type_effects,
+        debuff_immunities: def.debuff_immunities,
         description: def.description,
         knowledge: def.knowledge,
         level: def.level,
@@ -68,11 +72,13 @@ pub fn animates() -> Vec<MonsterEntry> {
         attributes: vec![0, 3, 0, 1, 2, 2],
         challenge_rating: ChallengeRating::Four,
         description: None,
+        damage_type_effects: Some(vec![DamageTypeEffect::Impervious(DamageType::Cold)]),
+        debuff_immunities: Some(vec![Debuff::Prone]),
         knowledge: Some(vec![
             (0, "
                 An darkwraith is a shadow disconnected from its host through strange umbramantic power.
                 Though it appears similar to a ghost, it is not undead.
-                They instinctively seek out sources of warmth, including most living creatures, to suppress them with its chilling aura.
+                It instinctively seeks out sources of warmth, including most living creatures, to suppress them with its chilling aura.
             "),
             (5, "
                 Darkwraiths bear a hateful malevolence towards anything that brings light.
@@ -146,6 +152,7 @@ pub fn animates() -> Vec<MonsterEntry> {
     fn create_treant(
         alignment: &str,
         attributes: Vec<i8>,
+        damage_type_effects: Option<Vec<DamageTypeEffect>>,
         knowledge: Vec<(i8, &'static str)>,
         level: i8,
         name: &str,
@@ -155,6 +162,8 @@ pub fn animates() -> Vec<MonsterEntry> {
             alignment: alignment.to_string(),
             attributes,
             challenge_rating: ChallengeRating::Two,
+            damage_type_effects,
+            debuff_immunities: None,
             description: None,
             knowledge: Some(knowledge),
             level,
@@ -189,6 +198,7 @@ pub fn animates() -> Vec<MonsterEntry> {
             create_treant(
                 "Usually true neutral",
                 vec![2, 0, 2, 0, 2, -2],
+                Some(vec![DamageTypeEffect::Vulnerable(DamageType::Fire)]),
                 vec![(0, "
                     Birch treants tend to be shy, and they to avoid conflict if at all possible.
                 ")],
@@ -199,6 +209,7 @@ pub fn animates() -> Vec<MonsterEntry> {
             create_treant(
                 "Usually true neutral",
                 vec![2, 0, 2, 0, 4, 1],
+                Some(vec![DamageTypeEffect::Vulnerable(DamageType::Fire)]),
                 vec![(0, "
                     Chestnut treants tend to mischievous and outgoing.
                     They like playing small tricks on interesting creatures that pass by.
@@ -210,6 +221,7 @@ pub fn animates() -> Vec<MonsterEntry> {
             create_treant(
                 "Usually true neutral",
                 vec![2, 3, 2, 1, 2, -2],
+                Some(vec![DamageTypeEffect::Vulnerable(DamageType::Fire)]),
                 vec![(0, "
                     Willow treants are the most agile treants, and they can twist and bend their bodies with surprising finesse.
                     Their attitudes tend to be similarly flexible, and they tend to be easily persuadable.
@@ -221,6 +233,7 @@ pub fn animates() -> Vec<MonsterEntry> {
             create_treant(
                 "Usually neutral evil",
                 vec![3, 0, 1, 1, 2, 1],
+                None,
                 vec![(0, "
                     Darkroot treants, unlike most other treants, primarily inhabit swamps and other grimy places.
                     Their bark is mottled with fungus, and they tend to have a more sinister demeanor than most treants.
@@ -232,6 +245,7 @@ pub fn animates() -> Vec<MonsterEntry> {
             create_treant(
                 "Usually neutral good",
                 vec![3, -2, 4, 0, 2, 3],
+                Some(vec![DamageTypeEffect::Vulnerable(DamageType::Fire)]),
                 vec![(0, "
                     Pine treants tend to be the most steadfast treants.
                     They are strong-willed, but while oak treants are stubborn, pine treants are resolutely benevolent, sheltering all who need aid.
@@ -243,6 +257,7 @@ pub fn animates() -> Vec<MonsterEntry> {
             create_treant(
                 "Usually neutral good",
                 vec![4, -2, 4, 1, 2, 3],
+                Some(vec![DamageTypeEffect::Vulnerable(DamageType::Fire)]),
                 vec![(0, "
                     Oak treants tend to be the most stubborn treants, and they brook no guff from wayward adventurers.
                 ")],
@@ -253,6 +268,7 @@ pub fn animates() -> Vec<MonsterEntry> {
             create_treant(
                 "Usually true neutral",
                 vec![4, -2, 5, 0, 2, 2],
+                None,
                 vec![(0, "
                     Cyprus treants are the most durable of treants.
                     They are virtually indestructible, and are fearsome when roused to anger.
@@ -276,6 +292,8 @@ pub fn animates() -> Vec<MonsterEntry> {
             alignment: "Always true neutral".to_string(),
             attributes,
             challenge_rating,
+            damage_type_effects: None,
+            debuff_immunities: None,
             description: None,
             knowledge: None,
             level,
