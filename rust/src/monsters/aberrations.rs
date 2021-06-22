@@ -7,7 +7,7 @@ use crate::core_mechanics::attacks::{
 use crate::core_mechanics::damage_dice;
 use crate::core_mechanics::damage_types::{DamageType, DamageTypeEffect};
 use crate::core_mechanics::debuffs::Debuff;
-use crate::core_mechanics::defenses::Defense;
+use crate::core_mechanics::defenses::{Defense, SpecialDefenseModifier};
 use crate::core_mechanics::movement_modes::{FlightManeuverability, MovementMode, SpeedCategory};
 use crate::core_mechanics::passive_abilities::PassiveAbility;
 use crate::core_mechanics::senses::Sense;
@@ -24,8 +24,6 @@ struct FullAberrationDefinition {
     alignment: String,
     attributes: Vec<i8>,
     challenge_rating: ChallengeRating,
-    damage_type_effects: Option<Vec<DamageTypeEffect>>,
-    debuff_immunities: Option<Vec<Debuff>>,
     description: Option<&'static str>,
     knowledge: Option<Vec<(i8, &'static str)>>,
     level: i8,
@@ -36,6 +34,7 @@ struct FullAberrationDefinition {
     skill_points: Option<Vec<(Skill, i8)>>,
     size: Size,
     special_attacks: Option<Vec<Attack>>,
+    special_defense_modifiers: Option<Vec<SpecialDefenseModifier>>,
     weapons: Vec<Weapon>,
 }
 
@@ -45,8 +44,6 @@ fn aberration(def: FullAberrationDefinition) -> Monster {
         alignment: def.alignment,
         attributes: def.attributes,
         challenge_rating: def.challenge_rating,
-        damage_type_effects: def.damage_type_effects,
-        debuff_immunities: def.debuff_immunities,
         description: def.description,
         knowledge: def.knowledge,
         level: def.level,
@@ -57,6 +54,7 @@ fn aberration(def: FullAberrationDefinition) -> Monster {
         size: def.size,
         skill_points: def.skill_points,
         special_attacks: def.special_attacks,
+        special_defense_modifiers: def.special_defense_modifiers,
         weapons: def.weapons,
 
         // Default values
@@ -91,8 +89,6 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         alignment: "Usually lawful evil".to_string(),
         attributes: vec![3, -1, 4, 3, 2, 4],
         challenge_rating: ChallengeRating::Four,
-        damage_type_effects: None,
-        debuff_immunities: None,
         description: None,
         knowledge: Some(vec![
             (-10, "
@@ -187,6 +183,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                 weapon: None,
             },
         ]),
+        special_defense_modifiers: None,
         weapons: vec![Weapon::Slam],
     })));
 
@@ -194,8 +191,6 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         alignment: "Usually lawful evil".to_string(),
         attributes: vec![0, 1, 4, -6, 1, 2],
         challenge_rating: ChallengeRating::Three,
-        damage_type_effects: None,
-        debuff_immunities: Some(vec![Debuff::Prone]),
         description: None,
         knowledge: Some(vec![
             (0, "
@@ -238,6 +233,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                 weapon: None,
             },
         ]),
+        special_defense_modifiers: Some(vec![SpecialDefenseModifier::immune_debuff(Debuff::Prone)]),
         // TODO: make attacks sweeping
         weapons: vec![Weapon::MonsterBite],
     })));

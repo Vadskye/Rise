@@ -7,11 +7,10 @@ use crate::core_mechanics::attacks::{
 use crate::core_mechanics::damage_dice;
 use crate::core_mechanics::damage_types::{DamageType, DamageTypeEffect};
 use crate::core_mechanics::debuffs::Debuff;
-use crate::core_mechanics::defenses::Defense;
+use crate::core_mechanics::defenses::{Defense, SpecialDefenseModifier};
 use crate::core_mechanics::movement_modes::{FlightManeuverability, MovementMode, SpeedCategory};
 use crate::core_mechanics::passive_abilities::PassiveAbility;
 use crate::core_mechanics::senses::Sense;
-use crate::core_mechanics::{attack_effects, damage_types, debuffs, defenses};
 use crate::equipment::weapons::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Dragon;
@@ -187,8 +186,6 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
         attributes: age_category.attributes(),
         challenge_rating: ChallengeRating::Four,
         creature_type: Dragon,
-        damage_type_effects: Some(vec![DamageTypeEffect::Immune(dragon_type.damage_type())]),
-        debuff_immunities: None,
         description: None,
         knowledge: None,
         level: age_category.level(),
@@ -206,6 +203,9 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
         } else {
             None
         },
+        special_defense_modifiers: Some(vec![SpecialDefenseModifier::immune_damage(
+            dragon_type.damage_type(),
+        )]),
         weapons: vec![Weapon::MonsterBite, Weapon::MonsterClaws],
     });
 }

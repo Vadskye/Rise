@@ -47,8 +47,7 @@ fn animal(def: FullAnimalDefinition) -> Monster {
         // Default values
         alignment: "Always true neutral".to_string(),
         creature_type: Animal,
-        damage_type_effects: None,
-        debuff_immunities: None,
+        special_defense_modifiers: None,
     });
 }
 
