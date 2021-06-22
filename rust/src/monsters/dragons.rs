@@ -49,14 +49,72 @@ impl AgeCategory {
         }
     }
 
-    fn frightful_presence(&self) -> Option<Attack> {
+    fn breath_weapon_line(&self) -> AttackTargeting {
+        let (width, size) = match self {
+            Self::Wyrmling => (5, AreaSize::Small),
+            Self::Juvenile => (5, AreaSize::Large),
+            Self::Adult => (10, AreaSize::Huge),
+            Self::Ancient => (15, AreaSize::Gargantuan),
+            Self::Wyrm => (20, AreaSize::Custom(480)),
+        };
+        return AttackTargeting::Line(width, size, AreaTargets::Everything);
+    }
+
+    fn breath_weapon_cone(&self) -> AttackTargeting {
+        let size = match self {
+            Self::Wyrmling => AreaSize::Small,
+            Self::Juvenile => AreaSize::Medium,
+            Self::Adult => AreaSize::Large,
+            Self::Ancient => AreaSize::Huge,
+            Self::Wyrm => AreaSize::Gargantuan,
+        };
+        return AttackTargeting::Cone(size, AreaTargets::Everything);
+    }
+
+    fn glancing_blow(&self) -> bool {
         match self {
-            Self::Wyrmling => None,
-            Self::Juvenile => Some(frightful_presence(AreaSize::Large)),
-            Self::Adult => Some(frightful_presence(AreaSize::Huge)),
-            Self::Ancient => Some(frightful_presence(AreaSize::Gargantuan)),
-            Self::Wyrm => Some(frightful_presence(AreaSize::Custom(480))),
+            Self::Wyrmling => false,
+            Self::Juvenile => true,
+            Self::Adult => true,
+            Self::Ancient => true,
+            Self::Wyrm => true,
         }
+    }
+
+    // TODO: handle immunity after initial attack
+    fn frightful_presence(&self) -> Option<Attack> {
+        let size = match self {
+            Self::Wyrmling => None,
+            Self::Juvenile => Some(AreaSize::Large),
+            Self::Adult => Some(AreaSize::Huge),
+            Self::Ancient => Some(AreaSize::Gargantuan),
+            Self::Wyrm => Some(AreaSize::Custom(480)),
+        };
+        if size.is_none() {
+            return None;
+        }
+        let size = size.unwrap();
+        return Some(Attack {
+            accuracy: 0,
+            crit: Some(AttackEffect::Debuff(DebuffEffect {
+                debuffs: vec![Debuff::Frightened],
+                duration: AttackEffectDuration::Condition,
+            })),
+            defense: Defense::Mental,
+            glance: Some(AttackEffect::Debuff(DebuffEffect {
+                debuffs: vec![Debuff::Shaken],
+                duration: AttackEffectDuration::Condition,
+            })),
+            hit: AttackEffect::Debuff(DebuffEffect {
+                debuffs: vec![Debuff::Shaken],
+                duration: AttackEffectDuration::Condition,
+            }),
+            is_magical: false,
+            name: "Frightful Presence".to_string(),
+            targeting: AttackTargeting::Radius(None, size, AreaTargets::Enemies),
+            usage_time: UsageTime::Minor,
+            weapon: None,
+        });
     }
 
     fn level(&self) -> i32 {
@@ -67,6 +125,10 @@ impl AgeCategory {
             Self::Ancient => 17,
             Self::Wyrm => 21,
         }
+    }
+
+    fn damage_rank(&self) -> i32 {
+        return ((self.level() - 1) / 3) + 2;
     }
 
     fn name(&self) -> &str {
@@ -164,6 +226,21 @@ impl DragonType {
         }
     }
 
+    fn breath_weapon_is_line(&self) -> bool {
+        match self {
+            Self::Black => true,
+            Self::Blue => true,
+            Self::Brass => true,
+            Self::Bronze => true,
+            Self::Copper => true,
+            Self::Gold => false,
+            Self::Green => false,
+            Self::Red => false,
+            Self::Silver => false,
+            Self::White => false,
+        }
+    }
+
     fn name(&self) -> &str {
         match self {
             Self::Black => "Black",
@@ -180,10 +257,44 @@ impl DragonType {
     }
 }
 
+fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack {
+    let targeting = if dragon_type.breath_weapon_is_line() {
+        age_category.breath_weapon_line()
+    } else {
+        age_category.breath_weapon_cone()
+    };
+    // TODO: add cooldown
+    return Attack {
+        accuracy: 0,
+        crit: None,
+        defense: Defense::Reflex,
+        glance: if age_category.glancing_blow() { Some(AttackEffect::HalfDamage) } else { None },
+        hit: AttackEffect::Damage(
+            DamageEffect {
+                damage_dice: damage_dice::DamageDice::aoe_damage(age_category.damage_rank()),
+                damage_modifier: 0,
+                damage_types: vec![dragon_type.damage_type()],
+                lose_hp_effects: None,
+                power_multiplier: 0.5,
+                take_damage_effects: None,
+            },
+        ),
+        is_magical: false,
+        name: "Breath Weapon".to_string(),
+        targeting,
+        usage_time: UsageTime::Minor,
+        weapon: None,
+    };
+}
+
 fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
     let mut attributes = age_category.attributes();
     for (i, modifier) in dragon_type.attribute_modifiers().iter().enumerate() {
         attributes[i] += modifier;
+    }
+    let mut special_attacks = vec![breath_weapon(dragon_type, age_category)];
+    if let Some(f) = age_category.frightful_presence() {
+        special_attacks.push(f);
     }
     return Monster::fully_defined(FullMonsterDefinition {
         alignment: dragon_type.alignment().to_string(),
@@ -202,41 +313,12 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
         senses: None,
         size: age_category.size(),
         skill_points: None,
-        special_attacks: if let Some(f) = age_category.frightful_presence() {
-            Some(vec![f])
-        } else {
-            None
-        },
+        special_attacks: Some(special_attacks),
         special_defense_modifiers: Some(vec![SpecialDefenseModifier::immune_damage(
             dragon_type.damage_type(),
         )]),
         weapons: vec![Weapon::MonsterBite, Weapon::MonsterClaws],
     });
-}
-
-// TODO: handle immunity after initial attack
-fn frightful_presence(size: AreaSize) -> Attack {
-    return Attack {
-        accuracy: 0,
-        crit: Some(AttackEffect::Debuff(DebuffEffect {
-            debuffs: vec![Debuff::Frightened],
-            duration: AttackEffectDuration::Condition,
-        })),
-        defense: Defense::Mental,
-        glance: Some(AttackEffect::Debuff(DebuffEffect {
-            debuffs: vec![Debuff::Shaken],
-            duration: AttackEffectDuration::Condition,
-        })),
-        hit: AttackEffect::Debuff(DebuffEffect {
-            debuffs: vec![Debuff::Shaken],
-            duration: AttackEffectDuration::Condition,
-        }),
-        is_magical: false,
-        name: "Frightful Presence".to_string(),
-        targeting: AttackTargeting::Radius(None, size, AreaTargets::Enemies),
-        usage_time: UsageTime::Minor,
-        weapon: None,
-    };
 }
 
 pub fn dragons() -> Vec<MonsterEntry> {
