@@ -290,7 +290,7 @@ export const fabrication: MysticSphere = {
         targeting: `
           You fill a \\smallarea radius \\glossterm{zone} within \\shortrange with webs.
           The webs make the area \\glossterm{difficult terrain}.
-          Each 5-ft.\\ square of webbing has 8 \\glossterm{hit points} and is \\glossterm{vulnerable} to fire damage.
+          Each 5-ft.\\ square of webbing has 16 \\glossterm{hit points}, and all of its defenses are 0.
 
           In addition, make an attack vs. Reflex against all Large or smaller creatures in the area.
         `,

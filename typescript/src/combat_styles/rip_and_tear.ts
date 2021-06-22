@@ -11,7 +11,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
         You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
-        Each creature that loses \\glossterm{hit points} from the strike becomes \\glossterm{vulnerable} to all damage until the end of the next round.
+        Each creature that loses \\glossterm{hit points} from the strike becomes \\glossterm{vulnerable} to all damage as a \\glossterm{condition}.
       `,
       rank: 3,
       scaling: {
@@ -26,7 +26,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
+        You take a -1d damage penalty with the strike.
         Each creature that loses \\glossterm{hit points} from the strike becomes \\glossterm{vulnerable} to all damage as a \\glossterm{condition}.
       `,
       rank: 6,

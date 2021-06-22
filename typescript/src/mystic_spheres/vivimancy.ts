@@ -504,7 +504,7 @@ export const vivimancy: MysticSphere = {
       name: "Withering Curse",
 
       attack: {
-        crit: `The effect lasts until this curse is removed.`,
+        crit: `The effect lasts until this curse is removed. The penalty resets to -2 whenever the subject takes a short rest.`,
         glance: "The effect lasts until the end of the next round.",
         hit: `The subject becomes more vulnerable to injury until it takes a short rest.
         It takes a -2 penalty to Fortitude defense.
