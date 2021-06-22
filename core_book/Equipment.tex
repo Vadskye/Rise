@@ -517,8 +517,7 @@
 
         \parhead{Speed} Some armor decreases your speed with all of your \glossterm{movement modes} by the given value while it is used.
 
-        \parhead{Dex} Some armor halves your current and base Dexterity while being used.
-        If your Dexterity or base Dexterity are negative, they are not halved.
+        \parhead{Dex Bonus} This multiplier affects the contribution of your base Dexterity to your Armor defense.
 
         \parhead{Item Level (Cost)} The first value indicates the \glossterm{item level} of the item (see \pcref{Item Levels}).
         The second value in parentheses indicates the average cost to buy the item.
@@ -535,31 +534,30 @@
         \begin{dtable!*}
             \lcaption{Armor and Shields}
             \begin{dtabularx}{\textwidth}{l c c c c c >{\lcol}X c}
-                \tb{Armor}            & \tb{Defense} & \tb{Damage Resistance} & \tb{Encumbrance} & \tb{Speed}   & \tb{Dex} & \tb{Material}     & \tb{Item Level (Cost)}\fn{1}  \tableheaderrule
-                Light armor           &              &         &              &              &          &                   &              \\
-                \tind Leather         & \plus2       & \plus2  & \plus1       & \tdash       & \tdash   & Leather           & 1/2 (10 gp)  \\
-                \tind Studded leather & \plus2       & \plus3  & \plus2       & \tdash       & \tdash   & Leather and metal & 1st (50 gp)  \\
-                \tind Chain shirt     & \plus2       & \plus3  & \plus2       & \tdash       & \tdash   & Metal             & 1st (50 gp)  \\
-                \tind Buckler         & \plus1       & \tdash  & \tdash       & \tdash       & \tdash   & Metal or wood     & 1/2 (10 gp)  \\
-                Medium armor          &              &         &              &              &          &                   &              \\
-                \tind Hide            & \plus3       & \plus5  & \plus3       & \minus5 ft.  & \tdash   & Leather           & 1st (50 gp)  \\
-                \tind Scale mail      & \plus3       & \plus6  & \plus5       & \minus5 ft.  & \tdash   & Metal             & 1st (50 gp)  \\
-                \tind Breastplate     & \plus3       & \plus6  & \plus4       & \minus5 ft.  & \tdash   & Metal             & 2nd (125 gp) \\
-                \tind Standard shield & \plus2       & \tdash  & \tdash\fn{2} & \tdash       & \tdash   & Metal or wood     & 1/2 (10 gp)  \\
-                Heavy armor           &              &         &              &              &          &                   &              \\
-                \tind Layered hide    & \plus4       & \plus9  & \plus5       & \minus10 ft. & \mult1/2 & Leather           & 2nd (125 gp) \\
-                \tind Plated mail     & \plus4       & \plus10 & \plus6       & \minus10 ft. & \mult1/2 & Metal             & 3rd (250 gp) \\
-                \tind Half-plate      & \plus4       & \plus11 & \plus7       & \minus10 ft. & \mult1/2 & Metal             & 4th (500 gp) \\
-                \tind Full plate      & \plus4       & \plus12 & \plus6       & \minus10 ft. & \mult1/2 & Metal             & 5th (800 gp) \\
-                \tind Tower shield    & \plus3\fn{3} & \tdash  & \plus2\fn{2} & \tdash       & \tdash   & Metal or wood     & 1st (50 gp)  \\
-                Extras                &              &         &              &              &          &                   &              \\
-                \tind Armor spikes    & \tdash       & \minus1 & \plus1       & \tdash       & \tdash   & Metal             & \tdash       \\
-                \tind Locked gauntlet & \tdash       & \tdash  & Special      & \tdash       & \tdash   & Metal             & 1/2 (10 gp)  \\
-                \tind Shield spikes   & \tdash       & \tdash  & \tdash       & \tdash       & \tdash   & Metal             & \tdash       \\
+                \tb{Armor}            & \tb{Defense} & \tb{Damage Resistance} & \tb{Encumbrance} & \tb{Speed}   & \tb{Dex Bonus} & \tb{Material}     & \tb{Item Level (Cost)}  \tableheaderrule
+                Light armor           &              &                        &                  &              &                &                   &              \\
+                \tind Leather         & \plus2       & \plus2                 & \plus1           & \tdash       & \tdash         & Leather           & 1/2 (10 gp)  \\
+                \tind Studded leather & \plus2       & \plus3                 & \plus2           & \tdash       & \tdash         & Leather and metal & 1st (50 gp)  \\
+                \tind Chain shirt     & \plus2       & \plus3                 & \plus2           & \tdash       & \tdash         & Metal             & 1st (50 gp)  \\
+                \tind Buckler         & \plus1       & \tdash                 & \tdash           & \tdash       & \tdash         & Metal or wood     & 1/2 (10 gp)  \\
+                Medium armor          &              &                        &                  &              &                &                   &              \\
+                \tind Hide            & \plus3       & \plus5                 & \plus3           & \minus5 ft.  & \mult1/2       & Leather           & 1st (50 gp)  \\
+                \tind Scale mail      & \plus3       & \plus6                 & \plus5           & \minus5 ft.  & \mult1/2       & Metal             & 1st (50 gp)  \\
+                \tind Breastplate     & \plus3       & \plus6                 & \plus4           & \minus5 ft.  & \mult1/2       & Metal             & 2nd (125 gp) \\
+                \tind Standard shield & \plus2       & \tdash                 & \tdash\fn{1}     & \tdash       & \mult1/2       & Metal or wood     & 1/2 (10 gp)  \\
+                Heavy armor           &              &                        &                  &              &                &                   &              \\
+                \tind Layered hide    & \plus4       & \plus9                 & \plus5           & \minus10 ft. & \mult0         & Leather           & 2nd (125 gp) \\
+                \tind Plated mail     & \plus4       & \plus10                & \plus6           & \minus10 ft. & \mult0         & Metal             & 3rd (250 gp) \\
+                \tind Half-plate      & \plus4       & \plus11                & \plus7           & \minus10 ft. & \mult0         & Metal             & 4th (500 gp) \\
+                \tind Full plate      & \plus4       & \plus12                & \plus6           & \minus10 ft. & \mult0         & Metal             & 5th (800 gp) \\
+                \tind Tower shield    & \plus3\fn{2} & \tdash                 & \plus2\fn{1}     & \tdash       & \tdash         & Metal or wood     & 1st (50 gp)  \\
+                Extras                &              &                        &                  &              &                &                   &              \\
+                \tind Armor spikes    & \tdash       & \minus1                & \plus1           & \tdash       & \tdash         & Metal             & \tdash       \\
+                \tind Locked gauntlet & \tdash       & \tdash                 & Special          & \tdash       & \tdash         & Metal             & 1/2 (10 gp)  \\
+                \tind Shield spikes   & \tdash       & \tdash                 & \tdash           & \tdash       & \tdash         & Metal             & \tdash       \\
             \end{dtabularx}
-            1 See \pcref{Item Levels}. \\
-            2 The hand holding the shield is not free, which may limit your actions. \\
-            3 Tower shields improve your ability to take the \textit{total defense} action. See the description. \\
+            1 The hand holding the shield is not free, which may limit your actions. \\
+            2 Tower shields improve your ability to take the \textit{total defense} action. See the description. \\
         \end{dtable!*}
 
     \subsection{Individual Armor Descriptions}

@@ -337,11 +337,11 @@ def calc_fatigue_tolerance():
                     ),
                     plus(),
                     underlabel(
-                        "(Con+Wil)",
+                        "(Str+Wil)",
                         number_input(
                             {
                                 "disabled": True,
-                                "name": "fatigue_tolerance_con",
+                                "name": "fatigue_tolerance_attributes_display",
                                 "value": "(@{fatigue_tolerance_attributes})",
                             }
                         ),
@@ -799,12 +799,12 @@ def calc_armor():
                     ),
                     plus(),
                     underlabel(
-                        "(Dex)",
+                        "(Attr)",
                         number_input(
                             {
                                 "disabled": True,
-                                "name": "body_armor_dexterity_display",
-                                "value": "@{dexterity_starting}",
+                                "name": "body_armor_attribute_display",
+                                "value": "@{body_armor_attribute}",
                             }
                         ),
                     ),

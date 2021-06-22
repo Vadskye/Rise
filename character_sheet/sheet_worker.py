@@ -306,6 +306,7 @@ def armor_defense():
         [
             "level",
             "dexterity_starting",
+            "constitution_starting",
             "armor_defense_class_bonus",
             "body_armor_defense_value",
             "shield_defense_value",
@@ -315,9 +316,15 @@ def armor_defense():
             "all_defenses_custom_modifier",
         ],
         f"""
+            var attribute_modifier = Math.floor(constitution_starting / 2);
+            if (body_armor_usage_class === "medium" || challenge_rating > 0) {{
+                attribute_modifier += Math.floor(dexterity_starting / 2);
+            }} else if (body_armor_usage_class === "none" || body_armor_usage_class === "light") {{
+                attribute_modifier += dexterity_starting;
+            }}
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 3) / 6)) : 0;
-            var before_equipment = level + dexterity_starting + cr_mod + level_scaling + armor_defense_class_bonus;
+            var before_equipment = level + attribute_modifier + cr_mod + level_scaling + armor_defense_class_bonus;
             var total = (
                 before_equipment
                 + body_armor_defense_value
@@ -328,8 +335,10 @@ def armor_defense():
             );
             setAttrs({{
                 armor_defense: total,
+                body_armor_attribute: attribute_modifier,
             }});
         """,
+        string_variables=["body_armor_usage_class"],
     )
 
 
@@ -483,11 +492,11 @@ def skill_points():
 def fatigue_tolerance():
     misc = get_misc_variables("fatigue_tolerance", 2)
     return js_wrapper(
-        ["level", "fatigue_tolerance_base", "constitution_starting", "willpower_starting", *misc],
+        ["level", "fatigue_tolerance_base", "strength_starting", "willpower_starting", *misc],
         f"""
-            var fatigue_tolerance = Math.max(0, fatigue_tolerance_base + constitution_starting + willpower_starting + {sum_variables(misc)});
+            var fatigue_tolerance = Math.max(0, fatigue_tolerance_base + strength_starting + willpower_starting + {sum_variables(misc)});
             setAttrs({{
-                fatigue_tolerance_attributes: constitution_starting + willpower_starting,
+                fatigue_tolerance_attributes: strength_starting + willpower_starting,
                 fatigue_tolerance,
                 // for red bars
                 fatigue_points_max: fatigue_tolerance,

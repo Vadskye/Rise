@@ -45,7 +45,7 @@ impl AgeCategory {
             Self::Juvenile => vec![3, 1, 2, 2, 2, 2],
             Self::Adult => vec![4, 0, 3, 3, 3, 3],
             Self::Ancient => vec![6, -1, 4, 4, 4, 4],
-            Self::Wyrm => vec![8, -2, 5, 5, 5, 5],
+            Self::Wyrm => vec![8, -1, 5, 5, 5, 5],
         }
     }
 

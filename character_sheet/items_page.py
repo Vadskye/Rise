@@ -32,6 +32,8 @@ def create_page(_destination):
             """),
             div({"class": "section-header"}, "Legacy Item"),
             legacy_item(),
+            div({"class": "section-header"}, "Body Armor"),
+            body_armor(),
             div({"class": "section-header"}, "Attunement Abilities and Equipment"),
             attuned_effects_tracker(),
             fieldset(
@@ -126,6 +128,36 @@ def legacy_item():
                 "Effect",
                 {"class": "attunement-effect"},
                 {"name": "legacy_item_effect"},
+            )
+        ],
+    )
+
+def body_armor():
+    return flex_row(
+        {"class": "attunement"},
+        [
+            labeled_text_input(
+                "Name",
+                {"class": "attunement-name"},
+                {"name": "body_armor_name"},
+            ),
+            underlabel(
+                "Usage Class",
+                select(
+                    {'name': 'body_armor_usage_class'},
+                    [
+                        option({'value': 'none'}, ''),
+                        option({'value': 'light'}, 'Light'),
+                        option({'value': 'medium'}, 'Medium'),
+                        option({'value': 'heavy'}, 'Heavy'),
+                    ],
+                ),
+                {"class": "usage-class-dropdown"},
+            ),
+            labeled_text_input(
+                "Effect",
+                {"class": "attunement-effect"},
+                {"name": "body_armor_effect"},
             )
         ],
     )
