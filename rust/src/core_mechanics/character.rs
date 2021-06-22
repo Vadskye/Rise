@@ -107,7 +107,11 @@ impl HasDefenses for Character {
         match defense {
             // TODO: check for light armor
             defenses::Defense::Armor => {
-                value = value + self.get_base_attribute(&Attribute::Dexterity) / 2 + self.get_base_attribute(&Attribute::Constitution) / 2;
+                let mut dex = self.get_base_attribute(&Attribute::Dexterity);
+                if dex > 0 {
+                    dex = dex / 2;
+                }
+                value = value + dex + self.get_base_attribute(&Attribute::Constitution) / 2;
             },
             _ => {},
         };

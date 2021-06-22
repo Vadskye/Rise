@@ -824,6 +824,7 @@ It defines how attributes work and explains how to make attacks in combat.
                 \item Strength determines how much you can carry (see \tref{Weight Limits by Strength}).
                 \item You gain a bonus (or penalty) to your \glossterm{power} with \glossterm{mundane} abilities, such as normal weapon attacks, equal to half your Strength (see \pcref{Power}).
                 \item You reduce your total \glossterm{encumbrance} from \glossterm{armor} by an amount equal to your base Strength (see \pcref{Encumbrance}).
+                \item You gain a bonus (or penalty) to your \glossterm{fatigue tolerance} equal to your base Strength (see \pcref{Fatigue}).
                 \item You apply your base Strength as a bonus or penalty to Strength-based \glossterm{skills}: Climb, Jump, and Swim (see \pcref{Skills}).
                 \item If your base Strength is at least 3, you are \glossterm{trained} with your Strength-based \glossterm{class skills} (see \pcref{Class Skills}.
             \end{itemize}
@@ -834,7 +835,9 @@ It defines how attributes work and explains how to make attacks in combat.
             Dexterity measures your hand-eye coordination, agility, and reflexes.
             It has the following effects:
             \begin{itemize}
-                \item You gain a bonus (or penalty) to your Armor and Reflex defenses equal to your base Dexterity.
+                \item You gain a bonus (or penalty) to your Reflex defense equal to your base Dexterity.
+                \item You gain a bonus (or penalty) to your Armor defense equal to your base Dexterity.
+                    This bonus can be reduced if you wear medium or heavy armor (see \tref{Armor and Shields}).
                 \item You apply your base Dexterity as a bonus or penalty to Dexterity-based \glossterm{skills}: Agility, Flexibility, Ride, Sleight of Hand, and Stealth (see \pcref{Skills}).
                 \item If your base Dexterity is at least 3, you are automatically \glossterm{trained} with your Dexterity-based \glossterm{class skills} (see \pcref{Class Skills}.
             \end{itemize}
@@ -848,7 +851,7 @@ It defines how attributes work and explains how to make attacks in combat.
                 \item You gain a bonus (or penalty) to your \glossterm{hit points} equal to your Constitution.
                 \item You gain a bonus (or penalty) to your \glossterm{damage resistance} equal to half your Constitution (see \pcref{Damage Resistance}).
                 \item You gain a bonus (or penalty) to your Fortitude defense equal to your base Constitution.
-                \item You gain a bonus (or penalty) to your \glossterm{fatigue tolerance} equal to your base Constitution (see \pcref{Fatigue}).
+                \item You gain a bonus (or penalty) to your Armor defense equal to half your base Constitution.
                 \item You apply your base Constitution as a bonus or penalty to the Constitution-based \glossterm{skill}: Endurance (see \pcref{Skills}).
                 \item If your base Constitution is at least 3, you are automatically \glossterm{trained} with your Constitution-based \glossterm{class skills} (see \pcref{Class Skills}.
             \end{itemize}
@@ -894,8 +897,7 @@ It defines how attributes work and explains how to make attacks in combat.
         }
 
     \subsection{Base Attributes}\label{Base Attributes}
-        Some statistics depend on a \glossterm{base attribute}, while others depend on your total value for that attribute.
-        For example, your base Dexterity modifies your Reflex and Armor defenses, but your Dexterity is used to determine your bonus with Dexterity-based skills.
+        Most statistics depend on your \glossterm{base attributes}, rather than your total attributes.
         Your attributes automatically increase with level as defined in \tref{Increasing Attributes With Level}, but your base attributes do not automatically increase with level.
 
         A small number of abilities can increase your \glossterm{base attributes} after 1st level.
@@ -998,7 +1000,7 @@ It defines how attributes work and explains how to make attacks in combat.
 
             \subsubsection{Fatigue Tolerance}\label{Fatigue Tolerance}
                 Becoming slightly fatigued is not immediately detrimental.
-                Your fatigue level can be as high as your base Constitution \add your base Willpower without suffering any consequences (minimum 0).
+                Your fatigue level can be as high as your base Strength \add your base Willpower without suffering any consequences (minimum 0).
                 This value is called your \glossterm{fatigue tolerance}.
                 Your \glossterm{class} gives you a bonus to your fatigue tolerance, and some abilities can also modify it.
 
@@ -1121,7 +1123,7 @@ It defines how attributes work and explains how to make attacks in combat.
 
             Your defenses are calculated in the following way:
             \begin{itemize}
-                \itemhead{Armor}: Level \add base Dexterity \add class defense bonus \add defense bonuses from equipped body armor and shield
+                \itemhead{Armor}: Level \add base Dexterity (modified depending on equipped armor) \add half base Constitution \add class defense bonus \add defense bonuses from equipped body armor and shield
                 \itemhead{Fortitude}: Level \add base Constitution \add class defense bonus
                 \itemhead{Reflex}: Level \add base Dexterity \add class defense bonus
                 \itemhead{Mental}: Level \add base Willpower \add class defense bonus
@@ -1145,7 +1147,8 @@ It defines how attributes work and explains how to make attacks in combat.
         You apply your encumbrance as a penalty to all Strength and Dexterity-based checks you make.
         You can increase your encumbrance by wearing armor.
         In addition, you reduce your total encumbrance from \glossterm{armor} by an amount equal to your base Strength, to a minimum of 0.
-        You apply this reduction to the total encumbrance applied by all armor you wear, not individually for each piece of armor.
+        You apply this reduction to the total encumbrance applied by both your body armor and your shield, not individually for each piece of armor.
+        Most shields do not cause encumbrance, so this only matters for tower shields.
 
         Resting in armor is difficult.
         If you take a \glossterm{long rest} while you have any encumbrance, you finish your rest with a \glossterm{fatigue level} equal to the value of your encumbrance.
