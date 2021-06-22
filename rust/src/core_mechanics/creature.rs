@@ -1,9 +1,7 @@
 use crate::core_mechanics::attacks::{self, HasAttacks};
 use crate::core_mechanics::attributes::{Attribute, HasAttributes};
 use crate::core_mechanics::damage_absorption::HasDamageAbsorption;
-use crate::core_mechanics::defenses::{self, HasDefenses};
-use crate::core_mechanics::debuffs::Debuff;
-use crate::core_mechanics::damage_types::DamageTypeEffect;
+use crate::core_mechanics::defenses::{self, HasDefenses, SpecialDefenseModifier};
 use crate::core_mechanics::latex;
 use crate::core_mechanics::movement_modes;
 use crate::core_mechanics::resources::{self, HasResources};
@@ -18,8 +16,6 @@ use crate::core_mechanics::senses::Sense;
 
 pub struct Creature {
     base_attributes: HashMap<Attribute, i8>,
-    pub damage_type_effects: Option<Vec<DamageTypeEffect>>,
-    pub debuff_immunities: Option<Vec<Debuff>>,
     pub name: Option<String>,
     pub level: i8,
     pub movement_modes: Vec<movement_modes::MovementMode>,
@@ -28,6 +24,7 @@ pub struct Creature {
     pub size: sizes::Size,
     pub skill_points: Option<HashMap<Skill, i8>>,
     pub special_attacks: Option<Vec<attacks::Attack>>,
+    pub special_defense_modifiers: Option<Vec<SpecialDefenseModifier>>,
     pub weapons: Vec<weapons::Weapon>,
 }
 
@@ -36,8 +33,6 @@ impl Creature {
         let base_attributes = HashMap::<Attribute, i8>::new();
         return Creature {
             base_attributes,
-            damage_type_effects: None,
-            debuff_immunities: None,
             level,
             movement_modes: vec![],
             name: None,
@@ -46,22 +41,16 @@ impl Creature {
             size: sizes::Size::Medium,
             skill_points: None,
             special_attacks: None,
+            special_defense_modifiers: None,
             weapons: vec![],
         };
     }
 
-    pub fn add_damage_type_effect(&mut self, damage_type_effect: DamageTypeEffect) {
-        if self.damage_type_effects.is_none() {
-            self.damage_type_effects = Some(vec![]);
+    pub fn add_special_defense_modifier(&mut self, special_defense_modifier: SpecialDefenseModifier) {
+        if self.special_defense_modifiers.is_none() {
+            self.special_defense_modifiers = Some(vec![]);
         }
-        self.damage_type_effects.as_mut().unwrap().push(damage_type_effect);
-    }
-
-    pub fn add_debuff_immunity(&mut self, debuff: Debuff) {
-        if self.debuff_immunities.is_none() {
-            self.debuff_immunities = Some(vec![]);
-        }
-        self.debuff_immunities.as_mut().unwrap().push(debuff);
+        self.special_defense_modifiers.as_mut().unwrap().push(special_defense_modifier);
     }
 
     pub fn add_passive_ability(&mut self, ability: PassiveAbility) {

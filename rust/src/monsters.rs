@@ -1,18 +1,18 @@
 mod aberrations;
 mod animals;
 mod animates;
-mod dragons;
 pub mod challenge_rating;
 pub mod creature_type;
+mod dragons;
 pub mod monster_entry;
 pub mod monster_group;
 
 use crate::core_mechanics::attacks::HasAttacks;
 use crate::core_mechanics::attributes::{Attribute, HasAttributes};
-use crate::core_mechanics::debuffs::Debuff;
 use crate::core_mechanics::damage_absorption::HasDamageAbsorption;
-use crate::core_mechanics::damage_types::DamageTypeEffect;
-use crate::core_mechanics::defenses::{Defense, HasDefenses};
+use crate::core_mechanics::defenses::{
+    Defense, HasDefenses, SpecialDefenseModifier, SpecialDefenseType,
+};
 use crate::core_mechanics::passive_abilities::PassiveAbility;
 use crate::core_mechanics::resources::{self, HasResources};
 use crate::core_mechanics::senses::Sense;
@@ -38,8 +38,7 @@ pub struct FullMonsterDefinition {
     attributes: Vec<i8>,
     challenge_rating: challenge_rating::ChallengeRating,
     creature_type: creature_type::CreatureType,
-    damage_type_effects: Option<Vec<DamageTypeEffect>>,
-    debuff_immunities: Option<Vec<Debuff>>,
+    special_defense_modifiers: Option<Vec<SpecialDefenseModifier>>,
     description: Option<&'static str>,
     knowledge: Option<Vec<(i8, &'static str)>>,
     level: i8,
@@ -80,16 +79,6 @@ impl Monster {
             creature.add_weapon(weapon);
         }
         creature.set_size(def.size);
-        if let Some(damage_type_effects) = def.damage_type_effects {
-            for e in damage_type_effects {
-                creature.add_damage_type_effect(e);
-            }
-        }
-        if let Some(debuff_immunities) = def.debuff_immunities {
-            for d in debuff_immunities {
-                creature.add_debuff_immunity(d);
-            }
-        }
         if let Some(passive_abilities) = def.passive_abilities {
             for ability in passive_abilities {
                 creature.add_passive_ability(ability);
@@ -108,6 +97,11 @@ impl Monster {
         if let Some(special_attacks) = def.special_attacks {
             for a in special_attacks {
                 creature.add_special_attack(a);
+            }
+        }
+        if let Some(special_defense_modifiers) = def.special_defense_modifiers {
+            for d in special_defense_modifiers {
+                creature.add_special_defense_modifier(d);
             }
         }
 
@@ -358,6 +352,7 @@ impl Monster {
             "
                 \\begin<monsterstatistics>
                     {defensive_statistics}
+                    {special_defense_modifiers}
                     {movement}
                     {space_and_reach}
                     {senses}
@@ -370,6 +365,7 @@ impl Monster {
                     \\pari \\textbf<Alignment> {alignment}
                 \\end<monsterstatistics>
             ",
+            special_defense_modifiers = self.latex_special_defense_modifiers(),
             defensive_statistics = self.latex_defensive_statistics(),
             movement = self.latex_movement(),
             senses = self.latex_senses(),
@@ -380,6 +376,52 @@ impl Monster {
                 self.alignment.as_deref().unwrap_or("")
             ),
             space_and_reach = "", // TODO: only display for monsters with nonstandard space/reach
+        );
+    }
+
+    fn latex_special_defense_modifiers(&self) -> String {
+        if self.creature.special_defense_modifiers.is_none() {
+            return "".to_string();
+        }
+        let special_defense_modifiers = self.creature.special_defense_modifiers.as_ref().unwrap();
+        let mut immune = vec![];
+        let mut impervious = vec![];
+        let mut vulnerable = vec![];
+        for special_defense_modifier in special_defense_modifiers {
+            match special_defense_modifier {
+                SpecialDefenseModifier::Immune(t) => immune.push(t),
+                SpecialDefenseModifier::Impervious(t) => impervious.push(t),
+                SpecialDefenseModifier::Vulnerable(t) => vulnerable.push(t),
+            }
+        }
+
+        fn explain_special_defense_types(header: &str, types: Vec<&SpecialDefenseType>) -> String {
+            if types.len() == 0 {
+                return "".to_string();
+            }
+            return format!(
+                "\\pari \\textbf<{header}> {types}",
+                header = header,
+                types = latex_formatting::uppercase_first_letter(
+                    types
+                        .iter()
+                        .map(|t| t.description())
+                        .collect::<Vec<String>>()
+                        .join("\\monsep")
+                        .as_str()
+                ),
+            );
+        }
+
+        return format!(
+            "
+                {immune}
+                {impervious}
+                {vulnerable}
+            ",
+            immune = explain_special_defense_types("Immune", immune),
+            impervious = explain_special_defense_types("Impervious", impervious),
+            vulnerable = explain_special_defense_types("Vulnerable", vulnerable),
         );
     }
 

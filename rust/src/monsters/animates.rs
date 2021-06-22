@@ -7,11 +7,10 @@ use crate::core_mechanics::attacks::{
 use crate::core_mechanics::damage_dice;
 use crate::core_mechanics::damage_types::{DamageType, DamageTypeEffect};
 use crate::core_mechanics::debuffs::Debuff;
-use crate::core_mechanics::defenses::Defense;
+use crate::core_mechanics::defenses::{Defense, SpecialDefenseModifier};
 use crate::core_mechanics::movement_modes::{FlightManeuverability, MovementMode, SpeedCategory};
 use crate::core_mechanics::passive_abilities::PassiveAbility;
 use crate::core_mechanics::senses::Sense;
-use crate::core_mechanics::{attack_effects, damage_types, debuffs, defenses};
 use crate::equipment::weapons::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Animate;
@@ -25,8 +24,6 @@ struct FullAnimateDefinition {
     attributes: Vec<i8>,
     challenge_rating: ChallengeRating,
     description: Option<&'static str>,
-    damage_type_effects: Option<Vec<DamageTypeEffect>>,
-    debuff_immunities: Option<Vec<Debuff>>,
     knowledge: Option<Vec<(i8, &'static str)>>,
     level: i8,
     movement_modes: Option<Vec<MovementMode>>,
@@ -36,6 +33,7 @@ struct FullAnimateDefinition {
     skill_points: Option<Vec<(Skill, i8)>>,
     size: Size,
     special_attacks: Option<Vec<Attack>>,
+    special_defense_modifiers: Option<Vec<SpecialDefenseModifier>>,
     weapons: Vec<Weapon>,
 }
 
@@ -45,8 +43,6 @@ fn animate(def: FullAnimateDefinition) -> Monster {
         alignment: def.alignment,
         attributes: def.attributes,
         challenge_rating: def.challenge_rating,
-        damage_type_effects: def.damage_type_effects,
-        debuff_immunities: def.debuff_immunities,
         description: def.description,
         knowledge: def.knowledge,
         level: def.level,
@@ -57,6 +53,7 @@ fn animate(def: FullAnimateDefinition) -> Monster {
         size: def.size,
         skill_points: def.skill_points,
         special_attacks: def.special_attacks,
+        special_defense_modifiers: def.special_defense_modifiers,
         weapons: def.weapons,
 
         // Default values
@@ -72,8 +69,6 @@ pub fn animates() -> Vec<MonsterEntry> {
         attributes: vec![0, 3, 0, 1, 2, 2],
         challenge_rating: ChallengeRating::Four,
         description: None,
-        damage_type_effects: Some(vec![DamageTypeEffect::Impervious(DamageType::Cold)]),
-        debuff_immunities: Some(vec![Debuff::Prone]),
         knowledge: Some(vec![
             (0, "
                 An darkwraith is a shadow disconnected from its host through strange umbramantic power.
@@ -146,24 +141,26 @@ pub fn animates() -> Vec<MonsterEntry> {
                 weapon: None,
             },
         ]),
+        special_defense_modifiers: Some(vec![
+            SpecialDefenseModifier::impervious_damage(DamageType::Cold),
+            SpecialDefenseModifier::immune_debuff(Debuff::Prone),
+        ]),
         weapons: vec![],
     })));
 
     fn create_treant(
         alignment: &str,
         attributes: Vec<i8>,
-        damage_type_effects: Option<Vec<DamageTypeEffect>>,
         knowledge: Vec<(i8, &'static str)>,
         level: i8,
         name: &str,
         size: Size,
+        special_defense_modifiers: Option<Vec<SpecialDefenseModifier>>,
     ) -> Monster {
         return animate(FullAnimateDefinition {
             alignment: alignment.to_string(),
             attributes,
             challenge_rating: ChallengeRating::Two,
-            damage_type_effects,
-            debuff_immunities: None,
             description: None,
             knowledge: Some(knowledge),
             level,
@@ -189,6 +186,7 @@ pub fn animates() -> Vec<MonsterEntry> {
             size,
             skill_points: Some(vec![ (Skill::Awareness, 1), ]),
             special_attacks: None,
+            special_defense_modifiers,
             weapons: vec![Weapon::Slam],
         });
     }
@@ -198,18 +196,17 @@ pub fn animates() -> Vec<MonsterEntry> {
             create_treant(
                 "Usually true neutral",
                 vec![2, 0, 2, 0, 2, -2],
-                Some(vec![DamageTypeEffect::Vulnerable(DamageType::Fire)]),
                 vec![(0, "
                     Birch treants tend to be shy, and they to avoid conflict if at all possible.
                 ")],
                 5,
                 "Birch Treant",
                 Size::Large,
+                Some(vec![SpecialDefenseModifier::vulnerable_damage(DamageType::Fire)]),
             ),
             create_treant(
                 "Usually true neutral",
                 vec![2, 0, 2, 0, 4, 1],
-                Some(vec![DamageTypeEffect::Vulnerable(DamageType::Fire)]),
                 vec![(0, "
                     Chestnut treants tend to mischievous and outgoing.
                     They like playing small tricks on interesting creatures that pass by.
@@ -217,11 +214,11 @@ pub fn animates() -> Vec<MonsterEntry> {
                 6,
                 "Chestnut Treant",
                 Size::Large,
+                Some(vec![SpecialDefenseModifier::vulnerable_damage(DamageType::Fire)]),
             ),
             create_treant(
                 "Usually true neutral",
                 vec![2, 3, 2, 1, 2, -2],
-                Some(vec![DamageTypeEffect::Vulnerable(DamageType::Fire)]),
                 vec![(0, "
                     Willow treants are the most agile treants, and they can twist and bend their bodies with surprising finesse.
                     Their attitudes tend to be similarly flexible, and they tend to be easily persuadable.
@@ -229,11 +226,11 @@ pub fn animates() -> Vec<MonsterEntry> {
                 7,
                 "Willow Treant",
                 Size::Large,
+                Some(vec![SpecialDefenseModifier::vulnerable_damage(DamageType::Fire)]),
             ),
             create_treant(
                 "Usually neutral evil",
                 vec![3, 0, 1, 1, 2, 1],
-                None,
                 vec![(0, "
                     Darkroot treants, unlike most other treants, primarily inhabit swamps and other grimy places.
                     Their bark is mottled with fungus, and they tend to have a more sinister demeanor than most treants.
@@ -241,11 +238,11 @@ pub fn animates() -> Vec<MonsterEntry> {
                 8,
                 "Darkroot Treant",
                 Size::Large,
+                None,
             ),
             create_treant(
                 "Usually neutral good",
                 vec![3, -2, 4, 0, 2, 3],
-                Some(vec![DamageTypeEffect::Vulnerable(DamageType::Fire)]),
                 vec![(0, "
                     Pine treants tend to be the most steadfast treants.
                     They are strong-willed, but while oak treants are stubborn, pine treants are resolutely benevolent, sheltering all who need aid.
@@ -253,22 +250,22 @@ pub fn animates() -> Vec<MonsterEntry> {
                 9,
                 "Pine Treant",
                 Size::Huge,
+                Some(vec![SpecialDefenseModifier::vulnerable_damage(DamageType::Fire)]),
             ),
             create_treant(
                 "Usually neutral good",
                 vec![4, -2, 4, 1, 2, 3],
-                Some(vec![DamageTypeEffect::Vulnerable(DamageType::Fire)]),
                 vec![(0, "
                     Oak treants tend to be the most stubborn treants, and they brook no guff from wayward adventurers.
                 ")],
                 10,
                 "Oak Treant",
                 Size::Huge,
+                Some(vec![SpecialDefenseModifier::vulnerable_damage(DamageType::Fire)]),
             ),
             create_treant(
                 "Usually true neutral",
                 vec![4, -2, 5, 0, 2, 2],
-                None,
                 vec![(0, "
                     Cyprus treants are the most durable of treants.
                     They are virtually indestructible, and are fearsome when roused to anger.
@@ -276,6 +273,7 @@ pub fn animates() -> Vec<MonsterEntry> {
                 11,
                 "Cyprus Treant",
                 Size::Huge,
+                None,
             ),
         ]),
     ));
@@ -292,8 +290,6 @@ pub fn animates() -> Vec<MonsterEntry> {
             alignment: "Always true neutral".to_string(),
             attributes,
             challenge_rating,
-            damage_type_effects: None,
-            debuff_immunities: None,
             description: None,
             knowledge: None,
             level,
@@ -304,6 +300,7 @@ pub fn animates() -> Vec<MonsterEntry> {
             size,
             skill_points: None,
             special_attacks: None,
+            special_defense_modifiers: None,
             weapons: vec![Weapon::Slam],
         });
     }
