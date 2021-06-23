@@ -244,7 +244,7 @@ export const revelation: MysticSphere = {
     },
 
     {
-      name: "Boon of Many Eyes",
+      name: "Gift of Many Eyes",
 
       effect: `
         You reduce your penalties for being \\surrounded by 1.
@@ -252,9 +252,22 @@ export const revelation: MysticSphere = {
 
       rank: 2,
       scaling: {
-        4: `The penalty reduction increases to 2.
-            You are still considered to be surrounded for the purpose of other abilities, even this reduces your penalties to 0.`,
-        6: `You can never be surrounded.`,
+        4: `You cannot be \\surrounded.`,
+        6: `Whenever you would be \\unaware, you are \\partiallyunaware instead.`,
+      },
+      type: "Attune (self)",
+    },
+
+    {
+      name: "Foresight",
+
+      effect: `
+        You cannot be \\surrounded and are never \\unaware or \\partiallyunaware.
+      `,
+
+      rank: 5,
+      scaling: {
+        7: `You also gain a +4 \\glossterm{magic bonus} to \\glossterm{initiative} checks.`,
       },
       type: "Attune (self)",
     },

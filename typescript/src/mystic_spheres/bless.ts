@@ -386,6 +386,45 @@ export const bless: MysticSphere = {
     },
 
     {
+      name: "Blessing of Divine Warning",
+
+      castingTime: "minor action",
+      effect: `
+        Choose yourself or one \\glossterm{ally} within \\medrange.
+        The subject cannot be \\surrounded and is never \\unaware or \\partiallyunaware.
+
+        You can only have one casting of this spell active at once.
+        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
+      `,
+      rank: 5,
+      scaling: {
+        7: `Casting this spell does not remove previous attunements to this spell.
+                In addition, you can choose to cast this spell with the \\abilitytag{Sustain} (minor) tag instead of the \\abilitytag{Attune} (target) tag.`,
+      },
+      type: "Attune (target)",
+    },
+
+    {
+      name: "Blessing of Cleansing Renewal",
+
+      castingTime: "minor action",
+      effect: `
+        Choose yourself or one \\glossterm{ally} within \\medrange.
+        At the end of each round, the subject removes one \\glossterm{condition} of its choice affecting it.
+        This cannot remove a condition applied during the current round.
+
+        You can only have one casting of this spell active at once.
+        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
+      `,
+      rank: 5,
+      scaling: {
+        7: `Casting this spell does not remove previous attunements to this spell.
+                In addition, you can choose to cast this spell with the \\abilitytag{Sustain} (minor) tag instead of the \\abilitytag{Attune} (target) tag.`,
+      },
+      type: "Attune (target)",
+    },
+
+    {
       name: "Blessing of Wakefulness",
 
       // This spell intentionally can't be cast as a minor action to avoid making waking creatures too easy
