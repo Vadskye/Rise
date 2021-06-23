@@ -25,7 +25,6 @@ export function convertCombatStyleToLatex(style: CombatStyle): string {
 function convertManeuverToLatex(maneuver: Maneuver): string {
   const abilityType = determineAbilityType(maneuver);
   const internalComponents = [
-    format.spellTypePrefix({ ...maneuver, focus: maneuver.focus ?? false }),
     format.spellEffect(maneuver, "maneuver"),
     format.spellScaling(maneuver),
     format.spellNarrative(maneuver),
@@ -36,6 +35,9 @@ function convertManeuverToLatex(maneuver: Maneuver): string {
     \\hypertarget{maneuver:${maneuver.name.toLowerCase()}}{}%
     \\label{${maneuver.name}}%
     \\begin{${abilityType}}{${maneuver.name}}[${maneuver.type}]
+      ${format.spellTypePrefix({ ...maneuver, focus: maneuver.focus ?? false }) || ""}
+      \\rankline
+      \\noindent
       ${internalComponents.join("\n\\rankline\n\n\\noindent ")}
       \\vspace{0.1em}
     \\end{${abilityType}}

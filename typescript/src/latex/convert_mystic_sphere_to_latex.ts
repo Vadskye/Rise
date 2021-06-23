@@ -54,7 +54,6 @@ export function determineAbilityType(spell: Pick<SpellLike, "type">): string {
 function convertSpellToLatex(spell: SpellLike): string {
   const abilityType = determineAbilityType(spell);
   const internalComponents = [
-    format.spellTypePrefix(spell),
     format.spellEffect(spell, "spell"),
     format.spellScaling(spell),
     format.spellNarrative(spell),
@@ -66,6 +65,9 @@ function convertSpellToLatex(spell: SpellLike): string {
     \\hypertarget{spell:${spell.name.toLowerCase()}}{}%
     \\label{${spell.name}}%
     \\begin{${abilityType}}{${spell.name}}[${spell.type}]
+      ${format.spellTypePrefix(spell) || ""}
+      \\rankline
+      \\noindent
       ${internalComponents.join("\n\\rankline\n\n\\noindent ")}
       \\vspace{0.1em}
     \\end{${abilityType}}
