@@ -208,6 +208,19 @@ export const toxicology: MysticSphere = {
     },
 
     {
+      name: "Nauseating Curse",
+
+      functionsLike: {
+        name: 'sickening curse',
+        exceptThat: 'the subject is \\nauseated instead of sickened.',
+      },
+      rank: 6,
+      scaling: "accuracy",
+      tags: ["Curse"],
+      type: "Duration",
+    },
+
+    {
       name: "Acid Splash",
 
       attack: {
@@ -218,6 +231,45 @@ export const toxicology: MysticSphere = {
       },
       rank: 1,
       scaling: "damage",
+      tags: ["Manifestation"],
+      type: "Instant",
+    },
+
+    {
+      name: "Acid Bath",
+
+      attack: {
+        hit: `
+          The subject takes 4d8 + \\glossterm{power} acid damage.
+          In addition, if the subject has no hit points remaining at the end of the current \\glossterm{phase}, it dies.
+          Its body is completely dissolved by acid, leaving behind only a splash of black sludge.
+          Its equipment is unaffected.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against anything within \\shortrange.
+        `,
+      },
+      rank: 4,
+      scaling: "damage",
+      tags: ["Manifestation"],
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Acid Bath",
+
+      attack: {
+        hit: `
+          The subject takes 7d10 + \\glossterm{power} acid damage.
+          In addition, if the subject has no hit points remaining at the end of the current \\glossterm{phase}, it dies.
+          Its body is completely dissolved by acid, leaving behind only a splash of black sludge.
+          Its equipment is unaffected.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against anything within \\medrange.
+        `,
+      },
+      rank: 7,
       tags: ["Manifestation"],
       type: "Instant",
     },
@@ -242,13 +294,13 @@ export const toxicology: MysticSphere = {
       name: "Greater Acid Arrow",
 
       attack: {
-        hit: `The subject takes 6d10 + \\glossterm{power} acid damage.`,
+        hit: `The subject takes 4d10 + \\glossterm{power} acid damage.`,
         glance: "Half damage.",
         targeting: `
-          Make an attack vs. Fortitude against anything within \\distrange.
+          Make an attack vs. Fortitude against anything within \\extrange.
         `,
       },
-      rank: 7,
+      rank: 6,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",
@@ -288,6 +340,22 @@ export const toxicology: MysticSphere = {
     },
 
     {
+      name: "Greater Acid Breath",
+
+      castingTime: "minor action",
+      functionsLike: {
+        name: 'acid breath',
+        exceptThat: `
+          the damage increases to 5d10 + half \\glossterm{power}.
+          In addition, the area increases to a \\hugearea cone.
+        `,
+      },
+      rank: 7,
+      scaling: "damage",
+      type: "Attune (self)",
+    },
+
+    {
       name: "Corrosive Splash",
 
       attack: {
@@ -322,6 +390,21 @@ export const toxicology: MysticSphere = {
     },
 
     {
+      name: "Greater Acid Rain",
+
+      attack: {
+        glance: `Half damage.`,
+        hit: `Each subject takes 4d8 + half \\glossterm{power} acid damage.`,
+        targeting: `
+          Make an attack vs. Fortitude against everything in a \\arealarge radius, 30 ft.\\ high cylinder within \\longrange.
+        `,
+      },
+      rank: 7,
+      tags: ["Manifestation"],
+      type: "Instant",
+    },
+
+    {
       name: "Acid Orb",
 
       attack: {
@@ -346,6 +429,20 @@ export const toxicology: MysticSphere = {
       `,
       rank: 2,
       scaling: { special: "The healing increases by +1d for each rank beyond 2." },
+      tags: ['Healing'],
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Healing Salve",
+
+      effect: `
+        Choose yourself or one \\glossterm{ally} within \\shortrange.
+        The subject regains 4d6 + \\glossterm{power} \\glossterm{hit points}.
+        After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
+      `,
+      rank: 5,
+      scaling: { special: "The healing increases by +1d for each rank beyond 5." },
       tags: ['Healing'],
       type: "Instant",
     },

@@ -310,17 +310,23 @@ export const revelation: MysticSphere = {
     {
       name: "Greater Reveal Weakness",
 
-      attack: {
-        crit: `The penalty increases to -8.`,
-        hit: `As a \\glossterm{condition}, the subject's weaknesses are highlighted, and openings in its defenses are revealed to attackers moments before they exist.
-        It takes a -4 penalty to the chosen defense.`,
-        targeting: `
-          Choose one of the four defenses: Armor, Fortitude, Reflex, or Mental.
-          Make an attack vs. Mental against one creature within \\medrange.
-        `,
+      functionsLike: {
+        name: 'reveal weakness',
+        exceptThat: 'the penalty increases to -4, or -8 on a critical hit.',
       },
-
       rank: 4,
+      scaling: "accuracy",
+      type: "Duration",
+    },
+
+    {
+      name: "Supreme Reveal Weakness",
+
+      functionsLike: {
+        name: 'reveal weakness',
+        exceptThat: 'the penalty increases to -8, or -16 on a critical hit.',
+      },
+      rank: 7,
       scaling: "accuracy",
       type: "Duration",
     },

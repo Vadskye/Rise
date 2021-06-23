@@ -52,18 +52,30 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         crit: `the difficulty rating of the Strength check increases by 10.`,
-        hit: `The subject is unable to move closer to you without effort.
+        hit: `As a \\glossterm{condition}, the subject is unable to move closer to you without effort.
         This does not impede its movement unless its movement would decrease the distance between you and it.
         As part of movement, it can make a Strength check with a \\glossterm{difficulty rating} of 10.
         If it succeeds, it can move towards you at half speed.`,
         targeting: `
-        Make an attack vs. Mental against one creature within \\medrange.
+        Make an attack vs. Mental against one creature within \\longrange.
         `,
       },
 
-      rank: 1,
+      rank: 2,
       scaling: "accuracy",
-      type: "Sustain (minor)",
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Interposing Force",
+
+      functionsLike: {
+        name: "interposing force",
+        exceptThat: "the \\glossterm{difficulty rating} of the Strength check increases to 20.",
+      },
+      rank: 5,
+      scaling: "accuracy",
+      type: "Duration",
     },
 
     {
@@ -72,11 +84,38 @@ export const telekinesis: MysticSphere = {
       attack: {
         hit: `The subject takes 1d10 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
-        Make an attack vs. Armor against anything within \\medrange.
+          Make an attack vs. Armor against anything within \\medrange.
         `,
       },
-
       rank: 1,
+      scaling: "damage",
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Force Slam",
+
+      attack: {
+        hit: `The subject takes 4d6 + \\glossterm{power} bludgeoning damage.`,
+        targeting: `
+          Make an attack vs. Armor against anything within \\longrange.
+        `,
+      },
+      rank: 4,
+      scaling: "damage",
+      type: "Instant",
+    },
+
+    {
+      name: "Supreme Force Slam",
+
+      attack: {
+        hit: `The subject takes 6d10 + \\glossterm{power} bludgeoning damage.`,
+        targeting: `
+          Make an attack vs. Armor against anything within \\distrange.
+        `,
+      },
+      rank: 7,
       scaling: "damage",
       type: "Instant",
     },
@@ -93,6 +132,34 @@ export const telekinesis: MysticSphere = {
 
       rank: 1,
       scaling: "damage",
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Force Lance",
+
+      attack: {
+        hit: `Each subject takes 2d10 + half \\glossterm{power} piercing damage.`,
+        targeting: `
+          Make an attack vs. Armor against everything in a \\largearealong, 5 ft. wide line from you.
+        `,
+      },
+
+      rank: 4,
+      scaling: "damage",
+      type: "Instant",
+    },
+
+    {
+      name: "Supreme Force Lance",
+
+      attack: {
+        hit: `Each subject takes 5d10 + half \\glossterm{power} piercing damage.`,
+        targeting: `
+          Make an attack vs. Armor against everything in a \\largearealong, 10 ft. wide line from you.
+        `,
+      },
+      rank: 7,
       type: "Instant",
     },
 
@@ -183,9 +250,9 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         glance: `Half damage, and each subject moves half as far.`,
-        hit: `You \\glossterm{knockback} each subject up to 30 feet in a straight line away from you.
+        hit: `You \\glossterm{knockback} each subject up to 15 feet in a straight line away from you.
         Moving a target upwards costs twice the normal movement cost.
-        If the subject impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgoning damage equal to 2d6 plus half your \\glossterm{power} instead of the normal knockback damage.
+        If the subject impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgoning damage equal to 2d6 + half \\glossterm{power} instead of the normal knockback damage.
         Any individual object or creature can only take damage once in this way, even if it is hit by multiple targets that are knocked flying.`,
         targeting: `
         Make an attack vs. Mental against everything in a \\areasmall radius from you.
@@ -193,6 +260,48 @@ export const telekinesis: MysticSphere = {
       },
       rank: 3,
       scaling: "damage",
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Blastwave",
+
+      functionsLike: {
+        name: 'blastwave',
+        exceptThat: `
+          the damage increases to 4d6 + half \\glossterm{power}, and the area increases to a \\largearea radius.
+          In addition, the knockback distance increases to 30 feet.
+        `,
+      },
+      rank: 6,
+      scaling: "damage",
+      type: "Instant",
+    },
+
+    {
+      name: "Toss Foe",
+      attack: {
+        hit: `
+          You \\glossterm{knockback} the subject up to 30 feet in a straight line away from you.
+          Moving a target upwards costs twice the normal movement cost.
+          If the subject impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgoning damage equal to 2d8 + \\glossterm{power} instead of the normal knockback damage.
+          Any individual object or creature can only take damage once in this way, even if it is hit by multiple targets that are knocked flying.
+        `,
+        targeting: `
+          Make an attack vs. Mental against one Large or smaller object within \\medrange of you.
+        `,
+      },
+      rank: 3,
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Toss Foe",
+      functionsLike: {
+        name: 'toss foe',
+        exceptThat: "the damage increases to 4d10, and the maximum size increases to Huge.",
+      },
+      rank: 6,
       type: "Instant",
     },
 
@@ -230,6 +339,25 @@ export const telekinesis: MysticSphere = {
         7: `The bonus increases to +10.`,
       },
       type: "Attune (self)",
+    },
+
+    {
+      name: "Redirect Attacks",
+
+      focus: false,
+      effect: `
+        This spell does not have the \\glossterm{Focus} tag.
+        You immediately take the \\textit<total defense> action.
+        In addition, whenever a creature within \\longrange of you misses you with a \\glossterm{strike} this round, that creature treats itself as a target of that strike in addition to any other targets.
+        It cannot choose to reduce its accuracy or damage against itself.
+      `,
+      rank: 3,
+      scaling: {
+        5: `You gain an additional +1 bonus to all defenses.`,
+        7: `The defense bonus increases to +2.`,
+      },
+      tags: ['Swift'],
+      type: "Duration",
     },
 
     {
@@ -295,9 +423,25 @@ export const telekinesis: MysticSphere = {
           Make an attack vs. Reflex against one Small or smaller object within \\medrange.
           If the object is attended by a creature, the attack must also beat the attending creature's Reflex defense.
           If it is held in two hands or well secured, this attack automatically fails.
+
+          After you successfully steal an item from a creature with this spell, it gains a +5 bonus to defenses against this spell until it takes a \\glossterm{short rest}.
         `,
       },
       rank: 2,
+      scaling: "accuracy",
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Steal Item",
+
+      functionsLike: {
+        name: 'steal item',
+        exceptThat: `
+          the attack does not automatically fail if the item is held in two hands, and the maximum size increases to Medium.
+        `,
+      },
+      rank: 5,
       scaling: "accuracy",
       type: "Instant",
     },
@@ -328,6 +472,20 @@ export const telekinesis: MysticSphere = {
       scaling: {
         4: `The range increases to \\distrange.`,
         6: `The range increases to \\extrange.`,
+      },
+      type: "Instant",
+    },
+
+    {
+      name: "Mighty Mind Arrow",
+
+      functionsLike: {
+        name: 'mind arrow',
+        exceptThat: 'you gain a +1d bonus to damage with the strike.',
+      },
+      rank: 4,
+      scaling: {
+        6: `The damage bonus increases to +2d.`,
       },
       type: "Instant",
     },

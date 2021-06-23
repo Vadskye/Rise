@@ -122,6 +122,22 @@ export const astromancy: MysticSphere = {
       scaling: "damage",
       type: "Duration",
     },
+
+    {
+      name: "Certain Banishment",
+
+      functionsLike: {
+        name: "banishment",
+        exceptThat: "you gain a +3 accuracy bonus with the attack.",
+      },
+      narrative: `
+        The balor about to drag your allies into the Abyss disappears with an audible pop.
+        If they act quickly, they can prepare a trap before it returns.
+      `,
+      rank: 6,
+      scaling: "damage",
+      type: "Duration",
+    },
     {
       name: "Jittering Curse",
 
@@ -601,6 +617,24 @@ export const astromancy: MysticSphere = {
         7: "Each subject can also ignore all sources of \\glossterm{difficult terrain}.",
       },
       type: "Attune (target)",
+    },
+
+    {
+      name: "Astral Refuge",
+
+      castingTime: "minor action",
+      effect: `
+        Choose yourself or one Medium or smaller \\glossterm{ally} or unattended object within \\medrange.
+        You send that creature into a random safe location in the Astral Plane, causing it to temporarily disappear.
+        When you cast this spell, you choose how many rounds the subject spends in the Astral Plane, up to a maximum of five rounds.
+        At the end of the last round, it reappears in the same location where it disappeared, or in the closest unoccupied space if that location is occupied.
+        `,
+      rank: 2,
+      scaling: {
+        4: `The maximum size of the subject increases to Large.`,
+        6: `The maximum size of the subject increases to Huge.`,
+      },
+      type: "Duration",
     },
   ],
   rituals: [

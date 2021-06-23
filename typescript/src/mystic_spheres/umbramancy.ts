@@ -432,7 +432,7 @@ export const umbramancy: MysticSphere = {
         hit: `The subject takes 1d10 cold damage.
         If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.`,
         targeting: `
-          Make an attack vs. Mental against one creature within \\closerange that is standing on the ground.
+          Make an attack vs. Mental against one creature within \\shortrange that is standing on the ground.
           You attempt to pin the creature's shadow to the ground, preventing it from moving.
           If the target is in \\glossterm{bright illumination} and is not touching its shadow, the attack automatically misses.
         `,

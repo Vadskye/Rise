@@ -114,6 +114,34 @@ export const vivimancy: MysticSphere = {
     },
 
     {
+      name: "Greater Drain Life",
+
+      attack: {
+        hit: `The subject takes 4d6 + \\glossterm{power} energy damage.`,
+        targeting: `
+          Make an attack vs. Fortitude against one living creature within \\longrange.
+        `,
+      },
+      rank: 4,
+      scaling: "damage",
+      type: "Instant",
+    },
+
+    {
+      name: "Supreme Drain Life",
+
+      attack: {
+        hit: `The subject takes 6d10 + \\glossterm{power} energy damage.`,
+        targeting: `
+          Make an attack vs. Fortitude against one living creature within \\distrange.
+        `,
+      },
+      rank: 7,
+      scaling: "damage",
+      type: "Instant",
+    },
+
+    {
       name: "Cure Wound",
 
       effect: `
@@ -193,14 +221,13 @@ export const vivimancy: MysticSphere = {
       name: "Inflict Wound",
 
       attack: {
-        hit: `The subject takes 1d8 + half \\glossterm{power} energy damage.
+        hit: `The subject takes 2d6 + half \\glossterm{power} energy damage.
         If the subject would lose \\glossterm{hit points} from this damage, it loses twice that many hit points instead.`,
         targeting: `
-        Make an attack vs. Fortitude against one living creature within \\medrange.
+        Make an attack vs. Fortitude against one living creature within \\shortrange.
         `,
       },
-
-      rank: 1,
+      rank: 2,
       scaling: "damage",
       type: "Instant",
     },
@@ -212,14 +239,13 @@ export const vivimancy: MysticSphere = {
         crit: `Double damage.
         In addition, if the subject did not already gain a \\glossterm{vital wound} from that loss of hit points, it gains a \\glossterm{vital wound}.`,
         glance: `Half damage.`,
-        hit: `The subject takes 2d10 + half \\glossterm{power} energy damage.
+        hit: `The subject takes 5d10 + half \\glossterm{power} energy damage.
         If the subject would lose \\glossterm{hit points} from this damage, it loses twice that many hit points instead.`,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
+          Make an attack vs. Fortitude against one living creature within \\shortrange.
         `,
       },
-
-      rank: 4,
+      rank: 6,
       scaling: "damage",
       type: "Instant",
     },
@@ -307,14 +333,29 @@ export const vivimancy: MysticSphere = {
     },
 
     {
+      name: "Greater Circle of Death",
+
+      attack: {
+        glance: `Half damage.`,
+        hit: `Each subject takes 4d8 + half \\glossterm{power} energy damage.`,
+        targeting: `
+          Make an attack vs. Fortitude against all living \\glossterm{enemies} in a \\largearea radius from you.
+        `,
+      },
+      rank: 6,
+      scaling: "damage",
+      type: "Instant",
+    },
+
+    {
       name: "Circle of Life",
 
       effect: `
-        You and each living \\glossterm{ally} in a \\medarea radius from you each regain 4d6 \\glossterm{hit points}.
+        You and each living \\glossterm{ally} in a \\medarea radius from you each regains 2d10 \\glossterm{hit points}.
         After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
       `,
-      rank: 5,
-      scaling: { special: "The healing increases by +1d for each rank beyond 5." },
+      rank: 4,
+      scaling: { special: "The healing increases by +1d for each rank beyond 4." },
       tags: ['Healing'],
       type: "Instant",
     },
@@ -478,6 +519,21 @@ export const vivimancy: MysticSphere = {
           You violently discharge the latent magical potential within a corpse, causing it to explode.
       `,
       rank: 2,
+      scaling: "damage",
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Corpse Explosion",
+
+      functionsLike: {
+        name: 'corpse explosion',
+        exceptThat: 'the damage increases to 4d10 + half \\glossterm{power}.',
+      },
+      narrative: `
+        You violently discharge the latent magical potential within a corpse, causing it to explode in a shower of guts and gore.
+      `,
+      rank: 6,
       scaling: "damage",
       type: "Instant",
     },

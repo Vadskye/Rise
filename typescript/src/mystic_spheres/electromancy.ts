@@ -391,20 +391,36 @@ export const electromancy: MysticSphere = {
     },
 
     {
+      name: "Greater Lightning Breath",
+
+      castingTime: "minor action",
+      functionsLike: {
+        name: 'lightning breath',
+        exceptThat: `
+          the damage increases to 5d10 + half \\glossterm{power}.
+          In addition, the area increases to a \\hugearea cone.
+        `,
+      },
+      rank: 7,
+      scaling: "damage",
+      type: "Attune (self)",
+    },
+
+    {
       name: "Ball Lightning",
 
       attack: {
         glance: `Half damage.`,
-        hit: `Each subject takes 2d8 electricity damage.`,
+        hit: `Each subject takes 2d10 electricity damage.`,
         targeting: `
-          You create a Medium size ball of lightning in one space within \\medrange.
+          You create a Medium size ball of lightning in one space within \\longrange.
           The ball of lightning does not occupy space or block movement, and can move through creatures (but not solid objects) freely.
           Whenever you sustain this effect, you can move the ball up to 30 feet in any direction, even vertically.
-          At the end of each round, if the ball is more than 60 feet from you, it disappears and this effect ends.
+          At the end of each round, if the ball is more than 120 feet from you, it disappears and this effect ends.
           Otherwise, make an attack vs. Reflex with a -2 accuracy penalty against everything in its space.
         `,
       },
-      rank: 4,
+      rank: 5,
       scaling: "damage",
       type: "Sustain (minor)",
     },

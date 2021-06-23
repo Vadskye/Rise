@@ -274,7 +274,26 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
-        hit: `The subject takes 4d10 + \\glossterm{power} fire damage.
+        hit: `The subject takes 4d8 + \\glossterm{power} fire damage.
+        In addition, if the subject has no hit points remaining at the end of the current \\glossterm{phase}, it dies.
+        Its body is completely incinerated, leaving behind only a pinch of fine ash.
+        Its equipment is unaffected.`,
+        targeting: `
+        Make an attack vs. Fortitude against one creature within \\shortrange.
+        `,
+      },
+
+      rank: 4,
+      scaling: "damage",
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Immolate",
+
+      attack: {
+        glance: `Half damage.`,
+        hit: `The subject takes 7d10 + \\glossterm{power} fire damage.
         In addition, if the subject has no hit points remaining at the end of the current \\glossterm{phase}, it dies.
         Its body is completely incinerated, leaving behind only a pinch of fine ash.
         Its equipment is unaffected.`,
@@ -283,8 +302,7 @@ export const pyromancy: MysticSphere = {
         `,
       },
 
-      rank: 5,
-      scaling: "damage",
+      rank: 7,
       type: "Instant",
     },
 
@@ -320,6 +338,22 @@ export const pyromancy: MysticSphere = {
         `,
       },
       rank: 3,
+      scaling: "damage",
+      type: "Attune (self)",
+    },
+
+    {
+      name: "Greater Flame Breath",
+
+      castingTime: "minor action",
+      functionsLike: {
+        name: 'flame breath',
+        exceptThat: `
+          the damage increases to 5d10 + half \\glossterm{power}.
+          In addition, the area increases to a \\hugearea cone.
+        `,
+      },
+      rank: 7,
       scaling: "damage",
       type: "Attune (self)",
     },

@@ -101,21 +101,6 @@ export const photomancy: MysticSphere = {
     },
 
     {
-      name: "Greater Prismatic Spray",
-
-      functionsLike: {
-        // note: technically this should be largearea + 1 level...
-        exceptThat: `
-          the area increases to a \\hugearea cone from you.
-        `,
-        name: "prismatic spray",
-      },
-      rank: 7,
-      tags: ["Sensation", "Visual"],
-      type: "Instant",
-    },
-
-    {
       name: "Army of Twins",
 
       // original targets: Up to five targets within \medrange from among you and your \glossterm{allies}
@@ -183,6 +168,26 @@ export const photomancy: MysticSphere = {
     },
 
     {
+      name: "Searing Flash",
+
+      attack: {
+        hit: `
+          The subject takes 2d8 energy damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{blinded} as a \\glossterm{condition}.
+          Otherwise, it is \\glossterm{dazzled} as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one creature within \\medrange.
+          Whether you hit or miss, \\glossterm{brilliant illumination} fills a 60 foot radius around the subject until the end of the next round.
+        `,
+      },
+      rank: 5,
+      scaling: "accuracy",
+      tags: ["Sensation", "Visual"],
+      type: "Duration",
+    },
+
+    {
       name: "Blinding Flash",
 
       attack: {
@@ -231,6 +236,28 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 4,
+      scaling: "damage",
+      tags: ["Sensation", "Visual"],
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Solar Ray",
+
+      attack: {
+        glance: `Half damage.`,
+        // +1 accuracy, low power; photomancy isn't supposed to be a high damage sphere
+        hit: `
+          The subject takes 4d8 + half \\glossterm{power} energy damage.
+          In addition, the subject suffers consequences as if it had been struck by a beam of true sunlight.
+        `,
+        targeting: `
+          Make an attack vs. Reflex with a +2 \\glossterm{accuracy} bonus against anything within \\medrange.
+          Whether you hit or miss, \\glossterm{brilliant illumination} fills a 120 foot radius around a 5 ft. wide straight line between you and the subject.
+          The illumination lasts until the end of the next round.
+        `,
+      },
+      rank: 7,
       scaling: "damage",
       tags: ["Sensation", "Visual"],
       type: "Duration",
@@ -296,11 +323,24 @@ export const photomancy: MysticSphere = {
         crit: "The effect becomes a \\glossterm{condition} on each subject.",
         hit: `Each subject is \\stunned until the end of the next round.`,
         targeting: `
-          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange of you.
+          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\shortrange of you.
           Whether you hit or miss, \\glossterm{brilliant illumination} fills a 60 foot radius from the center of that area until the end of the next round.
         `,
       },
-      rank: 4,
+      rank: 3,
+      scaling: "accuracy",
+      tags: ["Compulsion", "Sensation", "Visual"],
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Kaleidoscopic Pattern",
+
+      functionsLike: {
+        name: 'kaleidoscopic pattern',
+        exceptThat: 'the area increases to a \\medarea radius, and the range increases to \\longrange.',
+      },
+      rank: 6,
       scaling: "accuracy",
       tags: ["Compulsion", "Sensation", "Visual"],
       type: "Duration",

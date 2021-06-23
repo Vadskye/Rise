@@ -78,6 +78,20 @@ export const fabrication: MysticSphere = {
     },
 
     {
+      name: "Mystic Artillery",
+
+      attack: {
+        hit: `The subject takes 4d10 + \\glossterm{power} piercing damage.`,
+        targeting: `
+          Make an attack vs. Armor with a +3 accuracy bonus against anything within \\extrange.
+        `,
+      },
+      rank: 7,
+      tags: ["Manifestation"],
+      type: "Instant",
+    },
+
+    {
       name: "Mystic Blast Arrow",
 
       attack: {
@@ -344,6 +358,7 @@ export const fabrication: MysticSphere = {
         The ammunition can be blunted, but you cannot create other forms of special ammunition like fire arrows or repeating bolts.
         The object persists until the end of the round, at which point it disappears.
         Because this spell has the \\abilitytag{Swift} tag, you can fire the created projectile from the weapon in the same phase that you cast this spell.
+        After you cast this spell, you cannot cast it again until after the end of the next round.
       `,
       rank: 2,
       scaling: {
@@ -369,6 +384,21 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 4,
+      scaling: "damage",
+      type: "Attune (self)",
+    },
+
+    {
+      name: "Greater Daggerswarm",
+
+      castingTime: "minor action",
+      functionsLike: {
+        name: "daggerswarm",
+        exceptThat: `
+          the damage increases to 4d8, and the range increases to \\medrange.
+        `,
+      },
+      rank: 7,
       scaling: "damage",
       type: "Attune (self)",
     },
