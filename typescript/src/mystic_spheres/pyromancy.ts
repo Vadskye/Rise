@@ -140,14 +140,14 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
-        hit: `Each subject takes 2d10 + half \\glossterm{power} fire damage.
+        hit: `Each subject takes 4d6 + half \\glossterm{power} fire damage.
         In addition, if the subject is a flammable object, it catches on fire.`,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\medarea radius within \\longrange.
+          Make an attack vs. Reflex against everything in a \\largearea radius within \\longrange.
         `,
       },
 
-      rank: 5,
+      rank: 6,
       scaling: "damage",
       type: "Instant",
     },
@@ -362,6 +362,22 @@ export const pyromancy: MysticSphere = {
     },
 
     {
+      name: "Greater Flaming Spheres",
+
+      castingTime: "minor action",
+      functionsLike: {
+        name: 'flaming spheres',
+        exceptThat: `
+          the damage increases to 4d8.
+          In addition, the range increases to \\medrange.
+        `,
+      },
+      rank: 7,
+      scaling: "damage",
+      type: "Attune (self)",
+    },
+
+    {
       name: "Inferno",
 
       attack: {
@@ -419,6 +435,21 @@ export const pyromancy: MysticSphere = {
     },
 
     {
+      name: "Greater Flame Serpent",
+
+      attack: {
+        glance: `Half damage.`,
+        hit: `Each subject takes 4d8 + half \\glossterm{power} fire damage.`,
+        targeting: `
+          Make an attack vs. Reflex against everything in a \\largearealong, 5 ft. wide shapeable line that starts within \\distrange.
+        `,
+      },
+      rank: 7,
+      scaling: "damage",
+      type: "Instant",
+    },
+
+    {
       name: "Personal Ignition",
 
       castingTime: "minor action",
@@ -463,10 +494,10 @@ export const pyromancy: MysticSphere = {
         Your weapons shed light like a torch.
         In addition, all damage you deal with \\glossterm{strikes} becomes fire damage in addition to the attack's normal damage types.
       `,
-      rank: 3,
+      rank: 2,
       scaling: {
-        5: `You also gain a +4 \\glossterm{magic bonus} to \\glossterm{power} with strikes.`,
-        7: `The bonus increases to +8.`,
+        4: `You also gain a +4 \\glossterm{magic bonus} to \\glossterm{power} with strikes.`,
+        8: `The bonus increases to +8.`,
       },
       type: "Attune (self)",
     },
@@ -480,9 +511,9 @@ export const pyromancy: MysticSphere = {
         name: "Flame Blade",
       },
       // narrative: '',
-      rank: 5,
+      rank: 4,
       scaling: {
-        7: `Each subject also gains a +4 \\glossterm{magic bonus} to \\glossterm{power} with strikes.`,
+        6: `Each subject also gains a +4 \\glossterm{magic bonus} to \\glossterm{power} with strikes.`,
       },
       type: "Attune (target)",
     },
@@ -504,6 +535,21 @@ export const pyromancy: MysticSphere = {
         `,
       },
       rank: 3,
+      scaling: "damage",
+      type: "Sustain (minor)",
+    },
+
+    {
+      name: "Greater Wall of Fire",
+
+      functionsLike: {
+        name: 'wall of fire',
+        exceptThat: `
+          the damage increases to 4d8 + half \\glossterm{power}.
+          In addition, the area increases to a 20 ft. high, \\largearea \\glossterm{wall}.
+        `,
+      },
+      rank: 6,
       scaling: "damage",
       type: "Sustain (minor)",
     },
@@ -625,6 +671,20 @@ export const pyromancy: MysticSphere = {
       `,
       rank: 5,
       scaling: { 7: `The maximum height increases to 60 feet.` },
+      type: "Attune (self)",
+    },
+
+    {
+      name: "Soul of the Phoenix",
+
+      effect: `
+        You embody the soul of the undying phoenix.
+        If you die, your body and equipment catch fire and are instantly burned to ash.
+        At the end of the next round after you died, you return to life with all of your equipment intact.
+        Your return in the same state in which you died, except that all of your \\glossterm{vital rolls} for your vital rolls that were 0 or lower become 1, preventing you from dying again immediately.
+        After you are restored to life this way, this spell ends.
+      `,
+      rank: 7,
       type: "Attune (self)",
     },
 

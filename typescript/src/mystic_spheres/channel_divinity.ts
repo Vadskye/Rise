@@ -265,6 +265,22 @@ export const channelDivinity: MysticSphere = {
     },
 
     {
+      name: "Supreme Word of Faith",
+
+      attack: {
+        glance: "Half damage.",
+        hit: `
+          Each subject takes 4d8 + half \\glossterm{power} energy damage.
+        `,
+        targeting: `
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\hugearea radius from you.
+        `,
+      },
+      rank: 7,
+      type: "Instant",
+    },
+
+    {
       name: "Mantle of Faith",
 
       castingTime: "minor action",

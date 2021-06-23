@@ -179,6 +179,21 @@ export const fabrication: MysticSphere = {
     },
 
     {
+      name: "Greater Blade Barrier",
+
+      functionsLike: {
+        exceptThat: `
+          the damage increases to 2d10 + half \\glossterm{power}.
+          In addition, the area increases to a 20 ft.\\ high, \\largearea wall.
+        `,
+        name: 'blade barrier',
+      },
+      rank: 5,
+      scaling: "damage",
+      type: "Sustain (minor)",
+    },
+
+    {
       name: "Blade Perimeter",
 
       attack: {
@@ -366,13 +381,118 @@ export const fabrication: MysticSphere = {
         hit: `Each subject takes 2d8 + half \\glossterm{power} piercing damage.`,
         targeting: `
           A swarm of daggers appears in a \\tinyarea radius \\glossterm{zone} within \\medrange.
-          At the end of each round, make an attack vs. Armor against everything in the area.
+          At the end of each round, make an attack vs. Armor with a +2 accuracy bonus against everything in the area.
         `,
       },
-      rank: 4,
+      rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Sustain (minor)",
+    },
+
+    {
+      name: "Grease",
+
+      attack: {
+        crit: `
+          Each subject is also unable to stand up as a \\glossterm{condition}.
+          If it is somehow brought into a standing position, it will immediately fall and become prone again.
+        `,
+        hit: `Each subject falls \\prone.`,
+        targeting: `
+          Make an attack vs. Reflex against everything in a \\smallarea radius within \\medrange.
+        `,
+      },
+      rank: 1,
+      scaling: "accuracy",
+      tags: ["Manifestation"],
+      type: "Duration",
+    },
+
+    {
+      name: "Oil Slick",
+
+      attack: {
+        crit: `
+          Each subject is also unable to stand up as a \\glossterm{condition}.
+          If it is somehow brought into a standing position, it will immediately fall and become prone again.
+        `,
+        hit: `
+          Each subject falls \\prone.
+          During the next round, it is \\glossterm{vulnerable} to fire damage.
+        `,
+        targeting: `
+          Make an attack vs. Reflex against everything in a \\smallarea radius within \\medrange.
+        `,
+      },
+      rank: 5,
+      scaling: "accuracy",
+      tags: ["Manifestation"],
+      type: "Duration",
+    },
+
+    {
+      name: "Protective Cage",
+
+      effect: `
+        Choose yourself or one Large or smaller \\glossterm{ally} within \\medrange.
+        You create a metal cage around the subject in its space.
+        The cage has a 2 inch gap between its bars, allowing the subject to see and be seen by creatures outside of the cage.
+        This does not block \\glossterm{line of sight} or \\glossterm{line of effect}, but it provides cover, and non-piercing \\glossterm{melee} weapons cannot attack through the cage.
+        Each 5-ft.\\ square of the field has 12 \\glossterm{hit points}.
+
+        % TODO: clarify that you can't create two cages around the same subject
+        % simultaneously
+        If another creature is in the subject's space when this spell is cast, this spell fails without effect.
+      `,
+      rank: 3,
+      scaling: {
+        5: `The \\glossterm{hit points} of each 5-ft.\\ square increase to 24.`,
+        7: `The \\glossterm{hit points} of each 5-ft.\\ square increase to 48.`,
+      },
+      tags: ["Manifestation"],
+      type: "Sustain (minor)",
+    },
+
+    {
+      name: "Instant Weapon",
+
+      effect: `
+        This spell does not have the \\abilitytag{Focus} tag.
+        You create a nonmagical weapon that you are proficient with.
+        You can immediately make a \\glossterm{strike} with that weapon.
+        If you create a projectile weapon, you also create ammunition necessary for you to attack with.
+        After you make the strike, the weapon disappears.
+      `,
+      focus: false,
+      rank: 1,
+      scaling: {
+        3: `You gain a +1 bonus to \\glossterm{accuracy} with the strike.`,
+        5: `The accuracy bonus increases to +2.`,
+        7: `The accuracy bonus increases to +3.`,
+      },
+      tags: ["Manifestation"],
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Instant Weapon",
+
+      castingTime: "minor action",
+      functionsLike: {
+        name: 'instant weapon',
+        exceptThat: `
+          the weapon you create is magical.
+          You may give it a single magic weapon ability of your choice with an item level no higher than your level.
+        `,
+      },
+      focus: false,
+      rank: 5,
+      scaling: {
+        7: `You gain a +1 bonus to \\glossterm{accuracy} with the strike.`,
+      },
+      tags: ["Manifestation"],
+      type: "Instant",
     },
   ],
   rituals: [

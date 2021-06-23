@@ -169,6 +169,24 @@ export const enchantment: MysticSphere = {
     },
 
     {
+      name: "Greater Slow Down",
+
+      attack: {
+        glance: "The effect lasts until the end of the next round.",
+        crit: `The condition must be removed twice before the effect ends.`,
+        hit: `The subject is \\decelerated as a \\glossterm{condition}.`,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\longrange.
+        `,
+      },
+
+      rank: 6,
+      scaling: "accuracy",
+      tags: ["Compulsion"],
+      type: "Duration",
+    },
+
+    {
       name: "Mass Slow Down",
 
       attack: {
@@ -179,6 +197,21 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 2,
+      scaling: "accuracy",
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Mass Slow Down",
+
+      attack: {
+        crit: `The effect becomes a \\glossterm{condition} on each subject.`,
+        hit: `Each subject is \\decelerated until the end of the next round.`,
+        targeting: `
+        Make an attack vs. Mental against all creatures in a \\smallarea radius within \\longrange.
+        `,
+      },
+      rank: 5,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -752,10 +785,12 @@ export const enchantment: MysticSphere = {
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
         glance: "The effect lasts until the end of the next round.",
-        hit: `As a \\glossterm{condition}, the subject's mind is primed for distraction.
-        When it uses a \\abilitytag{Focus} ability, the distraction triggers, wrenching the subject's attention away.
-        Its \\glossterm{focus penalty} is increased by 4, and it fails to use the ability, wasting its action.
-        After the distraction is triggered this way, the condition ends.`,
+        hit: `
+          As a \\glossterm{condition}, the subject's mind is primed for distraction.
+          When it uses a \\abilitytag{Focus} ability, the distraction triggers, wrenching the subject's attention away.
+          Its \\glossterm{focus penalty} is increased by 4, and it fails to use the ability, wasting its action.
+          After the distraction is triggered this way, the condition ends, and the creature becomes immune to this effect until it takes a \\glossterm{short rest}.
+        `,
         targeting: `
           This spell has no \\glossterm{verbal components}.
 
