@@ -51,7 +51,7 @@ impl AgeCategory {
 
     fn breath_weapon_line(&self) -> AttackTargeting {
         let (width, size) = match self {
-            Self::Wyrmling => (5, AreaSize::Small),
+            Self::Wyrmling => (5, AreaSize::Medium),
             Self::Juvenile => (5, AreaSize::Large),
             Self::Adult => (10, AreaSize::Huge),
             Self::Ancient => (15, AreaSize::Gargantuan),
