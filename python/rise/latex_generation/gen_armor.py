@@ -473,7 +473,7 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Shield of Mystic Reflection",
-            level=10,
+            level=13,
             tags=[],
             material_type="Shield",
             description="""
@@ -482,16 +482,6 @@ def generate_armor():
                 This is a \\glossterm<Swift> ability, so it affects any abilities targeting you in the phase you take the total defense action.
             """,
             short_description="React to reflect magical attacks",
-        ),
-        MagicItem(
-            name="Shield of Mystic Reflection, Greater",
-            level=19,
-            material_type="Shield",
-            tags=[],
-            description="""
-                This item functions like a \\mitem<shield of mystic reflection>, except that it also affects your \\glossterm<allies> in a \\areasmall radius from you.
-            """,
-            short_description="React to reflect magical attacks against allies",
         ),
     ]
 
