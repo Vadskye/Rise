@@ -339,8 +339,6 @@ Rank 3 Focus/non-upgrading, Rank 5 maneuver:
   * Softener:
     * low damage, r1 debuff condition
       * +1 rank relative to spell softeners since it still deals damage
-  * Finisher:
-    * low damage, r2 debuff condition
 * Non-strike-based:
   * Softener:
     * r1 curse in medium range
@@ -358,6 +356,8 @@ Rank 4 Focus/non-upgrading, Rank 6 maneuver:
   * t3 area: r2 debuff eonr, condition on crit
 * Finisher:
   * Med range: high damage, r1 debuff condition if lose HP
+  * Finisher:
+    * low damage, r3 debuff condition if lose HP
 
 Rank 5 Focus/non-upgrading:
 * Softener:
