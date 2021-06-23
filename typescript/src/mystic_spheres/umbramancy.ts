@@ -63,6 +63,21 @@ export const umbramancy: MysticSphere = {
     },
 
     {
+      name: "Beacon of Darkness",
+
+      effect: `
+        All light within an \\glossterm{emanation} around you is suppressed.
+        You can choose this spell's radius, up to a maximum of a \\medarea radius.
+        Light within or passing through the area is snuffed out.
+        Any object or effect which blocks light also blocks this spell's effect.
+        Darkvision and similar abilities which do not require light still function within the area.
+      `,
+      rank: 6,
+      tags: ["Sensation"],
+      type: "Attune (self)",
+    },
+
+    {
       name: "Darklantern",
 
       effect: `
@@ -163,6 +178,22 @@ export const umbramancy: MysticSphere = {
     },
 
     {
+      name: "Greater Dark Grasp",
+
+      functionsLike: {
+        exceptThat: `
+          the damage increases to 2d8 + \\glossterm{power}.
+          In addition, if the subject loses \\glossterm{hit points} from this damage, it is \\dazzled as a \\glossterm{condition}.
+        `,
+        name: 'dark grasp',
+      },
+      focus: false,
+      rank: 4,
+      scaling: "damage",
+      type: "Duration",
+    },
+
+    {
       name: "Chill of Darkness",
 
       attack: {
@@ -170,10 +201,26 @@ export const umbramancy: MysticSphere = {
         hit: `The subject takes 1d10 + \\glossterm{power} cold damage.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\longrange.
-          You gain a +2 bonus to \\glossterm{accuracy} with the attack if the subject is not in \\glossterm{bright illumination}.
+          You gain a +2 bonus to \\glossterm{accuracy} with the attack if the target is not in \\glossterm{bright illumination}.
         `,
       },
       rank: 2,
+      scaling: "damage",
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Chill of Darkness",
+
+      attack: {
+        // -1d to compensate for +2a
+        hit: `The subject takes 4d6 + \\glossterm{power} cold damage.`,
+        targeting: `
+          Make an attack vs. Fortitude against one creature within \\distrange.
+          You gain a +2 bonus to \\glossterm{accuracy} with the attack if the target is not in \\glossterm{bright illumination}.
+        `,
+      },
+      rank: 5,
       scaling: "damage",
       type: "Instant",
     },
@@ -236,7 +283,7 @@ export const umbramancy: MysticSphere = {
         hit: `As a \\glossterm{condition}, the subject takes a -4 penalty to \\glossterm{accuracy} and visual Awareness checks.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.
-          You gain a +2 bonus to \\glossterm{accuracy} with the attack if the subject is not in \\glossterm{bright illumination}.
+          You gain a +2 bonus to \\glossterm{accuracy} with the attack if the target is not in \\glossterm{bright illumination}.
         `,
       },
       rank: 5,
@@ -251,7 +298,7 @@ export const umbramancy: MysticSphere = {
       attack: {
         crit: "The effect becomes a \\glossterm{condition} on each subject.",
         glance: "The effect lasts until the end of the next round.",
-        hit: `Each subject takes a -2 penalty to \\glossterm{accuracy} and visual Awareness checks until the end of the next round.`,
+        hit: `Each subject takes is \\glossterm{dazzled} until the end of the next round.`,
         targeting: `
         Make an attack vs. Mental against all creatures in a \\smallarea radius within \\longrange.
         You gain a +2 bonus to \\glossterm{accuracy} with the attack against each creature that is not in \\glossterm{bright illumination}.
@@ -328,6 +375,22 @@ export const umbramancy: MysticSphere = {
       type: "Instant",
     },
 
+    {
+      name: "Shadowstrike Flurry",
+
+      functionsLike: {
+        exceptThat: `
+          you can also make a \\glossterm{strike} at your destination.
+          You take a -2 penalty to \\glossterm{accuracy} with the strike due to its rushed nature.
+          In addition, if you cast this spell during the \\glossterm{action phase}, you can repeat the teleportation and strike during the \\glossterm{delayed action phase}.
+          The second strike takes a -2 accuracy penalty just like the first strike, and it cannot target any of the same creatures as the first strike.
+        `,
+        name: "shadowstep",
+      },
+      rank: 7,
+      type: "Instant",
+    },
+
     // Silent move action teleportation invalidates HiPS
     // {
     //   name: "Walk the Shadow Roads",
@@ -351,9 +414,9 @@ export const umbramancy: MysticSphere = {
         hit: `The subject takes 1d8 + half \\glossterm{power} cold damage.
         If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.`,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange standing on the ground.
+          Make an attack vs. Mental against one creature within \\medrange that is standing on the ground.
           You attempt to bind the creature's shadow to the ground, slowing its movement.
-          If the subject is in \\glossterm{bright illumination} and is not touching its shadow, the attack automatically misses.
+          If the target is in \\glossterm{bright illumination} and is not touching its shadow, the attack automatically misses.
         `,
       },
       rank: 1,
@@ -364,18 +427,64 @@ export const umbramancy: MysticSphere = {
     {
       name: "Pin Shadow",
 
+      attack: {
+        glance: `Half damage.`,
+        hit: `The subject takes 1d10 cold damage.
+        If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.`,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\closerange that is standing on the ground.
+          You attempt to pin the creature's shadow to the ground, preventing it from moving.
+          If the target is in \\glossterm{bright illumination} and is not touching its shadow, the attack automatically misses.
+        `,
+      },
+      rank: 3,
+      scaling: "damage",
+      type: "Duration",
+    },
+
+    {
+      name: "Shadow Swap",
+
       // original targets: One creature within \medrange standing on the ground
       attack: {
         glance: `Half damage.`,
-        hit: `The subject takes 2d8 cold damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.`,
+        hit: `
+          If this attack succeeds against both subjects, they swap shadows with each other as a \\glossterm{condition}.
+          As long as the condition lasts on both subjects, each subject has total control over the other subject's movements during each \\glossterm{movement phase}, and is unable to control its own movement.
+          This does not affect their movements during other phases.
+
+          If a subject enters \\glossterm{bright illumination} while it is not touching its shadow, the condition automatically ends for both subjects.
+        `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange standing on the ground.
-          You attempt to pin the creature's shadow to the ground, preventing it from moving.
-          If the subject is in \\glossterm{bright illumination} and is not touching its shadow, the attack automatically misses.
+          Make an attack vs. Mental with a +2 accuracy bonus against two creatures within \\medrange that are standing on the ground.
+          If a target is in \\glossterm{bright illumination} and is not touching its shadow, the attack automatically misses.
         `,
       },
-      rank: 4,
+      rank: 2,
+      scaling: "accuracy",
+      type: "Duration",
+    },
+
+    {
+      name: "Steal Shadow",
+
+      // original targets: One creature within \medrange standing on the ground
+      attack: {
+        glance: `Half damage.`,
+        hit: `
+          The subject takes 2d8 cold damage.
+          If it loses \\glossterm{hit points} from this damage, you steal its shadow as a \\glossterm{condition}.
+          You have full control over its movement during each \\glossterm{movement phase}.
+          This does not affect its movements during other phases.
+
+          If a subject enters \\glossterm{bright illumination} while it is not touching its shadow, the condition automatically ends.
+        `,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\medrange that is standing on the ground.
+          If a target is in \\glossterm{bright illumination} and is not touching its shadow, the attack automatically misses.
+        `,
+      },
+      rank: 5,
       scaling: "damage",
       type: "Duration",
     },
@@ -393,11 +502,13 @@ export const umbramancy: MysticSphere = {
         It is not required to use the \\textit{sprint} ability, or use any other special movement ability, though it may choose to do so.
         If it is unable to move its full speed without making a skill check or encountering a solid obstacle, it may choose to stop its movement after moving the maximum possible distance without doing so.`,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange standing on the grond.
-          You compel the subject's shadow to dance, controlling its movement.
+          Make an attack vs. Mental against one creature within \\medrange that is standing on the ground.
           If the subject is in \\glossterm{bright illumination} and is not touching its shadow, this attack automatically misses.
         `,
       },
+      narrative: `
+        You compel a foe's shadow to dance, controlling its movement.
+      `,
       rank: 7,
       type: "Duration",
     },
