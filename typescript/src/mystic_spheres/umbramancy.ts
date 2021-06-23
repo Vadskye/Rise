@@ -67,7 +67,7 @@ export const umbramancy: MysticSphere = {
 
       effect: `
         All light within an \\glossterm{emanation} around you is suppressed.
-        You can choose this spell's radius, up to a maximum of a \\medarea radius.
+        You can choose this spell's radius, up to a maximum of a \\largearea radius.
         Light within or passing through the area is snuffed out.
         Any object or effect which blocks light also blocks this spell's effect.
         Darkvision and similar abilities which do not require light still function within the area.
@@ -317,7 +317,7 @@ export const umbramancy: MysticSphere = {
         Your melee \\glossterm{strikes} are treated as if they came from an invisible creature.
 
         Most creatures are at least \\partiallyunaware of attacks from invisible creatures, even if they are already actively engaged in combat, causing them to suffer a -2 penalty to Armor and Reflex defenses against the attack.
-        This effect provides no offensive benefit against creatures immune to \\abilitytag{Visual} abilities.
+        This effect provides no offensive benefit against creatures who can see you without light.
       `,
       rank: 6,
       tags: ["Sensation", "Visual"],
