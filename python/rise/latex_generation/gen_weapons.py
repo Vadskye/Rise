@@ -82,7 +82,7 @@ def generate_weapons():
             material_type="Weapon",
             tags=[],
             description="""
-                This weapon functions like a \\mitem<greater concussive> weapon, except that the extra fire damage increases to be equal to the damage dealt by the strike, and the creature does not become immune to the effect after being damaged by it.
+                This weapon functions like a \\mitem<greater flaming> weapon, except that the extra fire damage increases to be equal to the damage dealt by the strike.
             """,
             short_description="Deals fire damage and consistently ignites",
         ),
