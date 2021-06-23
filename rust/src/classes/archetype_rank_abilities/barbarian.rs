@@ -6,7 +6,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             name: "Resilient Recovery",
             rank: 0,
             description: r"
-                You regain a quarter of your maximum \\glossterm{damage resistance} when you use the \textit{recover} ability (see \pcref{Recover}).
+                You regain a quarter of your maximum \glossterm{damage resistance} when you use the \textit{recover} ability (see \pcref{Recover}).
             ",
         },
         RankAbility {
