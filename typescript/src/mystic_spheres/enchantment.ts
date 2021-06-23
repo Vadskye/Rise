@@ -568,12 +568,13 @@ export const enchantment: MysticSphere = {
         hit: `As a \\glossterm{condition}, the subject is unable to take any \\glossterm{standard actions} that cause it to make an attack.
         If it is harmed, either by taking damage or by experiencing significant subjective discomfort, this effect immediately ends.`,
         targeting: `
-        Make an attack vs. Mental against one creature within \\shortrange.
+          Make an attack vs. Mental against one creature within \\shortrange.
+          You take a -5 penalty to \\glossterm{accuracy} with this attack against creatures who are engaged in combat during the current phase.
         `,
       },
-      rank: 6,
+      rank: 5,
       scaling: "accuracy",
-      tags: ["Emotion"],
+      tags: ["Emotion", "Subtle"],
       type: "Duration",
     },
 

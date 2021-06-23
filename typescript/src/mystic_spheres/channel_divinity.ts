@@ -161,18 +161,31 @@ export const channelDivinity: MysticSphere = {
     },
 
     {
-      name: "Stunning Judgment",
+      name: "Retributive Judgment",
 
       attack: {
         hit: `
-          The subject takes 1d6 energy damage.
+          The subject takes 1d8 energy damage.
           If it loses \\glossterm{hit points} from this damage, it is \\stunned as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
+          You gain a +2 bonus to accuracy with this attack if the target attacked you or one of your \\glossterm{allies} during the previous round.
         `,
       },
-      rank: 1,
+      rank: 2,
+      scaling: "damage",
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Retributive Judgment",
+
+      functionsLike: {
+        name: 'retributive judgment',
+        exceptThat: 'the damage increases to 2d10 + half \\glossterm{power}.',
+      },
+      rank: 5,
       scaling: "damage",
       type: "Duration",
     },
@@ -191,6 +204,24 @@ export const channelDivinity: MysticSphere = {
         `,
       },
       rank: 3,
+      scaling: "accuracy",
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Glimpse of Divinity",
+
+      attack: {
+        crit: "The condition must be removed twice before the effect ends.",
+        glance: "The effect lasts until the end of the next round.",
+        hit: `
+          The subject is \\dazzled and \\dazed as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\distrange.
+        `,
+      },
+      rank: 7,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -223,10 +254,10 @@ export const channelDivinity: MysticSphere = {
           As a \\glossterm{condition}, the subject takes a -2 penalty to Mental defense.
         `,
         targeting: `
-          Make an attack vs. Mental with a +2 \\glossterm{accuracy} bonus against one creature within \\longrange.
+          Make an attack vs. Mental with a +2 \\glossterm{accuracy} bonus against one creature within \\medrange.
         `,
       },
-      rank: 2,
+      rank: 1,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -270,13 +301,13 @@ export const channelDivinity: MysticSphere = {
       attack: {
         glance: "Half damage.",
         hit: `
-          Each subject takes 4d8 + half \\glossterm{power} energy damage.
+          Each subject takes 4d6 + half \\glossterm{power} energy damage.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\hugearea radius from you.
         `,
       },
-      rank: 7,
+      rank: 6,
       type: "Instant",
     },
 
@@ -423,13 +454,12 @@ export const channelDivinity: MysticSphere = {
       name: "Divine Seal",
 
       effect: `
-        Choose a \\smallarea radius \\glossterm{zone} within \\longrange.
+        Choose a \\medarea radius \\glossterm{zone} within \\longrange.
         Whenever a creature casts a divine spell in the area, if that creature does not share your deity (for clerics) or devoted alignment (for paladins), the spell has a 50\\% chance to fail with no effect.
       `,
-      rank: 3,
+      rank: 4,
       scaling: {
-        5: `The area increases to a \\medarea radius.`,
-        7: `The area increases to a \\largearea radius.`,
+        6: `The area increases to a \\largearea radius.`,
       },
       type: "Sustain (minor)",
     },
@@ -451,26 +481,21 @@ export const channelDivinity: MysticSphere = {
       },
       rank: 3,
       scaling: "damage",
-      type: "Instant",
+      type: "Duration",
     },
 
     {
-      name: "Astral Refuge",
+      name: "Certain Banish Anathema",
 
-      castingTime: "minor action",
-      effect: `
-        Choose yourself or one Medium or smaller \\glossterm{ally} or unattended object within \\medrange.
-        You send that creature into a random safe location in the Astral Plane, causing it to temporarily disappear.
-        When you cast this spell, you choose how many rounds the subject spends in the Astral Plane, up to a maximum of five rounds.
-        At the end of the last round, it reappears in the same location where it disappeared, or in the closest unoccupied space if that location is occupied.
-        `,
-      rank: 2,
-      scaling: {
-        4: `The maximum size of the subject increases to Large.`,
-        6: `The maximum size of the subject increases to Huge.`,
+      functionsLike: {
+        name: "banish anathema",
+        exceptThat: "you gain a +3 accuracy bonus with the attack.",
       },
+      rank: 6,
+      scaling: "damage",
       type: "Duration",
     },
+
   ],
   rituals: [
     {

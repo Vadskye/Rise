@@ -163,14 +163,27 @@ export const cryomancy: MysticSphere = {
       name: "Ice Lance",
 
       attack: {
-        glance: `Half damage.`,
-        hit: `Each subject takes piercing and cold damage equal to 2d6 plus half your \\glossterm{power} (see \\pcref{Multiple Damage Types}).`,
+        hit: `Each subject takes 1d10 + half \\glossterm{power} piercing and cold damage.`,
         targeting: `
-        Make an attack vs. Armor against everything in a \\medarealong, 10 ft. wide line from you.
+          Make an attack vs. Armor against everything in a \\largearealong, 5 ft. wide line from you.
         `,
       },
+      rank: 2,
+      scaling: "damage",
+      tags: ["Manifestation"],
+      type: "Instant",
+    },
 
-      rank: 3,
+    {
+      name: "Greater Ice Lance",
+
+      attack: {
+        hit: `Each subject takes 4d6 + half \\glossterm{power} piercing and cold damage.`,
+        targeting: `
+          Make an attack vs. Armor against everything in a \\largearealong, 10 ft. wide line from you.
+        `,
+      },
+      rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",
@@ -180,13 +193,12 @@ export const cryomancy: MysticSphere = {
       name: "Ice Spike",
 
       attack: {
-        glance: `Half damage.`,
-        hit: `The subject takes 2d10 + \\glossterm{power} piercing and cold damage (see \\pcref{Multiple Damage Types}).`,
+        hit: `The subject takes 2d8 + \\glossterm{power} piercing and cold damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange.
         `,
       },
-      rank: 3,
+      rank: 2,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",
@@ -197,12 +209,12 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
-        hit: `The subject takes 5d10 + \\glossterm{power} piercing and cold damage (see \\pcref{Multiple Damage Types}).`,
+        hit: `The subject takes 5d8 + \\glossterm{power} piercing and cold damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\medrange.
         `,
       },
-      rank: 6,
+      rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",
@@ -457,6 +469,22 @@ export const cryomancy: MysticSphere = {
         `,
       },
       rank: 3,
+      scaling: "damage",
+      type: "Attune (self)",
+    },
+
+    {
+      name: "Greater Frost Breath",
+
+      castingTime: "minor action",
+      functionsLike: {
+        name: 'frost breath',
+        exceptThat: `
+          the damage increases to 5d10 + half \\glossterm{power}.
+          In addition, the area increases to a \\hugearea cone.
+        `,
+      },
+      rank: 7,
       scaling: "damage",
       type: "Attune (self)",
     },

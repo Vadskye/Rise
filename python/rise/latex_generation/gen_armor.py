@@ -473,12 +473,14 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Shield of Mystic Reflection",
-            level=13,
+            level=16,
             tags=[],
             material_type="Shield",
             description="""
                 Whenever you use the \\textit<total defense> action, any \\glossterm<targeted> \\glossterm<magical> abilities that would target you until the end of the round are redirected to target the creature using that ability instead of you.
+                It cannot choose to reduce its accuracy or damage against itself.
                 Any other targets of the ability are affected normally.
+
                 This is a \\glossterm<Swift> ability, so it affects any abilities targeting you in the phase you take the total defense action.
             """,
             short_description="React to reflect magical attacks",

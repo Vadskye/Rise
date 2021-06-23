@@ -63,6 +63,23 @@ export const barrier: MysticSphere = {
     },
 
     {
+      name: "Greater Mirror Barrier",
+
+      functionsLike: {
+        exceptThat: `
+          it reflects \\glossterm{mundane} attacks against it.
+            The barrier's defenses become equal to 8 \\add your level.
+            Whenever a creature misses the barrier with a \\glossterm{mundane} attack, it makes the same attack against itself, rolling a new attack roll against its own defenses.
+            In addition, the \\glossterm{hit points} of each 5-ft.\\ square increase to 32.
+        `,
+        name: "mystic barrier",
+      },
+      rank: 7,
+      tags: ["Manifestation"],
+      type: "Sustain (minor)",
+    },
+
+    {
       name: "Visual Barrier",
 
       functionsLike: {
@@ -480,6 +497,20 @@ export const barrier: MysticSphere = {
       scaling: "accuracy",
       type: "Sustain (minor)",
     },
+    {
+      name: "Instant Barrier",
+
+      castingTime: "minor action",
+      functionsLike: {
+        name: 'mystic barrier',
+        exceptThat: `
+          you only create a single 5-ft. square of wall, and the barrier automatically disappears at the end of the next round.
+          After you cast this spell, you cast it again until after the end of the next round.
+        `,
+      },
+      rank: 6,
+      type: "Duration",
+    }
   ],
   rituals: [
     {

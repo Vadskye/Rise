@@ -292,9 +292,9 @@ export const aeromancy: MysticSphere = {
       name: "Soaring Flight",
 
       effect: `
-        You gain a 40 foot \\glossterm{fly speed} with a maximum height of 120 feet (see \\pcref{Flying}).
+        You gain a 30 foot \\glossterm{fly speed} with a maximum height of 120 feet (see \\pcref{Flying}).
+        If you are above that height, you gain a 30 foot \\glossterm{glide speed} instead.
         Your \\glossterm{maneuverability} with this fly speed is poor (see \\pcref{Flying Maneuverability}).
-        If you are above that height, you gain a 40 foot \\glossterm{glide speed} instead.
       `,
       // narrative: '',
       rank: 7,
@@ -462,16 +462,16 @@ export const aeromancy: MysticSphere = {
         // crit: '',
         glance: "Half damage.",
         hit: `
-          Each subject takes 2d10 \\add half \\glossterm{power} bludgeoning damage.
-          In addition, each subject is \\glossterm{pushed} 20 feet clockwise around you.
+          Each subject takes 4d6 \\add half \\glossterm{power} bludgeoning damage.
+          In addition, each subject is \\glossterm{pushed} 30 feet clockwise around you.
           Each subject's final position should be the same distance from you as its starting position.
         `,
         targeting: `
-          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea radius from you.
+          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
       // narrative: '',
-      rank: 5,
+      rank: 6,
       scaling: "damage",
       type: "Instant",
     },

@@ -60,7 +60,49 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
-      name: "Magic Missile Flurry",
+      name: "Greater Magic Missile",
+
+      // -2d, -1 range level in exchange for the strong miss effect
+      attack: {
+        hit: `
+          The subject takes 2d8 + \\glossterm{power} energy damage.
+          \\miss The subject takes 2d8 energy damage.
+        `,
+        targeting: `
+          Make an attack vs. Armor against anything within \\medrange.
+        `,
+      },
+      narrative: `
+        An unerring projectile made of pure magical energy streaks towards your foe, inflicting severe damage unavoidably.
+      `,
+      rank: 4,
+      scaling: "damage",
+      type: "Instant",
+    },
+
+    {
+      name: "Supreme Magic Missile",
+
+      // -2d, -1 range level in exchange for the strong miss effect
+      attack: {
+        hit: `
+          The subject takes 4d10 + \\glossterm{power} energy damage.
+          \\miss The subject takes 4d10 energy damage.
+        `,
+        targeting: `
+          Make an attack vs. Armor against anything within \\longrange.
+        `,
+      },
+      narrative: `
+        An unerring projectile made of pure magical energy streaks towards your foe, inflicting massive damage unavoidably.
+      `,
+      rank: 7,
+      scaling: "damage",
+      type: "Instant",
+    },
+
+    {
+      name: "Magic Missile Storm",
 
       // -2d, -1 range level in exchange for the strong miss effect
       attack: {
@@ -81,16 +123,16 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
-      name: "Magic Missile Storm",
+      name: "Greater Magic Missile Storm",
 
       // -2d, -1 range level in exchange for the strong miss effect
       attack: {
         hit: `
-          The subject takes 2d6 + half \\glossterm{power} energy damage.
-          \\miss Each subject takes 2d6 energy damage.
+          The subject takes 2d8 + half \\glossterm{power} energy damage.
+          \\miss Each subject takes 2d8 energy damage.
         `,
         targeting: `
-          Make an attack vs. Armor against all \\glossterm{enemies} in a \\medarea radius within \\medrange.
+          Make an attack vs. Armor against all \\glossterm{enemies} in a \\medarea radius within \\longrange.
         `,
       },
       narrative: `
@@ -164,7 +206,24 @@ export const thaumaturgy: MysticSphere = {
           Make an attack vs. Fortitude with a +2 bonus to \\glossterm{accuracy} against one creature within \\medrange.
         `,
       },
-      rank: 3,
+      rank: 2,
+      scaling: "accuracy",
+      type: "Duration",
+    },
+
+    // this is probably broken somehow
+    {
+      name: "Steal Attunement",
+
+      functionsLike: {
+        name: 'deattunement',
+        exceptThat: `
+          you may choose to gain the ability to attune to any effects that you remove from the subject.
+          Attuning to an effect that you stole with this spell takes a \\glossterm{minor action}, and requires an \\glossterm{attunement point} as normal.
+          When you finish your next \\glossterm{long rest}, or if you steal a different attunement with this spell, you lose the ability to attune to the old effect and automatically break any attunements you have active from this ability.
+        `,
+      },
+      rank: 5,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -203,6 +262,20 @@ export const thaumaturgy: MysticSphere = {
       },
 
       rank: 2,
+      scaling: "accuracy",
+      type: "Sustain (minor)",
+    },
+
+    {
+      name: "Greater Suppress Magic",
+
+      functionsLike: {
+        name: 'suppress magic',
+        exceptThat: `
+          it can also affect \\glossterm{Curse} effects, and the range increases to \\distrange.
+        `,
+      },
+      rank: 5,
       scaling: "accuracy",
       type: "Sustain (minor)",
     },
@@ -259,7 +332,7 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
-      name: "Spell Absoption",
+      name: "Spell Absorption",
 
       effect: `
         Whenever you are targeted by a spell cast by another creature, before determining if it hits you, you absorb the spell.
@@ -342,12 +415,12 @@ export const thaumaturgy: MysticSphere = {
       name: "Dimensional Lock",
 
       effect: `
-        This spell creates a dimensional lock in a \\medarea radius \\glossterm{zone} from your location.
+        This spell creates a dimensional lock in a \\largearea radius \\glossterm{zone} from your location.
         Extraplanar travel into or out of the area is impossible.
         This prevents all \\abilitytag{Manifestation} effects and effects teleport targets or move them between planes.
       `,
       rank: 5,
-      scaling: { 7: `The area increases to a \\largearea radius \\glossterm{zone}.` },
+      scaling: { 7: `The area increases to a \\hugearea radius \\glossterm{zone}.` },
       type: "Attune (self)",
     },
 
@@ -358,8 +431,11 @@ export const thaumaturgy: MysticSphere = {
         Teleportation into and out of a \\medarea radius \\glossterm{emanation} from you is impossible.
         Any abilities which would cause creatures to teleport within the area have no effect.
       `,
-      rank: 4,
-      scaling: { 6: `The area increases to a \\largearea radius \\glossterm{emanation}.` },
+      rank: 3,
+      scaling: {
+        5: `The area increases to a \\largearea radius \\glossterm{emanation}.`,
+        7: `The area increases to a \\hugearea radius \\glossterm{emanation}.`,
+      },
       type: "Attune (self)",
     },
 
@@ -398,7 +474,7 @@ export const thaumaturgy: MysticSphere = {
       attack: {
         crit: `The effect ends after the subject fails to cast three spells instead of only one.`,
         hit: `As a \\glossterm{condition}, the next time the subject tries to cast a spell, the spell automatically fails with no effect instead.
-        When the subject fails to cast a spell in this way, this effect ends.`,
+        When the subject fails to cast a spell in this way, this effect ends, and the subject becomes immune to this spell until it takes a \\glossterm{short rest}.`,
         targeting: `
         Make an attack vs. Fortitude with a +2 bonus to \\glossterm{accuracy} against one creature within \\medrange.
         `,
@@ -430,14 +506,15 @@ export const thaumaturgy: MysticSphere = {
       name: "Spellward",
 
       effect: `
-        Choose a \\medarea radius \\glossterm{zone} within \\longrange.
+        Choose a \\glossterm{zone} within \\longrange.
+        You can choose this spell's radius, up to a maximum of a \\largearea radius.
         Whenever a creature casts a spell in the area, that spell has a 50\\% chance to fail with no effect.
       `,
       narrative: `
         You break an area's connection to magic.
       `,
-      rank: 4,
-      scaling: { 6: `The area increases to a \\largearea radius.` },
+      rank: 5,
+      scaling: { 7: `The maximum area increases to a \\hugearea radius.` },
       type: "Sustain (minor)",
     },
 
@@ -459,6 +536,48 @@ export const thaumaturgy: MysticSphere = {
         6: `The accuracy bonus increases to +2.`,
       },
       type: "Attune (self)",
+    },
+
+    {
+      name: "Reflect Magic",
+
+      focus: false,
+      effect: `
+        This spell does not have the \\glossterm{Focus} tag.
+        You immediately take the \\textit<total defense> action.
+        In addition, whenever a creature within \\medrange of you misses you with a \\glossterm{magical} attack this round, that creature treats itself as a target of that strike in addition to any other targets.
+        It cannot choose to reduce its accuracy or damage against itself.
+
+        This is a \\glossterm<Swift> ability, so it affects any abilities targeting you in the phase you cast this spell.
+      `,
+      rank: 3,
+      scaling: {
+        5: `You gain an additional +1 bonus to all defenses.`,
+        7: `The defense bonus increases to +2.`,
+      },
+      tags: ['Swift'],
+      type: "Duration",
+    },
+
+    {
+      name: "Reflect Targeted Magic",
+
+      focus: false,
+      effect: `
+        This spell does not have the \\glossterm{Focus} tag.
+        You immediately take the \\textit<total defense> action.
+        In addition, any \\glossterm<targeted> \\glossterm<magical> abilities that would target you until the end of the round are redirected to target the creature using that ability instead of you.
+        It cannot choose to reduce its accuracy or damage against itself.
+        Any other targets of the ability are affected normally.
+
+        This is a \\glossterm<Swift> ability, so it affects any abilities targeting you in the phase you cast this spell.
+      `,
+      rank: 5,
+      scaling: {
+        7: `You gain an additional +1 bonus to all defenses.`,
+      },
+      tags: ['Swift'],
+      type: "Duration",
     },
   ],
   rituals: [

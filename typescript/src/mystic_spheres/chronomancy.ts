@@ -515,7 +515,7 @@ export const chronomancy: MysticSphere = {
         // crit: '',
         // glance: '',
         hit: `
-          The target takes 1d10 energy damage.
+          The target takes 2d6 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it is briefly frozen in time.
           Until the end of the next round, it is completely immune to all damage, attacks, and effects of any kind.
           In addition, it is \\unconscious and cannot act in any way.
@@ -529,6 +529,84 @@ export const chronomancy: MysticSphere = {
       rank: 3,
       scaling: "damage",
       type: "Duration",
+    },
+    {
+      name: "Certain Timeseal",
+
+      functionsLike: {
+        name: "timeseal",
+        exceptThat: "you gain a +3 accuracy bonus with the attack.",
+      },
+      rank: 6,
+      scaling: "damage",
+      type: "Duration",
+    },
+
+    {
+      name: "Accelerated Draw",
+
+      focus: false,
+      effect: `
+        This spell does not have the \\glossterm{Focus} tag.
+        You draw one or two weapons into your \\glossterm{free hands}.
+        Then, you can make a \\glossterm{mundane} \\glossterm{strike}.
+      `,
+      narrative: `
+        This spell seeks to mimic with time-altering magic what some skilled warriors can do naturally.
+      `,
+      rank: 1,
+      scaling: {
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
+      },
+      type: "Instant",
+    },
+
+    {
+      name: "Quickchange",
+
+      effect: `
+        You can change your appearance or equipment with superhuman speed.
+        This has no effect on any creatures other than yourself.
+        This can have any one of the following effects, which are completed at the end of the current phase regardless of the time they would normally take:
+        \\begin{itemize}
+          \\item You can take off your body armor or clothing, along with any weapons or shields you have equipped.
+            You can leave the items on the ground in your square or stow them in an available location, such as in a backpack you wear.
+          \\item You can don a new set of body armor or clothing and equip any weapons or shields.
+            All of the items you equip this way must be unattended and in your square, but they can be in a hidden location, such as in a backpack.
+          \\item You can use the \\ability{disguise creature} ability to affect yourself with a \\minus2 penalty (see \\pcref{Disguise Creature}.
+        \\end{itemize}
+      `,
+      narrative: `
+        You become a blur of motion as you quickly don your armor, readying yourself against an unexpected attack.
+      `,
+      rank: 2,
+      scaling: {
+        4: "You can perform any two of the listed actions.",
+        6: "You can perform any combination of the listed actions.",
+      },
+      type: "Instant",
+    },
+
+    {
+      name: "Expeditious Retreat",
+
+      focus: false,
+      effect: `
+        This spell does not have the \\glossterm{Focus} tag.
+        You can immediately use the \\textit<sprint> ability without increasing your \\glossterm{fatigue level}.
+        After you cast this spell, you cannot cast it again until after the end of the next roud.
+      `,
+      narrative: `
+        You accelerate your body to flee from combat with incredible alacrity.
+      `,
+      rank: 2,
+      scaling: {
+        4: "You also gain a +5 foot bonus to your movement speed while you sprint.",
+        6: "The speed bonus increases to +10 feet.",
+      },
+      type: "Instant",
     },
   ],
   rituals: [

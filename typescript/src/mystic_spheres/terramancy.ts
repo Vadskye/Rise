@@ -44,6 +44,38 @@ export const terramancy: MysticSphere = {
     },
 
     {
+      name: "Greater Rock Throw",
+
+      attack: {
+        hit: `The subject takes 4d6 + \\glossterm{power} bludgeoning damage.`,
+        targeting: `
+          Make an attack vs. Armor against anything within \\longrange.
+          This attack gains a +2 \\glossterm{accuracy} bonus if you are on a Medium or larger body of stone.
+        `,
+      },
+      rank: 4,
+      scaling: "damage",
+      tags: ["Manifestation"],
+      type: "Instant",
+    },
+
+    {
+      name: "Supreme Rock Throw",
+
+      attack: {
+        hit: `The subject takes 6d10 + \\glossterm{power} bludgeoning damage.`,
+        targeting: `
+          Make an attack vs. Armor against anything within \\distrange.
+          This attack gains a +2 \\glossterm{accuracy} bonus if you are on a Medium or larger body of stone.
+        `,
+      },
+      rank: 7,
+      scaling: "damage",
+      tags: ["Manifestation"],
+      type: "Instant",
+    },
+
+    {
       name: "Shrapnel Blast",
 
       attack: {
@@ -228,21 +260,31 @@ export const terramancy: MysticSphere = {
     {
       name: "Earthbind",
 
-      // original targets: One creature within \medrange that is within 100 feet of the ground
       attack: {
-        crit: `As above, except that the force of gravity is increased by approximately four times instead.
-        This increases the penalties to -4.`,
-        glance: `As above, except that the condition is removed at the end of the next round.`,
-        hit: `As a \\glossterm{condition}, the subject is pulled towards the ground with great force, approximately doubling the gravity it experiences.
-        This imposes a -2 penalty to \\glossterm{accuracy}, physical \\glossterm{checks}, and \\glossterm{defenses}.
-        In addition, most flying creatures are unable to fly with this increased gravity and crash to the ground.`,
+        crit: `The condition must be removed twice before the effect ends.`,
+        glance: `The condition is removed at the end of the next round.`,
+        hit: `
+          As a \\glossterm{condition}, the subject is pulled towards the ground with great force, approximately doubling the gravity it experiences.
+          It is \\slowed and unable to use any fly speed or glide speed.
+        `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange that is no more than 120 feet above a stable surface that could support its weight.
           This attack gains a +2 \\glossterm{accuracy} bonus if that surface is a Medium or larger body of stone.
         `,
       },
-
       rank: 3,
+      scaling: "accuracy",
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Earthbind",
+
+      functionsLike: {
+        name: 'earthbind',
+        exceptThat: 'the subject is \\decelerated instead of slowed.',
+      },
+      rank: 6,
       scaling: "accuracy",
       type: "Duration",
     },

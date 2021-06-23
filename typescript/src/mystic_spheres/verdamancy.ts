@@ -47,18 +47,32 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         crit: `The subject also cannot move farther than 10 feet from its original location until it ends the effect.`,
-        hit: `The subject is \\slowed as a \\glossterm{condition}.
-        This condition can be removed if the subject or a creature that can reach the subject makes a \\glossterm{difficulty rating} 10 Strength check to break the subject free of the plants around its body.
-        The subject can make this check as a \\glossterm{move action}, while other creatures can make the check as a standard action.`,
+        hit: `The subject is \\slowed as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Reflex against one Large or smaller creature within \\medrange that is on a stable surface.
           You gain a +2 bonus to \\glossterm{accuracy} with this attack if the subject is in standing in \\glossterm{undergrowth}.
         `,
       },
       narrative: `
-        Plants to grow from nowhere to trap your foe.
+        Plants grow from nowhere to trap your foe.
       `,
       rank: 2,
+      scaling: "accuracy",
+      tags: ["Manifestation"],
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Entangle",
+
+      functionsLike: {
+        name: 'entangle',
+        exceptThat: 'the subject is \\decelerated instead of slowed.',
+      },
+      narrative: `
+        A flood of plants grow from nowhere to trap your foe.
+      `,
+      rank: 5,
       scaling: "accuracy",
       tags: ["Manifestation"],
       type: "Duration",
@@ -75,6 +89,38 @@ export const verdamancy: MysticSphere = {
         `,
       },
       rank: 1,
+      scaling: "damage",
+      tags: ["Manifestation"],
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Vine Whip",
+
+      attack: {
+        hit: `The subject takes 4d6 + \\glossterm{power} bludgeoning damage.`,
+        targeting: `
+          Make an attack vs. Armor against one creature within \\longrange.
+          You gain a +2 bonus to \\glossterm{accuracy} with this attack if the subject is in standing in \\glossterm{undergrowth}.
+        `,
+      },
+      rank: 4,
+      scaling: "damage",
+      tags: ["Manifestation"],
+      type: "Instant",
+    },
+
+    {
+      name: "Supreme Vine Whip",
+
+      attack: {
+        hit: `The subject takes 6d10 + \\glossterm{power} bludgeoning damage.`,
+        targeting: `
+          Make an attack vs. Armor against one creature within \\distrange.
+          You gain a +2 bonus to \\glossterm{accuracy} with this attack if the subject is in standing in \\glossterm{undergrowth}.
+        `,
+      },
+      rank: 7,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",
@@ -102,7 +148,7 @@ export const verdamancy: MysticSphere = {
     },
 
     {
-      name: "Vineburst",
+      name: "Vinestorm",
 
       attack: {
         hit: `Each subject takes 1d8 + half \\glossterm{power} bludgeoning damage.`,
@@ -118,7 +164,7 @@ export const verdamancy: MysticSphere = {
     },
 
     {
-      name: "Vinestorm",
+      name: "Greater Vinestorm",
 
       attack: {
         glance: `Half damage.`,
@@ -130,6 +176,23 @@ export const verdamancy: MysticSphere = {
       },
 
       rank: 4,
+      scaling: "damage",
+      tags: ["Manifestation"],
+      type: "Instant",
+    },
+
+    {
+      name: "Supreme Vinestorm",
+
+      attack: {
+        glance: `Half damage.`,
+        hit: `Each subject takes 4d8 + half \\glossterm{power} bludgeoning damage.`,
+        targeting: `
+        Make an attack vs. Armor against all \\glossterm{enemies} in a \\hugearea radius from you.
+        You gain a +2 bonus to \\glossterm{accuracy} with this attack against targets standing in \\glossterm{undergrowth}.
+        `,
+      },
+      rank: 7,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",
@@ -336,6 +399,18 @@ export const verdamancy: MysticSphere = {
     },
 
     {
+      name: "Greater Fire Seeds",
+
+      functionsLike: {
+        name: 'fire seeds',
+        exceptThat: 'the damage increases to 4d8 + half \\glossterm{power}, and the range of each acorn increases to \\medrange.',
+      },
+      rank: 6,
+      scaling: "damage",
+      type: "Sustain (free)",
+    },
+
+    {
       name: "Wall of Thorns",
 
       // original targets: Each creature that moves through the area (see text)
@@ -356,6 +431,18 @@ export const verdamancy: MysticSphere = {
       },
 
       rank: 3,
+      scaling: "damage",
+      type: "Attune (self)",
+    },
+
+    {
+      name: "Greater Wall of Thorns",
+
+      functionsLike: {
+        name: 'wall of thorns',
+        exceptThat: 'the damage increases to 4d8 + half \\glossterm{power}, and the area increases to a 20 ft. high, \\medarea \\glossterm{wall}.',
+      },
+      rank: 6,
       scaling: "damage",
       type: "Attune (self)",
     },
@@ -395,6 +482,22 @@ export const verdamancy: MysticSphere = {
         `,
       },
       rank: 2,
+      scaling: "damage",
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Blight",
+
+      attack: {
+        // TODO: is this the right damage type?
+        hit: `The subject takes 4d8 + \\glossterm{power} acid damage.
+        This damage is doubled if the subject is a plant, including plant creatures.`,
+        targeting: `
+          Make an attack vs. Fortitude against one living creature or plant within \\longrange.
+        `,
+      },
+      rank: 5,
       scaling: "damage",
       type: "Instant",
     },
