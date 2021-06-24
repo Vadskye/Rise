@@ -160,7 +160,7 @@ fn generate_latex_weapon_proficiencies(class: &classes::Class) -> String {
     }
     return format!(
         "
-            \\cf<{shorthand_name}><Armor Proficiencies>
+            \\cf<{shorthand_name}><Weapon Proficiencies>
             {proficiencies}
         ",
         shorthand_name = class.shorthand_name(),
