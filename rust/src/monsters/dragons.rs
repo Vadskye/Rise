@@ -362,6 +362,7 @@ pub fn dragons() -> Vec<MonsterEntry> {
             .collect();
 
         monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
+            knowledge: None,
             name: format!("{} Dragons", dragon_type.name()),
             monsters: dragons,
         }));

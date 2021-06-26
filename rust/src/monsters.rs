@@ -4,6 +4,7 @@ mod animates;
 pub mod challenge_rating;
 pub mod creature_type;
 mod dragons;
+mod knowledge;
 pub mod monster_entry;
 pub mod monster_group;
 
@@ -19,6 +20,7 @@ use crate::core_mechanics::senses::Sense;
 use crate::core_mechanics::{attacks, creature, movement_modes, sizes, HasCreatureMechanics};
 use crate::equipment::{weapons, HasEquipment};
 use crate::latex_formatting;
+use crate::monsters::knowledge::Knowledge;
 use crate::skills::{HasSkills, Skill, SkillCategory};
 use std::collections::HashMap;
 use titlecase::titlecase;
@@ -29,7 +31,7 @@ pub struct Monster {
     creature: creature::Creature,
     creature_type: creature_type::CreatureType,
     description: Option<String>,
-    knowledge: Option<HashMap<i32, String>>,
+    knowledge: Option<Knowledge>,
     movement_modes: Vec<movement_modes::MovementMode>,
 }
 
@@ -40,7 +42,7 @@ pub struct FullMonsterDefinition {
     creature_type: creature_type::CreatureType,
     special_defense_modifiers: Option<Vec<SpecialDefenseModifier>>,
     description: Option<&'static str>,
-    knowledge: Option<Vec<(i32, &'static str)>>,
+    knowledge: Option<Knowledge>,
     level: i32,
     movement_modes: Option<Vec<movement_modes::MovementMode>>,
     name: String,
@@ -124,21 +126,7 @@ impl Monster {
                 )]
             },
         };
-        if let Some(k) = def.knowledge {
-            monster.set_knowledge(k);
-        }
         return monster;
-    }
-
-    pub fn set_knowledge(&mut self, knowledge: Vec<(i32, &'static str)>) {
-        if knowledge.len() > 0 {
-            let base_knowledge_difficulty = self.creature.level + 5;
-            let mut knowledge_map = HashMap::new();
-            for (modifier, text) in knowledge {
-                knowledge_map.insert(base_knowledge_difficulty + modifier, text.to_string());
-            }
-            self.knowledge = Some(knowledge_map);
-        }
     }
 
     pub fn standard_monster(
@@ -342,7 +330,7 @@ impl Monster {
             size = self.creature.size.name(),
             type = self.creature_type.name(),
             description = self.description.as_deref().unwrap_or(""),
-            knowledge = self.latex_knowledge().trim(),
+            knowledge = if let Some(ref k) = self.knowledge { k.to_latex(&self.creature_type, self.creature.level)} else { "".to_string() },
             content = self.latex_content().trim(),
             abilities = self.latex_abilities().trim(),
         ))
@@ -530,27 +518,6 @@ impl Monster {
             .map(|a| format!("{} {}", a.shorthand_name(), self.calc_total_attribute(a)))
             .collect::<Vec<String>>()
             .join(", ");
-    }
-
-    fn latex_knowledge(&self) -> String {
-        if let Some(ref knowledge) = self.knowledge {
-            let mut knowledge_keys = knowledge.keys().collect::<Vec<&i32>>();
-            knowledge_keys.sort();
-            return knowledge_keys
-                .iter()
-                .map(|difficulty| {
-                    return format!(
-                        "\\par Knowledge ({subskill}) {difficulty}: {text}",
-                        subskill = self.creature_type.knowledge(), // TODO
-                        difficulty = difficulty,
-                        text = knowledge[difficulty],
-                    );
-                })
-                .collect::<Vec<String>>()
-                .join("\n");
-        } else {
-            return "".to_string();
-        }
     }
 
     // This could probably be moved to Creature instead of Monster
