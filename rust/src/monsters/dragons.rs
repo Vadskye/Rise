@@ -119,11 +119,11 @@ impl AgeCategory {
 
     fn level(&self) -> i32 {
         match self {
-            Self::Wyrmling => 5,
-            Self::Juvenile => 9,
-            Self::Adult => 13,
-            Self::Ancient => 17,
-            Self::Wyrm => 21,
+            Self::Wyrmling => 4,
+            Self::Juvenile => 8,
+            Self::Adult => 12,
+            Self::Ancient => 16,
+            Self::Wyrm => 20,
         }
     }
 
@@ -241,6 +241,21 @@ impl DragonType {
         }
     }
 
+    fn level_modifier(&self) -> i32 {
+        match self {
+            Self::Black => -1,
+            Self::Blue => 0,
+            Self::Brass => -2,
+            Self::Bronze => 0,
+            Self::Copper => -1,
+            Self::Gold => 1,
+            Self::Green => 0,
+            Self::Red => 1,
+            Self::Silver => 0,
+            Self::White => -2,
+        }
+    }
+
     fn name(&self) -> &str {
         match self {
             Self::Black => "Black",
@@ -303,7 +318,7 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
         creature_type: Dragon,
         description: None,
         knowledge: None,
-        level: age_category.level(),
+        level: age_category.level() + dragon_type.level_modifier(),
         passive_abilities: None,
         movement_modes: Some(vec![
             MovementMode::Land(SpeedCategory::Normal),
