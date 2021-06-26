@@ -270,6 +270,22 @@ impl DragonType {
             Self::White => "White",
         }
     }
+
+    fn passive_abilities(&self) -> Option<Vec<PassiveAbility>> {
+        match self {
+            Self::Black => Some(vec![
+                PassiveAbility {
+                    name: "Underwater Freedom".to_string(),
+                    is_magical: false,
+                    description: "
+                        A black dragon can breathe underwater indefinitely.
+                        It suffers no penalties for fighting underwater, and its breath weapon functions at full strength underwater.
+                    ".to_string(),
+                },
+            ]),
+            _ => None,
+        }
+    }
 }
 
 fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack {
@@ -319,7 +335,7 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
         description: None,
         knowledge: None,
         level: age_category.level() + dragon_type.level_modifier(),
-        passive_abilities: None,
+        passive_abilities: dragon_type.passive_abilities(),
         movement_modes: Some(vec![
             MovementMode::Land(SpeedCategory::Normal),
             MovementMode::Fly(SpeedCategory::VeryFast, FlightManeuverability::Poor),
