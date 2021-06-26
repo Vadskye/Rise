@@ -452,7 +452,7 @@ impl Monster {
         let mut movement_components = self
             .movement_modes
             .iter()
-            .map(|m| format!("{}~{}~ft.", m.name(), m.calc_speed(&self.creature.size)))
+            .map(|m| m.description(&self.creature.size))
             .collect::<Vec<String>>();
         movement_components
             .extend(self.latex_skill_modifiers_from_category(&SkillCategory::Movement));

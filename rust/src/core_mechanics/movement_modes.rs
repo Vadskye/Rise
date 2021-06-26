@@ -21,6 +21,24 @@ pub enum SpeedCategory {
     VeryFast,
 }
 
+impl FlightManeuverability {
+    pub fn name(&self) -> &str {
+        match self {
+            Self::Poor => "poor",
+            Self::Normal => "normal",
+            Self::Perfect => "perfect",
+        }
+    }
+
+    pub fn speed_suffix(&self) -> String {
+        match self {
+            Self::Poor => format!("~({})", self.name()),
+            Self::Normal => "".to_string(),
+            Self::Perfect => format!("~({})", self.name()),
+        }
+    }
+}
+
 impl SpeedCategory {
     pub fn speed_multiplier(&self) -> f64 {
         match self {
@@ -41,6 +59,19 @@ impl MovementMode {
             MovementMode::Glide(speed) => calc_speed(speed, size),
             MovementMode::Land(speed) => calc_speed(speed, size),
             MovementMode::Swim(speed) => calc_speed(speed, size),
+        }
+    }
+
+    pub fn description(&self, size: &Size) -> String {
+        let speed = self.calc_speed(size);
+        match self {
+            Self::Fly(_, maneuverability) => format!(
+                "{}~{}~ft.{}",
+                self.name(),
+                self.calc_speed(size),
+                maneuverability.speed_suffix()
+            ),
+            _ => format!("{}~{}~ft.", self.name(), speed),
         }
     }
 
