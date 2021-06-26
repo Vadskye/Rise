@@ -19,13 +19,14 @@ use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::sizes::Size;
 use crate::monsters::{monster_group, FullMonsterDefinition, Monster};
 use crate::skills::Skill;
+use crate::monsters::knowledge::Knowledge;
 
 struct FullAberrationDefinition {
     alignment: String,
     attributes: Vec<i32>,
     challenge_rating: ChallengeRating,
     description: Option<&'static str>,
-    knowledge: Option<Vec<(i32, &'static str)>>,
+    knowledge: Option<Knowledge>,
     level: i32,
     movement_modes: Option<Vec<MovementMode>>,
     name: String,
@@ -90,7 +91,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         attributes: vec![3, -1, 4, 3, 2, 4],
         challenge_rating: ChallengeRating::Four,
         description: None,
-        knowledge: Some(vec![
+        knowledge: Some(Knowledge::new(vec![
             (-10, "
                 Legends speak of revolting water-dwelling creatures called aboleths that lurk in the deepest caves.
                 They are said to have power over people's minds.
@@ -110,7 +111,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                 Aboleths can completely dominate the minds of lesser creatures.
                 They sometimes use their minions as agents to spy in cities or otherwise further their sinister goals.
             "),
-        ]),
+        ])),
         level: 12,
         movement_modes: None,
         name: "Aboleth".to_string(),
@@ -192,7 +193,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         attributes: vec![0, 1, 4, -6, 1, 2],
         challenge_rating: ChallengeRating::Three,
         description: None,
-        knowledge: Some(vec![
+        knowledge: Some(Knowledge::new(vec![
             (0, "
                 A gibbering mouther is a horrible creature seemingly drawn from a lunatic's nightmares.
                 They are named for their tendency for speak gibberish to baffle the minds of their prey.
@@ -201,7 +202,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                 Although gibbering mouthers are not intelligent enough to be actively evil, they thirst after bodily fluids and seem to prefer the blood of intelligent creatures.
                 They speak their gibberish in Common, but cannot understand it.
             "),
-        ]),
+        ])),
         level: 5,
         movement_modes: None,
         name: "Gibbering Mouther".to_string(),
