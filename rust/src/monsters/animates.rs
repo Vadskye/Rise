@@ -92,10 +92,10 @@ pub fn animates() -> Vec<MonsterEntry> {
             (Skill::Awareness, 3),
             (Skill::Stealth, 3),
         ]),
-        // Camels have a high strength, but they shouldn't deal massive damage
         special_attacks: Some(vec![
             Attack {
                 accuracy: 0,
+                cooldown: None,
                 crit: None,
                 defense: Defense::Reflex,
                 glance: Some(AttackEffect::HalfDamage),
@@ -122,6 +122,7 @@ pub fn animates() -> Vec<MonsterEntry> {
             },
             Attack {
                 accuracy: 0,
+                cooldown: None,
                 crit: None,
                 defense: Defense::Fortitude,
                 glance: None,

@@ -138,6 +138,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
             // Large enemies-only cone is a rank 4 effect
             Attack {
                 accuracy: 0,
+                cooldown: None,
                 crit: None,
                 defense: Defense::Mental,
                 glance: Some(AttackEffect::HalfDamage),
@@ -159,6 +160,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
             },
             Attack {
                 accuracy: 2,
+                cooldown: None,
                 crit: None,
                 defense: Defense::Mental,
                 glance: Some(AttackEffect::HalfDamage),
@@ -217,6 +219,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         special_attacks: Some(vec![
             Attack {
                 accuracy: 0,
+                cooldown: None,
                 crit: Some(AttackEffect::Debuff(DebuffEffect {
                     debuffs: vec![Debuff::Confused],
                     duration: AttackEffectDuration::Brief,

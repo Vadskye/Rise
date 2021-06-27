@@ -2,7 +2,7 @@ use crate::core_mechanics::attack_effects::{
     AttackEffect, AttackEffectDuration, DamageEffect, DebuffEffect,
 };
 use crate::core_mechanics::attacks::{
-    AreaSize, AreaTargets, Attack, AttackRange, AttackTargeting, UsageTime,
+    AreaSize, AreaTargets, Attack, AttackCooldown, AttackRange, AttackTargeting, UsageTime,
 };
 use crate::core_mechanics::damage_dice;
 use crate::core_mechanics::damage_types::{DamageType, DamageTypeEffect};
@@ -14,12 +14,12 @@ use crate::core_mechanics::senses::Sense;
 use crate::equipment::weapons::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Dragon;
+use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::monster_group::MonsterGroup;
 use crate::monsters::sizes::Size;
 use crate::monsters::{monster_group, FullMonsterDefinition, Monster};
 use crate::skills::Skill;
-use crate::monsters::knowledge::Knowledge;
 
 enum AgeCategory {
     Wyrmling,
@@ -97,6 +97,7 @@ impl AgeCategory {
         let size = size.unwrap();
         return Some(Attack {
             accuracy: 0,
+            cooldown: None,
             crit: Some(AttackEffect::Debuff(DebuffEffect {
                 debuffs: vec![Debuff::Frightened],
                 duration: AttackEffectDuration::Condition,
@@ -473,19 +474,22 @@ fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack
     // TODO: add cooldown
     return Attack {
         accuracy: 0,
+        cooldown: Some(AttackCooldown::Round(None)),
         crit: None,
         defense: Defense::Reflex,
-        glance: if age_category.glancing_blow() { Some(AttackEffect::HalfDamage) } else { None },
-        hit: AttackEffect::Damage(
-            DamageEffect {
-                damage_dice: damage_dice::DamageDice::aoe_damage(age_category.damage_rank()),
-                damage_modifier: 0,
-                damage_types: vec![dragon_type.damage_type()],
-                lose_hp_effects: None,
-                power_multiplier: 0.5,
-                take_damage_effects: None,
-            },
-        ),
+        glance: if age_category.glancing_blow() {
+            Some(AttackEffect::HalfDamage)
+        } else {
+            None
+        },
+        hit: AttackEffect::Damage(DamageEffect {
+            damage_dice: damage_dice::DamageDice::aoe_damage(age_category.damage_rank()),
+            damage_modifier: 0,
+            damage_types: vec![dragon_type.damage_type()],
+            lose_hp_effects: None,
+            power_multiplier: 0.5,
+            take_damage_effects: None,
+        }),
         is_magical: false,
         name: "Breath Weapon".to_string(),
         targeting,

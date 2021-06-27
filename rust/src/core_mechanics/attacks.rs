@@ -6,6 +6,7 @@ use std::fmt;
 #[derive(Clone)]
 pub struct Attack {
     pub accuracy: i32,
+    pub cooldown: Option<AttackCooldown>,
     pub crit: Option<attack_effects::AttackEffect>,
     pub defense: defenses::Defense,
     pub glance: Option<attack_effects::AttackEffect>,
@@ -30,6 +31,7 @@ impl Attack {
     pub fn from_weapon(weapon: weapons::Weapon) -> Attack {
         return Attack {
             accuracy: weapon.accuracy(),
+            cooldown: None,
             crit: None,
             defense: defenses::Defense::Armor,
             glance: None,
@@ -138,11 +140,15 @@ impl Attack {
         return format!(
             "
                 The $name makes a {accuracy} {targeting}.
+                {cooldown}
                 \\hit {subjects} {hit}
                 {glance}
                 {critical}
             ",
             accuracy = latex_formatting::modifier(self.accuracy + creature.calc_accuracy()),
+            cooldown = if let Some(ref c) = self.cooldown {
+                c.description(false)
+            } else { "".to_string() },
             hit = self
                 .hit
                 .description(creature, self.is_magical, self.weapon.is_some())
@@ -408,6 +414,51 @@ impl UsageTime {
         match self {
             UsageTime::Standard => None,
             UsageTime::Minor => Some(r"\par \noindent Usage time: One \glossterm{minor action}."),
+        }
+    }
+}
+
+#[derive(Clone)]
+pub enum AttackCooldown {
+    Round(Option<String>),
+    ShortRest(Option<String>),
+    LongRest(Option<String>),
+}
+
+impl AttackCooldown {
+    pub fn description(&self, use_you: bool) -> String {
+        let tag = match self {
+            Self::Round(tag) => tag,
+            Self::ShortRest(tag) => tag,
+            Self::LongRest(tag) => tag,
+        };
+        let tag = if let Some(t) = tag {
+            format!("or any other \\abilitytag<{}> ability", t)
+        } else {
+            "".to_string()
+        };
+        if use_you {
+            let until = match self {
+                Self::Round(_) => "after the end of the next round.",
+                Self::ShortRest(_) => r"you take a \glossterm{short rest}.",
+                Self::LongRest(_) => r"you take a \glossterm{long rest}.",
+            };
+            return format!(
+                "After you use this ability, you cannot use it {tag} again until {until}",
+                tag = tag,
+                until = until,
+            );
+        } else {
+            let until = match self {
+                Self::Round(_) => "after the end of the next round.",
+                Self::ShortRest(_) => r"the creature takes a \glossterm{short rest}.",
+                Self::LongRest(_) => r"the creature takes a \glossterm{long rest}.",
+            };
+            return format!(
+                "After the creature uses this ability, it cannot use it {tag} again until {until}",
+                tag = tag,
+                until = until,
+            );
         }
     }
 }
