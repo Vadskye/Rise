@@ -43,10 +43,10 @@ impl AgeCategory {
     fn attributes(&self) -> Vec<i32> {
         match self {
             Self::Wyrmling => vec![-1, 3, 1, 0, 0, 0],
-            Self::Juvenile => vec![3, 1, 2, 2, 2, 2],
-            Self::Adult => vec![4, 0, 3, 3, 3, 3],
-            Self::Ancient => vec![6, -1, 4, 4, 4, 4],
-            Self::Wyrm => vec![8, -2, 5, 5, 5, 5],
+            Self::Juvenile => vec![3, 1, 2, 1, 1, 1],
+            Self::Adult => vec![4, 0, 3, 2, 2, 2],
+            Self::Ancient => vec![6, -1, 4, 3, 3, 3],
+            Self::Wyrm => vec![8, -2, 5, 4, 4, 4],
         }
     }
 
@@ -105,7 +105,7 @@ impl AgeCategory {
             defense: Defense::Mental,
             glance: Some(AttackEffect::Debuff(DebuffEffect {
                 debuffs: vec![Debuff::Shaken],
-                duration: AttackEffectDuration::Condition,
+                duration: AttackEffectDuration::Brief,
             })),
             hit: AttackEffect::Debuff(DebuffEffect {
                 debuffs: vec![Debuff::Shaken],
