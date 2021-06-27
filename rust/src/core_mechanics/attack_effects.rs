@@ -109,7 +109,7 @@ impl AttackEffect {
                 // TODO: damage types
                 return format!(
                     "
-                        {damage_dice}{damage_modifier} {damage_types} damage. {take_damage_effect} {lose_hp_effect}
+                        takes {damage_dice}{damage_modifier} {damage_types} damage. {take_damage_effect} {lose_hp_effect}
                     ",
                     damage_dice = effect
                         .damage_dice
@@ -123,7 +123,7 @@ impl AttackEffect {
             }
             Self::Debuff(effect) => {
                 return format!(
-                    "{debuffs} {duration}.",
+                    "is {debuffs} {duration}.",
                     debuffs = effect
                         .debuffs
                         .iter()
@@ -134,7 +134,7 @@ impl AttackEffect {
                 );
             }
             Self::HalfDamage => {
-                return "Half damage.".to_string();
+                return "takes half damage.".to_string();
             }
             Self::Poison(effect) => {
                 let mut third_stage = if let Some(ref debuffs) = effect.stage3_debuff {
@@ -153,7 +153,7 @@ impl AttackEffect {
                 }
                 return format!(
                     "
-                        \\glossterm<poisoned>.
+                        is \\glossterm<poisoned>.
                         As long as it is poisoned, it is {debuffs}.
 
                         At the end of each subsequent round, make an attack with the same accuracy against each poisoned creature's Fortitude defense, as normal for poisons (see \\pcref<Poison>).

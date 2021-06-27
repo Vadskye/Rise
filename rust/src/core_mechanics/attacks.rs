@@ -138,8 +138,9 @@ impl Attack {
         return format!(
             "
                 The $name makes a {accuracy} {targeting}.
-                \\hit {hit}
+                \\hit {subjects} {hit}
                 {glance}
+                {critical}
             ",
             accuracy = latex_formatting::modifier(self.accuracy + creature.calc_accuracy()),
             hit = self
@@ -149,12 +150,23 @@ impl Attack {
                 .to_string(),
             glance = if let Some(ref g) = self.glance {
                 format!(
-                    "\\glance {}",
+                    "\\glance {} {}",
+                    self.targeting.subjects(),
                     g.description(creature, self.is_magical, self.weapon.is_some())
                 )
             } else {
                 "".to_string()
             },
+            critical = if let Some(ref g) = self.crit {
+                format!(
+                    "\\crit {} {}",
+                    self.targeting.subjects(),
+                    g.description(creature, self.is_magical, self.weapon.is_some())
+                )
+            } else {
+                "".to_string()
+            },
+            subjects = self.targeting.subjects(),
             targeting = self.targeting.description(&self.defense),
         );
     }
@@ -262,6 +274,18 @@ impl AttackTargeting {
                 },
             ),
             Self::Strike => format!("strike vs. {defense}", defense = defense),
+        }
+    }
+
+    pub fn subjects(&self) -> &str {
+        match self {
+            Self::Anything(_) => "The subject",
+            Self::Creature(_) => "The subject",
+            Self::Cone(_, _) => "Each subject",
+            Self::Line(_, _, _) => "Each subject",
+            Self::Radius(_, _, _) => "Each subject",
+            // TODO: handle Sweeping
+            Self::Strike => "The subject",
         }
     }
 }
