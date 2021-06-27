@@ -286,6 +286,7 @@ pub fn animals() -> Vec<MonsterEntry> {
             frostweb_spider_bite,
             Attack {
                 accuracy: 0,
+                cooldown: None,
                 crit: None,
                 defense: defenses::Defense::Fortitude,
                 glance: None,
