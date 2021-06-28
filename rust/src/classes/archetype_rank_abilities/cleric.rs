@@ -117,44 +117,50 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             name: "Mystic Insight",
             rank: 1,
             description: r"
+                You gain your choice of one of the following abilities.
+                Whenever you increase your rank in this archetype, you may change your choice.
+                This can allow you to apply the benefits of insights like \textit{signature spell} to higher rank spells.
 
-        You gain your choice of one of the following abilities.
-        Whenever you increase your rank in this archetype, you may change your choice.
-        This can allow you to apply the benefits of insights like \textit{signature spell} to higher rank spells.
-
-            \parhead{Focused Caster} You reduce your \glossterm{focus penalty} by 1.
-                You cannot choose this ability multiple times.
-            \parhead{Insight Point} You gain an additional \glossterm{insight point}.
-                You can choose this ability multiple times, gaining an additional insight point each time.
-            \parhead{Rituals} You gain the ability to perform divine rituals to create unique magical effects (see \pcref{Rituals}).
-                The maximum \glossterm{rank} of divine ritual you can learn or perform is equal to the maximum \glossterm{rank} of divine spell that you can cast.
-                You cannot choose this ability multiple times.
-            \parhead{Signature Spell} Choose a divine \glossterm{spell} you know.
-                The spell loses the \abilitytag{Focus} tag, allowing you to cast it without lowering your guard in combat.
-                In adition, you gain a \plus1 bonus to \glossterm{accuracy} with that spell.
-                You can choose this ability multiple times, choosing a different spell each time.
-            \parhead{Spell Power} Choose a divine \glossterm{spell} you know.
-                You gain a bonus equal to your rank in this archetype to your \glossterm{power} with that spell.
-                You can choose this ability multiple times, choosing a different spell each time.
-
-                ",
+                \parhead{Focused Caster} You reduce your \glossterm{focus penalty} by 1.
+                    You cannot choose this ability multiple times.
+                \parhead{Insight Point} You gain an additional \glossterm{insight point}.
+                    You can choose this ability multiple times, gaining an additional insight point each time.
+                \parhead{Rituals} You gain the ability to perform divine rituals to create unique magical effects (see \pcref{Rituals}).
+                    The maximum \glossterm{rank} of divine ritual you can learn or perform is equal to the maximum \glossterm{rank} of divine spell that you can cast.
+                    You cannot choose this ability multiple times.
+                \parhead{Signature Spell} Choose a divine \glossterm{spell} you know.
+                    The spell loses the \abilitytag{Focus} tag, allowing you to cast it without lowering your guard in combat.
+                    In adition, you gain a \plus1 bonus to \glossterm{accuracy} with that spell.
+                    You can choose this ability multiple times, choosing a different spell each time.
+                \parhead{Spell Power} Choose a divine \glossterm{spell} you know.
+                    You gain a bonus equal to your rank in this archetype to your \glossterm{power} with that spell.
+                    You can choose this ability multiple times, choosing a different spell each time.
+            ",
         },
         RankAbility {
-            name: "Divine Guidance",
+            name: "Turn Undead",
             rank: 2,
             description: r"
-         Once per \glossterm{long rest}, you may use the \textit{desperate exertion} ability without increasing your \glossterm{fatigue level} to affect a divine spell you cast (see \pcref{Desperate Exertion}).
+                As a standard action, you can use the \ability{turn undead} ability.
+                \begin{instantability}
+                    Make an attack vs. Mental against all undead creatures within a \smallarea radius from you.
+                    \hit Each subject is \frightened by you as a \glossterm{condition}.
+                    Once this effect ends, the creature becomes immune to this effect until it takes a \glossterm{short rest}.
+                    \crit As above, and each subject with no remaining \glossterm{damage resistance} immediately dies.
 
-                ",
+                    \rankline
+                    \rank{4} The area increases to a \largearea radius.
+                        In addition, on a \glossterm{glancing blow}, each subject is \glossterm{briefly} \frightened by you.
+                    \rank{6} The area increases to a \hugearea radius.
+                \end{instantability}
+            ",
         },
         RankAbility {
             name: "Wellspring of Power",
             rank: 3,
             description: r"
-        
-        You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
-
-                ",
+                You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
+            ",
         },
         RankAbility {
             name: "Mystic Insight",
@@ -164,12 +170,12 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            name: "Greater Divine Guidance",
+            name: "Divine Guidance",
             rank: 5,
             description: r"
-         You can use your \textit{divine guidance} ability once per \glossterm{short rest} instead of once per long rest.
-
-                ",
+                You gain a \plus2 bonus to any roll that you use the \textit{desperate exertion} ability on.
+                This bonus stacks with the normal \plus2 bonus provided by that ability.
+            ",
         },
         RankAbility {
             name: "Greater Wellspring of Power",
@@ -179,10 +185,10 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            name: "Mystic Insight",
+            name: "Mystic Insights",
             rank: 7,
             description: r"
-                You gain an additional \textit{mystic insight} ability.
+                You gain two additional \textit{mystic insight} abilities.
             ",
         },
     ];
@@ -234,70 +240,58 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             name: "Domain Gift",
             rank: 1,
             description: r"
-        
-        You gain the \textit{domain gift} for another one of your domains.
-
-                ",
+                You gain the \textit{domain gift} for another one of your domains.
+            ",
         },
         RankAbility {
             name: "Domain Aspect",
             rank: 2,
             description: r"
-        
-        Each domain has a corresponding \textit{domain aspect}.
-        A domain aspect is an active ability that allows you to exert the influence of your domain in the world.
-        You gain the \textit{domain aspect} ability for one of your domains (see \pcref{Cleric Domain Abilities}).
-
-                ",
+                Each domain has a corresponding \textit{domain aspect}.
+                A domain aspect is an active ability that allows you to exert the influence of your domain in the world.
+                You gain the \textit{domain aspect} ability for one of your domains (see \pcref{Cleric Domain Abilities}).
+            ",
         },
         RankAbility {
             name: "Domain Aspect",
             rank: 3,
             description: r"
-        
-        You gain the \textit{domain aspect} for another one of your domains.
-
-                ",
+                You gain the \textit{domain aspect} for another one of your domains.
+            ",
         },
         RankAbility {
-            name: "Domain Essence",
+            name: "Domain Essences",
             rank: 4,
             description: r"
-        
-        Each domain has a corresponding \textit{domain essence}.
-        You gain the \textit{domain essence} for both of your domains (see \pcref{Cleric Domain Abilities}).
-
-                ",
+                Each domain has a corresponding \textit{domain essence}.
+                You gain the \textit{domain essence} for both of your domains (see \pcref{Cleric Domain Abilities}).
+            ",
         },
         RankAbility {
             name: "Miracle",
             rank: 5,
             description: r"
-        
-        Once per week, you can request a miracle as a standard action.
-        You mentally specify your request, and your deity fulfills that request in the manner it sees fit.
-        This can emulate the effects of any spell or ritual, or have any other effect of a similar power level.
-        If the deity has a direct interest in your situation, the miracle may be of even greater power.
+                Once per week, you can request a miracle as a standard action.
+                You mentally specify your request, and your deity fulfills that request in the manner it sees fit.
+                This can emulate the effects of any spell or ritual, or have any other effect of a similar power level.
+                If the deity has a direct interest in your situation, the miracle may be of even greater power.
 
-        If you perform an extraordinary service for your deity, you can gain the ability to request an additional miracle that week.
-
-                ",
+                If you perform an extraordinary service for your deity, you can gain the ability to request an additional miracle that week.
+            ",
         },
         RankAbility {
-            name: "Domain Mastery",
+            name: "Domain Masteries",
             rank: 6,
             description: r"
-        
-        Each domain has a corresponding \textit{domain mastery}.
-        You gain the \textit{domain mastery} for one of your domains (see \pcref{Cleric Domain Abilities}).
-
-                ",
+                Each domain has a corresponding \textit{domain mastery}.
+                You gain the \textit{domain mastery} for both of your domains (see \pcref{Cleric Domain Abilities}).
+            ",
         },
         RankAbility {
-            name: "Domain Mastery",
+            name: "Greater Miracle",
             rank: 7,
             description: r"
-                You gain the \textit{domain mastery} for another one of your domains.
+                You can use your \textit<miracle> ability once per \glossterm{long rest} instead of once per week.
             ",
         },
     ];
@@ -309,7 +303,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             name: "Desperate Healing",
             rank: 0,
             description: r"
-         When you use the \textit{desperate exertion} ability to affect a Medicine check, you gain a \plus3 bonus to the check.
+        When you use the \textit{desperate exertion} ability to affect a Medicine check, you gain a \plus3 bonus to the check.
         This stacks with the normal +2 bonus from the \textit{desperate exertion} ability.
         In addition, using the \textit{desperate exertion} ability to affect a roll using the Medicine skill only causes you to increase your \glossterm{fatigue level} by one instead of two.
 
@@ -374,9 +368,8 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             name: "Called to the Needy",
             rank: 4,
             description: r"
-         At the end of each phase, if a living \glossterm{ally} within \distrange of you gained a \glossterm{vital wound} during that phse, you can \glossterm{teleport} into the unoccupied square closest to that creature.
-
-                ",
+                At the end of each phase, if a living \glossterm{ally} within \distrange of you gained a \glossterm{vital wound} during that phase, you can \glossterm{teleport} into the unoccupied square closest to that creature.
+            ",
         },
         RankAbility {
             name: "Greater Healer's Grace",
@@ -406,6 +399,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 You can use your \textit{called to the needy} ability to teleport to allies that lost \glossterm{hit points} in addition to allies that gained vital wounds.
+                In addition, the range limit increases to \extrange, and it no longer requires \glossterm{line of sight} or \glossterm{line of effect}.
             ",
         },
     ];
