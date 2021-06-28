@@ -397,55 +397,46 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 ",
         },
         RankAbility {
-            name: "Soulkeeper's Guidance",
+            name: "Desperate Power",
             rank: 2,
             description: r"
-         Once per \glossterm{long rest}, you may use the \textit{desperate exertion} ability without increasing your \glossterm{fatigue level} to affect a pact spell you cast (see \pcref{Desperate Exertion}).
-
-                ",
+                Whenever you use the \textit{desperate exertion} ability to affect a \glossterm{magical} attack, you double your magical \glossterm{power} with that attack.
+            ",
         },
         RankAbility {
             name: "Wellspring of Power",
             rank: 3,
             description: r"
-        
-        You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
-
-                ",
+                You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
+            ",
         },
         RankAbility {
             name: "Mystic Insight",
             rank: 4,
             description: r"
-        
-        You gain an additional \textit{mystic insight} ability.
-
-                ",
+                You gain an additional \textit{mystic insight} ability.
+            ",
         },
         RankAbility {
-            name: "Greater Soulkeeper's Guidance",
+            name: "Attunement Point",
             rank: 5,
             description: r"
-         You can use your \textit{soulkeeper's guidance} ability once per \glossterm{short rest} instead of once per long rest.
-
-                ",
+                You gain an additional \glossterm{attunement point}.
+            ",
         },
         RankAbility {
             name: "Greater Wellspring of Power",
             rank: 6,
             description: r"
-        
-        The bonus from your \textit{wellspring of power} ability increases to \plus6.
-
-                ",
+                The bonus from your \textit{wellspring of power} ability increases to \plus6.
+            ",
         },
         RankAbility {
-            name: "Mystic Insight",
+            name: "Mystic Insights",
             rank: 7,
             description: r"
-        
-        You gain an additional \textit{mystic insight} ability.
-                ",
+                You gain two additional \textit{mystic insight} abilities.
+            ",
         },
     ];
 }

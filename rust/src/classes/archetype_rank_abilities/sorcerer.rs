@@ -192,55 +192,49 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 ",
         },
         RankAbility {
-            name: "Arcane Attunement",
+            name: "Desperate Improvization",
             rank: 2,
             description: r"
-         You gain an additional \glossterm{attunement point}.
-
-                ",
+                Whenever you use the \ability{desperate exertion} ability to affect a spell you cast, you can change which spell you cast before rerolling.
+                If you do, you must take the result of the second roll, even if it is worse.
+                The new spell takes its full effect as if you had cast it originally, and the original spell has no effect of any kind.
+                This is a \glossterm{Swift} ability.
+            ",
         },
         RankAbility {
             name: "Wellspring of Power",
             rank: 3,
             description: r"
-        
-        You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
-
-                ",
+                You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
+            ",
         },
         RankAbility {
             name: "Mystic Insight",
             rank: 4,
             description: r"
-        
-        You gain an additional \textit{mystic insight} ability.
-
-                ",
+                You gain an additional \textit{mystic insight} ability.
+            ",
         },
         RankAbility {
-            name: "Greater Arcane Attunement",
+            name: "Attunement Point",
             rank: 5,
             description: r"
-         The number of attunement points you gain from your \textit{arcane attunement} ability increases to two.
-
-                ",
+                You gain an additional \glossterm{attunement point}.
+            ",
         },
         RankAbility {
             name: "Greater Wellspring of Power",
             rank: 6,
             description: r"
-        
-        The bonus from your \textit{wellspring of power} ability increases to \plus6.
-
-                ",
+                The bonus from your \textit{wellspring of power} ability increases to \plus6.
+            ",
         },
         RankAbility {
-            name: "Mystic Insight",
+            name: "Mystic Insights",
             rank: 7,
             description: r"
-        
-        You gain an additional \textit{mystic insight} ability.
-                ",
+                You gain two additional \textit{mystic insight} abilities.
+            ",
         },
     ];
 }
