@@ -373,8 +373,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 \abilitytag{Auditory}, \abilitytag{Emotion}
                 \rankline
                 Make an attack vs. Mental against all \glossterm{enemies} within a \largearea radius from you.
-                \hit For the duration of your performance, each subject takes a \minus2 penalty to \glossterm{accuracy} against creatures other than you.
-                \crit The penalty increases to \minus4.
+                \hit For the duration of your performance, each subject is \glossterm{goaded} by you.
+                \crit There is no range limit to the accuracy penalty from the goaded effect.
 
                 \rankline
                 You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
