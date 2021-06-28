@@ -327,7 +327,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             % +1d in exchange for not applying power to self
             The subject regains 2d6 \glossterm{hit points}.
             If the subject is a creature other than yourself, they also regain hit points equal to your \glossterm{power}.
-            After you use this ability, you cannot use it or any other \abilitytag{Healing} ability until after the end of the next round.
+            After you use this ability, you \\glossterm{briefly} cannot use it or any other \abilitytag{Healing} ability.
 
             \rankline
             \rank{2} The healing increases to 2d8.
@@ -345,7 +345,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
          You gain a \plus1 bonus to all defenses.
-        Whenever you attack or deal damage to a living creature, you lose this bonus until the end of the next round.
+        Whenever you attack or deal damage to a living creature, you \glossterm{briefly} lose this bonus.
 
                 ",
         },
@@ -431,7 +431,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             \rankline
             Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
             Your \glossterm{accuracy} is equal to your Persuasion skill.
-            \hit Each subject is \dazed until the end of the next round.
+            \hit Each subject is \glossterm{briefly} \dazed.
 
             \rankline
             \rank{3} The area increases to a \largearea radius.
@@ -459,7 +459,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             \rankline
             You and all \glossterm{allies} within a \hugearea radius from you can remove a \glossterm{condition}.
             This ability cannot remove a condition gained during the current round.
-            In addition, one of your allies gains a \plus2 bonus to \glossterm{accuracy} until the end of the next round.
+            In addition, one of your allies \glossterm{briefly} gains a \plus2 bonus to \glossterm{accuracy}.
 
             \rankline
             \rank{5} The accuracy bonus increases to \plus3.
@@ -486,7 +486,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             \rankline
             Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
             Your \glossterm{accuracy} is equal to your Persuasion skill.
-            \hit Each subject is \frightened by you until the end of the next round.
+            \hit Each subject is \glossterm{briefly} \frightened by you.
 
             \rankline
             \rank{7} The area increases to a \largearea radius.

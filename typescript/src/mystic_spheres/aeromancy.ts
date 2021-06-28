@@ -10,7 +10,7 @@ export const aeromancy: MysticSphere = {
       name: "Airborne Leap",
 
       effect: `
-        You gain a +3 bonus to the Jump skill until the end of the next round.
+        You \\glossterm{briefly} gain a +3 bonus to the Jump skill.
       `,
       focus: false,
       narrative: `
@@ -87,7 +87,7 @@ export const aeromancy: MysticSphere = {
         crit: `
           The effect lasts until this curse is removed.
         `,
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           The subject takes a -4 penalty to defenses against \\glossterm{mundane} ranged attacks from weapons or projectiles that are Medium or smaller until it takes a \\glossterm{short rest}.
         `,
@@ -526,7 +526,7 @@ export const aeromancy: MysticSphere = {
         `,
         // glance: '',
         hit: `
-          Each subject is \\dazzled until the end of the next round.
+          Each subject is \\glossterm{briefly} \\dazzled.
         `,
         targeting: `
           Make an attack vs. Reflex against all creatures in a \\smallarea radius within \\medrange from you.
@@ -546,7 +546,7 @@ export const aeromancy: MysticSphere = {
         `,
         // glance: '',
         hit: `
-          Each subject is \\dazzled until the end of the next round.
+          Each subject is \\glossterm{briefly} \\dazzled.
         `,
         targeting: `
           Make an attack vs. Reflex against all creatures in a \\largearea radius within \\longrange from you.
@@ -566,7 +566,7 @@ export const aeromancy: MysticSphere = {
         `,
         // glance: '',
         hit: `
-          Each subject is \\blinded until the end of the next round.
+          Each subject is \\glossterm{briefly} \\blinded.
         `,
         targeting: `
           Make an attack vs. Reflex against all creatures in a \\smallarea radius within \\medrange from you.

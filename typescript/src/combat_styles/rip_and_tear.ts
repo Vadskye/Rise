@@ -54,7 +54,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a -1d damage penalty using a slashing weapon.
-        Each creature damaged by the strike that is not wearing metal armor takes a -2 penalty to Armor defense until the end of the next round.
+        Each creature damaged by the strike that is not wearing metal armor \\glossterm{briefly} takes a -2 penalty to Armor defense.
       `,
       rank: 1,
       scaling: {
@@ -72,7 +72,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
         You take a -1d damage penalty with the strike, and your \\glossterm{power} is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\blinded until the end of the next round.
+        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\blinded.
       `,
       rank: 4,
       scaling: {

@@ -217,7 +217,7 @@ export const unbreakableDefense: CombatStyle = {
       effect: `
         Make a strike with a -1d damage penalty.
         In addition, you regain 2d6 hit points.
-        After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
+        After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
       scaling: {
         special: "The healing increases by +1d for each rank beyond 3.",
@@ -249,7 +249,7 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        Until the end of the next round, your \\glossterm{enemies} treat all squares within a \\tinyarea radius from you as \\glossterm{difficult terrain}.
+        Your \\glossterm{enemies} \\glossterm{briefly} treat all squares within a \\tinyarea radius from you as \\glossterm{difficult terrain}.
       `,
       rank: 1,
       scaling: {
@@ -283,7 +283,7 @@ export const unbreakableDefense: CombatStyle = {
       effect: `
         Make a strike with a -1d damage penalty.
         In addition, you regain 4d6 + half \\glossterm{power} hit points.
-        After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
+        After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
       scaling: {
         special: "The healing increases by +1d for each rank beyond 3.",

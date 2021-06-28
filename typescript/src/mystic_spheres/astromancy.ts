@@ -143,7 +143,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         crit: "The effect lasts until the curse is removed.",
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           At the end of each \\glossterm{movement phase}, the subject teleports horizontally 10 feet in a random direction.
           This effect lasts until it takes a \\glossterm{short rest}.
@@ -166,7 +166,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         crit: "The effect lasts until the curse is removed.",
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           At the end of each round, the subject teleports back to the location it was in
           when this spell was cast.
@@ -476,7 +476,7 @@ export const astromancy: MysticSphere = {
         At the start of each phase, you may \\glossterm{teleport} into a random unoccupied location in the Astral Plane.
         At the end of the round, you reappear in the location where you disappeared.
         If that space is occupied, you reappear in the closest available space.
-        After you teleport in this way, you cannot teleport with this ability again until after the end of the next round.
+        After you teleport in this way, you \\glossterm{briefly} cannot teleport with this ability again.
       `,
       rank: 3,
       narrative: `

@@ -194,7 +194,7 @@ export const toxicology: MysticSphere = {
 
       attack: {
         crit: `The effect lasts until this curse is removed.`,
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject is \\sickened until it takes a \\glossterm{short rest}.`,
         targeting: `
           Make an attack vs. Mental against one living creature within \\medrange.
@@ -331,7 +331,7 @@ export const toxicology: MysticSphere = {
         targeting: `
           For the duration of this spell, you can breathe acid like a dragon as a standard action.
           When you do, make an attack vs. Reflex against everything in a \\largearea cone from you.
-          After you use this ability, you cannot use it again until after the end of the next round.
+          After you use this ability, you \\glossterm{briefly} cannot use it again.
         `,
       },
       rank: 3,
@@ -425,7 +425,7 @@ export const toxicology: MysticSphere = {
       effect: `
         Choose yourself or one \\glossterm{ally} within your \\glossterm{reach}.
         The subject regains 1d10 + \\glossterm{power} \\glossterm{hit points}.
-        After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
+        After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
       rank: 2,
       scaling: { special: "The healing increases by +1d for each rank beyond 2." },
@@ -439,7 +439,7 @@ export const toxicology: MysticSphere = {
       effect: `
         Choose yourself or one \\glossterm{ally} within \\shortrange.
         The subject regains 4d6 + \\glossterm{power} \\glossterm{hit points}.
-        After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
+        After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
       rank: 5,
       scaling: { special: "The healing increases by +1d for each rank beyond 5." },

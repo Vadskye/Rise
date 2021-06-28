@@ -253,7 +253,7 @@ export const polymorph: MysticSphere = {
       name: "Baleful Polymorph",
 
       attack: {
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject takes 2d8 physical damage.
         If it loses \\glossterm{hit points} from this damage, it is balefully polymorphed as a \\glossterm{condition}.
         It shrinks by two \\glossterm{size categories} and is \\confused.`,
@@ -559,7 +559,7 @@ export const polymorph: MysticSphere = {
       effect: `
         Choose yourself or one living \\glossterm{ally} within \\shortrange.
         The subject regains 2d6 + \\glossterm{power} \\glossterm{hit points}.
-        After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
+        After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
       rank: 2,
       scaling: { special: "The healing increases by +1d for each rank beyond 2." },
@@ -692,7 +692,7 @@ export const polymorph: MysticSphere = {
 
       attack: {
         crit: `The subject is \\paralyzed instead of immobilized.`,
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject is \\immobilized as a \\glossterm{condition}.`,
         targeting: `
         Make an attack vs. Fortitude against one living creature within \\shortrange.
@@ -729,7 +729,7 @@ export const polymorph: MysticSphere = {
       attack: {
         crit: `The damage from the condition is doubled.`,
         glance:
-          "The effect lasts until the end of the next round. The subject still takes damage during that round.",
+          "The effect lasts \\glossterm{briefly}. The subject still takes damage during that round.",
         hit: `The subject begins bleeding as a \\glossterm{condition}.
         At the end of each round, it takes 2d8 physical damage.
         If the the subject gains a \\glossterm{vital wound} from this damage, the condition ends.
@@ -908,7 +908,7 @@ export const polymorph: MysticSphere = {
           Choose one of the following damage types: acid, cold, electricity, or fire.
           For the duration of this spell, you can breath that type of energy like a dragon as a standard action.
           When you do, make an attack vs. Reflex against everything within a \\largearea cone from you.
-          After you use this ability, you cannot use it again until after the end of the next round.
+          After you use this ability, you \\glossterm{briefly} cannot use it again.
         `,
       },
       rank: 4,
@@ -982,7 +982,7 @@ export const polymorph: MysticSphere = {
       effect: `
         Chose one \\glossterm{unattended} object within \\shortrange.
         The subject regains 1d8 + \\glossterm{power} hit points.
-        After you use this ability, you cannot use it or any other \abilitytag{Healing} ability until after the end of the next round.
+        After you use this ability, you \\glossterm{briefly} cannot use it or any other \abilitytag{Healing} ability.
       `,
       rank: 1,
       tags: ['Healing'],

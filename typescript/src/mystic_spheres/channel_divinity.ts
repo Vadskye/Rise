@@ -57,7 +57,7 @@ export const channelDivinity: MysticSphere = {
         You remove one \\glossterm{condition} affecting you and heal 1d10 \\glossterm{hit points}.
         This cannot remove a condition applied during that round.
         In addition, you gain a +4 bonus to \\glossterm{accuracy} during the round after you become infused with divine power.
-        After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
+        After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
       rank: 3,
       scaling: { special: "The healing increases by +1d for each rank beyond 3." },
@@ -195,7 +195,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         crit: "The subject is also \\dazed as part of the same condition.",
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           The subject is \\dazzled as a \\glossterm{condition}.
         `,
@@ -213,7 +213,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         crit: "The condition must be removed twice before the effect ends.",
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           The subject is \\dazzled and \\dazed as a \\glossterm{condition}.
         `,
@@ -231,7 +231,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         crit: "The subject is \\panicked instead of \\frightened.",
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           The subject is \\frightened by you as a \\glossterm{condition}.
         `,
@@ -352,7 +352,7 @@ export const channelDivinity: MysticSphere = {
         crit: "The effect becomes a \\glossterm{condition} on each subject.",
         // glance: '',
         hit: `
-          Each subject is \\shaken by you until the end of the next round.
+          Each subject is \\glossterm{briefly} \\shaken by you.
         `,
         targeting: `
           At the end of each round, make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius \\glossterm{emanation} from you.

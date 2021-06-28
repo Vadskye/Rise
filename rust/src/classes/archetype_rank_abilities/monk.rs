@@ -39,7 +39,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
         Your landing loation must be no more than 30 feet above above an object at least two size categories larger than you that is free-standing and capable of supporting your weight.
         You cannot walk in the air, but you can continue jumping or remain in place.
         The air holds you until the end of the current round, at which point you fall normally.
-        After you land on air in this way, you cannot do so again until after the end of the next round.
+        After you land on air in this way, you \\glossterm{briefly} cannot do so again.
 
                 ",
         },
@@ -240,7 +240,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
         You can also spend \glossterm{insight points} to learn one additional \textit{ki manifestation} per \glossterm{insight point}.
         You can use any \textit{ki manifestation} ability you know using the type of action indicated in the ability's description.
 
-        After you use a \textit{ki manifestation}, you cannot use a \textit{ki manifestation} until after the end of the next round.
+        After you use a \textit{ki manifestation}, you \\glossterm{briefly} cannot use a \textit{ki manifestation} again.
         {
             \begin{durationability}{Abandon the Fragile Self}[Duration]
                 \abilitytag{Swift}
@@ -275,7 +275,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                 \rankline
                 \rank{3} The bonus increases to \plus8.
-                \rank{5} The bonus lasts until the end of the next round.
+                \rank{5} This becomes a \glossterm{brief} effect.
                 \rank{7} The bonus increases to \plus12.
             \end{durationability}
 
@@ -316,7 +316,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                 \rankline
                 \rank{3} The bonus increases to \plus8.
-                \rank{5} The bonus lasts until the end of the next round.
+                \rank{5} This becomes a \glossterm{brief} effect.
                 \rank{7} The bonus increases to \plus12.
             \end{durationability}
 
@@ -329,7 +329,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                 \rankline
                 \rank{3} The Climb bonus increases to \plus8.
-                \rank{5} The bonus lasts until the end of the next round.
+                \rank{5} This becomes a \glossterm{brief} effect.
                 \rank{7} The bonus increases to \plus12.
             \end{durationability}
 
@@ -341,7 +341,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                 \rankline
                 \rank{3} The bonus increases to \plus8.
-                \rank{5} The bonus lasts until the end of the next round.
+                \rank{5} This becomes a \glossterm{brief} effect.
                 \rank{7} The bonus increases to \plus12.
             \end{durationability}
 
@@ -350,7 +350,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 \rankline
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus2 bonus to \glossterm{defenses} against \glossterm{magical} abilities this phase.
-                After the effect ends, you take a \minus2 penalty to \glossterm{defenses} against \glossterm{magical} attacks until the end of the next round.
+                However, you \glossterm{briefly} take a \minus2 penalty to \glossterm{defenses} against \glossterm{magical} attacks.
 
                 \rankline
                 \rank{3} The defense bonus is increased to \plus3.
@@ -528,7 +528,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             \rankline
             \rank{3} This ability gains the \abilitytag{Swift} tag.
             When you use it, the penalties from the removed conditions do not affect you during the current phase.
-            In addition, you cannot gain any additional \glossterm{conditions} until after the end of the next round.
+            In addition, you \\glossterm{briefly} cannot gain any additional \glossterm{conditions}.
             \rank{5} You can use this ability as a \glossterm{minor action}.
             When you do, you increase your \glossterm{fatigue level} by one.
             \rank{7} You can remove any number of \glossterm{conditions}.

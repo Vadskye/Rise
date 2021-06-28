@@ -94,7 +94,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             \rankline
             Make an attack vs. Fortitude against one creature or object within \rngmed range.
             \hit The target is \nauseated until it takes a \glossterm{short rest}.
-            \glance The target is nauseated until the end of the next round.
+            \glance The target is \glossterm{briefly} nauseated.
             \crit The target is nauseated until this curse is removed.
 
             \rankline
@@ -108,8 +108,8 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
          The power bonus from your \textit{hellfire} ability increases to \plus4.
-        In addition, whenever you cause a creature to lose \glossterm{hit points} with fire damage or energy damage, it becomes \sickened until the end of the next round.
-        That creature then becomes immune to this effect until it takes a \glossterm{short rest}.
+        In addition, whenever you cause a creature to lose \glossterm{hit points} with fire damage or energy damage, it becomes \glossterm{briefly} \sickened.
+        After the effect ends, hat creature then becomes immune to it until it takes a \glossterm{short rest}.
                 ",
         },
     ];
@@ -489,7 +489,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                 \item You take a \minus2 penalty to Fortitude and Mental defenses.
                 \item You are unable to take \glossterm{standard actions} that do not cause you to make \glossterm{magical} attacks.
                 \item At the end of each round, if you did not make a \glossterm{magical} attack that round, this ability ends.
-                \item When this ability ends for any reason, you cannot use it again until after the end of the next round.
+                \item When this ability ends for any reason, you \\glossterm{briefly} cannot use it again.
             \end{itemize}
 
             \rankline

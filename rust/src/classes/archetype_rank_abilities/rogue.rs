@@ -74,7 +74,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
         
         You can use the \textit{hide} ability without moving in a way that causes observers to lose sight of you.
         This does not remove the bonus that observers receive if you have no cover or concealment at all.
-        After you hide in this way, you cannot do so again until after the end of the next round.
+        After you hide in this way, you \glossterm{briefly} cannot do so again.
 
                 ",
         },
@@ -95,7 +95,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             \abilitytag{Swift}
             \rankline
             You study a creature within \rngmed range, finding weak points you can take advantage of.
-            Until the end of the next round, the subject takes maximum damage from your melee \glossterm{strikes} that it is \unaware of.
+            The subject \glossterm{briefly} takes maximum damage from your melee \glossterm{strikes} that it is \unaware of.
         \end{durationability}
 
                 ",
@@ -252,8 +252,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 \abilitytag{Auditory}
                 \rankline
                 Make an attack vs. Mental against all \glossterm{enemies} within a \areamed radius from you.
-                \hit Each subject is \dazzled until the end of the next round.
-                \crit Each subject is \dazzled as a \glossterm{condition}.
+                \hit Each subject is \glossterm{briefly} \dazzled.
+                \crit Each subject is dazzled as a \glossterm{condition}.
 
                 \rankline
                 \rank{2} You gain a \plus1 \glossterm{accuracy} bonus with the attack, and the area increases to a \largearea radius.
@@ -358,7 +358,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 \rankline
                 Choose one living \glossterm{ally} within \shortrange.
                 The subject regains 1d10 \add \glossterm{power} \glossterm{hit points}.
-                After you use this ability, you cannot use it or any other \abilitytag{Healing} ability until after the end of the next round.
+                After you use this ability, you \\glossterm{briefly} cannot use it or any other \abilitytag{Healing} ability.
 
                 \rankline
                 \rank{2} The healing increases to 2d6.
@@ -396,8 +396,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 \abilitytag{Auditory}
                 \rankline
                 Make an attack vs. Fortitude against all \glossterm{enemies} within a \areamed radius from you.
-                \hit Each subject is \sickened until the end of the next round.
-                \crit Each subject is \sickened as a \glossterm{condition}.
+                \hit Each subject is \glossterm{briefly} \sickened.
+                \crit Each subject is sickened as a \glossterm{condition}.
 
                 \rankline
                 \rank{2} You gain a \plus1 \glossterm{accuracy} bonus with the attack, and the area increases to a \largearea radius.
@@ -748,9 +748,9 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             Make a attack vs. Mental against a creature within \medrange.
             Your \glossterm{accuracy} is equal to your Deception skill.
             In addition, choose a location within range.
-            \hit Until the end of the next round, the subject is compelled to move to the location you chose if it can do so safely, and it cannot take any actions except to move to the location and look around at it.
+            \hit As a \glossterm{brief} effect, the subject is compelled to move to the location you chose if it can do so safely, and it cannot take any actions except to move to the location and look around at it.
             This effect automatically ends if the subject takes any damage.
-            After this effect ends, the subject becomes immune to this effect until it takes a \glossterm{short rest}.
+            After this effect ends, the subject becomes immune to it until it takes a \glossterm{short rest}.
 
             \rankline
             \rank{6} You can target an additional creature within range.
@@ -786,9 +786,9 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             \rankline
             Make an attack vs. Mental against a creature within \shortrange.
             Your \glossterm{accuracy} is equal to your Deception skill.
-            \hit Until the end of the next round, the subject is convinced that nothing is real.
+            \hit The subject is \glossterm{briefly} convinced that nothing is real.
             It is unable to take any actions and is \unaware of all attacks against it.
-            After this effect ends, the subject becomes immune to this effect until it takes a \glossterm{short rest}.
+            After this effect ends, the subject becomes immune to it until it takes a \glossterm{short rest}.
         \end{freeability}
                 ",
         },

@@ -234,7 +234,7 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         crit: "The effect becomes a \\glossterm{condition} on each subject.",
-        hit: `Each subject is \\slowed until the end of the next round.`,
+        hit: `Each subject is \\glossterm{briefly} \\slowed.`,
         targeting: `
           Make an attack vs. Mental against all Large or smaller creatures in a \\areasmall radius within \\medrange.
         `,

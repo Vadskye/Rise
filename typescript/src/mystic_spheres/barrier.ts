@@ -255,7 +255,7 @@ export const barrier: MysticSphere = {
 
       attack: {
         crit: "The sphere's \\glossterm{hit points} increase to 64.",
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           A sphere of magical energy appears around the subject in its space.
           The sphere is visible as a shimmering magical membrane that does not block sight.
@@ -420,7 +420,7 @@ export const barrier: MysticSphere = {
         crit:
           "You also \\glossterm{knockback} each subject 20 feet in the direction that it tried to enter the area from.",
         glance:
-          "The effect lasts until the end of the next round, allowing the creature to freely enter the zone after that time.",
+          "The effect on the creature lasts \\glossterm{briefly}, allowing the creature to freely enter the zone after that time.",
         hit: `
           Each subject is unable to enter the spell's area with any part of its body for the duration of the spell.
           The rest of its movement in the current phase is cancelled.
@@ -505,7 +505,7 @@ export const barrier: MysticSphere = {
         name: 'mystic barrier',
         exceptThat: `
           you only create a single 5-ft. square of wall, and the barrier automatically disappears at the end of the next round.
-          After you cast this spell, you cast it again until after the end of the next round.
+          After you cast this spell, you \\glossterm{briefly} cannot cast it again.
         `,
       },
       rank: 6,

@@ -148,7 +148,7 @@ export const cryomancy: MysticSphere = {
       name: "Mass Frozen Legs",
 
       attack: {
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `Each subject that has no remaining \\glossterm{damage resistance} is \\immobilized as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against all creatures in a \\smallarea radius within \\medrange.
@@ -258,7 +258,7 @@ export const cryomancy: MysticSphere = {
       name: "Mass Chilled Mind",
 
       attack: {
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `Each subject that has no remaining \\glossterm{damage resistance} is \\stunned as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\arealarge radius from you.
@@ -319,7 +319,7 @@ export const cryomancy: MysticSphere = {
       rank: 3,
       scaling: {
         5: `Your ice trail collapses more gradually.  If you are still standing on your own ice trail when it disappears, you treat your fall as if it were 60 feet shorter than it actually was for the purpose of determining \\glossterm{falling damage}.`,
-        7: `Your ice trail lasts until the end of the next round after your movement.`,
+        7: `Your ice trail lasts \\glossterm{briefly} after your movement.`,
       },
       tags: ["Manifestation"],
       type: "Attune (self)",
@@ -465,7 +465,7 @@ export const cryomancy: MysticSphere = {
         targeting: `
           For the duration of this spell, you can breathe cold like a dragon as a standard action.
           When you do, make an attack vs. Fortitude against everything in a \\largearea cone from you.
-          After you use this ability, you cannot use it again until after the end of the next round.
+          After you use this ability, you \\glossterm{briefly} cannot use it again.
         `,
       },
       rank: 3,
@@ -496,7 +496,7 @@ export const cryomancy: MysticSphere = {
       attack: {
         crit: `The damage from the condition is doubled.`,
         glance:
-          "The effect lasts until the end of the next round. The subject still takes damage during that round.",
+          "The effect lasts \\glossterm{briefly}. The subject still takes damage during that round.",
         hit: `As a \\glossterm{condition}, the subject is seared by painful cold.
         % TODO: standardize "ignite" damage
         At the end of each round, it takes 4d10 cold damage.`,

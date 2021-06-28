@@ -27,7 +27,7 @@ export const heraldOfWar: CombatStyle = {
 
       attack: {
         crit: `The effect becomes a \\glossterm{condition} on each subject.`,
-        hit: `Each subject is \\glossterm{dazed} until the end of the next round.`,
+        hit: `Each subject is \\glossterm{briefly} \\glossterm{dazed}.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
         `,
@@ -59,8 +59,7 @@ export const heraldOfWar: CombatStyle = {
       attack: {
         crit: `The effect becomes a \\glossterm{condition} on each subject.`,
         hit: `
-          Each subject takes a -2 accuracy penalty against creatures other than you as long as it is within \\rngmed range of you.
-          This effect lasts until the end of the next round.
+          Each subject is \\glossterm{briefly} \\goaded.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
@@ -77,7 +76,7 @@ export const heraldOfWar: CombatStyle = {
 
       attack: {
         crit: `Each subject that is below its maximum \\glossterm{hit points} is \\panicked by you as a \\glossterm{condition}.`,
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `Each subject that is below its maximum \\glossterm{hit points} is \\frightened by you as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
@@ -148,7 +147,7 @@ export const heraldOfWar: CombatStyle = {
       name: "Rally the Troops",
 
       effect: `
-        You and your \\glossterm{allies} within a \\largearea radius from you can each ignore any effects from one \\glossterm{condition} they are already affected by until the end of the next round.
+        You and your \\glossterm{allies} within a \\largearea radius from you can each \\glossterm{briefly} ignore any effects from one \\glossterm{condition} they are already affected by.
         Because this ability has the \\abilitytag{Swift} tag, it removes any relevant penalties from those conditions during the current phase.
       `,
       rank: 2,
@@ -213,7 +212,7 @@ export const heraldOfWar: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike} with a -1d damage penalty.
         In addition, make an attack vs. Mental against each \\glossterm{enemy} other than the target of that strike within a \\medarea radius from you.
-        On a hit, each subject is \\glossterm{shaken} by you until the end of the next round.
+        On a hit, each subject is \\glossterm{briefly} \\shaken by you.
       `,
       rank: 4,
       scaling: {
@@ -228,7 +227,7 @@ export const heraldOfWar: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike} with a -1d damage penalty.
         In addition, make an attack vs. Mental against each \\glossterm{enemy} other than the target of that strike within a \\medarea radius from you.
-        On a hit, each subject is \\glossterm{frightened} by you until the end of the next round.
+        On a hit, each subject is \\glossterm{briefly} \\frightened by you.
       `,
       rank: 7,
       type: "Duration",
@@ -239,7 +238,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with a -1d damage penalty.
-        Your \\glossterm{allies} within a \\largearea radius from you gain a +2 bonus to Mental defense until the end of the next round.
+        Your \\glossterm{allies} within a \\largearea radius from you \\glossterm{briefly} gain a +2 bonus to Mental defense.
       `,
       rank: 1,
       scaling: {
@@ -255,7 +254,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         You and each living \\glossterm{ally} in a \\medarea radius from you each regain 4d10 \\glossterm{hit points}.
-        After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
+        After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
       rank: 7,
       tags: ['Emotion', 'Healing'],
@@ -266,7 +265,7 @@ export const heraldOfWar: CombatStyle = {
       name: "Steadfast Battlecry",
 
       effect: `
-        You and each living \\glossterm{ally} in a \\largearea radius from you gain a +1 bonus to \\glossterm{vital rolls} until the end of the next round.
+        You and each living \\glossterm{ally} in a \\largearea radius from you \\glossterm{briefly} gain a +1 bonus to \\glossterm{vital rolls}.
       `,
       rank: 1,
       scaling: {
@@ -283,7 +282,7 @@ export const heraldOfWar: CombatStyle = {
 
       attack: {
         hit: `
-          Until the end of the next round, each subject is unable to take any \\glossterm{standard actions} that do not cause it to make an attack.
+          Each subject is \\glossterm{briefly} unable to take any \\glossterm{standard actions} that do not cause it to make an attack.
           For example, it could make a \\glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
         `,
         targeting: `

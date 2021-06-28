@@ -127,7 +127,7 @@ function standardBreathWeapon({
     powerMultiplier: 0.5,
     preface: `
       A dragon can use its breath weapon as a \\glossterm{minor action}.
-      After a dragon uses its breath weapon, it cannot use it again until after the end of the next round.
+      After a dragon uses its breath weapon, it \\glossterm{briefly} cannot use it again.
       \\par
     `,
     source: "magical" as const,
