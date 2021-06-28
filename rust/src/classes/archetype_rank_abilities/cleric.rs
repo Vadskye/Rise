@@ -327,7 +327,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Desperate Healing",
-            is_magical: false,
+            is_magical: true,
             rank: 0,
             description: r"
         When you use the \textit{desperate exertion} ability to affect a Medicine check, you gain a \plus3 bonus to the check.
