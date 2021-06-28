@@ -148,7 +148,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         You and your \\glossterm{allies} within a \\largearea radius from you can each \\glossterm{briefly} ignore any effects from one \\glossterm{condition} they are already affected by.
-        Because this ability has the \\abilitytag{Swift} tag, it removes any relevant penalties from those conditions during the current phase.
+        Because this ability has the \\abilitytag{Swift} tag, it removes any relevant penalties from that condition during the current phase.
       `,
       rank: 2,
       scaling: {

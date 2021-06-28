@@ -502,9 +502,9 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             \rankline
             When you use this ability, you increase your \glossterm{fatigue level} by one.
 
-            Remove a \glossterm{condition} affecting you.
-            This cannot remove a condition applied during the current round.
-            Because this ability has the \abilitytag{Swift} tag, the penalties from the removed condition do not affect you during the current phase.
+            Remove a \glossterm{brief} effect or \glossterm{condition} affecting you.
+            This cannot remove an effect applied during the current round.
+            Because this ability has the \abilitytag{Swift} tag, the penalties from the removed effect do not affect you during the current phase.
         \end{instantability}
 
                 ",

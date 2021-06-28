@@ -302,7 +302,7 @@ def universal_abilities():
         """),
         universal_ability_button("Recover", """
             After you use this ability, you increase your fatigue level by two, and you cannot use it again until you take a short rest.
-            You regain hit points equal to your maximum hit points. In addition, you remove all conditions affecting you. This cannot remove a condition applied during the current round.
+            You regain hit points equal to your maximum hit points. In addition, you remove all \\glossterm<brief> effects and conditions affecting you. This cannot remove effects applied during the current round.
         """),
         universal_ability_button("Shove", """
             Choose either one creature within your reach or all creatures grappling you. Make a melee attack with a free hand against both the Fortitude defense and total Strength of each target. Your accuracy with this attack is equal to your Strength. If you are not able to use any of your movement speeds, such as if you are being carried by a flying creature, you automatically fail when you try to use this ability, and your defense is treated as 0 against this ability.

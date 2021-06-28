@@ -318,13 +318,13 @@ export const bless: MysticSphere = {
       name: "Boon of Cleansing",
 
       effect: `
-        You or one \\glossterm{ally} within \\medrange can remove a \\glossterm{condition}.
-        This cannot remove a condition applied during the current round.
+        You or one \\glossterm{ally} within \\medrange can remove a \\glossterm{brief} effect or \\glossterm{condition}.
+        This cannot remove an effect applied during the current round.
         `,
       rank: 3,
       scaling: {
-        5: `The subject can remove two conditions.`,
-        7: `The subject can remove three conditions.`,
+        5: `The subject can remove two effects.`,
+        7: `The subject can remove three effects.`,
       },
       type: "Instant",
     },
@@ -333,8 +333,8 @@ export const bless: MysticSphere = {
       name: "Cleansing Benediction",
 
       effect: `
-        You and each of your \\glossterm{allies} within a \\smallarea radius from you can each remove a \\glossterm{condition}.
-        This cannot remove a condition applied during the current round.
+        You and each of your \\glossterm{allies} within a \\smallarea radius from you can each remove a \glossterm{brief} effect or \\glossterm{condition}.
+        This cannot remove effects applied during the current round.
       `,
       rank: 6,
       type: "Instant",
