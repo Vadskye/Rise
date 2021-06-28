@@ -355,7 +355,6 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-        [Magical]
         You gain the ability to embody an aspect of an animal or of nature itself.
         Choose two wild aspects from the list below.
         You can also spend \glossterm{insight points} to learn one additional \textit{wild aspect} per \glossterm{insight point}.

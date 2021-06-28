@@ -17,7 +17,6 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-        [Magical]
         Your devotion to your alignment affects the world around you, bringing it closer to your ideals.
         You constantly radiate an aura in a \areamed radius \glossterm{emanation} from you.
         You can suppress or resume the aura as a \glossterm{minor action}.
@@ -41,7 +40,6 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-        [Magical]
         Your devotion to your alignment grants you immunities.
 
         \subparhead{Chaos} You are immune to the \slowed, \decelerated, and \immobilized effects.
@@ -66,7 +64,6 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-        [Magical]
         The effect of your \textit{aligned aura} becomes stronger, as described below.
 
         \subparhead{Chaos} The effect applies to all attacks, not just \glossterm{strikes}.
@@ -84,10 +81,8 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-        [Magical]
-        The effect of your \textit{aligned immunity} ability is shared with your \glossterm{allies} within the area of your \textit{aligned aura}.
-
-                ",
+                The effect of your \textit{aligned immunity} ability is shared with your \glossterm{allies} within the area of your \textit{aligned aura}.
+            ",
         },
         RankAbility {
             name: "Greater Paragon Power",
@@ -262,7 +257,6 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-        [Magical]
         You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
 
                 ",
@@ -320,7 +314,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-        [Magical] You can use the \textit{lay on hands} ability as a standard action.
+        You can use the \textit{lay on hands} ability as a standard action.
         \begin{instantability}{Lay on Hands}[Instant]
             \abilitytag{Healing}, \abilitytag{Magical}
             \rankline
@@ -415,7 +409,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-        [Magical] You can use the \textit{smite} ability as a standard action.
+        You can use the \textit{smite} ability as a standard action.
         \begin{instantability}{Smite}[Instant]
             \abilitytag{Magical}
             \rankline
@@ -464,7 +458,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-         You can use your \textit{zealous purge} ability as a standard action.
+        You can use your \textit{zealous purge} ability as a standard action.
         \begin{instantability}{Zealous Purge}[Instant]
             \abilitytag{Magical}
             \rankline

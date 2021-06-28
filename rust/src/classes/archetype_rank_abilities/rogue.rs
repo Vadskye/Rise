@@ -54,7 +54,6 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             description: r"
         You can use the \textit{darkstalker} ability as a standard action.
         \begin{attuneability}{Darkstalker}[\abilitytag{Attune} (self)]
-            \abilitytag{Magical}
             \rankline
             You become completely undetectable by your choice of one of the following sense groups:
             \begin{itemize}
@@ -136,7 +135,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-        [Magical]
         You learn two \textit{bardic performances} from the list below.
         You can also spend \glossterm{insight points} to learn one additional bardic performance per \glossterm{insight point}.
         You can use any bardic performance you know as a \glossterm{standard action} unless it specifies that it requires a different type of action to activate.
@@ -469,9 +467,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-        [Magical] Once per round, you can \glossterm{sustain} two bardic performances as a single \glossterm{minor action}.
-
-                ",
+                Once per round, you can \glossterm{sustain} two bardic performances as a single \glossterm{minor action}.
+            ",
         },
         RankAbility {
             name: "Greater Combat Inspiration",

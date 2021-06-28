@@ -379,7 +379,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             description: r"
          You can use the \textit{divine healing} ability as a standard action.
         \begin{instantability}{Divine Healing}[Instant]
-            \glossterm{Magical}
+            \abilitytag{Magical}
             \rankline
             When you use this ability, you increase your \glossterm{fatigue level} by two (see \pcref{Fatigue}).
 
