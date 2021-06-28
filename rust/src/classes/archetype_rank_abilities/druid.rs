@@ -266,54 +266,47 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 ",
         },
         RankAbility {
-            name: "Natural Guidance",
+            name: "Plant Channeling",
             rank: 2,
             description: r"
-         Once per \glossterm{long rest}, you may use the \textit{desperate exertion} ability without increasing your \glossterm{fatigue level} to affect a nature spell you cast (see \pcref{Desperate Exertion}).
-
-                ",
+                Whenever you cast a spell, you may treat all effects of the spell as if you were located at any Tiny or larger living plant within \medrange instead of in your current location.
+                This allows you to measure the spell's range from the plant's location, cone-shaped areas originate from the plant's location instead of your own, and so on.
+            ",
         },
         RankAbility {
             name: "Wellspring of Power",
             rank: 3,
             description: r"
-        
-        You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
-
-                ",
+                You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
+            ",
         },
         RankAbility {
             name: "Mystic Insight",
             rank: 4,
             description: r"
-        You gain an additional \textit{mystic insight} ability.
-
-                ",
+                You gain an additional \textit{mystic insight} ability.
+            ",
         },
         RankAbility {
-            name: "Greater Natural Guidance",
+            name: "Attunement Point",
             rank: 5,
             description: r"
-         You can use your \textit{natural guidance} ability once per \glossterm{short rest} instead of once per long rest.
-
-                ",
+                You gain an additional \glossterm{attunement point}.
+            ",
         },
         RankAbility {
             name: "Greater Wellspring of Power",
             rank: 6,
             description: r"
-        
-        The bonus from your \textit{wellspring of power} ability increases to \plus6.
-
-                ",
+                The bonus from your \textit{wellspring of power} ability increases to \plus6.
+            ",
         },
         RankAbility {
-            name: "Mystic Insight",
+            name: "Mystic Insights",
             rank: 7,
             description: r"
-        You gain an additional \textit{mystic insight} ability.
-
-                ",
+                You gain two additional \textit{mystic insight} abilities.
+            ",
         },
     ];
 }
@@ -678,19 +671,17 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             name: "Nature's Ally",
             rank: 2,
             description: r"
-         Wild animals will not willingly attack you or your \glossterm{allies} within a \largearea radius \glossterm{emanation} from you.
-        They can be compelled to attack despite this protection with a Creature Handling check against a \glossterm{difficulty rating} equal to 10 \add your level.
-        If any subject attacks a creature that this ability protects you from, this ability is \glossterm{suppressed} until you take a \glossterm{short rest}.
-
-                ",
+                Animals will not willingly attack you or your \glossterm{allies} within a \largearea radius \glossterm{emanation} from you.
+                They can be compelled to attack despite this protection with a Creature Handling check against a \glossterm{difficulty rating} equal to 10 \add your level.
+                If any subject attacks a creature that this ability protects you from, this ability is \glossterm{suppressed} until you take a \glossterm{short rest}.
+            ",
         },
         RankAbility {
             name: "Nature's Might",
             rank: 3,
             description: r"
-         You and your \textit{natural servant} gain a \plus1d damage bonus with \glossterm{natural weapons}.
-
-                ",
+                You and your \textit{natural servant} gain a \plus1d damage bonus with \glossterm{natural weapons}.
+            ",
         },
         RankAbility {
             name: "Plant Speech",
@@ -734,12 +725,11 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             name: "Greater Nature's Ally",
             rank: 5,
             description: r"
-         Your \textit{nature's ally} ability also protects you and your allies from plant creatures and elementals.
-        In addition, all creatures that you are protected from with this ability automatically attempt to aid you and your allies if they observe you fighting.
-        Finally, the effect can no longer be bypassed with a Creature Handling check or any other form of control that does not first suppress this effect.
-        Even creatures summoned by enemies to fight you will immediately turn on their summoners or otherwise avoid attacking you.
-
-                ",
+                Your \textit{nature's ally} ability also protects you and your allies from plant-based animates and elemental-based animates.
+                In addition, all creatures that you are protected from with this ability automatically attempt to aid you and your allies if they observe you fighting.
+                Finally, the effect can no longer be bypassed with a Creature Handling check or any other form of control that does not first suppress this effect.
+                Even creatures summoned by enemies to fight you will immediately turn on their summoners or otherwise avoid attacking you.
+            ",
         },
         RankAbility {
             name: "Universal Speech",

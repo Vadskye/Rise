@@ -143,15 +143,14 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 As a standard action, you can use the \ability{turn undead} ability.
                 \begin{instantability}
-                    Make an attack vs. Mental against all undead creatures within a \smallarea radius from you.
+                    Make an attack vs. Mental against all undead creatures within a \medarea radius from you.
                     \hit Each subject is \frightened by you as a \glossterm{condition}.
                     Once this effect ends, the creature becomes immune to this effect until it takes a \glossterm{short rest}.
                     \crit As above, and each subject with no remaining \glossterm{damage resistance} immediately dies.
 
                     \rankline
-                    \rank{4} The area increases to a \largearea radius.
-                        In addition, on a \glossterm{glancing blow}, each subject is \glossterm{briefly} \frightened by you.
-                    \rank{6} The area increases to a \hugearea radius.
+                    This attack's accuracy increases by \plus2 for each rank beyond 2.
+                    \rank{3} On a \glossterm{glancing blow}, each subject is \glossterm{briefly} \frightened by you.
                 \end{instantability}
             ",
         },
@@ -170,11 +169,10 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            name: "Divine Guidance",
+            name: "Attunement Point",
             rank: 5,
             description: r"
-                You gain a \plus2 bonus to any roll that you use the \textit{desperate exertion} ability on.
-                This bonus stacks with the normal \plus2 bonus provided by that ability.
+                You gain an additional \glossterm{attunement point}.
             ",
         },
         RankAbility {

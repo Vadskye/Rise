@@ -418,55 +418,48 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 ",
         },
         RankAbility {
-            name: "Arcane Attunement",
+            name: "Intricate Spell",
             rank: 2,
             description: r"
-         You gain an additional \glossterm{attunement point}.
-
-                ",
+                Whenever you cast a spell with the \glossterm{Focus} tag, you may increase your \glossterm{focus penalty} by 2.
+                If you do, you gain a \plus1 bonus to \glossterm{accuracy} with that spell.
+                This is a \glossterm{Swift} ability.
+            ",
         },
         RankAbility {
             name: "Wellspring of Power",
             rank: 3,
             description: r"
-        
-        You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
-
-                ",
+                You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
+            ",
         },
         RankAbility {
             name: "Mystic Insight",
             rank: 4,
             description: r"
-        
-        You gain an additional \textit{mystic insight} ability.
-
-                ",
+                You gain an additional \textit{mystic insight} ability.
+            ",
         },
         RankAbility {
-            name: "Greater Arcane Attunement",
+            name: "Attunement Point",
             rank: 5,
             description: r"
-         The number of attunement points you gain from your \textit{arcane attunement} ability increases to two.
-
-                ",
+                You gain an additional \glossterm{attunement point}.
+            ",
         },
         RankAbility {
             name: "Greater Wellspring of Power",
             rank: 6,
             description: r"
-        
-        The bonus from your \textit{wellspring of power} ability increases to \plus6.
-
-                ",
+                The bonus from your \textit{wellspring of power} ability increases to \plus6.
+            ",
         },
         RankAbility {
-            name: "Mystic Insight",
+            name: "Mystic Insights",
             rank: 7,
             description: r"
-        
-        You gain an additional \textit{mystic insight} ability.
-                ",
+                You gain two additional \textit{mystic insight} abilities.
+            ",
         },
     ];
 }
