@@ -4,6 +4,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Stealthy Instincts",
+            is_magical: false,
             rank: 0,
             description: r"
          You gain a \plus2 bonus to the Stealth skill.
@@ -14,6 +15,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Sneak Attack",
+            is_magical: false,
             rank: 1,
             description: r"
         
@@ -37,6 +39,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Evasion",
+            is_magical: false,
             rank: 2,
             description: r"
          You take half damage from abilities that affect an area and attack your Armor or Reflex defense.
@@ -46,6 +49,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Darkstalker",
+            is_magical: true,
             rank: 3,
             description: r"
         You can use the \textit{darkstalker} ability as a standard action.
@@ -69,6 +73,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Hide in Plain Sight",
+            is_magical: false,
             rank: 4,
             description: r"
         
@@ -80,6 +85,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Evasion",
+            is_magical: false,
             rank: 5,
             description: r"
          Your \textit{evasion} ability also protects you from area attacks against your Fortitude and Mental defenses.
@@ -88,6 +94,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Assassination",
+            is_magical: false,
             rank: 6,
             description: r"
          You can use the \textit{assassination} ability as a \glossterm{minor action}.
@@ -102,9 +109,10 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Darkstalker",
+            is_magical: true,
             rank: 7,
             description: r"
-                [Magical] When you use your \textit{darkstalker} ability, you become undetectable by any number of the possible sense groups, not just one.
+                When you use your \textit{darkstalker} ability, you become undetectable by any number of the possible sense groups, not just one.
             ",
         },
     ];
@@ -114,6 +122,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Bardic Lore",
+            is_magical: false,
             rank: 0,
             description: r"
          You gain two additional skill points.
@@ -124,6 +133,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Bardic Performances",
+            is_magical: true,
             rank: 1,
             description: r"
         [Magical]
@@ -428,6 +438,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Combat Inspiration",
+            is_magical: true,
             rank: 2,
             description: r"
          Once per round, when you make a Perform check, you may choose an \glossterm{ally} that can see or hear your performance.
@@ -437,6 +448,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Bardic Performance",
+            is_magical: true,
             rank: 3,
             description: r"
          You learn an additional bardic performance.
@@ -445,6 +457,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Loremaster",
+            is_magical: false,
             rank: 3,
             description: r"
          You gain a \plus2 bonus to all Knowledge skills.
@@ -453,6 +466,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Virtuoso",
+            is_magical: true,
             rank: 4,
             description: r"
         [Magical] Once per round, you can \glossterm{sustain} two bardic performances as a single \glossterm{minor action}.
@@ -461,6 +475,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Combat Inspiration",
+            is_magical: true,
             rank: 5,
             description: r"
          The bonus from your \textit{combat inspiration} ability increases to \plus2.
@@ -469,6 +484,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Bardic Performance",
+            is_magical: true,
             rank: 6,
             description: r"
                 You learn an additional bardic performance.
@@ -476,6 +492,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Loremaster",
+            is_magical: false,
             rank: 6,
             description: r"
          The Knowledge skill bonus from your \textit{loremaster} ability increases to \plus4.
@@ -484,6 +501,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Virtuoso",
+            is_magical: true,
             rank: 7,
             description: r"
                 The number of bardic performances you can sustain with your \textit{virtuoso} ability increases to three.
@@ -496,6 +514,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Tricky Finesse",
+            is_magical: false,
             rank: 0,
             description: r"
                  You gain a \plus1 bonus to Dexterity-based \glossterm{checks}, except \glossterm{initiative} checks.
@@ -503,6 +522,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Combat Styles",
+            is_magical: false,
             rank: 1,
             description: r"
                 You can confuse and confound your foes in combat.
@@ -521,6 +541,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Combat Style Rank (2)",
+            is_magical: false,
             rank: 2,
             description: r"
                 You become a rank 2 combat style user.
@@ -529,6 +550,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Tricky Force",
+            is_magical: false,
             rank: 2,
             description: r"
                 You gain a \plus1d bonus to your damage with all weapons.
@@ -536,6 +558,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Combat Style Rank (3)",
+            is_magical: false,
             rank: 3,
             description: r"
                 You become a rank 3 combat style user.
@@ -544,6 +567,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Glancing Strikes",
+            is_magical: false,
             rank: 3,
             description: r"
                 Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
@@ -552,6 +576,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Combat Style Rank (4)",
+            is_magical: false,
             rank: 4,
             description: r"
                 You become a rank 4 combat style user.
@@ -560,6 +585,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Trick Maneuver",
+            is_magical: false,
             rank: 4,
             description: r"
                 You learn an additional \glossterm{maneuver} from a combat style you have access to (see \pcref{Combat Styles}).
@@ -567,6 +593,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Combat Style Rank (5)",
+            is_magical: false,
             rank: 5,
             description: r"
                 You become a rank 5 combat style user.
@@ -575,6 +602,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Tricky Force",
+            is_magical: false,
             rank: 5,
             description: r"
                 The bonus from your \textit{tricky force} ability increases to \plus2d.
@@ -582,6 +610,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Combat Style Rank (6)",
+            is_magical: false,
             rank: 6,
             description: r"
                 You become a rank 6 combat style user.
@@ -590,6 +619,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Tricky Finesse",
+            is_magical: false,
             rank: 6,
             description: r"
                 The bonus from your \textit{tricky finesse} ability increases to \plus2.
@@ -597,6 +627,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Combat Style Rank (7)",
+            is_magical: false,
             rank: 7,
             description: r"
                 You become a rank 7 combat style user.
@@ -605,6 +636,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Esoteric Maneuver",
+            is_magical: false,
             rank: 7,
             description: r"
                 You learn an additional \glossterm{maneuver} from a combat style you have access to (see \pcref{Combat Styles}).
@@ -617,6 +649,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Dabbler",
+            is_magical: false,
             rank: 0,
             description: r"
          You gain an additional \glossterm{insight point}.
@@ -628,6 +661,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Skill Exemplar",
+            is_magical: false,
             rank: 1,
             description: r"
          You gain two additional skill points.
@@ -637,6 +671,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Dabbler",
+            is_magical: false,
             rank: 2,
             description: r"
          You gain an additional \glossterm{insight point}.
@@ -645,6 +680,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Versatile Power",
+            is_magical: false,
             rank: 3,
             description: r"
         
@@ -654,6 +690,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Skill Exemplar",
+            is_magical: false,
             rank: 4,
             description: r"
          The skill bonus from your \textit{skill exemplar} ability increases to \plus3.
@@ -662,6 +699,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Supreme Dabbler",
+            is_magical: false,
             rank: 5,
             description: r"
          You gain an additional \glossterm{insight point}.
@@ -670,6 +708,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Versatile Power",
+            is_magical: false,
             rank: 6,
             description: r"
          The bonus from your \textit{versatile power} ability increases to \plus6.
@@ -678,6 +717,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Supreme Skill Exemplar",
+            is_magical: false,
             rank: 7,
             description: r"
                 The skill bonus from your \textit{skill exemplar} ability increases to \plus5.
@@ -690,6 +730,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Smooth Liar",
+            is_magical: false,
             rank: 0,
             description: r"
          You gain a \plus2 bonus to the Deception skill.
@@ -700,6 +741,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Confound",
+            is_magical: false,
             rank: 1,
             description: r"
          You can use the \textit{confound} ability as a standard action.
@@ -720,6 +762,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Trick Magic Device",
+            is_magical: true,
             rank: 2,
             description: r"
          You can use wands as if you were able to cast spells from all \glossterm{magic sources}.
@@ -731,6 +774,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Exploit Distraction",
+            is_magical: false,
             rank: 3,
             description: r"
          You gain a \plus1 \glossterm{accuracy} bonus against creatures affected by any \glossterm{condition}.
@@ -739,6 +783,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "What's That Over There",
+            is_magical: false,
             rank: 4,
             description: r"
          You can use the \textit{what's that over there} ability as a standard action.
@@ -760,6 +805,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Trick Magic Device",
+            is_magical: true,
             rank: 5,
             description: r"
          The number of attunement points you gain from your \textit{trick magic device} ability increases to two.
@@ -769,6 +815,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Exploit Distraction",
+            is_magical: false,
             rank: 6,
             description: r"
          The bonus from your \textit{exploit distraction} ability increases to \plus2.
@@ -777,6 +824,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Nothing Is Real",
+            is_magical: false,
             rank: 7,
             description: r"
                 You can use the \textit{nothing is real} ability as a standard action.

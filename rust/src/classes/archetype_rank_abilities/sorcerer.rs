@@ -4,6 +4,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Cantrips",
+            is_magical: true,
             rank: 0,
             description: r"
         
@@ -21,6 +22,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Mage Armor",
+            is_magical: true,
             rank: 0,
             description: r"
          You can use the \textit{mage armor} ability as a standard action.
@@ -41,6 +43,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spellcasting",
+            is_magical: true,
             rank: 1,
             description: r"
         
@@ -58,6 +61,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 2,
             description: r"
          You become a rank 2 arcane spellcaster.
@@ -67,6 +71,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Knowledge",
+            is_magical: true,
             rank: 2,
             description: r"
          You learn an additional arcane \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
@@ -75,6 +80,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 3,
             description: r"
          You become a rank 3 arcane spellcaster.
@@ -84,6 +90,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Mage Armor",
+            is_magical: true,
             rank: 3,
             description: r"
         
@@ -94,6 +101,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 4,
             description: r"
          You become a rank 4 arcane spellcaster.
@@ -103,6 +111,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Knowledge",
+            is_magical: true,
             rank: 4,
             description: r"
          You learn an additional arcane \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
@@ -111,6 +120,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 5,
             description: r"
          You become a rank 5 arcane spellcaster.
@@ -120,6 +130,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 6,
             description: r"
          You become a rank 6 arcane spellcaster.
@@ -129,6 +140,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Supreme Mage Armor",
+            is_magical: true,
             rank: 6,
             description: r"
         
@@ -139,6 +151,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 7,
             description: r"
                 You become a rank 7 arcane spellcaster.
@@ -147,6 +160,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Knowledge",
+            is_magical: true,
             rank: 7,
             description: r"
          You learn an additional arcane \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
@@ -159,6 +173,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Combat Caster",
+            is_magical: true,
             rank: 0,
             description: r"
          You reduce your \glossterm{focus penalties} by 2.
@@ -168,6 +183,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Mystic Insight",
+            is_magical: true,
             rank: 1,
             description: r"
         
@@ -192,6 +208,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Desperate Improvization",
+            is_magical: true,
             rank: 2,
             description: r"
                 Whenever you use the \ability{desperate exertion} ability to affect a spell you cast, you can change which spell you cast before rerolling.
@@ -202,6 +219,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Wellspring of Power",
+            is_magical: true,
             rank: 3,
             description: r"
                 You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
@@ -209,6 +227,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Mystic Insight",
+            is_magical: true,
             rank: 4,
             description: r"
                 You gain an additional \textit{mystic insight} ability.
@@ -216,6 +235,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Attunement Point",
+            is_magical: true,
             rank: 5,
             description: r"
                 You gain an additional \glossterm{attunement point}.
@@ -223,6 +243,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Wellspring of Power",
+            is_magical: true,
             rank: 6,
             description: r"
                 The bonus from your \textit{wellspring of power} ability increases to \plus6.
@@ -230,6 +251,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Mystic Insights",
+            is_magical: true,
             rank: 7,
             description: r"
                 You gain two additional \textit{mystic insight} abilities.
@@ -242,6 +264,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Draconic Bloodline",
+            is_magical: true,
             rank: 0,
             description: r"
          Choose a type of dragon from among the dragons on \trefnp{Draconic Bloodline Types}.
@@ -270,6 +293,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Draconic Focus",
+            is_magical: true,
             rank: 0,
             description: r"
          You reduce your \glossterm{focus penalties} by 1.
@@ -278,6 +302,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Draconic Spells",
+            is_magical: true,
             rank: 1,
             description: r"
          If you already have access to your dragon's mystic sphere, you learn two spells from that sphere.
@@ -287,6 +312,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Draconic Focus",
+            is_magical: true,
             rank: 2,
             description: r"
          The focus penalty reduction from your \textit{draconic focus} ability increases to 2.
@@ -295,6 +321,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Draconic Bloodline",
+            is_magical: true,
             rank: 2,
             description: r"
          The defense bonus from your \textit{draconic bloodline} ability increases to \plus6.
@@ -303,6 +330,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Draconic Hide",
+            is_magical: true,
             rank: 3,
             description: r"
          You gain a bonus equal to twice your rank in this archetype to your \glossterm{damage resistance}.
@@ -311,6 +339,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Draconic Precision",
+            is_magical: true,
             rank: 4,
             description: r"
          You gain a \plus1 bonus to \glossterm{accuracy} with any spell that either deals damage of your dragon's damage type or is from your dragon's \glossterm{mystic sphere}.
@@ -319,6 +348,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Draconic Spell",
+            is_magical: true,
             rank: 5,
             description: r"
          You learn an additional arcane spell from your dragon's mystic sphere.
@@ -327,6 +357,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Energy Immunity",
+            is_magical: true,
             rank: 5,
             description: r"
          You become immune to your dragon's damage type.
@@ -335,6 +366,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Draconic Hide",
+            is_magical: true,
             rank: 6,
             description: r"
          The bonus from your \textit{draconic hide} ability increases to three times your rank in this archetype.
@@ -343,6 +375,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Draconic Precision",
+            is_magical: true,
             rank: 7,
             description: r"
                 The bonus from your \textit{draconic precision} ability increases to \plus2.
@@ -355,6 +388,7 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Innate Magic",
+            is_magical: true,
             rank: 0,
             description: r"
          None of your arcane spells have \glossterm{somatic components} or \glossterm{verbal components}.
@@ -364,6 +398,7 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Mystic Tolerance",
+            is_magical: true,
             rank: 1,
             description: r"
          You gain a bonus equal to twice your rank in this archetype to your \glossterm{damage resistance}.
@@ -372,6 +407,7 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Personal Enhancement",
+            is_magical: true,
             rank: 2,
             description: r"
          You gain a \glossterm{magic bonus} equal to half your rank in this archetype to \glossterm{accuracy} and \glossterm{defenses}.
@@ -381,6 +417,7 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Absorption",
+            is_magical: true,
             rank: 3,
             description: r"
          Whenever another creature uses a spell to attack you, if that spell does not have the \glossterm{Attune} tag, you can choose to absorb its energy.
@@ -394,6 +431,7 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Implement Freedom",
+            is_magical: true,
             rank: 4,
             description: r"
          You can gain the benefits of one magical implement, such as a staff or wand, without having to hold it in your hands.
@@ -404,6 +442,7 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Mystic Tolerance",
+            is_magical: true,
             rank: 5,
             description: r"
          The bonus from your \textit{mystic tolerance} ability increases to three times your rank in this archetype.
@@ -412,6 +451,7 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Spell Absorption",
+            is_magical: true,
             rank: 6,
             description: r"
          You can retain up to two spells with your \glossterm{spell absorption} ability.
@@ -420,6 +460,7 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Implement Freedom",
+            is_magical: true,
             rank: 7,
             description: r"
                 You can use your \textit{implement freedom} ability to affect an additional magical implement.
@@ -434,6 +475,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Chaotic Exertion",
+            is_magical: true,
             rank: 0,
             description: r"
          You gain a \plus2 bonus to the roll when you use the \textit{desperate exertion} ability.
@@ -444,6 +486,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Wildspell",
+            is_magical: true,
             rank: 1,
             description: r"
          Whenever you cast a spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags, you may use this ability after making all other decisions for the spell (such as targets, intended area, and so on).
@@ -474,6 +517,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Chaotic Insight",
+            is_magical: true,
             rank: 2,
             description: r"
          You learn a spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags from any \glossterm{mystic sphere}, even if you do not have access to that mystic sphere.
@@ -484,6 +528,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Chaotic Exertion",
+            is_magical: true,
             rank: 3,
             description: r"
          Once per \glossterm{long rest}, you can use the \textit{desperate exertion} ability without increasing your \glossterm{fatigue level}.
@@ -492,6 +537,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Wildspell",
+            is_magical: true,
             rank: 4,
             description: r"
          The bonus to \glossterm{power} from your \textit{wildspell} ability increases to twice your rank in this archetype.
@@ -500,6 +546,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Chaotic Insight",
+            is_magical: true,
             rank: 5,
             description: r"
          You learn an additional spell with your \textit{chaotic insight} ability.
@@ -508,6 +555,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Supreme Chaotic Exertion",
+            is_magical: true,
             rank: 6,
             description: r"
          You can use your \textit{chaotic exertion} ability once per \glossterm{short rest} instead of once per long rest.
@@ -516,6 +564,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Supreme Wildspell",
+            is_magical: true,
             rank: 7,
             description: r"
                 You replace your normal wild magic effects from your \textit{wildspell} ability with the effects from the table below.

@@ -4,6 +4,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Fiendish Resistance",
+            is_magical: true,
             rank: 0,
             description: r"
          You gain a bonus equal to your rank in this archetype to your \glossterm{damage resistance}.
@@ -13,6 +14,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Abyssal Blast",
+            is_magical: true,
             rank: 1,
             description: r"
          You can use the \textit{abyssal blast} ability as a standard action.
@@ -36,6 +38,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Abyssal Sphere",
+            is_magical: true,
             rank: 2,
             description: r"
          Choose one of the following \glossterm{mystic spheres}: \sphere{astromancy}, \sphere{enchantment}, \sphere{pyromancy}, or \sphere{summoning}.
@@ -46,6 +49,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Banish to the Abyss",
+            is_magical: true,
             rank: 3,
             description: r"
          You can use the \textit{banish to the abyss} ability as a standard action.
@@ -68,6 +72,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Hellfire",
+            is_magical: true,
             rank: 4,
             description: r"
          You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
@@ -78,6 +83,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Fiendish Resistance",
+            is_magical: true,
             rank: 5,
             description: r"
         [Magical] The bonus from your \textit{fiendish resistance} ability increases to twice your rank in this archetype.
@@ -86,6 +92,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Abyssal Curse",
+            is_magical: true,
             rank: 6,
             description: r"
          You can use the \textit{abyssal curse} ability as a standard action.
@@ -105,6 +112,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Brimstone",
+            is_magical: true,
             rank: 7,
             description: r"
                 The power bonus from your \textit{hellfire} ability increases to \plus4.
@@ -119,6 +127,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Reader of Hidden Tomes",
+            is_magical: true,
             rank: 0,
             description: r"
          You treat all Knowledge skills as class skills for you.
@@ -129,6 +138,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Eldritch Secret",
+            is_magical: true,
             rank: 1,
             description: r"
          You learn one secret of your choice from the following list.
@@ -152,6 +162,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Unnatural Insight",
+            is_magical: true,
             rank: 2,
             description: r"
          You gain up to two additional \glossterm{insight points}.
@@ -162,6 +173,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Lore of Corrupting Power",
+            is_magical: true,
             rank: 3,
             description: r"
          You gain a \plus4 bonus to \glossterm{power}.
@@ -171,6 +183,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Eldritch Secret",
+            is_magical: true,
             rank: 4,
             description: r"
          Your understanding of your chosen secret improves.
@@ -186,6 +199,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Unnatural Insight",
+            is_magical: true,
             rank: 5,
             description: r"
          The maximum number of insight points you can gain with your \textit{unnatural insight} ability increases to four.
@@ -194,6 +208,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Lore of Corrupting Power",
+            is_magical: true,
             rank: 6,
             description: r"
          The bonus from your \textit{lore of corrupting power} ability increases to \plus8.
@@ -202,6 +217,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Supreme Eldritch Secret",
+            is_magical: true,
             rank: 7,
             description: r"
          Your understanding of your chosen secret improves again.
@@ -222,6 +238,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Cantrips",
+            is_magical: true,
             rank: 0,
             description: r"
         
@@ -239,6 +256,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Armor Tolerance",
+            is_magical: true,
             rank: 0,
             description: r"
          You reduce your \glossterm{encumbrance} by 2 when determining your \glossterm{somatic component failure}.
@@ -247,6 +265,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spellcasting",
+            is_magical: true,
             rank: 1,
             description: r"
         
@@ -264,6 +283,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 2,
             description: r"
          You become a rank 2 pact spellcaster.
@@ -273,6 +293,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Knowledge",
+            is_magical: true,
             rank: 2,
             description: r"
          You learn an additional pact \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
@@ -281,6 +302,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 3,
             description: r"
          You become a rank 3 pact spellcaster.
@@ -290,6 +312,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Armor Tolerance",
+            is_magical: true,
             rank: 3,
             description: r"
          The penalty reduction from your \textit{armor tolerance} ability increases to 3.
@@ -298,6 +321,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 4,
             description: r"
          You become a rank 4 pact spellcaster.
@@ -307,6 +331,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Knowledge",
+            is_magical: true,
             rank: 4,
             description: r"
          You learn an additional pact \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
@@ -315,6 +340,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 5,
             description: r"
          You become a rank 5 pact spellcaster.
@@ -324,6 +350,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 6,
             description: r"
          You become a rank 6 pact spellcaster.
@@ -333,6 +360,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Supreme Armor Tolerance",
+            is_magical: true,
             rank: 6,
             description: r"
          The penalty reduction from your \textit{armor tolerance} ability increases to 4.
@@ -341,6 +369,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 7,
             description: r"
          You become a rank 7 pact spellcaster.
@@ -350,6 +379,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Knowledge",
+            is_magical: true,
             rank: 7,
             description: r"
          You learn an additional pact \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
@@ -362,6 +392,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Combat Caster",
+            is_magical: true,
             rank: 0,
             description: r"
          You reduce your \glossterm{focus penalties} by 2.
@@ -371,6 +402,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Mystic Insight",
+            is_magical: true,
             rank: 1,
             description: r"
         
@@ -398,6 +430,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Desperate Power",
+            is_magical: true,
             rank: 2,
             description: r"
                 Whenever you use the \textit{desperate exertion} ability to affect a \glossterm{magical} attack, you double your magical \glossterm{power} with that attack.
@@ -405,6 +438,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Wellspring of Power",
+            is_magical: true,
             rank: 3,
             description: r"
                 You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
@@ -412,6 +446,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Mystic Insight",
+            is_magical: true,
             rank: 4,
             description: r"
                 You gain an additional \textit{mystic insight} ability.
@@ -419,6 +454,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Attunement Point",
+            is_magical: true,
             rank: 5,
             description: r"
                 You gain an additional \glossterm{attunement point}.
@@ -426,6 +462,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Wellspring of Power",
+            is_magical: true,
             rank: 6,
             description: r"
                 The bonus from your \textit{wellspring of power} ability increases to \plus6.
@@ -433,6 +470,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Mystic Insights",
+            is_magical: true,
             rank: 7,
             description: r"
                 You gain two additional \textit{mystic insight} abilities.
@@ -445,6 +483,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Empowering Whispers",
+            is_magical: true,
             rank: 0,
             description: r"
         
@@ -466,6 +505,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Possession",
+            is_magical: true,
             rank: 1,
             description: r"
          You can use the \textit{possession} ability as a \glossterm{free action} to allow your soulkeeper a greater influence over your actions.
@@ -493,6 +533,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Exchange Soul Fragment",
+            is_magical: true,
             rank: 2,
             description: r"
          Your connection to your soulkeeper deepens, allowing you to send a fragment of your experiences through the link.
@@ -511,6 +552,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Empowering Whispers",
+            is_magical: true,
             rank: 3,
             description: r"
          You gain an additional ability depending on the voices you chose with your \textit{whispers of the lost} ability.
@@ -530,6 +572,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Possession",
+            is_magical: true,
             rank: 4,
             description: r"
                 You are immune to being \dazed, \stunned, \confused, and \disoriented during your \textit{possession} ability.
@@ -537,6 +580,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Exchange Vitality",
+            is_magical: true,
             rank: 5,
             description: r"
          Your connection to your soulkeeper deepens, allowing you to send a fragment of your vitality through the link.
@@ -555,6 +599,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Supreme Empowering Whispers",
+            is_magical: true,
             rank: 6,
             description: r"
          You gain an additional ability depending on the voices you chose with your \textit{whispers of the lost} ability.
@@ -574,6 +619,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Supreme Possession",
+            is_magical: true,
             rank: 7,
             description: r"
                 You double the range of spells you cast during your \textit{possession} ability.

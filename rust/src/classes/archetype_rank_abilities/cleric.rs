@@ -4,6 +4,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Cantrips",
+            is_magical: true,
             rank: 0,
             description: r"
                 Your deity grants you the ability to use divine magic.
@@ -18,6 +19,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spellcasting",
+            is_magical: true,
             rank: 1,
             description: r"
                 You become a rank 1 divine spellcaster.
@@ -33,6 +35,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 2,
             description: r"
                 You become a rank 2 divine spellcaster.
@@ -41,6 +44,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Knowledge",
+            is_magical: true,
             rank: 2,
             description: r"
                 You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
@@ -48,6 +52,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 3,
             description: r"
                 You become a rank 3 divine spellcaster.
@@ -56,6 +61,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 4,
             description: r"
                 You become a rank 4 divine spellcaster.
@@ -64,6 +70,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Knowledge",
+            is_magical: true,
             rank: 4,
             description: r"
                 You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
@@ -71,6 +78,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 5,
             description: r"
                 You become a rank 5 divine spellcaster.
@@ -79,6 +87,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 6,
             description: r"
                 You become a rank 6 divine spellcaster.
@@ -87,6 +96,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 7,
             description: r"
                 You become a rank 7 divine spellcaster.
@@ -95,6 +105,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Knowledge",
+            is_magical: true,
             rank: 7,
             description: r"
                 You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
@@ -107,6 +118,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Mystic Sphere",
+            is_magical: true,
             rank: 0,
             description: r"
          You gain access to an additional divine \glossterm{mystic sphere}, including all \glossterm{cantrips} from that sphere.
@@ -115,6 +127,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Mystic Insight",
+            is_magical: true,
             rank: 1,
             description: r"
                 You gain your choice of one of the following abilities.
@@ -139,6 +152,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Turn Undead",
+            is_magical: true,
             rank: 2,
             description: r"
                 As a standard action, you can use the \ability{turn undead} ability.
@@ -156,6 +170,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Wellspring of Power",
+            is_magical: true,
             rank: 3,
             description: r"
                 You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
@@ -163,6 +178,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Mystic Insight",
+            is_magical: true,
             rank: 4,
             description: r"
                 You gain an additional \textit{mystic insight} ability.
@@ -170,6 +186,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Attunement Point",
+            is_magical: true,
             rank: 5,
             description: r"
                 You gain an additional \glossterm{attunement point}.
@@ -177,6 +194,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Wellspring of Power",
+            is_magical: true,
             rank: 6,
             description: r"
                 The bonus from your \textit{wellspring of power} ability increases to \plus6.
@@ -184,6 +202,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Mystic Insights",
+            is_magical: true,
             rank: 7,
             description: r"
                 You gain two additional \textit{mystic insight} abilities.
@@ -196,6 +215,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Domains",
+            is_magical: true,
             rank: 0,
             description: r"
                 You choose two domains which represent your personal spiritual inclinations.
@@ -227,6 +247,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Domain Gift",
+            is_magical: true,
             rank: 0,
             description: r"
                 Each domain has a corresponding \textit{domain gift}.
@@ -236,6 +257,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Domain Gift",
+            is_magical: true,
             rank: 1,
             description: r"
                 You gain the \textit{domain gift} for another one of your domains.
@@ -243,6 +265,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Domain Aspect",
+            is_magical: true,
             rank: 2,
             description: r"
                 Each domain has a corresponding \textit{domain aspect}.
@@ -252,6 +275,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Domain Aspect",
+            is_magical: true,
             rank: 3,
             description: r"
                 You gain the \textit{domain aspect} for another one of your domains.
@@ -259,6 +283,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Domain Essences",
+            is_magical: true,
             rank: 4,
             description: r"
                 Each domain has a corresponding \textit{domain essence}.
@@ -267,6 +292,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Miracle",
+            is_magical: true,
             rank: 5,
             description: r"
                 Once per week, you can request a miracle as a standard action.
@@ -279,6 +305,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Domain Masteries",
+            is_magical: true,
             rank: 6,
             description: r"
                 Each domain has a corresponding \textit{domain mastery}.
@@ -287,6 +314,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Miracle",
+            is_magical: true,
             rank: 7,
             description: r"
                 You can use your \textit<miracle> ability once per \glossterm{long rest} instead of once per week.
@@ -299,6 +327,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Desperate Healing",
+            is_magical: false,
             rank: 0,
             description: r"
         When you use the \textit{desperate exertion} ability to affect a Medicine check, you gain a \plus3 bonus to the check.
@@ -309,6 +338,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Restoration",
+            is_magical: true,
             rank: 1,
             description: r"
          You can use the \textit{restoration} ability as a standard action.
@@ -334,6 +364,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Healer's Grace",
+            is_magical: true,
             rank: 2,
             description: r"
          You gain a \plus1 bonus to all defenses.
@@ -343,6 +374,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Divine Healing",
+            is_magical: true,
             rank: 3,
             description: r"
          You can use the \textit{divine healing} ability as a standard action.
@@ -364,6 +396,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Called to the Needy",
+            is_magical: true,
             rank: 4,
             description: r"
                 At the end of each phase, if a living \glossterm{ally} within \distrange of you gained a \glossterm{vital wound} during that phase, you can \glossterm{teleport} into the unoccupied square closest to that creature.
@@ -371,6 +404,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Healer's Grace",
+            is_magical: true,
             rank: 5,
             description: r"
                 The bonus from your \textit{healer's grace} ability increases to \plus2.
@@ -378,6 +412,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Revivify",
+            is_magical: true,
             rank: 6,
             description: r"
          You can use the \textit{revivify} ability as a standard action.
@@ -394,6 +429,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Called to the Needy",
+            is_magical: true,
             rank: 7,
             description: r"
                 You can use your \textit{called to the needy} ability to teleport to allies that lost \glossterm{hit points} in addition to allies that gained vital wounds.
@@ -407,6 +443,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Practiced Persuasion",
+            is_magical: false,
             rank: 0,
             description: r"
          You gain a \plus2 bonus to the Persuasion skill.
@@ -416,6 +453,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Denounce the Heathens",
+            is_magical: false,
             rank: 1,
             description: r"
          You can use the \textit{denounce the heathens} ability as a standard action.
@@ -435,6 +473,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Inspiring Oration",
+            is_magical: false,
             rank: 2,
             description: r"
          Your \glossterm{allies} who can hear you in a fight gain a \plus2 bonus to Mental defense.
@@ -444,6 +483,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Bless the Worthy",
+            is_magical: false,
             rank: 3,
             description: r"
          You can use the \textit{bless the worthy} ability as a standard action.
@@ -462,6 +502,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Practiced Persuasion",
+            is_magical: false,
             rank: 4,
             description: r"
          The bonus from your \textit{practiced persuasion} ability increases to \plus4.
@@ -471,6 +512,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Condemn the Fearful",
+            is_magical: false,
             rank: 5,
             description: r"
          You can use the \textit{condemn the fearful} ability as a standard action.
@@ -488,6 +530,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Inspiring Oration",
+            is_magical: false,
             rank: 6,
             description: r"
                 The bonus from your \textit{inspiring oration} ability increases to \plus4.
@@ -495,6 +538,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Convert the Irresolute",
+            is_magical: false,
             rank: 7,
             description: r"
                 You can use the \textit{convert the irresolute} ability as a standard action.

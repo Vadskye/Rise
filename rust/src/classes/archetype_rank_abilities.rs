@@ -15,6 +15,7 @@ mod wizard;
 
 pub struct RankAbility<'a> {
     pub description: &'a str,
+    pub is_magical: bool,
     pub rank: i32,
     pub name: &'a str,
 }
