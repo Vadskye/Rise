@@ -95,7 +95,12 @@ impl Attack {
             accuracy = latex_formatting::modifier(self.accuracy + creature.calc_accuracy()),
             hit = self
                 .hit
-                .description(creature, self.is_magical, self.weapon.is_some())
+                .description(
+                    creature,
+                    self.is_magical,
+                    self.weapon.is_some(),
+                    self.targeting.subjects()
+                )
                 .trim()
                 .to_string(),
         );
@@ -141,38 +146,52 @@ impl Attack {
             "
                 The $name makes a {accuracy} {targeting}.
                 {cooldown}
-                \\hit {subjects} {hit}
+                \\hit {hit}
                 {glance}
                 {critical}
             ",
             accuracy = latex_formatting::modifier(self.accuracy + creature.calc_accuracy()),
             cooldown = if let Some(ref c) = self.cooldown {
                 c.description(false)
-            } else { "".to_string() },
+            } else {
+                "".to_string()
+            },
             hit = self
                 .hit
-                .description(creature, self.is_magical, self.weapon.is_some())
+                .description(
+                    creature,
+                    self.is_magical,
+                    self.weapon.is_some(),
+                    self.targeting.subjects()
+                )
                 .trim()
                 .to_string(),
             glance = if let Some(ref g) = self.glance {
                 format!(
-                    "\\glance {} {}",
-                    self.targeting.subjects(),
-                    g.description(creature, self.is_magical, self.weapon.is_some())
+                    "\\glance {}",
+                    g.description(
+                        creature,
+                        self.is_magical,
+                        self.weapon.is_some(),
+                        self.targeting.subjects()
+                    )
                 )
             } else {
                 "".to_string()
             },
             critical = if let Some(ref g) = self.crit {
                 format!(
-                    "\\crit {} {}",
-                    self.targeting.subjects(),
-                    g.description(creature, self.is_magical, self.weapon.is_some())
+                    "\\crit {}",
+                    g.description(
+                        creature,
+                        self.is_magical,
+                        self.weapon.is_some(),
+                        self.targeting.subjects()
+                    )
                 )
             } else {
                 "".to_string()
             },
-            subjects = self.targeting.subjects(),
             targeting = self.targeting.description(&self.defense),
         );
     }
