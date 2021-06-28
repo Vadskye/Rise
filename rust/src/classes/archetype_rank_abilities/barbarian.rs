@@ -124,10 +124,10 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            name: "Greater Rage",
+            name: "Instinctive Rage",
             rank: 4,
             description: r"
-                You gain a \plus1 bonus to \glossterm{accuracy} during your \textit{rage} ability.
+                You cannot be \glossterm{unaware} or \glossterm{partially unaware} during your \textit{rage} ability.
             ",
         },
         RankAbility {
@@ -145,11 +145,17 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            name: "Supreme Rage",
+            name: "Titanic Rage",
             rank: 7,
             description: r"
                 When you use your \textit{rage} ability, you can grow by one \glossterm{size category}.
-                In addition, the \glossterm{accuracy} bonus from your \textit{greater rage} ability increases to \plus2.
+            ",
+        },
+        RankAbility {
+            name: "Greater Enraged Strike",
+            rank: 7,
+            description: r"
+                You can use your \textit{enraged strike} ability against any creature that attacked you since you last took a \glossterm{short rest}, regardless of whether they dealt damage to you during the previous round.
             ",
         },
     ];
@@ -229,9 +235,15 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             name: "Supreme Fast Movement",
             rank: 7,
             description: r"
-         The speed bonus from your \textit{fast movement} ability increases to \plus15 feet.
-
-                ",
+                The speed bonus from your \textit{fast movement} ability increases to \plus15 feet.
+            ",
+        },
+        RankAbility {
+            name: "Supreme Savage Rush",
+            rank: 7,
+            description: r"
+                You can use your \textit{savage rush} ability to move through enemies even without using the \ability{sprint} ability.
+            ",
         },
     ];
 }
