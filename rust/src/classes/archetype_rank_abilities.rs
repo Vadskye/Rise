@@ -22,18 +22,20 @@ pub struct RankAbility<'a> {
 
 // LaTeX
 impl RankAbility<'_> {
-    pub fn latex_class_feature(
-        &self,
-        class_shorthand: &str,
-    ) -> String {
+    pub fn latex_class_feature(&self, class_shorthand: &str, include_magical_tag: bool) -> String {
         return format!(
             "
-                \\cf<{class_shorthand}>[{rank}]<{ability_name}>
+                \\cf<{class_shorthand}>[{rank}]<{ability_name}>{magical}
                 {ability_description}
             ",
             ability_description = self.description,
             ability_name = titlecase(self.name),
             class_shorthand = class_shorthand,
+            magical = if self.is_magical && include_magical_tag {
+                "[\\abilitytag{Magical}]"
+            } else {
+                ""
+            },
             rank = self.rank,
         );
     }
