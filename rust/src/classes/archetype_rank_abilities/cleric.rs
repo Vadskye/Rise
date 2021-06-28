@@ -341,36 +341,34 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-         You can use the \textit{restoration} ability as a standard action.
-        \begin{instantability}{Restoration}[Instant]
-            \abilitytag{Healing}, \glossterm{Magical}
-            \rankline
-            Choose yourself or one living \glossterm{ally} within your \glossterm{reach}.
-            % +1d in exchange for not applying power to self
-            The subject regains 2d6 \glossterm{hit points}.
-            If the subject is a creature other than yourself, they also regain hit points equal to your \glossterm{power}.
-            After you use this ability, you \\glossterm{briefly} cannot use it or any other \abilitytag{Healing} ability.
+                You can use the \textit{restoration} ability as a standard action.
+                \begin{instantability}{Restoration}[Instant]
+                    \abilitytag{Healing}, \glossterm{Magical}
+                    \rankline
+                    Choose yourself or one living \glossterm{ally} within your \glossterm{reach}.
+                    % +1d in exchange for not applying power to self
+                    The subject regains 2d6 \glossterm{hit points}.
+                    If the subject is a creature other than yourself, they also regain hit points equal to your \glossterm{power}.
+                    After you use this ability, you \\glossterm{briefly} cannot use it or any other \abilitytag{Healing} ability.
 
-            \rankline
-            \rank{2} The healing increases to 2d8.
-            \rank{3} The healing increases to 4d6.
-            \rank{4} The healing increases to 4d8.
-            \rank{5} The healing increases to 5d10.
-            \rank{6} The healing increases to 6d10.
-            \rank{7} The healing increases to 8d10.
-        \end{instantability}
-
-                ",
+                    \rankline
+                    \rank{2} The healing increases to 2d8.
+                    \rank{3} The healing increases to 4d6.
+                    \rank{4} The healing increases to 4d8.
+                    \rank{5} The healing increases to 5d10.
+                    \rank{6} The healing increases to 6d10.
+                    \rank{7} The healing increases to 8d10.
+                \end{instantability}
+            ",
         },
         RankAbility {
             name: "Healer's Grace",
             is_magical: true,
             rank: 2,
             description: r"
-         You gain a \plus1 bonus to all defenses.
-        Whenever you attack or deal damage to a living creature, you \glossterm{briefly} lose this bonus.
-
-                ",
+                You gain a \plus1 bonus to all defenses.
+                Whenever you attack or deal damage to a living creature, you \glossterm{briefly} lose this bonus.
+            ",
         },
         RankAbility {
             name: "Divine Healing",
@@ -415,17 +413,16 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-         You can use the \textit{revivify} ability as a standard action.
-        \begin{instantability}{Revivify}[Instant]
-            \rankline
-            When you use this ability, you increase your \glossterm{fatigue level} by three (see \pcref{Fatigue}).
+                You can use the \textit{revivify} ability as a standard action.
+                \begin{instantability}{Revivify}[Instant]
+                    \rankline
+                    When you use this ability, you increase your \glossterm{fatigue level} by three (see \pcref{Fatigue}).
 
-            Choose one intact corpse within your \glossterm{reach}.
-            If it belongs to a creature that has been dead for no more than 1 minute, that creature is restored to life, as the \ritual{resurrection} ritual.
-            After using this ability, you cannot use it again until you take a \glossterm{long rest}.
-        \end{instantability}
-
-                ",
+                    Choose one intact corpse within your \glossterm{reach}.
+                    If it belongs to a creature that has been dead for no more than 1 minute, that creature is restored to life, as the \ritual{resurrection} ritual.
+                    After using this ability, you cannot use it again until you take a \glossterm{long rest}.
+                \end{instantability}
+            ",
         },
         RankAbility {
             name: "Greater Called to the Needy",
