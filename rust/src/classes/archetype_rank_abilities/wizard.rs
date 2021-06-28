@@ -94,8 +94,8 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             name: "Greater Experienced Quaffing",
             rank: 7,
             description: r"
-         You can drink a single dose of a potion, elixir, or other drinkable alchemical item as a \glossterm{minor action}.
-                ",
+                You can drink a single dose of a potion, elixir, or other drinkable alchemical item as a \glossterm{minor action}.
+            ",
         },
     ];
 }
@@ -241,17 +241,16 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             name: "Spell Rank",
             rank: 7,
             description: r"
-         You become a rank 7 arcane spellcaster.
-        This gives you access to spells that require a minimum rank of 7 and can improve the effectiveness of your existing spells.
-
-                ",
+                You become a rank 7 arcane spellcaster.
+                This gives you access to spells that require a minimum rank of 7 and can improve the effectiveness of your existing spells.
+            ",
         },
         RankAbility {
             name: "Spell Knowledge",
             rank: 7,
             description: r"
-         You learn an additional arcane \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
-                ",
+                You learn an additional arcane \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
+            ",
         },
     ];
 }

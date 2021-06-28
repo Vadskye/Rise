@@ -103,9 +103,9 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             name: "Supreme Animal Companion",
             rank: 7,
             description: r"
-         Your \textit{animal companion} gains an additional \glossterm{attunement point}.
-        In addition, the bonuses from your \textit{greater animal companion} ability increase to \plus2.
-                ",
+                Your \textit{animal companion} gains an additional \glossterm{attunement point}.
+                In addition, the bonuses from your \textit{greater animal companion} ability increase to \plus2.
+            ",
         },
     ];
 }
@@ -177,9 +177,9 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             name: "Supreme Know Your Enemy",
             rank: 7,
             description: r"
-         The bonus from your \textit{know your enemy} ability increases to \plus3.
-        In addition, you can choose three creature types with that ability instead of two.
-                ",
+                The bonus from your \textit{know your enemy} ability increases to \plus3.
+                In addition, you can choose three creature types with that ability instead of two.
+            ",
         },
     ];
 }
@@ -358,8 +358,8 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             name: "Supreme Quarry",
             rank: 7,
             description: r"
-         The accuracy bonus from your \textit{quarry} ability increases to \plus2.
-                ",
+                The accuracy bonus from your \textit{quarry} ability increases to \plus2.
+            ",
         },
     ];
 }
@@ -439,9 +439,9 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             name: "Supreme Skirmisher",
             rank: 7,
             description: r"
-         The speed bonus from your \textit{skirmisher} ability increases to \plus15 feet.
-        In addition, the penalty reduction from that ability increases to 2.
-                ",
+                The speed bonus from your \textit{skirmisher} ability increases to \plus15 feet.
+                In addition, the penalty reduction from that ability increases to 2.
+            ",
         },
     ];
 }

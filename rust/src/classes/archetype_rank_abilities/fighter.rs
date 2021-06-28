@@ -55,39 +55,33 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             name: "Disciplined Reaction",
             rank: 4,
             description: r"
-        
-        You do not suffer any effects from \glossterm{conditions} or \glossterm{vital wounds} until the next round after they are applied.
-        While a vital wound is delayed in this way, you do not consider it when calculating your penalties to future \glossterm{vital rolls}, and you do not suffer any effects from its specific vital wound effect.
-        You suffer their normal effects in the following round.
-
-                ",
+                You do not suffer any effects from \glossterm{conditions} or \glossterm{vital wounds} until the next round after they are applied.
+                While a vital wound is delayed in this way, you do not suffer any effects from its specific vital wound effect, but you still consider it when calculating your penalties to future \glossterm{vital rolls}.
+                You suffer their normal effects in the following round.
+            ",
         },
         RankAbility {
             name: "Supreme Enduring Discipline",
             rank: 5,
             description: r"
-        
-        The bonus from your \textit{enduring discipline} ability increases to \plus4.
-        In addition, the bonus to vital rolls from your \textit{greater enduring discipline} ability increases to \plus2.
-
-                ",
+                The bonus from your \textit{enduring discipline} ability increases to \plus4.
+                In addition, the bonus to vital rolls from your \textit{greater enduring discipline} ability increases to \plus2.
+            ",
         },
         RankAbility {
             name: "Greater Disciplined Force",
             rank: 6,
             description: r"
-         The bonus from your \textit{disciplined force} ability increases to \plus2d.
-
-                ",
+                The bonus from your \textit{disciplined force} ability increases to \plus2d.
+            ",
         },
         RankAbility {
             name: "Greater Disciplined Reaction",
             rank: 7,
             description: r"
-        
-        The delay from your \textit{disciplined} reaction ability increases by an additional round.
-        You suffer their normal effects after that time.
-                ",
+                The delay from your \textit{disciplined reaction} ability increases by an additional round.
+                You suffer their normal effects after that time.
+            ",
         },
     ];
 }
@@ -98,9 +92,8 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             name: "Armor Expertise",
             rank: 0,
             description: r"
-         You reduce the \glossterm{encumbrance} of body armor you wear by 1.
-
-                ",
+                You reduce the \glossterm{encumbrance} of body armor you wear by 1.
+            ",
         },
         RankAbility {
             name: "Weapon Training",
@@ -171,8 +164,8 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             name: "Greater Weapon Expertise",
             rank: 7,
             description: r"
-         The bonus from your \textit{weapon expertise} ability increases to \plus3d.
-                ",
+                The bonus from your \textit{weapon expertise} ability increases to \plus3d.
+            ",
         },
     ];
 }
@@ -399,17 +392,15 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             name: "Greater Sentinel's Force",
             rank: 7,
             description: r"
-         The bonus from your \textit{sentinel's force} ability increases to \plus2d.
-
-                ",
+                The bonus from your \textit{sentinel's force} ability increases to \plus2d.
+            ",
         },
         RankAbility {
-            name: "Greater Sentinel's Goad's Goad",
+            name: "Greater Sentinel's Goad",
             rank: 7,
             description: r"
-         Any creature that is \goaded by you suffers a \minus4 accuracy penalty instead of the normal \minus2.
-
-                ",
+                Any creature that is \goaded by you suffers a \minus4 accuracy penalty instead of the normal \minus2.
+            ",
         },
     ];
 }
@@ -573,10 +564,9 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             name: "Greater Reactive Tactics",
             rank: 7,
             description: r"
-         The bonus from your \textit{reactive tactics} ability increases to \plus10.
-        In addition, all of your \textit{battle tactics} abilities gain the \abilitytag{Swift} tag, so their bonuses and penalties take effect in the phase that you active them.
-
-                ",
+                The bonus from your \textit{reactive tactics} ability increases to \plus10.
+                In addition, all of your \textit{battle tactics} abilities gain the \abilitytag{Swift} tag, so their bonuses and penalties take effect in the phase that you active them.
+            ",
         },
     ];
 }
