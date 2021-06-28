@@ -96,8 +96,10 @@ def vital_wound():
 
 def circumstances():
     return ''.join([
+        debuff("crouching"),
         debuff("flying"),
         debuff("flying poorly"),
+        debuff("focusing"),
         debuff("grappled"),
         debuff("helpless"),
         debuff("prone"),
@@ -128,8 +130,7 @@ def debuffs():
                 debuff("sickened"),
                 debuff("slowed"),
                 debuff("stunned"),
-                ]
-            ),
+            ]),
         ],
     )
 
