@@ -772,11 +772,15 @@ def standard_damage_at_power(power):
 
 def debuffs():
     return js_wrapper(
-        [],
+        [
+            "focus_penalty",
+        ],
         boolean_variables=[
             # conditional debuffs
+            "crouching",
             "flying",
             "flying_poorly",
+            "focusing",
             "grappled",
             "helpless",
             "prone",
@@ -803,8 +807,6 @@ def debuffs():
             # rank 4 debuffs
             "asleep",
             "paralyzed",
-            # other calculations
-            "dexterity_starting",
         ],
         function_body=f"""
             let accuracy = 0;
@@ -817,6 +819,13 @@ def debuffs():
             if (grappled) {{
                 armor -= 2;
                 reflex -= 2;
+            }}
+            if (crouching) {{
+                accuracy -= 2;
+            }}
+            if (focusing) {{
+                armor -= Math.max(focus_penalty, 0);
+                reflex -= Math.max(focus_penalty, 0);
             }}
             if (squeezing) {{
                 accuracy -= 2;
@@ -897,8 +906,8 @@ def debuffs():
                 mental -= 4;
             }}
             if (asleep || helpless || paralyzed) {{
-                armor -= (10 + dexterity_starting);
-                reflex -= (10 + dexterity_starting);
+                armor -= 10;
+                reflex -= 10;
             }}
 
             setAttrs({{
