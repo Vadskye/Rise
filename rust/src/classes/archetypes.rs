@@ -218,8 +218,12 @@ impl ClassArchetype {
         return archetype_rank_abilities::archetype_rank_abilities(self);
     }
 
-    pub fn short_description(&self) -> &str {
-        match self {
+    pub fn is_magical(&self) -> bool {
+        return self.rank_abilities().iter().all(|a| a.is_magical);
+    }
+
+    pub fn short_description(&self) -> String {
+        let description = match self {
             // Barbarian
             Self::BattleforgedResilience => "This archetype improves your durability in combat.",
             Self::Battlerager => "This archetype grants you a devastating rage, improving your combat prowess.",
@@ -229,39 +233,32 @@ impl ClassArchetype {
             // Cleric
             Self::ClericDivineMagic => "
                 This archetype grants you the ability to cast divine spells.
-                All abilities from this archetype are \\glossterm{magical}.
             ",
             Self::DivineSpellMastery => "
                 This archetype improves the divine spells you cast.
                 You must have the Divine Magic archetype from the cleric class to gain the abilities from this archetype.
-                All abilities from this archetype are \\glossterm{magical}.
             ",
             Self::DomainInfluence => "
                 This archetype grants you divine influence over two domains of your choice.
-                All abilities from this archetype are \\glossterm{magical}.
             ",
             Self::Healer => "This archetype grants you healing abilities.",
             Self::Preacher => "This archetype grants you the ability to inspire your allies and denounce or even convert your foes.",
             // Druid
             Self::Elementalist => r"
                 This archetype grants you influence over four elements that define the natural world: air, earth, fire, and water.
-                All abilities from this archetype are \glossterm{magical}.
             ",
             Self::NatureMagic => r"
                 This archetype grants you the ability to cast nature spells.
-                All abilities from this archetype are \glossterm{magical}.
             ",
             Self::NatureSpellMastery => r"
                 This archetype improves the nature spells you cast.
                 You must have the Nature Magic archetype from the cleric class to gain the abilities from this archetype.
-                All abilities from this archetype are \glossterm{magical}.
             ",
             Self::Shifter => r"
                 This archetype grants you the ability to embody aspects of the natural world in your own form.
             ",
             Self::Wildspeaker => r"
                 This archetypes deepens your connection to animals and plants, and allows you to call animals to aid you in combat.
-                All abilities from this archetype are \glossterm{magical}.
             ",
             // Fighter
             Self::CombatDiscipline => r"
@@ -289,7 +286,6 @@ impl ClassArchetype {
             Self::Ki => r"
                 This archtype grants you unusual abilities based on tapping into your inner ki.
                 If you have any \glossterm{encumbrance}, you lose the benefit of all abilities from this archetype.
-                All abilities from this archetype are \glossterm{magical}.
             ",
             Self::PerfectedForm => r"
                 This archetype improves the perfection of your physical body, including your unarmed attacks, through rigorous training.
@@ -303,7 +299,6 @@ impl ClassArchetype {
             ",
             Self::PaladinDivineMagic => r"
                 This archetype grants you the ability to cast divine spells.
-                All abilities from this archetype are \glossterm{magical}.
             ",
             Self::DivineSpellExpertise => r"
                 This archetype improves the divine spells you cast.
@@ -350,12 +345,10 @@ impl ClassArchetype {
             // Sorcerer
             Self::SorcererArcaneMagic => r"
                 This archetype grants you the ability to cast arcane spells.
-                All abilities from this archetype are \glossterm{magical}.
             ",
             Self::SorcererArcaneSpellMastery => r"
                 This archetype improves the arcane spells you cast.
                 You must have the Arcane Magic archetype from the sorcerer class to gain the abilities from this archetype.
-                All abilities from this archetype are \glossterm{magical}.
             ",
             Self::DraconicMagic => r"
                 Not all sorcerers know the reason for their innate connection to magic.
@@ -375,23 +368,19 @@ impl ClassArchetype {
             Self::BlessingsOfTheAbyss => r"
                 You can only choose this archetype if your soulkeeper is a demon or devil.
                 This archetype enhances your connection to the Abyss and allows you to channel its sinister power more directly.
-                All abilities from this archetype are \glossterm{magical}.
             ",
             Self::KeeperOfForbiddenKnowledge => r"
                 This archetype grants you access to dangerous secrets revealed to you by your soulkeeper.
             ",
             Self::PactMagic => r"
                 This archetype grants you the ability to cast pact spells.
-                All abilities from this archetype are \glossterm{magical}.
             ",
             Self::PactSpellMastery => r"
                 This archetype improves your ability to cast spells with the power of your dark pact.
                 You must have the Pact Magic archetype to gain the abilities from this archetype.
-                All abilities from this archetype are \glossterm{magical}.
             ",
             Self::SoulkeepersChosen => r"
                 This archetype enhances your connection to your soulkeeper, granting you abilities relating to your pact.
-                All abilities from this archetype are \glossterm{magical}.
             ",
             // Wizard
             Self::Alchemist => r"
@@ -399,7 +388,6 @@ impl ClassArchetype {
             ",
             Self::WizardArcaneMagic => r"
                 This archetype grants you the ability to cast arcane spells.
-                All abilities from this archetype are \glossterm{magical}.
             ",
             Self::ArcaneScholar => r"
                 This archetype deepens your study of arcane magic.
@@ -408,19 +396,28 @@ impl ClassArchetype {
             Self::WizardArcaneSpellMastery => r"
                 This archetype improves the arcane spells you cast.
                 You must have the Arcane Magic archetype from the wizard class to gain the abilities from this archetype.
-                All abilities from this archetype are \glossterm{magical}.
             ",
             Self::SchoolSpecialist => r"
                 This archetype improves your ability to cast spells from a particular school of magic while sacrificing some versatility.
                 You have the Arcane Magic archetype from the wizard class to gain the abilities from this archetype.
             ",
-        }
+        };
+        return format!(
+            "{} {}",
+            description,
+            if self.is_magical() {
+                "All abilities from this archetype are \\glossterm{magical}."
+            } else {
+                ""
+            }
+        );
     }
 }
 
 // LaTeX generation
 impl ClassArchetype {
     pub fn latex_description(&self, class_shorthand: &str) -> String {
+        let all_magical = self.is_magical();
         return format!(
             "
                 \\newpage
@@ -433,7 +430,10 @@ impl ClassArchetype {
             rank_abilities = self
                 .rank_abilities()
                 .iter()
-                .map(|a| a.latex_class_feature(class_shorthand).trim().to_string())
+                .map(|a| a
+                    .latex_class_feature(class_shorthand, !all_magical)
+                    .trim()
+                    .to_string())
                 .collect::<Vec<String>>()
                 .join("\n\n"),
             short_description = self.short_description(),
