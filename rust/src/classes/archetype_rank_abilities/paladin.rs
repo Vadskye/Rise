@@ -4,6 +4,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Devoted Endurance",
+            is_magical: false,
             rank: 0,
             description: r"
          You gain a \plus2 bonus to your \glossterm{fatigue tolerance}.
@@ -13,6 +14,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Aligned Aura",
+            is_magical: true,
             rank: 1,
             description: r"
         [Magical]
@@ -36,6 +38,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Aligned Immunity",
+            is_magical: true,
             rank: 2,
             description: r"
         [Magical]
@@ -50,6 +53,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Paragon Power",
+            is_magical: false,
             rank: 3,
             description: r"
         
@@ -59,6 +63,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Aligned Aura",
+            is_magical: true,
             rank: 4,
             description: r"
         [Magical]
@@ -76,6 +81,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Aligned Immunity",
+            is_magical: true,
             rank: 5,
             description: r"
         [Magical]
@@ -85,6 +91,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Paragon Power",
+            is_magical: false,
             rank: 6,
             description: r"
          The bonus from your \textit{paragon power} ability increases to \plus6.
@@ -93,6 +100,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Supreme Aligned Aura",
+            is_magical: true,
             rank: 7,
             description: r"
                 The effect of your \textit{aligned aura} reaches its full power, as described below.
@@ -109,6 +117,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Cantrips",
+            is_magical: true,
             rank: 0,
             description: r"
                 Your devotion to your alignment grants you the ability to use divine magic.
@@ -123,6 +132,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spellcasting",
+            is_magical: true,
             rank: 1,
             description: r"
                 You become a rank 1 divine spellcaster.
@@ -138,6 +148,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 2,
             description: r"
                 You become a rank 2 divine spellcaster.
@@ -146,6 +157,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Knowledge",
+            is_magical: true,
             rank: 2,
             description: r"
                 You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
@@ -153,6 +165,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 3,
             description: r"
                 You become a rank 3 divine spellcaster.
@@ -161,6 +174,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 4,
             description: r"
                 You become a rank 4 divine spellcaster.
@@ -169,6 +183,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Knowledge",
+            is_magical: true,
             rank: 4,
             description: r"
                 You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
@@ -176,6 +191,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 5,
             description: r"
                 You become a rank 5 divine spellcaster.
@@ -184,6 +200,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 6,
             description: r"
                 You become a rank 6 divine spellcaster.
@@ -192,6 +209,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 7,
             description: r"
                 You become a rank 7 divine spellcaster.
@@ -200,6 +218,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Knowledge",
+            is_magical: true,
             rank: 7,
             description: r"
                 You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
@@ -212,6 +231,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Combat Caster",
+            is_magical: true,
             rank: 0,
             description: r"
          You reduce your \glossterm{focus penalty} by 2.
@@ -221,6 +241,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Insight Point",
+            is_magical: false,
             rank: 1,
             description: r"
          You gain an additional \glossterm{insight point}.
@@ -229,6 +250,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Combat Caster",
+            is_magical: true,
             rank: 2,
             description: r"
          The penalty reduction from your \textit{combat caster} ability increases to 4.
@@ -237,6 +259,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Wellspring of Power",
+            is_magical: true,
             rank: 3,
             description: r"
         [Magical]
@@ -246,6 +269,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Insight Point",
+            is_magical: false,
             rank: 4,
             description: r"
         You gain an additional \glossterm{insight point}.
@@ -254,6 +278,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Attunement Point",
+            is_magical: true,
             rank: 5,
             description: r"
                 You gain an additional \glossterm{attunement point}.
@@ -261,6 +286,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Wellspring of Power",
+            is_magical: true,
             rank: 6,
             description: r"
                 The bonus from your \textit{wellspring of power} ability increases to \plus6.
@@ -268,6 +294,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Attunement Point",
+            is_magical: true,
             rank: 7,
             description: r"
                 You gain an additional \glossterm{attunement point}.
@@ -280,6 +307,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Stalwart Defense",
+            is_magical: false,
             rank: 0,
             description: r"
          You gain a \plus1 bonus to Fortitude defense and Mental defense.
@@ -289,6 +317,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Lay on Hands",
+            is_magical: true,
             rank: 1,
             description: r"
         [Magical] You can use the \textit{lay on hands} ability as a standard action.
@@ -312,6 +341,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Stalwart Resilience",
+            is_magical: false,
             rank: 2,
             description: r"
          You gain a bonus equal to twice your rank in this archetype to your \glossterm{damage resistance}.
@@ -320,6 +350,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Stalwart Defense",
+            is_magical: false,
             rank: 3,
             description: r"
          The bonus from your \textit{stalwart defense} ability increases to \plus2.
@@ -328,9 +359,10 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Lay on Hands",
+            is_magical: true,
             rank: 4,
             description: r"
-        [Magical] When you use your \textit{lay on hands} ability, you can choose to remove a \glossterm{brief} effect or \glossterm{condition} of the target's choice from it instead of restoring its hit points.
+        When you use your \textit{lay on hands} ability, you can choose to remove a \glossterm{brief} effect or \glossterm{condition} of the target's choice from it instead of restoring its hit points.
         Alternately, you can choose to remove a \glossterm{vital wound} of the target's choice from it.
         If a vital wound is removed in this way, you increase your \glossterm{fatigue level} by two.
 
@@ -338,6 +370,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Stalwart Resilience",
+            is_magical: false,
             rank: 5,
             description: r"
          The resistance bonus from your \textit{stalwart resilience} ability increases to three times your rank in this archetype.
@@ -346,6 +379,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Supreme Stalwart Defense",
+            is_magical: false,
             rank: 6,
             description: r"
          The bonus from your \textit{stalwart defense} ability increases to \plus3.
@@ -354,6 +388,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Supreme Lay on Hands",
+            is_magical: true,
             rank: 7,
             description: r"
                 When you use your \textit{lay on hands} ability on a creature other than yourself, it also affects you.
@@ -366,6 +401,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Zealous Exertion",
+            is_magical: false,
             rank: 0,
             description: r"
          You gain a \plus2 bonus to any roll that you use the \textit{desperate exertion} ability on.
@@ -376,6 +412,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Smite",
+            is_magical: true,
             rank: 1,
             description: r"
         [Magical] You can use the \textit{smite} ability as a standard action.
@@ -396,6 +433,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Zealous Offense",
+            is_magical: false,
             rank: 2,
             description: r"
          You gain a \plus1 bonus to \glossterm{accuracy}.
@@ -404,6 +442,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Glancing Strikes",
+            is_magical: false,
             rank: 3,
             description: r"
          Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
@@ -413,6 +452,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Forceful Zeal",
+            is_magical: false,
             rank: 4,
             description: r"
          You gain a \plus1d bonus to your damage with all weapons.
@@ -421,6 +461,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Zealous Purge",
+            is_magical: true,
             rank: 4,
             description: r"
          You can use your \textit{zealous purge} ability as a standard action.
@@ -443,6 +484,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Zealous Offense",
+            is_magical: false,
             rank: 5,
             description: r"
          The bonus from your \textit{zealous offense} ability increases to \plus2.
@@ -451,6 +493,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Zealous Exertion",
+            is_magical: false,
             rank: 6,
             description: r"
          The bonus from your \textit{zealous exertion} ability increases to \plus5.
@@ -459,6 +502,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Zealous Fixation",
+            is_magical: true,
             rank: 6,
             description: r"
          Whenever you hit a creature with a \glossterm{strike}, you ignore \glossterm{concealment} and all \glossterm{miss chances} against that creature with your attacks until you take a \glossterm{short rest} or until you hit a different creature with a strike.
@@ -468,6 +512,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Forceful Zeal",
+            is_magical: false,
             rank: 7,
             description: r"
                 The bonus from your \textit{forceful zeal} ability increases to \plus2d.
@@ -475,6 +520,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Pass Judgment",
+            is_magical: true,
             rank: 7,
             description: r"
          You can use the \textit{pass judgment} ability as a \glossterm{minor action}.

@@ -4,6 +4,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Beast Affinity",
+            is_magical: false,
             rank: 0,
             description: r"
          You gain a \plus3 bonus to the Creature Handling skill (see \pcref{Creature Handling}).
@@ -14,6 +15,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Animal Companion",
+            is_magical: true,
             rank: 1,
             description: r"
         
@@ -51,6 +53,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Pack Tactics",
+            is_magical: false,
             rank: 2,
             description: r"
          Any \surrounded \glossterm{enemy} that is adjacent to you or your animal companion takes a \minus1 penalty to \glossterm{accuracy}.
@@ -59,6 +62,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Power of Beasts",
+            is_magical: false,
             rank: 3,
             description: r"
          You and your \textit{animal companion} gain a \plus1d damage bonus with all weapons.
@@ -67,6 +71,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Animal Companion",
+            is_magical: true,
             rank: 4,
             description: r"
          Your \textit{animal companion} gains an \glossterm{attunement point}.
@@ -76,6 +81,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Pack Tactics",
+            is_magical: false,
             rank: 5,
             description: r"
          The penalty from your \textit{pack tactics} ability applies to any creature that is adjacent to you or your animal companion, regardless of whether it is surrounded.
@@ -84,6 +90,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Power of Beasts",
+            is_magical: false,
             rank: 6,
             description: r"
          The bonus from your \textit{power of beasts} ability increases to \plus2d.
@@ -92,6 +99,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Beast Affinity",
+            is_magical: false,
             rank: 6,
             description: r"
          The bonus to the Creature Handling skill from your \textit{beast affinity} ability increases to \plus6.
@@ -101,6 +109,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Supreme Animal Companion",
+            is_magical: true,
             rank: 7,
             description: r"
                 Your \textit{animal companion} gains an additional \glossterm{attunement point}.
@@ -114,6 +123,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Terrain Familiarity",
+            is_magical: false,
             rank: 0,
             description: r"
          You ignore \glossterm{difficult terrain} from all sources except for creature abilities.
@@ -123,6 +133,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Know Your Enemy",
+            is_magical: false,
             rank: 1,
             description: r"
          Whenever you take a \glossterm{short rest}, you can choose a creature type: aberration, animal, animate, dragon, humanoid, magical beast, monstrous humanoid, planeforged, or undead.
@@ -133,6 +144,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Experienced Guide",
+            is_magical: false,
             rank: 2,
             description: r"
          Your \glossterm{allies} who can see or hear you can ignore \glossterm{difficult terrain} from all sources except for creature abilities.
@@ -142,6 +154,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Warden's Force",
+            is_magical: false,
             rank: 3,
             description: r"
          You gain a \plus1d bonus to damage with projectile weapons and light weapons.
@@ -150,6 +163,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Know Your Enemy",
+            is_magical: false,
             rank: 4,
             description: r"
          The bonus from your \textit{know your enemy} ability increases to \plus2.
@@ -159,6 +173,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Experienced Guide",
+            is_magical: false,
             rank: 5,
             description: r"
          You and your \glossterm{allies} who can see or hear you gain a \plus2 bonus to \glossterm{initiative} checks.
@@ -167,6 +182,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Warden's Force",
+            is_magical: false,
             rank: 6,
             description: r"
          The bonus from your \textit{warden's force} ability increases to \plus2d.
@@ -175,6 +191,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Supreme Know Your Enemy",
+            is_magical: false,
             rank: 7,
             description: r"
                 The bonus from your \textit{know your enemy} ability increases to \plus3.
@@ -188,6 +205,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Tracker",
+            is_magical: false,
             rank: 0,
             description: r"
          You gain a \plus4 bonus to Survival checks to follow tracks.
@@ -198,6 +216,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Quarry",
+            is_magical: false,
             rank: 1,
             description: r"
         \label{Quarry} You can use the \textit{quarry} ability as a \glossterm{minor action}.
@@ -214,6 +233,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Hunting Style",
+            is_magical: false,
             rank: 2,
             description: r"
         
@@ -322,6 +342,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Hunter's Prowess",
+            is_magical: false,
             rank: 3,
             description: r"
          You gain a \plus1d bonus to your damage with all weapons.
@@ -330,6 +351,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Quarry",
+            is_magical: false,
             rank: 4,
             description: r"
          You can use your \textit{quarry} ability with the \abilitytag{Sustain} (free) tag instead of the \abilitytag{Attune} (self) tag.
@@ -340,6 +362,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Hunting Style",
+            is_magical: false,
             rank: 5,
             description: r"
         You learn an additional \textit{hunting style}.
@@ -348,6 +371,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Hunter's Prowess",
+            is_magical: false,
             rank: 6,
             description: r"
          The bonus from your \textit{hunter's prowess} ability increases to \plus2d.
@@ -356,6 +380,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Supreme Quarry",
+            is_magical: false,
             rank: 7,
             description: r"
                 The accuracy bonus from your \textit{quarry} ability increases to \plus2.
@@ -368,6 +393,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Keen Vision",
+            is_magical: false,
             rank: 0,
             description: r"
         
@@ -381,6 +407,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Skirmisher",
+            is_magical: false,
             rank: 1,
             description: r"
          At the start of each phase, if there is no more than one creature adjacent to you, you gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes} during that phase.
@@ -390,6 +417,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Perceive Weakness",
+            is_magical: false,
             rank: 2,
             description: r"
          You gain a \plus1 bonus to \glossterm{accuracy}.
@@ -398,6 +426,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Blindsight",
+            is_magical: false,
             rank: 3,
             description: r"
          Your perceptions are so finely honed that you can sense your enemies without seeing them.
@@ -412,6 +441,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Skirmisher",
+            is_magical: false,
             rank: 4,
             description: r"
          The speed bonus from your \textit{skirmisher} ability increases to \plus10 feet.
@@ -420,6 +450,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Perceive Weakness",
+            is_magical: false,
             rank: 5,
             description: r"
          The bonus from your \textit{perceive weakness} ability increases to \plus2.
@@ -428,6 +459,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Blindsight",
+            is_magical: false,
             rank: 6,
             description: r"
          The range of your \glossterm{blindsense} ability increases by 360 feet.
@@ -437,6 +469,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Supreme Skirmisher",
+            is_magical: false,
             rank: 7,
             description: r"
                 The speed bonus from your \textit{skirmisher} ability increases to \plus15 feet.
@@ -450,6 +483,7 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Wild Senses",
+            is_magical: false,
             rank: 0,
             description: r"
                  You gain a \plus1 bonus to Perception-based checks, except \glossterm{initiative} checks.
@@ -457,6 +491,7 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Combat Styles",
+            is_magical: false,
             rank: 1,
             description: r"
                 You can channel your wild energy into ferocious attacks.
@@ -475,6 +510,7 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Combat Style Rank (2)",
+            is_magical: false,
             rank: 2,
             description: r"
                 You become a rank 2 combat style user.
@@ -483,6 +519,7 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Wild Force",
+            is_magical: false,
             rank: 2,
             description: r"
                 You gain a \plus1d bonus to your damage with all weapons.
@@ -490,6 +527,7 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Combat Style Rank (3)",
+            is_magical: false,
             rank: 3,
             description: r"
                 You become a rank 3 combat style user.
@@ -498,6 +536,7 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Glancing Strikes",
+            is_magical: false,
             rank: 3,
             description: r"
                 Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
@@ -506,6 +545,7 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Combat Style Rank (4)",
+            is_magical: false,
             rank: 4,
             description: r"
                 You become a rank 4 combat style user.
@@ -514,6 +554,7 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Wild Maneuver",
+            is_magical: false,
             rank: 4,
             description: r"
                 You learn an additional \glossterm{maneuver} from a combat style you have access to (see \pcref{Combat Styles}).
@@ -521,6 +562,7 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Combat Style Rank (5)",
+            is_magical: false,
             rank: 5,
             description: r"
                 You become a rank 5 combat style user.
@@ -529,6 +571,7 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Wild Force",
+            is_magical: false,
             rank: 5,
             description: r"
                 The bonus from your \textit{wild force} ability increases to \plus2d.
@@ -536,6 +579,7 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Combat Style Rank (6)",
+            is_magical: false,
             rank: 6,
             description: r"
                 You become a rank 6 combat style user.
@@ -544,6 +588,7 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Wild Senses",
+            is_magical: false,
             rank: 6,
             description: r"
                 The bonuses from your \textit{wild senses} ability increase to \plus2.
@@ -551,6 +596,7 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Combat Style Rank (7)",
+            is_magical: false,
             rank: 7,
             description: r"
                 You become a rank 7 combat style user.
@@ -559,6 +605,7 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Wild Maneuver",
+            is_magical: false,
             rank: 7,
             description: r"
                 You learn an additional \glossterm{maneuver} from a combat style you have access to (see \pcref{Combat Styles}).

@@ -4,6 +4,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Practiced Leaper",
+            is_magical: false,
             rank: 0,
             description: r"
          You gain a \plus2 bonus to the Jump skill.
@@ -14,6 +15,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Acrobatic Accuracy",
+            is_magical: false,
             rank: 1,
             description: r"
          Whenever you make a Jump check that moves you over or adjacent to a creature, if your Jump check result is higher than that creature's Reflex defense, you gain a \plus1 bonus to \glossterm{accuracy} against that creature for the rest of the current round.
@@ -23,6 +25,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Evasion",
+            is_magical: false,
             rank: 2,
             description: r"
          You take half damage from abilities that affect an area and attack your Armor or Reflex defense.
@@ -33,6 +36,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Airdance",
+            is_magical: true,
             rank: 3,
             description: r"
                 When you move with a Jump check, you can land in midair as if it was solid ground.
@@ -44,6 +48,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Acrobatic Accuracy",
+            is_magical: false,
             rank: 4,
             description: r"
          The bonus from your \textit{acrobatic accuracy} ability increases to \plus2.
@@ -52,6 +57,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Evasion",
+            is_magical: false,
             rank: 5,
             description: r"
          Your \textit{evasion} ability also protects you from area attacks against your Fortitude and Mental defenses.
@@ -60,6 +66,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Airdance",
+            is_magical: true,
             rank: 6,
             description: r"
                 When you use your \textit{airdance} ability to land in the air, you can walk around freely in the air as if it was fully solid until the end of the round.
@@ -68,6 +75,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Acrobatic Accuracy",
+            is_magical: false,
             rank: 7,
             description: r"
                 The bonus from your \textit{acrobatic accuracy} ability increases to \plus3.
@@ -81,6 +89,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Esoteric Fluidity",
+            is_magical: false,
             rank: 0,
             description: r"
                  You gain a \plus1 bonus to Dexterity-based \glossterm{checks}, except \glossterm{initiative} checks.
@@ -88,6 +97,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Combat Styles",
+            is_magical: false,
             rank: 1,
             description: r"
                 You can perform a wide variety of unusual attacks.
@@ -106,6 +116,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Combat Style Rank (2)",
+            is_magical: false,
             rank: 2,
             description: r"
                 You become a rank 2 combat style user.
@@ -114,6 +125,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Esoteric Force",
+            is_magical: false,
             rank: 2,
             description: r"
                 You gain a \plus1d bonus to your damage with all weapons.
@@ -121,6 +133,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Combat Style Rank (3)",
+            is_magical: false,
             rank: 3,
             description: r"
                 You become a rank 3 combat style user.
@@ -129,6 +142,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Glancing Strikes",
+            is_magical: false,
             rank: 3,
             description: r"
                 Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
@@ -137,6 +151,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Combat Style Rank (4)",
+            is_magical: false,
             rank: 4,
             description: r"
                 You become a rank 4 combat style user.
@@ -145,6 +160,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Esoteric Maneuver",
+            is_magical: false,
             rank: 4,
             description: r"
                 You learn an additional \glossterm{maneuver} from a combat style you have access to (see \pcref{Combat Styles}).
@@ -152,6 +168,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Combat Style Rank (5)",
+            is_magical: false,
             rank: 5,
             description: r"
                 You become a rank 5 combat style user.
@@ -160,6 +177,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Esoteric Force",
+            is_magical: false,
             rank: 5,
             description: r"
                 The bonus from your \textit{esoteric force} ability increases to \plus2d.
@@ -167,6 +185,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Combat Style Rank (6)",
+            is_magical: false,
             rank: 6,
             description: r"
                 You become a rank 6 combat style user.
@@ -175,6 +194,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Esoteric Fluidity",
+            is_magical: false,
             rank: 6,
             description: r"
                 The bonus from your \textit{esoteric fluidity} ability increases to \plus2.
@@ -182,6 +202,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Combat Style Rank (7)",
+            is_magical: false,
             rank: 7,
             description: r"
                 You become a rank 7 combat style user.
@@ -190,6 +211,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Esoteric Maneuver",
+            is_magical: false,
             rank: 7,
             description: r"
                 You learn an additional \glossterm{maneuver} from a combat style you have access to (see \pcref{Combat Styles}).
@@ -202,6 +224,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Ki Barrier",
+            is_magical: true,
             rank: 0,
             description: r"
         
@@ -218,6 +241,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Ki Energy",
+            is_magical: true,
             rank: 0,
             description: r"
          Whenever you make a \glossterm{strike}, you can choose to treat that as a \glossterm{magical} ability.
@@ -230,6 +254,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Ki Manifestations",
+            is_magical: true,
             rank: 1,
             description: r"
         
@@ -376,6 +401,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Ki Barrier",
+            is_magical: true,
             rank: 2,
             description: r"
          
@@ -386,6 +412,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Ki Power",
+            is_magical: true,
             rank: 3,
             description: r"
         
@@ -395,6 +422,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Ki Manifestation",
+            is_magical: true,
             rank: 4,
             description: r"
         
@@ -404,6 +432,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Supreme Ki Barrier",
+            is_magical: true,
             rank: 5,
             description: r"
         
@@ -414,6 +443,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Ki Power",
+            is_magical: true,
             rank: 6,
             description: r"
          The bonus from your \textit{ki power} ability increases to \plus6.
@@ -422,6 +452,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Ki Manifestation",
+            is_magical: true,
             rank: 7,
             description: r"
                 After using a \textit{ki manifestation} ability, you can use another one after the end of the current round instead of after the end of the next round.
@@ -434,6 +465,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Unarmed Warrior",
+            is_magical: false,
             rank: 0,
             description: r"
          You become \glossterm{proficient} with the unarmed weapons \glossterm{weapon group} (see \pcref{Weapon Groups}).
@@ -445,6 +477,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Fast Movement",
+            is_magical: false,
             rank: 1,
             description: r"
          You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
@@ -453,6 +486,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Perfect Precision",
+            is_magical: false,
             rank: 2,
             description: r"
          You gain a \plus1 bonus to \glossterm{accuracy} with attacks using weapons from the monk weapons and unarmed weapons \glossterm{weapon groups}, natural weapons, and to any attack using one or more \glossterm{free hands}.
@@ -461,6 +495,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Perfect Body",
+            is_magical: false,
             rank: 3,
             description: r"
          You gain a \plus1 bonus to the base value of one physical \glossterm{attribute} of your choice: Strength, Dexterity, or Constitution.
@@ -469,6 +504,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Fast Movement",
+            is_magical: false,
             rank: 4,
             description: r"
          The speed bonus from your \textit{fast movement} ability increases to \plus10 feet.
@@ -477,6 +513,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Perfect Precision",
+            is_magical: false,
             rank: 5,
             description: r"
          The bonuses from your \textit{perfect precision} ability increase to \plus2.
@@ -485,6 +522,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Perfect Body",
+            is_magical: false,
             rank: 6,
             description: r"
          The bonus from your \textit{perfect body} ability applies to the base value of all physical attributes, not just the one you chose.
@@ -493,6 +531,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Supreme Fast Movement",
+            is_magical: false,
             rank: 7,
             description: r"
                 The speed bonus from your \textit{fast movement} ability increases to \plus20 feet.
@@ -505,6 +544,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Transcend Frailty",
+            is_magical: false,
             rank: 0,
             description: r"
         
@@ -515,6 +555,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Clear the Mind",
+            is_magical: false,
             rank: 1,
             description: r"
          You can use the \textit{clear the mind} ability as a standard action.
@@ -536,6 +577,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Feel the Flow of Life",
+            is_magical: true,
             rank: 2,
             description: r"
          You become so attuned to the natural energy of life that you can sense it even when sight fails you.
@@ -546,6 +588,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Transcend Time",
+            is_magical: false,
             rank: 3,
             description: r"
          You are immune to being \slowed and \decelerated.
@@ -554,6 +597,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Transcendent Power",
+            is_magical: false,
             rank: 3,
             description: r"
         
@@ -563,6 +607,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Inner Peace",
+            is_magical: false,
             rank: 4,
             description: r"
          You are immune to being \dazed and \stunned.
@@ -572,6 +617,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Feel the Flow of Life",
+            is_magical: true,
             rank: 5,
             description: r"
         
@@ -582,6 +628,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Transcend Mortality",
+            is_magical: true,
             rank: 6,
             description: r"
         
@@ -594,6 +641,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Inner Transcendence",
+            is_magical: false,
             rank: 7,
             description: r"
                 You are immune to \glossterm{conditions}.

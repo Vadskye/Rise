@@ -4,6 +4,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Alchemical Infusion",
+            is_magical: true,
             rank: 0,
             description: r"
         [Magical] Whenever you create or use an alchemical item, you may use your \glossterm{magical} \glossterm{power} in place of the item's normal power to determine its effects.
@@ -15,6 +16,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Portable Workshop",
+            is_magical: true,
             rank: 1,
             description: r"
         [Magical]
@@ -37,6 +39,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Alchemical Discovery",
+            is_magical: true,
             rank: 2,
             description: r"
          You learn how to create alchemical items more effectively.
@@ -60,6 +63,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Experienced Quaffing",
+            is_magical: false,
             rank: 3,
             description: r"
          You can drink up to two doses of potions, elixirs, and other drinkable alchemical items as part of the same standard action.
@@ -68,6 +72,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Alchemical Discovery",
+            is_magical: true,
             rank: 4,
             description: r"
          You gain an additional \textit{alchemical discovery} ability.
@@ -76,6 +81,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Portable Workshop",
+            is_magical: true,
             rank: 5,
             description: r"
         [Magical] The number of items you can maintain with your \textit{portable workshop} ability increases to 5.
@@ -84,6 +90,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Alchemical Discovery",
+            is_magical: true,
             rank: 6,
             description: r"
          You gain an additional \textit{alchemical discovery} ability.
@@ -92,6 +99,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Experienced Quaffing",
+            is_magical: true,
             rank: 7,
             description: r"
                 You can drink a single dose of a potion, elixir, or other drinkable alchemical item as a \glossterm{minor action}.
@@ -104,6 +112,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Cantrips",
+            is_magical: true,
             rank: 0,
             description: r"
         
@@ -121,6 +130,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Mage Armor",
+            is_magical: true,
             rank: 0,
             description: r"
          You can use the \textit{mage armor} ability as a standard action.
@@ -141,6 +151,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spellcasting",
+            is_magical: true,
             rank: 1,
             description: r"
         
@@ -158,6 +169,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 2,
             description: r"
          You become a rank 2 arcane spellcaster.
@@ -167,6 +179,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Knowledge",
+            is_magical: true,
             rank: 2,
             description: r"
          You learn an additional arcane \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
@@ -175,6 +188,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 3,
             description: r"
          You become a rank 3 arcane spellcaster.
@@ -184,6 +198,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Mage Armor",
+            is_magical: true,
             rank: 3,
             description: r"
         
@@ -194,6 +209,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 4,
             description: r"
          You become a rank 4 arcane spellcaster.
@@ -203,6 +219,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Knowledge",
+            is_magical: true,
             rank: 4,
             description: r"
          You learn an additional arcane \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
@@ -211,6 +228,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 5,
             description: r"
          You become a rank 5 arcane spellcaster.
@@ -220,6 +238,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 6,
             description: r"
          You become a rank 6 arcane spellcaster.
@@ -229,6 +248,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Supreme Mage Armor",
+            is_magical: true,
             rank: 6,
             description: r"
         
@@ -239,6 +259,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Rank",
+            is_magical: true,
             rank: 7,
             description: r"
                 You become a rank 7 arcane spellcaster.
@@ -247,6 +268,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Knowledge",
+            is_magical: true,
             rank: 7,
             description: r"
                 You learn an additional arcane \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
@@ -259,6 +281,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Deep Knowledge",
+            is_magical: true,
             rank: 0,
             description: r"
          You gain a \plus2 bonus to all Knowledge skills.
@@ -269,6 +292,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Ritualist",
+            is_magical: true,
             rank: 1,
             description: r"
         [Magical] You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
@@ -280,6 +304,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Scholastic Insight",
+            is_magical: true,
             rank: 2,
             description: r"
         [Magical]
@@ -314,6 +339,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Contingency",
+            is_magical: true,
             rank: 3,
             description: r"
         [Magical] You gain the ability to prepare a spell so it takes effect automatically if specific circumstances arise.
@@ -341,6 +367,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Scholastic Insight",
+            is_magical: true,
             rank: 4,
             description: r"
         [Magical]
@@ -350,6 +377,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Ritualist",
+            is_magical: true,
             rank: 5,
             description: r"
         [Magical] Whenever you lead a ritual, it requires half the normal number of \glossterm{fatigue levels} and half the normal time to complete, to a minimum of zero fatigue levels.
@@ -358,6 +386,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Scholastic Insight",
+            is_magical: true,
             rank: 6,
             description: r"
         [Magical]
@@ -367,6 +396,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Multiple Contingency",
+            is_magical: true,
             rank: 7,
             description: r"
         [Magical] You may have two separate \textit{contingency} abilities active at the same time.
@@ -382,6 +412,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Mystic Sphere",
+            is_magical: true,
             rank: 0,
             description: r"
          You gain access to an additional arcane \glossterm{mystic sphere}, including all \glossterm{cantrips} from that sphere.
@@ -391,6 +422,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Mystic Insight",
+            is_magical: true,
             rank: 1,
             description: r"
         
@@ -418,6 +450,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Intricate Spell",
+            is_magical: true,
             rank: 2,
             description: r"
                 Whenever you cast a spell with the \glossterm{Focus} tag, you may increase your \glossterm{focus penalty} by 2.
@@ -427,6 +460,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Wellspring of Power",
+            is_magical: true,
             rank: 3,
             description: r"
                 You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
@@ -434,6 +468,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Mystic Insight",
+            is_magical: true,
             rank: 4,
             description: r"
                 You gain an additional \textit{mystic insight} ability.
@@ -441,6 +476,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Attunement Point",
+            is_magical: true,
             rank: 5,
             description: r"
                 You gain an additional \glossterm{attunement point}.
@@ -448,6 +484,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Wellspring of Power",
+            is_magical: true,
             rank: 6,
             description: r"
                 The bonus from your \textit{wellspring of power} ability increases to \plus6.
@@ -455,6 +492,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Mystic Insights",
+            is_magical: true,
             rank: 7,
             description: r"
                 You gain two additional \textit{mystic insight} abilities.
@@ -467,6 +505,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "School Specialization",
+            is_magical: true,
             rank: 0,
             description: r"
          The arcane mystic spheres can be divided into six traditional schools of magic.
@@ -488,6 +527,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Scholastic Discovery",
+            is_magical: true,
             rank: 1,
             description: r"
          You gain an ability based on your chosen school.
@@ -511,6 +551,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Knowledge",
+            is_magical: true,
             rank: 2,
             description: r"
          You learn an additional arcane spell.
@@ -519,6 +560,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Scholastic Attunement",
+            is_magical: true,
             rank: 3,
             description: r"
          You gain an additional \glossterm{attunement point}.
@@ -528,6 +570,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Scholastic Discovery",
+            is_magical: true,
             rank: 4,
             description: r"
          Your understanding of your chosen school improves.
@@ -553,6 +596,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Spell Knowledge",
+            is_magical: true,
             rank: 5,
             description: r"
          You learn an additional arcane spell.
@@ -561,6 +605,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Scholastic Attunement",
+            is_magical: true,
             rank: 6,
             description: r"
          The number of attunement points you gain from your \textit{scholastic attunement} ability increases to two.
@@ -569,6 +614,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Supreme Scholastic Discovery",
+            is_magical: true,
             rank: 7,
             description: r"
 

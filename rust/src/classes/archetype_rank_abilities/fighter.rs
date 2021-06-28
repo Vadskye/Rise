@@ -4,6 +4,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Enduring Discipline",
+            is_magical: false,
             rank: 0,
             description: r"
          You gain a \plus2 bonus to your \glossterm{fatigue tolerance}.
@@ -13,6 +14,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Discipline",
+            is_magical: false,
             rank: 1,
             description: r"
          You can use the \textit{discipline} ability as a \glossterm{standard action}.
@@ -34,6 +36,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Enduring Discipline",
+            is_magical: false,
             rank: 2,
             description: r"
         
@@ -44,6 +47,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Disciplined Force",
+            is_magical: false,
             rank: 3,
             description: r"
         
@@ -53,6 +57,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Disciplined Reaction",
+            is_magical: false,
             rank: 4,
             description: r"
                 You do not suffer any effects from \glossterm{conditions} or \glossterm{vital wounds} until the next round after they are applied.
@@ -62,6 +67,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Supreme Enduring Discipline",
+            is_magical: false,
             rank: 5,
             description: r"
                 The bonus from your \textit{enduring discipline} ability increases to \plus4.
@@ -70,6 +76,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Disciplined Force",
+            is_magical: false,
             rank: 6,
             description: r"
                 The bonus from your \textit{disciplined force} ability increases to \plus2d.
@@ -77,6 +84,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Disciplined Reaction",
+            is_magical: false,
             rank: 7,
             description: r"
                 The delay from your \textit{disciplined reaction} ability increases by an additional round.
@@ -90,6 +98,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Armor Expertise",
+            is_magical: false,
             rank: 0,
             description: r"
                 You reduce the \glossterm{encumbrance} of body armor you wear by 1.
@@ -97,6 +106,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Weapon Training",
+            is_magical: false,
             rank: 1,
             description: r"
          You can use the \textit{weapon training} ability by spending an hour training with a weapon.
@@ -116,6 +126,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Equipment Efficiency",
+            is_magical: false,
             rank: 2,
             description: r"
          You gain an additional \glossterm{attunement point}.
@@ -125,6 +136,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Armor Expertise",
+            is_magical: false,
             rank: 3,
             description: r"
         
@@ -135,6 +147,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Weapon Expertise",
+            is_magical: false,
             rank: 4,
             description: r"
          You gain a \plus1d bonus to your damage with all weapons.
@@ -143,6 +156,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Equipment Efficiency",
+            is_magical: false,
             rank: 5,
             description: r"
          The number of attunement points you gain from your \textit{efficient equipment} ability increases to two.
@@ -152,6 +166,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Supreme Armor Expertise",
+            is_magical: false,
             rank: 6,
             description: r"
         
@@ -162,6 +177,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Weapon Expertise",
+            is_magical: false,
             rank: 7,
             description: r"
                 The bonus from your \textit{weapon expertise} ability increases to \plus3d.
@@ -174,6 +190,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Defensive Expertise",
+            is_magical: false,
             rank: 0,
             description: r"
          You gain a \plus1 bonus to Armor defense.
@@ -181,6 +198,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Combat Styles",
+            is_magical: false,
             rank: 1,
             description: r"
             
@@ -199,6 +217,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Combat Style Rank",
+            is_magical: false,
             rank: 2,
             description: r"
              You become a rank 2 combat style user.
@@ -208,6 +227,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Martial Force",
+            is_magical: false,
             rank: 2,
             description: r"
  You gain a \plus1d bonus to your damage with all weapons.
@@ -215,6 +235,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Combat Style Rank",
+            is_magical: false,
             rank: 3,
             description: r"
              You become a rank 3 combat style user.
@@ -224,6 +245,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Glancing Strikes",
+            is_magical: false,
             rank: 3,
             description: r"
              Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
@@ -232,6 +254,7 @@ This is called a \glossterm{glancing blow}.
         },
         RankAbility {
             name: "Combat Style Rank",
+            is_magical: false,
             rank: 4,
             description: r"
              You become a rank 4 combat style user.
@@ -241,6 +264,7 @@ This is called a \glossterm{glancing blow}.
         },
         RankAbility {
             name: "Martial Maneuver",
+            is_magical: false,
             rank: 4,
             description: r"
                 You learn an additional \glossterm{maneuver} from a combat style you have access to (see \pcref{Combat Styles}).
@@ -248,6 +272,7 @@ This is called a \glossterm{glancing blow}.
         },
         RankAbility {
             name: "Combat Style Rank (5)",
+            is_magical: false,
             rank: 5,
             description: r"
                 You become a rank 5 combat style user.
@@ -256,6 +281,7 @@ This is called a \glossterm{glancing blow}.
         },
         RankAbility {
             name: "Greater Martial Force",
+            is_magical: false,
             rank: 5,
             description: r"
                 The bonus from your \textit{martial force} ability increases to \plus2d.
@@ -263,6 +289,7 @@ This is called a \glossterm{glancing blow}.
         },
         RankAbility {
             name: "Combat Style Rank (6)",
+            is_magical: false,
             rank: 6,
             description: r"
                 You become a rank 6 combat style user.
@@ -271,6 +298,7 @@ This is called a \glossterm{glancing blow}.
         },
         RankAbility {
             name: "Greater Defensive Expertise",
+            is_magical: false,
             rank: 6,
             description: r"
                 The bonuses from your \textit{defensive expertise} ability increases to \plus2.
@@ -278,6 +306,7 @@ This is called a \glossterm{glancing blow}.
         },
         RankAbility {
             name: "Combat Style Rank (7)",
+            is_magical: false,
             rank: 7,
             description: r"
                 You become a rank 7 combat style user.
@@ -286,6 +315,7 @@ This is called a \glossterm{glancing blow}.
         },
         RankAbility {
             name: "Martial Maneuver",
+            is_magical: false,
             rank: 7,
             description: r"
                 You learn an additional \glossterm{maneuver} from a combat style you have access to (see \pcref{Combat Styles}).
@@ -298,6 +328,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Threatening Influence",
+            is_magical: false,
             rank: 0,
             description: r"
          Your \glossterm{enemies} treat each space adjacent to you as \glossterm{difficult terrain}.
@@ -306,6 +337,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Guarding Strike",
+            is_magical: false,
             rank: 1,
             description: r"
          You can use the \textit{guarding strike} ability as a standard action.
@@ -324,6 +356,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Protect",
+            is_magical: false,
             rank: 2,
             description: r"
          You can use the \textit{protect} ability as a \glossterm{minor action}.
@@ -342,6 +375,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Threatening Influence",
+            is_magical: false,
             rank: 3,
             description: r"
          The area affected by your \textit{threatening influence} ability increases to a \smallarea radius \glossterm{emanation} from you.
@@ -351,6 +385,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Sentinel's Challenge",
+            is_magical: false,
             rank: 4,
             description: r"
          You can use the \textit{sentinel's challenge} ability as a standard action.
@@ -366,6 +401,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Sentinel's Force",
+            is_magical: false,
             rank: 4,
             description: r"
          You gain a \plus1d bonus to your damage with all weapons.
@@ -374,6 +410,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Protect",
+            is_magical: false,
             rank: 5,
             description: r"
          The bonus from your \textit{protect} ability increases to \plus3.
@@ -382,6 +419,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Supreme Threatening Influence",
+            is_magical: false,
             rank: 6,
             description: r"
          Your \textit{threatening influence} ability applies \glossterm{difficult terrain} twice, causing enemies to move at one quarter speed.
@@ -390,6 +428,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Sentinel's Force",
+            is_magical: false,
             rank: 7,
             description: r"
                 The bonus from your \textit{sentinel's force} ability increases to \plus2d.
@@ -397,6 +436,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Sentinel's Goad",
+            is_magical: false,
             rank: 7,
             description: r"
                 Any creature that is \goaded by you suffers a \minus4 accuracy penalty instead of the normal \minus2.
@@ -409,6 +449,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Tactical Insight",
+            is_magical: false,
             rank: 0,
             description: r"
          You gain an additional \glossterm{insight point}.
@@ -417,6 +458,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Battle Tactics",
+            is_magical: false,
             rank: 1,
             description: r"
         
@@ -519,6 +561,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Tactical Precision",
+            is_magical: false,
             rank: 2,
             description: r"
          You gain a \plus1 bonus to \glossterm{accuracy}.
@@ -527,6 +570,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Tactical Insight",
+            is_magical: false,
             rank: 3,
             description: r"
          You gain an additional \glossterm{insight point}.
@@ -536,6 +580,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Reactive Tactics",
+            is_magical: false,
             rank: 4,
             description: r"
          You gain a \plus3 bonus to \glossterm{initiative} checks.
@@ -545,6 +590,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Tactical Precision",
+            is_magical: false,
             rank: 5,
             description: r"
          The bonus from your \textit{tactical precision} ability increases to \plus2.
@@ -553,6 +599,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Supreme Tactical Insight",
+            is_magical: false,
             rank: 6,
             description: r"
          You gain an additional \glossterm{insight point}.
@@ -562,6 +609,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Reactive Tactics",
+            is_magical: false,
             rank: 7,
             description: r"
                 The bonus from your \textit{reactive tactics} ability increases to \plus10.
