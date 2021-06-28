@@ -35,13 +35,12 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             name: "Airdance",
             rank: 3,
             description: r"
-        [Magical] When you move with a Jump check, you can land in midair as if it was solid ground.
-        Your landing loation must be no more than 30 feet above above an object at least two size categories larger than you that is free-standing and capable of supporting your weight.
-        You cannot walk in the air, but you can continue jumping or remain in place.
-        The air holds you until the end of the current round, at which point you fall normally.
-        After you land on air in this way, you \\glossterm{briefly} cannot do so again.
-
-                ",
+                When you move with a Jump check, you can land in midair as if it was solid ground.
+                Your landing loation must be no more than 30 feet above above an object at least two size categories larger than you that is free-standing and capable of supporting your weight.
+                You cannot walk in the air, but you can continue jumping or remain in place.
+                The air holds you until the end of the current round, at which point you fall normally.
+                After you land on air in this way, you \\glossterm{briefly} cannot do so again.
+            ",
         },
         RankAbility {
             name: "Greater Acrobatic Accuracy",
@@ -63,18 +62,17 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             name: "Greater Airdance",
             rank: 6,
             description: r"
-        [Magical] When you use your \textit{airdance} ability to land in the air, you can walk around freely in the air as if it was fully solid until the end of the round.
-        In addition, the maxium height above the ground increases to 60 feet.
-
-                ",
+                When you use your \textit{airdance} ability to land in the air, you can walk around freely in the air as if it was fully solid until the end of the round.
+                In addition, the maxium height above the ground increases to 60 feet.
+            ",
         },
         RankAbility {
             name: "Greater Acrobatic Accuracy",
             rank: 7,
             description: r"
-
-         The bonus from your \textit{acrobatic accuracy} ability increases to \plus3.
-                ",
+                The bonus from your \textit{acrobatic accuracy} ability increases to \plus3.
+                In addition, the bonus lasts \glossterm{briefly}, instead of only for the current round.
+            ",
         },
     ];
 }
@@ -426,8 +424,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             name: "Greater Ki Manifestation",
             rank: 7,
             description: r"
-         After using a \textit{ki manifestation} ability, you can use another one after the end of the current round instead of after the end of the next round.
-                ",
+                After using a \textit{ki manifestation} ability, you can use another one after the end of the current round instead of after the end of the next round.
+            ",
         },
     ];
 }
@@ -497,8 +495,8 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             name: "Supreme Fast Movement",
             rank: 7,
             description: r"
-         The speed bonus from your \textit{fast movement} ability increases to \plus15 feet.
-                ",
+                The speed bonus from your \textit{fast movement} ability increases to \plus20 feet.
+            ",
         },
     ];
 }
@@ -598,8 +596,8 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             name: "Inner Transcendence",
             rank: 7,
             description: r"
-         You are immune to \glossterm{conditions}.
-                ",
+                You are immune to \glossterm{conditions}.
+            ",
         },
     ];
 }

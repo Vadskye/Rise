@@ -550,10 +550,9 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             name: "Greater Wild Aspect",
             rank: 4,
             description: r"
-        [Magical] You can change your \textit{wild aspect} as a \glossterm{minor action} instead of as a standard action.
-        In addition, you learn an additional \textit{wild aspect}.
-
-                ",
+                You can change your \textit{wild aspect} as a \glossterm{minor action} instead of as a standard action.
+                In addition, you learn an additional \textit{wild aspect}.
+            ",
         },
         RankAbility {
             name: "Greater Shift Body",
@@ -584,9 +583,9 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             name: "Supreme Wild Aspect",
             rank: 7,
             description: r"
-        You can change your \textit{wild aspect} as a \glossterm{free action} instead of as a minor action.
-        In addition, you learn an additional \textit{wild aspect}.
-                ",
+                You can change your \textit{wild aspect} as a \glossterm{free action} instead of as a minor action, and changing your wild aspect gains the \glossterm{Swift} tag.
+                In addition, you learn an additional \textit{wild aspect}.
+            ",
         },
     ];
 }
@@ -752,10 +751,9 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             name: "Supreme Natural Servant",
             rank: 7,
             description: r"
-         Your \textit{natural servant} gains two additional \glossterm{attunement points}.
-        In addition, you may choose a natural servant from any environment that is within a 50 mile walking distance from your current location, rather than only gaining a natural servant from your current environment.
-
-                ",
+                Your \textit{natural servant} gains two additional \glossterm{attunement points}.
+                In addition, you may choose a natural servant from any environment that is within a 50 mile walking distance from your current location, rather than only gaining a natural servant from your current environment.
+            ",
         },
     ];
 }

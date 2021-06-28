@@ -107,10 +107,10 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             name: "Brimstone",
             rank: 7,
             description: r"
-         The power bonus from your \textit{hellfire} ability increases to \plus4.
-        In addition, whenever you cause a creature to lose \glossterm{hit points} with fire damage or energy damage, it becomes \glossterm{briefly} \sickened.
-        After the effect ends, hat creature then becomes immune to it until it takes a \glossterm{short rest}.
-                ",
+                The power bonus from your \textit{hellfire} ability increases to \plus4.
+                In addition, whenever you cause a creature to lose \glossterm{hit points} with fire damage or energy damage, it becomes \glossterm{briefly} \sickened.
+                After the effect ends, that creature then becomes immune to it until it takes a \glossterm{short rest}.
+            ",
         },
     ];
 }
@@ -532,9 +532,8 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             name: "Greater Possession",
             rank: 4,
             description: r"
-         You gain a \plus1 bonus to \glossterm{accuracy} during your \textit{possession} ability.
-
-                ",
+                You are immune to being \dazed, \stunned, \confused, and \disoriented during your \textit{possession} ability.
+            ",
         },
         RankAbility {
             name: "Exchange Vitality",
@@ -577,9 +576,8 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             name: "Supreme Possession",
             rank: 7,
             description: r"
-
-         The bonus from your \textit{greater possession} ability increases to \plus2.
-                ",
+                You double the range of spells you cast during your \textit{possession} ability.
+            ",
         },
     ];
 }

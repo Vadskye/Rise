@@ -141,10 +141,9 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             name: "Spell Rank",
             rank: 7,
             description: r"
-         You become a rank 7 arcane spellcaster.
-        This gives you access to spells that require a minimum rank of 7 and can improve the effectiveness of your existing spells.
-
-                ",
+                You become a rank 7 arcane spellcaster.
+                This gives you access to spells that require a minimum rank of 7 and can improve the effectiveness of your existing spells.
+            ",
         },
         RankAbility {
             name: "Spell Knowledge",
@@ -346,8 +345,8 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             name: "Greater Draconic Precision",
             rank: 7,
             description: r"
-         The bonus from your \textit{draconic precision} ability increases to \plus2.
-                ",
+                The bonus from your \textit{draconic precision} ability increases to \plus2.
+            ",
         },
     ];
 }
@@ -423,10 +422,10 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             name: "Greater Implement Freedom",
             rank: 7,
             description: r"
-         You can use your \textit{implement freedom} ability to affect an additional magical implement.
-        In addition, you gain an additional \glossterm{attunement point}.
-        You can only use this attunement point to \glossterm{attune} to magic implements.
-                ",
+                You can use your \textit{implement freedom} ability to affect an additional magical implement.
+                In addition, you gain an additional \glossterm{attunement point}.
+                You can only use this attunement point to \glossterm{attune} to magic implements.
+            ",
         },
     ];
 }
@@ -519,25 +518,24 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             name: "Supreme Wildspell",
             rank: 7,
             description: r"
-
-         You replace your normal wild magic effects from your \textit{wildspell} ability with the effects from the table below.
-        \begin{dtable}
-            \lcaption{Epic Wild Magic Effects}
-            \begin{dtabularx}{\textwidth}{l X}
-                \tb{Roll} & \tb{Effect} \tableheaderrule
-                1 or lower & The spell has its normal effect \\
-                2 & All damage dealt by the spell is considered to be all damage types \\
-                3 & When you attack with the spell this round, you roll twice and take the higher result \\
-                4 & When you deal damage with the spell this round, you roll twice for the spell and take the higher result \\
-                5 & Any \glossterm{conditions} inflicted by the spell this round become a \abilitytag{Curse} instead of a condition, and are removed when the target takes a \glossterm{short rest} \\
-                6 & When the spell would cause a creature to lose hit points this round, that creature loses twice as many hit points \\
-                7 & The spell's area is tripled this round \\
-                8 & Each target that loses hit points from the spell this round is also \stunned during the next round \\
-                9 & You gain a \plus4 bonus to \glossterm{accuracy} with the spell this round, but you take the minimum possible result when the spell would deal damage \\
-                10 or higher & During both the \glossterm{action phase} and \glossterm{delayed action phase} of the next round, the spell takes effect again with the same choices for all decisions, such as targets \\
-            \end{dtabularx}
-        \end{dtable}
-                ",
+                You replace your normal wild magic effects from your \textit{wildspell} ability with the effects from the table below.
+                \begin{dtable}
+                    \lcaption{Epic Wild Magic Effects}
+                    \begin{dtabularx}{\textwidth}{l X}
+                        \tb{Roll} & \tb{Effect} \tableheaderrule
+                        1 or lower & The spell has its normal effect \\
+                        2 & All damage dealt by the spell is considered to be all damage types \\
+                        3 & When you attack with the spell this round, you roll twice and take the higher result \\
+                        4 & When you deal damage with the spell this round, you roll twice for the spell and take the higher result \\
+                        5 & Any \glossterm{conditions} inflicted by the spell this round become a \abilitytag{Curse} instead of a condition, and are removed when the target takes a \glossterm{short rest} \\
+                        6 & When the spell would cause a creature to lose hit points this round, that creature loses twice as many hit points \\
+                        7 & The spell's area is tripled this round \\
+                        8 & Each target that loses hit points from the spell this round is also \stunned during the next round \\
+                        9 & You gain a \plus4 bonus to \glossterm{accuracy} with the spell this round, but you take the minimum possible result when the spell would deal damage \\
+                        10 or higher & During both the \glossterm{action phase} and \glossterm{delayed action phase} of the next round, the spell takes effect again with the same choices for all decisions, such as targets \\
+                    \end{dtabularx}
+                \end{dtable}
+            ",
         },
     ];
 }

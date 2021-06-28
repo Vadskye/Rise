@@ -66,7 +66,8 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
 
         \subparhead{Chaos} The effect applies to all attacks, not just \glossterm{strikes}.
         % TODO: explain how this works on monsters
-        \subparhead{Evil} When a target removes a \glossterm{condition}, it increase its \glossterm{fatigue level} by two.
+        \subparhead{Evil} Whenever a target removes a \glossterm{condition}, it takes 2d8 \add half \glossterm{power} energy damage.
+        This damage increases by \plus1d for each rank beyond 4.
         \subparhead{Good} When a target would lose \glossterm{hit points}, you may lose those hit points instead.
         The target suffers any other effects of the attack normally, though it is not treated as if it lost hit points from the attack for the purpose of special attack effects.
         \subparhead{Law} The effect applies to all attacks, not just \glossterm{strikes}.
@@ -94,10 +95,12 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             name: "Supreme Aligned Aura",
             rank: 7,
             description: r"
-        [Magical]
-        The area affected by your \textit{aligned aura} ability increases to a \gargarea radius \glossterm{emanation} from you.
-
-                ",
+                The effect of your \textit{aligned aura} reaches its full power, as described below.
+                \subparhead{Chaos} The effect triggers on rolling either a 1 or a 2.
+                \subparhead{Evil} The penalty increases to \minus2.
+                \subparhead{Good} The \glossterm{vital roll} bonus increases to \plus5.
+                \subparhead{Law} The effect triggers on rolling either a 1 or a 2.
+            ",
         },
     ];
 }
@@ -250,28 +253,25 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
                 ",
         },
         RankAbility {
-            name: "Supreme Combat Caster",
+            name: "Attunement Point",
             rank: 5,
             description: r"
-         You gain a \plus1 bonus to Armor defense.
-
-                ",
+                You gain an additional \glossterm{attunement point}.
+            ",
         },
         RankAbility {
             name: "Greater Wellspring of Power",
             rank: 6,
             description: r"
-        [Magical]
-        The bonus from your \textit{wellspring of power} ability increases to \plus6.
-
-                ",
+                The bonus from your \textit{wellspring of power} ability increases to \plus6.
+            ",
         },
         RankAbility {
-            name: "Insight Point",
+            name: "Attunement Point",
             rank: 7,
             description: r"
-        You gain an additional \glossterm{insight point}.
-                ",
+                You gain an additional \glossterm{attunement point}.
+            ",
         },
     ];
 }
@@ -356,9 +356,8 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             name: "Supreme Lay on Hands",
             rank: 7,
             description: r"
-        [Magical] When you use your \textit{lay on hands} ability, you and the target each gain a \plus1 bonus to all defenses during the current phase.
-        This is a \abilitytag{Swift} effect, so it protects against attacks made during the same phase.
-                ",
+                When you use your \textit{lay on hands} ability on a creature other than yourself, it also affects you.
+            ",
         },
     ];
 }
@@ -471,9 +470,8 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             name: "Greater Forceful Zeal",
             rank: 7,
             description: r"
-         The bonus from your \textit{forceful zeal} ability increases to \plus2d.
-
-                ",
+                The bonus from your \textit{forceful zeal} ability increases to \plus2d.
+            ",
         },
         RankAbility {
             name: "Pass Judgment",

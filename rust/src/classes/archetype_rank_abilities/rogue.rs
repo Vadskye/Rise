@@ -104,8 +104,8 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             name: "Greater Darkstalker",
             rank: 7,
             description: r"
-        [Magical] When you use your \textit{darkstalker} ability, you become undetectable by any number of the possible sense groups, not just one.
-                ",
+                [Magical] When you use your \textit{darkstalker} ability, you become undetectable by any number of the possible sense groups, not just one.
+            ",
         },
     ];
 }
@@ -486,8 +486,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             name: "Greater Virtuoso",
             rank: 7,
             description: r"
-        [Magical] The number of bardic performances you can sustain with your \textit{virtuoso} ability increases to three.
-                ",
+                The number of bardic performances you can sustain with your \textit{virtuoso} ability increases to three.
+            ",
         },
     ];
 }
@@ -680,8 +680,8 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             name: "Supreme Skill Exemplar",
             rank: 7,
             description: r"
-         The skill bonus from your \textit{skill exemplar} ability increases to \plus5.
-                ",
+                The skill bonus from your \textit{skill exemplar} ability increases to \plus5.
+            ",
         },
     ];
 }
@@ -779,18 +779,17 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             name: "Nothing Is Real",
             rank: 7,
             description: r"
-
-         You can use the \textit{nothing is real} ability as a standard action.
-        \begin{freeability}{Nothing Is Real}[Duration]
-            \abilitytag{Compulsion}
-            \rankline
-            Make an attack vs. Mental against a creature within \shortrange.
-            Your \glossterm{accuracy} is equal to your Deception skill.
-            \hit The subject is \glossterm{briefly} convinced that nothing is real.
-            It is unable to take any actions and is \unaware of all attacks against it.
-            After this effect ends, the subject becomes immune to it until it takes a \glossterm{short rest}.
-        \end{freeability}
-                ",
+                You can use the \textit{nothing is real} ability as a standard action.
+                \begin{freeability}{Nothing Is Real}[Duration]
+                    \abilitytag{Compulsion}
+                    \rankline
+                    Make an attack vs. Mental against a creature within \shortrange.
+                    Your \glossterm{accuracy} is equal to your Deception skill.
+                    \hit The subject is \glossterm{briefly} convinced that nothing is real.
+                    It is unable to take any actions and is \unaware of all attacks against it.
+                    After this effect ends, the subject becomes immune to it until it takes a \glossterm{short rest}.
+                \end{freeability}
+            ",
         },
     ];
 }
