@@ -237,15 +237,15 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 \abilitytag{Auditory}
                 \rankline
                 Choose yourself or one \glossterm{ally} within \rngmed range.
-                The subject chooses one of its \glossterm{conditions}.
-                It cannot choose a condition applied during the current round.
-                For the duration of your performance, the subject ignores all effects of that condition.
+                The subject chooses one of its \glossterm{brief} effects or \glossterm{conditions}.
+                It cannot choose an effect applied during the current round.
+                For the duration of your performance, the subject ignores that effect.
 
                 \rankline
                 \rank{3} This ability loses the \abilitytag{Sustain} (minor) tag.
-                    Instead, the chosen condition is removed entirely.
+                    Instead, the chosen effect is removed entirely.
                 \rank{5} You can subject an additional \glossterm{ally} within range.
-                \rank{7} Each subject can remove two conditions instead of one.
+                \rank{7} Each subject can remove two effects instead of one.
             \end{durationability}
 
             \begin{durationability}{Dazzling Discordance}[Duration]
@@ -387,9 +387,9 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 For the duration of your performance, you and all \glossterm{allies} within a \largearea radius from you gain a \plus4 bonus to defenses against hostile \abilitytag{Compulsion} and \abilitytag{Emotion} effects.
 
                 \rankline
-                \rank{3} At the end of each round, each subject removes all \glossterm{conditions} caused by Compulsion and Emotion effects that were not applied during that round.
+                \rank{3} At the end of each round, each subject removes all \glossterm{brief} effects and \glossterm{conditions} caused by Compulsion and Emotion effects that were not applied during that round.
                 \rank{5} The area increases to a \areahuge radius.
-                \rank{7} Each subject is immune to hostile Compulsion and Emotion effects.
+                \rank{7} Each subject is immune to Compulsion and Emotion attacks.
             \end{durationability}
 
             \begin{durationability}{Sickening Staccato}[Duration]

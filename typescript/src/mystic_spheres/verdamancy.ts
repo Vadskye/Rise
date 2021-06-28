@@ -560,7 +560,7 @@ export const verdamancy: MysticSphere = {
         Whenever you cause a creature to lose \\glossterm{hit points} with a \\glossterm{strike}, thorns from the striking weapon enter the subject's body.
         As a \\glossterm{condition}, the subject unable to heal the \\glossterm{hit points} lost to the attack.
 
-        This condition can be removed by the \\textit{treat condition} ability (see \\pcref{Treat Condition}).
+        This condition can be removed with the \\textit{treat condition} ability (see \\pcref{Treat Condition}).
         The \\glossterm{difficulty rating} of the check is equal to 5 \\add your \\glossterm{power}.
       `,
       rank: 3,

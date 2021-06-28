@@ -19,10 +19,10 @@ def generate_tools():
             material_type="Potion",
             tags=[],
             description="""
-                When you drink this \\glossterm<potion>, you remove a \\glossterm<condition>.
-                This cannot remove a condition applied during the current round.
+                When you drink this \\glossterm<potion>, you remove a \\glossterm<brief> effect or \\glossterm<condition> affecting you.
+                This cannot remove an effect applied during the current round.
             """,
-            short_description="Removes a condition",
+            short_description="Removes a brief effect or condition",
         ),
         MagicItem(
             consumable=True,
@@ -31,10 +31,10 @@ def generate_tools():
             material_type="Potion",
             tags=[],
             description="""
-                When you drink this \\glossterm<potion>, you remove two \\glossterm<conditions>.
-                This cannot remove a condition applied during the current round.
+                When you drink this \\glossterm<potion>, you remove two \\glossterm<brief> effects or \\glossterm<conditions> affecting you.
+                This cannot remove effects applied during the current round.
             """,
-            short_description="Removes two conditions",
+            short_description="Removes two brief effects or conditions",
         ),
     ]
 

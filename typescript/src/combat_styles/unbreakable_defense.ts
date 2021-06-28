@@ -135,8 +135,8 @@ export const unbreakableDefense: CombatStyle = {
       tags: [],
       scaling: {
         6: `
-          You can also remove a single condition.
-          This cannot remove a condition applied during the current round.
+          You can also remove a single \glossterm{brief} effect or condition.
+          This cannot remove an effect applied during the current round.
         `,
       },
       type: "Duration",
@@ -200,9 +200,9 @@ export const unbreakableDefense: CombatStyle = {
       effect: `
         Make a strike.
         You take a -2d damage penalty with the strike.
-        In addition, you may remove a \\glossterm{condition} affecting you.
-        This cannot remove a condition applied during the current round.
-        The penalties from the condition still affect you when you make the strike.
+        In addition, you may remove a \glossterm{brief} effect or \\glossterm{condition} affecting you.
+        This cannot remove an effect applied during the current round.
+        The penalties from the effect still affect you when you make the strike.
       `,
       rank: 4,
       scaling: {
