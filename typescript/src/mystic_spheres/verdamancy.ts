@@ -131,7 +131,7 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         crit: `the condition must be removed twice before the effect ends.`,
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject is \\immobilized by a mass of vines as a \\glossterm{condition}.
         In addition, it is unable to breathe.
         This condition can be removed if the subject or a creature that can reach the subject makes a \\glossterm{difficulty rating} 15 Strength check to break the subject free of the vines.

@@ -93,7 +93,7 @@ export const ebbAndFlow: CombatStyle = {
         Make a melee \\glossterm{strike} with a +2 bonus to \\glossterm{accuracy}.
         The attack is made against each subject's Reflex defense instead of its Armor defense.
         You take a -3d damage penalty with the strike, and your \\glossterm{power} is halved.
-        If a creature takes damage from the strike, it takes a -2 penalty to Armor defense until the end of the next round.
+        If a creature takes damage from the strike, it \\glossterm{briefly} takes a -2 penalty to Armor defense.
       `,
       rank: 1,
       scaling: {
@@ -111,7 +111,7 @@ export const ebbAndFlow: CombatStyle = {
         Make a melee \\glossterm{strike} with a +2 bonus to \\glossterm{accuracy}.
         The attack is made against each subject's Reflex defense instead of its Armor defense.
         You take a -3d damage penalty with the strike, and your \\glossterm{power} is halved.
-        If a creature takes damage from the strike, it is \\glossterm{stunned} until the end of the next round.
+        If a creature takes damage from the strike, it is \\glossterm{briefly} \\glossterm{stunned}.
       `,
       rank: 4,
       scaling: {
@@ -287,7 +287,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with a -1d damage penalty.
-        Each creature damaged by the strike takes a -2 penalty to \\glossterm{accuracy} against your \\glossterm{allies} until the end of the next round.
+        Each creature damaged by the strike \\glossterm{briefly} takes a -2 penalty to \\glossterm{accuracy} against your \\glossterm{allies}.
       `,
       rank: 1,
       scaling: {
@@ -318,7 +318,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You gain a +4 bonus to contested \\glossterm{initiative} checks against each creature damaged by the strike until the end of the next round.
+        You \\glossterm{briefly} gain a +4 bonus to contested \\glossterm{initiative} checks against each creature damaged by the strike.
       `,
       rank: 2,
       scaling: {

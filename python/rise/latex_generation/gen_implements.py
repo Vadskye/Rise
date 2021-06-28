@@ -152,7 +152,7 @@ def generate_implements():
             material_type="Staff",
             tags=["Emotion"],
             description="""
-                Whenever you cause an \\glossterm<enemy> to lose \\glossterm<hit points> with a \\glossterm<magical> ability, that creature becomes \\glossterm<shaken> by you until the end of the next round.
+                Whenever you cause an \\glossterm<enemy> to lose \\glossterm<hit points> with a \\glossterm<magical> ability, that creature becomes \\glossterm<briefly> \\glossterm<shaken> by you.
             """,
             short_description="Makes wounded creatures briefly shaken",
         ),
@@ -265,12 +265,11 @@ def generate_implements():
             name="Staff of Silence",
             level=4,
             material_type="Staff",
-            tags=[],
+            tags=['Swift'],
             description="""
                 As a \\glossterm<free action>, you can activate this staff.
-                When you do, you increase your \\glossterm<fatigue level> by one and gain the ability to cast spells without using \\glossterm<verbal components>.
-                This effect lasts until the end of the next round.
-                It has the \\glossterm<Swift> tag, so it allows you to cast a spell without verbal components in the same phase that you activate this staff.
+                When you do, you increase your \\glossterm<fatigue level> by one and \\glossterm<briefly> gain the ability to cast spells without using \\glossterm<verbal components>.
+                This ability has the \\glossterm<Swift> tag, so it allows you to cast a spell without verbal components in the same phase that you activate this staff.
             """,
             short_description="Briefly cast spells without verbal components",
         ),
@@ -278,12 +277,11 @@ def generate_implements():
             name="Staff of Stillness",
             level=4,
             material_type="Staff",
-            tags=[],
+            tags=['Swift'],
             description="""
                 As a \\glossterm<free action>, you can activate this staff.
-                When you do, you increase your \\glossterm<fatigue level> by one and gain the ability to cast spells without using \\glossterm<somatic components>.
-                This effect lasts until the end of the next round.
-                It has the \\glossterm<Swift> tag, so it allows you to cast a spell without somatic components in the same phase that you activate this staff.
+                When you do, you increase your \\glossterm<fatigue level> by one and \\glossterm<briefly> gain the ability to cast spells without using \\glossterm<somatic components>.
+                This ability has the \\glossterm<Swift> tag, so it allows you to cast a spell without somatic components in the same phase that you activate this staff.
             """,
             short_description="Briefly cast spells without somatic components",
         ),

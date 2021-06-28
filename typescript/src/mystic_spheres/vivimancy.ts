@@ -28,7 +28,7 @@ export const vivimancy: MysticSphere = {
       effect: `
         Choose yourself or one living \\glossterm{ally} within \\medrange.
         The subject regains two \\glossterm{hit points}.
-        After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
+        After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
       focus: false,
       scaling: {
@@ -83,7 +83,7 @@ export const vivimancy: MysticSphere = {
         hit: `
           The subject takes 2d8 + \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, you regain hit points equal to the damage it took this way.
-          After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
+          After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
         `,
         targeting: `
           This spell does not have the \\abilitytag{Focus} tag.
@@ -147,7 +147,7 @@ export const vivimancy: MysticSphere = {
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
         The subject regains 1d10 + \\glossterm{power} \\glossterm{hit points}.
-        After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
+        After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
       rank: 2,
       scaling: { special: "The healing increases by +1d for each rank beyond 2." },
@@ -352,7 +352,7 @@ export const vivimancy: MysticSphere = {
 
       effect: `
         You and each living \\glossterm{ally} in a \\medarea radius from you each regains 2d10 \\glossterm{hit points}.
-        After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
+        After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
       rank: 4,
       scaling: { special: "The healing increases by +1d for each rank beyond 4." },
@@ -429,8 +429,8 @@ export const vivimancy: MysticSphere = {
       name: "Sickening Miasma",
 
       attack: {
-        crit: "The effect becomes a \\glossterm{condition} on each subject.",
-        hit: `Each subject is \\sickened until the end of the next round.`,
+        crit: "The effect becomes a \\glossterm{condition}.",
+        hit: `Each subject is \\glossterm{briefly} \\sickened.`,
         targeting: `
           Make an attack vs. Fortitude against all living creatures in a \\smallarea radius within \\longrange.
         `,
@@ -444,8 +444,8 @@ export const vivimancy: MysticSphere = {
       name: "Nauseating Miasma",
 
       attack: {
-        crit: "The effect becomes a \\glossterm{condition} on each subject.",
-        hit: `Each subject is \\nauseated until the end of the next round.`,
+        crit: "The effect becomes a \\glossterm{condition}.",
+        hit: `Each subject is \\glossterm{briefly} \\nauseated.`,
         targeting: `
           Make an attack vs. Fortitude against all living creatures in a \\smallarea radius within \\longrange.
         `,
@@ -464,7 +464,7 @@ export const vivimancy: MysticSphere = {
         hit: `
           The subject takes 2d8 + \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, you regain \\glossterm{hit points} equal to the hit points it lost this way.
-          After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
+          After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\medrange.
@@ -561,7 +561,7 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         crit: `The effect lasts until this curse is removed. The penalty resets to -2 whenever the subject takes a short rest.`,
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject becomes more vulnerable to injury until it takes a short rest.
         It takes a -2 penalty to Fortitude defense.
         Whenever it loses one or more \\glossterm{hit points} from a single attack, this penalty increases by 1.

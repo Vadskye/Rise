@@ -327,7 +327,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a -1d damage penalty.
-        Each creature damaged by the strike takes a -2 penalty to Reflex defense until the end of the next round.
+        Each creature damaged by the strike \\glossterm{briefly} takes a -2 penalty to Reflex defense.
       `,
       rank: 1,
       scaling: {
@@ -360,7 +360,7 @@ export const dirtyFighting: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
-        Each creature damaged by the strike is \\slowed until the end of the next round.
+        Each creature damaged by the strike is \\glossterm{briefly} \\slowed.
       `,
       rank: 1,
       scaling: {
@@ -377,7 +377,7 @@ export const dirtyFighting: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
-        Each creature damaged by the strike is \\decelerated until the end of the next round.
+        Each creature damaged by the strike is \\glossterm{briefly} \\decelerated.
       `,
       rank: 4,
       scaling: {
@@ -407,7 +407,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a -2 accuracy penalty.
-        Each creature damaged by the strike treats you as being \\glossterm{invisible} until the end of the next round.
+        Each creature damaged by the strike \\glossterm{briefly} treats you as being \\glossterm{invisible}.
       `,
       rank: 5,
       scaling: {

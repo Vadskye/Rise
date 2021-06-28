@@ -11,13 +11,13 @@ export const revelation: MysticSphere = {
 
       effect: `
         Choose a sense, such as vision or hearing.
-        You gain a +4 bonus to Awareness checks using that sense until the end of the next round.
+        You \\glossterm{briefly} gain a +3 bonus to Awareness checks using that sense.
       `,
       focus: false,
       scaling: {
-        2: `The bonus increases to +6.`,
-        4: `The bonus increases to +8.`,
-        6: `The bonus increases to +10.`,
+        2: `The bonus increases to +4.`,
+        4: `The bonus increases to +5.`,
+        6: `The bonus increases to +6.`,
       },
       type: "Duration",
     },
@@ -76,7 +76,7 @@ export const revelation: MysticSphere = {
         The first time the subject makes a \\glossterm{strike} this round,
         it gains a +2 bonus to \\glossterm{accuracy} and rolls twice and takes the higher result.
         Because this ability has the \\abilitytag{Swift} tag, it can affect an attack the subject makes during the current phase.
-        If you cast this spell on yourself, it affects the first strike you make until the end of the next round.
+        If you cast this spell on yourself, it affects the first strike you make before the end of the next round.
       `,
       rank: 1,
       scaling: {
@@ -96,7 +96,7 @@ export const revelation: MysticSphere = {
         The first time the subject casts a spell this round,
         it gains a +2 bonus to \\glossterm{accuracy} and rolls twice and takes the higher result.
         Because this ability has the \\abilitytag{Swift} tag, it can affect an attack the subject makes during the current phase.
-        If you cast this spell on yourself, it affects the first spell you cast until the end of the next round.
+        If you cast this spell on yourself, it affects the first spell you cast before the end of the next round.
       `,
       rank: 3,
       scaling: {
@@ -176,7 +176,7 @@ export const revelation: MysticSphere = {
       name: "Discern Lies",
 
       attack: {
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `When you hear the subject deliberately and knowingly speaks a lie, you know that the subject was lying.
         This ability does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.`,
         targeting: `
@@ -397,7 +397,7 @@ export const revelation: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject's mind is overwhelmed by a total awareness of your chosen fact.
         It is \\stunned as a \\glossterm{condition}.`,
         targeting: `

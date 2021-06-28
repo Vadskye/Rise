@@ -335,7 +335,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a -1 accuracy penalty using a bludgeoning weapon.
-        Each creature that loses \\glossterm{hit points} from the strike is \\dazed until the end of the next round.
+        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\dazed.
       `,
       rank: 2,
       scaling: {
@@ -350,7 +350,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a -1 accuracy penalty using a bludgeoning weapon.
-        Each creature that loses \\glossterm{hit points} from the strike is \\stunned until the end of the next round.
+        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\stunned.
       `,
       rank: 5,
       scaling: {
@@ -364,7 +364,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a -1 accuracy penalty using a bludgeoning weapon.
-        Each creature damaged by the strike is \\stunned until the end of the next round.
+        Each creature damaged by the strike is \\glossterm{briefly} \\stunned.
       `,
       rank: 4,
       scaling: {
@@ -378,7 +378,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a -1 accuracy penalty using a bludgeoning weapon.
-        Each creature damaged by the strike is \\nauseated until the end of the next round.
+        Each creature damaged by the strike is \\glossterm{briefly} \\nauseated.
       `,
       rank: 7,
       type: "Duration",

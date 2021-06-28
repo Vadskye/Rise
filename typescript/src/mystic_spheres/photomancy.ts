@@ -55,7 +55,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         crit: `The effect is a \\glossterm{condition} that lasts until it is removed.`,
-        hit: `Each subject at its maximum hit points is \\dazed until the end of the next round.
+        hit: `Each subject at its maximum hit points is \\glossterm{briefly} \\dazed.
         Each subject that is at less than its maximum \\glossterm{hit points} is \\stunned instead of dazed.`,
         targeting: `
           Make an attack vs. Mental against each creature within a \\smallarea cone from you.
@@ -87,7 +87,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         crit: `The effect is a \\glossterm{condition} that lasts until it is removed.`,
-        hit: `Each subject at its maximum hit points is \\stunned until the end of the next round.
+        hit: `Each subject at its maximum hit points is \\glossterm{briefly} \\stunned.
         Each subject that is at less than its maximum \\glossterm{hit points} is \\confused instead of stunned.`,
         targeting: `
           Make an attack vs. Mental against each creature within a \\medarea cone from you.
@@ -158,7 +158,7 @@ export const photomancy: MysticSphere = {
         hit: `The subject is \\dazzled as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
-          Whether you hit or miss, \\glossterm{brilliant illumination} fills a 60 foot radius around the subject until the end of the next round.
+          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the subject.
         `,
       },
       rank: 2,
@@ -178,7 +178,7 @@ export const photomancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
-          Whether you hit or miss, \\glossterm{brilliant illumination} fills a 60 foot radius around the subject until the end of the next round.
+          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the subject.
         `,
       },
       rank: 5,
@@ -195,7 +195,7 @@ export const photomancy: MysticSphere = {
         hit: `The subject is \\blinded as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
-          Whether you hit or miss, \\glossterm{brilliant illumination} fills a 120 foot radius around the subject until the end of the next round.
+          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 120 foot radius around the subject.
         `,
       },
       rank: 7,
@@ -212,7 +212,7 @@ export const photomancy: MysticSphere = {
         targeting: `
           Make an attack vs. Reflex with a +1 \\glossterm{accuracy} bonus against anything within \\medrange.
           Whether you hit or miss, \\glossterm{brilliant illumination} fills a 60 foot radius around a 5 ft. wide straight line between you and the subject.
-          The illumination lasts until the end of the next round.
+          The illumination lasts \\glossterm{briefly}. 
         `,
       },
       rank: 1,
@@ -232,7 +232,7 @@ export const photomancy: MysticSphere = {
         targeting: `
           Make an attack vs. Reflex with a +2 \\glossterm{accuracy} bonus against anything within \\medrange.
           Whether you hit or miss, \\glossterm{brilliant illumination} fills a 120 foot radius around a 5 ft. wide straight line between you and the subject.
-          The illumination lasts until the end of the next round.
+          The illumination lasts \\glossterm{briefly}. 
         `,
       },
       rank: 4,
@@ -254,7 +254,7 @@ export const photomancy: MysticSphere = {
         targeting: `
           Make an attack vs. Reflex with a +2 \\glossterm{accuracy} bonus against anything within \\medrange.
           Whether you hit or miss, \\glossterm{brilliant illumination} fills a 120 foot radius around a 5 ft. wide straight line between you and the subject.
-          The illumination lasts until the end of the next round.
+          The illumination lasts \\glossterm{briefly}.
         `,
       },
       rank: 7,
@@ -267,11 +267,11 @@ export const photomancy: MysticSphere = {
       name: "Lightburst",
 
       attack: {
-        crit: "The effect becomes a \\glossterm{condition} on each subject.",
-        hit: `Each subject is \\dazzled until the end of the next round.`,
+        crit: "The effect becomes a \\glossterm{condition}.",
+        hit: `Each subject is \\glossterm{briefly} \\dazzled.`,
         targeting: `
           Make an attack vs. Fortitude against all creatures in a \\smallarea radius within \\medrange of you.
-          Whether you hit or miss, \\glossterm{brilliant illumination} fills a 60 foot radius from the center of that area until the end of the next round.
+          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius from the center of that area.
         `,
       },
       rank: 1,
@@ -288,10 +288,10 @@ export const photomancy: MysticSphere = {
           The effect becomes a \\glossterm{condition} on each subject.
           In addition, each subject is affected as if it had entered natural sunlight.
         `,
-        hit: `Each subject is \\blinded until the end of the next round.`,
+        hit: `Each subject is \\glossterm{briefly} \\blinded.`,
         targeting: `
           Make an attack vs. Fortitude against all creatures in a \\smallarea radius within \\medrange of you.
-          Whether you hit or miss, \\glossterm{brilliant illumination} fills a 120 foot radius from the center of that area until the end of the next round.
+          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 120 foot radius from the center of that area.
         `,
       },
       rank: 7,
@@ -304,10 +304,10 @@ export const photomancy: MysticSphere = {
 
       attack: {
         crit: "The effect becomes a \\glossterm{condition} on each subject.",
-        hit: `Each subject is \\dazzled until the end of the next round.`,
+        hit: `Each subject is \\glossterm{briefly} \\dazzled.`,
         targeting: `
           Make an attack vs. Fortitude against all creatures in up to five \\tinyarea radius areas within \\longrange of you.
-          Whether you hit or miss, \\glossterm{brilliant illumination} fills a 60 foot radius from the center of each area until the end of the next round.
+          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius from the center of each area.
         `,
       },
       rank: 2,
@@ -321,10 +321,10 @@ export const photomancy: MysticSphere = {
 
       attack: {
         crit: "The effect becomes a \\glossterm{condition} on each subject.",
-        hit: `Each subject is \\stunned until the end of the next round.`,
+        hit: `Each subject is \\glossterm{briefly} \\stunned.`,
         targeting: `
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\shortrange of you.
-          Whether you hit or miss, \\glossterm{brilliant illumination} fills a 60 foot radius from the center of that area until the end of the next round.
+          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius from the center of that area.
         `,
       },
       rank: 3,

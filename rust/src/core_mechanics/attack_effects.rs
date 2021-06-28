@@ -43,7 +43,6 @@ pub struct VitalWoundEffect {
 pub enum AttackEffectDuration {
     Brief,
     Condition,
-    NextRound,
 }
 
 impl AttackEffect {
@@ -74,6 +73,7 @@ impl AttackEffect {
         attacker: &T,
         is_magical: bool,
         is_strike: bool,
+        the_subject: &str,
     ) -> String {
         match self {
             Self::Damage(effect) => {
@@ -84,7 +84,7 @@ impl AttackEffect {
                         ",
                         effect = latex_formatting::join_string_list(
                             &t.iter()
-                                .map(|e| e.description(attacker, is_magical, is_strike))
+                                .map(|e| e.description(attacker, is_magical, is_strike, the_subject))
                                 .collect()
                         )
                         .unwrap(),
@@ -98,7 +98,7 @@ impl AttackEffect {
                             Each creature that loses \\glossterm<hit points> from this attack is {effect}
                         ",
                         effect = latex_formatting::join_string_list(
-                            &t.iter().map(|e| e.description(attacker, is_magical, is_strike)).collect()
+                            &t.iter().map(|e| e.description(attacker, is_magical, is_strike, the_subject)).collect()
                         ).unwrap(),
                     )
                 } else {
@@ -109,7 +109,7 @@ impl AttackEffect {
                 // TODO: damage types
                 return format!(
                     "
-                        takes {damage_dice}{damage_modifier} {damage_types} damage. {take_damage_effect} {lose_hp_effect}
+                        {the_subject} takes {damage_dice}{damage_modifier} {damage_types} damage. {take_damage_effect} {lose_hp_effect}
                     ",
                     damage_dice = effect
                         .damage_dice
@@ -119,11 +119,12 @@ impl AttackEffect {
                     damage_types = latex_formatting::join_formattable_list(&effect.damage_types).unwrap_or(String::from("")),
                     take_damage_effect = take_damage_effect.trim(),
                     lose_hp_effect = lose_hp_effect.trim(),
+                    the_subject = the_subject,
                 );
             }
             Self::Debuff(effect) => {
                 return format!(
-                    "is {debuffs} {duration}.",
+                    "{the_subject} is {debuffs} {duration}.",
                     debuffs = effect
                         .debuffs
                         .iter()
@@ -131,10 +132,11 @@ impl AttackEffect {
                         .collect::<Vec<&str>>()
                         .join(", "),
                     duration = effect.duration.description(),
+                    the_subject = the_subject,
                 );
             }
             Self::HalfDamage => {
-                return "takes half damage.".to_string();
+                return format!("{the_subject} takes half damage.", the_subject = the_subject);
             }
             Self::Poison(effect) => {
                 let mut third_stage = if let Some(ref debuffs) = effect.stage3_debuff {
@@ -153,20 +155,22 @@ impl AttackEffect {
                 }
                 return format!(
                     "
-                        is \\glossterm<poisoned>.
+                        {the_subject} is \\glossterm<poisoned>.
                         As long as it is poisoned, it is {debuffs}.
 
                         At the end of each subsequent round, make an attack with the same accuracy against each poisoned creature's Fortitude defense, as normal for poisons (see \\pcref<Poison>).
                         {third_stage}
                     ",
                     debuffs = latex_formatting::join_str_list(&effect.stage1.iter().map(|d| d.latex_link()).collect()).unwrap(),
+                    the_subject = the_subject,
                     third_stage = third_stage,
                 );
             }
             Self::VitalWound(effect) => {
                 return format!(
-                    "gains a \\glossterm<vital wound>. {special_effect}.",
+                    "{the_subject} gains a \\glossterm<vital wound>. {special_effect}.",
                     special_effect = effect.special_effect.as_deref().unwrap_or(""),
+                    the_subject = the_subject,
                 );
             }
         };
@@ -176,9 +180,8 @@ impl AttackEffect {
 impl AttackEffectDuration {
     pub fn description(&self) -> &str {
         match self {
-            Self::Brief => "until the end of the next round",
+            Self::Brief => "\\glossterm{briefly}",
             Self::Condition => "as a \\glossterm{condition}",
-            Self::NextRound => "during the next round",
         }
     }
 }

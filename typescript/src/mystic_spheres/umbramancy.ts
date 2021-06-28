@@ -12,7 +12,7 @@ export const umbramancy: MysticSphere = {
       effect: `
         This spell has no \\glossterm{verbal components}.
 
-        You gain a +3 bonus to the Stealth skill until the end of the next round.
+        You \\glossterm{briefly} gain a +3 bonus to the Stealth skill.
       `,
       focus: false,
       scaling: {
@@ -279,7 +279,7 @@ export const umbramancy: MysticSphere = {
 
       attack: {
         crit: `The subject is \\blinded instead.`,
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `As a \\glossterm{condition}, the subject takes a -4 penalty to \\glossterm{accuracy} and visual Awareness checks.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.
@@ -297,8 +297,7 @@ export const umbramancy: MysticSphere = {
 
       attack: {
         crit: "The effect becomes a \\glossterm{condition} on each subject.",
-        glance: "The effect lasts until the end of the next round.",
-        hit: `Each subject takes is \\glossterm{dazzled} until the end of the next round.`,
+        hit: `Each subject is \\glossterm{briefly} \\glossterm{dazzled}.`,
         targeting: `
         Make an attack vs. Mental against all creatures in a \\smallarea radius within \\longrange.
         You gain a +2 bonus to \\glossterm{accuracy} with the attack against each creature that is not in \\glossterm{bright illumination}.

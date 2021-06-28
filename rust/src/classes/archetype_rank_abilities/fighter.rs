@@ -24,7 +24,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             \rankline
             \rank{3} This ability gains the \abilitytag{Swift} tag.
             When you use it, the penalties from the removed conditions do not affect you during the current phase.
-            In addition, you cannot gain any additional \glossterm{conditions} until after the end of the next round.
+            In addition, you \\glossterm{briefly} cannot gain any additional \glossterm{conditions}.
             \rank{5} You can use this ability as a \glossterm{minor action}.
             When you do, you increase your \glossterm{fatigue level} by one.
             \rank{7} You can remove any number of \glossterm{conditions}.

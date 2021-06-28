@@ -260,7 +260,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike} with a -1d damage penalty.
         Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by the strike is \\dazed until the end of the next round.
+        Each creature damaged by the strike is \\glossterm{briefly} \\dazed.
       `,
       rank: 1,
       scaling: {
@@ -277,7 +277,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike} with a -2d damage penalty.
         Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\stunned until the end of the next round.
+        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\stunned.
       `,
       rank: 3,
       scaling: {
@@ -293,7 +293,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike} with a -2d damage penalty.
         Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\disoriented until the end of the next round.
+        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\disoriented.
       `,
       rank: 6,
       type: "Duration",
@@ -341,7 +341,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        Each creature damaged by the strike increases its \\glossterm{focus penalty} by 2 until the end of the next round.
+        Each creature damaged by the strike \\glossterm{briefly} increases its \\glossterm{focus penalty} by 2.
       `,
       rank: 2,
       scaling: {

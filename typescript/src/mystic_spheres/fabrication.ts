@@ -314,7 +314,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         crit: `Each secondary target is \\immobilized instead of slowed.`,
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `Each secondary target is \\slowed as long as it has webbing from this ability in its space.`,
         targeting: `
           You fill a \\smallarea radius \\glossterm{zone} within \\shortrange with webs.
@@ -358,7 +358,7 @@ export const fabrication: MysticSphere = {
         The ammunition can be blunted, but you cannot create other forms of special ammunition like fire arrows or repeating bolts.
         The object persists until the end of the round, at which point it disappears.
         Because this spell has the \\abilitytag{Swift} tag, you can fire the created projectile from the weapon in the same phase that you cast this spell.
-        After you cast this spell, you cannot cast it again until after the end of the next round.
+        After you cast this spell, you \\glossterm{briefly} cannot cast it again.
       `,
       rank: 2,
       scaling: {

@@ -145,7 +145,7 @@ export const bless: MysticSphere = {
         The first time the subject makes a \\glossterm{strike} this round,
         it gains a +2 bonus to \\glossterm{accuracy} and rolls twice and takes the higher result.
         Because this ability has the \\abilitytag{Swift} tag, it can affect an attack the subject makes during the current phase.
-        If you cast this spell on yourself, it affects the first strike you make until the end of the next round.
+        If you cast this spell on yourself, it affects the first strike you make before the end of the next round.
         `,
       rank: 1,
       scaling: {

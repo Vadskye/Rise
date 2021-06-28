@@ -67,7 +67,7 @@ export const aquamancy: MysticSphere = {
       name: "Slippery Escape",
 
       effect: `
-        You gain a +3 bonus to the Flexibility skill until the end of the next round.
+        You \\glossterm{briefly} gain a +3 bonus to the Flexibility skill.
       `,
       focus: false,
       narrative: `
@@ -88,7 +88,7 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         crit: "The effect lasts until this curse is removed.",
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           The subject is \\sickened.
           If it immerses itself in or drinks a body of water of minimum size equal to two size categories smaller than itself,
@@ -113,7 +113,7 @@ export const aquamancy: MysticSphere = {
         `,
         // glance: '',
         hit: `
-          Until the end of the next round, the majority of each subject's body is surrounded by a layer of water.
+          The majority of each subject's body is \\glossterm{briefly} surrounded by a layer of water.
           This does not impede its ability to breathe, but it takes penalties as if it was fighting underwater (see \\pcref{Underwater Combat}).
         `,
         targeting: `
@@ -140,7 +140,7 @@ export const aquamancy: MysticSphere = {
           The water also the covers the subject's face.
           This does not meaningfully impede its sight, but it cannot breathing anything other than the water.
         `,
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           As a \\glossterm{condition}, the majority of the subject's body is surrounded by a layer of water.
           This does not impede its ability to breathe, but it takes penalties as if it was fighting underwater (see \\pcref{Underwater Combat}).
@@ -575,7 +575,7 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         // crit: '',
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           Each subject that has no remaining \\glossterm{damage resistance} is \\nauseated as a \\glossterm{condition}.
         `,

@@ -10,7 +10,7 @@ export const thaumaturgy: MysticSphere = {
       name: "Sense Magic",
 
       effect: `
-        You gain a +3 bonus to the Spellsense skill until the end of the next round.
+        You \\glossterm{briefly} gain a +3 bonus to the Spellsense skill.
       `,
       focus: false,
       scaling: {
@@ -398,7 +398,7 @@ export const thaumaturgy: MysticSphere = {
       name: "Dimensional Anchor",
 
       attack: {
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject is unable to travel extradimensionally.
         This prevents all \\abilitytag{Manifestation} effects and effects that teleport the subject or move it between planes.`,
         targeting: `

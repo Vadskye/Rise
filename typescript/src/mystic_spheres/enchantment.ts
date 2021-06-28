@@ -98,7 +98,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `As a \\glossterm{condition}, the subject is forced to speak out loud constantly whenever it can.
         This does not control what it talks about, so a reasonably savvy creature may be able to avoid revealing anything of great interest.
         In combat, most creatures with an intelligence of 0 or less will often talk about what they are planning on doing, which can help you predict their actions.`,
@@ -154,7 +154,7 @@ export const enchantment: MysticSphere = {
       name: "Slow Down",
 
       attack: {
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         crit: `The condition must be removed twice before the effect ends.`,
         hit: `The subject is \\slowed as a \\glossterm{condition}.`,
         targeting: `
@@ -172,7 +172,7 @@ export const enchantment: MysticSphere = {
       name: "Greater Slow Down",
 
       attack: {
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         crit: `The condition must be removed twice before the effect ends.`,
         hit: `The subject is \\decelerated as a \\glossterm{condition}.`,
         targeting: `
@@ -191,7 +191,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The effect becomes a \\glossterm{condition} on each subject.`,
-        hit: `Each subject is \\slowed until the end of the next round.`,
+        hit: `Each subject is \\glossterm{briefly} \\slowed.`,
         targeting: `
         Make an attack vs. Mental against all creatures in a \\smallarea radius within \\longrange.
         `,
@@ -206,7 +206,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The effect becomes a \\glossterm{condition} on each subject.`,
-        hit: `Each subject is \\decelerated until the end of the next round.`,
+        hit: `Each subject is \\glossterm{briefly} \\decelerated.`,
         targeting: `
         Make an attack vs. Mental against all creatures in a \\smallarea radius within \\longrange.
         `,
@@ -221,7 +221,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The subject is \\paralyzed instead of immobilized.`,
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject is \\immobilized as a \\glossterm{condition}.`,
         targeting: `
         Make an attack vs. Mental against one creature within \\shortrange.
@@ -236,7 +236,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The effect becomes a \\glossterm{condition} on each subject.`,
-        hit: `Each subject is \\confused until the end of the next round.`,
+        hit: `Each subject is \\glossterm{briefly} \\confused.`,
         targeting: `
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\shortrange.
         `,
@@ -253,7 +253,7 @@ export const enchantment: MysticSphere = {
         crit: `The subject is also \\confused as part of the same condition.
         In addition, if the subject is humanoid and was already stunned and confused from a previous casting of this spell, you may \\glossterm{attune} to this ability.
         If you do, it becomes \\dominated by you for the duration of that attunement.`,
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject is \\stunned as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.
@@ -305,7 +305,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `As a \\glossterm{condition}, the subject must move a distance equal to its maximum movement speed in a straight line during each \\glossterm{movement phase}.
         It must use its movement mode with the highest speed to move this way.
         It is not required to use the \\textit{sprint} ability, or use any other special movement ability, though it may choose to do so.
@@ -326,7 +326,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The effect becomes a \\glossterm{condition} on each subject.`,
-        hit: `Until the end of the next round, each subject is convinced that they just learned some phenomenal cosmic truth or life-changing revelation, making them \\stunned.`,
+        hit: `Each subject is \\glossterm{briefly} convinced that they just learned some phenomenal cosmic truth or life-changing revelation, making them \\stunned.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
@@ -364,7 +364,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The effect becomes a \\glossterm{condition} on each subject.`,
-        hit: `Each subject is \\dazed until the end of the next round.`,
+        hit: `Each subject is \\glossterm{briefly} \\dazed.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
@@ -422,7 +422,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The effect becomes a \\glossterm{condition} on each subject.`,
-        hit: `Each subject is \\shaken by you until the end of the next round.`,
+        hit: `Each subject is \\glossterm{briefly} \\shaken by you.`,
         targeting: `
         Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\medrange.
         `,
@@ -438,7 +438,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The subject is \\panicked by you instead of frightened.`,
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject is \\frightened by you as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -455,7 +455,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: "The effect becomes a \\glossterm{condition} on each subject.",
-        hit: `Each subject is \\shaken by you until the end of the next round.`,
+        hit: `Each subject is \\glossterm{briefly} \\shaken by you.`,
         targeting: `
           At the end of each round, make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius \\glossterm{emanation} from you.
           After you attack a creature this way, you do not make this attack against it again until it takes a \\glossterm{short rest}.
@@ -488,7 +488,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `Actions which threaten the charmed person without harming them do not break the effect.`,
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject is \\charmed by you.
         Any act by you or by creatures that appear to be your allies that threatens or harms the charmed person breaks the effect.
         Harming the subject is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
@@ -564,7 +564,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `As a \\glossterm{condition}, the subject is unable to take any \\glossterm{standard actions} that cause it to make an attack.
         If it is harmed, either by taking damage or by experiencing significant subjective discomfort, this effect immediately ends.`,
         targeting: `
@@ -583,7 +583,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The effect lasts until this curse is removed.`,
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject is \\shaken by all sources of your chosen fear until it takes a \\glossterm{short rest}.`,
         targeting: `
         When you cast this spell, choose one of the following fears: blood (including any creature with a \\glossterm{vital wound}, even the subject), darkness (any location that does not have \\glossterm{bright illumination}), heights (any drop more 10 feet high), insects, snakes, or water.
@@ -680,7 +680,7 @@ export const enchantment: MysticSphere = {
       name: "Solipsism",
 
       attack: {
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `As a \\glossterm{condition}, the subject believes that it is the only real creature, and the rest of the world is an illusion.
         It may wander aimlessly, but generally takes no action to defend itself and does not perceive itself to be in danger from other creatures.
         It still avoids obvious environmental hazards, such as cliff edges or fires.
@@ -785,7 +785,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           As a \\glossterm{condition}, the subject's mind is primed for distraction.
           When it uses a \\abilitytag{Focus} ability, the distraction triggers, wrenching the subject's attention away.
@@ -853,7 +853,7 @@ export const enchantment: MysticSphere = {
       castingTime: "24 hours",
       attack: {
         crit: `The creature is \\panicked instead of frightened.`,
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The creature is \\frightened by the chosen object as a \\glossterm{condition}.`,
         targeting: `
         Choose a creature type: aberration, animal, animate, dragon, humanoid, magical beast, monstrous humanoid, planeforged, or undead.
@@ -875,7 +875,7 @@ export const enchantment: MysticSphere = {
       castingTime: "24 hours",
       attack: {
         crit: `The creature is also compelled to get as close as possible to the primary target to admire it in greater detail.`,
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The creature is \\fascinated by the primary target as a \\glossterm{condition}.
         Any act by you or by creatures that appear to be your allies that threatens or harms the creature breaks the effect.
         Harming the creature is not limited to dealing it damage, but also includes causing it significant subjective discomfort.

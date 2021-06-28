@@ -239,7 +239,7 @@ export const pyromancy: MysticSphere = {
       attack: {
         crit: `The damage from the condition is doubled.`,
         glance:
-          "The effect lasts until the end of the next round. The subject still takes damage during that round.",
+          "The effect lasts \\glossterm{briefly}. The subject still takes damage during the next round.",
         hit: `The subject catches on fire as a \\glossterm{condition}.
         At the end of each round, it takes 2d10 fire damage.
         If the the subject gains a \\glossterm{vital wound} from this damage, the condition ends.`,
@@ -334,7 +334,7 @@ export const pyromancy: MysticSphere = {
         targeting: `
           For the duration of this spell, you can breathe fire like a dragon as a standard action.
           When you do, make an attack vs. Reflex against everything within a \\largearea cone from you.
-          After you use this ability, you cannot use it again until after the end of the next round.
+          After you use this ability, you \\glossterm{briefly} cannot use it again.
         `,
       },
       rank: 3,
@@ -609,7 +609,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         crit: `The subject is \\panicked instead of frightened.`,
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject is \\frightened by you and all other sources of fire as a \\glossterm{condition}.`,
         targeting: `
         Make an attack vs. Mental against one creature within \\medrange.
@@ -658,7 +658,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         crit: `The effect lasts until the curse is removed.`,
-        glance: "The effect lasts until the end of the next round.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject is highly flammable until it takes a \\glossterm{short rest}.
         Like dry wood or kindling, it catches on fire whenever it takes any fire damage.
         While ignited in this way, it takes 2d8 fire damage at the end of each round.

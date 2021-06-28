@@ -420,7 +420,7 @@ def generate_apparel():
             tags=[],
             description="""
             As a \\glossterm<minor action>, you can activate this item.
-            When you do, you increase your \\glossterm<fatigue level> by one, and you can breathe in clean, fresh air until the end of the next round, regardless of your environment.
+            When you do, you increase your \\glossterm<fatigue level> by one, and you can \\glossterm<briefly> breathe in clean, fresh air regardless of your environment.
             This can be used in emergencies to save yourself from drowning or other perils.
         """,
             short_description="Allows limited breathing",
@@ -502,7 +502,7 @@ def generate_apparel():
 
             As a standard action, you can intensify the crown's energy to freeze nearby enemies.
             When you do, make an attack vs. Fortitude against all \\glossterm<enemies> within a \\areasmall radius from you.
-            On a hit, each target with no remaining \\glossterm<damage resistance> is \\glossterm<immobilized> until the end of the next round.
+            On a hit, each target with no remaining \\glossterm<damage resistance> is \\glossterm{briefly} \\glossterm<immobilized>.
             On a critical hit, each target with no remaining \\glossterm<damage resistance> is immobilized as a \\glossterm<condition>.
         """,
             short_description="Can freeze nearby enemies",
@@ -1163,7 +1163,7 @@ def generate_apparel():
             material_type="Cloak",
             tags=["Sensation"],
             description="""
-                At the end of each round, if you took no actions that round, you become \\glossterm<invisible> until the end of the next round.
+                At the end of each round, if you took no actions that round, you \\glossterm{briefly} become \\glossterm<invisible>.
             """,
             short_description="Grants longer invisibility while inactive",
         ),
@@ -1178,7 +1178,7 @@ def generate_apparel():
             description="""
                 Fog constantly fills a \\areamed radius emanation from you.
 
-                If a 5-foot square of fog takes at least 4 fire damage from a single attack, the fog disappears from that area until the end of the next round.
+                If a 5-foot square of fog takes at least 4 fire damage from a single attack, the fog \\glossterm{briefly} disappears from that area.
                 This fog does not fully block sight, but it provides \\glossterm<concealment>.
             """,
             short_description="Fills nearby area with fog",
@@ -1192,7 +1192,7 @@ def generate_apparel():
                 A thick fog constantly fills a \\areamed radius emanation from you.
                 This fog completely blocks sight beyond 10 feet.
 
-                If a 5-foot square of fog takes at least 16 fire damage from a single attack, the fog disappears from that area until the end of the next round.
+                If a 5-foot square of fog takes at least 16 fire damage from a single attack, the fog \\glossterm{briefly} disappears from that area.
             """,
             short_description="Fills nearby area with thick fog",
         ),
@@ -1207,7 +1207,7 @@ def generate_apparel():
             description="""
             As a standard action, you can activate this cloak.
             When you do, you teleport to an unoccupied location within \\rngmed range of your original location.
-            In addition, you become \\glossterm<invisible> until the end of the next round.
+            In addition, you become \\glossterm{briefly} \\glossterm<invisible>.
 
             If your intended destination is invalid, or if your teleportation otherwise fails, you still become invisible.
         """,
@@ -1260,7 +1260,7 @@ def generate_apparel():
             tags=['Healing'],
             description="""
                 As a standard action, you can use this belt to regain 1d10+2 hit points.
-                After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
+                After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
             """,
             short_description="Grants healing",
         ),
@@ -1271,7 +1271,7 @@ def generate_apparel():
             tags=['Healing'],
             description="""
                 As a standard action, you can use this belt to regain 2d10+5 hit points.
-                After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
+                After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
             """,
             short_description="Grants more healing",
         ),
@@ -1282,7 +1282,7 @@ def generate_apparel():
             tags=['Healing'],
             description="""
                 As a standard action, you can use this belt to regain 4d10+8 hit points.
-                After you use this ability, you cannot use it or any other \\abilitytag{Healing} ability until after the end of the next round.
+                After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
             """,
             short_description="Grants more healing",
         ),
@@ -1916,7 +1916,7 @@ def generate_apparel():
             tags=[],
             description="""
                 You can use these boots when you take the \\textit<sprint> action to avoid increasing your\\glossterm<fatigue level> (see \\pcref<Sprint>).
-                After you use this boots in this way, you cannot use them again until after the end of the next round.
+                After you use this boots in this way, you \\glossterm{briefly} cannot use them again.
             """,
             short_description="Can sprint more easily",
         ),

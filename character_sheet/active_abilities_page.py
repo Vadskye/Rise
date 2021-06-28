@@ -285,7 +285,7 @@ def universal_abilities():
         """),
         universal_ability_button("Dirty Trick", """
             Make a melee attack with a free hand against the Fortitude or Reflex defense of one creature within your reach. On a hit, the subject suffers a -2 penalty to one of the following statistics: accuracy with mundane abilities, Armor defense, Fortitude defense, Reflex defense, or Mental defense.
-            If the subject is at its maximum hit points, this effect lasts until the end of the next round. Otherwise, this effect is a condition.
+            If the subject is at its maximum hit points, this is a \\glossterm<brief> effect. Otherwise, this effect is a condition.
          """, attack={"accuracy":"@{accuracy}", "defense":"Fort or Ref"}),
         universal_ability_button("Disarm", """
             Make a melee strike against an object's Reflex defense.
