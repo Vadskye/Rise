@@ -244,7 +244,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
         Each \textit{hunting style} ability lasts as long as the \textit{quarry} ability you used it with.
         {
             \begin{durationability}{Anchoring}[Duration]
-                Magical
+                \abilitytag{Magical}
                 \rankline
                 As long as your quarry is adjacent to any member of your hunting party, it cannot travel extradimensionally.
                 This prevents all \abilitytag{Manifestation} and \glossterm{teleportation} effects.

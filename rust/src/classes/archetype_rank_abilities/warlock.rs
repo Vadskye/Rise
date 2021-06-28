@@ -86,9 +86,8 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-        [Magical] The bonus from your \textit{fiendish resistance} ability increases to twice your rank in this archetype.
-
-                ",
+                The bonus from your \textit{fiendish resistance} ability increases to twice your rank in this archetype.
+            ",
         },
         RankAbility {
             name: "Abyssal Curse",

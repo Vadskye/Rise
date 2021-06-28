@@ -7,35 +7,32 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 0,
             description: r"
-        [Magical] Whenever you create or use an alchemical item, you may use your \glossterm{magical} \glossterm{power} in place of the item's normal power to determine its effects.
-        % TODO: what if alchemical items deal damage over time?
-        In addition, you may add half your magical power to the damage dealt by any alchemical items you use.
-
-
-                ",
+                Whenever you create or use an alchemical item, you may use your \glossterm{magical} \glossterm{power} in place of the item's normal power to determine its effects.
+                % TODO: what if alchemical items deal damage over time?
+                In addition, you may add half your magical power to the damage dealt by any alchemical items you use.
+            ",
         },
         RankAbility {
             name: "Portable Workshop",
             is_magical: true,
             rank: 1,
             description: r"
-        [Magical]
-        You carry materials necessary to refine low-grade alchemical items wherever you are.
-        Where you lack material components, you fill in with some of your own magic, allowing you to create items more easily.
-        The items are just as effective when used as items created normally.
-        However, they are less durable, since they are partially sustained by your magic.
-        Items created with this ability deteriorate and become useless after 24 hours or after you finish a long rest, whichever comes first.
+                You carry materials necessary to refine low-grade alchemical items wherever you are.
+                Where you lack material components, you fill in with some of your own magic, allowing you to create items more easily.
+                The items are just as effective when used as items created normally.
+                However, they are less durable, since they are partially sustained by your magic.
+                Items created with this ability deteriorate and become useless after 24 hours or after you finish a long rest, whichever comes first.
 
-        You can use this ability to create alchemical items with a item level up to your level (see \pcref{Item Levels}).
-        Creating an item in this way functions in the same way as crafting alchemical items normally, with the following changes.
-        First, you do not require any raw materials.
-        Second, the maximum duration of any item created with this ability is five minutes.
-        Third, you can only maintain the existence of three items with this ability at once.
-        If you try to create a fourth item, you must stop maintaining the existence of another item created.
-        You can do this as a \glossterm{free action} regardless of distance.
-        This removes any lingering effects from the removed item, such as the protective qualities of an \textit{antitoxin elixir}.
+                You can use this ability to create alchemical items with a item level up to your level (see \pcref{Item Levels}).
+                Creating an item in this way functions in the same way as crafting alchemical items normally, with the following changes.
+                First, you do not require any raw materials.
+                Second, the maximum duration of any item created with this ability is five minutes.
+                Third, you can only maintain the existence of three items with this ability at once.
+                If you try to create a fourth item, you must stop maintaining the existence of another item created.
+                You can do this as a \glossterm{free action} regardless of distance.
+                This removes any lingering effects from the removed item, such as the protective qualities of an \textit{antitoxin elixir}.
 
-                ",
+            ",
         },
         RankAbility {
             name: "Alchemical Discovery",
@@ -84,9 +81,8 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-        [Magical] The number of items you can maintain with your \textit{portable workshop} ability increases to 5.
-
-                ",
+                The number of items you can maintain with your \textit{portable workshop} ability increases to 5.
+            ",
         },
         RankAbility {
             name: "Alchemical Discovery",
@@ -295,19 +291,17 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-        [Magical] You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
-        The maximum \glossterm{rank} of arcane ritual you can learn or perform is equal to the maximum rank of arcane spell that you can cast.
-        If you have the ability to cast rank 1 arcane spells, you may immediately scribe one rank 1 ritual without paying the normal costs.
-        In addition, whenever you gain access to a new spell rank, you can scribe one ritual of that rank or lower without paying the normal costs.
-
-                ",
+                You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
+                The maximum \glossterm{rank} of arcane ritual you can learn or perform is equal to the maximum rank of arcane spell that you can cast.
+                If you have the ability to cast rank 1 arcane spells, you may immediately scribe one rank 1 ritual without paying the normal costs.
+                In addition, whenever you gain access to a new spell rank, you can scribe one ritual of that rank or lower without paying the normal costs.
+            ",
         },
         RankAbility {
             name: "Scholastic Insight",
             is_magical: true,
             rank: 2,
             description: r"
-        [Magical]
         You gain one of the following insights.
         Some insights can be chosen multiple times, as indicated in their descriptions.
 
@@ -342,7 +336,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-        [Magical] You gain the ability to prepare a spell so it takes effect automatically if specific circumstances arise.
+        You gain the ability to prepare a spell so it takes effect automatically if specific circumstances arise.
         % If any spells take more than one standard action, they would need to be excluded from Contingency, but none exist
         % You can apply this ability to any arcane spell that can be cast as a \glossterm{standard action} or \glossterm{minor action}.
         Preparing a spell with this ability takes 5 minutes.
@@ -370,40 +364,35 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-        [Magical]
-        You learn an additional \textit{scholastic insight}.
-
-                ",
+                You learn an additional \textit{scholastic insight}.
+            ",
         },
         RankAbility {
             name: "Greater Ritualist",
             is_magical: true,
             rank: 5,
             description: r"
-        [Magical] Whenever you lead a ritual, it requires half the normal number of \glossterm{fatigue levels} and half the normal time to complete, to a minimum of zero fatigue levels.
-
-                ",
+                Whenever you lead a ritual, it requires half the normal number of \glossterm{fatigue levels} and half the normal time to complete, to a minimum of zero fatigue levels.
+            ",
         },
         RankAbility {
             name: "Scholastic Insight",
             is_magical: true,
             rank: 6,
             description: r"
-        [Magical]
-        You learn an additional \textit{scholastic insight}.
-
-                ",
+                You learn an additional \textit{scholastic insight}.
+            ",
         },
         RankAbility {
             name: "Multiple Contingency",
             is_magical: true,
             rank: 7,
             description: r"
-        [Magical] You may have two separate \textit{contingency} abilities active at the same time.
-        Each contingency can have separate triggering conditions.
-        Only one contigency can trigger each round.
-        If multiple contingencies would activate simultaneously, choose one to activate randomly.
-                ",
+                You may have two separate \textit{contingency} abilities active at the same time.
+                Each contingency can have separate triggering conditions.
+                Only one contigency can trigger each round.
+                If multiple contingencies would activate simultaneously, choose one to activate randomly.
+            ",
         },
     ];
 }
