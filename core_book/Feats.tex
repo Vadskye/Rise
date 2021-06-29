@@ -81,17 +81,18 @@ You cannot gain the same feat twice.
     \begin{longtable}{>{\lcol}p{11em} >{\lcol}p{12em} l >{\lcol}p{8em} >{\lcol}p{3em}}
         \lcaption{Feats}\\
         \tb{General Feats}\label{General Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
-        \featref{Celestial Heritage} & Non-evil & Gain aspects of celestial beings & Bloodline, Magical & \featpref{Celestial Heritage} \\
-        \featref{Draconic Heritage}  & \tdash   & Gain aspects of draconic power   & Bloodline          & \featpref{Draconic Heritage}  \\
-        \featref{Entropist}          & Wil 1    & Master chaos and entropy         & \tdash             & \featpref{Entropist}          \\
-        \featref{Iron Will}          & Wil 1    & Increase mental resilience       & \tdash             & \featpref{Iron Will}          \\
-        \featref{Null}               & Wil 2    & Become immune to magic           & \tdash             & \featpref{Null}               \\
-        \featref{Precognition}       & Int 2    & React to future events           & \tdash             & \featpref{Precognition}       \\
-        \featref{Regenerator}        & Con 2    & Heal wounds with inhuman speed   & \tdash             & \featpref{Regenerator}        \\
-        \featref{Rapid Reaction}     & Dex 1    & Increase reaction speed          & \tdash             & \featpref{Rapid Reaction}     \\
-        \featref{Spellwarped}        & Wil 1    & Gain limited spellcasting        & Magical            & \featpref{Spellwarped}        \\
-        \featref{Swift}              & Dex 1    & Move more quickly                & \tdash             & \featpref{Swift}              \\
-        \featref{Toughness}          & Con 1    & Increase physical fortitude      & \tdash             & \featpref{Toughness}          \\
+        \featref{Celestial Heritage} & Non-evil                 & Gain aspects of celestial beings    & Bloodline, Magical & \featpref{Celestial Heritage} \\
+        \featref{Chameleon}          & Mastered Disguise, Int 1 & Adapt your archetypes and abilities & \tdash             & \featpref{Chameleon}          \\
+        \featref{Draconic Heritage}  & \tdash                   & Gain aspects of draconic power      & Bloodline          & \featpref{Draconic Heritage}  \\
+        \featref{Entropist}          & Wil 1                    & Master chaos and entropy            & \tdash             & \featpref{Entropist}          \\
+        \featref{Iron Will}          & Wil 1                    & Increase mental resilience          & \tdash             & \featpref{Iron Will}          \\
+        \featref{Null}               & Wil 2                    & Become immune to magic              & \tdash             & \featpref{Null}               \\
+        \featref{Precognition}       & Int 2                    & React to future events              & \tdash             & \featpref{Precognition}       \\
+        \featref{Regenerator}        & Con 2                    & Heal wounds with inhuman speed      & \tdash             & \featpref{Regenerator}        \\
+        \featref{Rapid Reaction}     & Dex 1                    & Increase reaction speed             & \tdash             & \featpref{Rapid Reaction}     \\
+        \featref{Spellwarped}        & Wil 1                    & Gain limited spellcasting           & Magical            & \featpref{Spellwarped}        \\
+        \featref{Swift}              & Dex 1                    & Move more quickly                   & \tdash             & \featpref{Swift}              \\
+        \featref{Toughness}          & Con 1                    & Increase physical fortitude         & \tdash             & \featpref{Toughness}          \\
 
         \tb{Skill Feats}\label{Skill Feats}        & \tb{Prerequisites}          & \tb{Benefits}                         & \tb{Feat Types} & \tb{Page}                                   \\
         \featref{Agility Specialization}           & Mastered Agility            & Improve use of chosen skill           & \tdash          & \featpref{Agility Specialization}           \\
@@ -393,6 +394,59 @@ You cannot gain the same feat twice.
         \ff[18]{Greater Celestial Soul} The bonus from your \textit{celestial soul} ability increases to \plus10.
 
         \ff[21]{Greater Angelic Flight} Your \glossterm{maneuverability} with the fly speed from your \textit{angelic flight} ability increases to perfect (see \pcref{Flying Maneuverability}).
+    \end{feat}
+
+    \begin{feat}{Chameleon}{General}
+        \featpre Disguise as a mastered skill, base Intelligence of 1.
+
+        \ff[1]{Adaptive Archetype} Choose one archetype that you currently have, and two archetypes you do not have from among any of your classes.
+        Whenever you finish a \glossterm{long rest}, you can choose which one of those three archetypes you actually have access to.
+        You gain all benefits of your chosen archetype, and temporarily lose all benefits from the archetypes you did not choose in this way.
+
+        You must track which choices you made for archetypes that you lose access to in this way, such as which spells and maneuvers you learned.
+        When you regain access to that archetype, you must make the same choices.
+
+        \ff[3]{Versatile Disguise} Whenever you use the \textit{disguise creature} and \textit{emulate creature} abilities on yourself, you may simultaneously create two different disguises.
+        This takes twice as long as creating a single disguise, and you take a \minus2 penalty to the Disguise check.
+        You can change your appearance between the two chosen disguises as a \glossterm{minor action}.
+
+        \ff[6]{Adaptive Specialty} Whenever you finish a \glossterm{short rest}, you may choose an effect from the list below.
+        Each effect lasts until you take a short rest.
+        \begin{itemize}
+            \item Martial: You gain a \plus1 bonus to Armor defense and a \plus2 bonus to your \glossterm{mundane} \glossterm{power}.
+            \item Mystic: You gain a \plus2 bonus to Mental defense and a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
+            \item Primal: You gain a \plus2 bonus to Fortitude defense and \plus1 bonus to your \glossterm{fatigue tolerance}.
+            \item Skilled: You gain a \plus1 bonus to all skills.
+        \end{itemize}
+
+        \ff[9]{Instant Adaptation} As a standard action, you can change your choice of \textit{adaptive archetype} and \textit{adaptive specialty}.
+        When you do, you increase your \glossterm{fatigue level} by two.
+
+        \ff[12]{Greater Adaptive Specialty} The effects of your \textit{adaptive specialty} ability improve, as described below.
+        \begin{itemize}
+            \item Martial: The defense bonus increases to \plus2, and the power bonus increases to \plus4.
+            \item Mystic: The defense bonus increases to \plus3, and the power bonus increases to \plus4.
+            \item Primal: The defense bonus increases to \plus3, and the fatigue tolerance bonus increases to \plus2.
+            \item Skilled: The bonus increases to \plus2.
+        \end{itemize}
+
+        \ff[15]{Greater Instant Adaptation} When you use your \textit{instant adaptation} ability,
+        you only increase your \glossterm{fatigue level} by one.
+
+        \ff[15]{Greater Versatile Disguise} When you use your \textit{versatile disguise} ability, the time required to create the disguise is not increased, and the penalty to the Disguise check is removed.
+
+        \ff[18]{Supreme Adaptive Specialty} The effects of your \textit{adaptive specialty} ability improve, as described below.
+        \begin{itemize}
+            \item Martial: The defense bonus increases to \plus3, and the power bonus increases to \plus8.
+            \item Mystic: The defense bonus increases to \plus4, and the power bonus increases to \plus8.
+            \item Primal: The defense bonus increases to \plus4, and the fatigue tolerance bonus increases to \plus3.
+            \item Skilled: The bonus increases to \plus3.
+        \end{itemize}
+
+        \ff[21]{Supreme Adaptive Archetype} Instead of choosing a single archetype to activate with your \textit{adaptive archetype}, you may choose a blend of two archetypes simultaneously.
+        For each rank you have access to, you choose one archetype, and gain all abilities of that rank from that archetype and no abilities of that rank from the other archetype.
+        You cannot choose abilities from an archetype that reference abilities from that same archetype which you do not have.
+        For example, you cannot choose the \textit{supreme wildspell} ability unless you also have the \textit{wildspell} ability.
     \end{feat}
 
     \begin{feat}{Climb Specialization}{Skill}
