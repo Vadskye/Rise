@@ -449,24 +449,24 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Hardblock Shield",
-            level=13,
+            level=10,
             tags=[],
             material_type="Body armor",
             description="""
-                Whenever a creature misses you with a melee \\glossterm<strike>, it takes a -2 penalty to Armor defense during the next round.
+                Whenever a creature misses you with a melee \\glossterm<strike>, it \\glossterm<briefly> takes a -1 penalty to Armor defense.
                 As normal, this bonus does not stack with itself, even if the same creature misses you with multiple melee attacks.
             """,
-            short_description="Imposes -2 Armor penalty when creatures miss you",
+            short_description="Imposes -1 Armor penalty when creatures miss you",
         ),
         MagicItem(
             name="Greater Hardblock Shield",
-            level=19,
+            level=16,
             tags=[],
             material_type="Body armor",
             description="""
-                This shield functions like a \\mitem<hardblock shield>, except that the penalty increases to -3.
+                This shield functions like a \\mitem<hardblock shield>, except that the penalty increases to -2.
             """,
-            short_description="Imposes -3 Armor penalty when creatures miss you",
+            short_description="Imposes -2 Armor penalty when creatures miss you",
         ),
     ]
 

@@ -505,8 +505,8 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                 3 & When you attack with the spell this round, you are a target of the attack in addition to any other targets \\
                 4 & The spell's area is halved this round \\
                 5 & The spell's area is doubled this round \\
-                6 & Each target that resists damage from the spell this round is also \dazed during the next round \\
-                7 & Each target that loses hit points from the spell this round is also \sickened during the next round \\
+                6 & Each target that resists damage from the spell this round is also \glossterm{briefly} \dazed \\
+                7 & Each target that loses hit points from the spell this round is also \glossterm{briefly} \sickened \\
                 8 & When you deal damage with the spell this round, you roll twice for the spell and take the higher result \\
                 9 & When you attack with the spell this round, you roll twice and take the higher result \\
                 10 & During the \glossterm{action phase} of the next round, the spell takes effect again with the same choices for all decisions, such as targets \\
@@ -579,7 +579,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                         5 & Any \glossterm{conditions} inflicted by the spell this round become a \abilitytag{Curse} instead of a condition, and are removed when the target takes a \glossterm{short rest} \\
                         6 & When the spell would cause a creature to lose hit points this round, that creature loses twice as many hit points \\
                         7 & The spell's area is tripled this round \\
-                        8 & Each target that loses hit points from the spell this round is also \stunned during the next round \\
+                        8 & Each target that loses hit points from the spell this round is also \glossterm{briefly} \stunned \\
                         9 & You gain a \plus4 bonus to \glossterm{accuracy} with the spell this round, but you take the minimum possible result when the spell would deal damage \\
                         10 or higher & During both the \glossterm{action phase} and \glossterm{delayed action phase} of the next round, the spell takes effect again with the same choices for all decisions, such as targets \\
                     \end{dtabularx}

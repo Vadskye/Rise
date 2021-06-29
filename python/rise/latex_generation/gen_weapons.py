@@ -19,7 +19,7 @@ def generate_weapons():
                 This weapon vibrates slightly in the hand.
                 As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with concussive force.
                 Damage dealt by that strike is sonic damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
-                In addition, each creature that loses \\glossterm<hit points> from the strike is \\glossterm<deafened> during the next round.
+                In addition, each creature that loses \\glossterm<hit points> from the strike is \\glossterm<briefly> \\glossterm<deafened>.
             """,
             short_description="Can deal sonic damage and briefly deafen",
         ),
@@ -31,7 +31,7 @@ def generate_weapons():
             description="""
                 This weapon continuously emits a low-pitched rumbling noise and vibrates in the hand.
                 All damage dealt with it is sonic damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
-                Whenever you make a creature lose \\glossterm<hit points> with a \\glossterm<strike>, it becomes \\glossterm<deafened> during the next round.
+                Whenever you make a creature lose \\glossterm<hit points> with a \\glossterm<strike>, it becomes \\glossterm<briefly> \\glossterm<deafened>.
                 After this effect ends, that creature becomes immune to this effect until it takes a \\glossterm<short rest>.
             """,
             short_description="Deals sonic damage and briefly deafens",
@@ -98,7 +98,7 @@ def generate_weapons():
                 This weapon subtly crackles with electricity.
                 As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with electrical energy.
                 Damage dealt by that strike is electricity damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
-                In addition, each creature that loses \\glossterm<hit points> from the strike is \\glossterm<dazed> during the next round.
+                In addition, each creature that loses \\glossterm<hit points> from the strike is \\glossterm<briefly> \\glossterm<dazed>.
             """,
             short_description="Can deal electicity damage and briefly daze",
         ),
@@ -110,7 +110,7 @@ def generate_weapons():
             description="""
                 This weapon continuously crackles with electricity.
                 All damage dealt with it is electricity damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
-                Whenever you make a creature lose \\glossterm<hit points> with a \\glossterm<strike>, it becomes \\glossterm<dazed> during the next round.
+                Whenever you make a creature lose \\glossterm<hit points> with a \\glossterm<strike>, it becomes \\glossterm<briefly> \\glossterm<dazed>.
                 After this effect ends, that creature becomes immune to this effect until it takes a \\glossterm<short rest>.
             """,
             short_description="Deals electricity damage and briefly dazes",
@@ -137,7 +137,7 @@ def generate_weapons():
                 This weapon is frigid to the touch.
                 As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with cold energy.
                 Damage dealt by that strike is cold damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
-                In addition, each creature that loses \\glossterm<hit points> from the strike is \\glossterm<slowed> during the next round.
+                In addition, each creature that loses \\glossterm<hit points> from the strike is \\glossterm<briefly> \\glossterm<slowed>.
             """,
             short_description="Can deal cold damage and briefly slow",
         ),
@@ -149,7 +149,7 @@ def generate_weapons():
             description="""
                 This weapon is bitterly cold to the touch.
                 All damage dealt with it is cold damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
-                Whenever you make a creature lose \\glossterm<hit points> with a \\glossterm<strike>, it becomes \\glossterm<slowed> during the next round.
+                Whenever you make a creature lose \\glossterm<hit points> with a \\glossterm<strike>, it becomes \\glossterm<briefly> \\glossterm<slowed>.
                 After this effect ends, that creature becomes immune to this effect until it takes a \\glossterm<short rest>.
             """,
             short_description="Deals cold damage and briefly slows",

@@ -11,7 +11,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         This ability targets all \\glossterm{enemies} within a \\largearea radius from you.
-        During the next round, you gain a +4 bonus to \\glossterm{accuracy} with \\glossterm{strikes} against each subject.
+        You \\glossterm{briefly} gain a +4 bonus to \\glossterm{accuracy} with \\glossterm{strikes} against each subject.
       `,
       rank: 1,
       scaling: {

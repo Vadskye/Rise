@@ -266,7 +266,7 @@ export const unbreakableDefense: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} with a -1d damage penalty.
         After you make the strike, choose any one defense: Armor, Fortitude, Reflex, or Mental.
-        You gain a +2 bonus to that defense during the next round.
+        You \\glossterm{briefly} gain a +2 bonus to that defense.
       `,
       rank: 1,
       scaling: {

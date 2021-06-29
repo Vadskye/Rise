@@ -9,7 +9,7 @@ export const bless: MysticSphere = {
     {
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        The subject gains a +1 bonus to \\glossterm{accuracy} and \\glossterm{checks} during the next round.
+        The subject \\glossterm{briefly} a +1 bonus to \\glossterm{accuracy} and \\glossterm{checks}.
       `,
       focus: false,
       name: "Boon of Competence",
@@ -23,7 +23,7 @@ export const bless: MysticSphere = {
     {
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        The subject gains a +1 bonus to \\glossterm{defenses} during the next round.
+        The subject \\glossterm{briefly} gains a +1 bonus to all \\glossterm{defenses}.
       `,
       focus: false,
       name: "Boon of Protection",
