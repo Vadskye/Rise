@@ -787,6 +787,8 @@ def debuffs():
             "squeezing",
             "surrounded",
             "underwater",
+            "partially_unaware",
+            "unaware",
             # rank 1 debuffs
             "dazed",
             "dazzled",
@@ -819,6 +821,14 @@ def debuffs():
             if (grappled) {{
                 armor -= 2;
                 reflex -= 2;
+            }}
+            if (partially_unaware && !(unaware || asleep || helpless || paralyzed)) {{
+                armor -= 2;
+                reflex -= 2;
+            }}
+            if (unaware && !(asleep || helpless || paralyzed)) {{
+                armor -= 5;
+                reflex -= 5;
             }}
             if (crouching) {{
                 accuracy -= 2;
