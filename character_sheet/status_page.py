@@ -95,17 +95,23 @@ def vital_wound():
     )
 
 def circumstances():
-    return ''.join([
-        debuff("crouching"),
-        debuff("flying"),
-        debuff("flying poorly"),
-        debuff("focusing"),
-        debuff("grappled"),
-        debuff("helpless"),
-        debuff("prone"),
-        debuff("squeezing"),
-        debuff("surrounded"),
-        debuff("underwater"),
+    return flex_row({'class': 'debuffs'}, [
+        flex_col([
+            debuff("crouching"),
+            debuff("flying"),
+            debuff("flying poorly"),
+            debuff("focusing"),
+            debuff("grappled"),
+            debuff("helpless"),
+        ]),
+        flex_col([
+            debuff("partially unaware"),
+            debuff("prone"),
+            debuff("squeezing"),
+            debuff("surrounded"),
+            debuff("unaware"),
+            debuff("underwater"),
+        ]),
     ])
 
 
