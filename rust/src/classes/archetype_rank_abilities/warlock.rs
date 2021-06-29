@@ -17,24 +17,23 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-         You can use the \textit{abyssal blast} ability as a standard action.
-        \begin{instantability}{Abyssal Blast}[Instant]
-            \rankline
-            Make an attack vs. Armor against one creature or object within \rngmed range.
-            \hit The target takes fire damage equal to 1d10 plus your \glossterm{power}.
+                You can use the \textit{abyssal blast} ability as a standard action.
+                \begin{instantability}{Abyssal Blast}[Instant]
+                    \rankline
+                    Make an attack vs. Armor against one creature or object within \rngmed range.
+                    \hit The target takes fire damage equal to 1d10 plus your \glossterm{power}.
 
-            \rankline
-            \rank{2} The damage increases to 2d6.
-            \rank{3} The damage increases to 2d10.
-                In addition, if you miss by 2 or less, the target takes half damage.
-                This is called a \glossterm{glancing blow}.
-            \rank{4} The damage increases to 4d6.
-            \rank{5} The damage increases to 4d10.
-            \rank{6} The damage increases to 5d10.
-            \rank{7} The damage increases to 7d10.
-        \end{instantability}
-
-                ",
+                    \rankline
+                    \rank{2} The damage increases to 2d6.
+                    \rank{3} The damage increases to 2d10.
+                        In addition, if you miss by 2 or less, the target takes half damage.
+                        This is called a \glossterm{glancing blow}.
+                    \rank{4} The damage increases to 4d6.
+                    \rank{5} The damage increases to 4d10.
+                    \rank{6} The damage increases to 5d10.
+                    \rank{7} The damage increases to 7d10.
+                \end{instantability}
+            ",
         },
         RankAbility {
             name: "Abyssal Sphere",
