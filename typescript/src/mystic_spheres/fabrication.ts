@@ -448,7 +448,7 @@ export const fabrication: MysticSphere = {
           If it is somehow brought into a standing position, it will immediately fall and become prone again.
         `,
         hit: `
-          Each subject falls \\prone, and is \\glossterm{briefly} \\vulnerable to fire damage.
+          Each subject falls \\prone, and is \\glossterm{briefly} \\glossterm{vulnerable} to fire damage.
         `,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea radius within \\medrange.
