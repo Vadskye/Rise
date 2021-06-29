@@ -489,7 +489,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
         {
             \subcf{Mentoring Whispers} You gain two additional \glossterm{skill points}.
 
-            \subcf{Spiteful Whispers} Whenever you miss a creature with an attack, you gain a \plus1 bonus to \glossterm{accuracy} against the creature you missed during the next round.
+            \subcf{Spiteful Whispers} Whenever you miss a creature with an attack, you \glossterm{briefly} gain a \plus1 bonus to \glossterm{accuracy} against that creature.
 
             \subcf{Sycophantic Whispers} You gain a \plus2 bonus to Mental defense.
 

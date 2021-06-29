@@ -84,7 +84,7 @@ export const mobileAssault: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a -1d damage penalty.
-        During the next round, you can move through the space of each creature that took damage from this strike.
+        You can \\glossterm{briefly} move through the space of each creature that took damage from this strike.
       `,
       rank: 1,
       scaling: {
@@ -119,7 +119,8 @@ export const mobileAssault: CombatStyle = {
         abilityType: "ability",
         exceptThat: `
           it does not increase your \\glossterm{fatigue level}.
-          In exchange, you take a -2 penalty to Armor and Reflex defenses during the next round.
+          In exchange, you \\glossterm{briefly} take a -2 penalty to Armor and Reflex defenses.
+          This ability does not have the \\glossterm{Swift} tag, so it does not affect attacks made against you during the current phase.
         `,
         name: "charge",
       },
@@ -135,12 +136,12 @@ export const mobileAssault: CombatStyle = {
       name: "Prepared Sprint",
 
       effect: `
-        During the next round, your movement speed is doubled.
-        You cannot use the \\textit{sprint} ability during that round.
+        Your movement speed is \\glossterm{briefly} doubled.
+        However, you cannot use the \\textit{sprint} ability.
       `,
       rank: 1,
       scaling: {
-        3: "You also gain a +2 bonus to Reflex defense during the next round.",
+        3: "You also gain a +2 bonus to Reflex defense.",
         5: "The defense bonus increses to +4.",
         7: "The defense bonus increses to +6.",
       },

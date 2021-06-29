@@ -190,7 +190,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 \abilitytag{Auditory}
                 \rankline
                 This ability affects all \glossterm{enemies} within a \arealarge radius from you.
-                During the next round, you gain a \plus4 bonus to \glossterm{accuracy} with \textit{bardic performance} abilities against each subject.
+                You \glossterm{briefly} gain a \plus4 bonus to \glossterm{accuracy} with \textit{bardic performance} abilities against each subject.
 
                 \rankline
                 \rank{3} The bonus increases to \plus6.
@@ -439,10 +439,10 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-         Once per round, when you make a Perform check, you may choose an \glossterm{ally} that can see or hear your performance.
-        During the next round, that ally gains a \plus1 bonus to \glossterm{accuracy}.
-
-                ",
+                Once per round, when you make a Perform check, you may choose an \glossterm{ally} that can see or hear your performance.
+                That ally gains a \plus1 bonus to \glossterm{accuracy} this round.
+                This ability has the \glossterm{Swift} tag, so it affects attacks made during the current phase.
+            ",
         },
         RankAbility {
             name: "Bardic Performance",

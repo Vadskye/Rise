@@ -126,7 +126,8 @@ export const ebbAndFlow: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         You gain a +1d damage bonus with the strike.
-        During the next round, you take a -2 penalty to all defenses.
+        However, you \\glossterm{briefly} take a -2 penalty to all defenses.
+        This ability does not have the \\glossterm{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
       rank: 1,
       scaling: {
@@ -143,7 +144,8 @@ export const ebbAndFlow: CombatStyle = {
       effect: `
         Make two melee \\glossterm{strikes}.
         You take a -2d damage penalty with both strikes, and your \\glossterm{power} is \\glossterm{halved}.
-        During the next round, you take a -2 penalty to all defenses.
+        However, you \\glossterm{briefly} take a -2 penalty to all defenses.
+        This ability does not have the \\glossterm{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
       rank: 5,
       type: "Instant",
@@ -303,7 +305,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with a -2d damage penalty.
-        During the next round, you gain a +2 accuracy bonus and a +2d damage bonus with your \\textit{offhand strike} ability against each creature that took damage from this strike.
+        You \\glossterm{briefly} gain a +2 accuracy bonus and a +2d damage bonus with your \\textit{offhand strike} ability against each creature that took damage from this strike.
       `,
       rank: 3,
       scaling: {
@@ -333,12 +335,12 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        During the next round, you and each creature damaged by the strike take a -2 penalty to Armor and Reflex defenses.
+        You and each creature damaged by the strike are \\glossterm{briefly} \\glossterm{dazed}.
+        This ability does not have the \\glossterm{Swift} tag, so it does not affect attacks made against you or the damaged creatures during the current phase.
       `,
-      rank: 3,
+      rank: 4,
       scaling: {
-        5: "You gain a +1d damage bonus with the strike.",
-        7: "The damage bonus increases to +2d.",
+        6: "You gain a +1d damage bonus with the strike.",
       },
       type: "Duration",
     },
@@ -348,9 +350,10 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        During the next round, you and each creature damaged by the strike are \\glossterm{stunned}.
+        You and each creature damaged by the strike are \\glossterm{briefly} \\glossterm{stunned}.
+        This ability does not have the \\glossterm{Swift} tag, so it does not affect attacks made against you or the damaged creatures during the current phase.
       `,
-      rank: 6,
+      rank: 7,
       type: "Duration",
     },
   ],

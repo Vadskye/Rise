@@ -751,7 +751,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The effect becomes a \\glossterm{condition} that lasts until it is removed.`,
-        hit: `During the next round, the subject sees all creatures as its \\glossterm{enemies}.
+        hit: `The subject \\glossterm{briefly} sees all creatures as its \\glossterm{enemies}.
         It is compelled to attack the creature closest to it, choosing randomly between equally close creatures.
         After this effect ends, it becomes immune to this spell until it takes a \\glossterm{short rest}.`,
         targeting: `
