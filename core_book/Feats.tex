@@ -699,6 +699,7 @@ You cannot gain the same feat twice.
         \ff[1]{Duelist Strike} You can use the \textit{duelist strike} ability as a standard action.
         \begin{freeability}{Duelist Strike}
             Make a melee \glossterm{strike}.
+            This strikes only targets a single creature, even if your weapon would normally have the Sweeping tag.
             If you are not \surrounded, you gain a \plus1 bonus to \glossterm{accuracy} with the strike.
             If the target is not \surrounded, you gain a \plus1d damage bonus with the strike.
 
@@ -717,11 +718,12 @@ You cannot gain the same feat twice.
 
         \ff[12]{Greater Defensive Stance} The bonus from your \textit{defensive stance} ability increases to \plus2.
 
-        \ff[15]{Greater Duel Focus} The bonus from your \textit{duel focus} ability increases to \plus2.
+        \ff[15]{Greater Duel Focus} The bonuses from your \textit{duel focus} ability increase to \plus2.
 
         \ff[18]{Greater Riposte} The bonus from your \textit{riposte} ability increases to \plus2.
 
-        \ff[21]{Greater Defensive Stance} The bonus from your \textit{defensive stance} ability increases to \plus3.
+        \ff[21]{Duel Serenity} Your \textit{duelist strike} ability always has its full effects, regardless of whether you or the target are surrounded.
+        In addition, the bonus from your \textit{defensive stance} ability also applies to your Mental defense.
     \end{feat}
 
     \begin{feat}{Endurance Specialization}{Skill}
@@ -767,30 +769,33 @@ You cannot gain the same feat twice.
             If the target is \textit{marked for execution}, you gain a \plus2d damage bonus.
 
             \rankline
-            \featlevel{6} You gain a \plus1 \glossterm{accuracy} bonus with the strike.
-            \featlevel{12} The accuracy bonus increases to \plus2.
-            \featlevel{18} The accuracy bonus increases to \plus3.
+            \featlevel{6} The damage bonus increases to \plus3d.
+            \featlevel{12} The damage bonus increases to \plus4d.
+            \featlevel{18} The damage bonus increases to \plus5d.
         \end{freeability}
 
-        \ff[3]{Blood Sense}[Magical] You automatically know the location of all creatures that are \textit{marked for execution} within 60 feet of you, regardless of concealment or invisibility.
+        \ff[3]{Blood Sense}[Magical] You automatically know the location of all creatures that are \textit{marked for execution} within 120 feet of you, regardless of concealment or invisibility.
         You must have \glossterm{line of effect} to a creature to sense it in this way, but you do not need \glossterm{line of sight}.
+        You can automatically identify which creatures within this range are \textit{marked for execution}, even if you can already see them normally.
 
         \ff[6]{Purge the Weak} You gain a \plus1 bonus to \glossterm{accuracy} against creatures that are \textit{marked for execution}.
+        In addition, the first die you roll for each attack roll against a creature that is \textit{marked for execution} \glossterm{explodes} on a 9 in addition to the normal explosion on a 10.
 
-        \ff[9]{Greater Blood Sense}[Magical] Your \textit{blood sense} ability allows you to know the location of all living creatures within range.
+        \ff[9]{Bloody Resilience} You gain a \plus1 bonus to Fortitude defense.
+        % TODO: is this the right value?
+        In addition, you gain a \plus6 bonus to your maximum \glossterm{hit points}.
+
+        \ff[12]{Greater Blood Sense}[Magical] You gain \glossterm{lifesense} with a 60 foot range.
         In addition, you can see creatures that are \textit{marked for execution} perfectly instead of only knowing their location.
-        You can still automatically identify which creatures within range are \textit{marked for execution}.
 
-        \ff[12]{Bloody Resilience} You gain a \plus2 bonus to Fortitude defense.
-        In addition, you gain a \plus8 bonus to your maximum \glossterm{hit points}.
-
-        \ff[15]{Supreme Blood Sense}[Magical] The range of your \textit{blood sense} ability increases to 240 feet.
+        \ff[15]{Greater Bloody Resilience} The Fortitude defense bonus from your \textit{bloody resilience} ability increases to \plus2.
+        In addition, the hit point bonus increases to \plus12.
 
         \ff[18]{Greater Purge the Weak} The bonus from your \textit{purge the weak} ability increases to \plus2.
+        In addition, the first die you roll for each attack roll against a creature that is \textit{marked for execution} \glossterm{explodes} on an 8 or 9 in addition to the normal explosion on a 10.
 
-        \ff[21]{Supreme Bloody Resilience} The Fortitude defense bonus from your \textit{bloody resilience} ability increases to \plus4.
-        % TODO: is this the right value?
-        In addition, the hit point bonus increases to \plus24.
+        \ff[21]{Supreme Blood Sense}[Magical] The range of your \glossterm{lifesense} and \textit{blood sense} abilities increases to 240 feet.
+        In addition, you gain \glossterm{lifesight} with a 60 foot range.
     \end{feat}
 
     \begin{feat}{Flexibility Specialization}{Skill}
