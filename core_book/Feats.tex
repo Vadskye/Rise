@@ -83,6 +83,7 @@ You cannot gain the same feat twice.
         \tb{General Feats}\label{General Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
         \featref{Celestial Heritage} & Non-evil & Gain aspects of celestial beings & Bloodline, Magical & \featpref{Celestial Heritage} \\
         \featref{Draconic Heritage}  & \tdash   & Gain aspects of draconic power   & Bloodline          & \featpref{Draconic Heritage}  \\
+        \featref{Entropist}          & Wil 1    & Master chaos and entropy         & \tdash             & \featpref{Entropist}          \\
         \featref{Iron Will}          & Wil 1    & Increase mental resilience       & \tdash             & \featpref{Iron Will}          \\
         \featref{Null}               & Wil 2    & Become immune to magic           & \tdash             & \featpref{Null}               \\
         \featref{Precognition}       & Int 2    & React to future events           & \tdash             & \featpref{Precognition}       \\
@@ -753,6 +754,49 @@ You cannot gain the same feat twice.
         \ff[18]{Multiple Delay} You can delay up to two \glossterm{vital wounds} and \glossterm{conditions} with your \textit{delay vital wound} and \textit{delay condition} abilities.
 
         \ff[21]{Greater Endurance Sprinter} After you use your \textit{endurance sprinter} ability, you can use the \textit{sprint} ability again after the end of the current round.
+    \end{feat}
+
+    \begin{feat}{Entropist}{General, Magical}
+        \featpre Base Willpower of 1.
+
+        \ff[1]{Entropic Defense} Whenever you are hit by a \glossterm{critical hit} from a \glossterm{strike}, you may use this ability.
+        When you do, you increase your \glossterm{fatigue level} by two, and the attacker rerolls the attack against you, which may prevent the attack from getting a critical hit against you.
+        This does not protect any other targets of the attack.
+        You can choose to use this item after you learn the effects that the critical hit would have, but you must do so during the phase that the attack was made.
+
+        \ff[3]{Sudden Entropy} You can use the \textit{sudden entropy} ability as a standard action.
+        \begin{instantability}{Sudden Entropy}[Instant]
+            \rankline
+            Make an attack vs. Mental against one creature or object within \medrange.
+            \hit The target takes 1d10 \add \glossterm{power} damage.
+            The damage is of of a random damage type from among the following options: physical damage, energy damage, or all damage types simultaneously.
+
+            \rankline
+            \featlevel{6} The damage increases to 2d6.
+            \featlevel{9} The damage increases to 2d10.
+                In addition, if you miss by 2 or less, the target takes half damage.
+                This is called a \glossterm{glancing blow}.
+            \featlevel{12} The damage increases to 4d6.
+            \featlevel{15} The damage increases to 4d10.
+            \featlevel{18} The damage increases to 5d10.
+            \featlevel{21} The damage increases to 7d10.
+        \end{instantability}
+
+        \ff[6]{Improbable Vulnerability} Whenever you make an attack against an \glossterm{enemy} that is \glossterm{immune} or \glossterm{impervious} to some aspect of the attack, you have a 10\% chance to affect them as if they were not immune or impervious to the attack.
+        This has no effect on objects.
+
+        \ff[6]{Things Fall Apart} All of your attacks deal double damage to objects.
+
+        \ff[9]{Greater Entropic Defense} You can use your \textit{entropic defense} ability whenever you suffer a critical hit from any attack, not just a strike.
+
+        \ff[12]{Friend of Chaos} Whenever you roll for a random effect, such as a miss chance or a sorcerer's \textit{wild magic} ability, you may roll twice and keep whichever result you prefer.
+
+        \ff[15]{Greater Improbable Vulnerability} The chance from your \textit{improbable vulnerability} ability increases to 20\%.
+
+        \ff[18]{Supreme Entropic Defense} When you use your \textit{entropic defense} ability, you only increase your \glossterm{fatigue level} by one.
+
+        \ff[21]{Master of Chaos} Whenever you roll for a random effect, such as a miss chance or a sorcerer's \textit{wild magic} ability, you may use this ability.
+        When you do, you increase your \glossterm{fatigue level} by two, and you may freely choose the random result.
     \end{feat}
 
     \begin{feat}{Executioner}{Combat}
