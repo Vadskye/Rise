@@ -146,7 +146,7 @@ fn generate_latex_weapon_proficiencies(class: &classes::Class) -> String {
             ",
             latex_formatting::join_string_list(&components).unwrap_or(String::from("")),
         );
-    } else {
+    } else if weapon_proficiencies.custom_weapon_groups > 0 {
         proficiences_text = format!(
             "
                 You are proficient with simple weapons and any {weapon_group_text}.
@@ -157,6 +157,8 @@ fn generate_latex_weapon_proficiencies(class: &classes::Class) -> String {
                 "other weapon groups"
             ),
         );
+    } else {
+        proficiences_text = "You are proficient with simple weapons.".to_string();
     }
     return format!(
         "
