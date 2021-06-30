@@ -201,7 +201,7 @@ def calc_accuracy():
             equation(
                 [
                     underlabel(
-                        "Lvl",
+                        "Level",
                         number_input(
                             {
                                 "disabled": True,
@@ -788,7 +788,7 @@ def calc_armor():
             equation(
                 [
                     underlabel(
-                        "Lvl",
+                        "Level",
                         number_input(
                             {
                                 "disabled": True,
@@ -839,7 +839,7 @@ def calc_fort():
             equation(
                 [
                     underlabel(
-                        "Lvl",
+                        "Level",
                         number_input(
                             {
                                 "disabled": True,
@@ -883,7 +883,7 @@ def calc_ref():
             equation(
                 [
                     underlabel(
-                        "Lvl",
+                        "Level",
                         number_input(
                             {
                                 "disabled": True,
@@ -927,7 +927,7 @@ def calc_mental():
             equation(
                 [
                     underlabel(
-                        "Lvl",
+                        "Level",
                         number_input(
                             {
                                 "disabled": True,
