@@ -59,10 +59,10 @@ def create_page(destination):
                     [
                         calc_attributes(),
                         div({"class": "section-header"}, "Core Statistics"),
-                        calc_base_speed(),
                         calc_encumbrance(),
                         calc_focus_penalty(),
                         calc_initiative(),
+                        calc_land_speed(),
                         calc_vital_rolls(),
                         calc_weight_limits(),
                         calc_unknown_statistic(),
@@ -582,10 +582,10 @@ def calc_unknown_statistic():
     )
 
 
-def calc_base_speed():
+def calc_land_speed():
     return flex_row(
         [
-            div({"class": "calc-header"}, "Base Speed"),
+            div({"class": "calc-header"}, "Land Speed"),
             equation(
                 [
                     underlabel("Size", number_input({"name": "speed_size"})),
@@ -596,8 +596,8 @@ def calc_base_speed():
                 ],
                 result_attributes={
                     "disabled": True,
-                    "name": "base_speed_display",
-                    "value": "@{base_speed}",
+                    "name": "land_speed_display",
+                    "value": "@{land_speed}",
                 },
             ),
         ]
