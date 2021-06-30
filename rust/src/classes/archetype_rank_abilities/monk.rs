@@ -233,8 +233,9 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
         It also provides a bonus to \glossterm{damage resistance} equal to twice your rank in this archetype.
         The armor has no \glossterm{encumbrance}.
 
-        As long as you are not wearing armor and have a free hand, the barrier also manifests as a shield that provides a \plus1 bonus to Armor defense.
-        This bonus is considered to come from a shield, and does not stack with the benefits of using any other shield.
+            You can also use a \glossterm{free hand} to wield the barrier as a shield.
+            This functions like a buckler, granting you a \plus1 bonus to Armor defense, except that you do not need to be proficient with light armor.
+            Since this bonus comes from a shield, it does not stack with the benefits of using any other shield.
 
 
                 ",
