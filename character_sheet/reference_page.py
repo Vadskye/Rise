@@ -185,9 +185,10 @@ def character_creation():
                 ul([
                     li('Your chosen class is written in the top left of the Identity tab in the text box labeled "Class", under the "Class Info" header.'),
                     li('Your chosen archetypes are written in the bottom left of the Identity tab in the section with an "Archetypes" header. You can note your rank in each archetype with the numeric input labeled "Rank".'),
+                    li('Your class gives you bonuses to various defenses. Those resources are tracked under the "Defenses" header in the Calcs tab.'),
                     li('Your class gives you bonuses to various resources. Those resources are tracked under the "Resources" header in the Calcs tab.'),
                     li('Your class determines your armor and weapon proficiencies. Those are written on the left side of the Identity tab in the text boxes labeled "Armor proficiencies" and "Weapon groups".'),
-                    li('You have a set of class skills based on your class. For each class skill, check the "Class Skill?" checkbox associated with that skill on the left side of the Calcs tab.'),
+                    li('You have a set of class skills based on your class. For each class skill, check the "Class?" checkbox associated with that skill on the left side of the Skills tab.'),
                 ]),
             ]),
             li([
