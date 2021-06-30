@@ -89,7 +89,11 @@ def vital_wound():
             labeled_text_input(
                 "Effect",
                 {"class": "vital-wound-effect"},
-                {"name": "vital_wound_effect"},
+                {
+                    "disabled": True,
+                    "name": "vital_wound_effect_display",
+                    "value": "@{vital_wound_effect}",
+                },
             ),
         ],
     )

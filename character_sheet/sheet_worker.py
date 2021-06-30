@@ -945,7 +945,7 @@ def vital_rolls():
 def weapon_damage_dice():
     misc = get_misc_variables("weapon_damage_dice", 4)
     return js_wrapper(
-        ["level", "vital_wound_count", *misc],
+        ["level", *misc],
         f"""
             setAttrs({{
                 weapon_damage_dice: {sum_variables(misc)}
@@ -968,10 +968,37 @@ def monster_chat_color():
 
 def vital_wounds():
     return """
-        on("change:repeating_vitalwounds remove:repeating_vitalwounds", function(eventInfo) {
+        function calc_vital_wound_effect(roll) {
+            roll = Number(roll);
+            if (roll <= -1) {
+                return "Unconscious, die next round";
+            } else if (roll >= 10) {
+                return "No effect";
+            }
+            // These use alternate numerals as a stupid hack to avoid roll20's numberification
+            return {
+                0: "Unconscious, die after a minute",
+                1: "Unconscious below max HP",
+                2: "Half max HP and resistances",
+                3: "-２ accuracy",
+                4: "-２ defenses",
+                5: "-１ vital rolls",
+                6: "Half speed below max HP",
+                7: "Half max resistances",
+                8: "-１ accuracy",
+                9: "-１ defenses",
+            }[roll];
+        }
+
+        on("change:repeating_vitalwounds:vital_wound_roll remove:repeating_vitalwounds", function(eventInfo) {
             getSectionIDs("repeating_vitalwounds", (repeatingSectionIds) => {
-                setAttrs({
-                    vital_wound_count: repeatingSectionIds.length,
+                const vitalWoundRollIds = repeatingSectionIds.map((id) => `repeating_vitalwounds_${id}_vital_wound_roll`);
+                getAttrs(vitalWoundRollIds, (values) => {
+                    console.log("values", values);
+                    setAttrs({
+                        vital_wound_effect: calc_vital_wound_effect(eventInfo.newValue),
+                        vital_wound_count: repeatingSectionIds.length,
+                    });
                 });
             });
         });
