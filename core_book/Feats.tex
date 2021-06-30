@@ -152,6 +152,7 @@ You cannot gain the same feat twice.
         \featref{Sphere Focus: Umbramancy}       & \sphere{Umbramancy} sphere access       & Improve casting with chosen sphere        & Magical & \featpref{Sphere Focus: Umbramancy}       \\
         \featref{Sphere Focus: Verdamancy}       & \sphere{Verdamancy} sphere access       & Improve casting with chosen sphere        & Magical & \featpref{Sphere Focus: Verdamancy}       \\
         \featref{Sphere Focus: Vivimancy}        & \sphere{Vivimancy} sphere access        & Improve casting with chosen sphere        & Magical & \featpref{Sphere Focus: Vivimancy}        \\
+        \featref{Twinhand Spellcaster}           & Dex 1        & Cast spells with two hands at once        & Magical & \featpref{Twinhand Spellcaster}        \\
 
         \tb{Combat Feats}\label{Combat Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
         \featref{Blindfighter}         & Per 2            & Fight unseen foes better                      & \tdash & \featpref{Blindfighter}         \\
@@ -2835,6 +2836,40 @@ You cannot gain the same feat twice.
         \ff[18]{Greater Fortified Body} The defense bonus from your \textit{fortified body} ability increases to \plus6.
 
         \ff[21]{Supreme Durability} The bonus from your \textit{durability} ability increases to \plus25.
+    \end{feat}
+
+    \begin{feat}{Twinhand Spellcaster}{Casting, Magical}
+        \featpre Base Dexterity of 1.
+
+        \ff[1]{Twinhand Focus} You can always choose to use \glossterm{somatic components} to cast your spells (see \pcref{Casting Components}).
+        As long as you have two \glossterm{free hands}, you reduce your \glossterm{focus penalty} by 2 with spells that you cast using \glossterm{somatic components}.
+
+        \ff[3]{Freehand Implement} You can gain the benefits of one magical implement, such as a staff or wand, without having to hold it in your hands.
+        You must still have it on your person, such as in a pocket or strapped to your back, and you must still be attuned to it to gain its benefits.
+        This ability only affects one implement at a time.
+        In addition, if your legacy item is an apparel item, you may choose both apparel and implement magic item effects for it.
+
+        \ff[6]{Double Spell} You can use the \textit{double spell} ability as a \glossterm{standard action}.
+        \begin{instantability}{Double Spell}
+            You can only use this ability if you have two \glossterm{free hands}.
+
+            Choose two spells that you know which do not have the \abilitytag{Sustain} or \abilitytag{Attune} tags.
+            You cast both spells simultaneously, one with each hand.
+            This gives the spells \glossterm{somatic components}, regardless of any other effects which would would normally prevent you from requiring somatic components.
+            Both spells must affect completely different targets, with no overlap between their targets or areas (if any).
+
+            After you use this ability, you are unable to take any actions during the following round.
+        \end{instantability}
+
+        \ff[9]{Twinhand Precision} As long as you have two \glossterm{free hands}, you gain a \plus1 \glossterm{accuracy} bonus with spells that you cast using \glossterm{somatic components}.
+
+        \ff[12]{Greater Double Spell} Using your \textit{double spell} ability does not prevent you from acting during the \glossterm{movement phase} of the following round.
+
+        \ff[15]{Greater Freehand Implement} You can use your \textit{freehand implement} ability to affect an additional implement.
+
+        \ff[18]{Greater Twinspell Precision} The bonus from your \textit{twinhand precision} ability increases to \plus2.
+
+        \ff[21]{Supreme Double Spell} Using your \textit{double spell} ability does not prevent you from taking \glossterm{minor actions} during the following round.
     \end{feat}
 
     \begin{feat}{Two-Weapon Fighting}{Combat}
