@@ -190,6 +190,7 @@ def attack(source):
                                     {
                                         "class": "fake-text",
                                         "name": "attack0_accuracy",
+                                        "value": "0",
                                     }
                                 ),
                                 {"class": "attack-bonus"},
