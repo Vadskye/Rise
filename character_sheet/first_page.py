@@ -469,7 +469,9 @@ def movement():
             labeled_number_input(
                 "Land",
                 input_attributes={
-                    "name": f"land_display",
+                    "disabled": True,
+                    "name": f"land_speed_display",
+                    "value": "@{land_speed}",
                 },
             ),
             *[
