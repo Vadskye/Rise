@@ -175,7 +175,7 @@ def calc_maneuvers():
                     'name': 'maneuvers_known_insight_points',
                 })),
                 plus(),
-                equation_misc_repeat('maneuvers_known', 3)
+                equation_misc_repeat('maneuvers_known', 4)
             ],
             result_attributes={
                 'disabled': True,
@@ -194,7 +194,7 @@ def calc_spells():
                     'name': 'spells_known_insight_points',
                 })),
                 plus(),
-                equation_misc_repeat('spells_known', 3)
+                equation_misc_repeat('spells_known', 4)
             ],
             result_attributes={
                 'disabled': True,
@@ -213,7 +213,7 @@ def calc_spheres():
                     'name': 'spheres_known_insight_points',
                 })),
                 plus(),
-                equation_misc_repeat('spheres_known', 3)
+                equation_misc_repeat('spheres_known', 4)
             ],
             result_attributes={
                 'disabled': True,

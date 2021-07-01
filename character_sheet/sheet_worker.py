@@ -1115,7 +1115,7 @@ def abilities_known():
     ]
 
 def combat_styles_known():
-    misc = get_misc_variables("combat_styles_known", 3)
+    misc = get_misc_variables("combat_styles_known", 4)
     return js_wrapper(
         ["combat_styles_known_insight_points", *misc],
         f"""
@@ -1127,7 +1127,7 @@ def combat_styles_known():
 
 
 def maneuvers_known():
-    misc = get_misc_variables("maneuvers_known", 3)
+    misc = get_misc_variables("maneuvers_known", 4)
     return js_wrapper(
         ["maneuvers_known_insight_points", *misc],
         f"""
@@ -1139,7 +1139,7 @@ def maneuvers_known():
 
 
 def spheres_known():
-    misc = get_misc_variables("spheres_known", 3)
+    misc = get_misc_variables("spheres_known", 4)
     return js_wrapper(
         ["spheres_known_insight_points", *misc],
         f"""
@@ -1151,7 +1151,7 @@ def spheres_known():
 
 
 def spells_known():
-    misc = get_misc_variables("spells_known", 3)
+    misc = get_misc_variables("spells_known", 4)
     return js_wrapper(
         ["spells_known_insight_points", *misc],
         f"""
