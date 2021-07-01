@@ -89,6 +89,14 @@ def get_misc_variables(variable_name, count):
         "vital_rolls",
     ]:
         misc += [variable_name + "_custom_modifier"]
+    # Multipliers to HP and resistances can't be incorporated into the "misc"
+    # bucket
+    if variable_name in [
+            "accuracy",
+            "all_defenses",
+            "vital_rolls",
+    ]:
+        misc += [variable_name + "_vital_wound_modifier"]
     return misc
 
 
@@ -211,7 +219,6 @@ def set_skill(a, s):
 def core_statistics():
     return [
         accuracy(),
-        base_speed(),
         encumbrance(),
         fatigue_penalty(),
         fatigue_tolerance(),
@@ -219,6 +226,7 @@ def core_statistics():
         hit_points(),
         initiative(),
         insight_points(),
+        land_speed(),
         magical_power(),
         mundane_power(),
         skill_points(),
@@ -314,6 +322,7 @@ def armor_defense():
             *misc,
             "challenge_rating",
             "all_defenses_custom_modifier",
+            "all_defenses_vital_wound_modifier",
         ],
         f"""
             var attribute_modifier = Math.floor(constitution_starting / 2);
@@ -332,6 +341,7 @@ def armor_defense():
                 + armor_debuff_modifier
                 + {sum_variables(misc)}
                 + all_defenses_custom_modifier
+                + all_defenses_vital_wound_modifier
             );
             setAttrs({{
                 armor_defense: total,
@@ -353,6 +363,7 @@ def fortitude():
             "fortitude_debuff_modifier",
             *misc,
             "all_defenses_custom_modifier",
+            "all_defenses_vital_wound_modifier",
         ],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
@@ -367,6 +378,7 @@ def fortitude():
                     + fortitude_debuff_modifier
                     + {sum_variables(misc)}
                     + all_defenses_custom_modifier
+                    + all_defenses_vital_wound_modifier
                 ),
             }});
         """,
@@ -384,6 +396,7 @@ def reflex():
             "reflex_debuff_modifier",
             *misc,
             "all_defenses_custom_modifier",
+            "all_defenses_vital_wound_modifier",
         ],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
@@ -398,6 +411,7 @@ def reflex():
                     + reflex_debuff_modifier
                     + {sum_variables(misc)}
                     + all_defenses_custom_modifier
+                    + all_defenses_vital_wound_modifier
                 ),
             }});
         """,
@@ -415,6 +429,7 @@ def mental():
             "mental_debuff_modifier",
             *misc,
             "all_defenses_custom_modifier",
+            "all_defenses_vital_wound_modifier",
         ],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
@@ -429,6 +444,7 @@ def mental():
                     + mental_debuff_modifier
                     + {sum_variables(misc)}
                     + all_defenses_custom_modifier
+                    + all_defenses_vital_wound_modifier
                 ),
             }});
         """,
@@ -465,13 +481,13 @@ def initiative():
     )
 
 
-def base_speed():
+def land_speed():
     misc = get_misc_variables("speed", 2)
     return js_wrapper(
         ["level", "speed_size", "speed_armor", *misc],
         f"""
             setAttrs({{
-                base_speed: speed_size - speed_armor + {sum_variables(misc)}
+                land_speed: speed_size - speed_armor + {sum_variables(misc)}
             }});
         """,
     )
@@ -520,7 +536,7 @@ def focus_penalty():
 def hit_points():
     misc = get_misc_variables("hit_points", 4)
     return js_wrapper(
-        ["level", "constitution", "challenge_rating", *misc],
+        ["level", "constitution", "challenge_rating", "hit_points_vital_wound_multiplier", *misc],
         f"""
             var hit_points_from_level = {{
                 '-1': 9  ,
@@ -569,7 +585,7 @@ def hit_points():
                 3: 2,
                 4: 3,
             }}[challenge_rating || 0];
-            hit_points = Math.floor(hit_points * cr_multiplier)
+            hit_points = Math.floor(hit_points * cr_multiplier * (hit_points_vital_wound_multiplier || 1))
             setAttrs({{
                 hit_points,
                 hit_points_from_level,
@@ -673,6 +689,7 @@ def damage_resistance():
             "level",
             "challenge_rating",
             "damage_resistance_bonus_armor",
+            "damage_resistance_bonus_vital_wound_multiplier",
             *misc,
         ],
         f"""
@@ -720,7 +737,11 @@ def damage_resistance():
                 3: 2,
                 4: 4,
             }}[challenge_rating || 0];
-            const damage_resistance = (resistance_from_level + Math.floor(constitution / 2) + damage_resistance_bonus_armor + {sum_variables(misc)}) * cr_multiplier;
+            const damage_resistance = Math.floor(
+                (
+                    resistance_from_level + Math.floor(constitution / 2) + damage_resistance_bonus_armor + {sum_variables(misc)}
+                ) * cr_multiplier * (damage_resistance_bonus_vital_wound_multiplier || 1)
+            );
             setAttrs({{
                 damage_resistance,
                 damage_resistance_from_level: resistance_from_level,
@@ -975,30 +996,48 @@ def vital_wounds():
             } else if (roll >= 10) {
                 return "No effect";
             }
-            // These use alternate numerals as a stupid hack to avoid roll20's numberification
             return {
                 0: "Unconscious, die after a minute",
                 1: "Unconscious below max HP",
                 2: "Half max HP and resistances",
-                3: "-２ accuracy",
-                4: "-２ defenses",
-                5: "-１ vital rolls",
+                3: "-2 accuracy",
+                4: "-2 defenses",
+                5: "-1 vital rolls",
                 6: "Half speed below max HP",
                 7: "Half max resistances",
-                8: "-１ accuracy",
-                9: "-１ defenses",
+                8: "-1 accuracy",
+                9: "-1 defenses",
             }[roll];
+        }
+
+        function count_rolls(rolls, value) {
+            return rolls.filter((r) => r == value).length;
         }
 
         on("change:repeating_vitalwounds:vital_wound_roll remove:repeating_vitalwounds", function(eventInfo) {
             getSectionIDs("repeating_vitalwounds", (repeatingSectionIds) => {
                 const vitalWoundRollIds = repeatingSectionIds.map((id) => `repeating_vitalwounds_${id}_vital_wound_roll`);
                 getAttrs(vitalWoundRollIds, (values) => {
-                    console.log("values", values);
-                    setAttrs({
-                        vital_wound_effect: calc_vital_wound_effect(eventInfo.newValue),
+                    let rolls = Object.values(values);
+                    let accuracy_penalty = -count_rolls(rolls, 3) * 2 - count_rolls(rolls, 8);
+                    let defense_penalty = -count_rolls(rolls, 4) * 2 - count_rolls(rolls, 9);
+                    let vital_roll_penalty = -count_rolls(rolls, 5);
+                    let hp_multiplier = 0.5 ** count_rolls(rolls, 2);
+                    let resistance_multiplier = 0.5 ** (count_rolls(rolls, 2) + count_rolls(rolls, 7));
+                    let attrs = {
                         vital_wound_count: repeatingSectionIds.length,
-                    });
+
+                        accuracy_vital_wound_modifier: accuracy_penalty,
+                        all_defenses_vital_wound_modifier: defense_penalty,
+                        hit_points_vital_wound_multiplier: hp_multiplier,
+                        damage_resistance_bonus_vital_wound_multiplier: resistance_multiplier,
+                        vital_rolls_vital_wound_modifier: vital_roll_penalty,
+                    };
+                    if (eventInfo.triggerName != "remove:repeating_vitalwounds") {
+                        let effect_id = eventInfo.sourceAttribute.replace("_roll", "_effect");
+                        attrs[effect_id] = calc_vital_wound_effect(eventInfo.newValue);
+                    }
+                    setAttrs(attrs);
                 });
             });
         });

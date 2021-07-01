@@ -479,3 +479,16 @@ def li(attributes=None, contents=None):
 
 def p(attributes=None, contents=None):
     return html_tag("p", attributes, contents)
+
+def labeled_span(label_name, attributes=None, input_attributes=None):
+    attributes = attributes or dict()
+    space_append(attributes, "class", "labeled-text-input")
+    return div(
+        attributes,
+        flex_col(
+            [
+                span(input_attributes),
+                span({"class": "under-label"}, label_name),
+            ]
+        ),
+    )
