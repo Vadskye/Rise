@@ -247,8 +247,8 @@ def defenses():
     return flex_col(
         {"class": "defenses"},
         [
-            flex_wrapper(div({"class": "section-header"}, "Defenses")),
-            flex_row([
+            div({"class": "section-header"}, "Defenses"),
+            flex_row({"class": "defenses-row"}, [
                 flex_col({"class": "standard-defenses"}, [
                     labeled_number_input(
                         defense,
@@ -266,12 +266,7 @@ def defenses():
                     )
                     for defense in DEFENSES
                 ]),
-                flex_col({"class": "special-defenses"}, [
-                    text_input(
-                        {"name": f"special_defense_{i}_name"},
-                    )
-                    for i in range(4)
-                ]),
+                textarea({"class": "special-defenses", "name": f"special_defenses"}),
             ]),
         ],
     )
