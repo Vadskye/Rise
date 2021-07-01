@@ -92,7 +92,7 @@ You cannot gain the same feat twice.
         \featref{Rapid Reaction}     & Dex 1                    & Increase reaction speed             & \tdash             & \featpref{Rapid Reaction}     \\
         \featref{Spellwarped}        & Wil 1                    & Gain limited spellcasting           & Magical            & \featpref{Spellwarped}        \\
         \featref{Swift}              & Dex 1                    & Move more quickly                   & \tdash             & \featpref{Swift}              \\
-        \featref{Telepathy}          & Int 1, Wil 1             & Communicate with creatures mentally & \tdash             & \featpref{Telepathy}          \\
+        \featref{Telepath}           & Int 1, Wil 1             & Communicate with creatures mentally & \tdash             & \featpref{Telepath}          \\
         \featref{Toughness}          & Con 1                    & Increase physical fortitude         & \tdash             & \featpref{Toughness}          \\
 
         \tb{Skill Feats}\label{Skill Feats}        & \tb{Prerequisites}          & \tb{Benefits}                         & \tb{Feat Types} & \tb{Page}                                   \\
@@ -2806,12 +2806,14 @@ You cannot gain the same feat twice.
     \end{feat}
 
     \begin{feat}{Telepath}{General}
-        \featpre Base Inteligence and Willpower of 1.
+        \featpre Base Intelligence and Willpower of 1.
 
         \ff[1]{Telepathy} You gain \glossterm{telepathy} with a 30 foot range (see \pcref{Telepathy}).
 
         \ff[3]{Mind Crush} You can use the \textit{mind crush} ability as a standard action.
-        \begin{instantability}{Mind Crush}[\abilitytag[Emotion]]
+        \begin{durationability}{Mind Crush}
+            \abilitytag{Emotion}
+            \rankline
             Make an attack vs. Mental against one creature within the range of your \glossterm{telepathy}.
             \hit As a \glossterm{condition}, the subject is \dazed if it has any \glossterm{damage resistance} remaining, and \stunned if it does not.
             \crit The condition must be removed twice before the effect ends.
@@ -2819,10 +2821,12 @@ You cannot gain the same feat twice.
             \rankline
             You gain a \plus2 bonus to \glossterm{accuracy} with the attack at 6th level and every 3 levels thereafter.
             In addition, at 9th level, the effect lasts \glossterm{briefly} on a \glossterm{glancing blow}.
-        \end{instantability}
+        \end{durationability}
 
         \ff[6]{Read Mind}[Magical] You can use the \textit{read mind} ability as a standard action.
-        \begin{freeability}{Read Mind}[\abilitytag{Emotion}, \abilitytag{Sustain} (standard), \abilitytag{Subtle}]
+        \begin{durationability}{Read Mind}
+            \abilitytag{Emotion}, \abilitytag{Sustain} (standard), \abilitytag{Subtle}
+            \rankline
             Make an attack vs. Mental against a creature within the range of your \glossterm{telepathy}.
             Whether you hit or miss, you cannot target the subject with this ability again until it takes a \glossterm{short rest}.
             \hit You know the target's current thoughts and emotions.
@@ -2832,7 +2836,7 @@ You cannot gain the same feat twice.
             \rankline
             You gain a \plus2 bonus to \glossterm{accuracy} with the attack at 9th level and every 3 levels thereafter.
             In addition, at 9th level, the effect lasts \glossterm{briefly} on a \glossterm{glancing blow}.
-        \end{freeability}
+        \end{durationability}
 
         \ff[9]{Greater Telepathy} The range of your \glossterm{telepathy} ability increases to 60 feet.
         In addition, you automatically know the location of any creature with an Intelligence of 0 or higher within the range of your telepathy.
