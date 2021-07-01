@@ -992,10 +992,10 @@ impl Class {
                             Instant
                             \rankline
                             Make a Knowledge check of any kind.
-                            You and your \glossterm{allies} within a \arealarge radius learn the results of your check.
+                            Your \glossterm{allies} within a \arealarge radius learn the results of your check.
                             Creatures believe the information gained in this way to be true as if they it had seen it with their own eyes.
 
-                            You cannot alter the knowledge you gain with this check in any way, such as by adding or withholding information.
+                            You cannot alter the knowledge you share with this check in any way, such as by adding or withholding information.
 
                             \rankline
                             \rank{6} You gain a \plus3 bonus to the Knowledge check.
