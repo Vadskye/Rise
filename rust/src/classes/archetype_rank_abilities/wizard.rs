@@ -528,10 +528,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
             \subcf{Evocation} You gain a \plus2 bonus to \glossterm{power}.
 
-            \subcf{Illusion} You gain \glossterm{low-light vision}, allowing you to treat sources of light as if they had double their normal illumination range.
-            If you already have low-light vision, you double its benefit, allowing you to treat sources of light as if they had four times their normal illumination range.
-            In addition, you gain \glossterm{darkvision} with a 60 foot range, allowing you to see in complete darkness clearly.
-            If you already have that ability, you increase its range by 60 feet.
+            \subcf{Illusion} You gain a \plus1 bonus to \glossterm{accuracy}.
 
             \subcf{Transmutation} You gain a \plus2 bonus to Fortitude, Reflex, or Mental defense.
             You can change the defense this bonus applies to as a \glossterm{minor action}.
@@ -576,7 +573,10 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
             \subcf{Evocation} The power bonus increases to \plus4.
 
-            \subcf{Illusion} You gain a \plus1 bonus to \glossterm{accuracy}.
+            \subcf{Illusion} You gain \glossterm{low-light vision}, allowing you to treat sources of light as if they had double their normal illumination range.
+            If you already have low-light vision, you double its benefit, allowing you to treat sources of light as if they had four times their normal illumination range.
+            In addition, you gain \glossterm{darkvision} with a 60 foot range, allowing you to see in complete darkness clearly.
+            If you already have that ability, you increase its range by 60 feet.
 
             \subcf{Transmutation} The defense bonus increases to \plus3.
 
