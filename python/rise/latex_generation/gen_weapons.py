@@ -324,21 +324,30 @@ def generate_weapons():
         ),
     ]
 
-    weapons.append(
+    weapons += [
         MagicItem(
             name="Fixating",
             level=12,
             material_type="Weapon",
             description="""
-            When you make a \\glossterm<strike> with this weapon, you gain a +1 accuracy bonus against one target of the strike with all future attacks.
-            If the strike had multiple targets, you choose which target you gain the bonus against.
-            This bonus lasts until you make a strike with this weapon against a different target.
-            This bonus can stack with itself, up to a maximum of +4.
-            The bonus cannot increase more than once per \\glossterm<phase>.
-        """,
-            short_description="Grants accuracy bonus against attacked foe",
+                When you make a \\glossterm<strike> with this weapon, you gain a +1 accuracy bonus against one target of the strike with all future attacks.
+                If the strike had multiple targets, you choose which target you gain the bonus against.
+                This bonus lasts until you make a strike with this weapon that does not include your chosen target.
+                This bonus can stack with itself, up to a maximum of +4.
+                The bonus cannot increase more than once per \\glossterm<phase>.
+            """,
+            short_description="Grants +1 accuracy bonus against attacked foe",
+        ),
+        MagicItem(
+            name="Fixating, Greater",
+            level=18,
+            material_type="Weapon",
+            description="""
+                This weapon functions like the \\mitem<fixating> weapon, except that the bonus increases by +2 with each strike.
+            """,
+            short_description="Grants +2 accuracy bonus against attacked foe",
         )
-    )
+    ]
 
     weapons.append(
         MagicItem(
