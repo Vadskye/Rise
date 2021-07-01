@@ -59,13 +59,14 @@
     width: 45em;
 }
 
-.special-defenses {
-    flex-grow: 1;
-    margin-left: 0.5em;
-
-    input[type=text] {
-        margin-bottom: 0.2em;
-        margin-top: 0.2em;
+.defenses {
+    .defenses-row {
+        justify-content: space-between;
+        .special-defenses {
+            margin-left: 4px;
+            margin-right: 2px;
+            width: 10em;
+        }
     }
 }
 
@@ -190,7 +191,7 @@
     }
 }
 
-.all-statistics > .flex-col {
+.all-statistics .movement {
     flex-grow: 1;
 }
 
